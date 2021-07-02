@@ -1,3 +1,3 @@
 package en
 
-//go:generate go run github.com/cuelang/cuelang.org/internal/gentipredirect
+//go:generate go run github.com/cue-lang/cuelang.org/internal/gentipredirect

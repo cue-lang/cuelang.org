@@ -10,7 +10,7 @@ description = "Further documentation on CUE, including references to the languag
 CUE's maintains both a Gerrit and Github repository.
 The Gerrit repository is the source of truth, but changes are accepted
 in both repositories.
-See the [Contribution Guide](https://github.com/cuelang/cue/blob/master/doc/contribute.md)
+See the [Contribution Guide](https://github.com/cue-lang/cue/blob/master/doc/contribute.md)
 for more details on how to contribute.
 
 
@@ -18,9 +18,9 @@ for more details on how to contribute.
 
 The `cue` tool comes with build in help pages.
 These are also reflected
-[here](https://github.com/cuelang/cue/blob/master/doc/cmd/cue.md).
+[here](https://github.com/cue-lang/cue/blob/master/doc/cmd/cue.md).
 <!-- TODO: keep these in sync automatically.
-See https://github.com/cuelang/cue/issues/10
+See https://github.com/cue-lang/cue/issues/10
 -->
 
 
@@ -29,7 +29,7 @@ See https://github.com/cuelang/cue/issues/10
 The source of truth of how the CUE language should behave is encoded in the
 [CUE language specification](/docs/references/spec/).
 Notes on the formalism underlying the specification can be found
-[here](https://github.com/cuelang/cue/blob/master/doc/ref/impl.md).
+[here](https://github.com/cue-lang/cue/blob/master/doc/ref/impl.md).
 
 
 ## API References

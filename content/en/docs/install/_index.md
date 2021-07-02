@@ -14,7 +14,7 @@ The `cue` binary can be installed using one of the following methods.
 
 Binaries for various operating systems, including Linux, Windows, and Mac OS
 can be downloaded from
-[CUE releases section on Github](https://github.com/cuelang/cue/releases).
+[CUE releases section on Github](https://github.com/cue-lang/cue/releases).
 
 ### Install using homebrew
 

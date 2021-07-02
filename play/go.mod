@@ -1,4 +1,4 @@
-module github.com/cuelang/cuelang.org/play
+module github.com/cue-lang/cuelang.org/play
 
 go 1.14
 

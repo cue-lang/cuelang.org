@@ -103,7 +103,7 @@ message MyType {
 {{< /highlight>}}
 
 where the import
-[`cue/cue.proto`](https://cue.googlesource.com/cue/+/refs/heads/master/encoding/protobuf/cue/cue.proto)
+[`cue/cue.proto`](https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/+/refs/heads/master/encoding/protobuf/cue/cue.proto)
 resides in
 [`cuelang.org/go/encoding/protobuf`](https://pkg.go.dev/cuelang.org/go/encoding/protobuf),
 can be converted to CUE using the following Go code

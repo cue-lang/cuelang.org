@@ -40,9 +40,13 @@ disableAliases = true
     weight = -101
     url = "/docs/"
 [[menu.main]]
+    name = "Twitter"
+    weight = 102
+    url = "https://twitter.com/cue_lang"
+[[menu.main]]
     name = "GitHub"
-    weight = 100
-    url = "https://github.com/cuelang/cue"
+    weight = 101
+    url = "https://github.com/cue-lang/cue"
 [[menu.main]]
     name = "Play"
     weight = 100
@@ -119,9 +123,9 @@ privacy_policy = "https://policies.google.com/privacy"
 version_menu = "Releases"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/cuelang/cuelang.org"
+github_repo = "https://github.com/cue-lang/cuelang.org"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/cuelang/cue"
+github_project_repo = "https://github.com/cue-lang/cue"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
@@ -154,7 +158,7 @@ navbar_logo = false
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
 	name = "GitHub Discussions"
-	url = "https://github.com/cuelang/cue/discussions"
+	url = "https://github.com/cue-lang/cue/discussions"
 	icon = "fab fa-github"
         desc = "Ask questions and discuss CUE"
 
@@ -168,12 +172,12 @@ navbar_logo = false
 
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/cuelang/cue"
+	url = "https://github.com/cue-lang/cue"
 	icon = "fab fa-github"
         desc = "Issue and proposal tracking takes place here!"
 
 [[params.links.developer]]
 	name = "Gerrit"
-	url = "https://cue.googlesource.com/cue"
+	url = "https://review.gerrithub.io/plugins/gitiles/cue-lang/cue"
 	icon = "fab fa-git"
         desc = "The source-of-truth repo."

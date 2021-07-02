@@ -14,12 +14,18 @@ command = "sh build.sh -b $DEPLOY_URL"
 
 [[redirects]]
   from = "https://cuelang.org/issue/*"
-  to = "https://github.com/cuelang/cue/issues/:splat"
+  to = "https://github.com/cue-lang/cue/issues/:splat"
   status = 302
   force = true
 
 [[redirects]]
   from = "https://cuelang.org/issues/*"
-  to = "https://github.com/cuelang/cue/issues/:splat"
+  to = "https://github.com/cue-lang/cue/issues/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://cuelang.org/discussion/*"
+  to = "https://github.com/cue-lang/cue/discussions/:splat"
   status = 302
   force = true

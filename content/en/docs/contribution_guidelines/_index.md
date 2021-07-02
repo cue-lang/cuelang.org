@@ -23,9 +23,9 @@ again.
 ## Code reviews
 
 All submissions, including submissions by project members, require review. We
-use Gerrit code reviews at https://cue-review.googlesource.com for this purpose.
+use Gerrit code reviews at https://review.gerrithub.io/admin/repos/cue-lang/cue for this purpose.
 Please read the [Contributing
-Guide](https://github.com/cuelang/cue/blob/master/doc/contribute.md) before
+Guide](https://github.com/cue-lang/cue/blob/master/doc/contribute.md) before
 reading patches.
 
 ## Code of Conduct

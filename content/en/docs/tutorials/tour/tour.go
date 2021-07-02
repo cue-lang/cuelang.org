@@ -1,3 +1,3 @@
 package tour
 
-//go:generate go run github.com/cuelang/cuelang.org/internal/gentour
+//go:generate go run github.com/cue-lang/cuelang.org/internal/gentour

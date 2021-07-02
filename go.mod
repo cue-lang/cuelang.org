@@ -1,4 +1,4 @@
-module github.com/cuelang/cuelang.org
+module github.com/cue-lang/cuelang.org
 
 go 1.14
 

@@ -1,4 +1,4 @@
-### `github.com/cuelang/cuelang.org` - the home of cuelang.org
+### `github.com/cue-lang/cuelang.org` - the home of cuelang.org
 
 This repo is the home of [cuelang.org](https://cuelang.org). The site is built using [Hugo](https://gohugo.io/) and is
 based on the [docsy](https://www.docsy.dev/) theme.
@@ -51,7 +51,7 @@ go get cuelang.org/go@latest
 [tip.cuelang.org](https://tip.cuelang.org/) has the exact same site template and content as
 [cuelang.org](https://cuelang.org) except for the fact the language spec and tour are generated based on
 `cuelang.org/go@master`. Any commit to `master` of this repository or
-[github.com/cuelang/cue](https://github.com/cuelang/cue) will result in a redeploy of
+[github.com/cue-lang/cue](https://github.com/cue-lang/cue) will result in a redeploy of
 [tip.cuelang.org](https://tip.cuelang.org).
 
 ### History

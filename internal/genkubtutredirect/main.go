@@ -49,7 +49,7 @@ func main() {
 
 	content := fmt.Sprintf(`---
 type: redirect
-redirectURL: https://github.com/cuelang/cue/blob/%v/doc/tutorial/kubernetes/README.md
+redirectURL: https://github.com/cue-lang/cue/blob/%v/doc/tutorial/kubernetes/README.md
 ---`, v)
 
 	const target = "kubernetes.md"
