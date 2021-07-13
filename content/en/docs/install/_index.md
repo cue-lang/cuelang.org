@@ -26,10 +26,10 @@ brew install cuelang/tap/cue
 
 ### Installation on Arch Linux
 
-For Arch Linux the community maintains a Arch User Repository package called [cuelang-bin](https://aur.archlinux.org/packages/cuelang-bin/):
+Arch Linux has an official package that you can install by running:
 
 ```
-yay -S cuelang-bin
+pacman -S cuelang-bin
 ```
 
 ## Install CUE from source
