@@ -50,7 +50,7 @@ disableAliases = true
 [[menu.main]]
     name = "Play"
     weight = 100
-    url = "https://cuelang.org/play"
+    url = "/play"
 
 # Configure how URLs look like per section.
 [permalinks]
