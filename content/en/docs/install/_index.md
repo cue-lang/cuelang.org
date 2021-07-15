@@ -21,7 +21,7 @@ can be downloaded from
 In addition, CUE can be installed with using brew on MacOS and Linux:
 
 ```
-brew install cuelang/tap/cue
+brew install cue-lang/tap/cue
 ```
 
 ### Installation on Arch Linux
