@@ -7,7 +7,7 @@
 HUGO_ENV = "production"
 GO_VERSION = "1.16.6"
 NODE_VERSION = "14.17.3"
-HUGO_VERSION = "0.67.0"
+HUGO_VERSION = "0.86.0"
 
 [context.deploy-preview]
 command = "sh build.sh -b $DEPLOY_URL"
