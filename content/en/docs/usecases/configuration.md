@@ -153,7 +153,7 @@ make this a shoo-in task for CUE.
 
 ### Inheritance-based configuration languages
 
-Inheritance, is
+Inheritance is
 not commutative and idempotent in the general case. In other words, order
 matters.
 This makes it hard to track where values are coming from.
