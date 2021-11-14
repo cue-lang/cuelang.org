@@ -109,6 +109,11 @@ resides in
 can be converted to CUE using the following Go code
 
 {{< highlight go >}}
+  import (
+  	"cuelang.org/go/cue/format"
+  	"cuelang.org/go/encoding/protobuf"
+  )
+
 file, err := protobuf.Extract("basic.proto", nil, &protobuf.Config{
     Paths: []string{ /* paths to proto includes */ }],
 })
