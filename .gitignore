@@ -7,3 +7,4 @@ content/en/docs/tutorials/tour/*/*.md
 /_functions
 /play/mod
 /play/moddownload/
+/.hugo_build.lock

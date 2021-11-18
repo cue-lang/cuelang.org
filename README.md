@@ -12,9 +12,9 @@ The site is deployed and hosted via [Netlify](https://www.netlify.com/).
 
 ### Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `>= v12.14.1`
-* [Go](https://golang.org/dl/) (stable version)
-* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.67.0`
+* [NodeJS](https://nodejs.org/) `== v14.17.3`
+* [Go](https://golang.org/dl/) `== go1.17.3`
+* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.89.4`
 
 ### Developing the site locally
 
