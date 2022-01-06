@@ -28,6 +28,8 @@ jobs:
         GOPROXY=direct go get -d github.com/cue-sh/playground@latest
     - name: Regenerate
       run: go generate ./...
+    - name: Test
+      run: go test ./...
     - name: Check module is tidy
       run: go mod tidy
     - name: Verify commit is clean

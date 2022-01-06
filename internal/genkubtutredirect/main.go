@@ -26,6 +26,7 @@ import (
 
 	// imported for side effect of module being available in cache
 	_ "cuelang.org/go/pkg"
+	"golang.org/x/mod/module"
 	"golang.org/x/mod/semver"
 )
 
@@ -38,22 +39,28 @@ func main() {
 	if err := cmd.Run(); err != nil {
 		log.Fatalf("failed to run %v; %v", strings.Join(cmd.Args, " "), err)
 	}
-	v := strings.TrimSpace(cueVersion.String())
-	if pr := semver.Prerelease(v); pr != "" {
-		// Assume it's a pseudoversion for now, i.e.
-		// v0.1.2-0.20200422131516-4d8d1547ac19 where pr is now
-		// -0.20200422131516-4d8d1547ac19
-		parts := strings.Split(pr, "-")
-		v = parts[2]
-	}
+	url := versionToGitHubPath(strings.TrimSpace(cueVersion.String()))
 
 	content := fmt.Sprintf(`---
 type: redirect
 redirectURL: https://github.com/cue-lang/cue/blob/%v/doc/tutorial/kubernetes/README.md
----`, v)
+---`, url)
 
 	const target = "kubernetes.md"
 	if err := ioutil.WriteFile(target, []byte(content), 0666); err != nil {
 		log.Fatalf("failed to write to %v; %v", target, err)
 	}
+}
+
+// versionToGitHubPath translates a semver version to a URL path element
+// for referencing a GitHub blob. This is necessary principally because
+// the version might be a pseudo-version, and GitHub knows nothing about
+// such versions.
+func versionToGitHubPath(v string) string {
+	if !module.IsPseudoVersion(v) {
+		return v
+	}
+	pr := semver.Prerelease(v)
+	parts := strings.Split(pr, "-")
+	return parts[2]
 }
