@@ -473,7 +473,7 @@ meaning and the different interpretations it gets in practice.
 <!-- (jba) First mention of JSON. What does JSON have to do with CUE? Are we talking about
 JSON's null here? Why? -->
 
-Typescript creates some order in the chaos by introducing the concepts
+TypeScript creates some order in the chaos by introducing the concepts
 `undefined` and `void` in addition to `null`.
 It is a necessary evil to give `null` some meaning
 that is compatible with common practices,
