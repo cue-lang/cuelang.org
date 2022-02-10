@@ -29,3 +29,9 @@ command = "sh build.sh -b $DEPLOY_URL"
   to = "https://github.com/cue-lang/cue/discussions/:splat"
   status = 302
   force = true
+
+[[redirects]]
+  from = "https://cuelang.org/releases/*"
+  to = "https://github.com/cue-lang/cue/releases/:splat"
+  status = 302
+  force = true

@@ -4,21 +4,25 @@ weight = 150
 description = "Install CUE on your machine."
 +++
 
-The Go APIs can be used as is using Go's package manager.
+The Go APIs are defined in the
+[`cuelang.org/go`](https://pkg.go.dev/cuelang.org/go) module, which can be added
+as a dependency using [Go's native dependency
+management](https://go.dev/doc/modules/managing-dependencies).
 
 The `cue` binary can be installed using one of the following methods.
 
-## Binary install
+## Install CUE from official release binaries
 
-### Download from GitHub
+### Download
 
-Binaries for various operating systems, including Linux, Windows, and Mac OS
-can be downloaded from
-[CUE releases section on Github](https://github.com/cue-lang/cue/releases).
+Binaries for various operating systems, including Linux, Microsoft Windows, and
+macOS can be downloaded from [official CUE
+releases](/releases).
 
-### Install using homebrew
+### Install using Homebrew
 
-In addition, CUE can be installed with using brew on MacOS and Linux:
+In addition, CUE can be installed with using [`brew`](https://brew.sh/) on macOS
+and Linux:
 
 ```
 brew install cue-lang/tap/cue
@@ -36,34 +40,26 @@ pacman -S cuelang-bin
 
 ### Prerequisites
 
-Go 1.12 or higher (see below)
+Go 1.16 or higher (see below for instructions on installing Go).
 
 ### Installing CUE
 
-<!-- Keep the following in sync with cmd/cue/cmd/testdata/script/install*.txt -->
-
-If you already have Go installed, the short version is:
-
-```
-GO111MODULE=on go get cuelang.org/go/cmd/cue
-```
-
-Or, if you are using Go 1.16:
+To install the `cue` command line tool:
 
 ```
 go install cuelang.org/go/cmd/cue@latest
 ```
 
-This will install the `cue` command line tool.
-
 ### Installing Go
 
 #### Download Go
 
-You can load the binary for Windows, MacOS X, and Linux at  https://golang.org/dl/. If you use a different OS you can install Go from source.
+Download the binary for Microsoft Windows, macOS, and Linux at
+https://go.dev/dl/. If you use a different OS you can [install Go from
+source](https://go.dev/doc/install/source).
 
 #### Install Go
 
-Follow the instructions at  https://golang.org/doc/install#install.
-Make sure the go binary is in your path.
-CUE uses Go modules, so there is no need to set up a GOPATH.
+Follow the instructions at https://go.dev/doc/install. Make sure the `go`
+binary is in your `PATH`, then follow the instructions above to install CUE
+from source.
