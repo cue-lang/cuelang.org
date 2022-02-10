@@ -10,23 +10,24 @@ just a few small guidelines you need to follow.
 
 ## Contributor License Agreement
 
-Contributions to this project must be accompanied by a Contributor License
-Agreement. You (or your employer) retain the copyright to your contribution;
-this simply gives us permission to use and redistribute your contributions as
-part of the project. Head over to <https://cla.developers.google.com/> to see
-your current agreements on file or to sign a new one.
+Contributions to the CUE project must be accompanied by a [Developer Certificate
+of Origin](https://developercertificate.org/). All commit messages must contain
+the `Signed-off-by` line with an email address that matches the commit author.
+This line asserts the Developer Certificate of Origin.
 
-You generally only need to submit a CLA once, so if you've already submitted one
-(even if it was for a different project), you probably don't need to do it
-again.
+See [the Contribution
+Guide](https://github.com/cue-lang/cue/blob/master/doc/contribute.md#asserting-a-developer-certificate-of-origin)
+for more details.
 
 ## Code reviews
 
 All submissions, including submissions by project members, require review. We
-use Gerrit code reviews at https://review.gerrithub.io/admin/repos/cue-lang/cue for this purpose.
-Please read the [Contributing
+primarily use [Gerrit code
+review](https://review.gerrithub.io/admin/repos/cue-lang/cue) for changes, but
+also support [GitHub Pull Requests](https://github.com/cue-lang/cue/pulls).
+Please read the [Contribution
 Guide](https://github.com/cue-lang/cue/blob/master/doc/contribute.md) before
-reading patches.
+submitting a change.
 
 ## Code of Conduct
 
