@@ -33,7 +33,7 @@ brew install cue-lang/tap/cue
 Arch Linux has an official package that you can install by running:
 
 ```
-pacman -S cuelang-bin
+pacman -S cue
 ```
 
 ## Install CUE from source
