@@ -48,7 +48,7 @@ expressive, yet intuitive and compact, typing capabilities.
     last:    !=""
   }
 
-  // The minimum must be strictly smaller than the maximum and vice versa.
+  // minimum must be strictly smaller than the maximum and vice versa.
   minimum?: int & <maximum
   maximum?: int & >minimum
 }
@@ -56,7 +56,7 @@ expressive, yet intuitive and compact, typing capabilities.
 // A spec is of type #Spec
 spec: #Spec
 spec: {
-  kind: "Homo Sapiens" // error, misspelled field
+  knid: "Homo Sapiens" // error, the field has been spelt incorrectly
 
   name: first: "Jane"
   name: last:  "Doe"
