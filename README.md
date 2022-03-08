@@ -12,16 +12,13 @@ The site is deployed and hosted via [Netlify](https://www.netlify.com/).
 
 ### Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `== v14.17.3`
-* [Go](https://golang.org/dl/) `== go1.17.3`
-* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.89.4`
+* [NodeJS](https://nodejs.org/) `== v14.19.0`
+* [Go](https://golang.org/dl/) `== go1.17.7`
+* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.93.3`
 
 ### Developing the site locally
 
 ```bash
-# Ensure you have the correct version of the docsy theme
-git submodule update -f --init --recursive
-
 # Install Hugo's Node requirements
 npm install
 
