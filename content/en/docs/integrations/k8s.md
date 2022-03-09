@@ -29,7 +29,7 @@ to other domains.
 Kubernetes has no direct support for CUE.
 However, as it is written in Go, CUE can automatically extract definitions
 from its  code base.
-[This section](/docs/integrations/go#download-cue-definitions-from-go)
+[This section](/docs/integrations/go#download-cue-definitions-from-go-packages)
 describes how to extract and use such definitions.
 
 
