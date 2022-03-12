@@ -154,7 +154,7 @@ further defined and clarified by project maintainers.</p>
 Stewards have a reasonable belief that an individual&rsquo;s behavior may have a
 negative impact on the project or its community.</p>
 
-<h3 id="conflict-resolution"></a>Conflict Resolution</h3>
+<h3 id="conflict-resolution">Conflict Resolution</h3>
 
 <p>We do not believe that all conflict is bad; healthy debate and disagreement
 often yield positive results. However, it is never okay to be disrespectful or

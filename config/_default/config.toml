@@ -52,6 +52,23 @@ disableAliases = true
     weight = 100
     url = "/play"
 
+[[languages.zh-cn.menu.main]]
+    name = "文档"
+    weight = -101
+    url = "/docs/"
+[[languages.zh-cn.menu.main]]
+    name = "Twitter"
+    weight = 102
+    url = "https://twitter.com/cue_lang"
+[[languages.zh-cn.menu.main]]
+    name = "GitHub"
+    weight = 101
+    url = "https://github.com/cue-lang/cue"
+[[languages.zh-cn.menu.main]]
+    name = "Play"
+    weight = 100
+    url = "https://cuelang.org/play/"
+
 # Configure how URLs look like per section.
 [permalinks]
 blog = "/:section/:year/:month/:day/:slug/"
@@ -110,7 +127,13 @@ description = "Validate and define text-based and dynamic configuration"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-
+[languages.zh-cn]
+contentDir = "content/zh"
+title = "CUE"
+description = "验证、定义、使用动态以及文本式的数据"
+languageName ="简体中文"
+# Weight used for sorting.
+weight = 2
 
 # Everything below this are Site Params
 
