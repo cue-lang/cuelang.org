@@ -18,3 +18,10 @@ require (
 	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
+
+require (
+	github.com/google/docsy v0.1.1-0.20220124145409-3e2cfeba3ad1 // indirect
+	github.com/google/docsy/dependencies v0.2.0-pre // indirect
+	github.com/twbs/bootstrap v4.6.1+incompatible // indirect
+	github.com/FortAwesome/Font-Awesome v0.0.0-20210804190922-7d3d774145ac // indirect
+)
