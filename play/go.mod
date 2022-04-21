@@ -2,10 +2,10 @@ module github.com/cue-lang/cuelang.org/play
 
 go 1.17
 
-require github.com/cue-sh/playground v0.0.0-20220209175856-6f991d649ab0
+require github.com/cue-sh/playground v0.0.0-20220423053957-f9b3b4b3013a
 
 require (
-	cuelang.org/go v0.4.2 // indirect
+	cuelang.org/go v0.4.3 // indirect
 	github.com/cockroachdb/apd/v2 v2.0.1 // indirect
 	github.com/emicklei/proto v1.6.15 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
@@ -15,7 +15,6 @@ require (
 	github.com/protocolbuffers/txtpbfmt v0.0.0-20201118171849-f6a6b3f636fc // indirect
 	github.com/stretchr/testify v1.6.1 // indirect
 	golang.org/x/net v0.0.0-20200226121028-0de0cce0169b // indirect
-	golang.org/x/text v0.3.2 // indirect
-	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 // indirect
+	golang.org/x/text v0.3.7 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
