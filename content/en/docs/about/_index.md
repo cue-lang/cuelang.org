@@ -104,7 +104,7 @@ and even null coalescing collapse onto a single construct.
 Below is a demonstration of this concept.
 On the left one can see a JSON object (in CUE syntax) with some properties
 about the city of Moscow.
-The middle columns shows a possible schema for any municipality.
+The middle column shows a possible schema for any municipality.
 On the right one sees a mix between data and schema as is exemplary of CUE.
 
 {{< blocks/sidebyside >}}
