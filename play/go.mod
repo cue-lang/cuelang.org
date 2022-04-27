@@ -2,7 +2,7 @@ module github.com/cue-lang/cuelang.org/play
 
 go 1.17
 
-require github.com/cue-sh/playground v0.0.0-20220423053957-f9b3b4b3013a
+require github.com/cue-sh/playground v0.0.0-20220427174303-4c9bd3cf5202
 
 require (
 	cuelang.org/go v0.4.3 // indirect

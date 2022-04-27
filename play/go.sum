@@ -14,6 +14,10 @@ github.com/cpuguy83/go-md2man/v2 v2.0.0/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsr
 github.com/cpuguy83/go-md2man/v2 v2.0.1/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/cue-sh/playground v0.0.0-20220423053957-f9b3b4b3013a h1:PJ15H/rnb/P6Sa7B76px0EnjsYJHhEajBfpq4gAFEM0=
 github.com/cue-sh/playground v0.0.0-20220423053957-f9b3b4b3013a/go.mod h1:6zoBU0AIdK7t9M0MhUuurp4r+1z98nK/Xc/wLz8KmyU=
+github.com/cue-sh/playground v0.0.0-20220427140419-d88e06d53ef4 h1:crI5lXGAMcMTDhBW6tZrkmU6n72LE5pOM2SYNmafQvA=
+github.com/cue-sh/playground v0.0.0-20220427140419-d88e06d53ef4/go.mod h1:6zoBU0AIdK7t9M0MhUuurp4r+1z98nK/Xc/wLz8KmyU=
+github.com/cue-sh/playground v0.0.0-20220427174303-4c9bd3cf5202 h1:K5wsLzTzJlMpwUb+IKpB1Vf6Uqb/ITsMZNDQwnecdIo=
+github.com/cue-sh/playground v0.0.0-20220427174303-4c9bd3cf5202/go.mod h1:6zoBU0AIdK7t9M0MhUuurp4r+1z98nK/Xc/wLz8KmyU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
