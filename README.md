@@ -19,9 +19,6 @@ The site is deployed and hosted via [Netlify](https://www.netlify.com/).
 ### Developing the site locally
 
 ```bash
-# Ensure you have the correct version of the docsy theme
-git submodule update -f --init --recursive
-
 # Install Hugo's Node requirements
 npm install
 

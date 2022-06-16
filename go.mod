@@ -10,6 +10,8 @@ require (
 
 require (
 	github.com/cockroachdb/apd/v2 v2.0.1 // indirect
+	github.com/google/docsy v0.2.0 // indirect
+	github.com/google/docsy/dependencies v0.2.0 // indirect
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect
 	github.com/pkg/errors v0.8.1 // indirect
