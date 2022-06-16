@@ -31,7 +31,6 @@ then
 fi
 
 # Main site
-git submodule update -f --init --recursive
 npm install
 go generate ./...
 hugo $@
