@@ -56,7 +56,7 @@ expressive, yet intuitive and compact, typing capabilities.
 // A spec is of type #Spec
 spec: #Spec
 spec: {
-  knid: "Homo Sapiens" // error, misspelled field
+  kind: "Homo Sapiens" // error, misspelled field
 
   name: first: "Jane"
   name: last:  "Doe"
