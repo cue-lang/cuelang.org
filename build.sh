@@ -22,12 +22,6 @@ then
 	# Now force cuelang.org/go  through the proxy so that the /pkg.go.dev redirect works
 	go get -d cuelang.org/go@$(go list -m -f={{.Version}} cuelang.org/go)
 	go mod tidy
-
-	# Update the playground. The dist.sh script run below upgrades to the tip of
-	# CUE
-	cd play
-	GOPROXY=direct go get -d github.com/cue-sh/playground@main
-	cd ..
 fi
 
 # Main site
@@ -44,8 +38,4 @@ if [ "$modCache" = "" ]
 then
 	modCache=${GOPATH%%:*}/pkg/mod
 fi
-cd play
-go mod download
-mkdir moddownload
-unzip -d moddownload $modCache/cache/download/$(go list -m -f={{.Path}}/@v/{{.Version}} github.com/cue-sh/playground).zip
-bash moddownload/$(go list -m -f={{.Path}}@{{.Version}} github.com/cue-sh/playground)/dist.sh
+bash play/dist.sh

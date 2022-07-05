@@ -24,12 +24,13 @@ git submodule update -f --init --recursive
 
 # Install Hugo's Node requirements
 npm install
+```
 
-# Generate the language spec and tour
-go generate ./...
+To serve the site locally run:
 
-# Serve (with auto-reload)
-hugo serve -D
+```
+./serve.sh        # In one terminal
+./play/run.sh     # In another terminal
 ```
 
 ### Updating the language spec and tour for cuelang.org

@@ -14,23 +14,48 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.14.2'
     - name: Install Go
       uses: actions/setup-go@v2
       with:
-        go-version: '1.17.3'
+        go-version: '1.18.1'
     - name: Ensure latest CUE
       # The latest git clean check ensures that this call is effectively
       # side effect-free. Using GOPROXY=direct ensures we don't accidentally
       # hit a stale cache in the proxy.
       run: |
         GOPROXY=direct go get -d cuelang.org/go@latest
+        go mod tidy
         cd play
-        GOPROXY=direct go get -d github.com/cue-sh/playground@latest
+        GOPROXY=direct go get -d cuelang.org/go@latest
+        go mod tidy
+    - name: Re-vendor play
+      run: ./_scripts/revendorToolsInternal.sh
+      working-directory: ./play
     - name: Regenerate
       run: go generate ./...
+    - name: Regenerate play
+      run: go generate $(go list ./... | grep -v cuelang_org_go_internal)
+      working-directory: ./play
     - name: Test
       run: go test ./...
+    - name: Test play dist
+      run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) CUELANG_ORG_DIST=$(mktemp -d) bash dist.sh
+      working-directory: ./play
     - name: Check module is tidy
       run: go mod tidy
+    - name: Check play module is tidy
+      run: go mod tidy
+      working-directory: ./play
     - name: Verify commit is clean
       run: test -z "$(git status --porcelain)" || (git status; git diff; false)
+    - name: Test play dist at tip
+      # Note we intentially run this after the porcelain check because
+      # this step intentionally updates the play/go.{mod,sum}. This step
+      # purely exists to exercise this code path and determine whether it
+      # passes/fails.
+      run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) CUELANG_ORG_DIST=$(mktemp -d) BRANCH=tip bash dist.sh
+      working-directory: ./play
