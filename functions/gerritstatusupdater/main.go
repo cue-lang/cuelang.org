@@ -12,26 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// serverless-local emulates Netlify serverless function deployment on a local
-// development machine, serving functions from:
-//
-//     http://localhost:8081/.netlify/functions/$function
-//
 package main
 
 import (
-	"log"
-	"net/http"
-
+	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/cue-lang/cuelang.org/internal/functions"
 	"github.com/cue-lang/cuelang.org/internal/functions/gerritstatusupdater"
-	"github.com/cue-lang/cuelang.org/internal/functions/snippets"
 )
 
 func main() {
-	http.HandleFunc("/.netlify/functions/snippets", snippets.Function{DevelopmentMode: true}.ServeHTTP)
-	http.HandleFunc("/.netlify/functions/gerritstatusupdater", gerritstatusupdater.Function{DevelopmentMode: true}.ServeHTTP)
-
-	// In development mode, the playground TypeScript application knows
-	// to query localhost:8081 for the /.netlify/functions/snippets endpoint
-	log.Fatal(http.ListenAndServe(":8081", nil))
+	handler := functions.BuildHandler(gerritstatusupdater.Function{}.ServeHTTP)
+	lambda.Start(handler)
 }
