@@ -1,4 +1,4 @@
-// Copyright 2020 The CUE Authors
+// Copyright 2022 CUE Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+// package snippets defines a serverless function that proxies
+// requests/responses to/from the Go playground, for the CUE playground.
+//
+// The "interface" of such a package is that it declares a Function type that
+// implements net/http.Handler.
+package snippets
 
 import (
 	"fmt"
@@ -22,8 +27,17 @@ import (
 
 const userAgent = "cuelang.org/play/ playground snippet fetcher"
 
-func handle(w http.ResponseWriter, r *http.Request) {
-	cors(w)
+// Function is a type which implements net/http.Handler, a handler which
+// implements the serverless function for the CUE playground snippet handling.
+type Function struct {
+	DevelopmentMode bool
+}
+
+// ServeHTTP is the implementation of the snippets serverless function.
+func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if fn.DevelopmentMode {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+	}
 	f := func(format string, args ...interface{}) {
 		fmt.Fprintf(w, format, args...)
 	}
@@ -64,9 +78,4 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		}
 		io.Copy(w, resp.Body)
 	}
-}
-
-func main() {
-	http.HandleFunc("/.netlify/functions/snippets", handle)
-	serve()
 }

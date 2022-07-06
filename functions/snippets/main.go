@@ -12,21 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//go:build netlify
-// +build netlify
-
 package main
 
 import (
-	"log"
-	"net/http"
-
-	"github.com/apex/gateway"
+	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/cue-lang/cuelang.org/internal/functions"
+	"github.com/cue-lang/cuelang.org/internal/functions/snippets"
 )
 
-func serve() {
-	log.Fatal(gateway.ListenAndServe(":8080", nil))
-}
-
-func cors(w http.ResponseWriter) {
+func main() {
+	handler := functions.BuildHandler(snippets.Function{}.ServeHTTP)
+	lambda.Start(handler)
 }

@@ -4,14 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let distRoot = path.join(__dirname, "..");
 
-if (process.env.NETLIFY == "true") {
-	if (process.env.CUELANG_ORG_DIST == "") {
-		console.log("Unable to read CUELANG_ORG_DIST environment variable");
-		process.exit(1);
-	}
-	distRoot = process.env.CUELANG_ORG_DIST;
-}
-
 let distDir = path.join(distRoot, '_public', 'play');
 
 module.exports = {

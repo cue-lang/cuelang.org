@@ -31,11 +31,4 @@ go generate ./...
 hugo $@
 
 # CUE playground
-export GOBIN=$PWD/_functions
-export CUELANG_ORG_DIST=$PWD
-modCache=$(go env GOMODCACHE)
-if [ "$modCache" = "" ]
-then
-	modCache=${GOPATH%%:*}/pkg/mod
-fi
-./play/build.bash
+bash play/build.bash

@@ -1,4 +1,4 @@
-// Copyright 2020 The CUE Authors
+// Copyright 2022 CUE Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,20 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//go:build !netlify
-// +build !netlify
-
+// serverless-local emulates Netlify serverless function deployment on a local
+// development machine, serving functions from:
+//
+//     http://localhost:8081/.netlify/functions/$function
+//
 package main
 
 import (
 	"log"
 	"net/http"
+
+	"github.com/cue-lang/cuelang.org/internal/functions/snippets"
 )
 
-func serve() {
-	log.Fatal(http.ListenAndServe(":8081", nil))
-}
+func main() {
+	http.HandleFunc("/.netlify/functions/snippets", snippets.Function{DevelopmentMode: true}.ServeHTTP)
 
-func cors(w http.ResponseWriter) {
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	// In development mode, the playground TypeScript application knows
+	// to query localhost:8081 for the /.netlify/functions/snippets endpoint
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }

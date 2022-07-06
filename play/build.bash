@@ -11,10 +11,8 @@ set -eux
 #
 # This script expects the following environment variables to have been set:
 #
-# * GOBIN - the target for serverless functions
 # * NETLIFY_BUILD_BASE - the root of the netlify build, within which there will
 #   be a cache directory
-# * CUELANG_ORG_DIST - the directory into which we should run dist
 
 # cd to the directory containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -43,13 +41,9 @@ then
 	rsync -a node_modules/ $NETLIFY_BUILD_BASE/cache/playground_node_modules
 fi
 
-# Dist
-echo "Install serverless functions"
-go install -tags netlify github.com/cue-sh/playground/functions/snippets
-
 echo "Building WASM backend"
 GOOS=js GOARCH=wasm go build -o main.wasm
 cp $(go env GOROOT)/misc/wasm/wasm_exec.js ./src
 
-echo "Running dist into $CUELANG_ORG_DIST"
+echo "Running npm dist"
 npm run dist
