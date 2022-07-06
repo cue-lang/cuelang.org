@@ -4,7 +4,6 @@
 /content/en/docs/references/spec.md
 /content/en/docs/tutorials/tour/*/*.md
 !/content/en/docs/tutorials/tour/*/_index.md
-/_functions
 /play/mod
 /play/moddownload/
 /play/node_modules/

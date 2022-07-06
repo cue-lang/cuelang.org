@@ -43,7 +43,7 @@ jobs:
     - name: Test
       run: go test ./...
     - name: Test play dist
-      run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) CUELANG_ORG_DIST=$(mktemp -d) ./build.bash
+      run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) ./build.bash
       working-directory: ./play
     - name: Check module is tidy
       run: go mod tidy
@@ -57,5 +57,5 @@ jobs:
       # this step intentionally updates the play/go.{mod,sum}. This step
       # purely exists to exercise this code path and determine whether it
       # passes/fails.
-      run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) CUELANG_ORG_DIST=$(mktemp -d) BRANCH=tip ./build.bash
+      run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) BRANCH=tip ./build.bash
       working-directory: ./play

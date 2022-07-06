@@ -1,5 +1,5 @@
 [build]
-  functions = "_functions"
+  functions = "functions"
   publish = "_public"
   command = "bash build.bash"
 
