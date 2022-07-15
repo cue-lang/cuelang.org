@@ -379,5 +379,9 @@ func (fn Function) buildGerritHubClient(repo, workflowPath string) (*gerrit.Clie
 // a prefix as required.
 func envJoin(parts ...string) string {
 	parts = append([]string{EnvPrefix}, parts...)
-	return strings.Join(parts, "_")
+	res := strings.Join(parts, "_")
+	res = strings.ReplaceAll(res, ".", "_")
+	res = strings.ReplaceAll(res, "-", "_")
+	res = strings.ReplaceAll(res, "/", "_")
+	return res
 }
