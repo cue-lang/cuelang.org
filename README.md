@@ -29,8 +29,8 @@ npm install
 To serve the site locally run:
 
 ```
-./serve.sh        # In one terminal
-./play/run.sh     # In another terminal
+./serve.bash        # In one terminal
+./play/run.bash     # In another terminal
 ```
 
 ### Updating the language spec and tour for cuelang.org
