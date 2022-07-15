@@ -1,7 +1,7 @@
 [build]
   functions = "_functions"
   publish = "_public"
-  command = "sh build.sh"
+  command = "bash build.bash"
 
 [build.environment]
 HUGO_ENV = "production"
@@ -10,7 +10,7 @@ NODE_VERSION = "16.13.0"
 HUGO_VERSION = "0.89.4"
 
 [context.deploy-preview]
-command = "sh build.sh -b $DEPLOY_URL"
+command = "bash build.bash -b $DEPLOY_URL"
 
 [[redirects]]
   from = "https://cuelang.org/issue/*"

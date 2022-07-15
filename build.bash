@@ -2,7 +2,7 @@
 
 set -eux
 
-# build.sh is used by netlify when deploying the site
+# build.bash is used by netlify when deploying the site
 
 if [ "$NETLIFY" != "true" ]
 then
@@ -38,4 +38,4 @@ if [ "$modCache" = "" ]
 then
 	modCache=${GOPATH%%:*}/pkg/mod
 fi
-bash play/dist.sh
+./play/build.bash

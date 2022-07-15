@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
+
 set -eux
 
-# dist.sh is used by netlify when deploying the CUE playground within the wider
-# cuelang.org site. It will, therefore, be run with a working directory that is
-# within the module cache. Given we need to run npm install etc, this will fail
-# because in this context all files/directories are read-only. Hence we make a
-# copy of "ourselves" to a temp directory, make that writable, then run through
-# all our dist steps.
+# build.bash is used by netlify when deploying the CUE playground within the
+# wider cuelang.org site. It will, therefore, be run with a working directory
+# that is within the module cache. Given we need to run npm install etc, this
+# will fail because in this context all files/directories are read-only. Hence
+# we make a copy of "ourselves" to a temp directory, make that writable, then
+# run through all our dist steps.
 #
 # This script expects the following environment variables to have been set:
 #
@@ -23,7 +24,7 @@ then
 	 # We need to update our dependencies (as the main module)
 	 # to the tip of CUE
 	 go get -d cuelang.org/go@master
-	 bash ./_scripts/revendorToolsInternal.sh
+	 ./_scripts/revendorToolsInternal.bash
 	 go generate $(go list ./... | grep -v cuelang_org_go_internal)
 fi
 
