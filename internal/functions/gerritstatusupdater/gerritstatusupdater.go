@@ -318,6 +318,27 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		b, _ := json.MarshalIndent(ri, "", "  ")
 		log.Printf("gerrit.SetReview %s/%s with\n%s\n", changeID, revisionID, b)
 	}
+
+	// We currently see a whole load of errors in the GitHub webhook logs:
+
+	//    error decoding lambda response: invalid status code returned from lambda: 0
+
+	// However, these do not correspond to any errors in the Netlify function
+	// logs.
+
+	// We use github.com/apex/gateway in order to reuse regular
+	// net/http.HandleFunc handlers as part of the AWS Lambda setup. gateway is
+	// therefore an adapter between net/http and AWS Lambda setup. However, it
+	// appears that gateway to does not have any handling for a situation where
+	// no HTTP status code is written. Currently, it appears that not writing
+	// an HTTP status code as part of the net/http.HandleFunc handler results
+	// in a 0 status code being return to the AWS Lambda handler. Contrast this
+	// with the behaviour of regular net/http.ListenAndServe, which writes a
+	// 200 in case no status code has been written.
+
+	// Fix this by simply writing a 200 status OK in case we return
+	// successfully.
+	w.WriteHeader(http.StatusOK)
 }
 
 // buildGitHubClient returns a GitHub client, deriving authentication for the
