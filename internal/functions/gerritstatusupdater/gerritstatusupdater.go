@@ -155,6 +155,15 @@ const (
 	EnvDebug = EnvPrefix + "DEBUG"
 )
 
+const (
+	// GitHub does not define constants for status and conclusion fields
+	// on workflow jobs and runs. Define some here.
+
+	workflowStatusQueued      = "queued"
+	workflowStatusCompleted   = "completed"
+	workflowConclusionSuccess = "success"
+)
+
 // ServeHTTP is the implementation of the gerritstatusupdater serverless
 // function.
 func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -215,8 +224,9 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	case *github.WorkflowJobEvent:
 		job := event.WorkflowJob
 
-		// We only care about each job failure
-		if *job.Status != "completed" || *job.Conclusion != "failure" {
+		// We only care about jobs when they are in a completed state,
+		// and then anything other than success is failure.
+		if *job.Status != workflowStatusCompleted || *job.Conclusion == workflowConclusionSuccess {
 			return
 		}
 
@@ -266,9 +276,9 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 		// We only care about the start of a workflow or its success
 		switch {
-		case *run.Status == "queued":
+		case *run.Status == workflowStatusQueued:
 			msg = fmt.Sprintf("Started %s run... see progress at %s", workflowName, *run.HTMLURL)
-		case *run.Status == "completed":
+		case *run.Status == workflowStatusCompleted:
 			// Best-efforts delete build branch regardless of conclusion because
 			// this is the end of the workflow run. If this fails the worst that
 			// will happen is that we build up old build branches. More important
@@ -278,7 +288,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			}
 			ghclient.Git.DeleteRef(context.Background(), path.Dir(repo), path.Base(repo), "heads/"+headBranch)
 
-			if *run.Conclusion != "success" {
+			if *run.Conclusion != workflowConclusionSuccess {
 				return
 			}
 
