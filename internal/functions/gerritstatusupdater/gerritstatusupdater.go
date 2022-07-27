@@ -95,7 +95,7 @@ import (
 )
 
 var (
-	debug = os.Getenv(EnvDebug) != ""
+	dryRun = os.Getenv(EnvDryRun) != ""
 )
 
 // Function is a type which implements net/http.Handler, a handler which
@@ -147,26 +147,88 @@ const (
 	// first validating it.
 	EnvWebhookSecret = EnvPrefix + "WEBHOOK_SECRET"
 
-	// EnvDebug prints debug information when set to something other than the
-	// empty strying. This is useful when running this serverless function
-	// locally. When EnvDebug is set, nothing is actually written to GerritHub,
-	// instead the messages that would be sent to GerritHub are written to
-	// stdout.
-	EnvDebug = EnvPrefix + "DEBUG"
+	// EnvDryRun can be set to a non-empty string to prevent any actual "writes"
+	// happening to either GitHub and/or GerritHub.
+	EnvDryRun = EnvPrefix + "DRYRUN"
 )
 
 const (
-	// GitHub does not define constants for status and conclusion fields
-	// on workflow jobs and runs. Define some here.
+	// GitHub does not define constants for event action, status and conclusion
+	// fields on workflow jobs and runs. Define some here.
+	//
+	// The status and conclusion values are shared between workflow runs and
+	// jobs. This is not officially documented at
+	// https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads,
+	// but it's demonstrably so in practice... which is all we've got.
 
-	workflowStatusQueued      = "queued"
-	workflowStatusCompleted   = "completed"
+	eventActionRequested  = "requested"
+	eventActionInProgress = "in_progress"
+	eventActionCompleted  = "completed"
+
+	workflowStatusInProgress = "in_progress"
+	workflowStatusCompleted  = "completed"
+
 	workflowConclusionSuccess = "success"
 )
 
 // ServeHTTP is the implementation of the gerritstatusupdater serverless
 // function.
 func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+
+	// c (context) represents the state we build up as we receive and handle
+	// events. We capture this as a struct to simply the logging of context as
+	// we progressively populate the state.
+	//
+	// Do not put anything sensitive in this struct. It might be logged.
+	var c struct {
+		// DeliveryID is the ID associated with the webhook event
+		// sent by GitHub.
+		DeliveryID string
+
+		// Repo is "{owner}/{Repo}" (not any URL, and not just the Repo name).
+		Repo string `json:",omitempty"`
+
+		// WorkflowRunID is the ID of the workflow run for which we either
+		// receive an event directly or via one of its associated workflow jobs.
+		WorkflowRunID *int64 `json:",omitempty"`
+
+		// WorkflowPath is the path to yaml file that defines the workflow
+		// declaration behind the workflow run and its jobs.
+		WorkflowPath string `json:",omitempty"`
+
+		// HeadBranch is the branch for which a workflow is triggered.
+		HeadBranch string `json:",omitempty"`
+	}
+
+	var (
+		// workflowName is the name of the workflow run behind the event
+		workflowName string
+
+		// msg is the human message on the Gerrit CL review
+		msg string
+
+		// result is set on the Gerrit CL review as a score.
+		result *int
+	)
+
+	c.DeliveryID = github.DeliveryID(r)
+
+	// Set up simple logging that closes over certain variables
+	if os.Getenv("NETLIFY") == "true" {
+		log.SetFlags(0) // we get time information from Netlify
+	}
+	// We also get a unique prefix from Netlify, but build
+	// a context-based prefix ourselves here too.
+	log.SetPrefix("")
+	logf := func(format string, args ...interface{}) {
+		b, err := json.Marshal(c)
+		if err != nil {
+			panic(fmt.Errorf("failed to marshal context for log: %v", err))
+		}
+		args = append([]interface{}{b}, args...)
+		log.Printf("%s: "+format, args...)
+	}
+
 	defer func() {
 		switch err := recover(); err := err.(type) {
 		case error:
@@ -198,16 +260,6 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}()
 
-	// The following variables will be populated based on the type of the webhook event
-
-	// repo is "{owner}/{repo}" (not any URL, and not just the repo name)
-	var repo string
-	var workflowPath string
-	var workflowName string
-	var msg string
-	var result *int
-	var headBranch string
-
 	// Validate the payload
 	payload, err := github.ValidatePayload(r, []byte(os.Getenv(EnvWebhookSecret)))
 	if err != nil {
@@ -223,15 +275,17 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch event := event.(type) {
 	case *github.WorkflowJobEvent:
 		job := event.WorkflowJob
+		c.Repo = *event.Repo.FullName
+		c.WorkflowRunID = job.RunID
 
 		// We only care about jobs when they are in a completed state,
 		// and then anything other than success is failure.
-		if *job.Status != workflowStatusCompleted || *job.Conclusion == workflowConclusionSuccess {
+		if job.GetStatus() != workflowStatusCompleted || job.GetConclusion() == workflowConclusionSuccess {
+			logf("workflow job %v status=%v, conclusion=%v; nothing to do", *job.ID, job.GetStatus(), job.GetConclusion())
 			return
 		}
 
-		repo = *event.Repo.FullName
-		ghclient, err := fn.buildGitHubClient(repo)
+		ghclient, err := fn.buildGitHubClient(c.Repo)
 		if err != nil {
 			panic(err)
 		}
@@ -247,48 +301,100 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			panic(fmt.Errorf("failed to get workflow run for id %v: %w", github.Stringify(job.RunID), err))
 		}
 
+		c.HeadBranch = *wr.HeadBranch
+
 		// The workflowRun does not include information like path about the workflow
 		// itself, so we need to get that too.
 		wf, _, err := ghclient.Actions.GetWorkflowByID(ctx, *event.Repo.Owner.Login, *event.Repo.Name, *wr.WorkflowID)
 		if err != nil {
 			panic(fmt.Errorf("failed to get workflow for id %v: %w", github.Stringify(wr.WorkflowID), err))
 		}
-		workflowPath = *wf.Path
+		c.WorkflowPath = *wf.Path
 		workflowName = *wf.Name
 
 		// Tidy up context
 		cancel()
 
-		headBranch = *wr.HeadBranch
 		msg = fmt.Sprintf("%s run job failed for %s; see %s for more details", workflowName, strings.Join(job.Labels, " "), *job.HTMLURL)
 		result = github.Int(-1)
 	case *github.WorkflowRunEvent:
 		run := event.WorkflowRun
+		c.Repo = *event.Repo.FullName
+		c.WorkflowRunID = run.ID
+		c.HeadBranch = *run.HeadBranch
+		c.WorkflowPath = *event.Workflow.Path
 
-		repo = *event.Repo.FullName
-		workflowPath = *event.Workflow.Path
-		headBranch = *run.HeadBranch
-		ghclient, err := fn.buildGitHubClient(repo)
+		ghclient, err := fn.buildGitHubClient(c.Repo)
 		if err != nil {
 			panic(err)
 		}
 		workflowName = *event.Workflow.Name
 
-		// We only care about the start of a workflow or its success
-		switch {
-		case *run.Status == workflowStatusQueued:
+		// We only care about the start of a workflow or its completion.
+		//
+		// TODO: GitHub report incorrect workflow status and conclusion (at
+		// least) when a workflow has succeeded. Reported in support ticket
+		// #1715417.
+		//
+		// The event action appears to be reliable, so we use that as a proxy for
+		// workflow run status.
+		//
+		// From examples seen in the wild, when action event is completed and the
+		// workflow run is a succeess, either:
+		//
+		// * workflow run status = in_progress and conclusion = null.
+		// * workflow run status = completed and conclusion = success;
+		//
+		// The logic below therefore reflects a workaround for this bug.
+		//
+		// As a precaution against workflow (job|run) status and conclusion being
+		// unexpected values, we use Get* methods when comparing against string
+		// values to avoid potential nil pointer dereferences.
+		//
+		// When this bug is fixed, switch back to the workflow run status and
+		// conclusion (including the default log case).
+		switch ea := *event.Action; ea {
+		case eventActionRequested:
+			// A bug on top of a bug? The in_progress event action (and workflow
+			// run status) only gets notified "some time" after the workflow run
+			// has actually started. In on case, the notification came through 4
+			// minutes after the first job had started. Indeed two jobs had
+			// already completed by this stage. Hence We use the requested event
+			// to roughly signal that things have started, even though all jobs
+			// might still be queued.
 			msg = fmt.Sprintf("Started %s run... see progress at %s", workflowName, *run.HTMLURL)
-		case *run.Status == workflowStatusCompleted:
+		case eventActionCompleted:
 			// Best-efforts delete build branch regardless of conclusion because
 			// this is the end of the workflow run. If this fails the worst that
 			// will happen is that we build up old build branches. More important
 			// though that we update the CL.
-			if debug {
-				log.Printf("deleting branch %q in repo %q\n", headBranch, repo)
+			logf("deleting branch %q in repo %q\n", c.HeadBranch, c.Repo)
+			if !dryRun {
+				ghclient.Git.DeleteRef(context.Background(), path.Dir(c.Repo), path.Base(c.Repo), "heads/"+c.HeadBranch)
 			}
-			ghclient.Git.DeleteRef(context.Background(), path.Dir(repo), path.Base(repo), "heads/"+headBranch)
 
-			if *run.Conclusion != workflowConclusionSuccess {
+			// In case any jobs have done anything other that succeed, they will
+			// already have reported to the CL. Otherwise, we only need to do
+			// something in the case the workflow run has succeeded. Because of
+			// the aforementioned GitHub bug we have a couple of definitions of
+			// success. Expressed as a switch statement with fallthrough because
+			// otherwise the logic inversion makes the buggy states harder to
+			// understand.
+			switch {
+			case run.GetStatus() == workflowStatusInProgress && run.Conclusion == nil:
+				// Given event action is completed, this is a known (buggy) state
+				// for a successfuly workflow run.
+				//
+				// Fallthrough to mark CL as success.
+			case run.GetStatus() == workflowStatusCompleted && run.GetConclusion() == workflowConclusionSuccess:
+				// The proper workflow run state for a completed, successful
+				// workflow run.
+				//
+				// Fallthrough to mark CL as success.
+			default:
+				// Given the current GitHub bug, no idea what combination of states
+				// and conclusions we might see here. Log for information
+				logf("workflow run status %v conclusion %v; nothing to do (workflow jobs already reported)", run.GetStatus(), run.GetConclusion())
 				return
 			}
 
@@ -297,23 +403,23 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			result = github.Int(1)
 
 		default:
+			logf("event action %s, workflow run status %v conclusion %v; ignoring", ea, run.GetStatus(), run.GetConclusion())
 			return
 		}
 	case *github.PingEvent:
+		logf("ping event; ignoring")
 		return
 	default:
 		panic(fmt.Errorf("unhandled event type %T", event))
 	}
 
 	// Build a GerritHub client
-	client, err := fn.buildGerritHubClient(repo, workflowPath)
+	client, err := fn.buildGerritHubClient(c.Repo, c.WorkflowPath)
 	if err != nil {
 		panic(err)
 	}
 	if client == nil {
-		if debug {
-			log.Printf("no configuration specified for repo-workflowPath %q\n", envJoin(repo, workflowPath, ""))
-		}
+		logf("no configuration specified for repo-workflowPath %q\n", envJoin(c.Repo, c.WorkflowPath, ""))
 		return
 	}
 
@@ -322,9 +428,9 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// as far as gerritstatusupdater is concerned: it's simply
 	// used to namespace build branches, but also for workflows
 	// to conditionally run based on the first part.
-	headBranchParts := strings.Split(headBranch, "/")
+	headBranchParts := strings.Split(c.HeadBranch, "/")
 	if len(headBranchParts) != 3 {
-		panic(fmt.Errorf("head branch %q not in expected format", headBranch))
+		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
 	}
 	changeID, revisionID := headBranchParts[1], headBranchParts[2]
 
@@ -338,13 +444,12 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	if !debug {
+	b, _ := json.MarshalIndent(ri, "", "  ")
+	logf("gerrit.SetReview %s/%s with\n%s\n", changeID, revisionID, b)
+	if !dryRun {
 		if _, _, err := client.Changes.SetReview(changeID, revisionID, ri); err != nil {
 			panic(fmt.Errorf("failed to update gerrit: %w", err))
 		}
-	} else {
-		b, _ := json.MarshalIndent(ri, "", "  ")
-		log.Printf("gerrit.SetReview %s/%s with\n%s\n", changeID, revisionID, b)
 	}
 }
 
