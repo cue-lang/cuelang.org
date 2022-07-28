@@ -192,12 +192,30 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		// receive an event directly or via one of its associated workflow jobs.
 		WorkflowRunID *int64 `json:",omitempty"`
 
+		// WorkflowJobID is the ID of the workflow job, if the event relates to
+		// a workflow job. It is nil otherwise
+		WorkflowJobID *int64 `json:",omitempty"`
+
 		// WorkflowPath is the path to yaml file that defines the workflow
 		// declaration behind the workflow run and its jobs.
 		WorkflowPath string `json:",omitempty"`
 
 		// HeadBranch is the branch for which a workflow is triggered.
 		HeadBranch string `json:",omitempty"`
+
+		// EventType is the type of the webhook event
+		EventType string `json:",omitempty"`
+
+		// EventAction is the webhook event action
+		EventAction string `json:",omitempty"`
+
+		// WorkflowStatus is the workflow run or job (defined by EventType)
+		// status
+		WorkflowStatus string `json:",omitempty"`
+
+		// WorkflowConclusion is the workflow run or job (defined by EventType)
+		// conclusion
+		WorkflowConclusion string `json:",omitempty"`
 	}
 
 	var (
@@ -232,7 +250,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	defer func() {
 		switch err := recover(); err := err.(type) {
 		case error:
-			log.Printf("got an error: %v\n", err)
+			log.Printf("got an error: %v", err)
 			http.Error(w, err.Error(), 500)
 		case nil: // normal return
 			// We currently see a whole load of errors in the GitHub webhook logs:
@@ -275,13 +293,19 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch event := event.(type) {
 	case *github.WorkflowJobEvent:
 		job := event.WorkflowJob
+
 		c.Repo = *event.Repo.FullName
+		c.WorkflowJobID = job.ID
 		c.WorkflowRunID = job.RunID
+		c.EventAction = event.GetAction()
+		c.EventType = "workflow job"
+		c.WorkflowConclusion = job.GetConclusion()
+		c.WorkflowStatus = job.GetStatus()
 
 		// We only care about jobs when they are in a completed state,
 		// and then anything other than success is failure.
 		if job.GetStatus() != workflowStatusCompleted || job.GetConclusion() == workflowConclusionSuccess {
-			logf("workflow job %v status=%v, conclusion=%v; nothing to do", *job.ID, job.GetStatus(), job.GetConclusion())
+			logf("nothing to do")
 			return
 		}
 
@@ -319,10 +343,15 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		result = github.Int(-1)
 	case *github.WorkflowRunEvent:
 		run := event.WorkflowRun
+
 		c.Repo = *event.Repo.FullName
 		c.WorkflowRunID = run.ID
 		c.HeadBranch = *run.HeadBranch
 		c.WorkflowPath = *event.Workflow.Path
+		c.EventAction = event.GetAction()
+		c.EventType = "workflow run"
+		c.WorkflowConclusion = run.GetConclusion()
+		c.WorkflowStatus = run.GetStatus()
 
 		ghclient, err := fn.buildGitHubClient(c.Repo)
 		if err != nil {
@@ -363,14 +392,20 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			// to roughly signal that things have started, even though all jobs
 			// might still be queued.
 			msg = fmt.Sprintf("Started %s run... see progress at %s", workflowName, *run.HTMLURL)
+
+			// Log workflow run status and conclusion for information purposes (will
+			// help to confirm when GitHub have fixed the state bug).
+			logf("start of workflow run")
 		case eventActionCompleted:
 			// Best-efforts delete build branch regardless of conclusion because
 			// this is the end of the workflow run. If this fails the worst that
 			// will happen is that we build up old build branches. More important
 			// though that we update the CL.
-			logf("deleting branch %q in repo %q\n", c.HeadBranch, c.Repo)
 			if !dryRun {
-				ghclient.Git.DeleteRef(context.Background(), path.Dir(c.Repo), path.Base(c.Repo), "heads/"+c.HeadBranch)
+				_, err := ghclient.Git.DeleteRef(context.Background(), path.Dir(c.Repo), path.Base(c.Repo), "heads/"+c.HeadBranch)
+				if err != nil {
+					logf("failed to delete branch: %v", err)
+				}
 			}
 
 			// In case any jobs have done anything other that succeed, they will
@@ -394,16 +429,20 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			default:
 				// Given the current GitHub bug, no idea what combination of states
 				// and conclusions we might see here. Log for information
-				logf("workflow run status %v conclusion %v; nothing to do (workflow jobs already reported)", run.GetStatus(), run.GetConclusion())
+				logf("nothing to do (workflow jobs already reported)")
 				return
 			}
+
+			// Log workflow run status and conclusion for information purposes (will
+			// help to confirm when GitHub have fixed the state bug).
+			logf("end of workflow run")
 
 			// success
 			msg = fmt.Sprintf("%s run succeeded: %s", workflowName, *run.HTMLURL)
 			result = github.Int(1)
 
 		default:
-			logf("event action %s, workflow run status %v conclusion %v; ignoring", ea, run.GetStatus(), run.GetConclusion())
+			logf("ignoring")
 			return
 		}
 	case *github.PingEvent:
@@ -419,7 +458,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	if client == nil {
-		logf("no configuration specified for repo-workflowPath %q\n", envJoin(c.Repo, c.WorkflowPath, ""))
+		logf("no configuration specified for repo-workflowPath %q", envJoin(c.Repo, c.WorkflowPath, ""))
 		return
 	}
 
@@ -445,7 +484,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	b, _ := json.MarshalIndent(ri, "", "  ")
-	logf("gerrit.SetReview %s/%s with\n%s\n", changeID, revisionID, b)
+	logf("gerrit.SetReview %s/%s with\n%s", changeID, revisionID, b)
 	if !dryRun {
 		if _, _, err := client.Changes.SetReview(changeID, revisionID, ri); err != nil {
 			panic(fmt.Errorf("failed to update gerrit: %w", err))
