@@ -19,25 +19,25 @@ command = "bash build.bash -b $DEPLOY_URL"
   force = true
 
 [[redirects]]
-  from = "https://cuelang.org/issue/*"
+  from = "/issue/*"
   to = "https://github.com/cue-lang/cue/issues/:splat"
   status = 302
   force = true
 
 [[redirects]]
-  from = "https://cuelang.org/issues/*"
+  from = "/issues/*"
   to = "https://github.com/cue-lang/cue/issues/:splat"
   status = 302
   force = true
 
 [[redirects]]
-  from = "https://cuelang.org/discussion/*"
+  from = "/discussion/*"
   to = "https://github.com/cue-lang/cue/discussions/:splat"
   status = 302
   force = true
 
 [[redirects]]
-  from = "https://cuelang.org/releases/*"
+  from = "/releases/*"
   to = "https://github.com/cue-lang/cue/releases/:splat"
   status = 302
   force = true
