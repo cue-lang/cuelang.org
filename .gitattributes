@@ -1,4 +1,5 @@
 /content/en/docs/tutorials/kubernetes.md linguist-generated
 /content/en/pkg.go.dev.md linguist-generated
 /play/internal/cuelang_org_go_internal/**/* linguist-generated
-
+/content/en/docs/references/spec.md linguist-generated
+/content/en/docs/tutorials/tour/*/*.md linguist-generated
