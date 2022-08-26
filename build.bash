@@ -22,12 +22,12 @@ then
 	# Now force cuelang.org/go  through the proxy so that the /pkg.go.dev redirect works
 	go get -d cuelang.org/go@$(go list -m -f={{.Version}} cuelang.org/go)
 	go mod tidy
+	go generate ./...
 fi
 
 # Main site
 git submodule update -f --init --recursive
 npm install
-go generate ./...
 hugo $@
 
 # CUE playground

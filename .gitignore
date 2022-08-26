@@ -1,12 +1,6 @@
 /_public/
 /node_modules/
 /resources/
-/content/en/docs/references/spec.md
-/content/en/docs/tutorials/tour/*/*.md
-!/content/en/docs/tutorials/tour/*/_index.md
-/play/mod
-/play/moddownload/
 /play/node_modules/
-/play/src/wasm_exec.js
 /play/*.wasm
 /.hugo_build.lock
