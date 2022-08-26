@@ -23,7 +23,7 @@ then
 	 # to the tip of CUE
 	 go get -d cuelang.org/go@master
 	 ./_scripts/revendorToolsInternal.bash
-	 go generate $(go list ./... | grep -v cuelang_org_go_internal)
+	 go generate ./...
 fi
 
 if [ "${NETLIFY:-}" == "true" ]

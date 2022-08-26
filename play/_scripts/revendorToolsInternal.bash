@@ -24,7 +24,6 @@ fi
 unzip -q $modCache/cache/download/$path/@v/$version.zip
 popd > /dev/null
 
-regex='s+cuelang.org/go/internal+github.com/cue-sh/playground/internal/cuelang_org_go_internal+g'
 
 for i in "" filetypes encoding third_party/yaml
 do
@@ -32,8 +31,17 @@ do
 	find ./internal/cuelang_org_go_internal/$i -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} +
 done
 
+# Fix up import paths
+regex='s+cuelang.org/go/internal+github.com/cue-sh/playground/internal/cuelang_org_go_internal+g'
 find ./internal/cuelang_org_go_internal -name "*.go" -exec sed -i $regex {} +
+
+# Remove go:generate directives
+find ./internal/cuelang_org_go_internal -name "*.go" -exec sed -i '/^\/\/go:generate/d' {} +
+
+# Remove test files
 find ./internal/cuelang_org_go_internal/ -name "*_test.go" -exec rm {} +
+
+# Retain a copy of the license
 cp $td/$path@$version/LICENSE ./internal/cuelang_org_go_internal
 
 # 2022-02-09 - at the time of writing CUE tip causes
