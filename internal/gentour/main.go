@@ -34,6 +34,18 @@ import (
 	_ "cuelang.org/go/pkg"
 )
 
+const (
+	// oldTxtarExt is the file extension used for txtar archives prior to CL
+	// 542611.
+	//
+	// TODO once c1689bb becomes part of a non-prerelease version of CUE we can
+	// drop oldTxtarExt here and below.
+	oldTxtarExt = ".txt"
+
+	// txtarExt is the file extension used for txtar archives post CL 542611.
+	txtarExt = ".txtar"
+)
+
 func main() {
 	log.SetFlags(log.Lshortfile)
 
@@ -54,8 +66,7 @@ func main() {
 	}
 	srcDir := filepath.Join(strings.TrimSpace(cueDir.String()), "doc", "tutorial", "basics")
 	filepath.Walk(srcDir, func(path string, info os.FileInfo, err error) error {
-		if !strings.HasSuffix(path, ".txt") ||
-			filepath.Base(path) == "out.txt" {
+		if !(strings.HasSuffix(path, oldTxtarExt) || strings.HasSuffix(path, txtarExt)) || filepath.Base(path) == "out.txt" {
 			return nil
 		}
 
@@ -104,7 +115,7 @@ layout = "tutorial"
 [[- if .Out.Data -]]
 <i>$ [[ .Command ]]</i>
 <p>
-{{< highlight go >}}
+{{< highlight [[ .Out.Type ]] >}}
 [[ .Out.Data -]]
 {{< /highlight >}}
 [[end -]]
@@ -130,19 +141,31 @@ func generate(filename, srcDir string) {
 	}
 	filename = "." + filename[len(srcDir):]
 	filename = re.ReplaceAllLiteralString(filename, "")
-	filename = filename[:len(filename)-len(".txt")] + ".md"
+	// We use filepath.Ext() because the extension could be oldTxtarExt _or_
+	// txtarExt.
+	ext := filepath.Ext(filename)
+	filename = filename[:len(filename)-len(ext)] + ".md"
 	fmt.Println(weight, filename)
 
-	comments := strings.Split(string(a.Comment), "\n")[0]
-	comments = strings.TrimLeft(comments, "! ")
+	// There can only be one command per page. It will be the first non-comment
+	// line of the txtar comment. It might be prefixed by ! and/or exec.
+	var cmd string
+	for _, line := range strings.Split(string(a.Comment), "\n") {
+		if !strings.HasPrefix(line, "#") {
+			cmd = line
+			break
+		}
+	}
+	cmd = strings.TrimPrefix(cmd, "! ")
+	cmd = strings.TrimPrefix(cmd, "exec ")
 	page := &Page{
-		Command: comments,
+		Command: cmd,
 		Weight:  2000 + weight,
 	}
 
 	for _, f := range a.Files {
 		data := string(f.Data)
-		file := File{Name: f.Name, Data: data}
+		file := File{Name: f.Name, Data: data, Type: "go"}
 
 		switch s := f.Name; {
 		case s == "frontmatter.toml":
@@ -152,7 +175,7 @@ func generate(filename, srcDir string) {
 			page.Body = data
 
 		case strings.HasSuffix(s, ".cue"):
-			file.Type = "cue"
+			file.Type = "go" // because there is no CUE syntax highlighter yet
 			page.Inputs = append(page.Inputs, file)
 
 		case strings.HasSuffix(s, ".json"):
@@ -164,7 +187,7 @@ func generate(filename, srcDir string) {
 			page.Inputs = append(page.Inputs, file)
 
 		case strings.HasSuffix(s, "stdout-cue"):
-			file.Type = "cue"
+			file.Type = "go" // because there is no CUE syntax highlighter yet
 			page.Out = file
 
 		case strings.HasSuffix(s, "stdout-json"):
@@ -172,6 +195,7 @@ func generate(filename, srcDir string) {
 			page.Out = file
 
 		case strings.HasSuffix(s, "stderr"):
+			file.Type = "txt"
 			page.Out = file
 
 		default:

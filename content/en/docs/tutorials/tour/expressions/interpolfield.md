@@ -29,7 +29,7 @@ sandwich: {
 
 <div class="col-lg-6 ml-0"><i>$ cue eval genfield.cue</i>
 <p>
-{{< highlight go >}}
+{{< highlight txt >}}
 sandwich.butterAndCheese: reference "hasCheese" not found:
     ./genfield.cue:5:35
 {{< /highlight >}}

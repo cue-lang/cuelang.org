@@ -40,7 +40,7 @@ languages:
 
 <div class="col-lg-6 ml-0"><i>$ cue vet schema.cue data.yaml</i>
 <p>
-{{< highlight go >}}
+{{< highlight txt >}}
 languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
     ./schema.cue:3:8
     ./data.yaml:5:12
