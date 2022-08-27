@@ -16,7 +16,7 @@ import * as React from "react";
 import * as acemodule from "ace-builds";
 import { CUEVersion } from "./gen_cuelang_org_go_version";
 
-const editorFontSize = "11pt";
+const editorFontSize = 15;
 
 interface AppProps {
 	WasmAPI : WasmAPI;

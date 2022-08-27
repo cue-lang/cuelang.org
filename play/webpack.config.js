@@ -25,7 +25,7 @@ module.exports = {
 	module: {
 		rules: [
 			{ test: /\.tsx?$/, loader: 'ts-loader' },
-			{ test: /\.(s*)css$/, use:['style-loader','css-loader', 'sass-loader'] },
+			{ test: /\.(s*)css$/, use:['style-loader','css-loader'] },
 			{ test: /\.wasm$/, loader: 'file-loader', type: 'javascript/auto', options: {
 				name: '[name].[ext]'
 			} },
