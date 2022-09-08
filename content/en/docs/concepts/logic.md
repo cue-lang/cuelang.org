@@ -4,7 +4,7 @@ weight = 1
 description = "Learn about CUE's theoretical basis and what makes it different."
 mermaid = true
 +++
-This page explains the core concept on which pretty much everything that is CUE
+This page explains the core concept on which pretty much everything that CUE
 depends.
 It helps to get a top-down understanding and frame of reference,
 but it is not necessary for learning the language.
