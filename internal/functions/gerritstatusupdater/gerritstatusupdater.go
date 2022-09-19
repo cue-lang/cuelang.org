@@ -19,28 +19,28 @@
 // gerritstatusupdater works as follows (using the example of a trybot
 // workflow):
 //
-// * Project github.com/my/project defines at least two workflows: a trybot
-//   workflow that should be run for each CL/PR, and a repository dispatch
-//   workflow that is fired by running cmd/cueckoo runtrybot (see below).
-// * github.com/my/project is imported into GerritHub as
-//   review.gerrithub.io/q/project:my/project. github.com/my/project is
-//   now the mirror target of the GerritHub source of truth.
-// * github.com/my/project-trybot is established as the repository within
-//   which CI runs for CLs against review.gerrithub.io/q/project:my/project.
-//   This repository has no secrets and is basically an empty shell that
-//   defines a placeholder for the trybot workflow.
-// * Developers with write access to github.com/my/project use cmd/cueckoo to
-//   run trybots for CLs against review.gerrithub.io/q/project:my/project. This
-//   pushes a build branch named trybot/$changeID/$revisionID to
-//   github.com/my/project-trybot. This triggers the trybot workflow.
-// * Workflow events triggered by the running of the trybot workflow fire
-//   webhook events. gerritstatusupdater is configured in
-//   github.com/my/project-trybot as a consumer of those events.
-// * According to the configuration of gerritstatusupdater, those webhook
-//   events are converted into status updates on the CL that corresponds to the
-//   originating build branch (the Gerrit API works using the $changeID and
-//   $revisionID). The name of the workflow is used in the status updates written
-//   to Gerrit CLs.
+//   - Project github.com/my/project defines at least two workflows: a trybot
+//     workflow that should be run for each CL/PR, and a repository dispatch
+//     workflow that is fired by running cmd/cueckoo runtrybot (see below).
+//   - github.com/my/project is imported into GerritHub as
+//     review.gerrithub.io/q/project:my/project. github.com/my/project is
+//     now the mirror target of the GerritHub source of truth.
+//   - github.com/my/project-trybot is established as the repository within
+//     which CI runs for CLs against review.gerrithub.io/q/project:my/project.
+//     This repository has no secrets and is basically an empty shell that
+//     defines a placeholder for the trybot workflow.
+//   - Developers with write access to github.com/my/project use cmd/cueckoo to
+//     run trybots for CLs against review.gerrithub.io/q/project:my/project. This
+//     pushes a build branch named trybot/$changeID/$revisionID to
+//     github.com/my/project-trybot. This triggers the trybot workflow.
+//   - Workflow events triggered by the running of the trybot workflow fire
+//     webhook events. gerritstatusupdater is configured in
+//     github.com/my/project-trybot as a consumer of those events.
+//   - According to the configuration of gerritstatusupdater, those webhook
+//     events are converted into status updates on the CL that corresponds to the
+//     originating build branch (the Gerrit API works using the $changeID and
+//     $revisionID). The name of the workflow is used in the status updates written
+//     to Gerrit CLs.
 //
 // The only constraint that must be satisfied between github.com/my/project and
 // github.com/my/project-trybot is that the latter must define empty/shell
@@ -50,20 +50,20 @@
 // multiplex events from multiple disconnected workflows). Such an empty shell
 // would look something like this:
 //
-//    # .github/workfows/test.yml
-//    name: Test
-//    "on":
-//      push:
-//        branches:
-//          - 'ci/**'
-//    jobs:
-//      start:
-//        runs-on: ubuntu-20.04
-//        defaults:
-//          run:
-//            shell: bash
-//        steps:
-//          - run: 'echo hello world'
+//	# .github/workfows/test.yml
+//	name: Test
+//	"on":
+//	  push:
+//	    branches:
+//	      - 'ci/**'
+//	jobs:
+//	  start:
+//	    runs-on: ubuntu-20.04
+//	    defaults:
+//	      run:
+//	        shell: bash
+//	    steps:
+//	      - run: 'echo hello world'
 //
 // github.com/my/project would then have a workflow configuration such that
 // for a trybot run, the .github/workfows/test.yml file in the pushed build
@@ -74,7 +74,6 @@
 //
 // In the future, this servless function could well become a GitHub App
 // for convenience.
-//
 package gerritstatusupdater
 
 import (
@@ -481,6 +480,12 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		ri.Labels = map[string]string{
 			workflowName + "-Result": strconv.Itoa(*result),
 		}
+	}
+
+	// We only want to get the author's attention again if CI failed.
+	// In the other two cases (saying we have started, or passing), we don't.
+	if result == nil || *result == 1 {
+		ri.IgnoreAutomaticAttentionSetRules = true
 	}
 
 	b, _ := json.MarshalIndent(ri, "", "  ")

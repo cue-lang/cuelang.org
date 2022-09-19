@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	cuelang.org/go v0.4.3
-	github.com/andygrunwald/go-gerrit v0.0.0-20220608063906-28cf26f84ecc
+	github.com/andygrunwald/go-gerrit v0.0.0-20220917070846-2e881e2fb2b5
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/google/go-github/v45 v45.2.0
