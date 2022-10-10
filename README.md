@@ -10,6 +10,12 @@ repository.
 
 The site is deployed and hosted via [Netlify](https://www.netlify.com/).
 
+### Issue tracking
+
+Please raise all issues in the [main CUE
+repository](https://github.com/cue-lang/cue/issues), giving the title of the
+issue a `cuelang.org: ` prefix.
+
 ### Requirements for local development
 
 * [NodeJS](https://nodejs.org/) `== v14.17.3`
