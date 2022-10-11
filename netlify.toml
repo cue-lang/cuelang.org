@@ -37,6 +37,12 @@ command = "bash build.bash -b $DEPLOY_URL"
   force = true
 
 [[redirects]]
+  from = "/discussions/*"
+  to = "https://github.com/cue-lang/cue/discussions/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/releases/*"
   to = "https://github.com/cue-lang/cue/releases/:splat"
   status = 302
