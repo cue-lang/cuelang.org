@@ -19,13 +19,13 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 if [ "${NETLIFY:-}" == "true" ] && [ "${BRANCH:-}" == "tip" ]
 then
-	 # We need to update our dependencies (as the main module)
-	 # to the tip of CUE and regenerate. Otherwise we do not
-	 # want to regenerate (we should be relying on the files
- 	 # commited)
-	 go get -d cuelang.org/go@master
-	 ./_scripts/revendorToolsInternal.bash
-	 go generate ./...
+	# We need to update our dependencies (as the main module)
+	# to the tip of CUE and regenerate. Otherwise we do not
+	# want to regenerate (we should be relying on the files
+ 	# commited)
+	GOPROXY=direct go get cuelang.org/go@master
+	./_scripts/revendorToolsInternal.bash
+	go generate ./...
 fi
 
 if [ "${NETLIFY:-}" == "true" ]

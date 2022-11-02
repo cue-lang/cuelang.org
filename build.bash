@@ -18,7 +18,7 @@ env="production"
 if [ "$BRANCH" = "tip" ]
 then
 	env="tip"
-	GOPROXY=direct go get -d cuelang.org/go@master
+	GOPROXY=direct go get cuelang.org/go@master
 	# Now force cuelang.org/go  through the proxy so that the /pkg.go.dev redirect works
 	go get -d cuelang.org/go@$(go list -m -f={{.Version}} cuelang.org/go)
 	go mod tidy
