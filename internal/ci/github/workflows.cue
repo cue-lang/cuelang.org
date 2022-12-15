@@ -23,7 +23,22 @@ import (
 )
 
 workflows: [...{file: string, schema: (json.#Workflow & {})}]
-workflows: []
+workflows: [
+	{
+		// Note: the name of the file corresponds to the environment variable
+		// names for gerritstatusupdater. Therefore, this filename must only be
+		// change in combination with also updating the environment in which
+		// gerritstatusupdater is running for this repository.
+		//
+		// This name is also used by the CI badge in the top-level README.
+		file:   "trybot.yml"
+		schema: trybot
+	},
+	{
+		file:   "update_tip.yml"
+		schema: update_tip
+	},
+]
 
 // TODO: _#repositoryURL and _#unityURL should be extracted from codereview.cfg
 _#repositoryURL: "https://github.com/cue-lang/cue"
