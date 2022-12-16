@@ -13,7 +13,7 @@ CUE 的 Go APIs 在 [`cuelang.org/go`](https://pkg.go.dev/cuelang.org/go) 包中
 
 ### 从 Github 下载
 
-安装包支持多个操作系统，包括 Linux、Window、macOS，可以在 [CUE官方网站](https://cuelang.org/releases) 下载。
+安装包支持多个操作系统，包括 Linux、Window、macOS，可以在 [CUE官方网站](/releases) 下载。
 
 ### 使用 homebrew 安装
 
