@@ -26,7 +26,13 @@ update_tip: _base.#bashWorkflow & {
 	jobs: push: {
 		"runs-on": _#linuxMachine
 		steps: [
-			_base.#checkoutCode,
+			_base.#checkoutCode & {
+				// "pull_request" builds will by default use a merge commit,
+				// testing the PR's HEAD merged on top of the master branch.
+				// For consistency with Gerrit, avoid that merge commit entirely.
+				// This doesn't affect "push" builds, which never used merge commits.
+				with: ref: "${{ github.event.pull_request.head.sha }}"
+			},
 			json.#step & {
 				name: "Force push to tip"
 				run:  "git push -f origin master:tip"

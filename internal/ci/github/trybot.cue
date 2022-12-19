@@ -31,19 +31,22 @@ trybot: _base.#bashWorkflow & {
 
 	on: {
 		push: {
-			branches: [_#defaultBranch] // do not run PR branches
+			branches: ["trybot/*/*", _#defaultBranch, _base.#testDefaultBranch] // do not run PR branches
 		}
-		repository_dispatch: {}
-		pull_request: {
-			branches: ["**"]
-		}
+		pull_request: {}
 	}
 
 	jobs: {
 		test: {
 			"runs-on": _#linuxMachine
 			steps: [
-				_base.#checkoutCode,
+				_base.#checkoutCode & {
+					// "pull_request" builds will by default use a merge commit,
+					// testing the PR's HEAD merged on top of the master branch.
+					// For consistency with Gerrit, avoid that merge commit entirely.
+					// This doesn't affect "push" builds, which never used merge commits.
+					with: ref: "${{ github.event.pull_request.head.sha }}"
+				},
 				json.#step & {
 					name: "Install Node"
 					uses: "actions/setup-node@v3"
