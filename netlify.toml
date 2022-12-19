@@ -6,7 +6,7 @@
   command = "bash build.bash"
 
 [build.environment]
-GO_VERSION = "1.18.5"
+GO_VERSION = "1.19.3"
 HUGO_ENV = "production"
 HUGO_VERSION = "0.89.4"
 NODE_VERSION = "18.8.0"
