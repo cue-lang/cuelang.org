@@ -112,8 +112,10 @@ config: #config & {
 		  from = {{printf "%q" .from}}
 		  to = {{printf "%q" .to}}
 		  status = {{printf "%d" .status}}
-		  force = {{printf "%v" .force}}
+		  force = {{printf "%t" .force}}
 		{{end}}
 		"""
+
+	// TODO: move to encoding/toml when it exists. See cuelang.org/issue/68.
 	template.Execute(tmpl, #input)
 }
