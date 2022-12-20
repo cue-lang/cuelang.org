@@ -15,3 +15,8 @@ package core
 // netlifyCLIVersion is the version of the Netlify CLI used to deploy tip and
 // deploy previews of CLs
 #netlifyCLIVersion: "12.4.0"
+
+#netlifySites: {
+	cls: "cue-cls"
+	tip: "cue-tip"
+}

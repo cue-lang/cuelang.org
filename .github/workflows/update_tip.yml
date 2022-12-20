@@ -5,6 +5,7 @@ name: Update tip
   push:
     branches:
       - master
+concurrency: deploy
 jobs:
   push:
     runs-on: ubuntu-20.04
@@ -15,6 +16,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - name: Force push to tip
-        run: git push -f origin master:tip
+          ref: master
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.8.0
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.19.3
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 0.89.4
+          extended: true
+      - name: Tip dist
+        run: ./build.bash
+        env:
+          BRANCH: tip
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli@12.4.0
+      - name: Deploy tip
+        run: netlify deploy -f functions -d _public -m "Deploy tip" -s cue-tip --debug --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_TIP}}
