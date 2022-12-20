@@ -15,9 +15,13 @@
 package github
 
 import (
-	"github.com/cue-lang/cuelang.org/internal/ci/core"
+	"strings"
+	"strconv"
 
 	"github.com/SchemaStore/schemastore/src/schemas/json"
+
+	"github.com/cue-lang/cuelang.org/internal/ci/core"
+	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
 // The trybot workflow.
@@ -163,4 +167,22 @@ _#dist: json.#step & {
 _#tipDist: _#dist & {
 	name: "Tip dist"
 	env: BRANCH: "tip"
+}
+
+_#installNetlifyCLI: json.#step & {
+	name: "Install Netlify CLI"
+	run:  "npm install -g netlify-cli@\(core.#netlifyCLIVersion)"
+}
+
+// _#netlifyDeploy is used to push CLs for preview but also to deploy tip
+_#netlifyDeploy: json.#step & {
+	#prod: *false | bool
+	#site: string
+	let nc = netlify.config
+	let prod = [ if #prod {"--prod"}, ""][0]
+	let uSite = strings.ToUpper(strings.Replace(#site, "-", "_", -1))
+
+	name: string
+	run:  "netlify deploy -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
 }

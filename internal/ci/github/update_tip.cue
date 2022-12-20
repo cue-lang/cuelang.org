@@ -15,28 +15,39 @@
 package github
 
 import (
-	"github.com/SchemaStore/schemastore/src/schemas/json"
+	"github.com/cue-lang/cuelang.org/internal/ci/core"
 )
 
 // The update_tip workflow. Keeps the tip branch in "sync" with master.
 update_tip: _base.#bashWorkflow & {
 
 	name: "Update tip"
-	on: push: branches: [_#defaultBranch]
+	on: {
+		push: branches: [_#defaultBranch]
+	}
+
+	// Ensure we only ever have a single tip deploy running at a time. This
+	// avoids any potential race condition between concurrent deploys of
+	// "latest".
+	concurrency: "deploy"
+
 	jobs: push: {
 		"runs-on": _#linuxMachine
 		steps: [
 			_base.#checkoutCode & {
-				// "pull_request" builds will by default use a merge commit,
-				// testing the PR's HEAD merged on top of the master branch.
-				// For consistency with Gerrit, avoid that merge commit entirely.
-				// This doesn't affect "push" builds, which never used merge commits.
-				with: ref: "${{ github.event.pull_request.head.sha }}"
+				with: ref: _#defaultBranch
 			},
-			json.#step & {
-				name: "Force push to tip"
-				run:  "git push -f origin master:tip"
+			_#installNode,
+			_#installGo,
+			_#installHugo,
+			_#tipDist,
+			_#installNetlifyCLI,
+			_#netlifyDeploy & {
+				#prod: true
+				#site: core.#netlifySites.tip
+				name:  "Deploy tip"
 			},
 		]
 	}
+
 }
