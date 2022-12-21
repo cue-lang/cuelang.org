@@ -2,18 +2,11 @@
 
 set -eux
 
-# build.bash is used by netlify when deploying the site
+# build.bash is used to build the site ready for deploy.
 
-if [ "$NETLIFY" != "true" ]
-then
-	echo "Not on Netlify; cowardly refusing to run"
-	exit 1
-fi
-
-# If we are running on netlify (i.e. a deploy) and we are building tip then we
-# need to grab the master of our cuelang.org/go and main from
-# github.com/cue-sh/playground dependencies
-if [ "$BRANCH" = "tip" ]
+# If we are building tip then we need to grab the master of our cuelang.org/go
+# and main from github.com/cue-sh/playground dependencies
+if [ "${BRANCH:-}" = "tip" ]
 then
 	GOPROXY=direct go get cuelang.org/go@master
 	# Now force cuelang.org/go  through the proxy so that the /pkg.go.dev redirect works

@@ -15,6 +15,8 @@
 package github
 
 import (
+	"github.com/cue-lang/cuelang.org/internal/ci/core"
+
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 )
 
@@ -47,16 +49,9 @@ trybot: _base.#bashWorkflow & {
 					// This doesn't affect "push" builds, which never used merge commits.
 					with: ref: "${{ github.event.pull_request.head.sha }}"
 				},
-				json.#step & {
-					name: "Install Node"
-					uses: "actions/setup-node@v3"
-					with: {
-						"node-version": "18.9.0"
-					}
-				},
-				_base.#installGo & {
-					with: "go-version": "1.19.1"
-				},
+				_#installNode,
+				_#installGo,
+				_#installHugo,
 
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
@@ -136,6 +131,27 @@ trybot: _base.#bashWorkflow & {
 	_#modTidy: json.#step & {
 		name: string
 		run:  "go mod tidy"
+	}
+}
+
+_#installNode: json.#step & {
+	name: "Install Node"
+	uses: "actions/setup-node@v3"
+	with: {
+		"node-version": core.#nodeVersion
+	}
+}
+
+_#installGo: _base.#installGo & {
+	with: "go-version": core.#goVersion
+}
+
+_#installHugo: json.#step & {
+	name: "Install Hugo"
+	uses: "peaceiris/actions-hugo@v2"
+	with: {
+		"hugo-version": core.#hugoVersion
+		extended:       true
 	}
 }
 
