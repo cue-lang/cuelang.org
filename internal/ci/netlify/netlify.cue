@@ -19,7 +19,7 @@ package netlify
 import (
 	"text/template"
 
-	"github.com/cue-lang/cuelang.org/internal/ci/github"
+	"github.com/cue-lang/cuelang.org/internal/ci/core"
 )
 
 #config: {
@@ -54,9 +54,9 @@ config: #config & {
 		command:   "bash build.bash"
 		environment: {
 			HUGO_ENV:     "production"
-			GO_VERSION:   github.#pinnedReleaseGo
-			NODE_VERSION: github.#nodeVersion
-			HUGO_VERSION: github.#hugoVersion
+			GO_VERSION:   core.#pinnedReleaseGo
+			NODE_VERSION: core.#nodeVersion
+			HUGO_VERSION: core.#hugoVersion
 		}
 	}
 

@@ -47,16 +47,16 @@ jobs:
       - name: Test play
         run: go test ./...
         working-directory: ./play
-      - name: Test play dist
-        run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) ./build.bash
-        working-directory: ./play
       - name: Check module is tidy
         run: go mod tidy
       - name: Check play module is tidy
         run: go mod tidy
         working-directory: ./play
+      - name: Dist
+        run: ./build.bash
       - name: Verify commit is clean
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
-      - name: Test play dist at tip
-        run: NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) BRANCH=tip ./build.bash
-        working-directory: ./play
+      - name: Tip dist
+        run: ./build.bash
+        env:
+          BRANCH: tip
