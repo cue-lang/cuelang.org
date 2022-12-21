@@ -93,11 +93,6 @@ trybot: _base.#bashWorkflow & {
 					name: "Test play"
 				},
 
-				_#play & {
-					name: "Test play dist"
-					run:  "NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) ./build.bash"
-				},
-
 				// go mod tidy
 				_#modTidy & {
 					name: "Check module is tidy"
@@ -106,6 +101,8 @@ trybot: _base.#bashWorkflow & {
 					name: "Check play module is tidy"
 				},
 
+				_#dist,
+
 				json.#step & {
 					name: "Verify commit is clean"
 					run: """
@@ -113,14 +110,11 @@ trybot: _base.#bashWorkflow & {
 						"""
 				},
 
-				_#play & {
-					// Note we intentially run this after the porcelain check because
-					// this step intentionally updates the play/go.{mod,sum}. This step
-					// purely exists to exercise this code path and determine whether it
-					// passes/fails.
-					name: "Test play dist at tip"
-					run:  "NETLIFY=true NETLIFY_BUILD_BASE=$(mktemp -d) BRANCH=tip ./build.bash"
-				},
+				// Note we intentially run this after the porcelain check because
+				// this step intentionally updates the play/go.{mod,sum}. This step
+				// purely exists to exercise this code path and determine whether it
+				// passes/fails.
+				_#tipDist,
 			]
 		}
 	}
@@ -143,4 +137,14 @@ trybot: _base.#bashWorkflow & {
 		name: string
 		run:  "go mod tidy"
 	}
+}
+
+_#dist: json.#step & {
+	name: *"Dist" | string
+	run:  "./build.bash"
+}
+
+_#tipDist: _#dist & {
+	name: "Tip dist"
+	env: BRANCH: "tip"
 }
