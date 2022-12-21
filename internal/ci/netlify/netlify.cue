@@ -54,7 +54,7 @@ config: #config & {
 		command:   "bash build.bash"
 		environment: {
 			HUGO_ENV:     "production"
-			GO_VERSION:   core.#pinnedReleaseGo
+			GO_VERSION:   core.#goVersion
 			NODE_VERSION: core.#nodeVersion
 			HUGO_VERSION: core.#hugoVersion
 		}
