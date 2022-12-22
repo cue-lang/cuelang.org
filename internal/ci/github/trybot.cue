@@ -114,6 +114,26 @@ trybot: _base.#bashWorkflow & {
 				// purely exists to exercise this code path and determine whether it
 				// passes/fails.
 				_#tipDist,
+
+				// GitHub offers very limited expressions at runtime of a workflow.
+				// Instead we have to resort to dropping down to shell and then setting
+				// and output variable.
+				json.#step & {
+					id: "alias"
+					run: #"""
+						alias="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
+						echo "::set-output name=alias::$alias"
+						"""#
+				},
+
+				// Only run a deploy of tip if we are running as part of the trybot repo,
+				// with a branch name that matches the trybot pattern
+				_#netlifyDeploy & {
+					if:    "" // XXX: update with condition
+					#site: core.#netlifySites.cls
+					#alias:
+						name: "Deploy preview of CL"
+				},
 			]
 		}
 	}
@@ -176,13 +196,18 @@ _#installNetlifyCLI: json.#step & {
 
 // _#netlifyDeploy is used to push CLs for preview but also to deploy tip
 _#netlifyDeploy: json.#step & {
-	#prod: *false | bool
-	#site: string
+	#prod:   *false | bool
+	#site:   string
+	#alias?: string
+	if !#prod {
+		#alias: *"" | string
+	}
 	let nc = netlify.config
 	let prod = [ if #prod {"--prod"}, ""][0]
 	let uSite = strings.ToUpper(strings.Replace(#site, "-", "_", -1))
+	let alias = [ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
-	run:  "netlify deploy -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
 }
