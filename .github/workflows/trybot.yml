@@ -19,6 +19,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+      - run: |-
+          echo '${{github.ref}}' | sed -E 's/^refs\/heads\/trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/'
+          false
       - name: Install Node
         uses: actions/setup-node@v3
         with:
@@ -61,6 +64,16 @@ jobs:
         run: ./build.bash
       - name: Verify commit is clean
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
+      - id: gerrithub_ref
+        if: ""
+        run: |-
+          ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
+          echo "gerrithub_ref=$ref" >> $GITHUB_OUTPUT
+      - if: ""
+        name: Deploy preview of CL
+        run: 'netlify deploy --alias ${{ steps.alias.outputs.alias }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
       - name: Tip dist
         run: ./build.bash
         env:
