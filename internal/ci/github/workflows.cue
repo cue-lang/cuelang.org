@@ -44,9 +44,9 @@ workflows: [
 	},
 ]
 
-// TODO: _#repositoryURL and _#unityURL should be extracted from codereview.cfg
-_#repositoryURL: "https://github.com/cue-lang/cue"
-_#unityURL:      "https://github.com/cue-unity/unity"
+// TODO: _#repositoryURL should be extracted from codereview.cfg, or better still codereview.cfg
+// should be generated from a CUE source of truth.
+_#repositoryURL: "https://github.com/cue-lang/cuelang.org"
 
 _#defaultBranch:     "master"
 _#releaseTagPattern: "v*"
