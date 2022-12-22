@@ -1,5 +1,13 @@
 package core
 
+import (
+	"strings"
+)
+
+// Define core URLs that will be used in the codereview.cfg and GitHub workflows
+#githubRepositoryURL: "https://github.com/cue-lang/cuelang.org"
+#gerritRepositoryURL: "https://review.gerrithub.io/a/cue-lang/cuelang.org"
+
 // Use a specific latest version for release builds.
 // Note that we don't want ".x" for the sake of reproducibility,
 // so we instead pin a specific Go release.
@@ -19,4 +27,25 @@ package core
 #netlifySites: {
 	cls: "cue-cls"
 	tip: "cue-tip"
+}
+
+#codeReview: {
+	gerrit?: string
+	github?: string
+	unity?:  string
+}
+
+codeReview: #codeReview & {
+	github: #githubRepositoryURL
+	gerrit: #gerritRepositoryURL
+}
+
+// #toCodeReviewCfg converts a #codeReview instance to
+// the key: value
+#toCodeReviewCfg: {
+	#input: #codeReview
+	let parts = [ for k, v in #input {k + ": " + v}]
+
+	// Per https://pkg.go.dev/golang.org/x/review/git-codereview#hdr-Configuration
+	strings.Join(parts, "\n")
 }
