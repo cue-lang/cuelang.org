@@ -16,6 +16,7 @@
 package github
 
 import (
+	"github.com/cue-lang/cuelang.org/internal/ci/core"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/gerrithub"
 
@@ -43,10 +44,6 @@ workflows: [
 		schema: update_tip
 	},
 ]
-
-// TODO: _#repositoryURL should be extracted from codereview.cfg, or better still codereview.cfg
-// should be generated from a CUE source of truth.
-_#repositoryURL: "https://github.com/cue-lang/cuelang.org"
 
 _#defaultBranch:     "master"
 _#releaseTagPattern: "v*"
@@ -77,7 +74,7 @@ _#testStrategy: {
 // _gerrithub is an instance of ./gerrithub, parameterised by the properties of
 // this project
 _gerrithub: gerrithub & {
-	#repositoryURL:                      _#repositoryURL
+	#repositoryURL:                      core.#githubRepositoryURL
 	#botGitHubUser:                      "cueckoo"
 	#botGitHubUserTokenSecretsKey:       "CUECKOO_GITHUB_PAT"
 	#botGitHubUserEmail:                 "cueckoo@gmail.com"
@@ -93,7 +90,7 @@ _gerrithub: gerrithub & {
 // Perhaps rename the import to something more obviously not intended to be
 // used, and then rename the field base?
 _base: base & {
-	#repositoryURL:                "https://github.com/cue-lang/cue"
+	#repositoryURL:                core.#githubRepositoryURL
 	#defaultBranch:                _#defaultBranch
 	#botGitHubUser:                "cueckoo"
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
