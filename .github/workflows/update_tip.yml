@@ -39,6 +39,6 @@ jobs:
       - name: Install Netlify CLI
         run: npm install -g netlify-cli@12.4.0
       - name: Deploy tip
-        run: netlify deploy -f functions -d _public -m "Deploy tip" -s cue-tip --debug --prod
+        run: netlify deploy  -f functions -d _public -m "Deploy tip" -s cue-tip --debug --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_TIP}}
