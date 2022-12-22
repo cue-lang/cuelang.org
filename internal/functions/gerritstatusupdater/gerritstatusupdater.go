@@ -466,8 +466,14 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// as far as gerritstatusupdater is concerned: it's simply
 	// used to namespace build branches, but also for workflows
 	// to conditionally run based on the first part.
+	// The format is therefore:
+	//
+	//     $something/$changeID/$revisionID(/.*)
+	//
+	// We don't limit the branch to only be three parts so as to
+	// allow for extending the format in some cases.
 	headBranchParts := strings.Split(c.HeadBranch, "/")
-	if len(headBranchParts) != 3 {
+	if len(headBranchParts) < 3 {
 		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
 	}
 	changeID, revisionID := headBranchParts[1], headBranchParts[2]
