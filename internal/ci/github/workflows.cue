@@ -35,6 +35,10 @@ workflows: [
 		schema: trybot
 	},
 	{
+		file:   "trybot_dispatch.yml"
+		schema: trybot_dispatch
+	},
+	{
 		file:   "update_tip.yml"
 		schema: update_tip
 	},
