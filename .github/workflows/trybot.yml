@@ -68,6 +68,16 @@ jobs:
         run: ./build.bash
       - name: Verify commit is clean
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
+      - id: alias
+        if: ${{github.repository == 'cue-lang/cuelang.org-trybot'}}
+        run: |-
+          alias="$(echo '${{github.ref}}' | sed -E 's/^refs\/heads\/trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/')"
+          echo "alias=$alias" >> $GITHUB_OUTPUT
+      - if: ${{github.repository == 'cue-lang/cuelang.org-trybot'}}
+        name: Deploy preview of CL
+        run: 'netlify deploy --alias ${{ steps.alias.outputs.alias }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
       - name: Tip dist
         run: ./build.bash
         env:
