@@ -53,6 +53,16 @@ trybot: _base.#bashWorkflow & {
 					// This doesn't affect "push" builds, which never used merge commits.
 					with: ref: "${{ github.event.pull_request.head.sha }}"
 				},
+
+				json.#step & {
+					if: "" // XXX: update with condition
+					id: "gerrithub_ref"
+					run: #"""
+						echo '${{toJSON(github)}}'
+						false
+						"""#
+				},
+
 				_#installNode,
 				_#installGo,
 				_#installHugo,
@@ -109,10 +119,33 @@ trybot: _base.#bashWorkflow & {
 						"""
 				},
 
-				// Note we intentially run this after the porcelain check because
-				// this step intentionally updates the play/go.{mod,sum}. This step
-				// purely exists to exercise this code path and determine whether it
-				// passes/fails.
+				// GitHub offers very limited expressions at runtime of a workflow.
+				// Instead we have to resort to dropping down to shell and then
+				// setting an output variable. We do so to construct an alias name
+				// of the form "cl_${CL}_${patchset}" that will be used when deploying
+				// a preview of a CL.
+				json.#step & {
+					if: "" // XXX: update with condition
+					id: "gerrithub_ref"
+					run: #"""
+						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
+						echo "gerrithub_ref=$ref" >> $GITHUB_OUTPUT
+						"""#
+				},
+
+				// Only run a deploy of tip if we are running as part of the trybot repo,
+				// with a branch name that matches the trybot pattern
+				_#netlifyDeploy & {
+					if:     "" // XXX: update with condition
+					#site:  core.#netlifySites.cls
+					#alias: "${{ steps.alias.outputs.alias }}"
+					name:   "Deploy preview of CL"
+				},
+
+				// Note we intentially run this after the porcelain check and after
+				// the deploy of the current branch because this step intentionally
+				// updates the play/go.{mod,sum}. This step purely exists to
+				// exercise this code path and determine whether it passes/fails.
 				_#tipDist,
 			]
 		}
@@ -176,13 +209,18 @@ _#installNetlifyCLI: json.#step & {
 
 // _#netlifyDeploy is used to push CLs for preview but also to deploy tip
 _#netlifyDeploy: json.#step & {
-	#prod: *false | bool
-	#site: string
+	#prod:   *false | bool
+	#site:   string
+	#alias?: string
+	if !#prod {
+		#alias: *"" | string
+	}
 	let nc = netlify.config
 	let prod = [ if #prod {"--prod"}, ""][0]
 	let uSite = strings.ToUpper(strings.Replace(#site, "-", "_", -1))
+	let alias = [ if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
-	run:  "netlify deploy -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
 }
