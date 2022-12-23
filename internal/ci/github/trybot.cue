@@ -37,7 +37,7 @@ trybot: _base.#bashWorkflow & {
 
 	on: {
 		push: {
-			branches: ["trybot/*/*", _#defaultBranch, _base.#testDefaultBranch] // do not run PR branches
+			branches: ["trybot/*/*/*/*", _#defaultBranch, _base.#testDefaultBranch] // do not run PR branches
 		}
 		pull_request: {}
 	}

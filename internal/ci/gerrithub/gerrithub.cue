@@ -70,7 +70,7 @@ _#linuxMachine: "ubuntu-20.04"
 				json.#step & {
 					id: "formatref"
 					run: #"""
-						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/'"
+						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
 						echo "::set-output name=ref::$ref"
 						"""#
 				},
