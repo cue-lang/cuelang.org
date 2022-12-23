@@ -71,7 +71,7 @@ _#linuxMachine: "ubuntu-20.04"
 					id: "formatref"
 					run: #"""
 						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
-						echo "::set-output name=ref::$ref"
+						echo "ref=$ref" >> $GITHUB_OUTPUT
 						"""#
 				},
 				json.#step & {
