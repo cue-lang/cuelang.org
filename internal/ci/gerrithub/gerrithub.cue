@@ -55,7 +55,7 @@ _#linuxMachine: "ubuntu-20.04"
 
 #dispatchWorkflow: json.#Workflow & {
 	#type:                  #dispatchTrybot | #dispatchUnity
-	_#branchNameExpression: "\(#type)/${{ github.event.client_payload.payload.changeID }}/${{ github.event.client_payload.payload.commit }}/${{ steps.formatref.outputs.ref }}"
+	_#branchNameExpression: "\(#type)/${{ github.event.client_payload.payload.changeID }}/${{ github.event.client_payload.payload.commit }}/${{ env.gerrithub_ref }}"
 	name:                   "Dispatch \(#type)"
 	on: ["repository_dispatch"]
 	jobs: [string]: defaults: run: shell: "bash"
@@ -68,10 +68,9 @@ _#linuxMachine: "ubuntu-20.04"
 				// Hack to get the ref (e.g. refs/changes/38/547738/7) in a format we can use in a
 				// branch name, e.g. _547738_7
 				json.#step & {
-					id: "formatref"
 					run: #"""
 						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
-						echo "::set-output name=ref::$ref"
+						echo "gerrithub_ref=$ref" >> $GITHUB_OUTPUT
 						"""#
 				},
 				json.#step & {
