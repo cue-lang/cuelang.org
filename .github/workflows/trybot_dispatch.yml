@@ -19,7 +19,8 @@ jobs:
           password ${{ secrets.CUECKOO_GERRITHUB_PASSWORD }}
           EOD
           chmod 600 ~/.netrc
-      - run: |-
+      - id: gerrithub_ref
+        run: |-
           ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
           echo "gerrithub_ref=$ref" >> $GITHUB_OUTPUT
       - name: Trigger trybot
@@ -31,5 +32,5 @@ jobs:
           git config user.email cueckoo@gmail.com
           git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
           git fetch https://review.gerrithub.io/a/cue-lang/cuelang.org ${{ github.event.client_payload.payload.ref }}
-          git checkout -b trybot/${{ github.event.client_payload.payload.changeID }}/${{ github.event.client_payload.payload.commit }}/${{ env.gerrithub_ref }} FETCH_HEAD
-          git push https://github.com/cue-lang/cuelang.org-trybot trybot/${{ github.event.client_payload.payload.changeID }}/${{ github.event.client_payload.payload.commit }}/${{ env.gerrithub_ref }}
+          git checkout -b trybot/${{ github.event.client_payload.payload.changeID }}/${{ github.event.client_payload.payload.commit }}/${{ steps.gerrithub_ref.outputs.gerrithub_ref }} FETCH_HEAD
+          git push https://github.com/cue-lang/cuelang.org-trybot trybot/${{ github.event.client_payload.payload.changeID }}/${{ github.event.client_payload.payload.commit }}/${{ steps.gerrithub_ref.outputs.gerrithub_ref }}
