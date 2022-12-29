@@ -284,6 +284,23 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	r.Body.Close()
 
+	// Establish changeID and revisionID from head branch. Note
+	// the first part of the build branch is not significant
+	// as far as gerritstatusupdater is concerned: it's simply
+	// used to namespace build branches, but also for workflows
+	// to conditionally run based on the first part.
+	// The format is therefore:
+	//
+	//     $something/$changeID/$revisionID(/.*)
+	//
+	// We don't limit the branch to only be three parts so as to
+	// allow for extending the format in some cases.
+	headBranchParts := strings.Split(c.HeadBranch, "/")
+	if len(headBranchParts) < 3 {
+		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
+	}
+	changeID, revisionID := headBranchParts[1], headBranchParts[2]
+
 	// Parse the event and switch on the type
 	event, err := github.ParseWebHook(github.WebHookType(r), payload)
 	if err != nil {
@@ -460,23 +477,6 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		logf("no configuration specified for repo-workflowPath %q", envJoin(c.Repo, c.WorkflowPath, ""))
 		return
 	}
-
-	// Establish changeID and revisionID from head branch. Note
-	// the first part of the build branch is not significant
-	// as far as gerritstatusupdater is concerned: it's simply
-	// used to namespace build branches, but also for workflows
-	// to conditionally run based on the first part.
-	// The format is therefore:
-	//
-	//     $something/$changeID/$revisionID(/.*)
-	//
-	// We don't limit the branch to only be three parts so as to
-	// allow for extending the format in some cases.
-	headBranchParts := strings.Split(c.HeadBranch, "/")
-	if len(headBranchParts) < 3 {
-		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
-	}
-	changeID, revisionID := headBranchParts[1], headBranchParts[2]
 
 	ri := &gerrit.ReviewInput{
 		Tag:     strings.ToLower(workflowName),
