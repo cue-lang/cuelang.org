@@ -170,52 +170,92 @@ const (
 	workflowConclusionSuccess = "success"
 )
 
+// A localContext represents the state we build up as we receive and handle
+// events. We capture this as a struct to simply the logging of context as
+// we progressively populate the state.
+//
+// Do not put anything sensitive in this struct. It might be logged.
+type localContext struct {
+	// DeliveryID is the ID associated with the webhook event
+	// sent by GitHub.
+	DeliveryID string
+
+	// Repo is "{owner}/{Repo}" (not any URL, and not just the Repo name).
+	Repo string `json:",omitempty"`
+
+	// WorkflowRunID is the ID of the workflow run for which we either
+	// receive an event directly or via one of its associated workflow jobs.
+	WorkflowRunID *int64 `json:",omitempty"`
+
+	// WorkflowJobID is the ID of the workflow job, if the event relates to
+	// a workflow job. It is nil otherwise
+	WorkflowJobID *int64 `json:",omitempty"`
+
+	// WorkflowPath is the path to yaml file that defines the workflow
+	// declaration behind the workflow run and its jobs.
+	WorkflowPath string `json:",omitempty"`
+
+	// HeadBranch is the branch for which a workflow is triggered.
+	HeadBranch string `json:",omitempty"`
+
+	// EventType is the type of the webhook event
+	EventType string `json:",omitempty"`
+
+	// EventAction is the webhook event action
+	EventAction string `json:",omitempty"`
+
+	// WorkflowStatus is the workflow run or job (defined by EventType)
+	// status
+	WorkflowStatus string `json:",omitempty"`
+
+	// WorkflowConclusion is the workflow run or job (defined by EventType)
+	// conclusion
+	WorkflowConclusion string `json:",omitempty"`
+
+	// ChangeID is the CL number of the associated CL
+	ChangeID string `json:",omitempty"`
+
+	// RevisionID is the commit of the associated CL corresponding to the
+	// patchset under test
+	RevisionID string `json:",omitempty"`
+
+	// CL is the string representation of the number of the associated CL
+	CL string `json:",omitempty"`
+
+	// Patchset is the string representation of the patchset number of the
+	// associated CL corresponding to the patchset under test
+	Patchset string `json:",omitempty"`
+}
+
+func (c *localContext) setHeadBranch(b string) {
+	c.HeadBranch = b
+
+	// Establish changeID and revisionID from head branch. Note
+	// the first part of the build branch is not significant
+	// as far as gerritstatusupdater is concerned: it's simply
+	// used to namespace build branches, but also for workflows
+	// to conditionally run based on the first part.
+	// The format is therefore:
+	//
+	//     $something/$changeID/$revisionID(/.*)
+	//
+	// We don't limit the branch to only be three parts so as to
+	// allow for extending the format in some cases.
+	headBranchParts := strings.Split(c.HeadBranch, "/")
+	if len(headBranchParts) < 3 {
+		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
+	}
+	c.ChangeID, c.RevisionID = headBranchParts[1], headBranchParts[2]
+
+	// Extended information may be set
+	if len(headBranchParts) == 5 {
+		c.CL, c.Patchset = headBranchParts[3], headBranchParts[4]
+	}
+}
+
 // ServeHTTP is the implementation of the gerritstatusupdater serverless
 // function.
 func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-
-	// c (context) represents the state we build up as we receive and handle
-	// events. We capture this as a struct to simply the logging of context as
-	// we progressively populate the state.
-	//
-	// Do not put anything sensitive in this struct. It might be logged.
-	var c struct {
-		// DeliveryID is the ID associated with the webhook event
-		// sent by GitHub.
-		DeliveryID string
-
-		// Repo is "{owner}/{Repo}" (not any URL, and not just the Repo name).
-		Repo string `json:",omitempty"`
-
-		// WorkflowRunID is the ID of the workflow run for which we either
-		// receive an event directly or via one of its associated workflow jobs.
-		WorkflowRunID *int64 `json:",omitempty"`
-
-		// WorkflowJobID is the ID of the workflow job, if the event relates to
-		// a workflow job. It is nil otherwise
-		WorkflowJobID *int64 `json:",omitempty"`
-
-		// WorkflowPath is the path to yaml file that defines the workflow
-		// declaration behind the workflow run and its jobs.
-		WorkflowPath string `json:",omitempty"`
-
-		// HeadBranch is the branch for which a workflow is triggered.
-		HeadBranch string `json:",omitempty"`
-
-		// EventType is the type of the webhook event
-		EventType string `json:",omitempty"`
-
-		// EventAction is the webhook event action
-		EventAction string `json:",omitempty"`
-
-		// WorkflowStatus is the workflow run or job (defined by EventType)
-		// status
-		WorkflowStatus string `json:",omitempty"`
-
-		// WorkflowConclusion is the workflow run or job (defined by EventType)
-		// conclusion
-		WorkflowConclusion string `json:",omitempty"`
-	}
 
 	var (
 		// workflowName is the name of the workflow run behind the event
@@ -228,6 +268,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		result *int
 	)
 
+	var c localContext
 	c.DeliveryID = github.DeliveryID(r)
 
 	// Set up simple logging that closes over certain variables
@@ -284,23 +325,6 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	r.Body.Close()
 
-	// Establish changeID and revisionID from head branch. Note
-	// the first part of the build branch is not significant
-	// as far as gerritstatusupdater is concerned: it's simply
-	// used to namespace build branches, but also for workflows
-	// to conditionally run based on the first part.
-	// The format is therefore:
-	//
-	//     $something/$changeID/$revisionID(/.*)
-	//
-	// We don't limit the branch to only be three parts so as to
-	// allow for extending the format in some cases.
-	headBranchParts := strings.Split(c.HeadBranch, "/")
-	if len(headBranchParts) < 3 {
-		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
-	}
-	changeID, revisionID := headBranchParts[1], headBranchParts[2]
-
 	// Parse the event and switch on the type
 	event, err := github.ParseWebHook(github.WebHookType(r), payload)
 	if err != nil {
@@ -341,7 +365,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			panic(fmt.Errorf("failed to get workflow run for id %v: %w", github.Stringify(job.RunID), err))
 		}
 
-		c.HeadBranch = *wr.HeadBranch
+		c.setHeadBranch(*wr.HeadBranch)
 
 		// The workflowRun does not include information like path about the workflow
 		// itself, so we need to get that too.
@@ -362,7 +386,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 		c.Repo = *event.Repo.FullName
 		c.WorkflowRunID = run.ID
-		c.HeadBranch = *run.HeadBranch
+		c.setHeadBranch(*run.HeadBranch)
 		c.WorkflowPath = *event.Workflow.Path
 		c.EventAction = event.GetAction()
 		c.EventType = "workflow run"
