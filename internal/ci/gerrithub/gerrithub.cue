@@ -70,7 +70,7 @@ _#linuxMachine: "ubuntu-20.04"
 				json.#step & {
 					id: "gerrithub_ref"
 					run: #"""
-						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -e 's/^refs\/changes\/[[:digit:]]\+\/\([[:digit:]]\+\)\/\([[:digit:]]\+\).*/\1\/\2/')"
+						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -E 's/^refs\/changes\/[0-9]+\/([0-9]+)\/([0-9]+).*/\1\/\2/')"
 						echo "gerrithub_ref=$ref" >> $GITHUB_OUTPUT
 						"""#
 				},
