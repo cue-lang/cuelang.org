@@ -457,6 +457,32 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			msg = fmt.Sprintf("%s run succeeded: %s", workflowName, *run.HTMLURL)
 			result = github.Int(1)
 
+			// If we have netlify config for this workflow, then we also
+			// want to add a link to the preview deploy. The environment variable
+			// will be of the form:
+			//
+			//     https://cl-${CL}-${PATCHSET}--cue-cls.netlify.app
+			//
+			netlifyEnv := envJoin(c.Repo, c.WorkflowPath, "NETLIFY")
+			if prevURL, ok := os.LookupEnv(netlifyEnv); ok {
+				if len(headBranchParts) < 5 {
+					panic(fmt.Errorf("head branch %q not in expected format for netlify", c.HeadBranch))
+				}
+				cl, patchSet := headBranchParts[3], headBranchParts[4]
+				varRepl := func(k string) string {
+					switch k {
+					case "CL":
+						return cl
+					case "PATCHSET":
+						return patchSet
+					default:
+						panic(fmt.Errorf("unknown variable name %q", k))
+					}
+				}
+				prevURL = os.Expand(prevURL, varRepl)
+				msg += fmt.Sprintf("\n\nPreview deployed to %s", prevURL)
+			}
+
 		default:
 			logf("ignoring")
 			return
