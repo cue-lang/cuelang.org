@@ -41,6 +41,7 @@ update_tip: _base.#bashWorkflow & {
 			_base.#checkoutCode & {
 				with: ref: _#defaultBranch
 			},
+			_#cachePre,
 			_#installNode,
 			_#installGo,
 			_#installHugo,
@@ -66,6 +67,7 @@ update_tip: _base.#bashWorkflow & {
 						git push trybot refs/remotes/origin/master:master
 						"""
 			},
+			_#cachePost,
 		]
 	}
 

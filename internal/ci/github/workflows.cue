@@ -16,6 +16,8 @@
 package github
 
 import (
+	"strings"
+
 	"github.com/cue-lang/cuelang.org/internal/ci/core"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/gerrithub"
@@ -94,4 +96,18 @@ _base: base & {
 	#defaultBranch:                _#defaultBranch
 	#botGitHubUser:                "cueckoo"
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
+}
+
+_#cacheDirs: ["~/.cache/go-build", "~/go/pkg/mod", "~/.npm"]
+
+_#cachePre: json.#step & {
+	uses: "actions/cache@v3"
+	with: {
+		path: strings.Join(_#cacheDirs, "\n")
+		key:  "${{ runner.os }}"
+	}
+}
+
+_#cachePost: json.#step & {
+	run: "find \(strings.Join(_#cacheDirs, " ")) -type f -amin +7200 -delete -print"
 }
