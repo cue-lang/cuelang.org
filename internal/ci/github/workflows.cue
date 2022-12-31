@@ -45,6 +45,8 @@ workflows: [
 	},
 ]
 
+_#cacheDirs: ["~/.cache/go-build", "~/go/pkg/mod", "~/.npm"]
+
 _#defaultBranch:     "master"
 _#releaseTagPattern: "v*"
 

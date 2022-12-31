@@ -53,6 +53,13 @@ trybot: _base.#bashWorkflow & {
 					// This doesn't affect "push" builds, which never used merge commits.
 					with: ref: "${{ github.event.pull_request.head.sha }}"
 				},
+				json.#step & {
+					uses: "actions/cache@v3"
+					with: {
+						path: strings.Join(_#cacheDirs, "\n")
+						key:  "${{ runner.os }}"
+					}
+				},
 				_#installNode,
 				_#installGo,
 				_#installHugo,
@@ -114,6 +121,12 @@ trybot: _base.#bashWorkflow & {
 				// purely exists to exercise this code path and determine whether it
 				// passes/fails.
 				_#tipDist,
+
+				// Trim the cache
+				json.#step & {
+					run: "find \(strings.Join(_#cacheDirs, " ")) -type f -amin +7200 -delete -print"
+				},
+
 			]
 		}
 	}

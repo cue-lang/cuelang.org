@@ -15,6 +15,8 @@
 package github
 
 import (
+	"strings"
+
 	"github.com/cue-lang/cuelang.org/internal/ci/core"
 
 	"github.com/SchemaStore/schemastore/src/schemas/json"
@@ -41,6 +43,13 @@ update_tip: _base.#bashWorkflow & {
 			_base.#checkoutCode & {
 				with: ref: _#defaultBranch
 			},
+			json.#step & {
+				uses: "actions/cache@v3"
+				with: {
+					path: strings.Join(_#cacheDirs, "\n")
+					key:  "${{ runner.os }}"
+				}
+			},
 			_#installNode,
 			_#installGo,
 			_#installHugo,
@@ -65,6 +74,11 @@ update_tip: _base.#bashWorkflow & {
 						git fetch origin \(_#defaultBranch)
 						git push trybot refs/remotes/origin/master:master
 						"""
+			},
+
+			// Trim the cache
+			json.#step & {
+				run: "find \(strings.Join(_#cacheDirs, " ")) -type f -amin +7200 -delete -print"
 			},
 		]
 	}
