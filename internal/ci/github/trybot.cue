@@ -53,6 +53,7 @@ trybot: _base.#bashWorkflow & {
 					// This doesn't affect "push" builds, which never used merge commits.
 					with: ref: "${{ github.event.pull_request.head.sha }}"
 				},
+				_#cachePre,
 				_#installNode,
 				_#installGo,
 				_#installHugo,
@@ -114,6 +115,8 @@ trybot: _base.#bashWorkflow & {
 				// purely exists to exercise this code path and determine whether it
 				// passes/fails.
 				_#tipDist,
+
+				_#cachePost,
 			]
 		}
 	}
