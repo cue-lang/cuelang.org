@@ -143,6 +143,7 @@ _#installNode: json.#step & {
 	uses: "actions/setup-node@v3"
 	with: {
 		"node-version": core.#nodeVersion
+		cache:          "npm"
 	}
 }
 

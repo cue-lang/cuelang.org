@@ -52,6 +52,7 @@ import (
 	uses: "actions/setup-go@v3"
 	with: {
 		"go-version": *"${{ matrix.go-version }}" | string
+		cache:        true
 	}
 }
 
