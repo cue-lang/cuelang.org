@@ -24,9 +24,9 @@ then
 	# to the tip of CUE and regenerate. Otherwise we do not
 	# want to regenerate (we should be relying on the files
  	# commited)
-	GOPROXY=direct go get cuelang.org/go@master
-	./_scripts/revendorToolsInternal.bash
-	go generate ./...
+	GOPROXY=direct time go get cuelang.org/go@master
+	time ./_scripts/revendorToolsInternal.bash
+	time go generate ./...
 fi
 
 if [ "${NETLIFY:-}" == "true" ]
@@ -36,7 +36,7 @@ then
 	rsync -a $NETLIFY_BUILD_BASE/cache/playground_node_modules/ node_modules
 fi
 
-npm install
+time npm install
 
 if [ "${NETLIFY:-}" == "true" ]
 then
@@ -45,7 +45,7 @@ then
 fi
 
 echo "Building WASM backend"
-GOOS=js GOARCH=wasm go build -o main.wasm
+GOOS=js GOARCH=wasm time go build -o main.wasm
 
 echo "Running npm dist"
-npm run dist
+time npm run dist
