@@ -8,17 +8,17 @@ set -eux
 # and main from github.com/cue-sh/playground dependencies
 if [ "${BRANCH:-}" = "tip" ]
 then
-	GOPROXY=direct go get cuelang.org/go@master
+	GOPROXY=direct time go get cuelang.org/go@master
 	# Now force cuelang.org/go  through the proxy so that the /pkg.go.dev redirect works
-	go get -d cuelang.org/go@$(go list -m -f={{.Version}} cuelang.org/go)
-	go mod tidy
-	go generate ./...
+	time go get -d cuelang.org/go@$(go list -m -f={{.Version}} cuelang.org/go)
+	time go mod tidy
+	time go generate ./...
 fi
 
 # Main site
-git submodule update -f --init --recursive
-npm install
-hugo $@
+time git submodule update -f --init --recursive
+time npm install
+time hugo $@
 
 # CUE playground
 bash play/build.bash
