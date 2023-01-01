@@ -16,6 +16,8 @@ package github
 
 import (
 	"github.com/cue-lang/cuelang.org/internal/ci/core"
+
+	"github.com/SchemaStore/schemastore/src/schemas/json"
 )
 
 // The update_tip workflow. Keeps the tip branch in "sync" with master.
@@ -35,6 +37,7 @@ update_tip: _base.#bashWorkflow & {
 		"runs-on": _#linuxMachine
 		if:        "${{github.repository == '\(core.#githubRepositoryPath)'}}"
 		steps: [
+			_gerrithub.#writeNetrcFile,
 			_base.#checkoutCode & {
 				with: ref: _#defaultBranch
 			},
@@ -47,6 +50,21 @@ update_tip: _base.#bashWorkflow & {
 				#prod: true
 				#site: core.#netlifySites.tip
 				name:  "Deploy tip"
+			},
+			json.#step & {
+				name: "Push tip to trybot"
+				run:  """
+						mkdir tmpgit
+						cd tmpgit
+						git init
+						git config user.name \(_gerrithub.#botGitHubUser)
+						git config user.email \(_gerrithub.#botGitHubUserEmail)
+						git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_gerrithub.#botGitHubUser):${{ secrets.\(_gerrithub.#botGitHubUserTokenSecretsKey) }} | base64)"
+						git remote add origin \(_gerrithub.#gerritHubRepository)
+						git remote add trybot \(_gerrithub.#trybotRepositoryURL)
+						git fetch origin \(_#defaultBranch)
+						git push trybot refs/remotes/origin/master:master
+						"""
 			},
 		]
 	}
