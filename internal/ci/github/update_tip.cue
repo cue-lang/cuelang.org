@@ -33,6 +33,7 @@ update_tip: _base.#bashWorkflow & {
 
 	jobs: push: {
 		"runs-on": _#linuxMachine
+		if:        "${{github.repository == '\(core.#githubRepositoryPath)'}}"
 		steps: [
 			_base.#checkoutCode & {
 				with: ref: _#defaultBranch

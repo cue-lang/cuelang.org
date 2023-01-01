@@ -1,12 +1,22 @@
 package core
 
 import (
+	"list"
 	"strings"
 )
 
 // Define core URLs that will be used in the codereview.cfg and GitHub workflows
-#githubRepositoryURL: "https://github.com/cue-lang/cuelang.org"
-#gerritRepositoryURL: "https://review.gerrithub.io/a/cue-lang/cuelang.org"
+#githubRepositoryURL:  "https://github.com/cue-lang/cuelang.org"
+#gerritRepositoryURL:  "https://review.gerrithub.io/a/cue-lang/cuelang.org"
+#githubRepositoryPath: _#URLPath & {#url: #githubRepositoryURL, _}
+
+// Not ideal, but hack together something that gives us the path
+// of a URL. In lieu of cuelang.org/issue/1433
+_#URLPath: {
+	#url: string
+	let parts = strings.Split(#url, "/")
+	strings.Join(list.Slice(parts, 3, len(parts)), "/")
+}
 
 // Use a specific latest version for release builds.
 // Note that we don't want ".x" for the sake of reproducibility,
