@@ -15,7 +15,10 @@ set -eux
 # * NETLIFY_BUILD_BASE - the root of the netlify build, within which there will
 #   be a cache directory
 
-time="time -p"
+if [ "${NETLIFY:-}" != "true" ]
+then
+	time="time -p"
+fi
 
 # cd to the directory containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
