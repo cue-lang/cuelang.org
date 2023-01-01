@@ -38,20 +38,6 @@ update_tip: _base.#bashWorkflow & {
 		if:        "${{github.repository == '\(core.#githubRepositoryPath)'}}"
 		steps: [
 			_gerrithub.#writeNetrcFile,
-			_base.#checkoutCode & {
-				with: ref: _#defaultBranch
-			},
-			_#cachePre,
-			_#installNode,
-			_#installGo,
-			_#installHugo,
-			_#tipDist,
-			_#installNetlifyCLI,
-			_#netlifyDeploy & {
-				#prod: true
-				#site: core.#netlifySites.tip
-				name:  "Deploy tip"
-			},
 			json.#step & {
 				name: "Push tip to trybot"
 				run:  """
@@ -66,6 +52,20 @@ update_tip: _base.#bashWorkflow & {
 						git fetch origin \(_#defaultBranch)
 						git push trybot refs/remotes/origin/master:master
 						"""
+			},
+			_base.#checkoutCode & {
+				with: ref: _#defaultBranch
+			},
+			_#cachePre,
+			_#installNode,
+			_#installGo,
+			_#installHugo,
+			_#tipDist,
+			_#installNetlifyCLI,
+			_#netlifyDeploy & {
+				#prod: true
+				#site: core.#netlifySites.tip
+				name:  "Deploy tip"
 			},
 			_#cachePost,
 		]
