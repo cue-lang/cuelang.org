@@ -4,7 +4,10 @@ set -eux
 
 # build.bash is used to build the site ready for deploy.
 
-time="time -p"
+if [ "${NETLIFY:-}" != "true" ]
+then
+	time="time -p"
+fi
 
 # If we are building tip then we need to grab the master of our cuelang.org/go
 # and main from github.com/cue-sh/playground dependencies
