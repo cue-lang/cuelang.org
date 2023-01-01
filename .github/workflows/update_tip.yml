@@ -22,6 +22,18 @@ jobs:
           password ${{ secrets.CUECKOO_GERRITHUB_PASSWORD }}
           EOD
           chmod 600 ~/.netrc
+      - name: Push tip to trybot
+        run: |-
+          mkdir tmpgit
+          cd tmpgit
+          git init
+          git config user.name cueckoo
+          git config user.email cueckoo@gmail.com
+          git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
+          git remote add origin https://review.gerrithub.io/a/cue-lang/cuelang.org
+          git remote add trybot https://github.com/cue-lang/cuelang.org-trybot
+          git fetch origin master
+          git push trybot refs/remotes/origin/master:master
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -56,16 +68,4 @@ jobs:
         run: netlify deploy -f functions -d _public -m "Deploy tip" -s cue-tip --debug --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_TIP}}
-      - name: Push tip to trybot
-        run: |-
-          mkdir tmpgit
-          cd tmpgit
-          git init
-          git config user.name cueckoo
-          git config user.email cueckoo@gmail.com
-          git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
-          git remote add origin https://review.gerrithub.io/a/cue-lang/cuelang.org
-          git remote add trybot https://github.com/cue-lang/cuelang.org-trybot
-          git fetch origin master
-          git push trybot refs/remotes/origin/master:master
       - run: find ~/.cache/go-build ~/go/pkg/mod ~/.npm -type f -amin +7200 -delete -print
