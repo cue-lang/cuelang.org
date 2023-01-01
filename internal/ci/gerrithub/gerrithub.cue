@@ -64,7 +64,7 @@ _#linuxMachine: "ubuntu-20.04"
 			"runs-on": _#linuxMachine
 			if:        "${{ github.event.client_payload.type == '\(#type)' }}"
 			steps: [
-				_#writeNetrcFile,
+				#writeNetrcFile,
 				// Hack to get the ref (e.g. refs/changes/38/547738/7) in a format we can use in a
 				// branch name, e.g. _547738_7
 				json.#step & {
@@ -91,16 +91,16 @@ _#linuxMachine: "ubuntu-20.04"
 			]
 		}
 	}
+}
 
-	_#writeNetrcFile: json.#step & {
-		name: "Write netrc file for cueckoo Gerrithub"
-		run:  """
-			cat <<EOD > ~/.netrc
-			machine \(_#gerritHubHostname)
-			login \(#botGerritHubUser)
-			password ${{ secrets.\(#botGerritHubUserPasswordSecretsKey) }}
-			EOD
-			chmod 600 ~/.netrc
-			"""
-	}
+#writeNetrcFile: json.#step & {
+	name: "Write netrc file for cueckoo Gerrithub"
+	run:  """
+		cat <<EOD > ~/.netrc
+		machine \(_#gerritHubHostname)
+		login \(#botGerritHubUser)
+		password ${{ secrets.\(#botGerritHubUserPasswordSecretsKey) }}
+		EOD
+		chmod 600 ~/.netrc
+		"""
 }
