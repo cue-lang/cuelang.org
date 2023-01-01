@@ -136,12 +136,6 @@ trybot: _base.#bashWorkflow & {
 					name:   "Deploy preview of CL"
 				},
 
-				// Note we intentially run this after the porcelain check and after
-				// the deploy of the current branch because this step intentionally
-				// updates the play/go.{mod,sum}. This step purely exists to
-				// exercise this code path and determine whether it passes/fails.
-				_#tipDist,
-
 				_#cachePost,
 			]
 		}
