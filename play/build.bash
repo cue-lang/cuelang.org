@@ -15,6 +15,7 @@ set -eux
 # * NETLIFY_BUILD_BASE - the root of the netlify build, within which there will
 #   be a cache directory
 
+time=""
 if [ "${NETLIFY:-}" != "true" ]
 then
 	time="time -p"

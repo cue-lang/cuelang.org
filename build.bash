@@ -4,6 +4,7 @@ set -eux
 
 # build.bash is used to build the site ready for deploy.
 
+time=""
 if [ "${NETLIFY:-}" != "true" ]
 then
 	time="time -p"
