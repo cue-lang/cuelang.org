@@ -1,0 +1,17 @@
+.diagram {
+    $self: &;
+
+    margin: 0 auto 1.25em;
+    min-height: 250px;
+
+    &__content {
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__caption {
+        text-align: center;
+    }
+}

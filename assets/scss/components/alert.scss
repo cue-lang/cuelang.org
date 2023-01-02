@@ -1,0 +1,44 @@
+@import '../config/colors';
+@import '../mixins/marginless-child';
+
+.alert {
+    $self: &;
+
+    --alert-bg-color: #{ $c-grey--lightest };
+    --alert-border-color: #{ $c-grey--dark };
+    --alert-color: #{ $c-grey--darkest };
+    --alert-title-color: #{ $c-blue };
+
+    background-color: var(--alert-bg-color);
+    border-left: 3px solid var(--alert-border-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0 0 1.25em;
+    padding: 1rem 1.5rem;
+
+    &__title {
+        color: var(--alert-title-color);
+        margin-top: 0;
+    }
+
+    &__content {
+        @include marginless-child;
+    }
+
+    &--alert {
+        --alert-bg-color: #{ $c-yellow--light };
+        --alert-border-color: #{ $c-yellow };
+        --alert-title-color: #{ $c-grey--darkest };
+    }
+
+    &--danger {
+        --alert-bg-color: #{ $c-red--light };
+        --alert-border-color: #{ $c-red };
+        --alert-title-color: #{ $c-grey--darkest };
+    }
+
+    &--info {
+        --alert-bg-color: #{ $c-blue--lighter };
+        --alert-border-color: #{ $c-blue--light };
+    }
+}

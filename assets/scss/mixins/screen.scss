@@ -1,0 +1,35 @@
+@mixin screen($min-size) {
+    @media only screen and (min-width: $min-size) {
+        @content;
+    }
+}
+
+@mixin screen-between($min-size, $max-size) {
+    @media only screen and (min-width: $min-size) and (max-width: $max-size - 1) {
+        @content;
+    }
+}
+
+@mixin screen-max($max-size) {
+    @media only screen and (max-width: $max-size - 1) {
+        @content;
+    }
+}
+
+@mixin screen-height($min-size) {
+    @media only screen and (min-height: $min-size) {
+        @content;
+    }
+}
+
+@mixin screen-height-between($min-size, $max-size) {
+    @media only screen and (min-height: $min-size) and (max-height: $max-size - 1) {
+        @content;
+    }
+}
+
+@mixin screen-height-max($max-size) {
+    @media only screen and (max-height: $max-size - 1) {
+        @content;
+    }
+}

@@ -3,26 +3,32 @@
   "version": "0.1.0",
   "description": "CUE website",
   "main": "index.js",
-  "dependencies": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mathjax": "3.2.2",
+    "mermaid": "9.2.2"
+  },
   "devDependencies": {
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.5",
-    "postcss-cli": "^8.3.1"
+    "postcss-cli": "^8.3.1",
+    "svgstore-cli": "2.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "icons": "npm run icons:ui",
+    "icons:ui": "svgstore -o \"./static/img/ui.svg\" -p \"icon--\" ./assets/svg/ui/*.svg"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cuelang/website.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/cuelang/website/issues"
   },
   "homepage": "https://cuelang.org",
   "engines": {
-    "node": ">12.0"
+    "node": "~18"
   }
 }

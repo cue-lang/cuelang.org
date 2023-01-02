@@ -1,0 +1,21 @@
+@import '../config/sizes';
+@import '../mixins/screen';
+@import '../mixins/marginless-child';
+
+.columns {
+    $self: &;
+
+    margin: 0 auto 1.25em;
+
+    @include screen($screen-simple) {
+        display: flex;
+        gap: $p-gutter--large;
+
+        &__col {
+            @include marginless-child;
+
+            flex: 0 1 50%;
+            max-width: 50%;
+        }
+    }
+}

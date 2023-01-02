@@ -1,0 +1,73 @@
+{{ $baseUrl := urls.Parse $.Site.Params.Baseurl }}
+<section id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="{{ .Site.Home.RelPermalink }}" class="drawer__branding" rel="home">
+                {{ with resources.Get "svg/logo.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
+                <span>{{ T "ui_branding_title" }}</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    {{ partial "icon.html" (dict "icon" "close") }}
+                    <span class="button__text">{{ T "ui_menu_close" }}</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="{{ T "ui_menu_mobile" }}">
+                    <ul class="nav__list">
+                        {{ range .Site.Menus.main }}
+                            <li class="nav__item">
+                                {{ $url := urls.Parse .URL }}
+                                <a class="nav__link"
+                                   href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                                   {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
+                                    <span class="nav__text">{{ .Name }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
+
+                        {{ range .Site.Menus.cta }}
+                            <li class="nav__item">
+                                {{ $url := urls.Parse .URL }}
+                                <a class="nav__link"
+                                   href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                                   {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
+                                    <span class="nav__text">{{ .Name }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
+
+                        <li class="nav__item">
+                            <a class="nav__link" href="{{ "/search" | relLangURL }}" rel="search">
+                                <span>{{ T "ui_search" }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="{{ T "ui_menu_social" }}">
+                <ul class="nav__list">
+                    {{ range .Site.Menus.icons }}
+                        <li class="nav__item">
+                            {{ $url := urls.Parse .URL }}
+                            <a class="nav__link"
+                               href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                               {{- if ne $url.Host $baseUrl.Host }}target="_blank" {{ end }}>
+                                {{ partial "icon.html" (dict "icon" .Pre) }}
+                                <span class="nav__text">{{ .Name }}</span>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

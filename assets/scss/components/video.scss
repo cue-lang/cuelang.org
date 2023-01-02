@@ -1,0 +1,130 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/center';
+@import '../mixins/object-fit';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+@import '../mixins/stretch';
+@import '../mixins/typography';
+
+.video {
+    $self: &;
+
+    aspect-ratio: 16 / 9;
+    background-color: $c-black;
+    clear: both;
+    color: $c-white;
+    margin: 2rem auto;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    &__image {
+        @include object-fit-cover;
+
+        margin: 0;
+        opacity: .8;
+        position: absolute;
+    }
+
+    &__button {
+        @include stretch;
+
+        &:focus,
+        &:hover {
+            #{ $self }__play {
+                transform: scale(1.2);
+            }
+        }
+
+        span {
+            @include sr-only;
+        }
+    }
+
+    &__play {
+        background-color: $c-yellow;
+        border-radius: 50%;
+        top: $p-gutter * .5;
+        display: block;
+        fill: $c-white;
+        height: 45px;
+        position: absolute;
+        right: $p-gutter * .5;
+        transition: transform .2s ease-in-out;
+        width: 45px;
+    }
+
+    &__icon {
+        @include center;
+
+        fill: $c-black;
+        height: 16px;
+        width: 16px;
+    }
+
+    &__text {
+        bottom: 0;
+        display: block;
+        left: 0;
+        padding: $p-gutter * .5;
+        position: absolute;
+    }
+
+    &__title {
+        @include style-heading-3;
+
+        color: $c-white;
+        font-weight: $weight-bold;
+        margin: 0;
+    }
+
+    &__external {
+        display: inline-block;
+        height: 18px;
+        margin: 0 0 -2px 8px;
+        width: 18px;
+    }
+
+    &__intro {
+        margin: .5rem 0 0;
+        line-height: 1.2;
+    }
+
+    &--cover {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    @include screen($screen-minimal) {
+        &__play {
+            bottom: $p-gutter;
+            right: $p-gutter;
+            height: 75px;
+            top: auto;
+            width: 75px;
+        }
+
+        &__icon {
+            height: 30px;
+            width: 30px;
+        }
+
+        &__text {
+            padding: $p-gutter;
+            width: 80%;
+        }
+    }
+
+    @include screen($screen-simple) {
+        &__play {
+            bottom: $p-gutter--large;
+            right: $p-gutter--large;
+        }
+
+        &__text {
+            padding: $p-gutter--large;
+        }
+    }
+}

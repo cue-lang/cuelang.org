@@ -1,0 +1,20 @@
+{{ $parent := .Page -}}
+{{ $pages := (where .Site.Pages "Section" .Section).ByWeight -}}
+{{ $pages = (where $pages "Type" "!=" "search") -}}
+{{ $pages = (where $pages ".Params.hide_summary" "!=" true) -}}
+{{ $pages = (where $pages ".Parent" "!=" nil) -}}
+{{ $pages = (where $pages "Parent.File.UniqueID" "==" $parent.File.UniqueID) -}}
+
+{{ if not (eq (len $pages) 0) -}}
+    <nav class="nav nav--index">
+        <ul class="nav__list">
+            {{ range $pages }}
+                <li class="nav__item">
+                    <a class="nav__link" href="{{ .RelPermalink }}">
+                        <span class="nav__text">{{ .LinkTitle }}</span>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </nav>
+{{ end }}

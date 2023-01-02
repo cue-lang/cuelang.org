@@ -1,0 +1,46 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/container';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+@import '../mixins/typography';
+
+.article {
+    $self: &;
+
+    background-color: $c-white;
+    height: 100%;
+    padding: 2rem 0;
+
+    &__container {
+        @include container($w-content);
+
+        padding: 0 $p-gutter;
+        position: relative;
+    }
+
+    &__header {
+        position: relative;
+        width: 100%;
+    }
+
+    &__title {
+        @include style-heading-1;
+
+        hyphens: auto;
+        margin-top: 0;
+        word-break: break-word;
+    }
+
+    &__meta {
+        color: $c-grey--dark;
+        margin: 0 0 .5rem;
+    }
+
+    &__content {
+        padding-bottom: 2rem;
+    }
+
+    // &__footer {
+    // }
+}

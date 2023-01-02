@@ -1,0 +1,21 @@
+@import '../config/colors';
+
+.lastmod {
+    $self: &;
+
+    color: $c-grey--darker;
+    font-style: italic;
+    margin: 0;
+
+    &__link {
+        border-bottom: 1px solid currentColor;
+        color: var(--text-link-color);
+        cursor: pointer;
+        text-decoration: none;
+        transition: border-bottom .2s ease-in;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
+}

@@ -18,16 +18,13 @@ issue a `cuelang.org: ` prefix.
 
 ### Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `== v14.17.3`
-* [Go](https://golang.org/dl/) `== go1.17.3`
-* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.89.4`
+* [NodeJS](https://nodejs.org/) `== v18.12.1`
+* [Go](https://golang.org/dl/) `== go1.19.4`
+* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.108.0`
 
 ### Developing the site locally
 
 ```bash
-# Ensure you have the correct version of the docsy theme
-git submodule update -f --init --recursive
-
 # Install Hugo's Node requirements
 npm install
 ```
@@ -68,4 +65,3 @@ This site was setup using the following guides:
 * https://gohugo.io/hosting-and-deployment/hosting-on-netlify/
 * https://www.docsy.dev/docs/getting-started
 * https://www.docsy.dev/docs/deployment/
-

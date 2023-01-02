@@ -2,107 +2,39 @@ baseURL = "/"
 title = "CUE"
 publishDir = "_public"
 
-enableRobotsTXT = true
-
-# Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["docsy"]
-
-# Will give values to .Lastmod etc.
-enableGitInfo = true
-
-# Language settings
-contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
-# Useful when translating.
-enableMissingTranslationPlaceholders = true
+enableMissingTranslationPlaceholders = true  # Useful when translating
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
+enableRobotsTXT = true # Render robots.txt
+enableGitInfo = true # Will give git-info values to .Lastmod etc.
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+disableAliases = true # We use Netlify server-side redirects instead of generated aliases
 
-# Highlighting config
+# Hugo allows theme composition (and inheritance). Precedence is from left to right.
+# theme = ["docsy"]
+
+# Highlighting
 pygmentsCodeFences = true
 pygmentsUseClasses = false
-# Use the new Chroma Go highlighter in Hugo.
-pygmentsUseClassic = false
-#pygmentsOptions = "linenos=table"
-# See https://help.farbox.com/pygments.html
-pygmentsStyle = "tango"
+pygmentsUseClassic = false # Use the new Chroma Go highlighter in Hugo.
+# pygmentsOptions = "linenos=table"
+pygmentsStyle = "tango" # See https://help.farbox.com/pygments.html
 
-# we use Netlify server-side redirects instead of generated aliases
-disableAliases = true
-
-
- # First one is picked as the Twitter card image if not set on page.
- #images = ["images/project-illustration.png"]
-
-[[menu.main]]
-    name = "Documentation"
-    weight = -101
-    url = "/docs/"
-[[menu.main]]
-    name = "Twitter"
-    weight = 102
-    url = "https://twitter.com/cue_lang"
-[[menu.main]]
-    name = "GitHub"
-    weight = 101
-    url = "https://github.com/cue-lang/cue"
-[[menu.main]]
-    name = "Play"
-    weight = 100
-    url = "/play"
-
-[[languages.zh-cn.menu.main]]
-    name = "文档"
-    weight = -101
-    url = "/docs/"
-[[languages.zh-cn.menu.main]]
-    name = "Twitter"
-    weight = 102
-    url = "https://twitter.com/cue_lang"
-[[languages.zh-cn.menu.main]]
-    name = "GitHub"
-    weight = 101
-    url = "https://github.com/cue-lang/cue"
-[[languages.zh-cn.menu.main]]
-    name = "Play"
-    weight = 100
-    url = "/play"
-
-# Configure how URLs look like per section.
-[permalinks]
-blog = "/:section/:year/:month/:day/:slug/"
-
-## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
-[blackfriday]
-plainIDAnchors = true
-hrefTargetBlank = true
-angledQuotes = false
-latexDashes = true
-
-## Since hugo 0.60 the new renderer requires this for raw HTML to be displayed
-[markup.goldmark.renderer]
-unsafe= true
-
-[markup]
-  [markup.tableOfContents]
-    endLevel = 4
-    ordered = false
-    startLevel = 2
-
-# Image processing configuration.
+# Image processing
 [imaging]
-resampleFilter = "CatmullRom"
-quality = 75
-anchor = "smart"
+    # See https://github.com/disintegration/imaging
+    # CatmullRom is a sharp bicubic filter which should fit the docs site well with its many screenshots.
+    # Note - you can also set this per image processing.
+    resampleFilter = "CatmullRom"
+    # Default JPEG quality setting. Default is 75.
+    quality = 75
+    anchor = "smart"
 
+# Output configuration
 [outputs]
-  home = ["HTML", "RSS", "REDIR"]
-  section = ["HTML"]
-
-[mediaTypes]
-    [mediaTypes."text/netlify"]
-        delimiter = ""
+    home = ["HTML", "RSS", "REDIR"]
+    section = ["HTML"]
 
 [outputFormats]
     [outputFormats.RSS]
@@ -113,94 +45,13 @@ anchor = "smart"
         isPlainText = true
         notAlternative = true
 
+[mediaTypes]
+    [mediaTypes."text/netlify"]
+        delimiter = ""
+
+[social]
+    twitter = "cue_lang"
+
 # [services]
-# [services.googleAnalytics]
-# Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
-# id = "UA-00000000-0"
-
-# Language configuration
-
-[languages]
-[languages.en]
-title = "CUE"
-description = "Validate and define text-based and dynamic configuration"
-languageName ="English"
-# Weight used for sorting.
-weight = 1
-[languages.zh-cn]
-contentDir = "content/zh"
-title = "CUE"
-description = "验证、定义、使用动态以及文本式的数据"
-languageName ="简体中文"
-# Weight used for sorting.
-weight = 2
-
-# Everything below this are Site Params
-
-[params]
-copyright = "The CUE Authors"
-privacy_policy = "https://policies.google.com/privacy"
-
-# Menu title if your navbar has a versions selector to access old versions of your site.
-# This menu appears only if you have at least one [params.versions] set.
-version_menu = "Releases"
-
-# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/cue-lang/cuelang.org"
-# An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/cue-lang/cue"
-
-# Specify a value here if your content directory is not in your repo's root directory
-# github_subdir = ""
-
-# Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "004591905419617723008:8rmik2a7xb3"
-
-# User interface configuration
-[params.ui]
-# Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = false
-#  Set to true to disable breadcrumb navigation.
-breadcrumb_disable = false
-#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = true
-#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = false
-
-# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
-# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
-# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
-# add "hide_feedback: true" to the page's front matter.
-# [params.ui.feedback]
-# enable = true
-# The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-# yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
-# no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
-
-[params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-[[params.links.user]]
-	name = "GitHub Discussions"
-	url = "https://github.com/cue-lang/cue/discussions"
-	icon = "fab fa-github"
-        desc = "Ask questions and discuss CUE"
-
-[[params.links.user]]
-	name = "Slack"
-	url = "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
-	icon = "fab fa-slack"
-        desc = "Chat with other CUE enthusiasts"
-
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
-
-[[params.links.developer]]
-	name = "GitHub"
-	url = "https://github.com/cue-lang/cue"
-	icon = "fab fa-github"
-        desc = "Issue and proposal tracking takes place here!"
-
-[[params.links.developer]]
-	name = "Gerrit"
-	url = "https://review.gerrithub.io/plugins/gitiles/cue-lang/cue"
-	icon = "fab fa-git"
-        desc = "The source-of-truth repo."
+#     [services.googleAnalytics]
+#         id = "UA-00000000-0" # Comment out to disable GA tracking. Also disables the feature [params.ui.feedback]

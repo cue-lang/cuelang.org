@@ -1,0 +1,146 @@
+# Main
+[[main]]
+    identifier = "docs"
+    name = "Documentation"
+    url = "/docs/"
+    weight = 100
+[[main]]
+    identifier = "play"
+    name = "Play"
+    url = "/play/"
+    weight = 101
+[[main]]
+    identifier = "community"
+    name = "Community"
+    url = "/community/"
+    weight = 102
+[[main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 103
+
+# Icons
+[[icons]]
+    identifier = "twitter"
+    name = "Twitter"
+    url = "https://twitter.com/cue_lang"
+    pre = "twitter"
+    weight = 200
+[[icons]]
+    identifier = "slack"
+    name = "Slack"
+    url = "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
+    pre = "slack"
+    weight = 201
+[[icons]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/cue-lang/cue"
+    pre = "github"
+    weight = 203
+
+# CTA
+[[cta]]
+    identifier = "cta"
+    name = "Download"
+    url = "/docs/download/"
+    post = "download"
+    weight = 300
+
+# Footer
+[[footer]]
+    identifier = "column1"
+    name = "Get Started"
+    url = "#"
+    weight = 400
+[[footer]]
+    parent = "column1"
+    name = "Documentation"
+    url = "/docs/"
+    weight = 410
+[[footer]]
+    parent = "column1"
+    name = "Language Guide"
+    url = "/docs/language-guide/"
+    weight = 411
+[[footer]]
+    parent = "column1"
+    name = "Playground"
+    url = "/play/"
+    weight = 412
+
+[[footer]]
+    identifier = "column2"
+    name = "Community"
+    url = "#"
+    weight = 401
+[[footer]]
+    parent = "column2"
+    name = "Recorded talks"
+    url = "#"
+    weight = 420
+[[footer]]
+    parent = "column2"
+    name = "Meetups"
+    url = "#"
+    weight = 421
+[[footer]]
+    parent = "column2"
+    name = "Conferences"
+    url = "#"
+    weight = 422
+
+[[footer]]
+    identifier = "column3"
+    name = "About"
+    url = "#"
+    weight = 402
+[[footer]]
+    parent = "column3"
+    name = "Download"
+    url = "#"
+    weight = 430
+[[footer]]
+    parent = "column3"
+    name = "Blog"
+    url = "#"
+    weight = 431
+[[footer]]
+    parent = "column3"
+    name = "About CUE"
+    url = "#"
+    weight = 432
+
+[[footer]]
+    identifier = "column4"
+    name = "Connect"
+    url = "#"
+    weight = 403
+[[footer]]
+    parent = "column4"
+    name = "Twitter"
+    url = "https://twitter.com/cue_lang"
+    weight = 440
+[[footer]]
+    parent = "column4"
+    name = "Slack"
+    url = "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
+    weight = 441
+[[footer]]
+    parent = "column4"
+    name = "GitHub"
+    url = "https://github.com/cue-lang/cue"
+    weight = 442
+
+# Legal
+[[legal]]
+    identifier = "copyright"
+    name = "Copyright"
+    url = "#"
+    weight = 500
+[[legal]]
+    identifier = "privacy"
+    name = "Privacy policy"
+    url = "#"
+    weight = 501

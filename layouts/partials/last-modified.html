@@ -1,0 +1,10 @@
+{{ if and .GitInfo  $.Site.Params.github_repo -}}
+    <p class="lastmod">
+        {{ T "post_last_mod" }} {{ .Lastmod.Format ($.Param "time_format") -}}
+        {{ with .GitInfo }}: {{/* Trim WS */ -}}
+            <a class="lastmod__link" href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">
+                {{- .Subject }} ({{ .AbbreviatedHash }}) {{- /* Trim WS */ -}}
+            </a>
+        {{- end }}
+    </p>
+{{ end -}}

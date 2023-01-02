@@ -1,0 +1,135 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/clear-fix';
+@import '../mixins/container';
+@import '../mixins/screen';
+@import '../mixins/separator-line';
+@import '../mixins/typography';
+
+.section {
+    $self: &;
+
+    --section-padding: 2rem 0;
+    --section-bg-color: transparent;
+
+    @include clear-fix;
+
+    background-color: var(--section-bg-color);
+    padding: 0;
+    position: relative;
+
+    &__header,
+    &__body,
+    &__footer {
+        padding: var(--section-padding);
+        position: relative;;
+
+        & + #{ $self }__header,
+        & + #{ $self }__body,
+        & + #{ $self }__footer {
+            padding-top: 0;
+        }
+    }
+
+    &__content {
+        @include clear-fix;
+        @include container($w-section-content);
+
+        padding: 0 $p-gutter;
+        position: relative;
+    }
+
+    &__container {
+        @include container($w-section-container);
+
+        padding: 0 $p-gutter;
+        position: relative;
+    }
+
+    &__title {
+        @include style-heading-1;
+
+        margin: 0;
+
+        & + #{ $self }__intro {
+            margin-top: 1rem;
+        }
+    }
+
+    &__intro {
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &--overview {
+        #{ $self }__header {
+            &::after {
+                @include separator-line;
+
+                margin: 2rem auto 0;
+            }
+        }
+    }
+
+    &--white {
+        --section-bg-color: #{ $c-white };
+
+        + #{ $self }--white {
+            & > :first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &--blue {
+        --section-bg-color: #{ $c-blue--lighter };
+
+        + #{ $self }--blue {
+            & > :first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &--grey {
+        --section-bg-color: #{ $c-grey--lightest };
+
+        + #{ $self }--grey {
+            & > :first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &--yellow {
+        --section-bg-color: #{ $c-yellow };
+
+        + #{ $self }--yellow {
+            & > :first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @include screen($screen-simple) {
+        --section-padding: 3rem 0;
+
+        &--center {
+            #{ $self }__header,
+            #{ $self }__footer {
+                text-align: center;
+            }
+        }
+    }
+
+    @include screen($screen-normal) {
+        --section-padding: 4rem 0;
+
+        &--overview {
+            #{ $self }__header {
+                padding-bottom: 2rem;
+            }
+        }
+    }
+}

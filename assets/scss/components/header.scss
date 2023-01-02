@@ -1,0 +1,194 @@
+@import '../config/colors';
+@import '../base/fonts';
+@import '../config/sizes';
+@import '../mixins/container';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+
+.header {
+    $self: &;
+
+    --header-height: #{ $h-header };;
+    --header-logo-width: #{ $w-branding };
+
+    background-color: $c-blue--lighter;
+    display: block;
+    height: var(--header-height);
+    width: 100%;
+
+    &__container {
+        @include container($w-site);
+
+        align-items: center;
+        display: flex;
+        height: 100%;
+        padding: 0 10px;
+    }
+
+    &__branding {
+        flex: 0 0 var(--header-logo-width);
+        margin: 0 45px 0 0;
+        width: var(--header-logo-width);
+    }
+
+    &__logo {
+        background-color: $c-white;
+        border-radius: 50%;
+        fill: $c-blue;
+        display: block;
+        padding: 7px;
+        width: 100%;
+
+        .logo__inner {
+            transition: fill .2s ease;
+        }
+
+        &:focus,
+        &:hover {
+            .logo__inner {
+                fill: $c-yellow;
+            }
+        }
+
+        span {
+            @include sr-only;
+        }
+    }
+
+    &__main {
+        display: none;
+    }
+
+    &__secondary {
+        display: flex;
+        margin-left: auto;
+    }
+
+    &__icons {
+        display: none;
+    }
+
+    &__cta,
+    &__search {
+        display: none;
+
+        .button {
+            display: block;
+        }
+    }
+
+    &--wide {
+        --header-height: #{ $h-header--sticky };
+    }
+
+    &--wide,
+    &.is-sticky {
+        --header-logo-width: #{ $w-branding--large };
+
+        #{ $self }__container {
+            background-color: $c-white;
+            box-shadow: $shadow--header;
+            height: $h-header--sticky;
+            max-width: 100%;
+
+            & > * {
+                z-index: 2;
+            }
+
+            // Background
+            &::before {
+                background-color: $c-white;
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            // Logo shadow
+            &::after {
+                border-radius: 50%;
+                box-shadow: $shadow--header;
+                content: '';
+                height: var(--header-logo-width);
+                left: 30px;
+                position: absolute;
+                top: 5px;
+                width: var(--header-logo-width);
+                z-index: 0; // Get it behind the bg
+            }
+        }
+
+        #{ $self }__branding {
+            position: relative;
+            flex: 0 0 100px;
+            height: 100%;
+            margin: 0 10px 0 20px;
+            width: 100px;
+        }
+
+        #{ $self }__logo {
+            position: absolute;
+            top: 5px;
+        }
+
+        #{ $self }__cta {
+            margin: 0 .5rem;
+        }
+    }
+
+    &.is-sticky {
+        #{ $self }__container {
+            position: fixed;
+            transform: translateY(-110px); // more then height because of logo / box shadow
+            transition: transform .2s;
+            opacity: 0; // Hides flickering
+        }
+    }
+
+    &.is-shown {
+        #{ $self }__container {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @include screen(550px) {
+        &__cta {
+            display: block;
+            margin: 0 1rem;
+        }
+    }
+
+    @include screen($screen-normal) {
+        --header-height: #{ $h-header--large };
+        --header-logo-width: #{ $w-branding--large };
+
+        &__main,
+        &__icons,
+        &__search {
+            display: block;
+        }
+
+        &__toggle {
+            display: none;
+        }
+
+        &--wide {
+            --header-height: #{ $h-header--sticky };
+            --header-logo-width: #{ $w-branding--large };
+        }
+    }
+
+    @include screen($screen-large) {
+        --header-height: #{ $h-header--xlarge };
+        --header-logo-width: #{ $w-branding--xlarge };
+
+        &--wide {
+            --header-height: #{ $h-header--sticky };
+            --header-logo-width: #{ $w-branding--large };
+        }
+    }
+}
