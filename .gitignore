@@ -2,6 +2,4 @@
 /_public/
 /node_modules/
 /resources/
-/play/node_modules/
-/play/*.wasm
 /.hugo_build.lock
