@@ -1,0 +1,35 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+
+.skip-link {
+    @include sr-only;
+
+    background-color: $c-yellow;
+    border-radius: 3rem;
+    color: $c-black;
+    font-weight: $weight-bold;
+    padding: 12px 25px;
+    left: $p-gutter;
+    line-height: 1.5;
+    max-width: calc(100vw - 55px);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s;
+    top: 15px;
+    white-space: nowrap;
+    z-index: 2000;
+
+    &:focus {
+        clip: auto;
+        height: auto;
+        white-space: normal;
+        width: auto;
+    }
+
+    &:hover {
+        background-color: $c-yellow--dark;
+    }
+}

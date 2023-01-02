@@ -1,0 +1,110 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../config/typography';
+
+.link {
+    $self: &;
+
+    --link-color: #{ $c-blue };
+    --link-color-hover: #{ $c-blue };
+    --link-color-disabled: #{ $c-grey };
+    --link-border-width: 2px;
+    --link-font-size: 1rem;
+    --link-height: #{ $h-button };
+    --link-padding: 1rem;
+
+
+    align-items: center;
+    appearance: none;
+    border: 0;
+    color: var(--link-color);
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentColor;
+    font-family: $font-inter;
+    font-size: var(--link-font-size);
+    font-weight: $weight-bold;
+    height: var(--link-height);
+    outline: 0;
+    padding: 0 var(--link-padding);
+    position: relative;
+    text-decoration: none;
+    transition: color .2s, fill .2s;
+
+    &:focus,
+    &:hover {
+        color: var(--link-color-hover);
+        text-decoration: none;
+
+        #{ $self }__text {
+            background-position-x: 0;
+            background-size: 100% var(--link-border-width);
+        }
+    }
+
+    &:disabled {
+        color: var(--link-color-disabled);
+        cursor: not-allowed;
+
+        #{ $self }__text {
+            background-position-x: 0;
+            background-size: 0 0;
+        }
+    }
+
+    p & {
+        margin: 0 0 1em;
+    }
+
+    &__text {
+        background: linear-gradient(var(--link-color), var(--link-color)) no-repeat 100% 100%;
+        background-size: 0 var(--link-border-width);
+        max-width: 100%;
+        overflow: hidden;
+        padding-bottom: var(--link-border-width);
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: background-size .2s ease-in-out;
+
+        & + #{ $self }__icon {
+            margin-left: .5em;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        margin: 0 0 0 -.4em;
+        max-height: 24px;
+        max-width: 24px;
+        vertical-align: 12px;
+
+        &.icon {
+            display: inline-block; // Win from icon styles
+        }
+
+        & + #{ $self }__text {
+            margin-left: .5em;
+        }
+    }
+
+    &--white {
+        --link-color: #{ $c-white };
+        --link-color-hover: #{ $c-white };
+    }
+
+    &--red {
+        --link-color: #{ $c-red };
+        --link-color-hover: #{ $c-red };
+    }
+
+    &--black {
+        --link-color: #{ $c-black };
+        --link-color-hover: #{ $c-black };
+    }
+
+    &--yellow {
+        --link-color: #{ $c-yellow };
+        --link-color-hover: #{ $c-yellow--dark };
+    }
+}

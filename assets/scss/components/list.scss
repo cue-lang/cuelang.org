@@ -1,0 +1,49 @@
+@import '../config/sizes';
+@import '../mixins/list-reset';
+@import '../mixins/screen';
+
+.list {
+    $self: &;
+
+    @include list-reset;
+
+    display: grid;
+    gap: $p-gutter;
+
+    &__item {
+        display: block;
+    }
+
+    &--archive {
+        margin: 0 -#{ $p-gutter };
+    }
+
+    @include screen($screen-simple) {
+        &--simple,
+        &--overview {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--overview {
+            #{ $self }__item:nth-child(1),
+            #{ $self }__item:nth-child(10) {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    @include screen($screen-normal) {
+        gap: 30px;
+
+        &--simple,
+        &--overview {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @include screen($screen-large) {
+        &--archive {
+            margin: 0 -#{ $p-gutter--large };
+        }
+    }
+}

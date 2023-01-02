@@ -1,0 +1,127 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+
+.drawer {
+    $self: &;
+
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 11;
+
+    &__backdrop {
+        background-color: transparent;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: background-color .2s ease-in-out;
+    }
+
+    &__container {
+        background-color: $c-yellow;
+        bottom: 0;
+        box-shadow: $shadow--drawer;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-width: $w-drawer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(101%);
+        transition: transform .4s ease-in-out;
+        width: 100%;
+    }
+
+    &__header {
+        align-items: center;
+        display: flex;
+        flex: 0 0 $h-header;
+        height: $h-header;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: $w-site;
+        padding: 0 $p-gutter;
+        width: 100%;
+    }
+
+    &__content {
+        flex: 1;
+        margin: 0 auto;
+        max-width: $w-site;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: $p-gutter;
+        width: 100%;
+    }
+
+    &__footer {
+        align-items: center;
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: $w-site;
+        padding: $p-gutter;
+        width: 100%;
+    }
+
+    &__branding {
+        background-color: $c-white;
+        border-radius: 50%;
+        display: block;
+        flex: 0 0 $w-branding;
+        margin: 0 auto 0 -.75rem;
+        padding: 4px;
+        transition: background-color .2s;
+        width: $w-branding;
+
+        &:focus,
+        &:hover {
+            background-color: $c-yellow--dark;
+        }
+
+        span {
+            @include sr-only;
+        }
+    }
+
+    &__close {
+        flex: 0 0 $h-button;
+    }
+
+    &.is-active {
+        display: block;
+    }
+
+    &.is-open {
+        #{ $self }__backdrop {
+            background-color: transparentize($c-black, .5);
+        }
+
+        #{ $self }__container {
+            transform: translateX(0);
+        }
+    }
+
+    @include screen($screen-normal) {
+        &__header {
+            flex: 0 0 $h-header--large;
+            height: $h-header--large;
+        }
+
+        &--mobile {
+            &.is-active {
+                display: none;
+            }
+        }
+    }
+}

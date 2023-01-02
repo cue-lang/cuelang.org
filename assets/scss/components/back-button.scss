@@ -1,0 +1,30 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+
+.back-button {
+    $self: &;
+
+    background-color: $c-blue--lighter;
+    padding: 2rem 0 1rem;
+
+    &__container {
+        display: flex;
+        margin: 0 auto;
+        max-width: $w-content;
+        padding: 0 $p-gutter;
+    }
+
+    &__link {
+        min-width: 200px;
+        margin-left: -15px;
+    }
+
+    @include screen($screen-large) {
+        padding: 3rem 0 1.25rem;
+
+        &__link {
+            margin-left: -42px;
+        }
+    }
+}

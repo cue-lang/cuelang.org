@@ -1,0 +1,51 @@
+@import '../config/colors';
+@import '../config/typography';
+@import '../mixins/list-reset';
+@import '../mixins/svg';
+
+.toc {
+    $self: &;
+
+    color: $c-grey--darkest;
+    font-weight: $weight-normal;
+    margin-left: 28px;
+
+    &__list {
+        @include list-reset;
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__link {
+        display: block;
+        padding: .25rem .25rem .25rem 30px;
+        text-decoration: none;
+
+        &::before {
+            @include svg(note, $c-yellow);
+
+            height: 20px;
+            left: 0;
+            position: absolute;
+            top: 6px;
+            width: 20px;
+        }
+
+        &:hover,
+        &:focus {
+            span {
+                background-position-x: 0;
+                background-size: 100% 1px;
+            }
+        }
+
+        span {
+            background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
+            background-size: 0 1px;
+            padding-bottom: 2px;
+            transition: background-size .2s ease-in-out;
+        }
+    }
+}

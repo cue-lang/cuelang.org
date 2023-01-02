@@ -1,0 +1,20 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+
+.separator {
+    $self: &;
+
+    background-color: var(--hr-color);
+    border: 0;
+    clear: both;
+    display: block;
+    height: 1px;
+    margin: 1rem auto;
+    max-width: $w-content - ($p-gutter * 2);
+    padding: 0;
+
+    &--wide {
+        max-width: $w-section-content + 120px;
+    }
+}

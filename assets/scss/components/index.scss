@@ -1,0 +1,22 @@
+@import '../config/sizes';
+@import '../mixins/screen';
+
+.index {
+    $self: &;
+
+    display: grid;
+    gap: $p-gutter--large $p-gutter--large;
+    grid-template-columns: 1fr;
+
+    //&__nav {
+    //}
+
+    @include screen($screen-simple) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include screen($screen-normal) {
+        gap: $p-gutter--large;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

@@ -1,0 +1,67 @@
+# UI
+[ui_skip_nav]
+other = "跳到内容"
+[ui_branding_title]
+other = "CUE主页"
+[ui_read_more]
+other = "更多"
+[ui_search]
+other = "搜索"
+[ui_loading]
+other = "Loading"
+[ui_close]
+other = "Close"
+
+# Menus
+[ui_menu]
+other = "菜单"
+[ui_menu_open]
+other = "关闭菜单"
+[ui_menu_close]
+other = "隐藏菜单"
+[ui_menu_main]
+other = "Main menu"
+[ui_menu_mobile]
+other = "Mobile menu"
+[ui_menu_footer]
+other = "Footer menu"
+[ui_menu_legal]
+other = "Legal"
+[ui_menu_social]
+other = "Social"
+
+# Side menu
+[ui_sidemenu]
+other = "Side navigation"
+[ui_sidemenu_open]
+other = "Show side navigation"
+[ui_sidemenu_close]
+other = "Hide side navigation"
+
+# Paging
+[ui_pager_name_prevnext]
+other = "Previous/Next navigation"
+[ui_pager_name_pages]
+other = "Pagination"
+[ui_pager_prev]
+other = "上一页"
+[ui_pager_next]
+other = "下一页"
+[ui_pager_first]
+other = "第一页"
+[ui_pager_last]
+other = "最后一页"
+
+# Post (blog, articles etc.)
+[post_byline_by]
+other = "By"
+[post_created]
+other = "创建"
+[post_last_mod]
+other = "最后修改"
+
+# Redirect page
+[redirect_title]
+other = "Redirecting..."
+[redirect_manually]
+other = "Click here if you are not redirected"

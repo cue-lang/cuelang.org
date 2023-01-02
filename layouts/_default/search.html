@@ -1,0 +1,22 @@
+{{ define "main" }}
+    <section class="section section--search">
+        <header class="section__header">
+            <h1 class="section__title">{{ .Title }}</h1>
+            <div class="todo"><span class="todo__note">TODO</span><span class="todo__desc">Form</span></div>
+        </header>
+        <div class="section__container">
+            <gcse:searchresults-only>{{ partial "spinner.html" }}</gcse:searchresults-only>
+        </div>
+    </section>
+    <script>
+        (function() {
+            var cx = '{{ . }}';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+{{ end }}

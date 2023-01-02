@@ -1,0 +1,32 @@
+# editorconfig.org
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 120
+
+# Specific JetBrains IDE Code Style Properties
+ij_formatter_off_tag = @formatter:off
+ij_formatter_on_tag = @formatter:on
+ij_formatter_tags_enabled = true
+
+[*.ts]
+any_class_brace_style = next_line
+any_method_brace_style = end_of_line
+quote_type = single
+
+#  Specific JetBrains IDE Code Style Properties
+ij_any_class_brace_style = next_line
+ij_any_method_brace_style = end_of_line
+ij_typescript_use_double_quotes = false
+
+[*.md]
+max_line_length = off
+
+[*.{yml,yaml,json}]
+indent_size = 2

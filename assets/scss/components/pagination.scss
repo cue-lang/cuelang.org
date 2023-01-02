@@ -1,0 +1,160 @@
+@import '../config/colors';
+@import '../mixins/list-reset';
+@import '../mixins/typography';
+
+.pagination {
+    $self: &;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative;
+    width: 100%;
+
+    &__list {
+        @include list-reset;
+
+        display: flex;
+        justify-content: space-between;
+        line-height: 1;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__prev,
+    &__next,
+    &__item {
+        @include style-heading;
+
+        background-color: $c-black;
+        color: $c-white;
+        display: none;
+        fill: $c-white;
+        font-weight: $weight-bold;
+        height: 42px;
+        line-height: 42px;
+        margin: 0 .25rem;
+        overflow: hidden;
+        text-align: center;
+        transition: background-color .2s ease-in-out;
+        width: 42px;
+
+        &:first-child,
+        &:last-child {
+            display: inline-block;
+            margin: 0;
+        }
+
+        &.is-current {
+            background-color: $c-blue;
+
+            #{ $self }__link {
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        &[disabled] {
+            opacity: .3;
+        }
+    }
+
+    &__link {
+        color: $c-white;
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        transition: background-color .2s ease-in-out;
+
+        &:focus,
+        &:hover {
+            background-color: $c-blue;
+        }
+    }
+
+    &__icon {
+        display: inline;
+        fill: currentColor;
+        height: 14px;
+        vertical-align: -2px;
+        width: 14px;
+    }
+
+    /* stylelint-disable no-descending-specificity -- disable lint to ignore the first/last-child styling on the grouped class */
+
+    &__prev,
+    &__next {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        width: auto;
+    }
+
+    &__label {
+        display: block;
+        padding: 0 1rem;
+    }
+
+    &__prev {
+        #{ $self }__icon {
+            transform: translateX(-1px);
+        }
+    }
+
+    &__next {
+        #{ $self }__icon {
+            transform: translateX(1px);
+        }
+    }
+
+    /* stylelint-enable no-descending-specificity */
+
+    &__label-title {
+        &--prev {
+            margin-left: .25rem;
+        }
+
+        &--next {
+            margin-right: .25rem;
+        }
+    }
+
+    @include screen($screen-simple) {
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &__prev,
+        &__next,
+        &__item {
+            display: inline-block;
+            height: 42px;
+            width: 42px;
+
+            &:first-child,
+            &:last-child {
+                display: inline-block;
+                margin: 0 .25rem;
+            }
+        }
+
+        &__label {
+            padding: 0;
+        }
+
+        &__label-title {
+            display: none;
+        }
+
+        &__icon {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}

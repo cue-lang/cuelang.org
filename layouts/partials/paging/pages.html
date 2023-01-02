@@ -1,0 +1,104 @@
+{{/* See https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/ */}}
+{{ $paginator := .Paginator }}
+
+{{/* Number of links either side of the current page */}}
+{{ $adjacent_links := 2 }}
+
+{{/* $max_links = ($adjacent_links * 2) + 1 */}}
+{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+
+{{/* Determine upper/lower limit */}}
+{{ $lower_limit := (add $adjacent_links 1) }}
+{{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+
+{{/* Only show when there is atleast one page */}}
+{{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination">
+        <li class="pagination__list">
+            {{/* First page */}}
+            <li class="pagination__item">
+                <a class="pagination__link"
+                        {{- if ne $paginator.PageNumber 1 }} href="{{ $paginator.First.URL }}"{{ end }}
+                        {{- if eq $paginator.PageNumber 1 }} disabled{{ end }}>
+                    {{ partial "icon.html" (dict "icon" "chevron-first" "class" "pagination__icon") }}
+                    <span class="pagination__label">{{ T "ui_pager_first" }}</span>
+                </a>
+            </li>
+
+            {{/* Previous page */}}
+            <li class="pagination__item">
+                <a class="pagination__link"
+                        {{- if $paginator.HasPrev }} href="{{ $paginator.Prev.URL }}"{{ end }}
+                        {{- if not $paginator.HasPrev }} disabled{{ end }}>
+                    {{ partial "icon.html" (dict "icon" "chevron-left" "class" "pagination__icon") }}
+                    <span class="pagination__label">{{ T "ui_pager_prev" }}</span>
+                </a>
+            </li>
+
+            {{/* Page numbers */}}
+            {{ range $paginator.Pagers }}
+                {{ $.Scratch.Set "page_number_flag" false }}
+
+                {{ if gt $paginator.TotalPages $max_links }}
+                    {{/* Lower limit pages */}}
+                    {{/* If the user is on a page which is in the lower limit */}}
+                    {{ if le $paginator.PageNumber $lower_limit }}
+                        {{/* If the current loop page is less than max_links */}}
+                        {{ if le .PageNumber $max_links }}
+                            {{ $.Scratch.Set "page_number_flag" true }}
+                        {{ end }}
+
+
+                    {{/* Upper limit pages */}}
+                    {{/* If the user is on a page which is in the upper limit */}}
+                    {{ else if ge $paginator.PageNumber $upper_limit }}
+
+                        {{/* If the current loop page is greater than total pages minus $max_links */}}
+                        {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
+                            {{ $.Scratch.Set "page_number_flag" true }}
+                        {{ end }}
+
+                    {{/* Middle pages */}}
+                    {{ else }}
+                        {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+                            {{ $.Scratch.Set "page_number_flag" true }}
+                        {{ end }}
+                    {{ end }}
+
+                {{/* Simple pages numbers */}}
+                {{ else }}
+                    {{ $.Scratch.Set "page_number_flag" true }}
+                {{ end }}
+
+                {{/* Render */}}
+                {{ if eq ($.Scratch.Get "page_number_flag") true }}
+                    <li class="pagination__item">
+                        <a class="pagination__link{{ if eq . $paginator }} is-current{{ end }}" href="{{ .URL }}">
+                            <span class="pagination__page">{{ .PageNumber }}</span>
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+
+            {{/* Next page */}}
+            <li class="pagination__item">
+                <a class="pagination__link"
+                    {{- if $paginator.HasNext }} href="{{ $paginator.Next.URL }}"{{ end }}
+                    {{- if not $paginator.HasNext }} disabled{{ end }}>
+                    <span class="pagination__label">{{ T "ui_pager_next" }}</span>
+                    {{ partial "icon.html" (dict "icon" "chevron-right" "class" "pagination__icon") }}
+                </a>
+            </li>
+
+            {{/* Last page */}}
+            <li class="pagination__item">
+                <a class="pagination__link"
+                        {{- if ne $paginator.PageNumber $paginator.TotalPages }} href="{{ $paginator.Last.URL }}"{{ end }}
+                        {{- if eq $paginator.PageNumber $paginator.TotalPages }} disabled{{ end }}>
+                    <span class="pagination__label">{{ T "ui_pager_last" }}</span>
+                    {{ partial "icon.html" (dict "icon" "chevron-last" "class" "pagination__icon") }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+{{ end }}

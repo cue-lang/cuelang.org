@@ -1,0 +1,56 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../config/typography';
+
+@mixin button-base {
+    --button-font-size: 1rem;
+    --button-height: #{ $h-button };
+    --button-padding: 1rem;
+
+    appearance: none;
+    border-radius: calc(var(--button-height) * .5);
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+    display: inline-block;
+    fill: currentColor;
+    font-family: $font-inter;
+    font-size: var(--button-font-size);
+    font-weight: $weight-bold;
+    height: var(--button-height);
+    line-height: calc(var(--button-height) - 4px);
+    padding: 0 var(--button-padding);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s, border-color .2s, color .2s, fill .2s;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin button-style(
+    $background, $border, $color,
+    $background-hover, $border-hover, $color-hover,
+    $background-disabled, $border-disabled, $color-disabled
+) {
+    background-color: $background;
+    border-color: $border;
+    color: $color;
+
+    &:focus,
+    &:hover {
+        background-color: $background-hover;
+        border-color: $border-hover;
+        color: $color-hover;
+    }
+
+    &:disabled {
+        background-color: $background-disabled;
+        border-color: $border-disabled;
+        box-shadow: none;
+        color: $color-disabled;
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,54 @@
+{{ $baseUrl := urls.Parse $.Site.Params.Baseurl }}
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="{{ T "ui_menu_footer" }}">
+            {{ range .Site.Menus.footer }}
+                {{ $url := urls.Parse .URL }}
+                <div class="nav nav--footer">
+                    <p class="nav__title">{{ .Name }}</p>
+
+                    <ul class="nav__list">
+                        {{ range .Children }}
+                            {{ $url := urls.Parse .URL }}
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                                   {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
+                                    <span class="nav__text">{{ .Name }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            {{ end }}
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="{{ T "ui_menu_legal" }}">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; {{ now.Year }} CUE</span>
+                    </li>
+
+                    {{ range .Site.Menus.legal }}
+                        <li class="nav__item">
+                            {{- $url := urls.Parse .URL -}}
+                            <a class="nav__link"
+                               href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                               {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
+                                <span class="nav__text">{{ .Name }}</span>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <a href="{{ .Site.Home.RelPermalink }}" class="footer__branding" rel="home">
+                {{ with resources.Get "svg/logo.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
+                <span>{{ T "ui_branding_title" }}</span>
+            </a>
+        </nav>
+    </div>
+</div>

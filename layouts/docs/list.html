@@ -1,0 +1,44 @@
+{{ define "main" }}
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            {{ partial "paging/breadcrumb.html" . }}
+            {{ partial "separator.html" }}
+
+            <article class="article article--docs">
+                <div class="article__container">
+                    <header class="article__header">
+                        <h1 class="article__title">{{ .Title }}</h1>
+                    </header>
+                    <div class="article__content">
+                        {{ .Content }}
+                        {{ partial "paging/section-index.html" . }}
+                    </div>
+                    <footer class="article__footer">
+                        {{ partial "last-modified.html" . }}
+                    </footer>
+                </div>
+            </article>
+
+            {{ partial "separator.html" }}
+            {{ partial "paging/prev-next.html" . }}
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                {{ partial "paging/tree.html" . }}
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+                    {{- partial "icon.html" (dict "icon" "chevron-left" "class" "button__icon") -}}
+                    <span>{{ T "ui_sidemenu_close" }}</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+            {{- partial "icon.html" (dict "icon" "chevron-right" "class" "button__icon") -}}
+            <span>{{ T "ui_sidemenu_open" }}</span>
+        </button>
+    </div>
+{{ end }}

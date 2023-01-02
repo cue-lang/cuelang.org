@@ -1,0 +1,113 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+@import '../mixins/stretch';
+@import '../mixins/svg';
+
+.popover {
+    $self: &;
+
+    --popover-close-size: 54px;
+
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-items: center;
+    left: 0;
+    opacity: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity .2s;
+    z-index: 600;
+
+    &__mask {
+        @include stretch;
+
+        background-color: transparentize($c-black, .2);
+    }
+
+    &__content {
+        display: block;
+        margin: 0 auto;
+        max-height: 100%;
+        max-width: $w-content;
+        overflow-x: hidden;
+        padding: var(--popover-close-size) $p-gutter $p-gutter;
+        position: relative;
+        width: 100%;
+    }
+
+    &__close {
+        background-color: transparentize($c-black, .8);
+        cursor: pointer;
+        height: var(--popover-close-size);
+        position: absolute;
+        right: $p-gutter;
+        top: 0;
+        transition: background-color .2s;
+        width: var(--popover-close-size);
+        z-index: 1;
+
+        &::before {
+            @include svg('close', $c-white);
+
+            height: 16px;
+            left: 19px;
+            position: absolute;
+            top: 14px;
+            width: 16px;
+        }
+
+        span {
+            @include sr-only;
+        }
+
+        &:hover {
+            background-color: $c-black;
+        }
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+
+    &.is-active {
+        display: flex;
+        opacity: 1;
+    }
+
+    &--video,
+    &--wide {
+        #{ $self }__content {
+            max-width: $screen-large;
+            overflow-x: visible;
+        }
+    }
+
+    &--quickscan {
+        align-items: flex-start;
+
+        #{ $self }__mask {
+            background-color: $c-blue;
+        }
+
+        #{ $self }__close {
+            background-color: $c-white;
+            border-radius: 50%;
+            position: fixed;
+            right: $p-gutter;
+            top: $p-gutter;
+
+            &::before {
+                @include svg('close', $c-red);
+            }
+
+            &:hover {
+                background-color: transparentize($c-white, .3);
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import '../mixins/typography';
+
+.meta {
+    $self: &;
+
+    color: currentColor;
+    column-gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+    row-gap: 1rem;
+
+    &__item {
+        align-items: center;
+        display: flex;
+        gap: 8px;
+    }
+
+    &__icon {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    &__value {
+        @include style-text-small;
+    }
+
+    &__link {
+        border-bottom: 1px solid currentColor;
+        display: block;
+        text-decoration: none;
+        transition: border-bottom-color .2s;
+
+        &:hover {
+            border-bottom-color: transparent;
+        }
+    }
+}

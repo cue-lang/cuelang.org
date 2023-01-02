@@ -1,0 +1,22 @@
+# Site Params
+
+# Fallback Twitter card image (if not set on page)
+images = ["img/social.png"]
+
+# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
+github_repo = "https://github.com/cue-lang/cuelang.org"
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+gcs_engine_id = "004591905419617723008:8rmik2a7xb3"
+
+# Which logo to use in main header
+logo = "svg/logo-alpha.svg"
+
+# Add a site-wide sticky-note
+# Contents allows for markdown, leave out CTA if you don't want a button
+[sticky_note]
+    content = '**Note:** a sticky note we wanted to show at the bottom'
+    [sticky_note.cta]
+        link = '/download'
+        icon = 'download'
+        text = 'Download'

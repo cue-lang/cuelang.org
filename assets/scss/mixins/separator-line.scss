@@ -1,0 +1,12 @@
+@import '../config/colors';
+@import '../config/sizes';
+
+@mixin separator-line($color: $c-blue, $width: $w-section-content + 120px) {
+    background-color: $color;
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $width;
+}
