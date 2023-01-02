@@ -33,7 +33,6 @@ To serve the site locally run:
 
 ```
 ./serve.bash        # In one terminal
-./play/run.bash     # In another terminal
 ```
 
 ### Updating the language spec and tour for cuelang.org

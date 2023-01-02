@@ -43,27 +43,13 @@ jobs:
         run: |-
           GOPROXY=direct go get -d cuelang.org/go@latest
           go mod tidy
-          cd play
-          GOPROXY=direct go get -d cuelang.org/go@latest
           go mod tidy
-      - name: Re-vendor play
-        run: ./_scripts/revendorToolsInternal.bash
-        working-directory: ./play
       - name: Regenerate
         run: go generate ./...
-      - name: Regenerate play
-        run: go generate ./...
-        working-directory: ./play
       - name: Test
         run: go test ./...
-      - name: Test play
-        run: go test ./...
-        working-directory: ./play
       - name: Check module is tidy
         run: go mod tidy
-      - name: Check play module is tidy
-        run: go mod tidy
-        working-directory: ./play
       - name: Dist
         run: ./build.bash
       - name: Verify commit is clean

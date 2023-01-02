@@ -66,39 +66,23 @@ trybot: _base.#bashWorkflow & {
 					run: """
 						GOPROXY=direct go get -d cuelang.org/go@latest
 						go mod tidy
-						cd play
-						GOPROXY=direct go get -d cuelang.org/go@latest
 						go mod tidy
 						"""
-				},
-
-				_#play & {
-					name: "Re-vendor play"
-					run:  "./_scripts/revendorToolsInternal.bash"
 				},
 
 				// Go generate steps
 				_#goGenerate & {
 					name: "Regenerate"
 				},
-				_#goGenerate & _#play & {
-					name: "Regenerate play"
-				},
 
 				// Go test steps
 				_#goTest & {
 					name: "Test"
 				},
-				_#goTest & _#play & {
-					name: "Test play"
-				},
 
 				// go mod tidy
 				_#modTidy & {
 					name: "Check module is tidy"
-				},
-				_#modTidy & _#play & {
-					name: "Check play module is tidy"
 				},
 
 				_#dist,
@@ -139,10 +123,6 @@ trybot: _base.#bashWorkflow & {
 				_#cachePost,
 			]
 		}
-	}
-
-	_#play: json.#step & {
-		"working-directory": "./play"
 	}
 
 	_#goGenerate: json.#step & {

@@ -23,10 +23,6 @@ fi
 
 echo $SHELL
 # Main site
-$time git submodule update -f --init --recursive
 $time npm ci
 $time npm run icons
 $time hugo $@
-
-# CUE playground
-bash play/build.bash
