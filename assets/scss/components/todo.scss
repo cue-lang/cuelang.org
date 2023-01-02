@@ -1,0 +1,31 @@
+@import '../config/colors';
+@import '../config/typography';
+
+.todo {
+    $self: &;
+
+    align-items: center;
+    border: 2px dashed $c-pink;
+    border-radius: 10px;
+    color: $c-pink;
+    display: flex;
+    justify-content: center;
+    padding: $p-gutter;
+    position: relative;
+
+    &__note {
+        background-color: $c-pink;
+        border-radius: 5px;
+        color: $c-white;
+        font-size: .875rem;
+        font-weight: $weight-bold;
+        top: 4px;
+        left: 4px;
+        line-height: 1;
+        padding: 4px 5px;
+        position: absolute;
+    }
+
+    //&__desc {
+    //}
+}

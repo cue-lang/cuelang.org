@@ -1,0 +1,27 @@
+@import '../config/colors';
+
+@mixin scrollbars {
+    // For Chrome & Safari
+    &::-webkit-scrollbar {
+        background-color: var(--scrollbar-background, #{ $c-scrollbar-background });
+        width: 10px;
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: var(--scrollbar-background, #{ $c-scrollbar-background });
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: var(--scrollbar-color, #{ $c-scrollbar-color });
+
+        &:hover {
+            background-color: var(--scrollbar-color-hover, #{ $c-scrollbar-color-hover });
+        }
+    }
+
+    // Standard version (Firefox only for now)
+    scrollbar-color: var(--scrollbar-color, #{ $c-scrollbar-color }) var(--scrollbar-background, #{ $c-scrollbar-background });
+}

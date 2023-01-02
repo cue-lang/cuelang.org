@@ -12,7 +12,7 @@ https://cue.netlify.com/* https://cuelang.org/:splat 301!
 https://cuelang.org/docs/concepts/intro/ https://cuelang.org/docs/concepts/logic/ 301!
 
 # Netlify redirects. See https://www.netlify.com/docs/redirects/
-{{  range $p := .Site.Pages -}}
+{{ range $p := .Site.Pages -}}
 {{ range .Aliases }}
 {{  . | printf "%-35s" }}	{{ $p.RelPermalink -}}
 {{ end -}}

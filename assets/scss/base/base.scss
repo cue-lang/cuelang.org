@@ -1,0 +1,554 @@
+/* stylelint-disable no-descending-specificity, property-no-vendor-prefix */
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/button';
+@import '../mixins/list-reset';
+@import '../mixins/screen';
+@import '../mixins/scrollbar';
+@import '../mixins/sr-only';
+@import '../mixins/typography';
+
+:root {
+    --text-color: #{ $c-grey--darkest };
+    --heading-color: #{ $c-blue };
+    --text-link-color: #{ $c-blue };
+    --caption-color: #{ transparentize($c-grey--darkest, .3) };
+    --list-color: #{ $c-blue };
+    --table-border-color: #{ $c-grey--light };
+    --table-header-border-color: #{ $c-grey };
+    --pre-color: #{ $c-grey--darkest };
+    --pre-background-color: #{ $c-blue--lighter };
+    --pre-border-color: #{ $c-blue--lighter };
+    --quote-background-color: #{ $c-grey--lighter };
+    --quote-color: #{ $c-grey--darker };
+    --quote-cite-color: #{ $c-grey--dark };
+    --quote-line-color: #{ $c-red };
+    --hr-color: #{ transparentize($c-blue, .5) };
+    --mark-color: #{ $c-grey--darkest };
+    --mark-background-color: #{ $c-yellow };
+    --scrollbar-color: #{ $c-scrollbar-color };
+    --scrollbar-color-hover: #{ $c-scrollbar-color-hover };
+    --scrollbar-background: #{ $c-scrollbar-background };
+}
+
+html,
+body {
+    font-size: 16px;
+    min-height: 100%;
+}
+
+body {
+    @include scrollbars;
+    @include style-text;
+
+    background-color: $c-white;
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include style-heading;
+
+    color: var(--heading-color);
+    margin: 1em 0 .5em;
+}
+
+h1 {
+    @include style-heading-1;
+}
+
+h2 {
+    @include style-heading-2;
+}
+
+h3 {
+    @include style-heading-3;
+}
+
+h4 {
+    @include style-heading-4;
+
+    font-weight: $weight-normal;
+}
+
+h5,
+h6 {
+    @include style-heading-5;
+
+    font-weight: $weight-normal;
+}
+
+p {
+    font-size: inherit;
+    font-style: inherit;
+    margin: 0 0 1.25em;
+}
+
+strong {
+    font-weight: $weight-bold;
+}
+
+small {
+    @include style-text-small;
+}
+
+a {
+    &:not([class]) {
+        border-bottom: 1px solid currentColor;
+        color: var(--text-link-color);
+        cursor: pointer;
+        font-weight: $weight-bold;
+        text-decoration: none;
+        transition: border-bottom .2s ease-in;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
+}
+
+hr {
+    background-color: var(--hr-color);
+    border: 0;
+    clear: both;
+    display: block;
+    height: 1px;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+img,
+figure {
+    display: block;
+    width: 100%;
+}
+
+figcaption {
+    @include style-text;
+
+    color: var(--caption-color);
+    font-size: .875rem;
+    padding: .4rem;
+}
+
+ul,
+ol {
+    @include list-reset;
+
+    &:not([class]) {
+        line-height: 1.75;
+        margin: 0 0 1.25rem;
+
+        li {
+            margin: 0 0 .5rem;
+            padding-left: 1.5rem;
+            position: relative;
+
+            &::before {
+                color: var(--list-color);
+                content: '\002022';
+                font-size: 1.5rem;
+                left: 4px;
+                line-height: 1.125;
+                position: absolute;
+                top: 1px;
+            }
+
+            p {
+                margin: 0;
+
+                & + p {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        ul,
+        ol {
+            margin: .5rem 0 0;
+        }
+    }
+}
+
+ol {
+    &:not([class]) {
+        counter-reset: ol-number;
+
+        li {
+            counter-increment: ol-number;
+
+            &::before {
+                content: counter(ol-number) '.';
+                font-size: inherit;
+                font-weight: $weight-bold;
+                left: 3px;
+                line-height: 1.75;
+            }
+        }
+    }
+}
+
+dl {
+    margin: 0 0 1.5rem;
+}
+
+dt {
+    @include style-text;
+
+    font-weight: $weight-bold;
+    margin: .75rem 0 0;
+}
+
+dd {
+    @include style-text;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 4px;
+    margin: 0 0 1rem;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+}
+
+th,
+td {
+    border-bottom: 1px solid var(--table-border-color);
+    padding: .5em $p-gutter;
+    vertical-align: top;
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+th {
+    @include style-heading;
+
+    border-bottom: 1px solid var(--table-header-border-color);
+    color: var(--heading-color);
+}
+
+tr {
+    &:last-child {
+        th,
+        td {
+            border-bottom: 0;
+        }
+    }
+}
+
+blockquote {
+    background-color: var(--quote-background-color);
+    clear: both;
+    display: block;
+    margin: 2rem 0;
+    padding: 1rem 1.25rem;
+
+    p {
+        color: var(--quote-color);
+        font-family: $font-inter;
+        font-size: 1.1rem;
+        font-style: italic;
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    cite {
+        color: var(--quote-cite-color);
+        display: block;
+        font-family: $font-inter;
+        font-size: .875rem;
+        font-style: normal;
+        font-weight: $weight-normal;
+        line-height: 1.2;
+        margin-top: $p-gutter--large;
+        position: relative;
+
+        &::before {
+            background-color: var(--quote-line-color);
+            content: '';
+            height: 3px;
+            position: absolute;
+            top: -15px;
+            width: $p-gutter--large;
+        }
+    }
+
+    @include screen($screen-normal) {
+        margin: 2rem (-$p-gutter--large);
+        padding: 2rem $p-gutter--large;
+
+        p {
+            font-size: 1.375rem;
+        }
+    }
+}
+
+abbr {
+    &[title] {
+        border-bottom: 1px dotted currentColor;
+        color: currentColor;
+        cursor: help;
+        font-weight: $weight-bold;
+        text-decoration: none;
+        transition: border .2s ease-in-out;
+
+        &:hover {
+            border-bottom: 1px solid currentColor;
+        }
+    }
+}
+
+mark,
+ins {
+    background-color: var(--mark-background-color);
+    border: 0;
+    color: var(--mark-color);
+    text-decoration: none;
+}
+
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+    font-family: monospace, serif;
+    font-size: 1rem;
+    line-height: 1.625;
+}
+
+code {
+    margin-bottom: 1rem;
+
+    p & {
+        background-color: $c-blue--lighter;
+        padding: 3px 5px;
+        border-radius: 5px;
+    }
+}
+
+pre {
+    background-color: var(--pre-background-color);
+    border: 1px solid var(--pre-border-color);
+    border-radius: 5px;
+    color: var(--pre-color);
+    margin-bottom: 1rem;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1rem 1.25rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+audio,
+canvas,
+iframe,
+svg,
+video {
+    vertical-align: middle;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+}
+
+input {
+    box-shadow: none;
+    outline: none;
+
+    &[type='text'],
+    &[type='email'],
+    &[type='tel'],
+    &[type='number'],
+    &[type='date'],
+    &[type='search'] {
+        appearance: none;
+        border: 1px solid $c-input;
+        border-radius: 3px;
+        box-sizing: border-box;
+        display: block;
+        font-family: inherit;
+        font-size: 16px;
+        padding: 1ex;
+        width: 100%;
+
+        &::placeholder {
+            color: $c-grey;
+            opacity: 1;
+        }
+
+        &:focus {
+            border-color: $c-blue;
+            outline: none;
+        }
+
+        &.has-error,
+        .has-error & {
+            border-color: $c-error;
+        }
+    }
+
+    &[type='radio'],
+    &[type='checkbox'] {
+        appearance: none;
+        background-color: $c-grey;
+        border: 7px solid $c-white;
+        box-shadow: 0 0 0 2px $c-input;
+        cursor: pointer;
+        display: inline-block;
+        height: 14px;
+        margin: 0 .3rem 0 2px; // because box shadow
+        outline: none;
+        transition: border .15s ease-in-out, background-color .15s ease-in-out;
+        vertical-align: -1px;
+        width: 14px;
+        will-change: border;
+
+        &:hover {
+            border: 2px solid $c-white;
+        }
+
+        &:checked {
+            background-color: $c-blue;
+            border: 2px solid $c-white;
+        }
+
+        & + label {
+            display: inline-block;
+            font-weight: $weight-normal;
+        }
+
+        &.has-error,
+        .has-error & {
+            box-shadow: 0 0 0 2px $c-error;
+        }
+    }
+
+    &[type='radio'] {
+        border-radius: 50%;
+    }
+
+    &[type='submit'] {
+        @include button-base;
+        @include button-style($c-grey--darkest, $c-grey--darkest, $c-white, $c-blue, $c-blue, $c-white, $c-grey--darkest, $c-grey--darkest, $c-grey--darkest);
+    }
+
+    &[type='date'] {
+        appearance: none;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    &[type='number'] {
+        -moz-appearance: textfield;
+        appearance: none;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    &[type='search'] {
+        appearance: none;
+
+        &::-webkit-search-cancel-button {
+            appearance: none;
+            display: none;
+        }
+    }
+
+    &::-ms-clear {
+        display: none;
+    }
+}
+
+textarea {
+    appearance: none;
+    border: 1px solid $c-input;
+    border-radius: 3px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    min-height: 7em;
+    padding: 1ex;
+    resize: vertical;
+    width: 100%;
+
+    &:focus {
+        border-color: $c-blue;
+        outline: none;
+    }
+
+    &.has-error,
+    .has-error & {
+        border-color: $c-error;
+    }
+}
+
+legend {
+    @include style-heading;
+
+    color: $c-blue;
+    display: block;
+    font-size: 18px;
+}
+
+label {
+    color: $c-grey--darkest;
+    display: block;
+    font-family: $font-inter;
+    font-size: 15px;
+    font-weight: $weight-bold;
+
+    &[for] {
+        cursor: pointer;
+    }
+}
+
+select {
+    background-color: $c-white;
+    border: 1px solid $c-grey--light;
+    color: $c-grey--dark;
+    font-family: $font-inter;
+    font-weight: $weight-normal;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 1rem;
+    width: 100%;
+
+    &:focus {
+        border-color: $c-grey;
+        outline: none;
+    }
+
+    &.has-error,
+    .has-error & {
+        border-color: $c-error;
+    }
+}
+
+// Simple helper classes
+
+.sr-only {
+    @include sr-only;
+}

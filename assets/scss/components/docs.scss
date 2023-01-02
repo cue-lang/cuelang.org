@@ -1,0 +1,128 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+@import '../mixins/scrollbar';
+
+.docs {
+    $self: &;
+
+    position: relative;
+
+    &__main {
+        padding-top: 50px;
+    }
+
+    &__aside {
+        bottom: 0;
+        display: none;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 9;
+    }
+
+    &__backdrop {
+        background-color: transparent;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: background-color .2s ease-in-out;
+    }
+
+    &__nav {
+        background-color: $c-white;
+        bottom: 0;
+        box-shadow: $shadow--drawer;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-width: $w-drawer;
+        padding-top: 125px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateX(-101%);
+        transition: transform .4s ease-in-out;
+        width: 100%;
+    }
+
+    &__show {
+        bottom: 10px;
+        position: fixed;
+        left: 10px;
+    }
+
+    &__hide {
+        bottom: 10px;
+        position: absolute;
+        right: 10px;
+    }
+
+    &.is-active {
+        #{ $self }__aside {
+            display: block;
+        }
+    }
+
+    &.is-open {
+        #{ $self }__backdrop {
+            background-color: transparentize($c-black, .5);
+        }
+
+        #{ $self }__nav {
+            transform: translateX(0);
+        }
+    }
+
+    @include screen($screen-normal) {
+        align-items: start;
+        display: grid;
+        grid-template-columns: 300px minmax(700px, ($w-content + 100px)) 1fr;
+        grid-template-areas: 'aside main empty';
+
+        &__main {
+            grid-area: main;
+        }
+
+        &__aside {
+            @include scrollbars;
+
+            background-color: $c-blue--lighter;
+            bottom: auto;
+            display: block;
+            flex: 0 0 300px;
+            grid-area: aside;
+            height: 100%;
+            left: auto;
+            order: -1;
+            overflow: auto;
+            position: relative;
+            right: auto;
+            top: auto;
+            z-index: initial;
+        }
+
+        &__nav {
+            background-color: transparent;
+            box-shadow: none;
+            padding-top: 40px;
+            transform: translateX(0);
+            transition: initial;
+
+            // JP: Quick fix
+            .tree {
+                padding-bottom: 50px;
+            }
+        }
+
+        &__show,
+        &__hide,
+        &__backdrop {
+            display: none;
+        }
+    }
+}

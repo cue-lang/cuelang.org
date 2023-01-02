@@ -1,0 +1,65 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/container';
+@import '../mixins/screen';
+
+.sticky-note {
+    $self: &;
+
+    background-color: $c-yellow;
+    bottom: 0;
+    color: $c-grey--darkest;
+    left: 0;
+    padding: .5rem 0;
+    position: fixed;
+    right: 0;
+    z-index: 10;
+
+    &__container {
+        @include container($w-content);
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0 $p-gutter--large;
+    }
+
+    &__content {
+        text-align: center;
+        margin-bottom: .75rem;
+    }
+
+    &__cta {
+        display: block;
+    }
+
+    &__close {
+        position: absolute;
+        top: 7px;
+        right: 5px;
+    }
+
+    @include screen($screen-simple) {
+        &__container {
+            flex-direction: row;
+            padding: 0 50px 0 $p-gutter;
+        }
+
+        &__content {
+            text-align: left;
+            margin: 0 auto 0 0;
+        }
+
+        &__close {
+            top: 50%;
+            right: 10px;
+            margin-top: -16px;
+        }
+    }
+
+    @include screen($screen-normal) {
+        &__container {
+            padding: 0 $p-gutter;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{{- $section := .Parent -}}
+{{- if $section -}}
+<div class="back-button">
+    <div class="back-button__container">
+        <a class="back-button__link link" href="{{ $section.RelPermalink }}">
+            {{ partial "icon.html" (dict "icon" "arrow-left" "class" "link__icon") }}
+            <span class="link__text">{{ $section.LinkTitle }}</span>
+        </a>
+    </div>
+</div>
+{{ end -}}

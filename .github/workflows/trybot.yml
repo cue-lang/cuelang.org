@@ -29,15 +29,15 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.8.0
+          node-version: 18.12.1
       - name: Install Go
         uses: actions/setup-go@v3
         with:
-          go-version: 1.19.3
+          go-version: 1.19.4
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.89.4
+          hugo-version: 0.108.0
           extended: true
       - name: Ensure latest CUE
         run: |-

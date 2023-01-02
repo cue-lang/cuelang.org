@@ -1,0 +1,4 @@
+<figure class="diagram">
+    <div class="diagram__content mermaid">{{ .Inner | safeHTML }}</div>
+</figure>
+{{ .Page.Store.Set "jsMermaid" true }}

@@ -1,0 +1,167 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/button';
+@import '../mixins/sr-only';
+
+.button {
+    $self: &;
+
+    @include button-base;
+    @include button-style(
+        var(--button-background, #{ $c-yellow }),
+        var(--button-border, #{ $c-yellow }),
+        var(--button-color, #{ $c-blue--darker }),
+        var(--button-background-hover, #{ $c-blue--darker }),
+        var(--button-border-hover, #{ $c-blue--darker }),
+        var(--button-color-hover, #{ $c-yellow }),
+        var(--button-background-disabled, #{ $c-grey--light }),
+        var(--button-border-disabled, #{ $c-grey--light }),
+        var(--button-color-disabled, #{ $c-grey })
+    );
+
+    p &,
+    .content & {
+        margin: 0 0 .5em;
+
+        ~ #{ $self } {
+            margin-left: .25em;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        & + #{ $self }__icon {
+            margin: 0 -.4em 0 .5em;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        margin: 0 0 0 -.4em;
+        max-height: 24px;
+        max-width: 24px;
+        vertical-align: 9px;
+
+        &.icon {
+            display: inline-block; // Win from icon styles
+        }
+
+        & + #{ $self }__text {
+            margin-left: .5em;
+        }
+    }
+
+    &--icon {
+        padding: 10px;
+        width: var(--button-height);
+
+        #{ $self }__icon {
+            left: 50%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        span,
+        #{ $self }__text {
+            @include sr-only;
+        }
+    }
+
+    &--small {
+        --button-font-size: .875rem;
+        --button-height: #{ $h-button--small };
+        --button-padding: .875rem;
+
+        #{ $self }__icon {
+            height: 16px;
+            width: 16px;
+            vertical-align: 6px;
+        }
+    }
+
+    &--raised {
+        box-shadow: $shadow--button;
+    }
+
+    &--white {
+        --button-background: #{ $c-white };
+        --button-border: #{ $c-white };
+        --button-color: #{ $c-blue--darker };
+        --button-background-hover: #{ $c-blue--darker };
+        --button-border-hover: #{ $c-blue--darker };
+        --button-color-hover: #{ $c-white };
+    }
+
+    &--white-simple {
+        --button-background: #{ $c-white };
+        --button-border: #{ $c-white };
+        --button-color: #{ $c-blue--darker };
+        --button-background-hover: #{ $c-white };
+        --button-border-hover: #{ $c-white };
+        --button-color-hover: #{ $c-yellow };
+    }
+
+    &--red {
+        --button-background: #{ $c-red };
+        --button-border: #{ $c-red };
+        --button-color: #{ $c-white };
+        --button-background-hover: #{ $c-red--dark };
+        --button-border-hover: #{ $c-red--dark };
+        --button-color-hover: #{ $c-white };
+    }
+
+    &--black {
+        --button-background: #{ $c-black };
+        --button-border: #{ $c-black };
+        --button-color: #{ $c-white };
+        --button-background-hover: #{ $c-grey--dark };
+        --button-border-hover: #{ $c-grey--dark };
+        --button-color-hover: #{ $c-white };
+    }
+
+    &--blue {
+        --button-background: #{ $c-blue };
+        --button-border: #{ $c-blue };
+        --button-color: #{ $c-white };
+        --button-background-hover: #{ $c-blue--dark };
+        --button-border-hover: #{ $c-blue--dark };
+        --button-color-hover: #{ $c-white };
+        --button-background-disabled: #{ $c-grey--light };
+        --button-border-disabled: #{ $c-grey--light };
+        --button-color-disabled: #{ $c-grey };
+    }
+
+    &--light-blue {
+        --button-background: #{ $c-blue--lighter };
+        --button-border: #{ $c-blue--lighter };
+        --button-color: #{ $c-black };
+        --button-background-hover: #{ $c-yellow };
+        --button-border-hover: #{ $c-yellow };
+        --button-color-hover: #{ $c-black };
+    }
+
+    &--yellow {
+        --button-background: #{ $c-yellow };
+        --button-border: #{ $c-yellow };
+        --button-color: #{ $c-blue--darker };
+        --button-background-hover: #{ $c-yellow--dark };
+        --button-border-hover: #{ $c-yellow--dark };
+        --button-color-hover: #{ $c-blue--darker };
+    }
+
+    &--outline {
+        --button-background: transparent;
+        --button-border: #{ $c-blue--darker };
+        --button-color: #{ $c-blue--darker };
+        --button-background-hover: #{ $c-blue--darker };
+        --button-border-hover: #{ $c-blue--darker };
+        --button-color-hover: #{ $c-white };
+    }
+}

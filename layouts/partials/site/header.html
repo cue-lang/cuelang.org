@@ -1,0 +1,80 @@
+{{ $logo := .Site.Params.logo | default "svg/logo.svg" }}
+{{ $baseUrl := urls.Parse .Site.Params.Baseurl }}
+<div class="header{{ with .Params.header_type }} header--{{ . }}{{ end }}" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="{{ .Site.Home.RelPermalink }}" class="header__logo" rel="home">
+                {{ with resources.Get $logo }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
+                <span>{{ T "ui_branding_title" }}</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="{{ T "ui_menu_main" }}">
+                <ul class="nav__list">
+                    {{ range .Site.Menus.main }}
+                        <li class="nav__item">
+                            {{- $url := urls.Parse .URL -}}
+                            <a class="nav__link"
+                               href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                               {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
+                                {{- with .Pre }}{{ partial "icon.html" (dict "icon" .) }}{{ end -}}
+                                <span class="nav__text">{{ .Name }}</span>
+                                {{- with .Post }}{{ partial "icon.html" (dict "icon" .) }}{{ end -}}
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="{{ T "ui_menu_social" }}">
+                    <ul class="nav__list">
+                        {{- range .Site.Menus.icons -}}
+                            <li class="nav__item">
+                                {{- $url := urls.Parse .URL -}}
+                                <a class="nav__link"
+                                   href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                                   {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
+                                    {{ partial "icon.html" (dict "icon" .Pre) }}
+                                    <span class="nav__text">{{ .Name }}</span>
+                                </a>
+                            </li>
+                        {{- end -}}
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header__cta">
+                {{- range .Site.Menus.cta -}}
+                    {{- $url := urls.Parse .URL -}}
+                    <a class="button"
+                       href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+                       {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
+                        {{- with .Pre }}{{ partial "icon.html" (dict "class" "button__icon" "icon" .) }}{{ end -}}
+                        <span class="button__text">{{ .Name }}</span>
+                        {{- with .Post }}{{ partial "icon.html" (dict "class" "button__icon" "icon" .) }}{{ end -}}
+                    </a>
+                {{- end -}}
+            </div>
+
+            <div class="header__search">
+                <a href="{{ "/search" | relLangURL }}" class="button button--icon button--white-simple" rel="search">
+                    {{- partial "icon.html" (dict "icon" "search" "class" "button__icon") -}}
+                    <span>{{ T "ui_search" }}</span>
+                </a>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">{{ T "ui_menu" }}</span>
+                    {{- partial "icon.html" (dict "class" "button__icon" "icon" "menu") -}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

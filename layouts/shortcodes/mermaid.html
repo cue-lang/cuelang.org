@@ -1,6 +1,6 @@
-{{ $title := .Get "title" | default "" }}
-{{ $_hugo_config := `{ "version": 1 }` }}
-{{ $align := .Get "align" | default "center" }}
-<div class="mermaid" align="{{ $align }}">{{ safeHTML .Inner }}</div>
-{{- if $title }}{{ $title }}{{end }}
-<p>
+{{ $caption := .Get "caption" | default "" }}
+<figure class="diagram">
+    <div class="diagram__content mermaid">{{ safeHTML .Inner }}</div>
+    {{- if $caption }}<figcaption class="diagram__caption">{{ $caption }}</figcaption>{{ end }}
+</figure>
+{{ .Page.Store.Set "jsMermaid" true }}

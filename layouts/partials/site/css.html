@@ -1,0 +1,15 @@
+{{/* CSS */}}
+{{ $scssMain := "scss/main.scss" }}
+{{ if not hugo.IsProduction }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true) }}
+<link href="{{ $css.RelPermalink }}" rel="stylesheet">
+{{ else }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+<link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+{{ end }}
+
+{{/* Fonts */}}
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">

@@ -1,0 +1,29 @@
+{{ $jsMain := (resources.Get "ts/main.ts" | js.Build).Content | resources.FromString "js/main.js" }}
+{{ if not hugo.IsProduction }}
+    <script src="{{ $jsMain.RelPermalink }}" defer></script>
+{{ else }}
+    {{ $jsMainMin := $jsMain | minify | fingerprint }}
+    <script src="{{ $jsMainMin.RelPermalink }}" integrity="{{ $jsMainMin.Data.Integrity }}" async></script>
+{{ end }}
+
+{{ if or (.Page.Store.Get "jsMermaid") (.Params.mermaid) }}
+    <script src="{{ "/js/mermaid/mermaid.min.js" | relURL }}" async></script>
+{{ end }}
+
+{{ if or (.Page.Store.Get "jsMath") (.Params.math) }}
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: "mermaid",
+        }
+    };
+</script>
+<script src="{{ "/js/mathjax/tex-chtml.js" | relURL }}" async></script>
+{{ end }}

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <meta charset="utf-8">
-  <title>Redirecting&hellip;</title>
-  <link rel="canonical" href="{{.Params.redirectURL}}">
-  <script>location="{{.Params.redirectURL}}"</script>
-  <meta http-equiv="refresh" content="0; url={{.Params.redirectURL}}">
-  <meta name="robots" content="noindex">
-  <h1>Redirecting&hellip;</h1>
-  <a href="{{.Params.redirectURL}}">Click here if you are not redirected.</a>
+<html lang="{{ .Site.Language.Lang }}">
+    <meta charset="utf-8">
+    <title>{{ T "redirect_title" }}</title>
+    <link rel="canonical" href="{{ .Params.redirectURL }}">
+    <script>location="{{ .Params.redirectURL }}"</script>
+    <meta http-equiv="refresh" content="0; url={{ .Params.redirectURL }}">
+    <meta name="robots" content="noindex">
+    <h1>{{ T "redirect_title" }}</h1>
+    <a href="{{ .Params.redirectURL }}">{{ T "redirect_manually" }}</a>
 </html>
-

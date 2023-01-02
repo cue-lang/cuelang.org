@@ -1,0 +1,127 @@
+@import '../config/colors';
+@import '../mixins/container';
+@import '../mixins/object-fit';
+@import '../mixins/sr-only';
+@import '../mixins/stretch';
+@import '../mixins/svg';
+@import '../mixins/typography';
+
+.media {
+    $self: &;
+
+    display: block;
+    margin: 1.5rem 0;
+    position: relative;
+    width: 100%;
+
+    &__image { // wrapper needed for copyright positioning
+        display: block; // because of shortcode has span's instead of div
+        position: relative;
+    }
+
+    img,
+    picture {
+        height: auto;
+        min-height: 100px;
+        min-width: 100px;
+        width: 100%;
+
+        &.lazyloaded {
+            background-color: transparent;
+        }
+    }
+
+    svg {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    &__caption {
+        @include style-text-small;
+
+        padding: .5rem 0 .25rem;
+        width: 100%;
+    }
+
+    &__credits {
+        @include style-text-credits;
+
+        bottom: 1rem;
+        display: block;
+        left: 1rem;
+        margin: 0;
+        position: absolute;
+    }
+
+    &--center {
+        @include container($w-site);
+
+        clear: both;
+        margin: .5rem auto $p-gutter;
+    }
+
+    &--cover {
+        height: 100%;
+        margin: 0;
+        position: relative;
+
+        #{ $self }__image {
+            @include stretch;
+        }
+
+        #{ $self }__caption {
+            bottom: 0;
+            color: $c-white;
+            left: 0;
+            padding: $p-gutter;
+            position: absolute;
+        }
+
+        img,
+        picture,
+        svg {
+            @include object-fit-cover;
+        }
+    }
+
+    @include screen($screen-simple) {
+        &--left {
+            float: left;
+            margin: .5rem $p-gutter $p-gutter 0;
+            max-width: 50%;
+
+            img,
+            picture {
+                width: auto;
+            }
+        }
+
+        &--right {
+            float: right;
+            margin: .5rem 0 $p-gutter $p-gutter;
+            max-width: 50%;
+
+            img,
+            picture {
+                width: auto;
+            }
+        }
+
+        &--cover {
+            #{ $self }__caption {
+                padding: 2rem;
+            }
+        }
+    }
+
+    @include screen($screen-normal) {
+        &--cover {
+            #{ $self }__caption {
+                font-size: 1rem;
+                padding: 3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@import '../config/colors';
+@import '../mixins/marginless-child';
+
+.content {
+    $self: &;
+
+    @include marginless-child;
+
+    color: var(--text-color); // Fix for color inheritance
+
+    &--blue,
+    &--red,
+    &--black {
+        --text-color: #{ $c-white };
+        --text-link-color: #{ $c-white };
+        --heading-color: #{ $c-white };
+        --caption-color: #{ transparentize($c-white, .3) };
+        --list-color: #{ $c-white };
+        --table-border-color: #{ transparentize($c-white, .4) };
+        --table-header-border-color: #{ transparentize($c-white, .1) };
+        --pre-border-color: #{ $c-white };
+        --quote-background-color: #{ transparentize($c-white, .4) };
+        --quote-color: #{ $c-grey--darker };
+        --quote-cite-color: #{ $c-grey--dark };
+        --quote-line-color: #{ $c-red };
+        --hr-color: #{ $c-white };
+        --mark-color: #{ $c-grey--darkest };
+        --mark-background-color: #{ transparentize($c-white, .4) };
+        --button-background: #{ $c-white };
+        --button-border: #{ $c-white };
+        --button-color: #{ $c-black };
+        --button-background-hover: #{ $c-grey--light };
+        --button-border-hover: #{ $c-grey--light };
+        --button-color-hover: #{ $c-black };
+        --nav-link-color: #{ $c-white };
+        --link-color-hover: #{ $c-grey--light };
+    }
+
+    &--grey,
+    &--yellow {
+        --text-color: #{ $c-grey--darkest };
+        --text-link-color: #{ $c-red };
+        --heading-color: #{ $c-grey--darkest };
+        --caption-color: #{ $c-grey--darkest };
+        --list-color: #{ $c-grey--darkest };
+        --table-border-color: #{ $c-grey };
+        --table-header-border-color: $c-grey--darkest;
+        --pre-border-color: #{ $c-grey--darkest };
+        --quote-background-color: #{ transparentize($c-white, .4) };
+        --quote-color: #{ $c-grey--darker };
+        --quote-cite-color: #{ $c-grey--dark };
+        --quote-line-color: #{ $c-red };
+        --hr-color: #{ $c-grey--darkest };
+        --mark-color: #{ $c-grey--darkest };
+        --mark-background-color: #{ transparentize($c-white, .4) };
+        --button-background: #{ $c-black };
+        --button-border: #{ $c-black };
+        --button-color: #{ $c-white };
+        --button-background-hover: #{ $c-blue };
+        --button-border-hover: #{ $c-blue };
+        --button-color-hover: #{ $c-white };
+        --nav-link-color: #{ $c-black };
+        --link-color-hover: #{ $c-blue };
+    }
+
+    &--yellow {
+        --quote-background-color: $c-white;
+    }
+}
