@@ -104,21 +104,38 @@ _base: base & {
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
 }
 
-_#cacheDirs: ["~/.cache/go-build", "~/go/pkg/mod", "~/.npm"]
+_#cacheDirs: [ "${{ steps.npm-cache-dir.outputs.dir }}", "${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download", "${{ steps.go-cache-dir.outputs.dir }}"]
 
-_#cachePre: json.#step & {
-	uses: "actions/cache@v3"
-	with: {
-		path: strings.Join(_#cacheDirs, "\n")
+_#cachePre: [
+	json.#step & {
+		name: "Get npm cache directory"
+		id:   "npm-cache-dir"
+		run:  #"echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}"#
+	},
+	json.#step & {
+		name: "Get go mod cache directory"
+		id:   "go-mod-cache-dir"
+		run:  #"echo "dir=$(go env GOMODCACHE)" >> ${GITHUB_OUTPUT}"#
+	},
+	json.#step & {
+		name: "Get go build/test cache directory"
+		id:   "go-cache-dir"
+		run:  #"echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}"#
+	},
+	json.#step & {
+		uses: "actions/cache@v3"
+		with: {
+			path: strings.Join(_#cacheDirs, "\n")
 
-		// GitHub actions caches are immutable. Therefore, use a key which is
-		// unique, but allow the restore to fallback to the most recent cache.
-		// The result is then saved under the new key which will benefit the
-		// next build
-		key:            "${{ runner.os }}-${{ github.run_id }}"
-		"restore-keys": "${{ runner.os }}"
-	}
-}
+			// GitHub actions caches are immutable. Therefore, use a key which is
+			// unique, but allow the restore to fallback to the most recent cache.
+			// The result is then saved under the new key which will benefit the
+			// next build
+			key:            "${{ runner.os }}-${{ github.run_id }}"
+			"restore-keys": "${{ runner.os }}"
+		}
+	},
+]
 
 _#cachePost: json.#step & {
 	run: "find \(strings.Join(_#cacheDirs, " ")) -type f -amin +7200 -delete -print"
