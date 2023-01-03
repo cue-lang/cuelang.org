@@ -5,6 +5,7 @@ name: TryBot
   push:
     branches:
       - master
+      - alpha
       - ci/test
   pull_request: {}
 jobs:

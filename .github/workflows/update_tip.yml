@@ -32,8 +32,8 @@ jobs:
           git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
           git remote add origin https://review.gerrithub.io/a/cue-lang/cuelang.org
           git remote add trybot https://github.com/cue-lang/cuelang.org-trybot
-          git fetch origin master
-          git push trybot refs/remotes/origin/master:master
+          git fetch origin master alpha
+          git push trybot "refs/remotes/origin/*:refs/heads/*"
       - name: Checkout code
         uses: actions/checkout@v3
         with:
