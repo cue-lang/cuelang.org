@@ -242,7 +242,11 @@ func (c *localContext) setHeadBranch(b string) {
 	// We don't limit the branch to only be three parts so as to
 	// allow for extending the format in some cases.
 	headBranchParts := strings.Split(c.HeadBranch, "/")
-	if len(headBranchParts) < 3 {
+	switch x := len(headBranchParts); {
+	case x == 1:
+		log.Printf("nothing to do on branch %q", c.HeadBranch)
+		panic(nil) // early return from handler
+	case x < 3:
 		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
 	}
 	c.ChangeID, c.RevisionID = headBranchParts[1], headBranchParts[2]
