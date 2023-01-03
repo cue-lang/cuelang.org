@@ -50,6 +50,8 @@ workflows: [
 _#defaultBranch:     "master"
 _#releaseTagPattern: "v*"
 
+_#activeBranches: [_#defaultBranch, "alpha"]
+
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.
 _#latestStableGo: "1.19.x"
