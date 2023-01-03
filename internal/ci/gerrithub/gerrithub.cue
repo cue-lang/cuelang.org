@@ -85,7 +85,8 @@ _#linuxMachine: "ubuntu-20.04"
 						git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(#botGitHubUser):${{ secrets.\(#botGitHubUserTokenSecretsKey) }} | base64)"
 						git fetch \(#gerritHubRepository) ${{ github.event.client_payload.payload.ref }}
 						git checkout -b \(_#branchNameExpression) FETCH_HEAD
-						git push \(#trybotRepositoryURL) \(_#branchNameExpression)
+						echo ${{ secrets.CUECKOO_GITHUB_PAT }} | gh auth login --with-token
+						gh pr create -B ${{ github.event.client_payload.payload.branch }} -f t -R \(#trybotRepositoryURL)
 						"""
 				},
 			]
