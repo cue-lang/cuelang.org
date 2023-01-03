@@ -45,6 +45,10 @@ workflows: [
 		file:   "update_tip.yml"
 		schema: update_tip
 	},
+	{
+		file:   "push_tip_to_trybot.yml"
+		schema: push_tip_to_trybot
+	},
 ]
 
 _#defaultBranch:     "master"
