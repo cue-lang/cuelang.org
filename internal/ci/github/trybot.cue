@@ -37,7 +37,7 @@ trybot: _base.#bashWorkflow & {
 
 	on: {
 		push: {
-			branches: [_#defaultBranch, _base.#testDefaultBranch]
+			branches: [ for v in _#activeBranches {v}, _base.#testDefaultBranch]
 		}
 		pull_request: {}
 	}
