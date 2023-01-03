@@ -21,7 +21,6 @@ then
 	$time go generate ./...
 fi
 
-echo $SHELL
 # Main site
 $time git submodule update -f --init --recursive
 $time npm install
