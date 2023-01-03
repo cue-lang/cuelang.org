@@ -110,7 +110,13 @@ _#cachePre: json.#step & {
 	uses: "actions/cache@v3"
 	with: {
 		path: strings.Join(_#cacheDirs, "\n")
-		key:  "${{ runner.os }}"
+
+		// GitHub actions caches are immutable. Therefore, use a key which is
+		// unique, but allow the restore to fallback to the most recent cache.
+		// The result is then saved under the new key which will benefit the
+		// next build
+		key:            "${{ runner.os }}-${{ github.run_id }}"
+		"restore-keys": "${{ runner.os }}"
 	}
 }
 
