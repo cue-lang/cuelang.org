@@ -21,7 +21,6 @@ then
 	$time go generate ./...
 fi
 
-echo $SHELL
 # Main site
 $time npm ci
 $time npm run icons
