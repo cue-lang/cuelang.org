@@ -49,8 +49,8 @@ update_tip: _base.#bashWorkflow & {
 						git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_gerrithub.#botGitHubUser):${{ secrets.\(_gerrithub.#botGitHubUserTokenSecretsKey) }} | base64)"
 						git remote add origin \(_gerrithub.#gerritHubRepository)
 						git remote add trybot \(_gerrithub.#trybotRepositoryURL)
-						git fetch origin \(_#defaultBranch)
-						git push trybot refs/remotes/origin/master:master
+						git fetch origin
+						git push trybot "refs/remotes/origin/*:refs/heads/*"
 						"""
 			},
 			_base.#checkoutCode & {
