@@ -19,14 +19,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - uses: actions/cache@v3
-        with:
-          path: |-
-            ~/.cache/go-build
-            ~/go/pkg/mod
-            ~/.npm
-          key: ${{ runner.os }}-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}
       - name: Install Node
         uses: actions/setup-node@v3
         with:
@@ -40,6 +32,23 @@ jobs:
         with:
           hugo-version: 0.89.4
           extended: true
+      - id: npm-cache-dir
+        name: Get npm cache directory
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+      - id: go-mod-cache-dir
+        name: Get go mod cache directory
+        run: echo "dir=$(go env GOMODCACHE)" >> ${GITHUB_OUTPUT}
+      - id: go-cache-dir
+        name: Get go build/test cache directory
+        run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
+      - uses: actions/cache@v3
+        with:
+          path: |-
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            ${{ steps.go-mod-cache-dir.outputs.dir }}
+            ${{ steps.go-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}
       - name: Ensure latest CUE
         run: |-
           GOPROXY=direct go get -d cuelang.org/go@latest
@@ -79,4 +88,4 @@ jobs:
         run: 'netlify deploy --alias ${{ steps.alias.outputs.alias }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
-      - run: find ~/.cache/go-build ~/go/pkg/mod ~/.npm -type f -amin +7200 -delete -print
+      - run: find ${{ steps.npm-cache-dir.outputs.dir }} ${{ steps.go-mod-cache-dir.outputs.dir }} ${{ steps.go-cache-dir.outputs.dir }} -type f -amin +7200 -delete -print
