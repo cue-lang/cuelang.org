@@ -53,10 +53,13 @@ trybot: _base.#bashWorkflow & {
 					// This doesn't affect "push" builds, which never used merge commits.
 					with: ref: "${{ github.event.pull_request.head.sha }}"
 				},
-				_#cachePre,
 				_#installNode,
 				_#installGo,
 				_#installHugo,
+
+				// cachePre must come after installing Node and Go, because the cache locations
+				// are established by running each tool.
+				for v in _#cachePre {v},
 
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
