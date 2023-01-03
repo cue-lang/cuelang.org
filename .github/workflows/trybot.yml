@@ -25,7 +25,8 @@ jobs:
             ~/.cache/go-build
             ~/go/pkg/mod
             ~/.npm
-          key: ${{ runner.os }}
+          key: ${{ runner.os }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}
       - name: Install Node
         uses: actions/setup-node@v3
         with:
