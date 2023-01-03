@@ -110,6 +110,10 @@ trybot: _base.#bashWorkflow & {
 						"""
 				},
 
+				json.#step & {
+					run: "echo ${{github.head_ref}}"
+				},
+
 				// GitHub offers very limited expressions at runtime of a workflow.
 				// Instead we have to resort to dropping down to shell and then
 				// setting an output variable. We do so to construct an alias name
@@ -119,10 +123,15 @@ trybot: _base.#bashWorkflow & {
 				//     refs/heads/trybot/I01e0e139902da54151659fe595f23dd519f54637/2e79979116f96a26c9240e0e9c55b31d4311cf93/547774/11
 				//
 				json.#step & {
-					if: "${{github.repository == '\(core.#githubRepositoryPath)-trybot'}}"
+					if: "${{github.repository == '\(core.#githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
 					id: "alias"
+
+					// Use github.head_ref per
+					// https://docs.github.com/en/actions/learn-github-actions/contexts#github-context.
+					// Because we now trigger workflow runs using a PR, which means
+					// we need to consult head_ref in order to get the branch name
 					run: #"""
-						alias="$(echo '${{github.ref}}' | sed -E 's/^refs\/heads\/trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/')"
+						alias="$(echo '${{github.head_ref}}' | sed -E 's/^refs\/heads\/trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/')"
 						echo "alias=$alias" >> $GITHUB_OUTPUT
 						"""#
 				},
@@ -130,7 +139,7 @@ trybot: _base.#bashWorkflow & {
 				// Only run a deploy of tip if we are running as part of the trybot repo,
 				// with a branch name that matches the trybot pattern
 				_#netlifyDeploy & {
-					if:     "${{github.repository == '\(core.#githubRepositoryPath)-trybot'}}"
+					if:     "${{github.repository == '\(core.#githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
 					#site:  core.#netlifySites.cls
 					#alias: "${{ steps.alias.outputs.alias }}"
 					name:   "Deploy preview of CL"
