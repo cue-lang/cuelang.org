@@ -24,6 +24,7 @@ update_tip: _base.#bashWorkflow & {
 	name: "Update tip"
 	on: {
 		push: branches: [_#defaultBranch]
+		repository_dispatch: {}
 	}
 
 	// Ensure we only ever have a single tip deploy running at a time. This
@@ -33,7 +34,13 @@ update_tip: _base.#bashWorkflow & {
 
 	jobs: push: {
 		"runs-on": _#linuxMachine
-		if:        "${{github.repository == '\(core.#githubRepositoryPath)'}}"
+
+		// Only run this workflow in the main repository, and if we are triggered
+		// by repository_dispatch (which will happen if the cue-lang/cue repo
+		// needs to tell us to rebuild tip) only do so if our payload is of
+		// the correct type.
+		if: "${{ github.repository == '\(core.#githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
+
 		steps: [
 			_gerrithub.#writeNetrcFile,
 			_base.#checkoutCode & {
