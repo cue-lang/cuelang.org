@@ -5,7 +5,9 @@
         <div class="article__container">
             <header class="article__header">
                 <h1 class="article__title">{{ .Title }}</h1>
-                <p class="article__meta">{{ .Date.Format ($.Param "time_format") }}</p>
+                {{- with .Params.meta -}}
+                <div class="article__meta">{{ partial "meta" . }}</div>
+                {{- end }}
             </header>
             <div class="article__content">
                 {{- .Content -}}
