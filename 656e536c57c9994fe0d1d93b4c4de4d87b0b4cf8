@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f059b7c_c99b8de6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-01-27T06:13:18Z",
+      "side": 1,
+      "message": "Placing a hold for now pending a response to my review in https://github.com/cue-lang/cuelang.org/pull/292#pullrequestreview-1272162281",
+      "revId": "656e536c57c9994fe0d1d93b4c4de4d87b0b4cf8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
