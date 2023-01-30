@@ -1,0 +1,31 @@
+@import '../config/colors';
+@import '../mixins/marginless-child';
+
+.note {
+    $self: &;
+
+    --note-bg-color: #{ $c-blue--lighter };
+    --note-border-color: #{ $c-blue--light };
+    --note-color: #{ $c-grey--darkest };
+
+    background-color: var(--note-bg-color);
+    border-left: 3px solid var(--note-border-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0 0 1.25em;
+    padding: 1rem 1.5rem;
+
+    &__content {
+        @include marginless-child;
+    }
+
+    &--warn {
+        --note-bg-color: #{ $c-yellow--light };
+        --note-border-color: #{ $c-yellow };
+    }
+
+    &--caution {
+        --note-bg-color: #{ $c-red--light };
+        --note-border-color: #{ $c-red };
+    }
+}

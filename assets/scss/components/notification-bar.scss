@@ -3,7 +3,7 @@
 @import '../mixins/container';
 @import '../mixins/screen';
 
-.sticky-note {
+.notification-bar {
     $self: &;
 
     background-color: $c-yellow;
@@ -37,6 +37,10 @@
         position: absolute;
         top: 7px;
         right: 5px;
+    }
+
+    &.is-hidden {
+        display: none;
     }
 
     @include screen($screen-simple) {

@@ -2,11 +2,12 @@
 {{- $label := .Get "label" | default "-" -}}
 {{- $icon := .Get "icon" | default "" -}}
 {{- $theme := .Get "theme" | default "" -}}
+{{- $size := .Get "size" | default "" -}}
 
 {{- $url := urls.Parse $href -}}
 {{- $baseUrl := urls.Parse $.Site.Params.Baseurl -}}
 
-<a class="button{{ with $theme }} button--{{ . }}{{ end }}"
+<a class="button{{ with $theme }} button--{{ . }}{{ end }}{{ with $size }} button--{{ . }}{{ end }}"
    href="{{ $href }}"{{ if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
     <span class="button__text">{{ $label }}</span>
     {{- with $icon }}{{ partial "icon.html" (dict "class" "button__icon" "icon" .) }}{{ end -}}

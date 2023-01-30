@@ -1,0 +1,20 @@
+{{ $notification := .Params.notification | default $.Site.Params.notification  | default nil -}}
+{{ with $notification -}}
+    <div class="notification-bar is-hidden" data-notification-bar="{{ .type | default "default" }}">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                {{ .content | markdownify }}
+            </div>
+            {{ if .button -}}
+                <a class="button button--outline notification-bar__cta" href="{{ .button.link }}">
+                    <span class="button__text">{{ .button.text }}</span>
+                    {{ if .button.icon }}{{ partial "icon.html" (dict "icon" .button.icon "class" "button__icon") }}{{ end }}
+                </a>
+            {{ end -}}
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                {{ partial "icon.html" (dict "icon" "close" "class" "button__icon") }}
+                <span class="button__text">{{ T "ui_close" }}</span>
+            </button>
+        </div>
+    </div>
+{{ end -}}
