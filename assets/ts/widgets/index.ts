@@ -2,4 +2,4 @@ export * from './base-widget';
 export * from './drawer';
 export * from './docs';
 export * from './header';
-export * from './sticky-note';
+export * from './notification-bar';

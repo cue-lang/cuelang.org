@@ -1,5 +1,5 @@
 // Helpers
-import { Docs, Drawer, Header, StickyNote } from './widgets';
+import { Docs, Drawer, Header, NotificationBar } from './widgets';
 import { scrollToHash } from './helpers/scroll-to';
 import { Widget } from './interfaces/widget';
 
@@ -10,7 +10,7 @@ declare global {
     }
 }
 
-type WidgetTypes = Docs | Drawer | Header;
+type WidgetTypes = Docs | Drawer | Header | NotificationBar;
 
 class App {
     public widgets: Widget[];
@@ -26,7 +26,7 @@ class App {
             [Docs.NAME]: Docs,
             [Drawer.NAME]: Drawer,
             [Header.NAME]: Header,
-            [StickyNote.NAME]: StickyNote,
+            [NotificationBar.NAME]: NotificationBar,
         };
 
         this.initWidgets();

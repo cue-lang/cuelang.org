@@ -155,7 +155,7 @@ ol {
                 left: 4px;
                 line-height: 1.125;
                 position: absolute;
-                top: 1px;
+                top: 0;
             }
 
             p {
@@ -236,7 +236,6 @@ th {
 
 tr {
     &:last-child {
-        th,
         td {
             border-bottom: 0;
         }
@@ -245,10 +244,19 @@ tr {
 
 blockquote {
     background-color: var(--quote-background-color);
+    border-radius: 5px;
     clear: both;
     display: block;
     margin: 2rem 0;
     padding: 1rem 1.25rem;
+
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
 
     p {
         color: var(--quote-color);
@@ -256,7 +264,6 @@ blockquote {
         font-size: 1.1rem;
         font-style: italic;
         line-height: 1.8;
-        margin: 0;
     }
 
     cite {
@@ -277,15 +284,6 @@ blockquote {
             position: absolute;
             top: -15px;
             width: $p-gutter--large;
-        }
-    }
-
-    @include screen($screen-normal) {
-        margin: 2rem (-$p-gutter--large);
-        padding: 2rem $p-gutter--large;
-
-        p {
-            font-size: 1.375rem;
         }
     }
 }
@@ -327,6 +325,8 @@ pre {
 code {
     margin-bottom: 1rem;
 
+    dd &,
+    td &,
     p & {
         background-color: $c-blue--lighter;
         padding: 3px 5px;
