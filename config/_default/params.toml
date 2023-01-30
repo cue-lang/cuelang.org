@@ -12,11 +12,12 @@ gcs_engine_id = "004591905419617723008:8rmik2a7xb3"
 # Which logo to use in main header
 logo = "svg/logo-alpha.svg"
 
-# Add a site-wide sticky-note
-# Contents allows for markdown, leave out CTA if you don't want a button
-[sticky_note]
+# Add a site-wide notification-bar
+# Contents allows for markdown, leave out the button if you don't want a button
+[notification]
+    type = 'test'
     content = '**Note:** a sticky note we wanted to show at the bottom'
-    [sticky_note.cta]
+    [notification.button]
         link = '/download'
         icon = 'download'
         text = 'Download'
