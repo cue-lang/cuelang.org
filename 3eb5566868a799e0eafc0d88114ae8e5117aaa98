@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a74cd81e_e8396348",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-02-02T14:02:41Z",
+      "side": 1,
+      "message": "This change was approved in https://github.com/cue-lang/cuelang.org/pull/292",
+      "revId": "3eb5566868a799e0eafc0d88114ae8e5117aaa98",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
