@@ -39,13 +39,13 @@
         padding: 7px;
         width: 100%;
 
-        .logo__inner {
+        .logo__outer {
             transition: fill .2s ease;
         }
 
         &:focus,
         &:hover {
-            .logo__inner {
+            .logo__outer {
                 fill: $c-yellow;
             }
         }
