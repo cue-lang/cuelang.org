@@ -1,0 +1,108 @@
+// Reset taken from: https://github.com/jaydenseric/Fix
+
+html {
+    box-sizing: border-box;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+
+    &::after {
+        box-sizing: inherit;
+    }
+
+    &::before {
+        box-sizing: inherit;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+iframe {
+    border: 0;
+}
+
+main {
+    display: block;
+}
+
+ul,
+ol {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+dl {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+dd {
+    margin-left: 0;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    top: -.5em;
+    vertical-align: baseline;
+}
+
+strong {
+    font-weight: 700;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-align: inherit;
+    text-transform: inherit;
+}
+
+::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}

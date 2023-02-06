@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <div id="root" class="playground">
+        <div class="playground__spinner">
+            {{ partial "spinner.html" }}
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="{{ "/editor/main.css" | relURL }}">
+    <script>
+        document.editorEnv = {
+            wasmPath: '/editor'
+        }
+    </script>
+    <script src="{{ "/editor/bundle.min.js" | relURL }}" async></script>
+{{ end }}
