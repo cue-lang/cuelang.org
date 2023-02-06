@@ -1,28 +1,57 @@
 {
-	"author": "",
-	"description": "",
-	"devDependencies": {
-		"@types/react": "16.14.21",
-		"@types/react-dom": "16.9.14",
-		"@types/reactstrap": "8.7.2",
-		"ace-builds": "1.9.6",
-		"bootstrap": "4.6.1",
-		"css-loader": "6.7.1",
-		"file-loader": "6.2.0",
-		"html-webpack-plugin": "5.5.0",
-		"style-loader": "3.3.1",
-		"ts-loader": "9.3.1",
-		"typescript": "3.9.10",
-		"typescript-formatter": "7.2.2",
-		"webpack": "5.66.0",
-		"webpack-cli": "4.9.1",
-		"webpack-dev-server": "4.7.3"
-	},
-	"keywords": [],
-	"main": "index.js",
-	"name": "CUEplayground",
-	"scripts": {
-		"dist": "webpack --mode production",
-		"watch": "webpack watch --mode development"
-	}
+  "name": "CUEplayground",
+  "version": "0.1.0",
+  "description": "CUE Playground",
+  "author": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.10",
+    "ace-builds": "1.15.0",
+    "css-loader": "6.7.3",
+    "classnames": "2.3.2",
+    "copy-webpack-plugin": "11.0.0",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "5.5.0",
+    "sass": "1.58.0",
+    "sass-loader": "13.2.0",
+    "style-loader": "3.3.1",
+    "terser-webpack-plugin": "5.3.6",
+    "ts-loader": "9.4.2",
+    "typescript": "4.9.5",
+    "typescript-formatter": "7.2.2",
+    "webpack": "5.75.0",
+    "webpack-cli": "5.0.1",
+    "webpack-dev-server": "4.11.1"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "build:hugo": "npm run build && npm run copy",
+    "copy": "mkdir -p ../hugo/static/editor && cp _dist/bundle.min.js ../hugo/static/editor/ && cp _dist/main.css ../hugo/static/editor/ && cp _dist/main.wasm ../hugo/static/editor/ "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuelang/website.git"
+  },
+  "engines": {
+    "node": "~18"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

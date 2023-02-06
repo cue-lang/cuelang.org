@@ -1,6 +1,33 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../config/sizes';
+@import '../mixins/screen';
+
 .playground {
-    align-items: center;
-    display: flex;
-    min-height: calc(100vh - 300px);
-    justify-content: center;
+    height: calc(100vh - var(--header-height, #{ $h-header--sticky }) - 2rem);
+
+    // Force some space between editor & logo which sticks out of header
+    &::before {
+        content: '';
+        background-color: $c-blue--lighter;
+        display: block;
+        height: 2rem;
+    }
+
+    &__spinner {
+        padding: 2rem 0;
+    }
+
+    @include screen($screen-normal) {
+        height: calc(100vh - var(--header-height, #{ $h-header--sticky }));
+
+        &::before {
+            display: none;
+        }
+
+        .cue-editor__header {
+            // Padding of header + logo width + margins
+            padding-left: calc(1rem + var(--header-logo-width, #{ $w-branding--large }) + 50px);
+        }
+    }
 }

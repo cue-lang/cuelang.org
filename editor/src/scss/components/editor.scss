@@ -1,0 +1,67 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/list-reset';
+@import '../mixins/screen';
+
+.#{ $prefix }-editor {
+    display: grid;
+    font-family: $font-inter;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    padding-bottom: 10px;
+    width: 100%;
+
+    &__header {
+        align-items: center;
+        background-color: $c-blue--lighter;
+        display: flex;
+        flex-direction: row;
+        gap: .3rem;
+        grid-column: span 2;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    &__controls {
+        @include list-reset;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    &__version {
+        align-self: flex-start;
+        color: $c-blue;
+        font-size: 0.875rem;
+        margin-top: .5rem;
+    }
+
+    &__column {
+        background-color: $c-blue--lighter;
+        border-radius: 2px;
+        overflow: hidden;
+        padding: 1.5rem 1rem;
+    }
+
+    &__code {
+        background: $c-blue--lighter !important;
+        height: 100%;
+        width: 100%;
+
+        .ace_gutter {
+            background: $c-blue--lighter !important;
+        }
+    }
+
+    @include screen($screen-simple) {
+        &__version {
+            align-self: center;
+            margin-top: 0;
+        }
+    }
+}

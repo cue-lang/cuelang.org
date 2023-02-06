@@ -15,7 +15,7 @@ ij_formatter_off_tag = @formatter:off
 ij_formatter_on_tag = @formatter:on
 ij_formatter_tags_enabled = true
 
-[*.ts]
+[*.{ts,tsx}]
 any_class_brace_style = next_line
 any_method_brace_style = end_of_line
 quote_type = single
@@ -24,6 +24,7 @@ quote_type = single
 ij_any_class_brace_style = next_line
 ij_any_method_brace_style = end_of_line
 ij_typescript_use_double_quotes = false
+ij_any_spaces_within_braces = true
 
 [*.scss]
 quote_type = single

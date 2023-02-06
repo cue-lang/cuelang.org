@@ -1,0 +1,43 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/typography';
+
+.#{ $prefix }-button {
+    align-items: center;
+    background: $c-blue--light;
+    border-radius: 30px;
+    color: $c-white;
+    display: inline-flex;
+    fill: currentColor;
+    font-family: $font-inter;
+    font-size: 0.875rem;
+    font-weight: $weight-medium;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    padding: 0 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, fill 0.2s;
+    white-space: nowrap;
+
+    &:focus-visible,
+    &:hover {
+        background-color: $c-blue--darker;
+    }
+
+    &:disabled {
+        background-color: $c-grey;
+        color: $c-white;
+        cursor: not-allowed;
+    }
+
+    &__icon {
+        display: block;
+        height: 20px;
+        margin-left: 6px;
+        width: 20px;
+    }
+}

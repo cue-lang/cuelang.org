@@ -21,6 +21,9 @@ then
 	$time go generate ./...
 fi
 
+# Build editor
+bash editor/build.bash
+
 # Main site
 cd hugo
 $time npm ci

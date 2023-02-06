@@ -1,0 +1,38 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/screen';
+
+.#{ $prefix }-share {
+    display: flex;
+    gap: .75rem;
+
+    &__button {
+        flex: 0 0 auto;
+    }
+
+    &__input {
+        background-color: $c-blue--lighter;
+        border: 1px solid $c-blue;
+        border-radius: 4px;
+        color: $c-blue;
+        flex: 1 1 auto;
+        font-family: $font-inter;
+        font-size: 0.875rem;
+        height: 30px;
+        line-height: 30px;
+        max-width: 300px;
+        padding: 0 .75rem;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+
+    @include screen($screen-simple) {
+        display: flex;
+    }
+}
