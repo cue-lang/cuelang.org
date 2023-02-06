@@ -42,7 +42,7 @@ then
 	rsync -a $NETLIFY_BUILD_BASE/cache/playground_node_modules/ node_modules
 fi
 
-$time npm install
+$time npm ci
 
 if [ "${NETLIFY:-}" == "true" ]
 then
@@ -53,5 +53,9 @@ fi
 echo "Building WASM backend"
 GOOS=js GOARCH=wasm $time go build -o main.wasm
 
-echo "Running npm dist"
-$time npm run dist
+# Building the app
+echo "Running npm build"
+$time npm run build
+
+# Copying result to hugo static folder
+$time npm run copy

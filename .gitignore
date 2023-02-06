@@ -1,6 +1,9 @@
 node_modules
 /.idea/
 /_public/
+/editor/_dist/
+/editor/main.wasm
 /hugo/resources/
-/.nvmrc
 /hugo/.hugo_build.lock
+/hugo/static/editor/
+/.nvmrc
