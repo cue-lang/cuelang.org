@@ -1,0 +1,31 @@
+<section class="section section--center section--logos{{ if .Get "bgColor" }} section--{{ .Get "bgColor"}}{{ end }}">
+    {{ if (or (.Get "title") (.Get "intro")) }}
+        <header class="section__header">
+            <div class="section__content">
+                {{ if .Get "title" }}
+                    <h2 class="section__title">{{ .Get "title" }}</h2>
+                {{ end }}
+
+                {{ if .Get "intro" }}
+                    <p class="section__intro">{{ .Get "intro" }}</p>
+                {{ end }}
+            </div>
+        </header>
+    {{ end }}
+
+    <div class="section__body">
+        <div class="section__container">
+            <div class="logos">
+                {{ .Inner }}
+            </div>
+        </div>
+    </div>
+
+    {{- if (and (.Get "buttonText") (.Get "buttonUrl")) -}}
+        <footer class="section__footer">
+            <a class="button button--blue section__button" href="{{ .Get "buttonUrl" }}">
+                <span class="button__text">{{ .Get "buttonText" }}</span>
+            </a>
+        </footer>
+    {{- end -}}
+</section>
