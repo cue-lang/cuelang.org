@@ -65,3 +65,7 @@ other = "最后修改"
 other = "Redirecting..."
 [redirect_manually]
 other = "Click here if you are not redirected"
+
+# Figure shortcode
+[logo_redirect]
+other = "Go to the website"

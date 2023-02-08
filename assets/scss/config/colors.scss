@@ -42,6 +42,7 @@ $c-scrollbar-background:    $c-grey--lightest;
 // Shadows
 $shadow--light:         0 4px 4px transparentize($c-black, .25);
 $shadow:                0 4px 34px transparentize($c-black, .35);
+$shadow--blue:          0 10px 24px transparentize($c-blue--light, .85);
 
 $shadow--header:        0 3px 12px transparentize($c-blue--dark, .8);
 $shadow--drawer:        0 3px 12px transparentize($c-blue--dark, .8);

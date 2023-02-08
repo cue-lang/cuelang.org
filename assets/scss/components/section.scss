@@ -22,7 +22,7 @@
     &__body,
     &__footer {
         padding: var(--section-padding);
-        position: relative;;
+        position: relative;
 
         & + #{ $self }__header,
         & + #{ $self }__body,

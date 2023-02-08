@@ -1,0 +1,69 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/stretch';
+
+.logos {
+    $self: &;
+
+    --logo-height: 75px;
+    --logo-width: 150px;
+    --logo-animation: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 10px;
+    justify-content: center;
+    position: relative;
+
+    &__item {
+        align-items: center;
+        background-color: $c-white;
+        border-radius: 6px;
+        box-shadow: $shadow--blue;
+        display: flex;
+        flex: 0 0 var(--logo-width);
+        height: var(--logo-height);
+        justify-content: center;
+        padding: 10px 30px;
+        position: relative;
+        transition:
+            transform 300ms var(--logo-animation),
+            scale 300ms var(--logo-animation);
+        width: var(--logo-width);
+
+        &--link {
+            &:focus,
+            &:hover {
+                scale: 1.05;
+                transform: translate(0px, -3px);
+
+                #{ $self }__logo {
+                    scale: 1.1;
+                }
+            }
+        }
+    }
+
+    &__logo {
+        height: 100%;
+        object-fit: contain;
+        transition: scale 300ms var(--logo-animation);
+    }
+
+    @include screen($screen-simple) {
+        --logo-height: 90px;
+        --logo-width: 180px;
+
+        gap: 30px $p-gutter;
+    }
+
+    @include screen($screen-normal) {
+        --logo-height: 100px;
+        --logo-width: 200px;
+
+        &__item {
+            padding: $p-gutter $p-gutter--large;
+        }
+    }
+}
