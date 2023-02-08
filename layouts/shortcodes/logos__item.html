@@ -1,0 +1,33 @@
+{{- $lazy := cond (or (eq (.Get "lazy") false) (eq (.Get "lazy") "false")) false true -}}
+
+{{ if .Get "link" }}
+    <a href="{{ .Get "link" }}" class="logos__item logos__item--link">
+        <img src="{{ .Get "src" }}"
+            class="logos__logo"
+            width="200"
+            height="auto"
+            {{ if .Get "alt" }}
+                alt="{{ .Get "alt" }}"
+            {{ end }}
+            {{ if $lazy }}
+                loading="lazy"
+            {{ end }}
+        >
+
+        <span class="sr-only">{{ T "logo_redirect" }} {{ with .Get "name" }}{{ . }}{{ end }}</span>
+    </a>
+{{ else }}
+    <div class="logos__item">
+        <img src="{{ .Get "src" }}"
+            class="logos__logo"
+            width="200"
+            height="auto"
+            {{ if .Get "alt" }}
+                alt="{{ .Get "alt" }}"
+            {{ end }}
+            {{ if $lazy }}
+                loading="lazy"
+            {{ end }}
+        >
+    </div>
+{{ end }}
