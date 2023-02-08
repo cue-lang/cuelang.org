@@ -44,7 +44,7 @@
 [[cta]]
     identifier = "cta"
     name = "Download"
-    url = "/docs/download/"
+    url = "/docs/install/"
     post = "download"
     weight = 300
 
@@ -56,18 +56,18 @@
     weight = 400
 [[footer]]
     parent = "column1"
-    name = "Documentation"
-    url = "/docs/"
+    name = "Download"
+    url = "/docs/install/"
     weight = 410
 [[footer]]
     parent = "column1"
-    name = "Language Guide"
-    url = "/docs/language-guide/"
+    name = "Get started"
+    url = "/docs/get-started/"
     weight = 411
 [[footer]]
     parent = "column1"
-    name = "Playground"
-    url = "/play/"
+    name = "Reference Documentation"
+    url = "/docs/references/"
     weight = 412
 
 [[footer]]
@@ -77,18 +77,18 @@
     weight = 401
 [[footer]]
     parent = "column2"
-    name = "Recorded talks"
-    url = "#"
+    name = "The CUE community"
+    url = "/community/"
     weight = 420
 [[footer]]
     parent = "column2"
-    name = "Meetups"
-    url = "#"
+    name = "Contributing"
+    url = "/docs/contribution-guidelines/"
     weight = 421
 [[footer]]
     parent = "column2"
-    name = "Conferences"
-    url = "#"
+    name = "Code of conduct"
+    url = "/docs/contribution-guidelines/code-of-conduct/"
     weight = 422
 
 [[footer]]
@@ -98,19 +98,14 @@
     weight = 402
 [[footer]]
     parent = "column3"
-    name = "Download"
-    url = "#"
+    name = "About CUE"
+    url = "/docs/about/"
     weight = 430
 [[footer]]
     parent = "column3"
     name = "Blog"
-    url = "#"
+    url = "/blog/"
     weight = 431
-[[footer]]
-    parent = "column3"
-    name = "About CUE"
-    url = "#"
-    weight = 432
 
 [[footer]]
     identifier = "column4"
