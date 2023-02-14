@@ -121,6 +121,14 @@
                 text-align: center;
             }
         }
+
+
+        &--search {
+            #{ $self }__header {
+                padding-bottom: 2rem;
+            }
+        }
+
     }
 
     @include screen($screen-normal) {
