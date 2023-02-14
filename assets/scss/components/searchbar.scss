@@ -1,0 +1,28 @@
+@import '../config/sizes';
+@import '../mixins/sr-only';
+
+.searchbar {
+    &__label {
+        @include sr-only;
+    }
+
+    &__bar {
+        position: relative;
+    }
+
+    &__input {
+        &[type='text'] {
+            border-radius: 50px;
+            border-width: 2px;
+            height: $h-button + 16px;
+            padding: 0 ($h-button + 12px) 0 2rem;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
