@@ -1,16 +1,41 @@
 {{ define "main" }}
     <section class="section section--search">
         <header class="section__header">
-            <h1 class="section__title">{{ .Title }}</h1>
-            <div class="todo"><span class="todo__note">TODO</span><span class="todo__desc">Form</span></div>
+            <div class="section__content">
+                <h1 class="section__title">{{ .Title }}</h1>
+            </div>
         </header>
-        <div class="section__container">
-            <gcse:searchresults-only>{{ partial "spinner.html" }}</gcse:searchresults-only>
+        <div class="section__body">
+            <div class="section__content">
+                <form action="{{ .RelPermalink }}" method="get">
+                    <div class="searchbar">
+                        <label for="searchbar" class="searchbar__label">{{ T "ui_search" }}</label>
+                        <div class="searchbar__bar">
+                            <input name="q" type="text" id="searchbar" class="searchbar__input">
+                            <button type="submit" class="button button--icon searchbar__button">
+                                {{- partial "icon.html" (dict "icon" "search" "class" "button__icon") -}}
+                                <span>{{ T "ui_search" }}</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="search">
+                    <gcse:searchresults-only>{{ partial "spinner.html" }}</gcse:searchresults-only>
+                </div>
+            </div>
         </div>
     </section>
     <script>
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+        const input = document.getElementById('searchbar');
+        if (input && query) {
+            input.value = query;
+        }
+
         (function() {
-            var cx = '{{ . }}';
+            var cx = '004591905419617723008:8rmik2a7xb3';
             var gcse = document.createElement('script');
             gcse.type = 'text/javascript';
             gcse.async = true;
