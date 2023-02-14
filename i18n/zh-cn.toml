@@ -65,3 +65,9 @@ other = "最后修改"
 other = "Redirecting..."
 [redirect_manually]
 other = "Click here if you are not redirected"
+
+# Error pages
+[error_404_title]
+other = "404 - Page not found"
+[error_404_description]
+other = "Sorry, the page you were looking for is not found, go back to the <a href='/'>homepage</a>"
