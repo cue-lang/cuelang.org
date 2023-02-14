@@ -60,7 +60,7 @@ config: #config & {
 		}
 	}
 
-	context: "deploy-preview": command: "bash build.bash -b $DEPLOY_URL"
+	context: "deploy-preview": command: "bash build.bash -b $DEPLOY_PRIME_URL"
 
 	redirects: [...{force: true, status: 302}]
 	redirects: [{

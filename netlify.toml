@@ -12,7 +12,7 @@ HUGO_VERSION = "0.108.0"
 NODE_VERSION = "18.12.1"
 
 [context.deploy-preview]
-command = "bash build.bash -b $DEPLOY_URL"
+command = "bash build.bash -b $DEPLOY_PRIME_URL"
 
 [[redirects]]
   from = "/cl/*"
