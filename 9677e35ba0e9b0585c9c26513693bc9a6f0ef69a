@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53b00020_5e6e062a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-02-20T21:01:10Z",
+      "side": 1,
+      "message": "Added some feedback in https://github.com/cue-lang/cuelang.org/pull/295#issuecomment-1437534701.\n\nThe logos don\u0027t look right to me. \n\nBut we can fix that in a subsequent PR. Ideally however we\u0027d fix these things before importing into Gerrit.",
+      "revId": "9677e35ba0e9b0585c9c26513693bc9a6f0ef69a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
