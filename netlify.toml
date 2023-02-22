@@ -16,7 +16,7 @@ command = "bash build.bash -b $DEPLOY_URL"
 
 [[redirects]]
   from = "/cl/*"
-  to = "https://review.gerrithub.io/c/cue-lang/cue/+/:splat"
+  to = "https://review.gerrithub.io/c/:splat"
   status = 302
   force = true
 
