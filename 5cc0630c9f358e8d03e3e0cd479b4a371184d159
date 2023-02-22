@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a512880_3fbada44",
+        "filename": "project.config",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-02-22T09:23:08Z",
+      "side": 1,
+      "message": "unfortunate to have to remember to do this correctly for each project config, but I imagine it won\u0027t be needed in general since most repositories won\u0027t use their own separate issue tracker.",
+      "revId": "5cc0630c9f358e8d03e3e0cd479b4a371184d159",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd0f9593_b9ee5905",
+        "filename": "project.config",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-02-22T09:23:08Z",
+      "side": 1,
+      "message": "clever, today I learned that Gerrit can do this. makes sense since CL numbers are unique between projects as well.\n\nI would do exactly the same thing in netlify.toml:\n\n```\n-  to \u003d \"https://review.gerrithub.io/c/cue-lang/cue/+/:splat\"\n+  to \u003d \"https://review.gerrithub.io/c/+/:splat\"\n```\n\nthen this can be\n\n```\nlink \u003d https://cuelang.org/cl/$2\n```\n\nand our CL URL shortcut will then also work for any repo, not just cue-lang/cue.",
+      "revId": "5cc0630c9f358e8d03e3e0cd479b4a371184d159",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
