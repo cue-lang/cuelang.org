@@ -70,6 +70,12 @@ other = "Redirecting..."
 [redirect_manually]
 other = "Click here if you are not redirected"
 
+# Error pages
+[error_404_title]
+other = "404 - Page not found"
+[error_404_description]
+other = "Oops! This page doesn't exist. Try going back to our <a href='/'>home page</a>"
+
 # Figure shortcode
 [logo_redirect]
 other = "Go to the website"
