@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34c6a2d8_3b264389",
+        "filename": "internal/ci/base/base.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-02-22T11:36:44Z",
+      "side": 0,
+      "message": "did you delete this by accident? we don\u0027t want to make the copyright part of the package doc.",
+      "revId": "a8c2547b965632b29222f718ad28d53a794b52cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

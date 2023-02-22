@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afeb0462_0910f196",
+        "filename": "internal/ci/base/base.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-02-22T11:36:44Z",
+      "side": 1,
+      "message": "how about:\n\n```\nif git log --format\u003d%B -n 1 HEAD | sed -n \u00272{/^$/{q1}}\u0027; then\n  echo \"second line of commit message must be blank\"\n  exit 1\nfi\n```\n\nIMO easier to understand the flow, and we avoid one very long line.",
+      "revId": "cf61064e5bf735159fc57a79b873b9815f945051",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
