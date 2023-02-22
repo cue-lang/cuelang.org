@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9f01848_132fd89d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-02-22T16:12:43Z",
+      "side": 1,
+      "message": "Notice that you will need to trigger the trybots again. The commit message was updated in patchset 3, the trybots ran against patchset 2.",
+      "revId": "f4c1bcb2efe008834a25400bcd0f22393ce825b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
