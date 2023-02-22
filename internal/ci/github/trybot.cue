@@ -21,6 +21,7 @@ import (
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/core"
+	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
@@ -53,6 +54,10 @@ trybot: _base.#bashWorkflow & {
 					// This doesn't affect "push" builds, which never used merge commits.
 					with: ref: "${{ github.event.pull_request.head.sha }}"
 				},
+
+				// Early git checks
+				base.#earlyChecks,
+
 				_#installNode,
 				_#installGo,
 				_#installHugo,

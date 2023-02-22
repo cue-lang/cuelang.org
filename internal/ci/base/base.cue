@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 // package core is a collection of features that are common to CUE projects and
 // the workflows they specify.
 package base
@@ -75,6 +74,11 @@ import (
 				exit 1
 			fi
 		done
+
+		# Ensure that commit messages have a blank second line.
+		# We know that a commit message must be longer than a single
+		# line because each commit must be signed-off.
+		git log --format=%B -n 1 HEAD | (! sed -n '2{/^$/{q1}}') || (echo "second line of commit message must be blank" && false)
 		"""
 }
 
