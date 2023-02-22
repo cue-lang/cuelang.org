@@ -1,0 +1,12 @@
+{{ define "main"}}
+       <article class="article">
+        <div class="article__container">
+            <header class="article__header">
+                <h1 class="article__title">{{  T "error_404_title"  }}</h1>
+            </header>
+            <div class="article__content">
+                <p>{{  T "error_404_description" | safeHTML }}</p>
+            </div>
+        </div>
+    </article>
+{{ end }}
