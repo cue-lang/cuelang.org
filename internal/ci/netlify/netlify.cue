@@ -65,7 +65,7 @@ config: #config & {
 	redirects: [...{force: true, status: 302}]
 	redirects: [{
 		from: "/cl/*"
-		to:   "https://review.gerrithub.io/c/cue-lang/cue/+/:splat"
+		to:   "https://review.gerrithub.io/c/:splat"
 	}, {
 		from: "/issue/*"
 		to:   "https://github.com/cue-lang/cue/issues/:splat"
