@@ -19,6 +19,30 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+      - name: Early git and code sanity checks
+        run: |-
+          # Ensure the recent commit messages have Signed-off-by headers.
+          # TODO: Remove once this is enforced for admins too;
+          # see https://bugs.chromium.org/p/gerrit/issues/detail?id=15229
+          # TODO: Our --max-count here is just 1, because we've made mistakes very
+          # recently. Increase it to 5 or 10 soon, to also cover CL chains.
+          for commit in $(git rev-list --max-count=1 HEAD); do
+          	if ! git rev-list --format=%B --max-count=1 $commit | grep -q '^Signed-off-by:'; then
+          		echo -e "
+          Recent commit is lacking Signed-off-by:
+          "
+          		git show --quiet $commit
+          		exit 1
+          	fi
+          done
+
+          # Ensure that commit messages have a blank second line.
+          # We know that a commit message must be longer than a single
+          # line because each commit must be signed-off.
+          if git log --format=%B -n 1 HEAD | sed -n '2{/^$/{q1}}'; then
+          	echo "second line of commit message must be blank"
+          	exit 1
+          fi
       - name: Install Node
         uses: actions/setup-node@v3
         with:

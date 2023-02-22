@@ -75,6 +75,14 @@ import (
 				exit 1
 			fi
 		done
+
+		# Ensure that commit messages have a blank second line.
+		# We know that a commit message must be longer than a single
+		# line because each commit must be signed-off.
+		if git log --format=%B -n 1 HEAD | sed -n '2{/^$/{q1}}'; then
+			echo "second line of commit message must be blank"
+			exit 1
+		fi
 		"""
 }
 
