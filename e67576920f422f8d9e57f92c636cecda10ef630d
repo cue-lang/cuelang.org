@@ -16,6 +16,24 @@
       "message": "I _think_ you want Bash\u0027s `[[ x !\u003d y ]]`, since `[` is a builtin where \"not equals\" is `-ne` rather than `!\u003d`. I would guess that what you have here doesn\u0027t actually work in practice.",
       "revId": "e67576920f422f8d9e57f92c636cecda10ef630d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec803373_cdf90620",
+        "filename": "internal/ci/base/base.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-02-23T16:27:13Z",
+      "side": 1,
+      "message": "I rest easy knowing that you actually know shell and I have close to ~no idea what I am doing with shell. I did try what I have locally and it works. i.e. works in the success and failure cases. But I will make the change very much deferring to your greater experience here 😊",
+      "parentUuid": "0c5d5401_f286b548",
+      "revId": "e67576920f422f8d9e57f92c636cecda10ef630d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
