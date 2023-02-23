@@ -83,6 +83,34 @@ import (
 			echo "second line of commit message must be blank"
 			exit 1
 		fi
+
+		# Ensure that the commit author is the same as the signed-off-by.  This
+		# is a basic requirement of DCO. It is enforced by Gerrit (although
+		# noting that in Gerrit the author name does not have to match, only
+		# the email address), but _not_ by the DCO GitHub app:
+		#
+		#   https://github.com/dcoapp/app/issues/201
+		#
+		# Provide a sanity check as part of GitHub workflows that should enforce
+		# this, e.g. trybot workflows.
+		#
+		# We do so by comparing the commit author and "Signed-off-by" trailer for
+		# strict equality. Whilst this is more strict than Gerrit, it should
+		# generally be the case, and we can always relax this when presented with
+		# specific situations where it is is a problem.
+
+		# commit author
+		commitauthor="$(git log -1 --pretty="%an <%ae>")"
+
+		# signed-off-by trailer
+		# Getting the Signed-off-by trailer in this way causes blank
+		# lines for some reason. Use awk to remove them.
+		commitsigner="$(git log -1 --pretty='%(trailers:key=Signed-off-by,valueonly)' | awk NF)"
+
+		if [ "$commitauthor" != "$commitsigner" ]; then
+			echo "commit author does not match signed-off-by trailer"
+			exit 1
+		fi
 		"""
 }
 
