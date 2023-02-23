@@ -34,6 +34,24 @@
       "parentUuid": "0c5d5401_f286b548",
       "revId": "e67576920f422f8d9e57f92c636cecda10ef630d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b9cc461_58b9b073",
+        "filename": "internal/ci/base/base.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-02-23T16:34:59Z",
+      "side": 1,
+      "message": "I was wrong btw, the [ aka test builtin does support !\u003d. But if we\u0027re using bash, we might as well use [[, which has far fewer footguns :)",
+      "parentUuid": "ec803373_cdf90620",
+      "revId": "e67576920f422f8d9e57f92c636cecda10ef630d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
