@@ -22,6 +22,7 @@ then
 fi
 
 # Main site
+cd hugo
 $time npm ci
 $time npm run icons
 $time hugo $@
