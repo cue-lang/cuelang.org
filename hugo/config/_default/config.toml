@@ -1,6 +1,6 @@
 baseURL = "/"
 title = "CUE"
-publishDir = "_public"
+publishDir = "../_public"
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false

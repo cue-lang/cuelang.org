@@ -18,16 +18,31 @@ issue a `cuelang.org: ` prefix.
 
 ### Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `== v18.12.1`
-* [Go](https://golang.org/dl/) `== go1.19.4`
+* [NodeJS](https://nodejs.org/) `== v18.x`
+* [Go](https://golang.org/dl/) `== go1.19.4` (not needed for only running hugo)
 * [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.108.0`
 
-### Developing the site locally
+### Folders
 
-```bash
-# Install Hugo's Node requirements
-npm install
-```
+#### content
+This contains the unprocessed content for the website
+
+#### editor
+This contains the app code for the cue-editor
+
+#### functions
+This contains cloud functions
+
+#### hugo
+This contains all code to build the hugo-website.
+
+#### internal
+Internal stuff: can be ignored
+
+#### cue.mod, go.mod, go.sum
+Can be ignored
+
+### Developing the site locally
 
 To serve the site locally run:
 
