@@ -171,6 +171,14 @@ ol {
         ol {
             margin: .5rem 0 0;
         }
+
+        ul {
+            li {
+                &::before {
+                    content: '\0025E6';
+                }
+            }
+        }
     }
 }
 
