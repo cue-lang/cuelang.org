@@ -1,6 +1,25 @@
 <nav class="tree">
-    {{ $navRoot := .FirstSection -}}
     {{ $current := . -}}
+    {{ $navRoot := "" -}}
+
+    {{- if ( or (eq $current .FirstSection) (eq $current.Params.toc_root true)) -}}
+        {{ $navRoot = $current }}
+    {{- end -}}
+
+    {{- if (eq $navRoot "") -}}
+        {{ $parent := .Parent -}}
+        {{- if (eq $parent.Params.toc_root true) -}}
+            {{ $navRoot = $parent -}}
+        {{- else -}}
+            {{ $parent = $parent.Parent -}}
+            {{- if (eq $parent.Params.toc_root true) -}}
+                {{ $navRoot = $parent -}}
+            {{- else -}}
+                {{ $navRoot = .FirstSection -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
     {{ $depth := 1 -}}
     {{ $maxDepth := 3 -}}
 
