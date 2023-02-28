@@ -14,8 +14,8 @@
     --text-link-color: #{ $c-blue };
     --caption-color: #{ transparentize($c-grey--darkest, .3) };
     --list-color: #{ $c-blue };
-    --table-border-color: #{ $c-grey--light };
-    --table-header-border-color: #{ $c-grey };
+    --table-border-color: #{ transparentize($c-blue--light, .85) };
+    --table-header-border-color: #{ transparentize($c-blue--light, .85) };
     --pre-color: #{ $c-grey--darkest };
     --pre-background-color: #{ $c-blue--lighter };
     --pre-border-color: #{ $c-blue--lighter };
@@ -217,17 +217,20 @@ dd {
 
 table {
     border-collapse: collapse;
-    border-radius: 4px;
+    border-radius: 0;
     margin: 0 0 1rem;
     overflow: hidden;
     text-align: left;
     width: 100%;
 }
 
+thead {
+    background-color: $c-yellow;
+}
+
 th,
 td {
-    border-bottom: 1px solid var(--table-border-color);
-    padding: .5em $p-gutter;
+    padding: $p-gutter;
     vertical-align: top;
 
     p:last-of-type {
@@ -243,10 +246,10 @@ th {
 }
 
 tr {
-    &:last-child {
-        td {
-            border-bottom: 0;
-        }
+    &:nth-child(even) {
+        background-color: $c-blue--lightest;
+        border-bottom: 1px solid var(--table-border-color);
+        border-top: 1px solid var(--table-border-color);
     }
 }
 
