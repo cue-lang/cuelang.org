@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+IFS=$'\n'
+
+numFiles=${1:-}
+
+if [[ "$numFiles" == "" ]]
+then
+	echo "usage: script NUMFILES"
+	exit 1
+fi
+
+if ! [ "$numFiles" -eq "$numFiles" ] 2>/dev/null; then
+  echo "invalid number of files $numFiles"
+  exit 1
+fi
+
+# Use the width of $numFiles to determine the padding
+range="$(seq -f "%0${#numFiles}g" 1 $numFiles || true)"
+if [[ "$range" == "" ]]
+then
+  echo "invalid number of files $numFiles"
+  exit 1
+fi
+
+
+for j in Reference Tutorial Howto Explanation
+do
+	for i in $range
+	do
+		title=$(basename "$j $i")
+		type=$(echo $j | tr A-Z a-z)
+		dir="$type/$type-$i"
+		file="$dir/index.md"
+		mkdir -p $dir
+		cat <<EOD > $type/_index.md
+---
+title: $j
+weight: 1
+draft: false
+---
+
+## Index Heading 2
+
+This is some dummy content for $j.
+
+EOD
+
+
+		cat <<EOD > $file
+---
+title: $title
+weight: $i
+draft: false
+---
+
+## Heading 2
+
+This is some dummy content for $title.
+
+### Heading 3
+
+Another heading
+
+## Another Heading 2
+
+EOD
+
+
+	done
+done
