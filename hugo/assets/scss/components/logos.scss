@@ -25,7 +25,7 @@
         flex: 0 0 var(--logo-width);
         height: var(--logo-height);
         justify-content: center;
-        padding: 10px 30px;
+        padding: 10px $p-gutter;
         position: relative;
         transition:
             transform 300ms var(--logo-animation),
@@ -63,7 +63,7 @@
         --logo-width: 200px;
 
         &__item {
-            padding: $p-gutter $p-gutter--large;
+            padding: $p-gutter;
         }
     }
 }
