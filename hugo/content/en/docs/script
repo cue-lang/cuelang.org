@@ -1,0 +1,45 @@
+IFS=$'\n'
+
+for i in $(cat file)
+do
+title=$(basename "$i")
+type=$(echo "$title" | awk '{print $1}')
+number=$(echo "$title" | awk '{print $2}')
+dir=$(dirname "$i")
+file=$(echo "$i" | tr A-Z a-z | sed -e 's/ /-/g' | sed 's/$/.md/')
+mkdir -p $dir
+cat <<EOD > $dir/_index.md
+---
+title: $type
+weight: 1
+draft: false
+---
+
+## Index Heading 2
+
+This is some dummy content for $type.
+
+EOD
+
+
+cat <<EOD > $file
+---
+title: $title
+weight: $number
+draft: false
+---
+
+## Heading 2
+
+This is some dummy content for $title.
+
+### Heading 3
+
+Another heading
+
+## Another Heading 2
+
+EOD
+
+
+done
