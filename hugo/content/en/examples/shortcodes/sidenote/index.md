@@ -1,6 +1,6 @@
 ---
 title: Sidenote
-weight: 25
+weight: 27
 ---
 
 {{< sidenote text="Only in CUE v04.3" >}}

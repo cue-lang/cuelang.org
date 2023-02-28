@@ -1,6 +1,6 @@
 ---
 title: Spinner
-weight: 26
+weight: 28
 ---
 
 The spinner shortcode is used to show a simple spinner. Not really needed in content - but it can be used in certain pieces of content which are replaced with Javascript.
