@@ -1,6 +1,6 @@
 ---
 title: Todo
-weight: 28
+weight: 31
 ---
 
 The todo shortcode is a simple shortcode used to show a section / block which is still under construction.
