@@ -58,7 +58,11 @@ people: [X=string]: #Person & {
 Run the following `cue` command in your:
 
 ```
+<<<<<<< HEAD
 $ cue vet x.cue x.yaml
+=======
+$cue vet x.cue x.yaml
+>>>>>>> 67d3925 (/community: adds files, section headers, conduct)
 ```
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
