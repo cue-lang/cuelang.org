@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c63ed8e_11fc66c4",
+        "filename": "hugo/content/en/docs/_index.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1020926
+      },
+      "writtenOn": "2023-03-01T15:55:52Z",
+      "side": 1,
+      "message": "Test comment",
+      "revId": "4ca464b3d423c1ea7a41d731fe9efe98536e02e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
