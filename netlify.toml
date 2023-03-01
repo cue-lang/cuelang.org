@@ -27,6 +27,12 @@ command = "bash build.bash -b $DEPLOY_PRIME_URL"
   force = true
 
 [[redirects]]
+  from = "/download"
+  to = "/docs/install"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/issues/*"
   to = "https://github.com/cue-lang/cue/issues/:splat"
   status = 302
