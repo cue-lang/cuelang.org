@@ -77,20 +77,19 @@
     weight = 401
 [[footer]]
     parent = "column2"
-    name = "Recorded talks"
+    name = "The CUE Community"
     url = "#"
     weight = 420
 [[footer]]
     parent = "column2"
-    name = "Meetups"
-    url = "#"
+    name = "Contributing"
+    url = "/community/contribution-guidelines"
     weight = 421
 [[footer]]
     parent = "column2"
-    name = "Conferences"
-    url = "#"
+    name = "Code of Conduct"
+    url = "/community/conduct"
     weight = 422
-
 [[footer]]
     identifier = "column3"
     name = "About"
@@ -106,12 +105,6 @@
     name = "Blog"
     url = "#"
     weight = 431
-[[footer]]
-    parent = "column3"
-    name = "About CUE"
-    url = "#"
-    weight = 432
-
 [[footer]]
     identifier = "column4"
     name = "Connect"
