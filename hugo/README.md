@@ -26,8 +26,43 @@ After that you can run to start Hugo:
 ```
 npm run hugo
 ```
+## Assets
 
-To create the icon spritesheet after adding new icons to the assets/svg folder run:
+### Typescript
+In the typescript folder (/assets/ts) you have multiple files and folders:
+
+- **helpers** > Includes all helper ts files
+- **interfaces** > Includes all interfaces & enums
+- **widgets** > We work with a widget system. Each widget can be bound to the html by using data-attributes. All widgets are inside this folder.
+- **head.ts** > Simple typescript file to only include stuff that is needed in the head. Only add typescript that specifically needs to be in the head here. All other stuff should be added in main or widgets.
+- **main.ts** > This is the main typescript file which maps all widgets and does overall stuff
+
+Hugo compiles this automatically to js.
+
+### SCSS
+In the styles folder (/assets/scss) you have multiple files and folders:
+
+- **base** > Overall styling
+- **components** > Component styling
+- **config** > Scss variables
+- **mixins** > Scss mixins
+- **main.scss** > This is the main scss file which includes all base scss & components scss
+
+Hugo compiles this automatically to css.
+
+### Icons
+If you want to add a new icon to the UI spritesheet you have to add the icon svg to the ui folder: `/assets/svg/ui`
+
+Make sure you cleaned up the icon which means:
+- Combine paths if possible
+- Make sure all icons are the same size: 24 x 24px viewbox
+- Make sure the icon is centered correctly within the viewbox
+- Make sure viewBox is used and not width and height!
+- Remove unneeded attributes like fill, meta info, comments etc. You can use [SVG OMG](https://jakearchibald.github.io/svgomg/) for this.
+- Double check after running it through svgomg if everything is set correctly.
+
+If all above is done and the icon is added in the right folder you can run the following command to update the spritesheet:
+
 ```
 npm run icons
 ```
