@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "270f6a0d_83427253",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-01T12:03:36Z",
+      "side": 1,
+      "message": "Git mail allowed for two Change-Ids in the commit message. Deleting one resulted in a brand new CL. https://review.gerrithub.io/c/cue-lang/cuelang.org/+/550357\n\nPropose this commit be abandoned in favor of 550357",
+      "revId": "ae9e0fffa9ead4051a70a988ccc812388f87aa70",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
