@@ -7,32 +7,25 @@
 .tree {
     $self: &;
 
-    line-height: 1.5;
+    line-height: 1.75;
     margin: 0 0 1rem;
+    overflow: auto;
     padding: .5rem 2rem;
 
     &__list {
         @include list-reset;
 
         margin: .25rem 0;
+
+        &.is-page {
+            margin: 0;
+        }
     }
 
     &__item {
         display: block;
         min-height: 2rem;
         position: relative;
-
-        &.is-active {
-            &::before {
-                background-color: $c-yellow;
-                content: "";
-                height: 2px;
-                left: -1rem;
-                position: absolute;
-                top: 15px;
-                width: 10px;
-            }
-        }
     }
 
     &__link {
@@ -41,6 +34,7 @@
     }
 
     &__text {
+        color: $c-blue--darker;
         display: inline;
         font-weight: $weight-bold;
     }
@@ -50,8 +44,25 @@
             margin: .5rem 0;
         }
 
+        & > #{ $self }__item {
+            & > .toc {
+                margin-left: 0;
+            }
+
+            &.has-children {
+                margin-bottom: $p-gutter--large;
+            }
+        }
+
         #{ $self }__item {
             margin-top: .75rem;
+
+            &.is-active {
+                #{ $self }__link {
+                    border-color: $c-yellow;
+                }
+
+            }
 
             #{ $self }__link {
                 border-bottom: 1px solid transparentize($c-blue, .7);
@@ -59,7 +70,7 @@
 
                 &:hover,
                 &:focus {
-                    border-color: $c-blue;
+                    border-color: $c-yellow;
                 }
             }
 
@@ -71,8 +82,22 @@
 
     .is-chapter,
     .is-page {
+        line-height: 1.25;
+
         #{ $self }__item {
             margin-top: 0;
+
+            &.is-active {
+                &::before {
+                    background-color: $c-yellow;
+                    content: "";
+                    height: 3px;
+                    left: -1.25rem;
+                    position: absolute;
+                    top: 14px;
+                    width: 12px;
+                }
+            }
 
             #{ $self }__link {
                 border-bottom: none;
@@ -85,6 +110,7 @@
                     #{ $self }__text {
                         background-position-x: 0;
                         background-size: 100% 1px;
+                        color: $c-blue--light;
                     }
                 }
             }
@@ -93,30 +119,54 @@
                 background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
                 background-size: 0 1px;
                 font-size: 1rem;
-                padding-bottom: 2px;
-                transition: background-size .2s ease-in-out;
+                font-weight: $weight-medium;
+                transition: background-color 0.2s ease-in-out, background-size 0.2s ease-in-out;
+            }
+        }
+    }
+
+    .is-chapter {
+        margin: $p-gutter 0 0;
+
+        & > #{ $self }__item {
+            margin: 0 0 $p-gutter;
+
+            &.has-children {
+                margin-bottom: 1rem;
             }
         }
     }
 
     .is-page {
         #{ $self }__item {
+            min-height: 1.25rem;
+
             #{ $self }__link {
-                padding-left: 30px;
+                color: transparentize($c-blue--darker, 0.2);
+                padding: 0.25rem 0 0.25rem 1.5rem;
 
                 &::before {
-                    @include svg(page, currentColor);
+                    @include svg(page, $c-blue--darker);
 
-                    height: 20px;
+                    height: 1rem;
                     left: 0;
+                    opacity: 0.3;
                     position: absolute;
-                    top: 6px;
-                    width: 20px;
+                    top: 7px;
+                    width: 1rem;
+                }
+
+                &:focus,
+                &:hover {
+                    &::before {
+                        @include svg(page, $c-blue--light);
+                        opacity: 1;
+                    }
                 }
             }
 
             #{ $self }__text {
-                font-weight: $weight-normal;
+                font-size: 0.875rem;
             }
         }
     }

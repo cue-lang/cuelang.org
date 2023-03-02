@@ -94,11 +94,9 @@
             background-color: $c-blue--lighter;
             bottom: auto;
             display: block;
-            flex: 0 0 300px;
             grid-area: aside;
             height: 100%;
             left: auto;
-            order: -1;
             overflow: auto;
             position: relative;
             right: auto;
@@ -109,6 +107,7 @@
         &__nav {
             background-color: transparent;
             box-shadow: none;
+            position: relative;
             padding-top: 40px;
             transform: translateX(0);
             transition: initial;
