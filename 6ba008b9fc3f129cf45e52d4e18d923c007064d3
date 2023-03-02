@@ -18,6 +18,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d0e0c41_159653de",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "80fa0ac8_fe99e3d6",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db71c5ba_75fab918",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "80fa0ac8_fe99e3d6",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b83ed5d7_69d6a408",
@@ -31,6 +67,24 @@
       "writtenOn": "2023-03-02T16:49:25Z",
       "side": 1,
       "message": "Blank line after bullet list.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a6808bf_8be0bb17",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b83ed5d7_69d6a408",
       "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +106,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b83c6766_92e72144",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c172ac9f_f56058c1",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab5ed275_0fa89a4c",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c172ac9f_f56058c1",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03f86cf3_a27f357f",
@@ -65,6 +155,24 @@
       "writtenOn": "2023-03-02T16:49:25Z",
       "side": 1,
       "message": "Blank line after code block.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7644fb7_a995636a",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "03f86cf3_a27f357f",
       "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +194,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3bf1b0a_ec4f7557",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "723871b0_37c983a5",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33f6a1fd_8ffaf065",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "723871b0_37c983a5",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6118f0bb_35e2b09c",
@@ -99,6 +243,24 @@
       "writtenOn": "2023-03-02T16:49:25Z",
       "side": 1,
       "message": "Blank line after code block.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6292194a_ea626ace",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6118f0bb_35e2b09c",
       "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +282,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f9e0e7f_8cbb095d",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b1c20a24_94481eb8",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "523158a6_9902a093",
@@ -133,6 +313,24 @@
       "writtenOn": "2023-03-02T16:49:25Z",
       "side": 1,
       "message": "Blank line after heading.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78adf36e_8411aac9",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T17:39:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "523158a6_9902a093",
       "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
