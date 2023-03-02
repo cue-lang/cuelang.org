@@ -6,9 +6,10 @@
 .toc {
     $self: &;
 
-    color: $c-grey--darkest;
+    color: $c-blue--darker;
     font-weight: $weight-normal;
     margin-left: 28px;
+    opacity: 0.8;
 
     &__list {
         @include list-reset;
@@ -20,17 +21,19 @@
 
     &__link {
         display: block;
-        padding: .25rem .25rem .25rem 30px;
+        font-size: 0.875rem;
+        opacity: 0.8;
+        padding: .25rem .25rem .25rem 1.5rem;
         text-decoration: none;
 
         &::before {
             @include svg(note, $c-yellow);
 
-            height: 20px;
+            height: 16px;
             left: 0;
             position: absolute;
-            top: 6px;
-            width: 20px;
+            top: 5px;
+            width: 16px;
         }
 
         &:hover,
@@ -44,7 +47,6 @@
         span {
             background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
             background-size: 0 1px;
-            padding-bottom: 2px;
             transition: background-size .2s ease-in-out;
         }
     }
