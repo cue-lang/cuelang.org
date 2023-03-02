@@ -6,9 +6,7 @@
 .toc {
     $self: &;
 
-    color: $c-grey--darkest;
-    font-weight: $weight-normal;
-    margin-left: 28px;
+    margin-left: 24px;
 
     &__list {
         @include list-reset;
@@ -19,33 +17,39 @@
     }
 
     &__link {
+        color: transparentize($c-blue--darker, 0.2);
         display: block;
-        padding: .25rem .25rem .25rem 30px;
+        font-size: 0.875rem;
+        font-weight: $weight-normal; // TODO: change to weight 300
+        line-height: 1.5;
+        padding: .25rem .25rem .25rem 1.5rem;
         text-decoration: none;
 
         &::before {
             @include svg(note, $c-yellow);
 
-            height: 20px;
+            height: 16px;
             left: 0;
+            opacity: 0.6;
             position: absolute;
             top: 6px;
             width: 20px;
         }
 
-        span {
-            background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
-            background-size: 0 1px;
-            padding-bottom: 2px;
-            transition: background-size .2s ease-in-out;
-        }
-
         &:hover,
         &:focus {
-            span {
+            color: $c-blue--light;
+
+            #{ $self }__text {
                 background-position-x: 0;
                 background-size: 100% 1px;
             }
+        }
+
+        #{ $self }__text {
+            background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
+            background-size: 0 1px;
+            transition: background-color 0.2s ease-in-out, background-size 0.2s ease-in-out;
         }
     }
 }

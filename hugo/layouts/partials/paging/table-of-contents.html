@@ -5,6 +5,6 @@
 {{ $toc = $toc | replaceRE "<ul>" "<ol class=\"toc__list\">" | safeHTML -}}
 {{ $toc = $toc | replaceRE "</ul>" "</ol>" | safeHTML -}}
 {{ $toc = $toc | replaceRE "<li>" "<li class=\"toc__item\">" | safeHTML -}}
-{{ $toc = $toc | replaceRE "<a([^>]*)>" "<a$1 class=\"toc__link\"><span>" | safeHTML -}}
+{{ $toc = $toc | replaceRE "<a([^>]*)>" "<a$1 class=\"toc__link\"><span class=\"toc__text\">" | safeHTML -}}
 {{ $toc = $toc | replaceRE "</a>" "</span></a>" | safeHTML -}}
 {{ $toc }}
