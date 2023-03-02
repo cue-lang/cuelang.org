@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf3ed9dd_3e98be7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:23:05Z",
+      "side": 1,
+      "message": "LGTM with one suggested change.",
+      "revId": "b2f5f32183fda0057765433d7a72ea0a510ed6cd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d33a433_aeb27ab4",
+        "filename": "hugo/config/_default/menus/menus.en.toml",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:23:05Z",
+      "side": 1,
+      "message": "Why abbreviate in the slug here?\n\nWhy not code-of-conduct?",
+      "revId": "b2f5f32183fda0057765433d7a72ea0a510ed6cd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
