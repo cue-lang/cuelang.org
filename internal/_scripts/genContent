@@ -43,7 +43,9 @@ do
 		dir="$type/$type-$i"
 		file="$dir/index.md"
 		mkdir -p $dir
-		cat <<EOD > $type/_index.md
+		if [ ! -f $type/_index.md ]
+		then
+			cat <<EOD > $type/_index.md
 ---
 title: $j
 weight: 1
@@ -55,7 +57,7 @@ draft: false
 This is some dummy content for $j.
 
 EOD
-
+		fi
 
 		cat <<EOD > $file
 ---
