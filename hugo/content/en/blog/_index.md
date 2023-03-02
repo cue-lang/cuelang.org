@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: CUE Blog
 ---
 
-TODO - Intro
+Coming Soon
