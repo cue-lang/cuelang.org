@@ -14,11 +14,6 @@
     name = "Community"
     url = "/community/"
     weight = 102
-[[main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 103
 
 # Icons
 [[icons]]
@@ -100,11 +95,6 @@
     name = "Download"
     url = "#"
     weight = 430
-[[footer]]
-    parent = "column3"
-    name = "/blog"
-    url = "#"
-    weight = 431
 [[footer]]
     identifier = "column4"
     name = "Connect"
