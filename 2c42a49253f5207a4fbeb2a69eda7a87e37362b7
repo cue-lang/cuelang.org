@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "947b738e_c5c49182",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T20:18:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21b60df3_a718f343",
+      "revId": "2c42a49253f5207a4fbeb2a69eda7a87e37362b7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ebb23c4_f2ec3dcc",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-03-02T20:02:24Z",
       "side": 1,
       "message": "Missing space after \u0027$\u0027",
+      "revId": "2c42a49253f5207a4fbeb2a69eda7a87e37362b7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1074c62_10d76845",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T20:18:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ebb23c4_f2ec3dcc",
       "revId": "2c42a49253f5207a4fbeb2a69eda7a87e37362b7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
