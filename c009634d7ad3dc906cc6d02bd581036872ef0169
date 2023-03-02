@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ff631de_5267e81f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T17:45:41Z",
+      "side": 1,
+      "message": "PTAL - just updated the commit message with the \"Closes #N\". I nearly always forget that. We should automate that as part of cueckoo importpr.",
+      "revId": "c009634d7ad3dc906cc6d02bd581036872ef0169",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
