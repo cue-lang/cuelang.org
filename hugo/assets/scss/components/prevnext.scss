@@ -26,6 +26,7 @@
     &__prev,
     &__next {
         display: none;
+        line-height: 1.5;
         margin: 0 auto 0 0;
         padding: .25rem .25rem .25rem 40px;
         position: relative;
@@ -63,7 +64,7 @@
         height: 30px;
         position: absolute;
         width: 30px;
-        top: 5px;
+        top: 3px;
         left: 0;
     }
 
@@ -72,7 +73,6 @@
         background-size: 0 2px;
         display: inline;
         transition: background-size .2s ease-in-out;
-        line-height: 1.5;
         padding-bottom: 3px;
     }
 
