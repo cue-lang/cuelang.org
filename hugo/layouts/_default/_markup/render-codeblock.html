@@ -1,0 +1,7 @@
+{{- with (index .Attributes "title") -}}
+    <div class="highlight__title">
+        {{- . -}}
+    </div>
+{{- end -}}
+
+{{- highlight .Inner .Type .Options -}}
