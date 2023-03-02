@@ -1,6 +1,6 @@
 ---
 title: Param
-weight: 25
+weight: 27
 description: "This page shows an example of the param shortcode"
 ---
 

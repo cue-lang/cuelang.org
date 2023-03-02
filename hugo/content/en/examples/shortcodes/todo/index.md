@@ -1,6 +1,6 @@
 ---
 title: Todo
-weight: 31
+weight: 34
 ---
 
 The todo shortcode is a simple shortcode used to show a section / block which is still under construction.
@@ -20,4 +20,3 @@ You can replace the default message with one of your own.
 ```
 
 {{< todo "A custom message" >}}
-
