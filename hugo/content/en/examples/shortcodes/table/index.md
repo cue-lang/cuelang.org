@@ -1,6 +1,6 @@
 ---
 title: Table
-weight: 29
+weight: 32
 ---
 
 ## Basic table

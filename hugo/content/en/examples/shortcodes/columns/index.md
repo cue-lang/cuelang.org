@@ -1,6 +1,6 @@
 ---
 title: Columns
-weight: 22
+weight: 23
 ---
 
 If you have content you want to show side-by-side, you can use the `{{</* columns */>}}` shortcode.
