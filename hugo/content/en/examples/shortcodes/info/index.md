@@ -1,6 +1,6 @@
 ---
 title: Info blocks
-weight: 24
+weight: 26
 ---
 
 There are a couple of shortcodes you can use inorder to highlight a piece of content.

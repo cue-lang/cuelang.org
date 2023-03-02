@@ -1,6 +1,6 @@
 ---
 title: Ref & relref
-weight: 26
+weight: 29
 ---
 
 These shortcodes will look up the pages by their relative path (e.g., blog/post.md) or their logical name (post.md) and return the permalink (ref) or relative permalink (relref) for the found page.
