@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c2e1353_24bc8d5d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T16:24:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5f6c214a_571af0ef",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "623dee29_1188f1d5",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-03-02T13:18:35Z",
       "side": 1,
       "message": "Grammar: \"For all more\"",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5b276ea_15f2f6c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T16:24:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "623dee29_1188f1d5",
       "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31defb6e_0a61fc62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T16:24:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "63fbcecb_0c55a1fc",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26cfaa2d_3297f06c",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-03-02T13:18:35Z",
       "side": 1,
       "message": "Nit: blank line after headings. \n\nUse https://raw.githubusercontent.com/cue-lang/cue/master/doc/ref/spec.md as a guide for now. We can \"formalise\" style guide for markdown at a later date.",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa9e4923_86113f14",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T16:24:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "26cfaa2d_3297f06c",
       "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40eb4eef_eef87fd2",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T16:24:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "19334dd7_6e0aeff5",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74ea89d3_4abe5478",
@@ -103,6 +193,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81455ce5_9e94f635",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T16:24:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "74ea89d3_4abe5478",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64ecfb64_61d2bd07",
@@ -116,6 +224,24 @@
       "writtenOn": "2023-03-02T13:18:35Z",
       "side": 1,
       "message": "Grammar: s/ran/run/\n\nThis is also not true. cue export for example is intended to output something on success. But we can leave a full content review for later.",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20cc9771_61750526",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T16:24:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "64ecfb64_61d2bd07",
       "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
