@@ -16,6 +16,8 @@
         @include list-reset;
 
         display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 0.75rem;
         margin: 0 auto;
         max-width: $w-content;
         padding: 0 $p-gutter;
@@ -24,7 +26,7 @@
     &__item {
         &::before {
             content: '/';
-            margin: 0 .75rem;
+            margin: 0 .75rem 0 0;
         }
 
         &:first-child {
@@ -37,7 +39,6 @@
     &__link {
         background: linear-gradient(var(--breadcrumb-color), var(--breadcrumb-color)) no-repeat 100% 100%;
         background-size: 0 1px;
-        display: inline-block;
         text-decoration: none;
         transition: background-size .2s ease-in-out;
 
