@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80fa0ac8_fe99e3d6",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Blank line at end of paragraph.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b83ed5d7_69d6a408",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Blank line after bullet list.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c172ac9f_f56058c1",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Blank line after heading.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03f86cf3_a27f357f",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Blank line after code block.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "723871b0_37c983a5",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Why is this instruction a heading?",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6118f0bb_35e2b09c",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Blank line after code block.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1c20a24_94481eb8",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Why is this a heading?",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "523158a6_9902a093",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T16:49:25Z",
+      "side": 1,
+      "message": "Blank line after heading.",
+      "revId": "6ba008b9fc3f129cf45e52d4e18d923c007064d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
