@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8521f8e7_5e3e9bf9",
+        "filename": "hugo/config/_default/menus/menus.en.toml",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T13:11:55Z",
+      "side": 1,
+      "message": "community landing",
+      "parentUuid": "946602e1_3d6d1e4e",
+      "revId": "0e94ff20e55ba715130aa3ed50b32e50a684f029",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e788b79_f2c7b5e2",
@@ -65,6 +83,24 @@
       "writtenOn": "2023-03-01T16:30:03Z",
       "side": 1,
       "message": "When are we updating the other links? Does it not make sense to fix all of them now to reflect where we want to be in terms of structure?",
+      "revId": "0e94ff20e55ba715130aa3ed50b32e50a684f029",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dd2f5f1_1399cd68",
+        "filename": "hugo/config/_default/menus/menus.en.toml",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T13:11:55Z",
+      "side": 1,
+      "message": "I had planned to add those in separate commits. Can push up changes now.",
+      "parentUuid": "9e788b79_f2c7b5e2",
       "revId": "0e94ff20e55ba715130aa3ed50b32e50a684f029",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
