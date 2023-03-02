@@ -33,6 +33,24 @@
       "message": "Why abbreviate in the slug here?\n\nWhy not code-of-conduct?",
       "revId": "b2f5f32183fda0057765433d7a72ea0a510ed6cd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62b1c111_eee4a9e8",
+        "filename": "hugo/config/_default/menus/menus.en.toml",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-02T19:50:19Z",
+      "side": 1,
+      "message": "Old habit. It\u0027s an established practice, to use /conduct as the slug.",
+      "parentUuid": "2d33a433_aeb27ab4",
+      "revId": "b2f5f32183fda0057765433d7a72ea0a510ed6cd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
