@@ -1,6 +1,6 @@
 ---
 title: Diagrams
-weight: 23
+weight: 25
 ---
 
 There is built in support for multiple types of diagrams.
