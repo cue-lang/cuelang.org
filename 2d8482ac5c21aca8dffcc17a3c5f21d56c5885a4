@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09c20548_62178f42",
+        "filename": "hugo/content/en/blog/_index.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:04:35Z",
+      "side": 1,
+      "message": "This page does not render correctly. We don\u0027t want the index of pages below. Perhaps removing that first entry will achieve that.",
+      "revId": "2d8482ac5c21aca8dffcc17a3c5f21d56c5885a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b780a87b_07c3718d",
+        "filename": "hugo/content/en/blog/first-blog/index.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:04:35Z",
+      "side": 1,
+      "message": "Delete this file.",
+      "revId": "2d8482ac5c21aca8dffcc17a3c5f21d56c5885a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3313792e_c41b87b6",
+        "filename": "hugo/content/en/docs/_index.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:04:35Z",
+      "side": 1,
+      "message": "I don\u0027t think we want this as a link, rather just italic text.",
+      "revId": "2d8482ac5c21aca8dffcc17a3c5f21d56c5885a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
