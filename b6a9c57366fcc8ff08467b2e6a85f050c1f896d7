@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f6c214a_571af0ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:18:35Z",
+      "side": 1,
+      "message": "Which file? I suspect it will be prohibitive to list the slug in the first line, but saying which file/slug we are changing in the commit message means we don\u0027t need to git show the commit to see what changed.",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "623dee29_1188f1d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:18:35Z",
+      "side": 1,
+      "message": "Grammar: \"For all more\"",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63fbcecb_0c55a1fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:18:35Z",
+      "side": 1,
+      "message": "Please make clear in the commit message that this is an initial commit of the content and that a content review will happen later. \n\nWe might even want to put a \"WIP\" near the top of the page itself.",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26cfaa2d_3297f06c",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:18:35Z",
+      "side": 1,
+      "message": "Nit: blank line after headings. \n\nUse https://raw.githubusercontent.com/cue-lang/cue/master/doc/ref/spec.md as a guide for now. We can \"formalise\" style guide for markdown at a later date.",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19334dd7_6e0aeff5",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:18:35Z",
+      "side": 1,
+      "message": "Per https://review.gerrithub.io/c/cue-lang/cuelang.org/+/550402, line length should be ~80. Reviewing this is hard. And it will make subsequent changes noisy with the reformatting. \n\nhttps://sembr.org/ is a good reference on how/why this is important.",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74ea89d3_4abe5478",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:18:35Z",
+      "side": 1,
+      "message": "Why is this a heading?",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64ecfb64_61d2bd07",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-02T13:18:35Z",
+      "side": 1,
+      "message": "Grammar: s/ran/run/\n\nThis is also not true. cue export for example is intended to output something on success. But we can leave a full content review for later.",
+      "revId": "b6a9c57366fcc8ff08467b2e6a85f050c1f896d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
