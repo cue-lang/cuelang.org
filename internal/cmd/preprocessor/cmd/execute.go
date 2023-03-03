@@ -33,6 +33,7 @@ type lang string
 
 const (
 	langEn lang = "en"
+	langDe lang = "de"
 )
 
 const (
@@ -44,7 +45,10 @@ const (
 var (
 	// supportedLanguages defines the set of ISO 639-1 language codes supported by
 	// preprocessor.
-	supportedLanguages = []lang{langEn}
+	supportedLanguages = []lang{
+		langEn,
+		langDe,
+	}
 
 	pageRootFileRegexps = buildRootFileRegexps(supportedLanguages)
 )
