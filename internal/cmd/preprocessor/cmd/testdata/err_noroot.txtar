@@ -1,0 +1,6 @@
+# Verify that we receive a sensible error message with preprocessor
+# is run in a directory structure that does not contain content
+# and hugo/content directories.
+
+! exec preprocessor execute
+stderr 'failed to find project root'
