@@ -5,5 +5,14 @@
     languageDirection = "ltr"
     title = "CUE"
     description = "Validate and define text-based and dynamic configuration"
-    time_format = "January 2, 2006"
+    time_format = "2006/01/02"
     weight = 1
+
+[de]
+    languageName = "German"
+    contentDir = "content/de"
+    languageDirection = "ltr"
+    title = "CUE"
+    description = "Validierung und Definition einer textbasierten und dynamischen Konfiguration"
+    time_format = "2006/01/02"
+    weight = 2
