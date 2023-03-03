@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ac0239c_3779d735",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "This page does not render properly for me:\n\nhttps://cl-550402-12--cue-cls.netlify.app/community/\n\nEverything is in one big long \"list\" on the LHS.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c084522_bbb3e235",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "For completeness please say which commit we have sourced and the list of files we used as a source.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b0b0a6e_2bfbabe4",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "This \u003c/section\u003e is dangling. It isn\u0027t closing anything. Is this one of the reasons it is not formatting properly?",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c926e4d8_0ed1af62",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "Another dangling \u003c/section\u003e",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "489b781c_2bb62574",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "Two dangling \u003c/section\u003e",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc8e47a6_54e0a3ee",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "Another dangling \u003c/section\u003e",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f18fb136_c7ab145e",
+        "filename": "hugo/content/en/community/_index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "Nit: trailing space. Again, please configure Visual Studio code to automatically remove these.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "213575dc_1c4e0962",
+        "filename": "hugo/content/en/community/conduct/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "Just to confirm: this is a verbatim copy of the existing code of conduct?",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97cd026e_50e872f0",
+        "filename": "hugo/content/en/community/conduct/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "Nit: trailing space on blank line.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc5bafb4_5dfab577",
+        "filename": "hugo/content/en/community/contribution-guidelines/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "This is quite different to the current page:\n\nhttps://cuelang.org/docs/contribution_guidelines/\n\nPlease can you explain the rationale behind making this page the same as:\n\nhttps://github.com/cue-lang/cue/blob/master/doc/contribute.md\n\nPlease add some explanation in the commit message.\n\nPlease can you also confirm this is a verbatim copied of the main repo file?",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7409892a_6d12a36d",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "This needs to be removed. This is the remnants of a merge conflict.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a046d7ef_00e42349",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T21:04:38Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
