@@ -9,6 +9,9 @@ exec preprocessor execute --debug=all
 cmp hugo/content/en/dir/_index.md golden/hugo/content/en/dir/_index.md
 cmp hugo/content/en/dir/en.txt golden/hugo/content/en/dir/en.txt
 cmp hugo/content/en/dir/other.txt golden/hugo/content/en/dir/other.txt
+cmp hugo/content/de/dir/_index.md golden/hugo/content/de/dir/_index.md
+cmp hugo/content/de/dir/de.txt golden/hugo/content/de/dir/de.txt
+cmp hugo/content/de/dir/other.txt golden/hugo/content/de/dir/other.txt
 
 # Ensure that the contents of the filesystem are as expected
 exec cmd-find
@@ -40,12 +43,31 @@ _en.md
 en.txt
 -- golden/hugo/content/en/dir/other.txt --
 other.txt
+-- content/dir/_de.md --
+---
+---
+_de.md
+-- content/dir/_de/de.txt --
+de.txt
+-- golden/hugo/content/de/dir/_index.md --
+---
+---
+_de.md
+-- golden/hugo/content/de/dir/de.txt --
+de.txt
+-- golden/hugo/content/de/dir/other.txt --
+other.txt
 -- stdout.golden --
 content/dir/.ignored/ignored.txt
+content/dir/_de/de.txt
+content/dir/_de.md
 content/dir/_en/en.txt
 content/dir/_en.md
 content/dir/other.txt
 content/dir/site.cue
+hugo/content/de/dir/_index.md
+hugo/content/de/dir/de.txt
+hugo/content/de/dir/other.txt
 hugo/content/en/dir/_index.md
 hugo/content/en/dir/en.txt
 hugo/content/en/dir/other.txt

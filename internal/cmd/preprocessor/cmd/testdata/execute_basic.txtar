@@ -4,11 +4,14 @@
 # Run the preprocessor
 exec preprocessor execute --debug=all
 
-# Verify that the target files matche the source contents
 cmp hugo/content/en/branch_md/_index.md golden/hugo/content/en/branch_md/_index.md
 cmp hugo/content/en/leaf_md/index.md golden/hugo/content/en/leaf_md/index.md
 cmp hugo/content/en/branch_html/_index.html golden/hugo/content/en/branch_html/_index.html
 cmp hugo/content/en/leaf_html/index.html golden/hugo/content/en/leaf_html/index.html
+cmp hugo/content/de/branch_md/_index.md golden/hugo/content/de/branch_md/_index.md
+cmp hugo/content/de/leaf_md/index.md golden/hugo/content/de/leaf_md/index.md
+cmp hugo/content/de/branch_html/_index.html golden/hugo/content/de/branch_html/_index.html
+cmp hugo/content/de/leaf_html/index.html golden/hugo/content/de/leaf_html/index.html
 
 # Ensure that the contents of the filesystem are as expected
 exec cmd-find
@@ -83,15 +86,91 @@ branch_html_en
 title: test
 ---
 leaf_html_en
+-- content/branch_md/_de.md --
+---
+title: test
+---
+branch_md_de
+-- content/branch_md/site.cue --
+package site
+
+content: branch_md: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/leaf_md/de.md --
+---
+title: test
+---
+leaf_md_de
+-- content/leaf_md/site.cue --
+package site
+
+content: leaf_md: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/branch_html/_de.html --
+---
+title: test
+---
+branch_html_de
+-- content/branch_html/site.cue --
+package site
+
+content: branch_html: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/leaf_html/de.html --
+---
+title: test
+---
+leaf_html_de
+-- content/leaf_html/site.cue --
+package site
+
+content: leaf_html: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- golden/hugo/content/de/branch_md/_index.md --
+---
+title: test
+---
+branch_md_de
+-- golden/hugo/content/de/leaf_md/index.md --
+---
+title: test
+---
+leaf_md_de
+-- golden/hugo/content/de/branch_html/_index.html --
+---
+title: test
+---
+branch_html_de
+-- golden/hugo/content/de/leaf_html/index.html --
+---
+title: test
+---
+leaf_html_de
 -- stdout.golden --
+content/branch_html/_de.html
 content/branch_html/_en.html
 content/branch_html/site.cue
+content/branch_md/_de.md
 content/branch_md/_en.md
 content/branch_md/site.cue
+content/leaf_html/de.html
 content/leaf_html/en.html
 content/leaf_html/site.cue
+content/leaf_md/de.md
 content/leaf_md/en.md
 content/leaf_md/site.cue
+hugo/content/de/branch_html/_index.html
+hugo/content/de/branch_md/_index.md
+hugo/content/de/leaf_html/index.html
+hugo/content/de/leaf_md/index.md
 hugo/content/en/branch_html/_index.html
 hugo/content/en/branch_md/_index.md
 hugo/content/en/leaf_html/index.html
