@@ -33,6 +33,7 @@ type lang string
 
 const (
 	langEn lang = "en"
+	langDe lang = "de"
 )
 
 const (
@@ -46,6 +47,7 @@ var (
 	// preprocessor.
 	supportedLanguages = []lang{
 		langEn,
+		langDe,
 	}
 
 	pageRootFileRegexps = buildRootFileRegexps(supportedLanguages)
