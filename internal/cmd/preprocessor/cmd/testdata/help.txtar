@@ -1,0 +1,18 @@
+# Verify that -help flag works as expected
+exec preprocessor --help
+cmp stdout stdout.golden
+
+-- stdout.golden --
+preprocessor generates hugo friendly content from an author-friendly format
+
+Usage:
+  preprocessor [command]
+
+Available Commands:
+  execute     Generate /hugo/content from /content
+  help        Help about any command
+
+Flags:
+  -h, --help   help for preprocessor
+
+Use "preprocessor [command] --help" for more information about a command.
