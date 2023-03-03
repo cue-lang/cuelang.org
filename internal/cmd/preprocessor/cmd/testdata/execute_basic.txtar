@@ -9,6 +9,10 @@ cmp hugo/content/en/branch_md/_index.md hugo/content/en/branch_md/_index.md.gold
 cmp hugo/content/en/leaf_md/index.md hugo/content/en/leaf_md/index.md.golden
 cmp hugo/content/en/branch_html/_index.html hugo/content/en/branch_html/_index.html.golden
 cmp hugo/content/en/leaf_html/index.html hugo/content/en/leaf_html/index.html.golden
+cmp hugo/content/de/branch_md/_index.md hugo/content/de/branch_md/_index.md.golden
+cmp hugo/content/de/leaf_md/index.md hugo/content/de/leaf_md/index.md.golden
+cmp hugo/content/de/branch_html/_index.html hugo/content/de/branch_html/_index.html.golden
+cmp hugo/content/de/leaf_html/index.html hugo/content/de/leaf_html/index.html.golden
 
 # Ensure that the contents of the filesystem are as expected
 exec cmd-find
@@ -62,15 +66,39 @@ branch_html_en
 title: test
 ---
 leaf_html_en
+-- content/branch_md/_de.md --
+branch_md_de
+-- content/leaf_md/de.md --
+leaf_md_de
+-- content/branch_html/_de.html --
+branch_html_de
+-- content/leaf_html/de.html --
+leaf_html_de
+-- hugo/content/de/branch_md/_index.md.golden --
+branch_md_de
+-- hugo/content/de/leaf_md/index.md.golden --
+leaf_md_de
+-- hugo/content/de/branch_html/_index.html.golden --
+branch_html_de
+-- hugo/content/de/leaf_html/index.html.golden --
+leaf_html_de
 -- stdout.golden --
+content/branch_html/_de.html
 content/branch_html/_en.html
 content/branch_html/site.cue
+content/branch_md/_de.md
 content/branch_md/_en.md
 content/branch_md/site.cue
+content/leaf_html/de.html
 content/leaf_html/en.html
 content/leaf_html/site.cue
+content/leaf_md/de.md
 content/leaf_md/en.md
 content/leaf_md/site.cue
+hugo/content/de/branch_html/_index.html
+hugo/content/de/branch_md/_index.md
+hugo/content/de/leaf_html/index.html
+hugo/content/de/leaf_md/index.md
 hugo/content/en/branch_html/_index.html
 hugo/content/en/branch_md/_index.md
 hugo/content/en/leaf_html/index.html
