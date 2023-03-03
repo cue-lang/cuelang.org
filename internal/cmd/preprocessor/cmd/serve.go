@@ -99,8 +99,10 @@ func (e *executor) serve(args []string) error {
 	go func() {
 		for {
 			select {
-			case ev := <-w.Events:
-				e.debugf("change: %v", ev)
+			case evs := <-w.Events:
+				for _, ev := range evs {
+					e.debugf("change: path: %v, event: %v", ev.Name, ev.Op)
+				}
 				if err := e.execute(); err != nil {
 					e.debugf("failed to execute: %w", err)
 				}

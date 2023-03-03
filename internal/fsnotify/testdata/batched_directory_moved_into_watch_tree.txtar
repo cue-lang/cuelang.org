@@ -19,7 +19,7 @@ log
 # Move it back out.
 
 -- .batched --
-5ms
+1ms
 -- dir/.basedir --
 -- dir/.gittoplevel --
 -- dir/a.txt --
