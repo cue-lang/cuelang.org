@@ -33,7 +33,7 @@ const (
 var (
 	// supportedLanguages defines the set of ISO 639-1 language codes supported by
 	// preprocessor.
-	supportedLanguages = []string{"en"}
+	supportedLanguages = []string{"en", "de"}
 )
 
 // executeDef is the implementation of the execute command
