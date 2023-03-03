@@ -93,7 +93,7 @@
 [[footer]]
     parent = "column3"
     name = "Download"
-    url = "#"
+    url = "/download"
     weight = 430
 [[footer]]
     identifier = "column4"
