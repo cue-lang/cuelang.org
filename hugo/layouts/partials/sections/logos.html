@@ -7,7 +7,9 @@
                 {{ end }}
 
                 {{ if .Get "intro" }}
-                    <p class="section__intro">{{ .Get "intro" }}</p>
+                    <div class="section__intro">
+                        <p>{{ .Get "intro" }}</p>
+                    </div>
                 {{ end }}
             </div>
         </header>
