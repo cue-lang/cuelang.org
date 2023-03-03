@@ -34,6 +34,7 @@ type lang string
 
 const (
 	langEn lang = "en"
+	langDe lang = "de"
 
 	flagDir   flagName = "dir"
 	flagDebug flagName = "debug"
@@ -45,6 +46,7 @@ var (
 	// preprocessor.
 	supportedLanguages = []lang{
 		langEn,
+		langDe,
 	}
 
 	pageRootFileRegexp = buildRootFileRegexp(supportedLanguages)
