@@ -1,0 +1,17 @@
+# Ensure that preprocessor works in the basic case of
+# copying input to output
+exec preprocessor execute --debug
+
+cmp hugo/content/en/index.md hugo/content/en/index.md.golden
+
+# Ensure that the contents of the filesystem are as expected
+exec find
+cmp stdout stdout.golden
+
+-- content/en.md --
+en
+-- hugo/content/en/index.md.golden --
+en
+-- stdout.golden --
+content/en.md
+hugo/content/en/index.md
