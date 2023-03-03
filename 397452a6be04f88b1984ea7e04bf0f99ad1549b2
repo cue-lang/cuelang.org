@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19624ef6_515e95ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T20:53:01Z",
+      "side": 1,
+      "message": "Please indicate in the commit message whether this is a direct copy of the existing instructions or not, and add a link to the source plus commit ref you sourced.",
+      "revId": "397452a6be04f88b1984ea7e04bf0f99ad1549b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "451f2985_c1c5b93e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T20:53:01Z",
+      "side": 1,
+      "message": "LGTM with a couple of fixes. ",
+      "revId": "397452a6be04f88b1984ea7e04bf0f99ad1549b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f018f565_b0f3d7f4",
+        "filename": "hugo/content/en/docs/_index.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T20:53:01Z",
+      "side": 1,
+      "message": "Seems like a bit of an odd heading. \"Getting started\" instead?",
+      "revId": "397452a6be04f88b1984ea7e04bf0f99ad1549b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56175457_f5130650",
+        "filename": "hugo/content/en/docs/_index.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T20:53:01Z",
+      "side": 1,
+      "message": "\"Install\" what? \n\nSuggest \"Download CUE\" (for consistency with the button top right)",
+      "revId": "397452a6be04f88b1984ea7e04bf0f99ad1549b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23f0f965_34a05bef",
+        "filename": "hugo/content/en/docs/install/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T20:53:01Z",
+      "side": 1,
+      "message": "Why have you set this here?\n\nI think we only want to set this for the language guide for now. We otherwise need/want to have the LHS nav populated with other things from /docs. The bug we need to discuss next week is how to handle it being \"so full of stuff\"\n\nSo my suggestion would be to not set this. Because when the bug is fixed we will not want this set to true.",
+      "revId": "397452a6be04f88b1984ea7e04bf0f99ad1549b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d7e9598_aef44385",
+        "filename": "hugo/content/en/docs/install/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-03T20:53:01Z",
+      "side": 1,
+      "message": "Nit: trailing space. \n\nPlease can you fix up Visual Studio code to remove this automatically?",
+      "revId": "397452a6be04f88b1984ea7e04bf0f99ad1549b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
