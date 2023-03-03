@@ -10,8 +10,14 @@ cmp stdout stdout.golden
 
 -- content/en.md --
 en
+-- content/de.md --
+de
 -- hugo/content/en/index.md.golden --
 en
+-- hugo/content/de/index.md.golden --
+de
 -- stdout.golden --
+content/de.md
 content/en.md
+hugo/content/de/index.md
 hugo/content/en/index.md
