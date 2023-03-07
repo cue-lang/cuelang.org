@@ -29,7 +29,7 @@
     &__item {
         @include style-heading;
 
-        background-color: $c-black;
+        background-color: var(--pagination-background, $c-black);
         color: $c-white;
         display: none;
         fill: $c-white;
@@ -49,7 +49,7 @@
         }
 
         &.is-current {
-            background-color: $c-blue;
+            background-color: var(--pagination-background-current, $c-blue);
 
             #{ $self }__link {
                 &:focus,
@@ -65,7 +65,7 @@
     }
 
     &__link {
-        color: $c-white;
+        color: var(--pagination-color, $c-white);
         display: block;
         height: 100%;
         text-decoration: none;
@@ -73,7 +73,7 @@
 
         &:focus,
         &:hover {
-            background-color: $c-blue;
+            background-color: var(--pagination-background-hover, $c-blue);
         }
     }
 
