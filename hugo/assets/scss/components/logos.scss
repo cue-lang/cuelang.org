@@ -36,7 +36,7 @@
             &:focus,
             &:hover {
                 scale: 1.05;
-                transform: translate(0px, -3px);
+                transform: translate(0, -3px);
 
                 #{ $self }__logo {
                     scale: 1.1;

@@ -33,19 +33,19 @@
             width: 20px;
         }
 
+        span {
+            background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
+            background-size: 0 1px;
+            padding-bottom: 2px;
+            transition: background-size .2s ease-in-out;
+        }
+
         &:hover,
         &:focus {
             span {
                 background-position-x: 0;
                 background-size: 100% 1px;
             }
-        }
-
-        span {
-            background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
-            background-size: 0 1px;
-            padding-bottom: 2px;
-            transition: background-size .2s ease-in-out;
         }
     }
 }

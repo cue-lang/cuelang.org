@@ -42,9 +42,9 @@
             display: flex;
 
             #{ $self }__header {
-                flex: 0 0 200px;
                 border-bottom: 0;
                 border-right: 2px solid $c-black;
+                flex: 0 0 200px;
                 padding-right: 1.5rem;
             }
 

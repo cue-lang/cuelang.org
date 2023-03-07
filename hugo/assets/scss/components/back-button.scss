@@ -16,8 +16,8 @@
     }
 
     &__link {
-        min-width: 200px;
         margin-left: -15px;
+        min-width: 200px;
     }
 
     @include screen($screen-large) {

@@ -11,14 +11,14 @@
     border-radius: 3rem;
     color: $c-black;
     font-weight: $weight-bold;
-    padding: 12px 25px;
     left: $p-gutter;
     line-height: 1.5;
     max-width: calc(100vw - 55px);
+    padding: 12px 25px;
     text-align: center;
     text-decoration: none;
-    transition: background-color .2s;
     top: 15px;
+    transition: background-color .2s;
     white-space: nowrap;
     z-index: 2000;
 

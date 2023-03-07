@@ -40,10 +40,10 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        left: 0;
         max-width: $w-drawer;
         padding-top: 125px;
         position: absolute;
-        left: 0;
         top: 0;
         transform: translateX(-101%);
         transition: transform .4s ease-in-out;
@@ -52,8 +52,8 @@
 
     &__show {
         bottom: 10px;
-        position: fixed;
         left: 10px;
+        position: fixed;
     }
 
     &__hide {
@@ -81,8 +81,8 @@
     @include screen($screen-normal) {
         align-items: start;
         display: grid;
-        grid-template-columns: 300px minmax(700px, ($w-content + 100px)) 1fr;
         grid-template-areas: 'aside main empty';
+        grid-template-columns: 300px minmax(700px, ($w-content + 100px)) 1fr;
 
         &__main {
             grid-area: main;

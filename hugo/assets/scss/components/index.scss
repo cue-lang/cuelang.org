@@ -8,8 +8,8 @@
     gap: $p-gutter--large $p-gutter--large;
     grid-template-columns: 1fr;
 
-    //&__nav {
-    //}
+    // &__nav {
+    // }
 
     @include screen($screen-simple) {
         grid-template-columns: 1fr 1fr;

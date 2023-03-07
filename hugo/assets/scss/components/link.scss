@@ -13,7 +13,6 @@
     --link-height: #{ $h-button };
     --link-padding: 1rem;
 
-
     align-items: center;
     appearance: none;
     border: 0;
@@ -29,7 +28,11 @@
     padding: 0 var(--link-padding);
     position: relative;
     text-decoration: none;
-    transition: color .2s, fill .2s;
+    transition: color 0.2s, fill 0.2s;
+
+    p & {
+        margin: 0 0 1em;
+    }
 
     &:focus,
     &:hover {
@@ -52,10 +55,6 @@
         }
     }
 
-    p & {
-        margin: 0 0 1em;
-    }
-
     &__text {
         background: linear-gradient(var(--link-color), var(--link-color)) no-repeat 100% 100%;
         background-size: 0 var(--link-border-width);
@@ -64,17 +63,17 @@
         padding-bottom: var(--link-border-width);
         position: relative;
         text-overflow: ellipsis;
+        transition: background-size 0.2s ease-in-out;
         white-space: nowrap;
-        transition: background-size .2s ease-in-out;
 
         & + #{ $self }__icon {
-            margin-left: .5em;
+            margin-left: 0.5em;
         }
     }
 
     &__icon {
         display: inline-block;
-        margin: 0 0 0 -.4em;
+        margin: 0 0 0 -0.4em;
         max-height: 24px;
         max-width: 24px;
         vertical-align: 12px;
@@ -84,7 +83,7 @@
         }
 
         & + #{ $self }__text {
-            margin-left: .5em;
+            margin-left: 0.5em;
         }
     }
 

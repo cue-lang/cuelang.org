@@ -17,17 +17,30 @@
         align-items: flex-start;
         color: $c-blue;
         display: flex;
-        font-weight: $weight-bold;
         fill: $c-blue;
+        font-weight: $weight-bold;
         justify-content: space-between;
         padding: 0 $p-gutter;
+    }
+
+    &__next {
+        display: block;
+        justify-content: flex-end;
+        margin: 0 0 0 auto;
+        padding: 0.25rem 40px 0.25rem 0.25rem;
+        text-align: right;
+
+        #{ $self }__icon {
+            left: auto;
+            right: 0;
+        }
     }
 
     &__prev,
     &__next {
         display: none;
         margin: 0 auto 0 0;
-        padding: .25rem .25rem .25rem 40px;
+        padding: 0.25rem 0.25rem 0.25rem 40px;
         position: relative;
         text-decoration: none;
         width: 100%;
@@ -45,35 +58,22 @@
         }
     }
 
-    &__next {
-        display: block;
-        justify-content: flex-end;
-        margin: 0 0 0 auto;
-        padding: .25rem 40px .25rem .25rem;
-        text-align: right;
-
-        #{ $self }__icon {
-            left: auto;
-            right: 0;
-        }
-    }
-
     &__icon {
         display: block;
         height: 30px;
-        position: absolute;
-        width: 30px;
-        top: 5px;
         left: 0;
+        position: absolute;
+        top: 5px;
+        width: 30px;
     }
 
     &__text {
         background: linear-gradient($c-blue, $c-blue) no-repeat 100% 100%;
         background-size: 0 2px;
         display: inline;
-        transition: background-size .2s ease-in-out;
         line-height: 1.5;
         padding-bottom: 3px;
+        transition: background-size 0.2s ease-in-out;
     }
 
     @include screen($screen-simple) {

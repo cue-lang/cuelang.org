@@ -151,10 +151,10 @@
         #{ $self }__link {
             background-color: $c-white;
             border-radius: 50%;
-            padding: 11px;
             height: $h-button;
-            width: $h-button;
+            padding: 11px;
             transition: color .2s;
+            width: $h-button;
 
             &:hover,
             &:focus {
@@ -215,8 +215,8 @@
     &--index {
         #{ $self }__title {
             color: $c-blue;
-            padding: .5rem;
             margin: 0;
+            padding: .5rem;
         }
 
         #{ $self }__list {
