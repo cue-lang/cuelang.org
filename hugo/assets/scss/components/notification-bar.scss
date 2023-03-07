@@ -25,8 +25,8 @@
     }
 
     &__content {
-        text-align: center;
         margin-bottom: .75rem;
+        text-align: center;
     }
 
     &__cta {
@@ -35,8 +35,8 @@
 
     &__close {
         position: absolute;
-        top: 7px;
         right: 5px;
+        top: 7px;
     }
 
     &.is-hidden {
@@ -50,14 +50,14 @@
         }
 
         &__content {
-            text-align: left;
             margin: 0 auto 0 0;
+            text-align: left;
         }
 
         &__close {
-            top: 50%;
-            right: 10px;
             margin-top: -16px;
+            right: 10px;
+            top: 50%;
         }
     }
 

@@ -45,12 +45,12 @@
     &__play {
         background-color: $c-yellow;
         border-radius: 50%;
-        top: $p-gutter * .5;
         display: block;
         fill: $c-white;
         height: 45px;
         position: absolute;
         right: $p-gutter * .5;
+        top: $p-gutter * .5;
         transition: transform .2s ease-in-out;
         width: 45px;
     }
@@ -87,8 +87,8 @@
     }
 
     &__intro {
-        margin: .5rem 0 0;
         line-height: 1.2;
+        margin: .5rem 0 0;
     }
 
     &--cover {
@@ -100,8 +100,8 @@
     @include screen($screen-minimal) {
         &__play {
             bottom: $p-gutter;
-            right: $p-gutter;
             height: 75px;
+            right: $p-gutter;
             top: auto;
             width: 75px;
         }

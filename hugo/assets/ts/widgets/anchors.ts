@@ -8,7 +8,7 @@ export class Anchors extends BaseWidget {
     constructor(element: HTMLElement) {
         super(element);
 
-        this.headers = element.querySelectorAll(`h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]`);
+        this.headers = element.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
     }
 
     public static registerWidget(): void {

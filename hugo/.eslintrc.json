@@ -1,0 +1,215 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "overrides": [
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": [
+            "tsconfig.json"
+        ]
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-plugin-import",
+        "eslint-plugin-jsdoc",
+        "prefer-arrow"
+    ],
+    "rules": {
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "typeLike",
+                "format": [
+                    "PascalCase"
+                ]
+            },
+            {
+                "selector": "enumMember",
+                "format": [
+                    "UPPER_CASE"
+                ]
+            },
+            {
+                "selector": "variable",
+                "format": [
+                    "camelCase",
+                    "UPPER_CASE"
+                ],
+                "leadingUnderscore": "allow"
+            },
+            {
+                "selector": "classProperty",
+                "modifiers": [
+                    "static"
+                ],
+                "format": [
+                    "UPPER_CASE"
+                ]
+            },
+            {
+                "selector": "default",
+                "format": [
+                    "camelCase"
+                ],
+                "leadingUnderscore": "allow"
+            }
+        ],
+        "@typescript-eslint/array-type": "warn",
+        "@typescript-eslint/consistent-type-assertions": "error",
+        "@typescript-eslint/dot-notation": "error",
+        "@typescript-eslint/member-delimiter-style": [
+            "error",
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                }
+            }
+        ],
+        "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-inferrable-types": "error",
+        "@typescript-eslint/no-misused-promises": [
+            "error",
+            {
+                "checksVoidReturn": false
+            }
+        ],
+        "@typescript-eslint/no-parameter-properties": "off",
+        "no-prototype-builtins": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/no-unused-expressions": "error",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/prefer-readonly": "warn",
+        "@typescript-eslint/quotes": [
+            "error",
+            "single"
+        ],
+        "@typescript-eslint/semi": "error",
+        "@typescript-eslint/triple-slash-reference": [
+            "error",
+            {
+                "path": "never",
+                "types": "never",
+                "lib": "never"
+            }
+        ],
+        "@typescript-eslint/type-annotation-spacing": "error",
+        "@typescript-eslint/unbound-method": [
+            "error",
+            {
+                "ignoreStatic": true
+            }
+        ],
+        "@typescript-eslint/unified-signatures": "error",
+        "comma-dangle": [
+            "warn",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "ignore"
+            }
+        ],
+        "id-blacklist": "off",
+        "import/no-unresolved": "off",
+        "jsdoc/check-alignment": "error",
+        "jsdoc/check-indentation": "error",
+        "jsdoc/newline-after-description": "error",
+        "jsdoc/no-types": "error",
+        "complexity": "warn",
+        "max-len": [
+            "warn",
+            {
+                "code": 140
+            }
+        ],
+        "max-lines-per-function": [
+            "warn",
+            {
+                "max": 40,
+                "skipComments": true
+            }
+        ],
+        "no-bitwise": "error",
+        "no-caller": "error",
+        "no-cond-assign": "error",
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "error",
+                    "group",
+                    "groupEnd",
+                    "groupCollapsed",
+                    "warn"
+                ]
+            }
+        ],
+        "no-empty-function": "off",
+        "no-eval": "error",
+        "no-fallthrough": "off",
+        "no-new-wrappers": "error",
+        "no-restricted-imports": [
+            "error",
+            "rxjs/Rx"
+        ],
+        "no-throw-literal": "error",
+        "no-undef-init": "error",
+        "no-underscore-dangle": "off",
+        "no-unused-vars": "off",
+        "no-var": "error",
+        "object-shorthand": [
+            "error",
+            "consistent"
+        ],
+        "one-var": [
+            "error",
+            "never"
+        ],
+        "prefer-arrow/prefer-arrow-functions": [
+            "warn",
+            {
+                "disallowPrototype": true,
+                "singleReturnOnly": false,
+                "classPropertiesAllowed": false
+            }
+        ],
+        "prefer-const": "error",
+        "quote-props": [
+            "error",
+            "as-needed"
+        ],
+        "radix": "error",
+        "space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "never",
+                "asyncArrow": "always",
+                "named": "never"
+            }
+        ],
+        "spaced-comment": [
+            "error",
+            "always"
+        ]
+    }
+}

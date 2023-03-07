@@ -9,9 +9,9 @@
     --note-color: #{ $c-grey--darkest };
 
     background-color: var(--note-bg-color);
+    border-bottom-right-radius: 5px;
     border-left: 3px solid var(--note-border-color);
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
     margin: 0 0 1.25em;
     padding: 1rem 1.5rem;
 
