@@ -10,8 +10,8 @@ export class Docs extends BaseWidget {
     constructor(element: HTMLElement) {
         super(element);
 
-        this.closers = document.querySelectorAll(`[data-docs-close]`);
-        this.togglers = document.querySelectorAll(`[data-docs-toggle]`);
+        this.closers = document.querySelectorAll('[data-docs-close]');
+        this.togglers = document.querySelectorAll('[data-docs-toggle]');
     }
 
     public static registerWidget(): void {

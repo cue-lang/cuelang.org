@@ -1,0 +1,38 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
+  "ignoreFiles": [
+    "node_modules/**/*",
+    "dist/**/*"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "alpha-value-notation": null,
+    "at-rule-no-unknown": null,
+    "custom-property-pattern": "([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "declaration-block-no-shorthand-property-overrides": null,
+    "font-family-name-quotes": "always-unless-keyword",
+    "no-empty-source": null,
+    "order/properties-alphabetical-order": true,
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "combined": "^\\.combined-{componentName}-[a-z]+$",
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    },
+    "property-no-vendor-prefix": true,
+    "scss/comment-no-empty": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/dollar-variable-pattern": null,
+    "scss/dollar-variable-colon-space-after": null,
+    "scss/no-global-function-names": null,
+    "selector-class-pattern": null,
+    "selector-no-vendor-prefix": true,
+    "selector-type-no-unknown": null,
+    "value-keyword-case": null
+  }
+}

@@ -41,10 +41,10 @@
         background-color: $c-white;
         border-radius: 50%;
         fill: $c-blue;
-        width: $w-branding;
         margin: 0 auto;
-        padding: 4px;
         overflow: hidden;
+        padding: 4px;
+        width: $w-branding;
 
         .logo__inner {
             transition: fill .2s ease;

@@ -34,8 +34,8 @@
     &__logo {
         background-color: $c-white;
         border-radius: 50%;
-        fill: $c-blue;
         display: block;
+        fill: $c-blue;
         padding: 7px;
         width: 100%;
 
@@ -122,10 +122,10 @@
         }
 
         #{ $self }__branding {
-            position: relative;
             flex: 0 0 100px;
             height: 100%;
             margin: 0 10px 0 20px;
+            position: relative;
             width: 100px;
         }
 
@@ -141,17 +141,17 @@
 
     &.is-sticky {
         #{ $self }__container {
+            opacity: 0; // Hides flickering
             position: fixed;
             transform: translateY(-110px); // more then height because of logo / box shadow
             transition: transform .2s;
-            opacity: 0; // Hides flickering
         }
     }
 
     &.is-shown {
         #{ $self }__container {
-            transform: translateY(0);
             opacity: 1;
+            transform: translateY(0);
         }
     }
 
