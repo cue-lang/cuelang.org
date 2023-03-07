@@ -17,7 +17,7 @@
     }
 
     &__sitemap {
-        background-color: $c-blue--darker;
+        background-color: var(--footer-sitemap-background, $c-blue--darker);
         padding: 4rem 0 2rem;
 
         #{ $self }__container {
@@ -33,12 +33,12 @@
     }
 
     &__legal {
-        background-color: $c-white;
+        background-color: var(--footer-sitemap-legal, $c-white);
         padding: 2rem 0 3rem;
     }
 
     &__branding {
-        background-color: $c-white;
+        background-color: var(--footer-branding-background, $c-white);
         border-radius: 50%;
         fill: $c-blue;
         margin: 0 auto;
@@ -53,7 +53,7 @@
         &:focus,
         &:hover {
             .logo__inner {
-                fill: $c-yellow;
+                fill: var(--footer-branding-background-hover, $c-yellow);
             }
         }
 

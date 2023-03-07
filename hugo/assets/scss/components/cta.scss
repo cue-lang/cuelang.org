@@ -23,7 +23,7 @@
     &__title {
         @include style-heading-1;
 
-        color: var(--cta-color);
+        color: var(--cta-color, $c-blue);
         margin: 0
     }
 
@@ -68,7 +68,7 @@
 
             #{ $self }__header {
                 border-bottom: 0;
-                border-right: 2px solid $c-blue--darker;
+                border-right: 2px solid var(--cta-header-border, $c-blue--darker);
                 flex: 0 0 200px;
                 padding-right: 1.5rem;
             }

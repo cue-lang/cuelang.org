@@ -17,7 +17,7 @@
     }
 
     &__link {
-        color: transparentize($c-blue--darker, 0.2);
+        color: var(--toc-link-color, transparentize($c-blue--darker, 0.2));
         display: block;
         font-size: 0.875rem;
         font-weight: $weight-normal; // TODO: change to weight 300
@@ -47,7 +47,10 @@
         }
 
         #{ $self }__text {
-            background: linear-gradient($c-yellow, $c-yellow) no-repeat 100% 100%;
+            background: linear-gradient(
+                var(--toc-link-hover, $c-yellow),
+                var(--toc-link-hover, $c-yellow)
+            ) no-repeat 100% 100%;
             background-size: 0 1px;
             transition: background-color 0.2s ease-in-out, background-size 0.2s ease-in-out;
         }

@@ -7,7 +7,7 @@
 
     // Force some space between editor & logo which sticks out of header
     &::before {
-        background-color: $c-blue--lighter;
+        background-color: var(--header-background-sticky, $c-blue--lighter);
         content: '';
         display: block;
         height: 2rem;

@@ -9,7 +9,7 @@
 
     @include style-text-small;
 
-    background-color: $c-yellow;
+    background-color: var(--sidenote-background, $c-yellow);
     border-radius: 20px;
     display: block;
     font-weight: $weight-medium;
