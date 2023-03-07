@@ -1,0 +1,62 @@
+@import '../config/sizes';
+@import '../mixins/screen';
+@import '../mixins/typography';
+
+.banner {
+    &__content {
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        @include style-heading-banner;
+
+        margin: 0 0 1.5rem;
+    }
+
+    &__intro {
+        margin-bottom: 0;
+    }
+
+    &__image {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    @include screen($screen-simple) {
+        display: flex;
+        gap: $p-gutter--large;
+
+        &__content {
+            flex: 0 1 56%;
+            margin-bottom: 0;
+        }
+
+        &__intro {
+            font-size: 1.25rem;
+            max-width: 70%;
+        }
+
+        &__image {
+            flex: 0 1 44%;
+            margin: 0;
+        }
+    }
+
+    @include screen($screen-normal) {
+        gap: 60px;
+
+        &__content {
+            padding-top: 2rem;
+        }
+
+        &__image {
+            transform: translateX(2rem);
+        }
+    }
+
+    @include screen($screen-large) {
+        &__image {
+            transform: translateX(3rem);
+        }
+    }
+}

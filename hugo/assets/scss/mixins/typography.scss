@@ -110,3 +110,22 @@
         font-size: 3.75rem;
     }
 }
+
+
+@mixin style-heading-banner {
+    --heading-1-font-size: 2rem;
+
+    font-size: 2rem;
+
+    @include screen($screen-minimal) {
+        font-size: 2.25rem;
+    }
+
+    @include screen($screen-simple) {
+        font-size: 2.5rem;
+    }
+
+    @include screen($screen-normal) {
+        font-size: 3rem;
+    }
+}
