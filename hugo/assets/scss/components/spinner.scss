@@ -12,7 +12,7 @@
 
     &__item {
         animation: spinner-scale 1.4s infinite ease-in-out both;
-        background-color: $c-blue--darker;
+        background-color: var(--spinner-background, $c-blue--darker);
         border-radius: 50%;
         display: inline-block;
         height: 18px;

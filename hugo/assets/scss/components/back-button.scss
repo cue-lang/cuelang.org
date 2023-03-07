@@ -5,7 +5,7 @@
 .back-button {
     $self: &;
 
-    background-color: $c-blue--lighter;
+    background-color: var(--back-button-background, $c-blue--lighter);
     padding: 2rem 0 1rem;
 
     &__container {

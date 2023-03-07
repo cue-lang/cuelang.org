@@ -34,7 +34,7 @@
     }
 
     &__nav {
-        background-color: $c-white;
+        background-color: var(--docs-nav-background, $c-white);
         bottom: 0;
         box-shadow: $shadow--drawer;
         display: flex;
@@ -91,7 +91,7 @@
         &__aside {
             @include scrollbars;
 
-            background-color: $c-blue--lighter;
+            background-color: var(--docs-aside-background, $c-blue--lighter);
             bottom: auto;
             display: block;
             grid-area: aside;

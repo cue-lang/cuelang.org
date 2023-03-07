@@ -3,13 +3,13 @@
 .lastmod {
     $self: &;
 
-    color: $c-grey--darker;
+    color: var(--lastmod-color, $c-grey--darker);
     font-style: italic;
     margin: 0;
 
     &__link {
         border-bottom: 1px solid currentColor;
-        color: var(--text-link-color);
+        color: var(--text-link-color, $c-blue);
         cursor: pointer;
         text-decoration: none;
         transition: border-bottom .2s ease-in;

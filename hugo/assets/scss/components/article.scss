@@ -8,7 +8,7 @@
 .article {
     $self: &;
 
-    background-color: $c-white;
+    background-color: var(--article-background, $c-white);
     height: 100%;
     padding: 2rem 0;
 
@@ -33,7 +33,7 @@
     }
 
     &__meta {
-        color: $c-grey--dark;
+        color: var(--article-meta-color, $c-grey--dark);
         margin: 0 0 .5rem;
     }
 

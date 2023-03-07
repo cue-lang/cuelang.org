@@ -11,7 +11,7 @@
     $self: &;
 
     aspect-ratio: 16 / 9;
-    background-color: $c-black;
+    background-color: var(--video-background, $c-black);
     clear: both;
     color: $c-white;
     margin: 2rem auto;
@@ -43,7 +43,7 @@
     }
 
     &__play {
-        background-color: $c-yellow;
+        background-color: var(--video-play-background, $c-yellow);
         border-radius: 50%;
         display: block;
         fill: $c-white;
@@ -74,7 +74,7 @@
     &__title {
         @include style-heading-3;
 
-        color: $c-white;
+        color: var(--video-play-color, $c-white);
         font-weight: $weight-bold;
         margin: 0;
     }

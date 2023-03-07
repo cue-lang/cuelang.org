@@ -1,20 +1,23 @@
 @import '../config/colors';
+@import '../config/sizes';
 @import '../config/typography';
 
 .todo {
     $self: &;
 
+    --todo-color: #{ $c-pink };
+
     align-items: center;
-    border: 2px dashed $c-pink;
+    border: 2px dashed var(--todo-color);
     border-radius: 10px;
-    color: $c-pink;
+    color: var(--todo-color);
     display: flex;
     justify-content: center;
     padding: $p-gutter;
     position: relative;
 
     &__note {
-        background-color: $c-pink;
+        background-color: var(--todo-color);
         border-radius: 5px;
         color: $c-white;
         font-size: 0.875rem;
