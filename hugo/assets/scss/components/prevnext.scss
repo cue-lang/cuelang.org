@@ -8,6 +8,8 @@
 .prevnext {
     $self: &;
 
+    --prevnext-color: #{ $c-blue };
+
     padding: 1.5rem 0;
     position: relative;
 
@@ -15,9 +17,9 @@
         @include container($w-content);
 
         align-items: flex-start;
-        color: $c-blue;
+        color: var(--prevnext-color);
         display: flex;
-        fill: $c-blue;
+        fill: currentColor;
         font-weight: $weight-bold;
         justify-content: space-between;
         padding: 0 $p-gutter;
@@ -70,7 +72,7 @@
     }
 
     &__text {
-        background: linear-gradient($c-blue, $c-blue) no-repeat 100% 100%;
+        background: linear-gradient(var(--prevnext-color), var(--prevnext-color)) no-repeat 100% 100%;
         background-size: 0 2px;
         display: inline;
         padding-bottom: 3px;

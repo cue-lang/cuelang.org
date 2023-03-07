@@ -13,25 +13,31 @@
     --text-color: #{ $c-grey--darkest };
     --heading-color: #{ $c-blue };
     --text-link-color: #{ $c-blue };
+
     --caption-color: #{ transparentize($c-grey--darkest, 0.3) };
+    --form-input-background: #{ $c-white };
+    --form-input-border: #{ $c-input };
+    --form-input-border-focus: #{ $c-blue };
+    --form-input-checked: #{ $c-blue };
+    --form-input-color: #{ $c-grey--dark };
+    --form-label-color: #{ $c-grey--darkest };
+    --hr-color: #{ transparentize($c-blue, 0.5) };
     --list-color: #{ $c-blue };
-    --table-head-background: #{ $c-blue--lightest };
-    --table-row-background: #{ $c-blue--lightest };
-    --table-border-color: #{ transparentize($c-blue--light, 0.85) };
-    --table-header-border-color: #{ transparentize($c-blue--light, 0.85) };
-    --pre-color: #{ $c-grey--darkest };
+    --mark-background-color: #{ $c-yellow };
+    --mark-color: #{ $c-grey--darkest };
     --pre-background-color: #{ $c-blue--lighter };
     --pre-border-color: #{ $c-blue--lighter };
+    --pre-color: #{ $c-grey--darkest };
     --quote-background-color: #{ $c-grey--lightest };
     --quote-color: #{ $c-blue--darker };
     --quote-cite-color: #{ transparentize($c-black, 0.31) };
     --quote-line-color: #{ $c-yellow };
-    --hr-color: #{ transparentize($c-blue, 0.5) };
-    --mark-color: #{ $c-grey--darkest };
-    --mark-background-color: #{ $c-yellow };
+    --scrollbar-background: #{ $c-scrollbar-background };
     --scrollbar-color: #{ $c-scrollbar-color };
     --scrollbar-color-hover: #{ $c-scrollbar-color-hover };
-    --scrollbar-background: #{ $c-scrollbar-background };
+    --table-head-background: #{ $c-blue--lightest };
+    --table-row-background: #{ $c-blue--lightest };
+    --table-border-color: #{ transparentize($c-blue--light, 0.85) };
 }
 
 html,
@@ -44,7 +50,7 @@ body {
     @include scrollbars;
     @include style-text;
 
-    background-color: $c-white;
+    background-color: var(--body-background, $c-white);
     color: var(--text-color);
 }
 
@@ -239,7 +245,7 @@ td {
 th {
     @include style-heading;
 
-    border-bottom: 1px solid var(--table-header-border-color);
+    border-bottom: 1px solid var(--table-border-color);
     color: var(--heading-color);
     padding: $p-gutter;
 }
@@ -329,7 +335,7 @@ code {
     dd &,
     td &,
     p & {
-        background-color: $c-blue--lighter;
+        background-color: var(--pre-background-color);
         border-radius: 5px;
         padding: 3px 5px;
     }
@@ -379,7 +385,7 @@ input {
     &[type='date'],
     &[type='search'] {
         appearance: none;
-        border: 1px solid $c-input;
+        border: 1px solid var(--form-input-border);
         border-radius: 3px;
         box-sizing: border-box;
         display: block;
@@ -394,7 +400,7 @@ input {
         }
 
         &:focus {
-            border-color: $c-blue;
+            border-color: var(--form-input-border-focus);
             outline: none;
         }
 
@@ -407,9 +413,9 @@ input {
     &[type='radio'],
     &[type='checkbox'] {
         appearance: none;
-        background-color: $c-grey;
-        border: 7px solid $c-white;
-        box-shadow: 0 0 0 2px $c-input;
+        background-color: var(--form-input-border);
+        border: 7px solid var(--form-input-background);
+        box-shadow: 0 0 0 2px var(--form-input-border);
         cursor: pointer;
         display: inline-block;
         height: 14px;
@@ -421,12 +427,12 @@ input {
         will-change: border;
 
         &:hover {
-            border: 2px solid $c-white;
+            border: 2px solid var(--form-input-background);
         }
 
         &:checked {
-            background-color: $c-blue;
-            border: 2px solid $c-white;
+            background-color: var(--form-input-checked);
+            border: 2px solid var(--form-input-background);
         }
 
         & + label {
@@ -447,15 +453,15 @@ input {
     &[type='submit'] {
         @include button-base;
         @include button-style(
-            $c-grey--darkest,
-            $c-grey--darkest,
-            $c-white,
-            $c-blue,
-            $c-blue,
-            $c-white,
-            $c-grey--darkest,
-            $c-grey--darkest,
-            $c-grey--darkest
+            var(--button-background, #{ $c-yellow }),
+            var(--button-border, #{ $c-yellow }),
+            var(--button-color, #{ $c-blue--darker }),
+            var(--button-background-hover, #{ $c-blue--darker }),
+            var(--button-border-hover, #{ $c-blue--darker }),
+            var(--button-color-hover, #{ $c-yellow }),
+            var(--button-background-disabled, #{ $c-grey--light }),
+            var(--button-border-disabled, #{ $c-grey--light }),
+            var(--button-color-disabled, #{ $c-grey })
         );
     }
 
@@ -496,7 +502,7 @@ input {
 
 textarea {
     appearance: none;
-    border: 1px solid $c-input;
+    border: 1px solid var(--form-input-border);
     border-radius: 3px;
     display: block;
     font-family: inherit;
@@ -507,7 +513,7 @@ textarea {
     width: 100%;
 
     &:focus {
-        border-color: $c-blue;
+        border-color: var(--form-input-border-focus);
         outline: none;
     }
 
@@ -520,13 +526,13 @@ textarea {
 legend {
     @include style-heading;
 
-    color: $c-blue;
+    color: var(--heading-color);
     display: block;
     font-size: 18px;
 }
 
 label {
-    color: $c-grey--darkest;
+    color: var(--form-label-color);
     display: block;
     font-family: $font-inter;
     font-size: 15px;
@@ -538,9 +544,9 @@ label {
 }
 
 select {
-    background-color: $c-white;
-    border: 1px solid $c-grey--light;
-    color: $c-grey--dark;
+    background-color: var(--form-input-background);
+    border: 1px solid var(--form-input-border);
+    color: var(--form-input-color);
     font-family: $font-inter;
     font-weight: $weight-normal;
     height: 40px;
@@ -549,7 +555,7 @@ select {
     width: 100%;
 
     &:focus {
-        border-color: $c-grey;
+        border-color: var(--form-input-border-focus);
         outline: none;
     }
 

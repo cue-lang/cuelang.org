@@ -6,7 +6,7 @@
 .notification-bar {
     $self: &;
 
-    background-color: $c-yellow;
+    background-color: var(--notification-bar-background, $c-yellow);
     bottom: 0;
     color: $c-grey--darkest;
     left: 0;

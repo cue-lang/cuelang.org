@@ -5,7 +5,7 @@
 .site {
     $self: &;
 
-    background-color: $c-white;
+    background-color: var(--site-background, $c-white);
     display: flex;
     flex-direction: column;
     height: 100%;

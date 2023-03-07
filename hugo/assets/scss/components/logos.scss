@@ -1,5 +1,6 @@
 @import '../config/colors';
 @import '../config/sizes';
+@import '../mixins/screen';
 @import '../mixins/stretch';
 
 .logos {
@@ -18,7 +19,7 @@
 
     &__item {
         align-items: center;
-        background-color: $c-white;
+        background-color: var(--logo-background, $c-white);
         border-radius: 6px;
         box-shadow: $shadow--blue;
         display: flex;

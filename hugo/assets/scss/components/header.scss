@@ -11,7 +11,7 @@
     --header-height: #{ $h-header };;
     --header-logo-width: #{ $w-branding };
 
-    background-color: $c-blue--lighter;
+    background-color: var(--header-background, $c-blue--lighter);
     display: block;
     height: var(--header-height);
     width: 100%;
@@ -32,7 +32,7 @@
     }
 
     &__logo {
-        background-color: $c-white;
+        background-color: var(--header-logo-background, $c-white);
         border-radius: 50%;
         display: block;
         fill: $c-blue;
@@ -46,7 +46,7 @@
         &:focus,
         &:hover {
             .logo__outer {
-                fill: $c-yellow;
+                fill: var(--header-logo-hover, $c-yellow);
             }
         }
 
@@ -86,7 +86,7 @@
         --header-logo-width: #{ $w-branding--large };
 
         #{ $self }__container {
-            background-color: $c-white;
+            background-color: var(--header-background-sticky, $c-white);
             box-shadow: $shadow--header;
             height: $h-header--sticky;
             max-width: 100%;
@@ -97,7 +97,7 @@
 
             // Background
             &::before {
-                background-color: $c-white;
+                background-color: var(--header-background-sticky, $c-white);
                 content: '';
                 height: 100%;
                 left: 0;

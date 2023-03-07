@@ -26,7 +26,7 @@
     }
 
     &__container {
-        background-color: $c-yellow;
+        background-color: var(--drawer-background, $c-yellow);
         bottom: 0;
         box-shadow: $shadow--drawer;
         display: flex;
@@ -75,7 +75,7 @@
     }
 
     &__branding {
-        background-color: $c-white;
+        background-color: var(--drawer-branding-background, $c-white);
         border-radius: 50%;
         display: block;
         flex: 0 0 $w-branding;
@@ -86,7 +86,7 @@
 
         &:focus,
         &:hover {
-            background-color: $c-yellow--dark;
+            background-color: var(--drawer-branding-background-hover, $c-yellow--dark);
         }
 
         span {

@@ -7,7 +7,7 @@
 .skip-link {
     @include sr-only;
 
-    background-color: $c-yellow;
+    background-color: var(--skip-link-background, $c-yellow);
     border-radius: 3rem;
     color: $c-black;
     font-weight: $weight-bold;
@@ -30,6 +30,6 @@
     }
 
     &:hover {
-        background-color: $c-yellow--dark;
+        background-color: var(--skip-link-background-hover, $c-yellow--dark);
     }
 }
