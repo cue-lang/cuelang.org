@@ -1,6 +1,7 @@
 /* stylelint-disable no-descending-specificity, property-no-vendor-prefix */
 @import '../config/colors';
 @import '../config/sizes';
+@import '../config/typography';
 @import '../mixins/button';
 @import '../mixins/list-reset';
 @import '../mixins/screen';
@@ -12,18 +13,18 @@
     --text-color: #{ $c-grey--darkest };
     --heading-color: #{ $c-blue };
     --text-link-color: #{ $c-blue };
-    --caption-color: #{ transparentize($c-grey--darkest, .3) };
+    --caption-color: #{ transparentize($c-grey--darkest, 0.3) };
     --list-color: #{ $c-blue };
-    --table-border-color: #{ transparentize($c-blue--light, .85) };
-    --table-header-border-color: #{ transparentize($c-blue--light, .85) };
+    --table-border-color: #{ transparentize($c-blue--light, 0.85) };
+    --table-header-border-color: #{ transparentize($c-blue--light, 0.85) };
     --pre-color: #{ $c-grey--darkest };
     --pre-background-color: #{ $c-blue--lighter };
     --pre-border-color: #{ $c-blue--lighter };
-    --quote-background-color: #{ $c-grey--lighter };
-    --quote-color: #{ $c-grey--darker };
-    --quote-cite-color: #{ $c-grey--dark };
-    --quote-line-color: #{ $c-red };
-    --hr-color: #{ transparentize($c-blue, .5) };
+    --quote-background-color: #{ $c-grey--lightest };
+    --quote-color: #{ $c-blue--darker };
+    --quote-cite-color: #{ transparentize($c-black, 0.31) };
+    --quote-line-color: #{ $c-yellow };
+    --hr-color: #{ transparentize($c-blue, 0.5) };
     --mark-color: #{ $c-grey--darkest };
     --mark-background-color: #{ $c-yellow };
     --scrollbar-color: #{ $c-scrollbar-color };
@@ -54,7 +55,7 @@ h6 {
     @include style-heading;
 
     color: var(--heading-color);
-    margin: 1rem 0 .5rem;
+    margin: 1rem 0 0.5rem;
 }
 
 h1 {
@@ -103,7 +104,7 @@ a {
         cursor: pointer;
         font-weight: $weight-bold;
         text-decoration: none;
-        transition: border-bottom .2s ease-in;
+        transition: border-bottom 0.2s ease-in;
 
         &:hover {
             border-bottom: 1px solid transparent;
@@ -131,8 +132,8 @@ figcaption {
     @include style-text;
 
     color: var(--caption-color);
-    font-size: .875rem;
-    padding: .4rem;
+    font-size: 0.875rem;
+    padding: 0.4rem;
 }
 
 ul,
@@ -144,7 +145,7 @@ ol {
         margin: 0 0 1.25rem;
 
         li {
-            margin: 0 0 .5rem;
+            margin: 0 0 0.5rem;
             padding-left: 1.5rem;
             position: relative;
 
@@ -169,7 +170,7 @@ ol {
 
         ul,
         ol {
-            margin: .5rem 0 0;
+            margin: 0.5rem 0 0;
         }
 
         ul {
@@ -208,7 +209,7 @@ dt {
     @include style-text;
 
     font-weight: $weight-bold;
-    margin: .75rem 0 0;
+    margin: 0.75rem 0 0;
 }
 
 dd {
@@ -254,12 +255,13 @@ tr {
 }
 
 blockquote {
-    background-color: var(--quote-background-color);
+    background-color: var(--quote-background-color, $c-grey--lightest);
     border-radius: 5px;
     clear: both;
+    color: var(--quote-color, $c-blue--darker);
     display: block;
     margin: 2rem 0;
-    padding: 1rem 1.25rem;
+    padding: $p-gutter;
 
     & > :first-child {
         margin-top: 0;
@@ -269,32 +271,22 @@ blockquote {
         margin-bottom: 0;
     }
 
-    p {
-        color: var(--quote-color);
-        font-family: $font-inter;
-        font-size: 1.1rem;
-        font-style: italic;
-        line-height: 1.8;
-    }
-
     cite {
-        color: var(--quote-cite-color);
+        color: var(--quote-cite-color, transparentize($c-black, 0.31));
         display: block;
-        font-family: $font-inter;
-        font-size: .875rem;
+        font-size: 1rem;
         font-style: normal;
-        font-weight: $weight-normal;
-        line-height: 1.2;
+        line-height: 1.5;
         margin-top: $p-gutter--large;
         position: relative;
 
         &::before {
-            background-color: var(--quote-line-color);
+            background-color: var(--quote-line-color, $c-yellow);
             content: '';
             height: 3px;
             position: absolute;
             top: -15px;
-            width: $p-gutter--large;
+            width: 80px
         }
     }
 }
@@ -306,7 +298,7 @@ abbr {
         cursor: help;
         font-weight: $weight-bold;
         text-decoration: none;
-        transition: border .2s ease-in-out;
+        transition: border 0.2s ease-in-out;
 
         &:hover {
             border-bottom: 1px solid currentColor;
@@ -423,9 +415,9 @@ input {
         cursor: pointer;
         display: inline-block;
         height: 14px;
-        margin: 0 .3rem 0 2px; // because box shadow
+        margin: 0 0.3rem 0 2px; // because box shadow
         outline: none;
-        transition: border .15s ease-in-out, background-color .15s ease-in-out;
+        transition: border 0.15s ease-in-out, background-color 0.15s ease-in-out;
         vertical-align: -1px;
         width: 14px;
         will-change: border;
@@ -456,7 +448,17 @@ input {
 
     &[type='submit'] {
         @include button-base;
-        @include button-style($c-grey--darkest, $c-grey--darkest, $c-white, $c-blue, $c-blue, $c-white, $c-grey--darkest, $c-grey--darkest, $c-grey--darkest);
+        @include button-style(
+            $c-grey--darkest,
+            $c-grey--darkest,
+            $c-white,
+            $c-blue,
+            $c-blue,
+            $c-white,
+            $c-grey--darkest,
+            $c-grey--darkest,
+            $c-grey--darkest
+        );
     }
 
     &[type='date'] {
@@ -563,4 +565,16 @@ select {
 
 .sr-only {
     @include sr-only;
+}
+
+@include screen($screen-simple) {
+    blockquote {
+        padding: $p-gutter--large;
+    }
+}
+
+@include screen($screen-normal) {
+    blockquote {
+        padding: $p-gutter--large 3.75rem;
+    }
 }
