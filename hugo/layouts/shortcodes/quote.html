@@ -1,0 +1,22 @@
+{{- $author := .Get "author" | default "" -}}
+{{- $role := .Get "role" | default "" -}}
+
+<blockquote class="quote">
+    <p>{{- .Inner -}}</p>
+
+    {{ if (or $author $role) }}
+        <cite>
+            {{ if $author }}
+                {{ $author }}
+            {{ end }}
+
+            {{ if (and $author $role) }}
+                -
+            {{ end }}
+
+            {{ if $role }}
+                {{ $role }}
+            {{ end }}
+        </cite>
+    {{ end }}
+</blockquote>

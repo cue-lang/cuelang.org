@@ -1,0 +1,80 @@
+@import '../config/typography';
+@import '../mixins/screen';
+
+.quote {
+    --quote-font-size: 1.5rem;
+    --quote-quotes-size: 3.5rem;
+
+    $self: &;
+
+    p {
+        font-size: var(--quote-font-size);
+        font-style: italic;
+        font-weight: $weight-light;
+        line-height: 1.4;
+
+        &::before {
+            content: '“';
+            left: -0.5rem;
+            top: 1.25rem;
+        }
+
+        &::after {
+            content: '”';
+            right: 0.25rem;
+            top: 2rem;
+        }
+
+        &::before,
+        &::after {
+            color: var(--quote-quotes-color, $c-yellow);
+            font-size: var(--quote-quotes-size);
+            font-weight: $weight-normal;
+            line-height: 0;
+            position: relative;
+        }
+    }
+
+    @include screen($screen-simple) {
+        --quote-quotes-size: 4rem;
+
+        > p {
+            &::after {
+                top: 2.375rem;
+            }
+        }
+    }
+
+    @include screen($screen-normal) {
+        --quote-font-size: 1.75rem;
+        --quote-quotes-size: 5rem;
+
+        padding: $p-gutter--large 3.75rem;
+
+        > p {
+            &::before {
+                left: -1rem;
+                top: 1.75rem;
+            }
+
+            &::after {
+                top: 3rem;
+            }
+        }
+    }
+
+    @include screen($screen-large) {
+        --quote-font-size: 2rem;
+        --quote-quotes-size: 5.5rem;
+
+        > p {
+            &::before {
+                top: 2rem;
+            }
+
+            &::after {
+                top: 3.25rem;
+            }
+        }
+    }
+}
