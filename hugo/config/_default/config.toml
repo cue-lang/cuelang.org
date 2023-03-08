@@ -15,11 +15,9 @@ disableAliases = true # We use Netlify server-side redirects instead of generate
 # theme = ["docsy"]
 
 # Highlighting
-pygmentsCodeFences = true
-pygmentsUseClasses = false
-pygmentsUseClassic = false # Use the new Chroma Go highlighter in Hugo.
-# pygmentsOptions = "linenos=table"
-pygmentsStyle = "tango" # See https://help.farbox.com/pygments.html
+[markup]
+    [markup.highlight]
+        lineNumbersInTable = false
 
 # Image processing
 [imaging]
