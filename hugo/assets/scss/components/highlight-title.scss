@@ -1,0 +1,20 @@
+@import '../config/colors';
+@import '../config/typography';
+
+.highlight-title {
+    background-color: var(--pre-background-color, $c-blue--lighter);
+    border-radius: 5px 5px 0 0;
+    color: $c-blue;
+    font-weight: $weight-medium;
+    padding: 1rem 1.25rem 0 1.25rem;
+
+    + .highlight {
+        pre {
+            border-radius: 0 0 5px 5px;
+        }
+    }
+
+    & + pre {
+        border-radius: 0 0 5px 5px;
+    }
+}

@@ -1,28 +1,15 @@
-@import '../config/typography';
+@import '../config/colors';
+@import '../config/sizes';
 @import '../mixins/screen';
 
 .highlight {
-    $self: &;
-
     height: 100%;
+    margin-bottom: 1rem;
     position: relative;
 
-    &__title {
-        background-color: var(--pre-background-color);
-        border-radius: 5px 5px 0 0;
-        font-weight: $weight-medium;
-        padding: 1rem 1.25rem 0 1.25rem;
-
-        + #{ $self } {
-            pre {
-                border-radius: 0 0 5px 5px;
-                padding-top: 0;
-            }
-        }
-    }
-
     pre {
-        background-color: var(--pre-background-color) !important; // needs !important otherwise Hugo overwrites the styling
+        // overwriting background-color needs !important otherwise Hugo inline styles overwrite the styling
+        background-color: var(--pre-background-color, $c-blue--lighter) !important;
         margin: 0;
     }
 

@@ -282,7 +282,7 @@ You can even mark/highlight part of the code by adding `hl_lines` with the accor
 
 {{< columns >}}
 ````
-```json {title="JSON", hl_lines=["2-3", 6]}
+```json {title="JSON", hl_lines=["2-3", 6], linenos=true}
 {
     "firstName": "John",
     "lastName": "Smith",
@@ -293,7 +293,7 @@ You can even mark/highlight part of the code by adding `hl_lines` with the accor
 ```
 ````
 {{< columns-separator >}}
-```json {title="JSON", hl_lines=["2-3", 6]}
+```json {title="JSON", hl_lines=["2-3", 6], linenos=true}
 {
     "firstName": "John",
     "lastName": "Smith",
