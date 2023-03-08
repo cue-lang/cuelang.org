@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bafaa93_d50af0af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "8ac0239c_3779d735",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c084522_bbb3e235",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-03-03T21:04:38Z",
       "side": 1,
       "message": "For completeness please say which commit we have sourced and the list of files we used as a source.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60203419_90ef6ea8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "I\u0027ve updated with a detailed description.",
+      "parentUuid": "4c084522_bbb3e235",
       "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64d0d175_386d0478",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "/me dusts off HTML-ing. Fixed all the errant added \u003c/section\u003e.",
+      "parentUuid": "0b0b0a6e_2bfbabe4",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c926e4d8_0ed1af62",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-03-03T21:04:38Z",
       "side": 1,
       "message": "Another dangling \u003c/section\u003e",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ef16676_ecfb12ef",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "c926e4d8_0ed1af62",
       "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cb76640_f523db23",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "489b781c_2bb62574",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc8e47a6_54e0a3ee",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-03-03T21:04:38Z",
       "side": 1,
       "message": "Another dangling \u003c/section\u003e",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b45e89b2_69755988",
+        "filename": "hugo/content/en/community/_index.html",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "bc8e47a6_54e0a3ee",
       "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +228,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d569995_832dced3",
+        "filename": "hugo/content/en/community/_index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f18fb136_c7ab145e",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "213575dc_1c4e0962",
@@ -133,6 +259,24 @@
       "writtenOn": "2023-03-03T21:04:38Z",
       "side": 1,
       "message": "Just to confirm: this is a verbatim copy of the existing code of conduct?",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a710456_103a13d9",
+        "filename": "hugo/content/en/community/conduct/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "Good catch. It has been given two small updates, both have been detailed in the commit message description.",
+      "parentUuid": "213575dc_1c4e0962",
       "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -154,6 +298,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1398be6f_e4d6011c",
+        "filename": "hugo/content/en/community/conduct/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97cd026e_50e872f0",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc5bafb4_5dfab577",
@@ -167,6 +329,24 @@
       "writtenOn": "2023-03-03T21:04:38Z",
       "side": 1,
       "message": "This is quite different to the current page:\n\nhttps://cuelang.org/docs/contribution_guidelines/\n\nPlease can you explain the rationale behind making this page the same as:\n\nhttps://github.com/cue-lang/cue/blob/master/doc/contribute.md\n\nPlease add some explanation in the commit message.\n\nPlease can you also confirm this is a verbatim copied of the main repo file?",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1368ba0f_f8a791d5",
+        "filename": "hugo/content/en/community/contribution-guidelines/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "Thanks. I\u0027ve added a detailed explanation in the amended commit message. \n\nHowever, with this review comment I also realized the implications of making the page the same as the the github page, and the effect of needing to choose which page to use as the source of truth, and which to use as the \"linkto\" page. The other option is a sync, so whichever page is updated, the other is also. I propose we put the full text on the new site for now.",
+      "parentUuid": "cc5bafb4_5dfab577",
       "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -188,6 +368,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c0eab66_072f5e92",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "/facepalm.  Done.",
+      "parentUuid": "7409892a_6d12a36d",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a046d7ef_00e42349",
@@ -201,6 +399,24 @@
       "writtenOn": "2023-03-03T21:04:38Z",
       "side": 1,
       "message": "Ditto.",
+      "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8c1a824_b9393d26",
+        "filename": "hugo/content/en/docs/howto/validate-yaml-using-cue/index.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-08T13:49:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a046d7ef_00e42349",
       "revId": "3c932414dc572f4d12005b6d6ac3d6078a9d097d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
