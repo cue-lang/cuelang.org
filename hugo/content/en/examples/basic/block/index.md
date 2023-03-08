@@ -360,6 +360,8 @@ Blockquotes can contain other Markdown formatted elements. Not all elements can 
 >
 >  *Everything* is going according to **plan**.
 
+Check out the [quote shortcode](/examples/shortcodes/quote) for a more advanced quote component.
+
 ### Blockquotes - Best practices
 
 ```
