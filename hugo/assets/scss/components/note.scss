@@ -1,31 +1,62 @@
 @import '../config/colors';
 @import '../mixins/marginless-child';
+@import '../mixins/screen';
+@import '../mixins/svg';
 
 .note {
     $self: &;
 
-    --note-bg-color: #{ $c-blue--lighter };
-    --note-border-color: #{ $c-blue--light };
-    --note-color: #{ $c-grey--darkest };
+    --heading-color: #{ $c-white };
+    --list-color: #{ $c-white };
+    --text-color: #{ $c-white };
+    --text-link-color: #{ $c-white };
 
-    background-color: var(--note-bg-color);
-    border-left: 3px solid var(--note-border-color);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background-color: var(--note-bg-color, $c-blue--light );
+    border-radius: 3px;
     margin: 0 0 1.25em;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.25rem;
 
     &__content {
         @include marginless-child;
+
+        color: var(--text-color);
+        position: relative;
     }
 
     &--warn {
-        --note-bg-color: #{ $c-yellow--light };
-        --note-border-color: #{ $c-yellow };
+        --heading-color: #{ $c-blue--darker };
+        --list-color: #{ $c-blue--darker };
+        --note-bg-color: #{ $c-yellow };
+        --text-color: #{ $c-blue--darker };
+        --text-link-color: #{ $c-blue--darker };
     }
 
     &--caution {
         --note-bg-color: #{ $c-red--light };
-        --note-border-color: #{ $c-red };
+    }
+
+    @include screen($screen-simple) {
+        &__content {
+            padding-left: 3rem;
+
+            &::before {
+                @include svg(exclamation, $c-white);
+
+                display: inline-block;
+                height: 2rem;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 2rem;
+            }
+        }
+
+        &--warn {
+            #{ $self }__content {
+                &::before {
+                    @include svg(exclamation, $c-blue--darker);
+                }
+            }
+        }
     }
 }

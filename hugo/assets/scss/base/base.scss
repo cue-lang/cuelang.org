@@ -71,15 +71,11 @@ h3 {
 
 h4 {
     @include style-heading-4;
-
-    font-weight: $weight-normal;
 }
 
 h5,
 h6 {
     @include style-heading-5;
-
-    font-weight: $weight-normal;
 }
 
 p {
