@@ -47,7 +47,7 @@
     {{ $withChildren := and (gt (len $pages) 0) (ne $depth $maxDepth) -}}
 
     <li class="tree__item{{ if $withChildren }} has-children{{ end }}{{ if $isActivePath }} is-active-path{{ end }}{{ if $isActive }} is-active{{ end }}">
-        <a class="tree__link" href="{{ $s.RelPermalink }}" title="{{ $s.LinkTitle }}">
+        <a class="tree__link" href="{{ $s.RelPermalink }}" title="{{ $s.LinkTitle }}"{{ if $s.Params.disabled }} disabled{{ end }}>
             <span class="tree__text">{{ $s.LinkTitle }}</span>
         </a>
 
