@@ -10,7 +10,14 @@
                         <h1 class="article__title">{{ .Title }}</h1>
                     </header>
                     <div class="article__content">
-                        {{ .Content }}
+                        {{ if .Params.disabled }}
+                            <div class="todo">
+                                <span class="todo__note">TODO</span>
+                                <span class="todo__desc">{{ T "docs_coming_soon" }}</span>
+                            </div>
+                        {{ else }}
+                            {{ .Content }}
+                        {{ end }}
                     </div>
                     <footer class="article__footer">
                         {{ partial "last-modified.html" . }}

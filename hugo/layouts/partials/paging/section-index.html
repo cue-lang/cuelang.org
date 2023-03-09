@@ -10,7 +10,7 @@
         <ul class="nav__list">
             {{ range $pages }}
                 <li class="nav__item">
-                    <a class="nav__link" href="{{ .RelPermalink }}">
+                    <a class="nav__link" href="{{ .RelPermalink }}"{{ if .Params.disabled }} disabled{{ end }}>
                         <span class="nav__text">{{ .LinkTitle }}</span>
                     </a>
                 </li>

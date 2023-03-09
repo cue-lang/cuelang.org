@@ -31,6 +31,16 @@
     &__link {
         display: block;
         text-decoration: none;
+
+        &[disabled] {
+            color: $c-grey--dark;
+            cursor: default;
+            pointer-events: none;
+
+            #{ $self }__text {
+                background-size: 0 0;
+            }
+        }
     }
 
     &__text {
