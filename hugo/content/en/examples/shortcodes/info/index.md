@@ -3,7 +3,7 @@ title: Info blocks
 weight: 26
 ---
 
-There are a couple of shortcodes you can use inorder to highlight a piece of content.
+There are a couple of shortcodes you can use in order to highlight a piece of content.
 
 ## Info
 
@@ -35,22 +35,14 @@ In order to show a warning, you can use `{{</* warning */>}}`.
 
 ```
 {{</* warning */>}}
-#### Warning
-
-Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum posuere nisl quis bibendum fermentum.
-Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+**Note:** This function is deprecated and will be removed in the future.
 {{</* /warning */>}}
 ```
 
 The rendered output looks like this:
 
 {{< warning >}}
-#### Warning
-
-Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum posuere nisl quis bibendum fermentum.
-Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+**Warning:** This function is deprecated and will be removed in the future.
 {{< /warning >}}
 
 ## Caution
@@ -59,20 +51,12 @@ In order to show a destructive / dangerous information, you can use `{{</* cauti
 
 ```
 {{</* caution */>}}
-#### Caution
-
-Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum posuere nisl quis bibendum fermentum.
-Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+**Caution:** This version in no longer supported.
 {{</* /caution */>}}
 ```
 
 The rendered output looks like this:
 
 {{< caution >}}
-#### Caution
-
-Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum posuere nisl quis bibendum fermentum.
-Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+**Caution:** This version in no longer supported.
 {{< /caution >}}
