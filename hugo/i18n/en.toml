@@ -63,6 +63,8 @@ other = "Last modified"
 # Docs
 [docs_show_nav]
 other = "Show navigation"
+[docs_coming_soon]
+other = "this page will be coming soon"
 
 # Redirect page
 [redirect_title]
