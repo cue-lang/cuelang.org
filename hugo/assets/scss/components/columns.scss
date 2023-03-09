@@ -9,7 +9,7 @@
 
     @include screen($screen-simple) {
         display: flex;
-        gap: $p-gutter--large;
+        gap: $p-gutter;
 
         &__col {
             @include marginless-child;
