@@ -2,48 +2,73 @@
 @import '../config/sizes';
 @import '../mixins/marginless-child';
 @import '../mixins/screen';
+@import '../mixins/typography';
 
 .cta {
     $self: &;
 
-    background-color: $c-white;
-    border-radius: 5px;
-    color: $c-black;
-    display: block;
-    padding: .75rem;
+    align-items: center;
+    background-color: var(--cta-background, $c-white);
+    color: var(--cta-color, $c-blue);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    gap: $p-gutter;
+    line-height: 1.75;
+    margin: 0 (-$p-gutter) 2rem;
+    padding: 3rem $p-gutter;
     position: relative;
-
-    &__header {
-        border-bottom: 2px solid $c-black;
-        padding: .75rem;
-    }
+    text-align: center;
 
     &__title {
-        font-size: 1rem;
-        margin: 0;
+        @include style-heading-1;
+
+        color: var(--cta-color);
+        margin: 0
     }
 
     &__content {
         @include marginless-child;
+    }
 
-        padding: .75rem .75rem .5rem;
+    &--flat {
+        --cta-color: #{ $c-blue };
+
+        align-items: normal;
+        border-radius: 5px;
+        font-size: 1rem;
+        gap: 0;
+        line-height: inherit;
+        margin: 0;
+        padding: .75rem;
+        text-align: left;
+
+        #{ $self }__header {
+            border-bottom: 2px solid $c-blue--darker;
+            padding: .75rem;
+        }
+
+        #{ $self }__title {
+            font-size: 1rem;
+        }
+
+        #{ $self }__content {
+            padding: .75rem .75rem .5rem;
+        }
     }
 
     &--yellow {
-        background-color: $c-yellow;
-
-        #{ $self }__title {
-            color: $c-blue;
-        }
+        --cta-background: #{ $c-yellow };
+        --cta-color: #{ $c-blue--darker };
     }
 
     @include screen($screen-simple) {
         &--flat {
-            display: flex;
+            flex-direction: row;
 
             #{ $self }__header {
                 border-bottom: 0;
-                border-right: 2px solid $c-black;
+                border-right: 2px solid $c-blue--darker;
                 flex: 0 0 200px;
                 padding-right: 1.5rem;
             }
@@ -55,6 +80,17 @@
             #{ $self }__title {
                 margin-top: .5rem;
             }
+        }
+    }
+
+    @include screen($screen-normal) {
+        border-radius: 5px;
+        margin: 0 (-5rem) 2rem;
+        padding: 3rem 5rem;
+
+        &--flat {
+            margin: 0;
+            padding: .75rem;
         }
     }
 }

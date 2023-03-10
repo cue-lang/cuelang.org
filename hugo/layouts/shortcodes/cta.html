@@ -1,0 +1,21 @@
+{{- $title := .Get "title" | default "" -}}
+{{- $href := .Get "href" | default "" -}}
+{{- $label := .Get "label" | default "" -}}
+
+<div class="cta cta--yellow">
+    {{ if $title }}
+        <div class="cta__header">
+            <h2 class="cta__title">{{- $title -}}</h2>
+        </div>
+    {{ end }}
+
+    <div class="cta__content">
+        {{- .Inner -}}
+    </div>
+
+    {{ if and $href $label }}
+        <a class="button button--dark-blue cta__button" href="{{ $href }}">
+            <span class="button__text">{{ $label }}</span>
+        </a>
+    {{ end }}
+</div>
