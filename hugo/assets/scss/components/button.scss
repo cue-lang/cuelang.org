@@ -147,6 +147,15 @@
         --button-color-hover: #{ $c-black };
     }
 
+    &--dark-blue {
+        --button-background: #{ $c-blue--darker };
+        --button-border: #{ $c-blue--darker };
+        --button-color: #{ $c-white };
+        --button-background-hover: #{ $c-blue };
+        --button-border-hover: #{ $c-blue };
+        --button-color-hover: #{ $c-white };
+    }
+
     &--yellow {
         --button-background: #{ $c-yellow };
         --button-border: #{ $c-yellow };
