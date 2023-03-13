@@ -32,6 +32,20 @@ Both versions result in the following table
 | Paragraph   | Text        |
 {{< /table >}}
 
+## Theme
+The default theme for the table is white/lightblue.
+You can set the theme: this will result in a different table head color.
+
+yellow
+: {{</* table theme="yellow" */>}}
+
+{{< table theme="yellow">}}
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+{{< /table >}}
+
 ## Alignment in table
 
 It is also possible to set the alignment of each column
