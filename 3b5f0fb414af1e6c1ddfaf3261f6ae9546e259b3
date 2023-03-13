@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "256e77d9_3227ea68",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-13T20:26:51Z",
+      "side": 1,
+      "message": "The preprocessor will not influence the content on the pages itself. Simply how the source format is translated into the hugo format. So please remove this comment.",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "061f909f_18b2a52f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-13T20:26:51Z",
+      "side": 1,
+      "message": "Please let\u0027s keep the changes vs what we currently have on cuelang.org to ~zero as far as is possible. That way we don\u0027t need to review the content now, just the rendering (which is the current focus of the push to flush out gaps etc).",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7776bc4_0b47adfe",
+        "filename": "hugo/content/en/docs/tour/definitions/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-13T20:26:51Z",
+      "side": 1,
+      "message": "Let\u0027s leave this out until such time as we can link to the specific part of the language guide.",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6822d86e_316b2c8a",
+        "filename": "hugo/content/en/docs/tour/duplicate-fields/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-13T20:26:51Z",
+      "side": 1,
+      "message": "This page doesn\u0027t seem to render properly to my mind. That we use a code block heading for a filename in an identical way to a shell command doesn\u0027t look right. Please can we add this to the list of issues to discuss with US Media?\n\nThe way the page currently renders, either the filename/shell command could easily be mistaken as being part of the file itself. We need to rethink the design for this kind of block.",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc4616e4_0ddf8631",
+        "filename": "hugo/content/en/docs/tour/json-superset/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-13T20:26:51Z",
+      "side": 1,
+      "message": "There is a rendering error on this page with the \"next\" button. Do we have a linear issue for that?",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "637bcb81_ef5af037",
+        "filename": "hugo/content/en/docs/tour/json-superset/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-13T20:26:51Z",
+      "side": 1,
+      "message": "This is not in the original tour. Why is it added here?",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db0aab4d_7950f30b",
+        "filename": "hugo/content/en/docs/tour/validation/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-13T20:26:51Z",
+      "side": 1,
+      "message": "Why do we have this infoblock? It doesn\u0027t appear in the original unless I\u0027m missing something? In any case the link is old. I suggest we remove this and we can re-add links to the right place in the language guide when that lands. Otherwise we have broken/misleading/wrong links.",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
