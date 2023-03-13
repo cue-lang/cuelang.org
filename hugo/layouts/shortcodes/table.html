@@ -1,7 +1,8 @@
-{{ $file := .Get "file" | default "" -}}
-{{ $dataFile := index .Site.Data $file -}}
+{{- $file := .Get "file" | default "" -}}
+{{- $dataFile := index .Site.Data $file -}}
+{{- $theme := .Get "theme" | default "" -}}
 
-<div class="table">
+<div class="table{{ with $theme }} table--{{ . }}{{ end }}">
     {{- if $dataFile -}}
         {{- template "data-table" (dict "file" $dataFile) -}}
     {{- else -}}

@@ -15,6 +15,8 @@
     --text-link-color: #{ $c-blue };
     --caption-color: #{ transparentize($c-grey--darkest, 0.3) };
     --list-color: #{ $c-blue };
+    --table-head-background: #{ $c-blue--lightest };
+    --table-row-background: #{ $c-blue--lightest };
     --table-border-color: #{ transparentize($c-blue--light, 0.85) };
     --table-header-border-color: #{ transparentize($c-blue--light, 0.85) };
     --pre-color: #{ $c-grey--darkest };
@@ -222,12 +224,11 @@ table {
 }
 
 thead {
-    background-color: $c-yellow;
+    background-color: var(--table-head-background);
 }
-
 th,
 td {
-    padding: $p-gutter;
+    padding: 1rem;
     vertical-align: top;
 
     p:last-of-type {
@@ -240,11 +241,12 @@ th {
 
     border-bottom: 1px solid var(--table-header-border-color);
     color: var(--heading-color);
+    padding: $p-gutter;
 }
 
 tr {
     &:nth-child(even) {
-        background-color: $c-blue--lightest;
+        background-color: var(--table-row-background);
         border-bottom: 1px solid var(--table-border-color);
         border-top: 1px solid var(--table-border-color);
     }
