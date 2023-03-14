@@ -13,14 +13,14 @@
 }
 
 @mixin style-text-small {
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.5;
 }
 
 @mixin style-text-credits {
     color: $c-white;
     font-size: 1rem;
-    text-shadow: 0 0 2px transparentize($c-black, .6);
+    text-shadow: 0 0 2px transparentize($c-black, 0.6);
 }
 
 @mixin style-monospaced {
@@ -36,7 +36,7 @@
 @mixin style-heading {
     font-family: $font-inter;
     font-weight: $weight-bold;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 @mixin style-heading-1 {
@@ -54,7 +54,7 @@
 }
 
 @mixin style-heading-2 {
-    --heading-2-font-size: 1.5rem;
+    --heading-2-font-size: 1.75rem;
 
     font-size: var(--heading-2-font-size);
 
@@ -64,27 +64,27 @@
 }
 
 @mixin style-heading-3 {
-    --heading-3-font-size: 1rem;
+    --heading-3-font-size: 1.5rem;
 
     font-size: var(--heading-3-font-size);
 
     @include screen($screen-simple) {
-        --heading-3-font-size: 1.25rem;
+        --heading-3-font-size: 1.75rem;
     }
 }
 
 @mixin style-heading-4 {
-    --heading-4-font-size: 1rem;
+    --heading-4-font-size: 1.25rem;
 
     font-size: var(--heading-4-font-size);
 
     @include screen($screen-simple) {
-        --heading-4-font-size: 1.25rem;
+        --heading-4-font-size: 1.5rem;
     }
 }
 
 @mixin style-heading-5 {
-    --heading-5-font-size: 1rem;
+    --heading-5-font-size: 1.125rem;
 
     font-size: var(--heading-5-font-size);
 

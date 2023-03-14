@@ -3,25 +3,27 @@
 @mixin scrollbars {
     // For Chrome & Safari
     &::-webkit-scrollbar {
-        background-color: var(--scrollbar-background, #{ $c-scrollbar-background });
+        background-color: var(--scrollbar-background, $c-scrollbar-background);
         height: 10px;
         width: 10px;
     }
 
     &::-webkit-scrollbar-track {
-        background-color: var(--scrollbar-background, #{ $c-scrollbar-background });
-        border-radius: 5px;
+        background-color: var(--scrollbar-background, $c-scrollbar-background);
+        border-radius: $b-radius;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: var(--scrollbar-color, #{ $c-scrollbar-color });
-        border-radius: 5px;
+        background-color: var(--scrollbar-color, $c-scrollbar-color);
+        border-radius: $b-radius;
 
         &:hover {
-            background-color: var(--scrollbar-color-hover, #{ $c-scrollbar-color-hover });
+            background-color: var(--scrollbar-color-hover, $c-scrollbar-color-hover);
         }
     }
 
     // Standard version (Firefox only for now)
-    scrollbar-color: var(--scrollbar-color, #{ $c-scrollbar-color }) var(--scrollbar-background, #{ $c-scrollbar-background });
+    scrollbar-color:
+        var(--scrollbar-color, $c-scrollbar-color)
+        var(--scrollbar-background, $c-scrollbar-background);
 }

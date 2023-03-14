@@ -1,5 +1,6 @@
 @import '../config/colors';
 @import '../config/prefix';
+@import '../config/sizes';
 @import '../mixins/list-reset';
 
 .#{ $prefix }-dropdown {
@@ -11,7 +12,7 @@
             transition: rotate 0.2s;
 
             .is-active & {
-               rotate: 180deg;
+                rotate: 180deg;
             }
         }
     }
@@ -19,7 +20,7 @@
     &__content {
         background-color: $c-white;
         border: 1px solid transparentize($c-black, 0.85);
-        border-radius: 4px;
+        border-radius: $b-radius;
         left: 0;
         margin: 0.125rem 0 0;
         min-width: 10rem;

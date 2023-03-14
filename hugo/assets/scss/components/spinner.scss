@@ -7,27 +7,27 @@
     height: 20px;
     margin: 0 auto;
     text-align: center;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
     width: 80px;
 
     &__item {
         animation: spinner-scale 1.4s infinite ease-in-out both;
         background-color: var(--spinner-background, $c-blue--darker);
-        border-radius: 50%;
+        border-radius: $b-radius--round;
         display: inline-block;
         height: 18px;
         width: 18px;
 
         &:nth-child(1) {
-            animation-delay: -.32s;
+            animation-delay: -0.32s;
         }
 
         &:nth-child(2) {
-            animation-delay: -.16s;
+            animation-delay: -0.16s;
         }
     }
 
-    &__text{
+    &__text {
         @include sr-only;
     }
 }
