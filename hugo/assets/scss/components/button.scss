@@ -21,10 +21,10 @@
 
     p &,
     .content & {
-        margin: 0 0 .5em;
+        margin: 0 0 0.5em;
 
         ~ #{ $self } {
-            margin-left: .25em;
+            margin-left: 0.25em;
         }
     }
 
@@ -36,13 +36,13 @@
         white-space: nowrap;
 
         & + #{ $self }__icon {
-            margin: 0 -.4em 0 .5em;
+            margin: 0 -0.4em 0 0.5em;
         }
     }
 
     &__icon {
         display: inline-block;
-        margin: 0 0 0 -.4em;
+        margin: 0 0 0 -0.4em;
         max-height: 24px;
         max-width: 24px;
         vertical-align: 9px;
@@ -52,7 +52,7 @@
         }
 
         & + #{ $self }__text {
-            margin-left: .5em;
+            margin-left: 0.5em;
         }
     }
 
@@ -75,15 +75,19 @@
     }
 
     &--small {
-        --button-font-size: .875rem;
+        --button-font-size: 0.875rem;
         --button-height: #{ $h-button--small };
-        --button-padding: .875rem;
+        --button-padding: 0.875rem;
 
         #{ $self }__icon {
             height: 16px;
             vertical-align: 6px;
             width: 16px;
         }
+    }
+
+    &--skinny {
+        --button-padding: 1rem;
     }
 
     &--raised {
@@ -117,22 +121,13 @@
         --button-color-hover: #{ $c-white };
     }
 
-    &--black {
-        --button-background: #{ $c-black };
-        --button-border: #{ $c-black };
-        --button-color: #{ $c-white };
-        --button-background-hover: #{ $c-grey--dark };
-        --button-border-hover: #{ $c-grey--dark };
-        --button-color-hover: #{ $c-white };
-    }
-
     &--blue {
         --button-background: #{ $c-blue };
         --button-border: #{ $c-blue };
         --button-color: #{ $c-white };
-        --button-background-hover: #{ $c-blue--darker };
-        --button-border-hover: #{ $c-blue--darker };
-        --button-color-hover: #{ $c-white };
+        --button-background-hover: #{ $c-yellow };
+        --button-border-hover: #{ $c-yellow };
+        --button-color-hover: #{ $c-blue--darker };
         --button-background-disabled: #{ $c-grey--light };
         --button-border-disabled: #{ $c-grey--light };
         --button-color-disabled: #{ $c-grey };
@@ -141,10 +136,10 @@
     &--light-blue {
         --button-background: #{ $c-blue--lighter };
         --button-border: #{ $c-blue--lighter };
-        --button-color: #{ $c-black };
+        --button-color: #{ $c-blue--darker };
         --button-background-hover: #{ $c-yellow };
         --button-border-hover: #{ $c-yellow };
-        --button-color-hover: #{ $c-black };
+        --button-color-hover: #{ $c-blue--darker };
     }
 
     &--dark-blue {

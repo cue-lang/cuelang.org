@@ -11,7 +11,7 @@ $screen-jumbo:                  1920px;
 // SITE
 $w-site:                        1380px;
 $w-container:                   $w-site;
-$w-content:                     980px;
+$w-content:                     940px;
 $w-drawer:                      400px;
 $p-gutter:                      20px;
 $p-gutter--large:               40px;
@@ -19,13 +19,13 @@ $p-gutter--large:               40px;
 // HEADER
 $h-header:                      90px;
 $h-header--large:               120px;
-$h-header--xlarge:              150px;
+$h-header--xlarge:              180px;
 $h-header--sticky:              70px;
 
 // BRANDING
 $w-branding:                    75px;
-$w-branding--large:             100px;
-$w-branding--xlarge:            130px;
+$w-branding--large:             90px;
+$w-branding--xlarge:            140px;
 
 // SECTION
 $w-section-container:           $w-site;
@@ -35,6 +35,11 @@ $w-section-content:             $w-content;
 $h-button:                      46px;
 $h-button--small:               32px;
 $h-field:                       46px;
+
+// BORDERS
+$b-radius:                      3px;
+$b-radius--large:               6px;
+$b-radius--round:               50%;
 
 // SPACING
 $sp-xs: 1rem;

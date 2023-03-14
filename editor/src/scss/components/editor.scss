@@ -20,7 +20,7 @@
         background-color: $c-blue--lighter;
         display: flex;
         flex-direction: row;
-        gap: .3rem;
+        gap: 0.3rem;
         grid-column: span 2;
         justify-content: space-between;
         padding: 1rem;
@@ -38,12 +38,12 @@
         align-self: flex-start;
         color: $c-blue;
         font-size: 0.875rem;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
     }
 
     &__column {
         background-color: $c-blue--lighter;
-        border-radius: 2px;
+        border-radius: $b-radius;
         overflow: hidden;
         padding: 1.5rem 1rem;
     }

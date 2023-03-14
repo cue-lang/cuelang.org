@@ -2,15 +2,15 @@
 @import '../config/sizes';
 @import '../config/typography';
 @import '../mixins/list-reset';
+@import '../mixins/typography';
 
 .breadcrumb {
+    @include style-text-small;
+
     $self: &;
 
-    --breadcrumb-color: #{ $c-grey--darkest };
-
     color: var(--breadcrumb-color);
-    line-height: 1.5;
-    margin: 0 0 1rem;
+    margin: 0 0 0.75rem;
 
     &__list {
         @include list-reset;
@@ -26,7 +26,7 @@
     &__item {
         &::before {
             content: '/';
-            margin: 0 .75rem 0 0;
+            margin: 0 0.75rem 0 0;
         }
 
         &:first-child {
@@ -39,8 +39,9 @@
     &__link {
         background: linear-gradient(var(--breadcrumb-color), var(--breadcrumb-color)) no-repeat 100% 100%;
         background-size: 0 1px;
+        font-weight: $weight-light;
         text-decoration: none;
-        transition: background-size .2s ease-in-out;
+        transition: background-size 0.2s ease-in-out;
 
         &:hover,
         &:focus {
@@ -50,6 +51,6 @@
     }
 
     &__text {
-        font-weight: $weight-bold;
+        font-weight: $weight-medium;
     }
 }

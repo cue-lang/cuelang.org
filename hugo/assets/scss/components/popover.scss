@@ -20,13 +20,13 @@
     position: fixed;
     right: 0;
     top: 0;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
     z-index: 600;
 
     &__mask {
         @include stretch;
 
-        background-color: transparentize($c-black, .2);
+        background-color: transparentize($c-black, 0.2);
     }
 
     &__content {
@@ -41,13 +41,13 @@
     }
 
     &__close {
-        background-color: transparentize($c-black, .8);
+        background-color: transparentize($c-black, 0.8);
         cursor: pointer;
         height: var(--popover-close-size);
         position: absolute;
         right: $p-gutter;
         top: 0;
-        transition: background-color .2s;
+        transition: background-color 0.2s;
         width: var(--popover-close-size);
         z-index: 1;
 
@@ -66,7 +66,7 @@
         }
 
         &:hover {
-            background-color: $c-black;
+            background-color: $c-blue--darker;
         }
     }
 
@@ -96,7 +96,7 @@
 
         #{ $self }__close {
             background-color: $c-white;
-            border-radius: 50%;
+            border-radius: $b-radius--round;
             position: fixed;
             right: $p-gutter;
             top: $p-gutter;
@@ -106,7 +106,7 @@
             }
 
             &:hover {
-                background-color: transparentize($c-white, .3);
+                background-color: transparentize($c-white, 0.3);
             }
         }
     }

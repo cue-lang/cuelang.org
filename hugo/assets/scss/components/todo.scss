@@ -9,7 +9,7 @@
 
     align-items: center;
     border: 2px dashed var(--todo-color);
-    border-radius: 10px;
+    border-radius: $b-radius--large;
     color: var(--todo-color);
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
 
     &__note {
         background-color: var(--todo-color);
-        border-radius: 5px;
+        border-radius: $b-radius;
         color: $c-white;
         font-size: 0.875rem;
         font-weight: $weight-bold;
@@ -28,7 +28,4 @@
         position: absolute;
         top: 4px;
     }
-
-    // &__desc {
-    // }
 }

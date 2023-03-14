@@ -11,7 +11,7 @@
     --text-color: #{ $c-white };
     --text-link-color: #{ $c-white };
 
-    background-color: var(--note-bg-color, $c-blue--light );
+    background-color: var(--note-bg-color, $c-blue--light);
     border-radius: 3px;
     color: var(--text-color);
     margin: 0 0 1.25em;
@@ -45,9 +45,9 @@
 
         &__icon {
             display: block;
+            flex: 0 0 2rem;
             height: 2rem;
             width: 2rem;
-            flex: 0 0 2rem;
         }
     }
 }

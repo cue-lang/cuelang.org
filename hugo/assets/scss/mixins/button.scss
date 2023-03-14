@@ -5,10 +5,10 @@
 @mixin button-base {
     --button-font-size: 1rem;
     --button-height: #{ $h-button };
-    --button-padding: 1rem;
+    --button-padding: 1.75rem;
 
     appearance: none;
-    border-radius: calc(var(--button-height) * .5);
+    border-radius: calc(var(--button-height) * 0.5);
     border-style: solid;
     border-width: 2px;
     cursor: pointer;
@@ -23,7 +23,7 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    transition: background-color .2s, border-color .2s, color .2s, fill .2s;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, fill 0.2s;
 
     &:hover {
         text-decoration: none;
@@ -31,9 +31,15 @@
 }
 
 @mixin button-style(
-    $background, $border, $color,
-    $background-hover, $border-hover, $color-hover,
-    $background-disabled, $border-disabled, $color-disabled
+    $background,
+    $border,
+    $color,
+    $background-hover,
+    $border-hover,
+    $color-hover,
+    $background-disabled,
+    $border-disabled,
+    $color-disabled
 ) {
     background-color: $background;
     border-color: $border;

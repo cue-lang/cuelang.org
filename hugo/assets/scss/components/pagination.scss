@@ -24,22 +24,24 @@
         width: 100%;
     }
 
+    /* stylelint-disable no-descending-specificity */
+
     &__prev,
     &__next,
     &__item {
         @include style-heading;
 
-        background-color: var(--pagination-background, $c-black);
+        background-color: var(--pagination-background, $c-blue--darker);
         color: $c-white;
         display: none;
         fill: $c-white;
         font-weight: $weight-bold;
         height: 42px;
         line-height: 42px;
-        margin: 0 .25rem;
+        margin: 0 0.25rem;
         overflow: hidden;
         text-align: center;
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
         width: 42px;
 
         &:first-child,
@@ -60,32 +62,9 @@
         }
 
         &[disabled] {
-            opacity: .3;
+            opacity: 0.3;
         }
     }
-
-    &__link {
-        color: var(--pagination-color, $c-white);
-        display: block;
-        height: 100%;
-        text-decoration: none;
-        transition: background-color .2s ease-in-out;
-
-        &:focus,
-        &:hover {
-            background-color: var(--pagination-background-hover, $c-blue);
-        }
-    }
-
-    &__icon {
-        display: inline;
-        fill: currentColor;
-        height: 14px;
-        vertical-align: -2px;
-        width: 14px;
-    }
-
-    /* stylelint-disable no-descending-specificity -- disable lint to ignore the first/last-child styling on the grouped class */
 
     &__prev,
     &__next {
@@ -94,9 +73,12 @@
         width: auto;
     }
 
-    &__label {
-        display: block;
-        padding: 0 1rem;
+    &__icon {
+        display: inline;
+        fill: currentColor;
+        height: 14px;
+        vertical-align: -2px;
+        width: 14px;
     }
 
     &__prev {
@@ -113,13 +95,31 @@
 
     /* stylelint-enable no-descending-specificity */
 
+    &__link {
+        color: var(--pagination-color, $c-white);
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        transition: background-color 0.2s ease-in-out;
+
+        &:focus,
+        &:hover {
+            background-color: var(--pagination-background-hover, $c-blue);
+        }
+    }
+
+    &__label {
+        display: block;
+        padding: 0 1rem;
+    }
+
     &__label-title {
         &--prev {
-            margin-left: .25rem;
+            margin-left: 0.25rem;
         }
 
         &--next {
-            margin-right: .25rem;
+            margin-right: 0.25rem;
         }
     }
 
@@ -140,7 +140,7 @@
             &:first-child,
             &:last-child {
                 display: inline-block;
-                margin: 0 .25rem;
+                margin: 0 0.25rem;
             }
         }
 
