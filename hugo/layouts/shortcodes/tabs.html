@@ -1,0 +1,41 @@
+{{ with .Inner }}{{/* don't do anything, just call it because hugo needs it */}}{{ end }}
+{{- $groupId := .Get "groupId" | default "default" -}}
+
+<div class="tabs" data-tabs data-group="{{ $groupId }}">
+    <div class="tabs__nav tabs-nav" data-tabs-nav>
+        <button class="tabs-nav__pagination tabs-nav__pagination--prev is-hidden">
+            <span class="tabs-nav__icon">
+                {{ partial "icon.html" (dict "class" "" "icon" "chevron-left") }}
+            </span>
+        </button>
+
+        <ul class="tabs-nav__tabs">
+            {{ range $idx, $tab := .Scratch.Get "tabs" }}
+                <li class="tabs-nav__item">
+                    <button
+                        data-tab-item="{{ .name | urlize }}"
+                        data-tab-group="{{ $groupId }}"
+                        class="tabs-nav__tab {{ cond (eq $idx 0) "is-active" ""}}"
+                    >{{ .name }}</button>
+                </li>
+            {{ end }}
+        </ul>
+
+        <button class="tabs-nav__pagination tabs-nav__pagination--next is-hidden">
+            <span class="tabs-nav__icon">
+                {{ partial "icon.html" (dict "class" "" "icon" "chevron-right") }}
+            </span>
+        </button>
+    </div>
+
+    <div class="tabs__content">
+        {{ range $idx, $tab := .Scratch.Get "tabs" }}
+            <div data-tab-item="{{ .name | urlize }}"
+                 data-tab-group="{{ $groupId }}"
+                 class="tabs__item {{ cond (eq $idx 0) "is-active" ""}}"
+            >{{ .content | markdownify }}
+            </div>
+        {{ end }}
+    </div>
+</div>
+
