@@ -10,7 +10,7 @@
 .nav {
     $self: &;
 
-    --nav-link-color: #{ $c-black };
+    --nav-link-color: #{ $c-blue--darker };
     --nav-link-border-color: currentColor;
     --nav-link-border-width: 1px;
 
@@ -36,7 +36,7 @@
 
     &__item {
         + #{ $self }__item {
-            margin-top: .5rem;
+            margin-top: 0.5rem;
         }
     }
 
@@ -54,7 +54,7 @@
         }
 
         &[disabled] {
-            color: $c-grey--dark;
+            color: $c-grey;
             cursor: default;
             font-style: italic;
 
@@ -69,7 +69,10 @@
         background-size: 0 var(--nav-link-border-width);
         display: inline-block;
         position: relative;
-        transition: background-color .2s ease-in-out, background-size .2s ease-in-out, color .2s ease-in-out;
+        transition:
+            background-color 0.2s ease-in-out,
+            background-size 0.2s ease-in-out,
+            color 0.2s ease-in-out;
     }
 
     &--main {
@@ -78,9 +81,9 @@
         --nav-link-border-width: 3px;
 
         background-color: $c-white;
-        border-radius: $h-button * .5;
+        border-radius: $h-button * 0.5;
         font-weight: $weight-medium;
-        padding: 0 10px;
+        padding: 0 $p-gutter;
 
         #{ $self }__list {
             display: flex;
@@ -115,7 +118,7 @@
     &--footer {
         --nav-link-color: #{ $c-white };
 
-        font-size: .875rem;
+        font-size: 0.875rem;
 
         #{ $self }__title {
             font-size: 1.25rem;
@@ -134,7 +137,7 @@
 
     &--social {
         background-color: $c-white;
-        border-radius: $h-button * .5;
+        border-radius: $h-button * 0.5;
         padding: 0 5px;
 
         #{ $self }__list {
@@ -144,16 +147,16 @@
 
         #{ $self }__item {
             + #{ $self }__item {
-                margin: 0 0 0 .2rem;
+                margin: 0 0 0 0.2rem;
             }
         }
 
         #{ $self }__link {
             background-color: $c-white;
-            border-radius: 50%;
+            border-radius: $b-radius--round;
             height: $h-button;
             padding: 11px;
-            transition: color .2s;
+            transition: color 0.2s;
             width: $h-button;
 
             &:hover,
@@ -163,12 +166,12 @@
         }
 
         #{ $self }__text {
-             @include sr-only;
+            @include sr-only;
         }
     }
 
     &--legal {
-        font-size: .875rem;
+        font-size: 0.875rem;
 
         #{ $self }__list {
             align-items: center;
@@ -178,27 +181,27 @@
 
         #{ $self }__item {
             + #{ $self }__item {
-                margin: .5rem 0 0;
+                margin: 0.5rem 0 0;
             }
         }
     }
 
     &--mobile {
         #{ $self }__list {
-            margin: 1rem -.5rem 0;
+            margin: 1rem -0.5rem 0;
         }
 
         #{ $self }__item {
             font-size: 1.25rem;
             font-weight: $weight-bold;
-            margin: .75em 0;
+            margin: 0.75em 0;
         }
 
         #{ $self }__link {
             border: none;
-            border-radius: 5px;
+            border-radius: $b-radius;
             display: block;
-            padding: .75rem;
+            padding: 0.75rem;
             position: relative;
 
             &:focus,
@@ -214,9 +217,9 @@
 
     &--index {
         #{ $self }__title {
-            color: $c-blue;
+            color: $c-blue--light;
             margin: 0;
-            padding: .5rem;
+            padding: 0.5rem;
         }
 
         #{ $self }__list {
@@ -226,7 +229,7 @@
         }
 
         #{ $self }__item {
-            padding: 0 .5rem;
+            padding: 0 0.5rem;
         }
     }
 
@@ -245,11 +248,11 @@
 
                     &::before {
                         background-color: currentColor;
-                        content: "";
+                        content: '';
                         display: inline-block;
                         height: 15px;
                         margin-right: 1rem;
-                        opacity: .15;
+                        opacity: 0.15;
                         vertical-align: -3px;
                         width: 1px;
                     }

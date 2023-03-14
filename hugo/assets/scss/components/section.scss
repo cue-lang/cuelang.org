@@ -62,7 +62,7 @@
         }
     }
 
-    &--logos  {
+    &--logos {
         #{ $self }__header {
             text-align: center;
         }
@@ -133,7 +133,6 @@
                 padding-bottom: 2rem;
             }
         }
-
     }
 
     @include screen($screen-normal) {

@@ -9,17 +9,20 @@
                     <header class="article__header">
                         <h1 class="article__title">{{ .Title }}</h1>
                     </header>
+
                     <div class="article__content">
                         {{ .Content }}
                         {{ partial "paging/section-index.html" . }}
                     </div>
+
+                    {{ partial "separator.html" }}
+
                     <footer class="article__footer">
                         {{ partial "last-modified.html" . }}
                     </footer>
                 </div>
             </article>
 
-            {{ partial "separator.html" }}
             {{ partial "paging/prev-next.html" . }}
         </div>
         <div id="docs-menu" class="docs__aside">

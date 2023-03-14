@@ -52,7 +52,7 @@
             <div class="header__cta">
                 {{- range .Site.Menus.cta -}}
                     {{- $url := urls.Parse .URL -}}
-                    <a class="button"
+                    <a class="button button--skinny"
                        href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
                        {{- if ne $url.Host $baseUrl.Host }} target="_blank"{{ end }}>
                         {{- with .Pre }}{{ partial "icon.html" (dict "class" "button__icon" "icon" .) }}{{ end -}}

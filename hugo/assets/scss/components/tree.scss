@@ -10,12 +10,10 @@
     line-height: 1.75;
     margin: 0 0 1rem;
     overflow: auto;
-    padding: .5rem 2rem;
+    padding: 0 2rem 0.5rem;
 
     &__list {
         @include list-reset;
-
-        margin: .25rem 0;
 
         &.is-page {
             margin: 0;
@@ -29,11 +27,12 @@
     }
 
     &__link {
+        color: $c-blue--darker;
         display: block;
         text-decoration: none;
 
         &[disabled] {
-            color: $c-grey--dark;
+            color: $c-grey;
             cursor: default;
             pointer-events: none;
 
@@ -44,19 +43,19 @@
     }
 
     &__text {
-        color: $c-blue--darker;
         display: inline;
         font-weight: $weight-bold;
     }
 
     .is-book {
         & > #{ $self }__list {
-            margin: .5rem 0;
+            margin: 0.5rem 0;
         }
 
         & > #{ $self }__item {
             & > .toc {
                 margin-left: 0;
+                margin-top: 0.5rem;
             }
 
             &.has-children {
@@ -65,18 +64,17 @@
         }
 
         #{ $self }__item {
-            margin-top: .75rem;
+            margin-top: 0.75rem;
 
             &.is-active {
                 #{ $self }__link {
                     border-color: var(--tree-book-link-border-active, $c-yellow);
                 }
-
             }
 
             #{ $self }__link {
-                border-bottom: 1px solid var(--tree-book-link-border, transparentize($c-blue, .7));
-                transition: border-color .2s;
+                border-bottom: 1px solid var(--tree-book-link-border, transparentize($c-blue, 0.7));
+                transition: border-color 0.2s;
 
                 &:hover,
                 &:focus {
@@ -100,11 +98,11 @@
             &.is-active {
                 &::before {
                     background-color: var(--tree-chapter-background-active, $c-yellow);
-                    content: "";
+                    content: '';
                     height: 3px;
                     left: -1.25rem;
                     position: absolute;
-                    top: 14px;
+                    top: 12px;
                     width: 12px;
                 }
             }
@@ -112,7 +110,7 @@
             #{ $self }__link {
                 border-bottom: none;
                 margin-bottom: 0;
-                padding: .25rem 0;
+                padding: 0.25rem 0;
                 transition: none;
 
                 &:hover,
@@ -139,10 +137,15 @@
     }
 
     .is-chapter {
-        margin: $p-gutter 0 0;
+        margin: 10px 0 0;
 
         & > #{ $self }__item {
-            margin: 0 0 $p-gutter;
+            margin: 0 0 6px;
+
+            & > .toc {
+                margin-left: 0;
+                margin-top: 0;
+            }
 
             &.has-children {
                 margin-bottom: 1rem;
@@ -173,6 +176,7 @@
                 &:hover {
                     &::before {
                         @include svg(page, $c-blue--light);
+
                         opacity: 1;
                     }
                 }

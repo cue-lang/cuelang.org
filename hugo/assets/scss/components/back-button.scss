@@ -6,7 +6,7 @@
     $self: &;
 
     background-color: var(--back-button-background, $c-blue--lighter);
-    padding: 2rem 0 1rem;
+    padding: 1rem 0;
 
     &__container {
         display: flex;
@@ -16,12 +16,18 @@
     }
 
     &__link {
-        margin-left: -15px;
+        margin-left: -12px;
         min-width: 200px;
     }
 
+    @include screen($screen-normal) {
+        &__link {
+            margin-left: -9px;
+        }
+    }
+
     @include screen($screen-large) {
-        padding: 3rem 0 1.25rem;
+        padding: 0 0 1.25rem;
 
         &__link {
             margin-left: -42px;

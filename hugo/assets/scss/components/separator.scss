@@ -1,17 +1,19 @@
 @import '../config/colors';
 @import '../config/sizes';
+@import '../mixins/container';
 @import '../mixins/screen';
 
 .separator {
     $self: &;
 
-    background-color: var(--hr-color, transparentize($c-blue, .5));
+    background-color: var(--hr-color, transparentize($c-blue--darker, .5));
     border: 0;
     clear: both;
     display: block;
     height: 1px;
-    margin: 1rem auto;
+    margin: 0.5rem auto 1rem;
     max-width: $w-content - ($p-gutter * 2);
+    opacity: 0.5;
     padding: 0;
 
     &--wide {

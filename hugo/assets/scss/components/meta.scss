@@ -29,7 +29,7 @@
         border-bottom: 1px solid currentColor;
         display: block;
         text-decoration: none;
-        transition: border-bottom-color .2s;
+        transition: border-bottom-color 0.2s;
 
         &:hover {
             border-bottom-color: transparent;
