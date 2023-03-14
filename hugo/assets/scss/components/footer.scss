@@ -5,6 +5,8 @@
 @import '../mixins/sr-only';
 
 .footer {
+    --footer-logo-width: #{ $w-branding };
+
     $self: &;
 
     &__container {
@@ -39,20 +41,20 @@
 
     &__branding {
         background-color: var(--footer-branding-background, $c-white);
-        border-radius: 50%;
+        border-radius: $b-radius--round;
         fill: $c-blue;
         margin: 0 auto;
         overflow: hidden;
         padding: 4px;
-        width: $w-branding;
+        width: var(--footer-logo-width);
 
-        .logo__inner {
-            transition: fill .2s ease;
+        .logo__outer {
+            transition: fill 0.2s ease;
         }
 
         &:focus,
         &:hover {
-            .logo__inner {
+            .logo__outer {
                 fill: var(--footer-branding-background-hover, $c-yellow);
             }
         }
@@ -88,6 +90,8 @@
     }
 
     @include screen($screen-normal) {
+        --footer-logo-width: #{ $w-branding--large };
+
         &__container {
             align-items: center;
         }

@@ -8,7 +8,7 @@
 .header {
     $self: &;
 
-    --header-height: #{ $h-header };;
+    --header-height: #{ $h-header };
     --header-logo-width: #{ $w-branding };
 
     background-color: var(--header-background, $c-blue--lighter);
@@ -33,14 +33,14 @@
 
     &__logo {
         background-color: var(--header-logo-background, $c-white);
-        border-radius: 50%;
+        border-radius: $b-radius--round;
         display: block;
         fill: $c-blue;
         padding: 7px;
         width: 100%;
 
         .logo__outer {
-            transition: fill .2s ease;
+            transition: fill 0.2s ease;
         }
 
         &:focus,
@@ -109,7 +109,7 @@
 
             // Logo shadow
             &::after {
-                border-radius: 50%;
+                border-radius: $b-radius--round;
                 box-shadow: $shadow--header;
                 content: '';
                 height: var(--header-logo-width);
@@ -135,7 +135,7 @@
         }
 
         #{ $self }__cta {
-            margin: 0 .5rem;
+            margin: 0 0.5rem;
         }
     }
 
@@ -144,7 +144,7 @@
             opacity: 0; // Hides flickering
             position: fixed;
             transform: translateY(-110px); // more then height because of logo / box shadow
-            transition: transform .2s;
+            transition: transform 0.2s;
         }
     }
 
@@ -162,10 +162,16 @@
         }
     }
 
-    @include screen($screen-normal) {
+    @include screen($screen-simple) {
         --header-height: #{ $h-header--large };
         --header-logo-width: #{ $w-branding--large };
 
+        #{ $self }__container {
+            padding: 0 $p-gutter;
+        }
+    }
+
+    @include screen($screen-normal) {
         &__main,
         &__icons,
         &__search {

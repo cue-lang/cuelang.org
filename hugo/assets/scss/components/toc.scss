@@ -6,7 +6,7 @@
 .toc {
     $self: &;
 
-    margin-left: 24px;
+    margin-left: 1.5rem;
 
     &__list {
         @include list-reset;
@@ -20,20 +20,20 @@
         color: var(--toc-link-color, transparentize($c-blue--darker, 0.2));
         display: block;
         font-size: 0.875rem;
-        font-weight: $weight-normal; // TODO: change to weight 300
+        font-weight: $weight-light;
         line-height: 1.5;
-        padding: .25rem .25rem .25rem 1.5rem;
+        padding: 0.25rem 0.25rem 0.25rem 1.5rem;
         text-decoration: none;
 
         &::before {
             @include svg(note, $c-yellow);
 
-            height: 16px;
+            height: 1rem;
             left: 0;
             opacity: 0.6;
             position: absolute;
-            top: 6px;
-            width: 20px;
+            top: 7px;
+            width: 1rem;
         }
 
         &:hover,

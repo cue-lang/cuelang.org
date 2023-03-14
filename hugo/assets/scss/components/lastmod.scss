@@ -1,18 +1,22 @@
 @import '../config/colors';
+@import '../config/typography';
+@import '../mixins/typography';
 
 .lastmod {
+    @include style-text-small;
+
     $self: &;
 
-    color: var(--lastmod-color, $c-grey--darker);
-    font-style: italic;
+    font-weight: $weight-light;
     margin: 0;
 
     &__link {
         border-bottom: 1px solid currentColor;
         color: var(--text-link-color, $c-blue);
         cursor: pointer;
+        font-weight: $weight-medium;
         text-decoration: none;
-        transition: border-bottom .2s ease-in;
+        transition: border-bottom 0.2s ease-in;
 
         &:hover {
             border-bottom: 1px solid transparent;

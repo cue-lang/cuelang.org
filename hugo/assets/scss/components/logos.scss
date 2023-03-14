@@ -20,7 +20,7 @@
     &__item {
         align-items: center;
         background-color: var(--logo-background, $c-white);
-        border-radius: 6px;
+        border-radius: $b-radius--large;
         box-shadow: $shadow--blue;
         display: flex;
         flex: 0 0 var(--logo-width);

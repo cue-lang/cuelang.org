@@ -56,8 +56,8 @@ blue
 light-blue
 : {{< button href="/" label="Button" theme="light-blue" >}}
 
-black
-: {{< button href="/" label="Button" theme="black" >}}
+dark-blue
+: {{< button href="/" label="Button" theme="dark-blue" >}}
 
 yellow
 : {{< button href="/" label="Button" theme="yellow" >}}

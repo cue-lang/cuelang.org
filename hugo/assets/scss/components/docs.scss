@@ -30,7 +30,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
     }
 
     &__nav {
@@ -46,7 +46,7 @@
         position: absolute;
         top: 0;
         transform: translateX(-101%);
-        transition: transform .4s ease-in-out;
+        transition: transform 0.4s ease-in-out;
         width: 100%;
     }
 
@@ -70,11 +70,17 @@
 
     &.is-open {
         #{ $self }__backdrop {
-            background-color: transparentize($c-black, .5);
+            background-color: transparentize($c-black, 0.5);
         }
 
         #{ $self }__nav {
             transform: translateX(0);
+        }
+    }
+
+    @include screen($screen-simple) {
+        &__main {
+            padding-top: 20px;
         }
     }
 
@@ -86,6 +92,7 @@
 
         &__main {
             grid-area: main;
+            padding-top: 54px;
         }
 
         &__aside {
@@ -107,8 +114,8 @@
         &__nav {
             background-color: transparent;
             box-shadow: none;
-            position: relative;
             padding-top: 40px;
+            position: relative;
             transform: translateX(0);
             transition: initial;
 

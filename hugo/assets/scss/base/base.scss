@@ -13,7 +13,6 @@
     --text-color: #{ $c-grey--darkest };
     --heading-color: #{ $c-blue };
     --text-link-color: #{ $c-blue };
-
     --caption-color: #{ transparentize($c-grey--darkest, 0.3) };
     --form-input-background: #{ $c-white };
     --form-input-border: #{ $c-input };
@@ -21,7 +20,7 @@
     --form-input-checked: #{ $c-blue };
     --form-input-color: #{ $c-grey--dark };
     --form-label-color: #{ $c-grey--darkest };
-    --hr-color: #{ transparentize($c-blue, 0.5) };
+    --hr-color: #{ transparentize($c-blue--darker, 0.8) };
     --list-color: #{ $c-blue };
     --mark-background-color: #{ $c-yellow };
     --mark-color: #{ $c-grey--darkest };
@@ -106,7 +105,7 @@ a {
         border-bottom: 1px solid currentColor;
         color: var(--text-link-color);
         cursor: pointer;
-        font-weight: $weight-bold;
+        font-weight: $weight-semibold;
         text-decoration: none;
         transition: border-bottom 0.2s ease-in;
 
@@ -232,6 +231,7 @@ table {
 thead {
     background-color: var(--table-head-background);
 }
+
 th,
 td {
     padding: 1rem;
@@ -260,7 +260,7 @@ tr {
 
 blockquote {
     background-color: var(--quote-background-color, $c-grey--lightest);
-    border-radius: 5px;
+    border-radius: $b-radius;
     clear: both;
     color: var(--quote-color, $c-blue--darker);
     display: block;
@@ -290,7 +290,7 @@ blockquote {
             height: 3px;
             position: absolute;
             top: -15px;
-            width: 80px
+            width: 80px;
         }
     }
 }
@@ -336,7 +336,7 @@ code {
     td &,
     p & {
         background-color: var(--pre-background-color);
-        border-radius: 5px;
+        border-radius: $b-radius;
         padding: 3px 5px;
     }
 }
@@ -344,7 +344,7 @@ code {
 pre {
     background-color: var(--pre-background-color);
     border: 1px solid var(--pre-border-color);
-    border-radius: 5px;
+    border-radius: $b-radius;
     color: var(--pre-color);
     height: 100%;
     margin: 0 0 1rem;
@@ -386,7 +386,7 @@ input {
     &[type='search'] {
         appearance: none;
         border: 1px solid var(--form-input-border);
-        border-radius: 3px;
+        border-radius: $b-radius;
         box-sizing: border-box;
         display: block;
         font-family: inherit;
@@ -503,7 +503,7 @@ input {
 textarea {
     appearance: none;
     border: 1px solid var(--form-input-border);
-    border-radius: 3px;
+    border-radius: $b-radius;
     display: block;
     font-family: inherit;
     font-size: 14px;
