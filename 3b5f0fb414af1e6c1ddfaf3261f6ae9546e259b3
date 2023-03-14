@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4f07080c_220241a6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-14T13:08:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "256e77d9_3227ea68",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "061f909f_18b2a52f",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b51a8445_30d52533",
+        "filename": "hugo/content/en/docs/tour/definitions/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-14T13:08:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7776bc4_0b47adfe",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6822d86e_316b2c8a",
@@ -65,6 +101,24 @@
       "writtenOn": "2023-03-13T20:26:51Z",
       "side": 1,
       "message": "This page doesn\u0027t seem to render properly to my mind. That we use a code block heading for a filename in an identical way to a shell command doesn\u0027t look right. Please can we add this to the list of issues to discuss with US Media?\n\nThe way the page currently renders, either the filename/shell command could easily be mistaken as being part of the file itself. We need to rethink the design for this kind of block.",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea86ae48_65ba070f",
+        "filename": "hugo/content/en/docs/tour/duplicate-fields/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-14T13:08:11Z",
+      "side": 1,
+      "message": "Raised as https://linear.app/usmedia/issue/CUE-172",
+      "parentUuid": "6822d86e_316b2c8a",
       "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10faedb2_04991916",
+        "filename": "hugo/content/en/docs/tour/json-superset/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-14T13:08:11Z",
+      "side": 1,
+      "message": "Raised as https://linear.app/usmedia/issue/CUE-173",
+      "parentUuid": "bc4616e4_0ddf8631",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "637bcb81_ef5af037",
@@ -103,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e25955fe_9f1a5bf4",
+        "filename": "hugo/content/en/docs/tour/json-superset/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-14T13:08:11Z",
+      "side": 1,
+      "message": "Removed, done.",
+      "parentUuid": "637bcb81_ef5af037",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db0aab4d_7950f30b",
@@ -116,6 +206,24 @@
       "writtenOn": "2023-03-13T20:26:51Z",
       "side": 1,
       "message": "Why do we have this infoblock? It doesn\u0027t appear in the original unless I\u0027m missing something? In any case the link is old. I suggest we remove this and we can re-add links to the right place in the language guide when that lands. Otherwise we have broken/misleading/wrong links.",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8276d2b_ef59f853",
+        "filename": "hugo/content/en/docs/tour/validation/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-14T13:08:11Z",
+      "side": 1,
+      "message": "Removed for now.",
+      "parentUuid": "db0aab4d_7950f30b",
       "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
