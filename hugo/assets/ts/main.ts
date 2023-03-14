@@ -1,5 +1,5 @@
 // Helpers
-import { Docs, Drawer, Header, NotificationBar } from './widgets';
+import { Docs, Drawer, Header, NotificationBar, Tabs, TabsNav } from './widgets';
 import { scrollToHash } from './helpers/scroll-to';
 import { Widget } from './interfaces/widget';
 
@@ -11,7 +11,7 @@ declare global {
     }
 }
 
-type WidgetTypes = Docs | Drawer | Header | NotificationBar;
+type WidgetTypes = Docs | Drawer | Header | NotificationBar | Tabs | TabsNav;
 
 class App {
     public widgets: Widget[];
@@ -28,6 +28,8 @@ class App {
             [Drawer.NAME]: Drawer,
             [Header.NAME]: Header,
             [NotificationBar.NAME]: NotificationBar,
+            [Tabs.NAME]: Tabs,
+            [TabsNav.NAME]: TabsNav,
         };
 
         this.initWidgets();
@@ -38,7 +40,7 @@ class App {
         });
     }
 
-    initWidgets(container?: HTMLElement): void {
+    public initWidgets(container?: HTMLElement): void {
         const scope = container ? container : document;
 
         for (const key in this.widgetMap) {
