@@ -4,7 +4,7 @@ description: "More about what CUE is and how to use it."
 layout: index
 header_type: default
 cascade:
-  header_type: wide
+header_type: wide
 ---
 
 <section class="section section--blue">
@@ -14,8 +14,14 @@ cascade:
 
             <div class="section__intro">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in tincidunt justo, ac sollicitudin dolor.
-                    Quisque ac placerat ligula. Nulla rhoncus lorem vitae arcu tincidunt scelerisque. Donec luctus non justo in porta.
+                    CUE is an open-source data validation language and inference engine
+                    with its roots in logic programming.
+                    Although the language is not a general-purpose programming language,
+                    it has many applications, such as
+                    data validation, data templating, configuration, querying,
+                    code generation and even scripting.
+                    The inference engine can be used to validate
+                    data in code or to include it as part of a code generation pipeline.
                 </p>
             </div>
         </div>
@@ -28,8 +34,11 @@ cascade:
                     <h2 class="cta__title">Language Guide</h2>
                 </div>
                 <div class="cta__content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in tincidunt justo, ac sollicitudin dolor.</p>
-                    {{< button href="/docs/language-guide" label="CUE guide" icon="chevron-right" theme="white" >}}
+                    <p>Learn everything you need to about CUE. The Language Guide is a learning
+                        journey broken down into the different aspects of CUE: data, templating,
+                        schemas, queries, policy, file organization, and interoperability with
+                        other languages/encodings.</p>
+                    {{< button href="/docs/language-guide" label="Get started" icon="chevron-right" theme="white" >}}
                 </div>
             </div>
         </div>
@@ -37,21 +46,22 @@ cascade:
 
     <div class="section__body">
         <div class="section__content">
+
+            <h2>Tutorials</h2>
+
             <nav class="index">
                 <div class="index__nav nav nav--index">
-                    <p class="nav__title">Getting Started</p>
+                    <p class="nav__title">Language</p>
 
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a class="nav__link" href="/docs/tour">
-                                <span class="nav__text">Tour</span>
+                            <a class="nav__link" href="/docs/language-guide">
+                                <span class="nav__text">Language Guide</span>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="nav__list">
                         <li class="nav__item">
-                            <a class="nav__link" href="/download">
-                                <span class="nav__text">Download and Install CUE </span>
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Modules</span>
                             </a>
                         </li>
                     </ul>
@@ -59,43 +69,105 @@ cascade:
 
 
                 <div class="index__nav nav nav--index">
-                    <p class="nav__title">How-to Guides</p>
+                    <p class="nav__title">Encodings</p>
 
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a class="nav__link" href="/docs/howto">
-                                <span class="nav__text">How-To Guides</span>
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">JSON</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">YAML</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Go</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Protobuf</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">OpenAPI</span>
                             </a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="index__nav nav nav--index">
-                    <p class="nav__title">CUE tool</p>
+                    <p class="nav__title">Go API</p>
 
                     <ul class="nav__list">
                         <li class="nav__item">
                             <a class="nav__link" href="#">
-                                <span class="nav__text">Export</span>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">
-                                <span class="nav__text">Def</span>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">
-                                <span class="nav__text">Import</span>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">
-                                <span class="nav__text">Generating files</span>
+                                <span class="nav__text">Using <code>base64</code> encoding</span>
                             </a>
                         </li>
                     </ul>
                 </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title"><code>cue</code> command</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Using <code>cue trim</code> in your workflows</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Use <code>cue</code> for scripting</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text"><code>cue eval</code></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Best practices</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Dev setup</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Organizing CUE configurations</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Ecosystem</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">CUE + Terraform</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">CUE + CRDs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </nav>
         </div>
     </div>
