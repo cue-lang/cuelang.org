@@ -1,5 +1,4 @@
 ---
 title: Language Guide
 weight: 20
-toc_root: true
 ---
