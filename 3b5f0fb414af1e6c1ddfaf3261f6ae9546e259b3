@@ -38,6 +38,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "00211e01_fb29b285",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-14T13:09:25Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "256e77d9_3227ea68",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "061f909f_18b2a52f",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -88,6 +106,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "153123f1_82f8d456",
+        "filename": "hugo/content/en/docs/tour/definitions/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-14T13:09:25Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "d7776bc4_0b47adfe",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6822d86e_316b2c8a",
@@ -118,6 +154,24 @@
       "writtenOn": "2023-03-14T13:08:11Z",
       "side": 1,
       "message": "Raised as https://linear.app/usmedia/issue/CUE-172",
+      "parentUuid": "6822d86e_316b2c8a",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d2623d6_a3c37444",
+        "filename": "hugo/content/en/docs/tour/duplicate-fields/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-14T13:09:25Z",
+      "side": 1,
+      "message": "This has been filed as https://linear.app/usmedia/issue/CUE-172",
       "parentUuid": "6822d86e_316b2c8a",
       "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -158,6 +212,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8485fd3f_9dc17c7d",
+        "filename": "hugo/content/en/docs/tour/json-superset/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-14T13:09:25Z",
+      "side": 1,
+      "message": "Thank you. This has been filed as https://linear.app/usmedia/issue/CUE-173",
+      "parentUuid": "bc4616e4_0ddf8631",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "637bcb81_ef5af037",
@@ -193,6 +265,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff938932_a5a86613",
+        "filename": "hugo/content/en/docs/tour/json-superset/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-14T13:09:25Z",
+      "side": 1,
+      "message": "This was included in tour, but did not show. See https://github.com/cue-lang/cuelang.org/blob/master/content/en/docs/tutorials/tour/intro/json.md?plain\u003d1#L17\n\nWill restore these lines. They will not render on the website but stay in the code for now.",
+      "parentUuid": "637bcb81_ef5af037",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db0aab4d_7950f30b",
@@ -223,6 +313,24 @@
       "writtenOn": "2023-03-14T13:08:11Z",
       "side": 1,
       "message": "Removed for now.",
+      "parentUuid": "db0aab4d_7950f30b",
+      "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80fba40c_72dd1216",
+        "filename": "hugo/content/en/docs/tour/validation/index.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-14T13:09:25Z",
+      "side": 1,
+      "message": "removed.",
       "parentUuid": "db0aab4d_7950f30b",
       "revId": "3b5f0fb414af1e6c1ddfaf3261f6ae9546e259b3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
