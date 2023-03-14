@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80b971f4_df2fce46",
+        "filename": "hugo/content/en/docs/howto/encode-json-yaml-with-cue/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1020176
+      },
+      "writtenOn": "2023-03-14T13:43:07Z",
+      "side": 1,
+      "message": "using backticked code in headers exposed a rendering bug. Filed https://linear.app/usmedia/issue/CUE-174",
+      "revId": "8b879f16b8058033820e611309cebbdea28b1290",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
