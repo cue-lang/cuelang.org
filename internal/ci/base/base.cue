@@ -62,7 +62,7 @@ import (
 
 #earlyChecks: json.#step & {
 	name: "Early git and code sanity checks"
-	run: """
+	run: #"""
 		# Ensure the recent commit messages have Signed-off-by headers.
 		# TODO: Remove once this is enforced for admins too;
 		# see https://bugs.chromium.org/p/gerrit/issues/detail?id=15229
@@ -99,19 +99,22 @@ import (
 		# generally be the case, and we can always relax this when presented with
 		# specific situations where it is is a problem.
 
-		# commit author
-		commitauthor="$(git log -1 --pretty="%an <%ae>")"
+		# commit author email address
+		commitauthor="$(git log -1 --pretty="%ae")"
 
-		# signed-off-by trailer
+		# signed-off-by trailer email address. There is no way to parse just the
+		# email address from the trailer in the same way as git log, so instead
+		# grab the relevant trailer and then take the last whitespace-delimited
+		# part as the "<>" contained email address.
 		# Getting the Signed-off-by trailer in this way causes blank
 		# lines for some reason. Use awk to remove them.
-		commitsigner="$(git log -1 --pretty='%(trailers:key=Signed-off-by,valueonly)' | awk NF)"
+		commitsigner="$(git log -1 --pretty='%(trailers:key=Signed-off-by,valueonly)' | sed -ne 's/.* <\(.*\)>/\1/p')"
 
 		if [[ "$commitauthor" != "$commitsigner" ]]; then
-			echo "commit author does not match signed-off-by trailer"
+			echo "commit author email address does not match signed-off-by trailer"
 			exit 1
 		fi
-		"""
+		"""#
 }
 
 #cacheGoModules: json.#step & {
