@@ -346,13 +346,10 @@ pre {
     border: 1px solid var(--pre-border-color);
     border-radius: $b-radius;
     color: var(--pre-color);
-    height: 100%;
     margin: 0 0 1rem;
     max-width: 100%;
-    overflow: auto;
+    overflow-x: auto;
     padding: 1rem 1.25rem;
-    white-space: pre-wrap;
-    word-wrap: break-word;
 }
 
 audio,

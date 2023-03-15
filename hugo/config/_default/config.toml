@@ -14,11 +14,6 @@ disableAliases = true # We use Netlify server-side redirects instead of generate
 # Hugo allows theme composition (and inheritance). Precedence is from left to right.
 # theme = ["docsy"]
 
-# Highlighting
-[markup]
-    [markup.highlight]
-        lineNumbersInTable = false
-
 # Image processing
 [imaging]
     # See https://github.com/disintegration/imaging
