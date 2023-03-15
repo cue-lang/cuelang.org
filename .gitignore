@@ -1,9 +1,15 @@
+# Package & Version Managers
 node_modules
-/.idea/
+/.nvmrc
+
+# IDE's
+/.idea
+.vscode/
+
+# Project
 /_public/
 /editor/_dist/
 /editor/main.wasm
 /hugo/resources/
 /hugo/.hugo_build.lock
 /hugo/static/editor/
-/.nvmrc
