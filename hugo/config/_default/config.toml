@@ -45,6 +45,9 @@ disableAliases = true # We use Netlify server-side redirects instead of generate
 [social]
     twitter = "cue_lang"
 
+[build]
+    noJSConfigInAssets = true
+
 # [services]
 #     [services.googleAnalytics]
 #         id = "UA-00000000-0" # Comment out to disable GA tracking. Also disables the feature [params.ui.feedback]
