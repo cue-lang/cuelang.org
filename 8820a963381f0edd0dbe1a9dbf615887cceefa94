@@ -16,6 +16,23 @@
       "message": "This is the result of a GitHub PR, so a rubber-stamp +2 please.",
       "revId": "8820a963381f0edd0dbe1a9dbf615887cceefa94",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb494582_a2e8d73d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-15T13:15:50Z",
+      "side": 1,
+      "message": "Surprised that this doesn\u0027t reference the GitHub PR BTW.",
+      "revId": "8820a963381f0edd0dbe1a9dbf615887cceefa94",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
