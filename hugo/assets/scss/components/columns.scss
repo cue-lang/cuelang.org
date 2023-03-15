@@ -18,6 +18,19 @@
             flex: 0 1 50%;
             flex-direction: column;
             max-width: 50%;
+
+            // Make sure codeblocks fill all available space inside column
+            > pre:last-child {
+                flex: 1 0 auto;
+            }
+
+            > .highlight:last-child {
+                flex: 1 0 auto;
+
+                > * {
+                    height: 100%;
+                }
+            }
         }
     }
 }
