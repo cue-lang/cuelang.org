@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2994a31e_f3bb67ba",
+        "filename": "internal/ci/base/base.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-15T11:12:39Z",
+      "side": 1,
+      "message": "how about:\n\ngit log -1 --pretty\u003d\u0027%(trailers:key\u003dSigned-off-by,valueonly)\u0027 | sed -ne \u0027s/.* \u003c\\(.*\\)\u003e/\\1/p\u0027",
+      "revId": "94e7f8ab32bc887fd361ff4c2ed928f64de06ae3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
