@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90e73b2c_152247f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-15T13:09:25Z",
+      "side": 1,
+      "message": "This is the result of a GitHub PR, so a rubber-stamp +2 please.",
+      "revId": "8820a963381f0edd0dbe1a9dbf615887cceefa94",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
