@@ -4,10 +4,11 @@ This folder contains all hugo code for the website.
 
 ## Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `== v18.x`
-* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.108.0`
+- [NodeJS](https://nodejs.org/) `== v18.x`
+- [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.108.0`
 
 ## Developing the site locally
+
 To serve the site locally go the root and run:
 
 ```
@@ -23,12 +24,15 @@ npm ci
 to install all the packages.
 
 After that you can run to start Hugo:
+
 ```
 npm run hugo
 ```
+
 ## Assets
 
 ### Typescript
+
 In the typescript folder (/assets/ts) you have multiple files and folders:
 
 - **helpers** > Includes all helper ts files
@@ -40,6 +44,7 @@ In the typescript folder (/assets/ts) you have multiple files and folders:
 Hugo compiles this automatically to js.
 
 ### SCSS
+
 In the styles folder (/assets/scss) you have multiple files and folders:
 
 - **base** > Overall styling
@@ -51,9 +56,11 @@ In the styles folder (/assets/scss) you have multiple files and folders:
 Hugo compiles this automatically to css.
 
 ### Icons
+
 If you want to add a new icon to the UI spritesheet you have to add the icon svg to the ui folder: `/assets/svg/ui`
 
 Make sure you cleaned up the icon which means:
+
 - Combine paths if possible
 - Make sure all icons are the same size: 24 x 24px viewbox
 - Make sure the icon is centered correctly within the viewbox
@@ -66,6 +73,17 @@ If all above is done and the icon is added in the right folder you can run the f
 ```
 npm run icons
 ```
+
+### Linters
+
+To run linters on the project, you can choose from the following script:
+
+| Script                 | What does it do?                                                |
+|------------------------|-----------------------------------------------------------------|
+| `npm run lint`         | Run the following scripts: ts, sass, and html (not the go-html) |
+| `npm run lint-ts`      | Run the typescript linter                                       |
+| `npm run lint-sass`    | Run the sass/scss linter                                        |
+| `npm run lint-html`    | Run the html linter (./content)                                 |
 
 ### Algolia
 
@@ -88,6 +106,6 @@ ALGOLIA_APP_ID={{ YOUR_APP_ID }} ALGOLIA_ADMIN_KEY={{ YOUR_ADMIN_KEY }} ALGOLIA_
 
 This site was setup using the following guides:
 
-* https://gohugo.io/hosting-and-deployment/hosting-on-netlify/
-* https://www.docsy.dev/docs/getting-started
-* https://www.docsy.dev/docs/deployment/
+- https://gohugo.io/hosting-and-deployment/hosting-on-netlify/
+- https://www.docsy.dev/docs/getting-started
+- https://www.docsy.dev/docs/deployment/

@@ -14,7 +14,7 @@
 {{/* Only show when there is atleast one page */}}
 {{ if gt $paginator.TotalPages 1 }}
     <nav class="pagination">
-        <li class="pagination__list">
+        <ul class="pagination__list">
             {{/* First page */}}
             <li class="pagination__item">
                 <a class="pagination__link"
@@ -47,7 +47,6 @@
                         {{ if le .PageNumber $max_links }}
                             {{ $.Scratch.Set "page_number_flag" true }}
                         {{ end }}
-
 
                     {{/* Upper limit pages */}}
                     {{/* If the user is on a page which is in the upper limit */}}

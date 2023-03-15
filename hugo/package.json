@@ -24,6 +24,8 @@
     "eslint-plugin-jsdoc": "40.0.1",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-prettier": "4.2.1",
+    "html-validate": "7.13.3",
+    "html-validate-markdown": "3.0.0",
     "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1",
     "stylelint": "15.2.0",
@@ -38,11 +40,12 @@
     "hugo": "hugo serve -D --renderToDisk",
     "icons": "npm run icons:ui",
     "icons:ui": "svgstore -o \"./static/img/ui.svg\" -p \"icon--\" ./assets/svg/ui/*.svg",
-    "lint": "npm run lint-ts && npm run lint-sass",
+    "lint": "npm run lint-ts && npm run lint-sass && npm run lint-html",
     "lint-ts": "eslint --ext .ts ./assets/ts",
     "lint-ts-fix": "eslint --ext .ts ./assets/ts --fix",
     "lint-sass": "stylelint ./assets/scss/**/*.scss",
     "lint-sass-fix": "stylelint ./assets/scss/**/*.scss --fix",
+    "lint-html": "html-validate --ext .html, .md ./content",
     "algolia": "atomic-algolia"
   },
   "repository": {
