@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98ead9fd_7ea19cfd",
+        "filename": "project.config",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-15T12:04:48Z",
+      "side": 1,
+      "message": "FYI, issues/PRs/discussions all live under the same #N namespace, so you could keep this as /issues/, and leave the description as \"issue/pr/discussion on the same repo\".",
+      "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf1471b4_3e583f2c",
+        "filename": "project.config",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-15T12:04:48Z",
+      "side": 1,
+      "message": "I think you want the dollar sign outside of the second group, otherwise the URL will be like github.com/cue-lang/cue#/pull/123.",
+      "range": {
+        "startLine": 96,
+        "startChar": 48,
+        "endLine": 96,
+        "endChar": 49
+      },
+      "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ccb5404_e3f3cc6c",
+        "filename": "project.config",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-15T12:04:48Z",
+      "side": 1,
+      "message": "I\u0027d perseonally use /issues/ rather than /pull/ for consistency, and since issue links are the most common, but I think any of the three will redirect to the others.",
+      "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
