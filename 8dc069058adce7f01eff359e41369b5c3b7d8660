@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f60bd5b_c21364c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-15T12:23:03Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "98ead9fd_7ea19cfd",
@@ -14,6 +31,24 @@
       "writtenOn": "2023-03-15T12:04:48Z",
       "side": 1,
       "message": "FYI, issues/PRs/discussions all live under the same #N namespace, so you could keep this as /issues/, and leave the description as \"issue/pr/discussion on the same repo\".",
+      "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ac49fd9_9406312b",
+        "filename": "project.config",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-15T12:23:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98ead9fd_7ea19cfd",
       "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -41,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0deb828d_96543808",
+        "filename": "project.config",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-15T12:23:03Z",
+      "side": 1,
+      "message": "Nice catch, thanks. Refactored slightly to also capture the \u0027#\u0027 because we do want that as part of the link text.",
+      "parentUuid": "bf1471b4_3e583f2c",
+      "range": {
+        "startLine": 96,
+        "startChar": 48,
+        "endLine": 96,
+        "endChar": 49
+      },
+      "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ccb5404_e3f3cc6c",
@@ -54,6 +113,24 @@
       "writtenOn": "2023-03-15T12:04:48Z",
       "side": 1,
       "message": "I\u0027d perseonally use /issues/ rather than /pull/ for consistency, and since issue links are the most common, but I think any of the three will redirect to the others.",
+      "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e087c173_53bf9d18",
+        "filename": "project.config",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-15T12:23:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ccb5404_e3f3cc6c",
       "revId": "8dc069058adce7f01eff359e41369b5c3b7d8660",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
