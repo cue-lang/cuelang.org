@@ -6,7 +6,8 @@ import { Widget } from './interfaces/widget';
 declare global {
     interface Window {
         app: App;
-        dataLayer: { [ key: string ]: any; }[];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        dataLayer: Record<string, any>[];
     }
 }
 
@@ -41,11 +42,11 @@ class App {
         const scope = container ? container : document;
 
         for (const key in this.widgetMap) {
-            const elements = scope.querySelectorAll('[data-'.concat(key).concat(']')) as any as HTMLElement[];
+            const elements = scope.querySelectorAll<HTMLElement>('[data-'.concat(key).concat(']'));
 
-            for (const element of elements) {
+            elements.forEach((element) => {
                 new this.widgetMap[key](element);
-            }
+            });
         }
     }
 
