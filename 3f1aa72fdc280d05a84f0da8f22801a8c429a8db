@@ -16,6 +16,57 @@
       "message": "This is what we will live-test, so please review carefully.",
       "revId": "3f1aa72fdc280d05a84f0da8f22801a8c429a8db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26568beb_7f99dd67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-16T20:15:28Z",
+      "side": 1,
+      "message": "LGTM with one nit and a suggestion.",
+      "revId": "3f1aa72fdc280d05a84f0da8f22801a8c429a8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed5dddbe_aaeea808",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-16T20:15:28Z",
+      "side": 1,
+      "message": "Incomplete sentence.",
+      "revId": "3f1aa72fdc280d05a84f0da8f22801a8c429a8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ca18c51_482e95be",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-16T20:15:28Z",
+      "side": 1,
+      "message": "How old are we thinking here? I\u0027d almost remove this defensiveness in favour of forcing people to upgrade :)",
+      "revId": "3f1aa72fdc280d05a84f0da8f22801a8c429a8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
