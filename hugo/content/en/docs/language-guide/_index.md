@@ -1,6 +1,5 @@
 ---
 title: Language Guide
-weight: 10
-draft: false
+weight: 20
 toc_root: true
 ---
