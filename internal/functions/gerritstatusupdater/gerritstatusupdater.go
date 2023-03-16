@@ -548,9 +548,20 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	b, _ := json.MarshalIndent(ri, "", "  ")
-	logf("gerrit.SetReview %s/%s with\n%s", c.ChangeID, c.RevisionID, b)
+
+	// Note that we prefer CL/Patchset over than ChangeID/RevisionID,
+	// as the ChangeID string may not uniquely identify a Gerrit CL.
+	// In particular, when backporting by cherry-picking a CL into a release branch,
+	// the two CLs will share the same Change-Id trailer,
+	// but they will still have different
+	// Old cueckoo versions might not have provided CL and PatchSet.
+	changeID, revisionID := c.CL, c.Patchset
+	if changeID == "" || revisionID == "" {
+		changeID, revisionID = c.ChangeID, c.RevisionID
+	}
+	logf("gerrit.SetReview %s/%s with\n%s", changeID, revisionID, b)
 	if !dryRun {
-		if _, _, err := client.Changes.SetReview(c.ChangeID, c.RevisionID, ri); err != nil {
+		if _, _, err := client.Changes.SetReview(changeID, revisionID, ri); err != nil {
 			panic(fmt.Errorf("failed to update gerrit: %w", err))
 		}
 	}
