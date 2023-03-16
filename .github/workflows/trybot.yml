@@ -102,6 +102,8 @@ jobs:
             ${{ steps.go-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-${{ github.run_id }}
           restore-keys: ${{ runner.os }}
+      - run: npm run lint
+        working-directory: hugo
       - name: Ensure latest CUE
         run: |-
           GOPROXY=direct go get -d cuelang.org/go@latest

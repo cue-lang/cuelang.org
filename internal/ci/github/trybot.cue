@@ -66,6 +66,14 @@ trybot: _base.#bashWorkflow & {
 				// are established by running each tool.
 				for v in _#cachePre {v},
 
+				// Perform an early check to ensure that frontend linters work
+				json.#step & {
+					"working-directory": "hugo"
+					run: """
+						npm run lint
+						"""
+				},
+
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
 					// side effect-free. Using GOPROXY=direct ensures we don't accidentally
