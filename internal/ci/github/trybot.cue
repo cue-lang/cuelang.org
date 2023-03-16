@@ -95,6 +95,14 @@ trybot: _base.#bashWorkflow & {
 
 				_#dist,
 
+				// Now the frontend build has happened, ensure that linters pass
+				json.#step & {
+					"working-directory": "hugo"
+					run: """
+						npm run lint
+						"""
+				},
+
 				json.#step & {
 					name: "Verify commit is clean"
 					run: """
