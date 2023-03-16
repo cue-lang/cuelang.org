@@ -1,6 +1,6 @@
 ---
 title: Tour
-weight: 30
+weight: 50
 draft: false
 ---
 
