@@ -25,18 +25,7 @@
         padding: 0 $p-gutter;
     }
 
-    &__next {
-        display: block;
-        justify-content: flex-end;
-        margin: 0 0 0 auto;
-        padding: 0.25rem 40px 0.25rem 0.25rem;
-        text-align: right;
-
-        #{ $self }__icon {
-            left: auto;
-            right: 0;
-        }
-    }
+    /* stylelint-disable no-descending-specificity */
 
     &__prev,
     &__next {
@@ -60,14 +49,24 @@
     }
 
     &__prev {
-        padding: 0.25rem 0.25rem 0.25rem $p-gutter--large;
         margin: 0 auto 0 0;
+        padding: 0.25rem 0.25rem 0.25rem $p-gutter--large;
     }
 
     &__next {
-        padding: 0.25rem $p-gutter--large 0.25rem 0.25rem;
+        display: block;
+        justify-content: flex-end;
         margin: 0 0 0 auto;
+        padding: 0.25rem $p-gutter--large 0.25rem 0.25rem;
+        text-align: right;
+
+        #{ $self }__icon {
+            left: auto;
+            right: 0;
+        }
     }
+
+    /* stylelint-enable no-descending-specificity */
 
     &__icon {
         display: block;
