@@ -332,12 +332,23 @@ pre {
 code {
     margin-bottom: 1rem;
 
-    dd &,
-    td &,
-    p & {
+    :is(dd, td, h1, h2, h3, h4, h5, h6, p, span, ul, ol) & {
         background-color: var(--pre-background-color);
         border-radius: $b-radius;
+        font-size: inherit;
+        font-style: normal;
+        line-height: inherit;
         padding: 3px 5px;
+    }
+
+    .section--blue &,
+    .section--grey & {
+        --pre-background-color: #{ $c-white };
+    }
+
+    .tree &,
+    .toc & {
+        --pre-background-color: #{ transparent };
     }
 }
 
