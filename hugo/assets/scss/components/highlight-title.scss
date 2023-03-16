@@ -3,18 +3,19 @@
 
 .highlight-title {
     background-color: var(--pre-background-color, $c-blue--lighter);
-    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid transparentize($c-blue, 0.8);
+    border-radius: $b-radius $b-radius 0 0;
     color: $c-blue;
-    font-weight: $weight-medium;
-    padding: 1rem 1.25rem 0;
+    font-weight: $weight-semibold;
+    padding: 0.5rem 1.25rem;
 
     & + pre {
-        border-radius: 0 0 5px 5px;
+        border-radius: 0 0 $b-radius $b-radius;
     }
 
     + .highlight {
         pre {
-            border-radius: 0 0 5px 5px;
+            border-radius: 0 0 $b-radius $b-radius;
         }
     }
 }
