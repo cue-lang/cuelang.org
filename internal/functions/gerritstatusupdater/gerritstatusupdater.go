@@ -212,10 +212,10 @@ type localContext struct {
 	// conclusion
 	WorkflowConclusion string `json:",omitempty"`
 
-	// ChangeID is the CL number of the associated CL
+	// ChangeID is the Change-Id of the associated CL
 	ChangeID string `json:",omitempty"`
 
-	// RevisionID is the commit of the associated CL corresponding to the
+	// RevisionID is the commit hash of the associated CL corresponding to the
 	// patchset under test
 	RevisionID string `json:",omitempty"`
 
@@ -230,31 +230,29 @@ type localContext struct {
 func (c *localContext) setHeadBranch(b string) {
 	c.HeadBranch = b
 
-	// Establish changeID and revisionID from head branch. Note
-	// the first part of the build branch is not significant
+	// Establish variables to identify the CL from the head branch.
+	// Note the first part of the build branch is not significant
 	// as far as gerritstatusupdater is concerned: it's simply
 	// used to namespace build branches, but also for workflows
 	// to conditionally run based on the first part.
 	// The format is therefore:
 	//
-	//     $something/$changeID/$revisionID(/.*)
+	//     $something/$ChangeID/$RevisionID/$CL/$Patchset/(/.*)
 	//
-	// We don't limit the branch to only be three parts so as to
-	// allow for extending the format in some cases.
+	// We don't limit the branch to only be five parts so as to
+	// allow for extending the format in the future.
 	headBranchParts := strings.Split(c.HeadBranch, "/")
 	switch x := len(headBranchParts); {
 	case x == 1:
 		log.Printf("nothing to do on branch %q", c.HeadBranch)
 		panic(nil) // early return from handler
-	case x < 3:
+	case x < 5:
 		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
 	}
-	c.ChangeID, c.RevisionID = headBranchParts[1], headBranchParts[2]
-
-	// Extended information may be set
-	if len(headBranchParts) == 5 {
-		c.CL, c.Patchset = headBranchParts[3], headBranchParts[4]
-	}
+	c.ChangeID = headBranchParts[1]
+	c.RevisionID = headBranchParts[2]
+	c.CL = headBranchParts[4]
+	c.Patchset = headBranchParts[3]
 }
 
 // ServeHTTP is the implementation of the gerritstatusupdater serverless
@@ -548,9 +546,15 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	b, _ := json.MarshalIndent(ri, "", "  ")
-	logf("gerrit.SetReview %s/%s with\n%s", c.ChangeID, c.RevisionID, b)
+
+	// Note that we use CL/Patchset over ChangeID/RevisionID,
+	// as the ChangeID string may not uniquely identify a Gerrit CL.
+	// In particular, when backporting by cherry-picking a CL into a release branch,
+	// the two CLs will share the same Change-Id trailer,
+	// but they will still have different CL numbers.
+	logf("gerrit.SetReview %s/%s with\n%s", c.CL, c.Patchset, b)
 	if !dryRun {
-		if _, _, err := client.Changes.SetReview(c.ChangeID, c.RevisionID, ri); err != nil {
+		if _, _, err := client.Changes.SetReview(c.CL, c.Patchset, ri); err != nil {
 			panic(fmt.Errorf("failed to update gerrit: %w", err))
 		}
 	}
