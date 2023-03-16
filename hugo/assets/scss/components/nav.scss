@@ -42,7 +42,6 @@
 
     &__link {
         cursor: pointer;
-        display: block;
         text-decoration: none;
 
         &:hover,
@@ -67,7 +66,6 @@
     &__text {
         background: linear-gradient(var(--nav-link-border-color), var(--nav-link-border-color)) no-repeat 100% 100%;
         background-size: 0 var(--nav-link-border-width);
-        display: inline-block;
         position: relative;
         transition:
             background-color 0.2s ease-in-out,
@@ -154,6 +152,7 @@
         #{ $self }__link {
             background-color: $c-white;
             border-radius: $b-radius--round;
+            display: block;
             height: $h-button;
             padding: 11px;
             transition: color 0.2s;
