@@ -1,7 +1,6 @@
 ---
-title: Install CUE
-weight: 10
-draft: false
+title: Installation
+weight: 20
 ---
 
 The Go APIs for CUE are defined in the
