@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee198ab9_9ce9a787",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-17T13:07:36Z",
+      "side": 1,
+      "message": "Still LGTM.\n\nNoting that we will need to apply this to cuelang.org (and other repos) too.",
+      "revId": "692e90c6dac5680959ecfe97a5bb622cb8f46924",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
