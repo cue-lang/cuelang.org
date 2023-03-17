@@ -1,0 +1,37 @@
+{{- $align := .Get "align" | default "center" -}}
+
+<figure class="media media--{{ $align }}{{ with .Get "class" }} {{ . }}{{ end }}">
+    {{- if .Get "link" -}}
+        <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}
+            {{ with .Get "rel" }} rel="{{ . }}"{{ end }}
+        >
+    {{- end -}}
+
+    <div class="media__image">
+        <img src="{{ .Get "src" }}"
+            {{- if or (.Get "alt") (.Get "caption") }}
+            alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"
+            {{- end -}}
+            {{- with .Get "width" }} width="{{ . }}"{{ end -}}
+            {{- with .Get "height" }} height="{{ . }}"{{ end -}}
+            {{- with (.Get "title") }} title="{{ . }}"{{ end -}}
+        >
+    </div>
+
+    {{- if .Get "link" }}</a>{{ end -}}
+
+    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+        <figcaption class="media__caption">
+            {{- if or (.Get "caption") (.Get "attr") -}}
+                <span>
+                    {{- .Get "caption" | markdownify -}}
+                    {{- with .Get "attrlink" }}
+                        <a href="{{ . }}">
+                    {{- end -}}
+                    {{- .Get "attr" | markdownify -}}
+                    {{- if .Get "attrlink" }}</a>{{ end }}
+                </span>
+            {{- end }}
+        </figcaption>
+    {{- end }}
+</figure>
