@@ -251,8 +251,8 @@ func (c *localContext) setHeadBranch(b string) {
 	}
 	c.ChangeID = headBranchParts[1]
 	c.RevisionID = headBranchParts[2]
-	c.CL = headBranchParts[4]
-	c.Patchset = headBranchParts[3]
+	c.CL = headBranchParts[3]
+	c.Patchset = headBranchParts[4]
 }
 
 // ServeHTTP is the implementation of the gerritstatusupdater serverless
