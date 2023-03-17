@@ -16,7 +16,6 @@
 
     &__image {
         // wrapper needed for copyright positioning
-        display: block; // because of shortcode has span's instead of div
         position: relative;
     }
 
@@ -42,55 +41,21 @@
     &__caption {
         @include style-text-small;
 
-        padding: 0.5rem 0 0.25rem;
+        font-style: italic;
+        padding-right: 0;
         width: 100%;
     }
 
-    &__credits {
-        @include style-text-credits;
-
-        bottom: 1rem;
-        display: block;
-        left: 1rem;
-        margin: 0;
-        position: absolute;
-    }
-
-    &--center {
-        @include container($w-site);
-
-        clear: both;
-        margin: 0.5rem auto $p-gutter;
-    }
-
-    &--cover {
-        height: 100%;
-        margin: 0;
-        position: relative;
-
+    &--wide {
         #{ $self }__image {
-            @include stretch;
-        }
-
-        #{ $self }__caption {
-            bottom: 0;
-            color: $c-white;
-            left: 0;
-            padding: $p-gutter;
-            position: absolute;
-        }
-
-        img,
-        picture,
-        svg {
-            @include object-fit-cover;
+            margin: 0 (-$p-gutter);
         }
     }
 
     @include screen($screen-simple) {
         &--left {
             float: left;
-            margin: 0.5rem $p-gutter $p-gutter 0;
+            margin: 0.5rem $p-gutter 0 0;
             max-width: 50%;
 
             img,
@@ -101,7 +66,7 @@
 
         &--right {
             float: right;
-            margin: 0.5rem 0 $p-gutter $p-gutter;
+            margin: 0.5rem 0 0 $p-gutter;
             max-width: 50%;
 
             img,
@@ -109,19 +74,20 @@
                 width: auto;
             }
         }
+    }
 
-        &--cover {
-            #{ $self }__caption {
-                padding: 2rem;
+    @include screen($screen-normal) {
+        &--wide {
+            #{ $self }__image {
+                margin: 0 (-$p-gutter--large);
             }
         }
     }
 
-    @include screen($screen-normal) {
-        &--cover {
-            #{ $self }__caption {
-                font-size: 1rem;
-                padding: 3rem;
+    @include screen($screen-large) {
+        &--wide {
+            #{ $self }__image {
+                margin: 0 (2 * -$p-gutter--large);
             }
         }
     }
