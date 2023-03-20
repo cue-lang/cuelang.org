@@ -61,19 +61,19 @@ trybot: _base.#bashWorkflow & {
 				// are established by running each tool.
 				for v in _#cachePre {v},
 
-				// json.#step & {
-				// 	// The latest git clean check ensures that this call is effectively
-				// 	// side effect-free. Using GOPROXY=direct ensures we don't accidentally
-				// 	// hit a stale cache in the proxy.
-				// 	name: "Ensure latest CUE"
-				// 	run: """
-				// 		GOPROXY=direct go get -d cuelang.org/go@latest
-				// 		go mod tidy
-				// 		cd play
-				// 		GOPROXY=direct go get -d cuelang.org/go@latest
-				// 		go mod tidy
-				// 		"""
-				// },
+				json.#step & {
+					// The latest git clean check ensures that this call is effectively
+					// side effect-free. Using GOPROXY=direct ensures we don't accidentally
+					// hit a stale cache in the proxy.
+					name: "Ensure latest CUE"
+					run: """
+						GOPROXY=direct go get -d cuelang.org/go@latest
+						go mod tidy
+						cd play
+						GOPROXY=direct go get -d cuelang.org/go@latest
+						go mod tidy
+						"""
+				},
 
 				_#play & {
 					name: "Re-vendor play"
