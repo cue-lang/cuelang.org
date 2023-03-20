@@ -5,7 +5,8 @@
 ###############################################
 
 # Redirect golang vanity imports for cuelang.org
-/go/* go-get=1 /golang/go.html 200
+/go   /golang/go.html 200
+/go/* /golang/go.html 200
 
 # Redirect default Netlify subdomain to primary domain
 https://cue.netlify.com/* https://cuelang.org/:splat 301!
