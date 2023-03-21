@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d52b66f_2dfe4ca0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-21T11:46:49Z",
+      "side": 1,
+      "message": "\u003e So now there would be two redirects:\n\u003e \n\u003e cuelang.org/go/cue/load\n\u003e -\u003e\n\u003e cuelang.org/golang/go.html?go/cue/load\n\u003e -\u003e\n\u003e pkg.go.dev/cuelang.org/go/cue/load\n\u003e \n\u003e Would be nice to avoid the first unnecessary redirect, as it will affect browser users as well as any `GOPROXY\u003ddirect go get` users. Doesn\u0027t have to be right now, just flagging the added HTTP redirect.\n\nSlight fix up:\n\ncuelang.org/go/cue/load\n-\u003e\ncuelang.org/golang/go.html?cue/load\n-\u003e\npkg.go.dev/cuelang.org/go/cue/load\n\nBut yes, two redirects. The first 302 redirect by Netlify to /golang/go.html is the one that captures /go/* and turns it into a query parameter. The result of that redirect must include the go-import meta tag. So this one can\u0027t be removed.\n\nThe second browser-only redirect is a convenience for users who happen to visit https://cuelang.org/go/cue/load and expect to end up on pkg.go.dev.\n\n\u003e One way would be to code generate one HTML file per Go package, like I did for mine. A similar way would be to do that via Hugo, like https://github.com/markdumay/hugo-theme-vanity.\n\nPossibly. It doesn\u0027t seem worth the effort to drop a single 302 redirect right now at least.",
+      "parentUuid": "c9bdac9e_c5d4f7f6",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59375d59_75e32557",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37a4ec9d_0ca9c17e",
+        "filename": "netlify.toml",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-21T11:46:49Z",
+      "side": 1,
+      "message": "Doing anything more complicated involves more complicated JavaScript. I\u0027d prefer to leave this for now. It\u0027s an implementation detail ~largely unseen by the end user.",
+      "parentUuid": "59375d59_75e32557",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1f2eed04_9b309249",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-03-21T11:37:26Z",
       "side": 1,
       "message": "I imagine we want to delete this now?",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "914f272d_ce963017",
+        "filename": "static/golang/go.html",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-21T11:46:49Z",
+      "side": 1,
+      "message": "I don\u0027t think so. For browsers that don\u0027t have JavaScript enabled this will still be a decent fallback.",
+      "parentUuid": "1f2eed04_9b309249",
       "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
