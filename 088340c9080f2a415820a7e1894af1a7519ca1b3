@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "652382ec_5506c6c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-21T12:31:13Z",
+      "side": 1,
+      "message": "Confirming that post deploy things work as expected:\n\n```\n$ cd $(mktemp -d) \u0026\u0026 go mod init mod.com \u0026\u0026 GOPROXY\u003ddirect go get -x cuelang.org/go/cmd/cue\ngo: creating new go.mod: module mod.com\n# get https://cuelang.org/?go-get\u003d1\n# get https://cuelang.org/go?go-get\u003d1\n# get https://cuelang.org/go/cmd?go-get\u003d1\n# get https://cuelang.org/go/cmd/cue?go-get\u003d1\n# get https://cuelang.org/?go-get\u003d1: 200 OK (0.285s)\n# get https://cuelang.org/go/cmd/cue?go-get\u003d1: 200 OK (0.418s)\n# get https://cuelang.org/go?go-get\u003d1\n# get https://cuelang.org/go?go-get\u003d1: 200 OK (0.421s)\nmkdir -p /home/myitcv/gostuff/pkg/mod/cache/vcs # git3 https://review.gerrithub.io/cue-lang/cue\n# lock /home/myitcv/gostuff/pkg/mod/cache/vcs/d82383d43199d57840995f1c0a94e81eee5ed02e43dbba4468223292497673e2.lock\n# /home/myitcv/gostuff/pkg/mod/cache/vcs/d82383d43199d57840995f1c0a94e81eee5ed02e43dbba4468223292497673e2 for git3 https://review.gerrithub.io/cue-lang/cue\ncd /home/myitcv/gostuff/pkg/mod/cache/vcs/d82383d43199d57840995f1c0a94e81eee5ed02e43dbba4468223292497673e2; git ls-remote -q origin\n...\n```",
+      "revId": "088340c9080f2a415820a7e1894af1a7519ca1b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
