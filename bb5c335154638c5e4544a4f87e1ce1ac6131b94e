@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9bdac9e_c5d4f7f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-21T11:37:26Z",
+      "side": 1,
+      "message": "So now there would be two redirects:\n\ncuelang.org/go/cue/load\n-\u003e\ncuelang.org/golang/go.html?go/cue/load\n-\u003e\npkg.go.dev/cuelang.org/go/cue/load\n\nWould be nice to avoid the first unnecessary redirect, as it will affect browser users as well as any `GOPROXY\u003ddirect go get` users. Doesn\u0027t have to be right now, just flagging the added HTTP redirect.\n\nOne way would be to code generate one HTML file per Go package, like I did for mine. A similar way would be to do that via Hugo, like https://github.com/markdumay/hugo-theme-vanity.",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59375d59_75e32557",
+        "filename": "netlify.toml",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-21T11:37:26Z",
+      "side": 1,
+      "message": "I would do this like `?pkg\u003d:splat`, so that it is more self-descriptive and we can add more query parameters in the future as needed.",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f2eed04_9b309249",
+        "filename": "static/golang/go.html",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-21T11:37:26Z",
+      "side": 1,
+      "message": "I imagine we want to delete this now?",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
