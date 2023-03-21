@@ -122,6 +122,24 @@
       "parentUuid": "914f272d_ce963017",
       "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a8e651d_6ce54207",
+        "filename": "static/golang/go.html",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-21T12:27:05Z",
+      "side": 1,
+      "message": "Yes I have. \n\nhttps://cl-551314-11--cue-cls.netlify.app/go/cmd/cue ultimately ends up at https://pkg.go.dev/cuelang.org/go/cmd/cue, as expected.",
+      "parentUuid": "c92685ed_9fe0be40",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
