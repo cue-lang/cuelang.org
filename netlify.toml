@@ -59,12 +59,26 @@ command = "bash build.bash -b $DEPLOY_URL"
 [[redirects]]
   from = "/go"
   to = "/golang/go.html"
-  status = 200
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/*"
+  to = "/golang/go.html?:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/go"
   to = "/golang/go.html"
   status = 200
   force = true
+  query = {go-get = "1"}
+
+[[redirects]]
+  from = "/go/*"
+  to = "/golang/go.html?:splat"
+  status = 200
+  force = true
+  query = {go-get = "1"}
 
