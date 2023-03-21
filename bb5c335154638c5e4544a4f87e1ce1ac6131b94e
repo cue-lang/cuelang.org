@@ -104,6 +104,24 @@
       "parentUuid": "1f2eed04_9b309249",
       "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c92685ed_9fe0be40",
+        "filename": "static/golang/go.html",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-21T12:24:11Z",
+      "side": 1,
+      "message": "I assume you tested that the JS takes precedence over meta - I would have actually guessed the opposite, since I would imagine that the meta headers get applied first.",
+      "parentUuid": "914f272d_ce963017",
+      "revId": "bb5c335154638c5e4544a4f87e1ce1ac6131b94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
