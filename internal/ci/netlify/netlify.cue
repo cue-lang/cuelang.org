@@ -85,13 +85,11 @@ config: #config & {
 		from: "/s/community-calendar"
 		to:   "https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
 	}, {
-		from:   "/go"
-		to:     "/golang/go.html"
-		status: 200
+		from: "/go"
+		to:   "/golang/go.html?:splat"
 	}, {
-		from:   "/go/*"
-		to:     "/golang/go.html"
-		status: 200
+		from: "/go/*"
+		to:   "/golang/go.html?:splat"
 	}]
 }
 
