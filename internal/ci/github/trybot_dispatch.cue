@@ -14,7 +14,11 @@
 
 package github
 
+import (
+	"github.com/cue-lang/cuelang.org/internal/ci/repo"
+)
+
 // The trybot_dispatch workflow.
-workflows: trybot_dispatch: _base.#bashWorkflow & _gerrithub.#dispatchWorkflow & {
-	#type: _gerrithub.#dispatchTrybot
+workflows: trybot_dispatch: repo.bashWorkflow & repo.trybotDispatchWorkflow & {
+	#type: repo.trybot.key
 }
