@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b69c7c39_5120888a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-22T16:53:07Z",
+      "side": 1,
+      "message": "It works well!\n\nAs part of making changes to the trybots etc across repos, I need to make things as consistent as possible to make diffs sensible.",
+      "parentUuid": "8c18b918_218aad8c",
+      "revId": "827f7851b3d7d2c6a02bb6eec9a8821aeebdd424",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49729b46_1e1d0d01",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-03-22T16:39:46Z",
       "side": 1,
       "message": "did you miss this one?",
+      "revId": "827f7851b3d7d2c6a02bb6eec9a8821aeebdd424",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d460dbfc_a4706e2c",
+        "filename": "internal/ci/ci_tool.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-22T16:53:07Z",
+      "side": 1,
+      "message": "I did, thanks. Done.",
+      "parentUuid": "49729b46_1e1d0d01",
       "revId": "827f7851b3d7d2c6a02bb6eec9a8821aeebdd424",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
