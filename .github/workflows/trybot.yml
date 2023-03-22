@@ -4,7 +4,6 @@ name: TryBot
 "on":
   push:
     branches:
-      - ci/test
       - master
       - alpha
     tags-ignore:
@@ -16,6 +15,10 @@ jobs:
     defaults:
       run:
         shell: bash
+    if: |-
+      (contains(github.event.head_commit.message, '
+      Dispatch-Trailer: {"type":"trybot"')) || ! (contains(github.event.head_commit.message, '
+      Dispatch-Trailer: {"type":"'))
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -26,6 +29,23 @@ jobs:
         run: touch -t 202211302355 $(find * -type d)
       - name: Restore git file modification times
         uses: chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe
+      - if: |-
+          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"')))) && (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"'))
+        name: Check we don't have Dispatch-Trailer on a protected branch
+        run: |-
+          echo "github.event.head_commit.message contains Dispatch-Trailer"
+          echo "github.event.head_commit.message value"
+          cat <<EOD
+          ${{ github.event.head_commit.message }}
+          EOD
+          echo "containsDispatchTrailer expression"
+          cat <<EOD
+          (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"'))
+          EOD
+          false
       - name: Early git and code sanity checks
         run: |-
           # Ensure the recent commit messages have Signed-off-by headers.
@@ -99,7 +119,9 @@ jobs:
       - id: go-cache-dir
         name: Get go build/test cache directory
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
-      - if: (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha')
+      - if: |-
+          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"'))))
         uses: actions/cache@v3
         with:
           path: |-
@@ -107,7 +129,9 @@ jobs:
             ${{ steps.go-cache-dir.outputs.dir }}
           key: Linux-1.20.2-${{ github.run_id }}
           restore-keys: Linux-1.20.2
-      - if: '! (github.ref == ''refs/heads/master'' || github.ref == ''refs/heads/alpha'')'
+      - if: |-
+          ! ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"'))))
         uses: actions/cache/restore@v3
         with:
           path: |-
@@ -115,7 +139,9 @@ jobs:
             ${{ steps.go-cache-dir.outputs.dir }}
           key: Linux-1.20.2-${{ github.run_id }}
           restore-keys: Linux-1.20.2
-      - if: github.repository == 'cue-lang/cuelang.org' && ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') || github.ref == 'refs/heads/ci/test')
+      - if: |-
+          github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
       - name: Ensure latest CUE
         run: |-
@@ -146,13 +172,8 @@ jobs:
         run: ./build.bash
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
-      - id: alias
-        if: ${{github.repository == 'cue-lang/cuelang.org-trybot' && startsWith(github.head_ref, 'trybot/')}}
-        run: |-
-          alias="$(echo '${{github.head_ref}}' | sed -E 's/^trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/')"
-          echo "alias=$alias" >> $GITHUB_OUTPUT
-      - if: ${{github.repository == 'cue-lang/cuelang.org-trybot' && startsWith(github.head_ref, 'trybot/')}}
+      - if: 'github.repository == ''cue-lang/cuelang.org-trybot'' && '
         name: Deploy preview of CL
-        run: 'netlify deploy --alias ${{ steps.alias.outputs.alias }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        run: 'netlify deploy --alias cl-${{ fromJSON(steps.TryBotTrailer.outputs.value).CL }}-${{ fromJSON(steps.TryBotTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
