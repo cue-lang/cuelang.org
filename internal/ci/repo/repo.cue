@@ -17,7 +17,7 @@ protectedBranchPatterns: [defaultBranch, "alpha"]
 botGitHubUser:      "cueckoo"
 botGitHubUserEmail: "cueckoo@gmail.com"
 
-linuxMachine: "ubuntu-20.04"
+linuxMachine: "ubuntu-22.04"
 
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.
