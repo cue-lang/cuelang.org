@@ -15,6 +15,14 @@ jobs:
         shell: bash
     if: ${{ github.repository == 'cue-lang/cuelang.org' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}
     steps:
+      - name: Write netrc file for cueckoo Gerrithub
+        run: |-
+          cat <<EOD > ~/.netrc
+          machine review.gerrithub.io
+          login cueckoo
+          password ${{ secrets.CUECKOO_GERRITHUB_PASSWORD }}
+          EOD
+          chmod 600 ~/.netrc
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -24,6 +32,34 @@ jobs:
         run: touch -t 202211302355 $(find * -type d)
       - name: Restore git file modification times
         uses: chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe
+      - id: TryBotTrailer
+        name: Try to extract TryBot-Trailer
+        run: |-
+          git log -1
+          git log -1 --pretty='%(trailers:key=TryBot-Trailer,valueonly)'
+          x="$(git log -1 --pretty='%(trailers:key=TryBot-Trailer,valueonly)')"
+          if [[ "$x" == "" ]]
+          then
+              x=null
+          fi
+          echo "x is $x"
+          echo "value<<EOD" >> $GITHUB_OUTPUT
+          echo "$x" >> $GITHUB_OUTPUT
+          echo "EOD" >> $GITHUB_OUTPUT
+      - id: UnityTrailer
+        name: Try to extract Unity-Trailer
+        run: |-
+          git log -1
+          git log -1 --pretty='%(trailers:key=Unity-Trailer,valueonly)'
+          x="$(git log -1 --pretty='%(trailers:key=Unity-Trailer,valueonly)')"
+          if [[ "$x" == "" ]]
+          then
+              x=null
+          fi
+          echo "x is $x"
+          echo "value<<EOD" >> $GITHUB_OUTPUT
+          echo "$x" >> $GITHUB_OUTPUT
+          echo "EOD" >> $GITHUB_OUTPUT
       - name: Install Node
         uses: actions/setup-node@v3
         with:
