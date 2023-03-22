@@ -15,6 +15,4 @@
 package github
 
 // The trybot_dispatch workflow.
-workflows: trybot_dispatch: _base.#bashWorkflow & _gerrithub.#dispatchWorkflow & {
-	#type: _gerrithub.#dispatchTrybot
-}
+workflows: trybot_dispatch: _base.#bashWorkflow & _gerrithub.#trybotWorkflow
