@@ -4,9 +4,9 @@ name: TryBot
 "on":
   push:
     branches:
+      - ci/test
       - master
       - alpha
-      - ci/test
   pull_request: {}
 jobs:
   test:
