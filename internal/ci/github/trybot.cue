@@ -47,25 +47,20 @@ workflows: trybot: _base.#bashWorkflow & {
 	jobs: {
 		test: {
 			"runs-on": core.linuxMachine
-			steps: [
-				_base.#checkoutCode & {
-					// "pull_request" builds will by default use a merge commit,
-					// testing the PR's HEAD merged on top of the master branch.
-					// For consistency with Gerrit, avoid that merge commit entirely.
-					// This doesn't affect "push" builds, which never used merge commits.
-					with: ref: "${{ github.event.pull_request.head.sha }}"
-				},
 
-				// Early git checks
+			steps: [
+				for v in _base.#checkoutCode {v},
+
 				base.#earlyChecks,
 
 				_#installNode,
 				_#installGo,
 				_#installHugo,
 
-				// cachePre must come after installing Node and Go, because the cache locations
-				// are established by running each tool.
-				for v in _#cachePre {v},
+				// our cache loading must come after installing Node and Go,
+				// because the cache locations are established by running each
+				// tool.
+				for v in _goCaches {v},
 
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
@@ -143,8 +138,6 @@ workflows: trybot: _base.#bashWorkflow & {
 					#alias: "${{ steps.alias.outputs.alias }}"
 					name:   "Deploy preview of CL"
 				},
-
-				_#cachePost,
 			]
 		}
 	}
