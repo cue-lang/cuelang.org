@@ -55,7 +55,12 @@ workflows: close({
 _#defaultBranch:     "master"
 _#releaseTagPattern: "v*"
 
-_#activeBranches: [_#defaultBranch, "alpha"]
+// _#protectedBranchPatterns is a list of glob patterns to match the protected
+// git branches which are continuously used during development on Gerrit.
+// This includes the default branch and release branches,
+// but excludes any others like feature branches or short-lived branches.
+// Note that ci/test is excluded as it is GitHub-only.
+_#protectedBranchPatterns: [_#defaultBranch, "alpha"]
 
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.
