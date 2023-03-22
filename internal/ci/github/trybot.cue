@@ -94,19 +94,13 @@ trybot: _base.#bashWorkflow & {
 				},
 
 				_#dist,
+				_base.#checkGitClean,
 
 				// Now the frontend build has happened, ensure that linters pass
 				json.#step & {
 					"working-directory": "hugo"
 					run: """
 						npm run lint
-						"""
-				},
-
-				json.#step & {
-					name: "Verify commit is clean"
-					run: """
-						test -z "$(git status --porcelain)" || (git status; git diff; false)
 						"""
 				},
 
