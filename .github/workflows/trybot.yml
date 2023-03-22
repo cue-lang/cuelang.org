@@ -4,13 +4,14 @@ name: TryBot
 "on":
   push:
     branches:
-      - ci/test
       - master
       - alpha
+    tags-ignore:
+      - v*
   pull_request: {}
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
@@ -19,6 +20,24 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Reset git directory modification times
+        run: touch -t 202211302355 $(find * -type d)
+      - name: Restore git file modification times
+        uses: chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe
+      - id: TryBotTrailer
+        run: |-
+          git log -1
+          git log -1 --pretty='%(trailers:key=TryBot-Trailer,valueonly)'
+          x="$(git log -1 --pretty='%(trailers:key=TryBot-Trailer,valueonly)')"
+          if [[ "$x" == "" ]]
+          then
+          	x=null
+          fi
+          echo "x is $x"
+          echo "value<<EOD" >> $GITHUB_OUTPUT
+          echo "$x" >> $GITHUB_OUTPUT
+          echo "EOD" >> $GITHUB_OUTPUT
       - name: Early git and code sanity checks
         run: |-
           # Ensure the recent commit messages have Signed-off-by headers.
@@ -77,31 +96,39 @@ jobs:
         with:
           node-version: 18.12.1
       - name: Install Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v4
         with:
+          cache: false
           go-version: 1.20.2
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 0.108.0
           extended: true
-      - id: npm-cache-dir
-        name: Get npm cache directory
-        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
       - id: go-mod-cache-dir
         name: Get go mod cache directory
         run: echo "dir=$(go env GOMODCACHE)" >> ${GITHUB_OUTPUT}
       - id: go-cache-dir
         name: Get go build/test cache directory
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
-      - uses: actions/cache@v3
+      - if: ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (fromJSON(steps.TryBotTrailer.outputs.value) == null))
+        uses: actions/cache@v3
         with:
           path: |-
-            ${{ steps.npm-cache-dir.outputs.dir }}
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}
+          key: ${{ runner.os }}-${{ matrix.go-version }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-${{ matrix.go-version }}
+      - if: '! ((github.ref == ''refs/heads/master'' || github.ref == ''refs/heads/alpha'') && (fromJSON(steps.TryBotTrailer.outputs.value) == null))'
+        uses: actions/cache/restore@v3
+        with:
+          path: |-
+            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
+            ${{ steps.go-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-${{ matrix.go-version }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-${{ matrix.go-version }}
+      - if: github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha')) || github.ref == 'refs/heads/ci/test')
+        run: go clean -testcache
       - name: Ensure latest CUE
         run: |-
           GOPROXY=direct go get -d cuelang.org/go@latest
@@ -131,14 +158,8 @@ jobs:
         run: ./build.bash
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
-      - id: alias
-        if: ${{github.repository == 'cue-lang/cuelang.org-trybot' && startsWith(github.head_ref, 'trybot/')}}
-        run: |-
-          alias="$(echo '${{github.head_ref}}' | sed -E 's/^trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/')"
-          echo "alias=$alias" >> $GITHUB_OUTPUT
-      - if: ${{github.repository == 'cue-lang/cuelang.org-trybot' && startsWith(github.head_ref, 'trybot/')}}
+      - if: ${{github.repository == 'cue-lang/cuelang.org-trybot'
         name: Deploy preview of CL
-        run: 'netlify deploy --alias ${{ steps.alias.outputs.alias }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        run: 'netlify deploy --alias ${{  }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
-      - run: find '${{ steps.npm-cache-dir.outputs.dir }}' '${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download' '${{ steps.go-cache-dir.outputs.dir }}' -type f -amin +7200 -delete -print
