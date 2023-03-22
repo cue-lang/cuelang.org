@@ -19,7 +19,7 @@ import (
 )
 
 // The update_tip workflow. Keeps the tip branch in "sync" with master.
-update_tip: _base.#bashWorkflow & {
+workflows: update_tip: _base.#bashWorkflow & {
 
 	name: "Update tip"
 	on: {
