@@ -5,6 +5,7 @@ name: Update tip
   push:
     branches:
       - master
+  repository_dispatch: {}
 concurrency: deploy
 jobs:
   push:
@@ -12,7 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-    if: ${{github.repository == 'cue-lang/cuelang.org'}}
+    if: ${{ github.repository == 'cue-lang/cuelang.org' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}
     steps:
       - name: Write netrc file for cueckoo Gerrithub
         run: |-
