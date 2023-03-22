@@ -15,26 +15,26 @@
 package github
 
 import (
-	"strings"
-
-	"github.com/cue-lang/cuelang.org/internal/ci/core"
+	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 )
 
-// push_tip_to_trybot "syncs" active branches to the trybot repo
+// push_tip_to_trybot "syncs" active branches to the trybot repo.
+// Since the workflow is triggered by a push to any of the branches,
+// the step only needs to sync the pushed branch.
 workflows: push_tip_to_trybot: _base.#bashWorkflow & {
 
 	name: "Push tip to trybot"
 	on: {
-		push: branches: _#activeBranches
+		push: branches: repo.protectedBranchPatterns
 	}
 
 	concurrency: "push_tip_to_trybot"
 
 	jobs: push: {
-		"runs-on": _#linuxMachine
-		if:        "${{github.repository == '\(core.#githubRepositoryPath)'}}"
+		"runs-on": repo.linuxMachine
+		if:        "${{github.repository == '\(repo.githubRepositoryPath)'}}"
 		steps: [
 			_gerrithub.#writeNetrcFile,
 			json.#step & {
@@ -48,8 +48,8 @@ workflows: push_tip_to_trybot: _base.#bashWorkflow & {
 						git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_gerrithub.#botGitHubUser):${{ secrets.\(_gerrithub.#botGitHubUserTokenSecretsKey) }} | base64)"
 						git remote add origin \(_gerrithub.#gerritHubRepository)
 						git remote add trybot \(_gerrithub.#trybotRepositoryURL)
-						git fetch origin \(strings.Join(_#activeBranches, " "))
-						git push trybot "refs/remotes/origin/*:refs/heads/*"
+						git fetch origin "${{ github.ref }}"
+						git push trybot "FETCH_HEAD:${{ github.ref }}"
 						"""
 			},
 		]

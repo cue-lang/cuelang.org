@@ -15,7 +15,7 @@
 package github
 
 import (
-	"github.com/cue-lang/cuelang.org/internal/ci/core"
+	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 )
 
 // The update_tip workflow. Keeps the tip branch in "sync" with master.
@@ -23,7 +23,7 @@ workflows: update_tip: _base.#bashWorkflow & {
 
 	name: "Update tip"
 	on: {
-		push: branches: [_#defaultBranch]
+		push: branches: [repo.defaultBranch]
 		repository_dispatch: {}
 	}
 
@@ -33,18 +33,18 @@ workflows: update_tip: _base.#bashWorkflow & {
 	concurrency: "deploy"
 
 	jobs: push: {
-		"runs-on": _#linuxMachine
+		"runs-on": repo.linuxMachine
 
 		// Only run this workflow in the main repository, and if we are triggered
 		// by repository_dispatch (which will happen if the cue-lang/cue repo
 		// needs to tell us to rebuild tip) only do so if our payload is of
 		// the correct type.
-		if: "${{ github.repository == '\(core.#githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
+		if: "${{ github.repository == '\(repo.githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
 
 		steps: [
 			_gerrithub.#writeNetrcFile,
 			_base.#checkoutCode & {
-				with: ref: _#defaultBranch
+				with: ref: repo.defaultBranch
 			},
 			_#installNode,
 			_#installGo,
@@ -58,11 +58,10 @@ workflows: update_tip: _base.#bashWorkflow & {
 			_#installNetlifyCLI,
 			_#netlifyDeploy & {
 				#prod: true
-				#site: core.#netlifySites.tip
+				#site: repo.netlifySites.tip
 				name:  "Deploy tip"
 			},
 			_#cachePost,
 		]
 	}
-
 }
