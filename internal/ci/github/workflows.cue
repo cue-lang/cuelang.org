@@ -75,7 +75,7 @@ _#goreleaserVersion: "v1.13.1"
 // _gerrithub is an instance of ./gerrithub, parameterised by the properties of
 // this project
 _gerrithub: gerrithub & {
-	#repositoryURL:                      core.#githubRepositoryURL
+	#repositoryURL:                      core.githubRepositoryURL
 	#botGitHubUser:                      "cueckoo"
 	#botGitHubUserTokenSecretsKey:       "CUECKOO_GITHUB_PAT"
 	#botGitHubUserEmail:                 "cueckoo@gmail.com"
@@ -91,7 +91,7 @@ _gerrithub: gerrithub & {
 // Perhaps rename the import to something more obviously not intended to be
 // used, and then rename the field base?
 _base: base & {
-	#repositoryURL:                core.#githubRepositoryURL
+	#repositoryURL:                core.githubRepositoryURL
 	#defaultBranch:                _#defaultBranch
 	#botGitHubUser:                "cueckoo"
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
