@@ -71,14 +71,6 @@ _#windowsMachine: "windows-2022"
 
 _#goreleaserVersion: "v1.13.1"
 
-_#testStrategy: {
-	"fail-fast": false
-	matrix: {
-		"go-version": ["1.18.x", _#latestStableGo]
-		os: [_#linuxMachine, _#macosMachine, _#windowsMachine]
-	}
-}
-
 // _gerrithub is an instance of ./gerrithub, parameterised by the properties of
 // this project
 _gerrithub: gerrithub & {
