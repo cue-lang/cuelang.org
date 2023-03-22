@@ -44,8 +44,17 @@ workflows: close({
 
 	trybot:     _linuxWorkflow
 	update_tip: _linuxWorkflow
+	trybot_dispatch: #dummyDispatch: dummyDispatch
 })
 
 _linuxWorkflow: json.#Workflow & {
 	jobs: [string]: "runs-on": _repo.linuxMachine
+}
+
+dummyDispatch: _repo.#dispatch & {
+	type:         _repo.trybot.key
+	CL:           551434
+	patchset:     _
+	targetBranch: "master"
+	ref:          "refs/changes/\(mod(CL, 100))/\(CL)/\(patchset)"
 }
