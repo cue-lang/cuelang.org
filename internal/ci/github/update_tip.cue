@@ -23,7 +23,7 @@ workflows: update_tip: _base.#bashWorkflow & {
 
 	name: "Update tip"
 	on: {
-		push: branches: [_#defaultBranch]
+		push: branches: [core.defaultBranch]
 		repository_dispatch: {}
 	}
 
@@ -33,7 +33,7 @@ workflows: update_tip: _base.#bashWorkflow & {
 	concurrency: "deploy"
 
 	jobs: push: {
-		"runs-on": _#linuxMachine
+		"runs-on": core.linuxMachine
 
 		// Only run this workflow in the main repository, and if we are triggered
 		// by repository_dispatch (which will happen if the cue-lang/cue repo
@@ -44,7 +44,7 @@ workflows: update_tip: _base.#bashWorkflow & {
 		steps: [
 			_gerrithub.#writeNetrcFile,
 			_base.#checkoutCode & {
-				with: ref: _#defaultBranch
+				with: ref: core.defaultBranch
 			},
 			_#installNode,
 			_#installGo,
@@ -64,5 +64,4 @@ workflows: update_tip: _base.#bashWorkflow & {
 			_#cachePost,
 		]
 	}
-
 }
