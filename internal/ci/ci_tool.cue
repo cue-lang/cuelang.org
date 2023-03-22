@@ -22,7 +22,7 @@ import (
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/core"
 	"github.com/cue-lang/cuelang.org/internal/ci/github"
-	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
+	_netlify "github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
 // For the commands below, note we use simple yet hacky path resolution, rather
@@ -34,13 +34,12 @@ import (
 
 _goos: string @tag(os,var=os)
 
-// genworkflows regenerates the GitHub workflow Yaml definitions.
+// gen.workflows regenerates the GitHub workflow Yaml definitions.
 //
 // See internal/ci/gen.go for details on how this step fits into the sequence
 // of generating our CI workflow definitions, and updating various txtar tests
 // with files from that process.
-command: genworkflows: {
-
+command: gen: workflows: {
 	for w in github.workflows {
 		"\(w.file)": file.Create & {
 			_dir:     path.FromSlash("../../.github/workflows", path.Unix)
@@ -51,15 +50,15 @@ command: genworkflows: {
 	}
 }
 
-command: gennetlify: file.Create & {
+command: gen: netlify: file.Create & {
 	_dir:     path.FromSlash("../../", path.Unix)
 	filename: path.Join([_dir, "netlify.toml"], _goos)
-	let res = netlify.#toToml & {#input: netlify.config, _}
+	let res = _netlify.#toToml & {#input: _netlify.config, _}
 	let donotedit = base.#doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
 	contents: "# \(donotedit)\n\n\(res)\n"
 }
 
-command: gencodereviewcfg: file.Create & {
+command: gen: codereviewcfg: file.Create & {
 	_dir:     path.FromSlash("../../", path.Unix)
 	filename: path.Join([_dir, "codereview.cfg"], _goos)
 	let res = core.#toCodeReviewCfg & {#input: core.codeReview, _}
