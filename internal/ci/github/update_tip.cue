@@ -41,6 +41,7 @@ workflows: update_tip: _repo.bashWorkflow & {
 		// needs to tell us to rebuild tip) only do so if our payload is of
 		// the correct type.
 		if: "${{ github.repository == '\(_repo.githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
+
 		let _checkoutCode = _repo.checkoutCode & {
 			#actionsCheckout: {
 				with: ref: _repo.defaultBranch
@@ -49,6 +50,8 @@ workflows: update_tip: _repo.bashWorkflow & {
 		}
 
 		steps: [
+			_repo.writeNetrcFile,
+
 			for v in _checkoutCode {v},
 
 			_installNode,
