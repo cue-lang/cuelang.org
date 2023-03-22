@@ -38,14 +38,14 @@ workflows: trybot: _base.#bashWorkflow & {
 
 	on: {
 		push: {
-			branches: list.Concat([[_base.#testDefaultBranch], _#protectedBranchPatterns])
+			branches: list.Concat([[_base.#testDefaultBranch], core.protectedBranchPatterns])
 		}
 		pull_request: {}
 	}
 
 	jobs: {
 		test: {
-			"runs-on": _#linuxMachine
+			"runs-on": core.linuxMachine
 			steps: [
 				_base.#checkoutCode & {
 					// "pull_request" builds will by default use a merge commit,
@@ -147,6 +147,14 @@ workflows: trybot: _base.#bashWorkflow & {
 
 				_#cachePost,
 			]
+		}
+	}
+
+	_#testStrategy: {
+		"fail-fast": false
+		matrix: {
+			"go-version": ["1.18.x", core.latestStableGo]
+			os: [core.linuxMachine, core.macosMachine, core.windowsMachine]
 		}
 	}
 
