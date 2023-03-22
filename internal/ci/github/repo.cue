@@ -14,15 +14,15 @@
 
 package github
 
-dummyDispatch: repo.#dispatch & {
-	type:         repo.trybot.key
-	CL:           551434
-	patchset:     _
-	targetBranch: "master"
-	ref:          "refs/changes/\(mod(CL, 100))/\(CL)/\(patchset)"
-}
+// This file exists to provide a single point of importing
+// the repo package. The pattern of using base and repo
+// is replicated across a number of CUE repos, and as such
+// the import path of repo varies between them. This makes
+// spotting differences and applying changes between the
+// github/*.cue files noisy. Instead, import the repo package
+// in a single file, and that keeps the different in import
+// path down to a single file.
 
-// The trybot_dispatch workflow.
-workflows: trybot_dispatch: repo.bashWorkflow & repo.trybotDispatchWorkflow & {
-	#dummyDispatch: dummyDispatch
-}
+import _repo "github.com/cue-lang/cuelang.org/internal/ci/repo"
+
+repo: _repo
