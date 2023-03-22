@@ -43,16 +43,16 @@ workflows: update_tip: _base.#bashWorkflow & {
 
 		steps: [
 			_gerrithub.#writeNetrcFile,
-			_base.#checkoutCode & {
-				with: ref: core.defaultBranch
-			},
+
+			for v in _base.#checkoutCode {v},
+
 			_#installNode,
 			_#installGo,
 			_#installHugo,
 
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
-			for v in _#cachePre {v},
+			for v in _goCaches.pre {v},
 
 			_#tipDist,
 			_#installNetlifyCLI,
@@ -61,7 +61,8 @@ workflows: update_tip: _base.#bashWorkflow & {
 				#site: core.netlifySites.tip
 				name:  "Deploy tip"
 			},
-			_#cachePost,
+
+			for v in _goCaches.post {v},
 		]
 	}
 }
