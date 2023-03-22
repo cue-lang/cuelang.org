@@ -115,10 +115,10 @@ jobs:
         run: go mod tidy
       - name: Dist
         run: ./build.bash
+      - name: Check that git is clean at the end of the job
+        run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: npm run lint
         working-directory: hugo
-      - name: Verify commit is clean
-        run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - id: alias
         if: ${{github.repository == 'cue-lang/cuelang.org-trybot' && startsWith(github.head_ref, 'trybot/')}}
         run: |-
