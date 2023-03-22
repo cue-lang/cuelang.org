@@ -36,6 +36,7 @@ workflows: update_tip: _repo.bashWorkflow & {
 		// needs to tell us to rebuild tip) only do so if our payload is of
 		// the correct type.
 		if: "${{ github.repository == '\(_repo.githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
+
 		let _checkoutCode = _repo.checkoutCode & {
 			#actionsCheckout: {
 				with: ref: _repo.defaultBranch
@@ -46,14 +47,17 @@ workflows: update_tip: _repo.bashWorkflow & {
 		let _goCaches = _repo.setupGoActionsCaches & {#cleanTestCache: false, _}
 
 		steps: [
+			_repo.writeNetrcFile,
+
 			for v in _checkoutCode {v},
 
 			_installNode,
 			_installGo,
 			_installHugo,
 
-			// cachePre must come after installing Node and Go, because the cache locations
-			// are established by running each tool.
+			// our cache loading must come after installing Node and Go,
+			// because the cache locations are established by running each
+			// tool.
 			for v in _goCaches {v},
 
 			_tipDist,

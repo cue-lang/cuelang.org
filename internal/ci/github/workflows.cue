@@ -41,7 +41,17 @@ workflows: close({
 	[string]: json.#Workflow
 
 	(_repo.trybot.key): _
-	trybot_dispatch:    _repo.trybotDispatchWorkflow
+	trybot_dispatch:    _repo.trybotDispatchWorkflow & {
+		#dummyDispatch: dummyDispatch
+	}
 	update_tip:         _
 	push_tip_to_trybot: _repo.pushTipToTrybotWorkflow
 })
+
+dummyDispatch: _repo.#dispatch & {
+	type:         _repo.trybot.key
+	CL:           551434
+	patchset:     _
+	targetBranch: "master"
+	ref:          "refs/changes/\(mod(CL, 100))/\(CL)/\(patchset)"
+}
