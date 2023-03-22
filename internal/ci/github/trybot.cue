@@ -122,7 +122,7 @@ workflows: trybot: _base.#bashWorkflow & {
 				//     trybot/I01e0e139902da54151659fe595f23dd519f54637/2e79979116f96a26c9240e0e9c55b31d4311cf93/547774/11
 				//
 				json.#step & {
-					if: "${{github.repository == '\(core.#githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
+					if: "${{github.repository == '\(core.githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
 					id: "alias"
 
 					// Use github.head_ref per
@@ -138,8 +138,8 @@ workflows: trybot: _base.#bashWorkflow & {
 				// Only run a deploy of tip if we are running as part of the trybot repo,
 				// with a branch name that matches the trybot pattern
 				_#netlifyDeploy & {
-					if:     "${{github.repository == '\(core.#githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
-					#site:  core.#netlifySites.cls
+					if:     "${{github.repository == '\(core.githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
+					#site:  core.netlifySites.cls
 					#alias: "${{ steps.alias.outputs.alias }}"
 					name:   "Deploy preview of CL"
 				},
@@ -173,19 +173,19 @@ _#installNode: json.#step & {
 	name: "Install Node"
 	uses: "actions/setup-node@v3"
 	with: {
-		"node-version": core.#nodeVersion
+		"node-version": core.nodeVersion
 	}
 }
 
 _#installGo: _base.#installGo & {
-	with: "go-version": core.#goVersion
+	with: "go-version": core.goVersion
 }
 
 _#installHugo: json.#step & {
 	name: "Install Hugo"
 	uses: "peaceiris/actions-hugo@v2"
 	with: {
-		"hugo-version": core.#hugoVersion
+		"hugo-version": core.hugoVersion
 		extended:       true
 	}
 }
@@ -202,7 +202,7 @@ _#tipDist: _#dist & {
 
 _#installNetlifyCLI: json.#step & {
 	name: "Install Netlify CLI"
-	run:  "npm install -g netlify-cli@\(core.#netlifyCLIVersion)"
+	run:  "npm install -g netlify-cli@\(core.netlifyCLIVersion)"
 }
 
 // _#netlifyDeploy is used to push CLs for preview but also to deploy tip
