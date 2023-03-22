@@ -18,7 +18,7 @@ package github
 import (
 	"strings"
 
-	"github.com/cue-lang/cuelang.org/internal/ci/core"
+	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/gerrithub"
 
@@ -52,30 +52,10 @@ workflows: close({
 	push_tip_to_trybot: _
 })
 
-_#defaultBranch:     "master"
-_#releaseTagPattern: "v*"
-
-_#activeBranches: [_#defaultBranch, "alpha"]
-
-// Use the latest Go version for extra checks,
-// such as running tests with the data race detector.
-_#latestStableGo: "1.20.x"
-
-_#linuxMachine:   "ubuntu-20.04"
-_#macosMachine:   "macos-11"
-_#windowsMachine: "windows-2022"
-
-// #_isLatestLinux evaluates to true if the job is running on Linux with the
-// latest version of Go. This expression is often used to run certain steps
-// just once per CI workflow, to avoid duplicated work.
-#_isLatestLinux: "matrix.go-version == '\(_#latestStableGo)' && matrix.os == '\(_#linuxMachine)'"
-
-_#goreleaserVersion: "v1.13.1"
-
 // _gerrithub is an instance of ./gerrithub, parameterised by the properties of
 // this project
 _gerrithub: gerrithub & {
-	#repositoryURL:                      core.#githubRepositoryURL
+	#repositoryURL:                      repo.githubRepositoryURL
 	#botGitHubUser:                      "cueckoo"
 	#botGitHubUserTokenSecretsKey:       "CUECKOO_GITHUB_PAT"
 	#botGitHubUserEmail:                 "cueckoo@gmail.com"
@@ -91,8 +71,8 @@ _gerrithub: gerrithub & {
 // Perhaps rename the import to something more obviously not intended to be
 // used, and then rename the field base?
 _base: base & {
-	#repositoryURL:                core.#githubRepositoryURL
-	#defaultBranch:                _#defaultBranch
+	#repositoryURL:                repo.githubRepositoryURL
+	#defaultBranch:                repo.defaultBranch
 	#botGitHubUser:                "cueckoo"
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
 }
