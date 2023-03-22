@@ -15,6 +15,7 @@
 package github
 
 import (
+	"list"
 	"strings"
 	"strconv"
 
@@ -37,7 +38,7 @@ workflows: trybot: _base.#bashWorkflow & {
 
 	on: {
 		push: {
-			branches: [ for v in _#activeBranches {v}, _base.#testDefaultBranch]
+			branches: list.Concat([[_base.#testDefaultBranch], _#protectedBranchPatterns])
 		}
 		pull_request: {}
 	}
