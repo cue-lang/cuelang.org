@@ -76,7 +76,7 @@ jobs:
         working-directory: ./play
       - name: Dist
         run: ./build.bash
-      - name: Verify commit is clean
+      - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - id: alias
         if: ${{github.repository == 'cue-lang/cuelang.org-trybot' && startsWith(github.head_ref, 'trybot/')}}

@@ -105,13 +105,7 @@ trybot: _base.#bashWorkflow & {
 				},
 
 				_#dist,
-
-				json.#step & {
-					name: "Verify commit is clean"
-					run: """
-						test -z "$(git status --porcelain)" || (git status; git diff; false)
-						"""
-				},
+				_base.#checkGitClean,
 
 				// GitHub offers very limited expressions at runtime of a workflow.
 				// Instead we have to resort to dropping down to shell and then
