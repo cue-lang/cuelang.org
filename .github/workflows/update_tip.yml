@@ -9,7 +9,7 @@ name: Update tip
 concurrency: deploy
 jobs:
   push:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
@@ -26,37 +26,48 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Reset git directory modification times
+        run: touch -t 202211302355 $(find * -type d)
+      - name: Restore git file modification times
+        uses: chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe
       - name: Install Node
         uses: actions/setup-node@v3
         with:
           node-version: 18.12.1
       - name: Install Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v4
         with:
+          cache: false
           go-version: 1.20.2
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 0.108.0
           extended: true
-      - id: npm-cache-dir
-        name: Get npm cache directory
-        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
       - id: go-mod-cache-dir
         name: Get go mod cache directory
         run: echo "dir=$(go env GOMODCACHE)" >> ${GITHUB_OUTPUT}
       - id: go-cache-dir
         name: Get go build/test cache directory
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
-      - uses: actions/cache@v3
+      - if: ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha'))
+        uses: actions/cache@v3
         with:
           path: |-
-            ${{ steps.npm-cache-dir.outputs.dir }}
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}
+          key: ${{ runner.os }}-${{ matrix.go-version }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-${{ matrix.go-version }}
+      - if: '! ((github.ref == ''refs/heads/master'' || github.ref == ''refs/heads/alpha''))'
+        uses: actions/cache/restore@v3
+        with:
+          path: |-
+            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
+            ${{ steps.go-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-${{ matrix.go-version }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-${{ matrix.go-version }}
       - name: Tip dist
         run: ./build.bash
         env:
@@ -67,4 +78,3 @@ jobs:
         run: netlify deploy  -f functions -d _public -m "Deploy tip" -s cue-tip --debug --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_TIP}}
-      - run: find '${{ steps.npm-cache-dir.outputs.dir }}' '${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download' '${{ steps.go-cache-dir.outputs.dir }}' -type f -amin +7200 -delete -print
