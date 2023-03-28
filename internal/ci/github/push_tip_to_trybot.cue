@@ -15,8 +15,6 @@
 package github
 
 import (
-	"github.com/cue-lang/cuelang.org/internal/ci/repo"
-
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 )
 
@@ -27,14 +25,14 @@ workflows: push_tip_to_trybot: _base.#bashWorkflow & {
 
 	name: "Push tip to trybot"
 	on: {
-		push: branches: repo.protectedBranchPatterns
+		push: branches: _repo.protectedBranchPatterns
 	}
 
 	concurrency: "push_tip_to_trybot"
 
 	jobs: push: {
-		"runs-on": repo.linuxMachine
-		if:        "${{github.repository == '\(repo.githubRepositoryPath)'}}"
+		"runs-on": _repo.linuxMachine
+		if:        "${{github.repository == '\(_repo.githubRepositoryPath)'}}"
 		steps: [
 			_gerrithub.#writeNetrcFile,
 			json.#step & {
