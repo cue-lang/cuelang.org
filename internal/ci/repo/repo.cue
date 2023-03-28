@@ -20,14 +20,14 @@ githubRepositoryPath: _#URLPath & {#url: githubRepositoryURL, _}
 
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.
-latestStableGo: "1.19.x"
+latestStableGo: "1.20.x"
 
 goreleaserVersion: "v1.13.1"
 
 // Use a specific latest version for release builds.
 // Note that we don't want ".x" for the sake of reproducibility,
 // so we instead pin a specific Go release.
-goVersion: "1.19.4"
+goVersion: "1.20.2"
 
 // Use a specific version of NodeJS for deploy purposes. This version
 // is consistent between netlify and GitHub Actions usage.
