@@ -18,7 +18,6 @@ package github
 import (
 	"strings"
 
-	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/gerrithub"
 
@@ -55,7 +54,7 @@ workflows: close({
 // _gerrithub is an instance of ./gerrithub, parameterised by the properties of
 // this project
 _gerrithub: gerrithub & {
-	#repositoryURL:                      repo.githubRepositoryURL
+	#repositoryURL:                      _repo.githubRepositoryURL
 	#botGitHubUser:                      "cueckoo"
 	#botGitHubUserTokenSecretsKey:       "CUECKOO_GITHUB_PAT"
 	#botGitHubUserEmail:                 "cueckoo@gmail.com"
@@ -71,8 +70,8 @@ _gerrithub: gerrithub & {
 // Perhaps rename the import to something more obviously not intended to be
 // used, and then rename the field base?
 _base: base & {
-	#repositoryURL:                repo.githubRepositoryURL
-	#defaultBranch:                repo.defaultBranch
+	#repositoryURL:                _repo.githubRepositoryURL
+	#defaultBranch:                _repo.defaultBranch
 	#botGitHubUser:                "cueckoo"
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
 }
