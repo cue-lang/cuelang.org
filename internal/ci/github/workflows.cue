@@ -58,7 +58,7 @@ _#activeBranches: [_#defaultBranch, "alpha"]
 
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.
-_#latestStableGo: "1.19.x"
+_#latestStableGo: "1.20.x"
 
 _#linuxMachine:   "ubuntu-22.04"
 _#macosMachine:   "macos-11"
