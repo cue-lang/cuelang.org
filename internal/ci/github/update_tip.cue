@@ -42,22 +42,22 @@ workflows: update_tip: _base.#bashWorkflow & {
 			_base.#checkoutCode & {
 				with: ref: _repo.defaultBranch
 			},
-			_#installNode,
-			_#installGo,
-			_#installHugo,
+			_installNode,
+			_installGo,
+			_installHugo,
 
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
-			for v in _#cachePre {v},
+			for v in _cachePre {v},
 
-			_#tipDist,
-			_#installNetlifyCLI,
-			_#netlifyDeploy & {
+			_tipDist,
+			_installNetlifyCLI,
+			_netlifyDeploy & {
 				#prod: true
 				#site: _repo.netlifySites.tip
 				name:  "Deploy tip"
 			},
-			_#cachePost,
+			_cachePost,
 		]
 	}
 }
