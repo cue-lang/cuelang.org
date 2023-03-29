@@ -54,16 +54,6 @@ workflows: trybot: _repo.bashWorkflow & {
 				// are established by running each tool.
 				for v in _goCaches {v},
 
-				// All tests on protected branches should skip the test cache.
-				// The canonical way to do this is with -count=1. However, we
-				// want the resulting test cache to be valid and current so that
-				// subsequent CLs in the trybot repo can leverage the updated
-				// cache. Therefore, we instead perform a clean of the testcache.
-				json.#step & {
-					if:  "github.repository == '\(_repo.githubRepositoryPath)' && (\(_repo.isProtectedBranch) || github.ref == 'refs/heads/\(_repo.testDefaultBranch)')"
-					run: "go clean -testcache"
-				},
-
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
 					// side effect-free. Using GOPROXY=direct ensures we don't accidentally
