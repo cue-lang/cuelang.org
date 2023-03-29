@@ -19,7 +19,7 @@ workflows: update_tip: _base.#bashWorkflow & {
 
 	name: "Update tip"
 	on: {
-		push: branches: [_#defaultBranch]
+		push: branches: [_defaultBranch]
 		repository_dispatch: {}
 	}
 
@@ -29,7 +29,7 @@ workflows: update_tip: _base.#bashWorkflow & {
 	concurrency: "deploy"
 
 	jobs: push: {
-		"runs-on": _#linuxMachine
+		"runs-on": _linuxMachine
 
 		// Only run this workflow in the main repository, and if we are triggered
 		// by repository_dispatch (which will happen if the cue-lang/cue repo
@@ -40,24 +40,24 @@ workflows: update_tip: _base.#bashWorkflow & {
 		steps: [
 			_gerrithub.#writeNetrcFile,
 			_base.#checkoutCode & {
-				with: ref: _#defaultBranch
+				with: ref: _defaultBranch
 			},
-			_#installNode,
-			_#installGo,
-			_#installHugo,
+			_installNode,
+			_installGo,
+			_installHugo,
 
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
-			for v in _#cachePre {v},
+			for v in _cachePre {v},
 
-			_#tipDist,
-			_#installNetlifyCLI,
-			_#netlifyDeploy & {
+			_tipDist,
+			_installNetlifyCLI,
+			_netlifyDeploy & {
 				#prod: true
 				#site: _repo.netlifySites.tip
 				name:  "Deploy tip"
 			},
-			_#cachePost,
+			_cachePost,
 		]
 	}
 

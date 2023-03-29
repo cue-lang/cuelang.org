@@ -25,13 +25,13 @@ workflows: push_tip_to_trybot: _base.#bashWorkflow & {
 
 	name: "Push tip to trybot"
 	on: {
-		push: branches: _#protectedBranchPatterns
+		push: branches: _protectedBranchPatterns
 	}
 
 	concurrency: "push_tip_to_trybot"
 
 	jobs: push: {
-		"runs-on": _#linuxMachine
+		"runs-on": _linuxMachine
 		if:        "${{github.repository == '\(_repo.githubRepositoryPath)'}}"
 		steps: [
 			_gerrithub.#writeNetrcFile,
