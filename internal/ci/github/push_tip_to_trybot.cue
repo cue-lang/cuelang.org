@@ -17,8 +17,6 @@ package github
 import (
 	"strings"
 
-	"github.com/cue-lang/cuelang.org/internal/ci/core"
-
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 )
 
@@ -34,7 +32,7 @@ workflows: push_tip_to_trybot: _base.#bashWorkflow & {
 
 	jobs: push: {
 		"runs-on": _#linuxMachine
-		if:        "${{github.repository == '\(core.#githubRepositoryPath)'}}"
+		if:        "${{github.repository == '\(_repo.githubRepositoryPath)'}}"
 		steps: [
 			_gerrithub.#writeNetrcFile,
 			json.#step & {

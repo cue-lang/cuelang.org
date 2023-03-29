@@ -20,7 +20,7 @@ import (
 	"tool/file"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
-	"github.com/cue-lang/cuelang.org/internal/ci/core"
+	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 	"github.com/cue-lang/cuelang.org/internal/ci/github"
 	_netlify "github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
@@ -77,7 +77,7 @@ command: gen: netlify: file.Create & {
 command: gen: codereviewcfg: file.Create & {
 	_dir:     path.FromSlash("../../", path.Unix)
 	filename: path.Join([_dir, "codereview.cfg"], _goos)
-	let res = core.#toCodeReviewCfg & {#input: core.codeReview, _}
+	let res = repo.#toCodeReviewCfg & {#input: repo.codeReview, _}
 	let donotedit = base.#doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
 	contents: "# \(donotedit)\n\n\(res)\n"
 }
