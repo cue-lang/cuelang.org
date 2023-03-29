@@ -21,24 +21,17 @@ import (
 
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 
-	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
 // The trybot workflow.
-workflows: trybot: _base.#bashWorkflow & {
-	// Note: the name of this workflow is used by gerritstatusupdater as an
-	// identifier in the status updates that are posted as reviews for this
-	// workflows, but also as the result label key, e.g. "TryBot-Result" would
-	// be the result label key for the "TryBot" workflow. Note the result label
-	// key is therefore tied to the configuration of this repository.
-	//
-	// This name also shows up in the CI badge in the top-level README.
-	name: "TryBot"
+workflows: trybot: _repo.bashWorkflow & {
+	name: _repo.trybot.name
 
 	on: {
 		push: {
-			branches: list.Concat([[_base.#testDefaultBranch], _repo.protectedBranchPatterns])
+			branches: list.Concat([["trybot/*/*", _repo.testDefaultBranch], _repo.protectedBranchPatterns]) // do not run PR branches
+			"tags-ignore": [_repo.releaseTagPattern]
 		}
 		pull_request: {}
 	}
@@ -46,17 +39,12 @@ workflows: trybot: _base.#bashWorkflow & {
 	jobs: {
 		test: {
 			"runs-on": _repo.linuxMachine
+
 			steps: [
-				_base.#checkoutCode & {
-					// "pull_request" builds will by default use a merge commit,
-					// testing the PR's HEAD merged on top of the master branch.
-					// For consistency with Gerrit, avoid that merge commit entirely.
-					// This doesn't affect "push" builds, which never used merge commits.
-					with: ref: "${{ github.event.pull_request.head.sha }}"
-				},
+				for v in _repo.checkoutCode {v},
 
 				// Early git checks
-				base.#earlyChecks,
+				_repo.earlyChecks,
 
 				_installNode,
 				_installGo,
@@ -64,7 +52,17 @@ workflows: trybot: _base.#bashWorkflow & {
 
 				// cachePre must come after installing Node and Go, because the cache locations
 				// are established by running each tool.
-				for v in _cachePre {v},
+				for v in _goCaches {v},
+
+				// All tests on protected branches should skip the test cache.
+				// The canonical way to do this is with -count=1. However, we
+				// want the resulting test cache to be valid and current so that
+				// subsequent CLs in the trybot repo can leverage the updated
+				// cache. Therefore, we instead perform a clean of the testcache.
+				json.#step & {
+					if:  "github.repository == '\(_repo.githubRepositoryPath)' && (\(_repo.isProtectedBranch) || github.ref == 'refs/heads/\(_repo.testDefaultBranch)')"
+					run: "go clean -testcache"
+				},
 
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
@@ -110,7 +108,7 @@ workflows: trybot: _base.#bashWorkflow & {
 				},
 
 				_dist,
-				_base.#checkGitClean,
+				_repo.checkGitClean,
 
 				// GitHub offers very limited expressions at runtime of a workflow.
 				// Instead we have to resort to dropping down to shell and then
@@ -142,8 +140,6 @@ workflows: trybot: _base.#bashWorkflow & {
 					#alias: "${{ steps.alias.outputs.alias }}"
 					name:   "Deploy preview of CL"
 				},
-
-				_cachePost,
 			]
 		}
 	}
@@ -176,7 +172,7 @@ _installNode: json.#step & {
 	}
 }
 
-_installGo: _base.#installGo & {
+_installGo: _repo.installGo & {
 	with: "go-version": _repo.goVersion
 }
 
