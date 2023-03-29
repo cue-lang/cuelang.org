@@ -21,24 +21,26 @@ import (
 
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 
-	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
 // The trybot workflow.
-workflows: trybot: _base.#bashWorkflow & {
-	// Note: the name of this workflow is used by gerritstatusupdater as an
-	// identifier in the status updates that are posted as reviews for this
-	// workflows, but also as the result label key, e.g. "TryBot-Result" would
-	// be the result label key for the "TryBot" workflow. Note the result label
-	// key is therefore tied to the configuration of this repository.
-	//
-	// This name also shows up in the CI badge in the top-level README.
-	name: "TryBot"
+workflows: trybot: _repo.bashWorkflow & {
+	name: _repo.trybot.name
+
+	// Declare an instance of _#isProtectedBranch for use in this workflow
+	let _isProtectedBranch = _repo.isProtectedBranch & {
+		#trailers: [_repo.trybot.trailer]
+		_
+	}
 
 	on: {
 		push: {
-			branches: list.Concat([[_base.#testDefaultBranch], _repo.protectedBranchPatterns])
+			branches: list.Concat([
+					// [_repo.testDefaultBranch],
+					_repo.protectedBranchPatterns,
+			])        // do not run PR branches
+			"tags-ignore": [_repo.releaseTagPattern]
 		}
 		pull_request: {}
 	}
@@ -46,17 +48,15 @@ workflows: trybot: _base.#bashWorkflow & {
 	jobs: {
 		test: {
 			"runs-on": _repo.linuxMachine
-			steps: [
-				_base.#checkoutCode & {
-					// "pull_request" builds will by default use a merge commit,
-					// testing the PR's HEAD merged on top of the master branch.
-					// For consistency with Gerrit, avoid that merge commit entirely.
-					// This doesn't affect "push" builds, which never used merge commits.
-					with: ref: "${{ github.event.pull_request.head.sha }}"
-				},
 
-				// Early git checks
-				base.#earlyChecks,
+			let goCaches = _repo.setupGoActionsCaches & {#protectedBranchExpr: _isProtectedBranch, _}
+
+			let checkoutCode = _repo.checkoutCode & {#trailers: [_repo.trybot.trailer], _}
+
+			steps: [
+				for v in checkoutCode {v},
+
+				_repo.earlyChecks,
 
 				_installNode,
 				_installGo,
@@ -64,8 +64,17 @@ workflows: trybot: _base.#bashWorkflow & {
 
 				// cachePre must come after installing Node and Go, because the cache locations
 				// are established by running each tool.
-				for v in _cachePre {v},
+				for v in goCaches {v},
 
+				// All tests on protected branches should skip the test cache.
+				// The canonical way to do this is with -count=1. However, we
+				// want the resulting test cache to be valid and current so that
+				// subsequent CLs in the trybot repo can leverage the updated
+				// cache. Therefore, we instead perform a clean of the testcache.
+				json.#step & {
+					if:  "github.repository == '\(_repo.githubRepositoryPath)' && (\(_repo.isProtectedBranch) || github.ref == 'refs/heads/\(_repo.testDefaultBranch)')"
+					run: "go clean -testcache"
+				},
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
 					// side effect-free. Using GOPROXY=direct ensures we don't accidentally
@@ -110,40 +119,16 @@ workflows: trybot: _base.#bashWorkflow & {
 				},
 
 				_dist,
-				_base.#checkGitClean,
-
-				// GitHub offers very limited expressions at runtime of a workflow.
-				// Instead we have to resort to dropping down to shell and then
-				// setting an output variable. We do so to construct an alias name
-				// of the form "cl_${CL}_${patchset}" that will be used when deploying
-				// a preview of a CL. The format of the ref we need to mutate here is:
-				//
-				//     trybot/I01e0e139902da54151659fe595f23dd519f54637/2e79979116f96a26c9240e0e9c55b31d4311cf93/547774/11
-				//
-				json.#step & {
-					if: "${{github.repository == '\(_repo.githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
-					id: "alias"
-
-					// Use github.head_ref per
-					// https://docs.github.com/en/actions/learn-github-actions/contexts#github-context.
-					// Because we now trigger workflow runs using a PR, which means
-					// we need to consult head_ref in order to get the branch name
-					run: #"""
-						alias="$(echo '${{github.head_ref}}' | sed -E 's/^trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/')"
-						echo "alias=$alias" >> $GITHUB_OUTPUT
-						"""#
-				},
+				_repo.checkGitClean,
 
 				// Only run a deploy of tip if we are running as part of the trybot repo,
 				// with a branch name that matches the trybot pattern
 				_netlifyDeploy & {
-					if:     "${{github.repository == '\(_repo.githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
+					if:     "${{github.repository == '\(_repo.trybotRepositoryPath)'"
 					#site:  _repo.netlifySites.cls
-					#alias: "${{ steps.alias.outputs.alias }}"
+					#alias: "${{  }}"
 					name:   "Deploy preview of CL"
 				},
-
-				_cachePost,
 			]
 		}
 	}
@@ -176,7 +161,7 @@ _installNode: json.#step & {
 	}
 }
 
-_installGo: _base.#installGo & {
+_installGo: _repo.installGo & {
 	with: "go-version": _repo.goVersion
 }
 

@@ -15,7 +15,7 @@
 package github
 
 // The update_tip workflow. Keeps the tip branch in "sync" with master.
-workflows: update_tip: _base.#bashWorkflow & {
+workflows: update_tip: _repo.bashWorkflow & {
 
 	name: "Update tip"
 	on: {
@@ -38,17 +38,18 @@ workflows: update_tip: _base.#bashWorkflow & {
 		if: "${{ github.repository == '\(_repo.githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
 
 		steps: [
-			_gerrithub.#writeNetrcFile,
-			_base.#checkoutCode & {
-				with: ref: _repo.defaultBranch
-			},
+			_repo.writeNetrcFile,
+
+			for v in _repo.checkoutCode {v},
+
 			_installNode,
 			_installGo,
 			_installHugo,
 
-			// cachePre must come after installing Node and Go, because the cache locations
-			// are established by running each tool.
-			for v in _cachePre {v},
+			// our cache loading must come after installing Node and Go,
+			// because the cache locations are established by running each
+			// tool.
+			for v in _goCaches {v},
 
 			_tipDist,
 			_installNetlifyCLI,
@@ -57,7 +58,6 @@ workflows: update_tip: _base.#bashWorkflow & {
 				#site: _repo.netlifySites.tip
 				name:  "Deploy tip"
 			},
-			_cachePost,
 		]
 	}
 }
