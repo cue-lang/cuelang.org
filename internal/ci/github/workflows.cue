@@ -76,9 +76,9 @@ _base: base & {
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
 }
 
-_#cacheDirs: [ "${{ steps.npm-cache-dir.outputs.dir }}", "${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download", "${{ steps.go-cache-dir.outputs.dir }}"]
+_cacheDirs: [ "${{ steps.npm-cache-dir.outputs.dir }}", "${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download", "${{ steps.go-cache-dir.outputs.dir }}"]
 
-_#cachePre: [
+_cachePre: [
 	json.#step & {
 		name: "Get npm cache directory"
 		id:   "npm-cache-dir"
@@ -97,7 +97,7 @@ _#cachePre: [
 	json.#step & {
 		uses: "actions/cache@v3"
 		with: {
-			path: strings.Join(_#cacheDirs, "\n")
+			path: strings.Join(_cacheDirs, "\n")
 
 			// GitHub actions caches are immutable. Therefore, use a key which is
 			// unique, but allow the restore to fallback to the most recent cache.
@@ -109,7 +109,7 @@ _#cachePre: [
 	},
 ]
 
-_#cachePost: json.#step & {
-	let qCacheDirs = [ for v in _#cacheDirs {"'\(v)'"}]
+_cachePost: json.#step & {
+	let qCacheDirs = [ for v in _cacheDirs {"'\(v)'"}]
 	run: "find \(strings.Join(qCacheDirs, " ")) -type f -amin +7200 -delete -print"
 }
