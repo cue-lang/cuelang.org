@@ -9,7 +9,7 @@ name: Update tip
 concurrency: deploy
 jobs:
   push:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
