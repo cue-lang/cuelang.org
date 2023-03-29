@@ -16,11 +16,6 @@
 package github
 
 import (
-	"strings"
-
-	"github.com/cue-lang/cuelang.org/internal/ci/base"
-	"github.com/cue-lang/cuelang.org/internal/ci/gerrithub"
-
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 )
 
@@ -45,91 +40,10 @@ import (
 workflows: close({
 	[string]: json.#Workflow
 
-	trybot:             _
-	trybot_dispatch:    _
+	(_repo.trybot.key): _
+	trybot_dispatch:    _repo.trybotDispatchWorkflow
 	update_tip:         _
-	push_tip_to_trybot: _
+	push_tip_to_trybot: _repo.pushTipToTrybotWorkflow
 })
 
-_defaultBranch:     "master"
-_releaseTagPattern: "v*"
-
-_protectedBranchPatterns: [_defaultBranch, "alpha"]
-
-// Use the latest Go version for extra checks,
-// such as running tests with the data race detector.
-_latestStableGo: "1.20.x"
-
-_linuxMachine:   "ubuntu-20.04"
-_macosMachine:   "macos-11"
-_windowsMachine: "windows-2022"
-
-// #_isLatestLinux evaluates to true if the job is running on Linux with the
-// latest version of Go. This expression is often used to run certain steps
-// just once per CI workflow, to avoid duplicated work.
-#_isLatestLinux: "matrix.go-version == '\(_latestStableGo)' && matrix.os == '\(_linuxMachine)'"
-
-_goreleaserVersion: "v1.13.1"
-
-// _gerrithub is an instance of ./gerrithub, parameterised by the properties of
-// this project
-_gerrithub: gerrithub & {
-	#repositoryURL:                      _repo.githubRepositoryURL
-	#botGitHubUser:                      "cueckoo"
-	#botGitHubUserTokenSecretsKey:       "CUECKOO_GITHUB_PAT"
-	#botGitHubUserEmail:                 "cueckoo@gmail.com"
-	#botGerritHubUser:                   #botGitHubUser
-	#botGerritHubUserPasswordSecretsKey: "CUECKOO_GERRITHUB_PASSWORD"
-	#botGerritHubUserEmail:              #botGitHubUserEmail
-}
-
-// _base is an instance of ./base, parameterised by the properties of this
-// project
-//
-// TODO: revisit the naming strategy here. _base and base are very similar.
-// Perhaps rename the import to something more obviously not intended to be
-// used, and then rename the field base?
-_base: base & {
-	#repositoryURL:                _repo.githubRepositoryURL
-	#defaultBranch:                _defaultBranch
-	#botGitHubUser:                "cueckoo"
-	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
-}
-
-_cacheDirs: [ "${{ steps.npm-cache-dir.outputs.dir }}", "${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download", "${{ steps.go-cache-dir.outputs.dir }}"]
-
-_cachePre: [
-	json.#step & {
-		name: "Get npm cache directory"
-		id:   "npm-cache-dir"
-		run:  #"echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}"#
-	},
-	json.#step & {
-		name: "Get go mod cache directory"
-		id:   "go-mod-cache-dir"
-		run:  #"echo "dir=$(go env GOMODCACHE)" >> ${GITHUB_OUTPUT}"#
-	},
-	json.#step & {
-		name: "Get go build/test cache directory"
-		id:   "go-cache-dir"
-		run:  #"echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}"#
-	},
-	json.#step & {
-		uses: "actions/cache@v3"
-		with: {
-			path: strings.Join(_cacheDirs, "\n")
-
-			// GitHub actions caches are immutable. Therefore, use a key which is
-			// unique, but allow the restore to fallback to the most recent cache.
-			// The result is then saved under the new key which will benefit the
-			// next build
-			key:            "${{ runner.os }}-${{ github.run_id }}"
-			"restore-keys": "${{ runner.os }}"
-		}
-	},
-]
-
-_cachePost: json.#step & {
-	let qCacheDirs = [ for v in _cacheDirs {"'\(v)'"}]
-	run: "find \(strings.Join(qCacheDirs, " ")) -type f -amin +7200 -delete -print"
-}
+_goCaches: _repo.setupGoActionsCaches & {#protectedBranchExpr: _repo.isProtectedBranch, _}
