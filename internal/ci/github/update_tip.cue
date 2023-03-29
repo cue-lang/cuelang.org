@@ -43,6 +43,8 @@ workflows: update_tip: _repo.bashWorkflow & {
 			_
 		}
 
+		let _goCaches = _repo.setupGoActionsCaches & {#cleanTestCache: false, _}
+
 		steps: [
 			for v in _checkoutCode {v},
 

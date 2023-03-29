@@ -45,5 +45,3 @@ workflows: close({
 	update_tip:         _
 	push_tip_to_trybot: _repo.pushTipToTrybotWorkflow
 })
-
-_goCaches: _repo.setupGoActionsCaches & {#protectedBranchExpr: _repo.isProtectedBranch, _}
