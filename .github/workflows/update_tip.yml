@@ -44,22 +44,13 @@ jobs:
       - id: go-cache-dir
         name: Get go build/test cache directory
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
-      - if: (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha')
-        uses: actions/cache@v3
+      - uses: actions/cache/restore@v3
         with:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-${{ matrix.go-version }}-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-${{ matrix.go-version }}
-      - if: '! (github.ref == ''refs/heads/master'' || github.ref == ''refs/heads/alpha'')'
-        uses: actions/cache/restore@v3
-        with:
-          path: |-
-            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
-            ${{ steps.go-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-${{ matrix.go-version }}-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-${{ matrix.go-version }}
+          key: Linux-1.20.2-${{ github.run_id }}
+          restore-keys: Linux-1.20.2
       - name: Tip dist
         run: ./build.bash
         env:
