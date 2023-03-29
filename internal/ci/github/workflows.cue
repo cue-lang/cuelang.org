@@ -60,7 +60,7 @@ _#activeBranches: [_#defaultBranch, "alpha"]
 // such as running tests with the data race detector.
 _#latestStableGo: "1.19.x"
 
-_#linuxMachine:   "ubuntu-20.04"
+_#linuxMachine:   "ubuntu-22.04"
 _#macosMachine:   "macos-11"
 _#windowsMachine: "windows-2022"
 
