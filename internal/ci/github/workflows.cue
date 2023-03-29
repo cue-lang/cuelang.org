@@ -51,25 +51,25 @@ workflows: close({
 	push_tip_to_trybot: _
 })
 
-_#defaultBranch:     "master"
-_#releaseTagPattern: "v*"
+_defaultBranch:     "master"
+_releaseTagPattern: "v*"
 
-_#protectedBranchPatterns: [_#defaultBranch, "alpha"]
+_protectedBranchPatterns: [_defaultBranch, "alpha"]
 
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.
-_#latestStableGo: "1.20.x"
+_latestStableGo: "1.20.x"
 
-_#linuxMachine:   "ubuntu-20.04"
-_#macosMachine:   "macos-11"
-_#windowsMachine: "windows-2022"
+_linuxMachine:   "ubuntu-20.04"
+_macosMachine:   "macos-11"
+_windowsMachine: "windows-2022"
 
 // #_isLatestLinux evaluates to true if the job is running on Linux with the
 // latest version of Go. This expression is often used to run certain steps
 // just once per CI workflow, to avoid duplicated work.
-#_isLatestLinux: "matrix.go-version == '\(_#latestStableGo)' && matrix.os == '\(_#linuxMachine)'"
+#_isLatestLinux: "matrix.go-version == '\(_latestStableGo)' && matrix.os == '\(_linuxMachine)'"
 
-_#goreleaserVersion: "v1.13.1"
+_goreleaserVersion: "v1.13.1"
 
 // _gerrithub is an instance of ./gerrithub, parameterised by the properties of
 // this project
@@ -91,14 +91,14 @@ _gerrithub: gerrithub & {
 // used, and then rename the field base?
 _base: base & {
 	#repositoryURL:                _repo.githubRepositoryURL
-	#defaultBranch:                _#defaultBranch
+	#defaultBranch:                _defaultBranch
 	#botGitHubUser:                "cueckoo"
 	#botGitHubUserTokenSecretsKey: "CUECKOO_GITHUB_PAT"
 }
 
-_#cacheDirs: [ "${{ steps.npm-cache-dir.outputs.dir }}", "${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download", "${{ steps.go-cache-dir.outputs.dir }}"]
+_cacheDirs: [ "${{ steps.npm-cache-dir.outputs.dir }}", "${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download", "${{ steps.go-cache-dir.outputs.dir }}"]
 
-_#cachePre: [
+_cachePre: [
 	json.#step & {
 		name: "Get npm cache directory"
 		id:   "npm-cache-dir"
@@ -117,7 +117,7 @@ _#cachePre: [
 	json.#step & {
 		uses: "actions/cache@v3"
 		with: {
-			path: strings.Join(_#cacheDirs, "\n")
+			path: strings.Join(_cacheDirs, "\n")
 
 			// GitHub actions caches are immutable. Therefore, use a key which is
 			// unique, but allow the restore to fallback to the most recent cache.
@@ -129,7 +129,7 @@ _#cachePre: [
 	},
 ]
 
-_#cachePost: json.#step & {
-	let qCacheDirs = [ for v in _#cacheDirs {"'\(v)'"}]
+_cachePost: json.#step & {
+	let qCacheDirs = [ for v in _cacheDirs {"'\(v)'"}]
 	run: "find \(strings.Join(qCacheDirs, " ")) -type f -amin +7200 -delete -print"
 }
