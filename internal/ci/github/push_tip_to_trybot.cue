@@ -25,13 +25,13 @@ workflows: push_tip_to_trybot: _base.#bashWorkflow & {
 
 	name: "Push tip to trybot"
 	on: {
-		push: branches: _#activeBranches
+		push: branches: _activeBranches
 	}
 
 	concurrency: "push_tip_to_trybot"
 
 	jobs: push: {
-		"runs-on": _#linuxMachine
+		"runs-on": _linuxMachine
 		if:        "${{github.repository == '\(_repo.githubRepositoryPath)'}}"
 		steps: [
 			_gerrithub.#writeNetrcFile,
@@ -46,7 +46,7 @@ workflows: push_tip_to_trybot: _base.#bashWorkflow & {
 						git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_gerrithub.#botGitHubUser):${{ secrets.\(_gerrithub.#botGitHubUserTokenSecretsKey) }} | base64)"
 						git remote add origin \(_gerrithub.#gerritHubRepository)
 						git remote add trybot \(_gerrithub.#trybotRepositoryURL)
-						git fetch origin \(strings.Join(_#activeBranches, " "))
+						git fetch origin \(strings.Join(_activeBranches, " "))
 						git push trybot "refs/remotes/origin/*:refs/heads/*"
 						"""
 			},
