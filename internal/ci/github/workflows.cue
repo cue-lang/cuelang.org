@@ -55,7 +55,7 @@ workflows: close({
 _#defaultBranch:     "master"
 _#releaseTagPattern: "v*"
 
-_#activeBranches: [_#defaultBranch, "alpha"]
+_#protectedBranchPatterns: [_#defaultBranch, "alpha"]
 
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.
