@@ -10,7 +10,7 @@ name: TryBot
   pull_request: {}
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
