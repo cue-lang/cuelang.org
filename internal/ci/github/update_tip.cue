@@ -31,6 +31,11 @@ workflows: update_tip: _repo.bashWorkflow & {
 	jobs: push: {
 		"runs-on": _repo.linuxMachine
 
+		let _setupReadonlyGoActionsCaches = _setupGoActionsCaches & {
+			#readonly: true
+			_
+		}
+
 		// Only run this workflow in the main repository, and if we are triggered
 		// by repository_dispatch (which will happen if the cue-lang/cue repo
 		// needs to tell us to rebuild tip) only do so if our payload is of
@@ -52,7 +57,7 @@ workflows: update_tip: _repo.bashWorkflow & {
 
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
-			for v in _goCaches {v},
+			for v in _setupReadonlyGoActionsCaches {v},
 
 			_tipDist,
 			_installNetlifyCLI,
