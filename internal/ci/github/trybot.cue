@@ -38,14 +38,14 @@ workflows: trybot: _base.#bashWorkflow & {
 
 	on: {
 		push: {
-			branches: list.Concat([[_base.#testDefaultBranch], _#protectedBranchPatterns])
+			branches: list.Concat([[_base.#testDefaultBranch], _protectedBranchPatterns])
 		}
 		pull_request: {}
 	}
 
 	jobs: {
 		test: {
-			"runs-on": _#linuxMachine
+			"runs-on": _linuxMachine
 			steps: [
 				_base.#checkoutCode & {
 					// "pull_request" builds will by default use a merge commit,
@@ -58,13 +58,13 @@ workflows: trybot: _base.#bashWorkflow & {
 				// Early git checks
 				base.#earlyChecks,
 
-				_#installNode,
-				_#installGo,
-				_#installHugo,
+				_installNode,
+				_installGo,
+				_installHugo,
 
 				// cachePre must come after installing Node and Go, because the cache locations
 				// are established by running each tool.
-				for v in _#cachePre {v},
+				for v in _cachePre {v},
 
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
@@ -79,21 +79,21 @@ workflows: trybot: _base.#bashWorkflow & {
 				},
 
 				// Go generate steps
-				_#goGenerate & {
+				_goGenerate & {
 					name: "Regenerate"
 				},
 
 				// Go test steps
-				_#goTest & {
+				_goTest & {
 					name: "Test"
 				},
 
 				// go mod tidy
-				_#modTidy & {
+				_modTidy & {
 					name: "Check module is tidy"
 				},
 
-				_#dist,
+				_dist,
 				_base.#checkGitClean,
 
 				// Now the frontend build has happened, ensure that linters pass
@@ -128,35 +128,35 @@ workflows: trybot: _base.#bashWorkflow & {
 
 				// Only run a deploy of tip if we are running as part of the trybot repo,
 				// with a branch name that matches the trybot pattern
-				_#netlifyDeploy & {
+				_netlifyDeploy & {
 					if:     "${{github.repository == '\(_repo.githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
 					#site:  _repo.netlifySites.cls
 					#alias: "${{ steps.alias.outputs.alias }}"
 					name:   "Deploy preview of CL"
 				},
 
-				_#cachePost,
+				_cachePost,
 			]
 		}
 	}
 
-	_#goGenerate: json.#step & {
+	_goGenerate: json.#step & {
 		name: string
 		run:  "go generate ./..."
 	}
 
-	_#goTest: json.#step & {
+	_goTest: json.#step & {
 		name: string
 		run:  "go test ./..."
 	}
 
-	_#modTidy: json.#step & {
+	_modTidy: json.#step & {
 		name: string
 		run:  "go mod tidy"
 	}
 }
 
-_#installNode: json.#step & {
+_installNode: json.#step & {
 	name: "Install Node"
 	uses: "actions/setup-node@v3"
 	with: {
@@ -164,11 +164,11 @@ _#installNode: json.#step & {
 	}
 }
 
-_#installGo: _base.#installGo & {
+_installGo: _base.#installGo & {
 	with: "go-version": _repo.goVersion
 }
 
-_#installHugo: json.#step & {
+_installHugo: json.#step & {
 	name: "Install Hugo"
 	uses: "peaceiris/actions-hugo@v2"
 	with: {
@@ -177,23 +177,23 @@ _#installHugo: json.#step & {
 	}
 }
 
-_#dist: json.#step & {
+_dist: json.#step & {
 	name: *"Dist" | string
 	run:  "./build.bash"
 }
 
-_#tipDist: _#dist & {
+_tipDist: _dist & {
 	name: "Tip dist"
 	env: BRANCH: "tip"
 }
 
-_#installNetlifyCLI: json.#step & {
+_installNetlifyCLI: json.#step & {
 	name: "Install Netlify CLI"
 	run:  "npm install -g netlify-cli@\(_repo.netlifyCLIVersion)"
 }
 
-// _#netlifyDeploy is used to push CLs for preview but also to deploy tip
-_#netlifyDeploy: json.#step & {
+// _netlifyDeploy is used to push CLs for preview but also to deploy tip
+_netlifyDeploy: json.#step & {
 	#prod:   *false | bool
 	#site:   string
 	#alias?: string
