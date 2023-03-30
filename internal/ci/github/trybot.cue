@@ -38,8 +38,6 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: {
 		test: {
-			"runs-on": _repo.linuxMachine
-
 			steps: [
 				for v in _repo.checkoutCode {v},
 
@@ -52,17 +50,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 				// cachePre must come after installing Node and Go, because the cache locations
 				// are established by running each tool.
-				for v in _goCaches {v},
-
-				// All tests on protected branches should skip the test cache.
-				// The canonical way to do this is with -count=1. However, we
-				// want the resulting test cache to be valid and current so that
-				// subsequent CLs in the trybot repo can leverage the updated
-				// cache. Therefore, we instead perform a clean of the testcache.
-				json.#step & {
-					if:  "github.repository == '\(_repo.githubRepositoryPath)' && (\(_repo.isProtectedBranch) || github.ref == 'refs/heads/\(_repo.testDefaultBranch)')"
-					run: "go clean -testcache"
-				},
+				for v in _setupGoActionsCaches {v},
 
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
@@ -204,4 +192,15 @@ _netlifyDeploy: json.#step & {
 	name: string
 	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
+}
+
+// _setupGoActionsCaches is shared between trybot and update_tip.
+_setupGoActionsCaches: _repo.setupGoActionsCaches & {
+	#goVersion: _installGo.with."go-version"
+
+	// Unfortunate that we need to hardcode here. Ideally we would be able to derive
+	// the OS from the runner. i.e. from _linuxWorkflow somehow.
+	#os: "Linux"
+
+	_
 }

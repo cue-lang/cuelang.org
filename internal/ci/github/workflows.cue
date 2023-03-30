@@ -15,10 +15,6 @@
 // package github declares the workflows for this project.
 package github
 
-import (
-	"github.com/SchemaStore/schemastore/src/schemas/json"
-)
-
 // Note: the name of the workflows (and hence the corresponding .yml filenames)
 // correspond to the environment variable names for gerritstatusupdater.
 // Therefore, this filename must only be change in combination with also
@@ -38,12 +34,17 @@ import (
 // We explicitly use close() here instead of a definition in order that we can
 // cue export the github package as a test.
 workflows: close({
-	[string]: json.#Workflow
+	// Adding this constraint here, whilst clear for the reader,
+	// blows out evaluation time. This will be fixed as part of
+	// the performance work which is covered under various issues.
+	// [string]: json.#Workflow
 
-	(_repo.trybot.key): _
-	trybot_dispatch:    _repo.trybotDispatchWorkflow
-	update_tip:         _
-	push_tip_to_trybot: _repo.pushTipToTrybotWorkflow
+	_repo.trybotWorkflows
+
+	trybot:     _linuxWorkflow
+	update_tip: _linuxWorkflow
 })
 
-_goCaches: _repo.setupGoActionsCaches & {#protectedBranchExpr: _repo.isProtectedBranch, _}
+_linuxWorkflow: {
+	jobs: [string]: "runs-on": _repo.linuxMachine
+}
