@@ -7,6 +7,7 @@ require (
 	github.com/andygrunwald/go-gerrit v0.0.0-20220917070846-2e881e2fb2b5
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
+	github.com/google/go-cmp v0.5.8
 	github.com/google/go-github/v45 v45.2.0
 	github.com/rogpeppe/testscript v1.1.0
 	golang.org/x/mod v0.6.0-dev.0.20220818022119-ed83ed61efb9
