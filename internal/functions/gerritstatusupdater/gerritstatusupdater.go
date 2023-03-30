@@ -95,6 +95,7 @@ import (
 
 var (
 	dryRun = os.Getenv(EnvDryRun) != ""
+	debug  = os.Getenv(EnvDebug) != ""
 )
 
 // Function is a type which implements net/http.Handler, a handler which
@@ -149,6 +150,14 @@ const (
 	// EnvDryRun can be set to a non-empty string to prevent any actual "writes"
 	// happening to either GitHub and/or GerritHub.
 	EnvDryRun = EnvPrefix + "DRYRUN"
+
+	// EnvRequireDispatchTrailer can be set to non-empty to require that a
+	// Dispatch-Trailer trailer be present in the commit message for a workflow
+	// run event. If such a trailer is not present, then the event is ignored.
+	EnvRequireDispatchTrailer = EnvPrefix + "REQUIRE_DISPATCH_TRAILER"
+
+	// EnvDebug can be set to non-empty in order to enable debug-level loggin
+	EnvDebug = EnvPrefix + "DEBUG"
 )
 
 const (
@@ -168,6 +177,7 @@ const (
 	workflowStatusCompleted  = "completed"
 
 	workflowConclusionSuccess = "success"
+	workflowConclusionSkipped = "skipped"
 )
 
 // A localContext represents the state we build up as we receive and handle
@@ -198,6 +208,10 @@ type localContext struct {
 	// HeadBranch is the branch for which a workflow is triggered.
 	HeadBranch string `json:",omitempty"`
 
+	// FoundDispatchTrailer indicates we found a Dispatch-Trailer in the
+	// commit associated with the event
+	FoundDispatchTrailer bool `json:",omitempty"`
+
 	// EventType is the type of the webhook event
 	EventType string `json:",omitempty"`
 
@@ -212,13 +226,6 @@ type localContext struct {
 	// conclusion
 	WorkflowConclusion string `json:",omitempty"`
 
-	// ChangeID is the Change-Id of the associated CL
-	ChangeID string `json:",omitempty"`
-
-	// RevisionID is the commit hash of the associated CL corresponding to the
-	// patchset under test
-	RevisionID string `json:",omitempty"`
-
 	// CL is the string representation of the number of the associated CL
 	CL string `json:",omitempty"`
 
@@ -227,8 +234,29 @@ type localContext struct {
 	Patchset string `json:",omitempty"`
 }
 
-func (c *localContext) setHeadBranch(b string) {
-	c.HeadBranch = b
+func (c *localContext) setHeadBranch(run *github.WorkflowRun) {
+	// If we find a Dispatch-Trailer use it. Otherwise fall
+	// back to the old branch-based logic.
+
+	dt := parseDispatchTrailer(*run.HeadCommit.Message)
+	if dt != "" {
+		// Parse as JSON
+		var d dispatch
+		if err := json.Unmarshal([]byte(dt), &d); err != nil {
+			panic(fmt.Errorf("failed to parse "+dispatchTrailer+" payload %q: %w", dt, err))
+		}
+		c.CL = strconv.Itoa(d.CL)
+		c.Patchset = strconv.Itoa(d.Patchset)
+		c.FoundDispatchTrailer = true
+		return
+	}
+
+	if os.Getenv(EnvRequireDispatchTrailer) != "" {
+		c.debugf("no " + dispatchTrailer + " found; ignoring")
+		panic(nil) // early return from handler
+	}
+
+	c.HeadBranch = *run.HeadBranch
 
 	// Establish variables to identify the CL from the head branch.
 	// Note the first part of the build branch is not significant
@@ -244,15 +272,37 @@ func (c *localContext) setHeadBranch(b string) {
 	headBranchParts := strings.Split(c.HeadBranch, "/")
 	switch x := len(headBranchParts); {
 	case x == 1:
-		log.Printf("nothing to do on branch %q", c.HeadBranch)
+		c.debugf("nothing to do on branch %q", c.HeadBranch)
 		panic(nil) // early return from handler
 	case x < 5:
 		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
 	}
-	c.ChangeID = headBranchParts[1]
-	c.RevisionID = headBranchParts[2]
 	c.CL = headBranchParts[3]
 	c.Patchset = headBranchParts[4]
+}
+
+func (c *localContext) debugf(format string, args ...interface{}) {
+	if !debug {
+		return
+	}
+	c.logf("debug", format, args...)
+}
+
+func (c *localContext) infof(format string, args ...interface{}) {
+	c.logf("info", format, args...)
+}
+
+func (c *localContext) errorf(format string, args ...interface{}) {
+	c.logf("error", format, args...)
+}
+
+func (c *localContext) logf(level, format string, args ...interface{}) {
+	b, err := json.Marshal(c)
+	if err != nil {
+		panic(fmt.Errorf("failed to marshal context for log: %v", err))
+	}
+	args = append([]interface{}{level, b}, args...)
+	log.Printf("%s %s: "+format, args...)
 }
 
 // ServeHTTP is the implementation of the gerritstatusupdater serverless
@@ -280,19 +330,11 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// We also get a unique prefix from Netlify, but build
 	// a context-based prefix ourselves here too.
 	log.SetPrefix("")
-	logf := func(format string, args ...interface{}) {
-		b, err := json.Marshal(c)
-		if err != nil {
-			panic(fmt.Errorf("failed to marshal context for log: %v", err))
-		}
-		args = append([]interface{}{b}, args...)
-		log.Printf("%s: "+format, args...)
-	}
 
 	defer func() {
 		switch err := recover(); err := err.(type) {
 		case error:
-			log.Printf("got an error: %v", err)
+			c.errorf("got an error: %v", err)
 			http.Error(w, err.Error(), 500)
 		case nil: // normal return
 			// We currently see a whole load of errors in the GitHub webhook logs:
@@ -347,11 +389,11 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		// We only care about jobs when they are in a completed state,
 		// and then anything other than success is failure.
 		if job.GetStatus() != workflowStatusCompleted || job.GetConclusion() == workflowConclusionSuccess {
-			logf("nothing to do")
+			c.debugf("nothing to do. job status != completed || conclusion == success")
 			return
 		}
 
-		ghclient, err := fn.buildGitHubClient(c.Repo)
+		ghclient, err := c.buildGitHubClient(c.Repo)
 		if err != nil {
 			panic(err)
 		}
@@ -367,7 +409,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			panic(fmt.Errorf("failed to get workflow run for id %v: %w", github.Stringify(job.RunID), err))
 		}
 
-		c.setHeadBranch(*wr.HeadBranch)
+		c.setHeadBranch(wr)
 
 		// The workflowRun does not include information like path about the workflow
 		// itself, so we need to get that too.
@@ -376,7 +418,6 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			panic(fmt.Errorf("failed to get workflow for id %v: %w", github.Stringify(wr.WorkflowID), err))
 		}
 		c.WorkflowPath = *wf.Path
-		workflowName = *wf.Name
 
 		// Tidy up context
 		cancel()
@@ -388,18 +429,17 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 		c.Repo = *event.Repo.FullName
 		c.WorkflowRunID = run.ID
-		c.setHeadBranch(*run.HeadBranch)
+		c.setHeadBranch(run)
 		c.WorkflowPath = *event.Workflow.Path
 		c.EventAction = event.GetAction()
 		c.EventType = "workflow run"
 		c.WorkflowConclusion = run.GetConclusion()
 		c.WorkflowStatus = run.GetStatus()
 
-		ghclient, err := fn.buildGitHubClient(c.Repo)
+		ghclient, err := c.buildGitHubClient(c.Repo)
 		if err != nil {
 			panic(err)
 		}
-		workflowName = *event.Workflow.Name
 
 		// We only care about the start of a workflow or its completion.
 		//
@@ -437,16 +477,22 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 			// Log workflow run status and conclusion for information purposes (will
 			// help to confirm when GitHub have fixed the state bug).
-			logf("start of workflow run")
+			c.debugf("start of workflow run")
 		case eventActionCompleted:
+			// If the conclusion is skipped, we have nothing to do
+			if run.GetConclusion() == workflowConclusionSkipped {
+				c.debugf("skipping because conclusion is " + workflowConclusionSkipped)
+				panic(nil)
+			}
+
 			// Best-efforts delete build branch regardless of conclusion because
 			// this is the end of the workflow run. If this fails the worst that
 			// will happen is that we build up old build branches. More important
 			// though that we update the CL.
-			if !dryRun {
+			if !dryRun && !c.FoundDispatchTrailer {
 				_, err := ghclient.Git.DeleteRef(context.Background(), path.Dir(c.Repo), path.Base(c.Repo), "heads/"+c.HeadBranch)
 				if err != nil {
-					logf("failed to delete branch: %v", err)
+					c.infof("failed to delete branch: %v", err)
 				}
 			}
 
@@ -471,13 +517,13 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			default:
 				// Given the current GitHub bug, no idea what combination of states
 				// and conclusions we might see here. Log for information
-				logf("nothing to do (workflow jobs already reported)")
+				c.debugf("nothing to do (workflow jobs already reported)")
 				return
 			}
 
 			// Log workflow run status and conclusion for information purposes (will
 			// help to confirm when GitHub have fixed the state bug).
-			logf("end of workflow run")
+			c.debugf("end of workflow run")
 
 			// success
 			msg = fmt.Sprintf("%s run succeeded: %s", workflowName, *run.HTMLURL)
@@ -491,9 +537,6 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			//
 			netlifyEnv := envJoin(c.Repo, c.WorkflowPath, "NETLIFY")
 			if previewURL, ok := os.LookupEnv(netlifyEnv); ok {
-				if c.CL == "" || c.Patchset == "" {
-					panic(fmt.Errorf("head branch %q not in expected format for netlify configuration", c.HeadBranch))
-				}
 				varRepl := func(k string) string {
 					switch k {
 					case "CL":
@@ -509,25 +552,22 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			}
 
 		default:
-			logf("ignoring")
+			c.debugf("ignoring; workflow run event action is neither requested nor completed")
 			return
 		}
 	case *github.PingEvent:
-		logf("ping event; ignoring")
+		c.debugf("ping event; ignoring")
 		return
 	default:
 		panic(fmt.Errorf("unhandled event type %T", event))
 	}
 
-	// Build a GerritHub client
-	client, err := fn.buildGerritHubClient(c.Repo, c.WorkflowPath)
+	client, err := c.buildGerritHubClient(c.Repo, c.WorkflowPath)
 	if err != nil {
 		panic(err)
 	}
-	if client == nil {
-		logf("no configuration specified for repo-workflowPath %q", envJoin(c.Repo, c.WorkflowPath, ""))
-		return
-	}
+
+	workflowName = requireEnv(c.Repo, c.WorkflowPath, "LABEL")
 
 	ri := &gerrit.ReviewInput{
 		Tag:     strings.ToLower(workflowName),
@@ -552,7 +592,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// In particular, when backporting by cherry-picking a CL into a release branch,
 	// the two CLs will share the same Change-Id trailer,
 	// but they will still have different CL numbers.
-	logf("gerrit.SetReview %s/%s with\n%s", c.CL, c.Patchset, b)
+	c.infof("gerrit.SetReview %s/%s with\n%s", c.CL, c.Patchset, b)
 	if !dryRun {
 		if _, _, err := client.Changes.SetReview(c.CL, c.Patchset, ri); err != nil {
 			panic(fmt.Errorf("failed to update gerrit: %w", err))
@@ -564,13 +604,9 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 // given repo from the environment. If environment configuration cannot be
 // found for repo, an error is returned (because in this case
 // gerritstatusupdater should not be configured to listen to that repo).
-func (fn Function) buildGitHubClient(repo string) (*github.Client, error) {
+func (c *localContext) buildGitHubClient(repo string) (*github.Client, error) {
 	// Lookup GitHub access token from the env of this repo
-	githubPATKey := envJoin(repo, EnvGitHubPATSuffix)
-	githubPAT := os.Getenv(githubPATKey)
-	if githubPAT == "" {
-		return nil, fmt.Errorf("empty GitHub access token for repo %q via %q", repo, githubPATKey)
-	}
+	githubPAT := requireNonEmptyEnv(repo, EnvGitHubPATSuffix)
 
 	// Build a GitHub client
 	ts := oauth2.StaticTokenSource(
@@ -584,27 +620,33 @@ func (fn Function) buildGitHubClient(repo string) (*github.Client, error) {
 // configuration available for the supplied repo+workflowPath arguments,
 // otherwise it returns nil. If there is an error in building the client, that
 // error is returned.
-func (fn Function) buildGerritHubClient(repo, workflowPath string) (*gerrit.Client, error) {
-	// Lookup GerritHub instance from the env for this repo
+func (c *localContext) buildGerritHubClient(repo, workflowPath string) (*gerrit.Client, error) {
+	// The presence or lack of a value for EnvGerritHubInstanceSuffix in the
+	// environment indicates whether we want to handle a workflow's events or
+	// not. Why? Good question.  Workflow jobs can be made conditional using an
+	// "if" field. Workflows themselves cannot.  Hence a workflow run starts
+	// even if all the jobs contained by it would be skipped. Hence we receive a
+	// workflow run queued and in_progress event. We therefore cannot rely
+	// solely on the events we receive from GitHub in order to know whether a
+	// workflow run will actually do anything or not.  One expensive option
+	// would be to chain two jobs, where the second is conditional on the first
+	// running and instead use the workflow job in_progress event in order to
+	// mark the "start" of the workflow. This feels incredibly heavyweight.
+	// Instead, we can use the presence or otherwise of the gerrit instance
+	// configuration as an indiciation whether we want to handle a workflow's
+	// events at all. This is good enough for now.
 	instanceKey := envJoin(repo, workflowPath, EnvGerritHubInstanceSuffix)
 	instance := os.Getenv(instanceKey)
 	if instance == "" {
-		return nil, nil
+		c.debugf("no configuration found for %s; hence ignoring events", instanceKey)
+		panic(nil)
 	}
 
 	// Lookup GerritHub username from the env for this repo
-	usernameKey := envJoin(repo, workflowPath, EnvGerritHubUsernameSuffix)
-	username := os.Getenv(usernameKey)
-	if username == "" {
-		return nil, nil
-	}
+	username := requireNonEmptyEnv(repo, workflowPath, EnvGerritHubUsernameSuffix)
 
 	// Lookup GerritHub password from the env for this repo
-	passwordKey := envJoin(repo, workflowPath, EnvGerritHubPasswordSuffix)
-	password := os.Getenv(passwordKey)
-	if password == "" {
-		return nil, nil
-	}
+	password := requireNonEmptyEnv(repo, workflowPath, EnvGerritHubPasswordSuffix)
 
 	// create GerritHub client
 	client, err := gerrit.NewClient(instance, nil)
@@ -623,5 +665,25 @@ func envJoin(parts ...string) string {
 	res = strings.ReplaceAll(res, ".", "_")
 	res = strings.ReplaceAll(res, "-", "_")
 	res = strings.ReplaceAll(res, "/", "_")
+	return res
+}
+
+func requireEnv(parts ...string) string {
+	return requireImpl(true, parts...)
+}
+
+func requireNonEmptyEnv(parts ...string) string {
+	return requireImpl(false, parts...)
+}
+
+func requireImpl(allowEmpty bool, parts ...string) string {
+	v := envJoin(parts...)
+	res, ok := os.LookupEnv(v)
+
+	// If we failed to find a value at all, or if
+	// we do not allowEmpty and res == "" then error
+	if !ok || (!allowEmpty && res == "") {
+		panic(fmt.Errorf("no configuration specified for %q", v))
+	}
 	return res
 }
