@@ -198,6 +198,10 @@ type localContext struct {
 	// HeadBranch is the branch for which a workflow is triggered.
 	HeadBranch string `json:",omitempty"`
 
+	// FoundDispatchTrailer indicates we found a Dispatch-Trailer in the
+	// commit associated with the event
+	FoundDispatchTrailer bool `json:",omitempty"`
+
 	// EventType is the type of the webhook event
 	EventType string `json:",omitempty"`
 
@@ -212,13 +216,6 @@ type localContext struct {
 	// conclusion
 	WorkflowConclusion string `json:",omitempty"`
 
-	// ChangeID is the Change-Id of the associated CL
-	ChangeID string `json:",omitempty"`
-
-	// RevisionID is the commit hash of the associated CL corresponding to the
-	// patchset under test
-	RevisionID string `json:",omitempty"`
-
 	// CL is the string representation of the number of the associated CL
 	CL string `json:",omitempty"`
 
@@ -227,8 +224,24 @@ type localContext struct {
 	Patchset string `json:",omitempty"`
 }
 
-func (c *localContext) setHeadBranch(b string) {
-	c.HeadBranch = b
+func (c *localContext) setHeadBranch(run *github.WorkflowRun) {
+	// If we find a Dispatch-Trailer use it. Otherwise fall
+	// back to the old branch-based logic.
+
+	dt := parseDispatchTrailer(*run.HeadCommit.Message)
+	if dt != "" {
+		// Parse as JSON
+		var d dispatch
+		if err := json.Unmarshal([]byte(dt), &d); err != nil {
+			panic(fmt.Errorf("failed to parse "+dispatchTrailer+" payload %q: %w", dt, err))
+		}
+		c.CL = strconv.Itoa(d.CL)
+		c.Patchset = strconv.Itoa(d.Patchset)
+		c.FoundDispatchTrailer = true
+		return
+	}
+
+	c.HeadBranch = *run.HeadBranch
 
 	// Establish variables to identify the CL from the head branch.
 	// Note the first part of the build branch is not significant
@@ -249,8 +262,6 @@ func (c *localContext) setHeadBranch(b string) {
 	case x < 5:
 		panic(fmt.Errorf("head branch %q not in expected format", c.HeadBranch))
 	}
-	c.ChangeID = headBranchParts[1]
-	c.RevisionID = headBranchParts[2]
 	c.CL = headBranchParts[3]
 	c.Patchset = headBranchParts[4]
 }
@@ -367,7 +378,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			panic(fmt.Errorf("failed to get workflow run for id %v: %w", github.Stringify(job.RunID), err))
 		}
 
-		c.setHeadBranch(*wr.HeadBranch)
+		c.setHeadBranch(wr)
 
 		// The workflowRun does not include information like path about the workflow
 		// itself, so we need to get that too.
@@ -388,7 +399,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 		c.Repo = *event.Repo.FullName
 		c.WorkflowRunID = run.ID
-		c.setHeadBranch(*run.HeadBranch)
+		c.setHeadBranch(run)
 		c.WorkflowPath = *event.Workflow.Path
 		c.EventAction = event.GetAction()
 		c.EventType = "workflow run"
