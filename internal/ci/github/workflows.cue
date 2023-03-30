@@ -40,10 +40,12 @@ import (
 workflows: close({
 	[string]: json.#Workflow
 
-	(_repo.trybot.key): _
-	trybot_dispatch:    _repo.trybotDispatchWorkflow
-	update_tip:         _
-	push_tip_to_trybot: _repo.pushTipToTrybotWorkflow
+	_repo.trybotWorkflows
+
+	trybot:     _linuxWorkflow
+	update_tip: _linuxWorkflow
 })
 
-_goCaches: _repo.setupGoActionsCaches & {#protectedBranchExpr: _repo.isProtectedBranch, _}
+_linuxWorkflow: json.#Workflow & {
+	jobs: [string]: "runs-on": _repo.linuxMachine
+}
