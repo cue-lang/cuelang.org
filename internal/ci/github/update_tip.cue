@@ -34,7 +34,11 @@ workflows: update_tip: _repo.bashWorkflow & {
 		// Only run this workflow in the main repository, and if we are triggered
 		// by repository_dispatch (which will happen if the cue-lang/cue repo
 		// needs to tell us to rebuild tip) only do so if our payload is of
-		// the correct type.
+		// the correct type. We explicitly use the default branch here in order
+		// that the latest running of this workflow wins. If it were tied to the
+		// ref that triggered the GitHub action event, then it would be possible
+		// to cause tip.cuelang.org to go backwards in time by re-running a
+		// workflow run associated with a commit that is not the current tip.
 		if: "${{ github.repository == '\(_repo.githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
 		let _checkoutCode = _repo.checkoutCode & {
 			#actionsCheckout: {
@@ -52,7 +56,7 @@ workflows: update_tip: _repo.bashWorkflow & {
 
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
-			for v in _goCaches {v},
+			for v in _repo.setupGoActionsCaches {v},
 
 			_tipDist,
 			_installNetlifyCLI,
