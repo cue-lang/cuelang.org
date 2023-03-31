@@ -68,9 +68,13 @@ workflows: trybot: _repo.bashWorkflow & {
 					// The latest git clean check ensures that this call is effectively
 					// side effect-free. Using GOPROXY=direct ensures we don't accidentally
 					// hit a stale cache in the proxy.
+					//
+					// For that reason, we also set GONOSUMDB in order to avoid the
+					// regular issues we see with recent versions not being
+					// available yet in index.golang.org and hence the sumdb.
 					name: "Ensure latest CUE"
 					run: """
-						GOPROXY=direct go get -d cuelang.org/go@latest
+						GONOSUMDB=cuelang.org/go GOPROXY=direct go get -d cuelang.org/go@latest
 						go mod tidy
 						go mod tidy
 						"""

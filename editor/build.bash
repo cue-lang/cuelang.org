@@ -30,7 +30,10 @@ then
 	# to the tip of CUE and regenerate. Otherwise we do not
 	# want to regenerate (we should be relying on the files
  	# commited)
-	GOPROXY=direct $time go get cuelang.org/go@master
+	#
+	# We set GONOSUMDB here because we reguarly see issues when trying to go get
+	# a recent commit that index.golang.org might not yet have seen.
+	GONOSUMDB=cuelang.org/go GOPROXY=direct $time go get cuelang.org/go@master
 	$time ./_scripts/revendorToolsInternal.bash
 	$time go generate ./...
 fi
