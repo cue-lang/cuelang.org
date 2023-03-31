@@ -66,11 +66,11 @@ workflows: trybot: _repo.bashWorkflow & {
 
 				json.#step & {
 					// The latest git clean check ensures that this call is effectively
-					// side effect-free. Using GOPROXY=direct ensures we don't accidentally
+					// side effect-free. Using GOPRIVATE ensures we don't accidentally
 					// hit a stale cache in the proxy.
 					name: "Ensure latest CUE"
 					run: """
-						GOPROXY=direct go get -d cuelang.org/go@latest
+						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
 						go mod tidy
 						go mod tidy
 						"""

@@ -30,7 +30,7 @@ then
 	# to the tip of CUE and regenerate. Otherwise we do not
 	# want to regenerate (we should be relying on the files
  	# commited)
-	GOPROXY=direct $time go get cuelang.org/go@master
+	GOPRIVATE=cuelang.org/go $time go get cuelang.org/go@master
 	$time ./_scripts/revendorToolsInternal.bash
 	$time go generate ./...
 fi
