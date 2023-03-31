@@ -14,7 +14,10 @@ fi
 # and main from github.com/cue-sh/playground dependencies
 if [ "${BRANCH:-}" = "tip" ]
 then
-	GOPROXY=direct $time go get cuelang.org/go@master
+	# We set GOPRIVATE here because we reguarly see issues when trying to go get
+	# a recent commit that index.golang.org might not yet have seen.
+	GOPRIVATE=cuelang.org/go $time go get cuelang.org/go@master
+
 	# Now force cuelang.org/go  through the proxy so that the /pkg.go.dev redirect works
 	$time go get -d cuelang.org/go@$(go list -m -f={{.Version}} cuelang.org/go)
 	$time go mod tidy

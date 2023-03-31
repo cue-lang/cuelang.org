@@ -120,10 +120,10 @@ jobs:
         run: go clean -testcache
       - name: Ensure latest CUE
         run: |-
-          GOPROXY=direct go get -d cuelang.org/go@latest
+          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
           go mod tidy
           cd play
-          GOPROXY=direct go get -d cuelang.org/go@latest
+          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
           go mod tidy
       - name: Re-vendor play
         run: ./_scripts/revendorToolsInternal.bash
