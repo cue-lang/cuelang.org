@@ -30,7 +30,10 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	on: {
 		push: {
-			branches: list.Concat([[_repo.testDefaultBranch], _repo.protectedBranchPatterns]) // do not run PR branches
+			branches: list.Concat([
+					// [_repo.testDefaultBranch],
+					_repo.protectedBranchPatterns,
+			])        // do not run PR branches
 			"tags-ignore": [_repo.releaseTagPattern]
 		}
 		pull_request: {}
@@ -38,10 +41,11 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: {
 		test: {
+			if: "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+
 			steps: [
 				for v in _repo.checkoutCode {v},
 
-				// Early git checks
 				_repo.earlyChecks,
 
 				_installNode,
@@ -113,11 +117,11 @@ workflows: trybot: _repo.bashWorkflow & {
 				},
 
 				// Only run a deploy of tip if we are running as part of the trybot repo,
-				// with a branch name that matches the trybot pattern
+				// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
 				_netlifyDeploy & {
-					if:     "${{github.repository == '\(_repo.githubRepositoryPath)-trybot' && startsWith(github.head_ref, 'trybot/')}}"
+					if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
 					#site:  _repo.netlifySites.cls
-					#alias: "${{ steps.alias.outputs.alias }}"
+					#alias: "cl-${{ \(_repo.dispatchTrailerExpr).CL }}-${{ \(_repo.dispatchTrailerExpr).patchset }}"
 					name:   "Deploy preview of CL"
 				},
 			]
