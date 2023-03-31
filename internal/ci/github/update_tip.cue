@@ -45,6 +45,7 @@ workflows: update_tip: _repo.bashWorkflow & {
 		// to cause tip.cuelang.org to go backwards in time by re-running a
 		// workflow run associated with a commit that is not the current tip.
 		if: "${{ github.repository == '\(_repo.githubRepositoryPath)' && (github.event_name != 'repository_dispatch' || github.event.client_payload.type == 'rebuild_tip') }}"
+
 		let _checkoutCode = _repo.checkoutCode & {
 			#actionsCheckout: {
 				with: ref: _repo.defaultBranch
@@ -53,6 +54,8 @@ workflows: update_tip: _repo.bashWorkflow & {
 		}
 
 		steps: [
+			_repo.writeNetrcFile,
+
 			for v in _checkoutCode {v},
 
 			_installNode,
