@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eefa0c61_3de91119",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-03-31T22:29:56Z",
+      "side": 1,
+      "message": "Same review as in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/552033.",
+      "revId": "781e8b364684f2ae4fb62cfa22e5ff372b3a3916",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
