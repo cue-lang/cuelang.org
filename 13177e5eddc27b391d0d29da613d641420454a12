@@ -16,6 +16,24 @@
       "message": "I\u0027d use `GOPRIVATE\u003dcuelang.org/go`, which is shorter and more consistent. Or, if you prefer the two to be separate, you could also go with `GONOSUMDB\u003d* GOPROXY\u003ddirect`, which disables both servers for all modules, but I think that\u0027s overkill and unnecessary - downloading all deps via VCS will likely be noticeably slower.",
       "revId": "13177e5eddc27b391d0d29da613d641420454a12",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35f51255_813a92ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-03-31T22:37:26Z",
+      "side": 1,
+      "message": "Ah now I get what you mean. Yes, that is a good suggestion. Thanks!",
+      "parentUuid": "41285a6a_1c815a24",
+      "revId": "13177e5eddc27b391d0d29da613d641420454a12",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
