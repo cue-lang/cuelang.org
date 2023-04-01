@@ -84,6 +84,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"runtime/debug"
 	"strconv"
 	"strings"
 	"time"
@@ -258,6 +259,11 @@ func (c *localContext) setHeadBranch(b string) {
 // ServeHTTP is the implementation of the gerritstatusupdater serverless
 // function.
 func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	bi, _ := debug.ReadBuildInfo()
+	w.WriteHeader(http.StatusOK)
+	j, _ := json.MarshalIndent(bi, "", "  ")
+	w.Write(j)
+	return
 
 	var (
 		// workflowName is the name of the workflow run behind the event
