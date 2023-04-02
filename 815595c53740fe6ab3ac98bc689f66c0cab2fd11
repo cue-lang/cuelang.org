@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23e1bdef_6df011a6",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:17:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61a2fbb7_777a8314",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ccc4b3d1_fe17f2b6",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-04-02T15:18:08Z",
       "side": 1,
       "message": "use %s or %q rather than adding format strings? easier to read and reason about.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f848253e_697fc54e",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:17:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ccc4b3d1_fe17f2b6",
       "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0e23b10_ed531eb3",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:17:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f23c68bb_a7122c49",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af023d1f_016d4f77",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-04-02T15:18:08Z",
       "side": 1,
       "message": "I\u0027d personally delete errorf; it\u0027s not used, and errors should in general be fatal. if they\u0027re not, then they should presumably be warnings.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73c3a8ac_3b6d7e62",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:17:31Z",
+      "side": 1,
+      "message": "Refactored to remove the method. The one place this is used is in logging an error recovered from a panic to early-abort (with status code 500) the current request.",
+      "parentUuid": "af023d1f_016d4f77",
       "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8241a4e5_6b229fc8",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:17:31Z",
+      "side": 1,
+      "message": "This doesn\u0027t feel like addressing right now. We can look again later. Will add a TODO, but it feels low value.",
+      "parentUuid": "1bff6a3f_eb0cfd7c",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "85bca697_bc7976e5",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-04-02T15:18:08Z",
       "side": 1,
       "message": "could you not simply do `os.Getenv(envJoin(x, y, z))` and avoid this helper? I get that you\u0027re checking for the `ok` in `LookupEnv`, but at least in my experience it\u0027s not useful for programs to care about that boolean. What matters is whether the values are empty or not.\n\nthen the other case could be like `mustGetenv(envJoin(x, y, z))`, which would panic on an empty value.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e272cf49_cfdb6226",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:17:31Z",
+      "side": 1,
+      "message": "Actually, the two uses of this function should actually have used the other function. Otherwise refactored per your suggestion.",
+      "parentUuid": "85bca697_bc7976e5",
       "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
