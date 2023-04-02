@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61a2fbb7_777a8314",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "nit: I\u0027d call these `trailerModeXXX`, just so it\u0027s clearer what \"mode\" they refer to.\n\nyou could also consider using named types to make it a bit harder to misuse these strings.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccc4b3d1_fe17f2b6",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "use %s or %q rather than adding format strings? easier to read and reason about.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f23c68bb_a7122c49",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "we should perhaps add a TODO to make the CL and Patchset fields integers in the future.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af023d1f_016d4f77",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "I\u0027d personally delete errorf; it\u0027s not used, and errors should in general be fatal. if they\u0027re not, then they should presumably be warnings.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bff6a3f_eb0cfd7c",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "is it possible to cache this in memory between requests? on google cloud run it is, for example. reading the build info isn\u0027t particularly expensive, but we also do quite a bit of setup for each request that could be done once and reused.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85bca697_bc7976e5",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "could you not simply do `os.Getenv(envJoin(x, y, z))` and avoid this helper? I get that you\u0027re checking for the `ok` in `LookupEnv`, but at least in my experience it\u0027s not useful for programs to care about that boolean. What matters is whether the values are empty or not.\n\nthen the other case could be like `mustGetenv(envJoin(x, y, z))`, which would panic on an empty value.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09cd65ac_d6c1c795",
+        "filename": "internal/functions/gerritstatusupdater/trailers.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "nit: I think `dispatchTrailer+\":\"` would be enough as a prefix match. The prefix matching only needs to include `\"type\": \"xxx\"` when we actually care about matching against just one dispatch type, but here we seem to not care.",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2d22392_33beec28",
+        "filename": "internal/functions/gerritstatusupdater/trailers.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T15:18:08Z",
+      "side": 1,
+      "message": "nit: use strings.Cut",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
