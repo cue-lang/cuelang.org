@@ -228,6 +228,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "810a20f9_461036fa",
+        "filename": "internal/functions/gerritstatusupdater/trailers.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:29:00Z",
+      "side": 1,
+      "message": "I\u0027ve gone for consistency here with the GitHub expression logic. We can revise at a later date if we thing it\u0027s worth it.",
+      "parentUuid": "09cd65ac_d6c1c795",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2d22392_33beec28",
@@ -241,6 +259,24 @@
       "writtenOn": "2023-04-02T15:18:08Z",
       "side": 1,
       "message": "nit: use strings.Cut",
+      "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "471370b5_31633c8a",
+        "filename": "internal/functions/gerritstatusupdater/trailers.go",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T20:29:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2d22392_33beec28",
       "revId": "815595c53740fe6ab3ac98bc689f66c0cab2fd11",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
