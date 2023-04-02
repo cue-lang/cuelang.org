@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9d6a64d9_c1bdbb1b",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T22:50:39Z",
+      "side": 1,
+      "message": "FYI, this could now be replaced by `DispatchTrailerType !\u003d \"\"`, and then you\u0027ve got fewer moving pieces around.",
+      "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2938b732_7bf4c302",
         "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
         "patchSetId": 17
@@ -14,6 +31,41 @@
       "writtenOn": "2023-04-02T22:31:28Z",
       "side": 1,
       "message": "Just to draw your attention to this additional change.",
+      "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e737507_9a063fa0",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T22:50:39Z",
+      "side": 1,
+      "message": "oh wow, nasty business with workflow runs. I wonder if we could add one \"signal\" job with the condition that is a no-op, then we could see whether that job succeeds or gets skipped to know whether the other jobs will start properly. though, arguably, that\u0027s not a particularly nicer hack than what you have here.",
+      "parentUuid": "2938b732_7bf4c302",
+      "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18218237_3c86a456",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-02T22:50:39Z",
+      "side": 1,
+      "message": "nit: I\u0027d use https://pkg.go.dev/strings#CutSuffix with `\".yaml\"`, it\u0027s easier to grasp and less prone to doing something surprising",
       "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
