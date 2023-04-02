@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2938b732_7bf4c302",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-02T22:31:28Z",
+      "side": 1,
+      "message": "Just to draw your attention to this additional change.",
+      "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
