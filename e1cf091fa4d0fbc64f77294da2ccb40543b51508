@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8591b58b_04f58a27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 63
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-03T14:56:03Z",
+      "side": 1,
+      "message": "Removing hold. We\u0027re ready to go!",
+      "revId": "e1cf091fa4d0fbc64f77294da2ccb40543b51508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
