@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51dd3425_960740ce",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-03T07:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d6a64d9_c1bdbb1b",
+      "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2938b732_7bf4c302",
@@ -70,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67f42657_e4695fa2",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-03T07:06:02Z",
+      "side": 1,
+      "message": "I considered this option, but disregarded it because of the runner startup cost involved. i.e. I think we would add an entire \"startup cost penalty\" to each workflow that _should_ run. That\u0027s not terrible for sure, but at the same time this solution felt less terrible!",
+      "parentUuid": "6e737507_9a063fa0",
+      "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "18218237_3c86a456",
@@ -83,6 +119,24 @@
       "writtenOn": "2023-04-02T22:50:39Z",
       "side": 1,
       "message": "nit: I\u0027d use https://pkg.go.dev/strings#CutSuffix with `\".yaml\"`, it\u0027s easier to grasp and less prone to doing something surprising",
+      "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2466d86_c42bbbb9",
+        "filename": "internal/functions/gerritstatusupdater/gerritstatusupdater.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-03T07:06:02Z",
+      "side": 1,
+      "message": "I actually deliberately did not do that, so as to not assume `.yaml` vs `.yml`. Because, ironically, our extensions are `.yml` and not `.yaml` 😊",
+      "parentUuid": "18218237_3c86a456",
       "revId": "705f23c9217a924ba34827e795682f11730d3ef7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
