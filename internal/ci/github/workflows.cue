@@ -52,5 +52,4 @@ _linuxWorkflow: {
 
 dummyDispatch: _repo.#dispatch & {
 	type: _repo.trybot.key
-	CL:   551434
 }
