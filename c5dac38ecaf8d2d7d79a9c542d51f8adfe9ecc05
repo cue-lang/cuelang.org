@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0b987bd_8a8782d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-06T15:35:26Z",
+      "side": 1,
+      "message": "Please can I get a robotic +2 on this CL, which I already approved in the linked PR?",
+      "revId": "c5dac38ecaf8d2d7d79a9c542d51f8adfe9ecc05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
