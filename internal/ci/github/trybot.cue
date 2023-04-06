@@ -118,14 +118,16 @@ workflows: trybot: _repo.bashWorkflow & {
 				_netlifyDeploy & {
 					if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
 					#site:  _repo.netlifySites.cls
-					#alias: "cl-${{ \(_repo.dispatchTrailerExpr).CL }}-${{ \(_repo.dispatchTrailerExpr).patchset }}"
+					#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
 					name:   "Deploy preview of CL"
 				},
 			]
 		}
 	}
 
-	_goGenerate: json.#step & {
+	// TODO: this belongs in base. Captured in cuelang.org/issue/2327
+	_dispatchTrailerExpr: "fromJSON(steps.DispatchTrailer.outputs.value)"
+	_goGenerate:          json.#step & {
 		name: string
 		run:  "go generate ./..."
 	}
