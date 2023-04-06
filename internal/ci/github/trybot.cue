@@ -104,12 +104,15 @@ workflows: trybot: _repo.bashWorkflow & {
 				_netlifyDeploy & {
 					if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
 					#site:  _repo.netlifySites.cls
-					#alias: "cl-${{ \(_repo.dispatchTrailerExpr).CL }}-${{ \(_repo.dispatchTrailerExpr).patchset }}"
+					#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
 					name:   "Deploy preview of CL"
 				},
 			]
 		}
 	}
+
+	// TODO: this belongs in base. Captured in cuelang.org/issue/2327
+	_dispatchTrailerExpr: "fromJSON(github.steps.DispatchTrailer.outputs.value)"
 
 	_play: json.#step & {
 		"working-directory": "./play"
@@ -182,7 +185,7 @@ _netlifyDeploy: json.#step & {
 
 	name: string
 	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
-	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
+	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite) }}"
 }
 
 // _setupGoActionsCaches is shared between trybot and update_tip.

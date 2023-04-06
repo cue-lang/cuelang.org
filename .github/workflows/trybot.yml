@@ -195,6 +195,6 @@ jobs:
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Deploy preview of CL
-        run: 'netlify deploy  -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        run: 'netlify deploy --alias cl-${{ fromJSON(github.steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(github.steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS }}
