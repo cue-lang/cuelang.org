@@ -1,0 +1,48 @@
+{{ with .Inner }}{{/* don't do anything, just call it because hugo needs it */}}{{ end }}
+
+{{ .Scratch.Set "height" (.Get "height") }}
+{{ .Scratch.Set "unit" (.Get "unit") }}
+{{ .Scratch.Set "ordinal" .Ordinal }}
+{{ .Scratch.Set "items" (.Get "items") }}
+
+{{ $height := .Scratch.Get "height" | default "56.25" }}
+{{ $unit := .Scratch.Get "unit" | default "%" }}
+{{ $ordinal := .Scratch.Get "ordinal" }}
+{{ $items := .Scratch.Get "items" | default "1" }}
+{{ $slides := .Scratch.Get "slides" | default slice }}
+
+<div class="carousel" id="carousel{{ .Ordinal }}" data-duration="{{ .Get "duration" }}" data-carousel>
+    <ul class="carousel__slides">
+        {{ range $index, $slide := $slides }}
+            <li
+                class="carousel__slide"
+                data-slide-index="{{ add $index 1}}"
+                style="min-width: calc(100%/{{ $items }}); padding-bottom: {{ $height }}{{ $unit }};">
+
+                <figure class="carousel__media">
+                    <img class="carousel__image" src="{{ $slide.src }}" alt="{{ $slide.alt }}"
+                            {{ if $slide.lazy }} loading="lazy"{{ end }}>
+                    {{ if $slide.caption}}
+                        <figcaption class="carousel__caption">{{ $slide.caption }}</figcaption>
+                    {{ end }}
+                </figure>
+            </li>
+        {{ end }}
+    </ul>
+
+    {{ if gt ($slides | len) 1 }}
+        <button class="carousel__arrow carousel__arrow--prev">
+            {{ partial "icon.html" (dict "icon" "chevron-left") }}
+        </button>
+
+        <button class="carousel__arrow carousel__arrow--next">
+            {{ partial "icon.html" (dict "icon" "chevron-right") }}
+        </button>
+
+        <div class="carousel__dots">
+            {{ range $index, $page := $slides }}
+                <button class="carousel__dot" data-index="{{ add $index 1 }}"></button>
+            {{ end }}
+        </div>
+    {{ end }}
+</div>
