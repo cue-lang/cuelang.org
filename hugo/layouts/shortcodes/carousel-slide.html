@@ -1,0 +1,20 @@
+{{ if .Parent }}
+    {{ $src := trim (.Get "src") " " }}
+    {{ $title := trim (.Get "title") " " }}
+    {{ $alt := trim (.Get "alt") " " }}
+    {{ $caption := trim (.Get "caption") " " }}
+    {{ $lazy := trim (.Get "lazy") " " | default true }}
+
+    {{ if not (.Parent.Scratch.Get "slides") }}
+        {{ .Parent.Scratch.Set "slides" slice }}
+    {{ end }}
+
+    {{ $.Parent.Scratch.Add "slides" (dict
+        "src" $src
+        "alt" $alt
+        "caption" $caption
+        "lazy" $lazy
+    ) }}
+{{ else }}
+    {{- errorf "[%s] %q: carousel-slide shortcode is missing its parent" site.Language.Lang .Page.Path -}}
+{{ end}}
