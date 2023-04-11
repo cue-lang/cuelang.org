@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39e28914_56436809",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-11T14:56:03Z",
+      "side": 1,
+      "message": "@mvdan: mechanical +2 please, I\u0027ve reviewed this on GitHub.",
+      "revId": "a25bd87361b4ba00012c88e96a8e312248286431",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
