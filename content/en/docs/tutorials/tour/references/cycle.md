@@ -35,13 +35,11 @@ b: a - 100
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -i -c cycle.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval -c cycle.cue</i>
 <p>
-{{< highlight go >}}
-x: 200
-y: 100
-a: _|_ // cycle detected
-b: _|_ // cycle detected
+{{< highlight txt >}}
+cycle error:
+    ./cycle.cue:7:4
 {{< /highlight >}}
 </div>
 </section>

@@ -37,15 +37,15 @@ r1: #rn & >=5 & <10
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -ic bounds.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval -c bounds.cue</i>
 <p>
-{{< highlight go >}}
-a:  3.5
-b:  _|_ // conflicting values #ri and 3.5 (mismatched types int and float)
-c:  3
-d:  "ma"
-e:  _|_ // invalid value "mu" (out of bound <"mo")
-r1: >=5 & <8
+{{< highlight txt >}}
+b: conflicting values int and 3.5 (mismatched types int and float):
+    ./bounds.cue:2:17
+    ./bounds.cue:7:10
+e: invalid value "mu" (out of bound <"mo"):
+    ./bounds.cue:4:14
+    ./bounds.cue:10:10
 {{< /highlight >}}
 </div>
 </section>

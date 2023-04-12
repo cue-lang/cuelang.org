@@ -46,14 +46,12 @@ e: [
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -i numbers.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval numbers.cue</i>
 <p>
-{{< highlight go >}}
-a: 4
-b: 4.0
-c: _|_ // conflicting values int and 4.0 (mismatched types int and float)
-d: 4
-e: [1234, 5000000, 1610612736, 268435456]
+{{< highlight txt >}}
+c: conflicting values int and 4.0 (mismatched types int and float):
+    ./numbers.cue:7:4
+    ./numbers.cue:8:4
 {{< /highlight >}}
 </div>
 </section>

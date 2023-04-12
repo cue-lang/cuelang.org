@@ -35,13 +35,13 @@ b: a & {
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -i structs.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval structs.cue</i>
 <p>
-{{< highlight go >}}
-a: {
-    field: int
-}
-b: _|_ // field "feild" not allowed in closed struct
+{{< highlight txt >}}
+b.feild: field not allowed:
+    ./structs.cue:1:10
+    ./structs.cue:5:4
+    ./structs.cue:6:5
 {{< /highlight >}}
 </div>
 </section>
