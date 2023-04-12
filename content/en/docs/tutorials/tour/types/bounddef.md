@@ -46,12 +46,11 @@ c: #word & 2_000_000_000
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -ic bound.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval -c bound.cue</i>
 <p>
-{{< highlight go >}}
-a: _|_ // invalid value -1 (out of bound int & >=0)
-b: 128
-c: 2000000000
+{{< highlight txt >}}
+a: invalid value -1 (out of bound >=0):
+    ./bound.cue:5:16
 {{< /highlight >}}
 </div>
 </section>

@@ -29,7 +29,7 @@ b: {x: 1, y: int}
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -i order.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval order.cue</i>
 <p>
 {{< highlight go >}}
 a: {

@@ -40,8 +40,8 @@ b: v
 v: 1
 a: {
     v: 2
-    b: 2
     c: 1
+    b: 2
 }
 b: 1
 {{< /highlight >}}

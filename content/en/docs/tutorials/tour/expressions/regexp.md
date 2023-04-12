@@ -35,14 +35,13 @@ e: "foo bar"
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -i regexp.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval regexp.cue</i>
 <p>
-{{< highlight go >}}
-a: true
-b: true
-c: =~"^[a-z]{3}$"
-d: "foo"
-e: _|_ // invalid value "foo bar" (does not match =~"^[a-z]{3}$")
+{{< highlight txt >}}
+e: invalid value "foo bar" (out of bound =~"^[a-z]{3}$"):
+    ./regexp.cue:4:4
+    ./regexp.cue:9:4
+    ./regexp.cue:10:4
 {{< /highlight >}}
 </div>
 </section>

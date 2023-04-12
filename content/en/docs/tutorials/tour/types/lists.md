@@ -47,13 +47,22 @@ yourIP: [11, 1, 2, 3]
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -i lists.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval lists.cue</i>
 <p>
-{{< highlight go >}}
-IP: [uint8, uint8, uint8, uint8]
-PrivateIP: [10, uint8, uint8, uint8] | [192, 168, uint8, uint8] | [172, >=16 & <=32 & uint8, uint8, uint8]
-myIP: [10, 2, 3, 4]
-yourIP: _|_ // ; empty disjunction: conflicting values 192 and 11; empty disjunction: conflicting values 172 and 11
+{{< highlight txt >}}
+yourIP: 3 errors in empty disjunction:
+yourIP.0: conflicting values 10 and 11:
+    ./lists.cue:6:13
+    ./lists.cue:13:9
+    ./lists.cue:14:10
+yourIP.0: conflicting values 172 and 11:
+    ./lists.cue:8:6
+    ./lists.cue:13:9
+    ./lists.cue:14:10
+yourIP.0: conflicting values 192 and 11:
+    ./lists.cue:7:6
+    ./lists.cue:13:9
+    ./lists.cue:14:10
 {{< /highlight >}}
 </div>
 </section>

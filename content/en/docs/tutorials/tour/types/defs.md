@@ -35,14 +35,13 @@ err: #A & { feild: 3 }
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval -ic defs.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue eval -c defs.cue</i>
 <p>
-{{< highlight go >}}
-msg: "Hello world!"
-a: {
-    field: 3
-}
-err: _|_ // field "feild" not allowed in closed struct
+{{< highlight txt >}}
+err.feild: field not allowed:
+    ./defs.cue:5:5
+    ./defs.cue:10:6
+    ./defs.cue:10:13
 {{< /highlight >}}
 </div>
 </section>
