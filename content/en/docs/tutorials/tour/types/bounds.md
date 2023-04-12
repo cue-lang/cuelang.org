@@ -41,10 +41,10 @@ r1: #rn & >=5 & <10
 <p>
 {{< highlight go >}}
 a:  3.5
-b:  _|_ // conflicting values #ri and 3.5 (mismatched types int and float)
+b:  _|_ // b: conflicting values int and 3.5 (mismatched types int and float)
 c:  3
 d:  "ma"
-e:  _|_ // invalid value "mu" (out of bound <"mo")
+e:  _|_ // e: invalid value "mu" (out of bound <"mo")
 r1: >=5 & <8
 {{< /highlight >}}
 </div>
