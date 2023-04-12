@@ -30,6 +30,8 @@ Interpolation may also be used in multiline string and byte literals.
 <p>
 {{< highlight go >}}
 "You are 14 dollars over budget!"
+#cost:   102
+#budget: 88
 {{< /highlight >}}
 </div>
 </section>

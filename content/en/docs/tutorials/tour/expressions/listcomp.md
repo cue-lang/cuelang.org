@@ -24,10 +24,15 @@ The example shows the use of `for` loops and `if` guards.
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval listcomp.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue export listcomp.cue</i>
 <p>
 {{< highlight go >}}
-[4, 16, 36, 64]
+[
+    4,
+    16,
+    36,
+    64
+]
 {{< /highlight >}}
 </div>
 </section>

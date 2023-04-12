@@ -41,7 +41,10 @@ b: a & {
 a: {
     field: int
 }
-b: _|_ // field "feild" not allowed in closed struct
+b: {
+    field: int
+    feild: _|_ // b.feild: field not allowed
+}
 {{< /highlight >}}
 </div>
 </section>

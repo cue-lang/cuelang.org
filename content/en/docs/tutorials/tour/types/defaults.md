@@ -37,7 +37,7 @@ protocol: *"udp" | "tcp"
 <p>
 {{< highlight go >}}
 replicas: 1
-protocol: "tcp" | "udp" | *_|_
+protocol: "tcp" | "udp"
 {{< /highlight >}}
 </div>
 </section>
