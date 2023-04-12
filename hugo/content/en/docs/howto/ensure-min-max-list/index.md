@@ -2,6 +2,8 @@
 title: Require min or max items in a list
 weight:
 draft: false
+categories:
+    - Language
 ---
 
 ## Min
