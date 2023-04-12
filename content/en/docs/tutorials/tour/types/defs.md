@@ -42,7 +42,10 @@ msg: "Hello world!"
 a: {
     field: 3
 }
-err: _|_ // field "feild" not allowed in closed struct
+err: {
+    field: int
+    feild: _|_ // err.feild: field not allowed
+}
 {{< /highlight >}}
 </div>
 </section>

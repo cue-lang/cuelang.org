@@ -50,7 +50,7 @@ go generate ./...
 Therefore to update the generated version you need to update the required version of `cuelang.org/go`:
 
 ```
-go get cuelang.org/go@latest
+go get cuelang.org/go@release-branch.v0.5
 ```
 
 ### tip.cuelang.org

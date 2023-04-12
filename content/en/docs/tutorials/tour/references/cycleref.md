@@ -31,8 +31,8 @@ selectors: {name: "bar"}
 <p>
 {{< highlight go >}}
 labels: {
-    name: "bar"
     app:  "foo"
+    name: "bar"
 }
 selectors: {
     name: "bar"

@@ -27,7 +27,7 @@ of defining structs light.
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval emit.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue export emit.cue</i>
 <p>
 {{< highlight go >}}
 "Hello world!"

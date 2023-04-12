@@ -51,9 +51,9 @@ e: [
 {{< highlight go >}}
 a: 4
 b: 4.0
-c: _|_ // conflicting values int and 4.0 (mismatched types int and float)
+c: _|_ // c: conflicting values int and 4.0 (mismatched types int and float)
 d: 4
-e: [1234, 5000000, 1610612736, 268435456]
+e: [1_234, 5M, 1.5Gi, 0x1000_0000]
 {{< /highlight >}}
 </div>
 </section>
