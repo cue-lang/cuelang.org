@@ -34,8 +34,8 @@ price: 200
 <div class="col-lg-6 ml-0"><i>$ cue eval conditional.cue</i>
 <p>
 {{< highlight go >}}
-price:         200
 justification: string
+price:         200
 {{< /highlight >}}
 </div>
 </section>

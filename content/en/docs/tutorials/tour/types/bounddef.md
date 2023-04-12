@@ -49,7 +49,7 @@ c: #word & 2_000_000_000
 <div class="col-lg-6 ml-0"><i>$ cue eval -ic bound.cue</i>
 <p>
 {{< highlight go >}}
-a: _|_ // invalid value -1 (out of bound int & >=0)
+a: _|_ // a: invalid value -1 (out of bound >=0)
 b: 128
 c: 2000000000
 {{< /highlight >}}
