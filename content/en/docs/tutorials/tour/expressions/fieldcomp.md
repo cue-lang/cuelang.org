@@ -37,18 +37,18 @@ for k, v in #a {
 <p>
 {{< highlight go >}}
 barcelona: {
-    name:    "Barcelona"
     pos:     1
+    name:    "Barcelona"
     nameLen: 9
 }
 shanghai: {
-    name:    "Shanghai"
     pos:     2
+    name:    "Shanghai"
     nameLen: 8
 }
 munich: {
-    name:    "Munich"
     pos:     3
+    name:    "Munich"
     nameLen: 6
 }
 {{< /highlight >}}

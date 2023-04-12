@@ -39,11 +39,11 @@ val: list[3]
 <div class="col-lg-6 ml-0"><i>$ cue eval -i bottom.cue</i>
 <p>
 {{< highlight go >}}
-list: [0, 1, 2]
-a: _|_ // conflicting values 4 and 5
-l: [1, _|_, // conflicting values 2 and 3
+a: _|_ // a: conflicting values 5 and 4
+l: [1, _|_, // l.1: conflicting values 3 and 2
 ]
-val: _|_ // index 3 out of bounds
+list: [0, 1, 2]
+val: _|_ // val: index out of range [3] with length 3
 {{< /highlight >}}
 </div>
 </section>

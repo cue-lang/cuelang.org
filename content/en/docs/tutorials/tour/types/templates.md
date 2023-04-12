@@ -55,8 +55,8 @@ job: {
     }
     nginx: {
         name:     "nginx"
-        replicas: 2
         command:  "nginx"
+        replicas: 2
     }
 }
 {{< /highlight >}}
