@@ -32,7 +32,7 @@ The CUE tooling, layered on top of CUE, provides
 a general purpose scripting language for creating scripts as well as
 simple servers, also expressed in CUE.
 
-CUE was designed with cloud configuration, and related systems, in mind,
+CUE was designed with cloud configuration and related systems in mind,
 but is not limited to this domain.
 It derives its formalism from relational programming languages.
 This formalism allows for managing and reasoning over large amounts of
@@ -46,7 +46,7 @@ CUE has a lot of similarities with the Go language. This document draws heavily
 from the Go specification as a result.
 
 CUE draws its influence from many languages.
-Its main influences were BCL/ GCL (internal to Google),
+Its main influences were BCL/GCL (internal to Google),
 LKB (LinGO), Go, and JSON.
 Others are Swift, Typescript, Javascript, Prolog, NCL (internal to Google),
 Jsonnet, HCL, Flabbergast, Nix, JSONPath, Haskell, Objective-C, and Python.
@@ -77,13 +77,13 @@ in increasing precedence:
 ```
 
 Lower-case production names are used to identify lexical tokens. Non-terminals
-are in CamelCase. Lexical tokens are enclosed in double quotes "" or back quotes
-``.
+are in CamelCase. Lexical tokens are enclosed in double quotes `""` or back
+quotes ` `` `.
 
-The form a … b represents the set of characters from a through b as
-alternatives. The horizontal ellipsis … is also used elsewhere in the spec to
+The form `a … b` represents the set of characters from a through b as
+alternatives. The horizontal ellipsis `…` is also used elsewhere in the spec to
 informally denote various enumerations or code snippets that are not further
-specified. The character … (as opposed to the three characters ...) is not a
+specified. The character `…` (as opposed to the three characters `...`) is not a
 token of the CUE language.
 
 
@@ -127,7 +127,7 @@ as Unicode letters, and those in the Number category Nd as Unicode digits.
 
 ### Letters and digits
 
-The underscore character _ (U+005F) is considered a letter.
+The underscore character `_` (U+005F) is considered a letter.
 
 ```
 letter        = unicode_letter | "_" | "$" .
@@ -141,8 +141,9 @@ hex_digit     = "0" … "9" | "A" … "F" | "a" … "f" .
 ## Lexical elements
 
 ### Comments
+
 Comments serve as program documentation.
-CUE supports line comments that start with the character sequence //
+CUE supports line comments that start with the character sequence `//`
 and stop at the end of the line.
 
 A comment cannot start inside a string literal or inside a comment.
@@ -162,8 +163,8 @@ next token is the longest sequence of characters that form a valid token.
 
 ### Commas
 
-The formal grammar uses commas "," as terminators in a number of productions.
-CUE programs may omit most of these commas using the following two rules:
+The formal grammar uses commas `,` as terminators in a number of productions.
+CUE programs may omit most of these commas using the following rules:
 
 When the input is broken into tokens, a comma is automatically inserted into
 the token stream immediately after a line's final token if that token is
@@ -176,6 +177,10 @@ the token stream immediately after a line's final token if that token is
 
 Although commas are automatically inserted, the parser will require
 explicit commas between two list elements.
+
+<!--
+TODO: remove the above exception
+-->
 
 To reflect idiomatic use, examples in this document elide commas using
 these rules.
@@ -218,7 +223,7 @@ Some identifiers are [predeclared](#predeclared-identifiers).
 ### Keywords
 
 CUE has a limited set of keywords.
-In addition, CUE reserves all identifiers starting with `__`(double underscores)
+In addition, CUE reserves all identifiers starting with `__` (double underscores)
 as keywords.
 These are typically targets of pre-declared identifiers.
 
@@ -295,7 +300,7 @@ decimal_lit = "0" | ( "1" … "9" ) { [ "_" ] decimal_digit } .
 decimals    = decimal_digit { [ "_" ] decimal_digit } .
 si_it       = decimals [ "." decimals ] multiplier |
               "." decimals  multiplier .
-binary_lit  = "0b" binary_digit { binary_digit } .
+binary_lit  = "0b" binary_digit { [ "_" ] binary_digit } .
 hex_lit     = "0" ( "x" | "X" ) hex_digit { [ "_" ] hex_digit } .
 octal_lit   = "0o" octal_digit { [ "_" ] octal_digit } .
 multiplier  = ( "K" | "M" | "G" | "T" | "P" ) [ "i" ]
@@ -307,10 +312,10 @@ exponent    = ( "e" | "E" ) [ "+" | "-" ] decimals .
 ```
 
 An _integer literal_ is a sequence of digits representing an integer value.
-An optional prefix sets a non-decimal base: 0o for octal,
-0x or 0X for hexadecimal, and 0b for binary.
-In hexadecimal literals, letters a-f and A-F represent values 10 through 15.
-All integers allow interstitial underscores "_";
+An optional prefix sets a non-decimal base: `0o` for octal,
+`0x` or `0X` for hexadecimal, and `0b` for binary.
+In hexadecimal literals, letters `a … f` and `A … F` represent values 10 through 15.
+All integers allow interstitial underscores `_`;
 these have no meaning and are solely for readability.
 
 Integer literals may have an SI or IEC multiplier.
@@ -320,7 +325,7 @@ towards zero if it is not an integer.
 
 ```
 42
-1.5G    // 1_000_000_000
+1.5G    // 1_500_000_000
 1.3Ki   // 1.3 * 1024 = trunc(1331.2) = 1331
 170_141_183_460_469_231_731_687_303_715_884_105_727
 0xBad_Face
@@ -385,9 +390,15 @@ Byte sequences may contain any sequence of bytes.
 Several escape sequences allow arbitrary values to be encoded as ASCII text.
 An escape sequence starts with an _escape delimiter_, which is `\` by default.
 The escape delimiter may be altered to be `\` plus a fixed number of
-hash symbols `#`
-by padding the start and end of a string or byte sequence literal
-with this number of hash symbols.
+hash symbols `#` by padding the start and end of a string or byte sequence
+literal with this number of hash symbols.
+
+<!--
+TODO: move these examples further up so it's evident why #" exists.
+	#"This is not an \(interpolation)"#
+	#"This is an \#(interpolation)"#
+	#"The sequence "\U0001F604" renders as \#U0001F604."#
+-->
 
 There are four ways to represent the integer value as a numeric constant: `\x`
 followed by exactly two hexadecimal digits; `\u` followed by exactly four
@@ -412,8 +423,7 @@ represent individual bytes of the resulting string; all other escapes represent
 the (possibly multi-byte) UTF-8 encoding of individual characters.
 Thus inside a string literal `\377` and `\xFF` represent a single byte of
 value `0xFF=255`, while `ÿ`, `\u00FF`, `\U000000FF` and `\xc3\xbf` represent
-the two bytes `0xc3 0xbf` of the UTF-8
-encoding of character `U+00FF`.
+the two bytes `0xc3 0xbf` of the UTF-8 encoding of character `U+00FF`.
 
 ```
 \a   U+0007 alert or bell
@@ -431,6 +441,10 @@ encoding of character `U+00FF`.
 
 The escape `\(` is used as an escape for string interpolation.
 A `\(` must be followed by a valid CUE Expression, followed by a `)`.
+
+A backslash at the end of a line elides the line terminator that follows it.
+This may not escape the final newline inside a multiline string: that
+newline is already implicitly elided.
 
 All other sequences starting with a backslash are illegal inside literals.
 
@@ -506,7 +520,7 @@ Multiline strings and byte sequences respectively start with
 a triple double quote (`"""`) or triple single quote (`'''`),
 immediately followed by a newline, which is discarded from the string contents.
 The string is closed by a matching triple quote, which must be by itself
-on a newline, preceded by optional whitespace.
+on a new line, preceded by optional whitespace.
 The newline preceding the closing quote is discarded from the string contents.
 The whitespace before a closing triple quote must appear before any non-empty
 line after the opening quote and will be removed from each of these
@@ -521,7 +535,8 @@ To include it is suffices to escape one of the quotes.
     out of itself
 
     bass
-    picking bugs
+    picking \
+    bugs
     off the moon
         — Nick Virgilio, Selected Haiku, 1988
     """
@@ -545,7 +560,7 @@ Support for other values:
 
 ## Values
 
-In addition to simple values like `"hello"` and `42.0`, CUE has _structs_.
+In addition to simple values like `"hello"` and `42.0`, CUE has [structs](#structs).
 A struct is a map from labels to values, like `{a: 42.0, b: "hello"}`.
 Structs are CUE's only way of building up complex values;
 lists, which we will see later,
@@ -560,29 +575,33 @@ that is if `a` orders before `b` in the partial order
 We also say that `b` _subsumes_ `a` in this case.
 In graphical terms, `b` is "above" `a` in the lattice.
 
+<!-- TODO: link to https://cuelang.org/docs/concepts/logic/ as more reading
+material, especially for those new to lattices
+-->
+
 At the top of the lattice is the single ancestor of all values, called
-_top_, denoted `_` in CUE.
+[top](#top), denoted `_` in CUE.
 Every value is an instance of top.
 
-At the bottom of the lattice is the value called _bottom_, denoted `_|_`.
+At the bottom of the lattice is the value called [bottom](#bottom), denoted `_|_`.
 A bottom value usually indicates an error.
 Bottom is an instance of every value.
 
 An _atom_ is any value whose only instances are itself and bottom.
-Examples of atoms are `42.0`, `"hello"`, `true`, `null`.
+Examples of atoms are `42.0`, `"hello"`, `true`, and `null`.
 
-A value is _concrete_ if it is either an atom, or a struct all of whose
-field values are themselves concrete, recursively.
+A value is _concrete_ if it is either an atom, or a struct whose field values
+are all concrete, recursively.
 
 CUE's values also include what we normally think of as types, like `string` and
 `float`.
-But CUE does not distinguish between types and values; only the
-relationship of values in the lattice is important.
+It does not distinguish between types and values:
+only the relationship of values in the lattice is important.
 Each CUE "type" subsumes the concrete values that one would normally think
 of as part of that type.
-For example, "hello" is an instance of `string`, and `42.0` is an instance of
+For example, `"hello"` is an instance of `string`, and `42.0` is an instance of
 `float`.
-In addition to `string` and `float`, CUE has `null`, `int`, `bool` and `bytes`.
+In addition to `string` and `float`, CUE has `null`, `int`, `bool`, and `bytes`.
 We informally call these CUE's "basic types".
 
 
@@ -622,7 +641,7 @@ These all follow from the definition of unification:
 - The unification of a value with bottom is always bottom.
 
 Unification in CUE is a [binary expression](#operands), written `a & b`.
-It is commutative and associative.
+It is commutative, associative, and idempotent.
 As a consequence, order of evaluation is irrelevant, a property that is key
 to many of the constructs in the CUE language as well as the tooling layered
 on top of it.
@@ -773,6 +792,8 @@ string | *"foo"          ⟨string, "foo"⟩         M1, D1
 (*1|2) & (1|*2)          ⟨1|2, _|_⟩              M1, D1, U2
 ```
 
+<!-- TODO: define and consistently use the value-default pair syntax -->
+
 The rules of subsumption for defaults can be derived from the above definitions
 and are as follows.
 
@@ -850,7 +871,7 @@ bottom_lit = "_|_" .
 ### Top
 
 Top is represented by the underscore character `_`, lexically an identifier.
-Unifying any value `v` with top results `v` itself.
+Unifying any value `v` with top results in `v` itself.
 
 ```
 Expr        Result
@@ -907,12 +928,14 @@ They are two distinct types.
 Both are instances instances of a generic `number` type.
 
 <!--
+TODO: would be nice to make this a rendered diagram with Mermaid.
+
                     number
                    /      \
                 int      float
 -->
 
-The predeclared number, integer, decimal floating-point types are
+The predeclared number, integer, and decimal floating-point types are
 `number`, `int` and `float`; they are defined types.
 <!--
 TODO: should we drop float? It is somewhat preciser and probably a good idea
@@ -934,14 +957,14 @@ representation with limited precision.
 That said, every implementation must:
 
 - Represent integer values with at least 256 bits.
-- Represent floating-point values, with a mantissa of at least 256 bits and
+- Represent floating-point values with a mantissa of at least 256 bits and
 a signed binary exponent of at least 16 bits.
 - Give an error if unable to represent an integer value precisely.
 - Give an error if unable to represent a floating-point value due to overflow.
 - Round to the nearest representable value if unable to represent
 a floating-point value due to limits on precision.
 These requirements apply to the result of any expression except for builtin
-functions for which an unusual loss of precision must be explicitly documented.
+functions, for which an unusual loss of precision must be explicitly documented.
 
 
 ### Strings
@@ -966,11 +989,12 @@ The predeclared byte sequence type is `bytes`; it is a defined type.
 ### Bounds
 
 A _bound_, syntactically a [unary expression](#operands), defines
-an infinite disjunction of concrete values than can be represented
-as a single comparison.
+a logically infinite disjunction of concrete values represented as a single comparison.
+For example, `>= 2` represents the infinite disjunction `2|3|4|5|6|7|…`.
 
 For any [comparison operator](#comparison-operators) `op` except `==`,
 `op a` is the disjunction of every `x` such that `x op a`.
+
 
 ```
 2 & >=2 & <=5           // 2, where 2 is either an int or float.
@@ -992,7 +1016,7 @@ int & 2 & >1.0 & <3.0   // _|_
 A _struct_ is a set of elements called _fields_, each of
 which has a name, called a _label_, and value.
 
-We say a label is defined for a struct if the struct has a field with the
+We say a label is _defined_ for a struct if the struct has a field with the
 corresponding label.
 The value for a label `f` of struct `a` is denoted `a.f`.
 A struct `a` is an instance of `b`, or `a ⊑ b`, if for any label `f`
@@ -1007,24 +1031,102 @@ instance. It can be considered the type of all structs.
 {a: 1} ⊑ {}
 {a: 1, b: 1} ⊑ {a: 1}
 {a: 1} ⊑ {a: int}
-{a: 1, b: 1.0} ⊑ {a: int, b: float}
+{a: 1, b: 1.0} ⊑ {a: int, b: number}
 
 {} ⋢ {a: 1}
 {a: 2} ⋢ {a: 1}
 {a: 1} ⋢ {b: 1}
 ```
 
-A field may be required or optional.
 The successful unification of structs `a` and `b` is a new struct `c` which
 has all fields of both `a` and `b`, where
-the value of a field `f` in `c` is `a.f & b.f` if `f` is in both `a` and `b`,
+the value of a field `f` in `c` is `a.f & b.f` if `f` is defined in both `a` and `b`,
 or just `a.f` or `b.f` if `f` is in just `a` or `b`, respectively.
-If a field `f` is in both `a` and `b`, `c.f` is optional only if both
-`a.f` and `b.f` are optional.
 Any [references](#references) to `a` or `b`
 in their respective field values need to be replaced with references to `c`.
-The result of a unification is bottom (`_|_`) if any of its non-optional
+The result of a unification is bottom (`_|_`) if any of its defined
 fields evaluates to bottom, recursively.
+
+A struct literal may contain multiple fields with the same label,
+the result of which is the unification of all those fields.
+
+```
+StructLit       = "{" { Declaration "," } "}" .
+Declaration     = Field | Ellipsis | Embedding | LetClause | attribute .
+Ellipsis        = "..." [ Expression ] .
+Embedding       = Comprehension | AliasExpr .
+Field           = Label ":" { Label ":" } AliasExpr { attribute } .
+Label           = [ identifier "=" ] LabelExpr .
+LabelExpr       = LabelName [ "?" | "!" ] | "[" AliasExpr "]" .
+LabelName       = identifier | simple_string_lit  .
+
+attribute       = "@" identifier "(" attr_tokens ")" .
+attr_tokens     = { attr_token |
+                    "(" attr_tokens ")" |
+                    "[" attr_tokens "]" |
+                    "{" attr_tokens "}" } .
+attr_token      = /* any token except '(', ')', '[', ']', '{', or '}' */
+```
+
+```
+Expression                             Result
+{a: int, a: 1}                         {a: 1}
+{a: int} & {a: 1}                      {a: 1}
+{a: >=1 & <=7} & {a: >=5 & <=9}        {a: >=5 & <=7}
+{a: >=1 & <=7, a: >=5 & <=9}           {a: >=5 & <=7}
+
+{a: 1} & {b: 2}                        {a: 1, b: 2}
+{a: 1, b: int} & {b: 2}                {a: 1, b: 2}
+
+{a: 1} & {a: 2}                        _|_
+```
+
+
+#### Field constraints
+
+A struct may declare _field constraints_ which define values
+that should be unified with a given field once it is defined.
+The existence of a field constraint declares, but does not define, that field.
+
+Syntactically, a field is marked as a constraint
+by following its label with an _optional_ marker `?`
+or _required_ marker `!`.
+These markers are not part of the field name.
+
+A struct that has a required field constraint with a bottom value
+evaluates to bottom.
+An optional field constraint with a bottom value does _not_ invalidate
+the struct that contains it
+as long as it is not unified with a defined field.
+
+The subsumption relation for fields with the various markers is defined as
+```
+{a?: x} ⊑ {a!: x} ⊑ {a: x}
+```
+for any given `x`.
+
+Implementations may error upon encountering a required field constraint
+when manifesting CUE as data.
+
+```
+Expression                             Result
+{foo?: 3} & {foo: 3}                   {foo: 3}
+{foo!: 3} & {foo: 3}                   {foo: 3}
+
+{foo!: int} & {foo: int}               {foo:  int}
+{foo!: int} & {foo?: <1}               {foo!: <1}
+{foo!: int} & {foo: <=3}               {foo:  <=3}
+{foo!: int} & {foo: 3}                 {foo:  3}
+
+{foo!: 3} & {foo: int}                 {foo: 3}
+{foo!: 3} & {foo: <=4}                 {foo: 3}
+
+{foo?: 1} & {foo?: 2}                  {foo?: _|_} // No error
+{foo?: 1} & {foo!: 2}                  _|_
+{foo?: 1} & {foo: 2}                   _|_
+```
+
+<!-- see https://github.com/cue-lang/proposal/blob/main/designs/1951-required-fields-v2.md -->
 
 <!--NOTE: About bottom values for optional fields being okay.
 
@@ -1041,41 +1143,38 @@ definitions, when tightening an optional field leads to unintentionally
 discarding it.
 It could be a role of vet checkers to identify such cases (and suggest users
 to explicitly use `_|_` to discard a field, for instance).
+
+TODO: These examples show also how field constraints interact with defaults.
+Should we included this? Probably not necessary, as this is an orthogonal
+concern.
+```
+Expression                             Result
+a: { foo?: string }                    a: { foo?: string }
+b: { foo: "bar" }                      b: { foo: "bar" }
+c: { foo?: *"baz" | string }           c: { foo?: *"baz" | string }
+
+d: a & b                               { foo: "bar" }
+e: b & c                               { foo: "bar" }
+f: a & c                               { foo?: *"baz" | string }
+g: a & { foo?: number }                { foo?: _|_ } // This is fine
+h: b & { foo?: number }                _|_
+i: c & { foo: string }                 { foo: *"baz" | string }
+```
 -->
 
-Syntactically, a field is marked as optional by following its label with a `?`.
-The question mark is not part of the field name.
-A struct literal may contain multiple fields with
-the same label, the result of which is a single field with the same properties
-as defined as the unification of two fields resulting from unifying two structs.
 
-These examples illustrate required fields only.
-Examples with optional fields follow below.
+#### Pattern and default constraints
 
-```
-Expression                             Result (without optional fields)
-{a: int, a: 1}                         {a: 1}
-{a: int} & {a: 1}                      {a: 1}
-{a: >=1 & <=7} & {a: >=5 & <=9}        {a: >=5 & <=7}
-{a: >=1 & <=7, a: >=5 & <=9}           {a: >=5 & <=7}
-
-{a: 1} & {b: 2}                        {a: 1, b: 2}
-{a: 1, b: int} & {b: 2}                {a: 1, b: 2}
-
-{a: 1} & {a: 2}                        _|_
-```
-
-A struct may define constraints that apply to fields that are added when unified
-with another struct using pattern or default constraints (_Note_: default
-constraints are not yet implemented).
+A struct may define constraints that apply to a collection of fields.
 
 A _pattern constraint_, denoted `[pattern]: value`, defines a pattern, which
 is a value of type string, and a value to unify with fields whose label
-match that pattern.
-When unifying structs `a` and `b`,
-a pattern constraint `[p]: v` declared in `a`
-defines that the value `v` should unify with any field in the resulting struct `c`
-whose label unifies with pattern `p`.
+unifies with the pattern.
+For a given struct `a` with pattern constraint `[p]: v`, `v` is unified
+with any field with name `f` in `a` for which `p & f` is not bottom.
+When unifying struct `a` and `b`,
+any pattern constraint declared in `a` and `b`
+are also declared in the result of unification.
 
 <!-- TODO: Update grammar and support this.
 A pattern constraints with a pattern preceded by `...` indicates
@@ -1089,17 +1188,19 @@ When unifying structs `a` and `b`,
 a default constraint `...v` declared in `a`
 defines that the value `v` should unify with any field in the resulting struct `c`
 whose label does not unify with any of the patterns of the pattern
-constraints defined for `a` _and_ for which there exists no field in `a`
-with that label.
+constraints defined for `a` _and_ for which there exists no field declaration
+in `a` with that label.
 The token `...` is a shorthand for `..._`.
-_Note_: default constraints are not yet implemented.
+_Note_: default constraints of the form `..._` are not yet implemented.
 
 
 ```
 a: {
-    foo:    string    // foo is a string
+    foo:      string  // foo is a string
     [=~"^i"]: int     // all other fields starting with i are integers
     [=~"^b"]: bool    // all other fields starting with b are booleans
+    [>"c"]:   string  // all other fields lexically after c are strings
+
     ...string         // all other fields must be a string. Note: default constraints are not yet implemented.
 }
 
@@ -1109,6 +1210,17 @@ b: a & {
     other: "a string"
 }
 ```
+
+<!--
+TODO: are these two equivalent? Rog says that maybe you'll be able to refer
+to optional fields at some point, which will never make sense for patterns.
+Marcel says this is already mentioned elsewhere.
+
+a: {
+	["foo"]: int
+	foo?: int
+}
+-->
 
 Concrete field labels may be an identifier or string, the latter of which may be
 interpolated.
@@ -1166,36 +1278,6 @@ future extensions and relaxations:
 -->
 
 ```
-StructLit       = "{" { Declaration "," } "}" .
-Declaration     = Field | Ellipsis | Embedding | LetClause | attribute .
-Ellipsis        = "..." [ Expression ] .
-Embedding       = Comprehension | AliasExpr .
-Field           = Label ":" { Label ":" } AliasExpr { attribute } .
-Label           = [ identifier "=" ] LabelExpr .
-LabelExpr       = LabelName [ "?" ] | "[" AliasExpr "]" .
-LabelName       = identifier | simple_string_lit  .
-
-attribute       = "@" identifier "(" attr_tokens ")" .
-attr_tokens     = { attr_token |
-                    "(" attr_tokens ")" |
-                    "[" attr_tokens "]" |
-                    "{" attr_tokens "}" } .
-attr_token      = /* any token except '(', ')', '[', ']', '{', or '}' */
-```
-
-```
-Expression                             Result (without optional fields)
-a: { foo?: string }                    {}
-b: { foo: "bar" }                      { foo: "bar" }
-c: { foo?: *"bar" | string }           {}
-
-d: a & b                               { foo: "bar" }
-e: b & c                               { foo: "bar" }
-f: a & c                               {}
-g: a & { foo?: number }                {}
-h: b & { foo?: number }                _|_
-i: c & { foo: string }                 { foo: "bar" }
-
 intMap: [string]: int
 intMap: {
     t1: 43
@@ -1207,11 +1289,13 @@ nameMap: [string]: {
     nickName:  *firstName | string
 }
 
-nameMap: hank: { firstName: "Hank" }
+nameMap: hank: firstName: "Hank"
 ```
+
 The optional field set defined by `nameMap` matches every field,
 in this case just `hank`, and unifies the associated constraint
 with the matched field, resulting in:
+
 ```
 nameMap: hank: {
     firstName: "Hank"
@@ -1361,7 +1445,7 @@ Referencing a definition will recursively [close](#closed-structs) it.
 That is, a referenced definition will not unify with a struct
 that would add a field anywhere within the definition that it does not
 already define or explicitly allow with a pattern constraint or `...`.
-[Embeddings](#embedding) allow bypassing this check.
+[Embedding](#embedding) allows bypassing this check.
 
 If referencing a definition would always result in an error, implementations
 may report this inconsistency at the point of its declaration.
@@ -1538,7 +1622,7 @@ foo: { value: 1 } // outputs: foo: { name: "foo", value: 1 }
 #### Let declarations
 
 _Let declarations_ bind an identifier to an expression.
-The identifier is visible within the [scope](#declarations-and-scopes)
+The identifier is only visible within the [scope](#declarations-and-scopes)
 in which it is declared.
 The identifier must be unique within its scope.
 
@@ -1719,7 +1803,7 @@ of the predefined identifier, prefixed with `__`.
 
 ```
 Functions
-len       close and or
+len close and or
 
 Types
 null      The null type and value
@@ -1734,10 +1818,10 @@ number    int | float
 uint      >=0
 uint8     >=0 & <=255
 int8      >=-128 & <=127
-uint16    >=0 & <=65536
+uint16    >=0 & <=65535
 int16     >=-32_768 & <=32_767
 rune      >=0 & <=0x10FFFF
-uint32    >=0 & <=4_294_967_296
+uint32    >=0 & <=4_294_967_295
 int32     >=-2_147_483_648 & <=2_147_483_647
 uint64    >=0 & <=18_446_744_073_709_551_615
 int64     >=-9_223_372_036_854_775_808 & <=9_223_372_036_854_775_807
@@ -1784,7 +1868,7 @@ foo:   string  // visible outside mypackage
 
 Given a set of identifiers, an identifier is called unique if it is different
 from every other in the set, after applying normalization following
-Unicode Annex #31.
+[Unicode Annex #31](https://unicode.org/reports/tr31/).
 Two identifiers are different if they are spelled differently
 or if they appear in different packages and are not exported.
 Otherwise, they are the same.
@@ -1827,6 +1911,10 @@ to these directly.
 
 ### Let declarations
 
+<!--
+TODO: why are there two "Let declarations" sections?
+-->
+
 Within a struct, a let clause binds an identifier to the given expression.
 
 Within the scope of the identifier, the identifier refers to the
@@ -1849,7 +1937,7 @@ requested at the application level.
 
 Operands denote the elementary values in an expression.
 An operand may be a literal, a (possibly qualified) identifier denoting
-field, alias, or let declaration, or a parenthesized expression.
+a field, alias, or let declaration, or a parenthesized expression.
 
 ```
 Operand     = Literal | OperandName | "(" Expression ")" .
@@ -2071,6 +2159,8 @@ for `a` of struct type:
 [ 1, 2, ...][2] // _|_
 ```
 
+<!-- TODO: Marcel says this is no longer how CUE works -->
+
 Both the operand and index value may be a value-default pair.
 ```
 va[vi]              =>  va[vi]
@@ -2115,6 +2205,8 @@ operand.
 
 Operands of unary and binary expressions may be associated with a default using
 the following
+
+<!-- TODO: the following... what? only examples follow. -->
 
 <!--
 ```
@@ -2241,7 +2333,7 @@ operands must be null.
 
 The equality operators `==` and `!=` apply to operands that are comparable.
 The ordering operators `<`, `<=`, `>`, and `>=` apply to operands that are ordered.
-The matching operators `=~` and `!~` apply to a string and regular
+The matching operators `=~` and `!~` apply to a string and a regular
 expression operand.
 These terms and the result of the comparisons are defined as follows:
 
@@ -2453,7 +2545,7 @@ Given an expression `f` of function type F,
 ```
 f(a1, a2, … an)
 ```
-calls `f` with arguments a1, a2, … an. Arguments must be expressions
+calls `f` with arguments `a1, a2, … an`. Arguments must be expressions
 of which the values are an instance of the parameter types of `F`
 and are evaluated before the function is called.
 
@@ -2542,7 +2634,7 @@ expressions with their string representation.
 String interpolation may be used in single- and double-quoted strings, as well
 as their multiline equivalent.
 
-A placeholder consists of "\\(" followed by an expression and a ")".
+A placeholder consists of `\(` followed by an expression and `)`.
 The expression is evaluated in the scope within which the string is defined.
 
 The result of the expression is substituted as follows:
@@ -2901,9 +2993,10 @@ package math
 ```
 
 ### Modules and instances
+
 A _module_ defines a tree of directories, rooted at the _module root_.
 
-All source files within a module with the same package belong to the same
+All source files within a module with the same package name belong to the same
 package.
 <!-- jba: I can't make sense of the above sentence. -->
 A module may define multiple packages.
@@ -2961,13 +3054,15 @@ of a package within a source code repository.
 An ImportLocation must be a non-empty string using only characters belonging to
 Unicode's L, M, N, P, and S general categories
 (the Graphic characters without spaces)
-and may not include the characters !"#$%&'()*,:;<=>?[\\]^`{|}
+and may not include the characters ``!"#$%&'()*,:;<=>?[\\]^`{|}``
 or the Unicode replacement character U+FFFD.
 
-Assume we have package containing the package clause "package math",
-which exports function Sin at the path identified by "lib/math".
-This table illustrates how Sin is accessed in files
+Assume we have package containing the package clause `package math`,
+which exports function `Sin` at the path identified by `lib/math`.
+This table illustrates how `Sin` is accessed in files
 that import the package after the various types of import declaration.
+
+<!-- TODO: a better example than lib/math:math, where the suffix is a no-op -->
 
 ```
 Import declaration          Local name of Sin
