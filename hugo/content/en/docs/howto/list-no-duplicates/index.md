@@ -2,6 +2,8 @@
 title: Ensure lists have no duplicate items
 weight:
 draft: false
+categories:
+    - Language
 ---
 
 In CUE, you often will work with lists of all sorts of values. To ensure a list
