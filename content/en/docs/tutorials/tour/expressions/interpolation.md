@@ -26,7 +26,7 @@ Interpolation may also be used in multiline string and byte literals.
 <br>
 </div>
 
-<div class="col-lg-6 ml-0"><i>$ cue eval interpolation.cue</i>
+<div class="col-lg-6 ml-0"><i>$ cue export interpolation.cue</i>
 <p>
 {{< highlight go >}}
 "You are 14 dollars over budget!"
