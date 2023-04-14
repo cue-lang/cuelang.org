@@ -29,7 +29,6 @@
         @include style-heading-1;
 
         hyphens: auto;
-        margin-top: 0;
         word-break: break-word;
     }
 
@@ -45,30 +44,10 @@
     &--docs {
         padding-top: 0;
 
-        h1 {
-            @include style-heading-3;
-        }
-
-        h2 {
-            @include style-heading-4;
-        }
-
-        h3 {
-            @include style-heading-5;
-        }
-
         h4,
         h5,
         h6 {
             font-size: 1rem;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            margin-bottom: 0.5rem;
-            margin-top: 1.5rem;
         }
     }
 
@@ -77,16 +56,6 @@
             #{ $self }__content {
                 h2 {
                     position: relative;
-
-                    &::before {
-                        @include svg(note, $c-yellow);
-
-                        display: inline-block;
-                        height: 1.25rem;
-                        position: absolute;
-                        translate: -1.75rem 2px;
-                        width: 1.25rem;
-                    }
                 }
             }
         }

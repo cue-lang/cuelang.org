@@ -113,9 +113,9 @@
                 box-shadow: $shadow--header;
                 content: '';
                 height: var(--header-logo-width);
-                left: 30px;
+                left: 35px;
                 position: absolute;
-                top: 5px;
+                top: 10px;
                 width: var(--header-logo-width);
                 z-index: 0; // Get it behind the bg
             }
@@ -168,6 +168,16 @@
 
         #{ $self }__container {
             padding: 0 $p-gutter;
+        }
+
+        &--wide,
+        &.is-sticky {
+
+            #{ $self }__container {
+                &::after {
+                    left: 40px;
+                }
+            }
         }
     }
 
