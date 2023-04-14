@@ -62,15 +62,19 @@ h6 {
     @include style-heading;
 
     color: var(--heading-color);
-    margin: 1rem 0 0.5rem;
+    margin: 2.5rem 0 0.5rem;
 }
 
 h1 {
     @include style-heading-1;
+
+    margin: 2.5rem 0 2rem;
 }
 
 h2 {
     @include style-heading-2;
+
+    margin: 2.5rem 0 1rem;
 }
 
 h3 {
@@ -148,7 +152,7 @@ ol {
         margin: 0 0 1.25rem;
 
         li {
-            margin: 0 0 0.5rem;
+            margin: 0 0 0.125rem;
             padding-left: 1.5rem;
             position: relative;
 
@@ -357,7 +361,7 @@ pre {
     border: 1px solid var(--pre-border-color);
     border-radius: $b-radius;
     color: var(--pre-color);
-    margin: 0 0 1rem;
+    margin: 0 0 1.5rem;
     max-width: 100%;
     overflow-x: auto;
     padding: 1rem 1.25rem;
