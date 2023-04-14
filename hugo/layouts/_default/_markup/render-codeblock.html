@@ -1,7 +1,15 @@
-{{- with (index .Attributes "title") -}}
-    <div class="highlight-title">
-        {{- . -}}
-    </div>
-{{- end -}}
+{{- $title := index .Attributes "title" -}}
+{{- $type := index .Attributes "type" -}}
 
-{{- highlight .Inner .Type .Options -}}
+<div class="code-block{{ if $title }} code-block--heading{{ end }}{{ if eq $type "terminal" }} code-block--terminal{{ end }}">
+    {{- with $title -}}
+        <div class="code-block__heading">
+            <span class="code-block__tab">{{- . -}}</span>
+        </div>
+    {{- end -}}
+
+    <div class="code-block__highlight">
+        {{- highlight .Inner .Type .Options -}}
+    </div>
+</div>
+

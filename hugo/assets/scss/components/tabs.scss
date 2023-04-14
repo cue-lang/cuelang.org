@@ -5,6 +5,8 @@
 .tabs {
     --tabs-gutter: #{ $p-gutter };
 
+    $self: &;
+
     border: 1px solid var(--tabs-border, transparentize($c-blue--darker, .9));
     border-radius: $b-radius;
     margin: 0 (calc(var(--tabs-gutter) * -1)) 2rem;
@@ -24,15 +26,27 @@
         & > :first-child {
             margin-top: 0;
         }
+    }
 
-        > pre,
-        > .highlight {
-            margin-left: calc(var(--tabs-gutter) * -1);
-            margin-right: calc(var(--tabs-gutter) * -1);
-            max-width: none;
+    &--code {
+        border: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin: 0;
 
-            &:last-child {
-                margin-bottom: calc(var(--tabs-gutter) * -1);
+        #{ $self }__nav  {
+            flex: 0 0 auto;
+        }
+
+        #{ $self }__content {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            padding: 0;
+
+            #{ $self }__item,
+            pre {
+                height: 100%;
             }
         }
     }

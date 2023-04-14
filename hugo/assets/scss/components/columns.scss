@@ -25,16 +25,9 @@
             max-width: calc(100% / var(--number-of-cols) - (var(--gap) * var(--number-of-gaps) / var(--number-of-cols)));
 
             // Make sure codeblocks fill all available space inside column
+            > .code-block:last-child,
             > pre:last-child {
                 flex: 1 0 auto;
-            }
-
-            > .highlight:last-child {
-                flex: 1 0 auto;
-
-                > * {
-                    height: 100%;
-                }
             }
 
             &:first-child:nth-last-child(1) {
