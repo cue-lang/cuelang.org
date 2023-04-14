@@ -78,12 +78,6 @@
         }
     }
 
-    @include screen($screen-simple) {
-        &__main {
-            padding-top: 20px;
-        }
-    }
-
     @include screen($screen-normal) {
         align-items: start;
         display: grid;
