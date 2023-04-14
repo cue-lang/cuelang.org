@@ -59,7 +59,7 @@
             }
 
             &.has-children {
-                margin-bottom: $p-gutter--large;
+                margin-bottom: 1.75rem;
             }
         }
 
@@ -140,8 +140,6 @@
         margin: 10px 0 0;
 
         & > #{ $self }__item {
-            margin: 0 0 6px;
-
             & > .toc {
                 margin-left: 0;
                 margin-top: 0;

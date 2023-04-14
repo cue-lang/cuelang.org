@@ -9,7 +9,7 @@
 @mixin style-text {
     font-family: $font-inter;
     font-size: 16px;
-    line-height: 1.875;
+    line-height: 1.75;
 }
 
 @mixin style-text-small {
@@ -40,56 +40,52 @@
 }
 
 @mixin style-heading-1 {
-    --heading-1-font-size: 2rem;
+    --heading-1-font-size: 2.125rem;
 
     font-size: var(--heading-1-font-size);
 
-    @include screen($screen-minimal) {
-        --heading-1-font-size: 2.25rem;
-    }
-
     @include screen($screen-simple) {
-        --heading-1-font-size: 2.75rem;
+        --heading-1-font-size: 2.5rem;
     }
 }
 
 @mixin style-heading-2 {
-    --heading-2-font-size: 1.75rem;
+    --heading-2-font-size: 1.5rem;
 
     font-size: var(--heading-2-font-size);
 
     @include screen($screen-simple) {
-        --heading-2-font-size: 2rem;
+        --heading-2-font-size: 1.625rem;
     }
 }
 
 @mixin style-heading-3 {
-    --heading-3-font-size: 1.5rem;
+    --heading-3-font-size: 1.25rem;
 
     font-size: var(--heading-3-font-size);
 
     @include screen($screen-simple) {
-        --heading-3-font-size: 1.75rem;
+        --heading-3-font-size: 1.375rem;
     }
 }
 
 @mixin style-heading-4 {
-    --heading-4-font-size: 1.25rem;
+    --heading-4-font-size: 1.125rem;
 
     font-size: var(--heading-4-font-size);
 
     @include screen($screen-simple) {
-        --heading-4-font-size: 1.5rem;
+        --heading-4-font-size: 1.25rem;
     }
 }
 
 @mixin style-heading-5 {
-    --heading-5-font-size: 1.125rem;
+    --heading-5-font-size: 1rem;
 
     font-size: var(--heading-5-font-size);
 
     @include screen($screen-simple) {
-        --heading-5-font-size: 1.25rem;
+        --heading-5-font-size: 1.125rem;
     }
 }
 
