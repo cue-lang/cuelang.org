@@ -28,10 +28,11 @@
     }
 
     &__tab {
+        background-color: var(--tab-background, $c-white);
         color: var(--tab-color, $c-blue--darker);
         display: block;
-        height: 52px;
-        line-height: 52px;
+        height: var(--tab-height, 52px);
+        line-height: var(--tab-height, 52px);
         position: relative;
         text-align: center;
         transition: color .2s, background-color .2s;
@@ -49,6 +50,7 @@
 
         &:focus,
         &:hover {
+            background-color: var(--tab-background-hover, $c-white);
             color: var(--tab-color-hover, $c-blue--light);
 
             &::after {
@@ -57,8 +59,10 @@
         }
 
         &.is-active {
+            background-color: var(--tab-background-active, $c-white);
             color: var(--tab-color-active, $c-blue--darker);
             font-weight: $weight-bold;
+            pointer-events: none;
 
             &::after {
                 background-color: var(--tab-border-color-active, $c-yellow);
@@ -125,6 +129,49 @@
 
     &--next {
         margin-right: #{-$p-gutter};
+    }
+
+    &--code {
+        --tab-background: #{ $c-grey-blue };
+        --tab-background-hover: #{ $c-grey-blue--light };
+        --tab-background-active: #{ $c-white };
+        --tab-color: #{ $c-blue--darker };
+        --tab-color-hover: #{ $c-blue--darker };
+        --tab-color-active: #{ $c-blue--darker };
+        --tab-height: 35px;
+
+        background-color: $c-grey-blue--lighter;
+        border-bottom: 0;
+
+        #{ $self }__tabs {
+            padding: 0;
+        }
+
+        #{ $self }__item {
+            padding: 0;
+        }
+
+        #{ $self }__tab {
+            font-size: 0.75rem;
+            font-weight: $weight-medium;
+            padding: 0 1rem;
+
+            &::after {
+                display: none;
+            }
+
+            &.is-active {
+                font-weight: $weight-semibold;
+            }
+
+            &--terminal {
+                --tab-background: #{ $c-grey-blue--lighter };
+                --tab-background-hover: #{ $c-grey-blue--light };
+                --tab-background-active: #{ $c-grey-blue--lighter };
+
+                font-weight: $weight-semibold;
+            }
+        }
     }
 
     @include screen($screen-simple) {

@@ -51,3 +51,27 @@
         url('/fonts/inter/700.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+
         url('/fonts/inter/700.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+
 }
+
+//
+// Roboto Mono (400, 700)
+// https://gwfh.mranftl.com/fonts/roboto-mono
+//
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    src:
+        url('/fonts/roboto-mono/regular.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+
+        url('/fonts/roboto-mono/regular.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 700;
+    src:
+        url('/fonts/roboto-mono/700.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+
+        url('/fonts/roboto-mono/700.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+
+}

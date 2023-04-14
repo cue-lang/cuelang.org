@@ -1,0 +1,94 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+
+.code-tabs {
+    $self: &;
+
+    border: 2px solid var(--pre-border-color, $c-grey-blue);
+    border-radius: $b-radius;
+    margin: 0 0 1.5rem;
+
+    &__item {
+        border-bottom: 2px solid var(--pre-border-color, $c-grey-blue);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        .code-block,
+        pre {
+            border: 0;
+            height: 100%;
+            margin: 0;
+        }
+    }
+
+    @include screen($screen-simple) {
+        display: grid;
+        grid-template:
+            'topLeft topRight' fit-content(248px)
+            'bottomLeft bottomRight' fit-content(248px) / 50% 50%;
+        max-height: 500px;
+
+        &__item {
+            max-height: 248px;
+
+            &:only-child {
+                grid-column: span 2;
+            }
+
+            &--left {
+                border-bottom: 0;
+                grid-area: topLeft;
+                grid-row: span 2;
+                max-height: 500px;
+                resize: horizontal;
+            }
+
+            &--right {
+                border-bottom: 0;
+                border-left: 2px solid var(--pre-border-color, $c-grey-blue);
+                grid-area: topRight;
+                grid-row: span 2;
+                max-height: 500px;
+            }
+
+            &--top-left {
+                grid-area: topLeft;
+
+                &:nth-last-child(2) {
+                    grid-column: span 2;
+                }
+            }
+
+            &--bottom-left {
+                border-bottom: 0;
+                grid-area: bottomLeft;
+
+                &:last-child {
+                    grid-column: span 2;
+                }
+            }
+
+            &--top-right {
+                border-left: 2px solid var(--pre-border-color, $c-grey-blue);
+                grid-area: topRight;
+
+                &:first-child {
+                    grid-column: span 2;
+                }
+            }
+
+            &--bottom-right {
+                border-bottom: 0;
+                border-left: 2px solid var(--pre-border-color, $c-grey-blue);
+                grid-area: bottomRight;
+
+                &:nth-child(2) {
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+}

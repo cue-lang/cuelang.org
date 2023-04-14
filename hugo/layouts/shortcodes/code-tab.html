@@ -1,0 +1,25 @@
+{{ if .Parent }}
+    {{ $name := trim (.Get "name") " " }}
+    {{ $area := .Get "area" | default "top-left" }}
+    {{ $language := .Get "language" | default "" }}
+    {{ $type := .Get "type" | default "default" }}
+    {{ $groupId := .Get "groupId" | default "default" }}
+    {{ $arrayName := printf "tabs-%s" $area }}
+    {{ $content := printf "```%s {type=\"%s\"}%s```" $language $type .Inner }}
+
+    {{ if not (.Parent.Scratch.Get $arrayName) }}
+        {{ .Parent.Scratch.Set $arrayName slice }}
+    {{ end }}
+    {{ with .Inner }}
+        {{ $.Parent.Scratch.Add $arrayName (dict
+            "name" $name
+            "area" $area
+            "language" $language
+            "type" $type
+            "groupId" $groupId
+            "content" $content
+        ) }}
+    {{ end }}
+{{ else }}
+    {{- errorf "[%s] %q: code-tab shortcode is missing its parent" site.Language.Lang .Page.Path -}}
+{{ end}}
