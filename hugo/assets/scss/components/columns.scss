@@ -5,19 +5,24 @@
 .columns {
     $self: &;
 
+    --gap: #{ $p-gutter };
+    --number-of-cols: 3;
+    --number-of-gaps: 2;
+
     margin: 0 auto 1.25em;
 
     @include screen($screen-simple) {
         display: flex;
-        gap: $p-gutter;
+        gap: var(--gap);
 
         &__col {
             @include marginless-child;
 
             display: flex;
-            flex: 0 1 50%;
             flex-direction: column;
-            max-width: 50%;
+
+            // Calculate column width depending on number of columns, minus gap
+            max-width: calc(100% / var(--number-of-cols) - (var(--gap) * var(--number-of-gaps) / var(--number-of-cols)));
 
             // Make sure codeblocks fill all available space inside column
             > pre:last-child {
@@ -30,6 +35,34 @@
                 > * {
                     height: 100%;
                 }
+            }
+
+            &:first-child:nth-last-child(1) {
+                max-width: 100%;
+            }
+
+            &:first-child:nth-last-child(2),
+            &:first-child:nth-last-child(2) ~ #{ $self }__col {
+                --number-of-cols: 2;
+                --number-of-gaps: 1;
+
+                flex: 0 0 50%;
+            }
+
+            &:first-child:nth-last-child(3),
+            &:first-child:nth-last-child(3) ~ #{ $self }__col {
+                --number-of-cols: 3;
+                --number-of-gaps: 2;
+
+                flex: 0 0 33.33%;
+            }
+
+            &:first-child:nth-last-child(4),
+            &:first-child:nth-last-child(4) ~ #{ $self }__col {
+                --number-of-cols: 4;
+                --number-of-gaps: 3;
+
+                flex: 0 0 25%;
             }
         }
     }
