@@ -179,6 +179,11 @@
                 }
             }
         }
+
+        &--wide {
+            --header-height: #{ $h-header--sticky };
+            --header-logo-width: #{ $w-branding--large };
+        }
     }
 
     @include screen($screen-normal) {
