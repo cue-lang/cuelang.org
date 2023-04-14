@@ -72,8 +72,6 @@ The current scroll position on the page will also be saved and reset when switch
 Lorem ipsum dolor sit amet....
 
 ```
-
-
 {{< tabs groupId="config" >}}
 {{< tab name="CUE" >}}
 Lorem ipsum dolor sit amet, alia invidunt honestatis te mea, tation docendi epicurei sit te, at qui cibo dicta temporibus.
