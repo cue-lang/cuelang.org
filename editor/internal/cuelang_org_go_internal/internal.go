@@ -15,7 +15,7 @@
 // Package internal exposes some cue internals to other packages.
 //
 // A better name for this package would be technicaldebt.
-package internal // import "github.com/cue-sh/playground/internal/cuelang_org_go_internal"
+package internal // import "github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal"
 
 // TODO: refactor packages as to make this package unnecessary.
 
@@ -48,6 +48,20 @@ var MakeInstance func(value interface{}) (instance interface{})
 
 // BaseContext is used as CUEs default context for arbitrary-precision decimals
 var BaseContext = apd.BaseContext.WithPrecision(24)
+
+// APIVersionSupported is the back version until which deprecated features
+// are still supported.
+var APIVersionSupported = Version(MinorSupported, PatchSupported)
+
+const (
+	MinorCurrent   = 5
+	MinorSupported = 4
+	PatchSupported = 0
+)
+
+func Version(minor, patch int) int {
+	return -1000 + 100*minor + patch
+}
 
 // ListEllipsis reports the list type and remaining elements of a list. If we
 // ever relax the usage of ellipsis, this function will likely change. Using
@@ -315,9 +329,6 @@ func IsDefinition(label ast.Label) bool {
 }
 
 func IsRegularField(f *ast.Field) bool {
-	if f.Token == token.ISA {
-		return false
-	}
 	var ident *ast.Ident
 	switch x := f.Label.(type) {
 	case *ast.Alias:
@@ -332,6 +343,30 @@ func IsRegularField(f *ast.Field) bool {
 		return false
 	}
 	return true
+}
+
+// ConstraintToken reports which constraint token (? or !) is associated
+// with a field (if any), taking into account compatibility of deprecated
+// fields.
+func ConstraintToken(f *ast.Field) (t token.Token, ok bool) {
+	if f.Constraint != token.ILLEGAL {
+		return f.Constraint, true
+	}
+	if f.Optional != token.NoPos {
+		return token.OPTION, true
+	}
+	return f.Constraint, false
+}
+
+// SetConstraints sets both the main and deprecated fields of f according to the
+// given constraint token.
+func SetConstraint(f *ast.Field, t token.Token) {
+	f.Constraint = t
+	if t == token.ILLEGAL {
+		f.Optional = token.NoPos
+	} else {
+		f.Optional = token.Blank.Pos()
+	}
 }
 
 func EmbedStruct(s *ast.StructLit) *ast.EmbedDecl {
