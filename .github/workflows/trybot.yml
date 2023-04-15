@@ -162,11 +162,6 @@ jobs:
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
-      - name: Ensure latest CUE
-        run: |-
-          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-          go mod tidy
-          go mod tidy
       - name: Regenerate
         run: go generate ./...
       - name: Test

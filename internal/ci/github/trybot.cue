@@ -53,17 +53,19 @@ workflows: trybot: _repo.bashWorkflow & {
 				// are established by running each tool.
 				for v in _setupGoActionsCaches {v},
 
-				json.#step & {
-					// The latest git clean check ensures that this call is effectively
-					// side effect-free. Using GOPRIVATE ensures we don't accidentally
-					// hit a stale cache in the proxy.
-					name: "Ensure latest CUE"
-					run: """
-						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-						go mod tidy
-						go mod tidy
-						"""
-				},
+				// Disable for now. There is not (yet) any concept in Go of "latest prerelease".
+				// See golang.org/issue/43141 for more information.
+				// json.#step & {
+				// 	// The latest git clean check ensures that this call is effectively
+				// 	// side effect-free. Using GOPRIVATE ensures we don't accidentally
+				// 	// hit a stale cache in the proxy.
+				// 	name: "Ensure latest CUE"
+				// 	run: """
+				// 		GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
+				// 		go mod tidy
+				// 		go mod tidy
+				// 		"""
+				// },
 
 				// Go generate steps
 				_goGenerate & {
