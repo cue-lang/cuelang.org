@@ -32,8 +32,8 @@ import (
 	"cuelang.org/go/encoding/openapi"
 	"cuelang.org/go/encoding/protobuf/jsonpb"
 	"cuelang.org/go/encoding/protobuf/textproto"
-	"github.com/cue-sh/playground/internal/cuelang_org_go_internal"
-	"github.com/cue-sh/playground/internal/cuelang_org_go_internal/filetypes"
+	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal"
+	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal/filetypes"
 	"cuelang.org/go/pkg/encoding/yaml"
 )
 
