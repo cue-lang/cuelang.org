@@ -151,17 +151,18 @@ type Config struct {
 
 	PkgName string // package name for files to generate
 
-	Force     bool // overwrite existing files.
+	Force     bool // overwrite existing files
 	Strict    bool
-	Stream    bool // will potentially write more than one document per file
+	Stream    bool // potentially write more than one document per file
 	AllErrors bool
 
 	Schema cue.Value // used for schema-based decoding
 
-	EscapeHTML bool
-	ProtoPath  []string
-	Format     []format.Option
-	ParseFile  func(name string, src interface{}) (*ast.File, error)
+	EscapeHTML    bool
+	InlineImports bool // expand references to non-core imports
+	ProtoPath     []string
+	Format        []format.Option
+	ParseFile     func(name string, src interface{}) (*ast.File, error)
 }
 
 // NewDecoder returns a stream of non-rooted data expressions. The encoding
@@ -421,8 +422,7 @@ func (v *validator) validate(n ast.Node) bool {
 		check(n, i.Imports, "imports", true)
 
 	case *ast.Field:
-		check(n, i.Definitions, "definitions",
-			x.Token == token.ISA || internal.IsDefinition(x.Label))
+		check(n, i.Definitions, "definitions", internal.IsDefinition(x.Label))
 		check(n, i.Data, "regular fields", internal.IsRegularField(x))
 		check(n, constraints, "optional fields", x.Optional != token.NoPos)
 
