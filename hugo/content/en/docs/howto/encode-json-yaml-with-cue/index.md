@@ -2,6 +2,8 @@
 title: Encode JSON or YAML with CUE
 weight:
 draft: false
+categories:
+    - Use encodings in CUE
 ---
 ## Introduction
 

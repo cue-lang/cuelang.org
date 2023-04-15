@@ -1,7 +1,7 @@
 ---
-title: Language
-weight: 10
+title: Go API
+weight: 30
 draft: false
 layout: category-overview
-category: Language
+category: Go API
 ---
