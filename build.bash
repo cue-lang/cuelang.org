@@ -11,7 +11,7 @@ then
 fi
 
 # If we are building tip then we need to grab the master of our cuelang.org/go
-# and main from github.com/cue-sh/playground dependencies
+# and main from github.com/cue-lang/cuelang.org/editor dependencies
 if [ "${BRANCH:-}" = "tip" ]
 then
 	# We set GOPRIVATE here because we reguarly see issues when trying to go get
