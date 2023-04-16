@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f6c864d_9841e725",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-04-16T09:35:04Z",
+      "side": 1,
+      "message": "I assume you\u0027re OK with some of these howtos being empty for now.\n\nAlso, is there any check against typos for categories?",
+      "revId": "4fa8dc92c43286c38ad4a6a78b410cd34bcb3686",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
