@@ -17,6 +17,7 @@ package cmd
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"io"
 	"os"
 	"strings"
@@ -105,6 +106,7 @@ func mkRunE(c *Command, f runFunction) func(*cobra.Command, []string) error {
 		c.Command = cmd
 		err := f(c, args)
 		if err != nil {
+			err = fmt.Errorf("%v", err)
 			exitOnErr(c, err, true)
 		}
 		return err
