@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "007af90b_ab5bba69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-04-16T10:20:39Z",
+      "side": 1,
+      "message": "Confirmed that https://cl-552739-2--cue-cls.netlify.app/play/ still works as expected.",
+      "revId": "f58bd61787a9f17ea6a113e0c1121c7ad69affaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
