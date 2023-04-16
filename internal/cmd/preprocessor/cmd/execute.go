@@ -389,7 +389,7 @@ func copyFile(src string, dsts ...string) error {
 	var targets []io.Writer
 	for _, dst := range dsts {
 		dstDir := filepath.Dir(dst)
-		if err := os.MkdirAll(filepath.Dir(dstDir), 0700); err != nil {
+		if err := os.MkdirAll(dstDir, 0700); err != nil {
 			return fmt.Errorf("failed to mkdir %s: %w", dstDir, err)
 		}
 		targetFile, err := os.Create(dst)
