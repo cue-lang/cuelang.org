@@ -16,7 +16,10 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"cuelang.org/go/cue/errors"
 	"github.com/spf13/cobra"
@@ -83,4 +86,68 @@ func newRootCmd() *Command {
 	}
 
 	return c
+}
+
+// deriveProjectRoot finds the project root from the possibly empty working
+// directory wd.  If wd is empty, it is assumed to mean ".". An error is
+// returned if wd proves to not exist within a project root.
+func deriveProjectRoot(dir string) (wd string, projectRoot string, err error) {
+	wd = dir
+	if wd == "" {
+		wd = "."
+	}
+	if !filepath.IsAbs(wd) {
+		d, err := filepath.Abs(wd)
+		if err != nil {
+			return "", "", fmt.Errorf("failed to make %s absolute: %w", wd, err)
+		}
+		wd = d
+	}
+
+	// Ensure that wd is a subdirectory of a directory structure where
+	// an ancestor of wd (which could be wd itself) contains content and
+	// hugo/content directories. If wd is itself the directory that contains
+	// content and hugo/content, then we interpret that is meaning to
+	// run as if content had been specified as the input. Otherwise, wd
+	// must be a subdirectory of content/.
+	projectRoot = wd
+	for {
+		for _, dn := range []string{"content", "hugo"} {
+			fi, err := os.Stat(filepath.Join(projectRoot, filepath.FromSlash(dn)))
+			if err != nil || !fi.IsDir() {
+				goto WalkParent
+			}
+		}
+
+		// We found the content root.
+		break
+
+	WalkParent:
+		pd := filepath.Clean(filepath.Join(projectRoot, ".."))
+		if pd == projectRoot {
+			// We are at the root of the filesystem
+			// and failed to find the content and hugo/content dirs
+			return "", "", fmt.Errorf("failed to find project root")
+		}
+		projectRoot = pd
+	}
+
+	if projectRoot == wd {
+		// Special case. We want to walk the content dir from its root
+		// At this point we know this directory exists.
+		wd = filepath.Join(wd, "content")
+	} else {
+		// Ensure wd is a subdirectory of d/content
+		cd := filepath.Join(projectRoot, "content")
+		rel, err := filepath.Rel(cd, wd)
+		if err != nil {
+			return "", "", fmt.Errorf("failed to determine if working directory %s is a subdirectory of the project root %s: %w", wd, projectRoot, err)
+		}
+		fmt.Println(rel)
+		if strings.HasPrefix(rel, "..") {
+			return "", "", fmt.Errorf("working directory %s is not a subdirectory of %s", wd, cd)
+		}
+	}
+
+	return wd, projectRoot, nil
 }
