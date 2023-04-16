@@ -14,4 +14,4 @@
 
 package components
 
-//go:generate go run github.com/cue-lang/cuelang.org/editor/internal/genversion
+//go:generate go run github.com/cue-lang/cuelang.org/playground/internal/genversion

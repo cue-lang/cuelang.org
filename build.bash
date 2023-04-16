@@ -10,8 +10,8 @@ then
 	time="time -p"
 fi
 
-# Build editor
-bash editor/build.bash
+# Build playground
+bash playground/build.bash
 
 # Main site
 cd hugo

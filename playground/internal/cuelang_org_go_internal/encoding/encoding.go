@@ -40,9 +40,9 @@ import (
 	"cuelang.org/go/encoding/protobuf"
 	"cuelang.org/go/encoding/protobuf/jsonpb"
 	"cuelang.org/go/encoding/protobuf/textproto"
-	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal"
-	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal/filetypes"
-	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal/third_party/yaml"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/third_party/yaml"
 	"golang.org/x/text/encoding/unicode"
 	"golang.org/x/text/transform"
 )
