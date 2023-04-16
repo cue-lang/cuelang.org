@@ -1,0 +1,1 @@
+package docs_howto_validate_yaml_using_cue
