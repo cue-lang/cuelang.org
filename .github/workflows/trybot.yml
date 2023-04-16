@@ -174,11 +174,6 @@ jobs:
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: npm run lint
         working-directory: hugo
-      - id: alias
-        if: ${{github.repository == 'cue-lang/cuelang.org-trybot' && startsWith(github.head_ref, 'trybot/')}}
-        run: |-
-          alias="$(echo '${{github.head_ref}}' | sed -E 's/^trybot\/I[a-f0-9]+\/[a-f0-9]+\/([0-9]+)\/([0-9]+).*/cl-\1-\2/')"
-          echo "alias=$alias" >> $GITHUB_OUTPUT
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
