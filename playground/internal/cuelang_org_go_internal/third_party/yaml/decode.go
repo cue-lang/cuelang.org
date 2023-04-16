@@ -16,7 +16,7 @@ import (
 	"cuelang.org/go/cue/ast"
 	"cuelang.org/go/cue/literal"
 	"cuelang.org/go/cue/token"
-	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal"
 )
 
 const (

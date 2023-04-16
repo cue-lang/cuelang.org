@@ -5,7 +5,7 @@
 @import '../mixins/list-reset';
 @import '../mixins/screen';
 
-.#{ $prefix }-editor {
+.#{ $prefix }-playground {
     display: grid;
     font-family: $font-inter;
     grid-gap: 10px;

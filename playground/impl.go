@@ -25,8 +25,8 @@ import (
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/cue/token"
-	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal/encoding"
-	"github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal/filetypes"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/encoding"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
 )
 
 //go:generate ./_scripts/cpWasmExec.bash

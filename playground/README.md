@@ -32,13 +32,13 @@ The output is the JSON-marshalled result of the CUE input.
 * [Go](https://golang.org/dl/) (stable version)
 
 ### Developing the site locally
-To install the packages, build the main wasm file & serve the editor locally, run:
+To install the packages, build the main wasm file & serve the playground locally, run:
 
 ```
 ./run.bash
 ```
 
-You can now go to `http://localhost:3000/` to view the editor.
+You can now go to `http://localhost:3000/` to view the playground.
 
 If you don't want to reinstall node-modules and rebuild wasm files every time you can also install the node modules
 
@@ -52,7 +52,7 @@ And then run:
 npm run start
 ```
 This will build webpack in dev mode and serve the application.
-You do need the wasm file to get the editor running so make sure you've run the bash command at least once.
+You do need the wasm file to get the playground running so make sure you've run the bash command at least once.
 
 * UI/UX
   * Support `fmt` and `trim` dropdown button option for the input pane contents
