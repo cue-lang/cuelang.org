@@ -16,7 +16,10 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"cuelang.org/go/cue/errors"
 	"github.com/spf13/cobra"
@@ -83,4 +86,66 @@ func newRootCmd() *Command {
 	}
 
 	return c
+}
+
+// deriveProjectRoot finds the project root from the possibly empty working
+// directory wd.  If wd is empty, it is assumed to mean ".". An error is
+// returned if wd proves to not exist within a project root.
+func deriveProjectRoot(dir string) (wd string, projectRoot string, err error) {
+	wd = dir
+	if wd == "" {
+		wd = "."
+	}
+	wd, err = filepath.Abs(wd)
+	if err != nil {
+		return "", "", fmt.Errorf("failed to make %s absolute: %w", wd, err)
+	}
+
+	// Ensure that wd is a subdirectory of a directory structure where an
+	// ancestor of wd (which could be wd itself) contains content and hugo
+	// directories. If wd is itself the directory that contains content and
+	// hugo/content, then we interpret that as meaning to run as if content had
+	// been specified as the input. Otherwise, wd must be a subdirectory of
+	// content/.
+
+	toFind := []string{"content", "hugo"}
+	possibleRoot := wd
+	for {
+		var found int
+		for _, dn := range toFind {
+			target := filepath.Join(possibleRoot, dn)
+			fi, err := os.Stat(target)
+			if err == nil && fi.IsDir() {
+				found++
+			}
+		}
+
+		if found == len(toFind) {
+			// We found the content root.
+			break
+		}
+
+		// Move to try the parent if we are not at the root
+		parentDir := filepath.Dir(possibleRoot)
+		if parentDir == possibleRoot {
+			// We are at the root of the filesystem
+			return "", "", fmt.Errorf("failed to find project root")
+		}
+		possibleRoot = parentDir
+	}
+	projectRoot = possibleRoot
+
+	if projectRoot == wd {
+		// Special case. We want to walk the content dir from its root
+		// At this point we know this directory exists.
+		wd = filepath.Join(wd, "content")
+	} else {
+		// Ensure wd is a subdirectory of $projectRoot/content
+		cd := filepath.Join(projectRoot, "content")
+		if wd != cd && !strings.HasPrefix(wd, cd+string(os.PathSeparator)) {
+			return "", "", fmt.Errorf("working directory %s is not a subdirectory of %s", wd, cd)
+		}
+	}
+
+	return wd, projectRoot, nil
 }
