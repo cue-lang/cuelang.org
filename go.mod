@@ -12,6 +12,7 @@ require (
 	github.com/rogpeppe/go-internal v1.10.0
 	github.com/rogpeppe/testscript v1.1.0
 	github.com/spf13/cobra v1.6.1
+	golang.org/x/exp v0.0.0-20230425010034-47ecfdc1ba53
 	golang.org/x/mod v0.9.0
 	golang.org/x/oauth2 v0.0.0-20180821212333-d2e6202438be
 	golang.org/x/text v0.8.0
