@@ -1,0 +1,8 @@
+# Ensure that preprocessor fails when we run with a working directory that is
+# not contained by /content (where / is the project root)
+
+! exec preprocessor execute -d $WORK/hugo
+stderr 'working directory '$WORK${/}hugo' is not a subdirectory of '$WORK${/}
+
+-- content/empty --
+-- hugo/content/empty --
