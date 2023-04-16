@@ -1,0 +1,45 @@
+# Verify the special _$LANG directories and other files are copied to the
+# corresponding target and that all other directories in a page root are copied
+# to each target.  Note that the .ignored directory should be ignored.
+
+# Run the preprocessor
+exec preprocessor execute --debug
+
+# Verify golden files
+cmp hugo/content/en/dir/_index.md hugo/content/en/dir/_index.md.golden
+cmp hugo/content/en/dir/en.txt hugo/content/en/dir/en.txt.golden
+cmp hugo/content/en/dir/other.txt hugo/content/en/dir/other.txt.golden
+
+# Ensure that the contents of the filesystem are as expected
+exec cmd-find
+cmp stdout stdout.golden
+
+-- content/dir/site.cue --
+package site
+-- content/dir/.ignored/ignored.txt --
+ignored.txt
+-- content/dir/other.txt --
+other.txt
+-- content/dir/_en.md --
+---
+---
+_en.md
+-- content/dir/_en/en.txt --
+en.txt
+-- hugo/content/en/dir/_index.md.golden --
+---
+---
+_en.md
+-- hugo/content/en/dir/en.txt.golden --
+en.txt
+-- hugo/content/en/dir/other.txt.golden --
+other.txt
+-- stdout.golden --
+content/dir/.ignored/ignored.txt
+content/dir/_en/en.txt
+content/dir/_en.md
+content/dir/other.txt
+content/dir/site.cue
+hugo/content/en/dir/_index.md
+hugo/content/en/dir/en.txt
+hugo/content/en/dir/other.txt

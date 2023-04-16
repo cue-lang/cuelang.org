@@ -1,0 +1,9 @@
+# Ensure that preprocessor fails in a helpful way when we are
+# missing a CUE package in a page root directory.
+
+! exec preprocessor execute --debug
+stderr 'failed to build CUE instances: no CUE files in .'${/}'dir'
+
+-- content/dir/_en.md --
+branch_md_en
+-- hugo/.gitkeep --
