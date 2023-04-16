@@ -1,0 +1,34 @@
+# Verify that execute works when supplied a list of directories to execute
+
+# Run the preprocessor with a list of dirs to execute
+exec preprocessor execute --debug content/dir1
+
+# Verify that the target files matche the source contents
+cmp hugo/content/en/dir1/index.md hugo/content/en/dir1/index.md.golden
+
+# Ensure that the contents of the filesystem are as expected
+exec cmd-find
+cmp stdout stdout.golden
+
+-- content/dir1/en.md --
+---
+---
+dir1_en.md
+-- content/dir1/site.cue --
+package site
+-- content/dir2/en.md --
+---
+---
+dir1_en.md
+-- content/dir2/site.cue --
+package site
+-- hugo/content/en/dir1/index.md.golden --
+---
+---
+dir1_en.md
+-- stdout.golden --
+content/dir1/en.md
+content/dir1/site.cue
+content/dir2/en.md
+content/dir2/site.cue
+hugo/content/en/dir1/index.md
