@@ -8,8 +8,8 @@ node_modules
 
 # Project
 /_public/
-/editor/_dist/
-/editor/main.wasm
+/playground/_dist/
+/playground/main.wasm
 /hugo/resources/
 /hugo/.hugo_build.lock
-/hugo/static/editor/
+/hugo/static/playground/

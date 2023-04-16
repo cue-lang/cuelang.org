@@ -32,7 +32,7 @@ do
 done
 
 # Fix up import paths
-regex='s+cuelang.org/go/internal+github.com/cue-lang/cuelang.org/editor/internal/cuelang_org_go_internal+g'
+regex='s+cuelang.org/go/internal+github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal+g'
 find ./internal/cuelang_org_go_internal -name "*.go" -exec sed -i $regex {} +
 
 # Remove go:generate directives

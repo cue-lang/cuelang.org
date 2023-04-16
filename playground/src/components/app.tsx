@@ -136,24 +136,24 @@ export class App extends React.PureComponent<AppProps, AppState>
         });
 
         return (
-            <div className="cue-editor">
-                <div className="cue-editor__header">
-                    <ul className="cue-editor__controls">
-                        <li className="cue-editor__controls-item">
+            <div className="cue-playground">
+                <div className="cue-playground__header">
+                    <ul className="cue-playground__controls">
+                        <li className="cue-playground__controls-item">
                             { <Dropdown
                                 id={ 'inputMenuButton' }
                                 buttonTitle={ 'Input: ' + this.state.Input.name }
                                 items={ inputDropdownItems }
                             ></Dropdown> }
                         </li>
-                        <li className="cue-editor__controls-item">
+                        <li className="cue-playground__controls-item">
                             { <Dropdown
                                 id={ 'inputMenuButton' }
                                 buttonTitle={ this.state.Func.name }
                                 items={ funcDropdownItems }
                             ></Dropdown> }
                         </li>
-                        <li className="cue-editor__controls-item">
+                        <li className="cue-playground__controls-item">
                             { <Dropdown
                                 id={ 'inputMenuButton' }
                                 disabled={ this.state.Func.key == 'def' }
@@ -161,7 +161,7 @@ export class App extends React.PureComponent<AppProps, AppState>
                                 items={ outputDropdownItems }
                             ></Dropdown> }
                         </li>
-                        <li className="cue-editor__controls-item">
+                        <li className="cue-playground__controls-item">
                             <div className="cue-share">
                                 <button type="button"
                                         className="cue-button cue-share__button"
@@ -178,13 +178,13 @@ export class App extends React.PureComponent<AppProps, AppState>
                             </div>
                         </li>
                     </ul>
-                    <div className="cue-editor__version">{ CUEVersion }</div>
+                    <div className="cue-playground__version">{ CUEVersion }</div>
                 </div>
-                <div className="cue-editor__column">
-                    <div className="cue-editor__code" id="lhseditor"></div>
+                <div className="cue-playground__column">
+                    <div className="cue-playground__code" id="lhseditor"></div>
                 </div>
-                <div className="cue-editor__column">
-                    <div className="cue-editor__code" id="rhseditor"></div>
+                <div className="cue-playground__column">
+                    <div className="cue-playground__code" id="rhseditor"></div>
                 </div>
             </div>
         );

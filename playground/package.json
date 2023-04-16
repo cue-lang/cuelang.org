@@ -33,7 +33,7 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "build:hugo": "npm run build && npm run copy",
-    "copy": "mkdir -p ../hugo/static/editor && cp _dist/bundle.min.js ../hugo/static/editor/ && cp _dist/main.css ../hugo/static/editor/ && cp _dist/main.wasm ../hugo/static/editor/ "
+    "copy": "mkdir -p ../hugo/static/playground && cp _dist/bundle.min.js ../hugo/static/playground/ && cp _dist/main.css ../hugo/static/playground/ && cp _dist/main.wasm ../hugo/static/playground/ "
   },
   "repository": {
     "type": "git",

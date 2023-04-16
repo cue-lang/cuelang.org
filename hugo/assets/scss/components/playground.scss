@@ -5,7 +5,7 @@
 .playground {
     height: calc(100vh - var(--header-height, #{ $h-header--sticky }) - 2rem);
 
-    // Force some space between editor & logo which sticks out of header
+    // Force some space between playground & logo which sticks out of header
     &::before {
         background-color: var(--header-background-sticky, $c-blue--lighter);
         content: '';
@@ -24,7 +24,7 @@
             display: none;
         }
 
-        .cue-editor__header {
+        .cue-playground__header {
             // Padding of header + logo width + margins
             padding-left: calc(1rem + var(--header-logo-width, #{ $w-branding--large }) + 50px);
         }

@@ -27,8 +27,8 @@ issue a `cuelang.org: ` prefix.
 #### content
 This contains the unprocessed content for the website
 
-#### editor
-This contains the app code for the cue-editor
+#### playground
+This contains the app code for the cue-playground
 
 #### functions
 This contains cloud functions
