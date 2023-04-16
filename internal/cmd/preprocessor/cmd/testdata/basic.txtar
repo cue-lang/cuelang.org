@@ -1,0 +1,20 @@
+# Ensure that preprocessor works in the basic case of copying input in a single
+# language to output
+
+# Run the preprocessor
+exec preprocessor execute --debug
+
+# Verify that the target file matches the source contents
+cmp hugo/content/en/index.md hugo/content/en/index.md.golden
+
+# Ensure that the contents of the filesystem are as expected
+exec cmd-find
+cmp stdout stdout.golden
+
+-- content/en.md --
+en
+-- hugo/content/en/index.md.golden --
+en
+-- stdout.golden --
+content/en.md
+hugo/content/en/index.md
