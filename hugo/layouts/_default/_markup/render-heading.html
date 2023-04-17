@@ -1,0 +1,6 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+    <a href="#{{ .Anchor | safeURL }}" class="anchor" aria-label="Anchor">
+        {{- partial "icon.html" (dict "icon" "link" "class" "anchor__icon") -}}
+    </a>
+    {{- .Text | safeHTML -}}
+</h{{ .Level }}>

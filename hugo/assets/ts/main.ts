@@ -79,6 +79,7 @@ class App {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = element.getAttribute('href');
+                window.history.replaceState(null, '', target);
                 scrollToHash(target);
             });
         });
