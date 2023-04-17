@@ -16,7 +16,7 @@
     &__container {
         @include container($w-content);
 
-        padding: 0 $p-gutter;
+        padding: 0 1.5rem;
         position: relative;
     }
 
@@ -51,13 +51,22 @@
         }
     }
 
-    @include screen($screen-large) {
-        &--docs {
-            #{ $self }__content {
-                h2 {
-                    position: relative;
-                }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:focus,
+        &:hover {
+            .anchor__icon {
+                visibility: visible;
             }
+        }
+    }
+
+    @include screen($screen-normal) {
+        &__container {
+            padding: 0 1.875rem;
         }
     }
 }
