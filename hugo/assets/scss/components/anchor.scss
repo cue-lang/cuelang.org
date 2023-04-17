@@ -1,0 +1,28 @@
+@import '../mixins/screen';
+
+.anchor {
+    $self: &;
+
+    left: 4px;
+    padding-right: 10px; // make sure there is overlap between anchor and heading
+    position: absolute;
+    text-decoration: none;
+
+    &__icon {
+        display: inline-block;
+        height: 1rem;
+        vertical-align: baseline;
+        visibility: hidden;
+        width: 1rem;
+    }
+
+    @include screen($screen-normal) {
+        left: 8px;
+    }
+
+    @media (hover: none) {
+        &__icon {
+            visibility: visible !important;
+        }
+    }
+}
