@@ -35,6 +35,7 @@ const (
 const (
 	flagDir   flagName = "dir"
 	flagDebug flagName = "debug"
+	flagServe flagName = "serve"
 )
 
 var (
@@ -112,7 +113,13 @@ func executeDef(c *Command, args []string) error {
 	}
 
 	e := newExecutor(wd, projectRoot, c)
+
+	if flagServe.Bool(c) {
+		return e.serve(args)
+	}
+
 	return e.execute()
+
 }
 
 type executor struct {
