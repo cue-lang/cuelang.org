@@ -154,5 +154,6 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	}
 	cmd.Flags().Bool(string(flagDebug), false, "turn on debug logging")
 	cmd.Flags().StringP(string(flagDir), "d", "", "working directory. Defaults to the current working directory")
+	cmd.Flags().BoolP(string(flagServe), "s", false, "watch the working directory for changes, executing on each batch of changes")
 	return cmd
 }
