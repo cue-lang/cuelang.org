@@ -39,6 +39,7 @@ const (
 const (
 	flagDir   flagName = "dir"
 	flagDebug flagName = "debug"
+	flagServe flagName = "serve"
 )
 
 var (
@@ -71,6 +72,11 @@ func executeDef(c *Command, args []string) error {
 		return fmt.Errorf("failed to derive project root: %w", err)
 	}
 
+	e := newExecutor(wd, projectRoot, c)
+	if flagServe.Bool(c) {
+		return e.serve(args)
+	}
+
 	var filter map[string]bool
 	if len(args) > 0 {
 		filter = make(map[string]bool)
@@ -83,7 +89,6 @@ func executeDef(c *Command, args []string) error {
 		}
 	}
 
-	e := newExecutor(wd, projectRoot, c)
 	if err := e.execute(filter); err != nil {
 		return err
 	}
