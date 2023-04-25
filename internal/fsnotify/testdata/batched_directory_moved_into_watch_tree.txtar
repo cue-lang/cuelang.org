@@ -1,0 +1,70 @@
+# Move a directory structure into and out of a watched tree a couple of times.
+# Ensure that touching a file then contined within the directory that has been
+# moved in place works. We use a long batch period to ensure that we have
+# almost 100% consistency of grouping of events, without blowing the testing
+# time.
+
+# Move a directory under a watched tree.
+touch dir/a.txt
+touch dir/b/b.txt
+mv anotherdir/c dir/c
+sleep # to give the watcher time to catch up
+touch dir/c/subdir/c.txt
+log
+cmp stdout $WORK/1.txt
+
+# Perform a git add and commit
+cd dir
+exec git add -A
+exec git commit -am 'test 2'
+log
+cmp stdout $WORK/2.txt
+
+# Move back to the previous commit
+exec git checkout HEAD~1
+log
+cmp stdout $WORK/3.txt
+
+# Move it back out.
+
+-- dir/.special --
+-- .batched --
+100ms
+-- dir/.rootdir --
+-- dir/.gittoplevel --
+-- dir/a.txt --
+-- dir/b/b.txt --
+-- anotherdir/c/subdir/c.txt --
+-- 1.txt --
+events [
+  name: a.txt, op: CHMOD
+  name: b/b.txt, op: CHMOD
+  name: c, op: CREATE
+  name: c/subdir/c.txt, op: CHMOD
+  name: .special, op: CHMOD
+]
+-- 2.txt --
+events [
+  name: .git/index.lock, op: CREATE
+  name: .git/index.lock, op: RENAME
+]
+events [
+  name: .git/index.lock, op: CREATE
+  name: .git/index.lock, op: RENAME
+]
+events [
+  name: .special, op: CHMOD
+]
+-- 3.txt --
+events [
+  name: .git/index.lock, op: CREATE
+  name: c/subdir/c.txt, op: REMOVE
+  name: c/subdir, op: REMOVE
+  name: c/subdir, op: REMOVE
+  name: c, op: REMOVE
+  name: c, op: REMOVE
+  name: .git/index.lock, op: RENAME
+]
+events [
+  name: .special, op: CHMOD
+]
