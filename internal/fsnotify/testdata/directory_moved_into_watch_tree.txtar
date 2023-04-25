@@ -1,0 +1,31 @@
+# Move a directory structure into and out of a watched tree a couple of times.
+# Ensure that touching a file then contined within the directory that has been
+# moved in place works.
+
+# Move a directory under a watched tree.
+touch dir/a.txt
+touch dir/b/b.txt
+mv anotherdir/c dir/c
+sleep # to give the watcher time to catch up
+touch dir/c/subdir/c.txt
+log
+cmp stdout 1.txt
+cd dir
+exec git add -A
+exec git commit -am 'test 2'
+log
+
+# Move it back out.
+
+-- dir/.special --
+-- dir/.rootdir --
+-- dir/.gittoplevel --
+-- dir/a.txt --
+-- dir/b/b.txt --
+-- anotherdir/c/subdir/c.txt --
+-- 1.txt --
+name: a.txt, op: CHMOD
+name: b/b.txt, op: CHMOD
+name: c, op: CREATE
+name: c/subdir/c.txt, op: CHMOD
+name: .special, op: CHMOD
