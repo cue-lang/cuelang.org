@@ -8,8 +8,9 @@ require (
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/cockroachdb/apd/v2 v2.0.2
+	github.com/fsnotify/fsnotify v1.6.0
 	github.com/google/go-github/v45 v45.2.0
-	github.com/rogpeppe/go-internal v1.10.0
+	github.com/rogpeppe/go-internal v1.10.1-0.20230427135020-22b91279afa3
 	github.com/rogpeppe/testscript v1.1.0
 	github.com/spf13/cobra v1.6.1
 	golang.org/x/mod v0.9.0
