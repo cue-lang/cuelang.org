@@ -13,3 +13,6 @@ node_modules
 /hugo/resources/
 /hugo/.hugo_build.lock
 /hugo/static/playground/
+
+# preprocessor output
+/hugo/content
