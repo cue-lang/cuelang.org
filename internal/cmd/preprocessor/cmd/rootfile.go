@@ -46,6 +46,19 @@ func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 }
 
 func (rf *rootFile) process(sourcePath, targetPath string) error {
-	// For now we just copy from source to target
+	if rf.lang != langEn {
+		return copyFile(sourcePath, targetPath)
+	}
+	// For now, we only support en as a main language. For other languages
+	// we simply copy from source to target.
+	//
+	// For en idnex pages, the flow looks like this:
+	//
+	// 1. import
 	return copyFile(sourcePath, targetPath)
+}
+
+// parse parses a root file into its components.
+func (rf *rootFile) parse() error {
+	return nil
 }
