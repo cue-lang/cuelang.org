@@ -15,10 +15,16 @@ exec cmd-find
 cmp stdout stdout.golden
 
 -- content/branch_md/_en.md --
+---
+title: test
+---
 branch_md_en
 -- content/branch_md/site.cue --
 package site
 -- content/leaf_md/en.md --
+---
+title: test
+---
 leaf_md_en
 -- content/leaf_md/site.cue --
 package site
@@ -31,8 +37,14 @@ leaf_html_en
 -- content/leaf_html/site.cue --
 package site
 -- hugo/content/en/branch_md/_index.md.golden --
+---
+title: test
+---
 branch_md_en
 -- hugo/content/en/leaf_md/index.md.golden --
+---
+title: test
+---
 leaf_md_en
 -- hugo/content/en/branch_html/_index.html.golden --
 branch_html_en

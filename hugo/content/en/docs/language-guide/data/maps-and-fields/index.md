@@ -9,33 +9,33 @@ A map associates a value with a given set of keys. Each key-value pair is called
 ## Field names
 
 A field of a map may have any name that is allowed by JSON.
-Double quotes can be omitted if the name is a valid {{{ def "identifier" }}} that
+Double quotes can be omitted if the name is a valid {{{def "identifier"}}} that
 starts with a letter or `$` and otherwise only contains letters, digits, `$` or `_`.
 Identifiers may also start with `#` or `_`, in which case the field is a [[Helper fields](Data%201b448a6f417b4e08b2d41b3b33cf2a45.md)](helper field) with special meaning.
 
-```coq
-{{{ with sidebyside "en" "field-names-double-quotes" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 a1:    1
 "a-b": 2 // quotes are needed here
 $id:   "yipee"
--- out.json --
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Both quoted and unquoted fields in the above form are referred to as regular fields.
 
 When combining two maps, their fields are matched and merged based on their names.
 Names of regular fields are considered equal if their string values are equal, regardless of whether the strings are quoted or not.
 
-```coq
-{{{ with sidebyside "en" "merging-of-quoted-and-unquoted" }}}
--- in.cue --
-a:   x: 1
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+a: x:   1
 "a": y: 2
--- out.cue --
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 `a: 1` and `"a": 1` mean the same thing.
 
@@ -57,24 +57,24 @@ More on this in the [Templating](Templating%20f4e21af73d744a77aa2c91203a8dbe4f.m
 
 It is possible to associate helper fields with scalar types by placing both in curly braces (`{}`).
 
-```coq
-{{{ with sidebyside "en" "embedded-scalars" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 one: {
-    1
-    #typeName: "int"
+	1
+	#typeName: "int"
 }
 
 two: "two"
-two: { _,  #typeName: "string" }
+two: {_, #typeName: "string"}
 
 three: {
-    a: 1
-    #typeName: "map"
+	a:         1
+	#typeName: "map"
 }
--- out.cue --
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Note for field `two` we need to include a `_` within the map to make things work.
 This is because without it `{}` is only compatible with map values.
