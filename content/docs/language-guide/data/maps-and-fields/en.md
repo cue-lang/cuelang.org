@@ -9,12 +9,13 @@ A map associates a value with a given set of keys. Each key-value pair is called
 ## Field names
 
 A field of a map may have any name that is allowed by JSON.
-Double quotes can be omitted if the name is a valid {{{ def "identifier" }}} that
+Double quotes can be omitted if the name is a valid {{{def "identifier"}}} that
 starts with a letter or `$` and otherwise only contains letters, digits, `$` or `_`.
 Identifiers may also start with `#` or `_`, in which case the field is a [[Helper fields](Data%201b448a6f417b4e08b2d41b3b33cf2a45.md)](helper field) with special meaning.
 
 ```coq
-{{{ with sidebyside "en" "field-names-double-quotes" }}}
+{{{with sidebyside "en" "field-names-double-quotes"}}}
+
 -- in.cue --
 a1:    1
 "a-b": 2 // quotes are needed here
@@ -29,9 +30,10 @@ When combining two maps, their fields are matched and merged based on their name
 Names of regular fields are considered equal if their string values are equal, regardless of whether the strings are quoted or not.
 
 ```coq
-{{{ with sidebyside "en" "merging-of-quoted-and-unquoted" }}}
+{{{with sidebyside "en" "merging-of-quoted-and-unquoted"}}}
+
 -- in.cue --
-a:   x: 1
+a: x:   1
 "a": y: 2
 -- out.cue --
 {{{end}}}
@@ -58,19 +60,20 @@ More on this in the [Templating](Templating%20f4e21af73d744a77aa2c91203a8dbe4f.m
 It is possible to associate helper fields with scalar types by placing both in curly braces (`{}`).
 
 ```coq
-{{{ with sidebyside "en" "embedded-scalars" }}}
+{{{with sidebyside "en" "embedded-scalars"}}}
+
 -- in.cue --
 one: {
-    1
-    #typeName: "int"
+	1
+	#typeName: "int"
 }
 
 two: "two"
-two: { _,  #typeName: "string" }
+two: {_, #typeName: "string"}
 
 three: {
-    a: 1
-    #typeName: "map"
+	a:         1
+	#typeName: "map"
 }
 -- out.cue --
 {{{end}}}
