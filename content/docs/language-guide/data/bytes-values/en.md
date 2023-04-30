@@ -15,12 +15,13 @@ JSON does not natively support binary data.
 When exporting to JSON, CUE translates it to base64.
 
 ```coq
-{{{ with sidebyside "en" "bytes-to-json" }}}
+{{{with sidebyside "en" "bytes-to-json"}}}
+
 -- in.cue --
 a: #'A newline is written as \n.'#
 b: '''
-    sfsf
-    '''
+	sfsf
+	'''
 -- out.json --
 
 {{{end}}}
@@ -31,12 +32,13 @@ b: '''
 CUE translates bytes to the corresponding YAML binary type.
 
 ```coq
-{{{ with sidebyside "en" "bytes-to-yaml" }}}
+{{{with sidebyside "en" "bytes-to-yaml"}}}
+
 -- in.cue --
 a: #'A newline is written as \n.'#
 b: '''
-    sfsf
-    '''
+	sfsf
+	'''
 -- out.yaml --
 
 {{{end}}}

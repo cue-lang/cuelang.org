@@ -18,58 +18,57 @@ CUE allows duplicate fields to exist as long as their values are consistent.
 
 This is allowed:
 
-```coq
-{{{ with sidebyside "en" "composition-simple-success" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 a: 1
 a: 1
--- out.cue --
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 a: 1
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This is not:
 
-```coq
-{{{ with sidebyside "en" "composition-simple-error" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 b: 1
 b: 2
--- out.cue --
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 b: conflicting values 2 and 1:
     in.cue: 1:4
     in.cue: 2:4
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The values do not have to be the same to be consistent.
 For instance, maps and lists are merged by matching their keys and indexes,
 respectively:
 
-```coq
-{{{ with sidebyside "en" "composition-composite" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 point: {
-    x: 1
+	x: 1
 }
 
 list: [1, 2, 3]
 
 point: {
-    y: 2
+	y: 2
 }
 
 list: [1, 2, 3, 4]
-
--- out.cue --
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 point: {
     x: 1
     y: 2
 }
 
 list: [1, 2, 3, 4]
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 As can be seen, identical fields do not have to be placed next to each other.
 
@@ -80,36 +79,34 @@ More on this in [Schemas](Schemas%20b39455d56fdb433ba9ea59c04a2dcece.md).
 
 For single-field maps, the curly braces can be omitted:
 
-```coq
-{{{ with sidebyside "en" "composition-single-field-map" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 point2: x: 1
 point2: y: 2
-
--- out.cue --
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 point2: {
     x: 1
     y: 2
 }
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 One can also combine values with the `&` operator:
 
-```coq
-{{{ with sidebyside "en" "composition-operator" }}}
--- in.cue --
-point3: { x: 1 } & { y: 2 }
-
--- out.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+point3: {x: 1} & {y: 2}
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 point3: {
     x: 1
     y: 2
 }
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
-{{{ with sidetrack }}}
+{{{with sidetrack}}}
 Overall, a JSON file can be thought of as a sequence of path value pairs, where
 these pairs can be combined in any order or combination without changing the
 resulting value.
@@ -123,28 +120,28 @@ Splitting a configuration across files allows grouping of related aspects and
 makes it easier to separate human written versus machine generated content,
 among other things.
 
-```coq
-{{{ with sidebyside "en" "packages" }}}
-exec cue eval :food
--- fruit.cue --
+{{< code-tabs >}}
+{{< code-tab name="fruit.cue" language="cue"  area="top-left" >}}
 package food
 
 cart: {
 	apples:  1
 	oranges: 3
 }
--- vegetables.cue --
+{{< /code-tab >}}
+{{< code-tab name="vegetables.cue" language="cue"  area="bottom-left" >}}
 package food
 
 cart: spinach: 4
--- out.cue --
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 cart: {
 	apples:  1
 	oranges: 3
 	spinach: 4
 }
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 CUE will evaluate all files belonging to the same package as if the file
 contents were contained in one large file, merging identical fields as described
