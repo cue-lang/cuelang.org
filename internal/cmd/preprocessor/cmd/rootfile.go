@@ -14,7 +14,20 @@
 
 package cmd
 
-import "path/filepath"
+import (
+	"bytes"
+	"fmt"
+	"os"
+	"path/filepath"
+
+	"github.com/cue-lang/cuelang.org/internal/parse"
+)
+
+var (
+	withFunctions = map[string]any{
+		"sidebyside": true,
+	}
+)
 
 // rootFile is a convenience data structure for keeping track of root files we
 // have found.
@@ -34,6 +47,12 @@ type rootFile struct {
 
 	// lang is the language of the root file filename
 	lang lang
+
+	// header is the Yaml header of a root file
+	header []byte
+
+	// body is the text/template/parse-d result of the body
+	body *parse.Tree
 }
 
 // newRootFile creates a new rootFile for fn.
@@ -48,6 +67,86 @@ func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 }
 
 func (rf *rootFile) process(sourcePath, targetPath string) error {
-	// For now we just copy from source to target
+	// For now, we only support en as a main language. For other languages
+	// we simply copy from source to target.
+	if rf.lang != langEn {
+		return copyFile(sourcePath, targetPath)
+	}
+	// HTML files don't need any special processing
+	if rf.ext == "html" {
+		return copyFile(sourcePath, targetPath)
+	}
+
+	// Start by parsing the root file
+	if err := rf.parse(); err != nil {
+		return fmt.Errorf("failed to parse %s: %w", rf.filename, err)
+	}
+	if err := rf.write(sourcePath); err != nil {
+		return fmt.Errorf("failed to write to %s: %w", sourcePath, err)
+	}
 	return copyFile(sourcePath, targetPath)
+}
+
+var (
+	headerStart = []byte("---\n")   // clear line
+	headerEnd   = []byte("\n---\n") // clear line required
+)
+
+// parse parses a root file into its components.
+func (rf *rootFile) parse() error {
+	f, err := os.ReadFile(rf.filename)
+	if err != nil {
+		return fmt.Errorf("failed to read: %w", err)
+	}
+	if !bytes.HasPrefix(f, headerStart) {
+		return fmt.Errorf("failed to find start of header")
+	}
+	header := f[len(headerStart):]
+	body := header
+	if bytes.HasPrefix(header, headerStart) {
+		// Special case of empty header
+		header = nil
+		body = body[len(headerStart):]
+	} else {
+		end := bytes.Index(header, headerEnd)
+		if end == -1 {
+			return fmt.Errorf("failed to find end of header")
+		}
+		header = header[:end]
+		body = body[end+len(headerEnd):]
+	}
+	rf.header = header
+
+	parseTrees, err := parse.Parse(rf.filename, string(body), "{{{", "}}}", withFunctions)
+	if err != nil {
+		return fmt.Errorf("failed to parse body: %w", err)
+	}
+	rf.body = parseTrees[rf.filename]
+
+	return nil
+}
+
+// write writes a parsed rf to the absolute file target. It panics if rf
+// has not been parsed, a state that is indicated by a nil body.
+func (rf *rootFile) write(target string) error {
+	if rf.body == nil {
+		panic("cannot call write on an unparsed rootFile")
+	}
+	var b bytes.Buffer
+	b.Write(headerStart)
+	if len(rf.header) == 0 {
+		b.Write(headerStart)
+	} else {
+		b.Write(rf.header)
+		b.Write(headerEnd)
+	}
+
+	for _, n := range rf.body.Root.Nodes {
+		fmt.Fprintf(&b, "%v", n)
+	}
+
+	if err := os.WriteFile(target, b.Bytes(), 0666); err != nil {
+		return fmt.Errorf("failed to write: %w", err)
+	}
+	return nil
 }
