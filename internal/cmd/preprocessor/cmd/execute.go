@@ -34,9 +34,7 @@ type lang string
 
 const (
 	langEn lang = "en"
-)
 
-const (
 	flagDir   flagName = "dir"
 	flagDebug flagName = "debug"
 	flagServe flagName = "serve"
@@ -174,6 +172,14 @@ type page struct {
 	// files. These root files define a page root. rootFiles exists as a
 	// filename-based lookup convenience to langTargets.
 	rootFiles map[string]*rootFile
+
+	// leftDelim is the left hand delimiter used in text/template parsing for
+	// root files in the page.
+	leftDelim string
+
+	// rightDelim is the right hand delimiter used in text/template parsing for
+	// root files in the page.
+	rightDelim string
 }
 
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
@@ -190,6 +196,10 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 		dir:            dir,
 		langTargets:    make(map[lang][]*rootFile),
 		rootFiles:      make(map[string]*rootFile),
+
+		// TODO actually extract these from the page's config
+		leftDelim:  "{{{",
+		rightDelim: "}}}",
 	}
 
 	return res, nil
