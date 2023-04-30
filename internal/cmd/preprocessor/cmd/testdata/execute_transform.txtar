@@ -1,0 +1,79 @@
+# Ensure that preprocessor understands the various forms of text/template
+# shorthand that we use.
+
+unquote content/dir/en.md
+
+# Make a golden file of the input to ensure it is written back intact
+cp content/dir/en.md content/dir/en.md.golden
+
+# Run the preprocessor
+exec preprocessor execute --debug
+
+# Copy the resulting soure file sideways and use that in comparison
+# so that we don't inadvertently update it when using CUE_UPDATE=1
+cp content/dir/en.md content/dir/en.md.writeBack
+
+# Verify that the source file is intact
+cmp content/dir/en.md.writeBack content/dir/en.md.golden
+
+# Verify that the target files matche the source contents
+cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>```coq
+>{{{with sidebyside "en" "json-superset"}}}
+>exec cue export in.cue
+>cmp stdout stdout.json
+>-- in.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>-- stdout.json --
+>{
+>    "map": {
+>        "member1": 3,
+>        "member2": 4,
+>    }
+>}
+>{{{end}}}
+>```
+>
+>Some text after
+>
+-- hugo/content/en/dir/index.md.golden --
+---
+title: JSON Superset
+---
+
+Some text before
+
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+// A doc comment
+map: {
+	member1: 3 // a line comment
+	member2: 4
+}
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
+{
+    "map": {
+        "member1": 3,
+        "member2": 4,
+    }
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+Some text after
+
