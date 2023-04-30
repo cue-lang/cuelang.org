@@ -11,17 +11,17 @@ data and configurations in general:
 - quotes can be omitted for field names without special characters,
 - you do not need commas after map fields,
 - you can place commas after the last element of a composite type, and
-- the outermost curly braces are optional. {{{ TODO "note on embedding" }}}
+- the outermost curly braces are optional. {{{TODO "note on embedding"}}}
 
 ```coq
-{{{ with sidebyside "en" "json-superset" }}}
+{{{with sidebyside "en" "json-superset"}}}
 exec cue export in.cue
 cmp stdout stdout.json
 -- in.cue --
 // A doc comment
 map: {
 	member1: 3 // a line comment
-  member2: 4
+	member2: 4
 }
 -- stdout.json --
 {
@@ -33,7 +33,7 @@ map: {
 {{{end}}}
 ```
 
-{{{ reference "json-vs-cue"  }}}
+{{{reference "json-vs-cue"}}}
 
 <!-- TODO: Also useful for defining data: embedding, builtins, … -->
 
@@ -43,17 +43,16 @@ CUE supports `//`-style comments: any line  Comments are first-class citizens i
 CUE.
 
 ```coq
-{{{ with sidebyside "en" "json-comments" }}}
+{{{with sidebyside "en" "json-comments"}}}
 exec cue export in.cue
 cmp stdout stdout.json
 
 -- in.cue --
 // A doc comment
 map: {
-    member1: 3 // a line comment
-    member2: 4
+	member1: 3 // a line comment
+	member2: 4
 }
-
 -- stdout.json --
 {
     "map": {
