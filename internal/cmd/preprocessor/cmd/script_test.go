@@ -22,8 +22,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/rogpeppe/go-internal/testscript"
 	"cuelang.org/go/cmd/cue/cmd"
+	"github.com/rogpeppe/go-internal/testscript"
 )
 
 func TestMain(m *testing.M) {
