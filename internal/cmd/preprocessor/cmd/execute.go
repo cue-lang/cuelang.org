@@ -448,11 +448,6 @@ func (p *page) process() error {
 	return nil
 }
 
-func (p *page) processRootFile(rootFile *rootFile, sourcePath, targetPath string) error {
-	// For now we just copy from source to target
-	return copyFile(sourcePath, targetPath)
-}
-
 // debugf logs debugging information if the --debug flag has been set
 func (p *page) debugf(format string, args ...any) {
 	p.ctx.executor.debugf(p.dir+": "+format, args...)
