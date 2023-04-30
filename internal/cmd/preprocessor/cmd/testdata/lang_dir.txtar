@@ -1,0 +1,11 @@
+# Verify that language directories get copied
+
+# Run the preprocessor
+exec preprocessor execute --debug
+
+-- content/dir/en.md --
+en.md
+-- content/dir/en/something.txt --
+something
+-- hugo/content/en/dir/index.md --
+branch_md_en
