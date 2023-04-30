@@ -16,23 +16,23 @@ A multiline string starts and ends with a `"""`, the latter being on a line by i
 The string contents are on separate lines between these two.
 The whitespace preceding the last `"""` must prefix each non-empty line of the string contents and is stripped from all lines.
 
-```coq
-{{{ with sidebyside "en" "composition-operator" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 msg: """
     Hello World!
 
     This is a \
     real treat.
     """
--- out.json --
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
 {
     "msg": "Hello World!\n\nThis is a real treat."
 }
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
-{{{ with sidetrack }}}
+{{{with sidetrack}}}
 CUE multiline strings originate from Swift.
 {{{end}}}
 
@@ -64,21 +64,21 @@ CUE bytes values allow some additional escape sequences.
 
 A string literal enclosed with an equal number of hashes on both sides allows the usual escape sequences to appear in text verbatim. A string enclosed in a single pair of hashes uses `\#` as the escape character, instead of `\`. A string enclosed in two hashes uses `\##`, and so on.
 
-```coq
-{{{ with sidebyside "en" "composition-operator" }}}
--- in.cue --
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 a: #"A newline is\#nwritten as "\n"."#
 
 b: ##"Use \#n to write a newline in that case.”##
--- out.json --
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
 {
     "a": "A newline is\nwritten as "\\n"."
     "b": "Use \#n to write a newline in that case."
 }
-{{{end}}}
-```
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
-{{{ with sidetrack }}}
+{{{with sidetrack}}}
 CUE alternate escape sequences originate from Swift.
 {{{end}}}
 

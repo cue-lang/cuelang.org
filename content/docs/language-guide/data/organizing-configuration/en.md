@@ -19,7 +19,7 @@ CUE allows duplicate fields to exist as long as their values are consistent.
 This is allowed:
 
 ```coq
-{{{ with sidebyside "en" "composition-simple-success" }}}
+{{{with sidebyside "en" "composition-simple-success"}}}
 -- in.cue --
 a: 1
 a: 1
@@ -31,7 +31,7 @@ a: 1
 This is not:
 
 ```coq
-{{{ with sidebyside "en" "composition-simple-error" }}}
+{{{with sidebyside "en" "composition-simple-error"}}}
 -- in.cue --
 b: 1
 b: 2
@@ -47,20 +47,19 @@ For instance, maps and lists are merged by matching their keys and indexes,
 respectively:
 
 ```coq
-{{{ with sidebyside "en" "composition-composite" }}}
+{{{with sidebyside "en" "composition-composite"}}}
 -- in.cue --
 point: {
-    x: 1
+	x: 1
 }
 
 list: [1, 2, 3]
 
 point: {
-    y: 2
+	y: 2
 }
 
 list: [1, 2, 3, 4]
-
 -- out.cue --
 point: {
     x: 1
@@ -81,11 +80,10 @@ More on this in [Schemas](Schemas%20b39455d56fdb433ba9ea59c04a2dcece.md).
 For single-field maps, the curly braces can be omitted:
 
 ```coq
-{{{ with sidebyside "en" "composition-single-field-map" }}}
+{{{with sidebyside "en" "composition-single-field-map"}}}
 -- in.cue --
 point2: x: 1
 point2: y: 2
-
 -- out.cue --
 point2: {
     x: 1
@@ -97,10 +95,9 @@ point2: {
 One can also combine values with the `&` operator:
 
 ```coq
-{{{ with sidebyside "en" "composition-operator" }}}
+{{{with sidebyside "en" "composition-operator"}}}
 -- in.cue --
-point3: { x: 1 } & { y: 2 }
-
+point3: {x: 1} & {y: 2}
 -- out.cue --
 point3: {
     x: 1
@@ -109,7 +106,7 @@ point3: {
 {{{end}}}
 ```
 
-{{{ with sidetrack }}}
+{{{with sidetrack}}}
 Overall, a JSON file can be thought of as a sequence of path value pairs, where
 these pairs can be combined in any order or combination without changing the
 resulting value.
@@ -124,7 +121,7 @@ makes it easier to separate human written versus machine generated content,
 among other things.
 
 ```coq
-{{{ with sidebyside "en" "packages" }}}
+{{{with sidebyside "en" "packages"}}}
 exec cue eval :food
 -- fruit.cue --
 package food

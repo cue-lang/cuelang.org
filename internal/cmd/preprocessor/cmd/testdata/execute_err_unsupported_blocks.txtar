@@ -1,0 +1,30 @@
+# Ensure that we get sensible errors from the preprocessor when
+# we supply text/template nodes that are not (fully) supported
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+! exec preprocessor execute --debug
+stderr 'failed to parse: '$WORK${/}'content'${/}'dir'${/}'en.md:10:10 with node cannot have else block'
+
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>```coq
+>{{{with sidebyside "en" "json-superset"}}}
+>something
+>{{{else}}}
+>else
+>{{{end}}}
+>```
+>
+>Some text after
+>
+-- hugo/.gitkeep --
