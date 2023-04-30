@@ -12,7 +12,7 @@ data and configurations in general:
 - quotes can be omitted for field names without special characters,
 - you do not need commas after map fields,
 - you can place commas after the last element of a composite type, and
-- the outermost curly braces are optional. {{{ TODO "note on embedding" }}}
+- the outermost curly braces are optional. {{{TODO "note on embedding"}}}
 
 {{< columns >}}
 ```{title="in.cue"}
@@ -33,7 +33,7 @@ map: {
 ```
 {{< /columns >}}
 
-{{{ reference "json-vs-cue"  }}}
+{{{reference "json-vs-cue"}}}
 
 <!-- TODO: Also useful for defining data: embedding, builtins, … -->
 

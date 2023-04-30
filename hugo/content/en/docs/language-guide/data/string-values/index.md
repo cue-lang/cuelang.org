@@ -16,25 +16,7 @@ A multiline string starts and ends with a `"""`, the latter being on a line by i
 The string contents are on separate lines between these two.
 The whitespace preceding the last `"""` must prefix each non-empty line of the string contents and is stripped from all lines.
 
-```coq
-{{{ with sidebyside "en" "composition-operator" }}}
--- in.cue --
-msg: """
-    Hello World!
 
-    This is a \
-    real treat.
-    """
--- out.json --
-{
-    "msg": "Hello World!\n\nThis is a real treat."
-}
-{{{end}}}
-```
-
-{{{ with sidetrack }}}
-CUE multiline strings originate from Swift.
-{{{end}}}
 
 ## Escape sequences
 
@@ -64,23 +46,7 @@ CUE bytes values allow some additional escape sequences.
 
 A string literal enclosed with an equal number of hashes on both sides allows the usual escape sequences to appear in text verbatim. A string enclosed in a single pair of hashes uses `\#` as the escape character, instead of `\`. A string enclosed in two hashes uses `\##`, and so on.
 
-```coq
-{{{ with sidebyside "en" "composition-operator" }}}
--- in.cue --
-a: #"A newline is\#nwritten as "\n"."#
 
-b: ##"Use \#n to write a newline in that case.”##
--- out.json --
-{
-    "a": "A newline is\nwritten as "\\n"."
-    "b": "Use \#n to write a newline in that case."
-}
-{{{end}}}
-```
-
-{{{ with sidetrack }}}
-CUE alternate escape sequences originate from Swift.
-{{{end}}}
 
 Alternate escape sequences work analogously for multiline strings.
 

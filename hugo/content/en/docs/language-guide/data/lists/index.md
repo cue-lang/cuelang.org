@@ -8,16 +8,6 @@ CUE lists are identical to JSON lists.
 
 List elements are considered to be a special kind of data field, with elements indexed by their position.
 
-```coq
-{{{ with sidebyside "en" "list-example" }}}
--- in.cue --
-a: [1, 2]
-"a": [1, 2, 3]
--- out.cue --
-a: [1, 2, 3]
-{{{end}}}
-```
-
 <!-- TODO
 
 a: 3: 4 // ok
