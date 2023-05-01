@@ -23,12 +23,14 @@ import (
 	"testing"
 
 	"github.com/rogpeppe/go-internal/testscript"
+	"cuelang.org/go/cmd/cue/cmd"
 )
 
 func TestMain(m *testing.M) {
 	os.Exit(testscript.RunMain(m, map[string]func() int{
 		"preprocessor": Main,
 		"cmd-find":     findCmd,
+		"cue":          cueCmd,
 	}))
 }
 
@@ -62,4 +64,9 @@ func findCmd() int {
 	})
 
 	return 0
+}
+
+// cueCmd simulates cmd/cue
+func cueCmd() int {
+	return cmd.Main()
 }
