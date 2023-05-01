@@ -1,0 +1,72 @@
+# Verify that a basic import works
+
+# Run the import
+exec preprocessor import
+
+# Ensure that the contents of the filesystem are as expected
+exec cmd-find
+cmp stdout stdout.golden
+
+# Verify golden files are as expected
+cmp content/dir1/_en.html content/dir1/_en.html.golden
+cmp content/dir1/_en.md content/dir1/_en.md.golden
+cmp content/dir1/dir2/en.md content/dir1/dir2/en.md.golden
+cmp content/dir1/en.html content/dir1/en.html.golden
+cmp content/dir1/en.md content/dir1/en.md.golden
+cmp content/dir1/page.cue content/dir1/page.cue.golden
+cmp content/dir1/dir2/page.cue content/dir1/dir2/page.cue.golden
+
+# Check we can export the resulting CUE
+cue export ./content/dir1
+
+-- cue.mod/module.cue --
+module: "github.com/cue-lang/cuelang.org"
+-- site/site.cue --
+package site
+-- hugo/content/en/dir1/index.html --
+index.html
+-- hugo/content/en/dir1/_index.html --
+_index.html
+-- hugo/content/en/dir1/index.md --
+index.md
+-- hugo/content/en/dir1/_index.md --
+_index.md
+-- hugo/content/en/dir1/dir2/index.md --
+index.md
+-- content/dir1/_en.html.golden --
+_index.html
+-- content/dir1/_en.md.golden --
+_index.md
+-- content/dir1/dir2/en.md.golden --
+index.md
+-- content/dir1/en.html.golden --
+index.html
+-- content/dir1/en.md.golden --
+index.md
+-- content/dir1/page.cue.golden --
+package content_dir1
+
+import "github.com/cue-lang/cuelang.org/site"
+
+site
+-- content/dir1/dir2/page.cue.golden --
+package content_dir1_dir2
+
+import "github.com/cue-lang/cuelang.org/site"
+
+site
+-- stdout.golden --
+content/dir1/_en.html
+content/dir1/_en.md
+content/dir1/dir2/en.md
+content/dir1/dir2/page.cue
+content/dir1/en.html
+content/dir1/en.md
+content/dir1/page.cue
+cue.mod/module.cue
+hugo/content/en/dir1/_index.html
+hugo/content/en/dir1/_index.md
+hugo/content/en/dir1/dir2/index.md
+hugo/content/en/dir1/index.html
+hugo/content/en/dir1/index.md
+site/site.cue
