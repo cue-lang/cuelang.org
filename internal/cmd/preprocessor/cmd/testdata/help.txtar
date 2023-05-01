@@ -11,6 +11,7 @@ Usage:
 Available Commands:
   execute     Generate /hugo/content from /content
   help        Help about any command
+  import      Import /hugo/content to /content
 
 Flags:
   -h, --help   help for preprocessor
