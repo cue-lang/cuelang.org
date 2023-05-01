@@ -79,6 +79,7 @@ func newRootCmd() *Command {
 
 	subCommands := []*cobra.Command{
 		newExecuteCmd(c),
+		newImportCmd(c),
 	}
 
 	for _, sub := range subCommands {
