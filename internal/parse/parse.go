@@ -32,6 +32,9 @@ type Tree struct {
 	treeSet    map[string]*Tree
 	actionLine int // line of left delim starting action
 	rangeDepth int
+
+	leftDelim  string
+	rightDelim string
 }
 
 // A mode value is a set of flags (or 0). Modes control parser behavior.
@@ -48,10 +51,12 @@ func (t *Tree) Copy() *Tree {
 		return nil
 	}
 	return &Tree{
-		Name:      t.Name,
-		ParseName: t.ParseName,
-		Root:      t.Root.CopyList(),
-		text:      t.text,
+		Name:       t.Name,
+		ParseName:  t.ParseName,
+		Root:       t.Root.CopyList(),
+		text:       t.text,
+		leftDelim:  t.leftDelim,
+		rightDelim: t.rightDelim,
 	}
 }
 
@@ -245,13 +250,25 @@ func (t *Tree) stopParse() {
 func (t *Tree) Parse(text, leftDelim, rightDelim string, treeSet map[string]*Tree, funcs ...map[string]any) (tree *Tree, err error) {
 	defer t.recover(&err)
 	t.ParseName = t.Name
-	lexer := lex(t.Name, text, leftDelim, rightDelim)
+	t.setDelims(leftDelim, rightDelim)
+	lexer := lex(t.Name, text, t.leftDelim, t.rightDelim)
 	t.startParse(funcs, lexer, treeSet)
 	t.text = text
 	t.parse()
 	t.add()
 	t.stopParse()
 	return t, nil
+}
+
+func (t *Tree) setDelims(lhs, rhs string) {
+	if lhs == "" {
+		lhs = leftDelim
+	}
+	t.leftDelim = lhs
+	if rhs == "" {
+		rhs = rightDelim
+	}
+	t.rightDelim = rhs
 }
 
 // add adds tree to t.treeSet.
@@ -305,6 +322,8 @@ func (t *Tree) parse() {
 				newT := New("definition") // name will be updated once we know it.
 				newT.text = t.text
 				newT.Mode = t.Mode
+				newT.leftDelim = t.leftDelim
+				newT.rightDelim = t.rightDelim
 				newT.ParseName = t.ParseName
 				newT.startParse(t.funcs, t.lex, t.treeSet)
 				newT.parseDefinition()
@@ -633,6 +652,8 @@ func (t *Tree) blockControl() Node {
 	block := New(name) // name will be updated once we know it.
 	block.text = t.text
 	block.Mode = t.Mode
+	block.leftDelim = t.leftDelim
+	block.rightDelim = t.rightDelim
 	block.ParseName = t.ParseName
 	block.startParse(t.funcs, t.lex, t.treeSet)
 	var end Node
