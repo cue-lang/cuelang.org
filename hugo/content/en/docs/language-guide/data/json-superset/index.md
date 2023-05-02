@@ -4,7 +4,6 @@ weight: 10
 draft: false
 ---
 
-
 CUE adds functionality to JSON that makes it easier to write for humans to write
 data and configurations in general:
 
@@ -14,24 +13,25 @@ data and configurations in general:
 - you can place commas after the last element of a composite type, and
 - the outermost curly braces are optional. {{{ TODO "note on embedding" }}}
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{ with sidebyside "en" "json-superset" }}}
+exec cue export in.cue
+cmp stdout stdout.json
+-- in.cue --
 // A doc comment
 map: {
 	member1: 3 // a line comment
   member2: 4
 }
-```
-{{< columns-separator >}}
-```{title="$ cue export in.cue"}
+-- stdout.json --
 {
     "map": {
         "member1": 3,
         "member2": 4,
     }
 }
+{{{end}}}
 ```
-{{< /columns >}}
 
 {{{ reference "json-vs-cue"  }}}
 
@@ -39,27 +39,30 @@ map: {
 
 ## Comments
 
-CUE supports `//`-style comments: any line  Comments are first-class citizens in CUE.
+CUE supports `//`-style comments: any line  Comments are first-class citizens in
+CUE.
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{ with sidebyside "en" "json-comments" }}}
+exec cue export in.cue
+cmp stdout stdout.json
+
+-- in.cue --
 // A doc comment
 map: {
     member1: 3 // a line comment
     member2: 4
 }
 
-```
-{{< columns-separator >}}
-```{title="$ cue export in.cue"}
+-- stdout.json --
 {
     "map": {
         "member1": 3,
         "member2": 4,
     }
 }
+{{{end}}}
 ```
-{{< /columns >}}
 
 A comment that is directly on a line directly preceding an element, that comment
 is called a doc comment. CUE will treat such comments as special and will
@@ -74,4 +77,3 @@ meaning to the keyword `null`.
 
 CUE has the same boolean values as JSON, represented by the keywords `true` and
 `false`.
-
