@@ -59,7 +59,7 @@ It is possible to associate helper fields with scalar types by placing both in c
 
 ```coq
 {{{ with sidebyside "en" "embedded-scalars" }}}
--- in.cue –
+-- in.cue --
 one: {
     1
     #typeName: "int"
