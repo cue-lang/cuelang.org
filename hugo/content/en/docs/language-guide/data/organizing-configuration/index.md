@@ -18,39 +18,37 @@ CUE allows duplicate fields to exist as long as their values are consistent.
 
 This is allowed:
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{ with sidebyside "en" "composition-simple-success" }}}
+-- in.cue --
 a: 1
 a: 1
-
+-- out.cue --
+a: 1
+{{{end}}}
 ```
-{{< columns-separator >}}
-```{title="$ cue eval in.cue"}
-a: 1
-```
-{{< /columns >}}
 
 This is not:
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{ with sidebyside "en" "composition-simple-error" }}}
+-- in.cue --
 b: 1
 b: 2
-```
-{{< columns-separator >}}
-```{title="$ cue eval in.cue"}
+-- out.cue --
 b: conflicting values 2 and 1:
     in.cue: 1:4
     in.cue: 2:4
+{{{end}}}
 ```
-{{< /columns >}}
 
 The values do not have to be the same to be consistent.
 For instance, maps and lists are merged by matching their keys and indexes,
 respectively:
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{ with sidebyside "en" "composition-composite" }}}
+-- in.cue --
 point: {
     x: 1
 }
@@ -63,17 +61,15 @@ point: {
 
 list: [1, 2, 3, 4]
 
-```
-{{< columns-separator >}}
-```{title="$ cue eval in.cue"}
+-- out.cue --
 point: {
     x: 1
     y: 2
 }
 
 list: [1, 2, 3, 4]
+{{{end}}}
 ```
-{{< /columns >}}
 
 As can be seen, identical fields do not have to be placed next to each other.
 
@@ -84,42 +80,40 @@ More on this in [Schemas](Schemas%20b39455d56fdb433ba9ea59c04a2dcece.md).
 
 For single-field maps, the curly braces can be omitted:
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{ with sidebyside "en" "composition-single-field-map" }}}
+-- in.cue --
 point2: x: 1
 point2: y: 2
 
-```
-{{< columns-separator >}}
-```{title="$ cue eval in.cue"}
+-- out.cue --
 point2: {
     x: 1
     y: 2
 }
+{{{end}}}
 ```
-{{< /columns >}}
 
 One can also combine values with the `&` operator:
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{ with sidebyside "en" "composition-operator" }}}
+-- in.cue --
 point3: { x: 1 } & { y: 2 }
 
-```
-{{< columns-separator >}}
-```{title="$ cue eval in.cue"}
+-- out.cue --
 point3: {
     x: 1
     y: 2
 }
+{{{end}}}
 ```
-{{< /columns >}}
 
-{{< info >}}
+{{{ with sidetrack }}}
 Overall, a JSON file can be thought of as a sequence of path value pairs, where
 these pairs can be combined in any order or combination without changing the
 resulting value.
-{{< /info >}}
+{{{end}}}
 
 ## Packages
 
@@ -129,29 +123,28 @@ Splitting a configuration across files allows grouping of related aspects and
 makes it easier to separate human written versus machine generated content,
 among other things.
 
-{{< columns >}}
-```{title="fruit.cue"}
+```coq
+{{{ with sidebyside "en" "packages" }}}
+exec cue eval :food
+-- fruit.cue --
 package food
 
 cart: {
 	apples:  1
 	oranges: 3
 }
-```
-```{title="vegetables.cue"}
+-- vegetables.cue --
 package food
 
 cart: spinach: 4
-```
-{{< columns-separator >}}
-```{title="$ cue eval :food"}
+-- out.cue --
 cart: {
 	apples:  1
 	oranges: 3
 	spinach: 4
 }
+{{{end}}}
 ```
-{{< /columns >}}
 
 CUE will evaluate all files belonging to the same package as if the file
 contents were contained in one large file, merging identical fields as described
@@ -161,4 +154,3 @@ If there are multiple packages in a directory, CUE will default to the package
 with the same name as the directory.
 
 [File Organization](File%20Organization%207692931315a445acb9634b91b2b397f0.md)
-
