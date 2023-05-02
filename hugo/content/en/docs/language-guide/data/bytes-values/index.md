@@ -17,10 +17,10 @@ When exporting to JSON, CUE translates it to base64.
 ```coq
 {{{ with sidebyside "en" "bytes-to-json" }}}
 -- in.cue --
-a: #’A newline is written as \n.’#
+a: #'A newline is written as \n.'#
 b: '''
     sfsf
-    ‘’’
+    '''
 -- out.json --
 
 {{{end}}}
@@ -33,10 +33,10 @@ CUE translates bytes to the corresponding YAML binary type.
 ```coq
 {{{ with sidebyside "en" "bytes-to-yaml" }}}
 -- in.cue --
-a: #’A newline is written as \n.’#
+a: #'A newline is written as \n.'#
 b: '''
     sfsf
-    ‘’’
+    '''
 -- out.yaml --
 
 {{{end}}}
