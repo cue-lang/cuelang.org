@@ -51,7 +51,7 @@ config: #config & {
 	build: {
 		functions: "functions"
 		publish:   "_public"
-		command:   "bash build.bash"
+		command:   "bash _scripts/build.bash"
 		environment: {
 			HUGO_ENV:     "production"
 			GO_VERSION:   repo.goVersion
@@ -60,7 +60,7 @@ config: #config & {
 		}
 	}
 
-	context: "deploy-preview": command: "bash build.bash -b $DEPLOY_PRIME_URL"
+	context: "deploy-preview": command: "\(build.command) -b $DEPLOY_PRIME_URL"
 
 	redirects: [...{force: true, status: 302}]
 	redirects: [{
@@ -97,7 +97,7 @@ config: #config & {
 		[build]
 		  functions = {{printf "%q" .functions}}
 		  publish = {{printf "%q" .publish}}
-		  command = "bash build.bash"
+		  command = {{printf "%q" .command}}
 
 		[build.environment]
 		{{- range $key, $value := .environment}}
