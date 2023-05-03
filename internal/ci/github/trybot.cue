@@ -79,6 +79,12 @@ workflows: trybot: _repo.bashWorkflow & {
 					name: "Test"
 				},
 
+				// Run staticcheck
+				json.#step & {
+					name: "staticcheck"
+					run:  "./_scripts/staticcheck.bash"
+				},
+
 				// go mod tidy
 				_modTidy & {
 					name: "Check module is tidy"
