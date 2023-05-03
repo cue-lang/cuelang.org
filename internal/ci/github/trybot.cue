@@ -148,7 +148,7 @@ _installHugo: json.#step & {
 
 _dist: json.#step & {
 	name: *"Dist" | string
-	run:  "./build.bash"
+	run:  "./_scripts/build.bash"
 }
 
 _tipDist: _dist & {

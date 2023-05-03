@@ -21,8 +21,8 @@ then
 	time="time -p"
 fi
 
-# cd to the directory containing the script
-cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+# cd to the parent directory to that containing the script
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 if [ "${BRANCH:-}" == "tip" ]
 then
