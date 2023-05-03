@@ -19,8 +19,8 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 	"strings"
 
@@ -39,7 +39,7 @@ func main() {
 		log.Fatal(fmt.Errorf("failed to run %v; %w", strings.Join(cmd.Args, " "), err))
 	}
 	out := fmt.Sprintf("export const CUEVersion = \"%v\";\n", strings.TrimSpace(cueDir.String()))
-	if err := ioutil.WriteFile("gen_cuelang_org_go_version.ts", []byte(out), 0666); err != nil {
+	if err := os.WriteFile("gen_cuelang_org_go_version.ts", []byte(out), 0666); err != nil {
 		log.Fatal(fmt.Errorf("failed to write generated version file: %v", err))
 	}
 }
