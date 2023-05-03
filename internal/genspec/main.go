@@ -19,8 +19,8 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
@@ -37,7 +37,7 @@ func main() {
 		log.Fatal(fmt.Errorf("failed to run %v: %w", strings.Join(cmd.Args, " "), err))
 	}
 	srcSpecPath := filepath.Join(strings.TrimSpace(cueDir.String()), "doc", "ref", "spec.md")
-	srcSpec, err := ioutil.ReadFile(srcSpecPath)
+	srcSpec, err := os.ReadFile(srcSpecPath)
 	if err != nil {
 		log.Fatal(fmt.Errorf("failed to read %v: %w", srcSpecPath, err))
 	}
@@ -49,7 +49,7 @@ layout = "spec"
 +++`)
 	out.Write(srcSpec)
 	dstPath := "spec.md"
-	if err := ioutil.WriteFile(dstPath, out.Bytes(), 0666); err != nil {
+	if err := os.WriteFile(dstPath, out.Bytes(), 0666); err != nil {
 		log.Fatal(fmt.Errorf("failed to write to %v: %w", dstPath, err))
 	}
 }

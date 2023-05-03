@@ -44,7 +44,7 @@ func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	client := &http.Client{}
 	if r.Method == "POST" {
 		// Share
-		url := fmt.Sprintf("https://play.golang.org/share")
+		url := "https://play.golang.org/share"
 		req, err := http.NewRequest("POST", url, nil)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)

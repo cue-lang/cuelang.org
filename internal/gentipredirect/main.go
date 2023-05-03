@@ -19,8 +19,8 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 	"strings"
 
@@ -45,7 +45,7 @@ redirectURL: https://pkg.go.dev/cuelang.org/go@%v
 
 	const target = "pkg.go.dev.md"
 
-	if err := ioutil.WriteFile(target, []byte(content), 0666); err != nil {
+	if err := os.WriteFile(target, []byte(content), 0666); err != nil {
 		log.Fatalf("failed to write to %v; %v", target, err)
 	}
 }
