@@ -35,7 +35,7 @@ The output is the JSON-marshalled result of the CUE input.
 To install the packages, build the main wasm file & serve the playground locally, run:
 
 ```
-./run.bash
+./_scripts/run.bash
 ```
 
 You can now go to `http://localhost:3000/` to view the playground.

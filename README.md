@@ -47,7 +47,7 @@ Can be ignored
 To serve the site locally run:
 
 ```
-./serve.bash        # In one terminal
+./_scripts/serve.bash        # In one terminal
 ```
 
 ### Updating the language spec and tour for cuelang.org

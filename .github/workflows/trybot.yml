@@ -169,7 +169,7 @@ jobs:
       - name: Check module is tidy
         run: go mod tidy
       - name: Dist
-        run: ./build.bash
+        run: ./_scripts/build.bash
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: npm run lint
