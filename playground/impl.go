@@ -21,6 +21,7 @@ import (
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/ast"
+	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/errors"
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/load"
@@ -80,9 +81,10 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		return "", fmt.Errorf("failed to load: %w", err)
 	}
 
-	insts := cue.Build(builds)
-	inst := insts[0]
-	if err := inst.Err; err != nil {
+	ctx := cuecontext.New()
+
+	v := ctx.BuildInstance(builds[0])
+	if err := v.Err(); err != nil {
 		return "", fmt.Errorf("failed to build: %w", err)
 	}
 	concrete := true
@@ -93,7 +95,6 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	default:
 		return "", fmt.Errorf("unknown ouput type: %v", out)
 	}
-	v := insts[0].Value()
 	if err := v.Validate(cue.Concrete(concrete)); err != nil {
 		return "", err
 	}
