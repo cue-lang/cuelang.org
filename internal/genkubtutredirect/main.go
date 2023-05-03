@@ -19,8 +19,8 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 	"strings"
 
@@ -47,7 +47,7 @@ redirectURL: https://github.com/cue-lang/cue/blob/%v/doc/tutorial/kubernetes/REA
 ---`, url)
 
 	const target = "kubernetes.md"
-	if err := ioutil.WriteFile(target, []byte(content), 0666); err != nil {
+	if err := os.WriteFile(target, []byte(content), 0666); err != nil {
 		log.Fatalf("failed to write to %v; %v", target, err)
 	}
 }
