@@ -3,7 +3,7 @@
 [build]
   functions = "functions"
   publish = "_public"
-  command = "bash build.bash"
+  command = "bash _scripts/build.bash"
 
 [build.environment]
 GO_VERSION = "1.20.2"
@@ -12,7 +12,7 @@ HUGO_VERSION = "0.108.0"
 NODE_VERSION = "18.12.1"
 
 [context.deploy-preview]
-command = "bash build.bash -b $DEPLOY_PRIME_URL"
+command = "bash _scripts/build.bash -b $DEPLOY_PRIME_URL"
 
 [[redirects]]
   from = "/cl/*"

@@ -11,7 +11,7 @@ then
 fi
 
 # Build playground
-bash playground/build.bash
+bash playground/_scripts/build.bash
 
 # Main site
 cd hugo
