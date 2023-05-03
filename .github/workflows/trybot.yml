@@ -166,6 +166,8 @@ jobs:
         run: go generate ./...
       - name: Test
         run: go test ./...
+      - name: staticcheck
+        run: ./_scripts/staticcheck.bash
       - name: Check module is tidy
         run: go mod tidy
       - name: Dist
