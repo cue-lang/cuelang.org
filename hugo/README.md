@@ -11,7 +11,7 @@ This folder contains all hugo code for the website.
 To serve the site locally go the root and run:
 
 ```
-./serve.bash        # In one terminal
+./_scripts/serve.bash        # In one terminal
 ```
 
 If you just want to run the Hugo part. First run
