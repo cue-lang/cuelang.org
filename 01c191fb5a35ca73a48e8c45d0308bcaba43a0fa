@@ -1,0 +1,282 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eac64e8_c6a2223b",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "nit: args, to match spelling",
+      "range": {
+        "startLine": 61,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 7
+      },
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6d5518a_669174c1",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "why build a list of regular expressions rather than a single regular expression that uses `|` to \"or\" all the patterns?\n\nyou could also do it like `(lang1|lang2|lang3...)\\.(md|html|markdown)`. wouldn\u0027t be particularly hard with something like `strings.Builder`, and your code will get simpler as you\u0027ll avoid a loop as well.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2590c10a_99f8146a",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "nit: you end up using this regular expression with FindStringSubmatch, meaning that you\u0027ll happily match `en.md-extra` or `abcen.md`. you should use `^` and `$`.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71732dd4_f9d22a6f",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "Interesting that you\u0027re already in a `filepath.WalkDir`, so this `ReadDir` is somewhat redundant. You\u0027ll already be walking its children, since you\u0027re not returning `SkipDir`. You do return `nil` for non-directories above, which is not too different.\n\nYou could keep the `ReadDir` and return `SkipDir`. A different simpler approach would be to detect when you\u0027re walking each of the child files, and do your work based on its name and its parent directory\u0027s name. That would let you avoid the `range dirEntries` loop - since walking already loops over all files by default.\n\nI guess it depends on how much you prefer to range over a directory\u0027s files via `range` rather than consecutive callbacks.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de5e6aae_c525d8ea",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "name this something a bit clearer, like `transformFiles`?",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "daceb8df_0503613a",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "maps.Keys? I think using x/exp here would be fine, we\u0027re not a library.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2a21a8e_1e26411f",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "slices.Sort?",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ef2837c_5c7b16f7",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "nit: redundant continue",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3659e10_3bc2d3cc",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "this feels... out of place for a func called copyFile :) perhaps if it were called something like `copyHugoFile` and this was documented briefly.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c2bb0f3_2470d0b7",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "nit: `defer targetFile.Close()` so that you don\u0027t leak open files if you fail at any point",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa62ad00_f1aa2572",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "FYI: no need for a second call if you pass the mode to `os.OpenFile(name, O_RDWR|O_CREATE|O_TRUNC, sfi.Mode())` - the flags are what `os.Create` uses",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0de0700_652a048a",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "nit: Abs is harmless if wd is already absolute, so you could avoid the branch. kinda like calling HasPrefix before StripPrefix.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38398df0_2e8b9edd",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "very funky loop :) I\u0027m having a hard time following the flow, given the goto that jumps over a break in what would normally be the \"happy path\" of the loop.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2789ce3e_c62f66f1",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "stray debugging line?",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac2a0926_f7b59ce7",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "FYI: another way to do this, and perhaps nicer, would be to make both paths absolute and clean, and then check if one is a prefix of the other. you already call Abs and it already cleans the result, so that would be pretty easy.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81655608_823645c6",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T14:04:29Z",
+      "side": 1,
+      "message": "ditto on func name",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
