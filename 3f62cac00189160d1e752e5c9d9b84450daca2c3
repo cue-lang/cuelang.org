@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbe45715_2a7f23d9",
+        "filename": "site.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T15:50:47Z",
+      "side": 1,
+      "message": "why not just `go run ./internal/cmd/preprocessor`? it will work the same, it\u0027s less repetitive, and it will survive renames/forks of the module (e.g. what I\u0027m running into with unity-private)",
+      "revId": "3f62cac00189160d1e752e5c9d9b84450daca2c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
