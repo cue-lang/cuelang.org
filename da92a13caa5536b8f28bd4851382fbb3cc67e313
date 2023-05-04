@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9a6d888_c8b1de1c",
+        "filename": "_scripts/staticcheck.bash",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-04T11:00:54Z",
+      "side": 1,
+      "message": "FYI these backslashes are both unnecessary.",
+      "revId": "da92a13caa5536b8f28bd4851382fbb3cc67e313",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
