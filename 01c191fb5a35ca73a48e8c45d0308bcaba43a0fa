@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b6853c6_f58b7cdf",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9eac64e8_c6a2223b",
+      "range": {
+        "startLine": 61,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 7
+      },
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a6d5518a_669174c1",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "why build a list of regular expressions rather than a single regular expression that uses `|` to \"or\" all the patterns?\n\nyou could also do it like `(lang1|lang2|lang3...)\\.(md|html|markdown)`. wouldn\u0027t be particularly hard with something like `strings.Builder`, and your code will get simpler as you\u0027ll avoid a loop as well.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48c39e32_ad8670ba",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "I think this must have been somewhat leftover from a previous refactor. Tidied up per your suggestion, thanks.",
+      "parentUuid": "a6d5518a_669174c1",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "801490ab_4b95f5f1",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Good catch, thanks. Done",
+      "parentUuid": "2590c10a_99f8146a",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71732dd4_f9d22a6f",
@@ -71,6 +131,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "Interesting that you\u0027re already in a `filepath.WalkDir`, so this `ReadDir` is somewhat redundant. You\u0027ll already be walking its children, since you\u0027re not returning `SkipDir`. You do return `nil` for non-directories above, which is not too different.\n\nYou could keep the `ReadDir` and return `SkipDir`. A different simpler approach would be to detect when you\u0027re walking each of the child files, and do your work based on its name and its parent directory\u0027s name. That would let you avoid the `range dirEntries` loop - since walking already loops over all files by default.\n\nI guess it depends on how much you prefer to range over a directory\u0027s files via `range` rather than consecutive callbacks.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd7c1578_a2aaccec",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Nice observation. To be honest, I hadn\u0027t looked at this loop for some time. And it doesn\u0027t appear to have withstood various refactors particularly well. I\u0027ve refactored to do a breadth first walk \"manually\" using os.ReadDir. Because that\u0027s clearer and more efficient.",
+      "parentUuid": "71732dd4_f9d22a6f",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -92,6 +170,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a0857ac_3500147e",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "This name is actually appropriate IMO. I\u0027ve updated the doc comment to be clearer. This method is responsible for processing a page root, which includes the root files which make up that page root. It includes the copying of non-page root files, _$LANG directories etc per the logic described in execute_doc.go.",
+      "parentUuid": "de5e6aae_c525d8ea",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "daceb8df_0503613a",
@@ -105,6 +201,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "maps.Keys? I think using x/exp here would be fine, we\u0027re not a library.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9aa77235_b735a369",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "daceb8df_0503613a",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -126,6 +240,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "308da33a_2d67b89a",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2a21a8e_1e26411f",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ef2837c_5c7b16f7",
@@ -139,6 +271,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "nit: redundant continue",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8652a888_9dd2f0f7",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ef2837c_5c7b16f7",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -160,6 +310,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d6b2e49_86beb56f",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Ha! I definitely wanted to move this. Forgot to add a TODO, was missing the `XXX` logic we discussed. Thanks for catching. Refactored to move this check to (*Page).process() for now. It\u0027s not super clear how to maintain the list of files we want to include/exclude in the copy, so I\u0027ve left a TODO.",
+      "parentUuid": "d3659e10_3bc2d3cc",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c2bb0f3_2470d0b7",
@@ -173,6 +341,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "nit: `defer targetFile.Close()` so that you don\u0027t leak open files if you fail at any point",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f5f805d_ec917ebb",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done. Let me know if there\u0027s a better pattern to use in this situation to avoid the double close.",
+      "parentUuid": "3c2bb0f3_2470d0b7",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -194,6 +380,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "285ebe2f_a5f17f17",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa62ad00_f1aa2572",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0de0700_652a048a",
@@ -207,6 +411,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "nit: Abs is harmless if wd is already absolute, so you could avoid the branch. kinda like calling HasPrefix before StripPrefix.",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ae0f87c_98fc94ba",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0de0700_652a048a",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -228,6 +450,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72fa2638_d84221d9",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Good point. Simplified.",
+      "parentUuid": "38398df0_2e8b9edd",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2789ce3e_c62f66f1",
@@ -241,6 +481,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "stray debugging line?",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "802b7da0_c2bea79b",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2789ce3e_c62f66f1",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -262,6 +520,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c624137_1e3dd424",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac2a0926_f7b59ce7",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81655608_823645c6",
@@ -275,6 +551,24 @@
       "writtenOn": "2023-05-04T14:04:29Z",
       "side": 1,
       "message": "ditto on func name",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f53c5450_f11788b8",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-04T17:53:22Z",
+      "side": 1,
+      "message": "Agreed in this instance.",
+      "parentUuid": "81655608_823645c6",
       "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
