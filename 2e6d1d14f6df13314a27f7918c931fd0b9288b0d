@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a62d15ab_2876d742",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 42
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "SGTM. If any of this were to be upstreamed in the future, I wonder if just exposing one API would be enough.",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e205fe9c_6281d367",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "I thought the behavior would be that you would still add them to the buffer, but only \"flush\" at the end of the git op?\n\nalso, shouldn\u0027t \"during a git op\" be `if bw.inGitOperation`?",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "570ac70a_6a1409b8",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "give a more helpful message? :)",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a17478f5_e782ad5a",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "does this abstraction give you anything useful? it seems to be unnecessary given the code you have right now. maybe for future testing?",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da098bb7_40f0a92f",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "implements...? :)",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fadeba92_e3707870",
+        "filename": "internal/fsnotify/watcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "nit: use `:\u003d` to not mix this error value with the others",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3b68421_eb90bd64",
+        "filename": "internal/fsnotify/watcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "an alternative would be a `return`, then you don\u0027t need the label and can move the other close here. that\u0027s IMO a bit simpler as well.",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bccee79d_dbcccd71",
+        "filename": "internal/fsnotify/watcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T10:08:09Z",
+      "side": 1,
+      "message": "you only care about `\u003c 0` here, so you could do `lhs \u003c rhs`",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
