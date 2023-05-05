@@ -16,6 +16,24 @@
       "message": "still happy to approve this change in upstream, if we add a test",
       "revId": "b597d826d0701957ddcbafc6e2fc482b54d11e1f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da9630c0_ce409534",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T13:09:32Z",
+      "side": 1,
+      "message": "Noted. I\u0027ve raised https://github.com/cue-lang/cue/issues/2387 to not lose track of this. Indeed it\u0027s a good first issue for anyone familiar with contributing to Go.",
+      "parentUuid": "a2b2f31b_2e757b47",
+      "revId": "b597d826d0701957ddcbafc6e2fc482b54d11e1f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
