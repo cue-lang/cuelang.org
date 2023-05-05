@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61b1f9a1_c72f82c1",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T13:17:50Z",
+      "side": 1,
+      "message": "Ah, good point, I had missed that.",
+      "parentUuid": "bd8caff4_e52fc4b6",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "570ac70a_6a1409b8",
