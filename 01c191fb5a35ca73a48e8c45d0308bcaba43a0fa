@@ -365,6 +365,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f058a8e1_6643929f",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 25
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T09:45:05Z",
+      "side": 1,
+      "message": "you could just add more `defer f.Close()` calls rather than build a slice; more deferred calls aren\u0027t particularly heavy. and yeah, duplicate close calls are OK; the duplicate ones will error, but since those are deferred and don\u0027t check errors, it\u0027s fine.",
+      "parentUuid": "6f5f805d_ec917ebb",
+      "revId": "01c191fb5a35ca73a48e8c45d0308bcaba43a0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fa62ad00_f1aa2572",
         "filename": "internal/cmd/preprocessor/cmd/execute.go",
         "patchSetId": 25
