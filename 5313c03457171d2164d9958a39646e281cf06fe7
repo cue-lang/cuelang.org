@@ -210,6 +210,24 @@
       "parentUuid": "f7d6293a_0c52b7ea",
       "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15b15a7b_36918c0a",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T13:29:57Z",
+      "side": 1,
+      "message": "\u003e I think it would be useful more often than not\n\nI have no way of measuring that. So again I tend towards a simpler, entirely lightweight API as a starting point. I clearly wouldn\u0027t be against something larger, but it\u0027s clearly not that hard to react as each consumer requires. It also means the consumer is forced to consider how to deal with errors. It would be a more complicated API if the consumer received an fs.DirEntry or an error. Not terrible, but not zero cognitive overhead either.\n\n\u003e Though you doing an Lstat here is also slightly racy, as you use the file shortly after doing the Lstat :)\n\nIndeed, which is why we ignore errors and continue. Nothing will be perfect, but I do tend to agree with the underlying fsnotify API of being minimal. \n\n\u003e Not a blocker either way, just an idea. If we ever get to a large enough number of files to process, duplicating syscalls might matter, particularly on OSs like Mac or Windows. Or if we plan to suggest this API to upstream fsnotify, I\u0027d keep it in mind.\n\nHappy to consider any approach for sure. \n\nNot that there are a number of ways in which we can make the batch handling more efficient as we range over evs. The implementation for now is basic for sure. I was leaning on the side of simple correctness for now.",
+      "parentUuid": "0b8b4e32_13fc8fd3",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
