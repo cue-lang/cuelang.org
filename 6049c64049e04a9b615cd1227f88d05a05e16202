@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee942795_fe57b684",
+        "filename": "_scripts/staticcheck.bash",
+        "patchSetId": 21
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T11:11:49Z",
+      "side": 1,
+      "message": "FYI: I would use `grep -vE \u0027github\\.com/cue-lang/cuelang.org/(playground/internal/cuelang_org_go_internal|internal/parse)\u0027`",
+      "revId": "6049c64049e04a9b615cd1227f88d05a05e16202",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
