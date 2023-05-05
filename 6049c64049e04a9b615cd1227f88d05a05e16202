@@ -16,6 +16,24 @@
       "message": "FYI: I would use `grep -vE \u0027github\\.com/cue-lang/cuelang.org/(playground/internal/cuelang_org_go_internal|internal/parse)\u0027`",
       "revId": "6049c64049e04a9b615cd1227f88d05a05e16202",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bc85466_a9d4eed1",
+        "filename": "_scripts/staticcheck.bash",
+        "patchSetId": 21
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:57:00Z",
+      "side": 1,
+      "message": "I\u0027m going to politely decline that suggestion, on the grounds that maintaining two separate lines is far easier (for me at least) than a single line with a regex that is relatively speaking hard to read and maintain :)",
+      "parentUuid": "ee942795_fe57b684",
+      "revId": "6049c64049e04a9b615cd1227f88d05a05e16202",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
