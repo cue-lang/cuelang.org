@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd8caff4_e52fc4b6",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:44:13Z",
+      "side": 1,
+      "message": "Note this is in the case `ev.Name \u003d\u003d lockFile`. The comment was written in that context. i.e. we don\u0027t care about other events on the lock file whilst in a git operation. The logic above around `startOfGitOp` and `endOfGitOp` does not necessarily cover all things that could happen to a lock file. So this comment and check captures any situation not covered by those \"edges\". I\u0027ve updated the comment to be more explicit that this relates to events on the lockfile.",
+      "parentUuid": "e205fe9c_6281d367",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "570ac70a_6a1409b8",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-05-05T10:08:09Z",
       "side": 1,
       "message": "give a more helpful message? :)",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "722b78c5_be48bb65",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:44:13Z",
+      "side": 1,
+      "message": "Do you think that\u0027s necessary?! 😊\n\nDone.",
+      "parentUuid": "570ac70a_6a1409b8",
       "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cacec57a_0b11f181",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:44:13Z",
+      "side": 1,
+      "message": "Nice catch thanks. This is left over from a previous attempt at getting the testing of events \"right\". I will remove this an all associated vestiges.",
+      "parentUuid": "a17478f5_e782ad5a",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da098bb7_40f0a92f",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-05-05T10:08:09Z",
       "side": 1,
       "message": "implements...? :)",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f191888_59c0135e",
+        "filename": "internal/fsnotify/batchedwatcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:44:13Z",
+      "side": 1,
+      "message": "Deleted... because this is no longer used.",
+      "parentUuid": "da098bb7_40f0a92f",
       "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -103,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fdbbee7_d3954993",
+        "filename": "internal/fsnotify/watcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:44:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fadeba92_e3707870",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f3b68421_eb90bd64",
@@ -120,6 +210,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f0ce3ce_7fc588b7",
+        "filename": "internal/fsnotify/watcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:44:13Z",
+      "side": 1,
+      "message": "Done. I deferred the `close(w.doneClose)`.",
+      "parentUuid": "f3b68421_eb90bd64",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bccee79d_dbcccd71",
@@ -133,6 +241,24 @@
       "writtenOn": "2023-05-05T10:08:09Z",
       "side": 1,
       "message": "you only care about `\u003c 0` here, so you could do `lhs \u003c rhs`",
+      "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ea0f234_13b17add",
+        "filename": "internal/fsnotify/watcher.go",
+        "patchSetId": 42
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:44:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bccee79d_dbcccd71",
       "revId": "2e6d1d14f6df13314a27f7918c931fd0b9288b0d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
