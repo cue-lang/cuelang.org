@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1e2818e_802b49f6",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T13:21:21Z",
+      "side": 1,
+      "message": "SGTM, definitely not a blocker",
+      "parentUuid": "c9a2c741_c500aa05",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b327438a_a6f5b57b",
@@ -172,6 +190,24 @@
       "side": 1,
       "message": "\u003e nit: Lstat, unless you want to support symlinks, but in that case you probably need special logic for them as you might be watching both the link source and target.\n\nGood point. The docs probably need making precise in this regard (at some point).\n\n\u003e I also wonder if fsnotify could give you something like a fs.DirEntry so you could tell if it\u0027s a directory without an extra syscall. surely fsnotify already knows.\n\nI\u0027m not sure there\u0027s value in that:\n\n* it costs memory, and you aren\u0027t guaranteed the consume will use it.\n* it\u0027s racey. \n\nSo it feels better the way it is.",
       "parentUuid": "05b5fbfb_a0e073d2",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b8b4e32_13fc8fd3",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T13:21:21Z",
+      "side": 1,
+      "message": "I might be wrong, but I would think one fs.DirEntry per modified file will be pretty light, and I think it would be useful more often than not - kinda like a filepath.WalkDir. In fact it would be nice if the two APIs were similar.\n\nYou\u0027re right that there\u0027s an inherent race with getting the DirEntry info, since it may be seconds out of date. Though you doing an Lstat here is also slightly racy, as you use the file shortly after doing the Lstat :) \n\nNot a blocker either way, just an idea. If we ever get to a large enough number of files to process, duplicating syscalls might matter, particularly on OSs like Mac or Windows. Or if we plan to suggest this API to upstream fsnotify, I\u0027d keep it in mind.",
+      "parentUuid": "f7d6293a_0c52b7ea",
       "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
