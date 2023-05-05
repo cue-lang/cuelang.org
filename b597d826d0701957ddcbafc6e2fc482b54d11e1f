@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2b2f31b_2e757b47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T11:12:56Z",
+      "side": 1,
+      "message": "still happy to approve this change in upstream, if we add a test",
+      "revId": "b597d826d0701957ddcbafc6e2fc482b54d11e1f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
