@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b55dce3_b9a80f26",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T11:09:59Z",
+      "side": 1,
+      "message": "arguably exiting with ^C/SIGINT is normal, and shouldn\u0027t exit with a non-zero status unless there was an error, so I agree with the TODO. it\u0027s fairly normal for apps to run for a little bit longer on SIGINT, to clean up after themselves and exit gracefully.",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b327438a_a6f5b57b",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T11:09:59Z",
+      "side": 1,
+      "message": "you could consider using https://pkg.go.dev/os/signal#NotifyContext for handling signals in your serve method, then you can pass this context along to exec.CommandContext to stop hugo as well, and similarly use the context to stop the other goroutines.",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acda40be_247bd2ee",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T11:09:59Z",
+      "side": 1,
+      "message": "nit: since this is for `os/exec`, might as well use an `os.Pipe`, since otherwise `os/exec` will need to spawn goroutines with their own pipes to copy data from the OS pipe to your in-memory `io.Pipe`. you can cut the middleman, with the only caveat that you\u0027ll need to close the two ends of the pipe when the command is done.",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cce8fbbd_fbade29c",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T11:09:59Z",
+      "side": 1,
+      "message": "perhaps this needs a TODO similar to the one on os.Exit, to gracefully stop this goroutine when the user hits SIGINT",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05b5fbfb_a0e073d2",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-05T11:09:59Z",
+      "side": 1,
+      "message": "nit: Lstat, unless you want to support symlinks, but in that case you probably need special logic for them as you might be watching both the link source and target.\n\nI also wonder if fsnotify could give you something like a fs.DirEntry so you could tell if it\u0027s a directory without an extra syscall. surely fsnotify already knows.",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
