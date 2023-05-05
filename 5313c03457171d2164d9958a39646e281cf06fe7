@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9a2c741_c500aa05",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:55:50Z",
+      "side": 1,
+      "message": "I\u0027ll leave the TODO and the `os.Exit(1)` for now. Because what I don\u0027t want to do (now/at all) is thread `context.Context` through everything. So while there are some critical things that we might need/want to tidy up, we otherwise just want to exit fast. That could mean, however, that the state of files on disk is not consistent. i.e. the `hugo/content` directory structure is in a partially transformed state. Hence, the `os.Exit(1)` at least hints that there might be something wrong. The TODO can, I think, be to update this away from a straight `os.Exit(1)` to an `os.Exit(0)` in the situation we know we left things in a consistent state. \n\nI\u0027ve added much of this response to the TODO comment FYI.",
+      "parentUuid": "2b55dce3_b9a80f26",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b327438a_a6f5b57b",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-05T11:09:59Z",
       "side": 1,
       "message": "you could consider using https://pkg.go.dev/os/signal#NotifyContext for handling signals in your serve method, then you can pass this context along to exec.CommandContext to stop hugo as well, and similarly use the context to stop the other goroutines.",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "151cacda_f9ff16b4",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:55:50Z",
+      "side": 1,
+      "message": "For now at least I\u0027m happy leaving this as is. Because we might well move to a world where we invoke hugo as a library, not via the command.",
+      "parentUuid": "b327438a_a6f5b57b",
       "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c7bbebd_0efe6a6e",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:55:50Z",
+      "side": 1,
+      "message": "Done. Thanks, TIL.",
+      "parentUuid": "acda40be_247bd2ee",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cce8fbbd_fbade29c",
@@ -69,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33b2fee2_1012cb4e",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:55:50Z",
+      "side": 1,
+      "message": "I\u0027ve added a comment linking to the TODO on the `os.Exit(1)` above. Good point.",
+      "parentUuid": "cce8fbbd_fbade29c",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05b5fbfb_a0e073d2",
@@ -82,6 +154,24 @@
       "writtenOn": "2023-05-05T11:09:59Z",
       "side": 1,
       "message": "nit: Lstat, unless you want to support symlinks, but in that case you probably need special logic for them as you might be watching both the link source and target.\n\nI also wonder if fsnotify could give you something like a fs.DirEntry so you could tell if it\u0027s a directory without an extra syscall. surely fsnotify already knows.",
+      "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7d6293a_0c52b7ea",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-05T12:55:50Z",
+      "side": 1,
+      "message": "\u003e nit: Lstat, unless you want to support symlinks, but in that case you probably need special logic for them as you might be watching both the link source and target.\n\nGood point. The docs probably need making precise in this regard (at some point).\n\n\u003e I also wonder if fsnotify could give you something like a fs.DirEntry so you could tell if it\u0027s a directory without an extra syscall. surely fsnotify already knows.\n\nI\u0027m not sure there\u0027s value in that:\n\n* it costs memory, and you aren\u0027t guaranteed the consume will use it.\n* it\u0027s racey. \n\nSo it feels better the way it is.",
+      "parentUuid": "05b5fbfb_a0e073d2",
       "revId": "5313c03457171d2164d9958a39646e281cf06fe7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
