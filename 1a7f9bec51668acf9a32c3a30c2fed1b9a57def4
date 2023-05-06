@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec5a8b89_9c20074e",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "would be nice to document these two; from a skim, it\u0027s not clear how the two are different. particularly since the signatures are near identical.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da5b7e9b_9163b0c8",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "nit: name this something like writeTo, like https://pkg.go.dev/io#WriterTo, otherwise it sounds like b is the _source_ of the write rather than the target.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d31f43fb_6e79c7b7",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "I feel similarly here; `t.transform(b)` sounds like you\u0027re transforming the buffer, when in fact you\u0027re... transforming `t` into the buffer?",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d870336b_ba8c41f0",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "how about `bufPrintf`?",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13060a22_a11806ed",
+        "filename": "internal/cmd/preprocessor/cmd/parse.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "use x/tools/txtar? we ideally want to deprecate our go-internal txtar sooner than later.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8418bc2b_abbfe3bb",
+        "filename": "internal/cmd/preprocessor/cmd/parse.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "these can all go in a single case and line, right?",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e319c03e_6ff60533",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "I\u0027ve seen you use grouped vars/consts even if there\u0027s just one declaration. is there a reason for that? perhaps so that you can add more with smaller diffs?\n\npersonally I only do this with imports, because adding more imports is almost always guaranteed, but adding more vars/consts is not. I\u0027m just as likely to add vars or consts elsewhere in the file, closer to where they\u0027re actually needed :) and avoiding the two lines and indentation is nice.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d597bf62_54ae1819",
+        "filename": "internal/cmd/preprocessor/cmd/run.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "does this file do anything? :)",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18cc8aba_5a40dcf0",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "another couple of cases where I notice the grouping pattern :)",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a683c1b1_9fc3fa64",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "or use MarshalIndent, which will save you 2-3 lines",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "655fcd1b_21f708b5",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "does this need a TODO?",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b89007f4_22e6d388",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "nit: in cases like `out.concrete.cue`, you would end up with `ext \u003d \"concrete.cue\"`, which isn\u0027t right.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80e70873_d9009ffd",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-06T08:15:20Z",
+      "side": 1,
+      "message": "isn\u0027t this logic duplicated with transform above? I would deduplicate, e.g. I made a comment about Cut\u0027s behavior on multiple dots, but here you do CutSuffix, and the two behave differently with edge cases like that.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
