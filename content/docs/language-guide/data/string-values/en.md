@@ -18,6 +18,7 @@ The whitespace preceding the last `"""` must prefix each non-empty line of the s
 
 ```coq
 {{{with sidebyside "en" "composition-operator"}}}
+#norun
 
 -- in.cue --
 msg: """
@@ -67,6 +68,7 @@ A string literal enclosed with an equal number of hashes on both sides allows th
 
 ```coq
 {{{with sidebyside "en" "composition-operator"}}}
+#norun
 
 -- in.cue --
 a: #"A newline is\#nwritten as "\n"."#
