@@ -99,7 +99,7 @@ func deriveProjectRoot(dir string) (wd string, projectRoot string, err error) {
 	}
 	wd, err = filepath.Abs(wd)
 	if err != nil {
-		return "", "", fmt.Errorf("failed to make %s absolute: %w", wd, err)
+		return "", "", fmt.Errorf("deriveProjectRoot: failed to make %s absolute: %w", wd, err)
 	}
 
 	// Ensure that wd is a subdirectory of a directory structure where an
@@ -130,7 +130,7 @@ func deriveProjectRoot(dir string) (wd string, projectRoot string, err error) {
 		parentDir := filepath.Dir(possibleRoot)
 		if parentDir == possibleRoot {
 			// We are at the root of the filesystem
-			return "", "", fmt.Errorf("failed to find project root")
+			return "", "", fmt.Errorf("deriveProjectRoot: failed to find project root before filesystem root")
 		}
 		possibleRoot = parentDir
 	}
@@ -144,7 +144,7 @@ func deriveProjectRoot(dir string) (wd string, projectRoot string, err error) {
 		// Ensure wd is a subdirectory of $projectRoot/content
 		cd := filepath.Join(projectRoot, "content")
 		if wd != cd && !strings.HasPrefix(wd, cd+string(os.PathSeparator)) {
-			return "", "", fmt.Errorf("working directory %s is not a subdirectory of %s", wd, cd)
+			return "", "", fmt.Errorf("deriveProjectRoot: working directory %s is not a subdirectory of %s", wd, cd)
 		}
 	}
 
