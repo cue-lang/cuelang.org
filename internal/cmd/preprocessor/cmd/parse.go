@@ -16,7 +16,6 @@ package cmd
 
 import (
 	"bytes"
-	"fmt"
 	"os"
 	"strings"
 
@@ -40,7 +39,7 @@ const (
 func (rf *rootFile) parse() error {
 	f, err := os.ReadFile(rf.filename)
 	if err != nil {
-		return fmt.Errorf("failed to read: %w", err)
+		return rf.errorf("failed to read: %v", err)
 	}
 	rf.contents = f
 
@@ -48,7 +47,7 @@ func (rf *rootFile) parse() error {
 
 	// Parse header. Must be right at the headerStart of the file
 	if !bytes.HasPrefix(f, []byte(headerLine)) {
-		return fmt.Errorf("failed to find start of header")
+		return rf.errorf("%v: failed to find start of header", rf)
 	}
 	header := f[len(headerLine):]
 	bodyStart += len(headerLine)
@@ -61,7 +60,7 @@ func (rf *rootFile) parse() error {
 		const headerEnd = "\n" + headerLine
 		endIndex := bytes.Index(header, []byte(headerEnd))
 		if endIndex == -1 {
-			return fmt.Errorf("failed to find end of header")
+			return rf.errorf("failed to find end of header")
 		}
 		bodyStart += endIndex + len(headerEnd)
 		header = header[:endIndex+1] // to leave the header including the \n
@@ -76,7 +75,7 @@ func (rf *rootFile) parse() error {
 	// TODO derive the delimiters from the page's CUE config
 	parseTrees, err := parse.Parse(rf.filename, string(body), rf.page.leftDelim, rf.page.rightDelim, templateFunctions)
 	if err != nil {
-		return fmt.Errorf("failed to parse body: %w", err)
+		return rf.errorf("failed to parse body: %v", err)
 	}
 	rf.body = parseTrees[rf.filename]
 	pc := parseContext{
@@ -107,47 +106,16 @@ func (rf *rootFile) parse() error {
 	return nil
 }
 
-func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (node, error) {
-	if len(args) != 2 {
-		return nil, pc.bodyError(n, "sidebyside requires two args")
-	}
-	var strArgs []string
-	for _, a := range args {
-		sa, ok := a.(*parse.StringNode)
-		if !ok {
-			return nil, pc.bodyError(a, "expected a string argument")
-		}
-		strArgs = append(strArgs, sa.Text)
-	}
-	lang, label := strArgs[0], strArgs[1]
-
-	// We only support a single TextNode body, i.e. the contents of a txtar archive
-	if n.List == nil || len(n.List.Nodes) != 1 {
-		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
-	}
-	tn, ok := n.List.Nodes[0].(*parse.TextNode)
-	if !ok {
-		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
-	}
-	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
-	// therefore forms part of the body.
-	text := tn.Text[1:]
-	ar := txtar.Parse(text)
-
-	res := &sidebysideNode{
-		rf:    pc.rootFile,
-		lang:  lang,
-		label: label,
-		ar:    ar,
-	}
-	return res, nil
+func (rf *rootFile) bodyError(n parse.Node, format string, args ...any) error {
+	args = append([]any{rf}, args...)
+	loc := rf.nodePos(n)
+	return rf.errorf("%v:"+loc+" "+format, args...)
 }
 
-// bodyError is a convenience for creating a formatted error that includes the
-// position of n within the original input.
-func (rf *rootFile) bodyError(n parse.Node, format string, args ...any) error {
-	location, _ := rf.body.ErrorContext(n)
-	return fmt.Errorf(location+" "+format, args...)
+func (rf *rootFile) nodePos(theNode parse.Node) string {
+	loc, _ := rf.body.ErrorContext(theNode)
+	_, after, _ := strings.Cut(loc, ":")
+	return after
 }
 
 // parseContext is a convenience for passing the current state of parsing of
@@ -186,7 +154,10 @@ func (pc parseContext) parse_TextNode(n *parse.TextNode) (node, error) {
 		t = strings.TrimPrefix(t, withEndWrapper)
 	}
 	return &textNode{
-		rf:   pc.rootFile,
+		nodeWrapper: nodeWrapper{
+			rf:         pc.rootFile,
+			underlying: n,
+		},
 		text: []byte(t),
 	}, nil
 
@@ -221,6 +192,46 @@ func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
 		rf:         pc.rootFile,
 		underlying: n,
 	}, nil
+}
+
+func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (node, error) {
+	if len(args) != 2 {
+		return nil, pc.bodyError(n, "sidebyside requires two args")
+	}
+	var strArgs []string
+	for _, a := range args {
+		sa, ok := a.(*parse.StringNode)
+		if !ok {
+			return nil, pc.bodyError(a, "expected a string argument")
+		}
+		strArgs = append(strArgs, sa.Text)
+	}
+	lang, label := strArgs[0], strArgs[1]
+
+	// We only support a single TextNode body, i.e. the contents of a txtar archive
+	if n.List == nil || len(n.List.Nodes) != 1 {
+		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
+	}
+	tn, ok := n.List.Nodes[0].(*parse.TextNode)
+	if !ok {
+		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
+	}
+	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
+	// therefore forms part of the body.
+	text := tn.Text[1:]
+	ar := txtar.Parse(text)
+
+	res := &sidebysideNode{
+		nodeWrapper: nodeWrapper{
+			rf:         pc.rootFile,
+			underlying: n,
+		},
+		lang:                 lang,
+		label:                label,
+		ar:                   ar,
+		bufferedErrorContext: pc.bufferedErrorContext,
+	}
+	return res, nil
 }
 
 func (pc parseContext) parse_ActionNode(n *parse.ActionNode) (node, error) {
