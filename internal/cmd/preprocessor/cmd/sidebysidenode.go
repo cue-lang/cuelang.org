@@ -36,18 +36,36 @@ const (
 )
 
 type sidebysideNode struct {
-	rf    *rootFile
+	node  nodeWrapper
 	lang  string
 	label string
 	ar    *txtar.Archive
+
+	*bufferedErrorContext
 }
 
-var _ node = (*sidebysideNode)(nil)
+func (s *sidebysideNode) Format(state fmt.State, verb rune) {
+	fmt.Fprintf(state, "%v", s.node)
+}
 
-func (s *sidebysideNode) run() error {
+var _ runnableNode = (*sidebysideNode)(nil)
+
+type sidebysideNodeRunContext struct {
+	node *sidebysideNode
+	*bufferedErrorContext
+}
+
+func (s *sidebysideNode) run() runnable {
+	return &sidebysideNodeRunContext{
+		node:                 s,
+		bufferedErrorContext: newBufferedErrorContext(s),
+	}
+}
+
+func (s *sidebysideNodeRunContext) run() error {
 	// First format all non-output files
-	for i := range s.ar.Files {
-		f := &s.ar.Files[i]
+	for i := range s.node.ar.Files {
+		f := &s.node.ar.Files[i]
 		a := analyseFilename(f.Name)
 		if a.isOut {
 			continue
@@ -56,15 +74,15 @@ func (s *sidebysideNode) run() error {
 		case "json":
 			expr, err := json.Extract(f.Name, f.Data)
 			if err != nil {
-				return fmt.Errorf("failed to extract JSON from %s: %w", f.Name, err)
+				return s.errorf("%v: failed to extract JSON from %s: %v", s, f.Name, err)
 			}
-			v := s.rf.page.ctx.executor.ctx.BuildExpr(expr)
+			v := s.node.node.rf.page.ctx.executor.ctx.BuildExpr(expr)
 			if err := v.Err(); err != nil {
-				return fmt.Errorf("failed to build CUE value from %s: %w", f.Name, err)
+				return s.errorf("%v: failed to build CUE value from %s: %v", s, f.Name, err)
 			}
 			byts, err := encjson.MarshalIndent(v, "", "  ")
 			if err != nil {
-				return fmt.Errorf("failed to format CUE value as json for %s: %w", f.Name, err)
+				return s.errorf("%v: failed to format CUE value as json for %s: %v", s, f.Name, err)
 			}
 			f.Data = byts
 		case "yaml":
@@ -72,7 +90,7 @@ func (s *sidebysideNode) run() error {
 		case "cue":
 			b, err := format.Source(f.Data)
 			if err != nil {
-				s.rf.page.debugf("failed to format CUE in %q %q: %w", s.label, f.Name, err)
+				s.debugf("%v: failed to format CUE in %q %q: %v", s, s.node.label, f.Name, err)
 			} else {
 				f.Data = b
 			}
@@ -84,9 +102,9 @@ func (s *sidebysideNode) run() error {
 func (s *sidebysideNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
 	p("```coq\n")
-	p("%swith %s %q %q%s\n", s.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.rf.page.rightDelim)
+	p("%swith %s %q %q%s\n", s.node.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.node.rf.page.rightDelim)
 	p("%s", txtar.Format(s.ar))
-	p("%send%s\n", s.rf.page.leftDelim, s.rf.page.rightDelim)
+	p("%send%s\n", s.node.rf.page.leftDelim, s.node.rf.page.rightDelim)
 	p("```\n")
 }
 
