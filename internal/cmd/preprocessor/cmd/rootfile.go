@@ -180,7 +180,7 @@ func (rf *rootFile) run() error {
 		if !ok {
 			continue
 		}
-		fmt.Fprintf(rf.page.ctx.log, "%s", n.bytes())
+		rf.logf("%s", n.bytes())
 
 	}
 	return nil
