@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"bufio"
 	"bytes"
 	"fmt"
 	"os"
@@ -33,6 +34,8 @@ const (
 	fnSidebyside = "sidebyside"
 
 	goldenExt = ".golden"
+
+	tagNorun = "norun"
 )
 
 type sidebysideNode struct {
@@ -162,4 +165,89 @@ func analyseFilename(p string) (res filenameAnalysis) {
 		res.isOut = true
 	}
 	return
+}
+
+// tag searches for the first #$key tag line in the comment section of s's
+// txtar archive. Tags are # prefixed lines where the # at the beginning of the
+// line must be followed by a non-space character. args contains the contents
+// of the quote-aware args that follow the tag name. present indicates whether
+// the tag identified by key was present or not. err will be non-nil if there
+// were errors in parsing the arguments to a tag.
+//
+// TODO: work out whether we want to handle comments in tag lines (which are
+// themselves comments already).
+func (s *sidebysideNode) tag(key string) (args []string, present bool, err error) {
+	prefix := []byte("#" + key)
+	sc := bufio.NewScanner(bytes.NewReader(s.ar.Comment))
+	lineNo := 1
+	for sc.Scan() {
+		line := bytes.TrimSpace(sc.Bytes())
+		if bytes.Equal(bytes.TrimSpace(line), prefix) {
+			args, err := parseLineArgs(string(line))
+			if err != nil {
+				err = fmt.Errorf("%s:%d %w", s.label, lineNo, err)
+			}
+			return args, true, err
+		}
+		lineNo++
+	}
+	return nil, false, nil
+}
+
+// parseLineArgs is factored out of the testscript code. We use the same logic
+// for quoting in tag arguments as we do in testscript commands. Expansion does
+// not happen for tag arguments.
+func parseLineArgs(line string) ([]string, error) {
+	var (
+		args   []string
+		arg    string  // text of current arg so far (need to add line[start:i])
+		start  = -1    // if >= 0, position where current arg text chunk starts
+		quoted = false // currently processing quoted text
+	)
+	for i := 0; ; i++ {
+		if !quoted && (i >= len(line) || line[i] == ' ' || line[i] == '\t' || line[i] == '\r' || line[i] == '#') {
+			// Found arg-separating space.
+			if start >= 0 {
+				arg += line[start:i]
+				args = append(args, arg)
+				start = -1
+				arg = ""
+			}
+			if i >= len(line) || line[i] == '#' {
+				break
+			}
+			continue
+		}
+		if i >= len(line) {
+			return nil, fmt.Errorf("unterminated quoted argument")
+		}
+		if line[i] == '\'' {
+			if !quoted {
+				// starting a quoted chunk
+				if start >= 0 {
+					arg += line[start:i]
+				}
+				start = i + 1
+				quoted = true
+				continue
+			}
+			// 'foo''bar' means foo'bar, like in rc shell and Pascal.
+			if i+1 < len(line) && line[i+1] == '\'' {
+				arg += line[start:i]
+				start = i + 1
+				i++ // skip over second ' before next iteration
+				continue
+			}
+			// ending a quoted chunk
+			arg += line[start:i]
+			start = i + 1
+			quoted = false
+			continue
+		}
+		// found character worth saving; make sure we're saving
+		if start < 0 {
+			start = i
+		}
+	}
+	return args, nil
 }
