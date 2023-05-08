@@ -29,10 +29,16 @@ leaf_md_en
 -- content/leaf_md/site.cue --
 package site
 -- content/branch_html/_en.html --
+---
+title: test
+---
 branch_html_en
 -- content/branch_html/site.cue --
 package site
 -- content/leaf_html/en.html --
+---
+title: test
+---
 leaf_html_en
 -- content/leaf_html/site.cue --
 package site
@@ -47,8 +53,14 @@ title: test
 ---
 leaf_md_en
 -- hugo/content/en/branch_html/_index.html.golden --
+---
+title: test
+---
 branch_html_en
 -- hugo/content/en/leaf_html/index.html.golden --
+---
+title: test
+---
 leaf_html_en
 -- stdout.golden --
 content/branch_html/_en.html
