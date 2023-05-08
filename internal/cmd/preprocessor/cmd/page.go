@@ -54,22 +54,31 @@ type page struct {
 	// rightDelim is the right hand delimiter used in text/template parsing for
 	// root files in the page.
 	rightDelim string
+
+	// bufferedErrorContext is used because we process pages concurrently and then
+	// log the buffered messages in blocks
+	*bufferedErrorContext
+}
+
+func (p *page) Format(state fmt.State, verb rune) {
+	fmt.Fprintf(state, "%s", p.dir)
 }
 
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	contentDir := filepath.Join(ec.executor.root, "content")
 	contentRelPath, err := filepath.Rel(contentDir, dir)
 	if err != nil {
-		return nil, fmt.Errorf("failed to determine %s relative to %s: %w", dir, contentDir, err)
+		return nil, ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, contentDir, err)
 	}
 
 	res := &page{
-		contentRelPath: contentRelPath,
-		relPath:        rel,
-		ctx:            ec,
-		dir:            dir,
-		langTargets:    make(map[lang][]*rootFile),
-		rootFiles:      make(map[string]*rootFile),
+		bufferedErrorContext: newBufferedErrorContext(ec),
+		contentRelPath:       contentRelPath,
+		relPath:              rel,
+		ctx:                  ec,
+		dir:                  dir,
+		langTargets:          make(map[lang][]*rootFile),
+		rootFiles:            make(map[string]*rootFile),
 
 		// TODO actually extract these from the page's config
 		leftDelim:  "{{{",
@@ -83,7 +92,7 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 // to target /hugo/content directories (including _$LANG directories), and then
 // processes the set of root files that form the basis of a page root.
 func (p *page) process() error {
-	p.debugf("process page from %s\n", p.relPath)
+	p.debugf("%v: process page", p)
 
 	// langs are the languages "supported" by this page
 	langs := maps.Keys(p.langTargets)
@@ -100,7 +109,7 @@ func (p *page) process() error {
 	// copied.
 	dirEntries, err := os.ReadDir(p.dir)
 	if err != nil {
-		return fmt.Errorf("failed to read %s: %w", p.dir, err)
+		return p.errorf("%v: failed to read %s: %v", p, p.dir, err)
 	}
 	for _, de := range dirEntries {
 		n := de.Name()
@@ -171,9 +180,4 @@ func (p *page) process() error {
 	}
 
 	return nil
-}
-
-// debugf logs debugging information if the --debug flag has been set
-func (p *page) debugf(format string, args ...any) {
-	p.ctx.executor.debugf(p.dir+": "+format, args...)
 }

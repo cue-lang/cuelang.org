@@ -78,34 +78,48 @@ type rootFile struct {
 	// to the input format, run (to update itself), or written
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
+
+	// bufferedErrorContext reuses the existing page.errorContext because for
+	// now we don't do root files concurrently
+	*bufferedErrorContext
+}
+
+func (r *rootFile) Format(f fmt.State, verb rune) {
+	fmt.Fprint(f, r.filename)
 }
 
 // newRootFile creates a new rootFile for fn.
 func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 	return &rootFile{
-		page:     p,
-		filename: filepath.Join(p.dir, fn),
-		lang:     lang,
-		prefix:   prefix,
-		ext:      ext,
+		bufferedErrorContext: p.bufferedErrorContext,
+		page:                 p,
+		filename:             filepath.Join(p.dir, fn),
+		lang:                 lang,
+		prefix:               prefix,
+		ext:                  ext,
 	}
 }
 
 func (rf *rootFile) transform(targetPath string) error {
+	rf.debugf("%v: transform root file", rf)
 	// For now, we only support en as a main language. For other languages
 	// we simply copy from source to target.
 	if rf.lang != langEn {
-		return copyFile(rf.filename, targetPath)
+		if err := copyFile(rf.filename, targetPath); err != nil {
+			return rf.errorf("%v: %v", rf, err)
+		}
 	}
 	// HTML files don't need any special processing
 	if rf.ext == "html" {
-		return copyFile(rf.filename, targetPath)
+		if err := copyFile(rf.filename, targetPath); err != nil {
+			return rf.errorf("%v: %v", rf, err)
+		}
 	}
 
 	// Start by parsing the root file
 	if err := rf.parse(); err != nil {
 		// Note errors in parse have position information
-		return fmt.Errorf("failed to parse: %w", err)
+		return err
 	}
 
 	if err := rf.run(); err != nil {
@@ -115,19 +129,19 @@ func (rf *rootFile) transform(targetPath string) error {
 	// Write the parsed rootFile back to ensure we have have normalised input.
 	writeBack := new(bytes.Buffer)
 	if err := rf.writeSource(writeBack); err != nil {
-		return fmt.Errorf("failed to write to %s: %w", rf.filename, err)
+		return err
 	}
 	if err := writeIfDiff(writeBack, rf.filename, rf.contents); err != nil {
-		return fmt.Errorf("failed to write normalised input: %w", err)
+		return err
 	}
 
 	// Transform the root file
 	transformed := new(bytes.Buffer)
 	if err := rf.writeTarget(transformed); err != nil {
-		return fmt.Errorf("failed to transform %s: %w", rf.filename, err)
+		return err
 	}
 	if err := writeIfDiff(transformed, targetPath, nil); err != nil {
-		return fmt.Errorf("failed to write transformed output: %w", err)
+		return err
 	}
 	return nil
 }
@@ -137,12 +151,53 @@ func (rf *rootFile) transform(targetPath string) error {
 // This method also adds as a means to check that we only have parsed things
 // that we can support.
 func (rf *rootFile) run() error {
-	for _, n := range rf.bodyParts {
-		if err := n.run(); err != nil {
-			return fmt.Errorf("failed to run %s: %w", rf.filename, err)
+	var wait []waitRunnable
+	for i := range rf.bodyParts {
+		n, ok := rf.bodyParts[i].(runnableNode)
+		if !ok {
+			continue
 		}
+		// Ideally we run nodes concurrently, in which case a node needs to
+		// have its own error context (how do we enforce that?).
+		//
+		// But in the case of steps in a guide, we generate a single script
+		// from a number of parts, and run that script concurrently (with any
+		// other nodes). In which case we would establish a special context,
+		// a script context perhaps, in which we run that script.
+		//
+		// For now we don't support multi-steps guides, but when we do it will
+		// be here.
+		r := n.run()
+		wait = append(wait, runRunnable(r))
 	}
+
+	for _, v := range wait {
+		<-v.done
+
+		// Could make the following a method on errorContext
+		rf.inError = rf.inError || v.isInError()
+		rf.logf("%s", v.bytes())
+	}
+
 	return nil
+}
+
+type waitRunnable struct {
+	runnable
+	done <-chan struct{}
+}
+
+func runRunnable(r runnable) waitRunnable {
+	done := make(chan struct{})
+	res := waitRunnable{
+		runnable: r,
+		done:     done,
+	}
+	go func() {
+		r.run()
+		close(done)
+	}()
+	return res
 }
 
 // transform writes out root file rf in a format that is ready to be consumed
