@@ -36,7 +36,7 @@ const (
 )
 
 type sidebysideNode struct {
-	rf    *rootFile
+	nodeWrapper
 	lang  string
 	label string
 	ar    *txtar.Archive
@@ -72,7 +72,7 @@ func (s *sidebysideNode) run() error {
 		case "cue":
 			b, err := format.Source(f.Data)
 			if err != nil {
-				s.rf.page.debugf("failed to format CUE in %q %q: %w", s.label, f.Name, err)
+				s.rf.page.debugf("failed to format CUE in %q %q: %v", s.label, f.Name, err)
 			} else {
 				f.Data = b
 			}

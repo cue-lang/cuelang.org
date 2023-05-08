@@ -78,16 +78,25 @@ type rootFile struct {
 	// to the input format, run (to update itself), or written
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
+
+	// errorContext reuses the existing page.errorContext because for now
+	// we don't do root files concurrently
+	*errorContext
+}
+
+func (r *rootFile) Format(f fmt.State, verb rune) {
+	fmt.Fprint(f, r.filename)
 }
 
 // newRootFile creates a new rootFile for fn.
 func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 	return &rootFile{
-		page:     p,
-		filename: filepath.Join(p.dir, fn),
-		lang:     lang,
-		prefix:   prefix,
-		ext:      ext,
+		errorContext: &p.errorContext,
+		page:         p,
+		filename:     filepath.Join(p.dir, fn),
+		lang:         lang,
+		prefix:       prefix,
+		ext:          ext,
 	}
 }
 
@@ -105,7 +114,7 @@ func (rf *rootFile) transform(targetPath string) error {
 	// Start by parsing the root file
 	if err := rf.parse(); err != nil {
 		// Note errors in parse have position information
-		return fmt.Errorf("failed to parse: %w", err)
+		return err
 	}
 
 	if err := rf.run(); err != nil {

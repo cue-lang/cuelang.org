@@ -17,6 +17,7 @@ package cmd
 import (
 	"bytes"
 	"fmt"
+	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
 )
@@ -37,6 +38,8 @@ type node interface {
 	// writeTransformTo writes the Hugo-aware form of a node to buf. A call to
 	// writeTransformTo is the transform or output step of the preprocessor.
 	writeTransformTo(buf *bytes.Buffer) error
+
+	fmt.Formatter
 }
 
 // nodeWrapper is a simple wrapper around an underlying
@@ -49,7 +52,7 @@ type nodeWrapper struct {
 var _ node = (*nodeWrapper)(nil)
 
 func (t *nodeWrapper) run() error {
-	t.rf.page.debugf("nodeWrapper.run() not implemented yet")
+	t.rf.debugf("nodeWrapper.run() not implemented yet")
 	return nil
 }
 
@@ -62,8 +65,12 @@ func (t *nodeWrapper) writeTransformTo(b *bytes.Buffer) error {
 	return nil
 }
 
+func (n *nodeWrapper) Format(f fmt.State, verb rune) {
+	fmt.Fprint(f, n.rf.nodePos(n.underlying))
+}
+
 type textNode struct {
-	rf   *rootFile
+	nodeWrapper
 	text []byte
 }
 
@@ -81,6 +88,12 @@ func (t *textNode) writeSourceTo(b *bytes.Buffer) {
 func (t *textNode) writeTransformTo(b *bytes.Buffer) error {
 	b.Write(t.text)
 	return nil
+}
+
+func (t *textNode) Format(f fmt.State, verb rune) {
+	loc, _ := t.rf.body.ErrorContext(t.underlying)
+	_, after, _ := strings.Cut(loc, ":")
+	fmt.Fprint(f, after)
 }
 
 func bufPrintf(b *bytes.Buffer) func(string, ...any) (int, error) {
