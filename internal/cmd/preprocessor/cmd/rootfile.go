@@ -78,16 +78,25 @@ type rootFile struct {
 	// to the input format, run (to update itself), or written
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
+
+	// errorContext reuses the existing page.errorContext because for now
+	// we don't do root files concurrently
+	*errorContext
+}
+
+func (r *rootFile) Format(f fmt.State, verb rune) {
+	fmt.Fprint(f, r.filename)
 }
 
 // newRootFile creates a new rootFile for fn.
 func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 	return &rootFile{
-		page:     p,
-		filename: filepath.Join(p.dir, fn),
-		lang:     lang,
-		prefix:   prefix,
-		ext:      ext,
+		errorContext: &p.errorContext,
+		page:         p,
+		filename:     filepath.Join(p.dir, fn),
+		lang:         lang,
+		prefix:       prefix,
+		ext:          ext,
 	}
 }
 
@@ -95,17 +104,21 @@ func (rf *rootFile) transform(targetPath string) error {
 	// For now, we only support en as a main language. For other languages
 	// we simply copy from source to target.
 	if rf.lang != langEn {
-		return copyFile(rf.filename, targetPath)
+		if err := copyFile(rf.filename, targetPath); err != nil {
+			return rf.errorf("%v: %v", rf, err)
+		}
 	}
 	// HTML files don't need any special processing
 	if rf.ext == "html" {
-		return copyFile(rf.filename, targetPath)
+		if err := copyFile(rf.filename, targetPath); err != nil {
+			return rf.errorf("%v: %v", rf, err)
+		}
 	}
 
 	// Start by parsing the root file
 	if err := rf.parse(); err != nil {
 		// Note errors in parse have position information
-		return fmt.Errorf("failed to parse: %w", err)
+		return err
 	}
 
 	if err := rf.run(); err != nil {
@@ -115,19 +128,19 @@ func (rf *rootFile) transform(targetPath string) error {
 	// Write the parsed rootFile back to ensure we have have normalised input.
 	writeBack := new(bytes.Buffer)
 	if err := rf.writeSource(writeBack); err != nil {
-		return fmt.Errorf("failed to write to %s: %w", rf.filename, err)
+		return err
 	}
 	if err := writeIfDiff(writeBack, rf.filename, rf.contents); err != nil {
-		return fmt.Errorf("failed to write normalised input: %w", err)
+		return err
 	}
 
 	// Transform the root file
 	transformed := new(bytes.Buffer)
 	if err := rf.writeTarget(transformed); err != nil {
-		return fmt.Errorf("failed to transform %s: %w", rf.filename, err)
+		return err
 	}
 	if err := writeIfDiff(transformed, targetPath, nil); err != nil {
-		return fmt.Errorf("failed to write transformed output: %w", err)
+		return err
 	}
 	return nil
 }

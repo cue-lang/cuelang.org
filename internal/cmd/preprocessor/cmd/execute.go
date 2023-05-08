@@ -15,16 +15,18 @@
 package cmd
 
 import (
+	"bytes"
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
+	"sync"
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/cuecontext"
+	"cuelang.org/go/cue/errors"
 	"cuelang.org/go/cue/load"
 	"golang.org/x/exp/maps"
 	"golang.org/x/exp/slices"
@@ -67,7 +69,7 @@ func executeDef(c *Command, args []string) error {
 
 	wd, projectRoot, err := deriveProjectRoot(wd)
 	if err != nil {
-		return fmt.Errorf("failed to derive project root: %w", err)
+		return err
 	}
 
 	e := newExecutor(wd, projectRoot, c)
@@ -104,11 +106,13 @@ type executor struct {
 	// cmd is the execute Cobra command, used to access flag values etc
 	cmd *Command
 
-	// log is the logger used by the executor
-	logger *log.Logger
+	// log is the target of logging details (including errors)
+	log io.Writer
 
 	// ctx is the context used for all CUE operations
 	ctx *cue.Context
+
+	errorContext
 }
 
 type executeContext struct {
@@ -132,14 +136,14 @@ type executeContext struct {
 }
 
 func newExecutor(wd, projectRoot string, cmd *Command) *executor {
-	l := log.New(os.Stderr, "", 0)
-	return &executor{
-		wd:     wd,
-		root:   projectRoot,
-		cmd:    cmd,
-		logger: l,
-		ctx:    cuecontext.New(),
+	res := &executor{
+		wd:   wd,
+		root: projectRoot,
+		cmd:  cmd,
+		log:  os.Stderr,
+		ctx:  cuecontext.New(),
 	}
+	return res
 }
 
 func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
@@ -180,6 +184,95 @@ type page struct {
 	// rightDelim is the right hand delimiter used in text/template parsing for
 	// root files in the page.
 	rightDelim string
+
+	// config is the CUE config for the page.
+	config cue.Value
+
+	errorContext
+}
+
+func (p *page) Format(f fmt.State, verb rune) {
+	fmt.Fprintf(f, "%s", p.dir)
+}
+
+type errorContext struct {
+	// debug is set when we should log at the debug level
+	debug bool
+
+	// _inError is set when the page is in error
+	inError bool
+
+	// _log is the buffer to which we write log messages
+	log bytes.Buffer
+
+	// stateLock protects access
+	stateLock sync.Mutex
+}
+
+func (e *errorContext) isInError() bool {
+	e.stateLock.Lock()
+	defer e.stateLock.Unlock()
+	return e.inError
+}
+
+func (e *errorContext) joinError(err error) {
+	if err == nil {
+		return
+	}
+	e.stateLock.Lock()
+	defer e.stateLock.Unlock()
+	e.inError = true
+}
+
+func (e *errorContext) bytes() []byte {
+	e.stateLock.Lock()
+	defer e.stateLock.Unlock()
+	return e.log.Bytes()
+}
+
+func (e *errorContext) errorf(format string, args ...any) error {
+	e.stateLock.Lock()
+	defer e.stateLock.Unlock()
+	e.inError = true
+	return errors.New(e.doLog(format, args...))
+}
+
+func (e *errorContext) logf(format string, args ...any) string {
+	e.stateLock.Lock()
+	defer e.stateLock.Unlock()
+	return e.doLog(format)
+}
+
+func (e *errorContext) debugf(format string, args ...any) {
+	if !e.debug {
+		return
+	}
+	e.stateLock.Lock()
+	defer e.stateLock.Unlock()
+	e.doLog(format, args...)
+}
+
+// doLog performs the actual logging. stateLock must be held whilst
+// calling this method.
+func (e *errorContext) doLog(format string, args ...any) string {
+	res := fmt.Sprintf(format, args...)
+	m := res
+	if len(m) > 0 && m[len(m)-1] != '\n' {
+		m += "\n"
+	}
+	e.log.WriteString(m)
+	return res
+}
+
+type errorHandlerTarget interface {
+	logger() io.Writer
+	combineErrorResult(bool)
+}
+
+type errorHandlerSource interface {
+	inError() bool
+	log() *bytes.Buffer
+	process() error
 }
 
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
@@ -246,16 +339,37 @@ func (ec *executeContext) execute() error {
 		return fmt.Errorf("failed to build CUE instances: %w", err)
 	}
 
-	// Process the pages we found.
+	// Assign CUE values to page
 	for i, d := range ec.order {
 		p := ec.pages[d]
 		v := vs[i]
 		if err := v.Validate(); err != nil {
 			return fmt.Errorf("failed to validate CUE package %s: %w", p.relPath, err)
 		}
-		if err := p.process(); err != nil {
-			return err
-		}
+		p.config = v
+	}
+
+	var wg sync.WaitGroup
+
+	// Process the pages we found.
+	for _, d := range ec.order {
+		p := ec.pages[d]
+		wg.Add(1)
+		go func() {
+			ec.executor.joinError(p.process())
+			wg.Done()
+		}()
+	}
+
+	wg.Wait()
+
+	for _, d := range ec.order {
+		p := ec.pages[d]
+		fmt.Fprintf(ec.executor.log, "%s", p.bytes())
+	}
+
+	if ec.executor.inError {
+		return fmt.Errorf("got an error")
 	}
 
 	return nil
@@ -270,7 +384,7 @@ func (ec *executeContext) findIndexFiles() error {
 
 		entries, err := os.ReadDir(dir)
 		if err != nil {
-			return fmt.Errorf("failed to read dir %s: %w", dir, err)
+			return fmt.Errorf("findIndexFiles: failed to read dir %s: %w", dir, err)
 		}
 
 		searchForRootFiles := ec.filter == nil || ec.filter[dir]
@@ -314,12 +428,12 @@ func (ec *executeContext) findIndexFiles() error {
 
 				relDir, err := filepath.Rel(ec.executor.wd, dir)
 				if err != nil {
-					return fmt.Errorf("failed to determine %s relative to %s: %w", dir, ec.executor.wd, err)
+					return fmt.Errorf("findIndexFiles: failed to determine %s relative to %s: %w", dir, ec.executor.wd, err)
 				}
 
 				p, err = ec.newPage(dir, relDir)
 				if err != nil {
-					return fmt.Errorf("failed to create page in dir %s: %w", dir, err)
+					return fmt.Errorf("findIndexFiles: failed to create page in dir %s: %w", dir, err)
 				}
 				ec.pages[dir] = p
 			}
@@ -336,18 +450,11 @@ func (ec *executeContext) findIndexFiles() error {
 	return nil
 }
 
-// debugf logs debugging information if the --debug flag has been set
-func (e *executor) debugf(format string, args ...any) {
-	if flagDebug.Bool(e.cmd) {
-		e.logger.Printf("debug: "+format, args...)
-	}
-}
-
 // process processes a page root. It copies all relevant non-root file content
 // to target /hugo/content directories (including _$LANG directories), and then
 // processes the set of root files that form the basis of a page root.
 func (p *page) process() error {
-	p.debugf("process page from %s\n", p.relPath)
+	p.debugf("%s: process page", p.relPath)
 
 	// langs are the languages "supported" by this page
 	langs := maps.Keys(p.langTargets)
@@ -364,7 +471,7 @@ func (p *page) process() error {
 	// copied.
 	dirEntries, err := os.ReadDir(p.dir)
 	if err != nil {
-		return fmt.Errorf("failed to read %s: %w", p.dir, err)
+		return p.errorf("failed to read %s: %v", p.dir, err)
 	}
 	for _, de := range dirEntries {
 		n := de.Name()
@@ -407,39 +514,62 @@ func (p *page) process() error {
 		}
 
 		if err := copyFile(sourcePath, targets...); err != nil {
-			return err
+			targetList := strings.Join(targets, ", ")
+			return p.errorf("failed to copy to targets %s: %v", targetList, err)
 		}
 	}
 
 	// Recursively copy any _$LANG directory content to $TARGET_DIR.
 	for _, ld := range langsWithLangDirs {
-		sourceLangDir := filepath.Join(p.dir, "_"+ld)
+		langDirName := "_" + ld
+		sourceLangDir := filepath.Join(p.dir, langDirName)
 		targetLangDir := filepath.Join(p.ctx.executor.root, "hugo", "content", ld, p.relPath)
 		if err := copyDirContents(sourceLangDir, targetLangDir); err != nil {
-			return err
+			return p.errorf(langDirName, "failed to copy to %s: %w", targetLangDir, err)
 		}
 	}
 
 	// Now handle the root files
 	for _, lang := range langs {
 		rootFiles := p.langTargets[lang]
-		for _, rootFile := range rootFiles {
+		for i := range rootFiles {
+			rootFile := rootFiles[i]
 			prefix, ext := rootFile.prefix, rootFile.ext
 			targetDir := filepath.Join(p.ctx.executor.root, "hugo", "content", string(lang), p.contentRelPath)
 			targetPath := filepath.Join(targetDir, prefix+"index."+ext)
 
-			if err := rootFile.transform(targetPath); err != nil {
-				return err
-			}
+			p.joinError(rootFile.transform(targetPath))
 		}
 	}
 
+	if p.inError {
+		return fmt.Errorf("page is in error")
+	}
 	return nil
 }
 
-// debugf logs debugging information if the --debug flag has been set
-func (p *page) debugf(format string, args ...any) {
-	p.ctx.executor.debugf(p.dir+": "+format, args...)
+type fatalError struct{}
+
+func handleFatalError() {
+	switch r := recover().(type) {
+	case nil:
+		// normal return
+	case fatalError:
+		// The only non-nil error we want to handle. This is an escape hatch
+		// for any processing that happens within a page to finish early.
+	default:
+		// Pass on the panic.
+		panic(r)
+	}
+}
+
+// fmt renders a string value with the directory context of p as a prefix.  If
+// filename is non empty, it is assumed to be a file within the page directory,
+// and so joined to that directory.  This is mainly intended as an "internal"
+// method for use for error handling and (debug) logging.
+func (p *page) fmt(filename, format string, args ...any) string {
+	prefix := filepath.Join(p.dir, filename)
+	return fmt.Sprintf(prefix+": "+format, args...)
 }
 
 // copyFile copies the file at path src to the target files dsts, ensuring that
