@@ -17,8 +17,6 @@ package cmd
 import (
 	"bytes"
 	"fmt"
-	"io"
-	"sync"
 
 	"cuelang.org/go/cue/errors"
 )
@@ -36,7 +34,7 @@ type bufferedErrorContext struct {
 	log bytes.Buffer
 
 	// stateLock protects access
-	stateLock sync.Mutex
+	// stateLock sync.Mutex
 }
 
 var _ errorContextInterface = (*bufferedErrorContext)(nil)
@@ -45,27 +43,27 @@ func (e *bufferedErrorContext) joinError(err error) {
 	if err == nil {
 		return
 	}
-	e.stateLock.Lock()
-	defer e.stateLock.Unlock()
+	// e.stateLock.Lock()
+	// defer e.stateLock.Unlock()
 	e.inError = true
 }
 
 func (e *bufferedErrorContext) bytes() []byte {
-	e.stateLock.Lock()
-	defer e.stateLock.Unlock()
+	// e.stateLock.Lock()
+	// defer e.stateLock.Unlock()
 	return e.log.Bytes()
 }
 
 func (e *bufferedErrorContext) errorf(format string, args ...any) error {
-	e.stateLock.Lock()
-	defer e.stateLock.Unlock()
+	// e.stateLock.Lock()
+	// defer e.stateLock.Unlock()
 	e.inError = true
 	return errors.New(e.doLog(format, args...))
 }
 
 func (e *bufferedErrorContext) logf(format string, args ...any) {
-	e.stateLock.Lock()
-	defer e.stateLock.Unlock()
+	// e.stateLock.Lock()
+	// defer e.stateLock.Unlock()
 	e.doLog(format)
 }
 
@@ -73,8 +71,8 @@ func (e *bufferedErrorContext) debugf(format string, args ...any) {
 	if !e.debug {
 		return
 	}
-	e.stateLock.Lock()
-	defer e.stateLock.Unlock()
+	// e.stateLock.Lock()
+	// defer e.stateLock.Unlock()
 	e.doLog(format, args...)
 }
 
@@ -88,8 +86,4 @@ func (e *bufferedErrorContext) doLog(format string, args ...any) string {
 	}
 	fmt.Fprint(&e.log, m)
 	return res
-}
-
-func (e *bufferedErrorContext) rootLog() io.Writer {
-	return e._root.log
 }
