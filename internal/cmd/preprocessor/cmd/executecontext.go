@@ -38,20 +38,27 @@ type executeContext struct {
 	// pages is a set of all the pages discovered by the executor.  The string
 	// key is the full directory path of the page source.
 	pages map[string]*page
+
+	*errorContext
+}
+
+func (ec *executeContext) Format(state fmt.State, verb rune) {
+	fmt.Fprintf(state, "%v", ec.executor)
 }
 
 func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 	return &executeContext{
-		executor: e,
-		pages:    make(map[string]*page),
-		filter:   filter,
+		executor:     e,
+		pages:        make(map[string]*page),
+		filter:       filter,
+		errorContext: &e.errorContext,
 	}
 }
 
 func (ec *executeContext) execute() error {
 	// Recursively walk wd to find $lang.md and _$lang.md files for all
 	// supported languages.
-	if err := ec.findIndexFiles(); err != nil {
+	if err := ec.findPages(); err != nil {
 		return err
 	}
 
@@ -70,22 +77,37 @@ func (ec *executeContext) execute() error {
 	// 	return fmt.Errorf("failed to build CUE instances: %w", err)
 	// }
 
+	var pageWaits []<-chan struct{}
+
 	// Process the pages we found.
 	for _, d := range ec.order {
+		ec.debugf("page %s", d)
 		p := ec.pages[d]
 		// v := vs[i]
 		// if err := v.Validate(); err != nil {
 		// 	return fmt.Errorf("failed to validate CUE package %s: %w", p.relPath, err)
 		// }
-		if err := p.process(); err != nil {
-			return err
-		}
+		done := make(chan struct{})
+		go func() {
+			p.process()
+			close(done)
+		}()
+		pageWaits = append(pageWaits, done)
 	}
 
-	return nil
+	for i, d := range ec.order {
+		ec.debugf("log page %s", d)
+		p := ec.pages[d]
+		w := pageWaits[i]
+		<-w
+		ec.inError = ec.inError || p.isInError()
+		ec.logf("%s", p.bytes())
+	}
+
+	return ec.errorIfInError()
 }
 
-func (ec *executeContext) findIndexFiles() error {
+func (ec *executeContext) findPages() error {
 	dirsToWalk := []string{ec.executor.wd}
 
 	var dir string
@@ -94,7 +116,7 @@ func (ec *executeContext) findIndexFiles() error {
 
 		entries, err := os.ReadDir(dir)
 		if err != nil {
-			return fmt.Errorf("failed to read dir %s: %w", dir, err)
+			return ec.errorf("%v: failed to read dir %s: %v", ec, dir, err)
 		}
 
 		searchForRootFiles := ec.filter == nil || ec.filter[dir]
@@ -138,18 +160,20 @@ func (ec *executeContext) findIndexFiles() error {
 
 				relDir, err := filepath.Rel(ec.executor.wd, dir)
 				if err != nil {
-					return fmt.Errorf("failed to determine %s relative to %s: %w", dir, ec.executor.wd, err)
+					return ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, ec.executor.wd, err)
 				}
 
 				p, err = ec.newPage(dir, relDir)
 				if err != nil {
-					return fmt.Errorf("failed to create page in dir %s: %w", dir, err)
+					return ec.errorf("%v: failed to create page in dir %s: %v", ec, dir, err)
 				}
+				ec.debugf("%v: found page at %v", ec, dir)
 				ec.pages[dir] = p
 			}
 
 			// Register the root file with the page
 			rf := p.newRootFile(name, lang, prefix, ext)
+			p.debugf("%v: added root file named %s", p, name)
 			p.rootFiles[name] = rf
 			rootPages := p.langTargets[lang]
 			rootPages = append(rootPages, rf)
