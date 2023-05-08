@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b24588f_e83e4aa1",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Good shout. I\u0027ve added some docs on the interface itself as well as each of the methods.\n\nwrite() is now writeSourceTo() and transform() is now writeTransformTo(). Perhaps still not perfect but we can iterate on the naming.",
+      "parentUuid": "ec5a8b89_9c20074e",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da5b7e9b_9163b0c8",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-06T08:15:20Z",
       "side": 1,
       "message": "nit: name this something like writeTo, like https://pkg.go.dev/io#WriterTo, otherwise it sounds like b is the _source_ of the write rather than the target.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adbe5cbe_efd2d987",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Done per comment above.",
+      "parentUuid": "da5b7e9b_9163b0c8",
       "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cf58e1d_4a900b0c",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Done per previous comments around the node interface.",
+      "parentUuid": "d31f43fb_6e79c7b7",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d870336b_ba8c41f0",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-05-06T08:15:20Z",
       "side": 1,
       "message": "how about `bufPrintf`?",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4f595fe_b859e900",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d870336b_ba8c41f0",
       "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a10a7426_4400a99e",
+        "filename": "internal/cmd/preprocessor/cmd/parse.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13060a22_a11806ed",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8418bc2b_abbfe3bb",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-05-06T08:15:20Z",
       "side": 1,
       "message": "these can all go in a single case and line, right?",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eda6e067_55fa6ca4",
+        "filename": "internal/cmd/preprocessor/cmd/parse.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "These are left separate in order to clearly mark they are still TODO. I\u0027ve left comments in each to that effect.",
+      "parentUuid": "8418bc2b_abbfe3bb",
       "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +228,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "332c533c_9cc52444",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "No particular reason, other than perhaps it being an unintentional result of various refactorings over the course of writing this code.. I\u0027ve grouped them.",
+      "parentUuid": "e319c03e_6ff60533",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d597bf62_54ae1819",
@@ -133,6 +259,24 @@
       "writtenOn": "2023-05-06T08:15:20Z",
       "side": 1,
       "message": "does this file do anything? :)",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "330c1ca6_96838af8",
+        "filename": "internal/cmd/preprocessor/cmd/run.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Remnant of refactoring :) Removed.",
+      "parentUuid": "d597bf62_54ae1819",
       "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -154,6 +298,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "686d8f8f_a900c577",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18cc8aba_5a40dcf0",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a683c1b1_9fc3fa64",
@@ -167,6 +329,24 @@
       "writtenOn": "2023-05-06T08:15:20Z",
       "side": 1,
       "message": "or use MarshalIndent, which will save you 2-3 lines",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5767e4f0_a79755c1",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a683c1b1_9fc3fa64",
       "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -188,6 +368,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "455c4864_5bbcac8e",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Yes, done. Thanks",
+      "parentUuid": "655fcd1b_21f708b5",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b89007f4_22e6d388",
@@ -205,6 +403,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a613dbd9_5d47aa7c",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Nice catch. I implemented filenameAnalysis _after_ writing this code for exactly the reason you describe. But then forgot to refactor this code :facepalm:\n\nFixed.",
+      "parentUuid": "b89007f4_22e6d388",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80e70873_d9009ffd",
@@ -218,6 +434,24 @@
       "writtenOn": "2023-05-06T08:15:20Z",
       "side": 1,
       "message": "isn\u0027t this logic duplicated with transform above? I would deduplicate, e.g. I made a comment about Cut\u0027s behavior on multiple dots, but here you do CutSuffix, and the two behave differently with edge cases like that.",
+      "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d52fed3_e3e895c5",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 38
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-08T09:13:15Z",
+      "side": 1,
+      "message": "Same reason as above. I wrote filenameAnalysis after this code and simply forgot to refactor to use it. Done",
+      "parentUuid": "80e70873_d9009ffd",
       "revId": "1a7f9bec51668acf9a32c3a30c2fed1b9a57def4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
