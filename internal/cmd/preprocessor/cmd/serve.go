@@ -77,7 +77,7 @@ func (e *executor) serve(args []string) error {
 	sc := e.newServeContext(errs)
 
 	if err := sc.startHugo(args); err != nil {
-		return fmt.Errorf("failed to start hugo: %w", err)
+		return e.errorf("%v: failed to start hugo: %v", e, err)
 	}
 
 	go sc.waitOnHugo()
@@ -93,7 +93,7 @@ func (e *executor) serve(args []string) error {
 	// Serve
 	sc.w, err = fsnotify.NewBatchedRecursiveWatcher(e.wd, sc.gittoplevel, 10*time.Millisecond, oDebug)
 	if err != nil {
-		return fmt.Errorf("failed to create watcher: %w", err)
+		return e.errorf("%v: failed to create watcher: %v", e, err)
 	}
 	defer sc.w.Close()
 
@@ -182,7 +182,7 @@ func (sc *serveContext) relayHugoOutput() {
 		if err != nil {
 			// Reset
 			nl = "\n"
-			sc.e.logger.Printf("hugo: failed to read output line: %v", err)
+			sc.e.errorf("hugo: failed to read output line: %v", err)
 			continue
 		}
 		prefix := "hugo: "
@@ -196,7 +196,7 @@ func (sc *serveContext) relayHugoOutput() {
 			nl = "\n"
 		}
 
-		sc.e.logger.Printf("%s%s%s", prefix, line, nl)
+		sc.e.errorf("%s%s%s", prefix, line, nl)
 	}
 
 }
@@ -216,7 +216,7 @@ func (sc *serveContext) findGitTopLevel() {
 func (sc *serveContext) watcherEventLoop() {
 	// Initial execute
 	if err := sc.e.execute(nil); err != nil {
-		sc.e.debugf("failed to execute: %w", err)
+		sc.e.debugf("failed to execute: %v", err)
 	}
 	for {
 		// TODO: see the TODO agains the signal handling in (*executor).serve for ideas on
@@ -282,12 +282,12 @@ func (sc *serveContext) watcherEventLoop() {
 
 			// Perform the execute
 			if err := sc.e.execute(dirs); err != nil {
-				sc.e.debugf("failed to execute: %w", err)
+				sc.e.debugf("failed to execute: %v", err)
 			}
 
 		case err := <-sc.w.Errors():
 			if err != nil {
-				sc.e.debugf("error from filewatcher: %w", err)
+				sc.e.debugf("error from filewatcher: %v", err)
 			}
 		}
 	}
