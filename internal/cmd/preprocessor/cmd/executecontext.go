@@ -15,7 +15,6 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 
@@ -40,20 +39,23 @@ type executeContext struct {
 	// pages is a set of all the pages discovered by the executor.  The string
 	// key is the full directory path of the page source.
 	pages map[string]*page
+
+	errorContext
 }
 
 func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 	return &executeContext{
-		executor: e,
-		pages:    make(map[string]*page),
-		filter:   filter,
+		executor:     e,
+		pages:        make(map[string]*page),
+		filter:       filter,
+		errorContext: newErrorContext(e),
 	}
 }
 
 func (ec *executeContext) execute() error {
 	// Recursively walk wd to find $lang.md and _$lang.md files for all
 	// supported languages.
-	if err := ec.findIndexFiles(); err != nil {
+	if err := ec.findPages(); err != nil {
 		return err
 	}
 
@@ -69,7 +71,7 @@ func (ec *executeContext) execute() error {
 	bps := load.Instances(insts, cfg)
 	vs, err := ec.executor.ctx.BuildInstances(bps)
 	if err != nil {
-		return fmt.Errorf("failed to build CUE instances: %w", err)
+		return ec.errorf("%v: failed to build CUE instances: %v", ec, err)
 	}
 
 	// Process the pages we found.
@@ -77,7 +79,7 @@ func (ec *executeContext) execute() error {
 		p := ec.pages[d]
 		v := vs[i]
 		if err := v.Validate(); err != nil {
-			return fmt.Errorf("failed to validate CUE package %s: %w", p.relPath, err)
+			return ec.errorf("%v: failed to validate CUE package %s: %v", ec, p.relPath, err)
 		}
 		if err := p.process(); err != nil {
 			return err
@@ -87,7 +89,7 @@ func (ec *executeContext) execute() error {
 	return nil
 }
 
-func (ec *executeContext) findIndexFiles() error {
+func (ec *executeContext) findPages() error {
 	dirsToWalk := []string{ec.executor.wd}
 
 	var dir string
@@ -96,7 +98,7 @@ func (ec *executeContext) findIndexFiles() error {
 
 		entries, err := os.ReadDir(dir)
 		if err != nil {
-			return fmt.Errorf("failed to read dir %s: %w", dir, err)
+			return ec.errorf("%v: failed to read dir %s: %v", ec, dir, err)
 		}
 
 		searchForRootFiles := ec.filter == nil || ec.filter[dir]
@@ -140,12 +142,12 @@ func (ec *executeContext) findIndexFiles() error {
 
 				relDir, err := filepath.Rel(ec.executor.wd, dir)
 				if err != nil {
-					return fmt.Errorf("failed to determine %s relative to %s: %w", dir, ec.executor.wd, err)
+					return ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, ec.executor.wd, err)
 				}
 
 				p, err = ec.newPage(dir, relDir)
 				if err != nil {
-					return fmt.Errorf("failed to create page in dir %s: %w", dir, err)
+					return ec.errorf("%v: failed to create page in dir %s: %v", ec, dir, err)
 				}
 				ec.pages[dir] = p
 			}

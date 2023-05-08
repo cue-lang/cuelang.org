@@ -43,6 +43,10 @@ var (
 	pageRootFileRegexp = buildRootFileRegexp(supportedLanguages)
 )
 
+type executionContext struct {
+	debug bool
+}
+
 // executeDef is the implementation of the execute command
 //
 // See execute_doc.go for docs and an explanation of the directory and file
@@ -60,10 +64,14 @@ func executeDef(c *Command, args []string) error {
 
 	wd, projectRoot, err := deriveProjectRoot(wd)
 	if err != nil {
-		return fmt.Errorf("failed to derive project root: %w", err)
+		return err
 	}
 
-	e := newExecutor(wd, projectRoot, c)
+	ctx := executionContext{
+		debug: flagDebug.Bool(c),
+	}
+
+	e := newExecutor(ctx, wd, projectRoot, c)
 	if flagServe.Bool(c) {
 		return e.serve(args)
 	}

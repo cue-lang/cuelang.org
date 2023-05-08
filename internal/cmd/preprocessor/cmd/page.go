@@ -15,7 +15,6 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -54,22 +53,27 @@ type page struct {
 	// rightDelim is the right hand delimiter used in text/template parsing for
 	// root files in the page.
 	rightDelim string
+
+	// bufferedErrorContext is used because we process pages concurrently and then
+	// log the buffered messages in blocks
+	*bufferedErrorContext
 }
 
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	contentDir := filepath.Join(ec.executor.root, "content")
 	contentRelPath, err := filepath.Rel(contentDir, dir)
 	if err != nil {
-		return nil, fmt.Errorf("failed to determine %s relative to %s: %w", dir, contentDir, err)
+		return nil, ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, contentDir, err)
 	}
 
 	res := &page{
-		contentRelPath: contentRelPath,
-		relPath:        rel,
-		ctx:            ec,
-		dir:            dir,
-		langTargets:    make(map[lang][]*rootFile),
-		rootFiles:      make(map[string]*rootFile),
+		bufferedErrorContext: newBufferedErrorContext(ec),
+		contentRelPath:       contentRelPath,
+		relPath:              rel,
+		ctx:                  ec,
+		dir:                  dir,
+		langTargets:          make(map[lang][]*rootFile),
+		rootFiles:            make(map[string]*rootFile),
 
 		// TODO actually extract these from the page's config
 		leftDelim:  "{{{",
@@ -100,7 +104,7 @@ func (p *page) process() error {
 	// copied.
 	dirEntries, err := os.ReadDir(p.dir)
 	if err != nil {
-		return fmt.Errorf("failed to read %s: %w", p.dir, err)
+		return p.errorf("%v: failed to read %s: %v", p, p.dir, err)
 	}
 	for _, de := range dirEntries {
 		n := de.Name()
