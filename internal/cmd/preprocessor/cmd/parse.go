@@ -40,7 +40,7 @@ const (
 func (rf *rootFile) parse() error {
 	f, err := os.ReadFile(rf.filename)
 	if err != nil {
-		return fmt.Errorf("failed to read: %w", err)
+		return rf.errorf("%v: failed to read: %v", rf, err)
 	}
 	rf.contents = f
 
@@ -48,7 +48,7 @@ func (rf *rootFile) parse() error {
 
 	// Parse header. Must be right at the headerStart of the file
 	if !bytes.HasPrefix(f, []byte(headerLine)) {
-		return fmt.Errorf("failed to find start of header")
+		return rf.errorf("%v: failed to find start of header", rf)
 	}
 	header := f[len(headerLine):]
 	bodyStart += len(headerLine)
@@ -61,7 +61,7 @@ func (rf *rootFile) parse() error {
 		const headerEnd = "\n" + headerLine
 		endIndex := bytes.Index(header, []byte(headerEnd))
 		if endIndex == -1 {
-			return fmt.Errorf("failed to find end of header")
+			return rf.errorf("%v: failed to find end of header", rf)
 		}
 		bodyStart += endIndex + len(headerEnd)
 		header = header[:endIndex+1] // to leave the header including the \n
@@ -76,7 +76,7 @@ func (rf *rootFile) parse() error {
 	// TODO derive the delimiters from the page's CUE config
 	parseTrees, err := parse.Parse(rf.filename, string(body), rf.page.leftDelim, rf.page.rightDelim, templateFunctions)
 	if err != nil {
-		return fmt.Errorf("failed to parse body: %w", err)
+		return rf.errorf("%v: failed to parse body: %v", rf, err)
 	}
 	rf.body = parseTrees[rf.filename]
 	pc := parseContext{
@@ -110,8 +110,16 @@ func (rf *rootFile) parse() error {
 // bodyError is a convenience for creating a formatted error that includes the
 // position of n within the original input.
 func (rf *rootFile) bodyError(n parse.Node, format string, args ...any) error {
-	location, _ := rf.body.ErrorContext(n)
-	return fmt.Errorf(location+" "+format, args...)
+	// So we can take advantage of the vet checker
+	s := fmt.Sprintf(format, args...)
+	loc := rf.nodePos(n)
+	return rf.errorf("%v:%s %s", rf, loc, s)
+}
+
+func (rf *rootFile) nodePos(theNode parse.Node) string {
+	loc, _ := rf.body.ErrorContext(theNode)
+	_, after, _ := strings.Cut(loc, ":")
+	return after
 }
 
 // parseContext is a convenience for passing the current state of parsing of
@@ -150,7 +158,10 @@ func (pc parseContext) parse_TextNode(n *parse.TextNode) (node, error) {
 		t = strings.TrimPrefix(t, withEndWrapper)
 	}
 	return &textNode{
-		rf:   pc.rootFile,
+		nodeWrapper: nodeWrapper{
+			rf:         pc.rootFile,
+			underlying: n,
+		},
 		text: []byte(t),
 	}, nil
 
@@ -215,10 +226,14 @@ func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (n
 	ar := txtar.Parse(text)
 
 	res := &sidebysideNode{
-		rf:    pc.rootFile,
-		lang:  lang,
-		label: label,
-		ar:    ar,
+		nodeWrapper: nodeWrapper{
+			rf:         pc.rootFile,
+			underlying: n,
+		},
+		lang:         lang,
+		label:        label,
+		ar:           ar,
+		errorContext: newErrorContext(pc),
 	}
 	return res, nil
 }
