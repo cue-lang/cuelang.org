@@ -36,18 +36,31 @@ const (
 )
 
 type sidebysideNode struct {
-	rf    *rootFile
+	nodeWrapper
 	lang  string
 	label string
 	ar    *txtar.Archive
+	errorContext
 }
 
-var _ node = (*sidebysideNode)(nil)
+var _ runnableNode = (*sidebysideNode)(nil)
 
-func (s *sidebysideNode) run() error {
+type sidebysideNodeRunContext struct {
+	node *sidebysideNode
+	*bufferedErrorContext
+}
+
+func (s *sidebysideNode) run() runnable {
+	return &sidebysideNodeRunContext{
+		node:                 s,
+		bufferedErrorContext: newBufferedErrorContext(s),
+	}
+}
+
+func (s *sidebysideNodeRunContext) run() error {
 	// First format all non-output files
-	for i := range s.ar.Files {
-		f := &s.ar.Files[i]
+	for i := range s.node.ar.Files {
+		f := &s.node.ar.Files[i]
 		a := analyseFilename(f.Name)
 		if a.isOut {
 			continue
@@ -56,15 +69,15 @@ func (s *sidebysideNode) run() error {
 		case "json":
 			expr, err := json.Extract(f.Name, f.Data)
 			if err != nil {
-				return fmt.Errorf("failed to extract JSON from %s: %w", f.Name, err)
+				return s.errorf("%v: failed to extract JSON from %s: %v", s, f.Name, err)
 			}
-			v := s.rf.page.ctx.executor.ctx.BuildExpr(expr)
+			v := s.node.rf.page.ctx.executor.ctx.BuildExpr(expr)
 			if err := v.Err(); err != nil {
-				return fmt.Errorf("failed to build CUE value from %s: %w", f.Name, err)
+				return s.errorf("%v: failed to build CUE value from %s: %v", s, f.Name, err)
 			}
 			byts, err := encjson.MarshalIndent(v, "", "  ")
 			if err != nil {
-				return fmt.Errorf("failed to format CUE value as json for %s: %w", f.Name, err)
+				return s.errorf("%v: failed to format CUE value as json for %s: %v", s, f.Name, err)
 			}
 			f.Data = byts
 		case "yaml":
@@ -72,7 +85,7 @@ func (s *sidebysideNode) run() error {
 		case "cue":
 			b, err := format.Source(f.Data)
 			if err != nil {
-				s.rf.page.debugf("failed to format CUE in %q %q: %w", s.label, f.Name, err)
+				s.debugf("%v: failed to format CUE in %q %q: %v", s, s.node.label, f.Name, err)
 			} else {
 				f.Data = b
 			}
