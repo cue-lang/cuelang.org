@@ -54,6 +54,10 @@ type page struct {
 	// rightDelim is the right hand delimiter used in text/template parsing for
 	// root files in the page.
 	rightDelim string
+
+	// bufferedErrorContext is used because we process pages concurrently and then
+	// log the buffered messages in blocks
+	bufferedErrorContext
 }
 
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
@@ -64,12 +68,13 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	}
 
 	res := &page{
-		contentRelPath: contentRelPath,
-		relPath:        rel,
-		ctx:            ec,
-		dir:            dir,
-		langTargets:    make(map[lang][]*rootFile),
-		rootFiles:      make(map[string]*rootFile),
+		bufferedErrorContext: newBufferedErrorContext(),
+		contentRelPath:       contentRelPath,
+		relPath:              rel,
+		ctx:                  ec,
+		dir:                  dir,
+		langTargets:          make(map[lang][]*rootFile),
+		rootFiles:            make(map[string]*rootFile),
 
 		// TODO actually extract these from the page's config
 		leftDelim:  "{{{",

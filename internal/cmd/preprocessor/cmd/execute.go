@@ -60,7 +60,7 @@ func executeDef(c *Command, args []string) error {
 
 	wd, projectRoot, err := deriveProjectRoot(wd)
 	if err != nil {
-		return fmt.Errorf("failed to derive project root: %w", err)
+		return err
 	}
 
 	e := newExecutor(wd, projectRoot, c)
