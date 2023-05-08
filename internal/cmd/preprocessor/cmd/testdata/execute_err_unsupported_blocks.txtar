@@ -5,7 +5,7 @@ unquote content/dir/en.md
 
 # Run the preprocessor
 ! exec preprocessor execute --debug
-stderr 'failed to parse: '$WORK${/}'content'${/}'dir'${/}'en.md:10:10 with node cannot have else block'
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:10:10 with node cannot have else block'
 
 
 -- content/dir/site.cue --
