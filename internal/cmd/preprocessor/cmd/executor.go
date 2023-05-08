@@ -15,7 +15,7 @@
 package cmd
 
 import (
-	"log"
+	"fmt"
 	"os"
 
 	"cuelang.org/go/cue"
@@ -33,22 +33,25 @@ type executor struct {
 	// cmd is the execute Cobra command, used to access flag values etc
 	cmd *Command
 
-	// log is the logger used by the executor
-	logger *log.Logger
-
 	// ctx is the context used for all CUE operations
 	ctx *cue.Context
+
+	errorContext
+}
+
+func (e *executor) Format(f fmt.State, verb rune) {
+	fmt.Fprintf(f, "root: %s", e.root)
 }
 
 func newExecutor(wd, projectRoot string, cmd *Command) *executor {
-	l := log.New(os.Stderr, "", 0)
-	return &executor{
-		wd:     wd,
-		root:   projectRoot,
-		cmd:    cmd,
-		logger: l,
-		ctx:    cuecontext.New(),
+	res := &executor{
+		wd:           wd,
+		root:         projectRoot,
+		cmd:          cmd,
+		ctx:          cuecontext.New(),
+		errorContext: newErrorContext(os.Stderr),
 	}
+	return res
 }
 
 // execute runs the transformation recursively walking through e.wd. If filter
@@ -59,11 +62,4 @@ func (e *executor) execute(filter map[string]bool) error {
 
 	ec := e.newExecuteContext(filter)
 	return ec.execute()
-}
-
-// debugf logs debugging information if the --debug flag has been set
-func (e *executor) debugf(format string, args ...any) {
-	if flagDebug.Bool(e.cmd) {
-		e.logger.Printf("debug: "+format, args...)
-	}
 }

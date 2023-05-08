@@ -17,19 +17,13 @@ package cmd
 import (
 	"bytes"
 	"fmt"
+	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
 )
 
 // A node is an abstraction around the structures that can appear in a page.
 type node interface {
-	// run is called to cause a node to update itself. The simplest example is a
-	// node that includes a testscript script. Running such a node would involve
-	// running the script, ensuring it passes and is therefore consistent with
-	// the source that forms that node. Running the node with some flag to
-	// indicate that scripts should be updated to ensure assertions pass (e.g.
-	// testscript.Params.UpdateScripts)
-	run() error
 
 	// writeSourceTo writes the source (text/template) form of a node to buf.
 	writeSourceTo(buf *bytes.Buffer)
@@ -37,6 +31,24 @@ type node interface {
 	// writeTransformTo writes the Hugo-aware form of a node to buf. A call to
 	// writeTransformTo is the transform or output step of the preprocessor.
 	writeTransformTo(buf *bytes.Buffer) error
+
+	fmt.Formatter
+}
+
+type runnableNode interface {
+	// run is called to cause a node to update itself. The simplest example is a
+	// node that includes a testscript script. Running such a node would involve
+	// running the script, ensuring it passes and is therefore consistent with
+	// the source that forms that node. Running the node with some flag to
+	// indicate that scripts should be updated to ensure assertions pass (e.g.
+	// testscript.Params.UpdateScripts)
+	run() runnable
+}
+
+type runnable interface {
+	run() error
+	bytes() []byte
+	isInError() bool
 }
 
 // nodeWrapper is a simple wrapper around an underlying
@@ -48,11 +60,6 @@ type nodeWrapper struct {
 
 var _ node = (*nodeWrapper)(nil)
 
-func (t *nodeWrapper) run() error {
-	t.rf.page.debugf("nodeWrapper.run() not implemented yet")
-	return nil
-}
-
 func (t *nodeWrapper) writeSourceTo(b *bytes.Buffer) {
 	b.WriteString(t.underlying.String())
 }
@@ -62,17 +69,16 @@ func (t *nodeWrapper) writeTransformTo(b *bytes.Buffer) error {
 	return nil
 }
 
+func (n *nodeWrapper) Format(f fmt.State, verb rune) {
+	fmt.Fprint(f, n.rf.nodePos(n.underlying))
+}
+
 type textNode struct {
-	rf   *rootFile
+	nodeWrapper
 	text []byte
 }
 
 var _ node = (*textNode)(nil)
-
-func (t *textNode) run() error {
-	// nothing to do
-	return nil
-}
 
 func (t *textNode) writeSourceTo(b *bytes.Buffer) {
 	b.Write(t.text)
@@ -81,6 +87,12 @@ func (t *textNode) writeSourceTo(b *bytes.Buffer) {
 func (t *textNode) writeTransformTo(b *bytes.Buffer) error {
 	b.Write(t.text)
 	return nil
+}
+
+func (t *textNode) Format(f fmt.State, verb rune) {
+	loc, _ := t.rf.body.ErrorContext(t.underlying)
+	_, after, _ := strings.Cut(loc, ":")
+	fmt.Fprint(f, after)
 }
 
 func bufPrintf(b *bytes.Buffer) func(string, ...any) (int, error) {
