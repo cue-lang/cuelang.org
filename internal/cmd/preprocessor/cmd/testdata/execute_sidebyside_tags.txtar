@@ -1,0 +1,47 @@
+# Ensure that sidebyside norunective knows about various tags.
+#
+# The #norun example will result in no formatting being applied
+# to the input file.
+#
+# The #noformat* examples will ensure that arguments to #noformat are not
+# formatted, but others are.
+#
+# For these tests we do not assert against the transformed output.
+
+unquote content/norun/en.md
+
+# Make a golden file of the input to ensure it is written back intact
+cp content/norun/en.md content/norun/en.md.golden
+
+# Run the preprocessor
+exec preprocessor execute --debug
+
+# Copy the resulting soure file sideways and use that in comparison
+# so that we don't inadvertently update it when using CUE_UPDATE=1
+cp content/norun/en.md content/norun/en.md.writeBack
+
+# Verify that the source file is intact
+cmp content/norun/en.md.writeBack content/norun/en.md.golden
+
+-- content/norun/site.cue --
+package site
+-- content/norun/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>```coq
+>{{{with sidebyside "en" "json-superset"}}}
+>#norun
+>
+>exec cue export in.cue
+>cmp stdout stdout.json
+>-- in.cue --
+>     field: 3
+>-- out.cue --
+>field: 3
+>{{{end}}}
+>```
+-- hugo/.gitkeep --
