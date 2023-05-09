@@ -1,0 +1,55 @@
+{{/* Generates a valid Algolia search index */}}
+{{- $section := $.Site.GetPage "section" .Section -}}
+[
+    {{ range $idx, $page := $.Site.Pages -}}
+        {{- if or (and ($page.IsDescendant $section) (and (not $page.Draft) (not $page.Params.no_index) (not (eq $page.Type "examples")))) $page.IsHome -}}
+            {{- if $idx -}},{{- end -}}
+
+            {{- template "algolia-object" (dict
+                "index" 0
+                "page" $page
+                "section" $section
+            ) -}}
+        {{- end -}}
+    {{- end }}
+]
+
+{{- define "algolia-object" -}}
+    {{ $page := .page -}}
+    {{ $cutoff := 1000 -}}
+    {{ $index := .index -}}
+    {{ $skipWords := mul $cutoff $index }}
+
+    {{- $objectID := (print $page.File.UniqueID "_" (add $index 1)) -}}
+    {{- $title :=  $page.Title -}}
+    {{- $link := $page.Permalink -}}
+    {{- $categories := cond (isset $page.Params "categories") ($page.Params.categories) "" -}}
+    {{- $order := (add $index 1) -}}
+    {{- $publishDate := $page.PublishDate -}}
+    {{- $summary := $page.Summary -}}
+    {{- $content := "" -}}
+
+    {{- if eq $index 0 -}}
+        {{- $content = delimit (first $cutoff $page.PlainWords) " " -}}
+    {{- else -}}
+        {{- $content = delimit (first $cutoff (after $skipWords $page.PlainWords)) " " -}}
+    {{- end -}}
+
+    {
+        "objectID": {{ $objectID | jsonify }},
+        "order": {{ $index | jsonify }},
+        "title": {{ $title | jsonify }},
+        "categories": {{ $categories | jsonify }},
+        "link": {{ $link | jsonify }},
+        "publishDate": {{ $publishDate | jsonify }},
+        "summary": {{ $summary | jsonify }},
+        "content": {{ $content  | jsonify}}
+    }
+
+    {{- if gt $page.PlainWords (add $cutoff $skipWords) -}},
+        {{- template "algolia-object" (dict
+            "index" (add $index 1)
+            "page" $page
+        ) -}}
+    {{- end -}}
+{{- end -}}

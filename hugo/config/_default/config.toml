@@ -26,7 +26,7 @@ disableAliases = true # We use Netlify server-side redirects instead of generate
 
 # Output configuration
 [outputs]
-    home = ["HTML", "RSS", "REDIR"]
+    home = ["HTML", "RSS", "REDIR", "Algolia"]
     section = ["HTML"]
 
 [outputFormats]
@@ -36,6 +36,11 @@ disableAliases = true # We use Netlify server-side redirects instead of generate
         mediatype = "text/netlify"
         baseName = "_redirects"
         isPlainText = true
+        notAlternative = true
+    [outputFormats.Algolia]
+        baseName = "algolia"
+        isPlainText = true
+        mediaType = "application/json"
         notAlternative = true
 
 [mediaTypes]

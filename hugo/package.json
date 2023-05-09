@@ -7,6 +7,7 @@
   "license": "ISC",
   "dependencies": {
     "algoliasearch": "4.17.0",
+    "atomic-algolia": "0.3.19",
     "mathjax": "3.2.2",
     "mermaid": "9.2.2"
   },
@@ -38,7 +39,8 @@
     "lint-ts": "eslint --ext .ts ./assets/ts",
     "lint-ts-fix": "eslint --ext .ts ./assets/ts --fix",
     "lint-sass": "stylelint ./assets/scss/**/*.scss",
-    "lint-sass-fix": "stylelint ./assets/scss/**/*.scss --fix"
+    "lint-sass-fix": "stylelint ./assets/scss/**/*.scss --fix",
+    "algolia": "atomic-algolia"
   },
   "repository": {
     "type": "git",
