@@ -67,6 +67,23 @@ If all above is done and the icon is added in the right folder you can run the f
 npm run icons
 ```
 
+### Algolia
+
+If you want to test Algolia locally, follow the next steps:
+
+1. Have (admin) access to an Algolia account
+2. Create a test index in Algolia
+3. Find your Algolia API keys (settings > Team and Access > API Keys),
+   fill the keys in the following command,
+   and run the command
+
+```
+ALGOLIA_APP_ID={{ YOUR_APP_ID }} ALGOLIA_ADMIN_KEY={{ YOUR_ADMIN_KEY }} ALGOLIA_INDEX_NAME={{ YOUR_INDEX_NAME }} ALGOLIA_INDEX_FILE="../_public/algolia.json" npm run algolia
+```
+
+4. Do your testing
+5. Delete the test index
+
 ## History
 
 This site was setup using the following guides:
