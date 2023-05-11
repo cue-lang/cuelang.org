@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f23f687_0dc48426",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-11T09:48:18Z",
+      "side": 1,
+      "message": "This is also running the serverless functions, did you mean to send two separate CLs?",
+      "revId": "4cf5b8d2ee0cabf456e3a4e303b3836cfccc8069",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ca40434_3a3fa575",
+        "filename": "_scripts/serve.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-11T09:48:18Z",
+      "side": 1,
+      "message": "`go run ./internal/cmd/preprocessor`? you even guarantee that the current directory is the root of the repo.",
+      "revId": "4cf5b8d2ee0cabf456e3a4e303b3836cfccc8069",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
