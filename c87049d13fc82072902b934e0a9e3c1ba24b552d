@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1bba27d_63690fb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-11T09:57:42Z",
+      "side": 1,
+      "message": "SGTM",
+      "revId": "c87049d13fc82072902b934e0a9e3c1ba24b552d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c04c4a4c_915ee3b8",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-11T09:57:42Z",
+      "side": 1,
+      "message": "ditto :)",
+      "revId": "c87049d13fc82072902b934e0a9e3c1ba24b552d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
