@@ -1,7 +1,13 @@
+@import '../config/colors';
 @import '../config/sizes';
+@import '../config/typography';
 @import '../mixins/sr-only';
+@import '../mixins/screen';
+@import '../mixins/typography';
 
 .searchbar {
+    position: relative;
+
     &__label {
         @include sr-only;
     }
@@ -12,11 +18,21 @@
 
     &__input {
         &[type='text'] {
+            background-color: $c-white;
+            border: none;
             border-radius: 50px;
-            border-width: 2px;
             height: $h-button + 16px;
             padding: 0 ($h-button + 12px) 0 2rem;
         }
+
+        // To override browser styling for autofill (-internal-autofill-selected)
+        /* stylelint-disable property-no-vendor-prefix */
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 40rem #ffff inset;
+        }
+        /* stylelint-enable property-no-vendor-prefix */
     }
 
     &__button {
@@ -24,5 +40,39 @@
         right: 8px;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    &__footer {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    &__results {
+        @include style-text-small;
+
+        font-weight: $weight-medium;
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+
+    &__logo {
+        height: auto;
+        margin-left: auto;
+        right: 0;
+        width: 120px;
+    }
+
+    @include screen($screen-normal) {
+        &__bar {
+            margin-left: -2rem;
+        }
+
+        &__results {
+            margin-left: 0;
+        }
     }
 }

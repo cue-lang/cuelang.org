@@ -2,8 +2,8 @@
 @import '../config/sizes';
 @import '../mixins/stretch';
 @import '../mixins/screen';
-@import '../mixins/typography';
 @import '../mixins/sr-only';
+@import '../mixins/typography';
 
 .teaser {
     $self: &;
@@ -12,14 +12,10 @@
     border-radius: $b-radius;
     color: var(--text-color);
     height: 100%;
+    padding: $p-gutter;
     position: relative;
     transition: background-color 0.2s;
     width: 100%;
-
-    &__container {
-        padding: $p-gutter;
-        position: relative;
-    }
 
     &__title {
         @include style-heading;
@@ -49,6 +45,7 @@
             @include sr-only;
         }
 
+        &:focus,
         &:hover {
             border-color: var(--teaser-border-hover, $c-blue--light);
         }
@@ -58,6 +55,7 @@
         }
     }
 
+    &:focus,
     &:hover {
         .link__text {
             background-position-x: 0;
@@ -65,9 +63,41 @@
         }
     }
 
+    &--search {
+        border-bottom: 1px solid transparentize($c-blue--darker, 0.8);
+        border-radius: 0;
+
+        em {
+            color: $c-pink;
+            font-weight: $weight-bold;
+        }
+
+        #{ $self }__title {
+            margin: 0;
+        }
+
+        #{ $self }__meta {
+            @include style-text-small;
+        }
+
+        #{ $self }__excerpt {
+            font-style: italic;
+            font-weight: $weight-medium;
+            margin: 0.5rem 0 0;
+        }
+    }
+
+    @include screen($screen-simple) {
+        &--search {
+            padding: 2rem $p-gutter 1.5rem;
+        }
+    }
+
     @include screen($screen-large) {
-        &__container {
-            padding: $p-gutter--large;
+        padding: $p-gutter--large;
+
+        &--search {
+            padding: 2rem $p-gutter 1.5rem;
         }
 
         &__readmore {

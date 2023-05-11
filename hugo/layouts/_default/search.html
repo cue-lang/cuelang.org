@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <section class="section section--search">
+    <section class="section section--blue section--search">
         <header class="section__header">
             <div class="section__content">
                 <h1 class="section__title">{{ .Title }}</h1>
@@ -7,7 +7,7 @@
         </header>
         <div class="section__body">
             <div class="section__content">
-                <form action="{{ .RelPermalink }}" method="get">
+                <form action="{{ .RelPermalink }}" method="get" data-search>
                     <div class="searchbar">
                         <label for="searchbar" class="searchbar__label">{{ T "ui_search" }}</label>
                         <div class="searchbar__bar">
@@ -17,31 +17,21 @@
                                 <span>{{ T "ui_search" }}</span>
                             </button>
                         </div>
+
+                        <div class="searchbar__footer">
+                            <div class="searchbar__results is-hidden">
+                                </span>{{ T "ui_search_results" }}
+                            </div>
+
+                            <div class="searchbar__logo">
+                                {{ with resources.Get "svg/algolia-search.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
+                            </div>
+                        </div>
                     </div>
                 </form>
 
-                <div class="search">
-                    <gcse:searchresults-only>{{ partial "spinner.html" }}</gcse:searchresults-only>
-                </div>
+                <div class="search"></div>
             </div>
         </div>
     </section>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const query = params.get('q');
-        const input = document.getElementById('searchbar');
-        if (input && query) {
-            input.value = query;
-        }
-
-        (function() {
-            var cx = '004591905419617723008:8rmik2a7xb3';
-            var gcse = document.createElement('script');
-            gcse.type = 'text/javascript';
-            gcse.async = true;
-            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gcse, s);
-        })();
-    </script>
 {{ end }}
