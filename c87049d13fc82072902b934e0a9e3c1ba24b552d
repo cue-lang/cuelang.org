@@ -33,6 +33,24 @@
       "message": "ditto :)",
       "revId": "c87049d13fc82072902b934e0a9e3c1ba24b552d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23d4e7a1_b4368b52",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-11T10:34:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c04c4a4c_915ee3b8",
+      "revId": "c87049d13fc82072902b934e0a9e3c1ba24b552d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
