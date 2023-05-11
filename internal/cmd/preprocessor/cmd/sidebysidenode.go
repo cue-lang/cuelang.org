@@ -143,7 +143,9 @@ type filenameAnalysis struct {
 func analyseFilename(p string) (res filenameAnalysis) {
 	res.filepath = p
 	b := filepath.Base(p)
-	b, res.isGolden = strings.CutSuffix(b, goldenExt)
+	if res.isGolden = strings.HasSuffix(b, goldenExt); res.isGolden {
+		b = strings.TrimSuffix(b, goldenExt)
+	}
 	i := len(b) - 1
 	for ; i >= 0 && !os.IsPathSeparator(b[i]); i-- {
 		if b[i] == '.' {
