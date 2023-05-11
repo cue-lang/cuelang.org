@@ -53,6 +53,7 @@ config: #config & {
 		publish:   "_public"
 		command:   "bash _scripts/build.bash"
 		environment: {
+			AAA_FIRST:    "x"
 			HUGO_ENV:     "production"
 			GO_VERSION:   repo.goVersion
 			NODE_VERSION: repo.nodeVersion

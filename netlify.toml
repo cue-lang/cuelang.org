@@ -6,6 +6,7 @@
   command = "bash _scripts/build.bash"
 
 [build.environment]
+  AAA_FIRST = "x"
   GO_VERSION = "1.20.2"
   HUGO_ENV = "production"
   HUGO_VERSION = "0.108.0"
