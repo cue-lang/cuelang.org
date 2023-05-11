@@ -8,7 +8,6 @@
 [build.environment]
   GO_VERSION = "1.20.2"
   HUGO_ENV = "production"
-  HUGO_VERSION = "0.108.0"
   NODE_VERSION = "18.12.1"
 
 [context.deploy-preview]
