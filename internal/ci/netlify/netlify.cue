@@ -56,7 +56,6 @@ config: #config & {
 			HUGO_ENV:     "production"
 			GO_VERSION:   repo.goVersion
 			NODE_VERSION: repo.nodeVersion
-			HUGO_VERSION: repo.hugoVersion
 		}
 	}
 
