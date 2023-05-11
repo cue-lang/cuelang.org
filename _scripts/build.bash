@@ -13,6 +13,9 @@ fi
 # Build playground
 bash playground/_scripts/build.bash
 
+# Run the preprocessor
+go run ./internal/cmd/preprocessor execute --debug
+
 # Main site
 cd hugo
 $time npm ci

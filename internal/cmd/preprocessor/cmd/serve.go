@@ -18,6 +18,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"net/http"
 	"os"
 	"os/exec"
 	"os/signal"
@@ -27,6 +28,8 @@ import (
 	"time"
 
 	"github.com/cue-lang/cuelang.org/internal/fsnotify"
+	"github.com/cue-lang/cuelang.org/internal/functions/gerritstatusupdater"
+	"github.com/cue-lang/cuelang.org/internal/functions/snippets"
 )
 
 type serveContext struct {
@@ -56,10 +59,10 @@ type serveContext struct {
 	w *fsnotify.BatchedRecursiveWatcher
 }
 
-func (e *executor) newServeContext() *serveContext {
+func (e *executor) newServeContext(errs chan error) *serveContext {
 	return &serveContext{
 		e:    e,
-		errs: make(chan error),
+		errs: errs,
 	}
 }
 
@@ -67,7 +70,11 @@ func (e *executor) newServeContext() *serveContext {
 // It also runs hugo serve passing the non-flag arguments to execute.
 func (e *executor) serve(args []string) error {
 	var err error
-	sc := e.newServeContext()
+
+	// Create a channel on which errors are returned from async
+	errs := make(chan error)
+
+	sc := e.newServeContext(errs)
 
 	if err := sc.startHugo(args); err != nil {
 		return fmt.Errorf("failed to start hugo: %w", err)
@@ -91,6 +98,9 @@ func (e *executor) serve(args []string) error {
 	defer sc.w.Close()
 
 	go sc.watcherEventLoop()
+
+	// Run local versions of the serverless functions
+	go runLocalServerlessFunctions(errs)
 
 	// Watch for errors from hugo exiting. Note that errors from the event loop
 	// are (largely) ignored and instead logged.
@@ -116,6 +126,20 @@ func (e *executor) serve(args []string) error {
 		return err
 	}
 	return nil
+}
+
+func runLocalServerlessFunctions(errs chan error) {
+	m := http.NewServeMux()
+	m.HandleFunc("/.netlify/functions/snippets", snippets.Function{DevelopmentMode: true}.ServeHTTP)
+	m.HandleFunc("/.netlify/functions/gerritstatusupdater", gerritstatusupdater.Function{DevelopmentMode: true}.ServeHTTP)
+
+	// In development mode, the playground TypeScript application knows
+	// to query localhost:8081 for the /.netlify/functions/snippets endpoint
+	s := &http.Server{
+		Addr:    ":8081",
+		Handler: m,
+	}
+	errs <- s.ListenAndServe()
 }
 
 func (sc *serveContext) startHugo(args []string) error {
