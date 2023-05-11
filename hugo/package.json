@@ -6,6 +6,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "algoliasearch": "4.17.0",
     "mathjax": "3.2.2",
     "mermaid": "9.2.2"
   },

@@ -1,7 +1,15 @@
-/* Note: For now overrule some google search styles, in future will be custom search bem */
+@import '../config/sizes';
+@import '../mixins/screen';
+
 .search {
-    .gsc-above-wrapper-area-container {
-        border-radius: 0;
-        overflow: visible;
+    margin: 0 (-$p-gutter);
+    position: relative;
+
+    @include screen($screen-simple) {
+        margin: $p-gutter (-$p-gutter);
+    }
+
+    @include screen($screen-normal) {
+        margin: $p-gutter--large (-$p-gutter);
     }
 }
