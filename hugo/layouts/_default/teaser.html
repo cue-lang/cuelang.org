@@ -1,12 +1,11 @@
 <article class="teaser teaser--simple">
-    <div class="teaser__container">
-        <h2 class="teaser__title">{{ .Title }}</h2>
-        <p class="teaser__meta">{{ .Date.Format ($.Param "time_format") }}</p>
-        <p class="teaser__excerpt">{{ .Summary | truncate 300 }}</p>
-        <div class="link teaser__readmore">
-            <span class="link__text">{{ T "ui_read_more" }}</span>
-        </div>
+    <h2 class="teaser__title">{{ .Title }}</h2>
+    <p class="teaser__meta">{{ .Date.Format ($.Param "time_format") }}</p>
+    <p class="teaser__excerpt">{{ .Summary | truncate 300 }}</p>
+    <div class="link teaser__readmore">
+        <span class="link__text">{{ T "ui_read_more" }}</span>
     </div>
+
     <a class="teaser__link" aria-label="{{ T "ui_read_more" }} - {{ .LinkTitle }}" href="{{ .RelPermalink }}">
         <span>{{ T "ui_read_more" }}</span>
     </a>
