@@ -8,10 +8,11 @@ trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
-echo "Running serverless functions (background)"
-go run ./internal/cmd/serverless-local &>/dev/null &
-
 cd hugo
 npm ci
 npm run icons
-hugo serve -D --renderToDisk
+
+cd ..
+
+# Run the preprocess in serve mode which will itself run hugo
+go run github.com/cue-lang/cuelang.org/internal/cmd/preprocessor execute --serve --debug -- -D --renderToDisk
