@@ -101,13 +101,13 @@ config: #config & {
 
 		[build.environment]
 		{{- range $key, $value := .environment}}
-		{{$key}} = {{printf "%q" $value -}}
+		  {{$key}} = {{printf "%q" $value -}}
 		{{end}}
 		{{end}}
 
 		{{- with (index .context "deploy-preview") }}
 		[context.deploy-preview]
-		command = {{printf "%q" .command}}
+		  command = {{printf "%q" .command}}
 		{{end}}
 
 		{{- range .redirects}}
