@@ -15,7 +15,10 @@
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
 		"paths": {
-			"@components/*": [ "src/components/*" ]
+			"@components/*": [ "./src/components/*" ],
+			"@config/*": [ "./src/config/*" ],
+			"@containers/*": [ "./src/containers/*" ],
+			"@models/*": [ "./src/models/*" ],
 		},
 		"removeComments": true,
 		"sourceMap": true,

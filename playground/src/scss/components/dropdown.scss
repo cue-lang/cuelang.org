@@ -11,7 +11,7 @@
             margin: 1px -6px 0 4px;
             transition: rotate 0.2s;
 
-            .is-active & {
+            .is-open & {
                 rotate: 180deg;
             }
         }
@@ -39,6 +39,7 @@
         padding: 0.4rem 1rem;
         text-decoration: none;
         transition: background-color 0.2s;
+        width: 100%;
 
         &:focus-visible,
         &:hover {
