@@ -54,7 +54,6 @@ config: #config & {
 		command:   "bash _scripts/build.bash"
 		environment: {
 			HUGO_ENV:     "production"
-			GO_VERSION:   repo.goVersion
 			NODE_VERSION: repo.nodeVersion
 			HUGO_VERSION: repo.hugoVersion
 		}
