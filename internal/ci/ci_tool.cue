@@ -64,6 +64,13 @@ command: gen: {
 			}
 		}
 	}
+
+	goversion: file.Create & {
+		_dir:     path.FromSlash("../../", path.Unix)
+		filename: path.Join([_dir, ".go_version"], _goos)
+		// Lack of trailing newline is intentional
+		contents: repo.goVersion
+	}
 }
 
 command: gen: netlify: file.Create & {
