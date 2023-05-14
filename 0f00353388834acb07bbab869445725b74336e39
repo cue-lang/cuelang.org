@@ -16,6 +16,23 @@
       "message": "This does not appear to be working: https://github.com/cue-lang/cuelang.org/pull/349\n\nSo putting on hold for now.",
       "revId": "0f00353388834acb07bbab869445725b74336e39",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff28d35b_310b4ede",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-14T11:22:11Z",
+      "side": 1,
+      "message": "Have you tried removing the GO_VERSION env var at the same time? It could be that the env var takes precedence over the file, even when it\u0027s broken or being forgotten later.",
+      "revId": "0f00353388834acb07bbab869445725b74336e39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
