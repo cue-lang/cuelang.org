@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "885c3b8f_10e1401e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-14T07:30:53Z",
+      "side": 1,
+      "message": "This does not appear to be working: https://github.com/cue-lang/cuelang.org/pull/349\n\nSo putting on hold for now.",
+      "revId": "0f00353388834acb07bbab869445725b74336e39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
