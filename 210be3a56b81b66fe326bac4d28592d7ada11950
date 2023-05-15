@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "177964d7_63fc04f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-15T12:32:50Z",
+      "side": 1,
+      "message": "go.mod should end up being pretty small once we move the last func :)",
+      "revId": "210be3a56b81b66fe326bac4d28592d7ada11950",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
