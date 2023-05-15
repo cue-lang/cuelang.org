@@ -15,21 +15,18 @@
 // serverless-local emulates Netlify serverless function deployment on a local
 // development machine, serving functions from:
 //
-//     http://localhost:8081/.netlify/functions/$function
-//
+//	http://localhost:8081/.netlify/functions/$function
 package main
 
 import (
 	"log"
 	"net/http"
 
-	"github.com/cue-lang/cuelang.org/internal/functions/gerritstatusupdater"
 	"github.com/cue-lang/cuelang.org/internal/functions/snippets"
 )
 
 func main() {
 	http.HandleFunc("/.netlify/functions/snippets", snippets.Function{DevelopmentMode: true}.ServeHTTP)
-	http.HandleFunc("/.netlify/functions/gerritstatusupdater", gerritstatusupdater.Function{DevelopmentMode: true}.ServeHTTP)
 
 	// In development mode, the playground TypeScript application knows
 	// to query localhost:8081 for the /.netlify/functions/snippets endpoint
