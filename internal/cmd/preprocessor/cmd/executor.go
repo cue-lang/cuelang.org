@@ -40,7 +40,7 @@ type executor struct {
 }
 
 func (e *executor) Format(f fmt.State, verb rune) {
-	fmt.Fprintf(f, "root: %s", e.root)
+	fmt.Fprintf(f, "%s", e.root)
 }
 
 func newExecutor(ctx executionContext, wd, projectRoot string, cmd *Command) *executor {
@@ -62,6 +62,16 @@ func newExecutor(ctx executionContext, wd, projectRoot string, cmd *Command) *ex
 // in filter.
 func (e *executor) execute(filter map[string]bool) error {
 	e.debugf("working directory: %v\n", e.wd)
+
+	// Establish a temporary directory within which all other temp
+	// material will be gathered. That way we only have to clean up
+	// a single temp dir at the end
+	td, err := os.MkdirTemp("", "preprocessor-*")
+	if err != nil {
+		return e.errorf("failed to create temp dir: %v", err)
+	}
+	e.tempRoot = td
+	defer os.RemoveAll(td)
 
 	ec := e.newExecuteContext(filter)
 	return ec.execute()
