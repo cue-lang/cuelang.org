@@ -34,7 +34,7 @@ package site
 >
 >```coq
 >{{{with sidebyside "en" "json-superset"}}}
->#norun
+>#norun some message
 >
 >exec cue export in.cue
 >cmp stdout stdout.json

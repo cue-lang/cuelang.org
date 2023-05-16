@@ -23,7 +23,10 @@ b: '''
 	sfsf
 	'''
 -- out.json --
-
+{
+    "a": "QSBuZXdsaW5lIGlzIHdyaXR0ZW4gYXMgXG4u",
+    "b": "c2ZzZg=="
+}
 {{{end}}}
 ```
 
@@ -40,7 +43,8 @@ b: '''
 	sfsf
 	'''
 -- out.yaml --
-
+a: !!binary QSBuZXdsaW5lIGlzIHdyaXR0ZW4gYXMgXG4u
+b: !!binary c2ZzZg==
 {{{end}}}
 ```
 
