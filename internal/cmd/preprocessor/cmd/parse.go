@@ -21,7 +21,7 @@ import (
 	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
-	"golang.org/x/tools/txtar"
+	"github.com/rogpeppe/go-internal/txtar"
 )
 
 const (
@@ -107,6 +107,42 @@ func (rf *rootFile) parse() error {
 	return nil
 }
 
+func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (node, error) {
+	if len(args) != 2 {
+		return nil, pc.bodyError(n, "sidebyside requires two args")
+	}
+	var strArgs []string
+	for _, a := range args {
+		sa, ok := a.(*parse.StringNode)
+		if !ok {
+			return nil, pc.bodyError(a, "expected a string argument")
+		}
+		strArgs = append(strArgs, sa.Text)
+	}
+	lang, label := strArgs[0], strArgs[1]
+
+	// We only support a single TextNode body, i.e. the contents of a txtar archive
+	if n.List == nil || len(n.List.Nodes) != 1 {
+		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
+	}
+	tn, ok := n.List.Nodes[0].(*parse.TextNode)
+	if !ok {
+		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
+	}
+	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
+	// therefore forms part of the body.
+	text := tn.Text[1:]
+	ar := txtar.Parse(text)
+
+	res := &sidebysideNode{
+		rf:    pc.rootFile,
+		lang:  lang,
+		label: label,
+		ar:    ar,
+	}
+	return res, nil
+}
+
 // bodyError is a convenience for creating a formatted error that includes the
 // position of n within the original input.
 func (rf *rootFile) bodyError(n parse.Node, format string, args ...any) error {
@@ -185,42 +221,6 @@ func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
 		rf:         pc.rootFile,
 		underlying: n,
 	}, nil
-}
-
-func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (node, error) {
-	if len(args) != 2 {
-		return nil, pc.bodyError(n, "sidebyside requires two args")
-	}
-	var strArgs []string
-	for _, a := range args {
-		sa, ok := a.(*parse.StringNode)
-		if !ok {
-			return nil, pc.bodyError(a, "expected a string argument")
-		}
-		strArgs = append(strArgs, sa.Text)
-	}
-	lang, label := strArgs[0], strArgs[1]
-
-	// We only support a single TextNode body, i.e. the contents of a txtar archive
-	if n.List == nil || len(n.List.Nodes) != 1 {
-		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
-	}
-	tn, ok := n.List.Nodes[0].(*parse.TextNode)
-	if !ok {
-		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
-	}
-	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
-	// therefore forms part of the body.
-	text := tn.Text[1:]
-	ar := txtar.Parse(text)
-
-	res := &sidebysideNode{
-		rf:    pc.rootFile,
-		lang:  lang,
-		label: label,
-		ar:    ar,
-	}
-	return res, nil
 }
 
 func (pc parseContext) parse_ActionNode(n *parse.ActionNode) (node, error) {
