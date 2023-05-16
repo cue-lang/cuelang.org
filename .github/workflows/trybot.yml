@@ -162,6 +162,7 @@ jobs:
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
+      - run: ./_scripts/buildDockerImage.bash
       - name: Regenerate
         run: go generate ./...
       - name: Test

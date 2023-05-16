@@ -21,6 +21,11 @@ a1:    1
 "a-b": 2 // quotes are needed here
 $id:   "yipee"
 -- out.json --
+{
+    "a1": 1,
+    "a-b": 2,
+    "$id": "yipee"
+}
 {{{end}}}
 ```
 
@@ -36,6 +41,10 @@ Names of regular fields are considered equal if their string values are equal, r
 a: x:   1
 "a": y: 2
 -- out.cue --
+a: {
+	x: 1
+	y: 2
+}
 {{{end}}}
 ```
 
@@ -76,6 +85,9 @@ three: {
 	#typeName: "map"
 }
 -- out.cue --
+one: 1
+two: "two"
+three: a: 1
 {{{end}}}
 ```
 

@@ -81,7 +81,6 @@ func (ec *executeContext) execute() error {
 
 	// Process the pages we found.
 	for _, d := range ec.order {
-		ec.debugf("page %s", d)
 		p := ec.pages[d]
 		// v := vs[i]
 		// if err := v.Validate(); err != nil {
@@ -96,7 +95,6 @@ func (ec *executeContext) execute() error {
 	}
 
 	for i, d := range ec.order {
-		ec.debugf("log page %s", d)
 		p := ec.pages[d]
 		w := pageWaits[i]
 		<-w

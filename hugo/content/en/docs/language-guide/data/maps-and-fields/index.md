@@ -14,12 +14,17 @@ starts with a letter or `$` and otherwise only contains letters, digits, `$` or 
 Identifiers may also start with `#` or `_`, in which case the field is a [[Helper fields](Data%201b448a6f417b4e08b2d41b3b33cf2a45.md)](helper field) with special meaning.
 
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a1:    1
 "a-b": 2 // quotes are needed here
 $id:   "yipee"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json"  area="top-right" >}}
+{
+    "a1": 1,
+    "a-b": 2,
+    "$id": "yipee"
+}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -29,11 +34,15 @@ When combining two maps, their fields are matched and merged based on their name
 Names of regular fields are considered equal if their string values are equal, regardless of whether the strings are quoted or not.
 
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: x:   1
 "a": y: 2
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue"  area="top-right" >}}
+a: {
+	x: 1
+	y: 2
+}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -58,7 +67,7 @@ More on this in the [Templating](Templating%20f4e21af73d744a77aa2c91203a8dbe4f.m
 It is possible to associate helper fields with scalar types by placing both in curly braces (`{}`).
 
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 one: {
 	1
 	#typeName: "int"
@@ -72,7 +81,10 @@ three: {
 	#typeName: "map"
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue"  area="top-right" >}}
+one: 1
+two: "two"
+three: a: 1
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

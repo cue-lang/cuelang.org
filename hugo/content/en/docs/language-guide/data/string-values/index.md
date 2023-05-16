@@ -17,7 +17,7 @@ The string contents are on separate lines between these two.
 The whitespace preceding the last `"""` must prefix each non-empty line of the string contents and is stripped from all lines.
 
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 msg: """
     Hello World!
 
@@ -25,7 +25,7 @@ msg: """
     real treat.
     """
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json"  area="top-right" >}}
 {
     "msg": "Hello World!\n\nThis is a real treat."
 }
@@ -65,12 +65,12 @@ CUE bytes values allow some additional escape sequences.
 A string literal enclosed with an equal number of hashes on both sides allows the usual escape sequences to appear in text verbatim. A string enclosed in a single pair of hashes uses `\#` as the escape character, instead of `\`. A string enclosed in two hashes uses `\##`, and so on.
 
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: #"A newline is\#nwritten as "\n"."#
 
 b: ##"Use \#n to write a newline in that case.”##
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json"  area="top-right" >}}
 {
     "a": "A newline is\nwritten as "\\n"."
     "b": "Use \#n to write a newline in that case."
