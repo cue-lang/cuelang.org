@@ -196,7 +196,7 @@ func (sc *serveContext) relayHugoOutput() {
 			nl = "\n"
 		}
 
-		sc.e.errorf("%s%s%s", prefix, line, nl)
+		sc.e.debugf("%s%s%s", prefix, line, nl)
 	}
 
 }

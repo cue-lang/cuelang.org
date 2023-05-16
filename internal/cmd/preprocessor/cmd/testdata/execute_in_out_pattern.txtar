@@ -1,13 +1,10 @@
-# Ensure that preprocessor understands the various forms of text/template
-# shorthand that we use.
+# Ensure that preprocessor understands the shorthand in-out archive
 
 unquote content/dir/en.md
-
-# Make a golden file of the input to ensure it is written back intact
-cp content/dir/en.md content/dir/en.md.golden
+unquote content/dir/en.md.golden
 
 # Run the preprocessor
-exec preprocessor execute --debug
+exec preprocessor execute --debug --update
 
 # Copy the resulting soure file sideways and use that in comparison
 # so that we don't inadvertently update it when using CUE_UPDATE=1
@@ -30,15 +27,34 @@ package site
 >
 >```coq
 >{{{with sidebyside "en" "json-superset"}}}
->exec cue export in.cue
->cmp stdout stdout.json
 >-- in.cue --
 >// A doc comment
 >map: {
 >	member1: 3 // a line comment
 >	member2: 4
 >}
->-- stdout.json --
+>-- out.json --
+>{{{end}}}
+>```
+>
+>Some text after
+>
+-- content/dir/en.md.golden --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>```coq
+>{{{with sidebyside "en" "json-superset"}}}
+>-- in.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>-- out.json --
 >{
 >    "map": {
 >        "member1": 3,

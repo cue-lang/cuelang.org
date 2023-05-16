@@ -86,8 +86,8 @@ point2: y: 2
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 point2: {
-    x: 1
-    y: 2
+	x: 1
+	y: 2
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -100,8 +100,8 @@ point3: {x: 1} & {y: 2}
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
 point3: {
-    x: 1
-    y: 2
+	x: 1
+	y: 2
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}

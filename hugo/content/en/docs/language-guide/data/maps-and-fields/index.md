@@ -20,6 +20,11 @@ a1:    1
 $id:   "yipee"
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
+{
+    "a1": 1,
+    "a-b": 2,
+    "$id": "yipee"
+}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -34,6 +39,10 @@ a: x:   1
 "a": y: 2
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
+a: {
+	x: 1
+	y: 2
+}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -73,6 +82,9 @@ three: {
 }
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
+one: 1
+two: "two"
+three: a: 1
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
