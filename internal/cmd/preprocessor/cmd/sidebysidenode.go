@@ -19,14 +19,10 @@ import (
 	"bytes"
 	"fmt"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 
-	"cuelang.org/go/cue/format"
-
-	encjson "encoding/json"
-
-	"cuelang.org/go/encoding/json"
 	"github.com/rogpeppe/go-internal/txtar"
 )
 
@@ -39,10 +35,11 @@ const (
 )
 
 type sidebysideNode struct {
-	node  *nodeWrapper
-	lang  string
-	label string
-	ar    *txtar.Archive
+	node             *nodeWrapper
+	lang             string
+	label            string
+	sourceArchive    *txtar.Archive
+	effectiveArchive *txtar.Archive
 
 	*bufferedErrorContext
 }
@@ -65,45 +62,171 @@ func (s *sidebysideNode) run() runnable {
 	}
 }
 
-func (s *sidebysideNodeRunContext) run() error {
+func (s *sidebysideNodeRunContext) run() (err error) {
+	defer recoverFatalError(&err)
 	// Skip entirely if the #norun tag is present
 	if _, ok, _ := s.node.tag(tagNorun); ok {
 		return nil
 	}
+
+	type job struct {
+		cmd  *exec.Cmd
+		post func()
+	}
+	var jobs []job
+
 	// First format all non-output files
-	for i := range s.node.ar.Files {
-		f := &s.node.ar.Files[i]
+	for i := range s.node.sourceArchive.Files {
+		f := &s.node.sourceArchive.Files[i]
 		a := analyseFilename(f.Name)
 		if a.isOut {
 			continue
 		}
 		switch a.ext {
 		case "json":
-			expr, err := json.Extract(f.Name, f.Data)
-			if err != nil {
-				return s.errorf("%v: failed to extract JSON from %s: %v", s, f.Name, err)
-			}
-			v := s.node.node.rf.page.ctx.executor.ctx.BuildExpr(expr)
-			if err := v.Err(); err != nil {
-				return s.errorf("%v: failed to build CUE value from %s: %v", s, f.Name, err)
-			}
-			byts, err := encjson.MarshalIndent(v, "", "  ")
-			if err != nil {
-				return s.errorf("%v: failed to format CUE value as json for %s: %v", s, f.Name, err)
-			}
-			f.Data = byts
+			var res bytes.Buffer
+			cmd := s.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+			cmd.Stdout = &res
+			jobs = append(jobs, job{
+				cmd: cmd,
+				post: func() {
+					f.Data = res.Bytes()
+				},
+			})
 		case "yaml":
-			// TODO implement.
+			var res bytes.Buffer
+			cmd := s.dockerCmd(nil, "cue", "export", "--out=yaml", "yaml:", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+			cmd.Stdout = &res
+			jobs = append(jobs, job{
+				cmd: cmd,
+				post: func() {
+					f.Data = res.Bytes()
+				},
+			})
 		case "cue":
-			b, err := format.Source(f.Data)
-			if err != nil {
-				s.debugf("%v: failed to format CUE in %q %q: %v", s, s.node.label, f.Name, err)
-			} else {
-				f.Data = b
-			}
+			var res bytes.Buffer
+			cmd := s.dockerCmd(nil, "cue", "fmt", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+			cmd.Stdout = &res
+			jobs = append(jobs, job{
+				cmd: cmd,
+				post: func() {
+					f.Data = res.Bytes()
+				},
+			})
 		}
 	}
+
+	// Start the formatting jobs
+	for _, j := range jobs {
+		if err := j.cmd.Start(); err != nil {
+			s.errorf("%v: failed to start %v: %v", s, j.cmd, err)
+		}
+	}
+
+	// Wait for the formatting jobs in order
+	for _, j := range jobs {
+		if err := j.cmd.Wait(); err != nil {
+			s.errorf("%v: failed to run %v: %v", s, j.cmd, err)
+		} else {
+			j.post()
+		}
+	}
+
+	// Is there a script to run? If there is no effective script, i.e. non blank
+	// non comment lines, we might need to fill one in when running. There are
+	// shorthand versions of sidebyside nodes which don't have a script and yet
+	// we want to run a predefined set of commands and write the files back.
+	effectiveArchive := *s.node.sourceArchive
+	s.node.effectiveArchive = &effectiveArchive
+
+	if !isEffectiveComment(effectiveArchive.Comment) {
+		// Try to build up a real script
+	}
+
+	// Now that the archive is updated with valid formatted files, run the
+	// script
+	td, err := s.tempDir("")
+	if err != nil {
+		s.fatalf("%v: failed to create temp dir: %v", s, err)
+	}
+	targetFile := filepath.Join(td, "script.txtar")
+	containerFile := "/tmp/script.txtar"
+	if err := os.WriteFile(targetFile, txtar.Format(s.node.effectiveArchive), 0666); err != nil {
+		s.fatalf("%v: failed to write script: %v", s, err)
+	}
+	ts := s.dockerCmd(
+		// We need to mount the script
+		[]string{fmt.Sprintf("-v=%s:%s", targetFile, containerFile)},
+		"testscript",
+		fmt.Sprintf("-u=%v", s.executionContext.updateGoldenFiles),
+		containerFile,
+	)
+	s.debugf("%v: running %v", s, ts)
+
+	if byts, err := ts.CombinedOutput(); err != nil {
+		s.fatalf("%v: failed to run %v: %v\n%s", s, ts, err, tabIndent(byts))
+	}
+
+	// Read the archive back and assign to indices of the effective archive
+	resArchive, err := txtar.ParseFile(targetFile)
+	if err != nil {
+		s.fatalf("%v: failed to read resulting archvie %s: %v", s, targetFile, err)
+	}
+	for i := range effectiveArchive.Files {
+		effectiveArchive.Files[i] = resArchive.Files[i]
+	}
+
 	return nil
+}
+
+func isEffectiveComment(b []byte) bool {
+	lines := bytes.Split(b, []byte("\n"))
+	for _, line := range lines {
+		line = bytes.TrimSpace(line)
+		if len(line) != 0 && !bytes.HasPrefix(line, []byte("#")) {
+			return true
+		}
+	}
+	// We saw only blank lines or comments
+	return false
+}
+
+func tabIndent(b []byte) []byte {
+	if len(b) == 0 {
+		return b
+	}
+	return append([]byte("\t"), bytes.ReplaceAll(b, []byte("\n"), []byte("\n\t"))...)
+
+}
+
+func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...string) *exec.Cmd {
+	td, err := s.tempDir("")
+	if err != nil {
+		s.fatalf("%v: failed to create temp dir: %v", s, err)
+	}
+	var args []string
+	args = append(args,
+		"docker", "run", "--rm",
+
+		// Need to be able to pass stdin
+		"-i",
+
+		// All docker images used by unity must support this interface
+		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
+		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
+	)
+	args = append(args, dockerArgs...)
+	args = append(args,
+		dockerImageTag,
+		"--",
+	)
+	args = append(args, cmdArgs...)
+	cmd := exec.Command(args[0], args[1:]...)
+	cmd.Dir = td
+	return cmd
 }
 
 func (s *sidebysideNodeRunContext) Format(state fmt.State, verb rune) {
@@ -114,7 +237,7 @@ func (s *sidebysideNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
 	p("```coq\n")
 	p("%swith %s %q %q%s\n", s.node.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.node.rf.page.rightDelim)
-	p("%s", txtar.Format(s.ar))
+	p("%s", txtar.Format(s.sourceArchive))
 	p("%send%s\n", s.node.rf.page.leftDelim, s.node.rf.page.rightDelim)
 	p("```\n")
 }
@@ -122,7 +245,7 @@ func (s *sidebysideNode) writeSourceTo(b *bytes.Buffer) {
 func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 	var locations []string
-	switch l := len(s.ar.Files); l {
+	switch l := len(s.effectiveArchive.Files); l {
 	case 2:
 		// real side-by-side. Yes, you read the following line correctly
 		locations = []string{"top-left", "top-right"}
@@ -131,10 +254,10 @@ func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	default:
 		var b bytes.Buffer
 		s.writeSourceTo(&b)
-		return fmt.Errorf("do not know how to handle %d txtar files: \n%s", l, b.Bytes())
+		return s.errorf("do not know how to handle %d txtar files: \n%s", l, b.Bytes())
 	}
 	p("{{< code-tabs >}}\n")
-	for i, f := range s.ar.Files {
+	for i, f := range s.effectiveArchive.Files {
 		a := analyseFilename(f.Name)
 		var typ string
 		name := f.Name
@@ -181,8 +304,9 @@ func analyseFilename(p string) (res filenameAnalysis) {
 			break
 		}
 	}
-	res.basename = b[:i]
-	if i < len(b) {
+	if i > 0 {
+		// Found a .
+		res.basename = b[:i]
 		res.ext = b[i+1:]
 	}
 	switch res.basename {
@@ -199,11 +323,13 @@ func analyseFilename(p string) (res filenameAnalysis) {
 // the tag identified by key was present or not. err will be non-nil if there
 // were errors in parsing the arguments to a tag.
 //
+// Note that this searches the sourceArchive.
+//
 // TODO: work out whether we want to handle comments in tag lines (which are
 // themselves comments already).
 func (s *sidebysideNode) tag(key string) (args []string, present bool, err error) {
 	prefix := []byte("#" + key)
-	sc := bufio.NewScanner(bytes.NewReader(s.ar.Comment))
+	sc := bufio.NewScanner(bytes.NewReader(s.sourceArchive.Comment))
 	lineNo := 1
 	for sc.Scan() {
 		line := bytes.TrimSpace(sc.Bytes())

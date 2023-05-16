@@ -50,7 +50,7 @@ func (e *errorContext) isInError() bool {
 func (e *errorContext) errorf(format string, args ...any) error {
 	s := fmt.Sprintf(format, args...)
 	e.inError = true
-	return errors.New(e.logf("**%s", s))
+	return errors.New(e.logf("** %s", s))
 }
 
 func (e *errorContext) fatalf(format string, args ...any) {

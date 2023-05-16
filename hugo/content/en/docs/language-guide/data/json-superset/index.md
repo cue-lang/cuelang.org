@@ -25,7 +25,7 @@ map: {
 {
     "map": {
         "member1": 3,
-        "member2": 4,
+        "member2": 4
     }
 }
 {{< /code-tab >}}
@@ -52,7 +52,7 @@ map: {
 {
     "map": {
         "member1": 3,
-        "member2": 4,
+        "member2": 4
     }
 }
 {{< /code-tab >}}
