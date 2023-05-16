@@ -106,6 +106,10 @@ func (s *sidebysideNodeRunContext) run() error {
 	return nil
 }
 
+func (s *sidebysideNodeRunContext) cueCmd() {
+
+}
+
 func (s *sidebysideNodeRunContext) Format(state fmt.State, verb rune) {
 	fmt.Fprintf(state, "%v", s.node)
 }
