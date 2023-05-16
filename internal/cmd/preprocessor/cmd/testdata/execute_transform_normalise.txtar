@@ -18,7 +18,10 @@ package site
 >---
 >
 >{{{ with sidebyside "en" "json-superset" }}}
->-- file1.txt --
+>-- in.cue --
+>x: {
+>y: 5
+>}
 >-- file2.txt --
 >{{{end}}}
 -- content/dir/en.md.golden --
@@ -28,7 +31,10 @@ package site
 >
 >```coq
 >{{{with sidebyside "en" "json-superset"}}}
->-- file1.txt --
+>-- in.cue --
+>x: {
+>	y: 5
+>}
 >-- file2.txt --
 >{{{end}}}
 >```
