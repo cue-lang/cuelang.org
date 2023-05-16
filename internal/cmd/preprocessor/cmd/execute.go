@@ -28,9 +28,10 @@ type lang string
 const (
 	langEn lang = "en"
 
-	flagDir   flagName = "dir"
-	flagDebug flagName = "debug"
-	flagServe flagName = "serve"
+	flagDir    flagName = "dir"
+	flagDebug  flagName = "debug"
+	flagServe  flagName = "serve"
+	flagUpdate flagName = "update"
 )
 
 var (
@@ -44,7 +45,17 @@ var (
 )
 
 type executionContext struct {
+	updateGoldenFiles bool
+
 	debug bool
+
+	tempRoot string
+}
+
+// tempDir creates a new temporary directory within the
+// tempRoot for this executionContext.
+func (e executionContext) tempDir(pattern string) (string, error) {
+	return os.MkdirTemp(e.tempRoot, pattern)
 }
 
 // executeDef is the implementation of the execute command
