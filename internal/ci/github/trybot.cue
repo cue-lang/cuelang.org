@@ -69,6 +69,11 @@ workflows: trybot: _repo.bashWorkflow & {
 				// 		"""
 				// },
 
+				// Rebuild docker image
+				json.#step & {
+					run: "./_scripts/buildDockerImage.bash"
+				},
+
 				// Go generate steps
 				_goGenerate & {
 					name: "Regenerate"
