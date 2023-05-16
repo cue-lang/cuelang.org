@@ -22,7 +22,10 @@ b: '''
 	'''
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
-
+{
+    "a": "QSBuZXdsaW5lIGlzIHdyaXR0ZW4gYXMgXG4u",
+    "b": "c2ZzZg=="
+}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -38,7 +41,8 @@ b: '''
 	'''
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="yaml" type="terminal" area="top-right" >}}
-
+a: !!binary QSBuZXdsaW5lIGlzIHdyaXR0ZW4gYXMgXG4u
+b: !!binary c2ZzZg==
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

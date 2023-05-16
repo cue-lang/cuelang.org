@@ -10,7 +10,7 @@ List elements are considered to be a special kind of data field, with elements i
 
 ```coq
 {{{with sidebyside "en" "list-example"}}}
-
+#norun open lists
 -- in.cue --
 a: [1, 2]
 "a": [1, 2, 3]

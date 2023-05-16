@@ -32,6 +32,7 @@ This is not:
 
 ```coq
 {{{with sidebyside "en" "composition-simple-error"}}}
+#norun
 -- in.cue --
 b: 1
 b: 2
@@ -48,6 +49,7 @@ respectively:
 
 ```coq
 {{{with sidebyside "en" "composition-composite"}}}
+#norun
 -- in.cue --
 point: {
 	x: 1
@@ -86,8 +88,8 @@ point2: x: 1
 point2: y: 2
 -- out.cue --
 point2: {
-    x: 1
-    y: 2
+	x: 1
+	y: 2
 }
 {{{end}}}
 ```
@@ -100,8 +102,8 @@ One can also combine values with the `&` operator:
 point3: {x: 1} & {y: 2}
 -- out.cue --
 point3: {
-    x: 1
-    y: 2
+	x: 1
+	y: 2
 }
 {{{end}}}
 ```

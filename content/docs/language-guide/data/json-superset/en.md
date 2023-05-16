@@ -27,7 +27,7 @@ map: {
 {
     "map": {
         "member1": 3,
-        "member2": 4,
+        "member2": 4
     }
 }
 {{{end}}}
@@ -57,7 +57,7 @@ map: {
 {
     "map": {
         "member1": 3,
-        "member2": 4,
+        "member2": 4
     }
 }
 {{{end}}}
