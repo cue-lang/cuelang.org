@@ -9,11 +9,11 @@ CUE lists are identical to JSON lists.
 List elements are considered to be a special kind of data field, with elements indexed by their position.
 
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: [1, 2]
 "a": [1, 2, 3]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: [1, 2, 3]
 {{< /code-tab >}}
 {{< /code-tabs >}}
