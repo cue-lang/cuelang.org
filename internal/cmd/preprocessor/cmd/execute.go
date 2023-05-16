@@ -25,7 +25,6 @@ import (
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/cuecontext"
-	"cuelang.org/go/cue/load"
 	"golang.org/x/exp/maps"
 	"golang.org/x/exp/slices"
 )
@@ -232,27 +231,27 @@ func (ec *executeContext) execute() error {
 	}
 
 	// Load all the CUE in one go
-	cfg := &load.Config{
-		Dir: ec.executor.wd,
-	}
-	var insts []string
-	for _, d := range ec.order {
-		p := ec.pages[d]
-		insts = append(insts, "."+string(os.PathSeparator)+p.relPath)
-	}
-	bps := load.Instances(insts, cfg)
-	vs, err := ec.executor.ctx.BuildInstances(bps)
-	if err != nil {
-		return fmt.Errorf("failed to build CUE instances: %w", err)
-	}
+	// cfg := &load.Config{
+	// 	Dir: ec.executor.wd,
+	// }
+	// var insts []string
+	// for _, d := range ec.order {
+	// 	p := ec.pages[d]
+	// 	insts = append(insts, "."+string(os.PathSeparator)+p.relPath)
+	// }
+	// bps := load.Instances(insts, cfg)
+	// vs, err := ec.executor.ctx.BuildInstances(bps)
+	// if err != nil {
+	// 	return fmt.Errorf("failed to build CUE instances: %w", err)
+	// }
 
 	// Process the pages we found.
-	for i, d := range ec.order {
+	for _, d := range ec.order {
 		p := ec.pages[d]
-		v := vs[i]
-		if err := v.Validate(); err != nil {
-			return fmt.Errorf("failed to validate CUE package %s: %w", p.relPath, err)
-		}
+		// v := vs[i]
+		// if err := v.Validate(); err != nil {
+		// 	return fmt.Errorf("failed to validate CUE package %s: %w", p.relPath, err)
+		// }
 		if err := p.process(); err != nil {
 			return err
 		}
