@@ -223,7 +223,8 @@ func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (n
 		node:                 newNodeWrapper(pc.rootFile, n, pc),
 		lang:                 lang,
 		label:                label,
-		ar:                   ar,
+		sourceArchive:        ar,
+		effectiveArchive:     ar, // This gets updated in a run step if one happens
 		bufferedErrorContext: pc.bufferedErrorContext,
 	}
 	return res, nil

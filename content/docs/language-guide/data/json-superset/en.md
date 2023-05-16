@@ -15,19 +15,17 @@ data and configurations in general:
 
 ```coq
 {{{with sidebyside "en" "json-superset"}}}
-exec cue export in.cue
-cmp stdout stdout.json
 -- in.cue --
 // A doc comment
 map: {
 	member1: 3 // a line comment
 	member2: 4
 }
--- stdout.json --
+-- out.json --
 {
     "map": {
         "member1": 3,
-        "member2": 4,
+        "member2": 4
     }
 }
 {{{end}}}
@@ -44,20 +42,17 @@ CUE.
 
 ```coq
 {{{with sidebyside "en" "json-comments"}}}
-exec cue export in.cue
-cmp stdout stdout.json
-
 -- in.cue --
 // A doc comment
 map: {
 	member1: 3 // a line comment
 	member2: 4
 }
--- stdout.json --
+-- out.json --
 {
     "map": {
         "member1": 3,
-        "member2": 4,
+        "member2": 4
     }
 }
 {{{end}}}

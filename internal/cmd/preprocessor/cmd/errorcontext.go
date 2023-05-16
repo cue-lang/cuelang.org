@@ -50,7 +50,12 @@ func (e *errorContext) isInError() bool {
 func (e *errorContext) errorf(format string, args ...any) error {
 	s := fmt.Sprintf(format, args...)
 	e.inError = true
-	return errors.New(e.logf("**%s", s))
+	return errors.New(e.logf("** %s", s))
+}
+
+func (e *errorContext) fatalf(format string, args ...any) {
+	err := e.errorf(format, args...)
+	panic(fatalError{error: err})
 }
 
 func (e *errorContext) logf(format string, args ...any) string {
@@ -84,4 +89,23 @@ func (e *errorContext) errorIfInError() error {
 		return nil
 	}
 	return errors.New("in error")
+}
+
+type fatalError struct {
+	error
+}
+
+func recoverFatalError(err *error) {
+	switch r := recover().(type) {
+	case nil:
+		// normal behaviour
+	case fatalError:
+		if *err != nil {
+			panic("error value already set?")
+		}
+		*err = r.error
+	default:
+		// Unknown value - panic on
+		panic(r)
+	}
 }
