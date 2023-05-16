@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -59,6 +60,10 @@ type page struct {
 	*bufferedErrorContext
 }
 
+func (p *page) Format(state fmt.State, verb rune) {
+	fmt.Fprintf(state, "%s", p.dir)
+}
+
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	contentDir := filepath.Join(ec.executor.root, "content")
 	contentRelPath, err := filepath.Rel(contentDir, dir)
@@ -87,7 +92,7 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 // to target /hugo/content directories (including _$LANG directories), and then
 // processes the set of root files that form the basis of a page root.
 func (p *page) process() error {
-	p.debugf("process page from %s\n", p.relPath)
+	p.debugf("%v: process page", p)
 
 	// langs are the languages "supported" by this page
 	langs := maps.Keys(p.langTargets)
@@ -129,7 +134,7 @@ func (p *page) process() error {
 		// TODO: come up with a better approach to skipping certain files.
 		// Should this perhaps be an include-based approach?
 		switch filepath.Ext(n) {
-		case ".cue":
+		case ".cue", ".golden":
 			continue
 		}
 
@@ -169,6 +174,7 @@ func (p *page) process() error {
 			targetPath := filepath.Join(targetDir, prefix+"index."+ext)
 
 			if err := rootFile.transform(targetPath); err != nil {
+				fmt.Println("==============")
 				return err
 			}
 		}

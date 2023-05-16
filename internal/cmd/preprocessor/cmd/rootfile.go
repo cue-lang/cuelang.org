@@ -101,6 +101,7 @@ func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 }
 
 func (rf *rootFile) transform(targetPath string) error {
+	rf.debugf("%v: transform root file", rf)
 	// For now, we only support en as a main language. For other languages
 	// we simply copy from source to target.
 	if rf.lang != langEn {

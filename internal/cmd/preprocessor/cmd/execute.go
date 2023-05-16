@@ -45,6 +45,14 @@ var (
 
 type executionContext struct {
 	debug bool
+
+	tempRoot string
+}
+
+// tempDir creates a new temporary directory within the
+// tempRoot for this executionContext.
+func (e executionContext) tempDir(pattern string) (string, error) {
+	return os.MkdirTemp(e.tempRoot, pattern)
 }
 
 // executeDef is the implementation of the execute command

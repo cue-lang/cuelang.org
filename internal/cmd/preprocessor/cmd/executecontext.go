@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 )
@@ -39,6 +40,10 @@ type executeContext struct {
 	pages map[string]*page
 
 	*errorContext
+}
+
+func (ec *executeContext) Format(state fmt.State, verb rune) {
+	fmt.Fprintf(state, "%v", ec.executor)
 }
 
 func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
@@ -76,7 +81,6 @@ func (ec *executeContext) execute() error {
 
 	// Process the pages we found.
 	for _, d := range ec.order {
-		ec.debugf("page %s", d)
 		p := ec.pages[d]
 		// v := vs[i]
 		// if err := v.Validate(); err != nil {
@@ -91,7 +95,6 @@ func (ec *executeContext) execute() error {
 	}
 
 	for i, d := range ec.order {
-		ec.debugf("log page %s", d)
 		p := ec.pages[d]
 		w := pageWaits[i]
 		<-w
@@ -162,11 +165,13 @@ func (ec *executeContext) findPages() error {
 				if err != nil {
 					return ec.errorf("%v: failed to create page in dir %s: %v", ec, dir, err)
 				}
+				ec.debugf("%v: found page at %v", ec, dir)
 				ec.pages[dir] = p
 			}
 
 			// Register the root file with the page
 			rf := p.newRootFile(name, lang, prefix, ext)
+			p.debugf("%v: added root file named %s", p, name)
 			p.rootFiles[name] = rf
 			rootPages := p.langTargets[lang]
 			rootPages = append(rootPages, rf)
