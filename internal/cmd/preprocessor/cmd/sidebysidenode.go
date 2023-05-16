@@ -19,14 +19,10 @@ import (
 	"bytes"
 	"fmt"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 
-	"cuelang.org/go/cue/format"
-
-	encjson "encoding/json"
-
-	"cuelang.org/go/encoding/json"
 	"github.com/rogpeppe/go-internal/txtar"
 )
 
@@ -65,11 +61,19 @@ func (s *sidebysideNode) run() runnable {
 	}
 }
 
-func (s *sidebysideNodeRunContext) run() error {
+func (s *sidebysideNodeRunContext) run() (err error) {
+	defer recoverFatalError(&err)
 	// Skip entirely if the #norun tag is present
 	if _, ok, _ := s.node.tag(tagNorun); ok {
 		return nil
 	}
+
+	type job struct {
+		cmd  *exec.Cmd
+		post func()
+	}
+	var jobs []job
+
 	// First format all non-output files
 	for i := range s.node.ar.Files {
 		f := &s.node.ar.Files[i]
@@ -79,31 +83,82 @@ func (s *sidebysideNodeRunContext) run() error {
 		}
 		switch a.ext {
 		case "json":
-			expr, err := json.Extract(f.Name, f.Data)
-			if err != nil {
-				return s.errorf("%v: failed to extract JSON from %s: %v", s, f.Name, err)
-			}
-			v := s.node.node.rf.page.ctx.executor.ctx.BuildExpr(expr)
-			if err := v.Err(); err != nil {
-				return s.errorf("%v: failed to build CUE value from %s: %v", s, f.Name, err)
-			}
-			byts, err := encjson.MarshalIndent(v, "", "  ")
-			if err != nil {
-				return s.errorf("%v: failed to format CUE value as json for %s: %v", s, f.Name, err)
-			}
-			f.Data = byts
+			var res bytes.Buffer
+			cmd := s.dockerCmd("cue", "export", "--out=json", "json:", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+			cmd.Stdout = &res
+			jobs = append(jobs, job{
+				cmd: cmd,
+				post: func() {
+					f.Data = res.Bytes()
+				},
+			})
 		case "yaml":
-			// TODO implement.
+			var res bytes.Buffer
+			cmd := s.dockerCmd("cue", "export", "--out=yaml", "yaml:", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+			cmd.Stdout = &res
+			jobs = append(jobs, job{
+				cmd: cmd,
+				post: func() {
+					f.Data = res.Bytes()
+				},
+			})
 		case "cue":
-			b, err := format.Source(f.Data)
-			if err != nil {
-				s.debugf("%v: failed to format CUE in %q %q: %v", s, s.node.label, f.Name, err)
-			} else {
-				f.Data = b
-			}
+			var res bytes.Buffer
+			cmd := s.dockerCmd("cue", "fmt", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+			cmd.Stdout = &res
+			jobs = append(jobs, job{
+				cmd: cmd,
+				post: func() {
+					f.Data = res.Bytes()
+				},
+			})
 		}
 	}
+
+	// Start the formatting jobs
+	for _, j := range jobs {
+		if err := j.cmd.Start(); err != nil {
+			s.errorf("%v: failed to start %v: %v", s, j.cmd, err)
+		}
+	}
+
+	// Wait for the formatting jobs in order
+	for _, j := range jobs {
+		if err := j.cmd.Wait(); err != nil {
+			s.errorf("%v: failed to run %v: %v", s, j.cmd, err)
+		} else {
+			j.post()
+		}
+	}
+
 	return nil
+}
+
+func (s *sidebysideNodeRunContext) dockerCmd(args ...string) *exec.Cmd {
+	td, err := s.tempDir("")
+	if err != nil {
+		s.fatalf("%v: failed to create temp dir: %v", s, err)
+	}
+	args = append([]string{
+		"docker", "run", "--rm",
+
+		// Need to be able to pass stdin
+		"-i",
+
+		// All docker images used by unity must support this interface
+		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
+		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
+
+		dockerImageTag,
+
+		"--",
+	}, args...)
+	cmd := exec.Command(args[0], args[1:]...)
+	cmd.Dir = td
+	return cmd
 }
 
 func (s *sidebysideNodeRunContext) Format(state fmt.State, verb rune) {
@@ -131,7 +186,7 @@ func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	default:
 		var b bytes.Buffer
 		s.writeSourceTo(&b)
-		return fmt.Errorf("do not know how to handle %d txtar files: \n%s", l, b.Bytes())
+		return s.errorf("do not know how to handle %d txtar files: \n%s", l, b.Bytes())
 	}
 	p("{{< code-tabs >}}\n")
 	for i, f := range s.ar.Files {
@@ -181,8 +236,9 @@ func analyseFilename(p string) (res filenameAnalysis) {
 			break
 		}
 	}
-	res.basename = b[:i]
-	if i < len(b) {
+	if i > 0 {
+		// Found a .
+		res.basename = b[:i]
 		res.ext = b[i+1:]
 	}
 	switch res.basename {
