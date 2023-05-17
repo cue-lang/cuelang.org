@@ -14,9 +14,9 @@ CUE extends JSON numerals with:
 
 ## SI Suffixes
 
-Numbers can have SI suffixes to express large numbers more compactly.  It is
-also possible to use a suffix with a fraction, in which case the result gets
-rounded down to the nearest whole number.
+Numbers can have SI suffixes to express large numbers more compactly.
+It is also possible to use a suffix with a fraction, in which case the result
+gets rounded down to the nearest whole number.
 
 | Decimal Suffix | Value | Binary Suffix | Value |
 | --- | --- | --- | --- |
@@ -28,21 +28,20 @@ rounded down to the nearest whole number.
 
 Note that `k` is written as `K` instead.
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{with sidebyside "en" "numeric-literals-si"}}}
+-- in.cue --
 a: 1_000_000
 b: 1M
 c: 1Mi
-```
-{{< columns-separator >}}
-```{title="$ cue eval --out json"}
+-- out.json --
 {
     "a": 1000000,
     "b": 1000000,
     "c": 1048576
 }
+{{{end}}}
 ```
-{{< /columns >}}
 
 ## Numbers with a different base
 
@@ -54,19 +53,18 @@ CUE can represent numbers in bases other than decimal.
 | Octal | 0o | 0o10 | 8 |
 | Binary | 0b | 0b1111_1111 | 255 |
 
-{{< columns >}}
-```{title="in.cue"}
+```coq
+{{{with sidebyside "en" "numeric-literals-altbase"}}}
+-- in.cue --
 o: 0o755
 h: 0x00Dec0de
 b: 0b0101_0001
-```
-{{< columns-separator >}}
-```{title="$ cue eval in.cue"}
+-- out.json --
 {
     "o": 493,
     "h": 14598366,
     "b": 81
 }
+{{{end}}}
 ```
-{{< /columns >}}
 

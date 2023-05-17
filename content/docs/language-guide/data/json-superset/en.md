@@ -4,8 +4,8 @@ weight: 10
 draft: false
 ---
 
-CUE adds functionality to JSON that makes it easier to write for humans to write
-data and configurations in general:
+CUE adds functionality to JSON that makes it easier for humans to write data and
+configurations in general:
 
 - there are `// single line comments`,
 - quotes can be omitted for field names without special characters,
@@ -37,8 +37,7 @@ map: {
 
 ## Comments
 
-CUE supports `//`-style comments: any line  Comments are first-class citizens in
-CUE.
+CUE supports `//`-style comments. Comments are first-class citizens in CUE.
 
 ```coq
 {{{with sidebyside "en" "json-comments"}}}
@@ -58,9 +57,9 @@ map: {
 {{{end}}}
 ```
 
-A comment that is directly on a line directly preceding an element, that comment
-is called a doc comment. CUE will treat such comments as special and will
-associate that comment with this element during computation.
+A comment that is on a line directly preceding an element is called a doc
+comment. CUE will associate that comment with this element and will persist
+after computation.
 
 ## null, true, and false
 

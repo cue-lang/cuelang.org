@@ -14,7 +14,8 @@ CUE extends JSON strings with:
 
 A multiline string starts and ends with a `"""`, the latter being on a line by itself.
 The string contents are on separate lines between these two.
-The whitespace preceding the last `"""` must prefix each non-empty line of the string contents and is stripped from all lines.
+The whitespace preceding the last `"""` must prefix each non-empty line of the
+string contents and is stripped from all lines.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
@@ -62,7 +63,10 @@ CUE bytes values allow some additional escape sequences.
 
 ## Alternate escape sequences
 
-A string literal enclosed with an equal number of hashes on both sides allows the usual escape sequences to appear in text verbatim. A string enclosed in a single pair of hashes uses `\#` as the escape character, instead of `\`. A string enclosed in two hashes uses `\##`, and so on.
+A string literal enclosed with an equal number of hashes on both sides allows
+the usual escape sequences to appear in text verbatim. A string enclosed in a
+single pair of hashes uses `\#` as the escape character, instead of `\`. A
+string enclosed in two hashes uses `\##`, and so on.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
@@ -83,4 +87,3 @@ CUE alternate escape sequences originate from Swift.
 {{{end}}}
 
 Alternate escape sequences work analogously for multiline strings.
-
