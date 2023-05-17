@@ -221,7 +221,7 @@ func (s *sidebysideNodeRunContext) buildEffectiveScript(ar *txtar.Archive) ([]by
 			Out filenameAnalysis
 		}
 		cmd := s.templateScript(`
-		{{if eq .Out.Ext "err"}}! {{end}}exec cue export {{if ne .Out.Ext "err"}}--out {{.Out.Ext}}{{end}} {{.In.Ext}}: {{.In.Filepath}}
+		{{if eq .Out.Ext "err"}}! {{end}}exec cue {{if and (eq .In.Ext "cue") (eq .Out.Ext "cue")}}eval{{else}}export{{end}} {{if ne .Out.Ext "err"}}--out {{.Out.Ext}}{{end}} {{.In.Ext}}: {{.In.Filepath}}
 		cmp {{if eq .Out.Ext "err"}}stderr{{else}}stdout{{end}} {{.Out.Filepath}}
 		`, args{In: in, Out: out})
 		return []byte(cmd), true

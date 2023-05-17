@@ -14,12 +14,12 @@ CUE extends JSON strings with:
 
 A multiline string starts and ends with a `"""`, the latter being on a line by itself.
 The string contents are on separate lines between these two.
-The whitespace preceding the last `"""` must prefix each non-empty line of the string contents and is stripped from all lines.
+The whitespace preceding the last `"""` must prefix each non-empty line of the
+string contents and is stripped from all lines.
 
 ```coq
 {{{with sidebyside "en" "composition-operator"}}}
-#norun
-
+#norun \ at end of line in multiline string
 -- in.cue --
 msg: """
     Hello World!
@@ -64,12 +64,14 @@ CUE bytes values allow some additional escape sequences.
 
 ## Alternate escape sequences
 
-A string literal enclosed with an equal number of hashes on both sides allows the usual escape sequences to appear in text verbatim. A string enclosed in a single pair of hashes uses `\#` as the escape character, instead of `\`. A string enclosed in two hashes uses `\##`, and so on.
+A string literal enclosed with an equal number of hashes on both sides allows
+the usual escape sequences to appear in text verbatim. A string enclosed in a
+single pair of hashes uses `\#` as the escape character, instead of `\`. A
+string enclosed in two hashes uses `\##`, and so on.
 
 ```coq
 {{{with sidebyside "en" "composition-operator"}}}
-#norun
-
+#norun unclear what the bug is
 -- in.cue --
 a: #"A newline is\#nwritten as "\n"."#
 
@@ -87,4 +89,3 @@ CUE alternate escape sequences originate from Swift.
 {{{end}}}
 
 Alternate escape sequences work analogously for multiline strings.
-

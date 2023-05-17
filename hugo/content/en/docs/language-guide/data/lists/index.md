@@ -6,7 +6,8 @@ draft: false
 
 CUE lists are identical to JSON lists.
 
-List elements are considered to be a special kind of data field, with elements indexed by their position.
+List elements are considered to be a special kind of data field, with elements
+indexed by their position.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}

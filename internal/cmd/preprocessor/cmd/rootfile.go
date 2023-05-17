@@ -126,6 +126,10 @@ func (rf *rootFile) transform(targetPath string) error {
 		return err
 	}
 
+	if rf.inError {
+		return rf.errorIfInError()
+	}
+
 	// Write the parsed rootFile back to ensure we have have normalised input.
 	writeBack := new(bytes.Buffer)
 	if err := rf.writeSource(writeBack); err != nil {
