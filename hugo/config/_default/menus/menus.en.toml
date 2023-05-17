@@ -39,7 +39,7 @@
 [[cta]]
     identifier = "cta"
     name = "Download"
-    url = "/download/"
+    url = "https://github.com/cue-lang/cue/releases"
     post = "download"
     weight = 300
 
@@ -93,7 +93,7 @@
 [[footer]]
     parent = "column3"
     name = "Download"
-    url = "/download"
+    url = "https://github.com/cue-lang/cue/releases"
     weight = 430
 [[footer]]
     identifier = "column4"

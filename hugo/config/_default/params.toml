@@ -16,8 +16,8 @@ logo = "svg/logo-alpha.svg"
 # Contents allows for markdown, leave out the button if you don't want a button
 [notification]
     type = 'test'
-    content = '**Note:** a sticky note we wanted to show at the bottom'
+    content = '**Note:** documentation on this site relies on CUE v0.6.0-alpha.1'
     [notification.button]
-        link = '/download'
+        link = 'https://github.com/cue-lang/cue/releases'
         icon = 'download'
         text = 'Download'
