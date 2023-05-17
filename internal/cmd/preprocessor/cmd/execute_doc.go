@@ -150,5 +150,6 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	cmd.Flags().StringP(string(flagDir), "d", "", "working directory. Defaults to the current working directory")
 	cmd.Flags().BoolP(string(flagServe), "s", false, "watch the working directory for changes, executing on each batch of changes")
 	cmd.Flags().BoolP(string(flagUpdate), "u", false, "update files in archives when formatting and running scripts")
+	cmd.Flags().BoolP(string(flagRun), "r", false, "whether to attempt to run scripts or not")
 	return cmd
 }

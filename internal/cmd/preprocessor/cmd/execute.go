@@ -32,6 +32,7 @@ const (
 	flagDebug  flagName = "debug"
 	flagServe  flagName = "serve"
 	flagUpdate flagName = "update"
+	flagRun    flagName = "run"
 )
 
 var (
@@ -50,6 +51,8 @@ type executionContext struct {
 	debug bool
 
 	tempRoot string
+
+	run bool
 }
 
 // tempDir creates a new temporary directory within the
@@ -81,6 +84,7 @@ func executeDef(c *Command, args []string) error {
 	ctx := executionContext{
 		debug:             flagDebug.Bool(c),
 		updateGoldenFiles: flagUpdate.Bool(c),
+		run:               flagRun.Bool(c),
 	}
 
 	e := newExecutor(ctx, wd, projectRoot, c)
