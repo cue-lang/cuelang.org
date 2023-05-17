@@ -122,8 +122,10 @@ func (rf *rootFile) transform(targetPath string) error {
 		return err
 	}
 
-	if err := rf.run(); err != nil {
-		return err
+	if !rf.executionContext.norun {
+		if err := rf.run(); err != nil {
+			return err
+		}
 	}
 
 	if rf.inError {
