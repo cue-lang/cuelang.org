@@ -43,13 +43,12 @@ b: conflicting values 2 and 1:
 {{{end}}}
 ```
 
-The values do not have to be the same to be consistent.
-For instance, maps and lists are merged by matching their keys and indexes,
-respectively:
+Two maps or lists are consistent if the values with the same key or index are
+consistent.
 
 ```coq
 {{{with sidebyside "en" "composition-composite"}}}
-#norun
+#norun open lists
 -- in.cue --
 point: {
 	x: 1
@@ -75,7 +74,7 @@ list: [1, 2, 3, 4]
 As can be seen, identical fields do not have to be placed next to each other.
 
 Merging is also used for validation.
-More on this in [Schemas](Schemas%20b39455d56fdb433ba9ea59c04a2dcece.md).
+More on this in [Schemas and Validation](Schemas%20and%20Validation%20b39455d56fdb433ba9ea59c04a2dcece.md).
 
 ## Single-field shorthand
 
@@ -88,8 +87,8 @@ point2: x: 1
 point2: y: 2
 -- out.cue --
 point2: {
-	x: 1
-	y: 2
+    x: 1
+    y: 2
 }
 {{{end}}}
 ```
@@ -102,8 +101,8 @@ One can also combine values with the `&` operator:
 point3: {x: 1} & {y: 2}
 -- out.cue --
 point3: {
-	x: 1
-	y: 2
+    x: 1
+    y: 2
 }
 {{{end}}}
 ```
@@ -114,7 +113,7 @@ these pairs can be combined in any order or combination without changing the
 resulting value.
 {{{end}}}
 
-## Packages
+### Packages
 
 The package directive allows marking two CUE files to be grouped together.
 It is placed at the top of a CUE file.
@@ -147,7 +146,10 @@ cart: {
 
 CUE will evaluate all files belonging to the same package as if the file
 contents were contained in one large file, merging identical fields as described
-above.  This also means that references
+above.s This means that references in one file may refer to top-level fields in
+another file.
+
+<!-- TODO: add link to references -->
 
 If there are multiple packages in a directory, CUE will default to the package
 with the same name as the directory.
