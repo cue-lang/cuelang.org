@@ -118,6 +118,8 @@ jobs:
           	echo "commit author email address does not match signed-off-by trailer"
           	exit 1
           fi
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       - name: Install Node
         uses: actions/setup-node@v3
         with:
@@ -146,6 +148,7 @@ jobs:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
+            ~/.cache/dockercache
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - if: |-
@@ -156,6 +159,7 @@ jobs:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
+            ~/.cache/dockercache
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - if: |-
