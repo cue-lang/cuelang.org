@@ -12,7 +12,7 @@ jobs:
     defaults:
       run:
         shell: bash
-    if: ${{ ((github.ref == 'refs/heads/ci/test') && false) || github.event.client_payload.type == 'trybot' }}
+    if: ${{ ((github.ref == 'refs/heads/ci/test') && true) || github.event.client_payload.type == 'trybot' }}
     steps:
       - name: Write netrc file for cueckoo Gerrithub
         run: |-
@@ -28,7 +28,7 @@ jobs:
         run: |-
           cat <<EOD >> $GITHUB_OUTPUT
           value<<DOE
-          null
+          {"type":"trybot","CL":554087,"patchset":3,"targetBranch":"master","ref":"refs/changes/87/554087/3"}
           DOE
           EOD
       - if: github.event.client_payload.type != 'trybot'
