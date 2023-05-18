@@ -45,6 +45,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 				_repo.earlyChecks,
 
+				_setupBuildx,
 				_installNode,
 				_installGo,
 				_installHugo,
@@ -198,5 +199,14 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	// the OS from the runner. i.e. from _linuxWorkflow somehow.
 	#os: "Linux"
 
+	#additionalCacheDirs: [
+		"~/.cache/dockercache",
+	]
+
 	_
+}
+
+_setupBuildx: {
+	name: "Set up Docker Buildx"
+	uses: "docker/setup-buildx-action@v2"
 }
