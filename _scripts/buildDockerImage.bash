@@ -14,6 +14,12 @@ package cmd
 const dockerImageTag = "$tag"
 EOD
 
+caching=""
+if [ "${CI:-}" == "true" ]
+then
+	caching="--cache-from=type=local,src=~/.cache/dockercache --cache-to=type=local,dest=~/.cache/dockercache"
+fi
+
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit
 # caching layer.  This is particularly important in CI.
-docker buildx build -t $tag --load -f ./_docker/Dockerfile ./_docker
+docker buildx build $caching -t $tag --load -f ./_docker/Dockerfile ./_docker
