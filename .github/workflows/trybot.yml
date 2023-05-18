@@ -146,6 +146,7 @@ jobs:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
+            ~/.cache/dockercache
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - if: |-
@@ -156,6 +157,7 @@ jobs:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
+            ~/.cache/dockercache
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - if: |-
