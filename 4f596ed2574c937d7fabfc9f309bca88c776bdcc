@@ -50,6 +50,23 @@
       "message": "I would also mention what fixed it - presumably Netlify fixed it on their side and told you about it?",
       "revId": "4f596ed2574c937d7fabfc9f309bca88c776bdcc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c3a8bbb_25636304",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-18T09:05:01Z",
+      "side": 1,
+      "message": "FYI, might as well bump to 1.20.4 now, which has important security fixes.",
+      "revId": "4f596ed2574c937d7fabfc9f309bca88c776bdcc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
