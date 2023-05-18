@@ -45,6 +45,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 				_repo.earlyChecks,
 
+				_setupBuildx,
 				_installNode,
 				_installGo,
 				_installHugo,
@@ -199,4 +200,9 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	#os: "Linux"
 
 	_
+}
+
+_setupBuildx: {
+	name: "Set up Docker Buildx"
+	uses: "docker/setup-buildx-action@v2"
 }
