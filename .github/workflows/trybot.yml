@@ -139,8 +139,8 @@ jobs:
         name: Get go build/test cache directory
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
       - if: |-
-          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
-          Dispatch-Trailer: {"type":"'))))
+          (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache@v3
         with:
           path: |-
@@ -149,8 +149,8 @@ jobs:
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - if: |-
-          ! ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
-          Dispatch-Trailer: {"type":"'))))
+          ! (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache/restore@v3
         with:
           path: |-

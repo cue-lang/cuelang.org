@@ -4,9 +4,6 @@ name: Evict caches
 "on":
   schedule:
     - cron: 0 2 * * *
-  push:
-    branches:
-      - ci/test
 jobs:
   test:
     if: ${{github.repository == 'cue-lang/cuelang.org'}}
@@ -93,7 +90,7 @@ jobs:
           	for i in master alpha
           	do
           		if [[ "$j" != $i ]]; then
-          		   continue
+          			continue
           		fi
 
           		echo Branch: $j
@@ -117,7 +114,7 @@ jobs:
           			echo "Push to trybot try $try"
           			exitCode=0; push="$(git push -f trybot FETCH_HEAD:$j 2>&1)" || exitCode=$?
           			echo "$push"
-          			if [ $exitCode -eq 0 ]; then
+          			if [[ $exitCode -eq 0 ]]; then
           				success=true
           				break
           			fi
