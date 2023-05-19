@@ -16,6 +16,7 @@ package github
 
 import (
 	"list"
+	"path"
 	"strings"
 	"strconv"
 
@@ -199,8 +200,13 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	// the OS from the runner. i.e. from _linuxWorkflow somehow.
 	#os: "Linux"
 
+	let repoName = path.Base(_repo.githubRepositoryPath)
+	let github_workspace = path.Join(["work", repoName, repoName])
+
 	#additionalCacheDirs: [
 		"~/.cache/dockercache",
+		"\(github_workspace)/hugo/node_modules",
+		"\(github_workspace)/playground/node_modules",
 	]
 
 	_
