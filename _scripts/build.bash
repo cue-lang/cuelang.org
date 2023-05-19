@@ -20,6 +20,10 @@ go run ./internal/cmd/preprocessor execute --debug --norun=$norun
 
 # Main site
 cd hugo
-$time npm ci
+if [[ "${CI:-}" == "true" ]]; then
+	$time npm ci
+else
+	$time npm install
+fi
 $time npm run icons
 $time hugo $@
