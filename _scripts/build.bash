@@ -4,6 +4,9 @@ set -eux
 
 # build.bash is used to build the site ready for deploy.
 
+# cd to the parent directory to that containing the script
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
+
 norun="true"
 time=""
 if [ "${NETLIFY:-}" != "true" ]
@@ -20,6 +23,10 @@ go run ./internal/cmd/preprocessor execute --debug --norun=$norun
 
 # Main site
 cd hugo
-$time npm ci
+if [[ "${CI:-}" == "true" ]]; then
+	$time npm ci
+else
+	$time npm install
+fi
 $time npm run icons
 $time hugo $@
