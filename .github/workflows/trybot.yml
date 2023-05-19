@@ -149,6 +149,8 @@ jobs:
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
             ~/.cache/dockercache
+            ~/hugo/node_modules
+            ~/playground/node_modules
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - if: |-
@@ -160,6 +162,8 @@ jobs:
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
             ~/.cache/dockercache
+            ~/hugo/node_modules
+            ~/playground/node_modules
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - if: |-
