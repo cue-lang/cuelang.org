@@ -26,6 +26,9 @@ module.exports = (env, argv) => {
                 }),
             ],
         },
+        cache: {
+            type: 'filesystem',
+        },
         plugins: [
             new HtmlWebpackPlugin({
                 template: './src/index.html'
