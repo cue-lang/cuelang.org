@@ -8,8 +8,14 @@ trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
+if [ "${CI:-}" == "true" ]
+then
+	echo "not expecting this to be run on CI"
+	exit 1
+fi
+
 cd hugo
-npm ci
+$time npm install
 npm run icons
 
 cd ..

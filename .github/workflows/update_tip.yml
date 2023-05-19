@@ -92,6 +92,8 @@ jobs:
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
             ~/.cache/dockercache
+            $GITHUB_WORKSPACE/hugo/node_modules
+            $GITHUB_WORKSPACE/playground/node_modules
           key: Linux-1.20.4-${{ github.run_id }}
           restore-keys: Linux-1.20.4
       - name: Tip dist
