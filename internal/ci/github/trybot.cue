@@ -201,6 +201,8 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 
 	#additionalCacheDirs: [
 		"~/.cache/dockercache",
+		"~/hugo/node_modules",
+		"~/playground/node_modules",
 	]
 
 	_
