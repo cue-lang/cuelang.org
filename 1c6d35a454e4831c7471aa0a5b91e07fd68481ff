@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d92e3dd_15d74ab9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:52:49Z",
+      "side": 1,
+      "message": "Just flagging that the latest Node seems to be v20.",
+      "revId": "1c6d35a454e4831c7471aa0a5b91e07fd68481ff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
