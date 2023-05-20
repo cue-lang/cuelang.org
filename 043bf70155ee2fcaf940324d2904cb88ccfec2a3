@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ceb867c_0b3500e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:59:40Z",
+      "side": 1,
+      "message": "I\u0027d also like the commit message to summarize the perf benefit here. Otherwise added complexity like this is hard to judge without knowing whether the speed-up is 5% or 70%, for example.",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8315235_87e407cf",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 13
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:59:40Z",
+      "side": 1,
+      "message": "I know next to nothing about node, but could we not share a single node_modules between the two to perhaps save a bit of duplication?",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee744826_c8b7e902",
+        "filename": "playground/_scripts/build.bash",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:59:40Z",
+      "side": 1,
+      "message": "reminder to use `[[` on bash, it\u0027s a lot safer against weird edge cases",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5846463_a2abcae1",
+        "filename": "playground/_scripts/build.bash",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:59:40Z",
+      "side": 1,
+      "message": "FYI: if the var is always true/false, which it is in this case, you can just do `if $hasWebpackCache; then`",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1741b429_21e288b4",
+        "filename": "playground/webpack.config.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:59:40Z",
+      "side": 1,
+      "message": "why is this not a default?!",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
