@@ -122,6 +122,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 
 	// Start the formatting jobs
 	for _, j := range jobs {
+		s.debugf("%v: running %v", s, j.cmd)
 		if err := j.cmd.Start(); err != nil {
 			s.errorf("%v: failed to start %v: %v", s, j.cmd, err)
 		}
@@ -281,6 +282,9 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 
 		// Need to be able to pass stdin
 		"-i",
+
+		// We want to use host networking.
+		"--network=host",
 
 		// All docker images used by unity must support this interface
 		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
