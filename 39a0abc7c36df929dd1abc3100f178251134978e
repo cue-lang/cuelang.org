@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c00c9360_c89b9137",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:52:00Z",
+      "side": 1,
+      "message": "IMO this deserves an explanation why. I\u0027d personally explain that we want it for the performance benefit, but also because we don\u0027t need to isolate the network (presumably because we trust the images and scripts in general?).",
+      "revId": "39a0abc7c36df929dd1abc3100f178251134978e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
