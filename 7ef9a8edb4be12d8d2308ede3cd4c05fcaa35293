@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27eb5ebf_ae24d857",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-20T14:54:46Z",
+      "side": 1,
+      "message": "note that this may break if $HOME has any spaces, but I think it\u0027s OK for CI, because I don\u0027t see why that would ever be true on Linux. but it might just happen on Windows/Mac depending on how funky their default setup is.",
+      "revId": "7ef9a8edb4be12d8d2308ede3cd4c05fcaa35293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
