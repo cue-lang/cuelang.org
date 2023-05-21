@@ -16,6 +16,24 @@
       "message": "Just flagging that the latest Node seems to be v20.",
       "revId": "1c6d35a454e4831c7471aa0a5b91e07fd68481ff",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb5b9933_fee9a0cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-21T05:17:47Z",
+      "side": 1,
+      "message": "Thanks - we stick to the LTS version.",
+      "parentUuid": "6d92e3dd_15d74ab9",
+      "revId": "1c6d35a454e4831c7471aa0a5b91e07fd68481ff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
