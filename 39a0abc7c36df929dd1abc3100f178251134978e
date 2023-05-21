@@ -16,6 +16,24 @@
       "message": "IMO this deserves an explanation why. I\u0027d personally explain that we want it for the performance benefit, but also because we don\u0027t need to isolate the network (presumably because we trust the images and scripts in general?).",
       "revId": "39a0abc7c36df929dd1abc3100f178251134978e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30b8d038_957671e0",
+        "filename": "internal/cmd/preprocessor/cmd/sidebysidenode.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-21T05:11:21Z",
+      "side": 1,
+      "message": "It\u0027s an acceptable solution for now. Per my comment in the updated patchset, this change can be considered a useful benefit until caching arrives.",
+      "parentUuid": "c00c9360_c89b9137",
+      "revId": "39a0abc7c36df929dd1abc3100f178251134978e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
