@@ -168,6 +168,7 @@ jobs:
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
+      - run: find ~/work/cuelang.org/cuelang.org/playground/node_modules/.cache/webpack || true
       - run: ./_scripts/buildDockerImage.bash
       - name: Regenerate
         run: go generate ./...
@@ -179,6 +180,7 @@ jobs:
         run: go mod tidy
       - name: Dist
         run: ./_scripts/build.bash
+      - run: find ~/work/cuelang.org/cuelang.org/playground/node_modules/.cache/webpack || true
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: npm run lint
