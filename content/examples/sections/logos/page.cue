@@ -1,5 +1,3 @@
-package content_examples_sections_logos
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"examples": "sections": "logos": {}
