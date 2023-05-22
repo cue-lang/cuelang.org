@@ -43,6 +43,14 @@ type sidebysideNode struct {
 	effectiveArchive *txtar.Archive
 }
 
+func (s *sidebysideNode) Label() string {
+	return s.label
+}
+
+func (s *sidebysideNode) nodeType() string {
+	return "sidebyside"
+}
+
 var _ runnableNode = (*sidebysideNode)(nil)
 
 type sidebysideNodeRunContext struct {
