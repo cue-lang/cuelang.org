@@ -1,0 +1,9 @@
+{
+    "Unifications": 185,
+    "Disjuncts": 188,
+    "Conjuncts": 469,
+    "Freed": 101,
+    "Reused": 91,
+    "Allocs": 96,
+    "Retained": 87
+}
