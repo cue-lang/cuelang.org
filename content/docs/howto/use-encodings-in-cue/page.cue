@@ -1,5 +1,3 @@
-package content_docs_howto_use_encodings_in_cue
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "howto": "use-encodings-in-cue": {}
