@@ -54,7 +54,7 @@ A field that uses quotes may not be referenced with its unquoted name, even if
 it would otherwise be a valid identifier.
 
 ```coq
-{{{with sidebyside "en" "references-basics"}}}
+{{{with sidebyside "en" "quoted-field-reference-error"}}}
 #norun need to implement #nofmt for in.cue
 -- in.cue --
 "foo": 2
@@ -69,7 +69,7 @@ Aliases allows referring to fields with names that have to be quoted, by
 allowing those to be associated with an identifier.
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "aliases"}}}
 -- in.cue --
 X="a-b": 1 // a-b must be quoted
 b:       X
@@ -92,7 +92,7 @@ List values can be similarly aliased.
 </aside>
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "list-aliases"}}}
 #norun list aliases not yet supported
 -- in.cue --
 [X=1, X, X]
@@ -105,7 +105,7 @@ In most cases, instead of referencing a field alias of a parent node one should
 use value aliases.
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "value-alias"}}}
 -- in.cue --
 a: X={
 	bar: X.foo
