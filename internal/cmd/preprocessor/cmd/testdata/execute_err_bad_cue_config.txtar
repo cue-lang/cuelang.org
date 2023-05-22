@@ -1,0 +1,21 @@
+# Ensure that preprocessor understands the various forms of text/template
+# shorthand that we use.
+
+unquote content/dir/en.md
+! exec preprocessor execute --debug
+stderr 'error in site configuration: expected label or '':'', found ''IDENT'' is'
+
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
+package site
+
+this is very broken
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+-- hugo/content/en/dir/index.md.golden --
+---
+title: JSON Superset
+---
