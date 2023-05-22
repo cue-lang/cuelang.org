@@ -1,5 +1,3 @@
-package content_docs_language_guide_data_organizing_configuration
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "language-guide": "data": "organizing-configuration": {}
