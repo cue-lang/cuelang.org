@@ -1,5 +1,3 @@
-package content_docs_howto_go_api
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "howto": "go-api": {}
