@@ -1,5 +1,3 @@
-package content_examples_shortcodes_sidenote
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"examples": "shortcodes": "sidenote": {}
