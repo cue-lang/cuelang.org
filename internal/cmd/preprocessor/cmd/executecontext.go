@@ -15,9 +15,11 @@
 package cmd
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 type executeContext struct {
@@ -60,6 +62,46 @@ func (ec *executeContext) execute() error {
 	// supported languages.
 	if err := ec.findPages(); err != nil {
 		return err
+	}
+
+	var imports, content bytes.Buffer
+
+	// Write out CUE files alongside the pages
+	for _, d := range ec.order {
+		p := ec.pages[d]
+		parts := strings.Split(p.relPath, "/")
+		if len(parts) == 1 {
+			continue
+		}
+		var pageCUE bytes.Buffer
+		munged := p.relPath
+		munged = strings.ReplaceAll(munged, "-", "_")
+		munged = strings.ReplaceAll(munged, "/", "_")
+		fmt.Fprintf(&pageCUE, "package %s\n", munged)
+		fmt.Fprintf(&imports, "%s \"github.com/cue-lang/cuelang.org/content/%s:%s\"\n", munged, p.relPath, munged)
+		for _, part := range parts {
+			fmt.Fprintf(&content, "%q: ", part)
+		}
+		fmt.Fprintf(&content, "%s\n", munged)
+		targetFile := filepath.Join(p.dir, "page.cue")
+		if err := os.WriteFile(targetFile, pageCUE.Bytes(), 0666); err != nil {
+			return ec.errorf("%v: failed to write to %s: %v", ec, targetFile, err)
+		}
+	}
+
+	siteRoot := filepath.Join(ec.executor.root, "content", "site.cue")
+	site, err := os.Create(siteRoot)
+	if err != nil {
+		return ec.errorf("%v: failed to create site root file %s: %v", ec, siteRoot, err)
+	}
+	fmt.Fprintf(site, "package content\n")
+	fmt.Fprintf(site, "\n")
+	fmt.Fprintf(site, "import (\n")
+	fmt.Fprintf(site, "%s", imports.Bytes())
+	fmt.Fprintf(site, ")\n")
+	fmt.Fprintf(site, "%s", content.Bytes())
+	if err := site.Close(); err != nil {
+		return ec.errorf("%v: failed to close %s: %v", ec, siteRoot, err)
 	}
 
 	// Load all the CUE in one go
