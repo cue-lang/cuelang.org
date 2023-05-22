@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cfd4299_297d10db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-22T14:24:22Z",
+      "side": 1,
+      "message": "Noting the performance difference to https://review.gerrithub.io/c/cue-lang/cuelang.org/+/554244 - raised as https://github.com/cue-lang/cue/issues/2413",
+      "revId": "5c8324128e572b899d59a2a72082cbd5b913fe4f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
