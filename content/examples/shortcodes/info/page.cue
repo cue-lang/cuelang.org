@@ -1,5 +1,3 @@
-package content_examples_shortcodes_info
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"examples": "shortcodes": "info": {}
