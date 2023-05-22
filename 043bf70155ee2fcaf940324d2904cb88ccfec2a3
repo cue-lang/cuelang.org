@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "28e70e10_d1f24ca0",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 13
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-22T09:40:48Z",
+      "side": 1,
+      "message": "We could do that. However, this CL is not actually about the node_modules part of this at all, rather the webpack cache that is by default stored in node_modules/.cache/webpack. I\u0027ve therefore changed this CL to be that more specific thing, because your observation challenged me to be more precise about what\u0027s going on here.",
+      "parentUuid": "e8315235_87e407cf",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee744826_c8b7e902",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-05-20T14:59:40Z",
       "side": 1,
       "message": "reminder to use `[[` on bash, it\u0027s a lot safer against weird edge cases",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8408c26a_7a7bff1c",
+        "filename": "playground/_scripts/build.bash",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-22T09:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee744826_c8b7e902",
       "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3376713c_d019b6c1",
+        "filename": "playground/_scripts/build.bash",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-22T09:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5846463_a2abcae1",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1741b429_21e288b4",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-05-20T14:59:40Z",
       "side": 1,
       "message": "why is this not a default?!",
+      "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2e6b1d2_a1fba15c",
+        "filename": "playground/webpack.config.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-22T09:40:48Z",
+      "side": 1,
+      "message": "Who knows!",
+      "parentUuid": "1741b429_21e288b4",
       "revId": "043bf70155ee2fcaf940324d2904cb88ccfec2a3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
