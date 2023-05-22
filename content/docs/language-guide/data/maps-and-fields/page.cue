@@ -1,5 +1,3 @@
-package content_docs_language_guide_data_maps_and_fields
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "language-guide": "data": "maps-and-fields": {}
