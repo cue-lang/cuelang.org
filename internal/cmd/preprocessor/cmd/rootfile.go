@@ -19,8 +19,10 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
+	"golang.org/x/exp/maps"
 )
 
 var (
@@ -124,6 +126,12 @@ func (rf *rootFile) transform(targetPath string) error {
 		return err
 	}
 
+	// Validate the steps that we parsed. This allows us, for example, to ensure
+	// that we don't repeat step labels.
+	if err := rf.validate(); err != nil {
+		return err
+	}
+
 	if !rf.norun {
 		if err := rf.run(); err != nil {
 			return err
@@ -151,6 +159,51 @@ func (rf *rootFile) transform(targetPath string) error {
 	if err := writeIfDiff(transformed, targetPath, nil); err != nil {
 		return err
 	}
+	return nil
+}
+
+// validate ensures that the parsed steps are valid with respect to each other.
+// For example, we ensure that we don't have multiple steps of the same type
+// with the same label.
+func (rf *rootFile) validate() error {
+	labels := make(map[string]map[string][]node)
+	for _, bp := range rf.bodyParts {
+		n, ok := bp.(labelledNode)
+		if !ok {
+			continue
+		}
+		t := n.nodeType()
+		tld := labels[t]
+		if tld == nil {
+			tld = make(map[string][]node)
+			labels[t] = tld
+		}
+		l := n.Label()
+		nls := tld[l]
+		nls = append(nls, bp)
+		tld[l] = nls
+	}
+	types := maps.Keys(labels)
+	sort.Strings(types)
+	for _, t := range types {
+		tld := labels[t]
+		labels := maps.Keys(tld)
+		sort.Strings(labels)
+		for _, l := range labels {
+			nls := tld[l]
+			if len(nls) == 1 {
+				continue
+			}
+			// We have multiple positions. Report an error showing allow of them
+			// for convenience.
+			var positions bytes.Buffer
+			for _, n := range nls {
+				fmt.Fprintf(&positions, "\t%v\n", n)
+			}
+			rf.errorf("%v: node type %q declares label %q multiple times:\n%s", rf, t, l, positions.Bytes())
+		}
+	}
+
 	return nil
 }
 
