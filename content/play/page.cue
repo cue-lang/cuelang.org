@@ -1,5 +1,3 @@
-package content_play
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"play": {}

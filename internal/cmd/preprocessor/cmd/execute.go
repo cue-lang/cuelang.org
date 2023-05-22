@@ -60,6 +60,10 @@ type executionContext struct {
 
 	// ctx is the context used for all CUE operations
 	ctx *cue.Context
+
+	// config is the configuration for the entire site being handled by the
+	// preprocessor.
+	config cue.Value
 }
 
 // tempDir creates a new temporary directory within the

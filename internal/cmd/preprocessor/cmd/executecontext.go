@@ -18,6 +18,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+
+	"cuelang.org/go/cue/load"
 )
 
 type executeContext struct {
@@ -65,19 +67,35 @@ func (ec *executeContext) execute() error {
 	}
 
 	// Load all the CUE in one go
-	// cfg := &load.Config{
-	// 	Dir: ec.executor.wd,
-	// }
-	// var insts []string
-	// for _, d := range ec.order {
-	// 	p := ec.pages[d]
-	// 	insts = append(insts, "."+string(os.PathSeparator)+p.relPath)
-	// }
-	// bps := load.Instances(insts, cfg)
-	// vs, err := ec.executor.ctx.BuildInstances(bps)
-	// if err != nil {
-	// 	return fmt.Errorf("failed to build CUE instances: %w", err)
-	// }
+	cfg := &load.Config{
+		Dir: ec.executor.root,
+	}
+	var insts []string
+	for _, d := range ec.order {
+		// Find all CUE files
+		//
+		// TODO: filter for only those that are part of the site package? Maybe
+		// later
+		entries, err := os.ReadDir(d)
+		if err != nil {
+			return ec.errorf("%v: failed to read %s: %v", ec, d, err)
+		}
+		for _, e := range entries {
+			n := e.Name()
+			if filepath.Ext(n) == ".cue" {
+				insts = append(insts, filepath.Join(d, n))
+			}
+		}
+	}
+	bps := load.Instances(insts, cfg)
+	if l := len(bps); l != 1 {
+		return ec.errorf("%v: expected 1 build instance; saw %d", ec, l)
+	}
+	v := ec.executor.ctx.BuildInstance(bps[0])
+	if err := v.Err(); err != nil {
+		return ec.errorf("%v: error in site configuration: %v", ec, err)
+	}
+	ec.config = v
 
 	var pageWaits []<-chan struct{}
 
