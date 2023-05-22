@@ -18,7 +18,7 @@ The whitespace preceding the last `"""` must prefix each non-empty line of the
 string contents and is stripped from all lines.
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "multiline-strings"}}}
 #norun \ at end of line in multiline string
 -- in.cue --
 msg: """
@@ -70,7 +70,7 @@ single pair of hashes uses `\#` as the escape character, instead of `\`. A
 string enclosed in two hashes uses `\##`, and so on.
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "alternative-escape-sequences"}}}
 #norun unclear what the bug is
 -- in.cue --
 a: #"A newline is\#nwritten as "\n"."#
