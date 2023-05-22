@@ -1,0 +1,40 @@
+# Ensure that preprocessor understands the various forms of text/template
+# shorthand that we use.
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+! exec preprocessor execute
+cmpenv stderr stderr.golden
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>```coq
+>{{{with sidebyside "en" "json-superset"}}}
+>-- in.cue --
+>x: 5
+>-- out.yaml --
+>x: 5
+>{{{end}}}
+>```
+>```coq
+>{{{with sidebyside "en" "json-superset"}}}
+>-- in.cue --
+>x: 5
+>-- out.yaml --
+>x: 5
+>{{{end}}}
+>```
+-- hugo/content/en/dir/index.md.golden --
+---
+title: JSON Superset
+---
+-- stderr.golden --
+** $WORK/content/dir/en.md: node type "sidebyside[json-superset]" declares label "json-superset" multiple times:
+	$WORK/content/dir/en.md:5:8
+	$WORK/content/dir/en.md:13:8
+terminating because of errors
