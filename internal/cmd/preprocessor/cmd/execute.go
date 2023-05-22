@@ -22,6 +22,7 @@ import (
 	"regexp"
 	"strings"
 
+	"cuelang.org/go/cmd/cue/cmd"
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/cuecontext"
 )
@@ -112,7 +113,8 @@ func executeDef(c *Command, args []string) error {
 	}
 
 	if err := e.execute(filter); err != nil {
-		return err
+		// We will always have printed the error at this point
+		return cmd.ErrPrintedError
 	}
 	return nil
 }
