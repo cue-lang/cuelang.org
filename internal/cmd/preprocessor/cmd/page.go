@@ -179,7 +179,6 @@ func (p *page) process() error {
 			targetPath := filepath.Join(targetDir, prefix+"index."+ext)
 
 			if err := rootFile.transform(targetPath); err != nil {
-				fmt.Println("==============")
 				return err
 			}
 		}
