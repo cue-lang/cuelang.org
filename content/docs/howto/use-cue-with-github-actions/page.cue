@@ -1,5 +1,3 @@
-package content_docs_howto_use_cue_with_github_actions
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "howto": "use-cue-with-github-actions": {}
