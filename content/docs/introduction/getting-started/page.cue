@@ -1,5 +1,2 @@
-package content_docs_introduction_getting_started
-
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+package site
+"docs": "introduction": "getting-started": {}
