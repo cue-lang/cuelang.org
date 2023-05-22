@@ -1,5 +1,3 @@
-package content_docs_howto_language
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "howto": "language": {}
