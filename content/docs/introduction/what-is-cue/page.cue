@@ -1,5 +1,3 @@
-package content_docs_introduction_what_is_cue
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "introduction": "what-is-cue": {}

@@ -1,5 +1,3 @@
-package content_docs_howto_encode_json_yaml_with_cue
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "howto": "encode-json-yaml-with-cue": {}
