@@ -34,7 +34,7 @@ package site
 >Some text before
 >
 >```coq
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with sidebyside "en" "json-superset-1"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --
@@ -56,7 +56,7 @@ package site
 >Some text after
 >
 >```coq
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with sidebyside "en" "json-superset-2"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --
@@ -128,7 +128,7 @@ package site
 >Some text before
 >
 >```coq
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with sidebyside "en" "json-superset-1"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --
@@ -150,7 +150,7 @@ package site
 >Some text after
 >
 >```coq
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with sidebyside "en" "json-superset-2"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --
