@@ -32,10 +32,14 @@ type node interface {
 	// writeTransformTo is the transform or output step of the preprocessor.
 	writeTransformTo(buf *bytes.Buffer) error
 
+	Type() string
+
 	fmt.Formatter
 }
 
 type runnableNode interface {
+	node
+
 	// run is called to cause a node to update itself. The simplest example is a
 	// node that includes a testscript script. Running such a node would involve
 	// running the script, ensuring it passes and is therefore consistent with
@@ -43,6 +47,13 @@ type runnableNode interface {
 	// indicate that scripts should be updated to ensure assertions pass (e.g.
 	// testscript.Params.UpdateScripts)
 	run() runnable
+}
+
+type labelledNode interface {
+	node
+
+	// A Label uniquely identifies a nodes of each types.
+	Label() string
 }
 
 type runnable interface {
@@ -80,6 +91,10 @@ func (n *nodeWrapper) writeTransformTo(b *bytes.Buffer) error {
 
 func (n *nodeWrapper) Format(f fmt.State, verb rune) {
 	fmt.Fprintf(f, "%v:%s", n.rf, n.rf.nodePos(n.underlying))
+}
+
+func (n *nodeWrapper) Type() string {
+	return fmt.Sprintf("nodeWrapper(%T)", n.underlying)
 }
 
 type textNode struct {
