@@ -49,6 +49,14 @@ func (s *sidebysideNode) Format(state fmt.State, verb rune) {
 	fmt.Fprintf(state, "%v", s.node)
 }
 
+func (s *sidebysideNode) Label() string {
+	return s.label
+}
+
+func (s *sidebysideNode) Type() string {
+	return "sidebyside"
+}
+
 var _ runnableNode = (*sidebysideNode)(nil)
 
 type sidebysideNodeRunContext struct {

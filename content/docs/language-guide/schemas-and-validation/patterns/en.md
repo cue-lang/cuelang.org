@@ -17,7 +17,7 @@ In programming languages this is called a *sum type*.
 {{{end}}}
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "alternates"}}}
 -- in.cue --
 #Base: kind!: string
 #A: {
@@ -63,7 +63,7 @@ This following approach accepts all implementations of `#Base`, retaining
 all additional fields.
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "implementations"}}}
 -- in.cue --
 #Base: kind!: string
 
@@ -81,7 +81,7 @@ all additional fields.
 The following approach allows all implementations of `#Base` while discarding excess fields.
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "downcast"}}}
 #norun what is going on here?
 -- in.cue --
 #Base: kind!: string
@@ -106,7 +106,7 @@ In general, this is not recommended, as it removes the ability for that schema t
 A package that provides schemas with required discriminator fields could provide a convenience variant, though, with those already filled out:
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "defaults"}}}
 -- in.cue --
 #Schema: {
 	kind!: "a"
