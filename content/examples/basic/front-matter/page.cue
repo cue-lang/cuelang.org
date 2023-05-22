@@ -1,5 +1,3 @@
-package content_examples_basic_front_matter
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"examples": "basic": "front-matter": {}

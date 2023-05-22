@@ -1,5 +1,3 @@
-package content_docs_howto_cue_command
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "howto": "cue-command": {}
