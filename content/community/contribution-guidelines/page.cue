@@ -1,5 +1,3 @@
-package content_community_contribution_guidelines
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"community": "contribution-guidelines": {}
