@@ -15,9 +15,11 @@
 package cmd
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 type executeContext struct {
@@ -60,6 +62,25 @@ func (ec *executeContext) execute() error {
 	// supported languages.
 	if err := ec.findPages(); err != nil {
 		return err
+	}
+
+	// Write out CUE files alongside the pages
+	for _, d := range ec.order {
+		p := ec.pages[d]
+		if p.relPath == "." {
+			continue
+		}
+		parts := strings.Split(p.relPath, "/")
+		var pageCUE bytes.Buffer
+		fmt.Fprintf(&pageCUE, "package site\n")
+		for _, part := range parts {
+			fmt.Fprintf(&pageCUE, "%q: ", part)
+		}
+		fmt.Fprintf(&pageCUE, "{}\n")
+		targetFile := filepath.Join(p.dir, "page.cue")
+		if err := os.WriteFile(targetFile, pageCUE.Bytes(), 0666); err != nil {
+			return ec.errorf("%v: failed to write to %s: %v", ec, targetFile, err)
+		}
 	}
 
 	// Load all the CUE in one go
