@@ -1,5 +1,3 @@
-package content_docs_introduction_tour_validation
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "introduction": "tour": "validation": {}
