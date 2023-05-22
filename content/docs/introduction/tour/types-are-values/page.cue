@@ -1,5 +1,3 @@
-package content_docs_introduction_tour_types_are_values
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"docs": "introduction": "tour": "types-are-values": {}
