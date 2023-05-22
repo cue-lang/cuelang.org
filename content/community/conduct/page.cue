@@ -1,5 +1,3 @@
-package content_community_conduct
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"community": "conduct": {}

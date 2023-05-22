@@ -1,5 +1,3 @@
-package content_examples_basic_code_block
+package site
 
-import "github.com/cue-lang/cuelang.org/site"
-
-site
+"examples": "basic": "code-block": {}
