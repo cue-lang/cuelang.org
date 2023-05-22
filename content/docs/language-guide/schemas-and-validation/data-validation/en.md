@@ -8,7 +8,7 @@ Schema can compose with data, for instance to validate data.
 For instance, this is valid:
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "schema-composed-with-data"}}}
 -- in.cue --
 a:  1
 a?: int
@@ -20,7 +20,7 @@ a: 1
 This is not
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "schema-composed-with-data-error"}}}
 # Right-hand side is red because of error.
 -- in.cue --
 a:  1
@@ -36,7 +36,7 @@ It is also possible to combine schemas. For instance, the following CUE defines
 restrictions on what values are allowed for another schema.
 
 ```coq
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with sidebyside "en" "to-be-completed"}}}
 -- in.cue --
 
 -- out.cue --
