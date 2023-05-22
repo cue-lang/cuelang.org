@@ -21,6 +21,8 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+
+	"cuelang.org/go/cmd/cue/cmd"
 )
 
 type lang string
@@ -105,7 +107,8 @@ func executeDef(c *Command, args []string) error {
 	}
 
 	if err := e.execute(filter); err != nil {
-		return err
+		// We will always have printed the error at this point
+		return cmd.ErrPrintedError
 	}
 	return nil
 }
