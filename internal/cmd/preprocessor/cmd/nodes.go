@@ -17,6 +17,7 @@ package cmd
 import (
 	"bytes"
 	"fmt"
+	"io"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
 )
@@ -35,7 +36,7 @@ type node interface {
 }
 
 type runnableNode interface {
-	node
+	labelledNode
 
 	// run is called to cause a node to update itself. The simplest example is a
 	// node that includes a testscript script. Running such a node would involve
@@ -44,6 +45,8 @@ type runnableNode interface {
 	// indicate that scripts should be updated to ensure assertions pass (e.g.
 	// testscript.Params.UpdateScripts)
 	run() runnable
+
+	hash(w io.Writer)
 }
 
 type labelledNode interface {
