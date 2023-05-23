@@ -17,9 +17,6 @@ package cmd
 import (
 	"fmt"
 	"os"
-
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/cuecontext"
 )
 
 type executor struct {
@@ -33,8 +30,7 @@ type executor struct {
 	// cmd is the execute Cobra command, used to access flag values etc
 	cmd *Command
 
-	// ctx is the context used for all CUE operations
-	ctx *cue.Context
+	*executionContext
 
 	errorContext
 }
@@ -43,15 +39,15 @@ func (e *executor) Format(f fmt.State, verb rune) {
 	fmt.Fprintf(f, "%s", e.root)
 }
 
-func newExecutor(ctx executionContext, wd, projectRoot string, cmd *Command) *executor {
+func newExecutor(ctx *executionContext, wd, projectRoot string, cmd *Command) *executor {
 	res := &executor{
-		wd:   wd,
-		root: projectRoot,
-		cmd:  cmd,
-		ctx:  cuecontext.New(),
-		errorContext: errorContext{
-			executionContext: ctx,
-			log:              os.Stderr,
+		wd:               wd,
+		root:             projectRoot,
+		cmd:              cmd,
+		executionContext: ctx,
+		errorContext: &errorContextWriter{
+			ec:  ctx,
+			log: os.Stderr,
 		},
 	}
 	return res

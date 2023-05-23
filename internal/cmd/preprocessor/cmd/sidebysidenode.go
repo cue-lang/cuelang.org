@@ -36,37 +36,37 @@ const (
 )
 
 type sidebysideNode struct {
-	node             *nodeWrapper
+	*nodeWrapper
 	lang             string
 	label            string
 	sourceArchive    *txtar.Archive
 	effectiveArchive *txtar.Archive
-
-	*bufferedErrorContext
 }
 
 func (s *sidebysideNode) Format(state fmt.State, verb rune) {
-	fmt.Fprintf(state, "%v", s.node)
+	fmt.Fprintf(state, "%v", s.nodeWrapper)
 }
 
 var _ runnableNode = (*sidebysideNode)(nil)
 
 type sidebysideNodeRunContext struct {
-	node *sidebysideNode
-	*bufferedErrorContext
+	*sidebysideNode
+	*errorContextBuffer
 }
 
 func (s *sidebysideNode) run() runnable {
 	return &sidebysideNodeRunContext{
-		node:                 s,
-		bufferedErrorContext: newBufferedErrorContext(s),
+		sidebysideNode: s,
+		errorContextBuffer: &errorContextBuffer{
+			executionContext: s.executionContext,
+		},
 	}
 }
 
 func (s *sidebysideNodeRunContext) run() (err error) {
 	defer recoverFatalError(&err)
 	// Skip entirely if the #norun tag is present
-	if _, ok, _ := s.node.tag(tagNorun); ok {
+	if _, ok, _ := s.tag(tagNorun); ok {
 		return nil
 	}
 
@@ -77,8 +77,8 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	var jobs []job
 
 	// First format all non-output files
-	for i := range s.node.sourceArchive.Files {
-		f := &s.node.sourceArchive.Files[i]
+	for i := range s.sourceArchive.Files {
+		f := &s.sourceArchive.Files[i]
 		a := analyseFilename(f.Name)
 		if a.IsOut {
 			continue
@@ -145,8 +145,8 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	// non comment lines, we might need to fill one in when running. There are
 	// shorthand versions of sidebyside nodes which don't have a script and yet
 	// we want to run a predefined set of commands and write the files back.
-	effectiveArchive := *s.node.sourceArchive
-	s.node.effectiveArchive = &effectiveArchive
+	effectiveArchive := *s.sourceArchive
+	s.effectiveArchive = &effectiveArchive
 
 	var ok bool
 	if !isEffectiveComment(effectiveArchive.Comment) {
@@ -165,14 +165,14 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	}
 	targetFile := filepath.Join(td, "script.txtar")
 	containerFile := "/tmp/script.txtar"
-	if err := os.WriteFile(targetFile, txtar.Format(s.node.effectiveArchive), 0666); err != nil {
+	if err := os.WriteFile(targetFile, txtar.Format(s.effectiveArchive), 0666); err != nil {
 		s.fatalf("%v: failed to write script: %v", s, err)
 	}
 	ts := s.dockerCmd(
 		// We need to mount the script
 		[]string{fmt.Sprintf("-v=%s:%s", targetFile, containerFile)},
 		"testscript",
-		fmt.Sprintf("-u=%v", s.executionContext.updateGoldenFiles),
+		fmt.Sprintf("-u=%v", s.updateGoldenFiles),
 		containerFile,
 	)
 	s.debugf("%v: running %v\n%s", s, ts, tabIndent(txtar.Format(&effectiveArchive)))
@@ -306,16 +306,12 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 	return cmd
 }
 
-func (s *sidebysideNodeRunContext) Format(state fmt.State, verb rune) {
-	fmt.Fprintf(state, "%v", s.node)
-}
-
 func (s *sidebysideNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
 	p("```coq\n")
-	p("%swith %s %q %q%s\n", s.node.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.node.rf.page.rightDelim)
+	p("%swith %s %q %q%s\n", s.nodeWrapper.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.nodeWrapper.rf.page.rightDelim)
 	p("%s", txtar.Format(s.sourceArchive))
-	p("%send%s\n", s.node.rf.page.leftDelim, s.node.rf.page.rightDelim)
+	p("%send%s\n", s.nodeWrapper.rf.page.leftDelim, s.nodeWrapper.rf.page.rightDelim)
 	p("```\n")
 }
 
