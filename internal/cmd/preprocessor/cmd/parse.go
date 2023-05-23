@@ -158,8 +158,13 @@ func (pc parseContext) parse_TextNode(n *parse.TextNode) (node, error) {
 		t = strings.TrimPrefix(t, withEndWrapper)
 	}
 	return &textNode{
-		nodeWrapper: newNodeWrapper(pc.rootFile, n, pc),
-		text:        []byte(t),
+		nodeWrapper: &nodeWrapper{
+			rf:               pc.rootFile,
+			underlying:       n,
+			errorContext:     pc.errorContext,
+			executionContext: pc.executionContext,
+		},
+		text: []byte(t),
 	}, nil
 
 }
@@ -189,7 +194,12 @@ func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
 	default:
 		return nil, pc.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
 	}
-	return newNodeWrapper(pc.rootFile, n, pc), nil
+	return &nodeWrapper{
+		rf:               pc.rootFile,
+		underlying:       n,
+		errorContext:     pc.errorContext,
+		executionContext: pc.executionContext,
+	}, nil
 }
 
 func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (node, error) {
@@ -220,12 +230,16 @@ func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (n
 	ar := txtar.Parse(text)
 
 	res := &sidebysideNode{
-		node:                 newNodeWrapper(pc.rootFile, n, pc),
-		lang:                 lang,
-		label:                label,
-		sourceArchive:        ar,
-		effectiveArchive:     ar, // This gets updated in a run step if one happens
-		bufferedErrorContext: pc.bufferedErrorContext,
+		nodeWrapper: &nodeWrapper{
+			rf:               pc.rootFile,
+			underlying:       n,
+			errorContext:     pc.errorContext,
+			executionContext: pc.executionContext,
+		},
+		lang:             lang,
+		label:            label,
+		sourceArchive:    ar,
+		effectiveArchive: ar, // This gets updated in a run step if one happens
 	}
 	return res, nil
 }
@@ -256,7 +270,9 @@ func (pc parseContext) parse_ActionNode(n *parse.ActionNode) (node, error) {
 		return nil, pc.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
 	}
 	return &nodeWrapper{
-		rf:         pc.rootFile,
-		underlying: n,
+		rf:               pc.rootFile,
+		underlying:       n,
+		errorContext:     pc.errorContext,
+		executionContext: pc.executionContext,
 	}, nil
 }
