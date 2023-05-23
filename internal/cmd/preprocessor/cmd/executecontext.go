@@ -39,7 +39,8 @@ type executeContext struct {
 	// key is the full directory path of the page source.
 	pages map[string]*page
 
-	*errorContext
+	errorContext
+	*executionContext
 }
 
 func (ec *executeContext) Format(state fmt.State, verb rune) {
@@ -48,10 +49,11 @@ func (ec *executeContext) Format(state fmt.State, verb rune) {
 
 func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 	return &executeContext{
-		executor:     e,
-		pages:        make(map[string]*page),
-		filter:       filter,
-		errorContext: &e.errorContext,
+		executor:         e,
+		pages:            make(map[string]*page),
+		filter:           filter,
+		executionContext: e.executionContext,
+		errorContext:     e.errorContext,
 	}
 }
 
@@ -98,7 +100,7 @@ func (ec *executeContext) execute() error {
 		p := ec.pages[d]
 		w := pageWaits[i]
 		<-w
-		ec.inError = ec.inError || p.isInError()
+		ec.setInError(p.isInError())
 		ec.logf("%s", p.bytes())
 	}
 
