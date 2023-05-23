@@ -15,7 +15,10 @@
 package cmd
 
 import (
+	"bytes"
+	"crypto/sha256"
 	"fmt"
+	"hash"
 	"io"
 	"os"
 	"path/filepath"
@@ -60,12 +63,33 @@ type executionContext struct {
 
 	// ctx is the context used for all CUE operations
 	ctx *cue.Context
+
+	config cue.Value
+
+	selfHash string
+
+	skipCache bool
 }
 
 // tempDir creates a new temporary directory within the
 // tempRoot for this executionContext.
 func (e executionContext) tempDir(pattern string) (string, error) {
 	return os.MkdirTemp(e.tempRoot, pattern)
+}
+
+// createHash returns a new sha256 hash h. If debug mode is enabled, if will
+// also return a new bytes.Buffer b, and writes to h will also be reflected in
+// b. Otherwise b will be nil.
+func (e executionContext) createHash() (hash.Hash, *bytes.Buffer) {
+	h := sha256.New()
+	if !e.debug {
+		return h, nil
+	}
+	l := loggingSha256Hash{
+		h: h,
+	}
+	l.w = io.MultiWriter(h, &l.b)
+	return &l, &l.b
 }
 
 // executeDef is the implementation of the execute command

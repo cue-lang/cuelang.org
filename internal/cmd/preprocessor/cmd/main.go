@@ -14,6 +14,7 @@
 
 package cmd
 
+//go:generate rm gen_pkghash.go
 //go:generate go run github.com/cue-lang/cuelang.org/internal/cmd/genpkghash gen_pkghash.go
 
 import (

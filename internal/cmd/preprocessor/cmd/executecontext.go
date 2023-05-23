@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 
-	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/load"
 )
 
@@ -42,8 +42,6 @@ type executeContext struct {
 	// key is the full directory path of the page source.
 	pages map[string]*page
 
-	config cue.Value
-
 	errorContext
 	*executionContext
 }
@@ -63,6 +61,14 @@ func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 }
 
 func (ec *executeContext) execute() error {
+	// Determine the buildID or version information of self, which will act as
+	// input into the caching calculation.
+	if err := ec.deriveHashOfSelf(); err != nil {
+		return err
+	}
+
+	ec.debugf("%v: selfHash: %s", ec, ec.selfHash)
+
 	// Recursively walk wd to find $lang.md and _$lang.md files for all
 	// supported languages.
 	if err := ec.findPages(); err != nil {
@@ -202,5 +208,30 @@ func (ec *executeContext) findPages() error {
 		}
 	}
 
+	return nil
+}
+
+func (ec *executeContext) deriveHashOfSelf() error {
+	// If we have buildinfo, with a main package module which has version and sum
+	// information we use that
+	bi, ok := debug.ReadBuildInfo()
+	if !ok {
+		return ec.errorf("%v: failed to read buildinfo from self", ec)
+	}
+	// If the main module has been replaced, read the replacement
+	if bi.Main.Replace != nil {
+		bi.Main = *bi.Main.Replace
+	}
+	// Iff the resulting main package module has sum (and therefore version)
+	// information we can use that.
+	if bi.Main.Sum != "" {
+		ec.selfHash = bi.Main.Version + " " + bi.Main.Sum
+		return nil
+	}
+
+	// This fallback only works if the main module is is
+	// github.com/cue-lang/cuelang.org. (It might be possible to relax this
+	// constraint, but a tight constraint works for now).
+	ec.selfHash = selfHash
 	return nil
 }
