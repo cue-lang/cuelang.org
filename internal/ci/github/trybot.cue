@@ -38,17 +38,41 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: {
 		test: {
-			if: "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			if:        "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			strategy:  _testStrategy
+			"runs-on": "${{ matrix.runner }}"
 
 			steps: [
 				for v in _repo.checkoutCode {v},
 
 				_repo.earlyChecks,
 
+				_installGo,
+
+				json.#step & {
+					run: """
+						echo $TMPDIR
+						env
+						mktemp -d $TMPDIR/XXXXXXXXXXXXXX
+						"""
+				},
+
+				for v in _installDockerMacOS {v},
+
+				json.#step & {
+					run: """
+						td=$(mktemp -d $TMPDIR/XXXXXXXXXXXXXXX)
+						cp README.md $td/
+						env -i /usr/local/bin/docker run --network=host -e USER_UID=501 -e USER_GID=20 --rm -i -v $td/README.md:/tmp/README.md golang ls -la /tmp
+						env -i /usr/local/bin/docker run --network=host -e USER_UID=501 -e USER_GID=20 --rm -i -v $td/README.md:/tmp/README.md golang cat /tmp/README.md
+						"""
+				},
+
+				_installMacOSUtils,
 				_setupBuildx,
 				_installNode,
-				_installGo,
-				_installHugo,
+				_installHugoLinux,
+				_installHugoMacOS,
 
 				// cachePre must come after installing Node and Go, because the cache locations
 				// are established by running each tool.
@@ -129,6 +153,14 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 	}
 
+	_testStrategy: {
+		"fail-fast": false
+		matrix: {
+			"go-version": [_repo.latestStableGo]
+			runner: [_repo.linuxMachine, _repo.macosMachine]
+		}
+	}
+
 	// TODO: this belongs in base. Captured in cuelang.org/issue/2327
 	_dispatchTrailerExpr: "fromJSON(steps.DispatchTrailer.outputs.value)"
 	_goGenerate:          json.#step & {
@@ -159,13 +191,73 @@ _installGo: _repo.installGo & {
 	with: "go-version": _repo.goVersion
 }
 
-_installHugo: json.#step & {
-	name: "Install Hugo"
+_installHugoLinux: json.#step & {
+	if:   "runner.os == 'Linux'"
+	name: "Install Hugo (Linux)"
 	uses: "peaceiris/actions-hugo@v2"
 	with: {
 		"hugo-version": _repo.hugoVersion
 		extended:       true
 	}
+}
+
+_installHugoMacOS: json.#step & {
+	if:   "runner.os == 'macOS'"
+	name: "Install Hugo (macOS)"
+	run:  "brew install hugo"
+}
+
+_installDockerMacOS: [
+	// Set TMPDIR to be within the HOME directory so that bind mounts with docker
+	// (via colima) work.
+	json.#step & {
+		if:   "runner.os == 'macOS'"
+		name: "Set TMPDIR environment variable on macOS"
+		run: """
+			mkdir $HOME/.tmp
+			echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
+			"""
+	},
+	json.#step & {
+		run: """
+			env
+			mktemp -d $TMPDIR/XXXXXXXXXXXXXXXXXXX
+			go run main.go
+			mkdir -p ~/.lima/default
+			cat <<EOD > ~/.lima/default/lima.yaml
+			mounts:
+			  - location: "~"
+				 writable: true
+			  - location: "$TMPDIR"
+				 writable: true
+			EOD
+			cat ~/.lima/default/lima.yaml
+			"""
+	},
+	json.#step & {
+		if:   "runner.os == 'macOS'"
+		name: "Install Docker on macOS"
+		run: """
+			brew install colima docker
+			colima start --mount-type virtiofs
+			sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
+			"""
+	},
+	json.#step & {
+		if:   "runner.os == 'macOS'"
+		name: "Set DOCKER_HOST environment variable (on macOS)"
+		run: """
+			echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
+			"""
+	},
+]
+
+_installMacOSUtils: json.#step & {
+	if:   "runner.os == 'macOS'"
+	name: "Install macOS utils"
+	run: """
+		brew install coreutils
+		"""
 }
 
 _dist: json.#step & {
@@ -207,7 +299,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 
 	// Unfortunate that we need to hardcode here. Ideally we would be able to derive
 	// the OS from the runner. i.e. from _linuxWorkflow somehow.
-	#os: "Linux"
+	#os: "${{ runner.os }}"
 
 	#additionalCacheDirs: [
 		"~/.cache/dockercache",
@@ -217,7 +309,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	_
 }
 
-_setupBuildx: {
+_setupBuildx: json.#step & {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v2"
 }
