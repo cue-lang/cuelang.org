@@ -23,6 +23,8 @@ import (
 	"strings"
 
 	"cuelang.org/go/cmd/cue/cmd"
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
 )
 
 type lang string
@@ -47,6 +49,25 @@ var (
 	pageRootFileRegexp = buildRootFileRegexp(supportedLanguages)
 )
 
+// executionContext holds state that is usable throughout the various "layers"
+// of the preprocessor.
+//
+// executionContext should be embedded in each type though the "layers" of the
+// preprocessor. Each "layer" spawns child layers, copying the executionContext
+// to the child. This works because there is currently no way for a child
+// "layer" to safely share an update to what would otherwise be shared state.
+// Nor can a child "layer" communicate with a sibling, for much the same
+// reason.
+//
+// That said, because of the way in which we will load CUE configuration (see
+// https://cuelang.org/cl/554251), the executeContext "layer" spawns page
+// "layers" _before_ the loading of CUE (because the existence of pages tells
+// us where to load the CUE) and so the executeContext embedded
+// executionContext gets updated after the copy to each page layer has
+// happened. Hence the pages do not see the loaded CUE configuration. Whilst
+// there are a number of potential workarounds/alternatives to solving this,
+// for now we share the state between all layers, effectively relying on the
+// race detector to catch issues.
 type executionContext struct {
 	updateGoldenFiles bool
 
@@ -55,6 +76,9 @@ type executionContext struct {
 	tempRoot string
 
 	norun bool
+
+	// ctx is the context used for all CUE operations
+	ctx *cue.Context
 }
 
 // tempDir creates a new temporary directory within the
@@ -87,9 +111,10 @@ func executeDef(c *Command, args []string) error {
 		debug:             flagDebug.Bool(c),
 		updateGoldenFiles: flagUpdate.Bool(c),
 		norun:             flagNoRun.Bool(c),
+		ctx:               cuecontext.New(),
 	}
 
-	e := newExecutor(ctx, wd, projectRoot, c)
+	e := newExecutor(&ctx, wd, projectRoot, c)
 	if flagServe.Bool(c) {
 		return e.serve(args)
 	}
