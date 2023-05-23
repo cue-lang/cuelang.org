@@ -9,6 +9,13 @@ cp content/dir/en.md content/dir/en.md.golden
 # Run the preprocessor
 exec preprocessor execute --debug
 
+# Assert there was no cache hit
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache miss for dir.cache.sidebyside."json-superset"'
+
+# Assert on the directory structure left behind
+exec cmd-find
+cmp stdout structure.golden
+
 # Copy the resulting soure file sideways and use that in comparison
 # so that we don't inadvertently update it when using CUE_UPDATE=1
 cp content/dir/en.md content/dir/en.md.writeBack
@@ -18,6 +25,14 @@ cmp content/dir/en.md.writeBack content/dir/en.md.golden
 
 # Verify that the target files matche the source contents
 cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+
+# Re-run the preprocessor and ensure we have a cache hit
+exec preprocessor execute --debug
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for dir.cache.sidebyside."json-superset"; not running'
+
+# Re-run the preprocessor again with --skipcache to ensure we re-run a cache hit
+exec preprocessor execute --debug --skipcache
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for dir.cache.sidebyside."json-superset"; was a hit'
 
 -- content/dir/site.cue --
 package site
@@ -77,3 +92,8 @@ map: {
 
 Some text after
 
+-- structure.golden --
+content/dir/en.md
+content/dir/gen_cache.cue
+content/dir/site.cue
+hugo/content/en/dir/index.md

@@ -20,7 +20,6 @@ import (
 	"io"
 )
 
-//lint:ignore U1000 we use this in https://cuelang.org/cl/554313
 func newLoggingHash(h hash.Hash) (hash.Hash, *bytes.Buffer) {
 	l := loggingHash{
 		h: h,
@@ -32,8 +31,6 @@ func newLoggingHash(h hash.Hash) (hash.Hash, *bytes.Buffer) {
 // loggingHash is a simple wrapper around a hash and a bytes.Buffer that also
 // logs writes to the former to the latter.  This is particularly useful in
 // debugging cache hits/misses.
-//
-//lint:ignore U1000 we use this in https://cuelang.org/cl/554313
 type loggingHash struct {
 	h hash.Hash
 	b bytes.Buffer

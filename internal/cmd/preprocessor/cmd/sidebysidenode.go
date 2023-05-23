@@ -19,6 +19,7 @@ import (
 	"bytes"
 	"fmt"
 	"html/template"
+	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -65,6 +66,10 @@ func (s *sidebysideNode) run() runnable {
 			executionContext: s.executionContext,
 		},
 	}
+}
+
+func (s *sidebysideNode) writeToHasher(w io.Writer) {
+	fmt.Fprintf(w, "%q.%q:\n%s", s.nodeType(), s.label, tabIndent(txtar.Format(s.sourceArchive)))
 }
 
 func (s *sidebysideNodeRunContext) run() (err error) {
