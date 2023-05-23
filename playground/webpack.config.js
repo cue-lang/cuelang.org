@@ -28,6 +28,7 @@ module.exports = (env, argv) => {
         },
         cache: {
             type: 'filesystem',
+						cacheDirectory: path.resolve(__dirname, '.webpack_cache'),
         },
         plugins: [
             new HtmlWebpackPlugin({

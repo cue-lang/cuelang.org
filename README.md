@@ -47,8 +47,11 @@ Can be ignored
 To serve the site locally run:
 
 ```
-./_scripts/serve.bash        # In one terminal
+./_scripts/npmInstall.bash # one-off
+./_scripts/serve.bash
 ```
+
+The site will be served at http://localhost:1313/.
 
 ### Updating the language spec and tour for cuelang.org
 
