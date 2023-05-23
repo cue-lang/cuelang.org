@@ -15,7 +15,6 @@ then
 fi
 
 cd hugo
-$time npm install
 npm run icons
 
 cd ..
