@@ -16,7 +16,11 @@ package cmd
 
 import (
 	"bytes"
+	"crypto/sha256"
+	"encoding/base64"
+	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"sort"
@@ -141,6 +145,9 @@ func (rf *rootFile) transform(targetPath string) error {
 		return rf.errorIfInError()
 	}
 
+	// Derive a map of hashes of the runnable nodes
+	rf.deriveHashMap()
+
 	// Write the parsed rootFile back to ensure we have have normalised input.
 	writeBack := new(bytes.Buffer)
 	if err := rf.writeSource(writeBack); err != nil {
@@ -249,6 +256,50 @@ func (rf *rootFile) run() error {
 	}
 
 	return nil
+}
+
+func (rf *rootFile) deriveHashMap() {
+	// A map of type -> label -> sha256 sum of runnable nodes
+	hashMap := make(map[string]map[string]string)
+	for i := range rf.bodyParts {
+		n, ok := rf.bodyParts[i].(runnableNode)
+		if !ok {
+			continue
+		}
+		t := n.nodeType()
+		l := n.Label()
+		tm := hashMap[t]
+		if tm == nil {
+			tm = make(map[string]string)
+			hashMap[t] = tm
+		}
+		if _, ok := tm[l]; ok {
+			// This should never happen because we have previously validated that
+			// we have distinct nodes per type-label pair.
+			rf.fatalf("%v: duplicate entries for type %q and label %q", rf, t, l)
+		}
+		h := sha256.New()
+		var w io.Writer = h
+		var b *bytes.Buffer
+		if rf.debug {
+			b = new(bytes.Buffer)
+			w = io.MultiWriter(h, b)
+		}
+		fmt.Fprintf(w, "preprocessor version: %s\n", rf.selfHash)
+		fmt.Fprintf(w, "docker image: %s\n", dockerImageTag)
+		n.hash(w)
+		if rf.debug {
+			rf.debugf("%v: hashing node:\n%s", rf, tabIndent(b.Bytes()))
+		}
+		tm[l] = base64.StdEncoding.EncodeToString(h.Sum(nil))
+	}
+	if rf.debug {
+		byts, err := json.MarshalIndent(hashMap, "", "  ")
+		if err != nil {
+			rf.fatalf("%v: failed to marshal hashmap: %v", rf, err)
+		}
+		rf.debugf("%v: hashmap\n%s", rf, tabIndent(byts))
+	}
 }
 
 type waitRunnable struct {
