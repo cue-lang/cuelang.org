@@ -68,6 +68,9 @@ func (e *executor) execute(filter map[string]bool) error {
 	e.tempRoot = td
 	defer os.RemoveAll(td)
 
-	ec := e.newExecuteContext(filter)
+	ec, err := e.newExecuteContext(filter)
+	if err != nil {
+		return err
+	}
 	return ec.execute()
 }
