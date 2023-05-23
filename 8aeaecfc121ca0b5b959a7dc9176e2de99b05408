@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0774a62b_d4c01e6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-23T12:11:38Z",
+      "side": 1,
+      "message": "While you\u0027re here, could you fix the indentation to consistently use tabs? You can clearly see the problem in gerrit\u0027s diff view.",
+      "revId": "8aeaecfc121ca0b5b959a7dc9176e2de99b05408",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
