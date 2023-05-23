@@ -15,80 +15,77 @@
 package cmd
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 
 	"cuelang.org/go/cue/errors"
 )
 
-type errorContextInterface interface {
-	logger() io.Writer
-	execContext() executionContext
+// errorContext is an error-aware logging interface embedded by types.
+type errorContext interface {
+	// logf logs an normal log-level message.
+	logf(format string, args ...any) string
+
+	// errorf logs an error-level message, and sets the receiver to be in error.
+	errorf(format string, args ...any) error
+
+	// debugf logs a debug-level message.
+	debugf(format string, args ...any)
+
+	// fatalf logs an error-level message via errorf, and then panics with a
+	// fatalError value.
+	fatalf(format string, args ...any)
+
+	// updateInError updates the receiver error state if v is true.
+	updateInError(v bool)
+
+	// isInError returns the error state.
+	isInError() bool
 }
 
-type errorContext struct {
-	executionContext
-
-	// inError is set when the page is in error
+// errorContextWriter is a base implementation of errorContext
+//
+// Is is intentionally not threadsafe.
+type errorContextWriter struct {
+	*executionContext
 	inError bool
-
-	// log is the buffer to which we write log messages
-	log io.Writer
+	log     io.Writer
 }
 
-func newErrorContext(e errorContextInterface) errorContext {
-	return errorContext{
-		executionContext: e.execContext(),
-		log:              e.logger(),
-	}
-}
-
-func (e *errorContext) isInError() bool {
+func (e *errorContextWriter) isInError() bool {
 	return e.inError
 }
 
-func (e *errorContext) errorf(format string, args ...any) error {
-	s := fmt.Sprintf(format, args...)
-	e.inError = true
-	return errors.New(e.logf("** %s", s))
+func (e *errorContextWriter) updateInError(v bool) {
+	e.inError = e.inError || v
 }
 
-func (e *errorContext) fatalf(format string, args ...any) {
+func (e *errorContextWriter) logf(format string, args ...any) string {
+	var res bytes.Buffer
+	w := io.MultiWriter(&res, e.log)
+	fmt.Fprintf(w, format, args...)
+	if !bytes.HasSuffix(res.Bytes(), []byte("\n")) {
+		fmt.Fprint(w, "\n")
+	}
+	return res.String()
+}
+
+func (e *errorContextWriter) errorf(format string, args ...any) error {
+	e.inError = true
+	return errors.New(e.logf("** "+format, args...))
+}
+
+func (e *errorContextWriter) fatalf(format string, args ...any) {
 	err := e.errorf(format, args...)
 	panic(fatalError{error: err})
 }
 
-func (e *errorContext) logf(format string, args ...any) string {
-	res := fmt.Sprintf(format, args...)
-	m := res
-	if len(m) > 0 && m[len(m)-1] != '\n' {
-		m += "\n"
-	}
-	fmt.Fprint(e.log, m)
-	return res
-}
-
-func (e *errorContext) debugf(format string, args ...any) {
+func (e *errorContextWriter) debugf(format string, args ...any) {
 	if !e.debug {
 		return
 	}
-	s := fmt.Sprintf(format, args...)
-	e.logf("debug: " + s)
-}
-
-func (e *errorContext) logger() io.Writer {
-	return e.log
-}
-
-func (e *errorContext) execContext() executionContext {
-	return e.executionContext
-}
-
-func (e *errorContext) errorIfInError() error {
-	if !e.inError {
-		return nil
-	}
-	return errors.New("in error")
+	e.logf("debug: "+format, args...)
 }
 
 type fatalError struct {
@@ -108,4 +105,11 @@ func recoverFatalError(err *error) {
 		// Unknown value - panic on
 		panic(r)
 	}
+}
+
+func errorIfInError(e errorContext) error {
+	if !e.isInError() {
+		return nil
+	}
+	return errors.New("in error")
 }
