@@ -203,7 +203,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 
 	#additionalCacheDirs: [
 		"~/.cache/dockercache",
-		"${{ github.workspace }}/playground/node_modules/.cache/webpack",
+		"${{ github.workspace }}/playground/.webpack_cache",
 	]
 
 	_

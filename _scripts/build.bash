@@ -23,10 +23,6 @@ bash _scripts/runPreprocessor.bash execute --debug --norun=$norun
 
 # Main site
 cd hugo
-if [[ "${CI:-}" == "true" ]]; then
-	$time npm ci
-else
-	$time npm install
-fi
+$time npm ci
 $time npm run icons
 $time hugo $@
