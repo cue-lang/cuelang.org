@@ -36,30 +36,28 @@ const (
 )
 
 type sidebysideNode struct {
-	node             *nodeWrapper
+	*nodeWrapper
 	lang             string
 	label            string
 	sourceArchive    *txtar.Archive
 	effectiveArchive *txtar.Archive
-
-	*bufferedErrorContext
 }
 
 func (s *sidebysideNode) Format(state fmt.State, verb rune) {
-	fmt.Fprintf(state, "%v", s.node)
+	fmt.Fprintf(state, "%v", s.nodeWrapper)
 }
 
 var _ runnableNode = (*sidebysideNode)(nil)
 
 type sidebysideNodeRunContext struct {
 	node *sidebysideNode
-	*bufferedErrorContext
+	*errorContextBuffer
 }
 
 func (s *sidebysideNode) run() runnable {
 	return &sidebysideNodeRunContext{
-		node:                 s,
-		bufferedErrorContext: newBufferedErrorContext(s),
+		node:               s,
+		errorContextBuffer: newBufferedErrorContext(s.executionContext),
 	}
 }
 
@@ -172,7 +170,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 		// We need to mount the script
 		[]string{fmt.Sprintf("-v=%s:%s", targetFile, containerFile)},
 		"testscript",
-		fmt.Sprintf("-u=%v", s.executionContext.updateGoldenFiles),
+		fmt.Sprintf("-u=%v", s.updateGoldenFiles),
 		containerFile,
 	)
 	s.debugf("%v: running %v\n%s", s, ts, tabIndent(txtar.Format(&effectiveArchive)))
@@ -313,9 +311,9 @@ func (s *sidebysideNodeRunContext) Format(state fmt.State, verb rune) {
 func (s *sidebysideNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
 	p("```coq\n")
-	p("%swith %s %q %q%s\n", s.node.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.node.rf.page.rightDelim)
+	p("%swith %s %q %q%s\n", s.nodeWrapper.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.nodeWrapper.rf.page.rightDelim)
 	p("%s", txtar.Format(s.sourceArchive))
-	p("%send%s\n", s.node.rf.page.leftDelim, s.node.rf.page.rightDelim)
+	p("%send%s\n", s.nodeWrapper.rf.page.leftDelim, s.nodeWrapper.rf.page.rightDelim)
 	p("```\n")
 }
 

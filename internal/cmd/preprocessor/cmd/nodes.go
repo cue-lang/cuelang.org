@@ -33,6 +33,8 @@ type node interface {
 	writeTransformTo(buf *bytes.Buffer) error
 
 	fmt.Formatter
+
+	errorContext
 }
 
 type runnableNode interface {
@@ -56,15 +58,9 @@ type runnable interface {
 type nodeWrapper struct {
 	rf         *rootFile
 	underlying parse.Node
-	errorContext
-}
 
-func newNodeWrapper(rf *rootFile, underlying parse.Node, e errorContextInterface) *nodeWrapper {
-	return &nodeWrapper{
-		rf:           rf,
-		underlying:   underlying,
-		errorContext: newErrorContext(e),
-	}
+	errorContext
+	*executionContext
 }
 
 var _ node = (*nodeWrapper)(nil)

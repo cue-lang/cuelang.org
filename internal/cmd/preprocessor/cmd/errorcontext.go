@@ -21,44 +21,53 @@ import (
 	"cuelang.org/go/cue/errors"
 )
 
-type errorContextInterface interface {
-	logger() io.Writer
-	execContext() executionContext
+type errorContext interface {
+	logf(format string, args ...any) string
+	errorf(format string, args ...any) error
+	debugf(format string, args ...any)
+	setInError(bool)
+	isInError() bool
+	errorIfInError() error
 }
 
-type errorContext struct {
-	executionContext
+type bufferedErrorContext interface {
+	errorContext
+	bytes() []byte
+}
 
-	// inError is set when the page is in error
+type errorContextWriter struct {
+	ec      *executionContext
 	inError bool
-
-	// log is the buffer to which we write log messages
-	log io.Writer
+	log     io.Writer
 }
 
-func newErrorContext(e errorContextInterface) errorContext {
-	return errorContext{
-		executionContext: e.execContext(),
-		log:              e.logger(),
+func newErrorContext(ctx *executionContext, log io.Writer) errorContextWriter {
+	return errorContextWriter{
+		ec:  ctx,
+		log: log,
 	}
 }
 
-func (e *errorContext) isInError() bool {
+func (e *errorContextWriter) setInError(v bool) {
+	e.inError = e.inError || v
+}
+
+func (e *errorContextWriter) isInError() bool {
 	return e.inError
 }
 
-func (e *errorContext) errorf(format string, args ...any) error {
+func (e *errorContextWriter) errorf(format string, args ...any) error {
 	s := fmt.Sprintf(format, args...)
 	e.inError = true
 	return errors.New(e.logf("** %s", s))
 }
 
-func (e *errorContext) fatalf(format string, args ...any) {
+func (e *errorContextWriter) fatalf(format string, args ...any) {
 	err := e.errorf(format, args...)
 	panic(fatalError{error: err})
 }
 
-func (e *errorContext) logf(format string, args ...any) string {
+func (e *errorContextWriter) logf(format string, args ...any) string {
 	res := fmt.Sprintf(format, args...)
 	m := res
 	if len(m) > 0 && m[len(m)-1] != '\n' {
@@ -68,23 +77,23 @@ func (e *errorContext) logf(format string, args ...any) string {
 	return res
 }
 
-func (e *errorContext) debugf(format string, args ...any) {
-	if !e.debug {
+func (e *errorContextWriter) debugf(format string, args ...any) {
+	if !e.ec.debug {
 		return
 	}
 	s := fmt.Sprintf(format, args...)
 	e.logf("debug: " + s)
 }
 
-func (e *errorContext) logger() io.Writer {
+func (e *errorContextWriter) logger() io.Writer {
 	return e.log
 }
 
-func (e *errorContext) execContext() executionContext {
-	return e.executionContext
+func (e *errorContextWriter) execContext() *executionContext {
+	return e.ec
 }
 
-func (e *errorContext) errorIfInError() error {
+func (e *errorContextWriter) errorIfInError() error {
 	if !e.inError {
 		return nil
 	}
