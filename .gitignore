@@ -1,4 +1,12 @@
-/hugo/.hugo_build.lock
-/_public/
-/hugo/node_modules/
-/hugo/resources/
+/_public
+/hugo
+/play
+/playground
+/resources
+/themes
+
+# Ignore node_modules everywhere
+node_modules
+
+# Ignore Hugo build locks everywhere
+.hugo_build.lock
