@@ -16,11 +16,15 @@ package cmd
 
 import (
 	"bytes"
+	"encoding/base64"
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"sort"
 
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/format"
 	"github.com/cue-lang/cuelang.org/internal/parse"
 )
 
@@ -131,14 +135,17 @@ func (rf *rootFile) transform(targetPath string) error {
 		return err
 	}
 
-	if !rf.norun {
-		if err := rf.run(); err != nil {
-			return err
-		}
+	if err := rf.run(); err != nil {
+		return err
 	}
 
 	if rf.isInError() {
 		return errorIfInError(rf)
+	}
+
+	// Derive a map of hashes of the runnable nodes
+	if err := rf.writePageCache(); err != nil {
+		return err
 	}
 
 	// Write the parsed rootFile back to ensure we have have normalised input.
@@ -236,8 +243,42 @@ func (rf *rootFile) run() error {
 		//
 		// For now we don't support multi-steps guides, but when we do it will
 		// be here.
-		r := n.run()
-		wait = append(wait, runRunnable(r))
+
+		// Check for cache hit
+		h, b := rf.createHash()
+		hashPath := rf.hashRunnableNode(n, h)
+		if b != nil {
+			rf.debugf("%v: hashed node %v:\n%s", rf, n, b.Bytes())
+		}
+		currHash := base64.StdEncoding.EncodeToString(h.Sum(nil))
+		cacheHash, err := rf.config.LookupPath(hashPath).String()
+		cacheMiss := err != nil || currHash != cacheHash
+
+		if rf.skipCache || cacheMiss {
+			if rf.norun {
+				// Earlier we ensured the user did not provide --skipcache and
+				// --norun So we know we are here because of a cache miss. Panic in
+				// case that is somehow broken.
+				if rf.skipCache {
+					panic("skipCache set and norun?")
+				}
+				return rf.errorf("%v: cache miss for %v; but told not to run", rf, hashPath)
+			}
+			if rf.skipCache {
+				hitormiss := "hit"
+				if cacheMiss {
+					hitormiss = "miss"
+				}
+				rf.debugf("%v: skipping cache for %v; was a %s", rf, hashPath, hitormiss)
+			} else {
+				// It's a cache miss
+				rf.debugf("%v: cache miss for %v", rf, hashPath)
+			}
+			r := n.run()
+			wait = append(wait, runRunnable(r))
+		} else {
+			rf.debugf("%v: cache hit for %v; not running", rf, hashPath)
+		}
 	}
 
 	for _, v := range wait {
@@ -246,6 +287,65 @@ func (rf *rootFile) run() error {
 		// Could make the following a method on errorContext
 		rf.updateInError(v.isInError())
 		rf.logf("%s", v.bytes())
+	}
+
+	return nil
+}
+
+// hashRunnableNode computes a hash of n, writing that hash to w, and returns
+// the cue.Path at which a cache entry for such a hash could be found.
+func (rf *rootFile) hashRunnableNode(n runnableNode, w io.Writer) cue.Path {
+	fmt.Fprintf(w, "preprocessor version: %s\n", rf.selfHash)
+	fmt.Fprintf(w, "docker image: %s\n", dockerImageTag)
+	n.hash(w)
+	selPath := append(rf.page.path.Selectors(),
+		cue.Str("cache"),
+		cue.Str(n.nodeType()),
+		cue.Str(n.Label()),
+	)
+	return cue.MakePath(selPath...)
+}
+
+func (rf *rootFile) writePageCache() error {
+	var didWork bool
+	// Build a cue.Value of the cache entries
+	v := rf.ctx.CompileString("{}")
+	for i := range rf.bodyParts {
+		n, ok := rf.bodyParts[i].(runnableNode)
+		if !ok {
+			continue
+		}
+		h, _ := rf.createHash()
+		p := rf.hashRunnableNode(n, h)
+		strHash := base64.StdEncoding.EncodeToString(h.Sum(nil))
+		v = v.FillPath(p, strHash)
+		didWork = true
+	}
+	if !didWork {
+		return nil
+	}
+
+	if rf.debug {
+		m := []byte(fmt.Sprintf("%v", v))
+		rf.debugf("%v: cache entries: \n%s", rf, tabIndent(m))
+	}
+
+	// Derive CUE source format
+	n := v.Syntax()
+	byts, err := format.Node(n)
+	if err != nil {
+		return rf.errorf("%v: failed to format CUE cache value: %v", rf, err)
+	}
+
+	// Write that cue.Value to a generated file in the page directory
+	var page bytes.Buffer
+	fmt.Fprintf(&page, "package site")
+	fmt.Fprintf(&page, "\n")
+	fmt.Fprintf(&page, "%s\n", byts)
+	cacheFile := filepath.Join(rf.page.dir, "gen_cache.cue")
+	currCacheFile, _ := os.ReadFile(cacheFile)
+	if err := writeIfDiff(&page, cacheFile, currCacheFile); err != nil {
+		return rf.errorf("%v: failed to write cache to %s: %v", rf, cacheFile, err)
 	}
 
 	return nil
