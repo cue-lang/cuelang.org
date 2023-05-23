@@ -1,15 +1,14 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
-name: TryBot
+name: TryBot target branch
 "on":
   push:
     branches:
+      - ci/test
       - master
       - alpha
     tags-ignore:
       - v*
-  pull_request: {}
-  workflow_dispatch: {}
 jobs:
   test:
     steps:
@@ -226,9 +225,17 @@ jobs:
           ALGOLIA_INDEX_NAME: cuelang.org
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
     if: |-
-      (contains(github.event.head_commit.message, '
-      Dispatch-Trailer: {"type":"trybot"'))
-    runs-on: ubuntu-22.04
+      ! (contains(github.event.head_commit.message, '
+      Dispatch-Trailer: {"type":"'))
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version:
+          - 1.20.x
+        runner:
+          - ubuntu-22.04
+          - macos-13
+    runs-on: ${{ matrix.runner }}
     defaults:
       run:
         shell: bash
