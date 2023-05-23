@@ -9,6 +9,7 @@ node_modules
 # Project
 /_public/
 /playground/_dist/
+/playground/.webpack_cache/
 /playground/main.wasm
 /hugo/resources/
 /hugo/.hugo_build.lock
