@@ -16,6 +16,24 @@
       "message": "You copied over `set -eux`, perhaps do the same with the cd BASH_SOURCE shenanigans in case anyone runs it directly?",
       "revId": "5ac023ad7e65b6b105f86c59d36332aafbe89540",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a40416d7_7363f631",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-23T19:05:42Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "7b9e7cf8_abab2235",
+      "revId": "5ac023ad7e65b6b105f86c59d36332aafbe89540",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
