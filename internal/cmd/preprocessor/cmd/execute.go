@@ -17,7 +17,9 @@ package cmd
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -112,6 +114,17 @@ func executeDef(c *Command, args []string) error {
 		}
 	}
 
+	execPath, err := os.Executable()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	binaryBuildID, err := buildidOf(execPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%s\n", binaryBuildID)
+
 	if err := e.execute(filter); err != nil {
 		// Because of our logging strategy, we never want cobra to print an error
 		// we return. So instead return the sentinel error that indicates we have
@@ -119,6 +132,18 @@ func executeDef(c *Command, args []string) error {
 		return cmd.ErrPrintedError
 	}
 	return nil
+}
+
+func buildidOf(path string) (string, error) {
+	cmd := exec.Command("go", "tool", "buildid", path)
+	out, err := cmd.Output()
+	if err != nil {
+		if err, _ := err.(*exec.ExitError); err != nil {
+			return "", fmt.Errorf("%v: %s", err, err.Stderr)
+		}
+		return "", err
+	}
+	return string(out), nil
 }
 
 func buildRootFileRegexp(langs []lang) *regexp.Regexp {
