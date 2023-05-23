@@ -20,6 +20,7 @@ botGitHubUser:      "cueckoo"
 botGitHubUserEmail: "cueckoo@gmail.com"
 
 linuxMachine: "ubuntu-22.04"
+macosMachine: "macos-13"
 
 // Use the latest Go version for extra checks,
 // such as running tests with the data race detector.

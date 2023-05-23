@@ -38,17 +38,25 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: {
 		test: {
-			if: "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			if:        "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			strategy:  _testStrategy
+			"runs-on": "${{ matrix.runner }}"
 
 			steps: [
+				_updateHomebrew,
+
 				for v in _repo.checkoutCode {v},
 
 				_repo.earlyChecks,
 
+				for v in _installDockerMacOS {v},
+
+				_installMacOSUtils,
 				_setupBuildx,
 				_installNode,
 				_installGo,
-				_installHugo,
+				_installHugoLinux,
+				_installHugoMacOS,
 
 				// cachePre must come after installing Node and Go, because the cache locations
 				// are established by running each tool.
@@ -118,14 +126,43 @@ workflows: trybot: _repo.bashWorkflow & {
 				// Only run a deploy of tip if we are running as part of the trybot repo,
 				// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
 				_netlifyDeploy & {
-					if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
+					if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer) && \(_isLatestLinux)"
 					#site:  _repo.netlifySites.cls
 					#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
 					name:   "Deploy preview of CL"
 				},
 
-				_algoliaIndex,
+				json.#step & {
+					// Only run in the main repo on the alpha branch. Because anywhere else
+					// doesn't make sense.
+					if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)') && \(_isLatestLinux)"
+					run:                 "npm run algolia"
+					"working-directory": "hugo"
+					env: {
+						ALGOLIA_APP_ID:     "5LXFM0O81Q"
+						ALGOLIA_ADMIN_KEY:  "${{ secrets.ALGOLIA_INDEX_KEY }}"
+						ALGOLIA_INDEX_NAME: "cuelang.org"
+						ALGOLIA_INDEX_FILE: "../_public/algolia.json"
+					}
+				},
 			]
+		}
+	}
+
+	let matrixRunner = "matrix.runner"
+	let goVersion = "matrix.go-version"
+
+	// _isLatestLinux returns a GitHub expression that evaluates to true if the job
+	// is running on Linux with the latest version of Go. This expression is often
+	// used to run certain steps just once per CI workflow, to avoid duplicated
+	// work.
+	_isLatestLinux: "(\(goVersion) == '\(_repo.latestStableGo)' && \(matrixRunner) == '\(_repo.linuxMachine)')"
+
+	_testStrategy: {
+		"fail-fast": false
+		matrix: {
+			"go-version": [_repo.latestStableGo]
+			runner: [_repo.linuxMachine, _repo.macosMachine]
 		}
 	}
 
@@ -159,13 +196,79 @@ _installGo: _repo.installGo & {
 	with: "go-version": _repo.goVersion
 }
 
-_installHugo: json.#step & {
-	name: "Install Hugo"
+_installHugoLinux: json.#step & {
+	if:   "runner.os == 'Linux'"
+	name: "Install Hugo (Linux)"
 	uses: "peaceiris/actions-hugo@v2"
 	with: {
 		"hugo-version": _repo.hugoVersion
 		extended:       true
 	}
+}
+
+_installHugoMacOS: json.#step & {
+	if:   "runner.os == 'macOS'"
+	name: "Install Hugo (macOS)"
+	run:  "brew install hugo"
+}
+
+_installDockerMacOS: [
+	// Set TMPDIR to be within the HOME directory so that bind mounts with
+	// docker (via colima) work. If we don't set this to be a path within $HOME,
+	// then we end up with a mount-ed directory. And this does not work via -v
+	// bind mounts.
+	json.#step & {
+		if:   "runner.os == 'macOS'"
+		name: "Set TMPDIR environment variable on macOS"
+		run: """
+			mkdir $HOME/.tmp
+			echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
+			"""
+	},
+	json.#step & {
+		run: """
+			mkdir -p ~/.lima/default
+			cat <<EOD > ~/.lima/default/lima.yaml
+			mounts:
+			  - location: "~"
+				 writable: true
+			  - location: "$TMPDIR"
+				 writable: true
+			EOD
+			"""
+	},
+	json.#step & {
+		if:   "runner.os == 'macOS'"
+		name: "Install Docker on macOS"
+		run: """
+			brew install colima docker
+			colima start --mount-type virtiofs
+			sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
+			"""
+	},
+	json.#step & {
+		if:   "runner.os == 'macOS'"
+		name: "Set DOCKER_HOST environment variable (on macOS)"
+		run: """
+			echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
+			"""
+	},
+]
+
+_updateHomebrew: json.#step & {
+	if:   "runner.os == 'macOS'"
+	name: "Update Homebrew (macOS)"
+	run: """
+		brew update
+		"""
+}
+
+_installMacOSUtils: json.#step & {
+	if:   "runner.os == 'macOS'"
+	name: "Install macOS utils"
+	run: """
+		brew install coreutils
+		"""
 }
 
 _dist: json.#step & {
@@ -207,7 +310,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 
 	// Unfortunate that we need to hardcode here. Ideally we would be able to derive
 	// the OS from the runner. i.e. from _linuxWorkflow somehow.
-	#os: "Linux"
+	#os: "${{ runner.os }}"
 
 	#additionalCacheDirs: [
 		"~/.cache/dockercache",
@@ -217,21 +320,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	_
 }
 
-_setupBuildx: {
+_setupBuildx: json.#step & {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v2"
-}
-
-_algoliaIndex: json.#step & {
-	// Only run in the main repo on the alpha branch. Because anywhere else
-	// doesn't make sense.
-	if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)')"
-	run:                 "npm run algolia"
-	"working-directory": "hugo"
-	env: {
-		ALGOLIA_APP_ID:     "5LXFM0O81Q"
-		ALGOLIA_ADMIN_KEY:  "${{ secrets.ALGOLIA_INDEX_KEY }}"
-		ALGOLIA_INDEX_NAME: "cuelang.org"
-		ALGOLIA_INDEX_FILE: "../_public/algolia.json"
-	}
 }
