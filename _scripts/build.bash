@@ -19,7 +19,7 @@ fi
 bash playground/_scripts/build.bash
 
 # Run the preprocessor
-go run ./internal/cmd/preprocessor execute --debug --norun=$norun
+bash _scripts/runPreprocessor.bash execute --debug --norun=$norun
 
 # Main site
 cd hugo

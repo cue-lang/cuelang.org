@@ -21,4 +21,4 @@ npm run icons
 cd ..
 
 # Run the preprocess in serve mode which will itself run hugo
-go run ./internal/cmd/preprocessor execute --serve --debug -- -D --renderToDisk
+bash _scripts/runPreprocessor.bash execute --serve --debug -- -D --renderToDisk
