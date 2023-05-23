@@ -16,27 +16,67 @@ package cmd
 
 import (
 	"bytes"
+	"fmt"
 	"io"
+
+	"cuelang.org/go/cue/errors"
 )
 
-type bufferedErrorContext struct {
+// bufferedErrorContext is a buffered extension of errorContext. That is, all
+// log messages are buffered, and then later retrieved via the bytes() method.
+type bufferedErrorContext interface {
 	errorContext
 
-	// log is the buffer to which we write log messages
-	log bytes.Buffer
+	// bytes returns the log messages buffered.
+	bytes() []byte
 }
 
-func newBufferedErrorContext(e errorContextInterface) *bufferedErrorContext {
-	res := new(bufferedErrorContext)
-	res.errorContext.log = &res.log
-	res.executionContext = e.execContext()
-	return res
+// errorContextBuffer is a base implementation of bufferedErrorContext
+//
+// Is is intentionally not threadsafe.
+type errorContextBuffer struct {
+	*executionContext
+	inError bool
+	log     bytes.Buffer
 }
 
-func (e *bufferedErrorContext) logger() io.Writer {
-	return &e.log
+var _ errorContext = (*errorContextBuffer)(nil)
+
+func (e *errorContextBuffer) isInError() bool {
+	return e.inError
 }
 
-func (e *bufferedErrorContext) bytes() []byte {
+func (e *errorContextBuffer) updateInError(v bool) {
+	e.inError = e.inError || v
+}
+
+func (e *errorContextBuffer) logf(format string, args ...any) string {
+	var res bytes.Buffer
+	w := io.MultiWriter(&res, &e.log)
+	fmt.Fprintf(w, format, args...)
+	if !bytes.HasSuffix(res.Bytes(), []byte("\n")) {
+		fmt.Fprint(w, "\n")
+	}
+	return res.String()
+}
+
+func (e *errorContextBuffer) errorf(format string, args ...any) error {
+	e.inError = true
+	return errors.New(e.logf("** "+format, args...))
+}
+
+func (e *errorContextBuffer) fatalf(format string, args ...any) {
+	err := e.errorf(format, args...)
+	panic(fatalError{error: err})
+}
+
+func (e *errorContextBuffer) debugf(format string, args ...any) {
+	if !e.debug {
+		return
+	}
+	e.logf("debug: "+format, args...)
+}
+
+func (e *errorContextBuffer) bytes() []byte {
 	return e.log.Bytes()
 }

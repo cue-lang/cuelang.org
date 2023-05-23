@@ -81,7 +81,8 @@ type rootFile struct {
 
 	// bufferedErrorContext reuses the existing page.errorContext because for
 	// now we don't do root files concurrently
-	*bufferedErrorContext
+	errorContext
+	*executionContext
 }
 
 func (r *rootFile) Format(f fmt.State, verb rune) {
@@ -91,12 +92,13 @@ func (r *rootFile) Format(f fmt.State, verb rune) {
 // newRootFile creates a new rootFile for fn.
 func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 	return &rootFile{
-		bufferedErrorContext: p.bufferedErrorContext,
-		page:                 p,
-		filename:             filepath.Join(p.dir, fn),
-		lang:                 lang,
-		prefix:               prefix,
-		ext:                  ext,
+		page:             p,
+		filename:         filepath.Join(p.dir, fn),
+		lang:             lang,
+		prefix:           prefix,
+		ext:              ext,
+		errorContext:     p.bufferedErrorContext,
+		executionContext: p.executionContext,
 	}
 }
 
@@ -122,14 +124,14 @@ func (rf *rootFile) transform(targetPath string) error {
 		return err
 	}
 
-	if !rf.executionContext.norun {
+	if !rf.norun {
 		if err := rf.run(); err != nil {
 			return err
 		}
 	}
 
-	if rf.inError {
-		return rf.errorIfInError()
+	if rf.isInError() {
+		return errorIfInError(rf)
 	}
 
 	// Write the parsed rootFile back to ensure we have have normalised input.
@@ -181,7 +183,7 @@ func (rf *rootFile) run() error {
 		<-v.done
 
 		// Could make the following a method on errorContext
-		rf.inError = rf.inError || v.isInError()
+		rf.updateInError(v.isInError())
 		rf.logf("%s", v.bytes())
 	}
 
