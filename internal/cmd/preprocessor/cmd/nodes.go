@@ -17,22 +17,18 @@ package cmd
 import (
 	"bytes"
 	"fmt"
-	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
 )
 
 // A node is an abstraction around the structures that can appear in a page.
 type node interface {
-
 	// writeSourceTo writes the source (text/template) form of a node to buf.
 	writeSourceTo(buf *bytes.Buffer)
 
 	// writeTransformTo writes the Hugo-aware form of a node to buf. A call to
 	// writeTransformTo is the transform or output step of the preprocessor.
 	writeTransformTo(buf *bytes.Buffer) error
-
-	fmt.Formatter
 }
 
 type runnableNode interface {
@@ -45,10 +41,12 @@ type runnableNode interface {
 	run() runnable
 }
 
+// A runnable is something that can be run. It has a bufferedErrorContext for
+// logging purposes, so that the call can grab the logged messages on
+// completion or run.
 type runnable interface {
+	bufferedErrorContext
 	run() error
-	bytes() []byte
-	isInError() bool
 }
 
 // nodeWrapper is a simple wrapper around an underlying
@@ -56,15 +54,9 @@ type runnable interface {
 type nodeWrapper struct {
 	rf         *rootFile
 	underlying parse.Node
-	errorContext
-}
 
-func newNodeWrapper(rf *rootFile, underlying parse.Node, e errorContextInterface) *nodeWrapper {
-	return &nodeWrapper{
-		rf:           rf,
-		underlying:   underlying,
-		errorContext: newErrorContext(e),
-	}
+	errorContext
+	*executionContext
 }
 
 var _ node = (*nodeWrapper)(nil)
@@ -82,6 +74,9 @@ func (n *nodeWrapper) Format(f fmt.State, verb rune) {
 	fmt.Fprintf(f, "%v:%s", n.rf, n.rf.nodePos(n.underlying))
 }
 
+// textNode represents some text in an index page. It wraps a regular
+// template.Node in order that the contained text can be munged in the case of
+// a text node appearing before/after a sidebyside.
 type textNode struct {
 	*nodeWrapper
 	text []byte
@@ -96,16 +91,4 @@ func (t *textNode) writeSourceTo(b *bytes.Buffer) {
 func (t *textNode) writeTransformTo(b *bytes.Buffer) error {
 	b.Write(t.text)
 	return nil
-}
-
-func (t *textNode) Format(f fmt.State, verb rune) {
-	loc, _ := t.rf.body.ErrorContext(t.underlying)
-	_, after, _ := strings.Cut(loc, ":")
-	fmt.Fprint(f, after)
-}
-
-func bufPrintf(b *bytes.Buffer) func(string, ...any) (int, error) {
-	return func(format string, args ...any) (int, error) {
-		return fmt.Fprintf(b, format, args...)
-	}
 }
