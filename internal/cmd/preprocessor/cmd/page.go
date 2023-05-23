@@ -57,7 +57,8 @@ type page struct {
 
 	// bufferedErrorContext is used because we process pages concurrently and then
 	// log the buffered messages in blocks
-	*bufferedErrorContext
+	bufferedErrorContext
+	*executionContext
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -72,17 +73,21 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	}
 
 	res := &page{
-		bufferedErrorContext: newBufferedErrorContext(ec),
-		contentRelPath:       contentRelPath,
-		relPath:              rel,
-		ctx:                  ec,
-		dir:                  dir,
-		langTargets:          make(map[lang][]*rootFile),
-		rootFiles:            make(map[string]*rootFile),
+		contentRelPath: contentRelPath,
+		relPath:        rel,
+		ctx:            ec,
+		dir:            dir,
+		langTargets:    make(map[lang][]*rootFile),
+		rootFiles:      make(map[string]*rootFile),
 
 		// TODO actually extract these from the page's config
 		leftDelim:  "{{{",
 		rightDelim: "}}}",
+
+		bufferedErrorContext: &errorContextBuffer{
+			executionContext: ec.executionContext,
+		},
+		executionContext: ec.executionContext,
 	}
 
 	return res, nil

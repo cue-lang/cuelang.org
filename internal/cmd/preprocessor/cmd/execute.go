@@ -21,6 +21,9 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
 )
 
 type lang string
@@ -53,6 +56,9 @@ type executionContext struct {
 	tempRoot string
 
 	norun bool
+
+	// ctx is the context used for all CUE operations
+	ctx *cue.Context
 }
 
 // tempDir creates a new temporary directory within the
@@ -85,9 +91,10 @@ func executeDef(c *Command, args []string) error {
 		debug:             flagDebug.Bool(c),
 		updateGoldenFiles: flagUpdate.Bool(c),
 		norun:             flagNoRun.Bool(c),
+		ctx:               cuecontext.New(),
 	}
 
-	e := newExecutor(ctx, wd, projectRoot, c)
+	e := newExecutor(&ctx, wd, projectRoot, c)
 	if flagServe.Bool(c) {
 		return e.serve(args)
 	}
