@@ -38,17 +38,30 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: {
 		test: {
-			if: "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			if:        "(\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)) && (runner.os != 'macOS')"
+			strategy:  _testStrategy
+			"runs-on": "${{ matrix.runner }}"
 
 			steps: [
 				for v in _repo.checkoutCode {v},
 
 				_repo.earlyChecks,
 
+				json.#step & {
+					if:   "runner.os == 'macOS'"
+					name: "Install Docker on macOS"
+					run: """
+						brew install colima docker
+						colima start
+						"""
+				},
+
+				_installMacOSUtils,
 				_setupBuildx,
 				_installNode,
 				_installGo,
-				_installHugo,
+				_installHugoLinux,
+				_installHugoMacOS,
 
 				// cachePre must come after installing Node and Go, because the cache locations
 				// are established by running each tool.
@@ -121,6 +134,14 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 	}
 
+	_testStrategy: {
+		"fail-fast": false
+		matrix: {
+			"go-version": [_repo.latestStableGo]
+			runner: [_repo.linuxMachine, _repo.macosMachine]
+		}
+	}
+
 	// TODO: this belongs in base. Captured in cuelang.org/issue/2327
 	_dispatchTrailerExpr: "fromJSON(steps.DispatchTrailer.outputs.value)"
 	_goGenerate:          json.#step & {
@@ -151,13 +172,27 @@ _installGo: _repo.installGo & {
 	with: "go-version": _repo.goVersion
 }
 
-_installHugo: json.#step & {
-	name: "Install Hugo"
+_installHugoLinux: json.#step & {
+	if:   "runner.os == 'Linux'"
+	name: "Install Hugo (Linux)"
 	uses: "peaceiris/actions-hugo@v2"
 	with: {
 		"hugo-version": _repo.hugoVersion
 		extended:       true
 	}
+}
+
+_installHugoMacOS: json.#step & {
+	if:   "runner.os == 'macOS'"
+	name: "Install Hugo (macOS)"
+	run:  "brew install hugo"
+}
+
+_installMacOSUtils: json.#step & {
+	name: "Install macOS utils"
+	run: """
+		brew install coreutils
+		"""
 }
 
 _dist: json.#step & {
@@ -209,7 +244,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	_
 }
 
-_setupBuildx: {
+_setupBuildx: json.#step & {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v2"
 }
