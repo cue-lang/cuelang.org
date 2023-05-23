@@ -15,7 +15,7 @@ export class Search extends BaseWidget {
     constructor(element: HTMLElement) {
         super(element);
 
-        this.client = algoliasearch('5LXFM0O81Q', '07bd8c12c9f9b101a107a1f301e64d02');
+        this.client = algoliasearch('5LXFM0O81Q', 'f961a95a00b2b2290054ad53fd75b424');
         this.index = this.client.initIndex('cuelang.org');
         this.searchResults = document.getElementsByClassName('search').item(0) as HTMLElement;
         this.url = new URL(window.location.href);

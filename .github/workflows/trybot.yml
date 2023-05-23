@@ -190,3 +190,11 @@ jobs:
         run: 'netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/alpha' || (github.ref == 'refs/heads/ci/test')
+        run: npm run algolia
+        working-directory: hugo
+        env:
+          ALGOLIA_APP_ID: 5LXFM0O81Q
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_INDEX_KEY }}
+          ALGOLIA_INDEX_NAME: cuelang.org
+          ALGOLIA_INDEX_FILE: ../_public/algolia.json

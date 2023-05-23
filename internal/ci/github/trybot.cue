@@ -115,6 +115,8 @@ workflows: trybot: _repo.bashWorkflow & {
 					#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
 					name:   "Deploy preview of CL"
 				},
+
+				_algoliaIndex,
 			]
 		}
 	}
@@ -210,4 +212,18 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 _setupBuildx: {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v2"
+}
+
+_algoliaIndex: json.#step & {
+	// Only run in the main repo on the alpha branch. Because anywhere else
+	// doesn't make sense.
+	if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)' || \(_repo.isTestDefaultBranch)"
+	run:                 "npm run algolia"
+	"working-directory": "hugo"
+	env: {
+		ALGOLIA_APP_ID:     "5LXFM0O81Q"
+		ALGOLIA_ADMIN_KEY:  "${{ secrets.ALGOLIA_INDEX_KEY }}"
+		ALGOLIA_INDEX_NAME: "cuelang.org"
+		ALGOLIA_INDEX_FILE: "../_public/algolia.json"
+	}
 }
