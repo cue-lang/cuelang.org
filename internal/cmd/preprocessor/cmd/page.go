@@ -20,6 +20,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"cuelang.org/go/cue"
 	"golang.org/x/exp/maps"
 	"golang.org/x/exp/slices"
 )
@@ -55,6 +56,10 @@ type page struct {
 	// root files in the page.
 	rightDelim string
 
+	// path is the path in ctx.config at which the page's configuration can be
+	// found (if it exists).
+	path cue.Path
+
 	// bufferedErrorContext is used because we process pages concurrently and then
 	// log the buffered messages in blocks
 	bufferedErrorContext
@@ -72,6 +77,12 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 		return nil, ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, contentDir, err)
 	}
 
+	pathParts := strings.Split(rel, string(os.PathSeparator))
+	var pagePath []cue.Selector
+	for _, p := range pathParts {
+		pagePath = append(pagePath, cue.Str(p))
+	}
+
 	res := &page{
 		contentRelPath: contentRelPath,
 		relPath:        rel,
@@ -83,6 +94,8 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 		// TODO actually extract these from the page's config
 		leftDelim:  "{{{",
 		rightDelim: "}}}",
+
+		path: cue.MakePath(pagePath...),
 
 		bufferedErrorContext: &errorContextBuffer{
 			executionContext: ec.executionContext,
