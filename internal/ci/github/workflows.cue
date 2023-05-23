@@ -41,7 +41,7 @@ workflows: close({
 
 	_repo.trybotWorkflows
 
-	trybot:     _linuxWorkflow
+	trybot:     _
 	update_tip: _linuxWorkflow
 	trybot_dispatch: #dummyDispatch: dummyDispatch
 })

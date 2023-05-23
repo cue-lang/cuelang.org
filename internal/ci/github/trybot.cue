@@ -38,7 +38,9 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: {
 		test: {
-			if: "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			if:        "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			strategy:  _testStrategy
+			"runs-on": "${{ matrix.runner }}"
 
 			steps: [
 				for v in _repo.checkoutCode {v},
@@ -118,6 +120,14 @@ workflows: trybot: _repo.bashWorkflow & {
 
 				_algoliaIndex,
 			]
+		}
+	}
+
+	_testStrategy: {
+		"fail-fast": false
+		matrix: {
+			"go-version": [_repo.latestStableGo]
+			runner: [_repo.linuxMachine, _repo.macosMachine]
 		}
 	}
 
