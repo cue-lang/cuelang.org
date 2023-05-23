@@ -15,7 +15,10 @@
 package cmd
 
 import (
+	"bytes"
+	"crypto/sha256"
 	"fmt"
+	"hash"
 	"io"
 	"os"
 	"path/filepath"
@@ -32,11 +35,12 @@ type lang string
 const (
 	langEn lang = "en"
 
-	flagDir    flagName = "dir"
-	flagDebug  flagName = "debug"
-	flagServe  flagName = "serve"
-	flagUpdate flagName = "update"
-	flagNoRun  flagName = "norun"
+	flagDir       flagName = "dir"
+	flagDebug     flagName = "debug"
+	flagServe     flagName = "serve"
+	flagUpdate    flagName = "update"
+	flagNoRun     flagName = "norun"
+	flagSkipCache flagName = "skipcache"
 )
 
 var (
@@ -72,12 +76,35 @@ type executionContext struct {
 	// config is the configuration for the entire site being handled by the
 	// preprocessor.
 	config cue.Value
+
+	// selfHash is the hash of the preprocessor itself that hashing calculations
+	// should use if they need the preprocessor to affect the hash result.
+	selfHash string
+
+	// skipCache is set to avoid any run steps consulting the current state of
+	// the run cache.
+	skipCache bool
 }
 
 // tempDir creates a new temporary directory within the
 // tempRoot for this executionContext.
 func (e executionContext) tempDir(pattern string) (string, error) {
 	return os.MkdirTemp(e.tempRoot, pattern)
+}
+
+// createHash returns a new sha256 hash h. If debug mode is enabled, if will
+// also return a new bytes.Buffer b, and writes to h will also be reflected in
+// b. Otherwise b will be nil.
+func (e executionContext) createHash() (hash.Hash, *bytes.Buffer) {
+	h := sha256.New()
+	if !e.debug {
+		return h, nil
+	}
+	l := loggingSha256Hash{
+		h: h,
+	}
+	l.w = io.MultiWriter(h, &l.b)
+	return &l, &l.b
 }
 
 // executeDef is the implementation of the execute command
@@ -100,11 +127,16 @@ func executeDef(c *Command, args []string) error {
 		return err
 	}
 
+	if flagSkipCache.Bool(c) && flagNoRun.Bool(c) {
+		return fmt.Errorf("cannot use --skipcache and --norun together")
+	}
+
 	ctx := executionContext{
 		debug:             flagDebug.Bool(c),
 		updateGoldenFiles: flagUpdate.Bool(c),
 		norun:             flagNoRun.Bool(c),
 		ctx:               cuecontext.New(),
+		skipCache:         flagSkipCache.Bool(c),
 	}
 
 	e := newExecutor(&ctx, wd, projectRoot, c)
