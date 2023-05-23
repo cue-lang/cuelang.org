@@ -2,4 +2,4 @@
 
 package cmd
 
-var selfHash = "5hdbCS9B5DTzvJ0CH4xi83zijiNCuytXIHoUcx6E2Gg="
+var selfHash = "a/+QywZ/X1X+97pti1FoouAhkv5U+3taIlosO/vYKVQ="
