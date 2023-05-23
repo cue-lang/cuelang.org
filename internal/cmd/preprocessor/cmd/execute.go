@@ -60,6 +60,12 @@ type executionContext struct {
 
 	// ctx is the context used for all CUE operations
 	ctx *cue.Context
+
+	config cue.Value
+
+	selfHash string
+
+	skipCache bool
 }
 
 // tempDir creates a new temporary directory within the
