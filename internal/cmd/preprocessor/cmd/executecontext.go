@@ -17,9 +17,11 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"runtime/debug"
+	"strings"
 
-	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/load"
 )
 
@@ -42,8 +44,6 @@ type executeContext struct {
 	// key is the full directory path of the page source.
 	pages map[string]*page
 
-	config cue.Value
-
 	errorContext
 	*executionContext
 }
@@ -63,6 +63,16 @@ func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 }
 
 func (ec *executeContext) execute() error {
+	// Determine the buildID or version information of self, which will act as
+	// input into the caching calculation.
+	selfHash, err := deriveHashOfSelf()
+	if err != nil {
+		return ec.errorf("failed to deriveHashOfSelf: %v", err)
+	}
+	ec.selfHash = selfHash
+
+	ec.debugf("%v: selfHash: %s", ec, ec.selfHash)
+
 	// Recursively walk wd to find $lang.md and _$lang.md files for all
 	// supported languages.
 	if err := ec.findPages(); err != nil {
@@ -203,4 +213,42 @@ func (ec *executeContext) findPages() error {
 	}
 
 	return nil
+}
+
+func deriveHashOfSelf() (string, error) {
+	// If we have buildinfo, with a main package module which has version and sum
+	// information we use that
+	bi, ok := debug.ReadBuildInfo()
+	if !ok {
+		return "", fmt.Errorf("failed to read buildinfo from self")
+	}
+	// If the main module has been replaced, read the replacement
+	if bi.Main.Replace != nil {
+		bi.Main = *bi.Main.Replace
+	}
+	// Iff the resulting main package module has sum (and therefore version)
+	// information we can use that.
+	if bi.Main.Sum != "" {
+		return bi.Main.Version + " " + bi.Main.Sum, nil
+	}
+
+	// Fallback to using go tool buildid to derive a hash
+	execPath, err := os.Executable()
+	if err != nil {
+		return "", fmt.Errorf("failed to determine path to self: %w", err)
+	}
+	cmd := exec.Command("go", "tool", "buildid", execPath)
+	out, err := cmd.Output()
+	if err != nil {
+		if err, _ := err.(*exec.ExitError); err != nil {
+			return "", fmt.Errorf("%v: %s", err, err.Stderr)
+		}
+		return "", err
+	}
+	// We only know how to deal with an output from go tool buildid with 4 parts
+	parts := strings.Split(strings.TrimSpace(string(out)), "/")
+	if len(parts) != 4 {
+		return "", fmt.Errorf("expected 4 '/'-separated parts of go tool buildid output. Saw: %s", out)
+	}
+	return parts[3], nil
 }
