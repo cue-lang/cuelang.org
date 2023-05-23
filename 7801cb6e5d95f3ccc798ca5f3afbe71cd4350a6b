@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4027b7c1_19a98691",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-23T13:11:13Z",
+      "side": 1,
+      "message": "presumably this is not secret or sensitive at all?",
+      "revId": "7801cb6e5d95f3ccc798ca5f3afbe71cd4350a6b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
