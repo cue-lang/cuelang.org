@@ -42,21 +42,7 @@ then
 	rsync -a $NETLIFY_BUILD_BASE/cache/playground_node_modules/ node_modules
 fi
 
-if [[ "${CI:-}" == "true" ]]; then
-	# Preserve the webpack cache if one exists
-	hasWebpackCache=false
-	if [[ -d node_modules/.cache ]]; then
-		hasWebpackCache=true
-		td=$(mktemp -d)
-		mv node_modules/.cache $td
-	fi
-	$time npm ci
-	if "$hasWebpackCache"; then
-		mv $td/.cache node_modules/
-	fi
-else
-	$time npm install
-fi
+$time npm ci
 
 if [ "${NETLIFY:-}" == "true" ]
 then
