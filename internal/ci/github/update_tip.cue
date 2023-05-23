@@ -60,7 +60,7 @@ workflows: update_tip: _repo.bashWorkflow & {
 
 			_installNode,
 			_installGo,
-			_installHugo,
+			_installHugoLinux,
 
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
