@@ -2,7 +2,9 @@
 # Ensure that touching a file then contined within the directory that has been
 # moved in place works.
 
-# Only run these tests on linux
+# Only run these tests on linux for now.
+#
+# TODO: investigate and fix the macOS expectations.
 [!linux] skip
 
 # Move a directory under a watched tree.
