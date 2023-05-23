@@ -15,11 +15,17 @@
 package cmd
 
 import (
+	"bytes"
+	"encoding/base64"
+	"encoding/json"
+	"errors"
 	"fmt"
+	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"runtime/debug"
 
-	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/load"
 )
 
@@ -42,8 +48,6 @@ type executeContext struct {
 	// key is the full directory path of the page source.
 	pages map[string]*page
 
-	config cue.Value
-
 	errorContext
 	*executionContext
 }
@@ -63,6 +67,14 @@ func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 }
 
 func (ec *executeContext) execute() error {
+	// Determine the buildID or version information of self, which will act as
+	// input into the caching calculation.
+	if err := ec.deriveHashOfSelf(); err != nil {
+		return err
+	}
+
+	ec.debugf("%v: selfHash: %s", ec, ec.selfHash)
+
 	// Recursively walk wd to find $lang.md and _$lang.md files for all
 	// supported languages.
 	if err := ec.findPages(); err != nil {
@@ -203,4 +215,137 @@ func (ec *executeContext) findPages() error {
 	}
 
 	return nil
+}
+
+func (ec *executeContext) deriveHashOfSelf() error {
+	// If we have buildinfo, with a main package module which has version and sum
+	// information we use that
+	bi, ok := debug.ReadBuildInfo()
+	if !ok {
+		return ec.errorf("%v: failed to read buildinfo from self", ec)
+	}
+	// If the main module has been replaced, read the replacement
+	if bi.Main.Replace != nil {
+		bi.Main = *bi.Main.Replace
+	}
+	// Iff the resulting main package module has sum (and therefore version)
+	// information we can use that.
+	if bi.Main.Sum != "" {
+		ec.selfHash = bi.Main.Version + " " + bi.Main.Sum
+		return nil
+	}
+
+	// This fallback only works if the main module is is
+	// github.com/cue-lang/cuelang.org. (It might be possible to relax this
+	// constraint, but a tight constraint works for now).
+	modCmd := exec.Command("go", "list", "-m", "-json")
+	modOut, err := modCmd.CombinedOutput()
+	if err != nil {
+		return ec.errorf("%v: failed to determine main module path via [%v]: %v", ec, modCmd, err)
+	}
+	var mainMod listModule
+	if err := json.Unmarshal(modOut, &mainMod); err != nil {
+		return ec.errorf("%v: failed to decode main module information: %v", ec, err)
+	}
+
+	const thisModule = "github.com/cue-lang/cuelang.org"
+	if mainMod.Path != thisModule {
+		return ec.errorf("%v: main module is %s; expected %s", ec, mainMod.Path, thisModule)
+	}
+
+	// Start out list of files to hash
+	filesToHash := []string{
+		filepath.Join(mainMod.Dir, "go.mod"),
+		filepath.Join(mainMod.Dir, "go.sum"),
+	}
+
+	depsCmd := exec.Command("go", "list", "-deps", "-json", "github.com/cue-lang/cuelang.org/internal/cmd/preprocessor")
+	depsOut, err := depsCmd.CombinedOutput()
+	if err != nil {
+		return ec.errorf("%v: failed to determine deps via [%v]: %v", ec, depsCmd, err)
+	}
+
+	// Iterate through, and for each package that belongs to the main module,
+	// hash all of the files. Even the ignored ones. This ensures we remain
+	// cross-platform.
+	dec := json.NewDecoder(bytes.NewReader(depsOut))
+	for {
+		var p listPackage
+		if err := dec.Decode(&p); err != nil {
+			if errors.Is(err, io.EOF) {
+				break
+			}
+			return ec.errorf("%v: failed to decode package deps: %w", ec, err)
+		}
+		if p.Module == nil || p.Module.Path != thisModule {
+			continue
+		}
+		add := func(files []string) {
+			for _, f := range files {
+				filesToHash = append(filesToHash, filepath.Join(p.Dir, f))
+			}
+		}
+		add(p.GoFiles)
+		add(p.CgoFiles)
+		add(p.CompiledGoFiles)
+		add(p.IgnoredGoFiles)
+		add(p.IgnoredOtherFiles)
+		add(p.CFiles)
+		add(p.CXXFiles)
+		add(p.MFiles)
+		add(p.HFiles)
+		add(p.FFiles)
+		add(p.SFiles)
+		add(p.SwigFiles)
+		add(p.SwigCXXFiles)
+		add(p.SysoFiles)
+	}
+
+	h, log := ec.createHash(ec)
+	for _, fn := range filesToHash {
+		fmt.Fprintf(h, "== %s ==\n", fn)
+		f, err := os.Open(fn)
+		if err != nil {
+			return ec.errorf("%v: failed to open %s: %w", ec, fn, err)
+		}
+		if _, err := io.Copy(h, f); err != nil {
+			return ec.errorf("%v: failed to hash %s: %w", ec, fn, err)
+		}
+		f.Close()
+	}
+	log()
+
+	ec.selfHash = base64.StdEncoding.EncodeToString(h.Sum(nil))
+	return nil
+}
+
+type listPackage struct {
+	ImportPath string
+	Name       string
+	Module     *listModule
+	Dir        string
+
+	GoFiles           []string
+	CgoFiles          []string
+	CompiledGoFiles   []string
+	IgnoredGoFiles    []string
+	IgnoredOtherFiles []string
+	CFiles            []string
+	CXXFiles          []string
+	MFiles            []string
+	HFiles            []string
+	FFiles            []string
+	SFiles            []string
+	SwigFiles         []string
+	SwigCXXFiles      []string
+	SysoFiles         []string
+
+	EmbedFiles []string
+
+	Error any
+}
+
+type listModule struct {
+	Path string
+	Dir  string
 }
