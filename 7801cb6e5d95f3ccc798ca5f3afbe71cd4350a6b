@@ -16,6 +16,24 @@
       "message": "presumably this is not secret or sensitive at all?",
       "revId": "7801cb6e5d95f3ccc798ca5f3afbe71cd4350a6b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65b8c019_2de1bbd8",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-23T13:12:53Z",
+      "side": 1,
+      "message": "Indeed it is not. Like the public API search key, they are both necessarily public values:\n\nhttps://github.com/cue-lang/cuelang.org/blob/4a96121877279ad49500e28560546bb8f0355e72/hugo/assets/ts/widgets/search.ts#L18",
+      "parentUuid": "4027b7c1_19a98691",
+      "revId": "7801cb6e5d95f3ccc798ca5f3afbe71cd4350a6b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
