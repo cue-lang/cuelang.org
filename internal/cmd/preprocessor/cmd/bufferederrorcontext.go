@@ -16,27 +16,75 @@ package cmd
 
 import (
 	"bytes"
-	"io"
+	"fmt"
+
+	"cuelang.org/go/cue/errors"
 )
 
-type bufferedErrorContext struct {
+// bufferedErrorContext is a buffered extension of errorContext. That is, all
+// log messages are buffered, and then later retrieved via the bytes() method.
+type bufferedErrorContext interface {
 	errorContext
 
-	// log is the buffer to which we write log messages
-	log bytes.Buffer
+	// bytes returns the log messages buffered.
+	bytes() []byte
 }
 
-func newBufferedErrorContext(e errorContextInterface) *bufferedErrorContext {
-	res := new(bufferedErrorContext)
-	res.errorContext.log = &res.log
-	res.executionContext = e.execContext()
+// errorContextBuffer is a base implementation of bufferedErrorContext
+//
+// Is is intentionally not threadsafe.
+type errorContextBuffer struct {
+	*executionContext
+	inError bool
+	log     bytes.Buffer
+}
+
+var _ errorContext = (*errorContextBuffer)(nil)
+
+func (e *errorContextBuffer) isInError() bool {
+	return e.inError
+}
+
+func (e *errorContextBuffer) setInError(v bool) {
+	e.inError = e.inError || v
+}
+
+func (e *errorContextBuffer) errorIfInError() error {
+	if !e.inError {
+		return nil
+	}
+	return errors.New("in error")
+}
+
+func (e *errorContextBuffer) logf(format string, args ...any) string {
+	res := fmt.Sprintf(format, args...)
+	m := res
+	if len(m) > 0 && m[len(m)-1] != '\n' {
+		m += "\n"
+	}
+	fmt.Fprint(&e.log, m)
 	return res
 }
 
-func (e *bufferedErrorContext) logger() io.Writer {
-	return &e.log
+func (e *errorContextBuffer) errorf(format string, args ...any) error {
+	s := fmt.Sprintf(format, args...)
+	e.inError = true
+	return errors.New(e.logf("** %s", s))
 }
 
-func (e *bufferedErrorContext) bytes() []byte {
+func (e *errorContextBuffer) fatalf(format string, args ...any) {
+	err := e.errorf(format, args...)
+	panic(fatalError{error: err})
+}
+
+func (e *errorContextBuffer) debugf(format string, args ...any) {
+	if !e.debug {
+		return
+	}
+	s := fmt.Sprintf(format, args...)
+	e.logf("debug: " + s)
+}
+
+func (e *errorContextBuffer) bytes() []byte {
 	return e.log.Bytes()
 }
