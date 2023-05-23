@@ -38,12 +38,23 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: {
 		test: {
-			if: "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			if:        "\(_repo.containsTrybotTrailer) || ! \(_repo.containsDispatchTrailer)"
+			strategy:  _testStrategy
+			"runs-on": "${{ matrix.runner }}"
 
 			steps: [
 				for v in _repo.checkoutCode {v},
 
 				_repo.earlyChecks,
+
+				json.#step & {
+					if:   "runner.os == 'macOS'"
+					name: "Install Docker on macOS"
+					run: """
+						brew install colima docker
+						colima start
+						"""
+				},
 
 				_setupBuildx,
 				_installNode,
@@ -118,6 +129,14 @@ workflows: trybot: _repo.bashWorkflow & {
 
 				_algoliaIndex,
 			]
+		}
+	}
+
+	_testStrategy: {
+		"fail-fast": false
+		matrix: {
+			"go-version": [_repo.latestStableGo]
+			runner: [_repo.linuxMachine, _repo.macosMachine]
 		}
 	}
 
@@ -209,7 +228,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	_
 }
 
-_setupBuildx: {
+_setupBuildx: json.#step & {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v2"
 }
