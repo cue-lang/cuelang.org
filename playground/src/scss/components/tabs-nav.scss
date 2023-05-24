@@ -1,0 +1,117 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/list-reset';
+@import '../mixins/stretch';
+
+.#{ $prefix }-tabs-nav {
+    $self: &;
+
+    background-color: $c-grey-blue--lighter;
+    display: flex;
+    overflow: hidden;
+
+    &__tabs {
+        @include list-reset;
+
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    &__item {
+        flex: 0 0 auto;
+    }
+
+    &__tab {
+        background-color: var(--tab-background, $c-white);
+        color: var(--tab-color, $c-blue--darker);
+        display: block;
+        font-size: 0.75rem;
+        font-weight: $weight-medium;
+        height: 35px;
+        line-height: 35px;
+        padding: 0 1rem;
+        position: relative;
+        text-align: center;
+        transition: color .2s, background-color .2s;
+
+        &:focus,
+        &:hover {
+            background-color: var(--tab-background-hover, $c-grey-blue--light);
+        }
+
+        &:disabled {
+            color: $c-grey--dark;
+            pointer-events: none;
+        }
+
+        &.is-active {
+            background-color: var(--tab-background-active, $c-white);
+            font-weight: $weight-bold;
+            pointer-events: none;
+        }
+
+        &--terminal {
+            --tab-background: #{ $c-grey-blue--lighter };
+            --tab-background-hover: #{ $c-grey-blue--light };
+            --tab-background-active: #{ $c-grey-blue--lighter };
+
+            font-weight: $weight-semibold;
+        }
+    }
+
+    &__pagination {
+        align-items: center;
+        box-shadow:
+            0 2px 4px -1px transparentize($c-black, .8),
+            0 4px 5px 0 transparentize($c-black, .86),
+            0 1px 10px 0 transparentize($c-black, .88);
+        color: $c-black;
+        display: flex;
+        flex: 0 0 36px;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 36px;
+
+        &::before {
+            @include stretch;
+
+            background-color: transparentize($c-grey--lighter, .5);
+            border-radius: 20px;
+            content: '';
+            display: block;
+            height: 140%;
+            pointer-events: none;
+            transform: scale(0) translate(-20%, -20%);
+            transform-origin: left bottom;
+            transition: transform .2s;
+            width: 140%;
+        }
+
+        &:focus,
+        &:hover {
+            color: $c-grey--dark;
+
+            &::before {
+                transform: scale(1) translate(-20%, -20%);
+            }
+        }
+
+        &:disabled {
+            box-shadow: none;
+            color: $c-grey--light;
+            pointer-events: none;
+        }
+    }
+
+    &__icon {
+        display: block;
+        height: 24px;
+        position: relative;
+        width: 24px;
+    }
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ "/playground/main.css" | relURL }}">
     <script>
         document.editorEnv = {
+            baseUrl: {{ .Site.BaseURL }},
             wasmPath: '/playground'
         }
     </script>

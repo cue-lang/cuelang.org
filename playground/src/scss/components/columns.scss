@@ -1,0 +1,89 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../mixins/screen';
+
+.#{ $prefix }-columns {
+    border: 2px solid $c-grey-blue;
+    display: grid;
+    grid-template:
+        'topLeft topRight' 50% / 100%
+        'bottomLeft bottomRight' 50% / 100%;
+
+    &__item {
+        border-bottom: 2px solid $c-grey-blue;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        .#{ $prefix }-tabs,
+        pre {
+            border: 0;
+            height: 100%;
+            margin: 0;
+        }
+    }
+
+    @include screen($screen-simple) {
+        grid-template:
+            'topLeft topRight' 50%
+            'bottomLeft bottomRight' 50% / 50% 50%;
+
+        &__item {
+            &:only-child {
+                grid-column: span 2;
+            }
+
+            &--left {
+                border-bottom: 0;
+                grid-area: topLeft;
+                grid-row: span 2;
+                resize: horizontal;
+            }
+
+            &--right {
+                border-bottom: 0;
+                border-left: 2px solid $c-grey-blue;
+                grid-area: topRight;
+                grid-row: span 2;
+            }
+
+            &--top-left {
+                grid-area: topLeft;
+
+                &:nth-last-child(2) {
+                    grid-column: span 2;
+                }
+            }
+
+            &--bottom-left {
+                border-bottom: 0;
+                grid-area: bottomLeft;
+
+                &:last-child {
+                    grid-column: span 2;
+                }
+            }
+
+            &--top-right {
+                border-left: 2px solid $c-grey-blue;
+                grid-area: topRight;
+
+                &:first-child {
+                    grid-column: span 2;
+                }
+            }
+
+            &--bottom-right {
+                border-bottom: 0;
+                border-left: 2px solid $c-grey-blue;
+                grid-area: bottomRight;
+
+                &:nth-child(2) {
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+}

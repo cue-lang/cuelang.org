@@ -17,6 +17,8 @@ import * as acemodule from 'ace-builds';
 import { CUEVersion } from '@config/gen_cuelang_org_go_version';
 import { Dropdown, DropdownItem } from '@components/dropdown';
 import { funcOptions, inputOptions, Option, OPTION_TYPE, outputOptions } from '@models/options';
+import { Tabs } from '@components/tabs';
+import { Tab } from '@components/tab';
 
 const editorFontSize = 15;
 
@@ -133,11 +135,27 @@ export class App extends React.Component<AppProps, AppState>
                     </ul>
                     <div className="cue-playground__version">{ CUEVersion }</div>
                 </div>
-                <div className="cue-playground__column">
-                    <div className="cue-playground__code" id="lhseditor"></div>
-                </div>
-                <div className="cue-playground__column">
-                    <div className="cue-playground__code" id="rhseditor"></div>
+                <div className="cue-playground__content">
+                    <div className="cue-columns">
+                        <div className="cue-columns__item cue-columns__item--left">
+                            <Tabs>
+                                <Tab name={ `Input: ${ this.state.input.name }` }>
+                                    <div className="cue-editor">
+                                        <div id="lhseditor"></div>
+                                    </div>
+                                </Tab>
+                            </Tabs>
+                        </div>
+                        <div className="cue-columns__item cue-columns__item--right">
+                            <Tabs>
+                                <Tab name={ `Output: ${ this.state.output.name }` } type="terminal">
+                                    <div className="cue-editor cue-editor--terminal">
+                                        <div id="rhseditor"></div>
+                                    </div>
+                                </Tab>
+                            </Tabs>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
