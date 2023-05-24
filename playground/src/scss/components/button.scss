@@ -4,7 +4,7 @@
 
 .#{ $prefix }-button {
     align-items: center;
-    background: $c-blue--light;
+    background: $c-blue--darker;
     border-radius: 30px;
     color: $c-white;
     display: inline-flex;
@@ -25,7 +25,7 @@
 
     &:focus-visible,
     &:hover {
-        background-color: $c-blue--darker;
+        background-color: $c-blue;
     }
 
     &:disabled {

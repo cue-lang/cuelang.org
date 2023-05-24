@@ -1,0 +1,27 @@
+@import '../config/colors';
+@import '../config/prefix';
+
+.#{ $prefix }-editor {
+    background: $c-white;
+    height: 100%;
+    padding: .875rem 0;
+    width: 100%;
+
+    > * {
+        height: 100%;
+    }
+
+    .ace_gutter {
+        background: $c-white !important;
+    }
+
+    &--terminal {
+        background: $c-grey-blue--lighter;
+
+        .ace_editor,
+        .ace_gutter {
+            background: $c-grey-blue--lighter !important;
+        }
+
+    }
+}
