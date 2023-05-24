@@ -38,6 +38,10 @@
         + #{ $self }__item {
             margin-top: 0.5rem;
         }
+
+        &--search {
+            padding: 0.75rem;
+        }
     }
 
     &__link {

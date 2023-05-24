@@ -7,6 +7,8 @@ other = "Homepage of CUE"
 other = "Read more"
 [ui_search]
 other = "Search"
+[ui_search_question]
+other = "What are you looking for?"
 [ui_search_results]
 other = "documents found"
 [ui_loading]
