@@ -71,10 +71,11 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	}
 
 	type job struct {
-		cmd  *exec.Cmd
-		post func()
+		f   *txtar.File
+		cmd *exec.Cmd
+		out bytes.Buffer
 	}
-	var jobs []job
+	var jobs []*job
 
 	// First format all non-output files
 	for i := range s.node.sourceArchive.Files {
@@ -83,45 +84,34 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 		if a.IsOut {
 			continue
 		}
+		var cmd *exec.Cmd
 		switch a.Ext {
 		case "json":
-			var res bytes.Buffer
-			cmd := s.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
+			cmd = s.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
-			cmd.Stdout = &res
-			jobs = append(jobs, job{
-				cmd: cmd,
-				post: func() {
-					f.Data = res.Bytes()
-				},
-			})
 		case "yaml":
-			var res bytes.Buffer
-			cmd := s.dockerCmd(nil, "cue", "export", "--out=yaml", "yaml:", "-")
+			cmd = s.dockerCmd(nil, "cue", "export", "--out=yaml", "yaml:", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
-			cmd.Stdout = &res
-			jobs = append(jobs, job{
-				cmd: cmd,
-				post: func() {
-					f.Data = res.Bytes()
-				},
-			})
 		case "cue":
-			var res bytes.Buffer
-			cmd := s.dockerCmd(nil, "cue", "fmt", "-")
+			cmd = s.dockerCmd(nil, "cue", "fmt", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
-			cmd.Stdout = &res
-			jobs = append(jobs, job{
-				cmd: cmd,
-				post: func() {
-					f.Data = res.Bytes()
-				},
-			})
+		default:
+			s.debugf("%v: skipping formatting of file %s; unknown extension", s, a.Basename)
 		}
+		if cmd == nil {
+			// Nothing to do
+			continue
+		}
+		jobs = append(jobs, &job{
+			f:   f,
+			cmd: cmd,
+		})
 	}
 
 	// Start the formatting jobs
 	for _, j := range jobs {
+		j.cmd.Stdout = &j.out
+		j.cmd.Stderr = &j.out
 		s.debugf("%v: running %v", s, j.cmd)
 		if err := j.cmd.Start(); err != nil {
 			s.errorf("%v: failed to start %v: %v", s, j.cmd, err)
@@ -131,9 +121,9 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	// Wait for the formatting jobs in order
 	for _, j := range jobs {
 		if err := j.cmd.Wait(); err != nil {
-			s.errorf("%v: failed to run %v: %v", s, j.cmd, err)
+			s.errorf("%v: failed to run %v: %v\n%s", s, j.cmd, err, tabIndent(j.out.Bytes()))
 		} else {
-			j.post()
+			j.f.Data = j.out.Bytes()
 		}
 	}
 
