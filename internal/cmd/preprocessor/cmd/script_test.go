@@ -20,6 +20,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"runtime"
 	"testing"
 
 	"cuelang.org/go/cmd/cue/cmd"
@@ -36,6 +37,19 @@ func TestMain(m *testing.M) {
 
 func TestScripts(t *testing.T) {
 	testscript.Run(t, testscript.Params{
+		Setup: func(env *testscript.Env) error {
+			// On macOS, we need to set DOCKER_HOST in order for the use of docker
+			// desktop to work.
+			if runtime.GOOS == "darwin" {
+				dockerHost := os.Getenv("DOCKER_HOST")
+				if dockerHost == "" {
+					home := os.Getenv("HOME")
+					dockerHost = "unix://" + filepath.Join(home, ".docker", "run", "docker.sock")
+				}
+				env.Setenv("DOCKER_HOST", dockerHost)
+			}
+			return nil
+		},
 		UpdateScripts: os.Getenv("CUE_UPDATE") != "",
 		Dir:           "testdata",
 	})

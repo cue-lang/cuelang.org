@@ -4,6 +4,9 @@
 # almost 100% consistency of grouping of events, without blowing the testing
 # time.
 
+# Only run these tests on linux
+[!linux] skip
+
 # Move a directory under a watched tree.
 touch dir/a.txt
 touch dir/b/b.txt
