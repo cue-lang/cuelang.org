@@ -1,5 +1,5 @@
 // Helpers
-import { Docs, Drawer, Header, NotificationBar, Search, Tabs, TabsNav } from './widgets';
+import { Docs, Drawer, Header, Menu, NotificationBar, Search, Tabs, TabsNav } from './widgets';
 import { scrollToHash } from './helpers/scroll-to';
 import { Widget } from './interfaces/widget';
 
@@ -11,7 +11,7 @@ declare global {
     }
 }
 
-type WidgetTypes = Docs | Drawer | Header | NotificationBar | Search | Tabs | TabsNav;
+type WidgetTypes = Docs | Drawer | Header | Menu | NotificationBar | Search | Tabs | TabsNav;
 
 class App {
     public widgets: Widget[];
@@ -27,6 +27,7 @@ class App {
             [Docs.NAME]: Docs,
             [Drawer.NAME]: Drawer,
             [Header.NAME]: Header,
+            [Menu.NAME]: Menu,
             [NotificationBar.NAME]: NotificationBar,
             [Search.NAME]: Search,
             [Tabs.NAME]: Tabs,

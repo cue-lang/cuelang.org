@@ -42,10 +42,13 @@
                             </li>
                         {{ end }}
 
-                        <li class="nav__item">
-                            <a class="nav__link" href="{{ "/search" | relLangURL }}" rel="search">
-                                <span>{{ T "ui_search" }}</span>
-                            </a>
+                        <li class="nav__item nav__item--search">
+                            {{- partial "searchbar.html" (dict
+                                "action" "/search"
+                                "inputId" "searchbar-drawer"
+                                "modifier" "small"
+                                "type" "drawer"
+                            ) -}}
                         </li>
                     </ul>
                 </nav>
