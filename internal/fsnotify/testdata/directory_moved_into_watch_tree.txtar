@@ -2,6 +2,9 @@
 # Ensure that touching a file then contined within the directory that has been
 # moved in place works.
 
+# Only run these tests on linux
+[!linux] skip
+
 # Move a directory under a watched tree.
 touch dir/a.txt
 touch dir/b/b.txt
