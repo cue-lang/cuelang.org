@@ -4,15 +4,11 @@
 unquote content/page/en.md
 unquote content/page/en.md.golden
 
-exec find
-
 # Run the preprocessor
 exec preprocessor execute --debug
 
 # Verify that the source file is intact
 cmp content/page/en.md content/page/en.md.golden
-
-exec find
 
 # Verify that the target files matche the source contents
 cmp hugo/content/en/page/index.md hugo/content/en/page/index.md.golden
