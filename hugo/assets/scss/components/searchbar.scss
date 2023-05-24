@@ -6,6 +6,8 @@
 @import '../mixins/typography';
 
 .searchbar {
+    $self: &;
+
     position: relative;
 
     &__label {
@@ -64,6 +66,19 @@
         margin-left: auto;
         right: 0;
         width: 120px;
+    }
+
+    &--small {
+        #{ $self }__bar {
+            margin: 0;
+        }
+
+        #{ $self }__input {
+            &[type='text'] {
+                height: $h-button--small + 16px;
+                padding: 0 ($h-button--small + 12px) 0 2rem;
+            }
+        }
     }
 
     @include screen($screen-normal) {

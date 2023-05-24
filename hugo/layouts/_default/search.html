@@ -7,28 +7,10 @@
         </header>
         <div class="section__body">
             <div class="section__content">
-                <form action="{{ .RelPermalink }}" method="get" data-search>
-                    <div class="searchbar">
-                        <label for="searchbar" class="searchbar__label">{{ T "ui_search" }}</label>
-                        <div class="searchbar__bar">
-                            <input name="q" type="text" id="searchbar" class="searchbar__input">
-                            <button type="submit" class="button button--icon searchbar__button">
-                                {{- partial "icon.html" (dict "icon" "search" "class" "button__icon") -}}
-                                <span>{{ T "ui_search" }}</span>
-                            </button>
-                        </div>
-
-                        <div class="searchbar__footer">
-                            <div class="searchbar__results is-hidden">
-                                </span>{{ T "ui_search_results" }}
-                            </div>
-
-                            <div class="searchbar__logo">
-                                {{ with resources.Get "svg/algolia-search.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                {{- partial "searchbar.html" (dict
+                    "type" "results"
+                    "inputId" "searchbar"
+                ) -}}
 
                 <div class="search"></div>
             </div>

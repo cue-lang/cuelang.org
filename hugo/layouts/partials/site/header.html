@@ -62,11 +62,21 @@
                 {{- end -}}
             </div>
 
-            <div class="header__search">
-                <a href="{{ "/search" | relLangURL }}" class="button button--icon button--white-simple" rel="search">
+            <div class="header__search" data-menu>
+                <a href="{{ "/search" | relLangURL }}" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
                     {{- partial "icon.html" (dict "icon" "search" "class" "button__icon") -}}
                     <span>{{ T "ui_search" }}</span>
                 </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">{{ T "ui_search_question" }}</p>
+                    {{- partial "searchbar.html" (dict
+                        "action" "/search"
+                        "inputId" "searchbar-dropdown"
+                        "modifier" "small"
+                        "type" "menu"
+                    ) -}}
+                </div>
             </div>
 
             <div class="header__toggle">
