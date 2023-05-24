@@ -23,7 +23,8 @@ cmp stdout $WORK/2.txt
 # Move back to the previous commit
 exec git checkout HEAD~1
 log
-cmp stdout $WORK/3.txt
+[linux] cmp stdout $WORK/3.linux.txt
+[darwin] cmp stdout $WORK/3.macos.txt
 
 # Move it back out.
 
@@ -55,13 +56,25 @@ events [
 events [
   name: .special, op: CHMOD
 ]
--- 3.txt --
+-- 3.linux.txt --
 events [
   name: .git/index.lock, op: CREATE
   name: c/subdir/c.txt, op: REMOVE
   name: c/subdir, op: REMOVE
   name: c/subdir, op: REMOVE
   name: c, op: REMOVE
+  name: c, op: REMOVE
+  name: .git/index.lock, op: RENAME
+]
+events [
+  name: .special, op: CHMOD
+]
+-- 3.macos.txt --
+events [
+  name: .git/index.lock, op: CREATE
+  name: c/subdir/c.txt, op: REMOVE
+  name: c/subdir, op: REMOVE|WRITE
+  name: c, op: REMOVE|WRITE
   name: c, op: REMOVE
   name: .git/index.lock, op: RENAME
 ]
