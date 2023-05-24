@@ -8,16 +8,14 @@
 .#{ $prefix }-playground {
     display: grid;
     font-family: $font-inter;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     height: 100%;
-    padding-bottom: 10px;
     width: 100%;
 
     &__header {
         align-items: center;
-        background-color: $c-blue--lighter;
+        background-color: $c-grey-blue--lighter;
         display: flex;
         flex-direction: row;
         gap: 0.3rem;
@@ -36,25 +34,14 @@
 
     &__version {
         align-self: flex-start;
-        color: $c-blue;
+        color: $c-blue--darker;
         font-size: 0.875rem;
         margin-top: 0.5rem;
     }
 
-    &__column {
-        background-color: $c-blue--lighter;
-        border-radius: $b-radius;
-        overflow: hidden;
-        padding: 1.5rem 1rem;
-    }
-
-    &__code {
-        background: $c-blue--lighter !important;
-        height: 100%;
-        width: 100%;
-
-        .ace_gutter {
-            background: $c-blue--lighter !important;
+    &__content {
+        > * {
+            height: 100%;
         }
     }
 
