@@ -49,13 +49,21 @@ var (
 	pageRootFileRegexp = buildRootFileRegexp(supportedLanguages)
 )
 
+// executionContext is a container for various bits of context/state
+// that are shared between all levels of the preprocessor.
 type executionContext struct {
+	// updateGoldenFiles is set to allow runs of nodes and scripts to
+	// update golden file expectations.
 	updateGoldenFiles bool
 
+	// debug is set when we should output debug level logging.
 	debug bool
 
+	// tempRoot is the directory path under which all temporary files created
+	// during an execution run of the preprocessor should be created.
 	tempRoot string
 
+	// norun is set to indicate that no nodes or scripts should be run.
 	norun bool
 
 	// ctx is the context used for all CUE operations
