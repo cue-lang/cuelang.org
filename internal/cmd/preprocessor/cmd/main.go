@@ -14,6 +14,8 @@
 
 package cmd
 
+//go:generate go run github.com/cue-lang/cuelang.org/internal/cmd/genpkghash gen_pkghash.go
+
 import (
 	"context"
 	"fmt"
