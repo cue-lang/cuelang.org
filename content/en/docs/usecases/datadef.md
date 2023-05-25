@@ -230,8 +230,8 @@ OpenAPI
 The difference gets more extreme as more constraints and logical
 combinators are used.
 
-OpenAPI and CUE both have theirs roles.
-The JSON format of OpenAPI makes it good interchange standard.
+OpenAPI and CUE both have their roles.
+The JSON format of OpenAPI makes it a good interchange standard.
 CUE, on the other hand, can serve as an engine to generate and interpret
 OpenAPI constraints.
 Note that CUE is generally more expressive and many CUE constraints will
