@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dec3ed41_a25019e7",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 36
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:40:49Z",
+      "side": 1,
+      "message": "nit: given nodeType\n\n(parentheses are not used in godoc either)",
+      "revId": "83c79ed621063128eecfa7deb28a864a43cf26a5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "113b6fea_291b2c73",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 36
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:40:49Z",
+      "side": 1,
+      "message": "how about `labelsByType`? I like to name maps that way, particularly when you have another \"labels\" `map[string]T` in the same scope, to remind myself what the key is.",
+      "revId": "83c79ed621063128eecfa7deb28a864a43cf26a5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88ca0beb_88303dc5",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 36
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:40:49Z",
+      "side": 1,
+      "message": "if you only use the labels field to iterate in a sorted manner, you could just use maps.Keys plus sort.Strings. not measurably slower, and you save the struct and a few lines too.",
+      "revId": "83c79ed621063128eecfa7deb28a864a43cf26a5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
