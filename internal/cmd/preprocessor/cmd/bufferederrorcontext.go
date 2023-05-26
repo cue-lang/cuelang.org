@@ -54,7 +54,7 @@ func (e *errorContextBuffer) logf(format string, args ...any) string {
 	var res bytes.Buffer
 	w := io.MultiWriter(&res, &e.log)
 	fmt.Fprintf(w, format, args...)
-	if !bytes.HasSuffix(res.Bytes(), []byte("\n")) {
+	if b := res.Bytes(); len(b) > 0 && !bytes.HasSuffix(b, []byte("\n")) {
 		fmt.Fprint(w, "\n")
 	}
 	return res.String()
