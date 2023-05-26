@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "131d2b8a_75edcbf4",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "perhaps add\n\n\u003e ; are you running via \"go generate\"?\n\nto clarify that you don\u0027t expect the user to set the env var themselves.",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fca0eb4b_07583c04",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "explain why we need go.mod and go.sum: we\u0027re only hashing the source files for the main module, not its deps.",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "503ca33f_f0612f77",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "remember that you\u0027re using the `-e` flag, so you should be checking the Error field to fail if any of the packages being loaded has errors - otherwise your hash might be bad.\n\nhonestly I was personally thinking that you could do a `filepath.WalkDir` on the root of the module, hashing all Go files that you encounter along the way, plus any extra source files like embedded files.\n\nI guess the only major downside of that approach is that you might have packages in your main module which are not dependencies of ./internal/cmd/preprocessor at all. If that\u0027s the reason for using go list, then that\u0027s fine by me. I\u0027d perhaps document it.",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "461e4ebb_9545f058",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure you don\u0027t actually need to sort, because all the lists of source files above will be sorted themselves by cmd/go. Removing the need to sort also removes the need to build a complete `filesToHash` list, as your \"add\" function can directly write to the incremental hasher. That\u0027s what I would do.",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85585a05_163c437c",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "\u003e Code generated *by* ...",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8f0e9fe_0d4786e0",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "might as well make this hash string a `const`, to prevent misuse",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92f1ce56_27887343",
+        "filename": "internal/cmd/preprocessor/cmd/cmd_test.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "s/now/not/\n\nI admit I don\u0027t particularly like this... :) Almost like there\u0027s no point in generating the hash via `go generate` if you\u0027re doing it via `go test` already.\n\nHow about making the test complain if the hash isn\u0027t up to date, instead of running generate itself? I would find that a lot more natural given what `go test` is meant to do. I would find any `go test` command updating tracked files to be a code smell, unless I gave it a custom flag like `-update`.",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0418e66_ae3fecb3",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:57:06Z",
+      "side": 1,
+      "message": "surely genpkghash should already know to ignore its own output file, so that we don\u0027t have to repeat that here :)",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
