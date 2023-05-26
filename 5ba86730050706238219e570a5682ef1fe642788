@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c264998b_ab57a18e",
+        "filename": "internal/cmd/preprocessor/cmd/bufferederrorcontext.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T11:53:16Z",
+      "side": 1,
+      "message": "Changed to updateInError.",
+      "parentUuid": "1c5b0038_c6f1d4f5",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32c4ed73_677fcecb",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-26T08:29:45Z",
       "side": 1,
       "message": "I know this code already existed elsewhere, but it still puzzles me that you\u0027re doing an Sprintf, then a string addition, then the final write.\n\nhow about something like:\n\n```\nfmt.Fprintf(\u0026e.log, format, args...)\nif !bytes.HasSuffix(e.log.Bytes(), []byte(\"\\n\")) {\n    e.log.WriteByte(\u0027\\n\u0027)\n}\n```\n\nan alternative would be to be consistent about including or excluding the newline in the logf calls.\n\nThese also apply to the other interface implementations, I think.",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32247bac_10106f50",
+        "filename": "internal/cmd/preprocessor/cmd/bufferederrorcontext.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T11:53:16Z",
+      "side": 1,
+      "message": "Per our offline chat, it was originally done this way in order to help the `printf` vet analyser spot that these methods are `printf`-like. But now that all calls to these methods happen via an interface value, such a hint is worthless. Instead we look to https://github.com/golang/go/issues/58340 for a real solution here, and in the meantime just have to spot problems when they occur in practice. \n\nTherefore I have removed the \"double printf\" in all the places.",
+      "parentUuid": "32c4ed73_677fcecb",
       "revId": "5ba86730050706238219e570a5682ef1fe642788",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3129d40a_e5eeeaca",
+        "filename": "internal/cmd/preprocessor/cmd/bufferederrorcontext.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T11:53:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4446036f_536cfc52",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dfa3d26f_b38e6e20",
@@ -69,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "962d76e0_8f504525",
+        "filename": "internal/cmd/preprocessor/cmd/bufferederrorcontext.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T11:53:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfa3d26f_b38e6e20",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ffd3bdd_48629462",
@@ -82,6 +154,24 @@
       "writtenOn": "2023-05-26T08:29:45Z",
       "side": 1,
       "message": "nit: this convenience need not be in the interface, because all implementations do exactly the same based on isInError.",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "621cc2a4_46169881",
+        "filename": "internal/cmd/preprocessor/cmd/errorcontext.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T11:53:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ffd3bdd_48629462",
       "revId": "5ba86730050706238219e570a5682ef1fe642788",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -105,6 +195,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1bc1ea6f_e448fe30",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T11:53:16Z",
+      "side": 1,
+      "message": "In this case, it is very intentionally shared (for now) between the various \"levels\"/phases of the preprocessor. It might well be the semantics of copying the state into a \"child\" works, because in theory a child (which might be doing work concurrently) should never write to this shared state because it can\u0027t coordinate with the other children.\n\nI will experiment in later CLs to test this hypothesis.",
+      "parentUuid": "40e322fe_bdfff19e",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "91d662cd_f5215cd1",
         "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
         "patchSetId": 29
@@ -116,6 +224,24 @@
       "writtenOn": "2023-05-26T08:29:45Z",
       "side": 1,
       "message": "these bits of code can also just be:\n\n```\nif err :\u003d errorIfInError(rf); err !\u003d nil {\n    return err\n}\n```\n\n(with my suggestion to move the func out of the interface)",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0325d82d_a0d2999f",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T11:53:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91d662cd_f5215cd1",
       "revId": "5ba86730050706238219e570a5682ef1fe642788",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
