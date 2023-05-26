@@ -108,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89bf17b7_82fa5925",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T20:50:04Z",
+      "side": 1,
+      "message": "Hm. I would personally expect `go generate` to not update the hash if the build is broken, because the program simply doesn\u0027t work at all. Minor point though.",
+      "parentUuid": "45eb738e_da7c5e6e",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "461e4ebb_9545f058",
         "filename": "internal/cmd/genpkghash/main.go",
         "patchSetId": 5
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "I\u0027m pretty sure I do need to sort them. Because the members of GoFiles and IgnoredGoFiles might vary by platform. Hence the resulting order would be different, hence the hash would be different.",
       "parentUuid": "461e4ebb_9545f058",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ba1ab41_9b1ee6b0",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T20:50:04Z",
+      "side": 1,
+      "message": "Good point!",
+      "parentUuid": "460265a8_486658c8",
       "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
