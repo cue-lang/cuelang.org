@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7755a47e_2f8d2e4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:34:03Z",
+      "side": 1,
+      "message": "an example of Gerrit not auto-linking this :)",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb0a9da2_fee4239b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:34:03Z",
+      "side": 1,
+      "message": "I _think_ your findPages already does the full walking of the filesystem, so you could also avoid the extra os.ReadDir if you wanted to.",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b7cde6e_e43d2701",
+        "filename": "internal/cmd/preprocessor/cmd/executecontext.go",
+        "patchSetId": 34
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:34:03Z",
+      "side": 1,
+      "message": "nit: I would use names like `name`, `entry`, and `dir` instead of `n`, `e`, `d`. I was reading `filepath.Join(d, n)` and I had to keep looking up to remind myself what they even were :) honestly I avoid single-letter variable names unless their scope is just 2-3 lines.",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
