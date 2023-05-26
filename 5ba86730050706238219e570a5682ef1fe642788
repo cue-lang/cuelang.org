@@ -228,6 +228,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25eb7c7d_1c7cade3",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T13:18:59Z",
+      "side": 1,
+      "message": "Just experimented with the top of the stack change, converting the pointer to a non-pointer embedding. In theory it\u0027s absolutely the right change for the reasons I said before, but there\u0027s a wrinkle. Currently we first traverse to find the pages, creating a page per directory in which there is a root file, then we load all of the CUE files for those pages as one single package value (passing a long list of files to cue/load), and then update the executeContext embedded executionContext.config value (see https://cuelang.org/cl/554251). But the problem is that we have already created the pages by this point, so the copy of the executeContext copy of executionContext happens \"too early\".\n\nI\u0027m therefore going to leave this as-is for now, not least because we haven\u0027t settled on the \"right\" pattern for loading the CUE.\n\nInstead I will add a comment to the type itself (rather that the embed sites) summarising the above.",
+      "parentUuid": "1bc1ea6f_e448fe30",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91d662cd_f5215cd1",
