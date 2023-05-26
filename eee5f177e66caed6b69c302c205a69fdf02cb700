@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a0ccffbc_2a421ae6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T13:41:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7755a47e_2f8d2e4a",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "cb0a9da2_fee4239b",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 34
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-26T08:34:03Z",
       "side": 1,
       "message": "I _think_ your findPages already does the full walking of the filesystem, so you could also avoid the extra os.ReadDir if you wanted to.",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc2487b3_73cacd7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T13:41:34Z",
+      "side": 1,
+      "message": "I could, but that would complicate the code right now. The performance cost is not significant in the grand scheme of things (for now at least). So I will leave this for now.",
+      "parentUuid": "cb0a9da2_fee4239b",
       "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f760817d_8cd5c850",
+        "filename": "content/docs/howto/encode-json-yaml-with-cue/page.cue",
+        "patchSetId": 34
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T13:41:34Z",
+      "side": 1,
+      "message": "This is a good question, which gets to the heart of what the \"right\" pattern for loading CUE is (in this case). We don\u0027t have a final/\"right\" answer, so for now we are using this approach as an experiment to learn more. We have considered options including one where the directory path implying part of the namespace. \n\nBut nothing decided here, so for now consider this part of the experiment.",
+      "parentUuid": "0466ca4f_438bd27c",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b7cde6e_e43d2701",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-05-26T08:34:03Z",
       "side": 1,
       "message": "nit: I would use names like `name`, `entry`, and `dir` instead of `n`, `e`, `d`. I was reading `filepath.Join(d, n)` and I had to keep looking up to remind myself what they even were :) honestly I avoid single-letter variable names unless their scope is just 2-3 lines.",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40e4127f_9803e70c",
+        "filename": "internal/cmd/preprocessor/cmd/executecontext.go",
+        "patchSetId": 34
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T13:41:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b7cde6e_e43d2701",
       "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
