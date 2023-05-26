@@ -246,6 +246,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e2cf012_3efedf75",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T13:30:54Z",
+      "side": 1,
+      "message": "SGTM",
+      "parentUuid": "25eb7c7d_1c7cade3",
+      "revId": "5ba86730050706238219e570a5682ef1fe642788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91d662cd_f5215cd1",
