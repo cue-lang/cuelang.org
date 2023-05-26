@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9d0d701_8e7b0706",
+        "filename": "internal/cmd/preprocessor/cmd/hash.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T15:47:46Z",
+      "side": 1,
+      "message": "did you mean this to assert that you implement an interface?",
+      "revId": "d96a30b2939278e8a695b42a9f4b532010e9e1fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3132e854_d140ed80",
+        "filename": "internal/cmd/preprocessor/cmd/hash.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T15:47:46Z",
+      "side": 1,
+      "message": "how are these connected, though? I don\u0027t see this type being set up anywhere.",
+      "revId": "d96a30b2939278e8a695b42a9f4b532010e9e1fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
