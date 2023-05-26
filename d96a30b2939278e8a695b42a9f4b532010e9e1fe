@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4033bbac_fcaf900d",
+        "filename": "internal/cmd/preprocessor/cmd/hash.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T16:05:26Z",
+      "side": 1,
+      "message": "No, this is to keep staticcheck happy until this actually gets used.",
+      "parentUuid": "b9d0d701_8e7b0706",
+      "revId": "d96a30b2939278e8a695b42a9f4b532010e9e1fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3132e854_d140ed80",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-26T15:47:46Z",
       "side": 1,
       "message": "how are these connected, though? I don\u0027t see this type being set up anywhere.",
+      "revId": "d96a30b2939278e8a695b42a9f4b532010e9e1fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba7254b3_9668ebd6",
+        "filename": "internal/cmd/preprocessor/cmd/hash.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T16:05:26Z",
+      "side": 1,
+      "message": "I failed to port the constructor from a later CL will update.",
+      "parentUuid": "3132e854_d140ed80",
       "revId": "d96a30b2939278e8a695b42a9f4b532010e9e1fe",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
