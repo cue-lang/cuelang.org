@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0466ca4f_438bd27c",
+        "filename": "content/docs/howto/encode-json-yaml-with-cue/page.cue",
+        "patchSetId": 34
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-26T08:35:22Z",
+      "side": 1,
+      "message": "for my own curiosity: is there any validation against typoing this, or having it not match the directory structure? I see that your next CL checks against duplicates, but that would presumably not catch if the dir is \"encode-json\" and the field is \"ecnode-json\".",
+      "revId": "eee5f177e66caed6b69c302c205a69fdf02cb700",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4b7cde6e_e43d2701",
         "filename": "internal/cmd/preprocessor/cmd/executecontext.go",
         "patchSetId": 34
