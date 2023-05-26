@@ -16,6 +16,24 @@
       "message": "Do you ever log zero bytes?",
       "revId": "fbfdbc08280b1f53c0a405a5973a60ffacc26807",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1858c536_a6b65377",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-26T16:53:28Z",
+      "side": 1,
+      "message": "Not intentionally. But where the buffered logs from a concurrent phase are logged by the parent, if the buffer is empty then zero bytes are logged.",
+      "parentUuid": "1627992e_92af91d6",
+      "revId": "fbfdbc08280b1f53c0a405a5973a60ffacc26807",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
