@@ -2,4 +2,4 @@
 
 package cmd
 
-const selfHash = "fo62xpC464i5BwKNFoCeamvW98Wpfc5VNqVKOEi/3kw="
+const selfHash = "1jhaOVPmKuS2tUgg6XBGu/Xg2nVd8VUArB0X46Xb0yA="
