@@ -217,6 +217,8 @@ func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (n
 		label:            label,
 		sourceArchive:    ar,
 		effectiveArchive: ar, // This gets updated in a run step if one happens
+
+		analysis: analyseTxtarArchive(ar),
 	}
 	return res, nil
 }
