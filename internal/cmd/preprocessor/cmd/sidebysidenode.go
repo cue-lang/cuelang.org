@@ -42,6 +42,8 @@ type sidebysideNode struct {
 	label            string
 	sourceArchive    *txtar.Archive
 	effectiveArchive *txtar.Archive
+
+	analysis txtarAnalysis
 }
 
 func (s *sidebysideNode) Label() string {
@@ -148,7 +150,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	s.effectiveArchive = &effectiveArchive
 
 	var ok bool
-	if !isEffectiveComment(effectiveArchive.Comment) {
+	if !s.analysis.hasEffectiveComment {
 		effectiveArchive.Comment, ok = s.buildEffectiveScript(&effectiveArchive)
 		if !ok {
 			s.logf("%v: failed to build effective comment", s)
@@ -194,10 +196,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 
 func (s *sidebysideNodeRunContext) buildEffectiveScript(ar *txtar.Archive) ([]byte, bool) {
 	// Try to build up a real script. Logic as follows
-	var files []filenameAnalysis
-	for _, f := range ar.Files {
-		files = append(files, analyseFilename(f.Name))
-	}
+	files := s.analysis.fileNames
 
 	// Pattern one. 2 files, basenames in and out. The in extension
 	// tells us what to expect as input to cmd/cue, the out extension
@@ -328,10 +327,7 @@ func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 		s.writeSourceTo(&b)
 		return s.errorf("do not know how to handle %d txtar files: \n%s", l, b.Bytes())
 	}
-	var analyses []filenameAnalysis
-	for _, f := range s.effectiveArchive.Files {
-		analyses = append(analyses, analyseFilename(f.Name))
-	}
+	analyses := s.analysis.fileNames
 	type tabProps struct {
 		Name     string
 		Language string
@@ -378,6 +374,12 @@ func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	return nil
 }
 
+type txtarAnalysis struct {
+	hasEffectiveComment bool
+
+	fileNames []filenameAnalysis
+}
+
 type filenameAnalysis struct {
 	// Filepath is the original file path
 	Filepath string
@@ -394,6 +396,16 @@ type filenameAnalysis struct {
 
 	// IsOut is set if the file is considered an output in the archive
 	IsOut bool
+}
+
+// analyseTxtarArchive provides common analysis that is used by
+// the nodes which have txtar contents.
+func analyseTxtarArchive(t *txtar.Archive) (res txtarAnalysis) {
+	res.hasEffectiveComment = isEffectiveComment(t.Comment)
+	for _, f := range t.Files {
+		res.fileNames = append(res.fileNames, analyseFilename(f.Name))
+	}
+	return
 }
 
 // analyseFilename provides useful details about a file in a txtar archive.
