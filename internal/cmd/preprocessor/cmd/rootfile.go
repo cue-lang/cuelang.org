@@ -260,7 +260,7 @@ func (rf *rootFile) run() error {
 			// --norun So we know we are here because of a cache miss. Panic in
 			// case that is somehow broken.
 			if rf.skipCache {
-				panic("skipCache set and norun?")
+				panic("--skipCache and --norun set")
 			}
 			// Otherwise error because we are in a situation where we need to
 			// break the cache, but the user has told us not to.
