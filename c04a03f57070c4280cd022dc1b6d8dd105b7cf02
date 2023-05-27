@@ -124,6 +124,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d1bb6ef_bbdc3f5d",
+        "filename": "internal/cmd/genpkghash/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-27T07:57:35Z",
+      "side": 1,
+      "message": "Not sure I agree. If genpkghash doesn\u0027t output anything because of an error it encounters in a package it is traversing, then it (genpkghash) should itself throw an error. Which would cause go generate to throw an error. In this case, other go generate generators do not run. I tend to think that in these sorts of situations code generators should be tolerant of errors and still output something, much like the parse outputs a partial AST even in the presence of errors (this is particularly important in situations like gopls). Not least because the situation will be eventually correct, and the hash will be eventually stable/correct.",
+      "parentUuid": "89bf17b7_82fa5925",
+      "revId": "c04a03f57070c4280cd022dc1b6d8dd105b7cf02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "461e4ebb_9545f058",
