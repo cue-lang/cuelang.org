@@ -230,18 +230,20 @@ func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (n
 	ar := txtar.Parse(text)
 
 	res := &sidebysideNode{
-		nodeWrapper: &nodeWrapper{
-			rf:               pc.rootFile,
-			underlying:       n,
-			errorContext:     pc.errorContext,
-			executionContext: pc.executionContext,
-		},
-		lang:             lang,
-		label:            label,
-		sourceArchive:    ar,
-		effectiveArchive: ar, // This gets updated in a run step if one happens
+		txtarNode: txtarNode{
+			nodeWrapper: &nodeWrapper{
+				rf:               pc.rootFile,
+				underlying:       n,
+				errorContext:     pc.errorContext,
+				executionContext: pc.executionContext,
+			},
+			lang:             lang,
+			label:            label,
+			sourceArchive:    ar,
+			effectiveArchive: ar, // This gets updated in a run step if one happens
 
-		analysis: analyseTxtarArchive(ar),
+			analysis: analyseTxtarArchive(ar),
+		},
 	}
 	return res, nil
 }
