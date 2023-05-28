@@ -6,9 +6,9 @@ package site
 				"data-validation": {
 					cache: {
 						sidebyside: {
-							"schema-composed-with-data":       "zb1xLjnr/dSEHRU6sD3rck3VL+AuuGxeEKVO9ZAuuv8="
-							"schema-composed-with-data-error": "UEUgr0NyS0tJfYS8kttyt+XKCGO5XoHopUtyKcr5IEw="
-							"to-be-completed":                 "j2EHc3wPjZ6v7liMLr82ql955j0MJ7k5SIYnafuuTD8="
+							"schema-composed-with-data":       "W1mBlMAxn8dIY8sm0g94agsneyyg8tr6VCBHIU+UGU8="
+							"schema-composed-with-data-error": "vXsmvR5R6Ap1uDJlOO4Uxe4PUHjhrN/5l9ZqoDE1vnc="
+							"to-be-completed":                 "EfTbtZh+6pnYCSqi6seUESxlftAIVpYg3PGAAO6k0kU="
 						}
 					}
 				}

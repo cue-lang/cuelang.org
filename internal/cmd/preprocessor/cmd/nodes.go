@@ -57,7 +57,7 @@ type labelledNode interface {
 
 	// A Label uniquely identifies a node of a given nodeType. Nodes only need
 	// labels where that node needs to be addressed in some way.
-	Label() string
+	nodeLabel() string
 }
 
 // A runnable is something that can be run. It has a bufferedErrorContext for
