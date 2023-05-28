@@ -16,6 +16,7 @@ To output fields that start with a `#`, just use quotes. Quoted fields are
 always output.
 {{{end}}}
 
+
 By convention, map definitions only include field constraints and no actual
 fields.
 
@@ -56,6 +57,7 @@ a.b: field not allowed:
 {{< /code-tabs >}}
 
 {{{reference "why-cue-closedness-the-way-it-does-proto–intermezzo?"}}}
+
 
 ## Extending Schemas
 
@@ -129,13 +131,16 @@ of fields, and the top-level curly braces of JSON are just seen as an embedded
 literal map.
 {{{end}}}
 
+
 One cannot simply use `&` for this as it would trigger the closedness check.
 Essentially, embedding allows recursively disabling the closedness check for a
 definition.
 
 {{{reference "cue-and-jsonschema"}}}
 
+
 {{{reference "cue-and-rego"}}}
+
 
 ## Schema Instantiation
 
