@@ -37,6 +37,7 @@ msg: """
 CUE multiline strings originate from Swift.
 {{{end}}}
 
+
 ## Escape sequences
 
 Just like JSON, CUE uses `\` as the escape character.
@@ -85,5 +86,6 @@ b: ##"Use \#n to write a newline in that case.”##
 {{{with sidetrack}}}
 CUE alternate escape sequences originate from Swift.
 {{{end}}}
+
 
 Alternate escape sequences work analogously for multiline strings.
