@@ -13,6 +13,7 @@ configurations in general:
 - you can place commas after the last element of a composite type, and
 - the outermost curly braces are optional. {{{TODO "note on embedding"}}}
 
+
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
 // A doc comment
@@ -32,6 +33,7 @@ map: {
 {{< /code-tabs >}}
 
 {{{reference "json-vs-cue"}}}
+
 
 <!-- TODO: Also useful for defining data: embedding, builtins, … -->
 
