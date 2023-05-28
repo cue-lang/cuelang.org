@@ -92,12 +92,14 @@ b: 'ℚ'
 
 ## String and Bytes Interpolations
 
-Both strings and bytes also support {{{def "interpolations"}}}, which allow inserting values in place using the `\( formula )` notation.
+Both strings and bytes also support {{{def "interpolations"}}}
+, which allow inserting values in place using the `\( formula )` notation.
 
 {{{with sidetrack "interpolation-syntax-ethymology"}}}
 The `\()` syntax was chosen as this is invalid JSON, which makes it unambiguous when a string is meant to be a constant JSON string, versus an interpolation.
 The more common `${}` notation does not have this property and would make interpreting JSON strings ambiguous.
 {{{end}}}
+
 
 Numbers convert to their string representation when inserted.
 Strings render as UTF-8 when inserted in bytes.
@@ -177,12 +179,14 @@ For instance, `null`, `false`, `"str"`, `1`, and `'\x80'` are comparable, `int` 
 We have not introduced bounds and types yet, but for now it suffices to say that they exist and are not concrete.
 {{{end}}}
 
+
 Lists are concrete if all elements are concrete and two lists are equal if all elements match.
 Maps are concrete if all data fields have concrete values and two maps are equal if they have the same set of data fields with matching values.
 
 {{{with sidetrack "not-counting-constraints"}}}
 Field constraints do not have to be concrete as they only apply in the presence of an actual field.
 {{{end}}}
+
 
 Helper fields, like `#foo` and `_foo` are ignored for comparison.
 
@@ -229,6 +233,7 @@ improves security.
 Regular expressions often contain escape sequences.
 Using alternate escape sequences is the easiest way to work around double escaping.
 {{{end}}}
+
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
@@ -288,6 +293,7 @@ Documentation for the standard library can be found here: [https://pkg.go.dev/cu
 We currently piggyback off of Go's documentation generation.
 We intend to provide our own to give a better user experience.
 {{{end}}}
+
 
 Use the import directive to use a standard library in your CUE code.
 The library can then be accessed by its name.
@@ -384,5 +390,6 @@ Both rewrites are a specific use of a CUE {{{reference "enum"}}} with default ma
 The term `a & b` is to ensure that the default value is of type `b`.
 For instance, the value `1` can be interpreted as both a `number` or an `int`.
 {{{end}}}
+
 -->
 
