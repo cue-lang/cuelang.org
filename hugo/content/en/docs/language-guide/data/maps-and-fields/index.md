@@ -31,7 +31,6 @@ $id:   "yipee"
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 Both quoted and unquoted fields in the above form are referred to as regular
 fields.
 
@@ -52,7 +51,6 @@ a: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 `a: 1` and `"a": 1` mean the same thing.
 
 ## Data fields
@@ -96,7 +94,6 @@ two: _typeName: "string"
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Embedded Scalars
 
 It is possible to associate helper fields with scalar types by placing both in
@@ -132,7 +129,6 @@ three: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 Note for field `two` we need to include a `_` within the map to make things
 work.
 This is because without it `{}` is only compatible with map values.

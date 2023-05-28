@@ -36,7 +36,6 @@ Feedback: {
 Feedback: {}
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Required Field Constraints
 
 We use `!` instead of `?` to additionally specify that this field _*must_* be
@@ -57,7 +56,6 @@ Name: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 As a rule of thumb, all fields in a schema are defined as field constraints.
 
 ## Pattern Constraints

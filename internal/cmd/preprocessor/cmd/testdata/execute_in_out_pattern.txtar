@@ -25,7 +25,6 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >-- in.cue --
 >// A doc comment
@@ -35,7 +34,6 @@ package site
 >}
 >-- out.json --
 >{{{end}}}
->```
 >
 >Some text after
 >
@@ -46,7 +44,6 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >-- in.cue --
 >// A doc comment
@@ -62,7 +59,6 @@ package site
 >    }
 >}
 >{{{end}}}
->```
 >
 >Some text after
 >
@@ -73,7 +69,6 @@ title: JSON Superset
 
 Some text before
 
-```coq
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
 // A doc comment
@@ -91,8 +86,6 @@ map: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
-```
 
 Some text after
 
