@@ -19,7 +19,8 @@ By using references, CUE also allows defining detailed relations between fields.
 
 ## Unary comparators
 
-The binary {{{reference "comparators"}}} `!=`, `>`, `>=`, `<`, `<=`, `!`, `=~`, and
+The binary {{{reference "comparators"}}}
+ `!=`, `>`, `>=`, `<`, `<=`, `!`, `=~`, and
 `!~` can also be used as a validator.  For instance, where `number` defines the
 set of all whole numbers, `<10` defines the set of all numbers less than `10`.
 
@@ -27,6 +28,7 @@ set of all whole numbers, `<10` defines the set of all numbers less than `10`.
 More specifically, for any concrete `x`, `x & ⊗y` is an error if not `x ⊗ y` and
 `x` otherwise
 {{{end}}}
+
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
@@ -63,7 +65,8 @@ e: invalid value "bar" (out of bound =~"foo"):
 
 ## Validators
 
-A function in the {{{reference "standard-library"}}}  that returns a single error
+A function in the {{{reference "standard-library"}}}
+  that returns a single error
 value is called a validator and validates that a value is valid.
 In this case the first argument in the Go documentation is the type of the
 validated value and must be omitted.
