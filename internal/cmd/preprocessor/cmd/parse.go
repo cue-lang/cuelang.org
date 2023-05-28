@@ -133,6 +133,7 @@ type parseContext struct {
 	i     int
 }
 
+// parse_TextNode parses a text-only node.
 func (pc parseContext) parse_TextNode(n *parse.TextNode) (node, error) {
 	var lastWasWith, nextIsWith bool
 	if pc.i < len(pc.parts)-1 {
@@ -189,7 +190,11 @@ func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
 	}
 	switch fn.Ident {
 	case "sidebyside":
-		return pc.parse_sidebyside(n, c.Args[1:])
+		t, err := pc.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		if err != nil {
+			return nil, err
+		}
+		return &sidebysideNode{txtarNode: t}, nil
 	case "sidetrack":
 	default:
 		return nil, pc.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
@@ -202,15 +207,17 @@ func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
 	}, nil
 }
 
-func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (node, error) {
+// parse_txtarNode extracts a txtar-based node, a value that will be wrapped
+// with a specific type. e.g. sidebyside.
+func (pc parseContext) parse_txtarNode(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, err error) {
 	if len(args) != 2 {
-		return nil, pc.bodyError(n, "sidebyside requires two args")
+		return res, pc.bodyError(n, "%s require two args", kind)
 	}
 	var strArgs []string
 	for _, a := range args {
 		sa, ok := a.(*parse.StringNode)
 		if !ok {
-			return nil, pc.bodyError(a, "expected a string argument")
+			return res, pc.bodyError(a, "expected a string argument")
 		}
 		strArgs = append(strArgs, sa.Text)
 	}
@@ -218,24 +225,25 @@ func (pc parseContext) parse_sidebyside(n *parse.WithNode, args []parse.Node) (n
 
 	// We only support a single TextNode body, i.e. the contents of a txtar archive
 	if n.List == nil || len(n.List.Nodes) != 1 {
-		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
+		return res, pc.bodyError(n, "%s must have a text-only body", kind)
 	}
 	tn, ok := n.List.Nodes[0].(*parse.TextNode)
 	if !ok {
-		return nil, pc.bodyError(n, "sidebyside must have a text-only body")
+		return res, pc.bodyError(n, "%s must have a text-only body", kind)
 	}
 	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
 	// therefore forms part of the body.
 	text := tn.Text[1:]
 	ar := txtar.Parse(text)
 
-	res := &sidebysideNode{
+	res = txtarNode{
 		nodeWrapper: &nodeWrapper{
 			rf:               pc.rootFile,
 			underlying:       n,
 			errorContext:     pc.errorContext,
 			executionContext: pc.executionContext,
 		},
+		typ:              kind,
 		lang:             lang,
 		label:            label,
 		sourceArchive:    ar,

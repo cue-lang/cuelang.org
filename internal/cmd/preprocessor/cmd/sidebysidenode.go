@@ -15,17 +15,15 @@
 package cmd
 
 import (
-	"bufio"
 	"bytes"
 	"fmt"
 	"html/template"
-	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
 
-	"github.com/rogpeppe/go-internal/txtar"
+	"golang.org/x/tools/txtar"
 )
 
 const (
@@ -37,17 +35,7 @@ const (
 )
 
 type sidebysideNode struct {
-	*nodeWrapper
-	lang             string
-	label            string
-	sourceArchive    *txtar.Archive
-	effectiveArchive *txtar.Archive
-
-	analysis txtarAnalysis
-}
-
-func (s *sidebysideNode) Label() string {
-	return s.label
+	txtarNode
 }
 
 func (s *sidebysideNode) nodeType() string {
@@ -68,10 +56,6 @@ func (s *sidebysideNode) run() runnable {
 			executionContext: s.executionContext,
 		},
 	}
-}
-
-func (s *sidebysideNode) writeToHasher(w io.Writer) {
-	fmt.Fprintf(w, "%q.%q:\n%s", s.nodeType(), s.label, tabIndent(txtar.Format(s.sourceArchive)))
 }
 
 func (s *sidebysideNodeRunContext) run() (err error) {
@@ -250,18 +234,6 @@ func (s sidebysideNodeRunContext) templateScript(tmpl string, arg any) []byte {
 	return res.Bytes()
 }
 
-func isEffectiveComment(b []byte) bool {
-	lines := bytes.Split(b, []byte("\n"))
-	for _, line := range lines {
-		line = bytes.TrimSpace(line)
-		if len(line) != 0 && !bytes.HasPrefix(line, []byte("#")) {
-			return true
-		}
-	}
-	// We saw only blank lines or comments
-	return false
-}
-
 func tabIndent(b []byte) []byte {
 	if len(b) == 0 {
 		return b
@@ -302,15 +274,6 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 	cmd := exec.Command(args[0], args[1:]...)
 	cmd.Dir = td
 	return cmd
-}
-
-func (s *sidebysideNode) writeSourceTo(b *bytes.Buffer) {
-	p := bufPrintf(b)
-	p("```coq\n")
-	p("%swith %s %q %q%s\n", s.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.rf.page.rightDelim)
-	p("%s", txtar.Format(s.sourceArchive))
-	p("%send%s\n", s.rf.page.leftDelim, s.rf.page.rightDelim)
-	p("```\n")
 }
 
 func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
@@ -372,163 +335,4 @@ func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	}
 	p("{{< /code-tabs >}}\n")
 	return nil
-}
-
-type txtarAnalysis struct {
-	hasEffectiveComment bool
-
-	fileNames []filenameAnalysis
-}
-
-type filenameAnalysis struct {
-	// Filepath is the original file path
-	Filepath string
-
-	// Basename is the Basename of the last element of filepath
-	Basename string
-
-	// Ext is the bit of the last element of filepath after the last '.' (unlike
-	// filepath.Ext which starts at the final '.')
-	Ext string
-
-	// IsGolden is set if the file is considered a golden file
-	IsGolden bool
-
-	// IsOut is set if the file is considered an output in the archive
-	IsOut bool
-}
-
-// analyseTxtarArchive provides common analysis that is used by
-// the nodes which have txtar contents.
-func analyseTxtarArchive(t *txtar.Archive) (res txtarAnalysis) {
-	res.hasEffectiveComment = isEffectiveComment(t.Comment)
-	for _, f := range t.Files {
-		res.fileNames = append(res.fileNames, analyseFilename(f.Name))
-	}
-	return
-}
-
-// analyseFilename provides useful details about a file in a txtar archive.
-func analyseFilename(p string) (res filenameAnalysis) {
-	res.Filepath = p
-	b := filepath.Base(p)
-	if res.IsGolden = strings.HasSuffix(b, goldenExt); res.IsGolden {
-		b = strings.TrimSuffix(b, goldenExt)
-	}
-	i := len(b) - 1
-	for ; i >= 0 && !os.IsPathSeparator(b[i]); i-- {
-		if b[i] == '.' {
-			break
-		}
-	}
-	if i > 0 {
-		// Found a .
-		res.Basename = b[:i]
-		res.Ext = b[i+1:]
-	}
-	switch res.Basename {
-	case "out", "stdout":
-		res.IsOut = true
-	}
-	return
-}
-
-// tag searches for the first #$key tag line in the comment section of s's
-// txtar archive. Tags are # prefixed lines where the # at the beginning of the
-// line must be followed by a non-space character. args contains the contents
-// of the quote-aware args that follow the tag name. present indicates whether
-// the tag identified by key was present or not. err will be non-nil if there
-// were errors in parsing the arguments to a tag.
-//
-// Note that this searches the sourceArchive.
-//
-// TODO: work out whether we want to handle comments in tag lines (which are
-// themselves comments already).
-func (s *sidebysideNode) tag(key string) (args []string, present bool, err error) {
-	prefix := []byte("#" + key)
-	sc := bufio.NewScanner(bytes.NewReader(s.sourceArchive.Comment))
-	lineNo := 1
-	for sc.Scan() {
-		line := bytes.TrimSpace(sc.Bytes())
-		if after, found := bytesCutPrefix(bytes.TrimSpace(line), prefix); found {
-			args, err := parseLineArgs(string(after))
-			if err != nil {
-				err = fmt.Errorf("%s:%d %w", s.label, lineNo, err)
-			}
-			return args, true, err
-		}
-		lineNo++
-	}
-	return nil, false, nil
-}
-
-func bytesCutPrefix(s, prefix []byte) (after []byte, found bool) {
-	if !bytes.HasPrefix(s, prefix) {
-		return s, false
-	}
-	return s[len(prefix):], true
-}
-
-// parseLineArgs is factored out of the testscript code. We use the same logic
-// for quoting in tag arguments as we do in testscript commands. Expansion does
-// not happen for tag arguments.
-func parseLineArgs(line string) ([]string, error) {
-	var (
-		args   []string
-		arg    string  // text of current arg so far (need to add line[start:i])
-		start  = -1    // if >= 0, position where current arg text chunk starts
-		quoted = false // currently processing quoted text
-	)
-	for i := 0; ; i++ {
-		if !quoted && (i >= len(line) || line[i] == ' ' || line[i] == '\t' || line[i] == '\r' || line[i] == '#') {
-			// Found arg-separating space.
-			if start >= 0 {
-				arg += line[start:i]
-				args = append(args, arg)
-				start = -1
-				arg = ""
-			}
-			if i >= len(line) || line[i] == '#' {
-				break
-			}
-			continue
-		}
-		if i >= len(line) {
-			return nil, fmt.Errorf("unterminated quoted argument")
-		}
-		if line[i] == '\'' {
-			if !quoted {
-				// starting a quoted chunk
-				if start >= 0 {
-					arg += line[start:i]
-				}
-				start = i + 1
-				quoted = true
-				continue
-			}
-			// 'foo''bar' means foo'bar, like in rc shell and Pascal.
-			if i+1 < len(line) && line[i+1] == '\'' {
-				arg += line[start:i]
-				start = i + 1
-				i++ // skip over second ' before next iteration
-				continue
-			}
-			// ending a quoted chunk
-			arg += line[start:i]
-			start = i + 1
-			quoted = false
-			continue
-		}
-		// found character worth saving; make sure we're saving
-		if start < 0 {
-			start = i
-		}
-	}
-	return args, nil
-}
-
-func bufPrintf(b *bytes.Buffer) func(string, ...any) (int, error) {
-	return func(format string, args ...any) (int, error) {
-		return fmt.Fprintf(b, format, args...)
-	}
 }
