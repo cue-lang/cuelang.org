@@ -34,7 +34,8 @@ foobaz: 6
 ## Pattern constraints
 
 Sometimes it is useful to apply a constraint to several fields at once.
-This can be done with {{{reference "pattern constraints"}}}.
+This can be done with {{{reference "pattern constraints"}}}
+.
 This construct is usually used in schema, but can be useful in templates when
 combined with existing fields.
 
