@@ -24,6 +24,8 @@ package site
 >}
 >-- file2.txt --
 >{{{end}}}
+>
+>This is a {{{ def "test" }}}
 -- content/dir/en.md.golden --
 >---
 >title: JSON Superset
@@ -36,4 +38,6 @@ package site
 >}
 >-- file2.txt --
 >{{{end}}}
+>
+>This is a {{{def "test"}}}
 -- hugo/.gitkeep --
