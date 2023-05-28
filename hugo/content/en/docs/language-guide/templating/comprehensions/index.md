@@ -11,6 +11,7 @@ Comprehensions provide a way to query and transform data.
 For those familiar with databases, they are very similar in nature to SQL.
 {{{end}}}
 
+
 A comprehension consists of 1 or more clauses followed by a map to emit a result
 for each of the 0 or more results produced by these clauses.
 

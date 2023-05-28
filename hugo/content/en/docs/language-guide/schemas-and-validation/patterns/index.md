@@ -16,6 +16,7 @@ To CUE, treating values and types alike, this is all the same.
 In programming languages this is called a *sum type*.
 {{{end}}}
 
+
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
 #Base: kind!: string
