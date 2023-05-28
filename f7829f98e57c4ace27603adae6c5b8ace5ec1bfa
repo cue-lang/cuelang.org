@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38b7b037_9b77dc8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-28T20:28:24Z",
+      "side": 1,
+      "message": "\"the all\"?",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75dda7fe_f2732151",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-28T20:28:24Z",
+      "side": 1,
+      "message": "I wonder if you could include the Go major version, because I do think that could realistically matter soon, with e.g. your use of `go list -deps -json`.",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd4ac847_129074b7",
+        "filename": "internal/cmd/preprocessor/cmd/executecontext.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-28T20:28:24Z",
+      "side": 1,
+      "message": "so selfHash is not _really_ a hash all the time, but rather a unique way to describe a version? I\u0027d perhaps consider a different name, because I originally immediately jumped to thinking that it was weird that you chose a string to represent a hash.",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5001346_78241a39",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-28T20:28:24Z",
+      "side": 1,
+      "message": "can you document what w does here? it\u0027s not immediately obvious to me at least.\n\nassuming it means \"write your own unique string for the purposes of hashing to w\", consider something like `writeHashTo`, akin to io\u0027s `WriteTo`.\n\nthough, per my other comment, \"write hash to\" feels a bit off when you don\u0027t actually require the writing of a hash, which is usually a fixed size. perhaps `writeToHasher`, since it\u0027s more like \"write all of your relevant contents into a hasher\"?",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1808ebe_f8739c43",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-28T20:28:24Z",
+      "side": 1,
+      "message": "consider writing the top-level logic here like:\n\n```\nif rf.skipCache {\n  [...]\n} else if cacheMiss {\n  [...]\n} else {\n  [...]\n}\n```\n\nI mention this because there are really just two lines which are shared currently in `rf.skipCache || cacheMiss`, the last two. All the others are an if/else to see which of the two cases you\u0027re actually in. And IMO \"I don\u0027t want any caching at all\" and \"the cache is enabled but it\u0027s a miss\" are different enough cases to be separate.",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a9d09d1_2c959170",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-28T20:28:24Z",
+      "side": 1,
+      "message": "nit: how about `node` and `nodeSrc` for the names? `byts` tells me next to nothing about what the bytes contain, otherwise.",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d15202f2_ea64fa84",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-28T20:28:24Z",
+      "side": 1,
+      "message": "I\u0027d be explicit about being OK with a missing file being treated as empty, because that could otherwise seem like an oversight, just like other \"unchecked error\" bugs.",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
