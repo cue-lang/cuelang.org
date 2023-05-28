@@ -4,7 +4,8 @@ weight: 50
 draft: false
 ---
 
-A {{{def "schema"}}} defines the shape of an API or data in general.
+A {{{def "schema"}}}
+ defines the shape of an API or data in general.
 Schemas define types or APIs that can be used to validate JSON, YAML, or CUE
 data, for instance.
 

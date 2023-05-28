@@ -15,6 +15,7 @@ locations with a globally unique name that can be used anywhere in the tree.
 JSON has no way to specify such reuse.
 {{{end}}}
 
+
 ## Field references
 
 A field reference is an identifier that references a field with a name using
@@ -125,7 +126,8 @@ a: {
 
 The `.x` notation is used to select a field within a map or element within a
 list.
-The value of `x` must be an {{{reference "identifier"}}} or a quoted string when
+The value of `x` must be an {{{reference "identifier"}}}
+ or a quoted string when
 referencing a field in a map or an integral number when referring to an element
 in a list.
 

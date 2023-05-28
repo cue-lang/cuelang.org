@@ -11,6 +11,7 @@ a field.
 
 A field of a map may have any name that is allowed by JSON.
 Double quotes can be omitted if the name is a valid {{{def "identifier"}}}
+
 that starts with a letter or `$` and otherwise only contains letters, digits,
 `$` or `_`.
 Identifiers may also start with `#` or `_`, in which case the field is a
