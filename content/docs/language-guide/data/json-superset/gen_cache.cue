@@ -6,8 +6,8 @@ package site
 				"json-superset": {
 					cache: {
 						sidebyside: {
-							"json-superset": "wsYiqLT5vQZX1+KWVgJ2ENSb6wpEk50w1FkmkLMlVA0="
-							"json-comments": "B1xcPQcUP4/dQ7cTLNcc8+ovd50wF09rHnwIZZ6eUho="
+							"json-superset": "BQxo5/6t4gmdJbtBGxJZXCnhCbU6fOH3wiKvX91YQno="
+							"json-comments": "dVKDfexDm58qmF/MRtRg8Xf8Z0zD3pBfNSi08vY2Hp8="
 						}
 					}
 				}
