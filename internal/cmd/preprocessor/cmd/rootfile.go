@@ -189,7 +189,7 @@ func (rf *rootFile) validate() error {
 			tld = make(map[string][]node)
 			labels[t] = tld
 		}
-		l := n.Label()
+		l := n.nodeLabel()
 		nls := tld[l]
 		nls = append(nls, bp)
 		tld[l] = nls
@@ -296,7 +296,7 @@ func (rf *rootFile) hashRunnableNode(n runnableNode, w io.Writer) cue.Path {
 	selPath := append(rf.page.path.Selectors(),
 		cue.Str("cache"),
 		cue.Str(n.nodeType()),
-		cue.Str(n.Label()),
+		cue.Str(n.nodeLabel()),
 	)
 	return cue.MakePath(selPath...)
 }
