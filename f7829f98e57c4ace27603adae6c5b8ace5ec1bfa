@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84f4b709_7c6680e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T05:03:15Z",
+      "side": 1,
+      "message": "\"All the\" 😊\n\nDone.",
+      "parentUuid": "38b7b037_9b77dc8d",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75dda7fe_f2732151",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-28T20:28:24Z",
       "side": 1,
       "message": "I wonder if you could include the Go major version, because I do think that could realistically matter soon, with e.g. your use of `go list -deps -json`.",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ede9ddf_af3c3754",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T05:03:15Z",
+      "side": 1,
+      "message": "Ok, I\u0027m not that fixed on whether we do don\u0027t include it. The worst that will happen is that we will see skew between the hashes on local vs CI.",
+      "parentUuid": "75dda7fe_f2732151",
       "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fbd6993_9bb5a12e",
+        "filename": "internal/cmd/preprocessor/cmd/executecontext.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T05:03:15Z",
+      "side": 1,
+      "message": "\u003e but rather a unique way to describe a version\n\nFor this reason, I\u0027m genuinely struggling to come up with a better name right now! Because as hash of self is exactly what we have, either via the go generate directive, or via the main version + sum (although arguably only the latter required). \n\nIf you have any good suggestions on naming that resonate with you better, I\u0027m happy to follow up in a later CL.",
+      "parentUuid": "fd4ac847_129074b7",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5001346_78241a39",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-05-28T20:28:24Z",
       "side": 1,
       "message": "can you document what w does here? it\u0027s not immediately obvious to me at least.\n\nassuming it means \"write your own unique string for the purposes of hashing to w\", consider something like `writeHashTo`, akin to io\u0027s `WriteTo`.\n\nthough, per my other comment, \"write hash to\" feels a bit off when you don\u0027t actually require the writing of a hash, which is usually a fixed size. perhaps `writeToHasher`, since it\u0027s more like \"write all of your relevant contents into a hasher\"?",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76f3bc89_906652e6",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T05:03:15Z",
+      "side": 1,
+      "message": "`writeToHasher` works well, thanks. Also added doc comment.",
+      "parentUuid": "d5001346_78241a39",
       "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17593cec_cce2f714",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T05:03:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1808ebe_f8739c43",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a9d09d1_2c959170",
@@ -103,6 +193,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee7bf8c1_06449c1d",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T05:03:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a9d09d1_2c959170",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d15202f2_ea64fa84",
@@ -116,6 +224,24 @@
       "writtenOn": "2023-05-28T20:28:24Z",
       "side": 1,
       "message": "I\u0027d be explicit about being OK with a missing file being treated as empty, because that could otherwise seem like an oversight, just like other \"unchecked error\" bugs.",
+      "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "808341c7_8ed7e747",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 56
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T05:03:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d15202f2_ea64fa84",
       "revId": "f7829f98e57c4ace27603adae6c5b8ace5ec1bfa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
