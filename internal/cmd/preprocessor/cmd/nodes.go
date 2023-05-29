@@ -60,6 +60,15 @@ type labelledNode interface {
 	nodeLabel() string
 }
 
+type validatingNode interface {
+	node
+
+	// validate ensures that a node is valid. This type of validation is
+	// self-contained, i.e. can only be a function of the contents of the
+	// node itself.
+	validate() error
+}
+
 // A runnable is something that can be run. It has a bufferedErrorContext for
 // logging purposes, so that the call can grab the logged messages on
 // completion or run.
