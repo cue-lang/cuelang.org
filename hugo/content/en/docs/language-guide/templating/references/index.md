@@ -50,6 +50,7 @@ d: {
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 A field that uses quotes may not be referenced with its unquoted name, even if
 it would otherwise be a valid identifier.
 
@@ -61,6 +62,7 @@ a:     foo // error
 {{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 ## Aliases
 
@@ -83,6 +85,7 @@ d:     2
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 List values can be similarly aliased.
 
 <aside>
@@ -99,6 +102,7 @@ List values can be similarly aliased.
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 In most cases, instead of referencing a field alias of a parent node one should
 use value aliases.
 
@@ -114,6 +118,7 @@ a: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 <!--
 
@@ -146,6 +151,7 @@ z: b.1.foo
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 ## Dynamically selecting fields `a.(x)` `a."\(x)"` `a[x]`
 
 The `.(x)` notation is used to select a field within a map or element within a
@@ -169,6 +175,7 @@ z: b[-1]
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 <!-- TODO: : billion laughs: YAML problem: CUE equivalent. Evaluation is fine. -->
 
 ## Let expressions
@@ -191,4 +198,5 @@ b: list: [1, 2]
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
