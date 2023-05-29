@@ -17,6 +17,7 @@ a: 1
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 This is not
 
 {{< code-tabs >}}
@@ -31,6 +32,7 @@ a: conflicting values 1 and string (mismatched types int and string):
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 It is also possible to combine schemas. For instance, the following CUE defines
 restrictions on what values are allowed for another schema.
 
@@ -42,6 +44,7 @@ restrictions on what values are allowed for another schema.
 
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 The result is a schema that is more strict for validating data.
 

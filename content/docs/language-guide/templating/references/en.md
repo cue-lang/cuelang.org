@@ -50,6 +50,7 @@ d: {
 {{{end}}}
 ```
 
+
 A field that uses quotes may not be referenced with its unquoted name, even if
 it would otherwise be a valid identifier.
 
@@ -62,6 +63,7 @@ a:     foo // error
 -- out.err --
 {{{end}}}
 ```
+
 
 ## Aliases
 
@@ -84,6 +86,7 @@ d:     2
 {{{end}}}
 ```
 
+
 List values can be similarly aliased.
 
 <aside>
@@ -101,6 +104,7 @@ List values can be similarly aliased.
 {{{end}}}
 ```
 
+
 In most cases, instead of referencing a field alias of a parent node one should
 use value aliases.
 
@@ -116,6 +120,7 @@ a: {
 }
 {{{end}}}
 ```
+
 
 <!--
 
@@ -149,6 +154,7 @@ z: b.1.foo
 {{{end}}}
 ```
 
+
 ## Dynamically selecting fields `a.(x)` `a."\(x)"` `a[x]`
 
 The `.(x)` notation is used to select a field within a map or element within a
@@ -173,6 +179,7 @@ z: b[-1]
 {{{end}}}
 ```
 
+
 <!-- TODO: : billion laughs: YAML problem: CUE equivalent. Evaluation is fine. -->
 
 ## Let expressions
@@ -196,4 +203,5 @@ b: list: [1, 2]
 -- out.cue --
 {{{end}}}
 ```
+
 

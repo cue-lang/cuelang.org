@@ -31,6 +31,7 @@ foobaz: 6
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 ## Pattern constraints
 
 Sometimes it is useful to apply a constraint to several fields at once.
@@ -64,6 +65,7 @@ person: {
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 <!--  TODO
 
 `and([])`
@@ -84,6 +86,7 @@ b: 2
 c: _
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 - a: ?? expr / a: <- expr
 
