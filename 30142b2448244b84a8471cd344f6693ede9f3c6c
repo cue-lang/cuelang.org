@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baaf7c02_31674d23",
+        "filename": "_scripts/git-hook-post-rewrite.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-29T10:02:16Z",
+      "side": 1,
+      "message": "How about:\n\n```\nif git diff --cached --quiet; then\n  # we have nothing to do - do not amend the commit\n  exit\nfi\n```\n\n`--cached` looks at the staged changes, i.e. what you have added via `git add`. and `--quiet` suppresses the output and implies `--exit-code`, meaning that the command will succeed if the diff is empty.",
+      "revId": "30142b2448244b84a8471cd344f6693ede9f3c6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
