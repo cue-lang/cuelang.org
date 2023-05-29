@@ -16,6 +16,23 @@
       "message": "Emergency +2 to unblock CL chain and fix deploy.",
       "revId": "d5a5b4644a7412624b63b36dde0a1b249b8513ec",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "556de08f_b9451791",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-29T07:15:32Z",
+      "side": 1,
+      "message": "FYI - reviewed with an emergency +2 as chiefcueckoo to fix the deploy. \n\nPlease let me know any comments, mvdan!",
+      "revId": "d5a5b4644a7412624b63b36dde0a1b249b8513ec",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
