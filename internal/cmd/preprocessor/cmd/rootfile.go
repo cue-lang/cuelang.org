@@ -38,6 +38,8 @@ var (
 	// were function calls.
 	templateFunctions = map[string]any{
 		fnSidebyside: true,
+		fnUpload:     true,
+		fnScript:     true,
 		"reference":  true,
 		"def":        true,
 		"sidetrack":  true,
@@ -223,55 +225,68 @@ func (rf *rootFile) validate() error {
 // This method also adds as a means to check that we only have parsed things
 // that we can support.
 func (rf *rootFile) run() error {
+	var torun []runnable
 	var wait []waitRunnable
 	for i := range rf.bodyParts {
-		n, ok := rf.bodyParts[i].(runnableNode)
-		if !ok {
-			continue
-		}
-		// Ideally we run nodes concurrently, in which case a node needs to
-		// have its own error context (how do we enforce that?).
-		//
-		// But in the case of steps in a guide, we generate a single script
-		// from a number of parts, and run that script concurrently (with any
-		// other nodes). In which case we would establish a special context,
-		// a script context perhaps, in which we run that script.
-		//
-		// For now we don't support multi-steps guides, but when we do it will
-		// be here.
+		switch n := rf.bodyParts[i].(type) {
+		case runnableNode:
+			// Ideally we run nodes concurrently, in which case a node needs to
+			// have its own error context (how do we enforce that?).
+			//
+			// But in the case of steps in a guide, we generate a single script
+			// from a number of parts, and run that script concurrently (with any
+			// other nodes). In which case we would establish a special context,
+			// a script context perhaps, in which we run that script.
+			//
+			// For now we don't support multi-steps guides, but when we do it will
+			// be here.
 
-		// Check for cache hit
-		h, b := rf.createHash()
-		hashPath := rf.hashRunnableNode(n, h)
-		if b != nil {
-			rf.debugf(rf.debugCache, "%v: hashed node %v:\n%s", rf, n, b.Bytes())
-		}
-		currHash := base64.StdEncoding.EncodeToString(h.Sum(nil))
-		cacheHash, err := rf.config.LookupPath(hashPath).String()
-		cacheMiss := err != nil || currHash != cacheHash
-
-		if !cacheMiss && !rf.skipCache {
-			rf.debugf(rf.debugCache, "%v: cache hit for %v; not running", rf, hashPath)
-			continue
-		}
-
-		if cacheMiss && rf.norun {
-			// Earlier we ensured the user did not provide --skipcache and
-			// --norun So we know we are here because of a cache miss. Panic in
-			// case that is somehow broken.
-			if rf.skipCache {
-				panic("skipCache set and norun?")
+			// Check for cache hit
+			h, b := rf.createHash()
+			hashPath := rf.hashRunnableNode(n, h)
+			if b != nil {
+				rf.debugf(rf.debugCache, "%v: hashed node %v:\n%s", rf, n, b.Bytes())
 			}
-			// Otherwise error because we are in a situation where we need to
-			// break the cache, but the user has told us not to.
-			return rf.errorf("%v: cache miss for %v; but told not to run", rf, hashPath)
-		} else if cacheMiss {
-			// It's a cache miss
-			rf.debugf(rf.debugCache, "%v: cache miss for %v", rf, hashPath)
-		} else { // skip cache
-			rf.debugf(rf.debugCache, "%v: skipping cache for %v; was a hit", rf, hashPath)
+			currHash := base64.StdEncoding.EncodeToString(h.Sum(nil))
+			cacheHash, err := rf.config.LookupPath(hashPath).String()
+			cacheMiss := err != nil || currHash != cacheHash
+
+			if !cacheMiss && !rf.skipCache {
+				rf.debugf(rf.debugCache, "%v: cache hit for %v; not running", rf, hashPath)
+				continue
+			}
+
+			if cacheMiss && rf.norun {
+				// Earlier we ensured the user did not provide --skipcache and
+				// --norun So we know we are here because of a cache miss. Panic in
+				// case that is somehow broken.
+				if rf.skipCache {
+					panic("skipCache set and norun?")
+				}
+				// Otherwise error because we are in a situation where we need to
+				// break the cache, but the user has told us not to.
+				return rf.errorf("%v: cache miss for %v; but told not to run", rf, hashPath)
+			} else if cacheMiss {
+				// It's a cache miss
+				rf.debugf(rf.debugCache, "%v: cache miss for %v", rf, hashPath)
+			} else { // skip cache
+				rf.debugf(rf.debugCache, "%v: skipping cache for %v; was a hit", rf, hashPath)
+			}
+			r := n.run()
+			torun = append(torun, r)
 		}
-		r := n.run()
+	}
+
+	script, err := rf.buildMultistepScript()
+	if err != nil {
+		return err
+	}
+	// If there is nothing to do, script will be nil. Check against that
+	if script != nil {
+		torun = append(torun, script)
+	}
+
+	for _, r := range torun {
 		wait = append(wait, runRunnable(r))
 	}
 
@@ -284,6 +299,38 @@ func (rf *rootFile) run() error {
 	}
 
 	return nil
+}
+
+func (rf *rootFile) buildMultistepScript() (runnable, error) {
+	didWork := false
+	for i := range rf.bodyParts {
+		switch n := rf.bodyParts[i].(type) {
+		case *scriptNode:
+			didWork = true
+
+			// A script should not have any files
+			if len(n.sourceArchive.Files) > 0 {
+				return nil, rf.errorf("%v: script nodes cannot contain files", n)
+			}
+
+			// Parse the comments as a shell script, not testscript
+			// file, err := syntax.NewParser().Parse(bytes.NewReader(n.sourceArchive.Comment), "")
+			// if err != nil {
+			// 	return nil, rf.errorf("%v: failed to parse shell script: %v", n, err)
+			// }
+		case *uploadNode:
+			didWork = true
+		default:
+			// Nothing to do; other nodes don't contribute
+		}
+	}
+
+	if !didWork {
+		// there is nothing to do
+		return nil, nil
+	}
+
+	return nil, nil
 }
 
 // hashRunnableNode computes a hash of n, writing that hash to w, and returns
