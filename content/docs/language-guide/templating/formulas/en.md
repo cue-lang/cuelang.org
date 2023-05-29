@@ -39,6 +39,7 @@ price: 6.00
 {{{end}}}
 ```
 
+
 CUE distinguishes whole numbers as a special class of numbers.
 For `+`, `-`, and `*` the result is whole, or an integer, if the values on which it operates are whole.
 This is not true for the numeric `/` division.
@@ -90,6 +91,7 @@ b: 'ℚ'
 {{{end}}}
 ```
 
+
 ## String and Bytes Interpolations
 
 Both strings and bytes also support {{{def "interpolations"}}}, which allow inserting values in place using the `\( formula )` notation.
@@ -123,6 +125,7 @@ e:       "As a string: �"
 {{{end}}}
 ```
 
+
 Interpolations may also be used in quoted selectors or in field names.
 
 ```coq
@@ -135,6 +138,7 @@ y: x."\(f)bar"
 -- out.cue --
 {{{end}}}
 ```
+
 
 ## Comparison
 
@@ -170,6 +174,7 @@ d: true
 {{{end}}}
 ```
 
+
 The equality operators `==` and `!=` are defined for any two concrete values.
 
 For instance, `null`, `false`, `"str"`, `1`, and `'\x80'` are comparable, `int` or `<10` are not.
@@ -203,6 +208,7 @@ d: false
 e: true
 {{{end}}}
 ```
+
 
 <!-- TODO
 
@@ -250,6 +256,7 @@ upper: true
 {{{end}}}
 ```
 
+
 ## Boolean logic
 
 CUE supports not (`!`), logical and (`&&`), and logical or (`||`) to operate on boolean values.
@@ -267,6 +274,7 @@ a: false
 {{{end}}}
 ```
 
+
 It is an error for any values passed to these operators to be invalid.
 
 ```coq
@@ -279,6 +287,7 @@ err: undefined field: bar:
     ./in.cue:2:16
 {{{end}}}
 ```
+
 
 ## Functions
 
@@ -316,6 +325,7 @@ pi:   3.14159265358979323846264338327950288419716939937510582097494459
 {{{end}}}
 ```
 
+
 <!--
 
 Core Builtins
@@ -343,6 +353,7 @@ c: len(`abc`)
 -- out.cue --
 {{{end}}}
 ```
+
 
 -->
 
@@ -379,6 +390,7 @@ a: *1
 -- out.cue --
 {{{end}}}
 ```
+
 
 
 {{{with sidetrack}}}

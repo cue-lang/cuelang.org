@@ -47,6 +47,7 @@ s: "Cat"
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 A bound that fails results in an error.
 
 {{< code-tabs >}}
@@ -60,6 +61,7 @@ e: invalid value "bar" (out of bound =~"foo"):
     ./in.cue:2:4
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 ## Validators
 
@@ -83,6 +85,7 @@ a: invalid value [1,2,3] (does not satisfy list.MinItems(4)): len(list) < MinIte
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 ## Timestamps
 
 Time stamps are a common data type.
@@ -101,6 +104,7 @@ valid: "2006-01-02T15:04:05Z"
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 Certain CUE adaptors may convert these validators to or from format-specific
 types.
 
@@ -118,5 +122,6 @@ import "time"
 {{< code-tab name="JSONSCHEMA" language="jsonschema" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 -->

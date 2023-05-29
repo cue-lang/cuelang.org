@@ -189,12 +189,24 @@ func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
 		return nil, pc.bodyError(c, "expected identifier as first arg; got %T", arg0)
 	}
 	switch fn.Ident {
-	case "sidebyside":
+	case fnSidebyside:
 		t, err := pc.parse_txtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
 		}
 		return &sidebysideNode{txtarNode: t}, nil
+	case fnUpload:
+		t, err := pc.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		if err != nil {
+			return nil, err
+		}
+		return &uploadNode{txtarNode: t}, nil
+	case fnScript:
+		t, err := pc.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		if err != nil {
+			return nil, err
+		}
+		return &scriptNode{txtarNode: t}, nil
 	case "sidetrack":
 	default:
 		return nil, pc.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)

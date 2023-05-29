@@ -17,6 +17,7 @@ a: 1
 {{{end}}}
 ```
 
+
 This is not
 
 ```coq
@@ -32,6 +33,7 @@ a: conflicting values 1 and string (mismatched types int and string):
 {{{end}}}
 ```
 
+
 It is also possible to combine schemas. For instance, the following CUE defines
 restrictions on what values are allowed for another schema.
 
@@ -43,6 +45,7 @@ restrictions on what values are allowed for another schema.
 
 {{{end}}}
 ```
+
 
 The result is a schema that is more strict for validating data.
 

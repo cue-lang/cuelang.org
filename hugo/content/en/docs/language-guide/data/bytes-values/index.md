@@ -28,6 +28,8 @@ b: '''
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
+
 ## Translation to YAML
 
 CUE translates bytes to the corresponding YAML binary type.
@@ -43,6 +45,8 @@ b: '''
 
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+
 
 ## Escape sequences
 

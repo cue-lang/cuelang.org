@@ -34,6 +34,8 @@ msg: """
 {{{end}}}
 ```
 
+
+
 {{{with sidetrack}}}
 CUE multiline strings originate from Swift.
 {{{end}}}
@@ -83,6 +85,8 @@ b: ##"Use \#n to write a newline in that case.”##
 }
 {{{end}}}
 ```
+
+
 
 {{{with sidetrack}}}
 CUE alternate escape sequences originate from Swift.

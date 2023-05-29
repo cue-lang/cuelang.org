@@ -38,6 +38,7 @@ Feedback: {}
 {{{end}}}
 ```
 
+
 ## Required Field Constraints
 
 We use `!` instead of `?` to additionally specify that this field _*must_* be
@@ -59,6 +60,7 @@ Name: {
 }
 {{{end}}}
 ```
+
 
 As a rule of thumb, all fields in a schema are defined as field constraints.
 

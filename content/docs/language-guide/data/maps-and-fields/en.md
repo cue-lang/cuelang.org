@@ -32,6 +32,7 @@ $id:   "yipee"
 {{{end}}}
 ```
 
+
 Both quoted and unquoted fields in the above form are referred to as regular
 fields.
 
@@ -52,6 +53,7 @@ a: {
 }
 {{{end}}}
 ```
+
 
 `a: 1` and `"a": 1` mean the same thing.
 
@@ -97,6 +99,7 @@ two: _typeName: "string"
 {{{end}}}
 ```
 
+
 ## Embedded Scalars
 
 It is possible to associate helper fields with scalar types by placing both in
@@ -132,6 +135,7 @@ three: {
 }
 {{{end}}}
 ```
+
 
 Note for field `two` we need to include a `_` within the map to make things
 work.

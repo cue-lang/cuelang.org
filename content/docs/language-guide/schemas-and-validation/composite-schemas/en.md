@@ -55,6 +55,7 @@ a.b: field not allowed:
 {{{end}}}
 ```
 
+
 {{{reference "why-cue-closedness-the-way-it-does-proto–intermezzo?"}}}
 
 ## Extending Schemas
@@ -97,6 +98,7 @@ definition.
 {{{end}}}
 ```
 
+
 Using embedding is not unlike extending a class in an object-oriented
 programming language, with the notable difference that existing fields cannot be
 overridden and must compose with the newly provided values.
@@ -122,6 +124,7 @@ extend them:
 
 {{{end}}}
 ```
+
 
 {{{with sidetrack "en"}}}
 Embedding of literal maps is also allowed. This is essentially what allows us to

@@ -31,6 +31,7 @@ map: {
 {{{end}}}
 ```
 
+
 {{{reference "json-vs-cue"}}}
 
 <!-- TODO: Also useful for defining data: embedding, builtins, … -->
@@ -56,6 +57,7 @@ map: {
 }
 {{{end}}}
 ```
+
 
 A comment that is on a line directly preceding an element is called a doc
 comment. CUE will associate that comment with this element and will persist

@@ -29,6 +29,8 @@ b: '''
 {{{end}}}
 ```
 
+
+
 ## Translation to YAML
 
 CUE translates bytes to the corresponding YAML binary type.
@@ -45,6 +47,8 @@ b: '''
 
 {{{end}}}
 ```
+
+
 
 ## Escape sequences
 
