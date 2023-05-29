@@ -51,6 +51,7 @@ m1_1: 6
 {{{end}}}
 ```
 
+
 ## `if cond`
 
 The `if` clause discards a result if a condition does not hold.
@@ -74,6 +75,7 @@ n3: 3
 {{{end}}}
 ```
 
+
 ## `let x = y`
 
 The `let` clause allows assigning a formula to a single expression to avoid
@@ -95,6 +97,7 @@ n6: 6
 n7: 7
 {{{end}}}
 ```
+
 
 <!-- TODO
 
@@ -129,6 +132,7 @@ list: [0, 2, 4, 6, 10, 20, 11, 12, 13]
 {{{end}}}
 ```
 
+
 ## Switch and if-else
 
 A common pattern is to use an `if` comprehension by itself to insert fields
@@ -149,4 +153,5 @@ mem:       2147483648
 footprint: "medium"
 {{{end}}}
 ```
+
 

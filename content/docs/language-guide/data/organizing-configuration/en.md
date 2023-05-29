@@ -28,6 +28,7 @@ a: 1
 {{{end}}}
 ```
 
+
 This is not:
 
 ```coq
@@ -42,6 +43,7 @@ b: conflicting values 2 and 1:
     in.cue: 2:4
 {{{end}}}
 ```
+
 
 Two maps or lists are consistent if the values with the same key or index are
 consistent.
@@ -71,6 +73,7 @@ list: [1, 2, 3, 4]
 {{{end}}}
 ```
 
+
 As can be seen, identical fields do not have to be placed next to each other.
 
 Merging is also used for validation.
@@ -93,6 +96,7 @@ point2: {
 {{{end}}}
 ```
 
+
 One can also combine values with the `&` operator:
 
 ```coq
@@ -106,6 +110,7 @@ point3: {
 }
 {{{end}}}
 ```
+
 
 {{{with sidetrack}}}
 Overall, a JSON file can be thought of as a sequence of path value pairs, where
@@ -143,6 +148,7 @@ cart: {
 }
 {{{end}}}
 ```
+
 
 CUE will evaluate all files belonging to the same package as if the file
 contents were contained in one large file, merging identical fields as described

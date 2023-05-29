@@ -58,6 +58,7 @@ fooInt: {
 {{{end}}}
 ```
 
+
 It may be cumbersome to maintain a list of all implemented alternatives.
 This following approach accepts all implementations of `#Base`, retaining
 all additional fields.
@@ -78,6 +79,7 @@ all additional fields.
 {{{end}}}
 ```
 
+
 The following approach allows all implementations of `#Base` while discarding excess fields.
 
 ```coq
@@ -96,6 +98,7 @@ fooInt: a.{#Base}
 -- out.cue --
 {{{end}}}
 ```
+
 
 ## Default values in schemas
 
@@ -125,6 +128,7 @@ Schema: {
 }
 {{{end}}}
 ```
+
 
 By convention, names of the form `#Schema` should be defined for “pure” schema.
 A package that defines `#Schema` could define `Schema` which would reflect `#Schema` with template fields that fills out derived values and template fields that will always be fixed.

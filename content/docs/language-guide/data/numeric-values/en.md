@@ -43,6 +43,7 @@ c: 1Mi
 {{{end}}}
 ```
 
+
 ## Numbers with a different base
 
 CUE can represent numbers in bases other than decimal.
@@ -67,4 +68,5 @@ b: 0b0101_0001
 }
 {{{end}}}
 ```
+
 

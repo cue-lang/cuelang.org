@@ -39,6 +39,7 @@ price: 6.00
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 CUE distinguishes whole numbers as a special class of numbers.
 For `+`, `-`, and `*` the result is whole, or an integer, if the values on which it operates are whole.
 This is not true for the numeric `/` division.
@@ -90,6 +91,7 @@ b: 'ℚ'
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 ## String and Bytes Interpolations
 
 Both strings and bytes also support {{{def "interpolations"}}}, which allow inserting values in place using the `\( formula )` notation.
@@ -123,6 +125,7 @@ e:       "As a string: �"
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 Interpolations may also be used in quoted selectors or in field names.
 
 {{< code-tabs >}}
@@ -134,6 +137,7 @@ y: x."\(f)bar"
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 ## Comparison
 
@@ -169,6 +173,7 @@ d: true
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 The equality operators `==` and `!=` are defined for any two concrete values.
 
 For instance, `null`, `false`, `"str"`, `1`, and `'\x80'` are comparable, `int` or `<10` are not.
@@ -202,6 +207,7 @@ d: false
 e: true
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 <!-- TODO
 
@@ -249,6 +255,7 @@ upper: true
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 ## Boolean logic
 
 CUE supports not (`!`), logical and (`&&`), and logical or (`||`) to operate on boolean values.
@@ -266,6 +273,7 @@ a: false
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 It is an error for any values passed to these operators to be invalid.
 
 {{< code-tabs >}}
@@ -278,6 +286,7 @@ err: undefined field: bar:
     ./in.cue:2:16
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 ## Functions
 
@@ -315,6 +324,7 @@ pi:   3.14159265358979323846264338327950288419716939937510582097494459
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+
 <!--
 
 Core Builtins
@@ -341,6 +351,7 @@ c: len(`abc`)
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 -->
 
@@ -376,6 +387,7 @@ a: *1
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
 
 
 {{{with sidetrack}}}
