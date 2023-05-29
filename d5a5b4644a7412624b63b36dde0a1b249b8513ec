@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e33b35cb_2cb2a6fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2023-05-29T07:14:59Z",
+      "side": 1,
+      "message": "Emergency +2 to unblock CL chain and fix deploy.",
+      "revId": "d5a5b4644a7412624b63b36dde0a1b249b8513ec",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
