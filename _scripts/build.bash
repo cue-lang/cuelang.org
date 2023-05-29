@@ -14,10 +14,10 @@ if [ "${NETLIFY:-}" != "true" ]
 then
 	time="time -p"
 	norun="false"
-fi
-if [ "${CI:-}" == "true" ]
-then
-	skipcache="--skipcache=true"
+	if [ "${CI:-}" == "true" ]
+	then
+		skipcache="--skipcache=true"
+	fi
 fi
 
 # Build playground
