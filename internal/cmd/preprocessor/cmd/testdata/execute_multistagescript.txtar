@@ -1,0 +1,61 @@
+# Ensure that preprocessor understands how to handle multi-stage scripts
+
+unquote content/dir/en.md hugo/content/en/dir/index.md.golden
+
+# Make a golden file of the input to ensure it is written back intact
+cp content/dir/en.md content/dir/en.md.golden
+
+# Run the preprocessor
+exec preprocessor execute --debug=all
+
+# Copy the resulting soure file sideways and use that in comparison
+# so that we don't inadvertently update it when using CUE_UPDATE=1
+cp content/dir/en.md content/dir/en.md.writeBack
+
+# Verify that the source file is intact
+cmp content/dir/en.md.writeBack content/dir/en.md.golden
+
+# Verify that the target files matche the source contents
+cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>```coq
+>{{{with upload "en" "upload-some-cue"}}}
+>-- in.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>{{{end}}}
+>```
+>```coq
+>{{{with script "en" "run-the-cue"}}}
+>exec cue eval in.cue
+>{{{end}}}
+>```
+-- hugo/content/en/dir/index.md.golden --
+>---
+>title: JSON Superset
+>---
+>{{{with upload "en" "upload-some-cue"}}}
+>-- in.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>{{{end}}}
+>{{{with script "en" "run-the-cue"}}}
+>exec cue eval in.cue
+>{{{end}}}
+-- structure.golden --
+content/dir/en.md
+content/dir/gen_cache.cue
+content/dir/site.cue
+hugo/content/en/dir/index.md
