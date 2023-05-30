@@ -2,7 +2,7 @@
 # language to output
 
 # Run the preprocessor
-exec preprocessor execute --debug
+exec preprocessor execute --debug=all
 
 # Verify that the target files matche the source contents
 cmp hugo/content/en/branch_md/_index.md hugo/content/en/branch_md/_index.md.golden

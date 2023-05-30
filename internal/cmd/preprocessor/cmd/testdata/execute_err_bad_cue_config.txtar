@@ -2,7 +2,7 @@
 # shorthand that we use.
 
 unquote content/dir/en.md
-! exec preprocessor execute --debug
+! exec preprocessor execute --debug=all
 stderr 'error in site configuration: expected label or '':'', found ''IDENT'' is'
 
 -- content/site.cue --

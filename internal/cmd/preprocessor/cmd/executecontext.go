@@ -69,7 +69,7 @@ func (ec *executeContext) execute() error {
 		return err
 	}
 
-	ec.debugf("%v: selfHash: %s", ec, ec.selfHash)
+	ec.debugf(ec.debugCache, "%v: selfHash: %s", ec, ec.selfHash)
 
 	// Recursively walk wd to find $lang.md and _$lang.md files for all
 	// supported languages.
@@ -196,13 +196,13 @@ func (ec *executeContext) findPages() error {
 				if err != nil {
 					return ec.errorf("%v: failed to create page in dir %s: %v", ec, dir, err)
 				}
-				ec.debugf("%v: found page at %v", ec, dir)
+				ec.debugf(ec.debugGeneral, "%v: found page at %v", ec, dir)
 				ec.pages[dir] = p
 			}
 
 			// Register the root file with the page
 			rf := p.newRootFile(name, lang, prefix, ext)
-			p.debugf("%v: added root file named %s", p, name)
+			p.debugf(ec.debugGeneral, "%v: added root file named %s", p, name)
 			p.rootFiles[name] = rf
 			rootPages := p.langTargets[lang]
 			rootPages = append(rootPages, rf)
@@ -264,8 +264,8 @@ func (ec *executeContext) deriveHashOfSelf() error {
 	if !didWork {
 		ec.fatalf("%v: did no work computing hash of self", ec)
 	}
-	if ec.debug {
-		ec.debugf("hash of self: %s\n", tabIndent(buf.Bytes()))
+	if buf != nil {
+		ec.debugf(ec.debugCache, "hash of self: %s\n", tabIndent(buf.Bytes()))
 	}
 
 	return nil

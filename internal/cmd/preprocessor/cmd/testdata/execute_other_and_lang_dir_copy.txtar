@@ -3,7 +3,7 @@
 # to each target.  Note that the .ignored directory should be ignored.
 
 # Run the preprocessor
-exec preprocessor execute --debug
+exec preprocessor execute --debug=all
 
 # Verify golden files
 cmp hugo/content/en/dir/_index.md hugo/content/en/dir/_index.md.golden

@@ -105,7 +105,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 			cmd = s.dockerCmd(nil, "cue", "fmt", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		default:
-			s.debugf("%v: skipping formatting of file %s; unknown extension", s, a.Basename)
+			s.debugf(s.debugGeneral, "%v: skipping formatting of file %s; unknown extension", s, a.Basename)
 		}
 		if cmd == nil {
 			// Nothing to do
@@ -121,7 +121,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	for _, j := range jobs {
 		j.cmd.Stdout = &j.out
 		j.cmd.Stderr = &j.out
-		s.debugf("%v: running %v", s, j.cmd)
+		s.debugf(s.debugGeneral, "%v: running %v", s, j.cmd)
 		if err := j.cmd.Start(); err != nil {
 			s.errorf("%v: failed to start %v: %v", s, j.cmd, err)
 		}
@@ -174,7 +174,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 		fmt.Sprintf("-u=%v", s.updateGoldenFiles),
 		containerFile,
 	)
-	s.debugf("%v: running %v\n%s", s, ts, tabIndent(txtar.Format(&effectiveArchive)))
+	s.debugf(s.debugGeneral, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(&effectiveArchive)))
 
 	if byts, err := ts.CombinedOutput(); err != nil {
 		s.fatalf("%v: failed to run %v: %v\n%s", s, ts, err, tabIndent(byts))

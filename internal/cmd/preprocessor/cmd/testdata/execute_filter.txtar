@@ -1,7 +1,7 @@
 # Verify that execute works when supplied a list of directories to execute
 
 # Run the preprocessor with a list of dirs to execute
-exec preprocessor execute --debug content/dir1
+exec preprocessor execute --debug=all content/dir1
 
 # Verify that the target files matche the source contents
 cmp hugo/content/en/dir1/index.md hugo/content/en/dir1/index.md.golden

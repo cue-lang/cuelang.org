@@ -110,7 +110,7 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 // to target /hugo/content directories (including _$LANG directories), and then
 // processes the set of root files that form the basis of a page root.
 func (p *page) process() error {
-	p.debugf("%v: process page", p)
+	p.debugf(p.debugGeneral, "%v: process page", p)
 
 	// langs are the languages "supported" by this page
 	langs := maps.Keys(p.langTargets)
