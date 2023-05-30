@@ -14,7 +14,7 @@ unquote content/norun/en.md
 cp content/norun/en.md content/norun/en.md.golden
 
 # Run the preprocessor
-exec preprocessor execute --debug
+exec preprocessor execute --debug=all
 
 # Copy the resulting soure file sideways and use that in comparison
 # so that we don't inadvertently update it when using CUE_UPDATE=1

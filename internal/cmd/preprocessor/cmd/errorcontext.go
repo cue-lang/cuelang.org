@@ -31,7 +31,7 @@ type errorContext interface {
 	errorf(format string, args ...any) error
 
 	// debugf logs a debug-level message.
-	debugf(format string, args ...any)
+	debugf(enabled bool, format string, args ...any)
 
 	// fatalf logs an error-level message via errorf, and then panics with a
 	// fatalError value.
@@ -81,8 +81,8 @@ func (e *errorContextWriter) fatalf(format string, args ...any) {
 	panic(fatalError{error: err})
 }
 
-func (e *errorContextWriter) debugf(format string, args ...any) {
-	if !e.debug {
+func (e *errorContextWriter) debugf(enabled bool, format string, args ...any) {
+	if !enabled {
 		return
 	}
 	e.logf("debug: "+format, args...)
