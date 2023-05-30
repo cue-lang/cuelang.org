@@ -113,7 +113,7 @@ func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 }
 
 func (rf *rootFile) transform(targetPath string) error {
-	rf.debugf("%v: transform root file", rf)
+	rf.debugf(rf.debugGeneral, "%v: transform root file", rf)
 	// For now, we only support en as a main language. For other languages
 	// we simply copy from source to target.
 	if rf.lang != langEn {
@@ -244,14 +244,14 @@ func (rf *rootFile) run() error {
 		h, b := rf.createHash()
 		hashPath := rf.hashRunnableNode(n, h)
 		if b != nil {
-			rf.debugf("%v: hashed node %v:\n%s", rf, n, b.Bytes())
+			rf.debugf(rf.debugCache, "%v: hashed node %v:\n%s", rf, n, b.Bytes())
 		}
 		currHash := base64.StdEncoding.EncodeToString(h.Sum(nil))
 		cacheHash, err := rf.config.LookupPath(hashPath).String()
 		cacheMiss := err != nil || currHash != cacheHash
 
 		if !cacheMiss && !rf.skipCache {
-			rf.debugf("%v: cache hit for %v; not running", rf, hashPath)
+			rf.debugf(rf.debugCache, "%v: cache hit for %v; not running", rf, hashPath)
 			continue
 		}
 
@@ -267,9 +267,9 @@ func (rf *rootFile) run() error {
 			return rf.errorf("%v: cache miss for %v; but told not to run", rf, hashPath)
 		} else if cacheMiss {
 			// It's a cache miss
-			rf.debugf("%v: cache miss for %v", rf, hashPath)
+			rf.debugf(rf.debugCache, "%v: cache miss for %v", rf, hashPath)
 		} else { // skip cache
-			rf.debugf("%v: skipping cache for %v; was a hit", rf, hashPath)
+			rf.debugf(rf.debugCache, "%v: skipping cache for %v; was a hit", rf, hashPath)
 			r := n.run()
 			wait = append(wait, runRunnable(r))
 		}
@@ -322,9 +322,9 @@ func (rf *rootFile) writePageCache() error {
 		return nil
 	}
 
-	if rf.debug {
+	if rf.debugCache {
 		m := []byte(fmt.Sprintf("%v", v))
-		rf.debugf("%v: cache entries: \n%s", rf, tabIndent(m))
+		rf.debugf(rf.debugCache, "%v: cache entries: \n%s", rf, tabIndent(m))
 	}
 
 	// Derive CUE source format

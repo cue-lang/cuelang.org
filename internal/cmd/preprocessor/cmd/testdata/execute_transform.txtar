@@ -7,7 +7,7 @@ unquote content/dir/en.md
 cp content/dir/en.md content/dir/en.md.golden
 
 # Run the preprocessor
-exec preprocessor execute --debug
+exec preprocessor execute --debug=all
 
 # Assert there was no cache hit
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache miss for dir.cache.sidebyside."json-superset"'
@@ -27,11 +27,11 @@ cmp content/dir/en.md.writeBack content/dir/en.md.golden
 cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
 
 # Re-run the preprocessor and ensure we have a cache hit
-exec preprocessor execute --debug
+exec preprocessor execute --debug=all
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for dir.cache.sidebyside."json-superset"; not running'
 
 # Re-run the preprocessor again with --skipcache to ensure we re-run a cache hit
-exec preprocessor execute --debug --skipcache
+exec preprocessor execute --debug=all --skipcache
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for dir.cache.sidebyside."json-superset"; was a hit'
 
 -- content/dir/site.cue --

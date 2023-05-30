@@ -146,7 +146,7 @@ func newExecuteCmd(c *Command) *cobra.Command {
 		Short: "Generate /hugo/content from /content",
 		RunE:  mkRunE(c, executeDef),
 	}
-	cmd.Flags().Bool(string(flagDebug), false, "turn on debug logging")
+	cmd.Flags().String(string(flagDebug), "off", "turn on debug logging. Comma-separated (negated) list of: all, fsnotify, cache")
 	cmd.Flags().StringP(string(flagDir), "d", "", "working directory. Defaults to the current working directory")
 	cmd.Flags().Bool(string(flagServe), false, "watch the working directory for changes, executing on each batch of changes")
 	cmd.Flags().Bool(string(flagUpdate), false, "update files in archives when formatting and running scripts")

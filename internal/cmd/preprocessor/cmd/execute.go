@@ -77,8 +77,20 @@ type executionContext struct {
 	// update golden file expectations.
 	updateGoldenFiles bool
 
-	// debug is set when we should output debug level logging.
-	debug bool
+	// debugGeneral is set when we should output debugGeneral level logging for
+	// general logging statements. It is a catch-all for debugging not captured
+	// by other debug* fields.
+	debugGeneral bool
+
+	// debugCache is set when we want to enable very detailed logging of what
+	// goes in to cache decisions. It is distinct from debugGeneral because it
+	// creates a lot of noise.
+	debugCache bool
+
+	// debugFsnotify is set when we want to enabled fine-grained logging related
+	// to fsnotify events. It is distinct from debugGeneral because it creates a
+	// lot of noise.
+	debugFsnotify bool
 
 	// tempRoot is the directory path under which all temporary files created
 	// during an execution run of the preprocessor should be created.
@@ -114,7 +126,7 @@ func (e executionContext) tempDir(pattern string) (string, error) {
 // b. Otherwise b will be nil.
 func (e executionContext) createHash() (hash.Hash, *bytes.Buffer) {
 	h := sha256.New()
-	if !e.debug {
+	if !e.debugCache {
 		return h, nil
 	}
 	return newLoggingHash(h)
@@ -145,12 +157,28 @@ func executeDef(c *Command, args []string) error {
 	}
 
 	ctx := executionContext{
-		debug:             flagDebug.Bool(c),
 		updateGoldenFiles: flagUpdate.Bool(c),
 		norun:             flagNoRun.Bool(c),
 		ctx:               cuecontext.New(),
 		skipCache:         flagSkipCache.Bool(c),
 	}
+
+	// Debug logging. Any level of debug logging enabled implies
+	// general debug logging is turned on.
+	for _, v := range strings.Split(flagDebug.String(c), ",") {
+		v, set := strings.CutPrefix(v, "-")
+		switch v {
+		case "all":
+			ctx.debugGeneral = !set
+			ctx.debugFsnotify = !set
+			ctx.debugCache = !set
+		case "fsnotify":
+			ctx.debugFsnotify = !set
+		case "cache":
+			ctx.debugCache = !set
+		}
+	}
+	ctx.debugGeneral = ctx.debugGeneral || ctx.debugCache || ctx.debugFsnotify
 
 	e := newExecutor(&ctx, wd, projectRoot, c)
 	if flagServe.Bool(c) {

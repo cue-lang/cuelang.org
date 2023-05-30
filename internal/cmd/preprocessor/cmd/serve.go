@@ -86,7 +86,7 @@ func (e *executor) serve(args []string) error {
 	sc.findGitTopLevel()
 
 	var oDebug fsnotify.Option
-	if flagDebug.Bool(e.cmd) {
+	if e.debugFsnotify {
 		oDebug = fsnotify.Debug(os.Stderr)
 	}
 
@@ -196,7 +196,7 @@ func (sc *serveContext) relayHugoOutput() {
 			nl = "\n"
 		}
 
-		sc.e.debugf("%s%s%s", prefix, line, nl)
+		sc.e.debugf(sc.e.debugGeneral, "%s%s%s", prefix, line, nl)
 	}
 
 }
@@ -216,7 +216,7 @@ func (sc *serveContext) findGitTopLevel() {
 func (sc *serveContext) watcherEventLoop() {
 	// Initial execute
 	if err := sc.e.execute(nil); err != nil {
-		sc.e.debugf("failed to execute: %v", err)
+		sc.e.debugf(sc.e.debugGeneral, "failed to execute: %v", err)
 	}
 	for {
 		// TODO: see the TODO agains the signal handling in (*executor).serve for ideas on
@@ -239,10 +239,15 @@ func (sc *serveContext) watcherEventLoop() {
 			// Build up a log string, but also establish a list of directories
 			// ready to feed to execute
 			dirs := make(map[string]bool)
-			s := new(strings.Builder)
-			fmt.Fprintf(s, "changes: [\n")
+			var s strings.Builder
+			fsnotifyDebugf := func(format string, args ...any) {
+				if sc.e.debugFsnotify {
+					fmt.Fprintf(&s, format, args...)
+				}
+			}
+			fsnotifyDebugf("changes: [\n")
 			for _, ev := range evs {
-				fmt.Fprintf(s, "  path: %s, op: %v\n", ev.Name, ev.Op)
+				fsnotifyDebugf("  path: %s, op: %v\n", ev.Name, ev.Op)
 
 				// If we got a remove, treat as a write to the containing
 				// directory. Note that the containing directory itself might get
@@ -261,7 +266,7 @@ func (sc *serveContext) watcherEventLoop() {
 				// ev.Name might be a file or a directory.
 				fi, err := os.Lstat(ev.Name)
 				if err != nil {
-					sc.e.debugf("failed to lstat %s: %v", ev.Name, err)
+					sc.e.debugf(sc.e.debugFsnotify, "failed to lstat %s: %v", ev.Name, err)
 					continue
 				}
 				d := ev.Name
@@ -270,24 +275,24 @@ func (sc *serveContext) watcherEventLoop() {
 				}
 				dirs[d] = true
 			}
-			fmt.Fprintf(s, "]\n")
-			sc.e.debugf(s.String())
+			fsnotifyDebugf("]\n")
+			sc.e.debugf(sc.e.debugFsnotify, s.String())
 
 			// Debug log the dirs we will execute
 			var dirNames []string
 			for d := range dirs {
 				dirNames = append(dirNames, fmt.Sprintf("%q", d))
 			}
-			sc.e.debugf("execute(%s)", strings.Join(dirNames, ","))
+			sc.e.debugf(sc.e.debugGeneral, "execute(%s)", strings.Join(dirNames, ","))
 
 			// Perform the execute
 			if err := sc.e.execute(dirs); err != nil {
-				sc.e.debugf("failed to execute: %v", err)
+				sc.e.debugf(sc.e.debugGeneral, "failed to execute: %v", err)
 			}
 
 		case err := <-sc.w.Errors():
 			if err != nil {
-				sc.e.debugf("error from filewatcher: %v", err)
+				sc.e.debugf(sc.e.debugGeneral, "error from filewatcher: %v", err)
 			}
 		}
 	}

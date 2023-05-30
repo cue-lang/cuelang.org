@@ -5,7 +5,7 @@ unquote content/dir/en.md
 unquote content/dir/en.md.golden
 
 # Run the preprocessor
-exec preprocessor execute --debug
+exec preprocessor execute --debug=all
 
 # Verify that the source file is intact
 cmp content/dir/en.md content/dir/en.md.golden
