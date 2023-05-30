@@ -56,7 +56,7 @@ func newExecutor(ctx *executionContext, wd, projectRoot string, cmd *Command) *e
 // is non-nil the it limits the execute step to only those directories present
 // in filter.
 func (e *executor) execute(filter map[string]bool) error {
-	e.debugf("working directory: %v\n", e.wd)
+	e.debugf(e.debugGeneral, "working directory: %v\n", e.wd)
 
 	// Establish a temporary directory within which all other temp
 	// material will be gathered. That way we only have to clean up

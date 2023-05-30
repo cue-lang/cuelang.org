@@ -70,8 +70,8 @@ func (e *errorContextBuffer) fatalf(format string, args ...any) {
 	panic(fatalError{error: err})
 }
 
-func (e *errorContextBuffer) debugf(format string, args ...any) {
-	if !e.debug {
+func (e *errorContextBuffer) debugf(enabled bool, format string, args ...any) {
+	if !enabled {
 		return
 	}
 	e.logf("debug: "+format, args...)

@@ -3,7 +3,7 @@
 # Empty target hugo directory
 cd empty_target
 mkdir hugo # because we can't define an empty directory in txtar
-exec preprocessor execute --debug
+exec preprocessor execute --debug=all
 
 -- empty_target/content/branch_md/_en.md --
 ---
