@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49ef6d1d_e93da437",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-31T17:42:29Z",
+      "side": 1,
+      "message": "FYI: `go list -json` for packages already gives you the module info, so you might be able to simplify this quite a bit.\n\n`go list -deps X` also puts the package you requesed (X) as the last element, so you can grab the main module info from that one. You could also verify this with the `Match` field, but no need, IMO.",
+      "revId": "4e98d26d7892ffcce1b609f19290e56c6e04f2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a632842_525e38f3",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-31T17:42:29Z",
+      "side": 1,
+      "message": "as far as I can tell, no need for this func to take format args as they are never used.\n\nin fact, the same goes for fp; I would even consider `fmt.Fprintln` since you always print exactly one line.",
+      "revId": "4e98d26d7892ffcce1b609f19290e56c6e04f2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13702852_3c4ee107",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-31T17:42:29Z",
+      "side": 1,
+      "message": "Why does it matter to only write the file when it\u0027s unchanged? I would have used WriteFile directly, since presumably it can\u0027t be harmful. You would bump the modified time, but that shouldn\u0027t matter for any sort of caching in the Go world. The only other possibility is file watchers, but presumably that shouldn\u0027t matter either?\n\nIf you are indeed doing this on purpose, I\u0027d document it, because I\u0027ve never seen it done before in the context of Go tools/generators.\n\nI have seen it done in cmd/gofmt, but arguably there it\u0027s a good idea: it already knows what the original bytes were (no need for an extra open+read), and it\u0027s often the case that one will format hundreds of files at once - avoiding the unnecessary writes can actually help performance.",
+      "revId": "4e98d26d7892ffcce1b609f19290e56c6e04f2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
