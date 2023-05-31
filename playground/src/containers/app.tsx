@@ -13,14 +13,15 @@
 // limitations under the License.
 
 import * as React from 'react';
-import * as acemodule from 'ace-builds';
 import { CUEVersion } from '@config/gen_cuelang_org_go_version';
 import { Dropdown, DropdownItem } from '@components/dropdown';
 import { funcOptions, inputOptions, Option, OPTION_TYPE, outputOptions } from '@models/options';
 import { Tabs } from '@components/tabs';
 import { Tab } from '@components/tab';
-
-const editorFontSize = 15;
+import { Editor } from '@monaco-editor/react';
+import { editor } from 'monaco-editor';
+import { editorOptions, outputEditorOptions } from '../config/monaco-editor';
+import { debounce } from 'lodash';
 
 interface AppProps
 {
@@ -39,16 +40,17 @@ interface AppState
 // App is the root of our React application
 export class App extends React.Component<AppProps, AppState>
 {
-    private lhsEditor: acemodule.Ace.Editor;
-    private rhsEditor: acemodule.Ace.Editor;
-    private hashSeperator = '@';
-
     public inputOptions: Option[] = inputOptions;
     public funcOptions: Option[] = funcOptions;
     public outputOptions: Option[] = outputOptions;
 
+    private inputEditor: editor.IStandaloneCodeEditor;
+    private outputEditor: editor.IStandaloneCodeEditor;
+    private hashSeperator = '@';
+
     constructor(props: AppProps) {
         super(props);
+
         this.state = {
             input: undefined,
             func: undefined,
@@ -60,14 +62,16 @@ export class App extends React.Component<AppProps, AppState>
         this.state = this.urlToState();
     }
 
-    public async componentDidMount() {
+    public componentDidMount() {
         window.addEventListener('hashchange', this.onUrlHashChange.bind(this));
+        window.addEventListener("resize", this.onWindowResize.bind(this));
+
         this.props.WasmAPI.OnChange(this.updateOutput.bind(this));
-        await this.loadEditor();
     }
 
     public componentWillUnmount() {
         window.removeEventListener('hashchange', this.onUrlHashChange.bind(this));
+        window.removeEventListener("resize", this.onWindowResize.bind(this));
     }
 
     public render() {
@@ -140,18 +144,32 @@ export class App extends React.Component<AppProps, AppState>
                         <div className="cue-columns__item cue-columns__item--left">
                             <Tabs>
                                 <Tab name={ `Input: ${ this.state.input.name }` }>
-                                    <div className="cue-editor">
-                                        <div id="lhseditor"></div>
-                                    </div>
+                                    <Editor
+                                        className="cue-editor"
+                                        language={ this.state.input.value }
+                                        options={ editorOptions }
+                                        onMount={ async (editor) => {
+                                            this.inputEditor = editor;
+                                            await this.loadSavedCode();
+                                            this.updateOutput();
+                                        }}
+                                        onChange={ this.onEditorInputChange.bind(this) }
+                                    />
                                 </Tab>
                             </Tabs>
                         </div>
                         <div className="cue-columns__item cue-columns__item--right">
                             <Tabs>
                                 <Tab name={ `Output: ${ this.state.output.name }` } type="terminal">
-                                    <div className="cue-editor cue-editor--terminal">
-                                        <div id="rhseditor"></div>
-                                    </div>
+                                    <Editor
+                                        className="cue-editor cue-editor--terminal"
+                                        language={ this.state.output.value }
+                                        options={ outputEditorOptions }
+                                        defaultValue="// ... loading WASM"
+                                        onMount={ (editor) => {
+                                            this.outputEditor = editor;
+                                        }}
+                                    />
                                 </Tab>
                             </Tabs>
                         </div>
@@ -161,73 +179,23 @@ export class App extends React.Component<AppProps, AppState>
         );
     }
 
-    private async loadEditor(): Promise<void> {
-        this.lhsEditor = acemodule.edit('lhseditor');
-        this.lhsEditor.setHighlightActiveLine(false);
-        this.lhsEditor.setShowPrintMargin(false);
-        this.lhsEditor.on('change', (e: acemodule.Ace.Delta) => {
-            this.inputDidChange();
-        });
-        this.lhsEditor.setFontSize(editorFontSize);
-        this.lhsEditor.focus();
+    private onWindowResize = debounce(() => {
+        this.resetEditorLayout();
+    }, 300);
 
-        let urlParams = new URLSearchParams(window.location.search);
-        let id = urlParams.get('id');
-        if (id != null && id != '') {
-            this.lhsEditor.setReadOnly(true);
-            const url = `${ this.urlPrefix() }'/.netlify/functions/snippets?id=${ id }`;
-            try {
-                const response = await fetch(url, { headers: { 'Content-Type': 'text/plain;' } });
-                const data = await response.text();
-                this.lhsEditor.setValue(data);
-                this.lhsEditor.clearSelection();
-                this.lhsEditor.setReadOnly(false);
-                this.setState({ ...this.state, saved: true });
-            } catch (error) {
-                this.lhsEditor.setReadOnly(false);
-                // TODO improve this
-                console.log('Error loading snippet with id=' + id, error);
-            }
-        }
-
-        this.rhsEditor = acemodule.edit('rhseditor');
-        this.rhsEditor.setHighlightActiveLine(false);
-        this.rhsEditor.setShowPrintMargin(false);
-        this.rhsEditor.setHighlightGutterLine(false);
-        this.rhsEditor.setReadOnly(true);
-        this.rhsEditor.setFontSize(editorFontSize);
-        this.rhsEditor.setValue('// ... loading WASM');
-        this.rhsEditor.clearSelection();
-
-        (this.rhsEditor.renderer as any).$cursorLayer.element.style.display = 'none';
-    }
-
-    private handleDropdownChange(groupId: string, value: string) {
-        const urlOptions: Record<keyof typeof OPTION_TYPE, string> = {
-            [OPTION_TYPE.input]: this.state.input.value,
-            [OPTION_TYPE.func]: this.state.func.value,
-            [OPTION_TYPE.output]: this.state.output.value,
-        }
-
-        if (groupId in OPTION_TYPE) {
-            urlOptions[groupId as keyof typeof OPTION_TYPE] = value;
-        }
-
-        window.location.hash = `#${ Object.values(urlOptions).join(this.hashSeperator) }`;
-    }
-
-    private urlPrefix(): string {
-        if (window.location.host.startsWith('localhost')) {
-            return 'http://localhost:8081';
-        }
-        return '';
-    }
-
-    public onUrlHashChange(e: HashChangeEvent) {
+    private onUrlHashChange(): void {
         this.setState(this.urlToState(), this.updateOutput.bind(this));
     }
 
-    public urlToState(): AppState {
+    private onEditorInputChange(): void {
+        if (this.state.saved) {
+            window.history.pushState({}, 'CUE Playground', '?id=' + window.location.hash)
+            this.setState({ ...this.state, saved: false, showSaveURL: false });
+        }
+        this.updateOutput();
+    }
+
+    private urlToState(): AppState {
         // Get values from hash
         let hash = window.location.hash;
         if (hash.startsWith('#')) {
@@ -275,30 +243,87 @@ export class App extends React.Component<AppProps, AppState>
         return { ...this.state, input: input, func: func, output: output };
     }
 
-    private inputDidChange(): void {
-        if (this.state.saved) {
-            window.history.pushState({}, 'CUE Playground', '?id=' + window.location.hash)
-            this.setState({ ...this.state, saved: false, showSaveURL: false });
+    private async loadSavedCode(): Promise<void> {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        if (id != null && id != '') {
+            this.inputEditor.updateOptions({
+                ...this.inputEditor.getOptions(),
+                readOnly: true,
+            });
+            const url = `${ this.urlPrefix() }'/.netlify/functions/snippets?id=${ id }`;
+
+            try {
+                const response = await fetch(url, { headers: { 'Content-Type': 'text/plain;' } });
+                const data = await response.text();
+                this.inputEditor.setValue(data);
+                this.inputEditor.setSelection({
+                    startLineNumber: 0, startColumn: 0, endLineNumber: 0, endColumn: 0
+                });
+                this.inputEditor.updateOptions({
+                    ...this.inputEditor.getOptions(),
+                    readOnly: false,
+                });
+                this.setState({ ...this.state, saved: true });
+            } catch (error) {
+                this.inputEditor.updateOptions({
+                    ...this.inputEditor.getOptions(),
+                    readOnly: false,
+                });
+                console.log('Error loading snippet with id=' + id, error);
+            }
         }
-        this.updateOutput();
+    }
+
+    private handleDropdownChange(groupId: string, value: string): void {
+        const urlOptions: Record<keyof typeof OPTION_TYPE, string> = {
+            [OPTION_TYPE.input]: this.state.input.value,
+            [OPTION_TYPE.func]: this.state.func.value,
+            [OPTION_TYPE.output]: this.state.output.value,
+        }
+
+        if (groupId in OPTION_TYPE) {
+            urlOptions[groupId as keyof typeof OPTION_TYPE] = value;
+        }
+
+        window.location.hash = `#${ Object.values(urlOptions).join(this.hashSeperator) }`;
+    }
+
+    public resetEditorLayout(): void {
+        this.inputEditor.layout({ width: 0, height: 0 });
+        this.outputEditor.layout({ width: 0, height: 0 });
+        this.inputEditor.layout();
+        this.outputEditor.layout();
+    }
+
+    private urlPrefix(): string {
+        if (window.location.host.startsWith('localhost')) {
+            return 'http://localhost:8081';
+        }
+        return '';
     }
 
     private updateOutput(): void {
-        if (this.props.WasmAPI.CUECompile === undefined || this.lhsEditor === undefined) {
+        if (this.props.WasmAPI.CUECompile === undefined ||
+            this.inputEditor === undefined || this.outputEditor === undefined) {
             return;
         }
-        let pre = this.lhsEditor.getValue();
+
+        let pre = this.inputEditor.getValue();
         let post = this.props.WasmAPI.CUECompile(this.state.input.value, this.state.func.value, this.state.output.value, pre);
         let val = post.error;
         if (val === '') {
             val = post.value;
         }
-        this.rhsEditor.setValue(val);
-        this.rhsEditor.clearSelection();
+        this.outputEditor.setValue(val);
+        this.outputEditor.setSelection({
+            startLineNumber: 0, startColumn: 0, endLineNumber: 0, endColumn: 0
+        });
     }
 
     private share(): void {
-        let contents = this.lhsEditor.getValue();
+        let contents = this.inputEditor.getValue();
         let req = fetch(this.urlPrefix() + '/.netlify/functions/snippets', {
             method: 'POST',
             headers: { 'Content-Type': 'text/plain;' },
@@ -310,7 +335,6 @@ export class App extends React.Component<AppProps, AppState>
             window.history.pushState({}, 'CUE Playground', '?id=' + data + window.location.hash)
             this.setState({ ...this.state, saved: true, showSaveURL: true });
         }).catch((error) => {
-            // TODO improve this
             console.log('Failed to share', error);
         });
     }

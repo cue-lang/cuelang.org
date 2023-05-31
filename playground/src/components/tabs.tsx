@@ -178,7 +178,7 @@ export class Tabs extends React.Component<PropsWithChildren<TabsProps>, TabsStat
 
                 <div className="cue-tabs__content">
                     { tabs.map((tab, index) =>
-                        <div className={ cx('cue-tabs__item', {
+                        <div key={`tab-content-${ index }`}  className={ cx('cue-tabs__item', {
                             'is-active': index === this.state.activeIndex,
                         }) }>{ tab.children }
                         </div>
