@@ -67,11 +67,6 @@
         border-bottom: 1px solid transparentize($c-blue--darker, 0.8);
         border-radius: 0;
 
-        em {
-            color: $c-pink;
-            font-weight: $weight-bold;
-        }
-
         #{ $self }__title {
             margin: 0;
         }
@@ -81,7 +76,6 @@
         }
 
         #{ $self }__excerpt {
-            font-style: italic;
             font-weight: $weight-medium;
             margin: 0.5rem 0 0;
         }
