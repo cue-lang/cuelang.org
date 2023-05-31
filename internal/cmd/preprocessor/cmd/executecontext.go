@@ -16,9 +16,11 @@ package cmd
 
 import (
 	"fmt"
+	"io/fs"
 	"os"
 	"path/filepath"
 	"runtime/debug"
+	"strings"
 
 	"cuelang.org/go/cue/load"
 )
@@ -229,9 +231,42 @@ func (ec *executeContext) deriveHashOfSelf() error {
 		return nil
 	}
 
+	// A simple sanity check to ensure we actually do some work hashing self.
+	// Otherwise it's an indicator that we have no embedded files.
+	didWork := false
+
 	// This fallback only works if the main module is is
 	// github.com/cue-lang/cuelang.org. (It might be possible to relax this
 	// constraint, but a tight constraint works for now).
-	ec.selfHash = selfHash
+	hash, buf := ec.executionContext.createHash()
+	err := fs.WalkDir(files, ".", func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() {
+			return nil
+		}
+		// Skip certain files we cannot exclude via the embed globs
+		if strings.HasSuffix(path, "_test.go") {
+			return nil
+		}
+		f, err := files.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		fmt.Fprintf(hash, "hashing %s:\n%s", path, f)
+		didWork = true
+		return nil
+	})
+	if err != nil {
+		return ec.errorf("%v: failed to hash the files of self: %v", ec, err)
+	}
+	if !didWork {
+		ec.fatalf("%v: did no work computing hash of self", ec)
+	}
+	if ec.debug {
+		ec.debugf("hash of self: %s\n", tabIndent(buf.Bytes()))
+	}
+
 	return nil
 }

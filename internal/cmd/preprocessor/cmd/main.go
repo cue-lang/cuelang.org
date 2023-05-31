@@ -14,7 +14,7 @@
 
 package cmd
 
-//go:generate go run github.com/cue-lang/cuelang.org/internal/cmd/genpkghash
+//go:generate go run github.com/cue-lang/cuelang.org/internal/cmd/genpreprocessorembed
 
 import (
 	"context"
