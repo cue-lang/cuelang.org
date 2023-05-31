@@ -26,7 +26,7 @@
     }
 
     &__tab {
-        background-color: var(--tab-background, $c-white);
+        background-color: var(--tab-background, $c-white-vscode);
         color: var(--tab-color, $c-blue--darker);
         display: block;
         font-size: 0.75rem;
@@ -49,7 +49,7 @@
         }
 
         &.is-active {
-            background-color: var(--tab-background-active, $c-white);
+            background-color: var(--tab-background-active, $c-white-vscode);
             font-weight: $weight-bold;
             pointer-events: none;
         }
