@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8951d7a6_7212409b",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-31T18:56:25Z",
+      "side": 1,
+      "message": "To simplify down to a single `go list` call seems like it would require one pass to decode the `listPackage` values, using the last value to determine the main module, then another in order to calculate the paths of files relative to the module root. Given this code isn\u0027t unreadable as it stands, I\u0027m tempted to leave this for now. It feels relatively low priority to refine it much further.",
+      "parentUuid": "49ef6d1d_e93da437",
+      "revId": "4e98d26d7892ffcce1b609f19290e56c6e04f2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a632842_525e38f3",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b58d9c5_c1dc492c",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-31T18:56:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a632842_525e38f3",
+      "revId": "4e98d26d7892ffcce1b609f19290e56c6e04f2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "13702852_3c4ee107",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-05-31T17:42:29Z",
       "side": 1,
       "message": "Why does it matter to only write the file when it\u0027s unchanged? I would have used WriteFile directly, since presumably it can\u0027t be harmful. You would bump the modified time, but that shouldn\u0027t matter for any sort of caching in the Go world. The only other possibility is file watchers, but presumably that shouldn\u0027t matter either?\n\nIf you are indeed doing this on purpose, I\u0027d document it, because I\u0027ve never seen it done before in the context of Go tools/generators.\n\nI have seen it done in cmd/gofmt, but arguably there it\u0027s a good idea: it already knows what the original bytes were (no need for an extra open+read), and it\u0027s often the case that one will format hundreds of files at once - avoiding the unnecessary writes can actually help performance.",
+      "revId": "4e98d26d7892ffcce1b609f19290e56c6e04f2e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eff510d9_2f4a52c7",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-31T18:56:25Z",
+      "side": 1,
+      "message": "\u003e The only other possibility is file watchers, but presumably that shouldn\u0027t matter either?\n\nThis simply follows the pattern used elsewhere in the `preprocessor`, of only writing a generated file if its contents have changed. There it is important to not rewrite files to avoid unnecessary triggers of the file watcher creating noise and unnecessary re-running of the `preprocessor`. \n\nI\u0027ve documented that this follows the pattern used in the `prepreocessor`. It doesn\u0027t feel particularly significant to me whether this does or doesn\u0027t try to avoid a write. It\u0027s a low-use code generator, and we\u0027re talking negligible performance benefits. \n\nTherefore I\u0027m going to leave the code as is. But if you feel this should be changed, please let me know and I can deal with it in a follow up CL.",
+      "parentUuid": "13702852_3c4ee107",
       "revId": "4e98d26d7892ffcce1b609f19290e56c6e04f2e1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
