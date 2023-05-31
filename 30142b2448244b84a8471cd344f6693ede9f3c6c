@@ -34,6 +34,24 @@
       "parentUuid": "baaf7c02_31674d23",
       "revId": "30142b2448244b84a8471cd344f6693ede9f3c6c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73d72b38_a8bce869",
+        "filename": "_scripts/git-hook-post-rewrite.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-05-31T19:04:01Z",
+      "side": 1,
+      "message": "Done in the new file.",
+      "parentUuid": "594466a6_d1970265",
+      "revId": "30142b2448244b84a8471cd344f6693ede9f3c6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
