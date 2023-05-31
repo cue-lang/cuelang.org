@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bde92b3b_b9b705f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-05-31T17:51:44Z",
+      "side": 1,
+      "message": "FYI: from reading the commit message, I expected the debug logs to have a \"category\" or \"component\" field of some sort, which could then be filtered as needed. You\u0027ve done that via booleans, which is sort of the same although in the reverse.",
+      "revId": "b19c94e13b8868853eb057416844e833a16dae45",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
