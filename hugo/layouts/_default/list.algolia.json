@@ -24,7 +24,6 @@
     {{- $title :=  $page.Title -}}
     {{- $link := $page.Permalink -}}
     {{- $categories := cond (isset $page.Params "categories") ($page.Params.categories) "" -}}
-    {{- $order := (add $index 1) -}}
     {{- $publishDate := $page.PublishDate -}}
     {{- $summary := $page.Summary -}}
     {{- $content := "" -}}
@@ -37,7 +36,6 @@
 
     {
         "objectID": {{ $objectID | jsonify }},
-        "order": {{ $index | jsonify }},
         "title": {{ $title | jsonify }},
         "categories": {{ $categories | jsonify }},
         "link": {{ $link | jsonify }},
