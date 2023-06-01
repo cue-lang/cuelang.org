@@ -85,3 +85,9 @@ other = "Oops! This page doesn't exist. Try going back to our <a href='/'>home p
 # Figure shortcode
 [logo_redirect]
 other = "Go to the website"
+
+# Copy button
+[copy_title]
+other = "Copy code"
+[copy_message]
+other = "Copied!"

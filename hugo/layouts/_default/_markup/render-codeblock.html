@@ -1,7 +1,10 @@
 {{- $title := index .Attributes "title" -}}
 {{- $type := index .Attributes "type" -}}
+{{- $modifier := index .Attributes "modifier" -}}
+{{- $showCopyButton := ne (index .Attributes "codetocopy") false -}}
+{{- $codeToCopy := index .Attributes "codetocopy" | default (.Inner | base64Encode) -}}
 
-<div class="code-block{{ if $title }} code-block--heading{{ end }}{{ if eq $type "terminal" }} code-block--terminal{{ end }}">
+<div class="code-block{{ if $title }} code-block--heading{{ end }}{{ if eq $type "terminal" }} code-block--terminal{{ end }}{{ if $modifier }} {{ $modifier}}{{ end }}" data-copy>
     {{- with $title -}}
         <div class="code-block__heading">
             <span class="code-block__tab">{{- . -}}</span>
@@ -9,7 +12,15 @@
     {{- end -}}
 
     <div class="code-block__highlight">
+        {{- if $showCopyButton -}}
+            <button class="code-block__copy" type="button" data-copy-value="{{ $codeToCopy }}">
+                <span>{{ T "copy_title" }}</span>
+                <span class="code-block__message is-hidden" aria-hidden="true">
+                    {{ T "copy_message" }}
+                </span>
+            </button>
+        {{- end -}}
+
         {{- highlight .Inner .Type .Options -}}
     </div>
 </div>
-

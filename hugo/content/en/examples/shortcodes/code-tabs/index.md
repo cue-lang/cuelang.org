@@ -96,6 +96,11 @@ language
 type
 : optional - Tab code type. Can be 'default' or 'terminal'. For default you can also omit this attribute
 
+codeToCopy
+: optional - By default the copy button copies the inner content. You can change that by passing in code with this attribute.
+Make sure it's base64 encoded when you pass something to this attribute.
+You can also set it to false to hide the copy button.
+
 ## Examples of usage of different area's
 
 ### 2 tabs in top-left (1 column)

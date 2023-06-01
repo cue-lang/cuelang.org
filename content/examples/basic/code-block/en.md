@@ -92,9 +92,14 @@ title
 type
 : optional - Editor type Can be 'default' or 'terminal'. For default you can also omit this attribute
 
+codeToCopy
+: optional - By default the copy button copies the inner content. You can change that by passing in code with this attribute.
+Make sure it's base64 encoded when you pass something to this attribute.
+You can also set it to false to hide the copy button.
+
 {{< columns >}}
-````
-```json {title="JSON"}
+```` { codeToCopy=false }
+```json {title="JSON" codeToCopy=false
 {
     "firstName": "John",
     "lastName": "Smith",
@@ -103,7 +108,7 @@ type
 ```
 ````
 {{< columns-separator >}}
-```json {title="JSON"}
+```json {title="JSON" codeToCopy=false }
 {
     "firstName": "John",
     "lastName": "Smith",

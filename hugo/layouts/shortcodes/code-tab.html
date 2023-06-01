@@ -2,10 +2,11 @@
     {{ $name := trim (.Get "name") " " }}
     {{ $area := .Get "area" | default "top-left" }}
     {{ $language := .Get "language" | default "" }}
+    {{ $codeToCopy := .Get "codetocopy" }}
     {{ $type := .Get "type" | default "default" }}
     {{ $groupId := .Get "groupId" | default "default" }}
     {{ $arrayName := printf "tabs-%s" $area }}
-    {{ $content := printf "```%s {type=\"%s\"}%s```" $language $type .Inner }}
+    {{ $content := printf "```%s {type=\"%s\" codeToCopy=\"%s\" modifier=\"code-block--tab\" }%s```" $language $type $codeToCopy .Inner }}
 
     {{ if not (.Parent.Scratch.Get $arrayName) }}
         {{ .Parent.Scratch.Set $arrayName slice }}
