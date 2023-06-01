@@ -4,65 +4,63 @@ import { BaseWidget } from './base-widget';
 import { SearchItem } from '../interfaces/search';
 import { Teaser } from '../interfaces/teaser';
 
-export class Search extends BaseWidget {
-    public static readonly NAME = 'search';
+export class SearchResults extends BaseWidget {
+    public static readonly NAME = 'search-results';
 
-    private readonly client: SearchClient;
+    private readonly searchClient: SearchClient;
     private readonly index: SearchIndex;
     private readonly searchResults: HTMLElement;
-    private readonly url!: URL;
 
     constructor(element: HTMLElement) {
         super(element);
 
-        this.client = algoliasearch('5LXFM0O81Q', 'f961a95a00b2b2290054ad53fd75b424');
-        this.index = this.client.initIndex('cuelang.org');
+        this.searchClient = algoliasearch('5LXFM0O81Q', 'f961a95a00b2b2290054ad53fd75b424');
+        this.index = this.searchClient.initIndex('cuelang.org');
         this.searchResults = document.getElementsByClassName('search').item(0) as HTMLElement;
-        this.url = new URL(window.location.href);
     }
 
     public static registerWidget(): void {
         if (window.app !== undefined) {
             window.app.addWidget({
-                name: Search.NAME,
-                load: Search.attachWidgetToElements,
+                name: SearchResults.NAME,
+                load: SearchResults.attachWidgetToElements,
             });
         }
     }
 
     public static attachWidgetToElements(container: HTMLElement | Document): void {
-        const elements = container.querySelectorAll<HTMLElement>(`[data-${ Search.NAME }]`);
+        const elements = container.querySelectorAll<HTMLElement>(`[data-${ SearchResults.NAME }]`);
         elements.forEach((element) => {
-            const newWidget = new Search(element);
+            const newWidget = new SearchResults(element);
             newWidget.init();
         });
     }
 
     public init(): void {
-        const searchParams = new URLSearchParams(this.url.search);
-        const searchQuery = searchParams.get('q');
-
-        if (searchQuery) {
-            this.search(searchQuery);
-        }
+        const url = new URL(window.location.href);
+        const searchParams = new URLSearchParams(url.search);
+        const query = searchParams.get('q');
+        this.search(query);
     }
 
-    public search(query: string, pageNr = 1): void {
-        const pageIndex = pageNr - 1;
-        const resultsNumber = this.element.querySelector<HTMLInputElement>('.searchbar__results');
-        const searchInput = this.element.querySelector<HTMLInputElement>('#searchbar');
-        searchInput.value = query;
+    public search(query: string): void {
+        if (!query || query === '') {
+            return;
+        }
+
+        const resultsNumber = this.element.querySelector<HTMLElement>('.searchbar__results') || undefined;
 
         this.index
             .search<SearchItem>(query, {
                 hitsPerPage: 100,
-                page: pageIndex,
             })
             .then(results => {
                 const teasers = results.hits.map(hit => this.mapSearchHitToTeaser(hit));
 
-                resultsNumber.classList.remove('is-hidden');
-                resultsNumber.insertAdjacentHTML('afterbegin', `<span>${ results.nbHits }<span> `);
+                if (resultsNumber) {
+                    resultsNumber.classList.remove('is-hidden');
+                    resultsNumber.insertAdjacentHTML('afterbegin', `<span>${ results.nbHits }<span> `);
+                }
 
                 if (teasers.length > 0) {
                     teasers.forEach(teaser => {
@@ -105,13 +103,13 @@ export class Search extends BaseWidget {
 
 if (document.readyState !== 'loading') {
     // Ready to go!
-    Search.registerWidget();
-    Search.attachWidgetToElements(document);
+    SearchResults.registerWidget();
+    SearchResults.attachWidgetToElements(document);
 }
 else {
     // Still loading, so wait...
     document.addEventListener('DOMContentLoaded', () => {
-        Search.registerWidget();
-        Search.attachWidgetToElements(document);
+        SearchResults.registerWidget();
+        SearchResults.attachWidgetToElements(document);
     });
 }
