@@ -16,6 +16,8 @@ package cmd
 
 import (
 	"bufio"
+	"context"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -24,7 +26,6 @@ import (
 	"os/signal"
 	"path/filepath"
 	"strings"
-	"syscall"
 	"time"
 
 	"github.com/cue-lang/cuelang.org/internal/fsnotify"
@@ -80,7 +81,10 @@ func (e *executor) serve(args []string) error {
 
 	sc := e.newServeContext(errs)
 
-	if err := sc.startHugo(e.cmd); err != nil {
+	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
+	defer stop()
+
+	if err := sc.startHugo(ctx); err != nil {
 		return e.errorf("%v: failed to start hugo: %v", e, err)
 	}
 
@@ -106,30 +110,7 @@ func (e *executor) serve(args []string) error {
 	// Run local versions of the serverless functions
 	go runLocalServerlessFunctions(errs)
 
-	// Watch for errors from hugo exiting. Note that errors from the event loop
-	// are (largely) ignored and instead logged.
-	sigs := make(chan os.Signal, 1)
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
-	select {
-	case <-sigs:
-		// TODO anything better to do here?
-		//
-		// We don't really t want to thread context.Context through everything.
-		// That said, there  are (likely) some critical things that we might
-		// need/want to tidy up, we otherwise just want to exit fast. That could
-		// mean, however, that the state of files on disk is not consistent. i.e.
-		// the hugo/content directory structure is in a partially transformed
-		// state. Hence, the os.Exit(1) at least hints that there might be
-		// something wrong.
-		//
-		// A future revision here might be to update this away from a straight
-		// os.Exit(1) to an os.Exit(0) in the situation we know we left things in
-		// a consistent state.
-		os.Exit(1)
-	case err := <-sc.errs:
-		return err
-	}
-	return nil
+	return <-sc.errs
 }
 
 func runLocalServerlessFunctions(errs chan error) {
@@ -146,10 +127,16 @@ func runLocalServerlessFunctions(errs chan error) {
 	errs <- s.ListenAndServe()
 }
 
-func (sc *serveContext) startHugo(c *Command) error {
+func (sc *serveContext) startHugo(ctx context.Context) error {
 	// Run hugo, and relay stdout and stderr to a "hugo: " prefix debug output
 	args := append([]string{"serve"}, hugoArgs...)
-	cmd := exec.Command("hugo", args...)
+	cmd := exec.CommandContext(ctx, "hugo", args...)
+	cmd.Cancel = func() error {
+		if err := cmd.Process.Signal(os.Interrupt); err != nil {
+			panic(fmt.Errorf("failed to signal process: %v", err))
+		}
+		return nil
+	}
 	hugoOutput, hugoWriter, err := os.Pipe()
 	if err != nil {
 		return fmt.Errorf("failed to establish pipe for hugo output: %w", err)
@@ -168,10 +155,10 @@ func (sc *serveContext) startHugo(c *Command) error {
 }
 
 func (sc *serveContext) waitOnHugo() {
-	if err := sc.hugo.Wait(); err != nil {
+	if err := sc.hugo.Wait(); err == nil && errors.Is(err, context.Canceled) {
 		sc.errs <- fmt.Errorf("got a non-zero exit code from [%v]: %v", sc.hugo, err)
 	} else {
-		sc.errs <- nil
+		close(sc.errs)
 	}
 }
 
