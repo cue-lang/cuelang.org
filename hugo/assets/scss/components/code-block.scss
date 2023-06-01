@@ -1,6 +1,8 @@
 @import '../config/colors';
 @import '../config/sizes';
-@import '../config/typography';
+@import '../mixins/sr-only';
+@import '../mixins/svg';
+@import '../mixins/typography';
 
 .code-block {
     $self: &;
@@ -8,6 +10,14 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
+    position: relative;
+
+    &:focus,
+    &:hover {
+        #{ $self }__copy {
+            opacity: 1;
+        }
+    }
 
     &__heading {
         background-color: $c-grey-blue--lighter;
@@ -28,8 +38,85 @@
         padding: 0 1rem;
     }
 
+    &__message {
+        @include style-text-small;
+
+        background-color: $c-grey-blue;
+        border-radius: $b-radius;
+        color: $c-blue--darker;
+        display: block;
+        margin-right: 0.75rem;
+        padding: 4px 8px;
+        position: absolute;
+        right: 100%;
+        top: 2px;
+        width: fit-content;
+        z-index: 1;
+
+        &::before {
+            border-color: transparent transparent transparent $c-grey-blue;
+            border-style: solid;
+            border-width: 10px 0 10px 10px;
+            content: '';
+            height: 0;
+            position: absolute;
+            right: -7px;
+            top: 5px;
+            width: 0;
+        }
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+
+    &__copy {
+        border: 2px solid var(--pre-border-color);
+        border-radius: $b-radius;
+        height: 36px;
+        opacity: 0;
+        padding: 6px;
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        transition: border-color 0.2s, opacity 0.3s ease-in-out;
+        width: 36px;
+        z-index: 1;
+
+        &::before {
+            @include svg('copy', $c-grey);
+
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+        }
+
+        &:focus-visible,
+        &:hover {
+            border-color: $c-grey;
+        }
+
+        &:focus-visible {
+            opacity: 1;
+        }
+
+        span:not([class]) {
+            @include sr-only;
+        }
+
+        &.is-success {
+            border-color: $c-success;
+            transition: border-color 0.3s ease-in-out;
+
+            &::before {
+                @include svg('check', $c-success);
+            }
+        }
+    }
+
     &__highlight {
         flex: 1 1 auto;
+        position: relative;
 
         .highlight {
             height: 100%;
@@ -49,6 +136,13 @@
             border-radius: 0 0 $b-radius $b-radius;
             border-top: 0;
             padding-top: 0.5rem;
+        }
+    }
+
+    &--tab {
+        #{ $self }__copy {
+            right: 4px;
+            top: 4px;
         }
     }
 

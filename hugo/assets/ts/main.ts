@@ -1,6 +1,7 @@
 // Helpers
 import {
     Carousel,
+    Copy,
     Docs,
     Drawer,
     Header,
@@ -22,7 +23,7 @@ declare global {
     }
 }
 
-type WidgetTypes = Carousel | Docs | Drawer | Header | Menu | NotificationBar |
+type WidgetTypes = Carousel | Copy | Docs | Drawer | Header | Menu | NotificationBar |
     SearchAutocomplete | SearchResults | Tabs | TabsNav;
 
 class App {
@@ -37,6 +38,7 @@ class App {
         this.widgets = [];
         this.widgetMap = {
             [Carousel.NAME]: Carousel,
+            [Copy.NAME]: Copy,
             [Docs.NAME]: Docs,
             [Drawer.NAME]: Drawer,
             [Header.NAME]: Header,
