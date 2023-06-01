@@ -3,27 +3,19 @@
 {{ $modifier := .modifier | default "" }}
 {{ $type := .type | default "" }}
 
-<form action="{{ $action }}" method="get"{{ if eq $type "results" }} data-search{{ end }}>
-    <div class="searchbar{{ if $modifier }} searchbar--{{ $modifier }}{{ end }}">
-        <label for="{{ $inputId }}" class="searchbar__label">{{ T "ui_search" }}</label>
-        <div class="searchbar__bar">
-            <input name="q" type="text" id="{{ $inputId }}" class="searchbar__input">
-            <button type="submit" class="button button--icon{{ if $modifier }} button--{{ $modifier }}{{ end }} searchbar__button">
-                {{- partial "icon.html" (dict "icon" "search" "class" "button__icon") -}}
-                <span>{{ T "ui_search" }}</span>
-            </button>
-        </div>
+<div data-search-autocomplete="{{ $type }}"
+     data-searchbar-size="{{ if not (eq $type "results") }}small{{ end }}">
+    <div id="autocomplete-{{ $type }}"></div>
 
-        <div class="searchbar__footer">
-            {{ if eq $type "results" }}
-                <div class="searchbar__results is-hidden">
-                    </span>{{ T "ui_search_results" }}
-                </div>
-            {{ end }}
-
-            <div class="searchbar__logo">
-                {{ with resources.Get "svg/algolia-search.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
+    <div class="searchbar__footer">
+        {{ if eq $type "results" }}
+            <div class="searchbar__results is-hidden">
+                {{ T "ui_search_results" }}
             </div>
+        {{ end }}
+
+        <div class="searchbar__logo">
+            {{ with resources.Get "svg/algolia-search.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
         </div>
     </div>
-</form>
+</div>
