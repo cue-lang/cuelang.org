@@ -8,23 +8,41 @@
 .searchbar {
     $self: &;
 
-    position: relative;
+    --aa-text-color-rgb: $c-grey--darkest;
+    --aa-primary-color-rgb: $c-blue;
+    --aa-selected-color-rgb: $c-blue--lighter;
 
-    &__label {
-        @include sr-only;
+    &__form {
+        background-color: $c-white;
+        border: none;
+        border-radius: 50px;
+        height: $h-button--small + 16px;
+        padding: 0 1.125rem 0 2.5rem;
+        position: relative;
+
+        &:focus-within {
+            // stylelint-disable-next-line color-function-notation
+            box-shadow: inset rgba(var(--aa-primary-color-rgb), var(--aa-primary-color-alpha)) 0 0 0 2px;
+        }
+
+        &--detached {
+            padding: 0 1.125rem 0 0.5rem;
+        }
     }
 
-    &__bar {
-        position: relative;
+    &__prefix {
+        left: 10px;
+        position: absolute;
+    }
+
+    &__suffix {
+        position: absolute;
+        right: 4px;
     }
 
     &__input {
-        &[type='text'] {
-            background-color: $c-white;
+        &[type='search'] {
             border: none;
-            border-radius: 50px;
-            height: $h-button + 16px;
-            padding: 0 ($h-button + 12px) 0 2rem;
         }
 
         // To override browser styling for autofill (-internal-autofill-selected)
@@ -37,11 +55,50 @@
         /* stylelint-enable property-no-vendor-prefix */
     }
 
+    &__label {
+        height: $h-button--small;
+    }
+
     &__button {
-        position: absolute;
-        right: 8px;
-        top: 50%;
-        transform: translateY(-50%);
+        align-items: center;
+        background-color: $c-yellow;
+        display: flex;
+        height: $h-button--small;
+        justify-content: center;
+        padding: 5px;
+        width: $h-button--small;
+
+        &:hover,
+        &:focus {
+            background-color: $c-blue--darker;
+            border: 2px solid var(--button-color);
+        }
+    }
+
+    &__form-container {
+        background-color: $c-yellow;
+        border-bottom: none;
+    }
+
+    &__item {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-decoration: none;
+    }
+
+    &__item-title {
+        @include style-heading-4;
+
+        margin: 0;
+    }
+
+    &__item-description {
+        line-height: 1.75;
+        margin: 10px 0 0;
+
+        &:empty {
+            margin: 0;
+        }
     }
 
     &__footer {
@@ -68,26 +125,53 @@
         width: 120px;
     }
 
-    &--small {
-        #{ $self }__bar {
-            margin: 0;
-        }
+    &__header-title {
+        color: $c-pink;
+        padding-left: 4px;
+    }
 
-        #{ $self }__input {
-            &[type='text'] {
-                height: $h-button--small + 16px;
-                padding: 0 ($h-button--small + 12px) 0 2rem;
-            }
-        }
+    &__header-line {
+        border-bottom: 1px solid $c-pink;
     }
 
     @include screen($screen-normal) {
-        &__bar {
-            margin-left: -2rem;
+        &__form {
+            height: $h-button + 16px;
+            padding: 0 2.25rem 0 3.5rem;
         }
 
-        &__results {
-            margin-left: 0;
+        &__label {
+            height: $h-button;
+        }
+
+        &__button {
+            height: $h-button;
+            padding: 10px;
+            width: $h-button;
+        }
+
+        &__panel {
+            z-index: 2;
+        }
+
+        &--small {
+            #{ $self }__form {
+                height: $h-button--small + 16px;
+                padding: 0 1.125rem 0 2.5rem;
+            }
+
+            #{ $self }__label {
+                height: $h-button--small;
+            }
+
+            #{ $self }__button {
+                align-items: center;
+                display: flex;
+                height: $h-button--small;
+                justify-content: center;
+                padding: 7px;
+                width: $h-button--small;
+            }
         }
     }
 }

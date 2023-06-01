@@ -1,10 +1,10 @@
 {{/* CSS */}}
 {{ $scssMain := "scss/main.scss" }}
 {{ if not hugo.IsProduction }}
-{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true) }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true "includePaths" (slice "node_modules")) }}
 <link href="{{ $css.RelPermalink }}" rel="stylesheet">
 {{ else }}
-{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false "includePaths" (slice "node_modules")) | postCSS | minify | fingerprint }}
 <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
 <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
 {{ end }}
