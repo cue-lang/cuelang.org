@@ -1,5 +1,6 @@
 // Helpers
 import {
+    Copy,
     Docs,
     Drawer,
     Header,
@@ -21,7 +22,7 @@ declare global {
     }
 }
 
-type WidgetTypes = Docs | Drawer | Header | Menu | NotificationBar |
+type WidgetTypes = Copy | Docs | Drawer | Header | Menu | NotificationBar |
     SearchAutocomplete | SearchResults | Tabs | TabsNav;
 
 class App {
@@ -35,6 +36,7 @@ class App {
     constructor() {
         this.widgets = [];
         this.widgetMap = {
+            [Copy.NAME]: Copy,
             [Docs.NAME]: Docs,
             [Drawer.NAME]: Drawer,
             [Header.NAME]: Header,
