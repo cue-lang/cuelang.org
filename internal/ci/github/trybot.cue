@@ -75,6 +75,10 @@ workflows: trybot: _repo.bashWorkflow & {
 					run: "./_scripts/buildDockerImage.bash"
 				},
 
+				// Run dist early in order to install NPM. This allows the serve test
+				// to run without issues.
+				_dist,
+
 				// Go generate steps
 				_goGenerate & {
 					name: "Regenerate"
@@ -96,7 +100,6 @@ workflows: trybot: _repo.bashWorkflow & {
 					name: "Check module is tidy"
 				},
 
-				_dist,
 				_repo.checkGitClean,
 
 				// Now the frontend build has happened, ensure that linters pass
