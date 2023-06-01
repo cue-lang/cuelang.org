@@ -32,6 +32,10 @@ import (
 	"github.com/cue-lang/cuelang.org/internal/functions/snippets"
 )
 
+var (
+	hugoArgs []string
+)
+
 type serveContext struct {
 	// the underlying executor instance
 	e *executor
@@ -76,7 +80,7 @@ func (e *executor) serve(args []string) error {
 
 	sc := e.newServeContext(errs)
 
-	if err := sc.startHugo(args); err != nil {
+	if err := sc.startHugo(e.cmd); err != nil {
 		return e.errorf("%v: failed to start hugo: %v", e, err)
 	}
 
@@ -142,9 +146,9 @@ func runLocalServerlessFunctions(errs chan error) {
 	errs <- s.ListenAndServe()
 }
 
-func (sc *serveContext) startHugo(args []string) error {
+func (sc *serveContext) startHugo(c *Command) error {
 	// Run hugo, and relay stdout and stderr to a "hugo: " prefix debug output
-	args = append([]string{"serve"}, args...)
+	args := append([]string{"serve"}, hugoArgs...)
 	cmd := exec.Command("hugo", args...)
 	hugoOutput, hugoWriter, err := os.Pipe()
 	if err != nil {
