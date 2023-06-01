@@ -238,7 +238,8 @@ thead {
 
 th,
 td {
-    padding: 1rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
     vertical-align: top;
 
     p:last-of-type {
@@ -251,7 +252,7 @@ th {
 
     border-bottom: 1px solid var(--table-border-color);
     color: var(--heading-color);
-    padding: $p-gutter;
+    line-height: 1.75;
 }
 
 tr {
