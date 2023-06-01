@@ -152,5 +152,6 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	cmd.Flags().Bool(string(flagUpdate), false, "update files in archives when formatting and running scripts")
 	cmd.Flags().Bool(string(flagNoRun), false, "whether to attempt to run scripts or not")
 	cmd.Flags().Bool(string(flagSkipCache), false, "skip cache checks; always run")
+	cmd.Flags().StringSliceVar(&hugoArgs, string(flagHugoFlag), nil, "list of flags to pass to hugo")
 	return cmd
 }

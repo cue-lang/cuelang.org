@@ -41,6 +41,7 @@ const (
 	flagUpdate    flagName = "update"
 	flagNoRun     flagName = "norun"
 	flagSkipCache flagName = "skipcache"
+	flagHugoFlag  flagName = "hugo"
 )
 
 var (
