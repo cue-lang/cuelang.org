@@ -169,6 +169,8 @@ jobs:
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
       - run: ./_scripts/buildDockerImage.bash
+      - name: Dist
+        run: ./_scripts/build.bash
       - name: Regenerate
         run: go generate ./...
       - name: Test
@@ -177,8 +179,6 @@ jobs:
         run: ./_scripts/staticcheck.bash
       - name: Check module is tidy
         run: go mod tidy
-      - name: Dist
-        run: ./_scripts/build.bash
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: npm run lint
