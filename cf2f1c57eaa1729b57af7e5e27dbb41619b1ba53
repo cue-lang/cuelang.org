@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8442ae7_2b904c5d",
+        "filename": "_scripts/serve.bash",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-06-02T08:13:44Z",
+      "side": 1,
+      "message": "FYI: fairly sure you can replace `exec bash` with `source`:\n\n```\n$ help source\nsource: source filename [arguments]\n\n    Execute commands from a file in the current shell.\n```",
+      "revId": "cf2f1c57eaa1729b57af7e5e27dbb41619b1ba53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81f940ed_3366ba71",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-06-02T08:13:44Z",
+      "side": 1,
+      "message": "to double check we\u0027re on the same page: if Hugo has a bug where it handles Interrupt without actually exiting shortly after, you\u0027d leak the Hugo process in that case. we\u0027re assuming that\u0027s unlikely to happen. If we wanted to send a \"kill\" signal a few seconds after Interrupt, we\u0027d need to do it here in Cancel, I think.",
+      "revId": "cf2f1c57eaa1729b57af7e5e27dbb41619b1ba53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
