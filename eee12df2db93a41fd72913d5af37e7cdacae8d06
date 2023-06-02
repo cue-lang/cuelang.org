@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "004ffbf4_9e777a37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2023-06-02T12:49:42Z",
+      "side": 1,
+      "message": "Robotic +2 approval on behalf of myitcv who has already reviewed the PR",
+      "revId": "eee12df2db93a41fd72913d5af37e7cdacae8d06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
