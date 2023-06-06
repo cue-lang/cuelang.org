@@ -75,13 +75,17 @@ workflows: trybot: _repo.bashWorkflow & {
 					run: "./_scripts/buildDockerImage.bash"
 				},
 
-				// Run dist early in order to install NPM. This allows the serve test
-				// to run without issues.
-				_dist,
-
 				// Go generate steps
 				_goGenerate & {
 					name: "Regenerate"
+				},
+
+				// npm install in hugo to allow serve test to pass
+				//
+				// TODO: make this a more principled changed.
+				json.#step & {
+					run:                 "npm install"
+					"working-directory": "hugo"
 				},
 
 				// Go test steps
@@ -100,6 +104,7 @@ workflows: trybot: _repo.bashWorkflow & {
 					name: "Check module is tidy"
 				},
 
+				_dist,
 				_repo.checkGitClean,
 
 				// Now the frontend build has happened, ensure that linters pass
