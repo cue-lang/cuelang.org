@@ -30,4 +30,4 @@ bash _scripts/runPreprocessor.bash execute --debug --norun=$norun $skipcache
 cd hugo
 $time npm ci
 $time npm run icons
-$time hugo $@
+$time hugo --cleanDestinationDir $@
