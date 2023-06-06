@@ -22,7 +22,7 @@
 
     {{- $objectID := (print $page.File.UniqueID "_" (add $index 1)) -}}
     {{- $title :=  $page.Title -}}
-    {{- $link := $page.Permalink -}}
+    {{- $link := $page.RelPermalink -}}
     {{- $categories := cond (isset $page.Params "categories") ($page.Params.categories) "" -}}
     {{- $publishDate := $page.PublishDate -}}
     {{- $summary := $page.Summary -}}
