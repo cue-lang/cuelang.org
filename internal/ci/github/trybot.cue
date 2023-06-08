@@ -84,7 +84,11 @@ workflows: trybot: _repo.bashWorkflow & {
 				//
 				// TODO: make this a more principled change.
 				json.#step & {
-					run:                 "npm install"
+					run: """
+						npm ci
+						cd ../playground
+						npm ci
+						"""
 					"working-directory": "hugo"
 				},
 
