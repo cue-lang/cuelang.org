@@ -226,6 +226,7 @@ func (rf *rootFile) run() error {
 	var wait []waitRunnable
 	for i := range rf.bodyParts {
 		n, ok := rf.bodyParts[i].(runnableNode)
+		fmt.Printf(">> %v\n", n)
 		if !ok {
 			continue
 		}
@@ -270,8 +271,6 @@ func (rf *rootFile) run() error {
 			rf.debugf(rf.debugCache, "%v: cache miss for %v", rf, hashPath)
 		} else { // skip cache
 			rf.debugf(rf.debugCache, "%v: skipping cache for %v; was a hit", rf, hashPath)
-			r := n.run()
-			wait = append(wait, runRunnable(r))
 		}
 		r := n.run()
 		wait = append(wait, runRunnable(r))

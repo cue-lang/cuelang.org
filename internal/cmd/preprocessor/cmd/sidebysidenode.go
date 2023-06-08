@@ -119,6 +119,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 
 	// Start the formatting jobs
 	for _, j := range jobs {
+		j := j
 		j.cmd.Stdout = &j.out
 		j.cmd.Stderr = &j.out
 		s.debugf(s.debugGeneral, "%v: running %v", s, j.cmd)

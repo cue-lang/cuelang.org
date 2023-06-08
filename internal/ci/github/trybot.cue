@@ -138,7 +138,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	_goTest: json.#step & {
 		name: string
-		run:  "go test ./..."
+		run:  "go test -race ./..."
 	}
 
 	_modTidy: json.#step & {
