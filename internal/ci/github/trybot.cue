@@ -79,12 +79,19 @@ workflows: trybot: _repo.bashWorkflow & {
 				_goGenerate & {
 					name: "Regenerate"
 				},
+				json.#step & {
+					run: "./_scripts/serve.bash --debug=hugo"
+				},
 
 				// npm install in hugo to allow serve test to pass
 				//
 				// TODO: make this a more principled change.
 				json.#step & {
-					run:                 "npm install"
+					run: """
+						npm ci
+						cd ../playground
+						npm ci
+						"""
 					"working-directory": "hugo"
 				},
 

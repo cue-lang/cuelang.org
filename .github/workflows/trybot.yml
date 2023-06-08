@@ -171,7 +171,11 @@ jobs:
       - run: ./_scripts/buildDockerImage.bash
       - name: Regenerate
         run: go generate ./...
-      - run: npm install
+      - run: ./_scripts/serve.bash --debug=hugo
+      - run: |-
+          npm ci
+          cd ../playground
+          npm ci
         working-directory: hugo
       - name: Test
         run: go test ./...
