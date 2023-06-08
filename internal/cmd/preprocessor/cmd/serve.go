@@ -29,7 +29,6 @@ import (
 	"time"
 
 	"github.com/cue-lang/cuelang.org/internal/fsnotify"
-	"github.com/cue-lang/cuelang.org/internal/functions/gerritstatusupdater"
 	"github.com/cue-lang/cuelang.org/internal/functions/snippets"
 )
 
@@ -116,7 +115,6 @@ func (e *executor) serve(args []string) error {
 func runLocalServerlessFunctions(errs chan error) {
 	m := http.NewServeMux()
 	m.HandleFunc("/.netlify/functions/snippets", snippets.Function{DevelopmentMode: true}.ServeHTTP)
-	m.HandleFunc("/.netlify/functions/gerritstatusupdater", gerritstatusupdater.Function{DevelopmentMode: true}.ServeHTTP)
 
 	// In development mode, the playground TypeScript application knows
 	// to query localhost:8081 for the /.netlify/functions/snippets endpoint
