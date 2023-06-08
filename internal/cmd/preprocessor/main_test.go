@@ -42,8 +42,8 @@ func TestServeScript(t *testing.T) {
 	cmd.Cancel = func() error {
 		return cmd.Process.Signal(os.Interrupt)
 	}
-	cmd.Stdout = &buf
-	cmd.Stderr = &buf
+	// cmd.Stdout = &buf
+	// cmd.Stderr = &buf
 	cmd.Dir = filepath.Join(cwd, "..", "..", "..")
 
 	// Run serve

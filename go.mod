@@ -10,6 +10,7 @@ require (
 	github.com/cockroachdb/apd/v2 v2.0.2
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/google/go-github/v45 v45.2.0
+	github.com/kr/pretty v0.3.1
 	github.com/rogpeppe/go-internal v1.10.1-0.20230427135020-22b91279afa3
 	github.com/rogpeppe/testscript v1.1.0
 	github.com/spf13/cobra v1.6.1
@@ -28,7 +29,7 @@ require (
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
-	github.com/kr/pretty v0.3.1 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect
 	github.com/pkg/errors v0.9.1 // indirect
