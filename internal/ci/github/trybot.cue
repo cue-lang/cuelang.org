@@ -88,6 +88,10 @@ workflows: trybot: _repo.bashWorkflow & {
 					"working-directory": "hugo"
 				},
 
+				json.#step & {
+					run: "./_scripts/serve.bash --debug=all"
+				},
+
 				// Go test steps
 				_goTest & {
 					name: "Test"
@@ -138,7 +142,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	_goTest: json.#step & {
 		name: string
-		run:  "go test ./..."
+		run:  "go test -race ./..."
 	}
 
 	_modTidy: json.#step & {
