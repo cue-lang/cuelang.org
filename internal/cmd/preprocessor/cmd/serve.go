@@ -152,7 +152,7 @@ func (sc *serveContext) startHugo(ctx context.Context) error {
 }
 
 func (sc *serveContext) waitOnHugo() {
-	if err := sc.hugo.Wait(); err == nil && errors.Is(err, context.Canceled) {
+	if err := sc.hugo.Wait(); err != nil && !errors.Is(err, context.Canceled) {
 		sc.errs <- fmt.Errorf("got a non-zero exit code from [%v]: %v", sc.hugo, err)
 	} else {
 		close(sc.errs)
