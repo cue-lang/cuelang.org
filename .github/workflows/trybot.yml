@@ -173,6 +173,7 @@ jobs:
         run: go generate ./...
       - run: npm install
         working-directory: hugo
+      - run: ./_scripts/serve.bash --debug=all
       - name: Test
         run: go test ./...
       - name: staticcheck
