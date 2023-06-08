@@ -80,6 +80,8 @@ workflows: trybot: _repo.bashWorkflow & {
 					name: "Regenerate"
 				},
 
+				_dist,
+
 				// npm install in hugo to allow serve test to pass
 				//
 				// TODO: make this a more principled change.

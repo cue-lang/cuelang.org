@@ -171,6 +171,8 @@ jobs:
       - run: ./_scripts/buildDockerImage.bash
       - name: Regenerate
         run: go generate ./...
+      - name: Dist
+        run: ./_scripts/build.bash
       - run: npm install
         working-directory: hugo
       - name: Test
