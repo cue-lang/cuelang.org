@@ -52,22 +52,27 @@ func TestServeScript(t *testing.T) {
 			return fmt.Errorf("serve failed to start: %v", err)
 		}
 		if err := cmd.Wait(); err != nil && !errors.Is(err, context.Canceled) {
-			return fmt.Errorf("serve failed to wait for command: %v", err)
+			return fmt.Errorf("serve failed to wait for command: %v\n%s", err, buf.Bytes())
 		}
 		return nil
 	})
 
 	// Run check
 	wg.Go(func() error {
-		var i int
+		defer done()
+		deadline, ok := t.Deadline()
+		tick := time.NewTicker(time.Second)
 		for {
-			i++
-			if i == 10 {
+			if ok && deadline.Sub(time.Now()) < 2*time.Second {
 				return fmt.Errorf("timed out trying to fetch")
 			}
-			time.Sleep(time.Second)
-			resp, err := http.Get("http://127.0.0.1:1313/docs/")
-			if err == nil {
+			select {
+			case <-tick.C:
+				resp, err := http.Get("http://127.0.0.1:1313/docs/")
+				if err != nil {
+					// Server not ready yet.
+					continue
+				}
 				// server is up and running
 				defer resp.Body.Close()
 				body, err := io.ReadAll(resp.Body)
@@ -77,11 +82,14 @@ func TestServeScript(t *testing.T) {
 				if !bytes.Contains(body, []byte("Welcome to CUE")) {
 					return fmt.Errorf("body did not contain expected value:\n%s", body)
 				}
-				break
+				tick.Stop()
+				return nil
+			case <-ctx.Done():
+				// The serve command failed/other before we successfully
+				// GET-ed the page.
+				return nil
 			}
 		}
-		done()
-		return nil
 	})
 
 	if err := wg.Wait(); err != nil {

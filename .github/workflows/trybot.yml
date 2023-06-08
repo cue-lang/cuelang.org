@@ -174,7 +174,7 @@ jobs:
       - run: npm install
         working-directory: hugo
       - name: Test
-        run: go test ./...
+        run: go test -race ./...
       - name: staticcheck
         run: ./_scripts/staticcheck.bash
       - name: Check module is tidy
