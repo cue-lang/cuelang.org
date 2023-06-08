@@ -177,6 +177,8 @@ func executeDef(c *Command, args []string) error {
 			ctx.debugFsnotify = !set
 		case "cache":
 			ctx.debugCache = !set
+		default:
+			return fmt.Errorf("unknown debug flag %q", flagDebug.String(c))
 		}
 	}
 	ctx.debugGeneral = ctx.debugGeneral || ctx.debugCache || ctx.debugFsnotify

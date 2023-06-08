@@ -270,8 +270,6 @@ func (rf *rootFile) run() error {
 			rf.debugf(rf.debugCache, "%v: cache miss for %v", rf, hashPath)
 		} else { // skip cache
 			rf.debugf(rf.debugCache, "%v: skipping cache for %v; was a hit", rf, hashPath)
-			r := n.run()
-			wait = append(wait, runRunnable(r))
 		}
 		r := n.run()
 		wait = append(wait, runRunnable(r))

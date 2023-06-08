@@ -32,18 +32,43 @@ import (
 
 // Ensure that we can run the default serve script to render the homepage
 func TestServeScript(t *testing.T) {
-	ctx, done := context.WithCancel(context.Background())
+	const checkInterval = time.Second
+	deadline, ok := t.Deadline()
+	if !ok {
+		// The test does not have a timeout. Define a reasonable deadline based
+		// on the default test timeout, nothing else. This entire test should
+		// take nothing like that length of time, but in the interests of
+		// consistency with _something_, using 10m is
+		deadline = time.Now().Add(10 * time.Minute)
+	}
+	// Subtract an amount of time equal to twice the checkInterval to
+	// allow us to fail before the test binary is itself failed
+	deadline = deadline.Add(-2 * checkInterval)
+
+	ctx, done := context.WithDeadline(context.Background(), deadline)
 	wg, ctx := errgroup.WithContext(ctx)
 
 	var buf bytes.Buffer
 
-	cwd, _ := os.Getwd()
+	// Run serve.bash as if a user would, with the exception that this will not
+	// run interactively. Because the script is not running interactively, bash
+	// ignores SIGINT (see man bash). The effect is that whilst script is
+	// running and until the runPreprocessor.bash script (called by serve.bash)
+	// itself runs "exec preprocessor" then the interupt triggered by the
+	// interrupt signal on Cancel will not work. The result of "missing" this
+	// interrupt would be that the serve process running forever. However,
+	// because we have now increased the on this test, the likelihood of us
+	// still being in the phase pre exec of preprocessor when a test timeout
+	// happens (a timeout that should trigger an interrupt of the serve process)
+	// is almost zero, unless the caller deliberately sets a significantly lower
+	// test timeout.
 	cmd := exec.CommandContext(ctx, "./_scripts/serve.bash", "--debug=all")
 	cmd.Cancel = func() error {
 		return cmd.Process.Signal(os.Interrupt)
 	}
 	cmd.Stdout = &buf
 	cmd.Stderr = &buf
+	cwd, _ := os.Getwd()
 	cmd.Dir = filepath.Join(cwd, "..", "..", "..")
 
 	// Run serve
@@ -52,22 +77,26 @@ func TestServeScript(t *testing.T) {
 			return fmt.Errorf("serve failed to start: %v", err)
 		}
 		if err := cmd.Wait(); err != nil && !errors.Is(err, context.Canceled) {
-			return fmt.Errorf("serve failed to wait for command: %v", err)
+			return fmt.Errorf("serve failed to wait for command: %v\n%s", err, buf.Bytes())
 		}
 		return nil
 	})
 
 	// Run check
 	wg.Go(func() error {
-		var i int
+		defer done()
+		tick := time.NewTicker(time.Second)
 		for {
-			i++
-			if i == 10 {
+			if ok && time.Until(deadline) < 2*time.Second {
 				return fmt.Errorf("timed out trying to fetch")
 			}
-			time.Sleep(time.Second)
-			resp, err := http.Get("http://127.0.0.1:1313/docs/")
-			if err == nil {
+			select {
+			case <-tick.C:
+				resp, err := http.Get("http://127.0.0.1:1313/docs/")
+				if err != nil {
+					// Server not ready yet.
+					continue
+				}
 				// server is up and running
 				defer resp.Body.Close()
 				body, err := io.ReadAll(resp.Body)
@@ -77,14 +106,17 @@ func TestServeScript(t *testing.T) {
 				if !bytes.Contains(body, []byte("Welcome to CUE")) {
 					return fmt.Errorf("body did not contain expected value:\n%s", body)
 				}
-				break
+				tick.Stop()
+				return nil
+			case <-ctx.Done():
+				// The serve command failed/other before we successfully
+				// GET-ed the page.
+				return nil
 			}
 		}
-		done()
-		return nil
 	})
 
 	if err := wg.Wait(); err != nil {
-		t.Fatalf("failed: %v\n%s", err, buf.Bytes())
+		t.Fatalf("failed: %v", err)
 	}
 }
