@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab170eab_cec43224",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-06-10T08:53:58Z",
+      "side": 1,
+      "message": "I\u0027d personally also make a note in the bit of Go code that execs bash to document that bash will completely ignore interrupt signals until it does the `exec preprocessor` a few seconds later. Because I understand that that bug is still around, we\u0027re just far far less likely to run into it now that the page fetching timeout is 10m by default rather than ~10s.",
+      "revId": "376198691716192233424cd4149e67108415a3fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87f75b3b_73677bc2",
+        "filename": "internal/cmd/preprocessor/main_test.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-06-10T08:53:58Z",
+      "side": 1,
+      "message": "you already show buf.Bytes in the wg.Wait error handling below. wouldn\u0027t this result in you showing the buffer contents twice if the first goroutine fails?",
+      "revId": "376198691716192233424cd4149e67108415a3fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3ff9450_2e6cbc58",
+        "filename": "internal/cmd/preprocessor/main_test.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-06-10T08:53:58Z",
+      "side": 1,
+      "message": "FYI, I was thinking that an easier way was to start a timer, then you can `select` between the ticker and the timer. no need to check against the deadline as a separate step.\n\nor, if you want to make it a bit nicer with the existing ctx, you could use context.WithDeadline at the top of the test.",
+      "revId": "376198691716192233424cd4149e67108415a3fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
