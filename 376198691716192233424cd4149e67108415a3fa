@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cd6262a_cf2187db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-06-11T06:41:06Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "ab170eab_cec43224",
+      "revId": "376198691716192233424cd4149e67108415a3fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "87f75b3b_73677bc2",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "afbac54a_77f0fbc3",
+        "filename": "internal/cmd/preprocessor/main_test.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-06-11T06:41:06Z",
+      "side": 1,
+      "message": "Thanks. Will remove the second instance, because this particular instance feels the most \"correct\".",
+      "parentUuid": "87f75b3b_73677bc2",
+      "revId": "376198691716192233424cd4149e67108415a3fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f3ff9450_2e6cbc58",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-06-10T08:53:58Z",
       "side": 1,
       "message": "FYI, I was thinking that an easier way was to start a timer, then you can `select` between the ticker and the timer. no need to check against the deadline as a separate step.\n\nor, if you want to make it a bit nicer with the existing ctx, you could use context.WithDeadline at the top of the test.",
+      "revId": "376198691716192233424cd4149e67108415a3fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1c98f62_ecb62409",
+        "filename": "internal/cmd/preprocessor/main_test.go",
+        "patchSetId": 17
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-06-11T06:41:06Z",
+      "side": 1,
+      "message": "Ah I like your second suggestion. That\u0027s a good one. Done.",
+      "parentUuid": "f3ff9450_2e6cbc58",
       "revId": "376198691716192233424cd4149e67108415a3fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
