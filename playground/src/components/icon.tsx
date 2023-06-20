@@ -26,6 +26,7 @@ export class Icon extends React.Component<IconProps>
     }
 
     public getSpriteUrl(): string {
-        return `${ environment.baseUrl }/img/ui.svg#icon--${ this.props.icon }`;
+        const baseUrl = environment.baseUrl;
+        return `${ baseUrl }${ baseUrl.endsWith('/') ? '' : '/' }img/ui.svg#icon--${ this.props.icon }`;
     }
 }
