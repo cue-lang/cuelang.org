@@ -252,7 +252,7 @@ export class App extends React.Component<AppProps, AppState>
                 ...this.inputEditor.getOptions(),
                 readOnly: true,
             });
-            const url = `${ this.urlPrefix() }'/.netlify/functions/snippets?id=${ id }`;
+            const url = `${ this.getShareUrl() }?id=${ id }`;
 
             try {
                 const response = await fetch(url, { headers: { 'Content-Type': 'text/plain;' } });
@@ -297,11 +297,9 @@ export class App extends React.Component<AppProps, AppState>
         this.outputEditor.layout();
     }
 
-    private urlPrefix(): string {
-        if (window.location.host.startsWith('localhost')) {
-            return 'http://localhost:8081';
-        }
-        return '';
+    private getShareUrl(): string {
+        const prefix = window.location.host.startsWith('localhost') ? 'http://localhost:8081' : '';
+        return `${ prefix }/.netlify/functions/snippets`;
     }
 
     private updateOutput(): void {
@@ -323,13 +321,15 @@ export class App extends React.Component<AppProps, AppState>
     }
 
     private share(): void {
-        let contents = this.inputEditor.getValue();
-        let req = fetch(this.urlPrefix() + '/.netlify/functions/snippets', {
+        const contents = this.inputEditor.getValue();
+        fetch(this.getShareUrl(), {
             method: 'POST',
             headers: { 'Content-Type': 'text/plain;' },
             body: contents,
-        });
-        req.then((resp: Response) => {
+        }).then((resp: Response) => {
+            if (!resp.ok) {
+                throw new Error(`Response status was not ok: ${ resp.status }`);
+            }
             return resp.text();
         }).then((data: string) => {
             window.history.pushState({}, 'CUE Playground', '?id=' + data + window.location.hash)
