@@ -1,3 +1,4 @@
+@import '../config/sizes';
 @import '../mixins/screen';
 
 .anchor {
@@ -7,6 +8,12 @@
     padding-right: 10px; // make sure there is overlap between anchor and heading
     position: absolute;
     text-decoration: none;
+
+    &:focus-visible {
+        #{ $self }__icon {
+            visibility: visible;
+        }
+    }
 
     &__icon {
         display: inline-block;
