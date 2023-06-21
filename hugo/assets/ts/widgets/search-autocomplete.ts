@@ -8,6 +8,7 @@ import { AutocompleteQuerySuggestionsHit } from '@algolia/autocomplete-plugin-qu
 import { AutocompleteApi } from '@algolia/autocomplete-js/dist/esm/types';
 import { BaseItem, OnSubmitParams } from '@algolia/autocomplete-shared/dist/esm/core';
 import { BaseWidget } from './base-widget';
+import { mapToAlgoliaFilters, parseQuery } from '../helpers/algolia';
 
 export class SearchAutocomplete extends BaseWidget {
     public static readonly NAME = 'search-autocomplete';
@@ -125,15 +126,19 @@ export class SearchAutocomplete extends BaseWidget {
                         return item.title.toString();
                     },
                     getItems({ query }) {
+                        const parsedQuery = parseQuery(query);
+                        const filters = mapToAlgoliaFilters(parsedQuery.facets);
+
                         return getAlgoliaResults({
                             searchClient,
                             queries: [{
                                 indexName: 'cuelang.org',
-                                query,
+                                query: parsedQuery.cleanQuery,
                                 params: {
                                     hitsPerPage: 5,
                                     attributesToSnippet: ['title:6', 'summary:25'],
                                     snippetEllipsisText: '…',
+                                    filters: filters,
                                 },
                             }],
                         });
