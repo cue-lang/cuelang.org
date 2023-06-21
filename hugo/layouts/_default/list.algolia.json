@@ -23,10 +23,12 @@
     {{- $objectID := (print $page.File.UniqueID "_" (add $index 1)) -}}
     {{- $title :=  $page.Title -}}
     {{- $link := $page.RelPermalink -}}
-    {{- $categories := cond (isset $page.Params "categories") ($page.Params.categories) "" -}}
     {{- $publishDate := $page.PublishDate -}}
     {{- $summary := $page.Summary -}}
     {{- $content := "" -}}
+    {{- $section := $page.Section -}}
+    {{- $categories := cond (isset $page.Params "categories") ($page.Params.categories) "" -}}
+    {{- $tags := cond (isset $page.Params "tags") ($page.Params.tags) "" -}}
 
     {{- if eq $index 0 -}}
         {{- $content = delimit (first $cutoff $page.PlainWords) " " -}}
@@ -37,11 +39,13 @@
     {
         "objectID": {{ $objectID | jsonify }},
         "title": {{ $title | jsonify }},
-        "categories": {{ $categories | jsonify }},
         "link": {{ $link | jsonify }},
         "publishDate": {{ $publishDate | jsonify }},
         "summary": {{ $summary | jsonify }},
-        "content": {{ $content  | jsonify}}
+        "content": {{ $content  | jsonify}},
+        "section": {{ $section | jsonify }},
+        "categories": {{ $categories | jsonify }},
+        "tags": {{ $tags | jsonify }}
     }
 
     {{- if gt $page.PlainWords (add $cutoff $skipWords) -}},
