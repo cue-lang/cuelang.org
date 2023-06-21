@@ -74,8 +74,8 @@ export class SearchResults extends BaseWidget {
         return {
             title: hit._highlightResult.title.value,
             link: hit.link,
-            categories: hit.categories,
             summary: hit._snippetResult.summary.value,
+            categories: hit.categories,
         };
     }
 
