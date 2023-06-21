@@ -3,6 +3,7 @@ import { Hit } from '@algolia/client-search';
 import { BaseWidget } from './base-widget';
 import { SearchItem } from '../interfaces/search';
 import { Teaser } from '../interfaces/teaser';
+import { mapToAlgoliaFilters, parseQuery } from '../helpers/algolia';
 
 export class SearchResults extends BaseWidget {
     public static readonly NAME = 'search-results';
@@ -49,10 +50,13 @@ export class SearchResults extends BaseWidget {
         }
 
         const resultsNumber = this.element.querySelector<HTMLElement>('.searchbar__results') || undefined;
+        const parsedQuery = parseQuery(query);
+        const filters = mapToAlgoliaFilters(parsedQuery.facets);
 
         this.index
-            .search<SearchItem>(query, {
+            .search<SearchItem>(parsedQuery.cleanQuery, {
                 hitsPerPage: 100,
+                filters: filters,
             })
             .then(results => {
                 const teasers = results.hits.map(hit => this.mapSearchHitToTeaser(hit));
