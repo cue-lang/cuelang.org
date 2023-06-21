@@ -46,7 +46,9 @@
     "lint-sass": "stylelint ./assets/scss/**/*.scss",
     "lint-sass-fix": "stylelint ./assets/scss/**/*.scss --fix",
     "lint-html": "html-validate --ext .html, .md ./content",
-    "algolia": "atomic-algolia"
+    "algolia": "npm run algolia-index && npm run algolia-settings",
+    "algolia-index": "atomic-algolia",
+    "algolia-settings": "node algolia-settings.js"
   },
   "repository": {
     "type": "git",
