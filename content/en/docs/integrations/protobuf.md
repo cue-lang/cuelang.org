@@ -127,7 +127,7 @@ func main() {
 	}
 
 	b, _ := format.Node(file)
-	ioutil.WriteFile("out.cue", b, 0644)
+	os.WriteFile("out.cue", b, 0644)
 }
 {{< /highlight  >}}
 
