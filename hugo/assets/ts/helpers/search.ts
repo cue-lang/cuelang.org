@@ -1,12 +1,30 @@
-import { FACET_INPUTS, FilterOperator, SearchFacet, SearchFacets, SearchInputFacetName } from '../interfaces/search';
+import {
+    FACET_INPUTS,
+    FilterOperator,
+    ParsedQuery,
+    SearchFacet,
+    SearchFacets,
+    SearchInputFacetName,
+} from '../interfaces/search';
 import { cleanObject } from './cleaner';
 
-export const getFacetForInput = (inputName: SearchInputFacetName): SearchFacet => {
+export const getFacetForInputName = (inputName: SearchInputFacetName): SearchFacet => {
     switch (inputName) {
         case SearchInputFacetName.CONTENT_TYPE:
             return SearchFacet.CONTENT_TYPE;
         case SearchInputFacetName.TAG:
             return SearchFacet.TAGS;
+        default:
+            return null;
+    }
+};
+
+export const getInputNameForFacet = (facet: SearchFacet): SearchInputFacetName => {
+    switch (facet) {
+        case SearchFacet.CONTENT_TYPE:
+            return SearchInputFacetName.CONTENT_TYPE;
+        case SearchFacet.TAGS:
+            return SearchInputFacetName.TAG;
         default:
             return null;
     }
@@ -22,7 +40,20 @@ export const mapToAlgoliaFilters = (tagsByFacet: SearchFacets, operator: FilterO
         .join(` ${ operator } `);
 };
 
-export const parseQuery = (query: string): { cleanQuery: string; facets: SearchFacets; } => {
+export const queryToUrlParams = (query: ParsedQuery): string => {
+    let queryString = `q=${ query.cleanQuery }`;
+
+    for (const [facet, values] of Object.entries(query.facets) ) {
+        const inputName = getInputNameForFacet(facet as SearchFacet);
+        queryString += ` ${ values.map((value: string) => {
+            return `${ inputName }:${ value.includes(' ') ? `"${ value }"` : value }`;
+        }).join(' ')}`;
+    }
+
+    return queryString;
+};
+
+export const parseQuery = (query: string): ParsedQuery => {
     let cleanQuery = query;
 
     const facets: SearchFacets = {
@@ -31,7 +62,7 @@ export const parseQuery = (query: string): { cleanQuery: string; facets: SearchF
     };
 
     for (const facetInput of FACET_INPUTS) {
-        const facet = getFacetForInput(facetInput);
+        const facet = getFacetForInputName(facetInput);
         if (!facet) {
             continue;
         }

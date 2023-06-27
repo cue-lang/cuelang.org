@@ -1,4 +1,18 @@
 {{ define "main" }}
+    {{ $contentTypes := slice }}
+    {{ $pages := $.Site.Sections.ByWeight -}}
+
+    {{ range $page := $pages }}
+        {{ if eq $page.Type "docs" }}
+            {{ $docs := (union $page.Pages $page.Sections).ByWeight  -}}
+            {{ range $doc := $docs }}
+                {{ $contentTypes = $contentTypes | append (dict "name" $doc.Title) }}
+            {{ end }}
+        {{ else if  (not (eq $page.Type "examples")) }}
+            {{ $contentTypes = $contentTypes | append (dict "name" $page.Title) }}
+        {{ end }}
+    {{ end }}
+
     <section class="section section--blue section--search">
         <header class="section__header">
             <div class="section__content">
@@ -6,13 +20,39 @@
             </div>
         </header>
         <div class="section__body">
-            <div class="section__content" data-search-results>
-                {{- partial "searchbar.html" (dict
-                    "type" "results"
-                    "inputId" "searchbar"
-                ) -}}
+            <div class="section__content" data-search-results data-tags="{{ .Site.Params.tags | jsonify }}">
+                <div class="search">
+                    <div class="search__ bar">
+                        {{- partial "searchbar.html" (dict
+                            "type" "results"
+                            "inputId" "searchbar"
+                        ) -}}
+                    </div>
+                    <div class="search__options">
+                        <div class="search__amount is-hidden">
+                            {{ T "search_results" }}
+                        </div>
 
-                <div class="search"></div>
+                        <div class="search__filters">
+                            <p class="search__filters-title"> {{ T "search_filters_title" }}</p>
+
+                            {{- partial "filter.html" (dict
+                                "cssClass" "search__filter"
+                                "translationKey" "tags"
+                                "name" "tags"
+                                "filters" .Site.Params.tags
+                            ) -}}
+
+                            {{- partial "filter.html" (dict
+                                "cssClass" "search__filter"
+                                "translationKey" "contentType"
+                                "name" "contentType"
+                                "filters" $contentTypes
+                            ) -}}
+                        </div>
+                    </div>
+                    <ul class="search__results list list--archive"></ul>
+                </div>
             </div>
         </div>
     </section>
