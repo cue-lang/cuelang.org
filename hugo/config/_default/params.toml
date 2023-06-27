@@ -21,3 +21,28 @@ logo = "svg/logo-alpha.svg"
         link = 'https://github.com/cue-lang/cue/releases'
         icon = 'download'
         text = 'Download'
+
+
+# Tags
+# Color can be one of: red, orange, green, pink, purple, lila, blue, lavender
+
+[[tags]]
+name = "Ecosystem"
+color = "red"
+weight = 10
+
+[[tags]]
+name = "Use encodings in CUE"
+color = "green"
+weight = 20
+
+[[tags]]
+name = "cue command"
+color = "purple"
+weight = 30
+
+[[tags]]
+name = "Language"
+color = "blue"
+weight = 40
+

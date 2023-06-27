@@ -1,0 +1,41 @@
+{{ $cssClass := .cssClass | default "" }}
+{{ $open := .open | default false }}
+{{ $filters := .filters | default slice }}
+{{ $name := .name }}
+{{ $translationKey := .translationKey }}
+{{ $title := printf "search_%s_title" $translationKey }}
+{{ $heading := printf "search_%s_heading" $translationKey }}
+{{ $inputLabel := printf "search_%s_input" $translationKey }}
+{{ $noResults := printf "search_%s_no-results" $translationKey }}
+
+<details class="filter{{ if $cssClass }} {{ $cssClass }}{{ end }} is-loading"
+         data-dropdown data-filter="{{ $name }}"
+         data-filter-items="{{ $filters | jsonify }}"
+         {{ if $open }} open{{ end }}
+>
+    <summary class="filter__title button button--small button--white">
+        <span class="button__text">{{ T $title }}</span>
+        {{- partial "icon.html" (dict "icon" "chevron-down" "class" "filter__icon button__icon") -}}
+    </summary>
+    <div class="filter__menu">
+        <div class="filter__header">
+            <p class="filter__heading">{{ T $heading }}</p>
+            <button class="filter__close" data-dropdown-close>
+                {{- partial "icon.html" (dict "icon" "close") -}}
+            </button>
+        </div>
+        <div class="filter__content">
+            <div class="filter__search">
+                <label class="filter__label" for="filter-{{ $name }}">{{ T $inputLabel }}</label>
+                <input type="text" class="filter__input"
+                       name="{{ $name }}" id="filter-{{ $name }}" placeholder="{{ T $inputLabel }}">
+            </div>
+
+            {{ partial "spinner.html" }}
+
+            <ul class="filter__list"></ul>
+
+            <p class="filter__no-results">{{ T $noResults }}</p>
+        </div>
+    </div>
+</details>

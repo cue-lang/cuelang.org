@@ -9,6 +9,11 @@ export interface SearchItem {
     tags: string | string[];
 }
 
+export interface FilterItem {
+    name: string;
+    color?: string;
+}
+
 export enum FilterOperator {
     AND = 'AND',
     OR = 'OR',
@@ -30,3 +35,17 @@ export enum SearchFacet {
 }
 
 export type SearchFacets = { [key in SearchFacet]?: string[] };
+
+export interface ParsedQuery {
+    cleanQuery: string;
+    facets: SearchFacets;
+}
+
+export enum SearchEvents {
+    FILTER = 'searchFilter',
+}
+
+export interface FilterEvent {
+    facet: SearchFacet;
+    value: string;
+}

@@ -9,7 +9,6 @@
     $self: &;
 
     background-color: var(--teaser-background, transparent);
-    border-radius: $b-radius;
     color: var(--text-color);
     height: 100%;
     padding: $p-gutter;
@@ -17,21 +16,32 @@
     transition: background-color 0.2s;
     width: 100%;
 
+    &:focus,
+    &:hover {
+        .link__text {
+            background-position-x: 0;
+            background-size: 100% var(--link-border-width, 2px);
+        }
+    }
+
     &__title {
         @include style-heading;
 
+        color: $c-blue--dark;
         font-size: 1.5rem;
-        margin: 0 0 0.5rem;
+        margin: 0 0 0.4rem;
     }
 
     &__meta {
         color: var(--teaser-meta-color, $c-grey--dark);
+        font-size: 0.8125rem;
         line-height: 1.3;
-        margin: 0 0 0.5rem;
+        margin: 0 0 0.4rem;
     }
 
     &__excerpt {
-        margin: 1rem 0;
+        font-weight: $weight-medium;
+        margin: 0.5rem 0 0;
     }
 
     &__link {
@@ -47,7 +57,7 @@
 
         &:focus,
         &:hover {
-            border-color: var(--teaser-border-hover, $c-blue--light);
+            background: transparentize($c-blue, 0.94);
         }
 
         &:focus-visible {
@@ -55,45 +65,27 @@
         }
     }
 
-    &:focus,
-    &:hover {
-        .link__text {
-            background-position-x: 0;
-            background-size: 100% var(--link-border-width, 2px);
-        }
-    }
-
-    &--search {
-        border-bottom: 1px solid transparentize($c-blue--darker, 0.8);
-        border-radius: 0;
-
-        #{ $self }__title {
-            margin: 0;
-        }
-
-        #{ $self }__meta {
-            @include style-text-small;
-        }
-
-        #{ $self }__excerpt {
-            font-weight: $weight-medium;
-            margin: 0.5rem 0 0;
-        }
-    }
-
     @include screen($screen-simple) {
-        &--search {
-            padding: 2rem $p-gutter 1.5rem;
+        padding: 1.5rem;
+
+        &__heading {
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
+
+        &__tags {
+            margin-top: 4px;
+        }
+
+    }
+
+    @include screen($screen-normal) {
+        padding: 1.5rem 2.5rem;
     }
 
     @include screen($screen-large) {
-        padding: $p-gutter--large;
-
-        &--search {
-            padding: 2rem $p-gutter 1.5rem;
-        }
-
         &__readmore {
             margin-bottom: -10px;
         }
