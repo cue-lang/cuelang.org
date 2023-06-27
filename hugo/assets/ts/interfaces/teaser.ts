@@ -3,5 +3,5 @@ export interface Teaser {
     link: string;
     summary: string;
     contentType: string;
-    tags: string | string[];
+    tags: string[];
 }

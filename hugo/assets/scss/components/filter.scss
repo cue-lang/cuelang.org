@@ -1,0 +1,213 @@
+@import '../config/colors';
+@import '../mixins/button';
+@import '../mixins/sr-only';
+@import '../mixins/svg';
+@import '../mixins/typography';
+
+.filter {
+    $self: &;
+
+    z-index: 2;
+
+    &[open] {
+        #{ $self }__icon {
+            rotate: 180deg;
+        }
+    }
+
+    &__title {
+        --button-border: #{ $c-grey--light };
+
+        align-items: center;
+        border-width: 1px;
+        cursor: pointer;
+        display: flex;
+        font-weight: $weight-medium;
+        list-style: none;
+        text-align: left;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    &__icon {
+        transition: rotate 0.2s;
+    }
+
+    &__menu {
+        background: $c-white;
+        border: 1px solid var(--filter-menu-border, $c-grey--light);
+        border-radius: $b-radius;
+        box-shadow: 0 4px 30px 0 var(--filter-box-shadow, transparentize($c-black, 0.77));
+        left: $p-gutter;
+        margin-top: 0.5rem;
+        position: absolute;
+        right: $p-gutter;
+    }
+
+    &__header {
+        align-items: center;
+        border-bottom: 1px solid var(--filter-menu-border, $c-grey--light);
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0.875rem;
+        position: relative;
+    }
+
+    &__heading {
+        color: var(--filter-heading, $c-grey-blue--darker);
+        font-size: 0.8125rem;
+        font-weight: $weight-bold;
+        margin: 0;
+    }
+
+    &__close {
+        color: var(--filter-close-color, $c-grey-blue--medium);
+        height: 22px;
+        margin-right: -0.25rem;
+        padding: 0.25rem;
+        transition: color 0.2s;
+        width: 22px;
+
+        &:focus,
+        &:hover {
+            color: var(--filter-close-color-hover, $c-blue--dark);
+        }
+    }
+
+    &__search {
+        border-bottom: 1px solid var(--filter-item-border, transparentize($c-grey--light, 0.5));
+        padding: 0.5rem;
+    }
+
+    &__label {
+        @include sr-only;
+    }
+
+    &__input {
+        &[type='text'] {
+            --form-input-background: #{ transparentize($c-grey-blue--dark, 0.93) };
+            --form-input-border: #{ transparentize($c-blue--darker, 0.9) };
+
+            font-size: 0.8125rem;
+
+            &::placeholder {
+                color: $c-blue--darker;
+                opacity: 0.3;
+            }
+        }
+    }
+
+    &__list {
+        margin: 0.5rem 0 0;
+        max-height: 304px;
+        overflow-y: auto;
+    }
+
+    &__item {
+        border-bottom: 1px solid var(--filter-item-border, transparentize($c-grey--light, 0.5));
+
+        &:last-child {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__link {
+        align-items: center;
+        display: flex;
+        font-size: 0.8125rem;
+        font-weight: $weight-medium;
+        gap: 0.5rem;
+        padding: 0.25rem 1.875rem;
+        position: relative;
+        text-decoration: none;
+        transition: background-color 0.2s ease-in;
+        width: 100%;
+
+        &:focus,
+        &:hover {
+            background-color: var(--filter-link-hover, $c-grey-blue);
+        }
+
+        &.is-selected {
+            &::before {
+                @include svg('check', $c-black);
+
+                display: block;
+                height: 12px;
+                left: 0.75rem;
+                line-height: 12px;
+                position: absolute;
+                top: 0.6rem;
+                vertical-align: -3px;
+                width: 12px;
+            }
+        }
+    }
+
+    &__color {
+        background: var(--filter-color, $c-filter-blue);
+        border-radius: 50%;
+        display: block;
+        height: 12px;
+        width: 12px;
+
+        &--red {
+            --filter-color: #{ $c-filter-red };
+        }
+
+        &--orange {
+            --filter-color: #{ $c-filter-orange };
+        }
+
+        &--green {
+            --filter-color: #{ $c-filter-green };
+        }
+
+        &--pink {
+            --filter-color: #{ $c-filter-pink };
+        }
+
+        &--purple {
+            --filter-color: #{ $c-filter-purple };
+        }
+
+        &--lila {
+            --filter-color: #{ $c-filter-lila };
+        }
+
+        &--blue {
+            --filter-color: #{ $c-filter-blue };
+        }
+
+        &--lavender {
+            --filter-color: #{ $c-filter-lavender };
+        }
+    }
+
+    &__no-results {
+        display: none;
+        font-size: 0.875rem;
+    }
+
+    .spinner {
+        display: none;
+    }
+
+    &.is-loading {
+        .spinner {
+            display: block;
+        }
+    }
+
+    @include screen(600px) {
+        position: relative;
+
+        &__menu {
+            left: auto;
+            right: 0;
+            width: 240px;
+        }
+    }
+}

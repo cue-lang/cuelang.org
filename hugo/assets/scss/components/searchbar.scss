@@ -101,13 +101,6 @@
         }
     }
 
-    &__footer {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-    }
-
     &__results {
         @include style-text-small;
 
@@ -119,9 +112,9 @@
     }
 
     &__logo {
-        height: auto;
-        margin-left: auto;
-        right: 0;
+        float: right;
+        height: 28px;
+        margin: -28px 0 0.2rem auto;
         width: 120px;
     }
 
@@ -132,6 +125,13 @@
 
     &__header-line {
         border-bottom: 1px solid $c-pink;
+    }
+
+    @include screen($screen-simple) {
+        &__logo {
+            margin: -42px $p-gutter 1rem auto;
+
+        }
     }
 
     @include screen($screen-normal) {

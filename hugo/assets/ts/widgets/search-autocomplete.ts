@@ -8,7 +8,7 @@ import { AutocompleteQuerySuggestionsHit } from '@algolia/autocomplete-plugin-qu
 import { AutocompleteApi } from '@algolia/autocomplete-js/dist/esm/types';
 import { BaseItem, OnSubmitParams } from '@algolia/autocomplete-shared/dist/esm/core';
 import { BaseWidget } from './base-widget';
-import { mapToAlgoliaFilters, parseQuery } from '../helpers/algolia';
+import { mapToAlgoliaFilters, parseQuery } from '../helpers/search';
 
 export class SearchAutocomplete extends BaseWidget {
     public static readonly NAME = 'search-autocomplete';

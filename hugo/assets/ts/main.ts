@@ -4,6 +4,7 @@ import {
     Copy,
     Docs,
     Drawer,
+    SearchFilter,
     Header,
     Menu,
     NotificationBar,
@@ -24,7 +25,7 @@ declare global {
 }
 
 type WidgetTypes = Carousel | Copy | Docs | Drawer | Header | Menu | NotificationBar |
-    SearchAutocomplete | SearchResults | Tabs | TabsNav;
+    SearchAutocomplete | SearchFilter | SearchResults | Tabs | TabsNav;
 
 class App {
     public widgets: Widget[];
@@ -41,6 +42,7 @@ class App {
             [Copy.NAME]: Copy,
             [Docs.NAME]: Docs,
             [Drawer.NAME]: Drawer,
+            [SearchFilter.NAME]: SearchFilter,
             [Header.NAME]: Header,
             [Menu.NAME]: Menu,
             [NotificationBar.NAME]: NotificationBar,

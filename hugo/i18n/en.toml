@@ -5,12 +5,6 @@ other = "Skip to content"
 other = "Homepage of CUE"
 [ui_read_more]
 other = "Read more"
-[ui_search]
-other = "Search"
-[ui_search_question]
-other = "What are you looking for?"
-[ui_search_results]
-other = "documents found"
 [ui_loading]
 other = "Loading"
 [ui_close]
@@ -81,6 +75,34 @@ other = "Click here if you are not redirected"
 other = "404 - Page not found"
 [error_404_description]
 other = "Oops! This page doesn't exist. Try going back to our <a href='/'>home page</a>"
+
+# Search
+[search_title]
+other = "Search"
+[search_question]
+other = "What are you looking for?"
+[search_results]
+other = "documents found"
+[search_filters_title]
+other = "Filters"
+
+[search_tags_title]
+other = "Tags"
+[search_tags_heading]
+other = "Filter by tags"
+[search_tags_input]
+other = "Filter tags"
+[search_tags_no-results]
+other = "No tags found"
+
+[search_contentType_title]
+other = "Content Type"
+[search_contentType_heading]
+other = "Filter by Content Type"
+[search_contentType_input]
+other = "Filter Content Type"
+[search_contentType_no-results]
+other = "No Content Type's found"
 
 # Figure shortcode
 [logo_redirect]

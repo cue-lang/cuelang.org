@@ -11,6 +11,7 @@
     "@algolia/autocomplete-theme-classic": "1.9.2",
     "algoliasearch": "4.17.0",
     "atomic-algolia": "0.3.19",
+    "fuse.js": "6.6.2",
     "mathjax": "3.2.2",
     "mermaid": "9.2.2"
   },
