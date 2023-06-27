@@ -223,5 +223,5 @@ if err != nil {
     // handle error
 }
 
-err = ioutil.WriteFile("cue_gen.go", b, 0644)
+err = os.WriteFile("cue_gen.go", b, 0644)
 ```
