@@ -239,7 +239,7 @@ soft constraints.
 
 ### Separate configuration from computation
 
-There comes a time that one (seemingly) will need do complex
+There comes a time that one (seemingly) will need to do complex
 computations to generate some configuration data.
 But simplicity of a configuration language can be paramount when one quickly
 needs to make changes.
