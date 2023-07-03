@@ -109,18 +109,19 @@ checkoutCode: {
 earlyChecks: json.#step & {
 	name: "Early git and code sanity checks"
 	run: #"""
-		# Ensure the recent commit messages have Signed-off-by headers.
+		# Ensure the recent commit messages have Signed-off-by headers. We
+		# only need to check the HEAD commit because all commits are tested
+		# in CI. Unclear why git log outputs blank lines when parsing trailers
+		# in this way, but we remove those blank lines so as not to skew the
+		# count of the trailers we are searching for.
+		#
 		# TODO: Remove once this is enforced for admins too;
 		# see https://bugs.chromium.org/p/gerrit/issues/detail?id=15229
-		# TODO: Our --max-count here is just 1, because we've made mistakes very
-		# recently. Increase it to 5 or 10 soon, to also cover CL chains.
-		for commit in $(git rev-list --max-count=1 HEAD); do
-			if ! git rev-list --format=%B --max-count=1 $commit | grep -q '^Signed-off-by:'; then
-				echo -e "\nRecent commit is lacking Signed-off-by:\n"
-				git show --quiet $commit
-				exit 1
-			fi
-		done
+		if [[ "$(git log -1 --pretty='%(trailers:key=Signed-off-by)' | sed '/^\s*$/d' | wc -l)" -eq 0 ]]; then
+			echo -e "\nRecent commit is lacking Signed-off-by:\n"
+			git show --quiet
+			exit 1
+		fi
 
 		# Ensure that commit messages have a blank second line.
 		# We know that a commit message must be longer than a single
@@ -163,9 +164,13 @@ earlyChecks: json.#step & {
 		"""#
 }
 
-curlGitHubAPI: #"""
-	curl -s -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.\#(botGitHubUserTokenSecretsKey) }}" -H "X-GitHub-Api-Version: 2022-11-28"
+curlGitHubAPI: {
+	#tokenSecretsKey: *botGitHubUserTokenSecretsKey | string
+
+	#"""
+	curl -s -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.\#(#tokenSecretsKey) }}" -H "X-GitHub-Api-Version: 2022-11-28"
 	"""#
+}
 
 setupGoActionsCaches: {
 	// #readonly determines whether we ever want to write the cache back. The
@@ -296,13 +301,14 @@ checkGitClean: json.#step & {
 
 repositoryDispatch: json.#step & {
 	#githubRepositoryPath:         *githubRepositoryPath | string
-	#botGitHubUser:                *botGitHubUser | string
 	#botGitHubUserTokenSecretsKey: *botGitHubUserTokenSecretsKey | string
 	#arg:                          _
 
+	_curlGitHubAPI: curlGitHubAPI & {#tokenSecretsKey: #botGitHubUserTokenSecretsKey, _}
+
 	name: string
 	run:  #"""
-			\#(curlGitHubAPI) -f --request POST --data-binary \#(strconv.Quote(encjson.Marshal(#arg))) https://api.github.com/repos/\#(#githubRepositoryPath)/dispatches
+			\#(_curlGitHubAPI) -f --request POST --data-binary \#(strconv.Quote(encjson.Marshal(#arg))) https://api.github.com/repos/\#(#githubRepositoryPath)/dispatches
 			"""#
 }
 
