@@ -8,7 +8,6 @@
             {{- template "algolia-object" (dict
                 "index" 0
                 "page" $page
-                "section" $section
             ) -}}
         {{- end -}}
     {{- end }}
@@ -26,9 +25,25 @@
     {{- $publishDate := $page.PublishDate -}}
     {{- $summary := $page.Summary -}}
     {{- $content := "" -}}
-    {{- $section := $page.Section -}}
-    {{- $categories := cond (isset $page.Params "categories") ($page.Params.categories) "" -}}
     {{- $tags := cond (isset $page.Params "tags") ($page.Params.tags) "" -}}
+    {{- $contentType := $page.FirstSection.Title -}}
+
+    {{/* If section is docs we derive the content type from the first level of nesting within docs*/}}
+    {{- if and (eq $page.Section "docs") (ne $page $page.FirstSection) -}}
+        {{ $parent := $page.Parent -}}
+
+        {{/* Go up tree to find first level parent which is not /docs itself */}}
+        {{- if and $parent (ne $parent $page.FirstSection) -}}
+            {{ $contentType = $parent.Title }}
+            {{ $parent = $parent.Parent -}}
+            {{- if and $parent (ne $parent $page.FirstSection) -}}
+                {{ $contentType = $parent.Title }}
+            {{- end -}}
+        {{- else -}}
+            {{/* If no parent we're already at top level so current page is the content type */}}
+            {{ $contentType = $page.Title }}
+        {{- end -}}
+    {{- end -}}
 
     {{- if eq $index 0 -}}
         {{- $content = delimit (first $cutoff $page.PlainWords) " " -}}
@@ -43,8 +58,7 @@
         "publishDate": {{ $publishDate | jsonify }},
         "summary": {{ $summary | jsonify }},
         "content": {{ $content  | jsonify}},
-        "section": {{ $section | jsonify }},
-        "categories": {{ $categories | jsonify }},
+        "contentType": {{ $contentType | jsonify }},
         "tags": {{ $tags | jsonify }}
     }
 

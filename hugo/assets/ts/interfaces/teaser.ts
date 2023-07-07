@@ -2,5 +2,6 @@ export interface Teaser {
     title: string;
     link: string;
     summary: string;
-    categories: string | string[];
+    contentType: string;
+    tags: string | string[];
 }

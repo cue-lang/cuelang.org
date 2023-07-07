@@ -5,8 +5,7 @@ export interface SearchItem {
     summary: string;
     publishDate: string;
     content: string;
-    section: string;
-    categories: string | string[];
+    contentType: string;
     tags: string | string[];
 }
 
@@ -16,20 +15,17 @@ export enum FilterOperator {
 }
 
 export enum SearchInputFacetName {
-    CATEGORY = 'category',
-    SECTION = 'section',
+    CONTENT_TYPE = 'contentType',
     TAG = 'tag',
 }
 
 export const FACET_INPUTS = [
-    SearchInputFacetName.CATEGORY,
-    SearchInputFacetName.SECTION,
+    SearchInputFacetName.CONTENT_TYPE,
     SearchInputFacetName.TAG,
 ];
 
 export enum SearchFacet {
-    CATEGORIES = 'categories',
-    SECTION = 'section',
+    CONTENT_TYPE = 'contentType',
     TAGS = 'tags',
 }
 

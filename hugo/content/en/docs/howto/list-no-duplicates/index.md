@@ -2,7 +2,7 @@
 title: Ensure lists have no duplicate items
 weight:
 draft: false
-categories:
+tags:
     - Language
 ---
 

@@ -1,13 +1,13 @@
 {{ $current := . -}}
 {{ $parent := .Parent -}}
-{{ $category := $current.Params.category -}}
+{{ $tag := $current.Params.tag -}}
 
 {{ $pages := (where .Site.Pages "Section" .Section).ByWeight -}}
 {{ $pages = (where $pages "Type" "!=" "search") -}}
 {{ $pages = (where $pages ".Params.hide_summary" "!=" true) -}}
 {{ $pages = (where $pages ".Parent" "!=" nil) -}}
 {{ $pages = (where $pages "Parent.File.UniqueID" "==" $parent.File.UniqueID) -}}
-{{ $pages = (where $pages ".Params.categories" "intersect" (slice $category) ) -}}
+{{ $pages = (where $pages ".Params.tags" "intersect" (slice $tag) ) -}}
 
 {{ if not (eq (len $pages) 0) -}}
     <nav class="nav nav--index">
