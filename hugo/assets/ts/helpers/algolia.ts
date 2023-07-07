@@ -17,7 +17,7 @@ export const mapToAlgoliaFilters = (tagsByFacet: SearchFacets, operator: FilterO
         .map((facet) => {
             return `(${ tagsByFacet[facet]
                 .map((label: string) => `${ facet }:"${ label }"`)
-                .join(' OR ') })`;
+                .join(' AND ') })`;
         })
         .join(` ${ operator } `);
 };
@@ -36,8 +36,9 @@ export const parseQuery = (query: string): { cleanQuery: string; facets: SearchF
             continue;
         }
 
-        const regExp = new RegExp(`${ facetInput }:(\\S+)?`, 'g');
-        const matches = [ ...query.matchAll(regExp) ];
+        const regExp = new RegExp(`${ facetInput }:([^"]\\S+)`, 'g');
+        const regExpWithQuotes = new RegExp(`${ facetInput }:"([^"]+)"|(\\+)`, 'g');
+        const matches = [ ...query.matchAll(regExp), ...query.matchAll(regExpWithQuotes) ];
         for (const match of matches) {
             if (match) {
                 if (match[1] && match[1] !== '') {
