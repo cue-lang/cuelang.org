@@ -79,7 +79,8 @@ export class SearchResults extends BaseWidget {
             title: hit._highlightResult.title.value,
             link: hit.link,
             summary: hit._snippetResult.summary.value,
-            categories: hit.categories,
+            contentType: hit.contentType,
+            tags: hit.tags,
         };
     }
 
@@ -87,16 +88,8 @@ export class SearchResults extends BaseWidget {
         return `
             <div class="teaser teaser--search">
                 <h2 class="teaser__title">${ teaser.title }</h2>
-                ${ (teaser.categories && teaser.categories.length > 0) ?
-                    `<div class="teaser__meta">${ typeof teaser.categories === 'string'
-                        ? teaser.categories
-                        : teaser.categories.join(', ') }</div>` :
-                    ''
-                }
-                ${ (teaser.summary) ?
-                    `<div class="teaser__excerpt">${ teaser.summary }</div>` :
-                    ''
-                }
+                ${ (teaser.contentType) ? `<p class="teaser__meta">${ teaser.contentType}</p>` : '' }
+                ${ (teaser.summary) ? `<div class="teaser__excerpt">${ teaser.summary }</div>` : '' }
                 <a class="teaser__link" href="${ teaser.link }">
                     <span>Read more</span>
                 </a>

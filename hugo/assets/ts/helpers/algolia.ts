@@ -3,10 +3,8 @@ import { cleanObject } from './cleaner';
 
 export const getFacetForInput = (inputName: SearchInputFacetName): SearchFacet => {
     switch (inputName) {
-        case SearchInputFacetName.CATEGORY:
-            return SearchFacet.CATEGORIES;
-        case SearchInputFacetName.SECTION:
-            return SearchFacet.SECTION;
+        case SearchInputFacetName.CONTENT_TYPE:
+            return SearchFacet.CONTENT_TYPE;
         case SearchInputFacetName.TAG:
             return SearchFacet.TAGS;
         default:
@@ -29,8 +27,7 @@ export const parseQuery = (query: string): { cleanQuery: string; facets: SearchF
 
     const facets: SearchFacets = {
         [SearchFacet.TAGS]: [],
-        [SearchFacet.CATEGORIES]: [],
-        [SearchFacet.SECTION]: [],
+        [SearchFacet.CONTENT_TYPE]: [],
     };
 
     for (const facetInput of FACET_INPUTS) {
@@ -40,7 +37,7 @@ export const parseQuery = (query: string): { cleanQuery: string; facets: SearchF
         }
 
         const regExp = new RegExp(`${ facetInput }:(\\S+)?`, 'g');
-        const matches =  [ ...query.matchAll(regExp) ];
+        const matches = [ ...query.matchAll(regExp) ];
         for (const match of matches) {
             if (match) {
                 if (match[1] && match[1] !== '') {
