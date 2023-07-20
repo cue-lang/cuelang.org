@@ -70,6 +70,7 @@
     &__text {
         background: linear-gradient(var(--nav-link-border-color), var(--nav-link-border-color)) no-repeat 100% 100%;
         background-size: 0 var(--nav-link-border-width);
+        display: inline-block;
         position: relative;
         transition:
             background-color 0.2s ease-in-out,
