@@ -24,4 +24,9 @@ fi
 
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit
 # caching layer.  This is particularly important in CI.
-docker buildx build $caching -t $tag --load -f ./_docker/Dockerfile ./_docker
+if docker help | grep -q podman
+then
+    docker build -t $tag -f ./_docker/Dockerfile ./_docker
+else
+    docker buildx build $caching -t $tag --load -f ./_docker/Dockerfile ./_docker
+fi
