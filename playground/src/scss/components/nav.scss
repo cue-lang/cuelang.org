@@ -1,0 +1,42 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/typography';
+@import '../mixins/list-reset';
+
+.#{ $prefix }-nav {
+    $self: &;
+
+    @include list-reset;
+
+    &__item {
+        margin-bottom: 0.25rem;
+    }
+
+    &__link {
+        color: $c-grey-blue--darker;
+        display: block;
+        font-size: 0.75rem;
+        font-weight: $weight-medium;
+        line-height: 1.4;
+        padding: 0.25rem 0;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:focus,
+        &:hover {
+            color: $c-blue--darker;
+
+            #{ $self }__text {
+                background-position-x: 0;
+                background-size: 100% 1px;
+            }
+        }
+    }
+
+    &__text {
+        background: linear-gradient(currentColor, currentColor) no-repeat 100% 100%;
+        background-size: 0 1px;
+        display: inline-block;
+        transition: background-size 0.2s ease-in-out;
+    }
+}

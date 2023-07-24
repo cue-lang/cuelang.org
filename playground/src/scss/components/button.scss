@@ -1,43 +1,65 @@
 @import '../config/colors';
 @import '../config/prefix';
 @import '../config/typography';
+@import '../mixins/button';
 
 .#{ $prefix }-button {
-    align-items: center;
-    background: $c-blue--darker;
-    border-radius: 30px;
-    color: $c-white;
-    display: inline-flex;
-    fill: currentColor;
-    font-family: $font-inter;
-    font-size: 0.875rem;
-    font-weight: $weight-medium;
-    height: 30px;
-    line-height: 30px;
-    overflow: hidden;
-    padding: 0 1rem;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s, fill 0.2s;
-    white-space: nowrap;
+    $self: &;
 
-    &:focus-visible,
-    &:hover {
-        background-color: $c-blue;
-    }
+    @include button-base;
 
-    &:disabled {
-        background-color: $c-grey;
-        color: $c-white;
-        cursor: not-allowed;
-    }
+    @include button-style(
+        var(--button-background, #{ $c-blue--light }),
+        var(--button-border, #{ $c-blue--light }),
+        var(--button-color, #{ $c-white }),
+        var(--button-background-hover, #{ $c-blue }),
+        var(--button-border-hover, #{ $c-blue }),
+        var(--button-color-hover, #{ $c-white }),
+        var(--button-background-disabled, #{ $c-grey }),
+        var(--button-border-disabled, #{ $c-grey }),
+        var(--button-color-disabled, #{ $c-white })
+    );
 
     &__icon {
         display: block;
         height: 20px;
-        margin-left: 6px;
+        line-height: 1;
         width: 20px;
+    }
+
+    &--grey {
+        --button-background: #{ $c-grey-blue--lightest };
+        --button-border: #{ $c-grey-blue--lightest };
+        --button-color: #{ $c-blue--darker };
+        --button-background-hover: #{ $c-grey-blue--lightest };
+        --button-border-hover: #{ darken($c-grey--light, 15%) };
+        --button-color-hover: #{ $c-blue--darker };
+        --button-background-disabled: #{ $c-grey-blue--medium };
+        --button-border-disabled: #{ $c-grey--light };
+        --button-color-disabled: #{ $c-grey-blue--darker };
+    }
+
+    &--grey-outline {
+        --button-background: #{ $c-grey-blue--light };
+        --button-border: #{ $c-grey-blue--darker };
+        --button-color: #{ $c-blue--darker };
+        --button-background-hover: #{ $c-blue--darker };
+        --button-border-hover: #{ $c-blue--darker };
+        --button-color-hover: #{ $c-white };
+        --button-background-disabled: #{ $c-grey-blue--medium };
+        --button-border-disabled: #{ $c-grey--light };
+        --button-color-disabled: #{ $c-grey-blue--darker };
+    }
+
+    &--transparent {
+        --button-background: transparent;
+        --button-border: transparent;
+        --button-color: #{ $c-grey-blue--darker };
+        --button-background-hover: #{ $c-grey-blue--lightest };
+        --button-border-hover: #{ $c-grey-blue--lightest };
+        --button-color-hover: #{ $c-blue--darker };
+        --button-background-disabled: transparent;
+        --button-border-disabled: transparent;
+        --button-color-disabled: #{ $c-grey-blue--medium };
     }
 }

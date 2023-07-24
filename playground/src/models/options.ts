@@ -1,8 +1,8 @@
-export const OPTION_TYPE = {
-    func: 'func',
-    input: 'input',
-    output: 'output',
-} as const;
+export enum OPTION_TYPE {
+    FUNC = 'func',
+    INPUT = 'input',
+    OUTPUT = 'output',
+}
 
 export interface Option {
     name: string;
@@ -21,5 +21,5 @@ export const funcOptions: Option[] = [
 export const outputOptions: Option[] = [
     { value: 'cue', name: 'CUE', },
     { value: 'json', name: 'JSON', },
-    { value: 'yaml', name: 'Yaml', },
+    { value: 'yaml', name: 'YAML', },
 ]

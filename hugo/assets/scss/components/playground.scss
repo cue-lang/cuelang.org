@@ -1,32 +1,9 @@
-@import '../config/colors';
-@import '../config/sizes';
-@import '../mixins/screen';
+@import '../mixins/center';
 
 .playground {
-    height: calc(100vh - var(--header-height, #{ $h-header--sticky }) - 2rem);
-
-    // Force some space between playground & logo which sticks out of header
-    &::before {
-        background-color: var(--header-background-sticky, $c-blue--lighter);
-        content: '';
-        display: block;
-        height: 2rem;
-    }
+    height: 100vh;
 
     &__spinner {
-        padding: 2rem 0;
-    }
-
-    @include screen($screen-normal) {
-        height: calc(100vh - var(--header-height, #{ $h-header--sticky }));
-
-        &::before {
-            display: none;
-        }
-
-        .cue-playground__header {
-            // Padding of header + logo width + margins
-            padding-left: calc(1rem + var(--header-logo-width, #{ $w-branding--large }) + 50px);
-        }
+        @include center;
     }
 }
