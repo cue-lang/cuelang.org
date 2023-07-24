@@ -21,6 +21,13 @@ issue a `cuelang.org: ` prefix.
 * [NodeJS](https://nodejs.org/) `v18.x`
 * [Go](https://golang.org/dl/) `>= go1.20` (not needed for only running `hugo`)
 * [Hugo](https://github.com/gohugoio/hugo/releases) `>= v0.111.3`
+  (["extended"](https://gohugo.io/troubleshooting/faq/#i-get-this-feature-is-not-available-in-your-current-hugo-version)
+  binary version)
+* [Docker](https://docs.docker.com/get-docker/) CLI `>= 19.03` (for [`docker
+  buildx`](https://github.com/docker/buildx#installing) use, amongst other
+  things)
+   * [Podman](https://podman.io/) has been used successfully, instead of
+     Docker, but its use is currently undocumented
 
 ### Folders
 
@@ -48,6 +55,7 @@ To serve the site locally run:
 
 ```
 ./_scripts/npmInstall.bash # one-off
+./_scripts/buildDockerImage.bash # one-off, or when internal/cmd/preprocessor/cmd changes
 ./_scripts/serve.bash
 ```
 
