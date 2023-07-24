@@ -1,19 +1,27 @@
 // SCREENSIZES
-$screen-xsmall:                 340px;
-$screen-minimal:                480px;
-$screen-simple:                 768px;
-$screen-normal:                 1024px;
-$screen-large:                  1280px;
-$screen-xlarge:                 1440px;
-$screen-huge:                   1680px;
-$screen-jumbo:                  1920px;
+$screen-xsmall: 340px;
+$screen-minimal: 480px;
+$screen-medium: 600px;
+$screen-simple: 768px;
+$screen-normal: 1024px;
+$screen-large: 1280px;
+$screen-xlarge: 1440px;
+$screen-huge: 1680px;
+$screen-jumbo: 1920px;
+
+// SITE
+$p-gutter: 12px;
+$h-header: 50px;
 
 // BUTTONS & FORMS
-$h-button:                      46px;
-$h-button--small:               32px;
+$h-button: 46px;
+$h-button--small: 32px;
 
 // BORDER
-$b-radius: 3px;
+$b-radius: 2px;
+
+// TABS
+$w-tab: 120px;
 
 // SPACING
 $sp-xs: 1rem;

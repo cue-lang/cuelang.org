@@ -1,0 +1,76 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+
+.#{ $prefix }-header {
+    $self: &;
+
+    --header-logo-width: 50px;
+
+    align-items: center;
+    background: $c-white;
+    display: flex;
+    gap: 0.5rem;
+    height: $h-header;
+    padding: 0 $p-gutter;
+    position: relative;
+    width: 100%;
+
+    &__logo {
+        background-color: $c-white;
+        border: 3px solid $c-white;
+        border-radius: 50%;
+        display: block;
+        flex: 0 0 var(--header-logo-width);
+        fill: $c-blue;
+        margin: 7px 0 0 0;
+        height: var(--header-logo-width);
+        position: relative;
+        width: var(--header-logo-width);
+
+        #{ $self }__logo-inner {
+            transition: fill 0.2s ease;
+        }
+
+        &:focus,
+        &:hover {
+            #{ $self }__logo-inner {
+                fill: var(--header-logo-hover, $c-yellow);
+            }
+        }
+
+        span {
+            @include sr-only;
+        }
+    }
+
+    &__section {
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+
+        &--menu {
+            gap: 0.25rem;
+            margin-left: auto;
+        }
+    }
+
+    @include screen(360px) {
+        --header-logo-width: 56px;
+    }
+
+    @include screen($screen-simple) {
+        &__logo {
+            margin-right: 1rem;
+        }
+
+        &__section {
+            &--menu {
+                gap: 0.5rem;
+            }
+        }
+    }
+}

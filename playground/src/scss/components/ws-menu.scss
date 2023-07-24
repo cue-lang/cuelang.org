@@ -1,0 +1,119 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/list-reset';
+@import '../mixins/screen';
+
+.#{ $prefix }-ws-menu {
+    &__section {
+       padding: 1rem;
+
+        &--active {
+            background: $c-grey-blue--light;
+            padding-bottom: 0;
+        }
+    }
+
+    &__title {
+        color: $c-grey-blue--darker;
+        font-weight: $weight-bold;
+        margin: 0 0 1rem;
+
+        &--options {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__description {
+        color: $c-grey-blue--darker;
+        font-size: 0.8125rem;
+        margin: 0 0 1rem;
+        line-height: 1.2;
+    }
+
+    &__items {
+        @include list-reset;
+    }
+
+    &__item {
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__button {
+        --button-font-size: 0.8125rem;
+
+        display: flex;
+        font-weight: $weight-bold;
+        gap: 0.85rem;
+        padding: 0 0.5rem;
+        width: 100%;
+
+        &.is-active {
+            pointer-events: none;
+        }
+    }
+
+    &__options {
+        @include list-reset;
+
+        border-top: 1px solid transparentize($c-grey-blue--darker, 0.8);
+        padding: 1rem 0;
+    }
+
+    &__option {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__label {
+        color: $c-grey-blue--darker;
+        flex: 0 0 auto;
+        font-weight: $weight-bold;
+        margin-bottom: 0;
+    }
+
+    &__dropdown {
+        flex: 0 0 125px;
+        width: 125px;
+    }
+
+    &__footer {
+        background: $c-grey-blue;
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 (-1rem);
+        padding: 1rem;
+    }
+
+    &__submit {
+        flex: 0 0 125px;
+        justify-content: center;
+        width: 125px;
+    }
+
+    @include screen($screen-minimal) {
+        display: flex;
+
+        &__section {
+            flex: 1 1 auto;
+            padding: 1.25rem 1rem;
+
+            &--active {
+                flex-basis: 60%;
+                padding-bottom: 0;
+            }
+        }
+
+    }
+}

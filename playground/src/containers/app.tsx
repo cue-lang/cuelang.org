@@ -13,8 +13,6 @@
 // limitations under the License.
 
 import * as React from 'react';
-import { CUEVersion } from '@config/gen_cuelang_org_go_version';
-import { Dropdown, DropdownItem } from '@components/dropdown';
 import { funcOptions, inputOptions, Option, OPTION_TYPE, outputOptions } from '@models/options';
 import { Tabs } from '@components/tabs';
 import { Tab } from '@components/tab';
@@ -22,14 +20,17 @@ import { Editor } from '@monaco-editor/react';
 import { editor } from 'monaco-editor';
 import { editorOptions, outputEditorOptions } from '../config/monaco-editor';
 import { debounce } from 'lodash';
+import { Header } from '../components/header';
+import { functionWorkspace } from '../config/workspaces';
+import { Workspace } from '../models/workspace';
+import { DropdownChange } from '../models/dropdown';
 
-interface AppProps
-{
+interface AppProps {
     WasmAPI: WasmAPI;
 }
 
-interface AppState
-{
+interface AppState {
+    readonly activeWorkspace: Workspace;
     readonly input: Option;
     readonly func: Option;
     readonly output: Option;
@@ -38,12 +39,7 @@ interface AppState
 }
 
 // App is the root of our React application
-export class App extends React.Component<AppProps, AppState>
-{
-    public inputOptions: Option[] = inputOptions;
-    public funcOptions: Option[] = funcOptions;
-    public outputOptions: Option[] = outputOptions;
-
+export class App extends React.Component<AppProps, AppState> {
     private inputEditor: editor.IStandaloneCodeEditor;
     private outputEditor: editor.IStandaloneCodeEditor;
     private hashSeperator = '@';
@@ -52,6 +48,7 @@ export class App extends React.Component<AppProps, AppState>
         super(props);
 
         this.state = {
+            activeWorkspace: functionWorkspace,
             input: undefined,
             func: undefined,
             output: undefined,
@@ -75,75 +72,32 @@ export class App extends React.Component<AppProps, AppState>
     }
 
     public render() {
-        const inputDropdownItems: DropdownItem[] = this.inputOptions.map((option) => {
-            return { value: option.value, name: option.name };
-        });
-
-        const funcDropdownItems: DropdownItem[] = this.funcOptions.filter((option) => {
-            return !(option.value === 'def' && this.state.input.value !== 'cue');
-        }).map((option) => {
-            return { value: option.value, name: option.name }
-        });
-
-        const outputDropdownItems: DropdownItem[] = this.outputOptions.map((option) => {
-            return { value: option.value, name: option.name };
-        });
-
         return (
             <div className="cue-playground">
                 <div className="cue-playground__header">
-                    <ul className="cue-playground__controls">
-                        <li className="cue-playground__controls-item">
-                            { <Dropdown
-                                id={ OPTION_TYPE.input }
-                                activeTitle={ this.state.input.name }
-                                buttonPrefix={ 'Input: '}
-                                items={ inputDropdownItems }
-                                onDropdownSelect={ this.handleDropdownChange.bind(this) }
-                            ></Dropdown> }
-                        </li>
-                        <li className="cue-playground__controls-item">
-                            { <Dropdown
-                                id={ OPTION_TYPE.func }
-                                items={ funcDropdownItems }
-                                activeTitle={ this.state.func.name }
-                                onDropdownSelect={ this.handleDropdownChange.bind(this) }
-                            ></Dropdown> }
-                        </li>
-                        <li className="cue-playground__controls-item">
-                            { <Dropdown
-                                id={ OPTION_TYPE.output }
-                                disabled={ this.state.func.value == 'def' }
-                                activeTitle={ this.state.output.name }
-                                buttonPrefix={ 'Output: ' }
-                                items={ outputDropdownItems }
-                                onDropdownSelect={ this.handleDropdownChange.bind(this) }
-                            ></Dropdown> }
-                        </li>
-                        <li className="cue-playground__controls-item">
-                            <div className="cue-share">
-                                <button type="button"
-                                        className="cue-button cue-share__button"
-                                        disabled={ this.state.saved }
-                                        onClick={ this.share.bind(this) }>
-                                    Share
-                                </button>
-                                <input
-                                    className="cue-share__input"
-                                    style={ { display: (this.state.showSaveURL ? '' : 'none') } }
-                                    readOnly={ true }
-                                    id="shareURL"
-                                    value={ window.location.toString() }/>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className="cue-playground__version">{ CUEVersion }</div>
+                    <Header
+                        activeWorkspace={ this.state.activeWorkspace }
+                        activeInput={ this.state.input }
+                        activeFunc={ this.state.func }
+                        activeOutput={ this.state.output }
+                        saved={ this.state.saved }
+                        showSaveURL={ this.state.showSaveURL }
+                        share={ this.share.bind(this) }
+                        handleOptionsChange={ this.handleOptionsChange.bind(this) }
+                        switchWorkspace={ this.switchWorkspace.bind(this) }
+                    ></Header>
                 </div>
                 <div className="cue-playground__content">
                     <div className="cue-columns">
-                        <div className="cue-columns__item cue-columns__item--left">
+                        <div className="cue-columns__item">
                             <Tabs>
-                                <Tab name={ `Input: ${ this.state.input.name }` }>
+                                <Tab
+                                    activeItem={ this.state.input }
+                                    id={ OPTION_TYPE.INPUT }
+                                    items={ inputOptions }
+                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                                    name={ 'Input' }
+                                >
                                     <Editor
                                         className="cue-editor"
                                         language={ this.state.input.value }
@@ -152,15 +106,22 @@ export class App extends React.Component<AppProps, AppState>
                                             this.inputEditor = editor;
                                             await this.loadSavedCode();
                                             this.updateOutput();
-                                        }}
+                                        } }
                                         onChange={ this.onEditorInputChange.bind(this) }
                                     />
                                 </Tab>
                             </Tabs>
                         </div>
-                        <div className="cue-columns__item cue-columns__item--right">
+                        <div className="cue-columns__item">
                             <Tabs>
-                                <Tab name={ `Output: ${ this.state.output.name }` } type="terminal">
+                                <Tab
+                                    activeItem={ this.state.output }
+                                    disabled={ this.state.func.value === 'def' }
+                                    id={ OPTION_TYPE.OUTPUT }
+                                    items={ outputOptions }
+                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                                    name={ 'Output' }
+                                    type="terminal">
                                     <Editor
                                         className="cue-editor cue-editor--terminal"
                                         language={ this.state.output.value }
@@ -168,7 +129,7 @@ export class App extends React.Component<AppProps, AppState>
                                         defaultValue="// ... loading WASM"
                                         onMount={ (editor) => {
                                             this.outputEditor = editor;
-                                        }}
+                                        } }
                                     />
                                 </Tab>
                             </Tabs>
@@ -229,9 +190,9 @@ export class App extends React.Component<AppProps, AppState>
         }
 
         const urlOptions = {
-            [OPTION_TYPE.input]: input.value,
-            [OPTION_TYPE.func]: func.value,
-            [OPTION_TYPE.output]: output.value,
+            [OPTION_TYPE.INPUT]: input.value,
+            [OPTION_TYPE.FUNC]: func.value,
+            [OPTION_TYPE.OUTPUT]: output.value,
         };
 
         // Update hash if parameters changed because of validation logic above
@@ -276,25 +237,42 @@ export class App extends React.Component<AppProps, AppState>
         }
     }
 
-    private handleDropdownChange(groupId: string, value: string): void {
-        const urlOptions: Record<keyof typeof OPTION_TYPE, string> = {
-            [OPTION_TYPE.input]: this.state.input.value,
-            [OPTION_TYPE.func]: this.state.func.value,
-            [OPTION_TYPE.output]: this.state.output.value,
+    private switchWorkspace(workspace: Workspace): void {
+        if (workspace.enabled) {
+            // TODO: Will be picked up when we implement Policy Workspace
+        }
+    }
+
+    private handleOptionsChange(changes: DropdownChange[]): void {
+        const urlOptions: { [key in OPTION_TYPE]: string } = {
+            [OPTION_TYPE.INPUT]: this.state.input.value,
+            [OPTION_TYPE.FUNC]: this.state.func.value,
+            [OPTION_TYPE.OUTPUT]: this.state.output.value,
         }
 
-        if (groupId in OPTION_TYPE) {
-            urlOptions[groupId as keyof typeof OPTION_TYPE] = value;
+        for (const change of changes) {
+            if (Object.values<string>(OPTION_TYPE).includes(change.groupId)) {
+                urlOptions[change.groupId as OPTION_TYPE] = change.selected.value;
+            }
         }
 
         window.location.hash = `#${ Object.values(urlOptions).join(this.hashSeperator) }`;
     }
 
+    private handleDropdownChange(change: DropdownChange): void {
+        this.handleOptionsChange([ change ]);
+    }
+
     public resetEditorLayout(): void {
-        this.inputEditor.layout({ width: 0, height: 0 });
-        this.outputEditor.layout({ width: 0, height: 0 });
-        this.inputEditor.layout();
-        this.outputEditor.layout();
+        if (this.inputEditor) {
+            this.inputEditor.layout();
+            this.inputEditor.layout({ width: 0, height: 0 });
+        }
+
+        if (this.outputEditor) {
+            this.outputEditor.layout({ width: 0, height: 0 });
+            this.outputEditor.layout();
+        }
     }
 
     private getShareUrl(): string {
@@ -321,6 +299,8 @@ export class App extends React.Component<AppProps, AppState>
     }
 
     private share(): void {
+        this.setState({ ...this.state, saved: true, showSaveURL: true });
+
         const contents = this.inputEditor.getValue();
         fetch(this.getShareUrl(), {
             method: 'POST',

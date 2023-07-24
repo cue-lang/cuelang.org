@@ -1,0 +1,70 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/list-reset';
+@import '../mixins/svg';
+
+@mixin button-base {
+    --button-font-size: 0.875rem;
+    --button-height: 34px;
+    --button-radius: 5px;
+    --button-padding: 1rem;
+
+    align-items: center;
+    border-radius: var(--button-radius);
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentColor;
+    font-family: $font-inter;
+    font-size: var(--button-font-size);
+    font-weight: $weight-medium;
+    gap: 0.5rem;
+    height: var(--button-height);
+    line-height: calc(var(--button-height) - 2px);
+    overflow: hidden;
+    padding: 0 var(--button-padding);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, fill 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin button-style(
+    $background,
+    $border,
+    $color,
+    $background-hover,
+    $border-hover,
+    $color-hover,
+    $background-disabled,
+    $border-disabled,
+    $color-disabled
+) {
+    background-color: $background;
+    border-color: $border;
+    color: $color;
+
+    &:focus,
+    &:hover {
+        background-color: $background-hover;
+        border-color: $border-hover;
+        color: $color-hover;
+    }
+
+    &:disabled {
+        background-color: $background-disabled;
+        border-color: $border-disabled;
+        box-shadow: none;
+        color: $color-disabled;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+}

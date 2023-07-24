@@ -10,12 +10,9 @@
             <main id="site-main" class="site__content">
                 {{ block "main" . }}{{ end }}
             </main>
-
-            {{ if ne .Params.show_footer false }}
-                <footer id="site-footer" class="site__footer">
-                    {{ partialCached "site/footer.html" . }}
-                </footer>
-            {{ end }}
+            <footer id="site-footer" class="site__footer">
+                {{ partialCached "site/footer.html" . }}
+            </footer>
         </div>
         {{ partial "notification-bar.html" . }}
         {{ partialCached "site/drawer-mobile.html" . }}

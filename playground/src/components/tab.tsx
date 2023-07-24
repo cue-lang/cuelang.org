@@ -1,15 +1,24 @@
 import * as React from 'react';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
+import { DropdownChange, DropdownItem } from '../models/dropdown';
 
 export interface TabProps {
-    name: string;
+    activeItem: DropdownItem;
+    children: ReactNode;
     disabled?: boolean;
+    disabledText?: string;
+    id: string;
+    items: DropdownItem[];
+    name: string;
+    onDropdownSelect?: {(change: DropdownChange): void};
+    open?: boolean;
     type?: string;
 }
 
 const defaultProps = {
-    name: '',
     disabled: false,
+    items: [] as DropdownItem[],
+    open: false,
     type: 'default',
 }
 

@@ -1,3 +1,27 @@
 // Styles needed for locally developing the app
+@import 'config/colors';
+@import 'config/typography';
 @import 'base/reset';
 @import 'base/fonts';
+
+// Same html/body styles as hugo
+
+html,
+body {
+    font-size: 16px;
+    min-height: 100%;
+}
+
+body {
+    background-color: $c-white;
+    color: $c-grey--darkest;
+    font-family: $font-inter;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+p {
+    font-size: inherit;
+    font-style: inherit;
+    margin: 0 0 1.25em;
+}
