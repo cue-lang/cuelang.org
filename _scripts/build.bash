@@ -10,10 +10,12 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 skipcache=""
 norun="true"
 time=""
+minify="--minify"
 if [ "${NETLIFY:-}" != "true" ]
 then
 	time="time -p"
 	norun="false"
+	minify=""
 	if [ "${CI:-}" == "true" ]
 	then
 		skipcache="--skipcache=true"
@@ -29,5 +31,4 @@ bash _scripts/runPreprocessor.bash execute --debug=all --norun=$norun $skipcache
 # Main site
 cd hugo
 $time npm ci
-$time npm run icons
-$time hugo --cleanDestinationDir $@
+$time hugo --cleanDestinationDir $minify $@
