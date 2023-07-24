@@ -1,0 +1,206 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/button';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+@import '../mixins/stretch';
+
+.#{ $prefix }-menu {
+    $self: &;
+
+    text-align: left;
+
+    &__button {
+        @include button-base;
+
+        @include button-style(
+            var(--button-background, #{ $c-grey-blue--lightest }),
+            var(--button-border, #{ $c-grey-blue--lightest }),
+            var(--button-color, #{ $c-blue--darker }),
+            var(--button-background-hover, #{ $c-grey-blue--lightest }),
+            var(--button-border-hover, #{ darken($c-grey--light, 15%) }),
+            var(--button-color-hover, #{ $c-blue--darker }),
+            var(--button-background-disabled, #{ $c-grey-blue--medium }),
+            var(--button-border-disabled, #{ $c-grey--light }),
+            var(--button-color-disabled, #{ $c-grey-blue--darker })
+        );
+
+        --button-radius: #{ $b-radius };
+
+        font-weight: $weight-bold;
+        line-height: 1;
+        padding: 0 0.65rem 0 0.75rem;
+
+        #{ $self }.is-open & {
+            z-index: 7;
+        }
+    }
+
+    &__chevron,
+    &__icon {
+        display: block;
+        height: 18px;
+        width: 18px;
+    }
+
+    &__icon {
+        & + #{ $self }__text {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__text {
+        margin-right: 0.5rem;
+    }
+
+    &__chevron {
+        margin: 1px 0 0 auto;
+        transition: rotate 0.2s;
+
+        #{ $self }.is-open & {
+            rotate: 180deg;
+        }
+    }
+
+    &__dropdown {
+        background-color: $c-white;
+        box-shadow: $shadow-menu;
+        border-radius: $b-radius;
+        font-size: 0.875rem;
+        left: $p-gutter;
+        margin: 0.5rem 0 0;
+        position: absolute;
+        right: $p-gutter;
+        top: 100%;
+        z-index: 10;
+    }
+
+    &__header {
+        border-bottom: 1px solid $c-grey--light;
+        padding: 1.25rem 1.5rem;
+    }
+
+    &__title {
+        color: $c-grey-blue--dark;
+        font-size: 0.875rem;
+        font-weight: $weight-bold;
+        line-height: 1;
+        margin: 0;
+    }
+
+    &__subtitle {
+        color: transparentize($c-grey-blue--dark, 0.2);
+        font-size: 0.75rem;
+        font-weight: $weight-medium;
+        line-height: 1;
+        margin: 0.6rem 0 0;
+    }
+
+    &__content {
+        padding: 1rem 1.5rem;
+    }
+
+    &__overlay {
+        @include stretch;
+
+        background: transparentize($c-black, 0.75);
+        position: fixed;
+        z-index: 6;
+    }
+
+    &--icon-mobile,
+    &--icon {
+        #{ $self }__button {
+            justify-content: center;
+            padding: 0;
+            width: var(--button-height);
+        }
+
+        #{ $self }__text {
+            @include sr-only;
+        }
+
+        #{ $self }__icon {
+            height: 20px;
+            margin: 0;
+            width: 20px;
+        }
+
+        #{ $self }__chevron {
+            display: none;
+        }
+    }
+
+    &--icon {
+        #{ $self }__button {
+            --button-radius: 50%;
+        }
+    }
+
+    &--transparent {
+        #{ $self }__button {
+            --button-background: transparent;
+            --button-border: transparent;
+            --button-color: #{ $c-grey-blue--dark };
+            --button-background-hover: #{ $c-grey-blue--lightest };
+            --button-border-hover: #{ $c-grey-blue--lightest };
+            --button-color-hover: #{ $c-blue--darker };
+        }
+    }
+
+    @include screen($screen-medium) {
+        position: relative;
+
+        &__button {
+            min-width: 150px;
+        }
+
+        &__dropdown {
+            left: 0;
+            margin-top: 0.125rem;
+            right: auto;
+            width: 250px;
+        }
+
+        &--right {
+            #{ $self }__dropdown {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        &--icon {
+            #{ $self }__button {
+                min-width: 0;
+            }
+        }
+
+        &--icon-mobile {
+            #{ $self }__button {
+                --button-radius: #{ $b-radius };
+
+                height: var(--button-height);
+                justify-content: flex-start;
+                padding: 0 0.65rem 0 0.75rem;
+                width: auto;
+            }
+
+            #{ $self }__text {
+                @include sr-only-reverse;
+            }
+
+            #{ $self }__chevron {
+                display: block;
+            }
+        }
+
+        &--wide {
+            #{ $self }__dropdown {
+                width: 450px;
+            }
+        }
+    }
+
+}

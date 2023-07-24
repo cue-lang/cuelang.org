@@ -1,16 +1,20 @@
-{{ define "main" }}
-    <div id="root" class="playground">
-        <div class="playground__spinner">
-            {{ partial "spinner.html" }}
-        </div>
-    </div>
-
-    <link rel="stylesheet" href="{{ "/playground/main.css" | relURL }}">
-    <script>
-        document.editorEnv = {
-            baseUrl: {{ .Site.BaseURL | absURL }},
-            wasmPath: '/playground'
-        }
-    </script>
-    <script src="{{ "/playground/bundle.min.js" | relURL }}" async></script>
-{{ end }}
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection }}" class="no-js">
+    <head>{{ partial "site/head.html" . }}</head>
+    <body>
+        <main id="root" class="playground">
+            <div class="playground__spinner">
+                {{ partial "spinner.html" }}
+            </div>
+        </main>
+        <script>
+            document.editorEnv = {
+                baseUrl: {{ .Site.BaseURL | absURL }},
+                wasmPath: '/playground'
+            }
+        </script>
+        <link rel="stylesheet" href="{{ "/playground/main.css" | relURL }}">
+        <script src="{{ "/playground/bundle.min.js" | relURL }}" async></script>
+        {{/*{{ partial "notification-bar.html" . }}*/}}
+    </body>
+</html>

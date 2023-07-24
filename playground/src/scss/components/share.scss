@@ -2,27 +2,106 @@
 @import '../config/prefix';
 @import '../config/sizes';
 @import '../config/typography';
+@import '../mixins/button';
 @import '../mixins/screen';
+@import '../mixins/sr-only';
+@import '../mixins/stretch';
 
 .#{ $prefix }-share {
+    $self: &;
+
+    align-items: center;
     display: flex;
     gap: 0.75rem;
 
     &__button {
+        --button-radius: 50%;
+
         flex: 0 0 auto;
+        font-weight: $weight-bold;
+        justify-content: center;
+        overflow: visible;
+        padding: 0;
+        width: var(--button-height);
+
+        #{ $self }.is-open & {
+            z-index: 7;
+        }
+
+        &:focus,
+        &:hover {
+            #{ $self }__arrow {
+                translate: 0 -3px;
+            }
+
+            &:disabled {
+                #{ $self }__arrow {
+                    translate: none;
+                }
+            }
+        }
+
+        &--copy {
+            display: flex;
+
+            #{ $self }__icon {
+                height: 14px;
+                width: 14px;
+            }
+        }
+    }
+
+    &__icon {
+        display: block;
+        height: 20px;
+        line-height: 1;
+        width: 20px;
+
+        &--animated {
+            margin-top: -3px;
+
+            svg {
+                overflow: visible;
+            }
+        }
+    }
+
+    &__text {
+        @include sr-only;
+    }
+
+    &__arrow {
+        transition: translate 0.15s;
+    }
+
+    &__content {
+        align-items: center;
+        background-color: $c-white;
+        box-shadow: $shadow-menu;
+        border-radius: $b-radius;
+        display: flex;
+        font-size: 0.875rem;
+        gap:  0.25rem;
+        left: $p-gutter;
+        margin: 0.5rem 0 0;
+        padding: 0.5rem;
+        position: absolute;
+        right: $p-gutter;
+        top: 100%;
+        z-index: 10;
     }
 
     &__input {
-        background-color: $c-blue--lighter;
-        border: 1px solid $c-blue;
+        background-color: $c-white;
+        border: 1px solid $c-grey-blue--dark;
         border-radius: $b-radius;
         color: $c-blue;
         flex: 1 1 auto;
         font-family: $font-inter;
         font-size: 0.875rem;
-        height: 30px;
-        line-height: 30px;
-        max-width: 300px;
+        font-weight: $weight-medium;
+        height: 32px;
+        line-height: 32px;
         padding: 0 0.75rem;
         width: 100%;
 
@@ -31,7 +110,125 @@
         }
     }
 
+    &__copy {
+        position: relative;
+    }
+
+    &__message {
+        background-color: $c-grey-blue--lightest;
+        border-radius: $b-radius;
+        box-shadow: 0 0 4px 2px transparentize($c-black, 0.9);
+        color: $c-grey-blue--darker;
+        display: block;
+        font-size: 0.75rem;
+        font-weight: $weight-medium;
+        height: 20px;
+        line-height: 20px;
+        margin-top: 0.75rem;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        white-space: nowrap;
+        width: fit-content;
+        z-index: 1;
+
+        &::before {
+            background-color: $c-grey-blue--lightest;
+            bottom: 100%;
+            box-shadow: 0 0 4px 2px transparentize($c-black, 0.9);
+            content: '';
+            display: block;
+            height: 10px;
+            right: $p-gutter;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -5px;
+            width: 10px;
+            z-index: -1;
+        }
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+
+    &__message-text {
+        background-color: $c-grey-blue--lightest;
+        display: block;
+        height: 100%;
+        padding: 0 8px;
+    }
+
+    &__overlay {
+        @include stretch;
+
+        background: transparentize($c-black, 0.75);
+        position: fixed;
+        z-index: 6;
+    }
+
+    @include screen($screen-medium) {
+        &__button {
+            --button-radius: 5px;
+
+            justify-content: flex-start;
+            padding: 0 0.65rem 0 0.75rem;
+            width: auto;
+        }
+
+        &__icon {
+            height: 22px;
+            line-height: 1;
+            width: 22px;
+        }
+
+        &__text {
+            @include sr-only-reverse;
+        }
+    }
+
+    @include screen($screen-medium) {
+        position: relative;
+
+        &__button {
+            &--copy {
+                display: none;
+            }
+        }
+
+        &__content {
+            background-color: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            left: auto;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            right: auto;
+            top: auto;
+            z-index: auto;
+        }
+
+        &__message {
+            left: 50%;
+            transform: translateX(-50%);
+
+            &::before {
+                left: 50%;
+                translate: -50% 0;
+            }
+        }
+
+        &__input {
+            max-width: 220px;
+        }
+    }
+
     @include screen($screen-simple) {
-        display: flex;
+        &__button {
+            &--copy {
+                display: flex;
+            }
+        }
     }
 }

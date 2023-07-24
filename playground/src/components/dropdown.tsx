@@ -2,29 +2,23 @@ import * as React from 'react';
 import { MouseEvent, MutableRefObject } from 'react';
 import cx from 'classnames';
 import { Icon } from './icon';
-
-export interface DropdownItem {
-    value: string;
-    link?: string;
-    name: string;
-}
+import { DropdownChange, DropdownItem } from '../models/dropdown';
 
 interface DropdownProps {
-    open?: boolean;
-    activeTitle: string;
+    activeItem: DropdownItem;
+    cssClass?: string;
     disabled?: boolean;
     disabledText?: string;
-    buttonClass?: string;
-    buttonPrefix?: string;
-    className?: string;
     id: string;
     items: DropdownItem[];
-    onDropdownSelect?: {(groupId: string, value: string): void};
+    name?: string;
+    onDropdownSelect?: {(change: DropdownChange): void};
+    open?: boolean;
 }
 
 interface DropdownState {
+    activeItem: DropdownItem;
     open: boolean;
-    activeTitle: string;
 }
 
 export class Dropdown extends React.Component<DropdownProps, DropdownState> {
@@ -35,7 +29,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
         this.state = {
             open: props.open ?? false,
-            activeTitle: props.activeTitle ?? '',
+            activeItem: props.activeItem,
         };
 
         this.dropdownRef = React.createRef();
@@ -51,10 +45,18 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         document.removeEventListener('touchstart', this.onDocumentClick);
     }
 
-    public isOpen () {
-        return (typeof this.props.open === 'boolean') ?
-            this.props.open :
-            this.state.open;
+    public componentDidUpdate(prevProps: DropdownProps) {
+        if (prevProps.open !== this.props.open) {
+            this.setState({
+                open: this.props.open
+            });
+        }
+
+        if (prevProps.activeItem !== this.props.activeItem) {
+            this.setState({
+                activeItem: this.props.activeItem
+            });
+        }
     }
 
     public hide() {
@@ -72,49 +74,49 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     public render () {
         const dropdownClasses = cx({
             'cue-dropdown': true,
-            'is-open': this.isOpen(),
+            'is-open': this.state.open,
             'is-disabled': this.props.disabled,
-        });
+        }, this.props.cssClass);
 
-        const buttonClassNames = cx(
-            'cue-dropdown__button',
-            'cue-button',
-            this.props.buttonClass,
-        )
         const items = [];
         for (const item of this.props.items) {
+            const linkClassNames = cx({
+                'is-selected': item.value === this.state.activeItem.value
+                }, 'cue-dropdown__link');
+
             items.push(<li className="cue-dropdown__item" key={ item.value }>
                 { item.link
-                    ?  <a className="cue-dropdown__link"
+                    ?  <a className={ linkClassNames }
                           href={ item.link }
                           onClick={ () => this.onLinkClick(item) }
                     >{ item.name }</a>
-                    : <button className="cue-dropdown__link"
+                    : <button className={ linkClassNames }
                               onClick={(e) => this.onClick(e, item)}
                     >{ item.name }</button>
                 }
                </li>);
         }
-
+        const buttonText = `${ this.props.name ? (this.props.name + ': ') : ''}${ this.state.activeItem.name ?? ''}`;
+        const disabledText = `${ this.props.name ? (this.props.name + ': ') : ''}${ this.props.disabledText ?? 'N/A' }`;
+        const disabled = this.props.disabled || items.length <= 1;
         return (
             <div className={ dropdownClasses } ref={ this.dropdownRef }>
                 <button
-                    aria-expanded={ this.isOpen() }
-                    className={ buttonClassNames }
-                    disabled={ this.props.disabled }
+                    aria-expanded={ this.state.open }
+                    className="cue-dropdown__button"
+                    disabled={ disabled }
                     id={ this.props.id }
                     onClick={ this.onToggleClick.bind(this) }
                 >
-                    { this.props.disabled ?
-                        (this.props.disabledText ?? 'N/A') :
-                        ((this.props.buttonPrefix ?? '') + this.state.activeTitle)
+                    { this.props.disabled ? disabledText : buttonText }
+                    { !disabled &&
+                        <span className="cue-dropdown__icon">
+                            <Icon icon="chevron-down"></Icon>
+                        </span>
                     }
-                    <span className="cue-button__icon">
-                        <Icon icon="chevron-down"></Icon>
-                    </span>
                 </button>
 
-                { !this.props.disabled && this.isOpen() &&
+                { (!this.props.disabled && this.state.open && items.length > 1) &&
                     <div className="cue-dropdown__content" aria-labelledby={ this.props.id }>
                         <ul className="cue-dropdown__list">
                             { items }
@@ -127,7 +129,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     private onLinkClick(item: DropdownItem) {
         this.setState({
-            activeTitle: item.name
+            activeItem: item,
         });
 
         this.hide();
@@ -136,22 +138,28 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     private onClick(event: MouseEvent, item: DropdownItem) {
         event.preventDefault();
         this.setState({
-            activeTitle: item.name
+            activeItem: item,
         });
-        this.props.onDropdownSelect(this.props.id, item.value);
+        this.props.onDropdownSelect({
+            groupId: this.props.id,
+            selected: item,
+        });
         this.hide();
     }
 
     private onDocumentClick(event: Event) {
+        if (!this.state.open) {
+            return;
+        }
         const dropdownElement = this.dropdownRef.current;
-        if (this.isOpen() && event.target !== dropdownElement && !dropdownElement.contains(event.target as HTMLElement)) {
+        if (event.target !== dropdownElement && !dropdownElement.contains(event.target as HTMLElement)) {
             this.hide();
         }
     }
 
     private onToggleClick(event: MouseEvent) {
         event.preventDefault();
-        if (this.isOpen()) {
+        if (this.state.open) {
             this.hide();
         } else {
             this.show();

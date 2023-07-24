@@ -5,9 +5,13 @@ $c-blue:                #232a68;
 $c-blue--dark:          #0c2c65;
 $c-blue--darker:        #0f1333;
 
-$c-grey-blue--lighter:  #f1f2f6;
-$c-grey-blue--light:    #e7e8ee;
-$c-grey-blue:           #e0e2eb;
+$c-grey-blue--lightest: #f4f5f9;
+$c-grey-blue--lighter:  #f9faff;
+$c-grey-blue--light:    #eef0f5;
+$c-grey-blue:           #d5d9e7;
+$c-grey-blue--medium:   #cdcdd6;
+$c-grey-blue--dark:     #6f7185;
+$c-grey-blue--darker:   #50515c;
 
 $c-red--lighter:        #ffbcbc;
 $c-red--light:          #de4a4b;
@@ -21,7 +25,6 @@ $c-yellow--dark:        #dcab27;
 $c-pink:                #ff007f;
 
 $c-white:               #fff;
-$c-white-vscode:        #fffffe;
 $c-black:               #000;
 
 $c-grey--lightest:      #f8f9fd;
@@ -35,3 +38,5 @@ $c-grey--darkest:       #231f20;
 $c-error:               $c-red;
 $c-success:             #16b51e;
 $c-input:               $c-grey;
+$c-terminal:            $c-grey-blue--light;
+$shadow-menu:           0 4px 10px 0 transparentize($c-black, 0.8);

@@ -1,32 +1,68 @@
 @import '../config/colors';
 @import '../config/prefix';
 @import '../config/sizes';
+@import '../config/typography';
 @import '../mixins/list-reset';
+@import '../mixins/button';
+@import '../mixins/svg';
 
 .#{ $prefix }-dropdown {
+    $self: &;
+
+    line-height: 1;
+    min-width: 125px;
+    pointer-events: auto;
     position: relative;
+    text-align: left;
 
     &__button {
-        .#{ $prefix }-button__icon {
-            margin: 1px -6px 0 4px;
-            transition: rotate 0.2s;
+        @include button-base;
 
-            .is-open & {
-                rotate: 180deg;
-            }
+        @include button-style(
+            var(--button-background, #{ $c-white }),
+            var(--button-border, #{ $c-grey--light }),
+            var(--button-color, #{ $c-blue--darker }),
+            var(--button-background-hover, #{ $c-white }),
+            var(--button-border-hover, #{ darken($c-grey--light, 15%) }),
+            var(--button-color-hover, #{ $c-blue--darker }),
+            var(--button-background-disabled, #{ $c-grey-blue--light }),
+            var(--button-border-disabled, #{ $c-grey-blue--dark }),
+            var(--button-color-disabled, #{ $c-grey-blue--dark })
+        );
+
+        --button-radius: #{ $b-radius };
+
+        justify-content: space-between;
+        min-width: 125px;
+        padding: 0 0.65rem 0 0.75rem;
+
+        &:disabled {
+            pointer-events: none;
+        }
+    }
+
+    &__icon {
+        display: block;
+        height: 18px;
+        width: 18px;
+        margin: 1px -6px 0 4px;
+        transition: rotate 0.2s;
+
+        #{ $self }.is-open & {
+            rotate: 180deg;
         }
     }
 
     &__content {
         background-color: $c-white;
-        border: 1px solid transparentize($c-black, 0.85);
+        box-shadow: $shadow-menu;
         border-radius: $b-radius;
         left: 0;
         margin: 0.125rem 0 0;
-        min-width: 10rem;
         padding: 0.5rem 0;
         position: absolute;
         top: 100%;
+        width: 100%;
         z-index: 10;
     }
 
@@ -36,7 +72,10 @@
 
     &__link {
         display: block;
-        padding: 0.4rem 1rem;
+        font-size: 0.875rem;
+        font-weight: $weight-medium;
+        padding: 0.5rem 1rem 0.5rem 1.75rem;
+        position: relative;
         text-decoration: none;
         transition: background-color 0.2s;
         width: 100%;
@@ -44,6 +83,41 @@
         &:focus-visible,
         &:hover {
             background-color: $c-grey--lighter;
+        }
+
+        &.is-selected {
+            &::before {
+                @include svg('check', $c-black);
+
+                display: block;
+                height: 12px;
+                left: 0.75rem;
+                line-height: 12px;
+                position: absolute;
+                top: 0.6rem;
+                vertical-align: -3px;
+                width: 12px;
+            }
+        }
+    }
+
+    &--tab {
+        min-width: $w-tab;
+
+        #{ $self }__button {
+            background-color: transparent;
+            border-color: transparent;
+            height: 22px;
+            line-height: 20px;
+            max-width: $w-tab;
+            padding: 0 0.5rem;
+
+            &:focus-visible,
+            &:hover {
+                background-color: $c-grey-blue--lighter;
+                border-color: $c-grey-blue
+            }
+
         }
     }
 }

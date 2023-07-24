@@ -1,6 +1,6 @@
 ---
 title: "CUE Playground"
-header_type: wide
+show_header: false
 show_footer: false
 layout: playground
 ---

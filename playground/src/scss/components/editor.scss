@@ -2,18 +2,18 @@
 @import '../config/prefix';
 
 .#{ $prefix }-editor {
-    background: $c-white-vscode;
+    background: $c-white;
     padding-top: 1rem;
 
     &--terminal {
-        background: $c-grey-blue--lighter;
+        background: $c-terminal;
 
         .monaco-editor {
-            --vscode-editor-background: #{ $c-grey-blue--lighter };
-            --vscode-breadcrumb-background: #{ $c-grey-blue--lighter };
-            --vscode-editorGutter-background: #{ $c-grey-blue--lighter };
-            --vscode-editorMarkerNavigation-background: #{ $c-grey-blue--lighter };
-            --vscode-editorStickyScroll-background: #{ $c-grey-blue--lighter };
+            --vscode-editor-background: #{ $c-terminal };
+            --vscode-breadcrumb-background: #{ $c-terminal };
+            --vscode-editorGutter-background: #{ $c-terminal };
+            --vscode-editorMarkerNavigation-background: #{ $c-terminal };
+            --vscode-editorStickyScroll-background: #{ $c-terminal };
         }
     }
 }
