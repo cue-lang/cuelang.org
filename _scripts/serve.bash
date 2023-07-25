@@ -6,4 +6,4 @@ set -eux
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 # Run the preprocess in serve mode which will itself run hugo
-source _scripts/runPreprocessor.bash execute --serve --hugo '-D' --hugo '--renderToDisk' "$@"
+source _scripts/runPreprocessor.bash execute --serve --hugo '-D' --hugo '--renderToDisk' --debug=hugo "$@"
