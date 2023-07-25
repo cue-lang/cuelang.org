@@ -18,9 +18,9 @@ issue a `cuelang.org: ` prefix.
 
 ### Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `== v14.17.3`
-* [Go](https://golang.org/dl/) `== go1.17.3`
-* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.89.4`
+* [NodeJS](https://nodejs.org/) `== v18`
+* [Go](https://golang.org/dl/) `== go1.20`
+* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.115.4`
 
 ### Developing the site locally
 

@@ -6,10 +6,10 @@
   command = "bash build.bash"
 
 [build.environment]
-GO_VERSION = "1.20.2"
+GO_VERSION = "1.20.6"
 HUGO_ENV = "production"
-HUGO_VERSION = "0.108.0"
-NODE_VERSION = "18.12.1"
+HUGO_VERSION = "0.115.4"
+NODE_VERSION = "18.17.0"
 
 [context.deploy-preview]
 command = "bash build.bash -b $DEPLOY_URL"
