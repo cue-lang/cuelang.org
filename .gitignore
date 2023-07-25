@@ -5,6 +5,9 @@
 /resources
 /themes
 
+# Contains the preprocessor for alpha.cuelang.org
+/.gobin
+
 # Ignore node_modules everywhere
 node_modules
 
