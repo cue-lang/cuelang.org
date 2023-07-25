@@ -11,12 +11,14 @@
 
     background-color: var(--article-background, $c-white);
     height: 100%;
+    margin: 0 auto;
+    max-width: $w-content--small;
     padding: 2rem 0;
 
     &__container {
         @include container($w-content);
 
-        padding: 0 1.5rem;
+        padding: 0 $p-gutter;
         position: relative;
     }
 
@@ -39,6 +41,12 @@
 
     &__content {
         padding-bottom: 2rem;
+    }
+
+    &--blog {
+        p:first-child {
+            @include style-intro-article;
+        }
     }
 
     &--docs {
@@ -66,6 +74,20 @@
     @include screen($screen-normal) {
         &__container {
             padding: 0 1.875rem;
+        }
+
+        &--blog {
+            #{ $self }__header {
+                margin: 0 (-$p-gutter--large);
+            }
+        }
+    }
+
+    @include screen($screen-large) {
+        &--blog {
+            #{ $self }__header {
+                margin: 0 (2 * -$p-gutter--large);
+            }
         }
     }
 }

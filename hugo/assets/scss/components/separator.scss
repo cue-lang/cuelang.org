@@ -19,4 +19,11 @@
     &--wide {
         max-width: $w-section-content + 120px;
     }
+
+    &--blog {
+        background-color: $c-yellow;
+        height: 2px;
+        margin: 0 auto;
+        opacity: 1;
+    }
 }
