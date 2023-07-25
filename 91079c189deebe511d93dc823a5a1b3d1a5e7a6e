@@ -33,6 +33,23 @@
       "message": "PR already approved; please can you robotically approve?",
       "revId": "91079c189deebe511d93dc823a5a1b3d1a5e7a6e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b0b9386_597119d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-07-25T12:36:36Z",
+      "side": 1,
+      "message": "Removing hold; previous CL merged.",
+      "revId": "91079c189deebe511d93dc823a5a1b3d1a5e7a6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
