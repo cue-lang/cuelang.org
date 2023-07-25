@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee620f70_fa27e9ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-25T15:30:28Z",
+      "side": 1,
+      "message": "Tested with:\n\n- `./_scripts/serve.bash`\n- `./_scripts/serve.bash --debug\u003dall`\n- `./_scripts/serve.bash` after manually removing `--debug\u003dhugo`\n\nAll 3 output verbosities were distinct, and contained the expected level of detail.",
+      "revId": "28c1828be2fe83b9fef67be34c468a492da02c82",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
