@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "381078f8_65b6f269",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-07-25T10:36:13Z",
+      "side": 1,
+      "message": "you could just call the group cuelang.org I think, FWIW.\n\nAlso, I think you mean that you added Jonathan to the group via the web UI? I would clarify that, as otherwise it seems like you\u0027re adding him here.",
+      "revId": "f200dcc9ff3bc294c07b621519909244d9ce6540",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
