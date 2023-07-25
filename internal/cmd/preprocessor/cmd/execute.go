@@ -93,6 +93,10 @@ type executionContext struct {
 	// lot of noise.
 	debugFsnotify bool
 
+	// debugHugo is set when we want to enabled fine-grained logging related
+	// to hugo output in the --serve mode.
+	debugHugo bool
+
 	// tempRoot is the directory path under which all temporary files created
 	// during an execution run of the preprocessor should be created.
 	tempRoot string
@@ -173,10 +177,13 @@ func executeDef(c *Command, args []string) error {
 			ctx.debugGeneral = !set
 			ctx.debugFsnotify = !set
 			ctx.debugCache = !set
+			ctx.debugHugo = !set
 		case "fsnotify":
 			ctx.debugFsnotify = !set
 		case "cache":
 			ctx.debugCache = !set
+		case "hugo":
+			ctx.debugHugo = !set
 		default:
 			return fmt.Errorf("unknown debug flag %q", flagDebug.String(c))
 		}

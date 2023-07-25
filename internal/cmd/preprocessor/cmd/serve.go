@@ -184,9 +184,8 @@ func (sc *serveContext) relayHugoOutput() {
 			nl = "\n"
 		}
 
-		sc.e.debugf(sc.e.debugGeneral, "%s%s%s", prefix, line, nl)
+		sc.e.debugf(sc.e.debugHugo, "%s%s%s", prefix, line, nl)
 	}
-
 }
 
 func (sc *serveContext) findGitTopLevel() {
