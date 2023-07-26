@@ -16,6 +16,24 @@
       "message": "Tested with:\n\n- `./_scripts/serve.bash`\n- `./_scripts/serve.bash --debug\u003dall`\n- `./_scripts/serve.bash` after manually removing `--debug\u003dhugo`\n\nAll 3 output verbosities were distinct, and contained the expected level of detail.",
       "revId": "28c1828be2fe83b9fef67be34c468a492da02c82",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32fa0d84_24c040a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-07-26T04:28:48Z",
+      "side": 1,
+      "message": "\u003e `./_scripts/serve.bash` after manually removing `--debug\u003dhugo`\n\nFYI there is no need to do this manually. The `--debug` flag can appear multiple times, using a `-` to subtract a log element:\n\n```\n./_scripts/serve.bash --debug\u003dall --debug\u003d-hugo\n```",
+      "parentUuid": "ee620f70_fa27e9ec",
+      "revId": "28c1828be2fe83b9fef67be34c468a492da02c82",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
