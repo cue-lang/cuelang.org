@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdb8ef07_9e457f5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-07-26T07:09:05Z",
+      "side": 1,
+      "message": "A few other files were removed in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/553894, are those not present in alpha?",
+      "revId": "96588e5ff66175cc605d8d8069570411e39803db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
