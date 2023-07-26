@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "393b6564_afb1fa46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-26T16:21:50Z",
+      "side": 1,
+      "message": "I\u0027ve crossed checked that the versions are consistent across files, and I trust that CI would find any errors if the bumps were problematic. These versions match what I\u0027ve been running, locally, since on-boarding (except I\u0027m running Go 1.20.5, not .6), which gives me additional confidence that the upgrades are to valid versions and to a valid combination of versions.",
+      "revId": "23d5206e2bffa2951a9eca6f44371c5e2c72185b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
