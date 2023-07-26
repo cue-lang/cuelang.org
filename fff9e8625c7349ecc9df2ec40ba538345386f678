@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4f77c1d_572c4256",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-26T16:30:52Z",
+      "side": 1,
+      "message": "As with https://review.gerrithub.io/c/cue-lang/cuelang.org/+/556929, I\u0027ve crossed checked that the versions are consistent across files, and I trust that CI would find relevant errors if the bumps were problematic.\n\nI /haven\u0027t/ validated the reproducibility of the `go.sum` changes or executed the updated `play/_scripts/revendorToolsInternal.bash` script, nor have I run any code in this non-alpha branch. If that doesn\u0027t meet your expectations, or if these points need independent validation, please do ping me back.",
+      "revId": "fff9e8625c7349ecc9df2ec40ba538345386f678",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
