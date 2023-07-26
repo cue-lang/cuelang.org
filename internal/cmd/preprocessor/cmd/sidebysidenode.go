@@ -282,14 +282,6 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 		// Need to be able to pass stdin
 		"-i",
 
-		// For now, do not isolate the network. In general this is not an
-		// acceptable solution from a security perspective. It also only works on
-		// Linux. But given there is currently some control over the scripts that
-		// run, there is some real benefit to the speed improvements.
-		//
-		// When caching of script runs lands, we will remove this workaround.
-		"--network=host",
-
 		// All docker images used by unity must support this interface
 		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
 		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
