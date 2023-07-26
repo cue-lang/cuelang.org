@@ -33,7 +33,8 @@ import (
 )
 
 var (
-	hugoArgs []string
+	debugArgs []string
+	hugoArgs  []string
 )
 
 type serveContext struct {
