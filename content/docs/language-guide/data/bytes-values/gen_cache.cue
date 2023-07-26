@@ -6,8 +6,8 @@ package site
 				"bytes-values": {
 					cache: {
 						sidebyside: {
-							"bytes-to-json": "EYoTvTcRRxZx0axFQgypG0p4x/9a6MdqARa8SFwlODQ="
-							"bytes-to-yaml": "RkQAiVRCl5ZewFLH4hX6RDEdpHVQYzHAe7xA/eXwWdw="
+							"bytes-to-json": "2Ob/SYG9s6zH24mREMja9gp4cJ2I5eNOtt05BYoCt2Q="
+							"bytes-to-yaml": "jbTC2xpkufFaMKP+bPihYLa5oR7VaKntCXCn5L2jEFg="
 						}
 					}
 				}

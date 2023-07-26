@@ -6,9 +6,9 @@ package site
 				"composite-schemas": {
 					cache: {
 						sidebyside: {
-							"core-builtin-close":   "HPIvrpCnZc1ot8FA55ra7W2HV+pib6wqdg5+0htb7dY="
-							"composition-operator": "D2olJ6MG3Zv3dqAVe4mVbpqTzBEnyRiKJDwU9aG0K9w="
-							embedding:              "obpb4SVprGr65DXn0zc8rJARczIzuuHw3sqCU5ZDOBg="
+							"core-builtin-close":   "FC+BicTfurmXRh9dPoEtEgZ1hboH4oXkULHc1TWK/3k="
+							"composition-operator": "jgIkM/G/lDxLnWTeOL+UibFYLgkPBGGRnOEQRFg++68="
+							embedding:              "L/2gIcy9nf7eEWtY0wyQaNlaq9iusV8NRlIzNxUMPsw="
 						}
 					}
 				}
