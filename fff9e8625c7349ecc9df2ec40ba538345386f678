@@ -34,6 +34,24 @@
       "parentUuid": "d4f77c1d_572c4256",
       "revId": "fff9e8625c7349ecc9df2ec40ba538345386f678",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52d149a8_04beb50e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-07-26T16:44:08Z",
+      "side": 1,
+      "message": "The reproducibility should be entirely tested by CI. If it isn\u0027t then that\u0027s a bug that should be fixed elsewhere, but we don\u0027t have any indication of problems there for now. Hence, it should suffice to look at the versions, and sanity check them for this CL.",
+      "parentUuid": "7876701e_d8fac331",
+      "revId": "fff9e8625c7349ecc9df2ec40ba538345386f678",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
