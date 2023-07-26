@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"encoding/base64"
 	"fmt"
 	"io/fs"
 	"os"
@@ -68,6 +69,10 @@ func (ec *executeContext) execute() error {
 	// input into the caching calculation.
 	if err := ec.deriveHashOfSelf(); err != nil {
 		return err
+	}
+
+	if ec.selfHash == "" {
+		return ec.errorf("%v: failed to compute non-empty hash of self", ec)
 	}
 
 	ec.debugf(ec.debugCache, "%v: selfHash: %s", ec, ec.selfHash)
@@ -214,6 +219,8 @@ func (ec *executeContext) findPages() error {
 	return nil
 }
 
+// deriveHashOfSelf is responsible for setting ec.selfHash to a value that
+// represents a hash of the running preprocessor binary.
 func (ec *executeContext) deriveHashOfSelf() error {
 	// If we have buildinfo, with a main package module which has version and sum
 	// information we use that
@@ -270,6 +277,8 @@ func (ec *executeContext) deriveHashOfSelf() error {
 	if buf != nil {
 		ec.debugf(ec.debugCache, "hash of self: %s\n", tabIndent(buf.Bytes()))
 	}
+
+	ec.selfHash = base64.StdEncoding.EncodeToString(hash.Sum(nil))
 
 	return nil
 }
