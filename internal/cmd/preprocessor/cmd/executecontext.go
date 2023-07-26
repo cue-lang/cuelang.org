@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"encoding/base64"
 	"fmt"
 	"io/fs"
 	"os"
@@ -214,7 +215,16 @@ func (ec *executeContext) findPages() error {
 	return nil
 }
 
-func (ec *executeContext) deriveHashOfSelf() error {
+// deriveHashOfSelf is responsible for setting ec.selfHash to a value that
+// represents a hash of the running preprocessor binary.
+func (ec *executeContext) deriveHashOfSelf() (err error) {
+	// Post condition: ec.selfHash must be non-empty
+	defer func() {
+		if err == nil && ec.selfHash == "" {
+			err = ec.errorf("%v: failed to compute non-empty hash of self", ec)
+		}
+	}()
+
 	// If we have buildinfo, with a main package module which has version and sum
 	// information we use that
 	bi, ok := debug.ReadBuildInfo()
@@ -242,7 +252,7 @@ func (ec *executeContext) deriveHashOfSelf() error {
 	// github.com/cue-lang/cuelang.org. (It might be possible to relax this
 	// constraint, but a tight constraint works for now).
 	hash, buf := ec.executionContext.createHash()
-	err := fs.WalkDir(files, ".", func(path string, d fs.DirEntry, err error) error {
+	err = fs.WalkDir(files, ".", func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
@@ -270,6 +280,8 @@ func (ec *executeContext) deriveHashOfSelf() error {
 	if buf != nil {
 		ec.debugf(ec.debugCache, "hash of self: %s\n", tabIndent(buf.Bytes()))
 	}
+
+	ec.selfHash = base64.StdEncoding.EncodeToString(hash.Sum(nil))
 
 	return nil
 }
