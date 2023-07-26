@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "516392eb_02971881",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-26T09:22:56Z",
+      "side": 1,
+      "message": "Tested with a variety of positive and negative debug flags, both singletons and comma-separated, including the new `general` logging. Output includes expected logs.",
+      "revId": "8902a889dc4ad4e456c336a8b145679407f86213",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1194dfbf_330b1877",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-26T09:22:56Z",
+      "side": 1,
+      "message": "This legacy comment doesn\u0027t still seem accurate, to my eye. \n\nOnly the \"all\" and \"general\" debug categories appear to mutate `ctx.debugGeneral`, which I don\u0027t /believe/ is set by default, elsewhere. So unless I\u0027m misunderstanding the flow, at least \"fsnotify\", \"cache\" and \"hugo\" don\u0027t imply \"general\" debug logging is turned on.",
+      "revId": "8902a889dc4ad4e456c336a8b145679407f86213",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f0d8d41_ba42364b",
+        "filename": "internal/cmd/preprocessor/cmd/execute_doc.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-26T09:22:56Z",
+      "side": 1,
+      "message": "\"negated\", or \"negatable\"?",
+      "revId": "8902a889dc4ad4e456c336a8b145679407f86213",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
