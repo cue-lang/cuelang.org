@@ -168,27 +168,30 @@ func executeDef(c *Command, args []string) error {
 		skipCache:         flagSkipCache.Bool(c),
 	}
 
-	// Debug logging. Any level of debug logging enabled implies
-	// general debug logging is turned on.
-	for _, v := range strings.Split(flagDebug.String(c), ",") {
-		v, set := strings.CutPrefix(v, "-")
-		switch v {
-		case "all":
-			ctx.debugGeneral = !set
-			ctx.debugFsnotify = !set
-			ctx.debugCache = !set
-			ctx.debugHugo = !set
-		case "fsnotify":
-			ctx.debugFsnotify = !set
-		case "cache":
-			ctx.debugCache = !set
-		case "hugo":
-			ctx.debugHugo = !set
-		default:
-			return fmt.Errorf("unknown debug flag %q", flagDebug.String(c))
+	// Debug logging. Any level of debug logging enabled implies general debug
+	// logging is turned on.
+	for _, a := range debugArgs {
+		for _, v := range strings.Split(a, ",") {
+			v, set := strings.CutPrefix(v, "-")
+			switch v {
+			case "all":
+				ctx.debugGeneral = !set
+				ctx.debugFsnotify = !set
+				ctx.debugCache = !set
+				ctx.debugHugo = !set
+			case "general":
+				ctx.debugGeneral = !set
+			case "fsnotify":
+				ctx.debugFsnotify = !set
+			case "cache":
+				ctx.debugCache = !set
+			case "hugo":
+				ctx.debugHugo = !set
+			default:
+				return fmt.Errorf("unknown debug flag %q", flagDebug.String(c))
+			}
 		}
 	}
-	ctx.debugGeneral = ctx.debugGeneral || ctx.debugCache || ctx.debugFsnotify
 
 	e := newExecutor(&ctx, wd, projectRoot, c)
 	if flagServe.Bool(c) {
