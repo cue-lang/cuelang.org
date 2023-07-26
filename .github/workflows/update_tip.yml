@@ -69,16 +69,16 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.16.0
+          node-version: 18.17.0
       - name: Install Go
         uses: actions/setup-go@v4
         with:
           cache: false
-          go-version: 1.20.4
+          go-version: 1.20.6
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.111.3
+          hugo-version: 0.115.4
           extended: true
       - id: go-mod-cache-dir
         name: Get go mod cache directory
@@ -93,8 +93,8 @@ jobs:
             ${{ steps.go-cache-dir.outputs.dir }}
             ~/.cache/dockercache
             ${{ github.workspace }}/playground/.webpack_cache
-          key: Linux-1.20.4-${{ github.run_id }}
-          restore-keys: Linux-1.20.4
+          key: Linux-1.20.6-${{ github.run_id }}
+          restore-keys: Linux-1.20.6
       - name: Tip dist
         run: ./_scripts/build.bash
         env:
