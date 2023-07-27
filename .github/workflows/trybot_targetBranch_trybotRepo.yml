@@ -228,7 +228,7 @@ jobs:
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
     if: |-
       (! (contains(github.event.head_commit.message, '
-      Dispatch-Trailer: {"type":"'))) && (github.repository == 'cue-lang/cuelang.org')
+      Dispatch-Trailer: {"type":"'))) && (github.repository == 'cue-lang/cuelang.org-trybot')
     strategy:
       fail-fast: false
       matrix:
@@ -236,7 +236,6 @@ jobs:
           - 1.20.x
         runner:
           - ubuntu-22.04
-          - macos-13
     runs-on: ${{ matrix.runner }}
     defaults:
       run:
