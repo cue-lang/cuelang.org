@@ -69,6 +69,24 @@
       "parentUuid": "fe15f453_30f523c4",
       "revId": "ec757779101ee44ad79ee65c4d6f484f5de3c0b1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "520b7e37_a2dae76e",
+        "filename": "internal/cmd/preprocessor/cmd/script_test.go",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-07-27T12:20:01Z",
+      "side": 1,
+      "message": "Per offline chat, I can\u0027t do this because I\u0027m setting the variable in `env` not `os`.",
+      "parentUuid": "21a7034f_8a500be4",
+      "revId": "ec757779101ee44ad79ee65c4d6f484f5de3c0b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
