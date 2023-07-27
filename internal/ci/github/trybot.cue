@@ -36,7 +36,7 @@ workflows: trybot: _trybot & {
 	}
 
 	jobs: test: {
-		if: "\(_repo.containsTrybotTrailer)"
+		if: "\(_repo.containsTrybotTrailer) || github.event_name = 'pull_request'"
 		strategy: {
 			"fail-fast": false
 			matrix: {
@@ -48,7 +48,22 @@ workflows: trybot: _trybot & {
 	}
 }
 
-workflows: trybot_targetBranch: _trybot & {
+workflows: trybot_targetBranch: _trybot_targetBranch & {
+	#repo: _repo.githubRepositoryPath
+	jobs: test: strategy: matrix: runner: [_repo.linuxMachine, _repo.macosMachine]
+}
+
+workflows: trybot_targetBranch_trybotRepo: _trybot_targetBranch & {
+	#repo: _repo.trybotRepositoryPath
+	jobs: test: strategy: matrix: runner: [_repo.linuxMachine]
+}
+
+// _trybot_targetBranch provides a template for our two trybot_targetBranch workflows.
+// One runs in the main repo: this includes macOS in the matrix. The other runs in the
+// trybot repo and does not include macOS. They are otherwise identical.
+_trybot_targetBranch: _trybot & {
+	#repo: string
+
 	name: _repo.trybot.name + " target branch"
 
 	on: {
@@ -59,17 +74,15 @@ workflows: trybot_targetBranch: _trybot & {
 	}
 
 	jobs: test: {
-		if: "! \(_repo.containsDispatchTrailer)"
+		if: "(! \(_repo.containsDispatchTrailer)) && (github.repository == '\(#repo)')"
 		strategy: {
 			"fail-fast": false
 			matrix: {
 				"go-version": [_repo.latestStableGo]
-				runner: [_repo.linuxMachine, _repo.macosMachine]
 			}
 		}
 		"runs-on": "${{ matrix.runner }}"
 	}
-
 }
 
 // The trybot workflow.

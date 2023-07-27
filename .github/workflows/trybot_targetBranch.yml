@@ -227,8 +227,8 @@ jobs:
           ALGOLIA_INDEX_NAME: cuelang.org
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
     if: |-
-      ! (contains(github.event.head_commit.message, '
-      Dispatch-Trailer: {"type":"'))
+      (! (contains(github.event.head_commit.message, '
+      Dispatch-Trailer: {"type":"'))) && (github.repository == 'cue-lang/cuelang.org')
     strategy:
       fail-fast: false
       matrix:
