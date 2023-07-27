@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ef6d6120_ec606274",
+        "filename": ".github/workflows/trybot.yml",
+        "patchSetId": 48
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-27T11:25:17Z",
+      "side": 1,
+      "message": "I don\u0027t see the `matrix` context being set up in this file, though it appears to be mentioned in the CUE source. Is it being orchestrated by some external iterator making multiple workflow dispatch calls, or has `jobs.test.matrix` gone missing from this generated file?",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a433f4aa_08da1f3a",
         "filename": "internal/ci/github/trybot.cue",
         "patchSetId": 48
@@ -49,6 +66,41 @@
       "side": 1,
       "message": "or alternatively unify with such a \"if os is mac\" step conditional when you insert these sub-lists or elements into the top list, then you deduplicate even more.",
       "parentUuid": "b7bf6b7c_0f23fcae",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b39cd7e_5dc34459",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 48
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-27T11:25:17Z",
+      "side": 1,
+      "message": "It\u0027s also missing a `name` field.",
+      "parentUuid": "67ab7964_047fd18c",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07b810f9_98bf4e19",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 48
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-27T11:25:17Z",
+      "side": 1,
+      "message": "I know that the topology/layout of the CUE file doesn\u0027t currently lend itself to this approach, but I submit that it would be kinder to macOS users to version control a top-level `Brewfile` (and possibly `Brewfile.lock.json`, depending on our update cadence/automation inclinations) detailing all the brew-install-able deps.\n\nThis would then be installed with brew bundle (https://docs.brew.sh/Manpage#bundle-subcommand), both for the macOS user and as a single pre-tool-setup/-configuration step here in CI.",
       "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
