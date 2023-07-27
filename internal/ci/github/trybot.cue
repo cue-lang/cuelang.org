@@ -18,39 +18,14 @@ import (
 	"list"
 	"strings"
 	"strconv"
+	encjson "encoding/json"
 
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
-workflows: trybot: _trybot & {
-	name: _repo.trybot.name
-
-	on: {
-		push: {
-			branches: _repo.protectedBranchPatterns // do not run PR branches, or the test default branch.
-			"tags-ignore": [_repo.releaseTagPattern]
-		}
-		pull_request: {}
-	}
-
-	jobs: test: {
-		if: "\(_repo.containsTrybotTrailer)"
-		strategy: {
-			"fail-fast": false
-			matrix: {
-				"go-version": [_repo.latestStableGo]
-				runner: [_repo.linuxMachine]
-			}
-		}
-		"runs-on": "${{ matrix.runner }}"
-	}
-}
-
-workflows: trybot_targetBranch: _trybot & {
-	name: _repo.trybot.name + " target branch"
-
+workflows: trybot: _repo.bashWorkflow & {
 	on: {
 		push: {
 			branches: list.Concat([[_repo.testDefaultBranch], _repo.protectedBranchPatterns]) // do not run PR branches
@@ -59,128 +34,132 @@ workflows: trybot_targetBranch: _trybot & {
 	}
 
 	jobs: test: {
-		if: "! \(_repo.containsDispatchTrailer)"
 		strategy: {
 			"fail-fast": false
 			matrix: {
 				"go-version": [_repo.latestStableGo]
-				runner: [_repo.linuxMachine, _repo.macosMachine]
+
+				// Always run on Linux. Run on macOS (very slow runners) for
+				// commits in the target branch in the main repo. Everywhere else
+				// (CLs, PRs, trybot repo) do not run macOS.
+				//
+				// The uses the little-documented ternary operator... which isn't
+				// the prettiest of things.
+				runner: """
+				${{
+					((! \(_repo.containsDispatchTrailer)) && (github.repository == '\(_repo.githubRepositoryPath)')) &&
+					fromJSON('\(encjson.Marshal([_repo.linuxMachine, _repo.macosMachine]))') ||
+					fromJSON('\(encjson.Marshal([_repo.linuxMachine]))')
+				}}
+				"""
 			}
 		}
 		"runs-on": "${{ matrix.runner }}"
-	}
 
-}
+		steps: [
+			_updateHomebrew,
 
-// The trybot workflow.
-_trybot: _repo.bashWorkflow & {
-	jobs: {
-		test: {
-			steps: [
-				_updateHomebrew,
+			for v in _repo.checkoutCode {v},
 
-				for v in _repo.checkoutCode {v},
+			_repo.earlyChecks,
 
-				_repo.earlyChecks,
+			for v in _installDockerMacOS {v},
 
-				for v in _installDockerMacOS {v},
+			_installMacOSUtils,
+			_setupBuildx,
+			_installNode,
+			_installGo,
+			_installHugoLinux,
+			_installHugoMacOS,
 
-				_installMacOSUtils,
-				_setupBuildx,
-				_installNode,
-				_installGo,
-				_installHugoLinux,
-				_installHugoMacOS,
+			// cachePre must come after installing Node and Go, because the cache locations
+			// are established by running each tool.
+			for v in _setupGoActionsCaches {v},
 
-				// cachePre must come after installing Node and Go, because the cache locations
-				// are established by running each tool.
-				for v in _setupGoActionsCaches {v},
+			// Disable checkout for "latest" CUE for now. Go does not (yet)
+			// handle a query for cuelang.org/go@v0.6 when there is only a
+			// prerelease version matching that query.
+			//
+			// json.#step & {
+			// 	// The latest git clean check ensures that this call is effectively
+			// 	// side effect-free. Using GOPRIVATE ensures we don't accidentally
+			// 	// hit a stale cache in the proxy.
+			// 	name: "Ensure latest CUE"
+			// 	run: """
+			// 		GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
+			// 		go mod tidy
+			// 		go mod tidy
+			// 		"""
+			// },
 
-				// Disable checkout for "latest" CUE for now. Go does not (yet)
-				// handle a query for cuelang.org/go@v0.6 when there is only a
-				// prerelease version matching that query.
-				//
-				// json.#step & {
-				// 	// The latest git clean check ensures that this call is effectively
-				// 	// side effect-free. Using GOPRIVATE ensures we don't accidentally
-				// 	// hit a stale cache in the proxy.
-				// 	name: "Ensure latest CUE"
-				// 	run: """
-				// 		GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-				// 		go mod tidy
-				// 		go mod tidy
-				// 		"""
-				// },
+			// Rebuild docker image
+			json.#step & {
+				run: "./_scripts/buildDockerImage.bash"
+			},
 
-				// Rebuild docker image
-				json.#step & {
-					run: "./_scripts/buildDockerImage.bash"
-				},
+			// Go generate steps
+			_goGenerate & {
+				name: "Regenerate"
+			},
 
-				// Go generate steps
-				_goGenerate & {
-					name: "Regenerate"
-				},
+			// npm install in hugo to allow serve test to pass
+			//
+			// TODO: make this a more principled change.
+			json.#step & {
+				run:                 "npm install"
+				"working-directory": "hugo"
+			},
 
-				// npm install in hugo to allow serve test to pass
-				//
-				// TODO: make this a more principled change.
-				json.#step & {
-					run:                 "npm install"
-					"working-directory": "hugo"
-				},
+			// Go test steps
+			_goTest & {
+				name: "Test"
+			},
 
-				// Go test steps
-				_goTest & {
-					name: "Test"
-				},
+			// Run staticcheck
+			json.#step & {
+				name: "staticcheck"
+				run:  "./_scripts/staticcheck.bash"
+			},
 
-				// Run staticcheck
-				json.#step & {
-					name: "staticcheck"
-					run:  "./_scripts/staticcheck.bash"
-				},
+			// go mod tidy
+			_modTidy & {
+				name: "Check module is tidy"
+			},
 
-				// go mod tidy
-				_modTidy & {
-					name: "Check module is tidy"
-				},
+			_dist,
+			_repo.checkGitClean,
 
-				_dist,
-				_repo.checkGitClean,
+			// Now the frontend build has happened, ensure that linters pass
+			json.#step & {
+				"working-directory": "hugo"
+				run: """
+					npm run lint
+					"""
+			},
 
-				// Now the frontend build has happened, ensure that linters pass
-				json.#step & {
-					"working-directory": "hugo"
-					run: """
-						npm run lint
-						"""
-				},
+			// Only run a deploy of tip if we are running as part of the trybot repo,
+			// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
+			_netlifyDeploy & {
+				if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer) && \(_isLatestLinux)"
+				#site:  _repo.netlifySites.cls
+				#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
+				name:   "Deploy preview of CL"
+			},
 
-				// Only run a deploy of tip if we are running as part of the trybot repo,
-				// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
-				_netlifyDeploy & {
-					if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer) && \(_isLatestLinux)"
-					#site:  _repo.netlifySites.cls
-					#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
-					name:   "Deploy preview of CL"
-				},
-
-				json.#step & {
-					// Only run in the main repo on the alpha branch. Because anywhere else
-					// doesn't make sense.
-					if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)') && \(_isLatestLinux)"
-					run:                 "npm run algolia"
-					"working-directory": "hugo"
-					env: {
-						ALGOLIA_APP_ID:     "5LXFM0O81Q"
-						ALGOLIA_ADMIN_KEY:  "${{ secrets.ALGOLIA_INDEX_KEY }}"
-						ALGOLIA_INDEX_NAME: "cuelang.org"
-						ALGOLIA_INDEX_FILE: "../_public/algolia.json"
-					}
-				},
-			]
-		}
+			json.#step & {
+				// Only run in the main repo on the alpha branch. Because anywhere else
+				// doesn't make sense.
+				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)') && \(_isLatestLinux)"
+				run:                 "npm run algolia"
+				"working-directory": "hugo"
+				env: {
+					ALGOLIA_APP_ID:     "5LXFM0O81Q"
+					ALGOLIA_ADMIN_KEY:  "${{ secrets.ALGOLIA_INDEX_KEY }}"
+					ALGOLIA_INDEX_NAME: "cuelang.org"
+					ALGOLIA_INDEX_FILE: "../_public/algolia.json"
+				}
+			},
+		]
 	}
 
 	let matrixRunner = "matrix.runner"
