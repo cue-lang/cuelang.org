@@ -20,7 +20,7 @@ jobs:
         runner: |-
           ${{
           	((! (contains(github.event.head_commit.message, '
-          Dispatch-Trailer: {"type":"'))) && (github.repository == 'cue-lang/cuelang.org')) &&
+          Dispatch-Trailer: {"type":"'))) && (github.repository == 'cue-lang/cuelang.org') && (github.event_name == 'push')) &&
           	fromJSON('["ubuntu-22.04","macos-13"]') ||
           	fromJSON('["ubuntu-22.04"]')
           }}

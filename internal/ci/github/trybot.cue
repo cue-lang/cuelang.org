@@ -48,7 +48,7 @@ workflows: trybot: _repo.bashWorkflow & {
 				// the prettiest of things.
 				runner: """
 				${{
-					((! \(_repo.containsDispatchTrailer)) && (github.repository == '\(_repo.githubRepositoryPath)')) &&
+					((! \(_repo.containsDispatchTrailer)) && (github.repository == '\(_repo.githubRepositoryPath)') && (github.event_name == 'push')) &&
 					fromJSON('\(encjson.Marshal([_repo.linuxMachine, _repo.macosMachine]))') ||
 					fromJSON('\(encjson.Marshal([_repo.linuxMachine]))')
 				}}
