@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a433f4aa_08da1f3a",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 48
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-07-27T10:50:58Z",
+      "side": 1,
+      "message": "I wonder if we should at least deduplicate the strings `\u0027Linux\u0027` and `\u0027macOS\u0027`.",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7bf6b7c_0f23fcae",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 48
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-07-27T10:50:58Z",
+      "side": 1,
+      "message": "is this step missing \"if os is mac\"?\n\nin fact, I wonder if you could set it for all steps in this list via a comprehension or unification. saves the repetition, and avoid silly mistakes like this one.",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
