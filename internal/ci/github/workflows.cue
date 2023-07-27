@@ -41,9 +41,9 @@ workflows: close({
 
 	_repo.trybotWorkflows
 
-	trybot:              _
-	trybot_targetBranch: _
-	update_tip:          _linuxWorkflow
+	trybot:                  _
+	trybot_githubRepository: _
+	update_tip:              _linuxWorkflow
 	trybot_dispatch: #dummyDispatch: dummyDispatch
 })
 

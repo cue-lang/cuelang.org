@@ -1,6 +1,6 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
-name: TryBot target branch
+name: TryBot (cue-lang/cuelang.org target branch
 "on":
   push:
     branches:
@@ -11,6 +11,21 @@ name: TryBot target branch
       - v*
 jobs:
   test:
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version:
+          - 1.20.x
+        runner:
+          - ubuntu-22.04
+          - macos-13
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
+    if: |-
+      (! (contains(github.event.head_commit.message, '
+      Dispatch-Trailer: {"type":"'))) && (github.repository == 'cue-lang/cuelang.org')
     steps:
       - if: runner.os == 'macOS'
         name: Update Homebrew (macOS)
@@ -226,18 +241,3 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_INDEX_KEY }}
           ALGOLIA_INDEX_NAME: cuelang.org
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
-    if: |-
-      ! (contains(github.event.head_commit.message, '
-      Dispatch-Trailer: {"type":"'))
-    strategy:
-      fail-fast: false
-      matrix:
-        go-version:
-          - 1.20.x
-        runner:
-          - ubuntu-22.04
-          - macos-13
-    runs-on: ${{ matrix.runner }}
-    defaults:
-      run:
-        shell: bash
