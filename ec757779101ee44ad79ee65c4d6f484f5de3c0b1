@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "235d05d8_e832ea87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-07-27T10:46:18Z",
+      "side": 1,
+      "message": "nit, but I\u0027d add a TODO to the test skips on non-linux, since the commit message says this is a skip \"for now\" to delay fixing macos until later.",
+      "revId": "ec757779101ee44ad79ee65c4d6f484f5de3c0b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe15f453_30f523c4",
+        "filename": "internal/cmd/preprocessor/cmd/script_test.go",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-07-27T10:46:18Z",
+      "side": 1,
+      "message": "nit: you can move the setenv inside the conditional, since in the \"else\" case you simply set it to its original value again.",
+      "revId": "ec757779101ee44ad79ee65c4d6f484f5de3c0b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
