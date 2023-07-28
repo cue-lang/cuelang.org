@@ -62,6 +62,12 @@
         }
     }
 
+    &--blog {
+        #{ $self }__title {
+            @include style-text;
+        }
+    }
+
     &--logos {
         #{ $self }__header {
             text-align: center;
@@ -142,6 +148,12 @@
         &--overview {
             #{ $self }__header {
                 padding-bottom: 2rem;
+            }
+        }
+        
+        &--blog {
+            #{ $self }__header {
+                padding: 0 0 2rem;
             }
         }
     }

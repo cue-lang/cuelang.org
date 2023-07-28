@@ -14,6 +14,11 @@
     name = "Community"
     url = "/community/"
     weight = 102
+[[main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 103
 
 # Icons
 [[icons]]
@@ -95,6 +100,11 @@
     name = "Download"
     url = "https://github.com/cue-lang/cue/releases"
     weight = 430
+[[footer]]
+    parent = "column3"
+    name = "Blog"
+    url = "/blog"
+    weight = 431
 [[footer]]
     identifier = "column4"
     name = "Connect"
