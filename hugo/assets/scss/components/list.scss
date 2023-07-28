@@ -29,6 +29,10 @@
         }
     }
 
+    &--overview {
+        gap: 2.5rem;
+    }
+
     &--tags {
         display: flex;
         flex-wrap: wrap;
