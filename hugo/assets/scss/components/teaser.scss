@@ -13,7 +13,6 @@
     height: 100%;
     padding: $p-gutter;
     position: relative;
-    transition: background-color 0.2s;
     width: 100%;
 
     &:focus,
@@ -49,7 +48,7 @@
 
         border: 2px solid transparent;
         border-radius: $b-radius;
-        transition: border-color 0.2s;
+        transition: border-color 0.2s, background-color 0.2s;
 
         span {
             @include sr-only;
@@ -65,8 +64,93 @@
         }
     }
 
+    &--blog {
+        padding: 0;
+
+        #{ $self }__content {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 8px;
+        }
+        
+        #{ $self }__link {
+            &:focus,
+            &:hover {
+                background: var(--teaser-background, transparent);
+            }
+        }
+
+        #{ $self }__meta, 
+        #{ $self }__excerpt, 
+        #{ $self }__title {
+            margin: 0;
+        } 
+
+        #{ $self }__title {
+            @include style-heading-3;
+        }
+
+        #{ $self }__image {
+            height: 164px;
+            margin: 0 0 12px;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.4s;
+            }
+        }
+
+        .link {
+            padding: 0;
+        }
+    }
+
     @include screen($screen-simple) {
         padding: 1.5rem;
+
+        &--blog {
+            padding: 0;
+
+            &:hover {
+                #{ $self }__image {
+                    img {
+                        transform: scale(1.125) rotate(2deg);
+                    }
+                }
+            }
+
+            #{ $self }__image {
+                height: 130px;
+            }
+    
+            &#{ $self }--featured {
+                display: flex;
+                gap: 3.375rem;
+    
+                #{ $self }__content {
+                    width: 50%;
+                }
+    
+                #{ $self }__excerpt {
+                    color: $c-grey;
+                    line-height: 2;
+                }
+                
+                #{ $self }__image {
+                    height: 340px;
+                    margin: 0;
+                    width: 50%;
+                }
+    
+                #{ $self }__title {
+                    font-size: 2rem;
+                }
+            }
+        
+        }
 
         &__heading {
             align-items: flex-start;
@@ -78,16 +162,13 @@
         &__tags {
             margin-top: 4px;
         }
-
     }
 
     @include screen($screen-normal) {
         padding: 1.5rem 2.5rem;
-    }
 
-    @include screen($screen-large) {
-        &__readmore {
-            margin-bottom: -10px;
+        &--blog {
+            padding: 0;
         }
     }
 }

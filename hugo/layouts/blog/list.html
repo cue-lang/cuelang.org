@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <section class="section section--overview section--blue">
+    <section class="section section--blue">
         <header class="section__header">
             <div class="section__content">
                 <h1 class="section__title">{{ .Title }}</h1>
@@ -12,10 +12,14 @@
         {{- if .Pages -}}
             <div class="section__body">
                 <div class="section__content">
-                    <ul class="list list--archive">
-                        {{ range .Paginator.Pages }}
+                    <ul class="list list--overview">
+                        {{ range $index, $teaser := .Pages }}
                             <li class="list__item">
-                                {{- .Render "teaser" -}}
+                                {{- if eq $index 0 -}}
+                                        {{- partial "teaser--blog.html" (dict "modifier" "featured" "context" . "path" .File.Dir)  -}}
+                                {{- else -}}
+                                        {{- partial "teaser--blog.html" . -}}
+                                {{- end -}}
                             </li>
                         {{ end }}
                     </ul>

@@ -1,0 +1,40 @@
+{{- $context := "" -}}
+{{- $modifier := "" -}}
+{{- $path := "" -}}
+
+{{- if (reflect.IsMap .) -}}
+    {{- $context = .context -}}
+    {{- $modifier = .modifier -}}
+    {{- $path = .path -}}
+{{- else -}} 
+    {{- $context = . -}}
+    {{- $path = .File.Dir -}}
+{{- end -}}
+
+<article class="teaser teaser--blog{{ if $modifier }} teaser--{{ $modifier }}{{ end }}">
+    {{ if $context.Params.Image }}
+        <figure class="teaser__image">
+            <img src="/{{ urls.JoinPath $path $context.Params.Image }}" alt=""/>
+        </figure>
+    {{ end }}
+
+    <div class="teaser__content">
+        <div class="teaser__heading">
+            <h2 class="teaser__title">{{ $context.Title }}</h2>
+            {{ if $context.Params.tags }}
+                {{ $tags := where $context.Site.Params.tags "name" "in"  $context.Params.tags }}
+                {{- partial "tags.html" (dict "listClass" "teaser__tags" "tags" $tags) -}}
+            {{ end }}
+        </div>
+        <p class="teaser__meta">{{ $context.Date.Format ($context.Param "time_format") }}</p>
+        <p class="teaser__excerpt">{{ $context.Summary | truncate 200 }}</p>
+        <div class="link teaser__readmore">
+            <span class="link__text">{{ T "ui_read_more" }}</span>
+        </div>
+    
+        <a class="teaser__link" aria-label="{{ T "ui_read_more" }} - {{ $context.LinkTitle }}" href="{{ $context.RelPermalink }}">
+            <span>{{ T "ui_read_more" }}</span>
+        </a>
+    </div>
+
+</article>

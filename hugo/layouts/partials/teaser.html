@@ -1,0 +1,19 @@
+<article class="teaser">
+    <div class="teaser__heading">
+        <h2 class="teaser__title">{{ .Title }}</h2>
+        {{ if .Params.tags }}
+            {{ $tags := where .Site.Params.tags "name" "in"  .Params.tags }}
+            {{- partial "tags.html" (dict "listClass" "teaser__tags" "tags" $tags) -}}
+        {{ end }}
+    </div>
+    <p class="teaser__meta">{{ .Date.Format ($.Param "time_format") }}</p>
+    <p class="teaser__excerpt">{{ .Summary | truncate 300 }}</p>
+    <div class="link teaser__readmore">
+        hoi
+        <span class="link__text">{{ T "ui_read_more" }}</span>
+    </div>
+
+    <a class="teaser__link" aria-label="{{ T "ui_read_more" }} - {{ .LinkTitle }}" href="{{ .RelPermalink }}">
+        <span>{{ T "ui_read_more" }}</span>
+    </a>
+</article>
