@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17173ba4_477586b6",
+        "filename": "internal/cmd/preprocessor/cmd/executecontext.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-07-31T16:25:25Z",
+      "side": 0,
+      "message": "It\u0027s intent is covered by another log line, so we don\u0027t lose the information if that was the concern.",
+      "parentUuid": "b659f909_291e36a2",
+      "revId": "efab8754049fbd893ff19a01067bc61d70b63f7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84425f18_4e0b25ef",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-07-31T10:38:01Z",
       "side": 0,
       "message": "Just confirming that this log is still emitted elsewhere.",
+      "revId": "efab8754049fbd893ff19a01067bc61d70b63f7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b85cdba_ebf9f15a",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-07-31T16:25:25Z",
+      "side": 0,
+      "message": "It\u0027s intent is covered by another log line, so we don\u0027t lose the information if that was the concern.",
+      "parentUuid": "84425f18_4e0b25ef",
       "revId": "efab8754049fbd893ff19a01067bc61d70b63f7a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
