@@ -6,10 +6,10 @@ package site
 				patterns: {
 					cache: {
 						sidebyside: {
-							alternates:      "nBSHTUWqF6N+IyVyBZ6vFoTzev/ml5oZYp5O2RTj+8k="
-							implementations: "y5pr46xk0zhkGZ+Cadi2rk7AzmPgkHWw2XbEJCMIfKU="
-							downcast:        "jWCVSMp1ZVXpTeP3dfnpBrP4S8AGrjYB/bVnlBZlZkM="
-							defaults:        "R//uzpM9KXRrEfOyHbTOBRyundrEb5Qrkz9LfvaaeZk="
+							alternates:      "HmMNjoy5nMxWrXH281XJTj1dRqUC/yJvkey+rBCmpWw="
+							implementations: "kGgbvIlOwdSTLkF68W3SV5Zc1ylNFrvQcARkf1Yi+1Y="
+							downcast:        "Tr2/3WCuU9jteZDtduSH26HObmTzVDhAeD4Z2l/yUK4="
+							defaults:        "3fEwvx1kYH08i+Fb/rhofJpeNDCTKgfE5DHTAjhUT0E="
 						}
 					}
 				}

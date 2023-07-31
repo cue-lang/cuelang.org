@@ -26,7 +26,7 @@ fi
 bash playground/_scripts/build.bash
 
 # Run the preprocessor
-bash _scripts/runPreprocessor.bash execute --debug=all --norun=$norun $skipcache
+bash _scripts/runPreprocessor.bash execute --debug=all,-cache --norun=$norun $skipcache
 
 # Main site
 cd hugo

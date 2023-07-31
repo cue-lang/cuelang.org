@@ -198,7 +198,6 @@ func (ec *executeContext) findPages() error {
 				if err != nil {
 					return ec.errorf("%v: failed to create page in dir %s: %v", ec, dir, err)
 				}
-				ec.debugf(ec.debugGeneral, "%v: found page at %v", ec, dir)
 				ec.pages[dir] = p
 			}
 
