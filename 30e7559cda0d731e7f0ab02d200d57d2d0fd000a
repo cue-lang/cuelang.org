@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e40b7b21_2eab648b",
+        "filename": "content/docs/language-guide/data/bytes-values/gen_cache.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-07-31T10:38:01Z",
+      "side": 1,
+      "message": "I don\u0027t currently grok all the `gen_cache.cue` changes. This comment is merely to capture that fact, and that I\u0027m not meaningfully reviewing the set of changes in those files.",
+      "revId": "30e7559cda0d731e7f0ab02d200d57d2d0fd000a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
