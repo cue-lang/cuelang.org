@@ -1,6 +1,10 @@
 ---
 title: Front Matter
 weight: 14
+date: "2023-08-01"
+meta:
+    - type: readingTime
+      value: 5
 tags:
     - Use encodings in CUE
     - Language
@@ -37,18 +41,20 @@ math
 : You can add `math: true` to the front matter, if you want to enable [MathJax](https://www.mathjax.org/) on a content page.
 
 meta
-: You can show additional meta information below the title of a content page. This is map of items consisting of a type and value (and optionally a link).
+: You can show additional meta information below the title of a content page. This is a map of items consisting of a type and value.
+: If you include the type readingTime, 'min Read' will be added to the given value.
+
+: When you include a date in the front-matter, it will be automatically included in the meta information.
+
+: Available types:
+
+- readingTime (value is in minutes)
+
 ```
 meta:
-- type: link
-  value: Website
-  link: https://www.usmedia.nl
-- type: person
-  value: Joop Verkerke
-- type: other
-  value: Some info
+- type: readingTime
+  value: 5
 ```
-The type will be mapped to an icon, see `/assets/svg/ui` for a full list of possible types.
 
 notification
 : You can add a sticky notification on the current page. The `content` allows for simple markdown options.

@@ -10,12 +10,13 @@
     <article class="article">
         <div class="article__container">
             {{- partial "article--header" . -}}
+
             <div class="article__content">
                 {{- .Content -}}
             </div>
             <footer class="article__footer">
                 {{- if $tags -}}
-                    {{- partial "tags.html" (dict "modifier" "large" "tags" $tags ) -}} 
+                    {{- partial "tags.html" (dict "modifier" "large" "tags" $tags ) -}}
                 {{- end -}}
             </footer>
         </div>
