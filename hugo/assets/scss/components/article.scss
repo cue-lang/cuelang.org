@@ -33,37 +33,26 @@
     }
 
     &__info {
+        align-items: center;
         column-gap: 1rem;
         display: flex;
         flex-wrap: wrap;
-        margin: 0.5rem 0 2rem;
-        row-gap: 0.75rem;
+        justify-content: space-between;
+        row-gap: 0.5rem;
     }
 
     &__header {
+        margin: 2.5rem 0 2rem;
         position: relative;
         width: 100%;
-
-        &--extended {
-            margin: 2.5rem 0 2rem;
-    
-            #{ $self}__title {
-                margin: 0;
-            }
-        }
     }
 
     &__title {
         @include style-heading-1;
 
         hyphens: auto;
-        margin-top: 0.75rem;
+        margin: 0 0 0.75rem;
         word-break: break-word;
-    }
-
-    &__meta {
-        color: var(--article-meta-color, $c-grey--dark);
-        margin: 0 0 0.5rem;
     }
 
     &__content {
