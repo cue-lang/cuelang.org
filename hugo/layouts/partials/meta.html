@@ -1,41 +1,17 @@
-{{/*
-    items is map with
-      - type *
-      - value
-      - link
-
-    * Possible types (for more, look in /asssets/svg/ui)
-      - office
-      - person
-      - link
-      - date
-      - time
-      - location
-      - other (== mapped to cue)
-*/}}
 {{ $items := . }}
 
 {{ if $items }}
     <ul class="meta">
-        {{ range $items }}
-            <li class="meta__item">
-                {{ if .type -}}
-                    <div class="meta__icon">
-                        {{- if eq .type "other" -}}
-                            {{- partial "icon.html" (dict "icon" "cue") -}}
-                        {{- else -}}
-                            {{- partial "icon.html" (dict "icon" .type) -}}
-                        {{- end -}}
-                    </div>
-                {{- end -}}
-                <div class="meta__value">
-                    {{- if .link -}}
-                        <a class="meta__link" href="{{ .link }}"><span>{{ .value }}</span></a>
-                    {{- else -}}
-                        <span>{{ .value }}</span>
-                    {{- end -}}
-                </div>
-            </li>
+        {{ range $index, $item := $items}}
+            {{ if and .type .value }}
+                {{ $value := .value }}
+                {{- if eq .type "readingTime" -}}
+                    {{- $value = print (T "ui_min_read") | print " " | print .value -}}
+                {{ end }}
+                 <li class="meta__item">
+                    <span class="meta__value">{{ $value }}</span>
+                </li>
+            {{ end }}
         {{ end }}
     </ul>
 {{ end }}

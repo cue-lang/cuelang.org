@@ -3,35 +3,31 @@
 .meta {
     $self: &;
 
-    color: currentColor;
-    column-gap: 2rem;
+    color: var(--meta-color, $c-grey--dark);
+    column-gap: 0.5rem;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 1rem;
 
     &__item {
-        align-items: center;
-        display: flex;
-        gap: 8px;
+        position: relative;
     }
 
-    &__icon {
-        height: 1.25rem;
-        width: 1.25rem;
-    }
+    &__item + &__item {
+        margin-left: 1rem;
 
-    &__value {
-        @include style-text-small;
-    }
-
-    &__link {
-        border-bottom: 1px solid currentColor;
-        display: block;
-        text-decoration: none;
-        transition: border-bottom-color 0.2s;
-
-        &:hover {
-            border-bottom-color: transparent;
+        &::before {
+            align-items: center;
+            content: "\2022";
+            display: flex;
+            left: -1rem;
+            line-height: 1.75;
+            position: absolute;
         }
+    }
+
+    &__value, &__text {
+        @include style-text-small;
+
+        display: inline-block;
     }
 }
