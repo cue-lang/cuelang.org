@@ -5,6 +5,8 @@ other = "Skip to content"
 other = "Homepage of CUE"
 [ui_read_more]
 other = "Read more"
+[ui_min_read]
+other = "min Read"
 [ui_loading]
 other = "Loading"
 [ui_close]
