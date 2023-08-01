@@ -8,6 +8,16 @@
                 <div class="article__container">
                     <header class="article__header">
                         <h1 class="article__title">{{ .Title }}</h1>
+                        {{ if or .Params.meta .Date }}
+                            {{ $meta := slice }}
+                            {{ if .Date }}
+                                {{ $meta = $meta | append (dict "type" "date" "value" (.Date.Format ($.Param "time_format"))) }}
+                            {{ end }}
+                            {{ if .Params.meta }}
+                                {{ $meta = $meta | append .Params.meta }}
+                            {{ end }}
+                            <div class="article__meta">{{ partial "meta" $meta }}</div>
+                        {{ end }}
                     </header>
 
                     <div class="article__content">
