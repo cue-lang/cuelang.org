@@ -6,18 +6,18 @@ package site
 				formulas: {
 					cache: {
 						sidebyside: {
-							"numbers-arithmetic":           "sGeXe3Ib+qun35hez4Zoai6ZHw2OJtWI+u3z/7C0bNY="
-							"strings-arithmetic":           "V6a02VvFrIOKVaK4ux8cJ6dVjCw4SFHdUuZDPw65ZIw="
-							"strings-interpolation":        "xRh4Gb+RnPZWJWRcwJARwYRcQU/mYtXlJiMCNlZ039k="
-							"strings-interpolation-fields": "Sd7tSF2vGm8VXp5qzR6vbBEHWidA0cbHKKj/yPO5f0A="
-							"comparators-ordered":          "QVLeE2g5WRXEDBBJrdJ52XdbX+elBAx3l4Z3HEWe2f4="
-							"comparators-equality":         "oUwyAiomVwtuD6xE5MVJtNsWbKP7eXVFF6KO/qe7YTc="
-							regexp:                         "L+63bg8mH2VQDNWpKebZd8x8pqqbPCE7JWs870Y9Xt8="
-							"boolean-arithmetic":           "LiHR02al5Qol5hxgyReJQTwgoqpmYkLqwopti44k2F0="
-							"boolean-arithmetic-error":     "/SIKu2Oe7Oh+K48f0clx/3UdwrOCRwr6XKP/wfVo3wE="
-							"stdlib-usage":                 "u0kcCmWq77Jd2NVYRlt5tVlAsXH3PoAnunJiYxGhEy8="
-							"core-builtin-len":             "B/e1roOZPkyuSPAhwY7invGlnFfEtcoWrpca/PlomOk="
-							"composition-operator":         "jb3Pi7uqKrKThBL41GAH0gIql9rHgts/BBnQzQFnNOA="
+							"numbers-arithmetic":           "FLCivu3mGtegIr18HT1fdynkQIVMtDte2KyGmoUtVm0="
+							"strings-arithmetic":           "WxpsuJUm5LzN9LazN815RvffL3ciaDHpJ1BeWIdSQxo="
+							"strings-interpolation":        "rgYtBbAYVrNEki2Xc9OcHbhQif0e8tmPpwDkyWukUx4="
+							"strings-interpolation-fields": "UAr+GTx7T+++wQCqkAehF715AP1G0jj7by6Y8fQpDe0="
+							"comparators-ordered":          "+nnVKcd7whpyDeDBQssl0p0y3hTM5UMeilq0eCITBe0="
+							"comparators-equality":         "qFPKtY/0MCZjbTlCdfmk9tkluhqNEb6x/hF/IpojBzg="
+							regexp:                         "QTgrdnKwrtzLhzht3ZTpRZb0CvG6XLAs+TVMgPJY1VY="
+							"boolean-arithmetic":           "yqMFl8aA+NnW/Kko9RG6EOCgfIXn5EANEIgFfRs9BZQ="
+							"boolean-arithmetic-error":     "mNkItU+yrxRdeUCNNvUsn8sNeBe10P2ZnpOBrHFKD9I="
+							"stdlib-usage":                 "utib1njbRXOsWAbFm3Ot56jHzj/JiGnX2AEekfcdFMs="
+							"core-builtin-len":             "P5jrNI3Awwq5gC3D7EhQnBAOu9YR4jhZF4dt03hjIvc="
+							"composition-operator":         "uIlPS7ti+6EVWh6uB8hU2820QPxb24b+xY3UBNRM6Wc="
 						}
 					}
 				}
