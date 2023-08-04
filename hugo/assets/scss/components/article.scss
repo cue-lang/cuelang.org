@@ -22,9 +22,35 @@
         position: relative;
     }
 
+    &__footer {
+        border-top: solid 2px $c-yellow;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0 auto;
+        opacity: 1;
+        padding: 1.5rem 0;
+    }
+
+    &__info {
+        column-gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.5rem 0 2rem;
+        row-gap: 0.75rem;
+    }
+
     &__header {
         position: relative;
         width: 100%;
+
+        &--extended {
+            margin: 2.5rem 0 2rem;
+    
+            #{ $self}__title {
+                margin: 0;
+            }
+        }
     }
 
     &__title {

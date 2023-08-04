@@ -1,6 +1,10 @@
 ---
 title: Front Matter
 weight: 14
+tags:
+    - Use encodings in CUE
+    - Language
+    - Ecosystem
 ---
 
 Hugo uses front-matter to add meta information to a content page. This can be done various formats - in the CUE website we prefer **YAML** (To be decided).
@@ -63,3 +67,11 @@ notification:
         icon: 'download'
 ```
 You can also add a site-wide notification via the config file for params (ex. `config/_default/params.toml`)
+
+tags
+: By adding tags in the front-matter, they will be displayed in both the header and footer of the content page. Tags link to `/search?q=tag:{name}` and initiate a search for all documents that contain the respective tag.
+```
+tags:
+- Ecosystem
+- Language
+```

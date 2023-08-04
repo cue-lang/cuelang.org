@@ -36,7 +36,7 @@
     &--tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 4px;
+        gap: 7px;
     }
 
     @include screen($screen-simple) {
@@ -51,6 +51,10 @@
 
     @include screen($screen-normal) {
         gap: 2rem;
+
+        &--tags {
+            gap: 7px;
+        }
 
         &--overview {
             grid-template-columns: repeat(3, 1fr);
