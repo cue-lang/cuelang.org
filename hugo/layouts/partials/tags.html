@@ -1,15 +1,17 @@
-{{ $tags:= .tags| default slice }}
+{{ $tags := .tags | default slice }}
 {{ $listClass := .listClass | default "" }}
 {{ $modifier := .modifier | default "" }}
 
-<ul class="list list--tags{{ if $listClass }} {{ $listClass }}{{ end }}">
-    {{ range $tag := $tags }}
-        <li class="list__item">
-            {{ $tagValue:= cond (strings.Contains $tag.name " ") (printf "\"%s\"" $tag.name) $tag.name }}
-            <a href="/search?q=tag:{{ $tagValue }}"
-               class="tag{{ if $modifier }} tag--{{ $modifier }}{{ end }}{{ if $tag.color }} tag--{{ $tag.color }}{{ end }}">
-                {{ $tag.name }}
-            </a>
-        </li>
-    {{ end }}
-</ul>
+{{ if $tags }}
+    <ul class="list list--tags{{ if $listClass }} {{ $listClass }}{{ end }}">
+        {{- range $tag := $tags -}}
+            <li class="list__item">
+                {{- $tagValue:= cond (strings.Contains $tag.name " ") (printf "\"%s\"" $tag.name) $tag.name -}}
+                <a href="/search?q=tag:{{ $tagValue }}"
+                class="tag{{ if $modifier }} tag--{{ $modifier }}{{ end }}{{ if $tag.color }} tag--{{ $tag.color }}{{ end }}">
+                    {{ $tag.name }}
+                </a>
+            </li>
+        {{- end -}}
+    </ul>
+{{ end }}
