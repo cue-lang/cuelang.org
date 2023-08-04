@@ -1,22 +1,24 @@
 {{ define "main" }}
+{{ $tags := slice }}
+{{- if .Params.tags -}}
+    {{ $tagOptions := .Site.Params.Tags | default slice }}
+    {{ $tags = where $tagOptions "name" "in" .Params.tags | default slice }}
+{{- end -}}
+
     {{ partial "paging/back-button.html" . }}
 
     <article class="article article--blog">
         <div class="article__container">
-            <header class="article__header">
-                <h1 class="article__title">{{ .Title }}</h1>
-                {{ if .Params.meta }}
-                    {{- $meta := .Params.meta -}}
-                    {{- $meta = append $meta (slice (dict "type" "date" "value" (.Date.Format ($.Param "time_format")))) -}}
-                    <div class="article__meta">{{ partial "meta" $meta }}</div>
-                {{ end }}
-            </header>
+            {{- partial "article--header" . -}}
             <div class="article__content">
                 {{- .Content -}}
             </div>
-            <div class="article__footer">
-                {{ partial "separator.html" (dict "modifier" "blog") }}
-            </div>
+            
+            <footer class="article__footer">
+                {{- if $tags -}}
+                    {{- partial "tags.html" (dict "modifier" "large" "tags" $tags ) -}} 
+                {{- end -}}
+            </footer>
         </div>
     </article>
 

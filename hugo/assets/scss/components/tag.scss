@@ -2,15 +2,18 @@
 @import '../config/typography';
 
 .tag {
+    --tag-background: #{ $c-blue--lighter };
+
     align-items: center;
-    background: var(--tag-background, transparentize($c-white, 0.5));
-    border-radius: 24px;
+    background: var(--tag-background);
+    border-radius: 1.5rem;
+    color: $c-black;
     display: flex;
     font-size: 0.8125rem;
     font-weight: $weight-medium;
     gap: 0.5rem;
-    height: 22px;
-    line-height: 22px;
+    line-height: 1.25;
+    min-height: 1.5rem;
     padding: 0 0.6rem 0 0.5rem;
     position: relative;
     text-decoration: none;
@@ -19,7 +22,7 @@
 
     &:focus-visible,
     &:hover {
-        --tag-background: #{ $c-white };
+        --tag-background: #{ $c-lavender--light };
     }
 
     &::before {
@@ -27,8 +30,13 @@
         border-radius: 50%;
         content: '';
         display: block;
-        height: 12px;
-        width: 12px;
+        height: 0.75rem;
+        width: 0.75rem;
+    }
+
+    &--large {
+        min-height: 2.75rem;
+        padding: 0 1.25rem 0 1.125rem;
     }
 
     &--red {

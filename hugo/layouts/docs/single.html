@@ -1,4 +1,10 @@
 {{ define "main" }}
+{{ $tags := slice }}
+{{- if .Params.tags -}}
+    {{ $tagOptions := .Site.Params.Tags | default slice }}
+    {{ $tags = where $tagOptions "name" "in" .Params.tags | default slice }}
+{{- end -}}
+
     <div class="docs" data-docs>
         <div class="docs__main">
             {{ partial "paging/breadcrumb.html" . }}
@@ -6,9 +12,7 @@
 
             <article class="article article--docs">
                 <div class="article__container">
-                    <header class="article__header">
-                        <h1 class="article__title">{{ .Title }}</h1>
-                    </header>
+                    {{ partial "article--header" . }}
 
                     <div class="article__content">
                         {{ if .Params.disabled }}
@@ -21,11 +25,13 @@
                         {{ end }}
                     </div>
 
-                    {{ partial "separator.html" }}
-
                     <footer class="article__footer">
                         {{ partial "last-modified.html" . }}
+                        {{- if $tags -}}
+                            {{- partial "tags.html" (dict "modifier" "large" "tags" $tags ) -}} 
+                        {{- end -}}
                     </footer>
+
                 </div>
             </article>
 
