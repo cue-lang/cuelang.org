@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d0c5756_9e22e7ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-07T17:43:35Z",
+      "side": 1,
+      "message": "Patchset 2 removes the requirement for the user to chdir to the _tool-file-containing directory.",
+      "revId": "a10875ec7e17e44e572f108448e83169301c1d54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
