@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df857546_d39a9429",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "I\u0027m drawing a blank on this. I can\u0027t see how the `/docs/howto/` hierarchy is specified, let alone find out why the `/docs/tutorial(s?)/` hierarchy might be being treated differently wrt. the left hand nav.",
+      "parentUuid": "2054ea79_7c965052",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "73c224aa_250bb82c",
         "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2023-08-08T10:52:47Z",
       "side": 1,
       "message": "We need language in this tutorial that reflects that what we are doing here is combining a schema (CUE) with some data (yaml).",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ff0b7f0_9d01a5ea",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73c224aa_250bb82c",
       "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdd9c24c_5b286378",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5233a490_1ba4c290",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e900bca_46996c9e",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-08-08T10:52:47Z",
       "side": 1,
       "message": "s/CUE/`cue`/",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60dbd98d_fc151e5e",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e900bca_46996c9e",
       "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -103,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be0bb19e_0e7bde34",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed83656a_9d4c1c5a",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "845bb5a6_aada405c",
@@ -116,6 +206,24 @@
       "writtenOn": "2023-08-08T10:52:47Z",
       "side": 1,
       "message": "s/tutorial-fh3a/validating-yaml-with-cue/\n\nWe will see it once.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a8f7a55_fd837438",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "845bb5a6_aada405c",
       "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -137,6 +245,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ec8b128_77f191df",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31a4ab84_849c1691",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7240d943_33c10e48",
@@ -150,6 +276,24 @@
       "writtenOn": "2023-08-08T10:52:47Z",
       "side": 1,
       "message": "Would suggest that we don\u0027t bother with error scenarios in the multiple file case. This is mainly focussing on the fact that each file, with `cue vet`, is validating independently.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "401b1bc4_8a9fffcb",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7240d943_33c10e48",
       "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -171,6 +315,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77abfe74_9c24c26e",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b269c3e4_70eca9ad",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d9823c3_10618e39",
@@ -188,6 +350,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3414d7dd_28f2fcf1",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "FIXME left in place.",
+      "parentUuid": "1d9823c3_10618e39",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b456e6b6_bc8cf469",
@@ -201,6 +381,24 @@
       "writtenOn": "2023-08-08T10:52:47Z",
       "side": 1,
       "message": "Add these links.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7931e6a_bee1f440",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-08T16:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b456e6b6_bc8cf469",
       "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
