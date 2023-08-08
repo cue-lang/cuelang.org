@@ -21,6 +21,7 @@ workflows: update_tip: _repo.bashWorkflow & {
 	on: {
 		push: branches: [_repo.defaultBranch]
 		repository_dispatch: {}
+		workflow_dispatch: {}
 	}
 
 	// Ensure we only ever have a single tip deploy running at a time. This
