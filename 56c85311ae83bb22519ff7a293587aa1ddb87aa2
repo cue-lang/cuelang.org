@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35fab594_56eb795c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "Please excuse the brevity below! \n\nPoints as we discussed live on our call.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73c224aa_250bb82c",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "We need language in this tutorial that reflects that what we are doing here is combining a schema (CUE) with some data (yaml).",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5233a490_1ba4c290",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "Perhaps just \"Prerequisites\"",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e900bca_46996c9e",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "s/CUE/`cue`/",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed83656a_9d4c1c5a",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "Suggest we skip on this for now:\n\n1) we can\u0027t test it.\n2) we would need work the preprocessor to avoid having to write skip everywhere.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "845bb5a6_aada405c",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "s/tutorial-fh3a/validating-yaml-with-cue/\n\nWe will see it once.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31a4ab84_849c1691",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "Would suggest we do the error case here. You\u0027ve gone to the moderate effort of explaining required/optional above, seems good to do that negative case immediately below. \n\nThen fix up, so they are back in a good state.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7240d943_33c10e48",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "Would suggest that we don\u0027t bother with error scenarios in the multiple file case. This is mainly focussing on the fact that each file, with `cue vet`, is validating independently.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b269c3e4_70eca9ad",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "Drop the repeating of the error message when we move this above. We will skip the line-based callouts of terminal output/code for day 1.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d9823c3_10618e39",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "TODO: we will add these by hand later for day 1 (and then get the preprocessor to add them automatically at a later date)",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b456e6b6_bc8cf469",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-08T10:52:47Z",
+      "side": 1,
+      "message": "Add these links.",
+      "revId": "56c85311ae83bb22519ff7a293587aa1ddb87aa2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
