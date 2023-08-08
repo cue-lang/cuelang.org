@@ -1,6 +1,21 @@
 /_public/
-/node_modules/
 /resources/
 /play/node_modules/
 /play/*.wasm
 /.hugo_build.lock
+
+# Ignore node_modules everywhere
+node_modules
+
+# Well-known location for go binaries
+/.gobin
+
+# From alpha
+/_public/
+/playground/_dist/
+/playground/.webpack_cache/
+/playground/main.wasm
+/hugo/resources/
+/hugo/.hugo_build.lock
+/hugo/static/playground/
+/hugo/.env
