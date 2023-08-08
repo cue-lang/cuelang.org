@@ -20,7 +20,6 @@ workflows: update_tip: _repo.bashWorkflow & {
 	name: "Update tip"
 	on: {
 		push: branches: [_repo.defaultBranch]
-		repository_dispatch: {}
 		workflow_dispatch: {}
 	}
 
