@@ -5,7 +5,6 @@ name: Update tip
   push:
     branches:
       - master
-  repository_dispatch: {}
   workflow_dispatch: {}
 concurrency: deploy
 jobs:
