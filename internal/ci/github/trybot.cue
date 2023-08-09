@@ -68,6 +68,23 @@ workflows: trybot: _repo.bashWorkflow & {
 			_installHugoLinux,
 			_installHugoMacOS,
 
+			// If the commit under test contains PREPROCESSOR-NO-WRITE-CACHE on a
+			// clear line within the commit message, and we are either testing a
+			// CL/PR, a push to the default branch, or a PR, then set the
+			// PREPROCESSOR_NOWRITECACHE env var to non-empty.
+			json.#step & {
+				name: "Set PREPROCESSOR_NOWRITECACHE if required"
+				if:   "\(_repo.containsTrybotTrailer) ||  github.event_name == 'pull_request' || (github.event_name == 'push' && \(_repo.isProtectedBranch))"
+				run: """
+					if git log --format=%b -1 HEAD | grep -q PREPROCESSOR-NO-WRITE-CACHE
+					then
+						echo 'Found PREPROCESSOR-NO-WRITE-CACHE'
+						echo "PREPROCESSOR_NOWRITECACHE=true" >> $GITHUB_ENV
+					fi
+
+					"""
+			},
+
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
 			for v in _setupGoActionsCaches {v},
