@@ -35,13 +35,14 @@ type lang string
 const (
 	langEn lang = "en"
 
-	flagDir       flagName = "dir"
-	flagDebug     flagName = "debug"
-	flagServe     flagName = "serve"
-	flagUpdate    flagName = "update"
-	flagNoRun     flagName = "norun"
-	flagSkipCache flagName = "skipcache"
-	flagHugoFlag  flagName = "hugo"
+	flagDir          flagName = "dir"
+	flagDebug        flagName = "debug"
+	flagServe        flagName = "serve"
+	flagUpdate       flagName = "update"
+	flagNoRun        flagName = "norun"
+	flagSkipCache    flagName = "skipcache"
+	flagHugoFlag     flagName = "hugo"
+	flagNoWriteCache flagName = "nowritecache"
 )
 
 var (
@@ -118,6 +119,9 @@ type executionContext struct {
 	// skipCache is set to avoid any run steps consulting the current state of
 	// the run cache.
 	skipCache bool
+
+	// noWriteCache is set to avoid page cache files being written to disk.
+	noWriteCache bool
 }
 
 // tempDir creates a new temporary directory within the
@@ -166,6 +170,7 @@ func executeDef(c *Command, args []string) error {
 		norun:             flagNoRun.Bool(c),
 		ctx:               cuecontext.New(),
 		skipCache:         flagSkipCache.Bool(c),
+		noWriteCache:      flagNoWriteCache.Bool(c),
 	}
 
 	// Calculate which levels of debug-level logging to enable, processing each
