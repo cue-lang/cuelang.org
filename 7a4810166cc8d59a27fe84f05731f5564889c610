@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "df56ab5b_2b6e5f77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-09T14:36:04Z",
+      "side": 1,
+      "message": "Please excuse the brevity in my previous comments - they were, as before, typed whilst we spoke live on a call.",
+      "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7da0c8f7_5857f9e2",
