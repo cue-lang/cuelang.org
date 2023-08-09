@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "869baae2_5b9ab31a",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-09T18:18:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7da0c8f7_5857f9e2",
+      "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25af8192_1185e744",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b95c9bf6_ab4d3b52",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-09T18:18:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25af8192_1185e744",
+      "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12c3fd1c_f0b35a85",
@@ -65,6 +101,24 @@
       "writtenOn": "2023-08-09T14:35:31Z",
       "side": 1,
       "message": "Shorten to one sentence, then the command, then the explanations/caveats as required (but keep brief)",
+      "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ce2e668_f0e817d1",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-09T18:18:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12c3fd1c_f0b35a85",
       "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
