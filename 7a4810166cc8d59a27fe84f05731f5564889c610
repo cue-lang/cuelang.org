@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7da0c8f7_5857f9e2",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-09T14:35:31Z",
+      "side": 1,
+      "message": "Make part of parent bullet rather than sub bullet.",
+      "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25af8192_1185e744",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-09T14:35:31Z",
+      "side": 1,
+      "message": "You can run `pwd` here to show the reader where they are. This is often useful later in the script/guide to repeat the pwd to reiterate where they are.",
+      "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12c3fd1c_f0b35a85",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-09T14:35:31Z",
+      "side": 1,
+      "message": "Shorten to one sentence, then the command, then the explanations/caveats as required (but keep brief)",
+      "revId": "7a4810166cc8d59a27fe84f05731f5564889c610",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
