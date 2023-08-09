@@ -19,7 +19,13 @@ EOD
 caching=""
 if [ "${CI:-}" == "true" ]
 then
-	caching="--cache-from=type=local,src=$HOME/.cache/dockercache --cache-to=type=local,dest=$HOME/.cache/dockercache"
+	# On macOS, for some reason we get issues if the cache does not properly
+	# exist and we try to read from it.
+	caching="--cache-to=type=local,dest=$HOME/.cache/dockercache"
+	if [ -f ~/.cache/dockercache/index.json ]
+	then
+		caching="--cache-from=type=local,src=$HOME/.cache/dockercache $caching"
+	fi
 fi
 
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit

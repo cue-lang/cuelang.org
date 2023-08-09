@@ -18,7 +18,6 @@ import (
 	"list"
 	"strings"
 	"strconv"
-	encjson "encoding/json"
 
 	"github.com/SchemaStore/schemastore/src/schemas/json"
 
@@ -39,20 +38,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			"fail-fast": false
 			matrix: {
 				"go-version": [_repo.latestStableGo]
-
-				// Always run on Linux. Run on macOS (very slow runners) for
-				// commits in the target branch in the main repo. Everywhere else
-				// (CLs, PRs, trybot repo) do not run macOS.
-				//
-				// The uses the little-documented ternary operator... which isn't
-				// the prettiest of things.
-				runner: """
-				${{
-					((! \(_repo.containsDispatchTrailer)) && (github.repository == '\(_repo.githubRepositoryPath)') && (github.event_name == 'push')) &&
-					fromJSON('\(encjson.Marshal([_repo.linuxMachine, _repo.macosMachine]))') ||
-					fromJSON('\(encjson.Marshal([_repo.linuxMachine]))')
-				}}
-				"""
+				runner: [_repo.linuxMachine]
 			}
 		}
 		"runs-on": "${{ matrix.runner }}"
