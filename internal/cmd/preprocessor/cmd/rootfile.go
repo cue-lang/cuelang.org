@@ -302,6 +302,10 @@ func (rf *rootFile) hashRunnableNode(n runnableNode, w io.Writer) cue.Path {
 }
 
 func (rf *rootFile) writePageCache() error {
+	if rf.noWriteCache {
+		return nil
+	}
+
 	var didWork bool
 	// Build a cue.Value of the cache entries
 	v := rf.ctx.CompileString("{}")
