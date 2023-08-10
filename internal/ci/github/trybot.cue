@@ -59,10 +59,10 @@ workflows: trybot: _repo.bashWorkflow & {
 					// hit a stale cache in the proxy.
 					name: "Ensure latest CUE"
 					run: """
-						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@release-branch.v0.5
+						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
 						go mod tidy
 						cd play
-						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@release-branch.v0.5
+						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
 						go mod tidy
 						"""
 				},
