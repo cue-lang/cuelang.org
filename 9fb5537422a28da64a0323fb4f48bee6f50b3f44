@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f0ae75e_6e310bc9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-10T15:22:13Z",
+      "side": 1,
+      "message": "Marking with hold to really make sure this is never submitted. \n\nWe can\u0027t use \"DO NOT MAIL\" in the commit message, because this blocks the stack from being mailed.",
+      "revId": "9fb5537422a28da64a0323fb4f48bee6f50b3f44",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
