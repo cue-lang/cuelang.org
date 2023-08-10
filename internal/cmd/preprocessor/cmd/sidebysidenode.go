@@ -286,6 +286,14 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
 		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
 	)
+
+	// If the user wants to be unsafe and _not_ isolate the network let them
+	// It results in much faster running times when working on changes in the
+	// preprocessor.
+	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
+		args = append(args, "--network=host")
+	}
+
 	args = append(args, dockerArgs...)
 	args = append(args,
 		dockerImageTag,
