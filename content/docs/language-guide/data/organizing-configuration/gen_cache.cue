@@ -6,12 +6,12 @@ package site
 				"organizing-configuration": {
 					cache: {
 						sidebyside: {
-							"composition-simple-success":   "MM2NulX0QauxKvCSfmnISh6wzeTyvuJ3M8BwjDDyINc="
-							"composition-simple-error":     "sKYeOSZU/0OV99LS6A50/k7h+PHaW0jnAyLw219NHlA="
-							"composition-composite":        "2BMWVPvUIV+sIlhF4dqA3ETATxA4Ty1+wmw/cW8meDk="
-							"composition-single-field-map": "5/3gxrWGmpNZ/u0Rpnv/FiVZZEZ/xTR77rt1A9xXw34="
-							"composition-operator":         "IlvyZVVpoI5BDpwJr5eg1YoLgIDbaNWgb0Rp7FFmae4="
-							packages:                       "UuwglgFdnQt/q9W10N9DgCM2hHKK7qO8SzvEj3pJKuU="
+							"composition-simple-success":   "iTeCDYqQPcJQn8PltznqPc/byXsRftCaRs+0FDWdaxs="
+							"composition-simple-error":     "b9WLZ8mFds1MJ26lcNbQXZwY2fFuJMKlu8oSt86+TUU="
+							"composition-composite":        "8BABGDmRX2FRH4iKI3ohA4qS2iGTI8N+ZtnaK7Qa/qI="
+							"composition-single-field-map": "UjZOV9tBwyqHTCEfOChC94BvG6G4RLKgNYiw+bD84kQ="
+							"composition-operator":         "c2/t13yJZdFsNb/JL4ukYGmqjwTDZkDBI8QxIUDGQKg="
+							packages:                       "eWskrgu9mlbu6ClUPklqz1Rd0RdHAyO7091uP2a8FRM="
 						}
 					}
 				}
