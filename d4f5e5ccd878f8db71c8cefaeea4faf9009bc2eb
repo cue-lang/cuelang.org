@@ -16,6 +16,24 @@
       "message": "This change doesn\u0027t appear to be mentioned in the commit message.",
       "revId": "d4f5e5ccd878f8db71c8cefaeea4faf9009bc2eb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4967f92e_82dcbaf2",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-10T07:26:54Z",
+      "side": 1,
+      "message": "Good catch. This leaked in from an unrelated change. Removed.",
+      "parentUuid": "08b89f92_aa41eaf1",
+      "revId": "d4f5e5ccd878f8db71c8cefaeea4faf9009bc2eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
