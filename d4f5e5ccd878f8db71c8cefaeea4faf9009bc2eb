@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08b89f92_aa41eaf1",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-10T07:15:46Z",
+      "side": 1,
+      "message": "This change doesn\u0027t appear to be mentioned in the commit message.",
+      "revId": "d4f5e5ccd878f8db71c8cefaeea4faf9009bc2eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
