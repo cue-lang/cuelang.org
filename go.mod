@@ -3,7 +3,7 @@ module github.com/cue-lang/cuelang.org
 go 1.20
 
 require (
-	cuelang.org/go v0.5.1-0.20230413144408-f681271a38ec
+	cuelang.org/go v0.6.0
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/rogpeppe/testscript v1.1.0
@@ -11,7 +11,7 @@ require (
 )
 
 require (
-	github.com/cockroachdb/apd/v2 v2.0.2 // indirect
+	github.com/cockroachdb/apd/v3 v3.2.0 // indirect
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect
 	github.com/pkg/errors v0.9.1 // indirect

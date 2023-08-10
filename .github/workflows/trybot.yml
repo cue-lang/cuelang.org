@@ -165,10 +165,10 @@ jobs:
         run: go clean -testcache
       - name: Ensure latest CUE
         run: |-
-          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@release-branch.v0.5
+          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
           go mod tidy
           cd play
-          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@release-branch.v0.5
+          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
           go mod tidy
       - name: Re-vendor play
         run: ./_scripts/revendorToolsInternal.bash
