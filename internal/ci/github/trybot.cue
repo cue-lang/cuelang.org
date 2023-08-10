@@ -77,22 +77,6 @@ workflows: trybot: _repo.bashWorkflow & {
 			// are established by running each tool.
 			for v in _setupGoActionsCaches {v},
 
-			// Disable checkout for "latest" CUE for now. Go does not (yet)
-			// handle a query for cuelang.org/go@v0.6 when there is only a
-			// prerelease version matching that query.
-			//
-			// json.#step & {
-			// 	// The latest git clean check ensures that this call is effectively
-			// 	// side effect-free. Using GOPRIVATE ensures we don't accidentally
-			// 	// hit a stale cache in the proxy.
-			// 	name: "Ensure latest CUE"
-			// 	run: """
-			// 		GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-			// 		go mod tidy
-			// 		go mod tidy
-			// 		"""
-			// },
-
 			// Rebuild docker image
 			json.#step & {
 				run: "./_scripts/buildDockerImage.bash"
