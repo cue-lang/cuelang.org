@@ -1,0 +1,298 @@
+---
+title: How to import GitHub Actions workflow files into CUE
+tags:
+    - cue command
+    - FIXME
+relatedIssues:
+- https://github.com/cue-lang/docs-and-content/issues/116: "DRYing up GHA workflows with CUE"
+- https://github.com/cue-lang/docs-and-content/issues/117: "What can and can't CUE validate?"
+- https://github.com/cue-lang/docs-and-content/issues/118: "Debugging `cue cmd` commands"
+---
+
+This guide explains how to convert GitHub Actions workflow files from YAML to
+CUE, check those workflows are valid, and then use CUE's tooling layer to
+regenerate YAML.
+
+This allows you to switch to CUE as a source of truth for GitHub Actions
+workflows and perform client-side validation, without GitHub needing to know
+you're managing your workflows with CUE.
+
+## Prerequisites
+
+- You have [CUE installed](https://cuelang.org/docs/install/) locally. This
+  allows you to run `cue` commands.
+- You have a set of GitHub Actions workflow files. The examples shown in this
+  guide use the state of the first commit of CUE's
+  [github-actions-example repository](https://github.com/cue-examples/github-actions-example/tree/main/.github/workflows),
+  but you don't need to use that repository at all.
+- You have [`git` installed](https://git-scm.com/downloads).
+- You have [`curl` installed](https://curl.se/dlwiz/), or can fetch a file from
+  a website some other way.
+
+## Steps
+
+### Convert YAML workflows to CUE
+
+&gg;
+Change directory into the root of the repository that contains your GitHub
+Actions workflow files, and ensure you start this process with a clean git
+state, with no modified files. For example:
+
+```console
+$ cd github-actions-example            # our example repository
+$ pwd                                  # the repository root
+/home/user/github-actions-example
+$ git status
+On branch main
+nothing to commit, working tree clean
+```
+
+&gg;
+Initialise a CUE module named after the organisation and repository you're
+working with. For example:
+
+```console
+$ cue mod init github.com/cue-examples/github-actions-example
+```
+
+&gg;
+Create a directory called `github` that will hold your CUE-based GitHub Actions
+workflow files. For example:
+
+```console
+$ mkdir -p internal/ci/github
+```
+
+You can change the hierarchy and naming of the parent directories to suit your
+repository layout. If you do so, you will need to adapt some commands and CUE
+code as you follow this guide.
+
+&gg;
+Use `cue` to import the YAML-based workflow files:
+
+```console
+$ cue import ./.github/workflows/ \
+    --with-context -p github -f -l 'workflows:' \
+    -l 'strings.TrimSuffix(path.Base(filename),path.Ext(filename))'
+```
+
+A CUE file has been created in `.github/workflows` for each YAML workflow found
+in the directory. For example:
+
+```console
+$ ls .github/workflows/
+workflow1.cue  workflow1.yml  workflow2.cue  workflow2.yml
+```
+
+Each workflow has been imported into the `workflows` struct, at a location
+derived from its original file name. For example:
+
+```console
+$ head .github/workflows/*.cue
+==> .github/workflows/workflow1.cue <==
+package github
+
+workflows: workflow1: {
+        on: [
+                "push",
+
+==> .github/workflows/workflow2.cue <==
+package github
+
+workflows: workflow2: {
+        on: [
+                "push",
+```
+
+&gg;
+Move the newly-created CUE files into their dedicated directory. For example:
+
+```console
+$ mv ./.github/workflows/*.cue internal/ci/github
+```
+
+### Validate workflows
+
+&gg;
+Fetch a schema for GitHub Actions workflows, as defined by the 3rd party
+[JSON Schema Store](https://www.schemastore.org/) project, and place it in the
+`internal/ci/github` directory:
+
+```console
+$ curl https://raw.githubusercontent.com/SchemaStore/schemastore/5ffe36662a8fcab3c32e8fbca39c5253809e6913/src/schemas/json/github-workflow.json \
+    -o internal/ci/github/github.actions.workflow.schema.json
+```
+
+We use a specific commit from the upstream repository to make sure that this
+process is reproducible.
+
+&gg;
+Import the schema into CUE:
+
+```console
+$ cue import internal/ci/github/github.actions.workflow.schema.json \
+    -l '#Workflow:' -f
+```
+
+We'll use a reference to this schema's contents during the next step, which
+will implicitly check that each workflow complies with the schema's
+requirements.
+
+### Generate YAML from CUE
+
+&gg;
+Create a CUE "tool" file at `internal/ci/github/ci_tool.cue` and adapt the
+element commented with `TODO`:
+
+```text {title="internal/ci/github/ci_tool.cue"}
+package github
+
+import (
+	"path"
+	"encoding/yaml"
+	"tool/file"
+)
+
+_goos: string @tag(os,var=os)
+workflows: [_]: #Workflow
+#Workflow: _
+
+// Regenerate all workflow files
+command: regenerate: {
+	workflow_files: {
+		// TODO: update _toolFile to reflect the directory hierarchy containing this file.
+		let _toolFile = "internal/ci/github/ci_tool.cue"
+		let _workflowDir = path.FromSlash(".github/workflows", path.Unix)
+		let _donotedit = "Code generated by \(_toolFile); DO NOT EDIT."
+
+		clean: {
+			glob: file.Glob & {
+				glob: path.Join([_workflowDir, "*.yml"], _goos)
+				files: [...string]
+			}
+			for _, _filename in glob.files {
+				"Delete \(_filename)": file.RemoveAll & {path: _filename}
+			}
+		}
+
+		create: {
+			for _workflowName, _workflow in workflows
+			let _filename = _workflowName + ".yml" {
+				"Generate \(_filename)": file.Create & {
+					$after: [ for v in clean {v}]
+					filename: path.Join([_workflowDir, _filename], _goos)
+					contents: "# \(_donotedit)\n\n\(yaml.Marshal(_workflow))"
+				}
+			}
+		}
+	}
+}
+```
+
+Make the modification indicated by the `TODO` comment.
+
+This tool will export each CUE-based workflow back into its required YAML file,
+on demand.
+
+&gg;
+With the modified `ci_tool.cue` file in place, check that the `regenerate`
+command is available. For example:
+
+```console
+$ pwd                                            # we're still in the repository root
+/home/user/github-actions-example
+$ cue help cmd regenerate ./internal/ci/github   # the "./" prefix is required
+Regenerate all workflow files
+
+Usage:
+  cue cmd regenerate [flags]
+
+[...]
+```
+
+{{< warning >}}
+If you *don't* see the `regenerate` command listed, or receive an error
+message, double check the contents of the `ci_tool.cue` file and the
+modifications you made to it, as well as its location in the repository.  Make
+sure you've followed all the steps in this guide carefully, and that you
+invoked the `cue help` command from the root of the repository.
+{{< /warning >}}
+
+&gg;
+Run the `regenerate` command to produce YAML workflow files from CUE. For
+example:
+
+```console
+$ cue cmd regenerate ./internal/ci/github   # the "./" prefix is required
+```
+
+&gg;
+Check that each YAML workflow file has a single change from the original:
+
+```diff
+$ git diff .github/workflows/
+diff --git a/.github/workflows/workflow1.yml b/.github/workflows/workflow1.yml
+index 8ad852c..49fe56e 100644
+--- a/.github/workflows/workflow1.yml
++++ b/.github/workflows/workflow1.yml
+@@ -1,3 +1,5 @@
++# Code generated by internal/ci/github/ci_tool.cue; DO NOT EDIT.
++
+ "on":
+   - push
+   - pull_request
+diff --git a/.github/workflows/workflow2.yml b/.github/workflows/workflow2.yml
+index 8455210..d0d434c 100644
+--- a/.github/workflows/workflow2.yml
++++ b/.github/workflows/workflow2.yml
+@@ -1,3 +1,5 @@
++# Code generated by internal/ci/github/ci_tool.cue; DO NOT EDIT.
++
+ "on":
+   - push
+   - pull_request
+```
+
+This change is the addition of a header, warning the reader not to edit the
+YAML file directly.
+
+&gg;
+Add and commit your files to git. For example:
+
+```console
+$ git add .github/workflows/ internal/ci/github/ cue.mod/module.cue
+[ ... ]
+$ git commit -m "ci: create CUE sources for GHA workflows"
+```
+
+Make sure to include your slightly modified YAML workflow files in
+`.github/workflows/` along with all the new files in `internal/ci/github/` and
+your `cue.mod/module.cue` file.
+
+### Conclusion
+
+&gg;
+**Well done - your GitHub Actions workflow files have been imported into CUE!**
+
+They can now be managed using CUE, leading to safer and more predictable
+changes. The use of a schema to check your workflows means that you will catch
+and fix many types of mistake earlier than before, without waiting for the slow
+"git add/commit/push; check if CI fails" cycle.
+
+From now on, each time you make a change to a CUE workflow file, immediately
+regenerate the YAML files required by GitHub Actions, and commit your changes
+to all the CUE and YAML files. For example:
+
+```console
+$ cue cmd regenerate ./internal/ci/github/   # the "./" prefix is required
+$ git add .github/workflows/ internal/ci/github/
+[ ... ]
+$ git commit -m "ci: added new release workflow"   # example message
+```
+
+## Related content
+
+- Tutorial: [Using CUE templates to DRY up your GitHub Actions workflows](TODO)
+- Concept Guide: [What can and can't CUE validate?](TODO)
+- Tutorial: [Debugging CUE tool commands](TODO)
+- [cmd/cue command line documentation](https://cue.googlesource.com/cue/+/refs/tags/v0.2.0/doc/cmd/cue.md)
