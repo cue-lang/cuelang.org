@@ -9,25 +9,31 @@
 .section {
     $self: &;
 
-    --section-padding: 2rem 0;
-    --section-bg-color: transparent;
-
     @include clear-fix;
 
-    background-color: var(--section-bg-color);
-    padding: 0;
+    background-color: var(--section-bg-color, transparent);
+    padding: var(--section-padding, 2rem) 0;
     position: relative;
+
+    &:first-child {
+        padding-top: 1rem;
+    }
 
     &__header,
     &__body,
     &__footer {
-        padding: var(--section-padding);
         position: relative;
 
         & + #{ $self }__header,
         & + #{ $self }__body,
         & + #{ $self }__footer {
             padding-top: 0;
+        }
+    }
+
+    &__header {
+        & + #{ $self }__body {
+            margin-top: 2rem;
         }
     }
 
@@ -60,6 +66,10 @@
         & > :last-child {
             margin-bottom: 0;
         }
+    }
+
+    &--is-first {
+        padding-top: 0;
     }
 
     &--logos {
@@ -119,7 +129,11 @@
     }
 
     @include screen($screen-simple) {
-        --section-padding: 3rem 0;
+        --section-padding: 3rem;
+
+        &:first-child {
+            padding-top: 0.75rem;
+        }
 
         &--center {
             #{ $self }__header,
@@ -136,7 +150,7 @@
     }
 
     @include screen($screen-normal) {
-        --section-padding: 4rem 0;
+        --section-padding: 4rem;
 
         &--logos,
         &--overview {
@@ -147,8 +161,12 @@
     }
 
     @include screen($screen-large) {
+        &:first-child {
+            padding-top: 0;
+        }
+
         &--logos {
-            --section-padding: 6rem 0;
+            --section-padding: 6rem;
 
             #{ $self }__header {
                 padding-bottom: 2rem;
