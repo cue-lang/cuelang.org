@@ -1,6 +1,7 @@
 ---
 title: How to validate JSON using CUE
 weight:
+toc_hide: true
 tags:
     - cue command
 ---

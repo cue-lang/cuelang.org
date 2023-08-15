@@ -2,6 +2,7 @@
 title: How to validate YAML using CUE
 weight:
 draft: false
+toc_hide: true
 tags:
     - cue command
 ---
