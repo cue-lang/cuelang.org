@@ -12,6 +12,7 @@ import {
     SearchResults,
     Tabs,
     TabsNav,
+    Youtube,
 } from './widgets';
 import { scrollToHash } from './helpers/scroll-to';
 import { Widget } from './interfaces/widget';
@@ -25,7 +26,7 @@ declare global {
 }
 
 type WidgetTypes = Carousel | Copy | Docs | Drawer | Header | Menu | NotificationBar |
-    SearchAutocomplete | SearchFilter | SearchResults | Tabs | TabsNav;
+    SearchAutocomplete | SearchFilter | SearchResults | Tabs | TabsNav | Youtube;
 
 class App {
     public widgets: Widget[];
@@ -50,6 +51,7 @@ class App {
             [SearchResults.NAME]: SearchResults,
             [Tabs.NAME]: Tabs,
             [TabsNav.NAME]: TabsNav,
+            [Youtube.NAME]: Youtube,
         };
 
         this.initWidgets();

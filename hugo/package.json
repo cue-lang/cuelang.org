@@ -16,6 +16,7 @@
     "mermaid": "9.2.2"
   },
   "devDependencies": {
+    "@types/youtube": "0.0.47",
     "@typescript-eslint/eslint-plugin": "5.54.1",
     "@typescript-eslint/parser": "5.54.1",
     "autoprefixer": "^10.3.1",
