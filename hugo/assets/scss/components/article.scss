@@ -50,6 +50,7 @@
     }
 
     &--docs {
+        max-width: $w-content;
         padding-top: 0;
 
         h4,
@@ -72,10 +73,6 @@
     }
 
     @include screen($screen-normal) {
-        &__container {
-            padding: 0 1.875rem;
-        }
-
         &--blog {
             #{ $self }__header {
                 margin: 0 (-$p-gutter--large);
