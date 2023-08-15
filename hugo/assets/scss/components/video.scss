@@ -14,13 +14,12 @@
     background-color: var(--video-background, $c-blue--darker);
     clear: both;
     color: $c-white;
-    margin: 2rem auto;
+    margin: 2rem (-$p-gutter);
     overflow: hidden;
-    padding-bottom: 56.25%;
     position: relative;
 
     &__image {
-        @include object-fit-cover;
+        @include object-fit;
 
         margin: 0;
         opacity: 0.8;
@@ -30,10 +29,12 @@
     &__button {
         @include stretch;
 
+        text-decoration: none;
+
         &:focus,
         &:hover {
-            #{ $self }__play {
-                transform: scale(1.2);
+            #{ $self }__icon {
+                transform: scale(1.1);
             }
         }
 
@@ -42,89 +43,53 @@
         }
     }
 
-    &__play {
-        background-color: var(--video-play-background, $c-yellow);
-        border-radius: $b-radius--round;
-        display: block;
-        fill: $c-white;
-        height: 45px;
-        position: absolute;
-        right: $p-gutter * 0.5;
-        top: $p-gutter * 0.5;
-        transition: transform 0.2s ease-in-out;
-        width: 45px;
-    }
-
-    &__icon {
-        @include center;
-
-        fill: $c-blue;
-        height: 16px;
-        width: 16px;
-    }
-
-    &__text {
+    &__content {
+        align-items: flex-end;
         bottom: 0;
-        display: block;
-        left: 0;
-        padding: $p-gutter * 0.5;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $p-gutter $p-gutter;
         position: absolute;
+        width: 100%;
+
+        &--no-title {
+            justify-content: flex-end;
+        }
     }
 
     &__title {
-        @include style-heading-3;
+        @include style-heading-4;
 
-        color: var(--video-play-color, $c-white);
-        font-weight: $weight-bold;
-        margin: 0;
+        color: var(--video-title-color, $c-white);
+        margin-top: 0;
+        text-shadow: 0 0 2px $c-black;
+        text-transform: none;
     }
 
-    &__external {
-        display: inline-block;
-        height: 18px;
-        margin: 0 0 -2px 8px;
-        width: 18px;
+
+    &__icon {
+        flex-shrink: 0;
+        height: 50px;
+        transition: transform 0.3s ease-in-out;
+        width: auto;
     }
 
-    &__intro {
-        line-height: 1.2;
-        margin: 0.5rem 0 0;
-    }
 
-    &--cover {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    @include screen($screen-minimal) {
-        &__play {
-            bottom: $p-gutter;
-            height: 75px;
-            right: $p-gutter;
-            top: auto;
-            width: 75px;
+    @include screen($screen-simple) {
+        &__content {
+            padding: 0 $p-gutter--large $p-gutter;
         }
 
         &__icon {
-            height: 30px;
-            width: 30px;
-        }
-
-        &__text {
-            padding: $p-gutter;
-            width: 80%;
+            height: 60px;
         }
     }
 
-    @include screen($screen-simple) {
-        &__play {
-            bottom: $p-gutter--large;
-            right: $p-gutter--large;
-        }
+    @include screen($screen-normal) {
+        margin: 2rem auto;
 
-        &__text {
-            padding: $p-gutter--large;
+        &__icon {
+            height: 70px;
         }
     }
 }
