@@ -17,7 +17,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  go install -trimpath cuelang.org/go/cmd/cue@v0.6.0-alpha.1
+  go install -trimpath cuelang.org/go/cmd/cue@v0.6.0
 
 FROM debian@sha256:63d62ae233b588d6b426b7b072d79d1306bfd02a72bff1fc045b8511cc89ee09
 
