@@ -33,9 +33,14 @@ export const getInputNameForFacet = (facet: SearchFacet): SearchInputFacetName =
 export const mapToAlgoliaFilters = (tagsByFacet: SearchFacets, operator: FilterOperator = FilterOperator.AND): string => {
     return Object.keys(tagsByFacet)
         .map((facet) => {
+            const facetOperator = {
+                [SearchInputFacetName.CONTENT_TYPE]: ' OR ',
+                [SearchInputFacetName.TAG]: ' AND ',
+            }[facet] ?? ' AND ';
+
             return `(${ tagsByFacet[facet]
                 .map((label: string) => `${ facet }:"${ label }"`)
-                .join(' AND ') })`;
+                .join(facetOperator) })`;
         })
         .join(` ${ operator } `);
 };
