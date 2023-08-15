@@ -10,7 +10,7 @@
     line-height: 1.75;
     margin: 0 0 1rem;
     overflow: auto;
-    padding: 0 2rem 0.5rem;
+    padding: 0.7rem 0 0.5rem 1rem;
 
     &__list {
         @include list-reset;
@@ -40,11 +40,26 @@
                 background-size: 0 0;
             }
         }
+
+        &:hover,
+        &:focus {
+            #{ $self }__text {
+                background-position-x: 0;
+                background-size: 100% 2px;
+            }
+        }
     }
 
     &__text {
+        background: linear-gradient(
+        var(--tree-chapter-background, $c-yellow),
+        var(--tree-chapter-background, $c-yellow)
+    ) no-repeat 100% 100%;
+        background-size: 0 2px;
         display: inline;
-        font-weight: $weight-bold;
+        font-size: 1rem;
+        font-weight: $weight-medium;
+        transition: background-color 0.2s ease-in-out, background-size 0.2s ease-in-out;
     }
 
     .is-book {
@@ -53,38 +68,29 @@
         }
 
         & > #{ $self }__item {
+            padding: 0.7rem 2rem;
+
             & > .toc {
                 margin-left: 0;
                 margin-top: 0.5rem;
             }
 
-            &.has-children {
-                margin-bottom: 1.75rem;
-            }
-        }
-
-        #{ $self }__item {
-            margin-top: 0.75rem;
-
-            &.is-active {
-                #{ $self }__link {
-                    border-color: var(--tree-book-link-border-active, $c-yellow);
+            & > #{ $self }__link {
+                #{ $self }__text {
+                    font-size: 1.25rem;
+                    font-weight: $weight-bold;
                 }
             }
 
-            #{ $self }__link {
-                border-bottom: 1px solid var(--tree-book-link-border, transparentize($c-blue, 0.7));
-                transition: border-color 0.2s;
-
-                &:hover,
-                &:focus {
-                    border-color: var(--tree-book-link-border-hover, $c-yellow);
-                }
+            &.is-active,
+            &.is-active-path {
+                background: $c-grey--light-mid;
+                border-radius: $b-radius 0 0 $b-radius;
+                box-shadow: 4px 4px 10px 0 transparentize($c-black, 0.98) inset;
+                padding-bottom: 1.5rem;
+                padding-top: 1rem;
             }
 
-            #{ $self }__text {
-                font-size: 1.25rem;
-            }
         }
     }
 
@@ -108,30 +114,14 @@
             }
 
             #{ $self }__link {
-                border-bottom: none;
-                margin-bottom: 0;
                 padding: 0.25rem 0;
-                transition: none;
 
                 &:hover,
                 &:focus {
                     #{ $self }__text {
-                        background-position-x: 0;
-                        background-size: 100% 1px;
                         color: $c-blue--light;
                     }
                 }
-            }
-
-            #{ $self }__text {
-                background: linear-gradient(
-                    var(--tree-chapter-background, $c-yellow),
-                    var(--tree-chapter-background, $c-yellow)
-                ) no-repeat 100% 100%;
-                background-size: 0 1px;
-                font-size: 1rem;
-                font-weight: $weight-medium;
-                transition: background-color 0.2s ease-in-out, background-size 0.2s ease-in-out;
             }
         }
     }

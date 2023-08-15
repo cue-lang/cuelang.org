@@ -52,22 +52,15 @@
     {{ $isActiveChapter := .isActiveChapter -}}
     {{ $isActive := (eq $s $p) -}}
     {{ $isActivePath := ($p.IsDescendant $s) -}}
-    {{ $isTagOverview := eq $s.Params.layout "tag-overview" -}}
 
     {{ $pages := where (union $s.Pages $s.Sections).ByWeight ".Params.toc_hide" "!=" true -}}
-
-    {{ if $isTagOverview }}
-        {{ $tag := $s.Params.tag -}}
-        {{ $isActivePath = and $isActiveChapter (in $p.Params.tags $tag) -}}
-        {{ $pages = where (union $s.Parent.Pages $s.Parent.Sections).ByWeight ".Params.toc_hide" "!=" true -}}
-        {{ $pages = (where $pages ".Params.tags" "intersect" (slice $tag) ) -}}
-    {{- end }}
 
     {{- $isPage := gt (add $depth 1) 2 }}
     {{- $isPageOfInactivePath := cond $isActive false (and $isPage (not $isActivePath)) }}
     {{ $withChildren := and (gt (len $pages) 0) (ne $depth $maxDepth) (not $isPageOfInactivePath) -}}
+    {{ $showChildren := and (or $isActive $isActivePath $isActiveChapter) $withChildren }}
 
-    <li class="tree__item{{ if $withChildren }} has-children{{ end }}{{ if $isActivePath }} is-active-path{{ end }}{{ if $isActive }} is-active{{ end }}">
+    <li class="tree__item{{ if $showChildren }} has-children{{ end }}{{ if $isActivePath }} is-active-path{{ end }}{{ if $isActive }} is-active{{ end }}">
         <a class="tree__link" href="{{ $s.RelPermalink }}" title="{{ $s.LinkTitle }}"{{ if $s.Params.disabled }} disabled{{ end }}>
             <span class="tree__text">{{ $s.LinkTitle }}</span>
         </a>
@@ -75,13 +68,13 @@
         {{- if $isActive }}
             {{ partial "paging/table-of-contents.html" (dict "toc" $toc) }}
         {{- end }}
-        {{- if $withChildren }}
+
+        {{- if $showChildren }}
             {{- $depth := add $depth 1 }}
             <ul class="tree__list {{ if gt $depth 2 }}is-page{{ else }}is-chapter{{ end }}">
                 {{ range $pages -}}
-                    {{- $chapterWithTag := and (eq $depth 2) (isset .Params "tags") }}
                     {{- $isRoot := (and (eq $s $p.Site.Home) (eq .Params.toc_root true)) }}
-                    {{ if and (not $isRoot) (not $chapterWithTag) -}}
+                    {{ if and (not $isRoot) -}}
                         {{ template "tree-nav-section" (dict
                             "page" $p
                             "section" .

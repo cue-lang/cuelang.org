@@ -2,6 +2,7 @@
 title: Require min or max items in a list
 weight:
 draft: false
+toc_hide: true
 tags:
     - Language
 ---
