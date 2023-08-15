@@ -4,8 +4,8 @@
 .anchor {
     $self: &;
 
-    left: 2px;
-    padding-right: 10px; // make sure there is overlap between anchor and heading
+    left: 0;
+    padding-right: 2rem; // make sure there is overlap between anchor and heading
     position: absolute;
     text-decoration: none;
 
@@ -17,14 +17,25 @@
 
     &__icon {
         display: inline-block;
-        height: 1rem;
-        vertical-align: baseline;
+        height: 1.25rem;
+        padding: 4px;
+        vertical-align: -2px;
         visibility: hidden;
-        width: 1rem;
+        width: 1.25rem;
     }
 
-    @include screen($screen-normal) {
-        left: 8px;
+    @include screen($screen-simple) {
+        &__icon {
+            padding: 3px;
+        }
+    }
+
+    @include screen($screen-large) {
+        left: -4px;
+
+        &__icon {
+            padding: 2px;
+        }
     }
 
     @media (hover: none) {
