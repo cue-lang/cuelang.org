@@ -339,6 +339,15 @@ code {
     font-style: normal;
     font-weight: inherit;
     line-height: inherit;
+
+    p & {
+        --pre-background-color: #{ $c-grey-blue--lighter };
+
+        background-color: var(--pre-background-color);
+        border: 1px solid var(--pre-border-color);
+        border-radius: 2px;
+        padding: 0 4px;
+    }
 }
 
 pre {
