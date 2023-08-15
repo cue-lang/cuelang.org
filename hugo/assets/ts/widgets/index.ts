@@ -12,3 +12,4 @@ export * from './search-autocomplete';
 export * from './search-results';
 export * from './tabs';
 export * from './tabs-nav';
+export * from './youtube';

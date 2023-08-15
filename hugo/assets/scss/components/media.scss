@@ -46,6 +46,17 @@
         width: 100%;
     }
 
+    &--video {
+        aspect-ratio: 16 / 9;
+        margin: 0;
+
+        embed,
+        object,
+        iframe {
+            @include stretch;
+        }
+    }
+
     &--wide {
         #{ $self }__image {
             margin: 0 (-$p-gutter);

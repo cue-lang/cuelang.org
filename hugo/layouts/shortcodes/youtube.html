@@ -1,0 +1,34 @@
+{{- $id := .Get "id" | default (.Get 0) -}}
+{{- $title := .Get "title" | default "" }}
+{{- $image := .Get "image" | default "" }}
+{{- $url := print "https://www.youtube.com/watch?v=" $id }}
+{{- $contentClass := "video__content" }}
+{{- $lazy := cond (or (eq (.Get "lazy") false) (eq (.Get "lazy") "false")) false true -}}
+
+{{ if not $title }}
+    {{- $contentClass = print $contentClass " video__content--no-title" -}}
+{{ end }}
+
+<div class="video" data-youtube="{{ $id }}">
+    {{ if $image }}
+        <img class="video__image" src="{{ $image }}" alt="{{ $title }}"{{ if $lazy }} loading="lazy"{{ end }}>
+        {{/*  Turn on the next part when there is a cookiewall implemented  */}}
+    {{/*  {{ else }}
+        <img class="video__image" src="https://img.youtube.com/vi/{{ $id }}/maxresdefault.jpg" alt="{{ $title }}"{{ if $lazy }} loading="lazy"{{ end }}>  */}}
+    {{ end }}
+
+    <a href="{{ $url }}" target="_blank" class="video__button">
+        <div class="{{ $contentClass }}">
+            {{ if $title }}
+                <h2 class="video__title">{{ $title }}</h2>
+            {{ end }}
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="video__icon" viewBox="0 0 24 24">
+                <path fill="#fff" d="M5.357 5.624h13.065v12.235H5.357Z"/>
+                <path fill="#de4a4b" d="M12.072 3.55h.133c1.234 0 7.498.05 9.188.512a3.032 3.032 0 0 1 1.352.783 3.13 3.13 0 0 1 .778 1.342 14.115 14.115 0 0 1 .328 2.11v.154l.036.394V9c.097 1.377.108 2.663.113 2.945v.112c0 .292 0 1.665-.123 3.099v.312a15.523 15.523 0 0 1-.354 2.346 3.017 3.017 0 0 1-2.13 2.125c-1.747.466-8.374.513-9.29.513h-.216c-.466 0-2.386 0-4.404-.077h-.896a24.353 24.353 0 0 1-3.995-.436 3.006 3.006 0 0 1-2.115-2.125 14.34 14.34 0 0 1-.354-2.346v-.312Q.016 13.618 0 12.082v-.184c0-.323 0-1.44.098-2.674v-.39l.035-.393v-.154a14.064 14.064 0 0 1 .344-2.1 3.017 3.017 0 0 1 2.12-2.125 24.998 24.998 0 0 1 3.99-.4h.9a75.021 75.021 0 0 1 4.293-.113ZM9.588 8.38v7.24L15.84 12Z"/>
+            </svg>
+
+            <span>Play</span>
+        </div>
+    </a>
+</div>
