@@ -16,6 +16,23 @@
       "message": "Robotic +2, please. I\u0027m unsure what we do with merge conflicts in UI-centric files, as Gerrit indicates are present, here.",
       "revId": "1ddfa5848db6a2f2be3f79f7ea9d4afd1b0ed627",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43398b79_d2db117c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-16T08:47:38Z",
+      "side": 1,
+      "message": "Robotic +2, please. I\u0027m unsure what we do with merge conflicts in UI-centric files, as Gerrit indicates are present, here.",
+      "revId": "1ddfa5848db6a2f2be3f79f7ea9d4afd1b0ed627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
