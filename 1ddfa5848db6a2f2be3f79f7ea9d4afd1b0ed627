@@ -50,6 +50,23 @@
       "message": "I don\u0027t grok the why the merge conflict has disappeared, but this seems ready for a robotic +2 now, please.",
       "revId": "1ddfa5848db6a2f2be3f79f7ea9d4afd1b0ed627",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1a939e3_075949a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-16T10:28:06Z",
+      "side": 1,
+      "message": "Oh, no; it hasn\u0027t. Gerrit just lagged in figuring out it still existed, for some reason. I\u0027ll address this at the PR level.",
+      "revId": "1ddfa5848db6a2f2be3f79f7ea9d4afd1b0ed627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
