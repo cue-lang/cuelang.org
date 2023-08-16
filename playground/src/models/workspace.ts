@@ -11,11 +11,14 @@ export type WorkspaceTab = {
     type: OPTION_TYPE;
     selected: Option;
     options: Option[];
+    optionsReadonly?: boolean;
     code?: string;
 };
 
 export type FunctionConfig = {
-    enabled: boolean;
+    enabled: false;
+} | {
+    enabled: true;
     title: string;
     selected: Option;
     options: Option[];
@@ -29,10 +32,11 @@ export type WorkspaceConfig = {
 
 export type Workspace = {
     enabled: boolean;
-    name: WORKSPACE,
+    type: WORKSPACE,
     title: string;
     description: string;
     icon: string;
     config: WorkspaceConfig;
 };
 
+export type Workspaces = { [key in WORKSPACE]?: Workspace };

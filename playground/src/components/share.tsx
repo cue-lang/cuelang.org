@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { MouseEvent, MutableRefObject } from 'react';
-import { Icon } from './icon';
 import { debounce } from 'lodash';
 import cx from 'classnames';
+import { Icon } from '@components/icon';
 
 interface ShareProps {
     saved: boolean;
     showSaveURL: boolean;
     share: {(): void};
+    disabled?: boolean;
 }
 
 export class Share extends React.Component<ShareProps>
@@ -70,6 +71,8 @@ export class Share extends React.Component<ShareProps>
                 { this.showShareButton &&
                     <button
                         className="cue-button cue-button--transparent cue-share__button"
+                        disabled={ this.props.disabled }
+                        title={ this.props.disabled ? 'Share is not available yet for this workspace' : '' }
                         onClick={ this.onClickShare.bind(this) }
                     >
                         <span className="cue-share__text">Share</span>

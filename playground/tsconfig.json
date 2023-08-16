@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"allowJs": false,
 		"allowSyntheticDefaultImports": true,
-		"baseUrl": "./",
+    "baseUrl": "./src",
     "esModuleInterop": true,
 		"jsx": "react",
 		"lib": [
@@ -15,10 +15,11 @@
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
 		"paths": {
-			"@components/*": [ "./src/components/*" ],
-			"@config/*": [ "./src/config/*" ],
-			"@containers/*": [ "./src/containers/*" ],
-			"@models/*": [ "./src/models/*" ],
+			"@components/*": [ "components/*" ],
+			"@config/*": [ "config/*" ],
+			"@containers/*": [ "containers/*" ],
+			"@models/*": [ "models/*" ],
+			"@helpers/*": [ "helpers/*" ],
 		},
 		"removeComments": true,
 		"sourceMap": true,
@@ -27,11 +28,8 @@
 		"strictNullChecks": false,
 		"target": "es2020"
 	},
-  "include": [
-    "./**/*.ts"
-  ],
   "exclude": [
     "node_modules",
-    "vendor"
+    "vendor",
   ]
 }

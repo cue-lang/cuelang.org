@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { MouseEvent, MutableRefObject } from 'react';
 import cx from 'classnames';
-import { Icon } from './icon';
-import { DropdownChange, DropdownItem } from '../models/dropdown';
+import { DropdownChange, DropdownItem } from '@models/dropdown';
+import { Icon } from '@components/icon';
 
 interface DropdownProps {
     activeItem: DropdownItem;
     cssClass?: string;
     disabled?: boolean;
+    readonly?: boolean;
     disabledText?: string;
-    id: string;
+    groupId: string;
     items: DropdownItem[];
     name?: string;
     onDropdownSelect?: {(change: DropdownChange): void};
@@ -76,6 +77,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
             'cue-dropdown': true,
             'is-open': this.state.open,
             'is-disabled': this.props.disabled,
+            'is-readonly': this.props.readonly,
         }, this.props.cssClass);
 
         const items = [];
@@ -104,20 +106,23 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
                 <button
                     aria-expanded={ this.state.open }
                     className="cue-dropdown__button"
-                    disabled={ disabled }
-                    id={ this.props.id }
+                    disabled={ disabled || this.props.readonly }
+                    id={ this.props.groupId }
                     onClick={ this.onToggleClick.bind(this) }
                 >
-                    { this.props.disabled ? disabledText : buttonText }
-                    { !disabled &&
+                    <span className="cue-dropdown__text">
+                        { this.props.disabled ? disabledText : buttonText }
+                    </span>
+
+                    { (!disabled && !this.props.readonly ) &&
                         <span className="cue-dropdown__icon">
                             <Icon icon="chevron-down"></Icon>
                         </span>
                     }
                 </button>
 
-                { (!this.props.disabled && this.state.open && items.length > 1) &&
-                    <div className="cue-dropdown__content" aria-labelledby={ this.props.id }>
+                { (!this.props.disabled && !this.props.readonly && this.state.open) &&
+                    <div className="cue-dropdown__content" aria-labelledby={ this.props.groupId }>
                         <ul className="cue-dropdown__list">
                             { items }
                         </ul>
@@ -141,7 +146,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
             activeItem: item,
         });
         this.props.onDropdownSelect({
-            groupId: this.props.id,
+            groupId: this.props.groupId,
             selected: item,
         });
         this.hide();

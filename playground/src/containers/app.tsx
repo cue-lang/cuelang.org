@@ -13,128 +13,295 @@
 // limitations under the License.
 
 import * as React from 'react';
-import { funcOptions, inputOptions, Option, OPTION_TYPE, outputOptions } from '@models/options';
-import { Tabs } from '@components/tabs';
-import { Tab } from '@components/tab';
-import { Editor } from '@monaco-editor/react';
 import { editor } from 'monaco-editor';
-import { editorOptions, outputEditorOptions } from '../config/monaco-editor';
+import { Editor } from '@monaco-editor/react';
 import { debounce } from 'lodash';
-import { Header } from '../components/header';
-import { functionWorkspace } from '../config/workspaces';
-import { Workspace } from '../models/workspace';
-import { DropdownChange } from '../models/dropdown';
+import { editorOptions, outputEditorOptions } from '@config/monaco-editor';
+import { availableWorkspaces, defaultWorkspace } from '@config/workspaces';
+import { OPTION_TYPE } from '@models/options';
+import { DropdownChange } from '@models/dropdown';
+import { HASH_KEY, hashParams } from '@models/hashParams';
+import { WORKSPACE, Workspace, Workspaces } from '@models/workspace';
+import { setupWorkspaceConfig } from '@helpers/workspace';
+import { getSharedCode, share, workspaceToShareContent } from '@helpers/share';
+import { getParamsFromUrl, workspaceToHashParams } from '@helpers/hash-params';
+import { Header } from '@components/header';
+import { Tab } from '@components/tab';
+import { Tabs } from '@components/tabs';
 
-interface AppProps {
+interface AppProps
+{
     WasmAPI: WasmAPI;
 }
 
-interface AppState {
-    readonly activeWorkspace: Workspace;
-    readonly input: Option;
-    readonly func: Option;
-    readonly output: Option;
-    readonly saved: boolean;
-    readonly showSaveURL: boolean;
+interface AppState
+{
+    activeWorkspaceName: WORKSPACE;
+    workspaces: Workspaces;
+    loading: boolean;
+    saved: boolean;
+    showSaveURL: boolean;
 }
 
 // App is the root of our React application
-export class App extends React.Component<AppProps, AppState> {
-    private inputEditor: editor.IStandaloneCodeEditor;
+export class App extends React.Component<AppProps, AppState>
+{
+    private inputEditors: { [key: string ]: editor.IStandaloneCodeEditor } = {};
     private outputEditor: editor.IStandaloneCodeEditor;
-    private hashSeperator = '@';
 
     constructor(props: AppProps) {
         super(props);
 
         this.state = {
-            activeWorkspace: functionWorkspace,
-            input: undefined,
-            func: undefined,
-            output: undefined,
+            activeWorkspaceName: WORKSPACE.FUNC,
+            workspaces: availableWorkspaces,
+            loading: true,
             saved: false,
             showSaveURL: false,
         };
-
-        this.state = this.urlToState();
     }
 
-    public componentDidMount() {
-        window.addEventListener('hashchange', this.onUrlHashChange.bind(this));
-        window.addEventListener("resize", this.onWindowResize.bind(this));
+    public async componentDidMount() {
+        window.addEventListener('hashchange', this.updatePlayground.bind(this));
+        window.addEventListener('resize', this.onWindowResize.bind(this));
 
         this.props.WasmAPI.OnChange(this.updateOutput.bind(this));
+
+        await this.loadPlayground();
     }
 
     public componentWillUnmount() {
-        window.removeEventListener('hashchange', this.onUrlHashChange.bind(this));
-        window.removeEventListener("resize", this.onWindowResize.bind(this));
+        window.removeEventListener('hashchange', this.updatePlayground.bind(this));
+        window.removeEventListener('resize', this.onWindowResize.bind(this));
+    }
+
+    public async loadPlayground() {
+        let activeWorkspace: Workspace;
+        let saved = false;
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params: hashParams = getParamsFromUrl();
+
+        // Check if we have saved code to get
+        const id = urlSearchParams.get('id');
+        if (id != null && id != '') {
+            const sharedCode = await getSharedCode(id);
+            if (sharedCode) {
+                saved = true;
+                activeWorkspace = availableWorkspaces[sharedCode.workspace] ?? defaultWorkspace;
+                for (const savedInput of sharedCode.inputs) {
+                    const inputTab = activeWorkspace.config.inputTabs.find(tab => tab.type = savedInput.type);
+                    if (inputTab) {
+                        inputTab.code = savedInput.code;
+                    }
+                }
+            }
+        }
+
+        // If no workspace is set from saved code: get from params
+        if (!activeWorkspace && params[HASH_KEY.WORKSPACE]) {
+            const workspaceKey = params[HASH_KEY.WORKSPACE] as WORKSPACE;
+            activeWorkspace = availableWorkspaces[workspaceKey];
+        }
+
+        // If still no workspace set, or selected workspace is not enabled: use default
+        if (!activeWorkspace || !activeWorkspace.enabled) {
+            activeWorkspace = defaultWorkspace;
+        }
+
+        // Setup workspace config from url params
+        activeWorkspace = setupWorkspaceConfig(activeWorkspace, params);
+
+        // Update active workspace in workspaces array
+        const workspaces = this.state.workspaces;
+        workspaces[activeWorkspace.type] = activeWorkspace;
+
+        // Update hash because params might have changed because of validation rules
+        this.updateHash(activeWorkspace, true);
+
+        // Update state
+        this.setState({
+            activeWorkspaceName: activeWorkspace.type,
+            workspaces: workspaces,
+            saved: saved,
+            loading: false,
+        }, this.updateOutput.bind(this));
+    }
+
+    public updatePlayground() {
+        const params: hashParams = getParamsFromUrl();
+
+        // Get current active workspace from state
+        let activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
+        const workspaces = this.state.workspaces;
+
+        // Check if we need to switch workspace
+        const workspaceParam = params[HASH_KEY.WORKSPACE];
+        if (workspaceParam && Object.values<string>(WORKSPACE).includes(workspaceParam) &&
+            workspaceParam !== this.state.activeWorkspaceName) {
+            // Get new active workspace from all saved workspaces in state
+            const newActiveWorkspace = this.state.workspaces[workspaceParam as WORKSPACE];
+
+            // If new workspace does not exist or is not enabled: do nothing
+            if (!newActiveWorkspace || !newActiveWorkspace.enabled) {
+                return;
+            }
+
+            // Set state to loading because we're going to start setting up the workspace
+            this.setState({
+                loading: true,
+            });
+
+            // Save code from editors in current active workspace
+            if (this.inputEditors) {
+                for (const inputTab of activeWorkspace.config.inputTabs) {
+                    const editorId = `${ activeWorkspace.type }-${ inputTab.type }`;
+                    const editor = this.inputEditors[editorId];
+                    console.log(this.inputEditors);
+                    inputTab.code = editor ? editor.getValue() : '';
+                }
+
+                /* Note: Eventually code gets saved and loaded by either workspace config or because monaco-editor
+                 multi-model-editor takes care of that (https://github.com/suren-atoyan/monaco-react#multi-model-editor)
+                 We use the path attribute in the rendering of the editor to identify the model (workspace + input type)
+                 If an editor was already mounted the monaco model will take care of loading the saved code
+                 if editor wasn't already mounted it gets the code value from the workspace config when it mounts
+                */
+
+                // Update workspace in workspaces array
+                workspaces[activeWorkspace.type] = activeWorkspace;
+            }
+
+            // Update hash because params might have changed because of workspace config
+            this.updateHash(newActiveWorkspace, true);
+
+            // Update state + update output after
+            this.setState({
+                activeWorkspaceName: newActiveWorkspace.type,
+                workspaces: workspaces,
+                loading: false,
+            }, this.updateOutput.bind(this));
+
+        } else { // Same workspace but params changed:
+            const params: hashParams = getParamsFromUrl();
+            // Setup workspace config again with new params
+            activeWorkspace = setupWorkspaceConfig(activeWorkspace, params);
+            workspaces[activeWorkspace.type] = activeWorkspace;
+
+            // Update hash because params might have changed because of validation rules
+            this.updateHash(activeWorkspace, true);
+
+            // Update state + update output after
+            this.setState({
+                workspaces: workspaces,
+            }, this.updateOutput.bind(this));
+        }
+    }
+
+    public updateHash(workspace: Workspace, replace = false) {
+        const currentHash = window.location.hash.slice(1);
+        const newHash = workspaceToHashParams(workspace);
+        if (currentHash !== newHash) {
+            if (replace) {
+                const href = window.location.href;
+                const newUrl = window.location.hash !== '' ? href.replace(window.location.hash, `#${ newHash }`) : `${ href }#${ newHash }`;
+                history.replaceState(null, '', newUrl);
+            } else {
+                window.location.hash = newHash;
+            }
+        }
     }
 
     public render() {
+        const activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
+        const funcTab = activeWorkspace.config.func;
+        const outputTab = activeWorkspace.config.outputTab;
+
         return (
-            <div className="cue-playground">
+            <div className={ `cue-playground cue-playground--${ activeWorkspace.type }` }>
                 <div className="cue-playground__header">
                     <Header
-                        activeWorkspace={ this.state.activeWorkspace }
-                        activeInput={ this.state.input }
-                        activeFunc={ this.state.func }
-                        activeOutput={ this.state.output }
+                        activeWorkspaceName={ this.state.activeWorkspaceName }
+                        workspaces={ this.state.workspaces }
                         saved={ this.state.saved }
                         showSaveURL={ this.state.showSaveURL }
                         share={ this.share.bind(this) }
                         handleOptionsChange={ this.handleOptionsChange.bind(this) }
+                        onDropdownSelect={ this.handleDropdownChange.bind(this) }
                         switchWorkspace={ this.switchWorkspace.bind(this) }
                     ></Header>
                 </div>
                 <div className="cue-playground__content">
-                    <div className="cue-columns">
-                        <div className="cue-columns__item">
-                            <Tabs>
-                                <Tab
-                                    activeItem={ this.state.input }
-                                    id={ OPTION_TYPE.INPUT }
-                                    items={ inputOptions }
-                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
-                                    name={ 'Input' }
-                                >
-                                    <Editor
-                                        className="cue-editor"
-                                        language={ this.state.input.value }
-                                        options={ editorOptions }
-                                        onMount={ async (editor) => {
-                                            this.inputEditor = editor;
-                                            await this.loadSavedCode();
-                                            this.updateOutput();
-                                        } }
-                                        onChange={ this.onEditorInputChange.bind(this) }
-                                    />
-                                </Tab>
-                            </Tabs>
+                    { this.state.loading &&
+                        <div className="cue-playground__spinner cue-spinner">
+                            <div className="cue-spinner__item"></div>
+                            <div className="cue-spinner__item"></div>
+                            <div className="cue-spinner__item"></div>
+                            <p className="cue-spinner__text">loading</p>
                         </div>
-                        <div className="cue-columns__item">
-                            <Tabs>
-                                <Tab
-                                    activeItem={ this.state.output }
-                                    disabled={ this.state.func.value === 'def' }
-                                    id={ OPTION_TYPE.OUTPUT }
-                                    items={ outputOptions }
-                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
-                                    name={ 'Output' }
-                                    type="terminal">
-                                    <Editor
-                                        className="cue-editor cue-editor--terminal"
-                                        language={ this.state.output.value }
-                                        options={ outputEditorOptions }
-                                        defaultValue="// ... loading WASM"
-                                        onMount={ (editor) => {
-                                            this.outputEditor = editor;
-                                        } }
-                                    />
-                                </Tab>
-                            </Tabs>
+                    }
+
+                    { !this.state.loading &&
+                        <div className="cue-columns">
+                            <div className="cue-columns__item">
+                                { activeWorkspace.config.inputTabs.map((tab) => {
+                                    const id = `${ activeWorkspace.type }-${ tab.type }`;
+                                    return (
+                                        <div className="cue-columns__subitem" key={ id }>
+                                            <Tabs>
+                                                <Tab
+                                                    activeItem={ tab.selected }
+                                                    groupId={ tab.type }
+                                                    items={ tab.options }
+                                                    readonly={ tab.optionsReadonly }
+                                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                                                    name={ tab.title }
+                                                >
+                                                    <Editor
+                                                        className="cue-editor"
+                                                        language={ tab.selected.value }
+                                                        value={ tab.code ?? '' }
+                                                        options={ editorOptions }
+                                                        path={ id }
+                                                        onMount={ async (editor) => {
+                                                            this.inputEditors[id] = editor;
+                                                            this.updateOutput();
+                                                        } }
+                                                        onChange={ this.onEditorInputChange.bind(this) }
+                                                    />
+                                                </Tab>
+                                            </Tabs>
+                                        </div>
+                                    );
+                                }) }
+                            </div>
+                            <div className="cue-columns__item">
+                                <Tabs>
+                                    <Tab
+                                        activeItem={ outputTab.selected }
+                                        disabled={ funcTab.enabled && funcTab.selected.value === 'def' }
+                                        groupId={ outputTab.type }
+                                        items={ outputTab.options }
+                                        readonly={ outputTab.optionsReadonly }
+                                        onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                                        name={ outputTab.title }
+                                        type="output"
+                                    >
+                                        <Editor
+                                            className="cue-editor cue-editor--terminal"
+                                            language={ outputTab.selected.value }
+                                            options={ outputEditorOptions }
+                                            path={ `${ activeWorkspace.type }-${ outputTab.type }` }
+                                            defaultValue="// ... loading WASM"
+                                            onMount={ (editor) => {
+                                                this.outputEditor = editor;
+                                                this.updateOutput();
+                                            } }
+                                        />
+                                    </Tab>
+                                </Tabs>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         );
@@ -144,10 +311,6 @@ export class App extends React.Component<AppProps, AppState> {
         this.resetEditorLayout();
     }, 300);
 
-    private onUrlHashChange(): void {
-        this.setState(this.urlToState(), this.updateOutput.bind(this));
-    }
-
     private onEditorInputChange(): void {
         if (this.state.saved) {
             window.history.pushState({}, 'CUE Playground', '?id=' + window.location.hash)
@@ -156,107 +319,32 @@ export class App extends React.Component<AppProps, AppState> {
         this.updateOutput();
     }
 
-    private urlToState(): AppState {
-        // Get values from hash
-        let hash = window.location.hash;
-        if (hash.startsWith('#')) {
-            hash = hash.slice(1);
-        }
-        const values = hash.split(this.hashSeperator);
-        let inputValue = values[0]?.trim();
-        let funcValue = values[1]?.trim();
-        let outputValue = values[2]?.trim();
-
-        // Validate if option from url is valid: if so use: otherwise use first option of array
-        const inputOption = inputOptions.find(option => option.value === inputValue);
-        const input = inputOption ?? inputOptions[0];
-
-        const funcOption = funcOptions.find(option => option.value === funcValue);
-        let func = funcOption ?? funcOptions[0];
-
-        const outputOption = outputOptions.find(option => option.value === outputValue);
-        let output = outputOption ?? outputOptions[0];
-
-        // Validate if selected options work together: if not change them:
-
-        /// if function is def but input is not cue: change func to export
-        if (func.value === 'def' && input.value !== 'cue') {
-            func = funcOptions.find(option => option.value === 'export');
-        }
-
-        // If function is def but output is not cue : set output to cue
-        if (func.value === 'def' && output.value !== 'cue') {
-            output = outputOptions.find(option => option.value === 'cue');
-        }
-
-        const urlOptions = {
-            [OPTION_TYPE.INPUT]: input.value,
-            [OPTION_TYPE.FUNC]: func.value,
-            [OPTION_TYPE.OUTPUT]: output.value,
-        };
-
-        // Update hash if parameters changed because of validation logic above
-        if (input.value !== inputValue || func.value !== funcValue || output.value !== outputValue) {
-            window.location.hash = `#${ Object.values(urlOptions).join(this.hashSeperator) }`;
-        }
-
-        // Return new state
-        return { ...this.state, input: input, func: func, output: output };
-    }
-
-    private async loadSavedCode(): Promise<void> {
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get('id');
-
-        if (id != null && id != '') {
-            this.inputEditor.updateOptions({
-                ...this.inputEditor.getOptions(),
-                readOnly: true,
-            });
-            const url = `${ this.getShareUrl() }?id=${ id }`;
-
-            try {
-                const response = await fetch(url, { headers: { 'Content-Type': 'text/plain;' } });
-                const data = await response.text();
-                this.inputEditor.setValue(data);
-                this.inputEditor.setSelection({
-                    startLineNumber: 0, startColumn: 0, endLineNumber: 0, endColumn: 0
-                });
-                this.inputEditor.updateOptions({
-                    ...this.inputEditor.getOptions(),
-                    readOnly: false,
-                });
-                this.setState({ ...this.state, saved: true });
-            } catch (error) {
-                this.inputEditor.updateOptions({
-                    ...this.inputEditor.getOptions(),
-                    readOnly: false,
-                });
-                console.log('Error loading snippet with id=' + id, error);
-            }
-        }
-    }
-
     private switchWorkspace(workspace: Workspace): void {
         if (workspace.enabled) {
-            // TODO: Will be picked up when we implement Policy Workspace
+            const newActiveWorkspace = this.state.workspaces[workspace.type as WORKSPACE];
+            this.updateHash(newActiveWorkspace);
         }
     }
 
     private handleOptionsChange(changes: DropdownChange[]): void {
-        const urlOptions: { [key in OPTION_TYPE]: string } = {
-            [OPTION_TYPE.INPUT]: this.state.input.value,
-            [OPTION_TYPE.FUNC]: this.state.func.value,
-            [OPTION_TYPE.OUTPUT]: this.state.output.value,
-        }
+        const activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
 
         for (const change of changes) {
             if (Object.values<string>(OPTION_TYPE).includes(change.groupId)) {
-                urlOptions[change.groupId as OPTION_TYPE] = change.selected.value;
+                if (change.groupId === OPTION_TYPE.FUNC && activeWorkspace.config.func.enabled) {
+                    activeWorkspace.config.func.selected = change.selected;
+                } else if (change.groupId === OPTION_TYPE.OUTPUT) {
+                    activeWorkspace.config.outputTab.selected = change.selected;
+                } else {
+                    const inputTab = activeWorkspace.config.inputTabs.find(tab => tab.type === change.groupId);
+                    if (inputTab) {
+                        inputTab.selected = change.selected;
+                    }
+                }
             }
         }
 
-        window.location.hash = `#${ Object.values(urlOptions).join(this.hashSeperator) }`;
+        this.updateHash(activeWorkspace);
     }
 
     private handleDropdownChange(change: DropdownChange): void {
@@ -264,9 +352,11 @@ export class App extends React.Component<AppProps, AppState> {
     }
 
     public resetEditorLayout(): void {
-        if (this.inputEditor) {
-            this.inputEditor.layout();
-            this.inputEditor.layout({ width: 0, height: 0 });
+        if (this.inputEditors) {
+            for (const inputEditor of Object.values(this.inputEditors)) {
+                inputEditor.layout();
+                inputEditor.layout({ width: 0, height: 0 });
+            }
         }
 
         if (this.outputEditor) {
@@ -275,47 +365,66 @@ export class App extends React.Component<AppProps, AppState> {
         }
     }
 
-    private getShareUrl(): string {
-        const prefix = window.location.host.startsWith('localhost') ? 'http://localhost:8081' : '';
-        return `${ prefix }/.netlify/functions/snippets`;
-    }
-
     private updateOutput(): void {
+        const activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
+
         if (this.props.WasmAPI.CUECompile === undefined ||
-            this.inputEditor === undefined || this.outputEditor === undefined) {
+            this.inputEditors === undefined || this.outputEditor === undefined) {
             return;
         }
 
-        let pre = this.inputEditor.getValue();
-        let post = this.props.WasmAPI.CUECompile(this.state.input.value, this.state.func.value, this.state.output.value, pre);
-        let val = post.error;
+        /* TODO: this part is just to make current function workspace output to keep working with the new setup
+    but it will be replaced by a dynamic setup for all workspaces: see commented out code below */
+        /* START OF (OLD) FUNCTION CODE */
+        const inputTab = activeWorkspace.config.inputTabs.find(tab => tab.type === OPTION_TYPE.INPUT);
+        const func = activeWorkspace.config.func.enabled ? activeWorkspace.config.func.selected.value : 'export';
+        const output = activeWorkspace.config.outputTab.optionsReadonly ? 'cue' : activeWorkspace.config.outputTab.selected.value;
+        const editorId = `${ activeWorkspace.type }-${ inputTab.type }`;
+        const inputEditor = this.inputEditors[editorId];
+        const pre = inputEditor ? inputEditor.getValue() : '';
+        const result = this.props.WasmAPI.CUECompile(inputTab?.selected.value, func, output, pre);
+
+        let val = result.error;
         if (val === '') {
-            val = post.value;
+            val = result.value;
         }
+
         this.outputEditor.setValue(val);
         this.outputEditor.setSelection({
             startLineNumber: 0, startColumn: 0, endLineNumber: 0, endColumn: 0
         });
+        /* END OF FUNCTION CODE */
+
+
+        // TODO: New implementation: can be uncommented when wasm part is ready
+        /* START OF NEW CODE */
+        // const config: WasmConfig = workspaceToWasmConfig(activeWorkspace, this.inputEditors);
+        // const result: CUECompileResponse = this.props.WasmAPI.CUECompile(config);
+        // if (result.outputType !== activeWorkspace.config.outputTab.selected.value)  {
+        //     // Update output language for state if it changed because of result
+        //     const newOutputOption = allOptions.find(option => option.value === result.outputType);
+        //     if (newOutputOption) {
+        //         activeWorkspace.config.outputTab.selected = newOutputOption;
+        //         // Update hash to reflect changes in url & ui
+        //         this.updateHash(activeWorkspace);
+        //     }
+        // }
+        //
+        // this.outputEditor.setValue(result.output);
+        // this.outputEditor.setSelection({
+        //     startLineNumber: 0, startColumn: 0, endLineNumber: 0, endColumn: 0
+        // });
+        /* END OF NEW CODE */
+
     }
 
-    private share(): void {
-        this.setState({ ...this.state, saved: true, showSaveURL: true });
-
-        const contents = this.inputEditor.getValue();
-        fetch(this.getShareUrl(), {
-            method: 'POST',
-            headers: { 'Content-Type': 'text/plain;' },
-            body: contents,
-        }).then((resp: Response) => {
-            if (!resp.ok) {
-                throw new Error(`Response status was not ok: ${ resp.status }`);
-            }
-            return resp.text();
-        }).then((data: string) => {
-            window.history.pushState({}, 'CUE Playground', '?id=' + data + window.location.hash)
+    private async share(): Promise<void> {
+        const activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
+        const contents = workspaceToShareContent(activeWorkspace, this.inputEditors);
+        const data = await share(contents);
+        if (data) {
+            window.history.pushState({}, 'CUE Playground', '?id=' + data + window.location.hash);
             this.setState({ ...this.state, saved: true, showSaveURL: true });
-        }).catch((error) => {
-            console.log('Failed to share', error);
-        });
+        }
     }
 }
