@@ -8,7 +8,7 @@ enableMissingTranslationPlaceholders = true  # Useful when translating
 
 enableRobotsTXT = true # Render robots.txt
 enableGitInfo = true # Will give git-info values to .Lastmod etc.
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+disableKinds = ["RSS", "taxonomy", "term"]
 disableAliases = true # We use Netlify server-side redirects instead of generated aliases
 
 # Hugo allows theme composition (and inheritance). Precedence is from left to right.

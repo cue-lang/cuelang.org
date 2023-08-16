@@ -18,8 +18,12 @@
     {{ $cutoff := 1000 -}}
     {{ $index := .index -}}
     {{ $skipWords := mul $cutoff $index }}
+    {{ $fileID := replace $page.Title " " "_"|lower }}
+    {{- with $page.File -}}
+        {{- $fileID = .UniqueID -}}
+    {{- end -}}
 
-    {{- $objectID := (print $page.File.UniqueID "_" (add $index 1)) -}}
+    {{- $objectID := (print $fileID "_" (add $index 1)) -}}
     {{- $title :=  $page.Title -}}
     {{- $link := $page.RelPermalink -}}
     {{- $publishDate := $page.PublishDate -}}
