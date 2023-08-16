@@ -4,6 +4,7 @@
     contentDir = "content/en"
     languageDirection = "ltr"
     title = "CUE"
-    description = "Validate and define text-based and dynamic configuration"
-    time_format = "January 2, 2006"
     weight = 1
+    [en.params]
+        description = "Validate and define text-based and dynamic configuration"
+        time_format = "January 2, 2006"
