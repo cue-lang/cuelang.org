@@ -33,6 +33,23 @@
       "message": "Robotic +2, please. I\u0027m unsure what we do with merge conflicts in UI-centric files, as Gerrit indicates are present, here.",
       "revId": "1ddfa5848db6a2f2be3f79f7ea9d4afd1b0ed627",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59ad5f05_afcabc83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-16T10:27:09Z",
+      "side": 1,
+      "message": "I don\u0027t grok the why the merge conflict has disappeared, but this seems ready for a robotic +2 now, please.",
+      "revId": "1ddfa5848db6a2f2be3f79f7ea9d4afd1b0ed627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
