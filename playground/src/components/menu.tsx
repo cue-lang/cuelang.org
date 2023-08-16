@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { MouseEvent, MutableRefObject, PropsWithChildren } from 'react';
 import cx from 'classnames';
-import { Icon } from './icon';
+import { Icon } from '@components/icon';
 
 interface MenuProps {
     cssClass?: string;
@@ -59,7 +59,6 @@ export class Menu extends React.Component<PropsWithChildren<MenuProps>, MenuStat
                 this.props.onClose();
             }
         });
-
     }
 
     public show() {

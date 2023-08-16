@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { JSXElementConstructor, MouseEvent, PropsWithChildren } from 'react';
 import cx from 'classnames';
-import { Tab, TabProps } from './tab';
-import { Dropdown } from './dropdown';
+import { Dropdown } from '@components/dropdown';
+import { Tab, TabProps } from '@components/tab';
 
 interface TabsProps {
     activeIndex?: number;
@@ -44,20 +44,21 @@ export class Tabs extends React.Component<PropsWithChildren<TabsProps>, TabsStat
                             const tabName = `${ tab.name ? (tab.name + ': ') : ''}${ tab.activeItem.name ?? ''}`;
                             const tabClassNames = cx({
                                 'is-active': isActive,
-                                'cue-tabs-nav__tab--terminal': tab.type === 'terminal',
+                                'cue-tabs-nav__tab--output': tab.type === 'output',
                             }, 'cue-tabs-nav__tab');
 
                             return (
-                                <li className="cue-tabs-nav__item" key={`tab-${ index }`}>
+                                <li className="cue-tabs-nav__item" key={`tab-${ tab.groupId }`}>
                                     { (isActive && tab.items && tab.items.length > 1) &&
                                         <div className={ tabClassNames }
                                         >
                                             <Dropdown
                                                 activeItem={ tab.activeItem }
                                                 cssClass="cue-tabs-nav__dropdown cue-dropdown--tab"
+                                                readonly={ tab.readonly }
                                                 disabled={ tab.disabled }
                                                 disabledText={ tab.disabledText }
-                                                id={ tab.id }
+                                                groupId={ tab.groupId }
                                                 items={ tab.items}
                                                 name={ tab.name }
                                                 onDropdownSelect={ tab.onDropdownSelect }
@@ -70,7 +71,7 @@ export class Tabs extends React.Component<PropsWithChildren<TabsProps>, TabsStat
                                             disabled={ tab.disabled }
                                             className={ cx('cue-tabs-nav__tab', {
                                                 'is-active': isActive,
-                                                'cue-tabs-nav__tab--terminal': tab.type === 'terminal',
+                                                'cue-tabs-nav__tab--output': tab.type === 'output',
                                             }) }
                                             onClick={ (e) => this.selectTab(e, index) }
                                         ><span className="cue-tabs-nav__text">{ tabName }</span></button>

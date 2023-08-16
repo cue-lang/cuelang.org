@@ -32,12 +32,32 @@ declare interface WasmAPI {
 	// Work out why this is.
 	OnChange(callback: WasmAPICallback): void;
 	readonly CUECompile: ((input: string, func: string, output: string, inputVal: string) => CUECompileResponse) | undefined;
+	// TODO: Switch to version below when WASM gets updated to multi-workspace version
+    // readonly CUECompile: ((config: WasmConfig) => CUECompileResponse) | undefined;
+}
+
+declare interface WasmConfig {
+    workspace: string;
+    inputs: {
+        type: string;
+        language: string;
+        value: string;
+    }[];
+    function?: string;
+    outputLanguage?: string;
 }
 
 declare interface CUECompileResponse {
 	readonly value: string;
 	readonly error: string;
 }
+
+// TODO: Switch to version below when WASM gets updated to multi-workspace version
+// declare interface CUECompileResponse {
+//     readonly success: boolean;
+//     readonly output: string;
+//     readonly outputType?: string;
+// }
 
 declare interface Window {
 	WasmAPI: WasmAPI;

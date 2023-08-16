@@ -6,14 +6,14 @@
     padding-top: 1rem;
 
     &--terminal {
-        background: $c-terminal;
+        background: $c-output-bcg;
 
         .monaco-editor {
-            --vscode-editor-background: #{ $c-terminal };
-            --vscode-breadcrumb-background: #{ $c-terminal };
-            --vscode-editorGutter-background: #{ $c-terminal };
-            --vscode-editorMarkerNavigation-background: #{ $c-terminal };
-            --vscode-editorStickyScroll-background: #{ $c-terminal };
+            --vscode-editor-background: #{ $c-output-bcg };
+            --vscode-breadcrumb-background: #{ $c-output-bcg };
+            --vscode-editorGutter-background: #{ $c-output-bcg };
+            --vscode-editorMarkerNavigation-background: #{ $c-output-bcg };
+            --vscode-editorStickyScroll-background: #{ $c-output-bcg };
         }
     }
 }
