@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { PropsWithChildren, ReactNode } from 'react';
-import { DropdownChange, DropdownItem } from '../models/dropdown';
+import { DropdownChange, DropdownItem } from '@models/dropdown';
 
 export interface TabProps {
     activeItem: DropdownItem;
     children: ReactNode;
     disabled?: boolean;
     disabledText?: string;
-    id: string;
+    groupId: string;
     items: DropdownItem[];
     name: string;
     onDropdownSelect?: {(change: DropdownChange): void};
     open?: boolean;
+    readonly ?: boolean;
     type?: string;
 }
 

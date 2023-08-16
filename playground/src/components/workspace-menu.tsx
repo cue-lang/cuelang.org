@@ -1,74 +1,54 @@
 import * as React from 'react';
-import { MutableRefObject } from 'react';
-import { Workspace } from '../models/workspace';
-import { funcOptions, inputOptions, Option, OPTION_TYPE, outputOptions } from '../models/options';
-import { Dropdown } from './dropdown';
-import { workspaces } from '../config/workspaces';
-import { DropdownChange } from '../models/dropdown';
-import { Icon } from './icon';
 import cx from 'classnames';
+import { Dropdown } from './dropdown';
+import { Icon } from './icon';
+import { availableWorkspaces } from '@config/workspaces';
+import { DropdownChange } from '@models/dropdown';
+import { OPTION_TYPE } from '@models/options';
+import { Workspace, Workspaces } from '@models/workspace';
+import { workspaceToHashParams } from '@helpers/hash-params';
 
 interface WorkspaceMenuProps {
     activeWorkspace: Workspace;
-    activeInput: Option;
-    activeFunc: Option;
-    activeOutput: Option;
-    handleOptionsChange: { (changes: DropdownChange[]): void };
-    switchWorkspace: { (workspace: Workspace): void };
+    workspaces: Workspaces;
+    onDropdownSelect?: {(change: DropdownChange): void};
+    onClose?: () => void;
 }
 
-interface WorkspaceMenuState {
-    [OPTION_TYPE.INPUT]: Option,
-    [OPTION_TYPE.FUNC]: Option,
-    [OPTION_TYPE.OUTPUT]: Option,
-    filteredFuncOptions: Option[],
-}
-
-export class WorkspaceMenu extends React.Component<WorkspaceMenuProps, WorkspaceMenuState> {
-    public menuRef: MutableRefObject<HTMLDivElement>;
-
+export class WorkspaceMenu extends React.Component<WorkspaceMenuProps> {
     constructor(props: WorkspaceMenuProps) {
         super(props);
-
-        this.menuRef = React.createRef();
-
-        const filteredFuncOptions: Option[] = funcOptions.filter((option) => {
-            return !(option.value === 'def' && this.props.activeInput.value !== 'cue');
-        });
-
-        this.state = {
-            [OPTION_TYPE.INPUT]: this.props.activeInput,
-            [OPTION_TYPE.FUNC]: this.props.activeFunc,
-            [OPTION_TYPE.OUTPUT]: this.props.activeOutput,
-            filteredFuncOptions: filteredFuncOptions,
-        };
     }
 
-    public componentDidUpdate(prevProps: WorkspaceMenuProps) {
-        if (prevProps.activeInput !== this.props.activeInput) {
-            this.handleInputChange(this.props.activeInput);
-        }
+    public getFuncOptions() {
+        // We need to filter the func options if filters is enabled and we have a value for option type 'input'
+        const activeInput = this.props.activeWorkspace.config.inputTabs.find(tab => tab.type === OPTION_TYPE.INPUT)?.selected?.value;
+        const funcConfig = this.props.activeWorkspace.config.func;
+        return funcConfig.enabled && activeInput ? funcConfig.options.filter((option) => {
+            return !(option.value === 'def' && activeInput !== 'cue');
+        }) : [];
+    }
 
-        if (prevProps.activeFunc !== this.props.activeFunc) {
-            this.handleFuncChange(this.props.activeFunc);
-        }
-
-        if (prevProps.activeOutput !== this.props.activeOutput) {
-            this.handleOutputChange(this.props.activeOutput);
+    public switchWorkspace(workspace: Workspace) {
+        if (workspace.type !== this.props.activeWorkspace.type) {
+            window.location.hash = workspaceToHashParams(workspace);
         }
     }
 
     public render() {
         const activeWorkspace = this.props.activeWorkspace;
+        const workspaces = Object.values(availableWorkspaces) as Workspace[];
+        const funcOption = activeWorkspace.config.func;
+        const outputTab = activeWorkspace.config.outputTab;
 
         return (
-            <div className="cue-ws-menu" ref={ this.menuRef }>
+            <div className="cue-ws-menu">
                 <div className="cue-ws-menu__section">
                     <p className="cue-ws-menu__title">Workspaces</p>
 
                     <ul className="cue-ws-menu__items">
                         { workspaces.map((workspace) => {
-                            const isActive = workspace.name === activeWorkspace.name;
+                            const isActive = workspace.type === activeWorkspace.type;
                             const buttonClasses = cx({
                                 'is-active': isActive,
                                 'cue-button--blue': isActive,
@@ -76,11 +56,11 @@ export class WorkspaceMenu extends React.Component<WorkspaceMenuProps, Workspace
                             }, 'cue-button', 'cue-ws-menu__button');
 
                             return (
-                                <li className="cue-ws-menu__item" key={ workspace.name }>
+                                <li className="cue-ws-menu__item" key={ workspace.type }>
                                     <button
                                         className={ buttonClasses }
                                         disabled={ !workspace.enabled }
-                                        onClick={ () => this.props.switchWorkspace(workspace) }
+                                        onClick={ () => this.switchWorkspace(workspace) }
                                     >
                                          <span className="cue-button__icon cue-ws-menu__icon">
                                             <Icon icon={ workspace.icon }></Icon>
@@ -96,118 +76,61 @@ export class WorkspaceMenu extends React.Component<WorkspaceMenuProps, Workspace
                     <p className="cue-ws-menu__title">{ activeWorkspace.title }</p>
                     <p className="cue-ws-menu__description">{ activeWorkspace.description }</p>
 
-                    {/* TODO: Render everything from activeWorkspace
-                    when we're going to implement multiple workspaces/policy workspace*/ }
-                    <form className="cue-ws-menu__config" onSubmit={ this.handleSubmit.bind(this) }>
+                    <div className="cue-ws-menu__config">
                         <p className="cue-ws-menu__title cue-ws-menu__title--options">Options</p>
                         <ul className="cue-ws-menu__options">
-                            <li className="cue-ws-menu__option" key="workspaceInput">
-                                <label htmlFor={ `workspace-${ OPTION_TYPE.INPUT }` } className="cue-ws-menu__label">
-                                    Input
-                                </label>
-                                <input type="hidden"
-                                       name={ OPTION_TYPE.INPUT }
-                                       id={ `workspace-${ OPTION_TYPE.INPUT }` }
-                                       value={ this.state.input.value }/>
-                                { <Dropdown
-                                    cssClass="cue-ws-menu__dropdown"
-                                    id={ OPTION_TYPE.INPUT }
-                                    activeItem={ this.state.input }
-                                    items={ inputOptions }
-                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
-                                ></Dropdown> }
-                            </li>
-                            <li className="cue-ws-menu__option" key="workspaceFunction">
-                                <label htmlFor={ `workspace-${ OPTION_TYPE.FUNC }` } className="cue-ws-menu__label">
-                                    Function
-                                </label>
-                                <input type="hidden"
-                                       name={ OPTION_TYPE.FUNC }
-                                       id={ `workspace-${ OPTION_TYPE.FUNC }` }
-                                       value={ this.state.func.value }/>
-                                { <Dropdown
-                                    cssClass="cue-ws-menu__dropdown"
-                                    id={ OPTION_TYPE.FUNC }
-                                    activeItem={ this.state.func }
-                                    items={ this.state.filteredFuncOptions }
-                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
-                                ></Dropdown> }
-                            </li>
+                            { activeWorkspace.config.inputTabs.map(tab => {
+                                return (
+                                    <li className="cue-ws-menu__option"
+                                        key={ `menu-${ activeWorkspace.type }-${ tab.type }` }
+                                    >
+                                        <p className="cue-ws-menu__label">{ tab.title }</p>
+                                        { <Dropdown
+                                            cssClass="cue-ws-menu__dropdown"
+                                            groupId={ tab.type }
+                                            activeItem={ tab.selected }
+                                            items={ tab.options }
+                                            onDropdownSelect={ this.props.onDropdownSelect }
+                                        ></Dropdown> }
+                                    </li>
+                                );
+                            })}
+
+                            { funcOption.enabled &&
+                                <li className="cue-ws-menu__option" key="workspaceFunction">
+                                    <p className="cue-ws-menu__label">Function</p>
+                                    { <Dropdown
+                                        cssClass="cue-ws-menu__dropdown"
+                                        groupId={ OPTION_TYPE.FUNC }
+                                        activeItem={ funcOption.selected }
+                                        items={ this.getFuncOptions() }
+                                        onDropdownSelect={ this.props.onDropdownSelect }
+                                    ></Dropdown> }
+                                </li>
+                            }
+
                             <li className="cue-ws-menu__option" key="workspaceOutput">
-                                <label htmlFor={ `workspace-${ OPTION_TYPE.OUTPUT }` } className="cue-ws-menu__label">
-                                    Output
-                                </label>
-                                <input type="hidden"
-                                       id={ `workspace-${ OPTION_TYPE.OUTPUT }` }
-                                       name={ OPTION_TYPE.OUTPUT }
-                                       value={ this.state.output.value }/>
+                                <p className="cue-ws-menu__label">Output</p>
                                 { <Dropdown
                                     cssClass="cue-ws-menu__dropdown"
-                                    id={ OPTION_TYPE.OUTPUT }
-                                    disabled={ this.state[OPTION_TYPE.FUNC].value == 'def' }
-                                    activeItem={ this.state.output }
-                                    items={ outputOptions }
-                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                                    groupId={ outputTab.type }
+                                    readonly={ outputTab.optionsReadonly }
+                                    disabled={ funcOption.enabled && funcOption.selected.value === 'def' }
+                                    activeItem={ outputTab.selected }
+                                    items={ outputTab.options }
+                                    onDropdownSelect={ this.props.onDropdownSelect }
                                 ></Dropdown> }
                             </li>
                         </ul>
 
                         <div className="cue-ws-menu__footer">
                             <button className="cue-button cue-button--grey-outline cue-ws-menu__submit"
-                                    type="submit">OK
+                                    type="button" onClick={ this.props.onClose }>OK
                             </button>
                         </div>
-                    </form>
-
+                    </div>
                 </div>
             </div>
         );
-    }
-
-    private handleDropdownChange(change: DropdownChange) {
-        switch (change.groupId) {
-            case OPTION_TYPE.INPUT:
-                this.handleInputChange(change.selected);
-                break;
-            case OPTION_TYPE.FUNC:
-                this.handleFuncChange(change.selected);
-                break;
-            case OPTION_TYPE.OUTPUT:
-                this.handleOutputChange(change.selected);
-                break;
-        }
-    }
-
-    private handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
-        event.preventDefault();
-        const changes: DropdownChange[] = [
-            { groupId: OPTION_TYPE.INPUT, selected: this.state[OPTION_TYPE.INPUT] },
-            { groupId: OPTION_TYPE.FUNC, selected: this.state[OPTION_TYPE.FUNC] },
-            { groupId: OPTION_TYPE.OUTPUT, selected: this.state[OPTION_TYPE.OUTPUT] },
-        ]
-        this.props.handleOptionsChange(changes);
-    }
-
-    private handleInputChange(inputOption: Option) {
-        const filteredFuncOptions = funcOptions.filter((option) => {
-            return !(option.value === 'def' && inputOption.value !== 'cue');
-        });
-
-        this.setState({
-            [OPTION_TYPE.INPUT]: inputOption,
-            filteredFuncOptions: filteredFuncOptions,
-        });
-    }
-
-    private handleFuncChange(funcOption: Option) {
-        const output: Option = funcOption.value === 'def' ? outputOptions.find(option => option.value === 'cue') : this.state.output;
-        this.setState({
-            [OPTION_TYPE.FUNC]: funcOption,
-            [OPTION_TYPE.OUTPUT]: output,
-        });
-    }
-
-    private handleOutputChange(outputOption: Option) {
-        this.setState({ [OPTION_TYPE.OUTPUT]: outputOption });
     }
 }

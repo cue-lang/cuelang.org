@@ -1,0 +1,47 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../mixins/sr-only';
+
+.#{ $prefix }-spinner {
+    $self: &;
+
+    height: 20px;
+    margin: 0 auto;
+    text-align: center;
+    transition: opacity 0.2s;
+    width: 80px;
+
+    &__item {
+        animation: spinner-scale 1.4s infinite ease-in-out both;
+        background-color: var(--spinner-background, $c-blue--darker);
+        border-radius: 50%;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+
+        &:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+    }
+
+    &__text {
+        @include sr-only;
+    }
+}
+
+@keyframes spinner-scale {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}

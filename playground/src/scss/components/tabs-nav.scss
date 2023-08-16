@@ -54,10 +54,10 @@
             pointer-events: none;
         }
 
-        &--terminal {
-            --tab-background: #{ $c-terminal };
-            --tab-background-hover: #{ darken($c-terminal, 0.2) };
-            --tab-background-active: #{ $c-terminal };
+        &--output {
+            --tab-background: #{ $c-output-bcg };
+            --tab-background-hover: #{ darken($c-output-bcg, 0.2) };
+            --tab-background-active: #{ $c-output-bcg };
         }
     }
 

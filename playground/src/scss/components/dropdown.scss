@@ -10,7 +10,7 @@
     $self: &;
 
     line-height: 1;
-    min-width: 125px;
+    min-width: $w-tab;
     pointer-events: auto;
     position: relative;
     text-align: left;
@@ -33,16 +33,25 @@
         --button-radius: #{ $b-radius };
 
         justify-content: space-between;
-        min-width: 125px;
         padding: 0 0.65rem 0 0.75rem;
+        text-align: left;
+        min-width: $w-tab;
 
         &:disabled {
             pointer-events: none;
         }
     }
 
+    &__text {
+        flex: 1 1 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     &__icon {
         display: block;
+        flex: 0 0 18px;
         height: 18px;
         width: 18px;
         margin: 1px -6px 0 4px;
@@ -102,14 +111,11 @@
     }
 
     &--tab {
-        min-width: $w-tab;
-
         #{ $self }__button {
             background-color: transparent;
             border-color: transparent;
             height: 22px;
             line-height: 20px;
-            max-width: $w-tab;
             padding: 0 0.5rem;
 
             &:focus-visible,
@@ -117,7 +123,10 @@
                 background-color: $c-grey-blue--lighter;
                 border-color: $c-grey-blue
             }
+        }
 
+        &.is-readonly #{ $self }__button {
+            --button-color-disabled: #{ $c-blue--darker };
         }
     }
 }
