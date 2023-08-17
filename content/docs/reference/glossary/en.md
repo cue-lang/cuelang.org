@@ -70,8 +70,8 @@ Package
 
 ### R
 
-Required field
-: A field whose existence in a struct is mandatory.
+Required field constraint
+: A constraint placed on a field, making the field's presence mandatory.
 
 ### S
 
