@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecc47d4d_aa78c6a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-17T08:51:25Z",
+      "side": 1,
+      "message": "Please ignore the merge conflict on this.\n\nI\u0027m sure there\u0027s an idiomatic Gerrit-y way of avoiding this, but it\u0027ll fix itself once I rebase after https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1167512 is submitted.",
+      "revId": "ba666e85462493e4c6aa0b9d6d67872a0134c8d8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
