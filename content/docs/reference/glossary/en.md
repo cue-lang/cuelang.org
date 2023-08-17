@@ -55,8 +55,8 @@ Module
 
 ### O
 
-Optional field
-: A field whose existence in a struct is permitted, but not mandatory.
+Optional field constraint
+: A constraint placed on a field, making the field's presence optional.
 
 ### P
 
