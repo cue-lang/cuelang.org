@@ -13,6 +13,13 @@ title: Glossary of terms
 
 ### D
 
+Default value (FIXME: try and make the sidenote a clickable link)
+: [Default values]({{< ref "docs/language-guide/schemas-and-validation/disjunctions#default-values" >}})
+{{< sidenote text="Language Guide" >}}
+: An element of a disjunction that applies if no other values are provided,
+through unification, in order to resolve the disjunction to a concrete value.
+: An element of a disjunction prefixed with an asterisk (`*`).
+
 Disjunction
 : FIXME
 
