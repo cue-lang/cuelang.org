@@ -1,0 +1,140 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/list-reset';
+@import '../mixins/typography';
+
+.share {
+    $self: &;
+
+    --share-icon-size: 20px;
+    --share-popover-bg-color: #{ $c-blue--lightest };
+    --share-popover-border-color: #{ $c-grey-blue };
+    --share-text-color: #{ $c-blue };
+
+    position: relative;
+
+    &__list {
+        background-color: var(--share-popover-bg-color);
+        border: 1px solid var(--share-popover-border-color);
+        border-radius: $b-radius--large;
+        box-shadow: 0 10px 14px transparentize($c-blue--darker, 0.8);
+        cursor: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 1rem 0.75rem;
+        position: absolute;
+        top: 8px;
+        transform: translate(calc(-100% + 60px), calc(-100% - 25px));
+        width: max-content;
+        z-index: 1;
+
+        &::before {
+            background-color: var(--share-popover-bg-color);
+            border-bottom: 1px solid var(--share-popover-border-color);
+            border-bottom-right-radius: $b-radius;
+            border-right: 1px solid var(--share-popover-border-color);
+            bottom: -11px;
+            content: '';
+            height: 20px;
+            position: absolute;
+            right: 13%;
+            transform: rotate(45deg);
+            width: 20px;
+        }
+    }
+
+    &__item {
+        @include style-text-small;
+
+        color: var(--text-link-color);
+        display: flex;
+        height: 100%;
+        padding: 0 0.5rem;
+        width: 100%;
+    }
+
+    &__copy,
+    &__link {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        text-decoration: none;
+        width: 100%;
+
+        p {
+            display: inline-block;
+            margin: 0;
+        }
+
+        &:focus,
+        &:hover {
+            #{ $self }__link-text {
+                background-position-x: 0;
+                background-size: 100% 1px;
+            }
+        }
+    }
+
+    &__link-text {
+        background: linear-gradient(var(--share-text-color), var(--share-text-color)) no-repeat 100% 100%;
+        background-size: 0 1px;
+        display: inline;
+        transition: background-size 0.3s ease-in-out;
+    }
+
+    /* stylelint-disable no-descending-specificity */
+    &__copy {
+        color: var(--text-link-color);
+        padding-bottom: 0.75rem;
+        position: relative;
+
+        &::after {
+            border-bottom: 1px solid var(--share-popover-separator-color, $c-lavender--light);
+            bottom: 0;
+            content: '';
+            height: 1px;
+            left: -10px;
+            position: absolute;
+            right: -10px;
+        }
+    }
+    /* stylelint-enable no-descending-specificity */
+
+    &__icon {
+        height: var(--share-icon-size);
+        width: var(--share-icon-size);
+    }
+
+    &__copy-message {
+        @include style-text-small;
+
+        background-color: $c-grey-blue;
+        border-radius: $b-radius;
+        color: $c-blue--darker;
+        display: block;
+        left: -50%;
+        padding: 4px 8px;
+        position: absolute;
+        right: 100%;
+        top: -4px;
+        width: fit-content;
+        z-index: 1;
+
+        &::before {
+            border-color: transparent transparent transparent $c-grey-blue;
+            border-style: solid;
+            border-width: 10px 0 10px 10px;
+            content: '';
+            height: 0;
+            position: absolute;
+            right: -7px;
+            top: 5px;
+            width: 0;
+        }
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+}

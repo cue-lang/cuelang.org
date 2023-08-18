@@ -1,9 +1,4 @@
 {{ define "main" }}
-{{ $tags := slice }}
-{{- if .Params.tags -}}
-    {{ $tagOptions := .Site.Params.Tags | default slice }}
-    {{ $tags = where $tagOptions "name" "in" .Params.tags | default slice }}
-{{- end -}}
 
     <div class="docs" data-docs>
         <div class="docs__main">
@@ -24,12 +19,7 @@
                         {{ end }}
                     </div>
 
-                    <footer class="article__footer">
-                        {{ partial "last-modified.html" . }}
-                        {{- if $tags -}}
-                            {{- partial "tags.html" (dict "modifier" "large" "tags" $tags ) -}}
-                        {{- end -}}
-                    </footer>
+                    {{- partial "article--footer" . -}}
 
                 </div>
             </article>

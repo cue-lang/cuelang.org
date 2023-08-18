@@ -1,10 +1,4 @@
 {{ define "main" }}
-{{ $tags := slice }}
-{{- if .Params.tags -}}
-    {{ $tagOptions := .Site.Params.Tags | default slice }}
-    {{ $tags = where $tagOptions "name" "in" .Params.tags | default slice }}
-{{- end -}}
-
     {{ partial "paging/back-button.html" . }}
 
     <article class="article article--blog">
@@ -15,11 +9,7 @@
                 {{- .Content -}}
             </div>
 
-            <footer class="article__footer">
-                {{- if $tags -}}
-                    {{- partial "tags.html" (dict "modifier" "large" "tags" $tags ) -}}
-                {{- end -}}
-            </footer>
+            {{- partial "article--footer" . -}}
         </div>
     </article>
 

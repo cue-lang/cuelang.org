@@ -1,0 +1,24 @@
+{{ $tags := slice }}
+
+{{- if .Params.tags -}}
+    {{ $tagOptions := .Site.Params.Tags | default slice }}
+    {{ $tags = where $tagOptions "name" "in" .Params.tags | default slice }}
+{{- end -}}
+
+<footer class="article__footer">
+    <div class="article__lastmod">
+        {{ partial "last-modified.html" . }}
+    </div>
+
+    <div class="article__footer-meta">
+        <div class="article__footer-tags">
+            {{- if $tags -}}
+                {{- partial "tags.html" (dict "tags" $tags) -}}
+            {{- end -}}
+        </div>
+
+        <div class="article__share">
+            {{- partial "share.html" . -}}
+        </div>
+    </div>
+</footer>

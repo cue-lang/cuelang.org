@@ -22,10 +22,10 @@
 
 # Icons
 [[icons]]
-    identifier = "twitter"
-    name = "Twitter"
+    identifier = "x-twitter"
+    name = "X (Twitter)"
     url = "https://twitter.com/cue_lang"
-    pre = "twitter"
+    pre = "social-x"
     weight = 200
 [[icons]]
     identifier = "slack"

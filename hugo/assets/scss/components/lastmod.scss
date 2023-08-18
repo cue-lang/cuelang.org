@@ -5,19 +5,21 @@
 .lastmod {
     @include style-text-small;
 
+    --text-link-color: #{ $c-blue--bright };
+
     $self: &;
 
+    color: var(--text-link-color);
     font-weight: $weight-light;
     margin: 0;
 
     &__link {
         border-bottom: 1px solid currentColor;
-        color: var(--text-link-color, $c-blue);
         cursor: pointer;
-        font-weight: $weight-medium;
         text-decoration: none;
         transition: border-bottom 0.2s ease-in;
 
+        &:focus,
         &:hover {
             border-bottom: 1px solid transparent;
         }

@@ -6,12 +6,12 @@
     <nav class="prevnext__container" aria-label="{{ T "ui_pager_name_prevnext" }}">
         {{- if $prev -}}
             <a class="prevnext__prev" href="{{ $prev.RelPermalink }}" aria-label="{{ T "ui_pager_prev" }} - {{ $prev.LinkTitle }}">
-                {{ partial "icon.html" (dict "icon" "arrow-left" "class" "prevnext__icon") }}
+                {{ partial "icon.html" (dict "icon" "circle-arrow-left" "class" "prevnext__icon") }}
                 <span class="prevnext__text">{{ $prev.LinkTitle }}</span>
             </a>
         {{- else -}}
             <a class="prevnext__prev" aria-label="{{ T "ui_pager_prev" }}" disabled>
-                {{ partial "icon.html" (dict "icon" "arrow-left" "class" "prevnext__icon") }}
+                {{ partial "icon.html" (dict "icon" "circle-arrow-left" "class" "prevnext__icon") }}
                 <span class="prevnext__text">{{ T "ui_pager_prev" }}</span>
             </a>
         {{- end -}}
@@ -19,12 +19,12 @@
         {{- if $next -}}
             <a class="prevnext__next" href="{{ $next.RelPermalink }}" aria-label="{{ T "ui_pager_next" }} - {{ $next.LinkTitle }}">
                 <span class="prevnext__text">{{ $next.LinkTitle }}</span>
-                {{ partial "icon.html" (dict "icon" "arrow-right" "class" "prevnext__icon") }}
+                {{ partial "icon.html" (dict "icon" "circle-arrow-right" "class" "prevnext__icon") }}
             </a>
         {{- else -}}
             <a class="prevnext__next" aria-label="{{ T "ui_pager_next" }}" disabled>
                 <span class="prevnext__text">{{ T "ui_pager_next" }}</span>
-                {{ partial "icon.html" (dict "icon" "arrow-right" "class" "prevnext__icon") }}
+                {{ partial "icon.html" (dict "icon" "circle-arrow-right" "class" "prevnext__icon") }}
             </a>
         {{- end -}}
     </nav>

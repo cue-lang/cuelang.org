@@ -7,7 +7,7 @@ export class Copy extends BaseWidget {
 
     constructor(element: HTMLElement) {
         super(element);
-        this.copyButton = this.element.querySelector<HTMLElement>('.code-block__copy');
+        this.copyButton = this.element.querySelector<HTMLElement>('[data-copy-button]');
     }
 
     public static registerWidget(): void {
@@ -28,11 +28,15 @@ export class Copy extends BaseWidget {
     }
 
     public init(): void {
-        const messageElement: HTMLElement = this.element.querySelector('.code-block__message');
+        const messageElement: HTMLElement = this.element.querySelector('[data-copy-message]');
 
         this.copyButton.addEventListener('click', () => {
+            const copyType: string = this.copyButton.dataset.copyType;
             let content: string = this.copyButton.dataset.copyValue;
-            content = atob(content);
+
+            if (copyType === 'code') {
+                content = atob(content);
+            }
 
             navigator.clipboard.writeText(content).then(() => {
                 requestAnimationFrame(() => {

@@ -1,0 +1,33 @@
+<details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        {{ partial "icon.html" (dict "icon" "share" "class" "button__icon") }}
+        <span>{{ T "share_open"}}</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="{{ .Permalink }}">
+                {{ partial "icon.html" (dict "icon" "link" "class" "share__icon") }}
+                <p><span class="share__link-text">{{ T "share_copy_link" }}</span></p>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    {{ T "copy_message" }}
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url={{ .Permalink | safeURL }}&text={{ .Summary | safeURL }}">
+                {{ partial "icon.html" (dict "icon" "social-x" "class" "share__icon") }}
+                <p><span class="share__link-text">{{ T "share_share_on" }} X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink | safeURL }}&summary={{ .Summary | safeURL }}">
+                {{ partial "icon.html" (dict "icon" "social-linkedin" "class" "share__icon") }}
+                <p><span class="share__link-text">{{ T "share_share_on" }} Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
