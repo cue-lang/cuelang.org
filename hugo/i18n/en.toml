@@ -59,6 +59,8 @@ other = "By"
 other = "Created"
 [post_last_mod]
 other = "Last modified"
+[post_report_problem]
+other = "Report a problem"
 
 # Docs
 [docs_show_nav]
@@ -121,3 +123,11 @@ other = "Copied!"
 other = "Github profile"
 [author_search]
 other = "Search all content by this author"
+
+# Share
+[share_open]
+other = "Open share options"
+[share_copy_link]
+other = "Copy link"
+[share_share_on]
+other = "Share on"

@@ -58,7 +58,8 @@
         margin-right: auto;
     }
 
-    &__content {
+    &__content,
+    &__footer {
         @include container($w-content--small);
 
         overflow-wrap: break-word;
@@ -68,10 +69,9 @@
     &__footer {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        margin: 0 auto;
-        opacity: 1;
-        padding: 1.5rem $p-gutter;
+        gap: $p-gutter;
+        padding-bottom: 0;
+        position: relative;
 
         &::before {
             border-top: 1px solid $c-lavender--light;
@@ -84,9 +84,32 @@
         }
     }
 
+    &__footer-meta {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem $p-gutter;
+        justify-content: space-between;
+    }
+
+    &__footer-tags {
+        flex: 1 1 0%;
+    }
+
+    &__share {
+        flex: 0 0 46px;
+        height: 46px;
+    }
+
     &--blog {
-        p:first-child {
-            @include style-intro-article;
+        #{ $self }__content {
+            > p:first-child {
+                @include style-intro-article;
+            }
+        }
+
+        + .prevnext {
+            @include container($w-content--small);
         }
     }
 
@@ -94,7 +117,8 @@
         max-width: $w-content;
         padding-top: 0;
 
-        #{ $self }__content {
+        #{ $self }__content,
+        #{ $self }__footer {
             @include container($w-content);
         }
 
