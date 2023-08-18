@@ -14,9 +14,9 @@
 
     <div class="code-block__highlight">
         {{- if $showCopyButton -}}
-            <button class="code-block__copy" type="button" data-copy-value="{{ $codeToCopy }}">
+            <button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="{{ $codeToCopy }}">
                 <span>{{ T "copy_title" }}</span>
-                <span class="code-block__message is-hidden" aria-hidden="true">
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
                     {{ T "copy_message" }}
                 </span>
             </button>

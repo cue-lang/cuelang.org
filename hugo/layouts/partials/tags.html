@@ -1,6 +1,5 @@
 {{ $tags := .tags | default slice }}
 {{ $listClass := .listClass | default "" }}
-{{ $modifier := .modifier | default "" }}
 
 {{ if $tags }}
     <ul class="list list--tags{{ if $listClass }} {{ $listClass }}{{ end }}">
@@ -8,7 +7,7 @@
             <li class="list__item">
                 {{- $tagValue:= cond (strings.Contains $tag.name " ") (printf "\"%s\"" $tag.name) $tag.name -}}
                 <a href="/search?q=tag:{{ $tagValue }}"
-                class="tag{{ if $modifier }} tag--{{ $modifier }}{{ end }}{{ if $tag.color }} tag--{{ $tag.color }}{{ end }}">
+                class="tag{{ if $tag.color }} tag--{{ $tag.color }}{{ end }}">
                     {{ $tag.name }}
                 </a>
             </li>

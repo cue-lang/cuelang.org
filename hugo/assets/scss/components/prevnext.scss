@@ -2,45 +2,46 @@
 @import '../config/sizes';
 @import '../mixins/container';
 @import '../mixins/screen';
-@import '../mixins/separator-line';
 @import '../mixins/typography';
 
 .prevnext {
     $self: &;
 
-    --prevnext-color: #{ $c-blue };
+    --prevnext-bg-color: #{ $c-blue--lighter };
+    --prevnext-color: #{ $c-black };
+    --prevnext-icon-color: #{ $c-blue };
+    --prevnext-icon-size: 30px;
 
-    padding: 1.5rem 0;
+    padding-bottom: 2rem;
     position: relative;
 
     &__container {
         @include container($w-content);
 
-        align-items: flex-start;
+        align-items: center;
         color: var(--prevnext-color);
         display: flex;
-        fill: currentColor;
-        font-weight: $weight-bold;
+        gap: $p-gutter;
         justify-content: space-between;
         padding: 0 $p-gutter;
     }
 
-    /* stylelint-disable no-descending-specificity */
-
     &__prev,
     &__next {
-        display: none;
-        line-height: 1.5;
-        position: relative;
+        align-items: center;
+        background-color: var(--prevnext-bg-color);
+        border-radius: 36px;
+        display: flex;
+        gap: $p-gutter;
+        max-width: calc(50% - 10px);
+        padding: 6px;
         text-decoration: none;
-        width: 100%;
+        transition: background-color 0.2s ease-in-out;
+        width: fit-content;
 
-        &:hover,
-        &:focus {
-            #{ $self }__text {
-                background-position-x: 0;
-                background-size: 100% 2px;
-            }
+        &:focus-visible,
+        &:hover {
+            --prevnext-bg-color: #{ $c-lavender--light };
         }
 
         &[disabled] {
@@ -48,59 +49,40 @@
         }
     }
 
-    &__prev {
-        margin: 0 auto 0 0;
-        padding: 0.25rem 0.25rem 0.25rem $p-gutter--large;
-    }
-
+    /* stylelint-disable no-descending-specificity */
     &__next {
-        display: block;
         justify-content: flex-end;
-        margin: 0 0 0 auto;
-        padding: 0.25rem $p-gutter--large 0.25rem 0.25rem;
-        text-align: right;
-
-        #{ $self }__icon {
-            left: auto;
-            right: 0;
-        }
+        margin-left: auto;
     }
-
     /* stylelint-enable no-descending-specificity */
 
     &__icon {
-        display: block;
-        height: 30px;
-        left: 0;
-        position: absolute;
-        top: 3px;
-        width: 30px;
+        fill: var(--prevnext-icon-color);
+        flex: 0 0 var(--prevnext-icon-size);
+        height: var(--prevnext-icon-size);
+        width: var(--prevnext-icon-size);
     }
 
     &__text {
-        background: linear-gradient(var(--prevnext-color), var(--prevnext-color)) no-repeat 100% 100%;
-        background-size: 0 2px;
-        display: inline;
-        padding-bottom: 3px;
-        transition: background-size 0.2s ease-in-out;
+        @include style-text-small;
+
+        display: none;
+        font-weight: $weight-medium;
     }
 
     @include screen($screen-simple) {
-        &__prev,
+        padding-bottom: 3rem;
+
+        &__prev {
+            padding-right: 1.5rem;
+        }
+
         &__next {
+            padding-left: 1.5rem;
+        }
+
+        &__text {
             display: block;
-            width: 45%;
-        }
-    }
-
-    @include screen($screen-large) {
-        &::before {
-            margin-bottom: 2rem;
-        }
-
-        &__prev,
-        &__next {
-            min-height: 80px;
         }
     }
 }
