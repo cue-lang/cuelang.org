@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "963ee640_59874b84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-21T16:41:23Z",
+      "side": 1,
+      "message": "I\u0027m deliberately addressing this question before taking this WIP document any further.\n\nI\u0027m not sure if the 2nd top-level method I describe in the setup is required. It\u0027s going to cope with a situation which, if not explicitly called out, might be surprising to folks who follow the 1st (and, in that situation, only) method in the doc. They might be expecting a constraint to apply ... but it doesn\u0027t.\n\nThe first method will be:\n\n```\nx:      [ 1, 2, 3]\n#sum_x: list.Sum(x) \u0026 \u003c10\n```\n\n... which works for `cue vet .:pkg data.yml`, and with a minor change when `sum_x` needs to be included in the exported/concrete output.\n\nBut if we have the following situation, then any such constraint is ineffective:\n\n```\npackage data\n\nx:      [ 1, 2, 3, 100]\n#sum_x: list.Sum(x) \u0026 \u003c10\n-------------\npackage consumer\n\nimport \"...:data\"\n\nsome_list: data.x\n```\n\nDo we need to cater for this second use case? Or do we merely call out its signs to act as a mark of \"*don\u0027t* rely on this page\u0027s (sole) technique in this situation\"?",
+      "revId": "410d55c65c805130a786c6e4d5c5821601541d9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
