@@ -16,6 +16,24 @@
       "message": "Apologies - this got rebased when I placed CL 1167703 on top of it. Should be no impact, because of course the change would have been picked onto tip in any case.",
       "revId": "9964b88c4984ef65687210215ac1d738e403c48f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de7a05e6_1573d259",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-21T08:53:07Z",
+      "side": 1,
+      "message": "No worries - it confused me for a minute, because I couldn\u0027t see why this CL wasn\u0027t marked as being able to be submitted, despite your review. Now I understand, I\u0027ll +2 and submit :-)",
+      "parentUuid": "e2a26b53_c59fa137",
+      "revId": "9964b88c4984ef65687210215ac1d738e403c48f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
