@@ -34,6 +34,40 @@
       "parentUuid": "ecc47d4d_aa78c6a9",
       "revId": "ba666e85462493e4c6aa0b9d6d67872a0134c8d8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdb87e6f_41f7844a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-21T05:13:36Z",
+      "side": 1,
+      "message": "With one change, please.",
+      "revId": "ba666e85462493e4c6aa0b9d6d67872a0134c8d8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "100dc0fb_c59b1d5c",
+        "filename": "content/docs/reference/code-of-conduct/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-21T05:13:36Z",
+      "side": 1,
+      "message": "Missing an actual `)` after the `.` at the end of the sentence.",
+      "revId": "ba666e85462493e4c6aa0b9d6d67872a0134c8d8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
