@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2a26b53_c59fa137",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-21T05:29:41Z",
+      "side": 1,
+      "message": "Apologies - this got rebased when I placed CL 1167703 on top of it. Should be no impact, because of course the change would have been picked onto tip in any case.",
+      "revId": "9964b88c4984ef65687210215ac1d738e403c48f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
