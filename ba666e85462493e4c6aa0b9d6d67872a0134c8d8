@@ -16,6 +16,24 @@
       "message": "Please ignore the merge conflict on this.\n\nI\u0027m sure there\u0027s an idiomatic Gerrit-y way of avoiding this, but it\u0027ll fix itself once I rebase after https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1167512 is submitted.",
       "revId": "ba666e85462493e4c6aa0b9d6d67872a0134c8d8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2df09c46_423fb46b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-21T05:09:57Z",
+      "side": 1,
+      "message": "The merge conflict exists because our strategy is cherry pick. It\u0027s Gerrit saying, \"if you were to submit this change, with the target branch in the current state, there would be a conflict\". That\u0027s because this change relies on the previous one in the stack. And so is totally to be expected.",
+      "parentUuid": "ecc47d4d_aa78c6a9",
+      "revId": "ba666e85462493e4c6aa0b9d6d67872a0134c8d8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
