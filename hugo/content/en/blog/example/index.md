@@ -3,6 +3,18 @@ title: Example blog page and also a longer title
 date: "2023-04-06"
 draft: false
 image: "cow.jpg"
+authors:
+    - pauljolly
+    - marcelvanlohuizen
+    - jonathanmatthews
+tags:
+    - Use encodings in CUE
+    - Language
+    - Ecosystem
+    - cue command
+meta:
+  - type: readingTime
+    value: 5
 ---
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.

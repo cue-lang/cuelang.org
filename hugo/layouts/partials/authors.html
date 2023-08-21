@@ -1,0 +1,71 @@
+{{ $authorsPages := .Site.GetPage "/authors" }}
+{{ $authorsPages := $authorsPages.Resources.ByType "page" }}
+{{ $articleAuthors := .Params.Authors | default false }}
+
+<div class="authors">
+    {{ range $index, $author := $authorsPages }}
+        {{ $cleanAuthorName := replace .Name "/index.md" "" }}
+        {{ if in $articleAuthors $cleanAuthorName }}
+        {{/*  sort the authors? Based on what?  */}}
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    {{ if .Params.image }}
+                        <img class="authors__image" src="/{{ $author.File.Dir }}{{ .Params.image }}" alt="{{ .Params.displayName|default .Params.name }}">
+                    {{ else }}
+                        {{- partial "icon.html" (dict "icon" "cue" "class" "authors__image") -}}
+                    {{ end }}
+
+                    {{ if .Params.displayName }}
+                        <span class="authors__display-name">{{ .Params.displayName }}</span>
+                    {{ else }}
+                        <span class="authors__author-name">{{ .Params.name }}</span>
+                    {{ end }}
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        {{ if .Params.image }}
+                            <img class="authors__image" src="/{{ $author.File.Dir }}{{ .Params.image }}" alt="{{ .Params.displayName|default .Params.name }}">
+                        {{ else }}
+                            {{- partial "icon.html" (dict "icon" "cue" "class" "authors__image") -}}
+                        {{ end }}
+
+                        <div class="authors__name">
+                            {{ if .Params.displayName }}
+                                <span class="authors__display-name">{{ .Params.displayName }}</span>
+                            {{ end }}
+
+                            {{ if .Params.name }}
+                                <span class="authors__author-name">{{ .Params.name }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        {{ if .Params.githubLink }}
+                            <div class="authors__github">
+
+                                <a class="authors__link" href="{{ .Params.githubLink }}">
+                                    {{ partial "icon.html" (dict "icon" "github" "class" "authors__icon") }}
+                                    <p>
+                                        <span class="authors__link-text">{{ T "author_github" }}</span>
+                                    </p>
+                                </a>
+                            </div>
+                        {{ end }}
+
+                        <div class="authors__search">
+
+                            <a class="authors__link" href="/search/?q=author:{{ $cleanAuthorName }}">
+                                {{ partial "icon.html" (dict "icon" "search" "class" "authors__icon") }}
+                                <p>
+                                    <span class="authors__link-text">{{ T "author_search" }}</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        {{ end }}
+    {{ end }}
+</div>

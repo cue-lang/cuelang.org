@@ -9,6 +9,8 @@ tags:
     - Use encodings in CUE
     - Language
     - Ecosystem
+authors:
+    - pauljolly
 ---
 
 Hugo uses front-matter to add meta information to a content page. This can be done various formats - in the CUE website we prefer **YAML** (To be decided).
@@ -81,3 +83,6 @@ tags:
 - Ecosystem
 - Language
 ```
+
+authors
+: adding the author(s) to the frontmatter, makes the content header show an image + name of the assigned author. It also shows a popup on click, with again an image + (display) name, and when available a link to their Github, and a link to the search page so users can search for other articles of this author.

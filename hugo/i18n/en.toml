@@ -6,7 +6,7 @@ other = "Homepage of CUE"
 [ui_read_more]
 other = "Read more"
 [ui_min_read]
-other = "min Read"
+other = "min. read"
 [ui_loading]
 other = "Loading"
 [ui_close]
@@ -115,3 +115,9 @@ other = "Go to the website"
 other = "Copy code"
 [copy_message]
 other = "Copied!"
+
+# Author
+[author_github]
+other = "Github profile"
+[author_search]
+other = "Search all content by this author"
