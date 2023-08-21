@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcc545f9_9e1bcd24",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-21T10:51:18Z",
+      "side": 1,
+      "message": "TR-1 is a CI network/service issue.",
+      "revId": "dc8bc47f5e8ef9420e5cd5559affbf7ff4f40cf3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
