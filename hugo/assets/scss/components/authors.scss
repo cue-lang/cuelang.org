@@ -1,0 +1,200 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/screen';
+
+.authors {
+    $self: &;
+
+    --author-img-size: 24px;
+    --author-icon-color: #{ $c-blue };
+    --author-icon-size: 20px;
+    --author-popover-bg-color: #{ $c-blue--lightest };
+    --author-popover-border-color: #{ $c-grey-blue };
+    --author-text-color: #{ $c-blue };
+
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem ($p-gutter * 0.5);
+    position: relative;
+    width: fit-content;
+
+    &__item {
+        border-radius: 1.75rem;
+        cursor: pointer;
+        padding: 2px ($p-gutter * 0.5) 2px 4px;
+        transition: background-color 0.2s ease-in-out;
+
+        &[open] {
+            #{ $self }__display-name,
+            #{ $self }__author-name {
+                text-decoration: underline;
+            }
+
+            #{ $self }--popover {
+                #{ $self }__display-name,
+                #{ $self }__author-name {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &:focus,
+        &:focus-within,
+        &:hover {
+            background-color: var(--author-bg-color, $c-lavender--light);
+        }
+    }
+
+    &__avatar {
+        align-items: center;
+        display: flex;
+        gap: 6px;
+    }
+
+    &__image {
+        border-radius: $b-radius--round;
+        color: var(--author-icon-color);
+        height: var(--author-img-size);
+        width: var(--author-img-size);
+    }
+
+    &__display-name,
+    &__author-name {
+        @include style-text-small;
+
+        color: var(--author-text-color);
+        font-weight: $weight-bold;
+    }
+
+    &--popover {
+        --author-img-size: 45px;
+
+        background-color: var(--author-popover-bg-color);
+        border: 1px solid var(--author-popover-border-color);
+        border-radius: $b-radius--large;
+        box-shadow: 0 10px 14px transparentize($c-blue--darker, 0.8);
+        cursor: auto;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        margin-top: 0.5rem;
+        position: absolute;
+        width: calc(100vw - (2 * 20px));
+        z-index: 1;
+
+        #{ $self }__avatar {
+            gap: 10px;
+            padding: 1rem $p-gutter;
+            position: relative;
+
+            &::after {
+                border-bottom: 1px solid var(--author-popover-separator-color, $c-lavender--light);
+                bottom: 0;
+                content: '';
+                height: 1px;
+                left: 10px;
+                position: absolute;
+                right: 10px;
+            }
+        }
+
+        #{ $self }__name,
+        #{ $self }__links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        #{ $self }__author-name {
+            font-weight: $weight-normal;
+        }
+
+        #{ $self }__links {
+            @include style-text-small;
+
+            font-weight: $weight-normal;
+            gap: 6px;
+            padding: 1rem $p-gutter;
+        }
+
+        #{ $self }__github,
+        #{ $self }__search {
+            align-items: center;
+            display: flex;
+        }
+
+        #{ $self }__link {
+            align-items: center;
+            color: var(--author-text-color);
+            display: flex;
+            font-weight: $weight-normal;
+            gap: 10px;
+            padding: 0;
+            text-decoration: none;
+            width: 100%;
+
+            p {
+                display: inline-block;
+                margin: 0;
+            }
+
+            &:focus,
+            &:hover {
+                #{ $self }__link-text {
+                    background-position-x: 0;
+                    background-size: 100% 1px;
+                }
+            }
+        }
+
+        #{ $self }__icon {
+            fill: var(--author-icon-color);
+            flex: 0 0 45px;
+            height: var(--author-icon-size);
+            width: var(--author-icon-size);
+        }
+
+        #{ $self }__link-text {
+            background: linear-gradient(var(--author-text-color), var(--author-text-color)) no-repeat 100% 100%;
+            background-size: 0 1px;
+            display: inline;
+            transition: background-size 0.3s ease-in-out;
+        }
+    }
+
+    @include screen($screen-simple) {
+        &__item {
+            position: relative;
+
+            &[open] {
+                #{ $self }__display-name,
+                #{ $self }__author-name {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &--popover {
+            left: auto;
+            margin-top: 0;
+            max-width: 275px;
+            top: $p-gutter--large;
+
+            &::before {
+                background-color: var(--author-popover-bg-color);
+                border-left: 1px solid var(--author-popover-border-color);
+                border-top: 1px solid var(--author-popover-border-color);
+                border-top-left-radius: $b-radius;
+                content: '';
+                height: 20px;
+                left: 10%;
+                position: absolute;
+                top: -11px;
+                transform: rotate(45deg);
+                width: 20px;
+            }
+        }
+    }
+}

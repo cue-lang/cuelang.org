@@ -12,37 +12,17 @@
     background-color: var(--article-background, $c-white);
     height: 100%;
     margin: 0 auto;
-    max-width: $w-content--small;
     padding: 2rem 0;
 
     &__container {
         @include container($w-content);
 
-        padding: 0 $p-gutter;
         position: relative;
     }
 
-    &__footer {
-        border-top: solid 2px $c-yellow;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        margin: 0 auto;
-        opacity: 1;
-        padding: 1.5rem 0;
-    }
-
-    &__info {
-        align-items: center;
-        column-gap: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        row-gap: 0.5rem;
-    }
-
     &__header {
-        margin: 2.5rem 0 2rem;
+        margin: 0 0 2rem;
+        padding: 0 $p-gutter;
         position: relative;
         width: 100%;
     }
@@ -55,8 +35,53 @@
         word-break: break-word;
     }
 
+    &__info {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem $p-gutter;
+        padding-bottom: $p-gutter;
+        width: 100%;
+
+        &::after {
+            border-bottom: 1px solid $c-lavender--light;
+            bottom: 0;
+            content: '';
+            height: 1px;
+            left: $p-gutter;
+            position: absolute;
+            right: $p-gutter;
+        }
+    }
+
+    &__meta {
+        margin-right: auto;
+    }
+
     &__content {
-        padding-bottom: 2rem;
+        @include container($w-content--small);
+
+        overflow-wrap: break-word;
+        padding: 0 $p-gutter 2rem;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0 auto;
+        opacity: 1;
+        padding: 1.5rem $p-gutter;
+
+        &::before {
+            border-top: 1px solid $c-lavender--light;
+            content: '';
+        }
+
+        &::after {
+            border-bottom: 2px solid $c-yellow;
+            content: '';
+        }
     }
 
     &--blog {
@@ -69,6 +94,10 @@
         max-width: $w-content;
         padding-top: 0;
 
+        #{ $self }__content {
+            @include container($w-content);
+        }
+
         h4,
         h5,
         h6 {
@@ -76,11 +105,14 @@
         }
     }
 
+    h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
+        position: relative;
+
         &:hover {
             .anchor__icon {
                 visibility: visible;
@@ -88,19 +120,15 @@
         }
     }
 
-    @include screen($screen-normal) {
-        &--blog {
-            #{ $self }__header {
-                margin: 0 (-$p-gutter--large);
-            }
+    @include screen($screen-simple) {
+        &__info {
+            gap: 1rem 2rem;
         }
     }
 
-    @include screen($screen-large) {
-        &--blog {
-            #{ $self }__header {
-                margin: 0 (2 * -$p-gutter--large);
-            }
+    @include screen($screen-normal) {
+        &__meta {
+            margin-right: auto;
         }
     }
 }

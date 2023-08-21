@@ -5,32 +5,38 @@
 @import '../mixins/typography';
 
 .breadcrumb {
-    @include style-text-small;
+    @include style-heading-4;
 
     $self: &;
 
-    color: var(--breadcrumb-color);
+    color: var(--breadcrumb-color, $c-blue);
     margin: 0 0 0.75rem;
 
     &__list {
         @include list-reset;
 
+        align-items: flex-end;
         display: flex;
         flex-wrap: wrap;
-        gap: 0.25rem 0.75rem;
+        gap: 0.25rem 0.5rem;
         margin: 0 auto;
         max-width: $w-content;
         padding: 0 $p-gutter;
     }
 
     &__item {
-        &::before {
+        font-size: 1rem;
+
+        &::after {
+            color: var(--breadcrumb-separator-color, $c-blue);
             content: '/';
-            margin: 0 0.75rem 0 0;
+            margin: 0 0 0 0.5rem;
         }
 
-        &:first-child {
-            &::before {
+        &:last-child {
+            flex: 1 1 100%;
+
+            &::after {
                 display: none;
             }
         }
@@ -51,6 +57,9 @@
     }
 
     &__text {
-        font-weight: $weight-medium;
+        @include style-heading-docs;
+
+        line-height: 1.125;
+        margin: 0;
     }
 }

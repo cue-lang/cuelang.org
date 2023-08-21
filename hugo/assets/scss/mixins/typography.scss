@@ -138,3 +138,15 @@
         font-size: 3rem;
     }
 }
+
+@mixin style-heading-docs {
+    font-size: 1.75rem;
+
+    @include screen($screen-simple) {
+        font-size: 1.875rem;
+    }
+
+    @include screen($screen-normal) {
+        font-size: 2rem;
+    }
+}

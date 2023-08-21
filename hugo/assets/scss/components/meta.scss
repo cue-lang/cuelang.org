@@ -3,7 +3,8 @@
 .meta {
     $self: &;
 
-    color: var(--meta-color, $c-grey--dark);
+    align-items: center;
+    color: var(--meta-color, $c-blue);
     column-gap: 0.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +26,8 @@
         }
     }
 
-    &__value, &__text {
+    &__value,
+    &__text {
         @include style-text-small;
 
         display: inline-block;

@@ -3,9 +3,17 @@ title: Encode JSON or YAML with CUE
 weight:
 draft: false
 toc_hide: true
+date: "2023-08-22"
 tags:
     - Use encodings in CUE
+authors:
+    - pauljolly
+    - marcelvanlohuizen
+meta:
+    - type: readingTime
+      value: 5
 ---
+
 ## Introduction
 
 It may be necessary to include **nested data** as an encoded string, such as a bit
@@ -14,10 +22,10 @@ accomplish that with the `cue` command line. First with JSON, then with YAML.
 
 ## Prerequisites
 
-- You have [CUE installed](https://cuelang.org/docs/install/) locally. This
-  allows you to run `cue` commands
-- You know how to use [CUE Definitions/ Helper Fields]({{< ref
-  "/docs/language-guide/data" >}})
+-   You have [CUE installed](https://cuelang.org/docs/install/) locally. This
+    allows you to run `cue` commands
+-   You know how to use [CUE Definitions/ Helper Fields]({{< ref
+    "/docs/language-guide/data" >}})
 
 ## Encoding Nested JSON
 
@@ -40,8 +48,8 @@ Use `cue export` to evaluate and encode the entire value:
 
 ```json {title="$ cue export --out=json nested-json.cue"}
 {
-   "nestedJSON" : "{\"innerString\":\"inside\"}",
-   "outerString" : "outside"
+    "nestedJSON": "{\"innerString\":\"inside\"}",
+    "outerString": "outside"
 }
 ```
 
@@ -49,7 +57,6 @@ Use `cue export` to evaluate and encode the entire value:
 
 Use a different encoding package for encoding the nested value, such as
 [yaml](https://pkg.go.dev/cuelang.org/go/pkg/encoding/yaml):
-
 
 ```{title="nested-yaml.cue"}
 import "encoding/yaml"
@@ -87,4 +94,5 @@ nestedYAML: """
 	"""
 outerString: "outside"
 ```
+
 For all encodings see the https://pkg.go.dev/cuelang.org/go/pkg/encoding/

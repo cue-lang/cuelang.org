@@ -2,14 +2,9 @@
     <div class="docs" data-docs>
         <div class="docs__main">
             {{ partial "paging/breadcrumb.html" . }}
-            {{ partial "separator.html" }}
 
             <article class="article article--docs">
                 <div class="article__container">
-                    <header class="article__header">
-                        <h1 class="article__title">{{ .Title }}</h1>
-                    </header>
-
                     <div class="article__content">
                         {{ .Content }}
 
