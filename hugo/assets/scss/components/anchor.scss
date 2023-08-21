@@ -4,7 +4,7 @@
 .anchor {
     $self: &;
 
-    left: 0;
+    left: -$p-gutter;
     padding-right: 2rem; // make sure there is overlap between anchor and heading
     position: absolute;
     text-decoration: none;
@@ -24,14 +24,8 @@
         width: 1.25rem;
     }
 
-    @include screen($screen-simple) {
-        &__icon {
-            padding: 3px;
-        }
-    }
-
     @include screen($screen-large) {
-        left: -4px;
+        left: -($p-gutter * 1.5);
 
         &__icon {
             padding: 2px;

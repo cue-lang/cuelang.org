@@ -1,26 +1,41 @@
+{{ $context := .context }}
+{{ $showTitle := .showTitle | default true  }}
 {{ $tags := slice }}
-{{- if .Params.tags -}}
-    {{ $tagOptions := .Site.Params.Tags | default slice }}
-    {{ $tags = where $tagOptions "name" "in" .Params.tags | default slice }}
-{{- end -}}
 
-<header class="article__header">
-    <h1 class="article__title">{{ .Title }}</h1>
-    {{- if or .Params.meta .Date $tags -}}
-        <div class="article__info">
-            {{ if or .Params.meta .Date }}
-                {{ $meta := slice }}
-                {{ if .Date }}
-                    {{ $meta = $meta | append (dict "type" "date" "value" (.Date.Format ($.Param "time_format"))) }}
-                {{ end }}
-                {{ if .Params.meta }}
-                    {{ $meta = $meta | append .Params.meta }}
-                {{ end }}
-                <div class="article__meta">{{ partial "meta" $meta }}</div>
-            {{ end }}
-            {{- if $tags -}}
-                <div class="article__tags">{{- partial "tags.html" (dict "tags" $tags ) -}}</div>
-            {{- end -}}
-        </div>
+{{ with $context }}
+    {{- if .Params.tags -}}
+        {{ $tagOptions := .Site.Params.Tags | default slice }}
+        {{ $tags = where $tagOptions "name" "in" .Params.tags | default slice }}
     {{- end -}}
-</header>
+
+    <header class="article__header">
+        {{ if $showTitle }}
+            <h1 class="article__title">{{ .Title }}</h1>
+        {{ end }}
+
+        {{- if or .Params.meta .Date $tags -}}
+            <div class="article__info">
+                {{- if .Params.authors -}}
+                    <div class="article__authors">{{ partial "authors" . }}</div>
+                {{- end -}}
+
+                {{ if or .Params.meta .Date }}
+                    {{ $meta := slice }}
+                    {{ if .Date }}
+                        {{ $meta = $meta | append (dict "type" "date" "value" (.Date.Format (.Param "time_format"))) }}
+                    {{ end }}
+
+                    {{ if .Params.meta }}
+                        {{ $meta = $meta | append .Params.meta }}
+                    {{ end }}
+
+                    <div class="article__meta">{{ partial "meta" $meta }}</div>
+                {{ end }}
+
+                {{- if $tags -}}
+                    <div class="article__tags">{{- partial "tags.html" (dict "tags" $tags ) -}}</div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+    </header>
+{{ end }}

@@ -8,6 +8,7 @@
                 {{- if eq .type "readingTime" -}}
                     {{- $value = print (T "ui_min_read") | print " " | print .value -}}
                 {{ end }}
+
                  <li class="meta__item">
                     <span class="meta__value">{{ $value }}</span>
                 </li>

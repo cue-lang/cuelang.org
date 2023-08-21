@@ -8,11 +8,10 @@
     <div class="docs" data-docs>
         <div class="docs__main">
             {{ partial "paging/breadcrumb.html" . }}
-            {{ partial "separator.html" }}
 
             <article class="article article--docs">
                 <div class="article__container">
-                    {{ partial "article--header" . }}
+                    {{ partial "article--header" (dict "showTitle" false "context" .) }}
 
                     <div class="article__content">
                         {{ if .Params.disabled }}
