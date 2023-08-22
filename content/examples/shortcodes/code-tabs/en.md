@@ -76,6 +76,10 @@ languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
 
 {{< /code-tabs >}}
 
+{{< info >}}
+A `code-tabs` shortcode can't currently be nested inside a `tabs` shortcode.
+{{< /info >}}
+
 ## Attributes on code-tabs
 
 groupId
