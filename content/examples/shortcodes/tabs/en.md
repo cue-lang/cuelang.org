@@ -154,3 +154,7 @@ Lorem ipsum dolor sit amet, alia invidunt honestatis te mea, tation docendi epic
 ```
 {{< /tab >}}
 {{< /tabs >}}
+
+{{< info >}}
+A `code-tabs` shortcode can't currently be nested inside a `tabs` shortcode.
+{{< /info >}}
