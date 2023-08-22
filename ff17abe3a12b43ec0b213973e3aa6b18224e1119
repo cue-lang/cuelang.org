@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "237478de_c851c72f",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0a80f7a_efcc380b",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a50f85f_0e8a8563",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-08-22T13:17:20Z",
       "side": 1,
       "message": "I think this would benefit from h3 headings for the three \"phases\" outlined in the intro paragraph?\n\n* Convert Yaml to CUE\n* Validate workflows\n* Generated Yaml from CUE\n\nSomething like that? \n\nThat way, we don\u0027t have a long list of steps, without a \"break\".",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0939d7a8_378cb1b4",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a50f85f_0e8a8563",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f91a5619_819f1fbf",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6dc4866d_a08515f6",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e449b6eb_68d96dd4",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-08-22T13:17:20Z",
       "side": 1,
       "message": "This paragraph doesn\u0027t appear to do much in this position. Per my comment about the headings, this might fit under the heading about validation.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aeeb2b12_770301aa",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "The point of this para was to make it clear that the user doesn\u0027t need to do anything to assert the schema\u0027s being used, and that CUE would take care of using it. I\u0027ve made a change that points forward to the next step.",
+      "parentUuid": "e449b6eb_68d96dd4",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -103,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9dc5eeb_0931b4d2",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f49c07fb_2c966269",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d231577_8ecb5e1f",
@@ -116,6 +206,24 @@
       "writtenOn": "2023-08-22T13:17:20Z",
       "side": 1,
       "message": "We split the command with explanation. I\u0027d suggest something like:\n\n\u003e Create a CUE \"tool\" file at `internal/ci/github/ci_tool.cue`, and adapt the element commented with `TODO`:\n\u003e\n\u003e `\u003ccode\u003e`\n\u003e \n\u003e Make the modification indicated by the TODO comment.\n\u003e \n\u003e This tool will perform an on-demand export of each CUE-based workflow back into\nits required YAML file.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31c239ea_91c33a57",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d231577_8ecb5e1f",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -160,6 +268,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5a5aa31_ad3c2c83",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f24db67_eae2c3c8",
+      "range": {
+        "startLine": 202,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 77
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "11f49559_7465cb8a",
@@ -173,6 +305,24 @@
       "writtenOn": "2023-08-22T13:17:20Z",
       "side": 1,
       "message": "Wordy: `git` is used below. Be more directive:\n\n\u003e Check that email Yaml workflow file has a single change for the original:\n\nAdd the explanation of what the diff is after the diff itself.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69997c32_54a70b05",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11f49559_7465cb8a",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -194,6 +344,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca553504_7f255e23",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de5d028b_60d6e0c0",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ffe85c92_994a7edd",
@@ -207,6 +375,24 @@
       "writtenOn": "2023-08-22T13:17:20Z",
       "side": 1,
       "message": "Suggest a \"Conclusion\" heading or similar.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c4762f8_ae11a995",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffe85c92_994a7edd",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -228,6 +414,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d44cb06b_0d238249",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe6c8bff_1ae04241",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdf0258a_f2fa1256",
@@ -241,6 +445,30 @@
       "writtenOn": "2023-08-22T13:17:20Z",
       "side": 1,
       "message": "Again, I would suggest keeping the language simple: this is the first time we use the word \"adhere\".",
+      "range": {
+        "startLine": 256,
+        "startChar": 26,
+        "endLine": 256,
+        "endChar": 32
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16e1f203_270a5026",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdf0258a_f2fa1256",
       "range": {
         "startLine": 256,
         "startChar": 26,
@@ -276,6 +504,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "85c38af1_5689e1e8",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "I\u0027m happy to use some other description, but I feel it\u0027s important not to over-promise, here: CUE can\u0027t stop the user utterly breaking their production system because they embedded this in an inline script in GHA:\n\n```\nif check1 \u0026 check2; then\n  terraform destroy --no-confirmation\nfi\n```\n\n.. when they /meant/ to write \n\n```\nif check1 \u0026\u0026 check2; then\n  terraform destroy --no-confirmation\nfi\n```\n\nI deliberately avoided the unqualified terms \"errors\" or \"mistakes\", here, for this reason: CUE can\u0027t catch all mistakes!\n\nIs there something that expresses this better than \"structural mistakes\", to your eye?",
+      "parentUuid": "88377290_8f121405",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 47
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b3384c0b_d6039512",
         "filename": "content/docs/howto/import-github-actions-workflows/en.md",
         "patchSetId": 10
@@ -287,6 +539,24 @@
       "writtenOn": "2023-08-22T13:17:20Z",
       "side": 1,
       "message": "Please can we make these commit messages more \"real\". Otherwise they don\u0027t translate well/at all.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23878ac9_8906e33d",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-22T15:03:34Z",
+      "side": 1,
+      "message": "Ah, that\u0027s exactly the opposite of what I was thinking.\n\nI\u0027ve written READMEs for commercial customers where I embedded reasonable-sounding commit messages into the workflow/shell examples. On going back to help them, later, I literally found *every* commit message (made in the documented scope) was identical: the exact, unaltered text of my example.\n\nThat was why I included slightly daft terms here, which obviously require replacement. I /thought/ I\u0027d made these ones CI-ish enough, however, so that the GHA context is clear.\n\nI\u0027ll see what else I can come up with!",
+      "parentUuid": "b3384c0b_d6039512",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
