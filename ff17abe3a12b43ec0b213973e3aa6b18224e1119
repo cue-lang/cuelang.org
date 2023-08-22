@@ -528,6 +528,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "381a7a90_0c63128c",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T19:57:09Z",
+      "side": 1,
+      "message": "But what are \"structural mistakes\"? We don\u0027t use this phrase anywhere to my knowledge. \n\n\"schema validation errors\" is the best description I can think of.",
+      "parentUuid": "85c38af1_5689e1e8",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 47
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b3384c0b_d6039512",
         "filename": "content/docs/howto/import-github-actions-workflows/en.md",
         "patchSetId": 10
@@ -557,6 +581,24 @@
       "side": 1,
       "message": "Ah, that\u0027s exactly the opposite of what I was thinking.\n\nI\u0027ve written READMEs for commercial customers where I embedded reasonable-sounding commit messages into the workflow/shell examples. On going back to help them, later, I literally found *every* commit message (made in the documented scope) was identical: the exact, unaltered text of my example.\n\nThat was why I included slightly daft terms here, which obviously require replacement. I /thought/ I\u0027d made these ones CI-ish enough, however, so that the GHA context is clear.\n\nI\u0027ll see what else I can come up with!",
       "parentUuid": "b3384c0b_d6039512",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6735e6e5_29c32edd",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T19:57:09Z",
+      "side": 1,
+      "message": "Again, I would keep it simple:\n\n```\ninternal/ci: added new release workflow\n```",
+      "parentUuid": "23878ac9_8906e33d",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
