@@ -1,0 +1,294 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1498e46_958204d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Overall looks pretty good. Some thoughts on details throughout, including the flow. Happy to jump onto a call to discuss. Hopefully the short-hand form of some feedback is clear given previous discussions.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0a80f7a_efcc380b",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "This opening paragraph feels a bit \"wordy\" and technical. I think we should be adopting plainer language in terms of what we are doing. \n\nFor example, it contains the detail/caveat \"one-time\", \"pre-existing\" (which is arguably superfluous), \"related process\", \"exporting\" (which is relatively CUE-specific), \"into the Yaml form that GitHub actions requires\".... it\u0027s quite alot. \n\nHow about something like:\n\n\u003e This guide explains how to convert GitHub Actions workflow files from Yaml to CUE, check those workflows are valid, and then use the tooling layer to regenerate Yaml. This allows you to switch to CUE as a source of truth for GitHub Actions workflows and perform client-side validation, without GitHub needing to know that you are managing your workflows with CUE.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a50f85f_0e8a8563",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "I think this would benefit from h3 headings for the three \"phases\" outlined in the intro paragraph?\n\n* Convert Yaml to CUE\n* Validate workflows\n* Generated Yaml from CUE\n\nSomething like that? \n\nThat way, we don\u0027t have a long list of steps, without a \"break\".",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dc4866d_a08515f6",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Add a note about using a specific commit for reproducibility.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e449b6eb_68d96dd4",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "This paragraph doesn\u0027t appear to do much in this position. Per my comment about the headings, this might fit under the heading about validation.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f49c07fb_2c966269",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "I\u0027m not clear this command is sufficient, because it won\u0027t place the result at `#Workflow`. But that\u0027s the beauty of this stuff running via the `preprocessor` to check.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d231577_8ecb5e1f",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "We split the command with explanation. I\u0027d suggest something like:\n\n\u003e Create a CUE \"tool\" file at `internal/ci/github/ci_tool.cue`, and adapt the element commented with `TODO`:\n\u003e\n\u003e `\u003ccode\u003e`\n\u003e \n\u003e Make the modification indicated by the TODO comment.\n\u003e \n\u003e This tool will perform an on-demand export of each CUE-based workflow back into\nits required YAML file.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "899387e3_09da8fd2",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "This is deeply unsatisfying in terms of how fragile it is. Especially given https://cuelang.org/issues/2560. I don\u0027t think, however, we can do any better for now.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f24db67_eae2c3c8",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Wordy: suggest something like:\n\n\u003e Run the `regenerate` command to generate Yaml workflow files from CUE:",
+      "range": {
+        "startLine": 202,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 77
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11f49559_7465cb8a",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Wordy: `git` is used below. Be more directive:\n\n\u003e Check that email Yaml workflow file has a single change for the original:\n\nAdd the explanation of what the diff is after the diff itself.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de5d028b_60d6e0c0",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Command first, then explanation (of variations).",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffe85c92_994a7edd",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Suggest a \"Conclusion\" heading or similar.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe6c8bff_1ae04241",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "I would suggest we keep this explanation factual, minus the superlatives. \n\nOne obvious follow-up article would be:\n\n\u003e Using CUE templates to DRY-up your GitHub Actions workflows",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdf0258a_f2fa1256",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Again, I would suggest keeping the language simple: this is the first time we use the word \"adhere\".",
+      "range": {
+        "startLine": 256,
+        "startChar": 26,
+        "endLine": 256,
+        "endChar": 32
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88377290_8f121405",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "What does \"structural mistakes\" mean? Would \"errors\" suffice?",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 47
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3384c0b_d6039512",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-22T13:17:20Z",
+      "side": 1,
+      "message": "Please can we make these commit messages more \"real\". Otherwise they don\u0027t translate well/at all.",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
