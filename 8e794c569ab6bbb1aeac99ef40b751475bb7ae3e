@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5c0124d_2ce1af68",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-23T08:26:38Z",
+      "side": 1,
+      "message": "I mean PTAL at the latest patchset. #14 isn\u0027t special.",
+      "revId": "8e794c569ab6bbb1aeac99ef40b751475bb7ae3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
