@@ -552,6 +552,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e934dc0c_c9172f57",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-23T08:25:22Z",
+      "side": 1,
+      "message": "I\u0027ve gone with \"you will catch and fix mistakes in the structure of your workflows\", along with a reference to \"structure\" at the point the concept of the schema is introduced, earlier.",
+      "parentUuid": "381a7a90_0c63128c",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 47
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b3384c0b_d6039512",
         "filename": "content/docs/howto/import-github-actions-workflows/en.md",
         "patchSetId": 10
@@ -599,6 +623,24 @@
       "side": 1,
       "message": "Again, I would keep it simple:\n\n```\ninternal/ci: added new release workflow\n```",
       "parentUuid": "23878ac9_8906e33d",
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0614bc7b_5fb66b71",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-23T08:25:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6735e6e5_29c32edd",
       "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
