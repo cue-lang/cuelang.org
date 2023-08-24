@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1e41f76_2cf1fc2a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T16:43:50Z",
+      "side": 1,
+      "message": "Swap out for a `Preview-Path:` trailer.",
+      "revId": "cd198fabac78d7b40775d73fdb24aa9fad9399e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "217dc340_ede0e261",
