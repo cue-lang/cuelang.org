@@ -574,6 +574,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d6689fa_da874f87",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T16:35:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e934dc0c_c9172f57",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 47
+      },
+      "revId": "ff17abe3a12b43ec0b213973e3aa6b18224e1119",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3384c0b_d6039512",
