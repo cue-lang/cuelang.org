@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad880ffd_222f078f",
+        "filename": "content/docs/howto/require-a-field-exist/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T20:56:12Z",
+      "side": 1,
+      "message": "Note to self: Write this better. Simpler. 2x shorter sentences, probably.",
+      "revId": "29a948a6d4c83f29b78b038a3274eb5169a995f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
