@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "ab2f2b5ba5f1b1711330884ff13b74c8152b6667",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d800444_8d8313bb",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T09:11:19Z",
+      "side": 1,
+      "message": "Change to \"Related content\", so the (current) LH TOC looks better.",
+      "revId": "ab2f2b5ba5f1b1711330884ff13b74c8152b6667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
