@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0c1cd81_6a433559",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T09:57:03Z",
+      "side": 1,
+      "message": "https://github.com/cue-lang/cue/issues/2511#issuecomment-1691332138 prevents me from including any type/value constraint violations in the example, alongside the missing required field.",
+      "revId": "8e2fcbefebdd9cc094b288108bb019a8577a7814",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
