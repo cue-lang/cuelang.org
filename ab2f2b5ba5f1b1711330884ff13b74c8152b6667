@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ba89f1c_01b92d99",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T10:32:43Z",
+      "side": 1,
+      "message": "This caveat will be present in all simple-constraint-based howto guides, and doesn\u0027t need calling out in this commit message.",
+      "revId": "ab2f2b5ba5f1b1711330884ff13b74c8152b6667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "dbd4c4a3_b63bbd2b",
