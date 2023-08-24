@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cb8672c_d2c69d97",
+        "filename": "content/docs/howto/constrain-string-as-valid-integer/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T20:56:50Z",
+      "side": 1,
+      "message": "Note to self: Write this better. Simpler. 2x shorter sentences, probably.",
+      "revId": "0aa4ea3e8c9e15919c6fe4f99ef6044ccdf18b9e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
