@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecdcedf1_16f8acb5",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T20:48:07Z",
+      "side": 1,
+      "message": "I need to include cue.mod!",
+      "revId": "e0fb4a09b95170681e506bd0e62d904e8e9d94cf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32e5e629_df374307",
+        "filename": "content/docs/howto/import-github-actions-workflows/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-24T20:48:07Z",
+      "side": 1,
+      "message": "... and cue.mod/.",
+      "revId": "e0fb4a09b95170681e506bd0e62d904e8e9d94cf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
