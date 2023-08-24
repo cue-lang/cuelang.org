@@ -20,6 +20,41 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b7a27b11_96ea778d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-24T20:29:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6721108_af179e2e",
+      "revId": "7b354df1a9660af05dbb452933636cbc3d996232",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c1d07cd_7c69a13b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-24T20:29:18Z",
+      "side": 1,
+      "message": "FYI - this is not a trailer, so should appear separate from the trailers. e.g.\n\n```\nFor cue-lang/docs-and-content#53\n```\n\nI will fix this in my patchset.",
+      "revId": "7b354df1a9660af05dbb452933636cbc3d996232",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d908e499_77b9e580",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -31,6 +66,23 @@
       "writtenOn": "2023-08-21T11:20:16Z",
       "side": 1,
       "message": "PTAL.",
+      "revId": "7b354df1a9660af05dbb452933636cbc3d996232",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b12e1fb_8ef823fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-24T20:29:18Z",
+      "side": 1,
+      "message": "Pushing up a new patch set to make review simpler based on Preview-Path trailer.",
       "revId": "7b354df1a9660af05dbb452933636cbc3d996232",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
