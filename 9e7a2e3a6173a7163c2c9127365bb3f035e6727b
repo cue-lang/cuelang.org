@@ -16,6 +16,24 @@
       "message": "Swap out for a `Preview-Path:` trailer.",
       "revId": "9e7a2e3a6173a7163c2c9127365bb3f035e6727b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "179910d5_b847eae7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-08-24T20:47:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c97932fa_6fb425e0",
+      "revId": "9e7a2e3a6173a7163c2c9127365bb3f035e6727b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
