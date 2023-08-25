@@ -88,41 +88,11 @@
         }
     }
 
-    &--white {
-        --section-bg-color: #{ $c-white };
+    @each $theme, $color in $themes {
+        &--#{ $theme } {
+            --section-bg-color: #{ $color };
 
-        + #{ $self }--white {
-            & > :first-child {
-                padding-top: 0;
-            }
-        }
-    }
-
-    &--blue {
-        --section-bg-color: #{ $c-blue--lighter };
-
-        + #{ $self }--blue {
-            & > :first-child {
-                padding-top: 0;
-            }
-        }
-    }
-
-    &--grey {
-        --section-bg-color: #{ $c-grey--lightest };
-
-        + #{ $self }--grey {
-            & > :first-child {
-                padding-top: 0;
-            }
-        }
-    }
-
-    &--yellow {
-        --section-bg-color: #{ $c-yellow };
-
-        + #{ $self }--yellow {
-            & > :first-child {
+            + #{ $self }--#{ $theme } {
                 padding-top: 0;
             }
         }

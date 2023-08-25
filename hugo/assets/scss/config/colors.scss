@@ -72,3 +72,11 @@ $shadow--header:        0 3px 12px transparentize($c-blue--dark, .8);
 $shadow--drawer:        0 3px 12px transparentize($c-blue--dark, .8);
 
 $shadow--button:        0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+
+// Themes:
+$themes: (
+    'white': $c-white,
+    'blue': $c-blue--lighter,
+    'grey': $c-grey--lightest,
+    'yellow': $c-yellow,
+);
