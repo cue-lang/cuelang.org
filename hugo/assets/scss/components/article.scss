@@ -154,5 +154,13 @@
         &__meta {
             margin-right: auto;
         }
+
+        &--docs {
+            .spotlight {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 1.75rem $p-gutter--large;
+            }
+        }
     }
 }

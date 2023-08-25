@@ -1,0 +1,16 @@
+{{- $title := .Get "title" | default false -}}
+{{- $theme := .Get "theme" | default "blue" -}}
+
+<div class="spotlight{{if $theme }} spotlight--{{ $theme }}{{ end }}">
+    {{ with $title }}
+        <h2 class="spotlight__title">{{ . }}</h2>
+    {{ end }}
+
+    <div class="spotlight__content">
+        {{ if eq .Page.File.Ext "md" -}}
+            {{ .Inner | markdownify }}
+        {{ else -}}
+            {{ .Inner | htmlUnescape | safeHTML }}
+        {{- end }}
+    </div>
+</div>

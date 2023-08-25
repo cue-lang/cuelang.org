@@ -33,3 +33,17 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 [Official CUE releases](https://github.com/cue-lang/cue/releases/)
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
+
+{{< spotlight title="Related content" >}}
+
+### Documentation
+
+-   [**Validation** Lorem ipsum dolor sit amet conamentum senectus donec. Id risus ornare risus pulvinar.]({{< ref "docs/howto/validate-json-using-cue" >}})
+-   [**References** Conamentum senectus donec. Id risus ornare risus pulvinar.]({{< ref "docs/reference/code-of-conduct" >}})
+
+### Blog posts
+- [Take a cue to supercharge your configurations]({{< ref "blog/example2" >}})
+- [Cue changes the way we validate our research date]({{< ref "blog/example3" >}})
+- [Take a cue to supercharge your configurations]({{< ref "blog/example4" >}})
+
+{{< /spotlight >}}

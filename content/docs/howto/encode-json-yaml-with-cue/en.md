@@ -20,12 +20,16 @@ It may be necessary to include **nested data** as an encoded string, such as a b
 of YAML embedded as a string inside a JSON request. The steps below show how to
 accomplish that with the `cue` command line. First with JSON, then with YAML.
 
-## Prerequisites
+{{< spotlight >}}
+
+### Prerequisites
 
 -   You have [CUE installed](https://cuelang.org/docs/install/) locally. This
     allows you to run `cue` commands
 -   You know how to use [CUE Definitions/ Helper Fields]({{< ref
     "/docs/language-guide/data" >}})
+
+{{< /spotlight >}}
 
 ## Encoding Nested JSON
 
