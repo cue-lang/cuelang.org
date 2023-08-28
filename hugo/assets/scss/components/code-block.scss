@@ -7,6 +7,8 @@
 .code-block {
     $self: &;
 
+    border: 2px solid var(--pre-border-color, $c-grey-blue);
+    border-radius: $b-radius;
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
@@ -19,11 +21,12 @@
         }
     }
 
+    pre {
+        border: 0;
+    }
+
     &__heading {
         background-color: $c-grey-blue--lighter;
-        border: 2px solid var(--pre-border-color, $c-grey-blue);
-        border-bottom: 0;
-        border-radius: $b-radius $b-radius 0 0;
         color: $c-blue--darker;
         flex: 0 0 35px;
     }
@@ -133,8 +136,6 @@
 
     &--heading {
         pre {
-            border-radius: 0 0 $b-radius $b-radius;
-            border-top: 0;
             padding-top: 0.5rem;
         }
     }
