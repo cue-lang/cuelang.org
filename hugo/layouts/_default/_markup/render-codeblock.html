@@ -4,8 +4,8 @@
 {{- $showCopyButton := ne (index .Attributes "codetocopy") false -}}
 {{- $codeToCopy := index .Attributes "codetocopy" | default (.Inner | base64Encode) -}}
 
-<div class="code-block{{ if $title }} code-block--heading{{ end }}{{ if eq $type "terminal" }} code-block--terminal{{ end }}
-{{ if $modifier }} {{ $modifier}}{{ end }}"{{- if $showCopyButton -}} data-copy{{- end -}}>
+<div class="code-block{{ if $title }} code-block--heading{{ end }}{{ if eq $type "terminal" }} code-block--terminal{{ end }}{{ if $modifier }} {{ $modifier}}{{ end }}"
+{{- if $showCopyButton -}} data-copy{{- end -}}>
     {{- with $title -}}
         <div class="code-block__heading">
             <span class="code-block__tab">{{- . -}}</span>

@@ -1,0 +1,19 @@
+{{ $stepNumber := .Get "stepNumber" | default false}}
+{{ $group := .Get "group" | default false }}
+{{ $id := cond (ne $group false) (print $group "-step-" $stepNumber) (print "step-" $stepNumber) }}
+
+<div class="step" id="{{ $id }}" data-step-group="{{ $group }}">
+    {{ if $stepNumber }}
+        <a class="button button--icon button--yellow step__number" href="#{{ $id }}" data-step-number="{{ $stepNumber }}">
+            {{- $stepNumber -}}
+        </a>
+    {{ end }}
+
+    <div class="step__content">
+        {{ if eq .Page.File.Ext "md" }}
+            {{ .Inner | markdownify }}
+        {{ else }}
+            {{ .Inner | htmlUnescape | safeHTML }}
+        {{ end }}
+    </div>
+</div>
