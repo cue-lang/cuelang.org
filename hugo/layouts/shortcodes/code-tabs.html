@@ -1,12 +1,13 @@
 {{ with .Inner }}{{/* don't do anything, just call it because hugo needs it */}}{{ end }}
 
 {{- $groupId := .Get "groupId" | default "default" -}}
+{{- $limitHeight := .Get "limitHeight" | default false -}}
 {{- $tabsTopLeft := .Scratch.Get "tabs-top-left" -}}
 {{- $tabsTopRight := .Scratch.Get "tabs-top-right" -}}
 {{- $tabsBottomLeft := .Scratch.Get "tabs-bottom-left" -}}
 {{- $tabsBottomRight := .Scratch.Get "tabs-bottom-right" -}}
 
-<div class="code-tabs">
+<div class="code-tabs{{ if $limitHeight }} code-tabs--max{{ end }}">
     {{ if $tabsTopLeft }}
         {{- $modifier := cond (not $tabsBottomLeft) "code-tabs__item--left" "code-tabs__item--top-left" -}}
         <div class="code-tabs__item {{ $modifier }}">
