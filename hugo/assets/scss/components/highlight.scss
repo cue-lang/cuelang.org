@@ -1,0 +1,13 @@
+@import '../config/colors';
+
+// Code highlight styles
+.highlight {
+    table {
+        display: block;
+        overflow-x: auto;
+
+        td:first-child {
+            border-right: 2px solid var(--pre-border-color, $c-grey-blue) !important; // To overrule hugo inline styles
+        }
+    }
+}

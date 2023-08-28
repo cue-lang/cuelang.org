@@ -54,6 +54,7 @@ You can also use syntax highlighting with Fenced Code Blocks. For this you only 
 
 [Here](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) is a list of all the languages that can get syntax styling.
 
+You can add line numbers by adding `lineos=true`.
 You can even mark/highlight part of the code by adding `hl_lines` with the according lines you want to highlight:
 
 {{< columns >}}
@@ -79,6 +80,22 @@ You can even mark/highlight part of the code by adding `hl_lines` with the accor
 }
 ```
 {{< /columns >}}
+
+It's also possible to set `lineos=table` if you want to have table html for the line numbers:
+
+```text {title="Table", linenos=table}
+package ci
+
+import (
+	"path"
+	"encoding/yaml"
+	"tool/file"
+
+	// initialised at the start of this guide, followed by the relative path from the repository root to the `github` directory.
+	"github.com/cue-examples/github-actions-example/internal/ci/github"
+)
+
+```
 
 Other options that can be added after defining a language can be found [here](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode).
 
