@@ -341,10 +341,9 @@ code {
     line-height: inherit;
 
     p & {
-        --pre-background-color: #{ $c-grey-blue--lighter };
+        --pre-background-color: #{ $c-grey-blue };
 
         background-color: var(--pre-background-color);
-        border: 1px solid var(--pre-border-color);
         border-radius: 2px;
         padding: 0 4px;
     }
