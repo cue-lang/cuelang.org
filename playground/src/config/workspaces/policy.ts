@@ -1,7 +1,8 @@
 import { WORKSPACE, Workspace } from '@models/workspace';
 import { OPTION_TYPE, optionCUE, optionJSON, optionTerminal, optionYAML } from '@models/options';
+import { deepFreeze } from '@helpers/deep-freeze';
 
-export const policyWorkspace: Workspace = {
+export const policyWorkspace: Workspace = deepFreeze<Workspace>({
     enabled: true,
     type: WORKSPACE.POLICY,
     title: 'Policy',
@@ -39,4 +40,4 @@ export const policyWorkspace: Workspace = {
             selected: optionCUE,
         }
     }
-};
+});

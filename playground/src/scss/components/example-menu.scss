@@ -1,0 +1,125 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/list-reset';
+@import '../mixins/svg';
+@import '../mixins/sr-only';
+
+.#{ $prefix }-example-menu {
+    $self: &;
+
+    &__header {
+        border-bottom: 1px solid $c-grey--light;
+        padding: 1rem;
+    }
+
+    &__label {
+        @include sr-only;
+    }
+
+    &__input {
+        &[type='text'] {
+            appearance: none;
+            background: transparentize($c-grey-blue--dark, 0.93);
+            border: 1px solid transparentize($c-blue--darker, 0.9);
+            border-radius: $b-radius;
+            box-sizing: border-box;
+            color: $c-grey--dark;
+            display: block;
+            font-family: inherit;
+            font-size: 0.8125rem;
+            padding: 1ex;
+            width: 100%;
+
+            &::placeholder {
+                color: $c-blue--darker;
+                opacity: 0.5;
+            }
+
+            &:focus {
+                border-color: $c-blue;
+                outline: none;
+            }
+        }
+    }
+
+    &__content {
+        max-height: 300px;
+        overflow-y: auto;
+        padding: 0 1rem;
+    }
+
+    &__items {
+        @include list-reset;
+    }
+
+    &__item {
+        padding: 0.1875rem 0;
+
+        &--category {
+            border-bottom: 1px solid $c-grey--light;
+            padding: 0.75rem 0;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    &__category {
+        color: $c-grey-blue--dark;
+        font-size: 0.875rem;
+        font-weight: $weight-bold;
+        margin: 0 0 0.25rem;
+    }
+
+    &__link {
+        color: $c-grey-blue--darker;
+        display: block;
+        font-size: 0.75rem;
+        font-weight: $weight-normal;
+        padding-left: 1rem;
+        position: relative;
+        transition: color 0.2s;
+
+        &:hover,
+        &:focus {
+            color: $c-blue--darker;
+
+            #{ $self }__text {
+                background-position-x: 0;
+                background-size: 100% 1px;
+            }
+        }
+
+        &.is-active {
+            color: $c-blue--darker;
+            font-weight: $weight-bold;
+
+            &::before {
+                @include svg('check', $c-blue--darker);
+
+                display: block;
+                height: 12px;
+                left: 0;
+                line-height: 12px;
+                position: absolute;
+                top: 5px;
+                width: 12px;
+            }
+        }
+    }
+
+    &__text {
+        background: linear-gradient(currentColor, currentColor) no-repeat 100% 100%;
+        background-size: 0 1px;
+        display: inline-block;
+        transition: background-size 0.2s ease-in-out;
+    }
+
+    &__empty {
+        font-size: 0.75rem;
+        margin: 1rem 0;
+    }
+}

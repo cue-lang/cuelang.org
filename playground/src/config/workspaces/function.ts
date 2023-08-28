@@ -1,7 +1,8 @@
 import { Workspace, WORKSPACE } from '@models/workspace';
 import { OPTION_TYPE, optionCUE, optionDef, optionExport, optionJSON, optionYAML } from '@models/options';
+import { deepFreeze } from '@helpers/deep-freeze';
 
-export const functionWorkspace: Workspace = {
+export const functionWorkspace: Workspace = deepFreeze<Workspace>({
     enabled: true,
     type: WORKSPACE.FUNC,
     title: 'Function',
@@ -27,4 +28,4 @@ export const functionWorkspace: Workspace = {
             selected: optionCUE,
         }
     }
-};
+});

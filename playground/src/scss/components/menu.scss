@@ -164,6 +164,12 @@
             width: 250px;
         }
 
+        &--wide {
+            #{ $self }__dropdown {
+                width: 340px;
+            }
+        }
+
         &--right {
             #{ $self }__dropdown {
                 left: auto;

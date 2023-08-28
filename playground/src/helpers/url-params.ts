@@ -3,7 +3,11 @@ import { OPTION_TYPE } from '@models/options';
 import { HASH_KEY, hashParams } from '@models/hashParams';
 import { cleanObject } from '@helpers/cleaner';
 
-export const getParamsFromUrl = (): hashParams => {
+export const getSearchParamsFromUrl = (): URLSearchParams => {
+    return new URLSearchParams(window.location.search);
+}
+
+export const getHashParamsFromUrl = (): hashParams => {
     let hash = window.location.hash.slice(1);
     const params: hashParams = {};
 
@@ -26,6 +30,29 @@ export const getParamsFromUrl = (): hashParams => {
     }
 
     return params;
+}
+
+export const updateHash = (newHash: string, replace = false): void => {
+    const currentHash = window.location.hash.slice(1);
+    if (currentHash !== newHash) {
+        if (replace) {
+            const newUrl = window.location;
+            newUrl.hash = newHash;
+            window.history.replaceState(null, '', newUrl.toString());
+        } else {
+            window.location.hash = newHash;
+        }
+    }
+}
+
+export const updateSearchParams = (searchParams: URLSearchParams, replace = false): void => {
+    if (replace) {
+        const newUrl = window.location;
+        newUrl.search = searchParams.toString();
+        window.history.pushState(null, '', newUrl.toString());
+    } else {
+        window.location.search = searchParams.toString();
+    }
 }
 
 export const workspaceToHashParams = (workspace: Workspace): string => {

@@ -6,7 +6,7 @@ import { availableWorkspaces } from '@config/workspaces';
 import { DropdownChange } from '@models/dropdown';
 import { OPTION_TYPE } from '@models/options';
 import { Workspace, Workspaces } from '@models/workspace';
-import { workspaceToHashParams } from '@helpers/hash-params';
+import { workspaceToHashParams } from '@helpers/url-params';
 
 interface WorkspaceMenuProps {
     activeWorkspace: Workspace;

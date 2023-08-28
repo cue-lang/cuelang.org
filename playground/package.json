@@ -5,6 +5,8 @@
   "author": "",
   "main": "index.js",
   "dependencies": {
+    "fuse.js": "6.6.2",
+    "lodash.clonedeep": "4.5.0",
     "lodash.debounce": "4.0.8",
     "@monaco-editor/react": "4.5.1",
     "react": "18.2.0",
@@ -12,6 +14,7 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
+    "@types/lodash.clonedeep": "4.5.7",
     "@types/lodash.debounce": "4.0.7",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
