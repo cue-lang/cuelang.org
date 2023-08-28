@@ -6,8 +6,11 @@ import { DropdownChange } from '@models/dropdown';
 import { Menu } from '@components/menu';
 import { Share } from '@components/share';
 import { WorkspaceMenu } from '@components/workspace-menu';
+import { ExamplesMenu } from '@components/examples-menu';
+import { Example } from '@models/example';
 
 interface HeaderProps {
+    activeExample?: Example;
     activeWorkspaceName: WORKSPACE;
     workspaces: Workspaces;
     saved: boolean;
@@ -19,6 +22,7 @@ interface HeaderProps {
 }
 
 interface HeaderState {
+    examplesMenuOpen: boolean;
     workspaceMenuOpen: boolean;
 }
 
@@ -28,6 +32,7 @@ export class Header extends React.Component<HeaderProps, HeaderState>
     constructor(props: HeaderProps) {
         super(props);
         this.state = {
+            examplesMenuOpen: false,
             workspaceMenuOpen: false,
         }
     }
@@ -67,10 +72,20 @@ export class Header extends React.Component<HeaderProps, HeaderState>
                             onClose={ () => { this.setState({ workspaceMenuOpen: false })} }
                         ></WorkspaceMenu>
                     </Menu>
-                    <Menu id="examples" title="Examples">
-                        <div className="cue-menu__content">
-                            <span>Coming soon!</span>
-                        </div>
+                    <Menu id="examples"
+                          title="Examples"
+                          cssClass="cue-menu--wide"
+                          onOpen={ () => {
+                              this.setState({ examplesMenuOpen: true })
+                          } }
+                          onClose={ () => {
+                              this.setState({ examplesMenuOpen: false })
+                          } }
+                    >
+                        <ExamplesMenu
+                            activeExample={ this.props.activeExample }
+                            onClose={ () => { this.setState({ examplesMenuOpen: false })} }
+                        ></ExamplesMenu>
                     </Menu>
                 </div>
 

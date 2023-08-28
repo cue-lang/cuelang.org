@@ -1,7 +1,7 @@
 import { Workspace } from '@models/workspace';
 import { HASH_KEY, hashParams } from '@models/hashParams';
 import { OPTION_TYPE } from '@models/options';
-import { optionToHashkey } from '@helpers/hash-params';
+import { optionToHashkey } from '@helpers/url-params';
 
 export const setupWorkspaceConfig = (workspace: Workspace, params: hashParams): Workspace => {
     // Loop through input tabs for workspace and set selected values to values from params
