@@ -1,0 +1,48 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/screen';
+
+.step {
+    $self: &;
+
+    align-items: flex-start;
+    border-bottom: 1px solid $c-lavender--light;
+    display: flex;
+    flex-direction: column;
+    gap: $p-gutter * 0.5;
+    padding: $p-gutter 0;
+
+    & + p {
+        margin-top: 2rem;
+    }
+
+    &__number {
+        --button-height: 34px;
+
+        align-items: center;
+        border-radius: $b-radius--round;
+        display: flex;
+        flex: 0 0 var(--button-height);
+        font-size: 1.25rem;
+        justify-content: center;
+    }
+
+    &__content {
+        width: 100%;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include screen($screen-normal) {
+        flex-direction: row;
+        gap: $p-gutter;
+        padding: $p-gutter--large 0;
+
+        p + & {
+            padding-top: $p-gutter;
+        }
+    }
+}

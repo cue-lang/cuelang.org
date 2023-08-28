@@ -16,21 +16,21 @@ command line.
 
 ## Prerequisites
 
-- You have [CUE installed](https://cuelang.org/docs/install/) locally. This
-  allows you to run `cue` commands
-
-- You know how to use [CUE Definitions/ Helper Fields]({{< ref "/docs/language-guide/data" >}})
+-   You have [CUE installed](https://cuelang.org/docs/install/) locally. This
+    allows you to run `cue` commands
+-   You know how to use [CUE Definitions/ Helper Fields]({{< ref "/docs/language-guide/data" >}})
 
 ## Requirements
 
-- Using the command line or terminal
-- File editing
+-   Using the command line or terminal
+-   File editing
 
 ## Steps
 
+{{< step stepNumber="1" >}}
 Create a JSON file called `x.json` with the following:
 
-``` {title="x.json"}
+```{title="x.json"}
 {
   "people": {
     "Gopher": {
@@ -47,12 +47,15 @@ Create a JSON file called `x.json` with the following:
 }
 ```
 
+{{< /step >}}
+
+{{< step stepNumber="2" >}}
 Create a CUE file named `x.cue`
 
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-``` {title="x.cue"}
+```{title="x.cue"}
 #Person: {
 	name:    string
 	age:     int
@@ -64,6 +67,9 @@ people: [X=string]: #Person & {
 }
 ```
 
+{{< /step >}}
+
+{{< step stepNumber="3" >}}
 Run the following `cue` command in your terminal:
 
 ```console
@@ -71,11 +77,13 @@ $ cue vet x.cue x.json
 ```
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
+{{< /step >}}
 
+{{< step stepNumber="4" >}}
 Add another person to your JSON data by replacing your `x.json` file with the
 following:
 
-``` {title="x.json"}
+```{title="x.json"}
 {
   "people": {
     "Gopher": {
@@ -97,6 +105,9 @@ following:
 }
 ```
 
+{{< /step >}}
+
+{{< step stepNumber="5" >}}
 Validate again with `cue vet`:
 
 ```console
@@ -109,10 +120,12 @@ people.Rob.age: conflicting values 42.2 and int (mismatched types float and int)
 
 The command output shows validation errors where the JSON violates
 the (type) constraints that you have declared.
+{{< /step >}}
 
+{{< step stepNumber="6" >}}
 Fix up the JSON:
 
-``` {title="x.json"}
+```{title="x.json"}
 {
   "people": {
     "Gopher": {
@@ -134,6 +147,9 @@ Fix up the JSON:
 }
 ```
 
+{{< /step >}}
+
+{{< step stepNumber="7" >}}
 Validate with `cue vet` again
 
 ```console
@@ -141,6 +157,7 @@ $ cue vet x.cue x.json
 ```
 
 The `cue vet` command will show no output on success.
+{{< /step >}}
 
 Well done! Any future data errors on names, ages, and addresses in your JSON
 will be detected. This is especially helpful with JSON files with 100s (and
@@ -148,4 +165,4 @@ even 1000s) of lines.
 
 #### Further reading/See Also
 
-- [cmd/cue command line documentation](https://cue.googlesource.com/cue/+/refs/tags/v0.2.0/doc/cmd/cue.md)
+-   [cmd/cue command line documentation](https://cue.googlesource.com/cue/+/refs/tags/v0.2.0/doc/cmd/cue.md)
