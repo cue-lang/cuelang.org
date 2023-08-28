@@ -26,14 +26,12 @@
 
     @include screen($screen-simple) {
         display: grid;
-        grid-template:
-            'topLeft topRight' fit-content(248px)
-            'bottomLeft bottomRight' fit-content(248px) / 50% 50%;
-        max-height: 500px;
+        grid-template-areas:
+            'topLeft topRight'
+            'bottomLeft bottomRight';
+        grid-template-columns: 50% 50%;
 
         &__item {
-            max-height: 248px;
-
             &:only-child {
                 grid-column: span 2;
             }
@@ -42,7 +40,6 @@
                 border-bottom: 0;
                 grid-area: topLeft;
                 grid-row: span 2;
-                max-height: 500px;
                 resize: horizontal;
             }
 
@@ -51,7 +48,6 @@
                 border-left: 2px solid var(--pre-border-color, $c-grey-blue);
                 grid-area: topRight;
                 grid-row: span 2;
-                max-height: 500px;
             }
 
             &--top-left {
@@ -90,5 +86,10 @@
                 }
             }
         }
+    }
+
+    &--max {
+        grid-template-rows: minmax(0, auto) minmax(0, auto);
+        height: 500px;
     }
 }
