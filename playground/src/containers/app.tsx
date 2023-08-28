@@ -20,14 +20,17 @@ import { editorOptions, outputEditorOptions } from '@config/monaco-editor';
 import { availableWorkspaces, defaultWorkspace } from '@config/workspaces';
 import { OPTION_TYPE } from '@models/options';
 import { DropdownChange } from '@models/dropdown';
+import { Example } from '@models/example';
 import { HASH_KEY, hashParams } from '@models/hashParams';
 import { WORKSPACE, Workspace, Workspaces } from '@models/workspace';
 import { setupWorkspaceConfig } from '@helpers/workspace';
 import { getSharedCode, share, workspaceToShareContent } from '@helpers/share';
-import { getParamsFromUrl, workspaceToHashParams } from '@helpers/hash-params';
+import { getHashParamsFromUrl, getSearchParamsFromUrl, updateHash, workspaceToHashParams } from '@helpers/url-params';
 import { Header } from '@components/header';
 import { Tab } from '@components/tab';
 import { Tabs } from '@components/tabs';
+import { examples } from '@config/examples';
+import { Spinner } from '@components/spinner';
 
 interface AppProps
 {
@@ -41,6 +44,7 @@ interface AppState
     loading: boolean;
     saved: boolean;
     showSaveURL: boolean;
+    activeExample?: Example;
 }
 
 // App is the root of our React application
@@ -58,6 +62,7 @@ export class App extends React.Component<AppProps, AppState>
             loading: true,
             saved: false,
             showSaveURL: false,
+            activeExample: null,
         };
     }
 
@@ -77,9 +82,10 @@ export class App extends React.Component<AppProps, AppState>
 
     public async loadPlayground() {
         let activeWorkspace: Workspace;
+        let activeExample: Example = null;
         let saved = false;
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        const params: hashParams = getParamsFromUrl();
+        const urlSearchParams = getSearchParamsFromUrl();
+        const params: hashParams = getHashParamsFromUrl();
 
         // Check if we have saved code to get
         const id = urlSearchParams.get('id');
@@ -93,6 +99,22 @@ export class App extends React.Component<AppProps, AppState>
                     if (inputTab) {
                         inputTab.code = savedInput.code;
                     }
+                }
+            }
+        }
+
+        // If we don't have saved code: check for example param in the url
+        if (!saved) {
+            const exampleSlug = urlSearchParams.get('example');
+            if (exampleSlug) {
+                const example = examples.find(item => item.slug === exampleSlug);
+                if (example) {
+                    activeWorkspace = availableWorkspaces[example.workspace];
+                    activeWorkspace.config = example.workspaceConfig;
+                    activeExample = example;
+                } else {
+                    // Remove example from searchparams when it's not a valid example
+                    urlSearchParams.delete('example');
                 }
             }
         }
@@ -124,11 +146,12 @@ export class App extends React.Component<AppProps, AppState>
             workspaces: workspaces,
             saved: saved,
             loading: false,
+            activeExample: activeExample,
         }, this.updateOutput.bind(this));
     }
 
     public updatePlayground() {
-        const params: hashParams = getParamsFromUrl();
+        const params: hashParams = getHashParamsFromUrl();
 
         // Get current active workspace from state
         let activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
@@ -156,7 +179,6 @@ export class App extends React.Component<AppProps, AppState>
                 for (const inputTab of activeWorkspace.config.inputTabs) {
                     const editorId = `${ activeWorkspace.type }-${ inputTab.type }`;
                     const editor = this.inputEditors[editorId];
-                    console.log(this.inputEditors);
                     inputTab.code = editor ? editor.getValue() : '';
                 }
 
@@ -182,7 +204,7 @@ export class App extends React.Component<AppProps, AppState>
             }, this.updateOutput.bind(this));
 
         } else { // Same workspace but params changed:
-            const params: hashParams = getParamsFromUrl();
+            const params: hashParams = getHashParamsFromUrl();
             // Setup workspace config again with new params
             activeWorkspace = setupWorkspaceConfig(activeWorkspace, params);
             workspaces[activeWorkspace.type] = activeWorkspace;
@@ -198,17 +220,8 @@ export class App extends React.Component<AppProps, AppState>
     }
 
     public updateHash(workspace: Workspace, replace = false) {
-        const currentHash = window.location.hash.slice(1);
         const newHash = workspaceToHashParams(workspace);
-        if (currentHash !== newHash) {
-            if (replace) {
-                const href = window.location.href;
-                const newUrl = window.location.hash !== '' ? href.replace(window.location.hash, `#${ newHash }`) : `${ href }#${ newHash }`;
-                history.replaceState(null, '', newUrl);
-            } else {
-                window.location.hash = newHash;
-            }
-        }
+        updateHash(newHash, replace);
     }
 
     public render() {
@@ -220,6 +233,7 @@ export class App extends React.Component<AppProps, AppState>
             <div className={ `cue-playground cue-playground--${ activeWorkspace.type }` }>
                 <div className="cue-playground__header">
                     <Header
+                        activeExample={ this.state.activeExample }
                         activeWorkspaceName={ this.state.activeWorkspaceName }
                         workspaces={ this.state.workspaces }
                         saved={ this.state.saved }
@@ -232,12 +246,7 @@ export class App extends React.Component<AppProps, AppState>
                 </div>
                 <div className="cue-playground__content">
                     { this.state.loading &&
-                        <div className="cue-playground__spinner cue-spinner">
-                            <div className="cue-spinner__item"></div>
-                            <div className="cue-spinner__item"></div>
-                            <div className="cue-spinner__item"></div>
-                            <p className="cue-spinner__text">loading</p>
-                        </div>
+                        <Spinner className="cue-playground__spinner"></Spinner>
                     }
 
                     { !this.state.loading &&
@@ -314,8 +323,9 @@ export class App extends React.Component<AppProps, AppState>
     private onEditorInputChange(): void {
         if (this.state.saved) {
             window.history.pushState({}, 'CUE Playground', '?id=' + window.location.hash)
-            this.setState({ ...this.state, saved: false, showSaveURL: false });
+            this.setState({ saved: false, showSaveURL: false });
         }
+
         this.updateOutput();
     }
 
