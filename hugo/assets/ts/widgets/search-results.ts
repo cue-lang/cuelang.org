@@ -85,10 +85,10 @@ export class SearchResults extends BaseWidget {
 
     public mapSearchHitToTeaser(hit: Hit<SearchItem>): Teaser {
         return {
-            title: hit._highlightResult.title.value,
+            title: hit.title,
             link: hit.link,
             summary: hit._snippetResult.summary.value,
-            contentType: hit.contentType,
+            breadcrumb: hit.breadcrumb,
             tags: (Array.isArray(hit.tags) ? hit.tags : [hit.tags]).filter(tag => tag),
         };
     }
@@ -102,15 +102,18 @@ export class SearchResults extends BaseWidget {
         return `
             <li class="list__item">
                 <div class="teaser">
+                    ${ (teaser.breadcrumb && teaser.breadcrumb.length > 0) ? `<div class="teaser__breadcrumb">
+                        ${ teaser.breadcrumb.map(breadcrumb => `<span>${ breadcrumb }</span>`).join(' / ') }
+                    </div>` : '' }
                     <div class="teaser__heading">
                         <h2 class="teaser__title">${ teaser.title }</h2>
-                        ${ (tags && tags.length) ? `<ul class="list list--tags teaser__tags">
-                            ${ tags.map(tag => `<li class="list__item">
-                                <button class="tag tag--${ tag.color }" data-value="${ tag.name }">${ tag.name }</button></li>`) }
-                        </ul>` : '' }
                     </div>
-                    ${ (teaser.contentType) ? `<p class="teaser__meta">${ teaser.contentType }</p>` : '' }
                     ${ (teaser.summary) ? `<div class="teaser__excerpt">${ teaser.summary }</div>` : '' }
+                    ${ (tags && tags.length) ? `<ul class="list list--tags teaser__tags">
+                        ${ tags.map(tag => `<li class="list__item">
+                            <button class="tag tag--${ tag.color }" data-value="${ tag.name }">${ tag.name }</button>
+                        </li>`).join('') }
+                    </ul>` : '' }
                     <a class="teaser__link" href="${ teaser.link }">
                         <span>Read more</span>
                     </a>

@@ -9,6 +9,7 @@ import { AutocompleteApi } from '@algolia/autocomplete-js/dist/esm/types';
 import { BaseItem, OnSubmitParams } from '@algolia/autocomplete-shared/dist/esm/core';
 import { BaseWidget } from './base-widget';
 import { mapToAlgoliaFilters, parseQuery } from '../helpers/search';
+import { SearchItem } from '../interfaces/search';
 
 export class SearchAutocomplete extends BaseWidget {
     public static readonly NAME = 'search-autocomplete';
@@ -136,7 +137,7 @@ export class SearchAutocomplete extends BaseWidget {
                                 query: parsedQuery.cleanQuery,
                                 params: {
                                     hitsPerPage: 5,
-                                    attributesToSnippet: ['title:6', 'summary:25'],
+                                    attributesToSnippet: ['title:6', 'summary:30'],
                                     snippetEllipsisText: '…',
                                     filters: filters,
                                 },
@@ -153,7 +154,7 @@ export class SearchAutocomplete extends BaseWidget {
                                 <div class="aa-SourceHeaderLine searchbar__header-line"></div>
                             `;
                         },
-                        item({ item, components, html }) {
+                        item({ item, html }) {
                             function htmlDecode(input: string, length = 100) {
                                 const doc = new DOMParser().parseFromString(input, 'text/html');
                                 const content = doc.documentElement.textContent;
@@ -168,11 +169,16 @@ export class SearchAutocomplete extends BaseWidget {
                             return html`
                                 <a class="searchbar__item" href="${ item.link }">
                                     <div class="searchbar__item-content">
+                                        ${ ((item.breadcrumb as SearchItem['breadcrumb']) && (item.breadcrumb as SearchItem['breadcrumb']).length >= 0) ? html`
+                                            <div class="searchbar__breadcrumb">
+                                                ${ (item.breadcrumb as SearchItem['breadcrumb']).map((breadcrumb: string) => html`
+                                                    <span>${ breadcrumb }</span>
+                                                `) }
+                                            </div>
+                                        ` : '' }
+
                                         <h2 class="searchbar__item-title">
-                                            ${ components.Highlight({
-                                                hit: item,
-                                                attribute: 'title',
-                                            }) }
+                                            ${ htmlDecode(item.title.toString()) }
                                         </h2>
 
                                         <p class="searchbar__item-description">

@@ -2,10 +2,8 @@
 @import '../config/typography';
 
 .tag {
-    --tag-background: #{ $c-blue--lighter };
-
     align-items: center;
-    background: var(--tag-background);
+    background: var(--tag-background, $c-blue--lighter);
     border-radius: 1.5rem;
     color: $c-black;
     display: flex;
