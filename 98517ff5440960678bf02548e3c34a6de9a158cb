@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "037b9c1a_8213c6f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-29T14:51:18Z",
+      "side": 1,
+      "message": "Paul: it\u0027s tempting to see this guide as part of the CUE By Example set, in that defaults\u0027 basic behaviours can be expressed in a single CUE+YAML+Terminal 3-way code-block.\n\nBut if we do so, and remove 80% of the content in this CL, then there are some significant corner cases that won\u0027t be covered. I.e. most of the H2s in this CL, beyond the first. I don\u0027t think this non-trivial set of nuances should go unexplained, but I concede that perhaps they\u0027re not Howto Guide material.\n\nShould we swap out this doc for a far shorter CUE By Example, and place the rest of this doc\u0027s (IMHO!) pretty decent content into a Defaults Concept Guide, which we also link from the How-to Guide?",
+      "revId": "98517ff5440960678bf02548e3c34a6de9a158cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
