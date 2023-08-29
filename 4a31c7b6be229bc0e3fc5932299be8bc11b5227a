@@ -16,6 +16,24 @@
       "message": "Note to self: Write this better. Simpler. 2x shorter sentences, probably.",
       "revId": "4a31c7b6be229bc0e3fc5932299be8bc11b5227a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a2790c7_d5fb06e1",
+        "filename": "content/docs/howto/make-a-field-optional/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-29T12:02:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2c408fe_a3a017ef",
+      "revId": "4a31c7b6be229bc0e3fc5932299be8bc11b5227a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
