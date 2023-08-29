@@ -5,13 +5,13 @@
 {{ else }}{{ with .Site.Params.description -}}{{- . | $.RenderString | plainify -}}
 {{ end }}{{ end }}{{ end -}}">
 {{ hugo.Generator }}
-{{ if eq (getenv "HUGO_ENV") "production" }}
+{{ if and (eq (getenv "HUGO_ENV") "production") (ne .Params.noindex true) (ne .Type "examples") }}
 <meta name="robots" content="index, follow">
 {{ else }}
 <meta name="robots" content="noindex, nofollow">
 {{ end }}
 {{ range .AlternativeOutputFormats -}}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink | safeURL }}">
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink | safeURL }}">
 {{ end -}}
 {{ partialCached "site/favicons.html" . }}
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
@@ -19,8 +19,9 @@
 {{- template "_internal/schema.html" . -}}
 {{- template "_internal/twitter_cards.html" . -}}
 {{ if eq (getenv "HUGO_ENV") "production" }}
-{{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
 {{ partialCached "site/css.html" . }}
 {{ $jsHead := (resources.Get "ts/head.ts" | js.Build) }}
-{{ with resources.Get "ts/head.ts" }}<script>{{ ( . | js.Build | minify ).Content | safeJS }}</script>{{ end }}
+{{ with resources.Get "ts/head.ts" }}
+<script>{{ ( . | js.Build | minify ).Content | safeJS }}</script>{{ end }}
