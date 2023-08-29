@@ -86,15 +86,31 @@
         text-decoration: none;
     }
 
+    &__breadcrumb {
+        @include style-text-small;
+
+        color: var(--searchbar-breadcrumb-color, $c-blue--darker);
+
+        span {
+            &::after {
+                content: ' / ';
+            }
+        }
+    }
+
     &__item-title {
         @include style-heading-4;
 
-        margin: 0;
+        color: var(--searchbar-title-color, $c-blue--light);
+        margin: 0.25rem 0;
     }
 
     &__item-description {
+        @include style-text-small;
+
+        color: var(--searchbar-description-color, $c-grey-blue--dark);
         line-height: 1.75;
-        margin: 10px 0 0;
+        margin: 0;
 
         &:empty {
             margin: 0;

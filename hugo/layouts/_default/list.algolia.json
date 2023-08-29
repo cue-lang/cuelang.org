@@ -31,6 +31,7 @@
     {{- $content := "" -}}
     {{- $tags := cond (isset $page.Params "tags") ($page.Params.tags) "" -}}
     {{- $contentType := $page.FirstSection.Title -}}
+    {{- $breadcrumb := slice -}}
 
     {{/* If section is docs we derive the content type from the first level of nesting within docs*/}}
     {{- if and (eq $page.Section "docs") (ne $page $page.FirstSection) -}}
@@ -49,6 +50,14 @@
         {{- end -}}
     {{- end -}}
 
+    {{- if ne $page $page.FirstSection -}}
+        {{- range $index, $parent := $page.Ancestors.Reverse -}}
+            {{- if eq .IsHome false -}}
+                {{- $breadcrumb = $breadcrumb | append $parent.Title -}}
+            {{ end }}
+        {{- end -}}
+    {{- end -}}
+
     {{- if eq $index 0 -}}
         {{- $content = delimit (first $cutoff $page.PlainWords) " " -}}
     {{- else -}}
@@ -62,6 +71,7 @@
         "publishDate": {{ $publishDate | jsonify }},
         "summary": {{ $summary | jsonify }},
         "content": {{ $content  | jsonify}},
+        "breadcrumb": {{ $breadcrumb | jsonify }},
         "contentType": {{ $contentType | jsonify }},
         "tags": {{ $tags | jsonify }}
     }

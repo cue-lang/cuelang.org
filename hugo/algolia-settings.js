@@ -24,9 +24,9 @@ index.setSettings({
     attributesForFaceting: ['tags', 'contentType'],
     distinct: true,
     attributeForDistinct: 'link',
-    highlightPreTag: '<mark>',
-    highlightPostTag: '</mark>',
-    attributesToSnippet: ['summary'],
+    highlightPreTag: '<strong>',
+    highlightPostTag: '</strong>',
+    attributesToSnippet: ['summary:30'],
     attributesToHighlight: ['title', 'summary', 'content'],
 }).then(() => {
     console.log('Updating Algolia Settings successful');

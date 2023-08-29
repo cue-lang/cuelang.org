@@ -37,6 +37,10 @@
         display: flex;
         flex-wrap: wrap;
         gap: 7px;
+
+        #{ $self }__item {
+            border-bottom: 0;
+        }
     }
 
     @include screen($screen-simple) {
