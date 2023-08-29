@@ -5,6 +5,7 @@ export interface SearchItem {
     summary: string;
     publishDate: string;
     content: string;
+    breadcrumb: string[];
     contentType: string;
     tags: string | string[];
 }
