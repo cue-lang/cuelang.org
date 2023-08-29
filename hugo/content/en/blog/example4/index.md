@@ -2,6 +2,7 @@
 title: Example blog page 4
 date: "2023-03-10"
 draft: false
+noindex: true
 image: "birds.jpg"
 ---
 

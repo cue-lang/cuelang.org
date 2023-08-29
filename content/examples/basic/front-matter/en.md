@@ -60,11 +60,12 @@ meta:
 
 notification
 : You can add a sticky notification on the current page. The `content` allows for simple markdown options.
+
 ```
 notification:
     content: '**Note:** a sticky note we wanted to show at the bottom'
-
 ```
+
 Additionally you can add a button to the notification (the icon param is optional).
 ```
 notification:
@@ -86,3 +87,6 @@ tags:
 
 authors
 : adding the author(s) to the frontmatter, makes the content header show an image + name of the assigned author. It also shows a popup on click, with again an image + (display) name, and when available a link to their Github, and a link to the search page so users can search for other articles of this author.
+
+noindex
+: adding noindex: true to the front-matter add the meta tag `<meta name="robots" content="noindex, nofollow">` to the head of the page. Also the pages will be excluded from the sitemap.xml.
