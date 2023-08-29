@@ -55,6 +55,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "3b243023_c5d192f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-29T11:19:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ba89f1c_01b92d99",
+      "revId": "ab2f2b5ba5f1b1711330884ff13b74c8152b6667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "dbd4c4a3_b63bbd2b",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -87,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f6e0244_30b2d5c5",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-29T11:19:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a326d72_c8d9e2c3",
+      "revId": "ab2f2b5ba5f1b1711330884ff13b74c8152b6667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d800444_8d8313bb",
@@ -100,6 +136,24 @@
       "writtenOn": "2023-08-24T09:11:19Z",
       "side": 1,
       "message": "Change to \"Related content\", so the (current) LH TOC looks better.",
+      "revId": "ab2f2b5ba5f1b1711330884ff13b74c8152b6667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5b0f7a1_1ce40fbf",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-29T11:19:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d800444_8d8313bb",
       "revId": "ab2f2b5ba5f1b1711330884ff13b74c8152b6667",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
