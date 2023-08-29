@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "643c7589_d879a34a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-29T12:21:46Z",
+      "side": 1,
+      "message": "PTAL.\n\nThis CL, along with the optional field CL (https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1167621) introduces a width limit on code-block CUE comments, at 32 characters. This is so that mobile users don\u0027t have to scroll horizontally.\n\nI think the /very/ slightly worse desktop user experience (there are more comment lines, so the code tab\u0027s content is longer) is more than offset by the significant improvement for mobile users. I\u0027m interested in your thoughts.",
+      "revId": "e0a879308cfacd3f94373565243d34b3d9928d06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -68,6 +68,24 @@
       "message": "Add\n\n```\n- https://github.com/cue-lang/docs-and-content/issues/114: \"CUE By Example explainer\"\n```",
       "revId": "8e2fcbefebdd9cc094b288108bb019a8577a7814",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "197234f2_2cb2e616",
+        "filename": "content/docs/howto/require-a-field-exist/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-29T12:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b0ee081_f3598400",
+      "revId": "8e2fcbefebdd9cc094b288108bb019a8577a7814",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
