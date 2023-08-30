@@ -90,13 +90,58 @@
     }
 
     &--blog {
+        --teaser-title-color: #{ $c-blue--darker };
+        --teaser-excerpt-color: #{ $c-blue--darker };
+
         padding: 0;
+
+        #{ $self }__title,
+        #{ $self }__meta,
+        #{ $self }__excerpt {
+            margin: 0;
+        }
+
+        #{ $self }__image {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+            img {
+                @include stretch;
+
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+
+        #{ $self }__title {
+            @include style-heading-3;
+        }
+
+        #{ $self }__date {
+            margin: 0;
+        }
+
+        #{ $self }__tags {
+            margin-top: 1rem;
+        }
 
         #{ $self }__content {
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            padding: 8px;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        #{ $self }__excerpt {
+            @include style-text;
+        }
+
+        #{ $self }__readmore {
+            color: var(--teaser-readmore-color, $c-blue--darker);
+            height: 100%;
+            padding: 0;
         }
 
         #{ $self }__link {
@@ -104,32 +149,6 @@
             &:hover {
                 background: var(--teaser-background, transparent);
             }
-        }
-
-        #{ $self }__meta,
-        #{ $self }__excerpt,
-        #{ $self }__title {
-            margin: 0;
-        }
-
-        #{ $self }__title {
-            @include style-heading-3;
-        }
-
-        #{ $self }__image {
-            height: 164px;
-            margin: 0 0 12px;
-            overflow: hidden;
-
-            img {
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.4s;
-            }
-        }
-
-        .link {
-            padding: 0;
         }
     }
 
@@ -154,31 +173,28 @@
                 }
             }
 
-            #{ $self }__image {
-                height: 130px;
-            }
-
             &#{ $self }--featured {
                 display: flex;
-                gap: 3.375rem;
+                gap: $p-gutter--large;
+
+                #{ $self }__title {
+                    @include style-heading-2;
+                }
 
                 #{ $self }__content {
+                    flex: 0 1 50%;
                     width: 50%;
                 }
 
                 #{ $self }__excerpt {
-                    color: $c-grey;
                     line-height: 2;
                 }
 
                 #{ $self }__image {
-                    height: 340px;
+                    aspect-ratio: 5 / 4;
+                    flex: 0 1 50%;
                     margin: 0;
                     width: 50%;
-                }
-
-                #{ $self }__title {
-                    font-size: 2rem;
                 }
             }
         }
