@@ -1,4 +1,16 @@
 {{ $baseUrl := urls.Parse $.Site.Params.Baseurl }}
+{{ $versionCommit := print $.Site.Params.github_repo "/commit/" .GitInfo.Hash }}
+{{ $issueBody := (print
+    "### What page were you looking at?\n\n"
+    .Permalink "\n\n"
+    "### What version of the site were you looking at?\n\n"
+    $versionCommit "\n\n"
+    "### What did you do?\n\n\n\n"
+    "### What did you expect?\n\n\n\n"
+    "### What did you see instead?\n\n") | urlquery
+}}
+{{ $issueUrl := (print "https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&title=alpha.cuelang.org:%20&body=" $issueBody) | htmlUnescape | safeHTML }}
+
 <div class="footer">
     <div class="footer__sitemap">
         <nav class="footer__container" aria-label="{{ T "ui_menu_footer" }}">
@@ -42,6 +54,12 @@
                             </a>
                         </li>
                     {{ end }}
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="{{ $issueUrl }}" target="_blank">
+                            <span class="nav__text">{{ T "ui_legalmenu_issue_report" }}</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
