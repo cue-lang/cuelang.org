@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1f0dc5f_b42c937c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-30T16:51:25Z",
+      "side": 1,
+      "message": "PTAL. This doesn\u0027t have a related docs\u0026content issue, as it\u0027s more to do with the discussions we\u0027ve been having and recording in the scratch doc. More than happy to kick off an issue and link it, if that feels important.",
+      "revId": "5fd4f123f8cd042832ec9283205b62ff244f29e7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
