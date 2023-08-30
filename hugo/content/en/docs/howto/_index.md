@@ -1,5 +1,5 @@
 ---
 title: How-to Guides
 weight: 40
-draft: false
+toc_hide: false
 ---

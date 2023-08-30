@@ -1,3 +1,3 @@
 package site
 
-"docs": "howto": {}
+docs: howto: {}
