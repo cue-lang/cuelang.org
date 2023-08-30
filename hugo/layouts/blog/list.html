@@ -16,9 +16,9 @@
                         {{ range $index, $teaser := .Pages }}
                             <li class="list__item">
                                 {{- if eq $index 0 -}}
-                                        {{- partial "teaser--blog.html" (dict "modifier" "featured" "context" . "path" .File.Dir)  -}}
+                                    {{- partial "teaser--blog.html" (dict "modifier" "featured" "context" . "path" .File.Dir) -}}
                                 {{- else -}}
-                                        {{- partial "teaser--blog.html" . -}}
+                                    {{- partial "teaser--blog.html" . -}}
                                 {{- end -}}
                             </li>
                         {{ end }}
@@ -27,9 +27,7 @@
             </div>
 
             <footer class="section__footer">
-                <div class="section__content">
-                    {{- partial "paging/pages.html" . -}}
-                </div>
+                <div class="section__content">{{- partial "paging/pages.html" . -}}</div>
             </footer>
         {{ end }}
     </section>
