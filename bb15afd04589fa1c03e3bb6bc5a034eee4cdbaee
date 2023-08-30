@@ -16,6 +16,23 @@
       "message": "Paul: PTAL. A bunch of FIXMEs, still, but I really like its flow, now. \n\nWas this closer to what you had in mind?",
       "revId": "bb15afd04589fa1c03e3bb6bc5a034eee4cdbaee",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "174c310e_fba40cfa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-08-30T15:16:49Z",
+      "side": 1,
+      "message": "Set CL as WIP as it needs to be rebased after the nav-organising CL is (raised and) submitted.",
+      "revId": "bb15afd04589fa1c03e3bb6bc5a034eee4cdbaee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
