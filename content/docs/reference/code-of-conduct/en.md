@@ -1,5 +1,7 @@
 ---
 title: Code of Conduct
+weight: 1
+toc_hide: false
 ---
 
 ## About

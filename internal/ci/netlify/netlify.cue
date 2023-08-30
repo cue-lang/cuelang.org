@@ -64,6 +64,15 @@ config: #config & {
 
 	redirects: [...{force: true, status: 302}]
 	redirects: [{
+		from: "/docs/tutorial/"
+		to:   "/docs/tutorial/about-these-tutorials/"
+	}, {
+		from: "/docs/howto/"
+		to:   "/docs/howto/about-these-guides/"
+	}, {
+		from: "/docs/concept/"
+		to:   "/docs/concept/about-these-guides/"
+	}, {
 		from: "/cl/*"
 		to:   "https://review.gerrithub.io/c/:splat"
 	}, {

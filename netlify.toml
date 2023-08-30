@@ -15,6 +15,24 @@
   command = "bash _scripts/build.bash -b $DEPLOY_PRIME_URL"
 
 [[redirects]]
+  from = "/docs/tutorial/"
+  to = "/docs/tutorial/about-these-tutorials/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/howto/"
+  to = "/docs/howto/about-these-guides/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/concept/"
+  to = "/docs/concept/about-these-guides/"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/cl/*"
   to = "https://review.gerrithub.io/c/:splat"
   status = 302

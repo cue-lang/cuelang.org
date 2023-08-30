@@ -1,5 +1,7 @@
 ---
 title: Glossary of terms
+weight: 10
+toc_hide: false
 ---
 
 ### A
