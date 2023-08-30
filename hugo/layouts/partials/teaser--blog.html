@@ -6,7 +6,7 @@
     {{- $context = .context -}}
     {{- $modifier = .modifier -}}
     {{- $path = .path -}}
-{{- else -}} 
+{{- else -}}
     {{- $context = . -}}
     {{- $path = .File.Dir -}}
 {{- end -}}
@@ -21,20 +21,27 @@
     <div class="teaser__content">
         <div class="teaser__heading">
             <h2 class="teaser__title">{{ $context.Title }}</h2>
+        </div>
+
+        <div class="teaser__meta">
+            <p class="teaser__date">
+                {{ $context.Date.Format ($context.Param "time_format") }}
+            </p>
+
             {{ if $context.Params.tags }}
                 {{ $tags := where $context.Site.Params.tags "name" "in"  $context.Params.tags }}
                 {{- partial "tags.html" (dict "listClass" "teaser__tags" "tags" $tags) -}}
             {{ end }}
         </div>
-        <p class="teaser__meta">{{ $context.Date.Format ($context.Param "time_format") }}</p>
-        <p class="teaser__excerpt">{{ $context.Summary | truncate 200 }}</p>
+
+        <p class="teaser__excerpt">{{ $context.Summary | truncate 220 }}</p>
+
         <div class="link teaser__readmore">
             <span class="link__text">{{ T "ui_read_more" }}</span>
         </div>
-    
+
         <a class="teaser__link" aria-label="{{ T "ui_read_more" }} - {{ $context.LinkTitle }}" href="{{ $context.RelPermalink }}">
             <span>{{ T "ui_read_more" }}</span>
         </a>
     </div>
-
 </article>
