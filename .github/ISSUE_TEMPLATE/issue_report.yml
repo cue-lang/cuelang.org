@@ -1,0 +1,54 @@
+name: "Issue report"
+title: "alpha.cuelang.org"
+description: "Please answer these questions before submitting your issue. Thanks! For questions please use one of our forums: https://cuelang.slack.com/"
+labels: ["Triage", "NeedsInvestigation", "cuelang.org"]
+body:
+  - type: textarea
+    id: cue-version
+    attributes:
+      label: What version of alpha.cuelang.org are you viewing?
+      description:
+      placeholder:
+      value:
+    validations:
+      required: true
+
+  - type: textarea
+    id: cue-actions
+    attributes:
+      label: What did you do?
+      description:
+      placeholder:
+      value:
+    validations:
+      required: true
+
+  - type: textarea
+    id: cue-expected
+    attributes:
+      label: What did you expect to see?
+      description:
+      placeholder:
+      value:
+    validations:
+      required: true
+
+  - type: textarea
+    id: cue-actual
+    attributes:
+      label: What did you see instead?
+      description:
+      placeholder:
+      value:
+    validations:
+      required: true
+
+  - type: textarea
+    id: cue-extra
+    attributes:
+      label: Extra information
+      description:
+      placeholder:
+      value:
+    validations:
+      required: false

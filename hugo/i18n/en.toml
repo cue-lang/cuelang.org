@@ -38,6 +38,10 @@ other = "Show side navigation"
 [ui_sidemenu_close]
 other = "Hide side navigation"
 
+# Legal menu
+[ui_legalmenu_issue_report]
+other = "Report an issue"
+
 # Paging
 [ui_pager_name_prevnext]
 other = "Previous/Next navigation"
