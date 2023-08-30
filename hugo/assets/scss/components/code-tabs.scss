@@ -26,10 +26,9 @@
 
     @include screen($screen-simple) {
         display: grid;
-        grid-template-areas:
-            'topLeft topRight'
-            'bottomLeft bottomRight';
-        grid-template-columns: 50% 50%;
+        grid-template:
+            'topLeft topRight' minmax(0, auto)
+            'bottomLeft bottomRight' minmax(0, auto) / 50% 50%;
 
         &__item {
             &:only-child {
@@ -86,10 +85,5 @@
                 }
             }
         }
-    }
-
-    &--max {
-        grid-template-rows: minmax(0, auto) minmax(0, auto);
-        height: 500px;
     }
 }

@@ -82,10 +82,10 @@ groupId
 : optional - Determine if tabs should be synced as port of a group.
 If you add a groupId the selected tab will be synced across tabs with the same groupId.
 
-limitHeight
-: optional - value: true/false (omitting this attribute is same as false)
+height
+: optional - value: number (in pixels) (omitting this attribute is same as auto height)
 Determine if the tabs should have a height. By default it fits the content of the tabs.
-By setting it to true it has a height of 500px.  This can be used if tabs contain long content.
+This can be used if tabs contain long content. Example: `{{</* code-tabs height=500 */>}}`
 
 ## Attributes on code-tab
 
@@ -246,9 +246,9 @@ languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
 
 {{< /code-tabs >}}
 
-### 2 tabs in top-left, 1 in bottom-left, 1 in top-right and 1 in bottom-right with limitHeight set to true
+### 2 tabs in top-left, 1 in bottom-left, 1 in top-right and 1 in bottom-right with height set to 500
 
-{{< code-tabs limitHeight=true >}}
+{{< code-tabs height=500 >}}
 
 {{< code-tab name="schema.cue" area="top-left" >}}
 #Language: {
