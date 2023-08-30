@@ -3,8 +3,9 @@
     <head>{{ partial "site/head.html" . }}</head>
     <body{{ with .Params.body_class }} class="{{ . }}"{{ end }} itemscope itemtype="https://schema.org/WebPage">
         {{ partial "schema/webpage.html" . }}
-        
+
         <a id="skip-nav" class="skip-link" href="#site-main" target="_self">{{ T "ui_skip_nav" }}</a>
+
         <div class="site">
             <header id="site-header" class="site__header">
                 {{ partialCached "site/header.html" . (.Params.header_type | default "") }}
@@ -15,7 +16,7 @@
             </main>
 
             <footer id="site-footer" class="site__footer">
-                {{ partialCached "site/footer.html" . }}
+                {{ partial "site/footer.html" . }}
             </footer>
         </div>
 
