@@ -2,13 +2,14 @@
 import {
     Carousel,
     Copy,
+    Dialog,
     Docs,
     Drawer,
-    SearchFilter,
     Header,
     Menu,
     NotificationBar,
     SearchAutocomplete,
+    SearchFilter,
     SearchResults,
     Tabs,
     TabsNav,
@@ -25,7 +26,7 @@ declare global {
     }
 }
 
-type WidgetTypes = Carousel | Copy | Docs | Drawer | Header | Menu | NotificationBar |
+type WidgetTypes = Carousel | Copy | Dialog | Docs | Drawer | Header | Menu | NotificationBar |
     SearchAutocomplete | SearchFilter | SearchResults | Tabs | TabsNav | Youtube;
 
 class App {
@@ -41,13 +42,14 @@ class App {
         this.widgetMap = {
             [Carousel.NAME]: Carousel,
             [Copy.NAME]: Copy,
+            [Dialog.NAME]: Dialog,
             [Docs.NAME]: Docs,
             [Drawer.NAME]: Drawer,
-            [SearchFilter.NAME]: SearchFilter,
             [Header.NAME]: Header,
             [Menu.NAME]: Menu,
             [NotificationBar.NAME]: NotificationBar,
             [SearchAutocomplete.NAME]: SearchAutocomplete,
+            [SearchFilter.NAME]: SearchFilter,
             [SearchResults.NAME]: SearchResults,
             [Tabs.NAME]: Tabs,
             [TabsNav.NAME]: TabsNav,

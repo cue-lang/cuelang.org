@@ -131,3 +131,9 @@ other = "Open share options"
 other = "Copy link"
 [share_share_on]
 other = "Share on"
+
+# Popup
+[popup_open]
+other = "Open popup"
+[popup_close]
+other = "Close popup"
