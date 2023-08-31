@@ -8,7 +8,7 @@
         <li class="share__item" data-copy>
             <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="{{ .Permalink }}">
                 {{ partial "icon.html" (dict "icon" "link" "class" "share__icon") }}
-                <p><span class="share__link-text">{{ T "share_copy_link" }}</span></p>
+                <span class="share__link-text">{{ T "share_copy_link" }}</span>
                 <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
                     {{ T "copy_message" }}
                 </span>

@@ -4,7 +4,9 @@
         <div class="docs__main">
             {{ partial "paging/breadcrumb.html" . }}
 
-            <article class="article article--docs">
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                {{ partial "schema/article.html" . }}
+
                 <div class="article__container">
                     {{ partial "article--header" (dict "showTitle" false "context" .) }}
 
