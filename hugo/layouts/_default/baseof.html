@@ -1,19 +1,24 @@
 <!doctype html>
 <html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection }}" class="no-js">
     <head>{{ partial "site/head.html" . }}</head>
-    <body{{ with .Params.body_class }} class="{{ . }}"{{ end }}>
+    <body{{ with .Params.body_class }} class="{{ . }}"{{ end }} itemscope itemtype="https://schema.org/WebPage">
+        {{ partial "schema/webpage.html" . }}
+        
         <a id="skip-nav" class="skip-link" href="#site-main" target="_self">{{ T "ui_skip_nav" }}</a>
         <div class="site">
             <header id="site-header" class="site__header">
                 {{ partialCached "site/header.html" . (.Params.header_type | default "") }}
             </header>
-            <main id="site-main" class="site__content">
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
                 {{ block "main" . }}{{ end }}
             </main>
+
             <footer id="site-footer" class="site__footer">
                 {{ partialCached "site/footer.html" . }}
             </footer>
         </div>
+
         {{ partial "notification-bar.html" . }}
         {{ partialCached "site/drawer-mobile.html" . }}
         {{ partial "site/scripts.html" . }}
