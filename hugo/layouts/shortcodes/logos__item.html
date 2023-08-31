@@ -1,33 +1,96 @@
+{{- $link := .Get "link" | default "" -}}
+{{- $src := .Get "src" | default "" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $name := .Get "name" | default "" -}}
+{{- $buttonUrl := .Get "buttonUrl" | default "" -}}
+{{- $buttonText := .Get "buttonText" | default "" -}}
 {{- $lazy := cond (or (eq (.Get "lazy") false) (eq (.Get "lazy") "false")) false true -}}
+{{- $popup := cond (or (eq (.Get "popup") true) (eq (.Get "popup") "true")) true false -}}
+{{- $cssClass := "logos__item" -}}
 
-{{ if .Get "link" }}
-    <a href="{{ .Get "link" }}" class="logos__item logos__item--link">
-        <img src="{{ .Get "src" }}"
+{{ if and $link (eq $popup false) }}
+    {{- $cssClass = print $cssClass " logos__item--link" -}}
+{{ else if $popup }}
+    {{- $cssClass = print $cssClass " logos__item--popup" -}}
+{{ end }}
+
+{{ if and $link (eq $popup false) }}
+    <a href="{{ $link }}" class="{{ $cssClass }}">
+        <img src="{{ $src }}"
             class="logos__logo"
             width="160"
             height="60"
-            {{ if .Get "alt" }}
-                alt="{{ .Get "alt" }}"
+            {{ if $alt }}
+                alt="{{ $alt }}"
             {{ end }}
             {{ if $lazy }}
                 loading="lazy"
             {{ end }}
         >
 
-        <span class="sr-only">{{ T "logo_redirect" }} {{ with .Get "name" }}{{ . }}{{ end }}</span>
+        <span class="sr-only">{{ T "logo_redirect" }} {{ with $name }}{{ . }}{{ end }}</span>
     </a>
 {{ else }}
-    <div class="logos__item">
-        <img src="{{ .Get "src" }}"
+    <div class="{{ $cssClass }}"{{ if $popup }} data-dialog-trigger="logo-dialog-{{ .Ordinal }}" aria-label="{{ T "popup_open" }}"{{ end }}>
+        <img src="{{ $src }}"
             class="logos__logo"
             width="160"
             height="60"
-            {{ if .Get "alt" }}
-                alt="{{ .Get "alt" }}"
+            {{ if $alt }}
+                alt="{{ $alt }}"
             {{ end }}
             {{ if $lazy }}
                 loading="lazy"
             {{ end }}
         >
+
+        {{ if $popup }}
+            {{ partial "icon.html" (dict "icon" "info" "class" "logos__info") }}
+        {{ end }}
     </div>
+{{ end }}
+
+{{ if $popup }}
+    <dialog class="dialog dialog--small dialog--logo" data-dialog id="logo-dialog-{{ .Ordinal }}">
+        <div class="dialog__container">
+            <div class="dialog__media">
+                {{ if $link }}
+                    <a href="{{ $link }}">
+                {{ end }}
+
+                <img src="{{ $src }}"
+                    class="dialog__logo"
+                    width="160"
+                    height="60"
+                    {{ if $alt }}
+                        alt="{{ $alt }}"
+                    {{ end }}
+                    {{ if $lazy }}
+                        loading="lazy"
+                    {{ end }}
+                >
+
+                {{ if $link }}
+                        <span class="sr-only">{{ T "logo_redirect" }} {{ with $name }}{{ . }}{{ end }}</span>
+                    </a>
+                {{ end }}
+            </div>
+
+            <div class="dialog__content">
+                {{ with .Inner }}
+                    {{ . | markdownify }}
+                {{ end }}
+
+                {{ if and ($buttonUrl) ($buttonText) }}
+                    <a class="button button--outline dialog__button" href="{{ $buttonUrl }}">
+                        <span class="button__text">{{ $buttonText }}</span>
+                    </a>
+                {{ end }}
+            </div>
+        </div>
+
+        <button class="dialog__close" data-dialog-close="logo-dialog-{{ .Ordinal }}" aria-label="{{ T "popup_close" }}">
+            {{ partial "icon.html" (dict "icon" "close" "class" "dialog__icon") }}
+        </button>
+    </dialog>
 {{ end }}

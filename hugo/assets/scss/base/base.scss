@@ -14,6 +14,7 @@
     --heading-color: #{ $c-blue };
     --text-link-color: #{ $c-blue };
     --caption-color: #{ transparentize($c-grey--darkest, 0.3) };
+    --dialog-animation-settings: 401ms ease;
     --form-input-background: #{ $c-white };
     --form-input-border: #{ $c-input };
     --form-input-border-focus: #{ $c-blue };
