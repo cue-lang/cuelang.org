@@ -1,0 +1,138 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+@import '../mixins/stretch';
+@import '../mixins/svg';
+
+.dialog {
+    $self: &;
+
+    --popover-close-size: 44px;
+    --popover-close-icon-size: 20px;
+
+    background: $c-white;
+    border: 0;
+    border-radius: $b-radius--xlarge;
+    box-shadow: 0 44px 34px 0 transparentize($c-black, 0.75);
+    max-height: 100vh;
+    max-width: $screen-large;
+    padding: 0;
+    width: calc(100% - 40px);
+
+    &[open] {
+        animation: maximize var(--dialog-animation-settings);
+
+        &::backdrop {
+            opacity: 1;
+        }
+    }
+
+    &.is-closed {
+        animation: minimize var(--dialog-animation-settings);
+
+        &::backdrop {
+            opacity: 0;
+        }
+    }
+
+    &::backdrop {
+        background-color: transparentize($c-black, 0.75);
+        transition: opacity 300ms var(--dialog-animation-settings);
+    }
+
+    &__container {
+        padding: 2rem;
+    }
+
+    &__media {
+        border-bottom: 1px solid var(--dialog-separator-color, transparentize($c-blue--darker, 0.8));
+        padding: $p-gutter 0;
+    }
+
+    &__logo {
+        height: auto;
+        width: 160px;
+    }
+
+    &__close {
+        align-items: center;
+        background-color: transparent;
+        color: var(--popover-close-color, transparentize($c-blue--darker, 0.8));
+        display: flex;
+        height: var(--popover-close-size);
+        justify-content: center;
+        position: absolute;
+        right: $p-gutter;
+        top: $p-gutter * 0.5;
+        transition: color 300ms ease-in-out;
+        width: var(--popover-close-size);
+        z-index: 1;
+
+        &:focus,
+        &:hover {
+            --popover-close-color: #{ transparentize($c-blue--darker, 0.1) };
+        }
+    }
+
+    &__icon {
+        height: var(--popover-close-icon-size);
+        width: var(--popover-close-icon-size);
+    }
+
+    &--small {
+        max-width: $screen-simple;
+    }
+
+    &--logo {
+        max-width: 700px;
+    }
+
+    @include screen($screen-simple) {
+        --popover-close-size: 50px;
+
+        &__close {
+            right: $p-gutter * 0.5;
+        }
+
+        &__container {
+            display: flex;
+            gap: $p-gutter--large;
+            padding: 3rem 3rem 3rem 2rem;
+        }
+
+        &__media {
+            border-bottom: 0;
+            border-right: 1px solid var(--dialog-separator-color, transparentize($c-blue--darker, 0.8));
+            flex: 0 0 (160px + $p-gutter);
+            padding: 0 $p-gutter 0 0;
+        }
+
+        &__content {
+            font-weight: $weight-light;
+
+            h2, h3, h4, h5, h6 {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@keyframes maximize {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes minimize {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

@@ -9,6 +9,7 @@
     --logo-height: 75px;
     --logo-width: 150px;
     --logo-animation: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    --logo-info-size: 16px;
 
     align-items: center;
     display: flex;
@@ -33,7 +34,8 @@
             scale 300ms var(--logo-animation);
         width: var(--logo-width);
 
-        &--link {
+        &--link,
+        &--popup {
             &:focus,
             &:hover {
                 scale: 1.05;
@@ -41,6 +43,10 @@
 
                 #{ $self }__logo {
                     scale: 1.1;
+                }
+
+                #{ $self }__info {
+                    opacity: 1;
                 }
             }
         }
@@ -50,6 +56,17 @@
         height: 100%;
         object-fit: contain;
         transition: scale 300ms var(--logo-animation);
+    }
+
+    &__info {
+        bottom: 6px;
+        color: var(--logo-info-color, transparentize($c-blue, 0.6));
+        height: var(--logo-info-size);
+        opacity: 0;
+        position: absolute;
+        right: 8px;
+        transition: opacity 300ms var(--logo-animation);
+        width: var(--logo-info-size);
     }
 
     @include screen($screen-simple) {

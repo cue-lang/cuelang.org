@@ -1,6 +1,7 @@
 export * from './base-widget';
 export * from './carousel';
 export * from './copy';
+export * from './dialog';
 export * from './dropdown';
 export * from './drawer';
 export * from './docs';

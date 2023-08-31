@@ -11,8 +11,10 @@
 
     @include clear-fix;
 
+    --section-padding: 2rem;
+
     background-color: var(--section-bg-color, transparent);
-    padding: var(--section-padding, 2rem) 0;
+    padding: var(--section-padding) 0;
     position: relative;
 
     &:first-child {
@@ -68,14 +70,19 @@
         }
     }
 
-    &--is-first {
-        padding-top: 0;
+    &__footer {
+        margin-top: 2rem;
     }
 
-    &--logos {
-        #{ $self }__header {
+    &--center {
+        #{ $self }__header,
+        #{ $self }__footer {
             text-align: center;
         }
+    }
+
+    &--is-first {
+        padding-top: 0;
     }
 
     &--overview {
@@ -105,11 +112,8 @@
             padding-top: 0.75rem;
         }
 
-        &--center {
-            #{ $self }__header,
-            #{ $self }__footer {
-                text-align: center;
-            }
+        &__footer {
+            margin-top: 4rem;
         }
 
         &--search {
