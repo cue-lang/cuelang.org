@@ -32,6 +32,7 @@
     {{- $tags := cond (isset $page.Params "tags") ($page.Params.tags) "" -}}
     {{- $contentType := $page.FirstSection.Title -}}
     {{- $breadcrumb := slice -}}
+    {{- $authors := cond (isset $page.Params "authors") ($page.Params.authors) "" -}}
 
     {{/* If section is docs we derive the content type from the first level of nesting within docs*/}}
     {{- if and (eq $page.Section "docs") (ne $page $page.FirstSection) -}}
@@ -73,7 +74,8 @@
         "content": {{ $content  | jsonify}},
         "breadcrumb": {{ $breadcrumb | jsonify }},
         "contentType": {{ $contentType | jsonify }},
-        "tags": {{ $tags | jsonify }}
+        "tags": {{ $tags | jsonify }},
+        "authors": {{ $authors | jsonify }}
     }
 
     {{- if gt $page.PlainWords (add $cutoff $skipWords) -}},

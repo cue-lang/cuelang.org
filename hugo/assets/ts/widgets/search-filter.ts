@@ -128,13 +128,13 @@ export class SearchFilter extends BaseWidget {
         const query = searchParams.get('q');
 
         this.parsedQuery = parseQuery(query);
+
         if (!query) {
             this.selectedItems = [];
         } else {
             this.selectedItems = this.parsedQuery.facets[this.filterName] ?? [];
         }
     }
-
 }
 
 if (document.readyState !== 'loading') {

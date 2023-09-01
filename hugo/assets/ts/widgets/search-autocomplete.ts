@@ -172,7 +172,8 @@ export class SearchAutocomplete extends BaseWidget {
                             return html`
                                 <a class="searchbar__item" href="${ item.link }">
                                     <div class="searchbar__item-content">
-                                        ${ ((item.breadcrumb as SearchItem['breadcrumb']) && (item.breadcrumb as SearchItem['breadcrumb']).length >= 0) ? html`
+                                        ${ ((item.breadcrumb as SearchItem['breadcrumb']) &&
+                                        (item.breadcrumb as SearchItem['breadcrumb']).length >= 0) ? html`
                                             <div class="searchbar__breadcrumb">
                                                 ${ (item.breadcrumb as SearchItem['breadcrumb']).map((breadcrumb: string) => html`
                                                     <span>${ breadcrumb }</span>
