@@ -9,34 +9,34 @@ You can use the `{{</* carousel */>}}` shortcode in combination with the `{{</* 
 
 ```
 {{</* carousel */>}}
-    {{</* carousel-slide src="images/moon.jpg" alt="moon" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" lazy="false" */>}}
-    {{</* carousel-slide src="images/allium.jpg" alt="allium" caption="Allium" */>}}
-    {{</* carousel-slide src="images/birds.jpg" alt="birds" */>}}
-    {{</* carousel-slide src="images/cow.jpg" alt="cow" */>}}
+    {{</* carousel-slide src="moon.jpg" alt="moon" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" lazy="false" */>}}
+    {{</* carousel-slide src="allium.jpg" alt="allium" caption="Allium" */>}}
+    {{</* carousel-slide src="birds.jpg" alt="birds" */>}}
+    {{</* carousel-slide src="cow.jpg" alt="cow" */>}}
 {{</* /carousel */>}}
 ```
 
 {{< carousel>}}
-    {{< carousel-slide src="images/moon.jpg" alt="moon" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" lazy="false" >}}
-    {{< carousel-slide src="images/allium.jpg" alt="allium" caption="Allium" >}}
-    {{< carousel-slide src="images/birds.jpg" alt="birds" >}}
-    {{< carousel-slide src="images/cow.jpg" alt="cow" >}}
+    {{< carousel-slide src="moon.jpg" alt="moon" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" lazy="false" >}}
+    {{< carousel-slide src="allium.jpg" alt="allium" caption="Allium" >}}
+    {{< carousel-slide src="birds.jpg" alt="birds" >}}
+    {{< carousel-slide src="cow.jpg" alt="cow" >}}
 {{< /carousel >}}
 
 ```
 {{</* carousel items="2" height="250" unit="px" duration="7000" */>}}
-    {{</* carousel-slide src="images/birds.jpg" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" */>}}
-    {{</* carousel-slide src="images/moon.jpg.jpg" caption="Moon" */>}}
-    {{</* carousel-slide src="images/cow.jpg" */>}}
-    {{</* carousel-slide src="images/allium.jpg" */>}}
+    {{</* carousel-slide src="birds.jpg" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" */>}}
+    {{</* carousel-slide src="moon.jpg.jpg" caption="Moon" */>}}
+    {{</* carousel-slide src="cow.jpg" */>}}
+    {{</* carousel-slide src="allium.jpg" */>}}
 {{</* /carousel */>}}
 ```
 
 {{< carousel items="2" height="250" unit="px" duration="7000" >}}
-    {{< carousel-slide src="images/birds.jpg" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" >}}
-    {{< carousel-slide src="images/moon.jpg" caption="Moon" >}}
-    {{< carousel-slide src="images/cow.jpg" >}}
-    {{< carousel-slide src="images/allium.jpg" >}}
+    {{< carousel-slide src="birds.jpg" caption="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" >}}
+    {{< carousel-slide src="moon.jpg" caption="Moon" >}}
+    {{< carousel-slide src="cow.jpg" >}}
+    {{< carousel-slide src="allium.jpg" >}}
 {{< /carousel >}}
 
 ## Attributes
