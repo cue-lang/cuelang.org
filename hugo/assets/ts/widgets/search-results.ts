@@ -1,9 +1,11 @@
 import algoliasearch, { SearchClient, SearchIndex } from 'algoliasearch';
+import merge from 'lodash.merge';
 import { Hit } from '@algolia/client-search';
 import { BaseWidget } from './base-widget';
-import { FilterEvent, FilterItem, SearchEvents, SearchFacet, SearchItem } from '../interfaces/search';
+import { FilterEvent, FilterItem, SearchEvents, SearchFacet, SearchFacets, SearchItem } from '../interfaces/search';
 import { Teaser } from '../interfaces/teaser';
 import { mapToAlgoliaFilters, parseQuery } from '../helpers/search';
+import { cleanObject } from 'assets/ts/helpers/cleaner';
 
 export class SearchResults extends BaseWidget {
     public static readonly NAME = 'search-results';
@@ -12,14 +14,16 @@ export class SearchResults extends BaseWidget {
     private readonly index: SearchIndex;
     private readonly searchResults: HTMLElement;
     private readonly tags: FilterItem[];
+    private readonly facetInputs: NodeListOf<HTMLInputElement>;
 
     constructor(element: HTMLElement) {
         super(element);
 
         this.searchClient = algoliasearch('5LXFM0O81Q', 'f961a95a00b2b2290054ad53fd75b424');
         this.index = this.searchClient.initIndex('cuelang.org');
-        this.searchResults = document.getElementsByClassName('search__results').item(0) as HTMLElement;
+        this.searchResults = this.element.getElementsByClassName('search__results').item(0) as HTMLElement;
         this.tags = this.element.dataset.tags ? JSON.parse(this.element.dataset.tags) : [];
+        this.facetInputs = this.element.querySelectorAll<HTMLInputElement>('input[name^="facet-"]');
     }
 
     public static registerWidget(): void {
@@ -47,13 +51,11 @@ export class SearchResults extends BaseWidget {
     }
 
     public search(query: string): void {
-        if (!query || query === '') {
-            return;
-        }
-
         const resultsNumber = this.element.querySelector<HTMLElement>('.search__amount') || undefined;
         const parsedQuery = parseQuery(query);
-        const filters = mapToAlgoliaFilters(parsedQuery.facets);
+        const facetsFromInputs = this.getHiddenInputFacets();
+        const facets = merge(parsedQuery.facets, facetsFromInputs);
+        const filters = mapToAlgoliaFilters(facets);
 
         this.index
             .search<SearchItem>(parsedQuery.cleanQuery, {
@@ -120,6 +122,26 @@ export class SearchResults extends BaseWidget {
                 </div>
             </li>
         `;
+    }
+
+    private getHiddenInputFacets(): SearchFacets {
+        if (!this.facetInputs) {
+            return {};
+        }
+
+        const facets: SearchFacets = {
+            [SearchFacet.TAGS]: [],
+            [SearchFacet.CONTENT_TYPE]: [],
+        };
+
+        this.facetInputs.forEach((input) => {
+            const name = input.getAttribute('name').replace('facet-', '');
+            if (facets[name] && input.value && input.value !== '') {
+                facets[name].push(input.value);
+            }
+        });
+
+        return cleanObject<SearchFacets>(facets);
     }
 
     private handleTagClick(value: string) {

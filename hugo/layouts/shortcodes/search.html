@@ -1,0 +1,9 @@
+{{- $contentType := .Get "contentType" | default "" -}}
+{{- $showContentTypes := .Get "showContentTypes" | default true -}}
+
+{{- partial "search"  (dict
+    "type" "widget"
+    "contentType" $contentType
+    "showContentTypes" $showContentTypes
+    "context" .
+) -}}

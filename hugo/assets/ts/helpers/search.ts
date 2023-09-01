@@ -59,6 +59,13 @@ export const queryToUrlParams = (query: ParsedQuery): string => {
 };
 
 export const parseQuery = (query: string): ParsedQuery => {
+    if (!query) {
+        return {
+            cleanQuery: '',
+            facets: {},
+        };
+    }
+
     let cleanQuery = query;
 
     const facets: SearchFacets = {

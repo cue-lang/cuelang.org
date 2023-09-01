@@ -2,9 +2,12 @@
 {{ $inputId := .id | default "searchbar"}}
 {{ $modifier := .modifier | default "" }}
 {{ $type := .type | default "" }}
+{{ $placeholder := .placeholder | default "" }}
 
 <div data-search-autocomplete="{{ $type }}"
-     data-searchbar-size="{{ if not (eq $type "results") }}small{{ end }}">
+     data-searchbar-size="{{ if not (eq $type "results") }}small{{ end }}"
+     data-searchbar-placeholder="{{ $placeholder }}"
+>
     <div class="searchbar__logo">
         {{ with resources.Get "svg/algolia-search.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
     </div>
