@@ -2,49 +2,93 @@
 
 {{- $groupId := .Get "groupId" | default "default" -}}
 {{- $height := .Get "height" | default false -}}
+{{- $tabsTop := .Scratch.Get "tabs-top" -}}
 {{- $tabsTopLeft := .Scratch.Get "tabs-top-left" -}}
 {{- $tabsTopRight := .Scratch.Get "tabs-top-right" -}}
+{{- $tabsBottom := .Scratch.Get "tabs-bottom" -}}
 {{- $tabsBottomLeft := .Scratch.Get "tabs-bottom-left" -}}
 {{- $tabsBottomRight := .Scratch.Get "tabs-bottom-right" -}}
+{{- $tabsLeft := .Scratch.Get "tabs-left" -}}
+{{- $tabsRight := .Scratch.Get "tabs-right" -}}
+
 
 <div class="code-tabs"{{ if $height }} style="height: {{ $height }}px"{{ end }}>
+    {{ if $tabsTop }}
+        <div class="code-tabs__item code-tabs__item--top">
+            {{ partial "tabs.html" (dict
+            "groupId" $groupId
+            "tabs" $tabsTop
+            "modifier" "code"
+            ) }}
+        </div>
+    {{ end }}
+
+    {{ if $tabsLeft }}
+        <div class="code-tabs__item code-tabs__item--left">
+            {{ partial "tabs.html" (dict
+            "groupId" $groupId
+            "tabs" $tabsLeft
+            "modifier" "code"
+            ) }}
+        </div>
+    {{ end }}
+
     {{ if $tabsTopLeft }}
-        {{- $modifier := cond (not $tabsBottomLeft) "code-tabs__item--left" "code-tabs__item--top-left" -}}
-        <div class="code-tabs__item {{ $modifier }}">
+        <div class="code-tabs__item code-tabs__item--top-left">
             {{ partial "tabs.html" (dict
-            "groupId" $groupId
-            "tabs" $tabsTopLeft
-            "modifier" "code"
+                "groupId" $groupId
+                "tabs" $tabsTopLeft
+                "modifier" "code"
             ) }}
         </div>
     {{ end }}
+
     {{ if $tabsBottomLeft }}
-        {{- $modifier := cond (not $tabsTopLeft) "code-tabs__item--left" "code-tabs__item--bottom-left" -}}
-        <div class="code-tabs__item {{ $modifier }}">
+        <div class="code-tabs__item code-tabs__item--bottom-left">
+            {{ partial "tabs.html" (dict
+                "groupId" $groupId
+                "tabs" $tabsBottomLeft
+                "modifier" "code"
+            ) }}
+        </div>
+    {{ end }}
+
+    {{ if $tabsRight }}
+        <div class="code-tabs__item code-tabs__item--right">
             {{ partial "tabs.html" (dict
             "groupId" $groupId
-            "tabs" $tabsBottomLeft
+            "tabs" $tabsRight
             "modifier" "code"
             ) }}
         </div>
     {{ end }}
+
     {{ if $tabsTopRight }}
-        {{- $modifier := cond (not $tabsBottomRight) "code-tabs__item--right" "code-tabs__item--top-right" -}}
-        <div class="code-tabs__item {{ $modifier }}">
+        <div class="code-tabs__item code-tabs__item--top-right">
             {{ partial "tabs.html" (dict
-            "groupId" $groupId
-            "tabs" $tabsTopRight
-            "modifier" "code"
+                "groupId" $groupId
+                "tabs" $tabsTopRight
+                "modifier" "code"
             ) }}
         </div>
     {{ end }}
+
     {{ if $tabsBottomRight }}
-        {{- $modifier := cond (not $tabsTopRight) "code-tabs__item--right" "code-tabs__item--bottom-right" -}}
-        <div class="code-tabs__item {{ $modifier }}">
+        <div class="code-tabs__item code-tabs__item--bottom-right">
             {{ partial "tabs.html" (dict
-            "groupId" $groupId
-            "tabs" $tabsBottomRight
-            "modifier" "code"
+                "groupId" $groupId
+                "tabs" $tabsBottomRight
+                "modifier" "code"
+            ) }}
+        </div>
+    {{ end }}
+
+    {{ if $tabsBottom }}
+        <div class="code-tabs__item code-tabs__item--bottom">
+            {{ partial "tabs.html" (dict
+                "groupId" $groupId
+                "tabs" $tabsBottom
+                "modifier" "code"
             ) }}
         </div>
     {{ end }}

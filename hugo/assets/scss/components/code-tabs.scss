@@ -35,6 +35,16 @@
                 grid-column: span 2;
             }
 
+            &--top {
+                grid-area: topLeft;
+                grid-column: span 2;
+            }
+
+            &--bottom {
+                grid-area: bottomLeft;
+                grid-column: span 2;
+            }
+
             &--left {
                 border-bottom: 0;
                 grid-area: topLeft;
@@ -51,38 +61,22 @@
 
             &--top-left {
                 grid-area: topLeft;
-
-                &:nth-last-child(2) {
-                    grid-column: span 2;
-                }
             }
 
             &--bottom-left {
                 border-bottom: 0;
                 grid-area: bottomLeft;
-
-                &:last-child {
-                    grid-column: span 2;
-                }
             }
 
             &--top-right {
                 border-left: 2px solid var(--pre-border-color, $c-grey-blue);
                 grid-area: topRight;
-
-                &:first-child {
-                    grid-column: span 2;
-                }
             }
 
             &--bottom-right {
                 border-bottom: 0;
                 border-left: 2px solid var(--pre-border-color, $c-grey-blue);
                 grid-area: bottomRight;
-
-                &:nth-child(2) {
-                    grid-column: span 2;
-                }
             }
         }
     }

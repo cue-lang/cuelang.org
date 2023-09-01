@@ -29,7 +29,7 @@ languages:
     name: Norwegian
 {{</* /code-tab */>}}
 
-{{</* code-tab name="TERMINAL" type="terminal" area="top-right" */>}}
+{{</* code-tab name="TERMINAL" type="terminal" area="right" */>}}
 languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
     ./schema.cue:3:8
     ./data.yaml:5:12
@@ -68,7 +68,7 @@ languages:
   name: Norwegian
 {{< /code-tab >}}
 
-{{< code-tab name="TERMINAL" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" type="terminal" area="right" >}}
 languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
 ./schema.cue:3:8
 ./data.yaml:5:12
@@ -93,7 +93,9 @@ name
 : required - Name of the tab
 
 area
-: required - Area the tab should be in. Can be one of 'top-left', 'top-right', 'bottom-left' or 'bottom-right'.
+: required - Area the tab should be in. Can be one of 'top', 'left', 'top-left', 'top-right', 'bottom', 'bottom-left', 'right or 'bottom-right'.
+Note: You can either use bottom or bottom-left/bottom-right. You can't combine 'bottom' with another bottom area. Same goes for top, left and right.
+For instance if you have a tab set to 'left' it will file the entire left area and can't be combined with 'top-left' because this will break the layout.
 
 language
 : optional - Code language (for instance yaml or json)
@@ -154,10 +156,10 @@ languages:
   {{< /code-tabs >}}
 
 
-### 1 tab in top-left and 1 tab in bottom-left (1 column, 2 rows)
+### 1 tab in top and 1 tab in bottom (1 column, 2 rows)
 {{< code-tabs >}}
 
-{{< code-tab name="schema.cue" area="top-left" >}}
+{{< code-tab name="schema.cue" area="top" >}}
 #Language: {
 tag:  string
 name: =~"^\\p{Lu}" // Must start with an uppercase letter.
@@ -165,7 +167,7 @@ name: =~"^\\p{Lu}" // Must start with an uppercase letter.
 languages: [...#Language]
 {{< /code-tab >}}
 
-{{< code-tab name="data.yaml" language="yaml" area="bottom-left" >}}
+{{< code-tab name="data.yaml" language="yaml" area="bottom" >}}
 languages:
 - tag: en
   name: English
@@ -176,7 +178,7 @@ languages:
 {{< /code-tab >}}
   {{< /code-tabs >}}
 
-### 2 tabs in top-left, 1 in bottom-left and 1 in top-right
+### 2 tabs in top-left, 1 in bottom-left and 1 in right
 
 {{< code-tabs >}}
 
@@ -208,7 +210,7 @@ languages:
   name: Norwegian
 {{< /code-tab >}}
 
-{{< code-tab name="TERMINAL" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" type="terminal" area="right" >}}
 languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
 ./schema.cue:3:8
 ./data.yaml:5:12
@@ -216,7 +218,49 @@ languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
 
 {{< /code-tabs >}}
 
-### 1 tab in top-left, 1 in top-right and 1 in bottom-right
+
+### 2 tabs in top-left, 1 in top-right, 1 in bottom
+
+{{< code-tabs >}}
+
+{{< code-tab name="schema.cue" area="top-left" >}}
+#Language: {
+tag:  string
+name: =~"^\\p{Lu}" // Must start with an uppercase letter.
+}
+languages: [...#Language]
+{{< /code-tab >}}
+
+{{< code-tab name="data.yaml" language="yaml" area="top-left" >}}
+languages:
+- tag: en
+  name: English
+- tag: nl
+  name: dutch
+- tag: no
+  name: Norwegian
+  {{< /code-tab >}}
+
+{{< code-tab name="data.yaml" language="yaml" area="top-right" >}}
+languages:
+- tag: en
+  name: English
+- tag: nl
+  name: dutch
+- tag: no
+  name: Norwegian
+  {{< /code-tab >}}
+
+{{< code-tab name="TERMINAL" type="terminal" area="bottom" >}}
+languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
+./schema.cue:3:8
+./data.yaml:5:12
+{{< /code-tab >}}
+
+{{< /code-tabs >}}
+
+
+### 1 tab in left, 1 in top-right and 1 in bottom-right
 
 {{< code-tabs >}}
 
@@ -238,7 +282,7 @@ languages:
   name: Norwegian
 {{< /code-tab >}}
 
-{{< code-tab name="TERMINAL" type="terminal" area="top-left" >}}
+{{< code-tab name="TERMINAL" type="terminal" area="left" >}}
 languages.1.name: invalid value "dutch" (does not match =~"^\\p{Lu}"):
 ./schema.cue:3:8
 ./data.yaml:5:12
