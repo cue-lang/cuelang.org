@@ -3,9 +3,10 @@ title: Sidenote
 weight: 30
 ---
 
-{{< sidenote text="Only in CUE v04.3" >}}
 
 This is a shortcode that can be used to create a sidenote (ie. a 'pill' on the side of the content).
+
+{{< sidenote text="Only in CUE v04.3" >}}
 
 This way content-writers can mark headers with an additional note.
 
