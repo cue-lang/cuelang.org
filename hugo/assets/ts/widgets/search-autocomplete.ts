@@ -20,6 +20,7 @@ export class SearchAutocomplete extends BaseWidget {
     private readonly searchbarSize: string;
     private querySuggestionsPlugin: AutocompletePlugin<AutocompleteQuerySuggestionsHit, undefined>;
     private autocomplete: AutocompleteApi<BaseItem>;
+    private readonly placeholder: string;
 
     constructor(element: HTMLElement) {
         super(element);
@@ -28,6 +29,7 @@ export class SearchAutocomplete extends BaseWidget {
         this.suggestionsClient = algoliasearch('5LXFM0O81Q', '6f93ecdc1bf190af31a69b04a21a38b8');
         this.searchType = this.element.dataset.searchAutocomplete || '';
         this.searchbarSize = this.element.dataset.searchbarSize;
+        this.placeholder = this.element.dataset.searchbarPlaceholder ?? '';
     }
 
     public static registerWidget(): void {
@@ -120,6 +122,7 @@ export class SearchAutocomplete extends BaseWidget {
             plugins: [this.querySuggestionsPlugin],
             detachedMediaQuery: '(max-width: 1023px)',
             openOnFocus: this.searchType === 'results',
+            placeholder: this.placeholder,
             getSources() {
                 return [{
                     sourceId: 'documentation',
@@ -210,7 +213,11 @@ export class SearchAutocomplete extends BaseWidget {
                 },
             },
             onSubmit(params: OnSubmitParams<BaseItem>) {
-                window.location.href = `/search?q=${ params.state.query }`;
+                if (searchType === 'results') {
+                    window.location.href = `?q=${ params.state.query }`;
+                } else {
+                    window.location.href = `/search?q=${ params.state.query }`;
+                }
             },
             classNames: {
                 detachedCancelButton: '',

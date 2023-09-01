@@ -12,10 +12,12 @@
     "algoliasearch": "4.17.0",
     "atomic-algolia": "0.3.19",
     "fuse.js": "6.6.2",
+    "lodash.merge": "4.6.2",
     "mathjax": "3.2.2",
     "mermaid": "9.2.2"
   },
   "devDependencies": {
+    "@types/lodash.merge": "4.6.7",
     "@types/youtube": "0.0.47",
     "@typescript-eslint/eslint-plugin": "5.54.1",
     "@typescript-eslint/parser": "5.54.1",
