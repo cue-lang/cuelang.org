@@ -8,6 +8,7 @@ export interface SearchItem {
     breadcrumb: string[];
     contentType: string;
     tags: string | string[];
+    authors: string | string[];
 }
 
 export interface FilterItem {
@@ -21,16 +22,19 @@ export enum FilterOperator {
 }
 
 export enum SearchInputFacetName {
+    AUTHOR = 'author',
     CONTENT_TYPE = 'contentType',
     TAG = 'tag',
 }
 
 export const FACET_INPUTS = [
+    SearchInputFacetName.AUTHOR,
     SearchInputFacetName.CONTENT_TYPE,
     SearchInputFacetName.TAG,
 ];
 
 export enum SearchFacet {
+    AUTHORS = 'authors',
     CONTENT_TYPE = 'contentType',
     TAGS = 'tags',
 }

@@ -10,6 +10,8 @@ import { cleanObject } from './cleaner';
 
 export const getFacetForInputName = (inputName: SearchInputFacetName): SearchFacet => {
     switch (inputName) {
+        case SearchInputFacetName.AUTHOR:
+            return SearchFacet.AUTHORS;
         case SearchInputFacetName.CONTENT_TYPE:
             return SearchFacet.CONTENT_TYPE;
         case SearchInputFacetName.TAG:
@@ -21,6 +23,8 @@ export const getFacetForInputName = (inputName: SearchInputFacetName): SearchFac
 
 export const getInputNameForFacet = (facet: SearchFacet): SearchInputFacetName => {
     switch (facet) {
+        case SearchFacet.AUTHORS:
+            return SearchInputFacetName.AUTHOR;
         case SearchFacet.CONTENT_TYPE:
             return SearchInputFacetName.CONTENT_TYPE;
         case SearchFacet.TAGS:
@@ -34,6 +38,7 @@ export const mapToAlgoliaFilters = (tagsByFacet: SearchFacets, operator: FilterO
     return Object.keys(tagsByFacet)
         .map((facet) => {
             const facetOperator = {
+                [SearchInputFacetName.AUTHOR]: ' OR ',
                 [SearchInputFacetName.CONTENT_TYPE]: ' OR ',
                 [SearchInputFacetName.TAG]: ' AND ',
             }[facet] ?? ' AND ';
@@ -62,12 +67,14 @@ export const parseQuery = (query: string): ParsedQuery => {
     let cleanQuery = query;
 
     const facets: SearchFacets = {
+        [SearchFacet.AUTHORS]: [],
         [SearchFacet.TAGS]: [],
         [SearchFacet.CONTENT_TYPE]: [],
     };
 
     for (const facetInput of FACET_INPUTS) {
         const facet = getFacetForInputName(facetInput);
+
         if (!facet) {
             continue;
         }
@@ -75,6 +82,7 @@ export const parseQuery = (query: string): ParsedQuery => {
         const regExp = new RegExp(`${ facetInput }:([^"]\\S+)`, 'g');
         const regExpWithQuotes = new RegExp(`${ facetInput }:"([^"]+)"|(\\+)`, 'g');
         const matches = [ ...query.matchAll(regExp), ...query.matchAll(regExpWithQuotes) ];
+
         for (const match of matches) {
             if (match) {
                 if (match[1] && match[1] !== '') {
