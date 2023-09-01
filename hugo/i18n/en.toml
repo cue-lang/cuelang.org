@@ -89,6 +89,8 @@ other = "What are you looking for?"
 other = "documents found"
 [search_filters_title]
 other = "Filters"
+[search_placeholder]
+other = "Search in {{ .contentType }}"
 
 [search_tags_title]
 other = "Tags"

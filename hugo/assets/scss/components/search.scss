@@ -1,3 +1,4 @@
+@import '../config/colors';
 @import '../config/sizes';
 @import '../config/typography';
 @import '../mixins/screen';
@@ -34,6 +35,16 @@
         font-size: 0.875rem;
         font-weight: $weight-bold;
         margin: 0;
+    }
+
+    &--widget {
+        background: $c-blue--lighter;
+        border-radius: $b-radius;
+        padding: 2.5rem $p-gutter 2rem;
+
+        .searchbar__logo {
+            margin-top: -28px;
+        }
     }
 
     @include screen(600px) {

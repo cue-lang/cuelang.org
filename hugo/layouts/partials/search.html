@@ -1,0 +1,61 @@
+{{ $context := .context }}
+{{ $showContentTypes := .showContentTypes | default true }}
+{{ $contentTypes := slice }}
+{{ $contentType := .contentType | default "" }}
+{{ $type := .type | default "full" }}
+{{ $placeholder := (T "search_placeholder" .) }}
+
+{{ with $context }}
+    {{ if $showContentTypes }}
+        {{ $pages := .Site.Sections.ByWeight -}}
+
+        {{ range $page := $pages }}
+            {{ if eq $page.Type "docs" }}
+                {{ $docs := (union $page.Pages $page.Sections).ByWeight  -}}
+                {{ range $doc := $docs }}
+                    {{ $contentTypes = $contentTypes | append (dict "name" $doc.Title) }}
+                {{ end }}
+            {{ else if  (not (eq $page.Type "examples")) }}
+                {{ $contentTypes = $contentTypes | append (dict "name" $page.Title) }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    <div class="search{{ if eq $type "widget" }} search--widget{{ end }}" data-search-results data-tags="{{ .Site.Params.tags | jsonify }}">
+        <div class="search__bar">
+            {{- partial "searchbar.html" (dict
+                "type" "results"
+                "inputId" "searchbar"
+                "placeholder" $placeholder
+            ) -}}
+        </div>
+        <div class="search__options">
+            <div class="search__amount is-hidden">
+                {{ T "search_results" }}
+            </div>
+
+            <div class="search__filters">
+                <p class="search__filters-title"> {{ T "search_filters_title" }}</p>
+
+                {{- partial "filter.html" (dict
+                    "cssClass" "search__filter"
+                    "translationKey" "tags"
+                    "name" "tags"
+                    "filters" .Site.Params.tags
+                ) -}}
+
+                {{ if $showContentTypes }}
+                    {{- partial "filter.html" (dict
+                        "cssClass" "search__filter"
+                        "translationKey" "contentType"
+                        "name" "contentType"
+                        "filters" $contentTypes
+                    ) -}}
+                {{ else }}
+                    <input type="hidden" name="facet-contentType" value="{{ $contentType }}">
+                {{ end }}
+            </div>
+        </div>
+        <ul class="search__results list list--archive"></ul>
+    </div>
+{{ end }}
