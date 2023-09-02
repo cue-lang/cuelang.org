@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03cc1365_f51997e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2023-09-02T07:37:20Z",
+      "side": 1,
+      "message": "Robotic +2 after myitcv rebased and ran trybots. PR already approved.",
+      "revId": "264a8b36f7635509c4a2ca02f7de91ed106bddc2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
