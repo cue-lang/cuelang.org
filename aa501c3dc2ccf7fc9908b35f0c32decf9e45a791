@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e30c11c_4a0a39eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-04T20:21:30Z",
+      "side": 1,
+      "message": "LGTM with some suggested changes. Please check the resulting preview and link to ensure the fixes are correct.",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4aa76e68_f037e681",
+        "filename": "hugo/i18n/en.toml",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-04T20:21:30Z",
+      "side": 1,
+      "message": "I don\u0027t think we need the \"on this page\" suffix. It makes the link text too long.\n\n\"Report an issue\" will suffice",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1b268b1_169d07dd",
+        "filename": "hugo/layouts/partials/site/footer.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-04T20:21:30Z",
+      "side": 1,
+      "message": "This needs to be the full URL, rather than just the path. This makes it easier on the person reviewing the issue to sense check (in the majority of cases, the latest version will be the version of the issue reported (for some period of time at least)).",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc2d3ec3_c9117d36",
+        "filename": "hugo/layouts/partials/site/footer.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-04T20:21:30Z",
+      "side": 1,
+      "message": "End with `\\n\\n\\n\\n` - saves the user having to enter the line breaks themselves.",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ff12d95_a6f748d9",
+        "filename": "hugo/layouts/partials/site/footer.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-04T20:21:30Z",
+      "side": 1,
+      "message": "End with `\\n\\n\\n\\n` - saves the user having to enter the line breaks themselves.",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
