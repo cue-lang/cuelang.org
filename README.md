@@ -14,7 +14,7 @@ The site is deployed and hosted via [Netlify](https://www.netlify.com/).
 
 Please raise all issues in the [main CUE
 repository](https://github.com/cue-lang/cue/issues), giving the title of the
-issue a `cuelang.org: ` prefix.
+issue a `alpha.cuelang.org: ` prefix.
 
 ### Requirements for local development
 
