@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01623db3_51b38952",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-05T11:25:31Z",
+      "side": 1,
+      "message": "PTAL. I\u0027ll wait until we get the feedback from submitting this, and then propose the same change in master.",
+      "revId": "e539a2b58fc1c1a119b8e7d36d2d6490838f20cf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
