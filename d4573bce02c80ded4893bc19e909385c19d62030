@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05ff41f6_2781c1fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-06T09:57:43Z",
+      "side": 1,
+      "message": "LGTM with the on missing change in vendor_tool.cue",
+      "revId": "d4573bce02c80ded4893bc19e909385c19d62030",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
