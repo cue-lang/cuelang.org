@@ -218,7 +218,7 @@ jobs:
       - name: Check module is tidy
         run: go mod tidy
       - name: Dist
-        run: ./_scripts/build.bash
+        run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: npm run lint
