@@ -68,6 +68,24 @@
       "message": "Shouldn\u0027t need the default here I don\u0027t think.",
       "revId": "c12abf6e8d771c835907106b7ddf4e94375f451b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edb5d998_6fa5b96b",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-06T10:09:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f88f25fb_591a8589",
+      "revId": "c12abf6e8d771c835907106b7ddf4e94375f451b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
