@@ -11,8 +11,13 @@
   HUGO_VERSION = "0.117.0"
   NODE_VERSION = "18.17.0"
 
+[context]
+[context.alpha]
+  command = "bash _scripts/build.bash --baseURL https://alpha.cuelang.org"
 [context.deploy-preview]
-  command = "bash _scripts/build.bash -b $DEPLOY_PRIME_URL"
+  command = "bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL"
+[context.production]
+  command = "bash _scripts/build.bash --baseURL https://cuelang.org"
 
 [[redirects]]
   from = "/docs/tutorial/"
