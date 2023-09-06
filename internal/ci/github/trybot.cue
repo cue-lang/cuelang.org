@@ -43,6 +43,15 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 		"runs-on": "${{ matrix.runner }}"
 
+		// Only run a deploy of tip if we are running as part of the trybot repo,
+		// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
+		let _netlifyStep = _netlifyDeploy & {
+			if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer) && \(_isLatestLinux)"
+			#site:  _repo.netlifySites.cls
+			#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
+			name:   "Deploy preview of CL"
+		}
+
 		steps: [
 			_updateHomebrew,
 
@@ -113,7 +122,9 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Check module is tidy"
 			},
 
-			_dist,
+			_dist & {
+				_baseURL: _netlifyStep.#prime_url.CLs
+			},
 			_repo.checkGitClean,
 
 			// Now the frontend build has happened, ensure that linters pass
@@ -124,14 +135,7 @@ workflows: trybot: _repo.bashWorkflow & {
 					"""
 			},
 
-			// Only run a deploy of tip if we are running as part of the trybot repo,
-			// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
-			_netlifyDeploy & {
-				if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer) && \(_isLatestLinux)"
-				#site:  _repo.netlifySites.cls
-				#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
-				name:   "Deploy preview of CL"
-			},
+			_netlifyStep,
 
 			json.#step & {
 				// Only run in the main repo on the alpha branch. Because anywhere else
@@ -272,11 +276,15 @@ _installMacOSUtils: _macOSStep & {
 
 _dist: json.#step & {
 	name: *"Dist" | string
-	run:  "./_scripts/build.bash"
+	// enforce https, and allow trailing slash to be added universally *if
+	// needed* here, not by the _dist consumer.
+	_baseURL: string & =~"^https://" & !~"/$"
+	run:      "./_scripts/build.bash --baseURL \(_baseURL)"
 }
 
 _tipDist: _dist & {
-	name: "Tip dist"
+	name:     "Tip dist"
+	_baseURL: "https://tip.cuelang.org"
 	env: BRANCH: "tip"
 }
 
@@ -290,6 +298,7 @@ _netlifyDeploy: json.#step & {
 	#prod:   *false | bool
 	#site:   string
 	#alias?: string
+	#prime_url: CLs: "https://\(*#alias | "")--\(#site).netlify.app"
 	if !#prod {
 		#alias: *"" | string
 	}

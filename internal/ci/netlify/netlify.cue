@@ -34,9 +34,7 @@ import (
 		command: string
 	}
 
-	context: {
-		"deploy-preview": #context
-	}
+	context: [string]: #context
 
 	redirects: [...{
 		from:   string
@@ -60,7 +58,9 @@ config: #config & {
 		}
 	}
 
-	context: "deploy-preview": command: "\(build.command) -b $DEPLOY_PRIME_URL"
+	context: "deploy-preview": command:      "\(build.command) --baseURL $DEPLOY_PRIME_URL"
+	context: "\(repo.alphaBranch)": command: "\(build.command) --baseURL https://alpha.cuelang.org"
+	context: "production": command:          "\(build.command) --baseURL https://cuelang.org"
 
 	redirects: [...{force: true, status: 302}]
 	redirects: [{
@@ -114,9 +114,12 @@ config: #config & {
 		{{end}}
 		{{end}}
 
-		{{- with (index .context "deploy-preview") }}
-		[context.deploy-preview]
-		  command = {{printf "%q" .command}}
+		[context]
+		{{- range $context_name, $context_config := .context}}
+		[context.{{ $context_name }}]
+		{{- range $key, $value := $context_config}}
+		  {{$key}} = {{printf "%q" $value -}}
+		{{end}}
 		{{end}}
 
 		{{- range .redirects}}
