@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b23da1c_55b63ebc",
+        "filename": "hugo/i18n/en.toml",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-06T09:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4aa76e68_f037e681",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1b268b1_169d07dd",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-09-04T20:21:30Z",
       "side": 1,
       "message": "This needs to be the full URL, rather than just the path. This makes it easier on the person reviewing the issue to sense check (in the majority of cases, the latest version will be the version of the issue reported (for some period of time at least)).",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44d22d60_1b80831e",
+        "filename": "hugo/layouts/partials/site/footer.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-06T09:03:14Z",
+      "side": 1,
+      "message": "Done. This was a real yak shave that ended with https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1168527.\n\nThe CLs aren\u0027t related, but /this/ CL won\u0027t have full URLs until rebased on the other.",
+      "parentUuid": "d1b268b1_169d07dd",
       "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d774e1c7_4c47c06b",
+        "filename": "hugo/layouts/partials/site/footer.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-06T09:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc2d3ec3_c9117d36",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ff12d95_a6f748d9",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-09-04T20:21:30Z",
       "side": 1,
       "message": "End with `\\n\\n\\n\\n` - saves the user having to enter the line breaks themselves.",
+      "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44e18e6c_413bc911",
+        "filename": "hugo/layouts/partials/site/footer.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-06T09:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ff12d95_a6f748d9",
       "revId": "aa501c3dc2ccf7fc9908b35f0c32decf9e45a791",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
