@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "680e05a8_46076b88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-06T09:35:10Z",
+      "side": 1,
+      "message": "LGTM with a couple of suggestions.",
+      "revId": "c12abf6e8d771c835907106b7ddf4e94375f451b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d75acdcb_0539075d",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-06T09:35:10Z",
+      "side": 1,
+      "message": "nit: use `env.BRANCH` here in the URL construction.",
+      "revId": "c12abf6e8d771c835907106b7ddf4e94375f451b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f88f25fb_591a8589",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-06T09:35:10Z",
+      "side": 1,
+      "message": "Shouldn\u0027t need the default here I don\u0027t think.",
+      "revId": "c12abf6e8d771c835907106b7ddf4e94375f451b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
