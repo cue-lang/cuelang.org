@@ -97,7 +97,7 @@ jobs:
           key: ${{ runner.os }}-1.20.6-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.20.6
       - name: Tip dist
-        run: ./_scripts/build.bash
+        run: ./_scripts/build.bash --baseURL https://tip.cuelang.org
         env:
           BRANCH: tip
       - name: Install Netlify CLI
