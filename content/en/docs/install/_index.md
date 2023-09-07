@@ -25,7 +25,7 @@ In addition, CUE can be installed with using [`brew`](https://brew.sh/) on macOS
 and Linux:
 
 ```
-brew install cue-lang/tap/cue
+brew install cue
 ```
 
 ### Installation on Arch Linux
