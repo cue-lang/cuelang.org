@@ -6,8 +6,8 @@ package site
 				"numeric-values": {
 					cache: {
 						sidebyside: {
-							"numeric-literals-si":      "fdvco3kMQa4EA3XueOADDaonRHHtYpQ6d1QIvRzGPP8="
-							"numeric-literals-altbase": "XhRso/gBmU7D8PBR3ignx2hBaHs5SOzbL+24+ZG5emA="
+							"numeric-literals-si":      "ml3r1hSWy+/vfDZilqKQDfTeMA6a3vbC47fmH1J+pTg="
+							"numeric-literals-altbase": "jxaLx9VM99K5NBPRt6+pEHeNGZeu20/gWHeT2q2dI3o="
 						}
 					}
 				}
