@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e58c7b2_0f1903c6",
+        "filename": "hugo/content/en/authors/index.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-11T12:23:41Z",
+      "side": 0,
+      "message": "Was this deletion meant to be captured in the commit?",
+      "revId": "3c511a9686c7289d68b5f64cdaa4649385b9f4fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
