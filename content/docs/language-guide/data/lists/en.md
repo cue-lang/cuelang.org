@@ -9,7 +9,6 @@ CUE lists are identical to JSON lists.
 List elements are considered to be a special kind of data field, with elements
 indexed by their position.
 
-```coq
 {{{with sidebyside "en" "list-example"}}}
 #norun open lists
 -- in.cue --
@@ -18,7 +17,6 @@ a: [1, 2]
 -- out.cue --
 a: [1, 2, 3]
 {{{end}}}
-```
 
 <!-- TODO
 

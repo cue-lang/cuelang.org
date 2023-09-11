@@ -50,7 +50,7 @@ For two integer values `x` and `y`,
 the integer quotient `q = div(x, y)` and remainder `r = mod(x, y)`
 implement Euclidean division and satisfy the following relationship:
 
-```coq
+```
 r = x - y*q  with 0 <= r < |y|
 ```
 
@@ -60,7 +60,7 @@ For two integer values `x` and `y`,
 the integer quotient `q = quo(x, y)` and remainder `r = rem(x, y)`
 implement truncated division and satisfy the following relationship:
 
-```coq
+```
 x = q*y + r  and  |r| < |y|
 ```
 
