@@ -28,11 +28,6 @@ const (
 	// markdown header delimiters
 	headerDelimiter = "---"
 	headerLine      = headerDelimiter + "\n"
-
-	// {{with}} blocks can optionally be wrapped in a ```coq ``` pair
-	// to make rendering nicer within tools like Notion
-	withStartWrapperLine = "```coq\n" // could appear at the start or a clear line
-	withEndWrapper       = "\n```\n"  // always appears on a clear line
 )
 
 // parse parses a root file into its component parse: a header and body. The body
@@ -134,28 +129,10 @@ type parseContext struct {
 }
 
 func (pc parseContext) parse_TextNode(n *parse.TextNode) (node, error) {
-	var lastWasWith, nextIsWith bool
-	if pc.i < len(pc.parts)-1 {
-		_, nextIsWith = pc.parts[pc.i+1].(*parse.WithNode)
-	}
-	if pc.i > 0 {
-		_, lastWasWith = pc.parts[pc.i-1].(*parse.WithNode)
-	}
 	t := string(n.Text)
 	if pc.i == 0 {
 		// We know this will be a text node because we put in a fake prefix
 		t = strings.TrimPrefix(t, string(pc.bodyPrefix))
-	}
-	if nextIsWith {
-		if t == withStartWrapperLine {
-			t = ""
-		} else if strings.HasSuffix(t, "\n"+withStartWrapperLine) {
-			t = strings.TrimSuffix(t, withStartWrapperLine)
-		}
-	}
-	if lastWasWith {
-		// the close ``` must always be on a clear line
-		t = strings.TrimPrefix(t, withEndWrapper)
 	}
 	return &textNode{
 		nodeWrapper: &nodeWrapper{
