@@ -33,7 +33,6 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset-1"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
@@ -51,11 +50,9 @@ package site
 >    }
 >}
 >{{{end}}}
->```
 >
 >Some text after
 >
->```coq
 >{{{with sidebyside "en" "json-superset-2"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
@@ -73,7 +70,6 @@ package site
 >    }
 >}
 >{{{end}}}
->```
 -- hugo/content/en/dir1/index.md.golden --
 ---
 title: JSON Superset
@@ -127,7 +123,6 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset-1"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
@@ -145,11 +140,9 @@ package site
 >    }
 >}
 >{{{end}}}
->```
 >
 >Some text after
 >
->```coq
 >{{{with sidebyside "en" "json-superset-2"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
@@ -167,7 +160,6 @@ package site
 >    }
 >}
 >{{{end}}}
->```
 -- hugo/content/en/dir2/index.md.golden --
 ---
 title: JSON Superset

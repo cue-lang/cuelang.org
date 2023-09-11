@@ -29,7 +29,6 @@ package site
 >title: JSON Superset
 >---
 >
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >-- in.cue --
 >x: {
@@ -37,6 +36,4 @@ package site
 >}
 >-- file2.txt --
 >{{{end}}}
->```
->
 -- hugo/.gitkeep --

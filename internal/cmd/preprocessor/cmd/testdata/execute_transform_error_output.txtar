@@ -28,7 +28,6 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >-- in.cue --
 >e: =~"foo"
@@ -38,7 +37,6 @@ package site
 >    ./in.cue:1:4
 >    ./in.cue:2:4
 >{{{end}}}
->```
 >
 >Some text after
 >

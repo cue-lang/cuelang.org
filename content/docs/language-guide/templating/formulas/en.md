@@ -17,7 +17,6 @@ Multiplication and division bind stronger than addition and subtraction.
 Otherwise the order is left-to-right.
 Parenthesis can be used to force computations to be done in a certain order.
 
-```coq
 {{{with sidebyside "en" "numbers-arithmetic"}}}
 -- in.cue --
 a: 1 + 2
@@ -37,7 +36,6 @@ d:     1.75
 p:     9
 price: 6.00
 {{{end}}}
-```
 
 CUE distinguishes whole numbers as a special class of numbers.
 For `+`, `-`, and `*` the result is whole, or an integer, if the values on which it operates are whole.
@@ -50,7 +48,7 @@ For two integer values `x` and `y`,
 the integer quotient `q = div(x, y)` and remainder `r = mod(x, y)`
 implement Euclidean division and satisfy the following relationship:
 
-```coq
+```cue
 r = x - y*q  with 0 <= r < |y|
 ```
 
@@ -60,7 +58,7 @@ For two integer values `x` and `y`,
 the integer quotient `q = quo(x, y)` and remainder `r = rem(x, y)`
 implement truncated division and satisfy the following relationship:
 
-```coq
+```cue
 x = q*y + r  and  |r| < |y|
 ```
 
@@ -79,7 +77,6 @@ A zero divisor in either case results in bottom (an error).
 
 Two Strings, as well as two bytes, can be appended using the `+` operator.
 
-```coq
 {{{with sidebyside "en" "strings-arithmetic"}}}
 -- in.cue --
 a: "foo" + "bar"
@@ -88,7 +85,6 @@ b: '\xE2\x84' + '\x9A'
 a: "foobar"
 b: 'ℚ'
 {{{end}}}
-```
 
 ## String and Bytes Interpolations
 
@@ -105,7 +101,6 @@ Bytes are interpreted as UTF-8 when inserted into strings,
 whereby invalid characters are converted to the replacement character (`\uFFFD`)
 according to Unicode guidelines.
 
-```coq
 {{{with sidebyside "en" "strings-interpolation"}}}
 -- in.cue --
 a: 1
@@ -121,11 +116,9 @@ clipped: '\xe2\x84'
 s:       "As a string: ℚ"
 e:       "As a string: �"
 {{{end}}}
-```
 
 Interpolations may also be used in quoted selectors or in field names.
 
-```coq
 {{{with sidebyside "en" "strings-interpolation-fields"}}}
 #norun interpolations in selectors not supported yet
 -- in.cue --
@@ -134,7 +127,6 @@ x: "\(f)bar": 1
 y: x."\(f)bar"
 -- out.cue --
 {{{end}}}
-```
 
 ## Comparison
 
@@ -155,7 +147,6 @@ The ordering operators `<`, `<=`, `>`, and `>=` apply only to numbers, strings, 
 
 Helper fields associated with such fields are ignored.
 
-```coq
 {{{with sidebyside "en" "comparators-ordered"}}}
 -- in.cue --
 a: 1 <= 2
@@ -168,7 +159,6 @@ b: true
 c: false
 d: true
 {{{end}}}
-```
 
 The equality operators `==` and `!=` are defined for any two concrete values.
 
@@ -187,7 +177,6 @@ Field constraints do not have to be concrete as they only apply in the presence 
 
 Helper fields, like `#foo` and `_foo` are ignored for comparison.
 
-```coq
 {{{with sidebyside "en" "comparators-equality"}}}
 -- in.cue --
 a: 1 != 2
@@ -202,7 +191,6 @@ c: true
 d: false
 e: true
 {{{end}}}
-```
 
 <!-- TODO
 
@@ -231,7 +219,6 @@ Regular expressions often contain escape sequences.
 Using alternate escape sequences is the easiest way to work around double escaping.
 {{{end}}}
 
-```coq
 {{{with sidebyside "en" "regexp"}}}
 -- in.cue --
 str: "The cat sat in the tree."
@@ -248,13 +235,11 @@ whole: false
 neg:   true
 upper: true
 {{{end}}}
-```
 
 ## Boolean logic
 
 CUE supports not (`!`), logical and (`&&`), and logical or (`||`) to operate on boolean values.
 
-```coq
 {{{with sidebyside "en" "boolean-arithmetic"}}}
 -- in.cue --
 n: !true
@@ -265,11 +250,9 @@ n: false
 o: true
 a: false
 {{{end}}}
-```
 
 It is an error for any values passed to these operators to be invalid.
 
-```coq
 {{{with sidebyside "en" "boolean-arithmetic-error"}}}
 -- in.cue --
 a: {}
@@ -278,7 +261,6 @@ err: true || a.bar
 err: undefined field: bar:
     ./in.cue:2:16
 {{{end}}}
-```
 
 ## Functions
 
@@ -295,7 +277,6 @@ The library can then be accessed by its name.
 It can optionally be renamed if it clashes with names in your program.
 Some packages also provides constants.
 
-```coq
 {{{with sidebyside "en" "stdlib-usage"}}}
 -- in.cue --
 import (
@@ -314,7 +295,6 @@ split: ["path/to/", "dir"]
 sqrt: 1.4142135623730951
 pi:   3.14159265358979323846264338327950288419716939937510582097494459
 {{{end}}}
-```
 
 <!--
 
@@ -332,7 +312,6 @@ As CUE disallows field identifiers starting with `__`, the latter will never be 
 - For lists it returns the number of elements.
 - For maps it returns the number of data fields.
 
-```coq
 {{{with sidebyside "en" "core-builtin-len"}}}
 #norun inside HTML comment
 -- in.cue --
@@ -342,7 +321,6 @@ c: len(`abc`)
 
 -- out.cue --
 {{{end}}}
-```
 
 -->
 
@@ -370,7 +348,6 @@ For instance, specifies a default integral`1`, one could write
 
 A disjunction allows marking its elements as default with an asterisk.
 
-```coq
 {{{with sidebyside "en" "composition-operator"}}}
 #norun inside HTML comment
 -- in.cue --
@@ -378,7 +355,6 @@ a: int
 a: *1
 -- out.cue --
 {{{end}}}
-```
 
 
 {{{with sidetrack}}}
