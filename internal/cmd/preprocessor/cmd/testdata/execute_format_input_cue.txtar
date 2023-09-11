@@ -47,6 +47,7 @@ package site
 ---
 title: title
 ---
+```coq
 {{< code-tabs >}}
 {{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 {
@@ -57,3 +58,5 @@ title: title
 well done
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```

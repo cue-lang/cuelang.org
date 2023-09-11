@@ -25,7 +25,6 @@ For schemas, one typically wants to define types and constraints on fields
 without actually declaring these fields. Since in CUE data and schema is mixed,
 we explicitly mark schema fields with a question mark (`?`):
 
-```coq
 {{{with sidebyside "en" "composition-operator"}}}
 #check should be single
 -- in.cue --
@@ -36,14 +35,11 @@ Feedback: {
 -- out.cue --
 Feedback: {}
 {{{end}}}
-```
-
 ## Required Field Constraints
 
 We use `!` instead of `?` to additionally specify that this field _*must_* be
 defined for an instance of this map to be valid.
 
-```coq
 {{{with sidebyside "en" "field-constraint-required"}}}
 #check should be single
 -- in.cue --
@@ -58,8 +54,6 @@ Name: {
     last!:  string
 }
 {{{end}}}
-```
-
 As a rule of thumb, all fields in a schema are defined as field constraints.
 
 ## Pattern Constraints
@@ -67,20 +61,20 @@ As a rule of thumb, all fields in a schema are defined as field constraints.
 A <def>*pattern constraint</def>* is a special field constraint that applies to
 multiple fields at once.
 
-```coq
+```cue
 Foo: [Expr]: Constraint
 ```
 
 Here, Constraint applies to any field in Foo whose name matches `Expr`. For
 instance,
 
-```coq
+```cue
 StringMap: [string]: string
 ```
 
 defines a map of strings, and in
 
-```coq
+```cue
 Foo: [=~”Name$”]: =~”[A-Z]”
 ```
 
@@ -91,7 +85,7 @@ question mark notation can thus be seen as a shorthand for this special case.
 It is possible to refer to the name of a field within the constraint using a
 name alias:
 
-```coq
+```cue
 Foo: [Name=Expr]: { name: Name }
 ```
 
@@ -99,7 +93,7 @@ The alias `Name` is only visible within the constraint.
 
 ## Dynamic Field Constraints
 
-```coq
+```cue
 (x)?: y
 
 (x)!: y

@@ -43,6 +43,7 @@ package site
 ---
 title: title
 ---
+```coq
 {{< code-tabs >}}
 {{< code-tab name="in.yaml" language="yaml"  area="top-left" >}}
 x: 5
@@ -51,3 +52,5 @@ x: 5
 well done
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```

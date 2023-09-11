@@ -73,6 +73,7 @@ title: JSON Superset
 
 Some text before
 
+```coq
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
 // A doc comment
@@ -90,6 +91,8 @@ map: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```
 
 Some text after
 

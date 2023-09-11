@@ -307,11 +307,9 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 
 func (s *sidebysideNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
-	p("```coq\n")
 	p("%swith %s %q %q%s\n", s.rf.page.leftDelim, fnSidebyside, s.lang, s.label, s.rf.page.rightDelim)
 	p("%s", txtar.Format(s.sourceArchive))
-	p("%send%s\n", s.rf.page.leftDelim, s.rf.page.rightDelim)
-	p("```\n")
+	p("%send%s", s.rf.page.leftDelim, s.rf.page.rightDelim)
 }
 
 func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {

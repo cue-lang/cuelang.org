@@ -49,6 +49,7 @@ title: JSON Superset
 
 Some text before
 
+```coq
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
 e: =~"foo"
@@ -60,6 +61,8 @@ e: invalid value "bar" (out of bound =~"foo"):
     ./in.cue:2:4
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```
 
 Some text after
 

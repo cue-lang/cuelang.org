@@ -81,6 +81,7 @@ title: JSON Superset
 
 Some text before
 
+```coq
 {{< code-tabs >}}
 {{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 // A doc comment
@@ -98,9 +99,12 @@ map: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```
 
 Some text after
 
+```coq
 {{< code-tabs >}}
 {{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 // A doc comment
@@ -118,6 +122,8 @@ map: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```
 -- content/dir2/site.cue --
 package site
 -- content/dir2/en.md --
@@ -175,6 +181,7 @@ title: JSON Superset
 
 Some text before
 
+```coq
 {{< code-tabs >}}
 {{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 // A doc comment
@@ -192,9 +199,12 @@ map: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```
 
 Some text after
 
+```coq
 {{< code-tabs >}}
 {{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 // A doc comment
@@ -212,3 +222,5 @@ map: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+```

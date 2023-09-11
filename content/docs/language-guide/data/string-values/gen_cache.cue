@@ -6,8 +6,8 @@ package site
 				"string-values": {
 					cache: {
 						sidebyside: {
-							"multiline-strings":            "u9yNxDusVCYnEkHEOPo3YJchulXvILau0cugLry/quk="
-							"alternative-escape-sequences": "BwZ11S+8+RV0Kxn4MOQr8TCak+ZpUaYVnNy6inCAzmk="
+							"multiline-strings":            "KonNQcHtNFxeNPaNgfniOfY1Fu26sHIdmjnlQ1c3NAg="
+							"alternative-escape-sequences": "Ok2EZBa9LlPStXOXeBH9rYn6VWvZEfJv6978yR3SwJg="
 						}
 					}
 				}
