@@ -17,7 +17,6 @@ Identifiers may also start with `#` or `_`, in which case the field is a
 [[Helper fields](Data%201b448a6f417b4e08b2d41b3b33cf2a45.md)](helper field) with
 special meaning.
 
-```coq
 {{{with sidebyside "en" "field-names-double-quotes"}}}
 -- in.cue --
 a1:    1
@@ -30,8 +29,6 @@ $id:   "yipee"
     "$id": "yipee"
 }
 {{{end}}}
-```
-
 Both quoted and unquoted fields in the above form are referred to as regular
 fields.
 
@@ -40,7 +37,6 @@ names.
 Names of regular fields are considered equal if their string values are equal,
 regardless of whether the strings are quoted or not.
 
-```coq
 {{{with sidebyside "en" "merging-of-quoted-and-unquoted"}}}
 -- in.cue --
 a: x:   1
@@ -51,8 +47,6 @@ a: {
     y: 2
 }
 {{{end}}}
-```
-
 `a: 1` and `"a": 1` mean the same thing.
 
 ## Data fields
@@ -75,7 +69,6 @@ Helper fields allow reuse of CUE code when composing larger configurations.
 More on this in the
 [Templating](Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md) section.
 
-```coq
 {{{with sidebyside "en" "helper-fields"}}}
 -- in.cue --
 one: {
@@ -95,14 +88,11 @@ two: _typeName: "string"
     }
 }
 {{{end}}}
-```
-
 ## Embedded Scalars
 
 It is possible to associate helper fields with scalar types by placing both in
 curly braces (`{}`).
 
-```coq
 {{{with sidebyside "en" "embedded-scalars"}}}
 -- in.cue --
 one: {
@@ -131,8 +121,6 @@ three: {
     #typeName: "map"
 }
 {{{end}}}
-```
-
 Note for field `two` we need to include a `_` within the map to make things
 work.
 This is because without it `{}` is only compatible with map values.

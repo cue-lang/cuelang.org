@@ -29,7 +29,7 @@ configurations.
 Including a `...` in a schema disables this check. Alternatively, one can use
 pattern constraints to allow arbitrary other fields.
 
-```coq
+```cue
 
 ```
 
@@ -54,7 +54,6 @@ a.b: field not allowed:
     ./in.cue:3:9
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 {{{reference "why-cue-closedness-the-way-it-does-proto–intermezzo?"}}}
 
 ## Extending Schemas
@@ -95,7 +94,6 @@ definition.
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 Using embedding is not unlike extending a class in an object-oriented
 programming language, with the notable difference that existing fields cannot be
 overridden and must compose with the newly provided values.
@@ -121,7 +119,6 @@ extend them:
 
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 {{{with sidetrack "en"}}}
 Embedding of literal maps is also allowed. This is essentially what allows us to
 elide the outer curly braces of JSON: in CUE the top-level production is a list

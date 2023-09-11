@@ -38,7 +38,6 @@ p:     9
 price: 6.00
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 CUE distinguishes whole numbers as a special class of numbers.
 For `+`, `-`, and `*` the result is whole, or an integer, if the values on which it operates are whole.
 This is not true for the numeric `/` division.
@@ -50,7 +49,7 @@ For two integer values `x` and `y`,
 the integer quotient `q = div(x, y)` and remainder `r = mod(x, y)`
 implement Euclidean division and satisfy the following relationship:
 
-```coq
+```cue
 r = x - y*q  with 0 <= r < |y|
 ```
 
@@ -60,7 +59,7 @@ For two integer values `x` and `y`,
 the integer quotient `q = quo(x, y)` and remainder `r = rem(x, y)`
 implement truncated division and satisfy the following relationship:
 
-```coq
+```cue
 x = q*y + r  and  |r| < |y|
 ```
 
@@ -89,7 +88,6 @@ a: "foobar"
 b: 'ℚ'
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## String and Bytes Interpolations
 
 Both strings and bytes also support {{{def "interpolations"}}}, which allow inserting values in place using the `\( formula )` notation.
@@ -122,7 +120,6 @@ s:       "As a string: ℚ"
 e:       "As a string: �"
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 Interpolations may also be used in quoted selectors or in field names.
 
 {{< code-tabs >}}
@@ -134,7 +131,6 @@ y: x."\(f)bar"
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Comparison
 
 CUE has several comparison operators,
@@ -168,7 +164,6 @@ c: false
 d: true
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 The equality operators `==` and `!=` are defined for any two concrete values.
 
 For instance, `null`, `false`, `"str"`, `1`, and `'\x80'` are comparable, `int` or `<10` are not.
@@ -202,7 +197,6 @@ d: false
 e: true
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 <!-- TODO
 
 We could consider `===` for structural equivalence
@@ -248,7 +242,6 @@ neg:   true
 upper: true
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Boolean logic
 
 CUE supports not (`!`), logical and (`&&`), and logical or (`||`) to operate on boolean values.
@@ -265,7 +258,6 @@ o: true
 a: false
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 It is an error for any values passed to these operators to be invalid.
 
 {{< code-tabs >}}
@@ -278,7 +270,6 @@ err: undefined field: bar:
     ./in.cue:2:16
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Functions
 
 CUE supports a library of useful functions for all kinds of purposes.
@@ -314,7 +305,6 @@ sqrt: 1.4142135623730951
 pi:   3.14159265358979323846264338327950288419716939937510582097494459
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 <!--
 
 Core Builtins
@@ -341,7 +331,6 @@ c: len(`abc`)
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 -->
 
 <!--
@@ -376,7 +365,6 @@ a: *1
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 
 {{{with sidetrack}}}
 Under the hood `default(a)` is rewritten to `*a | _` and `default(a, b) is rewritten to `*(a & b) | b`.

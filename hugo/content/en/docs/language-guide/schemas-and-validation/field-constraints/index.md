@@ -36,7 +36,6 @@ Feedback: {
 Feedback: {}
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Required Field Constraints
 
 We use `!` instead of `?` to additionally specify that this field _*must_* be
@@ -57,7 +56,6 @@ Name: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 As a rule of thumb, all fields in a schema are defined as field constraints.
 
 ## Pattern Constraints
@@ -65,20 +63,20 @@ As a rule of thumb, all fields in a schema are defined as field constraints.
 A <def>*pattern constraint</def>* is a special field constraint that applies to
 multiple fields at once.
 
-```coq
+```cue
 Foo: [Expr]: Constraint
 ```
 
 Here, Constraint applies to any field in Foo whose name matches `Expr`. For
 instance,
 
-```coq
+```cue
 StringMap: [string]: string
 ```
 
 defines a map of strings, and in
 
-```coq
+```cue
 Foo: [=~”Name$”]: =~”[A-Z]”
 ```
 
@@ -89,7 +87,7 @@ question mark notation can thus be seen as a shorthand for this special case.
 It is possible to refer to the name of a field within the constraint using a
 name alias:
 
-```coq
+```cue
 Foo: [Name=Expr]: { name: Name }
 ```
 
@@ -97,7 +95,7 @@ The alias `Name` is only visible within the constraint.
 
 ## Dynamic Field Constraints
 
-```coq
+```cue
 (x)?: y
 
 (x)!: y

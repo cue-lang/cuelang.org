@@ -27,7 +27,6 @@ b: '''
 
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Translation to YAML
 
 CUE translates bytes to the corresponding YAML binary type.
@@ -43,7 +42,6 @@ b: '''
 
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Escape sequences
 
 Bytes defines the following escape sequences in addition to those defined for

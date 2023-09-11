@@ -42,7 +42,6 @@ c: 1Mi
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Numbers with a different base
 
 CUE can represent numbers in bases other than decimal.
@@ -67,4 +66,3 @@ b: 0b0101_0001
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-

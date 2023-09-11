@@ -43,7 +43,6 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
@@ -61,7 +60,6 @@ package site
 >    }
 >}
 >{{{end}}}
->```
 >
 >Some text after
 >

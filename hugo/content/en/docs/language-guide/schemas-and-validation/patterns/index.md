@@ -57,7 +57,6 @@ fooInt: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 It may be cumbersome to maintain a list of all implemented alternatives.
 This following approach accepts all implementations of `#Base`, retaining
 all additional fields.
@@ -77,7 +76,6 @@ all additional fields.
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 The following approach allows all implementations of `#Base` while discarding excess fields.
 
 {{< code-tabs >}}
@@ -95,7 +93,6 @@ fooInt: a.{#Base}
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Default values in schemas
 
 In the above examples we required users to explicitly specify discriminator fields.
@@ -124,7 +121,6 @@ Schema: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 By convention, names of the form `#Schema` should be defined for “pure” schema.
 A package that defines `#Schema` could define `Schema` which would reflect `#Schema` with template fields that fills out derived values and template fields that will always be fixed.
 

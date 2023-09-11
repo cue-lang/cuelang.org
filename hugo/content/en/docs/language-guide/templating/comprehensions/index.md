@@ -50,7 +50,6 @@ b: [3, 4]
 m1_1: 6
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## `if cond`
 
 The `if` clause discards a result if a condition does not hold.
@@ -73,7 +72,6 @@ a: [1, 2, 3]
 n3: 3
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## `let x = y`
 
 The `let` clause allows assigning a formula to a single expression to avoid
@@ -95,7 +93,6 @@ n6: 6
 n7: 7
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 <!-- TODO
 
 reduce z=b  // to/ with
@@ -128,7 +125,6 @@ a: [1, 2, 3]
 list: [0, 2, 4, 6, 10, 20, 11, 12, 13]
 {{< /code-tab >}}
 {{< /code-tabs >}}
-
 ## Switch and if-else
 
 A common pattern is to use an `if` comprehension by itself to insert fields
@@ -149,4 +145,3 @@ mem:       2147483648
 footprint: "medium"
 {{< /code-tab >}}
 {{< /code-tabs >}}
-

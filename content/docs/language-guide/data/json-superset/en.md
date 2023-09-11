@@ -13,7 +13,6 @@ configurations in general:
 - you can place commas after the last element of a composite type, and
 - the outermost curly braces are optional. {{{TODO "note on embedding"}}}
 
-```coq
 {{{with sidebyside "en" "json-superset"}}}
 -- in.cue --
 // A doc comment
@@ -29,8 +28,6 @@ map: {
     }
 }
 {{{end}}}
-```
-
 {{{reference "json-vs-cue"}}}
 
 <!-- TODO: Also useful for defining data: embedding, builtins, … -->
@@ -39,7 +36,6 @@ map: {
 
 CUE supports `//`-style comments. Comments are first-class citizens in CUE.
 
-```coq
 {{{with sidebyside "en" "json-comments"}}}
 -- in.cue --
 // A doc comment
@@ -55,8 +51,6 @@ map: {
     }
 }
 {{{end}}}
-```
-
 A comment that is on a line directly preceding an element is called a doc
 comment. CUE will associate that comment with this element and will persist
 after computation.
