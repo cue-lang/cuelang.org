@@ -21,7 +21,6 @@ A field reference is an identifier that references a field with a name using
 that identifier in any of the parent nodes.
 If there are multiple parents with the same name, the “innermost” name parent wins.
 
-```coq
 {{{with sidebyside "en" "references-basics"}}}
 -- in.cue --
 a: 1
@@ -48,12 +47,10 @@ d: {
     b: 1
 }
 {{{end}}}
-```
 
 A field that uses quotes may not be referenced with its unquoted name, even if
 it would otherwise be a valid identifier.
 
-```coq
 {{{with sidebyside "en" "quoted-field-reference-error"}}}
 #norun need to implement #nofmt for in.cue
 -- in.cue --
@@ -61,14 +58,12 @@ it would otherwise be a valid identifier.
 a:     foo // error
 -- out.err --
 {{{end}}}
-```
 
 ## Aliases
 
 Aliases allows referring to fields with names that have to be quoted, by
 allowing those to be associated with an identifier.
 
-```coq
 {{{with sidebyside "en" "aliases"}}}
 -- in.cue --
 X="a-b": 1 // a-b must be quoted
@@ -82,7 +77,6 @@ b:     1
 c:     2
 d:     2
 {{{end}}}
-```
 
 List values can be similarly aliased.
 
@@ -91,7 +85,6 @@ List values can be similarly aliased.
 
 </aside>
 
-```coq
 {{{with sidebyside "en" "list-aliases"}}}
 #norun list aliases not yet supported
 -- in.cue --
@@ -99,12 +92,10 @@ List values can be similarly aliased.
 -- out.cue --
 [1, 1, 1]
 {{{end}}}
-```
 
 In most cases, instead of referencing a field alias of a parent node one should
 use value aliases.
 
-```coq
 {{{with sidebyside "en" "value-alias"}}}
 -- in.cue --
 a: X={
@@ -115,7 +106,6 @@ a: {
     bar: X.foo
 }
 {{{end}}}
-```
 
 <!--
 
@@ -131,7 +121,6 @@ The value of `x` must be an {{{reference "identifier"}}} or a quoted string when
 referencing a field in a map or an integral number when referring to an element
 in a list.
 
-```coq
 {{{with sidebyside "en" "field-selector"}}}
 #norun numerice selector not supported yet
 -- in.cue --
@@ -147,7 +136,6 @@ z: b.1.foo
 -- out.cue --
 
 {{{end}}}
-```
 
 ## Dynamically selecting fields `a.(x)` `a."\(x)"` `a[x]`
 
@@ -158,7 +146,6 @@ An alternative notation for this is `a[x]`.
 The main difference is that it allows negative indices to index from the end of
 a list.
 
-```coq
 {{{with sidebyside "en" "dynamic-field-selector"}}}
 #norun .(x) not implemented yet
 -- in.cue --
@@ -171,7 +158,6 @@ y: c.(x)
 z: b[-1]
 -- out.cue --
 {{{end}}}
-```
 
 <!-- TODO: : billion laughs: YAML problem: CUE equivalent. Evaluation is fine. -->
 
@@ -182,7 +168,6 @@ making one field depend on another and without using helper fields.
 Each reference to a let expression is unique: let expressions never clash when
 merging two maps.
 
-```coq
 {{{with sidebyside "en" "let-expressions"}}}
 #norun open lists not implemented yet
 -- in.cue --
@@ -195,5 +180,4 @@ c: X
 b: list: [1, 2]
 -- out.cue --
 {{{end}}}
-```
 

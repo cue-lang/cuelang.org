@@ -32,7 +32,6 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >#norun some message
 >
@@ -43,5 +42,4 @@ package site
 >-- out.cue --
 >field: 3
 >{{{end}}}
->```
 -- hugo/.gitkeep --
