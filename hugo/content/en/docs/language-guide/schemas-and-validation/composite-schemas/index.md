@@ -29,7 +29,7 @@ configurations.
 Including a `...` in a schema disables this check. Alternatively, one can use
 pattern constraints to allow arbitrary other fields.
 
-```coq
+```
 
 ```
 

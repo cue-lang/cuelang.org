@@ -13,28 +13,24 @@ package site
 >---
 >title: JSON Superset
 >---
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >-- in.cue --
 >x: 5
 >-- out.yaml --
 >x: 5
 >{{{end}}}
->```
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >-- in.cue --
 >x: 5
 >-- out.yaml --
 >x: 5
 >{{{end}}}
->```
 -- hugo/content/en/dir/index.md.golden --
 ---
 title: JSON Superset
 ---
 -- stderr.golden --
 ** $WORK/content/dir/en.md: node type "sidebyside" declares label "json-superset" multiple times:
-	$WORK/content/dir/en.md:5:8
-	$WORK/content/dir/en.md:13:8
+	$WORK/content/dir/en.md:4:8
+	$WORK/content/dir/en.md:10:8
 terminating because of errors

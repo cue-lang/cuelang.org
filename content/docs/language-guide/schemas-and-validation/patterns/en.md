@@ -16,7 +16,6 @@ To CUE, treating values and types alike, this is all the same.
 In programming languages this is called a *sum type*.
 {{{end}}}
 
-```coq
 {{{with sidebyside "en" "alternates"}}}
 -- in.cue --
 #Base: kind!: string
@@ -56,13 +55,11 @@ fooInt: {
     a:    43
 }
 {{{end}}}
-```
 
 It may be cumbersome to maintain a list of all implemented alternatives.
 This following approach accepts all implementations of `#Base`, retaining
 all additional fields.
 
-```coq
 {{{with sidebyside "en" "implementations"}}}
 -- in.cue --
 #Base: kind!: string
@@ -76,11 +73,9 @@ all additional fields.
     kind!: string
 }
 {{{end}}}
-```
 
 The following approach allows all implementations of `#Base` while discarding excess fields.
 
-```coq
 {{{with sidebyside "en" "downcast"}}}
 #norun what is going on here?
 -- in.cue --
@@ -95,7 +90,6 @@ fooInt: #X
 fooInt: a.{#Base}
 -- out.cue --
 {{{end}}}
-```
 
 ## Default values in schemas
 
@@ -105,7 +99,6 @@ In general, this is not recommended, as it removes the ability for that schema t
 
 A package that provides schemas with required discriminator fields could provide a convenience variant, though, with those already filled out:
 
-```coq
 {{{with sidebyside "en" "defaults"}}}
 -- in.cue --
 #Schema: {
@@ -124,7 +117,6 @@ Schema: {
     name: string
 }
 {{{end}}}
-```
 
 By convention, names of the form `#Schema` should be defined for “pure” schema.
 A package that defines `#Schema` could define `Schema` which would reflect `#Schema` with template fields that fills out derived values and template fields that will always be fixed.

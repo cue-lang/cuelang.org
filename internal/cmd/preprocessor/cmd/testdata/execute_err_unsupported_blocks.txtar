@@ -5,7 +5,7 @@ unquote content/dir/en.md
 
 # Run the preprocessor
 ! exec preprocessor execute --debug=all
-stderr $WORK${/}'content'${/}'dir'${/}'en.md:10:10 with node cannot have else block'
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:9:10 with node cannot have else block'
 
 
 -- content/dir/site.cue --
@@ -17,13 +17,11 @@ package site
 >
 >Some text before
 >
->```coq
 >{{{with sidebyside "en" "json-superset"}}}
 >something
 >{{{else}}}
 >else
 >{{{end}}}
->```
 >
 >Some text after
 >
