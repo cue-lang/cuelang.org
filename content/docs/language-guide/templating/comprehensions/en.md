@@ -26,7 +26,6 @@ The key and value will be visible by subsequence clauses in the list.
 The key is the index of a list element, the name of a data field, or undefined
 for a query.
 
-```coq
 {{{with sidebyside "en" "for-clause"}}}
 -- in.cue --
 a: [1, 2]
@@ -49,14 +48,11 @@ m1_0: 5
 b: [3, 4]
 m1_1: 6
 {{{end}}}
-```
-
 ## `if cond`
 
 The `if` clause discards a result if a condition does not hold.
 By itself, `if` can be used to include values conditionally.
 
-```coq
 {{{with sidebyside "en" "if-clause"}}}
 -- in.cue --
 a: [1, 2, 3]
@@ -72,15 +68,12 @@ if len(a) == 0 {
 a: [1, 2, 3]
 n3: 3
 {{{end}}}
-```
-
 ## `let x = y`
 
 The `let` clause allows assigning a formula to a single expression to avoid
 having to repeat it.
 A comprehension may not start with this clause.
 
-```coq
 {{{with sidebyside "en" "let-clause"}}}
 -- in.cue --
 a: [1, 2, 3]
@@ -94,8 +87,6 @@ n5: 5
 n6: 6
 n7: 7
 {{{end}}}
-```
-
 <!-- TODO
 
 reduce z=b  // to/ with
@@ -111,7 +102,6 @@ group [ref=]expr
 A list may mix regular elements with comprehensions.
 Elements insert in order.
 
-```coq
 {{{with sidebyside "en" "list-comprehension"}}}
 -- in.cue --
 a: [1, 2, 3]
@@ -127,15 +117,12 @@ list: [
 a: [1, 2, 3]
 list: [0, 2, 4, 6, 10, 20, 11, 12, 13]
 {{{end}}}
-```
-
 ## Switch and if-else
 
 A common pattern is to use an `if` comprehension by itself to insert fields
 conditionally.
 CUE has no switch or if-else construct, but these can be simulated using lists.
 
-```coq
 {{{with sidebyside "en" "switch-if-else-pattern"}}}
 -- in.cue --
 mem:       2Gi
@@ -148,5 +135,3 @@ footprint: [ // select first
 mem:       2147483648
 footprint: "medium"
 {{{end}}}
-```
-

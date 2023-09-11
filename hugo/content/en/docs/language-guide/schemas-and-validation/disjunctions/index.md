@@ -22,7 +22,7 @@ Enums can be constructed dynamically using the function `or`, which
 takes a list and returns the result of applying the `|` operator to all elements in the list.
 It returns bottom for the empty list.
 
-```coq
+```cue
 Expression:          Result
 or([a, b])           a | b
 or([a])              a

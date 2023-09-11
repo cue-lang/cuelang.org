@@ -18,7 +18,6 @@ CUE allows duplicate fields to exist as long as their values are consistent.
 
 This is allowed:
 
-```coq
 {{{with sidebyside "en" "composition-simple-success"}}}
 -- in.cue --
 a: 1
@@ -26,11 +25,8 @@ a: 1
 -- out.cue --
 a: 1
 {{{end}}}
-```
-
 This is not:
 
-```coq
 {{{with sidebyside "en" "composition-simple-error"}}}
 #norun
 -- in.cue --
@@ -41,12 +37,9 @@ b: conflicting values 2 and 1:
     in.cue: 1:4
     in.cue: 2:4
 {{{end}}}
-```
-
 Two maps or lists are consistent if the values with the same key or index are
 consistent.
 
-```coq
 {{{with sidebyside "en" "composition-composite"}}}
 #norun open lists
 -- in.cue --
@@ -69,8 +62,6 @@ point: {
 
 list: [1, 2, 3, 4]
 {{{end}}}
-```
-
 As can be seen, identical fields do not have to be placed next to each other.
 
 Merging is also used for validation.
@@ -80,7 +71,6 @@ More on this in [Schemas and Validation](Schemas%20and%20Validation%20b39455d56f
 
 For single-field maps, the curly braces can be omitted:
 
-```coq
 {{{with sidebyside "en" "composition-single-field-map"}}}
 -- in.cue --
 point2: x: 1
@@ -91,11 +81,8 @@ point2: {
     y: 2
 }
 {{{end}}}
-```
-
 One can also combine values with the `&` operator:
 
-```coq
 {{{with sidebyside "en" "composition-operator"}}}
 -- in.cue --
 point3: {x: 1} & {y: 2}
@@ -105,8 +92,6 @@ point3: {
     y: 2
 }
 {{{end}}}
-```
-
 {{{with sidetrack}}}
 Overall, a JSON file can be thought of as a sequence of path value pairs, where
 these pairs can be combined in any order or combination without changing the
@@ -121,7 +106,6 @@ Splitting a configuration across files allows grouping of related aspects and
 makes it easier to separate human written versus machine generated content,
 among other things.
 
-```coq
 {{{with sidebyside "en" "packages"}}}
 exec cue eval :food
 -- fruit.cue --
@@ -142,8 +126,6 @@ cart: {
 	spinach: 4
 }
 {{{end}}}
-```
-
 CUE will evaluate all files belonging to the same package as if the file
 contents were contained in one large file, merging identical fields as described
 above.s This means that references in one file may refer to top-level fields in

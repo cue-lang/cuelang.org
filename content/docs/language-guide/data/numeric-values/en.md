@@ -28,7 +28,6 @@ gets rounded down to the nearest whole number.
 
 Note that `k` is written as `K` instead.
 
-```coq
 {{{with sidebyside "en" "numeric-literals-si"}}}
 -- in.cue --
 a: 1_000_000
@@ -41,8 +40,6 @@ c: 1Mi
     "c": 1048576
 }
 {{{end}}}
-```
-
 ## Numbers with a different base
 
 CUE can represent numbers in bases other than decimal.
@@ -53,7 +50,6 @@ CUE can represent numbers in bases other than decimal.
 | Octal | 0o | 0o10 | 8 |
 | Binary | 0b | 0b1111_1111 | 255 |
 
-```coq
 {{{with sidebyside "en" "numeric-literals-altbase"}}}
 -- in.cue --
 o: 0o755
@@ -66,5 +62,3 @@ b: 0b0101_0001
     "b": 81
 }
 {{{end}}}
-```
-

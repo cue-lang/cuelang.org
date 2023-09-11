@@ -29,7 +29,7 @@ configurations.
 Including a `...` in a schema disables this check. Alternatively, one can use
 pattern constraints to allow arbitrary other fields.
 
-```coq
+```cue
 
 ```
 
@@ -41,7 +41,6 @@ You can write `[a, b, ...]` to allow more items.
 `close` converts a partially defined, or open, map or list to a fully defined,
 or closed, map or list.
 
-```coq
 {{{with sidebyside "en" "core-builtin-close"}}}
 -- in.cue --
 c: close({a: 1})
@@ -53,8 +52,6 @@ a.b: field not allowed:
     ./in.cue:3:4
     ./in.cue:3:9
 {{{end}}}
-```
-
 {{{reference "why-cue-closedness-the-way-it-does-proto–intermezzo?"}}}
 
 ## Extending Schemas
@@ -63,7 +60,6 @@ Schemas can combine with other schemas by using embedding.
 This circumvents the usual limitation that no new fields can be added to a
 definition.
 
-```coq
 {{{with sidebyside "en" "composition-operator"}}}
 #check added #Base definition
 -- in.cue --
@@ -95,8 +91,6 @@ definition.
     house:         string
 }
 {{{end}}}
-```
-
 Using embedding is not unlike extending a class in an object-oriented
 programming language, with the notable difference that existing fields cannot be
 overridden and must compose with the newly provided values.
@@ -114,15 +108,12 @@ there are schema, at the bottom there are concrete instances.
 Schemas are often composed of other schemas. You can embed schemas in another to
 extend them:
 
-```coq
 {{{with sidebyside "en" "embedding"}}}
 -- in.cue --
 
 -- out.cue --
 
 {{{end}}}
-```
-
 {{{with sidetrack "en"}}}
 Embedding of literal maps is also allowed. This is essentially what allows us to
 elide the outer curly braces of JSON: in CUE the top-level production is a list

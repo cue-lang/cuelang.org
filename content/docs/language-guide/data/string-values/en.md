@@ -17,7 +17,6 @@ The string contents are on separate lines between these two.
 The whitespace preceding the last `"""` must prefix each non-empty line of the
 string contents and is stripped from all lines.
 
-```coq
 {{{with sidebyside "en" "multiline-strings"}}}
 #norun \ at end of line in multiline string
 -- in.cue --
@@ -32,8 +31,6 @@ msg: """
     "msg": "Hello World!\n\nThis is a real treat."
 }
 {{{end}}}
-```
-
 {{{with sidetrack}}}
 CUE multiline strings originate from Swift.
 {{{end}}}
@@ -69,7 +66,6 @@ the usual escape sequences to appear in text verbatim. A string enclosed in a
 single pair of hashes uses `\#` as the escape character, instead of `\`. A
 string enclosed in two hashes uses `\##`, and so on.
 
-```coq
 {{{with sidebyside "en" "alternative-escape-sequences"}}}
 #norun unclear what the bug is
 -- in.cue --
@@ -82,8 +78,6 @@ b: ##"Use \#n to write a newline in that case.”##
     "b": "Use \#n to write a newline in that case."
 }
 {{{end}}}
-```
-
 {{{with sidetrack}}}
 CUE alternate escape sequences originate from Swift.
 {{{end}}}

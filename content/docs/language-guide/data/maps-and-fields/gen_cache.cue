@@ -6,10 +6,10 @@ package site
 				"maps-and-fields": {
 					cache: {
 						sidebyside: {
-							"field-names-double-quotes":      "m0COVl6AeEXLUUAeUFWplzvCi6S6+kGP1l5kTsq8+ss="
-							"merging-of-quoted-and-unquoted": "R7CmsWAjjVza++gl+d4CLKTwo2vFk5VE90oc5rvmix4="
-							"helper-fields":                  "oT6LcymM36pHsRT2RZTaWgiHF9bqFRCCn0vn1YhQEl4="
-							"embedded-scalars":               "C7nAq3sV9QAltjJm+MVgYGNPN1vt5gPlwDO3vn3vN/E="
+							"field-names-double-quotes":      "jgT3Rcd+e+CNjUCdFEO655Mz0TamC4yZ+BTnPNlKuAU="
+							"merging-of-quoted-and-unquoted": "HRCXpLxKGZwytjxISd9Ks+zYscvN7E5rN6hD0Zj9FCI="
+							"helper-fields":                  "dhpK74KdLC2auTZ5gRHgZzA/g8QJiT6ylwM5F5CPfOU="
+							"embedded-scalars":               "XgGH1hNJ4Up8Jz88bcRRRzOTXCJHK66Nwc5bOURoGEs="
 						}
 					}
 				}

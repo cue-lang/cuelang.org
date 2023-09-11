@@ -12,7 +12,6 @@ Sometimes it is necessary to compute a field's name and not just its value.
 You can do this by using formulas in parentheses for field names.
 Alternatively, you can use string comprehensions.
 
-```coq
 {{{with sidebyside "en" "dynamic-fields"}}}
 -- in.cue --
 a: 5
@@ -29,8 +28,6 @@ foobar: 5
 c:      "baz"
 foobaz: 6
 {{{end}}}
-```
-
 ## Pattern constraints
 
 Sometimes it is useful to apply a constraint to several fields at once.
@@ -43,7 +40,6 @@ pattern.
 In the following example, this is used to require that the value of each field
 name ending with "Name" should not start with a lowercase letter.
 
-```coq
 {{{with sidebyside "en" "bulk-constraints"}}}
 -- in.cue --
 person: {
@@ -62,8 +58,6 @@ person: {
     phone:     string
 }
 {{{end}}}
-```
-
 <!--  TODO
 
 `and([])`
@@ -72,7 +66,6 @@ person: {
 the `&` operator to all elements in the list.
 It returns top for the empty list.
 
-```coq
 {{{with sidebyside "en" "core-builtin-and"}}}
 -- in.cue --
 a: and([>=10, >5, <=10])
@@ -83,8 +76,6 @@ a: 10
 b: 2
 c: _
 {{{end}}}
-```
-
 - a: ?? expr / a: <- expr
 
 -->
