@@ -16,6 +16,24 @@
       "message": "Was this deletion meant to be captured in the commit?",
       "revId": "3c511a9686c7289d68b5f64cdaa4649385b9f4fc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "055534a4_7986deac",
+        "filename": "hugo/content/en/authors/index.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-11T12:24:58Z",
+      "side": 0,
+      "message": "Yes, because it highlights that we had stale files hanging around in the `hugo` tree. Will update the commit message to make this clear.",
+      "parentUuid": "1e58c7b2_0f1903c6",
+      "revId": "3c511a9686c7289d68b5f64cdaa4649385b9f4fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
