@@ -68,15 +68,13 @@ workflows: trybot: _repo.bashWorkflow & {
 			_installHugoLinux,
 			_installHugoMacOS,
 
-			// If the commit under test contains PREPROCESSOR-NO-WRITE-CACHE on a
-			// clear line within the commit message, and we are either testing a
-			// CL/PR, a push to the default branch, or a PR, then set the
+			// If the commit under test contains the trailer
+			// Preprocessor-No-Write-Cache: true, then set the
 			// PREPROCESSOR_NOWRITECACHE env var to non-empty.
 			json.#step & {
-				name: "Set PREPROCESSOR_NOWRITECACHE if required"
-				if:   "\(_repo.containsTrybotTrailer) ||  github.event_name == 'pull_request' || (github.event_name == 'push' && \(_repo.isProtectedBranch))"
+				name: "Set PREPROCESSOR_NOWRITECACHE if Preprocessor-No-Write-Cache: true"
 				run: """
-					if git log --format=%b -1 HEAD | grep -q PREPROCESSOR-NO-WRITE-CACHE
+					if ./_scripts/noWriteCache.bash HEAD
 					then
 						echo 'Found PREPROCESSOR-NO-WRITE-CACHE'
 						echo "PREPROCESSOR_NOWRITECACHE=true" >> $GITHUB_ENV

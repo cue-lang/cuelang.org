@@ -172,13 +172,9 @@ jobs:
       - if: runner.os == 'macOS'
         name: Install Hugo (${{ runner.os }})
         run: brew install hugo
-      - if: |-
-          (contains(github.event.head_commit.message, '
-          Dispatch-Trailer: {"type":"trybot"')) ||  github.event_name == 'pull_request' || (github.event_name == 'push' && ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
-          Dispatch-Trailer: {"type":"')))))
-        name: Set PREPROCESSOR_NOWRITECACHE if required
+      - name: 'Set PREPROCESSOR_NOWRITECACHE if Preprocessor-No-Write-Cache: true'
         run: |
-          if git log --format=%b -1 HEAD | grep -q PREPROCESSOR-NO-WRITE-CACHE
+          if ./_scripts/noWriteCache.bash HEAD
           then
           	echo 'Found PREPROCESSOR-NO-WRITE-CACHE'
           	echo "PREPROCESSOR_NOWRITECACHE=true" >> $GITHUB_ENV
