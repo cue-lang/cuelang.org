@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1023fdbe_6a58a9d9",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_transform_normalise.txtar",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T10:36:48Z",
+      "side": 0,
+      "message": "Just checking this additional blank line removal is intended.",
+      "revId": "d919a8544d3df9f502437042dbd12a76d4e88405",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

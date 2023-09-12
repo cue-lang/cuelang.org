@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5815a23d_bbbb8831",
+        "filename": "content/docs/language-guide/schemas-and-validation/composite-schemas/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T10:36:48Z",
+      "side": 1,
+      "message": "This modified, empty code block seems unintended, though not a focus of this CL.",
+      "revId": "ddff48d0149952b1e80c91f79729dd7dafae4afb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b120f5eb_8caad97e",
+        "filename": "content/docs/language-guide/schemas-and-validation/field-constraints/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T10:36:48Z",
+      "side": 1,
+      "message": "Aside: we need a reminder for authors, somewhere, that reminds them that setting a fenced code block to `cue` is currently equivalent to an opt-out for all formatting, and prevents them from using any Hugo features (e.g. line numbers, etc).",
+      "revId": "ddff48d0149952b1e80c91f79729dd7dafae4afb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
