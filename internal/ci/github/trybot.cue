@@ -31,6 +31,20 @@ workflows: trybot: _repo.bashWorkflow & {
 			"tags-ignore": [_repo.releaseTagPattern]
 		}
 		pull_request: {}
+
+		// Allow the trybots to run in response to a workflow_dispatch event.
+		// One source of workflow_dispatch events is the daily_tip_check
+		// workflow.
+		workflow_dispatch: {
+			// TODO: work out how to derive this "schema" from a CUE schema
+			inputs: {
+				scheduled: {
+					description: "Whether a workflow_dispatch was itself the result of a scheduled dispatch"
+					required:    true
+					default:     "false" // this is a string type field
+				}
+			}
+		}
 	}
 
 	jobs: test: {
@@ -56,6 +70,17 @@ workflows: trybot: _repo.bashWorkflow & {
 			_updateHomebrew,
 
 			for v in _repo.checkoutCode {v},
+
+			// Early check to fail in case we are running as a transitive result
+			// of the daily_tip_check workflow and the HEAD commit (remembering
+			// that such a workflow is triggered against the tip of the branch,
+			// alpha in this case) contains the Preprocessor-No-Write-Cache
+			// trailer.
+			json.#step & {
+				name: "Fail if Preprocessor-No-Write-Cache trailer is present for a scheduled workflow run"
+				if:   "github.event.inputs.scheduled == 'true'"
+				run:  "! ./_scripts/noWriteCache.bash HEAD"
+			},
 
 			_repo.earlyChecks,
 
