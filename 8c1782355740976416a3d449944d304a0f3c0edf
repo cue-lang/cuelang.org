@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ead7f11f_5c921909",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T13:05:29Z",
+      "side": 1,
+      "message": "There is, sadly, much that cannot be tested here offline. Instead, if things look broadly ok, I suggest we submit and then test \"live\". I have, as commented, allowed certain workflows to be triggered via repository dispatch to help make that process simpler.",
+      "revId": "8c1782355740976416a3d449944d304a0f3c0edf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
