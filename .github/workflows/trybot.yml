@@ -9,7 +9,12 @@
     tags-ignore:
       - v*
   pull_request: {}
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      scheduled:
+        description: Whether a workflow_dispatch was itself the result of a scheduled dispatch
+        required: true
+        default: "false"
 jobs:
   test:
     strategy:
@@ -70,6 +75,9 @@ jobs:
           Dispatch-Trailer: {"type":"'))
           EOD
           false
+      - if: github.event.inputs.scheduled == 'true'
+        name: Set PREPROCESSOR_NOWRITECACHE if required
+        run: '! git log --format=%b -1 HEAD | grep -q ^PREPROCESSOR-NO-WRITE-CACHE$'
       - name: Early git and code sanity checks
         run: |-
           # Ensure the recent commit messages have Signed-off-by headers. We
