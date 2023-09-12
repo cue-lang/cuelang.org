@@ -17,3 +17,5 @@ jobs:
         shell: bash
     steps:
       - run: gh workflow run --ref alpha --repo cue-lang/cuelang.org trybot.yml --raw-field scheduled=true
+        env:
+          GH_TOKEN: ${{ github.token }}
