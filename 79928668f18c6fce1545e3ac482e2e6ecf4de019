@@ -16,6 +16,23 @@
       "message": "Deploy canceled as expected again:\n\nhttps://app.netlify.com/sites/cue/deploys/6500c4e2dde3ff00088c67c3\n\n\"Bad\" email suggesting build has failed reported to Netlify.",
       "revId": "79928668f18c6fce1545e3ac482e2e6ecf4de019",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f09fefb_790940b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T20:16:38Z",
+      "side": 1,
+      "message": "Good news. The manual trigger (via push to ci/test) successfully triggered the daily_tip_check workflow:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164342477/job/16729860063\n\nThis in turn successfully triggered a scheduled\u003dtrue trybot workflow run:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164344298/job/16729864906\n\nand that failed as expected because the commit at the tip of alpha at that point in time (https://github.com/cue-lang/cuelang.org/commit/79928668f18c6fce1545e3ac482e2e6ecf4de019) contains the `Preprocessor-No-Write-Cache: true` trailer. \n\nJust as a health check, the same commit succeed at the tip of alpha as expected:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164328605/job/16729818017\n\nFinal check is to finish and merge the next CL in the stack which regenerates the cache files to confirm:\n\na) Netlify deploys \nb) the trybot workflow at the tip of alpha succeeds\nc) we can manually trigger the daily_tip_check workflow\nd) the trybot workflow resulting from the daily_tip_check succeeds",
+      "revId": "79928668f18c6fce1545e3ac482e2e6ecf4de019",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
