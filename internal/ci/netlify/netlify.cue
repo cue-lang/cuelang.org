@@ -27,6 +27,7 @@ import (
 		functions?: string
 		publish?:   string
 		command?:   string
+		ignore?:    string
 		environment?: [string]: string
 	}
 
@@ -50,6 +51,7 @@ config: #config & {
 		functions: "functions"
 		publish:   "_public"
 		command:   "bash _scripts/build.bash"
+		ignore:    "bash _scripts/ignoreBuild.bash"
 		environment: {
 			HUGO_ENV:     "production"
 			GO_VERSION:   repo.goVersion
@@ -107,6 +109,7 @@ config: #config & {
 		  functions = {{printf "%q" .functions}}
 		  publish = {{printf "%q" .publish}}
 		  command = {{printf "%q" .command}}
+		  ignore = {{printf "%q" .ignore}}
 
 		[build.environment]
 		{{- range $key, $value := .environment}}
