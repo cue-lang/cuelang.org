@@ -50,6 +50,24 @@
       "message": "This message is now a bit inaccurate, post-change-to-trailers.",
       "revId": "a59b482693ef8af5e68601dfc65c8bab087fcf97",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b42cb5cb_b55148bb",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T19:01:53Z",
+      "side": 1,
+      "message": "Good catch, thanks. Done",
+      "parentUuid": "edd23515_d9be53dd",
+      "revId": "a59b482693ef8af5e68601dfc65c8bab087fcf97",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
