@@ -1,0 +1,25 @@
+# Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
+
+"on":
+  schedule:
+    - cron: 0 3 * * *
+  workflow_dispatch: {}
+  push:
+    branches:
+      - ci/test
+    tags-ignore:
+      - v*
+jobs:
+  run:
+    strategy:
+      matrix: {}
+      fail-fast: false
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run: |-
+          cat <<EOD | gh workflow run -r alpha --repo cue-lang/cuelang.org trybot.yml --json
+          {"scheduled":"true"}
+          EOD
