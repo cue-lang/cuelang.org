@@ -16,6 +16,24 @@
       "message": "Just checking this additional blank line removal is intended.",
       "revId": "d919a8544d3df9f502437042dbd12a76d4e88405",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cb11ecc_0f823d41",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_transform_normalise.txtar",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T11:15:06Z",
+      "side": 0,
+      "message": "This is the follow-on bug fix mentioned in the commit message. We incorrectly emitted a trailing `\\n` before, that is also fixed as part of this CL because it touches almost exactly the same tests/content etc.",
+      "parentUuid": "1023fdbe_6a58a9d9",
+      "revId": "d919a8544d3df9f502437042dbd12a76d4e88405",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

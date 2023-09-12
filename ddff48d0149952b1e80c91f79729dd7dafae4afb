@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7dddb733_683df5f8",
+        "filename": "content/docs/language-guide/schemas-and-validation/composite-schemas/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T11:15:06Z",
+      "side": 1,
+      "message": "This falls under the part of the commit message that describes stopping using `coq` for codeblock annotations unless they make sense (i.e. contain actual `coq` code).",
+      "parentUuid": "5815a23d_bbbb8831",
+      "revId": "ddff48d0149952b1e80c91f79729dd7dafae4afb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b120f5eb_8caad97e",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-12T10:36:48Z",
       "side": 1,
       "message": "Aside: we need a reminder for authors, somewhere, that reminds them that setting a fenced code block to `cue` is currently equivalent to an opt-out for all formatting, and prevents them from using any Hugo features (e.g. line numbers, etc).",
+      "revId": "ddff48d0149952b1e80c91f79729dd7dafae4afb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcabfb28_e27530de",
+        "filename": "content/docs/language-guide/schemas-and-validation/field-constraints/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T11:15:06Z",
+      "side": 1,
+      "message": "We will actually want to write a linter equivalent that ensures we don\u0027t have any `cue` code blocks. Everything should be via the `preprocessor`. For now, the existence of these can act as a TODO.",
+      "parentUuid": "b120f5eb_8caad97e",
       "revId": "ddff48d0149952b1e80c91f79729dd7dafae4afb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
