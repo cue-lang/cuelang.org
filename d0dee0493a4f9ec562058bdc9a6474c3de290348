@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c83c2602_7a532770",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T19:51:49Z",
+      "side": 1,
+      "message": "Again, the deploy was correctly ignored on Netlify:\n\nhttps://app.netlify.com/sites/cue/deploys/6500c11fdd7b780008ac829e",
+      "revId": "d0dee0493a4f9ec562058bdc9a6474c3de290348",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
