@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a6d66ee_413fd8a6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T16:43:59Z",
+      "side": 1,
+      "message": "Noting the points we discussed.\n\n| Which point?\n\nThis point in time. Reworded.\n\n| Who?\n\nWe, the CUE authors.",
+      "parentUuid": "c901a3b4_fce97346",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5d8a404_d26efec3",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-12T14:30:01Z",
       "side": 1,
       "message": "... cont ...\n\n\u003e we mark\n\nThe committer *should have marked it*? Or the GHA job annotates the commit? Or something else?",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91acf5d3_b740ca41",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T16:43:59Z",
+      "side": 1,
+      "message": "Again, the CUE authors.\n\nI tend to use \"we\" instead of \"I\" in commit messages. In some situations it\u0027s clearer to remove \"we\" and instead talk in terms of the changes in the commit without reference to who  made them. In some situations it\u0027s necessary to indicate who is making the decision, so I\u0027ve left in \"we\".",
+      "parentUuid": "f5d8a404_d26efec3",
       "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7d23323_d9546d8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T16:43:59Z",
+      "side": 1,
+      "message": "This commit should also not touch the cache files. Hence, in the newest patchset, we set the Preprocessor-No-Write-Cache trailer. That way (per the updated commit message), post merge we can verify that the workflow change we expect to fail does fail (when we simulate a \"bad\" commit being left overnight)",
+      "parentUuid": "b74aec12_4c8bbd8f",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f561a24b_a13572b1",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-09-12T14:30:01Z",
       "side": 1,
       "message": "That URL doesn\u0027t obviously show me a description of anything relevant. Copy/paste issue?",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e860e7e_48ff786a",
+        "filename": "_scripts/ignoreBuild.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T16:43:59Z",
+      "side": 1,
+      "message": "Nice catch; this is the URL I pasted to you in Discord :)",
+      "parentUuid": "f561a24b_a13572b1",
       "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c535c86d_4083a6a5",
+        "filename": "_scripts/ignoreBuild.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T16:43:59Z",
+      "side": 1,
+      "message": "Switched to use the script defined in the previous CL.",
+      "parentUuid": "71c58061_59add42d",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d58bf51c_91ccbc6c",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-09-12T14:30:01Z",
       "side": 1,
       "message": "nit: that seems like a non-trivial amount of work to do, just to avoid\n\n```\ngh workflow run ... -f scheduled\u003dtrue\n```",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c99c2ef_b21da6b4",
+        "filename": "internal/ci/github/daily_tip_check.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T16:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d58bf51c_91ccbc6c",
       "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
