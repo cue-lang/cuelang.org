@@ -76,7 +76,7 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Set PREPROCESSOR_NOWRITECACHE if required"
 				if:   "\(_repo.containsTrybotTrailer) ||  github.event_name == 'pull_request' || (github.event_name == 'push' && \(_repo.isProtectedBranch))"
 				run: """
-					if git log --format=%b -1 HEAD | grep -q PREPROCESSOR-NO-WRITE-CACHE
+					if ./_scripts/noWriteCache.bash HEAD
 					then
 						echo 'Found PREPROCESSOR-NO-WRITE-CACHE'
 						echo "PREPROCESSOR_NOWRITECACHE=true" >> $GITHUB_ENV

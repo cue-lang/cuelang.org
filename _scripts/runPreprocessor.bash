@@ -19,7 +19,7 @@ if [[ -f .git/rebase-merge/stopped-sha ]]
 then
 	head=REBASE_HEAD
 fi
-if [[ "${CI:-}" != "true" ]] && git log --format=%b -1 $head | grep -q ^PREPROCESSOR-NO-WRITE-CACHE$
+if [[ "${CI:-}" != "true" ]] && ./_scripts/noWriteCache.bash $head
 then
 	export PREPROCESSOR_NOWRITECACHE="true"
 fi
