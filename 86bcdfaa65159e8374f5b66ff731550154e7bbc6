@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "368db029_56e3fd49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2023-09-12T20:25:17Z",
+      "side": 1,
+      "message": "Self-approval on behalf of myitcv to unblock testing.",
+      "revId": "86bcdfaa65159e8374f5b66ff731550154e7bbc6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
