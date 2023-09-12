@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35fd6429_f12dcc1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T16:52:42Z",
+      "side": 1,
+      "message": "LGTM.",
+      "revId": "a59b482693ef8af5e68601dfc65c8bab087fcf97",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d8b772b_13395571",
+        "filename": "_scripts/noWriteCache.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T16:52:42Z",
+      "side": 1,
+      "message": "Huh. TIL. Nice.",
+      "revId": "a59b482693ef8af5e68601dfc65c8bab087fcf97",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edd23515_d9be53dd",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T16:52:42Z",
+      "side": 1,
+      "message": "This message is now a bit inaccurate, post-change-to-trailers.",
+      "revId": "a59b482693ef8af5e68601dfc65c8bab087fcf97",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
