@@ -43,6 +43,7 @@ workflows: daily_tip_check: _repo.bashWorkflow & {
 			// TODO: do not hardcode trybot.yml below.
 			json.#step & {
 				run: "gh workflow run --ref \(_repo.alphaBranch) --repo \(_repo.githubRepositoryPath) trybot.yml --raw-field scheduled=true"
+				env: GH_TOKEN: "${{ github.token }}"
 			},
 		]
 	}
