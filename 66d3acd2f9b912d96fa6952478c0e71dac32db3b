@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3db9b36f_455dba3a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T19:36:20Z",
+      "side": 1,
+      "message": "Confirmed that the ignore directive worked:\n\nhttps://app.netlify.com/sites/cue/deploys/6500b83c00d74a0008859db3",
+      "revId": "66d3acd2f9b912d96fa6952478c0e71dac32db3b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
