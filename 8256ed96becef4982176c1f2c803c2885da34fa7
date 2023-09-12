@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c901a3b4_fce97346",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T14:30:01Z",
+      "side": 1,
+      "message": "This paragraph isn\u0027t clear to me.\n\n\u003e this point\n\nWhich point?\n\n\u003e we\n\nWho? The logic inside GHA; the operator via GHA job failure notifications?\n\n... cont ...",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5d8a404_d26efec3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T14:30:01Z",
+      "side": 1,
+      "message": "... cont ...\n\n\u003e we mark\n\nThe committer *should have marked it*? Or the GHA job annotates the commit? Or something else?",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b74aec12_4c8bbd8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T14:30:01Z",
+      "side": 1,
+      "message": "Should /this/ commit match the `^PREPROCESSOR-NO-WRITE-CACHE$` regex, or should this line be indented to avoid the match?",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f561a24b_a13572b1",
+        "filename": "_scripts/ignoreBuild.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T14:30:01Z",
+      "side": 1,
+      "message": "That URL doesn\u0027t obviously show me a description of anything relevant. Copy/paste issue?",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71c58061_59add42d",
+        "filename": "_scripts/ignoreBuild.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T14:30:01Z",
+      "side": 1,
+      "message": "nit: my personal preference for matches like these is (when I remember!) to use `--line-regexp --fixed-strings`, alongside long-opts. I feel they spell the intention out more legibly for future operators.\n\ni.e.\n\n```\ngrep --silent -line-regexp --fixed-strings PREPROCESSOR-NO-WRITE-CACHE\n```",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d58bf51c_91ccbc6c",
+        "filename": "internal/ci/github/daily_tip_check.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-12T14:30:01Z",
+      "side": 1,
+      "message": "nit: that seems like a non-trivial amount of work to do, just to avoid\n\n```\ngh workflow run ... -f scheduled\u003dtrue\n```",
+      "revId": "8256ed96becef4982176c1f2c803c2885da34fa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
