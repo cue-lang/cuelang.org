@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc7dab64_66db4766",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T20:08:15Z",
+      "side": 1,
+      "message": "Deploy canceled as expected again:\n\nhttps://app.netlify.com/sites/cue/deploys/6500c4e2dde3ff00088c67c3\n\n\"Bad\" email suggesting build has failed reported to Netlify.",
+      "revId": "79928668f18c6fce1545e3ac482e2e6ecf4de019",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
