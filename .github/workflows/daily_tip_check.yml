@@ -11,9 +11,6 @@
       - v*
 jobs:
   run:
-    strategy:
-      matrix: {}
-      fail-fast: false
     runs-on: ubuntu-22.04
     defaults:
       run:

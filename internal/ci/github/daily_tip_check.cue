@@ -35,7 +35,6 @@ workflows: daily_tip_check: _repo.bashWorkflow & {
 	}
 
 	jobs: run: {
-		strategy: "fail-fast": false
 		"runs-on": _repo.linuxMachine
 
 		steps: [
