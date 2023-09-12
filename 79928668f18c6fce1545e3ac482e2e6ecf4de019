@@ -33,6 +33,23 @@
       "message": "Good news. The manual trigger (via push to ci/test) successfully triggered the daily_tip_check workflow:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164342477/job/16729860063\n\nThis in turn successfully triggered a scheduled\u003dtrue trybot workflow run:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164344298/job/16729864906\n\nand that failed as expected because the commit at the tip of alpha at that point in time (https://github.com/cue-lang/cuelang.org/commit/79928668f18c6fce1545e3ac482e2e6ecf4de019) contains the `Preprocessor-No-Write-Cache: true` trailer. \n\nJust as a health check, the same commit succeed at the tip of alpha as expected:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164328605/job/16729818017\n\nFinal check is to finish and merge the next CL in the stack which regenerates the cache files to confirm:\n\na) Netlify deploys \nb) the trybot workflow at the tip of alpha succeeds\nc) we can manually trigger the daily_tip_check workflow\nd) the trybot workflow resulting from the daily_tip_check succeeds",
       "revId": "79928668f18c6fce1545e3ac482e2e6ecf4de019",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e3f62f9_9b62a61b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-12T20:31:35Z",
+      "side": 1,
+      "message": "Final update following the merge of https://cuelang.org/cl/1168837 (keeping the reporting of status here).\n\nThe Netlify deploy completed and succeeded as expected:\n\nhttps://app.netlify.com/sites/cue/deploys/6500c93f16d9900008998883\n\ni.e. the resulting commit was _not_ ignored. \n\nThe test (via ci/test) trigger of daily_tip_check succeeded:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164513396\n\nThe resulting trybot workflow run with scheduled\u003dtrue succeeded as expected:\n\nhttps://github.com/cue-lang/cuelang.org/actions/runs/6164514473/job/16730372205\n\ni.e. it did not fail, because the commit at the tip of alpha (https://github.com/cue-lang/cuelang.org/commit/8046b2a823f5f3241dad84bf7574bfbbb5c2f5b6) does not contain the Preprocess-No-Write-Cache trailer.\n\nThe trybot workflow run as a result of the push to alpha itself succeeded as execpted:\n\nhttps://github.com/cue-lang/cuelang.org-trybot/actions/runs/6164460544/job/16730212180",
+      "revId": "79928668f18c6fce1545e3ac482e2e6ecf4de019",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
