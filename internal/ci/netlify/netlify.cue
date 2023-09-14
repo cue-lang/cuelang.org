@@ -81,9 +81,6 @@ config: #config & {
 		from: "/issue/*"
 		to:   "https://github.com/cue-lang/cue/issues/:splat"
 	}, {
-		from: "/download"
-		to:   "/docs/install"
-	}, {
 		from: "/issues/*"
 		to:   "https://github.com/cue-lang/cue/issues/:splat"
 	}, {
