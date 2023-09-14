@@ -1,6 +1,11 @@
 ---
 title: Installation
 weight: 20
+aliases:
+- /docs/install
+- /download
+- /install
+- /dl
 ---
 
 The Go APIs for CUE are defined in the
