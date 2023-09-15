@@ -1,0 +1,30 @@
+# Ensure that we fail when an upload node contains multiple files.
+# For now we don't support this. It could be rendered as multiple
+# code blocks in the future.
+
+unquote content/dir/en.md
+! exec preprocessor execute --debug=general
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:4:8: upload nodes can only contain a single file; saw 2'
+
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>{{{with upload "en" "upload-some-cue"}}}
+>-- 1.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>-- 2.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>{{{end}}}
+-- hugo/content/.gitkeep --
