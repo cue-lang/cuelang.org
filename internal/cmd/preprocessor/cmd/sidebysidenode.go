@@ -265,6 +265,7 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 
 	args = append(args, dockerArgs...)
 	args = append(args,
+		// TODO: support per-guide docker images
 		dockerImageTag,
 		"--",
 	)
