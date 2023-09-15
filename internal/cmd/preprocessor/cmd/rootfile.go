@@ -16,19 +16,25 @@ package cmd
 
 import (
 	"bytes"
+	"crypto/sha256"
 	"encoding/base64"
+	"encoding/binary"
 	"fmt"
 	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"runtime"
 	"sort"
+	"strconv"
 	"strings"
+	"time"
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/format"
 	"github.com/cue-lang/cuelang.org/internal/parse"
 	"golang.org/x/exp/maps"
+	"mvdan.cc/sh/v3/syntax"
 )
 
 var (
@@ -91,6 +97,10 @@ type rootFile struct {
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
 
+	// stmtPrinter is a reusable bash shell syntax statement printer
+	// re-used in the course of building up a multi-step script.
+	stmtPrinter *syntax.Printer
+
 	// bufferedErrorContext reuses the existing page.errorContext because for
 	// now we don't do root files concurrently
 	errorContext
@@ -111,6 +121,7 @@ func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 		ext:              ext,
 		errorContext:     p.bufferedErrorContext,
 		executionContext: p.executionContext,
+		stmtPrinter:      syntax.NewPrinter(syntax.SingleLine(true)),
 	}
 }
 
@@ -289,6 +300,16 @@ func (rf *rootFile) run() error {
 			torun = append(torun, r)
 		}
 	}
+
+	script, err := rf.buildMultistepScript()
+	if err != nil {
+		return err
+	}
+	// If there is nothing to do, script will be nil. Check against that
+	if script != nil {
+		torun = append(torun, script)
+	}
+
 	for _, r := range torun {
 		wait = append(wait, runRunnable(r))
 	}
@@ -299,6 +320,236 @@ func (rf *rootFile) run() error {
 		// Could make the following a method on errorContext
 		rf.updateInError(v.isInError())
 		rf.logf("%s", v.bytes())
+	}
+
+	return nil
+}
+
+// buildMultistepScript constructs a bash file that will be run within docker
+// and returns a runnable representing that unit of work.
+//
+// This code is largely borrowed from github.com/play-with-go/preguide with
+// permission from the author @myitcv. Including the copyright notice for
+// completeness' sake:
+//
+// Copyright 2020 The play-with-go.dev Authors. All rights reserved.  Use of
+// this source code is governed by a BSD-style license that can be found in the
+// LICENSE file.
+func (rf *rootFile) buildMultistepScript() (runnable, error) {
+	// didWork notes whether we actually found and considered an upload or
+	// script node.  If we did not, then there is nothing to actually do
+	// and we can return early.
+	didWork := false
+
+	var sb strings.Builder
+	pf := func(format string, args ...interface{}) {
+		fmt.Fprintf(&sb, format, args...)
+	}
+	pf("#!/usr/bin/env -S bash -l\n")
+	pf("export TERM=dumb\n")
+	pf("export NO_COLOR=true\n")
+
+	// exitCodeVar is the name of the "temporary" variable used to capture
+	// the exit code from a command. Named something suitably esoteric to
+	// avoid user-declared variables
+	const exitCodeVar = "____x"
+
+	for i := range rf.bodyParts {
+		switch n := rf.bodyParts[i].(type) {
+		case *scriptNode:
+			didWork = true
+
+			// We known a script will not have any files because of validate(), which
+			// also parsed the script. So we know it's valid.
+			for _, stmt := range n.stmts {
+				// echo the command we will run
+				cmdEchoFence := getFence()
+				pf("cat <<'%v'\n", cmdEchoFence)
+				pf("$ %v\n", stmt.cmdStr)
+				pf("%v\n", cmdEchoFence)
+				stmt.outputFence = getFence()
+				pf("echo %v\n", stmt.outputFence)
+				pf("%v\n", stmt.cmdStr)
+				pf("%s=$?\n", exitCodeVar)
+				pf("echo %v\n", stmt.outputFence)
+				if stmt.negated {
+					pf("if [ $%s -eq 0 ]\n", exitCodeVar)
+				} else {
+					pf("if [ $%s -ne 0 ]\n", exitCodeVar)
+				}
+				pf("then\n")
+				pf("exit 1\n")
+				pf("fi\n")
+				pf("echo $%s\n", exitCodeVar)
+			}
+		case *uploadNode:
+			didWork = true
+
+			// We know that for now we have a single file per uploadNode.
+			f := n.effectiveArchive.Files[0]
+
+			cmdEchoFence := getFence()
+			pf("cat <<'%v'\n", cmdEchoFence)
+			pf("$ cat <<EOD > %v\n", f.Name)
+			pf("%s\n", f.Data)
+			pf("EOD\n")
+			pf("%v\n", cmdEchoFence)
+			fence := getFence()
+			pf("cat <<'%v' > %v\n", fence, f.Name)
+			pf("%s\n", f.Data)
+			pf("%v\n", fence)
+			pf("%s=$?\n", exitCodeVar)
+			pf("if [ $%s -ne 0 ]\n", exitCodeVar)
+			pf("then\n")
+			pf("exit 1\n")
+			pf("fi\n")
+		default:
+			// Nothing to do; other nodes don't contribute
+		}
+	}
+
+	if !didWork {
+		// there is nothing to do
+		return nil, nil
+	}
+
+	// Because of https://github.com/moby/moby/issues/43121 we add an
+	// additional \n (which will be read as \r\n) to ensure we have a
+	// trailing newline.
+	pf("echo")
+
+	mss := multiStepScript{
+		bashScript: sb.String(),
+		rootFile:   rf,
+	}
+	return &mss, nil
+}
+
+func getFence() string {
+	var b bytes.Buffer
+	binary.Write(&b, binary.BigEndian, time.Now().UnixNano())
+	return fmt.Sprintf("%x", sha256.Sum256(b.Bytes()))
+}
+
+type multiStepScript struct {
+	bashScript string
+	*rootFile
+	bufferedErrorContext
+}
+
+// run runs the multi-step bash script in docker, and sets the output
+// results on the steps in m.rootFile... which is safe to do because
+// we block on all runnables before attempting and writing of the
+// transformed output.
+//
+// A good amount of potential overlap here with the sidebyside use of
+// docker but we can (and will) DRY that up later.
+func (m *multiStepScript) run() error {
+	td, err := m.tempDir("multistep")
+	if err != nil {
+		return m.errorf("%v: failed to create temp dir for running multistep script: %v", m, err)
+	}
+
+	scriptsDir := filepath.Join(td, "scripts")
+	if err := os.Mkdir(scriptsDir, 0777); err != nil {
+		m.fatalf("%v: failed to create scripts directory %v: %v", m, scriptsDir, err)
+	}
+	scriptsFile := filepath.Join(scriptsDir, "script.sh")
+	if err := os.WriteFile(scriptsFile, []byte(m.bashScript), 0777); err != nil {
+		m.fatalf("%v: failed to write temporary script to %v: %v", m, scriptsFile, err)
+	}
+
+	// Explicitly change the permissions for the scripts directory and the
+	// script itself so that when mounted within the docker container they are
+	// runnable by anyone. This is necessary because the bind mount used adopts
+	// the same owner and permissions as the host. Therefore, to be runnable
+	// by any user, including the user who ends up running the script as defined
+	// by the image we are using, we need to be liberal.
+	if err := os.Chmod(scriptsDir, 0777); err != nil {
+		m.fatalf("%v: failed to change permissions of %v: %v", m, scriptsDir, err)
+	}
+	if err := os.Chmod(scriptsFile, 0777); err != nil {
+		m.fatalf("%v: failed to change permissions of %v: %v", m, scriptsFile, err)
+	}
+
+	var args []string
+	args = append(args,
+		"docker", "run", "--rm",
+
+		// Need to be able to pass stdin
+		"-i",
+
+		// otherwise stderr is not line buffered
+		"-t",
+
+		// All docker images used by unity must support this interface
+		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
+		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
+
+		// mount the bash script
+		"-v", fmt.Sprintf("%v:/scripts", scriptsDir),
+	)
+
+	// If the user wants to be unsafe and _not_ isolate the network let them
+	// It results in much faster running times when working on changes in the
+	// preprocessor.
+	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
+		args = append(args, "--network=host")
+	}
+
+	args = append(args,
+		// TODO: support per-guide docker images
+		dockerImageTag,
+		"--",
+
+		// The script to run
+		"/scripts/script.sh",
+	)
+
+	cmd := exec.Command(args[0], args[1:]...)
+
+	m.debugf(m.debugGeneral, "%v: running multi-step script", m)
+	m.debugf(m.debugGeneral, "%v: cmd: %v", m, cmd)
+	m.debugf(m.debugGeneral, "%v: script: %s", m, m.bashScript)
+
+	out, err := cmd.CombinedOutput()
+	if err != nil {
+		m.fatalf("%v: failed to run multi-step script [%v]: %v\n%s", m, strings.Join(cmd.Args, " "), err, out)
+	}
+
+	m.debugf(m.debugGeneral, "%v: output:\n===========\n%s\n============", m, out)
+
+	// Now write the output back to the original statements
+
+	walk := out
+	slurp := func(end []byte) (res string) {
+		endI := bytes.Index(walk, end)
+		if endI == -1 {
+			m.fatalf("%v: failed to find %q before end of output:\n%q\nOutput was: %q\n", m, end, walk, out)
+		}
+		res, walk = string(walk[:endI]), walk[endI+len(end):]
+		// Because we are running in -t mode, replace all \r\n with \n
+		//
+		// TODO: work out if this should be somewhere else
+		res = strings.ReplaceAll(res, "\r\n", "\n")
+		return res
+	}
+
+	for _, step := range m.bodyParts {
+		switch step := step.(type) {
+		case *scriptNode:
+			for _, stmt := range step.stmts {
+				// TODO: tidy this up
+				fence := []byte(stmt.outputFence + "\r\n")
+				slurp(fence) // Ignore everything before the fence
+				stmt.output = slurp(fence)
+				exitCodeStr := slurp([]byte("\r\n"))
+				stmt.exitCode, err = strconv.Atoi(exitCodeStr)
+				if err != nil {
+					m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
+				}
+			}
+		}
 	}
 
 	return nil
