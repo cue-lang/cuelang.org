@@ -24,6 +24,7 @@ package site
 >---
 >title: JSON Superset
 >---
+>{{{with step}}}
 >{{{with upload "en" "upload-some-cue"}}}
 >#codetab(in.cue) linenos="table"
 >-- in.cue --
@@ -34,12 +35,14 @@ package site
 >}
 >{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
->exec cue eval in.cue
+>cue eval in.cue # test
+>{{{end}}}
 >{{{end}}}
 -- hugo/content/en/dir/index.md.golden --
 ---
 title: JSON Superset
 ---
+{{< step stepNumber="1" >}}
 ```cue { title="in.cue" linenos="table" }
 // A doc comment
 map: {
@@ -47,6 +50,11 @@ map: {
 	member2: 4
 }
 ```
-```text { title="TERMINAL" }
-exec cue eval in.cue
+```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAo=" }
+$ cue eval in.cue # test
+map: {
+    member1: 3
+    member2: 4
+}
 ```
+{{< /step >}}
