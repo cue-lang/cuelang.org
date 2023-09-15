@@ -289,6 +289,16 @@ func (rf *rootFile) run() error {
 			torun = append(torun, r)
 		}
 	}
+
+	script, err := rf.buildMultistepScript()
+	if err != nil {
+		return err
+	}
+	// If there is nothing to do, script will be nil. Check against that
+	if script != nil {
+		torun = append(torun, script)
+	}
+
 	for _, r := range torun {
 		wait = append(wait, runRunnable(r))
 	}
@@ -302,6 +312,38 @@ func (rf *rootFile) run() error {
 	}
 
 	return nil
+}
+
+func (rf *rootFile) buildMultistepScript() (runnable, error) {
+	didWork := false
+	for i := range rf.bodyParts {
+		switch n := rf.bodyParts[i].(type) {
+		case *scriptNode:
+			didWork = true
+
+			// A script should not have any files
+			if len(n.sourceArchive.Files) > 0 {
+				return nil, rf.errorf("%v: script nodes cannot contain files", n)
+			}
+
+			// Parse the comments as a shell script, not testscript
+			// file, err := syntax.NewParser().Parse(bytes.NewReader(n.sourceArchive.Comment), "")
+			// if err != nil {
+			// 	return nil, rf.errorf("%v: failed to parse shell script: %v", n, err)
+			// }
+		case *uploadNode:
+			didWork = true
+		default:
+			// Nothing to do; other nodes don't contribute
+		}
+	}
+
+	if !didWork {
+		// there is nothing to do
+		return nil, nil
+	}
+
+	return nil, nil
 }
 
 // hashRunnableNode computes a hash of n, writing that hash to w, and returns
