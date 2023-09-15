@@ -25,4 +25,13 @@ then
 fi
 
 GOBIN=$PWD/.gobin go install -trimpath -buildvcs=false ./internal/cmd/preprocessor
+
+# Remove preprocessor target directory. This ensures we don't leave any stale
+# files lying around. Slight hack: only do so if we are running the execute command.
+#
+# TODO: make the prepreprocess smart enough to do this itself.
+if [[ "${1:-}" == "execute" ]]; then
+	rm -rf hugo/content
+fi
+
 exec $PWD/.gobin/preprocessor "$@"
