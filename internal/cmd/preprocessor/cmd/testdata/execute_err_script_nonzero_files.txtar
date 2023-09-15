@@ -1,0 +1,21 @@
+# Ensure that we fail when a script node contains any files.
+
+unquote content/dir/en.md
+! exec preprocessor execute --debug=general
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:4:8: script nodes cannot contain any files in the txtar archive'
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>{{{with script "en" "upload-some-cue"}}}
+>-- 1.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>{{{end}}}
+-- hugo/content/.gitkeep --
