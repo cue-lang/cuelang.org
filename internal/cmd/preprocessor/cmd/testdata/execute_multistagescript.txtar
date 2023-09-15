@@ -34,7 +34,7 @@ package site
 >}
 >{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
->exec cue eval in.cue
+>cue eval in.cue
 >{{{end}}}
 -- hugo/content/en/dir/index.md.golden --
 ---
@@ -47,6 +47,10 @@ map: {
 	member2: 4
 }
 ```
-```text { title="TERMINAL" }
-exec cue eval in.cue
+```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlCg==" }
+$ cue eval in.cue
+map: {
+    member1: 3
+    member2: 4
+}
 ```
