@@ -39,6 +39,8 @@ var (
 	templateFunctions = map[string]any{
 		fnSidebyside: true,
 		fnStep:       true,
+		fnUpload:     true,
+		fnScript:     true,
 		"reference":  true,
 		"def":        true,
 		"sidetrack":  true,
