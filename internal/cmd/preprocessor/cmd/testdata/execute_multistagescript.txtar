@@ -34,7 +34,7 @@ package site
 >}
 >{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
->exec cue eval in.cue
+>cue eval in.cue
 >{{{end}}}
 -- hugo/content/en/dir/index.md.golden --
 ---
@@ -48,5 +48,9 @@ map: {
 }
 ```
 ```text { title="TERMINAL" }
-exec cue eval in.cue
+$ cue eval in.cue
+map: {
+    member1: 3
+    member2: 4
+}
 ```
