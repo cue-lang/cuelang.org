@@ -177,6 +177,8 @@ func (rf *rootFile) transform(targetPath string) error {
 // For example, we ensure that we don't have multiple steps of the same type
 // with the same label.
 func (rf *rootFile) validate() error {
+
+	// Ensure labels across steps (irrespective of type) are unique
 	labels := make(map[string]map[string][]node)
 	for _, bp := range rf.bodyParts {
 		n, ok := bp.(labelledNode)
@@ -212,6 +214,17 @@ func (rf *rootFile) validate() error {
 				fmt.Fprintf(&positions, "\t%v\n", n)
 			}
 			rf.errorf("%v: node type %q declares label %q multiple times:\n%s", rf, t, l, positions.Bytes())
+		}
+	}
+
+	// Validate those parts which have a validate() method
+	for _, bp := range rf.bodyParts {
+		bp, ok := bp.(validatingNode)
+		if !ok {
+			continue
+		}
+		if err := bp.validate(); err != nil {
+			rf.errorf("%v: %v", bp, err)
 		}
 	}
 
