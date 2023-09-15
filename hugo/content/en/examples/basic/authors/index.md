@@ -4,21 +4,39 @@ weight: 15
 ---
 
 In order to add authors to the articles, they need to be set up. This is done by
-creating them in the `content > authors` folder. For each other, a new folder
-is created. The name of this folder is the same as the name you use to add the
-author to the frontmatter. Within this map, you add the markdown file with
-the needed frontmatter and the author image you want to use for this author.
+creating them in the `content/authors/` directory.
 
-## Frontmatter
+## Author set up
 
-The following frontmatter is used for now. All are optional, but for the most
-optimal results, all are filled in. Only the images have a fallback image.
+For each author, create a new directory inside `content/authors/`. (This
+directory's name is the string that's placed inside article front matter, as
+shown below.)
+
+Add the author's details to `content/authors/<author-id>/en.md`, inside the
+page's frontmatter. For example:
 
 ```
 ---
-name:
-image:
-displayName:
-githubLink:
+name: "Tom Hanks"
+image: "tomhanks.jpg"
+displayName: "Thomas Jeffrey Hanks"
+githubLink: https://github.com/<some username>
 ---
 ```
+
+All fields are optional.
+
+The "image" field's path is resolved relative to the author's individual
+directory, and a fallback image exists.
+
+## Article frontmatter
+
+To reference an author in an article, add (or extend) the following list in the
+article's frontmatter:
+
+```
+authors:
+- <author-id>
+```
+
+The "author-id" is the directory name, as described above.
