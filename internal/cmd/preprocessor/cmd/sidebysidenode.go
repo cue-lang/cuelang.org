@@ -61,7 +61,7 @@ func (s *sidebysideNode) run() runnable {
 func (s *sidebysideNodeRunContext) run() (err error) {
 	defer recoverFatalError(&err)
 	// Skip entirely if the #norun tag is present
-	if _, ok, _ := s.tag(tagNorun); ok {
+	if _, ok, _ := s.tag(tagNorun, ""); ok {
 		return nil
 	}
 
