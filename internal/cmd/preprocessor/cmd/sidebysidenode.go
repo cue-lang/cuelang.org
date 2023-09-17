@@ -278,24 +278,19 @@ func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...str
 
 func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
-	var locations []string
+	var locations []codeTabLocation
 	switch l := len(s.effectiveArchive.Files); l {
 	case 2:
 		// real side-by-side.
-		locations = []string{"top-left", "top-right"}
+		locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight}
 	case 3:
-		locations = []string{"top-left", "bottom-left", "top-right"}
+		locations = []codeTabLocation{codeTabTopLeft, codeTabBottomLeft, codeTabTopRight}
 	default:
 		var b bytes.Buffer
 		s.writeSourceTo(&b)
 		return s.errorf("do not know how to handle %d txtar files: \n%s", l, b.Bytes())
 	}
 	analyses := s.analysis.fileNames
-	type tabProps struct {
-		Name     string
-		Language string
-		Type     string
-	}
 	// TODO probably extract this code into some sort of strategy at some point
 	tabs := make([]tabProps, len(analyses))
 	if len(analyses) == 2 && analyses[0].Basename == "in" && analyses[1].Basename == "out" {
