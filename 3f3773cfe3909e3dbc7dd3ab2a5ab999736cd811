@@ -16,6 +16,24 @@
       "message": "FYI: taking over this CL (for now) as part of the stack of making multi-step script working.",
       "revId": "3f3773cfe3909e3dbc7dd3ab2a5ab999736cd811",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "584bc462_bc08df5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-17T18:09:40Z",
+      "side": 1,
+      "message": "👍",
+      "parentUuid": "7b858db5_acfa9350",
+      "revId": "3f3773cfe3909e3dbc7dd3ab2a5ab999736cd811",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
