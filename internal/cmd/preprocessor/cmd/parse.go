@@ -74,22 +74,18 @@ func (rf *rootFile) parse() error {
 		return rf.errorf("%v: failed to parse body: %v", rf, err)
 	}
 	rf.body = parseTrees[rf.filename]
-	pc := parseContext{
-		rootFile: rf,
-		parts:    rf.body.Root.Nodes,
-	}
+	parts := rf.body.Root.Nodes
 
-	for ; pc.i < len(pc.parts); pc.i++ {
-		n := pc.parts[pc.i]
+	for _, n := range parts {
 		var newNode node
 		var err error
 		switch n := n.(type) {
 		case *parse.TextNode:
-			newNode, err = pc.parse_TextNode(n)
+			newNode, err = rf.parse_TextNode(n)
 		case *parse.WithNode:
-			newNode, err = pc.parse_WithNode(n)
+			newNode, err = rf.parse_WithNode(n)
 		case *parse.ActionNode:
-			newNode, err = pc.parse_ActionNode(n)
+			newNode, err = rf.parse_ActionNode(n)
 		default:
 			return rf.bodyError(n, "do not know how to handle node of type %T", n)
 		}
@@ -98,6 +94,18 @@ func (rf *rootFile) parse() error {
 		}
 		rf.bodyParts = append(rf.bodyParts, newNode)
 	}
+
+	// The first part will always be a *parse.TextNode, because it contains the header
+	// for the page. Trim the prefix that is the header text for processing, because
+	// we separately write and format the header when writing back to source or transforming.
+	// (The header is left in for parsing so that line and byte offsets of the text/template
+	// parse tree are true to the source file).
+	tn := rf.bodyParts[0].(*textNode)
+	utn := tn.underlying.(*parse.TextNode)
+	rf.debugf(rf.debugGeneral, "pre: %q\n", utn.Text)
+	rf.debugf(rf.debugGeneral, "bodyPrefix: %q\n", rf.bodyPrefix)
+	tn.text = bytes.TrimPrefix(utn.Text, rf.bodyPrefix)
+	rf.debugf(rf.debugGeneral, "post: %q\n", utn.Text)
 
 	return nil
 }
@@ -117,84 +125,69 @@ func (rf *rootFile) nodePos(theNode parse.Node) string {
 	return after
 }
 
-// parseContext is a convenience for passing the current state of parsing of
-// the text/template/parse root node list. This is really only required to
-// handle the case of text nodes that may surround WithNode's. These nodes
-// need to have triple-backtick text stripped from them, and leading blank
-// lines in the case of the first text node.
-type parseContext struct {
-	*rootFile
-	parts []parse.Node
-	i     int
-}
-
 // parse_TextNode parses a text-only node.
-func (pc parseContext) parse_TextNode(n *parse.TextNode) (node, error) {
+func (rf *rootFile) parse_TextNode(n *parse.TextNode) (node, error) {
 	t := string(n.Text)
-	if pc.i == 0 {
-		// We know this will be a text node because we put in a fake prefix
-		t = strings.TrimPrefix(t, string(pc.bodyPrefix))
-	}
 	return &textNode{
 		nodeWrapper: &nodeWrapper{
-			rf:               pc.rootFile,
+			rf:               rf,
 			underlying:       n,
-			errorContext:     pc.errorContext,
-			executionContext: pc.executionContext,
+			errorContext:     rf.errorContext,
+			executionContext: rf.executionContext,
 		},
 		text: []byte(t),
 	}, nil
 
 }
 
-func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
+func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 	// The only form we accept right now is {{{ with function "$lang" "label" }}}
 	// This is parsed as a command node with multiple args.
 	if n.ElseList != nil {
-		return nil, pc.bodyError(n.ElseList, "with node cannot have else block")
+		return nil, rf.bodyError(n.ElseList, "with node cannot have else block")
 	}
 	if len(n.Pipe.Cmds) != 1 {
-		return nil, pc.bodyError(n, "with node must comprise a single command")
+		return nil, rf.bodyError(n, "with node must comprise a single command")
 	}
 	c := n.Pipe.Cmds[0]
 	if l := len(c.Args); l == 0 {
-		return nil, pc.bodyError(c, "expected at least one arg, not zero")
+		return nil, rf.bodyError(c, "expected at least one arg, not zero")
 	}
 	arg0 := c.Args[0]
 	fn, ok := arg0.(*parse.IdentifierNode)
 	if !ok {
-		return nil, pc.bodyError(c, "expected identifier as first arg; got %T", arg0)
+		return nil, rf.bodyError(c, "expected identifier as first arg; got %T", arg0)
 	}
 	switch fn.Ident {
 	case "sidebyside":
-		t, err := pc.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
 		}
 		return &sidebysideNode{txtarNode: t}, nil
 	case "sidetrack":
 	default:
-		return nil, pc.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
+		return nil, rf.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
 	}
 	return &nodeWrapper{
-		rf:               pc.rootFile,
+		rf:               rf,
 		underlying:       n,
-		errorContext:     pc.errorContext,
-		executionContext: pc.executionContext,
+		errorContext:     rf.errorContext,
+		executionContext: rf.executionContext,
 	}, nil
 }
 
 // parse_txtarNode extracts a txtar-based node, a value that will be wrapped
 // with a specific type. e.g. sidebyside.
-func (pc parseContext) parse_txtarNode(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, err error) {
+func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, err error) {
 	if len(args) != 2 {
-		return res, pc.bodyError(n, "%s require two args", kind)
+		return res, rf.bodyError(n, "%s require two args", kind)
 	}
 	var strArgs []string
 	for _, a := range args {
 		sa, ok := a.(*parse.StringNode)
 		if !ok {
-			return res, pc.bodyError(a, "expected a string argument")
+			return res, rf.bodyError(a, "expected a string argument")
 		}
 		strArgs = append(strArgs, sa.Text)
 	}
@@ -202,11 +195,11 @@ func (pc parseContext) parse_txtarNode(n *parse.WithNode, kind string, args []pa
 
 	// We only support a single TextNode body, i.e. the contents of a txtar archive
 	if n.List == nil || len(n.List.Nodes) != 1 {
-		return res, pc.bodyError(n, "%s must have a text-only body", kind)
+		return res, rf.bodyError(n, "%s must have a text-only body", kind)
 	}
 	tn, ok := n.List.Nodes[0].(*parse.TextNode)
 	if !ok {
-		return res, pc.bodyError(n, "%s must have a text-only body", kind)
+		return res, rf.bodyError(n, "%s must have a text-only body", kind)
 	}
 	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
 	// therefore forms part of the body.
@@ -215,10 +208,10 @@ func (pc parseContext) parse_txtarNode(n *parse.WithNode, kind string, args []pa
 
 	res = txtarNode{
 		nodeWrapper: &nodeWrapper{
-			rf:               pc.rootFile,
+			rf:               rf,
 			underlying:       n,
-			errorContext:     pc.errorContext,
-			executionContext: pc.executionContext,
+			errorContext:     rf.errorContext,
+			executionContext: rf.executionContext,
 		},
 		typ:              kind,
 		lang:             lang,
@@ -231,20 +224,20 @@ func (pc parseContext) parse_txtarNode(n *parse.WithNode, kind string, args []pa
 	return res, nil
 }
 
-func (pc parseContext) parse_ActionNode(n *parse.ActionNode) (node, error) {
+func (rf *rootFile) parse_ActionNode(n *parse.ActionNode) (node, error) {
 	// The only forms we support for now are those with a single command
 	// with a list of args, e.g. {{{TODO "note on embedding"}}}
 	if len(n.Pipe.Cmds) != 1 {
-		return nil, pc.bodyError(n, "action node must comprise a single command")
+		return nil, rf.bodyError(n, "action node must comprise a single command")
 	}
 	c := n.Pipe.Cmds[0]
 	if l := len(c.Args); l == 0 {
-		return nil, pc.bodyError(c, "expected at least one arg, not zero")
+		return nil, rf.bodyError(c, "expected at least one arg, not zero")
 	}
 	arg0 := c.Args[0]
 	fn, ok := arg0.(*parse.IdentifierNode)
 	if !ok {
-		return nil, pc.bodyError(c, "expected identifier as first arg; got %T", arg0)
+		return nil, rf.bodyError(c, "expected identifier as first arg; got %T", arg0)
 	}
 	switch fn.Ident {
 	case "TODO":
@@ -254,12 +247,12 @@ func (pc parseContext) parse_ActionNode(n *parse.ActionNode) (node, error) {
 	case "reference":
 		// TODO implement parsing of reference nodes
 	default:
-		return nil, pc.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
+		return nil, rf.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
 	}
 	return &nodeWrapper{
-		rf:               pc.rootFile,
+		rf:               rf,
 		underlying:       n,
-		errorContext:     pc.errorContext,
-		executionContext: pc.executionContext,
+		errorContext:     rf.errorContext,
+		executionContext: rf.executionContext,
 	}, nil
 }
