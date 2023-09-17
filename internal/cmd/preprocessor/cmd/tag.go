@@ -22,4 +22,9 @@ const (
 	// output is just the commands, but not any output they would otherwise have
 	// generated.
 	tagNorun = "norun"
+
+	// tagCodeTab identifies the tag key used to pass options to the code-tab emitted
+	// for a file in a txtar-based directive like sidebyside or upload. A tagCodeTab
+	// tag requires an argument, the filepath of a file in the files in the archive.
+	tagCodeTab = "codetab"
 )
