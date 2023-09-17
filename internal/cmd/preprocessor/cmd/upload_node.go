@@ -46,6 +46,17 @@ func (u *uploadNode) writeTransformTo(b *bytes.Buffer) error {
 		Language: a.Ext,
 	}
 	p("```%s { title=%q", props.Language, props.Name)
+
+	// Work out if there are any code-tab options specified via the codetab tag.
+	// If there are, add them.
+	opts, _, err := u.tag(tagCodeTab, f.Name)
+	if err != nil {
+		return u.errorf("failed to search for tag %v(%v): %v", tagCodeTab, f.Name, err)
+	}
+	for _, o := range opts {
+		p(" %s", o)
+	}
+
 	p(" }\n")
 	p("%s", f.Data)
 	p("```")
