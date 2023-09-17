@@ -25,6 +25,7 @@ package site
 >title: JSON Superset
 >---
 >{{{with upload "en" "upload-some-cue"}}}
+>#codetab(in.cue) linenos="table"
 >-- in.cue --
 >// A doc comment
 >map: {
@@ -39,7 +40,7 @@ package site
 ---
 title: JSON Superset
 ---
-```cue { title="in.cue" }
+```cue { title="in.cue" linenos="table" }
 // A doc comment
 map: {
 	member1: 3 // a line comment
