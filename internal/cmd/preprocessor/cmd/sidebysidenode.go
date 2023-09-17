@@ -30,8 +30,6 @@ const (
 	fnSidebyside = "sidebyside"
 
 	goldenExt = ".golden"
-
-	tagNorun = "norun"
 )
 
 type sidebysideNode struct {
