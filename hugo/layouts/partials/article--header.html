@@ -13,7 +13,7 @@
             <h1 class="article__title">{{ .Title }}</h1>
         {{ end }}
 
-        {{- if or .Params.meta .Date $tags -}}
+        {{- if or .Params.meta .Date $tags .Params.authors -}}
             <div class="article__info">
                 {{- if .Params.authors -}}
                     <div class="article__authors">{{ partial "authors" . }}</div>

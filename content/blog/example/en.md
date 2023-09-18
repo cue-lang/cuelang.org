@@ -6,7 +6,6 @@ noindex: true
 image: "cow.jpg"
 authors:
     - pauljolly
-    - marcelvanlohuizen
     - jonathanmatthews
 tags:
     - Use encodings in CUE
