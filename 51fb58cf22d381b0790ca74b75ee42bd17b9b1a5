@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96043c56_a9afe6eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 43
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-18T15:52:01Z",
+      "side": 1,
+      "message": "Marking as hold pending the previous CL, but getting a +2 now unblocks the chain.",
+      "revId": "51fb58cf22d381b0790ca74b75ee42bd17b9b1a5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
