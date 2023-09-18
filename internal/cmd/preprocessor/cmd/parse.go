@@ -74,25 +74,9 @@ func (rf *rootFile) parse() error {
 		return rf.errorf("%v: failed to parse body: %v", rf, err)
 	}
 	rf.body = parseTrees[rf.filename]
-	parts := rf.body.Root.Nodes
-
-	for _, n := range parts {
-		var newNode node
-		var err error
-		switch n := n.(type) {
-		case *parse.TextNode:
-			newNode, err = rf.parse_TextNode(n)
-		case *parse.WithNode:
-			newNode, err = rf.parse_WithNode(n)
-		case *parse.ActionNode:
-			newNode, err = rf.parse_ActionNode(n)
-		default:
-			return rf.bodyError(n, "do not know how to handle node of type %T", n)
-		}
-		if err != nil {
-			return err
-		}
-		rf.bodyParts = append(rf.bodyParts, newNode)
+	rf.bodyParts, err = rf.parse_ListNode(rf.body.Root)
+	if err != nil {
+		return err
 	}
 
 	// The first part will always be a *parse.TextNode, because it contains the header
@@ -103,6 +87,26 @@ func (rf *rootFile) parse() error {
 	tn := rf.bodyParts[0].(*textNode)
 	utn := tn.underlying.(*parse.TextNode)
 	tn.text = bytes.TrimPrefix(utn.Text, rf.bodyPrefix)
+
+	return nil
+}
+
+// walkBody performs a preorder traversal of the rootFile's body nodes.
+//
+// We know when executing this function that we successfully parsed
+// the underlying text/template into our nodes, which means we can be
+// safe/sure on the structure, nested-ness etc of nodes, and just walk
+// them.
+func (rf *rootFile) walkBody(f func(n node) error) error {
+	var work []node = rf.bodyParts
+
+	var n node
+	for len(work) > 0 {
+		n, work = work[0], work[1:]
+		if err := f(n); err != nil {
+			return err
+		}
+	}
 
 	return nil
 }
@@ -120,6 +124,28 @@ func (rf *rootFile) nodePos(theNode parse.Node) string {
 	loc, _ := rf.body.ErrorContext(theNode)
 	_, after, _ := strings.Cut(loc, ":")
 	return after
+}
+
+// parse_ListNode walks a *parse.ListNode and extracts nodes.
+func (rf *rootFile) parse_ListNode(ln *parse.ListNode) (res []node, err error) {
+	for _, n := range ln.Nodes {
+		var newNode node
+		switch n := n.(type) {
+		case *parse.TextNode:
+			newNode, err = rf.parse_TextNode(n)
+		case *parse.WithNode:
+			newNode, err = rf.parse_WithNode(n)
+		case *parse.ActionNode:
+			newNode, err = rf.parse_ActionNode(n)
+		default:
+			err = rf.bodyError(n, "do not know how to handle node of type %T", n)
+		}
+		if err != nil {
+			return nil, err
+		}
+		res = append(res, newNode)
+	}
+	return
 }
 
 // parse_TextNode parses a text-only node.

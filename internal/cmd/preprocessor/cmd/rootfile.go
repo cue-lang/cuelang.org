@@ -180,10 +180,10 @@ func (rf *rootFile) validate() error {
 
 	// Ensure labels across steps (irrespective of type) are unique
 	labels := make(map[string]map[string][]node)
-	for _, bp := range rf.bodyParts {
+	err := rf.walkBody(func(bp node) error {
 		n, ok := bp.(labelledNode)
 		if !ok {
-			continue
+			return nil
 		}
 		t := n.nodeType()
 		tld := labels[t]
@@ -195,6 +195,10 @@ func (rf *rootFile) validate() error {
 		nls := tld[l]
 		nls = append(nls, bp)
 		tld[l] = nls
+		return nil
+	})
+	if err != nil {
+		return err
 	}
 	types := maps.Keys(labels)
 	sort.Strings(types)
@@ -218,17 +222,18 @@ func (rf *rootFile) validate() error {
 	}
 
 	// Validate those parts which have a validate() method
-	for _, bp := range rf.bodyParts {
-		bp, ok := bp.(validatingNode)
+	err = rf.walkBody(func(n node) error {
+		bp, ok := n.(validatingNode)
 		if !ok {
-			continue
+			return nil
 		}
 		if err := bp.validate(); err != nil {
 			rf.errorf("%v: %v", bp, err)
 		}
-	}
+		return nil
+	})
 
-	return nil
+	return err
 }
 
 // run is responsible for updating those nodes which contain inputs and outputs.
@@ -237,10 +242,10 @@ func (rf *rootFile) validate() error {
 // that we can support.
 func (rf *rootFile) run() error {
 	var wait []waitRunnable
-	for i := range rf.bodyParts {
-		n, ok := rf.bodyParts[i].(runnableNode)
+	err := rf.walkBody(func(rn node) error {
+		n, ok := rn.(runnableNode)
 		if !ok {
-			continue
+			return nil
 		}
 		// Ideally we run nodes concurrently, in which case a node needs to
 		// have its own error context (how do we enforce that?).
@@ -265,7 +270,7 @@ func (rf *rootFile) run() error {
 
 		if !cacheMiss && !rf.skipCache {
 			rf.debugf(rf.debugCache, "%v: cache hit for %v; not running", rf, hashPath)
-			continue
+			return nil
 		}
 
 		if cacheMiss && rf.norun {
@@ -286,6 +291,10 @@ func (rf *rootFile) run() error {
 		}
 		r := n.run()
 		wait = append(wait, runRunnable(r))
+		return nil
+	})
+	if err != nil {
+		return err
 	}
 
 	for _, v := range wait {
@@ -322,16 +331,20 @@ func (rf *rootFile) writePageCache() error {
 	var didWork bool
 	// Build a cue.Value of the cache entries
 	v := rf.ctx.CompileString("{}")
-	for i := range rf.bodyParts {
-		n, ok := rf.bodyParts[i].(runnableNode)
+	err := rf.walkBody(func(rn node) error {
+		n, ok := rn.(runnableNode)
 		if !ok {
-			continue
+			return nil
 		}
 		h, _ := rf.createHash()
 		p := rf.hashRunnableNode(n, h)
 		strHash := base64.StdEncoding.EncodeToString(h.Sum(nil))
 		v = v.FillPath(p, strHash)
 		didWork = true
+		return nil
+	})
+	if err != nil {
+		return err
 	}
 	if !didWork {
 		return nil
@@ -390,9 +403,8 @@ func (rf *rootFile) writeTarget(b *bytes.Buffer) error {
 	b.WriteString(headerLine)
 	b.Write(rf.header)
 	b.WriteString(headerLine)
-	parts := rf.bodyParts
 
-	for _, n := range parts {
+	for _, n := range rf.bodyParts {
 		if err := n.writeTransformTo(b); err != nil {
 			return err
 		}
