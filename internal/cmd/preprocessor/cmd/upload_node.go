@@ -62,3 +62,34 @@ func (u *uploadNode) writeTransformTo(b *bytes.Buffer) error {
 	p("```")
 	return nil
 }
+
+type uploadNodeRunContext struct {
+	*txtarRunContext
+}
+
+func (u *uploadNode) run() runnable {
+	return &uploadNodeRunContext{
+		txtarRunContext: &txtarRunContext{
+			txtarNode:        u.txtarNode,
+			executionContext: u.executionContext,
+			bufferedErrorContext: &errorContextBuffer{
+				executionContext: u.executionContext,
+			},
+		},
+	}
+}
+
+func (u *uploadNodeRunContext) run() (err error) {
+	defer recoverFatalError(&err)
+
+	// Skip entirely if the #norun tag is present
+	if _, ok, _ := u.tag(tagNorun, ""); ok {
+		return nil
+	}
+
+	if err := u.formatFiles(); err != nil {
+		return errorIfInError(u)
+	}
+
+	return nil
+}

@@ -1,19 +1,18 @@
-# Ensure that preprocessor understands how to handle multi-stage scripts
+# Ensure that preprocessor understands how to handle multi-stage scripts.
+# This includes formatting an upload node, running a script node, and
+# skipping formatting a file in another upload node.
 
-unquote content/dir/en.md
-
-# Make a golden file of the input to ensure it is written back intact
-cp content/dir/en.md content/dir/en.md.golden
+unquote content/dir/en.md content/dir/en.md.writeBack.golden
 
 # Run the preprocessor
-exec preprocessor execute --debug=general
+exec preprocessor execute --debug=all
 
 # Copy the resulting soure file sideways and use that in comparison
 # so that we don't inadvertently update it when using CUE_UPDATE=1
 cp content/dir/en.md content/dir/en.md.writeBack
 
 # Verify that the source file is intact
-cmp content/dir/en.md.writeBack content/dir/en.md.golden
+cmp content/dir/en.md.writeBack content/dir/en.md.writeBack.golden
 
 # Verify that the target files match the source contents
 cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
@@ -30,8 +29,40 @@ package site
 >-- in.cue --
 >// A doc comment
 >map: {
+>member1: 3 // a line comment
+>member2: 4
+>}
+>{{{end}}}
+>{{{with upload "en" "upload-some-json"}}}
+>#nofmt(in.json)
+>-- in.json --
+>{
+>"x": 5
+>}
+>{{{end}}}
+>{{{with script "en" "run-the-cue"}}}
+>cue eval in.cue # test
+>{{{end}}}
+>{{{end}}}
+-- content/dir/en.md.writeBack.golden --
+>---
+>title: JSON Superset
+>---
+>{{{with step}}}
+>{{{with upload "en" "upload-some-cue"}}}
+>#codetab(in.cue) linenos="table"
+>-- in.cue --
+>// A doc comment
+>map: {
 >	member1: 3 // a line comment
 >	member2: 4
+>}
+>{{{end}}}
+>{{{with upload "en" "upload-some-json"}}}
+>#nofmt(in.json)
+>-- in.json --
+>{
+>"x": 5
 >}
 >{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
@@ -48,6 +79,11 @@ title: JSON Superset
 map: {
 	member1: 3 // a line comment
 	member2: 4
+}
+```
+```json { title="in.json" }
+{
+"x": 5
 }
 ```
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAo=" }
