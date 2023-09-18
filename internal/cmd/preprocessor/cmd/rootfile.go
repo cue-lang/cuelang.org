@@ -38,6 +38,7 @@ var (
 	// were function calls.
 	templateFunctions = map[string]any{
 		fnSidebyside: true,
+		fnStep:       true,
 		"reference":  true,
 		"def":        true,
 		"sidetrack":  true,
@@ -88,6 +89,10 @@ type rootFile struct {
 	// to the input format, run (to update itself), or written
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
+
+	// stepNumber is the number of the last step directive that was parsed. The
+	// first step is numbered 1.
+	stepNumber int
 
 	// bufferedErrorContext reuses the existing page.errorContext because for
 	// now we don't do root files concurrently

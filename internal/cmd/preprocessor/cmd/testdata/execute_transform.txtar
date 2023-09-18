@@ -43,6 +43,7 @@ package site
 >
 >Some text before
 >
+>{{{with step}}}
 >{{{with sidebyside "en" "json-superset"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
@@ -60,6 +61,11 @@ package site
 >    }
 >}
 >{{{end}}}
+>{{{end}}}
+>
+>{{{with step}}}
+>some text
+>{{{end}}}
 >
 >Some text after
 >
@@ -70,6 +76,7 @@ title: JSON Superset
 
 Some text before
 
+{{< step stepNumber="1" >}}
 {{< code-tabs >}}
 {{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 // A doc comment
@@ -87,6 +94,11 @@ map: {
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+{{< /step >}}
+
+{{< step stepNumber="2" >}}
+some text
+{{< /step >}}
 
 Some text after
 
