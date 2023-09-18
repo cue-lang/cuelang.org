@@ -39,7 +39,7 @@ type sidebysideNode struct {
 }
 
 func (s *sidebysideNode) nodeType() string {
-	return "sidebyside"
+	return fnSidebyside
 }
 
 var _ runnableNode = (*sidebysideNode)(nil)

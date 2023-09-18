@@ -166,7 +166,7 @@ func (pc parseContext) parse_WithNode(n *parse.WithNode) (node, error) {
 		return nil, pc.bodyError(c, "expected identifier as first arg; got %T", arg0)
 	}
 	switch fn.Ident {
-	case "sidebyside":
+	case fnSidebyside:
 		t, err := pc.parse_txtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
