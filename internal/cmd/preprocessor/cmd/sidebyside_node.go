@@ -19,7 +19,6 @@ import (
 	"fmt"
 	"html/template"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strings"
 
@@ -43,84 +42,30 @@ func (s *sidebysideNode) nodeType() string {
 var _ runnableNode = (*sidebysideNode)(nil)
 
 type sidebysideNodeRunContext struct {
-	*sidebysideNode
-	bufferedErrorContext
+	*txtarRunContext
 }
 
 func (s *sidebysideNode) run() runnable {
 	return &sidebysideNodeRunContext{
-		sidebysideNode: s,
-		bufferedErrorContext: &errorContextBuffer{
+		txtarRunContext: &txtarRunContext{
+			txtarNode:        s.txtarNode,
 			executionContext: s.executionContext,
+			bufferedErrorContext: &errorContextBuffer{
+				executionContext: s.executionContext,
+			},
 		},
 	}
 }
 
 func (s *sidebysideNodeRunContext) run() (err error) {
 	defer recoverFatalError(&err)
+
 	// Skip entirely if the #norun tag is present
 	if _, ok, _ := s.tag(tagNorun, ""); ok {
 		return nil
 	}
 
-	type job struct {
-		f   *txtar.File
-		cmd *exec.Cmd
-		out bytes.Buffer
-	}
-	var jobs []*job
-
-	// First format all non-output files
-	for i := range s.sourceArchive.Files {
-		f := &s.sourceArchive.Files[i]
-		a := analyseFilename(f.Name)
-		if a.IsOut {
-			continue
-		}
-		var cmd *exec.Cmd
-		switch a.Ext {
-		case "json":
-			cmd = s.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
-			cmd.Stdin = bytes.NewReader(f.Data)
-		case "yaml":
-			cmd = s.dockerCmd(nil, "cue", "export", "--out=yaml", "yaml:", "-")
-			cmd.Stdin = bytes.NewReader(f.Data)
-		case "cue":
-			cmd = s.dockerCmd(nil, "cue", "fmt", "-")
-			cmd.Stdin = bytes.NewReader(f.Data)
-		default:
-			s.debugf(s.debugGeneral, "%v: skipping formatting of file %s; unknown extension", s, a.Basename)
-		}
-		if cmd == nil {
-			// Nothing to do
-			continue
-		}
-		jobs = append(jobs, &job{
-			f:   f,
-			cmd: cmd,
-		})
-	}
-
-	// Start the formatting jobs
-	for _, j := range jobs {
-		j.cmd.Stdout = &j.out
-		j.cmd.Stderr = &j.out
-		s.debugf(s.debugGeneral, "%v: running %v", s, j.cmd)
-		if err := j.cmd.Start(); err != nil {
-			s.errorf("%v: failed to start %v: %v", s, j.cmd, err)
-		}
-	}
-
-	// Wait for the formatting jobs in order
-	for _, j := range jobs {
-		if err := j.cmd.Wait(); err != nil {
-			s.errorf("%v: failed to run %v: %v\n%s", s, j.cmd, err, tabIndent(j.out.Bytes()))
-		} else {
-			j.f.Data = j.out.Bytes()
-		}
-	}
-
-	if s.isInError() {
+	if err := s.formatFiles(); err != nil {
 		return errorIfInError(s)
 	}
 
@@ -237,42 +182,6 @@ func tabIndent(b []byte) []byte {
 		return b
 	}
 	return append([]byte("\t"), bytes.ReplaceAll(b, []byte("\n"), []byte("\n\t"))...)
-}
-
-func (s *sidebysideNodeRunContext) dockerCmd(dockerArgs []string, cmdArgs ...string) *exec.Cmd {
-	td, err := s.tempDir("")
-	if err != nil {
-		s.fatalf("%v: failed to create temp dir: %v", s, err)
-	}
-	var args []string
-	args = append(args,
-		"docker", "run", "--rm",
-
-		// Need to be able to pass stdin
-		"-i",
-
-		// All docker images used by unity must support this interface
-		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
-		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
-	)
-
-	// If the user wants to be unsafe and _not_ isolate the network let them
-	// It results in much faster running times when working on changes in the
-	// preprocessor.
-	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
-		args = append(args, "--network=host")
-	}
-
-	args = append(args, dockerArgs...)
-	args = append(args,
-		// TODO: support per-guide docker images
-		dockerImageTag,
-		"--",
-	)
-	args = append(args, cmdArgs...)
-	cmd := exec.Command(args[0], args[1:]...)
-	cmd.Dir = td
-	return cmd
 }
 
 func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
