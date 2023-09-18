@@ -247,6 +247,9 @@ func (t *txtarRunContext) formatFiles() error {
 	// First format all non-output files
 	for i := range t.sourceArchive.Files {
 		f := &t.sourceArchive.Files[i]
+		if _, ok, _ := t.tag(tagNoFmt, f.Name); ok {
+			continue
+		}
 		a := analyseFilename(f.Name)
 		if a.IsOut {
 			continue
