@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 
@@ -162,20 +163,20 @@ type txtarAnalysis struct {
 }
 
 type filenameAnalysis struct {
-	// Filepath is the original file path
+	// Filepath is the original file path.
 	Filepath string
 
-	// Basename is the Basename of the last element of filepath
+	// Basename is the last element of filepath with Ext removed.
 	Basename string
 
 	// Ext is the bit of the last element of filepath after the last '.' (unlike
-	// filepath.Ext which starts at the final '.')
+	// filepath.Ext which starts at the final '.').
 	Ext string
 
-	// IsGolden is set if the file is considered a golden file
+	// IsGolden is set if the file is considered a golden file.
 	IsGolden bool
 
-	// IsOut is set if the file is considered an output in the archive
+	// IsOut is set if the file is considered an output in the archive.
 	IsOut bool
 }
 
@@ -226,4 +227,112 @@ func analyseFilename(p string) (res filenameAnalysis) {
 		res.IsOut = true
 	}
 	return
+}
+
+type txtarRunContext struct {
+	txtarNode
+	bufferedErrorContext
+	*executionContext
+}
+
+// formatFiles formats the files in the source archive.
+func (t *txtarRunContext) formatFiles() error {
+	type job struct {
+		f   *txtar.File
+		cmd *exec.Cmd
+		out bytes.Buffer
+	}
+	var jobs []*job
+
+	// First format all non-output files
+	for i := range t.sourceArchive.Files {
+		f := &t.sourceArchive.Files[i]
+		a := analyseFilename(f.Name)
+		if a.IsOut {
+			continue
+		}
+		var cmd *exec.Cmd
+		switch a.Ext {
+		case "json":
+			cmd = t.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+		case "yaml":
+			cmd = t.dockerCmd(nil, "cue", "export", "--out=yaml", "yaml:", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+		case "cue":
+			cmd = t.dockerCmd(nil, "cue", "fmt", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+		default:
+			t.debugf(t.debugGeneral, "%v: skipping formatting of file %s; unknown extension", t, a.Basename)
+		}
+		if cmd == nil {
+			// Nothing to do
+			continue
+		}
+		jobs = append(jobs, &job{
+			f:   f,
+			cmd: cmd,
+		})
+	}
+
+	// Start the formatting jobs
+	for _, j := range jobs {
+		j.cmd.Stdout = &j.out
+		j.cmd.Stderr = &j.out
+		t.debugf(t.debugGeneral, "%v: running %v", t, j.cmd)
+		if err := j.cmd.Start(); err != nil {
+			t.errorf("%v: failed to start %v: %v", t, j.cmd, err)
+		}
+	}
+
+	// Wait for the formatting jobs in order
+	for _, j := range jobs {
+		if err := j.cmd.Wait(); err != nil {
+			t.errorf("%v: failed to run %v: %v\n%s", t, j.cmd, err, tabIndent(j.out.Bytes()))
+		} else {
+			j.f.Data = j.out.Bytes()
+		}
+	}
+
+	if t.isInError() {
+		return errorIfInError(t)
+	}
+
+	return nil
+}
+
+func (t *txtarRunContext) dockerCmd(dockerArgs []string, cmdArgs ...string) *exec.Cmd {
+	td, err := t.tempDir("")
+	if err != nil {
+		t.fatalf("%v: failed to create temp dir: %v", t, err)
+	}
+	var args []string
+	args = append(args,
+		"docker", "run", "--rm",
+
+		// Need to be able to pass stdin
+		"-i",
+
+		// All docker images used by unity must support this interface
+		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
+		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
+	)
+
+	// If the user wants to be unsafe and _not_ isolate the network let them
+	// It results in much faster running times when working on changes in the
+	// preprocessor.
+	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
+		args = append(args, "--network=host")
+	}
+
+	args = append(args, dockerArgs...)
+	args = append(args,
+		// TODO: support per-guide docker images
+		dockerImageTag,
+		"--",
+	)
+	args = append(args, cmdArgs...)
+	cmd := exec.Command(args[0], args[1:]...)
+	cmd.Dir = td
+	return cmd
 }
