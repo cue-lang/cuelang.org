@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "129872f9_8307b485",
+        "filename": "internal/cmd/preprocessor/cmd/parse.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-18T14:40:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a05a1c89_996d9d24",
+      "revId": "62c26c052087a646813b2716c0c208e806f2eb27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19798b23_e1905b19",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-18T14:35:09Z",
       "side": 1,
       "message": "every `walkBody` caller so far is only interested in one node type - if it will continue to be like that, you could always consider making the \"walk\" helper do that, e.g. pass a `func(runnableNode) error` rather than `func(node) error` via generics, and have the walk func do the filtering for you.\n\na minor detail though, it might or might not help depending on what kinds of \"walks\" you want to do in the future.",
+      "revId": "62c26c052087a646813b2716c0c208e806f2eb27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "157db8b6_48aa4a5d",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-18T14:40:04Z",
+      "side": 1,
+      "message": "Yeh, unclear that all walks will be of a particular type at this point. So I will leave this type \"open\" as the wider interface for now, but good thought.",
+      "parentUuid": "19798b23_e1905b19",
       "revId": "62c26c052087a646813b2716c0c208e806f2eb27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
