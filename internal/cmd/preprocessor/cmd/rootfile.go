@@ -297,13 +297,13 @@ func (rf *rootFile) run() error {
 		}
 		return nil
 	})
-	for _, r := range torun {
-		wait = append(wait, runRunnable(r))
-	}
 	if err != nil {
 		return err
 	}
 
+	for _, r := range torun {
+		wait = append(wait, runRunnable(r))
+	}
 	for _, v := range wait {
 		<-v.done
 
