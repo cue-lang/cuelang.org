@@ -23,6 +23,11 @@ const (
 	// generated.
 	tagNorun = "norun"
 
+	// tagNoFormat is the tag used in a txtar-based directive to indicate that a
+	// file in the archive should not be formatted. A tagNoFormat tag requires an
+	// argument, the filepath of the file not to format.
+	tagNoFmt = "nofmt"
+
 	// tagCodeTab identifies the tag key used to pass options to the code-tab emitted
 	// for a file in a txtar-based directive like sidebyside or upload. A tagCodeTab
 	// tag requires an argument, the filepath of a file in the files in the archive.
