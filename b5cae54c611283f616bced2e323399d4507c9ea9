@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b57e37b2_932a7937",
+        "filename": "internal/cmd/preprocessor/cmd/scriptNode.go",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-18T15:24:50Z",
+      "side": 1,
+      "message": "Done. Also introduced an earlier CL that makes other filenames consistent in the same respect.",
+      "parentUuid": "88c2a603_fe0751c4",
+      "revId": "b5cae54c611283f616bced2e323399d4507c9ea9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ad29f90f_ae473ee4",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc4e1a1a_74187dac",
+        "filename": "internal/cmd/preprocessor/cmd/scriptNode.go",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-18T15:24:50Z",
+      "side": 1,
+      "message": "Done. This resulted from copy-paste/templating from other files.",
+      "parentUuid": "ad29f90f_ae473ee4",
+      "revId": "b5cae54c611283f616bced2e323399d4507c9ea9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa09617c_697dd48b",
@@ -48,6 +84,30 @@
       "writtenOn": "2023-09-18T14:51:33Z",
       "side": 1,
       "message": "match",
+      "range": {
+        "startLine": 18,
+        "startChar": 31,
+        "endLine": 18,
+        "endChar": 37
+      },
+      "revId": "b5cae54c611283f616bced2e323399d4507c9ea9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "040db0e3_e038956e",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-18T15:24:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa09617c_697dd48b",
       "range": {
         "startLine": 18,
         "startChar": 31,
