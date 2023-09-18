@@ -21,6 +21,7 @@ import (
 	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
+	"golang.org/x/exp/slices"
 	"golang.org/x/tools/txtar"
 )
 
@@ -106,6 +107,9 @@ func (rf *rootFile) walkBody(f func(n node) error) error {
 		if err := f(n); err != nil {
 			return err
 		}
+		if s, ok := n.(*stepNode); ok {
+			work = append(slices.Clone(s.children), work...)
+		}
 	}
 
 	return nil
@@ -188,6 +192,10 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 			return nil, err
 		}
 		return &sidebysideNode{txtarNode: t}, nil
+	case fnStep:
+		// Increment first because we are numbering from 1
+		rf.stepNumber++
+		return rf.parse_stepNode(n, rf.stepNumber)
 	case "sidetrack":
 	default:
 		return nil, rf.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
@@ -198,6 +206,21 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		errorContext:     rf.errorContext,
 		executionContext: rf.executionContext,
 	}, nil
+}
+
+// parse_stepNode parses n into a *stepNode, which implies the parsing of its children
+func (rf *rootFile) parse_stepNode(n *parse.WithNode, number int) (res *stepNode, err error) {
+	sn := &stepNode{
+		number: number,
+		nodeWrapper: &nodeWrapper{
+			rf:               rf,
+			underlying:       n,
+			errorContext:     rf.errorContext,
+			executionContext: rf.executionContext,
+		},
+	}
+	sn.children, err = rf.parse_ListNode(n.List)
+	return sn, err
 }
 
 // parse_txtarNode extracts a txtar-based node, a value that will be wrapped
