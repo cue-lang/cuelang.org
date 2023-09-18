@@ -250,7 +250,7 @@ func (ec *executeContext) deriveHashOfSelf() (err error) {
 	// This fallback only works if the main module is is
 	// github.com/cue-lang/cuelang.org. (It might be possible to relax this
 	// constraint, but a tight constraint works for now).
-	hash, buf := ec.executionContext.createHash()
+	hash, _ := ec.executionContext.createHash()
 	err = fs.WalkDir(files, ".", func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
@@ -275,9 +275,6 @@ func (ec *executeContext) deriveHashOfSelf() (err error) {
 	}
 	if !didWork {
 		ec.fatalf("%v: did no work computing hash of self", ec)
-	}
-	if buf != nil {
-		ec.debugf(ec.debugCache, "hash of self: %s\n", tabIndent(buf.Bytes()))
 	}
 
 	ec.selfHash = base64.StdEncoding.EncodeToString(hash.Sum(nil))
