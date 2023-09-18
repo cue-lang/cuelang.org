@@ -8,7 +8,10 @@
 
                     <div class="article__content">
                         {{ .Content }}
-                        {{ partial "paging/section-index.html" . }}
+
+                        {{ if ne .Params.index_hide true }}
+                            {{ partial "paging/section-index.html" . }}
+                        {{ end }}
                     </div>
 
                     <footer class="article__footer">
