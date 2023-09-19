@@ -29,7 +29,7 @@ gets rounded down to the nearest whole number.
 Note that `k` is written as `K` instead.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a: 1_000_000
 b: 1M
 c: 1Mi
@@ -54,7 +54,7 @@ CUE can represent numbers in bases other than decimal.
 | Binary | 0b | 0b1111_1111 | 255 |
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 o: 0o755
 h: 0x00Dec0de
 b: 0b0101_0001

@@ -74,7 +74,7 @@ package site
 title: JSON Superset
 ---
 {{< step stepNumber="1" >}}
-```cue { title="in.cue" linenos="table" }
+```txt { title="in.cue" linenos="table" }
 // A doc comment
 map: {
 	member1: 3 // a line comment
