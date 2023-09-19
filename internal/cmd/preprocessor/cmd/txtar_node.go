@@ -178,6 +178,11 @@ type filenameAnalysis struct {
 
 	// IsOut is set if the file is considered an output in the archive.
 	IsOut bool
+
+	// Language is the name used when rendering a code block for the
+	// archive file. In most cases this will be the same value as Ext
+	// but this field exists in order to allow for varying it.
+	Language string
 }
 
 // analyseTxtarArchive provides common analysis that is used by
@@ -221,6 +226,8 @@ func analyseFilename(p string) (res filenameAnalysis) {
 		// Found a .
 		res.Basename = b[:i]
 		res.Ext = b[i+1:]
+
+		res.Language = res.Ext
 	}
 	switch res.Basename {
 	case "out", "stdout":
