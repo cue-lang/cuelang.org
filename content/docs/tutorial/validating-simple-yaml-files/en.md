@@ -7,6 +7,7 @@ tags:
     - cue command
     - validation
     - yaml
+toc_hide: true
 ---
 
 In this tutorial, you will use the `cue` command to check that simple YAML data
@@ -36,14 +37,14 @@ Call out only-tested-on-Linuxness?
 
 -->
 
-### Install the `cue` command
+## Install the `cue` command
 
 {{{with step}}}
 If you have not already, follow the steps for [downloading and installing
 CUE]({{< ref "docs/introduction/installation" >}}).
 {{{end}}}
 
-### Validate a single file
+## Validate a single data file
 
 {{{with step}}}
 Open a command prompt and create a new directory to hold this tutorial's files.
@@ -178,7 +179,7 @@ while following the tutorial or fixing the data file.
 Do not worry if this happens - just go back a few steps and try again!
 {{< /info >}}
 
-### Validating more than one file
+## Validating multiple data files
 
 The `cue vet` command can check more than one data file at once.
 
@@ -215,7 +216,7 @@ satisfy the schema.
 {{< /info >}}
 
 
-### Conclusion
+## Conclusion
 
 Well done! You can now use your `pets.cue` file to validate the contents of
 any number of pet data files in the future.
