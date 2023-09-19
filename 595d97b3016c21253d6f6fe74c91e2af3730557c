@@ -16,6 +16,23 @@
       "message": "I totally forgot about https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1167735. \n\nI will abandon this in favour of that.",
       "revId": "595d97b3016c21253d6f6fe74c91e2af3730557c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fb512f1_7f0cefee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T18:56:21Z",
+      "side": 1,
+      "message": "Actually, I will place this in the stack before https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1167735",
+      "revId": "595d97b3016c21253d6f6fe74c91e2af3730557c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
