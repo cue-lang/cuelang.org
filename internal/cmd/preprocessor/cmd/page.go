@@ -150,7 +150,7 @@ func (p *page) process() error {
 		// TODO: come up with a better approach to skipping certain files.
 		// Should this perhaps be an include-based approach?
 		switch filepath.Ext(n) {
-		case ".cue", ".golden":
+		case ".cue", ".golden", ".go":
 			continue
 		}
 
