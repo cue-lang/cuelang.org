@@ -5,10 +5,10 @@ package site
 			"validate-yaml-using-cue": {
 				cache: {
 					upload: {
-						"initial x.yaml": "0YNdkhi110tidXGQRwyEmIB7xVolCfNpix9MAq1Nl+8="
-						"initial x.cue":  "SUNISyvDutkSuyM7YNgnPSjKvPBampZ9/BX/ZTX3HTA="
-						"another person": "KtE8UIgDSysaG0LfFV/BXIWIoyCosIIGRAXH01tzEEY="
-						"fixed yaml":     "bNYOFnIjIznHuDXRjUxOnswS4BzyczziuNwwDX9KQWo="
+						"initial x.yaml": "8ZLxMAO8w+jFRXLeUnXo4i28mBPYHzLgxN16JjwcCdE="
+						"initial x.cue":  "IyV7c4jiUXJRMllv04awuA0YUGSqGbU40IR3dRdS5mY="
+						"another person": "Ihrf6FFmbv9+zM7FifiIu3myHo97HyD+3n55I69Jqsg="
+						"fixed yaml":     "TviPK94iEeidZtAxCS/kPEgk5KPrmzcHauMDdjg/vHw="
 					}
 				}
 			}
