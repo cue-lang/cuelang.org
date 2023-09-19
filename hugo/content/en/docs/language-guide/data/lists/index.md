@@ -10,11 +10,11 @@ List elements are considered to be a special kind of data field, with elements
 indexed by their position.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a: [1, 2]
 "a": [1, 2, 3]
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 a: [1, 2, 3]
 {{< /code-tab >}}
 {{< /code-tabs >}}

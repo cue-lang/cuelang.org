@@ -22,7 +22,7 @@ that identifier in any of the parent nodes.
 If there are multiple parents with the same name, the “innermost” name parent wins.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a: 1
 b: a
 c: {
@@ -36,7 +36,7 @@ d: {
 	b: a
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 a: 1
 b: 1
 c: {
@@ -54,7 +54,7 @@ A field that uses quotes may not be referenced with its unquoted name, even if
 it would otherwise be a valid identifier.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 "foo": 2
 a:     foo // error
 {{< /code-tab >}}
@@ -68,14 +68,14 @@ Aliases allows referring to fields with names that have to be quoted, by
 allowing those to be associated with an identifier.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 X="a-b": 1 // a-b must be quoted
 b:       X
 
 Y=c: 2
 d:   Y // equivalent to d: c
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 "a-b": 1
 b:     1
 c:     2
@@ -91,10 +91,10 @@ List values can be similarly aliased.
 </aside>
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 [X=1, X, X]
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 [1, 1, 1]
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -103,12 +103,12 @@ In most cases, instead of referencing a field alias of a parent node one should
 use value aliases.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a: X={
 	bar: X.foo
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 a: {
     bar: X.foo
 }
@@ -130,7 +130,7 @@ referencing a field in a map or an integral number when referring to an element
 in a list.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a: {
     b:         2
     "foo-bar": 3
@@ -141,7 +141,7 @@ x: a.b
 y: a."foo-bar"
 z: b.1.foo
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -156,7 +156,7 @@ The main difference is that it allows negative indices to index from the end of
 a list.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a: B: 1
 b: "B"
 c: [0, 1, 2]
@@ -165,7 +165,7 @@ x: a.(b)
 y: c.(x)
 z: b[-1]
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -179,7 +179,7 @@ Each reference to a let expression is unique: let expressions never clash when
 merging two maps.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
  let X = {list: []}
 a: X
 b: X
@@ -188,7 +188,7 @@ c: X
 // Setting any of the above fields does not influence the other.
 b: list: [1, 2]
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
