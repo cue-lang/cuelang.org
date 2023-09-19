@@ -10,7 +10,7 @@ tags:
     - Language
     - Ecosystem
 authors:
-    - pauljolly
+    - myitcv
 ---
 
 Hugo uses front-matter to add meta information to a content page. This can be done various formats - in the CUE website we prefer **YAML** (To be decided).

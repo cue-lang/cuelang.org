@@ -9,50 +9,32 @@
         {{ range first 1 $authorMatches }}
             <details class="authors__item" data-dropdown>
                 <summary class="authors__avatar">
-                    {{ if .Params.image }}
-                        <img class="authors__image" src="/{{ .File.Dir }}{{ .Params.image }}" alt="{{ .Params.displayName|default .Params.name }}">
-                    {{ else }}
-                        {{- partial "icon.html" (dict "icon" "cue" "class" "authors__image") -}}
-                    {{ end }}
+                    <img class="authors__image" src="https://github.com/{{ .Params.github }}.png" alt="{{ .Params.github|default .Params.name }}">
 
-                    {{ if .Params.displayName }}
-                        <span class="authors__display-name">{{ .Params.displayName }}</span>
-                    {{ else }}
-                        <span class="authors__author-name">{{ .Params.name }}</span>
-                    {{ end }}
+                    <span class="authors__author-name">{{ .Params.name }}</span>
                 </summary>
 
                 <div class="authors--popover">
                     <div class="authors__avatar">
-                        {{ if .Params.image }}
-                            <img class="authors__image" src="/{{ .File.Dir }}{{ .Params.image }}" alt="{{ .Params.displayName|default .Params.name }}">
-                        {{ else }}
-                            {{- partial "icon.html" (dict "icon" "cue" "class" "authors__image") -}}
-                        {{ end }}
+                        <img class="authors__image" src="https://github.com/{{ .Params.github }}.png" alt="{{ .Params.github|default .Params.name }}">
 
                         <div class="authors__name">
-                            {{ if .Params.displayName }}
-                                <span class="authors__display-name">{{ .Params.displayName }}</span>
-                            {{ end }}
+                            <span class="authors__display-name">{{ .Params.github }}</span>
 
-                            {{ if .Params.name }}
-                                <span class="authors__author-name">{{ .Params.name }}</span>
-                            {{ end }}
+                            <span class="authors__author-name">{{ .Params.name }}</span>
                         </div>
                     </div>
 
                     <div class="authors__links">
-                        {{ if .Params.githubLink }}
-                            <div class="authors__github">
+                        <div class="authors__github">
 
-                                <a class="authors__link" href="{{ .Params.githubLink }}">
-                                    {{ partial "icon.html" (dict "icon" "github" "class" "authors__icon") }}
-                                    <p>
-                                        <span class="authors__link-text">{{ T "author_github" }}</span>
-                                    </p>
-                                </a>
-                            </div>
-                        {{ end }}
+                            <a class="authors__link" href="https://github.com/{{ .Params.github }}">
+                                {{ partial "icon.html" (dict "icon" "github" "class" "authors__icon") }}
+                                <p>
+                                    <span class="authors__link-text">{{ T "author_github" }}</span>
+                                </p>
+                            </a>
+                        </div>
 
                         <div class="authors__search">
                             <a class="authors__link" href="/search/?q=author:{{ replace .Name "/index.md" ""  }}">

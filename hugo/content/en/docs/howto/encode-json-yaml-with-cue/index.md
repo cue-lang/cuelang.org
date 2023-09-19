@@ -7,8 +7,8 @@ date: "2023-08-22"
 tags:
     - Use encodings in CUE
 authors:
-    - pauljolly
-    - marcelvanlohuizen
+    - myitcv
+    - mpvl
 meta:
     - type: readingTime
       value: 5
