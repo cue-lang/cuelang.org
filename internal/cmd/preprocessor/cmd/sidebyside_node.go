@@ -60,13 +60,13 @@ func (s *sidebysideNode) run() runnable {
 func (s *sidebysideNodeRunContext) run() (err error) {
 	defer recoverFatalError(&err)
 
+	if err := s.formatFiles(); err != nil {
+		return errorIfInError(s)
+	}
+
 	// Skip entirely if the #norun tag is present
 	if _, ok, _ := s.tag(tagNorun, ""); ok {
 		return nil
-	}
-
-	if err := s.formatFiles(); err != nil {
-		return errorIfInError(s)
 	}
 
 	// Is there a script to run? If there is no effective script, i.e. non blank
