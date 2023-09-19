@@ -6,11 +6,11 @@ package site
 				"value-constraints": {
 					cache: {
 						sidebyside: {
-							"unary-comparator-ok":    "DIDLpoqSCCKCNNNopJ9PRnhKwiYgA8tHoC+UXcapVaI="
-							"unary-comparator-err":   "mf5I4GEEuaDEGANq4Hrb/nEfonU439NtBX4vuiYVQLg="
-							"stdlib-validator":       "xDMYYBQ5lYMrzmllE1XW/U4hqe4rRMoZ7f+xCGTs+ic="
-							"stdlib-time":            "Hhz08svBM9EfeCi9S0/Uvp7rm4ra8Hn4HdVcvyVfpAc="
-							"stdlib-time-jsonschema": "DnsVTxt4AHSXbeDFeJxgGu8tHFo05nCF40VilOw6HQI="
+							"unary-comparator-ok":    "ZPDTiSIFWLY6Q+1SE96BTZWDy5h7HIMWG6Fv+bgo+lk="
+							"unary-comparator-err":   "uZh6JFsQZOu0tGxHErqPQyLHL5uLnW1056yVsl1Fcq0="
+							"stdlib-validator":       "yTvw7jmX1ZCh7cUyvwByhaCeJQAADL5Xl8DYftnw9Cg="
+							"stdlib-time":            "54Dg+R4TeDH/t60XepO41g/h/vL5SVS1mTchaME+9gQ="
+							"stdlib-time-jsonschema": "GZJhrmr8Q9o2pRlZiL8ICIa3a5M1oTJcinRdwRZLPxA="
 						}
 					}
 				}
