@@ -6,9 +6,9 @@ meta:
     - type: readingTime
       value: 5
 tags:
-    - Use encodings in CUE
-    - Language
-    - Ecosystem
+    - encodings
+    - language
+    - ecosystem
 authors:
     - myitcv
 ---

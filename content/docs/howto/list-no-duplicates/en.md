@@ -4,7 +4,7 @@ weight:
 draft: false
 toc_hide: true
 tags:
-    - Language
+    - language
 ---
 
 In CUE, you often will work with lists of all sorts of values. To ensure a list
