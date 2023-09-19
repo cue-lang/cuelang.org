@@ -28,9 +28,11 @@ GOBIN=$PWD/.gobin go install -trimpath -buildvcs=false ./internal/cmd/preprocess
 
 # Remove preprocessor target directory. This ensures we don't leave any stale
 # files lying around. Slight hack: only do so if we are running the execute command.
+# Note this ties this script to _scripts/serve.bash so if making changes to order
+# or args in that script, make changes to the check here.
 #
 # TODO: make the prepreprocess smart enough to do this itself.
-if [[ "${1:-}" == "execute" ]]; then
+if [[ "${1:-}" == "execute" && "${2:-}" != "--serve" ]]; then
 	rm -rf hugo/content
 fi
 
