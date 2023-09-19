@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c91fdb72_36b27680",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 43
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T14:54:51Z",
+      "side": 1,
+      "message": "Made a number of copy changes, as well as ensuring everything works via the preprocessor. The reference point for comparison is patchset 8.",
+      "revId": "4898c09369f967ffe06ec96af6c8b7160e24f6c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
