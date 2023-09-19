@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ecc575c_702a8a56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 41
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T14:42:42Z",
+      "side": 1,
+      "message": "Removing hold, because all parts of the stack below are now merged.",
+      "revId": "e03d5bb921174d11e1672143b3952d873ed0371c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
