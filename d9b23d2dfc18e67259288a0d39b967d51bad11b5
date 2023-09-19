@@ -16,6 +16,24 @@
       "message": "I can see that this is consistent, but I haven\u0027t checked that it\u0027s complete (across all .md files) or complete (amends all tags that exist).",
       "revId": "d9b23d2dfc18e67259288a0d39b967d51bad11b5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf4abfbb_c5c1035e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T14:55:36Z",
+      "side": 1,
+      "message": "Thanks, I did check this locally when making the changes (grepped for `tags` in `content/**/*.md` files).",
+      "parentUuid": "f472e6cb_f360cf86",
+      "revId": "d9b23d2dfc18e67259288a0d39b967d51bad11b5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
