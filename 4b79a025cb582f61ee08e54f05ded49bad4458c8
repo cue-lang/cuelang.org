@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e4f54d1_7aef1808",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9455728a_aa4ee18d",
+      "range": {
+        "startLine": 27,
+        "startChar": 48,
+        "endLine": 27,
+        "endChar": 53
+      },
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc2eef81_d441b9fa",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-19T09:35:35Z",
       "side": 1,
       "message": "includes",
+      "range": {
+        "startLine": 30,
+        "startChar": 36,
+        "endLine": 30,
+        "endChar": 46
+      },
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f06f8a79_7d9e6655",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc2eef81_d441b9fa",
       "range": {
         "startLine": 30,
         "startChar": 36,
@@ -66,6 +114,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b82f1105_86d4d2b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38b263a4_f144d440",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "22c73f6d_c8d8bbae",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 15
@@ -77,6 +143,41 @@
       "writtenOn": "2023-09-19T09:35:35Z",
       "side": 1,
       "message": "I also see that you use the shell parser to just validate bash syntax and extract the top-level list of statements with their \"negated\" fields. Not a problem as far as I\u0027m concerned - just want to note that you\u0027re allowing arbitrary syntax, so e.g. a guide could use a subshell with negated statements in it, or background commands, or all other sorts of shenanigans.\n\nNot an issue if we are writing the guides and we use simple enough syntax, but if you expect others to write or contribute guides with scripts, you might want to use https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Walk with some form of filtering allowlist to ensure that only a reasonable subset of bash is used.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e79f7608_da2c23d5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Thanks for the review.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7b6d0b8_5173f2d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "\u003e I also see that you use the shell parser to just validate bash syntax and extract the top-level list of statements with their \"negated\" fields. Not a problem as far as I\u0027m concerned - just want to note that you\u0027re allowing arbitrary syntax, so e.g. a guide could use a subshell with negated statements in it, or background commands, or all other sorts of shenanigans.\n\nYes, indeed. Understood and that\u0027s fine. All of this runs in Docker, so no safety concerns. And the only side effect of someone being too clever would be a script that, to the end reader, looks complicated, silly etc. That we would catch at review time.\n\n(Some commands are required for side-effect only, but we don\u0027t have a need for that yet).\n\n\u003e Not an issue if we are writing the guides and we use simple enough syntax, but if you expect others to write or contribute guides with scripts, you might want to use https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Walk with some form of filtering allowlist to ensure that only a reasonable subset of bash is used.\n\nPer the above comment, I think we\u0027re fine, certainly for now.",
+      "parentUuid": "22c73f6d_c8d8bbae",
       "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -98,6 +199,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a1d5ca9_e3783ef7",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e66a6196_1ef57a4b",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b49fe05f_5da48b39",
@@ -111,6 +230,24 @@
       "writtenOn": "2023-09-19T09:35:35Z",
       "side": 1,
       "message": "I wonder if this kind of attribution is necessary given that it\u0027s... you? :) and you\u0027re authoring this commit as well. You could make a note in the commit message and not need to leave the note in the godoc forever.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14e2e777_b7fdc82d",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done. Removed the comment, left the commit message.",
+      "parentUuid": "b49fe05f_5da48b39",
       "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -132,6 +269,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de5013ce_7949cd14",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6874f969_798677b8",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0ef1041_f4144aec",
@@ -145,6 +300,24 @@
       "writtenOn": "2023-09-19T09:35:35Z",
       "side": 1,
       "message": "we might disagree here, but I don\u0027t like using `%v` when we know the argument must be a string given how this Sprintf business is rather delicate - we _need_ the output to be valid shell.\n\nIf for any reason `getFence` were to start returning a non-string, I\u0027d rather have Sprintf blow up (e.g. via vet) rather than silently generate broken shell.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "759e259d_4ae9c81c",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "No, you are right :) \n\nI have this as a very bad habit, that I need to keep trying to fix 😊",
+      "parentUuid": "b0ef1041_f4144aec",
       "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -166,6 +339,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31cefaa0_afd5dc1d",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "My other favourite mistake :)",
+      "parentUuid": "d478b428_39d79183",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15421aca_5e7620cb",
@@ -179,6 +370,24 @@
       "writtenOn": "2023-09-19T09:35:35Z",
       "side": 1,
       "message": "you\u0027re hashing the timestamp, so does it matter how you encode it? for example you could use `sha256.Sum256(strconv.AppendInt(nil, time.Now().UnixNano(), 16))`, which is a bit shorter.\n\nor, if you\u0027re set on the big endian format, then note that you can `binary.Write` straight into a sha256 hasher - no need for a buffer.\n\nSeparate to the above, I wonder if you could use deterministic fences, e.g. incrementing from 1 rather than using the wall time. I don\u0027t _think_ you need the fences to change between runs, and determinism could always be nice.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b642b2f3_e7dc0623",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "\u003e you\u0027re hashing the timestamp, so does it matter how you encode it? for example you could use `sha256.Sum256(strconv.AppendInt(nil, time.Now().UnixNano(), 16))`, which is a bit shorter.\n\nTook your form. \n\n\u003e or, if you\u0027re set on the big endian format, then note that you can `binary.Write` straight into a sha256 hasher - no need for a buffer.\n\nNo, not set on this.\n\n\u003e Separate to the above, I wonder if you could use deterministic fences, e.g. incrementing from 1 rather than using the wall time. I don\u0027t _think_ you need the fences to change between runs, and determinism could always be nice.\n\nThat change comes later along with caching, but it\u0027s a good observation.",
+      "parentUuid": "15421aca_5e7620cb",
       "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -206,6 +415,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fefaca5_58f3d73a",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "008dc1fa_3d23042c",
+      "range": {
+        "startLine": 509,
+        "startChar": 1,
+        "endLine": 514,
+        "endChar": 47
+      },
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2718c5c0_34204e22",
@@ -219,6 +452,24 @@
       "writtenOn": "2023-09-19T09:35:35Z",
       "side": 1,
       "message": "use https://pkg.go.dev/bytes#Cut?",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "249db04e_ce0004cd",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Ah nice spot. This code predates the introduction of cut :)",
+      "parentUuid": "2718c5c0_34204e22",
       "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -240,6 +491,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cd318fc_5b35acff",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5460ab3_287a2975",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fe7242b_f4b69fb1",
@@ -257,6 +526,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f9f3bea_1bb68873",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fe7242b_f4b69fb1",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24e76262_ffcd8a63",
@@ -270,6 +557,24 @@
       "writtenOn": "2023-09-19T09:35:35Z",
       "side": 1,
       "message": "FYI there\u0027s https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Parser.Stmts as well, whose main purpose is being interactive, but might also fit your use case here a bit better.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b3d77ca_edb2b4ed",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:39:53Z",
+      "side": 1,
+      "message": "Will leave a TODO for now, thanks for the pointer.",
+      "parentUuid": "24e76262_ffcd8a63",
       "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
