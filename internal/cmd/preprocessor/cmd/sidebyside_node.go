@@ -205,18 +205,18 @@ func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 		in, out := analyses[0], analyses[1]
 		tabs[0] = tabProps{
 			Name:     strings.ToUpper(in.Ext),
-			Language: in.Ext,
+			Language: in.Language,
 		}
 		tabs[1] = tabProps{
 			Name:     strings.ToUpper(out.Ext),
-			Language: out.Ext,
+			Language: out.Language,
 			Type:     "terminal",
 		}
 	} else {
 		for i, a := range analyses {
 			tp := &tabs[i]
 			tp.Name = a.Filepath
-			tp.Language = a.Ext
+			tp.Language = a.Language
 			if a.IsOut {
 				tp.Name = "TERMINAL"
 				tp.Type = "terminal"
