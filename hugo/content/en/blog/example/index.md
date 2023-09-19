@@ -8,9 +8,8 @@ authors:
     - myitcv
     - jpluscplusm
 tags:
-    - Use encodings in CUE
-    - Language
-    - Ecosystem
+    - encodings
+    - ecosystem
     - cue command
 meta:
     - type: readingTime

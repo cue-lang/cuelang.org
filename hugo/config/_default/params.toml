@@ -24,15 +24,15 @@ logo = "svg/logo-alpha.svg"
 
 
 # Tags
-# Color can be one of: red, orange, green, pink, purple, lila, blue, lavender
+# Color can be one of: red, orange, green, pink, purple, lilac, blue, lavender
 
 [[tags]]
-name = "Ecosystem"
+name = "ecosystem"
 color = "red"
 weight = 10
 
 [[tags]]
-name = "Use encodings in CUE"
+name = "encodings"
 color = "green"
 weight = 20
 
@@ -42,7 +42,17 @@ color = "purple"
 weight = 30
 
 [[tags]]
-name = "Language"
+name = "language"
 color = "blue"
 weight = 40
+
+[[tags]]
+name = "validation"
+color = "lilac"
+weight = 50
+
+[[tags]]
+name = "language"
+color = "orange"
+weight = 60
 

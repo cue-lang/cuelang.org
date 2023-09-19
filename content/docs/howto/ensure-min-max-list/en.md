@@ -4,7 +4,7 @@ weight:
 draft: false
 toc_hide: true
 tags:
-    - Language
+    - language
 ---
 
 ## Min

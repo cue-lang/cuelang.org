@@ -5,7 +5,7 @@ draft: false
 toc_hide: true
 date: "2023-08-22"
 tags:
-    - Use encodings in CUE
+    - encodings
 authors:
     - myitcv
     - mpvl
