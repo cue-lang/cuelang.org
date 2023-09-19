@@ -1,0 +1,277 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9455728a_aa4ee18d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "remove \"the\" perhaps?",
+      "range": {
+        "startLine": 27,
+        "startChar": 48,
+        "endLine": 27,
+        "endChar": 53
+      },
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc2eef81_d441b9fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "includes",
+      "range": {
+        "startLine": 30,
+        "startChar": 36,
+        "endLine": 30,
+        "endChar": 46
+      },
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38b263a4_f144d440",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "perhaps leave a TODO to document why that is if we remember or figure it out in the future, it\u0027s puzzling and slightly worrying to me. if you\u0027re going to be running many of these containers concurrently, I think any form of attaching TTYs will be troublesome, unless this is actually a pseudo-tty.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22c73f6d_c8d8bbae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "I also see that you use the shell parser to just validate bash syntax and extract the top-level list of statements with their \"negated\" fields. Not a problem as far as I\u0027m concerned - just want to note that you\u0027re allowing arbitrary syntax, so e.g. a guide could use a subshell with negated statements in it, or background commands, or all other sorts of shenanigans.\n\nNot an issue if we are writing the guides and we use simple enough syntax, but if you expect others to write or contribute guides with scripts, you might want to use https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Walk with some form of filtering allowlist to ensure that only a reasonable subset of bash is used.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e66a6196_1ef57a4b",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "nit: I\u0027d call this `shellPrinter` - both because it\u0027s clearer that it\u0027s for shell and not e.g. Go syntax, and because it\u0027s not limited to statements either.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b49fe05f_5da48b39",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "I wonder if this kind of attribution is necessary given that it\u0027s... you? :) and you\u0027re authoring this commit as well. You could make a note in the commit message and not need to leave the note in the godoc forever.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6874f969_798677b8",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "make this `switch n :\u003d n.(type)` - one fewer declared name in scope, and you can\u0027t make the mistake of using the wrong variable, since the non-interface shadows the interface.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0ef1041_f4144aec",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "we might disagree here, but I don\u0027t like using `%v` when we know the argument must be a string given how this Sprintf business is rather delicate - we _need_ the output to be valid shell.\n\nIf for any reason `getFence` were to start returning a non-string, I\u0027d rather have Sprintf blow up (e.g. via vet) rather than silently generate broken shell.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d478b428_39d79183",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "FYI, as long as we\u0027re OK with Bash, you could/should use `[[`",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15421aca_5e7620cb",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "you\u0027re hashing the timestamp, so does it matter how you encode it? for example you could use `sha256.Sum256(strconv.AppendInt(nil, time.Now().UnixNano(), 16))`, which is a bit shorter.\n\nor, if you\u0027re set on the big endian format, then note that you can `binary.Write` straight into a sha256 hasher - no need for a buffer.\n\nSeparate to the above, I wonder if you could use deterministic fences, e.g. incrementing from 1 rather than using the wall time. I don\u0027t _think_ you need the fences to change between runs, and determinism could always be nice.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "008dc1fa_3d23042c",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "like with the bash Sprintfs above, I would definitely use %s and %d in these.",
+      "range": {
+        "startLine": 509,
+        "startChar": 1,
+        "endLine": 514,
+        "endChar": 47
+      },
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2718c5c0_34204e22",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "use https://pkg.go.dev/bytes#Cut?",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5460ab3_287a2975",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "nit: use an if-not-then-return-early to unindent if the switch just needs one case.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fe7242b_f4b69fb1",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "I\u0027d perhaps call `slurp` something a bit clearer, e.g. `advanceWalk`, as otherwise it\u0027s not immediately obvious that there is a side effect with the `walk` variable. initially I was going to say it was a bug that you called it without using the result.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24e76262_ffcd8a63",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 15
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-19T09:35:35Z",
+      "side": 1,
+      "message": "FYI there\u0027s https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Parser.Stmts as well, whose main purpose is being interactive, but might also fit your use case here a bit better.",
+      "revId": "4b79a025cb582f61ee08e54f05ded49bad4458c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
