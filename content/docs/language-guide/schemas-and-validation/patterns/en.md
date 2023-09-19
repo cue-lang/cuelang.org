@@ -77,7 +77,8 @@ all additional fields.
 The following approach allows all implementations of `#Base` while discarding excess fields.
 
 {{{with sidebyside "en" "downcast"}}}
-#norun what is going on here?
+#nofmt TODO: what is going on here?
+#norun TODO: what is going on here?
 -- in.cue --
 #Base: kind!: string
 #X: #Base
