@@ -192,6 +192,12 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 			return nil, err
 		}
 		return &sidebysideNode{txtarNode: t}, nil
+	case fnCode:
+		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		if err != nil {
+			return nil, err
+		}
+		return &codeNode{txtarNode: t}, nil
 	case fnStep:
 		// Increment first because we are numbering from 1
 		rf.stepNumber++

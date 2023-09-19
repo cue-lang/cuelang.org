@@ -65,6 +65,10 @@ package site
 >
 >{{{with step}}}
 >some text
+>{{{with code "en" "x.cue example"}}}
+>-- x.cue --
+>x: 5
+>{{{end}}}
 >{{{end}}}
 >
 >Some text after
@@ -98,6 +102,9 @@ map: {
 
 {{< step stepNumber="2" >}}
 some text
+```text
+x: 5
+```
 {{< /step >}}
 
 Some text after
