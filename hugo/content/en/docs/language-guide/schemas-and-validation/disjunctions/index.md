@@ -30,7 +30,7 @@ or([])               _|_
 ```
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a: or([1, 2, 3, 4, 5])
 b: or([2])
 c: or(empty)
@@ -40,7 +40,7 @@ empty: []
 withDefault: *2 | or([1, 2, 3, 4])
 x:           withDefault & 3
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 a: 1 | 2 | 3 | 4 | 5
 b: 2
 c: or(empty)

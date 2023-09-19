@@ -44,7 +44,7 @@ package site
 title: title
 ---
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="in.cue" language="text"  area="top-left" >}}
 {
 	x: 5
 }
