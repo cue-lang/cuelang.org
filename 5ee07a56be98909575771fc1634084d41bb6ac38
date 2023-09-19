@@ -16,6 +16,24 @@
       "message": "Preview-path not /essential/, but is absent.\n\nRendered view at https://cl-1169621-1--cue-cls.netlify.app/docs/howto/validate-yaml-using-cue/ LGTM.",
       "revId": "5ee07a56be98909575771fc1634084d41bb6ac38",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bda1adae_04d01738",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T13:54:31Z",
+      "side": 1,
+      "message": "Done, good catch!",
+      "parentUuid": "c34c1097_801d49b4",
+      "revId": "5ee07a56be98909575771fc1634084d41bb6ac38",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
