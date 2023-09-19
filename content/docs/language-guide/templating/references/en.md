@@ -52,7 +52,8 @@ A field that uses quotes may not be referenced with its unquoted name, even if
 it would otherwise be a valid identifier.
 
 {{{with sidebyside "en" "quoted-field-reference-error"}}}
-#norun need to implement #nofmt for in.cue
+#nofmt TODO: need to implement #nofmt for in.cue and handle error case
+#norun TODO: need to implement #nofmt for in.cue and handle error case
 -- in.cue --
 "foo": 2
 a:     foo // error
@@ -86,7 +87,8 @@ List values can be similarly aliased.
 </aside>
 
 {{{with sidebyside "en" "list-aliases"}}}
-#norun list aliases not yet supported
+#nofmt TODO: list aliases not yet supported
+#norun TODO: list aliases not yet supported
 -- in.cue --
 [X=1, X, X]
 -- out.cue --
@@ -122,7 +124,8 @@ referencing a field in a map or an integral number when referring to an element
 in a list.
 
 {{{with sidebyside "en" "field-selector"}}}
-#norun numerice selector not supported yet
+#nofmt TODO: numeric selector not supported yet
+#norun TODO: numeric selector not supported yet
 -- in.cue --
 a: {
     b:         2
@@ -147,7 +150,8 @@ The main difference is that it allows negative indices to index from the end of
 a list.
 
 {{{with sidebyside "en" "dynamic-field-selector"}}}
-#norun .(x) not implemented yet
+#nofmt TODO: .(x) not implemented yet
+#norun TODO: .(x) not implemented yet
 -- in.cue --
 a: B: 1
 b: "B"
