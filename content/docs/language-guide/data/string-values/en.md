@@ -18,7 +18,8 @@ The whitespace preceding the last `"""` must prefix each non-empty line of the
 string contents and is stripped from all lines.
 
 {{{with sidebyside "en" "multiline-strings"}}}
-#norun \ at end of line in multiline string
+#nofmt TODO: \ at end of line in multiline string
+#norun TODO: \ at end of line in multiline string
 -- in.cue --
 msg: """
     Hello World!
@@ -68,7 +69,8 @@ single pair of hashes uses `\#` as the escape character, instead of `\`. A
 string enclosed in two hashes uses `\##`, and so on.
 
 {{{with sidebyside "en" "alternative-escape-sequences"}}}
-#norun unclear what the bug is
+#nofmt TODO: unclear what the bug is
+#norun TODO: unclear what the bug is
 -- in.cue --
 a: #"A newline is\#nwritten as "\n"."#
 

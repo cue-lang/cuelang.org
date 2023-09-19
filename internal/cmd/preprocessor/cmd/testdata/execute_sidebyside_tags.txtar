@@ -3,7 +3,7 @@
 # The #norun example will result in no formatting being applied
 # to the input file.
 #
-# The #noformat* examples will ensure that arguments to #noformat are not
+# The #nofmt* examples will ensure that arguments to #nofmt are not
 # formatted, but others are.
 #
 # For these tests we do not assert against the transformed output.
@@ -34,6 +34,7 @@ package site
 >
 >{{{with sidebyside "en" "json-superset"}}}
 >#norun some message
+>#nofmt another message
 >
 >exec cue export in.cue
 >cmp stdout stdout.json

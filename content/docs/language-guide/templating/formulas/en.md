@@ -120,7 +120,8 @@ e:       "As a string: �"
 Interpolations may also be used in quoted selectors or in field names.
 
 {{{with sidebyside "en" "strings-interpolation-fields"}}}
-#norun interpolations in selectors not supported yet
+#nofmt TODO: interpolations in selectors not supported yet
+#norun TODO: interpolations in selectors not supported yet
 -- in.cue --
 f: "foo"
 x: "\(f)bar": 1
@@ -313,7 +314,8 @@ As CUE disallows field identifiers starting with `__`, the latter will never be 
 - For maps it returns the number of data fields.
 
 {{{with sidebyside "en" "core-builtin-len"}}}
-#norun inside HTML comment
+#nofmt TODO: inside HTML comment
+#norun TODO: inside HTML comment
 -- in.cue --
 a: len({a: 1, _b: 2}) // hidden fields do not count
 b: len([1, 2, 3])
@@ -349,7 +351,8 @@ For instance, specifies a default integral`1`, one could write
 A disjunction allows marking its elements as default with an asterisk.
 
 {{{with sidebyside "en" "composition-operator"}}}
-#norun inside HTML comment
+#nofmt TODO: inside HTML comment
+#norun TODO: inside HTML comment
 -- in.cue --
 a: int
 a: *1

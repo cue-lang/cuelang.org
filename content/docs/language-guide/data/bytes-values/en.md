@@ -17,7 +17,8 @@ JSON does not natively support binary data.
 When exporting to JSON, CUE translates it to base64.
 
 {{{with sidebyside "en" "bytes-to-json"}}}
-#norun bug to be fixed
+#nofmt TODO: bug to be fixed
+#norun TODO: bug to be fixed
 -- in.cue --
 a: #’A newline is written as \n.’#
 b: '''
@@ -32,7 +33,8 @@ b: '''
 CUE translates bytes to the corresponding YAML binary type.
 
 {{{with sidebyside "en" "bytes-to-yaml"}}}
-#norun bug to be fixed
+#nofmt TODO: bug to be fixed
+#norun TODO: bug to be fixed
 -- in.cue --
 a: #’A newline is written as \n.’#
 b: '''

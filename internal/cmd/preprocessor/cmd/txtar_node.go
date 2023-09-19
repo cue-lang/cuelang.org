@@ -260,6 +260,11 @@ func (t *txtarRunContext) formatFiles() error {
 	}
 	var jobs []*job
 
+	// If the entire txtar is marked as #nofmt, skip all files
+	if _, ok, _ := t.tag(tagNoFmt, ""); ok {
+		return nil
+	}
+
 	// First format all non-output files
 	for i := range t.sourceArchive.Files {
 		f := &t.sourceArchive.Files[i]
