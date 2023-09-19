@@ -8,11 +8,11 @@ Schema can compose with data, for instance to validate data.
 For instance, this is valid:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a:  1
 a?: int
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 a: 1
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -20,7 +20,7 @@ a: 1
 This is not
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 a:  1
 a?: string
 {{< /code-tab >}}
@@ -35,10 +35,10 @@ It is also possible to combine schemas. For instance, the following CUE defines
 restrictions on what values are allowed for another schema.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
 
 {{< /code-tab >}}
 {{< /code-tabs >}}

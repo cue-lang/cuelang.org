@@ -70,7 +70,7 @@ title: JSON Superset
 Some text before
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="text"  area="top-left" >}}
 // A doc comment
 map: {
 	member1: 3 // a line comment
