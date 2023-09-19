@@ -557,24 +557,26 @@ CUE must ensure that the order of picking defaults does not influence the outcom
 Suppose we define two fields, each with the same default value.
 We also define that these fields are equal to each other.
 
-```cue
+{{{with code "en" "order unaware"}}}
+-- in.cue --
 a: int | *1
 b: int | *1
 a: b
 b: a
-```
+{{{end}}}
 
 This is fine.
 The obvious answer is `a: 1, b: 1`.
 
 But now suppose we change one of the default values:
 
-```cue
+{{{with code "en" "new order"}}}
+-- in.cue --
 a: int | *1
 b: int | *2
 a: b
 b: a
-```
+{{{end}}}
 
 What should the answer be?
 Picking either `1` or `2` as the default would result in a resolution of the
@@ -593,23 +595,27 @@ Roughly speaking, for the example with the conflict,
 it simultaneously evaluates:
 
 {{< columns >}}
-```cue
+{{{with code "en" "allowed values"}}}
+#nofmt TODO: bug results in bad formatting https://cuelang.org/issue/1018
+-- in.cue --
 // All allowed values
 a: int
 b: int
 a: b
 b: a
-```
+{{{end}}}
 
 {{< columns-separator >}}
 
-```cue
+{{{with code "en" "default"}}}
+#nofmt TODO: bug results in bad formatting https://cuelang.org/issue/1018
+-- in.cue --
 // Default
 a: 1
 b: 2
 a: b
 b: a
-```
+{{{end}}}
 {{< /columns >}}
 
 Equating `a` and `b` clearly results in a conflict (`1 != 2`) and each will
@@ -618,23 +624,27 @@ result in `_|_`, leaving the left values as the only viable answer.
 Now consider the two values corresponding to the original example:
 
 {{< columns >}}
-```cue
+{{{with code "en" "revisit allowed values"}}}
+#nofmt TODO: bug results in bad formatting https://cuelang.org/issue/1018
+-- in.cue --
 // All allowed values
 a: int
 b: int
 a: b
 b: a
-```
+{{{end}}}
 
 {{< columns-separator >}}
 
-```cue
+{{{with code "en" "revisit default"}}}
+#nofmt TODO: bug results in bad formatting https://cuelang.org/issue/1018
+-- in.cue --
 // Default
 a: 1
 b: 1
 a: b
 b: a
-```
+{{{end}}}
 {{< /columns >}}
 
 Here the defaults are not in conflict and can safely be returned.
@@ -667,9 +677,10 @@ there is no need to specify these in a particular order or even in one location.
 One can even say on a single line that a collection of
 fields must mix in a template.
 For instance,
-```
+{{{with code "en" "acmeMonitoring"}}}
+-- in.cue --
 jobs: [string]: acmeMonitoring
-```
+{{{end}}}
 tells CUE that _all_ jobs in `jobs` must mix in `acmeMonitoring`.
 There is no need to repeat this at every node.
 <!-- (jba) first use of angle-bracket syntax, I think. Needs some explanation. -->
@@ -699,10 +710,11 @@ configuration language.
 CUE's underlying model allows reasoning over cycles.
 Consider a CUE program defining two fields;
 
-```cue
+{{{with code "en" "cycles"}}}
+-- in.cue --
 a: b
 b: a
-```
+{{{end}}}
 
 This can only be interpreted to mean that `a` and `b` must be equal.
 If there is no concrete value assigned to `a` or `b`,
@@ -714,11 +726,12 @@ of labels with a set of selectors
 (regardless of whether that is good practice).
 
 But it goes further. Consider
-```cue
+{{{with code "en" "sums"}}}
+-- in.cue --
 a: b + 1
 b: a - 1
 b: 1
-```
+{{{end}}}
 When evaluating `a`, CUE will attempt to resolve `b` and will find
 `(a-1) & 1` after unifying the two declarations for `b`.
 It cannot recursively resolve `a`, as this would result in an
@@ -729,10 +742,11 @@ So if this configuration is ever to be a valid, we can safely assume
 the answer is `1` and verify that `a-1 == 1` after resolving `a`.
 
 So CUE happily resolves this to
-```cue
+{{{with code "en" "sums answers"}}}
+-- in.cue --
 a: 2
 b: 1
-```
+{{{end}}}
 without resorting to any fancy algebraic constraint satisfaction solvers,
 just plain ol' logic.
 Most cycles that do not result in infinite structures can be handled by CUE.
