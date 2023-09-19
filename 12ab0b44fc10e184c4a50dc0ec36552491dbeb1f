@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d447e598_f65c7407",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 46
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-19T10:40:33Z",
+      "side": 1,
+      "message": "Removing the hold; the stack below is ready to be submitted, after trybots.",
+      "revId": "12ab0b44fc10e184c4a50dc0ec36552491dbeb1f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
