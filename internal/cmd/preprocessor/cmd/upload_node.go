@@ -43,7 +43,7 @@ func (u *uploadNode) writeTransformTo(b *bytes.Buffer) error {
 	a := u.analysis.fileNames[0]
 	props := tabProps{
 		Name:     f.Name,
-		Language: a.Ext,
+		Language: a.Language,
 	}
 	p("```%s { title=%q", props.Language, props.Name)
 

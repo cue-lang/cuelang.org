@@ -18,7 +18,7 @@ Identifiers may also start with `#` or `_`, in which case the field is a
 special meaning.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 a1:    1
 "a-b": 2 // quotes are needed here
 $id:   "yipee"
@@ -41,11 +41,11 @@ Names of regular fields are considered equal if their string values are equal,
 regardless of whether the strings are quoted or not.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 a: x:   1
 "a": y: 2
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="txt" type="terminal" area="top-right" >}}
 a: {
     x: 1
     y: 2
@@ -76,7 +76,7 @@ More on this in the
 [Templating](Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md) section.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 one: {
 	value:     1
 	#typeName: "int"
@@ -103,7 +103,7 @@ It is possible to associate helper fields with scalar types by placing both in
 curly braces (`{}`).
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 one: {
 	1
 	#typeName: "int"
@@ -117,7 +117,7 @@ three: {
 	#typeName: "map"
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="txt" type="terminal" area="top-right" >}}
 one: {
     1
     #typeName: "int"

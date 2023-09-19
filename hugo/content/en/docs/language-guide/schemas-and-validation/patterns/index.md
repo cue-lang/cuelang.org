@@ -17,7 +17,7 @@ In programming languages this is called a *sum type*.
 {{{end}}}
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 #Base: kind!: string
 #A: {
 	kind!: "a"
@@ -32,7 +32,7 @@ In programming languages this is called a *sum type*.
 fooInt: #X
 fooInt: {kind: "a", a: 43}
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="txt" type="terminal" area="top-right" >}}
 #Base: {
     kind!: string
 }
@@ -63,12 +63,12 @@ This following approach accepts all implementations of `#Base`, retaining
 all additional fields.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 #Base: kind!: string
 
 #X: {#Base, ...} // anyof(#Base)
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="txt" type="terminal" area="top-right" >}}
 #Base: {
     kind!: string
 }
@@ -81,7 +81,7 @@ all additional fields.
 The following approach allows all implementations of `#Base` while discarding excess fields.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 #Base: kind!: string
 #X: #Base
 
@@ -92,7 +92,7 @@ a: {
 fooInt: #X
 fooInt: a.{#Base}
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="txt" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -105,7 +105,7 @@ In general, this is not recommended, as it removes the ability for that schema t
 A package that provides schemas with required discriminator fields could provide a convenience variant, though, with those already filled out:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 #Schema: {
 	kind!: "a"
 	name:  string
@@ -113,7 +113,7 @@ A package that provides schemas with required discriminator fields could provide
 
 Schema: #Schema & {kind: _} // provide ‘kind’ by default
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="txt" type="terminal" area="top-right" >}}
 #Schema: {
     kind!: "a"
     name:  string

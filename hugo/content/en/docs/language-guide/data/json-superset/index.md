@@ -14,7 +14,7 @@ configurations in general:
 - the outermost curly braces are optional. {{{TODO "note on embedding"}}}
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 // A doc comment
 map: {
 	member1: 3 // a line comment
@@ -40,7 +40,7 @@ map: {
 CUE supports `//`-style comments. Comments are first-class citizens in CUE.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="txt"  area="top-left" >}}
 // A doc comment
 map: {
 	member1: 3 // a line comment
