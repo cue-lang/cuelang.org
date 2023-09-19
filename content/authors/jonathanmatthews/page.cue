@@ -1,3 +1,0 @@
-package site
-
-"authors": "jonathanmatthews": {}
