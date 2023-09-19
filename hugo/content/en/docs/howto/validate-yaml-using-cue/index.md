@@ -29,7 +29,7 @@ allows you to run `cue` commands
 
 Create a YAML file called `x.yaml` with the following:
 
-``` {title="x.yaml"}
+```yaml { title="x.yaml" }
 people:
   Gopher:
     name: Gopher
@@ -46,21 +46,21 @@ Create a CUE file named `x.cue`
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-``` {title="x.cue"}
+```cue { title="x.cue" }
 #Person: {
- name:    string
- age:     int
- address: string
+	name:    string
+	age:     int
+	address: string
 }
 
 people: [X=string]: #Person & {
- name: X
+	name: X
 }
 ```
 
 Run the following `cue` command in your:
 
-```
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWwK" }
 $ cue vet x.cue x.yaml
 ```
 
@@ -68,7 +68,7 @@ _NOTE: `cue vet` is silent when run successfully. Output will only show on error
 
 Add another person to your YAML data.
 
-``` {title="x.yaml"}
+```yaml { title="x.yaml" }
 people:
   Gopher:
     name: Gopher
@@ -86,12 +86,12 @@ people:
 
 Validate again with `cue vet`
 
-```console
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWwK" }
 $ cue vet x.cue x.yaml
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
     ./x.cue:7:21
-    ./x.yaml:13:11
+    ./x.yaml:12:11
 ```
 
 The command output shows validation errors where the YAML violates
@@ -99,7 +99,7 @@ the (type) constraints that you have declared.
 
 Fix up the YAML
 
-``` {title="x.yaml"}
+```yaml { title="x.yaml" }
 people:
   Gopher:
     name: Gopher
@@ -117,7 +117,7 @@ people:
 
 Validate with `cue vet` again
 
-```
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWwK" }
 $ cue vet x.cue x.yaml
 ```
 

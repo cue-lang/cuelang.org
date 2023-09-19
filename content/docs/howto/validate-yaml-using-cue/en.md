@@ -29,7 +29,8 @@ allows you to run `cue` commands
 
 Create a YAML file called `x.yaml` with the following:
 
-``` {title="x.yaml"}
+{{{with upload "en" "initial x.yaml"}}}
+-- x.yaml --
 people:
   Gopher:
     name: Gopher
@@ -39,36 +40,38 @@ people:
     name: Ken
     age: 21
     address: The Blue Sky
-```
+{{{end}}}
 
 Create a CUE file named `x.cue`
 
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-``` {title="x.cue"}
+{{{with upload "en" "initial x.cue"}}}
+-- x.cue --
 #Person: {
- name:    string
- age:     int
- address: string
+	name:    string
+	age:     int
+	address: string
 }
 
 people: [X=string]: #Person & {
- name: X
+	name: X
 }
-```
+{{{end}}}
 
 Run the following `cue` command in your:
 
-```
-$ cue vet x.cue x.yaml
-```
+{{{with script "en" "initial vet"}}}
+cue vet x.cue x.yaml
+{{{end}}}
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
 
 Add another person to your YAML data.
 
-``` {title="x.yaml"}
+{{{with upload "en" "another person"}}}
+-- x.yaml --
 people:
   Gopher:
     name: Gopher
@@ -82,24 +85,21 @@ people:
     name: Rob
     age: 42.2
     address: CUEtopia
-```
+{{{end}}}
 
 Validate again with `cue vet`
 
-```console
-$ cue vet x.cue x.yaml
-people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
-    ./x.cue:3:11
-    ./x.cue:7:21
-    ./x.yaml:13:11
-```
+{{{with script "en" "broken vet"}}}
+! cue vet x.cue x.yaml
+{{{end}}}
 
 The command output shows validation errors where the YAML violates
 the (type) constraints that you have declared.
 
 Fix up the YAML
 
-``` {title="x.yaml"}
+{{{with upload "en" "fixed yaml"}}}
+-- x.yaml --
 people:
   Gopher:
     name: Gopher
@@ -113,13 +113,13 @@ people:
     name: Rob
     age: 42
     address: CUEtopia
-```
+{{{end}}}
 
 Validate with `cue vet` again
 
-```
-$ cue vet x.cue x.yaml
-```
+{{{with script "en" "fixed vet"}}}
+cue vet x.cue x.yaml
+{{{end}}}
 
 The `cue vet` command will show no output on success.
 
