@@ -5,8 +5,8 @@ draft: false
 noindex: true
 image: "cow.jpg"
 authors:
-    - pauljolly
-    - jonathanmatthews
+    - myitcv
+    - jpluscplusm
 tags:
     - Use encodings in CUE
     - Language
