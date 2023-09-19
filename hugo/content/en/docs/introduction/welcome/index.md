@@ -109,29 +109,29 @@ On the right one sees a mix between data and schema as is exemplary of CUE.
 
 {{< columns >}}
 Data
-```cue
+```text
 moscow: {
-  name:    "Moscow"
-  pop:     11.92M
-  capital: true
+	name:    "Moscow"
+	pop:     11.92M
+	capital: true
 }
 ```
 {{< columns-separator >}}
 Schema
-```cue
+```text
 municipality: {
-  name:    string
-  pop:     int
-  capital: bool
+	name:    string
+	pop:     int
+	capital: bool
 }
 ```
 {{< columns-separator >}}
 CUE
-```cue
+```text
 largeCapital: {
-  name:    string
-  pop:     >5M
-  capital: true
+	name:    string
+	pop:     >5M
+	capital: true
 }
 ```
 {{< /columns >}}
@@ -159,18 +159,20 @@ defined as a sequence of path-leaf values.
 For instance,
 ```json
 {
-  "a": 3,
-  "b": {
-    "c": "foo"
-  }
+    "a": 3,
+    "b": {
+        "c": "foo"
+    }
 }
 ```
 
 could be represented as
-```
+
+```text
 "a": 3
 "b": "c": "foo"
 ```
+
 All the information of the original JSON file is retained in this
 representation.
 
@@ -196,24 +198,27 @@ Instead of having to spell this out at each point,
 one can declare this separately in a one blanket statement.
 
 So instead of
-```
+
+```text
 jobs: {
-  foo: acmeMonitoring & { /* ... */ }
-  bar: acmeMonitoring & { /* ... */ }
-  baz: acmeMonitoring & { /* ... */ }
+	foo: acmeMonitoring & {...}
+	bar: acmeMonitoring & {...}
+	baz: acmeMonitoring & {...}
 }
 ```
+
 one can write
 
-```
+```text
 jobs: [string]: acmeMonitoring
 
 jobs: {
-    foo: { /* ... */ }
-    bar: { /* ... */ }
-    baz: { /* ... */ }
+	foo: {...}
+	bar: {...}
+	baz: {...}
 }
 ```
+
 There is no need to repeat the reference to the monitoring template for
 each job, as the first already states that all jobs _must_ use `acmeMonitoring`.
 Such requirements can be specified across files.
