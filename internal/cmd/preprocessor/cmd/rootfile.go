@@ -43,6 +43,7 @@ var (
 	// were function calls.
 	templateFunctions = map[string]any{
 		fnSidebyside: true,
+		fnCode:       true,
 		fnStep:       true,
 		fnUpload:     true,
 		fnScript:     true,
