@@ -209,6 +209,24 @@
       "parentUuid": "4dc09113_68d17318",
       "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3e3b784_53c06860",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T18:12:51Z",
+      "side": 1,
+      "message": "I\u0027ll make a note to pick this up tomorrow/etc.",
+      "parentUuid": "4dc09113_68d17318",
+      "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
