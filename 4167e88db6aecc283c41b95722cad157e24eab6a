@@ -16,6 +16,91 @@
       "message": "PTAL.",
       "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "145d5643_aad345e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:16:59Z",
+      "side": 1,
+      "message": "With nits.",
+      "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03852edf_d0895a1a",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:16:59Z",
+      "side": 1,
+      "message": "Drop - this tag does not exist",
+      "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bf2db46_ad435ac7",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:16:59Z",
+      "side": 1,
+      "message": "Drop - this tag does not exist",
+      "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f40cf1a7_f96db995",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:16:59Z",
+      "side": 1,
+      "message": "`schema.cue` - it\u0027s more clearly a schema than policy (although we need to define that \"line\" more clearly)",
+      "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0132b43e_226438bc",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:16:59Z",
+      "side": 1,
+      "message": "I\u0027m surprised this trailing space (if that is what it is) survived the auto-formatting.",
+      "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
