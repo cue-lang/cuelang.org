@@ -173,6 +173,24 @@
       "parentUuid": "0132b43e_226438bc",
       "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dc09113_68d17318",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T18:03:10Z",
+      "side": 1,
+      "message": "In which case there might be a bug here: because the preprocessor should be formatting these files... and that is what I expected to trigger a build failure because of the discrepancy.",
+      "parentUuid": "f55eea42_e055f60e",
+      "revId": "4167e88db6aecc283c41b95722cad157e24eab6a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
