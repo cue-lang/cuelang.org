@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb02b5e4_31608329",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:21:13Z",
+      "side": 1,
+      "message": "PTAL differences with respect to patchset 8, your last patchset.",
+      "revId": "d9fd3c7c56f9c819d3924637097d732710398db8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
