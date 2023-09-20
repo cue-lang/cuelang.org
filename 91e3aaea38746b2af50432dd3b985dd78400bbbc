@@ -16,6 +16,24 @@
       "message": "I will take over this one for now.",
       "revId": "91e3aaea38746b2af50432dd3b985dd78400bbbc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39ce0c86_e3a208a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T09:58:42Z",
+      "side": 1,
+      "message": "👍",
+      "parentUuid": "64f4303d_13a8f59a",
+      "revId": "91e3aaea38746b2af50432dd3b985dd78400bbbc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
