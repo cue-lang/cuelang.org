@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff3ab22d_5afa508c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T09:57:44Z",
+      "side": 1,
+      "message": "I /believe/ the co-author trailer should reflect the `authors` front matter and vice-versa, though I respect that this doc is the exception-iest of special cases.",
+      "revId": "25e5e252199c1322989f8b85253a69ac7ba7aa9a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "459bbf56_6ae9595f",
+        "filename": "content/docs/reference/spec/generate.go",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T09:57:44Z",
+      "side": 1,
+      "message": "2023.",
+      "revId": "25e5e252199c1322989f8b85253a69ac7ba7aa9a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
