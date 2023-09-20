@@ -22,7 +22,10 @@ package site
 >x: {
 >y: 5
 >}
->-- file2.txt --
+>-- out.cue --
+>x: {
+>    y: 5
+>}
 >{{{end}}}
 >
 >This is a {{{ def "test" }}}
@@ -36,7 +39,10 @@ package site
 >x: {
 >	y: 5
 >}
->-- file2.txt --
+>-- out.cue --
+>x: {
+>    y: 5
+>}
 >{{{end}}}
 >
 >This is a {{{def "test"}}}
