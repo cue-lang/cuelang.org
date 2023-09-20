@@ -5,7 +5,7 @@ package site
 			"about-these-guides": {
 				cache: {
 					sidebyside: {
-						example: "xppfvUg/qMLMFTDIewmt/ZwHzlStephNWk5zeH5ECSE="
+						example: "PTQdGpdRH4Zv5855sfR1TAwBnmkRKEk2tB+eSiGoTQ0="
 					}
 				}
 			}
