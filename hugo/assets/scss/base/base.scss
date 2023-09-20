@@ -341,6 +341,9 @@ code {
     font-weight: inherit;
     line-height: inherit;
 
+    ul &,
+    ol &,
+    dl &,
     p & {
         --pre-background-color: #{ $c-grey-blue };
 
