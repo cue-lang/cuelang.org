@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0d84130_97689e0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T14:04:24Z",
+      "side": 1,
+      "message": "LGTM, bearing in mind our discussion about the refactorability of the Go code.",
+      "revId": "843a70022014dfd0a34b8f14ee48cd23120a6b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
