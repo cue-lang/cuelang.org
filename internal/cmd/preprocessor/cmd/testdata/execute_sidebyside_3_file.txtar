@@ -56,6 +56,19 @@ package site
 >    "x": 5
 >}
 >{{{end}}}
+>{{{with sidebyside "en" "cc"}}}
+>#location top-left bottom-left right
+>! exec cue vet .:example
+>cmp stderr out.err
+>-- example1.cue --
+>foo
+>-- example2.cue --
+>foo
+>-- out.err --
+>build constraints exclude all CUE files in .:
+>    example1.cue: no package name
+>    example2.cue: no package name
+>{{{end}}}
 -- hugo/content/en/dir/index.md.golden --
 ---
 title: JSON Superset
@@ -77,6 +90,20 @@ $ cue export a.cue b.json
 {
     "x": 5
 }
+{{< /code-tab >}}
+{{< /code-tabs >}}
+{{< code-tabs >}}
+{{< code-tab name="example1.cue" language="text"  area="top-left" >}}
+foo
+{{< /code-tab >}}
+{{< code-tab name="example2.cue" language="text"  area="bottom-left" >}}
+foo
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="err" type="terminal" area="right" >}}
+$ cue vet .:example
+build constraints exclude all CUE files in .:
+    example1.cue: no package name
+    example2.cue: no package name
 {{< /code-tab >}}
 {{< /code-tabs >}}
 -- structure.golden --
