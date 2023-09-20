@@ -16,6 +16,23 @@
       "message": "Please close your eyes whilst looking at the Go code.",
       "revId": "46dad382c63f656c2620a35565899f234d7334ec",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe1ed30b_9c88ada0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T16:53:39Z",
+      "side": 1,
+      "message": "LGTM, given your caveat.",
+      "revId": "46dad382c63f656c2620a35565899f234d7334ec",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
