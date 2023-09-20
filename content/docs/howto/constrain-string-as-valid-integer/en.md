@@ -12,6 +12,7 @@ relatedIssues:
 - https://github.com/cue-lang/cue/issues/2564: "link from content to Issue"
 - https://github.com/cue-lang/docs-and-content/issues/32: "tour of the CUE standard library"
 - https://github.com/cue-lang/docs-and-content/issues/114: "CC explainer"
+toc_hide: true
 ---
 
 This [Commented CUE](/search/?q=tag:"commented%20cue") demonstrates howto

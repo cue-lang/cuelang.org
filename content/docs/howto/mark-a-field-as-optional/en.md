@@ -9,6 +9,7 @@ relatedIssues:
 - https://github.com/cue-lang/cue/issues/2553: "failing CUE commands"
 - https://github.com/cue-lang/cue/issues/2564: "link from content to Issue"
 - https://github.com/cue-lang/docs-and-content/issues/114: "CC explainer"
+toc_hide: true
 ---
 
 This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
