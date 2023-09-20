@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01243d14_6f9ea2d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:41:12Z",
+      "side": 1,
+      "message": "For some reason this totally breaks layout in `/docs` mode. Marking as hold for now.",
+      "revId": "4876866b570b2e4476e843d987ac7481720a7bc7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
