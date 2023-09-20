@@ -16,6 +16,24 @@
       "message": "For: cue-lang/docs-and-content#53",
       "revId": "6904b0d46dad0a114057d3ace8bfc11250220513",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e1c2a9c_1bc25ce9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T10:01:27Z",
+      "side": 1,
+      "message": "Done. FYI via our convention (which matches the Go project) it\u0027s written:\n\n```\nFor cue-lang/docs-and-content#53.\n```\n\nOtherwise with a colon it looks like it is a trailer.",
+      "parentUuid": "897eec1c_643e722b",
+      "revId": "6904b0d46dad0a114057d3ace8bfc11250220513",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
