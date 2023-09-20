@@ -1,0 +1,89 @@
+# Ensure that sidebyside with 4 files renders as expected
+
+unquote content/dir/en.md
+
+# Make a golden file of the input to ensure it is written back intact
+cp content/dir/en.md content/dir/en.md.golden
+
+# Run the preprocessor
+exec preprocessor execute --debug=all
+
+# Copy the resulting soure file sideways and use that in comparison
+# so that we don't inadvertently update it when using CUE_UPDATE=1
+cp content/dir/en.md content/dir/en.md.writeBack
+
+# Verify that the source file is intact
+cmp content/dir/en.md.writeBack content/dir/en.md.golden
+
+# Verify that the target files matche the source contents
+cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+
+# Re-run the preprocessor and ensure we have a cache hit
+exec preprocessor execute --debug=all
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for dir.cache.sidebyside."json-superset"; not running'
+
+# Re-run the preprocessor again with --skipcache to ensure we re-run a cache hit
+exec preprocessor execute --debug=all --skipcache
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for dir.cache.sidebyside."json-superset"; was a hit'
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>{{{with sidebyside "en" "json-superset"}}}
+>#location top-left top-right top-right bottom
+>exec cue export a.cue b.json c.json
+>cmp stdout stdout.golden
+>-- a.cue --
+>x?: int
+>-- b.json --
+>{
+>    "x": 5
+>}
+>-- c.json --
+>{
+>    "x": 5
+>}
+>-- stdout.golden --
+>{
+>    "x": 5
+>}
+>{{{end}}}
+-- hugo/content/en/dir/index.md.golden --
+---
+title: JSON Superset
+---
+
+Some text before
+
+{{< code-tabs >}}
+{{< code-tab name="a.cue" language="text"  area="top-left" >}}
+x?: int
+{{< /code-tab >}}
+{{< code-tab name="b.json" language="json"  area="top-right" >}}
+{
+    "x": 5
+}
+{{< /code-tab >}}
+{{< code-tab name="c.json" language="json"  area="top-right" >}}
+{
+    "x": 5
+}
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+$ cue export a.cue b.json c.json
+{
+    "x": 5
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+-- structure.golden --
+content/dir/en.md
+content/dir/gen_cache.cue
+content/dir/site.cue
+hugo/content/en/dir/index.md

@@ -1,0 +1,50 @@
+# Ensure that we get a sensible error message when using a #location
+# tag with bad args, or the wrong number of values
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+! exec preprocessor execute
+cmpenv stderr stderr.golden
+
+# TODO: fix up error messages
+# TODO: ensure that we get multiple errors in the same guide; we are not
+# getting the error relating to rubbish for now.
+
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>{{{with sidebyside "en" "wrong number of args"}}}
+>#location top-left
+>exec cue export a.cue b.json c.json
+>cmp stdout stdout.golden
+>-- a.cue --
+>x?: int
+>-- stdout.golden --
+>{
+>    "x": 5
+>}
+>{{{end}}}
+>
+>{{{with sidebyside "en" "bad location"}}}
+>#location top-left rubbish
+>exec cue export a.cue b.json c.json
+>cmp stdout stdout.golden
+>-- a.cue --
+>x?: int
+>-- stdout.golden --
+>{
+>    "x": 5
+>}
+>{{{end}}}
+-- hugo/content/.gitkeep --
+-- stderr.golden --
+** $WORK/content/dir/en.md:7:8: saw 2 files but only 1 arguments to #location
+** $WORK/content/dir/en.md:7:8: in error
+terminating because of errors
