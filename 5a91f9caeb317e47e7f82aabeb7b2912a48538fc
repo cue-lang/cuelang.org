@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b9427e1_a6856fd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T08:38:09Z",
+      "side": 1,
+      "message": "+2\u0027ing this to unblock in case my comment is incorrect or moot.",
+      "revId": "5a91f9caeb317e47e7f82aabeb7b2912a48538fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a4d8843_8272fc1b",
+        "filename": "_scripts/runPreprocessor.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T08:38:09Z",
+      "side": 1,
+      "message": "So we *won\u0027t* remove the `_public` dir **if we\u0027re invoking this script from `_scripts/serve.bash`**?\n\nThat seems backwards to me: don\u0027t we explicitly /want/ to remove `_public` if we\u0027re running `serve` locally? I know the deletion of `--renderToDisk` /should/ stop Hugo using `_public`, but I can\u0027t conceive of a flow where we want to:\n\n- have content in `_public`, built by some immediately-preceding process because the directory\u0027s gitignored\n- run `serve`\n- have hugo ignore the content in `_public`, because of no `--renderToDisk`\n- finish running serve\n- still have the same content in `_public`",
+      "revId": "5a91f9caeb317e47e7f82aabeb7b2912a48538fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
