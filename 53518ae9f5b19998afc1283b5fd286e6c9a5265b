@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "82b908eb_2cf573fa",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-09-20T09:12:18Z",
+      "side": 1,
+      "message": "is Data guaranteed to finish with a newline? you might want to validate that, just to be sure.",
+      "revId": "53518ae9f5b19998afc1283b5fd286e6c9a5265b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "16b36033_ed6b8109",
         "filename": "internal/cmd/preprocessor/cmd/testdata/execute_transform.txtar",
         "patchSetId": 1
