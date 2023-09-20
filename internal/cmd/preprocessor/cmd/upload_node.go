@@ -16,7 +16,6 @@ package cmd
 
 import (
 	"bytes"
-	"fmt"
 )
 
 const fnUpload = "upload"
@@ -25,15 +24,16 @@ type uploadNode struct {
 	txtarNode
 }
 
+var _ validatingNode = (*uploadNode)(nil)
+
 func (u *uploadNode) nodeType() string {
 	return "upload"
 }
 
-func (u *uploadNode) validate() error {
+func (u *uploadNode) validate() {
 	if l := len(u.analysis.fileNames); l != 1 {
-		return fmt.Errorf("upload nodes can only contain a single file; saw %d", l)
+		u.errorf("%v: upload nodes can only contain a single file; saw %d", u, l)
 	}
-	return nil
 }
 
 func (u *uploadNode) writeTransformTo(b *bytes.Buffer) error {
@@ -88,7 +88,7 @@ func (u *uploadNodeRunContext) run() (err error) {
 	}
 
 	if err := u.formatFiles(); err != nil {
-		return errorIfInError(u)
+		return u.errorf("%v: failed to format files: %v", u, err)
 	}
 
 	return nil
