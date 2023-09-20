@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af50cd3d_a8969fd8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T18:20:11Z",
+      "side": 1,
+      "message": "That was a +2 *assuming the layout fix landed successfully*!",
+      "revId": "403315342cb2edb4e8906f2bd523edd1e9ab4b5d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
