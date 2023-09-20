@@ -53,12 +53,51 @@ func (s *sidebysideNode) validate() error {
 	effectiveArchive := *s.sourceArchive
 	s.effectiveArchive = &effectiveArchive
 
+	// used below, declare early for visibility
+	var ok bool
+
+	// Validate that we know how to layout the txtar archive. It's always possible to
+	// use the #location tag, just so long as the number of files matches the number of
+	// "arguments" to that tag. In case there are 2 or 3 files, there are sensible
+	// defaults, otherwise if there are >3 files the #location tag is required.
+	locations, ok, err := s.tag(tagLocation, "")
+	if err != nil {
+		return s.errorf("%v: failed to extract #%s tag: %v", s, tagLocation, err)
+	}
+	if !ok {
+		// This case is only a problem if we have >3 files
+		if l := len(s.analysis.fileNames); l > 3 {
+			return s.errorf("%v: #%s tag required for %d files", s, tagLocation, l)
+		}
+	} else {
+		// We have a tag, do we have enough arguments?
+		nargs := len(locations)
+		nfiles := len(s.analysis.fileNames)
+		if nargs != nfiles {
+			return s.errorf("%v: saw %d files but only %d arguments to #%s", s, nfiles, nargs, tagLocation)
+		}
+
+		// Ensure we can parse the locations
+		for _, l := range locations {
+			// TODO: switch to an auto-generated function that tries to parse
+			switch codeTabLocation(l) {
+			case codeTabTop, codeTabBottom, codeTabLeft, codeTabRight,
+				codeTabTopLeft, codeTabTopRight:
+			default:
+				return s.errorf("%v: unknown locaion %q", s, l)
+			}
+		}
+	}
+
+	if s.isInError() {
+		return errorIfInError(s)
+	}
+
 	// Return early if we have been told to #norun this archive
 	if _, found, _ := s.tag(tagNorun, ""); found {
 		return nil
 	}
 
-	var ok bool
 	if !s.analysis.hasEffectiveComment {
 		effectiveArchive.Comment, ok = s.buildEffectiveScript(s.analysis, s.effectiveArchive)
 		if !ok {
@@ -244,9 +283,15 @@ func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	case 3:
 		locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight, codeTabBottom}
 	default:
-		var b bytes.Buffer
-		s.writeSourceTo(&b)
-		return s.errorf("do not know how to handle %d txtar files: \n%s", l, b.Bytes())
+		// We know because of validate() that we will have a #location tag,
+		// and that there are valid.
+		tagLocations, found, err := s.tag(tagLocation, "")
+		if !found || err != nil {
+			s.fatalf("%v: bad state with respect to validate(): found: %v, err: %v", s, found, err)
+		}
+		for _, l := range tagLocations {
+			locations = append(locations, codeTabLocation(l))
+		}
 	}
 	analyses := s.analysis.fileNames
 

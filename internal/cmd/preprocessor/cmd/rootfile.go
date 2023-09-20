@@ -239,6 +239,10 @@ func (rf *rootFile) validate() error {
 		}
 	}
 
+	if rf.isInError() {
+		return errorIfInError(rf)
+	}
+
 	// Validate those parts which have a validate() method
 	err = rf.walkBody(func(n node) error {
 		bp, ok := n.(validatingNode)
@@ -248,7 +252,7 @@ func (rf *rootFile) validate() error {
 		if err := bp.validate(); err != nil {
 			rf.errorf("%v: %v", bp, err)
 		}
-		return nil
+		return errorIfInError(rf)
 	})
 
 	return err
