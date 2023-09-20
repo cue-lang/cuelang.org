@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "49b3128b_26df4bad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:34:16Z",
+      "side": 1,
+      "message": "Nit: this is not a trailer.",
+      "revId": "2b0bb2d36514d70d4ecaed66cb1f9283f15b43b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "c2f161cc_feef07cd",
@@ -14,6 +31,23 @@
       "writtenOn": "2023-09-14T16:13:02Z",
       "side": 1,
       "message": "PTAL.",
+      "revId": "2b0bb2d36514d70d4ecaed66cb1f9283f15b43b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9960c06_4c7fcf34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:34:16Z",
+      "side": 1,
+      "message": "With one nit.",
       "revId": "2b0bb2d36514d70d4ecaed66cb1f9283f15b43b1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
