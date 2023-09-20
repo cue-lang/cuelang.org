@@ -16,6 +16,24 @@
       "message": "nit: this wording made me initially believe that the purpose of this change was to /stop/ norun applying in other, non-sidebyside contexts.\n\n```\npreprocessor: sidebyside: norun stops implying nofmt\n```\n\n... might work equally well?",
       "revId": "b576b7ffd94037c74494a6b4aa4915419e3634a2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43619f16_7c617b1f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T10:07:23Z",
+      "side": 1,
+      "message": "Done with a slight tweak on the suggestion.",
+      "parentUuid": "af9ee95b_5de85fe7",
+      "revId": "b576b7ffd94037c74494a6b4aa4915419e3634a2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
