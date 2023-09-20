@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff3b4702_895a9cc6",
+        "filename": "content/docs/howto/constrain-string-as-valid-integer/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T16:05:42Z",
+      "side": 1,
+      "message": "I\u0027ve been upper-casing \"Commented\" to delineate it as A Thing.\n\nWhilst I prefer the capitalised version, I hold that lightly. I\u0027ll need to update a few other CLs to be consistent if we change it, however.",
+      "revId": "0bc52fbfc97c160ec53bcdb11cab47ddc30aab00",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c09c3bc6_441a56a0",
+        "filename": "content/docs/howto/constrain-string-as-valid-integer/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T16:05:42Z",
+      "side": 1,
+      "message": "I think mentioning `self` gives rise to an implication that that\u0027s a term with significance in CUE.\n\nPerhaps ...\n\n```\n// Constrain s1 and s2 to be the string\n// interpolation of the result of converting\n// their respective values to integers.\n```",
+      "revId": "0bc52fbfc97c160ec53bcdb11cab47ddc30aab00",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
