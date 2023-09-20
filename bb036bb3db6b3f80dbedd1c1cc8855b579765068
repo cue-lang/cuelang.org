@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33b85cd2_184ca834",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T18:06:55Z",
+      "side": 1,
+      "message": "LGTM from my perspective, will need your +2 now that I have just pushed the latest commit.",
+      "revId": "bb036bb3db6b3f80dbedd1c1cc8855b579765068",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
