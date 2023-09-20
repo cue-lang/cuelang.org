@@ -159,7 +159,17 @@ func bufPrintf(b *bytes.Buffer) func(string, ...any) (int, error) {
 type txtarAnalysis struct {
 	hasEffectiveComment bool
 
+	// cmd is the command used to "run" a txtar node. In case
+	// hasEffectiveComment is true, it will be the first effective
+	// line in the comment. Otherwise, it will be determined
+	// according to a strategy like the in-out pattern and set
+	// later.
+	cmd string
+
 	fileNames []filenameAnalysis
+
+	// isInOut indicates that the txtar uses the in/out pattern
+	isInOut bool
 }
 
 type filenameAnalysis struct {
@@ -192,6 +202,7 @@ func analyseTxtarArchive(t *txtar.Archive) (res txtarAnalysis) {
 	for _, f := range t.Files {
 		res.fileNames = append(res.fileNames, analyseFilename(f.Name))
 	}
+	res.isInOut = len(t.Files) == 2 && res.fileNames[0].Basename == "in" && res.fileNames[1].Basename == "out"
 	return
 }
 
@@ -216,6 +227,9 @@ func analyseFilename(p string) (res filenameAnalysis) {
 	if res.IsGolden = strings.HasSuffix(b, goldenExt); res.IsGolden {
 		b = strings.TrimSuffix(b, goldenExt)
 	}
+	// Default the basename to the filename itself, updating below
+	// if we find an extension.
+	res.Basename = b
 	i := len(b) - 1
 	for ; i >= 0 && !os.IsPathSeparator(b[i]); i-- {
 		if b[i] == '.' {
