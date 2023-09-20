@@ -70,7 +70,7 @@ type uploadNodeRunContext struct {
 func (u *uploadNode) run() runnable {
 	return &uploadNodeRunContext{
 		txtarRunContext: &txtarRunContext{
-			txtarNode:        u.txtarNode,
+			txtarNode:        &u.txtarNode,
 			executionContext: u.executionContext,
 			bufferedErrorContext: &errorContextBuffer{
 				executionContext: u.executionContext,

@@ -159,6 +159,13 @@ func bufPrintf(b *bytes.Buffer) func(string, ...any) (int, error) {
 type txtarAnalysis struct {
 	hasEffectiveComment bool
 
+	// cmd is the command used to "run" a txtar node. In case
+	// hasEffectiveComment is true, it will be the first effective
+	// line in the comment. Otherwise, it will be determined
+	// according to a strategy like the in-out pattern and set
+	// later.
+	cmd string
+
 	fileNames []filenameAnalysis
 }
 
@@ -195,8 +202,8 @@ func analyseTxtarArchive(t *txtar.Archive) (res txtarAnalysis) {
 	return
 }
 
-// isEffectiveComment returns true if the txtar comment b comprises anything
-// more than simply comments and whitespace.
+// isEffectiveComment returns a true if the txtar comment b comprises
+// anything more than simply comments and whitespace.
 func isEffectiveComment(b []byte) bool {
 	lines := bytes.Split(b, []byte("\n"))
 	for _, line := range lines {
@@ -216,6 +223,7 @@ func analyseFilename(p string) (res filenameAnalysis) {
 	if res.IsGolden = strings.HasSuffix(b, goldenExt); res.IsGolden {
 		b = strings.TrimSuffix(b, goldenExt)
 	}
+	res.Basename = b
 	i := len(b) - 1
 	for ; i >= 0 && !os.IsPathSeparator(b[i]); i-- {
 		if b[i] == '.' {
@@ -246,7 +254,7 @@ func analyseFilename(p string) (res filenameAnalysis) {
 }
 
 type txtarRunContext struct {
-	txtarNode
+	*txtarNode
 	bufferedErrorContext
 	*executionContext
 }

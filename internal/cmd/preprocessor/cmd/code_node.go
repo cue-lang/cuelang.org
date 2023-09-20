@@ -50,7 +50,7 @@ func (s *codeNode) validate() error {
 func (s *codeNode) run() runnable {
 	return &codeNodeRunContext{
 		txtarRunContext: &txtarRunContext{
-			txtarNode:        s.txtarNode,
+			txtarNode:        &s.txtarNode,
 			executionContext: s.executionContext,
 			bufferedErrorContext: &errorContextBuffer{
 				executionContext: s.executionContext,

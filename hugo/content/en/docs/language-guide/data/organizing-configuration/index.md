@@ -128,12 +128,13 @@ cart: {
 	oranges: 3
 }
 {{< /code-tab >}}
-{{< code-tab name="vegetables.cue" language="text"  area="bottom-left" >}}
+{{< code-tab name="vegetables.cue" language="text"  area="top-right" >}}
 package food
 
 cart: spinach: 4
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="text" type="terminal" area="bottom" >}}
+$ cue eval :food
 cart: {
 	apples:  1
 	oranges: 3
