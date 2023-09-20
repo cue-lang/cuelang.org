@@ -1,5 +1,4 @@
-# Ensure that preprocessor understands the various forms of text/template
-# shorthand that we use.
+# Ensure that sidebyside with 3 files renders as expected
 
 unquote content/dir/en.md
 
@@ -43,36 +42,20 @@ package site
 >
 >Some text before
 >
->{{{with step}}}
 >{{{with sidebyside "en" "json-superset"}}}
->exec cue export in.cue
->cmp stdout stdout.json
->-- in.cue --
->// A doc comment
->map: {
->	member1: 3 // a line comment
->	member2: 4
->}
->-- stdout.json --
+>exec cue export a.cue b.json
+>cmp stdout stdout.golden
+>-- a.cue --
+>x?: int
+>-- b.json --
 >{
->    "map": {
->        "member1": 3,
->        "member2": 4
->    }
+>    "x": 5
+>}
+>-- stdout.golden --
+>{
+>    "x": 5
 >}
 >{{{end}}}
->{{{end}}}
->
->{{{with step}}}
->some text
->{{{with code "en" "x.cue example"}}}
->-- x.cue --
->x: 5
->{{{end}}}
->{{{end}}}
->
->Some text after
->
 -- hugo/content/en/dir/index.md.golden --
 ---
 title: JSON Superset
@@ -80,36 +63,22 @@ title: JSON Superset
 
 Some text before
 
-{{< step stepNumber="1" >}}
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="text"  area="top-left" >}}
-// A doc comment
-map: {
-	member1: 3 // a line comment
-	member2: 4
+{{< code-tab name="a.cue" language="text"  area="top-left" >}}
+x?: int
+{{< /code-tab >}}
+{{< code-tab name="b.json" language="json"  area="top-right" >}}
+{
+    "x": 5
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="json" type="terminal" area="top-right" >}}
-$ cue export in.cue
+{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+$ cue export a.cue b.json
 {
-    "map": {
-        "member1": 3,
-        "member2": 4
-    }
+    "x": 5
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
-{{< /step >}}
-
-{{< step stepNumber="2" >}}
-some text
-```text
-x: 5
-```
-{{< /step >}}
-
-Some text after
-
 -- structure.golden --
 content/dir/en.md
 content/dir/gen_cache.cue

@@ -22,8 +22,10 @@ package site
 >{{{with sidebyside "en" "json-superset"}}}
 >-- in.json --
 >{"x": 5}
->-- out --
->well done
+>-- out.json --
+>{
+>    "x": 5
+>}
 >{{{end}}}
 -- content/page/en.md.golden --
 >---
@@ -34,20 +36,24 @@ package site
 >{
 >    "x": 5
 >}
->-- out --
->well done
+>-- out.json --
+>{
+>    "x": 5
+>}
 >{{{end}}}
 -- hugo/content/en/page/index.md.golden --
 ---
 title: title
 ---
 {{< code-tabs >}}
-{{< code-tab name="in.json" language="json"  area="top-left" >}}
+{{< code-tab name="JSON" language="json"  area="top-left" >}}
 {
     "x": 5
 }
 {{< /code-tab >}}
-{{< code-tab name="out" language=""  area="top-right" >}}
-well done
+{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{
+    "x": 5
+}
 {{< /code-tab >}}
 {{< /code-tabs >}}
