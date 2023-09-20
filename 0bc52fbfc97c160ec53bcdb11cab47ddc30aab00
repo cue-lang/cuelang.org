@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ac51812_cfa1a229",
+        "filename": "content/docs/howto/constrain-string-as-valid-integer/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:11:18Z",
+      "side": 1,
+      "message": "I will update here.",
+      "parentUuid": "ff3b4702_895a9cc6",
+      "revId": "0bc52fbfc97c160ec53bcdb11cab47ddc30aab00",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c09c3bc6_441a56a0",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-20T16:05:42Z",
       "side": 1,
       "message": "I think mentioning `self` gives rise to an implication that that\u0027s a term with significance in CUE.\n\nPerhaps ...\n\n```\n// Constrain s1 and s2 to be the string\n// interpolation of the result of converting\n// their respective values to integers.\n```",
+      "revId": "0bc52fbfc97c160ec53bcdb11cab47ddc30aab00",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d406517d_f3f39f5d",
+        "filename": "content/docs/howto/constrain-string-as-valid-integer/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:11:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c09c3bc6_441a56a0",
       "revId": "0bc52fbfc97c160ec53bcdb11cab47ddc30aab00",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
