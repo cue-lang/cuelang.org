@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfb0bc4f_cd419703",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T08:52:47Z",
+      "side": 1,
+      "message": "LGTM, but adding Dan for a proper Go code review.",
+      "revId": "53518ae9f5b19998afc1283b5fd286e6c9a5265b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
