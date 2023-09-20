@@ -332,11 +332,7 @@ func (t *txtarRunContext) formatFiles() error {
 		}
 	}
 
-	if t.isInError() {
-		return errorIfInError(t)
-	}
-
-	return nil
+	return errorIfInError(t)
 }
 
 func (t *txtarRunContext) dockerCmd(dockerArgs []string, cmdArgs ...string) *exec.Cmd {
