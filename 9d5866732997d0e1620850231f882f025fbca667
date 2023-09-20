@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5296ec9_2b17ff8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:32:25Z",
+      "side": 1,
+      "message": "nit: drop `:`",
+      "revId": "9d5866732997d0e1620850231f882f025fbca667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "1c53e521_b76c3804",
@@ -14,6 +31,91 @@
       "writtenOn": "2023-09-20T16:37:36Z",
       "side": 1,
       "message": "PTAL.",
+      "revId": "9d5866732997d0e1620850231f882f025fbca667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbcde2b9_73e75ce1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:32:25Z",
+      "side": 1,
+      "message": "With some suggestions.",
+      "revId": "9d5866732997d0e1620850231f882f025fbca667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aaa4e98a_2c40947d",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:32:25Z",
+      "side": 1,
+      "message": "Drop invalid tag",
+      "revId": "9d5866732997d0e1620850231f882f025fbca667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8978e9c2_d154ca9c",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:32:25Z",
+      "side": 1,
+      "message": "`schema.cue`",
+      "revId": "9d5866732997d0e1620850231f882f025fbca667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c904b9b_e237692e",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:32:25Z",
+      "side": 1,
+      "message": "You suggested offline using `100` here to vary the limit per list.",
+      "revId": "9d5866732997d0e1620850231f882f025fbca667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8d17d6a_8085c72e",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T17:32:25Z",
+      "side": 1,
+      "message": "Not critical, but it\u0027s unlikely that anyone will understand this point without an example. Which sort of raises the question whether we should bother include it or not. Creating an issue that explains the problem would probably help, but again... not clear we want to try and link to everything from \"all the places\". Some people will, unfortunately, run into a rough edge. At which point the best thing they could do is report an issue and we can take it from there, signposting etc.\n\nHence my suggestion would be we leave this out, and leave a TODO on whatever we want to do.",
       "revId": "9d5866732997d0e1620850231f882f025fbca667",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
