@@ -162,6 +162,7 @@ func (rf *rootFile) transform(targetPath string) error {
 		return err
 	}
 
+	// Do not continue if we are already in error
 	if rf.isInError() {
 		return errorIfInError(rf)
 	}
@@ -239,23 +240,23 @@ func (rf *rootFile) validate() error {
 		}
 	}
 
+	// If we are already in error, do not progress to validate
 	if rf.isInError() {
 		return errorIfInError(rf)
 	}
 
 	// Validate those parts which have a validate() method
-	err = rf.walkBody(func(n node) error {
+	rf.walkBody(func(n node) error {
 		bp, ok := n.(validatingNode)
 		if !ok {
 			return nil
 		}
-		if err := bp.validate(); err != nil {
-			rf.errorf("%v: %v", bp, err)
-		}
-		return errorIfInError(rf)
+		bp.validate()
+		rf.updateInError(bp.isInError())
+		return nil
 	})
 
-	return err
+	return errorIfInError(rf)
 }
 
 // run is responsible for updating those nodes which contain inputs and outputs.

@@ -46,5 +46,5 @@ package site
 -- hugo/content/.gitkeep --
 -- stderr.golden --
 ** $WORK/content/dir/en.md:7:8: saw 2 files but only 1 arguments to #location
-** $WORK/content/dir/en.md:7:8: in error
+** $WORK/content/dir/en.md:19:8: unknown locaion "rubbish"
 terminating because of errors
