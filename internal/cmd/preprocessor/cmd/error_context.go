@@ -111,5 +111,5 @@ func errorIfInError(e errorContext) error {
 	if !e.isInError() {
 		return nil
 	}
-	return errors.New("in error")
+	return errLogged
 }

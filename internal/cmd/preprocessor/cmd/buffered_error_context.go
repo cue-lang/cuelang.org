@@ -42,6 +42,8 @@ type errorContextBuffer struct {
 
 var _ errorContext = (*errorContextBuffer)(nil)
 
+var errLogged = errors.New("error already logged")
+
 func (e *errorContextBuffer) isInError() bool {
 	return e.inError
 }
@@ -62,6 +64,13 @@ func (e *errorContextBuffer) logf(format string, args ...any) string {
 
 func (e *errorContextBuffer) errorf(format string, args ...any) error {
 	e.inError = true
+	// If we are trying to wrap the sentinel errLogged, don't wrap it
+	// and instead return errLogged
+	for _, a := range args {
+		if a == errLogged {
+			return errLogged
+		}
+	}
 	return errors.New(e.logf("** "+format, args...))
 }
 
