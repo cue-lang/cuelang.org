@@ -32,4 +32,12 @@ const (
 	// for a file in a txtar-based directive like sidebyside or upload. A tagCodeTab
 	// tag requires an argument, the filepath of a file in the files in the archive.
 	tagCodeTab = "codetab"
+
+	// tagLocation identifies the location key used to define the location of
+	// files in a txtar archive. If specified, the tagLocation requires as many
+	// unquoted arguments as there are files. e.g.
+	//
+	//     #location top-left top-right bottom
+	//
+	tagLocation = "location"
 )
