@@ -16,6 +16,24 @@
       "message": "LGTM, bearing in mind our discussion about the refactorability of the Go code.",
       "revId": "843a70022014dfd0a34b8f14ee48cd23120a6b0d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53a7db7d_bb3b1a7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T14:06:30Z",
+      "side": 1,
+      "message": "Ack. Per the commit message, this code is not pretty. But we can fix that later.",
+      "parentUuid": "f0d84130_97689e0c",
+      "revId": "843a70022014dfd0a34b8f14ee48cd23120a6b0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
