@@ -82,7 +82,7 @@ func (s *sidebysideNode) validate() error {
 			// TODO: switch to an auto-generated function that tries to parse
 			switch codeTabLocation(l) {
 			case codeTabTop, codeTabBottom, codeTabLeft, codeTabRight,
-				codeTabTopLeft, codeTabTopRight:
+				codeTabTopLeft, codeTabTopRight, codeTabBottomLeft, codeTabBottomRight:
 			default:
 				s.errorf("%v: unknown locaion %q", s, l)
 			}
@@ -276,21 +276,25 @@ func tabIndent(b []byte) []byte {
 func (s *sidebysideNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 	var locations []codeTabLocation
-	switch l := len(s.effectiveArchive.Files); l {
-	case 2:
-		// real side-by-side.
-		locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight}
-	case 3:
-		locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight, codeTabBottom}
-	default:
-		// We know because of validate() that we will have a #location tag,
-		// and that there are valid.
-		tagLocations, found, err := s.tag(tagLocation, "")
-		if !found || err != nil {
-			s.fatalf("%v: bad state with respect to validate(): found: %v, err: %v", s, found, err)
-		}
+	// We know because of validate() that we will have a #location tag, if there is one
+	// and that there are valid.
+	tagLocations, found, err := s.tag(tagLocation, "")
+	if err != nil {
+		s.fatalf("%v: bad state with respect to validate(): err: %v", s, err)
+	}
+	if found {
 		for _, l := range tagLocations {
 			locations = append(locations, codeTabLocation(l))
+		}
+	} else {
+		switch l := len(s.effectiveArchive.Files); l {
+		case 2:
+			// real side-by-side.
+			locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight}
+		case 3:
+			locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight, codeTabBottom}
+		default:
+			s.fatalf("%v: bad state with respect to validate(): found not set, but unsupported number of files (%d) for a default", l)
 		}
 	}
 	analyses := s.analysis.fileNames
