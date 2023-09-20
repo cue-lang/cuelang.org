@@ -5,16 +5,16 @@ package site
 			"the-logic-of-cue": {
 				cache: {
 					code: {
-						"order unaware":          "do3Qi+iHUobdRJCIIvo5p7+oVc1GZhIDwNsjSO1DIig="
-						"new order":              "JIwYLIjpx3civgSxB350IvXz17UMUFrFKOzCa96SH5Y="
-						"allowed values":         "OCZbwC+bctFv7BTlMSXra+AgHyEKlo9xmEeBALFa118="
-						default:                  "EwdvlH7lGpPjlwUluo/CFfc0woUd7FdCxSTNct8/WJg="
-						"revisit allowed values": "41uRB9pQOhigvTmcYlL/SZAvPKIqTHiKHFTpBJlrhEE="
-						"revisit default":        "z4XVjC59S16c41aScynjbuo+e13e75wzsXFawNPnIyo="
-						acmeMonitoring:           "Vk5q+e+/wnOdTCvh0nwj0SNNyiB242OsoIM+qaJx2xg="
-						cycles:                   "zkTJEOYTshDa4HpPyiITM+E0YWAYHPxwZOeyZo/N+F8="
-						sums:                     "e7puCL3efEqU9jzgXgocpW0kX98N267JilJLgNMAYKw="
-						"sums answers":           "7/26v9f0a9ivZwurOu5vZDaelBpl2nx8k2UXWxkR0e8="
+						"order unaware":          "gulS71cxwo7DfLPS3k0f8moeby4OhMwPGVbJVMsi4YI="
+						"new order":              "FBfeU89C1hFE3YFGpJ99iTmYfX043rgy8wLZjPLg74Q="
+						"allowed values":         "PGM8M+X+JyG9X6fqQQTctDumxd3yZ5xm1zACv6X7pH8="
+						default:                  "FFE76roB78royj1N+cimo7q3kLu0ZXgbc9o+g4qUXPg="
+						"revisit allowed values": "dIEKAxcytE4PHVOR/j/GGRs94mwRxaM58YiulyaI6fE="
+						"revisit default":        "F9gDU2l940sJndEwqTmehgCBNZZWmvq9N2RdhJ5e3MM="
+						acmeMonitoring:           "POBTsdh4prjAajVNPXcfUsl6Kbn4DB27CbqTcLIua+w="
+						cycles:                   "77XpuHwkwxc0dBzhSfBBZce+2cADGURzgZDUSDdy+NM="
+						sums:                     "RNzhe/rxls4daHWfTlNZMRG8VaExgpcbauG1F2GQoKw="
+						"sums answers":           "Q0DvdONv6n3uKQ0EunheAbkUC+O2iWxB5GNEVvKxnXg="
 					}
 				}
 			}

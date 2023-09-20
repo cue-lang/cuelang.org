@@ -5,13 +5,13 @@ package site
 			welcome: {
 				cache: {
 					code: {
-						data:               "ryNG/hDfPP/Rb+ggSPFopWTdMHDFpqh1xjio2GBov3k="
-						schema:             "+xt4OpbyY7YvbXT/TkAPQiflpubOr4302qZYe+MTByI="
-						CUE:                "DiOhVIE+osUpcg1feetK+iwHPVC2U1Bg4IDfksnh9Bo="
-						json:               "GI7WMdXNhHNllfKKTjWhrP8coNnX4FNrUGY9ZRY5x6U="
-						"cue form of json": "prQFLfYRAGyPT4WvXTYgmn92EHyr3+4RAsMf5JHVW5c="
-						"non-dry":          "i1GzhLsFs/tVP17lB8IpjRtuUEzyE0fO/5l8YpqyTe8="
-						dry:                "ks1RYwCtFsT/ST0tThJrZD46Z0G6sSRb/SbSbtbb50o="
+						data:               "KXhOLKkUiPUURN/wfycyjjfJdJ+khPMfBDNxHRE3oZA="
+						schema:             "zwZjuKjbjk58PDKEBTGrQ7jpqUbQ6ffNKcz5bdiR760="
+						CUE:                "mQjD1yrPpZOh9UwKj0m5z9vmhI3Ze9A74bE6Z584YkM="
+						json:               "XqzrvjBIM6xf6tuXldElrg8EvDvqB4Uf3t7/y8vQlH4="
+						"cue form of json": "osT5hfmwAC2WO7n2g/vHgvRdBwryoXzMFL4IiTHLhdQ="
+						"non-dry":          "kHj/Q/JSemFStKm/rqp1Gv8J/st3nIMWbjcwcSPPvpw="
+						dry:                "prr0QPeg92/BIwJp0uGu8PIkOtQNoF10EbQIfqJ5LVU="
 					}
 				}
 			}
