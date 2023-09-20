@@ -16,6 +16,23 @@
       "message": "LGTM, but adding Dan for a proper Go code review.",
       "revId": "53518ae9f5b19998afc1283b5fd286e6c9a5265b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16b36033_ed6b8109",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_transform.txtar",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T08:57:44Z",
+      "side": 1,
+      "message": "Why does the `code` form require the author to provide an identifier on each use? We can\u0027t refer to the block in-document, if I\u0027m understanding things correctly.\n\nWhilst I can believe it\u0027s currently used by the implementation, that feels like a potentially leaky abstraction.",
+      "revId": "53518ae9f5b19998afc1283b5fd286e6c9a5265b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
