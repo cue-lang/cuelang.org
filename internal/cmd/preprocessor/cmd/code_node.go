@@ -16,7 +16,6 @@ package cmd
 
 import (
 	"bytes"
-	"fmt"
 )
 
 const (
@@ -35,16 +34,16 @@ func (c *codeNode) nodeType() string {
 }
 
 var _ runnableNode = (*codeNode)(nil)
+var _ validatingNode = (*codeNode)(nil)
 
 type codeNodeRunContext struct {
 	*txtarRunContext
 }
 
-func (s *codeNode) validate() error {
+func (s *codeNode) validate() {
 	if l := len(s.analysis.fileNames); l != 1 {
-		return fmt.Errorf("code nodes can only contain one file in the txtar archive")
+		s.errorf("%v: %s directives can only contain a single file", s, fnCode)
 	}
-	return nil
 }
 
 func (s *codeNode) run() runnable {
@@ -63,7 +62,7 @@ func (s *codeNodeRunContext) run() (err error) {
 	defer recoverFatalError(&err)
 
 	if err := s.formatFiles(); err != nil {
-		return errorIfInError(s)
+		return s.errorf("%v: failed to format files: %v", s, err)
 	}
 
 	return nil

@@ -24,6 +24,8 @@ import (
 
 // A node is an abstraction around the structures that can appear in a page.
 type node interface {
+	errorContext
+
 	// writeSourceTo writes the source (text/template) form of a node to buf.
 	writeSourceTo(buf *bytes.Buffer)
 
@@ -65,8 +67,9 @@ type validatingNode interface {
 
 	// validate ensures that a node is valid. This type of validation is
 	// self-contained, i.e. can only be a function of the contents of the
-	// node itself.
-	validate() error
+	// node itself. Implementers record errors via errorf(), which has
+	// the effect of marking the node as isInError() == true.
+	validate()
 }
 
 // A runnable is something that can be run. It has a bufferedErrorContext for
