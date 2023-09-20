@@ -52,7 +52,12 @@ color = "lilac"
 weight = 50
 
 [[tags]]
-name = "language"
+name = "tooling"
 color = "orange"
 weight = 60
+
+[[tags]]
+name = "commented cue"
+color = "pink"
+weight = 70
 
