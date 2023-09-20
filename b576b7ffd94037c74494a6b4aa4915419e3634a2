@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af9ee95b_5de85fe7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T09:18:10Z",
+      "side": 1,
+      "message": "nit: this wording made me initially believe that the purpose of this change was to /stop/ norun applying in other, non-sidebyside contexts.\n\n```\npreprocessor: sidebyside: norun stops implying nofmt\n```\n\n... might work equally well?",
+      "revId": "b576b7ffd94037c74494a6b4aa4915419e3634a2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
