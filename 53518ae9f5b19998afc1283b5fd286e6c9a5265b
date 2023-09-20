@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da2593b3_ec1d9190",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T10:12:28Z",
+      "side": 1,
+      "message": "Good point. Done.",
+      "parentUuid": "82b908eb_2cf573fa",
+      "revId": "53518ae9f5b19998afc1283b5fd286e6c9a5265b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16b36033_ed6b8109",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-09-20T08:57:44Z",
       "side": 1,
       "message": "Why does the `code` form require the author to provide an identifier on each use? We can\u0027t refer to the block in-document, if I\u0027m understanding things correctly.\n\nWhilst I can believe it\u0027s currently used by the implementation, that feels like a potentially leaky abstraction.",
+      "revId": "53518ae9f5b19998afc1283b5fd286e6c9a5265b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dec1d0b_fd8a5e6f",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_transform.txtar",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-20T10:12:28Z",
+      "side": 1,
+      "message": "Per our conversation, this is a requirement (at least based on the current thinking/understanding) of multi-language translations. Each translation needs to be sure that it is consistently referring to the same set of steps. That requires a step like this to be named uniquely. \n\nIf this proves to not be a requirement for whatever reason happy to tweak, because coming up with names (especially retrospectively) is annoying.",
+      "parentUuid": "16b36033_ed6b8109",
       "revId": "53518ae9f5b19998afc1283b5fd286e6c9a5265b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
