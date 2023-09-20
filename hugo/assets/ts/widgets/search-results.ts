@@ -98,7 +98,10 @@ export class SearchResults extends BaseWidget {
     public createTeaser(teaser: Teaser): string {
         let tags = null;
         if (teaser.tags && teaser.tags.length) {
-            tags = teaser.tags.map(tagString => this.tags.find(tag => tag.name === tagString));
+            tags = teaser.tags.map(tagString => {
+                const fullTag = this.tags.find(tag => tag.name === tagString);
+                return fullTag ?? { name: tagString, color: 'blue' };
+            });
         }
 
         return `
