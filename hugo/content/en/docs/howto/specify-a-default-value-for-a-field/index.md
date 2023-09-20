@@ -3,6 +3,7 @@ title: Specify a default value for a field
 tags:
 - level:user
 - language
+toc_hide: true
 ---
 
 CUE allows fields to be given a value which is used only if **unification**
