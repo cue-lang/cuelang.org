@@ -5,10 +5,10 @@ package site
 			"validating-simple-yaml-files": {
 				cache: {
 					upload: {
-						yamlBroken: "yvY2BXzg9oXdWDWPbD+WjJ6abgPsdPZ2WW0o+MpbAow="
-						"pets.cue": "W3YmhYZrDRtL6DRuhabh4Qa5d/3lpCear9FbhmcsdB8="
-						yamlFixed:  "8KJ4SzOyhC9K6EitmZD+FH68p7CYeTV2Aurxs/AUc1I="
-						yaml2:      "9nw/mngQPpWmZ/nIliDX7oA5iBovAtLiJA+LkUQMpXY="
+						yamlBroken: "pX0G2lHxbT3RsOLBJRCZks9qzBVzfABRL3lz8F432uE="
+						"pets.cue": "xqmSpv3aNwMJcDl2jad5USK5L39jbPGzBbNtTN8T5QQ="
+						yamlFixed:  "UVPBBPVF2iny3d8RYdLr/SglNJKY+DfgPZBEjrWY3G4="
+						yaml2:      "xAGLwNwk9epWAPA07FHNXRmysVH4AHrCKJLhUugnQjU="
 					}
 				}
 			}
