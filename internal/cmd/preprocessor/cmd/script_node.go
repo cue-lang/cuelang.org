@@ -31,15 +31,17 @@ type scriptNode struct {
 	stmts []*commandStmt
 }
 
+var _ validatingNode = (*scriptNode)(nil)
+
 func (s *scriptNode) nodeType() string {
 	return "script"
 }
 
 // validate the scriptNode. This also has the side effect of parsing the
 // bash script in the comment o commandStmt's.
-func (s *scriptNode) validate() error {
+func (s *scriptNode) validate() {
 	if l := len(s.analysis.fileNames); l != 0 {
-		return fmt.Errorf("script nodes cannot contain any files in the txtar archive")
+		s.errorf("%v: script nodes cannot contain any files in the txtar archive", s)
 	}
 
 	// Now ensure that we can parse the script
@@ -47,7 +49,10 @@ func (s *scriptNode) validate() error {
 	// Per @mvdan, use https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Parser.Stmts
 	file, err := syntax.NewParser(syntax.KeepComments(true)).Parse(bytes.NewReader(s.effectiveArchive.Comment), "")
 	if err != nil {
-		return fmt.Errorf("failed to parse shell script: %v", err)
+		// If we get an error here we cannot proceed to further
+		// validation analysis
+		s.errorf("%v: failed to parse shell script: %v", s, err)
+		return
 	}
 	s.debugf(s.debugGeneral, "parsed %q, gave %v statements", s.effectiveArchive.Comment, len(file.Stmts))
 	for _, stmt := range file.Stmts {
@@ -60,14 +65,12 @@ func (s *scriptNode) validate() error {
 		stmt.Negated = false
 		var sb strings.Builder
 		if err := s.rf.shellPrinter.Print(&sb, stmt); err != nil {
-			return fmt.Errorf("failed to print statement: %v", err)
+			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
 		}
 		cmdStmt.cmdStr = sb.String()
 		cmdStmt.negated = negated
 		s.stmts = append(s.stmts, &cmdStmt)
 	}
-
-	return nil
 }
 
 // commandStmt is effectively a local version of the parsed *syntax.Stmt. This

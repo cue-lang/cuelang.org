@@ -39,13 +39,14 @@ func (s *sidebysideNode) nodeType() string {
 	return fnSidebyside
 }
 
-var _ runnableNode = (*sidebysideNode)(nil)
-
 type sidebysideNodeRunContext struct {
 	*txtarRunContext
 }
 
-func (s *sidebysideNode) validate() error {
+var _ runnableNode = (*sidebysideNode)(nil)
+var _ validatingNode = (*sidebysideNode)(nil)
+
+func (s *sidebysideNode) validate() {
 	// Is there a script to run? If there is no effective script, i.e. non blank
 	// non comment lines, we might need to fill one in when running. There are
 	// shorthand versions of sidebyside nodes which don't have a script and yet
@@ -62,7 +63,9 @@ func (s *sidebysideNode) validate() error {
 	// defaults, otherwise if there are >3 files the #location tag is required.
 	locations, ok, err := s.tag(tagLocation, "")
 	if err != nil {
-		return s.errorf("%v: failed to extract #%s tag: %v", s, tagLocation, err)
+		s.errorf("%v: failed to extract #%s tag: %v", s, tagLocation, err)
+		// Can't validate further
+		return
 	}
 	if !ok {
 		// This case is only a problem if we have >3 files
@@ -89,19 +92,22 @@ func (s *sidebysideNode) validate() error {
 		}
 	}
 
+	// Return early in case we are already in error
 	if s.isInError() {
-		return errorIfInError(s)
+		return
 	}
 
 	// Return early if we have been told to #norun this archive
 	if _, found, _ := s.tag(tagNorun, ""); found {
-		return nil
+		return
 	}
 
 	if !s.analysis.hasEffectiveComment {
 		effectiveArchive.Comment, ok = s.buildEffectiveScript(s.analysis, s.effectiveArchive)
 		if !ok {
-			return s.errorf("%v: failed to build effective comment", s)
+			s.errorf("%v: failed to build effective comment", s)
+			// Cannot proceed with this error
+			return
 		}
 	}
 
@@ -111,9 +117,8 @@ func (s *sidebysideNode) validate() error {
 	// the command, stripping the leading "exec"
 	s.analysis.cmd = extractCommand(effectiveArchive.Comment)
 	if s.analysis.cmd == "" {
-		s.fatalf("no effective command?")
+		s.errorf("%v: failed to find effective command in script:\n%s", s, tabIndent(effectiveArchive.Comment))
 	}
-	return nil
 }
 
 func (s *sidebysideNode) run() runnable {
@@ -132,7 +137,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 	defer recoverFatalError(&err)
 
 	if err := s.formatFiles(); err != nil {
-		return errorIfInError(s)
+		return s.errorf("%v: failed to format files: %v", s, err)
 	}
 
 	// Update the effective files in from the source files
