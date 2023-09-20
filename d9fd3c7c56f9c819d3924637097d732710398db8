@@ -16,6 +16,23 @@
       "message": "PTAL differences with respect to patchset 8, your last patchset.",
       "revId": "d9fd3c7c56f9c819d3924637097d732710398db8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1b3c3df_ed45cd28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-20T18:17:36Z",
+      "side": 1,
+      "message": "LGTM.",
+      "revId": "d9fd3c7c56f9c819d3924637097d732710398db8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
