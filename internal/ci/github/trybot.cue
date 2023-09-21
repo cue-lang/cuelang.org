@@ -218,10 +218,12 @@ _installGo: _repo.installGo & {
 
 _installHugoLinux: _linuxStep & {
 	name: "Install Hugo (${{ runner.os }})"
-	uses: "peaceiris/actions-hugo@v2"
-	with: {
-		"hugo-version": _repo.hugoVersion
-		extended:       true
+	run: """
+		go install -tags extended github.com/gohugoio/hugo
+		"""
+	"working-directory": "_tools/hugo"
+	env: {
+		CGO_ENABLED: "1"
 	}
 }
 
