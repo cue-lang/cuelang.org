@@ -19,12 +19,10 @@ This way you don’t have to indent any lines!
 ```
 ````
 {{< columns-separator >}}
-```
-{
-    "firstName": "John",
-    "lastName": "Smith",
-    "age": 25
-}
+```go
+import (
+    "test"
+)
 ```
 {{< /columns >}}
 
@@ -34,7 +32,7 @@ You can also use syntax highlighting with Fenced Code Blocks. For this you only 
 
 {{< columns >}}
 ````
-```json
+```cue
 {
     "firstName": "John",
     "lastName": "Smith",
@@ -43,9 +41,10 @@ You can also use syntax highlighting with Fenced Code Blocks. For this you only 
 ```
 ````
 {{< columns-separator >}}
-```json
+```cue
+// This is a test
 {
-    "firstName": "John",
+    "5": "John",
     "lastName": "Smith",
     "age": 25
 }
