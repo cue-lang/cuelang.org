@@ -136,6 +136,36 @@ discussed below,
 can generate these kind of stubs to make life a bit easier.
 
 
+### Validating JSON Against CUE Values
+
+The simplest thing to initialize a `cue.Value` from a `[]byte` _source_ is
+using the [`ctx.CompileString()`](https://pkg.go.dev/cuelang.org/go@v0.4.0/cue#Context.CompileString) method.
+
+[`Validate`](https://pkg.go.dev/cuelang.org/go@v0.4.0/encoding/json#Validate) validates JSON and confirms it matches the constraints specified by v.
+
+{{< highlight go >}}
+policy := `
+foo: {
+  bar: <11
+}
+`
+
+ctx := cuecontext.New()
+v := ctx.CompileString(policy, []cue.BuildOption{}...)
+
+input := `
+{
+ "foo": {
+  "bar": 12
+ }
+}`
+
+err := json.Validate([]byte(input), v)
+if err != nil {
+    // handle error
+}
+{{< /highlight >}}
+
 ### Complete Go values
 
 A `gocodec.Codec` also defines a `Complete` method, which is similar to
