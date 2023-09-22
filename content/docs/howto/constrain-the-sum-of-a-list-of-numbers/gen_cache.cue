@@ -5,7 +5,7 @@ package site
 			"constrain-the-sum-of-a-list-of-numbers": {
 				cache: {
 					sidebyside: {
-						cc: "2e9ckqKFwZe82nb9BABWLK6LZniCXypz4h/JWEHV0bE="
+						cc: "kblj8l43hNf4P8Qtdal0AJnP3O7GcGI1kYO9AHfCTa8="
 					}
 				}
 			}
