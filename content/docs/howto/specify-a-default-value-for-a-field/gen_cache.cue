@@ -5,18 +5,18 @@ package site
 			"specify-a-default-value-for-a-field": {
 				cache: {
 					code: {
-						basic: "P1uMFUG/3a87b/L6ZYFlON8mijJ+KR5B4VKQ14hZhVc="
+						basic: "sZrHqplrY+yYCJ/WhRzRmir1Oh/0hqWqG4NRP6Qrq3Y="
 					}
 					sidebyside: {
-						"unification-1":    "MgKQk/lkCkzes5YabYNADDGGFqehNgaYATWXvkIcYzc="
-						"unification-2":    "WwfgrMUISHwmG2SanRY4Ek7AvnB5SkSOcWKnm6X2Q1Q="
-						"failure-1":        "9lFhZP0jC4E48M6NV84nor3cQed0yt002R01huDj12c="
-						"error-2":          "2YNW9NpRdBs+Na7KQMgsUcYu1QmScNqJzPu2KEfwWL8="
-						references:         "PLes22JYf7Vh2QFlKtl+AC5GPYVkwCBLFCNIGVZIkgQ="
-						complex:            "aUJQJS2En8PsZEwn2b5Qkck5blYxxftz4hJQC1K6I0Q="
-						"multiple-success": "vUj/jI4m8czqO6hLpIKP+FUpSdhpIuOWDILgurfCGGE="
-						"multiple-failure": "toJarwhifA5uswthRrixOwOgxtYAbEKs3HgEFBPQGj0="
-						"large example":    "frUuOs4ZxqpgR6z2EsQfT1CQEPRqpQaPJK64ye6p0ds="
+						"unification-1":    "1+w0grpBczDPkrExrMJtgx2lM7MxZJXKvnSL92n0/9g="
+						"unification-2":    "XHyYRQcx/rKtrumVR+NAj/0FIq9I1cNOmJJ0axAFzjA="
+						"failure-1":        "B4HgvS0jce4m2P5rdY8AkKbGbtDtqXmoTz3GO+KohJQ="
+						"error-2":          "kxnv7hygAqPJGQDHzBpV+P4WEGcXfZ7w+F+qZwgpOig="
+						references:         "55vzgwFQO/cwlitEuLBjJ/QWf3JtY1kTVjyLUbl6j08="
+						complex:            "4Nfr2QJOhOeyDdAiay4cCIg0FKOOuea5vMW0ufIMyRA="
+						"multiple-success": "EtcbhzE+BP5PJFtSGhRMZUfhlAhRK6rk8+RNAwRn9ls="
+						"multiple-failure": "WLZVfTTRwtEPrEJAJqsmyv28wEVZDHxThCw4yF8mjso="
+						"large example":    "EQtutjyWeMq1WaBHRCs40ptAUvNSDC6t1+bjt1PLbto="
 					}
 				}
 			}
