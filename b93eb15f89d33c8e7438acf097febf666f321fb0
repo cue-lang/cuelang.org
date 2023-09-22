@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aee15ac1_37795247",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-22T12:40:54Z",
+      "side": 1,
+      "message": "\"because we cache busting\" sounds more hip and froody than I believe was intended.",
+      "revId": "b93eb15f89d33c8e7438acf097febf666f321fb0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
