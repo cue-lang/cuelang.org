@@ -48,19 +48,12 @@ workflows: trybot: _repo.bashWorkflow & {
 	}
 
 	jobs: test: {
-		strategy: {
-			"fail-fast": false
-			matrix: {
-				"go-version": [_repo.latestStableGo]
-				runner: [_repo.linuxMachine]
-			}
-		}
-		"runs-on": "${{ matrix.runner }}"
+		"runs-on": _repo.linuxMachine
 
 		// Only run a deploy of tip if we are running as part of the trybot repo,
 		// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
 		let _netlifyStep = _netlifyDeploy & {
-			if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer) && \(_isLatestLinux)"
+			if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
 			#site:  _repo.netlifySites.cls
 			#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
 			name:   "Deploy preview of CL"
@@ -164,7 +157,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			json.#step & {
 				// Only run in the main repo on the alpha branch. Because anywhere else
 				// doesn't make sense.
-				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)') && \(_isLatestLinux)"
+				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)')"
 				run:                 "npm run algolia"
 				"working-directory": "hugo"
 				env: {
@@ -176,15 +169,6 @@ workflows: trybot: _repo.bashWorkflow & {
 			},
 		]
 	}
-
-	let matrixRunner = "matrix.runner"
-	let goVersion = "matrix.go-version"
-
-	// _isLatestLinux returns a GitHub expression that evaluates to true if the job
-	// is running on Linux with the latest version of Go. This expression is often
-	// used to run certain steps just once per CI workflow, to avoid duplicated
-	// work.
-	_isLatestLinux: "(\(goVersion) == '\(_repo.latestStableGo)' && \(matrixRunner) == '\(_repo.linuxMachine)')"
 
 	// TODO: this belongs in base. Captured in cuelang.org/issue/2327
 	_dispatchTrailerExpr: "fromJSON(steps.DispatchTrailer.outputs.value)"

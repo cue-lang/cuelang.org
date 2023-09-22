@@ -17,14 +17,7 @@
         default: "false"
 jobs:
   test:
-    strategy:
-      fail-fast: false
-      matrix:
-        go-version:
-          - 1.20.x
-        runner:
-          - ubuntu-22.04
-    runs-on: ${{ matrix.runner }}
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
@@ -240,12 +233,12 @@ jobs:
         working-directory: hugo
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
-          Dispatch-Trailer: {"type":"trybot"')) && (matrix.go-version == '1.20.x' && matrix.runner == 'ubuntu-22.04')
+          Dispatch-Trailer: {"type":"trybot"'))
         name: Deploy preview of CL
         run: 'netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
-      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/alpha') && (matrix.go-version == '1.20.x' && matrix.runner == 'ubuntu-22.04')
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/alpha')
         run: npm run algolia
         working-directory: hugo
         env:
