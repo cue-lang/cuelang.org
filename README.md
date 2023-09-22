@@ -19,7 +19,7 @@ issue a `cuelang.org: ` prefix.
 ### Requirements for local development
 
 * [NodeJS](https://nodejs.org/) `v18.x`
-* [Go](https://golang.org/dl/) `>= go1.20` (not needed for only running `hugo`)
+* [Go](https://golang.org/dl/) `>= go1.21` (not needed for only running `hugo`)
 * [Hugo](https://github.com/gohugoio/hugo/releases) `>= v0.117.0`
   (["extended"](https://gohugo.io/troubleshooting/faq/#i-get-this-feature-is-not-available-in-your-current-hugo-version)
   binary version)
