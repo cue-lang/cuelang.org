@@ -1,14 +1,16 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			templating: {
-				"constructing-maps": {
-					cache: {
-						sidebyside: {
-							"dynamic-fields":   "eVWYU6u2qOfrXCk6WCvb3AaKCGOsHqnVTeE/VK8ScVM="
-							"bulk-constraints": "5CadD9qHqmeLuB9vJ47o1AEp+EqmJRz5shZN4T02D+A="
-							"core-builtin-and": "zpCEWt3+LJPQbd51Ia0kTXHXZJj9VWSTi8CntqokbIc="
+	content: {
+		docs: {
+			"language-guide": {
+				templating: {
+					"constructing-maps": {
+						cache: {
+							sidebyside: {
+								"dynamic-fields":   "C1Jl/3xIi6sgUMSjThW9z8PCsxqFFMd7pVIrD9BCIWw="
+								"bulk-constraints": "6pEIGE6I4Xkvl2l3qrLRZiJArpW6auiNA/h1euoDfT0="
+								"core-builtin-and": "BgS86dzzxm80rLSpTkjIYaKUA+Z6aiXbKMDOnrewC1w="
+							}
 						}
 					}
 				}

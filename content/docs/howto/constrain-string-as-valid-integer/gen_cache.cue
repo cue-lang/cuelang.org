@@ -1,11 +1,13 @@
 package site
 {
-	docs: {
-		howto: {
-			"constrain-string-as-valid-integer": {
-				cache: {
-					sidebyside: {
-						example: "2+B6MOnaFWeypL0oremwUYIrYwCVnQ3mpWU2hnCqzYU="
+	content: {
+		docs: {
+			howto: {
+				"constrain-string-as-valid-integer": {
+					cache: {
+						sidebyside: {
+							example: "+1q7Wx5aANVi11ECkls88WoEtURg1gvnuLampdmRrOE="
+						}
 					}
 				}
 			}

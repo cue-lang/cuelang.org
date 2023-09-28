@@ -1,23 +1,25 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			templating: {
-				formulas: {
-					cache: {
-						sidebyside: {
-							"numbers-arithmetic":           "NBxCqbBvBGK4aVOzqGNllZCjmXk42EPIWoZ4gVStKLw="
-							"strings-arithmetic":           "4zMUz7dmcpftn6T03OdV1ZruE9jW65Urday9tQfNpU8="
-							"strings-interpolation":        "F0e480OjXxabbr2kxJalBw0ykGe70EIW7yKVe3ZG60g="
-							"strings-interpolation-fields": "cBds2vRs0qQ3aYKLwA59QI1UwFP5kibPCLw2O6cMQec="
-							"comparators-ordered":          "TplIUl2v61sRrOvDlwYJvQa1Os0uoxyltXPfBhd7Z60="
-							"comparators-equality":         "ooUu+SHIoRpt7cAWoh/oht5d0uVP7dlDjrXaWOY6Gjs="
-							regexp:                         "0KaxGWrSdqGnKbmH/0Tg99NvWjE+535Fi04FgWPzEKY="
-							"boolean-arithmetic":           "JkTqzaV2Rgecd6eUiF+Cn3w/z/VfZI4aXtK9krQKz+k="
-							"boolean-arithmetic-error":     "RY6AcicatvGvRqBuKlJQxWL6/6RIlYQEO46STLeFGtg="
-							"stdlib-usage":                 "FlFyN0tOfQAKtR/3FcK7DK+enrvq+h0mf+mhbGxD+Qs="
-							"core-builtin-len":             "IvNLk3aag0I1fytk4hbEEmlRmm8uLZ03NlEtHMcxUM8="
-							"composition-operator":         "6T87BbvBy8IlBNV7rP/gGwrgXN46fZcf8BEsLzFufso="
+	content: {
+		docs: {
+			"language-guide": {
+				templating: {
+					formulas: {
+						cache: {
+							sidebyside: {
+								"numbers-arithmetic":           "tLr8lB3pqrwiP58Jh0wuYpS7H4UcED7A/7nWlz/ArEQ="
+								"strings-arithmetic":           "G6ePDevtnVU8oGMIZCnLdmv8zIiJgNj1nw0Fcv0uSvI="
+								"strings-interpolation":        "T1iG0Nmc7oBF2QUA/0zhVHxmg9q1Sz2Cb50KYx+d9qQ="
+								"strings-interpolation-fields": "8HT/7+MCxamhOvIt6EUXDRd013oCQIeOA0lNJKi5mUE="
+								"comparators-ordered":          "nYc+M3dzb2wto4s+yW0hnWq0dwnTGshadeMJYf/LWns="
+								"comparators-equality":         "Z67jDpAm1uDYgsSVQK1xNZIzFGI2R1LmQdezUqnLKoQ="
+								regexp:                         "Ei8xhnJHDka9Bv9LSDH0uPZeJSbMVg2mef1Uz8yWg4w="
+								"boolean-arithmetic":           "AM/tPQ7meIDMOzK/Ybf7ryoAJyZiTCroADKjLwNa07M="
+								"boolean-arithmetic-error":     "iooQAtHgSihvW5wHRjxurCQjrW2p0FyjoI4Pxm/fMxM="
+								"stdlib-usage":                 "08+0IKy9OV4PoXgoXM466JDABuY8ewOp9SY0f/9d2/g="
+								"core-builtin-len":             "MVBnww+LLlQko8dqMBXJ0qcbUq4B+Yh8op6MkcnodzY="
+								"composition-operator":         "s8ZTXkOl5gbO2ORU2XHDGHYR6nWCLp/YtGyXrPS5NGE="
+							}
 						}
 					}
 				}

@@ -1,16 +1,18 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			templating: {
-				comprehensions: {
-					cache: {
-						sidebyside: {
-							"for-clause":             "KzSvW7ymnrhlMc/4g4KU6rEjywCRld+PJ2LtqauYNow="
-							"if-clause":              "pE0fOflShtDGKuUu44+XNz/Ih+1O4InCw3hgaAlEt54="
-							"let-clause":             "ysM8M/NYsvlsiBkXc8nLH/B/GNgiWjiWl2N/6DtSfRE="
-							"list-comprehension":     "V+St8oGgYVALxd6wwkgQEbYMC4iwRYaXGPzthewmhOs="
-							"switch-if-else-pattern": "kM2RlCMkwt5TxiOWfKjIhXHYFJPFmd/b2AvkjHOqCnA="
+	content: {
+		docs: {
+			"language-guide": {
+				templating: {
+					comprehensions: {
+						cache: {
+							sidebyside: {
+								"for-clause":             "Yp6GZi5qoUnHFoJdSfrBafTiY70j5JPFjJvH3vCLJ9M="
+								"if-clause":              "0So87ixrsBGLhNHw6p0nySSAVmbcbqEGHl1Ha9uZhr0="
+								"let-clause":             "JmLECySVmWAjPI4I/jBqvY5DH/INj+4XdZRU//0hQU0="
+								"list-comprehension":     "XpnRRwppbq4hzPOYXayXjJh3nETSrhwKxFfLulaJR9c="
+								"switch-if-else-pattern": "fMEhHW0KGUrJAVYA3jHaX4wWR2cJkGjJSGj83KXKnLI="
+							}
 						}
 					}
 				}

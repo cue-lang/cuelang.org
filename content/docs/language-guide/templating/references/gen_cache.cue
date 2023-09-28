@@ -1,19 +1,21 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			templating: {
-				references: {
-					cache: {
-						sidebyside: {
-							"references-basics":            "l50PIrkX4/K+4ef0WANTBD/U/CRCEl7RbZeeLJ2PPnA="
-							"quoted-field-reference-error": "oGexKZOqKfPhiQyK0Kk2VUJOaDL0nm/CntzC/pZIVkU="
-							aliases:                        "Zddyuuj43Nn59svAHbO+EZyry2WNNnRAW1ACGOV5x1w="
-							"list-aliases":                 "c9ZCkXHHSTV7OtEaJpfEa+P6+wKiG+MOxUVO2UkqM/4="
-							"value-alias":                  "PzVdibgMm7bZ1PkRVDycJcjxREGXgiNT7PUZhksw1v8="
-							"field-selector":               "a6CIfTmnMf3LT0ai9/C92xcf9332xT4Fv6DDZbhr7f4="
-							"dynamic-field-selector":       "hXCWEdb3jTyiKebRQ005n6IEv0XsBOxEfdSgeuuumbk="
-							"let-expressions":              "gDorxHCEJts/vaAm7UE76uj/HnPQofugs2ogOGFq5js="
+	content: {
+		docs: {
+			"language-guide": {
+				templating: {
+					references: {
+						cache: {
+							sidebyside: {
+								"references-basics":            "2SyxwRJRGHSTGi4NrglkT9DKJ82vNXQ5sSHKIaK9HSo="
+								"quoted-field-reference-error": "E16sdyphpE2iONFClCet6pjBG/nOgL513EsryVK1QUI="
+								aliases:                        "tV8yHJ0VGyvP3rErbgykZXGQEnooaROpHG4CwHVTfx8="
+								"list-aliases":                 "UIPaW2EZTqoIS4nCqiQ+bg9W+BdtJPZiP9swSigxEsI="
+								"value-alias":                  "7BtSFbDYHJFvbYkl0l4LDkBAwDgzvkB9m2Id37hECLg="
+								"field-selector":               "fPiPz8phzw1oCw17m4S/EVEl8mWzYn8AXVpJv0u6ax0="
+								"dynamic-field-selector":       "FYaTKfgYdjhEva6BrJfHBHX4ENZyeQAfkbz3U0EwQpw="
+								"let-expressions":              "3bMCH0mUlOaV0xDQPvzDpMPgIFOuXv9XZcF5v9Gg/Og="
+							}
 						}
 					}
 				}

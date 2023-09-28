@@ -1,13 +1,15 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			data: {
-				"numeric-values": {
-					cache: {
-						sidebyside: {
-							"numeric-literals-si":      "oNC7/xMtf3v8saogs2llgIvmUUjNuROpWriS3oCyzEU="
-							"numeric-literals-altbase": "8HTbqnvokTWF1PsdZWhpKi1lBLkt+pqoSPPNpyfJXAM="
+	content: {
+		docs: {
+			"language-guide": {
+				data: {
+					"numeric-values": {
+						cache: {
+							sidebyside: {
+								"numeric-literals-si":      "pkGWWAppbDNy3BIcYMP2no01JhHOOU6WK/u3SSmPX4w="
+								"numeric-literals-altbase": "mpZeJ6jidDuYpNHYJUpZcqnlY62G8zYdRvPO3K2Nc8k="
+							}
 						}
 					}
 				}

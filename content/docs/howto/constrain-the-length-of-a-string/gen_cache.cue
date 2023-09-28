@@ -1,11 +1,13 @@
 package site
 {
-	docs: {
-		howto: {
-			"constrain-the-length-of-a-string": {
-				cache: {
-					sidebyside: {
-						cc: "uJwLCc+77VrsTYJt/FmGcFqs+CuUfuQnD/RU3Rg1XwE="
+	content: {
+		docs: {
+			howto: {
+				"constrain-the-length-of-a-string": {
+					cache: {
+						sidebyside: {
+							cc: "fLI9f/NhbtGHnenv52kzw0hAuhCCwqcArZUhwkgvKgE="
+						}
 					}
 				}
 			}

@@ -1,17 +1,19 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			data: {
-				"organizing-configuration": {
-					cache: {
-						sidebyside: {
-							"composition-simple-success":   "FnbIy2fKUzFtIfXihGj6YXfROVx3EdW/iRA+8UBr7PQ="
-							"composition-simple-error":     "z1aW4tFJgHalWM73SBIgiVYUkWVujlC4KI61am89JCA="
-							"composition-composite":        "kQIl75lkmzX1eRC4frVdUMw5BC4zn1vJPSuMR14F2lA="
-							"composition-single-field-map": "aNrdR1ZbIig543FJRQ1T0Ts2OuJdkqa02wR4S8exQd4="
-							"composition-operator":         "+Aae3wRBRBo3MvPlzKnTYvPqG0aOuu4titIc02nATYE="
-							packages:                       "G+Fu181tsz1ecVa0lcZWArhd514yNkeSM0TezEk+7ek="
+	content: {
+		docs: {
+			"language-guide": {
+				data: {
+					"organizing-configuration": {
+						cache: {
+							sidebyside: {
+								"composition-simple-success":   "xhsvVYW+4NIGzVKzewKXvDffhr8lm/M9LKcTSvoIFnE="
+								"composition-simple-error":     "L6990BZURIwXTfVp9VojMfih27xDhekVopPKZUwj75I="
+								"composition-composite":        "9pSy0Zelj/vQrYXAm/VFzImRvdTin8FyirD3G1gplec="
+								"composition-single-field-map": "PkXqcOOybYeo3AZZlhjTbH2Od6J3I66Ie3YlsYU8PqA="
+								"composition-operator":         "5+xC+IgXjP79SkiRUuKrFLXP5tKNe+LR8J7cL2mCy8A="
+								packages:                       "pkLHzcC1F1gXYT8gRZ40gSpB3JS6XadvkOP5LLXtevs="
+							}
 						}
 					}
 				}

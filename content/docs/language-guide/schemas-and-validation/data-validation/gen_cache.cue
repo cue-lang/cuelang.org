@@ -1,14 +1,16 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			"schemas-and-validation": {
-				"data-validation": {
-					cache: {
-						sidebyside: {
-							"schema-composed-with-data":       "GNliZOO0ei2p1UGV2YUF0UYN9R9c1rao6tEkl0NBXdU="
-							"schema-composed-with-data-error": "rsHIBmBX5YhCOWhGuQBnFMPVv8TPjfNWd/B1gTiN/eo="
-							"to-be-completed":                 "9pWdOx7kj+tNghTy39rlkmSAGjAqCqUhy7uJpzibzqE="
+	content: {
+		docs: {
+			"language-guide": {
+				"schemas-and-validation": {
+					"data-validation": {
+						cache: {
+							sidebyside: {
+								"schema-composed-with-data":       "2Ueq6WxQT/cgvhnve+aCKh7pzFiaZ2hDtJ9nb9dzwMU="
+								"schema-composed-with-data-error": "onuUbkJGsh6jmFN1qq4t5U8G+XMDHPsNvINC7YTUd4s="
+								"to-be-completed":                 "0gwiKlO15YOFIUhiD9rUjhcayVkRNOG6mp/hlokAC/A="
+							}
 						}
 					}
 				}
