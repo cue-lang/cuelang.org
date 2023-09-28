@@ -155,6 +155,7 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	cmd.Flags().Bool(string(flagNoRun), false, "whether to attempt to run scripts or not")
 	cmd.Flags().Bool(string(flagSkipCache), false, "skip cache checks; always run")
 	cmd.Flags().Bool(string(flagNoWriteCache), os.Getenv("PREPROCESSOR_NOWRITECACHE") != "", "do not write updated page cache entries. Can also be set with non-empty PREPROCESSOR_NOWRITECACHE env var.")
+	cmd.Flags().Bool(string(flagCheck), false, "check CUE in page roots is properly namespaced")
 	cmd.Flags().StringSliceVar(&hugoArgs, string(flagHugoFlag), nil, "list of flags to pass to hugo")
 	return cmd
 }

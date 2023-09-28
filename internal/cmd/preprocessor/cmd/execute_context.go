@@ -23,6 +23,7 @@ import (
 	"runtime/debug"
 	"strings"
 
+	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/load"
 	preprocessembed "github.com/cue-lang/cuelang.org"
 )
@@ -77,6 +78,14 @@ func (ec *executeContext) execute() error {
 	// supported languages.
 	if err := ec.findPages(); err != nil {
 		return err
+	}
+
+	// If we have been given the --check flag, ensure that the pages
+	// we found have CUE files that are correctly namespaced.
+	if flagCheck.Bool(ec.executor.cmd) {
+		if ec.checkPageCUE(); ec.isInError() {
+			return errorIfInError(ec)
+		}
 	}
 
 	// Load all the CUE in one go
@@ -136,6 +145,85 @@ func (ec *executeContext) execute() error {
 	}
 
 	return errorIfInError(ec)
+}
+
+// checkPageCUE checks that the CUE files found in each page root directory
+// is well namespaced for the directory in which is is contained.
+//
+// For example, for content/docs/howto/find-a-guide/page.cue it will ensure
+// that fields are defined only within the content.docs.howto."find-a-guide"
+// struct.
+func (ec *executeContext) checkPageCUE() {
+dirs:
+	for _, absDir := range ec.order {
+		// Load the files in the directory (assuming they all belong
+		// to the same package)
+		var filenames []string
+		filenames, err := filepath.Glob(filepath.Join(absDir, "*.cue"))
+		if err != nil {
+			ec.errorf("%s: failed to read: %v", absDir, err)
+			continue
+		}
+
+		bps := load.Instances(filenames, &load.Config{
+			Dir: absDir,
+		})
+		if l := len(bps); l != 1 {
+			ec.errorf("%s: expected 1 build package; saw %d", absDir, l)
+			continue
+		}
+		v := ec.ctx.BuildInstance(bps[0])
+
+		// If we have an error at this stage we can't be
+		// sure  things are fine. Bail early
+		if err := v.Err(); err != nil {
+			ec.errorf("%s: error loading .cue files: %v", absDir, err)
+			continue
+		}
+
+		// derive the relative dirPath of d to the root, in canonical dirPath format
+		// (i.e. not OS-specific)
+		relDir := strings.TrimPrefix(absDir, ec.executor.root+string(os.PathSeparator))
+		dirPath := filepath.ToSlash(filepath.Clean(relDir))
+		parts := strings.Split(dirPath, "/")
+
+		// We now want to walk down into v to ensure that the only fields that
+		// exist at each "level" are consistent with the elements of path
+		var selectors []cue.Selector
+		for _, elem := range parts {
+			path := cue.MakePath(selectors...)
+			toCheck := v.LookupPath(path)
+			fieldIter, err := toCheck.Fields(cue.Definitions(true), cue.Hidden(true))
+			if err != nil {
+				ec.errorf("%v: %s: failed to create iterator over CUE value at path %v: %v", ec, absDir, path, err)
+				continue dirs
+			}
+			// Could be multiple bad fields at this level, report them all
+			var inError bool
+			for fieldIter.Next() {
+				sel := fieldIter.Selector()
+				if sel.LabelType() != cue.StringLabel || sel.Unquoted() != elem {
+					inError = true
+					val := fieldIter.Value()
+					badPath := cue.MakePath(append(selectors, sel)...)
+
+					// val.Pos() is the position of the _value_ (the RHS), not the
+					// field name.  Hence we need to construct the format string by
+					// hand.
+					//
+					// TODO: work out whether we can get the location(s) of the
+					// label for this value in a more principled way.
+					pos := val.Pos()
+					ec.errorf("%v:%d: %v: field not allowed; expected %q", pos.Filename(), pos.Line(), badPath, elem)
+				}
+			}
+			if inError {
+				// No point descending further at this point
+				continue dirs
+			}
+			selectors = append(selectors, cue.Str(elem))
+		}
+	}
 }
 
 func (ec *executeContext) findPages() error {

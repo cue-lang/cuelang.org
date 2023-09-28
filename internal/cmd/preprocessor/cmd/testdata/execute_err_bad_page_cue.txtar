@@ -1,0 +1,21 @@
+# Ensure that we get a sensible error message when using the
+# --check flag to execute.
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+! exec preprocessor execute --check
+cmpenv stderr stderr.golden
+
+-- content/dir/page.cue --
+package site
+
+this: 5
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+-- hugo/content/.gitkeep --
+-- stderr.golden --
+** $WORK/content/dir/page.cue:3: this: field not allowed; expected "content"
+terminating because of errors

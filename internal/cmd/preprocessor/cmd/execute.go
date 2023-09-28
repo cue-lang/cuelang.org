@@ -43,6 +43,7 @@ const (
 	flagSkipCache    flagName = "skipcache"
 	flagHugoFlag     flagName = "hugo"
 	flagNoWriteCache flagName = "nowritecache"
+	flagCheck        flagName = "check"
 )
 
 var (
