@@ -1,11 +1,13 @@
 package site
 {
-	docs: {
-		howto: {
-			"about-these-guides": {
-				cache: {
-					sidebyside: {
-						example: "4tjkojKrn+YkeA9c8q6z+M7S5nKcFDlWi59u8F/PAZY="
+	content: {
+		docs: {
+			howto: {
+				"about-these-guides": {
+					cache: {
+						sidebyside: {
+							example: "5+3aRVRfdqS4e/mmOMvjiG/zcZKNwCQD2rx9M8M94mw="
+						}
 					}
 				}
 			}

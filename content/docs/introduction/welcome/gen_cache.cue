@@ -1,17 +1,19 @@
 package site
 {
-	docs: {
-		introduction: {
-			welcome: {
-				cache: {
-					code: {
-						data:               "6dwTxZ3wZtFzqkOiXkfu/HwDgIH7Q3Qhfs+nijH/MU0="
-						schema:             "4TgjCM+rFs9YX8FjjHcaQholHGQyUp/UCUpnLejfKLI="
-						CUE:                "RqspK6YMmOePWH5vfFNTf6cvTVdkHZXODcXlYt9o4/U="
-						json:               "c2zaogDPEggIaahup+eOM8Jp4daC3z2j++dtNd7eaSw="
-						"cue form of json": "+JA28If3DR+3kv4kv/sVPUkfbO1hamEwK9GN0CAxOUg="
-						"non-dry":          "PEuQFgz5f0UyKA4I+RQRNw8SMaUHbLUMUcCcv6bBTiQ="
-						dry:                "F0GFsFLlRlwrb/Joc4R4y8UnScdyZhhQRSu13aktaao="
+	content: {
+		docs: {
+			introduction: {
+				welcome: {
+					cache: {
+						code: {
+							data:               "u0Pb2in+1SIVhBlo8JuSZC1sGLE6ee+daZKKAz1XK6M="
+							schema:             "wDXerQ2Hn1sHoJETl1fYOvJpQyE36NOoXqU5DBZCk+U="
+							CUE:                "Q6wZkno/jq6wAUJLpTt2ZFpFxFZXCS1Umww3vA1JtIw="
+							json:               "Oxzf9qrfjUpl1FheKWuN58YB4L99Nz9r55EFHccdg/0="
+							"cue form of json": "z1x9Ro5nuYawRqSsyd59U+wVeNVbkTdzJVJvzoDj/wI="
+							"non-dry":          "C0PA5XDoD7LcGweOGi54+8INm6JpW4L4d26mmxqpL7c="
+							dry:                "OLgIq2g3Lc6PViKxC07xlS5I75s7rZgOHIm8tN5Rsic="
+						}
 					}
 				}
 			}

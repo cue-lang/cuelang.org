@@ -1,13 +1,15 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			data: {
-				"string-values": {
-					cache: {
-						sidebyside: {
-							"multiline-strings":            "vWrNcNrdO5nfoeKMhTGfWJ/+KuZsNn+gYf0zSdSwNfA="
-							"alternative-escape-sequences": "z0qxxV+M3a8mloWJctMuSdeCtoHMktFrwhl7h3I6Hww="
+	content: {
+		docs: {
+			"language-guide": {
+				data: {
+					"string-values": {
+						cache: {
+							sidebyside: {
+								"multiline-strings":            "v+1n2S6tgXuRHr4/FOFPTbOlUgUAjFGAcXmKWOhc+sg="
+								"alternative-escape-sequences": "+b8TIRXiK291CT48I9FJ2FBxdtkmgJlgh9C+nXtgq1A="
+							}
 						}
 					}
 				}

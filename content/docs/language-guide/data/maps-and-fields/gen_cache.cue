@@ -1,15 +1,17 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			data: {
-				"maps-and-fields": {
-					cache: {
-						sidebyside: {
-							"field-names-double-quotes":      "UwlqO8ziSfpivLQ6gc5YDqg8OgnARr1GqZu3HmbmQYg="
-							"merging-of-quoted-and-unquoted": "xH27H5gwHsr7HPEgL4Yrk8mSDT6ppP1vv0R9JCgj7MQ="
-							"helper-fields":                  "R9GSRCCUOzEaGHhuu7knLo7jv+EW6luXvvH3a8HKjbA="
-							"embedded-scalars":               "aU92HDF7TTj+X2CxHVrYQxTXGqBa2LsrKVj72pGSZAk="
+	content: {
+		docs: {
+			"language-guide": {
+				data: {
+					"maps-and-fields": {
+						cache: {
+							sidebyside: {
+								"field-names-double-quotes":      "sb66LSn0wD5mX1DiIQ6YJkMATTBzGvPt1Z1fkvo4yok="
+								"merging-of-quoted-and-unquoted": "aE1m1bB45aRykMWIZfqBoTf2DQ6n0zKUkm6aJm22cVs="
+								"helper-fields":                  "FWVLMQ+MERVXs8DLf4eDIdqzr69cEKDWpUQVs61+gek="
+								"embedded-scalars":               "3fsA/Wfr3m2qBJz/uH3KzB0Juho5Bne9OnvznxMdsmc="
+							}
 						}
 					}
 				}
