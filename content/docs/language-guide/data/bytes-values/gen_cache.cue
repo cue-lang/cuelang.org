@@ -1,13 +1,15 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			data: {
-				"bytes-values": {
-					cache: {
-						sidebyside: {
-							"bytes-to-json": "dZKr7NYBpP0cA2iYNmcrGoWBdPzembeZ9Vd++h5A7bY="
-							"bytes-to-yaml": "cBK5NpDNGTnUidvKAW8ZgEl58i7yXS+aU3MK56MqlnU="
+	content: {
+		docs: {
+			"language-guide": {
+				data: {
+					"bytes-values": {
+						cache: {
+							sidebyside: {
+								"bytes-to-json": "i0q929b2mlLherYGfLw8vmc7uyHGQhCelC94rMnBb4A="
+								"bytes-to-yaml": "8Db0qzarXDP5K8Mbau0YLL0ziEO7pLlEWRapW6CF6i4="
+							}
 						}
 					}
 				}

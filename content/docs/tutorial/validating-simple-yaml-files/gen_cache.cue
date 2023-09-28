@@ -1,14 +1,16 @@
 package site
 {
-	docs: {
-		tutorial: {
-			"validating-simple-yaml-files": {
-				cache: {
-					upload: {
-						yamlBroken: "bSEg35vBsAaO9EfVsqXPxOE1zRgoszV3S6f0nO4ailk="
-						"pets.cue": "AXAOVNf4iXRI1+QfkZD1SBQea7jjhWEEOYOlQc34oyc="
-						yamlFixed:  "RVkIkw7Mx2PeIQqKRqQr2Wzys9KzSBidjV3Aa3fUBl4="
-						yaml2:      "PFaPQKRdBx4N2rMhio5tT4YaephKJO6/9V9daue7yOU="
+	content: {
+		docs: {
+			tutorial: {
+				"validating-simple-yaml-files": {
+					cache: {
+						upload: {
+							yamlBroken: "xGPO/2ovCz3mljLWase8M3QbIn4bXFDk13sBebTHtHs="
+							"pets.cue": "Xb3WtPre8yfvN51pxaAc0Z45RqsKoBSwmpkn1zWCD5g="
+							yamlFixed:  "heyhvn+BDiwuNBGVG1BIhvc8wYveWajrKovi0PjJRdA="
+							yaml2:      "yhCxxnLuSyFYijGlqHjfJJjgRxeb1nNfHu60mBPptYU="
+						}
 					}
 				}
 			}

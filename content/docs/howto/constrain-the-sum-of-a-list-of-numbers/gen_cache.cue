@@ -1,11 +1,13 @@
 package site
 {
-	docs: {
-		howto: {
-			"constrain-the-sum-of-a-list-of-numbers": {
-				cache: {
-					sidebyside: {
-						cc: "kblj8l43hNf4P8Qtdal0AJnP3O7GcGI1kYO9AHfCTa8="
+	content: {
+		docs: {
+			howto: {
+				"constrain-the-sum-of-a-list-of-numbers": {
+					cache: {
+						sidebyside: {
+							cc: "A2iJa9T1K9sxsTwVjfGiUaL2k0tehF0qKrnIYUXWmhE="
+						}
 					}
 				}
 			}

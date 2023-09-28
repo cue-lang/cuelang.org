@@ -1,12 +1,14 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			data: {
-				lists: {
-					cache: {
-						sidebyside: {
-							"list-example": "3lqhNPq3buhKrQoI07yawqXZJEaS1PyVFygi2nQOA0w="
+	content: {
+		docs: {
+			"language-guide": {
+				data: {
+					lists: {
+						cache: {
+							sidebyside: {
+								"list-example": "d7cDHxi1iLs5iqRwrf6gguQ74oGCtUvvcTRWIYR5hrs="
+							}
 						}
 					}
 				}
