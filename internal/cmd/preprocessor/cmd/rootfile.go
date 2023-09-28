@@ -596,7 +596,12 @@ func (rf *rootFile) hashRunnableNode(n runnableNode, w io.Writer) cue.Path {
 	fmt.Fprintf(w, "preprocessor version: %s\n", rf.selfHash)
 	fmt.Fprintf(w, "docker image: %s\n", dockerImageTag)
 	n.writeToHasher(w)
-	selPath := append(rf.page.path.Selectors(),
+	// Root all page-related content under "content"
+	selPath := []cue.Selector{
+		cue.Str("content"),
+	}
+	selPath = append(selPath, rf.page.path.Selectors()...)
+	selPath = append(selPath,
 		cue.Str("cache"),
 		cue.Str(n.nodeType()),
 		cue.Str(n.nodeLabel()),
