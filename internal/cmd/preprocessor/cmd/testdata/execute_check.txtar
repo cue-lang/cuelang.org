@@ -1,0 +1,33 @@
+# Ensure that we get no output when --check succeeds
+
+# Run the preprocessor
+exec preprocessor execute --check
+! stdout .+
+
+-- content/dir1/page.cue --
+package site
+
+// Page value defined
+content: dir1: {}
+-- content/dir1/en.md --
+---
+title: JSON Superset
+---
+-- content/dir2/page.cue --
+package site
+
+// Only content defined
+content: {}
+-- content/dir1/en.md --
+---
+title: JSON Superset
+---
+-- content/dir3/page.cue --
+package site
+
+// No value defined
+-- content/dir3/en.md --
+---
+title: JSON Superset
+---
+-- hugo/content/.gitkeep --
