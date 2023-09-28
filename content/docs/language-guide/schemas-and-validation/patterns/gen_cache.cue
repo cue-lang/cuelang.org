@@ -1,15 +1,17 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			"schemas-and-validation": {
-				patterns: {
-					cache: {
-						sidebyside: {
-							alternates:      "gCL5QjnghxbBQet4Z+7ZQCFaIkPs4DERQDaOWeXyIj4="
-							implementations: "ORugOwkug7lrK6bHACM5walFefeO3JfD6QoJPBnN1hs="
-							downcast:        "xdstoKrHdcijCu9T6Vt4WWl6EhKImAHGjJHMP6pGpu4="
-							defaults:        "jA8JhaMD4ijRkBVZhem078zwRJwQyv5xSChro+5u3rs="
+	content: {
+		docs: {
+			"language-guide": {
+				"schemas-and-validation": {
+					patterns: {
+						cache: {
+							sidebyside: {
+								alternates:      "hd59gXCYWmxrq9nShjglyNI66rD6L1nFWShWhZ1HggU="
+								implementations: "tjcf0Yn6cDuEGL6guv9MliU+4LDBSUeuZ8SLNkt2lqM="
+								downcast:        "It881BEF+BdIWWAS4eCBNnO1F0U9KQWt/IkEuCfJahY="
+								defaults:        "OgKK1W8XSwSrAfxX4m7GRBzP7EotwiUSzsYgFn/6cJ0="
+							}
 						}
 					}
 				}
