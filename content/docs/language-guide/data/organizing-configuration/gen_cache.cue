@@ -1,17 +1,19 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			data: {
-				"organizing-configuration": {
-					cache: {
-						sidebyside: {
-							"composition-simple-success":   "FnbIy2fKUzFtIfXihGj6YXfROVx3EdW/iRA+8UBr7PQ="
-							"composition-simple-error":     "z1aW4tFJgHalWM73SBIgiVYUkWVujlC4KI61am89JCA="
-							"composition-composite":        "kQIl75lkmzX1eRC4frVdUMw5BC4zn1vJPSuMR14F2lA="
-							"composition-single-field-map": "aNrdR1ZbIig543FJRQ1T0Ts2OuJdkqa02wR4S8exQd4="
-							"composition-operator":         "+Aae3wRBRBo3MvPlzKnTYvPqG0aOuu4titIc02nATYE="
-							packages:                       "G+Fu181tsz1ecVa0lcZWArhd514yNkeSM0TezEk+7ek="
+	content: {
+		docs: {
+			"language-guide": {
+				data: {
+					"organizing-configuration": {
+						cache: {
+							sidebyside: {
+								"composition-simple-success":   "OGUyAL8i8kqbn06dBiwK5RNAH+hLqP6qicLPL8ldQNQ="
+								"composition-simple-error":     "xpKjDd0i+RLJOOW5IXyZxyALJPkPE1GhEspnzxNlSXQ="
+								"composition-composite":        "i4VaUBNmwerA1t6xdpNAGCyK94mmftuBdKv9HC4KYhk="
+								"composition-single-field-map": "+VSij09m5qDFfaJQDWczakuYH41EBKkeGFCdC2WE3js="
+								"composition-operator":         "lNd2FjDWSULEZQWyHwKypCLMjLqBj3F9CBIFEmiL7D4="
+								packages:                       "AEvbFT26H0iSBNP8izNOrN19zgkTIoC+Rfq9Pw+Ue2c="
+							}
 						}
 					}
 				}

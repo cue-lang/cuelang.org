@@ -1,16 +1,18 @@
 package site
 {
-	docs: {
-		"language-guide": {
-			templating: {
-				comprehensions: {
-					cache: {
-						sidebyside: {
-							"for-clause":             "KzSvW7ymnrhlMc/4g4KU6rEjywCRld+PJ2LtqauYNow="
-							"if-clause":              "pE0fOflShtDGKuUu44+XNz/Ih+1O4InCw3hgaAlEt54="
-							"let-clause":             "ysM8M/NYsvlsiBkXc8nLH/B/GNgiWjiWl2N/6DtSfRE="
-							"list-comprehension":     "V+St8oGgYVALxd6wwkgQEbYMC4iwRYaXGPzthewmhOs="
-							"switch-if-else-pattern": "kM2RlCMkwt5TxiOWfKjIhXHYFJPFmd/b2AvkjHOqCnA="
+	content: {
+		docs: {
+			"language-guide": {
+				templating: {
+					comprehensions: {
+						cache: {
+							sidebyside: {
+								"for-clause":             "lgQuvcuJP0ifwVTjhzcB4f+4VDNT8q6ZOHcDIWwd4Kc="
+								"if-clause":              "bkbqp5dE1dXMtao+fPyBrPlBr7RD4wrSJoCticuw67g="
+								"let-clause":             "u+l/53rrHR8YPKI208iDOtPrukP59NhYOTb4+HUNc4M="
+								"list-comprehension":     "UqNU6wyjiYYZrY9POWmc/uSkeaM/vT5NGXLPABLUld4="
+								"switch-if-else-pattern": "8Z05FkqSbn8ZgO1dmk7RCx8nFdBfMFVlFwK/JU65VKo="
+							}
 						}
 					}
 				}
