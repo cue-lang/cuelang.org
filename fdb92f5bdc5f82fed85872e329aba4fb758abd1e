@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "503101bb_e34ad628",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-29T16:28:50Z",
+      "side": 1,
+      "message": "This all makes sense to me, but I feel it should pass through a more expert Go review. Happy to +2 if you\u0027d like.",
+      "revId": "fdb92f5bdc5f82fed85872e329aba4fb758abd1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
