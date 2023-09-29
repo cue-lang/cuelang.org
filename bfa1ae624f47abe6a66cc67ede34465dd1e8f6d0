@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa22f595_544cb4cb",
+        "filename": "content/authors/jpluscplusm/page.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-29T16:23:33Z",
+      "side": 0,
+      "message": "Is the global deletion of the package stanza intended?",
+      "revId": "bfa1ae624f47abe6a66cc67ede34465dd1e8f6d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
