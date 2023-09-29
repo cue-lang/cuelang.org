@@ -1,3 +1,3 @@
 package site
 
-"docs": "howto": "best-practices": {}
+content: docs: howto: "best-practices": {}

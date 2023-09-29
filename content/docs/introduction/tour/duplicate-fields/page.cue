@@ -1,3 +1,3 @@
 package site
 
-"docs": "introduction": "tour": "duplicate-fields": {}
+content: docs: introduction: tour: "duplicate-fields": {}

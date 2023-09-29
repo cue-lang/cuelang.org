@@ -1,3 +1,3 @@
 package site
 
-docs: concept: "about-these-guides": {}
+content: docs: concept: "about-these-guides": {}

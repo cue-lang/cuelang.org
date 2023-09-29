@@ -1,3 +1,3 @@
 package site
 
-"community": "contribution-guidelines": {}
+content: community: "contribution-guidelines": {}

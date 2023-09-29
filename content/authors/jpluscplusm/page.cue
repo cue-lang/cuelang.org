@@ -1,3 +1,3 @@
 package site
 
-"authors": "jpluscplusm": {}
+content: authors: "jpluscplusm": {}

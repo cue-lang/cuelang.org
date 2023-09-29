@@ -1,3 +1,3 @@
 package site
 
-"docs": "howto": "encode-json-yaml-with-cue": {}
+content: docs: howto: "encode-json-yaml-with-cue": {}

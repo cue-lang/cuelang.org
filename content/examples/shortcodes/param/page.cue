@@ -1,3 +1,3 @@
 package site
 
-"examples": "shortcodes": "param": {}
+content: examples: shortcodes: "param": {}

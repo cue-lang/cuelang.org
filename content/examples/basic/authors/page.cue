@@ -1,3 +1,3 @@
 package site
 
-"examples": "basic": "authors": {}
+content: examples: basic: "authors": {}

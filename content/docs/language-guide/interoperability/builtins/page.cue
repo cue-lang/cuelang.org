@@ -1,3 +1,3 @@
 package site
 
-"docs": "language-guide": "interoperability": "builtins": {}
+content: docs: "language-guide": interoperability: "builtins": {}

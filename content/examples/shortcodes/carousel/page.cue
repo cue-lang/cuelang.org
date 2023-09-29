@@ -1,3 +1,3 @@
 package site
 
-"examples": "shortcodes": "carousel": {}
+content: examples: shortcodes: "carousel": {}

@@ -1,3 +1,3 @@
 package site
 
-"examples": "shortcodes": "quote": {}
+content: examples: shortcodes: "quote": {}

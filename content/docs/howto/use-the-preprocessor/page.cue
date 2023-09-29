@@ -1,3 +1,3 @@
 package site
 
-"docs": "howto": "use-the-preprocessor": {}
+content: docs: howto: "use-the-preprocessor": {}

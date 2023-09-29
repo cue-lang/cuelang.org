@@ -1,3 +1,3 @@
 package site
 
-"docs": "language-guide": "getting-started": {}
+content: docs: "language-guide": "getting-started": {}

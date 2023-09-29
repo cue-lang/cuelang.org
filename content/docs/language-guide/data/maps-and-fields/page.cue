@@ -1,3 +1,3 @@
 package site
 
-"docs": "language-guide": "data": "maps-and-fields": {}
+content: docs: "language-guide": data: "maps-and-fields": {}

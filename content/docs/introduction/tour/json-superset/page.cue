@@ -1,3 +1,3 @@
 package site
 
-"docs": "introduction": "tour": "json-superset": {}
+content: docs: introduction: tour: "json-superset": {}

@@ -1,3 +1,3 @@
 package site
 
-"examples": "shortcodes": "todo": {}
+content: examples: shortcodes: "todo": {}

@@ -1,3 +1,3 @@
 package site
 
-"docs": "language-guide": "data": "json-superset": {}
+content: docs: "language-guide": data: "json-superset": {}

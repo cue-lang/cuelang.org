@@ -1,3 +1,3 @@
 package site
 
-"docs": "language-guide": "templating": "formulas": {}
+content: docs: "language-guide": templating: "formulas": {}

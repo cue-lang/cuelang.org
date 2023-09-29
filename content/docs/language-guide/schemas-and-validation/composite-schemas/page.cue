@@ -1,3 +1,3 @@
 package site
 
-"docs": "language-guide": "schemas-and-validation": "composite-schemas": {}
+content: docs: "language-guide": "schemas-and-validation": "composite-schemas": {}
