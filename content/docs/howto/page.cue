@@ -1,3 +1,1 @@
-package site
-
-docs: howto: {}
+content: docs: "howto": {}

@@ -1,3 +1,1 @@
-package site
-
-"docs": "reference": "glossary": {}
+content: docs: reference: "glossary": {}

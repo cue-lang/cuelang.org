@@ -1,3 +1,1 @@
-package site
-
-"docs": "introduction": "tour": "folding-structs": {}
+content: docs: introduction: tour: "folding-structs": {}

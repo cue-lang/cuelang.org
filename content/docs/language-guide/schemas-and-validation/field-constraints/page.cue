@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "schemas-and-validation": "field-constraints": {}
+content: docs: "language-guide": "schemas-and-validation": "field-constraints": {}

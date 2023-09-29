@@ -1,3 +1,1 @@
-package site
-
-"authors": "myitcv": {}
+content: authors: "myitcv": {}

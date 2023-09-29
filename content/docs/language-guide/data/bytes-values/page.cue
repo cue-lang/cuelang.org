@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "data": "bytes-values": {}
+content: docs: "language-guide": data: "bytes-values": {}

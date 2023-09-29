@@ -1,3 +1,1 @@
-package site
-
-"docs": "howto": "list-no-duplicates": {}
+content: docs: howto: "list-no-duplicates": {}

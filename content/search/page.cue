@@ -1,3 +1,1 @@
-package site
-
-"search": {}
+content: "search": {}

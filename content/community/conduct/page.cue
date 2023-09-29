@@ -1,3 +1,1 @@
-package site
-
-"community": "conduct": {}
+content: community: "conduct": {}

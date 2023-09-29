@@ -1,3 +1,1 @@
-package site
-
-docs: howto: "popular-guides": {}
+content: docs: howto: "popular-guides": {}

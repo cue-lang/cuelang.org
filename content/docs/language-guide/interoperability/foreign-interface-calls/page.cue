@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "interoperability": "foreign-interface-calls": {}
+content: docs: "language-guide": interoperability: "foreign-interface-calls": {}

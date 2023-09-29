@@ -1,3 +1,1 @@
-package site
-
-"docs": "introduction": "what-is-cue": {}
+content: docs: introduction: "what-is-cue": {}

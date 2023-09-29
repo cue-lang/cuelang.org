@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "templating": "constructing-maps": {}
+content: docs: "language-guide": templating: "constructing-maps": {}

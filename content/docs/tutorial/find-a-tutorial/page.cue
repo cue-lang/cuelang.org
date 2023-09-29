@@ -1,3 +1,1 @@
-package site
-
-docs: tutorial: "find-a-tutorial": {}
+content: docs: tutorial: "find-a-tutorial": {}

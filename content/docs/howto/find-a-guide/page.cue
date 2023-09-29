@@ -1,3 +1,1 @@
-package site
-
-docs: howto: "find-a-guide": {}
+content: docs: howto: "find-a-guide": {}

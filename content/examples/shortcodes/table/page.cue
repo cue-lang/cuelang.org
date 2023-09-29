@@ -1,3 +1,1 @@
-package site
-
-"examples": "shortcodes": "table": {}
+content: examples: shortcodes: "table": {}

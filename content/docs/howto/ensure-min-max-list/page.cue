@@ -1,3 +1,1 @@
-package site
-
-"docs": "howto": "ensure-min-max-list": {}
+content: docs: howto: "ensure-min-max-list": {}

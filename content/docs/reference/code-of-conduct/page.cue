@@ -1,3 +1,1 @@
-package site
-
-"docs": "reference": "code-of-conduct": {}
+content: docs: reference: "code-of-conduct": {}

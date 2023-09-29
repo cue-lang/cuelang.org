@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "interoperability": {}
+content: docs: "language-guide": "interoperability": {}

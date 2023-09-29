@@ -1,3 +1,1 @@
-package site
-
-docs: reference: {}
+content: docs: "reference": {}

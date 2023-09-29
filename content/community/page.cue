@@ -1,3 +1,1 @@
-package site
-
-"community": {}
+content: "community": {}

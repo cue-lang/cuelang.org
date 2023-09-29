@@ -1,3 +1,1 @@
-package site
-
-docs: concept: "popular-guides": {}
+content: docs: concept: "popular-guides": {}

@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "data": "lists": {}
+content: docs: "language-guide": data: "lists": {}

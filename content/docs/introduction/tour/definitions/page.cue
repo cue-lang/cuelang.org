@@ -1,3 +1,1 @@
-package site
-
-"docs": "introduction": "tour": "definitions": {}
+content: docs: introduction: tour: "definitions": {}

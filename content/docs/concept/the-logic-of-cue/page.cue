@@ -1,3 +1,1 @@
-package site
-
-docs: concept: "the-logic-of-cue": {}
+content: docs: concept: "the-logic-of-cue": {}

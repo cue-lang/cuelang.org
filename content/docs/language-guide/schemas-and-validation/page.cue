@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "schemas-and-validation": {}
+content: docs: "language-guide": "schemas-and-validation": {}

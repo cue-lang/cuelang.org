@@ -1,3 +1,1 @@
-package site
-
-"examples": "basic": "images": {}
+content: examples: basic: "images": {}

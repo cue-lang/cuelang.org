@@ -1,3 +1,1 @@
-package site
-
-"docs": "introduction": "tour": {}
+content: docs: introduction: "tour": {}

@@ -1,3 +1,1 @@
-package site
-
-"examples": "shortcodes": "spotlight": {}
+content: examples: shortcodes: "spotlight": {}

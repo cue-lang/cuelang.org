@@ -1,3 +1,1 @@
-package site
-
-"examples": "shortcodes": "cta": {}
+content: examples: shortcodes: "cta": {}

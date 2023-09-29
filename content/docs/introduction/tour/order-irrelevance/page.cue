@@ -1,3 +1,1 @@
-package site
-
-"docs": "introduction": "tour": "order-irrelevance": {}
+content: docs: introduction: tour: "order-irrelevance": {}

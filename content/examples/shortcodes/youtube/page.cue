@@ -1,3 +1,1 @@
-package site
-
-"examples": "shortcodes": "youtube": {}
+content: examples: shortcodes: "youtube": {}

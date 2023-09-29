@@ -1,3 +1,1 @@
-package site
-
-"examples": "shortcodes": "search": {}
+content: examples: shortcodes: "search": {}

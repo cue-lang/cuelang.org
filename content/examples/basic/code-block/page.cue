@@ -1,3 +1,1 @@
-package site
-
-"examples": "basic": "code-block": {}
+content: examples: basic: "code-block": {}

@@ -1,3 +1,1 @@
-package site
-
-"authors": "mpvl": {}
+content: authors: "mpvl": {}

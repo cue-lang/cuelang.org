@@ -1,3 +1,1 @@
-package site
-
-"examples": "basic": "text": {}
+content: examples: basic: "text": {}

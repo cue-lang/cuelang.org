@@ -1,3 +1,1 @@
-package site
-
-"docs": "language-guide": "data": "string-values": {}
+content: docs: "language-guide": data: "string-values": {}

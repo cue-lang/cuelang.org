@@ -1,3 +1,1 @@
-package site
-
-"examples": "shortcodes": "diagrams": {}
+content: examples: shortcodes: "diagrams": {}
