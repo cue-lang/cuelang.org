@@ -1,3 +1,3 @@
 package site
 
-"examples": "basic": "block": {}
+content: examples: basic: "block": {}

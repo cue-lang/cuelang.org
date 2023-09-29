@@ -1,3 +1,3 @@
 package site
 
-"docs": "introduction": "tour": "types-are-values": {}
+content: docs: introduction: tour: "types-are-values": {}

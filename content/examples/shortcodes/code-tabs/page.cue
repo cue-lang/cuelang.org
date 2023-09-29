@@ -1,3 +1,3 @@
 package site
 
-"examples": "shortcodes": "code-tabs": {}
+content: examples: shortcodes: "code-tabs": {}

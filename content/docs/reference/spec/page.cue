@@ -1,3 +1,3 @@
 package site
 
-"docs": "reference": "spec": {}
+content: docs: reference: "spec": {}

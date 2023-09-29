@@ -1,3 +1,3 @@
 package site
 
-docs: howto: "about-these-guides": {}
+content: docs: howto: "about-these-guides": {}

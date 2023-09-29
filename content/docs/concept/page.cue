@@ -1,3 +1,3 @@
 package site
 
-docs: concept: {}
+content: docs: "concept": {}

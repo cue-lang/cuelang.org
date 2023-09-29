@@ -1,3 +1,3 @@
 package site
 
-"docs": "language-guide": "policy": {}
+content: docs: "language-guide": "policy": {}

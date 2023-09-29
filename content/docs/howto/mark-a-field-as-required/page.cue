@@ -1,3 +1,3 @@
 package site
 
-docs: howto: "require-a-field-exist": {}
+content: docs: howto: "mark-a-field-as-required": {}

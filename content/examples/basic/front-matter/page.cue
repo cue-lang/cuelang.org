@@ -1,3 +1,3 @@
 package site
 
-"examples": "basic": "front-matter": {}
+content: examples: basic: "front-matter": {}

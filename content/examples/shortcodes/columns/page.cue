@@ -1,3 +1,3 @@
 package site
 
-"examples": "shortcodes": "columns": {}
+content: examples: shortcodes: "columns": {}

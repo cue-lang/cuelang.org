@@ -1,3 +1,3 @@
 package site
 
-"examples": "shortcodes": "buttons": {}
+content: examples: shortcodes: "buttons": {}
