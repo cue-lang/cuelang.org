@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd29b2f2_1d74fdc8",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-09-29T16:37:14Z",
+      "side": 1,
+      "message": "Just checking: is the trailing `...` (relative to how line 600 appeared before this change) intended? I believe I understand what it\u0027s doing, but just don\u0027t grok why the insertion of the single `content` element as a prefix requires the extra `...`, relative to L600\u0027s previous state.",
+      "revId": "bfa1ae624f47abe6a66cc67ede34465dd1e8f6d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
