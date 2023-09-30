@@ -1,5 +1,7 @@
 # syntax=docker/dockerfile:1
 
+# Code generated site_tool.cue; DO NOT EDIT.
+
 FROM golang:1.21.1 AS build
 
 ENV CGO_ENABLED=0
