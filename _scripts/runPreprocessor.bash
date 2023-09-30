@@ -28,12 +28,12 @@ GOBIN=$PWD/.gobin go install -trimpath -buildvcs=false ./internal/cmd/preprocess
 
 # Remove preprocessor and hugo target directories. This ensures we don't leave
 # any stale files lying around. Slight hack: only do so if we are running the
-# execute command (but not when running with the --serve flag) . Note this ties
-# this script to _scripts/serve.bash so if making changes to order or args in
-# that script, make changes to the check here.
+# execute command (but not when running with the --serve or --check flags) .
+# Note this ties this script to _scripts/serve.bash so if making changes to
+# order or args in that script, make changes to the check here.
 #
 # TODO: make the prepreprocessor smart enough to do this itself.
-if [[ "${1:-}" == "execute" && "${2:-}" != "--serve" ]]; then
+if [[ "${1:-}" == "execute" && "${2:-}" != "--serve" && "${2:-}" != "--check" ]]; then
 	rm -rf _public hugo/content
 fi
 
