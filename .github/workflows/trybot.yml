@@ -125,6 +125,7 @@ jobs:
           	echo "commit author email address does not match signed-off-by trailer"
           	exit 1
           fi
+      - run: _scripts/runPreprocessor.bash execute --check
       - if: runner.os == 'macOS'
         name: Set TMPDIR environment variable (${{runner.os}})
         run: |-
