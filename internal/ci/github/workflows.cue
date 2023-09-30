@@ -15,6 +15,12 @@
 // package github declares the workflows for this project.
 package github
 
+import (
+	"encoding/yaml"
+
+	"github.com/cue-lang/cuelang.org/internal/ci/base"
+)
+
 // Note: the name of the workflows (and hence the corresponding .yml filenames)
 // correspond to the environment variable names for gerritstatusupdater.
 // Therefore, this filename must only be change in combination with also
@@ -54,4 +60,32 @@ _linuxWorkflow: {
 
 dummyDispatch: _repo.#dispatch & {
 	type: _repo.trybot.key
+}
+
+// #writefs mirrors the type of the arguments expected by
+// internal/cmd/writefs
+#writefs: {
+	Remove: [...string]
+	Create: [string]: {
+		Type:     "symlink" | *"file"
+		Contents: *"" | string
+	}
+}
+
+fs: #writefs & {
+	// TODO: do not hardcode this to ci_tool
+	let donotedit = base.doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
+
+	Remove: [
+		"../../.github/workflows/*.yml",
+	]
+
+	Create: {
+		for _name, _workflow in workflows {
+			"\(_name).yml": {
+				Contents: "# \(donotedit)\n\n\(yaml.Marshal(_workflow))"
+			}
+		}
+		"../../codereview.cfg": 
+	}
 }
