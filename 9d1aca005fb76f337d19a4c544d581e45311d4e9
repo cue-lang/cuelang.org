@@ -16,6 +16,24 @@
       "message": "You could also have used something like https://pkg.go.dev/errors#Join, even allowing each validate func to return either a single error or a list of errors. However, that might have been a bit subtle - I have no issue with this approach.",
       "revId": "9d1aca005fb76f337d19a4c544d581e45311d4e9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0f9b956_0a5f51a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-30T18:10:25Z",
+      "side": 1,
+      "message": "Thanks. Yes that \"gathering\" of errors that happens via `errorContext.errorf` currently just logs to a buffer (because these units of work can be run concurrently). Indeed instead of logging it could gather the errors into a slice, and then the call could be responsible for doing all the logging. However, in this instance it just proved to be cleaner (because this is a pattern that repeats many times in the `preprocessor`) to have `errorf` actually do the buffered logging.",
+      "parentUuid": "b48f949c_d29a3785",
+      "revId": "9d1aca005fb76f337d19a4c544d581e45311d4e9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
