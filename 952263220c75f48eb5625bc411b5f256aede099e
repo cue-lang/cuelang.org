@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bf94a70_4a792fb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-30T18:19:47Z",
+      "side": 1,
+      "message": "Oops, thanks for the spot.",
+      "parentUuid": "9c131e36_6c425873",
+      "revId": "952263220c75f48eb5625bc411b5f256aede099e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c471103c_7027a292",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-30T09:21:17Z",
       "side": 1,
       "message": "FYI you could replace most of this with `filepath.Glob(filepath.Join(absDir, \"*.cue\"))`, given all that you need is just the filenames and name filtering.",
+      "revId": "952263220c75f48eb5625bc411b5f256aede099e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f307cbe_6a85dd96",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-30T18:19:47Z",
+      "side": 1,
+      "message": "Done, nice spot.",
+      "parentUuid": "c471103c_7027a292",
       "revId": "952263220c75f48eb5625bc411b5f256aede099e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -58,6 +94,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1084654b_fce6820e",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-30T18:19:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92b112e0_425c6e99",
+      "range": {
+        "startLine": 197,
+        "startChar": 52,
+        "endLine": 197,
+        "endChar": 53
+      },
+      "revId": "952263220c75f48eb5625bc411b5f256aede099e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2771a25b_db6cc075",
@@ -71,6 +131,30 @@
       "writtenOn": "2023-09-30T09:21:17Z",
       "side": 1,
       "message": "I would expect `pos.String()` to already do this, i.e. you should be able to:\n\n```\nerrorf(\"%s: ...\", pos, ...)\n```\n\nalso: can we do better than \"field not allowed\"? for example, say what field you allow, to guide the user a bit.",
+      "range": {
+        "startLine": 219,
+        "startChar": 16,
+        "endLine": 219,
+        "endChar": 21
+      },
+      "revId": "952263220c75f48eb5625bc411b5f256aede099e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "176a8952_785c3280",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-30T18:19:47Z",
+      "side": 1,
+      "message": "\u003e I would expect `pos.String()` to already do this\n\n`pos.String()` includes the column of the _value_ (I made this clearer in the comment). Hence I do it the \"long hand\" way. \n\n\u003e also: can we do better than \"field not allowed\"? for example, say what field you allow, to guide the user a bit.\n\nGood point, done.",
+      "parentUuid": "2771a25b_db6cc075",
       "range": {
         "startLine": 219,
         "startChar": 16,
