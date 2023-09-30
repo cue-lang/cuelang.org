@@ -16,6 +16,24 @@
       "message": "Is the global deletion of the package stanza intended?",
       "revId": "bfa1ae624f47abe6a66cc67ede34465dd1e8f6d0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b041039_2b5a27f9",
+        "filename": "content/authors/jpluscplusm/page.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-09-30T04:25:40Z",
+      "side": 0,
+      "message": "No, fixed. Good spot, thank you.",
+      "parentUuid": "fa22f595_544cb4cb",
+      "revId": "bfa1ae624f47abe6a66cc67ede34465dd1e8f6d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
