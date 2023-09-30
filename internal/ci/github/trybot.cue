@@ -112,14 +112,17 @@ workflows: trybot: _repo.bashWorkflow & {
 			// are established by running each tool.
 			for v in _setupGoActionsCaches {v},
 
-			// Rebuild docker image
-			json.#step & {
-				run: "./_scripts/buildDockerImage.bash"
-			},
-
 			// Go generate steps
 			_goGenerate & {
 				name: "Regenerate"
+			},
+
+			// Early check on clean repo
+			_repo.checkGitClean,
+
+			// Rebuild docker image
+			json.#step & {
+				run: "./_scripts/buildDockerImage.bash"
 			},
 
 			// npm install in hugo to allow serve test to pass
@@ -149,6 +152,8 @@ workflows: trybot: _repo.bashWorkflow & {
 			_dist & {
 				_baseURL: _netlifyStep.#prime_url.CL
 			},
+
+			// Check on clean repo prior to deploy
 			_repo.checkGitClean,
 
 			// Now the frontend build has happened, ensure that linters pass
