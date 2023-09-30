@@ -77,6 +77,13 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_repo.earlyChecks,
 
+			// We can perform an early check that ensures page.cue files are
+			// consistent with respect to their containing directory path.,
+			json.#step & {
+				name: "Check site CUE configuration"
+				run:  "_scripts/runPreprocessor.bash execute --check"
+			},
+
 			for v in _installDockerMacOS {v},
 
 			_installMacOSUtils,

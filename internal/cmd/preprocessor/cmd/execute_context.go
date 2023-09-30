@@ -83,9 +83,9 @@ func (ec *executeContext) execute() error {
 	// If we have been given the --check flag, ensure that the pages
 	// we found have CUE files that are correctly namespaced.
 	if flagCheck.Bool(ec.executor.cmd) {
-		if ec.checkPageCUE(); ec.isInError() {
-			return errorIfInError(ec)
-		}
+		ec.checkPageCUE()
+		// If we have this flag we don't want to do anything else
+		return errorIfInError(ec)
 	}
 
 	// Load all the CUE in one go
