@@ -1,0 +1,356 @@
+---
+title: "Documentation"
+description: "More about what CUE is and how to use it."
+layout: index
+header_type: default
+cascade:
+  header_type: wide
+---
+
+<section class="section section--blue">
+    <header class="section__header">
+        <div class="section__content">
+            <h1 class="section__title">Welcome to CUE</h1>
+
+            <div class="section__intro">
+                <p>
+                    CUE is an open-source data validation language and inference engine
+                    with its roots in logic programming.
+                    Although the language is not a general-purpose programming language,
+                    it has many applications, such as
+                    data validation, data templating, configuration, querying,
+                    code generation and even scripting.
+                    The inference engine can be used to validate
+                    data in code or to include it as part of a code generation pipeline.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="section__body">
+        <div class="section__content">
+            <div class="cta cta--flat cta--yellow">
+                <div class="cta__header">
+                    <h2 class="cta__title">Language Guide</h2>
+                </div>
+                <div class="cta__content">
+                    <p>Learn everything you need to about CUE. The Language Guide is a learning
+                        journey broken down into the different aspects of CUE: data, templating,
+                        schemas, queries, policy, file organization, and interoperability with
+                        other languages/encodings.</p>
+                    {{< button href="/docs/language-guide" label="Get started" icon="chevron-right" theme="white" >}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section__body">
+        <div class="section__content">
+
+            <h2>Introduction</h2>
+
+            <nav class="index">
+                <div class="index__nav nav nav--index">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/introduction/welcome">
+                                <span class="nav__text">Welcome</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/introduction/installation">
+                                <span class="nav__text">Installation</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/introduction/what-is-cue">
+                                <span class="nav__text">What is CUE?</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/introduction/getting-started">
+                                <span class="nav__text">Getting started</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/introduction/tour">
+                                <span class="nav__text">Tour</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Omitting this from the sketch draft because we have the CTA above -->
+            <!-- <h2>Language Guide</h2> -->
+
+            <!-- <nav class="index"> -->
+            <!--     <div class="index__nav nav nav--index"> -->
+            <!--         <ul class="nav__list"> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/about"> -->
+            <!--                     <span class="nav__text">About</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/getting-started"> -->
+            <!--                     <span class="nav__text">Getting started</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/data"> -->
+            <!--                     <span class="nav__text">Data</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/templating"> -->
+            <!--                     <span class="nav__text">Templating</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/schemas"> -->
+            <!--                     <span class="nav__text">Schemas</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/queries"> -->
+            <!--                     <span class="nav__text">Queries</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/policy"> -->
+            <!--                     <span class="nav__text">Policy</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/file-organization"> -->
+            <!--                     <span class="nav__text">File Organization</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--             <li class="nav__item"> -->
+            <!--                 <a class="nav__link" href="/docs/language-guide/interoperability"> -->
+            <!--                     <span class="nav__text">Interoperability</span> -->
+            <!--                 </a> -->
+            <!--             </li> -->
+            <!--         </ul> -->
+            <!--     </div> -->
+            <!-- </nav> -->
+
+            <h2>Tutorials</h2>
+
+            <nav class="index">
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Language</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/language-guide">
+                                <span class="nav__text">Language Guide</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Modules</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Encodings</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">JSON</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">YAML</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Go</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Protobuf</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">OpenAPI</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Go API</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Using <code>base64</code> encoding</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title"><code>cue</code> command</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Using <code>cue trim</code> in your workflows</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Use <code>cue</code> for scripting</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text"><code>cue eval</code></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Best practices</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Dev setup</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Organizing CUE configurations</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Ecosystem</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">CUE + Terraform</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">CUE + CRDs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <h2>How-To Guides</h2>
+
+            <nav class="index">
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Language</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/howto/list-no-duplicates/">
+                                <span class="nav__text">Ensure lists have no duplicate items</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/howto/ensure-min-max-list/">
+                                <span class="nav__text">Require min or max items in a list</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Use encodings in CUE</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/howto/encode-json-yaml-with-cue">
+                                <span class="nav__text">Encode JSON or YAML with CUE</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Go API</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Validate JSON</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title"><code>cue</code> command</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/docs/howto/validate-yaml-using-cue">
+                                <span class="nav__text">Validate YAML using CUE</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Best practices</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Dev setup</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">Organizing CUE configurations</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="index__nav nav nav--index">
+                    <p class="nav__title">Ecosystem</p>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">CUE + Terraform</span>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">
+                                <span class="nav__text">CUE + CRDs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</section>
