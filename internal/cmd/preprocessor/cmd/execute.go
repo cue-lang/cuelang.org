@@ -44,6 +44,11 @@ const (
 	flagHugoFlag     flagName = "hugo"
 	flagNoWriteCache flagName = "nowritecache"
 	flagCheck        flagName = "check"
+	flagList         flagName = "ls"
+)
+
+const (
+	sitePackage = "site"
 )
 
 var (
@@ -160,6 +165,16 @@ func executeDef(c *Command, args []string) error {
 	wd, projectRoot, err := deriveProjectRoot(wd)
 	if err != nil {
 		return err
+	}
+
+	// Ensure os.Getwd() is contained by projectRoot, so that loading of
+	// CUE packages via (relative) directory paths works.
+	cwd, err := os.Getwd()
+	if err != nil {
+		return fmt.Errorf("failed to determine working directory: %v", err)
+	}
+	if cwd != projectRoot && !strings.HasPrefix(cwd, projectRoot+string(os.PathSeparator)) {
+		return fmt.Errorf("current working directory must be within %s", projectRoot)
 	}
 
 	if flagSkipCache.Bool(c) && flagNoRun.Bool(c) {
