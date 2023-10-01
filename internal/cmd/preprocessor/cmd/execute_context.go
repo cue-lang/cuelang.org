@@ -88,6 +88,16 @@ func (ec *executeContext) execute() error {
 		return errorIfInError(ec)
 	}
 
+	// At this point we know we are not in --check mode, check we are not in
+	// serve mode and delete hugo/content as a temporary(ish) measure to ensure
+	// that we don't leave any stale files around.
+	if !flagServe.Bool(ec.executor.cmd) {
+		hugoContent := filepath.Join(ec.executor.root, "hugo", "content")
+		if err := os.RemoveAll(hugoContent); err != nil {
+			return ec.errorf("%v: failed to remove %s: %v", ec, hugoContent, err)
+		}
+	}
+
 	// Load all the CUE in one go
 	cfg := &load.Config{
 		Dir: ec.executor.root,
