@@ -1,0 +1,20 @@
+# Ensure that preprocessor fails when we run with a working directory that is
+# not contained by /content (where / is the project root)
+
+! exec preprocessor execute -d $WORK/sub
+stderr 'current working directory must be within '$WORK${/}'sub'
+
+# Switch to that directory and confirm all is fine
+cd sub
+exec preprocessor execute -d $WORK/sub
+! stdout .+
+
+-- sub/content/empty --
+-- sub/hugo/content/empty --
+-- sub/content/page/_en.md --
+---
+title: test
+---
+-- sub/content/page/site.cue --
+package site
+content: page: {}
