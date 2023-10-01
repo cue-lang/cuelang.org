@@ -25,6 +25,7 @@ import (
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/load"
+	"cuelang.org/go/cue/parser"
 	preprocessembed "github.com/cue-lang/cuelang.org"
 )
 
@@ -80,11 +81,10 @@ func (ec *executeContext) execute() error {
 		return err
 	}
 
-	// If we have been given the --check flag, ensure that the pages
-	// we found have CUE files that are correctly namespaced.
-	if flagCheck.Bool(ec.executor.cmd) {
-		ec.checkPageCUE()
-		// If we have this flag we don't want to do anything else
+	inputs := ec.findSiteCUE()
+
+	// If we are in error or have the --check or --ls flag we don't want to do anything else
+	if ec.isInError() || flagCheck.Bool(ec.executor.cmd) || flagList.Bool(ec.executor.cmd) {
 		return errorIfInError(ec)
 	}
 
@@ -102,24 +102,7 @@ func (ec *executeContext) execute() error {
 	cfg := &load.Config{
 		Dir: ec.executor.root,
 	}
-	var insts []string
-	for _, d := range ec.order {
-		// Find all CUE files
-		//
-		// TODO: filter for only those that are part of the site package? Maybe
-		// later
-		entries, err := os.ReadDir(d)
-		if err != nil {
-			return ec.errorf("%v: failed to read %s: %v", ec, d, err)
-		}
-		for _, e := range entries {
-			n := e.Name()
-			if filepath.Ext(n) == ".cue" {
-				insts = append(insts, filepath.Join(d, n))
-			}
-		}
-	}
-	bps := load.Instances(insts, cfg)
+	bps := load.Instances(inputs, cfg)
 	if l := len(bps); l != 1 {
 		return ec.errorf("%v: expected 1 build instance; saw %d", ec, l)
 	}
@@ -157,15 +140,27 @@ func (ec *executeContext) execute() error {
 	return errorIfInError(ec)
 }
 
-// checkPageCUE checks that the CUE files found in each page root directory
-// is well namespaced for the directory in which is is contained.
+// findSiteCUE finds all the CUE inputs that contribute to the site
+// configuration. Because we have a non-standard load mode, this is a useful
+// step to standardise. If `execute --check` is set, findSiteCUE also ensures
+// that page CUE files contain configuration that only define values in the
+// "namespace" defined by the page root directory. For example, for
+// content/docs/howto/find-a-guide/page.cue it will ensure that fields are
+// defined only within the content.docs.howto."find-a-guide" struct.
 //
-// For example, for content/docs/howto/find-a-guide/page.cue it will ensure
-// that fields are defined only within the content.docs.howto."find-a-guide"
-// struct.
-func (ec *executeContext) checkPageCUE() {
+// If execute --list is set, then the CUE files that contribute to the site
+// configurate are simply printed to stdout.
+//
+// Note that we know as a precondition of execute that the process working
+// directory is contained by the project root.
+func (ec *executeContext) findSiteCUE() (inputs []string) {
+	// Loop through the root and content CUE files that belong to the site
+	// package. Ensure that the content/**/*.cue files that are in page roots
+	// are well structured.
+	order := append([]string{ec.executor.root}, ec.order...)
+
 dirs:
-	for _, absDir := range ec.order {
+	for _, absDir := range order {
 		// Load the files in the directory (assuming they all belong
 		// to the same package)
 		var filenames []string
@@ -175,7 +170,37 @@ dirs:
 			continue
 		}
 
-		bps := load.Instances(filenames, &load.Config{
+		doList := flagList.Bool(ec.executor.cmd)
+
+		var siteFilenames []string
+		// We only want the files that are part of the "site" package
+		for _, fn := range filenames {
+			f, err := parser.ParseFile(fn, nil)
+			if err != nil {
+				ec.errorf("%v: failed to parse %s: %v", ec, fn, err)
+				continue
+			}
+			if f.PackageName() != sitePackage {
+				continue
+			}
+			if doList {
+				fmt.Printf("%s\n", fn)
+			} else {
+				siteFilenames = append(siteFilenames, fn)
+			}
+		}
+
+		if doList {
+			continue
+		}
+
+		// No CUE files is also fine. We don't require CUE anywhere
+		if len(siteFilenames) == 0 {
+			continue
+		}
+		inputs = append(inputs, siteFilenames...)
+
+		bps := load.Instances(siteFilenames, &load.Config{
 			Dir: absDir,
 		})
 		if l := len(bps); l != 1 {
@@ -188,6 +213,11 @@ dirs:
 		// sure  things are fine. Bail early
 		if err := v.Err(); err != nil {
 			ec.errorf("%s: error loading .cue files: %v", absDir, err)
+			continue
+		}
+
+		// Now only do a structure check if we are not in the root of the site
+		if absDir == ec.executor.root {
 			continue
 		}
 
@@ -234,6 +264,7 @@ dirs:
 			selectors = append(selectors, cue.Str(elem))
 		}
 	}
+	return inputs
 }
 
 func (ec *executeContext) findPages() error {

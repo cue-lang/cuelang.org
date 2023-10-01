@@ -651,7 +651,7 @@ func (rf *rootFile) writePageCache() error {
 
 	// Write that cue.Value to a generated file in the page directory
 	var page bytes.Buffer
-	fmt.Fprintf(&page, "package site")
+	fmt.Fprintf(&page, "package %s", sitePackage)
 	fmt.Fprintf(&page, "\n")
 	fmt.Fprintf(&page, "%s\n", nodeSrc)
 	cacheFile := filepath.Join(rf.page.dir, "gen_cache.cue")
