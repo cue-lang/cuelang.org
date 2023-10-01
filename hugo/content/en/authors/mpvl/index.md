@@ -1,3 +1,0 @@
----
-displayName: "Marcel van Lohuizen"
----
