@@ -39,12 +39,6 @@ fi
 # Build playground
 bash playground/_scripts/build.bash
 
-# Remove preprocessor target directory. This ensures we don't leave any stale
-# files lying around.
-#
-# TODO: make the prepreprocess smart enough to do this itself.
-rm -rf hugo/content
-
 # Run the preprocessor
 bash _scripts/runPreprocessor.bash execute --debug=all,-cache --norun=$norun $skipcache
 
