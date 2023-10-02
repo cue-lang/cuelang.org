@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee15bc70_7e12ef11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:26:44Z",
+      "side": 1,
+      "message": "Apologies, I missed your comments. Picked up in https://cuelang.org/cl/1170193",
+      "revId": "e1c13deb7eee531e538fa14ecd7f274ea2167b29",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

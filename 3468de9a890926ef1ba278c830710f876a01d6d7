@@ -50,6 +50,42 @@
       "message": "\"directoriy\"",
       "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa92275b_2bdd7524",
+        "filename": "internal/cmd/preprocessor/cmd/script_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:26:44Z",
+      "side": 1,
+      "message": "Yes, the `-dir` flag shown on line 62.",
+      "parentUuid": "5d76d6be_58d9cb8c",
+      "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de43f1a2_2045559a",
+        "filename": "internal/cmd/preprocessor/cmd/script_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:26:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "653fbaf3_359db4de",
+      "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
