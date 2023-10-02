@@ -18,3 +18,6 @@ node_modules
 
 # Well-known location for go binaries
 /.gobin
+
+# This is a well-known temporary file used by _scripts/siteCUE.bash
+/defresult.cue
