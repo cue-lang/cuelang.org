@@ -5,15 +5,16 @@
 exec preprocessor execute --debug=all
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/branch_md/_index.md hugo/content/en/branch_md/_index.md.golden
-cmp hugo/content/en/leaf_md/index.md hugo/content/en/leaf_md/index.md.golden
-cmp hugo/content/en/branch_html/_index.html hugo/content/en/branch_html/_index.html.golden
-cmp hugo/content/en/leaf_html/index.html hugo/content/en/leaf_html/index.html.golden
+cmp hugo/content/en/branch_md/_index.md golden/hugo/content/en/branch_md/_index.md
+cmp hugo/content/en/leaf_md/index.md golden/hugo/content/en/leaf_md/index.md
+cmp hugo/content/en/branch_html/_index.html golden/hugo/content/en/branch_html/_index.html
+cmp hugo/content/en/leaf_html/index.html golden/hugo/content/en/leaf_html/index.html
 
 # Ensure that the contents of the filesystem are as expected
 exec cmd-find
 cmp stdout stdout.golden
 
+-- hugo/.keep --
 -- content/branch_md/_en.md --
 ---
 title: test
@@ -42,22 +43,22 @@ title: test
 leaf_html_en
 -- content/leaf_html/site.cue --
 package site
--- hugo/content/en/branch_md/_index.md.golden --
+-- golden/hugo/content/en/branch_md/_index.md --
 ---
 title: test
 ---
 branch_md_en
--- hugo/content/en/leaf_md/index.md.golden --
+-- golden/hugo/content/en/leaf_md/index.md --
 ---
 title: test
 ---
 leaf_md_en
--- hugo/content/en/branch_html/_index.html.golden --
+-- golden/hugo/content/en/branch_html/_index.html --
 ---
 title: test
 ---
 branch_html_en
--- hugo/content/en/leaf_html/index.html.golden --
+-- golden/hugo/content/en/leaf_html/index.html --
 ---
 title: test
 ---

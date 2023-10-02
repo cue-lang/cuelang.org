@@ -2,7 +2,7 @@
 # This includes formatting an upload node, running a script node, and
 # skipping formatting a file in another upload node.
 
-unquote content/dir/en.md content/dir/en.md.writeBack.golden
+unquote content/dir/en.md golden/content/dir/en.md.writeBack
 
 # Run the preprocessor
 exec preprocessor execute --debug=all
@@ -12,11 +12,12 @@ exec preprocessor execute --debug=all
 cp content/dir/en.md content/dir/en.md.writeBack
 
 # Verify that the source file is intact
-cmp content/dir/en.md.writeBack content/dir/en.md.writeBack.golden
+cmp content/dir/en.md.writeBack golden/content/dir/en.md.writeBack
 
 # Verify that the target files match the source contents
-cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
+-- hugo/.keep --
 -- content/dir/site.cue --
 package site
 -- content/dir/en.md --
@@ -44,7 +45,7 @@ package site
 >cue eval in.cue # test
 >{{{end}}}
 >{{{end}}}
--- content/dir/en.md.writeBack.golden --
+-- golden/content/dir/en.md.writeBack --
 >---
 >title: JSON Superset
 >---
@@ -69,7 +70,7 @@ package site
 >cue eval in.cue # test
 >{{{end}}}
 >{{{end}}}
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---

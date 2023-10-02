@@ -2,13 +2,13 @@
 # they differ. Note the extra spacing around the {{{ with ... }}} below
 
 unquote content/dir/en.md
-unquote content/dir/en.md.golden
+unquote golden/content/dir/en.md
 
 # Run the preprocessor
 exec preprocessor execute --debug=all
 
 # Verify that the source file is intact
-cmp content/dir/en.md content/dir/en.md.golden
+cmp content/dir/en.md golden/content/dir/en.md
 
 -- content/dir/site.cue --
 package site
@@ -29,7 +29,7 @@ package site
 >{{{end}}}
 >
 >This is a {{{ def "test" }}}
--- content/dir/en.md.golden --
+-- golden/content/dir/en.md --
 >---
 >title: JSON Superset
 >---

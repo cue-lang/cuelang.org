@@ -3,7 +3,7 @@
 unquote content/dir/en.md
 
 # Make a golden file of the input to ensure it is written back intact
-cp content/dir/en.md content/dir/en.md.golden
+cp content/dir/en.md golden/content/dir/en.md
 
 # Run the preprocessor
 exec preprocessor execute --debug=all
@@ -20,10 +20,10 @@ cmp stdout structure.golden
 cp content/dir/en.md content/dir/en.md.writeBack
 
 # Verify that the source file is intact
-cmp content/dir/en.md.writeBack content/dir/en.md.golden
+cmp content/dir/en.md.writeBack golden/content/dir/en.md
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
 # Re-run the preprocessor and ensure we have a cache hit
 exec preprocessor execute --debug=all
@@ -33,6 +33,8 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for content.dir.cache.si
 exec preprocessor execute --debug=all --skipcache
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.cache.sidebyside."json-superset"; was a hit'
 
+-- hugo/.keep --
+-- golden/content/dir/.keep --
 -- content/dir/site.cue --
 package site
 -- content/dir/en.md --
@@ -69,7 +71,7 @@ package site
 >    example1.cue: no package name
 >    example2.cue: no package name
 >{{{end}}}
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---

@@ -7,6 +7,7 @@ unquote content/dir/en.md
 ! exec preprocessor execute
 cmpenv stderr stderr.golden
 
+-- hugo/.keep --
 -- content/dir/site.cue --
 package site
 -- content/dir/en.md --
@@ -25,7 +26,7 @@ package site
 >-- out.yaml --
 >x: 5
 >{{{end}}}
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---
