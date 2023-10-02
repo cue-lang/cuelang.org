@@ -360,7 +360,7 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 
 	// TODO: work out why we are not inheriting PATH from the setpriv environment
 	// whereas we do when we docker run from the command line.
-	pf("export PATH=\"/go/bin:$PATH\"")
+	pf("export PATH=\"/go/bin:/usr/local/go/bin:$PATH\"")
 
 	// exitCodeVar is the name of the "temporary" variable used to capture
 	// the exit code from a command. Named something suitably esoteric to
