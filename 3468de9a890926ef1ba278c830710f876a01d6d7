@@ -86,6 +86,24 @@
       "parentUuid": "653fbaf3_359db4de",
       "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbf09bc8_283fe2a1",
+        "filename": "internal/cmd/preprocessor/cmd/script_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-02T15:29:38Z",
+      "side": 1,
+      "message": "My bad - I was looking at the `.keep` file handling, and seeing the \"by default\" as applying to /them/ :)",
+      "parentUuid": "fa92275b_2bdd7524",
+      "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
