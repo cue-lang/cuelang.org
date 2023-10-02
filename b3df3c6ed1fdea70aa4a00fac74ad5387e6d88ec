@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3f2498d_4b58fb6b",
+        "filename": "internal/ci/ci_tool.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T14:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c0bbb6a_6d904c15",
+      "revId": "b3df3c6ed1fdea70aa4a00fac74ad5387e6d88ec",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b5d0983_3384c993",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-10-02T12:05:44Z",
       "side": 1,
       "message": "/Could/ this call be agnostic to the module path of the repo its sitting inside?",
+      "revId": "b3df3c6ed1fdea70aa4a00fac74ad5387e6d88ec",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d530c0c4_9910d81c",
+        "filename": "internal/ci/ci_tool.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T14:17:50Z",
+      "side": 1,
+      "message": "Only if the go `main` package is placed at the same place in each module. For now, I\u0027ve made it agnostic of the directory in which it is run _within_ a module. We would need to publish the module to make that `main` package be reusable. Not worth it for now.",
+      "parentUuid": "1b5d0983_3384c993",
       "revId": "b3df3c6ed1fdea70aa4a00fac74ad5387e6d88ec",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
