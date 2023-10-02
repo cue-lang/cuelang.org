@@ -56,7 +56,7 @@ func TestScripts(t *testing.T) {
 }
 
 // findCmd is rather like Unix find. It is used to list files and directories
-// contained by the working directory. By default directoriy paths are listed,
+// contained by the working directory. By default directory paths are listed,
 // and .keep files are totally ignored.
 func findCmd() int {
 	fDir := flag.Bool("dir", false, "print directory paths")
