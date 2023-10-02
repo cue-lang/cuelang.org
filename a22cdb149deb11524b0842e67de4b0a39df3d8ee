@@ -41,6 +41,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e41c294e_59c11c78",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:21:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd955749_39c4e8f4",
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7081339_28ba7551",
@@ -54,6 +72,30 @@
       "writtenOn": "2023-10-02T15:00:07Z",
       "side": 1,
       "message": "I would use backquotes or at least double quotes when mentioning commands like this, otherwise it\u0027s hard to parse where the start and end are.",
+      "range": {
+        "startLine": 145,
+        "startChar": 27,
+        "endLine": 145,
+        "endChar": 42
+      },
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ea524ab_13f83f69",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:21:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7081339_28ba7551",
       "range": {
         "startLine": 145,
         "startChar": 27,
@@ -81,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2f987ae_bd7110a0",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:21:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf7abfce_10860750",
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b272f58d_3765284e",
@@ -94,6 +154,24 @@
       "writtenOn": "2023-10-02T15:00:07Z",
       "side": 1,
       "message": "so I guess with `--list` it\u0027s implied which files are part of each page? I assume it\u0027s not hard to figure that out from the paths.",
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03b7c533_40abffca",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:21:10Z",
+      "side": 1,
+      "message": "Yes. A page root is determined by the existence of `.md` files (logic elsewhere). The CUE that can exist for that page may only define values at a path \"equivalent\" to the relative directory path from the site root. \n\nThis mode of loading CUE is a bit of an experiment. I\u0027m trying to be led by what we need here, and then stand back some time later to determine whether the pattern \"works\" or not. Will require some kicking of the tyres etc first, hence these sorts of manual vet checks.",
+      "parentUuid": "b272f58d_3765284e",
       "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
