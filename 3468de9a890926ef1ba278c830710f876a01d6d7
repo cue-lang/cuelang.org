@@ -16,6 +16,40 @@
       "message": "PTAL: slightly tweaked the CL so that I could drop the `golden/.../*.golden` stutter.",
       "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d76d6be_58d9cb8c",
+        "filename": "internal/cmd/preprocessor/cmd/script_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-02T14:37:30Z",
+      "side": 1,
+      "message": "Including \"[b]y default\" implies to me that there\u0027s some --possibly externalised-- way to modify this behaviour. Does that exist?",
+      "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "653fbaf3_359db4de",
+        "filename": "internal/cmd/preprocessor/cmd/script_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-02T14:37:30Z",
+      "side": 1,
+      "message": "\"directoriy\"",
+      "revId": "3468de9a890926ef1ba278c830710f876a01d6d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
