@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "925d7956_d6df645a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-02T15:00:07Z",
+      "side": 1,
+      "message": "typo? 😉",
+      "range": {
+        "startLine": 29,
+        "startChar": 45,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd955749_39c4e8f4",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-02T15:00:07Z",
+      "side": 1,
+      "message": "FYI a more principled approach might be https://pkg.go.dev/path/filepath#Rel plus https://pkg.go.dev/path/filepath#IsLocal - that is, `Rel(projectRoot, cwd)` should succeed and return a path that is considered as \"local\" by `IsLocal`, as in nothing like `/foo` or `../bar`.\n\nI imagine that in 99% of cases the result is the same, but in some edge cases it might not be, e.g. if either path is not properly cleaned, or there are symlinks. I think the Rel+IsLocal approach would better reflect what cmd/cue would do in terms of \"am I inside a module\", too.\n\nI realise we have this bit of code elsewhere already. I\u0027m only bringing this up now since IsLocal was added in Go 1.20 - before it existed, Rel alone wasn\u0027t really enough to answer \"is A underneath the directory at B\".",
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7081339_28ba7551",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-02T15:00:07Z",
+      "side": 1,
+      "message": "I would use backquotes or at least double quotes when mentioning commands like this, otherwise it\u0027s hard to parse where the start and end are.",
+      "range": {
+        "startLine": 145,
+        "startChar": 27,
+        "endLine": 145,
+        "endChar": 42
+      },
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf7abfce_10860750",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-02T15:00:07Z",
+      "side": 1,
+      "message": "nit: this can be in the \"else\" of doList",
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b272f58d_3765284e",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-02T15:00:07Z",
+      "side": 1,
+      "message": "so I guess with `--list` it\u0027s implied which files are part of each page? I assume it\u0027s not hard to figure that out from the paths.",
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
