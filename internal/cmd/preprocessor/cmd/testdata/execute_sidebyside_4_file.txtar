@@ -16,7 +16,7 @@ cp content/dir/en.md content/dir/en.md.writeBack
 cmp content/dir/en.md.writeBack content/dir/en.md.golden
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md.golden
 
 # Re-run the preprocessor and ensure we have a cache hit
 exec preprocessor execute --debug=all
@@ -26,6 +26,7 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for content.dir.cache.si
 exec preprocessor execute --debug=all --skipcache
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.cache.sidebyside."json-superset"; was a hit'
 
+-- hugo/.keep --
 -- content/dir/site.cue --
 package site
 -- content/dir/en.md --
@@ -54,7 +55,7 @@ package site
 >    "x": 5
 >}
 >{{{end}}}
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md.golden --
 ---
 title: JSON Superset
 ---

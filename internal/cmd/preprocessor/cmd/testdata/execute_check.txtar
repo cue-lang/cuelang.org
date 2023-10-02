@@ -4,6 +4,7 @@
 exec preprocessor execute --check
 ! stdout .+
 
+-- hugo/.keep --
 -- content/dir1/page.cue --
 package site
 
@@ -30,4 +31,3 @@ package site
 ---
 title: JSON Superset
 ---
--- hugo/content/.gitkeep --
