@@ -45,11 +45,12 @@ template: ci.#writefs & {
 			  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
 			  go install -trimpath cuelang.org/go/cmd/cue@\#(versions.cue)
 
-			FROM debian@sha256:63d62ae233b588d6b426b7b072d79d1306bfd02a72bff1fc045b8511cc89ee09
+			FROM golang:\#(versions.bareGoVersion)
 
 			RUN mkdir -p /go/bin
 
-			ENV PATH="/go/bin:${PATH}"
+			ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
+			ENV CUE_VERSION="\#(versions.cue)"
 
 			WORKDIR /
 
