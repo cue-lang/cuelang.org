@@ -16,6 +16,24 @@
       "message": "An  appropriate `name` here will show up in the GHA UI, and could guide the user as to why this is failing.",
       "revId": "f3b97139ad8a81bde9ae591cd5c31824e54d9c6e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e2127f2_db1e6e4f",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T14:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e491193_54ecbd62",
+      "revId": "f3b97139ad8a81bde9ae591cd5c31824e54d9c6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
