@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de3495c8_8ba2c651",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-02T12:32:08Z",
+      "side": 1,
+      "message": "I\u0027m confident I\u0027m misunderstanding something, but this change appears to amend only files that are inside test scripts, and doesn\u0027t actually \"move all golden files\" anywhere, at the repo/file level.",
+      "revId": "e7b165543ce0b1f41fafd10d19b0fa65200b2749",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
