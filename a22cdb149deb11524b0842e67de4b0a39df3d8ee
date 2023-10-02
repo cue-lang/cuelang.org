@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cc5e26d_6dba3940",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-02T15:21:44Z",
+      "side": 1,
+      "message": "Done (grudgingly!)",
+      "parentUuid": "925d7956_d6df645a",
+      "range": {
+        "startLine": 29,
+        "startChar": 45,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "a22cdb149deb11524b0842e67de4b0a39df3d8ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd955749_39c4e8f4",
