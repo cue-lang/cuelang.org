@@ -56,26 +56,32 @@ func TestScripts(t *testing.T) {
 }
 
 // findCmd is rather like Unix find. It is used to list files and directories
-// contained by the working directory. By default neither .golden files nor
-// directoriy paths are listed.
+// contained by the working directory. By default directoriy paths are listed,
+// and .keep files are totally ignored.
 func findCmd() int {
 	fDir := flag.Bool("dir", false, "print directory paths")
-	fGolden := flag.Bool("golden", false, "print .golden files")
 	flag.Parse()
 
-	filepath.WalkDir(".", func(path string, d fs.DirEntry, err error) error {
+	findImpl := func(path string, d fs.DirEntry, err error) error {
 		var printEntry bool
 		if d.IsDir() {
 			printEntry = *fDir
 		} else {
-			isGolden := filepath.Ext(d.Name()) == ".golden"
-			printEntry = !isGolden || *fGolden
+			isKeep := filepath.Ext(d.Name()) == ".keep"
+			printEntry = !isKeep
 		}
 		if printEntry {
 			fmt.Printf("%s\n", path)
 		}
 		return nil
-	})
+	}
+
+	// We only care about the layout of the directories "under the control"
+	// of the preprocessor. That means just content and hugo.
+	dirsToWalk := []string{"content", "hugo"}
+	for _, d := range dirsToWalk {
+		filepath.WalkDir(d, findImpl)
+	}
 
 	return 0
 }

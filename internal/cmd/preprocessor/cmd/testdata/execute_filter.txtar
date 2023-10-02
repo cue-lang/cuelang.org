@@ -4,12 +4,13 @@
 exec preprocessor execute --debug=all content/dir1
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir1/index.md hugo/content/en/dir1/index.md.golden
+cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md
 
 # Ensure that the contents of the filesystem are as expected
 exec cmd-find
 cmp stdout stdout.golden
 
+-- hugo/.keep --
 -- content/dir1/en.md --
 ---
 ---
@@ -22,7 +23,7 @@ package site
 dir1_en.md
 -- content/dir2/site.cue --
 package site
--- hugo/content/en/dir1/index.md.golden --
+-- golden/hugo/content/en/dir1/index.md --
 ---
 ---
 dir1_en.md

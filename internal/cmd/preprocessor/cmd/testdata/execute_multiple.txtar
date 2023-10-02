@@ -5,8 +5,8 @@ unquote content/dir1/en.md
 unquote content/dir2/en.md
 
 # Make a golden file of the input to ensure it is written back intact
-cp content/dir1/en.md content/dir1/en.md.golden
-cp content/dir2/en.md content/dir2/en.md.golden
+cp content/dir1/en.md golden/content/dir1/en.md
+cp content/dir2/en.md golden/content/dir2/en.md
 
 # Run the preprocessor
 exec preprocessor execute --debug=all
@@ -17,13 +17,16 @@ cp content/dir1/en.md content/dir1/en.md.writeBack
 cp content/dir2/en.md content/dir2/en.md.writeBack
 
 # Verify that the source file is intact
-cmp content/dir1/en.md.writeBack content/dir1/en.md.golden
-cmp content/dir2/en.md.writeBack content/dir2/en.md.golden
+cmp content/dir1/en.md.writeBack golden/content/dir1/en.md
+cmp content/dir2/en.md.writeBack golden/content/dir2/en.md
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir1/index.md hugo/content/en/dir1/index.md.golden
-cmp hugo/content/en/dir2/index.md hugo/content/en/dir2/index.md.golden
+cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md
+cmp hugo/content/en/dir2/index.md golden/hugo/content/en/dir2/index.md
 
+-- hugo/.keep --
+-- golden/content/dir1/.keep --
+-- golden/content/dir2/.keep --
 -- content/dir1/site.cue --
 package site
 -- content/dir1/en.md --
@@ -70,7 +73,7 @@ package site
 >    }
 >}
 >{{{end}}}
--- hugo/content/en/dir1/index.md.golden --
+-- golden/hugo/content/en/dir1/index.md --
 ---
 title: JSON Superset
 ---
@@ -162,7 +165,7 @@ package site
 >    }
 >}
 >{{{end}}}
--- hugo/content/en/dir2/index.md.golden --
+-- golden/hugo/content/en/dir2/index.md --
 ---
 title: JSON Superset
 ---
