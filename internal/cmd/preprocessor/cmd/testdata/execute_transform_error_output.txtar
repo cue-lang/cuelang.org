@@ -4,7 +4,7 @@
 unquote content/dir/en.md
 
 # Make a golden file of the input to ensure it is written back intact
-cp content/dir/en.md content/dir/en.md.golden
+cp content/dir/en.md golden/content/dir/en.md
 
 # Run the preprocessor
 exec preprocessor execute --debug=all
@@ -14,11 +14,13 @@ exec preprocessor execute --debug=all
 cp content/dir/en.md content/dir/en.md.writeBack
 
 # Verify that the source file is intact
-cmp content/dir/en.md.writeBack content/dir/en.md.golden
+cmp content/dir/en.md.writeBack golden/content/dir/en.md
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
+-- hugo/.keep --
+-- golden/content/dir/.keep --
 -- content/dir/site.cue --
 package site
 -- content/dir/en.md --
@@ -40,7 +42,7 @@ package site
 >
 >Some text after
 >
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---

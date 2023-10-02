@@ -5,6 +5,7 @@ unquote content/dir/en.md
 ! exec preprocessor execute --debug=all
 stderr 'error in site configuration: expected label or '':'', found ''IDENT'' is'
 
+-- hugo/.keep --
 -- content/site.cue --
 package site
 -- content/dir/page.cue --
@@ -15,7 +16,7 @@ this is very broken
 >---
 >title: JSON Superset
 >---
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---

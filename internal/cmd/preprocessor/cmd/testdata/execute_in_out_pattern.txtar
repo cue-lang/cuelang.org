@@ -1,7 +1,7 @@
 # Ensure that preprocessor understands the shorthand in-out archive
 
 unquote content/dir/en.md
-unquote content/dir/en.md.golden
+unquote golden/content/dir/en.md
 
 # Run the preprocessor
 exec preprocessor execute --debug=all --update
@@ -11,11 +11,12 @@ exec preprocessor execute --debug=all --update
 cp content/dir/en.md content/dir/en.md.writeBack
 
 # Verify that the source file is intact
-cmp content/dir/en.md.writeBack content/dir/en.md.golden
+cmp content/dir/en.md.writeBack golden/content/dir/en.md
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
+-- hugo/.keep --
 -- content/dir/site.cue --
 package site
 -- content/dir/en.md --
@@ -37,7 +38,7 @@ package site
 >
 >Some text after
 >
--- content/dir/en.md.golden --
+-- golden/content/dir/en.md --
 >---
 >title: JSON Superset
 >---
@@ -62,7 +63,7 @@ package site
 >
 >Some text after
 >
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---
