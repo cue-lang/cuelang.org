@@ -14,7 +14,13 @@ fi
 group=$(getent group $USER_GID | cut -d: -f1)
 if [ "$(getent passwd $USER_UID)" == "" ]
 then
-	useradd -s /bin/bash -u $USER_UID -m --no-log-init -r -g $group runner
+	tf=$(mktemp)
+	trap "rm -f $tf" EXIT
+	useradd -s /bin/bash -u $USER_UID -m --no-log-init -r -g $group runner > $tf 2>&1 || res=failed
+	if [[ "${res:-}" == "failed" ]]; then
+		cat $tf
+		exit 1
+	fi
 fi
 # In case we didn't actually create a user
 # add the $USER_UID user
