@@ -21,9 +21,10 @@ cmp content/dir1/en.md.writeBack content/dir1/en.md.golden
 cmp content/dir2/en.md.writeBack content/dir2/en.md.golden
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir1/index.md hugo/content/en/dir1/index.md.golden
-cmp hugo/content/en/dir2/index.md hugo/content/en/dir2/index.md.golden
+cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md.golden
+cmp hugo/content/en/dir2/index.md golden/hugo/content/en/dir2/index.md.golden
 
+-- hugo/.keep --
 -- content/dir1/site.cue --
 package site
 -- content/dir1/en.md --
@@ -70,7 +71,7 @@ package site
 >    }
 >}
 >{{{end}}}
--- hugo/content/en/dir1/index.md.golden --
+-- golden/hugo/content/en/dir1/index.md.golden --
 ---
 title: JSON Superset
 ---
@@ -162,7 +163,7 @@ package site
 >    }
 >}
 >{{{end}}}
--- hugo/content/en/dir2/index.md.golden --
+-- golden/hugo/content/en/dir2/index.md.golden --
 ---
 title: JSON Superset
 ---

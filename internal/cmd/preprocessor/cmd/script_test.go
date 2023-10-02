@@ -69,7 +69,8 @@ func findCmd() int {
 			printEntry = *fDir
 		} else {
 			isGolden := filepath.Ext(d.Name()) == ".golden"
-			printEntry = !isGolden || *fGolden
+			isKeep := filepath.Ext(d.Name()) == ".keep"
+			printEntry = (!isGolden || *fGolden) && !isKeep
 		}
 		if printEntry {
 			fmt.Printf("%s\n", path)

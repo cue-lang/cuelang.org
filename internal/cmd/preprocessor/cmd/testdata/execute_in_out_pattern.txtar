@@ -14,8 +14,9 @@ cp content/dir/en.md content/dir/en.md.writeBack
 cmp content/dir/en.md.writeBack content/dir/en.md.golden
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/dir/index.md hugo/content/en/dir/index.md.golden
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md.golden
 
+-- hugo/.keep --
 -- content/dir/site.cue --
 package site
 -- content/dir/en.md --
@@ -62,7 +63,7 @@ package site
 >
 >Some text after
 >
--- hugo/content/en/dir/index.md.golden --
+-- golden/hugo/content/en/dir/index.md.golden --
 ---
 title: JSON Superset
 ---
