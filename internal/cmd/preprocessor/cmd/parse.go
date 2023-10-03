@@ -181,6 +181,8 @@ func (rf *rootFile) parse_TextNode(n *parse.TextNode) (*textNode, error) {
 func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 	// The only form we accept right now is {{{ with function "$lang" "label" }}}
 	// This is parsed as a command node with multiple args.
+	//
+	// The exception to this rule is multistepcache, as there can only be one.
 	if n.ElseList != nil {
 		return nil, rf.bodyError(n.ElseList, "with node cannot have else block")
 	}
@@ -188,13 +190,21 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		return nil, rf.bodyError(n, "with node must comprise a single command")
 	}
 	c := n.Pipe.Cmds[0]
-	if l := len(c.Args); l == 0 {
-		return nil, rf.bodyError(c, "expected at least one arg, not zero")
-	}
 	arg0 := c.Args[0]
 	fn, ok := arg0.(*parse.IdentifierNode)
 	if !ok {
 		return nil, rf.bodyError(c, "expected identifier as first arg; got %T", arg0)
+	}
+	// Early return if we have a multistepcache as this does not require
+	// an arguments check
+	if fn.Ident == fnMultistepCache {
+		t, err := rf.parse_txtarNode(n, fn.Ident, nil)
+		return &multistepCacheNode{
+			txtarNode: t,
+		}, err
+	}
+	if l := len(c.Args); l == 0 {
+		return nil, rf.bodyError(c, "expected at least one arg, not zero")
 	}
 	switch fn.Ident {
 	case fnSidebyside:
