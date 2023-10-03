@@ -696,7 +696,14 @@ func (rf *rootFile) writeTarget(b *bytes.Buffer) error {
 	b.Write(rf.header)
 	b.WriteString(headerLine)
 
-	for _, n := range rf.bodyParts {
+	return transformNodes(b, rf.bodyParts)
+}
+
+func transformNodes(b *bytes.Buffer, nodes []node) error {
+	for _, n := range nodes {
+		if n.isHidden() {
+			continue
+		}
 		if err := n.writeTransformTo(b); err != nil {
 			return err
 		}

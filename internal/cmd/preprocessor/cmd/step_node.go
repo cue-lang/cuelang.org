@@ -48,10 +48,8 @@ func (s *stepNode) writeSourceTo(b *bytes.Buffer) {
 func (s *stepNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 	p("{{< step stepNumber=\"%d\" >}}", s.number)
-	for _, n := range s.children {
-		if err := n.writeTransformTo(b); err != nil {
-			return err
-		}
+	if err := transformNodes(b, s.children); err != nil {
+		return err
 	}
 	p("{{< /step >}}")
 	return nil
