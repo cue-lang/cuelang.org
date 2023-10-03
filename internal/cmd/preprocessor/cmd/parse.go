@@ -21,6 +21,7 @@ import (
 	"strings"
 	"unicode"
 
+	"cuelang.org/go/cue/errors"
 	"github.com/cue-lang/cuelang.org/internal/parse"
 	"golang.org/x/exp/slices"
 	"golang.org/x/tools/txtar"
@@ -94,27 +95,27 @@ func (rf *rootFile) parse() error {
 	return nil
 }
 
-// walkBody performs a preorder traversal of the rootFile's body nodes.
+var errAbort = errors.New("abort walkBody early")
+
+// walkBody performs a preorder traversal of the rootFile's body nodes, calling
+// f for each node. If f returns errAbort, it stops the traversal.
 //
-// We know when executing this function that we successfully parsed
-// the underlying text/template into our nodes, which means we can be
-// safe/sure on the structure, nested-ness etc of nodes, and just walk
-// them.
-func (rf *rootFile) walkBody(f func(n node) error) error {
+// We know when executing this function that we successfully parsed the
+// underlying text/template into our nodes, which means we can be safe/sure on
+// the structure, nested-ness etc of nodes, and just walk them.
+func (rf *rootFile) walkBody(f func(n node) error) {
 	var work []node = rf.bodyParts
 
 	var n node
 	for len(work) > 0 {
 		n, work = work[0], work[1:]
-		if err := f(n); err != nil {
-			return err
+		if err := f(n); errors.Is(err, errAbort) {
+			return
 		}
 		if s, ok := n.(*stepNode); ok {
 			work = append(slices.Clone(s.children), work...)
 		}
 	}
-
-	return nil
 }
 
 // bodyError is a convenience for creating a formatted error that includes the
