@@ -54,7 +54,7 @@ func (s *scriptNode) validate() {
 		s.errorf("%v: failed to parse shell script: %v", s, err)
 		return
 	}
-	s.debugf(s.debugGeneral, "parsed %q, gave %v statements", s.effectiveArchive.Comment, len(file.Stmts))
+	s.debugf(s.debugScript, "parsed %q, gave %v statements", s.effectiveArchive.Comment, len(file.Stmts))
 	for _, stmt := range file.Stmts {
 		var cmdStmt commandStmt
 		// Capture whether this statement is negated or not
