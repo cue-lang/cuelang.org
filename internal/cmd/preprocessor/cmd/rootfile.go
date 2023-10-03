@@ -17,6 +17,7 @@ package cmd
 import (
 	"bytes"
 	"crypto/sha256"
+	"encoding/base32"
 	"encoding/base64"
 	"fmt"
 	"io"
@@ -25,6 +26,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -32,6 +34,7 @@ import (
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/format"
 	"github.com/cue-lang/cuelang.org/internal/parse"
+	"github.com/rogpeppe/testscript/txtar"
 	"golang.org/x/exp/maps"
 	"mvdan.cc/sh/v3/syntax"
 )
@@ -42,16 +45,17 @@ var (
 	// text/template/parse sees the bare words and interprets them as if they
 	// were function calls.
 	templateFunctions = map[string]any{
-		fnSidebyside:   true,
-		fnCode:         true,
-		fnStep:         true,
-		fnUpload:       true,
-		fnScript:       true,
-		fnHiddenScript: true,
-		"reference":    true,
-		"def":          true,
-		"sidetrack":    true,
-		"TODO":         true,
+		fnSidebyside:     true,
+		fnCode:           true,
+		fnStep:           true,
+		fnUpload:         true,
+		fnScript:         true,
+		fnHiddenScript:   true,
+		fnMultistepCache: true,
+		"reference":      true,
+		"def":            true,
+		"sidetrack":      true,
+		"TODO":           true,
 	}
 
 	goMajorVersion = computeGoMajorVersion()
@@ -98,6 +102,10 @@ type rootFile struct {
 	// to the input format, run (to update itself), or written
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
+
+	// multistepCache is set to the singleton multistepCacheNode if one exists.
+	// The validate() step validates there is at most one.
+	multistepCache *multistepCacheNode
 
 	// stepNumber is the number of the last step directive that was parsed. The
 	// first step is numbered 1.
@@ -243,7 +251,30 @@ func (rf *rootFile) validate() error {
 		}
 	}
 
-	// If we are already in error, do not progress to validate
+	// Ensure there is just a single multistepcache node
+	var multistepCacheNodes []*multistepCacheNode
+	rf.walkBody(func(n node) error {
+		switch n := n.(type) {
+		case *multistepCacheNode:
+			multistepCacheNodes = append(multistepCacheNodes, n)
+		}
+		return nil
+	})
+	switch l := len(multistepCacheNodes); l {
+	case 0:
+		// We will add a multistepcache node later if required
+		// during the run phase
+	case 1:
+		rf.multistepCache = multistepCacheNodes[0]
+	default:
+		var sb strings.Builder
+		for _, n := range multistepCacheNodes {
+			fmt.Fprintf(&sb, "\t%v\n", n)
+		}
+		rf.errorf("%v: only one multistepcache node allowed per page; found %d:\n%v", rf, l, &sb)
+	}
+
+	// If we are already in error, do not progress to validate each node
 	if rf.isInError() {
 		return errorIfInError(rf)
 	}
@@ -350,6 +381,25 @@ func (rf *rootFile) run() error {
 	// If there is nothing to do, script will be nil. Check against that
 	if script != nil {
 		torun = append(torun, script)
+
+		if rf.multistepCache == nil {
+			// We need to add a multistepcache at this point in the thread
+			// of control to avoid a race
+			pt, err := rf.parseString("fragment", "\n\n\n{{{with multistepcache \"en\"}}}\n-- output --\n{{{end}}}\n")
+			if err != nil {
+				return rf.errorf("%v: failed to parse fragment to add multistepcache node: %v", rf, err)
+			}
+			l, err := rf.parse_ListNode(pt.Root)
+			if err != nil {
+				return err
+			}
+			for _, n := range l {
+				rf.bodyParts = append(rf.bodyParts, n)
+				if m, ok := n.(*multistepCacheNode); ok {
+					rf.multistepCache = m
+				}
+			}
+		}
 	}
 
 	// The multi-step script's turn
@@ -439,7 +489,13 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 	})
 
 	if !didWork {
-		// there is nothing to do
+		// There is nothing to do... except drop the singleton multistepCache node
+		// if it exists. If we go this far we know there will be at most one.
+		slices.DeleteFunc(rf.bodyParts, func(b node) bool {
+			_, ok := b.(*multistepCacheNode)
+			return ok
+		})
+
 		return nil, nil
 	}
 
@@ -551,24 +607,64 @@ func (m *multiStepScript) run() (runerr error) {
 	createCmd.Stdout = &createStdout
 	createCmd.Stderr = &createStderr
 
-	m.debugf(m.debugScript, "%v: creating multi-step script container", m)
-	m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
-	m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
+	// Now we are complete. We have a script and a command with which
+	// to dispatch the work. Work out whether we have a cache hit
+	work := sha256.New()
+	// TODO: work out how to include the command in some way shape or form.
+	// In its current form it cannot participate in the hash because of temporary
+	// paths
+	fmt.Fprintf(work, "script:\n%s\n", m.bashScript)
+	workSum := base32.HexEncoding.EncodeToString(work.Sum(nil))
 
-	if err := createCmd.Run(); err != nil {
-		return fmt.Errorf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
+	cacheEntry := &m.rootFile.multistepCache.sourceArchive.Files[0]
+	cacheMiss := workSum != cacheEntry.Name
+
+	var out []byte
+	if cacheMiss || m.skipCache {
+		var err error
+		if cacheMiss {
+			m.debugf(m.debugCache, "%v: cache miss for mult-step script", m)
+		} else {
+			m.debugf(m.debugCache, "%v: skipping cache for multi-step script; was a hit", m)
+		}
+
+		m.debugf(m.debugScript, "%v: creating multi-step script container", m)
+		m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
+		m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
+
+		if err := createCmd.Run(); err != nil {
+			return fmt.Errorf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
+		}
+
+		instance := strings.TrimSpace(createStdout.String())
+
+		startCmd := exec.Command("docker", "start", "-a", instance)
+		out, err = startCmd.CombinedOutput()
+		if err != nil {
+			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
+		}
+
+		// Because we are running in -t mode, replace all \r\n with \n
+		out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
+
+		if !m.noWriteCache {
+			m.rootFile.multistepCache.sourceArchive.Comment = nil
+			cacheEntry.Name = workSum
+			quotedOut, err := txtar.Quote(out)
+			if err != nil {
+				m.fatalf("%v: failed to quote output: %v\n%s", m, err, out)
+			}
+			cacheEntry.Data = quotedOut
+		}
+	} else {
+		m.debugf(m.debugCache, "%v: cache hit for multi-step script; not running", m)
+		cachedOut := cacheEntry.Data
+		unquotedOut, err := txtar.Unquote(cachedOut)
+		if err != nil {
+			m.fatalf("%v: failed to unquote cached output: %v\n%s", m, err, cachedOut)
+		}
+		out = unquotedOut
 	}
-
-	instance := strings.TrimSpace(createStdout.String())
-
-	startCmd := exec.Command("docker", "start", "-a", instance)
-	out, err := startCmd.CombinedOutput()
-	if err != nil {
-		m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
-	}
-
-	// Because we are running in -t mode, replace all \r\n with \n
-	out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
 
 	m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
 

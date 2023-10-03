@@ -1,0 +1,31 @@
+# Ensure that we get a sensible error when multiple multistepcache nodes are
+# present in a page markdown file.
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+! exec preprocessor execute
+cmpenv stderr stderr.golden
+
+-- hugo/.keep --
+-- content/dir/site.cue --
+package site
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>{{{with multistepcache "en"}}}
+>script
+>-- output --
+>output
+>{{{end}}}
+>{{{with multistepcache "en"}}}
+>script
+>-- output --
+>output
+>{{{end}}}
+-- stderr.golden --
+** $WORK/content/dir/en.md: only one multistepcache node allowed per page; found 2:
+	$WORK/content/dir/en.md:4:8
+	$WORK/content/dir/en.md:9:8
+terminating because of errors
