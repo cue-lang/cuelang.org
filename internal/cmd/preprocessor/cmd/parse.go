@@ -94,27 +94,25 @@ func (rf *rootFile) parse() error {
 	return nil
 }
 
-// walkBody performs a preorder traversal of the rootFile's body nodes.
+// walkBody performs a preorder traversal of the rootFile's body nodes, calling
+// f for each node. If f returns non nil, it stops the traversal.
 //
-// We know when executing this function that we successfully parsed
-// the underlying text/template into our nodes, which means we can be
-// safe/sure on the structure, nested-ness etc of nodes, and just walk
-// them.
-func (rf *rootFile) walkBody(f func(n node) error) error {
+// We know when executing this function that we successfully parsed the
+// underlying text/template into our nodes, which means we can be safe/sure on
+// the structure, nested-ness etc of nodes, and just walk them.
+func (rf *rootFile) walkBody(f func(n node) error) {
 	var work []node = rf.bodyParts
 
 	var n node
 	for len(work) > 0 {
 		n, work = work[0], work[1:]
 		if err := f(n); err != nil {
-			return err
+			return
 		}
 		if s, ok := n.(*stepNode); ok {
 			work = append(slices.Clone(s.children), work...)
 		}
 	}
-
-	return nil
 }
 
 // bodyError is a convenience for creating a formatted error that includes the
