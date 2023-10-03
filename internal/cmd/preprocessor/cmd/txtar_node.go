@@ -301,7 +301,7 @@ func (t *txtarRunContext) formatFiles() error {
 			cmd = t.dockerCmd(nil, "cue", "fmt", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		default:
-			t.debugf(t.debugGeneral, "%v: skipping formatting of file %s; unknown extension", t, a.Basename)
+			t.debugf(t.debugFormatting, "%v: skipping formatting of file %s; unknown extension", t, a.Basename)
 		}
 		if cmd == nil {
 			// Nothing to do
@@ -317,7 +317,7 @@ func (t *txtarRunContext) formatFiles() error {
 	for _, j := range jobs {
 		j.cmd.Stdout = &j.out
 		j.cmd.Stderr = &j.out
-		t.debugf(t.debugGeneral, "%v: running %v", t, j.cmd)
+		t.debugf(t.debugFormatting, "%v: running %v", t, j.cmd)
 		if err := j.cmd.Start(); err != nil {
 			t.errorf("%v: failed to start %v: %v", t, j.cmd, err)
 		}
