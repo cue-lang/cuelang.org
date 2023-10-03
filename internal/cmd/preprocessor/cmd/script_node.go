@@ -86,6 +86,9 @@ type commandStmt struct {
 }
 
 func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
+	// No check required here on whether we are hidden or not, because
+	// if we are hidden this method won't even be called.
+
 	p := bufPrintf(b)
 	// With a script there are no files... just script
 
