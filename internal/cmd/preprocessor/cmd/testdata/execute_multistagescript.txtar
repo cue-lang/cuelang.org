@@ -17,6 +17,14 @@ cmp content/dir/en.md.writeBack golden/content/dir/en.md.writeBack
 # Verify that the target files match the source contents
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
+# Re-run the preprocessor and ensure we have a cache hit
+exec preprocessor execute --debug=all
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for multi-step script; not running'
+
+# Re-run the preprocessor again with --skipcache to ensure we re-run a cache hit
+exec preprocessor execute --debug=all --skipcache
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step script; was a hit'
+
 -- hugo/.keep --
 -- content/dir/site.cue --
 package site
@@ -76,6 +84,41 @@ package site
 >cue version
 >{{{end}}}
 >{{{end}}}
+>
+>
+>
+>{{{with multistepcache "en"}}}
+>-- 8FNTC1NL1DQEQ084P0FNR235LSHB9DCTHMUD6K9RKJ8E1F0HPDM0==== --
+>>$ cat <<EOD > in.json
+>>{
+>>"x": 5
+>>}
+>>
+>>EOD
+>>$ cue eval in.cue # test
+>>daa46c69f182300392d3e025b5379272aea3ef34b0bcbd436133c12029b066fe
+>>map: {
+>>    member1: 3
+>>    member2: 4
+>>}
+>>daa46c69f182300392d3e025b5379272aea3ef34b0bcbd436133c12029b066fe
+>>0
+>>$ cue version
+>>761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
+>>cue version v0.6.0
+>>
+>>go version go1.21.1
+>>      -buildmode exe
+>>       -compiler gc
+>>       -trimpath true
+>>  DefaultGODEBUG panicnil=1
+>>     CGO_ENABLED 0
+>>          GOARCH arm64
+>>            GOOS linux
+>>761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
+>>0
+>>
+>{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
@@ -101,3 +144,4 @@ map: {
 }
 ```
 {{< /step >}}
+
