@@ -7,11 +7,11 @@ package site
 					comprehensions: {
 						cache: {
 							sidebyside: {
-								"for-clause":             "sVwSrHmJRZZKZlo3H7Wg2w1y5lSfbM7l7jMGUCgcw/E="
-								"if-clause":              "tHBZCUIqpSIFSjFA5CvYTJ5yrfXWIJSTEy6OOaxA1qE="
-								"let-clause":             "v/q+YWWM/WnpXHnJMqr7YHk3wTLUy4L+mgJVC9IbkdI="
-								"list-comprehension":     "++8lpurZ16I1gIdS9XilQ1gzkZ3Q+Wlxta9OMbOKc1c="
-								"switch-if-else-pattern": "xO4N07jUs9gYWmGm8JINZLulWbd0uGsqIGulNXf8LHs="
+								"for-clause":             "RajHCNLXSv+/tZFEYIQ/FBUBmzA07wOhAHUJ4QL5nL4="
+								"if-clause":              "3vpVP9zTYLKfyN2saOJJ+urp3/zl5RNFqxxLDFlbUgA="
+								"let-clause":             "VMyi+xhVFK6CxK/C7iotc8h0fADd8PgdlwOO/E7fAHk="
+								"list-comprehension":     "omeUR5Z5zsWseF2ExCZtkvXC9IjpzbNzbXnm2PJFxe4="
+								"switch-if-else-pattern": "vsWsPfmAdDiZiWaMl9r57wREcQbawsOAy+J4jvm3Ou8="
 							}
 						}
 					}
