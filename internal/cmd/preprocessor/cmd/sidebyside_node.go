@@ -168,7 +168,7 @@ func (s *sidebysideNodeRunContext) run() (err error) {
 		fmt.Sprintf("-u=%v", s.updateGoldenFiles),
 		containerFile,
 	)
-	s.debugf(s.debugGeneral, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(s.effectiveArchive)))
+	s.debugf(s.debugSideBySide, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(s.effectiveArchive)))
 
 	if byts, err := ts.CombinedOutput(); err != nil {
 		s.fatalf("%v: failed to run %v: %v\n%s", s, ts, err, tabIndent(byts))
