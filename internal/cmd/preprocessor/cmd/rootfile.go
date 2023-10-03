@@ -25,6 +25,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -42,16 +43,17 @@ var (
 	// text/template/parse sees the bare words and interprets them as if they
 	// were function calls.
 	templateFunctions = map[string]any{
-		fnSidebyside:   true,
-		fnCode:         true,
-		fnStep:         true,
-		fnUpload:       true,
-		fnScript:       true,
-		fnHiddenScript: true,
-		"reference":    true,
-		"def":          true,
-		"sidetrack":    true,
-		"TODO":         true,
+		fnSidebyside:     true,
+		fnCode:           true,
+		fnStep:           true,
+		fnUpload:         true,
+		fnScript:         true,
+		fnHiddenScript:   true,
+		fnMultistepCache: true,
+		"reference":      true,
+		"def":            true,
+		"sidetrack":      true,
+		"TODO":           true,
 	}
 
 	goMajorVersion = computeGoMajorVersion()
@@ -98,6 +100,10 @@ type rootFile struct {
 	// to the input format, run (to update itself), or written
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
+
+	// multistepCache is set to the singleton multistepCacheNode if one exists.
+	// The validate() step validates there is at most one.
+	multistepCache *multistepCacheNode
 
 	// stepNumber is the number of the last step directive that was parsed. The
 	// first step is numbered 1.
@@ -243,7 +249,28 @@ func (rf *rootFile) validate() error {
 		}
 	}
 
-	// If we are already in error, do not progress to validate
+	// Ensure there is just a single multistepcache node
+	var multistepCacheNodes []*multistepCacheNode
+	rf.walkBody(func(n node) error {
+		switch n := n.(type) {
+		case *multistepCacheNode:
+			multistepCacheNodes = append(multistepCacheNodes, n)
+		}
+		return nil
+	})
+	switch l := len(multistepCacheNodes); l {
+	case 0:
+	case 1:
+		rf.multistepCache = multistepCacheNodes[0]
+	default:
+		var sb strings.Builder
+		for _, n := range multistepCacheNodes {
+			fmt.Fprintf(&sb, "\t%v\n", n)
+		}
+		rf.errorf("%v: only one multistepcache node allowed per page; found %d:\n%v", rf, l, &sb)
+	}
+
+	// If we are already in error, do not progress to validate each node
 	if rf.isInError() {
 		return errorIfInError(rf)
 	}
@@ -426,7 +453,13 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 	})
 
 	if !didWork {
-		// there is nothing to do
+		// There is nothing to do... except drop the singleton multistepCache node
+		// if it exists. If we go this far we know there will be at most one.
+		slices.DeleteFunc(rf.bodyParts, func(b node) bool {
+			_, ok := b.(*multistepCacheNode)
+			return ok
+		})
+
 		return nil, nil
 	}
 

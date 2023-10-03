@@ -181,6 +181,8 @@ func (rf *rootFile) parse_TextNode(n *parse.TextNode) (*textNode, error) {
 func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 	// The only form we accept right now is {{{ with function "$lang" "label" }}}
 	// This is parsed as a command node with multiple args.
+	//
+	// The exception to this rule is multistepcache, as there can only be one.
 	if n.ElseList != nil {
 		return nil, rf.bodyError(n.ElseList, "with node cannot have else block")
 	}
@@ -188,15 +190,21 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		return nil, rf.bodyError(n, "with node must comprise a single command")
 	}
 	c := n.Pipe.Cmds[0]
-	if l := len(c.Args); l == 0 {
-		return nil, rf.bodyError(c, "expected at least one arg, not zero")
-	}
 	arg0 := c.Args[0]
 	fn, ok := arg0.(*parse.IdentifierNode)
 	if !ok {
 		return nil, rf.bodyError(c, "expected identifier as first arg; got %T", arg0)
 	}
+	if l := len(c.Args); l == 0 {
+		return nil, rf.bodyError(c, "expected at least one arg, not zero")
+	}
 	switch fn.Ident {
+	case fnMultistepCache:
+		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		if err != nil {
+			return nil, err
+		}
+		return &multistepCacheNode{txtarNode: t}, nil
 	case fnSidebyside:
 		t, err := rf.parse_labelledTxtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
@@ -280,8 +288,6 @@ func (rf *rootFile) parse_labelledTxtarNode(n *parse.WithNode, kind string, args
 // parse_labelledTxtarNode extracts a txtar-based node of type kind.
 //
 // See also doc comment for parse_txtarNodeCommon.
-//
-//lint:ignore U1000 we will use this in the next CL
 func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, err error) {
 	if len(args) != 1 {
 		return res, rf.bodyError(n, "%s nodes require a single arg", kind)
