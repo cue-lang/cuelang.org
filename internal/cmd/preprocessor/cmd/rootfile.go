@@ -25,6 +25,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -243,7 +244,9 @@ func (rf *rootFile) validate() error {
 		}
 	}
 
-	// If we are already in error, do not progress to validate
+	// Ensure there is just a single multistepcache node
+
+	// If we are already in error, do not progress to validate each node
 	if rf.isInError() {
 		return errorIfInError(rf)
 	}
@@ -426,7 +429,13 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 	})
 
 	if !didWork {
-		// there is nothing to do
+		// There is nothing to do... except drop the singleton multistepCache node
+		// if it exists. If we go this far we know there will be at most one.
+		slices.DeleteFunc(rf.bodyParts, func(b node) bool {
+			_, ok := b.(*multistepCacheNode)
+			return ok
+		})
+
 		return nil, nil
 	}
 
