@@ -1,0 +1,160 @@
+---
+title: Loading CUE via the Go API
+tags:
+- go api
+authors:
+- myitcv
+toc_hide: true
+---
+
+This tutorial demonstrates how to get started with the [Go
+API](https://pkg.go.dev/cuelang.org/go), and write a Go program to load and
+evaluate some CUE.
+
+## Prerequisites
+
+- **A tool to edit text files**. Any text editor you have will be fine, for
+  example [VSCode](https://code.visualstudio.com/).
+- **A command terminal**. `cue` works on all platforms, so any terminal on Linux
+  or macOS, and on PowerShell, `cmd.exe` or
+  [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) in Windows.
+- **An installed `go` binary**
+  ([installation details](https://go.dev/doc/install))
+- **An installed `cue` binary**
+  ([installation details]({{< relref "/docs/introduction/installation" >}}))
+- **Some awareness of CUE schemata**
+  ([Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
+   [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) in the CUE tour)
+
+This tutorial is written using the following versions of `cmd/go` and `cmd/cue`:
+
+```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24KZ28gdmVyc2lvbg==" }
+$ cue version
+cue version v0.8.0
+...
+$ go version
+go version go1.22.1 linux/amd64
+```
+
+
+## Create a CUE module
+
+{{< step stepNumber="1" >}}
+Initialize a CUE module to hold our configuration:
+
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGNvbXBhbnkuY29tL2V4YW1wbGU=" }
+$ cue mod init company.com/example
+```
+
+{{< /step >}}
+
+{{< step stepNumber="2" >}}
+Write some CUE code:
+
+```cue { title="some.cue" }
+package example
+
+output: "Hello \(name)"
+name:   "Joe"
+```
+
+{{< /step >}}
+
+{{< step stepNumber="3" >}}
+Verify that the configuration successfully evaluates:
+
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAu" }
+$ cue export .
+{
+    "output": "Hello Joe",
+    "name": "Joe"
+}
+```
+
+{{< /step >}}
+
+## Create a Go module and program
+
+{{< step stepNumber="4" >}}
+Initialize a Go module to contain your program:
+
+```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgY29tcGFueS5jb20vZXhhbXBsZQ==" }
+$ go mod init company.com/example
+go: creating new go.mod: module company.com/example
+go: to add module requirements and sums:
+	go mod tidy
+```
+
+{{< /step >}}
+
+{{< step stepNumber="5" >}}
+Write a Go program to load the CUE and print a message based on `output` field:
+
+```go { title="main.go" }
+package main
+
+import (
+	"fmt"
+	"log"
+
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+	"cuelang.org/go/cue/load"
+)
+
+func main() {
+	ctx := cuecontext.New()
+
+	// Load the package "example" from the current directory.
+	// We don't need to specify a config in this case.
+	insts := load.Instances([]string{"."}, nil)
+
+	// The current directory just has one file without any build tags,
+	// and that file belongs to the example package.
+	// So we get a single instance as a result.
+	v := ctx.BuildInstance(insts[0])
+	if err := v.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	// Lookup the 'output' field and print it out
+	output := v.LookupPath(cue.ParsePath("output"))
+	fmt.Println(output)
+}
+```
+
+{{< /step >}}
+
+{{< step stepNumber="6" >}}
+Add a dependency on `cuelang.org/go` (you can use `@latest` in place of a
+specified version) and ensure the Go module is tidy:
+
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMC1hbHBoYS4xCmdvIG1vZCB0aWR5" }
+$ go get cuelang.org/go@v0.9.0-alpha.1
+...
+$ go mod tidy
+...
+```
+
+{{< /step >}}
+
+## Run the Go program
+
+{{< step stepNumber="7" >}}
+Run the Go program:
+
+```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
+$ go run .
+"Hello Joe"
+```
+
+{{< /step >}}
+
+## Congratulations!
+
+That's it, you have just written your first Go program to load and evaluate CUE
+code.
+
+## Related content
+
+- [`cuelang.org/go` API docs](https://pkg.go.dev/cuelang.org/go)
