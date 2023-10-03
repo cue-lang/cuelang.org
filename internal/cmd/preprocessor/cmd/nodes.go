@@ -35,6 +35,8 @@ type node interface {
 
 	// nodeType is a human-friendly name identifying the type of the node.
 	nodeType() string
+
+	isHidden() bool
 }
 
 type runnableNode interface {
@@ -91,6 +93,10 @@ type nodeWrapper struct {
 }
 
 var _ node = (*nodeWrapper)(nil)
+
+func (n *nodeWrapper) isHidden() bool {
+	return false
+}
 
 func (n *nodeWrapper) writeSourceTo(b *bytes.Buffer) {
 	b.WriteString(n.underlying.String())
