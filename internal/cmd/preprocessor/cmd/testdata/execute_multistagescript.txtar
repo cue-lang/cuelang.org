@@ -44,6 +44,9 @@ package site
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
 >{{{end}}}
+>{{{with _script "en" "cue version"}}}
+>cue version
+>{{{end}}}
 >{{{end}}}
 -- golden/content/dir/en.md.writeBack --
 >---
@@ -68,6 +71,9 @@ package site
 >{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
+>{{{end}}}
+>{{{with _script "en" "cue version"}}}
+>cue version
 >{{{end}}}
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
