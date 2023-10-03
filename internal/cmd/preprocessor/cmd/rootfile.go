@@ -20,6 +20,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"io"
+	"math/rand"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -27,7 +28,6 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"time"
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/format"
@@ -106,6 +106,10 @@ type rootFile struct {
 	// re-used in the course of building up a multi-step script.
 	shellPrinter *syntax.Printer
 
+	// rand is a page-local pseudo-random source for generating unique "fences"
+	// in multi-step scripts
+	rand *rand.Rand
+
 	// bufferedErrorContext reuses the existing page.errorContext because for
 	// now we don't do root files concurrently
 	errorContext
@@ -127,6 +131,7 @@ func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 		errorContext:     p.bufferedErrorContext,
 		executionContext: p.executionContext,
 		shellPrinter:     syntax.NewPrinter(syntax.SingleLine(true)),
+		rand:             rand.New(rand.NewSource(42)),
 	}
 }
 
@@ -376,11 +381,11 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 			// also parsed the script. So we know it's valid.
 			for _, stmt := range n.stmts {
 				// echo the command we will run
-				cmdEchoFence := getFence()
+				cmdEchoFence := rf.getFence()
 				pf("cat <<'%s'\n", cmdEchoFence)
 				pf("$ %s\n", stmt.cmdStr)
 				pf("%s\n", cmdEchoFence)
-				stmt.outputFence = getFence()
+				stmt.outputFence = rf.getFence()
 				pf("echo %s\n", stmt.outputFence)
 				pf("%s\n", stmt.cmdStr)
 				pf("%s=$?\n", exitCodeVar)
@@ -401,13 +406,13 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 			// We know that for now we have a single file per uploadNode.
 			f := n.effectiveArchive.Files[0]
 
-			cmdEchoFence := getFence()
+			cmdEchoFence := rf.getFence()
 			pf("cat <<'%s'\n", cmdEchoFence)
 			pf("$ cat <<EOD > %s\n", f.Name)
 			pf("%s\n", f.Data)
 			pf("EOD\n")
 			pf("%s\n", cmdEchoFence)
-			fence := getFence()
+			fence := rf.getFence()
 			pf("cat <<'%s' > %s\n", fence, f.Name)
 			pf("%s\n", f.Data)
 			pf("%s\n", fence)
@@ -442,8 +447,8 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 	return &mss, nil
 }
 
-func getFence() string {
-	h := sha256.Sum256(strconv.AppendInt(nil, time.Now().UnixNano(), 16))
+func (rf *rootFile) getFence() string {
+	h := sha256.Sum256(strconv.AppendInt(nil, rf.rand.Int63(), 16))
 	return fmt.Sprintf("%x", h)
 }
 
