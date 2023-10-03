@@ -18,8 +18,55 @@ versions: {
 _contentDefaults: {
 	[!="page"]: _contentDefaults
 	page: {
-		leftDelim:  "{{{"
-		rightDelim: "}}}"
+		leftDelim:  *"{{{" | _
+		rightDelim: *"}}}" | _
+
+		comparators: [
+			{
+				kind:    "patternComparator"
+				command: "go test"
+				pattern: {
+					expr:     #"^ok .*\t(\d(\.\d+)?)s"#
+					linewise: true
+				}
+			},
+		]
+
+		sanitisers: *[
+			{
+				kind:    "patternSanitiser"
+				command: "go version"
+				pattern: {
+					expr:     #"linux\/.+$"#
+					linewise: true
+				}
+				replacement: "linux/amd64"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: {
+					expr:     #"GOARCH .+$"#
+					linewise: true
+				}
+				replacement: "GOARCH amd64"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: {
+					expr:     #"GOOS .+$"#
+					linewise: true
+				}
+				replacement: "GOOS linux"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: expr: #"(?m)^\s*GOAMD64 .*\n"#
+				replacement: ""
+			},
+		] | _
 	}
 }
 content: _contentDefaults
