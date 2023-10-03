@@ -535,9 +535,9 @@ func (m *multiStepScript) run() (runerr error) {
 	createCmd.Stdout = &createStdout
 	createCmd.Stderr = &createStderr
 
-	m.debugf(m.debugGeneral, "%v: creating multi-step script container", m)
-	m.debugf(m.debugGeneral, "%v: cmd: %v", m, createCmd)
-	m.debugf(m.debugGeneral, "%v: script: %s", m, m.bashScript)
+	m.debugf(m.debugScript, "%v: creating multi-step script container", m)
+	m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
+	m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
 
 	if err := createCmd.Run(); err != nil {
 		return fmt.Errorf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
@@ -551,7 +551,7 @@ func (m *multiStepScript) run() (runerr error) {
 		m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
 	}
 
-	m.debugf(m.debugGeneral, "%v: output:\n===========\n%s\n============", m, out)
+	m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
 
 	// Now write the output back to the original statements
 
