@@ -18,8 +18,38 @@ versions: {
 _contentDefaults: {
 	[!="page"]: _contentDefaults
 	page: {
-		leftDelim:  "{{{"
-		rightDelim: "}}}"
+		leftDelim:  *"{{{" | _
+		rightDelim: *"}}}" | _
+
+		sanitisers: *[
+			{
+				kind:    "patternSanitiser"
+				command: "go version"
+				pattern: {
+					expr:     #"linux\/.+$"#
+					linewise: true
+				}
+				replacement: "linux/amd64"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: {
+					expr:     #"GOARCH .+$"#
+					linewise: true
+				}
+				replacement: "GOARCH amd64"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: {
+					expr:     #"GOOS .+$"#
+					linewise: true
+				}
+				replacement: "GOOS linux"
+			},
+		] | _
 	}
 }
 content: _contentDefaults
