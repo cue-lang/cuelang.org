@@ -17,6 +17,7 @@ package cmd
 import (
 	"bytes"
 	"crypto/sha256"
+	"encoding/base32"
 	"encoding/base64"
 	"fmt"
 	"io"
@@ -99,6 +100,9 @@ type rootFile struct {
 	// to the input format, run (to update itself), or written
 	// to the output format ready for consumption by Hugo.
 	bodyParts []node
+
+	// script represents the multi-step script for the page if there is one.
+	script *multiStepScript
 
 	// stepNumber is the number of the last step directive that was parsed. The
 	// first step is numbered 1.
@@ -244,7 +248,7 @@ func (rf *rootFile) validate() error {
 		}
 	}
 
-	// If we are already in error, do not progress to validate
+	// If we are already in error, do not progress to validate each node
 	if rf.isInError() {
 		return errorIfInError(rf)
 	}
@@ -348,6 +352,8 @@ func (rf *rootFile) run() error {
 	if err != nil {
 		return err
 	}
+	rf.script = script
+
 	// If there is nothing to do, script will be nil. Check against that
 	if script != nil {
 		torun = append(torun, script)
@@ -361,7 +367,7 @@ func (rf *rootFile) run() error {
 
 // buildMultistepScript constructs a bash file that will be run within docker
 // and returns a runnable representing that unit of work.
-func (rf *rootFile) buildMultistepScript() (runnable, error) {
+func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	// didWork notes whether we actually found and considered an upload or
 	// script node.  If we did not, then there is nothing to actually do
 	// and we can return early.
@@ -440,7 +446,6 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 	})
 
 	if !didWork {
-		// there is nothing to do
 		return nil, nil
 	}
 
@@ -466,8 +471,25 @@ func (rf *rootFile) getFence() string {
 
 type multiStepScript struct {
 	bashScript string
+	out        []byte
 	*rootFile
 	bufferedErrorContext
+}
+
+// cachePath computes the path at which to find/place the output from the
+// multi-step script represented by m.
+func (m *multiStepScript) cachePath() cue.Path {
+	work := sha256.New()
+	// TODO: work out how to include the command in some way shape or form.
+	// In its current form it cannot participate in the hash because of temporary
+	// paths. Perhaps the way to do this is to write certain bits of information
+	// as comments at the top of the bash script?
+	fmt.Fprintf(work, "script:\n%s\n", m.bashScript)
+	workSum := base32.HexEncoding.EncodeToString(work.Sum(nil))
+	return cue.MakePath(append(m.pageCacheSelectors(),
+		cue.Str("multi_step"),
+		cue.Str(workSum),
+	)...)
 }
 
 // run runs the multi-step bash script in docker, and sets the output
@@ -552,25 +574,46 @@ func (m *multiStepScript) run() (runerr error) {
 	createCmd.Stdout = &createStdout
 	createCmd.Stderr = &createStderr
 
-	m.debugf(m.debugScript, "%v: creating multi-step script container", m)
-	m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
-	m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
+	m.debugf(m.debugCache, "%v: config value: %v\n", m, m.config)
 
-	if err := createCmd.Run(); err != nil {
-		return fmt.Errorf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
+	cachePath := m.cachePath()
+	cachedOut, err := m.config.LookupPath(cachePath).Bytes()
+	cacheMiss := err != nil
+
+	var out []byte
+	if cacheMiss || m.skipCache {
+		var err error
+		if cacheMiss {
+			m.debugf(m.debugCache, "%v: cache miss for mult-step script", m)
+		} else {
+			m.debugf(m.debugCache, "%v: skipping cache for multi-step script; was a hit", m)
+		}
+
+		m.debugf(m.debugScript, "%v: creating multi-step script container", m)
+		m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
+		m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
+
+		if err := createCmd.Run(); err != nil {
+			return fmt.Errorf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
+		}
+
+		instance := strings.TrimSpace(createStdout.String())
+
+		startCmd := exec.Command("docker", "start", "-a", instance)
+		out, err = startCmd.CombinedOutput()
+		if err != nil {
+			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
+		}
+
+		// Because we are running in -t mode, replace all \r\n with \n
+		out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
+	} else {
+		m.debugf(m.debugCache, "%v: cache hit for multi-step script; not running", m)
+		out = cachedOut
 	}
 
-	instance := strings.TrimSpace(createStdout.String())
-
-	startCmd := exec.Command("docker", "start", "-a", instance)
-	out, err := startCmd.CombinedOutput()
-	if err != nil {
-		m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
-	}
-
-	// Because we are running in -t mode, replace all \r\n with \n
-	out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
-
+	// Assign out regardless
+	m.out = out
 	m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
 
 	// Now write the output back to the original statements
@@ -649,6 +692,11 @@ func (rf *rootFile) writePageCache() error {
 	})
 	if rf.isInError() {
 		return errorIfInError(rf)
+	}
+	if rf.script != nil {
+		p := rf.script.cachePath()
+		v = v.FillPath(p, rf.script.out)
+		didWork = true
 	}
 	if !didWork {
 		return nil

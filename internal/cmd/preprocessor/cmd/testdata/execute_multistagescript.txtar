@@ -17,6 +17,14 @@ cmp content/dir/en.md.writeBack golden/content/dir/en.md.writeBack
 # Verify that the target files match the source contents
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
+# Re-run the preprocessor and ensure we have a cache hit
+exec preprocessor execute --debug=all
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for multi-step script; not running'
+
+# Re-run the preprocessor again with --skipcache to ensure we re-run a cache hit
+exec preprocessor execute --debug=all --skipcache
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step script; was a hit'
+
 -- hugo/.keep --
 -- content/dir/site.cue --
 package site
