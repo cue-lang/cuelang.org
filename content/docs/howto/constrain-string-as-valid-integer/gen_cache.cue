@@ -6,7 +6,7 @@ package site
 				"constrain-string-as-valid-integer": {
 					cache: {
 						sidebyside: {
-							example: "lFtslntPK9twUnIune5SPJg3e3bTbjFu/5ZPqyAuJac="
+							example: "F9S2++pmZzfy+qLCocKeBm78cX8zpYMru5ThW8Noudo="
 						}
 					}
 				}
