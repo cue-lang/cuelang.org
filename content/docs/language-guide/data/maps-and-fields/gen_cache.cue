@@ -7,10 +7,10 @@ package site
 					"maps-and-fields": {
 						cache: {
 							sidebyside: {
-								"field-names-double-quotes":      "EXPSuwFLeORfq1dP1kj0OEfapa2m6Qf2WcMiZP+zgEc="
-								"merging-of-quoted-and-unquoted": "8HxXuK0ofAkYWUZfKZcMlv8/PHXUnyANtDnBLVn6Iww="
-								"helper-fields":                  "0KpgvQpmciILbOKUANVl5NuiF8YoY+tyvoVZwcVghJY="
-								"embedded-scalars":               "thHmXcYXH8y6ej0VpjDPxQcQuOcrlLd+8B85RSka22M="
+								"field-names-double-quotes":      "Lz/Atri/Ze9i6YgQ0RPuJj/ONfXRrTRSne/XK+9D4ZY="
+								"merging-of-quoted-and-unquoted": "a1jcdWxuh0B3gYe8EugFk4sdLB90PHdlBBcCmcunh78="
+								"helper-fields":                  "wUlW6Shdu/UMlhLfFK6uKiRhnpSavKTu6cppGvmi/dA="
+								"embedded-scalars":               "jb4jvGmTaJbqTRtqZVTdmkaMoA3tBZg62mKVNDoEb6o="
 							}
 						}
 					}
