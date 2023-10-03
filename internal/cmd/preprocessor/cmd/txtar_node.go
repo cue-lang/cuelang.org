@@ -46,6 +46,10 @@ func (t *txtarNode) nodeType() string {
 	return t.typ
 }
 
+func (t *txtarNode) isHidden() bool {
+	return false
+}
+
 func (t *txtarNode) writeToHasher(w io.Writer) {
 	fmt.Fprintf(w, "%q.%q:\n%s", t.nodeType(), t.nodeLabel(), tabIndent(txtar.Format(t.sourceArchive)))
 }
