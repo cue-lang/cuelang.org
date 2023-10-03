@@ -104,6 +104,18 @@ type executionContext struct {
 	// to hugo output in the --serve mode.
 	debugHugo bool
 
+	// debugScript is set when we should output multi-step script debug level
+	// logging.
+	debugScript bool
+
+	// debugSideBySide is set when we should output sidebyside debug level
+	// logging.
+	debugSideBySide bool
+
+	// debugFormatting is set when we should output multi-step formatting debug level
+	// logging.
+	debugFormatting bool
+
 	// tempRoot is the directory path under which all temporary files created
 	// during an execution run of the preprocessor should be created.
 	tempRoot string
@@ -204,6 +216,9 @@ func executeDef(c *Command, args []string) error {
 				ctx.debugFsnotify = !set
 				ctx.debugCache = !set
 				ctx.debugHugo = !set
+				ctx.debugScript = !set
+				ctx.debugSideBySide = !set
+				ctx.debugFormatting = !set
 			case "general":
 				ctx.debugGeneral = !set
 			case "fsnotify":
@@ -212,6 +227,12 @@ func executeDef(c *Command, args []string) error {
 				ctx.debugCache = !set
 			case "hugo":
 				ctx.debugHugo = !set
+			case "script":
+				ctx.debugScript = !set
+			case "sidebyside":
+				ctx.debugSideBySide = !set
+			case "formatting":
+				ctx.debugFormatting = !set
 			default:
 				return fmt.Errorf("unknown debug flag %q", flagDebug.String(c))
 			}
