@@ -23,10 +23,17 @@ import (
 	"mvdan.cc/sh/v3/syntax"
 )
 
-const fnScript = "script"
+const (
+	fnScript       = "script"
+	fnHiddenScript = "_script"
+)
 
 type scriptNode struct {
 	txtarNode
+
+	// hidden is set to indicate the script exists for side effects
+	// only and will not be rendered
+	hidden bool
 
 	stmts []*commandStmt
 }
@@ -35,6 +42,10 @@ var _ validatingNode = (*scriptNode)(nil)
 
 func (s *scriptNode) nodeType() string {
 	return "script"
+}
+
+func (s *scriptNode) isHidden() bool {
+	return s.hidden
 }
 
 // validate the scriptNode. This also has the side effect of parsing the
