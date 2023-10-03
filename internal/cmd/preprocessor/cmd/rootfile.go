@@ -205,7 +205,7 @@ func (rf *rootFile) validate() error {
 
 	// Ensure labels across steps (irrespective of type) are unique
 	labels := make(map[string]map[string][]node)
-	err := rf.walkBody(func(bp node) error {
+	rf.walkBody(func(bp node) error {
 		n, ok := bp.(labelledNode)
 		if !ok {
 			return nil
@@ -222,9 +222,6 @@ func (rf *rootFile) validate() error {
 		tld[l] = nls
 		return nil
 	})
-	if err != nil {
-		return err
-	}
 	types := maps.Keys(labels)
 	sort.Strings(types)
 	for _, t := range types {
@@ -272,7 +269,7 @@ func (rf *rootFile) validate() error {
 func (rf *rootFile) run() error {
 	var torun []runnable
 	var wait []waitRunnable
-	err := rf.walkBody(func(rn node) error {
+	rf.walkBody(func(rn node) error {
 		switch n := rn.(type) {
 		case runnableNode:
 			// Ideally we run nodes concurrently, in which case a node needs to
@@ -321,8 +318,8 @@ func (rf *rootFile) run() error {
 		}
 		return nil
 	})
-	if err != nil {
-		return err
+	if rf.isInError() {
+		return errorIfInError(rf)
 	}
 
 	script, err := rf.buildMultistepScript()
@@ -624,7 +621,7 @@ func (rf *rootFile) writePageCache() error {
 	var didWork bool
 	// Build a cue.Value of the cache entries
 	v := rf.ctx.CompileString("{}")
-	err := rf.walkBody(func(rn node) error {
+	rf.walkBody(func(rn node) error {
 		n, ok := rn.(runnableNode)
 		if !ok {
 			return nil
@@ -636,8 +633,8 @@ func (rf *rootFile) writePageCache() error {
 		didWork = true
 		return nil
 	})
-	if err != nil {
-		return err
+	if rf.isInError() {
+		return errorIfInError(rf)
 	}
 	if !didWork {
 		return nil
