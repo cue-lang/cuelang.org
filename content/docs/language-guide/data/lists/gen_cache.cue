@@ -7,7 +7,7 @@ package site
 					lists: {
 						cache: {
 							sidebyside: {
-								"list-example": "H7NILCy25GnIFl4QZ0Y2S8HdOSOuGRUMGKxIXVFeBlc="
+								"list-example": "c63KVdZ7g/XyTlyn4cWjy8lx5pcHuk4YIXLTIi+B8lc="
 							}
 						}
 					}
