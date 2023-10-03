@@ -120,7 +120,8 @@ func (n *nodeWrapper) nodeType() string {
 // a text node appearing before/after a sidebyside.
 type textNode struct {
 	*nodeWrapper
-	text []byte
+	text          []byte
+	transformText []byte
 }
 
 var _ node = (*textNode)(nil)
@@ -130,6 +131,6 @@ func (t *textNode) writeSourceTo(b *bytes.Buffer) {
 }
 
 func (t *textNode) writeTransformTo(b *bytes.Buffer) error {
-	b.Write(t.text)
+	b.Write(t.transformText)
 	return nil
 }
