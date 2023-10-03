@@ -47,6 +47,11 @@ package site
 >{{{with _script "en" "cue version"}}}
 >cue version
 >{{{end}}}
+>{{{with multistepcache "en"}}}
+>script
+>-- output --
+>output
+>{{{end}}}
 >{{{end}}}
 -- golden/content/dir/en.md.writeBack --
 >---
@@ -74,6 +79,11 @@ package site
 >{{{end}}}
 >{{{with _script "en" "cue version"}}}
 >cue version
+>{{{end}}}
+>{{{with multistepcache "en"}}}
+>script
+>-- output --
+>output
 >{{{end}}}
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --

@@ -45,7 +45,7 @@ func (t *txtarNode) nodeType() string {
 
 func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
-	p("%swith %s %s\n", t.rf.page.leftDelim, t.typ, t.rf.page.rightDelim)
+	p("%swith %s %q%s\n", t.rf.page.leftDelim, t.typ, t.lang, t.rf.page.rightDelim)
 	p("%s", txtar.Format(t.sourceArchive))
 	p("%send%s", t.rf.page.leftDelim, t.rf.page.rightDelim)
 }
