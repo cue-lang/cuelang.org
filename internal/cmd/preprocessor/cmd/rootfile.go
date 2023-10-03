@@ -42,15 +42,16 @@ var (
 	// text/template/parse sees the bare words and interprets them as if they
 	// were function calls.
 	templateFunctions = map[string]any{
-		fnSidebyside: true,
-		fnCode:       true,
-		fnStep:       true,
-		fnUpload:     true,
-		fnScript:     true,
-		"reference":  true,
-		"def":        true,
-		"sidetrack":  true,
-		"TODO":       true,
+		fnSidebyside:   true,
+		fnCode:         true,
+		fnStep:         true,
+		fnUpload:       true,
+		fnScript:       true,
+		fnHiddenScript: true,
+		"reference":    true,
+		"def":          true,
+		"sidetrack":    true,
+		"TODO":         true,
 	}
 
 	goMajorVersion = computeGoMajorVersion()
