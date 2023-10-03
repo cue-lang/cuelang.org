@@ -8,6 +8,7 @@ require (
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/cockroachdb/apd/v2 v2.0.2
 	github.com/fsnotify/fsnotify v1.6.0
+	github.com/google/go-cmp v0.5.9
 	github.com/rogpeppe/go-internal v1.10.1-0.20230524175051-ec119421bb97
 	github.com/rogpeppe/testscript v1.1.0
 	github.com/spf13/cobra v1.7.0
