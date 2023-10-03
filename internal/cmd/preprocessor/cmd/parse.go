@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"unicode"
 
 	"github.com/cue-lang/cuelang.org/internal/parse"
 	"golang.org/x/exp/slices"
@@ -88,6 +89,7 @@ func (rf *rootFile) parse() error {
 	tn := rf.bodyParts[0].(*textNode)
 	utn := tn.underlying.(*parse.TextNode)
 	tn.text = bytes.TrimPrefix(utn.Text, rf.bodyPrefix)
+	tn.transformText = tn.text
 
 	return nil
 }
@@ -132,13 +134,32 @@ func (rf *rootFile) nodePos(theNode parse.Node) string {
 
 // parse_ListNode walks a *parse.ListNode and extracts nodes.
 func (rf *rootFile) parse_ListNode(ln *parse.ListNode) (res []node, err error) {
+	var prev node
 	for _, n := range ln.Nodes {
 		var newNode node
 		switch n := n.(type) {
 		case *parse.TextNode:
-			newNode, err = rf.parse_TextNode(n)
+			tn, tnerr := rf.parse_TextNode(n)
+			if tnerr == nil && prev != nil && prev.isHidden() {
+				// Eat the leading space on the transformText
+				tn.transformText = bytes.TrimLeftFunc(tn.transformText, unicode.IsSpace)
+			}
+			newNode, err = tn, tnerr
 		case *parse.WithNode:
 			newNode, err = rf.parse_WithNode(n)
+			if err == nil {
+				var prevText *textNode
+				if prev != nil {
+					prevText = prev.(*textNode)
+				}
+				if newNode.isHidden() && prevText != nil {
+					if bytes.HasSuffix(prevText.transformText, []byte("\n")) {
+						prevText.transformText = bytes.TrimRight(prevText.transformText, "\n")
+						// Add back one
+						prevText.transformText = append(prevText.transformText, '\n')
+					}
+				}
+			}
 		case *parse.ActionNode:
 			newNode, err = rf.parse_ActionNode(n)
 		default:
@@ -148,12 +169,13 @@ func (rf *rootFile) parse_ListNode(ln *parse.ListNode) (res []node, err error) {
 			return nil, err
 		}
 		res = append(res, newNode)
+		prev = newNode
 	}
 	return
 }
 
 // parse_TextNode parses a text-only node.
-func (rf *rootFile) parse_TextNode(n *parse.TextNode) (node, error) {
+func (rf *rootFile) parse_TextNode(n *parse.TextNode) (*textNode, error) {
 	t := string(n.Text)
 	return &textNode{
 		nodeWrapper: &nodeWrapper{
@@ -162,7 +184,8 @@ func (rf *rootFile) parse_TextNode(n *parse.TextNode) (node, error) {
 			errorContext:     rf.errorContext,
 			executionContext: rf.executionContext,
 		},
-		text: []byte(t),
+		text:          []byte(t),
+		transformText: []byte(t),
 	}, nil
 
 }
