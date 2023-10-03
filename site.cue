@@ -42,6 +42,41 @@ _contentDefaults: {
 	page?: {
 		leftDelim:  *"{{{" | _
 		rightDelim: *"}}}" | _
+
+		comparators: *[
+			{
+				kind:    "patternComparator"
+				command: "go test"
+				pattern: expr: #"(?m)^ok .*\t(\d(\.\d+)?)s"#
+			},
+		] | _
+
+		sanitisers: *[
+			{
+				kind:    "patternSanitiser"
+				command: "go version"
+				pattern: expr: #"(?m)linux\/.+$"#
+				replacement: "linux/amd64"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: expr: #"(?m)GOARCH .+$"#
+				replacement: "GOARCH amd64"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: expr: #"(?m)GOOS .+$"#
+				replacement: "GOOS linux"
+			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: expr: #"(?m)^\s*GOAMD64 .*\n"#
+				replacement: ""
+			},
+		] | _
 	}
 }
 content: _contentDefaults
