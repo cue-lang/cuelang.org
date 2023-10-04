@@ -16,6 +16,24 @@
       "message": "I think the temporary file deletion should be moved outside the failure catch block, so that\u0027s it\u0027s deleted if there\u0027s success but is left behind if there\u0027s failure.",
       "revId": "968ab60c6c979ce1a11a87c172a0d88981b32de0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f733c4e_6d5ee2f7",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/entrypoint.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-04T14:10:24Z",
+      "side": 1,
+      "message": "Done, via a `trap` on `EXIT`.",
+      "parentUuid": "08a38611_7f38ea3e",
+      "revId": "968ab60c6c979ce1a11a87c172a0d88981b32de0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
