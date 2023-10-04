@@ -71,12 +71,10 @@ func (rf *rootFile) parse() error {
 	rf.bodyPrefix = bytes.Repeat([]byte("\n"), bytes.Count(f[:bodyStart], []byte("\n")))
 	body := append(rf.bodyPrefix, f[bodyStart:]...)
 
-	// TODO derive the delimiters from the page's CUE config
-	parseTrees, err := parse.Parse(rf.filename, string(body), rf.page.leftDelim, rf.page.rightDelim, templateFunctions)
+	rf.body, err = rf.parseString(rf.filename, string(body))
 	if err != nil {
-		return rf.errorf("%v: failed to parse body: %v", rf, err)
+		return rf.errorf("%v: %v", rf, err)
 	}
-	rf.body = parseTrees[rf.filename]
 	rf.bodyParts, err = rf.parse_ListNode(rf.body.Root)
 	if err != nil {
 		return err
@@ -93,6 +91,15 @@ func (rf *rootFile) parse() error {
 	tn.transformText = tn.text
 
 	return nil
+}
+
+func (rf *rootFile) parseString(filename string, s string) (*parse.Tree, error) {
+	// TODO derive the delimiters from the page's CUE config
+	parseTrees, err := parse.Parse(filename, s, rf.page.leftDelim, rf.page.rightDelim, templateFunctions)
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse body: %v", err)
+	}
+	return parseTrees[filename], nil
 }
 
 var errAbort = errors.New("abort walkBody early")
