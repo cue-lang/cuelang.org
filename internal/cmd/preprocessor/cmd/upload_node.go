@@ -21,7 +21,7 @@ import (
 const fnUpload = "upload"
 
 type uploadNode struct {
-	txtarNode
+	labelledTxtarNode
 }
 
 var _ validatingNode = (*uploadNode)(nil)
@@ -70,8 +70,8 @@ type uploadNodeRunContext struct {
 func (u *uploadNode) run() runnable {
 	return &uploadNodeRunContext{
 		txtarRunContext: &txtarRunContext{
-			txtarNode:        u.txtarNode,
-			executionContext: u.executionContext,
+			labelledTxtarNode: u.labelledTxtarNode,
+			executionContext:  u.executionContext,
 			bufferedErrorContext: &errorContextBuffer{
 				executionContext: u.executionContext,
 			},
