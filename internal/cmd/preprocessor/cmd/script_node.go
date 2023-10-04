@@ -29,7 +29,7 @@ const (
 )
 
 type scriptNode struct {
-	txtarNode
+	labelledTxtarNode
 
 	// hidden is set to indicate the script exists for side effects
 	// only and will not be rendered

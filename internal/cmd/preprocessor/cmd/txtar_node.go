@@ -29,17 +29,14 @@ import (
 
 type txtarNode struct {
 	*nodeWrapper
-	typ              string
-	lang             string
-	label            string
+	typ string
+
+	lang string
+
 	sourceArchive    *txtar.Archive
 	effectiveArchive *txtar.Archive
 
 	analysis txtarAnalysis
-}
-
-func (t *txtarNode) nodeLabel() string {
-	return t.label
 }
 
 func (t *txtarNode) nodeType() string {
@@ -47,10 +44,31 @@ func (t *txtarNode) nodeType() string {
 }
 
 func (t *txtarNode) writeToHasher(w io.Writer) {
-	fmt.Fprintf(w, "%q.%q:\n%s", t.nodeType(), t.nodeLabel(), tabIndent(txtar.Format(t.sourceArchive)))
+	fmt.Fprintf(w, "%q:\n%s", t.nodeType(), tabIndent(txtar.Format(t.sourceArchive)))
 }
 
 func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
+	p := bufPrintf(b)
+	p("%swith %s %s\n", t.rf.page.leftDelim, t.typ, t.rf.page.rightDelim)
+	p("%s", txtar.Format(t.sourceArchive))
+	p("%send%s", t.rf.page.leftDelim, t.rf.page.rightDelim)
+}
+
+type labelledTxtarNode struct {
+	txtarNode
+
+	label string
+}
+
+func (t *labelledTxtarNode) writeToHasher(w io.Writer) {
+	fmt.Fprintf(w, "%q.%q:\n%s", t.nodeType(), t.nodeLabel(), tabIndent(txtar.Format(t.sourceArchive)))
+}
+
+func (t *labelledTxtarNode) nodeLabel() string {
+	return t.label
+}
+
+func (t *labelledTxtarNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
 	p("%swith %s %q %q%s\n", t.rf.page.leftDelim, t.typ, t.lang, t.label, t.rf.page.rightDelim)
 	p("%s", txtar.Format(t.sourceArchive))
@@ -71,7 +89,7 @@ func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 // themselves comments already).
 //
 // TODO: add an explicit test for when arg != ""
-func (t *txtarNode) tag(key, arg string) (args []string, present bool, err error) {
+func (t *labelledTxtarNode) tag(key, arg string) (args []string, present bool, err error) {
 	prefix := "#" + key
 	if arg != "" {
 		prefix += "(" + arg + ")"
@@ -260,7 +278,7 @@ func analyseFilename(p string) (res filenameAnalysis) {
 }
 
 type txtarRunContext struct {
-	txtarNode
+	labelledTxtarNode
 	bufferedErrorContext
 	*executionContext
 }
