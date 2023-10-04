@@ -32,7 +32,7 @@ const (
 )
 
 type sidebysideNode struct {
-	txtarNode
+	labelledTxtarNode
 }
 
 func (s *sidebysideNode) nodeType() string {
@@ -124,8 +124,8 @@ func (s *sidebysideNode) validate() {
 func (s *sidebysideNode) run() runnable {
 	return &sidebysideNodeRunContext{
 		txtarRunContext: &txtarRunContext{
-			txtarNode:        s.txtarNode,
-			executionContext: s.executionContext,
+			labelledTxtarNode: s.labelledTxtarNode,
+			executionContext:  s.executionContext,
 			bufferedErrorContext: &errorContextBuffer{
 				executionContext: s.executionContext,
 			},
