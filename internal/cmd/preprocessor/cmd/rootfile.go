@@ -349,12 +349,11 @@ func (rf *rootFile) run() error {
 		return errorIfInError(rf)
 	}
 
-	script, err := rf.buildMultistepScript()
+	script, cacheMiss, err := rf.buildMultistepScript()
 	if err != nil {
 		return err
 	}
-	// If there is nothing to do, script will be nil. Check against that
-	if script != nil {
+	if script != nil && (cacheMiss || rf.skipCache) {
 		torun = append(torun, script)
 	}
 
@@ -374,7 +373,7 @@ func (rf *rootFile) run() error {
 
 // buildMultistepScript constructs a bash file that will be run within docker
 // and returns a runnable representing that unit of work.
-func (rf *rootFile) buildMultistepScript() (runnable, error) {
+func (rf *rootFile) buildMultistepScript() (*multiStepScript, bool, error) {
 	// didWork notes whether we actually found and considered an upload or
 	// script node.  If we did not, then there is nothing to actually do
 	// and we can return early.
@@ -460,7 +459,7 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 			return ok
 		})
 
-		return nil, nil
+		return nil, false, nil
 	}
 
 	// Because of https://github.com/moby/moby/issues/43121 we add an
@@ -475,7 +474,7 @@ func (rf *rootFile) buildMultistepScript() (runnable, error) {
 			executionContext: rf.executionContext,
 		},
 	}
-	return &mss, nil
+	return &mss, true, nil
 }
 
 func (rf *rootFile) getFence() string {
