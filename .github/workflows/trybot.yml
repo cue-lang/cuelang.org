@@ -125,8 +125,6 @@ jobs:
           	echo "commit author email address does not match signed-off-by trailer"
           	exit 1
           fi
-      - name: Check site CUE configuration
-        run: _scripts/runPreprocessor.bash execute --check
       - if: runner.os == 'macOS'
         name: Set TMPDIR environment variable (${{runner.os}})
         run: |-
@@ -175,6 +173,8 @@ jobs:
       - if: runner.os == 'macOS'
         name: Install Hugo (${{ runner.os }})
         run: brew install hugo
+      - name: Check site CUE configuration
+        run: _scripts/runPreprocessor.bash execute --check
       - name: 'Set PREPROCESSOR_NOWRITECACHE if Preprocessor-No-Write-Cache: true'
         run: |
           if ./_scripts/noWriteCache.bash HEAD
