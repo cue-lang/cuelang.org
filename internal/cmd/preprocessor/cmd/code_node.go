@@ -26,7 +26,7 @@ const (
 // whose contents are formatted. This ensures good formatting but also valid
 // code.
 type codeNode struct {
-	txtarNode
+	labelledTxtarNode
 }
 
 func (c *codeNode) nodeType() string {
@@ -49,8 +49,8 @@ func (s *codeNode) validate() {
 func (s *codeNode) run() runnable {
 	return &codeNodeRunContext{
 		txtarRunContext: &txtarRunContext{
-			txtarNode:        s.txtarNode,
-			executionContext: s.executionContext,
+			labelledTxtarNode: s.labelledTxtarNode,
+			executionContext:  s.executionContext,
 			bufferedErrorContext: &errorContextBuffer{
 				executionContext: s.executionContext,
 			},
