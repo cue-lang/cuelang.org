@@ -198,36 +198,36 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 	}
 	switch fn.Ident {
 	case fnSidebyside:
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		t, err := rf.parse_labelledTxtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
 		}
-		return &sidebysideNode{txtarNode: t}, nil
+		return &sidebysideNode{labelledTxtarNode: t}, nil
 	case fnCode:
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		t, err := rf.parse_labelledTxtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
 		}
-		return &codeNode{txtarNode: t}, nil
+		return &codeNode{labelledTxtarNode: t}, nil
 	case fnStep:
 		// Increment first because we are numbering from 1
 		rf.stepNumber++
 		return rf.parse_stepNode(n, rf.stepNumber)
 	case fnUpload:
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		t, err := rf.parse_labelledTxtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
 		}
-		return &uploadNode{txtarNode: t}, nil
+		return &uploadNode{labelledTxtarNode: t}, nil
 	case fnScript, fnHiddenScript:
 		hidden := fn.Ident == fnHiddenScript
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
+		t, err := rf.parse_labelledTxtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
 		}
 		return &scriptNode{
-			txtarNode: t,
-			hidden:    hidden,
+			labelledTxtarNode: t,
+			hidden:            hidden,
 		}, nil
 	case "sidetrack":
 	default:
@@ -256,29 +256,60 @@ func (rf *rootFile) parse_stepNode(n *parse.WithNode, number int) (res *stepNode
 	return sn, err
 }
 
-// parse_txtarNode extracts a txtar-based node, a value that will be wrapped
-// with a specific type. e.g. sidebyside.
-func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, err error) {
+// parse_labelledTxtarNode extracts a labelled txtar-based node, a value that
+// will be wrapped with a specific type. e.g. sidebyside.
+//
+// See also doc comment for parse_txtarNodeCommon.
+func (rf *rootFile) parse_labelledTxtarNode(n *parse.WithNode, kind string, args []parse.Node) (res labelledTxtarNode, err error) {
 	if len(args) != 2 {
 		return res, rf.bodyError(n, "%s require two args", kind)
 	}
-	var strArgs []string
+	t, strArgs, err := rf.parse_txtarNodeCommon(n, kind, args)
+	if err != nil {
+		return res, err
+	}
+	label := strArgs[1]
+
+	res = labelledTxtarNode{
+		txtarNode: t,
+		label:     label,
+	}
+	return res, nil
+}
+
+// parse_labelledTxtarNode extracts a txtar-based node of type kind.
+//
+// See also doc comment for parse_txtarNodeCommon.
+//
+//lint:ignore U1000 we will use this in the next CL
+func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, err error) {
+	if len(args) != 1 {
+		return res, rf.bodyError(n, "%s nodes require a single arg", kind)
+	}
+	t, _, err := rf.parse_txtarNodeCommon(n, kind, args)
+	return t, err
+}
+
+// parse_txtarNodeCommon extracts a txtar-based node with the specific type
+// kind. It ensures that all args are strings, but assumes the caller has
+// already checked the number of args, to be at least one (the language).
+func (rf *rootFile) parse_txtarNodeCommon(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, strArgs []string, err error) {
 	for _, a := range args {
 		sa, ok := a.(*parse.StringNode)
 		if !ok {
-			return res, rf.bodyError(a, "expected a string argument")
+			return res, nil, rf.bodyError(a, "expected a string argument")
 		}
 		strArgs = append(strArgs, sa.Text)
 	}
-	lang, label := strArgs[0], strArgs[1]
+	lang := strArgs[0]
 
 	// We only support a single TextNode body, i.e. the contents of a txtar archive
 	if n.List == nil || len(n.List.Nodes) != 1 {
-		return res, rf.bodyError(n, "%s must have a text-only body", kind)
+		return res, nil, rf.bodyError(n, "%s must have a text-only body", kind)
 	}
 	tn, ok := n.List.Nodes[0].(*parse.TextNode)
 	if !ok {
-		return res, rf.bodyError(n, "%s must have a text-only body", kind)
+		return res, nil, rf.bodyError(n, "%s must have a text-only body", kind)
 	}
 	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
 	// therefore forms part of the body.
@@ -293,14 +324,14 @@ func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse
 			executionContext: rf.executionContext,
 		},
 		typ:              kind,
-		lang:             lang,
-		label:            label,
 		sourceArchive:    ar,
 		effectiveArchive: ar, // This gets updated in a run step if one happens
 
+		lang: lang,
+
 		analysis: analyseTxtarArchive(ar),
 	}
-	return res, nil
+	return res, strArgs, nil
 }
 
 func (rf *rootFile) parse_ActionNode(n *parse.ActionNode) (node, error) {
