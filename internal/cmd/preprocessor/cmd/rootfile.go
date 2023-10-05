@@ -25,6 +25,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -613,17 +614,17 @@ func (rf *rootFile) hashRunnableNode(n runnableNode, w io.Writer) cue.Path {
 	fmt.Fprintf(w, "preprocessor version: %s\n", rf.selfHash)
 	fmt.Fprintf(w, "docker image: %s\n", dockerImageTag)
 	n.writeToHasher(w)
-	// Root all page-related content under "content"
-	selPath := []cue.Selector{
-		cue.Str("content"),
-	}
-	selPath = append(selPath, rf.page.path.Selectors()...)
-	selPath = append(selPath,
-		cue.Str("cache"),
+	selPath := append(rf.pageCacheSelectors(),
 		cue.Str(n.nodeType()),
 		cue.Str(n.nodeLabel()),
 	)
 	return cue.MakePath(selPath...)
+}
+
+// pageCacheSelectors returns a fresh slice of selectors which
+// describe the path to the page's cache configuration.
+func (rf *rootFile) pageCacheSelectors() []cue.Selector {
+	return append(slices.Clip(rf.page.path.Selectors()), cue.Str("cache"))
 }
 
 func (rf *rootFile) writePageCache() error {
