@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f24dea6f_40e30f88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-05T12:22:42Z",
+      "side": 1,
+      "message": "out of curiosity, do you plan on moving to slog and perhaps some integration with https://pkg.go.dev/golang.org/x/exp/slog#Level too? given how much you are logging and with categories, I think slog would make a lot of sense.",
+      "revId": "9e6a9aca7a417ae969db2c321e6e6508e0b386df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
