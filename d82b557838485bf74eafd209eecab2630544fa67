@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c4c27dd_fd1e72a1",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 12
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-05T13:12:47Z",
+      "side": 1,
+      "message": "I assume you chose base32.HexEncoding so that it encodes into a valid CUE identifier. It would be nice to document that briefly; my immediate reaction was to wonder why you were avoiding base64.\n\nIs the result always valid though? For example, what if you end up with `multi_step.0123FOOBAR`, is that still a valid CUE path/selector?",
+      "revId": "d82b557838485bf74eafd209eecab2630544fa67",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
