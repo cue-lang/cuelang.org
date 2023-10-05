@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba21d3ae_757af275",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-05T13:06:47Z",
+      "side": 1,
+      "message": "use `slices.Clip` instead; it exists mainly for this purpose. moreover, in general it allows you to do one copy instead of two copies, since Clip itself doesn\u0027t copy, and Clone always does. append... it depends on the capacity.",
+      "range": {
+        "startLine": 627,
+        "startChar": 15,
+        "endLine": 627,
+        "endChar": 27
+      },
+      "revId": "a1b7e2307d836920b8e3621a6ff9640f85514e65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
