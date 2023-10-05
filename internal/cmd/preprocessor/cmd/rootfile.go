@@ -554,6 +554,9 @@ func (m *multiStepScript) run() (runerr error) {
 		m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
 	}
 
+	// Because we are running in -t mode, replace all \r\n with \n
+	out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
+
 	m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
 
 	// Now write the output back to the original statements
@@ -565,10 +568,7 @@ func (m *multiStepScript) run() (runerr error) {
 			m.fatalf("%v: failed to find %q before end of output:\n%q\nOutput was: %q\n", m, end, walk, out)
 		}
 		walk = after
-		// Because we are running in -t mode, replace all \r\n with \n
-		//
-		// TODO: work out if this should be somewhere else
-		return strings.ReplaceAll(string(before), "\r\n", "\n")
+		return string(before)
 	}
 
 	m.walkBody(func(n node) error {
@@ -578,10 +578,10 @@ func (m *multiStepScript) run() (runerr error) {
 		}
 		for _, stmt := range step.stmts {
 			// TODO: tidy this up
-			fence := []byte(stmt.outputFence + "\r\n")
+			fence := []byte(stmt.outputFence + "\n")
 			advanceWalk(fence) // Ignore everything before the fence
 			stmt.output = advanceWalk(fence)
-			exitCodeStr := advanceWalk([]byte("\r\n"))
+			exitCodeStr := advanceWalk([]byte("\n"))
 			stmt.exitCode, err = strconv.Atoi(exitCodeStr)
 			if err != nil {
 				m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
