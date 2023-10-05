@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c070063e_77510022",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-05T13:04:43Z",
+      "side": 1,
+      "message": "can we name this something slightly more specific? otherwise I\u0027m guessing what this actually is meant to do.",
+      "range": {
+        "startLine": 325,
+        "startChar": 1,
+        "endLine": 325,
+        "endChar": 7
+      },
+      "revId": "ab3ef48bbb962b1cd993005e8432e8a1a5531dcc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
