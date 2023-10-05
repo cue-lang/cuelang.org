@@ -322,6 +322,27 @@ func (rf *rootFile) run() error {
 		return errorIfInError(rf)
 	}
 
+	runRunnablesAndWait := func() {
+		var r runnable
+		for len(torun) > 0 {
+			r, torun = torun[0], torun[1:]
+			wait = append(wait, runRunnable(r))
+		}
+		var v waitRunnable
+		for len(wait) > 0 {
+			v, wait = wait[0], wait[1:]
+			<-v.done
+
+			// Could make the following a method on errorContext
+			rf.updateInError(v.isInError())
+			rf.logf("%s", v.bytes())
+		}
+	}
+
+	// Formatting must happen before the multistep script in case we end up
+	// formatting a node that gets uploaded.
+	runRunnablesAndWait()
+
 	script, err := rf.buildMultistepScript()
 	if err != nil {
 		return err
@@ -331,16 +352,8 @@ func (rf *rootFile) run() error {
 		torun = append(torun, script)
 	}
 
-	for _, r := range torun {
-		wait = append(wait, runRunnable(r))
-	}
-	for _, v := range wait {
-		<-v.done
-
-		// Could make the following a method on errorContext
-		rf.updateInError(v.isInError())
-		rf.logf("%s", v.bytes())
-	}
+	// The multi-step script's turn
+	runRunnablesAndWait()
 
 	return nil
 }
