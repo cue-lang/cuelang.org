@@ -16,6 +16,24 @@
       "message": "I assume you chose base32.HexEncoding so that it encodes into a valid CUE identifier. It would be nice to document that briefly; my immediate reaction was to wonder why you were avoiding base64.\n\nIs the result always valid though? For example, what if you end up with `multi_step.0123FOOBAR`, is that still a valid CUE path/selector?",
       "revId": "d82b557838485bf74eafd209eecab2630544fa67",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66d18c40_59e09c6c",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 12
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-05T13:42:19Z",
+      "side": 1,
+      "message": "Documented. It\u0027s more about being slightly nicer on the human eye.\n\n\u003e Is the result always valid though? For example, what if you end up with multi_step.0123FOOBAR, is that still a valid CUE path/selector?\n\nYes, because it is a string identifier, and any valid string can be an identifier.\n\nJust that you would have to reference that field via an index like `cache[\"multi_step.0123FOOBAR\"]`",
+      "parentUuid": "5c4c27dd_fd1e72a1",
+      "revId": "d82b557838485bf74eafd209eecab2630544fa67",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
