@@ -78,7 +78,8 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	}
 
 	pathParts := strings.Split(rel, string(os.PathSeparator))
-	var pagePath []cue.Selector
+	// Every bit of content is rooted at "content"
+	pagePath := []cue.Selector{cue.Str("content")}
 	for _, p := range pathParts {
 		pagePath = append(pagePath, cue.Str(p))
 	}
