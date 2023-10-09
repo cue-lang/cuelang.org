@@ -1,22 +1,22 @@
 # Ensure that preprocessor correctly reformats input files that are known to
 # it.
 
-unquote content/page/en.md
-unquote golden/content/page/en.md
+unquote content/dir1/en.md
+unquote golden/content/dir1/en.md
 
 # Run the preprocessor
 exec preprocessor execute --debug=all
 
 # Verify that the source file is intact
-cmp content/page/en.md golden/content/page/en.md
+cmp content/dir1/en.md golden/content/dir1/en.md
 
 # Verify that the target files matche the source contents
-cmp hugo/content/en/page/index.md golden/hugo/content/en/page/index.md
+cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md
 
 -- hugo/.keep --
--- content/page/site.cue --
+-- content/dir1/site.cue --
 package site
--- content/page/en.md --
+-- content/dir1/en.md --
 >---
 >title: title
 >---
@@ -26,7 +26,7 @@ package site
 >-- out.yaml --
 >x: 5
 >{{{end}}}
--- golden/content/page/en.md --
+-- golden/content/dir1/en.md --
 >---
 >title: title
 >---
@@ -36,7 +36,7 @@ package site
 >-- out.yaml --
 >x: 5
 >{{{end}}}
--- golden/hugo/content/en/page/index.md --
+-- golden/hugo/content/en/dir1/index.md --
 ---
 title: title
 ---
