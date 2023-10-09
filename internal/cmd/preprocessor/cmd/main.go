@@ -18,6 +18,7 @@ package cmd
 
 import (
 	"context"
+	_ "embed"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -26,6 +27,9 @@ import (
 	"cuelang.org/go/cue/errors"
 	"github.com/spf13/cobra"
 )
+
+//go:embed schema.cue
+var schemaFile string
 
 // Main runs the preprocessor tool and returns the code for passing to os.Exit.
 //
