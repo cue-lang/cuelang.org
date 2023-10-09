@@ -4,15 +4,17 @@ package site
 		docs: {
 			introduction: {
 				welcome: {
-					cache: {
-						code: {
-							data:               "/8OCgBQtf5MEcu55o4B2u/TEsn3ZSX8IU2mmE89LBKs="
-							schema:             "K4KlCZpQp1M587QbvfEoUonmJ7hYwNhBi1QC0C+ZFYQ="
-							CUE:                "wtIE/0wwYYzr91XsVCiGcNADfExg3vY9NALtxkUzLxY="
-							json:               "AzoEpjO25//ZmmZgCL+5Y6iHn9pimeMfck9ZwVUbAxI="
-							"cue form of json": "sj2FDQ6Hav5GwT8ebVdkqGZ47PkqSVAaffsw9ZOuiJ0="
-							"non-dry":          "Eq5QZDHkJBGINWjDX8ljq1hVYPU7I3c0XSUzIDCcVE0="
-							dry:                "++G7feDQPPP+039saywatLErX+Py3iLcqsOLU8IiPcw="
+					page: {
+						cache: {
+							code: {
+								data:               "K1UeD/TT5GB2MpDuAB890GSXbVGAfJMzMfJBBe+XzCc="
+								schema:             "jE7UG/pOjjzQdIcBH4qknjYEJUc9A8Sh3/Qxhn8mFB0="
+								CUE:                "hj0FvKERN60a39M6uwS+mLWwkjRY/HkHILbj4FB1/GQ="
+								json:               "xYqd+X/acOabGb1dBb1s55AydxCos/D6oT1yYyVpx44="
+								"cue form of json": "K8EZjx80bc1c1ZUXpxFROcZZ/oS1kDPXv3ML6c/YLxw="
+								"non-dry":          "iy8NKg2ud0mDhMd4X085QsPdBrVgD434I4Fcyq4cluw="
+								dry:                "lW9GjLjymg+vRet+D/btWTy665H43e7jSyTPBtWIxzw="
+							}
 						}
 					}
 				}

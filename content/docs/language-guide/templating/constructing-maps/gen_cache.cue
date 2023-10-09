@@ -5,11 +5,13 @@ package site
 			"language-guide": {
 				templating: {
 					"constructing-maps": {
-						cache: {
-							sidebyside: {
-								"dynamic-fields":   "w/SHs7ONCd6PcWFO56MhzEKYD7PSTirgQY+mbM9LzbE="
-								"bulk-constraints": "VqL/IF4fhTaIEz1pnEW9234HCSGAOk5KXJKxs1vQPt8="
-								"core-builtin-and": "GnxSF03S9fveWUau6ByjdT+CYa5aTmCu/OdxdauNsgw="
+						page: {
+							cache: {
+								sidebyside: {
+									"dynamic-fields":   "aWRHGvJaF2vTxam1IIoQgQqO+AXTWj7pBYEIsRLMB+0="
+									"bulk-constraints": "pFk7O4XXK851LVdb9X0iLg7WdesRnVzPk1/+OoFRhxI="
+									"core-builtin-and": "wCrCcwsKWUkHVnB/WXYWwBrHlv8qDk4hiaxDPi6l/28="
+								}
 							}
 						}
 					}

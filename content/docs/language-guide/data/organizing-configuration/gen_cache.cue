@@ -5,14 +5,16 @@ package site
 			"language-guide": {
 				data: {
 					"organizing-configuration": {
-						cache: {
-							sidebyside: {
-								"composition-simple-success":   "jebpU2U2k0y51YVL06WKvtu9YmMt/yeEp5j0Vc54kj4="
-								"composition-simple-error":     "iNdkPpUBmAJkCoBtQ8C9uZu3qOje4V94QkPYrqxKwu8="
-								"composition-composite":        "1UyW9dASYq7abkQS/lSuB42AzVRnKAjFj4L5EdPXkFI="
-								"composition-single-field-map": "XjrgggLZ9Xozff9aSpd2GrxLvqlI0SkDUzfGLad98hI="
-								"composition-operator":         "b8FGpJcXd9OHuuY78NZr14gS8ioGPE/rfNNOupyJ994="
-								packages:                       "j6AlXUgwEMkAhuuPK3WU7ExN+z8/Kir8yLXGDwIM6xU="
+						page: {
+							cache: {
+								sidebyside: {
+									"composition-simple-success":   "2+7kGxA4aARbzgXdk0AZ8Zuk/uCzpnHHLGtorVHIIgs="
+									"composition-simple-error":     "vTzU3NQubmejRdCBkprgYcQfkk+vfa9r9S56r1fgDHU="
+									"composition-composite":        "fwjky10pN+nEAoPbyoCbB3L3t2WDU4iIHAfAimfmjOY="
+									"composition-single-field-map": "HJWbarQzjvJCyM/0V90ZWNj8IFJeg5zzd/fXAPEJwxE="
+									"composition-operator":         "9TsHFc7J9CMLFtfTmhMTSgw0rSpKKYUUS2RxmbZM1L8="
+									packages:                       "Zju6JmiaP72nhEyM2OgVZFwFgy834eGLS4skc3MYglg="
+								}
 							}
 						}
 					}

@@ -5,10 +5,12 @@ package site
 			"language-guide": {
 				data: {
 					"string-values": {
-						cache: {
-							sidebyside: {
-								"multiline-strings":            "0kjwolkqm07CK4od6VzDtp51RLb0GnueM0Cb18kPI70="
-								"alternative-escape-sequences": "K9fxSyHlWl8lJEHTo+Bt/rmNYr3HsrrB244nPdLMcYk="
+						page: {
+							cache: {
+								sidebyside: {
+									"multiline-strings":            "2YTU6bJCCbAkm8T6rIK0VmjCJlcTMBQVHPnNJQlQL8Y="
+									"alternative-escape-sequences": "nWiT8TYtdG9gFdDZrYivHX3nA99NKysvJPYPdEwFVAw="
+								}
 							}
 						}
 					}

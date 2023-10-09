@@ -5,11 +5,13 @@ package site
 			"language-guide": {
 				"schemas-and-validation": {
 					"composite-schemas": {
-						cache: {
-							sidebyside: {
-								"core-builtin-close":   "lv37rMTcPa4CYK2NcfHwLJOtGSM/1QiHuUIZarvmgLM="
-								"composition-operator": "Q1DXsxMFo7fvo9YI2PzZGQh8IaMh2QDXI4lE5ovOZ3g="
-								embedding:              "2mAhwCjilnMhj65iQhnCK0jyrDJWSenE7+Zlf59IBtw="
+						page: {
+							cache: {
+								sidebyside: {
+									"core-builtin-close":   "PiIv53fhu5HrhOh6Fe4u66YDarOMtNC988NrEzZFWC0="
+									"composition-operator": "johVUMLi71EJcbBk7S64ZiqDM1PYCBNqAT1wpF946Q4="
+									embedding:              "yJS5ARkF7/iq8/7Fwrltv5ChGLJk09DzyekvTTVg3sM="
+								}
 							}
 						}
 					}
