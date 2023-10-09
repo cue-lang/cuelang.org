@@ -4,9 +4,11 @@ package site
 		docs: {
 			howto: {
 				"mark-a-field-as-optional": {
-					cache: {
-						sidebyside: {
-							cc: "GKHClV4DPg3WX5AOKD83dYJNNorzrcHBc33T9s5ANLc="
+					"_page": {
+						cache: {
+							sidebyside: {
+								cc: "OUDOustuwLAvlPJQ9K7gjSS8FCRi5VuG2YsAOJkqs2M="
+							}
 						}
 					}
 				}

@@ -5,10 +5,12 @@ package site
 			"language-guide": {
 				data: {
 					"numeric-values": {
-						cache: {
-							sidebyside: {
-								"numeric-literals-si":      "JXHwtUI881B/EFqROXY225SiNTzm1/Bsc7uM0WkbmRE="
-								"numeric-literals-altbase": "88vVcsDn45TkGreQAdcU1dOLkF7h/znys2zyW+NIdGA="
+						"_page": {
+							cache: {
+								sidebyside: {
+									"numeric-literals-si":      "fVWzRPaBfQfUGgVx6YXmsGocm1duUjRFCwvjO5awOe0="
+									"numeric-literals-altbase": "4Z86BuO1Ni8XTFG0hDzKKgtt25FdOCAAKraKGVMdLJc="
+								}
 							}
 						}
 					}

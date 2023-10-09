@@ -4,9 +4,11 @@ package site
 		docs: {
 			howto: {
 				"constrain-string-as-valid-integer": {
-					cache: {
-						sidebyside: {
-							example: "YXyrmiJfxKTYzbDNC0cOn8Aah4nDP2LoEFj/LvoQ/cU="
+					"_page": {
+						cache: {
+							sidebyside: {
+								example: "HKKkcwagOm/J3fiLqLPJC9zxtrSvvdEUuQXNrXxAN1I="
+							}
 						}
 					}
 				}

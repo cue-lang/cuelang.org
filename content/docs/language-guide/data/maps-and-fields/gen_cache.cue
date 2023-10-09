@@ -5,12 +5,14 @@ package site
 			"language-guide": {
 				data: {
 					"maps-and-fields": {
-						cache: {
-							sidebyside: {
-								"field-names-double-quotes":      "e+xUnM908lnC+c83uv1cSeSU7kWI1kVI1Dy+Rz1nijw="
-								"merging-of-quoted-and-unquoted": "1n0+ayDYrnOCNW/cRvzdvnmEpq4ssHwIJvLU8SyIIA4="
-								"helper-fields":                  "NBC5pqN5tvXS0AIAPIubiKtNxx5t7MREHf3xRFTF6iM="
-								"embedded-scalars":               "6eIVmtaucKvh8eFY/+gb49LauiLGJuXH/qQpjbNEff4="
+						"_page": {
+							cache: {
+								sidebyside: {
+									"field-names-double-quotes":      "mEtcC55NUYQ/3/h7Fzq62xwVWz63NIXeCuIfyufbNxg="
+									"merging-of-quoted-and-unquoted": "WVqc5ecGBC78UrtHpqnMZrXdRvTBDnIAiUKsQo72ibc="
+									"helper-fields":                  "Z2uhlsixwVDw6A6vATO0uNZGOxfqThkD6cf92PNMDSY="
+									"embedded-scalars":               "V7CRBehPX9xJ2rHHVCL8d0DvyHST6bB1N+JBIPACRnQ="
+								}
 							}
 						}
 					}

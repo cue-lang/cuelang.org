@@ -5,13 +5,15 @@ package site
 			"language-guide": {
 				templating: {
 					comprehensions: {
-						cache: {
-							sidebyside: {
-								"for-clause":             "9/7mJUI616LjtkD6qDRlAFjEb2Ra8QfVjPg/u/CoPIU="
-								"if-clause":              "OK/cpfuR2H94bg/RXD7/ypgiwABYLrC0aoFx3xmuCyA="
-								"let-clause":             "geFQJOpGXzrqmpB8F2jrYbLNZn9pf+I69VmyRx/e310="
-								"list-comprehension":     "4a/gwmmWAlYrss6kQgCF0JuOp6ZeSJJzy4AXPMl58w4="
-								"switch-if-else-pattern": "JBYeaRmFSWtPX8BihpxT+mxa3ebp9kPon9e1Roi+f1o="
+						"_page": {
+							cache: {
+								sidebyside: {
+									"for-clause":             "vhCCczfYwQQ5fH/902wPGD9ethpSn6yi3JAT6HwtMSE="
+									"if-clause":              "kdgzUZdfP/diSytk1CWLkeA0oUeZgTuX6c34ZzXjytY="
+									"let-clause":             "j9+7CJE2dvLAoQnimMqDWnBOc9UlYcSMa7dQmgwn7hE="
+									"list-comprehension":     "Von0ttcfcI2IB8S7XiUih2gWMhM7FQ8iAebvnsvvTr8="
+									"switch-if-else-pattern": "0iE6DXljWDC+LmbwgxvXAyJsDRLJ2+8/7MnFjOlHURE="
+								}
 							}
 						}
 					}
