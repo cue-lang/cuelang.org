@@ -83,6 +83,9 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	for _, p := range pathParts {
 		pagePath = append(pagePath, cue.Str(p))
 	}
+	// And finally we root everything under "page" to make the "recursive"
+	// definition of content complete.
+	pagePath = append(pagePath, cue.Str("page"))
 
 	res := &page{
 		contentRelPath: contentRelPath,
