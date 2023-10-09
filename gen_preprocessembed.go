@@ -10,5 +10,6 @@ import "embed"
 //go:embed internal/functions/snippets/*.go
 //go:embed internal/parse/*.go
 //go:embed internal/cmd/preprocessor/cmd/*.go
+//go:embed internal/cmd/preprocessor/cmd/schema.cue
 //go:embed internal/cmd/preprocessor/*.go
 var Files embed.FS
