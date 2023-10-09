@@ -5,9 +5,11 @@ package site
 			"language-guide": {
 				"schemas-and-validation": {
 					disjunctions: {
-						cache: {
-							sidebyside: {
-								"core-builtin-or": "lBxUmsmG0bhDLJVbpw17xsjscX644tDgxYL2gNC6ipA="
+						page: {
+							cache: {
+								sidebyside: {
+									"core-builtin-or": "zCXiXNrPmxBR0ISGLg5q87/+Al6+JP2vJ7BFAmLst2w="
+								}
 							}
 						}
 					}

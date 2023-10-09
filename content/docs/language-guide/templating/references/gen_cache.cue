@@ -5,16 +5,18 @@ package site
 			"language-guide": {
 				templating: {
 					references: {
-						cache: {
-							sidebyside: {
-								"references-basics":            "Sw7Ye9jOXKtbarJf8Rts7iHXY5qSrxshdy2dH9QCk7A="
-								"quoted-field-reference-error": "jLb9ABweC3GXkPrzYyS5W0qpf1W1UoT1iXvyfaY3oUU="
-								aliases:                        "bfnScbPePhlucju9qT3KRUQsdNQImCWxeyM3wCIBBsg="
-								"list-aliases":                 "DVz9f+ZIR/ALFUMbmB5WA0Mwcu34Ilf4c8Jjol1uUJE="
-								"value-alias":                  "p/MFoOaJV+NfUwnIlMtAgtu1vQjbIHQTwQ3BlTVCFLg="
-								"field-selector":               "taj2WmXouvkZYFiaVBT5vqeE4rZGLdWfusx9DwpRexQ="
-								"dynamic-field-selector":       "inlJCkQf5JLWAPAXRaIzow0DR+RnsftP9asmoNbTbqY="
-								"let-expressions":              "ogJ/o0XRySbUsI8sOYWoQlEpQQYDpU2STK5JFHbM0PY="
+						page: {
+							cache: {
+								sidebyside: {
+									"references-basics":            "pLzvQS/fBsIXdyzCF4Bvq2ypRHyKSjtMtLHD6pVCPJY="
+									"quoted-field-reference-error": "XmPqsmmmEfLAI/bt9Td0nCURwt/mta9NXSZ6qGlD3YM="
+									aliases:                        "1AzH+TzrM32PxZhgo0mvsvXUuQbN8s9DuPKD2b1gn4M="
+									"list-aliases":                 "Sc36D4/O4snnXmHwY25RyTz7QpLRiIYPzYT+XYlgT1Q="
+									"value-alias":                  "pKq+QVtlJCBUleAKYb7B2PF9pjLgTiR8wI5ghxKwNOQ="
+									"field-selector":               "P+zj2O+JjMN3a2H0L4i+uO09XW3FVkfGsa5TXHv3jW4="
+									"dynamic-field-selector":       "sm1rPMLup5GGT1+s6IZarXRFo28WnqfZP/fW+zrY0Ls="
+									"let-expressions":              "Mj/D2S/4f60SaeBmDGMb9NxAGq/yio80BH7RSagZP5I="
+								}
 							}
 						}
 					}

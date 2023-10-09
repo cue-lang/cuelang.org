@@ -5,20 +5,22 @@ package site
 			"language-guide": {
 				templating: {
 					formulas: {
-						cache: {
-							sidebyside: {
-								"numbers-arithmetic":           "VSfVM30tfdyIfidjewvAijV1YPwjmwP5rdroD0Lrepk="
-								"strings-arithmetic":           "IR3wpj1il/+UmkxfWj8UdLBXYNLTjleGeo0h8aFsC58="
-								"strings-interpolation":        "H4bDNlZikrW1GXiOCez4Foxpc8GUPAhB6lwqV+g7HNk="
-								"strings-interpolation-fields": "76eVsVyOtFYqYvXiGs675bCfNzKp4BQBrb0xlgPg2gk="
-								"comparators-ordered":          "iYhIWJxUWchBP5wHjASQBxex/D8QxiPvpvDKnvd/+Ao="
-								"comparators-equality":         "/junwr7W+H96trU1RcJxscWgcDzP9fTJtDy8gh3gUV0="
-								regexp:                         "9spl4f9TNNBDglEfvcqoCqhlWezS2D5d9SINEzChOEA="
-								"boolean-arithmetic":           "8uI7DMTP9j1ZmTrDBSjuhLbA7Q8JfiuerxB/Coa0B1k="
-								"boolean-arithmetic-error":     "qAnv91KPOgS2XSI0HzuHr/GkVZXSvYsnjAW3rIbCbT8="
-								"stdlib-usage":                 "W4O0IjLip+xfvF5qFi61+vET7M/dylJpQaB5AB4lvLo="
-								"core-builtin-len":             "WgcKI3uJlYQORJMdVS7+X+KeAUb6Z2BfMB9SCN//pZk="
-								"composition-operator":         "nG7+11jdJAtDHGK9d2FDoVz6bUbBMQXTtGuk36l6F+g="
+						page: {
+							cache: {
+								sidebyside: {
+									"numbers-arithmetic":           "faIeO2CSFN6w814BACJSsGag5GaZWL8yTL/YI3dh1I4="
+									"strings-arithmetic":           "rZz4v7dsLY+Hz1q0XkCFvLH8FbOjDh4cBDFYGloflGM="
+									"strings-interpolation":        "oM9KAyoyIhk39OENE0NzljTp/LiJut0814Ok7oyAO8o="
+									"strings-interpolation-fields": "9NsSuBxNoLKvq3qHOlvy8DMiueehmw4lH7oOTs9m444="
+									"comparators-ordered":          "hPcV8zI8FMLnH9pjr++mW61cKXzuOT7ONXgBaurg8ns="
+									"comparators-equality":         "tyi2RwhVK2eukJ9IrhOHgopkR8sRgE8lttAPTvxHz1w="
+									regexp:                         "Bo8oLhOLMPvxumLEtnvolQb9V0bEOa+UGM0apMom5Ns="
+									"boolean-arithmetic":           "2iF6P/LRDneU4cy5vB9l8tJXk4vyCTENk8a/LivX4rY="
+									"boolean-arithmetic-error":     "aB+stSxiVVxVVkwy0Zc/1FE404qZ6T35STuTRE/fI6A="
+									"stdlib-usage":                 "G1eYklvL4RDaSPg07xlY+OXTp3v8S/xXTtX+PfuEA44="
+									"core-builtin-len":             "79SSWyKptQpJxdo3npkLNOa7rT1DHI2Y+0oLDVqXElQ="
+									"composition-operator":         "420i4kkaLu7axA4mB3z3rl04wh3D9Tvxw0cSmxpo4dM="
+								}
 							}
 						}
 					}

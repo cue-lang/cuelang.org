@@ -4,20 +4,22 @@ package site
 		docs: {
 			howto: {
 				"specify-a-default-value-for-a-field": {
-					cache: {
-						code: {
-							basic: "SB3uTwADtlH3bcbfenIWGe++sVX2CKANlJjEgli5nNs="
-						}
-						sidebyside: {
-							"unification-1":    "7yv0qIQAePWXniLSOefhMr5x7hMj+vkWd+vMQykkqgQ="
-							"unification-2":    "YCunGNalMCiWSUeMBzo6bFXZZ/kLskEd8W52OOHw13A="
-							"failure-1":        "tWQKa78+K0TqqzKK34VEsfq0dkHhPpomwXIvAhIpvIU="
-							"error-2":          "yIMQ7TbZK4v1GCTWYlrQRNEQsU3ydT6FDmlbFVj63Bs="
-							references:         "75OPnMMiOhea6M0PmQy7Uh+WL71+BpirYPoyvs54SQk="
-							complex:            "mDmEIVuQTXZu6RbaFSSJaZ3Rg99SI7JguToeQOsUEkc="
-							"multiple-success": "wHWYkvvoUgA9aIswUw0iVAnFpxJEuDyxOtq+MqDWOb4="
-							"multiple-failure": "N1oPBQ6XQ1EpUUWz7+LVSsijcpJZ0Novn+Il+oYGJrk="
-							"large example":    "bHlp3cjOE4bGkrY2OszHHIt2vnY8hoTLCSwwLWdlhIc="
+					page: {
+						cache: {
+							code: {
+								basic: "OX/Ptj7VMk2fY2ebvXl/8K2CNl0Bnnv6GgWwafGyZoE="
+							}
+							sidebyside: {
+								"unification-1":    "6vl1S0kdwpF/QXINl0ieVggrSJ2u1dNPzh1zHyYnh+k="
+								"unification-2":    "aiqCJbEm+Rv4L6p2ZspoGMYQYtPwnNE2n0mJ1Ue5OfI="
+								"failure-1":        "y3qVqh5Un3fCdAb65pPrVScQ5ORp1BkDeKlhQBhFV6s="
+								"error-2":          "WtqpSqc4u9m/aGYhqcrFYTGe1AsBTyvHAVTEaZ6mHM8="
+								references:         "UJ9j2e2IW+zfxsKw6GIkTaoD/TwF/tv2qnBlMCQwRHU="
+								complex:            "Tg5IgOZUkq+i8yVqTcnUT9tVef/jOW9RI4nnqMpppYI="
+								"multiple-success": "M2GSnhj7MluiB8UGkbxosSyQuw3M7hCYuBCKwd88pHY="
+								"multiple-failure": "rTGDtQqb+gsuqgPIHLucef6cCxsDV+hzfZ/ITu52cQ4="
+								"large example":    "fGBpZJEFg/3naJerWHga+O47B792S0vJcqH0Jst2PV8="
+							}
 						}
 					}
 				}

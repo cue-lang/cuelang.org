@@ -4,9 +4,11 @@ package site
 		docs: {
 			howto: {
 				"about-these-guides": {
-					cache: {
-						sidebyside: {
-							example: "z/iT6r63mrT/INOI7lwnPquBNiGo116IrflbFHva4Z4="
+					page: {
+						cache: {
+							sidebyside: {
+								example: "XqGbtFf5GdTJr/feVdd5He/r/Iryzl5UOzECPsNjJC4="
+							}
 						}
 					}
 				}

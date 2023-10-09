@@ -4,18 +4,20 @@ package site
 		docs: {
 			concept: {
 				"the-logic-of-cue": {
-					cache: {
-						code: {
-							"order unaware":          "wGKTSqyPyU3yEUNiXiwXoXRH948jb3DNem6s8Dzdhtg="
-							"new order":              "8FXKX5WR52ZPXbeiXz70ehHJd/iUYAX6MS0lrTLXMYY="
-							"allowed values":         "JQ4qAhBMocKK6COGKQtGZAcsstfxr7f7JDWIDK/gnR4="
-							default:                  "Mokol8lg1i5X10t5NlxlTBXW8tb0814RWJKMs8Bl0oc="
-							"revisit allowed values": "QpYCwMeqTsasa1UPVjj0ogJ09TUNA8LycNnoW4+wXRg="
-							"revisit default":        "0YFSOGPr+cx9iozmXcUYksxFurCAQFyem4+xNmgmbFM="
-							acmeMonitoring:           "Ndl5jJphZIHfhUHlQXwe4LFdsk1921GH74iqoi8+WEM="
-							cycles:                   "pQ0owelwPhZTWoLMS+0R6qpnCnB1WClGUUEj79Wd7KU="
-							sums:                     "JBFUiki0tPHXkI6QL8BG3eISuCsLPqAslHEUZFtjnoM="
-							"sums answers":           "QOInDYm8j+TzNa+n90fu/wvstC/Q9UE+Qa67J1EGIc8="
+					page: {
+						cache: {
+							code: {
+								"order unaware":          "V3mlAiJjSzz9MKVPUHfn7YcTEbv0dHJphkmyY7Ipi30="
+								"new order":              "aUwr9ELpJsOfjva+5d6E4AwhXvqsdGtBTZCy9bF/1/w="
+								"allowed values":         "kPh5Veva8riGJ+KMHkRyXWHheDQPLyck5jySv1EksSI="
+								default:                  "x65EGbp8ugjc6W2PEYTI1NAgi86M2i0oDaThw5n9hfg="
+								"revisit allowed values": "Li75/LiYlSiIN9jSuxxPZ+gbwRqXzIcOv0I6s8N+BiA="
+								"revisit default":        "61PzPga8ewstBAgRiFPp8I9/UGvrQfNMY5487JsFgxU="
+								acmeMonitoring:           "M5M6x4wwF5okg14YBC/UPA/cGUrB9lYcPHRtaQ/z5ZY="
+								cycles:                   "YEOZE0h6RCUt6O9V4RQ/F0otY8B/fanaqi8PaifDx5w="
+								sums:                     "NafPQtFnRH59S0dEpNi8/f0CBwLh6EpRshIx33BPKX4="
+								"sums answers":           "nce2firOal15VryRPwRuDeoIiyyIZxbroiGJXQDVpQM="
+							}
 						}
 					}
 				}

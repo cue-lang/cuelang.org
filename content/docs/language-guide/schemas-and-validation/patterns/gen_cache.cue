@@ -5,12 +5,14 @@ package site
 			"language-guide": {
 				"schemas-and-validation": {
 					patterns: {
-						cache: {
-							sidebyside: {
-								alternates:      "tgRtNw//IxAfK0WINp32iGOQg3psmDqroYJBJWBIzok="
-								implementations: "dzwyhhB07IJSAvLxAvpWX/ZyfWD2iKiCFeaLiFiznFE="
-								downcast:        "1SzSz4visfoV4yEESIHx93/gH/dP5B221yf0JW2W5m4="
-								defaults:        "vpfJuxBfnJX47iI154MuPKYVgShLnwZnHpZCj9kTiYk="
+						page: {
+							cache: {
+								sidebyside: {
+									alternates:      "zicrrUD5q6stjw4ZbFsRcq1JMLh8v8Wm85nOWfhiBeU="
+									implementations: "y4usaPUuenH7vtBbHIWoVbEAtVKNSQYiZwZdVV4ZYMw="
+									downcast:        "ONJyrRBQfNhg5bxUcK+wNa/o6SgfC1KM2zVx8IsY08g="
+									defaults:        "jhtV8yBDpATYU3C4ItTFGQCstCF05jDLrgHhi92nV4Y="
+								}
 							}
 						}
 					}

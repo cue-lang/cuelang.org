@@ -5,9 +5,11 @@ package site
 			"language-guide": {
 				data: {
 					lists: {
-						cache: {
-							sidebyside: {
-								"list-example": "oZriE/I76TS4bjuQUzevcSH79HJdecbT+d8ZkSLA3Hk="
+						page: {
+							cache: {
+								sidebyside: {
+									"list-example": "h4lheXLcG5ZwC5lAh8Sy5ecAkgufjbaGQgWU7eUGeBA="
+								}
 							}
 						}
 					}
