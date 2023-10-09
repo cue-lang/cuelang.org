@@ -11,10 +11,10 @@ exec preprocessor execute -d $WORK/sub
 
 -- sub/content/empty --
 -- sub/hugo/content/empty --
--- sub/content/page/_en.md --
+-- sub/content/dir1/_en.md --
 ---
 title: test
 ---
--- sub/content/page/site.cue --
+-- sub/content/dir1/site.cue --
 package site
-content: page: {}
+content: dir1: {}
