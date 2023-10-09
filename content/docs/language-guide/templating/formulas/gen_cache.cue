@@ -5,20 +5,22 @@ package site
 			"language-guide": {
 				templating: {
 					formulas: {
-						cache: {
-							sidebyside: {
-								"numbers-arithmetic":           "VSfVM30tfdyIfidjewvAijV1YPwjmwP5rdroD0Lrepk="
-								"strings-arithmetic":           "IR3wpj1il/+UmkxfWj8UdLBXYNLTjleGeo0h8aFsC58="
-								"strings-interpolation":        "H4bDNlZikrW1GXiOCez4Foxpc8GUPAhB6lwqV+g7HNk="
-								"strings-interpolation-fields": "76eVsVyOtFYqYvXiGs675bCfNzKp4BQBrb0xlgPg2gk="
-								"comparators-ordered":          "iYhIWJxUWchBP5wHjASQBxex/D8QxiPvpvDKnvd/+Ao="
-								"comparators-equality":         "/junwr7W+H96trU1RcJxscWgcDzP9fTJtDy8gh3gUV0="
-								regexp:                         "9spl4f9TNNBDglEfvcqoCqhlWezS2D5d9SINEzChOEA="
-								"boolean-arithmetic":           "8uI7DMTP9j1ZmTrDBSjuhLbA7Q8JfiuerxB/Coa0B1k="
-								"boolean-arithmetic-error":     "qAnv91KPOgS2XSI0HzuHr/GkVZXSvYsnjAW3rIbCbT8="
-								"stdlib-usage":                 "W4O0IjLip+xfvF5qFi61+vET7M/dylJpQaB5AB4lvLo="
-								"core-builtin-len":             "WgcKI3uJlYQORJMdVS7+X+KeAUb6Z2BfMB9SCN//pZk="
-								"composition-operator":         "nG7+11jdJAtDHGK9d2FDoVz6bUbBMQXTtGuk36l6F+g="
+						page: {
+							cache: {
+								code: {
+									"numbers-arithmetic":           "6yPkPnyoPdsjZny5qO/xw1EmWQNHVTplpxKUA1mA7Ls="
+									"strings-arithmetic":           "hzdZF3wQIFBHnGWiNjRba9L8cllbi8Zlnza9hjMOOMM="
+									"strings-interpolation":        "I7mE/6EVLzVQa+AutQS/vCJPXEQYEQj0ewKep3dgA7I="
+									"strings-interpolation-fields": "fI0dh7kJnB0QIdGAnk04296SdF49+edyh/qQAo2m7CE="
+									"comparators-ordered":          "dA1D8UEUDlzk2wQVlUxudSLRoGzD0j0jnFanQ1hYPoI="
+									"comparators-equality":         "TqmemJ7T5gP5SARefuHH3jH/qSp8FycHBaoZh6BfRwo="
+									regexp:                         "DpFlGVLRpH6NCKF5sSnLAOpnOFG5ILuX0juq9bqQY8E="
+									"boolean-arithmetic":           "SuWEASOAcf2cuSkYPJarH47o4tWXL16Hn4LViPYLM6c="
+									"boolean-arithmetic-error":     "+yJPmS/VbVicPfM+We4VJ8cS7gTuyD7k4+BpclxB6V4="
+									"stdlib-usage":                 "NkC1+7erAZqV97HWI412gcTwfdnFDKwv0gokXsEuLww="
+									"core-builtin-len":             "3y6TfuVdXfNDDpFZcTBPu6wcGIt4rvLDEMLku+Cn+Y0="
+									"composition-operator":         "ElMpbqDUnXPLQyRGEdhbwoT45ll8s7yDGx0sErbs3lY="
+								}
 							}
 						}
 					}
