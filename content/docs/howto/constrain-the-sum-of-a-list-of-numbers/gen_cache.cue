@@ -4,9 +4,11 @@ package site
 		docs: {
 			howto: {
 				"constrain-the-sum-of-a-list-of-numbers": {
-					cache: {
-						sidebyside: {
-							cc: "ZBuOpGYvXVjsZ+X57SC+KJzA8jjlEddaHkAZSXL4zSc="
+					page: {
+						cache: {
+							code: {
+								cc: "efJNAl9pv2EVuQUT/6CJ5WkIqZhilA1HgDPq4mKyEU0="
+							}
 						}
 					}
 				}
