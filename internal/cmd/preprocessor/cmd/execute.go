@@ -140,6 +140,9 @@ type executionContext struct {
 
 	// noWriteCache is set to avoid page cache files being written to disk.
 	noWriteCache bool
+
+	// siteSchema is a CUE schema that validates a preprocessor site
+	siteSchema cue.Value
 }
 
 // tempDir creates a new temporary directory within the
@@ -197,12 +200,20 @@ func executeDef(c *Command, args []string) error {
 		return fmt.Errorf("cannot use --skipcache and --norun together")
 	}
 
+	// Load the preprocessor site schema for validation at various points
+	cuectx := cuecontext.New()
+	schema := cuectx.CompileString(schemaFile).LookupPath(cue.ParsePath("#site"))
+	if err := schema.Err(); err != nil {
+		return fmt.Errorf("failed to load site schema: %v", err)
+	}
+
 	ctx := executionContext{
 		updateGoldenFiles: flagUpdate.Bool(c),
 		norun:             flagNoRun.Bool(c),
-		ctx:               cuecontext.New(),
+		ctx:               cuectx,
 		skipCache:         flagSkipCache.Bool(c),
 		noWriteCache:      flagNoWriteCache.Bool(c),
+		siteSchema:        schema,
 	}
 
 	// Calculate which levels of debug-level logging to enable, processing each
