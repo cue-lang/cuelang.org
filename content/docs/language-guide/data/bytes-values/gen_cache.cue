@@ -5,10 +5,12 @@ package site
 			"language-guide": {
 				data: {
 					"bytes-values": {
-						cache: {
-							sidebyside: {
-								"bytes-to-json": "DgALqJaZZCAPhmZ5/OY254U9HEOUXvPlisBHrJRU8bU="
-								"bytes-to-yaml": "qjEUPyDcr9i1sFFrnUiZPV42/Ppzek3WwPBi6wnu4S4="
+						page: {
+							cache: {
+								code: {
+									"bytes-to-json": "55LmVn7ywPkeMOfv7jBxrfia1JtUSBeYj22DDMCky0U="
+									"bytes-to-yaml": "8Qmpu1ds23xAkAYKk0md3kjjZAi7Bz75UwjCy0A46Do="
+								}
 							}
 						}
 					}

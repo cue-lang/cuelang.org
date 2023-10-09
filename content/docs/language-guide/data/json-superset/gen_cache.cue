@@ -5,10 +5,12 @@ package site
 			"language-guide": {
 				data: {
 					"json-superset": {
-						cache: {
-							sidebyside: {
-								"json-superset": "8/DMys0TiuJSSSKg6lRlMIH/ugLgd5MgoNUwiNL/dt0="
-								"json-comments": "W79mpj7g7nQL919jYP6mITChY1jZXgdfuHxj88PdeG8="
+						page: {
+							cache: {
+								code: {
+									"json-superset": "7EGaWqKBj3GhwUFNei9f8+GEFNoxV+U+54oraAfdRvw="
+									"json-comments": "OZlkl23ti/5wJFEths5lOrJNZHQi140gXMdEK7HvXII="
+								}
 							}
 						}
 					}
