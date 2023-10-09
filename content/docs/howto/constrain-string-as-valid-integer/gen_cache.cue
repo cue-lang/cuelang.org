@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							sidebyside: {
-								example: "KS7W7O+1I8KHn/TCwdb5SNJFWTxUCRPEq/MYMPe8RaE="
+								example: "D5D1XsA9CvWQ5k5qn7AbSApBOZ0GMFCdBJGg9G9DsVI="
 							}
 						}
 					}
