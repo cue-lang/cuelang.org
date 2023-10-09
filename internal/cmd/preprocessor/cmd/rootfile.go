@@ -707,7 +707,7 @@ func (rf *rootFile) writePageCache() error {
 	}
 
 	if rf.debugCache {
-		m := []byte(fmt.Sprintf("%v", v))
+		m := []byte(fmt.Sprintf("%#v", v))
 		rf.debugf(rf.debugCache, "%v: cache entries: \n%s", rf, tabIndent(m))
 	}
 
