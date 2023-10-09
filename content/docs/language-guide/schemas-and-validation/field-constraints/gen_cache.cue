@@ -5,10 +5,12 @@ package site
 			"language-guide": {
 				"schemas-and-validation": {
 					"field-constraints": {
-						cache: {
-							sidebyside: {
-								"composition-operator":      "ynRDhlaYQSEngQGIf/oXMjD+c0jmDxc9EeqkD70V+Nc="
-								"field-constraint-required": "6IsV2QhQ/VbxMb4Gybmxy4lMtvUe1275aNSraHxrQlM="
+						page: {
+							cache: {
+								code: {
+									"composition-operator":      "Ko4MrUgsJmSWqLvcX5+Qmq5TzETTaUP9tKIsobmLhd4="
+									"field-constraint-required": "MGbA0fOldgSdguX+/Xdb0gxTqmTw2zAVkbFM/EEdKh8="
+								}
 							}
 						}
 					}
