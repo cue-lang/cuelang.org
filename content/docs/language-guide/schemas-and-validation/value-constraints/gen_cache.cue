@@ -5,13 +5,15 @@ package site
 			"language-guide": {
 				"schemas-and-validation": {
 					"value-constraints": {
-						cache: {
-							sidebyside: {
-								"unary-comparator-ok":    "81Ua/rZQfhAyR92cVBfFOeWwvFJ17XF1G/AX3JgNF3o="
-								"unary-comparator-err":   "y4MxDDare31LBDOgEnNjgB5T2SlwF99lNH0Mv5O0o/8="
-								"stdlib-validator":       "uJhHWvZ3IciRHwgig6quFQhFAmLSZs9htZOYRe7zZug="
-								"stdlib-time":            "wLSWMQImpicm1uLR5n3RFf6VPM9MH15BmtDRl6/TXvM="
-								"stdlib-time-jsonschema": "CBBQWAza0xpiYLDJEd9UxtySp4bmzV/jzTzLpOAYGUg="
+						page: {
+							cache: {
+								code: {
+									"unary-comparator-ok":    "eYWokZACMbv6SMyBIS2IUkfGCr9rvpvr3P+KcZGQlzU="
+									"unary-comparator-err":   "OGYecJi3fhfnrBk1CBICMogqa6x7HRN1G/kqSU5TUAk="
+									"stdlib-validator":       "eXYs9qLNcDGjwETP9X1W9AbiLDp4afkES6brm0a7QwU="
+									"stdlib-time":            "7Q2Bl3eKvKKa4EJvJN+Nn3PxvZGYgVSWoty/kbeMlGU="
+									"stdlib-time-jsonschema": "Cw8iHbznQwleLYkck6Q6bbE8tecvbrTBOg+rsSlrMB0="
+								}
 							}
 						}
 					}
