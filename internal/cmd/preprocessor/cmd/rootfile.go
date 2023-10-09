@@ -710,6 +710,11 @@ func (rf *rootFile) writePageCache() error {
 		rf.debugf(rf.debugCache, "%v: cache entries: \n%s", rf, tabIndent(m))
 	}
 
+	// Validate against site schema
+	if err := v.Unify(rf.siteSchema).Err(); err != nil {
+		return rf.errorf("%v: failed to validate cache entries against site schema: %v", rf, err)
+	}
+
 	// Derive CUE source format
 	node := v.Syntax()
 	nodeSrc, err := format.Node(node)
