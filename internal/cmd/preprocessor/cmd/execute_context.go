@@ -98,7 +98,7 @@ func (ec *executeContext) execute() error {
 		}
 	}
 
-	// Load all the CUE in one go
+	// Load all the CUE in one go and validate against the preprocessor schema.
 	cfg := &load.Config{
 		Dir: ec.executor.root,
 	}
@@ -109,6 +109,10 @@ func (ec *executeContext) execute() error {
 	v := ec.executor.ctx.BuildInstance(bps[0])
 	if err := v.Err(); err != nil {
 		return ec.errorf("%v: error in site configuration: %v", ec, err)
+	}
+	v = v.Unify(ec.executor.siteSchema)
+	if err := v.Err(); err != nil {
+		return ec.errorf("%v: site failed to validate against schema: %v", ec, err)
 	}
 	ec.config = v
 
