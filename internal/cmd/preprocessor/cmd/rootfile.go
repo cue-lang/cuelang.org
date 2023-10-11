@@ -673,6 +673,15 @@ func (m *multiStepScript) run() (runerr error) {
 				if err != nil {
 					m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
 				}
+
+				for _, s := range m.page.config.Sanitisers {
+					if err := s.sanitise(stmt); err != nil {
+						m.fatalf("%v: failed to sanitise output for %q: %v", m, stmt.Cmd, err)
+					}
+				}
+
+				// TODO: if we have !cacheMiss, then we need to use comparitors to assing
+				// back to the original statements if there is a fuzzy match.
 			}
 			return nil
 		})
