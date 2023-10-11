@@ -16,6 +16,23 @@
       "message": "LGTM, but I\u0027m only +1\u0027ing because my Go reviewing is pretty superficial. Happy to +2 if that feels sufficient to you - just let me know.",
       "revId": "976324db2109aac655059fdc54a2500a71f20526",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "386af72d_6d7b675a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-11T12:52:03Z",
+      "side": 1,
+      "message": "mvdan - please can you take a look at the Go changes in particular? \n\njcm was happy modulo the Go changes.",
+      "revId": "976324db2109aac655059fdc54a2500a71f20526",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
