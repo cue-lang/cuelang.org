@@ -28,12 +28,47 @@ exec preprocessor execute --debug=all --skipcache
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step script; was a hit'
 
 -- hugo/.keep --
--- content/dir/site.cue --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
 package site
 
 content: dir: page: {
 	leftDelim:  "{{{"
 	rightDelim: "}}}"
+
+	sanitisers: [
+		{
+			kind:          "patternSanitiser"
+			commandPrefix: "cue eval"
+			pattern: expr: "member1"
+			replacement: "member3"
+		},
+		{
+			kind:    "patternSanitiser"
+			command: "cue version"
+			pattern: {
+				expr: #"GOARCH .+$"#
+				linewise: true
+			}
+			replacement: "GOARCH amd64"
+		},
+		{
+			kind:    "patternSanitiser"
+			command: "cue version"
+			pattern: {
+				expr: #"GOOS .+$"#
+				linewise: true
+			}
+			replacement: "GOOS linux"
+		},
+		{
+			kind:    "patternSanitiser"
+			command: "cue version"
+			pattern: expr: #"(?m)^\s*GOAMD64 .*\n"#
+			replacement: ""
+		},
+	]
 }
 -- content/dir/en.md --
 >---
@@ -65,8 +100,8 @@ content: dir: page: {
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
 >{{{end}}}
->{{{with _script "en" "cue version"}}}
->echo cue version
+>{{{with script "en" "cue version"}}}
+>cue version
 >{{{end}}}
 >{{{with script "en" "norun"}}}
 >#norun for reasons
@@ -103,8 +138,8 @@ content: dir: page: {
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
 >{{{end}}}
->{{{with _script "en" "cue version"}}}
->echo cue version
+>{{{with script "en" "cue version"}}}
+>cue version
 >{{{end}}}
 >{{{with script "en" "norun"}}}
 >#norun for reasons
@@ -136,9 +171,22 @@ map: {
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAo=" }
 $ cue eval in.cue # test
 map: {
-    member1: 3
+    member3: 3
     member2: 4
 }
+```
+```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
+$ cue version
+cue version v0.7.0
+
+go version go1.21.1
+      -buildmode exe
+       -compiler gc
+       -trimpath true
+  DefaultGODEBUG panicnil=1
+     CGO_ENABLED 0
+          GOARCH amd64
+            GOOS linux
 ```
 ```text { title="TERMINAL" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZAo=" }
 $ nonexistent command
@@ -157,21 +205,30 @@ package site
 						"in-subdir":        "VGUXHKXCtP+/aLbwSQ4vEecuCdsRklgwqgWz+tGP7BU="
 					}
 					multi_step: {
-						"SI0QCJ4ORQ8JOHLHN849VICT3I8JCO96UO9FJO406H1CE5VSJB3G====": [{
+						"DV3NMU4U2UJAP84I2UIJQRDQHN5I28OMQCB5KB15Q47O5R1SHLH0====": [{
 							cmd:      "cue eval in.cue # test"
 							exitCode: 0
 							output: """
 									map: {
-									    member1: 3
+									    member3: 3
 									    member2: 4
 									}
 
 									"""
 						}, {
-							cmd:      "echo cue version"
+							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version
+									cue version v0.7.0
+
+									go version go1.21.1
+									      -buildmode exe
+									       -compiler gc
+									       -trimpath true
+									  DefaultGODEBUG panicnil=1
+									     CGO_ENABLED 0
+									          GOARCH amd64
+									            GOOS linux
 
 									"""
 						}]
