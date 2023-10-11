@@ -20,7 +20,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "wrong number of args"}}}
+>{{{with code "en" "wrong number of args"}}}
 >#location top-left
 >exec cue export a.cue b.json c.json
 >cmp stdout stdout.golden
@@ -32,7 +32,7 @@ package site
 >}
 >{{{end}}}
 >
->{{{with sidebyside "en" "bad location"}}}
+>{{{with code "en" "bad location"}}}
 >#location top-left rubbish
 >exec cue export a.cue b.json c.json
 >cmp stdout stdout.golden

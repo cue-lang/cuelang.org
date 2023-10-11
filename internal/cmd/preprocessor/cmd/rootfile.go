@@ -44,7 +44,6 @@ var (
 	// text/template/parse sees the bare words and interprets them as if they
 	// were function calls.
 	templateFunctions = map[string]any{
-		fnSidebyside:   true,
 		fnCode:         true,
 		fnStep:         true,
 		fnUpload:       true,
@@ -501,7 +500,7 @@ func (m *multiStepScript) cachePath() cue.Path {
 // we block on all runnables before attempting and writing of the
 // transformed output.
 //
-// A good amount of potential overlap here with the sidebyside use of
+// A good amount of potential overlap here with the code node use of
 // docker but we can (and will) DRY that up later.
 func (m *multiStepScript) run() (runerr error) {
 	defer recoverFatalError(&runerr)

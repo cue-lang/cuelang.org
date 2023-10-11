@@ -1,5 +1,5 @@
 # Ensure that preprocessor correctly returns and error when it finds
-# multiple sidebyside nodes with the same label.
+# multiple code nodes with the same label.
 
 unquote content/dir/en.md
 
@@ -14,13 +14,13 @@ package site
 >---
 >title: JSON Superset
 >---
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.cue --
 >x: 5
 >-- out.yaml --
 >x: 5
 >{{{end}}}
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.cue --
 >x: 5
 >-- out.yaml --
@@ -31,7 +31,7 @@ package site
 title: JSON Superset
 ---
 -- stderr.golden --
-** $WORK/content/dir/en.md: node type "sidebyside" declares label "json-superset" multiple times:
+** $WORK/content/dir/en.md: node type "code" declares label "json-superset" multiple times:
 	$WORK/content/dir/en.md:4:8
 	$WORK/content/dir/en.md:10:8
 terminating because of errors

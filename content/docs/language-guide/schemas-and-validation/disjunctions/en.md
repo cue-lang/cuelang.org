@@ -29,7 +29,7 @@ or([a])              a
 or([])               _|_
 ```
 
-{{{with sidebyside "en" "core-builtin-or"}}}
+{{{with code "en" "core-builtin-or"}}}
 #check - succeeded when it should have failed?
 exec cue eval -f -i in.cue
 cmp stdout out.cue

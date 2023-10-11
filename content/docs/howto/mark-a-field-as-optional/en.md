@@ -16,7 +16,7 @@ This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
 demonstrates using an **optional field** marker to constrain a field's value -
 *but only if it is present*.
 
-{{{with sidebyside "en" "cc"}}}
+{{{with code "en" "cc"}}}
 ! exec cue vet .:example data.yml
 cmp stderr out.err
 -- schema.cue --

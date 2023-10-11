@@ -108,9 +108,9 @@ type executionContext struct {
 	// logging.
 	debugScript bool
 
-	// debugSideBySide is set when we should output sidebyside debug level
+	// debugCode is set when we should output code node debug level
 	// logging.
-	debugSideBySide bool
+	debugCode bool
 
 	// debugFormatting is set when we should output multi-step formatting debug level
 	// logging.
@@ -217,7 +217,7 @@ func executeDef(c *Command, args []string) error {
 				ctx.debugCache = !set
 				ctx.debugHugo = !set
 				ctx.debugScript = !set
-				ctx.debugSideBySide = !set
+				ctx.debugCode = !set
 				ctx.debugFormatting = !set
 			case "general":
 				ctx.debugGeneral = !set
@@ -229,8 +229,8 @@ func executeDef(c *Command, args []string) error {
 				ctx.debugHugo = !set
 			case "script":
 				ctx.debugScript = !set
-			case "sidebyside":
-				ctx.debugSideBySide = !set
+			case "code":
+				ctx.debugCode = !set
 			case "formatting":
 				ctx.debugFormatting = !set
 			default:

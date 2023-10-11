@@ -26,7 +26,7 @@ The key and value will be visible by subsequence clauses in the list.
 The key is the index of a list element, the name of a data field, or undefined
 for a query.
 
-{{{with sidebyside "en" "for-clause"}}}
+{{{with code "en" "for-clause"}}}
 -- in.cue --
 a: [1, 2]
 for k, v in a {
@@ -54,7 +54,7 @@ m1_1: 6
 The `if` clause discards a result if a condition does not hold.
 By itself, `if` can be used to include values conditionally.
 
-{{{with sidebyside "en" "if-clause"}}}
+{{{with code "en" "if-clause"}}}
 -- in.cue --
 a: [1, 2, 3]
 for k, v in a
@@ -76,7 +76,7 @@ The `let` clause allows assigning a formula to a single expression to avoid
 having to repeat it.
 A comprehension may not start with this clause.
 
-{{{with sidebyside "en" "let-clause"}}}
+{{{with code "en" "let-clause"}}}
 -- in.cue --
 a: [1, 2, 3]
 for k, v in a
@@ -105,7 +105,7 @@ group [ref=]expr
 A list may mix regular elements with comprehensions.
 Elements insert in order.
 
-{{{with sidebyside "en" "list-comprehension"}}}
+{{{with code "en" "list-comprehension"}}}
 -- in.cue --
 a: [1, 2, 3]
 
@@ -127,7 +127,7 @@ A common pattern is to use an `if` comprehension by itself to insert fields
 conditionally.
 CUE has no switch or if-else construct, but these can be simulated using lists.
 
-{{{with sidebyside "en" "switch-if-else-pattern"}}}
+{{{with code "en" "switch-if-else-pattern"}}}
 -- in.cue --
 mem:       2Gi
 footprint: [ // select first

@@ -41,7 +41,7 @@ You can write `[a, b, ...]` to allow more items.
 `close` converts a partially defined, or open, map or list to a fully defined,
 or closed, map or list.
 
-{{{with sidebyside "en" "core-builtin-close"}}}
+{{{with code "en" "core-builtin-close"}}}
 -- in.cue --
 c: close({a: 1})
 
@@ -61,7 +61,7 @@ Schemas can combine with other schemas by using embedding.
 This circumvents the usual limitation that no new fields can be added to a
 definition.
 
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with code "en" "composition-operator"}}}
 #check added #Base definition
 -- in.cue --
 #Base: {}
@@ -110,7 +110,7 @@ there are schema, at the bottom there are concrete instances.
 Schemas are often composed of other schemas. You can embed schemas in another to
 extend them:
 
-{{{with sidebyside "en" "embedding"}}}
+{{{with code "en" "embedding"}}}
 -- in.cue --
 
 -- out.cue --

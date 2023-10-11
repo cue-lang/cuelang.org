@@ -40,7 +40,7 @@ that `cue` has caught the deliberate mistakes in our example data.
 
 Here's an example:
 
-{{{with sidebyside "en" "example"}}}
+{{{with code "en" "example"}}}
 ! exec cue vet .:example data.yml
 cmp stderr out.err
 -- example.cue --

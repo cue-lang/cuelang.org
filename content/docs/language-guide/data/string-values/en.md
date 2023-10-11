@@ -17,7 +17,7 @@ The string contents are on separate lines between these two.
 The whitespace preceding the last `"""` must prefix each non-empty line of the
 string contents and is stripped from all lines.
 
-{{{with sidebyside "en" "multiline-strings"}}}
+{{{with code "en" "multiline-strings"}}}
 #nofmt TODO: \ at end of line in multiline string
 #norun TODO: \ at end of line in multiline string
 -- in.cue --
@@ -68,7 +68,7 @@ the usual escape sequences to appear in text verbatim. A string enclosed in a
 single pair of hashes uses `\#` as the escape character, instead of `\`. A
 string enclosed in two hashes uses `\##`, and so on.
 
-{{{with sidebyside "en" "alternative-escape-sequences"}}}
+{{{with code "en" "alternative-escape-sequences"}}}
 #nofmt TODO: unclear what the bug is
 #norun TODO: unclear what the bug is
 -- in.cue --

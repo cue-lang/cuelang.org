@@ -20,7 +20,7 @@ package site
 >---
 >title: title
 >---
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.yaml --
 >{"x": 5}
 >-- out.yaml --
@@ -30,7 +30,7 @@ package site
 >---
 >title: title
 >---
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.yaml --
 >x: 5
 >-- out.yaml --

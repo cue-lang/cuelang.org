@@ -20,7 +20,7 @@ package site
 >---
 >title: title
 >---
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.json --
 >{"x": 5}
 >-- out.json --
@@ -32,7 +32,7 @@ package site
 >---
 >title: title
 >---
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.json --
 >{
 >    "x": 5

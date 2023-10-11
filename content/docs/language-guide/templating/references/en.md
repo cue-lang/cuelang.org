@@ -21,7 +21,7 @@ A field reference is an identifier that references a field with a name using
 that identifier in any of the parent nodes.
 If there are multiple parents with the same name, the “innermost” name parent wins.
 
-{{{with sidebyside "en" "references-basics"}}}
+{{{with code "en" "references-basics"}}}
 -- in.cue --
 a: 1
 b: a
@@ -51,7 +51,7 @@ d: {
 A field that uses quotes may not be referenced with its unquoted name, even if
 it would otherwise be a valid identifier.
 
-{{{with sidebyside "en" "quoted-field-reference-error"}}}
+{{{with code "en" "quoted-field-reference-error"}}}
 #nofmt TODO: need to implement #nofmt for in.cue and handle error case
 #norun TODO: need to implement #nofmt for in.cue and handle error case
 -- in.cue --
@@ -65,7 +65,7 @@ a:     foo // error
 Aliases allows referring to fields with names that have to be quoted, by
 allowing those to be associated with an identifier.
 
-{{{with sidebyside "en" "aliases"}}}
+{{{with code "en" "aliases"}}}
 -- in.cue --
 X="a-b": 1 // a-b must be quoted
 b:       X
@@ -86,7 +86,7 @@ List values can be similarly aliased.
 
 </aside>
 
-{{{with sidebyside "en" "list-aliases"}}}
+{{{with code "en" "list-aliases"}}}
 #nofmt TODO: list aliases not yet supported
 #norun TODO: list aliases not yet supported
 -- in.cue --
@@ -98,7 +98,7 @@ List values can be similarly aliased.
 In most cases, instead of referencing a field alias of a parent node one should
 use value aliases.
 
-{{{with sidebyside "en" "value-alias"}}}
+{{{with code "en" "value-alias"}}}
 -- in.cue --
 a: X={
 	bar: X.foo
@@ -123,7 +123,7 @@ The value of `x` must be an {{{reference "identifier"}}} or a quoted string when
 referencing a field in a map or an integral number when referring to an element
 in a list.
 
-{{{with sidebyside "en" "field-selector"}}}
+{{{with code "en" "field-selector"}}}
 #nofmt TODO: numeric selector not supported yet
 #norun TODO: numeric selector not supported yet
 -- in.cue --
@@ -149,7 +149,7 @@ An alternative notation for this is `a[x]`.
 The main difference is that it allows negative indices to index from the end of
 a list.
 
-{{{with sidebyside "en" "dynamic-field-selector"}}}
+{{{with code "en" "dynamic-field-selector"}}}
 #nofmt TODO: .(x) not implemented yet
 #norun TODO: .(x) not implemented yet
 -- in.cue --
@@ -172,7 +172,7 @@ making one field depend on another and without using helper fields.
 Each reference to a let expression is unique: let expressions never clash when
 merging two maps.
 
-{{{with sidebyside "en" "let-expressions"}}}
+{{{with code "en" "let-expressions"}}}
 #norun open lists not implemented yet
 -- in.cue --
  let X = {list: []}
