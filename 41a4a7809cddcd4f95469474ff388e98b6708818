@@ -16,6 +16,24 @@
       "message": "I can /imagine/ a URL structure like \"cuelang.org/docs/howto/foo-a-bar-with-kubernetes-NB-this-is-very-long-so-it-has-multiple-pages/page/1\" potentially being desirable, if we have that kind of very long content.\n\nSame question as asked in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1170493: would a `#page` definition field potentially work instead, here?",
       "revId": "41a4a7809cddcd4f95469474ff388e98b6708818",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d5579c4_ad203384",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-11T14:16:44Z",
+      "side": 1,
+      "message": "Please see my response there. Whilst we might run into this in the future, I can\u0027t see it being likely for now. If we do run into it, a refactor would be straightforward, but would require us to find a better place for it (which requires answering some of the points in my other response).",
+      "parentUuid": "c70db730_b74b005c",
+      "revId": "41a4a7809cddcd4f95469474ff388e98b6708818",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
