@@ -16,6 +16,24 @@
       "message": "Would the problems you alluded to, that discouraged the use of a hidden field in favour of this reservation of the `page` field, also occur with a definition such as `#page`?",
       "revId": "d8671b245c96e950307135bc742697d81eac7be5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec64174c_17cc395c",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-11T13:12:14Z",
+      "side": 1,
+      "message": "One of the reasons for not wanting to use hidden fields right now is that the export/rendering support for hidden fields is not ideal. But perhaps the overriding reason is that it\u0027s not super clear to me what we should do here. Choosing a regular field which has a sufficiently obscure (in this context) name that will not clash with a \"directory\" name is good enough for now, and can trivially be revisited later. Definitions would also work, but get rendered different to regular fields. Not \"wrong\" per se, but it\u0027s certainly not clear to me that the configuration under `#page` is actually data rather than a schema (the latter being the more classic use of a definition). Hence the thread where I was asking whether that GitHub issue regarding the \"coverage\" of fields had been created: it \"feels\" like there is a gap here, a gap we can sidestep for now.",
+      "parentUuid": "b9741b86_7a767329",
+      "revId": "d8671b245c96e950307135bc742697d81eac7be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
