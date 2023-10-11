@@ -33,6 +33,23 @@
       "message": "mvdan - please can you take a look at the Go changes in particular? \n\njcm was happy modulo the Go changes.",
       "revId": "976324db2109aac655059fdc54a2500a71f20526",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71dd0236_1c21f751",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-11T12:55:22Z",
+      "side": 1,
+      "message": "I wish it were easier to see moved lines in gerrit\u0027s diff view, but LGTM in any case",
+      "revId": "976324db2109aac655059fdc54a2500a71f20526",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
