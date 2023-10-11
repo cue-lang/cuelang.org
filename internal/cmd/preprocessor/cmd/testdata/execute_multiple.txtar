@@ -36,7 +36,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset-1"}}}
+>{{{with code "en" "json-superset-1"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --
@@ -56,7 +56,7 @@ package site
 >
 >Some text after
 >
->{{{with sidebyside "en" "json-superset-2"}}}
+>{{{with code "en" "json-superset-2"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --
@@ -128,7 +128,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset-1"}}}
+>{{{with code "en" "json-superset-1"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --
@@ -148,7 +148,7 @@ package site
 >
 >Some text after
 >
->{{{with sidebyside "en" "json-superset-2"}}}
+>{{{with code "en" "json-superset-2"}}}
 >exec cue export in.cue
 >cmp stdout stdout.json
 >-- in.cue --

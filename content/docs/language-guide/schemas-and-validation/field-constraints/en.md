@@ -25,7 +25,7 @@ For schemas, one typically wants to define types and constraints on fields
 without actually declaring these fields. Since in CUE data and schema is mixed,
 we explicitly mark schema fields with a question mark (`?`):
 
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with code "en" "composition-operator"}}}
 #check should be single
 -- in.cue --
 Feedback: {
@@ -41,7 +41,7 @@ Feedback: {}
 We use `!` instead of `?` to additionally specify that this field _*must_* be
 defined for an instance of this map to be valid.
 
-{{{with sidebyside "en" "field-constraint-required"}}}
+{{{with code "en" "field-constraint-required"}}}
 #check should be single
 -- in.cue --
 Name: {

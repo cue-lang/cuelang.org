@@ -1,5 +1,5 @@
 # Ensure that preprocessor understands the concept of error output
-# in shorthand sidebyside
+# in shorthand code
 
 unquote content/dir/en.md
 
@@ -30,7 +30,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.cue --
 >e: =~"foo"
 >e: "bar"

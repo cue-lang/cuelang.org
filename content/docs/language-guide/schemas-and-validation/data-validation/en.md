@@ -7,7 +7,7 @@ draft: false
 Schema can compose with data, for instance to validate data.
 For instance, this is valid:
 
-{{{with sidebyside "en" "schema-composed-with-data"}}}
+{{{with code "en" "schema-composed-with-data"}}}
 -- in.cue --
 a:  1
 a?: int
@@ -17,7 +17,7 @@ a: 1
 
 This is not
 
-{{{with sidebyside "en" "schema-composed-with-data-error"}}}
+{{{with code "en" "schema-composed-with-data-error"}}}
 # Right-hand side is red because of error.
 -- in.cue --
 a:  1
@@ -31,7 +31,7 @@ a: conflicting values 1 and string (mismatched types int and string):
 It is also possible to combine schemas. For instance, the following CUE defines
 restrictions on what values are allowed for another schema.
 
-{{{with sidebyside "en" "to-be-completed"}}}
+{{{with code "en" "to-be-completed"}}}
 -- in.cue --
 
 -- out.cue --

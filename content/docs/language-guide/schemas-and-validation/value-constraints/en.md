@@ -28,7 +28,7 @@ More specifically, for any concrete `x`, `x & ⊗y` is an error if not `x ⊗ y`
 `x` otherwise
 {{{end}}}
 
-{{{with sidebyside "en" "unary-comparator-ok"}}}
+{{{with code "en" "unary-comparator-ok"}}}
 #check changed from single node
 -- in.cue --
 a: >10
@@ -48,7 +48,7 @@ s: "Cat"
 
 A bound that fails results in an error.
 
-{{{with sidebyside "en" "unary-comparator-err"}}}
+{{{with code "en" "unary-comparator-err"}}}
 -- in.cue --
 e: =~"foo"
 e: "bar"
@@ -65,7 +65,7 @@ value is called a validator and validates that a value is valid.
 In this case the first argument in the Go documentation is the type of the
 validated value and must be omitted.
 
-{{{with sidebyside "en" "stdlib-validator"}}}
+{{{with code "en" "stdlib-validator"}}}
 -- in.cue --
 import "list"
 
@@ -84,7 +84,7 @@ Time stamps are a common data type.
 CUE does not support timestamps in the language, but its standard library
 provides validators to interpret strings as such.
 
-{{{with sidebyside "en" "stdlib-time"}}}
+{{{with code "en" "stdlib-time"}}}
 -- in.cue --
 import "time"
 
@@ -99,7 +99,7 @@ types.
 
 <!-- TODO: CUE OpenAPI generation seems to be broken wrt to this. Make this work.
 
-{{{with sidebyside "en" "stdlib-time-jsonschema"}}}
+{{{with code "en" "stdlib-time-jsonschema"}}}
 #norun should ignore this block because it's in an HTML comment
 -- in.cue --
 import "time"

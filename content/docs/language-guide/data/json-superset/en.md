@@ -13,7 +13,7 @@ configurations in general:
 - you can place commas after the last element of a composite type, and
 - the outermost curly braces are optional. {{{TODO "note on embedding"}}}
 
-{{{with sidebyside "en" "json-superset"}}}
+{{{with code "en" "json-superset"}}}
 -- in.cue --
 // A doc comment
 map: {
@@ -37,7 +37,7 @@ map: {
 
 CUE supports `//`-style comments. Comments are first-class citizens in CUE.
 
-{{{with sidebyside "en" "json-comments"}}}
+{{{with code "en" "json-comments"}}}
 -- in.cue --
 // A doc comment
 map: {

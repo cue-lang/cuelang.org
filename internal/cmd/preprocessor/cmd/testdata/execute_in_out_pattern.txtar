@@ -26,7 +26,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.cue --
 >// A doc comment
 >map: {
@@ -45,7 +45,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >-- in.cue --
 >// A doc comment
 >map: {

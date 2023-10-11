@@ -15,7 +15,7 @@
 package cmd
 
 const (
-	// tagNorun is the tag used in a txtar-based directive like sidebyside or script
+	// tagNorun is the tag used in a txtar-based directive like code or script
 	// to indicate that that node should not be run. For an upload directive, it
 	// means the commands in the step are not included in the multi-step script that
 	// is compiled, but the commands are included in the output. Thus the rendered
@@ -29,7 +29,7 @@ const (
 	tagNoFmt = "nofmt"
 
 	// tagCodeTab identifies the tag key used to pass options to the code-tab emitted
-	// for a file in a txtar-based directive like sidebyside or upload. A tagCodeTab
+	// for a file in a txtar-based directive like code or upload. A tagCodeTab
 	// tag requires an argument, the filepath of a file in the files in the archive.
 	tagCodeTab = "codetab"
 

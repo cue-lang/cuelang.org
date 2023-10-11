@@ -12,7 +12,7 @@ Sometimes it is necessary to compute a field's name and not just its value.
 You can do this by using formulas in parentheses for field names.
 Alternatively, you can use string comprehensions.
 
-{{{with sidebyside "en" "dynamic-fields"}}}
+{{{with code "en" "dynamic-fields"}}}
 -- in.cue --
 a: 5
 b: "bar"
@@ -41,7 +41,7 @@ pattern.
 In the following example, this is used to require that the value of each field
 name ending with "Name" should not start with a lowercase letter.
 
-{{{with sidebyside "en" "bulk-constraints"}}}
+{{{with code "en" "bulk-constraints"}}}
 -- in.cue --
 person: {
 	[=~"Name$"]: !~"^[[:lower:]]"
@@ -68,7 +68,7 @@ person: {
 the `&` operator to all elements in the list.
 It returns top for the empty list.
 
-{{{with sidebyside "en" "core-builtin-and"}}}
+{{{with code "en" "core-builtin-and"}}}
 -- in.cue --
 a: and([>=10, >5, <=10])
 b: and([2])

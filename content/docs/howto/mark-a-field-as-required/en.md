@@ -16,7 +16,7 @@ This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
 demonstrates using the **required field** marker in a schema to make sure that a
 field is present in data.
 
-{{{with sidebyside "en" "cc"}}}
+{{{with code "en" "cc"}}}
 ! exec cue vet .:example data.yml
 cmp stderr out.err
 -- schema.cue --

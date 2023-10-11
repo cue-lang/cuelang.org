@@ -1,4 +1,4 @@
-# Ensure that sidebyside norunective knows about various tags.
+# Ensure that code norunective knows about various tags.
 #
 # The #norun example will result in no formatting being applied
 # to the input file.
@@ -33,7 +33,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >#norun some message
 >#nofmt another message
 >
