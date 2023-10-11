@@ -17,7 +17,7 @@ Identifiers may also start with `#` or `_`, in which case the field is a
 [[Helper fields](Data%201b448a6f417b4e08b2d41b3b33cf2a45.md)](helper field) with
 special meaning.
 
-{{{with sidebyside "en" "field-names-double-quotes"}}}
+{{{with code "en" "field-names-double-quotes"}}}
 -- in.cue --
 a1:    1
 "a-b": 2 // quotes are needed here
@@ -38,7 +38,7 @@ names.
 Names of regular fields are considered equal if their string values are equal,
 regardless of whether the strings are quoted or not.
 
-{{{with sidebyside "en" "merging-of-quoted-and-unquoted"}}}
+{{{with code "en" "merging-of-quoted-and-unquoted"}}}
 -- in.cue --
 a: x:   1
 "a": y: 2
@@ -71,7 +71,7 @@ Helper fields allow reuse of CUE code when composing larger configurations.
 More on this in the
 [Templating](Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md) section.
 
-{{{with sidebyside "en" "helper-fields"}}}
+{{{with code "en" "helper-fields"}}}
 -- in.cue --
 one: {
 	value:     1
@@ -96,7 +96,7 @@ two: _typeName: "string"
 It is possible to associate helper fields with scalar types by placing both in
 curly braces (`{}`).
 
-{{{with sidebyside "en" "embedded-scalars"}}}
+{{{with code "en" "embedded-scalars"}}}
 -- in.cue --
 one: {
 	1

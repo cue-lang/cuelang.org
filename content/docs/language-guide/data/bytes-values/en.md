@@ -16,7 +16,7 @@ Two byte strings are equal if they hold the exact same bytes.
 JSON does not natively support binary data.
 When exporting to JSON, CUE translates it to base64.
 
-{{{with sidebyside "en" "bytes-to-json"}}}
+{{{with code "en" "bytes-to-json"}}}
 #nofmt TODO: bug to be fixed
 #norun TODO: bug to be fixed
 -- in.cue --
@@ -32,7 +32,7 @@ b: '''
 
 CUE translates bytes to the corresponding YAML binary type.
 
-{{{with sidebyside "en" "bytes-to-yaml"}}}
+{{{with code "en" "bytes-to-yaml"}}}
 #nofmt TODO: bug to be fixed
 #norun TODO: bug to be fixed
 -- in.cue --

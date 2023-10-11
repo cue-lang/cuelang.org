@@ -17,7 +17,7 @@ Multiplication and division bind stronger than addition and subtraction.
 Otherwise the order is left-to-right.
 Parenthesis can be used to force computations to be done in a certain order.
 
-{{{with sidebyside "en" "numbers-arithmetic"}}}
+{{{with code "en" "numbers-arithmetic"}}}
 -- in.cue --
 a: 1 + 2
 s: 2 - 1
@@ -77,7 +77,7 @@ A zero divisor in either case results in bottom (an error).
 
 Two Strings, as well as two bytes, can be appended using the `+` operator.
 
-{{{with sidebyside "en" "strings-arithmetic"}}}
+{{{with code "en" "strings-arithmetic"}}}
 -- in.cue --
 a: "foo" + "bar"
 b: '\xE2\x84' + '\x9A'
@@ -101,7 +101,7 @@ Bytes are interpreted as UTF-8 when inserted into strings,
 whereby invalid characters are converted to the replacement character (`\uFFFD`)
 according to Unicode guidelines.
 
-{{{with sidebyside "en" "strings-interpolation"}}}
+{{{with code "en" "strings-interpolation"}}}
 -- in.cue --
 a: 1
 b: "a plus one: \(a+1)"
@@ -119,7 +119,7 @@ e:       "As a string: �"
 
 Interpolations may also be used in quoted selectors or in field names.
 
-{{{with sidebyside "en" "strings-interpolation-fields"}}}
+{{{with code "en" "strings-interpolation-fields"}}}
 #nofmt TODO: interpolations in selectors not supported yet
 #norun TODO: interpolations in selectors not supported yet
 -- in.cue --
@@ -148,7 +148,7 @@ The ordering operators `<`, `<=`, `>`, and `>=` apply only to numbers, strings, 
 
 Helper fields associated with such fields are ignored.
 
-{{{with sidebyside "en" "comparators-ordered"}}}
+{{{with code "en" "comparators-ordered"}}}
 -- in.cue --
 a: 1 <= 2
 b: 1.0 < 1.01
@@ -178,7 +178,7 @@ Field constraints do not have to be concrete as they only apply in the presence 
 
 Helper fields, like `#foo` and `_foo` are ignored for comparison.
 
-{{{with sidebyside "en" "comparators-equality"}}}
+{{{with code "en" "comparators-equality"}}}
 -- in.cue --
 a: 1 != 2
 b: 1.0 == 1.000
@@ -220,7 +220,7 @@ Regular expressions often contain escape sequences.
 Using alternate escape sequences is the easiest way to work around double escaping.
 {{{end}}}
 
-{{{with sidebyside "en" "regexp"}}}
+{{{with code "en" "regexp"}}}
 -- in.cue --
 str: "The cat sat in the tree."
 
@@ -241,7 +241,7 @@ upper: true
 
 CUE supports not (`!`), logical and (`&&`), and logical or (`||`) to operate on boolean values.
 
-{{{with sidebyside "en" "boolean-arithmetic"}}}
+{{{with code "en" "boolean-arithmetic"}}}
 -- in.cue --
 n: !true
 o: false || true
@@ -254,7 +254,7 @@ a: false
 
 It is an error for any values passed to these operators to be invalid.
 
-{{{with sidebyside "en" "boolean-arithmetic-error"}}}
+{{{with code "en" "boolean-arithmetic-error"}}}
 -- in.cue --
 a: {}
 err: true || a.bar
@@ -278,7 +278,7 @@ The library can then be accessed by its name.
 It can optionally be renamed if it clashes with names in your program.
 Some packages also provides constants.
 
-{{{with sidebyside "en" "stdlib-usage"}}}
+{{{with code "en" "stdlib-usage"}}}
 -- in.cue --
 import (
 	"math"
@@ -313,7 +313,7 @@ As CUE disallows field identifiers starting with `__`, the latter will never be 
 - For lists it returns the number of elements.
 - For maps it returns the number of data fields.
 
-{{{with sidebyside "en" "core-builtin-len"}}}
+{{{with code "en" "core-builtin-len"}}}
 #nofmt TODO: inside HTML comment
 #norun TODO: inside HTML comment
 -- in.cue --
@@ -350,7 +350,7 @@ For instance, specifies a default integral`1`, one could write
 
 A disjunction allows marking its elements as default with an asterisk.
 
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with code "en" "composition-operator"}}}
 #nofmt TODO: inside HTML comment
 #norun TODO: inside HTML comment
 -- in.cue --

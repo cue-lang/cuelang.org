@@ -30,7 +30,7 @@ used.
 If a regular field has a value provided elsewhere, through unification, then
 that value is used instead:
 
-{{{with sidebyside "en" "unification-1"}}}
+{{{with code "en" "unification-1"}}}
 exec cue export .:example
 cmp stdout stdout.txt
 -- policy.cue --
@@ -67,7 +67,7 @@ one of the disjunction's elements must unify with the field's concrete value.
 The concrete value provided through unification may be the same as the default
 value:
 
-{{{with sidebyside "en" "unification-2"}}}
+{{{with code "en" "unification-2"}}}
 exec cue export .:example
 cmp stdout stdout.txt
 -- policy.cue --
@@ -89,7 +89,7 @@ a: "A"
 If no element unifies with the value that has been provided, a disjunction
 resolution error results:
 
-{{{with sidebyside "en" "failure-1"}}}
+{{{with code "en" "failure-1"}}}
 ! exec cue export .:example
 cmp stderr stderr.txt
 -- policy.cue --
@@ -121,7 +121,7 @@ Therefore, *in order to be useful*, defaults need to evaluate to a concrete
 value. If CUE needs to use a default but the value provided is not concrete, an
 error results:
 
-{{{with sidebyside "en" "error-2"}}}
+{{{with code "en" "error-2"}}}
 -- in.cue --
 package example
 
@@ -138,7 +138,7 @@ Defaults are commonly specified as explicit concrete values, but if CUE can
 resolve a default to a concrete value via references then the result can be
 successfully used as a default:
 
-{{{with sidebyside "en" "references"}}}
+{{{with code "en" "references"}}}
 -- in.cue --
 package example
 
@@ -165,7 +165,7 @@ These values can either be provided inline, or by reference.
 
 In this example, both defaults for the field `a` are equivalent:
 
-{{{with sidebyside "en" "complex"}}}
+{{{with code "en" "complex"}}}
 -- in.cue --
 package example
 
@@ -201,7 +201,7 @@ _s: {
 A single field may have multiple defaults specified in parallel, provided that
 *all* the defaults unify successfully:
 
-{{{with sidebyside "en" "multiple-success"}}}
+{{{with code "en" "multiple-success"}}}
 -- in.cue --
 package example
 
@@ -219,7 +219,7 @@ without a concrete value being specified elsewhere, or without sufficient
 information being provided to resolve the disjunction, then the result is an
 error:
 
-{{{with sidebyside "en" "multiple-failure"}}}
+{{{with code "en" "multiple-failure"}}}
 -- in.cue --
 package example
 
@@ -239,7 +239,7 @@ from the unification of multiple *non-concrete* defaults - but as the following
 example demonstrates, this has a higher change of leading to unclear CUE that
 could confuse the reader:
 
-{{{with sidebyside "en" "large example"}}}
+{{{with code "en" "large example"}}}
 #location top-left top-left top-right bottom
 exec cue export .:example
 cmp stdout stdout.golden

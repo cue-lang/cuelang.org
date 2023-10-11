@@ -28,7 +28,7 @@ gets rounded down to the nearest whole number.
 
 Note that `k` is written as `K` instead.
 
-{{{with sidebyside "en" "numeric-literals-si"}}}
+{{{with code "en" "numeric-literals-si"}}}
 -- in.cue --
 a: 1_000_000
 b: 1M
@@ -51,7 +51,7 @@ CUE can represent numbers in bases other than decimal.
 | Octal | 0o | 0o10 | 8 |
 | Binary | 0b | 0b1111_1111 | 255 |
 
-{{{with sidebyside "en" "numeric-literals-altbase"}}}
+{{{with code "en" "numeric-literals-altbase"}}}
 -- in.cue --
 o: 0o755
 h: 0x00Dec0de

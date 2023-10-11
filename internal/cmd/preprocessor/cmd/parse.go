@@ -207,12 +207,6 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		return nil, rf.bodyError(c, "expected identifier as first arg; got %T", arg0)
 	}
 	switch fn.Ident {
-	case fnSidebyside:
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
-		if err != nil {
-			return nil, err
-		}
-		return &sidebysideNode{txtarNode: t}, nil
 	case fnCode:
 		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
@@ -267,7 +261,7 @@ func (rf *rootFile) parse_stepNode(n *parse.WithNode, number int) (res *stepNode
 }
 
 // parse_txtarNode extracts a txtar-based node, a value that will be wrapped
-// with a specific type. e.g. sidebyside.
+// with a specific type. e.g. code node.
 func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse.Node) (res txtarNode, err error) {
 	if len(args) != 2 {
 		return res, rf.bodyError(n, "%s require two args", kind)

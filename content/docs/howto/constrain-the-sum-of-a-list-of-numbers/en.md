@@ -17,7 +17,7 @@ toc_hide: true
 This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
 demonstrates constraining the sum of a list of numbers.
 
-{{{with sidebyside "en" "cc"}}}
+{{{with code "en" "cc"}}}
 ! exec cue vet .:example data.yml
 cmp stderr out.err
 -- schema.cue --

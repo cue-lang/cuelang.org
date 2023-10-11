@@ -17,7 +17,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >something
 >{{{else}}}
 >else

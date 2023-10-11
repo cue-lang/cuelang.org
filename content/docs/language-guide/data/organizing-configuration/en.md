@@ -18,7 +18,7 @@ CUE allows duplicate fields to exist as long as their values are consistent.
 
 This is allowed:
 
-{{{with sidebyside "en" "composition-simple-success"}}}
+{{{with code "en" "composition-simple-success"}}}
 -- in.cue --
 a: 1
 a: 1
@@ -28,7 +28,7 @@ a: 1
 
 This is not:
 
-{{{with sidebyside "en" "composition-simple-error"}}}
+{{{with code "en" "composition-simple-error"}}}
 #norun
 -- in.cue --
 b: 1
@@ -42,7 +42,7 @@ b: conflicting values 2 and 1:
 Two maps or lists are consistent if the values with the same key or index are
 consistent.
 
-{{{with sidebyside "en" "composition-composite"}}}
+{{{with code "en" "composition-composite"}}}
 #norun open lists
 -- in.cue --
 point: {
@@ -74,7 +74,7 @@ More on this in [Schemas and Validation](Schemas%20and%20Validation%20b39455d56f
 
 For single-field maps, the curly braces can be omitted:
 
-{{{with sidebyside "en" "composition-single-field-map"}}}
+{{{with code "en" "composition-single-field-map"}}}
 -- in.cue --
 point2: x: 1
 point2: y: 2
@@ -87,7 +87,7 @@ point2: {
 
 One can also combine values with the `&` operator:
 
-{{{with sidebyside "en" "composition-operator"}}}
+{{{with code "en" "composition-operator"}}}
 -- in.cue --
 point3: {x: 1} & {y: 2}
 -- out.cue --
@@ -111,7 +111,7 @@ Splitting a configuration across files allows grouping of related aspects and
 makes it easier to separate human written versus machine generated content,
 among other things.
 
-{{{with sidebyside "en" "packages"}}}
+{{{with code "en" "packages"}}}
 exec cue eval :food
 -- fruit.cue --
 package food

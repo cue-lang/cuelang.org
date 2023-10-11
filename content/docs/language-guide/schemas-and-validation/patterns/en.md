@@ -16,7 +16,7 @@ To CUE, treating values and types alike, this is all the same.
 In programming languages this is called a *sum type*.
 {{{end}}}
 
-{{{with sidebyside "en" "alternates"}}}
+{{{with code "en" "alternates"}}}
 -- in.cue --
 #Base: kind!: string
 #A: {
@@ -60,7 +60,7 @@ It may be cumbersome to maintain a list of all implemented alternatives.
 This following approach accepts all implementations of `#Base`, retaining
 all additional fields.
 
-{{{with sidebyside "en" "implementations"}}}
+{{{with code "en" "implementations"}}}
 -- in.cue --
 #Base: kind!: string
 
@@ -76,7 +76,7 @@ all additional fields.
 
 The following approach allows all implementations of `#Base` while discarding excess fields.
 
-{{{with sidebyside "en" "downcast"}}}
+{{{with code "en" "downcast"}}}
 #nofmt TODO: what is going on here?
 #norun TODO: what is going on here?
 -- in.cue --
@@ -100,7 +100,7 @@ In general, this is not recommended, as it removes the ability for that schema t
 
 A package that provides schemas with required discriminator fields could provide a convenience variant, though, with those already filled out:
 
-{{{with sidebyside "en" "defaults"}}}
+{{{with code "en" "defaults"}}}
 -- in.cue --
 #Schema: {
 	kind!: "a"
