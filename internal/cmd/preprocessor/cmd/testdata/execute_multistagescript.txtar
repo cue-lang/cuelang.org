@@ -28,12 +28,41 @@ exec preprocessor execute --debug=all --skipcache
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step script; was a hit'
 
 -- hugo/.keep --
--- content/dir/site.cue --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
 package site
 
 content: dir: page: {
 	leftDelim:  "{{{"
 	rightDelim: "}}}"
+
+	sanitisers: [
+		{
+			kind:          "patternSanitiser"
+			commandPrefix: "cue eval"
+			pattern: expr: "member1"
+			replacement: "member3"
+		},
+		{
+			kind:    "patternSanitiser"
+			command: "cue version"
+			pattern: {
+				expr: #"GOARCH .+$"#
+				linewise: true
+			}
+			replacement: "GOARCH amd64"
+		},
+		{
+			kind:    "patternSanitiser"
+			command: "cue version"
+			pattern: {
+				expr: #"GOOS .+$"#
+				linewise: true
+			}
+			replacement: "GOOS linux"
+		},
+	]
 }
 -- content/dir/en.md --
 >---
@@ -59,8 +88,8 @@ content: dir: page: {
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
 >{{{end}}}
->{{{with _script "en" "cue version"}}}
->echo cue version
+>{{{with script "en" "cue version"}}}
+>cue version
 >{{{end}}}
 >{{{end}}}
 -- golden/content/dir/en.md.writeBack --
@@ -87,8 +116,8 @@ content: dir: page: {
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
 >{{{end}}}
->{{{with _script "en" "cue version"}}}
->echo cue version
+>{{{with script "en" "cue version"}}}
+>cue version
 >{{{end}}}
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
@@ -111,9 +140,22 @@ map: {
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAo=" }
 $ cue eval in.cue # test
 map: {
-    member1: 3
+    member3: 3
     member2: 4
 }
+```
+```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
+$ cue version
+cue version v0.7.0
+
+go version go1.21.1
+      -buildmode exe
+       -compiler gc
+       -trimpath true
+  DefaultGODEBUG panicnil=1
+     CGO_ENABLED 0
+          GOARCH amd64
+            GOOS linux
 ```
 {{< /step >}}
 -- golden/content/dir/gen_cache.cue --
@@ -124,25 +166,34 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "AAHarA6+L1Rn5OyFDH1tXGFWlXgwKv+QF1fNMQcCHjY="
-						"upload-some-json": "c/QPS+MMtu6P3wQUjRMX4dsnBoyoW50cBgbIviySSLw="
+						"upload-some-cue":  "6sIgD85tvVWnAz/m9bgsT9xpPP0L9K0Slu7l9jWt8S4="
+						"upload-some-json": "bqidj/PlHulWSfpmY92pYl/dcV6Ngb+TCYXUuf/r2rA="
 					}
 					multi_step: {
-						"O7BH7HSGPPRCM91FNN2T1QRE3HVSH5K0C05HN7LN9HO1LG8IT09G====": [{
+						"1NDKKD8TVFVRJSP03N4KG7Q6MIR0EKTK9I6HU3IVQ41K0QHUNP80====": [{
 							cmd:      "cue eval in.cue # test"
 							exitCode: 0
 							output: """
 									map: {
-									    member1: 3
+									    member3: 3
 									    member2: 4
 									}
 
 									"""
 						}, {
-							cmd:      "echo cue version"
+							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version
+									cue version v0.7.0
+
+									go version go1.21.1
+									      -buildmode exe
+									       -compiler gc
+									       -trimpath true
+									  DefaultGODEBUG panicnil=1
+									     CGO_ENABLED 0
+									          GOARCH amd64
+									            GOOS linux
 
 									"""
 						}]
