@@ -67,9 +67,12 @@ func (s *scriptNode) validate() {
 	}
 	s.debugf(s.debugScript, "parsed %q, gave %v statements", s.effectiveArchive.Comment, len(file.Stmts))
 	for _, stmt := range file.Stmts {
-		var cmdStmt commandStmt
-		// Capture whether this statement is negated or not
-		negated := stmt.Negated
+		cmdStmt := commandStmt{
+			stmt: stmt,
+
+			// Capture whether this statement is negated or not
+			negated: stmt.Negated,
+		}
 		// Set to not negated because we need to capture the exit code.
 		// Handling of the exit code and negated happens in the generated
 		// bash script
@@ -79,7 +82,12 @@ func (s *scriptNode) validate() {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
 		}
 		cmdStmt.Cmd = sb.String()
-		cmdStmt.negated = negated
+
+		// Revert the negated state for completeness given
+		// we set stmt as part of cmdStmt for sanitiser etc
+		// checks where it might matter
+		stmt.Negated = cmdStmt.negated
+
 		s.stmts = append(s.stmts, &cmdStmt)
 	}
 }
@@ -89,6 +97,7 @@ func (s *scriptNode) validate() {
 // also to capture a specific statement's output ready for rendering. See
 // (*scriptNode).validate() for more information.
 type commandStmt struct {
+	stmt        *syntax.Stmt
 	negated     bool
 	Cmd         string `json:"cmd"`
 	ExitCode    int    `json:"exitCode"`
