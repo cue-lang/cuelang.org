@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b72dac51_43aea68e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-11T07:26:40Z",
+      "side": 1,
+      "message": "FYI one reason I hadn\u0027t pulled the trigger yet is because I found a weird merge conflict yesterday when merging a stack one by one. I haven\u0027t tried to repro yet. I will explain later when we meet.",
+      "revId": "be6dedc17db2a37796ec36ad63153c326bac6dc1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
