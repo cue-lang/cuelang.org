@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2de3245_1108f52e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-11T13:17:00Z",
+      "side": 1,
+      "message": "The changes to Go here are slight enough that I\u0027m happy to +2 the change, despite my Go-review shortcomings. If a more Go- and CUE-Go aware review would feel appropriate, perhaps if the CUE lib/etc use is clever or subtle, please do procure one!",
+      "revId": "9cf5f2a7dcbec7b046692cdfa7830d000f46bea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
