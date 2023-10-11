@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dd45a05_b23e7a44",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-11T12:51:55Z",
+      "side": 1,
+      "message": "LGTM, but I\u0027m only +1\u0027ing because my Go reviewing is pretty superficial. Happy to +2 if that feels sufficient to you - just let me know.",
+      "revId": "976324db2109aac655059fdc54a2500a71f20526",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
