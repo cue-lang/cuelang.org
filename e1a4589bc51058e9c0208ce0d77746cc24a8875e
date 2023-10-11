@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a71dfeae_f4bb5a81",
+        "filename": "content/docs/howto/validate-yaml-using-cue/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-11T14:14:36Z",
+      "side": 1,
+      "message": "This file is entirely automatically generated, so it\u0027s contents, indenting etc, are largely uninteresting to us humans. Our `go generate` on CI ensures that this file is always current when it should be. There isn\u0027t anything untoward in this file, the indenting has changed... but that\u0027s not so interesting. We could make the field name more \"stable\" in terms of ascii character length, but that\u0027s not critical.",
+      "parentUuid": "f108339d_790ff3d9",
+      "revId": "e1a4589bc51058e9c0208ce0d77746cc24a8875e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4741e5d0_609b188a",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-10-11T13:05:00Z",
       "side": 1,
       "message": "Same question as above.",
+      "revId": "e1a4589bc51058e9c0208ce0d77746cc24a8875e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "861d7c8e_562fdb36",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-11T14:14:36Z",
+      "side": 1,
+      "message": "Same response.",
+      "parentUuid": "4741e5d0_609b188a",
       "revId": "e1a4589bc51058e9c0208ce0d77746cc24a8875e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
