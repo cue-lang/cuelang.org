@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9741b86_7a767329",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-11T13:00:42Z",
+      "side": 1,
+      "message": "Would the problems you alluded to, that discouraged the use of a hidden field in favour of this reservation of the `page` field, also occur with a definition such as `#page`?",
+      "revId": "d8671b245c96e950307135bc742697d81eac7be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
