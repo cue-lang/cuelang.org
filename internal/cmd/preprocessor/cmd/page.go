@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -67,6 +68,8 @@ type page struct {
 type pageConfig struct {
 	LeftDelim  string `json:"leftDelim"`
 	RightDelim string `json:"rightDelim"`
+
+	Sanitisers []sanitiser
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -119,17 +122,74 @@ func (p *page) loadConfig() {
 	// Eagerly read certain page config values, and set markers where we
 	// see we have config values that will later be read/parsed in a lazy
 	// fashion.
-	pageConfig := p.executionContext.config.LookupPath(p.path)
+	pageConfigValue := p.executionContext.config.LookupPath(p.path)
 
-	if !pageConfig.Exists() {
+	if !pageConfigValue.Exists() {
 		p.errorf("%v: found no config at path %v", p, p.path)
 		return
 	}
 
-	if err := pageConfig.Decode(&p.config); err != nil {
+	// Because sanitiser is an interface, we need to load into
+	// a []json.RawMessage for the sanitisers themselves
+	type shim struct {
+		*pageConfig
+
+		Sanitisers []json.RawMessage `json:"sanitisers"`
+	}
+
+	s := shim{
+		pageConfig: &p.config,
+	}
+
+	if err := pageConfigValue.Decode(&s); err != nil {
 		p.errorf("%v: failed to load page config: %v", p, err)
 		return
 	}
+
+	for i, s := range s.Sanitisers {
+		realS, err := p.parseSanitiser(s)
+		if err != nil {
+			p.errorf("%v: failed to parse sanitiser at config index %d: %v", p, i, err)
+			return
+		}
+		p.config.Sanitisers = append(p.config.Sanitisers, realS)
+	}
+}
+
+// parseSanitiser takes a CUE config value that represents a sanitiser
+// and returns a Go value that represents that sanitiser.
+func (p *page) parseSanitiser(m json.RawMessage) (sanitiser, error) {
+	kind, err := parseKind(m)
+	if err != nil {
+		return nil, err
+	}
+
+	switch kind {
+	case "patternSanitiser":
+		var c patternSanitiser
+		if err := json.Unmarshal(m, &c); err != nil {
+			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
+		}
+		if err := c.init(); err != nil {
+			return nil, fmt.Errorf("failed to init %s: %v", kind, err)
+		}
+		return &c, nil
+	default:
+		return nil, fmt.Errorf("unknown sanitiser: %q", kind)
+	}
+}
+
+func parseKind(m json.RawMessage) (string, error) {
+	type discriminator struct {
+		Kind string `json:"kind"`
+	}
+
+	var d discriminator
+	if err := json.Unmarshal(m, &d); err != nil {
+		return "", fmt.Errorf("failed to unmarshal discriminator from config: %v", err)
+	}
+
+	return d.Kind, nil
 }
 
 // process processes a page root. It copies all relevant non-root file content
