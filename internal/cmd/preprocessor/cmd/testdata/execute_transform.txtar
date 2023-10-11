@@ -36,7 +36,9 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.pag
 
 -- hugo/.keep --
 -- golden/content/dir/.keep --
--- content/dir/site.cue --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
 package site
 
 content: dir: page: {
@@ -120,5 +122,6 @@ Some text after
 -- structure.golden --
 content/dir/en.md
 content/dir/gen_cache.cue
-content/dir/site.cue
+content/dir/page.cue
+content/site.cue
 hugo/content/en/dir/index.md
