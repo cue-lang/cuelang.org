@@ -1,7 +1,25 @@
 package preprocessor
 
 #site: {
+	#sanitiser: #commandSanitiser & {
+		kind!: string // the discriminator field
+	}
+
+	// Instances of #commandSanitiser define replacements
+	// that should be applied to commands that match.
+	#commandSanitiser: {
+		kind: "commandSanitiser"
+
+		// Implement a oneOf
+		close({
+			command?: [...string]
+		}) | close({
+			commandPrefix?: [...string]
+		})
+	}
+
 	#page: {
+		sanitisers?: [...#sanitiser]
 		cache?: {
 			upload?: [string]:     string
 			code?: [string]:       string
