@@ -18,7 +18,7 @@ toc_hide: true
 This [Commented CUE](/search/?q=tag:"commented%20cue") demonstrates howto
 constrain a field to contain a string representations of integer values.
 
-{{{with sidebyside "en" "example"}}}
+{{{with code "en" "example"}}}
 ! exec cue vet .:example data.yml
 cmp stderr out.err
 -- example.cue --

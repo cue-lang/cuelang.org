@@ -117,7 +117,7 @@ func (n *nodeWrapper) nodeType() string {
 
 // textNode represents some text in an index page. It wraps a regular
 // template.Node in order that the contained text can be munged in the case of
-// a text node appearing before/after a sidebyside.
+// a text node appearing before/after a code node.
 type textNode struct {
 	*nodeWrapper
 	text          []byte

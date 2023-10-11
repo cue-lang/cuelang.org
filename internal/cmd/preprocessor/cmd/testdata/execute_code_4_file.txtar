@@ -1,4 +1,4 @@
-# Ensure that sidebyside with 4 files renders as expected
+# Ensure that code with 4 files renders as expected
 
 unquote content/dir/en.md
 
@@ -20,11 +20,11 @@ cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
 # Re-run the preprocessor and ensure we have a cache hit
 exec preprocessor execute --debug=all
-stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for content.dir.cache.sidebyside."json-superset"; not running'
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for content.dir.cache.code."json-superset"; not running'
 
 # Re-run the preprocessor again with --skipcache to ensure we re-run a cache hit
 exec preprocessor execute --debug=all --skipcache
-stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.cache.sidebyside."json-superset"; was a hit'
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.cache.code."json-superset"; was a hit'
 
 -- hugo/.keep --
 -- golden/content/dir/.keep --
@@ -37,7 +37,7 @@ package site
 >
 >Some text before
 >
->{{{with sidebyside "en" "json-superset"}}}
+>{{{with code "en" "json-superset"}}}
 >#location top-left top-right top-right bottom
 >exec cue export a.cue b.json c.json
 >cmp stdout stdout.golden
