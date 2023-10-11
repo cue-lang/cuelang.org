@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f108339d_790ff3d9",
+        "filename": "content/docs/howto/validate-yaml-using-cue/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-11T13:05:00Z",
+      "side": 1,
+      "message": "I recognise that this field\u0027s content is effectively unchanged from before this change, but is this (a base64(?) field name with a very verbose value) intended?",
+      "revId": "e1a4589bc51058e9c0208ce0d77746cc24a8875e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4741e5d0_609b188a",
+        "filename": "content/docs/tutorial/validating-simple-yaml-files/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-11T13:05:00Z",
+      "side": 1,
+      "message": "Same question as above.",
+      "revId": "e1a4589bc51058e9c0208ce0d77746cc24a8875e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
