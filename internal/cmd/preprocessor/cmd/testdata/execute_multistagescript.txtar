@@ -119,42 +119,37 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "OdM/4IqRF3s9DjpPXujPcoAVawx+RgU5ZXgRIUjrrdQ="
-						"upload-some-json": "b4wyhBnv8ylU4cB0T/Cj4wIRPe3no4Wxnurb7MKKn4A="
+						"upload-some-cue":  "FjqbcNesly8/cBp+deuzUqVtCL1mcBFzC/OzbUMAQBs="
+						"upload-some-json": "m6PE8kJpaxzd7D2+DVPI53Fc54zNTfD+kpq0I9aNQLQ="
 					}
 					multi_step: {
-						"TI0IFBL5CL1NEEMH62E21TDIP8SQ2TSEUT7D4812Q5E2D2SI0SBG====": '''
-								$ cat <<EOD > in.json
-								{
-								"x": 5
-								}
+						"KLOT8LJ33VITQM2RRE20BJICGPCIC4UV1CPSSUE5RJJLAJC2KT00====": [{
+							cmd:      "cue eval in.cue # test"
+							exitCode: 0
+							output: """
+									map: {
+									    member1: 3
+									    member2: 4
+									}
 
-								EOD
-								$ cue eval in.cue # test
-								daa46c69f182300392d3e025b5379272aea3ef34b0bcbd436133c12029b066fe
-								map: {
-								    member1: 3
-								    member2: 4
-								}
-								daa46c69f182300392d3e025b5379272aea3ef34b0bcbd436133c12029b066fe
-								0
-								$ cue version
-								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
-								cue version v0.7.0
+									"""
+						}, {
+							cmd:      "cue version"
+							exitCode: 0
+							output: """
+									cue version v0.7.0
 
-								go version go1.21.1
-								      -buildmode exe
-								       -compiler gc
-								       -trimpath true
-								  DefaultGODEBUG panicnil=1
-								     CGO_ENABLED 0
-								          GOARCH arm64
-								            GOOS linux
-								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
-								0
+									go version go1.21.1
+									      -buildmode exe
+									       -compiler gc
+									       -trimpath true
+									  DefaultGODEBUG panicnil=1
+									     CGO_ENABLED 0
+									          GOARCH arm64
+									            GOOS linux
 
-
-								'''
+									"""
+						}]
 					}
 				}
 			}
