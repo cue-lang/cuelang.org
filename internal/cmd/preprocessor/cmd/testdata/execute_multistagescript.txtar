@@ -152,44 +152,24 @@ package site
 						"in-subdir":        "VGUXHKXCtP+/aLbwSQ4vEecuCdsRklgwqgWz+tGP7BU="
 					}
 					multi_step: {
-						"RO954HFMDABJL2USMPL7P01OB0OUMB3H9H20UIOJA9B8K52KPOV0====": '''
-								$ cat <<EOD > in.cue
-								// A doc comment
-								map: {
-								\tmember1: 3 // a line comment
-								\tmember2: 4
-								}
+						"SI0QCJ4ORQ8JOHLHN849VICT3I8JCO96UO9FJO406H1CE5VSJB3G====": [{
+							cmd:      "cue eval in.cue # test"
+							exitCode: 0
+							output: """
+									map: {
+									    member1: 3
+									    member2: 4
+									}
 
-								EOD
-								$ cat <<EOD > in.json
-								{
-								"x": 5
-								}
+									"""
+						}, {
+							cmd:      "echo cue version"
+							exitCode: 0
+							output: """
+									cue version
 
-								EOD
-								$ mkdir -p 'in/sub/dir'
-								$ cat <<EOD > in/sub/dir/in.json
-								{
-								    "x": 5
-								}
-
-								EOD
-								$ cue eval in.cue # test
-								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
-								map: {
-								    member1: 3
-								    member2: 4
-								}
-								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
-								0
-								$ echo cue version
-								f0ead12d19524728472ea54c1f32b099608ef25ef5166dd605bca4cec773a743
-								cue version
-								f0ead12d19524728472ea54c1f32b099608ef25ef5166dd605bca4cec773a743
-								0
-
-
-								'''
+									"""
+						}]
 					}
 				}
 			}
