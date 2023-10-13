@@ -5,7 +5,11 @@ package preprocessor
 		cache?: {
 			upload?: [string]:     string
 			code?: [string]:       string
-			multi_step?: [string]: bytes
+			multi_step?: [string]: bytes | [...{
+				cmd:      string
+				output:   string
+				exitCode: int
+			}]
 		}
 	}
 

@@ -78,7 +78,7 @@ func (s *scriptNode) validate() {
 		if err := s.rf.shellPrinter.Print(&sb, stmt); err != nil {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
 		}
-		cmdStmt.cmdStr = sb.String()
+		cmdStmt.Cmd = sb.String()
 		cmdStmt.negated = negated
 		s.stmts = append(s.stmts, &cmdStmt)
 	}
@@ -90,9 +90,9 @@ func (s *scriptNode) validate() {
 // (*scriptNode).validate() for more information.
 type commandStmt struct {
 	negated     bool
-	cmdStr      string
-	exitCode    int
-	output      string
+	Cmd         string `json:"cmd"`
+	ExitCode    int    `json:"exitCode"`
+	Output      string `json:"output"`
 	outputFence string
 }
 
@@ -106,15 +106,15 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	var copyCmdStr strings.Builder
 	enc := base64.NewEncoder(base64.StdEncoding, &copyCmdStr)
 	for _, stmt := range s.stmts {
-		fmt.Fprintf(enc, "%s\n", stmt.cmdStr)
+		fmt.Fprintf(enc, "%s\n", stmt.Cmd)
 	}
 	enc.Close()
 
 	p("```text { title=%q codeToCopy=%q", "TERMINAL", copyCmdStr.String())
 	p(" }\n")
 	for _, stmt := range s.stmts {
-		p("$ %s\n", stmt.cmdStr)
-		p("%s", stmt.output)
+		p("$ %s\n", stmt.Cmd)
+		p("%s", stmt.Output)
 	}
 	p("```")
 	return nil
