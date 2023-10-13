@@ -119,33 +119,28 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "OdM/4IqRF3s9DjpPXujPcoAVawx+RgU5ZXgRIUjrrdQ="
-						"upload-some-json": "b4wyhBnv8ylU4cB0T/Cj4wIRPe3no4Wxnurb7MKKn4A="
+						"upload-some-cue":  "FjqbcNesly8/cBp+deuzUqVtCL1mcBFzC/OzbUMAQBs="
+						"upload-some-json": "m6PE8kJpaxzd7D2+DVPI53Fc54zNTfD+kpq0I9aNQLQ="
 					}
 					multi_step: {
-						"C091Q3TDKUGC9SGGTB2S48VEAV7RVRU8DRDLOHOTAL0MTOT1AAEG====": '''
-								$ cat <<EOD > in.json
-								{
-								"x": 5
-								}
+						"AHHOS7PJ2UM9O5RAVLQKMLBEGNL4S4PMMNG3DRI2MGPHF2EEVC80====": [{
+							cmd:      "cue eval in.cue # test"
+							exitCode: 0
+							output: """
+									map: {
+									    member1: 3
+									    member2: 4
+									}
 
-								EOD
-								$ cue eval in.cue # test
-								daa46c69f182300392d3e025b5379272aea3ef34b0bcbd436133c12029b066fe
-								map: {
-								    member1: 3
-								    member2: 4
-								}
-								daa46c69f182300392d3e025b5379272aea3ef34b0bcbd436133c12029b066fe
-								0
-								$ echo cue version
-								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
-								cue version
-								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
-								0
+									"""
+						}, {
+							cmd:      "echo cue version"
+							exitCode: 0
+							output: """
+									cue version
 
-
-								'''
+									"""
+						}]
 					}
 				}
 			}
