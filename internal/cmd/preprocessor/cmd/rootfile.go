@@ -389,6 +389,8 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	// avoid user-declared variables
 	const exitCodeVar = "____x"
 
+	var scriptSteps []*commandStmt
+
 	rf.walkBody(func(n node) error {
 		switch n := n.(type) {
 		case *scriptNode:
@@ -400,11 +402,11 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 				// echo the command we will run
 				cmdEchoFence := rf.getFence()
 				pf("cat <<'%s'\n", cmdEchoFence)
-				pf("$ %s\n", stmt.cmdStr)
+				pf("$ %s\n", stmt.Cmd)
 				pf("%s\n", cmdEchoFence)
 				stmt.outputFence = rf.getFence()
 				pf("echo %s\n", stmt.outputFence)
-				pf("%s\n", stmt.cmdStr)
+				pf("%s\n", stmt.Cmd)
 				pf("%s=$?\n", exitCodeVar)
 				pf("echo %s\n", stmt.outputFence)
 				if stmt.negated {
@@ -416,6 +418,8 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 				pf("exit 1\n")
 				pf("fi\n")
 				pf("echo $%s\n", exitCodeVar)
+
+				scriptSteps = append(scriptSteps, stmt)
 			}
 		case *uploadNode:
 			didWork = true
@@ -434,7 +438,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 			pf("%s\n", f.Data)
 			pf("%s\n", fence)
 			pf("%s=$?\n", exitCodeVar)
-			pf("if [ $%s -ne 0 ]\n", exitCodeVar)
+			pf("if [[ $%s != 0 ]]\n", exitCodeVar)
 			pf("then\n")
 			pf("exit 1\n")
 			pf("fi\n")
@@ -454,8 +458,9 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	pf("echo")
 
 	mss := multiStepScript{
-		bashScript: sb.String(),
-		rootFile:   rf,
+		bashScript:  sb.String(),
+		rootFile:    rf,
+		scriptSteps: scriptSteps,
 		bufferedErrorContext: &errorContextBuffer{
 			executionContext: rf.executionContext,
 		},
@@ -469,8 +474,8 @@ func (rf *rootFile) getFence() string {
 }
 
 type multiStepScript struct {
-	bashScript string
-	out        []byte
+	bashScript  string
+	scriptSteps []*commandStmt
 	*rootFile
 	bufferedErrorContext
 }
@@ -587,8 +592,14 @@ func (m *multiStepScript) run() (runerr error) {
 	m.debugf(m.debugCache, "%v: config value: %v\n", m, m.config)
 
 	cachePath := m.cachePath()
-	cachedOut, err := m.config.LookupPath(cachePath).Bytes()
-	cacheMiss := err != nil
+	cachedOut := m.config.LookupPath(cachePath)
+	cacheMiss := !cachedOut.Exists()
+	var cachedOutStmts []*commandStmt
+	if !cacheMiss {
+		if err := cachedOut.Decode(&cachedOutStmts); err != nil {
+			m.fatalf("%v: failed to decoded cached steps: %v", m, err)
+		}
+	}
 
 	var out []byte
 	if cacheMiss || m.skipCache {
@@ -616,46 +627,43 @@ func (m *multiStepScript) run() (runerr error) {
 		}
 
 		// Because we are running in -t mode, replace all \r\n with \n
-		out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
-	} else {
-		m.debugf(m.debugCache, "%v: cache hit for multi-step script; not running", m)
-		out = cachedOut
-	}
+		out := bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
+		m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
 
-	// Assign out regardless
-	m.out = out
-	m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
-
-	// Now write the output back to the original statements
-
-	walk := out
-	advanceWalk := func(end []byte) string {
-		before, after, found := bytes.Cut(walk, end)
-		if !found {
-			m.fatalf("%v: failed to find %q before end of output:\n%q\nOutput was: %q\n", m, end, walk, out)
+		walk := out
+		advanceWalk := func(end []byte) string {
+			before, after, found := bytes.Cut(walk, end)
+			if !found {
+				m.fatalf("%v: failed to find %q before end of output:\n%q\nOutput was: %q\n", m, end, walk, out)
+			}
+			walk = after
+			return string(before)
 		}
-		walk = after
-		return string(before)
-	}
 
-	m.walkBody(func(n node) error {
-		step, ok := n.(*scriptNode)
-		if !ok {
-			return nil
-		}
-		for _, stmt := range step.stmts {
-			// TODO: tidy this up
+		for _, stmt := range m.scriptSteps {
 			fence := []byte(stmt.outputFence + "\n")
 			advanceWalk(fence) // Ignore everything before the fence
-			stmt.output = advanceWalk(fence)
+
+			// TODO: if we have !cacheMiss, then we need to use comparitors to assing
+			// back to the original statements if there is a fuzzy match.
+
+			stmt.Output = advanceWalk(fence)
 			exitCodeStr := advanceWalk([]byte("\n"))
-			stmt.exitCode, err = strconv.Atoi(exitCodeStr)
+			stmt.ExitCode, err = strconv.Atoi(exitCodeStr)
 			if err != nil {
 				m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
 			}
 		}
-		return nil
-	})
+	} else {
+		m.debugf(m.debugCache, "%v: cache hit for multi-step script; not running", m)
+
+		// We need to assign from the cache the output values to the stmts
+		for i, stmt := range m.scriptSteps {
+			cstmt := cachedOutStmts[i]
+			stmt.Output = cstmt.Output
+			stmt.ExitCode = cstmt.ExitCode
+		}
+	}
 
 	return nil
 }
@@ -705,7 +713,7 @@ func (rf *rootFile) writePageCache() error {
 	}
 	if rf.script != nil {
 		p := rf.script.cachePath()
-		v = v.FillPath(p, rf.script.out)
+		v = v.FillPath(p, rf.script.scriptSteps)
 		didWork = true
 	}
 	if !didWork {
