@@ -46,8 +46,8 @@ var testTable = []struct {
 			[ID=_]: x: y: ID
 			"foo": {}
 		`,
+		"{\n    \"foo\": {\n        \"x\": {\n            \"y\": \"foo\"\n        }\n    }\n}\n",
 		"",
-		"failed to encode: foo.x.y: incomplete value string",
 	},
 }
 

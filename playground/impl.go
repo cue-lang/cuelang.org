@@ -87,14 +87,12 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	if err := v.Err(); err != nil {
 		return "", fmt.Errorf("failed to build: %w", err)
 	}
-	concrete := true
 	switch out {
-	case outputCUE:
-		concrete = false
-	case outputJSON, outputYaml:
+	case outputCUE, outputJSON, outputYaml:
 	default:
 		return "", fmt.Errorf("unknown ouput type: %v", out)
 	}
+	concrete := fn == functionExport
 	if err := v.Validate(cue.Concrete(concrete)); err != nil {
 		return "", err
 	}
@@ -118,13 +116,11 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		cue.Attributes(true),
 		cue.Optional(true),
 		cue.Definitions(true),
+		cue.Concrete(concrete),
 	}
 	var opts []format.Option
 	switch out {
 	case outputCUE:
-		if fn != functionDef {
-			syn = append(syn, cue.Concrete(true))
-		}
 		opts = append(opts, format.TabIndent(true))
 	case outputJSON, outputYaml:
 		opts = append(opts,
