@@ -33,7 +33,7 @@ var testTable = []struct {
 
 	// Incomplete values.
 	{inputCUE, functionExport, outputCUE, "foo: int", "foo: int\n", ""},
-	{inputCUE, functionExport, outputJSON, "foo: int", "", "foo: incomplete value int"},
+	{inputCUE, functionExport, outputJSON, "foo: int", "", "failed to encode: foo: incomplete value int"},
 
 	// Selecting defaults.
 	{inputCUE, functionExport, outputCUE, "foo: int | *3", "foo: 3\n", ""},
@@ -55,8 +55,8 @@ var testTable = []struct {
 			[ID=_]: x: y: ID
 			"foo": {}
 		`,
+		"{\n    \"foo\": {\n        \"x\": {\n            \"y\": \"foo\"\n        }\n    }\n}\n",
 		"",
-		"failed to encode: foo.x.y: incomplete value string",
 	},
 
 	// Cases which one could argue should be errors, beyond just being incomplete.
