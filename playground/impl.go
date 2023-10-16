@@ -88,15 +88,24 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	if err := v.Err(); err != nil {
 		return "", fmt.Errorf("failed to build: %w", err)
 	}
-	concrete := true
 	switch out {
-	case outputCUE:
-		concrete = false
-	case outputJSON, outputYaml:
+	case outputCUE, outputJSON, outputYaml:
 	default:
 		return "", fmt.Errorf("unknown ouput type: %v", out)
 	}
-	if err := v.Validate(cue.Concrete(concrete)); err != nil {
+	cueOpts := []cue.Option{
+		cue.Docs(true),
+		cue.Attributes(true),
+		cue.Optional(true),
+		cue.Definitions(true),
+	}
+	switch fn {
+	case functionEval:
+		cueOpts = append(cueOpts, cue.Final())
+	case functionExport:
+		cueOpts = append(cueOpts, cue.Final(), cue.Concrete(true))
+	}
+	if err := v.Validate(cueOpts...); err != nil {
 		return "", err
 	}
 	f, err := filetypes.ParseFile(string(out)+":-", filetypes.Export)
@@ -114,27 +123,18 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		return "", fmt.Errorf("failed to build encoder: %v", err)
 	}
 
-	syn := []cue.Option{
-		cue.Docs(true),
-		cue.Attributes(true),
-		cue.Optional(true),
-		cue.Definitions(true),
-	}
-	var opts []format.Option
+	var formatOpts []format.Option
 	switch out {
 	case outputCUE:
-		if fn != functionDef {
-			syn = append(syn, cue.Concrete(true))
-		}
-		opts = append(opts, format.TabIndent(true))
+		formatOpts = append(formatOpts, format.TabIndent(true))
 	case outputJSON, outputYaml:
-		opts = append(opts,
+		formatOpts = append(formatOpts,
 			format.TabIndent(false),
 			format.UseSpaces(2),
 		)
 	}
-	encConf.Format = opts
-	synF := getSyntax(v, syn)
+	encConf.Format = formatOpts
+	synF := getSyntax(v, cueOpts)
 	if err := e.EncodeFile(synF); err != nil {
 		return "", fmt.Errorf("failed to encode: %w", err)
 	}
