@@ -124,11 +124,11 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "+9SY5SBexr2xQrlRWTSwujYBkWyk05HO7NZvmgu6Haw="
-						"upload-some-json": "2ZMCvU3RnzDKAMY2lugCXtdzjGrU7IfyPrtxZbJleSg="
+						"upload-some-cue":  "AAHarA6+L1Rn5OyFDH1tXGFWlXgwKv+QF1fNMQcCHjY="
+						"upload-some-json": "c/QPS+MMtu6P3wQUjRMX4dsnBoyoW50cBgbIviySSLw="
 					}
 					multi_step: {
-						"0FRN1EA4KR9P4AV3B8QEJQHCN90G136K1P678QE5SGC89KNJ9NKG====": [{
+						"O7BH7HSGPPRCM91FNN2T1QRE3HVSH5K0C05HN7LN9HO1LG8IT09G====": [{
 							cmd:      "cue eval in.cue # test"
 							exitCode: 0
 							output: """
