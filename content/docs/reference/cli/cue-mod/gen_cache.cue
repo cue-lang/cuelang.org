@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"MGE5RRPSPU955FQPPACN23SSKEIVQUPCT3G2VKH9DE7FB2JCT030====": [{
+									"9FUEK9K040M5OGGI47GNIVPJBEF7UM751G9308RG76OBU97FBTJ0====": [{
 										cmd:      "cue help mod"
 										exitCode: 0
 										output: """
