@@ -34,16 +34,19 @@ var testTable = []struct {
 
 	// Incomplete values.
 	{inputCUE, functionDef, outputCUE, "foo: int", "foo: int\n", ""},
+	{inputCUE, functionEval, outputCUE, "foo: int", "foo: int\n", ""},
 	{inputCUE, functionExport, outputCUE, "foo: int", "foo: int\n", ""},
 	{inputCUE, functionExport, outputJSON, "foo: int", "", "foo: incomplete value int"},
 
 	// Selecting defaults; def does less.
 	{inputCUE, functionDef, outputCUE, "foo: int | *3", "foo: int | *3\n", ""},
+	{inputCUE, functionEval, outputCUE, "foo: int | *3", "foo: 3\n", ""},
 	{inputCUE, functionExport, outputCUE, "foo: int | *3", "foo: 3\n", ""},
 	{inputCUE, functionExport, outputJSON, "foo: int | *3", "{\n    \"foo\": 3\n}\n", ""},
 
 	// Simplifying values; def does less.
 	{inputCUE, functionDef, outputCUE, "foo: [1, 2, 3][1]", "foo: [1, 2, 3][1]\n", ""},
+	{inputCUE, functionEval, outputCUE, "foo: [1, 2, 3][1]", "foo: 2\n", ""},
 	{inputCUE, functionExport, outputCUE, "foo: [1, 2, 3][1]", "foo: 2\n", ""},
 	{inputCUE, functionExport, outputJSON, "foo: [1, 2, 3][1]", "{\n    \"foo\": 2\n}\n", ""},
 
@@ -69,7 +72,7 @@ var testTable = []struct {
 
 	// Cases which one could argue should be errors, beyond just being incomplete.
 	{
-		inputCUE, functionExport, outputCUE,
+		inputCUE, functionEval, outputCUE,
 		`
 			x: string
 			y: (x): string
@@ -78,7 +81,7 @@ var testTable = []struct {
 		"",
 	},
 	{
-		inputCUE, functionExport, outputCUE,
+		inputCUE, functionEval, outputCUE,
 		`
 			x: x2: "foo"
 			y: x.missing
