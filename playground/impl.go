@@ -36,6 +36,7 @@ type function string
 
 const (
 	functionExport function = "export"
+	functionEval   function = "eval"
 	functionDef    function = "def"
 )
 
@@ -58,7 +59,7 @@ const (
 func handleCUECompile(in input, fn function, out output, inputVal string) (string, error) {
 	// TODO implement more functions
 	switch fn {
-	case functionExport, functionDef:
+	case functionExport, functionEval, functionDef:
 	default:
 		return "", fmt.Errorf("function %q is not implemented", fn)
 	}
