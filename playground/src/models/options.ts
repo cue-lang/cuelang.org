@@ -16,6 +16,7 @@ export const optionJSON: Option = { value: 'json', name: 'JSON', };
 export const optionYAML: Option = { value: 'yaml', name: 'YAML', };
 export const optionTerminal: Option = { value: 'terminal', name: 'Terminal', };
 export const optionExport: Option = { value: 'export', name: 'export', };
+export const optionEval: Option = { value: 'eval', name: 'eval', };
 export const optionDef: Option = { value: 'def', name: 'def', };
 
 export const allOptions: Option[] = [
@@ -24,5 +25,6 @@ export const allOptions: Option[] = [
     optionYAML,
     optionTerminal,
     optionExport,
+    optionEval,
     optionDef,
 ]
