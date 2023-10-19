@@ -123,6 +123,8 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		return "", fmt.Errorf("failed to build encoder: %v", err)
 	}
 
+	// TODO(mvdan): Note that formatOpts appear to do nothing at all.
+	// For instance, the tests indent JSON with four spaces instead of two.
 	var formatOpts []format.Option
 	switch out {
 	case outputCUE:
