@@ -32,17 +32,17 @@ export const setupWorkspaceConfig = (workspace: Workspace, params: hashParams): 
      * Validate if selected options work together: if not change them:
      */
 
-    // if function enabled and function is def but input is not cue: change func to export
+    // if function isn't export and input is not cue: change func to export
     const inputTabInput = workspace.config.inputTabs.find(input => input.type === OPTION_TYPE.INPUT);
-    if (workspace.config.func.enabled && workspace.config.func.selected.value === 'def' &&
+    if (workspace.config.func.enabled && workspace.config.func.selected.value !== 'export' &&
         inputTabInput?.selected?.value !== 'cue') {
         const exportOption = workspace.config.func.options.find(option => option.value === 'export');
         const defaultFuncOption = workspace.config.func.selected ?? workspace.config.func.options[0];
         workspace.config.func.selected = exportOption ?? defaultFuncOption;
     }
 
-    // If function is def but output is not cue : set output to cue
-    if (workspace.config.func.enabled && workspace.config.func.selected.value === 'def' &&
+    // If function isn't export and output is not cue: set output to cue
+    if (workspace.config.func.enabled && workspace.config.func.selected.value !== 'export' &&
         workspace.config.outputTab.selected.value !== 'cue') {
         const cueOption = workspace.config.outputTab.options.find(option => option.value === 'cue');
         const defaultOutputOption = workspace.config.outputTab.selected ?? workspace.config.outputTab.options[0];

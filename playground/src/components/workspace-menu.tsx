@@ -25,7 +25,7 @@ export class WorkspaceMenu extends React.Component<WorkspaceMenuProps> {
         const activeInput = this.props.activeWorkspace.config.inputTabs.find(tab => tab.type === OPTION_TYPE.INPUT)?.selected?.value;
         const funcConfig = this.props.activeWorkspace.config.func;
         return funcConfig.enabled && activeInput ? funcConfig.options.filter((option) => {
-            return !(option.value === 'def' && activeInput !== 'cue');
+            return !(option.value !== 'export' && activeInput !== 'cue');
         }) : [];
     }
 
@@ -115,7 +115,7 @@ export class WorkspaceMenu extends React.Component<WorkspaceMenuProps> {
                                     cssClass="cue-ws-menu__dropdown"
                                     groupId={ outputTab.type }
                                     readonly={ outputTab.optionsReadonly }
-                                    disabled={ funcOption.enabled && funcOption.selected.value === 'def' }
+                                    disabled={ funcOption.enabled && funcOption.selected.value !== 'export' }
                                     activeItem={ outputTab.selected }
                                     items={ outputTab.options }
                                     onDropdownSelect={ this.props.onDropdownSelect }

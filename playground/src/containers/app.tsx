@@ -287,7 +287,7 @@ export class App extends React.Component<AppProps, AppState>
                                 <Tabs>
                                     <Tab
                                         activeItem={ outputTab.selected }
-                                        disabled={ funcTab.enabled && funcTab.selected.value === 'def' }
+                                        disabled={ funcTab.enabled && funcTab.selected.value !== 'export' }
                                         groupId={ outputTab.type }
                                         items={ outputTab.options }
                                         readonly={ outputTab.optionsReadonly }
