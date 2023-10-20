@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8fdc4b4_902ca5a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-20T10:48:07Z",
+      "side": 1,
+      "message": "LGTM assuming it works in the preview :)",
+      "revId": "81208267211d59e213017b9cde7dc50f2bcc7458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
