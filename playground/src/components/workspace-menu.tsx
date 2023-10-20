@@ -114,8 +114,7 @@ export class WorkspaceMenu extends React.Component<WorkspaceMenuProps> {
                                 { <Dropdown
                                     cssClass="cue-ws-menu__dropdown"
                                     groupId={ outputTab.type }
-                                    readonly={ outputTab.optionsReadonly }
-                                    disabled={ funcOption.enabled && funcOption.selected.value !== 'export' }
+                                    readonly={ outputTab.optionsReadonly || (funcOption.enabled && funcOption.selected.value !== 'export') }
                                     activeItem={ outputTab.selected }
                                     items={ outputTab.options }
                                     onDropdownSelect={ this.props.onDropdownSelect }

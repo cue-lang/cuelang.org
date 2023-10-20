@@ -287,10 +287,9 @@ export class App extends React.Component<AppProps, AppState>
                                 <Tabs>
                                     <Tab
                                         activeItem={ outputTab.selected }
-                                        disabled={ funcTab.enabled && funcTab.selected.value !== 'export' }
                                         groupId={ outputTab.type }
                                         items={ outputTab.options }
-                                        readonly={ outputTab.optionsReadonly }
+                                        readonly={ outputTab.optionsReadonly || (funcTab.enabled && funcTab.selected.value !== 'export') }
                                         onDropdownSelect={ this.handleDropdownChange.bind(this) }
                                         name={ outputTab.title }
                                         type="output"
