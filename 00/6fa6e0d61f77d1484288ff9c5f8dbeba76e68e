@@ -1,0 +1,8 @@
+Code-Review+2: Paul Jolly <paul@myitcv.io>
+TryBot-Result+1: CUEcueckoo <cueckoo@cuelang.org>
+Submitted-by: Daniel Martí <mvdan@mvdan.cc>
+Submitted-at: Fri, 20 Oct 2023 10:50:49 +0000
+Reviewed-on: https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1170968
+Comments-Total: 1
+Project: cue-lang/cuelang.org
+Branch: refs/heads/alpha
