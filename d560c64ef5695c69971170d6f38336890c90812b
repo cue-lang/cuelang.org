@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e4bd77c_2b351f90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-22T04:45:07Z",
+      "side": 1,
+      "message": "Noting that the preview here links to commit d9c6dff64b4c729a1c64e5e102b831c0afb6c902. This is actually correct, by virtue of a vagary in the way we dispatch CL-based trybots.",
+      "revId": "d560c64ef5695c69971170d6f38336890c90812b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
