@@ -24,6 +24,9 @@ then
 	export PREPROCESSOR_NOWRITECACHE="true"
 fi
 
+# Write current commit revision to hugo data file
+bash _scripts/gitWriteHash.bash
+
 GOBIN=$PWD/.gobin go install -trimpath -buildvcs=false ./internal/cmd/preprocessor
 
 exec $PWD/.gobin/preprocessor "$@"
