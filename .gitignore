@@ -15,6 +15,7 @@ node_modules
 /hugo/.hugo_build.lock
 /hugo/static/playground/
 /hugo/.env
+/hugo/data/Repository.json
 
 # Well-known location for go binaries
 /.gobin

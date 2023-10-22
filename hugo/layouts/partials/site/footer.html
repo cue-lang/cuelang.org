@@ -1,5 +1,5 @@
 {{ $baseUrl := urls.Parse $.Site.Params.Baseurl }}
-{{ $versionCommit := print $.Site.Params.github_repo "/commit/" .GitInfo.Hash }}
+{{ $versionCommit := print $.Site.Params.github_repo "/commit/" .Site.Data.Repository.Revision }}
 {{ $issueBody := (print
     "### What page were you looking at?\n\n"
     .Permalink "\n\n"
