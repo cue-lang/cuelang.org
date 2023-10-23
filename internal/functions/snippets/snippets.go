@@ -35,47 +35,53 @@ type Function struct {
 
 // ServeHTTP is the implementation of the snippets serverless function.
 func (fn Function) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
 	if fn.DevelopmentMode {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 	}
 	f := func(format string, args ...interface{}) {
 		fmt.Fprintf(w, format, args...)
 	}
-	client := &http.Client{}
-	if r.Method == "POST" {
+	switch r.Method {
+	case "POST":
 		// Share
 		url := "https://play.golang.org/share"
-		req, err := http.NewRequest("POST", url, nil)
+		req, err := http.NewRequestWithContext(ctx, "POST", url, r.Body)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			f("Failed to create onwards GET URL: %v", err)
 			return
 		}
 		req.Header.Add("User-Agent", userAgent)
-		req.Body = r.Body
-		resp, err := client.Do(req)
+		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			f("Failed in onward request: %v", err)
 			return
 		}
+		defer resp.Body.Close()
+		w.WriteHeader(resp.StatusCode)
 		io.Copy(w, resp.Body)
-	} else {
+	case "GET":
 		// Retrieve via the parameter id
-		url := fmt.Sprintf("https://play.golang.org/p/%v.go", r.FormValue("id"))
-		req, err := http.NewRequest("GET", url, nil)
+		url := fmt.Sprintf("https://play.golang.org/p/%s.go", r.FormValue("id"))
+		req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			f("Failed to create onwards GET URL: %v", err)
 			return
 		}
 		req.Header.Add("User-Agent", userAgent)
-		resp, err := client.Do(req)
+		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			f("Failed in onward request: %v", err)
 			return
 		}
+		defer resp.Body.Close()
+		w.WriteHeader(resp.StatusCode)
 		io.Copy(w, resp.Body)
+	default:
+		http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
 	}
 }
