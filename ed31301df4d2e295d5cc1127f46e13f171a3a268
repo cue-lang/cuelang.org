@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeff52a2_0cd9f0b1",
+        "filename": "internal/functions/snippets/snippets.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-23T20:38:13Z",
+      "side": 1,
+      "message": "Yikes, good catch! Done",
+      "parentUuid": "23ac4c39_faca2c7a",
+      "revId": "ed31301df4d2e295d5cc1127f46e13f171a3a268",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6343a6aa_ebba765f",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-10-23T16:10:46Z",
       "side": 1,
       "message": "ditto",
+      "revId": "ed31301df4d2e295d5cc1127f46e13f171a3a268",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "279a2ac1_429fc4eb",
+        "filename": "internal/functions/snippets/snippets.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-23T20:38:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6343a6aa_ebba765f",
       "revId": "ed31301df4d2e295d5cc1127f46e13f171a3a268",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
