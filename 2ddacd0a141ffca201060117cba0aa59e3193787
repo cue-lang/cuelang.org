@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "446f95c1_86c312f0",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-25T08:27:10Z",
+      "side": 1,
+      "message": "Done, although I can\u0027t think of any other functions right now (that we wouldn\u0027t want to host in Google).",
+      "parentUuid": "8297d0d6_2c2b083f",
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9582c8c1_48f6c6f5",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-25T08:18:53Z",
       "side": 1,
       "message": "honestly I think it\u0027s fine in the context of a `preprocessor execute --serve` command, unless you want to move the \"serve\" functionality to a separate small Go program.",
+      "range": {
+        "startLine": 86,
+        "startChar": 43,
+        "endLine": 87,
+        "endChar": 36
+      },
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f718b773_651fcf46",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-25T08:27:10Z",
+      "side": 1,
+      "message": "That\u0027s what I had in mind. And then orchestrating the small go program and preprocessor with a simple job control program.",
+      "parentUuid": "9582c8c1_48f6c6f5",
       "range": {
         "startLine": 86,
         "startChar": 43,
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "159b7e01_ec448e5e",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-25T08:27:10Z",
+      "side": 1,
+      "message": "Now superfluous.",
+      "parentUuid": "f4383a72_cdbf8f88",
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0c9bd80_af0a41bb",
@@ -71,6 +131,24 @@
       "writtenOn": "2023-10-25T08:18:53Z",
       "side": 1,
       "message": "I\u0027d delete this comment, since you already have it in toIgnore above",
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c02d509_fdeba1c0",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-10-25T08:27:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0c9bd80_af0a41bb",
       "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
