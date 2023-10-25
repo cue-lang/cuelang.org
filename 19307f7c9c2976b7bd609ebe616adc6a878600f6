@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2229b850_5e6cec98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-25T08:19:57Z",
+      "side": 1,
+      "message": "You uploading the latest patchset means that your +2 no longer counts, since Gerrit thinks you\u0027re approving your own change now :) Adding my +2 to avoid that, and to say that your rebase SGTM.",
+      "revId": "19307f7c9c2976b7bd609ebe616adc6a878600f6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
