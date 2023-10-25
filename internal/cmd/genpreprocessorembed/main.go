@@ -25,6 +25,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 )
 
 const target = "gen_preprocessembed.go"
@@ -44,10 +45,13 @@ func main() {
 		log.Fatalf("failed to decode main module information: %v", err)
 	}
 
+	const thisModulePath = "github.com/cue-lang/cuelang.org"
+	const preprocessorPath = thisModulePath + "/internal/cmd/preprocessor"
+	const serverlessFunctionsPrefix = thisModulePath + "/internal/functions/"
+
 	// Verify we are in the right module!
-	const thisModule = "github.com/cue-lang/cuelang.org"
-	if mainMod.Path != thisModule {
-		log.Fatalf("main module is %s; expected %s", mainMod.Path, thisModule)
+	if mainMod.Path != thisModulePath {
+		log.Fatalf("main module is %s; expected %s", mainMod.Path, thisModulePath)
 	}
 
 	// Write to gen_pkghash.go for the current pkg
@@ -66,7 +70,7 @@ func main() {
 	embed("go.mod")
 	embed("go.sum")
 
-	depsCmd := exec.Command("go", "list", "-e", "-deps", "-json", "github.com/cue-lang/cuelang.org/internal/cmd/preprocessor")
+	depsCmd := exec.Command("go", "list", "-e", "-deps", "-json", preprocessorPath)
 	depsOut, err := depsCmd.CombinedOutput()
 	if err != nil {
 		log.Fatalf("failed to determine deps via [%v]: %v\n%s", depsCmd, err, depsOut)
@@ -84,11 +88,20 @@ func main() {
 			log.Fatalf("failed to decode package deps: %v", err)
 		}
 		// We only care about packages in the main module
-		if p.Module == nil || p.Module.Path != thisModule {
+		if p.Module == nil || p.Module.Path != thisModulePath {
 			continue
 		}
-		// We must ignore the package at the root of the module
-		if p.ImportPath == thisModule {
+		// Ignore certain packages when it comes to computing the hash of the
+		// preprocessor.
+		//
+		// TODO: ignoring of the module path (which is the target package of this
+		// generation) is something we cannot avoid (we could be more precise in
+		// only ignoring the file that is the target of the generation). Ignoring
+		// the snippets dependency is a bit hacky however. We could think about a
+		// different way of doing that, either by moving the serving of snippets out
+		// of the scope of the preprocessor, using build tags for the non-core bits
+		// of preprocessor...
+		if p.ImportPath == thisModulePath || strings.HasPrefix(p.ImportPath, serverlessFunctionsPrefix) {
 			continue
 		}
 		relPath, err := filepath.Rel(mainMod.Dir, p.Dir)
