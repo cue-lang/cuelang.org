@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8297d0d6_2c2b083f",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-25T08:18:53Z",
+      "side": 1,
+      "message": "assuming that we might have other serverless funcs soon, which will most likely fall in the same category, I\u0027d personally skip `modulePath + \"/internal/functions/\"` as a prefix match",
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9582c8c1_48f6c6f5",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-25T08:18:53Z",
+      "side": 1,
+      "message": "honestly I think it\u0027s fine in the context of a `preprocessor execute --serve` command, unless you want to move the \"serve\" functionality to a separate small Go program.",
+      "range": {
+        "startLine": 86,
+        "startChar": 43,
+        "endLine": 87,
+        "endChar": 36
+      },
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4383a72_cdbf8f88",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-25T08:18:53Z",
+      "side": 1,
+      "message": "nit: use `:\u003d` for consistency",
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0c9bd80_af0a41bb",
+        "filename": "internal/cmd/genpreprocessorembed/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2023-10-25T08:18:53Z",
+      "side": 1,
+      "message": "I\u0027d delete this comment, since you already have it in toIgnore above",
+      "revId": "2ddacd0a141ffca201060117cba0aa59e3193787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
