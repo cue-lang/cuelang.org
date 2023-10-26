@@ -21,6 +21,12 @@
   command = "bash _scripts/build.bash --baseURL https://cuelang.org"
 
 [[redirects]]
+  from = "/docs/introduction/"
+  to = "/docs/introduction/welcome/"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/docs/tutorial/"
   to = "/docs/tutorial/about-these-tutorials/"
   status = 302

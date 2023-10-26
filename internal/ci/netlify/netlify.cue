@@ -66,6 +66,9 @@ config: #config & {
 
 	redirects: [...{force: true, status: 302}]
 	redirects: [{
+		from: "/docs/introduction/"
+		to:   "/docs/introduction/welcome/"
+	}, {
 		from: "/docs/tutorial/"
 		to:   "/docs/tutorial/about-these-tutorials/"
 	}, {
