@@ -283,7 +283,7 @@ typeless data files.
 As soon the desire arises to reduce boilerplate, the `cue` tool can
 help to automatically rewrite configurations.
 See the Quick and Dirty section of the
-[Kubernetes tutorial](/docs/tutorials/kubernetes)
+[Kubernetes tutorial](https://github.com/cue-labs/cue-by-example/blob/main/003_kubernetes_tutorial/README.md)
 for an example using the `import` and `trim` tool.
 Thousands of lines can be obliterated automatically using this approach.
 
