@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "03e615db_72690c23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-27T16:08:39Z",
+      "side": 1,
+      "message": "Add:\n\n```\nCloses cue-lang/docs-and-content#23\n```",
+      "revId": "a7ce08a51e3842a5d1b2099181ff8b63fdcf8a76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "99c455d7_af4d6fbc",
