@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c9aac4c_899a01a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-30T14:15:20Z",
+      "side": 1,
+      "message": "PTAL.\n\nThe OpenAPI example in `content/docs/concept/schema-definition-use-case/en.md` is now as assertive of the CUE and JSON files\u0027 equivalence as I can make it. If I\u0027m missing a trick, please let me know!",
+      "revId": "1a9f5d421f8b116bc798ccf5938a01cd37fb840f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
