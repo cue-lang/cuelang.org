@@ -166,12 +166,16 @@ One disadvantage is that it is very verbose.
 Compare the following two equivalent schema definitions:
 
 {{{with code "en" "openapi-comparison"}}}
-exec true
+#nofmt(native.cue) https://github.com/cue-lang/cue/issues/722
+
+exec cue def native.cue --out openapi
+cmp stdout openapi.json
 -- native.cue --
 // Definitions.
+info: version: "v1v1beta1"
 
 // Info describes...
-Info: {
+#Info: {
 	// Name of the adapter.
 	name: string
 
@@ -185,9 +189,10 @@ Info: {
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Definitions.",
-        "version": "v1beta1"
+        "version": "v1v1beta1",
+        "title": "Definitions."
     },
+    "paths": {},
     "components": {
         "schemas": {
             "Info": {
@@ -199,22 +204,21 @@ Info: {
                 "properties": {
                     "name": {
                         "description": "Name of the adapter.",
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     "templates": {
                         "description": "Templates.",
                         "type": "array",
                         "items": {
-                            "type": "string",
-                            "format": "string"
+                            "type": "string"
                         }
                     },
                     "max": {
-                        "description": "Max is the limit",
+                        "description": "Max is the limit.",
                         "type": "integer",
                         "minimum": 0,
-                        "exclusiveMaximum": 100
+                        "maximum": 100,
+                        "exclusiveMaximum": true
                     }
                 }
             }
