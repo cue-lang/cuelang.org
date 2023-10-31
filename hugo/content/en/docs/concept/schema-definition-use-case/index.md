@@ -166,9 +166,10 @@ Compare the following two equivalent schema definitions:
 {{< code-tabs >}}
 {{< code-tab name="native.cue" language="text"  area="top-left" >}}
 // Definitions.
+info: version: "v1beta1"
 
 // Info describes...
-Info: {
+#Info: {
 	// Name of the adapter.
 	name: string
 
@@ -183,9 +184,10 @@ Info: {
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Definitions.",
-        "version": "v1beta1"
+        "version": "v1beta1",
+        "title": "Definitions."
     },
+    "paths": {},
     "components": {
         "schemas": {
             "Info": {
@@ -197,22 +199,21 @@ Info: {
                 "properties": {
                     "name": {
                         "description": "Name of the adapter.",
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     "templates": {
                         "description": "Templates.",
                         "type": "array",
                         "items": {
-                            "type": "string",
-                            "format": "string"
+                            "type": "string"
                         }
                     },
                     "max": {
-                        "description": "Max is the limit",
+                        "description": "Max is the limit.",
                         "type": "integer",
                         "minimum": 0,
-                        "exclusiveMaximum": 100
+                        "maximum": 100,
+                        "exclusiveMaximum": true
                     }
                 }
             }
