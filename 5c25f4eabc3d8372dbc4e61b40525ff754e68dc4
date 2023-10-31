@@ -16,6 +16,24 @@
       "message": "The CI failures (`\"\u003cfileA\u003e and \u003cfileB\u003e differ\"`) exemplified by https://github.com/cue-lang/cuelang.org-trybot/actions/runs/6706361135/job/18222697128#step:34:2364 (give the GHA UI some time to find the line after the page loads) seem to suggest a bug in CI, as this doesn\u0027t strike locally - either via `_scripts/build.bash` /or/ `_scripts/runPreprocessor.bash execute`.\n\nIt looks like we\u0027ll probably need to place this change on top of a fix of whatever\u0027s causing CI to see these phantom formatting diffs.",
       "revId": "5c25f4eabc3d8372dbc4e61b40525ff754e68dc4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d58e6dd_3f7e074d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-10-31T16:31:19Z",
+      "side": 1,
+      "message": "https://github.com/cue-lang/cue/issues/2668 is tracking this.",
+      "parentUuid": "df58b45c_7a026020",
+      "revId": "5c25f4eabc3d8372dbc4e61b40525ff754e68dc4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
