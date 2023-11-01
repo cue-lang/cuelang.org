@@ -1,7 +1,6 @@
 ---
 title: Constraints
 weight: 120
-draft: false
 ---
 
 Constraints specify what values are allowed.
@@ -12,25 +11,22 @@ Constraints can also reduce boilerplate.
 If a constraint defines a concrete value, there is no need
 to specify it in values to which this constraint applies.
 
-{{< columns >}}
-
-```{title="check.cue"}"
+{{< code-tabs >}}
+{{< code-tab name="check.cue" language="text"  area="top-left" >}}
 schema: {
-    name:  string
-    age:   int
-    human: true // always true
+	name:  string
+	age:   int
+	human: true // always true
 }
 
 viola: schema
 viola: {
-    name: "Viola"
-    age:  38
+	name: "Viola"
+	age:  38
 }
-```
-
-{{< columns-separator >}}
-
-```{title="$ cue eval check.cue"}
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+$ cue eval check.cue
 schema: {
     name:  string
     age:   int
@@ -41,5 +37,5 @@ viola: {
     age:   38
     human: true
 }
-
-{{< /columns >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
