@@ -1,7 +1,6 @@
 ---
 title: Types are Values
 weight: 60
-draft: false
 ---
 
 CUE merges the concepts of values and types.
@@ -11,37 +10,38 @@ some data, a possible schema for this data,
 and something in between: a typical CUE constraint.
 
 {{< columns >}}
-Data
 
-```
+<center>Data</center>
+
+```text
 moscow: {
-  name:    "Moscow"
-  pop:     11.92M
-  capital: true
+	name:    "Moscow"
+	pop:     11.92M
+	capital: true
 }
 ```
 
 {{< columns-separator >}}
 
-Schema
+<center>Schema</center>
 
-```
+```text
 municipality: {
-  name:    string
-  pop:     int
-  capital: bool
+	name:    string
+	pop:     int
+	capital: bool
 }
 ```
 
 {{< columns-separator >}}
 
-CUE
+<center>CUE</center>
 
-```
+```text
 largeCapital: {
-  name:    string
-  pop:     >5M
-  capital: true
+	name:    string
+	pop:     >5M
+	capital: true
 }
 ```
 

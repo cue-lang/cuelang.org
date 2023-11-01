@@ -1,7 +1,6 @@
 ---
 title: Folding of Single-Field Structs
 weight: 240
-draft: false
 ---
 
 In JSON, one defines nested values one value at a time.
@@ -19,19 +18,19 @@ This also gives a handy shorthand for writing structs with single
 members.
 -->
 
-{{< columns >}}
-```{title="fold.cue"}
+{{{with code "en" "example"}}}
+#nofmt(fold.cue) https://github.com/cue-lang/cue/issues/722
+
+exec cue export fold.cue
+cmp stdout result.txt
+-- fold.cue --
 // path-value pairs
 outer: middle1: inner: 3
 outer: middle2: inner: 7
 
 // collection-constraint pair
 outer: [string]: inner: int
-```
-
-{{< columns-separator >}}
-
-```
+-- result.txt --
 {
     "outer": {
         "middle1": {
@@ -42,5 +41,4 @@ outer: [string]: inner: int
         }
     }
 }
-
-{{< /columns >}}
+{{{end}}}
