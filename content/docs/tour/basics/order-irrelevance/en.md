@@ -1,7 +1,6 @@
 ---
 title: Order is Irrelevant
 weight: 210
-draft: false
 ---
 
 CUE's basic operations are defined in a way that the order in which
@@ -11,17 +10,17 @@ This is crucial property of CUE
 that makes it easy for humans _and_ machines to reason over values and
 makes advanced tooling and automation possible.
 
-{{< columns >}}
-```{title="order.cue"}
+{{{with code "en" "example"}}}
+# TODO: is the "-i" needed here, or is it extra complexity for a CUE newcomer?
+exec cue eval -i order.cue
+cmp stdout out.golden
+-- order.cue --
 a: {x: 1, y: int}
 a: {x: int, y: 2}
 
 b: {x: int, y: 2}
 b: {x: 1, y: int}
-```
-{{< columns-separator >}}
-
-```{title="$ cue eval -i order.cue"}
+-- out.golden --
 a: {
     x: 1
     y: 2
@@ -30,5 +29,4 @@ b: {
     x: 1
     y: 2
 }
-```
-{{< /columns >}}
+{{{end}}}
