@@ -1,9 +1,7 @@
 ---
 title: JSON Superset
 weight: 30
-draft: false
 ---
-
 
 CUE is a superset of JSON.
 It adds the following conveniences:
@@ -17,9 +15,8 @@ It adds the following conveniences:
 JSON objects are called structs in CUE.
 An object member is called a field.
 
-{{< columns >}}
-
-``` {title="json.cue"}
+{{< code-tabs >}}
+{{< code-tab name="json.cue" language="text"  area="top-left" >}}
 one: 1
 two: 2
 
@@ -31,20 +28,17 @@ list: [
 	2,
 	3,
 ]
-```
-{{< columns-separator >}}
-
-```{title="$cue export json.cue"}
+{{< /code-tab >}}
+{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
 {
+    "one": 1,
+    "two": 2,
+    "two-and-a-half": 2.5,
     "list": [
         1,
         2,
         3
-    ],
-    "one": 1,
-    "two": 2,
-    "two-and-a-half": 2.5
+    ]
 }
-```
-
-{{< /columns >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
