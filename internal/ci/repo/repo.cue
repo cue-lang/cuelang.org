@@ -36,7 +36,7 @@ hugoVersion: "0.117.0"
 
 // netlifyCLIVersion is the version of the Netlify CLI used to deploy tip and
 // deploy previews of CLs
-netlifyCLIVersion: "12.4.0"
+netlifyCLIVersion: "17.0.1"
 
 netlifySites: {
 	cls: "cue-cls"
