@@ -101,7 +101,7 @@ jobs:
         env:
           BRANCH: tip
       - name: Install Netlify CLI
-        run: npm install -g netlify-cli@12.4.0
+        run: npm install -g netlify-cli@17.0.1
       - name: Deploy tip
         run: netlify deploy  -f functions -d _public -m "Deploy tip" -s cue-tip --debug --prod
         env:

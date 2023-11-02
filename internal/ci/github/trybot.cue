@@ -164,6 +164,10 @@ workflows: trybot: _repo.bashWorkflow & {
 					"""
 			},
 
+			_installNetlifyCLI & {
+				if: "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
+			},
+
 			_netlifyStep,
 
 			json.#step & {
@@ -184,7 +188,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	// TODO: this belongs in base. Captured in cuelang.org/issue/2327
 	_dispatchTrailerExpr: "fromJSON(steps.DispatchTrailer.outputs.value)"
-	_goGenerate:          json.#step & {
+	_goGenerate: json.#step & {
 		name: string
 		run:  "go generate ./..."
 	}
@@ -227,7 +231,7 @@ _installHugoMacOS: _macOSStep & {
 }
 
 _installDockerMacOS: [
-			..._macOSStep & {
+	..._macOSStep & {
 		_name: string
 		name:  _name + " (${{runner.os}})"
 	},

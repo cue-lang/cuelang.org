@@ -238,6 +238,11 @@ jobs:
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
+        name: Install Netlify CLI
+        run: npm install -g netlify-cli@17.0.1
+      - if: |-
+          github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"trybot"'))
         name: Deploy preview of CL
         run: 'netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
