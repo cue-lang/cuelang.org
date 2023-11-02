@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e22116ed_8d507368",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-11-02T12:57:49Z",
+      "side": 1,
+      "message": "s/Tours/Tour/ in the LHS nav, but otherwise LGTM",
+      "revId": "eddfe8b7fa4bbd6500b40430aeb9d74260b8c38d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
