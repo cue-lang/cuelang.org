@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aef1a1ee_7b14c6d2",
+        "filename": "content/docs/tour/types/templates/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-11-02T13:02:00Z",
+      "side": 1,
+      "message": "This is lossy with respect to the original:\n\nhttps://cuelang.org/docs/tutorials/tour/types/templates/\n\nThe original page contains a reference to `templates.cue` and the actual command run.\n\nPlease can you ensure we don\u0027t lose that information in all the tour entries?",
+      "revId": "006e4f9a4e94eb6360635870f8714d3cf4d3ffb8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
