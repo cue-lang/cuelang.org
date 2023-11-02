@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2293a53_c4263d83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-11-02T19:22:02Z",
+      "side": 1,
+      "message": "Removing the hold. Turns out we weren\u0027t actually installing the netlify CLI where we used it in the trybot workflow, and were instead relying on whatever is install by GitHub in their default image. That might not have been a problem but now we\u0027re definitely using the right version.\n\nhttps://review.gerrithub.io/c/cue-lang/cuelang.org/+/1171600/1..3/internal/ci/github/trybot.cue \n\nThat\u0027s the diff since the original +2, which doesn\u0027t seem overly controversial so I will submit.",
+      "revId": "7449930019c5af2d216ad8f8852dd0d184ed9070",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
