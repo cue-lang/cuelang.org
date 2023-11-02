@@ -16,6 +16,40 @@
       "message": "PTAL. Linear://CUE-331 seems relevant to a couple of these guides, but I\u0027m unsure if it\u0027s tagged/etc correctly, such that it\u0027ll get picked up.",
       "revId": "91ae408b04c090f136f615d7b4e801ae65ab57c9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8a2d8b3_f2c979b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-11-02T07:34:54Z",
+      "side": 1,
+      "message": "With one comment.",
+      "revId": "91ae408b04c090f136f615d7b4e801ae65ab57c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7031fb2_673675ef",
+        "filename": "content/docs/concept/kubernetes-integration/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-11-02T07:34:54Z",
+      "side": 1,
+      "message": "This is missing from some of the other pages in this commit.",
+      "revId": "91ae408b04c090f136f615d7b4e801ae65ab57c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
