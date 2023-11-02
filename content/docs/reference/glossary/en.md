@@ -1,6 +1,6 @@
 ---
 title: Glossary of terms
-weight: 10
+weight: 20
 toc_hide: false
 ---
 
