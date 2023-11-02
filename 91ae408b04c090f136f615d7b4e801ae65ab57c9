@@ -50,6 +50,24 @@
       "message": "This is missing from some of the other pages in this commit.",
       "revId": "91ae408b04c090f136f615d7b4e801ae65ab57c9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e30fe43_c8de5529",
+        "filename": "content/docs/concept/kubernetes-integration/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-11-02T08:47:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7031fb2_673675ef",
+      "revId": "91ae408b04c090f136f615d7b4e801ae65ab57c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
