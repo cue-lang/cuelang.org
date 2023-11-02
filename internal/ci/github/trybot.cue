@@ -99,6 +99,10 @@ workflows: trybot: _repo.bashWorkflow & {
 				_dist,
 				_repo.checkGitClean,
 
+				_installNetlifyCLI & {
+					if: "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
+				},
+
 				// Only run a deploy of tip if we are running as part of the trybot repo,
 				// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
 				_netlifyDeploy & {
@@ -184,7 +188,10 @@ _netlifyDeploy: json.#step & {
 	let alias = [ if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
-	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	run:  """
+	netlify --version
+	netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	"""
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite) }}"
 }
 
