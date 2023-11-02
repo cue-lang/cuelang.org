@@ -1,6 +1,6 @@
 ---
 title: Code of Conduct
-weight: 1
+weight: 100
 toc_hide: false
 ---
 
