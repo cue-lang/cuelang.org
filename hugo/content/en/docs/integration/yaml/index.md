@@ -45,7 +45,7 @@ Given these two files, the `cue vet` command can verify that the values in
 `ranges.yaml` are correct by just mentioning the two files on the command line.
 
 {{< code-tabs >}}
-{{< code-tab name="check.cue" language="text"  area="top-left" >}}
+{{< code-tab name="check.cue" language="cue"  area="top-left" >}}
 min?: *0 | number    // 0 if undefined
 max?: number & >min  // must be strictly greater than min if defined
 {{< /code-tab >}}
@@ -85,7 +85,7 @@ the fix would be the following.
 This needs a top-and-bottom layout, with the error messages on the bottom, not
 the side-by-side default, but we only have 2 files.
 -->
-```text
+```cue
 import "encoding/yaml"
 
 // Phrases defines a schema for a valid phrase.
@@ -135,7 +135,7 @@ LanguageTag (mismatched types bool and string):
 The builtin `encoding/yaml.Marshal` generates YAML from within CUE.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "encoding/yaml"
 
 configMap: data: "point.yaml":
@@ -160,7 +160,7 @@ configMap: data: "point.yaml":
 The inverse is also possible
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "encoding/yaml"
 
 data: """

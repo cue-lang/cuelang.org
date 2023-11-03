@@ -17,7 +17,7 @@ demonstrates using the **required field** marker in a schema to make sure that a
 field is present in data.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="text"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
 package example
 
 // CUE indicates required fields

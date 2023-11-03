@@ -41,7 +41,7 @@ that `cue` has caught the deliberate mistakes in our example data.
 Here's an example:
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="text"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
 package example
 
 // CUE comments start with "//".

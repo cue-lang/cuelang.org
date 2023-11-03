@@ -46,7 +46,7 @@ Create a CUE file named `x.cue`
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-```text { title="x.cue" }
+```cue { title="x.cue" }
 #Person: {
 	name:    string
 	age:     int

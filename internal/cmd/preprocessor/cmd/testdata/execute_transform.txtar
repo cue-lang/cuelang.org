@@ -84,7 +84,7 @@ Some text before
 
 {{< step stepNumber="1" >}}
 {{< code-tabs >}}
-{{< code-tab name="in.cue" language="text"  area="top-left" >}}
+{{< code-tab name="in.cue" language="cue"  area="top-left" >}}
 // A doc comment
 map: {
 	member1: 3 // a line comment
@@ -105,7 +105,7 @@ $ cue export in.cue
 
 {{< step stepNumber="2" >}}
 some text
-```text
+```cue
 x: 5
 ```
 {{< /step >}}

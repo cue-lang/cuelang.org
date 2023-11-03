@@ -38,7 +38,7 @@ go beyond basic typing.
 In CUE types and values are a unified concept, which gives it very
 expressive, yet intuitive and compact, typing capabilities.
 
-```text
+```cue
 #Spec: {
 	kind: string
 

@@ -133,7 +133,7 @@ func main() {
 
 which will write the following CUE file:
 
-```text
+```cue
 //  Package basic is just that: basic.
 package basic
 

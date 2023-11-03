@@ -29,7 +29,7 @@ are backwards-compatible with older versions.
 
 Consider the following versions of the same API:
 
-```text
+```cue
 // Release notes:
 // - You can now specify your age and your hobby!
 #V1: {
@@ -164,7 +164,7 @@ One disadvantage is that it is very verbose.
 Compare the following two equivalent schema definitions:
 
 {{< code-tabs >}}
-{{< code-tab name="native.cue" language="text"  area="top-left" >}}
+{{< code-tab name="native.cue" language="cue"  area="top-left" >}}
 // Definitions.
 info: version: "v1beta1"
 

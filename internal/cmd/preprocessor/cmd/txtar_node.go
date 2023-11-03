@@ -242,15 +242,6 @@ func analyseFilename(p string) (res filenameAnalysis) {
 		res.Ext = b[i+1:]
 
 		res.Language = res.Ext
-		// TODO: find a better place for this override
-		if res.Ext == "cue" {
-			// This override is required because without syntax highlighting
-			// support for CUE, we lose the ability to add line numbers to
-			// a code block.
-			//
-			// Revert this when Chroma syntax support for CUE lands.
-			res.Language = "text"
-		}
 	}
 	switch res.Basename {
 	case "out", "stdout":

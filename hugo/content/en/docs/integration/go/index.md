@@ -61,7 +61,7 @@ The generated package can be used in CUE using the same import path.
 In this CUE file, we import the generated definitions and specify that
 all services in our configuration are of type `v1.Service`.
 
-```text
+```cue
 import "k8s.io/api/core/v1"
 
 services: [string]: v1.#Service

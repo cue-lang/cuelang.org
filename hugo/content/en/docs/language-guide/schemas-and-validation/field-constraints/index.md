@@ -26,13 +26,13 @@ without actually declaring these fields. Since in CUE data and schema is mixed,
 we explicitly mark schema fields with a question mark (`?`):
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 Feedback: {
 	all?:       string
 	committee?: string
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 Feedback: {}
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -43,14 +43,14 @@ We use `!` instead of `?` to additionally specify that this field _*must_* be
 defined for an instance of this map to be valid.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 Name: {
 	first!:  string
 	middle?: string
 	last!:   string
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 Name: {
     first!: string
     last!:  string

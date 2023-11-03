@@ -64,7 +64,7 @@ title: JSON Superset
 Some text before
 
 {{< code-tabs >}}
-{{< code-tab name="a.cue" language="text"  area="top-left" >}}
+{{< code-tab name="a.cue" language="cue"  area="top-left" >}}
 x?: int
 {{< /code-tab >}}
 {{< code-tab name="b.json" language="json"  area="top-right" >}}
