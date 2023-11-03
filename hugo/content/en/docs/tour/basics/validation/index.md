@@ -11,7 +11,7 @@ an uppercase letter, specified in`schema.cue`.
 The constraint is validated with `cue vet`.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="text"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
 #Language: {
 	tag:  string
 	name: =~"^\\p{Lu}" // Must start with an uppercase letter.

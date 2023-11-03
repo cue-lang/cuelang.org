@@ -14,7 +14,7 @@ In that case, both `"tcp"` and `"udp"` are preferred and one must explicitly
 specify either `"tcp"` or `"udp"` as if no marks were given.
 
 {{< code-tabs >}}
-{{< code-tab name="defaults.cue" language="text"  area="top-left" >}}
+{{< code-tab name="defaults.cue" language="cue"  area="top-left" >}}
 // any positive number, 1 is the default
 replicas: uint | *1
 

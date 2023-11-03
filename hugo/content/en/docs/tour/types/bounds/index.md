@@ -13,7 +13,7 @@ whereas `<0` allows all negative numbers (int or float).
 
 
 {{< code-tabs >}}
-{{< code-tab name="bounds.cue" language="text"  area="top-left" >}}
+{{< code-tab name="bounds.cue" language="cue"  area="top-left" >}}
 #rn: >=3 & <8 // type int | float
 
 #ri: >=3 & <8 & int // type int

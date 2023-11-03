@@ -12,7 +12,7 @@ This works for normal and interpolated strings.
 Quotes do not have to be escaped in such strings.
 
 {{< code-tabs >}}
-{{< code-tab name="stringraw.cue" language="text"  area="top-left" >}}
+{{< code-tab name="stringraw.cue" language="cue"  area="top-left" >}}
 msg1: #"The sequence "\U0001F604" renders as \#U0001F604."#
 
 msg2: ##"""

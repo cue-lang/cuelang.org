@@ -13,7 +13,7 @@ For lists, all elements must match accordingly
 <!-- ([we discuss open-ended lists later](/language-guide/data/lists/).) -->
 
 {{< code-tabs >}}
-{{< code-tab name="dup.cue" language="text"  area="top-left" >}}
+{{< code-tab name="dup.cue" language="cue"  area="top-left" >}}
 a: 4
 a: 4
 

@@ -12,7 +12,7 @@ If a constraint defines a concrete value, there is no need
 to specify it in values to which this constraint applies.
 
 {{< code-tabs >}}
-{{< code-tab name="check.cue" language="text"  area="top-left" >}}
+{{< code-tab name="check.cue" language="cue"  area="top-left" >}}
 schema: {
 	name:  string
 	age:   int

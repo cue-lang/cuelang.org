@@ -15,7 +15,7 @@ A closed struct can be created using the `close` builtin,
 but are more commonly defined using a _definition_, defined next.
 
 {{< code-tabs >}}
-{{< code-tab name="structs.cue" language="text"  area="top-left" >}}
+{{< code-tab name="structs.cue" language="cue"  area="top-left" >}}
 a: close({
 	field: int
 })

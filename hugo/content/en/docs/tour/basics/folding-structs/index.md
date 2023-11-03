@@ -19,7 +19,7 @@ members.
 -->
 
 {{< code-tabs >}}
-{{< code-tab name="fold.cue" language="text"  area="top-left" >}}
+{{< code-tab name="fold.cue" language="cue"  area="top-left" >}}
 // path-value pairs
 outer: middle1: inner: 3
 outer: middle2: inner: 7

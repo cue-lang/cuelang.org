@@ -9,7 +9,7 @@ Any valid CUE expression may be used inside the escaped parentheses.
 Interpolation may also be used in multiline string and byte literals.
 
 {{< code-tabs >}}
-{{< code-tab name="interpolation.cue" language="text"  area="top-left" >}}
+{{< code-tab name="interpolation.cue" language="cue"  area="top-left" >}}
 "You are \( #cost-#budget ) dollars over budget!"
 
 #cost:   102

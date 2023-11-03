@@ -15,7 +15,7 @@ The following additional escape sequences are allowed in byte literals:
 <!-- jba: this contradicts the spec, which has \nnn (no leading zero) -->
 
 {{< code-tabs >}}
-{{< code-tab name="bytes.cue" language="text"  area="top-left" >}}
+{{< code-tab name="bytes.cue" language="cue"  area="top-left" >}}
 a: '\x03abc'
 {{< /code-tab >}}
 {{< code-tab name="result.txt" language="txt"  area="top-right" >}}

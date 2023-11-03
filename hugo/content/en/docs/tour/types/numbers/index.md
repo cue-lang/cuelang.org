@@ -16,7 +16,7 @@ used as an `int` without conversion.
 CUE also adds a variety of sugar for writing numbers.
 
 {{< code-tabs >}}
-{{< code-tab name="numbers.cue" language="text"  area="top-left" >}}
+{{< code-tab name="numbers.cue" language="cue"  area="top-left" >}}
 a: int
 a: 4 // type int
 

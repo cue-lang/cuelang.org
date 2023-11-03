@@ -9,7 +9,7 @@ Also there is no unsigned integer type.
 CUE defines the following predefined identifiers to restrict the bounds of
 integers to common values.
 
-```text
+```cue
 uint:   >=0
 uint8:  >=0 & <=255
 int8:   >=-128 & <=127
@@ -26,7 +26,7 @@ uint128: >=0 & <=340_282_366_920_938_463_463_374_607_431_768_211_455
 ```
 
 {{< code-tabs >}}
-{{< code-tab name="bound.cue" language="text"  area="top-left" >}}
+{{< code-tab name="bound.cue" language="cue"  area="top-left" >}}
 #positive: uint
 #byte:     uint8
 #word:     int32

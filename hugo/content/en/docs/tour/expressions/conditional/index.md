@@ -10,7 +10,7 @@ Converting the resulting configuration to JSON results in an error
 as `justification` is required yet no concrete value is given.
 
 {{< code-tabs >}}
-{{< code-tab name="conditional.cue" language="text"  area="top-left" >}}
+{{< code-tab name="conditional.cue" language="cue"  area="top-left" >}}
 price: number
 
 // Require a justification if price is too high

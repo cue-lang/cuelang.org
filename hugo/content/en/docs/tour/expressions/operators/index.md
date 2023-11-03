@@ -11,7 +11,7 @@ For `int` CUE supports both Euclidean division (`div` and `mod`)
 and truncated division (`quo` and `rem`).
 
 {{< code-tabs >}}
-{{< code-tab name="op.cue" language="text"  area="top-left" >}}
+{{< code-tab name="op.cue" language="cue"  area="top-left" >}}
 a: 3 / 2       // type float
 b: __div(3, 2) // type int: Euclidean division
 
