@@ -7,10 +7,10 @@
   ignore = "bash _scripts/ignoreBuild.bash"
 
 [build.environment]
-  GO_VERSION = "1.21.1"
+  GO_VERSION = "1.21.3"
   HUGO_ENV = "production"
-  HUGO_VERSION = "0.117.0"
-  NODE_VERSION = "18.17.0"
+  HUGO_VERSION = "0.120.3"
+  NODE_VERSION = "20.9.0"
 
 [context]
 [context.alpha]

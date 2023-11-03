@@ -69,17 +69,17 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.17.0
+          node-version: 20.9.0
       - name: Install Go
         uses: actions/setup-go@v4
         with:
           cache: false
-          go-version: 1.21.1
+          go-version: 1.21.3
       - if: runner.os == 'Linux'
         name: Install Hugo (${{ runner.os }})
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.117.0
+          hugo-version: 0.120.3
           extended: true
       - id: go-mod-cache-dir
         name: Get go mod cache directory
@@ -94,8 +94,8 @@ jobs:
             ${{ steps.go-cache-dir.outputs.dir }}
             ~/.cache/dockercache
             ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.21.1-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.21.1
+          key: ${{ runner.os }}-1.21.3-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.21.3
       - name: Tip dist
         run: ./_scripts/build.bash --baseURL https://tip.cuelang.org
         env:
