@@ -19,11 +19,11 @@ CUE allows duplicate fields to exist as long as their values are consistent.
 This is allowed:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: 1
 a: 1
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: 1
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -31,11 +31,11 @@ a: 1
 This is not:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 b: 1
 b: 2
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 b: conflicting values 2 and 1:
     in.cue: 1:4
     in.cue: 2:4
@@ -46,7 +46,7 @@ Two maps or lists are consistent if the values with the same key or index are
 consistent.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 point: {
 	x: 1
 }
@@ -59,7 +59,7 @@ point: {
 
 list: [1, 2, 3, 4]
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 point: {
     x: 1
     y: 2
@@ -79,11 +79,11 @@ More on this in [Schemas and Validation](Schemas%20and%20Validation%20b39455d56f
 For single-field maps, the curly braces can be omitted:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 point2: x: 1
 point2: y: 2
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 point2: {
     x: 1
     y: 2
@@ -94,10 +94,10 @@ point2: {
 One can also combine values with the `&` operator:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 point3: {x: 1} & {y: 2}
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 point3: {
     x: 1
     y: 2
@@ -120,7 +120,7 @@ makes it easier to separate human written versus machine generated content,
 among other things.
 
 {{< code-tabs >}}
-{{< code-tab name="fruit.cue" language="text"  area="top-left" >}}
+{{< code-tab name="fruit.cue" language="cue"  area="top-left" >}}
 package food
 
 cart: {
@@ -128,12 +128,12 @@ cart: {
 	oranges: 3
 }
 {{< /code-tab >}}
-{{< code-tab name="vegetables.cue" language="text"  area="top-right" >}}
+{{< code-tab name="vegetables.cue" language="cue"  area="top-right" >}}
 package food
 
 cart: spinach: 4
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="text" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="cue" type="terminal" area="bottom" >}}
 $ cue eval :food
 cart: {
 	apples:  1

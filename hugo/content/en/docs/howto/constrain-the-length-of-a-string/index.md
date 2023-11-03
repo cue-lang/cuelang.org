@@ -21,7 +21,7 @@ bytes, and also in runes, as introduced by
 [the Go programming language](https://go.dev/blog/strings#code-points-characters-and-runes).
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="text"  area="top" >}}
+{{< code-tab name="example.cue" language="cue"  area="top" >}}
 package example
 
 import "strings"

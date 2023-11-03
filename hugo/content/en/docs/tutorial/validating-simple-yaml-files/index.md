@@ -77,7 +77,7 @@ age: "15"
 {{< step stepNumber="4" >}}
 Create a file called `pets.cue` to hold your schema, and place this CUE in it:
 
-```text { title="pets.cue" linenos="table" }
+```cue { title="pets.cue" linenos="table" }
 species!: "cat" | "dog"
 age?:     number
 ```

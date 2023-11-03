@@ -557,7 +557,7 @@ CUE must ensure that the order of picking defaults does not influence the outcom
 Suppose we define two fields, each with the same default value.
 We also define that these fields are equal to each other.
 
-```text
+```cue
 a: int | *1
 b: int | *1
 a: b
@@ -569,7 +569,7 @@ The obvious answer is `a: 1, b: 1`.
 
 But now suppose we change one of the default values:
 
-```text
+```cue
 a: int | *1
 b: int | *2
 a: b
@@ -593,7 +593,7 @@ Roughly speaking, for the example with the conflict,
 it simultaneously evaluates:
 
 {{< columns >}}
-```text
+```cue
 // All allowed values
 a: int
 b: int
@@ -603,7 +603,7 @@ b: a
 
 {{< columns-separator >}}
 
-```text
+```cue
 // Default
 a: 1
 b: 2
@@ -618,7 +618,7 @@ result in `_|_`, leaving the left values as the only viable answer.
 Now consider the two values corresponding to the original example:
 
 {{< columns >}}
-```text
+```cue
 // All allowed values
 a: int
 b: int
@@ -628,7 +628,7 @@ b: a
 
 {{< columns-separator >}}
 
-```text
+```cue
 // Default
 a: 1
 b: 1
@@ -667,7 +667,7 @@ there is no need to specify these in a particular order or even in one location.
 One can even say on a single line that a collection of
 fields must mix in a template.
 For instance,
-```text
+```cue
 jobs: [string]: acmeMonitoring
 ```
 tells CUE that _all_ jobs in `jobs` must mix in `acmeMonitoring`.
@@ -699,7 +699,7 @@ configuration language.
 CUE's underlying model allows reasoning over cycles.
 Consider a CUE program defining two fields;
 
-```text
+```cue
 a: b
 b: a
 ```
@@ -714,7 +714,7 @@ of labels with a set of selectors
 (regardless of whether that is good practice).
 
 But it goes further. Consider
-```text
+```cue
 a: b + 1
 b: a - 1
 b: 1
@@ -729,7 +729,7 @@ So if this configuration is ever to be a valid, we can safely assume
 the answer is `1` and verify that `a-1 == 1` after resolving `a`.
 
 So CUE happily resolves this to
-```text
+```cue
 a: 2
 b: 1
 ```

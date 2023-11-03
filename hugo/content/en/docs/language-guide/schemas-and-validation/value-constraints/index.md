@@ -29,7 +29,7 @@ More specifically, for any concrete `x`, `x & ⊗y` is an error if not `x ⊗ y`
 {{{end}}}
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: >10
 a: 11
 
@@ -40,7 +40,7 @@ b: <=10
 s: =~#"^\p{Lu}"# // string must start with a capital letter.
 s: "Cat"
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: 11
 b: 10
 s: "Cat"
@@ -50,7 +50,7 @@ s: "Cat"
 A bound that fails results in an error.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 e: =~"foo"
 e: "bar"
 {{< /code-tab >}}
@@ -69,7 +69,7 @@ In this case the first argument in the Go documentation is the type of the
 validated value and must be omitted.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "list"
 
 a: [1, 2, 3]
@@ -90,13 +90,13 @@ CUE does not support timestamps in the language, but its standard library
 provides validators to interpret strings as such.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "time"
 
 valid: time.Time
 valid: "2006-01-02T15:04:05Z"
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 valid: "2006-01-02T15:04:05Z"
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -107,7 +107,7 @@ types.
 <!-- TODO: CUE OpenAPI generation seems to be broken wrt to this. Make this work.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "time"
 
 #Meetup: {

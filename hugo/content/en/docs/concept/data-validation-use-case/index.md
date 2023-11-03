@@ -30,7 +30,7 @@ Given these two files, the `cue vet` command can verify that the values in
 `ranges.yaml` are correct by just mentioning the two files on the command line.
 
 {{< code-tabs >}}
-{{< code-tab name="check.cue" language="text"  area="top-left" >}}
+{{< code-tab name="check.cue" language="cue"  area="top-left" >}}
 min?: *0 | number    // 0 if undefined
 max?: number & >min  // must be strictly greater than min if defined.
 {{< /code-tab >}}
@@ -117,7 +117,7 @@ Overall CUE is a more concise, yet more powerful schema language.
 For instance, in CUE one can specify that two fields need to be identical to
 one another:
 
-```text
+```cue
 point: {
 	x: number
 	y: number

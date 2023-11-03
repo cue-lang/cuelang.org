@@ -27,7 +27,7 @@ The key is the index of a list element, the name of a data field, or undefined
 for a query.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: [1, 2]
 for k, v in a {
 	"n\(k+1)": v
@@ -39,7 +39,7 @@ for k2, v2 in b {
 	"m\(k1)_\(k2)": v1 + v2
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: [1, 2]
 n1:   1
 n2:   2
@@ -57,7 +57,7 @@ The `if` clause discards a result if a condition does not hold.
 By itself, `if` can be used to include values conditionally.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: [1, 2, 3]
 for k, v in a
 if v > 2 {
@@ -68,7 +68,7 @@ if len(a) == 0 {
 	emptyList: true
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: [1, 2, 3]
 n3: 3
 {{< /code-tab >}}
@@ -81,14 +81,14 @@ having to repeat it.
 A comprehension may not start with this clause.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: [1, 2, 3]
 for k, v in a
 let x = v + 4 {
 	"n\(x)": x
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: [1, 2, 3]
 n5: 5
 n6: 6
@@ -112,7 +112,7 @@ A list may mix regular elements with comprehensions.
 Elements insert in order.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: [1, 2, 3]
 
 list: [
@@ -123,7 +123,7 @@ list: [
 	for v in a {10 + v},
 ]
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: [1, 2, 3]
 list: [0, 2, 4, 6, 10, 20, 11, 12, 13]
 {{< /code-tab >}}
@@ -136,7 +136,7 @@ conditionally.
 CUE has no switch or if-else construct, but these can be simulated using lists.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 mem:       2Gi
 footprint: [ // select first
 		if mem < 1Gi {"small"},
@@ -144,7 +144,7 @@ footprint: [ // select first
 		"large",
 ][0]
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 mem:       2147483648
 footprint: "medium"
 {{< /code-tab >}}

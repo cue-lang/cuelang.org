@@ -18,7 +18,7 @@ Otherwise the order is left-to-right.
 Parenthesis can be used to force computations to be done in a certain order.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: 1 + 2
 s: 2 - 1
 m: 1.5 * 2
@@ -29,7 +29,7 @@ p: (1 + 2) * 3
 // Precision is preserved.
 price: 3.00 * 2
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a:     3
 s:     1
 m:     3.0
@@ -80,11 +80,11 @@ A zero divisor in either case results in bottom (an error).
 Two Strings, as well as two bytes, can be appended using the `+` operator.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: "foo" + "bar"
 b: '\xE2\x84' + '\x9A'
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: "foobar"
 b: 'ℚ'
 {{< /code-tab >}}
@@ -106,7 +106,7 @@ whereby invalid characters are converted to the replacement character (`\uFFFD`)
 according to Unicode guidelines.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: 1
 b: "a plus one: \(a+1)"
 
@@ -114,7 +114,7 @@ clipped: '\xE2\x84' // A clipped codepoint
 s:       "As a string: \(clipped+'\x9A')"
 e:       "As a string: \(clipped)"
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a:       1
 b:       "a plus one: 2"
 clipped: '\xe2\x84'
@@ -126,12 +126,12 @@ e:       "As a string: �"
 Interpolations may also be used in quoted selectors or in field names.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 f: "foo"
 x: "\(f)bar": 1
 y: x."\(f)bar"
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -155,13 +155,13 @@ The ordering operators `<`, `<=`, `>`, and `>=` apply only to numbers, strings, 
 Helper fields associated with such fields are ignored.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: 1 <= 2
 b: 1.0 < 1.01
 c: 1.0 < 1
 d: "ab" < "b"
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: true
 b: true
 c: false
@@ -187,14 +187,14 @@ Field constraints do not have to be concrete as they only apply in the presence 
 Helper fields, like `#foo` and `_foo` are ignored for comparison.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: 1 != 2
 b: 1.0 == 1.000
 c: 1 == 1.000
 d: "ab" == "b"
 e: true != false
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 a: true
 b: true
 c: true
@@ -231,7 +231,7 @@ Using alternate escape sequences is the easiest way to work around double escapi
 {{{end}}}
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 str: "The cat sat in the tree."
 
 match: str =~ "cat"
@@ -240,7 +240,7 @@ neg:   str !~ "^cat$"
 
 upper: "Cat" =~ #"^\p{Lu}"#
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 str:   "The cat sat in the tree."
 match: true
 whole: false
@@ -254,12 +254,12 @@ upper: true
 CUE supports not (`!`), logical and (`&&`), and logical or (`||`) to operate on boolean values.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 n: !true
 o: false || true
 a: false && true
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 n: false
 o: true
 a: false
@@ -269,7 +269,7 @@ a: false
 It is an error for any values passed to these operators to be invalid.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: {}
 err: true || a.bar
 {{< /code-tab >}}
@@ -295,7 +295,7 @@ It can optionally be renamed if it clashes with names in your program.
 Some packages also provides constants.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import (
 	"math"
 	pathpkg "path"
@@ -307,7 +307,7 @@ split: pathpkg.Split(path)
 sqrt: math.Sqrt(2)
 pi:   math.Pi
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 path: "path/to/dir"
 split: ["path/to/", "dir"]
 sqrt: 1.4142135623730951
@@ -332,13 +332,13 @@ As CUE disallows field identifiers starting with `__`, the latter will never be 
 - For maps it returns the number of data fields.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: len({a: 1, _b: 2}) // hidden fields do not count
 b: len([1, 2, 3])
 c: len(`abc`)
 
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -369,11 +369,11 @@ For instance, specifies a default integral`1`, one could write
 A disjunction allows marking its elements as default with an asterisk.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 a: int
 a: *1
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="text" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
