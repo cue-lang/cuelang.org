@@ -34,6 +34,24 @@
       "parentUuid": "aef1a1ee_7b14c6d2",
       "revId": "006e4f9a4e94eb6360635870f8714d3cf4d3ffb8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "261203de_f471b72d",
+        "filename": "content/docs/tour/types/templates/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-11-03T11:31:10Z",
+      "side": 1,
+      "message": "As discussed, all tour side-by-side code blocks have now been moved to `TERMINAL` right hand side blocks that explicitly display the command that was executed.",
+      "parentUuid": "ab3c6ac1_78e84822",
+      "revId": "006e4f9a4e94eb6360635870f8714d3cf4d3ffb8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
