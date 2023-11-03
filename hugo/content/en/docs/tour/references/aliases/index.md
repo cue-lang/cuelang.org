@@ -11,7 +11,7 @@ Aliases are not members of a struct. They can be referred to only within the
 struct, and they do not appear in the output.
 
 {{< code-tabs >}}
-{{< code-tab name="alias.cue" language="text"  area="top-left" >}}
+{{< code-tab name="alias.cue" language="cue"  area="top-left" >}}
 let A = a // A is an alias for a
 a: {
 	d: 3

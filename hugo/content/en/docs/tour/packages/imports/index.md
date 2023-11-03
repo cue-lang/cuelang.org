@@ -12,7 +12,7 @@ This code groups the imports into a parenthesized, "factored" import statement.
 
 You can also write multiple import statements, like:
 
-```text
+```cue
 import "encoding/json"
 
 import "math"
@@ -21,7 +21,7 @@ import "math"
 But it is good style to use the factored import statement.
 
 {{< code-tabs >}}
-{{< code-tab name="imports.cue" language="text"  area="top-left" >}}
+{{< code-tab name="imports.cue" language="cue"  area="top-left" >}}
 import (
 	"encoding/json"
 	"math"

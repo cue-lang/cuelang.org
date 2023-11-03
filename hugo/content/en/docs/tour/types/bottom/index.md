@@ -15,7 +15,7 @@ Note that an error is different from `null`: `null` is a valid value,
 whereas `_|_` is not.
 
 {{< code-tabs >}}
-{{< code-tab name="bottom.cue" language="text"  area="top-left" >}}
+{{< code-tab name="bottom.cue" language="cue"  area="top-left" >}}
 a: 4
 a: 5
 

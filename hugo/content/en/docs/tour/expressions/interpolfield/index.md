@@ -8,7 +8,7 @@ String interpolations may also be used in field names.
 One cannot refer to generated fields with references.
 
 {{< code-tabs >}}
-{{< code-tab name="genfield.cue" language="text"  area="top-left" >}}
+{{< code-tab name="genfield.cue" language="cue"  area="top-left" >}}
 sandwich: {
 	type:            "Cheese"
 	"has\(type)":    true

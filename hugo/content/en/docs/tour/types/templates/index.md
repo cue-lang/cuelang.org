@@ -18,7 +18,7 @@ which can then be used within the template.
 
 
 {{< code-tabs >}}
-{{< code-tab name="templates.cue" language="text"  area="top-left" >}}
+{{< code-tab name="templates.cue" language="cue"  area="top-left" >}}
 // The following struct is unified with all elements in job.
 // The name of each element is bound to Name and visible in the struct.
 job: [Name=_]: {

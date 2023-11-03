@@ -13,7 +13,7 @@ and something in between: a typical CUE constraint.
 
 <center>Data</center>
 
-```text
+```cue
 moscow: {
 	name:    "Moscow"
 	pop:     11.92M
@@ -25,7 +25,7 @@ moscow: {
 
 <center>Schema</center>
 
-```text
+```cue
 municipality: {
 	name:    string
 	pop:     int
@@ -37,7 +37,7 @@ municipality: {
 
 <center>CUE</center>
 
-```text
+```cue
 largeCapital: {
 	name:    string
 	pop:     >5M

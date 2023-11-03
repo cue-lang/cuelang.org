@@ -36,7 +36,7 @@ Here we see constraints in action:
 explicitly.
 
 {{< code-tabs >}}
-{{< code-tab name="types.cue" language="text"  area="top-left" >}}
+{{< code-tab name="types.cue" language="cue"  area="top-left" >}}
 point: {
 	x: number
 	y: number

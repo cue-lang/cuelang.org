@@ -16,7 +16,7 @@ Strings may also contain [interpolations](../../expressions/interpolation).
 
 
 {{< code-tabs >}}
-{{< code-tab name="stringlit.cue" language="text"  area="top-left" >}}
+{{< code-tab name="stringlit.cue" language="cue"  area="top-left" >}}
 // 21-bit unicode characters
 a: "\U0001F60E" // 😎
 

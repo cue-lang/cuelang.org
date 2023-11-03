@@ -14,7 +14,7 @@ This is very useful for template writers that may not know what fields
 a user will want to fill out.
 
 {{< code-tabs >}}
-{{< code-tab name="cycle.cue" language="text"  area="top-left" >}}
+{{< code-tab name="cycle.cue" language="cue"  area="top-left" >}}
 // CUE knows how to resolve the following:
 x: 200
 x: y + 100

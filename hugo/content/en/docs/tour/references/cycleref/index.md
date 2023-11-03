@@ -8,7 +8,7 @@ Thus if we have a cycle between some fields, all we need to do is ignore
 the cycle and unify their values once to achieve the same result as
 merging them ad infinitum.
 
-```text
+```cue
 labels: selectors
 labels: {app: "foo"}
 
