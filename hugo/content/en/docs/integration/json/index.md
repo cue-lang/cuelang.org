@@ -59,7 +59,7 @@ JSON from within CUE.
 The builtin `encoding/json.Marshal` generates JSON from within CUE.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "encoding/json"
 
 configMap: data: "point.json":
@@ -84,7 +84,7 @@ configMap: data: "point.json":
 The reverse is also possible.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "encoding/json"
 
 data:  #"{"x":4.5,"y":2.34}"#
@@ -104,7 +104,7 @@ point: json.Unmarshal(data)
 ### Validate
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 import "encoding/json"
 
 #Dimensions: {

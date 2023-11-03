@@ -19,7 +19,7 @@ This [Commented CUE](/search/?q=tag:"commented%20cue") demonstrates howto
 constrain a field to contain a string representations of integer values.
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="text"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
 package example
 
 import "strconv"

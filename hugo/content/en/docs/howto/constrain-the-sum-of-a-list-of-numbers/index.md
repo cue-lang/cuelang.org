@@ -18,7 +18,7 @@ This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
 demonstrates constraining the sum of a list of numbers.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="text"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
 package example
 
 import "list"

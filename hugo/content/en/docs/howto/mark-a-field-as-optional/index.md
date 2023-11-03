@@ -17,7 +17,7 @@ demonstrates using an **optional field** marker to constrain a field's value -
 *but only if it is present*.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="text"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
 package example
 
 // CUE indicates optional fields

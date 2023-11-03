@@ -109,7 +109,7 @@ On the right one sees a mix between data and schema as is exemplary of CUE.
 
 {{< columns >}}
 Data
-```text
+```cue
 moscow: {
 	name:    "Moscow"
 	pop:     11.92M
@@ -118,7 +118,7 @@ moscow: {
 ```
 {{< columns-separator >}}
 Schema
-```text
+```cue
 municipality: {
 	name:    string
 	pop:     int
@@ -127,7 +127,7 @@ municipality: {
 ```
 {{< columns-separator >}}
 CUE
-```text
+```cue
 largeCapital: {
 	name:    string
 	pop:     >5M
@@ -168,7 +168,7 @@ For instance,
 
 could be represented as
 
-```text
+```cue
 "a": 3
 "b": "c": "foo"
 ```
@@ -199,7 +199,7 @@ one can declare this separately in a one blanket statement.
 
 So instead of
 
-```text
+```cue
 jobs: {
 	foo: acmeMonitoring & {...}
 	bar: acmeMonitoring & {...}
@@ -209,7 +209,7 @@ jobs: {
 
 one can write
 
-```text
+```cue
 jobs: [string]: acmeMonitoring
 
 jobs: {

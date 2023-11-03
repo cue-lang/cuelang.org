@@ -16,7 +16,7 @@ This guide demonstrates CUE's **default value** syntax.
 Specify a default by marking one element of a **disjunction** with an asterisk
 prefix:
 
-```text
+```cue
 // field 'a' has a default value of "A".
 // it can also be set to any other value,
 // through unification
@@ -30,13 +30,13 @@ If a regular field has a value provided elsewhere, through unification, then
 that value is used instead:
 
 {{< code-tabs >}}
-{{< code-tab name="policy.cue" language="text"  area="top-left" >}}
+{{< code-tab name="policy.cue" language="cue"  area="top-left" >}}
 package example
 
 a: *"A" | _
 b: *"B" | _
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="text"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
 package example
 
 a: "some value"
@@ -69,13 +69,13 @@ The concrete value provided through unification may be the same as the default
 value:
 
 {{< code-tabs >}}
-{{< code-tab name="policy.cue" language="text"  area="top-left" >}}
+{{< code-tab name="policy.cue" language="cue"  area="top-left" >}}
 package example
 
 a: *"A" | string
 b: *5 | int
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="text"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
 package example
 
 a: "A"
@@ -93,13 +93,13 @@ If no element unifies with the value that has been provided, a disjunction
 resolution error results:
 
 {{< code-tabs >}}
-{{< code-tab name="policy.cue" language="text"  area="top-left" >}}
+{{< code-tab name="policy.cue" language="cue"  area="top-left" >}}
 package example
 
 a: *"A" | string
 b: *5 | int
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="text"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
 package example
 
 b: "a string"
@@ -126,7 +126,7 @@ value. If CUE needs to use a default but the value provided is not concrete, an
 error results:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 package example
 
 a: *"A" | _
@@ -145,7 +145,7 @@ resolve a default to a concrete value via references then the result can be
 successfully used as a default:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 package example
 
 a: 5
@@ -174,7 +174,7 @@ These values can either be provided inline, or by reference.
 In this example, both defaults for the field `a` are equivalent:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 package example
 
 a: string | *_s
@@ -212,7 +212,7 @@ A single field may have multiple defaults specified in parallel, provided that
 *all* the defaults unify successfully:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 package example
 
 a: *"A" | _
@@ -232,7 +232,7 @@ information being provided to resolve the disjunction, then the result is an
 error:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="text"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue"  area="top-left" >}}
 package example
 
 a: *"A" | _
@@ -254,19 +254,19 @@ example demonstrates, this has a higher change of leading to unclear CUE that
 could confuse the reader:
 
 {{< code-tabs >}}
-{{< code-tab name="policy-upper-bound.cue" language="text"  area="top-left" >}}
+{{< code-tab name="policy-upper-bound.cue" language="cue"  area="top-left" >}}
 package example
 
 port_x: *<=8080 | string
 port_y: *<=8080 | string
 {{< /code-tab >}}
-{{< code-tab name="policy-lower-bound.cue" language="text"  area="top-left" >}}
+{{< code-tab name="policy-lower-bound.cue" language="cue"  area="top-left" >}}
 package example
 
 port_x: *>=8080 | string
 port_y: *>=8080 | string
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="text"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
 package example
 
 port_x: "a string, for some reason"
