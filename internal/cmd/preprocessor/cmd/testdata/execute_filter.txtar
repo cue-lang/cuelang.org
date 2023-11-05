@@ -17,12 +17,22 @@ cmp stdout stdout.golden
 dir1_en.md
 -- content/dir1/site.cue --
 package site
+
+content: dir1: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir2/en.md --
 ---
 ---
 dir1_en.md
 -- content/dir2/site.cue --
 package site
+
+content: dir2: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- golden/hugo/content/en/dir1/index.md --
 ---
 ---

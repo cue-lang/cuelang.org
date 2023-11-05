@@ -26,6 +26,11 @@ cmp content/norun/en.md.writeBack golden/content/norun/en.md
 -- golden/content/norun/.keep --
 -- content/norun/site.cue --
 package site
+
+content: norun: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/norun/en.md --
 >---
 >title: JSON Superset
