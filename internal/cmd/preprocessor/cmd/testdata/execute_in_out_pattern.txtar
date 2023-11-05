@@ -19,6 +19,11 @@ cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 -- hugo/.keep --
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/en.md --
 >---
 >title: JSON Superset

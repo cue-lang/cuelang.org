@@ -52,9 +52,9 @@ func (t *txtarNode) writeToHasher(w io.Writer) {
 
 func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
-	p("%swith %s %q %q%s\n", t.rf.page.leftDelim, t.typ, t.lang, t.label, t.rf.page.rightDelim)
+	p("%swith %s %q %q%s\n", t.rf.page.config.LeftDelim, t.typ, t.lang, t.label, t.rf.page.config.RightDelim)
 	p("%s", txtar.Format(t.sourceArchive))
-	p("%send%s", t.rf.page.leftDelim, t.rf.page.rightDelim)
+	p("%send%s", t.rf.page.config.LeftDelim, t.rf.page.config.RightDelim)
 }
 
 // tag searches for the first #$key (or #$key($arg) if arg is non empty) tag

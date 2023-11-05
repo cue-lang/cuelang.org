@@ -48,13 +48,7 @@ type page struct {
 	// filename-based lookup convenience to langTargets.
 	rootFiles map[string]*rootFile
 
-	// leftDelim is the left hand delimiter used in text/template parsing for
-	// root files in the page.
-	leftDelim string
-
-	// rightDelim is the right hand delimiter used in text/template parsing for
-	// root files in the page.
-	rightDelim string
+	config pageConfig
 
 	// path is the path in ctx.config at which the page's configuration can be
 	// found (if it exists).
@@ -64,6 +58,15 @@ type page struct {
 	// log the buffered messages in blocks
 	bufferedErrorContext
 	*executionContext
+}
+
+// pageConfig follows a subset of the #site.#page type. Field comments
+// therefore follow the CUE definition.
+//
+// TODO: should we generate this Go type from the CUE (or vice versa)?
+type pageConfig struct {
+	LeftDelim  string `json:"leftDelim"`
+	RightDelim string `json:"rightDelim"`
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -77,15 +80,21 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 		return nil, ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, contentDir, err)
 	}
 
-	pathParts := strings.Split(rel, string(os.PathSeparator))
 	// Every bit of content is rooted at "content"
-	pagePath := []cue.Selector{cue.Str("content")}
-	for _, p := range pathParts {
-		pagePath = append(pagePath, cue.Str(p))
+	pageSelectors := []cue.Selector{cue.Str("content")}
+
+	// Only if we are not in the content directory is dereferencing required.
+	if rel != "." {
+		pathParts := strings.Split(rel, string(os.PathSeparator))
+		for _, p := range pathParts {
+			pageSelectors = append(pageSelectors, cue.Str(p))
+		}
 	}
+
 	// And finally we root everything under "page" to make the "recursive"
 	// definition of content complete.
-	pagePath = append(pagePath, cue.Str("page"))
+	pageSelectors = append(pageSelectors, cue.Str("page"))
+	pagePath := cue.MakePath(pageSelectors...)
 
 	res := &page{
 		contentRelPath: contentRelPath,
@@ -95,11 +104,7 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 		langTargets:    make(map[lang][]*rootFile),
 		rootFiles:      make(map[string]*rootFile),
 
-		// TODO actually extract these from the page's config
-		leftDelim:  "{{{",
-		rightDelim: "}}}",
-
-		path: cue.MakePath(pagePath...),
+		path: pagePath,
 
 		bufferedErrorContext: &errorContextBuffer{
 			executionContext: ec.executionContext,
@@ -108,6 +113,23 @@ func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	}
 
 	return res, nil
+}
+
+func (p *page) loadConfig() {
+	// Eagerly read certain page config values, and set markers where we
+	// see we have config values that will later be read/parsed in a lazy
+	// fashion.
+	pageConfig := p.executionContext.config.LookupPath(p.path)
+
+	if !pageConfig.Exists() {
+		p.errorf("%v: found no config at path %v", p, p.path)
+		return
+	}
+
+	if err := pageConfig.Decode(&p.config); err != nil {
+		p.errorf("%v: failed to load page config: %v", p, err)
+		return
+	}
 }
 
 // process processes a page root. It copies all relevant non-root file content

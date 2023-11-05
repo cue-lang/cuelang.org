@@ -29,6 +29,11 @@ cmp hugo/content/en/dir2/index.md golden/hugo/content/en/dir2/index.md
 -- golden/content/dir2/.keep --
 -- content/dir1/site.cue --
 package site
+
+content: dir1: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir1/en.md --
 >---
 >title: JSON Superset
@@ -121,6 +126,11 @@ $ cue export in.cue
 {{< /code-tabs >}}
 -- content/dir2/site.cue --
 package site
+
+content: dir2: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir2/en.md --
 >---
 >title: JSON Superset

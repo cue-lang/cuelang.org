@@ -11,3 +11,8 @@ exec preprocessor execute --debug=all
 branch_md_en
 -- empty_target/content/branch_md/root.cue --
 package site
+
+content: branch_md: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}

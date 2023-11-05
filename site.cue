@@ -15,6 +15,33 @@ versions: {
 	testscript:    "v1.10.0"
 }
 
+// _contentDefaults is a recursive template for setting defaults
+// on pages declared under 'content'. They are, in effect, site
+// defaults, templated to each page.
+_contentDefaults: {
+	// See execute_doc.go for a refresher on how the site is structured
+	// underneath the top level 'content' field. Wherever a page root if found,
+	// there can be page configuration. That page configuration should be placed
+	// at the point in the 'content' configuration tree that corresponds to the
+	// path of the page (remembering that hugo supports node and leaf pages).
+	// The page configuration itself for that path is placed in a field called
+	// 'page'. The implication therefore is that we cannot, in our site, have a
+	// directory called 'page' under the content directory, otherwise there
+	// would a conflict in terms of the structure. But this is reasonable (for
+	// now).
+	//
+	// We need _contentDefaults to apply to any page defined under the top level
+	// 'content' field. Therefore we need to express the template recursively
+	// taking advantage of the fact that any field that exists that is not named
+	// page represents part of a path to a more nested page.
+	[!="page"]: _contentDefaults
+	page: {
+		leftDelim:  *"{{{" | _
+		rightDelim: *"}}}" | _
+	}
+}
+content: _contentDefaults
+
 let donotedit = base.doNotEditMessage & {#generatedBy: "site_tool.cue", _}
 
 // template is an io/fs.FS-like map of files that are templated

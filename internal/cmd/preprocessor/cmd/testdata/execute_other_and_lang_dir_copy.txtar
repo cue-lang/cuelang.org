@@ -17,6 +17,11 @@ cmp stdout stdout.golden
 -- hugo/.keep --
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/.ignored/ignored.txt --
 ignored.txt
 -- content/dir/other.txt --
