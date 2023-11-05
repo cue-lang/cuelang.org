@@ -12,6 +12,11 @@ cmp content/dir/en.md golden/content/dir/en.md
 
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/en.md --
 >---
 >title: JSON Superset

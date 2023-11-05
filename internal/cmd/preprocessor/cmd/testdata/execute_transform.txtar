@@ -38,6 +38,11 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.pag
 -- golden/content/dir/.keep --
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/en.md --
 >---
 >title: JSON Superset
