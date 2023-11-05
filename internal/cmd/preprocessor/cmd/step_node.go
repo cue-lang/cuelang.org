@@ -38,11 +38,11 @@ func (s *stepNode) nodeType() string {
 
 func (s *stepNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
-	p("%swith %s%s", s.rf.page.leftDelim, s.nodeType(), s.rf.page.rightDelim)
+	p("%swith %s%s", s.rf.page.config.LeftDelim, s.nodeType(), s.rf.page.config.RightDelim)
 	for _, n := range s.children {
 		n.writeSourceTo(b)
 	}
-	p("%send%s", s.rf.page.leftDelim, s.rf.page.rightDelim)
+	p("%send%s", s.rf.page.config.LeftDelim, s.rf.page.config.RightDelim)
 }
 
 func (s *stepNode) writeTransformTo(b *bytes.Buffer) error {

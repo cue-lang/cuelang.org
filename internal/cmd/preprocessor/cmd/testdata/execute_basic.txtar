@@ -22,6 +22,11 @@ title: test
 branch_md_en
 -- content/branch_md/site.cue --
 package site
+
+content: branch_md: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/leaf_md/en.md --
 ---
 title: test
@@ -29,6 +34,11 @@ title: test
 leaf_md_en
 -- content/leaf_md/site.cue --
 package site
+
+content: leaf_md: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/branch_html/_en.html --
 ---
 title: test
@@ -36,6 +46,11 @@ title: test
 branch_html_en
 -- content/branch_html/site.cue --
 package site
+
+content: branch_html: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/leaf_html/en.html --
 ---
 title: test
@@ -43,6 +58,11 @@ title: test
 leaf_html_en
 -- content/leaf_html/site.cue --
 package site
+
+content: leaf_html: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- golden/hugo/content/en/branch_md/_index.md --
 ---
 title: test

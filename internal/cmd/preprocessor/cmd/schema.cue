@@ -2,9 +2,20 @@ package preprocessor
 
 #site: {
 	#page: {
+		// It's questionable whether these leftDelim and rightDelim should be
+		// required or not. We can always relax this later.
+
+		// leftDelim is the left hand delimiter used in text/template parsing for
+		// root files in the page.
+		leftDelim!: string
+
+		// rightDelim is the right hand delimiter used in text/template parsing for
+		// root files in the page.
+		rightDelim!: string
+
 		cache?: {
-			upload?: [string]:     string
-			code?: [string]:       string
+			upload?: [string]: string
+			code?: [string]:   string
 			multi_step?: [string]: bytes | [...{
 				cmd:      string
 				output:   string

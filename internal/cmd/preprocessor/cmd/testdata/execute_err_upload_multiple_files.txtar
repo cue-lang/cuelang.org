@@ -9,6 +9,11 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md:4:8: upload nodes can only contain 
 
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/en.md --
 >---
 >title: JSON Superset

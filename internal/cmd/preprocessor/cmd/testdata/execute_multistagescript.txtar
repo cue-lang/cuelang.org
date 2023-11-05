@@ -30,6 +30,11 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step scri
 -- hugo/.keep --
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/en.md --
 >---
 >title: JSON Superset
