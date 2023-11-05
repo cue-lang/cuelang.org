@@ -17,4 +17,8 @@ title: test
 ---
 -- sub/content/dir1/site.cue --
 package site
-content: dir1: {}
+
+content: dir1: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}

@@ -10,6 +10,11 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md:9:10 with node cannot have else blo
 
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/en.md --
 >---
 >title: JSON Superset

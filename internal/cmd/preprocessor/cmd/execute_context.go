@@ -116,6 +116,20 @@ func (ec *executeContext) execute() error {
 	}
 	ec.config = v
 
+	// Now load config per page
+	for _, d := range ec.order {
+		p := ec.pages[d]
+		p.loadConfig()
+
+		// This doesn't feel very elegant in the non-concurrent mode
+		ec.updateInError(p.isInError())
+		ec.logf("%s", p.bytes())
+	}
+
+	if ec.isInError() {
+		return errorIfInError(ec)
+	}
+
 	var pageWaits []<-chan struct{}
 
 	// Process the pages we found.

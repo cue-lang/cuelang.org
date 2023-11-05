@@ -30,6 +30,11 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step scri
 -- hugo/.keep --
 -- content/dir/site.cue --
 package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
 -- content/dir/en.md --
 >---
 >title: JSON Superset
@@ -119,11 +124,11 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "FjqbcNesly8/cBp+deuzUqVtCL1mcBFzC/OzbUMAQBs="
-						"upload-some-json": "m6PE8kJpaxzd7D2+DVPI53Fc54zNTfD+kpq0I9aNQLQ="
+						"upload-some-cue":  "+9SY5SBexr2xQrlRWTSwujYBkWyk05HO7NZvmgu6Haw="
+						"upload-some-json": "2ZMCvU3RnzDKAMY2lugCXtdzjGrU7IfyPrtxZbJleSg="
 					}
 					multi_step: {
-						"AHHOS7PJ2UM9O5RAVLQKMLBEGNL4S4PMMNG3DRI2MGPHF2EEVC80====": [{
+						"0FRN1EA4KR9P4AV3B8QEJQHCN90G136K1P678QE5SGC89KNJ9NKG====": [{
 							cmd:      "cue eval in.cue # test"
 							exitCode: 0
 							output: """

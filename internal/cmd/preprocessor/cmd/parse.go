@@ -71,8 +71,7 @@ func (rf *rootFile) parse() error {
 	rf.bodyPrefix = bytes.Repeat([]byte("\n"), bytes.Count(f[:bodyStart], []byte("\n")))
 	body := append(rf.bodyPrefix, f[bodyStart:]...)
 
-	// TODO derive the delimiters from the page's CUE config
-	parseTrees, err := parse.Parse(rf.filename, string(body), rf.page.leftDelim, rf.page.rightDelim, templateFunctions)
+	parseTrees, err := parse.Parse(rf.filename, string(body), rf.page.config.LeftDelim, rf.page.config.RightDelim, templateFunctions)
 	if err != nil {
 		return rf.errorf("%v: failed to parse body: %v", rf, err)
 	}

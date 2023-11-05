@@ -15,6 +15,15 @@ versions: {
 	testscript:    "v1.10.0"
 }
 
+_contentDefaults: {
+	[!="page"]: _contentDefaults
+	page: {
+		leftDelim:  "{{{"
+		rightDelim: "}}}"
+	}
+}
+content: _contentDefaults
+
 let donotedit = base.doNotEditMessage & {#generatedBy: "site_tool.cue", _}
 
 // template is an io/fs.FS-like map of files that are templated
