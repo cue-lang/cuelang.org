@@ -652,6 +652,7 @@ func (m *multiStepScript) run() (runerr error) {
 		}
 
 		// TODO we should tidy this up to not be a walk... it's getting verbose
+		var i int
 		m.walkBody(func(n node) error {
 			step, ok := n.(*scriptNode)
 			if !ok {
@@ -663,9 +664,6 @@ func (m *multiStepScript) run() (runerr error) {
 			for _, stmt := range step.stmts {
 				fence := []byte(stmt.outputFence + "\n")
 				advanceWalk(fence) // Ignore everything before the fence
-
-				// TODO: if we have !cacheMiss, then we need to use comparitors to assing
-				// back to the original statements if there is a fuzzy match.
 
 				stmt.Output = advanceWalk(fence)
 				exitCodeStr := advanceWalk([]byte("\n"))
@@ -680,8 +678,43 @@ func (m *multiStepScript) run() (runerr error) {
 					}
 				}
 
-				// TODO: if we have !cacheMiss, then we need to use comparitors to assing
-				// back to the original statements if there is a fuzzy match.
+				// At this point, stmt.Output is sanitised.
+
+				if !cacheMiss {
+					// In this code path, we had a cache hit but because of a
+					// flag/other we intentionally skipped the cache.  This means
+					// that cmd.Output might be the same as cstmt.Output. But it
+					// might not, because of variations like test times in the
+					// output from commands like 'go test'. This is where
+					// comparators come in. They normalise the output of commands in
+					// order to allow for "fuzzy" comparisons. Running the
+					// comparators on both the cached and actual output gives us
+					// something we can then compare byte-for-byte. If the results
+					// from the normalization compare equal, then we can safely
+					// write the output from the cached version to the actual. The
+					// actual is what will get written back to disk.
+					// re-running the
+
+					cstmt := cachedOutStmts[i]
+					actualAccum := stmt.Output
+					cachedAccum := cstmt.Output
+					for _, cmp := range m.page.config.Comparators {
+						f := m.getFence()
+						var err error
+						actualAccum, err = cmp.normalize(stmt, actualAccum, f)
+						if err != nil {
+							return err
+						}
+						cachedAccum, err = cmp.normalize(stmt, cachedAccum, f)
+						if err != nil {
+							return err
+						}
+					}
+					if actualAccum == cachedAccum {
+						stmt.Output = cstmt.Output
+					}
+				}
+				i++ // TODO - remove this as part of TODO from above
 			}
 			return nil
 		})
