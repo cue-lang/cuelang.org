@@ -69,7 +69,8 @@ type pageConfig struct {
 	LeftDelim  string `json:"leftDelim"`
 	RightDelim string `json:"rightDelim"`
 
-	Sanitisers []sanitiser
+	Sanitisers  []sanitiser
+	Comparators []comparator
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -134,7 +135,8 @@ func (p *page) loadConfig() {
 	type shim struct {
 		*pageConfig
 
-		Sanitisers []json.RawMessage `json:"sanitisers"`
+		Sanitisers  []json.RawMessage `json:"sanitisers"`
+		Comparators []json.RawMessage `json:"comparators"`
 	}
 
 	s := shim{
@@ -154,21 +156,25 @@ func (p *page) loadConfig() {
 		}
 		p.config.Sanitisers = append(p.config.Sanitisers, realS)
 	}
+
+	for i, c := range s.Comparators {
+		realC, err := p.parseComparator(c)
+		if err != nil {
+			p.errorf("%v: failed to parse sanitiser at config index %d: %v", p, i, err)
+			return
+		}
+	}
 }
 
 // parseSanitiser takes a CUE config value that represents a sanitiser
 // and returns a Go value that represents that sanitiser.
 func (p *page) parseSanitiser(m json.RawMessage) (sanitiser, error) {
-	type discriminator struct {
-		Kind string `json:"kind"`
+	kind, err := parseKind(m)
+	if err != nil {
+		return nil, err
 	}
 
-	var d discriminator
-	if err := json.Unmarshal(m, &d); err != nil {
-		return nil, fmt.Errorf("failed to unmarshal discriminator from config: %v", err)
-	}
-
-	switch d.Kind {
+	switch kind {
 	case "patternSanitiser":
 		var c patternSanitiser
 		if err := json.Unmarshal(m, &c); err != nil {
@@ -178,6 +184,41 @@ func (p *page) parseSanitiser(m json.RawMessage) (sanitiser, error) {
 	default:
 		return nil, fmt.Errorf("unknown sanitiser: %q", d.Kind)
 	}
+}
+
+// parseComparator takes a CUE config value that represents a comparator
+// and returns a Go value that represents that comparator.
+func (p *page) parseComparator(m json.RawMessage) (comparator, error) {
+	kind, err := parseKind(m)
+	if err != nil {
+		return nil, err
+	}
+
+	switch kind {
+	case "patternComparator":
+		var c patternComparator
+		if err := json.Unmarshal(m, &c); err != nil {
+			return nil, fmt.Errorf("failed to unmarshal patternSanitiser: %v", err)
+		}
+		return &c, nil
+	case "unstableLineOrderComparator":
+
+	default:
+		return nil, fmt.Errorf("unknown sanitiser: %q", d.Kind)
+	}
+}
+
+func parseKind(m json.RawMessage) (string, error) {
+	type discriminator struct {
+		Kind string `json:"kind"`
+	}
+
+	var d discriminator
+	if err := json.Unmarshal(m, &d); err != nil {
+		return "", fmt.Errorf("failed to unmarshal discriminator from config: %v", err)
+	}
+
+	return d.Kind, nil
 }
 
 // process processes a page root. It copies all relevant non-root file content
