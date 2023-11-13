@@ -73,10 +73,10 @@
 
     &__icon {
         display: inline-block;
+        height: var(--link-icon-size, 24px);
         margin: 0 0 0 -0.4em;
-        max-height: 24px;
-        max-width: 24px;
         vertical-align: 12px;
+        width: var(--link-icon-size, 24px);
 
         &.icon {
             display: inline-block; // Win from icon styles
