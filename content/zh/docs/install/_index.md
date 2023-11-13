@@ -20,7 +20,7 @@ CUE 的 Go APIs 在 [`cuelang.org/go`](https://pkg.go.dev/cuelang.org/go) 包中
 另外，CUE 在 MacOS 和 Linux 上通过 brew 安装。
 
 ```
-brew install cue-lang/tap/cue
+brew install cue
 ```
 
 ### 在 Arch Linux 上安装
