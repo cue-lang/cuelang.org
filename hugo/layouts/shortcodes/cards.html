@@ -1,0 +1,30 @@
+{{ with .Inner }}{{/* don't do anything, just call it because hugo needs it */}}{{ end }}
+
+{{ $cards := .Scratch.Get "cards" | default slice }}
+
+<div class="cards">
+    <ul class="cards__items">
+        {{ range $index, $card := $cards }}
+            <div class="cards__item">
+                <h3 class="cards__title">{{ $card.title }}</h3>
+
+                <div class="cards__content">
+                    {{ $card.content | markdownify }}
+                </div>
+
+                {{ if and $card.href $card.label }}
+                    <div class="link cards__readmore">
+                        <span class="cards__label">{{ $card.label }}</span>
+                        {{ partial "icon.html" (dict "icon" "chevron-right" "class" "link__icon cards__icon") }}
+                    </div>
+                {{ end }}
+
+                {{ if $card.href }}
+                    <a class="cards__link" aria-label="{{ $card.label }}" href="{{ $card.href }}">
+                        <span>{{ $card.label }}</span>
+                    </a>
+                {{ end }}
+            </div>
+        {{ end }}
+    </ul>
+</div>

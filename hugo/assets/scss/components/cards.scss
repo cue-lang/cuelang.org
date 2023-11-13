@@ -1,0 +1,103 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/screen';
+@import '../mixins/sr-only';
+@import '../mixins/stretch';
+
+.cards {
+    $self: &;
+
+    --cards-icon-color: #{ $c-blue };
+    --cards-link-border-color: #{ $c-yellow };
+    --cards-border-width: 2px;
+
+    container: cardsContainer / inline-size;
+    margin: 2rem 0;
+
+    &__items {
+        display: grid;
+        gap: $p-gutter;
+    }
+
+    &__item {
+        background-color: $c-blue--lighter;
+        border: 1px solid $c-blue--lighter;
+        border-radius: $b-radius;
+        padding: $p-gutter;
+        position: relative;
+        transition:
+            background-color 0.2s ease-in-out,
+            border 0.2s ease-in-out;
+
+        &:focus,
+        &:hover {
+            background-color: transparentize($c-blue--lighter, 0.4);
+            border: 1px solid transparentize($c-blue--light, 0.8);
+
+            #{ $self }__readmore {
+                --cards-icon-color: #{ $c-yellow };
+            }
+
+            #{ $self }__label {
+                background-position-x: 0;
+                background-size: 100% var(--cards-border-width);
+            }
+        }
+    }
+
+    &__title {
+        margin: 0 0 0.875rem;
+    }
+
+    &__readmore {
+        --link-icon-size: 2rem;
+
+        justify-content: space-between;
+        padding: $p-gutter 0 0 !important; // Overrule .link styling
+        width: 100%;
+    }
+
+    &__label {
+        background: linear-gradient(var(--cards-link-border-color), var(--cards-link-border-color)) no-repeat 100% 100%;
+        background-size: 0 var(--cards-border-width);
+        display: inline-block;
+        position: relative;
+        transition:
+            background-color 0.2s ease-in-out,
+            background-size 0.2s ease-in-out,
+    }
+
+    &__icon {
+        background-color: var(--cards-icon-color);
+        border-radius: $b-radius--round;
+        fill: $c-white;
+        padding: 2px;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    &__link {
+        @include stretch;
+
+        span {
+            @include sr-only;
+        }
+    }
+
+    @include screen($screen-simple) {
+        &__items {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__item {
+            display: grid;
+            grid-template-columns: subgrid;
+            grid-template-rows: auto 1fr auto;
+        }
+    }
+
+    @container cardsContainer (min-width: 900px) {
+        &__items {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
