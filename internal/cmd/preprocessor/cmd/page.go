@@ -69,7 +69,8 @@ type pageConfig struct {
 	LeftDelim  string `json:"leftDelim"`
 	RightDelim string `json:"rightDelim"`
 
-	Sanitisers []sanitiser
+	Sanitisers  []sanitiser
+	Comparators []comparator
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -134,7 +135,8 @@ func (p *page) loadConfig() {
 	type shim struct {
 		*pageConfig
 
-		Sanitisers []json.RawMessage `json:"sanitisers"`
+		Sanitisers  []json.RawMessage `json:"sanitisers"`
+		Comparators []json.RawMessage `json:"comparators"`
 	}
 
 	s := shim{
@@ -153,6 +155,15 @@ func (p *page) loadConfig() {
 			return
 		}
 		p.config.Sanitisers = append(p.config.Sanitisers, realS)
+	}
+
+	for i, c := range s.Comparators {
+		realC, err := p.parseComparator(c)
+		if err != nil {
+			p.errorf("%v: failed to parse sanitiser at config index %d: %v", p, i, err)
+			return
+		}
+		p.config.Comparators = append(p.config.Comparators, realC)
 	}
 }
 
@@ -190,6 +201,38 @@ func parseKind(m json.RawMessage) (string, error) {
 	}
 
 	return d.Kind, nil
+}
+
+// parseComparator takes a CUE config value that represents a comparator
+// and returns a Go value that represents that comparator.
+func (p *page) parseComparator(m json.RawMessage) (comparator, error) {
+	kind, err := parseKind(m)
+	if err != nil {
+		return nil, err
+	}
+
+	switch kind {
+	case "patternComparator":
+		var p patternComparator
+		if err := json.Unmarshal(m, &p); err != nil {
+			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
+		}
+		if err := p.init(); err != nil {
+			return nil, fmt.Errorf("failed to init %s: %v", kind, err)
+		}
+		return &p, nil
+	case "unstableLineOrderComparator":
+		var u unstableLineOrderComparator
+		if err := json.Unmarshal(m, &u); err != nil {
+			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
+		}
+		if err := u.init(); err != nil {
+			return nil, fmt.Errorf("failed to init %s: %v", kind, err)
+		}
+		return &u, nil
+	default:
+		return nil, fmt.Errorf("unknown sanitiser: %q", kind)
+	}
 }
 
 // process processes a page root. It copies all relevant non-root file content

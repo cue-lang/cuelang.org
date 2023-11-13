@@ -35,7 +35,6 @@ package preprocessor
 	// to commands that match.
 	#patternSanitiser: {
 		_kindAndCommand
-
 		kind: "patternSanitiser"
 
 		// pattern defines the text without the output of the matched command
@@ -44,6 +43,22 @@ package preprocessor
 
 		// replacement defines the text that replaces strings that match pattern.
 		replacement?: string
+	}
+
+	#comparator: _kindAndCommand & (#patternComparator | #unstableLineOrderComparator)
+
+	#patternComparator: {
+		_kindAndCommand
+		kind: "patternComparator"
+
+		// pattern defines the text without the output of the matched command for
+		// which we loosen comparison.
+		pattern?: #pattern
+	}
+
+	#unstableLineOrderComparator: {
+		_kindAndCommand
+		kind: "unstableLineOrderComparator"
 	}
 
 	#page: {
@@ -58,7 +73,19 @@ package preprocessor
 		// root files in the page.
 		rightDelim!: string
 
+		// sanitisers are transformations that apply to the output of commands.
+		// They normalise output that would otherwise vary between different runs
+		// of a multi-step script on a page. This can happen, for example, where
+		// a multi-step script is re-run on a machine which has a different OS or
+		// architecture. e.g. the output of go version. All sanitisers that match
+		// are applied in order.
 		sanitisers?: [...#sanitiser]
+
+		// comparators allow for some variance in output, variance that is
+		// generally random. For example, a command where the order of lines can
+		// vary, or test run time. All comparators that match for a given command
+		// are applied, in order.
+		comparators?: [...#comparator]
 
 		cache?: {
 			upload?: [string]: string
