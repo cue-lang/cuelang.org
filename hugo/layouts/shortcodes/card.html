@@ -1,0 +1,21 @@
+{{ if .Parent }}
+    {{- $href := .Get "href" | default "" -}}
+    {{- $label := .Get "label" | default "" -}}
+    {{- $title := .Get "title" | default "" -}}
+    {{- $content := .Inner -}}
+
+    {{ if not (.Parent.Scratch.Get "cards") }}
+        {{ .Parent.Scratch.Set "cards" slice }}
+    {{ end }}
+
+    {{ with .Inner }}
+        {{ $.Parent.Scratch.Add "cards" (dict
+            "href" $href
+            "label" $label
+            "title" $title
+            "content" $content
+        ) }}
+    {{ end }}
+{{ else }}
+    {{- errorf "[%s] %q: card shortcode is missing its parent" site.Language.Lang .Page.Path -}}
+{{ end}}
