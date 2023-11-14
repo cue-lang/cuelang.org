@@ -25,18 +25,27 @@
         @include marginless-child;
 
         position: relative;
+
+        code {
+            background-color: var(--note-code-bg-color, $c-grey-blue);
+            border-radius: 2px;
+            color: $c-grey--darkest;
+            padding: 0 4px;
+        }
     }
 
     &--warn {
         --heading-color: #{ $c-blue--darker };
         --list-color: #{ $c-blue--darker };
         --note-bg-color: #{ $c-yellow };
+        --note-code-bg-color: #{ $c-yellow--light };
         --text-color: #{ $c-blue--darker };
         --text-link-color: #{ $c-blue--darker };
     }
 
     &--caution {
         --note-bg-color: #{ $c-red--light };
+        --note-code-bg-color: #{ $c-red--lighter };
     }
 
     @include screen($screen-simple) {
