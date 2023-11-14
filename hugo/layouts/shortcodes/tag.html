@@ -1,0 +1,13 @@
+{{- $tagName := .Get 0 | default "" -}}
+{{- $tagMap := where .Site.Params.tags "name" "eq" $tagName | first 1 -}}
+
+{{- if $tagMap -}}
+    {{- range $tag := $tagMap -}}
+        {{- $tagValue:= cond (strings.Contains $tag.name " ") (printf "\"%s\"" $tag.name) $tag.name -}}
+
+        <a href="/search?q=tag:{{ $tagValue }}"
+        class="tag tag--inline{{ if $tag.color }} tag--{{ $tag.color }}{{ end }}">
+            {{ $tag.name }}
+        </a>
+    {{- end -}}
+{{- end -}}
