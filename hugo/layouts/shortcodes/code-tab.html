@@ -4,13 +4,15 @@
     {{ $language := .Get "language" | default "" }}
     {{ $codeToCopy := .Get "codetocopy" }}
     {{ $type := .Get "type" | default "default" }}
+    {{ $lineos := .Get "linenos" | default "false" }}
     {{ $groupId := .Get "groupId" | default "default" }}
     {{ $arrayName := printf "tabs-%s" $area }}
-    {{ $content := printf "```%s {type=\"%s\" codeToCopy=\"%s\" modifier=\"code-block--tab\" }%s```" $language $type $codeToCopy .Inner }}
+    {{ $content := printf "```%s {type=\"%s\", linenos=\"%s\", codeToCopy=\"%s\" modifier=\"code-block--tab\" }%s```" $language $type $lineos $codeToCopy .Inner }}
 
     {{ if not (.Parent.Scratch.Get $arrayName) }}
         {{ .Parent.Scratch.Set $arrayName slice }}
     {{ end }}
+
     {{ with .Inner }}
         {{ $.Parent.Scratch.Add $arrayName (dict
             "name" $name
