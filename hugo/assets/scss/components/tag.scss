@@ -31,6 +31,10 @@
         width: 0.75rem;
     }
 
+    &--inline {
+        display: inline-flex;
+    }
+
     &--red {
         --tag-color: #{ $c-filter-red };
     }
@@ -51,8 +55,8 @@
         --tag-color: #{ $c-filter-purple };
     }
 
-    &--lila {
-        --tag-color: #{ $c-filter-lila };
+    &--lilac {
+        --tag-color: #{ $c-filter-lilac };
     }
 
     &--blue {
