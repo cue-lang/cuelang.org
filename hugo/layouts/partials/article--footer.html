@@ -11,11 +11,11 @@
     </div>
 
     <div class="article__footer-meta">
-        <div class="article__footer-tags">
-            {{- if $tags -}}
+        {{- if $tags -}}
+            <div class="article__footer-tags">
                 {{- partial "tags.html" (dict "tags" $tags) -}}
-            {{- end -}}
-        </div>
+            </div>
+        {{- end -}}
 
         <div class="article__share">
             {{- partial "share.html" . -}}

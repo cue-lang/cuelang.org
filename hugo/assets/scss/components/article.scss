@@ -99,6 +99,11 @@
     &__share {
         flex: 0 0 46px;
         height: 46px;
+
+        &:only-child {
+            margin-left: auto;
+            margin-top: -3.75rem
+        }
     }
 
     &--blog {
