@@ -5,7 +5,6 @@
 
             <article class="article article--docs">
                 <div class="article__container">
-
                     <div class="article__content">
                         {{ .Content }}
 
@@ -14,14 +13,13 @@
                         {{ end }}
                     </div>
 
-                    <footer class="article__footer">
-                        {{ partial "last-modified.html" . }}
-                    </footer>
+                    {{- partial "article--footer" . -}}
                 </div>
             </article>
 
             {{ partial "paging/prev-next.html" . }}
         </div>
+    
         <div id="docs-menu" class="docs__aside">
             <div class="docs__backdrop" data-docs-close="docs"></div>
             <div class="docs__nav">
