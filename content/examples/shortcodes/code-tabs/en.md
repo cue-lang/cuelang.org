@@ -19,7 +19,17 @@ A code-tab shortcode always needs to be part of a code-tabs shortcode.
 languages: [...#Language]
 {{</* /code-tab */>}}
 
-{{</* code-tab name="data.yaml" language="yaml" area="bottom-left" */>}}
+{{</* code-tab name="data.yaml" language="yaml" linenos="table" area="top-left" */>}}
+languages:
+  - tag: en
+    name: English
+  - tag: nl
+    name: dutch
+  - tag: no
+    name: Norwegian
+{{</* /code-tab */>}}
+
+{{</* code-tab name="data.yaml" language="yaml" linenos="true" area="bottom-left" */>}}
 languages:
   - tag: en
     name: English
@@ -48,7 +58,7 @@ name: =~"^\\p{Lu}" // Must start with an uppercase letter.
 languages: [...#Language]
 {{< /code-tab >}}
 
-{{< code-tab name="data.yaml" language="yaml" area="top-left" >}}
+{{< code-tab name="data.yaml" language="yaml" linenos="table" area="top-left" >}}
 languages:
 - tag: en
   name: English
@@ -58,7 +68,7 @@ languages:
   name: Norwegian
 {{< /code-tab >}}
 
-{{< code-tab name="data.yaml" language="yaml" area="bottom-left" >}}
+{{< code-tab name="data.yaml" language="yaml" linenos="true" area="bottom-left" >}}
 languages:
 - tag: en
   name: English
@@ -106,6 +116,9 @@ language
 
 type
 : optional - Tab code type. Can be 'default' or 'terminal'. For default you can also omit this attribute
+
+linenos
+: option - Only works when a language is set. Possible values are `true`, `false`, `table`, or `inline`. Default is set to `false`. Any other value will add line numbers.
 
 codeToCopy
 : optional - By default the copy button copies the inner content. You can change that by passing in code with this attribute.
