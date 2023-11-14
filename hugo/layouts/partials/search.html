@@ -3,7 +3,11 @@
 {{ $contentTypes := slice }}
 {{ $contentType := .contentType | default "" }}
 {{ $type := .type | default "full" }}
-{{ $placeholder := (T "search_placeholder" .) }}
+{{ $placeholder := (T "search_placeholder" ) }}
+
+{{ if $contentType }}
+    {{ $placeholder = (T "search_placeholder_content_type" .) }}
+{{ end }}
 
 {{ with $context }}
     {{ if $showContentTypes }}
