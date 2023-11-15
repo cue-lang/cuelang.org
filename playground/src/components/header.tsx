@@ -107,7 +107,7 @@ export class Header extends React.Component<HeaderProps, HeaderState>
                                 { mainNav.map((navItem) => {
                                     return (
                                         <li className="cue-nav__item" key={ navItem.url }>
-                                            <a className="cue-nav__link" href={ navItem.url }>
+                                            <a className="cue-nav__link" href={ navItem.url } target={ navItem.target || '_self' }>
                                                 <span className="cue-nav__text">{ navItem.title }</span>
                                             </a>
                                         </li>
