@@ -2,7 +2,7 @@
 title: Example blog page and also a longer title
 date: "2023-04-06"
 draft: false
-noindex: true
+no_index: true
 image: "cow.jpg"
 authors:
     - myitcv

@@ -1,6 +1,6 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    {{ range where (where .Data.Pages "Type" "!=" "examples") "Params.noindex" "ne" true }}
+    {{ range where (where .Data.Pages "Type" "!=" "examples") "Params.no_index" "ne" true }}
         {{- if .Permalink -}}
             <url>
                 <loc>{{ .Permalink }}</loc>
