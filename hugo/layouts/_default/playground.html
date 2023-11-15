@@ -1,3 +1,15 @@
+{{ $versionCommit := print $.Site.Params.github_repo "/commit/" .Site.Data.Repository.Revision }}
+{{ $issueBody := (print
+    "### What page were you looking at?\n\n"
+    .Permalink "\n\n"
+    "### What version of the site were you looking at?\n\n"
+    $versionCommit "\n\n"
+    "### What did you do?\n\n\n\n"
+    "### What did you expect?\n\n\n\n"
+    "### What did you see instead?\n\n") | urlquery
+}}
+{{ $issueUrl := (print "https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&title=alpha.cuelang.org:%20&body=" $issueBody) | htmlUnescape | safeHTML }}
+
 <!doctype html>
 <html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection }}" class="no-js">
     <head>{{ partial "site/head.html" . }}</head>
@@ -8,9 +20,10 @@
             </div>
         </main>
         <script>
-            document.editorEnv = {
+            document.playgroundEnv = {
                 baseUrl: {{ .Site.BaseURL | absURL }},
-                wasmPath: '/playground'
+                wasmPath: '/playground',
+                issueUrl: {{ $issueUrl }},
             }
         </script>
         <link rel="stylesheet" href="{{ "/playground/main.css" | relURL }}">
