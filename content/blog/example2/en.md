@@ -2,7 +2,7 @@
 title: Example blog page 2 with a longer title
 date: "2023-01-01"
 draft: false
-noindex: true
+no_index: true
 image: "allium.jpg"
 ---
 
