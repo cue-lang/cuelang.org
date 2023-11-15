@@ -6,22 +6,16 @@
 .drawer {
     $self: &;
 
-    bottom: 0;
     display: none;
-    left: 0;
+    inset: 0;
     position: fixed;
-    right: 0;
-    top: 0;
     z-index: 11;
 
     &__backdrop {
         background-color: transparent;
-        bottom: 0;
         cursor: pointer;
-        left: 0;
+        inset: 0;
         position: absolute;
-        right: 0;
-        top: 0;
         transition: background-color 0.2s ease-in-out;
     }
 
@@ -57,8 +51,7 @@
         flex: 1;
         margin: 0 auto;
         max-width: $w-site;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden auto;
         padding: $p-gutter;
         width: 100%;
     }

@@ -13,23 +13,17 @@
     }
 
     &__aside {
-        bottom: 0;
         display: none;
-        left: 0;
+        inset: 0;
         position: fixed;
-        right: 0;
-        top: 0;
         z-index: 9;
     }
 
     &__backdrop {
         background-color: transparent;
-        bottom: 0;
         cursor: pointer;
-        left: 0;
+        inset: 0;
         position: absolute;
-        right: 0;
-        top: 0;
         transition: background-color 0.2s ease-in-out;
     }
 
@@ -93,15 +87,12 @@
             @include scrollbars;
 
             background-color: var(--docs-aside-background, $c-blue--lighter);
-            bottom: auto;
             display: block;
             grid-area: aside;
             height: 100%;
-            left: auto;
+            inset: auto;
             overflow: auto;
             position: relative;
-            right: auto;
-            top: auto;
             z-index: initial;
         }
 

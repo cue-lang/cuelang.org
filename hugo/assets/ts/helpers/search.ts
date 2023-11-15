@@ -63,6 +63,7 @@ export const queryToUrlParams = (query: ParsedQuery): string => {
     return queryString;
 };
 
+// eslint-disable-next-line max-lines-per-function
 export const parseQuery = (query: string): ParsedQuery => {
     if (!query) {
         return {
