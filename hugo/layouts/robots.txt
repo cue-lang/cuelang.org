@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /play/*?*id=
 
 Sitemap: {{ absURL "sitemap.xml" }}
