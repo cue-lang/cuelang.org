@@ -10,16 +10,12 @@
 
     --popover-close-size: 54px;
 
-    align-items: center;
-    bottom: 0;
     display: flex;
-    justify-items: center;
-    left: 0;
+    inset: 0;
     opacity: 0;
     padding: 0;
+    place-items: center;
     position: fixed;
-    right: 0;
-    top: 0;
     transition: opacity 0.2s;
     z-index: 600;
 
