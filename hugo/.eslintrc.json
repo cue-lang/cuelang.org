@@ -6,7 +6,10 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
     ],
     "overrides": [],
     "parser": "@typescript-eslint/parser",
@@ -14,7 +17,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module",
         "project": [
-            "tsconfig.json"
+            "**/tsconfig.json"
         ]
     },
     "plugins": [
@@ -138,7 +141,13 @@
         "import/no-unresolved": "off",
         "jsdoc/check-alignment": "error",
         "jsdoc/check-indentation": "error",
-        "jsdoc/newline-after-description": "error",
+        "jsdoc/tag-lines": [
+            2,
+            "any",
+            {
+              "startLines": 1
+            }
+        ],
         "jsdoc/no-types": "error",
         "complexity": "warn",
         "max-len": [

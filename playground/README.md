@@ -28,7 +28,7 @@ The output is the JSON-marshalled result of the CUE input.
 
 ### Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `>= v18.14.0`
+* [NodeJS](https://nodejs.org/) `>= v20.x`
 * [Go](https://golang.org/dl/) (stable version)
 
 ### Developing the site locally

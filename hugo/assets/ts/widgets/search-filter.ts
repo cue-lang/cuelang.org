@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import Fuse from 'fuse.js';
 import { BaseWidget } from './base-widget';
 import { FilterEvent, FilterItem, ParsedQuery, SearchEvents } from '../interfaces/search';
