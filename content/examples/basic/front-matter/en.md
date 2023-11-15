@@ -88,5 +88,27 @@ tags:
 authors
 : adding the author(s) to the frontmatter, makes the content header show an image + name of the assigned author. It also shows a popup on click, with again an image + (display) name, and when available a link to their Github, and a link to the search page so users can search for other articles of this author.
 
-noindex
-: adding noindex: true to the front-matter add the meta tag `<meta name="robots" content="noindex, nofollow">` to the head of the page. Also the pages will be excluded from the sitemap.xml.
+no_index
+: adding `no_index: true` to the front-matter adds the meta tag `<meta name="robots" content="noindex, nofollow">` to the head of the page. Also the pages will be excluded from the sitemap.xml.
+
+## Docs specific front-matter
+
+disabled
+: shows page without the content, but with a TODO block
+
+hide_summary
+: adding `hide_summary: true` will remove the page from the list on a docs overview page (eg. /docs/howto). It will still show in the left hand nav, and the prev/next buttons.
+
+index_hide
+: adding `index_hide: true` will hide the list of children on a docs overview page (eg. /docs/howto)
+
+toc_hide
+: `toc_hide: true` will hide the table of contents in the left hand nav
+
+toc_root
+: `toc_root: true` will set the page as the parent, hiding all other levels of the left hand nav. The left hand nav will only show the (grand)children of the page.
+
+## Blog specific front-matter
+
+image
+: adds a header image to the blog page. Also shows in the blog teaser.
