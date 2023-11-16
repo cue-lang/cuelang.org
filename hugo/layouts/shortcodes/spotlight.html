@@ -1,7 +1,17 @@
 {{- $title := .Get "title" | default false -}}
 {{- $theme := .Get "theme" | default "blue" -}}
+{{- $modifier := .Get "modifier" | default false -}}
+{{- $cssClass := "spotlight" -}}
 
-<div class="spotlight{{if $theme }} spotlight--{{ $theme }}{{ end }}">
+{{ if $theme }}
+    {{ $cssClass = print $cssClass " spotlight--" $theme }}
+{{ end }}
+
+{{ if $modifier }}
+    {{ $cssClass = print $cssClass " spotlight--" $modifier }}
+{{ end }}
+
+<div class="{{ $cssClass }}">
     {{ with $title }}
         <h2 class="spotlight__title">{{ . }}</h2>
     {{ end }}
