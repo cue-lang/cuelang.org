@@ -51,9 +51,6 @@ disableAliases = false
     [mediaTypes."text/netlify"]
         delimiter = ""
 
-[social]
-    twitter = "cue_lang"
-
 [build]
     noJSConfigInAssets = true
 
