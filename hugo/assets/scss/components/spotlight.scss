@@ -7,12 +7,8 @@
     $self: &;
 
     background-color: var(--spotlight-bg-color, $c-blue--lighter);
-    margin: 0 (-$p-gutter) 1.5rem;
+    margin: 1.5rem (-$p-gutter);
     padding: $p-gutter--large $p-gutter;
-
-    &:last-child {
-        margin-top: 3rem;
-    }
 
     &__title {
         @include style-heading-2;
@@ -37,17 +33,21 @@
         --spotlight-bg-color: #{ $c-yellow--light }
     }
 
+    &--related-content {
+        margin-top: 3rem;
+    }
+
     @include screen($screen-normal) {
         border-radius: $b-radius;
-        margin: 0 (-50px) 1.5rem; // 50px because of difference between article container and content container
+        margin: 1.5rem (-50px); // 50px because of difference between article container and content container
         padding: 3rem 50px; // 50px because of difference between article container and content container
-
-        &:last-child {
-            margin-top: 5rem;
-        }
 
         .anchor {
             left: -1.5rem;
+        }
+
+        &--related-content {
+            margin-top: 5rem;
         }
     }
 }
