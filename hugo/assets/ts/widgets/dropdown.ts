@@ -31,6 +31,10 @@ export class Dropdown extends BaseWidget {
     }
 
     public init(): void {
+        this.initListeners();
+    }
+
+    public initListeners(): void {
         this.closers.forEach((button) => {
             button.addEventListener('click', () => {
                 this.detailsElement.removeAttribute('open');
@@ -39,6 +43,12 @@ export class Dropdown extends BaseWidget {
 
         document.addEventListener('click', (e: MouseEvent) => {
             if (!this.element.contains(e.target as HTMLElement) && this.detailsElement.open) {
+                this.detailsElement.removeAttribute('open');
+            }
+        });
+
+        document.addEventListener('keyup', (e: KeyboardEvent) => {
+            if (this.detailsElement.open && e.key == 'Escape') {
                 this.detailsElement.removeAttribute('open');
             }
         });
