@@ -37,12 +37,13 @@ title
 theme
 : options - default is `blue`, other option is `yellow`.
 
-Also, if the spotlight is the last part of the content (like when it is used for the related content), there is more whitespace above the spotlight.
+modifier
+: optional - add `related-content` as the modifier when used as a related content block at the end of the page. Using the `related-content` modifier results in more whitespace above the spotlight.
 
 ## Example
 
 ```
-{{</* spotlight title="Related content" theme="yellow" */>}}
+{{</* spotlight title="Related content" theme="yellow" modifier="related-content" */>}}
 
 ### Prerequisites
 
@@ -54,7 +55,7 @@ Also, if the spotlight is the last part of the content (like when it is used for
 
 The rendered output looks like this:
 
-{{< spotlight title="Related content" theme="yellow" >}}
+{{< spotlight title="Related content" theme="yellow" modifier="related-content" >}}
 
 ### Prerequisites
 
