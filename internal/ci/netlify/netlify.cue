@@ -69,15 +69,6 @@ config: #config & {
 		from: "/docs/introduction/"
 		to:   "/docs/introduction/welcome/"
 	}, {
-		from: "/docs/tutorial/"
-		to:   "/docs/tutorial/about-these-tutorials/"
-	}, {
-		from: "/docs/howto/"
-		to:   "/docs/howto/about-these-guides/"
-	}, {
-		from: "/docs/concept/"
-		to:   "/docs/concept/about-these-guides/"
-	}, {
 		from: "/cl/*"
 		to:   "https://review.gerrithub.io/c/:splat"
 	}, {
