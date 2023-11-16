@@ -84,20 +84,35 @@ export class SearchFilter extends BaseWidget {
             return `<li class="filter__item">
                 <button class="filter__link${ isSelected ? ' is-selected' : '' }"
                 type="button" data-value="${ item.name }">
-                    ${ item.color ? `<span class="filter__color filter__color--${ item.color }"></span>` : ''}
+                    ${ item.color ? `<span class="filter__color filter__color--${ item.color }"></span>` : '' }
                     ${ item.name }
                 </button>
             </li>`;
         });
 
+        if (this.selectedItems.length > 0) {
+            html.push(
+                `<li class="filter__item">
+                    <button class="filter__link filter__link--clear" type="button" data-clear=true>
+                        <span>Clear all items</span>
+                    </button>
+                </li>`
+            );
+        }
+
         this.listContainer.innerHTML = html.join('');
 
         const filterLinks = this.element.querySelectorAll<HTMLButtonElement>('button.filter__link');
         filterLinks.forEach((link) => {
-           link.addEventListener('click', (e) => {
-               e.preventDefault();
-               this.onClickFilter(link.dataset.value);
-           });
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                if (link.dataset.value) {
+                    this.onClickFilter(link.dataset.value);
+                } else if (link.dataset.clear) {
+                    this.onClearFilter();
+                }
+            });
         });
     }
 
@@ -117,6 +132,11 @@ export class SearchFilter extends BaseWidget {
             this.parsedQuery.facets[this.filterName].push(value);
             this.updateUrl();
         }
+    }
+
+    private onClearFilter() {
+        this.parsedQuery.facets[this.filterName] = [];
+        this.updateUrl();
     }
 
     private updateUrl() {
