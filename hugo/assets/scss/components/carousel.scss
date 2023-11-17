@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../mixins/center';
 @import '../mixins/container';
@@ -62,7 +63,7 @@
     &__caption {
         @include style-text-small;
 
-        background-color: var(--carousel-caption-background, transparentize($c-black, 0.7));
+        background-color: var(--carousel-caption-background, color.scale($c-black, $alpha: -70%));
         bottom: 0;
         color: var(--carousel-caption-text, $c-white);
         font-style: italic;

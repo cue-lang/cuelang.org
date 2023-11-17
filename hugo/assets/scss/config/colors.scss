@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $c-blue--lightest:      #f8f9fd;
 $c-blue--lighter:       #f0f2fb;
 $c-grey--light-mid:     #e6e8f3;
@@ -65,12 +67,12 @@ $c-scrollbar-color-hover:   #aaa;
 $c-scrollbar-background:    $c-grey--lightest;
 
 // Shadows
-$shadow--light:         0 4px 4px transparentize($c-black, .25);
-$shadow:                0 4px 34px transparentize($c-black, .35);
-$shadow--blue:          0 10px 24px transparentize($c-blue--light, .85);
+$shadow--light:         0 4px 4px color.scale($c-black, $alpha: -25%);
+$shadow:                0 4px 34px color.scale($c-black, $alpha: -35%);
+$shadow--blue:          0 10px 24px color.scale($c-blue--light, $alpha: -85%);
 
-$shadow--header:        0 3px 12px transparentize($c-blue--dark, .8);
-$shadow--drawer:        0 3px 12px transparentize($c-blue--dark, .8);
+$shadow--header:        0 3px 12px color.scale($c-blue--dark, $alpha: -80%);
+$shadow--drawer:        0 3px 12px color.scale($c-blue--dark, $alpha: -80%);
 
 $shadow--button:        0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
 

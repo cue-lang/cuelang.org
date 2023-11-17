@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/typography';
 @import '../mixins/list-reset';
@@ -17,7 +18,7 @@
     }
 
     &__link {
-        color: var(--toc-link-color, transparentize($c-blue--darker, 0.2));
+        color: var(--toc-link-color, color.scale($c-blue--darker, $alpha: -20%));
         display: block;
         font-size: 0.875rem;
         font-weight: $weight-light;

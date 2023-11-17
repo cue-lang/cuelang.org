@@ -1,4 +1,5 @@
 /* stylelint-disable no-descending-specificity, property-no-vendor-prefix */
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../config/typography';
@@ -13,7 +14,7 @@
     --text-color: #{ $c-grey--darkest };
     --heading-color: #{ $c-blue };
     --text-link-color: #{ $c-blue };
-    --caption-color: #{ transparentize($c-grey--darkest, 0.3) };
+    --caption-color: #{ color.scale($c-grey--darkest, $alpha: -30%) };
     --dialog-animation-settings: 401ms ease;
     --form-input-background: #{ $c-white };
     --form-input-border: #{ $c-input };
@@ -21,7 +22,7 @@
     --form-input-checked: #{ $c-blue };
     --form-input-color: #{ $c-grey--dark };
     --form-label-color: #{ $c-grey--darkest };
-    --hr-color: #{ transparentize($c-blue--darker, 0.8) };
+    --hr-color: #{ color.scale($c-blue--darker, $alpha: -80%) };
     --list-color: #{ $c-blue };
     --mark-background-color: #{ $c-yellow };
     --mark-color: #{ $c-grey--darkest };
@@ -30,14 +31,14 @@
     --pre-color: #{ $c-blue--darker };
     --quote-background-color: #{ $c-grey--lightest };
     --quote-color: #{ $c-blue--darker };
-    --quote-cite-color: #{ transparentize($c-black, 0.31) };
+    --quote-cite-color: #{ color.scale($c-black, $alpha: -31%) };
     --quote-line-color: #{ $c-yellow };
     --scrollbar-background: #{ $c-scrollbar-background };
     --scrollbar-color: #{ $c-scrollbar-color };
     --scrollbar-color-hover: #{ $c-scrollbar-color-hover };
     --table-head-background: #{ $c-blue--lightest };
     --table-row-background: #{ $c-blue--lightest };
-    --table-border-color: #{ transparentize($c-blue--light, 0.85) };
+    --table-border-color: #{ color.scale($c-blue--light, $alpha: -85%) };
 }
 
 html,
@@ -282,7 +283,7 @@ blockquote {
     }
 
     cite {
-        color: var(--quote-cite-color, transparentize($c-black, 0.31));
+        color: var(--quote-cite-color, color.scale($c-black, $alpha: -31%));
         display: block;
         font-size: 1rem;
         font-style: normal;

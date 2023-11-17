@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../mixins/marginless-child';
 @import '../mixins/screen';
@@ -19,7 +20,7 @@
 
         --heading-color: #{ $c-blue--darker };
 
-        border-bottom: 1px solid transparentize($c-blue--darker, 0.8);
+        border-bottom: 1px solid color.scale($c-blue--darker, $alpha: -80%);
         margin: 0 0 1.5rem;
         padding-bottom: 1.5rem;
     }

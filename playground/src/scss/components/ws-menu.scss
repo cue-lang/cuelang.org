@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/prefix';
 @import '../config/sizes';
@@ -61,7 +62,7 @@
     &__options {
         @include list-reset;
 
-        border-top: 1px solid transparentize($c-grey-blue--darker, 0.8);
+        border-top: 1px solid color.scale($c-grey-blue--darker, $alpha: -80%);
         padding: 1rem 0;
     }
 

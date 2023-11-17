@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $c-blue--lightest:      #f8f9fd;
 $c-blue--lighter:       #f0f2fb;
 $c-blue--light:         #1b3987;
@@ -39,4 +41,4 @@ $c-error:               $c-red;
 $c-success:             #16b51e;
 $c-input:               $c-grey;
 $c-output-bcg:          $c-grey-blue--light;
-$shadow-menu:           0 4px 10px 0 transparentize($c-black, 0.8);
+$shadow-menu:           0 4px 10px 0 color.scale($c-black, $alpha: -80%);

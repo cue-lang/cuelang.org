@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../mixins/list-reset';
@@ -17,7 +18,7 @@
         background-color: var(--share-popover-bg-color);
         border: 1px solid var(--share-popover-border-color);
         border-radius: $b-radius--large;
-        box-shadow: 0 10px 14px transparentize($c-blue--darker, 0.8);
+        box-shadow: 0 10px 14px color.scale($c-blue--darker, $alpha: -80%);
         cursor: auto;
         display: flex;
         flex-direction: column;

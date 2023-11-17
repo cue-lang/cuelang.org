@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../config/typography';
@@ -52,9 +53,9 @@
 
     &__text {
         background: linear-gradient(
-        var(--tree-chapter-background, $c-yellow),
-        var(--tree-chapter-background, $c-yellow)
-    ) no-repeat 100% 100%;
+            var(--tree-chapter-background, $c-yellow),
+            var(--tree-chapter-background, $c-yellow)
+        ) no-repeat 100% 100%;
         background-size: 0 2px;
         display: inline;
         font-size: 1rem;
@@ -86,7 +87,7 @@
             &.is-active-path {
                 background: $c-grey--light-mid;
                 border-radius: $b-radius 0 0 $b-radius;
-                box-shadow: 4px 4px 10px 0 transparentize($c-black, 0.98) inset;
+                box-shadow: 4px 4px 10px 0 color.scale($c-black, $alpha: -98%) inset;
                 padding-bottom: 1.5rem;
                 padding-top: 1rem;
             }
@@ -146,7 +147,7 @@
             min-height: 1.25rem;
 
             #{ $self }__link {
-                color: transparentize($c-blue--darker, 0.2);
+                color: color.scale($c-blue--darker, $alpha: -20%);
                 padding: 0.25rem 0 0.25rem 1.5rem;
 
                 &::before {

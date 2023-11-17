@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../mixins/screen';
@@ -13,7 +14,7 @@
     background: $c-white;
     border: 0;
     border-radius: $b-radius--xlarge;
-    box-shadow: 0 44px 34px 0 transparentize($c-black, 0.75);
+    box-shadow: 0 44px 34px 0 color.scale($c-black, $alpha: -75%);
     max-height: 100vh;
     max-width: $screen-large;
     padding: 0;
@@ -36,7 +37,7 @@
     }
 
     &::backdrop {
-        background-color: transparentize($c-black, 0.75);
+        background-color: color.scale($c-black, $alpha: -75%);
         transition: opacity 300ms var(--dialog-animation-settings);
     }
 
@@ -45,7 +46,7 @@
     }
 
     &__media {
-        border-bottom: 1px solid var(--dialog-separator-color, transparentize($c-blue--darker, 0.8));
+        border-bottom: 1px solid var(--dialog-separator-color, color.scale($c-blue--darker, $alpha: -80%));
         padding: $p-gutter 0;
     }
 
@@ -57,7 +58,7 @@
     &__close {
         align-items: center;
         background-color: transparent;
-        color: var(--popover-close-color, transparentize($c-blue--darker, 0.8));
+        color: var(--popover-close-color, color.scale($c-blue--darker, $alpha: -80%));
         display: flex;
         height: var(--popover-close-size);
         justify-content: center;
@@ -70,7 +71,7 @@
 
         &:focus,
         &:hover {
-            --popover-close-color: #{ transparentize($c-blue--darker, 0.1) };
+            --popover-close-color: #{ color.scale($c-blue--darker, $alpha: -10%) };
         }
     }
 
@@ -102,7 +103,7 @@
 
         &__media {
             border-bottom: 0;
-            border-right: 1px solid var(--dialog-separator-color, transparentize($c-blue--darker, 0.8));
+            border-right: 1px solid var(--dialog-separator-color, color.scale($c-blue--darker, $alpha: -80%));
             flex: 0 0 (160px + $p-gutter);
             padding: 0 $p-gutter 0 0;
         }

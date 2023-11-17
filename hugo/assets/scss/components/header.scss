@@ -214,7 +214,7 @@
             top: 60px;
             transform: translate(0, (-60px));
             transform-origin: top;
-            transition: opacity .1s, transform .2s;
+            transition: opacity 0.1s, transform 0.2s;
             width: $w-site * 0.5;
 
             &.is-active {
@@ -224,7 +224,7 @@
             &.is-open {
                 opacity: 1;
                 transform: translate(0, 0);
-                transition: opacity .1s, transform .2s;
+                transition: opacity 0.1s, transform 0.2s;
             }
         }
 

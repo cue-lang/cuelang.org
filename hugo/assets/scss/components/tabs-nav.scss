@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../mixins/stretch';
@@ -6,7 +7,7 @@
 .tabs-nav {
     $self: &;
 
-    border-bottom: 1px solid var(--tabs-nav-border,  transparentize($c-blue--darker, .9));
+    border-bottom: 1px solid var(--tabs-nav-border, color.scale($c-blue--darker, $alpha: -90%));
     display: flex;
     overflow: hidden;
 
@@ -35,7 +36,7 @@
         line-height: var(--tab-height, 52px);
         position: relative;
         text-align: center;
-        transition: color .2s, background-color .2s;
+        transition: color 0.2s, background-color 0.2s;
 
         &::after {
             bottom: 0;
@@ -44,7 +45,7 @@
             height: 4px;
             left: 0;
             position: absolute;
-            transition: background-color .2s;
+            transition: background-color 0.2s;
             width: 100%;
         }
 
@@ -72,7 +73,10 @@
 
     &__pagination {
         align-items: center;
-        box-shadow: 0 2px 4px -1px transparentize($c-black, .8), 0 4px 5px 0 transparentize($c-black, .86), 0 1px 10px 0 transparentize($c-black, .88);
+        box-shadow:
+            0 2px 4px -1px color.scale($c-black, $alpha: -80%),
+            0 4px 5px 0 color.scale($c-black, $alpha: -86%),
+            0 1px 10px 0 color.scale($c-black, $alpha: -88%);
         color: $c-black;
         display: flex;
         flex: 0 0 36px;
@@ -84,7 +88,7 @@
         &::before {
             @include stretch;
 
-            background-color: transparentize($c-grey--lighter, .5);
+            background-color: color.scale($c-grey--lighter, $alpha: -50%);
             border-radius: 20px;
             content: '';
             display: block;
@@ -92,7 +96,7 @@
             pointer-events: none;
             transform: scale(0) translate(-20%, -20%);
             transform-origin: left bottom;
-            transition: transform .2s;
+            transition: transform 0.2s;
             width: 140%;
         }
 

@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../mixins/button';
 @import '../mixins/sr-only';
@@ -39,7 +40,7 @@
         background: $c-white;
         border: 1px solid var(--filter-menu-border, $c-grey--light);
         border-radius: $b-radius;
-        box-shadow: 0 4px 30px 0 var(--filter-box-shadow, transparentize($c-black, 0.77));
+        box-shadow: 0 4px 30px 0 var(--filter-box-shadow, color.scale($c-black, $alpha: -77%));
         left: $p-gutter;
         margin-top: 0.5rem;
         position: absolute;
@@ -77,7 +78,7 @@
     }
 
     &__search {
-        border-bottom: 1px solid var(--filter-item-border, transparentize($c-grey--light, 0.5));
+        border-bottom: 1px solid var(--filter-item-border, color.scale($c-grey--light, $alpha: -50%));
         padding: 0.5rem;
     }
 
@@ -87,8 +88,8 @@
 
     &__input {
         &[type='text'] {
-            --form-input-background: #{ transparentize($c-grey-blue--dark, 0.93) };
-            --form-input-border: #{ transparentize($c-blue--darker, 0.9) };
+            --form-input-background: #{ color.scale($c-grey-blue--dark, $alpha: -93%) };
+            --form-input-border: #{ color.scale($c-blue--darker, $alpha: -90%) };
 
             font-size: 0.8125rem;
 
@@ -106,7 +107,7 @@
     }
 
     &__item {
-        border-bottom: 1px solid var(--filter-item-border, transparentize($c-grey--light, 0.5));
+        border-bottom: 1px solid var(--filter-item-border, color.scale($c-grey--light, $alpha: -50%));
 
         &:last-child {
             margin-bottom: 1.5rem;

@@ -29,7 +29,6 @@
     "scss/dollar-variable-empty-line-before": null,
     "scss/dollar-variable-pattern": null,
     "scss/dollar-variable-colon-space-after": null,
-    "scss/no-global-function-names": null,
     "selector-class-pattern": null,
     "selector-no-vendor-prefix": true,
     "selector-type-no-unknown": null,

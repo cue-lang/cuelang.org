@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/prefix';
 @import '../config/sizes';
@@ -21,8 +22,8 @@
     &__input {
         &[type='text'] {
             appearance: none;
-            background: transparentize($c-grey-blue--dark, 0.93);
-            border: 1px solid transparentize($c-blue--darker, 0.9);
+            background: color.scale($c-grey-blue--dark, $alpha: -93%);
+            border: 1px solid color.scale($c-blue--darker, $alpha: -90%);
             border-radius: $b-radius;
             box-sizing: border-box;
             color: $c-grey--dark;
