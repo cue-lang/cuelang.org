@@ -5,13 +5,15 @@
 {{- $contentClass := "video__content" }}
 {{- $lazy := cond (or (eq (.Get "lazy") false) (eq (.Get "lazy") "false")) false true -}}
 
+{{ $image := $.Page.Resources.Get $image }}
+
 {{ if not $title }}
     {{- $contentClass = print $contentClass " video__content--no-title" -}}
 {{ end }}
 
 <div class="video" data-youtube="{{ $id }}">
-    {{ if $image }}
-        <img class="video__image" src="{{ $image }}" alt="{{ $title }}"{{ if $lazy }} loading="lazy"{{ end }}>
+    {{ with $image.Fill "webp 800x450 center" }}
+        <img class="video__image" src="{{ .RelPermalink }}" alt="{{ $title }}"{{ if $lazy }} loading="lazy"{{ end }} width="{{ .Width }}" height="{{ .Height }}">
         {{/*  Turn on the next part when there is a cookiewall implemented  */}}
     {{/*  {{ else }}
         <img class="video__image" src="https://img.youtube.com/vi/{{ $id }}/maxresdefault.jpg" alt="{{ $title }}"{{ if $lazy }} loading="lazy"{{ end }}>  */}}
