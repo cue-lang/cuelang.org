@@ -18,25 +18,36 @@
     overflow: hidden;
     position: relative;
 
+    &:focus,
+    &:focus-within,
+    &:hover {
+        #{ $self }__image {
+            filter: none;
+        }
+
+        #{ $self }__icon {
+            transform: scale(1.2);
+        }
+
+        #{ $self }__icon-background {
+            fill: $c-youtube;
+        }
+    }
+
     &__image {
         @include object-fit;
 
+        filter: brightness(0.8) blur(1px);
         margin: 0;
         opacity: 0.8;
         position: absolute;
+        transition: filter 0.3s ease-in-out;
     }
 
     &__button {
         @include stretch;
 
         text-decoration: none;
-
-        &:focus,
-        &:hover {
-            #{ $self }__icon {
-                transform: scale(1.1);
-            }
-        }
 
         span {
             @include sr-only;
@@ -74,6 +85,10 @@
         width: auto;
     }
 
+    &__icon-background {
+        fill: $c-red--light;
+        transition: fill 0.3s ease-in-out;
+    }
 
     @include screen($screen-simple) {
         &__content {
