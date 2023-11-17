@@ -4,29 +4,41 @@
 
 <div class="tabs{{ if $modifier }} tabs--{{ $modifier }}{{ end }}" data-tabs data-group="{{ $groupId }}">
     <div class="tabs__nav tabs-nav{{ if $modifier }} tabs-nav--{{ $modifier }}{{ end }}" data-tabs-nav>
-        <button class="tabs-nav__pagination tabs-nav__pagination--prev is-hidden">
-            <span class="tabs-nav__icon">
-                {{ partial "icon.html" (dict "class" "" "icon" "chevron-left") }}
-            </span>
-        </button>
+        {{ if gt ($tabs | len ) 1 }}
+            <button class="tabs-nav__pagination tabs-nav__pagination--prev is-hidden">
+                <span class="tabs-nav__icon">
+                    {{ partial "icon.html" (dict "class" "" "icon" "chevron-left") }}
+                </span>
+            </button>
 
-        <ul class="tabs-nav__tabs">
+            <ul class="tabs-nav__tabs">
+                {{ range $idx, $tab := $tabs }}
+                    <li class="tabs-nav__item">
+                        <button
+                            data-tab-item="{{ .name | urlize }}"
+                            data-tab-group="{{ $groupId }}"
+                            class="tabs-nav__tab{{ if ne .type "default" }} tabs-nav__tab--{{ .type}}{{ end}}{{ cond (eq $idx 0) " is-active" ""}}"
+                        >{{ .name }}</button>
+                    </li>
+                {{ end }}
+            </ul>
+
+            <button class="tabs-nav__pagination tabs-nav__pagination--next is-hidden">
+                <span class="tabs-nav__icon">
+                    {{ partial "icon.html" (dict "class" "" "icon" "chevron-right") }}
+                </span>
+            </button>
+        {{ else }}
             {{ range $idx, $tab := $tabs }}
-                <li class="tabs-nav__item">
-                    <button
+                <div class="tabs-nav__item">
+                    <div
                         data-tab-item="{{ .name | urlize }}"
                         data-tab-group="{{ $groupId }}"
-                        class="tabs-nav__tab{{ if ne .type "default" }} tabs-nav__tab--{{ .type}}{{ end}}{{ cond (eq $idx 0) " is-active" ""}}"
-                    >{{ .name }}</button>
-                </li>
+                        class="tabs-nav__tab{{ if ne .type "default" }} tabs-nav__tab--{{ .type}}{{ end}}"
+                    >{{ .name }}</div>
+                </div>
             {{ end }}
-        </ul>
-
-        <button class="tabs-nav__pagination tabs-nav__pagination--next is-hidden">
-            <span class="tabs-nav__icon">
-                {{ partial "icon.html" (dict "class" "" "icon" "chevron-right") }}
-            </span>
-        </button>
+        {{ end }}
     </div>
 
     <div class="tabs__content">
