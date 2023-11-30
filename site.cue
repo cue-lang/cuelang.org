@@ -133,6 +133,10 @@ template: ci.#writefs & {
 			color = "pink"
 			weight = 70
 
+			[[tags]]
+			name = "user question"
+			color = "red"
+			weight = 80
 
 			"""#
 		}
