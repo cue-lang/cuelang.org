@@ -16,6 +16,57 @@
       "message": "PTAL.",
       "revId": "a54dbef999179dd5c84ee7f70959218776a8a56d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3a1cc7c_869ae666",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-01T06:04:46Z",
+      "side": 1,
+      "message": "Generally LGTM - would be good to get some feedback from folks in Slack on wording, any additional notes they might have expected etc.\n\nNote my comments about the Yaml version apply equally to the JSON version.",
+      "revId": "a54dbef999179dd5c84ee7f70959218776a8a56d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ed71c5f_2706cc79",
+        "filename": "content/docs/howto/transform-yaml-with-cue/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-01T06:04:46Z",
+      "side": 1,
+      "message": "This sentence is a bit verbose for me, and doesn\u0027t mention the key word \"transform\". The principal goal of this howto is to transform the data so I would lead with that.",
+      "revId": "a54dbef999179dd5c84ee7f70959218776a8a56d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fba0e44c_830bf2ad",
+        "filename": "content/docs/howto/transform-yaml-with-cue/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-01T06:04:46Z",
+      "side": 1,
+      "message": "Suggest: \"transform the input into the output\"\n\nAgain, need to mention the word \"transform\" here given it\u0027s the principal goal of the howto.",
+      "revId": "a54dbef999179dd5c84ee7f70959218776a8a56d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
