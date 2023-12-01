@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c0c5b70_4c1e35a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-01T17:45:53Z",
+      "side": 1,
+      "message": "Please take another look. I\u0027ve done somewhat more adaptation of the source thread, alongside the code block changes we discussed.",
+      "revId": "49a15cbcde773d87834bcd1bf9e694df754d7c64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
