@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2ea5534_e30e487c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-01T15:08:22Z",
+      "side": 1,
+      "message": "I\u0027ll post the post-submit alpha URL to the most recent thread where I think this would have helped (https://cuelang.slack.com/archives/CLT4FD7KP/p1701179609980159), but there were sufficient /other/ factors in that thread that I\u0027m unsure how directly-applicable the feedback will be.",
+      "parentUuid": "c3a1cc7c_869ae666",
+      "revId": "a54dbef999179dd5c84ee7f70959218776a8a56d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ed71c5f_2706cc79",
