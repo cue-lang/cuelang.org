@@ -5,6 +5,15 @@ toc_hide: false
 hide_summary: true
 ---
 
-# Welcome!
+## Welcome!
 
-TODO
+These tutorials are good places to start for folks who are newcomers to CUE ...
+
+{{< cards >}}
+
+{{< card
+	title="Validating simple YAML files with the cue command"
+	href="../validating-simple-yaml-files" >}}
+{{< /card >}}
+
+{{< /cards >}}
