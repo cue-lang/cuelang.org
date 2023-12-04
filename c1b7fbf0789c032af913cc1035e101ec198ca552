@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb6d5cb7_14fd17be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "Nice update. A few more suggested changes.",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "056314f4_ad9fa4c8",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "\"Attempt #1\"?",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "348cf2ac_f084d168",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "I would drop the \"Cuelang.org\u0027s\" bit unless you think it adds something special. And perhaps change to \"Explanation #1\"?",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9134caee_7678a9ee",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "I think the user is actually trying to do more than just this, and that is the key to this entire post. They are actually trying to ensure something like \"where `#Config` is used, the `servceA.metadata` and `serviceB.metadata` fields are identical to the value of the `metadata` field in the outer scope (line number are critical for references here).\"\n\n(strictly speaking we can only be sure in the general case that the fields will be identical if `metadata` in the outer scope is concrete but that\u0027s beside the point)\n\nIf the only requirement were that they were identical (to each other) then I would have written this differently (but this is not quite the requirement, it\u0027s an implied subset of the requirement)\n\nIf the only requirement were that they adhere to the `#Metadata` constraint, then again I would have written that differently too.",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30e24e9c_af543524",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "\"`_` says nothing about a field. It doesn\u0027t add any constraints, it doesn\u0027t provide a value. Hence this field is incomplete\"\n\n(or words to that effect)",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2503ba1f_aee0d607",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "\"because it\u0027s not invalid CUE, it can\u0027t be flagged as an evaluation error\"",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ce6e35f_933bdac0",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "s/using/referring to/ perhaps?",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4505df57_af9f3219",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "A bit too much emphasis again...",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48df4a1b_3498f144",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "Nicely worded.",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1be9fd0_56492915",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "\"its\"? I\u0027m not sure there is ownership on the RHS struct literal used when declaring `config`. Perhaps (poor wording):\n\n\"Your actual use of `#Config` in the declaration of `config` (unifying it with a struct that contains concrete `metadata`) happens separately.\"",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcecbfa5_8af7cebb",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "This is a bit awkward for me. Perhaps consider a rewording based on the rephrasing of the question/problem I suggested above?",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afe9c11d_b8fd50d8",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "Drop \"CUE\"",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e4ca65b_37b30ee4",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "Again, too much emphasis for my liking",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0c5e444_51f89cfb",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "Nicely worded.",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac6fde2b_e7be02d9",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "I\u0027m not clear what the start of sentence that starts \"Thus...\" (https://sembr.org/ incidentally) actually brings here? Perhaps:\n\n\"The alias is defined on the right hand side of `#Config`. It’s “inside” `#Config`, with the alias being part of the value on the right hand side. It can be thought of as a “relative” reference, within `#Config`’s value.\"",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8710712b_3652d848",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-04T06:03:07Z",
+      "side": 1,
+      "message": "I think you can make a bit more of the punchline here, to show that `M` ends up being the unification of `#Metadata` and that struct literal.",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
