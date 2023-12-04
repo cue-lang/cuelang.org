@@ -1,8 +1,8 @@
 ---
-title: Find a guide 🔍
+title: Find a guide
 weight: 20
 toc_hide: false
 hide_summary: true
 ---
 
-# TODO
+{{< search contentType="Concept Guides" showContentTypes=false >}}
