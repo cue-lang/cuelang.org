@@ -98,10 +98,10 @@ emoji_constrain_runes: invalid value "😄🥵🙃🥶" (does not satisfy string
 {{{end}}}
 
 {{< info >}}
-The "len()"-based examples use an embedded scalar value with an alias to permit
-their fields to be of type "string" whilst *also* allowing their byte lengths
+The `len()`-based examples use an embedded scalar value with an alias to permit
+their fields to be of type `string` whilst *also* allowing their byte lengths
 to be constrained.
 
-This pattern will be obsoleted by the "must()" directive, which is tracked
+This pattern will be obsoleted by the `must()` directive, which is tracked
 in this CUE Issue: <https://github.com/cue-lang/cue/issues/575>.
 {{< /info >}}
