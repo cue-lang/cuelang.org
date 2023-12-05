@@ -23,6 +23,7 @@ toc_hide: false
 / [`close()`]({{< relref "#close-builtin-function" >}})
 / [`div()`]({{< relref "#div-builtin-function" >}})
 / [`mod()`]({{< relref "#mod-builtin-function" >}})
+/ [`len()`]({{< relref "#len-builtin-function" >}})
 / [`or()`]({{< relref "#or-builtin-function" >}})
 / [`quo()`]({{< relref "#quo-builtin-function" >}})
 / [`rem()`]({{< relref "#rem-builtin-function" >}})
@@ -101,6 +102,15 @@ toc_hide: false
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="L" >}}
+
+## `len()` {#len-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#len" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-len" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that returns the
+  lengths of various types as an integer
+
+<!-- TODO ## List -->
+
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="M" >}}
