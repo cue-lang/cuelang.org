@@ -105,7 +105,3 @@ to be constrained.
 This pattern will be obsoleted by the "must()" directive, which is tracked
 in this CUE Issue: <https://github.com/cue-lang/cue/issues/575>.
 {{< /info >}}
-
-## Related content
-
-TODO

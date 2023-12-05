@@ -59,6 +59,6 @@ you find hard to understand.
 
 ## Related content
 
-* [**Unification**](TODO) in the CUE Language Guide
+<!-- * [**Unification**](TODO) in the CUE Language Guide -->
 * [**The `strconv` package**](https://pkg.go.dev/cuelang.org/go/pkg/strconv) in
 the CUE standard library
