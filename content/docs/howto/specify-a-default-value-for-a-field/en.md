@@ -291,7 +291,7 @@ overriding values.
 - [**Disjunctions**]({{< ref
     "docs/language-guide/schemas-and-validation/disjunctions"
   >}})
-- [**Unification**](TODO)
+<!-- - [**Unification**](TODO) -->
 - [**Field constraints**]({{< ref
     "docs/language-guide/schemas-and-validation/field-constraints"
   >}})

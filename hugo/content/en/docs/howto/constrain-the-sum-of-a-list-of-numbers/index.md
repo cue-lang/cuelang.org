@@ -48,12 +48,8 @@ _bad_sum: invalid value 106.5 (out of bound <=99.5):
 
 <!-- TODO: constraining these sums across package boundaries -->
 
-## Related content
+<!-- ## Related content -->
 
-TODO
-
-<!--
-- [How-to Guide](TODO): Constraining data at source, allowing it to be imported
-  across package boundaries along with its constraint
-- TODO: CUE stdlib package tour, `list` package page
--->
+<!-- - [How-to Guide](TODO): Constraining data at source, allowing it to be imported
+  across package boundaries along with its constraint -->
+<!-- - TODO: CUE stdlib package tour, `list` package page -->
