@@ -4,118 +4,160 @@ weight: 20
 toc_hide: false
 ---
 
-### A
+{{< step group="glossary" stepNumber="A" >}}
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="B" >}}
+{{< /step >}}
 
-### B
+{{< step group="glossary" stepNumber="C" >}}
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="D" >}}
 
-### C
+## Default value
+  [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/disjunctions#default-values" >}})
+| [Howto Guide]({{< relref "docs/howto/specify-a-default-value-for-a-field" >}})
+- The single element of a multi-element disjunction that CUE assigns to a field
+  if unification fails to resolve a concrete value for the field
+- An element of a disjunction prefixed with an asterisk (`*`)
 
+## Disjunction
+  [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/disjunctions" >}})
+| [Tour #1]({{< relref "docs/tour/types/disjunctions" >}})
+| [Tour #2]({{< relref "docs/tour/types/sumstruct" >}})
 
-### D
+{{< /step >}}
 
-Default value (FIXME: try and make the sidenote a clickable link)
-: [Default values]({{< ref "docs/language-guide/schemas-and-validation/disjunctions#default-values" >}})
-{{< sidenote text="Language Guide" >}}
-: An element of a disjunction that applies if no other values are provided,
-through unification, in order to resolve the disjunction to a concrete value.
-: An element of a disjunction prefixed with an asterisk (`*`).
+{{< step group="glossary" stepNumber="E" >}}
+{{< /step >}}
 
-Disjunction
-: FIXME
+{{< step group="glossary" stepNumber="F" >}}
 
-### E
+## Field
+  [Language Guide]({{< relref "docs/language-guide/data/maps-and-fields" >}})
+- A key-value pair inside a map, associating a value with a given set of keys
 
+## Field constraint
+  [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints" >}})
+- A field constraint restricts a field's value without actually defining the
+  field, and with the field only forming part of the output if it is unified
+  with an actual field
+- see also:
+    [Required field constraint]({{< relref "#required-field-constraint" >}})
+  | [Optional field constraint]({{< relref "#optional-field-constraint" >}})
 
-### F
+{{< /step >}}
 
-Field
-: A member of a struct.
+{{< step group="glossary" stepNumber="G" >}}
+{{< /step >}}
 
-Field Constraint
-: FIXME
+{{< step group="glossary" stepNumber="H" >}}
+{{< /step >}}
 
-### G
+{{< step group="glossary" stepNumber="I" >}}
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="J" >}}
+{{< /step >}}
 
-### H
+{{< step group="glossary" stepNumber="K" >}}
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="L" >}}
+{{< /step >}}
 
-### I
+{{< step group="glossary" stepNumber="M" >}}
 
+<!-- TODO
+## Module
+-->
 
-### J
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="N" >}}
+{{< /step >}}
 
-### K
+{{< step group="glossary" stepNumber="O" >}}
 
+## Optional field constraint
+  [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints" >}})
+| [Howto Guide]({{< relref "docs/howto/mark-a-field-as-optional" >}})
+- A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
+  field's value if the field is present, whilst also permitting the field's
+  absence
 
-### L
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="P" >}}
 
-### M
+<!-- TODO
+## Package
+-->
 
-Module
-: FIXME
+{{< /step >}}
 
-### N
+{{< step group="glossary" stepNumber="Q" >}}
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="R" >}}
 
-### O
+## Required field constraint
+  [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" >}})
+| [Howto Guide]({{< relref "docs/howto/mark-a-field-as-required" >}})
+- A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
+  field's value whilst also requiring the field to be present
 
-Optional field constraint
-: A constraint placed on a field, making the field's presence optional.
+{{< /step >}}
 
-### P
+{{< step group="glossary" stepNumber="S" >}}
 
-Package
-: FIXME
+## Struct
+- A set of elements, called fields, each of which has a name and a value
 
-### Q
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="T" >}}
 
-### R
+<!-- TODO
+## Type
+-->
 
-Required field constraint
-: A constraint placed on a field, making the field's presence mandatory.
+<!-- TODO
+## Type Constraint
+-->
 
-### S
+{{< /step >}}
 
-Struct
-: A set of elements, called fields, each of which has a name and a value.
+{{< step group="glossary" stepNumber="U" >}}
 
-### T
+<!-- TODO
+## Unification
+-->
 
-Type
-: FIXME
+{{< /step >}}
 
-Type Constraint
-: FIXME
+{{< step group="glossary" stepNumber="V" >}}
+{{< /step >}}
 
-### U
+{{< step group="glossary" stepNumber="W" >}}
+{{< /step >}}
 
-Unification
-: FIXME
+{{< step group="glossary" stepNumber="X" >}}
+{{< /step >}}
 
-### V
+{{< step group="glossary" stepNumber="Y" >}}
 
+## YAML
+- "YAML is a human-friendly data serialization language for all programming languages" ([yaml.org](https://yaml.org/))
+- A data format understood by the `cue` CLI, which can both parse and emit YAML as input and output
 
-### W
+{{< /step >}}
 
+{{< step group="glossary" stepNumber="Z" >}}
+{{< /step >}}
 
-### X
-
-
-### Y
-
-YAML
-: "YAML is a human-friendly data serialization language for all programming languages" ([yaml.org](https://yaml.org/))
-: YAML is a data format that the `cue` CLI can both emit (as output) and parse (as input).
-
-### Z
-
-
-### 0-9
+{{< step group="glossary" stepNumber="#" >}}
+{{< /step >}}
 
 
