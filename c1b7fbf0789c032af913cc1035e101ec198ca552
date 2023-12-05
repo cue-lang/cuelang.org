@@ -522,6 +522,24 @@
       "parentUuid": "8710712b_3652d848",
       "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70994240_f0ed15db",
+        "filename": "content/docs/concept/alias-and-reference-scopes/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-05T13:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4aa07aa9_aef9de9b",
+      "revId": "c1b7fbf0789c032af913cc1035e101ec198ca552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
