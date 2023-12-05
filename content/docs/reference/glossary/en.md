@@ -8,6 +8,13 @@ toc_hide: false
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="B" >}}
+
+## Builtin functions
+  [Language Spec]({{< relref "docs/reference/spec#builtin-functions" >}})
+| *e.g.* [`or()`]({{< relref "#or-builtin-function" >}})
+- Predeclared functions provided by the CUE runtime that are available without
+  being imported
+
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="C" >}}
@@ -86,6 +93,12 @@ toc_hide: false
 - A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
   field's value if the field is present, whilst also permitting the field's
   absence
+
+## `or()` {#or-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#or" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-or" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that accepts a list
+  and produces a [disjunction]({{< relref "#disjunction" >}})
 
 {{< /step >}}
 
