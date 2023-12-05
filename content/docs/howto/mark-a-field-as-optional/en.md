@@ -77,6 +77,6 @@ s1:
 - [**Value constraints**]({{< ref
     "docs/language-guide/schemas-and-validation/value-constraints"
   >}})
-<!--
-- TODO:Commented CUE explainer
--->
+- [**Commented CUE guides**]({{< relref
+    "docs/howto#commented-cue-guides"
+  >}})

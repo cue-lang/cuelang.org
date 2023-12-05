@@ -16,10 +16,9 @@ it supports and simplifies a wide variety of applications, such as
 [querying]({{< relref "language-guide/templating/comprehensions" >}}),
 and [code generation]({{< relref "concept/code-generation-and-extraction-use-case" >}}).
 
-<!-- FIXME: add when content is expanded:
-[scripting](TODO)       https://github.com/cue-lang/docs-and-content/issues/27
-[data templating](TODO) https://github.com/cue-lang/docs-and-content/issues/26
--->
+<!-- TODO: add when content is expanded: -->
+<!-- [scripting](TODO)       https://github.com/cue-lang/docs-and-content/issues/27 -->
+<!-- [data templating](TODO) https://github.com/cue-lang/docs-and-content/issues/26 -->
 
 The inference engine can be used to validate
 data in code, or to include it as part of a code generation pipeline.
