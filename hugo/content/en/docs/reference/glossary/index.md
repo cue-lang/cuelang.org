@@ -21,7 +21,11 @@ toc_hide: false
 | *e.g.*
   [`and()`]({{< relref "#and-builtin-function" >}})
 / [`close()`]({{< relref "#close-builtin-function" >}})
+/ [`div()`]({{< relref "#div-builtin-function" >}})
+/ [`mod()`]({{< relref "#mod-builtin-function" >}})
 / [`or()`]({{< relref "#or-builtin-function" >}})
+/ [`quo()`]({{< relref "#quo-builtin-function" >}})
+/ [`rem()`]({{< relref "#rem-builtin-function" >}})
 - Predeclared functions provided by the CUE runtime that are available without
   being imported
 
@@ -52,6 +56,12 @@ toc_hide: false
   [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/disjunctions" >}})
 | [Tour #1]({{< relref "docs/tour/types/disjunctions" >}})
 | [Tour #2]({{< relref "docs/tour/types/sumstruct" >}})
+
+## `div()` {#div-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+  Euclidean division
 
 {{< /step >}}
 
@@ -95,9 +105,13 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="M" >}}
 
-<!-- TODO
-## Module
--->
+## `mod()` {#mod-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+  Euclidean division
+
+<!-- TODO ## Module -->
 
 {{< /step >}}
 
@@ -125,16 +139,27 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="P" >}}
 
-<!-- TODO
-## Package
--->
+<!-- TODO ## Package -->
 
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="Q" >}}
+
+## `quo()` {#quo-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+  truncated division
+
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="R" >}}
+
+## `rem()` {#rem-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+  truncated division
 
 ## Required field constraint
   [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" >}})
