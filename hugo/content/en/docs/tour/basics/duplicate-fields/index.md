@@ -20,8 +20,8 @@ a: 4
 s: {b: 2}
 s: {c: 2}
 
-l: [ 1, 2]
-l: [ 1, 2]
+l: [1, 2]
+l: [1, 2]
 {{< /code-tab >}}
 {{< code-tab name="result.txt" language="txt"  area="top-right" >}}
 a: 4
