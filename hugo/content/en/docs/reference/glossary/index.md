@@ -5,13 +5,22 @@ toc_hide: false
 ---
 
 {{< step group="glossary" stepNumber="A" >}}
+
+## `and()` {#and-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#and" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-and" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that accepts a list
+  and returns the unification of all elements in the list
+
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="B" >}}
 
 ## Builtin functions
   [Language Spec]({{< relref "docs/reference/spec#builtin-functions" >}})
-| *e.g.* [`or()`]({{< relref "#or-builtin-function" >}})
+| *e.g.*
+  [`and()`]({{< relref "#and-builtin-function" >}})
+/ [`or()`]({{< relref "#or-builtin-function" >}})
 - Predeclared functions provided by the CUE runtime that are available without
   being imported
 
