@@ -42,7 +42,7 @@ c: or(empty)
 empty: []
 
 withDefault: *2 | or([1, 2, 3, 4])
-x:           withDefault & 3
+x: withDefault & 3
 -- out.cue --
 a: 1 | 2 | 3 | 4 | 5
 b: 2

@@ -30,6 +30,6 @@ languages:
 {{< code-tab name="result.txt" language="txt"  area="bottom" >}}
 languages.1.name: invalid value "dutch" (out of bound =~"^\\p{Lu}"):
     ./schema.cue:3:8
-    ./data.yaml:5:12
+    ./data.yaml:5:11
 {{< /code-tab >}}
 {{< /code-tabs >}}
