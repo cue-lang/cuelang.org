@@ -19,14 +19,14 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  go install -trimpath cuelang.org/go/cmd/cue@v0.6.0
+  go install -trimpath cuelang.org/go/cmd/cue@v0.7.0
 
 FROM golang:1.21.1
 
 RUN mkdir -p /go/bin
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
-ENV CUE_VERSION="v0.6.0"
+ENV CUE_VERSION="v0.7.0"
 
 WORKDIR /
 
