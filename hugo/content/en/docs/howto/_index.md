@@ -62,10 +62,10 @@ f2: "some string value"
 {{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
 $ cue vet .:example data.yml
 f1: conflicting values 123 and string (mismatched types int and string):
-    ./data.yml:2:6
+    ./data.yml:2:5
     ./example.cue:10:5
 f2: conflicting values "some string value" and int (mismatched types string and int):
-    ./data.yml:5:6
+    ./data.yml:5:5
     ./example.cue:15:6
 {{< /code-tab >}}
 {{< /code-tabs >}}
