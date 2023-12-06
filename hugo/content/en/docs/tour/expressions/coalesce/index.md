@@ -26,7 +26,7 @@ the result is not of the desired type.
 
 {{< code-tabs >}}
 {{< code-tab name="coalesce.cue" language="cue"  area="top-left" >}}
-list: [ "Cat", "Mouse", "Dog"]
+list: ["Cat", "Mouse", "Dog"]
 
 a: *list[0] | "None"
 b: *list[5] | "None"
