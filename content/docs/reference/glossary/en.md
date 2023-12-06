@@ -20,6 +20,7 @@ toc_hide: false
   [Language Spec]({{< relref "docs/reference/spec#builtin-functions" >}})
 | *e.g.*
   [`and()`]({{< relref "#and-builtin-function" >}})
+/ [`close()`]({{< relref "#close-builtin-function" >}})
 / [`or()`]({{< relref "#or-builtin-function" >}})
 - Predeclared functions provided by the CUE runtime that are available without
   being imported
@@ -27,6 +28,15 @@ toc_hide: false
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="C" >}}
+
+## `close()` {#close-builtin-function}
+  [Language Spec]({{< relref "docs/reference/spec#close" >}})
+| [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-close" >}})
+- A [builtin function]({{< relref "#builtin-functions" >}}) that converts a
+  partially defined ("open") struct to a fully defined ("closed") struct
+
+<!-- TODO ## Closed -->
+
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="D" >}}
@@ -95,6 +105,8 @@ toc_hide: false
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="O" >}}
+
+<!-- TODO ## Open -->
 
 ## Optional field constraint
   [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints" >}})
