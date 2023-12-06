@@ -28,7 +28,7 @@ the result is not of the desired type.
 exec cue eval coalesce.cue
 cmp stdout result.txt
 -- coalesce.cue --
-list: [ "Cat", "Mouse", "Dog"]
+list: ["Cat", "Mouse", "Dog"]
 
 a: *list[0] | "None"
 b: *list[5] | "None"
