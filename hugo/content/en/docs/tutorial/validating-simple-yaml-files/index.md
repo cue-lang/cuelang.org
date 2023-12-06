@@ -112,14 +112,14 @@ Check that the `charlie.yml` data file satisfies the schema you defined in
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbAo=" }
 $ cue vet pets.cue charlie.yml
 age: conflicting values "15" and number (mismatched types string and number):
-    ./charlie.yml:5:7
+    ./charlie.yml:5:6
     ./pets.cue:2:11
 species: 2 errors in empty disjunction:
 species: conflicting values "cat" and "goldfish":
-    ./charlie.yml:4:11
+    ./charlie.yml:4:10
     ./pets.cue:1:11
 species: conflicting values "dog" and "goldfish":
-    ./charlie.yml:4:11
+    ./charlie.yml:4:10
     ./pets.cue:1:19
 ```
 
