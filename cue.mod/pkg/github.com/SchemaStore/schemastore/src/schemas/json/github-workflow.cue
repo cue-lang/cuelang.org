@@ -340,8 +340,8 @@ import "strings"
 			// refer to a secret.
 			secrets?: null | bool | number | string | [...] | {
 				{[=~"^[_a-zA-Z][a-zA-Z0-9_-]*$" & !~"^()$"]: null | bool | number | string | [...] | {
-										// A string description of the secret parameter.
-										description?: string
+					// A string description of the secret parameter.
+					description?: string
 
 					// A boolean specifying whether the secret must be supplied.
 					required: _
@@ -394,7 +394,7 @@ import "strings"
 		// create a new workflow that uses workflow_run to analyze the
 		// results and add a comment to the original pull request.
 		workflow_run?: #eventObject & {
-			types?:     #types & [..."requested" | "completed"] | *["requested", "completed"]
+			types?: #types & [..."requested" | "completed"] | *["requested", "completed"]
 			workflows?: [...string] & [_, ...]
 
 			{[=~"^branches(-ignore)?$" & !~"^(types|workflows)$"]: _}
@@ -570,7 +570,7 @@ import "strings"
 	#event: "branch_protection_rule" | "check_run" | "check_suite" | "create" | "delete" | "deployment" | "deployment_status" | "discussion" | "discussion_comment" | "fork" | "gollum" | "issue_comment" | "issues" | "label" | "member" | "milestone" | "page_build" | "project" | "project_card" | "project_column" | "public" | "pull_request" | "pull_request_review" | "pull_request_review_comment" | "pull_request_target" | "push" | "registry_package" | "release" | "status" | "watch" | "workflow_call" | "workflow_dispatch" | "workflow_run" | "repository_dispatch"
 
 	#eventObject: null | {
-			...
+		...
 	}
 
 	#expressionSyntax: =~"""
@@ -668,7 +668,7 @@ import "strings"
 				...
 			} | #expressionSyntax) & {
 				{[=~"^(in|ex)clude$" & !~"^()$"]: [...{
-									[string]: #configuration
+					[string]: #configuration
 				}] & [_, ...]}
 				{[!~"^(in|ex)clude$" & !~"^()$"]: [...#configuration] & [_, ...] | #expressionSyntax}
 			}
@@ -853,7 +853,7 @@ import "strings"
 				...
 			} | #expressionSyntax) & {
 				{[=~"^(in|ex)clude$" & !~"^()$"]: [...{
-									[string]: #configuration
+					[string]: #configuration
 				}] & [_, ...]}
 				{[!~"^(in|ex)clude$" & !~"^()$"]: [...#configuration] & [_, ...] | #expressionSyntax}
 			}

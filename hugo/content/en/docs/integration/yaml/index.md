@@ -60,7 +60,7 @@ max: 5
 $ cue vet ranges.yaml check.cue
 max: invalid value 5 (out of bound >10):
     ./check.cue:2:16
-    ./ranges.yaml:5:7
+    ./ranges.yaml:5:6
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

@@ -23,7 +23,7 @@ and an invalid one (`yourIP`).
 {{< code-tab name="lists.cue" language="cue"  area="top-left" >}}
 import "list"
 
-IP: list.Repeat([ uint8], 4)
+IP: list.Repeat([uint8], 4)
 
 PrivateIP: IP
 PrivateIP: [10, ...uint8] |
