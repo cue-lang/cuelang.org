@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								yamlBroken: "aYpImJgfS7lhTeFqLRKqNVOlZZ5D4nJq+hmatlSPwG0="
-								"pets.cue": "47RzyYLZzEWDVl1y1mA4zwDLSzOHIw9nid8AQn/byWA="
-								yamlFixed:  "xe2uFHZ/0++u0BvZD34DAuHnbH+IJaMg6XnxYNEJqTY="
-								yaml2:      "LPnYHlSoFtN/Fln7TLWgOO8/x63MszcOBwoqlTPAEV4="
+								yamlBroken: "WmCw7b3+orHBaKrwB4ik0FycptweTWVQuIcPD9hbx2A="
+								"pets.cue": "bDeJib3e+lvOz9gkjjUzHtsp+IJ71tUu7PH06dsw77E="
+								yamlFixed:  "Roz/4Y8F9r4/HxFgKhjUPjP1CR8b5cle8HhcnbZwGpc="
+								yaml2:      "UGmeer1F6NkbqsjW4FMT1q2RKTMaH+pXOLh1+EdpzgU="
 							}
 							multi_step: {
-								"GBUSTJC9RPD2UJLIQQVMIQ6K139THMRGFPU456LP2KPIQU8FM7BG====": '''
+								"D9MN0G5SJMVB429G6E205KVOU6H9GHH0DQ8FA1QV462LPLVSBLSG====": '''
 										e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 										/home/runner
 										e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
@@ -29,7 +29,7 @@ package site
 										$ cat <<EOD > charlie.yml
 										name:
 										  first: Charlie
-										  last:  Cartwright
+										  last: Cartwright
 										species: goldfish
 										age: "15"
 
@@ -42,21 +42,21 @@ package site
 										$ cue vet pets.cue charlie.yml
 										863fbfb80017aa956eca4753e07875a5bb53ae9f4bef4575f03e8df7997f0d38
 										age: conflicting values "15" and number (mismatched types string and number):
-										    ./charlie.yml:5:7
+										    ./charlie.yml:5:6
 										    ./pets.cue:2:11
 										species: 2 errors in empty disjunction:
 										species: conflicting values "cat" and "goldfish":
-										    ./charlie.yml:4:11
+										    ./charlie.yml:4:10
 										    ./pets.cue:1:11
 										species: conflicting values "dog" and "goldfish":
-										    ./charlie.yml:4:11
+										    ./charlie.yml:4:10
 										    ./pets.cue:1:19
 										863fbfb80017aa956eca4753e07875a5bb53ae9f4bef4575f03e8df7997f0d38
 										1
 										$ cat <<EOD > charlie.yml
 										name:
 										  first: Charlie
-										  last:  Cartwright
+										  last: Cartwright
 										species: cat
 										age: 15
 

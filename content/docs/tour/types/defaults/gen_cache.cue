@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									defaults: "6ISstGq3nL2PAMikmL2bLQb+LWZXRC2Ul5jAVcOpKg0="
+									defaults: "40Ktmt03tSxBeY5mGa+4ei05v61g2selBWtKAbaGuN4="
 								}
 							}
 						}
