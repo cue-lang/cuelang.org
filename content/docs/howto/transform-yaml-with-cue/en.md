@@ -36,7 +36,7 @@ input: #Schema
 		age?:     int & <50 // years
 	}
 }
-#Species: [ "cat", "dog", "goldfish"]
+#Species: ["cat", "dog", "goldfish"]
 
 // transform the input into the output
 output: location: *input.owner.address | "Unknown"
