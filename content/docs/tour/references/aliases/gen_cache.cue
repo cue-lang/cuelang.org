@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									alias: "EOSeL5jWchzZMQVA5as7piTfIQL3BV3Y36HYNuUtdBU="
+									alias: "uOfZllazNnv1NrEwiVORaxUHO1sjsix1w1PFNc1FiAo="
 								}
 							}
 						}

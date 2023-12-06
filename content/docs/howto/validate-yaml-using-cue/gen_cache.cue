@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "JLFtHeoOMR4JE/vUf6ZvNPfVUQW8xQVdUVuLhajlC6Y="
-								"initial x.cue":  "X8TB3HIpPzYEVl4Q/JvWlqiAhUT0C9qsXSVu7xKlClg="
-								"another person": "cDknIW8R0UmZLRqGjIHXlzml1yVFSGEpWqDkus9Gh2o="
-								"fixed yaml":     "9YmYIuGaJLVLrNPDim77HGL2Mthemo+cweekF7zGIvk="
+								"initial x.yaml": "aeAmlWuB85RBws8SGK3lhmr2Mlz0mzbOpIJ8EUvOBtg="
+								"initial x.cue":  "eqCxRWQyBCV627dNQNhoPPuGQdSLvy5LbRbRYkfRMNc="
+								"another person": "SGENE8rPxDajn3v7lkPf+RQR3xnDERYfo/PyZQBQr28="
+								"fixed yaml":     "eOyIPyc19G3xE2wukkj7J+8ZU9213djHKK8XFekQdak="
 							}
 							multi_step: {
-								"9JFEDG0V5CLT7TVFJ4LASV2MUFMH7NPMPJTQH6F6T36HIVUEK520====": '''
+								"HO1IR3J5KC9EQKTRID4QGKC59S6U9L8OETPFIAT2ASROMHR2391G====": '''
 										$ cat <<EOD > x.cue
 										#Person: {
 										\tname:    string
@@ -51,7 +51,7 @@ package site
 										people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
 										    ./x.cue:3:11
 										    ./x.cue:7:21
-										    ./x.yaml:12:11
+										    ./x.yaml:12:10
 										f0ead12d19524728472ea54c1f32b099608ef25ef5166dd605bca4cec773a743
 										1
 										$ cat <<EOD > x.yaml
