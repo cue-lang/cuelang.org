@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								yamlBroken: "aYpImJgfS7lhTeFqLRKqNVOlZZ5D4nJq+hmatlSPwG0="
-								"pets.cue": "47RzyYLZzEWDVl1y1mA4zwDLSzOHIw9nid8AQn/byWA="
-								yamlFixed:  "xe2uFHZ/0++u0BvZD34DAuHnbH+IJaMg6XnxYNEJqTY="
-								yaml2:      "LPnYHlSoFtN/Fln7TLWgOO8/x63MszcOBwoqlTPAEV4="
+								yamlBroken: "8Vv0qjhs47L9qfuZS+Et4ieJbYJ0PkvytsxQbsW9IBM="
+								"pets.cue": "xd4kA2DbiNWMI79peN6i3EZ3G1m+JOcED3B7SrFnf28="
+								yamlFixed:  "wth7A418ZFPHJGVw0onrWuTGVV/ZxHQYrjt6cXj08vM="
+								yaml2:      "oknAMXMKLZ9XoJjd53dp4Hmdpo2VzZyqlU+Fy/y4OMY="
 							}
 							multi_step: {
 								"GBUSTJC9RPD2UJLIQQVMIQ6K139THMRGFPU456LP2KPIQU8FM7BG====": '''
@@ -42,14 +42,14 @@ package site
 										$ cue vet pets.cue charlie.yml
 										863fbfb80017aa956eca4753e07875a5bb53ae9f4bef4575f03e8df7997f0d38
 										age: conflicting values "15" and number (mismatched types string and number):
-										    ./charlie.yml:5:7
+										    ./charlie.yml:5:6
 										    ./pets.cue:2:11
 										species: 2 errors in empty disjunction:
 										species: conflicting values "cat" and "goldfish":
-										    ./charlie.yml:4:11
+										    ./charlie.yml:4:10
 										    ./pets.cue:1:11
 										species: conflicting values "dog" and "goldfish":
-										    ./charlie.yml:4:11
+										    ./charlie.yml:4:10
 										    ./pets.cue:1:19
 										863fbfb80017aa956eca4753e07875a5bb53ae9f4bef4575f03e8df7997f0d38
 										1
