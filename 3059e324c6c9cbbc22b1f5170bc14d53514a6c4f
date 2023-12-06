@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "3059e324c6c9cbbc22b1f5170bc14d53514a6c4f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d05afdb2_b988cbf7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-06T12:57:47Z",
+      "side": 1,
+      "message": "LGTM although there is a bug where selecting a \"popular search\" takes you to the actual search homepage.",
+      "revId": "3059e324c6c9cbbc22b1f5170bc14d53514a6c4f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
