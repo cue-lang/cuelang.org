@@ -21,7 +21,7 @@ msg: "Hello \(#Name)!"
 	field: int
 }
 
-a:   #A & {field: 3}
+a: #A & {field: 3}
 err: #A & {feild: 3}
 {{< /code-tab >}}
 {{< code-tab name="result.txt" language="txt"  area="top-right" >}}

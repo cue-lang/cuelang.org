@@ -62,7 +62,7 @@ s1:
   x: some other string
 -- out.err --
 "f-2": conflicting values 42.137 and string (mismatched types float and string):
-    ./data.yml:8:7
+    ./data.yml:8:6
     ./schema.cue:14:9
 {{{end}}}
 
