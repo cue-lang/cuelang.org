@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								yamlBroken: "aYpImJgfS7lhTeFqLRKqNVOlZZ5D4nJq+hmatlSPwG0="
-								"pets.cue": "47RzyYLZzEWDVl1y1mA4zwDLSzOHIw9nid8AQn/byWA="
-								yamlFixed:  "xe2uFHZ/0++u0BvZD34DAuHnbH+IJaMg6XnxYNEJqTY="
-								yaml2:      "LPnYHlSoFtN/Fln7TLWgOO8/x63MszcOBwoqlTPAEV4="
+								yamlBroken: "0nqew9fXS/7saSF3spavde8IUfyEqgfn97S4/pAtcc4="
+								"pets.cue": "WnSg2ggHZNdun8TDFu8YjZVWi/EvKSERjar2ahxY5hk="
+								yamlFixed:  "lK1ZvoFNb2XMwhauTP/koOVB4o0daL3g5TaPbwpTxgc="
+								yaml2:      "/+lc0y2d+ZGKTsKnD63sZCas4CK7XcSiV4q8VbQqnPA="
 							}
 							multi_step: {
-								"GBUSTJC9RPD2UJLIQQVMIQ6K139THMRGFPU456LP2KPIQU8FM7BG====": '''
+								"Q4MQ49HJKU2RDCNK6MCNICR19VRTIOOBJGHMEU3PA1R21G928JG0====": '''
 										e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 										/home/runner
 										e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
@@ -42,14 +42,14 @@ package site
 										$ cue vet pets.cue charlie.yml
 										863fbfb80017aa956eca4753e07875a5bb53ae9f4bef4575f03e8df7997f0d38
 										age: conflicting values "15" and number (mismatched types string and number):
-										    ./charlie.yml:5:7
+										    ./charlie.yml:5:6
 										    ./pets.cue:2:11
 										species: 2 errors in empty disjunction:
 										species: conflicting values "cat" and "goldfish":
-										    ./charlie.yml:4:11
+										    ./charlie.yml:4:10
 										    ./pets.cue:1:11
 										species: conflicting values "dog" and "goldfish":
-										    ./charlie.yml:4:11
+										    ./charlie.yml:4:10
 										    ./pets.cue:1:19
 										863fbfb80017aa956eca4753e07875a5bb53ae9f4bef4575f03e8df7997f0d38
 										1
