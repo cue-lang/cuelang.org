@@ -25,7 +25,7 @@ cmp stdout result.txt
 -- lists.cue --
 import "list"
 
-IP: list.Repeat([ uint8], 4)
+IP: list.Repeat([uint8], 4)
 
 PrivateIP: IP
 PrivateIP: [10, ...uint8] |

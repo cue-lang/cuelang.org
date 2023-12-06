@@ -62,7 +62,7 @@ max: 5
 -- out.err --
 max: invalid value 5 (out of bound >10):
     ./check.cue:2:16
-    ./ranges.yaml:5:7
+    ./ranges.yaml:5:6
 {{{end}}}
 
 ### Import YAML
