@@ -129,7 +129,7 @@ var codec = gocodec.New(r, nil)
 var myValueConstraints cue.Value
 
 func (x *MyValue) Validate() error {
-    return codec.Validate(myValueConstraints, x)
+	return codec.Validate(myValueConstraints, x)
 }
 ```
 
@@ -162,7 +162,7 @@ The simplest way to set a Go value to the contents of a CUE value
 is to use the Decode method of the later.
 
 ```go
-type ab struct { A, B int }
+type ab struct{ A, B int }
 
 var r cue.Runtime
 
@@ -223,7 +223,7 @@ to override the naming.
 ```go
 b, err := gocode.Generate("path/to/go/pkg", instance, nil)
 if err != nil {
-    // handle error
+	// handle error
 }
 
 err = os.WriteFile("cue_gen.go", b, 0644)
