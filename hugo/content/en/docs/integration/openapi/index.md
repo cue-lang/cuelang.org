@@ -31,18 +31,18 @@ Generating an OpenAPI definition can be as simple as
 import "cuelang.org/go/encoding/openapi"
 
 func genOpenAPI(inst *cue.Instance) ([]byte, error) {
-    b, err := openapi.Gen(inst, nil)
-    if err != nil {
-        return nil, err
-    }
+	b, err := openapi.Gen(inst, nil)
+	if err != nil {
+		return nil, err
+	}
 
-    var out bytes.Buffer
-    err = json.Indent(&out, b, "", "   ")
-    if err != nil {
-        return nil, err
-    }
-    
-    return out.Bytes(), nil
+	var out bytes.Buffer
+	err = json.Indent(&out, b, "", "   ")
+	if err != nil {
+		return nil, err
+	}
+
+	return out.Bytes(), nil
 }
 ```
 

@@ -52,9 +52,9 @@ A similar approach is supported for Go:
 
 ```go
 type Sum struct {
-    A int `cue:"c-b" json:"a,omitempty"`
-    B int `cue:"c-a" json:"b,omitempty"`
-    C int `cue:"a+b" json:"c,omitempty"`
+	A int `cue:"c-b" json:"a,omitempty"`
+	B int `cue:"c-a" json:"b,omitempty"`
+	C int `cue:"a+b" json:"c,omitempty"`
 }
 ```
 

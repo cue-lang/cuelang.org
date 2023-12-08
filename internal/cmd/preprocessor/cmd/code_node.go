@@ -97,7 +97,7 @@ func (s *codeNode) validate() {
 			case codeTabTop, codeTabBottom, codeTabLeft, codeTabRight,
 				codeTabTopLeft, codeTabTopRight, codeTabBottomLeft, codeTabBottomRight:
 			default:
-				s.errorf("%v: unknown locaion %q", s, l)
+				s.errorf("%v: unknown location %q", s, l)
 			}
 		}
 	}
