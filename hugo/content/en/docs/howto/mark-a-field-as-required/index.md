@@ -39,8 +39,7 @@ s1: {
 }
 {{< /code-tab >}}
 {{< code-tab name="data.yml" language="yml"  area="top-right" >}}
-f1: "some string value"
-# f-2: field is missing
+f1: some string value
 s1:
   f3: 7
 {{< /code-tab >}}

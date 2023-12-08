@@ -68,7 +68,7 @@ field:
 -- charlie.yml --
 name:
   first: Charlie
-  last:  Cartwright
+  last: Cartwright
 species: goldfish
 age: "15"
 {{{end}}}
@@ -154,7 +154,7 @@ Your corrected data file should read as follows:
 -- charlie.yml --
 name:
   first: Charlie
-  last:  Cartwright
+  last: Cartwright
 species: cat
 age: 15
 {{{end}}}

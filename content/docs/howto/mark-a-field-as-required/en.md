@@ -40,8 +40,7 @@ s1: {
 	f3!: int & <10
 }
 -- data.yml --
-f1: "some string value"
-# f-2: field is missing
+f1: some string value
 s1:
   f3: 7
 -- out.err --

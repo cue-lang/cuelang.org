@@ -68,7 +68,7 @@ field:
 ```yml { title="charlie.yml" }
 name:
   first: Charlie
-  last:  Cartwright
+  last: Cartwright
 species: goldfish
 age: "15"
 ```
@@ -161,7 +161,7 @@ Your corrected data file should read as follows:
 ```yml { title="charlie.yml" }
 name:
   first: Charlie
-  last:  Cartwright
+  last: Cartwright
 species: cat
 age: 15
 ```

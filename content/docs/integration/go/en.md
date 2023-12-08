@@ -133,7 +133,7 @@ var codec = gocodec.New(r, nil)
 var myValueConstraints cue.Value
 
 func (x *MyValue) Validate() error {
-    return codec.Validate(myValueConstraints, x)
+	return codec.Validate(myValueConstraints, x)
 }
 {{{end}}}
 
@@ -167,7 +167,7 @@ is to use the Decode method of the later.
 
 {{{with code "en" "go-decode-cue"}}}
 -- example.go --
-type ab struct { A, B int }
+type ab struct{ A, B int }
 
 var r cue.Runtime
 
@@ -230,7 +230,7 @@ to override the naming.
 -- example.go --
 b, err := gocode.Generate("path/to/go/pkg", instance, nil)
 if err != nil {
-    // handle error
+	// handle error
 }
 
 err = os.WriteFile("cue_gen.go", b, 0644)

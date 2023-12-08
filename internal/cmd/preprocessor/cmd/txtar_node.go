@@ -285,14 +285,22 @@ func (t *txtarRunContext) formatFiles() error {
 		case "json":
 			cmd = t.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
-		case "yaml":
+		case "yaml", "yml":
 			cmd = t.dockerCmd(nil, "cue", "export", "--out=yaml", "yaml:", "-")
+			cmd.Stdin = bytes.NewReader(f.Data)
+		case "go":
+			cmd = t.dockerCmd(nil, "gofmt")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "cue":
 			cmd = t.dockerCmd(nil, "cue", "fmt", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
+		case "proto":
+			// TODO: add support for proto formatting, after working out how to make
+			// this tooling generally available in the base docker image.
+		case "txt":
+			// do nothing, simply avoid logging
 		default:
-			t.debugf(t.debugFormatting, "%v: skipping formatting of file %s; unknown extension", t, a.Basename)
+			t.logf("%v: skipping formatting of file %s; unknown extension %q", t, a.Basename, a.Ext)
 		}
 		if cmd == nil {
 			// Nothing to do

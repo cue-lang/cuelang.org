@@ -31,10 +31,7 @@ s1?: "\(strconv.Atoi(s1))"
 s2?: "\(strconv.Atoi(s2))"
 {{< /code-tab >}}
 {{< code-tab name="data.yml" language="yml"  area="top-right" >}}
-# s1 is a valid integer
 s1: "137"
-
-# s2 is not a valid integer
 s2: "42.7"
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}

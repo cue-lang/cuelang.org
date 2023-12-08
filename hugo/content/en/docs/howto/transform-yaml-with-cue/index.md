@@ -61,18 +61,18 @@ owner:
   name: Dorothy Cartwright
   address: Ripon, North Yorkshire, England
 pets:
-- name: Charlie
-  species: cat
-  age: 15
-- name: Lola
-  species: dog
-  breed: dachshund
-- name: Fred
-  species: goldfish
-  age: 8
-- name: George
-  species: cat
-  age: 5 
+  - name: Charlie
+    species: cat
+    age: 15
+  - name: Lola
+    species: dog
+    breed: dachshund
+  - name: Fred
+    species: goldfish
+    age: 8
+  - name: George
+    species: cat
+    age: 5
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
 $ cue export .:example -l input: data.yml -e output --out yaml

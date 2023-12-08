@@ -46,24 +46,17 @@ s1: {
 }
 {{< /code-tab >}}
 {{< code-tab name="data.yml" language="yml"  area="top-right" >}}
-# f1 is a nested struct
 f1:
   f1.1:
     f1.2: some string
-
-# f-2 is floating point number,
-# not a string
 f-2: 42.137
-
-# s1 only contains the field x,
-# not f3.
 s1:
   x: some other string
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
 $ cue vet .:example data.yml
 "f-2": conflicting values 42.137 and string (mismatched types float and string):
-    ./data.yml:8:7
+    ./data.yml:4:7
     ./schema.cue:14:9
 {{< /code-tab >}}
 {{< /code-tabs >}}
