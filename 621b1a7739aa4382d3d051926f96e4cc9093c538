@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac15ae5d_046e30b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-08T17:26:06Z",
+      "side": 1,
+      "message": "Paul - I\u0027m hitting pause on getting this to work. I\u0027m not sure if I\u0027m hitting a \"don\u0027t do that with a _tool\" problem/known-issue ... or what. It\u0027s been pretty frustrating!\n\nIf you find the opportunity to take a look and can figure out any kind of hint for me, I\u0027ll progress it next week.\n\nIf not, I\u0027ll fall back to a dumb script, as per the commit message.\n\nEither option is 100% fine by me - the only variable is the resulting CUE purity of the codebase!",
+      "revId": "621b1a7739aa4382d3d051926f96e4cc9093c538",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
