@@ -19,7 +19,7 @@ Instead, one must use indexing.
 {{< highlight go >}}
 import "strings"
 
-#a: [ "Barcelona", "Shanghai", "Munich" ]
+#a: ["Barcelona", "Shanghai", "Munich"]
 
 for k, v in #a {
     "\( strings.ToLower(v) )": {

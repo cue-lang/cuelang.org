@@ -7,10 +7,10 @@ layout = "tutorial"
 +++
 <!-- jba: the terms here are confusing. "Null coalescing" is actually not
   that, but then there is something called "actual null coalescing."
-  
+
   Just say that because _|_ | X evaluates to X, you can use disjunction
   to represent fallback values.
-  
+
   And then you can use that to effectively type-check with a default value.
 -->
 
@@ -33,7 +33,7 @@ the result is not of the desired type.
 <i>coalesce.cue</i>
 <p>
 {{< highlight go >}}
-list: [ "Cat", "Mouse", "Dog" ]
+list: ["Cat", "Mouse", "Dog"]
 
 a: *list[0] | "None"
 b: *list[5] | "None"

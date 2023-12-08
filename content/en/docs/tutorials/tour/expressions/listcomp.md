@@ -16,7 +16,7 @@ The example shows the use of `for` loops and `if` guards.
 <i>listcomp.cue</i>
 <p>
 {{< highlight go >}}
-[ for x in #items if x rem 2 == 0 { x*x } ]
+[for x in #items if x rem 2 == 0 { x*x }]
 
 #items: [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
