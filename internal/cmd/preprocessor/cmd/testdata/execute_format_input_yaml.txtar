@@ -32,7 +32,7 @@ package site
 >---
 >{{{with code "en" "json-superset"}}}
 >-- in.yaml --
->x: 5
+>{"x": 5}
 >-- out.yaml --
 >x: 5
 >{{{end}}}
@@ -42,7 +42,7 @@ title: title
 ---
 {{< code-tabs >}}
 {{< code-tab name="YAML" language="yaml"  area="top-left" >}}
-x: 5
+{"x": 5}
 {{< /code-tab >}}
 {{< code-tab name="YAML" language="yaml" type="terminal" area="top-right" >}}
 x: 5
