@@ -479,6 +479,13 @@ type multiStepScript struct {
 // multi-step script represented by m.
 func (m *multiStepScript) cachePath() cue.Path {
 	work := sha256.New()
+
+	// TODO: work out a more principled way of including this "standard"
+	// material in the hash.
+	fmt.Fprintf(work, "Go major version: %s\n", goMajorVersion)
+	fmt.Fprintf(work, "preprocessor version: %s\n", m.selfHash)
+	fmt.Fprintf(work, "docker image: %s\n", dockerImageTag)
+
 	// TODO: work out how to include the command in some way shape or form.
 	// In its current form it cannot participate in the hash because of temporary
 	// paths. Perhaps the way to do this is to write certain bits of information
