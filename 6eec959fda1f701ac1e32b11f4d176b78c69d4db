@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90a752b3_bb8e2c1d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-08T14:14:02Z",
+      "side": 1,
+      "message": "Despite still being this CL\u0027s nominal owner, apparently my +2 will render this CL submittable.",
+      "revId": "6eec959fda1f701ac1e32b11f4d176b78c69d4db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
