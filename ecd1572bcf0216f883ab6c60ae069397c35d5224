@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95bf6410_42d12b94",
+        "filename": "hugo/content/en/docs/howto/mark-a-field-as-optional/index.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-08T14:06:37Z",
+      "side": 0,
+      "message": "Example removal of yaml comments.",
+      "revId": "ecd1572bcf0216f883ab6c60ae069397c35d5224",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
