@@ -14,4 +14,9 @@
 
 package site
 
+// Remove the generated cue CLI reference source docs via a glob, before
+// siteCUE.bash recreates them. The deletion has to be done here (and not in a
+// go:generate step inside content/docs/reference/cli/) because go:generate
+// processes a nested package's content after its parent directories.
+//go:generate bash -c "rm -rf content/docs/reference/cli/cue*"
 //go:generate ./_scripts/siteCUE.bash cmd gen
