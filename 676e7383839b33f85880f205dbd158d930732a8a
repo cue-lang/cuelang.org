@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08e1605d_a8b94797",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-08T14:11:17Z",
+      "side": 1,
+      "message": "As I\u0027m still nominally this CL\u0027s owner, I don\u0027t believe this +2 will have any material affect on its submittability.",
+      "revId": "676e7383839b33f85880f205dbd158d930732a8a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
