@@ -14,4 +14,15 @@
 
 package site
 
+// Remove the generated cue CLI reference source docs via a glob, before
+// siteCUE.bash recreates them. This copes with the situation where a new CUE
+// cli has removed an old command. The deletion has to be done here (and not in
+// a go:generate step inside content/docs/reference/cli/) because go:generate
+// processes a nested package's content after its parent directories.
+// TODO: this currently causes a problem in CI, where there's an "early"
+// clean-git-state check immediately after go:generate is invoked, but the
+// rm-rf has wiped out the docs' committed gen_cache.cue files, anticipating
+// their identical recreation by a preprocessor invocation.
+// TODO: go:generate bash -c "rm -rf content/docs/reference/cli/cue*"
+
 //go:generate ./_scripts/siteCUE.bash cmd gen

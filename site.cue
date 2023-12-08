@@ -5,6 +5,7 @@ import (
 
 	"github.com/cue-lang/cuelang.org/internal/ci"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
+	"github.com/cue-lang/cuelang.org/content/docs/reference/cli"
 )
 
 versions: {
@@ -147,6 +148,33 @@ template: ci.#writefs & {
 			export const CUEVersion = '\#(versions.cue)';
 
 			"""#
+		}
+
+		for _, cmd in cli.cue {
+			"\(cli.contentRoot)/\(cmd.dir)/page.cue": {
+				Contents: #"""
+					// \#(donotedit)
+					package site
+
+					\#(cmd.cuePath)
+
+					"""#
+			}
+			"\(cli.contentRoot)/\(cmd.dir)/en.md": {
+				Contents: #"""
+					---
+					WARNING: "\#(donotedit)"
+					title: "\#(cmd.title)"
+					tags:
+					- cue command
+					---
+
+					{{{with script "en" "cue cli help text"}}}
+					\#(cmd.execCmd)
+					{{{end}}}
+
+					"""#
+			}
 		}
 	}
 }
