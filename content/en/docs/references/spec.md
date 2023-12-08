@@ -1171,9 +1171,9 @@ A dynamic field may be marked as optional or required.
 
 ```
 Expression                             Result
-a:   "foo                              a:   "foo"
+a:   "foo"                             a:   "foo"
 b:   "bar"                             b:   "bar"
-(a): "baz"                             bar: "baz"
+(a): "baz"                             foo: "baz"
 
 (a+b): "qux"                           foobar: "qux"
 
@@ -2630,7 +2630,7 @@ LetClause           = "let" identifier "=" Expression .
 
 ```
 a: [1, 2, 3, 4]
-b: [ for x in a if x > 1 { x+1 } ]  // [3, 4, 5]
+b: [for x in a if x > 1 { x+1 }]  // [3, 4, 5]
 
 c: {
     for x in a
