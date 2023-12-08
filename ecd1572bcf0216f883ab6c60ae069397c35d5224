@@ -16,6 +16,24 @@
       "message": "Example removal of yaml comments.",
       "revId": "ecd1572bcf0216f883ab6c60ae069397c35d5224",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a055bb9_a4fa1ae8",
+        "filename": "hugo/content/en/docs/howto/mark-a-field-as-optional/index.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-08T19:47:54Z",
+      "side": 0,
+      "message": "VERY good catch. I had missed this. Reason being, I originally made the changes as part of another commit, then failed to review this CL (to catch things like this) after the split. Thanks for catching this. I\u0027m thinking :)",
+      "parentUuid": "95bf6410_42d12b94",
+      "revId": "ecd1572bcf0216f883ab6c60ae069397c35d5224",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
