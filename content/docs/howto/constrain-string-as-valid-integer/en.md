@@ -32,10 +32,7 @@ import "strconv"
 s1?: "\(strconv.Atoi(s1))"
 s2?: "\(strconv.Atoi(s2))"
 -- data.yml --
-# s1 is a valid integer
 s1: "137"
-
-# s2 is not a valid integer
 s2: "42.7"
 -- out.err --
 s2: invalid interpolation: error in call to strconv.Atoi: strconv.Atoi: parsing "42.7": invalid syntax:

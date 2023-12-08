@@ -21,9 +21,8 @@ phrases:
     lang: en
     text: Never regret anything that made you smile.
     attribution: Mark Twain
-
   proverb:
-    lang: no
+    lang: "no"
     text: Stemmen som sier at du ikke klarer det, lyver.
 ```
 

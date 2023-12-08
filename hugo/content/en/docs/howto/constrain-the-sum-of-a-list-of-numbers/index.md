@@ -35,8 +35,16 @@ _good_sum: <=100 & list.Sum(good_list)
 _bad_sum:  <=99.5 & list.Sum(bad_list)
 {{< /code-tab >}}
 {{< code-tab name="data.yml" language="yml"  area="top-right" >}}
-good_list: [ 1,2,3,4 ]
-bad_list:  [ 1,2,3,100.5 ]
+good_list:
+  - 1
+  - 2
+  - 3
+  - 4
+bad_list:
+  - 1
+  - 2
+  - 3
+  - 100.5
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
 $ cue vet .:example data.yml

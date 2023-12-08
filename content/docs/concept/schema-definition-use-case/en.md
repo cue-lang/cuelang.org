@@ -65,6 +65,7 @@ if the old one is an instance of the new one.
 This can be computed using the API:
 
 {{{with code "en" "api-go"}}}
+#nofmt in.go does not compile
 -- in.go --
 inst, err := r.Compile("apis", /* text of the above API */)
 if err != nil {

@@ -36,8 +36,16 @@ bad_list: [...number]
 _good_sum: <=100 & list.Sum(good_list)
 _bad_sum:  <=99.5 & list.Sum(bad_list)
 -- data.yml --
-good_list: [ 1,2,3,4 ]
-bad_list:  [ 1,2,3,100.5 ]
+good_list:
+  - 1
+  - 2
+  - 3
+  - 4
+bad_list:
+  - 1
+  - 2
+  - 3
+  - 100.5
 -- out.err --
 _bad_sum: invalid value 106.5 (out of bound <=99.5):
     ./schema.cue:14:12
