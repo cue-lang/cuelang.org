@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5c6ca5a_5e75a460",
+        "filename": "content/docs/reference/cli/commands.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:25:54Z",
+      "side": 1,
+      "message": "Good point - I was pulling forward scar tissue from previous attempts in this CL\u0027s space. Fixed.",
+      "parentUuid": "5dbc0dd1_58adb5ec",
+      "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b844c64f_750f767d",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f08cc13_b689330a",
+        "filename": "content/docs/reference/cli/commands.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:25:54Z",
+      "side": 1,
+      "message": "Done, with minor alterations. The output /looks/ a tad weird, but is semantically correct :-)\n\n```\npackage site\n\n{\"content\":{\"docs\":{\"reference\":{\"cli\":{\"cue-cmd\":{}}}}}}\n```",
+      "parentUuid": "b844c64f_750f767d",
+      "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e670f860_c291f7a2",
@@ -65,6 +101,24 @@
       "writtenOn": "2023-12-11T20:13:34Z",
       "side": 1,
       "message": "Use `_` instead of `{}` when you are not trying to say anything.",
+      "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a251acc7_571a61dd",
+        "filename": "content/docs/reference/cli/commands.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:25:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e670f860_c291f7a2",
       "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
