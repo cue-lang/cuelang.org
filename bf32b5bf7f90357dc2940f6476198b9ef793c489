@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d81af52_b37f487d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:03:49Z",
+      "side": 1,
+      "message": "LGTM but I would go with the short description from the page (if we have one) and the arrow for visual effect.",
+      "revId": "bf32b5bf7f90357dc2940f6476198b9ef793c489",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
