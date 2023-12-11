@@ -33,6 +33,24 @@
       "message": "As can be seen in some of the now-formatted embedded .yml files, in both the content/ and hugo/ directories, making this change removes all explanatory comments from those .yml files.\n\nI recognise that this would have /always/ been the case if we\u0027d been using the .yaml file extension, and the removal wouldn\u0027t have showed up in /this/ commit, but, given where we are, making this change doesn\u0027t seem like a positive change.\n\nIs there any way to persist yaml comments through the preprocessor?",
       "revId": "7e78f4a029182a6be824749499613160faf04f7d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dd9edef_c553b1ff",
+        "filename": "internal/cmd/preprocessor/cmd/txtar_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T13:01:51Z",
+      "side": 1,
+      "message": "Per my other comment, great catch. I\u0027ve reverted to skipping yaml formatting for now. We can revisit this in another stack.",
+      "parentUuid": "b8affb51_7973075d",
+      "revId": "7e78f4a029182a6be824749499613160faf04f7d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
