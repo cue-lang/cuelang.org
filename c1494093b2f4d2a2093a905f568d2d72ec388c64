@@ -16,6 +16,74 @@
       "message": "PTAL.",
       "revId": "c1494093b2f4d2a2093a905f568d2d72ec388c64",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ac980e_7ced2c5c",
+        "filename": "content/docs/howto/access-fields-whose-names-are-not-valid-identifiers/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:56:27Z",
+      "side": 1,
+      "message": "s/access/refer to/",
+      "revId": "c1494093b2f4d2a2093a905f568d2d72ec388c64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45baeae4_1bd6b291",
+        "filename": "content/docs/howto/access-fields-whose-names-are-not-valid-identifiers/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:56:27Z",
+      "side": 1,
+      "message": "s/use an/use the/\ns/access/refer to/",
+      "revId": "c1494093b2f4d2a2093a905f568d2d72ec388c64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef40ffbf_430addf8",
+        "filename": "content/docs/howto/access-fields-whose-names-are-not-valid-identifiers/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:56:27Z",
+      "side": 1,
+      "message": "s/access/refer to/",
+      "revId": "c1494093b2f4d2a2093a905f568d2d72ec388c64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b19de644_867c1359",
+        "filename": "content/docs/howto/access-fields-whose-names-are-not-valid-identifiers/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:56:27Z",
+      "side": 1,
+      "message": "I think it\u0027s odd having the data file second. It took my (admittedly very slow) brain a while to work out what was going on here. Better have that first, with a small comment indicating the purpose of the file?\n\nAnd then file.cue can be comment as a transformation of the data, within the output field?",
+      "revId": "c1494093b2f4d2a2093a905f568d2d72ec388c64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
