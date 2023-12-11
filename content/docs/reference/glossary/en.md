@@ -93,6 +93,9 @@ toc_hide: false
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="I" >}}
+
+<!-- TODO ## `int` type -->
+
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="J" >}}
@@ -188,21 +191,15 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="T" >}}
 
-<!-- TODO
-## Type
--->
+<!-- TODO ## Type -->
 
-<!-- TODO
-## Type Constraint
--->
+<!-- TODO ## Type Constraint -->
 
 {{< /step >}}
 
 {{< step group="glossary" stepNumber="U" >}}
 
-<!-- TODO
-## Unification
--->
+<!-- TODO ## Unification -->
 
 {{< /step >}}
 
@@ -228,5 +225,3 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="#" >}}
 {{< /step >}}
-
-
