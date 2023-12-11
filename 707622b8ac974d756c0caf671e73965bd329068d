@@ -33,6 +33,23 @@
       "message": "Would cards not be better in this instance? The semi-linked bullet points just seem to look and feel a bit better to me. Granted that doesn\u0027t provide an amazing solution for when we have both JSON + Yaml versions of something, but I wouldn\u0027t try to over-solve for that.",
       "revId": "707622b8ac974d756c0caf671e73965bd329068d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3042dd24_865dfdfe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T17:46:49Z",
+      "side": 1,
+      "message": "Please take another look. I /think/ you\u0027re right about the cards: they definitely look better; but the choice is yours. The cards are slightly biased towards having a separate title, text, and label, but I think the layout I ended up with works ok.",
+      "revId": "707622b8ac974d756c0caf671e73965bd329068d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
