@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8cc316d0_849a8625",
+        "filename": "content/docs/howto/use-the-builtin-functions-div-mod-quo-rem/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:19:09Z",
+      "side": 1,
+      "message": "Please consistently link to the spec in each of these kinds of docs in other CLs.",
+      "revId": "a3bd8827b2b3d3d6defc8f40b91f7c21ed60ef54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a6022a5_45aa592a",
+        "filename": "content/docs/howto/use-the-builtin-functions-div-mod-quo-rem/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:19:09Z",
+      "side": 1,
+      "message": "Any particular reason to use yaml vs CUE here? It seems odd to see Yaml here instead of CUE.",
+      "revId": "a3bd8827b2b3d3d6defc8f40b91f7c21ed60ef54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
