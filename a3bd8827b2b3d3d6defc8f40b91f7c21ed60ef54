@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "309292da_5c32aa58",
+        "filename": "content/docs/howto/use-the-builtin-functions-div-mod-quo-rem/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:18Z",
+      "side": 1,
+      "message": "In this CL\u0027s latest updated, along with the rest of the stack, I\u0027ve started using the glossary as the fan-in-fan-out point for a variety of terms, linking **to** there and then **onwards** to the Language Guide, the spec, etc, in a structured manner - rather than linking directly to the spec on first use.\n\nI\u0027m using this approach as it feels useful to give the reader a consistent experience, where the glossary acts as the unified clearing house, or \"here\u0027s a carefully curated route to the most important docs relating to a specific term\" page, for each term.\n\nIn the case of this specific paragraph, it feels correct to exceptionally (in this stack) call out the direct link to the spec (and to continue having this link present) as these are the only builtin functions which have an algebraic definition that merits the direct link. IMHO.\n\nLeaving unresolved for visibility.",
+      "parentUuid": "8cc316d0_849a8625",
+      "revId": "a3bd8827b2b3d3d6defc8f40b91f7c21ed60ef54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4a6022a5_45aa592a",
         "filename": "content/docs/howto/use-the-builtin-functions-div-mod-quo-rem/en.md",
         "patchSetId": 2
@@ -31,6 +49,24 @@
       "writtenOn": "2023-12-11T16:19:09Z",
       "side": 1,
       "message": "Any particular reason to use yaml vs CUE here? It seems odd to see Yaml here instead of CUE.",
+      "revId": "a3bd8827b2b3d3d6defc8f40b91f7c21ed60ef54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73a29fc8_981fda14",
+        "filename": "content/docs/howto/use-the-builtin-functions-div-mod-quo-rem/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:18Z",
+      "side": 1,
+      "message": "Yes! I thought of that :-)\n\nUsing CUE (even via `export --out cue`) the comments get emitted. The repetition looks just slightly odd, and somewhat breaks the reading flow between the values on the right, and then the CUE code on the left, and then -- if needed -- the CUE comments. Having the comments on the right, without the functions in scope, doesn\u0027t flow as nicely.\n\nI used YAML as the output *in this case* actually felt closer to the CUE on the left, as I selected the field names so that they wouldn\u0027t be quoted in either CUE or YAML - thereby diminishing the \"switching formats\" mental bump.\n\nHowever, on reflection, I\u0027ve left it as JSON, so the command can simply be an uncomplicated `cue export`.",
+      "parentUuid": "4a6022a5_45aa592a",
       "revId": "a3bd8827b2b3d3d6defc8f40b91f7c21ed60ef54",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
