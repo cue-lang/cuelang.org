@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "409d499a_ce048021",
+        "filename": "content/docs/howto/use-the-builtin-function-and/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:22:43Z",
+      "side": 1,
+      "message": "As discussed, this link is to the commented-cue explainer, which is the more useful link.",
+      "parentUuid": "2e79e330_6ed4b8a6",
+      "revId": "e2e93131e4b71952b795710a5a7d3f99c4c01558",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba545763_d118d2db",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-12-11T15:53:14Z",
       "side": 1,
       "message": "Perhaps add a line-based comment to indicate that `c` is ok\n\n    c: 500  // OK\n    \nOr something like that?",
+      "revId": "e2e93131e4b71952b795710a5a7d3f99c4c01558",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33f19e14_b37c8e90",
+        "filename": "content/docs/howto/use-the-builtin-function-and/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:22:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba545763_d118d2db",
       "revId": "e2e93131e4b71952b795710a5a7d3f99c4c01558",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
