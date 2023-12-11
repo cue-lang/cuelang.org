@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "407a5d92_faf967c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:02:22Z",
+      "side": 1,
+      "message": "LGTM with some changes please.",
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05383d9a_c726fa4c",
+        "filename": "content/docs/howto/combine-multiple-json-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:02:22Z",
+      "side": 1,
+      "message": "This doesn\u0027t really represent what the user was trying to do, and the suggestion that they were trying to combine/merge/unify multiple (potentially) conflicting files is not correct. They were explicitly trying to create a list out of the multiple inputs. So I would state it plainly that that\u0027s what they were trying to do.",
+      "range": {
+        "startLine": 12,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4105f5dc_07d8c858",
+        "filename": "content/docs/howto/combine-multiple-json-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:02:22Z",
+      "side": 1,
+      "message": "Again, I would put the transformation CUE to the RHS, with the inputs on the LHS.",
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff32c265_f98f8167",
+        "filename": "content/docs/howto/combine-multiple-json-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:02:22Z",
+      "side": 1,
+      "message": "FWIW I think the original example was simpler and therefore easier to understand. Adding the dimension of the file contents being a different shape isn\u0027t necessary to my mind to make this a \"real\" example, but I hold that lightly so not marking this to be resolved.",
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a28e9cc_48ee6582",
+        "filename": "content/docs/howto/combine-multiple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:02:22Z",
+      "side": 1,
+      "message": "Same comments apply to this file as the JSON version.",
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
