@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9d8e31d_e12961c7",
+        "filename": "content/docs/howto/use-the-builtin-function-len/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:20:33Z",
+      "side": 1,
+      "message": "\u003e I would massively shorten this\n\nDone. PTAL.",
+      "parentUuid": "f150a3f5_538f8d5e",
+      "revId": "a4b4ed231206900ef1be85dad902a120e0309911",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e7c1b69_b5492b37",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-12-11T16:30:21Z",
       "side": 1,
       "message": "We should work out how to fix the syntax highlight definition to avoid the \"red\" here...",
+      "revId": "a4b4ed231206900ef1be85dad902a120e0309911",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f23d02f5_5da4b18b",
+        "filename": "content/docs/howto/use-the-builtin-function-len/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:20:33Z",
+      "side": 1,
+      "message": "Not needed in this guide, now, as the struct example has been omitted.",
+      "parentUuid": "9e7c1b69_b5492b37",
       "revId": "a4b4ed231206900ef1be85dad902a120e0309911",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
