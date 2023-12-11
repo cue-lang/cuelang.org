@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01647c21_a2acf4d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T13:03:57Z",
+      "side": 1,
+      "message": "PTAL - good for re-review here, deferring Yaml formatting until later.",
+      "revId": "b70391af8b34790c4db28a004aad06cfaf645726",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
