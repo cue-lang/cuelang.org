@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f00b32e0_2ddc3f64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "LGTM with some thoughts.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe274a19_c867657e",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "\"Use\" instead of \"Using\"? The file is called \"use\"\n\nI suspect the former is more correct as a howto?\n\n(applies to other guides too)",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfac2238_a8afd9c2",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "Same comment re label-based link",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3554662f_b79936c7",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "Did you consider a `cue eval -i` here, to inline the results/errors?\n\nPer one of my comments below I think that will be clearer.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c73829ec_06018e1f",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "Is the naming of `Source` and `Result` significant? I couldn\u0027t work out whether it was meant to be significant or not, and if so how",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "032ed311_c883c2ad",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "This looks awkwardly wrapped. Are you wrapping to make the lines look roughly equal length? I would wrap at a consistent column number... and demonstrate this in an example.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1e9b642_0d6b90b9",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "I think these comments slightly stray into spelling out all the detail where we don\u0027t need to. What are the key points we\u0027re trying to get across? I think that structs are open by default. I\u0027d shorten to that, rather than additionally specifying that there are three constraints.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f07d383c_a3f47edb",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "I think it\u0027s odd to use non-hidden data fields (i.e. not definitions, but I know why you\u0027re not using those) as schema. Perhaps use hidden fields for the \"schemas\"?",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4153cd8_3a4ab92c",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:14:21Z",
+      "side": 1,
+      "message": "That you can do this is somewhat lost to my mind. Because the comment is just describing what the code already shows, it doesn\u0027t give any obvious distinction to the `TestResult` case which fails.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
