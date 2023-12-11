@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2fb4623_a85b9059",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "As discussed (re: the whole set of function-based guides\u0027 CLs), IMHO this title is the one place where the \"using\" verb reads better, on the page, than \"use\". \"Use\" is used in the URL, in the commit message, and in the on-page prose, but because the preface to this text is \"How-to *Guides*\", the run on \"howto ... use\" doesn\u0027t apply, here.\n\nLeaving as \"using\", as discussed.",
+      "parentUuid": "fe274a19_c867657e",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cfac2238_a8afd9c2",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b49b7eb7_7e8c8d06",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "As discussed, leaving as is because we want to link to the explainer, not the index.",
+      "parentUuid": "cfac2238_a8afd9c2",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3554662f_b79936c7",
@@ -65,6 +101,24 @@
       "writtenOn": "2023-12-11T16:14:21Z",
       "side": 1,
       "message": "Did you consider a `cue eval -i` here, to inline the results/errors?\n\nPer one of my comments below I think that will be clearer.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94acaaab_14af46a8",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "I\u0027ve moved to `cue eval -i`, which definitely has nice properties, but I\u0027m unsure if the inline `_|_` makes it the /absolutely/ clearest it could be that this is an error. I know that to the CUE-aware user, it does ... could you confirm on the new preview that you\u0027re happy with `eval -i`\u0027s clarity?\n\nLeaving unresolved for visibility.",
+      "parentUuid": "3554662f_b79936c7",
       "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -103,6 +157,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a889dccf_1c0e6086",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "I\u0027m trying to wrap before column 33, as that\u0027s all that\u0027s rendered on the mobile viewport. I\u0027ll merely patch up this and the other CLs\u0027 wrapping, and we can discuss the wrapping more globally, separately.",
+      "parentUuid": "032ed311_c883c2ad",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6ac38c5_8ef74d92",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "I\u0027ve substantially overhauled this guide\u0027s examples, removing \"result\" entirely.",
+      "parentUuid": "c73829ec_06018e1f",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1e9b642_0d6b90b9",
@@ -116,6 +206,24 @@
       "writtenOn": "2023-12-11T16:14:21Z",
       "side": 1,
       "message": "I think these comments slightly stray into spelling out all the detail where we don\u0027t need to. What are the key points we\u0027re trying to get across? I think that structs are open by default. I\u0027d shorten to that, rather than additionally specifying that there are three constraints.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d6592da_385074ad",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1e9b642_0d6b90b9",
       "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -137,6 +245,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "866aefa3_801fcb8e",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f07d383c_a3f47edb",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4153cd8_3a4ab92c",
@@ -150,6 +276,24 @@
       "writtenOn": "2023-12-11T16:14:21Z",
       "side": 1,
       "message": "That you can do this is somewhat lost to my mind. Because the comment is just describing what the code already shows, it doesn\u0027t give any obvious distinction to the `TestResult` case which fails.",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3d4c136_1469ba81",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-11T22:21:57Z",
+      "side": 1,
+      "message": "I was /trying/ to give an indication to the user that unification with the same concrete values succeeds or fails based on the closedness of the entity, but you\u0027re right: it wasn\u0027t clear. As above, I\u0027ve overhauled this.",
+      "parentUuid": "c4153cd8_3a4ab92c",
       "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
