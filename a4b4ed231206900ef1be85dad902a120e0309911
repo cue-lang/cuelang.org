@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42797ed0_f5991592",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:30:21Z",
+      "side": 1,
+      "message": "Will just +1 for now because I\u0027d like to to another look at this one after changes.",
+      "revId": "a4b4ed231206900ef1be85dad902a120e0309911",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f150a3f5_538f8d5e",
+        "filename": "content/docs/howto/use-the-builtin-function-len/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:30:21Z",
+      "side": 1,
+      "message": "I would massively shorten this, and inline the list you are taking the length of. \n\nSame for the `len()` of a string, but I would comment that with a warning about the fact that using `strings.MinRunes` and `strings.MaxRunes` instead because the byte length of a string is rarely what\u0027s intended. \n\nIndeed I would link to https://alpha.cuelang.org/docs/howto/constrain-the-length-of-a-string/.\n\nI\u0027ve never used `len()` on a struct, and I think I would go as far as to suggest it\u0027s an anti pattern in the same way that it is for strings. So I would not include that example.",
+      "revId": "a4b4ed231206900ef1be85dad902a120e0309911",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e7c1b69_b5492b37",
+        "filename": "content/docs/howto/use-the-builtin-function-len/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T16:30:21Z",
+      "side": 1,
+      "message": "We should work out how to fix the syntax highlight definition to avoid the \"red\" here...",
+      "revId": "a4b4ed231206900ef1be85dad902a120e0309911",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
