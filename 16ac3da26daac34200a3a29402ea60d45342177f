@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "309d2c56_9e96e614",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:13:34Z",
+      "side": 1,
+      "message": "LGTM with one suggestion on the CUE.",
+      "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dbc0dd1_58adb5ec",
+        "filename": "content/docs/reference/cli/commands.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:13:34Z",
+      "side": 1,
+      "message": "Why does this need to be in a package by itself? Is the cli package not sufficient?",
+      "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b844c64f_750f767d",
+        "filename": "content/docs/reference/cli/commands.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:13:34Z",
+      "side": 1,
+      "message": "Generate JSON instead of CUE, because we don\u0027t yet have `encoding/cue`.\n\nIf you have:\n\n```\ncuePathBase: {\n    _input: _\n    content: docs: reference: cli: _input\n}\n```\n\nThen this line can become:\n\n```\ncuePath:    json.Marshal(cuePathBase \u0026 { _input: dir})\n```",
+      "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e670f860_c291f7a2",
+        "filename": "content/docs/reference/cli/commands.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-11T20:13:34Z",
+      "side": 1,
+      "message": "Use `_` instead of `{}` when you are not trying to say anything.",
+      "revId": "16ac3da26daac34200a3a29402ea60d45342177f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
