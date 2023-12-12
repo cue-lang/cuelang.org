@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "b6546d2d2b6af7b8411a32026c8e0e079e99bbb4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a466d83_6337e090",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-12T05:33:22Z",
+      "side": 1,
+      "message": "LGTM with one further suggestion on the example.",
+      "revId": "b6546d2d2b6af7b8411a32026c8e0e079e99bbb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ace73fb_0f5d9b9a",
+        "filename": "content/docs/howto/use-the-builtin-function-len/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-12T05:33:22Z",
+      "side": 1,
+      "message": "Here we have two hidden fields that are used with `len()` below, for the `a` field we have an inlined list which contains four value. The example seems to jump all over the place in a way that is rather hard to follow. I\u0027d suggest inlining everything, and keeping the list example simpler by just using numbers in the list.",
+      "revId": "b6546d2d2b6af7b8411a32026c8e0e079e99bbb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
