@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "cdbf961c4081ad052f9cd7450d36fd5e2bafe180",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6302782a_301f7fa2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-12T06:01:50Z",
+      "side": 1,
+      "message": "LGTM but I would drop the superfluous `.:example` from the `vet` command.",
+      "revId": "cdbf961c4081ad052f9cd7450d36fd5e2bafe180",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
