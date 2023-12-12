@@ -50,6 +50,24 @@
       "message": "Here we have two hidden fields that are used with `len()` below, for the `a` field we have an inlined list which contains four value. The example seems to jump all over the place in a way that is rather hard to follow. I\u0027d suggest inlining everything, and keeping the list example simpler by just using numbers in the list.",
       "revId": "b6546d2d2b6af7b8411a32026c8e0e079e99bbb4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f684403_33a9409b",
+        "filename": "content/docs/howto/use-the-builtin-function-len/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-12T13:48:41Z",
+      "side": 1,
+      "message": "I\u0027ve inlined all `len()` calls, and assigned the return to the same field for both bytes and string inputs, with a comment to disambiguate them. This should make it clearer that the function does the same thing for the 2 types. I\u0027ve also made the list input just ints.",
+      "parentUuid": "6ace73fb_0f5d9b9a",
+      "revId": "b6546d2d2b6af7b8411a32026c8e0e079e99bbb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
