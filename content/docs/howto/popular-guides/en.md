@@ -8,37 +8,37 @@ hide_summary: true
 {{< cards >}}
 
 {{< card
-	title="How to validate JSON using CUE"
+	label="How to validate JSON using CUE"
 	href="../validate-json-using-cue" >}}
 {{< /card >}}
 
 {{< card
-	title="How to validate YAML using CUE"
+	label="How to validate YAML using CUE"
 	href="../validate-yaml-using-cue" >}}
 {{< /card >}}
 
 {{< card
-	title="How to mark a field as required"
+	label="How to mark a field as required"
 	href="../mark-a-field-as-required" >}}
 {{< /card >}}
 
 {{< card
-	title="Transforming JSON with CUE"
+	label="Transforming JSON with CUE"
 	href="../transform-json-with-cue" >}}
 {{< /card >}}
 
 {{< card
-	title="Transforming YAML with CUE"
+	label="Transforming YAML with CUE"
 	href="../transform-yaml-with-cue" >}}
 {{< /card >}}
 
 {{< card
-	title="How to mark a field as optional"
+	label="How to mark a field as optional"
 	href="../mark-a-field-as-optional" >}}
 {{< /card >}}
 
 {{< card
-	title="How to specify a default value for a field"
+	label="How to specify a default value for a field"
 	href="../specify-a-default-value-for-a-field" >}}
 {{< /card >}}
 
