@@ -13,7 +13,9 @@ These tutorials are good places to start for folks who are newcomers to CUE ...
 
 {{< card
 	title="Validating simple YAML files with the cue command"
-	href="../validating-simple-yaml-files" >}}
+	href="../validating-simple-yaml-files"
+	label=" "
+ >}}
 {{< /card >}}
 
 {{< /cards >}}
