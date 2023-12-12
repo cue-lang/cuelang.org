@@ -50,6 +50,24 @@
       "message": "The names `source` and `result` are confusing to me. Not least because in this situation we have an additional `test` field. And `result` is not really a result because the focus of the guide is the `test` field. Is that confusion limited to my reading?",
       "revId": "ea700feb814bc7ba470484eef36e160d7d8ae78b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94c4edf9_a7478896",
+        "filename": "content/docs/howto/use-the-builtin-function-or/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-12T13:51:08Z",
+      "side": 1,
+      "message": "As discussed, I\u0027m making a note to revisit this after the merge.",
+      "parentUuid": "1132ca04_30ed3cfe",
+      "revId": "ea700feb814bc7ba470484eef36e160d7d8ae78b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
