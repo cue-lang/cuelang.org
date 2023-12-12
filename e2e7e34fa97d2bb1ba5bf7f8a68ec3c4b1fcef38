@@ -50,6 +50,24 @@
       "message": "It will be closed, true. If we ever fix the error. But the point of this guide is to show that there is an error when you try to add a field to a closed struct (`close(_source)`). That\u0027s not really conveyed by the comment here. \n\nI\u0027m still confused on the name `_source` too. I\u0027d perhaps keep it to `_x` or similar.",
       "revId": "e2e7e34fa97d2bb1ba5bf7f8a68ec3c4b1fcef38",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12d7557d_c8b3a673",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-12T13:49:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3cb048f_1aa252d6",
+      "revId": "e2e7e34fa97d2bb1ba5bf7f8a68ec3c4b1fcef38",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
