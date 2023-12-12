@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f9bfcad_521e7857",
+        "filename": "content/docs/howto/use-the-builtin-functions-div-mod-quo-rem/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-12T05:40:29Z",
+      "side": 1,
+      "message": "Ok, happy to give this a go and see how it settles in.",
+      "parentUuid": "309292da_5c32aa58",
+      "revId": "a3bd8827b2b3d3d6defc8f40b91f7c21ed60ef54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a6022a5_45aa592a",
