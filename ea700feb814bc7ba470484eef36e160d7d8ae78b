@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "ea700feb814bc7ba470484eef36e160d7d8ae78b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ec56109_7fa74be3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-12T06:00:50Z",
+      "side": 1,
+      "message": "LGTM but with thoughts on the use of `source` etc as names.",
+      "revId": "ea700feb814bc7ba470484eef36e160d7d8ae78b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1132ca04_30ed3cfe",
+        "filename": "content/docs/howto/use-the-builtin-function-or/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-12T06:00:50Z",
+      "side": 1,
+      "message": "The names `source` and `result` are confusing to me. Not least because in this situation we have an additional `test` field. And `result` is not really a result because the focus of the guide is the `test` field. Is that confusion limited to my reading?",
+      "revId": "ea700feb814bc7ba470484eef36e160d7d8ae78b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
