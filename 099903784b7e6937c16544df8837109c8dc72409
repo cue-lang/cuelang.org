@@ -50,6 +50,24 @@
       "message": "The `.:example` is superfluous.",
       "revId": "099903784b7e6937c16544df8837109c8dc72409",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afe138a7_fb8fa07d",
+        "filename": "content/docs/howto/use-the-builtin-functions-div-mod-quo-rem/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-12T13:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "340cdbf7_e4e13d42",
+      "revId": "099903784b7e6937c16544df8837109c8dc72409",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
