@@ -125,6 +125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "34fd9590_72ed307d",
+        "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-12T05:45:22Z",
+      "side": 1,
+      "message": "Looks fine to me. But then I\u0027m me :) Joking aside this mode is useful and if anything we just need to move forward an improve it. Which will also be possible when `error()` appears.",
+      "parentUuid": "94acaaab_14af46a8",
+      "revId": "48029f36e1ced2c9367ed99ab4e14d2490921a22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c73829ec_06018e1f",
         "filename": "content/docs/howto/use-the-builtin-function-close/en.md",
         "patchSetId": 2
