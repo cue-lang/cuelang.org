@@ -33,6 +33,24 @@
       "message": "Should probably not use the `...` bit on https://cl-1173509-2--cue-cls.netlify.app/docs/tutorial/new-to-cue/ for consistency with the other popular pages.",
       "revId": "72abd7e1b6a46ea43166993c36f2c15e31648fb5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ddee52b_8d5e29d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-13T14:52:43Z",
+      "side": 1,
+      "message": "\u003e Should probably not use the ... bit\n\n@paul@myitcv.io By that, do you mean the first, second, or third of these possibilities?\n\n- title: \"Validating simple YAML files using the `cue` CLI\"\n  body: \"\"\n- title: \"Validating simple YAML files\"\n  body: \"using the `cue` CLI\"\n- title: \"Validating simple YAML files\"\n  body: \"\"",
+      "parentUuid": "5825800c_8da60c0d",
+      "revId": "72abd7e1b6a46ea43166993c36f2c15e31648fb5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
