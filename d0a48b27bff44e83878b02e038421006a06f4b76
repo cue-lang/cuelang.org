@@ -33,6 +33,23 @@
       "message": "PTAL at this test CL\u0027s preview. It demonstrates some different popular-guides card layout options.",
       "revId": "d0a48b27bff44e83878b02e038421006a06f4b76",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b78b996_f2e0e26a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-13T10:09:28Z",
+      "side": 1,
+      "message": "I prefer https://cl-1173509-1--cue-cls.netlify.app/docs/tutorial/new-to-cue/ but without the text immediately to the left of the chevron.",
+      "revId": "d0a48b27bff44e83878b02e038421006a06f4b76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
