@@ -66,9 +66,6 @@ config: #config & {
 
 	redirects: [...{force: true, status: 302}]
 	redirects: [{
-		from: "/docs/introduction/"
-		to:   "/docs/introduction/welcome/"
-	}, {
 		from: "/cl/*"
 		to:   "https://review.gerrithub.io/c/:splat"
 	}, {

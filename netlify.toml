@@ -21,12 +21,6 @@
   command = "bash _scripts/build.bash --baseURL https://cuelang.org"
 
 [[redirects]]
-  from = "/docs/introduction/"
-  to = "/docs/introduction/welcome/"
-  status = 302
-  force = true
-
-[[redirects]]
   from = "/cl/*"
   to = "https://review.gerrithub.io/c/:splat"
   status = 302
