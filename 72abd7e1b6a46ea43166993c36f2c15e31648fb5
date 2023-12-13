@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "72abd7e1b6a46ea43166993c36f2c15e31648fb5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5825800c_8da60c0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-13T14:43:26Z",
+      "side": 1,
+      "message": "Should probably not use the `...` bit on https://cl-1173509-2--cue-cls.netlify.app/docs/tutorial/new-to-cue/ for consistency with the other popular pages.",
+      "revId": "72abd7e1b6a46ea43166993c36f2c15e31648fb5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
