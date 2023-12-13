@@ -51,6 +51,24 @@
       "parentUuid": "5825800c_8da60c0d",
       "revId": "72abd7e1b6a46ea43166993c36f2c15e31648fb5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b35fb07a_e386aaf7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-13T14:54:12Z",
+      "side": 1,
+      "message": "My understanding is that the pattern we are establishing is that we use the title from these guides as the only text (for now) in the card. So matching that pattern.",
+      "parentUuid": "8ddee52b_8d5e29d0",
+      "revId": "72abd7e1b6a46ea43166993c36f2c15e31648fb5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
