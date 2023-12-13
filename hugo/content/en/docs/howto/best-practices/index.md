@@ -1,8 +1,11 @@
 ---
 title: Best practices
 weight: 50
-draft: false
-layout: tag-overview
 tag: Best practices
 toc_hide: true
+disabled: true
+hide_summary: true
+no_index: true
 ---
+
+<!-- TODO: write content -->
