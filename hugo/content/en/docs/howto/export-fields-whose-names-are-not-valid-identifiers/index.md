@@ -32,3 +32,10 @@ $ cue export -l input: data.yml -e 'input["top level field"]'
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+## Related content
+
+- How to use CUE's language features to
+  [refer to fields whose names are not valid identifiers]({{< relref
+    "../refer-to-fields-whose-names-are-not-valid-identifiers"
+  >}}).

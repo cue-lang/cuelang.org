@@ -47,3 +47,10 @@ $ cue export -e output
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+## Related content
+
+- How to
+  [export fields whose names are not valid identifiers]({{< relref
+    "../export-fields-whose-names-are-not-valid-identifiers"
+  >}}), and where *a separate CUE file cannot be created*.
