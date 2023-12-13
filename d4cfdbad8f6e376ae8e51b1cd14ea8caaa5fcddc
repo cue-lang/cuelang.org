@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aaff7918_2b0ccbbb",
+        "filename": "content/docs/howto/combine-multiple-json-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-13T20:17:15Z",
+      "side": 1,
+      "message": "You\u0027re right - I was trying to create a guide which was more generally applicable/adaptable, rather than answering the specific question.\n\nI\u0027ve updated this guide to reflect only the precise question asked, and spun the other content off into a follow-up pair of guides.",
+      "parentUuid": "05383d9a_c726fa4c",
+      "range": {
+        "startLine": 12,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4105f5dc_07d8c858",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-12-11T20:02:22Z",
       "side": 1,
       "message": "Again, I would put the transformation CUE to the RHS, with the inputs on the LHS.",
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef3fc0e7_8637d21d",
+        "filename": "content/docs/howto/combine-multiple-json-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-13T20:17:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4105f5dc_07d8c858",
       "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d47c01c_9e5df6ad",
+        "filename": "content/docs/howto/combine-multiple-json-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-13T20:17:15Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "ff32c265_f98f8167",
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a28e9cc_48ee6582",
@@ -88,6 +148,24 @@
       "writtenOn": "2023-12-11T20:02:22Z",
       "side": 1,
       "message": "Same comments apply to this file as the JSON version.",
+      "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca050588_33621efc",
+        "filename": "content/docs/howto/combine-multiple-yaml-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-13T20:17:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a28e9cc_48ee6582",
       "revId": "d4cfdbad8f6e376ae8e51b1cd14ea8caaa5fcddc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
