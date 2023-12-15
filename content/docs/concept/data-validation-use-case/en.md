@@ -91,7 +91,7 @@ Using CUE to generate the schema has several advantages over doing so directly:
 
 <!-- TODO: update URL -->
 As discussed in
-["Be useful at all scales"](/docs/about#be-useful-at-all-scales),
+["Be useful at all scales"]({{< relref "docs/introduction#be-useful-at-all-scales" >}}),
 there is a high cost to changing languages as one reaches the limits
 with a certain approach.
 
