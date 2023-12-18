@@ -21,14 +21,14 @@ from a list.
 {{< code-tab name="example.cue" language="cue"  area="top-left" >}}
 package example
 
-source: ["a", "b", "c"]
+_source: ["a", "b", "c"]
 
-// result is assigned "a" | "b" | "c"
-result: or(source)
+// _result is assigned "a" | "b" | "c"
+_result: or(_source)
 
 // each field in "test" must adhere to the
-// constraints of the "result" disjunction
-test: [string]: result
+// constraints of the "_result" disjunction
+test: [string]: _result
 test: {
 	one:   "a"
 	two:   "b"
@@ -37,19 +37,12 @@ test: {
 }
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
-$ cue vet .:example
-test.four: 3 errors in empty disjunction:
-test.four: conflicting values "a" and "X":
-    ./example.cue:3:10
-    ./example.cue:10:17
-    ./example.cue:15:9
-test.four: conflicting values "b" and "X":
-    ./example.cue:3:15
-    ./example.cue:10:17
-    ./example.cue:15:9
-test.four: conflicting values "c" and "X":
-    ./example.cue:3:20
-    ./example.cue:10:17
-    ./example.cue:15:9
+$ cue eval -i .:example
+test: {
+    one:   "a"
+    two:   "b"
+    three: "c"
+    four:  _|_ // test.four: 3 errors in empty disjunction: (and 3 more errors)
+}
 {{< /code-tab >}}
 {{< /code-tabs >}}
