@@ -32,7 +32,8 @@ c: {
 }
 d: {
 	"a": 2
-	// refers to top-level, as parent is quoted
+	// refers to top-level, as parent is
+	// quoted
 	b: a
 }
 -- out.cue --
@@ -180,7 +181,8 @@ a: X
 b: X
 c: X
 
-// Setting any of the above fields does not influence the other.
+// Setting any of the above fields does not
+// influence the other.
 b: list: [1, 2]
 -- out.cue --
 {{{end}}}
