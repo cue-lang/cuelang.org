@@ -22,8 +22,9 @@ a: {
 }
 b: {
 	a: {
-		// A provides access to the outer "a" which would
-		// otherwise be hidden by the inner one.
+		// A provides access to the outer
+		// "a" which would otherwise be
+		// hidden by the inner one.
 		c: A.d
 	}
 }

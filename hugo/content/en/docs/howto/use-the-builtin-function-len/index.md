@@ -21,13 +21,14 @@ package example
 
 a: len([5, 4, 3, 2])
 
-// using len() on a string returns the number of
-// bytes it contains, not the number of characters
+// Using len() on a string returns the number of
+// bytes it contains, not the number of
+// characters
 
-// this input is of type bytes
+// This input is of type bytes
 b: len('😎abc123🥶')
 
-// this input is of type string
+// This input is of type string
 b: len("😎abc123🥶")
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}

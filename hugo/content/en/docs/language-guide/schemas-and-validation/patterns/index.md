@@ -111,7 +111,8 @@ A package that provides schemas with required discriminator fields could provide
 	name:  string
 }
 
-Schema: #Schema & {kind: _} // provide ‘kind’ by default
+// provide ‘kind’ by default
+Schema: #Schema & {kind: _}
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
 #Schema: {

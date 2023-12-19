@@ -37,7 +37,8 @@ a: 11
 b: >=10
 b: <=10
 
-s: =~#"^\p{Lu}"# // string must start with a capital letter.
+// string must start with a capital letter.
+s: =~#"^\p{Lu}"#
 s: "Cat"
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}

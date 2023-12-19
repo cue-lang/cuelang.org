@@ -22,28 +22,23 @@ cmp stderr out.err
 -- schema.cue --
 package example
 
-// CUE indicates optional fields
-// with a question mark: "?"
+// CUE indicates optional fields with a question
+// mark: "?"
 
-// f1 is optional.
-// if it is present it can be
-// any value
+// f1 is optional. If it is present it can be any
+// value
 f1?: _
 
-// f-2 is optional.
-// if it is present it must be
-// a string
+// f-2 is optional. If it is present it must be a
+// string
 "f-2"?: string
 
-// s1 is a regular field
-// containing a struct which will
-// be present no matter what the
-// input data contains
+// s1 is a regular field containing a struct
+// which will be present no matter what the input
+// data contains
 s1: {
-	// f3 is optional.
-	// if it is present it
-	// must be an integer
-	// less than 10
+	// f3 is optional. if it is present it
+	// must be an integer less than 10
 	f3?: int & <10
 }
 -- data.yml --
@@ -52,18 +47,16 @@ f1:
   f1.1:
     f1.2: some string
 
-# f-2 is floating point number,
-# not a string
+# f-2 is floating point number, not a string
 f-2: 42.137
 
-# s1 only contains the field x,
-# not f3.
+# s1 only contains the field x, not f3.
 s1:
   x: some other string
 -- out.err --
 "f-2": conflicting values 42.137 and string (mismatched types float and string):
-    ./data.yml:8:6
-    ./schema.cue:14:9
+    ./data.yml:7:6
+    ./schema.cue:12:9
 {{{end}}}
 
 ## Related content

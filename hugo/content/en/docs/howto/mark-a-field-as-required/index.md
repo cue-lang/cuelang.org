@@ -20,20 +20,17 @@ field is present in data.
 {{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
 package example
 
-// CUE indicates required fields
-// with an exclamation mark: "!"
+// CUE indicates required fields with an
+// exclamation mark: "!"
 
-// f1 is required, and can be
-// any value
+// f1 is required, and can be any value
 f1!: _
 
-// f-2 is required, and must be
-// a string
+// f-2 is required, and must be a string
 "f-2"!: string
 
 s1: {
-	// f3 is required.
-	// it must be an integer
+	// f3 is required. It must be an integer
 	// less than 10
 	f3!: int & <10
 }
@@ -47,7 +44,7 @@ s1:
 {{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
 $ cue vet .:example data.yml
 "f-2": field is required but not present:
-    ./schema.cue:12:1
+    ./schema.cue:10:1
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

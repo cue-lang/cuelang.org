@@ -29,10 +29,10 @@ import "list"
 good_list: [...number]
 bad_list: [...number]
 
-// we introduce a hidden CUE field for
-// each list we want to check.
-// each hidden field unifies the relevant
-// value constraint with the list's sum
+// We introduce a hidden CUE field for each list
+// we want to check. Each hidden field unifies
+// the relevant value constraint with the list's
+// sum
 _good_sum: <=100 & list.Sum(good_list)
 _bad_sum:  <=99.5 & list.Sum(bad_list)
 -- data.yml --
