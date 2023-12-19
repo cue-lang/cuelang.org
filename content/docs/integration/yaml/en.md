@@ -51,8 +51,10 @@ Given these two files, the `cue vet` command can verify that the values in
 ! exec cue vet ranges.yaml check.cue
 cmp stderr out.err
 -- check.cue --
-min?: *0 | number    // 0 if undefined
-max?: number & >min  // must be strictly greater than min if defined
+min?: *0 | number // 0 if undefined
+
+// must be strictly greater than min if defined
+max?: number & >min 
 -- ranges.yaml --
 min: 5
 max: 10
@@ -61,7 +63,7 @@ min: 10
 max: 5
 -- out.err --
 max: invalid value 5 (out of bound >10):
-    ./check.cue:2:16
+    ./check.cue:4:16
     ./ranges.yaml:5:6
 {{{end}}}
 

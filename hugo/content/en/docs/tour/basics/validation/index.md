@@ -13,8 +13,10 @@ The constraint is validated with `cue vet`.
 {{< code-tabs >}}
 {{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
 #Language: {
-	tag:  string
-	name: =~"^\\p{Lu}" // Must start with an uppercase letter.
+	tag: string
+	// name must start with an uppercase
+	// letter
+	name: =~"^\\p{Lu}"
 }
 languages: [...#Language]
 {{< /code-tab >}}
@@ -29,7 +31,7 @@ languages:
 {{< /code-tab >}}
 {{< code-tab name="result.txt" language="txt"  area="bottom" >}}
 languages.1.name: invalid value "dutch" (out of bound =~"^\\p{Lu}"):
-    ./schema.cue:3:8
+    ./schema.cue:5:8
     ./data.yaml:5:11
 {{< /code-tab >}}
 {{< /code-tabs >}}
