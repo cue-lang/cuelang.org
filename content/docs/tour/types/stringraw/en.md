@@ -12,6 +12,8 @@ This works for normal and interpolated strings.
 Quotes do not have to be escaped in such strings.
 
 {{{with code "en" "raw"}}}
+#location top bottom
+
 exec cue eval stringraw.cue
 cmp stdout result.txt
 -- stringraw.cue --
@@ -22,8 +24,7 @@ msg2: ##"""
 
 	    #"\d{3}"#
 
-	This construct works for bytes, strings and their
-	multi-line variants.
+	This construct works for bytes, strings and their multi-line variants.
 	"""##
 -- result.txt --
 msg1: "The sequence \"\\U0001F604\" renders as 😄."
@@ -32,7 +33,6 @@ msg2: """
 
         #"\\d{3}"#
 
-    This construct works for bytes, strings and their
-    multi-line variants.
+    This construct works for bytes, strings and their multi-line variants.
     """
 {{{end}}}

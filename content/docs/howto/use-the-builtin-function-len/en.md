@@ -24,7 +24,8 @@ package example
 a: len([5, 4, 3, 2])
 
 // using len() on a string returns the number of
-// bytes it contains, not the number of characters
+// bytes it contains, not the number of
+// characters
 
 // this input is of type bytes
 b: len('😎abc123🥶')

@@ -24,8 +24,8 @@ package example
 // source is a list of constraints
 source: [int, >99, <1000]
 
-// each field in data must adhere
-// to all of source's constraints
+// each field in data must adhere to all of
+// source's constraints
 data: [string]: and(source)
 data: {
 	a: 4.2
