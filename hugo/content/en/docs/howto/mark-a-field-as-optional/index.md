@@ -20,23 +20,20 @@ demonstrates using an **optional field** marker to constrain a field's value -
 {{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
 package example
 
-// CUE indicates optional fields
-// with a question mark: "?"
+// CUE indicates optional fields with a question
+// mark: "?"
 
 // f1 is optional.
-// if it is present it can be
-// any value
+// if it is present it can be any value
 f1?: _
 
 // f-2 is optional.
-// if it is present it must be
-// a string
+// if it is present it must be a string
 "f-2"?: string
 
-// s1 is a regular field
-// containing a struct which will
-// be present no matter what the
-// input data contains
+// s1 is a regular field containing a struct
+// which will be present no matter what the input
+// data contains
 s1: {
 	// f3 is optional.
 	// if it is present it
@@ -64,7 +61,7 @@ s1:
 $ cue vet .:example data.yml
 "f-2": conflicting values 42.137 and string (mismatched types float and string):
     ./data.yml:8:6
-    ./schema.cue:14:9
+    ./schema.cue:12:9
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
