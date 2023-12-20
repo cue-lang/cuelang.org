@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e7fecb3_965f5249",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-20T15:48:34Z",
+      "side": 1,
+      "message": "LGTM but I think we should properly capitalise comments in general. Not saying we need to make that change here. But the example where I spotted this just looks odd if we don\u0027t: like it\u0027s a bit forced/contrived. Real comments are real sentences, I think the same should apply here.",
+      "revId": "e61f2fcc00f190fff16ddf146ec4935f0a550627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b8907b_c7bdd636",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-20T15:48:34Z",
+      "side": 1,
+      "message": "We should capitalise sentences like we would in real comments.\n\nThis applies to all comments.",
+      "revId": "e61f2fcc00f190fff16ddf146ec4935f0a550627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b05d98b_35daed74",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2023-12-20T15:48:34Z",
+      "side": 1,
+      "message": "I\u0027m not clear this needs/wants a semantic break here. Keeping it part of the same paragraph makes most sense to me (capitalised per previous comment)",
+      "revId": "e61f2fcc00f190fff16ddf146ec4935f0a550627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
