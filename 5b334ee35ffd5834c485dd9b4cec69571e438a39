@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "5b334ee35ffd5834c485dd9b4cec69571e438a39",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b4ff24c_55b31323",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-20T16:15:10Z",
+      "side": 1,
+      "message": "Not yet ready for review. I\u0027m swapping out this CL\u0027s use of absolute paths for relative ones, in line with the glossary\u0027s usage and the neater approach.",
+      "revId": "5b334ee35ffd5834c485dd9b4cec69571e438a39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
