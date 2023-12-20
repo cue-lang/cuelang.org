@@ -40,8 +40,8 @@ Call out only-tested-on-Linuxness?
 ## Install the `cue` command
 
 {{{with step}}}
-If you have not already, follow the steps for [downloading and installing
-CUE]({{< ref "docs/introduction/installation" >}}).
+If you have not already, follow the steps for
+[downloading and installing CUE]({{< relref "docs/introduction/installation" >}}).
 {{{end}}}
 
 ## Validate a single data file
