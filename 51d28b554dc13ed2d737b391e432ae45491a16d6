@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6d6b02c_7607dedb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-20T16:39:28Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "51d28b554dc13ed2d737b391e432ae45491a16d6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca3e5f8b_e82240ed",
+        "filename": "content/docs/howto/constrain-string-as-valid-integer/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2023-12-20T16:39:28Z",
+      "side": 1,
+      "message": "This plural/singular fix felt sufficiently obvious and trivial that it could safely be included whilst I was editing this sentence!",
+      "revId": "51d28b554dc13ed2d737b391e432ae45491a16d6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
