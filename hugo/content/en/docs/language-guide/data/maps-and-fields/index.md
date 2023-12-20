@@ -14,8 +14,7 @@ Double quotes can be omitted if the name is a valid {{{def "identifier"}}}
 that starts with a letter or `$` and otherwise only contains letters, digits,
 `$` or `_`.
 Identifiers may also start with `#` or `_`, in which case the field is a
-[[Helper fields](Data%201b448a6f417b4e08b2d41b3b33cf2a45.md)](helper field) with
-special meaning.
+[helper field]({{< relref "#helper-field" >}}) with special meaning.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}
@@ -73,7 +72,7 @@ to define helper fields.
 
 Helper fields allow reuse of CUE code when composing larger configurations.
 More on this in the
-[Templating](Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md) section.
+[Templating]({{< relref "docs/language-guide/templating" >}}) section.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue"  area="top-left" >}}

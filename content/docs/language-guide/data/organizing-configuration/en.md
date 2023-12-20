@@ -68,7 +68,8 @@ list: [1, 2, 3, 4]
 As can be seen, identical fields do not have to be placed next to each other.
 
 Merging is also used for validation.
-More on this in [Schemas and Validation](Schemas%20and%20Validation%20b39455d56fdb433ba9ea59c04a2dcece.md).
+More on this in
+[Schemas and Validation]({{< relref "docs/language-guide/schemas-and-validation" >}}).
 
 ## Single-field shorthand
 
@@ -142,4 +143,4 @@ another file.
 If there are multiple packages in a directory, CUE will default to the package
 with the same name as the directory.
 
-[File Organization](File%20Organization%207692931315a445acb9634b91b2b397f0.md)
+[File Organization]({{< relref "docs/language-guide/file-organization" >}})

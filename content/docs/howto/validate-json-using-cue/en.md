@@ -16,9 +16,10 @@ command line.
 
 ## Prerequisites
 
--   You have [CUE installed](https://cuelang.org/docs/install/) locally. This
-    allows you to run `cue` commands
--   You know how to use [CUE Definitions/ Helper Fields]({{< ref "/docs/language-guide/data" >}})
+-   You have [CUE installed]({{< relref "docs/introduction/installation" >}})
+    locally. This allows you to run `cue` commands
+-   You know how to use
+    [CUE Definitions/ Helper Fields]({{< relref "docs/language-guide/data" >}})
 
 ## Requirements
 

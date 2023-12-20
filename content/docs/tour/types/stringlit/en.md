@@ -11,8 +11,8 @@ The closing quote must also be on a newline.
 The whitespace directly preceding the closing quote must match the preceding
 whitespace on all other lines and is removed from these lines.
 
-Strings may also contain [interpolations](../../expressions/interpolation).
-<!-- FIXME: update interpolations link -->
+Strings may also contain
+[interpolations]({{< relref "../../expressions/interpolation" >}})).
 
 
 {{{with code "en" "stringlit"}}}
