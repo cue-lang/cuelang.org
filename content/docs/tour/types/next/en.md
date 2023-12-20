@@ -4,4 +4,4 @@ weight: 1000
 ---
 
 Continue with the tour's next section:
-[References and Visibility]({{< relref "docs/tour/references" >}}).
+[References and Visibility]({{< relref "/docs/tour/references" >}}).

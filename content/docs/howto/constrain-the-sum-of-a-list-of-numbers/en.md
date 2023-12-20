@@ -14,7 +14,7 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
+This [Commented CUE]({{< relref "/docs/howto#commented-cue-guides" >}})
 demonstrates constraining the sum of a list of numbers.
 
 {{{with code "en" "cc"}}}

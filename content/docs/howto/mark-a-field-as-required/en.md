@@ -12,7 +12,7 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
+This [Commented CUE]({{< relref "/docs/howto#commented-cue-guides" >}})
 demonstrates using the **required field** marker in a schema to make sure that a
 field is present in data.
 
@@ -51,4 +51,6 @@ s1:
 
 ## Related content
 
-- [**Required field constraints**]({{< ref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" >}})
+- [**Required field constraints**]({{< relref
+    "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints"
+  >}})

@@ -30,5 +30,5 @@ index_hide: true
 
 *This tour of CUE is being actively developed, and its contents may migrate
 into other sections of the CUE documentation site over time. In particular the
-[Language Guide]({{< relref "language-guide.md" >}}) will provide a deep dive
-into CUE, covering many of the topics currently included here.*
+[Language Guide]({{< relref "/docs/language-guide" >}}) will provide a deep
+dive into CUE, covering many of the topics currently included here.*

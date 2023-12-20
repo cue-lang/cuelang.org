@@ -7,8 +7,7 @@ toc_hide: true
 Code generation and extraction is a broad topic and, for instance, overlaps
 with the topics discussed in
 [Schema Definition]({{< relref "/docs/concept/schema-definition-use-case" >}}) and
-[Go](/docs/integrations/go).
-<!-- TODO: update link after integration pages are imported -->
+[Go]({{< relref "/docs/integration/go" >}}).
 
 In this section we emphasize the role of CUE in a code-generation pipeline,
 that is using CUE as an interlingua for the extraction from and the
@@ -24,8 +23,7 @@ one usually already has some code base to deal with.
 
 CUE can currently extract definitions from:
 
-<!-- TODO: update link after integration pages are imported -->
-- [Go code](/docs/integrations/go#extract-cue-from-go)
+- [Go code]({{< relref "/docs/integration/go#extract-cue-from-go" >}})
 - Protobuf definitions.
 
 Moreover, CUE can combine and reduce the constraints from various sources

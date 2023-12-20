@@ -7,9 +7,9 @@ toc_hide: false
 
 OpenAPI is a standard for the description of REST APIs.
 Describing value schema is one aspect of this.
-<!-- TODO: Update URL -->
-In the [Schema Definition](/docs/usecases/datadef) section we already
-talked about the relationship between CUE and OpenAPI.
+In the
+[Schema Definition]({{< relref "/docs/concept/schema-definition-use-case" >}})
+section we already talked about the relationship between CUE and OpenAPI.
 
 One aspect of OpenAPI is to define data schema.
 CUE supports converting CUE values to such schema.

@@ -15,8 +15,9 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE](/search/?q=tag:"commented%20cue") demonstrates howto
-constrain a field to contain a string representations of integer values.
+This [Commented CUE]({{< relref "/docs/howto#commented-cue-guides" >}})
+demonstrates how to constrain fields to contain string representations of
+integer values.
 
 {{{with code "en" "example"}}}
 ! exec cue vet .:example data.yml

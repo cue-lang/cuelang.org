@@ -8,7 +8,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
+This [Commented CUE]({{< relref "/docs/howto#commented-cue-guides" >}})
 demonstrates how to transform JSON by reshaping some input data into different
 output.
 
