@@ -12,7 +12,7 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE](/docs/howto/about-these-guides/#commented-cue-guides)
+This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates using an **optional field** marker to constrain a field's value -
 *but only if it is present*.
 
@@ -68,13 +68,13 @@ s1:
 
 ## Related content
 
-- [**Optional field constraints**]({{< ref
+- [**Optional field constraints**]({{< relref
     "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints"
   >}})
-- [**Regular fields**]({{< ref
+- [**Regular fields**]({{< relref
     "docs/language-guide/data/maps-and-fields#field-names"
   >}})
-- [**Value constraints**]({{< ref
+- [**Value constraints**]({{< relref
     "docs/language-guide/schemas-and-validation/value-constraints"
   >}})
 - [**Commented CUE guides**]({{< relref

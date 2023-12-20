@@ -88,9 +88,8 @@ Using CUE to generate the schema has several advantages over doing so directly:
 
 ### Migration path
 
-<!-- TODO: update URL -->
 As discussed in
-["Be useful at all scales"](/docs/about#be-useful-at-all-scales),
+["Be useful at all scales"]({{< relref "docs/introduction#be-useful-at-all-scales" >}}),
 there is a high cost to changing languages as one reaches the limits
 with a certain approach.
 
@@ -133,4 +132,4 @@ Such a thing is not possible in JSON schema (or most configuration languages
 for that matter).
 
 More on JSON Schema and its subset, OpenAPI,
-in [Schema Definition]({{< relref "/docs/concept/schema-definition-use-case#json-schema--openapi" >}}).
+in [Schema Definition]({{< relref "docs/concept/schema-definition-use-case#json-schema--openapi" >}}).
