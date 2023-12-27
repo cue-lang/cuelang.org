@@ -14,14 +14,20 @@
 <div class="carousel" id="carousel{{ .Ordinal }}" data-duration="{{ .Get "duration" }}" data-carousel>
     <ul class="carousel__slides">
         {{ range $index, $slide := $slides }}
+            {{ $image := $.Page.Resources.Get $slide.src }}
+
             <li
                 class="carousel__slide"
                 data-slide-index="{{ add $index 1}}"
                 style="min-width: calc(100%/{{ $items }}); padding-bottom: {{ $height }}{{ $unit }};">
 
                 <figure class="carousel__media">
-                    <img class="carousel__image" src="{{ $slide.src }}" alt="{{ $slide.alt }}"
-                            {{ if $slide.lazy }} loading="lazy"{{ end }}>
+                    {{ with $image.Process "webp q100 fill 800x450 center" }}
+                        <img class="carousel__image" src="{{ .RelPermalink }}" alt="{{ $slide.alt }}"
+                            {{ if $slide.lazy }} loading="lazy"{{ end }}
+                            width="{{ .Width }}" height="{{ .Height }}">
+                    {{ end }}
+
                     {{ if $slide.caption}}
                         <figcaption class="carousel__caption">{{ $slide.caption }}</figcaption>
                     {{ end }}
