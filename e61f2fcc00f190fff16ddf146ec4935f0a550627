@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6e02df4_bc8ba139",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-02T13:48:50Z",
+      "side": 1,
+      "message": "Done. I\u0027ve made that change in this CL as it only affected a few of the comments, and I\u0027ve made a note to do a wider review, later.",
+      "parentUuid": "58b8907b_c7bdd636",
+      "revId": "e61f2fcc00f190fff16ddf146ec4935f0a550627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b05d98b_35daed74",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-12-20T15:48:34Z",
       "side": 1,
       "message": "I\u0027m not clear this needs/wants a semantic break here. Keeping it part of the same paragraph makes most sense to me (capitalised per previous comment)",
+      "revId": "e61f2fcc00f190fff16ddf146ec4935f0a550627",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68bf5f21_181d1a42",
+        "filename": "content/docs/howto/constrain-the-sum-of-a-list-of-numbers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-02T13:48:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b05d98b_35daed74",
       "revId": "e61f2fcc00f190fff16ddf146ec4935f0a550627",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
