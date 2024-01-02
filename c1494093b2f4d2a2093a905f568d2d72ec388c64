@@ -156,6 +156,24 @@
       "parentUuid": "b19de644_867c1359",
       "revId": "c1494093b2f4d2a2093a905f568d2d72ec388c64",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "562fc2b3_bdac02c2",
+        "filename": "content/docs/howto/access-fields-whose-names-are-not-valid-identifiers/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-02T14:04:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "393f3969_a011e216",
+      "revId": "c1494093b2f4d2a2093a905f568d2d72ec388c64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
