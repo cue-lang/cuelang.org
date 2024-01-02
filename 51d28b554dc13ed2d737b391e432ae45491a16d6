@@ -33,6 +33,24 @@
       "message": "This plural/singular fix felt sufficiently obvious and trivial that it could safely be included whilst I was editing this sentence!",
       "revId": "51d28b554dc13ed2d737b391e432ae45491a16d6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5226963d_bcdee866",
+        "filename": "content/docs/howto/constrain-string-as-valid-integer/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-02T13:10:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca3e5f8b_e82240ed",
+      "revId": "51d28b554dc13ed2d737b391e432ae45491a16d6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
