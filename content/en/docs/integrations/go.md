@@ -41,7 +41,7 @@ cue get go k8s.io/api/core/v1
 {{< /highlight >}}
 
 From the root of your CUE module<!--TODO(ref)-->, you will now see
-`./pkg/k8s.io/api/core` populated with the extracted CUE definitions.
+`./gen/k8s.io/api/core` populated with the extracted CUE definitions.
 Projects, like Kubernetes, do not have to support such conversions.
 CUE derives the interpretation by analyzing how the Go types convert
 with `encoding/json`.
