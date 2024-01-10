@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "1e091925605402298431711e062b13a0d6ce45dd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "716614fb_a02f698e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-10T16:06:04Z",
+      "side": 1,
+      "message": "LGTM (same applies to the Yaml version) with the one suggestion that I think you need to iterate over the sorted set of filenames. It\u0027s more explicit and guaranteed to be stable.",
+      "revId": "1e091925605402298431711e062b13a0d6ce45dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
