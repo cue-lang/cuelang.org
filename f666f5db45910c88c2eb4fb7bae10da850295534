@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "f666f5db45910c88c2eb4fb7bae10da850295534",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "991e4497_7920370f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-10T16:08:00Z",
+      "side": 1,
+      "message": "Would like to chat through how these guides relate to https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1173276. Because I find https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1173276 clearer.",
+      "revId": "f666f5db45910c88c2eb4fb7bae10da850295534",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
