@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ec0f58d_350115d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-10T18:21:52Z",
+      "side": 1,
+      "message": "Please recheck that the level of commenting I\u0027ve added still matches what you want to see here.",
+      "revId": "134b403d666fcf366bad694544256a641848b571",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
