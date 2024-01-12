@@ -60,4 +60,8 @@ unsorted: invalid value ["c","b","a"] (does not satisfy list.IsSortedStrings):
 
 ## Related content
 
+- `list.SortStrings` can only sort lists of strings *alphabetically*.
+  In any other situation, use [`list.Sort`]({{< relref
+    "../use-the-builtin-functions-list-sort-list-issorted"
+  >}})
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) builtin package
