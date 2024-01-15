@@ -16,6 +16,40 @@
       "message": "Please recheck that the level of commenting I\u0027ve added still matches what you want to see here.",
       "revId": "134b403d666fcf366bad694544256a641848b571",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baeebc78_f3bba03f",
+        "filename": "content/docs/howto/combine-multiple-json-files-into-a-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-15T14:34:26Z",
+      "side": 1,
+      "message": "This comment sounds very active for a declaration. The declaration itself is not placing anything. I would suggest instead describing the role that this field will play, and that the `-l` flag is used to achieve that.",
+      "revId": "134b403d666fcf366bad694544256a641848b571",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb304955_39c4c51e",
+        "filename": "content/docs/howto/combine-multiple-json-files-into-a-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-15T14:34:26Z",
+      "side": 1,
+      "message": "I would do this as a `let` and \"inline\" it below with a comment above the `let` (on a separate line) about it being used to make the filename order stable.",
+      "revId": "134b403d666fcf366bad694544256a641848b571",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
