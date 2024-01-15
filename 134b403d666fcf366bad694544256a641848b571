@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aa0e2508_3ac94494",
+        "filename": "content/docs/howto/combine-multiple-json-files-into-a-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-15T17:32:56Z",
+      "side": 1,
+      "message": "Done, I believe. I don\u0027t /entirely/ grok your concern as I intended the \"place\" to be an imperative for the user. Please re-review and check it\u0027s now what you expected.",
+      "parentUuid": "baeebc78_f3bba03f",
+      "revId": "134b403d666fcf366bad694544256a641848b571",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eb304955_39c4c51e",
         "filename": "content/docs/howto/combine-multiple-json-files-into-a-list/en.md",
         "patchSetId": 6
@@ -48,6 +66,24 @@
       "writtenOn": "2024-01-15T14:34:26Z",
       "side": 1,
       "message": "I would do this as a `let` and \"inline\" it below with a comment above the `let` (on a separate line) about it being used to make the filename order stable.",
+      "revId": "134b403d666fcf366bad694544256a641848b571",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06bfd017_e86a82ce",
+        "filename": "content/docs/howto/combine-multiple-json-files-into-a-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-15T17:32:56Z",
+      "side": 1,
+      "message": "I /think/ this is done. I\u0027ve turned the hidden field into a `let`, but I don\u0027t see how much more \"inline\" it could be, as it can\u0027t be declared inside `contents` (as (AFAICT) `let` assignment doesn\u0027t work inside lists) and it can\u0027t be as a `let` as part of the iteration (as the iteration needs to be /over/ the field\u0027s contents).\n\nIf the new version doesn\u0027t match what you wanted, please give me a more concrete example!",
+      "parentUuid": "eb304955_39c4c51e",
       "revId": "134b403d666fcf366bad694544256a641848b571",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
