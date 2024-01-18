@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "3503fdfd9b3a3a5ae0aa8d925113c7430c7a2776",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03cdcf52_8e426873",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-18T16:26:42Z",
+      "side": 1,
+      "message": "The first example `inline`, should have a positive replacement count that doesn\u0027t include all instances on the line.\n\nAn example of a negative value should replace `three`, below, with the comment solely serving to introduce the concept.",
+      "revId": "3503fdfd9b3a3a5ae0aa8d925113c7430c7a2776",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dd82535_86fb6c83",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-18T16:26:42Z",
+      "side": 1,
+      "message": "Replace as per above comment.",
+      "revId": "3503fdfd9b3a3a5ae0aa8d925113c7430c7a2776",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
