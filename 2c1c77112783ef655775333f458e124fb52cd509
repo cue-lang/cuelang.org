@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8df48d9b_fd20175c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-19T16:35:38Z",
+      "side": 1,
+      "message": "PTAL. (I\u0027ve asked TonyW for permission to adapt the Cuetorials page that this guide\u0027s example comes from.)",
+      "revId": "2c1c77112783ef655775333f458e124fb52cd509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
