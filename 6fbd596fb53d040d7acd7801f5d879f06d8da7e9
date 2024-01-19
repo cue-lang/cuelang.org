@@ -16,6 +16,24 @@
       "message": "s/Ascending/Descending/",
       "revId": "6fbd596fb53d040d7acd7801f5d879f06d8da7e9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46352ca1_639d6d68",
+        "filename": "content/docs/howto/use-the-built-in-functions-list-sort-list-issorted/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-19T14:05:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78e021b2_0bb97ecc",
+      "revId": "6fbd596fb53d040d7acd7801f5d879f06d8da7e9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
