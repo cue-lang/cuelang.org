@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44c44bf6_391b97a8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T07:50:26Z",
+      "side": 1,
+      "message": "I don\u0027t follow this at all. Not least because equivalence (if that\u0027s what we wanted/needed to show) would be better demonstrated by having:\n\n```\nsum:  list.Sum(_data)\nmin:  list.Min(_data)\nmax:  list.Max(_data)\nmean: list.Avg(_data)\nmean: sum / len(_data)\n```\n\nNo?",
+      "revId": "76d3ce4d8b19fb6ec77b1cf8793e141627a16118",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba14bf52_9e596e89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T07:50:26Z",
+      "side": 1,
+      "message": "I don\u0027t know what you\u0027re trying to say here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 17,
+        "endChar": 0
+      },
+      "revId": "76d3ce4d8b19fb6ec77b1cf8793e141627a16118",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f2474fd_d18915de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T07:50:26Z",
+      "side": 1,
+      "message": "See my comments. I think you could leave out the manually created mean (and associated explanation) and this guide would still be answering all the questions we need/want",
+      "revId": "76d3ce4d8b19fb6ec77b1cf8793e141627a16118",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c82e2d4_285acd1a",
+        "filename": "content/docs/howto/use-the-built-in-functions-list-avg-list-max-list-min-list-sum-to-summarise-lists-of-numbers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T07:50:26Z",
+      "side": 1,
+      "message": "Please link to pkg.go.dev docs in all cases.",
+      "range": {
+        "startLine": 11,
+        "startChar": 48,
+        "endLine": 11,
+        "endChar": 56
+      },
+      "revId": "76d3ce4d8b19fb6ec77b1cf8793e141627a16118",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
