@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b9d1af9_ecc06380",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T16:46:07Z",
+      "side": 1,
+      "message": "I\u0027m using `inline` as a location where functions are demonstrated with all parameters inline - i.e. a 100% copy/paste-able example.\n\nWe\u0027ve set up the Commented CUE guides\u0027 CUE as being inside the `example` package, which I think is the right choice as it reduces the chance of a specific class of new-to-CUE user error striking: believing that the package name is in some way relevant to the function use, and thus needs to be persisted into the user\u0027s CUE. `example` package (to my eye) makes it implicitly clear that the package name is unimportant. This isn\u0027t a non-issue: see, for instance, Stack Overflow questions on the special-ness of the Go `main` package, when used in a library context.\n\nWith `example` \"taken\", therefore, I chose a different top-level field name (or, as in this case, field name prefix) of `inline` to gently communicate that, whilst this is a field whose value is calculated, the user can copy and adapt the single line without having to track down any references from elsewhere in the guide. \n\nIt\u0027s not communicating that /strongly/, of course; however I can\u0027t think of a better name other than `example` that expresses \"here\u0027s the basic usage of the function\". `basic` might work? `complete`? `isolated`?\n\nI\u0027ve now opted for (and have replaced `inline` across the entire CL stack) using the function\u0027s name, without package context, in lower camel case. e.g. `replaceAll` and `replaceAllLiteral`, here, for the copy-paste-able, inline examples.\n\nDoes this work for you?",
+      "parentUuid": "838a6f4e_e3c3003e",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37a77077_e3e6ffe0",
         "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
         "patchSetId": 2
@@ -31,6 +49,24 @@
       "writtenOn": "2024-01-22T08:21:25Z",
       "side": 1,
       "message": "We don\u0027t need this example, right?",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1a68b33_b9faf9cc",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T16:46:07Z",
+      "side": 1,
+      "message": "The intention here is to demonstrate that, when called with a static (non-regex) replacement, the 2 functions return the same value and behave in the same way. I think it\u0027s useful to include. I\u0027ve updated the comment to call out this identical behaviour and its triggers.",
+      "parentUuid": "37a77077_e3e6ffe0",
       "revId": "686226c4fe8243242561692d416b8617391a6341",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d52d477_e256b78e",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T16:46:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94442c49_1ba017de",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e741c041_288b90a8",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-01-22T08:21:25Z",
       "side": 1,
       "message": "I\u0027m not totally clear we need this example, because otherwise we start drifting towards it becoming a tutorial on regex. Instead, I\u0027d suggest specifically linking to the re2 syntax docs: https://github.com/google/re2/wiki/Syntax in the preamble (along with a link to the pkg.go.dev docs for the builtins)",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fad79a1_d0232ab2",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T16:46:07Z",
+      "side": 1,
+      "message": "I think it\u0027s useful to include a more complex example that demonstrates some major regex features (capture groups, character types, invisible characters, atom \nrepetition counts). I believe until \u0026 unless the pkg.go.dev docs contain such an example, /this/ example will materially help a subset of users. I agree there\u0027s that danger of trying to do too much, but I think this stays on the right side of that threshold. Thoughts?",
+      "parentUuid": "e741c041_288b90a8",
       "revId": "686226c4fe8243242561692d416b8617391a6341",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
