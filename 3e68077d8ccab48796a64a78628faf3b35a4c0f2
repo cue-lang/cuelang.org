@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2563596_5355d727",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-csv-decode-to-access-data-stored-in-a-csv-file/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:38:55Z",
+      "side": 1,
+      "message": "We should simply use `.` instead of `.:example`.",
+      "revId": "3e68077d8ccab48796a64a78628faf3b35a4c0f2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
