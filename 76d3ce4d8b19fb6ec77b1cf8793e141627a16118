@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bab0b69a_6e0e2b7e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T14:25:05Z",
+      "side": 1,
+      "message": "I\u0027ve removed the manual calculation of the mean entirely.",
+      "parentUuid": "44c44bf6_391b97a8",
+      "revId": "76d3ce4d8b19fb6ec77b1cf8793e141627a16118",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba14bf52_9e596e89",
@@ -71,6 +89,30 @@
       "writtenOn": "2024-01-22T07:50:26Z",
       "side": 1,
       "message": "Please link to pkg.go.dev docs in all cases.",
+      "range": {
+        "startLine": 11,
+        "startChar": 48,
+        "endLine": 11,
+        "endChar": 56
+      },
+      "revId": "76d3ce4d8b19fb6ec77b1cf8793e141627a16118",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a78beeb_2e4386a5",
+        "filename": "content/docs/howto/use-the-built-in-functions-list-avg-list-max-list-min-list-sum-to-summarise-lists-of-numbers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T14:25:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c82e2d4_285acd1a",
       "range": {
         "startLine": 11,
         "startChar": 48,
