@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dba3841f_08cb18cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:04:40Z",
+      "side": 1,
+      "message": "Why do you think this important? For example, why do you think numbers and strings need to be covered separately? What about lists? bool type? \n\nI think the whole example could be significantly reduced if you didn\u0027t force yourself into having single-type lists. i.e. just have one list of values (of mixed types) then cover some cases.\n\nI wouldn\u0027t try to be exhaustive, instead rely on the docs to say what comparable actually means. They don\u0027t currently, so we should make sure we have an issue for that... and then a reference to the issue in the docs as a \"warning\". Trying to be exhaustive in this howto gets verbose. I would leave that to another doc if needs be. For example, the language guide should DEFINITELY have something on this (because the concept of comparability extends beyond the specifics of `list.Contains`).",
+      "revId": "6236803673aac3ed6ebef3db3103cf66142384ac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
