@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b79749d_68ff33dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:56:20Z",
+      "side": 1,
+      "message": "LGTM with some suggestions.",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a25a723_df30ba2c",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ip-to-validate-ip-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:56:20Z",
+      "side": 1,
+      "message": "Why do you use the `valid` field here, and not for the invalid fields?\n\nI would suggest keeping everything top-level and also using:\n\n```\n[_]: net.IP\n```\n\nto avoid having to constrain each field individually. \n\nI agree with your naming otherwise. The name of the field should indicate there is a problem (i.e. `v4TooManyOctets`) and be more benign when it will not contain an error (i.e. `v4String`).",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f260861_36dccc63",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipcidr-to-validate-ip-cidr-ranges/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:56:20Z",
+      "side": 1,
+      "message": "Same comment re dropping valid block and simply moving everything to the top level.",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a65bad02_8c860b2d",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:56:20Z",
+      "side": 1,
+      "message": "This file _does_ follow the pattern I suggest we follow. With the one exception that you should use:\n\n```\n[_]: net.IPv4\n```\n\nto avoid having to write the constraint against each field.",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
