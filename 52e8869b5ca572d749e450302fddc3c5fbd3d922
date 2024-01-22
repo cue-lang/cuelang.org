@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c71d2712_65b0d465",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T15:14:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdfc1cd6_e530b8f2",
+      "range": {
+        "startLine": 11,
+        "startChar": 48,
+        "endLine": 11,
+        "endChar": 60
+      },
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e5ad407_4a87fa37",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-01-22T08:14:59Z",
       "side": 1,
       "message": "Why is the `l` prefix necessary? What is it indicating?",
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74b1961f_7236678a",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T15:14:41Z",
+      "side": 1,
+      "message": "The purpose behind the `l` and `e` prefix, and the slightly odd naming, is to emit fields where their values are vertically aligned, but `cue eval` doesn\u0027t align lists on sequential lines.\n\nI noticed that clarity for the reader seemed to be significantly improved if I could scan up and down the 4 output fields\u0027 values (original list; flattened x1; flattened x2; flattened completely) which then allowed me to trivially notice the vertically differences between them. Even a 1 character horizontal offset degrades this experience, so I opted for slightly worse names, all containing 4 characters.\n\nI\u0027ve come up with some better names that also align.",
+      "parentUuid": "7e5ad407_4a87fa37",
       "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ef8c6ef_942432db",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T15:14:41Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "b6e5ad7a_14bed09a",
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "14f7d4d9_139de2f8",
@@ -88,6 +148,24 @@
       "writtenOn": "2024-01-22T08:14:59Z",
       "side": 1,
       "message": "Why is the `e` prefix necessary? What is it indicating?",
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "990c330b_42a489d2",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T15:14:41Z",
+      "side": 1,
+      "message": "See https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1174439/comment/7e5ad407_4a87fa37/. In my mind it stood for \"expanded\", but that wasn\u0027t its main purpose. It also segmented all the calculated fields together, somewhat.\n\nI\u0027ve redo the naming.",
+      "parentUuid": "14f7d4d9_139de2f8",
       "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
