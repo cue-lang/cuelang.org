@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b07ce049_48f6e849",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:59:32Z",
+      "side": 1,
+      "message": "LGTM with a suggestion.",
+      "revId": "e83481d588a2a07d6873ef4438f6d225121a3b94",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "580d913a_e8df620e",
+        "filename": "content/docs/howto/use-the-built-in-functions-net-parseip-net-ipstring-to-convert-ip-address-representations/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:59:32Z",
+      "side": 1,
+      "message": "This example is made somewhat confusing (without a comment) because unless the reader is paying close attention, they might expect to see 6 fields output. Only when they don\u0027t would they realise you are applying the reverse operation \"into\" the source fields. Somewhat counterintuitive perhaps - worth a comment I would suggest.",
+      "revId": "e83481d588a2a07d6873ef4438f6d225121a3b94",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
