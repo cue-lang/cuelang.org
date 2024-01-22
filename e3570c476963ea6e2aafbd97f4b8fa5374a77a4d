@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cd9918ae_b821d9c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T14:23:06Z",
+      "side": 1,
+      "message": "\u003cthinking\u003e",
+      "parentUuid": "91f3cb82_9acf9209",
+      "revId": "e3570c476963ea6e2aafbd97f4b8fa5374a77a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3e2f393b_87248932",
         "filename": "content/docs/howto/use-the-built-in-functions-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md",
         "patchSetId": 4
@@ -31,6 +49,30 @@
       "writtenOn": "2024-01-22T07:43:10Z",
       "side": 1,
       "message": "We should link to the pkg.go.dev docs for every function.",
+      "range": {
+        "startLine": 11,
+        "startChar": 47,
+        "endLine": 11,
+        "endChar": 58
+      },
+      "revId": "e3570c476963ea6e2aafbd97f4b8fa5374a77a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9e13c1c_d22a0cb5",
+        "filename": "content/docs/howto/use-the-built-in-functions-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T14:23:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e2f393b_87248932",
       "range": {
         "startLine": 11,
         "startChar": 47,
