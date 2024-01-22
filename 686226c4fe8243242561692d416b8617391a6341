@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "838a6f4e_e3c3003e",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:21:25Z",
+      "side": 1,
+      "message": "What does the `inline` prefix mean? I\u0027m finding a number of the special naming that you are trying to following hard to follow, almost like there is too much meaning/semantics you are trying to convey with them. \"inline\" is not explained anywhere on this page, and doesn\u0027t appear to have any meaning in the context of the examples being presented. Please can you make the names simpler, or explain what you were trying to convey?",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37a77077_e3e6ffe0",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:21:25Z",
+      "side": 1,
+      "message": "We don\u0027t need this example, right?",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94442c49_1ba017de",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:21:25Z",
+      "side": 1,
+      "message": "This is the one situation where we want to use and explain where we need the `Literal` form.",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e741c041_288b90a8",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:21:25Z",
+      "side": 1,
+      "message": "I\u0027m not totally clear we need this example, because otherwise we start drifting towards it becoming a tutorial on regex. Instead, I\u0027d suggest specifically linking to the re2 syntax docs: https://github.com/google/re2/wiki/Syntax in the preamble (along with a link to the pkg.go.dev docs for the builtins)",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
