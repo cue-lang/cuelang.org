@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3d52dec9_cfc26d3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T17:45:44Z",
+      "side": 1,
+      "message": "I\u0027ve reduced the example set to 3 examples for each of Unix and Windows. I\u0027ve removed the templating, making each example self-contained, and removed the `output` struct, moving all the examples up 1 level in the source.\n\nDoes this still do too much, to your eye? If so, how many examples would you like to see, split across what OS and input use cases?",
+      "parentUuid": "cd9918ae_b821d9c4",
+      "revId": "e3570c476963ea6e2aafbd97f4b8fa5374a77a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3e2f393b_87248932",
         "filename": "content/docs/howto/use-the-built-in-functions-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md",
         "patchSetId": 4
