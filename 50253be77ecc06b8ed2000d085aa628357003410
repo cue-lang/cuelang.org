@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e044d110_35923a9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:08:45Z",
+      "side": 1,
+      "message": "LGTM with one suggestion.",
+      "revId": "50253be77ecc06b8ed2000d085aa628357003410",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a86a8cd4_d8c98e9e",
+        "filename": "content/docs/howto/use-the-built-in-functions-list-sortstrings-list-issortedstrings/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:08:45Z",
+      "side": 1,
+      "message": "This block appeared (at first glance) to be left over/included by accident. I would suggest it needs one of two sentences explaining at a top level what you\u0027re doing here, and why the block exists. Because the initial preamble does not cover it (and have the explanation just above this second block makes more sense)\n\nThe reference to the second block in the comment in the first block is too easily missed at first glance. More importantly, I wasn\u0027t expecting to have to look there for the explanation on what the second block is for (which allows the comment in that first block to be shortened).",
+      "revId": "50253be77ecc06b8ed2000d085aa628357003410",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
