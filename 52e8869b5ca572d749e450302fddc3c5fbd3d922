@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af496f6b_82a8e0aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:14:59Z",
+      "side": 1,
+      "message": "LGTM with some thoughts on naming and comments.",
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdfc1cd6_e530b8f2",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:14:59Z",
+      "side": 1,
+      "message": "Please link to the pkg.go.dev docs (and in all the other builtin howtos)",
+      "range": {
+        "startLine": 11,
+        "startChar": 48,
+        "endLine": 11,
+        "endChar": 60
+      },
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e5ad407_4a87fa37",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:14:59Z",
+      "side": 1,
+      "message": "Why is the `l` prefix necessary? What is it indicating?",
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6e5ad7a_14bed09a",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:14:59Z",
+      "side": 1,
+      "message": "This comment doesn\u0027t make sense to me. The value on which we are calling `list.FlattenN` is `lSrc`, no? So this reads kind of backwards to me. Instead, the value that `eOne` (modulo my comment about naming) results in is the transformation of `lSrc`, with first level elements expanded.",
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14f7d4d9_139de2f8",
+        "filename": "content/docs/howto/use-the-built-in-function-list-flattenn-to-flatten-lists/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T08:14:59Z",
+      "side": 1,
+      "message": "Why is the `e` prefix necessary? What is it indicating?",
+      "revId": "52e8869b5ca572d749e450302fddc3c5fbd3d922",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
