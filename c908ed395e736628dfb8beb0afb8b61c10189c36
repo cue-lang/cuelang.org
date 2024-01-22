@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "c908ed395e736628dfb8beb0afb8b61c10189c36",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1ef6f54_d9bb2948",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-22T05:07:06Z",
+      "side": 1,
+      "message": "Still LGTM. I\u0027m assuming it\u0027s not possible to add comments to the command section based on the current implementation of the preprocessor. That sort of makes sense because I think we currently drop comments... but arguably they could relatively easily be gathered.",
+      "revId": "c908ed395e736628dfb8beb0afb8b61c10189c36",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
