@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "34767684_5f33da25",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ip-to-validate-ip-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T14:16:08Z",
+      "side": 1,
+      "message": "\u003e Why do you use the `valid` field here, and not for the `invalid` fields?\n\nAs per my [comment below](https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1174202/comment/a65bad02_8c860b2d/), I think we *generally* want the reader to see the guide\u0027s primary field validator applied in a form they could copy and paste, applied without templating hence fully comprehensible to the templating-**un**aware reader.\n\nHowever, as the relevant/applicable \"lesson\" in this guide is shown via the /failing/ validations, and I wanted to reduce repetition somewhat, I templated the less important constraint into `valid`.\n\nI intended the `valid` struct to act as a container that holds examples of things that the function will accept, but for the top-level /invalid/ fields to act as direct recipients of the validator (i.e. applied without templating), showing off the failure in the `cue` CLI error output. \n\nI\u0027m perfectly happy to make any/all the changes you suggested, but please reconsider if templating the guide\u0027s most pertinent examples would lead to the clearest lesson being transmitted to the beginning CUE user. I believe **not** using templating for the \"important\" examples (i.e. those producing errors) feels more new-user-friendly.\n\n\u003e The name of the field should indicate there is a problem (i.e. v4TooManyOctets) and be more benign when it will not contain an error (i.e. v4String).\n\n**Exactly** my thought process, too :-)",
+      "parentUuid": "8a25a723_df30ba2c",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7f260861_36dccc63",
         "filename": "content/docs/howto/use-the-built-in-function-net-ipcidr-to-validate-ip-cidr-ranges/en.md",
         "patchSetId": 5
@@ -54,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7426070a_963d1d45",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipcidr-to-validate-ip-cidr-ranges/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T14:16:08Z",
+      "side": 1,
+      "message": "Same reply, as above.",
+      "parentUuid": "7f260861_36dccc63",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a65bad02_8c860b2d",
         "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
         "patchSetId": 5
@@ -65,6 +101,24 @@
       "writtenOn": "2024-01-22T05:56:20Z",
       "side": 1,
       "message": "This file _does_ follow the pattern I suggest we follow. With the one exception that you should use:\n\n```\n[_]: net.IPv4\n```\n\nto avoid having to write the constraint against each field.",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b13b41d_fb8bdcf7",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T14:16:08Z",
+      "side": 1,
+      "message": "TBH I think we /want/ the reader to see the constraint applied against each field (or, at the very least, some specific fields).\n\nAssuming a reader\u0027s awareness of --and competence with-- templating feels like a minor disservice to the CUE beginner, especially here in the context of a how-to guide that\u0027s intended to spell out the use of a specific function to a early-stage CUE adopter.",
+      "parentUuid": "a65bad02_8c860b2d",
       "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
