@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d413110_89212b7e",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-csv-decode-to-access-data-stored-in-a-csv-file/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T13:57:24Z",
+      "side": 1,
+      "message": "I\u0027ve opted for explicitly mentioning `file.cue`, as the chance of a reader\u0027s eye simply skipping over a bare `.` in the CLI command text feels non-zero to me.",
+      "parentUuid": "e2563596_5355d727",
+      "revId": "3e68077d8ccab48796a64a78628faf3b35a4c0f2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54d02858_d32b051d",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-01-22T07:38:56Z",
       "side": 1,
       "message": "Just noting that I raised https://github.com/cue-lang/cue/issues/2774 in the course of reviewing this. Because using embedded scalars would obviate the need for the output field.",
+      "revId": "3e68077d8ccab48796a64a78628faf3b35a4c0f2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4943082b_a0590d5b",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-csv-decode-to-access-data-stored-in-a-csv-file/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-22T13:57:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54d02858_d32b051d",
       "revId": "3e68077d8ccab48796a64a78628faf3b35a4c0f2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
