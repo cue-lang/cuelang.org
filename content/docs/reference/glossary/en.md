@@ -6,11 +6,11 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="A" >}}
 
-## `and()` {#and-builtin-function}
+## `and()` {#and-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#and" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-and" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that accepts a list
-  and returns the unification of all elements in the list
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-and" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that accepts a
+  list and returns the unification of all elements in the list
 
 {{< /step >}}
 
@@ -22,16 +22,16 @@ toc_hide: false
   truth values denoted by the keywords `true` and `false`
 
 ## Builtin functions
-🔗 [Language Spec]({{< relref "docs/reference/spec#builtin-functions" >}})
+🔗 [Language Spec]({{< relref "docs/reference/spec#built-in-functions" >}})
 |  *e.g.*
-   [`and()`]({{< relref "#and-builtin-function" >}})
-/  [`close()`]({{< relref "#close-builtin-function" >}})
-/  [`div()`]({{< relref "#div-builtin-function" >}})
-/  [`mod()`]({{< relref "#mod-builtin-function" >}})
-/  [`len()`]({{< relref "#len-builtin-function" >}})
-/  [`or()`]({{< relref "#or-builtin-function" >}})
-/  [`quo()`]({{< relref "#quo-builtin-function" >}})
-/  [`rem()`]({{< relref "#rem-builtin-function" >}})
+   [`and()`]({{< relref "#and-built-in-function" >}})
+/  [`close()`]({{< relref "#close-built-in-function" >}})
+/  [`div()`]({{< relref "#div-built-in-function" >}})
+/  [`mod()`]({{< relref "#mod-built-in-function" >}})
+/  [`len()`]({{< relref "#len-built-in-function" >}})
+/  [`or()`]({{< relref "#or-built-in-function" >}})
+/  [`quo()`]({{< relref "#quo-built-in-function" >}})
+/  [`rem()`]({{< relref "#rem-built-in-function" >}})
 - Predeclared functions provided by the CUE runtime that are available without
   being imported
 
@@ -46,10 +46,10 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="C" >}}
 
-## `close()` {#close-builtin-function}
+## `close()` {#close-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#close" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-close" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that converts a
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-close" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that converts a
   partially defined ("open") struct to a fully defined ("closed") struct
 
 <!-- TODO ## Closed -->
@@ -70,10 +70,10 @@ toc_hide: false
 |  [Tour #1]({{< relref "docs/tour/types/disjunctions" >}})
 |  [Tour #2]({{< relref "docs/tour/types/sumstruct" >}})
 
-## `div()` {#div-builtin-function}
+## `div()` {#div-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
   Euclidean division with its parameters and returns the integer quotient
 
 {{< /step >}}
@@ -138,10 +138,10 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="L" >}}
 
-## `len()` {#len-builtin-function}
+## `len()` {#len-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#len" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-len" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that returns the
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-len" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that returns the
   lengths of various types as an integer
 
 ## List
@@ -155,10 +155,10 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="M" >}}
 
-## `mod()` {#mod-builtin-function}
+## `mod()` {#mod-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
   Euclidean division with its parameters and returns the integer remainder
 
 <!-- TODO ## Module -->
@@ -194,11 +194,11 @@ toc_hide: false
   field's value if the field is present, whilst also permitting the field's
   absence
 
-## `or()` {#or-builtin-function}
+## `or()` {#or-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#or" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-function-or" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that accepts a list
-  and produces a [disjunction]({{< relref "#disjunction" >}})
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-or" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that accepts a
+  list and produces a [disjunction]({{< relref "#disjunction" >}})
 
 {{< /step >}}
 
@@ -210,10 +210,10 @@ toc_hide: false
 
 {{< step group="glossary" stepNumber="Q" >}}
 
-## `quo()` {#quo-builtin-function}
+## `quo()` {#quo-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
   truncated division with its parameters and returns the integer quotient
 
 {{< /step >}}
@@ -228,10 +228,10 @@ toc_hide: false
   number of hashes on both sides, allowing escape sequences to appear inside
   the text verbatim, without their usual escaping taking effect
 
-## `rem()` {#rem-builtin-function}
+## `rem()` {#rem-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
-|  [Howto Guide]({{< relref "docs/howto/use-the-builtin-functions-div-mod-quo-rem" >}})
-- A [builtin function]({{< relref "#builtin-functions" >}}) that performs
+|  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
+- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
   truncated division with its parameters and returns the integer remainder
 
 ## Required field constraint
