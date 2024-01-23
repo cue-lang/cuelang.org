@@ -1,5 +1,5 @@
 ---
-title: Using the builtin function "close" to close a struct
+title: Using the built-in function "close" to close a struct
 tags:
 - language
 - commented cue
@@ -10,9 +10,9 @@ toc_hide: true
 
 This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to use the
-[builtin]({{< relref "docs/reference/glossary#builtin-functions" >}})
+[built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
 function
-[`close()`]({{< relref "docs/reference/glossary#close-builtin-function" >}})
+[`close()`]({{< relref "docs/reference/glossary#close-built-in-function" >}})
 to close a
 [struct]({{< relref "docs/reference/glossary#struct" >}}).
 

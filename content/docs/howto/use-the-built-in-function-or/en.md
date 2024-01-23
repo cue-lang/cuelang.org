@@ -1,5 +1,5 @@
 ---
-title: Using the builtin function "or" to create a disjunction
+title: Using the built-in function "or" to create a disjunction
 tags:
 - language
 - commented cue
@@ -10,9 +10,9 @@ toc_hide: true
 
 This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to use the
-[builtin]({{< relref "docs/reference/glossary#builtin-functions" >}})
+[built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
 function
-[`or()`]({{< relref "docs/reference/glossary#or-builtin-function" >}})
+[`or()`]({{< relref "docs/reference/glossary#or-built-in-function" >}})
 to create a
 [disjunction]({{< relref "docs/reference/glossary#disjunction" >}})
 from a list.
