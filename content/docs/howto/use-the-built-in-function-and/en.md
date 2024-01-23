@@ -1,5 +1,5 @@
 ---
-title: Using the builtin function "and" to unify the elements of a list
+title: Using the built-in function "and" to unify the elements of a list
 tags:
 - language
 - commented cue
@@ -10,9 +10,9 @@ toc_hide: true
 
 This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to use the
-[builtin]({{< relref "docs/reference/glossary#builtin-functions" >}})
+[built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
 function
-[`and()`]({{< relref "docs/reference/glossary#and-builtin-function" >}})
+[`and()`]({{< relref "docs/reference/glossary#and-built-in-function" >}})
 to unify all the elements of a list.
 
 {{{with code "en" "cc"}}}

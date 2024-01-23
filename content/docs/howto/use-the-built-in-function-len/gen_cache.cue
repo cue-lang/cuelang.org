@@ -3,11 +3,11 @@ package site
 	content: {
 		docs: {
 			howto: {
-				"use-the-builtin-function-and": {
+				"use-the-built-in-function-len": {
 					page: {
 						cache: {
 							code: {
-								cc: "2y9c7wanpo2mEUjpBu2d7Iq77BFYG+kMd8yf3OxS9Gg="
+								cc: "AHMuX01+ToWkpHtqc7CTTnOOEtoar37Ypud35KyqEt0="
 							}
 						}
 					}
