@@ -1,5 +1,5 @@
 ---
-title: Using the builtin functions "div", "mod", "quo", and "rem"
+title: Using the built-in functions "div", "mod", "quo", and "rem"
 tags:
 - language
 - commented cue
@@ -10,17 +10,17 @@ toc_hide: true
 
 This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to use the
-[builtin]({{< relref "docs/reference/glossary#builtin-functions" >}})
+[built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
 functions
-[`div()`]({{< relref "docs/reference/glossary#div-builtin-function" >}})
+[`div()`]({{< relref "docs/reference/glossary#div-built-in-function" >}})
 and
-[`mod()`]({{< relref "docs/reference/glossary#mod-builtin-function" >}})
+[`mod()`]({{< relref "docs/reference/glossary#mod-built-in-function" >}})
 to perform
 [Euclidean division](https://en.wikipedia.org/wiki/Euclidean_division),
 and how to use
-[`quo()`]({{< relref "docs/reference/glossary#quo-builtin-function" >}})
+[`quo()`]({{< relref "docs/reference/glossary#quo-built-in-function" >}})
 and
-[`rem()`]({{< relref "docs/reference/glossary#rem-builtin-function" >}})
+[`rem()`]({{< relref "docs/reference/glossary#rem-built-in-function" >}})
 to perform truncated division.
 
 The behaviours of these functions are defined in
