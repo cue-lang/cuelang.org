@@ -10,7 +10,8 @@ toc_hide: false
 🔗 [Language Spec]({{< relref "docs/reference/spec#and" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-and" >}})
 - A [built-in function]({{< relref "#built-in-functions" >}}) that accepts a
-  list and returns the unification of all elements in the list
+  [list]({{< relref "#list" >}}) and returns the
+  [unification]({{< relref "#unification" >}}) of all elements in the list
 
 {{< /step >}}
 
@@ -23,17 +24,17 @@ toc_hide: false
 
 ## Built-in functions
 🔗 [Language Spec]({{< relref "docs/reference/spec#built-in-functions" >}})
-|  *e.g.*
-   [`and()`]({{< relref "#and-built-in-function" >}})
-/  [`close()`]({{< relref "#close-built-in-function" >}})
-/  [`div()`]({{< relref "#div-built-in-function" >}})
-/  [`mod()`]({{< relref "#mod-built-in-function" >}})
-/  [`len()`]({{< relref "#len-built-in-function" >}})
-/  [`or()`]({{< relref "#or-built-in-function" >}})
-/  [`quo()`]({{< relref "#quo-built-in-function" >}})
-/  [`rem()`]({{< relref "#rem-built-in-function" >}})
 - Predeclared functions provided by the CUE runtime that are available without
   being imported
+- *see also:*
+   [`and()`]({{< relref "#and-built-in-function" >}})
+|  [`close()`]({{< relref "#close-built-in-function" >}})
+|  [`div()`]({{< relref "#div-built-in-function" >}})
+|  [`mod()`]({{< relref "#mod-built-in-function" >}})
+|  [`len()`]({{< relref "#len-built-in-function" >}})
+|  [`or()`]({{< relref "#or-built-in-function" >}})
+|  [`quo()`]({{< relref "#quo-built-in-function" >}})
+|  [`rem()`]({{< relref "#rem-built-in-function" >}})
 
 ## `bytes` {#bytes-type}
 🔗 [Language Guide]({{< relref "docs/language-guide/data/bytes-values" >}})
@@ -50,7 +51,8 @@ toc_hide: false
 🔗 [Language Spec]({{< relref "docs/reference/spec#close" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-close" >}})
 - A [built-in function]({{< relref "#built-in-functions" >}}) that converts a
-  partially defined ("open") struct to a fully defined ("closed") struct
+  partially defined ("open") [struct]({{< relref "#struct" >}}) to a fully
+  defined ("closed") struct
 
 <!-- TODO ## Closed -->
 
@@ -61,8 +63,10 @@ toc_hide: false
 ## Default value
 🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/disjunctions#default-values" >}})
 |  [Howto Guide]({{< relref "docs/howto/specify-a-default-value-for-a-field" >}})
-- The single element of a disjunction that CUE assigns to a field if *and only
-  if* unification fails to resolve a concrete value for the field
+- The single element of a [disjunction]({{< relref "#disjunction" >}}) that CUE
+  assigns to a [field]({{< relref "#field" >}}) if and only if
+  [unification]({{< relref "#unification" >}}) fails to resolve a concrete value
+  for the field
 - An element of a disjunction prefixed with an asterisk (`*`)
 
 ## Disjunction
@@ -90,9 +94,10 @@ toc_hide: false
 ## Field constraint
 🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints" >}})
 |  [Language Spec]({{< relref "docs/reference/spec#field-constraints" >}})
-- A field constraint restricts a field's value without actually defining the
-  field, with the field only forming part of the output if it is successfully
-  unified with a concrete value
+- A field constraint restricts a [field]({{< relref "#field" >}})'s value
+  without actually defining the field, with the field only forming part of the
+  output if it is successfully [unified]({{< relref "#unification" >}}) with a
+  concrete value
 - *see also:*
     [Required field constraint]({{< relref "#required-field-constraint" >}})
   | [Optional field constraint]({{< relref "#optional-field-constraint" >}})
@@ -191,14 +196,15 @@ toc_hide: false
 🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints" >}})
 |  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-optional" >}})
 - A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
-  field's value if the field is present, whilst also permitting the field's
-  absence
+  [field]({{< relref "#field" >}})'s value if the field is present, whilst also
+  permitting the field's absence
 
 ## `or()` {#or-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#or" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-or" >}})
 - A [built-in function]({{< relref "#built-in-functions" >}}) that accepts a
-  list and produces a [disjunction]({{< relref "#disjunction" >}})
+  [list]({{< relref "#list" >}}) and produces a
+  [disjunction]({{< relref "#disjunction" >}})
 
 {{< /step >}}
 
@@ -238,7 +244,8 @@ toc_hide: false
 🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" >}})
 |  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-required" >}})
 - A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
-  field's value whilst also requiring the field to be present
+  [field]({{< relref "#field" >}})'s value whilst also requiring the field to
+  be present
 
 {{< /step >}}
 
@@ -257,8 +264,9 @@ toc_hide: false
 |  [Language Spec]({{< relref "docs/reference/spec#structs" >}})
 |  [Tour]({{< relref "docs/tour/types/optional" >}})
 <!-- Link to this section? [Language Spec]({{< relref "docs/reference/spec#values-1" >}}) -->
-- A composite type representing a set of elements (called fields) each of which
-  has a name (called a label) and a value
+- A composite type representing a set of elements (called
+  [fields]({{< relref "#field" >}})) each of which has a name (called a label)
+  and a value
 
 {{< /step >}}
 
