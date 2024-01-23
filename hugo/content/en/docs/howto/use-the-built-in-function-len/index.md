@@ -1,5 +1,5 @@
 ---
-title: Using the builtin function "len" to calculate lengths
+title: Using the built-in function "len" to calculate lengths
 tags:
 - language
 - commented cue
@@ -10,9 +10,9 @@ toc_hide: true
 
 This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to use the
-[builtin]({{< relref "docs/reference/glossary#builtin-functions" >}})
+[built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
 function
-[`len()`]({{< relref "docs/reference/glossary#len-builtin-function" >}})
+[`len()`]({{< relref "docs/reference/glossary#len-built-in-function" >}})
 to calculate the lengths of different CUE types.
 
 {{< code-tabs >}}

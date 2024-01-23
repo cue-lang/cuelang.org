@@ -3,11 +3,11 @@ package site
 	content: {
 		docs: {
 			howto: {
-				"use-the-builtin-functions-div-mod-quo-rem": {
+				"use-the-built-in-function-close": {
 					page: {
 						cache: {
 							code: {
-								cc: "OEReCcjfyg8EYKkPRAEEmVDvenzg+jjTmjUmxLJT2+M="
+								cc: "8Y9LBLlkNhdGDsA8OMz18DhoYcyESpehOUyBVyXnaUk="
 							}
 						}
 					}
