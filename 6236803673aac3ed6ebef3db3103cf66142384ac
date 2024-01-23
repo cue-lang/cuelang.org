@@ -16,6 +16,24 @@
       "message": "Why do you think this important? For example, why do you think numbers and strings need to be covered separately? What about lists? bool type? \n\nI think the whole example could be significantly reduced if you didn\u0027t force yourself into having single-type lists. i.e. just have one list of values (of mixed types) then cover some cases.\n\nI wouldn\u0027t try to be exhaustive, instead rely on the docs to say what comparable actually means. They don\u0027t currently, so we should make sure we have an issue for that... and then a reference to the issue in the docs as a \"warning\". Trying to be exhaustive in this howto gets verbose. I would leave that to another doc if needs be. For example, the language guide should DEFINITELY have something on this (because the concept of comparability extends beyond the specifics of `list.Contains`).",
       "revId": "6236803673aac3ed6ebef3db3103cf66142384ac",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b46eda2_3b2091d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-23T16:53:20Z",
+      "side": 1,
+      "message": "\u003e Why do you think this important? For example, why do you think numbers and strings need to be covered separately? What about lists? bool type?\n\u003e I think the whole example could be significantly reduced if you didn\u0027t force yourself into having single-type lists. i.e. just have one list of values (of mixed types) then cover some cases.\n\nYou\u0027re right - I\u0027ve made that change, and split it into 2 guides for reporting and validation .. a pattern that I suspect will be useful across the whole how-to space.\n\nI\u0027ve left a few examples in each, over and above simple primitives, demonstrating the behaviours for struct and list types. They can probably be slimmed down when cue-lang/docs-and-content#49 is closed but, until then, it feels useful to explore the space a /little/ more than just the most basic example set.  \n\n\u003e I wouldn\u0027t try to be exhaustive, instead rely on the docs to say what comparable actually means. They don\u0027t currently, so we should make sure we have an issue for that.\n\nhttps://github.com/cue-lang/docs-and-content/issues/49 tracks this; I\u0027ll figure out what `cue-lang/cue` issues need opening to complement it.",
+      "parentUuid": "dba3841f_08cb18cc",
+      "revId": "6236803673aac3ed6ebef3db3103cf66142384ac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
