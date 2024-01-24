@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "603f206d_49738e94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-24T17:37:11Z",
+      "side": 1,
+      "message": "PTAnotherL.\n\nI\u0027ve reworked this, splitting out the \"active\" functions (`Sort`/`SortStrings`) from the \"passive\" test-related functions.\n\nThis has allowed me to bring these guides into line with a useful pattern that\u0027s emerging: functions that can be used as validators receive a matching pair of similarly-named guides - one for their boolean return form, and one for their use as a validator. This is bringing consistency to such functions\u0027 page titles (and URLs) across the board, where we end up with this pair:\n\n- using the built-in function Foo to report if a foo is in a list\n- using the built-in function Foo to validate that a foo is in a list\n\nI\u0027m hoping you\u0027ll agree that the consistency of \"report if\" implying \"there\u0027s a boolean return\" and \"validate that\" implying \".. can be used as a field validator\" is a win for the user.",
+      "revId": "a193b6c1d0bc657f3bbbd568e1ab56e72952acfc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
