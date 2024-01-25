@@ -16,6 +16,24 @@
       "message": "Nit: the preview path URL links in the commit message are broken (they use \"builtin\" instead of \"built-in\").",
       "revId": "c70df5fd0330b055e7b42140af1db1730cb89947",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bee3708e_a0d4349f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-25T16:09:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99420418_52163fd9",
+      "revId": "c70df5fd0330b055e7b42140af1db1730cb89947",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
