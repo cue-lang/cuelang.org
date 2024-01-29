@@ -72,10 +72,10 @@ $ cue eval -s -e output
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-{{< info >}} The unification tests demonstrated in this guide are likely to be
-replaced by tests using more specific and precise builtins when
-[issue #943](/issue/943) <!-- TODO: can we make links to Netlify redirects smarter? A shortcode? -->
-is implemented, such as `isconcrete`.
+{{< info >}}
+The unification tests demonstrated in this guide are likely to be replaced by
+tests using more specific and precise builtins when {{< issue 943 />}} is
+implemented, such as `isconcrete`.
 
 The builtins mentioned in that issue **are not yet available**, but we mention
 them here to help guide the implementation choices you make in the interim.
