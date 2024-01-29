@@ -1,0 +1,8 @@
+<a href="/issue/{{ .Get 0 }}">
+{{- if strings.ContainsNonSpace .Inner -}}
+    {{ .Inner | markdownify }}
+{{ else -}}
+    issue #{{ .Get 0 }}
+{{- end -}}
+</a>
+{{- /* this line is only present to remove any accidental trailing newline in this file */ -}}
