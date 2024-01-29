@@ -32,8 +32,7 @@ items: list.UniqueItems
 
 {{< warning >}}
 Note that this approach does not work correctly on non-integer values.
-See [issue 2192](https://github.com/cue-lang/cue/issues/2192)
-for details.
+See {{< issue 2192 />}} for details.
 {{< /warning >}}
 
 ## Structs
