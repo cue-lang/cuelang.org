@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38ac42cc_c5066391",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:49:08Z",
+      "side": 1,
+      "message": "LGTM with one suggestion.",
+      "revId": "ec5052e50809bde6748a4bf49269fe5bd393a6ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f431581c_0ece0c84",
+        "filename": "content/docs/howto/use-the-built-in-function-list-concat-to-concatenate-lists/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:49:08Z",
+      "side": 1,
+      "message": "I\u0027m not clear this comment adds very much. Indeed \"re-processing repeated references\" makes this less clear to my mind. I think the example itself is more than sufficiently clear to not require any comment.",
+      "revId": "ec5052e50809bde6748a4bf49269fe5bd393a6ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
