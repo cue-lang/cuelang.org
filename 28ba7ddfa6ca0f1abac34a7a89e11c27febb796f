@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c3659e04_5a7f75b0",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ip-to-validate-ip-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T12:55:26Z",
+      "side": 1,
+      "message": "\u003e \u003e Why do you use the `valid` field here, and not for the `invalid` fields?\n\u003e \n\u003e As per my [comment below](https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1174202/comment/a65bad02_8c860b2d/), I think we *generally* want the reader to see the guide\u0027s primary field validator applied in a form they could copy and paste, applied without templating hence fully comprehensible to the templating-**un**aware reader.\n\nSee my other response. I think trying to solve for the copy-paste of every line of CUE is a dead end of effort. We need a more nuanced \"rule\".\n\n\u003e However, as the relevant/applicable \"lesson\" in this guide is shown via the /failing/ validations, and I wanted to reduce repetition somewhat, I templated the less important constraint into `valid`.\n\nTo me this makes things unnecessarily complicated, when the naming of the field is sufficient. It also wastes horizontal space in the example.\n\n\u003e I intended the `valid` struct to act as a container that holds examples of things that the function will accept, but for the top-level /invalid/ fields to act as direct recipients of the validator (i.e. applied without templating), showing off the failure in the `cue` CLI error output. \n\nPer above, I\u0027m not clear that this approach \"wins\" vs the simplicity of templated, well-named top level fields.\n\n\u003e I\u0027m perfectly happy to make any/all the changes you suggested, but please reconsider if templating the guide\u0027s most pertinent examples would lead to the clearest lesson being transmitted to the beginning CUE user. I believe **not** using templating for the \"important\" examples (i.e. those producing errors) feels more new-user-friendly.\n\nThe problem is that it\u0027s a slippery slope when applying such a \"rule\". It\u0027s hard to know when to stop, because arguably in all cases it would be \"better\" (by some measure) to be more explicit for the user. For now I would tend to err on the side of being more CUE-y and linking to a explanation piece on the structure we tend to follow. Indeed it might be we could extend the Commented CUE piece with a note on the use of templates with a specific link to a doc on that subject.\n\n\u003e \u003e The name of the field should indicate there is a problem (i.e. v4TooManyOctets) and be more benign when it will not contain an error (i.e. v4String).\n\u003e \n\u003e **Exactly** my thought process, too :-)\n\nGreat",
+      "parentUuid": "34767684_5f33da25",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7f260861_36dccc63",
         "filename": "content/docs/howto/use-the-built-in-function-net-ipcidr-to-validate-ip-cidr-ranges/en.md",
         "patchSetId": 5
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "TBH I think we /want/ the reader to see the constraint applied against each field (or, at the very least, some specific fields).\n\nAssuming a reader\u0027s awareness of --and competence with-- templating feels like a minor disservice to the CUE beginner, especially here in the context of a how-to guide that\u0027s intended to spell out the use of a specific function to a early-stage CUE adopter.",
       "parentUuid": "a65bad02_8c860b2d",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f604366_2865a9ec",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T12:55:26Z",
+      "side": 1,
+      "message": "I think it\u0027s a balance. It\u0027s precisely because of this benefit of CUE that we can make these things more readable. By keeping things simple, with just a flat set of fields, all templated to be constrained in the same way (with a simply single-line comment above the templated constraint), I think we keep it very clean and clear. The risk of repeating is the clutter.\n\nI\u0027d suggest we template for now, with a comment above the template, and gather feedback from folks along the way (not suggesting with perform an explicit feedback gathering, just along the way)",
+      "parentUuid": "4b13b41d_fb8bdcf7",
       "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
