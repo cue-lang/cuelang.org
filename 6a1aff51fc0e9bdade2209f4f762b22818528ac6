@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24c7724c_a408a962",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:11:44Z",
+      "side": 1,
+      "message": "LGTM with one small suggestion.",
+      "revId": "6a1aff51fc0e9bdade2209f4f762b22818528ac6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52ded05d_e72f4ee6",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-json-indent-to-produce-human-readable-json-from-a-file/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:11:44Z",
+      "side": 1,
+      "message": "See comments in other CLs about copying the function signature to avoid referring to positional parameters.",
+      "revId": "6a1aff51fc0e9bdade2209f4f762b22818528ac6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
