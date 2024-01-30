@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91c2e262_acf59853",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:39:08Z",
+      "side": 1,
+      "message": "Why is `Basic` important as part of the name?",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91b3b570_d62691cd",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:39:08Z",
+      "side": 1,
+      "message": "See comment below about simplifying things by removing much/all of this comment. If the notion of equality is sufficiently described elsewhere, we don\u0027t need this.",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c5ff6bd_722027bd",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:39:08Z",
+      "side": 1,
+      "message": "These two guides are both too long to my mind. The reason they end up being very long, especially in the comment sections, is that they are trying to compensate for the lack of another document that explains what equality is between values. That concept of equality is used in a number of places, so it\u0027s wasted effort to my mind to try and cover that here.",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68051e24_53dd9bea",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:39:08Z",
+      "side": 1,
+      "message": "It feels like we\u0027re trying to be exhaustive here with the things that people might expect when it comes to equality. I would probably avoid that, because otherwise we lose a (significant) element of readability. \n\nThe basic types only need a single example per type to my mind: it\u0027s \"obvious\" what equality means there, and the linked doc will clarify it. For the sake of being positive, I would suggest we therefore only include examples for the basic types which return true, or as you have done some mix. I\u0027m easy.\n\nFor list and struct types, one of each probably suffices. Then a simple comment suggesting a link to the document which covers equality (which for now is a link to an issue)",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c27b8d82_26eb063e",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-validate-that-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:39:08Z",
+      "side": 1,
+      "message": "Again emphasis on simplifying titles: \n\n```\nUsing the built-in function \"list.Contains\" as a validator\n```",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
