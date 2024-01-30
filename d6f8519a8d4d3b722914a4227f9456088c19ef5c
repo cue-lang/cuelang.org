@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9944adff_42f9bd3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:00:54Z",
+      "side": 1,
+      "message": "LGTM but I think we can simplify this quite a bit.",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ed25a76_7299cb87",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:00:54Z",
+      "side": 1,
+      "message": "This title is trying to do a lot of work! I\u0027m not even sure I could say what \"list item completeness\" means either?\n\nSee also comment below about the scope of this howto.",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "582d0d85_bf1316cb",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:00:54Z",
+      "side": 1,
+      "message": "I\u0027m not clear that this is what your example does however. Because `_flavoursByBrand` and `_names` below are different lists. They are not validators on the `iceCreams` field. Right now we don\u0027t have any notion of a custom equality comparator.",
+      "range": {
+        "startLine": 14,
+        "startChar": 29,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bdca37d_be57f275",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:00:54Z",
+      "side": 1,
+      "message": "There needs to be some mention here of what notion of equality/comparison is being used on structs.",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17bc0a6e_881bfe0a",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:00:54Z",
+      "side": 1,
+      "message": "I\u0027m not sure this adds any weight to this howto. Deriving a list from a struct/list feels out of scope here.",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c7630dd_11a6d23c",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:00:54Z",
+      "side": 1,
+      "message": "I\u0027m not sure this adds any weight to this howto. Deriving a list from a struct/list feels out of scope here.",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
