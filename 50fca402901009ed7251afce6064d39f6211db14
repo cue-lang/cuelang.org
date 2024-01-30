@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9d4592e_e6220dcd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Happy to chat through some of the thinking here. The wall of text in the examples is, to my mind, rather intimidating. And can, I think, largely be avoided.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d922e4e8_34c1f57c",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Do we need the suffix \"to report if lists are sorted using a comparator\"?\n\nI think we need to move to shorter titles where possible.\n\nA comparator is always required AFACIT. The first argument is optional when used as a validator.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f19121_141453e1",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "This is a very comment-heavy example. Made some suggestions below on where it can be tightened up a bit in my opinion.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e69fd3a2_984e31b6",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Suggest simpler and shorter wording:\n\n```\nFor lists of numbers or lists of strings, list.IsSorted can be \nprovided with the predefined comparator list.Ascending or list.Descending\n```",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7698167f_2fc63881",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "I would have this comment as a single line next to a strings example.\n\n```\n// ...\n// See related content below for a list.IsSortedStrings example\n```",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33d9d43c_85e0b15c",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "This comment only makes sense to me in the context of your reference to list.IsSortedStrings... which is not the purposes of this guide. I would therefore drop it in favour of saying nothing and leaving the code to speak for itself.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1249435e_d0040fca",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Simpler language, again leaving the code to tell the story:\n\n```\n// Mixed type lists require a custom comparator\n```",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2cc13a2_c4dc5fd7",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "This field is not used, so I\u0027m not clear what it\u0027s for, or its comment?",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8c18d08_cc2f184b",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "The docs already explain this so I would refer in the comment to the docs rather than repeating here. In any case, I think the custom comparator example above does a pretty good job of making this explicit already. If anything, add a short half-sentence on what a comparator does there.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07706c20_76775082",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "I\u0027m 50/50 on whether this carries value, but happy to leave it in given that we will lose lots of comments from above.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a939478f_93d75267",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-validate-that-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Same comment about the potentially redundant suffix to the title.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0683562_6d15eb6f",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-validate-that-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Same comment re lots of comments and making language in the comment simpler and shorter.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f03c8ce_4e086d19",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-report-if-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "This is a fairly wordy title: again the \"to report if lists of strings are sorted alphabetically\"\n\nThe word \"report\" also feels a bit off. \n\nTo your mind, would the title read ok without this suffix?",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e84156a_9980d15a",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-report-if-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Much cleaner and more concise example where the code does the talking!",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf61e958_a58b9503",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-validate-that-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Same comment re long title. \n\nI think the term you are after here is \"as a validator\" \n\nhttps://alpha.cuelang.org/docs/language-guide/schemas-and-validation/value-constraints/#validators",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c55a34fb_7d1eecee",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-validate-that-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Nice short example!",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fce23e14_a27ffa0b",
+        "filename": "content/docs/howto/use-the-built-in-function-list-sort-to-sort-lists-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Same comments as other files re the title.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8f2f89f_03aa8a67",
+        "filename": "content/docs/howto/use-the-built-in-function-list-sort-to-sort-lists-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Same comments re comments :)",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efb75dd3_550aedab",
+        "filename": "content/docs/howto/use-the-built-in-function-list-sortstrings-to-sort-lists-of-strings-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:30:17Z",
+      "side": 1,
+      "message": "Same comment re title",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
