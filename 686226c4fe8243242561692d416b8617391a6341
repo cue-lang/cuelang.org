@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "438258e9_5c9315dd",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:45:58Z",
+      "side": 1,
+      "message": "See my responses elsewhere too. I\u0027m not clear we need to call out the inline vs reference examples in all our commented CUE. It\u0027s it does require explaining, we should do that in a specific doc which will give a better \"hit\" in terms of search terms. So the changes as made look better to me.",
+      "parentUuid": "3b9d1af9_ecc06380",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37a77077_e3e6ffe0",
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "The intention here is to demonstrate that, when called with a static (non-regex) replacement, the 2 functions return the same value and behave in the same way. I think it\u0027s useful to include. I\u0027ve updated the comment to call out this identical behaviour and its triggers.",
       "parentUuid": "37a77077_e3e6ffe0",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf72b996_d38832fd",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:45:58Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c1a68b33_b9faf9cc",
       "revId": "686226c4fe8243242561692d416b8617391a6341",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -137,6 +173,24 @@
       "side": 1,
       "message": "I think it\u0027s useful to include a more complex example that demonstrates some major regex features (capture groups, character types, invisible characters, atom \nrepetition counts). I believe until \u0026 unless the pkg.go.dev docs contain such an example, /this/ example will materially help a subset of users. I agree there\u0027s that danger of trying to do too much, but I think this stays on the right side of that threshold. Thoughts?",
       "parentUuid": "e741c041_288b90a8",
+      "revId": "686226c4fe8243242561692d416b8617391a6341",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbe3443b_de967a17",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:45:58Z",
+      "side": 1,
+      "message": "Yep, agree with reasoning and how it has landed now.",
+      "parentUuid": "3fad79a1_d0232ab2",
       "revId": "686226c4fe8243242561692d416b8617391a6341",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
