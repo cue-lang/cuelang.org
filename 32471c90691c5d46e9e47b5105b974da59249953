@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64233953_ea4781f4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:35:47Z",
+      "side": 1,
+      "message": "\"modify\" is a loose term. It suggests (to my mind) mutation in place, but that is something entirely antithetical in CUE.",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3cdeb0a_5260c2d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:35:47Z",
+      "side": 1,
+      "message": "With some suggestions.",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c0439f6_121b81b9",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:35:47Z",
+      "side": 1,
+      "message": "Same comment re \"modify\"",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e101283_7a8bd37a",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:35:47Z",
+      "side": 1,
+      "message": "I would copy the signature of the function. Then you can refer to the named arguments. Like the docs do.",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b51e66e_5115ab3a",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:35:47Z",
+      "side": 1,
+      "message": "What does \"counting from the start of the string\" mean? Is this part of the sentence even required?",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba0321d7_2b0698f0",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:35:47Z",
+      "side": 1,
+      "message": "Including the function signature will allow you to refer to the parameter name.",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55f7f411_040048c6",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:35:47Z",
+      "side": 1,
+      "message": "I\u0027m not clear we need/want this. But it\u0027s the second time you have included such an example which leads me to think it\u0027s not obvious that this is possible. One to discuss perhaps, and move content/explanation to another doc?",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
