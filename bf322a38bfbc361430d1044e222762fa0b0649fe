@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e069103_66eb8e6f",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-json-validate-to-validate-that-json-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:49:34Z",
+      "side": 1,
+      "message": "Very long titles: is there merit in them being this long to your mind?",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2d8f3f3_a0796d03",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-json-validate-to-validate-that-json-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:49:34Z",
+      "side": 1,
+      "message": "To my mind it\u0027s a bug that `json.Validate` and `yaml.Validate` are not symmetric in their behaviour here. Is there an issue for this?\n\nEither way, I would leave this explanation below the code block, as well as the warning that follows.",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "feb2ee50_a2e56205",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-json-validate-to-validate-that-json-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:49:34Z",
+      "side": 1,
+      "message": "What are you intending to try and show here with `c` or `d`?",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56499157_c6a7b846",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-yaml-validate-to-validate-that-yaml-satisfies-a-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:49:34Z",
+      "side": 1,
+      "message": "I would stick this warning below the code block.",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26b76268_8e29bba8",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-yaml-validate-to-validate-that-yaml-satisfies-a-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:49:34Z",
+      "side": 1,
+      "message": "Does this need to be in an info block? It hurts readability to my mind.",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bab39591_8d6c4369",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-yaml-validatepartial-to-validate-that-yaml-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:49:34Z",
+      "side": 1,
+      "message": "I half wonder whether splitting this into a separate guide actually harms readability. Because there\u0027s jumping required between this and `yaml.Validate`. The two are so closely linked, I think it\u0027s easier to have them in the same guide?",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
