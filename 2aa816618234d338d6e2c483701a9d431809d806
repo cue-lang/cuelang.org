@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a7a4ebf_518e59a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:09:14Z",
+      "side": 1,
+      "message": "LGTM with some suggestions.",
+      "revId": "2aa816618234d338d6e2c483701a9d431809d806",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0964069_c487ec2a",
+        "filename": "content/docs/howto/use-the-built-in-functions-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:09:14Z",
+      "side": 1,
+      "message": "The mixing of inline/reference arguments doesn\u0027t add anything here to my mind, per other comments in other CLs. In fact it hurts readability in this case.",
+      "revId": "2aa816618234d338d6e2c483701a9d431809d806",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d56ff242_273b985e",
+        "filename": "content/docs/howto/use-the-built-in-functions-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T14:09:14Z",
+      "side": 1,
+      "message": "\"fixed\" doesn\u0027t have any meaning to me (unless I\u0027m missing something?). I would simply drop this second sentence because we will end up tying ourselves in notes trying to word it carefully: the code and vet output gives us the answer we need!",
+      "revId": "2aa816618234d338d6e2c483701a9d431809d806",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
