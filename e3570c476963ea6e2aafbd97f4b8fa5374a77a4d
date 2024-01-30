@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "942f4239_c51272a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-30T13:04:31Z",
+      "side": 1,
+      "message": "There\u0027s still too much going on to my mind. I would again rely on some light templating to help:\n\n```\npackage example\n\nimport \"path\"\n\n[x\u003dstring]: {\n    OS: *path.Unix | string\n\tDir:  path.Dir(x, OS)\n\tBase: path.Base(x, OS)\n\tExt:  path.Ext(x, OS)\n}\n\n\"/foo/bar/baz.js\": _\n#\"c:\\test\\this\"#: {\n    OS: path.Windows\n}\n```",
+      "parentUuid": "3d52dec9_cfc26d3e",
+      "revId": "e3570c476963ea6e2aafbd97f4b8fa5374a77a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3e2f393b_87248932",
         "filename": "content/docs/howto/use-the-built-in-functions-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md",
         "patchSetId": 4
