@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0211605b_6e9ec75b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T18:40:10Z",
+      "side": 1,
+      "message": "LGTM with one final change please. Apologies for missing this earlier",
+      "revId": "26e9a3c684e46f01dcd6e3860194828450cd5d76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8409ebf_3e6dcbd7",
+        "filename": "content/docs/howto/use-list-issorted-to-report-if-lists-are-sorted/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T18:40:10Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t spot this before. We shouldn\u0027t use `len()` on a string here, because per discussion elsewhere it\u0027s confusing as to what that means. Can we go with something else, perhaps using `strings.Count`?",
+      "revId": "26e9a3c684e46f01dcd6e3860194828450cd5d76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
