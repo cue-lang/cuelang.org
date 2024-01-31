@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "542b5b08_00ee0246",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T13:28:37Z",
+      "side": 1,
+      "message": "This isn\u0027t really about writing a type switch (unlike the cutorials doc) but more about deriving the type of a value. The use of the `[0]` trick is effectively what makes it a switch-like statement.",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c442e64b_280b6624",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T13:28:37Z",
+      "side": 1,
+      "message": "I would suggest we use much plainer language here. Indeed the comment could potentially disappear almost entirely if we were to constraint `output` with a schema and comment the fields. The comment for `output` could then be much shorter, saying that it is derived from `input` and the type of values in that list.",
+      "range": {
+        "startLine": 24,
+        "startChar": 12,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81dfec65_6d36c87e",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T13:28:37Z",
+      "side": 1,
+      "message": "Why is this enclosed in braces?",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b9bdb7a_72ce76b8",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T13:28:37Z",
+      "side": 1,
+      "message": "Why the double braces?",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2982c7f6_9bb38eba",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T13:28:37Z",
+      "side": 1,
+      "message": "This is a very long comment. I would suggest making this simpler by having a field `isANumber`.",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd3bb83d_464bf5d0",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T13:28:37Z",
+      "side": 1,
+      "message": "I would put `data` first.",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b41cdde4_8b6c349d",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T13:28:37Z",
+      "side": 1,
+      "message": "Simpler language: \"The approach to testing the type of a value shown in this guide is likely...\"",
+      "range": {
+        "startLine": 76,
+        "startChar": 17,
+        "endLine": 76,
+        "endChar": 47
+      },
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
