@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d4d4a52_5a74f5f7",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done. As discussed, I\u0027ve removed the \"using a comparator\" suffix, but left the \"to report ...\" element, to distinguish this guide from the field validator guide.",
+      "parentUuid": "d922e4e8_34c1f57c",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2f19121_141453e1",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "This is a very comment-heavy example. Made some suggestions below on where it can be tightened up a bit in my opinion.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fcc5d30_8d93a362",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2f19121_141453e1",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e91e012_b1d6e077",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e69fd3a2_984e31b6",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7698167f_2fc63881",
@@ -82,6 +136,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "I would have this comment as a single line next to a strings example.\n\n```\n// ...\n// See related content below for a list.IsSortedStrings example\n```",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a20f7a6_1fce911d",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7698167f_2fc63881",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -103,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bef8e022_35440f32",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33d9d43c_85e0b15c",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1249435e_d0040fca",
@@ -116,6 +206,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "Simpler language, again leaving the code to tell the story:\n\n```\n// Mixed type lists require a custom comparator\n```",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a589ef57_78a750d4",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1249435e_d0040fca",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -137,6 +245,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b849a07_2cb2ef24",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "It was present to expose the comparator schema in the output section, as mentioned in the comment. I\u0027ve removed it.",
+      "parentUuid": "c2cc13a2_c4dc5fd7",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f8c18d08_cc2f184b",
@@ -150,6 +276,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "The docs already explain this so I would refer in the comment to the docs rather than repeating here. In any case, I think the custom comparator example above does a pretty good job of making this explicit already. If anything, add a short half-sentence on what a comparator does there.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6ad1384_4baaf795",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8c18d08_cc2f184b",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -171,6 +315,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9042856_79bd3011",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-report-if-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07706c20_76775082",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a939478f_93d75267",
@@ -184,6 +346,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "Same comment about the potentially redundant suffix to the title.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fd74a6f_16117dcb",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-validate-that-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a939478f_93d75267",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -205,6 +385,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50196810_63235c73",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issorted-to-validate-that-lists-are-sorted-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0683562_6d15eb6f",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f03c8ce_4e086d19",
@@ -218,6 +416,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "This is a fairly wordy title: again the \"to report if lists of strings are sorted alphabetically\"\n\nThe word \"report\" also feels a bit off. \n\nTo your mind, would the title read ok without this suffix?",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4a70042_e2db6d9b",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-report-if-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "As discussed and agreed, \"report\" tracks the validator docs and should remain for now. Changed to `Using \"list.IsSortedStrings\" to report if lists of strings are sorted`.",
+      "parentUuid": "0f03c8ce_4e086d19",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -239,6 +455,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1104d122_439a6769",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-report-if-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e84156a_9980d15a",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf61e958_a58b9503",
@@ -252,6 +486,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "Same comment re long title. \n\nI think the term you are after here is \"as a validator\" \n\nhttps://alpha.cuelang.org/docs/language-guide/schemas-and-validation/value-constraints/#validators",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33e046ec_ea7f7bb3",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-validate-that-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf61e958_a58b9503",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -273,6 +525,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5153a6d3_4cab45bf",
+        "filename": "content/docs/howto/use-the-built-in-function-list-issortedstrings-to-validate-that-lists-of-strings-are-sorted-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c55a34fb_7d1eecee",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fce23e14_a27ffa0b",
@@ -286,6 +556,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "Same comments as other files re the title.",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b570a65_0453af7b",
+        "filename": "content/docs/howto/use-the-built-in-function-list-sort-to-sort-lists-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fce23e14_a27ffa0b",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -307,6 +595,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66d3bcb4_463be392",
+        "filename": "content/docs/howto/use-the-built-in-function-list-sort-to-sort-lists-using-a-comparator/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8f2f89f_03aa8a67",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "efb75dd3_550aedab",
@@ -320,6 +626,24 @@
       "writtenOn": "2024-01-30T13:30:17Z",
       "side": 1,
       "message": "Same comment re title",
+      "revId": "50fca402901009ed7251afce6064d39f6211db14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b15ddf94_a352a107",
+        "filename": "content/docs/howto/use-the-built-in-function-list-sortstrings-to-sort-lists-of-strings-alphabetically/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "efb75dd3_550aedab",
       "revId": "50fca402901009ed7251afce6064d39f6211db14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
