@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62d76016_30432481",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T18:42:13Z",
+      "side": 1,
+      "message": "LGTM with some nits",
+      "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d0a6735_41440b96",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipcidr-to-validate-ip-cidr-ranges/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T18:42:13Z",
+      "side": 1,
+      "message": "This comment appears to exceed our \"limit\" for one line?",
+      "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "691003d7_7ead700e",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T18:42:13Z",
+      "side": 1,
+      "message": "This comment appears to exceed our \"limit\" for one line?",
+      "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "047d2b5d_452f9fa7",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-01-31T18:42:13Z",
+      "side": 1,
+      "message": "This comment appears to exceed our \"limit\" for one line?",
+      "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
