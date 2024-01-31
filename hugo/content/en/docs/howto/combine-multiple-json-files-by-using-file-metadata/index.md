@@ -44,7 +44,7 @@ output: {
 {
     "a": 1,
     "b": 2,
-    "c": 3
+    "c": 4
 }
 {{< /code-tab >}}
 {{< code-tab name="b.json" language="json"  area="top-left" >}}
@@ -69,7 +69,7 @@ $ cue export --with-context -l 'inputs:' -l 'path.Base(filename)' -e output a.js
         "content": {
             "a": 1,
             "b": 2,
-            "c": 3
+            "c": 4
         }
     },
     "b.json": {
