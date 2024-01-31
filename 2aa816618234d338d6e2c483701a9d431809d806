@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1458227e_1b2290f6",
+        "filename": "content/docs/howto/use-the-built-in-functions-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:00:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0964069_c487ec2a",
+      "revId": "2aa816618234d338d6e2c483701a9d431809d806",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d56ff242_273b985e",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-01-30T14:09:14Z",
       "side": 1,
       "message": "\"fixed\" doesn\u0027t have any meaning to me (unless I\u0027m missing something?). I would simply drop this second sentence because we will end up tying ourselves in notes trying to word it carefully: the code and vet output gives us the answer we need!",
+      "revId": "2aa816618234d338d6e2c483701a9d431809d806",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f85fc05_33232222",
+        "filename": "content/docs/howto/use-the-built-in-functions-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:00:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d56ff242_273b985e",
       "revId": "2aa816618234d338d6e2c483701a9d431809d806",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
