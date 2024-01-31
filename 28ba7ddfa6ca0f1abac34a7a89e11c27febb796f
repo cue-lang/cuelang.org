@@ -71,6 +71,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbcc997c_9d7cb711",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ip-to-validate-ip-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:08Z",
+      "side": 1,
+      "message": "I\u0027ve moved all fields to the top level, with templated unification.\nI\u0027ve made a note to extend the Commented CUE explainer in a future CL.",
+      "parentUuid": "c3659e04_5a7f75b0",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f260861_36dccc63",
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "Same reply, as above.",
       "parentUuid": "7f260861_36dccc63",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a4d12fc_a16e5f42",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipcidr-to-validate-ip-cidr-ranges/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7426070a_963d1d45",
       "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -155,6 +191,24 @@
       "side": 1,
       "message": "I think it\u0027s a balance. It\u0027s precisely because of this benefit of CUE that we can make these things more readable. By keeping things simple, with just a flat set of fields, all templated to be constrained in the same way (with a simply single-line comment above the templated constraint), I think we keep it very clean and clear. The risk of repeating is the clutter.\n\nI\u0027d suggest we template for now, with a comment above the template, and gather feedback from folks along the way (not suggesting with perform an explicit feedback gathering, just along the way)",
       "parentUuid": "4b13b41d_fb8bdcf7",
+      "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d49386e3_0c147522",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f604366_2865a9ec",
       "revId": "28ba7ddfa6ca0f1abac34a7a89e11c27febb796f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
