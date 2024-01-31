@@ -33,6 +33,24 @@
       "message": "I\u0027m not clear this comment adds very much. Indeed \"re-processing repeated references\" makes this less clear to my mind. I think the example itself is more than sufficiently clear to not require any comment.",
       "revId": "ec5052e50809bde6748a4bf49269fe5bd393a6ed",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17d098d1_8c8982da",
+        "filename": "content/docs/howto/use-the-built-in-function-list-concat-to-concatenate-lists/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-01-31T18:01:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f431581c_0ece0c84",
+      "revId": "ec5052e50809bde6748a4bf49269fe5bd393a6ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
