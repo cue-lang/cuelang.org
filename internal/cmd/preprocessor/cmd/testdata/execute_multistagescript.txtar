@@ -49,6 +49,12 @@ package site
 >"x": 5
 >}
 >{{{end}}}
+>{{{with upload "en" "in-subdir"}}}
+>-- in/sub/dir/in.json --
+>{
+>"x":    5
+>}
+>{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
 >{{{end}}}
@@ -77,6 +83,12 @@ package site
 >"x": 5
 >}
 >{{{end}}}
+>{{{with upload "en" "in-subdir"}}}
+>-- in/sub/dir/in.json --
+>{
+>    "x": 5
+>}
+>{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
 >cue eval in.cue # test
 >{{{end}}}
@@ -99,6 +111,11 @@ map: {
 ```json { title="in.json" }
 {
 "x": 5
+}
+```
+```json { title="in/sub/dir/in.json" }
+{
+    "x": 5
 }
 ```
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAo=" }
