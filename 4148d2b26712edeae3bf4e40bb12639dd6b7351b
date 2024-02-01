@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8fd5df6_a2ad6cc4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-01T17:00:59Z",
+      "side": 1,
+      "message": "Please take another look. I\u0027ve added the function signature, but I\u0027m not sure that\u0027s allowed me to simplify the comments enough. Thoughts on its current state?",
+      "revId": "4148d2b26712edeae3bf4e40bb12639dd6b7351b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
