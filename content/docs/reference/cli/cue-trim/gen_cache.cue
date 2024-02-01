@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"F5308096AAN37SFK5FHHQBK5PIBF7HV2INVPSQSR8CQ6PHR79FH0====": '''
+									"KMAPQKAL0S2HJ1NFJ7M7ORNCI8JN5KVMSCSA5080K2BI0VQRBBDG====": '''
+											$ cue help trim
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											trim removes fields from structs that can be inferred from constraints
 

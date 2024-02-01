@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"IH3MARM511JV8SLISN7R35KNS6TGDPVRDEKS0PTIFJ7ETSK1OHK0====": '''
+									"UTUJDRTO66DP1QREH08ABMDMKTP1UF9TUUE4VN08EBRPURDCMT7G====": '''
+											$ cue help fmt
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Fmt formats the given files or the files for the given packages in place
 
