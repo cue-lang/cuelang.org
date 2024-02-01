@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"VI30IEKNHSV8SG71CRIKR3E7TCCLMN6LERI2ABC1JHU1LOUG9R90====": '''
+									"SDEPNJ6HH0G2VUF2JC0VGG3RFF1FHV278A65UM21E5LFU8VHN1U0====": '''
+											$ cue help flags
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Non-CUE files are merged at their roots by default.
 											The can be combined differently or treated as different files
