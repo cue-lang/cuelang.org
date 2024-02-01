@@ -33,6 +33,24 @@
       "message": "Sorry, I didn\u0027t spot this before. We shouldn\u0027t use `len()` on a string here, because per discussion elsewhere it\u0027s confusing as to what that means. Can we go with something else, perhaps using `strings.Count`?",
       "revId": "26e9a3c684e46f01dcd6e3860194828450cd5d76",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "212a1ddc_6be4003c",
+        "filename": "content/docs/howto/use-list-issorted-to-report-if-lists-are-sorted/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-01T14:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8409ebf_3e6dcbd7",
+      "revId": "26e9a3c684e46f01dcd6e3860194828450cd5d76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
