@@ -74,6 +74,9 @@ func (s *scriptNode) validate() {
 		// Handling of the exit code and negated happens in the generated
 		// bash script
 		stmt.Negated = false
+		// Remove any comments to remove tags.
+		// TODO keep comments that look like intended doc comments.
+		stmt.Comments = nil
 		var sb strings.Builder
 		if err := s.rf.shellPrinter.Print(&sb, stmt); err != nil {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
