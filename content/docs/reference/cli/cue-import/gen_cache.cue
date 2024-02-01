@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"C314IBEJNJO0OB0H479F1CLR76COFN54UQ1JLNQGD7CGH9LC43G0====": '''
+									"INV1HFI9BO24ESAVRRLS7RGJSLA7CMFO0D2I49HGMF9N5MRIDG60====": '''
+											$ cue help import
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											import converts other formats, like JSON and YAML to CUE files
 

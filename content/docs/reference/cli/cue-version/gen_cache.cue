@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"T8PI8TMN3082TJFG42VD0HJJ1GKI03DCAV93RKCBJA145QA52P9G====": '''
+									"L52VB39B6KVF58CQ8HKI36K6OVGEK79028JE99D7OCL94DD5G510====": '''
+											$ cue help version
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											print CUE version
 

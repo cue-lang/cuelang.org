@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"D302D2B8O83R65UTFTM7L212OGUV86EIOGV9VEGTIRAUIUSU1900====": '''
+									"7QP40V1KNNPH02CDN4R2JVIVO6JP2H16FBIGO5MQHUK2KBTQ457G====": '''
+											$ cue help filetypes
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											The cue tools supports the following file types:
 

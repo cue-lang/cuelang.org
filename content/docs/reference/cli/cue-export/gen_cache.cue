@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"UJK6CFA6LNOJR0DGSPGM1AGGKL3L4IL8NPV5NN2RV8OKGDO8SMGG====": '''
+									"D6V8UFAQLCE806HE8CSA0RB03A3SV3FRUD76M10M4PPNAH14PKE0====": '''
+											$ cue help export
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											export evaluates the configuration found in the current
 											directory and prints the emit value to stdout.
