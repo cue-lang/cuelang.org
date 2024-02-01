@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"9JLDQ6NG2QC8ASK7L7JG0QPGFJL8C12U7VJ1M9DJ8TUO08DKID0G====": '''
+									"U6EQN9U951455CDTLB4F623B0N1UUUFFE3MFB3JHSDGBNSIHNQJ0====": '''
+											$ cue help eval
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											eval evaluates, validates, and prints a configuration.
 

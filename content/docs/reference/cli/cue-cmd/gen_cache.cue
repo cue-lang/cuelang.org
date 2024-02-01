@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"JTL4B62KF8M402377SSAJHUBF011SOPVJRO4KJAL2QRNKTR6C00G====": '''
+									"J46SPO89QIG1PEKSLDPQ6NQUGR8NGBCMOEE0NV53FKP815U68TP0====": '''
+											$ cue help cmd
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											cmd executes the named command for each of the named instances.
 

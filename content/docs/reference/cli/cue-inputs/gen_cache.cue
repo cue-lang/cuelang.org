@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"HNOUUAP34IC0POUTG63M09N9FSJIUIAVG2SH82BDCG20IKBHMF1G====": '''
+									"AQJ3HMN81K2R6D2EF0IFTPDKSGDT20QRD31GIDQQI3NN32DURH40====": '''
+											$ cue help inputs
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Many commands apply to a set of inputs:
 
