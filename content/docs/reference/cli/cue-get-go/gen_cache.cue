@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"7ISSUCJS6UP5IP7RU3UB1HCH7LDE0JB3RTGTJ7TFJPGANUKACV40====": '''
+									"NGQ9C8VR6DTVSF5D40B7VITN6OC5NJNHBV1JCE55QD0JC07FSAH0====": '''
+											$ cue help get go
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											go converts Go types into CUE definitions
 

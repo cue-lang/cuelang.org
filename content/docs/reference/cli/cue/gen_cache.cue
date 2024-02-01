@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"B3NT7CLB39E6229AGJPUHH7GNRI0N1Q919AR1DPG1SESRCM71R5G====": '''
+									"SEAKK96HDF8GTF2L81704U5697AU7OD2GSPNME429FCP1VFN2MD0====": '''
+											$ cue help
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											cue evaluates CUE files, an extension of JSON, and sends them
 											to user-defined commands for processing.

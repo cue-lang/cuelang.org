@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -xeuo pipefail
 
 # Invoke the script with no arguments to see the usage text.
 function _usage(){
@@ -48,7 +48,7 @@ function main() {
     # Get the absolute path to $newDirArg, so that commands from this point
     # forwards do not need to worry about the argument having involved any
     # directory traversal.
-    newDir="$(cd "$newDirArg"; echo "$PWD")"
+    newDir="$(cd "$newDirArg" > /dev/null; echo "$PWD")"
 
     # Remove unwanted files copied from $copyDir.
     rm -f "$newDir/gen_cache.cue"

@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"PH1V45CQ146IK66HFRFECMJESLF5OGH8LLC32IASP9LNBLKM5360====": '''
+									"HOJ2SS4QIV699LSVLJIU4B5V245QHKJNG624O39KTEUIH06U7S5G====": '''
+											$ cue help mod init
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Init initializes a cue.mod directory in the current directory, in effect
 											creating a new module rooted at the current directory. The cue.mod
