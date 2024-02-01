@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "829c24c7_f5efbfc7",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipcidr-to-validate-ip-cidr-ranges/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-01T14:26:54Z",
+      "side": 1,
+      "message": "I\u0027ve been holding the 49-char limit for left/right code tabs, not top/bottom ones. What you\u0027ve indirectly picked up is that, for some reason, I\u0027d missed that 2 of the 3 guides in this CL are arranged as left/right pairs, and not the top/bottom pairs that failing `cue vet` output normally entails.\n\nI\u0027ve fixed this by moving all these guides to be top/bottom pairs. I haven\u0027t reflowed the comments, as (I believe) that\u0027s not needed in the top/bottom display context.",
+      "parentUuid": "1d0a6735_41440b96",
+      "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "691003d7_7ead700e",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4082204d_c377775c",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-01T14:26:54Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "691003d7_7ead700e",
+      "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "047d2b5d_452f9fa7",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-01-31T18:42:13Z",
       "side": 1,
       "message": "This comment appears to exceed our \"limit\" for one line?",
+      "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d72d6fc_9cf08226",
+        "filename": "content/docs/howto/use-the-built-in-function-net-ipv4-to-validate-ipv4-addresses/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-01T14:26:54Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "047d2b5d_452f9fa7",
       "revId": "bdbfde689e1886dceb2e605d5d98f7078ad6fcbf",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
