@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"51NTASIQVUDQSKOT092JDJ62HQOGTIRK44KVEVM3T536IK1OM8N0====": '''
+									"69T6AISBM5E29CLN4HOQ4AJ0FFG2LD5D2UL9MBHHVB7M2LOOMH50====": '''
+											$ cue help def
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											def prints consolidated configuration as a single file.
 

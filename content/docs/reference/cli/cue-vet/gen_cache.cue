@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"OEATJH4NB7FV0D28CO3GF8M771QOD7L4Q0TA8BMVGKA038TSEAIG====": '''
+									"UDV8M2G72G4L8JI8THK6GA70D03J14F4QL6QR66NL47014HUAB1G====": '''
+											$ cue help vet
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											vet validates CUE and other data files
 
