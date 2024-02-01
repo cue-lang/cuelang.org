@@ -7,13 +7,25 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "DcaIYjRo05bzxPKDtMDVwDVZNC7JPhwJkaAw6+f2acA="
-								"initial x.cue":  "cqKc7uz5MA+K/qqViW6ZK1qTszeGwcFQaevxATYAzwQ="
-								"another person": "gILHb69ohG4OiB1qWs9fffuFBLfpRYotet63CxjQcng="
-								"fixed yaml":     "x7+5FWbvCuzHSHuFW6vNHjeLty6WPY1Qs8D6nLxgdC0="
+								"initial x.yaml": "kMQyxQ6U2m219wk8muL5hx180JKUY5coKjdCoNE8fNE="
+								"initial x.cue":  "TO0XY6q2XxiFZv43Lrf7+ErIXdxJrU5ntBXbyfOByL0="
+								"another person": "Ga6wLm3B635FX+gm4I9p6SDqt5cQz6eoWzJHFMBFbU4="
+								"fixed yaml":     "OxM+MbsOYptX5/LVeKKF4bSxjHJ0oxvGwf+krjo1oeg="
 							}
 							multi_step: {
-								"3SJUNOSO8S8B3B71VTJ96QR86LG6EN6NGGBMMMQOLR5DICV8JK0G====": '''
+								"T9GODM40ECC0BASMACCQJVAAEQ3IL0094ATQ6OELESAES22NFJLG====": '''
+										$ cat <<EOD > x.yaml
+										people:
+										  Gopher:
+										    name: Gopher
+										    age: 12
+										    address: Mountain View
+										  Ken:
+										    name: Ken
+										    age: 21
+										    address: The Blue Sky
+
+										EOD
 										$ cat <<EOD > x.cue
 										#Person: {
 										\tname:    string
