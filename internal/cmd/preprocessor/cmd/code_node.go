@@ -342,7 +342,7 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 			case 3:
 				locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight, codeTabBottom}
 			default:
-				s.fatalf("%v: bad state with respect to validate(): found not set, but unsupported number of files (%d) for a default", l)
+				s.fatalf("%v: bad state with respect to validate(): found not set, but unsupported number of files (%d) for a default", s, l)
 			}
 		}
 		analyses := s.analysis.fileNames
