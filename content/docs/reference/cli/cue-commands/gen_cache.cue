@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"9VCTP18KVH7PIM38TKI1K402RR2N9A3JT1JFODHDIGFVLTEPIKEG====": '''
+									"HGGKSEP18P3MI654P36OFUPGPNT4VUOIJI9Q8HNTMJPM52D63520====": '''
+											$ cue help commands
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Commands define actions on instances. For example, they may
 											specify how to upload a configuration to Kubernetes. Commands are
