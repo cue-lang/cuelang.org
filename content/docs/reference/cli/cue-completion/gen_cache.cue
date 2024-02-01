@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"T9I1T2SP053FHASJGLJK3V9VFNHT1P0S7C5H9QLHBAFI0OC2FPGG====": '''
+									"JAG7P639V7GKJLTC3P8ILFR847JHSU6T9645EAO3GH3RK17VGE8G====": '''
+											$ cue help completion
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Generate completion script
 

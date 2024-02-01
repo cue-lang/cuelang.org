@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"4MA41HCQJ6AO7M8FCV9AEB2E92BRHGM542K2I0TOFHACELR9NKC0====": '''
+									"I2OTV1E7U0DF46AP9DK0A239KP77APM87BB2COFAB5ABLGDPD2D0====": '''
+											$ cue help help
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Help provides help for any command in the application.
 											Simply type cue help [path to command] for full details.
