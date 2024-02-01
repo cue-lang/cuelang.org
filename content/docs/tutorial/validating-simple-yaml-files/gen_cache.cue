@@ -7,13 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								yamlBroken: "JPfCgrHnKJGzNReL/CBNdlePWYlPCacN2nUQCRkZhq8="
-								"pets.cue": "EbeYlz/cmJ6hhHUqKuZ1PGSEJpyo9iN3TdVG6yHBkvE="
-								yamlFixed:  "tShq9YhHmtxwgrIEqJm9eAy+NSPNayIQe1zGXYovTVc="
-								yaml2:      "cOl9nKZ3zaWeN6hyr9LswrLZFqwUuZR1g4q+/LdlLFQ="
+								yamlBroken: "l5dA56e+xQjz+21lC/29jICXU8CH/uPKg7ECELKwc+Y="
+								"pets.cue": "y80jCFpMwphT8lFjF4kLB1TLHm1o0ZrmLnKDoRIZZHg="
+								yamlFixed:  "4asMIujaNyiMBDnoVQ3V6nJi9R+Bi5zBO/WBFFVmkDo="
+								yaml2:      "wgdqBJqGrHOztVVMSm9RWKJ3fsJvftaddOF2UxqYV70="
 							}
 							multi_step: {
-								"VF40V5ROLMA8AC83MA0N99B2ONAC2P9TB1KDBAMCTFF1M24T9SPG====": '''
+								"3EIGKTOU17RSU55FHQ0UC7MK03PLCN5R7JNHDC577Q718BS0AIGG====": '''
+										$ pwd # we start in our home directory, but you do not need to
 										e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 										/home/runner
 										e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316

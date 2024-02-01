@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"99H31SEGI0DI6809M7ICH983DUQRUCJP7ACJF305ALQGBEOSG1BG====": '''
+									"4JHA1H73QT1HE8AHH6VS257B7HB442V1PR0K17T6CFOFUGATKKK0====": '''
+											$ cue help get
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Get downloads packages or modules for CUE or another language
 											to include them in the module's pkg directory.

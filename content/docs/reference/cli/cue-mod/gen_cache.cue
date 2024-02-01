@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"2T622QHHJO96I03QRAOTDPMKM78FI65R3R3A5IBSHACMMPU5TVE0====": '''
+									"H4G8DFJQL90ITUJGQREHLHQICJ7L42ALLLFDM37JNCDNRV82A0I0====": '''
+											$ cue help mod
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 
 

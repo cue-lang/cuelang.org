@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"V5K83HO4A14VNMLLIOJ6PG6NTP0CQJQAFA9LG0UR2HCARHNOH2FG====": '''
+									"MKQ1M7378T9G2HAUV88MD1F3TTVU0O3GDB2IGLTS3SIN6Q3FPBFG====": '''
+											$ cue help injection
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Many of the cue commands allow injecting values or
 											selecting files from the command line using the --inject/-t flag.

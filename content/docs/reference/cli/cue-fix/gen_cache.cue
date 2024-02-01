@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"NRFC35VUI7K7L68V5SRDVKHHFSMGOTB8QP4T7HP34ESF7AH9FCMG====": '''
+									"NLBFPP9193UE1AC3HAO01I5R2Q2CHB5N5R4VAIHS4NBJ7PRT5UIG====": '''
+											$ cue help fix
 											e5c8c220a96c604b460a3e7d7a785b373c50ff7f917eb9cb66207e69df651316
 											Fix finds CUE programs that use old syntax and old APIs and rewrites them to use newer ones.
 											After you update to a new CUE release, fix helps make the necessary changes
