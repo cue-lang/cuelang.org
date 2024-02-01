@@ -51,8 +51,8 @@ Open a command prompt and create a new directory to hold this tutorial's files.
 
 For example:
 
-```text { title="TERMINAL" codeToCopy="cHdkICMgd2Ugc3RhcnQgaW4gb3VyIGhvbWUgZGlyZWN0b3J5LCBidXQgeW91IGRvIG5vdCBuZWVkIHRvCm1rZGlyIHZhbGlkYXRpbmcteWFtbC13aXRoLWN1ZQpjZCB2YWxpZGF0aW5nLXlhbWwtd2l0aC1jdWUK" }
-$ pwd # we start in our home directory, but you do not need to
+```text { title="TERMINAL" codeToCopy="cHdkCm1rZGlyIHZhbGlkYXRpbmcteWFtbC13aXRoLWN1ZQpjZCB2YWxpZGF0aW5nLXlhbWwtd2l0aC1jdWUK" }
+$ pwd
 /home/runner
 $ mkdir validating-yaml-with-cue
 $ cd validating-yaml-with-cue
