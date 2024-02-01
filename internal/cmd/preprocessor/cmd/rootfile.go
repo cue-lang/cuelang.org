@@ -24,6 +24,7 @@ import (
 	"math/rand"
 	"os"
 	"os/exec"
+	"path"
 	"path/filepath"
 	"runtime"
 	"slices"
@@ -425,11 +426,17 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 
 			cmdEchoFence := rf.getFence()
 			pf("cat <<'%s'\n", cmdEchoFence)
+			if strings.Contains(f.Name, "/") {
+				pf("$ mkdir -p '%s'\n", path.Dir(f.Name))
+			}
 			pf("$ cat <<EOD > %s\n", f.Name)
 			pf("%s\n", f.Data)
 			pf("EOD\n")
 			pf("%s\n", cmdEchoFence)
 			fence := rf.getFence()
+			if strings.Contains(f.Name, "/") {
+				pf("mkdir -p '%s'\n", path.Dir(f.Name))
+			}
 			pf("cat <<'%s' > %s\n", fence, f.Name)
 			pf("%s\n", f.Data)
 			pf("%s\n", fence)
