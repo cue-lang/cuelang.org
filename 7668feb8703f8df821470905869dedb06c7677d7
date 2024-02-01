@@ -33,6 +33,24 @@
       "message": "See comment in another CL about copy-pasting the signature of the function so you can refer to the names of parameters, instead of positions. It will be easier to write the docs, but also read more easily and consistently with the docs.",
       "revId": "7668feb8703f8df821470905869dedb06c7677d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fce3204_408de72c",
+        "filename": "content/docs/howto/use-the-built-in-functions-regexp-replaceall-regexp-replaceallliteral-to-modify-strings/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-01T16:24:52Z",
+      "side": 1,
+      "message": "I\u0027ve made this change, but have omitted the `func Foo(x, y, z string)` type suffix present in the docs, as that form implies a level of Go-awareness that I\u0027m not sure we should be assuming. I think it\u0027s an acceptable information loss in this context, especially as the the functions\u0027 usage examples speak for themselves quite plainly. Let\u0027s see how it comes across on Alpha and modify if needed.",
+      "parentUuid": "626be1d6_fc8ed449",
+      "revId": "7668feb8703f8df821470905869dedb06c7677d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
