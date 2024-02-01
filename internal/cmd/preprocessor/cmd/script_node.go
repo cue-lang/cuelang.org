@@ -74,6 +74,16 @@ func (s *scriptNode) validate() {
 		// Handling of the exit code and negated happens in the generated
 		// bash script
 		stmt.Negated = false
+		// Remove any comments that are at the start of lines.
+		// TODO keep comments that look like intended doc comments.
+		var comments []syntax.Comment
+		for _, c := range stmt.Comments {
+			if c.Pos().Col() != 1 {
+				// It's a comment not at the start of a line.
+				comments = append(comments, c)
+			}
+		}
+		stmt.Comments = comments
 		var sb strings.Builder
 		if err := s.rf.shellPrinter.Print(&sb, stmt); err != nil {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
