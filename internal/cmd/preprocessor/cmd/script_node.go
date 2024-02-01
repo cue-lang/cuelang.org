@@ -78,7 +78,7 @@ func (s *scriptNode) validate() {
 		if err := s.rf.shellPrinter.Print(&sb, stmt); err != nil {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
 		}
-		cmdStmt.cmdStr = sb.String()
+		cmdStmt.cmdStr = removeTags(sb.String())
 		cmdStmt.negated = negated
 		s.stmts = append(s.stmts, &cmdStmt)
 	}
