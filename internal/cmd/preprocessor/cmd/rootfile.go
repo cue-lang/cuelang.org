@@ -393,9 +393,13 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	rf.walkBody(func(n node) error {
 		switch n := n.(type) {
 		case *scriptNode:
+			// Skip running the script if the #norun tag is present
+			if _, ok, _ := n.tag(tagNorun, ""); ok {
+				break
+			}
 			didWork = true
 
-			// We known a script will not have any files because of validate(), which
+			// We know a script will not have any files because of validate(), which
 			// also parsed the script. So we know it's valid.
 			for _, stmt := range n.stmts {
 				// echo the command we will run
@@ -648,6 +652,10 @@ func (m *multiStepScript) run() (runerr error) {
 	m.walkBody(func(n node) error {
 		step, ok := n.(*scriptNode)
 		if !ok {
+			return nil
+		}
+		_, noRun, _ := step.tag(tagNorun, "")
+		if noRun {
 			return nil
 		}
 		for _, stmt := range step.stmts {
