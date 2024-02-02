@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "ed408b8d_2904d889",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T17:41:07Z",
+      "side": 1,
+      "message": "I\u0027ve removed the trailing verb clause entirely as I can\u0027t think of a suitable replacement.",
+      "parentUuid": "64233953_ea4781f4",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d3cdeb0a_5260c2d2",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 17
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1d867de_b0c4d4e4",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T17:41:07Z",
+      "side": 1,
+      "message": "I\u0027ve simplified to `Using \"strings.Replace`, as I can\u0027t think of a nice *title*-oriented way to express \"make copies of strings with specific substring replacements\". Do let me know if some verb or wording occurs to you!",
+      "parentUuid": "0c0439f6_121b81b9",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e101283_7a8bd37a",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-01-30T13:35:47Z",
       "side": 1,
       "message": "I would copy the signature of the function. Then you can refer to the named arguments. Like the docs do.",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d645378f_f1eadf15",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T17:41:07Z",
+      "side": 1,
+      "message": "Done, but I\u0027ve had to modify the argument names (`s/ n / count /`) as the single character is unhelpful to refer to in comments. Is the resulting misalignment between this guide and the Go docs a problem, in your eyes?",
+      "parentUuid": "7e101283_7a8bd37a",
       "revId": "32471c90691c5d46e9e47b5105b974da59249953",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bd46771_db04bfc6",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T17:41:07Z",
+      "side": 1,
+      "message": "Moot, now the comment is replaced by the function signature.",
+      "parentUuid": "2b51e66e_5115ab3a",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba0321d7_2b0698f0",
@@ -103,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "360ca283_4edbfca1",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T17:41:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0321d7_2b0698f0",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55f7f411_040048c6",
@@ -116,6 +206,24 @@
       "writtenOn": "2024-01-30T13:35:47Z",
       "side": 1,
       "message": "I\u0027m not clear we need/want this. But it\u0027s the second time you have included such an example which leads me to think it\u0027s not obvious that this is possible. One to discuss perhaps, and move content/explanation to another doc?",
+      "revId": "32471c90691c5d46e9e47b5105b974da59249953",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67a00d47_43461262",
+        "filename": "content/docs/howto/use-the-built-in-function-strings-replace-to-modify-strings/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T17:41:07Z",
+      "side": 1,
+      "message": "👍",
+      "parentUuid": "55f7f411_040048c6",
       "revId": "32471c90691c5d46e9e47b5105b974da59249953",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
