@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53613772_0ac0b8e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:12:52Z",
+      "side": 1,
+      "message": "`preprocessor:` prefix please (per comment in previous commit)",
+      "revId": "68c4f65d00e9fc498b74240477feb83f0b415a9e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e7efad5_6324e9d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:12:52Z",
+      "side": 1,
+      "message": "Thanks for the catch/fix here. \n\nLGTM with one nit.",
+      "revId": "68c4f65d00e9fc498b74240477feb83f0b415a9e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
