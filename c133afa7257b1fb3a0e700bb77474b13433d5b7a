@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18bd2e19_400f468b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "I\u0027ve been referring to this as a \"script block\".",
+      "range": {
+        "startLine": 7,
+        "startChar": 35,
+        "endLine": 7,
+        "endChar": 46
+      },
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "532c6d61_44a1382d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "`preprocessor:`",
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "769997e2_da79db7e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "\"script block whose commands do not run\" - the script blocks are part of a larger multi-step script that is built up across the whole page.",
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a969f3e0_b35a4f67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "Still WIP?",
+      "range": {
+        "startLine": 10,
+        "startChar": 10,
+        "endLine": 10,
+        "endChar": 13
+      },
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aedaa3df_bc608ca8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "Per our conversation, I don\u0027t see us adding that so I would likely remove this point.",
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30157961_bb69cbaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "LGTM with some nits around language.",
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc382a19_35e69264",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "Per my reply in the commit message, we are not skipping the entire script. This script block contributes to the page-level multi-step script. So we are just skipping the statements from this script block.",
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5497eb91_6b6b926f",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:52:28Z",
+      "side": 1,
+      "message": "Nit: could inline like above.",
+      "revId": "c133afa7257b1fb3a0e700bb77474b13433d5b7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
