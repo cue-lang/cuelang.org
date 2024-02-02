@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf653c77_a08b0c29",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T15:52:40Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "91c2e262_acf59853",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91b3b570_d62691cd",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-01-30T14:39:08Z",
       "side": 1,
       "message": "See comment below about simplifying things by removing much/all of this comment. If the notion of equality is sufficiently described elsewhere, we don\u0027t need this.",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95169a61_010120c0",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T15:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91b3b570_d62691cd",
       "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8847ad7_a41cff16",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T15:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c5ff6bd_722027bd",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "68051e24_53dd9bea",
@@ -69,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7195102f_85911734",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T15:52:40Z",
+      "side": 1,
+      "message": "I\u0027ve gone with a true and a false for each type, whilst moving them to being single-liners. Having a pair of fields per type now doesn\u0027t take away from the flow (I feel) as the guide is much shorter, and the examples only take a single line each.",
+      "parentUuid": "68051e24_53dd9bea",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c27b8d82_26eb063e",
@@ -82,6 +154,24 @@
       "writtenOn": "2024-01-30T14:39:08Z",
       "side": 1,
       "message": "Again emphasis on simplifying titles: \n\n```\nUsing the built-in function \"list.Contains\" as a validator\n```",
+      "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "847edbea_e8850794",
+        "filename": "content/docs/howto/use-the-built-in-function-list-contains-to-validate-that-a-value-is-in-a-list/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-02T15:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c27b8d82_26eb063e",
       "revId": "65d8f38465de9ee776661e6e3f126d01cdc5be7a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
