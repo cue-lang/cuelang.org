@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b7c0f9b_6e150156",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:11:48Z",
+      "side": 1,
+      "message": "My convention for making changes to the preprocessor has been to use the prefix `preprocessor:`\n\ne.g. https://github.com/cue-lang/cuelang.org/commit/59ad14265a280d519111d5e879ad2174629aef4d",
+      "revId": "86737e41af26918c8d79784c2ce5a5658aa05295",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67e53445_2731ad9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:11:48Z",
+      "side": 1,
+      "message": "LGTM with one nit",
+      "revId": "86737e41af26918c8d79784c2ce5a5658aa05295",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
