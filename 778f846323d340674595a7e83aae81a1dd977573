@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccaef429_0a5f085d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:56:47Z",
+      "side": 1,
+      "message": "Please flesh out the commit message to help the reviewer and anyone looking at the commit history. Otherwise, they have ~zero information beyond the word \"module\" on the intended scope of the change, and then have to look into the detail of the change.",
+      "revId": "778f846323d340674595a7e83aae81a1dd977573",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d08453ee_4aa98f19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:56:47Z",
+      "side": 1,
+      "message": "Will take a more detailed look later.",
+      "revId": "778f846323d340674595a7e83aae81a1dd977573",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e49b0545_d300190a",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-02T13:56:47Z",
+      "side": 1,
+      "message": "Please can you follow the format of the other tutorial in this preamble:\n\nhttps://alpha.cuelang.org/docs/tutorial/validating-simple-yaml-files/",
+      "revId": "778f846323d340674595a7e83aae81a1dd977573",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
