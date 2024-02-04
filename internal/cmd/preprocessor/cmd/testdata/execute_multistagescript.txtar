@@ -7,6 +7,8 @@ unquote content/dir/en.md golden/content/dir/en.md.writeBack
 # Run the preprocessor
 exec preprocessor execute --debug=all
 
+cmp content/dir/gen_cache.cue golden/content/dir/gen_cache.cue
+
 # Copy the resulting soure file sideways and use that in comparison
 # so that we don't inadvertently update it when using CUE_UPDATE=1
 cp content/dir/en.md content/dir/en.md.writeBack
@@ -59,7 +61,7 @@ package site
 >cue eval in.cue # test
 >{{{end}}}
 >{{{with _script "en" "cue version"}}}
->cue version
+>echo cue version
 >{{{end}}}
 >{{{with script "en" "norun"}}}
 >#norun for reasons
@@ -97,7 +99,7 @@ package site
 >cue eval in.cue # test
 >{{{end}}}
 >{{{with _script "en" "cue version"}}}
->cue version
+>echo cue version
 >{{{end}}}
 >{{{with script "en" "norun"}}}
 >#norun for reasons
@@ -137,3 +139,60 @@ map: {
 $ nonexistent command
 ```
 {{< /step >}}
+-- golden/content/dir/gen_cache.cue --
+package site
+{
+	content: {
+		dir: {
+			page: {
+				cache: {
+					upload: {
+						"upload-some-cue":  "jDUGOTSHcIiT0W9co7mzJ0vpV+SDKYu2Km5adsGtfXY="
+						"upload-some-json": "4DginCJnEwV1CoshA6UsJm6al6HFwB9WqzUX3O7K1i0="
+						"in-subdir":        "VGUXHKXCtP+/aLbwSQ4vEecuCdsRklgwqgWz+tGP7BU="
+					}
+					multi_step: {
+						"RO954HFMDABJL2USMPL7P01OB0OUMB3H9H20UIOJA9B8K52KPOV0====": '''
+								$ cat <<EOD > in.cue
+								// A doc comment
+								map: {
+								\tmember1: 3 // a line comment
+								\tmember2: 4
+								}
+
+								EOD
+								$ cat <<EOD > in.json
+								{
+								"x": 5
+								}
+
+								EOD
+								$ mkdir -p 'in/sub/dir'
+								$ cat <<EOD > in/sub/dir/in.json
+								{
+								    "x": 5
+								}
+
+								EOD
+								$ cue eval in.cue # test
+								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
+								map: {
+								    member1: 3
+								    member2: 4
+								}
+								761091a60c51b8c8c88140e4f732a86855b71671c0dc53cb8fce25241235f4e3
+								0
+								$ echo cue version
+								f0ead12d19524728472ea54c1f32b099608ef25ef5166dd605bca4cec773a743
+								cue version
+								f0ead12d19524728472ea54c1f32b099608ef25ef5166dd605bca4cec773a743
+								0
+
+
+								'''
+					}
+				}
+			}
+		}
+	}
+}
