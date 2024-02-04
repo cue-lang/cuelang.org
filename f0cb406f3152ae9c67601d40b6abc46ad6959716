@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1d2ae022_b7b91538",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-04T15:03:11Z",
+      "side": 1,
+      "message": "I added a CL before this one that hopefully makes it clearer what is going on in terms of the generated cache files. That change ends up creating a tiny bit more noise to update that test every time the preprocessor hash key changes, but it\u0027s probably worth it. That CL causes a further change in this CL which hopefully makes the effect of the change clearer.",
+      "parentUuid": "f9bafd00_710bab64",
+      "revId": "f0cb406f3152ae9c67601d40b6abc46ad6959716",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "587516b0_2ffbb473",
         "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
         "patchSetId": 4
@@ -31,6 +49,30 @@
       "writtenOn": "2024-02-04T13:27:36Z",
       "side": 1,
       "message": "FYI `-ne` would still be the correct form, as `!\u003d` is a string pattern match, so e.g. `00 -eq 0` is true yet `00 \u003d\u003d 0` is false. Probably doesn\u0027t actually matter in practice here but it\u0027s a slight pitfall.",
+      "range": {
+        "startLine": 441,
+        "startChar": 17,
+        "endLine": 441,
+        "endChar": 19
+      },
+      "revId": "f0cb406f3152ae9c67601d40b6abc46ad6959716",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1de5c8e0_c5a4843d",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-04T15:03:11Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "587516b0_2ffbb473",
       "range": {
         "startLine": 441,
         "startChar": 17,
