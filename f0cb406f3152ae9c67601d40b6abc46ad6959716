@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9bafd00_710bab64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-04T13:27:36Z",
+      "side": 1,
+      "message": "Thanks for the commit message context - not entirely clear how this changed code will be used in future CLs, but it doesn\u0027t seem wrong to me either.",
+      "revId": "f0cb406f3152ae9c67601d40b6abc46ad6959716",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "587516b0_2ffbb473",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-04T13:27:36Z",
+      "side": 1,
+      "message": "FYI `-ne` would still be the correct form, as `!\u003d` is a string pattern match, so e.g. `00 -eq 0` is true yet `00 \u003d\u003d 0` is false. Probably doesn\u0027t actually matter in practice here but it\u0027s a slight pitfall.",
+      "range": {
+        "startLine": 441,
+        "startChar": 17,
+        "endLine": 441,
+        "endChar": 19
+      },
+      "revId": "f0cb406f3152ae9c67601d40b6abc46ad6959716",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
