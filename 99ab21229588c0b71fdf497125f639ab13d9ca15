@@ -16,6 +16,24 @@
       "message": "why are the diffstats uneven in a few files? if that\u0027s OK or on purpose, perhaps mention it.",
       "revId": "99ab21229588c0b71fdf497125f639ab13d9ca15",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e438d4fc_a195c892",
+        "filename": "content/docs/howto/validate-yaml-using-cue/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-04T15:20:01Z",
+      "side": 1,
+      "message": "Indeed to be expected, so I updated the commit message to comment on that expectation.",
+      "parentUuid": "83675059_6ddf7df4",
+      "revId": "99ab21229588c0b71fdf497125f639ab13d9ca15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
