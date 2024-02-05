@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b41c50f_20944a1b",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-05T11:33:22Z",
+      "side": 1,
+      "message": "not sure if on purpose, but inline comments probably shouldn\u0027t be part of cache keys/values, since they don\u0027t affect a command\u0027s result",
+      "revId": "cbfac2207f58becc47a53c7649f8a26ea4460f32",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
