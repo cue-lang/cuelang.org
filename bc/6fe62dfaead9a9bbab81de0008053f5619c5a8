@@ -1,0 +1,8 @@
+TryBot-Result+1: CUEcueckoo <cueckoo@gmail.com>
+Code-Review+2: Paul Jolly <paul@myitcv.io>
+Submitted-by: Roger Peppe <rogpeppe@gmail.com>
+Submitted-at: Mon, 05 Feb 2024 13:53:01 +0000
+Reviewed-on: https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1176322
+Comments-Total: 3
+Project: cue-lang/cuelang.org
+Branch: refs/heads/alpha
