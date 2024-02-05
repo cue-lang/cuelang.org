@@ -22,6 +22,7 @@ import (
 	"path/filepath"
 	"runtime/debug"
 	"strings"
+	"testing"
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/load"
@@ -356,6 +357,14 @@ func (ec *executeContext) deriveHashOfSelf() (err error) {
 			err = ec.errorf("%v: failed to compute non-empty hash of self", ec)
 		}
 	}()
+
+	// In the special case of the preprocessor being tested, we want a stable
+	// value to avoid a change in the preprocessor itself affecting the contents
+	// of any gen_cache.cue testscript golden files.
+	if testing.Testing() {
+		ec.selfHash = "testing self"
+		return nil
+	}
 
 	// If we have buildinfo, with a main package module which has version and sum
 	// information we use that
