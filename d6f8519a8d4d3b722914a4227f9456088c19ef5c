@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1ac24509_f1ac0adf",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:08:10Z",
+      "side": 1,
+      "message": "I meant \"uniqueness\", but with the current simplification approach the title would read `Using \"list.UniqueItems\" as a field validator`.\n\nThe question from slack that I had in mind when writing this guide specifically asked how to assert uniqueness over only a *subset* of the list\u0027s struct members\u0027 fields. In other words, given\n\n    [{a:1,b:2,c:\"foo\"},{a:1:b:2,c:\"bar\"}]\n    \n.. they wanted to know how to emit an error given that `a` and `b` weren\u0027t unique, ignoring `c` entirely.\n\nSo I\u0027m trying to demonstrate both these aims in this guide:\n\n1. asserting a list\u0027s items are completely unique\n2. asserting that a subset of the list\u0027s members\u0027 fields are unique, using a list comprehensions and hidden fields \n\nI can\u0027t see a better way to achieve the second aim than using a synthetic list. Is that aim out of place for this guide? As I say, I took a real user question as the north star for this specific guide (unlike most of the other stdlib guides, which are based on what I/we believe a reader would want to achieve).",
+      "parentUuid": "4ed25a76_7299cb87",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "582d0d85_bf1316cb",
         "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
         "patchSetId": 18
@@ -48,6 +66,30 @@
       "writtenOn": "2024-01-30T14:00:54Z",
       "side": 1,
       "message": "I\u0027m not clear that this is what your example does however. Because `_flavoursByBrand` and `_names` below are different lists. They are not validators on the `iceCreams` field. Right now we don\u0027t have any notion of a custom equality comparator.",
+      "range": {
+        "startLine": 14,
+        "startChar": 29,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d5c791b_5eaaf3c3",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:08:10Z",
+      "side": 1,
+      "message": "As above, this is the mechanism I /believe/ needs to be used in order to fake the effect of such a custom equality comparator currently.\n\nDo you feel the list comprehensions\u0027 field names, hidden status, and comments don\u0027t communicate their purpose sufficiently? Or is the purpose perhaps out of place for this guide?",
+      "parentUuid": "582d0d85_bf1316cb",
       "range": {
         "startLine": 14,
         "startChar": 29,
@@ -77,6 +119,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "05fda8a7_1a2bfba1",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:08:10Z",
+      "side": 1,
+      "message": "As in other guides, I\u0027ve now linked to https://github.com/cue-lang/docs-and-content/issues/49 (that tracks the lack of such an equality-related document) as a marker.",
+      "parentUuid": "0bdca37d_be57f275",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "17bc0a6e_881bfe0a",
         "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
         "patchSetId": 18
@@ -94,6 +154,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7d2daa66_7140b370",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:08:10Z",
+      "side": 1,
+      "message": "As above, we don\u0027t really care about the contents/presence of the derived list; merely its ability to force an error when the underlying data doesn\u0027t result in a list comprehension having unique members.",
+      "parentUuid": "17bc0a6e_881bfe0a",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8c7630dd_11a6d23c",
         "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
         "patchSetId": 18
@@ -105,6 +183,24 @@
       "writtenOn": "2024-01-30T14:00:54Z",
       "side": 1,
       "message": "I\u0027m not sure this adds any weight to this howto. Deriving a list from a struct/list feels out of scope here.",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db0095d7_bc1c8212",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:08:10Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "8c7630dd_11a6d23c",
       "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
