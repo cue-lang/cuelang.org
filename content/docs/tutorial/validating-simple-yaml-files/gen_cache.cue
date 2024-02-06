@@ -7,13 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								yamlBroken: "g/fN96fowRv3K6nHo/bHxBp4FxCSkE0cM8bxQhdKAPE="
-								"pets.cue": "h2bGdQUNaQsd8k7RflUK3I2HTxqlyRR+JQeeheFFcO4="
-								yamlFixed:  "79c0b92tjUanFa2mOzUNVVl9JZgi7FX0oD1AuSTnazo="
-								yaml2:      "/f2VbM/ROvCZVRsylveXC/dAqMrN9dcptLkdy+95Jeg="
+								yamlBroken: "ddbIZaCQ6RBm6Iih8bjJjtDI00fTTaFDASpmsDCiP2Y="
+								"pets.cue": "qdpwo5HyKtDjGjNTNwwPqhiftJxIBHsIkRWAfDhNqDI="
+								yamlFixed:  "wihFJ/dfmXcGgrTR6lFbDN85wrMEUuHOrf8ZfCT04bo="
+								yaml2:      "M8reY/tMVwIKI+g3hzNiwJnAXUFKYDFqTZ4j9ZiS1TE="
 							}
 							multi_step: {
-								"LOD29EL77OAGUQB9F4SC28TVQTFN6F160LMI7ILHK6RQVVKJI1JG====": [{
+								"JNNHRFVBG37U0NCVH8OHT26G8VAR5ARAQELKTV2HSE75821JG760====": [{
+									doc:      ""
 									cmd:      "pwd # we start in our home directory, but you do not need to"
 									exitCode: 0
 									output: """
@@ -21,14 +22,17 @@ package site
 
 											"""
 								}, {
+									doc:      ""
 									cmd:      "mkdir validating-yaml-with-cue"
 									exitCode: 0
 									output:   ""
 								}, {
+									doc:      ""
 									cmd:      "cd validating-yaml-with-cue"
 									exitCode: 0
 									output:   ""
 								}, {
+									doc:      ""
 									cmd:      "cue vet pets.cue charlie.yml"
 									exitCode: 1
 									output: """
@@ -45,10 +49,12 @@ package site
 
 											"""
 								}, {
+									doc:      ""
 									cmd:      "cue vet pets.cue charlie.yml"
 									exitCode: 0
 									output:   ""
 								}, {
+									doc:      ""
 									cmd:      "cue vet pets.cue charlie.yml toby.yml"
 									exitCode: 0
 									output:   ""
