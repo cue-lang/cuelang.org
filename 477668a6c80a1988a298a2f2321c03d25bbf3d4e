@@ -1,6 +1,46 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "497975e4_b1adecbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "As I mentioned before, please follow the existing format we have for first lines of commit messages:\n\nhttps://github.com/cue-lang/cuelang.org/commits/alpha/",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb9868b8_4ff0f74a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "I\u0027m not clear this is the right term, but will pick that up in the tutorial itself.",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 21
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "17ef9aa7_66ab1238",
@@ -14,6 +54,484 @@
       "writtenOn": "2024-02-06T09:25:00Z",
       "side": 1,
       "message": "@paul@myitcv.io It\u0027s ready for another look now, if you have some time to do so.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7815a9f_a955d23c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Very much like the shape of the example. Made some suggestions up to step 9, but those comments really apply to all steps in some cases. \n\n@github@hello.jonathanmatthews.com - please take a look at my comments and augment with anything from your side.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d9f7fa1_935afd2e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "\"private\" does not feel like the right term. \"Custom\" would be better to my mind. \"Private\" seems to convey some sort of sense of the visibility of the registry (vs a public module registry), which is not the intention. \n\nFor the sake of brevity I won\u0027t repeat that comment re private vs custom below, but it applies in all places.",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 29
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67894868_cae3380e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Please adapt this to be an actual TL;DR of the tutorial.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efa122da_5eab45a9",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Please add a \"info\" level block to highlight that modules are experimental at this point:\n\nhttps://alpha.cuelang.org/examples/shortcodes/info/",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a4233a0_1e12d18a",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "I\u0027m not clear we need/want this tutorial to require something that sounds quite specific to Yaml to be a pre-requisite for somethings modules-related. Hence I err on the side of not mentioning that tutorial.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e4cc075_ecee9684",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Per our discussion earlier, please follow the format of the existing tutorial for now in terms of single-liner in terms of what will be done as part of the step. Optionally followed by 1-2 sentences that expand on that. Then the code/script block. Then further explanation. The thinking (for now) being that we don\u0027t want to swamp the user with text before they get to the meat of the step.\n\nSame comment applies for all steps that follow.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51cf47ba_cfdf4fe6",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "I think the background/context of the tutorial needs to be separated from the steps themselves. I think some additional context is required here, to make it clearer in the user\u0027s mind what is going on. Does this application consume JSON, Yaml?",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec4ffe6f_40e67c5d",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "What is \"it\" a reference to here?",
+      "range": {
+        "startLine": 63,
+        "startChar": 10,
+        "endLine": 63,
+        "endChar": 12
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ec19d6e_100e85b1",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "To my mind you don\u0027t import a module, you add a dependency on a module. Or were you trying to make another point here?",
+      "range": {
+        "startLine": 66,
+        "startChar": 73,
+        "endLine": 66,
+        "endChar": 84
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf951c41_00f4c1d7",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "For a custom OCI server, I think we probably want to mention GitHub (spelling), GitLab etc more in passing. So I would make this example `company.org/module` or similar. It also creates a clearer visual distinction with any tutorial that follows that uses the central registry which, initially, will be required to use github.com as the module path. And is also more likely aligned with how companies (who have custom OCI setups) want to publish and consume modules, independent of VCS.",
+      "range": {
+        "startLine": 70,
+        "startChar": 11,
+        "endLine": 70,
+        "endChar": 17
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d9bffd8_c32cd3c4",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "This step should be earlier, and the creation of the directory explicit. It will be rather confusing to the user to have the creation of the file above be a side effect that also creates the directory.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acb7e79e_d6e98a66",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Why are we using a github path module as part of a tutorial for a custom OCI server?",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b842995_20c88f0e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "\"artifact\" for consistency?",
+      "range": {
+        "startLine": 93,
+        "startChar": 5,
+        "endLine": 93,
+        "endChar": 8
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9af34cf3_d808e806",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "\"OCI protocol spoken by those registries\"",
+      "range": {
+        "startLine": 93,
+        "startChar": 66,
+        "endLine": 93,
+        "endChar": 74
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "072f5244_9b5a0d4e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "I would separate out the step of setting env vars, not least because of the commentary associated with the prefix in CUE_REGISTRY",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d606516b_7bab0e28",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "I would separate out the tidy step from the publish step",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d02c4195_479327e3",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "And to finesse that point, publish then becomes a step by itself.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4c0869e_a5db8997",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "This is indeed a new section to my mind. Per the TL;DR we are creating another module which will depend on the first. The steps that follow are within that section.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc5c0a25_7fefe051",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Why not use `cue mod init`? I think we want to encourage people towards that by default, rather than creating files by hand.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1331df37_102daaba",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Similar to the point earlier about the directory existing, this directory only exists by virtue of the file creation above. We should make the directory creation explicit, or if it exists by virtue of some setup prior to the tutorial (i.e. the app already exists in directory X) then we should call that out.\n\nIt\u0027s also confusing to only be changing directories at this point given that two files above have been created in the directory into which we are moving.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e367232_c7d88fdb",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Copy-paste title? This step can be made more specific in terms of what it does.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d575a7fd_e352faa7",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "This part definitely needs to be captured in the TL;DR up front. Again, it\u0027s a new section with some pre-amble, then the steps that are part of that section.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "946fd984_d8c4d1da",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Same comment about directory existing, changing to it up front etc.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd83c72e_633c82b4",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Same comment re new section, pre-amble etc. \n\nAt this stage we might want to consider adding simply mermaid diagrams to help the user see \"where we are\":\n\nhttps://alpha.cuelang.org/examples/shortcodes/diagrams/",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6b12c6a_63025829",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "This block has not rendered properly. I assume it should be part of the preceding step. Also needs some words around what it actually represents.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a178f9e2_3d8ba06a",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-06T14:01:00Z",
+      "side": 1,
+      "message": "Same comment re section, pre-amble etc.",
       "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
