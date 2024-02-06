@@ -75,6 +75,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "438f5de9_6ffccf04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "Looks great. Some comments below. I\u0027m not +2\u0027ing for now.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d9f7fa1_935afd2e",
@@ -151,6 +168,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2f283989_8f3c9474",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "Wherever we link internally inside the site, please use `relref` to generate the link\u0027s href, as it checks for page existence: https://alpha.cuelang.org/examples/shortcodes/ref-relref/. See any howto guide\u0027s source for an example of its use.",
+      "parentUuid": "5a4233a0_1e12d18a",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e4cc075_ecee9684",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 17
@@ -168,6 +203,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cf410012_ee494c3f",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "In https://alpha.cuelang.org/docs/tutorial/validating-simple-yaml-files/ (the only other guide that currently contains step markers), we established a useful convention where we use H2 headings for the Intro and Pre-reqs sections, and then use them as a header before a small *cluster* of steps. We then have the first line of each step as \"normal\" text, which removes the vertical formatting oddness that\u0027s present with /this/ guide\u0027s use of an H2 as the \"what this step achieves\" preamble to each step.",
+      "parentUuid": "8e4cc075_ecee9684",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "51cf47ba_cfdf4fe6",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 17
@@ -179,6 +232,40 @@
       "writtenOn": "2024-02-06T14:01:00Z",
       "side": 1,
       "message": "I think the background/context of the tutorial needs to be separated from the steps themselves. I think some additional context is required here, to make it clearer in the user\u0027s mind what is going on. Does this application consume JSON, Yaml?",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d90ddc81_32a07e4e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "I personally like including contractions in docs, as I believe they make them feel \"friendlier\"; but @paul@myitcv.io has been pretty firm with me that we want to have a common feel across the docs by avoiding contractions wherever possible.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d40ce3e_c1e28fe0",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "+newline, to associate the step with the next content, not the previous step\u0027s content.",
       "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -248,6 +335,23 @@
         "endLine": 70,
         "endChar": 17
       },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5367fc79_4625e6bb",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "I believe we\u0027re currently placing any comment-based preprocessor directives in a `\\n\\n`-delimited section of their own, with a blank line separating them from the script commands and their comments. I.e. any/all of `#location`, `#norun`, or `#nofmt` should come first, then a blank linee, then the commands.",
       "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -328,6 +432,23 @@
         "endLine": 93,
         "endChar": 74
       },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fd9e2aa_71441968",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "`s/considered to be//` - IMHO it either is, or isn\u0027t, experimental!",
       "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -436,6 +557,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8407464c_21678862",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "Please `upload` this file, in order to avoid the untestable fenced code block. We\u0027ll need to change the `upload` when the `#norun` tags are removed in the future.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e367232_c7d88fdb",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 17
@@ -447,6 +585,23 @@
       "writtenOn": "2024-02-06T14:01:00Z",
       "side": 1,
       "message": "Copy-paste title? This step can be made more specific in terms of what it does.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2925d4db_7810f50d",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "We\u0027ve been omitting the `.` (or `.:packageName`) in howto guides, where there\u0027s only a single package in the directory - even though it\u0027s not a bad idea to get the reader used to being precise with their CLI package selection. Can we do this here, and throughout?",
       "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -532,6 +687,23 @@
       "writtenOn": "2024-02-06T14:01:00Z",
       "side": 1,
       "message": "Same comment re section, pre-amble etc.",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d7edb1a_b16bef8a",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-06T15:07:22Z",
+      "side": 1,
+      "message": "Reflow.",
       "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
