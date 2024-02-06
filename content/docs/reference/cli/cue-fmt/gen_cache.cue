@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"SBV5MU8DTLOI0DR089ABA7FVUV160T4QVQFGTGFUE6S8AKEJL3P0====": [{
+									"65KH78A9BM9TMUFE4PBF6NKNOB4P75HVMNUHUKIHO2QST1FA39VG====": [{
+										doc:      ""
 										cmd:      "cue help fmt"
 										exitCode: 0
 										output: """

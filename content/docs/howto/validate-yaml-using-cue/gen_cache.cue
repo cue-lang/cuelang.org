@@ -7,17 +7,19 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "WC6cjVDu7CCfSyo3DpS30A4cL/6pMuvI2qannNjKyzQ="
-								"initial x.cue":  "/lsDVBCOIauG3a7KOd1L/vYPyqLOlSiPZUhHzPELWUA="
-								"another person": "pY/cjEOwg5QHhaioUQ0MbiR/eoYzaDEKFUkrL86kKWs="
-								"fixed yaml":     "vAF50x62H87QTucH/PQkVkDRu6zkoVhjNWN14JicAOY="
+								"initial x.yaml": "1b3d5ryghts/u5NuLmO7wkK35OOnCldw86+7lISAmAY="
+								"initial x.cue":  "f+6pYehqBCNvYyenKfb0ZCR983Uj1kPfwms6Sorx8AU="
+								"another person": "/ALxkBh9Mnm+/XrK2d8CUN4fOzcgtrG9CXqx7sB0gZQ="
+								"fixed yaml":     "5XwZ16UW0yloxsaW4ElrjzKJluOcztHQYQaLzPmdc6g="
 							}
 							multi_step: {
-								"8GDLVFMGAL09J6G8QTK1E7C1F84GGK6354NSPOTSQ871A68RVDUG====": [{
+								"OQ5RE1E4KNPM2T9GS0IRKKPU2TQU4O5JBEPC8Q6I9QTDOPFFLH8G====": [{
+									doc:      ""
 									cmd:      "cue vet x.cue x.yaml"
 									exitCode: 0
 									output:   ""
 								}, {
+									doc:      ""
 									cmd:      "cue vet x.cue x.yaml"
 									exitCode: 1
 									output: """
@@ -28,6 +30,7 @@ package site
 
 											"""
 								}, {
+									doc:      ""
 									cmd:      "cue vet x.cue x.yaml"
 									exitCode: 0
 									output:   ""

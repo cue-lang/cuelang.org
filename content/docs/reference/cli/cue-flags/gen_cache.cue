@@ -8,7 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"FC4SOHLULVKTPHEFSBCMP447NUJ4HTVHDBSSIHP9O7JR65L2O6R0====": [{
+									"RE1OMU2SL8LGH9HKE40RQT3GHNHSNOT04R7MU6LJ4COOPA935ST0====": [{
+										doc:      ""
 										cmd:      "cue help flags"
 										exitCode: 0
 										output: """
