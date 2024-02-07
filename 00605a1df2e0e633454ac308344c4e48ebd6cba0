@@ -892,6 +892,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bb5e0c6c_c18f9b4e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T17:03:37Z",
+      "side": 1,
+      "message": "I don\u0027t think we have any examples of this elsewhere.\n\nI reckon I\u0027d go with \"Define the CUE template:\", by preference.",
+      "parentUuid": "cf41dd56_be665f2d",
+      "range": {
+        "startLine": 306,
+        "startChar": 24,
+        "endLine": 306,
+        "endChar": 30
+      },
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d66c6561_6f8b0190",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 24
