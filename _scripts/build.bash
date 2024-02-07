@@ -22,13 +22,13 @@ set -eux
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 skipcache=""
-norun="true"
+allowcachemiss="false"
 time=""
 minify="--minify"
 if [ "${NETLIFY:-}" != "true" ]
 then
 	time="time -p"
-	norun="false"
+	allowcachemiss="true"
 	minify=""
 	if [ "${CI:-}" == "true" ]
 	then
@@ -40,7 +40,7 @@ fi
 bash playground/_scripts/build.bash
 
 # Run the preprocessor
-bash _scripts/runPreprocessor.bash execute --debug=all,-cache --norun=$norun $skipcache
+bash _scripts/runPreprocessor.bash execute --debug=all,-cache --allowcachemiss=$allowcachemiss $skipcache
 
 # Main site
 cd hugo
