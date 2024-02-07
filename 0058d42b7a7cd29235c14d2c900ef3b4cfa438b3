@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77bc7076_0e129bef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T11:02:26Z",
+      "side": 1,
+      "message": "Would appreciate another review here because the code has changed a bit as a result of a rebase.",
+      "revId": "0058d42b7a7cd29235c14d2c900ef3b4cfa438b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
