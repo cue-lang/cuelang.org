@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "b79fefaeb410a4a209ea87418603a20fb3851a0b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1264531e_1c705855",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T16:45:18Z",
+      "side": 1,
+      "message": "LGTM assuming green build and that this renders ok in the preview.",
+      "revId": "b79fefaeb410a4a209ea87418603a20fb3851a0b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
