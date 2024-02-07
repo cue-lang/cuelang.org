@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2408311f_c32803aa",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Fixed in the same way as the previous CL.",
+      "parentUuid": "6efbfd54_d9988bbd",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80c9df45_cad27b80",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-02-07T15:21:18Z",
       "side": 1,
       "message": "per the previous CL, you shouldn\u0027t need to use strings.Split and Join for Linewise",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "031ade9c_69283c9b",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Fixed per my response in the previous CL, i.e. by simply using the `(?m)` flag to the regex.",
+      "parentUuid": "80c9df45_cad27b80",
       "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b6d15fa_2e66d102",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a31a0ef_16ae3429",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "53bd19ff_643b8fe6",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-02-07T15:21:18Z",
       "side": 1,
       "message": "nit: strings.Builder",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4630c217_83c70269",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53bd19ff_643b8fe6",
       "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb8f86f6_9f5cc93c",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74c1f534_244c59d4",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91bf77ec_2fca3147",
@@ -103,6 +193,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "935ca916_d96926b4",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Fixed on both fronts.",
+      "parentUuid": "91bf77ec_2fca3147",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "43fc1968_c5cc1ee2",
@@ -116,6 +224,24 @@
       "writtenOn": "2024-02-07T15:21:18Z",
       "side": 1,
       "message": "from these docs, it\u0027s not immediately obvious to me why sanitisers shouldn\u0027t be enough for every use case in practice. for example, if go test prints timings which vary almost every run... can I not write a sanitizer with a regular expression matching a duration string to replace it with e.g. `0s`?",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c66fca9b_8ccd6817",
+        "filename": "internal/cmd/preprocessor/cmd/schema.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "This is a good observation. And for what it\u0027s worth I started out with the kind of approach your describe in play-with-go. Sanitisers affect what the user ends up seeing in the rendered page. So if you replace all test times with the same value (or a pseudo-random sequence to be creative) then the user will see that. The problem is that it gets a bit tricky trying to come up with reasonable values to replace with. And most critically in some cases you need/want the value of the replacement to be an actual value from earlier in the script sequence. You then have to \"assign\" values somewhere to use them later. It turned out to be far easier to implement \"fuzzy\" comparisons. You end up writing the same patterns, and it means you get realistic values in the rendered output.",
+      "parentUuid": "43fc1968_c5cc1ee2",
       "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
