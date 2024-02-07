@@ -98,7 +98,12 @@ content: dir: page: {
 >}
 >{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
+># script doc comment
+>#scripttag
 >cue eval in.cue # test
+>
+># another statement with doc comment
+>echo hello
 >{{{end}}}
 >{{{with script "en" "cue version"}}}
 >cue version
@@ -136,7 +141,12 @@ content: dir: page: {
 >}
 >{{{end}}}
 >{{{with script "en" "run-the-cue"}}}
+># script doc comment
+>#scripttag
 >cue eval in.cue # test
+>
+># another statement with doc comment
+>echo hello
 >{{{end}}}
 >{{{with script "en" "cue version"}}}
 >cue version
@@ -168,12 +178,17 @@ map: {
     "x": 5
 }
 ```
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAplY2hvIGhlbGxvCg==" }
+# script doc comment
 $ cue eval in.cue # test
 map: {
     member3: 3
     member2: 4
 }
+
+# another statement with doc comment
+$ echo hello
+hello
 ```
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
 $ cue version
@@ -205,7 +220,11 @@ package site
 						"in-subdir":        "VGUXHKXCtP+/aLbwSQ4vEecuCdsRklgwqgWz+tGP7BU="
 					}
 					multi_step: {
-						"DV3NMU4U2UJAP84I2UIJQRDQHN5I28OMQCB5KB15Q47O5R1SHLH0====": [{
+						"8P5EO9NH81OIH0K0H56HM58LMSJC8QPCAE67RBNI7FKRFTURAQP0====": [{
+							doc: """
+									# script doc comment
+									#scripttag
+									"""
 							cmd:      "cue eval in.cue # test"
 							exitCode: 0
 							output: """
@@ -216,6 +235,15 @@ package site
 
 									"""
 						}, {
+							doc:      "# another statement with doc comment"
+							cmd:      "echo hello"
+							exitCode: 0
+							output: """
+									hello
+
+									"""
+						}, {
+							doc:      ""
 							cmd:      "cue version"
 							exitCode: 0
 							output: """

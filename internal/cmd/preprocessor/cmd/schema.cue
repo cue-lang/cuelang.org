@@ -92,6 +92,7 @@ package preprocessor
 			upload?: [string]: string
 			code?: [string]:   string
 			multi_step?: [string]: [...{
+				doc:      string
 				cmd:      string
 				output:   string
 				exitCode: int
