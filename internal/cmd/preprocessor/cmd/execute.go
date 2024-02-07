@@ -35,16 +35,16 @@ type lang string
 const (
 	langEn lang = "en"
 
-	flagDir          flagName = "dir"
-	flagDebug        flagName = "debug"
-	flagServe        flagName = "serve"
-	flagUpdate       flagName = "update"
-	flagNoRun        flagName = "norun"
-	flagSkipCache    flagName = "skipcache"
-	flagHugoFlag     flagName = "hugo"
-	flagNoWriteCache flagName = "nowritecache"
-	flagCheck        flagName = "check"
-	flagList         flagName = "ls"
+	flagDir           flagName = "dir"
+	flagDebug         flagName = "debug"
+	flagServe         flagName = "serve"
+	flagUpdate        flagName = "update"
+	flagReadonlyCache flagName = "readonlycache"
+	flagSkipCache     flagName = "skipcache"
+	flagHugoFlag      flagName = "hugo"
+	flagNoWriteCache  flagName = "nowritecache"
+	flagCheck         flagName = "check"
+	flagList          flagName = "ls"
 )
 
 const (
@@ -120,8 +120,9 @@ type executionContext struct {
 	// during an execution run of the preprocessor should be created.
 	tempRoot string
 
-	// norun is set to indicate that no nodes or scripts should be run.
-	norun bool
+	// readonlyCache is indicates whether a cache hit is required or not for
+	// nodes or scripts that can be run.
+	readonlyCache bool
 
 	// ctx is the context used for all CUE operations
 	ctx *cue.Context
@@ -196,8 +197,8 @@ func executeDef(c *Command, args []string) error {
 		return fmt.Errorf("current working directory must be within %s", projectRoot)
 	}
 
-	if flagSkipCache.Bool(c) && flagNoRun.Bool(c) {
-		return fmt.Errorf("cannot use --skipcache and --norun together")
+	if flagSkipCache.Bool(c) && flagReadonlyCache.Bool(c) {
+		return fmt.Errorf("cannot use --%s and --%s together", flagSkipCache, flagReadonlyCache)
 	}
 
 	// Load the preprocessor site schema for validation at various points
@@ -209,7 +210,7 @@ func executeDef(c *Command, args []string) error {
 
 	ctx := executionContext{
 		updateGoldenFiles: flagUpdate.Bool(c),
-		norun:             flagNoRun.Bool(c),
+		readonlyCache:     flagReadonlyCache.Bool(c),
 		ctx:               cuectx,
 		skipCache:         flagSkipCache.Bool(c),
 		noWriteCache:      flagNoWriteCache.Bool(c),
