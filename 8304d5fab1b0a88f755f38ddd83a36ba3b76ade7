@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c92f55d8_4a91fe78",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff792c15_bc105bfd",
+      "range": {
+        "startLine": 86,
+        "startChar": 51,
+        "endLine": 86,
+        "endChar": 63
+      },
+      "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6252d875_a48a278c",
@@ -58,6 +82,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f2750a0_d5296071",
+        "filename": "internal/cmd/preprocessor/cmd/schema.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Good catch. I\u0027ve updated with a comment to express what `_contentDefaults` is all about. It needs to be a separate field, because I need to express the recursive nature of the template with an intentional reference to self (the template). \n\nThe bug in what I had was that we didn\u0027t have the following:\n\n```\n\t\tleftDelim:  *\"{{{\" | _\n\t\trightDelim: *\"}}}\" | _\n```\n\ni.e. we want a site-wide default of the `{{{` and `}}}` pair, but allow each page to set a specific value as required.\n\nIndeed I had actually fixed this bug in https://cuelang.org/cl/1170263. I\u0027ve now moved that fix here to address your point.",
+      "parentUuid": "6252d875_a48a278c",
+      "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac47933e_44d2e262",
@@ -71,6 +113,24 @@
       "writtenOn": "2024-02-07T13:13:09Z",
       "side": 1,
       "message": "this is a bit trippy :) I think I get what it does, but a very short comment might be helpful. I assume it is loosely like `content: **: page: {...}`, if one can squint a bit with shell extended globbing like `content/**/page/*` where it matches` content/page/*`, `content/foo/page/*`, `content/foo/bar/page/*`, etc. I slightly wonder if CUE should have something for this.",
+      "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28840e7a_a2a930b1",
+        "filename": "site.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Correct. I\u0027ve added a comment to reference the relevant docs in `execute_doc.go` but also an in-line refresher on the site structure and why we need/are able to perform this recursive trick.",
+      "parentUuid": "ac47933e_44d2e262",
       "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
