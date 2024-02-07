@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6efbfd54_d9988bbd",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:21:18Z",
+      "side": 1,
+      "message": "like the previous CL, I think this use of OnceValue is buggy",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80c9df45_cad27b80",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:21:18Z",
+      "side": 1,
+      "message": "per the previous CL, you shouldn\u0027t need to use strings.Split and Join for Linewise",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a31a0ef_16ae3429",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:21:18Z",
+      "side": 1,
+      "message": "FYI, strings.Builder has a WriteString method, and Regexp can operate on strings too, so you could avoid dealing with []byte entirely, and operate on strings consistently. I don\u0027t think it would incur any penalty, and your code would get a bit simpler.",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53bd19ff_643b8fe6",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:21:18Z",
+      "side": 1,
+      "message": "nit: strings.Builder",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74c1f534_244c59d4",
+        "filename": "internal/cmd/preprocessor/cmd/comparators.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:21:18Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91bf77ec_2fca3147",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:21:18Z",
+      "side": 1,
+      "message": "is this last line a straggler?\n\nalso please split this into at least a couple of paragraphs :)",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43fc1968_c5cc1ee2",
+        "filename": "internal/cmd/preprocessor/cmd/schema.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:21:18Z",
+      "side": 1,
+      "message": "from these docs, it\u0027s not immediately obvious to me why sanitisers shouldn\u0027t be enough for every use case in practice. for example, if go test prints timings which vary almost every run... can I not write a sanitizer with a regular expression matching a duration string to replace it with e.g. `0s`?",
+      "revId": "796d3d55735abfe7dee3a7e4b7c95b4bc4d69235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
