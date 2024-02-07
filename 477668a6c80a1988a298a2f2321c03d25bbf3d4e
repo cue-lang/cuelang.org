@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea1c500a_18742f6e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T14:19:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "497975e4_b1adecbc",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb9868b8_4ff0f74a",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-02-06T14:01:00Z",
       "side": 1,
       "message": "I\u0027m not clear this is the right term, but will pick that up in the tutorial itself.",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 21
+      },
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e0fa6ff_70640a57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T14:19:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb9868b8_4ff0f74a",
       "range": {
         "startLine": 10,
         "startChar": 14,
