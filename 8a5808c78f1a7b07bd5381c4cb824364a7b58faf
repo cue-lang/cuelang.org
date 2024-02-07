@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8633b88a_ab05123b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T15:04:57Z",
+      "side": 1,
+      "message": "Will review further once the build is passing.",
+      "revId": "8a5808c78f1a7b07bd5381c4cb824364a7b58faf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

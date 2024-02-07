@@ -640,6 +640,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a8112737_810b6de8",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T15:04:57Z",
+      "side": 1,
+      "message": "Given the change in https://cuelang.org/cl/1176527 it\u0027s actually even more important the script node-level `#norun` is not a doc comment for a specific statement. So, per @github@hello.jonathanmatthews.com, `#norun` should be clear of doc comments.",
+      "parentUuid": "0679d106_7ac4d1a3",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3d9bffd8_c32cd3c4",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 17
