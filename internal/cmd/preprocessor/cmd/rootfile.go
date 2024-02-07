@@ -302,16 +302,16 @@ func (rf *rootFile) run() error {
 				return nil
 			}
 
-			if cacheMiss && rf.norun {
+			if cacheMiss && rf.readonlyCache {
 				// Earlier we ensured the user did not provide --skipcache and
-				// --norun So we know we are here because of a cache miss. Panic in
-				// case that is somehow broken.
+				// --readonlycache. So we know we are here because of a cache
+				// miss. Panic in case that is somehow broken.
 				if rf.skipCache {
-					panic("skipCache set and norun?")
+					panic("--skipcache and --readonlycache both set?")
 				}
 				// Otherwise error because we are in a situation where we need to
 				// break the cache, but the user has told us not to.
-				return rf.errorf("%v: cache miss for %v; but told not to run", rf, hashPath)
+				return rf.errorf("%v: cache miss for %v; but --%s", rf, hashPath, flagReadonlyCache)
 			} else if cacheMiss {
 				// It's a cache miss
 				rf.debugf(rf.debugCache, "%v: cache miss for %v", rf, hashPath)
