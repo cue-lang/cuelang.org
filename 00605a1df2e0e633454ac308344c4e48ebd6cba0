@@ -177,6 +177,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1efbed9c_f8a69cf7",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T16:55:10Z",
+      "side": 1,
+      "message": "The `modules` tag is now available.\n\n```suggestion\n- rogpeppe\ntags:\n- modules\n- tooling\n- cue command\n```",
+      "parentUuid": "93f9ba0b_0752fb5e",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "055d4606_287f2544",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 24

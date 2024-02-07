@@ -16,6 +16,24 @@
       "message": "Please include `toc_hide: true` in the front matter. This stops the tutorial from appearing in the left hand nav when /other/ pages are being viewed.",
       "revId": "370e70f5c07fbca513d12367ee1f49a1f9a17a0e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e65fd35_4d56e593",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 25
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T16:55:10Z",
+      "side": 1,
+      "message": "```suggestion\ntoc_hide: true\n---\n```",
+      "parentUuid": "ee030472_495cd4f6",
+      "revId": "370e70f5c07fbca513d12367ee1f49a1f9a17a0e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
