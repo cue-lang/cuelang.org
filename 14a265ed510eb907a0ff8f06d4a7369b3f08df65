@@ -54,6 +54,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4776d8f7_62e30ea8",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T15:13:11Z",
+      "side": 1,
+      "message": "It would be nice if we could document exactly the requirements/distinction between tag and regular comments somewhere.",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3d713211_b3c1cdda",
         "filename": "internal/cmd/preprocessor/cmd/script_node.go",
         "patchSetId": 1
