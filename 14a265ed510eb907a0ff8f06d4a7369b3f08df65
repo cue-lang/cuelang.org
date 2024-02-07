@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "fe3bca15_cceeabe6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c29bf814_856a64d7",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ef8eb420_f25f646e",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d909c46_eac7b196",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Clarified with more comments. The name \"other\" was a hangover from an earlier instance of this code. It was intended to refer to the list of dangling comments we collect at the script node level.",
+      "parentUuid": "7b9fc856_d6277643",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4776d8f7_62e30ea8",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-02-07T15:13:11Z",
       "side": 1,
       "message": "It would be nice if we could document exactly the requirements/distinction between tag and regular comments somewhere.",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63807adf_395f412e",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "I have added a TODO to follow up on this later. The convention is identical to Go doc comments, and tags are identical in nature to Go\u0027s directive comments.",
+      "parentUuid": "4776d8f7_62e30ea8",
       "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a41ef4f4_b46f1da1",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Much more elegant, thank you!",
+      "parentUuid": "3d713211_b3c1cdda",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1df8baad_a37cfa39",
@@ -103,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a4b4a88_8e5e27c7",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1df8baad_a37cfa39",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93eb2df7_7d6fde50",
@@ -116,6 +206,24 @@
       "writtenOn": "2024-02-07T12:13:44Z",
       "side": 1,
       "message": "Does it matter that this will add an extra newline when stmt.Doc ends in a newline character (because the last element in the slice returned by `strings.Split` will be empty in that case) ?",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43f76445_8760a42d",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T21:01:04Z",
+      "side": 1,
+      "message": "I don\u0027t think so. The AST comment value does not include a trailing newline. All comments are line-based. Hence the split results in individual lines that start with `\\s*#` and have no trailing newline. Hence our rendering is, I believe, correct. I\u0027ve updated the test to include a doc comment that is multi-line to affirm this belief.",
+      "parentUuid": "93eb2df7_7d6fde50",
       "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
