@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2689ac8_3a63f8f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4cac2099_b5abec2b",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49f97eec_042235a5",
@@ -89,6 +107,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f68cf45_c32b7658",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72802e61_1f53a3e5",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bc00992_48e60d52",
@@ -102,6 +138,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "The path of the tutorial needs to be changed to match the new title.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1377f14c_ba9e146c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bc00992_48e60d52",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -210,6 +264,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ae9917d_48dc4000",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "055d4606_287f2544",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e755f070_70b57c89",
@@ -280,6 +352,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72104156_e5056717",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82abdb75_6c659961",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89d13d09_2655d573",
@@ -293,6 +383,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "`s/example application/FrostyApp/`?",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9eca657_c897b9de",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89d13d09_2655d573",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -343,6 +451,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d300c9e_e09ab289",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0b220f4f_b495cce0",
+      "range": {
+        "startLine": 123,
+        "startChar": 49,
+        "endLine": 123,
+        "endChar": 61
+      },
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6de3e75_376eff5d",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "I\u0027ve avoided just \"artifact registries\" as that\u0027s not specific enough to my mind, but made a change that should make things clearer hopefully.",
+      "parentUuid": "5d823e46_191792c5",
+      "range": {
+        "startLine": 123,
+        "startChar": 29,
+        "endLine": 123,
+        "endChar": 39
+      },
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c3d36bc_b589d06e",
@@ -356,6 +512,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "This paragraph seems to be missing a reference to the `CUE_REGISTRY` environment variable. So the references to `prefix` are a bit confusing. Would suggest we ground the paragraph with a reference to that variable in the first sentence or similar. That would also allow you explain the bit before the prefix, not that it requires much explanation.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "225f135d_86fb61fb",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c3d36bc_b589d06e",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -377,6 +551,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46f34507_6a122be9",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24294dfb_c34f01a7",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f87731eb_10b5ecf0",
@@ -390,6 +582,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "\"Publish the first version of this module\"?\n\nTo be consistent with the command name?",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e03afcd_a41fcddb",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f87731eb_10b5ecf0",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -417,6 +627,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3872ab79_8c66fa84",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96cb09a2_625a004d",
+      "range": {
+        "startLine": 176,
+        "startChar": 18,
+        "endLine": 176,
+        "endChar": 26
+      },
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "841925c2_a8f72ecf",
@@ -430,6 +664,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "Again, a bit of pre-amble under this heading will refresh the user on where they are.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d01856b1_e1002735",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "841925c2_a8f72ecf",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -451,6 +703,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9b4a957_e9931921",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2dad7c8c_9b291295",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7eeef179_8e94eb41",
@@ -464,6 +734,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "Do we again want to be consistent with our use of the phrase \"ensure our X module is tidy\"?",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cffe74c_df17d80f",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "I\u0027d like to be explicit that it pulls dependencies, but I mentioned tidy too.",
+      "parentUuid": "7eeef179_8e94eb41",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -498,6 +786,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "Again, this section needs some pre-amble under the heading rather than it being buried in the first step of this section.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0377bd8_513d89db",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "197b4a56_2376b651",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -561,6 +867,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "Again, a bit of context under the heading would help, rather than burying that context in the detail of the first step of this section.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efd1b3ae_b3ff4e40",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T16:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d66c6561_6f8b0190",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
