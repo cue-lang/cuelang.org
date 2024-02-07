@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db5e365a_480cff3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T13:13:09Z",
+      "side": 1,
+      "message": "SGTM although I\u0027m not sure I get the defaults mechanism.",
+      "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff792c15_bc105bfd",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T13:13:09Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 86,
+        "startChar": 51,
+        "endLine": 86,
+        "endChar": 63
+      },
+      "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6252d875_a48a278c",
+        "filename": "internal/cmd/preprocessor/cmd/schema.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T13:13:09Z",
+      "side": 1,
+      "message": "I\u0027m a bit confused; `_contentDefaults` in another file sets the \"defaults\", but it simply sets the field values, so I don\u0027t see how they act as defaults.\n\nIt seems to me like this should be:\n\n```\nrightDelim: *string | \"}}}\"\n```\n\nthen each page can provide their own delimiter, which is prioritized, but otherwise we fall back to `}}}`. And you don\u0027t need `_contentDefaults` then, either.",
+      "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac47933e_44d2e262",
+        "filename": "site.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T13:13:09Z",
+      "side": 1,
+      "message": "this is a bit trippy :) I think I get what it does, but a very short comment might be helpful. I assume it is loosely like `content: **: page: {...}`, if one can squint a bit with shell extended globbing like `content/**/page/*` where it matches` content/page/*`, `content/foo/page/*`, `content/foo/bar/page/*`, etc. I slightly wonder if CUE should have something for this.",
+      "revId": "8304d5fab1b0a88f755f38ddd83a36ba3b76ade7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
