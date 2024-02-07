@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01b49e1f_2ec6c404",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T17:12:44Z",
+      "side": 1,
+      "message": "Needs updating to reflect the tutorial\u0027s path.",
+      "revId": "dc36a7ad905ae8d1c6c1886c5998c38812b7a800",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
