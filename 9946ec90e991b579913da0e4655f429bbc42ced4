@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "628bac5a_2f587ad4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 30
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T15:02:45Z",
+      "side": 1,
+      "message": "With some final comments.",
+      "revId": "9946ec90e991b579913da0e4655f429bbc42ced4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0d1241b_1c31f62a",
+        "filename": "content/docs/howto/use-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T15:02:45Z",
+      "side": 1,
+      "message": "I think we discussed dropping this kind of example, calling out the reference?",
+      "revId": "9946ec90e991b579913da0e4655f429bbc42ced4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47959a40_11b6d67e",
+        "filename": "content/docs/howto/use-list-contains-to-report-if-a-value-is-in-a-list/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T15:02:45Z",
+      "side": 1,
+      "message": "I would say the \"tracking issue for these rules is X\". Because that issue is like an umbrella for all changes that will be required for us to properly document and link to the \"answer\"",
+      "revId": "9946ec90e991b579913da0e4655f429bbc42ced4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b19e4ec_ef8853cc",
+        "filename": "hugo/content/en/docs/howto/use-list-contains-as-a-field-validator/index.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T15:02:45Z",
+      "side": 1,
+      "message": "We should use the short-form `Issue #49` to refer only to items in main CUE issue tracker for consistency. Other repos should be spelled out `$org/$repo#49`, please.",
+      "revId": "9946ec90e991b579913da0e4655f429bbc42ced4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
