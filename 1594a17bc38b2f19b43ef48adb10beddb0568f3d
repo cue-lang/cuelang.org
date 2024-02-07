@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24cec8c6_6d6f267f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-07T11:00:15Z",
+      "side": 1,
+      "message": "Noting that the changes since your +2 are not significant and mainly result from a rebase.",
+      "revId": "1594a17bc38b2f19b43ef48adb10beddb0568f3d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
