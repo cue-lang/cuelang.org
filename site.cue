@@ -139,6 +139,11 @@ template: ci.#writefs & {
 			color = "red"
 			weight = 80
 
+			[[tags]]
+			name = "modules"
+			color = "red"
+			weight = 90
+
 			"""#
 		}
 		"playground/src/config/gen_cuelang_org_go_version.ts": {

@@ -67,3 +67,8 @@ weight = 70
 name = "user question"
 color = "red"
 weight = 80
+
+[[tags]]
+name = "modules"
+color = "red"
+weight = 90
