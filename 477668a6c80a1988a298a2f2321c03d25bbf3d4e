@@ -1120,6 +1120,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "adeb94c3_f82c6328",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T15:33:21Z",
+      "side": 1,
+      "message": "Whilst I think I\u0027d slightly prefer a source-level `TODO` marker and an `upload` block, please add a grepable `TODO` whichever route you choose.\n\nAs a related note, in https://github.com/cue-lang/cue/issues/2798 I suggested:\n\n\u003e A Hugo code-tab, very similar to the current upload rendering, would seem to be suitable for this. It could even be a flag/tag/etc that extends upload\u0027s behaviour.",
+      "parentUuid": "2a5b2d14_4a65c8a7",
+      "revId": "477668a6c80a1988a298a2f2321c03d25bbf3d4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e367232_c7d88fdb",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 17

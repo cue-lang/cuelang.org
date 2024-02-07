@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49f97eec_042235a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T15:33:21Z",
+      "side": 1,
+      "message": "I don\u0027t /believe/ any UI we use parses commit messages as markdown.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ad31826_08eba422",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T15:33:21Z",
+      "side": 1,
+      "message": "A couple of final comments from me.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
