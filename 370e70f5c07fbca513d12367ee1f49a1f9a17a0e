@@ -34,6 +34,24 @@
       "parentUuid": "ee030472_495cd4f6",
       "revId": "370e70f5c07fbca513d12367ee1f49a1f9a17a0e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35e7b75d_2b49f743",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 25
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T17:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e65fd35_4d56e593",
+      "revId": "370e70f5c07fbca513d12367ee1f49a1f9a17a0e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

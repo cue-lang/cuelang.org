@@ -247,6 +247,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "068e6900_4d5c2ccc",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T17:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1efbed9c_f8a69cf7",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "055d4606_287f2544",
@@ -313,6 +331,24 @@
       "side": 1,
       "message": "Annoyingly the language guide\u0027s pages on schemata aren\u0027t yet (IMHO) suitable for linking to. The tour contains a couple of decent candidates, so I propose we link to both via\n\n```\n- **Some awareness of CUE schemata\n  ([Constraints]({{\u003c relref \"/docs/tour/basics/constraints\" \u003e}}) and\n   [Definitions]({{\u003c relref \"/docs/tour/basics/definitions\" \u003e}}) in the CUE tour)\n```",
       "parentUuid": "e755f070_70b57c89",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a26366f5_368edcbc",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T17:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6acbbe25_f4f2238e",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
