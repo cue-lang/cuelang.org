@@ -18,6 +18,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
+	"regexp"
 	"strings"
 
 	"mvdan.cc/sh/v3/syntax"
@@ -36,6 +37,11 @@ type scriptNode struct {
 	hidden bool
 
 	stmts []*commandStmt
+
+	// comments are the comments in the script node not attached to statements.
+	// We leave them as a slice of comments for now; it might be that they are
+	// only required as a concatenated string, we will see later.
+	comments []syntax.Comment
 }
 
 var _ validatingNode = (*scriptNode)(nil)
@@ -65,7 +71,12 @@ func (s *scriptNode) validate() {
 		s.errorf("%v: failed to parse shell script: %v", s, err)
 		return
 	}
+
 	s.debugf(s.debugScript, "parsed %q, gave %v statements", s.effectiveArchive.Comment, len(file.Stmts))
+
+	// Now render each statement, creating doc comments for each as we go, and
+	// gathering any non-doc comments as script node-level comments.
+
 	for _, stmt := range file.Stmts {
 		cmdStmt := commandStmt{
 			stmt: stmt,
@@ -77,21 +88,53 @@ func (s *scriptNode) validate() {
 		// Handling of the exit code and negated happens in the generated
 		// bash script
 		stmt.Negated = false
-		// Remove any comments that are at the start of lines.
-		// TODO keep comments that look like intended doc comments.
-		var comments []syntax.Comment
-		for _, c := range stmt.Comments {
-			if c.Pos().Col() != 1 {
-				// It's a comment not at the start of a line.
-				comments = append(comments, c)
+
+		// doc will ense up being the doc comment for the statement. Anything
+		// that does not form part of the doc comment gets added to the script
+		// node as a "block comment". As we walk through the comments that are
+		// attached to the statement AST, the resetDocComment helper function is
+		// responsible for transferring the currently collected doc comment to
+		// being script node-level comments whenever we detect a section of
+		// comments that is non-contiguous with the statement itself.
+		var doc syntax.Stmt
+		resetDocComment := func(line uint) {
+			if l := len(doc.Comments); l > 0 {
+				last := doc.Comments[l-1]
+				if last.End().Line()+1 != line {
+					s.comments = append(s.comments, doc.Comments...)
+					doc.Comments = nil
+				}
 			}
 		}
-		stmt.Comments = comments
+		for len(stmt.Comments) > 0 {
+			c := stmt.Comments[0]
+			if c.Pos().After(stmt.Cmd.Pos()) {
+				// We have reached a comment that starts after the beginning of the
+				// statement. Leave it and any that follow on the command
+				//
+				// TODO: properly document as part of execute_doc.go or similar the
+				// requirements of doc comments, and their interaction with tags
+				// (especially when it comes to rendered output). We could leverage
+				// the Go docs in this respect: https://tip.golang.org/doc/comment.
+				break
+			}
+			resetDocComment(c.Pos().Line())
+			doc.Comments = append(doc.Comments, c)
+			stmt.Comments = stmt.Comments[1:]
+		}
+		resetDocComment(stmt.Pos().Line())
+
 		var sb strings.Builder
 		if err := s.rf.shellPrinter.Print(&sb, stmt); err != nil {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
 		}
 		cmdStmt.Cmd = sb.String()
+
+		sb.Reset()
+		if err := s.rf.shellPrinter.Print(&sb, &doc); err != nil {
+			s.errorf("%v: failed to print doc comment for stmt at %v: %v", s, stmt.Position, err)
+		}
+		cmdStmt.Doc = sb.String()
 
 		// Revert the negated state for completeness given
 		// we set stmt as part of cmdStmt for sanitiser etc
@@ -100,6 +143,10 @@ func (s *scriptNode) validate() {
 
 		s.stmts = append(s.stmts, &cmdStmt)
 	}
+
+	// The trailing comments in the script not attached to any commands because
+	// no commands follow them.
+	s.comments = append(s.comments, file.Last...)
 }
 
 // commandStmt is effectively a local version of the parsed *syntax.Stmt. This
@@ -109,11 +156,14 @@ func (s *scriptNode) validate() {
 type commandStmt struct {
 	stmt        *syntax.Stmt
 	negated     bool
+	Doc         string `json:"doc"`
 	Cmd         string `json:"cmd"`
 	ExitCode    int    `json:"exitCode"`
 	Output      string `json:"output"`
 	outputFence string
 }
+
+var tagPrefix = regexp.MustCompile(`^#\S`)
 
 func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
@@ -131,9 +181,23 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 
 	p("```text { title=%q codeToCopy=%q", "TERMINAL", copyCmdStr.String())
 	p(" }\n")
-	for _, stmt := range s.stmts {
+	var lastOutput string
+	for i, stmt := range s.stmts {
+		if stmt.Doc != "" {
+			if i > 0 && !strings.HasSuffix(lastOutput, "\n\n") {
+				// Add a clear line to separate the start of the comment
+				p("\n")
+			}
+			for _, line := range strings.Split(stmt.Doc, "\n") {
+				if tagPrefix.MatchString(line) {
+					continue
+				}
+				p("%s\n", line)
+			}
+		}
 		p("$ %s\n", stmt.Cmd)
 		p("%s", stmt.Output)
+		lastOutput = stmt.Output
 	}
 	p("```")
 	return nil
