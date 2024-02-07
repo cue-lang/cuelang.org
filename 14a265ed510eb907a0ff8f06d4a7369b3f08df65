@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c29bf814_856a64d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T12:13:44Z",
+      "side": 1,
+      "message": "contiguous ?",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef8eb420_f25f646e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T12:13:44Z",
+      "side": 1,
+      "message": "LGTM with a few minor thoughts/suggestions.",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b9fc856_d6277643",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T12:13:44Z",
+      "side": 1,
+      "message": "What does \"other\" mean in this context?",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d713211_b3c1cdda",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T12:13:44Z",
+      "side": 1,
+      "message": "The index-based logic made me think for a moment. Maybe clearer like this?\n\n```\nfor len(stmt.Comments) \u003e 0 {\n    v :\u003d stmt.Comments[0]\n    ...\n    stmt.Comments \u003d stmt.Comments[1:]\n}\n```",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1df8baad_a37cfa39",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T12:13:44Z",
+      "side": 1,
+      "message": "No question needed - we know the statement is true here, I think.\n\n```suggestion\n\t\t\t\t// Comment after the start of the command. Leave it and\n```",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93eb2df7_7d6fde50",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T12:13:44Z",
+      "side": 1,
+      "message": "Does it matter that this will add an extra newline when stmt.Doc ends in a newline character (because the last element in the slice returned by `strings.Split` will be empty in that case) ?",
+      "revId": "14a265ed510eb907a0ff8f06d4a7369b3f08df65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
