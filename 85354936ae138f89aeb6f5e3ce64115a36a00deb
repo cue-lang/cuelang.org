@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4956139e_f9377978",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:11:45Z",
+      "side": 1,
+      "message": "I wonder if you could use reflect.DeepEqual here - I\u0027ve honestly never thought about an \"is equivalent to\" comparison API. Printing to strings and comparing those is a pretty good approximation though.",
+      "revId": "85354936ae138f89aeb6f5e3ce64115a36a00deb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "197fe022_44e76b6d",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:11:45Z",
+      "side": 1,
+      "message": "I _think_ this OnceValue is pointless if you create it every time you call it. You\u0027re meant to reuse a single OnceValue func (e.g. as a global or as a struct field) so that subsequent calls on the same func do nothing. Here, every call is the first one, as you throw away the func.",
+      "revId": "85354936ae138f89aeb6f5e3ce64115a36a00deb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fce3f94c_d98f09de",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:11:45Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "85354936ae138f89aeb6f5e3ce64115a36a00deb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "829b7dc7_cd6e99b4",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-07T15:11:45Z",
+      "side": 1,
+      "message": "Linewise seems to be primarily about `^` and `$` matching start/end of lines and not just the whole text. It seems to me like you should use the multi-line mode flag. From https://pkg.go.dev/regexp/syntax@go1.22.0#hdr-Syntax:\n\n```\nm              multi-line mode: ^ and $ match begin/end line in addition to begin/end text (default false)\ns              let . match \\n (default false)\n```\n\nYou could drop Linewise and do it directly in the expression string, for example `expr: #\"(?m)GOOS .+$\"#`, or keep Linewise and add the `(?m)` prefix to the regex prather than using `strings.Split`.\n\n(I would not touch the `s` flag in any way, `.` not matching newlines is a sane mode even when you don\u0027t want/need linewise matching)",
+      "revId": "85354936ae138f89aeb6f5e3ce64115a36a00deb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
