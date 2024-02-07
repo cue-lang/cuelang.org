@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb21d4d9_5156395c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-07T15:40:31Z",
+      "side": 1,
+      "message": "I was under the impression that github displays commit messages as markdown, but it turns out it doesn\u0027t!\n\ntbh, I\u0027m so used to reading markdown as text that I personally don\u0027t mind seeing it in commit messages too, but I\u0027m happy to reformat in whatever taste is deemed best.\n\nFeel free to make a suggestion.",
+      "parentUuid": "49f97eec_042235a5",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "2ad31826_08eba422",
