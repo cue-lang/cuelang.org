@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "321ac69a_0aa0f17f",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T14:15:46Z",
+      "side": 1,
+      "message": "As discussed offline, I\u0027ve changed this guide to solely demonstrate (1), above: that a single list\u0027s items are unique.",
+      "parentUuid": "1ac24509_f1ac0adf",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "582d0d85_bf1316cb",
@@ -100,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99c49ae7_daccf996",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T14:15:46Z",
+      "side": 1,
+      "message": "As above, the scope of this guide has changed, which moots this point.",
+      "parentUuid": "8d5c791b_5eaaf3c3",
+      "range": {
+        "startLine": 14,
+        "startChar": 29,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0bdca37d_be57f275",
@@ -131,6 +173,24 @@
       "side": 1,
       "message": "As in other guides, I\u0027ve now linked to https://github.com/cue-lang/docs-and-content/issues/49 (that tracks the lack of such an equality-related document) as a marker.",
       "parentUuid": "0bdca37d_be57f275",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44519579_c5d85d6b",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T14:15:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05fda8a7_1a2bfba1",
       "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -170,6 +230,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "739a8d33_0511cc19",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T14:15:46Z",
+      "side": 1,
+      "message": "As above, the scope of this guide has changed, which moots this point.",
+      "parentUuid": "7d2daa66_7140b370",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c7630dd_11a6d23c",
@@ -201,6 +279,24 @@
       "side": 1,
       "message": "As above.",
       "parentUuid": "8c7630dd_11a6d23c",
+      "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47d6b777_4d97a3b1",
+        "filename": "content/docs/howto/use-the-built-in-function-list-uniqueitems-to-enforce-complete-or-partial-list-item-uniqueness/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T14:15:46Z",
+      "side": 1,
+      "message": "As above, the scope of this guide has changed, which moots this point.",
+      "parentUuid": "db0095d7_bc1c8212",
       "revId": "d6f8519a8d4d3b722914a4227f9456088c19ef5c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
