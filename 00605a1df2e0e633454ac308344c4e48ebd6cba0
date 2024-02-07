@@ -159,6 +159,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "93f9ba0b_0752fb5e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T16:48:31Z",
+      "side": 1,
+      "message": "https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1176566 adds the `modules` tag.\n\n@rogpeppe@gmail.com: I think this tutorial should be tagged as `modules`, `tooling` and `cue command`. You can safely include the `modules` tag before the above CL is merged - using non-existent tags doesn\u0027t break the build.",
+      "parentUuid": "28aaf710_f78521eb",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "055d4606_287f2544",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 24
@@ -193,6 +211,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6acbbe25_f4f2238e",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T16:48:31Z",
+      "side": 1,
+      "message": "Annoyingly the language guide\u0027s pages on schemata aren\u0027t yet (IMHO) suitable for linking to. The tour contains a couple of decent candidates, so I propose we link to both via\n\n```\n- **Some awareness of CUE schemata\n  ([Constraints]({{\u003c relref \"/docs/tour/basics/constraints\" \u003e}}) and\n   [Definitions]({{\u003c relref \"/docs/tour/basics/definitions\" \u003e}}) in the CUE tour)\n```",
+      "parentUuid": "e755f070_70b57c89",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "82abdb75_6c659961",
         "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
         "patchSetId": 24
@@ -204,6 +240,24 @@
       "writtenOn": "2024-02-07T16:03:08Z",
       "side": 1,
       "message": "I think we are missing an introductory section that explains the setup, i.e. explains the structure of FrostyApp. That it consumes configuration in Yaml etc. Otherwise it\u0027s somewhat sprung on us as part of the first step.",
+      "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ca6cbae_3be781d3",
+        "filename": "content/docs/tutorial/working-with-a-private-module-registry/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-07T16:48:31Z",
+      "side": 1,
+      "message": "I think having a \"Introduction\" or \"Background\" H2 section before step 1 could help, and relieve some of the prose pressure on individual steps by transplanting some of their background-y content to the top.",
+      "parentUuid": "82abdb75_6c659961",
       "revId": "00605a1df2e0e633454ac308344c4e48ebd6cba0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
