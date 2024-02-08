@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "dKfEVEPnQ/ZOZAjcKsVqPxpQKe2LC4UcWtuvQVSsO60="
-								"config.cue":               "2YSft5KxyG61FhCs4w2QopPykAWrY4CRLmRO0E8vRx0="
-								"frostyapp-tidy-result-1":  "HOuBFXysVM8F8NUViS74F63+GnrY7YEkUr/gCv7fvA8="
-								"second-module-to-publish": "kSfAsjOcd8wfWoEf2crON9ErHaRoqh/UympS1cs4OcE="
-								"update-frostyapp":         "yYyXIEi2mFugT97EC7MYrHyxQsc7ekBJHPss5/mG0wI="
-								"frostyapp-tidy-result-2":  "qsKdMCfop4OtjRmAxpRODkfFdRhtfMBSpQi+VRFqCCY="
-								"schema-v0.1.0":            "CRT7fZcxifd8eHrTdaLcnKX+Ng/YpD2CEAtDY3TCkS4="
-								"edit-dependency-version":  "ewZvCSXHDYBa3RABKQrnYLKUjX1xT5xAgw84tDNnBgo="
+								"schema-v0.0.1":            "TeHK8ZsyajbyI60Dq9SKBF9JcgDrAvC39RgNzNm3f28="
+								"config.cue":               "eN11LxeVEaZ6p/Z/kzJG2QfUamyB8zMNtXAAiMRSfl8="
+								"frostyapp-tidy-result-1":  "+HxGc5MNtdctkQfN7BimUmx8zAWG9GTD4bfE9EkjfnI="
+								"second-module-to-publish": "58+o+DEhiqGBQW7/s6lfh/LpFZpFnDkCGxG4PKpGjag="
+								"update-frostyapp":         "KlkvHYaZlMiYThLImJ/9QxYhk4SSnJlScCajrwrGNxg="
+								"frostyapp-tidy-result-2":  "H0+n72yb+06ZGcuzVP6OI8sM0oiDeFZwLIDmt63Sws8="
+								"schema-v0.1.0":            "P/PXs7SEYOQnxBnwqTYZ+b+ABErLC9bPItYYEcUDRgk="
+								"edit-dependency-version":  "Ag9N3TOn3k+sD0pDRsTzYG0p4pMtosF2Wc5GSUBOCJo="
 							}
 							multi_step: {
-								"3GEAG2CI5QU9LD21LIVCHPLGUQP03TN0KPU0BEH9VSRIQANALDJ0====": []
+								"MODB6OJBG9HNQ3R9732VHS49N8OSKMHGKD0MOLVGFV0TKCKBAVR0====": []
 							}
 						}
 					}
