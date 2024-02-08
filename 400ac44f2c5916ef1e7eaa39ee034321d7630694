@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "845bad33_ee6267ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "Some early comments \u0026 replies.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "403beb86_f0741d4d",
@@ -37,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "71548c18_a47ba334",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "And vice versa. I\u0027ll do a tone/etc pass over the tutorial, and include a link to this doc, over there.",
+      "parentUuid": "403beb86_f0741d4d",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "170a97f5_cbeaff12",
         "filename": "content/docs/reference/modules-experiment/en.md",
         "patchSetId": 1
@@ -48,6 +83,58 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "This document is intended as a modules reference, right?\n\nI would suggest the title \"CUE Modules Reference\" and then leave the `\u003cinfo\u003e` caveat below to capture the experimental piece.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45ba265f_fd8e1f2c",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "@paul@myitcv.io Note that, at my suggestion, this page\u0027s URL references the experimental status. I suggested this as we can easily set up an alias when the feature goes non-experimental, pushing old requests for the experimental URL over to the now-stable URL.",
+      "parentUuid": "170a97f5_cbeaff12",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e60290d6_95e67501",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "`weight` isn\u0027t needed (yet).",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbb8134e_3eb885b3",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "Please include `toc_hide: true`",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -122,6 +209,23 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "I think we need to include some link and mention of the existing modules/package docs and how they will be adapted/updated:\n\nhttps://alpha.cuelang.org/docs/concept/modules-packages-instances/",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "220e136f_862ccc4a",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "Reflow.",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -282,6 +386,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d620991d_547f71ac",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "I think I\u0027d use a language-specific fenced code block.\n \n````\n```CUE\nx: y \u0026 z\n```\n````",
+      "parentUuid": "d62a568c_46467084",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bdaabde9_1f7c4144",
         "filename": "content/docs/reference/modules-experiment/en.md",
         "patchSetId": 1
@@ -350,6 +472,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "This has rendered far too big. @github@hello.jonathanmatthews.com can we control this?",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49e43794_09400cfb",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T18:05:19Z",
+      "side": 1,
+      "message": "I can\u0027t, after a bit of experimentation. I\u0027ve tried common markdown format options, and raw HTML. \n\nEven changing an inline image to an HTML `\u003cimg\u003e` tag, and controlling the `height` and `width` attributes, a test image still appears full width.\n\nI /suspect/ something to do with CSS and the underlying page layout is forcing full-width display, but you\u0027d have to ask USM to confirm that.",
+      "parentUuid": "82693e04_842d92ec",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
