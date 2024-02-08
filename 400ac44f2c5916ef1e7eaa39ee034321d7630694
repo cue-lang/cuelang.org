@@ -1,0 +1,431 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b67ca86_540fba12",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Generally LGTM as a first cut with some suggestions. Would like to give another quick look before +2.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "403beb86_f0741d4d",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "This document should have related content linking to the tutorial.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "170a97f5_cbeaff12",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "This document is intended as a modules reference, right?\n\nI would suggest the title \"CUE Modules Reference\" and then leave the `\u003cinfo\u003e` caveat below to capture the experimental piece.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbbe1d7a_657cd8d7",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Missing the tag \"modules\"",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac3a6551_9b193f0f",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "\"is\"\n\nAnd then update the `\u003cinfo\u003e` block above to call out that it is WIP.",
+      "range": {
+        "startLine": 15,
+        "startChar": 14,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "faaec1f8_1bda0242",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "We should also add a short paragraph here linking to the Go modules reference, crediting Russ and the Go team etc.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00e5c502_f403280b",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "I think we need to include some link and mention of the existing modules/package docs and how they will be adapted/updated:\n\nhttps://alpha.cuelang.org/docs/concept/modules-packages-instances/",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b1ff0c8_37622a53",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "The explanation is crying out for an example module path here. Not only to ground what you are explaining, but also so the explanation can reference the example.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6d6ce10_4ef1664a",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Probably use a https://alpha.cuelang.org/examples/shortcodes/quote/ instead.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cf125d0_8693502d",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Perhaps link to the Go modules reference here.",
+      "range": {
+        "startLine": 137,
+        "startChar": 10,
+        "endLine": 137,
+        "endChar": 12
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6238b9ae_6213d0eb",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "I\u0027m still nervous about us doing this... Copy-paste of code no longer just \"works\", it requires further tweaking. On the basis that we\u0027re still within the experiment phase I guess it\u0027s ok?",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "282eabcd_c60b790e",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "This discussion about `CUE_REGISTRY` seems somewhat buried under the head of \"Resolving a package to a module\". To my mind it\u0027s a key property of what we are doing that the module/package path is _not_ tied to the registry. Hence having discussion about `CUE_REGISTRY` under it\u0027s own heading not only allows for that point to be highlighted but it also adds emphasis to the distinction.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36d26735_90a53082",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Grammar.",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 12
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d54f9f5_c50b9b44",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Where did we propose calling this strict vs non-strict? \n\nHaving the term strict vs non-strict seems to imply that the module code generally can accept both forms. I don\u0027t believe this is the case. Only `cue mod tidy` does some helpful canonicalization as I understand it. As such, I don\u0027t think this warrants us naming two different modes, rather simply calling out where `cue mod tidy` can work its magic.",
+      "range": {
+        "startLine": 237,
+        "startChar": 43,
+        "endLine": 239,
+        "endChar": 69
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d62a568c_46467084",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "@github@hello.jonathanmatthews.com what options do we have for rendering this as CUE without requiring a filename?",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdaabde9_1f7c4144",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Per comment above. I would suggest we collapse these into a single block.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1460a2e1_22e5f01b",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "\"to manipulate\" perhaps?",
+      "range": {
+        "startLine": 312,
+        "startChar": 48,
+        "endLine": 312,
+        "endChar": 58
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa47b96c_e74a96bd",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Is this copy borrowed from the Go docs?\n\nWe should add a comment in places where we have done.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82693e04_842d92ec",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "This has rendered far too big. @github@hello.jonathanmatthews.com can we control this?",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4e84712_98074288",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Please can you add a TODO here on including a diagram to help visualise this?",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7144685d_9a643c4b",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Just to check - is this documented as part of `cue help environment`?\n\nWe should link to those CLI docs from here.",
+      "range": {
+        "startLine": 423,
+        "startChar": 33,
+        "endLine": 423,
+        "endChar": 45
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9bd67d8_79e3d98d",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "I think we could make slightly more of the fact that CUE is following an existing pattern here.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64e1a68f_ce0dfb5f",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-08T14:15:39Z",
+      "side": 1,
+      "message": "Happy for this to start here, but I wonder whether with time we should put this in a separate reference doc \"Modules Glossary\".\n\ncc @github@hello.jonathanmatthews.com",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
