@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b20a9af5_c938f1d7",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-json-validate-to-validate-that-json-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T17:43:52Z",
+      "side": 1,
+      "message": "I\u0027ve removed \"the built-in function\" as per other CLs.\n\nI feel this function definitely needs /some/ suffix as the function\u0027s function isn\u0027t clear from just referring to its name. That\u0027s not a criticism of the name, just that there are several options it /could/ mean.",
+      "parentUuid": "8e069103_66eb8e6f",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2d8f3f3_a0796d03",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-01-30T14:49:34Z",
       "side": 1,
       "message": "To my mind it\u0027s a bug that `json.Validate` and `yaml.Validate` are not symmetric in their behaviour here. Is there an issue for this?\n\nEither way, I would leave this explanation below the code block, as well as the warning that follows.",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cf65da7_f0718966",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-json-validate-to-validate-that-json-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T17:43:52Z",
+      "side": 1,
+      "message": "I\u0027ve raised https://github.com/cue-lang/cue/issues/2800, and now that I\u0027ve merged the 2 YAML guides, fewer warnings are needed (as the functions\u0027 behaviours are presented more clearly).",
+      "parentUuid": "e2d8f3f3_a0796d03",
       "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b71303a_ecce7e8c",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-json-validate-to-validate-that-json-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T17:43:52Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "feb2ee50_a2e56205",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56499157_c6a7b846",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-01-30T14:49:34Z",
       "side": 1,
       "message": "I would stick this warning below the code block.",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc9850c3_47d95a59",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-yaml-validate-to-validate-that-yaml-satisfies-a-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T17:43:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56499157_c6a7b846",
       "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64a02ccb_7630606b",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-yaml-validate-to-validate-that-yaml-satisfies-a-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T17:43:52Z",
+      "side": 1,
+      "message": "Now that the 2 YAML guides have been merged, this prose is present (simplified) as code comments.",
+      "parentUuid": "26b76268_8e29bba8",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bab39591_8d6c4369",
@@ -99,6 +189,24 @@
       "writtenOn": "2024-01-30T14:49:34Z",
       "side": 1,
       "message": "I half wonder whether splitting this into a separate guide actually harms readability. Because there\u0027s jumping required between this and `yaml.Validate`. The two are so closely linked, I think it\u0027s easier to have them in the same guide?",
+      "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e50aed32_bd76bc22",
+        "filename": "content/docs/howto/use-the-built-in-function-encoding-yaml-validatepartial-to-validate-that-yaml-adheres-to-constraints/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-08T17:43:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab39591_8d6c4369",
       "revId": "bf322a38bfbc361430d1044e222762fa0b0649fe",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
