@@ -11,7 +11,7 @@ import (
 versions: {
 	go:            "go1.21.1"
 	bareGoVersion: strings.TrimPrefix(go, "go")
-	cue:           "v0.7.0"
+	cue:           "v0.7.1-0.20240207200302-63dbc2d8ec3a"
 	testscript:    "v1.10.0"
 }
 
