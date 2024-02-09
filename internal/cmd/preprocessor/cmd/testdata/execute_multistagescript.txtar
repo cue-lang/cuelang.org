@@ -192,13 +192,12 @@ hello
 ```
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
 $ cue version
-cue version v0.7.0
+cue version v0.7.1-0.20240209142734-649c7f6b554b
 
 go version go1.21.1
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG panicnil=1
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
@@ -215,12 +214,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "jDUGOTSHcIiT0W9co7mzJ0vpV+SDKYu2Km5adsGtfXY="
-						"upload-some-json": "4DginCJnEwV1CoshA6UsJm6al6HFwB9WqzUX3O7K1i0="
-						"in-subdir":        "VGUXHKXCtP+/aLbwSQ4vEecuCdsRklgwqgWz+tGP7BU="
+						"upload-some-cue":  "AnHlumDeFuNcat07aC8qSl/zZ3C5nc5zkQ+w9YShFjw="
+						"upload-some-json": "tN2LWCm+y1TYvKpBs16k+Xxusg92Ou2AuMH1UQBOQu4="
+						"in-subdir":        "g9lylU2qiYhQax0R4S1QgZRI9mJZm/w8F2dvQLrnhOA="
 					}
 					multi_step: {
-						"8P5EO9NH81OIH0K0H56HM58LMSJC8QPCAE67RBNI7FKRFTURAQP0====": [{
+						"Q08GADGB0M3GSLRKIMUCVU6E8M5UDSPQKC3FQFCV06QP6NDF7H8G====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -251,13 +250,12 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.7.0
+									cue version v0.7.1-0.20240209142734-649c7f6b554b
 
 									go version go1.21.1
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG panicnil=1
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
