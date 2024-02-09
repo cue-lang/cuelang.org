@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"NF043T4LI0HR7I4KP5KJQ4G6QVAOBD1NCVJNVF0CFJD3NS807K60====": [{
+									"AFVH7HVP3AAU9F9N0AVRMTCVRCJ70ALVP4F9CF0VMK7D3JDFAELG====": [{
 										doc:      ""
 										cmd:      "cue help"
 										exitCode: 0
@@ -61,11 +61,12 @@ package site
 												  -v, --verbose      print information about progress
 
 												Additional help topics:
-												  cue commands   user-defined commands
-												  cue filetypes  supported file types and qualifiers
-												  cue flags      common flags for composing packages
-												  cue injection  inject files or values into specific fields for a build
-												  cue inputs     package list, patterns, and files
+												  cue commands    user-defined commands
+												  cue environment environment variables
+												  cue filetypes   supported file types and qualifiers
+												  cue flags       common flags for composing packages
+												  cue injection   inject files or values into specific fields for a build
+												  cue inputs      package list, patterns, and files
 
 												Use "cue [command] --help" for more information about a command.
 
