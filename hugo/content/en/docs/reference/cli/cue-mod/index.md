@@ -15,6 +15,8 @@ Usage:
 
 Available Commands:
   init        initialize new module in current directory
+  publish     publish the current module to a registry
+  tidy        download and tidy module dependencies
 
 Global Flags:
   -E, --all-errors   print all available errors
