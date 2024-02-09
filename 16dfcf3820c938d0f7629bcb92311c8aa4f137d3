@@ -39,6 +39,23 @@
       "message": "Not a priority to review, just something I came across and forgot to add to the stack yesterday.",
       "revId": "16dfcf3820c938d0f7629bcb92311c8aa4f137d3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c6c2052_354f2edc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-09T12:14:53Z",
+      "side": 1,
+      "message": "Personally I\u0027d keep false the default and name it something like --nocachemiss or, to keep it simple and avoid negatives, --fullcache or --readonlycache. I find boolean flags a lot easier to reason about when the default is false, and CI using e.g. `--fullcache` is also more intuitive to me than `--allowcachemiss\u003dfalse`.\n\nThe help text could also be made more straightforward then, like:\n\n\u003e --fullcache\n\u003e     require the cached script runs to be up to date\n\ninstead of\n\n\u003e --readonlycache\u003dfalse\n\u003e     whether to attempt to run scripts or not\n\nI hold this lightly though, so if you disagree, feel free to merge as-is.",
+      "revId": "16dfcf3820c938d0f7629bcb92311c8aa4f137d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
