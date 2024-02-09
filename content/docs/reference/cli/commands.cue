@@ -35,26 +35,28 @@ cue: {
 		execCmd: "cue help"
 		title:   "cue"
 	}
-	version:    _
-	cmd:        _
-	commands:   _
-	completion: _
-	def:        _
-	eval:       _
-	export:     _
-	filetypes:  _
-	fix:        _
-	flags:      _
-	fmt:        _
-	get:        _
-	"get go":   _
-	help:       _
-	import:     _
-	injection:  _
-	inputs:     _
-	mod:        _
-	"mod init": _
-	trim:       _
-	version:    _
-	vet:        _
+	version:     _
+	cmd:         _
+	commands:    _
+	completion:  _
+	def:         _
+	environment: _
+	eval:        _
+	export:      _
+	filetypes:   _
+	fix:         _
+	flags:       _
+	fmt:         _
+	get:         _
+	"get go":    _
+	help:        _
+	import:      _
+	injection:   _
+	inputs:      _
+	mod:         _
+	"mod init":  _
+	"mod tidy":  _
+	trim:        _
+	version:     _
+	vet:         _
 }
