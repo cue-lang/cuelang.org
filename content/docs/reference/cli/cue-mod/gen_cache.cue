@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"P13TH3VO12MBM9U7HSBOPKLCCBNRR9T3K19NOFJ27SQES09VFG6G====": [{
+									"85V35TKH33U3VLBCSIRHJEE9E9F8ECSGAQPEAB3DVMMHPMA71980====": [{
 										doc:      ""
 										cmd:      "cue help mod"
 										exitCode: 0
@@ -21,6 +21,8 @@ package site
 
 												Available Commands:
 												  init        initialize new module in current directory
+												  publish     publish the current module to a registry
+												  tidy        download and tidy module dependencies
 
 												Global Flags:
 												  -E, --all-errors   print all available errors

@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							code: {
-								"proto-cue-constraints": "fDPUT016EaAtnNYSstCRDJ77idytEOhG9KQNlwkMYqA="
-								"proto-extract-cue":     "fG4LzFH5Xrc4KF9mEFt+i3F0/09D6ZZHdOFJ27+3qAE="
-								"go-use-proto":          "QzHeDFHNj9//YE4dmhp2ts7gGgkq02at2AKh/3ACf9s="
-								"cue-from-go":           "rwcNDvP0zyZINhAShYYSGdxaL5O+y7Ew2JKf0+Rovl4="
+								"proto-cue-constraints": "aAxKrX+4hLX97yMflKqIuNxmaD7gxBlZialAmWLoxrQ="
+								"proto-extract-cue":     "3AIHRN7OUCSlVkhrSSZ4hSpBcYg5Ns0NRDb6o2uqTGc="
+								"go-use-proto":          "pGDDvAUNsFLdhk7UCqMmOJTqHWRyxBD2EnDGlvsJDUQ="
+								"cue-from-go":           "RCpnmW5hUAW8WuN+jYQa9IAy2lSdHL7r+eWPCwfKStw="
 							}
 						}
 					}
