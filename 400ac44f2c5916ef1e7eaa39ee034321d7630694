@@ -105,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9c58428_9a9f81a9",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "I\u0027m going with Paul\u0027s suggestion here, and moving the URL to `docs/reference/modules`.",
+      "parentUuid": "45ba265f_fd8e1f2c",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e60290d6_95e67501",
@@ -118,6 +136,24 @@
       "writtenOn": "2024-02-08T18:05:19Z",
       "side": 1,
       "message": "`weight` isn\u0027t needed (yet).",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1efa743c_e3a74d81",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e60290d6_95e67501",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -139,6 +175,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b434d7b0_9d171d88",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbb8134e_3eb885b3",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cbbe1d7a_657cd8d7",
@@ -152,6 +206,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "Missing the tag \"modules\"",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b428864_cb09b6d1",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbbe1d7a_657cd8d7",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -179,6 +251,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da38655d_c7f5f523",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac3a6551_9b193f0f",
+      "range": {
+        "startLine": 15,
+        "startChar": 14,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "faaec1f8_1bda0242",
@@ -192,6 +288,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "We should also add a short paragraph here linking to the Go modules reference, crediting Russ and the Go team etc.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d66de9f1_8a7b17a1",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "faaec1f8_1bda0242",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -213,6 +327,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "59d253eb_c090103b",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00e5c502_f403280b",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "220e136f_862ccc4a",
@@ -226,6 +358,24 @@
       "writtenOn": "2024-02-08T18:05:19Z",
       "side": 1,
       "message": "Reflow.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29f12753_d0c63a8c",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "220e136f_862ccc4a",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -247,6 +397,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c721e9f_f800632b",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b1ff0c8_37622a53",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6d6ce10_4ef1664a",
@@ -260,6 +428,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "Probably use a https://alpha.cuelang.org/examples/shortcodes/quote/ instead.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17b6c07c_42e0aa1e",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6d6ce10_4ef1664a",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -287,6 +473,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e0f5500_2c0967d8",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cf125d0_8693502d",
+      "range": {
+        "startLine": 137,
+        "startChar": 10,
+        "endLine": 137,
+        "endChar": 12
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6238b9ae_6213d0eb",
@@ -300,6 +510,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "I\u0027m still nervous about us doing this... Copy-paste of code no longer just \"works\", it requires further tweaking. On the basis that we\u0027re still within the experiment phase I guess it\u0027s ok?",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae406999_3c3f1ff5",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "6238b9ae_6213d0eb",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -344,6 +572,48 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89c59386_c8108ecb",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "It\u0027s now in its own section.",
+      "parentUuid": "282eabcd_c60b790e",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4feae68_d5dc0a4b",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36d26735_90a53082",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 12
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d54f9f5_c50b9b44",
@@ -357,6 +627,30 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "Where did we propose calling this strict vs non-strict? \n\nHaving the term strict vs non-strict seems to imply that the module code generally can accept both forms. I don\u0027t believe this is the case. Only `cue mod tidy` does some helpful canonicalization as I understand it. As such, I don\u0027t think this warrants us naming two different modes, rather simply calling out where `cue mod tidy` can work its magic.",
+      "range": {
+        "startLine": 237,
+        "startChar": 43,
+        "endLine": 239,
+        "endChar": 69
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "330775b5_ba3f1217",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "I don\u0027t think it was proposed as such, but there are de facto two modes: one is the lax form as accepted by `cue mod tidy` and the strict form as checked by the central registry. The \"real\" version is the strict version, but if we describe the schema like that, then it won\u0027t be clear what people are allowed to write before running `cue mod tidy`. Hence I split it into two here.\n\nIf we\u0027re going to document only one, do you think it should be the strict mode or the lax mode?",
+      "parentUuid": "2d54f9f5_c50b9b44",
       "range": {
         "startLine": 237,
         "startChar": 43,
@@ -402,6 +696,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ec22920_59d9d7bb",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d620991d_547f71ac",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bdaabde9_1f7c4144",
@@ -442,6 +754,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f44723f_c2d454b9",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1460a2e1_22e5f01b",
+      "range": {
+        "startLine": 312,
+        "startChar": 48,
+        "endLine": 312,
+        "endChar": 58
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa47b96c_e74a96bd",
@@ -455,6 +791,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "Is this copy borrowed from the Go docs?\n\nWe should add a comment in places where we have done.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6aee43e9_ca2dff5f",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "A lot of this text was derived from the Go docs. Instead of mentioning it everywhere, I added a blanket comment at the top acknowledging that.",
+      "parentUuid": "fa47b96c_e74a96bd",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -494,6 +848,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96d37e87_ba8e5fca",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Given the above, I\u0027ll leave as is for now, just adding a TODO to address it.",
+      "parentUuid": "49e43794_09400cfb",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4e84712_98074288",
@@ -507,6 +879,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "Please can you add a TODO here on including a diagram to help visualise this?",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf8df64b_e9a3efdf",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4e84712_98074288",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -534,6 +924,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5b8b6fc_8b3826b7",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Yup. Done.",
+      "parentUuid": "7144685d_9a643c4b",
+      "range": {
+        "startLine": 423,
+        "startChar": 33,
+        "endLine": 423,
+        "endChar": 45
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9bd67d8_79e3d98d",
@@ -551,6 +965,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5787e8de_35b5e70d",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9bd67d8_79e3d98d",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64e1a68f_ce0dfb5f",
@@ -564,6 +996,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "Happy for this to start here, but I wonder whether with time we should put this in a separate reference doc \"Modules Glossary\".\n\ncc @github@hello.jonathanmatthews.com",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a57ac753_7b6ea7f0",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-09T14:20:54Z",
+      "side": 1,
+      "message": "I added a TODO for that.",
+      "parentUuid": "64e1a68f_ce0dfb5f",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
