@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "712161a2_3c6d6dec",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9da76793_1cb46e6b",
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ea19392_6745b4e1",
@@ -69,6 +87,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "58b96bf4_8211f310",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea19392_6745b4e1",
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe225935_6bdb9641",
@@ -82,6 +118,30 @@
       "writtenOn": "2024-02-09T17:02:22Z",
       "side": 1,
       "message": "```suggestion\n`cue.mod/module.cue` file declaring its module path. This is the path prefix\nto use when importing packages from within the module.\n```\n?",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 0
+      },
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "960240b5_7723f6f6",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe225935_6bdb9641",
       "range": {
         "startLine": 74,
         "startChar": 0,
@@ -115,6 +175,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48796de1_95d02e43",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "309dfe24_a1596924",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 0
+      },
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1adfcf9c_9ee2b1f9",
@@ -128,6 +212,24 @@
       "writtenOn": "2024-02-09T17:02:22Z",
       "side": 1,
       "message": "```suggestion\nto holding CUE modules exclusively.\n```\n?",
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "122b2d5f_3a455635",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1adfcf9c_9ee2b1f9",
       "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -149,6 +251,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5b67dd5_e6c8a719",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bc51b3f_7326b263",
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcedb241_3c66d8f2",
@@ -166,6 +286,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3c25589_065022ff",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "I use both, but where I\u0027m trying to be more forcible about sticking a word in front of a reader, I use bold **on this site**. In my personal opinion italics with our current CSS are quite close to \"normal\" text, and feel distinctly less ... \"shouty\": https://alpha.cuelang.org/examples/basic/text/#emphasis. Which is fine, and they have their uses, but for usages like this, I like shouty :-)",
+      "parentUuid": "fcedb241_3c66d8f2",
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1dc9a9a_8ae04101",
@@ -179,6 +317,24 @@
       "writtenOn": "2024-02-09T17:02:22Z",
       "side": 1,
       "message": "Is it right that this section is empty?",
+      "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76492c3e_5d4c3d3a",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:55:15Z",
+      "side": 1,
+      "message": "Yes, it\u0027s just a placeholder for use after/as the reference doc is merged. It could happily be removed, but I thought I\u0027d leave it in place for you to fill in, in the same CL that adds the reference doc. I.e. adding \"modules doc #2\" allows you to create a 2-way \"Related content\" link.",
+      "parentUuid": "c1dc9a9a_8ae04101",
       "revId": "4efd342382218d6149a858a38f81f2adc5fe14a1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
