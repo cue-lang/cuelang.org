@@ -16,6 +16,24 @@
       "message": "@github@hello.jonathanmatthews.com - please can you take a look at the diffs re IP here?",
       "revId": "7a4c1481329c1038b253932858989d63fc8b7b96",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dc39589_656a9992",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T20:12:07Z",
+      "side": 1,
+      "message": "LGTM. I was waiting for this change to come down the pike, relating to the underlying net-related Go lib being swapped out.\n\nThe change to `v4Bytes` looks like an unexpected win to me. I didn\u0027t personally like that v4 and v6 addresses had the same list length, so this representation feels more correct.",
+      "parentUuid": "500dd389_6086ca6e",
+      "revId": "7a4c1481329c1038b253932858989d63fc8b7b96",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
