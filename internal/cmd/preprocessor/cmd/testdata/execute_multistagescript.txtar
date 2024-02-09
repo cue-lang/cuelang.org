@@ -192,13 +192,13 @@ hello
 ```
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
 $ cue version
-cue version v0.7.0
+cue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24
 
 go version go1.22.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,panicnil=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
+  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
@@ -215,12 +215,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "21PnepoP6ksexORHoHwjsL4Yj6+IQfaDQ9FmoVo2PmA="
-						"upload-some-json": "xoHUdy43vvscvPe4Y94yUhsjmktFP6olX2Cs+tAaj+I="
-						"in-subdir":        "/NDj+jZqKlqn7REeB3ckJ18T9kJf2Amtqx87LD2J7P0="
+						"upload-some-cue":  "t/8R3MZfp5S6nxeKI70M8H6MdN8p7cKi1oOW1voagYs="
+						"upload-some-json": "mkNH3AVYAkyyKFxushsZAnGz7KDVdwl6hMrDwFfjPTk="
+						"in-subdir":        "B1oj6XGAl7FLEJOJCJXxlVOgSrdj0t3wbCXE69sjqd0="
 					}
 					multi_step: {
-						"C4C0GU37D073N26VCD8C9BMDTA22PGAI2KG8D77U7OB7JD6VVA60====": [{
+						"GVBC7PRFLAQ3RF3LB8DNFP52PJ2IT78LNI417RMB57LF3K8P1C70====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -251,13 +251,13 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.7.0
+									cue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24
 
 									go version go1.22.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,panicnil=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
+									  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
