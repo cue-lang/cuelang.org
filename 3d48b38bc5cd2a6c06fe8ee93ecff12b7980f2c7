@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c7ba5a3_c8dd7bb4",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:23:45Z",
+      "side": 1,
+      "message": "You\u0027re right, and I\u0027ve now reworked this guide\u0027s example as a proper type switch.",
+      "parentUuid": "542b5b08_00ee0246",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c442e64b_280b6624",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-01-31T13:28:37Z",
       "side": 1,
       "message": "I would suggest we use much plainer language here. Indeed the comment could potentially disappear almost entirely if we were to constraint `output` with a schema and comment the fields. The comment for `output` could then be much shorter, saying that it is derived from `input` and the type of values in that list.",
+      "range": {
+        "startLine": 24,
+        "startChar": 12,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9bae3df_61c65435",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c442e64b_280b6624",
       "range": {
         "startLine": 24,
         "startChar": 12,
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "793968b0_1c13529c",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81dfec65_6d36c87e",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b9bdb7a_72ce76b8",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-01-31T13:28:37Z",
       "side": 1,
       "message": "Why the double braces?",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "051e7f21_84c625ca",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b9bdb7a_72ce76b8",
       "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -92,6 +170,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae3d449c_570a4323",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2982c7f6_9bb38eba",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd3bb83d_464bf5d0",
@@ -109,6 +205,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2582f709_cc544ef8",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd3bb83d_464bf5d0",
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b41cdde4_8b6c349d",
@@ -122,6 +236,30 @@
       "writtenOn": "2024-01-31T13:28:37Z",
       "side": 1,
       "message": "Simpler language: \"The approach to testing the type of a value shown in this guide is likely...\"",
+      "range": {
+        "startLine": 76,
+        "startChar": 17,
+        "endLine": 76,
+        "endChar": 47
+      },
+      "revId": "3d48b38bc5cd2a6c06fe8ee93ecff12b7980f2c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9104be0f_198f85ac",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-09T17:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b41cdde4_8b6c349d",
       "range": {
         "startLine": 76,
         "startChar": 17,
