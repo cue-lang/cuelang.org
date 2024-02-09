@@ -34,10 +34,10 @@ v6MalformedPrefix:    ":::1/128"
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
 $ cue vet
-v4SubnetMaskTooLarge: invalid value "10.0.0.0/50" (does not satisfy net.IPCIDR): error in call to net.IPCIDR: invalid CIDR address: 10.0.0.0/50:
+v4SubnetMaskTooLarge: invalid value "10.0.0.0/50" (does not satisfy net.IPCIDR): error in call to net.IPCIDR: netip.ParsePrefix("10.0.0.0/50"): prefix length out of range:
     ./file.cue:6:6
     ./file.cue:15:23
-v6MalformedPrefix: invalid value ":::1/128" (does not satisfy net.IPCIDR): error in call to net.IPCIDR: invalid CIDR address: :::1/128:
+v6MalformedPrefix: invalid value ":::1/128" (does not satisfy net.IPCIDR): error in call to net.IPCIDR: netip.ParsePrefix(":::1/128"): ParseAddr(":::1"): each colon-separated field must have at least one digit (at ":1"):
     ./file.cue:6:6
     ./file.cue:16:23
 {{< /code-tab >}}
