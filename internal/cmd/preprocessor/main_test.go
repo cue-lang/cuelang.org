@@ -62,7 +62,7 @@ func TestServeScript(t *testing.T) {
 	// happens (a timeout that should trigger an interrupt of the serve process)
 	// is almost zero, unless the caller deliberately sets a significantly lower
 	// test timeout.
-	cmd := exec.CommandContext(ctx, "./_scripts/serve.bash", "--debug=all")
+	cmd := exec.CommandContext(ctx, "./_scripts/serve.bash")
 	cmd.Cancel = func() error {
 		return cmd.Process.Signal(os.Interrupt)
 	}
