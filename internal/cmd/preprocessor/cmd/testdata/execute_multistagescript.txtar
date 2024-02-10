@@ -194,11 +194,11 @@ hello
 $ cue version
 cue version v0.7.0
 
-go version go1.21.1
+go version go1.22.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG panicnil=1
+  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,panicnil=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
@@ -215,12 +215,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "jDUGOTSHcIiT0W9co7mzJ0vpV+SDKYu2Km5adsGtfXY="
-						"upload-some-json": "4DginCJnEwV1CoshA6UsJm6al6HFwB9WqzUX3O7K1i0="
-						"in-subdir":        "VGUXHKXCtP+/aLbwSQ4vEecuCdsRklgwqgWz+tGP7BU="
+						"upload-some-cue":  "21PnepoP6ksexORHoHwjsL4Yj6+IQfaDQ9FmoVo2PmA="
+						"upload-some-json": "xoHUdy43vvscvPe4Y94yUhsjmktFP6olX2Cs+tAaj+I="
+						"in-subdir":        "/NDj+jZqKlqn7REeB3ckJ18T9kJf2Amtqx87LD2J7P0="
 					}
 					multi_step: {
-						"8P5EO9NH81OIH0K0H56HM58LMSJC8QPCAE67RBNI7FKRFTURAQP0====": [{
+						"C4C0GU37D073N26VCD8C9BMDTA22PGAI2KG8D77U7OB7JD6VVA60====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -253,11 +253,11 @@ package site
 							output: """
 									cue version v0.7.0
 
-									go version go1.21.1
+									go version go1.22.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG panicnil=1
+									  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,panicnil=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
