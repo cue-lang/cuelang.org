@@ -2,7 +2,7 @@
 
 # Code generated site_tool.cue; DO NOT EDIT.
 
-FROM golang:1.21.1 AS build
+FROM golang:1.22.0 AS build
 
 ENV CGO_ENABLED=0
 
@@ -21,7 +21,7 @@ RUN \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   go install -trimpath cuelang.org/go/cmd/cue@v0.7.0
 
-FROM golang:1.21.1
+FROM golang:1.22.0
 
 RUN mkdir -p /go/bin
 
