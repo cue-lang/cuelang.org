@@ -12,7 +12,7 @@ versions: {
 	go:            "go1.22.0"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue:           "v0.8.0-0.dev.0.20240210175433-b460e71a6f24"
-	testscript:    "v1.10.0"
+	testscript:    "v1.11.0"
 }
 
 // _contentDefaults is a recursive template for setting defaults
