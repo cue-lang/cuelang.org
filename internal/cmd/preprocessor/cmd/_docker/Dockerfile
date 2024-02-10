@@ -13,7 +13,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.10.0
+  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.11.0
 
 RUN \
   --mount=type=cache,target=/cache/gocache \
