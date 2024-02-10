@@ -215,12 +215,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "t/8R3MZfp5S6nxeKI70M8H6MdN8p7cKi1oOW1voagYs="
-						"upload-some-json": "mkNH3AVYAkyyKFxushsZAnGz7KDVdwl6hMrDwFfjPTk="
-						"in-subdir":        "B1oj6XGAl7FLEJOJCJXxlVOgSrdj0t3wbCXE69sjqd0="
+						"upload-some-cue":  "0eglyxDmF7Aa2cLdeejR7/RmnFeqdT8xc2BmJ1pXZ64="
+						"upload-some-json": "3ASv2z3qO/8DOMBfc7bUL77Kqpbe8E5BV9or116S1yI="
+						"in-subdir":        "Zwiy4x77+BFu61goz1QtYAalWU2pz5BnNGntPD/6asM="
 					}
 					multi_step: {
-						"GVBC7PRFLAQ3RF3LB8DNFP52PJ2IT78LNI417RMB57LF3K8P1C70====": [{
+						"377NPLQLLSANR3SP4BDR88KQU32BUBAPDARQ3K4LHMK8MF2VI6F0====": [{
 							doc: """
 									# script doc comment
 									#scripttag
