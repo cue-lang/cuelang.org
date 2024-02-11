@@ -15,7 +15,6 @@
 package cmd
 
 import (
-	"bufio"
 	"bytes"
 	"fmt"
 	"io"
@@ -72,24 +71,11 @@ func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 //
 // TODO: add an explicit test for when arg != ""
 func (t *txtarNode) tag(key, arg string) (args []string, present bool, err error) {
-	prefix := "#" + key
-	if arg != "" {
-		prefix += "(" + arg + ")"
+	args, present, err = findTag(t.sourceArchive.Comment, key, arg)
+	if err != nil {
+		err = fmt.Errorf("%s: %v", t.label, err)
 	}
-	sc := bufio.NewScanner(bytes.NewReader(t.sourceArchive.Comment))
-	lineNo := 1
-	for sc.Scan() {
-		line := bytes.TrimSpace(sc.Bytes())
-		if after, found := bytes.CutPrefix(bytes.TrimSpace(line), []byte(prefix)); found {
-			args, err := parseLineArgs(string(after))
-			if err != nil {
-				err = fmt.Errorf("%s:%d %w", t.label, lineNo, err)
-			}
-			return args, true, err
-		}
-		lineNo++
-	}
-	return nil, false, nil
+	return args, present, err
 }
 
 // parseLineArgs is factored out of the testscript code. We use the same logic
