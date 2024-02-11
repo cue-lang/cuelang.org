@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								yamlBroken: "ulIoiv7RaBF/3YqCLIyuP8Q19BFfp4OJpMp7Z935Fec="
-								"pets.cue": "8ZX9kWx83a0V6obeAw4EPk6mQZ6E49Of1D6SxK+2EhE="
-								yamlFixed:  "AXnRYFb5TKGC0eOhHkeH6GR6KymK5Z9JMpImNgp+zT4="
-								yaml2:      "u/By79dN6UgU6Qc2ehxa0RrKTaSYk5NyVgWxOziXs0U="
+								yamlBroken: "4tQuVn6zNeNCbl2aT3HlqrrGYGPk53Ib4X5bWDZPhuo="
+								"pets.cue": "8CI8PP+nSXffxZ0RMRvZLRINAyhGPBObc0OOs/ipAIk="
+								yamlFixed:  "PjKGTTG3BfsW1u1iLPy2zxBU8PJQPDqKrAV4gnZzObo="
+								yaml2:      "fx+1obcTpEjBYS+eGfDFfOAQKSq3MzF1X/CfK12yPKk="
 							}
 							multi_step: {
-								"EOE7U964HKBQQDHQN3NBS18ATL6RUNIV4N01IVA2HDVKG4UPK150====": [{
+								"KU39BNUFKOL95OAPQSI2IMAIP6VUBRSSH284GT09BL41A7VVAE2G====": [{
 									doc:      ""
 									cmd:      "pwd # we start in our home directory, but you do not need to"
 									exitCode: 0
