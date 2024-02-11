@@ -1,0 +1,61 @@
+# Ensure that the ellipsis sanitiser works.
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+exec preprocessor execute
+
+# Verify that the target files matche the source contents
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+-- hugo/.keep --
+-- content/dir/site.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+
+	sanitisers: [
+		{
+			kind: "ellipsisSanitiser"
+			command: "seq 1 5"
+		},
+		{
+			kind:  "ellipsisSanitiser"
+			start: 5
+			command: "seq 1 10"
+		},
+	]
+}
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "en" "zero"}}}
+>seq 1 5
+>{{{end}}}
+>
+>{{{with script "en" "five"}}}
+>seq 1 10
+>{{{end}}}
+-- golden/hugo/content/en/dir/index.md --
+---
+title: JSON Superset
+---
+
+```text { title="TERMINAL" codeToCopy="c2VxIDEgNQo=" }
+$ seq 1 5
+...
+```
+
+```text { title="TERMINAL" codeToCopy="c2VxIDEgMTAK" }
+$ seq 1 10
+1
+2
+3
+4
+5
+...
+```

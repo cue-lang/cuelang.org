@@ -187,3 +187,26 @@ func (p *patternSanitiserMatcher) init() error {
 	}
 	return nil
 }
+
+// An ellipsisSanitiser allows very long output to be removed and replaced with
+// the canonical '...' which is intended to indicate "and there is is more not
+// shown here".
+type ellipsisSanitiser struct {
+	Start int `json:"start"`
+}
+
+func (e *ellipsisSanitiser) sanitise(cmd *commandStmt) error {
+	if strings.Count(cmd.Output, "\n") <= e.Start {
+		return nil
+	}
+	lines := strings.Split(cmd.Output, "\n")
+	lines = append(lines[:e.Start], "...")
+	cmd.Output = strings.Join(lines, "\n") + "\n" // re-add trailing newline
+	return nil
+}
+
+type ellipsisSanitiserMatcher struct {
+	kind
+	ellipsisSanitiser
+	matchSpec
+}
