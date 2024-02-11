@@ -40,6 +40,11 @@ content: dir: page: {
 >{{{with script "en" "five"}}}
 >seq 1 10
 >{{{end}}}
+>
+>{{{with script "en" "tag"}}}
+>#ellipsis 2
+>seq 1 20
+>{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
@@ -57,5 +62,12 @@ $ seq 1 10
 3
 4
 5
+...
+```
+
+```text { title="TERMINAL" codeToCopy="c2VxIDEgMjAK" }
+$ seq 1 20
+1
+2
 ...
 ```
