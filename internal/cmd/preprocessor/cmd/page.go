@@ -177,14 +177,23 @@ func (p *page) parseSanitiser(m json.RawMessage) (sanitiserMatcher, error) {
 
 	switch kind {
 	case "patternSanitiser":
-		var c patternSanitiserMatcher
-		if err := json.Unmarshal(m, &c); err != nil {
+		var ps patternSanitiserMatcher
+		if err := json.Unmarshal(m, &ps); err != nil {
 			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
 		}
-		if err := c.init(); err != nil {
+		if err := ps.init(); err != nil {
 			return nil, fmt.Errorf("failed to init %s: %v", kind, err)
 		}
-		return &c, nil
+		return &ps, nil
+	case "ellipsisSanitiser":
+		var es ellipsisSanitiserMatcher
+		if err := json.Unmarshal(m, &es); err != nil {
+			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
+		}
+		if err := es.init(); err != nil {
+			return nil, fmt.Errorf("failed to init %s: %v", kind, err)
+		}
+		return &es, nil
 	default:
 		return nil, fmt.Errorf("unknown sanitiser: %q", kind)
 	}
