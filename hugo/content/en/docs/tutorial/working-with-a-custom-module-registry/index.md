@@ -167,7 +167,7 @@ support is currently in its experimental phase.
 The `CUE_REGISTRY` variable tells the `cue` command which
 registry to use when fetching and pushing modules.
 In our example the modules will be stored in the registry under the prefix `cuemodules`.
-In practice you would want this prefix to be some place of your choice - 
+In practice you would want this prefix to be some place of your choice -
 or you could leave the prefix empty if you plan to dedicate the registry
 to holding CUE modules.
 {{< /step >}}
@@ -190,6 +190,7 @@ have any dependencies, we will run `cue mod tidy` anyway.
 Publish the first version of this module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQo=" }
 $ cue mod publish v0.0.1
+published glacial-tech.example/frostyconfig@v0.0.1
 ```
 
 This command uploads the module to the registry and publishes it
@@ -256,9 +257,12 @@ $ cue mod tidy
 We can see that the dependencies have now been added to the
 `cue.mod/module.cue` file:
 
-<!-- TODO: show actual file content -->
-```cue { title="frostyapp/cue.mod/module.cue" }
+```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQo=" }
+$ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
+language: {
+	version: "v0.8.0-0.dev"
+}
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {
 		v: "v0.0.1"
@@ -280,19 +284,15 @@ flowchart TD
 Export the configuration as YAML:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1sCg==" }
 $ cue export --out yaml
-```
-
-We can use this new module code just like any other CUE code.
-
-<!-- TODO: show actual file content -->
-Here is the output:
-```
 config:
   appName: alpha
   port: 80
   features:
     logging: true
 ```
+
+We can use this new module code just like any other CUE code.
+
 {{< /step >}}
 
 ## Publish a `frostytemplate` module
@@ -348,6 +348,7 @@ Publish the `frostytemplate` module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4wLjEK" }
 $ cue mod tidy
 $ cue mod publish v0.0.1
+published glacial-tech.example/frostytemplate@v0.0.1
 ```
 {{< /step >}}
 
@@ -357,6 +358,11 @@ $ cue mod publish v0.0.1
 
 Update the `frostyapp` module to make use of this new template
 module:
+
+```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5YXBwCg==" }
+$ cd ../frostyapp
+```
+
 ```cue { title="frostyapp/config.cue" }
 package frostyapp
 
@@ -384,9 +390,12 @@ use `frostytemplate` as well as `frostyconfig`.
 
 Here is what the `cue.mod/module.cue` file now looks like:
 
-<!-- TODO: show actual file content -->
-```cue { title="frostyapp/cue.mod/module.cue" }
+```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQo=" }
+$ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
+language: {
+	version: "v0.8.0-0.dev"
+}
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {
 		v: "v0.0.1"
@@ -409,12 +418,6 @@ flowchart TD
 Re-render the configuration as YAML:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1sCg==" }
 $ cue export --out yaml
-```
-
-We can see that the values in the configuration reflect the new default values:
-
-<!-- TODO: show actual file content -->
-```
 config:
   appName: alpha
   port: 80
@@ -423,6 +426,9 @@ config:
     logging: true
     analytics: true
 ```
+
+We can see that the values in the configuration reflect the new default values.
+
 {{< /step >}}
 
 ## Add a new field to the schema
@@ -434,6 +440,10 @@ We will add that field to the schema and update the app to use it.
 {{< step stepNumber="18" >}}
 
 Update the schema to add a new `maxConcurrency` field:
+```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5Y29uZmlnCg==" }
+$ cd ../frostyconfig
+```
+
 ```cue { title="frostyconfig/config.cue" }
 package frostyconfig
 
@@ -464,10 +474,10 @@ The schema is unchanged except for the new `maxConcurrency` field.
 {{< step stepNumber="19" >}}
 
 Upload a new version of the `frostyconfig` schema:
-```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5Y29uZmlnCmN1ZSBtb2QgdGlkeQpjdWUgbW9kIHB1Ymxpc2ggdjAuMS4wCg==" }
-$ cd ../frostyconfig
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4xLjAK" }
 $ cue mod tidy
 $ cue mod publish v0.1.0
+published glacial-tech.example/frostyconfig@v0.1.0
 ```
 
 We incremented the minor version to signify that a backwardly
@@ -479,6 +489,11 @@ compatible feature has been added.
 {{< step stepNumber="20" >}}
 
 Edit the `cue.mod/module.cue` file to use the new version:
+
+```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5YXBwCg==" }
+$ cd ../frostyapp
+```
+
 ```cue { title="frostyapp/cue.mod/module.cue" }
 module: "glacial-tech.example/frostyapp@v0"
 deps: {
@@ -515,9 +530,16 @@ Check that everything still works and that your configuration is still valid:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBleHBvcnQgLS1vdXQgeWFtbAo=" }
 $ cue mod tidy
 $ cue export --out yaml
+config:
+  appName: alpha
+  port: 80
+  debug: false
+  features:
+    logging: true
+    analytics: true
 ```
 
-So exactly has happened above?
+So exactly what happened above?
 
 Recall that the `glacial-tech.example/frostytemplate` module remains unchanged:
 its module still depends on the original `v0.0.1` version of the schema. By
