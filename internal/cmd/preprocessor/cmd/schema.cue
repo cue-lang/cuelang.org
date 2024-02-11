@@ -20,7 +20,10 @@ package preprocessor
 		}
 	}
 
-	#sanitiser: _kind & #patternSanitiser // build up a disjunction of all sanitisers
+	#sanitiser: _kind & {
+		#patternSanitiser |
+		#ellipsisSanitiser
+	}
 	#matchingSanitiser: {
 		_matcher
 		#sanitiser
@@ -48,6 +51,15 @@ package preprocessor
 	#matchingPatternSanitiser: {
 		_matcher
 		#patternSanitiser
+	}
+
+	// Instances of #ellipsisSanitiser summarise long output with '...'
+	#ellipsisSanitiser: {
+		_kind
+		kind: "ellipsisSanitiser"
+
+		// start defines the line from which to consider an ellipsis
+		start?: int
 	}
 
 	#comparator: _kind & (#patternComparator | #unstableLineOrderComparator)
