@@ -27,7 +27,17 @@ import (
 // means that contributors produce the same output regardless of platform, OS
 // or other systems specifics.
 type sanitiser interface {
+	init() error
 	sanitise(*commandStmt) error
+}
+
+type sanitiserMatcher interface {
+	sanitiser
+	matcher
+}
+
+type matcher interface {
+	matches(cmd *commandStmt) (bool, error)
 }
 
 // kindAndCommand is the structure common to various types that are tied to
@@ -37,11 +47,13 @@ type sanitiser interface {
 //
 // The kindAndCommand is generally embedded in other types, e.g.
 // patternSanitiser.
-type kindAndCommand struct {
+type kind struct {
 	// Kind is a discriminator field for identifying the containing type in
 	// config
 	Kind string `json:"kind"`
+}
 
+type matchSpec struct {
 	// Command, CommandPrefix and Step are a one-of. They define the coniditions
 	// under which values of the containing type should apply. We refer to such
 	// values as X below.
@@ -58,10 +70,12 @@ type kindAndCommand struct {
 	stmt *syntax.Stmt
 }
 
-func (k *kindAndCommand) init() error {
-	cmd := k.Command
-	if k.CommandPrefix != "" {
-		cmd = k.CommandPrefix
+func (m *matchSpec) init() error {
+	// We rely on the CUE validation here to know this is a one-of.
+
+	cmd := m.Command
+	if m.CommandPrefix != "" {
+		cmd = m.CommandPrefix
 	}
 	file, err := syntax.NewParser(syntax.KeepComments(true)).Parse(strings.NewReader(cmd), " ")
 	if err != nil {
@@ -71,13 +85,13 @@ func (k *kindAndCommand) init() error {
 	if l := len(file.Stmts); l != 1 {
 		return fmt.Errorf("expected 1 statement; found %d", l)
 	}
-	k.stmt = file.Stmts[0]
+	m.stmt = file.Stmts[0]
 	return nil
 }
 
-func (k *kindAndCommand) matches(cmd *commandStmt) (bool, error) {
+func (m *matchSpec) matches(cmd *commandStmt) (bool, error) {
 	got := cmd.stmt
-	want := k.stmt
+	want := m.stmt
 
 	// Negated state must match
 	if got.Negated != want.Negated {
@@ -90,7 +104,7 @@ func (k *kindAndCommand) matches(cmd *commandStmt) (bool, error) {
 		if !ok {
 			return false, nil
 		}
-		if k.CommandPrefix != "" {
+		if m.CommandPrefix != "" {
 			if len(got.Args) < len(want.Args) {
 				return false, nil
 			}
@@ -120,9 +134,7 @@ func (k *kindAndCommand) matches(cmd *commandStmt) (bool, error) {
 
 // patternKindAndCommand defines a common type to be embedded in types that use
 // pattern-based matching.
-type patternKindAndCommand struct {
-	kindAndCommand
-
+type patternProperties struct {
 	// Pattern defines the regexp that defines a match
 	Pattern pattern `json:"pattern"`
 
@@ -131,10 +143,7 @@ type patternKindAndCommand struct {
 	pattern *regexp.Regexp
 }
 
-func (p *patternKindAndCommand) init() (err error) {
-	if err := p.kindAndCommand.init(); err != nil {
-		return err
-	}
+func (p *patternProperties) init() (err error) {
 	p.pattern, err = regexp.Compile(p.Pattern.Expr)
 	if err != nil {
 		return err
@@ -148,7 +157,7 @@ func (p *patternKindAndCommand) init() (err error) {
 // A patternSanitiser replaces command output that matches
 // a regular expression pattern some some replacement text.
 type patternSanitiser struct {
-	patternKindAndCommand
+	patternProperties
 
 	Replacement string `json:"replacement"`
 }
@@ -159,9 +168,22 @@ type pattern struct {
 }
 
 func (p *patternSanitiser) sanitise(cmd *commandStmt) error {
-	if matched, err := p.matches(cmd); err != nil || !matched {
+	cmd.Output = p.pattern.ReplaceAllString(cmd.Output, p.Replacement)
+	return nil
+}
+
+type patternSanitiserMatcher struct {
+	kind
+	patternSanitiser
+	matchSpec
+}
+
+func (p *patternSanitiserMatcher) init() error {
+	if err := p.patternSanitiser.init(); err != nil {
 		return err
 	}
-	cmd.Output = p.pattern.ReplaceAllString(cmd.Output, p.Replacement)
+	if err := p.matchSpec.init(); err != nil {
+		return err
+	}
 	return nil
 }
