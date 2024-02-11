@@ -1,16 +1,18 @@
 package preprocessor
 
 #site: {
-	let _kindAndCommand = {
+	_kind: {
 		kind!: string // the discriminator field
+	}
 
+	_matcher: {
 		// command or commandPrefix are ways of indicating to which commands
 		// the sanitiser should apply.
 		//
 		// Implement a oneOf. Here both command and commandPrefix are strings
 		// because we perform a comparison at the AST level.
 		{
-			command!:       string
+			command!:       string & !=""
 			commandPrefix?: _|_
 		} | {
 			command?:       _|_
@@ -18,7 +20,11 @@ package preprocessor
 		}
 	}
 
-	#sanitiser: _kindAndCommand & #patternSanitiser // build up a disjunction here if required
+	#sanitiser: _kind & #patternSanitiser // build up a disjunction of all sanitisers
+	#matchingSanitiser: {
+		_matcher
+		#sanitiser
+	}
 
 	#pattern: {
 		expr!:    string
@@ -28,7 +34,7 @@ package preprocessor
 	// Instances of #patternSanitiser define replacements that should be applied
 	// to commands that match.
 	#patternSanitiser: {
-		_kindAndCommand
+		_kind
 		kind: "patternSanitiser"
 
 		// pattern defines the text without the output of the matched command
@@ -39,10 +45,19 @@ package preprocessor
 		replacement?: string
 	}
 
-	#comparator: _kindAndCommand & (#patternComparator | #unstableLineOrderComparator)
+	#matchingPatternSanitiser: {
+		_matcher
+		#patternSanitiser
+	}
+
+	#comparator: _kind & (#patternComparator | #unstableLineOrderComparator)
+	#matchingComparator: {
+		_matcher
+		#comparator
+	}
 
 	#patternComparator: {
-		_kindAndCommand
+		_kind
 		kind: "patternComparator"
 
 		// pattern defines the text without the output of the matched command for
@@ -50,9 +65,19 @@ package preprocessor
 		pattern?: #pattern
 	}
 
+	#matchingPatternComparator: {
+		_matcher
+		#patternComparator
+	}
+
 	#unstableLineOrderComparator: {
-		_kindAndCommand
+		_kind
 		kind: "unstableLineOrderComparator"
+	}
+
+	#matchingUnstableLineOrderComparator: {
+		_matcher
+		#unstableLineOrderComparator
 	}
 
 	#page: {
@@ -73,13 +98,13 @@ package preprocessor
 		// a multi-step script is re-run on a machine which has a different OS or
 		// architecture. e.g. the output of go version. All sanitisers that match
 		// are applied in order.
-		sanitisers?: [...#sanitiser]
+		sanitisers?: [...#matchingSanitiser]
 
 		// comparators allow for some variance in output, variance that is
 		// generally random. For example, a command where the order of lines can
 		// vary, or test run time. All comparators that match for a given command
 		// are applied, in order.
-		comparators?: [...#comparator]
+		comparators?: [...#matchingComparator]
 
 		cache?: {
 			upload?: [string]: string
