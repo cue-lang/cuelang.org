@@ -9,6 +9,10 @@ tags:
 toc_hide: true
 ---
 
+{{{with _script "en" "cue mod registry"}}}
+nohup cue mod registry localhost:5000 > /tmp/cue_mod_registry 2>&1 &
+{{{end}}}
+
 ## Introduction
 
 In this tutorial you will learn how to create and work with CUE modules,
@@ -54,8 +58,6 @@ We would like to be able to share the schema between several consumers.
 
 Create a directory to hold the schema code:
 {{{with script "en" "create-frostyconfig"}}}
-#norun
-
 mkdir frostyconfig
 cd frostyconfig
 {{{end}}}
@@ -68,8 +70,6 @@ you will create as they are needed.
 
 Initialize the directory as a module:
 {{{with script "en" "initialize-frostyconfig-module"}}}
-#norun
-
 cue mod init glacial-tech.example/frostyconfig@v0
 {{{end}}}
 
@@ -164,8 +164,6 @@ tutorial.
 
 Set up some required envirionment variables:
 {{{with script "en" "init-environ"}}}
-#norun
-
 export CUE_EXPERIMENT=modules
 export CUE_REGISTRY=localhost:5000/cuemodules
 {{{end}}}
@@ -176,7 +174,7 @@ support is currently in its experimental phase.
 The `CUE_REGISTRY` variable tells the `cue` command which
 registry to use when fetching and pushing modules.
 In our example the modules will be stored in the registry under the prefix `cuemodules`.
-In practice you would want this prefix to be some place of your choice - 
+In practice you would want this prefix to be some place of your choice -
 or you could leave the prefix empty if you plan to dedicate the registry
 to holding CUE modules.
 {{{end}}}
@@ -185,8 +183,6 @@ to holding CUE modules.
 
 Ensure the `module.cue` file is tidy:
 {{{with script "en" "frostyconfig-v0.0.1-tidy"}}}
-#norun
-
 cue mod tidy
 {{{end}}}
 This command checks that modules for all imported packages
@@ -200,8 +196,6 @@ have any dependencies, we will run `cue mod tidy` anyway.
 
 Publish the first version of this module:
 {{{with script "en" "frostyconfig-v0.0.1-publish"}}}
-#norun
-
 cue mod publish v0.0.1
 {{{end}}}
 
@@ -232,8 +226,6 @@ published.
 
 Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostyapp"}}}
-#norun
-
 mkdir ../frostyapp
 cd    ../frostyapp
 cue mod init glacial-tech.example/frostyapp@v0
@@ -266,8 +258,7 @@ constrained by the `frostyconfig.#Config` schema.
 
 Ensure the module is tidy, pulling all dependencies:
 {{{with script "en" "frostyapp-tidy-1"}}}
-#norun
-
+cat /tmp/cue_mod_registry
 cue mod tidy
 {{{end}}}
 
@@ -298,8 +289,6 @@ flowchart TD
 
 Export the configuration as YAML:
 {{{with script "en" "frostyapp-export-1"}}}
-#norun
-
 cue export --out yaml
 {{{end}}}
 
@@ -329,8 +318,6 @@ other source of truth.
 
 Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostytemplate"}}}
-#norun
-
 mkdir ../frostytemplate
 cd    ../frostytemplate
 cue mod init glacial-tech.example/frostytemplate@v0
@@ -370,8 +357,6 @@ We import the schema to constrain the default values, just as we did with the
 
 Publish the `frostytemplate` module:
 {{{with script "en" "frostytemplate-v0.0.1-publish"}}}
-#norun
-
 cue mod tidy
 cue mod publish v0.0.1
 {{{end}}}
@@ -403,8 +388,6 @@ requirements of the configuration.
 
 Resolve dependencies in `frostyapp`:
 {{{with script "en" "frostyapp-tidy-2"}}}
-#norun
-
 cue mod tidy
 {{{end}}}
 
@@ -438,8 +421,6 @@ flowchart TD
 
 Re-render the configuration as YAML:
 {{{with script "en" "rerender-config"}}}
-#norun
-
 cue export --out yaml
 {{{end}}}
 
@@ -498,8 +479,6 @@ The schema is unchanged except for the new `maxConcurrency` field.
 
 Upload a new version of the `frostyconfig` schema:
 {{{with script "en" "upload-schema2"}}}
-#norun
-
 cd ../frostyconfig
 cue mod tidy
 cue mod publish v0.1.0
@@ -549,8 +528,6 @@ future the `cue` command will be able to perform this kind of update.
 
 Check that everything still works and that your configuration is still valid:
 {{{with script "en" "check-update-ok"}}}
-#norun
-
 cue mod tidy
 cue export --out yaml
 {{{end}}}
