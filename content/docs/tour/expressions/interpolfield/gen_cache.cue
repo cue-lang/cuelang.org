@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									genfield: "+iXpvzEqQey0UqmeXNOgOQKClUwrOEBdETVvsb6T/6A="
+									genfield: "cGjcu2vONKT1hTy9JLXkcbH4rRpITJ+bRwlmoILoHGY="
 								}
 							}
 						}
