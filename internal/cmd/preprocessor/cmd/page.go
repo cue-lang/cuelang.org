@@ -69,8 +69,8 @@ type pageConfig struct {
 	LeftDelim  string `json:"leftDelim"`
 	RightDelim string `json:"rightDelim"`
 
-	Sanitisers  []sanitiser
-	Comparators []comparator
+	Sanitisers  []sanitiserMatcher
+	Comparators []comparatorMatcher
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -169,7 +169,7 @@ func (p *page) loadConfig() {
 
 // parseSanitiser takes a CUE config value that represents a sanitiser
 // and returns a Go value that represents that sanitiser.
-func (p *page) parseSanitiser(m json.RawMessage) (sanitiser, error) {
+func (p *page) parseSanitiser(m json.RawMessage) (sanitiserMatcher, error) {
 	kind, err := parseKind(m)
 	if err != nil {
 		return nil, err
@@ -177,7 +177,7 @@ func (p *page) parseSanitiser(m json.RawMessage) (sanitiser, error) {
 
 	switch kind {
 	case "patternSanitiser":
-		var c patternSanitiser
+		var c patternSanitiserMatcher
 		if err := json.Unmarshal(m, &c); err != nil {
 			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
 		}
@@ -205,7 +205,7 @@ func parseKind(m json.RawMessage) (string, error) {
 
 // parseComparator takes a CUE config value that represents a comparator
 // and returns a Go value that represents that comparator.
-func (p *page) parseComparator(m json.RawMessage) (comparator, error) {
+func (p *page) parseComparator(m json.RawMessage) (comparatorMatcher, error) {
 	kind, err := parseKind(m)
 	if err != nil {
 		return nil, err
@@ -213,7 +213,7 @@ func (p *page) parseComparator(m json.RawMessage) (comparator, error) {
 
 	switch kind {
 	case "patternComparator":
-		var p patternComparator
+		var p patternComparatorMatcher
 		if err := json.Unmarshal(m, &p); err != nil {
 			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
 		}
@@ -222,7 +222,7 @@ func (p *page) parseComparator(m json.RawMessage) (comparator, error) {
 		}
 		return &p, nil
 	case "unstableLineOrderComparator":
-		var u unstableLineOrderComparator
+		var u unstableLineOrderComparatorMatcher
 		if err := json.Unmarshal(m, &u); err != nil {
 			return nil, fmt.Errorf("failed to unmarshal %s: %v", kind, err)
 		}
