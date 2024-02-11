@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									interpolation: "w5eizqwwfv64QSYx3bBUbNYPfQOJdwcuTQ8REF8ZICI="
+									interpolation: "uDAliYgy4ZrwufR0yY5/yKTcmm1uhow+eGJulC2psfQ="
 								}
 							}
 						}
