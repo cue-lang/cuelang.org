@@ -54,10 +54,6 @@ type kindAndCommand struct {
 	// equal to the value set.
 	CommandPrefix string `json:"commandPrefix"`
 
-	// Step defines that X should apply for the specific multi-step script
-	// command step (steps names are unique).
-	Step string `json:"step"`
-
 	// stmt is a parsed version of Command or CommandPrefix.
 	stmt *syntax.Stmt
 }
