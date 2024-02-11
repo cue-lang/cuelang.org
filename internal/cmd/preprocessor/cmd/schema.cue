@@ -12,15 +12,9 @@ package preprocessor
 		{
 			command!:       string
 			commandPrefix?: _|_
-			step?:          _|_
 		} | {
 			command?:       _|_
 			commandPrefix!: string
-			step?:          _|_
-		} | {
-			command?:       _|_
-			commandPrefix?: _|_
-			step!:          string
 		}
 	}
 
