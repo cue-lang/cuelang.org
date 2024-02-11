@@ -26,20 +26,39 @@ import (
 // such command outputs that differ only in known ways to be compared as
 // bytes-equal after normalization.
 type comparator interface {
+	init() error
 	normalize(cmd *commandStmt, output string, rand string) (transformedOutput string, err error)
+}
+
+type comparatorMatcher interface {
+	comparator
+	matcher
 }
 
 // A patternSanitiser replaces command output that matches
 // a regular expression pattern some some replacement text.
 type patternComparator struct {
-	patternKindAndCommand
+	patternProperties
 }
 
 func (p *patternComparator) normalize(cmd *commandStmt, output string, rand string) (string, error) {
-	if matched, err := p.matches(cmd); err != nil || !matched {
-		return "", err
-	}
 	return regexpReplaceRand(output, p.pattern, rand), nil
+}
+
+type patternComparatorMatcher struct {
+	kind
+	patternComparator
+	matchSpec
+}
+
+func (p *patternComparatorMatcher) init() error {
+	if err := p.patternComparator.init(); err != nil {
+		return err
+	}
+	if err := p.matchSpec.init(); err != nil {
+		return err
+	}
+	return nil
 }
 
 func regexpReplaceRand(input string, re *regexp.Regexp, rand string) string {
@@ -96,15 +115,16 @@ func regexpReplaceRand(input string, re *regexp.Regexp, rand string) string {
 // An unstableLineOrderComparator lexigraphically sorts the lines
 // a regular expression pattern some some replacement text.
 type unstableLineOrderComparator struct {
-	kindAndCommand
 }
 
 func (u *unstableLineOrderComparator) normalize(cmd *commandStmt, output string, rand string) (string, error) {
-	if matched, err := u.matches(cmd); err != nil || !matched {
-		return "", err
-	}
-
 	lines := strings.Split(output, "\n")
 	sort.Strings(lines)
 	return strings.Join(lines, "\n"), nil
+}
+
+type unstableLineOrderComparatorMatcher struct {
+	kind
+	unstableLineOrderComparator
+	matchSpec
 }
