@@ -14,6 +14,12 @@
 
 package cmd
 
+import (
+	"bufio"
+	"bytes"
+	"fmt"
+)
+
 const (
 	// tagNorun is the tag used in a txtar-based directive like code or script
 	// to indicate that that node should not be run. For an upload directive, it
@@ -40,4 +46,27 @@ const (
 	//     #location top-left top-right bottom
 	//
 	tagLocation = "location"
+
+	tagEllipsis = "ellipsis"
 )
+
+func findTag(src []byte, key, arg string) (args []string, present bool, err error) {
+	prefix := "#" + key
+	if arg != "" {
+		prefix += "(" + arg + ")"
+	}
+	sc := bufio.NewScanner(bytes.NewReader(src))
+	lineNo := 1
+	for sc.Scan() {
+		line := bytes.TrimSpace(sc.Bytes())
+		if after, found := bytes.CutPrefix(bytes.TrimSpace(line), []byte(prefix)); found {
+			args, err := parseLineArgs(string(after))
+			if err != nil {
+				err = fmt.Errorf("%d %w", lineNo, err)
+			}
+			return args, true, err
+		}
+		lineNo++
+	}
+	return nil, false, nil
+}
