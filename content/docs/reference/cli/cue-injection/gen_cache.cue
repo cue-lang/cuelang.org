@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"6B2PT5VR57CJ0089LAFUM6KCMLIBTOCMHKUK4EVM5P7NUMKG6S9G====": [{
+									"TOK6PDQ04V4IF9D6Q3SCS7IJVG8CT20K4GMQT7T3M6UETVNBBMVG====": [{
 										doc:      ""
 										cmd:      "cue help injection"
 										exitCode: 0
