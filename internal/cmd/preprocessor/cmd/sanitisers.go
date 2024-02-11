@@ -195,6 +195,8 @@ type ellipsisSanitiser struct {
 	Start int `json:"start"`
 }
 
+func (e *ellipsisSanitiser) init() error { return nil }
+
 func (e *ellipsisSanitiser) sanitise(cmd *commandStmt) error {
 	if strings.Count(cmd.Output, "\n") <= e.Start {
 		return nil
@@ -209,4 +211,8 @@ type ellipsisSanitiserMatcher struct {
 	kind
 	ellipsisSanitiser
 	matchSpec
+}
+
+func (e *ellipsisSanitiserMatcher) init() error {
+	return e.matchSpec.init()
 }
