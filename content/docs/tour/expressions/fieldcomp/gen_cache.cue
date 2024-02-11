@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									fieldcomp: "RPy9SRHD3NRy+WSWuANRr09jvjRiJfammSuw3jeSJV4="
+									fieldcomp: "b/aeHUc7f42QFKawZi19DlKP0gTGJaxQopY7tOt1j2M="
 								}
 							}
 						}
