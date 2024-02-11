@@ -385,6 +385,9 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	// whereas we do when we docker run from the command line.
 	pf("export PATH=\"/go/bin:/usr/local/go/bin:$PATH\"\n")
 
+	// Start the cue mod registry server as a background task
+	pf("nohup cue mod registry localhost:5000 > /tmp/cue_mod_registry 2>&1 &\n")
+
 	// exitCodeVar is the name of the "temporary" variable used to capture
 	// the exit code from a command. Named something suitably esoteric to
 	// avoid user-declared variables
