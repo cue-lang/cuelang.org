@@ -8,6 +8,11 @@ tags:
 - cue command
 toc_hide: true
 ---
+
+{{{with _script "en" "cue mod registry"}}}
+nohup cue mod registry localhost:5000 > /tmp/cue_mod_registry 2>&1 &
+{{{end}}}
+
 ## Introduction
 
 In this tutorial, you will learn how to create and work with CUE modules,
@@ -49,8 +54,6 @@ We would like to be able to share the schema between several consumers.
 {{{with step}}}
 Create a directory for the schema code.
 {{{with script "en" "create-frostyconfig"}}}
-#norun
-
 mkdir frostyconfig
 cd frostyconfig
 {{{end}}}
@@ -62,8 +65,6 @@ which we create above.
 {{{with step}}}
 Initialize it as a module.
 {{{with script "en" "initialize-frostyconfig-module"}}}
-#norun
-
 cue mod init glacial-tech.com/frostyconfig@v0
 {{{end}}}
 
@@ -142,8 +143,6 @@ while you run the rest of the commands in the tutorial.
 {{{with step}}}
 Set up the envirionment variables:
 {{{with script "en" "init-environ"}}}
-#norun
-
 export CUE_EXPERIMENT=modules
 export CUE_REGISTRY=localhost:5000/cuemodules
 {{{end}}}
@@ -163,8 +162,6 @@ for any other purpose at the same time.
 Ensure the `module.cue` file is tidy:
 
 {{{with script "en" "frostyconfig-v0.0.1-tidy"}}}
-#norun
-
 cue mod tidy
 {{{end}}}
 This command checks that modules for all imported packages
@@ -178,8 +175,6 @@ have any dependencies, we will run `cue mod tidy` anyway.
 Publish the first version of this module:
 
 {{{with script "en" "frostyconfig-v0.0.1-publish"}}}
-#norun
-
 cue mod publish v0.0.1
 {{{end}}}
 
@@ -208,8 +203,6 @@ constrained by the schema just published.
 {{{with step}}}
 Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostyapp"}}}
-#norun
-
 cd ..
 mkdir frostyapp
 cd frostyapp
@@ -242,8 +235,7 @@ constrained by the `frostyconfig.#Config` schema.
 Ensure the module is tidy, pulling all dependencies:
 
 {{{with script "en" "frostyapp-tidy-1"}}}
-#norun
-
+cat /tmp/cue_mod_registry
 cue mod tidy
 {{{end}}}
 
@@ -275,8 +267,6 @@ flowchart TD
 
 Export the configuration as YAML:
 {{{with script "en" "frostyapp-export-1"}}}
-#norun
-
 cue export --out yaml
 {{{end}}}
 
@@ -305,8 +295,6 @@ of truth.
 
 Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostytemplate"}}}
-#norun
-
 cd ..
 mkdir frostytemplate
 cd frostytemplate
@@ -348,8 +336,6 @@ the default values.
 Publish the `frostytemplate` module:
 
 {{{with script "en" "frostytemplate-v0.0.1-publish"}}}
-#norun
-
 cue mod tidy
 cue mod publish v0.0.1
 {{{end}}}
@@ -382,8 +368,6 @@ by the template.
 Resolve dependencies in `frostyapp`:
 
 {{{with script "en" "frostyapp-tidy-2"}}}
-#norun
-
 cue mod tidy
 {{{end}}}
 
@@ -419,8 +403,6 @@ flowchart TD
 Render the configuration again:
 
 {{{with script "en" "rerender-config"}}}
-#norun
-
 cue export --out yaml
 {{{end}}}
 
@@ -482,8 +464,6 @@ exactly the same as before.
 Upload a new version of the `frostyconfig` schema:
 
 {{{with script "en" "upload-schema2"}}}
-#norun
-
 cd ../frostyconfig
 cue mod tidy
 cue mod publish v0.1.0
@@ -534,8 +514,6 @@ flowchart TD
 Check everything still works:
 
 {{{with script "en" "check-update-ok"}}}
-#norun
-
 cue mod tidy
 cue export --out yaml
 {{{end}}}
