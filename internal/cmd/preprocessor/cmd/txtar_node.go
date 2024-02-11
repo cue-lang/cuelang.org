@@ -15,7 +15,6 @@
 package cmd
 
 import (
-	"bufio"
 	"bytes"
 	"fmt"
 	"io"
@@ -57,39 +56,19 @@ func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 	p("%send%s", t.rf.page.config.LeftDelim, t.rf.page.config.RightDelim)
 }
 
-// tag searches for the first #$key (or #$key($arg) if arg is non empty) tag
-// line in the comment section of s's txtar archive. Tags are # prefixed lines
-// where the # at the beginning of the line must be followed by a non-space
-// character. args contains the contents of the quote-aware args that follow
-// the tag name. present indicates whether the tag identified by key was
-// present or not. err will be non-nil if there were errors in parsing the
-// arguments to a tag.
-//
-// Note that this searches the sourceArchive.
+// tag searches for the first tag directive named key in the sourceArchive.
+// See findTag for more details on the search.
 //
 // TODO: work out whether we want to handle comments in tag lines (which are
 // themselves comments already).
 //
 // TODO: add an explicit test for when arg != ""
 func (t *txtarNode) tag(key, arg string) (args []string, present bool, err error) {
-	prefix := "#" + key
-	if arg != "" {
-		prefix += "(" + arg + ")"
+	args, present, err = findTag(t.sourceArchive.Comment, key, arg)
+	if err != nil {
+		err = fmt.Errorf("%s: %v", t.label, err)
 	}
-	sc := bufio.NewScanner(bytes.NewReader(t.sourceArchive.Comment))
-	lineNo := 1
-	for sc.Scan() {
-		line := bytes.TrimSpace(sc.Bytes())
-		if after, found := bytes.CutPrefix(bytes.TrimSpace(line), []byte(prefix)); found {
-			args, err := parseLineArgs(string(after))
-			if err != nil {
-				err = fmt.Errorf("%s:%d %w", t.label, lineNo, err)
-			}
-			return args, true, err
-		}
-		lineNo++
-	}
-	return nil, false, nil
+	return args, present, err
 }
 
 // parseLineArgs is factored out of the testscript code. We use the same logic

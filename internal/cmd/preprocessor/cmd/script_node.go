@@ -19,6 +19,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"regexp"
+	"strconv"
 	"strings"
 
 	"mvdan.cc/sh/v3/syntax"
@@ -127,14 +128,46 @@ func (s *scriptNode) validate() {
 		var sb strings.Builder
 		if err := s.rf.shellPrinter.Print(&sb, stmt); err != nil {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
+			continue
 		}
 		cmdStmt.Cmd = sb.String()
 
 		sb.Reset()
 		if err := s.rf.shellPrinter.Print(&sb, &doc); err != nil {
 			s.errorf("%v: failed to print doc comment for stmt at %v: %v", s, stmt.Position, err)
+			continue
 		}
 		cmdStmt.Doc = sb.String()
+
+		// Now check if there are any known tag-based sanitiers directives
+		//
+		// TODO: we really need a different mechanism to gather the tags (and
+		// their args) which might appear here, and then parse them. For now this
+		// is a bit of a hack.
+		args, matched, err := findTag([]byte(cmdStmt.Doc), tagEllipsis, "")
+		if err != nil {
+			s.errorf("%v: failed to search for ellipsis tag: %v", s, err)
+			continue
+		}
+		if matched {
+			// TODO: this needs a more principled approach. Very hacky for now.
+
+			// Must be only one arg
+			var start int
+			switch len(args) {
+			case 0:
+			case 1:
+				start64, err := strconv.ParseInt(args[0], 10, 32)
+				if err != nil {
+					s.errorf("%v: failed to parse integer from %s argument %q: %v", s, tagEllipsis, args[0], err)
+					continue
+				}
+				start = int(start64)
+			}
+			cmdStmt.sanitisers = []sanitiser{&ellipsisSanitiser{
+				Start: start,
+			}}
+		}
 
 		// Revert the negated state for completeness given
 		// we set stmt as part of cmdStmt for sanitiser etc
@@ -161,6 +194,7 @@ type commandStmt struct {
 	ExitCode    int    `json:"exitCode"`
 	Output      string `json:"output"`
 	outputFence string
+	sanitisers  []sanitiser
 }
 
 var tagPrefix = regexp.MustCompile(`^#\S`)

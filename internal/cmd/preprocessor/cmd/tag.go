@@ -14,6 +14,12 @@
 
 package cmd
 
+import (
+	"bufio"
+	"bytes"
+	"fmt"
+)
+
 const (
 	// tagNorun is the tag used in a txtar-based directive like code or script
 	// to indicate that that node should not be run. For an upload directive, it
@@ -40,4 +46,38 @@ const (
 	//     #location top-left top-right bottom
 	//
 	tagLocation = "location"
+
+	tagEllipsis = "ellipsis"
 )
+
+// findTag searches for the first #$key (or #$key($arg) if arg is non empty)
+// tag line in src. Tags are # prefixed lines where the # at the beginning of
+// the line must be followed by a non-space character. args contains the
+// contents of the quote-aware args that follow the tag name. present indicates
+// whether the tag identified by key was present or not. err will be non-nil if
+// there were errors in parsing the arguments to a tag.
+//
+// TODO: work out whether we want to handle comments in tag lines (which are
+// themselves comments already).
+//
+// TODO: add an explicit test for when arg != ""
+func findTag(src []byte, key, arg string) (args []string, present bool, err error) {
+	prefix := "#" + key
+	if arg != "" {
+		prefix += "(" + arg + ")"
+	}
+	sc := bufio.NewScanner(bytes.NewReader(src))
+	lineNo := 1
+	for sc.Scan() {
+		line := bytes.TrimSpace(sc.Bytes())
+		if after, found := bytes.CutPrefix(bytes.TrimSpace(line), []byte(prefix)); found {
+			args, err := parseLineArgs(string(after))
+			if err != nil {
+				err = fmt.Errorf("%d %w", lineNo, err)
+			}
+			return args, true, err
+		}
+		lineNo++
+	}
+	return nil, false, nil
+}

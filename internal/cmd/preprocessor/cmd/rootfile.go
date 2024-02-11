@@ -678,14 +678,22 @@ func (m *multiStepScript) run() (runerr error) {
 					m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
 				}
 
-				for _, s := range m.page.config.Sanitisers {
-					matched, err := s.matches(stmt)
-					if err != nil {
-						m.fatalf("%v: failed to determine if sanitiser should apply for %q: %v", m, stmt.Cmd, err)
+				var sans []sanitiser
+				if stmt.sanitisers != nil {
+					sans = stmt.sanitisers
+				} else {
+					for _, s := range m.page.config.Sanitisers {
+						matched, err := s.matches(stmt)
+						if err != nil {
+							m.fatalf("%v: failed to determine if sanitiser should apply for %q: %v", m, stmt.Cmd, err)
+						}
+						if !matched {
+							continue
+						}
+						sans = append(sans, s)
 					}
-					if !matched {
-						continue
-					}
+				}
+				for _, s := range sans {
 					if err := s.sanitise(stmt); err != nil {
 						m.fatalf("%v: failed to sanitise output for %q: %v", m, stmt.Cmd, err)
 					}
