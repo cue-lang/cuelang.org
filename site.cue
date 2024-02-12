@@ -47,6 +47,13 @@ let donotedit = base.doNotEditMessage & {#generatedBy: "site_tool.cue", _}
 // template is an io/fs.FS-like map of files that are templated
 // by site_tool.cue:gen for the working of cuelang.org
 template: ci.#writefs & {
+	Remove: [
+		// The generated artefacts from the CLI auto-generation. Do not remove
+		// the cache files, because otherwise on a Preprocessor-No-Write-Cache
+		// they will not get added back, a change that would, ironically, create
+		// noise in a commit where we are intending there to be less noise.
+		"content/docs/reference/cli/cue-*/*.md",
+	]
 	Create: {
 		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": {
 			Contents: #"""
