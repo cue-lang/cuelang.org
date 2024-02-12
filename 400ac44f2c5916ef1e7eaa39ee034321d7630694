@@ -90,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7713863f_ded8a833",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T10:05:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b4f8090_5feddbd2",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "170a97f5_cbeaff12",
         "filename": "content/docs/reference/modules-experiment/en.md",
         "patchSetId": 1
@@ -703,6 +721,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "927d5092_ad0a5416",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T10:05:45Z",
+      "side": 1,
+      "message": "OK, will do. FWIW the Go ref/mod spec _does_ describe the differences, so I thought it might be worth doing so here.",
+      "parentUuid": "d12f8161_9decd0fa",
+      "range": {
+        "startLine": 237,
+        "startChar": 43,
+        "endLine": 239,
+        "endChar": 69
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d62a568c_46467084",
@@ -769,6 +811,24 @@
       "writtenOn": "2024-02-08T14:15:39Z",
       "side": 1,
       "message": "Per comment above. I would suggest we collapse these into a single block.",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0263d841_7ae3c6fc",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T10:05:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdaabde9_1f7c4144",
       "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
