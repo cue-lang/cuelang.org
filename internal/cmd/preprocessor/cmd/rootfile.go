@@ -24,7 +24,6 @@ import (
 	"math/rand"
 	"os"
 	"os/exec"
-	"path"
 	"path/filepath"
 	"runtime"
 	"slices"
@@ -436,21 +435,40 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 			f := n.effectiveArchive.Files[0]
 
 			cmdEchoFence := rf.getFence()
+
+			// The upload target path provided via the txtar filename _might_ be
+			// absolute. We don't know.  In case it is, we should treat it as
+			// such. Otherwise, as a convenience we treat it as relative to the
+			// starting working directory of the script, i.e. $HOME. The problem
+			// is that we can only determine if the target is absolute in the script
+			// itself (allowing for env var expansion, etc). So we use a unique
+			// variable name to store the target file path, which is made absolute
+			// as required.
+			targetFileVar := "target" + rf.getFence()
+			pf("if [[ \"%s\" != /* ]]; then %s=$HOME/%s; else %s=%s; fi\n", f.Name, targetFileVar, f.Name, targetFileVar, f.Name)
+
+			// First echo the commands that we will run to make debugging
+			// easier. Notice this block is surrounded in a no-interpolation
+			// cat using a pseudo-random string fence.
 			pf("cat <<'%s'\n", cmdEchoFence)
 			if strings.Contains(f.Name, "/") {
-				pf("$ mkdir -p '%s'\n", path.Dir(f.Name))
+				pf("$ mkdir -p $(dirname $%s)\n", targetFileVar)
 			}
-			pf("$ cat <<EOD > %s\n", f.Name)
+			pf("$ cat <<EOD > $%s\n", targetFileVar)
 			pf("%s\n", f.Data)
 			pf("EOD\n")
 			pf("%s\n", cmdEchoFence)
+
+			// Now write the actual commands to the file.
 			fence := rf.getFence()
 			if strings.Contains(f.Name, "/") {
-				pf("mkdir -p '%s'\n", path.Dir(f.Name))
+				pf("mkdir -p $(dirname $%s)\n", targetFileVar)
 			}
-			pf("cat <<'%s' > %s\n", fence, f.Name)
+			pf("cat <<'%s' > $%s\n", fence, targetFileVar)
 			pf("%s\n", f.Data)
 			pf("%s\n", fence)
+
+			// Check the exist code
 			pf("%s=$?\n", exitCodeVar)
 			pf("if [[ $%s -ne 0 ]]\n", exitCodeVar)
 			pf("then\n")
@@ -634,7 +652,7 @@ func (m *multiStepScript) run() (runerr error) {
 		startCmd := exec.Command("docker", "start", "-a", instance)
 		out, err = startCmd.CombinedOutput()
 		if err != nil {
-			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
+			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\n===========================\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
 		}
 
 		// Because we are running in -t mode, replace all \r\n with \n
