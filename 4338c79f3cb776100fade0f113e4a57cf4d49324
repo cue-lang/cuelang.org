@@ -16,6 +16,23 @@
       "message": "@paul@myitcv.io Please pass an eye over to check I\u0027ve not steered @rogpeppe@gmail.com in the wrong direction anywhere! Rog has already +2\u0027d this, but I\u0027ll wait for your positive cross-check of my edits\u0027 opinions.",
       "revId": "4338c79f3cb776100fade0f113e4a57cf4d49324",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f0711a7_efc3200f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T11:28:25Z",
+      "side": 1,
+      "message": "Note this will need a rebase after changes to the preprocessor landed over the weekend. Indeed I suggest you wait until https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1176731 has landed before rebasing.",
+      "revId": "4338c79f3cb776100fade0f113e4a57cf4d49324",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
