@@ -579,12 +579,9 @@ func (m *multiStepScript) run() (runerr error) {
 		"-v", fmt.Sprintf("%s:/scripts", scriptsDir),
 	)
 
-	// If the user wants to be unsafe and _not_ isolate the network let them
-	// It results in much faster running times when working on changes in the
-	// preprocessor.
-	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
-		args = append(args, "--network=host")
-	}
+	// We cannot perform the --network=host trick here, even if the user wants
+	// to be unsafe. Because we run cue mod registry which requires its own
+	// networking isolation (for binding to the port it will use etc).
 
 	args = append(args,
 		// TODO: support per-guide docker images
