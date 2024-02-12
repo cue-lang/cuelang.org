@@ -40,7 +40,7 @@ fi
 bash playground/_scripts/build.bash
 
 # Run the preprocessor
-bash _scripts/runPreprocessor.bash execute --debug=all,-cache --readonlycache=$readonlycache $skipcache
+bash _scripts/runPreprocessor.bash execute --readonlycache=$readonlycache $skipcache
 
 # Main site
 cd hugo
