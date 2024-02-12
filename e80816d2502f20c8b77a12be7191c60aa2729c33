@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6597f291_5aba4bbb",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f07a0de_21304511",
+      "revId": "e80816d2502f20c8b77a12be7191c60aa2729c33",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8dc01836_16537c9e",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-02-12T13:42:31Z",
       "side": 1,
       "message": "AFAIK there is no \"etc\" here: the port binding is exactly what needs the isolation, no more.\n\n```suggestion\n\t// networking isolation for binding to the port it will use.\n```",
+      "revId": "e80816d2502f20c8b77a12be7191c60aa2729c33",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80d2adc6_7679edaa",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done. With a slight tweak to the comment to make it clearer that running `cue mod registry` is just one example of things that cause us to require network isolation in general.",
+      "parentUuid": "8dc01836_16537c9e",
       "revId": "e80816d2502f20c8b77a12be7191c60aa2729c33",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
