@@ -87,6 +87,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "298d7a71_3f0ff7d1",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T17:50:59Z",
+      "side": 1,
+      "message": "Agreed it\u0027s racey. It\u0027s not a problem in practice right now, so I intentionally took the decision of not implementing a `nc`-style wait loop for now in the interests of getting this done.\n\nAdded a TODO to revisit this.",
+      "parentUuid": "0843920c_30deefc1",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48269729_b79252c6",
