@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e83fb0b1_f0844302",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b830e496_5a035f1a",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "7489582e_edbe2f2e",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
@@ -86,6 +104,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8007e489_1a621244",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11de41c7_4308fdb6",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a92277aa_a2a4caee",
@@ -99,6 +135,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "\"compiled\" feels like an overloaded term. \"unified\", perhaps?",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b451941_fcbf57f1",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a92277aa_a2a4caee",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +174,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cfa7c75_80e76198",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53aef680_dfb1babe",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4086de6d_e5d26ae6",
@@ -133,6 +205,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "Reflow.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08c51ce4_fccfc39f",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4086de6d_e5d26ae6",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -154,6 +244,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "62585540_fdee164f",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1359cb25_d677b5f7",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3041e061_b20a8fc8",
@@ -167,6 +275,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "```suggestion\n[here](#cue-registry-env) for details about that)). The expectation is\n```",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b57dab8d_50034050",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3041e061_b20a8fc8",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -188,6 +314,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99480fc2_e048f0eb",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "797bf430_977a9f50",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc913754_a396dc2d",
@@ -201,6 +345,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "Reflow.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cce16892_92bff609",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc913754_a396dc2d",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -222,6 +384,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdfc6361_8b9bdf8f",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "380c1081_cb25025b",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "51e451e3_2296bf67",
@@ -235,6 +415,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "I /believe/ that markdown requires this line continuation to be indented.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7699da43_00448d66",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51e451e3_2296bf67",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -256,6 +454,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f23d0180_0194f139",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c62c987_21dd2b28",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9f9bbf7_3fabd957",
@@ -269,6 +485,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "\"for full compatibility\" and \"significantly under\" feel a bit woolly for reference material.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49937e64_4f0c8092",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "I\u0027ve tried to be a bit more specific.",
+      "parentUuid": "f9f9bbf7_3fabd957",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -290,6 +524,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbec6b66_d47f7f14",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8ff7526_f7a68c3b",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c87591b4_c8fece6d",
@@ -303,6 +555,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "`s/example.com/foobarbaz.example/`",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b91dfcd5_0f7e996b",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c87591b4_c8fece6d",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -342,6 +612,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb35f107_90ecb43e",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bef379d_421c5dc8",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7ce605b_ab182f6b",
@@ -355,6 +643,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "Major version suffixes are \"always\" required ... except when the\u0027re allowed to be omitted? I /think/ I grok the point, but a rewording might remove any ambiguity!",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d4d5935_e5d8340d",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Changed to make the sentence specific to module paths.",
+      "parentUuid": "c7ce605b_ab182f6b",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -376,6 +682,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f4ce109_a45dd894",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "The note is actually from the original Go doc but I think it\u0027s still worth keeping in. I rephrased very slightly to try to make the sentence clearer.",
+      "parentUuid": "1c5b34e0_1783a535",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0859ca6_ad5cddb5",
@@ -389,6 +713,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "Perhaps link to https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "201eddb0_4e8fe6ea",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0859ca6_ad5cddb5",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -410,6 +752,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a6635b7_0f824102",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6dcb4482_5e94f3d8",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "86a0d080_cc9e4b50",
@@ -423,6 +783,24 @@
       "writtenOn": "2024-02-12T13:53:09Z",
       "side": 1,
       "message": "Whilst this doc is exceptional, with its inline glossary, I /think/ it\u0027ll look better to place `Related content` as the final section on the page - if only for consistency with other pages.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9ead311_0374a986",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T15:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86a0d080_cc9e4b50",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
