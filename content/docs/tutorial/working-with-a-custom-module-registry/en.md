@@ -50,6 +50,13 @@ This tutorial describes an experimental feature. All details are subject to chan
   ([Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
    [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) in the CUE tour)
 
+This tutorial is written using the following version of `cmd/cue`:
+
+{{{with script "en" "cue version"}}}
+#ellipsis 1
+cue version
+{{{end}}}
+
 ## Create the module for the schema code
 
 In this tutorial we will focus on an imaginary application called `FrostyApp`,

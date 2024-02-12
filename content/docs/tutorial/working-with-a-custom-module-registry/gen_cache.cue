@@ -15,7 +15,7 @@ package site
 								"edit-dependency-version":  "20qyCFMqHE2OqhL8ILndmu3pTkvbwoZaZgEuUzHRo0g="
 							}
 							multi_step: {
-								"RF9RTOT7E9BUKIOV1MSPV8OJ12NNE464ANK1JVV93T24V3PSTRQ0====": [{
+								"PKVFEO88AACRG7VKMSL437H9D6CKEMVDH1CD3APPHB0PDA99Q3O0====": [{
 									doc: """
 											# TODO: this is inherently racey. But not a problem in practice...
 											# for now. When it does become a problem we can solve this properly
@@ -24,6 +24,15 @@ package site
 									cmd:      "nohup cue mod registry localhost:5000 >/tmp/cue_mod_registry 2>&1 &"
 									exitCode: 0
 									output:   ""
+								}, {
+									doc:      "#ellipsis 1"
+									cmd:      "cue version"
+									exitCode: 0
+									output: """
+											cue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24
+											...
+
+											"""
 								}, {
 									doc:      ""
 									cmd:      "mkdir frostyconfig"
