@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7720df45_1bdb73e0",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Thanks for spotting this. Legacy comment left over from an earlier refactor. Removed.",
+      "parentUuid": "d0381412_e53ea234",
+      "revId": "d2f2b980f1988663ee1d3cc6b60eadc71ac11a66",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5b5400b_be2910bc",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-02-12T13:19:29Z",
       "side": 1,
       "message": "\u0026 \u003e\u003d1 ?\n\n(or \u003e\u003d 0 if it\u0027s a zero-based index - maybe document that).",
+      "revId": "d2f2b980f1988663ee1d3cc6b60eadc71ac11a66",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3ebb690_8441619a",
+        "filename": "internal/cmd/preprocessor/cmd/schema.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Good idea. Took your first suggestion, thanks.",
+      "parentUuid": "d5b5400b_be2910bc",
       "revId": "d2f2b980f1988663ee1d3cc6b60eadc71ac11a66",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
