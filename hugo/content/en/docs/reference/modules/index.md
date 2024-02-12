@@ -33,12 +33,12 @@ experiment must be enabled by setting the `CUE_EXPERIMENT`
 export CUE_EXPERIMENT=modules
 ```
 
-Note: this document largely supercedes the [prior modules
-documentation]({{< relref "docs/concept/modules-packages-instances" >}}]
-although as a transitionary measure, the CUE tool does still support
+Note: this document largely supercedes the
+[prior modules documentation]({{< relref "docs/concept/modules-packages-instances" >}})
+although, as a transitionary measure, the CUE tool still supports
 the import of packages present in the `cue.mod/pkg`, `cue.mod/usr` and
-`cue.mod/gen` directories. This only applies to the main module and if
-there is any ambiguity with respect to regular module dependencies, an
+`cue.mod/gen` directories. This only applies to the main module, and if
+there is any ambiguity with respect to regular module dependencies an
 "ambiguous import" error will be reported.
 
 ## Modules, packages, and versions {#modules-overview}
@@ -326,7 +326,7 @@ module: "foo.example/my/thing@v1"
 
 deps: {
 	"foo.example/other/thing@v1": v: "v1.0.2"
-	"foo.example/new/thing@v2": v: "v2.3.4"
+	"foo.example/new/thing@v2": v:   "v2.3.4"
 }
 ```
 
@@ -362,12 +362,13 @@ not saved in a "lock" file. MVS is deterministic, and the build list doesn't
 change when new versions of dependencies are released, so MVS is used to compute
 it at the beginning of every module-aware command.
 
-Consider the example in the diagram below. The main module requires module A
+{{< figure
+  src="buildlist.svg" link="buildlist.svg" align="right"
+  caption="Module version graph with visited versions highlighted"
+>}}
+Consider the example in this diagram. The main module requires module A
 at version 1.2 or higher and module B at version 1.2 or higher. A 1.2 and B 1.2
 require C 1.3 and C 1.4, respectively. C 1.3 and C 1.4 both require D 1.2.
-
-<!-- TODO: this renders too large -->
-![Module version graph with visited versions highlighted](buildlist.svg)
 
 MVS visits and loads the `cue.mod/module.cue` file for each of the module versions
 highlighted in blue. At the end of the graph traversal, MVS returns a build list
@@ -438,8 +439,8 @@ a wide range of platforms.
   [`module.CheckImportPath`](https://pkg.go.dev/golang.org/x/mod/module?tab=doc#CheckImportPath)
   for the differences.
 * A file or directory name up to the first dot must not be a
-[reserved file name on Windows]( https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions),
-regardless of case (`CON`, `com1`, `NuL`, and so on).
+  [reserved file name on Windows]( https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions),
+  regardless of case (`CON`, `com1`, `NuL`, and so on).
 
 ## Module caching {#module-cache}
 
@@ -594,6 +595,6 @@ letter `v` followed by a semantic version. See the section on
 
 ## Related content
 
-- [Working with a custom module registry]({{< relref
+- Tutorial: [Working with a custom module registry]({{< relref
     "docs/tutorial/working-with-a-custom-module-registry"
   >}})
