@@ -35,6 +35,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9ed5266_6f19b2db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T16:01:20Z",
+      "side": 1,
+      "message": "Clarifications.",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48269729_b79252c6",
@@ -71,6 +88,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a4026873_5fb646b3",
+        "filename": "hugo/content/en/docs/tutorial/working-with-a-custom-module-registry/index.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T16:01:20Z",
+      "side": 1,
+      "message": "To expand on this: it seems odd to me to see a version suffix like that serialised in documentation, especially as it doesn\u0027t contain the full suffix that the site is configured to use in `site.cue:version:cue`. If it\u0027s intentional and/or the only possible value that could be serialised at the moment, please disregard.",
+      "parentUuid": "39052e96_023cd365",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4b12b949_b3989e72",
         "filename": "hugo/content/en/docs/tutorial/working-with-a-custom-module-registry/index.md",
         "patchSetId": 14
@@ -82,6 +117,24 @@
       "writtenOn": "2024-02-12T15:46:38Z",
       "side": 1,
       "message": "`.dev`?",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6c026d0_46094666",
+        "filename": "hugo/content/en/docs/tutorial/working-with-a-custom-module-registry/index.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T16:01:20Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "4b12b949_b3989e72",
       "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
