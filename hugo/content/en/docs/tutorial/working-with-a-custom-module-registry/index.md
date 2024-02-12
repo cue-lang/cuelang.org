@@ -47,7 +47,7 @@ This tutorial is written using the following version of `cmd/cue`:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
 $ cue version
-cue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24
+cue version v0.8.0-alpha.1
 ...
 ```
 
@@ -269,7 +269,7 @@ We can see that the dependencies have now been added to the
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.8.0-0.dev"
+	version: "v0.8.0-alpha.1"
 }
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {
@@ -402,7 +402,7 @@ Here is what the `cue.mod/module.cue` file now looks like:
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.8.0-0.dev"
+	version: "v0.8.0-alpha.1"
 }
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {

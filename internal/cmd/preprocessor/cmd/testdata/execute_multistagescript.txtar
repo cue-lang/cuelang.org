@@ -192,7 +192,7 @@ hello
 ```
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
 $ cue version
-cue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24
+cue version v0.8.0-alpha.1
 
 go version go1.22.0
       -buildmode exe
@@ -215,12 +215,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "0eglyxDmF7Aa2cLdeejR7/RmnFeqdT8xc2BmJ1pXZ64="
-						"upload-some-json": "3ASv2z3qO/8DOMBfc7bUL77Kqpbe8E5BV9or116S1yI="
-						"in-subdir":        "Zwiy4x77+BFu61goz1QtYAalWU2pz5BnNGntPD/6asM="
+						"upload-some-cue":  "Qeh5dBYv44+X5MjEvYJg7vlFPAdlUWMv82XbC1Sz2PE="
+						"upload-some-json": "UcdyFGMTs9LUPE01F0z18B1V3EABbFvRtJ2WgBWhW7Y="
+						"in-subdir":        "zHoWoXaq9p6lYZoULKSi7hLssBPZmLU6v3l1DfYXv/o="
 					}
 					multi_step: {
-						"10GFRLRN4SCBAT8678JHLGL11KDBA466NKFFA9JFLJVBR84OE7UG====": [{
+						"A836Q874LN0IJ68A6NTQAC0QOKK8R6Q2CMU52VQ1FV0LPS6NL11G====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -251,7 +251,7 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24
+									cue version v0.8.0-alpha.1
 
 									go version go1.22.0
 									      -buildmode exe
