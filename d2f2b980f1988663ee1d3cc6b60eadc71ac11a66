@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f96228ab_74c92110",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:19:29Z",
+      "side": 1,
+      "message": "LGTM with minor thoughts.",
+      "revId": "d2f2b980f1988663ee1d3cc6b60eadc71ac11a66",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0381412_e53ea234",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:19:29Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment: k.Step isn\u0027t referenced here.",
+      "revId": "d2f2b980f1988663ee1d3cc6b60eadc71ac11a66",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5b5400b_be2910bc",
+        "filename": "internal/cmd/preprocessor/cmd/schema.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:19:29Z",
+      "side": 1,
+      "message": "\u0026 \u003e\u003d1 ?\n\n(or \u003e\u003d 0 if it\u0027s a zero-based index - maybe document that).",
+      "revId": "d2f2b980f1988663ee1d3cc6b60eadc71ac11a66",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
