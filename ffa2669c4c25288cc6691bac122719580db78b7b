@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ff7fbdb_914f8118",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "646d08a8_3a60b07f",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "036f43e0_4bd25c8b",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-02-12T14:18:17Z",
       "side": 1,
       "message": "If you don\u0027t quote, then filenames with spaces will break things.\n\n```suggestion\n\t\t\tpf(\"if [[ \\\"%s\\\" !\u003d /* ]]; then %s\u003d\\\"$HOME/%s\\\"; else %s\u003d\\\"%s\\\"; fi\\n\", f.Name, targetFileVar, f.Name, targetFileVar, f.Name)\n```",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c807120_2a472e12",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "036f43e0_4bd25c8b",
       "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "331fc1ed_55b90273",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d038179c_ad4a369b",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa2f6b5a_aaa05a88",
@@ -86,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4d64405_3dfe73aa",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa2f6b5a_aaa05a88",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f9aecc9_df29a7ef",
@@ -99,6 +171,24 @@
       "writtenOn": "2024-02-12T14:18:17Z",
       "side": 1,
       "message": "```suggestion\n\t\t\t// Check the exit code\n```",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abdfc1eb_d53cacc3",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f9aecc9_df29a7ef",
       "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
