@@ -65,7 +65,7 @@ Place this information in it, including the deliberate mistake in the `species`
 field:
 
 {{{with upload "en" "yamlBroken"}}}
--- charlie.yml --
+-- validating-yaml-with-cue/charlie.yml --
 name:
   first: Charlie
   last:  Cartwright
@@ -79,7 +79,7 @@ Create a file called `pets.cue` to hold your schema, and place this CUE in it:
 
 {{{with upload "en" "pets.cue"}}}
 #codetab(pets.cue) linenos="table"
--- pets.cue --
+-- validating-yaml-with-cue/pets.cue --
 species!: "cat" | "dog"
 age?:     number
 {{{end}}}
@@ -151,7 +151,7 @@ Update `charlie.yml` to:
 Your corrected data file should read as follows:
 
 {{{with upload "en" "yamlFixed"}}}
--- charlie.yml --
+-- validating-yaml-with-cue/charlie.yml --
 name:
   first: Charlie
   last:  Cartwright
@@ -189,7 +189,7 @@ Add a second data file containing the details of another pet.
 Create a data file named `toby.yml` to hold Toby the dog's details:
 
 {{{with upload "en" "yaml2"}}}
--- toby.yml --
+-- validating-yaml-with-cue/toby.yml --
 name:
   first: Toby
   last: Dog

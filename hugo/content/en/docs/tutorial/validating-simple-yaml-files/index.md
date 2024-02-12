@@ -65,7 +65,7 @@ Create a data file named `charlie.yml` to hold Charlie the cat's details.
 Place this information in it, including the deliberate mistake in the `species`
 field:
 
-```yml { title="charlie.yml" }
+```yml { title="validating-yaml-with-cue/charlie.yml" }
 name:
   first: Charlie
   last:  Cartwright
@@ -77,7 +77,7 @@ age: "15"
 {{< step stepNumber="4" >}}
 Create a file called `pets.cue` to hold your schema, and place this CUE in it:
 
-```cue { title="pets.cue" linenos="table" }
+```cue { title="validating-yaml-with-cue/pets.cue" }
 species!: "cat" | "dog"
 age?:     number
 ```
@@ -158,7 +158,7 @@ Update `charlie.yml` to:
 
 Your corrected data file should read as follows:
 
-```yml { title="charlie.yml" }
+```yml { title="validating-yaml-with-cue/charlie.yml" }
 name:
   first: Charlie
   last:  Cartwright
@@ -195,7 +195,7 @@ Add a second data file containing the details of another pet.
 
 Create a data file named `toby.yml` to hold Toby the dog's details:
 
-```yml { title="toby.yml" }
+```yml { title="validating-yaml-with-cue/toby.yml" }
 name:
   first: Toby
   last: Dog
