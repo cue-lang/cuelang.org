@@ -1,3 +1,5 @@
+staticDir = ['static', 'examples']
+
 baseURL = "/"
 title = "CUE"
 publishDir = "../_public"
