@@ -634,7 +634,13 @@ func (m *multiStepScript) run() (runerr error) {
 		startCmd := exec.Command("docker", "start", "-a", instance)
 		out, err = startCmd.CombinedOutput()
 		if err != nil {
-			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s\nscript was:\n%s", m, createCmd, err, out, m.bashScript)
+			var script string
+			if m.debugGeneral {
+				// Logging the script we generated is very noisy - only do so when
+				// debug=general set.
+				script = fmt.Sprintf("\nscript was:\n%s", m.bashScript)
+			}
+			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s%s", m, createCmd, err, out, script)
 		}
 
 		// Because we are running in -t mode, replace all \r\n with \n
