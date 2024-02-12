@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "b830e496_5a035f1a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "404",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "7489582e_edbe2f2e",
@@ -14,6 +31,380 @@
       "writtenOn": "2024-02-12T11:32:44Z",
       "side": 1,
       "message": "This should be ready for another review now.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5851db42_a2cacbc9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "I don\u0027t feel I should be the one to +2 this core reference material on a topic I\u0027m not experienced with, hence the +1.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25e4093a_013a23e7",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Resolve FIXME.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11de41c7_4308fdb6",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "I think we should remove contractions in reference material.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a92277aa_a2a4caee",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "\"compiled\" feels like an overloaded term. \"unified\", perhaps?",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53aef680_dfb1babe",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "```suggestion\nis the module path joined with the subdirectory containing the package,\nrelative to the module root.\n```",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4086de6d_e5d26ae6",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Reflow.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1359cb25_d677b5f7",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "```suggestion\nthe root path is `myhost.example/foo` and the major version suffix is `@v0`.\n```",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3041e061_b20a8fc8",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "```suggestion\n[here](#cue-registry-env) for details about that)). The expectation is\n```",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "797bf430_977a9f50",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Reflow.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc913754_a396dc2d",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Reflow.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "380c1081_cb25025b",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "```suggestion\nto the restrictions\n[documented there](https://github.com/opencontainers/distribution-spec/blob/main/spec.md#pulling-manifests).\n```",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51e451e3_2296bf67",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "I /believe/ that markdown requires this line continuation to be indented.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c62c987_21dd2b28",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "```suggestion\nIn addition, the first path element must contain at least one period character (`.`).\n```",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9f9bbf7_3fabd957",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "\"for full compatibility\" and \"significantly under\" feel a bit woolly for reference material.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8ff7526_f7a68c3b",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Please start `[]()` links at the start of a line, taking up the whole of the line, if their length would naturally make them flow over a source line break.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c87591b4_c8fece6d",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "`s/example.com/foobarbaz.example/`",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bef379d_421c5dc8",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "nit: with our current CSS, italics with a trailing colon look better if the colon is *included* inside the italics.\n```suggestion\nrule](https://research.swtch.com/vgo-import)_:\n```",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7ce605b_ab182f6b",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Major version suffixes are \"always\" required ... except when the\u0027re allowed to be omitted? I /think/ I grok the point, but a rewording might remove any ambiguity!",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c5b34e0_1783a535",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "I can\u0027t correlate this issue\u0027s content to the CUE-related comment, or to the TODO.",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0859ca6_ad5cddb5",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Perhaps link to https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dcb4482_5e94f3d8",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Reflow",
+      "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86a0d080_cc9e4b50",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T13:53:09Z",
+      "side": 1,
+      "message": "Whilst this doc is exceptional, with its inline glossary, I /think/ it\u0027ll look better to place `Related content` as the final section on the page - if only for consistency with other pages.",
       "revId": "ddf0b737111135eb864bb4aa49c6d2d42950743c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
