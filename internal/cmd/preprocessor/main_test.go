@@ -62,14 +62,14 @@ func TestServeScript(t *testing.T) {
 	// happens (a timeout that should trigger an interrupt of the serve process)
 	// is almost zero, unless the caller deliberately sets a significantly lower
 	// test timeout.
-	cmd := exec.CommandContext(ctx, "./_scripts/serve.bash")
+	cmd := exec.CommandContext(ctx, "hugo", "serve")
 	cmd.Cancel = func() error {
 		return cmd.Process.Signal(os.Interrupt)
 	}
 	cmd.Stdout = &buf
 	cmd.Stderr = &buf
 	cwd, _ := os.Getwd()
-	cmd.Dir = filepath.Join(cwd, "..", "..", "..")
+	cmd.Dir = filepath.Join(cwd, "..", "..", "..", "hugo")
 
 	// Run serve
 	wg.Go(func() error {
