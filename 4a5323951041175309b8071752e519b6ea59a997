@@ -1,0 +1,141 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36aed465_9b6c0628",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T15:43:04Z",
+      "side": 1,
+      "message": "With a last few suggestions.",
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91af8070_94d060ab",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T15:43:04Z",
+      "side": 1,
+      "message": "Link to `cue help environment` CLI docs?",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d324dbff_b9a35b4e",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T15:43:04Z",
+      "side": 1,
+      "message": "Still broken.",
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0ac5eae_9eb8605d",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T15:43:04Z",
+      "side": 1,
+      "message": "Does a module path tell us where to find it? I\u0027m not sure that it does. `CUE_REGISTRY` does that. I get what you\u0027re trying to say here, but I think this is confusing language: if the registry URL were part of the import path then it _would_ describe where to find it, but it\u0027s a key design decision of CUE modules not to do this.",
+      "range": {
+        "startLine": 75,
+        "startChar": 60,
+        "endLine": 76,
+        "endChar": 2
+      },
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4696bfa_8f84a1b8",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T15:43:04Z",
+      "side": 1,
+      "message": "This language is better than the \"where to find it above\".",
+      "range": {
+        "startLine": 80,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 16
+      },
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae26a7c8_b0faead5",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T15:43:04Z",
+      "side": 1,
+      "message": "This file should be maintained as a source of truth in cue-lang/cue I suspect? Please can you create an issue to track creating such a file and automatically referencing that file here?",
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56f0024a_b87d9993",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T15:43:04Z",
+      "side": 1,
+      "message": "Suspect we should flip from `example.com` to `*.example` per @github@hello.jonathanmatthews.com throughout?",
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
