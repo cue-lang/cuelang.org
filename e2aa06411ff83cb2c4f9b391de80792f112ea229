@@ -16,6 +16,24 @@
       "message": "Where have the changes to content/docs/reference/cli/commands.cue gone? Isn\u0027t that where the CI content comes from?",
       "revId": "e2aa06411ff83cb2c4f9b391de80792f112ea229",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "807ea619_91bce789",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T09:27:24Z",
+      "side": 1,
+      "message": "s/CI/CLI/",
+      "parentUuid": "3c74feac_6acd0809",
+      "revId": "e2aa06411ff83cb2c4f9b391de80792f112ea229",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
