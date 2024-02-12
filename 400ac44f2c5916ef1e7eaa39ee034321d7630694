@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b4f8090_5feddbd2",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T09:17:34Z",
+      "side": 1,
+      "message": "@rogpeppe@gmail.com - thoughts here?",
+      "parentUuid": "71548c18_a47ba334",
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "170a97f5_cbeaff12",
         "filename": "content/docs/reference/modules-experiment/en.md",
         "patchSetId": 1
@@ -651,6 +669,30 @@
       "side": 1,
       "message": "I don\u0027t think it was proposed as such, but there are de facto two modes: one is the lax form as accepted by `cue mod tidy` and the strict form as checked by the central registry. The \"real\" version is the strict version, but if we describe the schema like that, then it won\u0027t be clear what people are allowed to write before running `cue mod tidy`. Hence I split it into two here.\n\nIf we\u0027re going to document only one, do you think it should be the strict mode or the lax mode?",
       "parentUuid": "2d54f9f5_c50b9b44",
+      "range": {
+        "startLine": 237,
+        "startChar": 43,
+        "endLine": 239,
+        "endChar": 69
+      },
+      "revId": "400ac44f2c5916ef1e7eaa39ee034321d7630694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d12f8161_9decd0fa",
+        "filename": "content/docs/reference/modules-experiment/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T09:17:34Z",
+      "side": 1,
+      "message": "\u003e If we\u0027re going to document only one, do you think it should be the strict mode or the lax mode?\n\nThe strict mode. Because that\u0027s what the module loader requires. \n\nThe fact that we can describe what `cue mod tidy` _feels_ like a detail too far for even these reference docs, at least for now.",
+      "parentUuid": "330775b5_ba3f1217",
       "range": {
         "startLine": 237,
         "startChar": 43,
