@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86d49a35_17968f2a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T15:46:38Z",
+      "side": 1,
+      "message": "```suggestion\nOCI-compatible server. This is sufficient for the tutorial that talks\n```",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7c3002d_b0a41f15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T15:46:38Z",
+      "side": 1,
+      "message": "This is /great/! I\u0027ll let @rogpeppe@gmail.com +2 for correctness.",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48269729_b79252c6",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T15:46:38Z",
+      "side": 1,
+      "message": "This CL fixes this TODO.",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39052e96_023cd365",
+        "filename": "hugo/content/en/docs/tutorial/working-with-a-custom-module-registry/index.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T15:46:38Z",
+      "side": 1,
+      "message": "`.dev`?",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b12b949_b3989e72",
+        "filename": "hugo/content/en/docs/tutorial/working-with-a-custom-module-registry/index.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-12T15:46:38Z",
+      "side": 1,
+      "message": "`.dev`?",
+      "revId": "f22da09eaf498228e367efa0fdd7fd9a2f94f214",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
