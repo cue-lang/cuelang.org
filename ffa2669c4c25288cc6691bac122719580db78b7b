@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32e4401f_666ed01d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T14:18:17Z",
+      "side": 1,
+      "message": "LGTM modulo some quoting fixes.",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "646d08a8_3a60b07f",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T14:18:17Z",
+      "side": 1,
+      "message": "```suggestion\n\t\t\t// absolute. We don\u0027t know.  When it is we should treat it as\n```",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "036f43e0_4bd25c8b",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T14:18:17Z",
+      "side": 1,
+      "message": "If you don\u0027t quote, then filenames with spaces will break things.\n\n```suggestion\n\t\t\tpf(\"if [[ \\\"%s\\\" !\u003d /* ]]; then %s\u003d\\\"$HOME/%s\\\"; else %s\u003d\\\"%s\\\"; fi\\n\", f.Name, targetFileVar, f.Name, targetFileVar, f.Name)\n```",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d038179c_ad4a369b",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T14:18:17Z",
+      "side": 1,
+      "message": "```suggestion\n\t\t\t\tpf(\"$ mkdir -p \\\"$(dirname $%s)\\\"\\n\", targetFileVar)\n```",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa2f6b5a_aaa05a88",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T14:18:17Z",
+      "side": 1,
+      "message": "```suggestion\n\t\t\t\tpf(\"mkdir -p \\\"$(dirname $%s)\\\"\\n\", targetFileVar)\n```",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f9aecc9_df29a7ef",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T14:18:17Z",
+      "side": 1,
+      "message": "```suggestion\n\t\t\t// Check the exit code\n```",
+      "revId": "ffa2669c4c25288cc6691bac122719580db78b7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
