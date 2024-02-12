@@ -16,6 +16,24 @@
       "message": "you could just call the group cuelang.org I think, FWIW.\n\nAlso, I think you mean that you added Jonathan to the group via the web UI? I would clarify that, as otherwise it seems like you\u0027re adding him here.",
       "revId": "f200dcc9ff3bc294c07b621519909244d9ce6540",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e60ebb9a_61045e1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T09:18:36Z",
+      "side": 1,
+      "message": "\u003e you could just call the group cuelang.org I think, FWIW.\n\nKeeping it qualified, in case we have other open source projects in other orgs.\n\n\u003e Also, I think you mean that you added Jonathan to the group via the web UI? I would clarify that, as otherwise it seems like you\u0027re adding him here.\n\nGood point. Done.",
+      "parentUuid": "381078f8_65b6f269",
+      "revId": "f200dcc9ff3bc294c07b621519909244d9ce6540",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
