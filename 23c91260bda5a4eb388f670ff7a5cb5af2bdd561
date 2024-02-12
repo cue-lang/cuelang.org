@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8de26882_48e5b8b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 51
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T09:18:06Z",
+      "side": 1,
+      "message": "For some reason this draft was sitting around...",
+      "revId": "23c91260bda5a4eb388f670ff7a5cb5af2bdd561",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

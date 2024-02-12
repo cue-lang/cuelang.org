@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8fee8218_ed058afb",
+        "filename": ".github/workflows/trybot.yml",
+        "patchSetId": 48
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T09:18:06Z",
+      "side": 1,
+      "message": "Not sure I fully understand your point. `matrix` is a GitHub context:\n\nhttps://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions\n\nAs such, in the CUE source it is only ever a string \"reference\", which in some situations needs to be expanded via `${{ ... }}`.",
+      "parentUuid": "ef6d6120_ec606274",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a433f4aa_08da1f3a",
         "filename": "internal/ci/github/trybot.cue",
         "patchSetId": 48
@@ -66,6 +84,24 @@
       "writtenOn": "2023-07-27T11:37:30Z",
       "side": 1,
       "message": "I don\u0027t think this is necessary with other DRY-ing up I have done in response to your other point.",
+      "parentUuid": "a433f4aa_08da1f3a",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06099432_27012d1c",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 48
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T09:18:06Z",
+      "side": 1,
+      "message": "DRY-ing up in response to your other comment means this is no longer an issue.",
       "parentUuid": "a433f4aa_08da1f3a",
       "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -138,6 +174,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "67ab7964_047fd18c",
+      "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7aa2593f_37373232",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 48
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T09:18:06Z",
+      "side": 1,
+      "message": "Done on both counts.",
+      "parentUuid": "6b39cd7e_5dc34459",
       "revId": "79bb6b11bf08568bf5bf702fbef552ef22ab310d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
