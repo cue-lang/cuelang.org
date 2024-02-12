@@ -88,6 +88,24 @@
       "parentUuid": "240339ea_668da8cf",
       "revId": "e2aa06411ff83cb2c4f9b391de80792f112ea229",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7af05286_0790fb18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T10:48:25Z",
+      "side": 1,
+      "message": "Because of the lack of https://cuelang.org/cl/1176750, the changes to commands.cue got lost and we didn\u0027t spot via a dirty git working tree in CI. Now that we have https://cuelang.org/cl/1176750, it is impossible for the contents of the CLI docs target directory to get out of sync with the commands.cue config, which is what had happened here.",
+      "parentUuid": "8531516f_463bbdc6",
+      "revId": "e2aa06411ff83cb2c4f9b391de80792f112ea229",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
