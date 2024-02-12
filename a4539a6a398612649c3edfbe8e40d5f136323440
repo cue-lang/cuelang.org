@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc32620a_d45313d3",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "It is already on my list to refactor this code. There are lots of things that can be done, but I\u0027m trying to keep changes minimal for now given priorities elsewhere. So fully accept and agree with the point, but I will address this later.",
+      "parentUuid": "c15902e1_adfe0637",
+      "range": {
+        "startLine": 681,
+        "startChar": 0,
+        "endLine": 701,
+        "endChar": 0
+      },
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e1e0d0c_88eb58c2",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-02-12T13:39:44Z",
       "side": 1,
       "message": "```suggestion\n\t\t// Now check if there are any known tag-based sanitiser directives\n```",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3c4ef1d_21cec608",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e1e0d0c_88eb58c2",
       "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30398580_c70dc51f",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Right now there is just a single sanitiser that can appear as a tag directive. It\u0027s not unreasonable to add more, including a pattern sanitiser. As such it feels (for now at least) like it would be better to have one pass that extracts tag directives (rather than trying to find a specific one), and then another phase which attempts to parse known sanitisers from the tag directives, based on the prefix. The code should at least not live here and rather along with the sanitiser itself that is being \"parsed\".",
+      "parentUuid": "6bfeb855_348d111a",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e4f3488f_09830f26",
@@ -88,6 +148,24 @@
       "writtenOn": "2024-02-12T13:39:44Z",
       "side": 1,
       "message": "default: error with \"too many args\" ?",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "441d1292_ccbb30f9",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Oooh nice catch. Done.",
+      "parentUuid": "e4f3488f_09830f26",
       "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -109,6 +187,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bfb06cb_66864590",
+        "filename": "internal/cmd/preprocessor/cmd/tag.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Thanks, good catch. Fixed by removing this trim space and leaving the prefix match to the cut below (and leaving _that_ trim space in place).",
+      "parentUuid": "487ec82e_6bbbccfe",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "78e8ba05_b9858190",
@@ -122,6 +218,24 @@
       "writtenOn": "2024-02-12T13:39:44Z",
       "side": 1,
       "message": "no need to trim space twice.",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "420d76df_d0de0ee8",
+        "filename": "internal/cmd/preprocessor/cmd/tag.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T14:44:23Z",
+      "side": 1,
+      "message": "Resolved per above.",
+      "parentUuid": "78e8ba05_b9858190",
       "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
