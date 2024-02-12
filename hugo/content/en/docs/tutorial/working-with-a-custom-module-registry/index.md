@@ -43,6 +43,14 @@ This tutorial describes an experimental feature. All details are subject to chan
   ([Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
    [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) in the CUE tour)
 
+This tutorial is written using the following version of `cmd/cue`:
+
+```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
+$ cue version
+cue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24
+...
+```
+
 ## Create the module for the schema code
 
 In this tutorial we will focus on an imaginary application called `FrostyApp`,
