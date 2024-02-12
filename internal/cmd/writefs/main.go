@@ -54,7 +54,7 @@ func main() {
 			continue
 		}
 		for _, f := range files {
-			if err := os.Remove(f); err != nil {
+			if err := os.RemoveAll(f); err != nil {
 				log.Fatalf("failed to remove %s: %v", f, err)
 			}
 		}
