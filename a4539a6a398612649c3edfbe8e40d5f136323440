@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e81da06a_949281b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:39:44Z",
+      "side": 1,
+      "message": "LGTM with a few minor suggestions, thanks.",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c15902e1_adfe0637",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:39:44Z",
+      "side": 1,
+      "message": "nit: this function is already really long. How about factoring out all this code to a separate function, say \"func sanitiseStatement(stmt, configSanitisers)\" ?",
+      "range": {
+        "startLine": 681,
+        "startChar": 0,
+        "endLine": 701,
+        "endChar": 0
+      },
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e1e0d0c_88eb58c2",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:39:44Z",
+      "side": 1,
+      "message": "```suggestion\n\t\t// Now check if there are any known tag-based sanitiser directives\n```",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bfeb855_348d111a",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:39:44Z",
+      "side": 1,
+      "message": "It seems kinda reasonable to me. Maybe say something about why it feels unprincipled?",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4f3488f_09830f26",
+        "filename": "internal/cmd/preprocessor/cmd/script_node.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:39:44Z",
+      "side": 1,
+      "message": "default: error with \"too many args\" ?",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "487ec82e_6bbbccfe",
+        "filename": "internal/cmd/preprocessor/cmd/tag.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:39:44Z",
+      "side": 1,
+      "message": "FWIW this means that the \u0027#\u0027 doesn\u0027t have to be at the start of a line, which isn\u0027t quite as documented.",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78e8ba05_b9858190",
+        "filename": "internal/cmd/preprocessor/cmd/tag.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T13:39:44Z",
+      "side": 1,
+      "message": "no need to trim space twice.",
+      "revId": "a4539a6a398612649c3edfbe8e40d5f136323440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
