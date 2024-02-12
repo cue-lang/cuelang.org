@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73b79411_42f91e36",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-12T19:26:10Z",
+      "side": 1,
+      "message": "This is a placeholder CL ready for the release of v0.8.0-alpha.1. We will need to \"rerun\" the steps that prepared for the commit when the release actually lands.",
+      "revId": "b0d3b1d2726cba6ee82efbb20664fca5f2837e54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
