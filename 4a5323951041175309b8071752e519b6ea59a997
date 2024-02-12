@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8372ab86_5056c798",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T16:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91af8070_94d060ab",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d324dbff_b9a35b4e",
@@ -58,6 +82,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25644489_db3ef4d6",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T16:43:24Z",
+      "side": 1,
+      "message": "Ha, I thought the previous \"it\u0027s broken\" comment was about the missing quotes on the link, but I think you\u0027re talking about the mismatched square bracket here, which I hadn\u0027t noticed before. For trivial one-character fixes like this, using the \"suggested edit\" button is nicely unambiguous and probably worth using... maybe I\u0027ve missed something else too!",
+      "parentUuid": "d324dbff_b9a35b4e",
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0ac5eae_9eb8605d",
@@ -71,6 +113,30 @@
       "writtenOn": "2024-02-12T15:43:04Z",
       "side": 1,
       "message": "Does a module path tell us where to find it? I\u0027m not sure that it does. `CUE_REGISTRY` does that. I get what you\u0027re trying to say here, but I think this is confusing language: if the registry URL were part of the import path then it _would_ describe where to find it, but it\u0027s a key design decision of CUE modules not to do this.",
+      "range": {
+        "startLine": 75,
+        "startChar": 60,
+        "endLine": 76,
+        "endChar": 2
+      },
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c39779b1_c0c9bf44",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T16:43:24Z",
+      "side": 1,
+      "message": "Yeah, good point. I think this sentence can just go actually.",
+      "parentUuid": "f0ac5eae_9eb8605d",
       "range": {
         "startLine": 75,
         "startChar": 60,
@@ -121,6 +187,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffdc7932_3d688e60",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T16:43:24Z",
+      "side": 1,
+      "message": "https://github.com/cue-lang/cue/issues/2809",
+      "parentUuid": "ae26a7c8_b0faead5",
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56f0024a_b87d9993",
@@ -134,6 +218,24 @@
       "writtenOn": "2024-02-12T15:43:04Z",
       "side": 1,
       "message": "Suspect we should flip from `example.com` to `*.example` per @github@hello.jonathanmatthews.com throughout?",
+      "revId": "4a5323951041175309b8071752e519b6ea59a997",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9801c976_90c44e41",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-02-12T16:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56f0024a_b87d9993",
       "revId": "4a5323951041175309b8071752e519b6ea59a997",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
