@@ -1,0 +1,92 @@
+# Ensure that we create uploaded files in the right place,
+# regardless of working directory at the time of the upload.
+
+unquote content/dir/en.md
+
+exec preprocessor execute
+
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+-- hugo/.keep --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "en" "1"}}}
+>find $HOME -type f | sort
+>{{{end}}}
+>
+>{{{with upload "en" "2"}}}
+>-- one.txt --
+>{{{end}}}
+>{{{with upload "en" "3"}}}
+>-- another/two.txt --
+>{{{end}}}
+>
+>{{{with script "en" "4"}}}
+>find $HOME -type f | sort
+>cd another
+>{{{end}}}
+>
+>{{{with upload "en" "5"}}}
+>-- one.txt --
+>{{{end}}}
+>{{{with upload "en" "6"}}}
+>-- another/two.txt --
+>{{{end}}}
+>
+>{{{with script "en" "7"}}}
+>find $HOME -type f | sort
+>{{{end}}}
+>
+-- golden/hugo/content/en/dir/index.md --
+---
+title: JSON Superset
+---
+
+```text { title="TERMINAL" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydAo=" }
+$ find $HOME -type f | sort
+/home/runner/.bash_logout
+/home/runner/.bashrc
+/home/runner/.profile
+```
+
+```txt { title="one.txt" }
+```
+```txt { title="another/two.txt" }
+```
+
+```text { title="TERMINAL" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydApjZCBhbm90aGVyCg==" }
+$ find $HOME -type f | sort
+/home/runner/.bash_logout
+/home/runner/.bashrc
+/home/runner/.profile
+/home/runner/another/two.txt
+/home/runner/one.txt
+$ cd another
+```
+
+```txt { title="one.txt" }
+```
+```txt { title="another/two.txt" }
+```
+
+```text { title="TERMINAL" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydAo=" }
+$ find $HOME -type f | sort
+/home/runner/.bash_logout
+/home/runner/.bashrc
+/home/runner/.profile
+/home/runner/another/two.txt
+/home/runner/one.txt
+```
+
