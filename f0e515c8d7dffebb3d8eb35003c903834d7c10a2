@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de42b534_5b1c10b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-13T09:58:53Z",
+      "side": 1,
+      "message": "Interesting that the rest of the `cue version` output isn\u0027t there, e.g.:\n\n```\n$ cue version\ncue version v0.8.0-0.dev.0.20240210175433-b460e71a6f24\n\ngo version devel go1.23-9cc0f9cba2 Mon Feb 12 14:42:29 2024 +0000\n      -buildmode exe\n       -compiler gc\n        -ldflags -w -s\n  DefaultGODEBUG httplaxcontentlength\u003d1,httpmuxgo121\u003d1,tls10server\u003d1,tlsrsakex\u003d1,tlsunsafeekm\u003d1\n     CGO_ENABLED 1\n          GOARCH amd64\n            GOOS linux\n         GOAMD64 v3\n```",
+      "revId": "f0e515c8d7dffebb3d8eb35003c903834d7c10a2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
