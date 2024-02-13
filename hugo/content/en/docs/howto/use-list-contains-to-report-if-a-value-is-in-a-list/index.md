@@ -63,8 +63,5 @@ will be linked to from this guide.
 
 ## Related content
 
-- `list.Contains` can also be used
-  [as a field validator]({{< relref
-    "../use-list-contains-as-a-field-validator"
-  >}})
+- {{< linkto/related/howto "use-list-contains-as-a-field-validator" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package

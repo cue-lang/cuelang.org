@@ -78,9 +78,6 @@ c.yaml:
 
 ## Related content
 
-- [Combining multiple JSON files by using file metadata]({{< relref
-    "../combine-multiple-json-files-by-using-file-metadata"
-  >}})
-- [cue help flags]({{< relref
-    "docs/reference/cli/cue-flags"
-  >}}) documents the `--with-context` and `-l` flags
+- {{< linkto/related/howto "combine-multiple-json-files-by-using-file-metadata" >}}
+- {{< linkto/related/reference "cli/cue-flags" >}}
+  documents the `--with-context` and `-l` flags

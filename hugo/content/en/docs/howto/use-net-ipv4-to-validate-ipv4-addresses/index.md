@@ -48,9 +48,5 @@ v6NotV4: invalid value "2001:0db8:85a3::8a2e:0370:7334" (does not satisfy net.IP
 ## Related content
 
 - The [`net`](https://pkg.go.dev/cuelang.org/go/pkg/net) built-in package
-- [Using "net.IP" to validate IP addresses]({{< relref
-    "use-net-ip-to-validate-ip-addresses"
-  >}})
-- [Using "net.IPCIDR" to validate IP CIDR ranges]({{< relref
-    "use-net-ipcidr-to-validate-ip-cidr-ranges"
-  >}})
+- {{< linkto/related/howto "use-net-ip-to-validate-ip-addresses" >}}
+- {{< linkto/related/howto "use-net-ipcidr-to-validate-ip-cidr-ranges" >}}

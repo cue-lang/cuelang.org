@@ -33,13 +33,6 @@ testSorted:   true
 
 ## Related content
 
-- `list.IsSortedStrings` can also be used
-  [as a field validator]({{< relref
-    "../use-list-issortedstrings-as-a-field-validator"
-  >}})
-- `list.IsSortedStrings` only tests if lists of strings are sorted
-  alphabetically - use `list.Sort`
-  [to test any other list type or sort order]({{< relref
-    "../use-list-issorted-to-report-if-lists-are-sorted"
-  >}})
+- {{< linkto/related/howto "use-list-issortedstrings-as-a-field-validator" >}}
+- {{< linkto/related/howto "use-list-issorted-to-report-if-lists-are-sorted" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package

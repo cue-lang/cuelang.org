@@ -46,9 +46,5 @@ v6MalformedPrefix: invalid value ":::1/128" (does not satisfy net.IPCIDR): error
 ## Related content
 
 - The [`net`](https://pkg.go.dev/cuelang.org/go/pkg/net) built-in package
-- [Using "net.IP" to validate IP addresses]({{< relref
-    "use-net-ip-to-validate-ip-addresses"
-  >}})
-- [Using "net.IPv4" to validate IPv4 addresses]({{< relref
-    "use-net-ipv4-to-validate-ipv4-addresses"
-  >}})
+- {{< linkto/related/howto "use-net-ip-to-validate-ip-addresses" >}}
+- {{< linkto/related/howto "use-net-ipv4-to-validate-ipv4-addresses" >}}

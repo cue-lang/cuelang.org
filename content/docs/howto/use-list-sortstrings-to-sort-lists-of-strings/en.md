@@ -31,9 +31,5 @@ sorted: ["A", "B", "C"]
 
 ## Related content
 
-- `list.SortStrings` only sorts lists of strings alphabetically - use
-  `list.Sort`
-  [to apply any other sort order]({{< relref
-    "../use-list-sort-to-sort-lists"
-  >}})
+- {{< linkto/related/howto "use-list-sort-to-sort-lists" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package

@@ -53,9 +53,5 @@ v6ByteTooLarge: invalid value [300,1,13,184,133,163,0,0,1,0,138,46,3,112,115,52]
 ## Related content
 
 - The [`net`](https://pkg.go.dev/cuelang.org/go/pkg/net) built-in package
-- [Using "net.IPv4" to validate IPv4 addresses]({{< relref
-    "use-net-ipv4-to-validate-ipv4-addresses"
-  >}})
-- [Using "net.IPCIDR" to validate IP CIDR ranges]({{< relref
-    "use-net-ipcidr-to-validate-ip-cidr-ranges"
-  >}})
+- {{< linkto/related/howto "use-net-ipv4-to-validate-ipv4-addresses" >}}
+- {{< linkto/related/howto "use-net-ipcidr-to-validate-ip-cidr-ranges" >}}

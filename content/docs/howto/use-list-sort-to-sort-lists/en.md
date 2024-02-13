@@ -65,8 +65,5 @@ stringsCountDescending: ["@@", "@", "X"]
 
 - [`list.Sort`](https://pkg.go.dev/cuelang.org/go/pkg/list#Sort) documents the
   comparator schema and fields.
-- Use `list.SortStrings`
-  [to sort lists of strings alphabetically]({{< relref
-    "../use-list-sortstrings-to-sort-lists-of-strings"
-  >}}) without needing to define a comparator
+- {{< linkto/related/howto "use-list-sortstrings-to-sort-lists-of-strings" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package

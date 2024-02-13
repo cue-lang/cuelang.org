@@ -50,7 +50,4 @@ $ cue export -e output
 
 ## Related content
 
-- How to
-  [export fields whose names are not valid identifiers]({{< relref
-    "../export-fields-whose-names-are-not-valid-identifiers"
-  >}}), and where *a separate CUE file cannot be created*.
+- {{< linkto/related/howto "export-fields-whose-names-are-not-valid-identifiers" >}}

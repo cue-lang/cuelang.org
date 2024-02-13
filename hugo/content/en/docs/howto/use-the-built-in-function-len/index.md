@@ -42,7 +42,6 @@ $ cue export
 
 ## Related content
 
-- Don't use the `len()` function on a string, for the reason mentioned above.\
-  Instead, learn
-  [how to constrain the length of a string]({{< relref "docs/howto/constrain-the-length-of-a-string" >}})
-  using functions from the CUE `strings` standard package.
+- Don't use the `len` function on a string, for the reason mentioned above.\
+  {{< linkto/related/howto "constrain-the-length-of-a-string" >}}
+  demonstrates using functions from the built-in `strings` package instead

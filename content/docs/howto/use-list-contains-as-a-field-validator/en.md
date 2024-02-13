@@ -80,8 +80,5 @@ will be linked to from this guide.
 
 ## Related content
 
-- `list.Contains` can also be used
-  [to report if a value is in a list]({{< relref
-    "../use-list-contains-to-report-if-a-value-is-in-a-list"
-  >}})
+- {{< linkto/related/howto "use-list-contains-to-report-if-a-value-is-in-a-list" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package
