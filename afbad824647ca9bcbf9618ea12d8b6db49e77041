@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4171ac4a_9bbc80b3",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T16:49:31Z",
+      "side": 1,
+      "message": "Really good example now, thanks.",
+      "revId": "afbad824647ca9bcbf9618ea12d8b6db49e77041",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "facfaa59_65c14909",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T16:49:31Z",
+      "side": 1,
+      "message": "I would put `input` before `output`. It\u0027s more logical and ordered from the reader\u0027s perspective, and is a bit more self explanatory.",
+      "revId": "afbad824647ca9bcbf9618ea12d8b6db49e77041",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db336fbc_7ccad151",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T16:49:31Z",
+      "side": 1,
+      "message": "I would split these onto separate lines. Especially given a list type follows on the next line... it looks too \"close\" to being a list itself.",
+      "revId": "afbad824647ca9bcbf9618ea12d8b6db49e77041",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea8deba0_974d476f",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T16:49:31Z",
+      "side": 1,
+      "message": "Put this on a newline please. Otherwise the syntactical structure of the type switch is a bit buried.",
+      "range": {
+        "startLine": 49,
+        "startChar": 36,
+        "endLine": 49,
+        "endChar": 40
+      },
+      "revId": "afbad824647ca9bcbf9618ea12d8b6db49e77041",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "283e889c_d744ab5c",
+        "filename": "content/docs/howto/write-a-type-switch/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T16:49:31Z",
+      "side": 1,
+      "message": "Ditto.",
+      "range": {
+        "startLine": 55,
+        "startChar": 33,
+        "endLine": 55,
+        "endChar": 37
+      },
+      "revId": "afbad824647ca9bcbf9618ea12d8b6db49e77041",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
