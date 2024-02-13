@@ -33,6 +33,23 @@
       "message": "I don\u0027t think we should do more hugo code per offline chat. So putting on hold until we resolve that conversation.",
       "revId": "abb78e5815da403f8a3fd8f500efdb9dea192a50",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a0ada34_17a4d3e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T10:41:27Z",
+      "side": 1,
+      "message": "Per offline chat, happy to go with this approach for now, but in time we should flip to preprocessor directives which will give better feedback, error messages etc.",
+      "revId": "abb78e5815da403f8a3fd8f500efdb9dea192a50",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
