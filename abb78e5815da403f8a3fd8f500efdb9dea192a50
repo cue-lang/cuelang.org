@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "abb78e5815da403f8a3fd8f500efdb9dea192a50",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df32c1aa_35f1604c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T10:37:22Z",
+      "side": 1,
+      "message": "I don\u0027t think we should do more hugo code per offline chat. So putting on hold until we resolve that conversation.",
+      "revId": "abb78e5815da403f8a3fd8f500efdb9dea192a50",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
