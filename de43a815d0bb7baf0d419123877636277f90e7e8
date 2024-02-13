@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fc1c2e2_f519ecfe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-02-13T09:53:43Z",
+      "side": 1,
+      "message": "LGTM - we will need to wait for Paul since he has a hold vote.",
+      "revId": "de43a815d0bb7baf0d419123877636277f90e7e8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
