@@ -50,6 +50,24 @@
       "message": "I would go with the multiline string style here, per your Yaml example. The use `#` to modify the escape sequence is unnecessary here, and probably raises more questions.",
       "revId": "a644deaa54b02a9d74ab316257871d585d80bfb3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "152bb968_21f6573c",
+        "filename": "content/docs/howto/use-encoding-json-validate-as-a-field-validator/en.md",
+        "patchSetId": 27
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-13T17:05:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5dfa1739_da0bdb0c",
+      "revId": "a644deaa54b02a9d74ab316257871d585d80bfb3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
