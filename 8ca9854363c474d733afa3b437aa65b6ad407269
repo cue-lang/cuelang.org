@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "8ca9854363c474d733afa3b437aa65b6ad407269",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5e26115_5433bc08",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-13T10:42:19Z",
+      "side": 1,
+      "message": "LGTM but this stack will likely need a rebase following https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1176777",
+      "revId": "8ca9854363c474d733afa3b437aa65b6ad407269",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
