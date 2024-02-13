@@ -595,6 +595,4 @@ letter `v` followed by a semantic version. See the section on
 
 ## Related content
 
-- Tutorial: [Working with a custom module registry]({{< relref
-    "docs/tutorial/working-with-a-custom-module-registry"
-  >}})
+- {{< linkto/related/tutorial "working-with-a-custom-module-registry" >}}

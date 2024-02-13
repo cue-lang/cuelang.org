@@ -526,3 +526,5 @@ dependency resolution.
 {{{end}}}
 
 ## Related content
+
+- {{< linkto/related/reference "modules" >}}
