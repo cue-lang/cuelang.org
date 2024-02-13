@@ -62,12 +62,7 @@ stringsCountDescendingFalse: false
 ## Related content
 
 - [`list.Sort`](https://pkg.go.dev/cuelang.org/go/pkg/list#Sort) documents the
-  comparator schema and fields.
-- `list.IsSorted` can also be used [as a field validator]({{< relref
-    "../use-list-issorted-as-a-field-validator"
-  >}})
-- Use `list.IsSortStrings`
-  [to test and report if lists of strings are sorted alphabetically]({{< relref
-    "../use-list-issortedstrings-to-report-if-lists-of-strings-are-sorted"
-  >}}) without needing to define a comparator
+  comparator schema and fields
+- {{< linkto/related/howto "use-list-issorted-as-a-field-validator" >}}
+- {{< linkto/related/howto "use-list-issortedstrings-to-report-if-lists-of-strings-are-sorted" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package

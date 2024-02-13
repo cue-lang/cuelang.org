@@ -64,13 +64,7 @@ stringsCountDescending: invalid value ["@","@@","X"] (does not satisfy list.IsSo
 ## Related content
 
 - [`list.Sort`](https://pkg.go.dev/cuelang.org/go/pkg/list#Sort) documents the
-  comparator schema and fields.
-- `list.IsSorted` can also be used
-  [to return a list's sort status as a boolean]({{< relref
-    "../use-list-issorted-to-report-if-lists-are-sorted"
-  >}})
-- Use `list.IsSortStrings`
-  [to validate that lists of strings are sorted alphabetically]({{< relref
-    "../use-list-issortedstrings-as-a-field-validator"
-  >}}) without needing to define a comparator
+  comparator schema and fields
+- {{< linkto/related/howto "use-list-issorted-to-report-if-lists-are-sorted" >}}
+- {{< linkto/related/howto "use-list-issortedstrings-as-a-field-validator" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package

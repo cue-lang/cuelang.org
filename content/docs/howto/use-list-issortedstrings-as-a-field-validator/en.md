@@ -35,13 +35,6 @@ unsorted: invalid value ["B","C","A"] (does not satisfy list.IsSortedStrings):
 
 ## Related content
 
-- `list.IsSortedStrings` can also be used
-  [to return a list's sort status as a boolean]({{< relref
-    "../use-list-issortedstrings-to-report-if-lists-of-strings-are-sorted"
-  >}})
-- `list.IsSortedStrings` only validates if lists of strings are sorted
-  alphabetically - use `list.IsSorted`
-  [to validate any other list type or sort order]({{< relref
-    "../use-list-issorted-as-a-field-validator"
-  >}})
+- {{< linkto/related/howto "use-list-issortedstrings-to-report-if-lists-of-strings-are-sorted" >}}
+- {{< linkto/related/howto "use-list-issorted-as-a-field-validator" >}}
 - The [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list) built-in package

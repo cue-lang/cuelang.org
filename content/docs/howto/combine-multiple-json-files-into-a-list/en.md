@@ -90,9 +90,6 @@ contents: [for _name in sortedInputs {
 
 ## Related content
 
-- [Combining multiple YAML files into a list]({{< relref
-    "../combine-multiple-yaml-files-into-a-list"
-  >}})
-- [cue help flags]({{< relref
-    "docs/reference/cli/cue-flags"
-  >}}) documents the `--with-context` and `-l` flags
+- {{< linkto/related/howto "combine-multiple-yaml-files-into-a-list" >}}
+- {{< linkto/related/reference "cli/cue-flags" >}}
+  documents the `--with-context` and `-l` flags

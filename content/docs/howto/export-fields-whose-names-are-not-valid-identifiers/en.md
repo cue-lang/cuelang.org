@@ -36,7 +36,4 @@ cmp stdout out
 
 ## Related content
 
-- How to use CUE's language features to
-  [refer to fields whose names are not valid identifiers]({{< relref
-    "../refer-to-fields-whose-names-are-not-valid-identifiers"
-  >}}).
+- {{< linkto/related/howto "refer-to-fields-whose-names-are-not-valid-identifiers" >}}
