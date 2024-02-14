@@ -16,6 +16,40 @@
       "message": "PTAL. Prompted by https://cuelang.slack.com/archives/C012UU8B72M/p1707917281549819, earlier today.",
       "revId": "2c52ee3e2e02e884a0ed1cf6668696069cdfd281",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9b73709_67a7949b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-14T14:21:30Z",
+      "side": 1,
+      "message": "Added a quick comment pre a proper review once the trrybots complete.",
+      "revId": "2c52ee3e2e02e884a0ed1cf6668696069cdfd281",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24b999df_8f6f7531",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-14T14:21:30Z",
+      "side": 1,
+      "message": "This guide should somewhere reference the `error()` builtin proposed in https://github.com/cue-lang/cue/issues/943, please, noting that such a builtin would allow for a custom error message.",
+      "revId": "2c52ee3e2e02e884a0ed1cf6668696069cdfd281",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
