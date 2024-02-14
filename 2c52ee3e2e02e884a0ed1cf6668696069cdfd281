@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1eedb1ea_cea8d873",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-14T14:18:35Z",
+      "side": 1,
+      "message": "PTAL. Prompted by https://cuelang.slack.com/archives/C012UU8B72M/p1707917281549819, earlier today.",
+      "revId": "2c52ee3e2e02e884a0ed1cf6668696069cdfd281",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
