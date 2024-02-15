@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									scopes: "R09UZNJFnem50R5jOMfBOIm92IbBBPq2GgI+wlN0IoE="
+									scopes: "NFRjtO1T4iDMWZUgRxp7x1gwXrf57vtNiBG+/xpxhwA="
 								}
 							}
 						}
