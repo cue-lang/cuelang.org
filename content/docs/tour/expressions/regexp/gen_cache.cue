@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									regexp: "jOCm4qjOepVTfcnxgWIYSNf1ZUtxh1UE2N7E5h7SrCQ="
+									regexp: "EtKINv8x2owEnolIv1Nc2TSMISalLXpAH/tA7AXicEI="
 								}
 							}
 						}
