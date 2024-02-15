@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							code: {
-								"client-side-validation": "AD/eM1RgcSm72pWn3eLp3VmNf8Ie+P0GMusDHhtIs6g="
-								jsonschema:               "1EZPJybItug/kifNpZgzyTFxQDF+DDGVsvh22txNK2Q="
+								"client-side-validation": "U2FryFjJvnyxv0E/OlorNRveA8LJCgQCwsvhJC6xxhI="
+								jsonschema:               "LoR8vpOqLnQKxKEk8A/MwO9ZwNg4D9MXjOTumjIBoeo="
 							}
 						}
 					}

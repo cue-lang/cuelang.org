@@ -3,11 +3,11 @@ package site
 	content: {
 		docs: {
 			howto: {
-				"constrain-the-sum-of-a-list-of-numbers": {
+				"use-net-ipcidr-to-validate-ip-cidr-ranges": {
 					page: {
 						cache: {
 							code: {
-								cc: "x7ok1fl6fzYzfDGfMC2WmOT6m5KqGxuFh8ZQbGP9CUk="
+								cc: "Ks+pTBlD3ghT1NySJTrAKjn9FSdFjthTCo/5sA2cGmY="
 							}
 						}
 					}
