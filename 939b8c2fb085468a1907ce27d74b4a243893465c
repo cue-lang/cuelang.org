@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "939b8c2fb085468a1907ce27d74b4a243893465c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e605574_738b8a7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T05:54:21Z",
+      "side": 1,
+      "message": "This is fine for now. I think we will need/want to flesh this out more on alpha.cuelang.org, so as not to leave all K8s related content on cue-by-example. So if you could please note that for future work in docs-and-content and we can follow up afterwards.",
+      "revId": "939b8c2fb085468a1907ce27d74b4a243893465c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
