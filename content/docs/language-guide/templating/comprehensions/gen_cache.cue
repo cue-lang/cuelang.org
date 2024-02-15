@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								code: {
-									"for-clause":             "GSSwQec5+h0KG3J5SnFkmMpRoY7OKtT5KfbkC5QBhA8="
-									"if-clause":              "w2fhsJYnEsbkkhTQxF3GphAFsvNW4TJCGD8NlN3Qbm8="
-									"let-clause":             "LI5dWvuMrkY48jsg2hw+QG4zyb6MtA6es9cWTkdfNxE="
-									"list-comprehension":     "EvInUl83r6EEOXLs0erLnRJE+mK0UKwXO7Mo3gHFqK8="
-									"switch-if-else-pattern": "ViInB+WymJkSQed7O1NxhftDgKkg/K9GwKfA6lDoPqs="
+									"for-clause":             "MqpYtp9UiBvgvbjV6e85FbEsRcKhemr0dXH2eOafAxM="
+									"if-clause":              "zylXJhqSuPgld6SUlZZEnXpot7W2tD4M/eGv4n70UFI="
+									"let-clause":             "vFL8vnISX2EIMnTFRrAXMYYZIAFNfu+PvZkRgLdnKNo="
+									"list-comprehension":     "l5GERUlUpMBALjhjtC20H3Z61uCLkHxNi4aqmJJlwv4="
+									"switch-if-else-pattern": "T5sgqIp6Ca8mHZ5u6t23eVlQs3B5Im4XxSvgXn4GH7g="
 								}
 							}
 						}

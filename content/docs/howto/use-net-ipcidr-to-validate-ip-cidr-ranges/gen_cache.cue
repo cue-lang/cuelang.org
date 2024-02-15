@@ -3,11 +3,11 @@ package site
 	content: {
 		docs: {
 			howto: {
-				"use-encoding-base64-decode": {
+				"use-net-ipcidr-to-validate-ip-cidr-ranges": {
 					page: {
 						cache: {
 							code: {
-								cc: "eilFZt9TQDMo/1/rAdjsbQt80aeUPtrhT8kUuQXBz+U="
+								cc: "UKSaWJ27P5pMR8jnxnyRSXK5jI84VeI4IXzrnFd6KUU="
 							}
 						}
 					}
