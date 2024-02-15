@@ -158,5 +158,16 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	cmd.Flags().Bool(string(flagCheck), false, "check CUE in page roots is properly namespaced")
 	cmd.Flags().Bool(string(flagList), false, "list all .cue files that form part of site configuration")
 	cmd.Flags().StringSliceVar(&hugoArgs, string(flagHugoFlag), nil, "list of flags to pass to hugo")
+	cmd.Flags().String(string(flagCacheVolumeName), envOrDefault("CUE_CACHE_VOLUME", "cuelang_org_caches"), "the name of the cache volume to use; this flag overrides CUE_CACHE_VOLUME")
+	cmd.Flags().Bool(string(flagNoCacheVolume), false, "do not use a shared docker volume cache for mult-step scripts")
 	return cmd
+}
+
+// envOrDefault returns the value of the environment variable named by v if
+// non-empty, else the value d.
+func envOrDefault(v, d string) string {
+	if res := os.Getenv(v); res != "" {
+		return res
+	}
+	return d
 }
