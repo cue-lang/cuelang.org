@@ -21,6 +21,7 @@ import (
 	"hash"
 	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -35,16 +36,18 @@ type lang string
 const (
 	langEn lang = "en"
 
-	flagDir           flagName = "dir"
-	flagDebug         flagName = "debug"
-	flagServe         flagName = "serve"
-	flagUpdate        flagName = "update"
-	flagReadonlyCache flagName = "readonlycache"
-	flagSkipCache     flagName = "skipcache"
-	flagHugoFlag      flagName = "hugo"
-	flagNoWriteCache  flagName = "nowritecache"
-	flagCheck         flagName = "check"
-	flagList          flagName = "ls"
+	flagDir             flagName = "dir"
+	flagDebug           flagName = "debug"
+	flagServe           flagName = "serve"
+	flagUpdate          flagName = "update"
+	flagReadonlyCache   flagName = "readonlycache"
+	flagSkipCache       flagName = "skipcache"
+	flagHugoFlag        flagName = "hugo"
+	flagNoWriteCache    flagName = "nowritecache"
+	flagCheck           flagName = "check"
+	flagList            flagName = "ls"
+	flagCacheVolumeName flagName = "cachevolumename"
+	flagNoCacheVolume   flagName = "nocachevolume"
 )
 
 const (
@@ -144,6 +147,14 @@ type executionContext struct {
 
 	// siteSchema is a CUE schema that validates a preprocessor site
 	siteSchema cue.Value
+
+	// noCacheVolume can be set to avoid using a shared docker volume for
+	// multi-step scripts.
+	noCacheVolume bool
+
+	// cacheVolumeName is the name of the cache volume to use to optimise
+	// multi-step scripts.
+	cacheVolumeName string
 }
 
 // tempDir creates a new temporary directory within the
@@ -215,6 +226,15 @@ func executeDef(c *Command, args []string) error {
 		skipCache:         flagSkipCache.Bool(c),
 		noWriteCache:      flagNoWriteCache.Bool(c),
 		siteSchema:        schema,
+		cacheVolumeName:   flagCacheVolumeName.String(c),
+		noCacheVolume:     flagNoCacheVolume.Bool(c),
+	}
+
+	// Ensure we have a docker cache volume if one is required
+	if !ctx.noCacheVolume {
+		if err := dockerCacheVolumeCheck(flagCacheVolumeName.String(c)); err != nil {
+			return fmt.Errorf("failed to ensure cache volume exists: %v", err)
+		}
 	}
 
 	// Calculate which levels of debug-level logging to enable, processing each
@@ -275,6 +295,17 @@ func executeDef(c *Command, args []string) error {
 		return cmd.ErrPrintedError
 	}
 	return nil
+}
+
+// dockerCacheVolumeCheck ensures that a docker volume volumeName exists, and
+// returns an error if not.
+func dockerCacheVolumeCheck(volumeName string) error {
+	cmd := exec.Command("docker", "volume", "create", volumeName)
+	out, err := cmd.CombinedOutput()
+	if err != nil {
+		err = fmt.Errorf("command [%v] failed: %v\n%s", cmd, err, out)
+	}
+	return err
 }
 
 func buildRootFileRegexp(langs []lang) *regexp.Regexp {

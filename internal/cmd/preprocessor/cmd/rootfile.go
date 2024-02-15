@@ -598,6 +598,11 @@ func (m *multiStepScript) run() (runerr error) {
 		"-v", fmt.Sprintf("%s:/scripts", scriptsDir),
 	)
 
+	// Ensure we have a docker cache volume if one is required
+	if !m.noCacheVolume {
+		args = append(args, "-v", fmt.Sprintf("%s:/caches", m.cacheVolumeName))
+	}
+
 	// We cannot perform the --network=host trick here, even if the user wants
 	// to be unsafe, because we might, for example, run cue mod registry which
 	// requires its own networking isolation for binding to the port it will
