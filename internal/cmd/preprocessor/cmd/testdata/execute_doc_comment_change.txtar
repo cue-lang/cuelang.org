@@ -1,0 +1,67 @@
+# Verify that changing a doc comment in any way causes a cache miss
+
+unquote content/dir/en.md content/dir/en.md.doc_comment
+
+# Run the preprocessor
+exec preprocessor execute
+
+# Verify that we generated the expected output
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+# Re-run the preprocessor and ensure we have a cache hit
+exec preprocessor execute --debug=all
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for multi-step script; not running'
+
+# Verify that we still generated the expected output
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+# Modify the doc comment alone and verify we get a cache miss
+cp content/dir/en.md.doc_comment content/dir/en.md
+exec preprocessor execute --debug=all
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache miss for multi-step script'
+
+# Verify that we generated the expected output with a doc comment
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index_doc_comment.md
+
+-- hugo/.keep --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir/en.md --
+>---
+>title: A page
+>---
+>{{{with script "en" "run-the-cue"}}}
+>echo hello
+>{{{end}}}
+-- content/dir/en.md.doc_comment --
+>---
+>title: A page
+>---
+>{{{with script "en" "run-the-cue"}}}
+># This is a doc comment
+>echo hello
+>{{{end}}}
+-- golden/hugo/content/en/dir/index.md --
+---
+title: A page
+---
+```text { title="TERMINAL" codeToCopy="ZWNobyBoZWxsbwo=" }
+$ echo hello
+hello
+```
+-- golden/hugo/content/en/dir/index_doc_comment.md --
+---
+title: A page
+---
+```text { title="TERMINAL" codeToCopy="ZWNobyBoZWxsbwo=" }
+# This is a doc comment
+$ echo hello
+hello
+```
