@@ -3,11 +3,11 @@ package site
 	content: {
 		docs: {
 			howto: {
-				"use-list-contains-to-report-if-a-value-is-in-a-list": {
+				"use-net-ipcidr-to-validate-ip-cidr-ranges": {
 					page: {
 						cache: {
 							code: {
-								cc: "2tTRvtVV6DyWwDVs4QsfdnLYZBFL9TvQHgRh6aNIhdw="
+								cc: "PzOet/26zvEOn5yygOQ38n/OJGogRq61zsoF2PZ9EdI="
 							}
 						}
 					}
