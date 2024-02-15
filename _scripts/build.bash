@@ -32,7 +32,7 @@ then
 	minify=""
 	if [ "${CI:-}" == "true" ]
 	then
-		skipcache="--skipcache=true"
+		skipcache="--skipcache=true --nocachevolume"
 	fi
 fi
 

@@ -16,14 +16,18 @@ package cmd
 
 import (
 	"bytes"
+	"context"
 	"crypto/sha256"
 	"fmt"
 	"hash"
 	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
+	"sync"
+	"time"
 
 	"cuelang.org/go/cmd/cue/cmd"
 	"cuelang.org/go/cue"
@@ -35,16 +39,18 @@ type lang string
 const (
 	langEn lang = "en"
 
-	flagDir           flagName = "dir"
-	flagDebug         flagName = "debug"
-	flagServe         flagName = "serve"
-	flagUpdate        flagName = "update"
-	flagReadonlyCache flagName = "readonlycache"
-	flagSkipCache     flagName = "skipcache"
-	flagHugoFlag      flagName = "hugo"
-	flagNoWriteCache  flagName = "nowritecache"
-	flagCheck         flagName = "check"
-	flagList          flagName = "ls"
+	flagDir             flagName = "dir"
+	flagDebug           flagName = "debug"
+	flagServe           flagName = "serve"
+	flagUpdate          flagName = "update"
+	flagReadonlyCache   flagName = "readonlycache"
+	flagSkipCache       flagName = "skipcache"
+	flagHugoFlag        flagName = "hugo"
+	flagNoWriteCache    flagName = "nowritecache"
+	flagCheck           flagName = "check"
+	flagList            flagName = "ls"
+	flagCacheVolumeName flagName = "cachevolumename"
+	flagNoCacheVolume   flagName = "nocachevolume"
 )
 
 const (
@@ -144,6 +150,29 @@ type executionContext struct {
 
 	// siteSchema is a CUE schema that validates a preprocessor site
 	siteSchema cue.Value
+
+	// noCacheVolume can be set to avoid using a shared docker volume for
+	// multi-step scripts.
+	noCacheVolume bool
+
+	// cacheVolumeCheck ensures we run our docker cache volume check only
+	// once per instance of the preprocessor (which is why this field is on
+	// executionContext and not executeContext). It returns the name of the
+	// volume to use for caches if the volume exists, and an error otherwise.
+	cacheVolumeCheck func() (string, error)
+}
+
+// dockerCacheVolumeCheck ensures that a docker volume volumeName exists, and
+// returns an error if not.
+func dockerCacheVolumeCheck(volumeName string) (string, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	cmd := exec.CommandContext(ctx, "docker", "volume", "create", volumeName)
+	out, err := cmd.CombinedOutput()
+	cancel()
+	if err != nil {
+		err = fmt.Errorf("failed to ensure cache volume exists via [%v]: %v\n%s", cmd, err, out)
+	}
+	return volumeName, err
 }
 
 // tempDir creates a new temporary directory within the
@@ -215,6 +244,10 @@ func executeDef(c *Command, args []string) error {
 		skipCache:         flagSkipCache.Bool(c),
 		noWriteCache:      flagNoWriteCache.Bool(c),
 		siteSchema:        schema,
+		cacheVolumeCheck: sync.OnceValues(func() (string, error) {
+			return dockerCacheVolumeCheck(flagCacheVolumeName.String(c))
+		}),
+		noCacheVolume: flagNoCacheVolume.Bool(c),
 	}
 
 	// Calculate which levels of debug-level logging to enable, processing each
