@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"io"
 
-	"cuelang.org/go/cue/errors"
+	"errors"
 )
 
 // errorContext is an error-aware logging interface embedded by types.
@@ -42,6 +42,10 @@ type errorContext interface {
 
 	// isInError returns the error state.
 	isInError() bool
+
+	// reset resets the error state. It is up to the caller to ensure that it
+	// is safe to call this from a race condition perspective.
+	reset() error
 }
 
 // errorContextWriter is a base implementation of errorContext
@@ -51,6 +55,20 @@ type errorContextWriter struct {
 	*executionContext
 	inError bool
 	log     io.Writer
+}
+
+func (e *errorContextWriter) reset() error {
+	// resetWriter is an io.Writer than also provides a Reset() method.
+	type resetWriter interface {
+		io.Writer
+		Reset() error
+	}
+
+	e.inError = false
+	if l, ok := e.log.(resetWriter); ok {
+		return l.Reset()
+	}
+	return nil
 }
 
 func (e *errorContextWriter) isInError() bool {

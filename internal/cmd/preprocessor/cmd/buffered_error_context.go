@@ -42,6 +42,12 @@ type errorContextBuffer struct {
 
 var _ errorContext = (*errorContextBuffer)(nil)
 
+func (e *errorContextBuffer) reset() error {
+	e.inError = false
+	e.log.Reset()
+	return nil
+}
+
 func (e *errorContextBuffer) isInError() bool {
 	return e.inError
 }
