@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e598e89f_3a6ee3bc",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-15T13:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb6c9af6_b62a8e89",
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0641ce29_42442b6e",
@@ -58,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f09582c_5de66060",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-15T13:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0641ce29_42442b6e",
+      "range": {
+        "startLine": 16,
+        "startChar": 58,
+        "endLine": 16,
+        "endChar": 69
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d8438612_af20b8f4",
@@ -71,6 +113,30 @@
       "writtenOn": "2024-02-15T06:02:33Z",
       "side": 1,
       "message": "I think we\u0027ve concluded that use of the plain `.` is what we should be defaulting to. Otherwise we are establishing the pattern of people unnecessarily needing to explicitly refer to the package in the current directory, when there is only one, when `.` will suffice.",
+      "range": {
+        "startLine": 22,
+        "startChar": 15,
+        "endLine": 22,
+        "endChar": 24
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1fa3d65_cedb13c2",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-15T13:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8438612_af20b8f4",
       "range": {
         "startLine": 22,
         "startChar": 15,
@@ -127,6 +193,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "486d44bf_dcc08545",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-15T13:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0ad8738_63bd436d",
+      "range": {
+        "startLine": 46,
+        "startChar": 58,
+        "endLine": 46,
+        "endChar": 63
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5d64651_329791bf",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-15T13:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0361ead5_7da9c329",
+      "range": {
+        "startLine": 46,
+        "startChar": 65,
+        "endLine": 46,
+        "endChar": 74
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d14fb680_5aa34983",
@@ -144,6 +258,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aceaba2_aa6f19ad",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-15T13:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d14fb680_5aa34983",
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ab23321_71fce6c1",
@@ -157,6 +289,30 @@
       "writtenOn": "2024-02-15T06:02:33Z",
       "side": 1,
       "message": "Per above.",
+      "range": {
+        "startLine": 61,
+        "startChar": 2,
+        "endLine": 61,
+        "endChar": 19
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5025626_6da2ef0f",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-15T13:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ab23321_71fce6c1",
       "range": {
         "startLine": 61,
         "startChar": 2,
