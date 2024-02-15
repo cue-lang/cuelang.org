@@ -406,6 +406,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 				// echo the command we will run
 				cmdEchoFence := rf.getFence()
 				pf("cat <<'%s'\n", cmdEchoFence)
+				pf("%s\n", stmt.Doc)
 				pf("$ %s\n", stmt.Cmd)
 				pf("%s\n", cmdEchoFence)
 				stmt.outputFence = rf.getFence()
