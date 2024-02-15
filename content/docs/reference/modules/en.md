@@ -463,6 +463,11 @@ to do this or
 The CUE command knows how to read auth tokens from the `$HOME/.docker/config.json`,
 including running helper commands to fetch them from secure storage.
 
+For organizations that don't allow the use of docker, [podman
+login](https://docs.podman.io/en/latest/markdown/podman-login.1.html) allows
+using the `--compat-auth-file $HOME/.docker/config.json` flag to generate a
+docker compatible json file.
+
 ## Glossary {#glossary}
 
 <!-- TODO: This glossary could move to its own page -->
