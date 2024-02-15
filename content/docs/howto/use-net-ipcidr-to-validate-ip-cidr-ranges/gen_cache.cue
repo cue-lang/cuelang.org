@@ -3,11 +3,11 @@ package site
 	content: {
 		docs: {
 			howto: {
-				"use-path-join-to-construct-well-formed-paths": {
+				"use-net-ipcidr-to-validate-ip-cidr-ranges": {
 					page: {
 						cache: {
 							code: {
-								cc: "kAw7fZxW3S/UKvJ6FSUnXssUl0w8piT46Huk7AqFCAQ="
+								cc: "6yMUf70U8a/13E7pnUzKc/pyHxinGe/BnvPh3gkX7Do="
 							}
 						}
 					}
