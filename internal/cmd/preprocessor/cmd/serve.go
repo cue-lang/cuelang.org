@@ -208,6 +208,12 @@ func (sc *serveContext) watcherEventLoop() {
 		// TODO: see the TODO agains the signal handling in (*executor).serve for ideas on
 		// how we do better tidy up.
 
+		// Reset the executor... because we either finished the first run or
+		// handled a watcher event
+		if err := sc.e.reset(); err != nil {
+			sc.e.debugf(sc.e.debugGeneral, "failed to reset executor: %v", err)
+		}
+
 		select {
 		case evs := <-sc.w.Events():
 			// Ignore if we only got events for the index file
