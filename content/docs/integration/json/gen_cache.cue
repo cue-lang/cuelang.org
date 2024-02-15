@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							code: {
-								"cue-emit-json":      "Wc453YrNYMV1rYrE0Cc83NP8CRXefiZKfriWLQFRBfo="
-								"cue-marshal-json":   "6nT939qBLSygE1W7DG5BQ0V7i5Ahz7ZTcFq0kGtajfc="
-								"cue-unmarshal-json": "hOa4nnfBZAkVdzlIo6uVmFQB6ZTFz5V0MH7XclQ/e1o="
-								"cue-validate-json":  "H6Somw5g7ZtN+ni1VyzBDCME2bOf6e5QGDpdRfUWK68="
+								"cue-emit-json":      "lBrQ+k/I1e9K+/zjX2cLLpk1vw/3fi6E+JMmGZxiVLs="
+								"cue-marshal-json":   "S/ukuPnYzAu4m3fB/TV9KNU1KDpwNvx8lULkvYllrj0="
+								"cue-unmarshal-json": "5iXFSe80vK+AouNt2klEpYl6GecXSTUPOtDTO4k5WUE="
+								"cue-validate-json":  "AoZK7RpcoLX/1GNDbNhjL/JTf1YAeNLqkftWiSt82Ew="
 							}
 						}
 					}
