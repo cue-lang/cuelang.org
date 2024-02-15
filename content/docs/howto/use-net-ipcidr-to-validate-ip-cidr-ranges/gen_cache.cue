@@ -3,11 +3,11 @@ package site
 	content: {
 		docs: {
 			howto: {
-				"use-list-issorted-to-report-if-lists-are-sorted": {
+				"use-net-ipcidr-to-validate-ip-cidr-ranges": {
 					page: {
 						cache: {
 							code: {
-								cc: "IFVNJQow2wS2NOzRd/KgKCxUQTpkPO5NFnGcGgTmdMg="
+								cc: "vkB7aJHjFFdDD45bh5Tw7xBX1AhWSNRmacIkgJHLSWg="
 							}
 						}
 					}

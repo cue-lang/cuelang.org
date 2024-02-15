@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								code: {
-									example: "1vJPhNQCFzYA4weVwtSydlKYSRVKiyfyg6Oo3PXhf/k="
-									imports: "luqV/wuu5xR8pkSiux1fgdm+5ofdpiBGDUct9dyLnOY="
+									example: "0YZ0FwPk//SxDh0luGFkDkthvab78nDA0HY9Qwg9SPQ="
+									imports: "t66FiLTl2FyN8Bc8LIMKkskU6G5m645irpZZWZ9ngz0="
 								}
 							}
 						}
