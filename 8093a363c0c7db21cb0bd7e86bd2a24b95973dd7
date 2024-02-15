@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f71302b_044281a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "Great example, and really good turnaround on the original question.\n\nJust a few changes, please.",
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb6c9af6_b62a8e89",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "I think we should follow the now well established pattern of starting these Commented CUE examples with a clear one-liner on what this howto does:\n\n\"This Commented CUE demonstrates...\"\n\na la https://cl-1176893-3--cue-cls.netlify.app/docs/howto/use-encoding-json-validate-as-a-field-validator/ and friends.",
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0641ce29_42442b6e",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "I would leave the one-liner I suggest above the code block, and then put further explanation below. \n\nThe word \"appropriate\" here is a bit vague to my mind, and the language could be plainer/simpler with no loss of precision. The specific situation where this technique is required is when a struct is intentionally left open/not closed, and yet the user still wants to prevent certain fields from being present.\n\nPutting the further explanation below the code block also allows for you to reference the example, explain why closedness is not what we want here, etc.",
+      "range": {
+        "startLine": 16,
+        "startChar": 58,
+        "endLine": 16,
+        "endChar": 69
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8438612_af20b8f4",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "I think we\u0027ve concluded that use of the plain `.` is what we should be defaulting to. Otherwise we are establishing the pattern of people unnecessarily needing to explicitly refer to the package in the current directory, when there is only one, when `.` will suffice.",
+      "range": {
+        "startLine": 22,
+        "startChar": 15,
+        "endLine": 22,
+        "endChar": 24
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0361ead5_7da9c329",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "s/validator/builtin function/\n\nPer the spec.",
+      "range": {
+        "startLine": 46,
+        "startChar": 65,
+        "endLine": 46,
+        "endChar": 74
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0ad8738_63bd436d",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "Please replace with `error()`, not least because in the next paragraph you have the naked `error` which visually looks like a reference to the same thing.",
+      "range": {
+        "startLine": 46,
+        "startChar": 58,
+        "endLine": 46,
+        "endChar": 63
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d14fb680_5aa34983",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "As I mentioned in another review elsewhere, this should render as \"Issue #943\" please. Suspect that should be addressed in a separate CL before/after this one.",
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ab23321_71fce6c1",
+        "filename": "content/docs/howto/disallow-a-specific-field-name/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-15T06:02:33Z",
+      "side": 1,
+      "message": "Per above.",
+      "range": {
+        "startLine": 61,
+        "startChar": 2,
+        "endLine": 61,
+        "endChar": 19
+      },
+      "revId": "8093a363c0c7db21cb0bd7e86bd2a24b95973dd7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
