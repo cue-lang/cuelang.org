@@ -8,6 +8,7 @@ require (
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/cockroachdb/apd/v2 v2.0.2
 	github.com/fsnotify/fsnotify v1.6.0
+	github.com/go-quicktest/qt v1.101.0
 	github.com/rogpeppe/go-internal v1.11.1-0.20231026093722-fa6a31e0812c
 	github.com/rogpeppe/testscript v1.1.0
 	github.com/spf13/cobra v1.7.0
@@ -23,8 +24,11 @@ require (
 	cuelabs.dev/go/oci/ociregistry v0.0.0-20231103182354-93e78c079a13 // indirect
 	github.com/cockroachdb/apd/v3 v3.2.1 // indirect
 	github.com/emicklei/proto v1.10.0 // indirect
+	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/kr/pretty v0.3.1 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
