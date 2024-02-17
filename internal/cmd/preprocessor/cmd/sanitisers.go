@@ -104,30 +104,51 @@ func (m *matchSpec) matches(cmd *commandStmt) (bool, error) {
 		if !ok {
 			return false, nil
 		}
-		if m.CommandPrefix != "" {
-			if len(got.Args) < len(want.Args) {
-				return false, nil
-			}
-		} else {
-			if len(got.Args) != len(want.Args) {
-				return false, nil
-			}
+		if matched, err := matchArgs(m, got.Args, want.Args); err != nil || !matched {
+			return matched, err
 		}
-		p := syntax.NewPrinter(syntax.SingleLine(true))
-		for i := range want.Args {
-			var gotS, wantS strings.Builder
-			p.Print(&gotS, got.Args[i])
-			p.Print(&wantS, want.Args[i])
-
-			// TODO: per @mvdan, revisit whether we can/should use
-			// reflect.DeepEqual or some other mechanism here (with performance
-			// being the main consideration).
-			if gotS.String() != wantS.String() {
-				return false, nil
-			}
+	case *syntax.DeclClause:
+		want, ok := want.Cmd.(*syntax.DeclClause)
+		if !ok {
+			return false, nil
+		}
+		if got.Variant.Value != want.Variant.Value {
+			return false, nil
+		}
+		if matched, err := matchArgs(m, got.Args, want.Args); err != nil || !matched {
+			return matched, err
 		}
 	default:
 		return false, fmt.Errorf("don't know how to handle stmt of type %T", got)
+	}
+	return true, nil
+}
+
+func matchArgs[T syntax.Node](m *matchSpec, got, want []T) (bool, error) {
+	if m.CommandPrefix != "" {
+		// When in command prefix match moding, we need got to be >= want
+		if len(got) < len(want) {
+			return false, nil
+		}
+	} else {
+		// Else we need to have exactly the same length otherwise it cannot
+		// possibly be a match
+		if len(got) != len(want) {
+			return false, nil
+		}
+	}
+	p := syntax.NewPrinter(syntax.SingleLine(true))
+	for i := range want {
+		var gotS, wantS strings.Builder
+		p.Print(&gotS, got[i])
+		p.Print(&wantS, want[i])
+
+		// TODO: per @mvdan, revisit whether we can/should use
+		// reflect.DeepEqual or some other mechanism here (with performance
+		// being the main consideration).
+		if gotS.String() != wantS.String() {
+			return false, nil
+		}
 	}
 	return true, nil
 }
