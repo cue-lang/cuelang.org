@@ -28,8 +28,10 @@ exec preprocessor execute --debug=all --skipcache
 stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step script; was a hit'
 
 -- hugo/.keep --
--- content/site.cue --
+-- site.cue --
 package site
+
+versions: cue: someversion: "v0.7.0"
 -- content/dir/page.cue --
 package site
 
@@ -110,6 +112,10 @@ content: dir: page: {
 >nonexistent command
 >{{{end}}}
 >{{{end}}}
+>
+>{{{with script "en" "subst env var"}}}
+>echo $CUELANG_CUE_SOMEVERSION
+>{{{end}}}
 -- golden/content/dir/en.md.writeBack --
 >---
 >title: JSON Superset
@@ -155,6 +161,10 @@ content: dir: page: {
 >#norun for reasons
 >nonexistent command
 >{{{end}}}
+>{{{end}}}
+>
+>{{{with script "en" "subst env var"}}}
+>echo $CUELANG_CUE_SOMEVERSION
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
@@ -210,6 +220,11 @@ go version go1.22.0
 $ nonexistent command
 ```
 {{< /step >}}
+
+```text { title="TERMINAL" codeToCopy="ZWNobyB2MC43LjAK" }
+$ echo v0.7.0
+v0.7.0
+```
 -- golden/content/dir/gen_cache.cue --
 package site
 {
@@ -218,12 +233,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"upload-some-cue":  "7IDjGd2+UaDqL/CtCzWTF/n9JAghLOal/XYmGOXLTwU="
-						"upload-some-json": "r7ZxaLhkjrkTxjeWFPVjLXXQEAk5pMHlkexqx+RnHKU="
-						"in-subdir":        "J43PmA4U4WvVNMgjwuRuxRYV01FPIWNFmKMuvNPDah4="
+						"upload-some-cue":  "tP3KoyKTIn79Gk8U9FATNuou3WfinCe3OvMMJIGDL+Y="
+						"upload-some-json": "xZav4QaIGOVUoGgl6FLH1FyMGWS9+cOFaTTEoD5mc1U="
+						"in-subdir":        "WFUtw4fPeq+fBaYmRr1v6Va3OJiB3Pht2bJZgs+whQU="
 					}
 					multi_step: {
-						"CJTPSGKT1S5VQHE852UV8UR3GU4QGPUVRF75R4F6G64J90U51250====": [{
+						"J523PNTTH7RBNDJU4R39J6VCBERKCGAQASGSROP9NVDJ7EEPFC4G====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -269,6 +284,14 @@ package site
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
+
+									"""
+						}, {
+							doc:      ""
+							cmd:      "echo v0.7.0"
+							exitCode: 0
+							output: """
+									v0.7.0
 
 									"""
 						}]

@@ -78,6 +78,13 @@ func (s *scriptNode) validate() {
 	// Now render each statement, creating doc comments for each as we go, and
 	// gathering any non-doc comments as script node-level comments.
 
+	envSubstCUEVersions := func(v string) string {
+		return expand(v, func(vv string) (bool, string) {
+			version, ok := s.cueEnvVersions[vv]
+			return ok, version
+		})
+	}
+
 	for _, stmt := range file.Stmts {
 		cmdStmt := commandStmt{
 			stmt: stmt,
@@ -130,14 +137,14 @@ func (s *scriptNode) validate() {
 			s.errorf("%v: failed to print statement at %v: %v", s, stmt.Position, err)
 			continue
 		}
-		cmdStmt.Cmd = sb.String()
+		cmdStmt.Cmd = envSubstCUEVersions(sb.String())
 
 		sb.Reset()
 		if err := s.rf.shellPrinter.Print(&sb, &doc); err != nil {
 			s.errorf("%v: failed to print doc comment for stmt at %v: %v", s, stmt.Position, err)
 			continue
 		}
-		cmdStmt.Doc = sb.String()
+		cmdStmt.Doc = envSubstCUEVersions(sb.String())
 
 		// Now check if there are any known tag-based sanitiser directives
 		//
