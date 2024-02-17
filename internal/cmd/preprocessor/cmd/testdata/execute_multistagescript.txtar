@@ -102,6 +102,7 @@ content: dir: page: {
 >echo hello
 >{{{end}}}
 >{{{with script "en" "cue version"}}}
+>export MYVAR=value
 >cue version
 >{{{end}}}
 >{{{with script "en" "norun"}}}
@@ -147,6 +148,7 @@ content: dir: page: {
 >echo hello
 >{{{end}}}
 >{{{with script "en" "cue version"}}}
+>export MYVAR=value
 >cue version
 >{{{end}}}
 >{{{with script "en" "norun"}}}
@@ -190,7 +192,8 @@ map: {
 $ echo hello
 hello
 ```
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
+```text { title="TERMINAL" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9uCg==" }
+$ export MYVAR=value
 $ cue version
 cue version v0.8.0-alpha.1
 
@@ -220,7 +223,7 @@ package site
 						"in-subdir":        "J43PmA4U4WvVNMgjwuRuxRYV01FPIWNFmKMuvNPDah4="
 					}
 					multi_step: {
-						"8OE47KRJN899MV3TUJQ0JF5DR4IV4E6K09S3J26JI2QFPPH0A1EG====": [{
+						"CJTPSGKT1S5VQHE852UV8UR3GU4QGPUVRF75R4F6G64J90U51250====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -246,6 +249,11 @@ package site
 									hello
 
 									"""
+						}, {
+							doc:      ""
+							cmd:      "export MYVAR=value"
+							exitCode: 0
+							output:   ""
 						}, {
 							doc:      ""
 							cmd:      "cue version"
