@@ -134,6 +134,23 @@ type executionContext struct {
 	// preprocessor.
 	config cue.Value
 
+	// cueVersions is a map of name to version of CUE versions configured on the
+	// site. e.g.
+	//
+	// latest => v0.7.1
+	// prerelease => v0.8.0-alpha.1
+	cueVersions map[string]string
+
+	// cueEnvVersions is a map of env var name to CUE versions, derived from
+	// cueVersions. For example the entry:
+	//
+	// latest => v0.7.0
+	//
+	// in cueVersions exists in this map as:
+	//
+	// CUELANG_CUE_LATEST => v0.7.0
+	cueEnvVersions map[string]string
+
 	// selfHash is the hash of the preprocessor itself that hashing calculations
 	// should use if they need the preprocessor to affect the hash result.
 	selfHash string

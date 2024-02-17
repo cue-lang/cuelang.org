@@ -11,8 +11,12 @@ import (
 versions: {
 	go:            "go1.22.0"
 	bareGoVersion: strings.TrimPrefix(go, "go")
-	cue:           "v0.8.0-alpha.1"
-	testscript:    "v1.11.0"
+	cue: {
+		latest:     "v0.7.1"
+		prerelease: "v0.8.0-alpha.1"
+		tip:        "v0.8.0-alpha.1"
+	}
+	testscript: "v1.11.0"
 }
 
 // _contentDefaults is a recursive template for setting defaults
@@ -74,18 +78,33 @@ template: ci.#writefs & {
 			  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
 			  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@\#(versions.testscript)
 
-			RUN \
-			  --mount=type=cache,target=/cache/gocache \
-			  --mount=type=cache,target=/cache/gomodcache \
-			  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-			  go install -trimpath cuelang.org/go/cmd/cue@\#(versions.cue)
+			RUN mkdir /cues
+
+			\#(strings.Join([for name, version in versions.cue {
+				#"""
+					RUN \
+					  --mount=type=cache,target=/cache/gocache \
+					  --mount=type=cache,target=/cache/gomodcache \
+					  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
+					  GOBIN=/cues/\#(name) go install -trimpath cuelang.org/go/cmd/cue@\#(version)
+					"""#
+			}], "\n\n"))
 
 			FROM golang:\#(versions.bareGoVersion)
 
 			RUN mkdir -p /go/bin
 
+			# TODO: move away from defaulting to the pre-release of CUE
+			ENV PATH="/cues/prerelease:${PATH}"
+
 			ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
-			ENV CUE_VERSION="\#(versions.cue)"
+			\#(
+				strings.Join([for name, version in versions.cue {
+					"""
+					ENV CUELANG_CUE_\(strings.ToUpper(name))="\(version)"
+					"""
+				},
+				], "\n"))
 
 			WORKDIR /
 
@@ -95,7 +114,13 @@ template: ci.#writefs & {
 			RUN chown root:root /usr/bin/entrypoint.sh
 
 			COPY --from=build /go/bin/testscript /go/bin
-			COPY --from=build /go/bin/cue /go/bin
+			\#(
+				strings.Join([for name, version in versions.cue {
+					"""
+					COPY --from=build /cues/\(name)/cue /cues/\(name)/cue
+					"""
+				},
+				], "\n"))
 
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
@@ -123,7 +148,9 @@ template: ci.#writefs & {
 			# Contents allows for markdown, leave out the button if you don't want a button
 			[notification]
 			    type = 'test'
-			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue)'
+
+			    # TODO: move away from defaulting to the pre-release of CUE
+			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.prerelease)'
 			    [notification.button]
 			        link = 'https://github.com/cue-lang/cue/releases'
 			        icon = 'download'
@@ -184,7 +211,8 @@ template: ci.#writefs & {
 			Contents: #"""
 			// \#(donotedit)
 
-			export const CUEVersion = '\#(versions.cue)';
+			// TODO: move away from defaulting to the pre-release of CUE
+			export const CUEVersion = '\#(versions.cue.prerelease)';
 
 			"""#
 		}
