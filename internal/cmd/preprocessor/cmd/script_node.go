@@ -221,15 +221,19 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	var lastOutput string
 	for i, stmt := range s.stmts {
 		if stmt.Doc != "" {
-			if i > 0 && !strings.HasSuffix(lastOutput, "\n\n") {
-				// Add a clear line to separate the start of the comment
-				p("\n")
-			}
+			var docLines []string
 			for _, line := range strings.Split(stmt.Doc, "\n") {
 				if tagPrefix.MatchString(line) {
 					continue
 				}
-				p("%s\n", line)
+				docLines = append(docLines, line)
+			}
+			if len(docLines) > 0 && i > 0 && !strings.HasSuffix(lastOutput, "\n\n") {
+				// Add a clear line to separate the start of the comment
+				p("\n")
+			}
+			for _, l := range docLines {
+				p("%s\n", l)
 			}
 		}
 		p("$ %s\n", stmt.Cmd)
