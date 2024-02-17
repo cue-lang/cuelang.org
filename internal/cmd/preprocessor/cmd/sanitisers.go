@@ -209,9 +209,16 @@ func (p *patternSanitiserMatcher) init() error {
 	return nil
 }
 
-// An ellipsisSanitiser allows very long output to be removed and replaced with
-// the canonical '...' which is intended to indicate "and there is is more not
-// shown here".
+// An ellipsisSanitiser allows output that _might_ be very long to be removed
+// and replaced with the canonical '...' which is intended to indicate "and
+// there is is more not shown here". The key here is that we add a '...'
+// regardless of whether the output exceeds Start and leave it to the caller to
+// do what makes most sense. This is because in some situations, for example go
+// mod tidy, a command might output lots of text. This can happen, for example,
+// when a cache is empty. If the same command is run in a situation where there
+// is no output, then there might be no output. In this case we would use an
+// ellipsis sanitiser to always print only a '...' so that the output is
+// stable.
 type ellipsisSanitiser struct {
 	Start int `json:"start"`
 }
@@ -219,12 +226,34 @@ type ellipsisSanitiser struct {
 func (e *ellipsisSanitiser) init() error { return nil }
 
 func (e *ellipsisSanitiser) sanitise(cmd *commandStmt) error {
-	if strings.Count(cmd.Output, "\n") <= e.Start {
+	// TODO this can likely be optimised once we have it working :)
+
+	if cmd.Output == "" {
+		cmd.Output = "...\n"
 		return nil
 	}
+
 	lines := strings.Split(cmd.Output, "\n")
-	lines = append(lines[:e.Start], "...")
-	cmd.Output = strings.Join(lines, "\n") + "\n" // re-add trailing newline
+
+	// "Clip" the lines based on the start or number of lines, whichever is
+	// smallest.
+	end := min(len(lines), e.Start)
+	lines = lines[:end]
+
+	// Drop any empty strings which will appear odd as blank lines just before
+	// the ...
+	var i int
+	for i = end - 1; i >= 0; i-- {
+		if lines[i] != "" {
+			break
+		}
+	}
+	lines = lines[:i+1]
+
+	// Add the '...' regardless.
+	lines = append(lines, "...")
+
+	cmd.Output = strings.Join(lines, "\n") + "\n"
 	return nil
 }
 
