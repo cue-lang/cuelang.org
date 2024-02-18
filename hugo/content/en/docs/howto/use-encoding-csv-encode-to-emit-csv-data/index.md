@@ -14,7 +14,7 @@ demonstrates how to use the built-in function
 to encode a list of lists into a string as comma-separated values (CSV).
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 import "encoding/csv"
@@ -29,7 +29,7 @@ data: [
 
 output: csv.Encode(data)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtZSBvdXRwdXQgLS1vdXQgdGV4dA==" >}}
 $ cue export -e output --out text
 Id,Name,Location,Species
 1,Charlie,"Ripon, North Yorkshire",cat

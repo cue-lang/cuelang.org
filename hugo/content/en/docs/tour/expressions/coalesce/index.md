@@ -25,7 +25,7 @@ In that case the default will be used if either the lookup fails or
 the result is not of the desired type.
 
 {{< code-tabs >}}
-{{< code-tab name="coalesce.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="coalesce.cue" language="cue" area="top-left" >}}
 list: ["Cat", "Mouse", "Dog"]
 
 a: *list[0] | "None"
@@ -34,7 +34,7 @@ b: *list[5] | "None"
 n: [null]
 v: *(n[0] & string) | "default"
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 list: ["Cat", "Mouse", "Dog"]
 a: "Cat"
 b: "None"

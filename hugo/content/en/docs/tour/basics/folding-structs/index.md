@@ -19,7 +19,7 @@ members.
 -->
 
 {{< code-tabs >}}
-{{< code-tab name="fold.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="fold.cue" language="cue" area="top-left" >}}
 // path-value pairs
 outer: middle1: inner: 3
 outer: middle2: inner: 7
@@ -27,7 +27,7 @@ outer: middle2: inner: 7
 // collection-constraint pair
 outer: [string]: inner: int
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 {
     "outer": {
         "middle1": {

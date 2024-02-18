@@ -16,7 +16,7 @@ It is okay for an optional field to be bottom (`_|_`).
 This just means that field may not be specified.
 
 {{< code-tabs >}}
-{{< code-tab name="structs.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="structs.cue" language="cue" area="top-left" >}}
 #a: {
 	foo?: int
 	bar?: string
@@ -27,7 +27,7 @@ b: #a & {
 	baz?: 2 // baz?: _|_
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 b: {
     foo: 3
 }

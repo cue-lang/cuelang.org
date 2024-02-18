@@ -16,7 +16,7 @@ used as an `int` without conversion.
 CUE also adds a variety of sugar for writing numbers.
 
 {{< code-tabs >}}
-{{< code-tab name="numbers.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="numbers.cue" language="cue" area="top-left" >}}
 a: int
 a: 4 // type int
 
@@ -35,7 +35,7 @@ e: [
 	0x1000_0000, // 268_435_456
 ]
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 a: 4
 b: 4.0
 c: _|_ // c: conflicting values int and 4.0 (mismatched types int and float)

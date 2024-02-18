@@ -30,18 +30,18 @@ If a regular field has a value provided elsewhere, through unification, then
 that value is used instead:
 
 {{< code-tabs >}}
-{{< code-tab name="policy.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="policy.cue" language="cue" area="top-left" >}}
 package example
 
 a: *"A" | _
 b: *"B" | _
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue" area="top-right" >}}
 package example
 
 a: "some value"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="txt" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="txt" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOmV4YW1wbGU=" >}}
 $ cue export .:example
 {
     "a": "some value",
@@ -69,18 +69,18 @@ The concrete value provided through unification may be the same as the default
 value:
 
 {{< code-tabs >}}
-{{< code-tab name="policy.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="policy.cue" language="cue" area="top-left" >}}
 package example
 
 a: *"A" | string
 b: *5 | int
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue" area="top-right" >}}
 package example
 
 a: "A"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="txt" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="txt" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOmV4YW1wbGU=" >}}
 $ cue export .:example
 {
     "a": "A",
@@ -93,18 +93,18 @@ If no element unifies with the value that has been provided, a disjunction
 resolution error results:
 
 {{< code-tabs >}}
-{{< code-tab name="policy.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="policy.cue" language="cue" area="top-left" >}}
 package example
 
 a: *"A" | string
 b: *5 | int
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue" area="top-right" >}}
 package example
 
 b: "a string"
 {{< /code-tab >}}
-{{< code-tab name="stderr.txt" language="txt"  area="bottom" >}}
+{{< code-tab name="stderr.txt" language="txt" area="bottom" >}}
 b: 2 errors in empty disjunction:
 b: conflicting values "a string" and 5 (mismatched types string and int):
     ./data.cue:3:4
@@ -126,13 +126,13 @@ value. If CUE needs to use a default but the value provided is not concrete, an
 error results:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 package example
 
 a: *"A" | _
 b: *string | _
 {{< /code-tab >}}
-{{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
+{{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 b: incomplete value string:
     ./in.cue:4:5
 {{< /code-tab >}}
@@ -145,7 +145,7 @@ resolve a default to a concrete value via references then the result can be
 successfully used as a default:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 package example
 
 a: 5
@@ -154,7 +154,7 @@ b: *( a + 10) | int
 c: "hello"
 d: *( c + ", world!") | string
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "a": 5,
     "b": 15,
@@ -174,7 +174,7 @@ These values can either be provided inline, or by reference.
 In this example, both defaults for the field `a` are equivalent:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 package example
 
 a: string | *_s
@@ -193,7 +193,7 @@ _s: {
 	]
 }
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "a": {
         "x": "value",
@@ -212,13 +212,13 @@ A single field may have multiple defaults specified in parallel, provided that
 *all* the defaults unify successfully:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 package example
 
 a: *"A" | _
 a: *string | _
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "a": "A"
 }
@@ -232,13 +232,13 @@ information being provided to resolve the disjunction, then the result is an
 error:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 package example
 
 a: *"A" | _
 a: *int | _
 {{< /code-tab >}}
-{{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
+{{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 a: incomplete value "A" | int | _
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -254,24 +254,24 @@ example demonstrates, this has a higher change of leading to unclear CUE that
 could confuse the reader:
 
 {{< code-tabs >}}
-{{< code-tab name="policy-upper-bound.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="policy-upper-bound.cue" language="cue" area="top-left" >}}
 package example
 
 port_x: *<=8080 | string
 port_y: *<=8080 | string
 {{< /code-tab >}}
-{{< code-tab name="policy-lower-bound.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="policy-lower-bound.cue" language="cue" area="top-left" >}}
 package example
 
 port_x: *>=8080 | string
 port_y: *>=8080 | string
 {{< /code-tab >}}
-{{< code-tab name="data.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="data.cue" language="cue" area="top-right" >}}
 package example
 
 port_x: "a string, for some reason"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOmV4YW1wbGU=" >}}
 $ cue export .:example
 {
     "port_x": "a string, for some reason",

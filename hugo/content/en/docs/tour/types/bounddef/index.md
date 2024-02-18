@@ -26,7 +26,7 @@ uint128: >=0 & <=340_282_366_920_938_463_463_374_607_431_768_211_455
 ```
 
 {{< code-tabs >}}
-{{< code-tab name="bound.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="bound.cue" language="cue" area="top-left" >}}
 #positive: uint
 #byte:     uint8
 #word:     int32
@@ -35,7 +35,7 @@ a: #positive & -1
 b: #byte & 128
 c: #word & 2_000_000_000
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 a: _|_ // a: invalid value -1 (out of bound >=0)
 b: 128
 c: 2000000000

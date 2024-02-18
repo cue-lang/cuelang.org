@@ -14,7 +14,7 @@ to check that values represent valid IPv4 addresses as strings or lists of
 bytes.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "net"
@@ -31,7 +31,7 @@ tooManyOctets: "198.51.100.14.0"
 octetTooLarge: [300, 51, 100, 14]
 v6NotV4: "2001:0db8:85a3::8a2e:0370:7334"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 octetTooLarge: invalid value [300,51,100,14] (does not satisfy net.IPv4):
     ./file.cue:6:6

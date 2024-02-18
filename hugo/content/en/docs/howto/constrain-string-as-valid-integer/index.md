@@ -20,7 +20,7 @@ demonstrates how to constrain fields to contain string representations of
 integer values.
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 import "strconv"
@@ -31,14 +31,14 @@ import "strconv"
 s1?: "\(strconv.Atoi(s1))"
 s2?: "\(strconv.Atoi(s2))"
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml"  area="top-right" >}}
+{{< code-tab name="data.yml" language="yml" area="top-right" >}}
 # s1 is a valid integer
 s1: "137"
 
 # s2 is not a valid integer
 s2: "42.7"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
 $ cue vet .:example data.yml
 s2: invalid interpolation: error in call to strconv.Atoi: strconv.Atoi: parsing "42.7": invalid syntax:
     ./example.cue:9:6

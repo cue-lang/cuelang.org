@@ -14,7 +14,7 @@ to make copies of strings with specific substring replacements, *without* using
 regular expressions.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "strings"
@@ -28,7 +28,7 @@ replaceAll: strings.Replace("one one one one one one one", "one", "two", -1)
 // The old and new parameters are fixed values, not regular expressions.
 fixed: strings.Replace("Parameters are fixed strings values.", ".*", "REPLACED", -1)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
 $ cue export
 {
     "replace": "This string repeats the word 'YAML': YAML, YAML, JSON.",

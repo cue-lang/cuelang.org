@@ -17,7 +17,7 @@ demonstrates using the **required field** marker in a schema to make sure that a
 field is present in data.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package example
 
 // CUE indicates required fields with an
@@ -35,13 +35,13 @@ s1: {
 	f3!: int & <10
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml"  area="top-right" >}}
+{{< code-tab name="data.yml" language="yml" area="top-right" >}}
 f1: "some string value"
 # f-2: field is missing
 s1:
   f3: 7
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
 $ cue vet .:example data.yml
 "f-2": field is required but not present:
     ./schema.cue:10:1

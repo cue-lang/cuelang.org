@@ -12,7 +12,7 @@ Just as with comparison operators, these operators may be used
 as unary versions to define a set of strings.
 
 {{< code-tabs >}}
-{{< code-tab name="regexp.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="regexp.cue" language="cue" area="top-left" >}}
 a: "foo bar" =~ "foo [a-z]{3}"
 b: "maze" !~ "^[a-z]{3}$"
 
@@ -25,7 +25,7 @@ d: "foo"
 e: c
 e: "foo bar"
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 a: true
 b: true
 c: =~"^[a-z]{3}$"

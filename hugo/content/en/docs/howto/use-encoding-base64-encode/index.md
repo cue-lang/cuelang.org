@@ -14,7 +14,7 @@ demonstrates how to use the built-in function
 to encode a string as Base64.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="left" >}}
+{{< code-tab name="file.cue" language="cue" area="left" >}}
 package example
 
 import "encoding/base64"
@@ -22,7 +22,7 @@ import "encoding/base64"
 decoded: "some string"
 encoded: base64.Encode(null, decoded)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="right" >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
 $ cue export
 {
     "decoded": "some string",

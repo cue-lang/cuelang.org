@@ -59,7 +59,7 @@ JSON from within CUE.
 The builtin `encoding/json.Marshal` generates JSON from within CUE.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "encoding/json"
 
 configMap: data: "point.json":
@@ -68,7 +68,7 @@ configMap: data: "point.json":
 		y: 2.34
 	})
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "configMap": {
         "data": {
@@ -84,13 +84,13 @@ configMap: data: "point.json":
 The reverse is also possible.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "encoding/json"
 
 data:  #"{"x":4.5,"y":2.34}"#
 point: json.Unmarshal(data)
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "data": "{\"x\":4.5,\"y\":2.34}",
     "point": {
@@ -104,7 +104,7 @@ point: json.Unmarshal(data)
 ### Validate
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "encoding/json"
 
 #Dimensions: {
@@ -120,7 +120,7 @@ configs: bed:      #"{ "width": 2, "height": 0.1, "depth": 2 }"#
 configs: table:    #"{ "width": "34", "height": 23, "depth": 0.2 }"#
 configs: painting: #"{ "width": 34, "height": 12, "depht": 0.2 }"#
 {{< /code-tab >}}
-{{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
+{{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 configs.painting: invalid value "{ \"width\": 34, \"height\": 12, \"depht\": 0.2 }" (does not satisfy encoding/json.Validate({width:number,depth:number,height:number})): error in call to encoding/json.Validate: field not allowed:
     ./in.cue:10:20
     ./in.cue:3:14

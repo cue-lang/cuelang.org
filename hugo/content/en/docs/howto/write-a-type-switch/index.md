@@ -14,7 +14,7 @@ a switch statement, a mechanism is shown that *behaves* like a switch statement
 in some other languages.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 input: [
@@ -56,7 +56,7 @@ output: [for v in input {
 	][0]
 }]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWwgLXMgLWUgb3V0cHV0" >}}
 $ cue eval -s -e output
 [{
     source:    42

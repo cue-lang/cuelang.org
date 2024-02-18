@@ -13,7 +13,7 @@ demonstrates how to use the built-in function
 to sort lists, using either a predefined or custom comparator.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import (
@@ -45,7 +45,7 @@ _sortAtSymbolCountDescending: {
 }
 stringsCountDescending: list.Sort( ["X", "@@", "@"], _sortAtSymbolCountDescending)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 sort: [1, 2.2, 3]
 stringsDescending: ["C", "B", "A"]

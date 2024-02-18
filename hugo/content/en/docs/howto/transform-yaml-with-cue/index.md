@@ -13,7 +13,7 @@ demonstrates how to transform YAML by reshaping some input data into different
 output.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 // place the yaml input here with "-l"
@@ -56,7 +56,7 @@ output: petsBySpecies: {
 	]}
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml"  area="top-right" >}}
+{{< code-tab name="data.yml" language="yml" area="top-right" >}}
 owner:
   name: Dorothy Cartwright
   address: Ripon, North Yorkshire, England
@@ -74,7 +74,7 @@ pets:
   species: cat
   age: 5 
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOmV4YW1wbGUgLWwgaW5wdXQ6IGRhdGEueW1sIC1lIG91dHB1dCAtLW91dCB5YW1s" >}}
 $ cue export .:example -l input: data.yml -e output --out yaml
 location: Ripon, North Yorkshire, England
 petsBySpecies:
