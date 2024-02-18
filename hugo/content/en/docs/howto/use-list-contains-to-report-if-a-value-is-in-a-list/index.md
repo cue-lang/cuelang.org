@@ -13,7 +13,7 @@ demonstrates how to use the built-in function
 to report if a simple or composite value is contained in a list.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "list"
@@ -42,7 +42,7 @@ containsStructTrue: list.Contains( _source, {asInt: 3, asString: "three"})
 containsListTrue: list.Contains( _source, [4, "four"])
 containsListFalse: list.Contains(_source, ["four", 4, 4.0])
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 containsIntTrue:     true
 containsIntFalse:    false

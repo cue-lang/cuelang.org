@@ -15,7 +15,7 @@ and
 to modify strings using various features of regular expressions.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "regexp"
@@ -51,7 +51,7 @@ oPairReplaceAllLiteral: regexp.ReplaceAllLiteral("o([uvwxyz])", _src, "$1")
 // named capture group that contains only the two trailing letters.
 regexReplaceAll: regexp.ReplaceAll("[aeiou](?P<twoLetters>\\w{2}\\b)", _src, "$twoLetters")
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 replaceAll:             "thX qXXck brXwn fXx jXmps XvXr thX lXzy dXg"
 oPairReplaceAll:        "the quick brwn fx jumps ver the lazy dog"

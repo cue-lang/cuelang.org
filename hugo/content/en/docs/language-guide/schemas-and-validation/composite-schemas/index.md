@@ -42,12 +42,12 @@ You can write `[a, b, ...]` to allow more items.
 or closed, map or list.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 c: close({a: 1})
 
 a: c & {b: 2}
 {{< /code-tab >}}
-{{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
+{{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 a.b: field not allowed:
     ./in.cue:1:10
     ./in.cue:3:4
@@ -64,7 +64,7 @@ This circumvents the usual limitation that no new fields can be added to a
 definition.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 #Base: {}
 #Animal: {
 	kind!: string
@@ -80,7 +80,7 @@ definition.
 	house: string
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 #Base: {}
 #Animal: {
     kind!: string
@@ -114,10 +114,10 @@ Schemas are often composed of other schemas. You can embed schemas in another to
 extend them:
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 
 {{< /code-tab >}}
 {{< /code-tabs >}}

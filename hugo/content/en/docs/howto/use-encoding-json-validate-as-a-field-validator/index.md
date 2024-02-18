@@ -17,7 +17,7 @@ It asserts that properly-formed JSON, encoded in a string, adheres to specific
 constraints by checking that the data and schema unify successfully.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "encoding/json"
@@ -44,7 +44,7 @@ _missingFieldSchema: {
 	c!: bool // NOT a validation failure
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 data: invalid value "{\n  \"a\": 1,\n  \"b\": \"two\"\n}" (does not satisfy encoding/json.Validate({a!:>99,b!:string})): error in call to encoding/json.Validate: invalid value 1 (out of bound >99):
     ./file.cue:14:7

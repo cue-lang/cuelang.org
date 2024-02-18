@@ -11,12 +11,12 @@ to define any type, instead of just structs, while keeping the common case
 of defining structs light.
 
 {{< code-tabs >}}
-{{< code-tab name="emit.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="emit.cue" language="cue" area="top-left" >}}
 "Hello \(#who)!"
 
 #who: "world"
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 "Hello world!"
 {{< /code-tab >}}
 {{< /code-tabs >}}

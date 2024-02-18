@@ -19,7 +19,7 @@ Right now it isn't, as the output of json.Marshal /seems/ to be compact by
 default - but is that /guaranteed/?  -->
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="left" >}}
+{{< code-tab name="file.cue" language="cue" area="left" >}}
 package example
 
 import "encoding/json"
@@ -44,7 +44,7 @@ data: {
 	]
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="right" >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtZSBjb21wYWN0IC0tb3V0IHRleHQ=" >}}
 $ cue export file.cue -e compact --out text
 {"a":1,"b":{"c":"two","d":3.0},"e":false,"f":[4,5.0,"A\nMulti\nLine\nString"]}
 {{< /code-tab >}}

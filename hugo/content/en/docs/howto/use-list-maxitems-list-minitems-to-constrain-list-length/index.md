@@ -16,7 +16,7 @@ demonstrates how to use the built-in functions
 to require that a list contains a maximum and/or minimum number of items.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "list"
@@ -34,7 +34,7 @@ b: list.MinItems(6)
 // c must contain at least 2 items, and no more than 6 items
 c: list.MinItems(2) & list.MaxItems(6)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 a: invalid value [1,2,3,4,5] (does not satisfy list.MaxItems(2)): len(list) > MaxItems(2) (5 > 2):
     ./file.cue:10:4
@@ -53,7 +53,7 @@ If the number of required items is both small and known in advance, then this
 core language syntax might be preferred instead of `list.MinItems`:
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 // f must contain at least 3 elements
@@ -61,7 +61,7 @@ f: [_, _, _, ...]
 
 f: [1, 2]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 f: incompatible list lengths (2 and 3)
 {{< /code-tab >}}

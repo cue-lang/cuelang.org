@@ -13,7 +13,7 @@ This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to refer to these fields, both at CUE's top level and elsewhere.
 
 {{< code-tabs >}}
-{{< code-tab name="data.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="data.cue" language="cue" area="top-left" >}}
 package example
 
 // data.cue contains fields we want to refer to
@@ -23,7 +23,7 @@ package example
 
 aStruct: "nested field": "a nested value"
 {{< /code-tab >}}
-{{< code-tab name="file.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="file.cue" language="cue" area="top-right" >}}
 package example
 
 // Declare an alias
@@ -39,7 +39,7 @@ output: {
 	nestedField: aStruct["nested field"]
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtZSBvdXRwdXQ=" >}}
 $ cue export -e output
 {
     "topLevelField": "a top-level value",

@@ -15,7 +15,7 @@ Note that an error is different from `null`: `null` is a valid value,
 whereas `_|_` is not.
 
 {{< code-tabs >}}
-{{< code-tab name="bottom.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="bottom.cue" language="cue" area="top-left" >}}
 a: 4
 a: 5
 
@@ -25,7 +25,7 @@ l: [1, 3]
 list: [0, 1, 2]
 val: list[3]
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 a: _|_ // a: conflicting values 5 and 4
 l: [1, _|_, // l.1: conflicting values 3 and 2
 ]

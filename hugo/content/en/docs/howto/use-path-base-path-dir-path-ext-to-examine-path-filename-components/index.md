@@ -15,7 +15,7 @@ demonstrates how to use the built-in functions
 to access components of a file's name and its path.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 import "path"
@@ -39,7 +39,7 @@ import "path"
 "/foo///bar////baz.js": _
 #"C:\foo\\bar\\\baz.js"#: _OS: path.Windows
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 "/foo/bar/baz.js": {
     Dir:  "/foo/bar"

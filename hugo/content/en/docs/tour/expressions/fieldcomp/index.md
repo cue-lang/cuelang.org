@@ -9,7 +9,7 @@ One cannot refer to generated fields with references.
 Instead, one must use indexing.
 
 {{< code-tabs >}}
-{{< code-tab name="fieldcomp.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="fieldcomp.cue" language="cue" area="top-left" >}}
 import "strings"
 
 #a: ["Barcelona", "Shanghai", "Munich"]
@@ -22,7 +22,7 @@ for k, v in #a {
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 barcelona: {
     pos:     1
     name:    "Barcelona"

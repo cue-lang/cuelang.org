@@ -16,7 +16,7 @@ JSON objects are called structs in CUE.
 An object member is called a field.
 
 {{< code-tabs >}}
-{{< code-tab name="json.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="json.cue" language="cue" area="top-left" >}}
 one: 1
 two: 2
 
@@ -29,7 +29,7 @@ list: [
 	3,
 ]
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 {
     "one": 1,
     "two": 2,

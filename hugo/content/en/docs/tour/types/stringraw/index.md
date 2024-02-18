@@ -12,7 +12,7 @@ This works for normal and interpolated strings.
 Quotes do not have to be escaped in such strings.
 
 {{< code-tabs >}}
-{{< code-tab name="stringraw.cue" language="cue"  area="top" >}}
+{{< code-tab name="stringraw.cue" language="cue" area="top" >}}
 msg1: #"The sequence "\U0001F604" renders as \#U0001F604."#
 
 msg2: ##"""
@@ -23,7 +23,7 @@ msg2: ##"""
 	This construct works for bytes, strings and their multi-line variants.
 	"""##
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="bottom" >}}
+{{< code-tab name="result.txt" language="txt" area="bottom" >}}
 msg1: "The sequence \"\\U0001F604\" renders as 😄."
 msg2: """
     A regular expression can conveniently be written as:

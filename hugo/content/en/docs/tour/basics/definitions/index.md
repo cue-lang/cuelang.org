@@ -14,7 +14,7 @@ In other words, definitions define "closed" structs.
 Including a `...` in struct keeps it open.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 #Conn: {
 	address:  string
 	port:     int
@@ -31,7 +31,7 @@ lossy: #Conn & {
 	// foo: 2
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 {
     "lossy": {
         "address": "1.2.3.4",

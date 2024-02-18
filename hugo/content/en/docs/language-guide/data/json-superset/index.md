@@ -14,14 +14,14 @@ configurations in general:
 - the outermost curly braces are optional. {{{TODO "note on embedding"}}}
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 // A doc comment
 map: {
 	member1: 3 // a line comment
 	member2: 4
 }
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "map": {
         "member1": 3,
@@ -40,14 +40,14 @@ map: {
 CUE supports `//`-style comments. Comments are first-class citizens in CUE.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 // A doc comment
 map: {
 	member1: 3 // a line comment
 	member2: 4
 }
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "map": {
         "member1": 3,

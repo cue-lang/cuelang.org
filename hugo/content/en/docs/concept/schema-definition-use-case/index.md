@@ -165,7 +165,7 @@ One disadvantage is that it is very verbose.
 Compare the following two equivalent schema definitions:
 
 {{< code-tabs >}}
-{{< code-tab name="native.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="native.cue" language="cue" area="top-left" >}}
 // Definitions.
 info: version: "v1beta1"
 
@@ -181,7 +181,7 @@ info: version: "v1beta1"
 	max?: uint & <100
 }
 {{< /code-tab >}}
-{{< code-tab name="openapi.json" language="json"  area="top-right" >}}
+{{< code-tab name="openapi.json" language="json" area="top-right" >}}
 {
     "openapi": "3.0.0",
     "info": {

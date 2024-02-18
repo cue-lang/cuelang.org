@@ -20,7 +20,7 @@ The output contains a valid private IP address (`myIP`)
 and an invalid one (`yourIP`).
 
 {{< code-tabs >}}
-{{< code-tab name="lists.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="lists.cue" language="cue" area="top-left" >}}
 import "list"
 
 IP: list.Repeat([uint8], 4)
@@ -36,7 +36,7 @@ myIP: [10, 2, 3, 4]
 yourIP: PrivateIP
 yourIP: [11, 1, 2, 3]
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 IP: [uint8, uint8, uint8, uint8]
 PrivateIP: [10, uint8, uint8, uint8] | [192, 168, uint8, uint8] | [172, uint & >=16 & <=32, uint8, uint8]
 myIP: [10, 2, 3, 4]

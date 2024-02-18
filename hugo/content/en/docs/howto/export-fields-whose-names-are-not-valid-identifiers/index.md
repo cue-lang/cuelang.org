@@ -14,14 +14,14 @@ This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to export these fields using `cue export -e`.
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml"  area="top" >}}
+{{< code-tab name="data.yml" language="yml" area="top" >}}
 # data.yml contains a field we want to export with
 # the "cue export" command's "-e" parameter
 
 "top level field":
   a: [ 1, 2, 3 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtbCBpbnB1dDogZGF0YS55bWwgLWUgJ2lucHV0WyJ0b3AgbGV2ZWwgZmllbGQiXSc=" >}}
 $ cue export -l input: data.yml -e 'input["top level field"]'
 {
     "a": [

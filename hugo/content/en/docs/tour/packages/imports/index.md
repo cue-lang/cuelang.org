@@ -21,7 +21,7 @@ import "math"
 But it is good style to use the factored import statement.
 
 {{< code-tabs >}}
-{{< code-tab name="imports.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="imports.cue" language="cue" area="top-left" >}}
 import (
 	"encoding/json"
 	"math"
@@ -29,7 +29,7 @@ import (
 
 data: json.Marshal({a: math.Sqrt(7)})
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 data: "{\"a\":2.6457513110645907}"
 {{< /code-tab >}}
 {{< /code-tabs >}}

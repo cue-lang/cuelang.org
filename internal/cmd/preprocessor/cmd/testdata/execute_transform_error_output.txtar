@@ -55,11 +55,11 @@ title: JSON Superset
 Some text before
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 e: =~"foo"
 e: "bar"
 {{< /code-tab >}}
-{{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
+{{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 e: invalid value "bar" (out of bound =~"foo"):
     ./in.cue:1:4
     ./in.cue:2:4

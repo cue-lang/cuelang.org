@@ -18,7 +18,7 @@ to create a
 from a list.
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 source: ["a", "b", "c"]
@@ -36,7 +36,7 @@ test: {
 	four:  "X" // invalid value
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGU=" >}}
 $ cue vet .:example
 test.four: 3 errors in empty disjunction:
 test.four: conflicting values "a" and "X":

@@ -17,12 +17,12 @@ Identifiers may also start with `#` or `_`, in which case the field is a
 [helper field]({{< relref "#helper-field" >}}) with special meaning.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 a1:    1
 "a-b": 2 // quotes are needed here
 $id:   "yipee"
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "a1": 1,
     "a-b": 2,
@@ -40,11 +40,11 @@ Names of regular fields are considered equal if their string values are equal,
 regardless of whether the strings are quoted or not.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 a: x:   1
 "a": y: 2
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 a: {
     x: 1
     y: 2
@@ -75,7 +75,7 @@ More on this in the
 [Templating]({{< relref "docs/language-guide/templating" >}}) section.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 one: {
 	value:     1
 	#typeName: "int"
@@ -84,7 +84,7 @@ one: {
 two: value:     "two"
 two: _typeName: "string"
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "one": {
         "value": 1
@@ -102,7 +102,7 @@ It is possible to associate helper fields with scalar types by placing both in
 curly braces (`{}`).
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 one: {
 	1
 	#typeName: "int"
@@ -116,7 +116,7 @@ three: {
 	#typeName: "map"
 }
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 one: {
     1
     #typeName: "int"

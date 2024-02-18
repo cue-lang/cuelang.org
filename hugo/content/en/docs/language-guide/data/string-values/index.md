@@ -18,7 +18,7 @@ The whitespace preceding the last `"""` must prefix each non-empty line of the
 string contents and is stripped from all lines.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 msg: """
     Hello World!
 
@@ -26,7 +26,7 @@ msg: """
     real treat.
     """
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "msg": "Hello World!\n\nThis is a real treat."
 }
@@ -69,12 +69,12 @@ single pair of hashes uses `\#` as the escape character, instead of `\`. A
 string enclosed in two hashes uses `\##`, and so on.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 a: #"A newline is\#nwritten as "\n"."#
 
 b: ##"Use \#n to write a newline in that case.”##
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "a": "A newline is\nwritten as "\\n"."
     "b": "Use \#n to write a newline in that case."

@@ -15,7 +15,7 @@ to transform JSON from a compact, single-line form held in a string into JSON
 with insignificant whitespace added that makes it easier for humans to read.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 import "encoding/json"
@@ -26,7 +26,7 @@ import "encoding/json"
 indent:     json.Indent(jsonString, " ", "  ")
 jsonString: #"{"a":1,"b":{"c":"two","d":3.0},"e":false,"f":[4,5.0,"A\nMulti\nLine\nString"]}"#
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtZSBpbmRlbnQgLS1vdXQgdGV4dA==" >}}
 $ cue export -e indent --out text
 {
    "a": 1,

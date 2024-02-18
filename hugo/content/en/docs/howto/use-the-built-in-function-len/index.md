@@ -16,7 +16,7 @@ function
 to calculate the lengths of different CUE types.
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 a: len([5, 4, 3, 2])
@@ -31,7 +31,7 @@ b: len('😎abc123🥶')
 // This input is of type string
 b: len("😎abc123🥶")
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
 $ cue export
 {
     "a": 4,
