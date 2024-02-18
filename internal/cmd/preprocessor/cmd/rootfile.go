@@ -47,6 +47,7 @@ var (
 		fnCode:         true,
 		fnStep:         true,
 		fnUpload:       true,
+		fnHiddenUpload: true,
 		fnScript:       true,
 		fnHiddenScript: true,
 		"reference":    true,
