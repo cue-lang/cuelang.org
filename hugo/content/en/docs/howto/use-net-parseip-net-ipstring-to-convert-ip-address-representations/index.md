@@ -15,7 +15,7 @@ to convert IPv4 and IPv6 addresses between their canonical string and
 list-of-bytes representations.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "net"
@@ -34,7 +34,7 @@ v6Bytes: net.ParseIP(v6String)
 v4String: net.IPString(v4Bytes)
 v6String: net.IPString(v6Bytes)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 v4String: "198.51.100.14"
 v6String: "2001:db8:85a3::8a2e:370:7334"

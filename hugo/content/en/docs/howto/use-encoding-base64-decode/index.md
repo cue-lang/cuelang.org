@@ -14,7 +14,7 @@ demonstrates how to use the built-in function
 to decode data that is encoded as Base64.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="left" >}}
+{{< code-tab name="file.cue" language="cue" area="left" >}}
 package example
 
 import "encoding/base64"
@@ -26,7 +26,7 @@ encoded: "c29tZSBCYXNlNjQtZW5jb2RlZCBkYXRh"
 // the byte array returned by base64.Decode
 decoded: "\(base64.Decode(null, encoded))"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="right" >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
 $ cue export
 {
     "encoded": "c29tZSBCYXNlNjQtZW5jb2RlZCBkYXRh",

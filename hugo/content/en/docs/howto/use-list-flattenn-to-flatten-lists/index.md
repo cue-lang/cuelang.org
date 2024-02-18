@@ -13,7 +13,7 @@ demonstrates how to use the built-in function
 to flatten a list by expanding its list elements by a specified depth.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "list"
@@ -42,7 +42,7 @@ src: [
 	[[[[["g", "h", "i"]]]]],
 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 src: [1, 2, 3, ["a", "b", "c"], [[4, 5, 6], [["d", "e", "f"], [[7, 8, 9]]]], [[[[["g", "h", "i"]]]]]]
 one: [1, 2, 3, "a", "b", "c", [4, 5, 6], [["d", "e", "f"], [[7, 8, 9]]], [[[["g", "h", "i"]]]]]

@@ -17,7 +17,7 @@ to close a
 [struct]({{< relref "docs/reference/glossary#struct" >}}).
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 // _x is an open struct
@@ -45,7 +45,7 @@ notOk: close(_x) & {
 	d: "an additional field"
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgLWk=" >}}
 $ cue eval -i
 ok: {
     a: 42

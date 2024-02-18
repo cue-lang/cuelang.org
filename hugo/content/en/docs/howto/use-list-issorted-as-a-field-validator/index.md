@@ -14,7 +14,7 @@ as a field validator to assert that lists are sorted, using either a predefined
 or custom comparator.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import (
@@ -49,7 +49,7 @@ _sortAtSymbolCountDescending: {
 stringsCountDescending: ["@", "@@", "X"]
 stringsCountDescending: list.IsSorted(_sortAtSymbolCountDescending) // validation failure
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 stringsDescending: invalid value ["A","B","C"] (does not satisfy list.IsSorted({T:number | string,x:number | string,y:number | string,less:_|_(Descending.less: unresolved disjunction number | string (type (string|number)) (and 1 more errors))})):
     ./file.cue:16:20

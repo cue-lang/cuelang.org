@@ -45,20 +45,20 @@ Given these two files, the `cue vet` command can verify that the values in
 `ranges.yaml` are correct by just mentioning the two files on the command line.
 
 {{< code-tabs >}}
-{{< code-tab name="check.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="check.cue" language="cue" area="top-left" >}}
 min?: *0 | number // 0 if undefined
 
 // must be strictly greater than min if defined
 max?: number & >min 
 {{< /code-tab >}}
-{{< code-tab name="ranges.yaml" language="yaml"  area="top-right" >}}
+{{< code-tab name="ranges.yaml" language="yaml" area="top-right" >}}
 min: 5
 max: 10
 ---
 min: 10
 max: 5
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCByYW5nZXMueWFtbCBjaGVjay5jdWU=" >}}
 $ cue vet ranges.yaml check.cue
 max: invalid value 5 (out of bound >10):
     ./check.cue:4:16
@@ -137,7 +137,7 @@ LanguageTag (mismatched types bool and string):
 The builtin `encoding/yaml.Marshal` generates YAML from within CUE.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "encoding/yaml"
 
 configMap: data: "point.yaml":
@@ -146,7 +146,7 @@ configMap: data: "point.yaml":
 		y: 2.34
 	})
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "configMap": {
         "data": {
@@ -162,7 +162,7 @@ configMap: data: "point.yaml":
 The inverse is also possible
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "encoding/yaml"
 
 data: """
@@ -171,7 +171,7 @@ data: """
 	"""
 point: yaml.Unmarshal(data)
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "data": "x: 4.5\ny: 2.34",
     "point": {

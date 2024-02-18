@@ -36,7 +36,7 @@ Here we see constraints in action:
 explicitly.
 
 {{< code-tabs >}}
-{{< code-tab name="types.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="types.cue" language="cue" area="top-left" >}}
 point: {
 	x: number
 	y: number
@@ -50,7 +50,7 @@ yaxis: x: 0
 
 origin: xaxis & yaxis
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 point: {
     x: number
     y: number

@@ -12,7 +12,7 @@ be validated.
 Structs defined by definitions are implicitly closed.
 
 {{< code-tabs >}}
-{{< code-tab name="defs.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="defs.cue" language="cue" area="top-left" >}}
 msg: "Hello \(#Name)!"
 
 #Name: "world"
@@ -24,7 +24,7 @@ msg: "Hello \(#Name)!"
 a: #A & {field: 3}
 err: #A & {feild: 3}
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 msg: "Hello world!"
 a: {
     field: 3

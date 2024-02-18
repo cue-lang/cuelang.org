@@ -17,13 +17,13 @@ JSON does not natively support binary data.
 When exporting to JSON, CUE translates it to base64.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 a: #’A newline is written as \n.’#
 b: '''
     sfsf
     ‘’’
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -33,13 +33,13 @@ b: '''
 CUE translates bytes to the corresponding YAML binary type.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 a: #’A newline is written as \n.’#
 b: '''
     sfsf
     ‘’’
 {{< /code-tab >}}
-{{< code-tab name="YAML" language="yaml" type="terminal" area="top-right" >}}
+{{< code-tab name="YAML" language="yaml" area="top-right" type="terminal" >}}
 
 {{< /code-tab >}}
 {{< /code-tabs >}}

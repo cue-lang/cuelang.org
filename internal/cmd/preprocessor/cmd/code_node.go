@@ -16,6 +16,7 @@ package cmd
 
 import (
 	"bytes"
+	"encoding/base64"
 	"fmt"
 	"html/template"
 	"os"
@@ -373,6 +374,11 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 					// We need to improve the rules and logic around this with time.
 					if !s.analysis.isInOut {
 						tp.ContentPrefix = fmt.Sprintf("$ %s\n", s.analysis.cmd)
+
+						// TODO: in its current state, this also includes any trailing
+						// line comment. This should be fixed as part of reworking the
+						// code node, but is a hack too far for now.
+						tp.ToCopy = s.analysis.cmd
 					}
 				}
 			}
@@ -381,11 +387,28 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 		p("{{< code-tabs >}}\n")
 		for i, f := range s.effectiveArchive.Files {
 			t := tabs[i]
-			var typ string
-			if t.Type != "" {
-				typ = fmt.Sprintf("type=%q", t.Type)
+			args := []string{
+				fmt.Sprintf("name=%q", t.Name),
+				fmt.Sprintf("language=%q", t.Language),
+				fmt.Sprintf("area=%q", locations[i]),
 			}
-			p("{{< code-tab name=%q language=%q %v area=%q >}}\n", t.Name, t.Language, typ, locations[i])
+
+			if t.Type != "" {
+				args = append(args, fmt.Sprintf("type=%q", t.Type))
+			}
+
+			if t.ToCopy != "" {
+				// Build up a base64 encoded script that will be copied. This is necessary
+				// because the rendered window will include the output... which won't work
+				// if copy-pasted.
+				var copyCmdStr strings.Builder
+				enc := base64.NewEncoder(base64.StdEncoding, &copyCmdStr)
+				fmt.Fprintf(enc, "%s", t.ToCopy)
+				enc.Close()
+				args = append(args, fmt.Sprintf("codetocopy=%q", copyCmdStr.String()))
+			}
+
+			p("{{< code-tab %s >}}\n", strings.Join(args, " "))
 			p(t.ContentPrefix)
 
 			// Need to be sure we write a trailing newline because we always want to

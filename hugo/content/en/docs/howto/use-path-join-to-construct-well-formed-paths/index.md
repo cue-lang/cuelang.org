@@ -13,7 +13,7 @@ demonstrates how to use the built-in function
 to construct well-formed paths from their individual string components.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 import "path"
@@ -31,7 +31,7 @@ _components: [
 	"quux",
 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
 $ cue export
 {
     "join": "foo/bar/baz",

@@ -16,7 +16,7 @@ Strings may also contain
 
 
 {{< code-tabs >}}
-{{< code-tab name="stringlit.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="stringlit.cue" language="cue" area="top-left" >}}
 // 21-bit unicode characters
 a: "\U0001F60E" // 😎
 
@@ -26,7 +26,7 @@ b: """
 	World!
 	"""
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 {
     "a": "😎",
     "b": "Hello\nWorld!"

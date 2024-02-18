@@ -14,7 +14,7 @@ with data-driven templates to generate text output, using Go's
 [template format](https://pkg.go.dev/text/template).
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "text/template"
@@ -62,7 +62,7 @@ data: {
 	incomplete: [for t in tasks if !t.complete {t}]
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtZSB0YXNrbGlzdCAtLW91dCB0ZXh0" >}}
 $ cue export -e tasklist --out text
 Hello, Alex.
 

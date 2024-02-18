@@ -6,6 +6,7 @@ type tabProps struct {
 	Language      string
 	Type          string
 	ContentPrefix string
+	ToCopy        string
 }
 
 type codeTabLocation string

@@ -262,12 +262,12 @@ and invoke the functions using its qualified identifier.
 For instance:
 
 {{< code-tabs >}}
-{{< code-tab name="regexp.cue" language="cue"  area="top" >}}
+{{< code-tab name="regexp.cue" language="cue" area="top" >}}
 import "regexp"
 
 matches: regexp.FindSubmatch(#"^([^:]*):(\d+)$"#, "localhost:443")
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWwgcmVnZXhwLmN1ZQ==" >}}
 $ cue eval regexp.cue
 matches: ["localhost:443", "localhost", "443"]
 {{< /code-tab >}}

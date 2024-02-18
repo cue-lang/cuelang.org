@@ -13,7 +13,7 @@ demonstrates how to use the built-in function
 as a field validator to assert that lists of strings are sorted alphabetically.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "list"
@@ -24,7 +24,7 @@ unsorted: ["B", "C", "A"]
 sorted:   list.IsSortedStrings
 unsorted: list.IsSortedStrings // validation failure
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 unsorted: invalid value ["B","C","A"] (does not satisfy list.IsSortedStrings):
     ./file.cue:6:11

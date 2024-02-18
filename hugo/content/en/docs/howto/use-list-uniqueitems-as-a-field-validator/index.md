@@ -13,7 +13,7 @@ demonstrates how to use the built-in function
 to ensure that a list's items are unique.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "list"
@@ -26,7 +26,7 @@ aList: [1, 2.0, 3, "four", 5, 5.0, false,
 	{a: 1, b: "2", c: false}, // validation error
 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 aList: invalid value [1,2.0,3,"four",5,5.0,false,{a:1,b:"2",c:false},{a:1,b:"2",c:true},{a:1,b:2,c:false},{a:1,b:"2",c:false}] (does not satisfy list.UniqueItems):
     ./file.cue:5:8

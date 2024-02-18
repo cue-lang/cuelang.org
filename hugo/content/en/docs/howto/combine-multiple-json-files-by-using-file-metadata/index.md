@@ -20,7 +20,7 @@ The **`TERMINAL`** section shows the use of:
   evaluation space
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="example.cue" language="cue" area="top-right" >}}
 package example
 
 // inputs is the location under which we place
@@ -40,28 +40,28 @@ output: {
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name="a.json" language="json"  area="top-left" >}}
+{{< code-tab name="a.json" language="json" area="top-left" >}}
 {
     "a": 1,
     "b": 2,
     "c": 3
 }
 {{< /code-tab >}}
-{{< code-tab name="b.json" language="json"  area="top-left" >}}
+{{< code-tab name="b.json" language="json" area="top-left" >}}
 {
     "a": "a string",
     "b": true,
     "c": 42
 }
 {{< /code-tab >}}
-{{< code-tab name="c.json" language="json"  area="top-left" >}}
+{{< code-tab name="c.json" language="json" area="top-left" >}}
 [
     "a list element",
     "another element",
     "the last element"
 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLXdpdGgtY29udGV4dCAtbCAnaW5wdXRzOicgLWwgJ3BhdGguQmFzZShmaWxlbmFtZSknIC1lIG91dHB1dCBhLmpzb24gYi5qc29uIGMuanNvbiBleGFtcGxlLmN1ZQ==" >}}
 $ cue export --with-context -l 'inputs:' -l 'path.Base(filename)' -e output a.json b.json c.json example.cue
 {
     "a.json": {

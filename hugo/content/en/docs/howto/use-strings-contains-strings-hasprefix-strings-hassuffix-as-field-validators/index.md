@@ -15,7 +15,7 @@ demonstrates how to use the built-in functions
 to validate fields by asserting that their values match specific strings.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "strings"
@@ -36,7 +36,7 @@ suffix: strings.HasSuffix("incorrect suffix")
 // None of the built-in functions demonstrated here accept regular expressions.
 contains: strings.Contains(".*")
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 prefix: invalid value "Some numbers (123) and letters" (does not satisfy strings.HasPrefix("incorrect prefix")):
     ./file.cue:10:9

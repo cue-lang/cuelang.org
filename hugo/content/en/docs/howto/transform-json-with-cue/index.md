@@ -13,7 +13,7 @@ demonstrates how to transform JSON by reshaping some input data into different
 output.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 // place the json input here with "-l"
@@ -56,7 +56,7 @@ output: petsBySpecies: {
 	]}
 }
 {{< /code-tab >}}
-{{< code-tab name="data.json" language="json"  area="top-right" >}}
+{{< code-tab name="data.json" language="json" area="top-right" >}}
 {
     "owner": {
         "name": "Dorothy Cartwright",
@@ -86,7 +86,7 @@ output: petsBySpecies: {
     ]
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOmV4YW1wbGUgLWwgaW5wdXQ6IGRhdGEuanNvbiAtZSBvdXRwdXQgLS1vdXQganNvbg==" >}}
 $ cue export .:example -l input: data.json -e output --out json
 {
     "location": "Ripon, North Yorkshire, England",

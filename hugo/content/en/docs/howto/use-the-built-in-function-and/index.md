@@ -16,7 +16,7 @@ function
 to unify all the elements of a list.
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 // c is a list of constraints
@@ -32,7 +32,7 @@ data: {
 	d: 1001
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGU=" >}}
 $ cue vet .:example
 data.a: conflicting values 4.2 and int & >99 & <1000 (mismatched types float and int):
     ./example.cue:8:17

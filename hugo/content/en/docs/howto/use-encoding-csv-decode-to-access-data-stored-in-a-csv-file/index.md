@@ -14,14 +14,14 @@ demonstrates how to use the built-in function
 to decode a file containing comma-separated values (CSV) into a list of lists.
 
 {{< code-tabs >}}
-{{< code-tab name="data.csv" language="csv"  area="top-left" >}}
+{{< code-tab name="data.csv" language="csv" area="top-left" >}}
 Id,Name,Location,Species
 1,Charlie,"Ripon, North Yorkshire",cat
 2,Fred,San Francisco,cat
 3,Greyfriars Bobby,Edinburgh,dog
 4,Nemo,???,fish
 {{< /code-tab >}}
-{{< code-tab name="file.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="file.cue" language="cue" area="top-right" >}}
 package example
 
 import "encoding/csv"
@@ -29,7 +29,7 @@ import "encoding/csv"
 input:  string
 output: csv.Decode(input)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtbCBpbnB1dDogdGV4dDogZGF0YS5jc3YgLWUgb3V0cHV0" >}}
 $ cue export file.cue -l input: text: data.csv -e output
 [
     [

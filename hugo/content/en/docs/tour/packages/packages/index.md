@@ -16,18 +16,18 @@ The order in which files are loaded is undefined, but any order will result
 in the same outcome, given that order does not matter.
 
 {{< code-tabs >}}
-{{< code-tab name="a.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="a.cue" language="cue" area="top-left" >}}
 package config
 
 foo: 100
 bar: int
 {{< /code-tab >}}
-{{< code-tab name="b.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="b.cue" language="cue" area="top-right" >}}
 package config
 
 bar: 200
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="bottom" >}}
+{{< code-tab name="result.txt" language="txt" area="bottom" >}}
 foo: 100
 bar: 200
 {{< /code-tab >}}

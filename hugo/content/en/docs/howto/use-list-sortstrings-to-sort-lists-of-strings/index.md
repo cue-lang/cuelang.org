@@ -13,7 +13,7 @@ demonstrates how to use the built-in function
 to sort lists of strings alphabetically.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="left" >}}
+{{< code-tab name="file.cue" language="cue" area="left" >}}
 package example
 
 import "list"
@@ -21,7 +21,7 @@ import "list"
 unsorted: ["B", "C", "A"]
 sorted: list.SortStrings(unsorted)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="right" >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 unsorted: ["B", "C", "A"]
 sorted: ["A", "B", "C"]

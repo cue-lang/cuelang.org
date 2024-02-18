@@ -29,7 +29,7 @@ More specifically, for any concrete `x`, `x & ⊗y` is an error if not `x ⊗ y`
 {{{end}}}
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 a: >10
 a: 11
 
@@ -41,7 +41,7 @@ b: <=10
 s: =~#"^\p{Lu}"#
 s: "Cat"
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 a: 11
 b: 10
 s: "Cat"
@@ -51,11 +51,11 @@ s: "Cat"
 A bound that fails results in an error.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 e: =~"foo"
 e: "bar"
 {{< /code-tab >}}
-{{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
+{{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 e: invalid value "bar" (out of bound =~"foo"):
     ./in.cue:1:4
     ./in.cue:2:4
@@ -70,13 +70,13 @@ In this case the first argument in the Go documentation is the type of the
 validated value and must be omitted.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "list"
 
 a: [1, 2, 3]
 a: list.MinItems(4)
 {{< /code-tab >}}
-{{< code-tab name="ERR" language="err" type="terminal" area="top-right" >}}
+{{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 a: invalid value [1,2,3] (does not satisfy list.MinItems(4)): len(list) < MinItems(4) (3 < 4):
     ./in.cue:4:4
     ./in.cue:3:4
@@ -91,13 +91,13 @@ CUE does not support timestamps in the language, but its standard library
 provides validators to interpret strings as such.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "time"
 
 valid: time.Time
 valid: "2006-01-02T15:04:05Z"
 {{< /code-tab >}}
-{{< code-tab name="CUE" language="cue" type="terminal" area="top-right" >}}
+{{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 valid: "2006-01-02T15:04:05Z"
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -108,7 +108,7 @@ types.
 <!-- TODO: CUE OpenAPI generation seems to be broken wrt to this. Make this work.
 
 {{< code-tabs >}}
-{{< code-tab name="CUE" language="cue"  area="top-left" >}}
+{{< code-tab name="CUE" language="cue" area="top-left" >}}
 import "time"
 
 #Meetup: {
@@ -116,7 +116,7 @@ import "time"
 	place: string
 }
 {{< /code-tab >}}
-{{< code-tab name="JSONSCHEMA" language="jsonschema" type="terminal" area="top-right" >}}
+{{< code-tab name="JSONSCHEMA" language="jsonschema" area="top-right" type="terminal" >}}
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

@@ -52,12 +52,12 @@ content: dir1: page: {
 title: title
 ---
 {{< code-tabs >}}
-{{< code-tab name="JSON" language="json"  area="top-left" >}}
+{{< code-tab name="JSON" language="json" area="top-left" >}}
 {
     "x": 5
 }
 {{< /code-tab >}}
-{{< code-tab name="JSON" language="json" type="terminal" area="top-right" >}}
+{{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {
     "x": 5
 }

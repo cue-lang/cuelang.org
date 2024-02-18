@@ -18,7 +18,7 @@ the list's arithmetic mean, its maximum and minimum values, and the sum of its
 values.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="left" >}}
+{{< code-tab name="file.cue" language="cue" area="left" >}}
 package example
 
 import "list"
@@ -38,7 +38,7 @@ _data: [
 	-999,
 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="right" >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 sum:  -941.00000000001
 min:  -999

@@ -14,7 +14,7 @@ to test and report if lists are sorted, using either a predefined or custom
 comparator.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import (
@@ -48,7 +48,7 @@ _sortAtSymbolCountDescending: {
 stringsCountDescendingTrue: list.IsSorted( ["@@", "@", "X"], _sortAtSymbolCountDescending)
 stringsCountDescendingFalse: list.IsSorted(["X", "@", "@@"], _sortAtSymbolCountDescending)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 isSorted:                    true
 stringsDescending:           true

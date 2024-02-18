@@ -69,20 +69,20 @@ title: JSON Superset
 Some text before
 
 {{< code-tabs >}}
-{{< code-tab name="a.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="a.cue" language="cue" area="top-left" >}}
 x?: int
 {{< /code-tab >}}
-{{< code-tab name="b.json" language="json"  area="top-right" >}}
+{{< code-tab name="b.json" language="json" area="top-right" >}}
 {
     "x": 5
 }
 {{< /code-tab >}}
-{{< code-tab name="c.json" language="json"  area="top-right" >}}
+{{< code-tab name="c.json" language="json" area="top-right" >}}
 {
     "x": 5
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBhLmN1ZSBiLmpzb24gYy5qc29u" >}}
 $ cue export a.cue b.json c.json
 {
     "x": 5

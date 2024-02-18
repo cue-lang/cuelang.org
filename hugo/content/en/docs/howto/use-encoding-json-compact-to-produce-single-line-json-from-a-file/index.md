@@ -22,7 +22,7 @@ If so, we /could/ simply document
 -->
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 import "encoding/json"
@@ -33,7 +33,7 @@ compact: json.Compact(json.Marshal(input))
 // the -l parameter.
 input: _
 {{< /code-tab >}}
-{{< code-tab name="data.json" language="json"  area="top-right" >}}
+{{< code-tab name="data.json" language="json" area="top-right" >}}
 {
     "a": 1,
     "b": {
@@ -48,7 +48,7 @@ input: _
     ]
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtbCBpbnB1dDogZGF0YS5qc29uIC1lIGNvbXBhY3QgLS1vdXQgdGV4dA==" >}}
 $ cue export file.cue -l input: data.json -e compact --out text
 {"a":1,"b":{"c":"two","d":3.0},"e":false,"f":[4,5.0,"A\nMulti\nLine\nString"]}
 {{< /code-tab >}}
