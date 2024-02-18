@@ -71,6 +71,12 @@ content: dir: page: {
 >title: JSON Superset
 >---
 >{{{with step}}}
+>
+>{{{with _upload "en" "hidden file"}}}
+>-- hidden.txt --
+>Secret message
+>{{{end}}}
+>
 >{{{with upload "en" "upload-some-cue"}}}
 >#codetab(in.cue) linenos="table"
 >-- in.cue --
@@ -121,6 +127,12 @@ content: dir: page: {
 >title: JSON Superset
 >---
 >{{{with step}}}
+>
+>{{{with _upload "en" "hidden file"}}}
+>-- hidden.txt --
+>Secret message
+>{{{end}}}
+>
 >{{{with upload "en" "upload-some-cue"}}}
 >#codetab(in.cue) linenos="table"
 >-- in.cue --
@@ -233,12 +245,13 @@ package site
 			page: {
 				cache: {
 					upload: {
+						"hidden file":      "4YPap9a6NsyJd6KTPyStBOl3FcJsYecsnKRpcixFfrY="
 						"upload-some-cue":  "mk/eGLXQi8f2VHFEAJ+OVwSB0C/zK9S8nvtSvKYNyVo="
 						"upload-some-json": "aOFY1SpvCxmIPWnBoZDfTCvL90OvzbTTD3gqObCa75w="
 						"in-subdir":        "zLF5NHI4Y1eaRJ7n4t6bN//ptgOj2snRyP3DNUSUZrw="
 					}
 					multi_step: {
-						"L4H91P78HIDIAEMM7U0CA93FTU24VD5B7K7E0BRUPJPUM8AV9RV0====": [{
+						"3UA3H59NARBLHE6A3D5HAM0BD8RJH3L54NR16HOO9JUDU58IM1HG====": [{
 							doc: """
 									# script doc comment
 									#scripttag

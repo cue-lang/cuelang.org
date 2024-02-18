@@ -18,16 +18,27 @@ import (
 	"bytes"
 )
 
-const fnUpload = "upload"
+const (
+	fnUpload       = "upload"
+	fnHiddenUpload = "_upload"
+)
 
 type uploadNode struct {
 	txtarNode
+
+	// hidden is set to indicate the script exists for side effects
+	// only and will not be rendered
+	hidden bool
 }
 
 var _ validatingNode = (*uploadNode)(nil)
 
 func (u *uploadNode) nodeType() string {
 	return "upload"
+}
+
+func (u *uploadNode) isHidden() bool {
+	return u.hidden
 }
 
 func (u *uploadNode) validate() {
