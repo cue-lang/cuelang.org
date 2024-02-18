@@ -11,14 +11,14 @@ that makes it easy for humans _and_ machines to reason over values and
 makes advanced tooling and automation possible.
 
 {{< code-tabs >}}
-{{< code-tab name="order.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="order.cue" language="cue" area="top-left" >}}
 a: {x: 1, y: int}
 a: {x: int, y: 2}
 
 b: {x: int, y: 2}
 b: {x: 1, y: int}
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 a: {
     x: 1
     y: 2

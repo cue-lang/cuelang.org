@@ -11,7 +11,7 @@ It is an error for a concrete `Conn`
 to define anything else than these two values.
 
 {{< code-tabs >}}
-{{< code-tab name="disjunctions.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="disjunctions.cue" language="cue" area="top-left" >}}
 #Conn: {
 	address:  string
 	port:     int
@@ -24,7 +24,7 @@ lossy: #Conn & {
 	protocol: "udp"
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 #Conn: {
     address:  string
     port:     int

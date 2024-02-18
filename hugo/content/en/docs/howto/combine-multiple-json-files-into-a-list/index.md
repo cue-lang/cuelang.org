@@ -12,26 +12,26 @@ This [Commented CUE]({{< relref "docs/howto/#commented-cue" >}}) demonstrates
 how to use the `cue` command to combine multiple JSON files into a list.
 
 {{< code-tabs >}}
-{{< code-tab name="a.json" language="json"  area="top-left" >}}
+{{< code-tab name="a.json" language="json" area="top-left" >}}
 {
     "a": 1,
     "b": "two",
     "c": 33.3
 }
 {{< /code-tab >}}
-{{< code-tab name="b.json" language="json"  area="top-left" >}}
+{{< code-tab name="b.json" language="json" area="top-left" >}}
 {
     "a": 22,
     "b": "some string"
 }
 {{< /code-tab >}}
-{{< code-tab name="c.json" language="json"  area="top-left" >}}
+{{< code-tab name="c.json" language="json" area="top-left" >}}
 {
     "a": 333,
     "c": 42
 }
 {{< /code-tab >}}
-{{< code-tab name="example.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="example.cue" language="cue" area="top-right" >}}
 package example
 
 import "list"
@@ -68,7 +68,7 @@ contents: [for _name in sortedInputs {
 	_inputs[_name]
 }]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLXdpdGgtY29udGV4dCAtbCAnX2lucHV0czonIC1sIGZpbGVuYW1lIGEuanNvbiBiLmpzb24gYy5qc29uIGV4YW1wbGUuY3Vl" >}}
 $ cue export --with-context -l '_inputs:' -l filename a.json b.json c.json example.cue
 {
     "contents": [

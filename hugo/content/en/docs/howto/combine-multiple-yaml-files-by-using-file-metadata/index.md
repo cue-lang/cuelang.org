@@ -20,7 +20,7 @@ The **`TERMINAL`** section shows the use of:
   evaluation space
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-right" >}}
+{{< code-tab name="example.cue" language="cue" area="top-right" >}}
 package example
 
 // inputs is the location under which we place
@@ -40,22 +40,22 @@ output: {
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name="a.yaml" language="yaml"  area="top-left" >}}
+{{< code-tab name="a.yaml" language="yaml" area="top-left" >}}
 a: 1
 b: 2
 c: 3
 {{< /code-tab >}}
-{{< code-tab name="b.yml" language="yml"  area="top-left" >}}
+{{< code-tab name="b.yml" language="yml" area="top-left" >}}
 a: a string
 b: true
 c: 42
 {{< /code-tab >}}
-{{< code-tab name="c.yaml" language="yaml"  area="top-left" >}}
+{{< code-tab name="c.yaml" language="yaml" area="top-left" >}}
 - a list element
 - another element
 - the last element
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLXdpdGgtY29udGV4dCAtbCAnaW5wdXRzOicgLWwgJ3BhdGguQmFzZShmaWxlbmFtZSknIC1lIG91dHB1dCBhLnlhbWwgYi55bWwgYy55YW1sIGV4YW1wbGUuY3VlIC0tb3V0IHlhbWw=" >}}
 $ cue export --with-context -l 'inputs:' -l 'path.Base(filename)' -e output a.yaml b.yml c.yaml example.cue --out yaml
 a.yaml:
   filename: a.yaml

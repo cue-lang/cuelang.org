@@ -15,7 +15,7 @@ to convert a string representation of an int to the number itself, using base
 10.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 import "strconv"
@@ -29,7 +29,7 @@ import "strconv"
 "-050":     strconv.Atoi("-050")
 "00012345": strconv.Atoi("00012345")
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
 $ cue export
 {
     "0": 0,

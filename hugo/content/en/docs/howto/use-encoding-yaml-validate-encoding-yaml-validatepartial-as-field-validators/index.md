@@ -21,7 +21,7 @@ constraints by checking that the data and schema unify successfully.
 present.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "encoding/yaml"
@@ -50,7 +50,7 @@ _missingFieldSchema: {
 	c!: bool // validation failure for yaml.Validate only
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate({a!:>99,b!:string})): error in call to encoding/yaml.Validate: invalid value 1 (out of bound >99):
     ./file.cue:12:7

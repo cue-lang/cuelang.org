@@ -19,7 +19,7 @@ looks like <code>expected.yaml</code>, but instead I end up with these
 {{< /quote >}}
 
 {{< code-tabs >}}
-{{< code-tab name="problem1.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="problem1.cue" language="cue" area="top-left" >}}
 #Metadata: {
 	name:      string
 	namespace: string
@@ -48,7 +48,7 @@ config: #Config & {
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name="expected.yaml" language="yaml"  area="top-right" >}}
+{{< code-tab name="expected.yaml" language="yaml" area="top-right" >}}
 config:
   metadata:
     name: test
@@ -62,7 +62,7 @@ config:
       name: test
       namespace: dev
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBwcm9ibGVtMS5jdWUgLS1vdXQgeWFtbA==" >}}
 $ cue export problem1.cue --out yaml
 config.serviceA.metadata.name: incomplete value string:
     ./problem1.cue:2:13
@@ -126,7 +126,7 @@ incomplete values! Can you tell me why?
 {{< /quote >}}
 
 {{< code-tabs >}}
-{{< code-tab name="problem2.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="problem2.cue" language="cue" area="top-left" >}}
 #Metadata: {
 	name:      string
 	namespace: string
@@ -155,7 +155,7 @@ config: #Config & {
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name="expected.yaml" language="yaml"  area="top-right" >}}
+{{< code-tab name="expected.yaml" language="yaml" area="top-right" >}}
 config:
   metadata:
     name: test
@@ -169,7 +169,7 @@ config:
       name: test
       namespace: dev
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBwcm9ibGVtMi5jdWUgLS1vdXQgeWFtbA==" >}}
 $ cue export problem2.cue --out yaml
 config.serviceA.metadata.name: incomplete value string:
     ./problem2.cue:2:13
@@ -206,7 +206,7 @@ the concrete `metadata` values provided when `config` is declared?
 The solution is: **use an alias!**
 
 {{< code-tabs >}}
-{{< code-tab name="solution.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="solution.cue" language="cue" area="top-left" >}}
 #Metadata: {
 	name:      string
 	namespace: string
@@ -235,7 +235,7 @@ config: #Config & {
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name="expected.yaml" language="yaml"  area="top-right" >}}
+{{< code-tab name="expected.yaml" language="yaml" area="top-right" >}}
 config:
   metadata:
     name: test
@@ -249,7 +249,7 @@ config:
       name: test
       namespace: dev
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBzb2x1dGlvbi5jdWUgLS1vdXQgeWFtbA==" >}}
 $ cue export solution.cue --out yaml
 config:
   metadata:

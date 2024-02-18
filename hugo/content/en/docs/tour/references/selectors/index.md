@@ -8,7 +8,7 @@ This only works if a field name is a valid identifier and it is not computed.
 For other cases one can use the indexing notation.
 
 {{< code-tabs >}}
-{{< code-tab name="selectors.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="selectors.cue" language="cue" area="top-left" >}}
 a: {
 	b:     2
 	"c-e": 5
@@ -16,7 +16,7 @@ a: {
 v: a.b
 w: a["c-e"]
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 a: {
     b:     2
     "c-e": 5

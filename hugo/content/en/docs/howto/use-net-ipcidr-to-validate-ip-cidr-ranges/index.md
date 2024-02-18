@@ -14,7 +14,7 @@ to check that values represent valid IPv4 or IPv6 addresses or subnets in
 [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top" >}}
+{{< code-tab name="file.cue" language="cue" area="top" >}}
 package example
 
 import "net"
@@ -32,7 +32,7 @@ v6Address: "::1/128"
 v4SubnetMaskTooLarge: "10.0.0.0/50"
 v6MalformedPrefix:    ":::1/128"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
 v4SubnetMaskTooLarge: invalid value "10.0.0.0/50" (does not satisfy net.IPCIDR): error in call to net.IPCIDR: netip.ParsePrefix("10.0.0.0/50"): prefix length out of range:
     ./file.cue:6:6

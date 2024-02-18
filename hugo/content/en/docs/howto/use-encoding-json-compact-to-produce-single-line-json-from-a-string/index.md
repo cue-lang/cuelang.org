@@ -15,7 +15,7 @@ to transform JSON held in a string into a single line of JSON with all
 insignificant whitespace removed.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="left" >}}
+{{< code-tab name="file.cue" language="cue" area="left" >}}
 package example
 
 import "encoding/json"
@@ -40,7 +40,7 @@ jsonString: #"""
 	}
 	"""#
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="right" >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtZSBjb21wYWN0IC0tb3V0IHRleHQ=" >}}
 $ cue export -e compact --out text
 {"a":1,"b":{"c":"two","d":3.0},"e":false,"f":[4,5.0,"A\nMulti\nLine\nString"]}
 {{< /code-tab >}}

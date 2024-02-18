@@ -11,7 +11,7 @@ an uppercase letter, specified in`schema.cue`.
 The constraint is validated with `cue vet`.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 #Language: {
 	tag: string
 	// name must start with an uppercase
@@ -20,7 +20,7 @@ The constraint is validated with `cue vet`.
 }
 languages: [...#Language]
 {{< /code-tab >}}
-{{< code-tab name="data.yaml" language="yaml"  area="top-right" >}}
+{{< code-tab name="data.yaml" language="yaml" area="top-right" >}}
 languages:
   - tag: en
     name: English
@@ -29,7 +29,7 @@ languages:
   - tag: "no"
     name: Norwegian
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="bottom" >}}
+{{< code-tab name="result.txt" language="txt" area="bottom" >}}
 languages.1.name: invalid value "dutch" (out of bound =~"^\\p{Lu}"):
     ./schema.cue:5:8
     ./data.yaml:5:11

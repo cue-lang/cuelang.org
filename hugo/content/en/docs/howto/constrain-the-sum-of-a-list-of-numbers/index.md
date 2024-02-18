@@ -18,7 +18,7 @@ This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates constraining the sum of a list of numbers.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package example
 
 import "list"
@@ -34,11 +34,11 @@ bad_list: [...number]
 _good_sum: <=100 & list.Sum(good_list)
 _bad_sum:  <=99.5 & list.Sum(bad_list)
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml"  area="top-right" >}}
+{{< code-tab name="data.yml" language="yml" area="top-right" >}}
 good_list: [ 1,2,3,4 ]
 bad_list:  [ 1,2,3,100.5 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
 $ cue vet .:example data.yml
 _bad_sum: invalid value 106.5 (out of bound <=99.5):
     ./schema.cue:14:12

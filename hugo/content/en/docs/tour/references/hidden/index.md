@@ -12,13 +12,13 @@ Quoted and non-quoted fields share the same namespace unless they start
 with an underscore.
 
 {{< code-tabs >}}
-{{< code-tab name="hidden.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="hidden.cue" language="cue" area="top-left" >}}
 "_foo": 2
 _foo:   3
 foo:    4
 _#foo:  5
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt"  area="top-right" >}}
+{{< code-tab name="result.txt" language="txt" area="top-right" >}}
 {
     "_foo": 2,
     "foo": 4

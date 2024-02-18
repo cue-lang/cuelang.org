@@ -21,7 +21,7 @@ bytes, and also in runes, as introduced by
 [the Go programming language](https://go.dev/blog/strings#code-points-characters-and-runes).
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top" >}}
+{{< code-tab name="example.cue" language="cue" area="top" >}}
 package example
 
 import "strings"
@@ -77,7 +77,7 @@ emoji_constrain_bytes: {
 	#bytes: len(content) & >=10
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGU=" >}}
 $ cue vet .:example
 ascii_constrain_runes: invalid value "only ASCII characters" (does not satisfy strings.MaxRunes(8)):
     ./example.cue:8:46

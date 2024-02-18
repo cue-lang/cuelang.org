@@ -35,7 +35,7 @@ that `cue` has caught the deliberate mistakes in our example data.
 Here's an example:
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 // CUE comments start with "//"
@@ -48,14 +48,14 @@ f1: string
 // integer over 10
 f2!: int & >10
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml"  area="top-right" >}}
+{{< code-tab name="data.yml" language="yml" area="top-right" >}}
 # f1 is actually an integer
 f1: 123
 
 # f2 is actually a string
 f2: "some string value"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
 $ cue vet .:example data.yml
 f1: conflicting values 123 and string (mismatched types int and string):
     ./data.yml:2:5

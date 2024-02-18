@@ -27,7 +27,7 @@ The behaviours of these functions are defined in
 [the CUE language specification]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}}).
 
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 // div returns Euclidean division's
@@ -66,7 +66,7 @@ truncated: remainder: {
 	d: rem(-15, -4)
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
 $ cue export
 {
     "euclidean": {
