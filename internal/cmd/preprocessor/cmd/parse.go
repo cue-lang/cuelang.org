@@ -216,12 +216,16 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		// Increment first because we are numbering from 1
 		rf.stepNumber++
 		return rf.parse_stepNode(n, rf.stepNumber)
-	case fnUpload:
+	case fnUpload, fnHiddenUpload:
+		hidden := fn.Ident == fnHiddenUpload
 		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
 		if err != nil {
 			return nil, err
 		}
-		return &uploadNode{txtarNode: t}, nil
+		return &uploadNode{
+			txtarNode: t,
+			hidden:    hidden,
+		}, nil
 	case fnScript, fnHiddenScript:
 		hidden := fn.Ident == fnHiddenScript
 		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
