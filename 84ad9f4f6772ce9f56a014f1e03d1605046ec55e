@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efc3f9d0_fb296bff",
+        "filename": "content/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/gen_cache.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T08:17:24Z",
+      "side": 1,
+      "message": "This file being /added/, not simply modified, seems odd.",
+      "revId": "84ad9f4f6772ce9f56a014f1e03d1605046ec55e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
