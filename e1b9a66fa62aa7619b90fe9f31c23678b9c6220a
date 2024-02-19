@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5344e086_e30e0dd7",
+        "filename": "content/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T08:13:53Z",
+      "side": 0,
+      "message": "I don\u0027t understand why this arbitrary cache file is deleted.",
+      "revId": "e1b9a66fa62aa7619b90fe9f31c23678b9c6220a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
