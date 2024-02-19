@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd0e6d38_27d036aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T20:48:23Z",
+      "side": 1,
+      "message": "Grammar.",
+      "revId": "d9e26e62f143f918a5df36c58f9387a681cbc029",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
