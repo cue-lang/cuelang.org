@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "179f14b9_fb07ef90",
+        "filename": "internal/cmd/preprocessor/cmd/serve.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T19:39:50Z",
+      "side": 1,
+      "message": "```suggestion\n\t\t// Reset the executor... because we either finished the first run or\n```",
+      "revId": "856e5aaf43005604fad92f7d69d3fcf00c57e4d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
