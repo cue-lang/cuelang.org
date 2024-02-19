@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb1b88a4_123f81e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T20:37:01Z",
+      "side": 1,
+      "message": "`s/product/produce/`",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 71
+      },
+      "revId": "100991af7d0266830422bd54d804778d44e7355e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7d358ff_1598a987",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T20:37:01Z",
+      "side": 1,
+      "message": "`s/it/if`",
+      "revId": "100991af7d0266830422bd54d804778d44e7355e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f1dbe37_f64d127a",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T20:37:01Z",
+      "side": 1,
+      "message": "nit: we could use the \"…\" character, rather than a manual ellipsis, which I suspect will look more correct in output as (a) it\u0027s a single character and (b) it\u0027s less likely to give the impression to the reader that 3 periods have been emitted by any command.\n \ncf. https://en.wikipedia.org/wiki/Ellipsis\n\n\u003e U+2026 … HORIZONTAL ELLIPSIS",
+      "revId": "100991af7d0266830422bd54d804778d44e7355e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
