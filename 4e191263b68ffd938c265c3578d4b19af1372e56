@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28b7b434_e181f125",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T20:47:00Z",
+      "side": 1,
+      "message": "Could we also include a test of an accessed-via-codename-suffix `cue` binary, other than the bare `cue` that\u0027s defaulted inside the container?",
+      "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6308793_8e292d48",
+        "filename": "site.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T20:47:00Z",
+      "side": 1,
+      "message": "Add `TODO: move default away from .prerelease`, perhaps?",
+      "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1c3fed4_51075088",
+        "filename": "site.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T20:47:00Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
