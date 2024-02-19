@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dd65f6d_57cc2103",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-19T21:03:24Z",
+      "side": 1,
+      "message": "nit: this results in inline comments being included in the copied string, e.g. https://cl-1177017-2--cue-cls.netlify.app/docs/tutorial/validating-simple-yaml-files/\u0027s\n`pwd # we start in our home directory, but you do not need to`.",
+      "revId": "db63858855782da8c1017f6e8162b889b2897360",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
