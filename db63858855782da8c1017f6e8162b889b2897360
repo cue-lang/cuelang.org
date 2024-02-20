@@ -16,6 +16,24 @@
       "message": "nit: this results in inline comments being included in the copied string, e.g. https://cl-1177017-2--cue-cls.netlify.app/docs/tutorial/validating-simple-yaml-files/\u0027s\n`pwd # we start in our home directory, but you do not need to`.",
       "revId": "db63858855782da8c1017f6e8162b889b2897360",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac65c2d7_1989d128",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "Will mark with a TODO because I am loathed to make this code even more hacky. The whole lot needs a revamp based on the learnings from the script and upload nodes which, by comparison, are much cleaner and more principled with less effort.",
+      "parentUuid": "6dd65f6d_57cc2103",
+      "revId": "db63858855782da8c1017f6e8162b889b2897360",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
