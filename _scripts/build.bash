@@ -21,18 +21,36 @@ set -eux
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
-skipcache=""
-readonlycache="true"
+# Defaults, appropriate for the sensitive Netlify environment
 time=""
+readonlycache="--readonlycache"
+nocachevolume="--nocachevolume"
+skipcache=""
 minify="--minify"
+
 if [ "${NETLIFY:-}" != "true" ]
 then
+	# Local or CI - just not Netlify
+
+	# It's useful to see timings on steps
 	time="time -p"
-	readonlycache="false"
-	minify=""
+
+	# In CI or locally we want to write to cache files. But per below we only
+	# skip initially reading the cache in the case of CI. This is how we detect
+	# stale caches.
+	readonlycache=""
+
 	if [ "${CI:-}" == "true" ]
 	then
-		skipcache="--skipcache=true --nocachevolume"
+		# See comment above for readonlycache
+		skipcache="--skipcache"
+	else
+		# Locally we don't want to minify the results of Hugo to help make
+		# debugging easier
+		minify=""
+
+		# We do want to use cache volumes locally... and only locally.
+		nocachevolume=""
 	fi
 fi
 
@@ -40,7 +58,7 @@ fi
 bash playground/_scripts/build.bash
 
 # Run the preprocessor
-bash _scripts/runPreprocessor.bash execute --readonlycache=$readonlycache $skipcache
+bash _scripts/runPreprocessor.bash execute $readonlycache $nocachevolume $skipcache
 
 # Main site
 cd hugo
