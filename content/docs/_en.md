@@ -40,12 +40,6 @@ from this brief explanation of each section:
   newcomers to the language
 {{< /card >}}
 
-{{< card href="language-guide/" label="Language Guide" title="A deep dive into CUE" >}}
-  Follow a detailed learning journey broken down into the different aspects of
-  CUE: data, templating, schemas, queries, policy, file organization, and
-  interoperability with other languages and encodings
-{{< /card >}}
-
 {{< card href="integrations/" label="Integrations" title="JSON, YAML, Go, and more" >}}
   Learn how CUE integrates with a wide ecosystem of formats and tools
 {{< /card >}}

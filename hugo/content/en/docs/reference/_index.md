@@ -2,6 +2,7 @@
 title: References
 weight: 100
 toc_hide: false
+index_hide: true
 ---
 
 ## Language Specification
@@ -36,5 +37,3 @@ in both repositories.
 See the [Contribution Guide]({{< relref "contribution-guidelines" >}})
 for more details on how to contribute in line with the project's
 [Code of Conduct]({{< relref "code-of-conduct" >}}).
-
-## Available Reference Documents

@@ -2,6 +2,7 @@
 title: Tutorials
 weight: 30
 toc_hide: false
+index_hide: true
 ---
 
 ## About these tutorials
@@ -18,5 +19,3 @@ If you're new to CUE then start by reading the
 [Language Guide]({{< relref "docs/language-guide" >}}), and then try out some
 tutorials specifically selected for you on the
 ["New to CUE?"]({{< relref "new-to-cue" >}}) page.
-
-## All available tutorials

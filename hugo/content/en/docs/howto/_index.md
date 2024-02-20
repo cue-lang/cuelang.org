@@ -2,6 +2,7 @@
 title: How-to Guides
 weight: 40
 toc_hide: false
+index_hide: true
 ---
 
 ## About these guides
@@ -79,5 +80,3 @@ used.
 If you find any guides confusing, incomplete, or not detailed enough, then we
 would really appreciate you telling us about your experience - just use the
 "Report an Issue" link at the very bottom of the guide's page!
-
-## All available how-to guides

@@ -2,6 +2,7 @@
 title: "The Logic of CUE"
 description: "Learn about CUE's theoretical basis and what makes it different."
 math: true
+toc_hide: true
 ---
 
 This page explains the core concept on which pretty much everything that is CUE
