@@ -16,6 +16,24 @@
       "message": "```suggestion\npreprocessor: support declarations in matchSpe\n```",
       "revId": "e0e5c1c7ae0dbf05e1572d6b07dc5b1074cc5542",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1d25073_a96914c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "245bb30a_c7354221",
+      "revId": "e0e5c1c7ae0dbf05e1572d6b07dc5b1074cc5542",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
