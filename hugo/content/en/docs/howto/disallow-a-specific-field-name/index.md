@@ -12,7 +12,7 @@ demonstrates how to disallow specific data fields inside an otherwise open
 schema.
 
 {{< code-tabs >}}
-{{< code-tab name="file.cue" language="cue"  area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
 // This schema is open because we do not know
@@ -24,13 +24,13 @@ address!: string
 // people's ages, so we disallow the age field.
 age?: _|_
 {{< /code-tab >}}
-{{< code-tab name="data.yaml" language="yaml"  area="top-right" >}}
+{{< code-tab name="data.yaml" language="yaml" area="top-right" >}}
 name: Charlie Cartwright
 address: Ripon, North Yorkshire
 species: cat
 age: 15.5
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" type="terminal" area="bottom" >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuIGRhdGEueWFtbA==" >}}
 $ cue vet . data.yaml
 explicit error (_|_ literal) in source:
     ./file.cue:10:7
