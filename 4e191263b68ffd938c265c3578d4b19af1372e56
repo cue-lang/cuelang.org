@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cd281bc7_7d6d8c30",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "I\u0027m sorry I don\u0027t understand what you\u0027re referring to here or asking. Happy to deal with in a follow up CL.",
+      "parentUuid": "28b7b434_e181f125",
+      "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c6308793_8e292d48",
         "filename": "site.cue",
         "patchSetId": 7
@@ -31,6 +49,24 @@
       "writtenOn": "2024-02-19T20:47:00Z",
       "side": 1,
       "message": "Add `TODO: move default away from .prerelease`, perhaps?",
+      "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35d37cc3_901a3735",
+        "filename": "site.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6308793_8e292d48",
       "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -48,6 +84,24 @@
       "writtenOn": "2024-02-19T20:47:00Z",
       "side": 1,
       "message": "Ditto.",
+      "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e364b6e0_759a2542",
+        "filename": "site.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1c3fed4_51075088",
       "revId": "4e191263b68ffd938c265c3578d4b19af1372e56",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
