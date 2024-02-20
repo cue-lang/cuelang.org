@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed95a0d8_3ba38453",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb1b88a4_123f81e9",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 71
+      },
+      "revId": "100991af7d0266830422bd54d804778d44e7355e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7d358ff_1598a987",
@@ -41,6 +65,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "02b1be8a_675b5b69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7d358ff_1598a987",
+      "revId": "100991af7d0266830422bd54d804778d44e7355e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f1dbe37_f64d127a",
@@ -54,6 +96,24 @@
       "writtenOn": "2024-02-19T20:37:01Z",
       "side": 1,
       "message": "nit: we could use the \"…\" character, rather than a manual ellipsis, which I suspect will look more correct in output as (a) it\u0027s a single character and (b) it\u0027s less likely to give the impression to the reader that 3 periods have been emitted by any command.\n \ncf. https://en.wikipedia.org/wiki/Ellipsis\n\n\u003e U+2026 … HORIZONTAL ELLIPSIS",
+      "revId": "100991af7d0266830422bd54d804778d44e7355e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68df194c_1e0faf36",
+        "filename": "internal/cmd/preprocessor/cmd/sanitisers.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-20T06:03:21Z",
+      "side": 1,
+      "message": "I quickly made the change to see what this looks like... and I think it actually harms readability: the resulting character is two narrow and too easily \"lost\". So leaving for now.",
+      "parentUuid": "8f1dbe37_f64d127a",
       "revId": "100991af7d0266830422bd54d804778d44e7355e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
