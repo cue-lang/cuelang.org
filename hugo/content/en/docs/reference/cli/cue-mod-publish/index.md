@@ -9,8 +9,14 @@ tags:
 $ cue help mod publish
 WARNING: THIS COMMAND IS EXPERIMENTAL.
 
-Publish the current module to an OCI registry.
-Also note that this command does no dependency or other checks at the moment.
+Publish the current module to an OCI registry. It consults
+$CUE_REGISTRY to determine where the module should be published (see
+"cue help environment" for details). Also note that this command does
+no dependency or other checks at the moment.
+
+Note: you must enable the modules experiment with:
+	export CUE_EXPERIMENT=modules
+for this command to work.
 
 Usage:
   cue mod publish <version> [flags]
