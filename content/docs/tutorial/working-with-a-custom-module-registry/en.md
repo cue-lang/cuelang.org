@@ -42,8 +42,6 @@ This tutorial describes an experimental feature. All details are subject to chan
 - **A command terminal**. `cue` works on all platforms, so any terminal on Linux
   or macOS, and on PowerShell, `cmd.exe` or
   [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) in Windows.
-- **The docker command** or an Open Container Initiative ("OCI") registry that
-  you can write to.
 - **An installed `cue` binary**
   ([installation details]({{< relref "/docs/introduction/installation" >}}))
 - **Some awareness of CUE schemata**
@@ -152,17 +150,31 @@ it represents the schema of the configuration data expected by `FrostyApp`.
 {{{with step}}}
 
 If you do not have access to an OCI registry, start one locally:
+
 {{{with script "en" "start-registry"}}}
 #norun
 
-docker run -p 5000:5000 registry
+cue mod registry localhost:5000
 {{{end}}}
+
+`cue mod registry` is a very simple in-memory OCI server.
 
 CUE should work with all OCI-compatible artifact registries, such as
 the [Google Artifact Registry](https://cloud.google.com/artifact-registry),
-as CUE uses the standard OCI protocols spoken by such registries.
+as CUE uses the standard OCI protocols spoken by such registries. For example,
+here are some alternatives:
 
-In our example we will run a local instance of the docker registry on port 5000.
+{{{with script "en" "start-registry alternatives"}}}
+#norun
+
+# running a local registry via docker
+docker run -p 5000:5000 registry
+
+# running a local registry via podman
+podman run -p 5000:5000 registry
+{{{end}}}
+
+In our example we will run a local instance of the in-memory registry on port 5000.
 If you need to run one locally, invoke the above `docker` command in a separate
 terminal so the registry remains running while you follow the rest of this
 tutorial.
