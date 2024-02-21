@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "P9PRl8ciP1PLa3p1CHUPq826ngnYSZKy610FoLOBnHg="
-								"config.cue":               "eUXXwZTQtP09GB0sL634vjbOFOR1SN5GhMhgmSp1w7Y="
-								"second-module-to-publish": "5wvF0xlcU65XQ2WcXNVuZ5Md0U+LeO/nYUfSSuSoOLY="
-								"update-frostyapp":         "SO8QVDHReDMiS9pOhUVE1zCQyhfUvhOfH1erZF63TAk="
-								"schema-v0.1.0":            "tFUKi2Cf8MrmqW3YSHcV+3cSopKtabdpMgKOLx0uyMc="
-								"edit-dependency-version":  "sObWBMsVSAVdzR+d1S+4zp4EPu5z5b6fU0ON80GkQuw="
+								"schema-v0.0.1":            "Qh2Fhn8AtpqTvdoDvGLYNvcvkYbfUVMkqxPVZIATB5g="
+								"config.cue":               "gZGueDQm34cS3OBWKB4bE/8yliwm1hkeToXOlYvX4sE="
+								"second-module-to-publish": "7nRMFeNOyJ80h7Cm7/Z5W13fViAmOmfjcIHWc1xOdII="
+								"update-frostyapp":         "DfD4R8pdOy8NmKTyIWqN7bubqgPhFuiKvYRmv1YWqPE="
+								"schema-v0.1.0":            "yA2BdTP/6/BfvgPRJiS+rCDT9NvJ2WWKugVTHPiH25o="
+								"edit-dependency-version":  "5x5EdZJ6MRsjwyVs8Doo8d9ykHnPm8iCWbOPb2worow="
 							}
 							multi_step: {
-								"5L58VUCBD0MQ7OETIORV2PB9A7VF165K93UQGT28D21FT2KH84TG====": [{
+								"CNUKJ2BF9TJ2BUPU9UPR5DEGAEM7H3CG6KEKCG56PV2N9MV35LJG====": [{
 									doc: """
 											# TODO: this is inherently racey. But not a problem in practice...
 											# for now. When it does become a problem we can solve this properly
@@ -29,7 +29,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.8.0-alpha.1
+											cue version v0.8.0-alpha.3
 											...
 
 											"""
@@ -98,7 +98,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.8.0-alpha.1"
+											\tversion: "v0.8.0-alpha.3"
 											}
 											deps: {
 											\t"glacial-tech.example/frostyconfig@v0": {
@@ -164,7 +164,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.8.0-alpha.1"
+											\tversion: "v0.8.0-alpha.3"
 											}
 											deps: {
 											\t"glacial-tech.example/frostyconfig@v0": {

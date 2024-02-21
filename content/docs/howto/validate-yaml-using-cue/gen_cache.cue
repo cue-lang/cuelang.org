@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "N2+ZIwHPuqWHs4paDYTd/taLK0KBQaquSHc+9EVQBIc="
-								"initial x.cue":  "SMdE2xNJNpLT3ZQSNS4c7+36ElP1ga/fE1ZLAAn8C4k="
-								"another person": "Owk08UJ2GkU2ARs3zwYxOzlp4IHSkhy1obLgD43PQYI="
-								"fixed yaml":     "t8vj2pkAVPT+PLanGx1OvrM33kzoTNgPklD475mN7cQ="
+								"initial x.yaml": "57b9KFBQgn2SwvCP/MzqgBkjZvSstZyrs/tc7EPSY/o="
+								"initial x.cue":  "R+U5CurmV1h0MEgx0z9Ba/jwN8uVLkBBJGZk+KBGcWw="
+								"another person": "R7iOj7VVjXMklvVUUnZiK9WcHldrUXbPgQzH6WKRqFU="
+								"fixed yaml":     "0nHXsdWGQXj/2kuuclkOus11gmNHT/D5ZzVh/WGA8LE="
 							}
 							multi_step: {
-								"H0P5VGAD3LG354CPH24T4NF4ASM84BSJE6ARDM7C669FRJ56LBB0====": [{
+								"SA0SJ09GRRPBMQ8HP3LFUU96HT546NQ9DFD0L7S8LNMIAU1QGR40====": [{
 									doc:      ""
 									cmd:      "cue vet x.cue x.yaml"
 									exitCode: 0

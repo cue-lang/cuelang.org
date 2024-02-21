@@ -8,15 +8,21 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"B452FC4LRSLP71A8466PSCPCDJ9T20CSLO2TFLBDP1ETQG0AKAAG====": [{
+									"SVBKC2G6S6S4SBSPUR13PO58IENH33LQ222600QQOS8EUTC7CDKG====": [{
 										doc:      ""
 										cmd:      "cue help mod publish"
 										exitCode: 0
 										output: """
 												WARNING: THIS COMMAND IS EXPERIMENTAL.
 
-												Publish the current module to an OCI registry.
-												Also note that this command does no dependency or other checks at the moment.
+												Publish the current module to an OCI registry. It consults
+												$CUE_REGISTRY to determine where the module should be published (see
+												"cue help environment" for details). Also note that this command does
+												no dependency or other checks at the moment.
+
+												Note: you must enable the modules experiment with:
+												\texport CUE_EXPERIMENT=modules
+												for this command to work.
 
 												Usage:
 												  cue mod publish <version> [flags]
