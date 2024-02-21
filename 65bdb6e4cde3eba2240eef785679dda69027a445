@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7eefb48e_3b09ebeb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-21T12:54:28Z",
+      "side": 1,
+      "message": "Per https://github.com/cue-lang/cuelang.org/pull/452#pullrequestreview-1892167465, I opted to just get this change in pre alpha.2 rather than go for further iterations on the PR. We can (and will) make clearer standard forms of commit messages later.",
+      "parentUuid": "3fa42035_c33a0732",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d2520a5_ce79cb07",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-02-21T12:35:21Z",
       "side": 1,
       "message": "`s/docker/the docker CLI/`.",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52bcd1ce_d3925a33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-21T12:54:28Z",
+      "side": 1,
+      "message": "Per above.",
+      "parentUuid": "8d2520a5_ce79cb07",
       "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -65,6 +101,24 @@
       "writtenOn": "2024-02-21T12:35:21Z",
       "side": 1,
       "message": "```suggestion\nFor organizations that don\u0027t allow the use of the docker CLI tool,\n```",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d677b1f_a88dba1a",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-21T12:54:28Z",
+      "side": 1,
+      "message": "Per above.",
+      "parentUuid": "5c00012e_08c33242",
       "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -109,6 +163,48 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a92e600e_487843c2",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-21T12:54:28Z",
+      "side": 1,
+      "message": "Per above.",
+      "parentUuid": "627793e0_0e2d5d0e",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2213aeb_78e3c852",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-21T12:54:28Z",
+      "side": 1,
+      "message": "Per above.",
+      "parentUuid": "e9907fae_eb8acefd",
+      "range": {
+        "startLine": 467,
+        "startChar": 7,
+        "endLine": 467,
+        "endChar": 68
+      },
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2640b5c0_7bc3e6e3",
@@ -122,6 +218,24 @@
       "writtenOn": "2024-02-21T12:35:21Z",
       "side": 1,
       "message": "```suggestion\ndocker compatible json file that `cue` can use.\n```",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83fd03b2_652aeba8",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-21T12:54:28Z",
+      "side": 1,
+      "message": "Per above.",
+      "parentUuid": "2640b5c0_7bc3e6e3",
       "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
