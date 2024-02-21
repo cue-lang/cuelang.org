@@ -1,17 +1,15 @@
-/* eslint-disable object-shorthand */
-/* eslint-disable max-lines-per-function */
-/* eslint-disable prefer-arrow/prefer-arrow-functions */
-import algoliasearch, { SearchClient } from 'algoliasearch';
 import { autocomplete, AutocompletePlugin, getAlgoliaResults, GetSources, VNode } from '@algolia/autocomplete-js';
+import { AutocompleteApi } from '@algolia/autocomplete-js/dist/esm/types';
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
 import { AutocompleteQuerySuggestionsHit } from '@algolia/autocomplete-plugin-query-suggestions/dist/esm/types';
-import { AutocompleteApi } from '@algolia/autocomplete-js/dist/esm/types';
 import { BaseItem, GetSourcesParams, OnSubmitParams } from '@algolia/autocomplete-shared/dist/esm/core';
-
+import algoliasearch, { SearchClient } from 'algoliasearch';
+import merge from 'lodash.merge';
+import { getHiddenInputFacets, mapToAlgoliaFilters, parseQuery } from '../helpers/search';
+import { SearchFacets, SearchItem } from '../interfaces/search';
 import { BaseWidget } from './base-widget';
-import { mapToAlgoliaFilters, parseQuery } from '../helpers/search';
-import { SearchItem } from '../interfaces/search';
 
+/* eslint-disable max-lines-per-function */
 export class SearchAutocomplete extends BaseWidget {
     public static readonly NAME = 'search-autocomplete';
 
@@ -24,6 +22,7 @@ export class SearchAutocomplete extends BaseWidget {
     private autocomplete: AutocompleteApi<BaseItem>;
     private readonly placeholder: string;
     private readonly detachedModeMaxWidth = 1023;
+    private readonly facetInputs: NodeListOf<HTMLInputElement>;
 
     constructor(element: HTMLElement) {
         super(element);
@@ -33,6 +32,7 @@ export class SearchAutocomplete extends BaseWidget {
         this.searchType = this.element.dataset.searchAutocomplete || '';
         this.searchbarSize = this.element.dataset.searchbarSize;
         this.placeholder = this.element.dataset.searchbarPlaceholder ?? '';
+        this.facetInputs = document.querySelectorAll<HTMLInputElement>('[data-search-results] input[name^="facet-"]');
     }
 
     public static registerWidget(): void {
@@ -60,7 +60,7 @@ export class SearchAutocomplete extends BaseWidget {
         if (this.searchType === 'results') {
             const url = new URL(window.location.href);
             const searchParams = new URLSearchParams(url.search);
-            const query = searchParams.get('q');
+            const query = searchParams.get('q') || '';
             if (query && query !== '') {
                 this.autocomplete.setQuery(query);
             }
@@ -75,19 +75,15 @@ export class SearchAutocomplete extends BaseWidget {
         this.querySuggestionsPlugin = createQuerySuggestionsPlugin({
             searchClient: this.suggestionsClient,
             indexName: 'cuelang.org_query_suggestions',
-            transformSource({ source }) {
-                function createUrl(item: AutocompleteQuerySuggestionsHit) {
-                    return `/search?q=${ item.query.toString() }`;
-                }
-
+            transformSource: ({ source }) => {
                 return {
                     ...source,
-                    getItemUrl({ item }) {
-                        return createUrl(item);
+                    getItemUrl: ({ item }) => {
+                        return this.getSearchUrl(item.query.toString());
                     },
                     templates: {
                         ...source.templates,
-                        header({ state, html }) {
+                        header: ({ state, html }) => {
                             if (state.query) {
                                 return null;
                             }
@@ -97,11 +93,11 @@ export class SearchAutocomplete extends BaseWidget {
                                 <div class="aa-SourceHeaderLine searchbar__header-line"></div>
                             `;
                         },
-                        item(params) {
+                        item: (params) => {
                             const { item, html } = params;
 
                             return html`
-                                <a class="aa-ItemLink" href="${ createUrl(item) }">
+                                <a class="aa-ItemLink" href="${ this.getSearchUrl(item.query.toString()) }">
                                     ${ (source.templates.item(params) as VNode).props.children }
                                 </a>
                             `;
@@ -124,15 +120,17 @@ export class SearchAutocomplete extends BaseWidget {
             getSources: ((_params: GetSourcesParams<SearchItem>) => {
                 return [{
                     sourceId: 'documentation',
-                    getItemInputValue({ item }) {
+                    getItemInputValue: ({ item }) => {
                         return item.title.toString();
                     },
-                    getItems({ query }) {
+                    getItems: ({ query }) =>{
                         const parsedQuery = parseQuery(query);
-                        const filters = mapToAlgoliaFilters(parsedQuery.facets);
+                        const facetsFromInputs = this.getHiddenInputFacets();
+                        const facets = merge(parsedQuery.facets, facetsFromInputs);
+                        const filters = mapToAlgoliaFilters(facets);
 
                         return getAlgoliaResults({
-                            searchClient,
+                            searchClient: searchClient,
                             queries: [{
                                 indexName: 'cuelang.org',
                                 query: parsedQuery.cleanQuery,
@@ -145,28 +143,17 @@ export class SearchAutocomplete extends BaseWidget {
                             }],
                         });
                     },
-                    getItemUrl({ item }) {
+                    getItemUrl: ({ item }) => {
                         return item.link.toString();
                     },
                     templates: {
-                        header({ html }) {
+                        header: ({ html }) => {
                             return html`
                                 <span class="aa-SourceHeaderTitle searchbar__header-title">Search results</span>
                                 <div class="aa-SourceHeaderLine searchbar__header-line"></div>
                             `;
                         },
-                        item({ item, html }) {
-                            function htmlDecode(input: string, length = 100) {
-                                const doc = new DOMParser().parseFromString(input, 'text/html');
-                                const content = doc.documentElement.textContent;
-
-                                if (content.length <= length) {
-                                    return content;
-                                }
-
-                                return content.substring(0, length).trim() + '\u2026';
-                            }
-
+                        item: ({ item, html }) => {
                             return html`
                                 <a class="searchbar__item" href="${ item.link }">
                                     <div class="searchbar__item-content">
@@ -180,38 +167,38 @@ export class SearchAutocomplete extends BaseWidget {
                                         ` : '' }
 
                                         <h2 class="searchbar__item-title">
-                                            ${ htmlDecode(item.title.toString()) }
+                                            ${ this.htmlDecode(item.title.toString()) }
                                         </h2>
 
                                         <p class="searchbar__item-description">
-                                            ${ htmlDecode(item.summary.toString()) }
+                                            ${ this.htmlDecode(item.summary.toString()) }
                                         </p>
                                     </div>
                                 </a>
                             `;
                         },
-                        noResults() {
+                        noResults: () => {
                             return 'No results found.';
                         },
                     },
                 }];
             }) as GetSources<SearchItem>,
             navigator: {
-                navigate({ itemUrl }) {
+                navigate: ({ itemUrl }) => {
                     window.location.assign(itemUrl);
                 },
-                navigateNewTab({ itemUrl }) {
+                navigateNewTab: ({ itemUrl }) => {
                     const windowReference = window.open(itemUrl, '_blank', 'noopener');
 
                     if (windowReference) {
                         windowReference.focus();
                     }
                 },
-                navigateNewWindow({ itemUrl }) {
+                navigateNewWindow: ({ itemUrl }) => {
                     window.open(itemUrl, '_blank', 'noopener');
                 },
             },
-            onSubmit(params: OnSubmitParams<BaseItem>) {
+            onSubmit: (params: OnSubmitParams<BaseItem>) => {
                 if (searchType === 'results') {
                     window.location.href = `?q=${ params.state.query }`;
                 } else {
@@ -262,6 +249,34 @@ export class SearchAutocomplete extends BaseWidget {
                 this.autocomplete.setQuery('');
             }
         }
+    }
+
+    private getHiddenInputFacets(): SearchFacets {
+        if (!this.facetInputs) {
+            return {};
+        }
+        return getHiddenInputFacets(this.facetInputs);
+    }
+
+    private getSearchUrl(query?: string): string {
+        const hasWidget = document.querySelector<HTMLInputElement>('[data-search-results]');
+        const isSearchWidget = this.searchType === 'results' && hasWidget;
+        let url = isSearchWidget ? window.location.pathname : '/search';
+        if (query) {
+            url += `?q=${ query }`;
+        }
+        return url;
+    }
+
+    private htmlDecode(input: string, length = 100) {
+        const doc = new DOMParser().parseFromString(input, 'text/html');
+        const content = doc.documentElement.textContent;
+
+        if (content.length <= length) {
+            return content;
+        }
+
+        return content.substring(0, length).trim() + '\u2026';
     }
 }
 

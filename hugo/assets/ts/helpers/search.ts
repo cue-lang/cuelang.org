@@ -106,3 +106,23 @@ export const parseQuery = (query: string): ParsedQuery => {
         facets: cleanObject<SearchFacets>(facets),
     };
 };
+
+export const getHiddenInputFacets = (facetInputs: NodeListOf<HTMLInputElement>): SearchFacets => {
+    if (!facetInputs) {
+        return {};
+    }
+
+    const facets: SearchFacets = {
+        [SearchFacet.TAGS]: [],
+        [SearchFacet.CONTENT_TYPE]: [],
+    };
+
+    facetInputs.forEach((input) => {
+        const name = input.getAttribute('name').replace('facet-', '');
+        if (facets[name] && input.value && input.value !== '') {
+            facets[name].push(input.value);
+        }
+    });
+
+    return cleanObject<SearchFacets>(facets);
+};
