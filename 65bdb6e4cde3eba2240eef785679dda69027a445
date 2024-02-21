@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fa42035_c33a0732",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-21T12:35:21Z",
+      "side": 1,
+      "message": "`docs/reference: ` prefix.",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d2520a5_ce79cb07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-21T12:35:21Z",
+      "side": 1,
+      "message": "`s/docker/the docker CLI/`.",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10903e11_b80d5de7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-21T12:35:21Z",
+      "side": 1,
+      "message": "I hold all these very lightly, except perhaps the commit message header prefix.",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c00012e_08c33242",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-21T12:35:21Z",
+      "side": 1,
+      "message": "```suggestion\nFor organizations that don\u0027t allow the use of the docker CLI tool,\n```",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9907fae_eb8acefd",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-21T12:35:21Z",
+      "side": 1,
+      "message": "The podman docs allow direct links to individual flags, e.g. https://docs.podman.io/en/latest/markdown/podman-login.1.html#compat-auth-file-path.",
+      "range": {
+        "startLine": 467,
+        "startChar": 7,
+        "endLine": 467,
+        "endChar": 68
+      },
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "627793e0_0e2d5d0e",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-21T12:35:21Z",
+      "side": 1,
+      "message": "Reflow `[podman login]` so it starts a new line.",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2640b5c0_7bc3e6e3",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-21T12:35:21Z",
+      "side": 1,
+      "message": "```suggestion\ndocker compatible json file that `cue` can use.\n```",
+      "revId": "65bdb6e4cde3eba2240eef785679dda69027a445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
