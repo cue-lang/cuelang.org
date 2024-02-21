@@ -1,11 +1,10 @@
+import { Hit } from '@algolia/client-search';
 import algoliasearch, { SearchClient, SearchIndex } from 'algoliasearch';
 import merge from 'lodash.merge';
-import { Hit } from '@algolia/client-search';
-import { BaseWidget } from './base-widget';
+import { getHiddenInputFacets, mapToAlgoliaFilters, parseQuery } from '../helpers/search';
 import { FilterEvent, FilterItem, SearchEvents, SearchFacet, SearchFacets, SearchItem } from '../interfaces/search';
 import { Teaser } from '../interfaces/teaser';
-import { mapToAlgoliaFilters, parseQuery } from '../helpers/search';
-import { cleanObject } from 'assets/ts/helpers/cleaner';
+import { BaseWidget } from './base-widget';
 
 export class SearchResults extends BaseWidget {
     public static readonly NAME = 'search-results';
@@ -128,24 +127,12 @@ export class SearchResults extends BaseWidget {
         `;
     }
 
+
     private getHiddenInputFacets(): SearchFacets {
         if (!this.facetInputs) {
             return {};
         }
-
-        const facets: SearchFacets = {
-            [SearchFacet.TAGS]: [],
-            [SearchFacet.CONTENT_TYPE]: [],
-        };
-
-        this.facetInputs.forEach((input) => {
-            const name = input.getAttribute('name').replace('facet-', '');
-            if (facets[name] && input.value && input.value !== '') {
-                facets[name].push(input.value);
-            }
-        });
-
-        return cleanObject<SearchFacets>(facets);
+        return getHiddenInputFacets(this.facetInputs);
     }
 
     private handleTagClick(value: string) {
