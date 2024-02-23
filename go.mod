@@ -3,7 +3,7 @@ module github.com/cue-lang/cuelang.org
 go 1.20
 
 require (
-	cuelang.org/go v0.7.0
+	cuelang.org/go v0.7.1
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/rogpeppe/testscript v1.1.0
