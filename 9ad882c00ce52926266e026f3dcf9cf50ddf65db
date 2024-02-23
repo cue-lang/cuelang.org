@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf06a0cc_46e048e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-23T18:16:56Z",
+      "side": 1,
+      "message": "PTAL. This is WIP, and I\u0027m mostly looking for a tonal steer before I duplicate the JSON guide and adapt it for the YAML half of the pair.",
+      "revId": "9ad882c00ce52926266e026f3dcf9cf50ddf65db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
