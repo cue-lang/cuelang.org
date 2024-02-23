@@ -16,6 +16,24 @@
       "message": "Assuming this isn\u0027t used (as any uses were removed in previous CLs) maybe its removal should be in an isolated change.",
       "revId": "a167be828d262df044222c2c4a96d09962dd040c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f652bd0_2b68384e",
+        "filename": "internal/ci/repo/repo.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-23T14:55:41Z",
+      "side": 0,
+      "message": "I\u0027ve made mention of the explicit dropping of this in the commit message. Good catch, thanks.",
+      "parentUuid": "b71e01b9_f1cc5cbc",
+      "revId": "a167be828d262df044222c2c4a96d09962dd040c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

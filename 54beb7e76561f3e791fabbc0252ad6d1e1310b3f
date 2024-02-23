@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "7447e34e_b37b6e80",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-23T14:55:41Z",
+      "side": 1,
+      "message": "Nearly all generated files have a header indicating they are generated. Gerrit does not do a great job of flagging this (feedback we have already provided), so it comes down to checking by hand unfortunately because it\u0027s not worth us reiterating this on every such change.",
+      "parentUuid": "f8e592b1_5747fec9",
+      "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "86937054_10a8055b",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50ae5aaa_2b395bc5",
+        "filename": "play/src/wasm_exec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-23T14:55:41Z",
+      "side": 1,
+      "message": "It\u0027s a generated file, the result of bumping to go1.22.0.",
+      "parentUuid": "5dd538b6_121a0486",
+      "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e6e7ed3_68463fae",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-02-23T13:21:22Z",
       "side": 1,
       "message": "This seems unrelated to the headline change.",
+      "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "679d9457_10c3625a",
+        "filename": "play/src/wasm_exec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-23T14:55:41Z",
+      "side": 1,
+      "message": "It\u0027s a generated file, the result of bumping to go1.22.0.",
+      "parentUuid": "3e6e7ed3_68463fae",
       "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
