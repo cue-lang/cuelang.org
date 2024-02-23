@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -xeuo pipefail
+set -euo pipefail
 
 # Invoke the script with no arguments to see the usage text.
 function _usage(){
