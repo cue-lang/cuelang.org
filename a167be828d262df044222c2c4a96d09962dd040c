@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b71e01b9_f1cc5cbc",
+        "filename": "internal/ci/repo/repo.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-23T13:21:22Z",
+      "side": 0,
+      "message": "Assuming this isn\u0027t used (as any uses were removed in previous CLs) maybe its removal should be in an isolated change.",
+      "revId": "a167be828d262df044222c2c4a96d09962dd040c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

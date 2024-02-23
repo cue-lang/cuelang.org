@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8e592b1_5747fec9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-23T13:21:22Z",
+      "side": 1,
+      "message": "I don\u0027t know which commands were used to effect these 2 bumps, so I\u0027m not sure which files I should be reviewing for manual changes vs those which have been machine generated.",
+      "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86937054_10a8055b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-23T13:21:22Z",
+      "side": 1,
+      "message": "A few things I\u0027m unsure about, which are artefacts of my having significantly less time working on this branch vs `alpha`.",
+      "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dd538b6_121a0486",
+        "filename": "play/src/wasm_exec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-23T13:21:22Z",
+      "side": 1,
+      "message": "This seems unrelated to the headline change.",
+      "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e6e7ed3_68463fae",
+        "filename": "play/src/wasm_exec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-23T13:21:22Z",
+      "side": 1,
+      "message": "This seems unrelated to the headline change.",
+      "revId": "54beb7e76561f3e791fabbc0252ad6d1e1310b3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
