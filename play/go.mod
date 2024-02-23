@@ -3,7 +3,7 @@ module github.com/cue-sh/playground
 go 1.20
 
 require (
-	cuelang.org/go v0.7.0
+	cuelang.org/go v0.7.1
 	github.com/cockroachdb/apd/v3 v3.2.1
 	golang.org/x/text v0.13.0
 )
