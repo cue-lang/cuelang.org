@@ -24,7 +24,7 @@ one usually already has some code base to deal with.
 CUE can currently extract definitions from:
 
 - [Go code](/docs/integrations/go#extract-cue-from-go)
-- Protobuf definitions.
+- Protobuf definitions ( This is untrue for golang: https://github.com/cue-lang/cue/issues/581 )
 
 Moreover, CUE can combine and reduce the constraints from various sources
 and report if there are any inconsistencies.
