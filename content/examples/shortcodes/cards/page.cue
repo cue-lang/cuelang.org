@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "cards": {}
+content: examples: shortcodes: cards: page: _

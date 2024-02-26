@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "validate-json-using-cue": {}
+content: docs: howto: "validate-json-using-cue": page: _

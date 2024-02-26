@@ -1,3 +1,3 @@
 package site
 
-content: "examples": {}
+content: examples: page: _

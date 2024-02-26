@@ -1,3 +1,3 @@
 package site
 
-content: examples: sections: "logos": {}
+content: examples: sections: logos: page: _

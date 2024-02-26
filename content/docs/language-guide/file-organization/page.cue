@@ -1,3 +1,3 @@
 package site
 
-content: docs: "language-guide": "file-organization": {}
+content: docs: "language-guide": "file-organization": page: _

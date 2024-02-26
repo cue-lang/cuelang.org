@@ -1,3 +1,3 @@
 package site
 
-content: authors: "myitcv": {}
+content: authors: myitcv: page: _

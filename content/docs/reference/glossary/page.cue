@@ -1,3 +1,3 @@
 package site
 
-content: docs: reference: "glossary": {}
+content: docs: reference: glossary: page: _

@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "tag": {}
+content: examples: shortcodes: tag: page: _

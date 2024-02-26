@@ -9,7 +9,7 @@ contentRoot: "content/docs/reference/cli"
 cuePathBase: {
 	_input: string
 	// align this path's prefix with contentRoot
-	content: docs: reference: cli: (_input): {}
+	content: docs: reference: cli: (_input): path: {}
 }
 
 #CueCommand: {
