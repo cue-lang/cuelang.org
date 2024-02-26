@@ -122,10 +122,10 @@ package preprocessor
 			upload?: [string]: string
 			code?: [string]:   string
 			multi_step?: [string]: [...{
-				doc:      string
-				cmd:      string
-				output:   string
-				exitCode: int
+				doc?:      string
+				cmd?:      string
+				output?:   string
+				exitCode?: int
 			}]
 		}
 	}
@@ -134,7 +134,7 @@ package preprocessor
 
 	_siteContent: {
 		[!="page"]: _siteContent
-		page:       #page
+		page?:      #page
 
 		// Because this would otherwise be closed by #site
 		...
