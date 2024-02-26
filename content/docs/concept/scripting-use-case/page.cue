@@ -1,3 +1,3 @@
 package site
 
-content: docs: concept: "scripting-use-case": {}
+content: docs: concept: "scripting-use-case": page: _

@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "constrain-string-as-valid-integer": {}
+content: docs: howto: "constrain-string-as-valid-integer": page: _

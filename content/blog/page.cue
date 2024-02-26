@@ -1,3 +1,3 @@
 package site
 
-content: "blog": {}
+content: blog: page: _

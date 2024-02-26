@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: {}
+content: docs: tour: basics: page: _

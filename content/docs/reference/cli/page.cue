@@ -1,3 +1,3 @@
 package site
 
-content: docs: reference: cli: {}
+content: docs: reference: cli: page: _

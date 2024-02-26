@@ -1,3 +1,3 @@
 package site
 
-content: docs: "language-guide": "data": {}
+content: docs: "language-guide": data: page: _

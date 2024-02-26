@@ -1,3 +1,3 @@
 package site
 
-content: docs: tutorial: "new-to-cue": {}
+content: docs: tutorial: "new-to-cue": page: _

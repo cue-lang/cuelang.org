@@ -1,4 +1,4 @@
 // Code generated site_tool.cue; DO NOT EDIT.
 package site
 
-{"content":{"docs":{"reference":{"cli":{"cue-completion":{}}}}}}
+{"content":{"docs":{"reference":{"cli":{"cue-completion":{"page":{}}}}}}}

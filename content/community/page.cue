@@ -1,3 +1,3 @@
 package site
 
-content: "community": {}
+content: community: page: _

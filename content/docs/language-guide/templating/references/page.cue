@@ -1,3 +1,3 @@
 package site
 
-content: docs: "language-guide": templating: "references": {}
+content: docs: "language-guide": templating: references: page: _

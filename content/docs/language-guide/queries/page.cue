@@ -1,3 +1,3 @@
 package site
 
-content: docs: "language-guide": "queries": {}
+content: docs: "language-guide": queries: page: _

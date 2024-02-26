@@ -1,3 +1,3 @@
 package site
 
-content: docs: integration: "go": {}
+content: docs: integration: go: page: _

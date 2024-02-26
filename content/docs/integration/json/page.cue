@@ -1,3 +1,3 @@
 package site
 
-content: docs: integration: "json": {}
+content: docs: integration: json: page: _

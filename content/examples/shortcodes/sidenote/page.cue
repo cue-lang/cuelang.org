@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "sidenote": {}
+content: examples: shortcodes: sidenote: page: _

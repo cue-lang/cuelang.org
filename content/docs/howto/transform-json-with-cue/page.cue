@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "transform-json-with-cue": {}
+content: docs: howto: "transform-json-with-cue": page: _
