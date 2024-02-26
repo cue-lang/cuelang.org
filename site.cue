@@ -39,7 +39,7 @@ _contentDefaults: {
 	// taking advantage of the fact that any field that exists that is not named
 	// page represents part of a path to a more nested page.
 	[!="page"]: _contentDefaults
-	page: {
+	page?: {
 		leftDelim:  *"{{{" | _
 		rightDelim: *"}}}" | _
 	}
