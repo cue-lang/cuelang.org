@@ -1,4 +1,3 @@
-// Code generated site_tool.cue; DO NOT EDIT.
 package site
 
-{"content":{"docs":{"reference":{"cli":{"cue-import":{}}}}}}
+content: docs: reference: cli: "cue-import": page: _

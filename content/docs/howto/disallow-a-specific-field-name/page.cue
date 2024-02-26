@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "disallow-a-specific-field-name": {}
+content: docs: howto: "disallow-a-specific-field-name": page: _

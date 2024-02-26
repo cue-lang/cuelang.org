@@ -1,3 +1,3 @@
 package site
 
-content: docs: tutorial: "validating-simple-yaml-files": {}
+content: docs: tutorial: "validating-simple-yaml-files": page: _

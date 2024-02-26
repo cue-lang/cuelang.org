@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: types: closed: {}
+content: docs: tour: types: closed: page: _

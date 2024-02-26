@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "transform-yaml-with-cue": {}
+content: docs: howto: "transform-yaml-with-cue": page: _

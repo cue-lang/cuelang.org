@@ -1,3 +1,3 @@
 package site
 
-content: community: "conduct": {}
+content: community: conduct: page: _

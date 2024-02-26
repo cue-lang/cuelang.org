@@ -1,3 +1,3 @@
 package site
 
-content: docs: "concept": {}
+content: docs: concept: page: _

@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "youtube": {}
+content: examples: shortcodes: youtube: page: _

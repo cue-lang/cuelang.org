@@ -1,3 +1,3 @@
 package site
 
-content: docs: "language-guide": data: "numeric-values": {}
+content: docs: "language-guide": data: "numeric-values": page: _

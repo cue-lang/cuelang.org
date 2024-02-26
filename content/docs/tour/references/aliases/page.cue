@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: references: aliases: {}
+content: docs: tour: references: aliases: page: _
