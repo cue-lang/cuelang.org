@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "diagrams": {}
+content: examples: shortcodes: diagrams: page: _

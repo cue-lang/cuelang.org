@@ -1,3 +1,3 @@
 package site
 
-content: authors: "mpvl": {}
+content: authors: mpvl: page: _

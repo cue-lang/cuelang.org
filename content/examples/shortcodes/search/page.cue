@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "search": {}
+content: examples: shortcodes: search: page: _

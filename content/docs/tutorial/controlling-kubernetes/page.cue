@@ -1,3 +1,3 @@
 package site
 
-content: docs: tutorial: "controlling-kubernetes": {}
+content: docs: tutorial: "controlling-kubernetes": page: _

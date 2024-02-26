@@ -1,3 +1,3 @@
 package site
 
-content: docs: concept: "data-validation-use-case": {}
+content: docs: concept: "data-validation-use-case": page: _

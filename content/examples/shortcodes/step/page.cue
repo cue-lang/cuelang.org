@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "step": {}
+content: examples: shortcodes: step: page: _

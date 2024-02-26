@@ -1,3 +1,3 @@
 package site
 
-content: docs: "tutorial": {}
+content: docs: tutorial: page: _

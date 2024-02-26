@@ -1,3 +1,3 @@
 package site
 
-content: "play": {}
+content: play: page: _

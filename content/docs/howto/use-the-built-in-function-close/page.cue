@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "use-the-built-in-function-close": {}
+content: docs: howto: "use-the-built-in-function-close": page: _

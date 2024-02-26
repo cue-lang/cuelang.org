@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "ref-relref": {}
+content: examples: shortcodes: "ref-relref": page: _

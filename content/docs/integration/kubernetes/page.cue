@@ -1,3 +1,3 @@
 package site
 
-content: docs: integration: "kubernetes": {}
+content: docs: integration: kubernetes: page: _

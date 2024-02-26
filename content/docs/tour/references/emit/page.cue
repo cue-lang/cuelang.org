@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: references: emit: {}
+content: docs: tour: references: emit: page: _

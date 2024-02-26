@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "use-the-built-in-function-or": {}
+content: docs: howto: "use-the-built-in-function-or": page: _
