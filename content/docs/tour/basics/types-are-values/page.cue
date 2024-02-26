@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: basics: "types-are-values": {}
+content: docs: tour: basics: "types-are-values": page: _

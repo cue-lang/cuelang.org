@@ -1,3 +1,3 @@
 package site
 
-content: docs: howto: "combine-multiple-yaml-files-by-using-file-metadata": {}
+content: docs: howto: "combine-multiple-yaml-files-by-using-file-metadata": page: _

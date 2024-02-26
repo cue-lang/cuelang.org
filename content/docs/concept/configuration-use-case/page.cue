@@ -1,3 +1,3 @@
 package site
 
-content: docs: concept: "configuration-use-case": {}
+content: docs: concept: "configuration-use-case": page: _

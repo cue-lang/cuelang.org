@@ -1,3 +1,3 @@
 package site
 
-content: "search": {}
+content: search: page: _

@@ -1,3 +1,3 @@
 package site
 
-content: docs: introduction: "installation": {}
+content: docs: introduction: installation: page: _

@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: references: cycle: {}
+content: docs: tour: references: cycle: page: _

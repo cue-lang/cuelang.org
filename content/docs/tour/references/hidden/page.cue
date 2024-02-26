@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: references: hidden: {}
+content: docs: tour: references: hidden: page: _

@@ -1,3 +1,3 @@
 package site
 
-content: docs: tour: types: bounds: {}
+content: docs: tour: types: bounds: page: _

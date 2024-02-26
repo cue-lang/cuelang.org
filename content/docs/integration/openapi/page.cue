@@ -1,3 +1,3 @@
 package site
 
-content: docs: integration: "openapi": {}
+content: docs: integration: openapi: page: _

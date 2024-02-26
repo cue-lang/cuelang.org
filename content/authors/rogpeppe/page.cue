@@ -1,3 +1,3 @@
 package site
 
-content: authors: "rogpeppe": {}
+content: authors: rogpeppe: page: _

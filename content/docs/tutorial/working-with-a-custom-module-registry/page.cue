@@ -1,3 +1,3 @@
 package site
 
-content: docs: tutorial: "working-with-a-custom-module-registry": {}
+content: docs: tutorial: "working-with-a-custom-module-registry": page: _

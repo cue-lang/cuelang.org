@@ -1,3 +1,3 @@
 package site
 
-content: examples: shortcodes: "spinner": {}
+content: examples: shortcodes: spinner: page: _
