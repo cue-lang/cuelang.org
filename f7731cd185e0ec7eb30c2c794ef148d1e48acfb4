@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6784803_cddd7c7f",
+        "filename": "content/docs/concept/json/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-27T12:01:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a62cf19_ec316315",
+      "revId": "f7731cd185e0ec7eb30c2c794ef148d1e48acfb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ffd7d61d_4302b8b5",
@@ -65,6 +83,30 @@
       "writtenOn": "2024-02-27T05:22:56Z",
       "side": 1,
       "message": "I think you meant `\"EMEA\"` here given that the alternative is `\"APAC\"`?",
+      "range": {
+        "startLine": 95,
+        "startChar": 15,
+        "endLine": 95,
+        "endChar": 19
+      },
+      "revId": "f7731cd185e0ec7eb30c2c794ef148d1e48acfb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dad4a6b_ced7038c",
+        "filename": "content/docs/concept/json/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-27T12:01:06Z",
+      "side": 1,
+      "message": "Nope :-) I wanted to look outwards, beyond the EU+UK, so I scanned down https://en.wikipedia.org/wiki/List_of_country_groupings and found a couple of non-overlapping groupings:\n\n- APAC (Asia Pacific)\n- IMEA (India, Middle East, Africa)\n\nFrom a CUE perspective, I needed the `#Region` disjunction to contain only 2 options, as the schema violation would produce multiple lines in the `cue vet` output for each and every member of the disjunction.",
+      "parentUuid": "ffd7d61d_4302b8b5",
       "range": {
         "startLine": 95,
         "startChar": 15,
@@ -92,6 +134,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4891eada_909422fb",
+        "filename": "content/docs/concept/json/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-27T12:01:06Z",
+      "side": 1,
+      "message": "Removed and reworded.",
+      "parentUuid": "b82a0cdd_7cdf8caf",
+      "revId": "f7731cd185e0ec7eb30c2c794ef148d1e48acfb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8b1c526_3f8f2810",
@@ -109,6 +169,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88ac7d4f_488f24e4",
+        "filename": "content/docs/concept/json/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-27T12:01:06Z",
+      "side": 1,
+      "message": "Great idea - I\u0027ve incorporated this, making a very slight change that implicitly demonstrates CUE\u0027s adherence to [PEMDAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics), rather than simple left-to-right arithmetic evaluation :-)",
+      "parentUuid": "b8b1c526_3f8f2810",
+      "revId": "f7731cd185e0ec7eb30c2c794ef148d1e48acfb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2117aade_ee12733c",
@@ -122,6 +200,24 @@
       "writtenOn": "2024-02-27T05:22:56Z",
       "side": 1,
       "message": "Do we not have an example of a more complex import we can link to here? Using `-l`? Or is the reason that it\u0027s hard to demo this that we would effectively need to \"import\" to stdout to visualise it?",
+      "revId": "f7731cd185e0ec7eb30c2c794ef148d1e48acfb4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b471addf_d60e8c55",
+        "filename": "content/docs/concept/json/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-27T12:01:06Z",
+      "side": 1,
+      "message": "\u003e Do we not have an example of a more complex import we can link to here\n\nNo - we don\u0027t have any `cue import` examples. The only other page that mentions its use is https://alpha.cuelang.org/docs/concept/data-validation-use-case/#migration-path, which isn\u0027t suitable to link to:\n\n```\n$ git grep \"cue import\" content | grep -v -e \"docs/reference/cli/cue-import\" -e \"docs/concept/(json|yaml)\"\ncontent/docs/concept/data-validation-use-case/en.md:CUE provides automated rewrite tools, such as `cue import` and `cue trim`\n```\n\n[Aside: I raised https://github.com/cue-lang/cue/issues/2875 whilst trying to discover candidate pages to link to. I\u0027ll pencil in a chat for us to discuss which `cue` subcommands need guides before go-live.]\n\n\u003e Or is the reason that it\u0027s hard to demo this that we would effectively need to \"import\" to stdout to visualise it?\n\nExactly. Or we\u0027d need to add `{{{with script}}}` to this page, and spend more article-length (\u003d\u003d reader attention) on the process of:\n\n- uploading multiple JSON/YAML files, as appropriate for the page\n- scripting the files\u0027 import\n- cat\u0027ing the emitted CUE files\n\n... with appropriate explanation of any steps that weren\u0027t immediately obvious to the CUE newcomer who might be landing on this page.\n\nI considered this, but it felt like **significant** length to add to this page. \n\nThere\u0027s a TODO mentioning the need for a guide to link to, and https://github.com/cue-lang/docs-and-content/issues/66 has been raised to capture the same.",
+      "parentUuid": "2117aade_ee12733c",
       "revId": "f7731cd185e0ec7eb30c2c794ef148d1e48acfb4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
