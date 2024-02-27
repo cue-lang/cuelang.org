@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "27c077ec_0f748005",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-02-27T12:05:46Z",
+      "side": 1,
+      "message": "Nit: `\u003e}}`",
+      "revId": "03b74618c97200dc6c179f2b961d5313efab674a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "3b7d1788_c4325f74",
