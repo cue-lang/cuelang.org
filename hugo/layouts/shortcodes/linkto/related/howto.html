@@ -6,4 +6,4 @@
 How-to Guide: {{ with $linkToPage -}}
 	{{- $opts := dict "path" $relPath -}}
 	<a href="{{ .RelRef $opts }}">{{ .Title }}</a>
-{{- end}}
+{{- end -}}
