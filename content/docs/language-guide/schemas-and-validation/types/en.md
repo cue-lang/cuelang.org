@@ -1,7 +1,7 @@
 ---
 title: Types
 weight: 10
-draft: false
+draft: true
 ---
 
 ## Basic Types
