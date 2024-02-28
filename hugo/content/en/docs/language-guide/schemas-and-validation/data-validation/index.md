@@ -1,7 +1,7 @@
 ---
 title: Data Validation
 weight: 70
-draft: false
+draft: true
 ---
 
 Schema can compose with data, for instance to validate data.

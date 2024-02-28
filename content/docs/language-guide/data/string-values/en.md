@@ -1,7 +1,7 @@
 ---
 title: String values
 weight: 40
-draft: false
+draft: true
 ---
 
 CUE extends JSON strings with:
