@@ -1,7 +1,7 @@
 ---
 title: Constructing Maps
 weight: 20
-draft: false
+draft: true
 ---
 
 Until now, we have only seen how to derive values for a fixed defined tree.
