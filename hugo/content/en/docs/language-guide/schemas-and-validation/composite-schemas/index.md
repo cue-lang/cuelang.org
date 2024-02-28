@@ -1,7 +1,7 @@
 ---
 title: Composite Schemas
 weight: 50
-draft: false
+draft: true
 ---
 
 ## Definitions
