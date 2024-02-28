@@ -49,5 +49,5 @@ s1:
 ## Related content
 
 - [**Required field constraints**]({{< relref
-    "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints"
+    "docs/reference/glossary#required-field-constraint"
   >}})
