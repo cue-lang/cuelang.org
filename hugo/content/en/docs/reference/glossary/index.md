@@ -37,8 +37,8 @@ toc_hide: false
 |  [`rem()`]({{< relref "#rem-built-in-function" >}})
 
 ## `bytes` {#bytes-type}
-🔗 [Language Guide]({{< relref "docs/language-guide/data/bytes-values" >}})
-|  [Language Spec]({{< relref "docs/reference/spec#bytes" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/data/bytes-values" */>}}) -->
+   [Language Spec]({{< relref "docs/reference/spec#bytes" >}})
 |  [Tour]({{< relref "docs/tour/types/bytes" >}})
 - A primitive [type]({{< relref "#type" >}}) representing a possibly empty
   sequence of arbitrary bytes
@@ -61,7 +61,8 @@ toc_hide: false
 {{< step group="glossary" stepNumber="D" >}}
 
 ## Default value
-🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/disjunctions#default-values" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/schemas-and-validation/disjunctions#default-values" */>}}) -->
+   [Tour]({{< relref "docs/tour/types/defaults" >}})
 |  [Howto Guide]({{< relref "docs/howto/specify-a-default-value-for-a-field" >}})
 - The single element of a [disjunction]({{< relref "#disjunction" >}}) that CUE
   assigns to a [field]({{< relref "#field" >}}) if and only if
@@ -70,8 +71,8 @@ toc_hide: false
 - An element of a disjunction prefixed with an asterisk (`*`)
 
 ## Disjunction
-🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/disjunctions" >}})
-|  [Tour #1]({{< relref "docs/tour/types/disjunctions" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/schemas-and-validation/disjunctions" */>}}) -->
+   [Tour #1]({{< relref "docs/tour/types/disjunctions" >}})
 |  [Tour #2]({{< relref "docs/tour/types/sumstruct" >}})
 
 ## `div()` {#div-built-in-function}
@@ -88,12 +89,13 @@ toc_hide: false
 {{< step group="glossary" stepNumber="F" >}}
 
 ## Field
-🔗 [Language Guide]({{< relref "docs/language-guide/data/maps-and-fields" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/data/maps-and-fields" */>}}) -->
+   [Tour]({{< relref "docs/tour/basics/json-superset" >}})
 - A key-value pair inside a map, associating a value with a given set of keys
 
 ## Field constraint
-🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints" >}})
-|  [Language Spec]({{< relref "docs/reference/spec#field-constraints" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/schemas-and-validation/field-constraints" */>}}) -->
+   [Language Spec]({{< relref "docs/reference/spec#field-constraints" >}})
 - A field constraint restricts a [field]({{< relref "#field" >}})'s value
   without actually defining the field, with the field only forming part of the
   output if it is successfully [unified]({{< relref "#unification" >}}) with a
@@ -119,8 +121,8 @@ toc_hide: false
 {{< step group="glossary" stepNumber="I" >}}
 
 ## `int` {#int-type}
-🔗 [Language Guide]({{< relref "docs/language-guide/data/numeric-values" >}})
-|  [Language Spec]({{< relref "docs/reference/spec#numeric-values" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/data/numeric-values" */>}}) -->
+   [Language Spec]({{< relref "docs/reference/spec#numeric-values" >}})
 |  [Tour]({{< relref "docs/tour/types/numbers" >}})
 - A primitive [type]({{< relref "#type" >}}) representing the set of all
   integer numbers
@@ -150,8 +152,8 @@ toc_hide: false
   lengths of various types as an integer
 
 ## List
-🔗 [Language Guide]({{< relref "docs/language-guide/data/lists" >}})
-|  [Language Spec]({{< relref "docs/reference/spec#lists" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/data/lists" */>}}) -->
+   [Language Spec]({{< relref "docs/reference/spec#lists" >}})
 |  [Tour]({{< relref "docs/tour/types/lists" >}})
 - An arbitrary sequence of CUE values, enclosed in square brackets (`[` `]`)
   with values separated by commas (`,`)
@@ -193,8 +195,8 @@ toc_hide: false
 <!-- TODO ## Open -->
 
 ## Optional field constraint
-🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints" >}})
-|  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-optional" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints" */>}}) -->
+   [Howto Guide]({{< relref "docs/howto/mark-a-field-as-optional" >}})
 - A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
   [field]({{< relref "#field" >}})'s value if the field is present, whilst also
   permitting the field's absence
@@ -227,8 +229,8 @@ toc_hide: false
 {{< step group="glossary" stepNumber="R" >}}
 
 ## "Raw" strings
-🔗 [Language Guide]({{< relref "docs/language-guide/data/string-values#alternate-escape-sequences" >}})
-|  [Language Spec]({{< relref "docs/reference/spec#string-and-byte-sequence-literals" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/data/string-values#alternate-escape-sequences" */>}}) -->
+   [Language Spec]({{< relref "docs/reference/spec#string-and-byte-sequence-literals" >}})
 |  [Tour]({{< relref "docs/tour/types/stringraw" >}})
 - A [`string`]({{< relref "#string-type" >}}) literal enclosed with an equal
   number of hashes on both sides, allowing escape sequences to appear inside
@@ -241,8 +243,8 @@ toc_hide: false
   truncated division with its parameters and returns the integer remainder
 
 ## Required field constraint
-🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" >}})
-|  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-required" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" */>}}) -->
+   [Howto Guide]({{< relref "docs/howto/mark-a-field-as-required" >}})
 - A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
   [field]({{< relref "#field" >}})'s value whilst also requiring the field to
   be present
@@ -252,16 +254,16 @@ toc_hide: false
 {{< step group="glossary" stepNumber="S" >}}
 
 ## `string` {#string-type}
-🔗 [Language Guide]({{< relref "docs/language-guide/data/string-values" >}})
-|  [Language Spec]({{< relref "docs/reference/spec#strings" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/data/string-values" */>}}) -->
+   [Language Spec]({{< relref "docs/reference/spec#strings" >}})
 |  [Tour]({{< relref "docs/tour/types/stringlit" >}})
 - A primitive [type]({{< relref "#type" >}}) representing the set of UTF-8
   strings
 - *see also:* [Raw strings]({{< relref "#raw-strings" >}})
 
 ## Struct {#struct-type}
-🔗 [Language Guide]({{< relref "docs/language-guide/data/maps-and-fields" >}})
-|  [Language Spec]({{< relref "docs/reference/spec#structs" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/data/maps-and-fields" */>}}) -->
+   [Language Spec]({{< relref "docs/reference/spec#structs" >}})
 |  [Tour]({{< relref "docs/tour/types/optional" >}})
 <!-- Link to this section? [Language Spec]({{< relref "docs/reference/spec#values-1" >}}) -->
 - A composite type representing a set of elements (called
@@ -273,8 +275,8 @@ toc_hide: false
 {{< step group="glossary" stepNumber="T" >}}
 
 ## Type
-🔗 [Language Guide]({{< relref "docs/language-guide/schemas-and-validation/types" >}})
-|  [Tour]({{< relref "docs/tour/types/types" >}})
+🔗 <!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide/schemas-and-validation/types" */>}}) -->
+   [Tour]({{< relref "docs/tour/types/types" >}})
 
 <!-- TODO ## Type Constraint -->
 

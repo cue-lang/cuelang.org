@@ -62,14 +62,14 @@ s1:
 ## Related content
 
 - [**Optional field constraints**]({{< relref
-    "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints"
+    "docs/reference/glossary#optional-field-constraint"
   >}})
-- [**Regular fields**]({{< relref
+<!-- TODO:postLG - [**Regular fields**]({{</* relref
     "docs/language-guide/data/maps-and-fields#field-names"
-  >}})
-- [**Value constraints**]({{< relref
+  */>}}) -->
+<!-- TODO:postLG - [**Value constraints**]({{</* relref
     "docs/language-guide/schemas-and-validation/value-constraints"
-  >}})
+  */>}}) -->
 - [**Commented CUE guides**]({{< relref
     "docs/howto#commented-cue-guides"
   >}})

@@ -13,7 +13,7 @@ Although the language is not a general-purpose programming language
 it supports and simplifies a wide variety of applications, such as
 [data validation]({{< relref "concept/data-validation-use-case" >}}),
 [configuration]({{< relref "concept/configuration-use-case" >}}),
-[querying]({{< relref "language-guide/templating/comprehensions" >}}),
+<!-- TODO:postLG [querying]({{</* relref "language-guide/templating/comprehensions" */>}}), -->
 and [code generation]({{< relref "concept/code-generation-and-extraction-use-case" >}}).
 
 <!-- TODO: add when content is expanded: -->
@@ -40,11 +40,13 @@ from this brief explanation of each section:
   newcomers to the language
 {{< /card >}}
 
+<!-- TODO:postLG
 {{< card href="language-guide/" label="Language Guide" title="A deep dive into CUE" >}}
   Follow a detailed learning journey broken down into the different aspects of
   CUE: data, templating, schemas, queries, policy, file organization, and
   interoperability with other languages and encodings
 {{< /card >}}
+-->
 
 {{< card href="integrations/" label="Integrations" title="JSON, YAML, Go, and more" >}}
   Learn how CUE integrates with a wide ecosystem of formats and tools
