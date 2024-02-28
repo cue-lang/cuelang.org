@@ -1,7 +1,7 @@
 ---
 title: Lists
 weight: 70
-draft: false
+draft: true
 ---
 
 CUE lists are identical to JSON lists.
