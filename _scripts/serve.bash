@@ -9,4 +9,9 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 # Do not render to disk, to avoid any removed files lingering
 # in local serve mode (hugo does not tidy these with default
 # behaviour).
-source _scripts/runPreprocessor.bash execute --serve --hugo='--buildDrafts' --debug=hugo "$@"
+source _scripts/runPreprocessor.bash execute \
+    --serve \
+    --hugo='--buildDrafts' \
+    --hugo='--navigateToChanged' \
+    --debug=hugo \
+    "$@"
