@@ -302,18 +302,20 @@ overriding values.
 ## See also
 
 - [**Default values**]({{< relref
-    "docs/language-guide/schemas-and-validation/disjunctions#default-values"
+    "docs/reference/glossary#default-value"
   >}})
 - [**Disjunctions**]({{< relref
-    "docs/language-guide/schemas-and-validation/disjunctions"
+    "docs/reference/glossary#disjunction"
   >}})
-<!-- - [**Unification**](TODO) -->
 - [**Field constraints**]({{< relref
-    "docs/language-guide/schemas-and-validation/field-constraints"
+    "docs/reference/glossary#field-constraint"
   >}})
-- [**Value constraints**]({{< relref
+<!-- TODO:postLG
+- [**Value constraints**]({{</* relref
     "docs/language-guide/schemas-and-validation/value-constraints"
-  >}})
-- [**Regular fields**]({{< relref
+  */>}})
+- [**Regular fields**]({{</* relref
     "docs/language-guide/data/maps-and-fields#field-names"
-  >}})
+  */>}})
+- [**Unification**](TODO)
+-->
