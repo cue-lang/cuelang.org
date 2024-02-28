@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/prefix';
 @import '../config/sizes';
@@ -117,7 +118,7 @@
     &__message {
         background-color: $c-grey-blue--lightest;
         border-radius: $b-radius;
-        box-shadow: 0 0 4px 2px transparentize($c-black, 0.9);
+        box-shadow: 0 0 4px 2px color.scale($c-black, $alpha: -90%);
         color: $c-grey-blue--darker;
         display: block;
         font-size: 0.75rem;
@@ -135,7 +136,7 @@
         &::before {
             background-color: $c-grey-blue--lightest;
             bottom: 100%;
-            box-shadow: 0 0 4px 2px transparentize($c-black, 0.9);
+            box-shadow: 0 0 4px 2px color.scale($c-black, $alpha: -90%);
             content: '';
             display: block;
             height: 10px;
@@ -162,7 +163,7 @@
     &__overlay {
         @include stretch;
 
-        background: transparentize($c-black, 0.75);
+        background: color.scale($c-black, $alpha: -75%);
         position: fixed;
         z-index: 6;
     }

@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../mixins/screen';
@@ -64,7 +65,7 @@
 
     &.is-open {
         #{ $self }__backdrop {
-            background-color: transparentize($c-black, 0.5);
+            background-color: color.scale($c-black, $alpha: -50%);
         }
 
         #{ $self }__nav {

@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../config/typography';
@@ -20,7 +21,7 @@
 @mixin style-text-credits {
     color: $c-white;
     font-size: 1rem;
-    text-shadow: 0 0 2px transparentize($c-black, 0.6);
+    text-shadow: 0 0 2px color.scale($c-black, $alpha: -60%);
 }
 
 @mixin style-monospaced {

@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/prefix';
 @import '../config/sizes';
@@ -91,7 +92,7 @@
     }
 
     &__subtitle {
-        color: transparentize($c-grey-blue--dark, 0.2);
+        color: color.scale($c-grey-blue--dark, $alpha: -20%);
         font-size: 0.75rem;
         font-weight: $weight-medium;
         line-height: 1;
@@ -105,7 +106,7 @@
     &__overlay {
         @include stretch;
 
-        background: transparentize($c-black, 0.75);
+        background: color.scale($c-black, $alpha: -75%);
         position: fixed;
         z-index: 6;
     }

@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../mixins/stretch';
@@ -81,7 +82,7 @@
 
         &:focus,
         &:hover {
-            background: transparentize($c-blue, 0.94);
+            background: color.scale($c-blue, $alpha: -94%);
         }
 
         &:focus-visible {

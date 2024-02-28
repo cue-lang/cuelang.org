@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/prefix';
 @import '../config/sizes';
@@ -64,9 +65,9 @@
     &__pagination {
         align-items: center;
         box-shadow:
-            0 2px 4px -1px transparentize($c-black, .8),
-            0 4px 5px 0 transparentize($c-black, .86),
-            0 1px 10px 0 transparentize($c-black, .88);
+            0 2px 4px -1px color.scale($c-black, $alpha: -80%),
+            0 4px 5px 0 color.scale($c-black, $alpha: -86%),
+            0 1px 10px 0 color.scale($c-black, $alpha: -88%);
         color: $c-black;
         display: flex;
         flex: 0 0 36px;
@@ -78,7 +79,7 @@
         &::before {
             @include stretch;
 
-            background-color: transparentize($c-grey--lighter, .5);
+            background-color: color.scale($c-grey--lighter, $alpha: -50%);
             border-radius: 20px;
             content: '';
             display: block;

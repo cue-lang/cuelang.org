@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../config/colors';
 @import '../config/sizes';
 @import '../mixins/screen';
@@ -60,7 +61,7 @@
 
     &__info {
         bottom: 6px;
-        color: var(--logo-info-color, transparentize($c-blue, 0.6));
+        color: var(--logo-info-color, color.scale($c-blue, $alpha: -60%));
         height: var(--logo-info-size);
         opacity: 0;
         position: absolute;
