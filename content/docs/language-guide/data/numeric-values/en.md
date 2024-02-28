@@ -1,7 +1,7 @@
 ---
 title: Numeric values
 weight: 30
-draft: false
+draft: true
 ---
 
 CUE extends JSON numerals with:
