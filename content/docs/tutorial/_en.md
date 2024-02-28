@@ -15,7 +15,8 @@ of this page.
 
 If you're new to CUE then start by reading the
 [CUE Tour]({{< relref "tour" >}}) and
-[Language Guide]({{< relref "docs/language-guide" >}}), and then try out some
+<!-- TODO:postLG [Language Guide]({{</* relref "docs/language-guide" */>}}), and -->
+then try out some
 tutorials specifically selected for you on the
 ["New to CUE?"]({{< relref "new-to-cue" >}}) page.
 

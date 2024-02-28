@@ -18,8 +18,6 @@ command line.
 
 -   You have [CUE installed]({{< relref "docs/introduction/installation" >}})
     locally. This allows you to run `cue` commands
--   You know how to use
-    [CUE Definitions/ Helper Fields]({{< relref "docs/language-guide/data" >}})
 
 ## Requirements
 
