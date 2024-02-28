@@ -246,16 +246,16 @@ in more detail.
   tutorial in this series: FIXME ref/title/etc
 - FIXME: Pointers to other tutorial(s)
 - You used these CUE language features in this tutorial. Read about them in the CUE language guide:
-  - [**Merging**]({{< ref
-    "docs/language-guide/data/organizing-configuration#merging" >}}) is how CUE
+  - [**Merging**]({{</* ref
+    "docs/language-guide/data/organizing-configuration#merging" */>}}) is how CUE
     deals with repeated statements of the same data, spread across different locations.
     FIXME: not unification? Is this a good LG page to point towards, here?
-  - [**Disjunctions**]({{< ref "docs/language-guide/schemas-and-validation/disjunctions" >}})
+  - [**Disjunctions**]({{</* ref "docs/language-guide/schemas-and-validation/disjunctions" */>}})
     allowed you to list different options that a field's values are allowed to contain.
   - Required and Optional fields are both examples of CUE's
-    [**Field Constraints**]({{< ref "docs/language-guide/schemas-and-validation/field-constraints" >}}).
+    [**Field Constraints**]({{</* ref "docs/language-guide/schemas-and-validation/field-constraints" */>}}).
   - CUE has several primitive
-    [**Types**]({{< ref "docs/language-guide/data" >}}) that you can use as
-    [**Type Constraints**]({{< ref "docs/language-guide/schemas-and-validation/types" >}}).
+    [**Types**]({{</* ref "docs/language-guide/data" */>}}) that you can use as
+    [**Type Constraints**]({{</* ref "docs/language-guide/schemas-and-validation/types" */>}}).
 
 -->
