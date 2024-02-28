@@ -61,8 +61,8 @@
     weight = 410
 [[footer]]
     parent = "column1"
-    name = "Language Guide"
-    url = "/docs/language-guide/"
+    name = "Language Tour"
+    url = "/docs/tour/"
     weight = 411
 [[footer]]
     parent = "column1"
