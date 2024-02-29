@@ -62,7 +62,7 @@ s1:
 ## Related content
 
 - [**Optional field constraints**]({{< relref
-    "docs/tour/types/optional"
+    "docs/tour/types/struct"
   >}})
 - [**Commented CUE guides**]({{< relref
     "docs/howto#commented-cue-guides"
