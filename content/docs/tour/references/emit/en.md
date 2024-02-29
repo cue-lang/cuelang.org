@@ -1,6 +1,6 @@
 ---
 title: "Emit Values"
-weight: 4
+weight: 40
 ---
 
 By default all top-level fields are emitted when evaluating a configuration.

@@ -1,6 +1,6 @@
 ---
 title: "Aliases"
-weight: 3
+weight: 30
 ---
 
 An alias defines a local macro.
