@@ -1,6 +1,6 @@
 ---
 title: "Disjunctions"
-weight: 10
+weight: 100
 ---
 
 Disjunctions, or sum types, define a new type that is one of several things.

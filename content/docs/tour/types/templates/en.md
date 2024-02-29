@@ -1,6 +1,6 @@
 ---
 title: "Templates"
-weight: 16
+weight: 160
 ---
 
 One of CUE's most powerful features is the ability

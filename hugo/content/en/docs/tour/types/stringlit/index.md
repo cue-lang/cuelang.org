@@ -1,6 +1,6 @@
 ---
 title: "String Literals"
-weight: 4
+weight: 40
 ---
 
 CUE strings allow a richer set of escape sequences than JSON.
