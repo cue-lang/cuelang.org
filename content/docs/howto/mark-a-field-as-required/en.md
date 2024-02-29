@@ -49,5 +49,5 @@ s1:
 ## Related content
 
 - [**Required field constraints**]({{< relref
-    "docs/tour/types/optional"
+    "docs/tour/types/structs"
   >}})
