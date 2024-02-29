@@ -308,7 +308,7 @@ overriding values.
     "docs/tour/types/disjunctions"
   >}})
 - [**Field constraints**]({{< relref
-    "docs/tour/types/optional"
+    "docs/tour/types/structs"
   >}})
 <!-- TODO:postLG
 - [**Value constraints**]({{</* relref
