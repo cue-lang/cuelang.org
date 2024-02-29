@@ -1,6 +1,6 @@
 ---
 title: "Regular expressions"
-weight: 7
+weight: 70
 ---
 
 The `=~` and `!~` operators can be used to check against regular expressions.
