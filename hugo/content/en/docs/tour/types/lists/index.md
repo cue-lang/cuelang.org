@@ -1,6 +1,6 @@
 ---
 title: "Lists"
-weight: 15
+weight: 150
 ---
 
 Lists define arbitrary sequences of CUE values.

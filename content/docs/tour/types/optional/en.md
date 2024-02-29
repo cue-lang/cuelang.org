@@ -1,6 +1,6 @@
 ---
 title: "Structs"
-weight: 9
+weight: 90
 ---
 
 Struct is the most important composite type in CUE.
