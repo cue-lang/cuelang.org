@@ -217,7 +217,7 @@ hello
 ```text { title="TERMINAL" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9uCg==" }
 $ export MYVAR=value
 $ cue version
-cue version v0.8.0-alpha.3
+cue version v0.8.0-alpha.4
 
 go version go1.22.0
       -buildmode exe
@@ -245,13 +245,13 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "YNEdMCCHPJ3BjMwqCHrEqsssv5l67u1nQcsUUX4fbFM="
-						"upload-some-cue":  "MfcqJFL00gOd9h6rTZSPJEhJPruXqCqx+zAm9bxXXUA="
-						"upload-some-json": "8dGUK6a7OtfY+ubB2C5ejJXJdOzwL8DANup2kc7J4pE="
-						"in-subdir":        "4ScKI2TaFJb3yyvPS2NX9Fi0CSFsLb3AaU1X0b6e5Zs="
+						"hidden file":      "o2ABfs6L0ddqHGmyiDZNSkauvFTqGumbISmzM/WpOOA="
+						"upload-some-cue":  "tmTw9jJjsegkAkQM5wqcmdpC1f8xss6Kv3AGLAYFCAY="
+						"upload-some-json": "h912970rtbrcppNd38Mfjhs2fDDK22XzxVghzmaXrBU="
+						"in-subdir":        "9ONu25yYF7KaXataqxkq3JG1Ld6MkBklCRNd/BVKGGw="
 					}
 					multi_step: {
-						"3LR71Q5BLDD6SRONVVREULMH3VGDK3HDG2VCKDUOSK45B4UDTOTG====": [{
+						"CF16CG8JFJEBFPD7EIJTBI9KDQGE32OHVDLM9UB8QBQ3MLSGFC1G====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -287,7 +287,7 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.8.0-alpha.3
+									cue version v0.8.0-alpha.4
 
 									go version go1.22.0
 									      -buildmode exe
