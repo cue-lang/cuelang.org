@@ -1,6 +1,6 @@
 ---
 title: "Disjunctions of Structs"
-weight: 12
+weight: 120
 ---
 
 Disjunctions work for any type.
