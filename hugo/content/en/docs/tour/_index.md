@@ -1,6 +1,6 @@
 ---
 title: Tour
-weight: 15
+weight: 150
 index_hide: true
 ---
 

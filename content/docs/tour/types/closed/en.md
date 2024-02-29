@@ -1,6 +1,6 @@
 ---
 title: "Closed structs"
-weight: 8
+weight: 80
 ---
 
 A struct may be **open** or **closed**, and is open unless otherwise
