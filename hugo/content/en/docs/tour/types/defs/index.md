@@ -1,6 +1,6 @@
 ---
 title: "Definitions"
-weight: 9
+weight: 90
 ---
 
 A definition, indicated by an identifier starting with `#` or `_#`,
