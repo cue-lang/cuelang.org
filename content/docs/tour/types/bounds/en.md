@@ -1,6 +1,6 @@
 ---
 title: "Bounds"
-weight: 13
+weight: 130
 ---
 
 Bounds define a lower bound, upper bound, or inequality for a certain value.

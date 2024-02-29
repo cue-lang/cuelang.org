@@ -1,6 +1,6 @@
 ---
 title: "\"Raw\" Strings"
-weight: 5
+weight: 50
 ---
 
 CUE does not support raw strings in the strictest sense.

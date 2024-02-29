@@ -1,6 +1,6 @@
 ---
 title: "References and Scopes"
-weight: 1
+weight: 10
 ---
 
 A reference refers to the value of the field defined within the nearest
