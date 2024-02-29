@@ -1,6 +1,6 @@
 ---
 title: "Operators"
-weight: 1
+weight: 10
 ---
 
 CUE supports many common arithmetic and boolean operators.

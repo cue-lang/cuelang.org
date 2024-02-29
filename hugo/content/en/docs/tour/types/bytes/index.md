@@ -1,6 +1,6 @@
 ---
 title: "Bytes"
-weight: 6
+weight: 60
 ---
 
 CUE distinguishes between a `string` and a `bytes` type.
