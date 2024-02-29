@@ -1,6 +1,6 @@
 ---
 title: "Accessing Fields"
-weight: 2
+weight: 20
 ---
 
 Selectors access fields within a struct using the `.` notation.

@@ -1,6 +1,6 @@
 ---
 title: "Imports"
-weight: 2
+weight: 20
 ---
 
 A CUE file may import definitions from builtin or user-defined packages.
