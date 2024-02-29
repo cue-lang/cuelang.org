@@ -4,11 +4,11 @@ package site
 		docs: {
 			tour: {
 				types: {
-					optional: {
+					structs: {
 						page: {
 							cache: {
 								code: {
-									structs: "dFePxTpDf2/pyVPjpEyAgkqplj1gBW6Dx6pmPkDP0H4="
+									tour: "GCky4mB9m0Wsn1QCiHF9kfV58RPsd3mY0KxGiBm3QH4="
 								}
 							}
 						}
