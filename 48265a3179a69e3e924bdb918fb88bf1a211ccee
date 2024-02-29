@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b37ce71_eb27f6f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-29T13:51:47Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "48265a3179a69e3e924bdb918fb88bf1a211ccee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e42606f_fc397e3f",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-02-29T13:51:47Z",
+      "side": 1,
+      "message": "Reverse these 2 clauses, to make it less howto/instructional and more statement-of-fact:\n\n    A field marked with an optional field constraint and a value of bottom prevents it from being defined.",
+      "revId": "48265a3179a69e3e924bdb918fb88bf1a211ccee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
