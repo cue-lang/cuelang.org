@@ -1,6 +1,6 @@
 ---
 title: "Numbers"
-weight: 3
+weight: 30
 ---
 
 CUE defines two kinds of numbers.

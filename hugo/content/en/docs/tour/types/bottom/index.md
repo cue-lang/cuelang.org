@@ -1,6 +1,6 @@
 ---
 title: "Bottom / Error"
-weight: 2
+weight: 20
 ---
 
 Specifying duplicate fields with conflicting values results in an error
