@@ -1,6 +1,6 @@
 ---
 title: "Packages"
-weight: 1
+weight: 10
 ---
 
 A CUE file is a standalone file by default.
