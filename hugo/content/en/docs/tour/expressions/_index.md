@@ -1,6 +1,6 @@
 ---
 title: "Expressions"
-weight: 40
+weight: 400
 ---
 
 This section of the tour demonstrates how CUE expressions can generate and
