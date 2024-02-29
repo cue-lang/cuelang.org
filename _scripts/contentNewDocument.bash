@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# TODO: this script should really become a subcommand of the preprocessor.
+
 # Invoke the script with no arguments to see the usage text.
 function _usage(){
     cat <<HERE
@@ -60,7 +62,7 @@ function main() {
     export cuePathSpaceSeparated
     # $cuePath ends up looking like '"foo":"bar":"baz":{}'.
     # It will be tidied up with cue-fmt-s.
-    cuePath="$(for p in $cuePathSpaceSeparated; do echo -n \"$p\": ; done ; echo '{}')"
+    cuePath="$(for p in $cuePathSpaceSeparated; do echo -n \"$p\": ; done ; echo 'page: _')"
 
     # Create page.cue.
     echo -e "package site\n$cuePath" >"$newDir/page.cue"
