@@ -1,6 +1,6 @@
 ---
 title: "References and Visibility"
-weight: 30
+weight: 300
 ---
 
 This section of the tour demonstrates CUE's references, which allow you to
