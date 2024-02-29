@@ -1,6 +1,6 @@
 ---
 title: "Reference Cycles"
-weight: 5
+weight: 50
 ---
 
 CUE can handle many types of cycles just fine.

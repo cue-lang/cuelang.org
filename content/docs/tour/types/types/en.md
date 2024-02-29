@@ -1,6 +1,6 @@
 ---
 title: "Type Hierarchy"
-weight: 1
+weight: 10
 ---
 
 CUE defines the following type hierarchy
