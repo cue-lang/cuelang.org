@@ -264,7 +264,7 @@ toc_hide: false
 ## Struct {#struct-type}
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/maps-and-fields" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#structs" >}})
-|  [Tour]({{< relref "docs/tour/types/optional" >}})
+|  [Tour]({{< relref "docs/tour/types/structs" >}})
 <!-- Link to this section? [Language Spec]({{< relref "docs/reference/spec#values-1" >}}) -->
 - A composite type representing a set of elements (called
   [fields]({{< relref "#field" >}})) each of which has a name (called a label)
