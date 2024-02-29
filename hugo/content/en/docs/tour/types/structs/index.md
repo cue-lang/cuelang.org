@@ -1,6 +1,6 @@
 ---
 title: "Structs"
-weight: 7
+weight: 70
 aliases:
 - optional
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Types and Values"
-weight: 20
+weight: 200
 ---
 
 This section of the tour demonstrates the hierarchy of primitive and complex
