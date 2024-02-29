@@ -1,6 +1,6 @@
 ---
 title: "Field Comprehensions"
-weight: 5
+weight: 50
 ---
 
 CUE also supports comprehensions for fields.
