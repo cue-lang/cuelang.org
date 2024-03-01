@@ -1,40 +1,56 @@
 ---
-title: Folding of Single-Field Structs
+title: Concise Specifications
 weight: 240
 ---
 
-In JSON, one defines nested values one value at a time.
-Another way to look at this is that a JSON configuration is a set of
-path-value pairs.
+CUE has a convenient **shorthand form** for specifying single fields concisely:
+`a: b: c: value`\
+It can be mixed freely with CUE's other syntaxes.
 
-In CUE one defines a set of paths of which to apply
-a concrete value or constraint all at once.
-Because of CUE's order independence, values get merged
+**Pattern constraints** apply values to multiple fields.\
+They affect those fields which match a pattern: `[pattern]: value`
 
-This example shows some path-value pairs, as well as
-a constraint that is applied to those to validate them.
-<!--
-This also gives a handy shorthand for writing structs with single
-members.
--->
+A pattern constraint doesn't *specify* those fields which match its pattern.\
+For instance, the pattern constraint "`[string]: 42`" doesn't bring *every* possible `string`
+field into existence!
 
 {{< code-tabs >}}
-{{< code-tab name="fold.cue" language="cue" area="top-left" >}}
-// path-value pairs
-outer: middle1: inner: 3
-outer: middle2: inner: 7
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+// Specify fields concisely ...
+fruit: apple: weight: 5
+fruit: grape: weight: 2
+// ... or don't. Mix and match forms as needed.
+fruit: {
+	melon: weight: 9
+}
 
-// collection-constraint pair
-outer: [string]: inner: int
+// Pattern constraints match multiple fields.
+fruit: [string]: weight: int & <10
+
+// Pattern constraints can specify multiple fields.
+fruit: [string]: {
+	isFruit:     true
+	isVegetable: !isFruit
+}
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZQ==" >}}
+$ cue export file.cue
 {
-    "outer": {
-        "middle1": {
-            "inner": 3
+    "fruit": {
+        "apple": {
+            "weight": 5,
+            "isFruit": true,
+            "isVegetable": false
         },
-        "middle2": {
-            "inner": 7
+        "grape": {
+            "weight": 2,
+            "isFruit": true,
+            "isVegetable": false
+        },
+        "melon": {
+            "weight": 9,
+            "isFruit": true,
+            "isVegetable": false
         }
     }
 }
