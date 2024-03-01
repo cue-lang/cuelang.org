@@ -1,9 +1,9 @@
 ---
 title: "Conditional Fields"
-weight: 60
+weight: 40
 ---
 
-Field comprehensions can also be used to
+Field comprehensions can be used to
 add a single field conditionally.
 
 Converting the resulting configuration to JSON results in an error
