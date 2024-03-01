@@ -3,38 +3,43 @@ title: Constraints
 weight: 120
 ---
 
-Constraints specify what values are allowed.
-To CUE they are just values like anything else,
-but conceptually they can be explained as something in between types and concrete values.
+**Constraints** specify what values are allowed.
 
-Constraints can also reduce boilerplate.
-If a constraint defines a concrete value, there is no need
-to specify it in values to which this constraint applies.
+Because
+[types are values]({{< relref "types-are-values">}}),
+contraints are just values
+\- like anything else that can be assigned to a field.\
+Conceptually, however,
+they can be considered
+something in between types and concrete values.
+
+Constraints can also **reduce boilerplate**
+and simplify the specification of data.
+
+If a constraint specifies a field with a concrete value then unification means
+that the field and its value are present everywhere the constraint applies, and
+don't need to be repeated. For instance, this example's `human` field:
 
 {{< code-tabs >}}
-{{< code-tab name="check.cue" language="cue" area="top-left" >}}
-schema: {
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+person: {
 	name:  string
 	age:   int
-	human: true // always true
+	human: true // People are always humans
 }
 
-viola: schema
+viola: person
 viola: {
 	name: "Viola"
 	age:  38
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
-schema: {
-    name:  string
-    age:   int
-    human: true
-}
-viola: {
-    name:  "Viola"
-    age:   38
-    human: true
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtZSB2aW9sYQ==" >}}
+$ cue export file.cue -e viola
+{
+    "name": "Viola",
+    "age": 38,
+    "human": true
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
