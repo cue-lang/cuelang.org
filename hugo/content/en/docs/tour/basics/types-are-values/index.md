@@ -4,26 +4,24 @@ weight: 60
 ---
 
 CUE merges the concepts of values and types.
-Below is a demonstration of this concept,
-showing respectively
-some data, a possible schema for this data,
-and something in between: a typical CUE constraint.
+In CUE, *types **are** values*.
+
+A field's values can be:
+
+- a concrete value such as `"foo"`, `42`, or `true` - something that could be
+  represented in JSON
+- a type such as `int` or  `string`
+- something in between the two such as `>=500`, or `!="foo"` - not concrete,
+  but more specific than a basic type.
+
+The following examples show
+a **CUE schema**;
+a typical **CUE constraint** that *refines* the schema;
+and some **concrete values** that satisfy both the constraint and, therefore, the schema.
 
 {{< columns >}}
 
-<center>Data</center>
-
-```cue
-moscow: {
-	name:    "Moscow"
-	pop:     11.92M
-	capital: true
-}
-```
-
-{{< columns-separator >}}
-
-<center>Schema</center>
+<center>CUE schema</center>
 
 ```cue
 municipality: {
@@ -35,7 +33,7 @@ municipality: {
 
 {{< columns-separator >}}
 
-<center>CUE</center>
+<center>CUE constraint</center>
 
 ```cue
 largeCapital: {
@@ -45,9 +43,23 @@ largeCapital: {
 }
 ```
 
+{{< columns-separator >}}
+
+<center>Concrete values</center>
+
+```cue
+kinshasa: {
+	name:    "Kinshasa"
+	pop:     16.32M
+	capital: true
+}
+```
+
 {{< /columns >}}
 
-In general, in CUE one starts with a broad definition of a schema,
-describing all possible instances,
-and then narrows down these definitions for particular use cases
-until a concrete data instance remains.
+With CUE, we generally start with
+a broad definition of a schema describing all possible instances
+and then
+progressively narrow down these definitions for a particular use case
+until
+a concrete data instance remains.

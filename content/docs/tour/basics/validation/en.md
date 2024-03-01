@@ -3,34 +3,35 @@ title: Validation
 weight: 180
 ---
 
-Constraints can be used to validate values of concrete instances.
-They can be applied to CUE data, or directly to YAML or JSON.
+Constraints can be used to **validate** values of concrete instances.
+They can be applied to data from any source,
+whether held in CUE, YAML, JSON, or elsewhere.
 
-Here we see a constraint where all languages in `data.yaml` must start with
-an uppercase letter, specified in`schema.cue`.
-The constraint is validated with `cue vet`.
+Here, a constraint is applied to all the languages stored in `data.yml`,
+and is validated using the
+[**`cue vet`**]({{< relref "docs/reference/cli/cue-vet" >}}) command.
 
-{{{with code "en" "example"}}}
-! exec cue vet schema.cue data.yaml
-cmp stderr result.txt
--- schema.cue --
+{{{with code "en" "tour"}}}
+! exec cue vet file.cue data.yaml
+cmp stderr out
+-- file.cue --
 #Language: {
-	tag: string
-	// name must start with an uppercase
-	// letter
-	name: =~"^\\p{Lu}"
+	// Name must start with a uppercase
+	// letter, as defined by Unicode.
+	Name: =~"^\\p{Lu}"
+	Tag:  string
 }
 languages: [...#Language]
 -- data.yaml --
 languages:
-  - tag: en
-    name: English
-  - tag: nl
-    name: dutch
-  - tag: "no"
-    name: Norwegian
--- result.txt --
-languages.1.name: invalid value "dutch" (out of bound =~"^\\p{Lu}"):
-    ./schema.cue:5:8
-    ./data.yaml:5:11
+  - Name: English
+    Tag: en
+  - Name: dutch
+    Tag: nl
+  - Name: Norwegian
+    Tag: "no"
+-- out --
+languages.1.Name: invalid value "dutch" (out of bound =~"^\\p{Lu}"):
+    ./file.cue:4:8
+    ./data.yaml:4:11
 {{{end}}}

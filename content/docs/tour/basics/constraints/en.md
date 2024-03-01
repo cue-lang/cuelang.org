@@ -3,38 +3,39 @@ title: Constraints
 weight: 120
 ---
 
-Constraints specify what values are allowed.
-To CUE they are just values like anything else,
-but conceptually they can be explained as something in between types and concrete values.
+**Constraints** specify what values are allowed.
+Contraints are values, like anything else that can be assigned to a field.
 
-Constraints can also reduce boilerplate.
-If a constraint defines a concrete value, there is no need
-to specify it in values to which this constraint applies.
+Constraints can **reduce boilerplate** and simplify the specification of data.
+If a constraint specifies a field then the field and its value are present
+everywhere the constraint unifies, and don't need to be repeated.
 
-{{{with code "en" "example"}}}
-exec cue eval check.cue
-cmp stdout result.txt
--- check.cue --
-schema: {
+In this example, the `cue export` output says that Viola is a human because the
+`viola` field is unified with the `person` constraint using the **explicit
+unification operator `&`**:
+
+{{{with code "en" "tour"}}}
+exec cue export file.cue -e viola
+cmp stdout out
+-- file.cue --
+person: {
 	name:  string
-	age:   int
-	human: true // always true
+	age:   int & >=0
+	human: true // People are always humans
 }
 
-viola: schema
-viola: {
+viola: person & {
 	name: "Viola"
 	age:  38
 }
--- result.txt --
-schema: {
-    name:  string
-    age:   int
-    human: true
-}
-viola: {
-    name:  "Viola"
-    age:   38
-    human: true
+-- out --
+{
+    "name": "Viola",
+    "age": 38,
+    "human": true
 }
 {{{end}}}
+
+Unification succeeds because `person`'s `name` field constraint of `string`
+doesn't conflict with the concrete value `"Viola"`, and `age`'s unified
+constraint of `int & >=0` doesn't conflict with the value `38`.

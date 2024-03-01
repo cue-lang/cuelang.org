@@ -3,29 +3,35 @@ title: Order is Irrelevant
 weight: 210
 ---
 
-CUE's basic operations are defined in a way that the order in which
-you combine two configurations is irrelevant to the outcome.
+CUE's core operations are defined so that
+the order in which configurations are combined is unimportant.\
+We say that **order is irrelevant** in CUE.
 
-This is crucial property of CUE
-that makes it easy for humans _and_ machines to reason over values and
+This crucial property explains how CUE is able to handle a field being specified
+[multiple times]({{< relref "duplicate-fields" >}}).
+Because each occurrence of a field is as important as every other,
+*all* occurrences must not conflict with each other.
+
+Order irrelevance makes it easy for humans _and_ machines to reason about values, and
 makes advanced tooling and automation possible.
 
 {{< code-tabs >}}
-{{< code-tab name="order.cue" language="cue" area="top-left" >}}
-a: {x: 1, y: int}
-a: {x: int, y: 2}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+a: {X: 1, O: int}
+a: {X: int, O: 2}
 
-b: {x: int, y: 2}
-b: {x: 1, y: int}
+b: {X: int, O: 2}
+b: {X: 1, O: int}
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgZmlsZS5jdWU=" >}}
+$ cue eval file.cue
 a: {
-    x: 1
-    y: 2
+    X: 1
+    O: 2
 }
 b: {
-    x: 1
-    y: 2
+    X: 1
+    O: 2
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
