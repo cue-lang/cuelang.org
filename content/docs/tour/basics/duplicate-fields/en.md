@@ -3,32 +3,56 @@ title: Duplicate Fields
 weight: 90
 ---
 
-CUE allows duplicated field definitions as long as they don't conflict.
+CUE allows **duplicate** field definitions so long as they don't conflict.
+If they don't conflict then we say that they **unify** successfully.
+**Unification** either uses the explicit `&` operator,
+or happens implicitly whenever any field is redeclared.
 
-For values of basic types this means they must be equal.
-
-For structs, fields are merged and duplicated fields are handled recursively.
-
-For lists, all elements must match accordingly
+For concrete data,
+unification of basic types requires that all duplicate field values must be equal.\
+Within structs, fields are unified and duplicates are handled recursively.\
+Similarly, within lists, elements are unified and duplicates are handled recursively.
 <!-- ([we discuss open-ended lists later](/language-guide/data/lists/).) -->
 
-{{{with code "en" "example"}}}
-exec cue eval dup.cue
-cmp stdout result.txt
--- dup.cue --
-a: 4
-a: 4
-
-s: {b: 2}
-s: {c: 2}
-
-l: [1, 2]
-l: [1, 2]
--- result.txt --
-a: 4
-s: {
-    b: 2
-    c: 2
+{{{with code "en" "tour"}}}
+exec cue eval file.cue
+cmp stdout out
+-- file.cue --
+N: 1
+L: [1, 2, {a: 3}]
+S: {
+	a: 2
+	b: {c: 3}
 }
-l: [1, 2]
+
+// Implicit unification.
+N: 1
+L: [1, 2, {b: 4}]
+S: {
+	a: 2
+	b: {d: 4}
+}
+
+S: {
+	// Explicit unification.
+	c: L & [1, 2, {c: 5}]
+}
+-- out --
+N: 1
+L: [1, 2, {
+    a: 3
+    b: 4
+}]
+S: {
+    a: 2
+    c: [1, 2, {
+        a: 3
+        b: 4
+        c: 5
+    }]
+    b: {
+        c: 3
+        d: 4
+    }
+}
 {{{end}}}
