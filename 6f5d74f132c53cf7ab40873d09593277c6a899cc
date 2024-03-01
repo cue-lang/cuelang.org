@@ -33,6 +33,24 @@
       "message": "The commit message references point people to the tour, but a number of these changes are to the glossary. I\u0027d suggest we make the references to the tour as the commit message indicates.",
       "revId": "6f5d74f132c53cf7ab40873d09593277c6a899cc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "219f5157_e2c309d6",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-01T11:41:19Z",
+      "side": 1,
+      "message": "Done.\n\nSome of those links are going to /seem/ to go to odd places, until subsequent CLs update the Tour. E.g. links saying they\u0027re about \"required fields\" can only go to docs/tour/types/optional, which doesn\u0027t (yet) explore required fields, but will, later.",
+      "parentUuid": "aa474e1d_18119187",
+      "revId": "6f5d74f132c53cf7ab40873d09593277c6a899cc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
