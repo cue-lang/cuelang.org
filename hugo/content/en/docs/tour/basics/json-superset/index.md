@@ -3,38 +3,66 @@ title: JSON Superset
 weight: 30
 ---
 
-CUE is a superset of JSON.
-It adds the following conveniences:
+In its simplest form, CUE looks a lot like JSON.
+This is because CUE is a superset of JSON.\
+Or, put differently: **all valid JSON is CUE** (but not vice versa).
+ 
+CUE significantly reduces the pain of dealing with JSON
+by introducing several conveniences, including:
 
-- C-style comments,
-- quotes may be omitted from field names without special characters,
-- commas at the end of fields are optional,
-- comma after last element in list is allowed,
-- outer curly braces are optional.
+- C-style **comments** are allowed
+- field names without special characters don't need to be quoted
+- commas after a field are optional (and are usually omitted)
+- commas after the final element of a list are allowed
+- the outermost curly braces in a CUE file are optional
 
-JSON objects are called structs in CUE.
-An object member is called a field.
+JSON objects are called **structs** in CUE,
+and object members are called **fields**.
+JSON arrays are called **lists**.
+
+{{< info >}}
+Throughout this tour we include examples that show
+some CUE,
+a command that processes it,
+and then the command's output.
+Here, for instance, we use `cue export` to turn `file.cue` into JSON.
+{{< /info >}}
 
 {{< code-tabs >}}
-{{< code-tab name="json.cue" language="cue" area="top-left" >}}
-one: 1
-two: 2
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+import "math"
 
-// A field using quotes.
-"two-and-a-half": 2.5
+// Simple field names don't need to be quoted.
+one:       1
+two:       2
+piPlusOne: math.Pi + 1
 
-list: [
+// Field names must be quoted if they contain
+// special characters, such as hyphen and space.
+"quoted field names": {
+	"two-and-a-half":    2.5
+	"three point three": 3.3
+	"four^four":         math.Pow(4, 4)
+}
+
+aList: [
 	1,
 	2,
 	3,
 ]
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtLW91dCBqc29u" >}}
+$ cue export file.cue --out json
 {
     "one": 1,
     "two": 2,
-    "two-and-a-half": 2.5,
-    "list": [
+    "piPlusOne": 4.141592653589793238462643383279503,
+    "quoted field names": {
+        "two-and-a-half": 2.5,
+        "three point three": 3.3,
+        "four^four": 256
+    },
+    "aList": [
         1,
         2,
         3
