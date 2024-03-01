@@ -1,0 +1,232 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8da8aae4_812c2070",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "This feels extremely long for a howto. I\u0027ve made a number of suggestions that simplify the language and shorten the piece of content.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c7677c8_0fb6de03",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "Is this part of the sentence necessary?\n\nI\u0027m not sure I understand what an \"invocation environment\" is either?",
+      "range": {
+        "startLine": 16,
+        "startChar": 45,
+        "endLine": 18,
+        "endChar": 0
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6690901_77e90055",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "Why not shorten these two sentences to something more simple and plain:\n\n\u003e This guide shows how to capture these statistics via `cmd/cue`.",
+      "range": {
+        "startLine": 15,
+        "startChar": 14,
+        "endLine": 20,
+        "endChar": 42
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa639646_8c54e061",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "Not sure this needs a specific heading (to save some space)\n\n\u003e Given the CUE file:\n\n... and then continue.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7e8a6cc_9fae459c",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "This feels like it belongs after the actual script steps below, without a heading, just the paragraph of text.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab5df274_6acfcd03",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "This paragraph seems to repeat the semantics implied by the previous paragraph so I would suggest deleting.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc6a6bad_18a04390",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "This is implied by the explanation relating it to `--outfile`. So I would delete.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 42
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e26c3d6_7c91b01c",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "This feels like a minor detail to cover, but if you felt strongly about including it, I would do so after showing how this all actually works.",
+      "range": {
+        "startLine": 50,
+        "startChar": 44,
+        "endLine": 52,
+        "endChar": 0
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5beaa3ac_ae8d0177",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "Again, this is unnecessary detail to my mind.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32c2e1c2_0f865d5e",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "I would drop this info block. What is meant to be a simple howto is getting pretty long at this point. It\u0027s not wrong per se, just that the level of explanation exceeds what is required to get someone logging stats. If you want to link via related content to a different bit of content, maybe.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abf37da9_1899b3a1",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "Per my offline feedback this is unnecessary and covered by your statement about how the value of `CUE_STATS_FILE` is similar to filetypes. If the help on filetypes does not sufficiently cover the points you are looking to cover then we should fix that.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57db9159_c14fa3c1",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T05:52:13Z",
+      "side": 1,
+      "message": "You could link to https://github.com/cue-lang/cue/issues/2856",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
