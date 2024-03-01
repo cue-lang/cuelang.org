@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "582390dc_5883ea55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-01T21:22:45Z",
+      "side": 1,
+      "message": "PTAL and give me early feedback on the kind of changes I\u0027m proposing to make to the tour. A full review isn\u0027t needed - just a tonal steer / course correction / etc.\n\nThe single page updated in this WIP /does/ expand the on-page CUE example a small degree beyond the strictly necessary - this is deliberate, aiming to whet the appetite of the reader, reflecting the page\u0027s role as the first \"live\" CUE seen during the tour. Please hold the changes to this CUE separately from changes to the page\u0027s text!",
+      "revId": "7a0bd04797ba5bb91b680bd7039c0aa491134066",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
