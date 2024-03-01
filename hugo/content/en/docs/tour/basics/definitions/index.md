@@ -3,41 +3,51 @@ title: Definitions
 weight: 150
 ---
 
-In CUE, schemas are typically written as Definitions.
-A definition is a field which identifier starts with
-`#` or `_#`.
-This tells CUE that they are to be used for validation and should
-not be output as data; it is okay for them to remain unspecified.
+In CUE, schemas are typically written as **definitions**.
+A definition is a field whose identifier starts with `#` or `_#`.
 
-A definition also tells CUE the full set of allowed fields.
-In other words, definitions define "closed" structs.
-Including a `...` in struct keeps it open.
+Because CUE knows that definitions are used for validation,
+they aren't output as data
+\- and can therefore remain unspecified, not containing concrete values.
+
+A definition also tells CUE the complete set of allowed fields,
+meaning that evaluations will fail if any additional fields are specified.
+We say that such a definition defines a  **closed** struct,
+and it's closed *recursively*.
+
+**Embedding** an ellipsis (`...`) in a struct keeps it **open**, non-recursively,
+and permits additional fields to be specified at the level of the ellipsis.
 
 {{< code-tabs >}}
-{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 #Conn: {
 	address:  string
 	port:     int
 	protocol: string
-	// uncomment this to allow any field
+
+	// If this ellipsis is uncommented, any
+	// additional fields at this level would
+	// be permitted:
 	// ...
 }
 
-lossy: #Conn & {
-	address:  "1.2.3.4"
+lossy: #Conn
+lossy: {
+	address:  "203.0.113.42"
 	port:     8888
 	protocol: "udp"
-	// uncomment this to get an error
-	// foo: 2
+
+	// This field is not specified in #Conn,
+	// and its presence causes an evaluation
+	// failure.
+	timeout: 30
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
-{
-    "lossy": {
-        "address": "1.2.3.4",
-        "port": 8888,
-        "protocol": "udp"
-    }
-}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCBmaWxlLmN1ZQ==" >}}
+$ cue vet file.cue
+lossy.timeout: field not allowed:
+    ./file.cue:1:8
+    ./file.cue:12:8
+    ./file.cue:21:2
 {{< /code-tab >}}
 {{< /code-tabs >}}
