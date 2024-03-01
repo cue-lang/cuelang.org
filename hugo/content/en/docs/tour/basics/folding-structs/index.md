@@ -3,31 +3,34 @@ title: Folding of Single-Field Structs
 weight: 240
 ---
 
-In JSON, one defines nested values one value at a time.
-Another way to look at this is that a JSON configuration is a set of
-path-value pairs.
+In JSON, nested values are defined one value at a time.
+A JSON configuration is a set of path-value pairs.
 
-In CUE one defines a set of paths of which to apply
-a concrete value or constraint all at once.
-Because of CUE's order independence, values get merged
+In CUE, we define a set of paths,
+to which a concrete value or constraint applies all at once.
+Because of CUE's
+[order irrelevance]({{< relref "order-irrelevance" >}}),
+values get unified.
+This also happens to give us a convenient shorthand for writing structs with
+single fields.
 
-This example shows some path-value pairs, as well as
-a constraint that is applied to those to validate them.
-<!--
-This also gives a handy shorthand for writing structs with single
-members.
--->
+This example shows some path-value pairs and a constraint that is applied to
+validate them.
 
 {{< code-tabs >}}
-{{< code-tab name="fold.cue" language="cue" area="top-left" >}}
-// path-value pairs
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+// Some path-value pairs
 outer: middle1: inner: 3
 outer: middle2: inner: 7
 
-// collection-constraint pair
+// A collection-constraint pair that validates.
 outer: [string]: inner: int
+
+// A more convenient way to write deep nesting.
+a: nested: struct: with: only: one: field: "banana"
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZQ==" >}}
+$ cue export file.cue
 {
     "outer": {
         "middle1": {
@@ -35,6 +38,19 @@ outer: [string]: inner: int
         },
         "middle2": {
             "inner": 7
+        }
+    },
+    "a": {
+        "nested": {
+            "struct": {
+                "with": {
+                    "only": {
+                        "one": {
+                            "field": "banana"
+                        }
+                    }
+                }
+            }
         }
     }
 }
