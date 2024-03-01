@@ -3,32 +3,37 @@ title: Duplicate Fields
 weight: 90
 ---
 
-CUE allows duplicated field definitions as long as they don't conflict.
+CUE allows fields to be specified multiple times, so long as all the values
+don’t conflict.
+If the values don’t conflict we say they **unify** successfully.
+**Unification** is the process of checking that values don't conflict,
+and it happens implicitly whenever any field is redeclared.
 
-For values of basic types this means they must be equal.
+For concrete data, unification of basic types requires that
+all values specified for a field must be equal.\
+Within structs, fields are unified recursively.
+Similarly, within lists, elements are unified recursively.
 
-For structs, fields are merged and duplicated fields are handled recursively.
+{{{with code "en" "tour"}}}
+exec cue export file.cue --out yaml
+cmp stdout out
+-- file.cue --
+A: 1
+A: 1
 
-For lists, all elements must match accordingly
-<!-- ([we discuss open-ended lists later](/language-guide/data/lists/).) -->
+B: {a: 2}
+B: {b: 3}
 
-{{{with code "en" "example"}}}
-exec cue eval dup.cue
-cmp stdout result.txt
--- dup.cue --
-a: 4
-a: 4
-
-s: {b: 2}
-s: {c: 2}
-
-l: [1, 2]
-l: [1, 2]
--- result.txt --
-a: 4
-s: {
-    b: 2
-    c: 2
-}
-l: [1, 2]
+C: [4, 5, {c: 6}]
+C: [4, 5, {d: 7}]
+-- out --
+A: 1
+B:
+  a: 2
+  b: 3
+C:
+  - 4
+  - 5
+  - c: 6
+    d: 7
 {{{end}}}

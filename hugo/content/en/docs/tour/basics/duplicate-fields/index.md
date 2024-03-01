@@ -3,32 +3,38 @@ title: Duplicate Fields
 weight: 90
 ---
 
-CUE allows duplicated field definitions as long as they don't conflict.
+CUE allows fields to be specified multiple times, so long as all the values
+don’t conflict.
+If the values don’t conflict we say they **unify** successfully.
+**Unification** is the process of checking that values don't conflict,
+and it happens implicitly whenever any field is redeclared.
 
-For values of basic types this means they must be equal.
-
-For structs, fields are merged and duplicated fields are handled recursively.
-
-For lists, all elements must match accordingly
-<!-- ([we discuss open-ended lists later](/language-guide/data/lists/).) -->
+For concrete data, unification of basic types requires that
+all values specified for a field must be equal.\
+Within structs, fields are unified recursively.
+Similarly, within lists, elements are unified recursively.
 
 {{< code-tabs >}}
-{{< code-tab name="dup.cue" language="cue" area="top-left" >}}
-a: 4
-a: 4
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+A: 1
+A: 1
 
-s: {b: 2}
-s: {c: 2}
+B: {a: 2}
+B: {b: 3}
 
-l: [1, 2]
-l: [1, 2]
+C: [4, 5, {c: 6}]
+C: [4, 5, {d: 7}]
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
-a: 4
-s: {
-    b: 2
-    c: 2
-}
-l: [1, 2]
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtLW91dCB5YW1s" >}}
+$ cue export file.cue --out yaml
+A: 1
+B:
+  a: 2
+  b: 3
+C:
+  - 4
+  - 5
+  - c: 6
+    d: 7
 {{< /code-tab >}}
 {{< /code-tabs >}}
