@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "6f5d74f132c53cf7ab40873d09593277c6a899cc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa474e1d_18119187",
+        "filename": "content/docs/howto/mark-a-field-as-optional/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-01T06:03:55Z",
+      "side": 1,
+      "message": "The commit message references point people to the tour, but a number of these changes are to the glossary. I\u0027d suggest we make the references to the tour as the commit message indicates.",
+      "revId": "6f5d74f132c53cf7ab40873d09593277c6a899cc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
