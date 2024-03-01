@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8301e1e5_f37d61f2",
+        "filename": "content/docs/tour/_en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-01T13:01:13Z",
+      "side": 1,
+      "message": "This moved the Tour to the bottom of the LH nav.",
+      "revId": "3650582ad77467b84fca78077b9d110e41238dc7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
