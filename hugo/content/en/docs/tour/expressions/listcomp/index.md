@@ -1,6 +1,6 @@
 ---
 title: "List Comprehensions"
-weight: 40
+weight: 50
 ---
 
 Lists can be created with list comprehensions.
