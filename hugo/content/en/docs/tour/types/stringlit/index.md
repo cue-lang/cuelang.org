@@ -1,35 +1,35 @@
 ---
-title: "String Literals"
+title: Strings
 weight: 40
 ---
 
-CUE strings allow a richer set of escape sequences than JSON.
+**Strings** are instances of the `string` type.
+String literals are defined within double quotes.
 
-CUE also supports multi-line strings, enclosed by a pair of triple quotes `"""`.
-The opening quote must be followed by a newline.
-The closing quote must also be on a newline.
-The whitespace directly preceding the closing quote must match the preceding
-whitespace on all other lines and is removed from these lines.
+Strings allow a rich set of escape sequences,
+including Unicode code points
+and [interpolations]({{< relref "../expressions/interpolation" >}}).
 
-Strings may also contain
-[interpolations]({{< relref "../expressions/interpolation" >}})).
-
+CUE also supports multi-line strings, enclosed by a pair of triple quotes (`"""`).
+The opening quotes of a multi-line string must be immediately followed by a
+newline, and the closing quotes must be on a line by themselves, optionally
+preceded by whitespace.
+Any whitespace before the closing quotes *must* be present as the prefix
+preceding *all* lines, because it is *removed* from all lines.
 
 {{< code-tabs >}}
-{{< code-tab name="stringlit.cue" language="cue" area="top-left" >}}
-// 21-bit unicode characters
-a: "\U0001F60E" // 😎
-
-// multiline strings
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+a: "\U0001F60E" // A 21-bit Unicode character.
 b: """
-	Hello
-	World!
+	This is a
+	multi-line string \(a)
 	"""
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZQ==" >}}
+$ cue export file.cue
 {
     "a": "😎",
-    "b": "Hello\nWorld!"
+    "b": "This is a\nmulti-line string 😎"
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
