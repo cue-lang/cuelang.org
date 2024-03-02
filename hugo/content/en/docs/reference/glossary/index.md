@@ -90,12 +90,13 @@ toc_hide: false
 
 ## Field
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/maps-and-fields" >}}) -->
-   [Tour]({{< relref "docs/tour/basics/json-superset" >}})
+   [Tour]({{< relref "docs/tour/types/structs" >}})
 - A key-value pair inside a map, associating a value with a given set of keys
 
 ## Field constraint
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/schemas-and-validation/field-constraints" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#field-constraints" >}})
+|  [Tour]({{< relref "docs/tour/types/structs" >}})
 - A field constraint restricts a [field]({{< relref "#field" >}})'s value
   without actually defining the field, with the field only forming part of the
   output if it is successfully [unified]({{< relref "#unification" >}}) with a
@@ -196,7 +197,8 @@ toc_hide: false
 
 ## Optional field constraint
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints" >}}) -->
-   [Howto Guide]({{< relref "docs/howto/mark-a-field-as-optional" >}})
+   [Tour]({{< relref "docs/tour/types/structs" >}})
+|  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-optional" >}})
 - A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
   [field]({{< relref "#field" >}})'s value if the field is present, whilst also
   permitting the field's absence
@@ -244,7 +246,8 @@ toc_hide: false
 
 ## Required field constraint
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" >}}) -->
-   [Howto Guide]({{< relref "docs/howto/mark-a-field-as-required" >}})
+   [Tour]({{< relref "docs/tour/types/structs" >}})
+|  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-required" >}})
 - A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
   [field]({{< relref "#field" >}})'s value whilst also requiring the field to
   be present
@@ -264,7 +267,7 @@ toc_hide: false
 ## Struct {#struct-type}
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/maps-and-fields" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#structs" >}})
-|  [Tour]({{< relref "docs/tour/types/optional" >}})
+|  [Tour]({{< relref "docs/tour/types/structs" >}})
 <!-- Link to this section? [Language Spec]({{< relref "docs/reference/spec#values-1" >}}) -->
 - A composite type representing a set of elements (called
   [fields]({{< relref "#field" >}})) each of which has a name (called a label)

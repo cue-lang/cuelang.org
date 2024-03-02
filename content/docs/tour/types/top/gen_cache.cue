@@ -4,11 +4,11 @@ package site
 		docs: {
 			tour: {
 				types: {
-					templates: {
+					top: {
 						page: {
 							cache: {
 								code: {
-									tour: "aQl4g6QhwUKJDjvEMYZ41v3xC5lHGrzVzWvEX5jbx6s="
+									top: "hN+4t5ut1cBm4GYyuMwM6d4iHQ7ERtVtMiBvgD8XaCg="
 								}
 							}
 						}
