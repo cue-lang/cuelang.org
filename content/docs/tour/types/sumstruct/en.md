@@ -1,28 +1,65 @@
 ---
-title: "Disjunctions of Structs"
+title: Disjunctions of Structs
 weight: 120
 ---
 
-Disjunctions work for any type.
+Disjunctions work for any type, including structs.
 
-In this example we see that a `floor` of some specific house
-has an exit on level 0 and 1, but not on any other floor.
+In this example each `#Floor` of a building
+must have a exit if it is on level 0 or 1,
+but not if it is on any other level.
+(A neater way to encode the `level` constraints would be to use *bounds*, as
+shown on the next page.)
 
-{{{with code "en" "example"}}}
-#nofmt(sumstruct.cue) https://github.com/cue-lang/cue/issues/722
--- sumstruct.cue --
-// floor defines the specs of a floor in some house.
-floor: {
-    level:   int  // the level on which this floor resides
-    hasExit: bool // is there a door to exit the house?
+{{{with code "en" "tour"}}}
+exec cue export file.cue
+cmp stdout out
+-- file.cue --
+#Floor: {
+	level?:   int  // floor's level
+	hasExit?: bool // floor has an exit?
 }
 
-// constraints on the possible values of floor.
-floor: {
-    level: 0 | 1
-    hasExit: true
+// Constraints on the possible values of #Floor.
+#Floor: {
+	level:   0 | 1
+	hasExit: true
 } | {
-    level: -1 | 2 | 3
-    hasExit: false
+	level:   -3 | -2 | -1 | 2 | 3 | 4
+	hasExit: false
+}
+
+floors: [...#Floor]
+floors: [
+	{level: -2},
+	{level: -1},
+	{level: 0},
+	{level: 1},
+	{level: 2},
+]
+-- out --
+{
+    "floors": [
+        {
+            "level": -2,
+            "hasExit": false
+        },
+        {
+            "level": -1,
+            "hasExit": false
+        },
+        {
+            "level": 0,
+            "hasExit": true
+        },
+        {
+            "level": 1,
+            "hasExit": true
+        },
+        {
+            "level": 2,
+            "hasExit": false
+        }
+    ]
 }
 {{{end}}}
