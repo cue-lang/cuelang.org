@@ -1,19 +1,26 @@
 ---
-title: "Disjunctions"
+title: Disjunctions
 weight: 100
 ---
 
-Disjunctions, or sum types, define a new type that is one of several things.
+**Disjunctions**, or sum types, define a new type derived from a list of
+several types.
 
-In the example, our `Conn` definition of earlier is augmented to define
-the possible values for `protocol`: `"tcp"` or `"udp"`.
-It is an error for a concrete `Conn`
-to define anything else than these two values.
+The new type allows values that match *exactly* one type from the list.
 
-{{{with code "en" "disjunctions"}}}
-exec cue eval disjunctions.cue
-cmp stdout result.txt
--- disjunctions.cue --
+When unifying the disjunction with concrete values, it is an error if a value
+is specified that does not unify successfully with at least one type from the
+list.
+It is also an error if a concrete value is specified that does not provide CUE
+with enough information to work out which member of the disjunction applies.
+
+The list is expressed in a visually distinct manner,
+with its members separated by the pipe symbol (`|`).
+
+{{{with code "en" "tour"}}}
+exec cue eval -i file.cue
+cmp stdout out
+-- file.cue --
 #Conn: {
 	address:  string
 	port:     int
@@ -21,19 +28,29 @@ cmp stdout result.txt
 }
 
 lossy: #Conn & {
-	address:  "1.2.3.4"
+	address:  "203.0.113.42"
 	port:     8888
-	protocol: "udp"
+	protocol: "udp" // acceptable value
 }
--- result.txt --
+error: #Conn & {
+	address:  "203.0.113.42"
+	port:     8888
+	protocol: "IP" // evaluation failure
+}
+-- out --
 #Conn: {
     address:  string
     port:     int
     protocol: "tcp" | "udp"
 }
 lossy: {
-    address:  "1.2.3.4"
+    address:  "203.0.113.42"
     port:     8888
     protocol: "udp"
+}
+error: {
+    address:  "203.0.113.42"
+    port:     8888
+    protocol: _|_ // error.protocol: 2 errors in empty disjunction: (and 2 more errors)
 }
 {{{end}}}
