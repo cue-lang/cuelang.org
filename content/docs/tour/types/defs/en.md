@@ -1,37 +1,52 @@
 ---
-title: "Definitions"
-weight: 80
+title: Definitions
+weight: 90
 ---
 
-A definition, indicated by an identifier starting with `#` or `_#`,
-defines values that
-are not output when converting a configuration to a concrete value.
-They are used to define schema against which concrete values can
-be validated.
+In CUE, schemas are typically written as **definitions**.
+A definition is a field whose identifier starts with `#` or `_#`.
 
-Structs defined by definitions are implicitly closed.
+Because CUE knows that definitions are used for validation,
+they aren't output as data
+\- and can therefore remain unspecified, not containing concrete values.
 
-{{{with code "en" "definitions"}}}
-exec cue eval -ic defs.cue
-cmp stdout result.txt
--- defs.cue --
-msg: "Hello \(#Name)!"
+A definition also tells CUE the complete set of allowed fields,
+meaning that evaluations will fail if any additional fields are specified.
+We say that such a definition defines a  **closed** struct,
+and it's closed *recursively*.
 
-#Name: "world"
+**Embedding** an ellipsis (`...`) in a struct keeps it **open**, non-recursively,
+and permits additional fields to be specified at the level of the ellipsis.
 
-#A: {
-	field: int
+{{{with code "en" "tour"}}}
+! exec cue vet file.cue
+cmp stderr out
+-- file.cue --
+#Conn: {
+	address:  string
+	port:     int
+	protocol: string
+
+	// If this ellipsis is uncommented, any
+	// additional fields at this level would
+	// be permitted:
+	// ...
 }
 
-a: #A & {field: 3}
-err: #A & {feild: 3}
--- result.txt --
-msg: "Hello world!"
-a: {
-    field: 3
+lossy: #Conn
+lossy: {
+	address:  "203.0.113.42"
+	port:     8888
+	protocol: "udp"
+
+	// This field is not specified in #Conn,
+	// and its presence causes an evaluation
+	// failure.
+	timeout: 30
 }
-err: {
-    field: int
-    feild: _|_ // err.feild: field not allowed
-}
+-- out --
+lossy.timeout: field not allowed:
+    ./file.cue:1:8
+    ./file.cue:12:8
+    ./file.cue:21:2
 {{{end}}}

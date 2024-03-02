@@ -4,12 +4,11 @@ package site
 		docs: {
 			tour: {
 				types: {
-					bounddef: {
+					structs: {
 						page: {
 							cache: {
 								code: {
-									identifiers: "0LIbGgeuHHdr1d7twt1i9ZIVH8kS3CNOfjtAXDbVvkE="
-									tour:        "HkqL97wv0fSxnpAQwtG0U0UO1yEWOxmOpiaR/e96Pjs="
+									tour: "QP9q+/QB9H3S8eJ3o4VnP7r57TFsmVzVrpRDFJks5VY="
 								}
 							}
 						}
