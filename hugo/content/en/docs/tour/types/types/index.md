@@ -3,20 +3,38 @@ title: "Type Hierarchy"
 weight: 10
 ---
 
-CUE defines the following type hierarchy
+CUE defines the following type hierarchy:
 
-```txt
-  null  bool  string  bytes  number  struct  list
-                             /   \
-                           int  float
-```
+{{< mermaid caption="CUE's predefined type hierarchy" >}}
+flowchart BT
 
-In addition, CUE defines the values
-bottom, or error, (denoted `_|_`)
-that is an instance of all types and
-top, or any, (denoted `_`) of which all types are an instance.
+top["top\n('_')"]
+bottom["bottom\n('_|_')"]
 
-Note how we use the terms types and values interchangeably.
+bottom                     --> null   --> top
+bottom                     --> bool   --> top
+bottom                     --> string --> top
+bottom                     --> bytes  --> top
+bottom --is an instance of --> int    --> top
+bottom                     --> float  --> top
+bottom                     --> number --> top
+bottom                     --> struct --> top
+bottom                     --> list   --> top
+
+number --> int & float
+
+{{< /mermaid >}}
+
+CUE defines the value **bottom** (or error),
+denoted "`_|_`",
+which is an instance of all types.
+
+CUE also defines the value **top** (or any),
+denoted "`_`",
+so that all types are an instance of top.
+<!-- ` vim syntax highlighting hack -->
+
+Note how we mix the terms types and values interchangeably.
 CUE does not distinguish between types and values.
 The term "type" merely refers to the kind of a value,
 which may or may not be a concrete instance.
