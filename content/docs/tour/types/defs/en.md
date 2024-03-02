@@ -1,37 +1,42 @@
 ---
-title: "Definitions"
-weight: 80
+title: Definitions
+weight: 90
 ---
 
-A definition, indicated by an identifier starting with `#` or `_#`,
-defines values that
-are not output when converting a configuration to a concrete value.
-They are used to define schema against which concrete values can
-be validated.
+In CUE, schemas are typically written as **definitions**.
+A definition is a field whose identifier starts with `#` or `_#`.
 
-Structs defined by definitions are implicitly closed.
+Because CUE knows that definitions are used for validation,
+they aren't output as data.\
+It's normal for definitions to specify fields that don't have concrete values,
+such as types.
 
-{{{with code "en" "definitions"}}}
-exec cue eval -ic defs.cue
-cmp stdout result.txt
--- defs.cue --
-msg: "Hello \(#Name)!"
+A definition also tells CUE the complete set of allowed fields in a struct.\
+Referring to a definition **closes** any structs and lists recursively.
+Structs and lists can be left **open** using `...`.
 
-#Name: "world"
+{{{with code "en" "tour"}}}
+exec cue eval -ic file.cue
+cmp stdout out
+-- file.cue --
+message: "Hello, \(#Name)!"
+#Name:   "world"
 
 #A: {
-	field: int
+	n: int
+	// Uncomment this to allow any field.
+	// ...
 }
 
-a: #A & {field: 3}
-err: #A & {feild: 3}
--- result.txt --
-msg: "Hello world!"
-a: {
-    field: 3
+valid: #A & {n: 3}
+invalid: #A & {N: 3}
+-- out --
+message: "Hello, world!"
+valid: {
+    n: 3
 }
-err: {
-    field: int
-    feild: _|_ // err.feild: field not allowed
+invalid: {
+    n: int
+    N: _|_ // invalid.N: field not allowed
 }
 {{{end}}}
