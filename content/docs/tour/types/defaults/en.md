@@ -1,31 +1,36 @@
 ---
-title: "Default Values"
+title: Default Values
 weight: 110
 ---
 
-Elements of a disjunction may be marked as preferred.
-If there is only one mark, or the users constraints a field enough such that
-only one mark remains, that value is the default value.
+A disjunction's elements can be prefixed with the preference marker (`*`).
 
-In the example, `replicas` defaults to `1`.
-In the case of `protocol`, however, there are multiple definitions with
-different, mutually incompatible defaults.
-In that case, both `"tcp"` and `"udp"` are preferred and one must explicitly
-specify either `"tcp"` or `"udp"` as if no marks were given.
+If there is only one mark,
+or if unfication constrains a field sufficiently so that only one mark remains,
+then that value is the default value.
+CUE will select and use the default value when a concrete value is required
+but none has been explicitly specified.
 
-{{{with code "en" "defaults"}}}
-#nofmt(in.cue) https://github.com/cue-lang/cue/issues/722
+{{{with code "en" "tour"}}}
+exec cue eval file.cue
+cmp stdout out
+-- file.cue --
+a: int | *1 // a single default is selected.
 
-exec cue eval defaults.cue
-cmp stdout result.txt
--- defaults.cue --
-// any positive number, 1 is the default
-replicas: uint | *1
+// b's two defaults are incompatible, so neither
+// is selected.
+b: *2 | 99
+b: *99 | 2
 
-// the default value is ambiguous
-protocol: *"tcp" | "udp"
-protocol: *"udp" | "tcp"
--- result.txt --
-replicas: 1
-protocol: "tcp" | "udp"
+// c's three defaults are incompatible, but two
+// of them are excluded by the final disjunction
+// so the only remaining default is selected.
+c: *1 | 2 | 3 | 4
+c: 1 | *2 | 3 | 4
+c: 1 | 2 | *3 | 4
+c: 3 | 4
+-- out --
+a: 1
+b: 2 | 99
+c: 3
 {{{end}}}
