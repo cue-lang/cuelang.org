@@ -16,6 +16,159 @@
       "message": "This is no longer WIP, and is ready for review.",
       "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e672fae_cd3eeb6e",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "Delete this line.",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a1cf583_4e7c9eb1",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "Is this phrasing correct?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7a8e522_62832b13",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "Is this really the most valuable take-away for the reader of the /tour/? Does it change how they hold either JSON or CUE? TBD.",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7361758_0cc823bf",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "As above. Is this a valuable paragraph to include? Or could we rephrase the underlying /point/, somehow?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4e0505b_008b6104",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "I don\u0027t recall the term \"collection\" being used, and the spec uses it precisely once, but not in a formal definition (https://alpha.cuelang.org/docs/reference/spec/#pattern-and-default-constraints).\n\nIs it used here solely to create a concise comment, or is it communicating something nuanced and important?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36086069_43613a15",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "Any alternatives to \"manually dealing with\"?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27e0a335_a73403ef",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "Given that this is the very first `code` block in the tour, let\u0027s add a line introducing it and setting the expectation that there\u0027s a left/right code/command pair.",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb645198_51b93c6e",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "\"less specific than a concrete value, but less tolerant than a predefined type\", perhaps.",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9f89a29_97ebcd0c",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-02T18:58:22Z",
+      "side": 1,
+      "message": "We\u0027ve never used the term \"instances\" before this point in the tour. Should we define or use it in a more explanatory setting before now?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
