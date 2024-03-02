@@ -1,35 +1,42 @@
 ---
-title: "Bottom / Error"
+title: Bottom / Error
 weight: 20
 ---
 
-Specifying duplicate fields with conflicting values results in an error
-or bottom.
-_Bottom_ is a special value in CUE, denoted `_|_`, that indicates an
-error such as conflicting values.
-Any error in CUE results in `_|_`.
-Logically all errors are equal, although errors may be associated with
-metadata such as an error message.
+Specifying duplicate fields with conflicting values results in an error,
+or **bottom**, denoted `_|_`.
 
-Note that an error is different from `null`: `null` is a valid value,
-whereas `_|_` is not.
+Bottom is a special value in CUE, and is the value that results from any error.
+Logically, all errors are equal,
+although CUE may associate them with metadata such as an error message.
 
-{{{with code "en" "bottom"}}}
-exec cue eval -i bottom.cue
-cmp stdout result.txt
--- bottom.cue --
-a: 4
-a: 5
+An error is *not* the same as `null`.
+`null` is a valid value and can be assigned to a field - but `_|_` can't.
 
-l: [1, 2]
-l: [1, 3]
+In this example,
+notice how the `-i` flag modifies `cue eval`'s behaviour,
+placing literal `_|_` values in the output wherever errors have occurred,
+instead of the errors causing an evaluation and invocation failure.
+These literal `_|_` values *invalidate* the CUE that's output,
+with each error's message being recorded as an inline comment.
 
-list: [0, 1, 2]
-val: list[3]
--- result.txt --
-a: _|_ // a: conflicting values 5 and 4
-l: [1, _|_, // l.1: conflicting values 3 and 2
+{{{with code "en" "tour"}}}
+exec cue eval -i file.cue
+cmp stdout out
+-- file.cue --
+a: 1
+a: 2
+
+b: [50, 100]
+b: [50, 200]
+
+c: [0, 1, 2]
+
+d: c[5]
+-- out --
+a: _|_ // a: conflicting values 2 and 1
+b: [50, _|_, // b.1: conflicting values 200 and 100
 ]
-list: [0, 1, 2]
-val: _|_ // val: index out of range [3] with length 3
+c: [0, 1, 2]
+d: _|_ // d: invalid list index 5 (out of bounds)
 {{{end}}}
