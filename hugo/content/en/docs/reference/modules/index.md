@@ -446,7 +446,7 @@ a wide range of platforms.
 
 By default, the `cue` command caches downloaded modules in the local
 filesystem. It uses the local user configuration directory by default, but
-that can be changed by setting `$CUE_MODCACHE`, which is
+that can be changed by setting `$CUE_CACHE_DIR`, which is
 documented under [`cue help environment`]({{< relref "docs/reference/cli/cue-environment" >}}).
 
 ## Authorization
@@ -537,7 +537,7 @@ distributed together.
 
 <a id="glos-module-cache"></a>
 **module cache:** A local directory storing downloaded modules, located in
-`$CUE_MODCACHE`. See [Module cache](#module-cache).
+`$CUE_CACHE_DIR`. See [Module cache](#module-cache).
 
 <a id="glos-module-graph"></a>
 **module graph:** The directed graph of module requirements, rooted at the [main
