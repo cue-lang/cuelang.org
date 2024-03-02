@@ -1,5 +1,5 @@
 ---
-title: "Closed structs"
+title: Closed structs
 weight: 80
 ---
 
