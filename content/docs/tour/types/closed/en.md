@@ -1,36 +1,36 @@
 ---
-title: "Closed structs"
-weight: 70
+title: Closed structs
+weight: 80
 ---
 
-Struct is the most important composite type in CUE.
+A struct may be **open** or **closed**, and is open *unless* it has been closed.
 
-A struct may be open or closed.
-A closed struct may only be merged with structs that have fields that
-it defines to be allowed.
-In other words, closing a struct is equivalent to requiring that all
-other values be undefined.
+Both open and closed structs can have any field defined as members.\
+Closed structs can only be
+[unified]({{< relref "docs/tour/basics/duplicate-fields" >}})
+with structs that have fields permitted by the closed struct.
 
-A closed struct can be created using the `close` builtin,
-but are more commonly defined using a _definition_, defined next.
+A closed struct can be created using the `close()` builtin, but is more
+commonly created using a *definition*, as demonstrated on the next page.
+A struct created with `close()` can't have additional fields added elsewhere.
 
 {{{with code "en" "structs"}}}
 exec cue eval -i structs.cue
-cmp stdout result.txt
+cmp stdout out
 -- structs.cue --
-a: close({
-	field: int
+A: close({
+	a: int
 })
 
-b: a & {
-	feild: 3
+B: A & {
+	b: 42 // validation failure
 }
--- result.txt --
-a: {
-    field: int
+-- out --
+A: {
+    a: int
 }
-b: {
-    field: int
-    feild: _|_ // b.feild: field not allowed
+B: {
+    a: int
+    b: _|_ // B.b: field not allowed
 }
 {{{end}}}

@@ -1,45 +1,106 @@
 ---
-title: "Lists"
+title: Lists
 weight: 150
 ---
 
-Lists define arbitrary sequences of CUE values.
-A list can be closed or open ended.
-Open-ended lists may have some predefined elements, but may have
-additional, possibly typed elements.
+**Lists** define arbitrary sequences of CUE values,
+and can be **closed** or **open**.
+List members are called **elements**.
 
-In the example we define `IP` to be a list of `4` elements of type `uint8`, which
-is a predeclared value of `>=0 & <=255`.
-`PrivateIP` defines the IP ranges defined for private use.
-Note that as it is already defined to be an `IP`, the length of the list
-is already fixed at `4` and we do not have to specify a value for all elements.
-Also note that instead of writing `...uint8`, we could have written `...`
-as the type constraint is already implied by `IP`.
+Closed lists define and fix their length, statically, each and every time they
+specify their elements.
 
-The output contains a valid private IP address (`myIP`)
-and an invalid one (`yourIP`).
+Open lists are indicated by `...`, which can be followed by a value that constrains any elements that follow.
+They may contain some predefined elements.
+Open lists permit additional elements to be specified elsewhere, after the predefined elements.
+Both the predefined and additional elements may be typed or untyped.
 
+{{{with code "en" "tour"}}}
+exec cue eval -i file.cue
+cmp stdout out
+-- file.cue --
+A: [1, 2, 3, 4] // A closed list with 4 elements.
+
+// B is closed.
+B: [1, _, _] // Length is fixed at 3.
+B: [_, 2, _] // 3 elements must be specified
+B: [_, _, 3] // on each definition.
+
+// C and D are constrained identically. Their
+// values are concrete, despite being open.
+C: [1, 2, 3, ...int]
+D: [...] // No type information; list is open.
+D: [_, _, _, ...] // There are at least 3 elements.
+D: [...int] // All elements are ints.
+D: [1, ...] // Element 1 is made concrete.
+D: [_, 2, ...] // Element 2 is made concrete.
+D: [_, _, 3, ...] // Element 3 is made concrete.
+
+// A, B, and C are compatible with D's
+// constraints.
+A: D
+B: D
+C: D
+
+// E is not compatible with D's constraints.
+E: [1, 2, 3, "4"]
+E: D // validation failure
+-- out --
+A: [1, 2, 3, 4]
+B: [1, 2, 3]
+C: [1, 2, 3]
+D: [1, 2, 3]
+E: [1, 2, 3, _|_, // E.3: conflicting values "4" and int (mismatched types string and int)
+]
+{{{end}}}
+
+<!-- TODO: is this example worth saving?
 {{{with code "en" "lists"}}}
 exec cue eval -i lists.cue
 cmp stdout result.txt
 -- lists.cue --
 import "list"
 
+// uint8 is a predefined identifier for the bound
+// >=0 & <=255, and list.Repeat(X,Y) returns a
+// list containing list X repeated Y times.
 IP: list.Repeat([uint8], 4)
 
-PrivateIP: IP
-PrivateIP: [10, ...uint8] |
-	[192, 168, ...] |
-	[172, >=16 & <=32, ...]
+// IPv4 private subnets, as defined in RFC1918.
+rfc1918: {
+	// Each member of rfc1918 is unified with
+	// IP, thereby fixing its length at 4 and
+	// constraining its elements to uint8.
+	[_]: IP
 
-myIP: PrivateIP
-myIP: [10, 2, 3, 4]
+	// We do not have to specify a value for
+	// all the elements of each member - only
+	// those that need to be constrained by
+	// the rules of RFC1918.
+	"10.0.0.0/8": [10, ...]
+	"192.168.0.0/16": [192, 168, ...]
+	"172.16.0.0/12": [172, >=16 & <=32, ...]
+}
 
-yourIP: PrivateIP
-yourIP: [11, 1, 2, 3]
+PrivateIP:
+	rfc1918."10.0.0.0/8" |
+	rfc1918."192.168.0.0/16" |
+	rfc1918."172.16.0.0/12"
+
+valid: PrivateIP
+valid: [10, 2, 3, 4]
+
+invalid: PrivateIP
+invalid: [203, 0, 113, 42] // validation failure
 -- result.txt --
 IP: [uint8, uint8, uint8, uint8]
+rfc1918: {
+    "10.0.0.0/8": [10, uint8, uint8, uint8]
+    "192.168.0.0/16": [192, 168, uint8, uint8]
+    "172.16.0.0/12": [172, uint & >=16 & <=32, uint8, uint8]
+}
 PrivateIP: [10, uint8, uint8, uint8] | [192, 168, uint8, uint8] | [172, uint & >=16 & <=32, uint8, uint8]
-myIP: [10, 2, 3, 4]
-yourIP: _|_ // yourIP: 3 errors in empty disjunction: (and 3 more errors)
+valid: [10, 2, 3, 4]
+invalid: _|_ // invalid: 3 errors in empty disjunction: (and 3 more errors)
 {{{end}}}
+-->
