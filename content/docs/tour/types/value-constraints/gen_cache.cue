@@ -4,12 +4,11 @@ package site
 		docs: {
 			tour: {
 				types: {
-					bounddef: {
+					"value-constraints": {
 						page: {
 							cache: {
 								code: {
-									identifiers: "0LIbGgeuHHdr1d7twt1i9ZIVH8kS3CNOfjtAXDbVvkE="
-									tour:        "HkqL97wv0fSxnpAQwtG0U0UO1yEWOxmOpiaR/e96Pjs="
+									"value constraint": "E6eJ4mgrXffjmF9mP3QqGsTuDJ3hJaxaUPsmBjalO9o="
 								}
 							}
 						}
