@@ -64,7 +64,7 @@ $ cue vet .:example data.yml
 ## Related content
 
 - [**Optional field constraints**]({{< relref
-    "docs/tour/types/optional"
+    "docs/tour/types/structs"
   >}})
 - [**Commented CUE guides**]({{< relref
     "docs/howto#commented-cue-guides"
