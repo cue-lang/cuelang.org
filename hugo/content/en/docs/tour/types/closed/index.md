@@ -1,36 +1,50 @@
 ---
-title: "Closed structs"
-weight: 70
+title: Closed structs
+weight: 80
 ---
 
-Struct is the most important composite type in CUE.
+A struct may be **open** or **closed**, and is open by default.
 
-A struct may be open or closed.
-A closed struct may only be merged with structs that have fields that
-it defines to be allowed.
-In other words, closing a struct is equivalent to requiring that all
-other values be undefined.
+An open struct can have any field defined as a member, unless otherwise
+constrained. The constraints applied to an open struct's fields also constrain
+the fields of other structs when they're **unified** with the open struct.
 
-A closed struct can be created using the `close` builtin,
-but are more commonly defined using a _definition_, defined next.
+The same rules apply to a closed struct but, when it's unified with some other
+struct, that struct can only contain fields defined in the closed struct.
+
+A closed struct can be created using the `close()` builtin, but is more
+commonly created using a *definition*, as demonstrated on the next page.
+A struct created with `close()` cannot have additional fields added elsewhere,
+through unification.
 
 {{< code-tabs >}}
 {{< code-tab name="structs.cue" language="cue" area="top-left" >}}
-a: close({
-	field: int
+A: close({
+	y: int
+	z: string
 })
 
-b: a & {
-	feild: 3
+A: {
+	a: "one" // validation failure (not allowed)
+}
+
+B: A & {
+	x: "two"   // validation failure (not allowed)
+	y: "three" // validation failure (wrong type)
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
-a: {
-    field: int
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgLWkgc3RydWN0cy5jdWU=" >}}
+$ cue eval -i structs.cue
+A: {
+    y: int
+    a: _|_ // A.a: field not allowed
+    z: string
 }
-b: {
-    field: int
-    feild: _|_ // b.feild: field not allowed
+B: {
+    a: _|_ // B.a: field not allowed
+    x: _|_ // B.x: field not allowed
+    y: _|_ // B.y: conflicting values int and "three" (mismatched types int and string)
+    z: string
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}

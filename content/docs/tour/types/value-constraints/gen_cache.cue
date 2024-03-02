@@ -4,11 +4,11 @@ package site
 		docs: {
 			tour: {
 				types: {
-					templates: {
+					"value-constraints": {
 						page: {
 							cache: {
 								code: {
-									tour: "aQl4g6QhwUKJDjvEMYZ41v3xC5lHGrzVzWvEX5jbx6s="
+									"value constraint": "t7DWxHjczS2IA/u6sn5DD/AqMS4a0kefXr+Mh00dTJc="
 								}
 							}
 						}
