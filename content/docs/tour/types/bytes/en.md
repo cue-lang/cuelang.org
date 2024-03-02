@@ -1,27 +1,43 @@
 ---
-title: "Bytes"
+title: Bytes
 weight: 60
 ---
 
-CUE distinguishes between a `string` and a `bytes` type.
-Bytes are converted to base64 when emitting JSON.
-Byte literals are defined with single quotes.
-The following additional escape sequences are allowed in byte literals:
+CUE distinguishes the **`bytes`** type from the `string` type.
 
-{{{with code "en" "escapes"}}}
--- plain.txt --
-    \xnn   // arbitrary byte value defined as a 2-digit hexadecimal number
-    \nnn   // arbitrary byte value defined as a 3-digit octal number
-{{{end}}}
-<!-- jba: this contradicts the spec, which has \nnn (no leading zero) -->
+Byte literals are defined with single quotes, rather than strings' double
+quotes.
 
-{{{with code "en" "bytes"}}}
-exec cue export bytes.cue
-cmp stdout result.txt
--- bytes.cue --
-a: '\x03abc'
--- result.txt --
+In addition to those escape sequences permitted in string literals,
+these are also allowed in byte literals:
+
+{{< table >}}
+| Sequence | Result |
+| ---:| --- |
+| **`\xnn`** | Arbitrary byte value defined as the 2-digit hexadecimal number "**`nn`**" |
+| **`\nnn`** | Arbitrary byte value defined as the 3-digit octal number "**`nnn`**" |
+{{< /table >}}
+
+Bytes are converted to Base64
+when exporting concrete data to a format such as JSON or YAML
+in order to ensure that the underlying binary data can be interpreted
+accurately.
+
+{{{with code "en" "tour"}}}
+exec cue export file.cue
+cmp stdout out
+-- file.cue --
+aString: "A string"
+
+// Multiple representations of the same underlying
+// bytes, which therefore unify succesfully.
+Bytes: 'A string'
+Bytes: '\(aString)'
+Bytes: '\x41\x20\x73\x74\x72\x69\x6e\x67'
+Bytes: '\101\040\163\164\162\151\156\147'
+-- out --
 {
-    "a": "A2FiYw=="
+    "aString": "A string",
+    "Bytes": "QSBzdHJpbmc="
 }
 {{{end}}}
