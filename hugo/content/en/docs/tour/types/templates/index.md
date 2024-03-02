@@ -1,51 +1,72 @@
 ---
-title: "Templates"
+title: Templates
 weight: 160
 ---
 
-One of CUE's most powerful features is the ability
-to specify optional fields in bulk.
-This allows one to specify constraints,
-or templates,
-to be unified with each field of a struct.
+**Templating** is a highly effective way to reduce boilerplate
+by specifying optional fields in bulk.
+It allows the specification of constraints, or **templates**,
+which are unified with every field of a struct that matches a given pattern.
 
-An optional field set is an expression in square brackets
-to specify to which fields to apply a constraint
-(currently only `string`, or all fields is supported).
-Using an alias in the square brackets binds the
-label of the matched field to the given identifier,
-which can then be used within the template.
+A template's pattern is an expression in square brackets that selects which
+fields will be constrained.
+Each combination of the pattern and a constraint that it applies is called a
+[**pattern constraint**]({{< relref "docs/tour/basics/folding-structs" >}}).
+Currently, patterns must either be instances of `string`, or must be `_`.
 
+Including an alias in the pattern's square brackets makes the label of each
+matched field available inside the template.
 
 {{< code-tabs >}}
-{{< code-tab name="templates.cue" language="cue" area="top-left" >}}
-// The following struct is unified with all
-// elements in job. The name of each element is
-// bound to Name and visible in the struct.
-job: [Name=_]: {
-    name:     Name
-    replicas: uint | *1
-    command:  string
-}
-
-job: list: command: "ls"
-
-job: nginx: {
-    command:  "nginx"
-    replicas: 2
-}
-{{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 job: {
-    list: {
-        name:     "list"
-        replicas: 1
-        command:  "ls"
-    }
-    nginx: {
-        name:     "nginx"
-        command:  "nginx"
-        replicas: 2
+	nginx: replicas:  2
+	manager: command: "monit -I"
+	policyd: _
+	boltdb: replicas:   3
+	postgres: replicas: 5
+}
+
+job: [Name=_]: {
+	name:     Name // Name is an alias.
+	command:  string | *"exec \(Name)"
+	replicas: uint | *1
+}
+
+// Databases are important, so increase the
+// replica minimum.
+job: [#DB]: replicas: >=3
+#DB: "postgres" | "mysql" | =~"db$"
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZQ==" >}}
+$ cue export file.cue
+{
+    "job": {
+        "nginx": {
+            "name": "nginx",
+            "command": "exec nginx",
+            "replicas": 2
+        },
+        "manager": {
+            "name": "manager",
+            "command": "monit -I",
+            "replicas": 1
+        },
+        "policyd": {
+            "name": "policyd",
+            "command": "exec policyd",
+            "replicas": 1
+        },
+        "boltdb": {
+            "name": "boltdb",
+            "command": "exec boltdb",
+            "replicas": 3
+        },
+        "postgres": {
+            "name": "postgres",
+            "command": "exec postgres",
+            "replicas": 5
+        }
     }
 }
 {{< /code-tab >}}
