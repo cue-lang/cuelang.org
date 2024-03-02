@@ -33,6 +33,24 @@
       "message": "Strictly speaking this isn\u0027t a search and replace, because ${CUE_MODCACHE} was replaced by ${CUE_CACHE_DIR}/mod, but I think the existing wording still works as-is.",
       "revId": "d77da89426db7a78c08b57e4409db401b2df0b27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "008fa8e8_babaf1a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-02T20:10:46Z",
+      "side": 1,
+      "message": "I felt the same on the wording still being ok, and I was actually about to raise an issue saying the the docs for CUE_CACHE_DIR could be clearer on what exists within it:\n\nhttps://alpha.cuelang.org/docs/reference/cli/cue-environment/\n\nBecause that page says nothing about `/mod` and I think it probably should.",
+      "parentUuid": "5ec121e5_6f9f9f35",
+      "revId": "d77da89426db7a78c08b57e4409db401b2df0b27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
