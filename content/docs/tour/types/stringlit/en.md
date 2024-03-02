@@ -1,37 +1,33 @@
 ---
-title: "String Literals"
+title: Strings
 weight: 40
 ---
 
-CUE strings allow a richer set of escape sequences than JSON.
+**Strings** are instances of the `string` type.
+String literals are defined within double quotes.
 
-CUE also supports multi-line strings, enclosed by a pair of triple quotes `"""`.
-The opening quote must be followed by a newline.
-The closing quote must also be on a newline.
-The whitespace directly preceding the closing quote must match the preceding
-whitespace on all other lines and is removed from these lines.
+Strings allow a rich set of escape sequences,
+including Unicode code points
+and [interpolations]({{< relref "../expressions/interpolation" >}}).
 
-Strings may also contain
-[interpolations]({{< relref "../expressions/interpolation" >}})).
+CUE also supports multi-line strings, enclosed by a pair of triple quotes (`"""`).
+The opening quotes of a multi-line string must be immediately followed by a newline,
+and the closing quotes must be on a line by themselves, optionally preceded by whitespace.
+Any whitespace before the closing quotes must also prefix the lines between the quotes,
+because it is removed from all lines.
 
-
-{{{with code "en" "stringlit"}}}
-#nofmt(in.cue) https://github.com/cue-lang/cue/issues/722
-
-exec cue export stringlit.cue
-cmp stdout result.txt
--- stringlit.cue --
-// 21-bit unicode characters
-a: "\U0001F60E" // 😎
-
-// multiline strings
+{{{with code "en" "tour"}}}
+exec cue export file.cue
+cmp stdout out
+-- file.cue --
+a: "\U0001F60E" // A 21-bit Unicode character.
 b: """
-	Hello
-	World!
+	This is a
+	multi-line string \(a)
 	"""
--- result.txt --
+-- out --
 {
     "a": "😎",
-    "b": "Hello\nWorld!"
+    "b": "This is a\nmulti-line string 😎"
 }
 {{{end}}}
