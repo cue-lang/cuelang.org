@@ -51,6 +51,24 @@
       "parentUuid": "5ec121e5_6f9f9f35",
       "revId": "d77da89426db7a78c08b57e4409db401b2df0b27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f824432_616822b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-02T20:17:25Z",
+      "side": 1,
+      "message": "Raised as https://github.com/cue-lang/cue/issues/2904",
+      "parentUuid": "008fa8e8_babaf1a9",
+      "revId": "d77da89426db7a78c08b57e4409db401b2df0b27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
