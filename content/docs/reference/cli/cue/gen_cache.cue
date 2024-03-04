@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"1V2DB76S6TE6QMC07BDC57JM92FM1A3S34UCVS8AHO2L2E2Q4SQ0====": [{
+									"SF82FVERRR1MDL01PA680II8VG8519L8O3UEJBV28D7I3D6UFT30====": [{
 										doc:      ""
 										cmd:      "cue help"
 										exitCode: 0
@@ -37,20 +37,20 @@ package site
 												  cue [command]
 
 												Available Commands:
-												  cmd         run a user-defined shell command
-												  completion  Generate completion script
-												  def         print consolidated definitions
-												  eval        evaluate and print a configuration
-												  export      output data in a standard format
-												  fix         rewrite packages to latest standards
-												  fmt         formats CUE configuration files
-												  get         add dependencies to the current module
-												  help        Help about any command
-												  import      convert other formats to CUE files
-												  mod         module maintenance
-												  trim        remove superfluous fields
-												  version     print CUE version
-												  vet         validate data
+												  cmd            run a user-defined shell command
+												  completion     Generate completion script
+												  def            print consolidated definitions
+												  eval           evaluate and print a configuration
+												  export         output data in a standard format
+												  fix            rewrite packages to latest standards
+												  fmt            formats CUE configuration files
+												  get            add dependencies to the current module
+												  help           Help about any command
+												  import         convert other formats to CUE files
+												  mod            module maintenance
+												  trim           remove superfluous fields
+												  version        print CUE version
+												  vet            validate data
 
 												Flags:
 												  -E, --all-errors   print all available errors
@@ -61,12 +61,13 @@ package site
 												  -v, --verbose      print information about progress
 
 												Additional help topics:
-												  cue commands    user-defined commands
-												  cue environment environment variables
-												  cue filetypes   supported file types and qualifiers
-												  cue flags       common flags for composing packages
-												  cue injection   inject files or values into specific fields for a build
-												  cue inputs      package list, patterns, and files
+												  cue commands       user-defined commands
+												  cue environment    environment variables
+												  cue filetypes      supported file types and qualifiers
+												  cue flags          common flags for composing packages
+												  cue injection      inject files or values into specific fields for a build
+												  cue inputs         package list, patterns, and files
+												  cue registryconfig module registry configuration
 
 												Use "cue [command] --help" for more information about a command.
 
