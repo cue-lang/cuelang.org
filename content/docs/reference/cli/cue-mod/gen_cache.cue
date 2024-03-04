@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"BUGUFMUJ1DJPAH8NRDEB31AN1H90O12PE4NAQUSHBNEE8P8KLIJG====": [{
+									"GMNL49TBT97T697NS4C2PQKSNVO4EFBK4AJ61DOG6KSLLFB0SJN0====": [{
 										doc:      ""
 										cmd:      "cue help mod"
 										exitCode: 0
@@ -20,6 +20,7 @@ package site
 												  cue mod [command]
 
 												Available Commands:
+												  get         add and upgrade module dependencies
 												  init        initialize new module in current directory
 												  publish     publish the current module to a registry
 												  tidy        download and tidy module dependencies

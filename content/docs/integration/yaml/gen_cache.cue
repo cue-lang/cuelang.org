@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							code: {
-								intro:                          "bc8+zp4kCPCoyzdjxluDTzf6WpAsvkqs+3lji+GwwpQ="
-								validate:                       "OpQHdpFK2njNjgAjj3BW73s6KxlMjMoSsTyGxqLc7IU="
-								"validate-embedded-yaml-cue":   "Uj6VOuuQzQp/0dOJeGyshG3y3kd61VM6iEVqUZuLecc="
-								"validate-embedded-yaml-shell": "nr/Hrah29R0RkyaKCblZ4V/lJLzZPIpmYgH2Z4FimGA="
-								create:                         "Ee8WMfq2IVP0UhnRg+0miun38oRmctxsrwjieRMBsJY="
-								parse:                          "NJ1Nq26+e3FQX3tEyHzygzDNZmWHsd37wEiyqX9SYJ4="
+								intro:                          "T+WULgCKL/EE1VJTuAjgiRJEFMFr/Dwh5Zk6rAxT2x4="
+								validate:                       "T54g4DmTs0p8jwv2SBf6PzLYwqsaX/jV+c5l5fEVQTc="
+								"validate-embedded-yaml-cue":   "zsp/0J4DsZs7idz34feWj43Jhe0CyA9OnUSAZgu+RQs="
+								"validate-embedded-yaml-shell": "+L7Zvxfj0UKFGRQRS3MhIGSF+92+F+XXtBa5je9XZoQ="
+								create:                         "Ej4VazIU1ZHWqAHcQr7P2tCrwuZe9QkbhqoPegae1Og="
+								parse:                          "++laiJNMionbt3AU50u7wbMvGb1S0D9GNjcU3EhNWGI="
 							}
 						}
 					}

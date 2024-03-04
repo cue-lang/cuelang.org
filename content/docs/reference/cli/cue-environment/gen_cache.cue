@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"646Q31JEPG5DIBRKM4H9M081K858J84HSRJQCT5KI04Q9IDFIQ5G====": [{
+									"KI9DBRKQGUR0D1A2N7MLQBVMGCDNVS1KV48IJR03SJH9P7F1DUK0====": [{
 										doc:      ""
 										cmd:      "cue help environment"
 										exitCode: 0
@@ -36,40 +36,10 @@ package site
 												\t\t\t"%LocalAppData%/cue" on Windows
 
 												\tCUE_REGISTRY
-												\t\tA comma-separated list specifying which registry to use for
-												\t\tdownloading and publishing modules. A registry is specifed as
-												\t\tfollows:
 
-												\t\t\t[modulePrefix=]hostname[:port][/repoPrefix][+insecure]
-
-												\t\tThe optional modulePrefix specifes that all modules with the
-												\t\tgiven prefix will use the associated registry. If there are
-												\t\tmultiple registries with a prefix, the longest matching prefix
-												\t\twins. When matching a prefix, only complete path elements
-												\t\t(non-slash characters) are considered.
-
-												\t\tThe hostname holds the OCI registry host (in square brackets if
-												\t\tit's an IPv6 address). The repoPrefix holds a prefix to use in
-												\t\tfront of all repositories in the registry. If there's a
-												\t\t"+insecure" suffix, it specifies that an insecure HTTP
-												\t\tconnection should be used to this registry; otherwise the
-												\t\tdefault is secure except for localhost addresses.
-
-												\t\tFor example, given:
-
-												\t\t\tCUE_REGISTRY=public-registry.com,github.com/acmecorp=registry.acme.com:6000/modules
-
-												\t\t- the module named github.com/foo/bar will be fetched
-												\t\t  from the github.com/foo/bar repository in the registry host
-												\t\t  public-registry.com
-												\t\t- a module named github.com/acmecorp/somemodule will
-												\t\t  be fetched from the modules/github.com/acmecorp/somemodule
-												\t\t  repository in the host registry.acme.com at port 6000
-												\t\t- a module named github.com/acmecorpus/x will be
-												\t\t  fetched from the github.com/acmecorpus/x repository in the
-												\t\t  host public-registry.com
-
-												\t\tRequires that CUE_EXPERIMENT=modules is enabled.
+												\t\tThis variable specifies which registry or registries to use for
+												\t\tdownloading and publishing modules. See "cue help registryconfig"
+												\t\tfor details.
 
 												\tCUE_EXPERIMENT
 												\t\tComma-separated list of experiments to enable or disable. The

@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								code: {
-									hierarchy: "PutjkzTLLqW6rAdLtsZfZvUrqKkZORNGQSuji2E+R+4="
-									point:     "hHr/RCdXGJl39AA1GvYmoCVzPU0vRW6aRZeS9l7YfGo="
+									hierarchy: "j+eM5TMAYe8LSGrY695aGGt9KyEP7J4Ti3Jp42AtSRY="
+									point:     "ximkCcKqcVoYO2pkI8OiEXvbQ5vFQo9xu5H8ESFMp9c="
 								}
 							}
 						}
