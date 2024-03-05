@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeb069d7_be0f23a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-05T17:27:54Z",
+      "side": 1,
+      "message": "Please note the `hugo/` content diffs which should correspond to the release itself.",
+      "revId": "15ac2834b8f20671831e7d309d47010474457901",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
