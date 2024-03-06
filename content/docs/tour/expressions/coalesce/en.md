@@ -1,44 +1,40 @@
 ---
-title: "Null Coalescing"
+title: Null Coalescing
 weight: 80
 ---
 
-<!-- jba: the terms here are confusing. "Null coalescing" is actually not
-  that, but then there is something called "actual null coalescing."
-  
-  Just say that because _|_ | X evaluates to X, you can use disjunction
-  to represent fallback values.
-  
-  And then you can use that to effectively type-check with a default value.
--->
+**Null coalescing** is a technique that allows your CUE to evaluate successfully,
+despite data having invalid, unexpected, or missing values.
+By "null coalescing", we really mean error (or bottom) coalescing.
 
-With null coalescing we really mean error, or bottom, coalescing.
-The defaults mechanism for disjunctions can also be
-used to provide fallback values in case an expression evaluates to bottom.
+It uses a disjunction's default marker (`*`) to prefer the value of an
+expression that *might* evaluate to bottom (`_|_`),
+alongside an alternative, fallback value that the disjunction will select if
+the expression *does* produce bottom.
+This isn't a separate language feature, but is the expected outcome from CUE's
+design that `_|_ | value` evaluates to `value`.
 
-In the example the fallback values are specified
-for `a` and `b` in case the list index is out of bounds.
+This technique can guard against situations such as list indexes being out of
+bounds, and type checks, with a fallback in the case of a type mismatch.
 
-To do actual null coalescing one can unify a result with the desired type
-to force an error.
-In that case the default will be used if either the lookup fails or
-the result is not of the desired type.
+{{{with code "en" "tour"}}}
+exec cue eval -c file.cue
+cmp stdout out
+-- file.cue --
+#pets: ["Cat", "Mouse", "Dog"]
 
-{{{with code "en" "coalesce"}}}
-exec cue eval coalesce.cue
-cmp stdout result.txt
--- coalesce.cue --
-list: ["Cat", "Mouse", "Dog"]
+// Guard against out of bounds list indexes.
+pet0: *#pets[0] | "Pet not found"
+pet5: *#pets[5] | "Pet not found"
 
-a: *list[0] | "None"
-b: *list[5] | "None"
+#nums: [7, "8", "9"]
 
-n: [null]
-v: *(n[0] & string) | "default"
--- result.txt --
-list: ["Cat", "Mouse", "Dog"]
-a: "Cat"
-b: "None"
-n: [null]
-v: "default"
+// Perform a type check.
+num0: *(#nums[0] & int) | "Not an integer"
+num1: *(#nums[1] & int) | "Not an integer"
+-- out --
+pet0: "Cat"
+pet5: "Pet not found"
+num0: 7
+num1: "Not an integer"
 {{{end}}}

@@ -4,11 +4,11 @@ package site
 		docs: {
 			tour: {
 				expressions: {
-					fieldcomp: {
+					"dynamic-fields": {
 						page: {
 							cache: {
 								code: {
-									tour: "HjqyBNERg6j5/P1yIKbncqrpEzyzXd/hYK5dg8lN4w8="
+									tour: "eGgmZFfyWljBxXApr9+GwG5DU/ZqU2OKg0++i9QQW1I="
 								}
 							}
 						}
