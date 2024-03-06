@@ -1,23 +1,47 @@
 ---
-title: "Interpolation of Field Names"
+title: Interpolation of Field Names
 weight: 30
 ---
 
-String interpolations may also be used in field names.
+String interpolations can be used to construct field names.
 
-One cannot refer to generated fields with references.
+Referring to these generated fields requires the reference to be made through
+the context of some containing struct.
 
-{{{with code "en" "genfield"}}}
-! exec cue eval genfield.cue
-cmp stderr result.txt
--- genfield.cue --
-sandwich: {
-	type:            "Cheese"
-	"has\(type)":    true
-	hasButter:       true
-	butterAndCheese: hasButter && hasCheese
+This happens automatically when accessing a field from *outside* the containing struct.
+An alias is often used to provide the context when referencing the field from
+*inside* the same struct.
+
+{{{with code "en" "tour"}}}
+exec cue eval file.cue
+cmp stdout out
+-- file.cue --
+sandwich: X={
+	type:         "Cheese"
+	hasButter:    true
+	"has\(type)": true
+
+	// Valid: context from an alias.
+	butterAndCheese: X.hasCheese && hasButter
+
+	// Valid: context from the containing struct.
+	butterAndCheese: sandwich.hasCheese && hasButter
+
+	// Invalid: no context provided.
+	//butterAndCheese: hasCheese && hasButter
 }
--- result.txt --
-sandwich.butterAndCheese: reference "hasCheese" not found:
-    ./genfield.cue:5:32
+
+// Valid: automatic context from the containing
+// struct, as access is from outside the struct.
+cheeseIsNeeded: *sandwich.hasCheese | false
+hamIsNeeded:    *sandwich["hasHam"] | false
+-- out --
+sandwich: {
+    type:            "Cheese"
+    hasButter:       true
+    hasCheese:       true
+    butterAndCheese: true
+}
+cheeseIsNeeded: true
+hamIsNeeded:    false
 {{{end}}}
