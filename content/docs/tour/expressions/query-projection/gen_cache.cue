@@ -4,11 +4,11 @@ package site
 		docs: {
 			tour: {
 				expressions: {
-					interpolation: {
+					"query-projection": {
 						page: {
 							cache: {
 								code: {
-									tour: "MxW8wl3Hp7Js/xUlSP2vYoVhpxzxLl8lgA2iV/JSOi8="
+									tour: "hqSd2cl4KEk4Eiz5CzIxXEL4/jya3sYZ++QeMXl/D4M="
 								}
 							}
 						}
