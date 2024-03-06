@@ -1,22 +1,22 @@
 ---
-title: "Emit Values"
+title: Emitting Values
 weight: 40
 ---
 
 By default all top-level fields are emitted when evaluating a configuration.
-Embedding a value at top-level will cause that value to be emitted instead.
+**Embedding** a value at the top level causes that value to be emitted instead.
 
-Emit values allow CUE configurations, like JSON,
-to define any type, instead of just structs, while keeping the common case
-of defining structs light.
+This allows CUE configurations to define any type or value at the top level
+(just like JSON), whilst keeping CUE optimised for the most common use case of
+defining structs.
 
-{{{with code "en" "emit"}}}
-exec cue export emit.cue
-cmp stdout result.txt
--- emit.cue --
-"Hello \(#who)!"
+{{{with code "en" "tour"}}}
+exec cue export file.cue
+cmp stdout out
+-- file.cue --
+"Hello, \(#who)!"
 
 #who: "world"
--- result.txt --
-"Hello world!"
+-- out --
+"Hello, world!"
 {{{end}}}
