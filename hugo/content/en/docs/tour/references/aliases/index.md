@@ -1,37 +1,60 @@
 ---
-title: "Aliases"
+title: Aliases
 weight: 30
 ---
 
-An alias defines a local macro.
+**Aliases** and **let declarations** both provide a way to access a value via a
+different name.
 
-A typical use case is to provide access to a shadowed field.
+They are typically used to access a field in an outer scope that has been made
+inaccessible (or *shadowed*) by the same field name existing in an inner scope.
 
-Aliases are not members of a struct. They can be referred to only within the
-struct, and they do not appear in the output.
+Both aliases and let declarations use an equals sign (`=`) to assign an
+identifier its value, and let declarations begin with the `let` keyword.
+Their slightly different applications are nuanced,
+but they provide the same fundamental capability.
+In general, if you have a choice of which form to use, choose an alias.
+
+Aliases and let declarations are *not* members of a struct.
+They do not appear in output,
+and can only be referenced in the scope within which they are defined.
 
 {{< code-tabs >}}
-{{< code-tab name="alias.cue" language="cue" area="top-left" >}}
-let A = a // A is an alias for a
-a: {
-	d: 3
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+a: b: "this is a.b"
+
+let A = a
+c: {
+	a: {// this field shadows the outer "a"
+		c: A.b
+	}
 }
-b: {
-	a: {
-		// A provides access to the outer
-		// "a" which would otherwise be
-		// hidden by the inner one.
-		c: A.d
+
+d: D={
+	e: "this is d.e"
+	f: {
+		e: {// this field shadows the outer "e"
+			g: D.e
+		}
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgZmlsZS5jdWU=" >}}
+$ cue eval file.cue
 a: {
-    d: 3
+    b: "this is a.b"
 }
-b: {
+c: {
     a: {
-        c: 3
+        c: "this is a.b"
+    }
+}
+d: {
+    e: "this is d.e"
+    f: {
+        e: {
+            g: "this is d.e"
+        }
     }
 }
 {{< /code-tab >}}
