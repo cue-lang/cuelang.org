@@ -1,27 +1,34 @@
 ---
-title: "Conditional Fields"
-weight: 60
+title: Conditional Fields
+weight: 40
 ---
 
-Field comprehensions can also be used to
-add a single field conditionally.
+Field comprehensions can be used to add fields conditionally.
 
-Converting the resulting configuration to JSON results in an error
-as `justification` is required yet no concrete value is given.
+{{< info >}}
+When `cue export` processes multiple files it *unifies* their contents.
+The value of the `price` field in `stock.yaml` is available inside `file.cue`,
+and triggers the conditional inclusion of the required fields.
+{{< /info >}}
 
-{{{with code "en" "conditional"}}}
-exec cue eval conditional.cue
-cmp stdout result.txt
--- conditional.cue --
+{{{with code "en" "tour"}}}
+! exec cue export file.cue stock.yaml
+cmp stderr out
+-- file.cue --
 price: number
 
-// Require a justification if price is too high
+// High prices require a reason and the name of
+// the authorising person.
 if price > 100 {
-	justification: string
+	reason!:       string
+	authorisedBy!: string
 }
-
+-- stock.yaml --
 price: 200
--- result.txt --
-justification: string
-price:         200
+-- out --
+authorisedBy: field is required but not present:
+    ./file.cue:5:1
+reason: field is required but not present:
+    ./file.cue:5:1
 {{{end}}}
+
