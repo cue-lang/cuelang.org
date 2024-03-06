@@ -1,40 +1,60 @@
 ---
-title: "Aliases"
+title: Aliases
 weight: 30
 ---
 
-An alias defines a local macro.
+**Aliases** provide a way to access a value via a different name.
+They assign this value to an identifier using an equals sign (`=`).
 
-A typical use case is to provide access to a shadowed field.
+An alias is typically used to access a field in an outer scope that has been
+made inaccessible (or *shadowed*) by the same field name existing in an inner
+scope.
+Some of their other uses are also demonstrated in the example below.
 
-Aliases are not members of a struct. They can be referred to only within the
-struct, and they do not appear in the output.
+Aliases are *not* members of a struct.
+They do not appear in output, and can only be referenced within the scope in
+which they are defined.
 
-{{{with code "en" "alias"}}}
-#nofmt(alias.cue) https://github.com/cue-lang/cue/issues/722
+{{{with code "en" "tour"}}}
+exec cue export file.cue
+cmp stdout out
+-- file.cue --
+resultA: A
+// Alias A provides access to a top-level field
+// with a name that is not a valid identifier.
+A="a top level field": 1
 
-exec cue eval alias.cue
-cmp stdout result.txt
--- alias.cue --
-let A = a // A is an alias for a
-a: {
-	d: 3
-}
-b: {
-	a: {
-		// A provides access to the outer
-		// "a" which would otherwise be
-		// hidden by the inner one.
-		c: A.d
+resultB: B
+// Alias B provides access to a dynamic field.
+#b:     "a dynamic field"
+B=(#b): 2
+
+// Alias C provides access to a shadowed field.
+shadowed: C={
+	field: value: 3
+	c: {
+		// This "field" shadows the
+		// higher-level "field".
+		field: C.field.value
 	}
 }
--- result.txt --
-a: {
-    d: 3
-}
-b: {
-    a: {
-        c: 3
+-- out --
+{
+    "resultA": 1,
+    "a top level field": 1,
+    "resultB": 2,
+    "a dynamic field": 2,
+    "shadowed": {
+        "field": {
+            "value": 3
+        },
+        "c": {
+            "field": 3
+        }
     }
 }
 {{{end}}}
+
+The CUE language specification defines
+[the full list of positions]({{< relref "docs/reference/spec#aliases" >}})
+where an alias can be declared.

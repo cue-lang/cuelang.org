@@ -1,35 +1,40 @@
 ---
-title: "References and Scopes"
+title: References and Scopes
 weight: 10
 ---
 
-A reference refers to the value of the field defined within the nearest
-enclosing scope.
+A **reference** refers to the value of the field defined within the nearest
+enclosing **scope**.
 
-If no field matches the reference within the file, it may match a top-level
-field defined in any other file of the same package.
+If a reference doesn't match a field within the same file,
+then it may match a top-level field defined in any other file making up the
+same CUE package.
 
-If there is still no match, it may match a predefined value.
+If there is still no match then it may match a predefined value, such as a
+[predefined bound]({{< relref "docs/tour/types/bounddef" >}}).
 
-{{{with code "en" "scopes"}}}
-exec cue eval scopes.cue
-cmp stdout result.txt
--- scopes.cue --
-v: 1
-a: {
-	v: 2
-	b: v // matches the inner v
+{{{with code "en" "tour"}}}
+exec cue eval file.cue
+cmp stdout out
+-- file.cue --
+val: 1
+
+A: {
+	val: 2
+	B:   val // Matches the inner val
 }
-a: {
-	c: v // matches the top-level v
+
+A: {
+	C: val // Matches the top-level val
 }
-b: v
--- result.txt --
-v: 1
-a: {
-    v: 2
-    c: 1
-    b: 2
+
+B: val // Matches the top-level val
+-- out --
+val: 1
+A: {
+    val: 2
+    C:   1
+    B:   2
 }
-b: 1
+B: 1
 {{{end}}}
