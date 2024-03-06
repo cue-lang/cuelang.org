@@ -3,33 +3,36 @@ title: "Regular expressions"
 weight: 70
 ---
 
-The `=~` and `!~` operators can be used to check against regular expressions.
+The `=~` and `!~` operators check values against **regular expressions**.
 
-The expression `a =~ b` is true if `a` matches `b`, while
-`a !~ b` is true if `a` does _not_ match `b`.
+{{< table >}}
+| Expression | is true ... |
+| ---:|:--- |
+| **`a =~ b`** | ... if **`a`** matches the regular expression **`b`** |
+| **`a !~ b`** | ... if **`a`** does *not* match the regular expression **`b`** |
+{{< /table >}}
 
-Just as with comparison operators, these operators may be used
-as unary versions to define a set of strings.
+Just like comparison operators (such as `<` and `>=`) can be used to define
+[bounds]({{< relref "docs/tour/types/bounds" >}}),
+these operators may also be used as unary versions to define a set of strings.
 
 {{< code-tabs >}}
 {{< code-tab name="regexp.cue" language="cue" area="top-left" >}}
-a: "foo bar" =~ "foo [a-z]{3}"
-b: "maze" !~ "^[a-z]{3}$"
+fooBar:  "foo bar" =~ "^[a-z ]{1,100}$"
+bazQuux: "baz Quux" !~ "[A-Z]"
 
-// any string with lowercase ASCII of length 3
-c: =~"^[a-z]{3}$"
+#lowercaseLength3: =~"^[a-z]{3}$"
+#noNumbers:        !~"[0-9]"
 
-d: c
-d: "foo"
-
-e: c
-e: "foo bar"
+foo:       "foo" & #lowercaseLength3
+BAR:       "BAR!!!" & #lowercaseLength3
+theAnswer: "42" & #noNumbers
 {{< /code-tab >}}
 {{< code-tab name="result.txt" language="txt" area="top-right" >}}
-a: true
-b: true
-c: =~"^[a-z]{3}$"
-d: "foo"
-e: _|_ // e: invalid value "foo bar" (out of bound =~"^[a-z]{3}$")
+fooBar:    true
+bazQuux:   false
+foo:       "foo"
+BAR:       _|_ // BAR: invalid value "BAR!!!" (out of bound =~"^[a-z]{3}$")
+theAnswer: _|_ // theAnswer: invalid value "42" (out of bound !~"[0-9]")
 {{< /code-tab >}}
 {{< /code-tabs >}}
