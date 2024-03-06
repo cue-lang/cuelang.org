@@ -1,27 +1,26 @@
 ---
-title: "Conditional Fields"
-weight: 60
+title: Conditional Fields
+weight: 40
 ---
 
-Field comprehensions can also be used to
-add a single field conditionally.
-
-Converting the resulting configuration to JSON results in an error
-as `justification` is required yet no concrete value is given.
+Field comprehensions can be used to add fields conditionally.
 
 {{< code-tabs >}}
-{{< code-tab name="conditional.cue" language="cue" area="top-left" >}}
-price: number
-
-// Require a justification if price is too high
-if price > 100 {
-	justification: string
-}
-
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
 price: 200
+
+// High prices require a reason and the name of
+// the authorising person.
+if price > 100 {
+	reason!:       string
+	authorisedBy!: string
+}
 {{< /code-tab >}}
-{{< code-tab name="result.txt" language="txt" area="top-right" >}}
-justification: string
-price:         200
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZQ==" >}}
+$ cue export file.cue
+authorisedBy: field is required but not present:
+    ./file.cue:5:1
+reason: field is required but not present:
+    ./file.cue:5:1
 {{< /code-tab >}}
 {{< /code-tabs >}}
