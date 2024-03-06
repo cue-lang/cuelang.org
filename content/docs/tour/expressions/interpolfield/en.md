@@ -1,23 +1,46 @@
 ---
-title: "Interpolation of Field Names"
+title: Dynamic Fields
 weight: 30
 ---
 
-String interpolations may also be used in field names.
+A **dynamic field** is a field whose name, or *label*,
+is determined by an expression wrapped in parentheses: `(a + b)`
 
-One cannot refer to generated fields with references.
+A dynamic field's identifier is not available in the scope in which the field is defined.\
+Referencing dynamic fields needs to be done using
+[selectors, index expressions]({{< relref "docs/tour/references/selectors" >}}),
+and [aliases]({{< relref "docs/tour/references/aliases" >}}).
 
-{{{with code "en" "genfield"}}}
-! exec cue eval genfield.cue
-cmp stderr result.txt
--- genfield.cue --
-sandwich: {
-	type:            "Cheese"
-	"has\(type)":    true
-	hasButter:       true
-	butterAndCheese: hasButter && hasCheese
+{{{with code "en" "tour"}}}
+exec cue eval file.cue
+cmp stdout out
+-- file.cue --
+a:       "foo"
+b:       "bar"
+(a + b): "foobar"
+
+s: X={
+	"\(a)\(b)": "foobar"
+
+	// Valid references using a selector and
+	// an index expression.
+	FooBar: s.foobar
+	FooBar: X["foobar"]
+
+	// Invalid reference because the
+	// indentifer is not in scope.
+	//FooBar: foobar
 }
--- result.txt --
-sandwich.butterAndCheese: reference "hasCheese" not found:
-    ./genfield.cue:5:32
+
+// Valid reference using an index expression.
+FooBar: s["foobar"]
+-- out --
+a: "foo"
+b: "bar"
+s: {
+    foobar: "foobar"
+    FooBar: "foobar"
+}
+foobar: "foobar"
+FooBar: "foobar"
 {{{end}}}

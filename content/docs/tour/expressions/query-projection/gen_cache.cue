@@ -4,11 +4,11 @@ package site
 		docs: {
 			tour: {
 				expressions: {
-					regexp: {
+					"query-projection": {
 						page: {
 							cache: {
 								code: {
-									tour: "15SkzfF/dheC3hOaYdhx5EygjDDWtNwB8x9tm7qLYR8="
+									tour: "sok/7U871jPYlKKy4MtQYrRrVKnqqW2ZCNmM0vMN4Go="
 								}
 							}
 						}
