@@ -54,6 +54,7 @@ cue: {
 	injection:      _
 	inputs:         _
 	mod:            _
+	"mod get":      _
 	"mod init":     _
 	"mod publish":  _
 	"mod tidy":     _
