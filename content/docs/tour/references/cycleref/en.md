@@ -1,29 +1,42 @@
 ---
-title: "Cycles in Fields"
+title: Cycles in Fields
 weight: 60
 ---
 
-Also, we know that unifying a field with itself will result in the same value.
-Thus if we have a cycle between some fields, all we need to do is ignore
-the cycle and unify their values once to achieve the same result as
-merging them ad infinitum.
+Logically, we know that unifying any field with itself will result in an
+identical value. Unifying `"foo"` with `"foo"` *must* equal `"foo"`; unifying
+the non-concrete value `int` with `int` must, similarly, result in `int`.
 
-{{{with code "en" "cycle"}}}
-exec cue eval cycleref.cue
-cmp stdout result.txt
--- cycleref.cue --
-labels: selectors
-labels: {app: "foo"}
+CUE takes advantage of this property to resolve **cycles between fields** by
+simply ignoring the cycle and then unifying the fields a single time.
+This achieves the same result as attempting to follow the reference cycle ad
+infinitum.
 
-selectors: labels
-selectors: {name: "bar"}
-- -result.txt
+{{{with code "en" "tour"}}}
+exec cue eval file.cue
+cmp stdout out
+-- file.cue --
 labels: {
-	app:  "foo"
-	name: "bar"
+	app:   "foo"
+	owner: string
 }
 selectors: {
-	name: "bar"
-	app:  "foo"
+	name:  "bar"
+	owner: =~"^bar-"
+}
+
+// This cycle can be resolved.
+labels:    selectors
+selectors: labels
+-- out --
+labels: {
+    app:   "foo"
+    name:  "bar"
+    owner: =~"^bar-"
+}
+selectors: {
+    name:  "bar"
+    app:   "foo"
+    owner: =~"^bar-"
 }
 {{{end}}}
