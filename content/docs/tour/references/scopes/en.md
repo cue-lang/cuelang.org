@@ -1,35 +1,62 @@
 ---
-title: "References and Scopes"
+title: References and Scopes
 weight: 10
 ---
 
-A reference refers to the value of the field defined within the nearest
-enclosing scope.
+A **reference** refers to the value of the field defined within the nearest
+enclosing **scope**.
 
-If no field matches the reference within the file, it may match a top-level
-field defined in any other file of the same package.
+If a reference doesn't match a field within the same file,
+then it may match a top-level field defined in any other file making up the
+same CUE package.
 
-If there is still no match, it may match a predefined value.
+If there is still no match then it may match a predefined value, such as a
+[predefined bound]({{< relref "docs/tour/types/bounddef" >}}).
 
-{{{with code "en" "scopes"}}}
-exec cue eval scopes.cue
-cmp stdout result.txt
--- scopes.cue --
-v: 1
-a: {
-	v: 2
-	b: v // matches the inner v
+{{{with code "en" "tour"}}}
+exec cue eval file.cue
+cmp stdout out
+-- file.cue --
+v: "top level"
+X: {
+	v: "inside X"
+	B: v // matches X.v
+	C: {
+		D: v // matches X.v
+		E: {
+			v: "inside X.C.E"
+			F: {
+				G: v // matches X.C.E.v
+			}
+		}
+	}
 }
-a: {
-	c: v // matches the top-level v
+Y: {
+	B: v // matches the top-level v
+
+	// C's dot notation, explicitly referencing
+	// X.C.E.v, is explained on the next page.
+	C: X.C.E.v
 }
-b: v
--- result.txt --
-v: 1
-a: {
-    v: 2
-    c: 1
-    b: 2
+Z: v // matches the top-level v
+-- out --
+v: "top level"
+X: {
+    v: "inside X"
+    B: "inside X"
+    C: {
+        D: "inside X"
+        E: {
+            v: "inside X.C.E"
+            F: {
+                G: "inside X.C.E"
+            }
+        }
+    }
 }
-b: 1
+Y: {
+    B: "top level"
+    C: "inside X.C.E"
+}
+Z: "top level"
 {{{end}}}
