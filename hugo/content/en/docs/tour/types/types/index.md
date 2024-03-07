@@ -5,11 +5,35 @@ weight: 1
 
 CUE defines the following type hierarchy
 
-```txt
-  null  bool  string  bytes  number  struct  list
-                             /   \
-                           int  float
-```
+{{< mermaid >}}
+flowchart TD
+    t["_"]
+    b["_|_"]
+
+    t --> null
+    null --> b
+
+    t --> bool
+    bool --> b
+
+    t --> string
+    string --> b
+
+    t --> bytes
+    bytes --> b
+
+    t --> number
+    number --> int
+    number --> float
+    int --> b
+    float --> b
+
+    t --> struct
+    struct --> b
+
+    t --> list
+    list --> b
+{{< /mermaid >}}
 
 In addition, CUE defines the values
 bottom, or error, (denoted `_|_`)
