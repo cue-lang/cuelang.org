@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8df2480b_4c3431cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4831fb39_e3d02389",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "334d6586_3e872986",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f100319_83cb588c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "334d6586_3e872986",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ae47b70_e1f77e9c",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-03-07T05:26:21Z",
       "side": 1,
       "message": "What is it changed to? There is a non-trivial amount of work to discover what the change is. Please surface that in the commit message to make it easier on the reviewer.",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a442bee_e6b9e7e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ae47b70_e1f77e9c",
       "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +129,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ff677a2_0fee5115",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f2897b1_ecbb4632",
+      "range": {
+        "startLine": 18,
+        "startChar": 21,
+        "endLine": 18,
+        "endChar": 56
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8438b39e_82335716",
@@ -88,6 +166,30 @@
       "writtenOn": "2024-03-07T05:26:21Z",
       "side": 1,
       "message": "Simple language: \"by default\".",
+      "range": {
+        "startLine": 6,
+        "startChar": 52,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8056826_d4cd6c6c",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8438b39e_82335716",
       "range": {
         "startLine": 6,
         "startChar": 52,
@@ -144,6 +246,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a1c7289_086db56a",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "This comment and your previous are asking and answering the same question :-) I intended \"By default\" to indicate that other constraints could prevent fields from being defined, but that wasn\u0027t an artifact of the openness property.\n\nI\u0027ve changed it to\n\n```\nAn open struct can have any field defined as a member, unless otherwise constrained\n```\n\n... which I believe addresses both these comments.",
+      "parentUuid": "78453554_d1761fa9",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6bb9a5d_a509545b",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "As per next comment.",
+      "parentUuid": "756a7f28_ba176364",
+      "range": {
+        "startLine": 9,
+        "startChar": 31,
+        "endLine": 9,
+        "endChar": 66
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b43efe81_4fffbc9c",
@@ -157,6 +307,24 @@
       "writtenOn": "2024-03-07T05:26:21Z",
       "side": 1,
       "message": "I think we can make this clearer. Perhaps using the word \"limit\" to refer to the constraints placed on the _other_ struct.",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1831316e_00a62481",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:06:22Z",
+      "side": 1,
+      "message": "Done. I couldn\u0027t make the word \"limit\" work, but I think I\u0027ve made it clearer.",
+      "parentUuid": "b43efe81_4fffbc9c",
       "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
