@@ -50,6 +50,80 @@
       "message": "This is the first time in this part of the tour that you mention \"concrete\". See my comment above about \"placeholder\".",
       "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "178a9889_5bea5d87",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T08:00:52Z",
+      "side": 1,
+      "message": "I\u0027d like to discuss a bit more where this page fits in.",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ff93ed8_4734ba00",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T08:00:52Z",
+      "side": 1,
+      "message": "This sentence contains the word \"contain\" twice.",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b6eabe8_6e57455c",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T08:00:52Z",
+      "side": 1,
+      "message": "This is unnecessarily complex language: we should opt for plain language that echoes earlier mentions of a field being either optional or required. We do not (unless I missed it) refer to \"field optionality or requirement\"?",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "285b2e4f_ad956a69",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T08:00:52Z",
+      "side": 1,
+      "message": "Per my other review, I\u0027m not sure about introducing this word. It\u0027s rather vague as to what it actually means: constraints aren\u0027t opinions 😊",
+      "range": {
+        "startLine": 11,
+        "startChar": 46,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
