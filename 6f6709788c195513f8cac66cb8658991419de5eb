@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "973fb6af_1022aea3",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T07:55:47Z",
+      "side": 1,
+      "message": "The explanation around top here feels a bit unnecessarily wordy. \"Unopinionated\" also doesn\u0027t (unless I\u0027m missing it) resonate with language elsewhere in the tour.\n\nHow about describing top as a \"placeholder\" for any value? This then allows you to move on to describing that top is not a value that can be exported etc. \n\nNoting that top is previously described on the \"Types\" page of the tour. I think we need to be clear what this page is doing above and beyond that and keep it to the point.\n\nI\u0027ve proposed updating the type hierarchy there to make things cleaner:\n\nhttps://review.gerrithub.io/c/cue-lang/cuelang.org/+/1177841",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08ef846d_1e1cf353",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T07:55:47Z",
+      "side": 1,
+      "message": "Have we used the word \"constrain\" or \"constraint\" by this point in the tour?",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2860e2b2_d1b9b310",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T07:55:47Z",
+      "side": 1,
+      "message": "This is the first time in this part of the tour that you mention \"concrete\". See my comment above about \"placeholder\".",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
