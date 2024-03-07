@@ -16,6 +16,24 @@
       "message": "Per an earlier review comment, I think it\u0027s much easier to see a commit message that simply shows the before and after state.",
       "revId": "8b8628f0fa733b30f8f465eaa6ea98392c803ed4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15dce0b5_9f1389ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b3693fb_f8978bd2",
+      "revId": "8b8628f0fa733b30f8f465eaa6ea98392c803ed4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
