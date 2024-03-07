@@ -16,6 +16,24 @@
       "message": "Needs to be fixed.\n\nPlease also reference https://github.com/cue-lang/cue/issues/2889 so we can avoid the weight being \"buried\" in the markdown.",
       "revId": "21fab1fb62b8172c825ddc0bf3f15b7397907440",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ade848a_854f6a00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-07T11:28:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ba736d1_caf779ba",
+      "revId": "21fab1fb62b8172c825ddc0bf3f15b7397907440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
