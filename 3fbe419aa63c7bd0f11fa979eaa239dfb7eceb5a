@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8b56275_0e4932c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "These are a tricky couple of pages to get right so would appreciate refining things a bit here.",
+      "revId": "3fbe419aa63c7bd0f11fa979eaa239dfb7eceb5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3b692e5_c604726e",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "I find it a bit odd that we \"start\" with \"a field may be optional\" without really having explained what a regular field is. That\u0027s the baseline to my mind. Because in this situation we\u0027re almost certainly talking about a struct more as a container in a data sense than otherwise.\n\nSee also the next comment.",
+      "revId": "3fbe419aa63c7bd0f11fa979eaa239dfb7eceb5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71cd2e10_14987374",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "Here you vary from the original language that uses \"specified\" throughout, and that original and consistent use of \"specified\" is intentional: https://alpha.cuelang.org/docs/tour/types/optional/",
+      "revId": "3fbe419aa63c7bd0f11fa979eaa239dfb7eceb5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fab9b873_2a639506",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "Required fields get mentioned \"in passing\" here, whereas \"optional\" fields had a paragraph of their own, and per my first comment I think we missed out on clarifying how a regular field is declared in the first place.",
+      "revId": "3fbe419aa63c7bd0f11fa979eaa239dfb7eceb5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7c2c947_5af6bdf0",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "I find this somewhat awkward language: \"cannot be specified\" would be plainer. But is there something better? It feels like \"specified\" is doing a lot of work... work that we don\u0027t really explain.",
+      "range": {
+        "startLine": 23,
+        "startChar": 3,
+        "endLine": 23,
+        "endChar": 25
+      },
+      "revId": "3fbe419aa63c7bd0f11fa979eaa239dfb7eceb5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4831fb39_e3d02389",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "This one-liner references three pages but the comment below only talks about two pages.",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "334d6586_3e872986",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "This change also appears to alter the example away from using a definition without that being called out here. \n\nhttps://cl-1177590-2--cue-cls.netlify.app/docs/tour/types/structs/\n\nvs\n\nhttps://alpha.cuelang.org/docs/tour/types/optional/\n\n(the latter as of d4f828def30785183f20e89f661717a2ac246604)\n\nWhy is this change necessary? \n\nPlease motivate it in the commit message if you think it needs to be made.",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ae47b70_e1f77e9c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "What is it changed to? There is a non-trivial amount of work to discover what the change is. Please surface that in the commit message to make it easier on the reviewer.",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f2897b1_ecbb4632",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "There references to \"third\", \"one\" etc have me lost at this point. I think it would be far simpler to show how the paths have changed.",
+      "range": {
+        "startLine": 18,
+        "startChar": 21,
+        "endLine": 18,
+        "endChar": 56
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8438b39e_82335716",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "Simple language: \"by default\".",
+      "range": {
+        "startLine": 6,
+        "startChar": 52,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "756a7f28_ba176364",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "Rather pedantic, but this isn\u0027t actually the case because if an open struct is unified with another struct which has an optional field defined as `_|_` then it by definition cannot have any field as a member.",
+      "range": {
+        "startLine": 9,
+        "startChar": 31,
+        "endLine": 9,
+        "endChar": 66
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78453554_d1761fa9",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "What does \"by default\" mean here? You\u0027re simply defining what it means to be open, no?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b43efe81_4fffbc9c",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-07T05:26:21Z",
+      "side": 1,
+      "message": "I think we can make this clearer. Perhaps using the word \"limit\" to refer to the constraints placed on the _other_ struct.",
+      "revId": "a8752c9be5b7dd68715f4ebe6345494cf4624949",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
