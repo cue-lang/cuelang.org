@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6a841f6_34944b50",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T14:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "973fb6af_1022aea3",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "08ef846d_1e1cf353",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "976bd990_5a367081",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T14:09:54Z",
+      "side": 1,
+      "message": "Yes, we /will/ have used it, in the version of the type hierarchy I propose in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1177673.",
+      "parentUuid": "08ef846d_1e1cf353",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2860e2b2_d1b9b310",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-03-07T07:55:47Z",
       "side": 1,
       "message": "This is the first time in this part of the tour that you mention \"concrete\". See my comment above about \"placeholder\".",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b270469_14b01c8e",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T14:09:54Z",
+      "side": 1,
+      "message": "It\u0027s also mentioned in the type hierarchy page update in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1177673.",
+      "parentUuid": "2860e2b2_d1b9b310",
       "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -71,6 +125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c9ee9e90_57c16914",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T14:09:54Z",
+      "side": 1,
+      "message": "I created this page to receive an inbound link that went to /docs/language-guide/schemas-and-validation/value-constraints/ before the LG was hidden.\n\nBut I agree - I see the need for a page about Top, but this does feel a bit out of place in the current Tour.\n\nPerhaps the concept guides proposed in https://github.com/cue-lang/docs-and-content/issues/86 (unification) and https://github.com/cue-lang/docs-and-content/issues/90 (constraints) would suffice?\n\nIn anticipation of this, I\u0027ve marked this guide as a draft in the current patchset, allowing it to be revived as\u0026when\u0026if needed.",
+      "parentUuid": "178a9889_5bea5d87",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0ff93ed8_4734ba00",
         "filename": "content/docs/tour/types/value-constraints/en.md",
         "patchSetId": 15
@@ -82,6 +154,24 @@
       "writtenOn": "2024-03-07T08:00:52Z",
       "side": 1,
       "message": "This sentence contains the word \"contain\" twice.",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88513f94_82df0746",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T14:09:54Z",
+      "side": 1,
+      "message": "Reworded.",
+      "parentUuid": "0ff93ed8_4734ba00",
       "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -103,6 +193,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5167d9ec_126086bf",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T14:09:54Z",
+      "side": 1,
+      "message": "Reworded.",
+      "parentUuid": "6b6eabe8_6e57455c",
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "285b2e4f_ad956a69",
@@ -116,6 +224,30 @@
       "writtenOn": "2024-03-07T08:00:52Z",
       "side": 1,
       "message": "Per my other review, I\u0027m not sure about introducing this word. It\u0027s rather vague as to what it actually means: constraints aren\u0027t opinions 😊",
+      "range": {
+        "startLine": 11,
+        "startChar": 46,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "6f6709788c195513f8cac66cb8658991419de5eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22029662_78be18ad",
+        "filename": "content/docs/tour/types/value-constraints/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T14:09:54Z",
+      "side": 1,
+      "message": "Reworded.",
+      "parentUuid": "285b2e4f_ad956a69",
       "range": {
         "startLine": 11,
         "startChar": 46,
