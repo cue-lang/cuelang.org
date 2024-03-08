@@ -4,11 +4,11 @@ package site
 		docs: {
 			tour: {
 				packages: {
-					imports: {
+					identifiers: {
 						page: {
 							cache: {
 								code: {
-									tour: "snuamyHpH5pyDxP3AjkBHpurO/KggrjGBXhBqsHL71U="
+									tour: "/u9FPeMJVjBL2/WgmU5JZkcwpEKB9RXfxnyG/DCKnVc="
 								}
 							}
 						}
