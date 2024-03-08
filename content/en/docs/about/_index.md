@@ -227,7 +227,7 @@ Such requirements can be specified across files.
 This approach not only reduces the boilerplate contained in `acmeMonitoring`
 but also removes the repetitiveness of having to specify
 this template for each job in `jobs`.
-At the same time, this statement act as a type enforcement.
+At the same time, this statement acts as a type enforcement.
 This dual function is a key aspect of CUE and
 typed feature structure languages in general.
 
