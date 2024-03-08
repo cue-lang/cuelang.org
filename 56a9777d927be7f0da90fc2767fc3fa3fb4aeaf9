@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1185606_33d4a713",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T16:01:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e672fae_cd3eeb6e",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8a1cf583_4e7c9eb1",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-03-02T18:58:22Z",
       "side": 1,
       "message": "Is this phrasing correct?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "389ce515_d51fb6c8",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T16:01:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a1cf583_4e7c9eb1",
       "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +156,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f13d8af0_8c8fa222",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T16:01:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36086069_43613a15",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27e0a335_a73403ef",
@@ -133,6 +187,24 @@
       "writtenOn": "2024-03-02T18:58:22Z",
       "side": 1,
       "message": "Given that this is the very first `code` block in the tour, let\u0027s add a line introducing it and setting the expectation that there\u0027s a left/right code/command pair.",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d324631d_ea168c52",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T16:01:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27e0a335_a73403ef",
       "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -154,6 +226,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bddc73d_bf498640",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T16:01:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb645198_51b93c6e",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9f89a29_97ebcd0c",
@@ -167,6 +257,24 @@
       "writtenOn": "2024-03-02T18:58:22Z",
       "side": 1,
       "message": "We\u0027ve never used the term \"instances\" before this point in the tour. Should we define or use it in a more explanatory setting before now?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f82526b_3ec0e120",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T16:01:54Z",
+      "side": 1,
+      "message": "Not a problem, here. We\u0027re using it somewhat informally, and its meaning should be intuitable to the casual reader. We don\u0027t need to link this usage to the formal CUE spec\u0027s use of the term, yet.",
+      "parentUuid": "f9f89a29_97ebcd0c",
       "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
