@@ -1,36 +1,42 @@
 ---
-title: "Imports"
+title: Imports
 weight: 20
 ---
 
-A CUE file may import definitions from builtin or user-defined packages.
-A CUE file does not need to be part of a package to use imports.
+A CUE file may **import** definitions from CUE's built-in packages and
+user-defined packages.
 
-The example here shows the use of builtin packages.
+The packages required by a file are declared in an `import` statement at the
+top of the file, after any package clause.
+A file does not need to be part of a package to use imports.
+Multiple import statements are permitted,
+but it's good style to use
+a *factored* import statement that combines them using parentheses.
 
-This code groups the imports into a parenthesized, "factored" import statement.
+An import statement can optionally define a **named import**,
+which specifies the identifer that *must* be used when
+referencing the imported package inside the file.
+Named imports can help avoid variable shadowing.
 
-You can also write multiple import statements, like:
-
-{{{with code "en" "example"}}}
+{{{with code "en" "tour"}}}
+exec cue export
+cmp stdout out
 -- file.cue --
-import "encoding/json"
+package example
 
-import "math"
-{{{end}}}
-
-But it is good style to use the factored import statement.
-
-{{{with code "en" "imports"}}}
-exec cue eval imports.cue
-cmp stdout result.txt
--- imports.cue --
 import (
-	"encoding/json"
 	"math"
+	L "list" // The identifier L must be used.
 )
 
-data: json.Marshal({a: math.Sqrt(7)})
--- result.txt --
-data: "{\"a\":2.6457513110645907}"
+list: L.Sort([3, 2, 1, math.Pi], L.Ascending)
+-- out --
+{
+    "list": [
+        1,
+        2,
+        3,
+        3.14159265358979323846264338327950288419716939937510582097494459
+    ]
+}
 {{{end}}}
