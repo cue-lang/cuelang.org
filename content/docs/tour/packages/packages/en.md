@@ -1,33 +1,43 @@
 ---
-title: "Packages"
+title: Packages
 weight: 10
 ---
 
-A CUE file is a standalone file by default.
-A `package` clause allows a single configuration to be split across multiple
-files.
+By default, each CUE file is a standalone file.
 
-The configuration for a package is defined by the concatenation of all its
-files, after stripping the package clauses and not considering imports.
+The **`package`** clause allows a single configuration to be split across
+multiple files.
 
-Duplicate definitions are treated analogously to duplicate definitions within
+The configuration for any package is defined by the concatenation of all its
+files, after stripping their package clauses and merging their import
+statements.
+Duplicate definitions are treated similarly to duplicate definitions within
 the same file.
-The order in which files are loaded is undefined, but any order will result
-in the same outcome, given that order does not matter.
+Because of CUE's
+[order irrelevance]({{< relref "docs/tour/basics/order-irrelevance" >}}),
+the order in which files are loaded is unimportant because all orderings result
+in the same outcome.
 
-{{{with code "en" "package"}}}
-exec cue eval a.cue b.cue
-cmp stdout result.txt
--- a.cue --
+The `cue` tool can process lists of CUE files and package identifiers.
+It permits a special form of "rooted path" package identifier that starts with
+a period (`.`),
+and begins looking for a package's files in the current directory.
+This form and others are detailed by the
+[`cue inputs`]({{< relref "docs/reference/cli/cue-inputs" >}}) reference.
+
+{{{with code "en" "tour"}}}
+exec cue eval .:config
+cmp stdout out
+-- schema.cue --
 package config
 
-foo: 100
-bar: int
--- b.cue --
+foo:  bar - 100
+bar!: int
+-- data.cue --
 package config
 
 bar: 200
--- result.txt --
+-- out --
 foo: 100
 bar: 200
 {{{end}}}
