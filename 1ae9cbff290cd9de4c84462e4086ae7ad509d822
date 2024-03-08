@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c77a6818_1c254ffc",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T22:20:21Z",
+      "side": 1,
+      "message": "`s/be used to//`",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5215de01_12905c82",
+        "filename": "content/docs/tour/expressions/conditional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T22:20:21Z",
+      "side": 1,
+      "message": "This doesn\u0027t feel simple enough. Do the error messages still look ok if there\u0027s only 1 top-level field (e.g. `aSale`) and not a separate definition?",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21359b9b_a0c9b222",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T22:20:21Z",
+      "side": 1,
+      "message": "Simpler language. Shorter sentences.",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9621272_a8df4f91",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T22:20:21Z",
+      "side": 1,
+      "message": "Show these 2 `for` loops combined onto 1 line.",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8db6ea47_f89f2b82",
+        "filename": "content/docs/tour/expressions/regexp/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-08T22:20:21Z",
+      "side": 1,
+      "message": "`s/these/regular expression/`",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 5
+      },
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
