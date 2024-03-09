@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bdb33e5_41115891",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "Quite understandably, you followed the naming suggestion in cue-lang/docs-and-content#97, but for commit messages we tend to err on the side of shorter prefixes. For howto guides, that /generally/ means we go with something like\n\n    docs/howto: ensure an int is odd or even\n    \n... so that it reads naturally. This often aligns closely with the actual URL path the page inhabits, but doesn\u0027t need to match 100%.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7578bd0d_9ffdcea4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "We include a more detailed description of the change in the message body, including:\n\n- any info a reviewer might need to know\n- the issue this addresses (stylised as `(For|Closes) cue-lang/REPO#NUMBER`, so it auto-links)\n\nIn the trailers, we include\n\n    Preview-Path: /url/path\n    \n... for any pages that need review, so that the CI bot can post links directly to the relevant previews.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb1afa48_99b3d234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "Hi Noam - thank you very much for getting everything going locally and mailing us this CL!\n\nThis guide is *absolutely* going in the right direction - nice one :-)\n\nI\u0027ve written some review notes for you. I\u0027ve been *highly* picky - but not because there\u0027s anything particularly egregious in your change, but because I\u0027m very conscious that *we\u0027ve* not yet written a style guide or similar for the site. My points reflect /our/ shortcomings, not yours!\n\nPlease do have a read of my notes, and I\u0027d love to hear about how you found the process of starting to write docs with the preprocessor.\n\nThanks again!\nJonathan",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "830f18c5_7091b03d",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "To render your on-page author credit, you\u0027ll need to include your GitHub username as a new author page, as per https://alpha.cuelang.org/examples/basic/authors/.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddb39f50_c3180ad7",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "\"Validate\" feels like 5% the wrong word, here. We validate schemas, YAML files, and constraints - here I /think/ we\u0027re \"ensuring\" this fact.\n\nAlso, given that not every value permitted by CUE\u0027s `number` type would work with this guide\u0027s technique, we should probably be more precise about the type wording.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8df3b7dc_d3efc17d",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "These code block names are unimportant, but every Commented CUE thus far has the name `cc` :-)",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8ffd9da_e4353b01",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "If we use `cue eval -ic`, then the definitions won\u0027t appear in the output stanza.\n\nAlso, we\u0027ve generally omitted the filename, as it looks neater.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1583d07_b309bee9",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "Whilst you transplanted the issue\u0027s txtar precisely, I generally feel that CUE definitions look best capitalised so that they can be rendered as\n\n    #Foo: ...\n    aFoo: #Foo",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf3c0eb9_24827d11",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "The spacing difference between `#odd` and `#even` irks me. I suspect this is one of those places where `cue fmt` will happily normalise away /some/ spaces, but not others, and won\u0027t add the same spaces back in.\n\nWhichever spacing version looks best to you, please harmonise both definitions on it.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b966adbe_a540810a",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "I don\u0027t think the original issue\u0027s choice of field names, values, and ordering was great. What version of the output fields do you find works better?",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f1f0e3e_7d2a1b51",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T18:09:13Z",
+      "side": 1,
+      "message": "I think we want a \"related content\" section.\n\nSee other pages for how we stylise them. \n\nhttps://alpha.cuelang.org/examples/shortcodes/linkto/ was built to populate this section with consistently-formatted links, and https://alpha.cuelang.org/docs/howto/use-the-built-in-functions-div-mod-quo-rem/ feels like a good link target.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
