@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d7ef9fa0_6d004296",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-09T08:45:25Z",
+      "side": 1,
+      "message": "`s/allow CUE to proceed in the face of/can allow your CUE to evaluate successfully despite/`",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c77a6818_1c254ffc",
         "filename": "content/docs/tour/expressions/coalesce/en.md",
         "patchSetId": 14
