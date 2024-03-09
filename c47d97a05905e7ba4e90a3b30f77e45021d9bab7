@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d17d3b84_c242ecf0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "1bdb33e5_41115891",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7578bd0d_9ffdcea4",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-03-09T18:09:13Z",
       "side": 1,
       "message": "We include a more detailed description of the change in the message body, including:\n\n- any info a reviewer might need to know\n- the issue this addresses (stylised as `(For|Closes) cue-lang/REPO#NUMBER`, so it auto-links)\n\nIn the trailers, we include\n\n    Preview-Path: /url/path\n    \n... for any pages that need review, so that the CI bot can post links directly to the relevant previews.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f437e1c0_1efe9c60",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7578bd0d_9ffdcea4",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e907335b_769b031f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Thank you for your review!\nI\u0027ve made changes as requested, and asked a couple questions for clarification.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "830f18c5_7091b03d",
@@ -65,6 +118,24 @@
       "writtenOn": "2024-03-09T18:09:13Z",
       "side": 1,
       "message": "To render your on-page author credit, you\u0027ll need to include your GitHub username as a new author page, as per https://alpha.cuelang.org/examples/basic/authors/.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3210a4e_a98d0400",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "830f18c5_7091b03d",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +157,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed20c2fa_00a314da",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ddb39f50_c3180ad7",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8df3b7dc_d3efc17d",
@@ -99,6 +188,24 @@
       "writtenOn": "2024-03-09T18:09:13Z",
       "side": 1,
       "message": "These code block names are unimportant, but every Commented CUE thus far has the name `cc` :-)",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f4c7890_ebffde8b",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8df3b7dc_d3efc17d",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +227,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbe41c37_2b6c420a",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c8ffd9da_e4353b01",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1583d07_b309bee9",
@@ -133,6 +258,24 @@
       "writtenOn": "2024-03-09T18:09:13Z",
       "side": 1,
       "message": "Whilst you transplanted the issue\u0027s txtar precisely, I generally feel that CUE definitions look best capitalised so that they can be rendered as\n\n    #Foo: ...\n    aFoo: #Foo",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb455a75_541f5a14",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a1583d07_b309bee9",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -154,6 +297,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bbebe52_cc481c0a",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "makes sense - I see that running `_scripts/serve.bash` causes the cue section to be auto-formatted. Does this mean that future editors of this file will need to avoid checking in these auto-formatted lines? (since the manually-modified spaces are reverted when the script identifies the changed file)",
+      "parentUuid": "cf3c0eb9_24827d11",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b966adbe_a540810a",
@@ -171,6 +332,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bc31f93_a1a78ac4",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "At my work we use meaningful names for fields to explain what we expect to happen - for example isEven, notEven, isOdd, notOdd, etc\nWould that make sense here? or is that too verbose?",
+      "parentUuid": "b966adbe_a540810a",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f1f0e3e_7d2a1b51",
@@ -184,6 +363,24 @@
       "writtenOn": "2024-03-09T18:09:13Z",
       "side": 1,
       "message": "I think we want a \"related content\" section.\n\nSee other pages for how we stylise them. \n\nhttps://alpha.cuelang.org/examples/shortcodes/linkto/ was built to populate this section with consistently-formatted links, and https://alpha.cuelang.org/docs/howto/use-the-built-in-functions-div-mod-quo-rem/ feels like a good link target.",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c018b2fd_89c1e7a9",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-09T19:39:26Z",
+      "side": 1,
+      "message": "Agreed, I was looking for a good reference for the div built-in but missed this 😊\n\nI was wondering if it would also be relevant to provide a reference for embedding / aliases, since the syntax here might be a bit tricky for some - wdyt?",
+      "parentUuid": "6f1f0e3e_7d2a1b51",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
