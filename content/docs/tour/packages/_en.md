@@ -1,9 +1,9 @@
 ---
-title: "Packages and Imports"
+title: Packages and Imports
 weight: 50
+no_index: true
+index_hide: true
 ---
 
-This section of the tour demonstrates the basics of how CUE's packages and
-imports work.
-
-## Contents
+This page should never be seen by a user, as Netlify will redirect their
+browser to the first page of this section.

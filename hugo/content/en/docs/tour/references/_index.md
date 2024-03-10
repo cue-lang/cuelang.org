@@ -1,9 +1,9 @@
 ---
-title: "References and Visibility"
+title: References and Visibility
 weight: 30
+no_index: true
+index_hide: true
 ---
 
-This section of the tour demonstrates CUE's references, which allow you to
-[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) up your data.
-
-## Contents
+This page should never be seen by a user, as Netlify will redirect their
+browser to the first page of this section.
