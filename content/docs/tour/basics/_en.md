@@ -1,9 +1,9 @@
 ---
-title: "The Basics of CUE"
+title: The Basics of CUE
 weight: 10
+no_index: true
+index_hide: true
 ---
 
-This section of the tour demonstrates the simplest ideas and syntax you'll use
-when reading and writing CUE.
-
-## Contents
+This page should never be seen by a user, as Netlify will redirect their
+browser to the first page of this section.

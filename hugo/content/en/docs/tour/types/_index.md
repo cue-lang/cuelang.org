@@ -1,10 +1,9 @@
 ---
-title: "Types and Values"
+title: Types and Values
 weight: 20
+no_index: true
+index_hide: true
 ---
 
-This section of the tour demonstrates the hierarchy of primitive and complex
-types that CUE makes available, along with common methods for constraining and
-combining these types.
-
-## Contents
+This page should never be seen by a user, as Netlify will redirect their
+browser to the first page of this section.
