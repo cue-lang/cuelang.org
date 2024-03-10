@@ -177,6 +177,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6e43f28a_73174e58",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-10T21:47:14Z",
+      "side": 1,
+      "message": "\u003e Also, given that not every value permitted by CUE\u0027s number type would work with this guide\u0027s technique, we should probably be more precise about the type wording.\n\nBy this, I meant that referring to \"a given **number**\" needs to change to \"a given integer\", or similar. \"number\" is too close to suggesting that this guide\u0027s technique works with CUE\u0027s `number` type, which would include `float`s, which don\u0027t work.",
+      "parentUuid": "ed20c2fa_00a314da",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8df3b7dc_d3efc17d",
         "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
         "patchSetId": 1
@@ -317,6 +335,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a62e1e27_d6a8caea",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-10T21:47:14Z",
+      "side": 1,
+      "message": "\u003e I see that running _scripts/serve.bash causes the cue section to be auto-formatted\n\nAbsolutely - that\u0027s one of its useful features!\n\n\u003e Does this mean that future editors of this file will need to avoid checking in these auto-formatted lines?\n\nNo, it means that if the preprocessor changes the file under `content/`, then CI will deliberately fail (unless we mark the code block with a `#nofmt` header, which isn\u0027t appropriate here). The committed version of the file **must** be stable, so it\u0027s the same before and after the preprocessor handles it in CI.\n\nIn short, we don\u0027t leave those \"dev mustn\u0027t forget not to check in XYZ\" choices down to the user, so if the guide\u0027s CUE changes when `cue fmt`\u0027d, then that\u0027s a problem :-)\n\nI\u0027ve just tested, and my suspicion that this was a subtle \"bi-stable\" `cue fmt` situation was incorrect. Given that, I wonder if we should change to this form, which /looks/ superficially harmonised despite not really being formatted the same ...\n\n```\n#Even: num\u003d{2 * (__div(num, 2))}\n#Odd:  num\u003d{1 + 2*(__div(num, 2))}\n```",
+      "parentUuid": "9bbebe52_cc481c0a",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b966adbe_a540810a",
         "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
         "patchSetId": 1
@@ -352,6 +388,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5de2106e_1df26aa4",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-10T21:47:14Z",
+      "side": 1,
+      "message": "That does make sense, but I /think/ we should construct enough different names so we can demonstrate a sparse but representative selection from the 8 cases in\n\n```\n  {Odd,Even} numbers\n* {#Odd,#Even} constraint\n* {positive,negative} numbers\n```\n\nOr, depending on how you feel it looks, all 8 cases.",
+      "parentUuid": "5bc31f93_a1a78ac4",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6f1f0e3e_7d2a1b51",
         "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
         "patchSetId": 1
@@ -381,6 +435,24 @@
       "side": 1,
       "message": "Agreed, I was looking for a good reference for the div built-in but missed this 😊\n\nI was wondering if it would also be relevant to provide a reference for embedding / aliases, since the syntax here might be a bit tricky for some - wdyt?",
       "parentUuid": "6f1f0e3e_7d2a1b51",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "191e015a_7ba26dc8",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-10T21:47:14Z",
+      "side": 1,
+      "message": "I\u0027ll open an issue (or you can, if you feel like it!) tracking the need for a doc that explains the embedded scalar technique we use here.\n\nAlternatively (and I\u0027ll poll @paul@myitcv.io on this), perhaps we should demonstrate this entirely plainly, /without/ the use of a DRY\u0027d up definition, and simply apply the constraint directly to each example field, without using an alias 🤔🤔🤔 ...",
+      "parentUuid": "c018b2fd_89c1e7a9",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
