@@ -9,7 +9,7 @@ toc_hide: true
 
 This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
 demonstrates how to use the built-in functions
-[`list.Avg`](://pkg.go.dev/cuelang.org/go/pkg/list#Avg),
+[`list.Avg`](https://pkg.go.dev/cuelang.org/go/pkg/list#Avg),
 [`list.Max`](https://pkg.go.dev/cuelang.org/go/pkg/list#Max),
 [`list.Min`](https://pkg.go.dev/cuelang.org/go/pkg/list#Min), and
 [`list.Sum`](https://pkg.go.dev/cuelang.org/go/pkg/list#Sum)
