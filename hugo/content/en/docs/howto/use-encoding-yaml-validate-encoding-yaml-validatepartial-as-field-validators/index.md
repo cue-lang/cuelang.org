@@ -84,7 +84,7 @@ These functions validate YAML data *that is encoded in a string*.
 To validate data stored in a separate `.yaml` file, use CUE's native and
 simpler unification instead.\
 This is documented in
-[validating YAML with CUE]({{< relref "../validate-yaml-using-cue" >}})
+[validating YAML with CUE]({{< relref "validate-yaml-using-cue" >}})
 {{< /info >}}
 
 ## Related content

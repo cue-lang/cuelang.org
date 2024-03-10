@@ -168,7 +168,7 @@ jobs:
         name: Install Hugo (${{ runner.os }})
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.120.3
+          hugo-version: 0.123.8
           extended: true
       - if: runner.os == 'macOS'
         name: Install Hugo (${{ runner.os }})
