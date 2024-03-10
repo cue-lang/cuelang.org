@@ -86,6 +86,21 @@ config: #config & {
 	}, {
 		from: "/s/community-calendar"
 		to:   "https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
+	}, {
+		from: "/docs/tour/basics/"
+		to:   "/docs/tour/basics/json-superset/"
+	}, {
+		from: "/docs/tour/types/"
+		to:   "/docs/tour/types/types/"
+	}, {
+		from: "/docs/tour/references/"
+		to:   "/docs/tour/references/scopes/"
+	}, {
+		from: "/docs/tour/expressions/"
+		to:   "/docs/tour/expressions/operators/"
+	}, {
+		from: "/docs/tour/packages/"
+		to:   "/docs/tour/packages/packages/"
 	}]
 }
 

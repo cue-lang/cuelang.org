@@ -1,7 +1,6 @@
 ---
 title: "Next: Expressions"
 weight: 1000
+type: redirect
+redirectURL: ../../expressions/
 ---
-
-Continue with the tour's next section:
-[Expressions]({{< relref "docs/tour/expressions" >}}).

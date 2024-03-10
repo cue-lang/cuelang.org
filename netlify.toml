@@ -61,3 +61,33 @@
   to = "https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/docs/tour/basics/"
+  to = "/docs/tour/basics/json-superset/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tour/types/"
+  to = "/docs/tour/types/types/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tour/references/"
+  to = "/docs/tour/references/scopes/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tour/expressions/"
+  to = "/docs/tour/expressions/operators/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tour/packages/"
+  to = "/docs/tour/packages/packages/"
+  status = 302
+  force = true
