@@ -12,7 +12,7 @@ The whitespace directly preceding the closing quote must match the preceding
 whitespace on all other lines and is removed from these lines.
 
 Strings may also contain
-[interpolations]({{< relref "../../expressions/interpolation" >}})).
+[interpolations]({{< relref "../expressions/interpolation" >}})).
 
 
 {{{with code "en" "stringlit"}}}
