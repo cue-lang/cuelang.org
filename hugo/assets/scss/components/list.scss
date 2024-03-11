@@ -51,6 +51,17 @@
                 grid-column: span 2;
             }
         }
+
+        &--14,
+        &--33 {
+            display: grid;
+            gap: $p-gutter--large;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--14 {
+            column-gap: 4rem;
+        }
     }
 
     @include screen($screen-normal) {
@@ -66,6 +77,27 @@
             #{ $self }__item:first-child {
                 grid-column: span 3;
             }
+        }
+
+        &--14 {
+            gap: 4rem;
+            grid-template-columns: repeat(7, 1fr);
+
+            #{ $self }__item {
+                grid-column: span 2;
+                padding: 0;
+
+                &--wide {
+                    &:last-child {
+                        grid-column: span 3;
+                    }
+                }
+            }
+        }
+
+        &--33 {
+            gap: 3rem;
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }
