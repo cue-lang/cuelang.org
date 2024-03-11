@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e69b7f94_dcaa1837",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T12:30:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7ef9fa0_6d004296",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c77a6818_1c254ffc",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-03-08T22:20:21Z",
       "side": 1,
       "message": "`s/be used to//`",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e55d0d2d_e5c21190",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T12:30:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c77a6818_1c254ffc",
       "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6c28288_3d187f3b",
+        "filename": "content/docs/tour/expressions/conditional/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T12:30:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5215de01_12905c82",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21359b9b_a0c9b222",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-03-08T22:20:21Z",
       "side": 1,
       "message": "Simpler language. Shorter sentences.",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8b690e5_e9692473",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T12:30:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21359b9b_a0c9b222",
       "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7fce2cb_e757c2ea",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T12:30:13Z",
+      "side": 1,
+      "message": "It\u0027s better to see 2 loops on 2 lines. The point is to show that multiple `for`s can be combined as part of the same, single, comprehension, and if they\u0027re on the same line the 2nd `for` gets lost.",
+      "parentUuid": "d9621272_a8df4f91",
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8db6ea47_f89f2b82",
@@ -99,6 +189,30 @@
       "writtenOn": "2024-03-08T22:20:21Z",
       "side": 1,
       "message": "`s/these/regular expression/`",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 5
+      },
+      "revId": "1ae9cbff290cd9de4c84462e4086ae7ad509d822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab38b987_d1848033",
+        "filename": "content/docs/tour/expressions/regexp/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T12:30:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8db6ea47_f89f2b82",
       "range": {
         "startLine": 17,
         "startChar": 0,
