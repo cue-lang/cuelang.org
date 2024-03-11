@@ -1,0 +1,272 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f517589_59a14879",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "I think this will leave the reader confused. What is it a reference to? Again I would like to encourage us towards simpler, plainer language in the tour especially.",
+      "range": {
+        "startLine": 8,
+        "startChar": 55,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cea11af_ff003702",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "I\u0027m struggling to see what this point is trying to say. Which I think tells me that the language is too complex. Please can you explain what you are trying to say here?\n\nAren\u0027t you actually defining what unification is here, as opposed to making a comment on how an open struct contrasts with a closed struct?",
+      "range": {
+        "startLine": 9,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c36a4b95_55fd1117",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "Can we not borrow from the existing language here?\n\nhttps://cuelang.org/docs/tutorials/tour/types/closed/",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1895e145_2a79f202",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "This part of the sentence is superfluous to my mind.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c58e896_5e75529c",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "This page feels like it has a lot of text on it. I wonder if we can\u0027t simplify the language and shorten it based, perhaps using the language guide as a reference point?",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "286f22e9_59cc38c3",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "\u003e CUE\u0027s most important composite type is the **struct**, otherwise known as a **map**. \n\n(with a nod to the language guide)",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c2a1422_80e919fe",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "\"By default\" is not the right phrasing here I don\u0027t think. For one, that language is too close to the concept of defaults in CUE. And in any case I think it\u0027s unnecessary filler language here as you can say:\n\n\u003e A regular (`field: value`) can ...",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44a162d2_7c6e757b",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "Have we explained what \"concrete\" means at this point in the tour?\n\nThis list is not complete because it forgets constraints like ranges, and `_`. \n\nDo we even need to say anything about the value that can be declared with a regular field?\n\nThe one point that is lost here from the original text (https://cuelang.org/docs/tutorials/tour/types/optional/) is that a regular field must be concrete if it is to be exported to, say, JSON.\n\nPlease take a look at how the language guide refers to these field constraints. It feels like we\u0027re trying to do too much here with the language.\n\nSee my comment at the bottom of this page re lede sentences below.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 13
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "debe74a7_0fcb0ff5",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "Following the edit to the previous paragraph, I think this lede line can be removed, and the code example moved after the bold text in what is currently the second sentence.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a97766d_4032ac85",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "Ditto re lede sentence.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce554e92_6bdd8e10",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "This sentence is not accurate to my mind. The required field constraint simply requires that (during export) it be unified with a regular field. That\u0027s its primary purpose. The RHS may or may not do some restricting.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2922147_18e7cf8b",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "This is only the case when it is exported. `cue eval` does not require that required fields have been satisfied by a regular (concrete) field. See previous point.",
+      "range": {
+        "startLine": 24,
+        "startChar": 52,
+        "endLine": 24,
+        "endChar": 61
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8aceb25c_d1ba833c",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "Per comments above, I think this point comes too late.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2af28f29_c2b92f4c",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T14:39:25Z",
+      "side": 1,
+      "message": "I see now what I think you were trying to achieve with the lede sentences in each paragraph above. I don\u0027t think we want to be referring to \"required fields\" as \"fields marked with a required field constraint\". We should use the former, similarly for \"optional field\" and \"regular field\". Hence this language here can be shortened. So perhaps the lede of each paragraph above could be tweaked to allow us to refer to fields in such a way, without losing the detail that the `?` is an optional field constraint.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
