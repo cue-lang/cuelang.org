@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "873d374a1d1b1e58934cd06b48402528698026f1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be110e66_eb4e40d1",
+        "filename": "content/docs/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T09:28:22Z",
+      "side": 1,
+      "message": "Surely this path should be `integrations/` i.e. the directory name is wrong, not the link",
+      "revId": "873d374a1d1b1e58934cd06b48402528698026f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
