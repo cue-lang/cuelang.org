@@ -1,0 +1,74 @@
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/sr-only';
+@import '../mixins/stretch';
+@import '../mixins/typography';
+
+.icon-teaser {
+    $self: &;
+
+    --icon-teaser-icon-size: 84px;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &:focus,
+    &:hover {
+        #{ $self }__icon {
+            color: $c-yellow--dark;
+            scale: 1.2;
+        }
+
+        #{ $self }__readmore {
+            span {
+                background-position-x: 0;
+                background-size: 100% var(--link-border-width, 2px);
+            }
+        }
+    }
+
+    &__icon {
+        color: $c-blue;
+        height: var(--icon-teaser-icon-size);
+        transition:
+            color 0.3s ease-in-out,
+            scale 0.3s ease-in-out;
+        width: var(--icon-teaser-icon-size);
+    }
+
+    &__title {
+        @include style-heading-2;
+
+        text-align: center;
+    }
+
+    &__text {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    &__readmore {
+        margin-top: auto;
+    }
+
+    &__link {
+        @include stretch;
+
+        border: 2px solid transparent;
+        border-radius: $b-radius;
+        transition:
+            border-color 0.2s ease-in-out,
+            background-color 0.2s ease-in-out;
+
+        &:focus-visible {
+            outline: $b-radius solid var(--teaser-border-focus, $c-blue);
+            outline-offset: 1rem;
+        }
+
+        span {
+            @include sr-only;
+        }
+    }
+}

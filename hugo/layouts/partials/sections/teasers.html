@@ -1,0 +1,39 @@
+{{ $showExcerpt := .Get "showExcerpt" | default true }}
+
+<section class="section section--center section--teasers{{ if .Get "bgColor" }} section--{{ .Get "bgColor"}}{{ end }}">
+    {{ if (or (.Get "title") (.Get "intro")) }}
+        <header class="section__header">
+            <div class="section__content">
+                {{ if .Get "title" }}
+                    <h2 class="section__title">{{ .Get "title" }}</h2>
+                {{ end }}
+
+                {{ if .Get "intro" }}
+                    <div class="section__intro">
+                        <p>{{ .Get "intro" }}</p>
+                    </div>
+                {{ end }}
+            </div>
+        </header>
+    {{ end }}
+
+    <div class="section__body">
+        <div class="section__container">
+            <ul class="list list--33">
+                {{ range where site.RegularPages "Section" "blog" | first 3 }}
+                    <li class="list__item">
+                        {{- partial "teaser.html" (dict "modifier" "simple" "context" . "path" .File.Dir) -}}
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+
+    {{- if (and (.Get "buttonText") (.Get "buttonUrl")) -}}
+        <footer class="section__footer">
+            <a class="button button--blue section__button" href="{{ .Get "buttonUrl" }}">
+                <span class="button__text">{{ .Get "buttonText" }}</span>
+            </a>
+        </footer>
+    {{- end -}}
+</section>
