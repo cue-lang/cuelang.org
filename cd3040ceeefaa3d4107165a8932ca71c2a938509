@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "483a8b9d_2dd5ec1d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "I\u0027ve updated these tour pages, and have merged this CL\u0027s changes into https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1177673.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f517589_59a14879",
@@ -14,6 +31,30 @@
       "writtenOn": "2024-03-11T14:39:25Z",
       "side": 1,
       "message": "I think this will leave the reader confused. What is it a reference to? Again I would like to encourage us towards simpler, plainer language in the tour especially.",
+      "range": {
+        "startLine": 8,
+        "startChar": 55,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7be416d_4d669eb0",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "It was intended to flow into the next paragraph, permitting the text \"the same rules apply\", followed by a carve out of additional constraints brought by being closed. \n\nI\u0027ve reworded the following paragraph and removed this prose.",
+      "parentUuid": "2f517589_59a14879",
       "range": {
         "startLine": 8,
         "startChar": 55,
@@ -47,6 +88,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "47111ba4_87b23e59",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "This was a response to the tour\u0027s lack of a page on unification. I\u0027ve removed it.",
+      "parentUuid": "3cea11af_ff003702",
+      "range": {
+        "startLine": 9,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c36a4b95_55fd1117",
@@ -60,6 +125,24 @@
       "writtenOn": "2024-03-11T14:39:25Z",
       "side": 1,
       "message": "Can we not borrow from the existing language here?\n\nhttps://cuelang.org/docs/tutorials/tour/types/closed/",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89f0ea30_89d6e5f1",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c36a4b95_55fd1117",
       "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -87,6 +170,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c29dc1fd_8cbf9cd2",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1895e145_2a79f202",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c58e896_5e75529c",
@@ -100,6 +207,24 @@
       "writtenOn": "2024-03-11T14:39:25Z",
       "side": 1,
       "message": "This page feels like it has a lot of text on it. I wonder if we can\u0027t simplify the language and shorten it based, perhaps using the language guide as a reference point?",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fffb701b_a94e5bfd",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done. Shortened significantly.",
+      "parentUuid": "9c58e896_5e75529c",
       "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -121,6 +246,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40a10557_7743ceab",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "286f22e9_59cc38c3",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c2a1422_80e919fe",
@@ -134,6 +277,24 @@
       "writtenOn": "2024-03-11T14:39:25Z",
       "side": 1,
       "message": "\"By default\" is not the right phrasing here I don\u0027t think. For one, that language is too close to the concept of defaults in CUE. And in any case I think it\u0027s unnecessary filler language here as you can say:\n\n\u003e A regular (`field: value`) can ...",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e085e796_eb74bceb",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Addressed in the revision now merged into https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1177673.",
+      "parentUuid": "6c2a1422_80e919fe",
       "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -161,6 +322,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7287336d_c15eff37",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "\u003e Have we explained what \"concrete\" means at this point in the tour?\n\nYes, on the opening tour/types/types page.\n\n\u003e This list is not complete because it forgets constraints like ranges, and `_`.\n\u003e Do we even need to say anything about the value that can be declared with a regular field?\n\nNope. I\u0027ve removed it.\n\n\u003e The one point that is lost here from the original text (https://cuelang.org/docs/tutorials/tour/types/optional/) is that a regular field must be concrete if it is to be exported to, say, JSON.\n\nI\u0027ve pulled this further up the page.\n\n\u003e Please take a look at how the language guide refers to these field constraints. It feels like we\u0027re trying to do too much here with the language.\n\nI\u0027ve now cut this page down significantly.\n\n\u003e See my comment at the bottom of this page re lede sentences below.\n\nACK.",
+      "parentUuid": "44a162d2_7c6e757b",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 13
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "debe74a7_0fcb0ff5",
@@ -174,6 +359,24 @@
       "writtenOn": "2024-03-11T14:39:25Z",
       "side": 1,
       "message": "Following the edit to the previous paragraph, I think this lede line can be removed, and the code example moved after the bold text in what is currently the second sentence.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0caa8723_0a505c83",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "debe74a7_0fcb0ff5",
       "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -195,6 +398,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "968286ca_e7432500",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a97766d_4032ac85",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce554e92_6bdd8e10",
@@ -208,6 +429,24 @@
       "writtenOn": "2024-03-11T14:39:25Z",
       "side": 1,
       "message": "This sentence is not accurate to my mind. The required field constraint simply requires that (during export) it be unified with a regular field. That\u0027s its primary purpose. The RHS may or may not do some restricting.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91007702_0374d0eb",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce554e92_6bdd8e10",
       "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -235,6 +474,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6abab7a7_2820baf3",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2922147_18e7cf8b",
+      "range": {
+        "startLine": 24,
+        "startChar": 52,
+        "endLine": 24,
+        "endChar": 61
+      },
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8aceb25c_d1ba833c",
@@ -252,6 +515,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a32ee865_37b0017f",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done. Moved into the regular fields paragraph.",
+      "parentUuid": "8aceb25c_d1ba833c",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2af28f29_c2b92f4c",
@@ -265,6 +546,24 @@
       "writtenOn": "2024-03-11T14:39:25Z",
       "side": 1,
       "message": "I see now what I think you were trying to achieve with the lede sentences in each paragraph above. I don\u0027t think we want to be referring to \"required fields\" as \"fields marked with a required field constraint\". We should use the former, similarly for \"optional field\" and \"regular field\". Hence this language here can be shortened. So perhaps the lede of each paragraph above could be tweaked to allow us to refer to fields in such a way, without losing the detail that the `?` is an optional field constraint.",
+      "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60a43681_7099b108",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-11T18:53:05Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "2af28f29_c2b92f4c",
       "revId": "cd3040ceeefaa3d4107165a8932ca71c2a938509",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
