@@ -106,7 +106,7 @@ export class SearchResults extends BaseWidget {
 
         return `
             <li class="list__item">
-                <div class="teaser">
+                <div class="teaser teaser--search">
                     ${ (teaser.breadcrumb && teaser.breadcrumb.length > 0) ? `<div class="teaser__breadcrumb">
                         ${ teaser.breadcrumb.map(breadcrumb => `<span>${ breadcrumb }</span>`).join(' / ') }
                     </div>` : '' }

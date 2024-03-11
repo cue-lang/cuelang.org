@@ -11,7 +11,7 @@
 
     @include clear-fix;
 
-    --section-padding: 2rem;
+    --section-padding: 3rem;
 
     background-color: var(--section-bg-color, transparent);
     padding: var(--section-padding) 0;
@@ -85,6 +85,12 @@
         padding-top: 0;
     }
 
+    &--cards {
+        .cards {
+            margin-top: 0;
+        }
+    }
+
     &--overview {
         #{ $self }__header {
             &::after {
@@ -97,7 +103,7 @@
 
     @each $theme, $color in $themes {
         &--#{ $theme } {
-            --section-bg-color: #{ $color };
+            --section-bg-color: #{$color};
 
             + #{ $self }--#{ $theme } {
                 padding-top: 0;
@@ -106,10 +112,16 @@
     }
 
     @include screen($screen-simple) {
-        --section-padding: 3rem;
+        --section-padding: 4rem;
 
         &:first-child {
             padding-top: 0.75rem;
+        }
+
+        &__header {
+            & + #{ $self }__body {
+                margin-top: 3rem;
+            }
         }
 
         &__footer {
@@ -124,7 +136,20 @@
     }
 
     @include screen($screen-normal) {
-        --section-padding: 4rem;
+        --section-padding: 5rem;
+
+        &__header {
+            &--small {
+                #{ $self }__title,
+                #{ $self }__intro {
+                    width: 50%;
+                }
+            }
+        }
+
+        &__container {
+            padding: 0 $p-gutter--large;
+        }
 
         &--logos,
         &--overview {
@@ -135,8 +160,14 @@
     }
 
     @include screen($screen-large) {
+        --section-padding: 6rem;
+
         &:first-child {
             padding-top: 0;
+        }
+
+        &__container {
+            padding: 0 ($p-gutter--large * 2);
         }
 
         &--logos {

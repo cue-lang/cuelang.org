@@ -3,14 +3,17 @@
 @import '../mixins/typography';
 
 .banner {
+    display: flex;
+    flex-direction: column-reverse;
+
     &__content {
-        margin-bottom: 2rem;
+        text-align: center;
     }
 
     &__title {
         @include style-heading-banner;
 
-        margin: 0 0 1.5rem;
+        margin: 0;
     }
 
     &__intro {
@@ -20,15 +23,22 @@
     &__image {
         margin: 0 auto;
         max-width: 400px;
+        padding: 0 $p-gutter;
     }
 
     @include screen($screen-simple) {
-        display: flex;
+        flex-direction: row;
         gap: $p-gutter--large;
+        justify-content: space-between;
 
         &__content {
-            flex: 0 1 56%;
+            align-items: flex-start;
+            display: flex;
+            flex: 0 1 40%;
+            flex-direction: column;
+            justify-content: center;
             margin-bottom: 0;
+            text-align: left;
         }
 
         &__intro {
@@ -37,19 +47,17 @@
         }
 
         &__image {
-            flex: 0 1 44%;
+            flex: 0 1 60%;
             margin: 0;
+            padding: 0 0 0 $p-gutter--large;
         }
     }
 
     @include screen($screen-normal) {
         gap: 60px;
 
-        &__content {
-            padding-top: 2rem;
-        }
-
         &__image {
+            padding: 0;
             transform: translateX(2rem);
         }
     }

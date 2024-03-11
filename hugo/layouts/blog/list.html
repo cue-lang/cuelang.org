@@ -16,9 +16,9 @@
                         {{ range $index, $teaser := .Pages }}
                             <li class="list__item">
                                 {{- if eq $index 0 -}}
-                                    {{- partial "teaser--blog.html" (dict "modifier" "featured" "context" . "path" .File.Dir) -}}
+                                    {{- partial "teaser.html" (dict "modifier" "featured" "context" . "path" .File.Dir) -}}
                                 {{- else -}}
-                                    {{- partial "teaser--blog.html" . -}}
+                                    {{- partial "teaser.html" . -}}
                                 {{- end -}}
                             </li>
                         {{ end }}

@@ -1,18 +1,47 @@
-<article class="teaser">
-    <div class="teaser__heading">
-        <h2 class="teaser__title">{{ .Title }}</h2>
-        {{ if .Params.tags }}
-            {{ $tags := where .Site.Params.tags "name" "in"  .Params.tags }}
-            {{- partial "tags.html" (dict "listClass" "teaser__tags" "tags" $tags) -}}
-        {{ end }}
-    </div>
-    <p class="teaser__meta">{{ .Date.Format ($.Param "time_format") }}</p>
-    <p class="teaser__excerpt">{{ .Summary | truncate 300 }}</p>
-    <div class="link teaser__readmore">
-        <span class="link__text">{{ T "ui_read_more" }}</span>
-    </div>
+{{- $context := "" -}}
+{{- $modifier := "" -}}
+{{- $path := "" -}}
 
-    <a class="teaser__link" aria-label="{{ T "ui_read_more" }} - {{ .LinkTitle }}" href="{{ .RelPermalink }}">
-        <span>{{ T "ui_read_more" }}</span>
-    </a>
+{{- if (reflect.IsMap .) -}}
+    {{- $context = .context -}}
+    {{- $modifier = .modifier -}}
+    {{- $path = .path -}}
+{{- else -}}
+    {{- $context = . -}}
+    {{- $path = .File.Dir -}}
+{{- end -}}
+
+<article class="teaser{{ if $modifier }} teaser--{{ $modifier }}{{ end }}">
+    {{ if $context.Params.Image }}
+        <figure class="teaser__image">
+            <img src="/{{ urls.JoinPath $path $context.Params.Image }}" alt=""/>
+        </figure>
+    {{ end }}
+
+    <div class="teaser__content">
+        <div class="teaser__heading">
+            <h2 class="teaser__title">{{ $context.Title }}</h2>
+
+            <div class="teaser__meta">
+                <p class="teaser__date">
+                    {{ $context.Date.Format ($context.Param "time_format") }}
+                </p>
+
+                {{ if $context.Params.tags }}
+                    {{ $tags := where $context.Site.Params.tags "name" "in"  $context.Params.tags }}
+                    {{- partial "tags.html" (dict "listClass" "teaser__tags" "tags" $tags) -}}
+                {{ end }}
+            </div>
+        </div>
+
+        <p class="teaser__excerpt">{{ $context.Summary | truncate 220 }}</p>
+
+        <div class="link teaser__readmore">
+            <span class="link__text">{{ T "ui_read_more" }}</span>
+        </div>
+
+        <a class="teaser__link" aria-label="{{ T "ui_read_more" }} - {{ $context.LinkTitle }}" href="{{ $context.RelPermalink }}">
+            <span>{{ T "ui_read_more" }}</span>
+        </a>
+    </div>
 </article>

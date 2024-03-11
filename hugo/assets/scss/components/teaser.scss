@@ -10,37 +10,58 @@
 
     background-color: var(--teaser-background, transparent);
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    padding: $p-gutter;
+    padding: 0;
     position: relative;
     width: 100%;
 
     &:focus,
     &:hover {
+        #{ $self }__image {
+            img {
+                transform: scale(1.125) rotate(2deg);
+            }
+        }
+
         .link__text {
             background-position-x: 0;
             background-size: 100% var(--link-border-width, 2px);
         }
     }
 
-    &__breadcrumb {
-        @include style-text-small;
+    #{ $self }__image {
+        aspect-ratio: 16 / 9;
+        flex: 0 0 auto;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
 
-        color: var(--teaser-breadcrumb-color, $c-blue--darker);
+        img {
+            @include stretch;
 
-        span {
-            &:last-child {
-                &::after {
-                    content: ' /';
-                }
-            }
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
         }
     }
 
-    &__title {
-        @include style-heading;
+    &__title,
+    &__meta,
+    &__excerpt {
+        margin: 0;
+    }
 
-        color: var(--teaser-title-color, $c-blue--light);
+    #{ $self }__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__title {
+        @include style-heading-3;
+
+        color: var(--teaser-title-color, $c-blue--darker);
         font-size: 1.375rem;
         margin: 0.5rem 0 0;
     }
@@ -49,21 +70,37 @@
         color: var(--teaser-meta-color, $c-grey--dark);
         font-size: 0.8125rem;
         line-height: 1.3;
-        margin: 0 0 0.4rem;
+    }
+
+    &__date {
+        margin: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 100%;
+        padding: 1rem 0;
     }
 
     &__excerpt {
-        @include style-text-small;
+        @include style-text;
 
-        color: var(--teaser-excerpt-color, $c-grey-blue--dark);
-        margin: 0.5rem 0 0;
+        color: var(--teaser-excerpt-color, $c-blue--darker);
     }
 
     &__tags {
-        --tag-background: #{ $c-white };
+        --tag-background: #{$c-white};
 
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         z-index: 1;
+    }
+
+    &__readmore {
+        color: var(--teaser-readmore-color, $c-blue--darker);
+        margin-top: auto;
+        padding: 0;
     }
 
     &__link {
@@ -71,140 +108,142 @@
 
         border: 2px solid transparent;
         border-radius: $b-radius;
-        transition: border-color 0.2s, background-color 0.2s;
-
-        /* stylelint-disable no-descending-specificity */
-        span {
-            @include sr-only;
-        }
-        /* stylelint-enable no-descending-specificity */
+        transition:
+            border-color 0.2s,
+            background-color 0.2s;
 
         &:focus,
         &:hover {
-            background: transparentize($c-blue, 0.94);
+            background: var(--teaser-background, transparent);
         }
 
         &:focus-visible {
             border-color: var(--teaser-border-focus, $c-blue);
         }
+
+        span {
+            @include sr-only;
+        }
     }
 
-    &--blog {
-        --teaser-title-color: #{ $c-blue--darker };
-        --teaser-excerpt-color: #{ $c-blue--darker };
+    &--search {
+        --teaser-title-color: #{$c-blue--light};
+        --teaser-excerpt-color: #{$c-grey-blue--dark};
 
-        padding: 0;
+        padding: $p-gutter;
 
-        #{ $self }__title,
-        #{ $self }__meta,
-        #{ $self }__excerpt {
-            margin: 0;
-        }
+        #{ $self }__breadcrumb {
+            @include style-text-small;
 
-        #{ $self }__image {
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
+            color: var(--teaser-breadcrumb-color, $c-blue--darker);
 
-            img {
-                @include stretch;
-
-                object-fit: cover;
-                transition: transform 0.3s ease-in-out;
+            span {
+                &:last-child {
+                    &::after {
+                        content: ' /';
+                    }
+                }
             }
         }
 
-        #{ $self }__title {
-            @include style-heading-3;
-        }
-
-        #{ $self }__date {
-            margin: 0;
-        }
-
-        #{ $self }__tags {
-            margin-top: 1rem;
-        }
-
-        #{ $self }__content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1rem 0;
-        }
-
         #{ $self }__excerpt {
-            @include style-text;
-        }
-
-        #{ $self }__readmore {
-            color: var(--teaser-readmore-color, $c-blue--darker);
-            height: 100%;
-            padding: 0;
+            margin: 0.5rem 0 0;
         }
 
         #{ $self }__link {
             &:focus,
             &:hover {
-                background: var(--teaser-background, transparent);
+                background: transparentize($c-blue, 0.94);
             }
+        }
+    }
+
+    &--basic {
+        display: flex;
+        flex-direction: column;
+        gap: $p-gutter;
+        padding: $p-gutter 0;
+
+        #{ $self }__heading {
+            margin-top: 0;
+        }
+
+        #{ $self }__title {
+            @include style-heading-2;
+        }
+
+        #{ $self }__buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $p-gutter * 0.5;
+            margin-top: auto;
+
+            > a {
+                width: 100%;
+            }
+        }
+    }
+
+    &--simple {
+        #{ $self }__heading {
+            flex-direction: column-reverse;
+        }
+
+        #{ $self }__title {
+            margin: 0;
+        }
+
+        #{ $self }__tags,
+        #{ $self }__excerpt {
+            display: none;
         }
     }
 
     @include screen($screen-simple) {
-        padding: $p-gutter 1.5rem;
-
         &__heading {
             align-items: flex-start;
-            display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
         }
 
-        &--blog {
-            padding: 0;
+        &--featured {
+            flex-direction: row;
+            gap: $p-gutter--large;
 
-            &:hover {
-                #{ $self }__image {
-                    img {
-                        transform: scale(1.125) rotate(2deg);
-                    }
-                }
+            #{ $self }__title {
+                @include style-heading-2;
             }
 
-            &#{ $self }--featured {
-                display: flex;
-                gap: $p-gutter--large;
-
-                #{ $self }__title {
-                    @include style-heading-2;
-                }
-
-                #{ $self }__content {
-                    flex: 0 1 50%;
-                    width: 50%;
-                }
-
-                #{ $self }__excerpt {
-                    line-height: 2;
-                }
-
-                #{ $self }__image {
-                    aspect-ratio: 5 / 4;
-                    flex: 0 1 50%;
-                    margin: 0;
-                    width: 50%;
-                }
+            #{ $self }__content {
+                flex: 0 1 50%;
+                width: 50%;
             }
+
+            #{ $self }__excerpt {
+                line-height: 2;
+            }
+
+            #{ $self }__image {
+                aspect-ratio: 5 / 4;
+                flex: 0 1 50%;
+                margin: 0;
+                width: 50%;
+            }
+        }
+
+        &--search {
+            padding: $p-gutter 1.5rem;
         }
     }
 
     @include screen($screen-normal) {
-        padding: 1.5rem 2.5rem;
+        &--basic {
+            #{ $self }__buttons {
+                flex-wrap: nowrap;
+            }
+        }
 
-        &--blog {
-            padding: 0;
+        &--search {
+            padding: 1.5rem 2.5rem;
         }
     }
 }
