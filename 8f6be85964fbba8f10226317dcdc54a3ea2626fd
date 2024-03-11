@@ -16,6 +16,24 @@
       "message": "Incorporated into https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1177673/19.",
       "revId": "8f6be85964fbba8f10226317dcdc54a3ea2626fd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ceb9306_ccbdcd06",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-11T09:29:37Z",
+      "side": 1,
+      "message": "So this CL is now redundant?",
+      "parentUuid": "5f3bc3c9_d7348628",
+      "revId": "8f6be85964fbba8f10226317dcdc54a3ea2626fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
