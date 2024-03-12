@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa33b66b_e6bd94c8",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T17:15:02Z",
+      "side": 1,
+      "message": "\"required by CRDs targeting Kubernetes v1.15 or later\"",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
