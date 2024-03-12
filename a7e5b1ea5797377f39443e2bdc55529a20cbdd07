@@ -50,6 +50,24 @@
       "message": "We can use the `div()` form, without the `__` prefix, in both these cases.",
       "revId": "a7e5b1ea5797377f39443e2bdc55529a20cbdd07",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a46366af_eb6ea230",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:22:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2e22b8_c6d4c663",
+      "revId": "a7e5b1ea5797377f39443e2bdc55529a20cbdd07",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

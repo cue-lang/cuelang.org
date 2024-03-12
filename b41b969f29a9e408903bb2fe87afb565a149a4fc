@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca4fc6b4_a9604d19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:22:01Z",
+      "side": 1,
+      "message": "Thanks for the review, and the great insights! \n\nI have added the 8 cases you mentioned, with some templating to make the example more readable. I\u0027m not 100% sure about the field names I chose.\n\nAlso I kept the question regarding embedding unresolved, awaiting your thoughts there.",
+      "revId": "b41b969f29a9e408903bb2fe87afb565a149a4fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

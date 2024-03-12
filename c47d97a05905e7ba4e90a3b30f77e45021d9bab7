@@ -193,6 +193,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ceed9e8d_59626b29",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:22:01Z",
+      "side": 1,
+      "message": "got it, I missed that part! Thank you for the clarification",
+      "parentUuid": "6e43f28a_73174e58",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8df3b7dc_d3efc17d",
@@ -351,6 +369,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44151acf_f4f90a56",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:22:01Z",
+      "side": 1,
+      "message": "got it, makes a lot of sense (I was worried about the cue fmt local issues)\n\nMade the suggested change",
+      "parentUuid": "a62e1e27_d6a8caea",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b966adbe_a540810a",
@@ -400,6 +436,24 @@
       "side": 1,
       "message": "That does make sense, but I /think/ we should construct enough different names so we can demonstrate a sparse but representative selection from the 8 cases in\n\n```\n  {Odd,Even} numbers\n* {#Odd,#Even} constraint\n* {positive,negative} numbers\n```\n\nOr, depending on how you feel it looks, all 8 cases.",
       "parentUuid": "5bc31f93_a1a78ac4",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cd0a956_d214cda6",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:22:01Z",
+      "side": 1,
+      "message": "added all 8 cases with some templatization. Please let me know if it\u0027s readable, and if you have suggestions for improved field naming",
+      "parentUuid": "5de2106e_1df26aa4",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
