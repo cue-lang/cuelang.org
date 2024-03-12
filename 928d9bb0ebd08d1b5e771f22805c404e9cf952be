@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a3bd0c9_1f9f51e9",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T20:26:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adad739c_d14b3ec4",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6bc5518_1b15c47e",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-03-12T19:05:47Z",
       "side": 1,
       "message": "Needs to be `true`.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 15
+      },
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b73a8f2_369fb685",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T20:26:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6bc5518_1b15c47e",
       "range": {
         "startLine": 3,
         "startChar": 0,
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea0a3512_4a14a2b3",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T20:26:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "194200c7_591c924b",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0434769_2e42d83b",
@@ -75,6 +135,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64eb7e49_bd3adb5e",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T20:26:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0434769_2e42d83b",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa33b66b_e6bd94c8",
@@ -88,6 +166,24 @@
       "writtenOn": "2024-03-12T17:15:02Z",
       "side": 1,
       "message": "\"required by CRDs targeting Kubernetes v1.15 or later\"",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7898dc40_253f61ed",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T20:26:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa33b66b_e6bd94c8",
       "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
