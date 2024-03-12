@@ -43,6 +43,48 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a68931a9_0cff0520",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75ee2e0d_78f6b46d",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83b3089e_1a57972c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68b371b2_7e583610",
+      "range": {
+        "startLine": 9,
+        "startChar": 73,
+        "endLine": 9,
+        "endChar": 79
+      },
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "6b8ba0c6_6df5fc8a",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5f76880_f30eb87c",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0498b89_566ec161",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3150679_3220d8b5",
@@ -92,6 +152,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b68584f6_d65491f2",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:53:34Z",
+      "side": 1,
+      "message": "got it, makes a lot of sense. I also like the idea of using the numbers as keys, makes the naming easier and the example much shorter/clearer",
+      "parentUuid": "e3150679_3220d8b5",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1169456d_0df8ec0b",
@@ -105,6 +183,24 @@
       "writtenOn": "2024-03-12T19:45:16Z",
       "side": 1,
       "message": "Blank line in front matter isn\u0027t needed.",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4b3334e_c51c90dd",
+        "filename": "hugo/content/en/docs/howto/ensure-int-is-odd-or-even/index.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-12T19:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1169456d_0df8ec0b",
       "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
