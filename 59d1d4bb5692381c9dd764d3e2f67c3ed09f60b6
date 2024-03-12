@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc2cea54_edb5c74c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T16:21:03Z",
+      "side": 1,
+      "message": "PTAL. I\u0027ll need a Go example at some point, please.",
+      "revId": "59d1d4bb5692381c9dd764d3e2f67c3ed09f60b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
