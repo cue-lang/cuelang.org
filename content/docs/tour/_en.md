@@ -4,10 +4,12 @@ weight: 15
 index_hide: true
 ---
 
+Easy-to-follow, bite-sized chunks of CUE ...
+
 {{< cards >}}
 
 {{< card href="basics/" title="New to CUE?" label="The Basics of CUE" >}}
-  Begin the tour with a gentle introduction
+  Begin the tour with an introduction to the most important language features
 {{< /card >}}
 
 {{< /cards >}}
@@ -16,14 +18,18 @@ index_hide: true
 
 {{< cards >}}
 
-{{< card href="types/" title="Types and Values" label=" " >}}
+{{< card href="types/" label="Types and Values" title="types: values" >}}
+  CUE merges the concepts of types and values, enabling clear and concise constraints
 {{< /card >}}
 
-{{< card href="references/" title="References and Visibility" label=" " >}}
+{{< card href="references/" label="References and Visibility" title="val: other.value + 1" >}}
+  A CUE value can be derived from other values, using easy-to-understand references
 {{< /card >}}
-{{< card href="expressions/" title="Expressions" label=" " >}}
+{{< card href="expressions/" label="Expressions" title="smallVal: 42 & <=val" >}}
+  CUE provides a rich set of mechanisms to construct, validate, and process data
 {{< /card >}}
-{{< card href="packages/" title="Package and Imports" label=" " >}}
+{{< card href="packages/" label="Packages and Imports" title="import \"myConfig\"" >}}
+  Configurations can be separated so they're easier to manage and reason about
 {{< /card >}}
 
 {{< /cards >}}
