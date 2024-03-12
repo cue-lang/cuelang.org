@@ -1,0 +1,186 @@
+---
+title: How CUE works with OpenAPI
+toc_hide: false
+---
+
+CUE works with the [OpenAPI](https://github.com/OAI/OpenAPI-Specification/)
+3.0.0 standard for the description of REST APIs, and its definition of data
+schemas.
+
+CUE is usually more clear and concise than the equivalent OpenAPI but, given
+that they meet different needs for different types of users, CUE's ability to
+round-trip between CUE and OpenAPI's data schema subset acts as a useful
+bridge between the two worlds.
+
+## Reading and writing OpenAPI with the `cue` CLI
+
+The `cue` CLI can convert CUE schemas into OpenAPI's "components" data schema
+form, so long as they only specify definitions and metadata (`info`,
+`$version`, etc) at their top-level.
+
+Here's [`cue def`]({{< relref "docs/reference/cli/cue-def" >}}) converting a 
+trivial CUE schema to OpenAPI. Do be mindful of how long OpenAPI equivalents
+can get!
+
+{{< code-tabs >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
+// A schema for the pet API.
+package api
+
+$version: "v1.2.3"
+// A Pet is a pet.
+#Pet: {
+	// Every pet has a name.
+	name!: string
+	kind!: #Kind
+	// Unfortunately, pets don't live forever.
+	age?: uint & <100
+	...
+}
+
+// Kind encodes the different types of pet that exist.
+#Kind: "cat" | "dog" | "goldfish"
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGRlZiBzY2hlbWEuY3VlIC1vIG9wZW5hcGkreWFtbDot" >}}
+$ cue def schema.cue -o openapi+yaml:-
+openapi: 3.0.0
+info:
+  title: A schema for the pet API.
+  version: v1.2.3
+paths: {}
+components:
+  schemas:
+    Kind:
+      description: Kind encodes the different types of pet that exist.
+      type: string
+      enum:
+        - cat
+        - dog
+        - goldfish
+    Pet:
+      description: A Pet is a pet.
+      type: object
+      required:
+        - name
+        - kind
+      properties:
+        name:
+          description: Every pet has a name.
+          type: string
+        kind:
+          $ref: '#/components/schemas/Kind'
+        age:
+          description: Unfortunately, pets don't live forever.
+          type: integer
+          minimum: 0
+          maximum: 100
+          exclusiveMaximum: true
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+The OpenAPI `info.title` field can be extracted from the top-level CUE comment
+or can be specified directly. The same goes for OpenAPI's `info.version` field,
+which is extracted from CUE's top-level `$version` if not specified directly.
+
+Because CUE is more expressive than OpenAPI, it isn't possible to generate a
+precise OpenAPI equivalent for *every* CUE schema. CUE does the best conversion
+it can, within the confines of what OpenAPI's data schemas can represent.
+
+Here's [`cue import`]({{< relref "docs/reference/cli/cue-import" >}}) doing the
+reverse operation: taking the OpenAPI definition emitted above, and converting
+it back to CUE:
+
+{{< code-tabs >}}
+{{< code-tab name="openapi.yaml" language="yaml" area="top-left" >}}
+openapi: 3.0.0
+info:
+  title: A schema for the pet API.
+  version: v1.2.3
+paths: {}
+components:
+  schemas:
+    Kind:
+      description: Kind encodes the different types of pet that exist.
+      type: string
+      enum:
+        - cat
+        - dog
+        - goldfish
+    Pet:
+      description: A Pet is a pet.
+      type: object
+      required:
+        - name
+        - kind
+      properties:
+        name:
+          description: Every pet has a name.
+          type: string
+        kind:
+          $ref: '#/components/schemas/Kind'
+        age:
+          description: Unfortunately, pets don't live forever.
+          type: integer
+          minimum: 0
+          maximum: 100
+          exclusiveMaximum: true
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGltcG9ydCAtcCBhcGkgb3BlbmFwaS55YW1sIC1vIC0=" >}}
+$ cue import -p api openapi.yaml -o -
+// A schema for the pet API.
+package api
+
+info: {
+	title:   *"A schema for the pet API." | string
+	version: *"v1.2.3" | string
+}
+// Kind encodes the different types of pet that exist.
+#Kind: "cat" | "dog" | "goldfish"
+
+// A Pet is a pet.
+#Pet: {
+	// Every pet has a name.
+	name: string
+	kind: #Kind
+
+	// Unfortunately, pets don't live forever.
+	age?: int & >=0 & <100
+	...
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+## Using CUE's Go API
+
+CUE can also generate OpenAPI through its Go API.
+
+Generating an OpenAPI definition can be as simple as this:
+
+{{< caution >}}
+FIXME: Paul to supply MVP.
+{{< /caution >}}
+
+```go
+import "cuelang.org/go/encoding/openapi"
+
+func genOpenAPI(inst *cue.Instance) ([]byte, error) {
+	b, err := openapi.Gen(inst, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	var out bytes.Buffer
+	err = json.Indent(&out, b, "", "   ")
+	if err != nil {
+		return nil, err
+	}
+
+	return out.Bytes(), nil
+}
+```
+
+The [`encoding/openapi`](https://pkg.go.dev/cuelang.org/go/encoding/openapi)
+package provides options to make a definition self-contained, to filter
+constraints, and so on. The *expanding references* option enables the
+"Structural OpenAPI" form, which is required by Kubernetes CRDs at version 1.15
+and later.
