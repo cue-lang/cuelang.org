@@ -16,6 +16,40 @@
       "message": "Thanks for making these changes, Noam - I\u0027ve answered your questions and ping\u0027d @paul@myitcv.io on one of them.\n\nFYI Gerrit collapses all comment threads marked as `Resolved`, so if you leave open threads **un**-resolved it makes them easier to notice as still requiring input. I\u0027ve un-resolved the threads that I\u0027ve replied to.\n\nAlso, Gerrit\u0027s `Done` option (under each thread) replies \"Done\" to a thread and resolves it, all in 1 click :-)",
       "revId": "a7e5b1ea5797377f39443e2bdc55529a20cbdd07",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c41c942c_c30872fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T11:52:02Z",
+      "side": 1,
+      "message": "A minor follow-up.",
+      "revId": "a7e5b1ea5797377f39443e2bdc55529a20cbdd07",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e2e22b8_c6d4c663",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T11:52:02Z",
+      "side": 1,
+      "message": "We can use the `div()` form, without the `__` prefix, in both these cases.",
+      "revId": "a7e5b1ea5797377f39443e2bdc55529a20cbdd07",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
