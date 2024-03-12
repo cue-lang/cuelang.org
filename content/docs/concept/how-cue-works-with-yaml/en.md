@@ -6,6 +6,8 @@ tags:
 authors:
 - jpluscplusm
 toc_hide: true
+aliases:
+- yaml
 ---
 
 ## Reading and writing YAML

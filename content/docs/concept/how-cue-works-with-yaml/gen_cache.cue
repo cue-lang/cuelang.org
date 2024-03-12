@@ -3,7 +3,7 @@ package site
 	content: {
 		docs: {
 			concept: {
-				yaml: {
+				"how-cue-works-with-yaml": {
 					page: {
 						cache: {
 							code: {
