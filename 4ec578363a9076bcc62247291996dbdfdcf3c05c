@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75ee2e0d_78f6b46d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:41:14Z",
+      "side": 1,
+      "message": "Please reflow this. I stick to 72 characters wide, max.",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68b371b2_7e583610",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:41:14Z",
+      "side": 1,
+      "message": "`s/number/integer/`",
+      "range": {
+        "startLine": 9,
+        "startChar": 73,
+        "endLine": 9,
+        "endChar": 79
+      },
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b8ba0c6_6df5fc8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:41:14Z",
+      "side": 1,
+      "message": "It\u0027s looking great!\n\nI have a couple of minor suggestions, and a slightly different idea for the example matrix ...",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0498b89_566ec161",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:41:14Z",
+      "side": 1,
+      "message": "\\+ `validation` tag.",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3150679_3220d8b5",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:41:14Z",
+      "side": 1,
+      "message": "Thinking it over, I reckon it\u0027d be easier for a reader to internalise the results if they\u0027re split by pass/fail. It prevents any templating, but the repeated definitions aren\u0027t too nasty, to my eye. \n\nSomething like ...\n\n```\nvalid: {\n  \"-27\": -27 \u0026 #Odd\n  \"-22\": -22 \u0026 #Even\n  \"42\": 42 \u0026 #Even\n  \"47\": 47 \u0026 #Odd\n}\n\ninvalid: {\n  \"-37\": -37 \u0026 #Even\n  \"-32\": -32 \u0026 #Odd\n  \"52\": 52 \u0026 #Odd\n  \"57\": 57 \u0026 #Even\n}\n```\n\nNotice that I keep the example pairs at least 2 apart, numerically, so that any error messages don\u0027t run the risk of confusing when they report N and N +/- 1.",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

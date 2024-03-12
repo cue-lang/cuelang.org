@@ -458,6 +458,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32fccd77_bde8c514",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:41:14Z",
+      "side": 1,
+      "message": "I\u0027ve made a suggestion as a new thread, so it associates with the right line in the updated file.",
+      "parentUuid": "2cd0a956_d214cda6",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f1f0e3e_7d2a1b51",
