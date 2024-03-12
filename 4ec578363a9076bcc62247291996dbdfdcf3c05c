@@ -90,6 +90,23 @@
       "message": "Thinking it over, I reckon it\u0027d be easier for a reader to internalise the results if they\u0027re split by pass/fail. It prevents any templating, but the repeated definitions aren\u0027t too nasty, to my eye. \n\nSomething like ...\n\n```\nvalid: {\n  \"-27\": -27 \u0026 #Odd\n  \"-22\": -22 \u0026 #Even\n  \"42\": 42 \u0026 #Even\n  \"47\": 47 \u0026 #Odd\n}\n\ninvalid: {\n  \"-37\": -37 \u0026 #Even\n  \"-32\": -32 \u0026 #Odd\n  \"52\": 52 \u0026 #Odd\n  \"57\": 57 \u0026 #Even\n}\n```\n\nNotice that I keep the example pairs at least 2 apart, numerically, so that any error messages don\u0027t run the risk of confusing when they report N and N +/- 1.",
       "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1169456d_0df8ec0b",
+        "filename": "hugo/content/en/docs/howto/ensure-int-is-odd-or-even/index.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:45:16Z",
+      "side": 1,
+      "message": "Blank line in front matter isn\u0027t needed.",
+      "revId": "4ec578363a9076bcc62247291996dbdfdcf3c05c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
