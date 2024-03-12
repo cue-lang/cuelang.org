@@ -3,6 +3,80 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "adad739c_d14b3ec4",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:05:47Z",
+      "side": 1,
+      "message": "```\ntags:\n- encodings\n- cue command\n```",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6bc5518_1b15c47e",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:05:47Z",
+      "side": 1,
+      "message": "Needs to be `true`.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 15
+      },
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "194200c7_591c924b",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:05:47Z",
+      "side": 1,
+      "message": "Trailing space.",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0434769_2e42d83b",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-12T19:05:47Z",
+      "side": 1,
+      "message": "\"... limited by what ...\"",
+      "revId": "928d9bb0ebd08d1b5e771f22805c404e9cf952be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aa33b66b_e6bd94c8",
         "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
         "patchSetId": 3
