@@ -3,7 +3,7 @@ package site
 	content: {
 		docs: {
 			concept: {
-				json: {
+				"how-cue-works-with-json": {
 					page: {
 						cache: {
 							code: {

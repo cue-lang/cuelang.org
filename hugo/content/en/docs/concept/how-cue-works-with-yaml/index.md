@@ -6,6 +6,8 @@ tags:
 authors:
 - jpluscplusm
 toc_hide: true
+aliases:
+- yaml
 ---
 
 ## Reading and writing YAML
@@ -306,4 +308,4 @@ Examples of this command being used can be found in the
 
 ## Related content
 
-- {{< linkto/related/concept "json" >}}
+- {{< linkto/related/concept "how-cue-works-with-json" >}}
