@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"UFF3C08A85TUD5HJQ1MV92DHUCTDERPLU4T4V1G36495HDNE1300====": [{
+									"VCHTMDG4A603NK5J1JM5L2JDK3652HBN2TR50D3V1N3L2136ICA0====": [{
 										doc:      ""
 										cmd:      "cue help mod tidy"
 										exitCode: 0
@@ -33,6 +33,9 @@ package site
 
 												Usage:
 												  cue mod tidy [flags]
+
+												Flags:
+												      --check   check for tidiness only; do not update module.cue file
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
