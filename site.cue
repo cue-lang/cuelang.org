@@ -9,12 +9,12 @@ import (
 )
 
 versions: {
-	go:            "go1.22.0"
+	go:            "go1.22.1"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		latest:     "v0.7.1"
-		prerelease: "v0.8.0-alpha.5"
-		tip:        "v0.8.0-alpha.5"
+		prerelease: "v0.8.0-rc.1"
+		tip:        "v0.8.0-rc.1"
 	}
 	testscript: "v1.11.0"
 }
