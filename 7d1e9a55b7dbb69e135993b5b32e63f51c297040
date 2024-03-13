@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "7d1e9a55b7dbb69e135993b5b32e63f51c297040",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8ab6bf6_b25465f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-13T15:26:28Z",
+      "side": 1,
+      "message": "The CI failure looks cache related. How can I tell the preprocessor not to care about which packages it happened to have to download as they weren\u0027t in its (GHA) cache?",
+      "revId": "7d1e9a55b7dbb69e135993b5b32e63f51c297040",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
