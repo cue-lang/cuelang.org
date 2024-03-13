@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "f912c02b933acd3c5a7233742a8e5473b0ae4bba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8557700d_cc38b40f",
+        "filename": "hugo/layouts/_default/baseof.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-13T21:02:29Z",
+      "side": 1,
+      "message": "```\nwith not .Params.disableNotification\n```\n\nAllows you to drop the `else`.",
+      "revId": "f912c02b933acd3c5a7233742a8e5473b0ae4bba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
