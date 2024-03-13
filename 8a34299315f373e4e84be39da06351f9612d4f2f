@@ -16,6 +16,24 @@
       "message": "Not mentioned in the commit message.",
       "revId": "8a34299315f373e4e84be39da06351f9612d4f2f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "715fbbff_27d21b97",
+        "filename": "site.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-13T15:59:08Z",
+      "side": 1,
+      "message": "Excellent catch, thank you. I copy-pasted the commit message from before, and carelessly did not review the CL in Gerrit. Apologies, and thank you for catching.",
+      "parentUuid": "bde87c0e_02faa7ec",
+      "revId": "8a34299315f373e4e84be39da06351f9612d4f2f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
