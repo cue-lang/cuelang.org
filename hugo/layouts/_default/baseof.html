@@ -20,7 +20,10 @@
             </footer>
         </div>
 
-        {{ partial "notification-bar.html" . }}
+        {{ with .Params.disableNotification }}
+        {{ else }}
+                {{ partial "notification-bar.html" . }}
+        {{ end }}
         {{ partialCached "site/drawer-mobile.html" . }}
         {{ partial "site/scripts.html" . }}
     </body>
