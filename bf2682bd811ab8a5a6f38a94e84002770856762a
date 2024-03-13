@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "bf2682bd811ab8a5a6f38a94e84002770856762a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93fcb3b0_12edad64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-13T19:45:17Z",
+      "side": 1,
+      "message": "LGTM but I think we should comment out the blog section for now?",
+      "revId": "bf2682bd811ab8a5a6f38a94e84002770856762a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
