@@ -2,7 +2,7 @@
 
 # Code generated site_tool.cue; DO NOT EDIT.
 
-FROM golang:1.22.0 AS build
+FROM golang:1.22.1 AS build
 
 ENV CGO_ENABLED=0
 
@@ -27,15 +27,15 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/prerelease go install -trimpath cuelang.org/go/cmd/cue@v0.8.0-alpha.5
+  GOBIN=/cues/prerelease go install -trimpath cuelang.org/go/cmd/cue@v0.8.0-rc.1
 
 RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/tip go install -trimpath cuelang.org/go/cmd/cue@v0.8.0-alpha.5
+  GOBIN=/cues/tip go install -trimpath cuelang.org/go/cmd/cue@v0.8.0-rc.1
 
-FROM golang:1.22.0
+FROM golang:1.22.1
 
 RUN mkdir -p /go/bin
 
@@ -44,8 +44,8 @@ ENV PATH="/cues/prerelease:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 ENV CUELANG_CUE_LATEST="v0.7.1"
-ENV CUELANG_CUE_PRERELEASE="v0.8.0-alpha.5"
-ENV CUELANG_CUE_TIP="v0.8.0-alpha.5"
+ENV CUELANG_CUE_PRERELEASE="v0.8.0-rc.1"
+ENV CUELANG_CUE_TIP="v0.8.0-rc.1"
 
 WORKDIR /
 

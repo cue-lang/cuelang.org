@@ -20,7 +20,7 @@ logo = "svg/logo-alpha.svg"
     type = 'test'
 
     # TODO: move away from defaulting to the pre-release of CUE
-    content = '**Note:** documentation on this site relies on CUE v0.8.0-alpha.5'
+    content = '**Note:** documentation on this site relies on CUE v0.8.0-rc.1'
     [notification.button]
         link = 'https://github.com/cue-lang/cue/releases'
         icon = 'download'
