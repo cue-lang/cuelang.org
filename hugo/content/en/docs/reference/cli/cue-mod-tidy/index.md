@@ -28,6 +28,9 @@ for this command to work.
 Usage:
   cue mod tidy [flags]
 
+Flags:
+      --check   check for tidiness only; do not update module.cue file
+
 Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
