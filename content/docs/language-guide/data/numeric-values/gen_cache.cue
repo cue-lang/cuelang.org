@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								code: {
-									"numeric-literals-si":      "xbpbpIUJKnwrDdXIWNSn6dg/GqROIW580nDqZlT7nxk="
-									"numeric-literals-altbase": "qlIwVFwXlTzvB7dJBEOdF8QkKzFVGQzIoN62ljQAt5Y="
+									"numeric-literals-si":      "pMfNfCqucHeEy4HLBXaD6nRG+JVKlh7x6CYcYwuIA4o="
+									"numeric-literals-altbase": "NSCie1mqBQp+EissUTZ2NFcdV9eJtQW/f2No3UMf0xU="
 								}
 							}
 						}

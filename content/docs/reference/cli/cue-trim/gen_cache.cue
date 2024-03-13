@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"RT1FKB4PD6GOFCMHL7UJFO8KBM4C0H1F6K9ISNP5FM4O2JKA07D0====": [{
+									"GAB42R9K6KNN8RIJTBC1LRAB5BPI72V41U7ONFKHS0R13ERT8T8G====": [{
 										doc:      ""
 										cmd:      "cue help trim"
 										exitCode: 0
