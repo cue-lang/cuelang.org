@@ -33,6 +33,24 @@
       "message": "LGTM but I think we should comment out the blog section for now?",
       "revId": "bf2682bd811ab8a5a6f38a94e84002770856762a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c8a39e5_5b9dff7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-13T20:41:20Z",
+      "side": 1,
+      "message": "Addressed in follow-up CL: https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1178372",
+      "parentUuid": "93fcb3b0_12edad64",
+      "revId": "bf2682bd811ab8a5a6f38a94e84002770856762a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
