@@ -33,6 +33,57 @@
       "message": "Looks fab! I\u0027ll only +1 this, as it\u0027s the first external contribution I\u0027ve seen made to alpha, and I\u0027ll let @paul@myitcv.io choose when to do an authoritative +2 :-)",
       "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3beac086_d9e315fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-14T16:28:19Z",
+      "side": 1,
+      "message": "LGTM - with one comment on the title.",
+      "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bd00d20_6fad3f99",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-14T16:28:19Z",
+      "side": 1,
+      "message": "I find the title a little confusing/misleading, because it is by construction/definition the case that ever integer is either odd or even: we don\u0027t need to ensure that!",
+      "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a95588a5_98cdb80b",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-14T16:28:19Z",
+      "side": 1,
+      "message": "This is a neat trick. I think in the spirit of CUE we want to reach a point where we can write things more plainly, and that will be possible via `must()` and friends. I don\u0027t necessarily see a need to call that out here, however.",
+      "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

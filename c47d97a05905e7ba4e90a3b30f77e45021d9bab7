@@ -527,6 +527,24 @@
       "parentUuid": "c018b2fd_89c1e7a9",
       "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7dedb66e_f56af1c7",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-14T16:28:19Z",
+      "side": 1,
+      "message": "I don\u0027t see a need to so anything special with what\u0027s presented, modulo my comment below about adapting this to use `must()` when it lands.",
+      "parentUuid": "191e015a_7ba26dc8",
+      "revId": "c47d97a05905e7ba4e90a3b30f77e45021d9bab7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
