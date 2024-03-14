@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in function
 [`text/template.Execute`](https://pkg.go.dev/cuelang.org/go/pkg/text/template#Execute)
 with data-driven templates to generate text output, using Go's

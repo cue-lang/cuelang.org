@@ -10,7 +10,10 @@
                     <div class="article__content">
                         {{ .Content }}
 
-                        {{ if ne .Params.index_hide true }}
+                        {{ if and (eq .Params.index_hide true) (eq hugo.Environment "development") }}
+                            <p>This automatic page index is ONLY present during local development</p>
+                        {{ end }}
+                        {{ if or (ne .Params.index_hide true) (eq hugo.Environment "development") }}
                             {{ partial "paging/section-index.html" . }}
                         {{ end }}
                     </div>
