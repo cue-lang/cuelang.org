@@ -9,7 +9,7 @@ toc_hide: true
 
 Some fields have names that are not valid
 [CUE identifiers]({{< relref "docs/reference/spec#identifiers" >}}).
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to refer to these fields, both at CUE's top level and elsewhere.
 
 {{< code-tabs >}}
