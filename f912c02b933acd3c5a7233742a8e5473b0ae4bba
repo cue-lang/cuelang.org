@@ -33,6 +33,24 @@
       "message": "```\nwith not .Params.disableNotification\n```\n\nAllows you to drop the `else`.",
       "revId": "f912c02b933acd3c5a7233742a8e5473b0ae4bba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2618fa8b_01f0df34",
+        "filename": "hugo/layouts/_default/baseof.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-14T07:47:44Z",
+      "side": 1,
+      "message": "Hugo doesn\u0027t seem to allow that form to work:\n\n```\ndebug: hugo: Error: error building site: render: failed to render pages: render of \"404\" failed: \"docs/repos/cuelang.org/hugo/layouts/_default/baseof.html:24:19\": execute of template failed: template: 404.html:24:19: executing \"404.html\" at \u003cpartial \"notification-bar.html\" .\u003e: error calling partial: \"docs/repos/cuelang.org/hugo/layouts/partials/notification-bar.html:1:27\": execute of template failed: template: partials/notification-bar.html:1:27: executing \"partials/notification-bar.html\" at \u003c.Params.notification\u003e: can\u0027t evaluate field Params in type bool\n```",
+      "parentUuid": "8557700d_cc38b40f",
+      "revId": "f912c02b933acd3c5a7233742a8e5473b0ae4bba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
