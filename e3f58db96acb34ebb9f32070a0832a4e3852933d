@@ -140,6 +140,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "9578a3a4_86f7036f",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-14T17:16:24Z",
+      "side": 1,
+      "message": "got it - I have updated the title, and modified the contents of the howto a little bit. I wrote",
+      "parentUuid": "0c8f6ce2_515f6238",
+      "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fafb7a8d_8f730b46",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-14T17:16:24Z",
+      "side": 1,
+      "message": "I adjusted the title as suggested, and modified the wording a bit so that \"odd or even\" will appear in the body.",
+      "parentUuid": "0c8f6ce2_515f6238",
+      "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a95588a5_98cdb80b",
