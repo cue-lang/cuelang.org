@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13afd9dd_bc7768a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-14T17:12:30Z",
+      "side": 1,
+      "message": "*Almost* there! The page title is great (IMHO!), but the URL path (hence directory path) needs to match it, but whilst reading as natural English. I\u0027d change\n\n    docs/howto/validating-an-integer-value-parity/\n\nto\n\n    docs/howto/validate-integer-value-parity/\n    \nAn aside: apologies for being so picky! How-to guides are the hardest to get right, IMHO, as the /other/ doc types (tutorial, concept, reference) **don\u0027t** need to read like natural English when you include their preceding path element :-)",
+      "revId": "398c60630c28c2f80e700020f290416b290b1bb3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
