@@ -52,6 +52,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "172366db_957e2b2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-14T16:40:21Z",
+      "side": 1,
+      "message": "I agree about the confusing title - gave a couple options, I feel that \"parity\" is the more accurate direction here",
+      "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1bd00d20_6fad3f99",
@@ -83,6 +100,24 @@
       "side": 1,
       "message": "I /did/ consider originally suggesting this should be titled \"Ensuring that a specific integer value is either odd, or is even\", but realised it was a bit wordy ... :-)\n\nI\u0027m not sure that my only alternative is any better: \"Ensuring integer values\u0027 oddness or evenness\".\n\nDoes anyone have more grammatically pleasing suggestions?",
       "parentUuid": "1bd00d20_6fad3f99",
+      "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0682f9c0_82799170",
+        "filename": "content/docs/howto/ensure-int-is-odd-or-even/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-03-14T16:40:21Z",
+      "side": 1,
+      "message": "How about \"Ensuring the parity of an integer\", or \"Restricting an integer to be a specific parity\"?",
+      "parentUuid": "918ba45a_efa33930",
       "revId": "e3f58db96acb34ebb9f32070a0832a4e3852933d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
