@@ -11,6 +11,7 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 # behaviour).
 source _scripts/runPreprocessor.bash execute \
     --serve \
+    --hugo="--renderToMemory" \
     --hugo='--buildDrafts' \
     --hugo='--navigateToChanged' \
     --debug=hugo \
