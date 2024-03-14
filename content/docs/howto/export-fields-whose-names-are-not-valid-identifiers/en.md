@@ -10,7 +10,7 @@ toc_hide: true
 
 Some fields have names that are not valid
 [CUE identifiers]({{< relref "docs/reference/spec#identifiers" >}}).
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to export these fields using `cue export -e`.
 
 {{{with code "en" "emit"}}}
