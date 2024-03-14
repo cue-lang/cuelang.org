@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to write a **type switch**, where output needs to differ based
 on the type of data being processed. Because the CUE language does not include
 a switch statement, a mechanism is shown that *behaves* like a switch statement

@@ -9,7 +9,7 @@ aliases:
 - ensure-min-max-list
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in functions
 [`list.MaxItems`](https://pkg.go.dev/cuelang.org/go/pkg/list#MaxItems) and
 [`list.MinItems`](https://pkg.go.dev/cuelang.org/go/pkg/list#MinItems)

@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in function
 [`list.IsSorted`](https://pkg.go.dev/cuelang.org/go/pkg/list#IsSorted)
 to test and report if lists are sorted, using either a predefined or custom
