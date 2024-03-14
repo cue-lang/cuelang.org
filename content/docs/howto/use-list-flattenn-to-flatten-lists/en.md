@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in function
 [`list.FlattenN`](https://pkg.go.dev/cuelang.org/go/pkg/list#FlattenN)
 to flatten a list by expanding its list elements by a specified depth.
