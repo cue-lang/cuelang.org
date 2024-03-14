@@ -2,39 +2,62 @@
 title: References
 weight: 100
 toc_hide: false
+index_hide: true
 ---
 
-## Language Specification
+{{< cards >}}
+{{< card label="Language Specification" href="spec/" title="reference/spec" >}}
+The **source of truth** for how the CUE language should behave
+{{< /card >}}
 
-The source of truth of how the CUE language should behave is encoded in
-[The CUE Language Specification]({{< relref "spec" >}}).
+{{< card label="The cue command" href="cli/" title="reference/cli/cue" >}}
+**Help texts** for each **`cue`** subcommand
+{{< /card >}}
 
-## API References
+{{< card label="Modules" href="modules/" title="reference/modules" >}}
+CUE's experimental **dependency management** system
+{{< /card >}}
 
-The CUE Go APIs in the main repo are organized as follows:
+{{< card label="Glossary" href="glossary/" title="reference/glossary" >}}
+Index and **glossary** of terms used by CUE
+{{< /card >}}
 
-- [**cmd**](https://pkg.go.dev/cuelang.org/go/cmd):
-  The CUE command line tool.
-- [**cue**](https://pkg.go.dev/cuelang.org/go/cue):
-  core APIs related to parsing, formatting, loading and running CUE programs.
-  These packages are used by all other packages, including the command line tool.
-- [**encoding**](https://pkg.go.dev/cuelang.org/go/encoding):
-  Packages for converting to and from CUE, including adaptors for YAML, JSON,
-  Go, Protobuf, and OpenAPI.
-- [**pkg**](https://pkg.go.dev/cuelang.org/go/pkg):
-  Builtin packages that are available from within _CUE_ programs.
-  These are typically not used in Go code.
+{{< card label="Contribution Guide" href="contribution-guidelines/" title="reference/contributing" >}}
+**How to contribute** to the CUE project
+{{< /card >}}
 
-## Contributing to CUE
+{{< card label="Code of Conduct" href="code-of-conduct/" title="reference/conduct" >}}
+The project's **values**, **standards**, **responsibilities**, and **processes**
+{{< /card >}}
+{{< /cards >}}
 
-CUE maintains both a
-[Gerrit](https://review.gerrithub.io/q/project:cue-lang/cuelang.org) and
-[Github](https://github.com/cue-lang/cue) repository.
-The Gerrit repository is the source of truth, but changes are accepted
-in both repositories.
+## External references
 
-See the [Contribution Guide]({{< relref "contribution-guidelines" >}})
-for more details on how to contribute in line with the project's
-[Code of Conduct]({{< relref "code-of-conduct" >}}).
+*Information on sites other than cuelang.org.*
 
-## Available Reference Documents
+{{< cards >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/cue" title="api/go/cue" >}}
+**Core Go APIs** related to parsing, formatting, loading and running CUE programs.
+Used by all other packages, including the `cue` command
+{{< /card >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/encoding" title="api/go/encoding" >}}
+Go APIs for **converting to and from CUE**.
+Includes adaptors for YAML, JSON, Go, Protobuf, and OpenAPI
+{{< /card >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/pkg" title="api/cue" >}}
+**Standard library** of built-in packages **available to CUE code**.
+Also available to Go code, but typically not used there
+{{< /card >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/cmd" title="api/go/cmd" >}}
+The Go API for the `cue` **comand line tool**
+{{< /card >}}
+
+{{< card label="github.com" href="https://github.com/cue-lang/cue" title="git/cue" >}}
+The CUE project **issue tracker, and source code** for the CUE Go implementation
+{{< /card >}}
+
+{{< /cards >}}
