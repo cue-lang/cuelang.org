@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99a2b2f5_ea7c8d39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-14T17:27:35Z",
+      "side": 1,
+      "message": "FIXME",
+      "range": {
+        "startLine": 18,
+        "startChar": 33,
+        "endLine": 18,
+        "endChar": 38
+      },
+      "revId": "9ef2a6a05c75e198dfbc2b92de8b972ba3d0cc08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fa71d7f_e41f6350",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-14T17:27:35Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "9ef2a6a05c75e198dfbc2b92de8b972ba3d0cc08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d9a2dc8_434a7a1c",
+        "filename": "content/docs/integration/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-14T17:27:35Z",
+      "side": 1,
+      "message": "FIXME",
+      "range": {
+        "startLine": 32,
+        "startChar": 25,
+        "endLine": 32,
+        "endChar": 30
+      },
+      "revId": "9ef2a6a05c75e198dfbc2b92de8b972ba3d0cc08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9fe181c_92216a1a",
+        "filename": "content/docs/integration/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-14T17:27:35Z",
+      "side": 1,
+      "message": "@paul@myitcv.io please provide a 1, 2, or 3 item list that pithily summarises the Go API\u0027s capabilities.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 48
+      },
+      "revId": "9ef2a6a05c75e198dfbc2b92de8b972ba3d0cc08",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
