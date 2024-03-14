@@ -8,7 +8,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in function
 [`encoding/csv.Encode`](https://pkg.go.dev/cuelang.org/go/pkg/encoding/csv#Encode)
 to encode a list of lists into a string as comma-separated values (CSV).
