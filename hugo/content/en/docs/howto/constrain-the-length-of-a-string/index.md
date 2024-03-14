@@ -12,7 +12,7 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to make sure a string has a minimum length, or a maximum
 length, or both.
 
