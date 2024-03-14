@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in functions
 [`net.ParseIP`](https://pkg.go.dev/cuelang.org/go/pkg/net#ParseIP) and
 [`net.IPString`](https://pkg.go.dev/cuelang.org/go/pkg/net#IPString)
