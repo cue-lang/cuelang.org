@@ -2,39 +2,83 @@
 title: References
 weight: 100
 toc_hide: false
+index_hide: true
 ---
 
-## Language Specification
+## Documentation
 
-The source of truth of how the CUE language should behave is encoded in
-[The CUE Language Specification]({{< relref "spec" >}}).
+{{< cards >}}
 
-## API References
+{{< card label="Language Specification" href="spec/" title="reference/spec" >}}
+The **source of truth** of how the CUE language should behave
+{{< /card >}}
 
-The CUE Go APIs in the main repo are organized as follows:
+{{< card label="The cue CLI tool" href="cli/" title="reference/cli" >}}
+**Help texts** for each **`cue` CLI** command and subcommand
+{{< /card >}}
 
-- [**cmd**](https://pkg.go.dev/cuelang.org/go/cmd):
-  The CUE command line tool.
-- [**cue**](https://pkg.go.dev/cuelang.org/go/cue):
-  core APIs related to parsing, formatting, loading and running CUE programs.
-  These packages are used by all other packages, including the command line tool.
-- [**encoding**](https://pkg.go.dev/cuelang.org/go/encoding):
-  Packages for converting to and from CUE, including adaptors for YAML, JSON,
-  Go, Protobuf, and OpenAPI.
-- [**pkg**](https://pkg.go.dev/cuelang.org/go/pkg):
-  Builtin packages that are available from within _CUE_ programs.
-  These are typically not used in Go code.
+{{< card label="Modules" href="modules/" title="reference/modules" >}}
+CUE's experimental **dependency management** system
+{{< /card >}}
+
+{{< card label="Glossary" href="glossary/" title="reference/glossary" >}}
+Index and **glossary** of terms used by CUE
+{{< /card >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/cue" title="api/go/cue" >}}
+**Core APIs** related to parsing, formatting, loading and running CUE programs.
+Used by all other packages, including the `cue` CLI
+{{< /card >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/encoding" title="api/go/encoding" >}}
+Packages for **converting to and from CUE**.
+Includes adaptors for YAML, JSON, Go, Protobuf, and OpenAPI
+{{< /card >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/pkg" title="api/cue" >}}
+**Standard library** of built-in packages **available to CUE code**.
+Available to Go code, but typically not used there
+{{< /card >}}
+
+{{< card label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/cmd" title="api/go/cmd" >}}
+The **`cue` CLI tool**
+{{< /card >}}
+
+{{< /cards >}}
+
+## Code and Issues
+
+{{< cards >}}
+
+{{< card label="GerritHub" href="https://review.gerrithub.io/q/project:cue-lang/cue" title="gerrit/cue" >}}
+**Git source of truth** for the CUE Go implementation
+{{< /card >}}
+
+{{< card label="GitHub" href="https://github.com/cue-lang/cue" title="github/cue" >}}
+**Issue tracker** and Git mirror for the CUE Go implementation
+{{< /card >}}
+
+{{< card label="GerritHub" href="https://review.gerrithub.io/q/project:cue-lang/cuelang.org" title="gerrit/cuelang.org" >}}
+**Git source of truth** for the cuelang.org website
+{{< /card >}}
+
+{{< card label="GitHub" href="https://github.com/cue-lang/cuelang.org" title="github/cuelang.org" >}}
+**Git mirror** for the cuelang.org website
+{{< /card >}}
+
+{{< /cards >}}
 
 ## Contributing to CUE
 
-CUE maintains both a
-[Gerrit](https://review.gerrithub.io/q/project:cue-lang/cuelang.org) and
-[Github](https://github.com/cue-lang/cue) repository.
-The Gerrit repository is the source of truth, but changes are accepted
-in both repositories.
+{{<  cards >}}
 
-See the [Contribution Guide]({{< relref "contribution-guidelines" >}})
-for more details on how to contribute in line with the project's
-[Code of Conduct]({{< relref "code-of-conduct" >}}).
+{{< card label="Contribution Guide" href="/community/contribution-guidelines/" title="community/contribution" >}}
+**How to contribute** to the CUE project
+{{< /card >}}
 
-## Available Reference Documents
+{{< card label="Code of Conduct" href="code-of-conduct" title="reference/conduct" >}}
+The project's **values**, **standards**, **responsibilities**, and **processes**
+{{< /card >}}
+
+{{< /cards >}}
+
