@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in functions
 [`path.Base`](https://pkg.go.dev/cuelang.org/go/pkg/path#Base),
 [`path.Dir`](https://pkg.go.dev/cuelang.org/go/pkg/path#Dir), and
