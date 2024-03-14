@@ -15,7 +15,7 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to constrain fields to contain string representations of
 integer values.
 
