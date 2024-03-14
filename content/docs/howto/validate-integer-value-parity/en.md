@@ -8,7 +8,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to validate an integer value's parity.
 
 Two schemas `#Odd` and `#Even` are presented that validate an integer is either odd or even respectively.

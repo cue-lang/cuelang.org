@@ -8,8 +8,9 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto/#commented-cue" >}}) demonstrates
-how to use the `cue` command to combine multiple YAML files into a list.
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
+demonstrates how to use the `cue` command to combine multiple YAML files into a
+list.
 
 {{{with code "en" "cc"}}}
 #location top-left top-left top-left top-right bottom
