@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in function
 [`strings.Replace`](https://pkg.go.dev/cuelang.org/go/pkg/strings#Replace)
 to make copies of strings with specific substring replacements, *without* using

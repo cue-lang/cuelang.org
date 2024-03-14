@@ -8,7 +8,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in function
 [`strconv.Atoi`](https://pkg.go.dev/cuelang.org/go/pkg/strconv#Atoi)
 to convert a string representation of an int to the number itself, using base

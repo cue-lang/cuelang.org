@@ -2,22 +2,22 @@
 title: Tutorials
 weight: 30
 toc_hide: false
+index_hide: true
+aliases:
+- find-a-tutorial
 ---
 
-## About these tutorials
-
 CUE tutorials are practical lessons that help you try out language features,
-workflows, and tools in low risk, practise settings.
-
-To discover the range of tutorials that are available, use the
-[Find a tutorial]({{< relref "find-a-tutorial" >}}) link on the left hand side
-of this page.
+workflows, and tools in practice settings on your own computer.
 
 If you're new to CUE then start by reading the
 [CUE Tour]({{< relref "tour" >}}), and <!-- TODO:postLG
 [Language Guide]({{</* relref "docs/language-guide" */>}}), and -->
-then try out some
-tutorials specifically selected for you on the
-["New to CUE?"]({{< relref "new-to-cue" >}}) page.
+then try out some tutorials specially
+[chosen for you]({{< relref "new-to-cue" >}}).
 
-## All available tutorials
+Use this interface to browse and search through the contents, titles, examples,
+and tags of the tutorials, and to narrow down the list of tutorials to a
+specific topic:
+
+{{< search contentType="Tutorials" showContentTypes=false >}}
