@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c2dbf59_72edbf86",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-14T08:24:56Z",
+      "side": 1,
+      "message": "FIXME",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 38
+      },
+      "revId": "1d5cb28834d9c77cfbc3255324b3d3f93373a6c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
