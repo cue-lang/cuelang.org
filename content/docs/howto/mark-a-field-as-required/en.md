@@ -12,7 +12,7 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates using the **required field** marker in a schema to make sure that a
 field is present in data.
 

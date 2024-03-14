@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the built-in function
 [`list.IsSorted`](https://pkg.go.dev/cuelang.org/go/pkg/list#IsSorted)
 as a field validator to assert that lists are sorted, using either a predefined

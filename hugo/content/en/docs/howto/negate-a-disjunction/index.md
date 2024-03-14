@@ -8,7 +8,7 @@ authors:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to negate a disjunction. This allows a field to be constrained
 such that evaluation is only successful if the field's value would **not** be
 permitted by the disjunction.
