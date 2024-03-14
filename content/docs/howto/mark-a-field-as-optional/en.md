@@ -12,7 +12,7 @@ relatedIssues:
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto#commented-cue-guides" >}})
+This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates using an **optional field** marker to constrain a field's value -
 *but only if it is present*.
 
@@ -65,7 +65,7 @@ s1:
     "docs/tour/types/structs"
   >}})
 - [**Commented CUE guides**]({{< relref
-    "docs/howto#commented-cue-guides"
+    "docs/howto/about-commented-cue-guides"
   >}})
 <!-- TODO:postLG
 - [**Regular fields**]({{</* relref
