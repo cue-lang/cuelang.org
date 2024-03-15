@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"MSHC8LQPT8U2AHOUK30TV3KU8K5B9FRV3LAAFNCBD5OSAUCN78OG====": [{
+									"KNM46H1DFCBFP4QQP7GKABFS3LGJUOVR5C6U41HFL698BFM5HM10====": [{
 										doc:      ""
 										cmd:      "cue help registryconfig"
 										exitCode: 0
@@ -107,7 +107,7 @@ package site
 												\t\t//
 												\t\t// If there are multiple matching prefixes, the longest
 												\t\t// is chosen.
-												\t\tmoduleRegistries: [#modulePath]: #registry
+												\t\tmoduleRegistries?: [#modulePath]: #registry
 
 												\t\t// defaultRegistry specifies a fallback registry to be used if no
 												\t\t// prefix from moduleRegistry matches.
