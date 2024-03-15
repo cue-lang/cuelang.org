@@ -22,8 +22,8 @@ hide_summary: true
 {{< /card >}}
 
 {{< card
-	title="CUE's Configuration use case"
-	href="../configuration-use-case"
+	title="How CUE enables configuration"
+	href="/docs/concept/how-cue-enables-configuration/"
 	label=" "
 >}}
 {{< /card >}}
