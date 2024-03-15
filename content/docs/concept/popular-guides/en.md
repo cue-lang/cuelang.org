@@ -42,6 +42,12 @@ hide_summary: true
 >}}
 {{< /card >}}
 {{< card
+	title="How CUE enables boilerplate removal"
+	href="../how-cue-enables-boilerplate-removal/"
+	label=" "
+>}}
+{{< /card >}}
+{{< card
 	title="Schema Definition"
 	href="../schema-definition-use-case/"
 	label=" "
