@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "571a5744_104c7996",
+        "filename": "site.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-15T17:01:48Z",
+      "side": 1,
+      "message": "I feel that this needs upgrading as 0.8.0 is out of the RC phase.",
+      "revId": "2dcea5bd5a753d4842665e763d60d1472cc631ca",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
