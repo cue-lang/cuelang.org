@@ -3,6 +3,183 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "30da9e18_d5a6c97b",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Per our conversation offline, it\u0027s actually the other way around: types are constraints, rather than constraints are values because types are constraints. So I would stick with the existing language: \"To CUE they are just values like anything else\" (or some variation of that).",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 53
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42f22bbf_5ed6b793",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Per our conversation, I would drop this. It\u0027s not correct to my mind, given that a type is a constraint. And given what will have preceded this part of the sentence, there is no loss of precision or clarity.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 0
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06cbe117_5d2034fc",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Delete.",
+      "range": {
+        "startLine": 19,
+        "startChar": 61,
+        "endLine": 20,
+        "endChar": 4
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef05808f_12c5a459",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Having removed \"unification means that\" earlier, we can now use the word \"unify\" or \"unified\" rather than the slightly abstract \"applies\".",
+      "range": {
+        "startLine": 20,
+        "startChar": 67,
+        "endLine": 20,
+        "endChar": 74
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96261141_ba101fe3",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Per our discussion, `\u003e\u003d0` or similar.",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c5e8406_41acec53",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Per our discussion, after the example we also have the opportunity to drive home the point about `string` and `\"Viola\"` being two values that don\u0027t conflict, they unify. Similarly with `\u003e\u003d0` and `38`",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c14029e_35fc0b7c",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Per our discussion, something like \"CUE allows a field to be specified multiple times so long as the values don\u0027t conflict. If the values don\u0027t conflict, we say they unify. Unification is the process of checking that values don\u0027t conflict\".",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2020e2c_7ecc01eb",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "I would have each of these as separate paragraphs like the existing tour. It looks a bit odd as part of the same paragraph with semantic breaks.",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "849f2c23_5c564a40",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:11:54Z",
+      "side": 1,
+      "message": "Per our conversation, make the example identical to the existing tour: it\u0027s much simpler and more appropriate for where we are in the tour.",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ff191e1_5d8d48c0",
         "filename": "content/docs/tour/basics/json-superset/en.md",
         "patchSetId": 30
