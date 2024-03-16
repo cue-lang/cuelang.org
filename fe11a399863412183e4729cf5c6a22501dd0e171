@@ -493,6 +493,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cdc6fad_7b3b2e3b",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ff191e1_5d8d48c0",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 35
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0fe43904_236da669",
@@ -506,6 +530,24 @@
       "writtenOn": "2024-03-16T14:22:21Z",
       "side": 1,
       "message": "You might also like to include some mention of the text being copy-able? I hold that lightly though.",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11a5278f_4aa503e5",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fe43904_236da669",
       "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -619,6 +661,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06b6ef38_56549e92",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abdf2fff_a8726e23",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bd6e65c_19e1997e",
@@ -659,6 +725,48 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "24664ca5_c18cb75a",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e25be9d0_fa61fa80",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80b066ba_411aa44c",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done, but I\u0027m keeping \"pragmatically\" for those of us who would need help grasping the practical implications of \"types are values\" ...",
+      "parentUuid": "6bd6e65c_19e1997e",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26355d36_36a587ea",
@@ -672,6 +780,30 @@
       "writtenOn": "2024-03-16T14:22:21Z",
       "side": 1,
       "message": "I would include an example of what is concrete, and then have this bit about JSON because it\u0027s useful.",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 69
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f55d0c75_a1b91f2b",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26355d36_36a587ea",
       "range": {
         "startLine": 11,
         "startChar": 25,
@@ -728,6 +860,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d96b8a54_03280031",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0342897a_868eb707",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 15
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ddd2c5e_38336839",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "It can\u0027t be a numbered list, as the `#1/2/3` at the end of page need to refer back to the struct examples by number. I\u0027ve changed to an unordered list, which I think works well.",
+      "parentUuid": "ccfda039_89201ac2",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 2
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce937f53_ea47833b",
@@ -741,6 +921,30 @@
       "writtenOn": "2024-03-16T14:22:21Z",
       "side": 1,
       "message": "I think this sentence will leave the reader confused without an example of what you are talking about, to then match the two previous sentences.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75e1bac4_7bb5a1bb",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce937f53_ea47833b",
       "range": {
         "startLine": 14,
         "startChar": 0,
@@ -774,6 +978,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2023d726_e7640bb7",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "376b25a3_a451926a",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 19
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aba50ac9_d7d01eb8",
@@ -787,6 +1015,24 @@
       "writtenOn": "2024-03-16T14:22:21Z",
       "side": 1,
       "message": "It has always irked me that we have data on the left in this example, and then describe the spectrum as `2 -\u003e 3 -\u003e 1`. Would it not make sense to have schema, constraint, data?",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a73e1d03_e88ddb06",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aba50ac9_d7d01eb8",
       "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -814,6 +1060,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd8ab12e_2e616eb8",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc82c99a_7e3c7176",
+      "range": {
+        "startLine": 21,
+        "startChar": 14,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "386fba77_f5ccbf7a",
@@ -827,6 +1097,24 @@
       "writtenOn": "2024-03-16T14:22:21Z",
       "side": 1,
       "message": "Given the above suggested reorder, the referencing of the numbers then becomes redundant, and we can simply highlight the words schema, constraint, data etc. (I just find the `#1` rather jarring given that we also have `1)` above).",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "993ec440_d3d361f2",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T16:47:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "386fba77_f5ccbf7a",
       "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
