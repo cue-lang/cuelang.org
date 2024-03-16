@@ -16,6 +16,24 @@
       "message": "I feel that this needs upgrading as 0.8.0 is out of the RC phase.",
       "revId": "2dcea5bd5a753d4842665e763d60d1472cc631ca",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bf8e76c_30465957",
+        "filename": "site.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T05:11:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "571a5744_104c7996",
+      "revId": "2dcea5bd5a753d4842665e763d60d1472cc631ca",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
