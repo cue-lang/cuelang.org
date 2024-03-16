@@ -606,6 +606,29 @@
       "message": "Given the above suggested reorder, the referencing of the numbers then becomes redundant, and we can simply highlight the words schema, constraint, data etc. (I just find the `#1` rather jarring given that we also have `1)` above).",
       "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b4ecab6_8adb899c",
+        "filename": "content/docs/tour/basics/validation/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:34:26Z",
+      "side": 1,
+      "message": "Link to docs?",
+      "range": {
+        "startLine": 11,
+        "startChar": 30,
+        "endLine": 11,
+        "endChar": 37
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
