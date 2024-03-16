@@ -9,7 +9,7 @@
 [build.environment]
   GO_VERSION = "1.22.0"
   HUGO_ENV = "production"
-  HUGO_VERSION = "0.123.8"
+  HUGO_VERSION = "0.124.0"
   NODE_VERSION = "20.9.0"
 
 [context]
