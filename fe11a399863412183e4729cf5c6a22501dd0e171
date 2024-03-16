@@ -335,6 +335,143 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e495dc1e_df0f9af9",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T16:14:44Z",
+      "side": 1,
+      "message": "Name needs to change (probably)\n\n\"Specifying fields and constraints concisely\"",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d780065_d6bed9a7",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T16:14:44Z",
+      "side": 1,
+      "message": "Simplify wording. Second sentence goes?",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f71aa420_e5d96e77",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T16:14:44Z",
+      "side": 1,
+      "message": "We need to introduce pattern constraints, and clarify that a pattern constraint does not introduce/specify (wording) a set of fields, rather it specifies constraints that apply to existing fields.",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07502acc_c0d3c7c4",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T16:14:44Z",
+      "side": 1,
+      "message": "It\u0027s not \"because\" - I think this needs to be a comment that refers to the fact that constraints that come from pattern constraints unify in the same way that non-pattern constraints unify.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42952c41_7dd3913b",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T16:14:44Z",
+      "side": 1,
+      "message": "This is the headline of the page!",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 14
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fda6d67_898b7e43",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T16:14:44Z",
+      "side": 1,
+      "message": "Reword.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "852ce567_afe17e76",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T16:14:44Z",
+      "side": 1,
+      "message": "Per our discussion:\n\n```\n// Concisely specify fields\nouter: middle1: inner: 3\nouter: middle2: inner: 7\n\n// Pattern constraints specify constraints that apply to multiple fields\nouter: [string]: {\n    inner: int \u0026 \u003c10\n    fruit: \"banana\"\n}\n```",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ff191e1_5d8d48c0",
         "filename": "content/docs/tour/basics/json-superset/en.md",
         "patchSetId": 30
