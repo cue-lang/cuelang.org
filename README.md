@@ -20,7 +20,7 @@ issue a `cuelang.org: ` prefix.
 
 * [NodeJS](https://nodejs.org/) `== v18`
 * [Go](https://golang.org/dl/) `== go1.20`
-* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.115.4`
+* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.120.3`
 
 ### Developing the site locally
 
