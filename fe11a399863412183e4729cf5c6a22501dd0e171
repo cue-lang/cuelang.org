@@ -129,6 +129,161 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ba5fbbea_a892b7a2",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:33:21Z",
+      "side": 1,
+      "message": "The existing tour doesn\u0027t do a good job of wording here. Indeed I think the use of \"unspecified\" actually conflicts with use of \"specified\" elsewhere as meaning that a field is declared. If we have time I think we can do a better job of simplifying the wording here. Perhaps something along the lines of:\n\n\"Because CUE knows that definitions are used for validation, they aren\u0027t output as data. It is therefore normal for definitions to specify fields that do not have concrete field values such as types.\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 72
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd5aa2c0_a7c63995",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:33:21Z",
+      "side": 1,
+      "message": "Per the existing language, I would avoid trying to make this point here. I know it\u0027s not fully precise, but I think we are going to spend some significant time trying to get the wording \"right\".",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a72c172_0a91bbaf",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:33:21Z",
+      "side": 1,
+      "message": "The `...` should not be in parentheses - to include it in parentheses seems to suggest it is an alternative explanation/wording for \"ellipsis\" as opposed to the essential syntactical construct that it is.",
+      "range": {
+        "startLine": 18,
+        "startChar": 14,
+        "endLine": 18,
+        "endChar": 33
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57be5de8_1932de56",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:33:21Z",
+      "side": 1,
+      "message": "I would avoid trying to define this word here. \"Including\" (not a definition) is fine.",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 11
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "168674a9_cbba6def",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:33:21Z",
+      "side": 1,
+      "message": "Given we have dropped the \"recursively\" bit above, I think we can simplify this language: \n\n\"Including a `...` in struct keeps it open.\"",
+      "range": {
+        "startLine": 18,
+        "startChar": 65,
+        "endLine": 19,
+        "endChar": 74
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "256dafef_e7297ce0",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:33:21Z",
+      "side": 1,
+      "message": "Per our conversation, let\u0027s keep this as `export` for consistency. Otherwise the reader will be left asking \"what is `vet`?\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 14
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd219e4c_9537904c",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:33:21Z",
+      "side": 1,
+      "message": "This is a bit wordy to my mind. I think the existing language is fine:\n\n```\n// ...    // uncomment this to allow any field\n```",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8c14029e_35fc0b7c",
         "filename": "content/docs/tour/basics/duplicate-fields/en.md",
         "patchSetId": 30
