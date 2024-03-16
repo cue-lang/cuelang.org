@@ -79,7 +79,7 @@ jobs:
         name: Install Hugo (${{ runner.os }})
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.123.8
+          hugo-version: 0.124.0
           extended: true
       - id: go-mod-cache-dir
         name: Get go mod cache directory

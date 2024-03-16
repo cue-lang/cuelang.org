@@ -32,7 +32,7 @@ goVersion: "1.22.0"
 nodeVersion: "20.9.0"
 
 // hugoVersion is the version of hugo used in generating our static site
-hugoVersion: "0.123.8"
+hugoVersion: "0.124.0"
 
 // netlifyCLIVersion is the version of the Netlify CLI used to deploy tip and
 // deploy previews of CLs
