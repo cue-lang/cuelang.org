@@ -16,6 +16,23 @@
       "message": "Note this is master, not alpha.",
       "revId": "2bdd3763259d40bafbb28af2485379232e856004",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2181111_ed8f98c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-16T10:16:14Z",
+      "side": 1,
+      "message": "LGTM, though I\u0027ve had significantly less exposure to the master branch than alpha.",
+      "revId": "2bdd3763259d40bafbb28af2485379232e856004",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
