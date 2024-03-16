@@ -74,11 +74,11 @@ jobs:
         uses: actions/setup-go@v4
         with:
           cache: false
-          go-version: 1.22.0
+          go-version: 1.22.1
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.115.4
+          hugo-version: 0.120.3
           extended: true
       - id: go-mod-cache-dir
         name: Get go mod cache directory
@@ -91,8 +91,8 @@ jobs:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
-          key: Linux-1.22.0-${{ github.run_id }}
-          restore-keys: Linux-1.22.0
+          key: Linux-1.22.1-${{ github.run_id }}
+          restore-keys: Linux-1.22.1
       - name: Tip dist
         run: ./build.bash
         env:
