@@ -1,0 +1,279 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ff191e1_5d8d48c0",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "\"structs or maps\"\n\nFollowing the new language in the language guide.",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 35
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fe43904_236da669",
+        "filename": "content/docs/tour/basics/json-superset/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "You might also like to include some mention of the text being copy-able? I hold that lightly though.",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abdf2fff_a8726e23",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "Do we need \"filler\" words like this? I\u0027m not sure they add much?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bd6e65c_19e1997e",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "Ditto re \"filler\" words. And I think the sentence itself can be simplified to drop the \"this means that\" that follows. See also the comment about assign.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e25be9d0_fa61fa80",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "We don\u0027t really talk about \"assigning\" a value to a field. If anything that happens post evaluation, after all unification happens. A field is declared with a value.",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26355d36_36a587ea",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "I would include an example of what is concrete, and then have this bit about JSON because it\u0027s useful.",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 69
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0342897a_868eb707",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "Superfluous word.",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 15
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccfda039_89201ac2",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "This paragraph is one long sentence. Ideally we\u0027d make it three sentences or a numbered list to correspond to the examples below?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 2
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce937f53_ea47833b",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "I think this sentence will leave the reader confused without an example of what you are talking about, to then match the two previous sentences.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "376b25a3_a451926a",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "Suggest simplifying the language:\n\n\"The following example shows...\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 19
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aba50ac9_d7d01eb8",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "It has always irked me that we have data on the left in this example, and then describe the spectrum as `2 -\u003e 3 -\u003e 1`. Would it not make sense to have schema, constraint, data?",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc82c99a_7e3c7176",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "First use of this word: why not \"in between\" as above?",
+      "range": {
+        "startLine": 21,
+        "startChar": 14,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "386fba77_f5ccbf7a",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T14:22:21Z",
+      "side": 1,
+      "message": "Given the above suggested reorder, the referencing of the numbers then becomes redundant, and we can simply highlight the words schema, constraint, data etc. (I just find the `#1` rather jarring given that we also have `1)` above).",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
