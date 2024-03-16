@@ -375,6 +375,92 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d5295d50_0205a7c7",
+        "filename": "content/docs/tour/basics/order-irrelevance/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:41:10Z",
+      "side": 1,
+      "message": "\"basic\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 12
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "069865be_4ba8d5e7",
+        "filename": "content/docs/tour/basics/order-irrelevance/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:41:10Z",
+      "side": 1,
+      "message": "Suggest simplifying the language:\n\n\"This crucial property explains how CUE is able to handle a field being specified multiple times\"\n\nor similar wording. \n\n(with a link to the Duplicate Fields page)",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 55
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "792b9f69_6b3e0569",
+        "filename": "content/docs/tour/basics/order-irrelevance/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:41:10Z",
+      "side": 1,
+      "message": "I like what you\u0027re trying to do here to emphasise the point but to my mind this is a bit long. Can we shorten it?",
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d9aa28c_2a1be2f3",
+        "filename": "content/docs/tour/basics/order-irrelevance/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-16T15:41:10Z",
+      "side": 1,
+      "message": "I think you need to echo the language from earlier with \"must not conflict\".",
+      "range": {
+        "startLine": 17,
+        "startChar": 27,
+        "endLine": 17,
+        "endChar": 39
+      },
+      "revId": "fe11a399863412183e4729cf5c6a22501dd0e171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "abdf2fff_a8726e23",
         "filename": "content/docs/tour/basics/types-are-values/en.md",
         "patchSetId": 30
