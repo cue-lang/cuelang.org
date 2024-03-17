@@ -95,6 +95,69 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8a751dbe_db1d118e",
+        "filename": "content/docs/tour/types/bounddef/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:04:08Z",
+      "side": 1,
+      "message": "I would start another paragraph with this point.\n\n\"The `u`-prefixed identifiers provide similar capabilities to unsigned integers in other languages\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 4
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9501c9b3_cc4cf576",
+        "filename": "content/docs/tour/types/bounddef/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:04:08Z",
+      "side": 1,
+      "message": "I don\u0027t know why the current docs use definitions here. I would drop them an inline to keep the example shorter and therefore clearer.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "082ebada_58b23c06",
+        "filename": "content/docs/tour/types/bounds/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:04:08Z",
+      "side": 1,
+      "message": "`null`",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f0bac54d_311b91a5",
         "filename": "content/docs/tour/types/bytes/en.md",
         "patchSetId": 32
@@ -684,6 +747,30 @@
       "writtenOn": "2024-03-17T10:15:22Z",
       "side": 1,
       "message": "Where has this come from?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 41
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bae2073f_113dc367",
+        "filename": "content/docs/tour/types/numbers/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:04:08Z",
+      "side": 1,
+      "message": "Ah I see where this comes from now, later in the tour in \"Bounds\".\n\nI would make this two sentences:\n\n\"Both integers and floats are instances of the generic `number` type. CUE numbers have arbitrary precision.\"",
+      "parentUuid": "2d65fc75_ddfb01ff",
       "range": {
         "startLine": 13,
         "startChar": 0,
