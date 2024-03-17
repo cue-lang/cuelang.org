@@ -105,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e761fe8_da3268e2",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T16:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7a8e522_62832b13",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7361758_0cc823bf",
@@ -122,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d974aa29_b5894751",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T16:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7361758_0cc823bf",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4e0505b_008b6104",
@@ -135,6 +171,24 @@
       "writtenOn": "2024-03-02T18:58:22Z",
       "side": 1,
       "message": "I don\u0027t recall the term \"collection\" being used, and the spec uses it precisely once, but not in a formal definition (https://alpha.cuelang.org/docs/reference/spec/#pattern-and-default-constraints).\n\nIs it used here solely to create a concise comment, or is it communicating something nuanced and important?",
+      "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1386ebd8_8541798a",
+        "filename": "content/docs/tour/basics/folding-structs/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T16:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4e0505b_008b6104",
       "revId": "56a9777d927be7f0da90fc2767fc3fa3fb4aeaf9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
