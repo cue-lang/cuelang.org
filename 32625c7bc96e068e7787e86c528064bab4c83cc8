@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32f45408_b72d5021",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "010ce76d_845ed932",
+      "range": {
+        "startLine": 6,
+        "startChar": 11,
+        "endLine": 6,
+        "endChar": 20
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02880bae_7f8b67d6",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-17T09:01:56Z",
       "side": 1,
       "message": "Per earlier comments, this use of \"assigned\" is not correct. A field cannot be specified with `_|_`.",
+      "range": {
+        "startLine": 14,
+        "startChar": 35,
+        "endLine": 14,
+        "endChar": 43
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94dcd2b9_82541e52",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02880bae_7f8b67d6",
       "range": {
         "startLine": 14,
         "startChar": 35,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd8aa541_d76357e1",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aeb41a2f_85c58c29",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 16
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c393f1c_39ed652b",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-03-17T09:01:56Z",
       "side": 1,
       "message": "\"to include literal error values (`_|_`) in the output along with error messages as inline comments\".\n\nI think the point about it not resulting an in an \"invocation failure\" (I\u0027m really not clear that term is commonly used either FWIW) is less important.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 67
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1ed917d_12782047",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c393f1c_39ed652b",
       "range": {
         "startLine": 18,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "559f946c_0897c685",
+        "filename": "content/docs/tour/types/bounddef/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a751dbe_db1d118e",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 4
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9501c9b3_cc4cf576",
@@ -133,6 +253,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "651e880f_b5d38df6",
+        "filename": "content/docs/tour/types/bounddef/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9501c9b3_cc4cf576",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "082ebada_58b23c06",
@@ -146,6 +284,30 @@
       "writtenOn": "2024-03-17T14:04:08Z",
       "side": 1,
       "message": "`null`",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f108ef8c_5ec38f9b",
+        "filename": "content/docs/tour/types/bounds/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "082ebada_58b23c06",
       "range": {
         "startLine": 9,
         "startChar": 42,
@@ -179,6 +341,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d73f0ed3_5f3ac726",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0bac54d_311b91a5",
+      "range": {
+        "startLine": 8,
+        "startChar": 58,
+        "endLine": 8,
+        "endChar": 66
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b258bf76_e6d1ce66",
@@ -202,6 +388,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dfccc85_62ebd45b",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b258bf76_e6d1ce66",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 20
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ad6a28a_e222d537",
@@ -215,6 +425,30 @@
       "writtenOn": "2024-03-17T10:39:48Z",
       "side": 1,
       "message": "\"the following additional escape sequences...\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95877d36_fb607f1d",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ad6a28a_e222d537",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -250,6 +484,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3005b7c2_acf7983e",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "I added it because I was confused by this, early in my CUE learning.\n\nI haven\u0027t removed it entirely, but have changed the paragraph to something that I think is valid. I also added a bytes-\u003estring cast example, so as to help out the learner who is frustrated by not being able to emit `bytes` they /know/ don\u0027t represent binary data.",
+      "parentUuid": "d03c1d41_f742d2e4",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 11
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "02626568_a9903df8",
         "filename": "content/docs/tour/types/closed/en.md",
         "patchSetId": 32
@@ -261,6 +519,30 @@
       "writtenOn": "2024-03-17T10:51:37Z",
       "side": 1,
       "message": "\"it has\" - the contraction hurts readability here.",
+      "range": {
+        "startLine": 6,
+        "startChar": 61,
+        "endLine": 6,
+        "endChar": 65
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7a5d252_41a1b6b3",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02626568_a9903df8",
       "range": {
         "startLine": 6,
         "startChar": 61,
@@ -294,6 +576,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7d154d6_d4ae02d2",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a002c4e_abb19e70",
+      "range": {
+        "startLine": 9,
+        "startChar": 27,
+        "endLine": 9,
+        "endChar": 34
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f642fc8_b5ed4c97",
@@ -307,6 +613,30 @@
       "writtenOn": "2024-03-17T10:51:37Z",
       "side": 1,
       "message": "\"on the next page\"?",
+      "range": {
+        "startLine": 13,
+        "startChar": 55,
+        "endLine": 13,
+        "endChar": 62
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e9ba51f_44b2835a",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f642fc8_b5ed4c97",
       "range": {
         "startLine": 13,
         "startChar": 55,
@@ -334,6 +664,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d70ac49f_7b97f230",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd3dd960_e1c83ccc",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7175382_5ead2bca",
@@ -347,6 +695,24 @@
       "writtenOn": "2024-03-17T13:49:13Z",
       "side": 1,
       "message": "I think we need a sentence above this that motivates default values. I think that can and should speak to the language from the previous page which talks about the situation where no value is provided for a disjunction, a hence we are left with all of the options as equally valid. That default values provide a way to select a value in such a situation. That default values are indicated by `*` on an element in a disjunection etc.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0706c7b9_ed82c72d",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7175382_5ead2bca",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -368,6 +734,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb1cb504_2f810ef0",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7ddcef4_62ecac7f",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fc692a37_11f46b7f",
@@ -385,6 +769,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "34c412b6_6d337d9f",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc692a37_11f46b7f",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a0476b8_258a4325",
@@ -398,6 +800,24 @@
       "writtenOn": "2024-03-17T13:49:13Z",
       "side": 1,
       "message": "This is far too nuaunced a point for the tour to my mind. I suggest we delete this, per above.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38ca2f6a_dead9db7",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a0476b8_258a4325",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -448,6 +868,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5370504_fe6ac0db",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1b02187_2bcd4a25",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 72
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7ac88fe_c52e7cf5",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "369f0202_4e35704e",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 39
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e070c444_f61f9d32",
@@ -471,6 +939,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52a795ce_bcb77ab0",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e070c444_f61f9d32",
+      "range": {
+        "startLine": 14,
+        "startChar": 13,
+        "endLine": 14,
+        "endChar": 24
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05ff86d7_768c3b56",
@@ -484,6 +976,30 @@
       "writtenOn": "2024-03-17T11:12:36Z",
       "side": 1,
       "message": "The problem with this paragraph as phrased is that it seems to imply definitions are only structs. Which is not the case. I would try and borrow the language from the existing tour: \"Structs defined by definitions...\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c4fc7d8_68b35d04",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05ff86d7_768c3b56",
       "range": {
         "startLine": 13,
         "startChar": 0,
@@ -540,6 +1056,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5d103f3_636e206f",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c7369e9_a45115bb",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 11
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54f8733f_9f9dc9eb",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c094b066_d5ad4a84",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 33
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bedc90db_39e71d7c",
@@ -553,6 +1117,30 @@
       "writtenOn": "2024-03-17T11:12:36Z",
       "side": 1,
       "message": "I would delete this part of the sentence. It\u0027s a nuance that we don\u0027t need to get across here to my mind, and wording it is hard.",
+      "range": {
+        "startLine": 18,
+        "startChar": 64,
+        "endLine": 19,
+        "endChar": 75
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a25b9ef_a3bd6938",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bedc90db_39e71d7c",
       "range": {
         "startLine": 18,
         "startChar": 64,
@@ -580,6 +1168,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50fae6a6_d3cdd5c8",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5db084ce_3504632e",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc3e348f_0d637d5a",
@@ -597,6 +1203,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61b270d1_70703344",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc3e348f_0d637d5a",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a22d1485_1e9f55a8",
@@ -610,6 +1234,24 @@
       "writtenOn": "2024-03-17T11:31:50Z",
       "side": 1,
       "message": "I would avoid using the word \"list\" here because that is a type in CUE. And given that we are not clearly looking at a list by that definition, we should avoid it.\n\nThe current language suffices for now to my mind:\n\n\"define a new type that is one of several things.\"",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "931dda7d_75c48cce",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "I can\u0027t tell you how many time my brain has tripped over itself, reading that specific sentence! \".. a new type that is one of ...\" just doesn\u0027t work, for me, to the extent that it\u0027s been genuinely off-putting.\n\nI\u0027ve now tried to find a new alternative, building on your feedback here. Let me know if you\u0027d still like me to revert to the tour\u0027s existing language.",
+      "parentUuid": "a22d1485_1e9f55a8",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -637,6 +1279,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8143f67_772a24da",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63282d3b_e9d35375",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a823b2f_ef20016c",
@@ -650,6 +1316,24 @@
       "writtenOn": "2024-03-17T11:32:43Z",
       "side": 1,
       "message": "The next page refers to a disjunction\u0027s elements. I would therefore try and explain that the possible values in a disjunction are referred to as elements and are separate by `|` (or similar).",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef2c0993_51945623",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a823b2f_ef20016c",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -694,6 +1378,48 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb68c112_a1a47f84",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7dcbd2_08e7c80a",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4a3e30f_aae5252c",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f18cc9e_7c1f2fb9",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd11cc8b_e75547b1",
@@ -707,6 +1433,30 @@
       "writtenOn": "2024-03-17T11:31:50Z",
       "side": 1,
       "message": "\"value\" - and just to reemphasise we are not dealing with a list here so that language confuses.",
+      "range": {
+        "startLine": 12,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 33
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b781a0d_df3340e5",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd11cc8b_e75547b1",
       "range": {
         "startLine": 12,
         "startChar": 29,
@@ -734,6 +1484,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f8ac552_9711b123",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6ea69e2_a455a50f",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ddf9481f_2be9866c",
@@ -747,6 +1515,30 @@
       "writtenOn": "2024-03-17T14:12:10Z",
       "side": 1,
       "message": "Do they state the length? Perhaps \"define\"?",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7ebcdbf_75b7361f",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddf9481f_2be9866c",
       "range": {
         "startLine": 10,
         "startChar": 13,
@@ -803,6 +1595,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bdfa819_d5cc489d",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53906635_018541ef",
+      "range": {
+        "startLine": 13,
+        "startChar": 72,
+        "endLine": 13,
+        "endChar": 76
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3d02cfb_58ddf042",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfa46868_1d3f57e4",
+      "range": {
+        "startLine": 13,
+        "startChar": 31,
+        "endLine": 13,
+        "endChar": 39
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2737b67f_1e003b44",
@@ -816,6 +1656,30 @@
       "writtenOn": "2024-03-17T14:12:10Z",
       "side": 1,
       "message": "Superfluous given the word \"may\" in the first part of the sentence.",
+      "range": {
+        "startLine": 14,
+        "startChar": 41,
+        "endLine": 14,
+        "endChar": 50
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d88ab490_ddc0e8c6",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2737b67f_1e003b44",
       "range": {
         "startLine": 14,
         "startChar": 41,
@@ -849,6 +1713,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bd1bcf1_4a42210d",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f2c0a62_9a3d4aaa",
+      "range": {
+        "startLine": 15,
+        "startChar": 44,
+        "endLine": 15,
+        "endChar": 52
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "50ed0769_96656850",
@@ -862,6 +1750,30 @@
       "writtenOn": "2024-03-17T14:12:10Z",
       "side": 1,
       "message": "Looks too much like `0` - please can you give these either proper names or `L1`, `L2` etc.",
+      "range": {
+        "startLine": 41,
+        "startChar": 3,
+        "endLine": 41,
+        "endChar": 4
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "469f2963_d3ebd59e",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50ed0769_96656850",
       "range": {
         "startLine": 41,
         "startChar": 3,
@@ -919,6 +1831,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d2a68c4_6f011095",
+        "filename": "content/docs/tour/types/numbers/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae2073f_113dc367",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 41
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8f20d23_72c37d39",
@@ -936,6 +1872,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb8cb093_d84d8abe",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8f20d23_72c37d39",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "adc2d35e_38d34575",
@@ -949,6 +1903,24 @@
       "writtenOn": "2024-03-17T10:19:29Z",
       "side": 1,
       "message": "This is explaining multi-line strings, so I\u0027d suggest it needs to be part of the preceding paragraph.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5035f83_60750acd",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adc2d35e_38d34575",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -972,6 +1944,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "da01ed6d_1dc3c1cd",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done, I believe. Leaving unresolved to prompt your explicit re-review.",
+      "parentUuid": "22a2d6e0_856792eb",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "186958fb_93d77fcb",
         "filename": "content/docs/tour/types/stringraw/en.md",
         "patchSetId": 32
@@ -983,6 +1973,30 @@
       "writtenOn": "2024-03-17T10:27:53Z",
       "side": 1,
       "message": "I would delete this part of the sentence. I\u0027m not sure what it is exactly trying to say, and in any case the text that follows covers all the necessary points.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 70
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "175494d4_aa922bc5",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "186958fb_93d77fcb",
       "range": {
         "startLine": 10,
         "startChar": 0,
@@ -1016,6 +2030,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e2cf066_6d47282e",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fe245e6_450520a5",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 21
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3eb81703_3be0bcd5",
@@ -1029,6 +2067,24 @@
       "writtenOn": "2024-03-17T10:27:53Z",
       "side": 1,
       "message": "I would put this paragraph below the example. It feels like \"extra detail\" that is not essential to cover before actually seeing an example",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9c0dca6_0010616c",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3eb81703_3be0bcd5",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -1069,6 +2125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1f04b6ee_9feecf30",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "TBD.",
+      "parentUuid": "411cac70_7c20635d",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cf5a534d_73f1ec6e",
         "filename": "content/docs/tour/types/structs/en.md",
         "patchSetId": 32
@@ -1080,6 +2154,30 @@
       "writtenOn": "2024-03-17T10:46:51Z",
       "side": 1,
       "message": "I think the contract hurts readability here. I\u0027m happy with instances elsewhere, but here it hurts.",
+      "range": {
+        "startLine": 12,
+        "startChar": 64,
+        "endLine": 12,
+        "endChar": 68
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ebcc600_06bb1d6a",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf5a534d_73f1ec6e",
       "range": {
         "startLine": 12,
         "startChar": 64,
@@ -1113,6 +2211,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a324bc8f_430b1578",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "127f609b_16918596",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 13
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce280b0b_06d4bb4b",
@@ -1126,6 +2248,30 @@
       "writtenOn": "2024-03-17T10:46:51Z",
       "side": 1,
       "message": "\"may not\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 65,
+        "endLine": 17,
+        "endChar": 73
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2db8f073_7c6f4321",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce280b0b_06d4bb4b",
       "range": {
         "startLine": 17,
         "startChar": 65,
@@ -1153,6 +2299,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2928c04c_10b7aa85",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e51435d6_32cbbcb1",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa0db6a5_3eadc980",
@@ -1166,6 +2330,24 @@
       "writtenOn": "2024-03-17T10:46:51Z",
       "side": 1,
       "message": "This example appears to use `cue eval -i` in order to demonstrate how `quux` cannot be specified because of the optional field constraint of `_|_`. I would say it\u0027s more important to demonstrate the behaviour of the required field constraint as that will be used far more often.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35ea4a80_e5fb30e3",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa0db6a5_3eadc980",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -1193,6 +2375,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78929263_798ae36e",
+        "filename": "content/docs/tour/types/sumstruct/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f042f11_e5d15c25",
+      "range": {
+        "startLine": 8,
+        "startChar": 35,
+        "endLine": 8,
+        "endChar": 43
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e92372d7_25fd93cf",
@@ -1206,6 +2412,24 @@
       "writtenOn": "2024-03-17T13:55:14Z",
       "side": 1,
       "message": "```\nlevel?: int\nhasExit?: bool\n```",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e8d6a83_d022db04",
+        "filename": "content/docs/tour/types/sumstruct/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e92372d7_25fd93cf",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -1244,6 +2468,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c39f3c5_950124bb",
+        "filename": "content/docs/tour/types/sumstruct/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19f1e779_10b5cb17",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9f00263_23687056",
@@ -1257,6 +2499,30 @@
       "writtenOn": "2024-03-17T14:20:32Z",
       "side": 1,
       "message": "\"`_`\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 69,
+        "endLine": 15,
+        "endChar": 78
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00bc83cd_fb54b419",
+        "filename": "content/docs/tour/types/templates/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9f00263_23687056",
       "range": {
         "startLine": 15,
         "startChar": 69,
@@ -1290,6 +2556,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c11670b_abbafda1",
+        "filename": "content/docs/tour/types/types/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ccefb5a_e4734f44",
+      "range": {
+        "startLine": 33,
+        "startChar": 32,
+        "endLine": 33,
+        "endChar": 48
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "055a59a7_71863e4a",
@@ -1303,6 +2593,30 @@
       "writtenOn": "2024-03-17T08:54:15Z",
       "side": 1,
       "message": "Which example? It\u0027s not immediately clear what you are referring to here, because there is another paragraph of text that follows. Perhaps shift the code block after this paragraph and refer to \"In the following hypothetical example...\"",
+      "range": {
+        "startLine": 37,
+        "startChar": 3,
+        "endLine": 37,
+        "endChar": 7
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bfe9e3f_cbd9990b",
+        "filename": "content/docs/tour/types/types/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "055a59a7_71863e4a",
       "range": {
         "startLine": 37,
         "startChar": 3,
@@ -1336,6 +2650,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3464aa6_c5ac0265",
+        "filename": "content/docs/tour/types/types/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d75d4255_1d48c8fa",
+      "range": {
+        "startLine": 41,
+        "startChar": 18,
+        "endLine": 41,
+        "endChar": 26
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8a8d619_26755051",
@@ -1359,6 +2697,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3f50a90_ea08c54a",
+        "filename": "content/docs/tour/types/types/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8a8d619_26755051",
+      "range": {
+        "startLine": 42,
+        "startChar": 35,
+        "endLine": 42,
+        "endChar": 37
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c1612b1_4c79392d",
@@ -1372,6 +2734,30 @@
       "writtenOn": "2024-03-17T08:54:15Z",
       "side": 1,
       "message": "We don\u0027t actually say that :) It\u0027s just not incomplete. The point about it being concrete stands.",
+      "range": {
+        "startLine": 44,
+        "startChar": 39,
+        "endLine": 44,
+        "endChar": 47
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88d0b355_51378b59",
+        "filename": "content/docs/tour/types/types/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c1612b1_4c79392d",
       "range": {
         "startLine": 44,
         "startChar": 39,

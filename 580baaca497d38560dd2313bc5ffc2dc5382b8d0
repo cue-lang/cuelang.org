@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c4218ca_015997ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 33
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-17T19:49:08Z",
+      "side": 1,
+      "message": "PTAL. Some unresolved comments, one in particular for discussion.",
+      "revId": "580baaca497d38560dd2313bc5ffc2dc5382b8d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
