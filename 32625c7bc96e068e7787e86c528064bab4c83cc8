@@ -3,6 +3,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "010ce76d_845ed932",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T09:01:56Z",
+      "side": 1,
+      "message": "Given our conversation yesterday about the awkwardness of the word \"duplicate\" here, can we do better with this intro line?",
+      "range": {
+        "startLine": 6,
+        "startChar": 11,
+        "endLine": 6,
+        "endChar": 20
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02880bae_7f8b67d6",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T09:01:56Z",
+      "side": 1,
+      "message": "Per earlier comments, this use of \"assigned\" is not correct. A field cannot be specified with `_|_`.",
+      "range": {
+        "startLine": 14,
+        "startChar": 35,
+        "endLine": 14,
+        "endChar": 43
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aeb41a2f_85c58c29",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T09:01:56Z",
+      "side": 1,
+      "message": "I would put this qualification below the example. It\u0027s (important) detail.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 16
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c393f1c_39ed652b",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T09:01:56Z",
+      "side": 1,
+      "message": "\"to include literal error values (`_|_`) in the output along with error messages as inline comments\".\n\nI think the point about it not resulting an in an \"invocation failure\" (I\u0027m really not clear that term is commonly used either FWIW) is less important.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 67
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ccefb5a_e4734f44",
         "filename": "content/docs/tour/types/types/en.md",
         "patchSetId": 32
