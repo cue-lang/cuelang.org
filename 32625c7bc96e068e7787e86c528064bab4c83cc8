@@ -358,6 +358,109 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cf5a534d_73f1ec6e",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:46:51Z",
+      "side": 1,
+      "message": "I think the contract hurts readability here. I\u0027m happy with instances elsewhere, but here it hurts.",
+      "range": {
+        "startLine": 12,
+        "startChar": 64,
+        "endLine": 12,
+        "endChar": 68
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "127f609b_16918596",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:46:51Z",
+      "side": 1,
+      "message": "Ditto.",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 13
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce280b0b_06d4bb4b",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:46:51Z",
+      "side": 1,
+      "message": "\"may not\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 65,
+        "endLine": 17,
+        "endChar": 73
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e51435d6_32cbbcb1",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:46:51Z",
+      "side": 1,
+      "message": "Why do we want to introduce such a validation failure on this page?",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa0db6a5_3eadc980",
+        "filename": "content/docs/tour/types/structs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:46:51Z",
+      "side": 1,
+      "message": "This example appears to use `cue eval -i` in order to demonstrate how `quux` cannot be specified because of the optional field constraint of `_|_`. I would say it\u0027s more important to demonstrate the behaviour of the required field constraint as that will be used far more often.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ccefb5a_e4734f44",
         "filename": "content/docs/tour/types/types/en.md",
         "patchSetId": 32
