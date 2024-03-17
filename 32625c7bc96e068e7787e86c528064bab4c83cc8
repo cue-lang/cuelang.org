@@ -187,6 +187,92 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02626568_a9903df8",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:51:37Z",
+      "side": 1,
+      "message": "\"it has\" - the contraction hurts readability here.",
+      "range": {
+        "startLine": 6,
+        "startChar": 61,
+        "endLine": 6,
+        "endChar": 65
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a002c4e_abb19e70",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:51:37Z",
+      "side": 1,
+      "message": "Link?\n\nI\u0027m delighted we can use this word in the later parts of the tour.",
+      "range": {
+        "startLine": 9,
+        "startChar": 27,
+        "endLine": 9,
+        "endChar": 34
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f642fc8_b5ed4c97",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:51:37Z",
+      "side": 1,
+      "message": "\"on the next page\"?",
+      "range": {
+        "startLine": 13,
+        "startChar": 55,
+        "endLine": 13,
+        "endChar": 62
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd3dd960_e1c83ccc",
+        "filename": "content/docs/tour/types/closed/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:51:37Z",
+      "side": 1,
+      "message": "What\u0027s wrong with the simple example in https://cuelang.org/docs/tutorials/tour/types/closed/ here?\n\nThe example you\u0027ve proposed is more complicated and doesn\u0027t add/clarify anything to my mind.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d65fc75_ddfb01ff",
         "filename": "content/docs/tour/types/numbers/en.md",
         "patchSetId": 32
