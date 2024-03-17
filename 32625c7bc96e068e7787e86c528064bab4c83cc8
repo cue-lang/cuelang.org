@@ -1246,6 +1246,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d9f00263_23687056",
+        "filename": "content/docs/tour/types/templates/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:20:32Z",
+      "side": 1,
+      "message": "\"`_`\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 69,
+        "endLine": 15,
+        "endChar": 78
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ccefb5a_e4734f44",
         "filename": "content/docs/tour/types/types/en.md",
         "patchSetId": 32
