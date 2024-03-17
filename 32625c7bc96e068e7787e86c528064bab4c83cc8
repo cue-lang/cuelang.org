@@ -118,6 +118,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "adc2d35e_38d34575",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:19:29Z",
+      "side": 1,
+      "message": "This is explaining multi-line strings, so I\u0027d suggest it needs to be part of the preceding paragraph.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22a2d6e0_856792eb",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:19:29Z",
+      "side": 1,
+      "message": "A critical bit about the whitespace \"rule\" here is missed from the original text:\n\n\u003e The whitespace directly preceding the closing quote must match the preceding whitespace on all other lines and is removed from these lines.\n\nSpecifically that the whitespace before the closing quotes (if there is any) must also be the prefix for each line of the multiline. Wording is hard... but that particular rule catches a number of people out because they see whitespace and think it can be a mix of either spaces/tabs... but the consistency is critical.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ccefb5a_e4734f44",
         "filename": "content/docs/tour/types/types/en.md",
         "patchSetId": 32
