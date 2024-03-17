@@ -1,0 +1,864 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cd9bbb7_287b019a",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Not clear we need this given the ToC on the left hand side serves exactly this role? If you want anything, I would go with the format of bullet points, following the style/format of what we do at the top of a tutorial:\n\nhttps://alpha.cuelang.org/docs/tutorial/working-with-a-custom-module-registry/\n\nIf we think we need something \"better\" in terms of an on-page ToC, then I suggest we add this to the list of stuff that we raise in a \"phase 2\" of UI/UX stuff.",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f170b975_0c72843d",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "A point I don\u0027t think you make enough of here is that you can incrementally adopt CUE. Start from nothing, do small bits over time, reach a level of comfort that your data in whatever source language is \"good\", then consider switching to CUE as a source of truth (although that last step is clearly optional).",
+      "range": {
+        "startLine": 24,
+        "startChar": 3,
+        "endLine": 24,
+        "endChar": 35
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8783e5c9_e6c4a9f6",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "A key concept/term missing from https://alpha.cuelang.org/docs/concept/configuration-use-case/ is \"type checking\". This absolutely has to appear on this page, because as https://alpha.cuelang.org/docs/concept/configuration-use-case/ hints, this goal of type checking (which is a subset of validation) configuration just as type checking etc is being introduced \"everywhere else\" is key.",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6f93672_4c9067be",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I would avoid contracting to \"config\" here. You faithfully use \"configuration\" almost everywhere else. Consistency wins here.",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 29
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aaea0bb4_fb546947",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "\"An easy first step is to use CUE to **check that existing configuration files are valid**.\"\n\nAs a suggestion, with the aim to simplify language, plainer sentences.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 33
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6161c5d_8fa41ae6",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Informal language: not clear this will translate well.",
+      "range": {
+        "startLine": 27,
+        "startChar": 47,
+        "endLine": 27,
+        "endChar": 56
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23f95c3c_35e1217a",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Not clear that it\u0027s related to configuration _generation_ just situations where there are configuration. So perhaps just \"configuration setup\"?",
+      "range": {
+        "startLine": 28,
+        "startChar": 7,
+        "endLine": 28,
+        "endChar": 17
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70d38909_9df858f0",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "This is a complicated phrase for something I think we could say more plainly: that things can organically grow from a simple start.",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 79
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79230364_32d9b4ed",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Acronym.",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 14
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59461855_0329caf2",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I would say the key point here is that you are looking for a \"stable\" runner, one that is known (to a greater extent) rather than a system that can change (perhaps significantly) without you knowing/controlling the change. Perhaps that\u0027s what you meant by \"current runner OS\" - but I would strengthen this slightly to:\n\n```\nProduction deployments must be performed from a known runner\n```",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b55bc1d6_00590c74",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "More simply \"CUE\u0027s\", principally because it\u0027s simpler language, but also because it\u0027s not the language by itself that enables this.",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 19
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97944cc1_6333638d",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "\"just\" appearing again. I think in both instances it could probably be dropped without any loss of precision.",
+      "range": {
+        "startLine": 126,
+        "startChar": 22,
+        "endLine": 126,
+        "endChar": 26
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f25204c_5ac8d95c",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I\u0027m not clear this comment belongs in the CUE file? Its presence next to the constraints appears to suggest that it is related to those fields... whereas in reality it\u0027s more a comment about the file we will be validating. So either belongs as a comment against the command, or in the prose to my mind.",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f6008e1_f45ba17a",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "This feels a bit busy and cluttered within comments in-line. Worth expanding to have clear lines between fields for readability?",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c58fc448_8ba7e3be",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I don\u0027t know what this really means - I think we can be more plain in our language here.",
+      "range": {
+        "startLine": 172,
+        "startChar": 29,
+        "endLine": 172,
+        "endChar": 59
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39736bc8_a0d38a21",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "First use of the term \"config values\" on this page. Per above, I suggest simply \"configurations\"",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ede1bdb8_b495e93c",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I think it\u0027s important to be clear that using CUE to help with configuration generation (and implicitly validation therefore) does not require you to have flipped the source of truth to be CUE. It can still be acting as a side car in this situation. Indeed, this is kind of the point of your example below, with the values coming from yaml. \n\nAgain, derisking by not requiring you to ALSO change the process (human or otherwise) that creates/generates/maintains the Yaml values.",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 52
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d930ba4_01ab0dc2",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I\u0027m really not sure what point you\u0027re trying to make here?",
+      "range": {
+        "startLine": 174,
+        "startChar": 54,
+        "endLine": 175,
+        "endChar": 67
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "000ca36d_567f7995",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "\"clear\" - simpler language.",
+      "range": {
+        "startLine": 176,
+        "startChar": 18,
+        "endLine": 176,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8efa0d66_35c9525d",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "\"validation or process\"",
+      "range": {
+        "startLine": 177,
+        "startChar": 8,
+        "endLine": 177,
+        "endChar": 18
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3b25290_c6a0b2a0",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Per earlier comment, this distinction between partial and complete is lost on me!\n\nHappy to chat through what you were trying to achieve here.",
+      "range": {
+        "startLine": 179,
+        "startChar": 1,
+        "endLine": 179,
+        "endChar": 45
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c7aa392_2d5d2e8b",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "One point I think you can make more strongly here, is _who_ is contributing each of these components? Who is in control of them? (ignore access control etc for now).",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99dbc910_e749a521",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Per the comment below about `values.yaml` I would say \"input data and output configuration\" just to draw a distinction for the reader.",
+      "range": {
+        "startLine": 186,
+        "startChar": 63,
+        "endLine": 186,
+        "endChar": 68
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "989907a5_49631fae",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I think this could be better named `values.yaml`. Because you are talking about generating a configuration, feels a bit odd to also have one of the inputs as being a configuration. Whilst strictly true (because the distinction between values and configuration etc is lost with CUE) it\u0027s easy to be clearer for the reader.",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00ece773_a6747fde",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "\"`cue` command\"",
+      "range": {
+        "startLine": 195,
+        "startChar": 40,
+        "endLine": 195,
+        "endChar": 49
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22e47246_e8413e00",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "\"a single JSON file that is consumed by the service being deployed\" (or some such, to give a flavour of what it is we are generating this configuration for.",
+      "range": {
+        "startLine": 196,
+        "startChar": 25,
+        "endLine": 196,
+        "endChar": 44
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "317ad584_f46e890d",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Just `.` please - we don\u0027t need the package qualifier in this situation.",
+      "range": {
+        "startLine": 201,
+        "startChar": 16,
+        "endLine": 201,
+        "endChar": 24
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2de5274c_76399d99",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "The schema is missing some fields you calculate/derive in the policy, e.g. (but not limited to) `replicaMem`.",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0f72ad2_fbc36add",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "This feels like an unnecessary qualification - I\u0027d suggest removing it.",
+      "range": {
+        "startLine": 273,
+        "startChar": 39,
+        "endLine": 274,
+        "endChar": 49
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ec53da3_485c268e",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Can we not simplify this? \n\n\"updates their `config.yml` file with a value that violates...\"\n\nIs the mention of a calculated value significant here?",
+      "range": {
+        "startLine": 275,
+        "startChar": 10,
+        "endLine": 276,
+        "endChar": 9
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea5beaed_f59d3e7e",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "We should change this to a multi-step example after go-live. It\u0027s confusing to have the same files multiple times to my mind. We can easily support multi-file uploads as part of that (to collate all the uploads in one \"block\")",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad35dab2_9d67355a",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Ditto.",
+      "range": {
+        "startLine": 282,
+        "startChar": 15,
+        "endLine": 282,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebb6a6e2_d5443f38",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "This doesn\u0027t really capture the point for me. I think the point you\u0027re trying to make here is that the concept of shifting left applies equally well at massive scale, wherever the \"pipeline\" of data/configuration exists. No matter how many people are contributing to the process.",
+      "range": {
+        "startLine": 332,
+        "startChar": 62,
+        "endLine": 332,
+        "endChar": 78
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4e94f20_bbd14c14",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I struggled to parse and understand this sentence. Happy to chat through to figure out a different wording.",
+      "range": {
+        "startLine": 338,
+        "startChar": 8,
+        "endLine": 340,
+        "endChar": 73
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab9194da_c65f92ef",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "This is quite an advanced point to my mind. It belongs further down the page.",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0a84153_e8f82f04",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I\u0027m not clear this is the goal of a configuration language per se, largely because I don\u0027t think there is a design/specification of what a \"configuration language\" (whatever that might mean) actually does/should do.\n\nCan we not make this specific to CUE? Talking about the fact that CUE can translate or adapt between different formats etc?",
+      "range": {
+        "startLine": 443,
+        "startChar": 0,
+        "endLine": 444,
+        "endChar": 15
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffbb2192_8e9c0c73",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "\"scripting or workflow\"",
+      "range": {
+        "startLine": 461,
+        "startChar": 14,
+        "endLine": 461,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f946a65d_a25a8cd8",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "I\u0027m not sure this word will mean anything to anyone at this point. Can we refer to incremental building of a configuration?",
+      "range": {
+        "startLine": 463,
+        "startChar": 14,
+        "endLine": 463,
+        "endChar": 24
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7975f735_3410a25b",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "This paragraph can be simplified to my mind. I wouldn\u0027t talk about hermetic evaluation (because that will be lost at this point). Instead I would talk about how the tooling layer allows the user to declaratively specify how data, schema, policy from multiple difference sources are combined. Whether loading a file from disk, fetching a file from a git repository, etc. i.e. reference concrete examples of what the tooling layer can do.",
+      "range": {
+        "startLine": 467,
+        "startChar": 0,
+        "endLine": 472,
+        "endChar": 0
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee77805d_1655e5cc",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T08:39:33Z",
+      "side": 1,
+      "message": "Can we spin up a simple tutorial/howto based on the example in `cue help cmd`? Will really bring it to life.",
+      "range": {
+        "startLine": 476,
+        "startChar": 4,
+        "endLine": 477,
+        "endChar": 24
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
