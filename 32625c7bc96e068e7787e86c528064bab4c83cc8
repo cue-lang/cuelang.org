@@ -273,6 +273,74 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f7175382_5ead2bca",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:49:13Z",
+      "side": 1,
+      "message": "I think we need a sentence above this that motivates default values. I think that can and should speak to the language from the previous page which talks about the situation where no value is provided for a disjunction, a hence we are left with all of the options as equally valid. That default values provide a way to select a value in such a situation. That default values are indicated by `*` on an element in a disjunection etc.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7ddcef4_62ecac7f",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:49:13Z",
+      "side": 1,
+      "message": "This paragraph introduces what for me is a significantly more advanced topic of how to handle there being multiple elements with a default marker. I would honestly drop it. This can and should be handled in a separate page altogether.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc692a37_11f46b7f",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:49:13Z",
+      "side": 1,
+      "message": "Given the above, I would suggest this example can be significantly reduced.\n\nSomething like:\n\n```\n#def: int | *1\n\na: #def \n\nb: #def\nb: 2\n```",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a0476b8_258a4325",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:49:13Z",
+      "side": 1,
+      "message": "This is far too nuaunced a point for the tour to my mind. I suggest we delete this, per above.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369f0202_4e35704e",
         "filename": "content/docs/tour/types/defs/en.md",
         "patchSetId": 32
