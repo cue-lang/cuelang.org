@@ -273,6 +273,201 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "369f0202_4e35704e",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "This is not correct to my mind; because the very act of declaring a definition involves specifying it because it is of the form `#def: ...`",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 39
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1b02187_2bcd4a25",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "I would look to leverage previous language around schemas being predominately types and constraints... which are not concrete. Wording to that effect.",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 72
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e070c444_f61f9d32",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "I think use of this word is tricky because we haven\u0027t defined it anywhere thus far to my knowledge. Using the language from the previous page is probably sufficient, i.e. you don\u0027t need to talk about the word \"evaluation\" to make the point your trying to.",
+      "range": {
+        "startLine": 14,
+        "startChar": 13,
+        "endLine": 14,
+        "endChar": 24
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05ff86d7_768c3b56",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "The problem with this paragraph as phrased is that it seems to imply definitions are only structs. Which is not the case. I would try and borrow the language from the existing tour: \"Structs defined by definitions...\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c094b066_d5ad4a84",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "As discussed, please use \"`...`\" as you have done for top, bottom etc. We don\u0027t officially refer to this as anything, and the spec is somewhat complicated in this respect.",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 33
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c7369e9_a45115bb",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "As discussed, I wouldn\u0027t seek to try and define this. \"Including\"",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 11
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bedc90db_39e71d7c",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "I would delete this part of the sentence. It\u0027s a nuance that we don\u0027t need to get across here to my mind, and wording it is hard.",
+      "range": {
+        "startLine": 18,
+        "startChar": 64,
+        "endLine": 19,
+        "endChar": 75
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5db084ce_3504632e",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "I\u0027m not totally clear that this example is better than the existing tour https://cuelang.org/docs/tutorials/tour/types/defs/. The existing tour is shorter, and shows that definitions extend beyond just structs.\n\nAny reasons for not using it?\n\nThe use of `cue eval -i` also makes it clear where the errors occur.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc3e348f_0d637d5a",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:12:36Z",
+      "side": 1,
+      "message": "Suggest shorter simpler language:\n\n```\n// Uncomment to allow additional fields\n// ...\n```",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d65fc75_ddfb01ff",
         "filename": "content/docs/tour/types/numbers/en.md",
         "patchSetId": 32
