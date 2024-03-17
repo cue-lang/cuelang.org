@@ -468,6 +468,126 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a22d1485_1e9f55a8",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:31:50Z",
+      "side": 1,
+      "message": "I would avoid using the word \"list\" here because that is a type in CUE. And given that we are not clearly looking at a list by that definition, we should avoid it.\n\nThe current language suffices for now to my mind:\n\n\"define a new type that is one of several things.\"",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63282d3b_e9d35375",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:31:50Z",
+      "side": 1,
+      "message": "Disjunctions are not limited to just types.",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba7dcbd2_08e7c80a",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:31:50Z",
+      "side": 1,
+      "message": "New paragraph.\n\nI would also drop the qualification on \"is concrete\" - it\u0027s not necessary _here_. In general it is of course. But the qualification draws attention away from the main point that you are making.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f18cc9e_7c1f2fb9",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:31:50Z",
+      "side": 1,
+      "message": "\"it\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd11cc8b_e75547b1",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:31:50Z",
+      "side": 1,
+      "message": "\"value\" - and just to reemphasise we are not dealing with a list here so that language confuses.",
+      "range": {
+        "startLine": 12,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 33
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6ea69e2_a455a50f",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:31:50Z",
+      "side": 1,
+      "message": "Again, I would try and steer away from the phrase \"evaluation failure\" to plainer language. \"Not a valid value\"",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d65fc75_ddfb01ff",
         "filename": "content/docs/tour/types/numbers/en.md",
         "patchSetId": 32
