@@ -736,6 +736,144 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ddf9481f_2be9866c",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:12:10Z",
+      "side": 1,
+      "message": "Do they state the length? Perhaps \"define\"?",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53906635_018541ef",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:12:10Z",
+      "side": 1,
+      "message": "It\u0027s not limited to a type: any value. I would instead try to say that the `...` may optionally be followed by a constraint on any additional elements.\n\n`...` is identical to `..._` FWIW (in case this is useful to call out).",
+      "range": {
+        "startLine": 13,
+        "startChar": 72,
+        "endLine": 13,
+        "endChar": 76
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfa46868_1d3f57e4",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:12:10Z",
+      "side": 1,
+      "message": "Same comment from earlier about using \"`...`\" rather than burying the syntax in parenthenses.",
+      "range": {
+        "startLine": 13,
+        "startChar": 31,
+        "endLine": 13,
+        "endChar": 39
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2737b67f_1e003b44",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:12:10Z",
+      "side": 1,
+      "message": "Superfluous given the word \"may\" in the first part of the sentence.",
+      "range": {
+        "startLine": 14,
+        "startChar": 41,
+        "endLine": 14,
+        "endChar": 50
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f2c0a62_9a3d4aaa",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:12:10Z",
+      "side": 1,
+      "message": "We should not use this term. It\u0027s incredibly overloaded in other languages and has connotations of mutation... which we absolutely do not have in CUE. It\u0027s a constant source of confusion too.",
+      "range": {
+        "startLine": 15,
+        "startChar": 44,
+        "endLine": 15,
+        "endChar": 52
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50ed0769_96656850",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T14:12:10Z",
+      "side": 1,
+      "message": "Looks too much like `0` - please can you give these either proper names or `L1`, `L2` etc.",
+      "range": {
+        "startLine": 41,
+        "startChar": 3,
+        "endLine": 41,
+        "endChar": 4
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d65fc75_ddfb01ff",
         "filename": "content/docs/tour/types/numbers/en.md",
         "patchSetId": 32
