@@ -508,6 +508,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9a823b2f_ef20016c",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T11:32:43Z",
+      "side": 1,
+      "message": "The next page refers to a disjunction\u0027s elements. I would therefore try and explain that the possible values in a disjunction are referred to as elements and are separate by `|` (or similar).",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ba7dcbd2_08e7c80a",
         "filename": "content/docs/tour/types/disjunctions/en.md",
         "patchSetId": 32
