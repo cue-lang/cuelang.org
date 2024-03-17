@@ -152,6 +152,103 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "186958fb_93d77fcb",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:27:53Z",
+      "side": 1,
+      "message": "I would delete this part of the sentence. I\u0027m not sure what it is exactly trying to say, and in any case the text that follows covers all the necessary points.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 70
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8fe245e6_450520a5",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:27:53Z",
+      "side": 1,
+      "message": "This paragraph feels like it partially repeats the paragraph at the end of the previous paragraph, only to add the qualification that the closing quote must match. Can we combine the two sentences in some way and make the explanation simpler and plainer?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 21
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3eb81703_3be0bcd5",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:27:53Z",
+      "side": 1,
+      "message": "I would put this paragraph below the example. It feels like \"extra detail\" that is not essential to cover before actually seeing an example",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8eac7c7_e1c4556a",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:27:53Z",
+      "side": 1,
+      "message": "I wouldn\u0027t",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "411cac70_7c20635d",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:27:53Z",
+      "side": 1,
+      "message": "It \"feels\" like there is a lot of text/a lot going on in this example.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ccefb5a_e4734f44",
         "filename": "content/docs/tour/types/types/en.md",
         "patchSetId": 32
