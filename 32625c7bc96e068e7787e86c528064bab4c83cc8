@@ -947,6 +947,80 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6f042f11_e5d15c25",
+        "filename": "content/docs/tour/types/sumstruct/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:55:14Z",
+      "side": 1,
+      "message": "No longer required, because you are referring to a definition... so it is not part of the data output.",
+      "range": {
+        "startLine": 8,
+        "startChar": 35,
+        "endLine": 8,
+        "endChar": 43
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e92372d7_25fd93cf",
+        "filename": "content/docs/tour/types/sumstruct/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:55:14Z",
+      "side": 1,
+      "message": "```\nlevel?: int\nhasExit?: bool\n```",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c72c8eb4_dc8bfe8b",
+        "filename": "content/docs/tour/types/sumstruct/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:55:14Z",
+      "side": 1,
+      "message": "Strictly speaking this does not belong in a schema... but we can skip that for now.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19f1e779_10b5cb17",
+        "filename": "content/docs/tour/types/sumstruct/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T13:55:14Z",
+      "side": 1,
+      "message": "I would drop this field, and just have `floors` - saves another level of indenting.",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ccefb5a_e4734f44",
         "filename": "content/docs/tour/types/types/en.md",
         "patchSetId": 32
