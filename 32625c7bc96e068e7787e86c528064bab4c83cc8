@@ -95,6 +95,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f0bac54d_311b91a5",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:39:48Z",
+      "side": 1,
+      "message": "I\u0027m not totally clear we need to call this out here given the previous page talks about it?\n\nIf we do want to link to the string docs, then I wouldn\u0027t use `strings\u0027` - it\u0027s awkward to read to my mind. I would just state it plainly in parentheses \"(string literals are defined with double quotes [link])\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 58,
+        "endLine": 8,
+        "endChar": 66
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b258bf76_e6d1ce66",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:39:48Z",
+      "side": 1,
+      "message": "\"the\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 20
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ad6a28a_e222d537",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:39:48Z",
+      "side": 1,
+      "message": "\"the following additional escape sequences...\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d03c1d41_f742d2e4",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:39:48Z",
+      "side": 1,
+      "message": "Where has this come from? \n\n(If I\u0027m honest I don\u0027t know what it means)\n\nI think you can delete this part of the sentence without seeking to clarify the earlier part of the sentence. To my understanding, it\u0027s a convention (in CUE) that binary data be represented as a base64 encoded string.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 11
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d65fc75_ddfb01ff",
         "filename": "content/docs/tour/types/numbers/en.md",
         "patchSetId": 32
@@ -112,6 +204,23 @@
         "endLine": 13,
         "endChar": 41
       },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8f20d23_72c37d39",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-17T10:39:48Z",
+      "side": 1,
+      "message": "Noting that unlike the bytes page (https://cl-1178168-4--cue-cls.netlify.app/docs/tour/types/bytes/) this page does not explicitly state that string literals are based on `\"`. Given that the bytes page does seek to make that distinction, we should make sure both pages \"mirror\" each other.",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
