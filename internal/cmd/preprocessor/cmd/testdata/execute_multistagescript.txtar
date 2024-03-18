@@ -245,13 +245,13 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "OutM9DQ+VLJfo3gey6kvCY4hamW5VDhPbCK7eYcxW68="
-						"upload-some-cue":  "RKWrdN8ZwaOGoxRY6wqyDaZixGAXxsQRQGaZ/rxLCn4="
-						"upload-some-json": "eYWe3RDFSuPWRAREhwmk2wGcbyMHfFvamGsCS8Fp6uc="
-						"in-subdir":        "kJpfLfPSiM0gqwwAlOEl3ALOYE5ILM/rzXHIVJxR0CQ="
+						"hidden file":      "jkNkYogdarSuIupKYt4UUekHNXlidbSL5pL1jAGKxqc="
+						"upload-some-cue":  "zAVwi5uHaaTpz9CQqwZvONUIUUC0Rd/hUrSGIdn4hoY="
+						"upload-some-json": "HZfqjHV3vFiEbQX1FWG56yolPdL3A5Xm8jluBTydhl0="
+						"in-subdir":        "IgFP15kgI0gCpoUrbyy4UKSH3wwPMySJqHICOsRJqfk="
 					}
 					multi_step: {
-						"ST9O8G89I8DFPFJB4LK49BJVMK3F69MIDGMDDJO1V9CCLLBDQFE0====": [{
+						"CIK8Q261G1Q0AVV97S0D21A2TGN891B2B1R8COHQCJECVNO2OQJ0====": [{
 							doc: """
 									# script doc comment
 									#scripttag
