@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "443f4785_d6425d04",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 35
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:25:18Z",
+      "side": 1,
+      "message": "Perhaps this page should be called \"Strings\" - it\u0027s in the types section, and feels quite odd having the \"literals\" qualifier as a result.",
+      "revId": "2a67dce6ee99a484249429961e77678ded2b8be9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
