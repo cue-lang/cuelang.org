@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bbcb5cf_69a8040c",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7bac78e_37c1265a",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 36
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2230da60_1045a5ba",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-03-18T05:52:20Z",
       "side": 1,
       "message": "This is a long example. I\u0027d suggest shortening it using the more compact form of struct field declaration, but also looking at whether the spec\u0027s example can be leveraged for the other kinds of alias:\n\nhttps://cuelang.org/docs/references/spec/#aliases",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ee9117d_3615708f",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "I\u0027ve updated to the shortest example I\u0027ve been able to construct that also demonstrates a couple of extra use cases.",
+      "parentUuid": "2230da60_1045a5ba",
       "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -64,6 +106,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bb2a69d_5bb99941",
+        "filename": "content/docs/tour/references/cycle/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "216572c2_429478f6",
+      "range": {
+        "startLine": 9,
+        "startChar": 45,
+        "endLine": 9,
+        "endChar": 49
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec367b9c_adae05c2",
@@ -77,6 +143,24 @@
       "writtenOn": "2024-03-18T06:05:41Z",
       "side": 1,
       "message": "The switch from the current tour of using a concrete example (pun intended), `200`, is harmful to understanding to my mind. I would include it. It\u0027s literally no cost to \"inline\" an example of a concrete value.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "806fee61_cfb1e988",
+        "filename": "content/docs/tour/references/cycle/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec367b9c_adae05c2",
       "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -98,6 +182,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84801575_7e28a3ae",
+        "filename": "content/docs/tour/references/cycle/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e1aacfc_1ed3e05f",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bfdec8e5_0a08950c",
@@ -111,6 +213,24 @@
       "writtenOn": "2024-03-18T06:12:06Z",
       "side": 1,
       "message": "What\u0027s wrong with the existing example here? \n\nIn particular, why make it incomplete?\n\nIf anything I would have \"strengthened\" it to be `cue export`",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7f7f962_09ca715b",
+        "filename": "content/docs/tour/references/cycleref/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdec8e5_0a08950c",
       "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -138,6 +258,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a45098f_f292f250",
+        "filename": "content/docs/tour/references/emit/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab6a7fe5_b5265793",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 69
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f188fe50_577e236e",
@@ -151,6 +295,24 @@
       "writtenOn": "2024-03-18T05:59:44Z",
       "side": 1,
       "message": "Why are you using a naked `#` here?\n\nI think the example from the existing tour is sufficient here. It\u0027s shorter and simpler and gets the point across.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0bd5d99_94218cb2",
+        "filename": "content/docs/tour/references/emit/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f188fe50_577e236e",
       "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -178,6 +340,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7578c594_b83efc82",
+        "filename": "content/docs/tour/references/hidden/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d149fa0c_43dc1099",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 19
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa0e5c0f_0e9b7b2e",
@@ -191,6 +377,24 @@
       "writtenOn": "2024-03-18T05:29:50Z",
       "side": 1,
       "message": "I\u0027m not clear we need/want to add this definition inline here, or just refer to it elsewhere but I hold that lightly.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9121eec_71980c1d",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa0e5c0f_0e9b7b2e",
       "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -212,6 +416,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f7b2679_fc16a75f",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35c3caf2_d79bf41d",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff18c7a3_d7b7947a",
@@ -225,6 +447,24 @@
       "writtenOn": "2024-03-18T05:29:50Z",
       "side": 1,
       "message": "This is a very long example for showing what is a simple concept. I think the examples become rather intimidating when they are this long; they imply there is lots of learn. Please can I suggest we shorten it considerably, or just use the existing example? We don\u0027t need this to be a table-test of all the cases.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acc7eecc_15c73c94",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff18c7a3_d7b7947a",
       "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
