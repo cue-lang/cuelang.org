@@ -3,6 +3,92 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c4cdb979_5602ca43",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:38:12Z",
+      "side": 1,
+      "message": "This is a minor point which doesn\u0027t belong as part of the headline sentence to my mind. It\u0027s a minor caveat that could be a separate paragraph if we really felt it necessary to include. It\u0027s current placement, to my mind, detracts from the main message.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 57
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e0ce190_e98c90aa",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:38:12Z",
+      "side": 1,
+      "message": "\"... combines them using parentheses\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 76
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bfcb9fc_d110d8c2",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:38:12Z",
+      "side": 1,
+      "message": "It\u0027s actually referred to as a named import. Alias would also confuse with the other use of this term.",
+      "range": {
+        "startLine": 15,
+        "startChar": 35,
+        "endLine": 15,
+        "endChar": 40
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0772529c_57d0c01b",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:38:12Z",
+      "side": 1,
+      "message": "This example requires quite of lot of mental gymnastics to follow what the expected output should be. That to my mind detracts from the goal of looking at the form etc of imports (in this case). Please can we simplify the example, or use the existing one?",
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c9a252a9_17482897",
         "filename": "content/docs/tour/packages/packages/en.md",
         "patchSetId": 30
