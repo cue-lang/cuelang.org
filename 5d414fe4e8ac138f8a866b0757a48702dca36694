@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c4d87a0_f341bd37",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "This link can go at the bottom of the page to my mind: it gets in the way of the reader continuing.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9159adc8_ea9d788a",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "Again I worry about the length of the example, especially when a number of the examples don\u0027t add anything over previous ones.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe68e857_a1374011",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "I realise there is a balance to be struck here between being sufficiently useful or not, but it feels like we tip over to this example being more like a table-test of all cases. I think one string comparison, possibly with a comment about how strings are compared, will suffice.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f0cf07e_4f86c66a",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "Please drop: we will likely remove support for this in favour of the better named `strings.Repeat()`.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f82ae08_10583ead",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "Please drop: we will likely remove support for this in favour of the better named `list.Repeat()`",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec30f057_12355d18",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "Please drop: we are removing support for this in favour of the better named `list.Concat()`",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42f4ffbc_a8bbfbb5",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "Differ from what?\n\nI think the only difference now comes with division, so we can explain that more plainly. Unless I\u0027m missing something, remainder is only something that is possible via `mod()` and `rem()`.",
+      "range": {
+        "startLine": 46,
+        "startChar": 41,
+        "endLine": 46,
+        "endChar": 47
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "207ac124_c385a8d5",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:23:49Z",
+      "side": 1,
+      "message": "Unless someone knows the distinction between these two, I think we would do better to have the table from the spec here. Rather than trying to do it by example (because in an example we can\u0027t clearly/easily have a \"column\"",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
