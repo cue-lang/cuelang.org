@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"PAMA5VLFVA75VPPH6M6LDE0I0MBRV8C9TQ47T58CA8N5VLAHPU1G====": [{
+									"3CB3KN5C5ELND2533A4LS66C852NGGJATJE14A5LS9H407NKQR90====": [{
 										doc:      ""
 										cmd:      "cue help mod tidy"
 										exitCode: 0
