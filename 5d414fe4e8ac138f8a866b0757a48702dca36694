@@ -534,6 +534,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e9060ec6_aeda1343",
+        "filename": "content/docs/tour/expressions/regexp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:10:50Z",
+      "side": 1,
+      "message": "The table doesn\u0027t work for me. It takes up too much space for no benefit. I would suggest sticking with the existing tour on this one.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b850e1f_24065c8a",
+        "filename": "content/docs/tour/expressions/regexp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:10:50Z",
+      "side": 1,
+      "message": "After the example we should link to `regexp` package (https://pkg.go.dev/cuelang.org/go/pkg/regexp) for further details, and for a link to the regular expression syntax CUE uses.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff7f1f01_08531e83",
         "filename": "hugo/content/en/docs/tour/expressions/interpolation/index.md",
         "patchSetId": 34
