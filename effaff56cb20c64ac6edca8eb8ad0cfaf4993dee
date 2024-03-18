@@ -16,6 +16,69 @@
       "message": "Please re-review.",
       "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1a47d98_f2e44e3f",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T16:56:41Z",
+      "side": 1,
+      "message": "Update to:\n\n```\nField values within a struct are accessed with **selectors**, using dot notation (`X.name`), or\n**index** expressions (`X[\"name\"]`).\n```",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09063098_edece85a",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T16:56:41Z",
+      "side": 1,
+      "message": "```\nindex\n```",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 8
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "405546e4_c828eb64",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T16:56:41Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
