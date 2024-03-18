@@ -157,6 +157,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d149fa0c_43dc1099",
+        "filename": "content/docs/tour/references/hidden/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T06:17:54Z",
+      "side": 1,
+      "message": "Again I think the possessive (if that is the correct term) form harms readability here and we can more plainly state the sentence without.\n\n\"A field name that starts with an underscore (`_`) is referred to as a **hidden field**. Hidden fields are not included in the exported output.\"\n\nYou can then go on to add the caveat around quoting etc.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 19
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aa0e5c0f_0e9b7b2e",
         "filename": "content/docs/tour/references/selectors/en.md",
         "patchSetId": 29
