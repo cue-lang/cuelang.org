@@ -3,6 +3,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f9413345_aa7e5a74",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:16:34Z",
+      "side": 1,
+      "message": "This misses a key phrase from the existing tour to my mind:\n\n\"With null coalescing we really mean error, or bottom, coalescing.\"",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e3da4b8_0784a15a",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:16:34Z",
+      "side": 1,
+      "message": "I don\u0027t think we need the index out of bounds here; we have it in the example above.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f129f9b4_de7d0079",
         "filename": "content/docs/tour/expressions/conditional/en.md",
         "patchSetId": 34
