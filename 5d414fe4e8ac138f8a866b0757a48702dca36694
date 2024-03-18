@@ -20,6 +20,92 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "119d2b78_9843dfc3",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:00:17Z",
+      "side": 1,
+      "message": "Again, I worry about the use of \"generated\" here (recognising that the current tour uses this language). \"Created\" or \"specified\" seems to work equally well?",
+      "range": {
+        "startLine": 6,
+        "startChar": 14,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ffc7c2d_0abe11de",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:00:17Z",
+      "side": 1,
+      "message": "\"referenced directly\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 26,
+        "endLine": 14,
+        "endChar": 46
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e02e081_48fc8734",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:00:17Z",
+      "side": 1,
+      "message": "Language to follow the plainer language I suggested in an earlier page.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 7
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bba5a70_c87e6f96",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:00:17Z",
+      "side": 1,
+      "message": "I would add a short comment here that indicates that `city` is a map from the city name to details about that city.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "81417dbd_5a31b369",
         "filename": "content/docs/tour/expressions/interpolfield/en.md",
         "patchSetId": 34
