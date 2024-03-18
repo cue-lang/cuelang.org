@@ -3,6 +3,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d7bac78e_37c1265a",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:52:20Z",
+      "side": 1,
+      "message": "This is not correct. A let clause binds an identifier to the given expression, whereas an alias is a name (or an alternative name) for a value. \n\nWe should remove `let` from this page because it conflates things.",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 36
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2230da60_1045a5ba",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:52:20Z",
+      "side": 1,
+      "message": "This is a long example. I\u0027d suggest shortening it using the more compact form of struct field declaration, but also looking at whether the spec\u0027s example can be leveraged for the other kinds of alias:\n\nhttps://cuelang.org/docs/references/spec/#aliases",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aa0e5c0f_0e9b7b2e",
         "filename": "content/docs/tour/references/selectors/en.md",
         "patchSetId": 29
