@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bae59bc_6fa7887f",
+        "filename": "content/docs/tour/references/scopes/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:23:22Z",
+      "side": 1,
+      "message": "We should create a concept guide that talks about this in more detail, probably with diagrams.",
+      "range": {
+        "startLine": 7,
+        "startChar": 12,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "b2809a990badacc2bf05b79ea6815ab6e36e2333",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9a2058e_31134180",
+        "filename": "content/docs/tour/references/scopes/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:23:22Z",
+      "side": 1,
+      "message": "This example is considerably longer than the existing one and doesn\u0027t appear to add anything. Can I suggest we keep the simpler, shorter example?",
+      "revId": "b2809a990badacc2bf05b79ea6815ab6e36e2333",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fd8c71b_0f2f1388",
+        "filename": "content/docs/tour/references/scopes/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:23:22Z",
+      "side": 1,
+      "message": "To refer to these fields via the outer field is not actually correct. The reference is \"within\" the RHS value. I would suggest using line numbers here to be entirely precise regardless of the situation.",
+      "revId": "b2809a990badacc2bf05b79ea6815ab6e36e2333",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
