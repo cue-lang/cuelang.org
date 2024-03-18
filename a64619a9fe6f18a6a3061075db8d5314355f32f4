@@ -43,6 +43,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ab6a7fe5_b5265793",
+        "filename": "content/docs/tour/references/emit/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:59:44Z",
+      "side": 1,
+      "message": "Simpler language please, with more direct, shorter sentences. \"The facility\" and \"surpasses\" - I think we can and should be plainer in our language.\n\nI think the only point you are trying to make here is that definitions can be used \"alongside\" and embedded value?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 69
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f188fe50_577e236e",
+        "filename": "content/docs/tour/references/emit/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:59:44Z",
+      "side": 1,
+      "message": "Why are you using a naked `#` here?\n\nI think the example from the existing tour is sufficient here. It\u0027s shorter and simpler and gets the point across.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aa0e5c0f_0e9b7b2e",
         "filename": "content/docs/tour/references/selectors/en.md",
         "patchSetId": 29
