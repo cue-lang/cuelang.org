@@ -471,6 +471,69 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6481e521_e250b3dd",
+        "filename": "content/docs/tour/expressions/query-projection/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:06:44Z",
+      "side": 1,
+      "message": "I find this sentence a little hard to parse:\n\n\"Comprehension also allow us to process data via queries and projections.\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c221359_aab897df",
+        "filename": "content/docs/tour/expressions/query-projection/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:06:44Z",
+      "side": 1,
+      "message": "It\u0027s unclear whether scope of being used here in the context of the language or not. I would avoid using the word altogether. Perhaps more colloquially:\n\n\"Queries select which data items we want, and projections define the shape of each item.\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 39,
+        "endLine": 8,
+        "endChar": 44
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af2945cc_087aeae6",
+        "filename": "content/docs/tour/expressions/query-projection/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:06:44Z",
+      "side": 1,
+      "message": "This paragraph is a bit confusing for me. I would simplify the example below to combine the query and projection into one. We don\u0027t need to be exhaustive in our explanation in prose, or in the example.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff7f1f01_08531e83",
         "filename": "hugo/content/en/docs/tour/expressions/interpolation/index.md",
         "patchSetId": 34
