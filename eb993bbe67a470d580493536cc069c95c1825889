@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9a252a9_17482897",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:30:07Z",
+      "side": 1,
+      "message": "\"A\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ffee52_3c8272df",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:30:07Z",
+      "side": 1,
+      "message": "I don\u0027t know what this means. I would keep this sentence simple:\n\n\"A configuration can be split across multiple files by adding `package` clause to each file.\"\n\nWe don\u0027t need to talk about (re)unification here.",
+      "range": {
+        "startLine": 8,
+        "startChar": 15,
+        "endLine": 8,
+        "endChar": 43
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44bf4587_cb894716",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:30:07Z",
+      "side": 1,
+      "message": "I wouldn\u0027t worry about including this reference here. It\u0027s a detail the user doesn\u0027t need to be worried about at the point they\u0027re at.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 71
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a63f6b5_a07415e8",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:30:07Z",
+      "side": 1,
+      "message": "My allergy to the word \"duplicate\" again :)",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 9
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa0ee6b9_b6045eec",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:30:07Z",
+      "side": 1,
+      "message": "Again I think the possessive form (still not sure if that is the right term, grammatically) hurts here: \n\n\"Duplicate definitions across files and within the same file are treated similarly, because order does not matter [link]\"\n\n(with some rewording for \"Duplicate\")",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 20
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b83f3ba4_659f802c",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T09:30:07Z",
+      "side": 1,
+      "message": "I feel like this is a detail not worth covering here, but if you do think it\u0027s worth it, I would put it below the code example.",
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
