@@ -43,6 +43,63 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "216572c2_429478f6",
+        "filename": "content/docs/tour/references/cycle/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T06:05:41Z",
+      "side": 1,
+      "message": "\"specified with\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 45,
+        "endLine": 9,
+        "endChar": 49
+      },
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec367b9c_adae05c2",
+        "filename": "content/docs/tour/references/cycle/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T06:05:41Z",
+      "side": 1,
+      "message": "The switch from the current tour of using a concrete example (pun intended), `200`, is harmful to understanding to my mind. I would include it. It\u0027s literally no cost to \"inline\" an example of a concrete value.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e1aacfc_1ed3e05f",
+        "filename": "content/docs/tour/references/cycle/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T06:05:41Z",
+      "side": 1,
+      "message": "It\u0027s not clear to me that the user will be clear this cannot be exported. I would make that clear, and also indicate (perhaps in prose after the example to save the comment getting too long) that this is why we are using `eval` here.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ab6a7fe5_b5265793",
         "filename": "content/docs/tour/references/emit/en.md",
         "patchSetId": 29
