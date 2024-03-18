@@ -100,6 +100,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bfdec8e5_0a08950c",
+        "filename": "content/docs/tour/references/cycleref/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T06:12:06Z",
+      "side": 1,
+      "message": "What\u0027s wrong with the existing example here? \n\nIn particular, why make it incomplete?\n\nIf anything I would have \"strengthened\" it to be `cue export`",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ab6a7fe5_b5265793",
         "filename": "content/docs/tour/references/emit/en.md",
         "patchSetId": 29
