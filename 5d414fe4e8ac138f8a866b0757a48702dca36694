@@ -134,6 +134,115 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a7c3aba_5bba0a1d",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:53:17Z",
+      "side": 1,
+      "message": "\"created\" or \"specified\" - generation is something that the CUE tool does to my mind.",
+      "range": {
+        "startLine": 6,
+        "startChar": 13,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de1a84e8_962b8a4a",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:53:17Z",
+      "side": 1,
+      "message": "\"They\" - component is not a term I\u0027m familiar with here.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59714970_7660eb0d",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:53:17Z",
+      "side": 1,
+      "message": "Export CUE if you want a more compact form.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d54a789_435f3d43",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:53:17Z",
+      "side": 1,
+      "message": "`rem`\n\nIn any case, I would remove `b`: it doesn\u0027t carry any real weight to my mind.",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2718d613_96f5ddc2",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:53:17Z",
+      "side": 1,
+      "message": "Grammatically doesn\u0027t make sense - I wouldn\u0027t worry about the caveat in any case.",
+      "range": {
+        "startLine": 30,
+        "startChar": 28,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c4d87a0_f341bd37",
         "filename": "content/docs/tour/expressions/operators/en.md",
         "patchSetId": 34
