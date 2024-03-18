@@ -506,6 +506,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bfd3950_9b50ca4a",
+        "filename": "content/docs/tour/types/bytes/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:56:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3005b7c2_acf7983e",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 11
+      },
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02626568_a9903df8",
@@ -2106,6 +2130,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "090956f2_6f094df8",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:56:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8eac7c7_e1c4556a",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "411cac70_7c20635d",
@@ -2137,6 +2179,24 @@
       "side": 1,
       "message": "TBD.",
       "parentUuid": "411cac70_7c20635d",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ded9402_f16cdb6b",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T15:56:08Z",
+      "side": 1,
+      "message": "I\u0027ve simplified this, whilst keeping an example that contrasts two ways to represent the same string. I\u0027ve included a motivation for the comparison.",
+      "parentUuid": "1f04b6ee_9feecf30",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
