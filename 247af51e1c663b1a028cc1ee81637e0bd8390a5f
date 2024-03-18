@@ -1,0 +1,221 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e09fd3e1_a63afc53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "Generally looks good, but this page has to be a multi-step script to my mind.",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a4164bd_8adac704",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "This page needs to be a multi-step example. Otherwise we have a terrible amount of repetition. Which I think harms readability/understanding where we got to.",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "478b7cfd_08b74a9a",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "Per my previous review, I\u0027m not a fan of the UI/UX of this kind of link block.",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba5be416_68e72fe0",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "We need to motivate what this example is about. It\u0027s otherwise just three CUE files with zero context. Are they three deployments of the same app? Three different apps? Should we first start by demonstrating what the existing configuration looks like as Yaml? Then show the process of splitting into three files (in the same package).... Even if we don\u0027t do the Yaml step, we need to motivate what is going on here.",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81025a57_6632502e",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "Isn\u0027t this more a point about unification than order not being relevant?",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72ecb004_777bd3b4",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "I don\u0027t understand what this is a reference to... there is one `app` field, perhaps with the fields of that struct being the individual apps? See my point about context above.",
+      "range": {
+        "startLine": 74,
+        "startChar": 17,
+        "endLine": 74,
+        "endChar": 42
+      },
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "726ec832_b9cedda9",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "This is the first mention of `App`. What is it?",
+      "range": {
+        "startLine": 75,
+        "startChar": 19,
+        "endLine": 75,
+        "endChar": 22
+      },
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3ec2600_c76812b0",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "This is a long sentence, and I struggled to parse the bit that starts \"with the design...\". I\u0027d suggest splitting into multiple sentences.",
+      "range": {
+        "startLine": 140,
+        "startChar": 25,
+        "endLine": 143,
+        "endChar": 47
+      },
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61b2e58a_5d5463d3",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "This paragraph contains too much emphasis for my liking. It reduces the readability and to my mind reduces the impact of the emphasis to be overused. I\u0027d suggest reducing/removing entirely.",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3d2f77d_66c7d0ca",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "I\u0027m not sure what \"single level of default value specified\" means - are you trying to say that CUE supports a single level of override? That\u0027s fine to say, because that\u0027s exactly what default values do (but effectively in reverse).",
+      "range": {
+        "startLine": 145,
+        "startChar": 53,
+        "endLine": 146,
+        "endChar": 15
+      },
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24e014f1_4e788e9c",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T14:11:19Z",
+      "side": 1,
+      "message": "It\u0027s not clear to me what \"don\u0027t stack\" means - I\u0027m therefore not clear whether it will be clear to the user or not. If you are trying to say you cannot have multiple layers of defaults values... then I would just say that.",
+      "range": {
+        "startLine": 147,
+        "startChar": 11,
+        "endLine": 147,
+        "endChar": 33
+      },
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
