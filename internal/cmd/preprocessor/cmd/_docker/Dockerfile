@@ -37,7 +37,11 @@ RUN \
 
 FROM golang:1.22.1
 
+RUN apt-get update && apt-get install -y tree
+
 RUN mkdir -p /go/bin
+
+ENV LC_ALL=C.UTF-8
 
 # TODO: move away from defaulting to the pre-release of CUE
 ENV PATH="/cues/prerelease:${PATH}"
