@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c453b8e7_d4c8ceca",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Added.",
+      "parentUuid": "f9413345_aa7e5a74",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e3da4b8_0784a15a",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-03-18T09:16:34Z",
       "side": 1,
       "message": "I don\u0027t think we need the index out of bounds here; we have it in the example above.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5bd130c_24487095",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e3da4b8_0784a15a",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "611ee35a_924253cc",
+        "filename": "content/docs/tour/expressions/conditional/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "I\u0027m unsure what example construction you\u0027d intend with a non-concrete value.\n\nI started off altering this example by placing the conditional inside a new definition, and then using the definition. However, I found that this reduced the example\u0027s clarity, relative to my current example\u0027s minor delta over https://alpha.cuelang.org/docs/tour/expressions/conditional/.\n\nWould you prefer to see the type-\u003econcrete **re**-specification that\u0027s present in the current tour?",
+      "parentUuid": "f129f9b4_de7d0079",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "119d2b78_9843dfc3",
         "filename": "content/docs/tour/expressions/fieldcomp/en.md",
         "patchSetId": 34
@@ -65,6 +119,30 @@
       "writtenOn": "2024-03-18T09:00:17Z",
       "side": 1,
       "message": "Again, I worry about the use of \"generated\" here (recognising that the current tour uses this language). \"Created\" or \"specified\" seems to work equally well?",
+      "range": {
+        "startLine": 6,
+        "startChar": 14,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa825923_bb1a3b93",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "119d2b78_9843dfc3",
       "range": {
         "startLine": 6,
         "startChar": 14,
@@ -98,6 +176,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7d0f872_2f96d9e2",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffc7c2d_0abe11de",
+      "range": {
+        "startLine": 14,
+        "startChar": 26,
+        "endLine": 14,
+        "endChar": 46
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e02e081_48fc8734",
@@ -111,6 +213,30 @@
       "writtenOn": "2024-03-18T09:00:17Z",
       "side": 1,
       "message": "Language to follow the plainer language I suggested in an earlier page.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 7
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9863fb0f_73225c29",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e02e081_48fc8734",
       "range": {
         "startLine": 15,
         "startChar": 0,
@@ -138,6 +264,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8d1f0c1_6a8cf25c",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bba5a70_c87e6f96",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81417dbd_5a31b369",
@@ -155,6 +299,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdfab329_9c98279c",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81417dbd_5a31b369",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54c907f1_ba3fe137",
@@ -168,6 +330,30 @@
       "writtenOn": "2024-03-18T08:41:24Z",
       "side": 1,
       "message": "I don\u0027t understand this sentence.\n\nWhat are you trying to say here?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 38
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef0a1f45_8228facd",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Changed to dynamic field-related language requiring selectors/etc.",
+      "parentUuid": "54c907f1_ba3fe137",
       "range": {
         "startLine": 8,
         "startChar": 0,
@@ -201,6 +387,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22811b1f_914da5bc",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Changed to dynamic field-related language requiring selectors/etc.",
+      "parentUuid": "5306c316_5617b476",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d80fa182_7d22365d",
@@ -214,6 +424,24 @@
       "writtenOn": "2024-03-18T08:41:24Z",
       "side": 1,
       "message": "This example is too long to my mind, and in any case will need to be revised slightly in light of the flip to dynamic fields.\n\nHappy to chat it through.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff0b2b07_e55ca21c",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d80fa182_7d22365d",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -235,6 +463,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "47d755f4_5004d10e",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd6796f3_ea355c47",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27fe3b44_d2bc8dc4",
@@ -252,6 +498,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2d259d6_18e3ae50",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "27fe3b44_d2bc8dc4",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a7c3aba_5bba0a1d",
@@ -265,6 +529,30 @@
       "writtenOn": "2024-03-18T08:53:17Z",
       "side": 1,
       "message": "\"created\" or \"specified\" - generation is something that the CUE tool does to my mind.",
+      "range": {
+        "startLine": 6,
+        "startChar": 13,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6385a633_4ad5d632",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a7c3aba_5bba0a1d",
       "range": {
         "startLine": 6,
         "startChar": 13,
@@ -298,6 +586,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0727cefd_f2609965",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de1a84e8_962b8a4a",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59714970_7660eb0d",
@@ -315,6 +627,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "605e03b8_28eca9eb",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59714970_7660eb0d",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d54a789_435f3d43",
@@ -328,6 +658,30 @@
       "writtenOn": "2024-03-18T08:53:17Z",
       "side": 1,
       "message": "`rem`\n\nIn any case, I would remove `b`: it doesn\u0027t carry any real weight to my mind.",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "524eaaa7_8e77f859",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "I reckon it\u0027s useful to have a single line example, showing the conciseness that\u0027s possible. I hold this very lightly, so I\u0027ll leave unresolved for now.",
+      "parentUuid": "8d54a789_435f3d43",
       "range": {
         "startLine": 28,
         "startChar": 19,
@@ -361,6 +715,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "edb4f553_3c77010a",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2718d613_96f5ddc2",
+      "range": {
+        "startLine": 30,
+        "startChar": 28,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c4d87a0_f341bd37",
@@ -374,6 +752,24 @@
       "writtenOn": "2024-03-18T08:23:49Z",
       "side": 1,
       "message": "This link can go at the bottom of the page to my mind: it gets in the way of the reader continuing.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe6fd34c_0b426762",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c4d87a0_f341bd37",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -397,6 +793,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "393e3d43_81f1988a",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "I\u0027ve reduced the example set and merged the 2 example blocks. This leaves a similarly sized example block to the previous patch set, but without the 2nd block on the page I think this is now take-in-at-a-glance-able.",
+      "parentUuid": "9159adc8_ea9d788a",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fe68e857_a1374011",
         "filename": "content/docs/tour/expressions/operators/en.md",
         "patchSetId": 34
@@ -408,6 +822,24 @@
       "writtenOn": "2024-03-18T08:23:49Z",
       "side": 1,
       "message": "I realise there is a balance to be struck here between being sufficiently useful or not, but it feels like we tip over to this example being more like a table-test of all cases. I think one string comparison, possibly with a comment about how strings are compared, will suffice.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61f9e726_ce2e5f2d",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe68e857_a1374011",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -429,6 +861,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "34f3aeee_a432dbaf",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f0cf07e_4f86c66a",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f82ae08_10583ead",
@@ -446,6 +896,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b72aae41_84ed62d9",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f82ae08_10583ead",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec30f057_12355d18",
@@ -459,6 +927,24 @@
       "writtenOn": "2024-03-18T08:23:49Z",
       "side": 1,
       "message": "Please drop: we are removing support for this in favour of the better named `list.Concat()`",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5455a2c7_cc122461",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec30f057_12355d18",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -488,6 +974,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "347a1bc2_4af8ba55",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "I\u0027ve simplified this significantly.",
+      "parentUuid": "42f4ffbc_a8bbfbb5",
+      "range": {
+        "startLine": 46,
+        "startChar": 41,
+        "endLine": 46,
+        "endChar": 47
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "207ac124_c385a8d5",
         "filename": "content/docs/tour/expressions/operators/en.md",
         "patchSetId": 34
@@ -505,6 +1015,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b99d372a_b1179541",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "I\u0027ve not gone as far as aggregating the 8 rows from the 2 tables in https://alpha.cuelang.org/docs/reference/spec/#div-mod-quo-and-rem. I\u0027ve left 2 examples in the CUE, and shrunk the prose down significantly.",
+      "parentUuid": "207ac124_c385a8d5",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6481e521_e250b3dd",
         "filename": "content/docs/tour/expressions/query-projection/en.md",
         "patchSetId": 34
@@ -516,6 +1044,30 @@
       "writtenOn": "2024-03-18T09:06:44Z",
       "side": 1,
       "message": "I find this sentence a little hard to parse:\n\n\"Comprehension also allow us to process data via queries and projections.\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64fcc86c_361eaf4c",
+        "filename": "content/docs/tour/expressions/query-projection/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6481e521_e250b3dd",
       "range": {
         "startLine": 6,
         "startChar": 0,
@@ -549,6 +1101,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d5032bc_7b45ba34",
+        "filename": "content/docs/tour/expressions/query-projection/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c221359_aab897df",
+      "range": {
+        "startLine": 8,
+        "startChar": 39,
+        "endLine": 8,
+        "endChar": 44
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af2945cc_087aeae6",
@@ -562,6 +1138,24 @@
       "writtenOn": "2024-03-18T09:06:44Z",
       "side": 1,
       "message": "This paragraph is a bit confusing for me. I would simplify the example below to combine the query and projection into one. We don\u0027t need to be exhaustive in our explanation in prose, or in the example.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58d1217d_bbc79902",
+        "filename": "content/docs/tour/expressions/query-projection/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af2945cc_087aeae6",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -583,6 +1177,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab6156fd_92be0948",
+        "filename": "content/docs/tour/expressions/regexp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9060ec6_aeda1343",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b850e1f_24065c8a",
@@ -600,6 +1212,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "538f48be_bf22b9d2",
+        "filename": "content/docs/tour/expressions/regexp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b850e1f_24065c8a",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff7f1f01_08531e83",
@@ -613,6 +1243,24 @@
       "writtenOn": "2024-03-18T08:27:07Z",
       "side": 1,
       "message": "Probably worth including a multi-line string literal for completeness\u0027 sake?",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5042f001_b9c7afb2",
+        "filename": "hugo/content/en/docs/tour/expressions/interpolation/index.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-18T19:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff7f1f01_08531e83",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
