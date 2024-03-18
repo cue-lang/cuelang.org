@@ -3,6 +3,120 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "81417dbd_5a31b369",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:41:24Z",
+      "side": 1,
+      "message": "I think this should be named \"Dynamic Fields\" to follow the spec:\n\nhttps://tip.cuelang.org/docs/references/spec/#dynamic-fields\n\nThe tour is behind the spec and implementation here. Dynamic fields are a more powerful concept and followed later, including the ability to have dynamic optional/required fields.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54c907f1_ba3fe137",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:41:24Z",
+      "side": 1,
+      "message": "I don\u0027t understand this sentence.\n\nWhat are you trying to say here?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 38
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5306c316_5617b476",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:41:24Z",
+      "side": 1,
+      "message": "What happens automatically?\n\nIf you are trying to explain how to refer to a dynamic field, I would do so more plainly in the language of https://cl-1178168-9--cue-cls.netlify.app/docs/tour/references/selectors/.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d80fa182_7d22365d",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:41:24Z",
+      "side": 1,
+      "message": "This example is too long to my mind, and in any case will need to be revised slightly in light of the flip to dynamic fields.\n\nHappy to chat it through.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd6796f3_ea355c47",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:41:24Z",
+      "side": 1,
+      "message": "The identifier is not in scope.",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27fe3b44_d2bc8dc4",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T08:41:24Z",
+      "side": 1,
+      "message": "Why does this example need disjunctions and defaults?",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c4d87a0_f341bd37",
         "filename": "content/docs/tour/expressions/operators/en.md",
         "patchSetId": 34
