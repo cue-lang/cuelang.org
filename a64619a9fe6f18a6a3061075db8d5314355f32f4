@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa0e5c0f_0e9b7b2e",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:29:50Z",
+      "side": 1,
+      "message": "I\u0027m not clear we need/want to add this definition inline here, or just refer to it elsewhere but I hold that lightly.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35c3caf2_d79bf41d",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:29:50Z",
+      "side": 1,
+      "message": "The one statement you are missing here (and from the example below) is a computed reference, i.e. `\"a\" + f`. If anything, I think there is a more important example to show.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff18c7a3_d7b7947a",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 29
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-18T05:29:50Z",
+      "side": 1,
+      "message": "This is a very long example for showing what is a simple concept. I think the examples become rather intimidating when they are this long; they imply there is lots of learn. Please can I suggest we shorten it considerably, or just use the existing example? We don\u0027t need this to be a table-test of all the cases.",
+      "revId": "a64619a9fe6f18a6a3061075db8d5314355f32f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
