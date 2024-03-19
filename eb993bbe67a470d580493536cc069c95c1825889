@@ -462,6 +462,24 @@
       "message": "Need to chat this through.",
       "revId": "eb993bbe67a470d580493536cc069c95c1825889",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7af0390_f23e82e8",
+        "filename": "hugo/content/en/docs/tour/packages/identifiers/index.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T18:16:49Z",
+      "side": 1,
+      "message": "This is resolved because the page is a draft. I would simply delete the page now that we have fixed things?",
+      "parentUuid": "0f8f7637_72a4d0e5",
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
