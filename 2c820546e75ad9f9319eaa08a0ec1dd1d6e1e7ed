@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e867fd0_99b10ea3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:36:36Z",
+      "side": 1,
+      "message": "This would also work, I believe, in `content/blog/_en.html`\u0027s front matter:\n\n```\ndraft: true\ncascade:\n  draft: true\n```",
+      "revId": "2c820546e75ad9f9319eaa08a0ec1dd1d6e1e7ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
