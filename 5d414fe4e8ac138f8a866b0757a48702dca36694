@@ -124,6 +124,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc3dc8bd_ab95f72b",
+        "filename": "content/docs/tour/expressions/conditional/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done. This is the first multi-file code block in the tour, so I\u0027ve added an `info` callout, explaining what the reader is seeing.",
+      "parentUuid": "95fe7fb6_ecc0744a",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "119d2b78_9843dfc3",
@@ -710,6 +728,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cb17d7e_1fe0639a",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "524eaaa7_8e77f859",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2718d613_96f5ddc2",
@@ -823,6 +865,24 @@
       "side": 1,
       "message": "I\u0027ve reduced the example set and merged the 2 example blocks. This leaves a similarly sized example block to the previous patch set, but without the 2nd block on the page I think this is now take-in-at-a-glance-able.",
       "parentUuid": "9159adc8_ea9d788a",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ed75aa0_20ce32ad",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "393e3d43_81f1988a",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -1014,6 +1074,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a22c3aa_20e39c1a",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "347a1bc2_4af8ba55",
+      "range": {
+        "startLine": 46,
+        "startChar": 41,
+        "endLine": 46,
+        "endChar": 47
+      },
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "207ac124_c385a8d5",
@@ -1045,6 +1129,24 @@
       "side": 1,
       "message": "I\u0027ve not gone as far as aggregating the 8 rows from the 2 tables in https://alpha.cuelang.org/docs/reference/spec/#div-mod-quo-and-rem. I\u0027ve left 2 examples in the CUE, and shrunk the prose down significantly.",
       "parentUuid": "207ac124_c385a8d5",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ad286a6_314e955c",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b99d372a_b1179541",
       "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },

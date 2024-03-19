@@ -58,6 +58,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "02da6e76_1d57bc54",
+        "filename": "content/docs/tour/expressions/coalesce/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "I\u0027d chosen it to not give off the impression that \"sprinkling a bit of null coalescing on your CUE **will** allow it to evaluate successfully\", and to hint at the fact that it requires deliberate, careful use.\n\nBut I hold that very lightly, so I\u0027ve revised it :-)",
+      "parentUuid": "0213db1f_1668660e",
+      "range": {
+        "startLine": 6,
+        "startChar": 40,
+        "endLine": 6,
+        "endChar": 49
+      },
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7d7aee2_77c01c4d",
@@ -71,6 +95,30 @@
       "writtenOn": "2024-03-19T09:10:47Z",
       "side": 1,
       "message": "Same comment as the previous page about using \"combined\" instead of \"nested\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 6
+      },
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5672c1e_1677b669",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7d7aee2_77c01c4d",
       "range": {
         "startLine": 11,
         "startChar": 0,
@@ -104,6 +152,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "caed8f21_27185e6f",
+        "filename": "content/docs/tour/expressions/fieldcomp/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c602645b_30ad42a3",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 3
+      },
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bf764dc_1b8f4819",
@@ -117,6 +189,24 @@
       "writtenOn": "2024-03-19T09:10:47Z",
       "side": 1,
       "message": "Slug of the page needs to change?",
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2c86000_d9a6d2a1",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "I had deliberately avoided that, but I\u0027ve moved it and added an alias.",
+      "parentUuid": "6bf764dc_1b8f4819",
       "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -138,6 +228,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9257f5a2_ae01f253",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80e7e4fc_ae93e5a5",
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5114d617_6ec464a9",
@@ -151,6 +259,30 @@
       "writtenOn": "2024-03-19T09:10:47Z",
       "side": 1,
       "message": "\"or\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 3
+      },
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cb667c2_e40e55b3",
+        "filename": "content/docs/tour/expressions/interpolfield/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5114d617_6ec464a9",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -184,6 +316,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e47c442_a28b9768",
+        "filename": "content/docs/tour/expressions/listcomp/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d71eee6f_c10621b0",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1026eb3_75c7d9cb",
@@ -207,6 +363,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fda8fbee_55ca12c3",
+        "filename": "content/docs/tour/expressions/operators/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "I\u0027ve got rid of the suffix, but kept `produce an int`. I think \"integer division\" by itself could be ambiguous to some subset of readers: does it mean producing an int, dividing ints, or both?",
+      "parentUuid": "e1026eb3_75c7d9cb",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 57
+      },
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23ef85db_2bde0b9a",
@@ -220,6 +400,30 @@
       "writtenOn": "2024-03-19T09:10:47Z",
       "side": 1,
       "message": "\"select\" seems to only cover the \"queries\" part. \n\nHow about:\n\n\"Comprehensions allow us to select and process data via queries and projections.\"\n\n\"Process\" is perhaps too general...",
+      "range": {
+        "startLine": 6,
+        "startChar": 27,
+        "endLine": 6,
+        "endChar": 33
+      },
+      "revId": "7cda093c646f462c7f3b8baaa82f4ab813886c76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "048bd4dc_d0edfeae",
+        "filename": "content/docs/tour/expressions/query-projection/en.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23ef85db_2bde0b9a",
       "range": {
         "startLine": 6,
         "startChar": 27,
