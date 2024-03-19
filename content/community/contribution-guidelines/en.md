@@ -17,7 +17,7 @@ that don't involve writing code.
 * Using CUE is a form of contributing! Especially when combined with raising
   issues, providing feedback, tell us what works well and what doesn't, pointing
 out gaps etc.
-* Adding your CUE-based project to [`unity`](https://github.com/cue-unity/unity)
+* Adding your CUE-based project to [Unity](https://cuelabs.dev/unity/)
   helps ensure that we don't create releases that unintentionally break
 configurations, but also gives a wide variety of scenarios in which to test bug
 fixes, performance improvements and the like.
@@ -35,7 +35,7 @@ fixing a bug, or considering a new feature.
 * Code contributions, the main focus of this guide. The CUE project is a little
   different from that used by other open source projects so we cover this
 process in more detail below.
-* Contributing thoughts and use cases use cases to proposals. CUE can be and is
+* Contributing thoughts and use cases to proposals. CUE can be and is
   being used in many varied different ways. Sharing experience reports helps
 to shape proposals and designs.
 * Creating content. Whether it be writing blog posts, live streaming,
@@ -64,6 +64,11 @@ also coordinate work on new features, bugs, designs and proposals.  Given the
 inherently distributed nature of open-source this coordination is important
 because it very often serves as the main form of communication between
 contributors.
+
+You can also exchange ideas or feedback with other contributors via the
+`#contributing` [Slack channel](https://cuelang.slack.com/archives/CMY132JKY),
+as well as the contributor office hours calls which we hold via the
+[community calendar](https://cuelang.org/s/community-calendar) once per week.
 
 ### Check the issue tracker
 
@@ -115,7 +120,7 @@ href="mailto:security@cuelang.org">security@cuelang.org</a>.
 The code contribution process used by the CUE project is a little different from
 that used by other open source projects.  We assume you have a basic
 understanding of [`git`](https://git-scm.com/) and [Go](https://golang.org)
-(1.18 or later).
+(1.21 or later).
 
 The first thing to decide is whether you want to contribute a code change via
 GitHub or GerritHub. Both workflows are fully supported, and whilst GerritHub is
@@ -323,7 +328,7 @@ follow:
 - **Step 0**: Review the guidelines on [Good Commit Messages](#good-commit-messages), [The Review Process](#the-review-process) and [Miscellaneous Topics](#miscellaneous-topics)
 - **Step 1**: Decide which email address you want to use for contributions.
 - **Step 2**: Set up a [GerritHub](http://gerrithub.io/) account.
-- **Step 3**: Install `git-codereview`
+- **Step 3**: [Install `git-codereview`](#step-3-install-the-git-codereview-command)
 - **Step 4**: Clone the CUE repository locally.
 
 
@@ -369,8 +374,13 @@ process:
 - Click "Authorize gerritforge-ltd" on the GitHub auth page.
 - Confirm account profile details and click "Next."
 
-If you want to use SSH for authentication, SSH keys can be [configured in your
-user profile](https://review.gerrithub.io/settings/#SSHKeys).
+If you want to use SSH for authentication *to GerritHub*, SSH keys can be
+[configured in your user
+profile](https://review.gerrithub.io/settings/#SSHKeys).  If you choose to use
+SSH for authentication, you will not be able to use the `git-codereview`
+command that's suggested later in this document, as the command [doesn't
+support SSH-based git
+origins](https://github.com/golang/go/issues/9599#issuecomment-70538097).
 
 For HTTP Credentials, [generate a password via your user
 profile](https://review.gerrithub.io/settings/#HTTPCredentials). Then use an
@@ -385,8 +395,6 @@ issue](https://cuelang.org/issues/new).
 Changes to CUE must be reviewed before they are accepted, no matter who makes
 the change.  A custom `git` command called `git-codereview` simplifies sending
 changes to Gerrit.
-
-<!-- Keep the following in sync with cmd/cue/cmd/testdata/script/contributing_install*.txtar -->
 
 Install the `git-codereview` command by running,
 
@@ -529,9 +537,9 @@ the commit with `git codereview change`:
 
 
 ```console
-$ git codereview change -s     # amend current commit
+$ git codereview change  # amend current commit (without -s because we already signed-off, above)
 (open $EDITOR)
-$ git codereview mail          # send new changes to Gerrit
+$ git codereview mail    # send new changes to Gerrit
 ```
 
 If you don't need to change the commit description, just save and exit from the
@@ -612,22 +620,22 @@ markup language.
 
 ### Referencing issues
 
-The special notation "Fixes #12345" associates the change with issue 12345 in
+The special notation `Fixes #12345` associates the change with issue 12345 in
 the [CUE issue tracker](https://cuelang.org/issue/12345) When this change is
 eventually applied, the issue tracker will automatically mark the issue as
 fixed.
 
 
 If the change is a partial step towards the resolution of the issue, uses the
-notation "Updates #12345".  This will leave a comment in the issue linking back
+notation `Updates #12345`.  This will leave a comment in the issue linking back
 to the change in Gerrit, but it will not close the issue when the change is
 applied.
 
 
+All issues are tracked in the main repository's issue tracker.
 If you are sending a change against a subrepository, you must use the
 fully-qualified syntax supported by GitHub to make sure the change is linked to
-the issue in the main repository, not the subrepository.  All issues are tracked
-in the main repository's issue tracker.  The correct form is "Fixes #159".
+the issue in the main repository, not the subrepository (eg. `Fixes cue-lang/cue#999`).
 
 
 
@@ -657,7 +665,7 @@ an associated issue.
 ### Continuous Integration (CI) checks
 
 After an initial reading of your change, maintainers will trigger CI checks,
-that run a  full test suite and [`unity`](https://github.com/cue-unity/unity)
+that run a full test suite and [Unity](https://cuelabs.dev/unity/)
 checks.  Most CI tests complete in a few minutes, at which point a link will be
 posted in Gerrit where you can see the results, or if you are submitting a PR
 results are presented as checks towards the bottom of the PR.
