@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97201ec8_044bd42e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 39
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Please re-review the rendered version of /docs/tour/types/stringraw/ at https://cl-1177673-39--cue-cls.netlify.app/docs/tour/types/stringraw/ and let me know if you\u0027d like this version, or to revert to your previously reviewed patchset-36 version: https://cl-1177673-36--cue-cls.netlify.app/docs/tour/types/stringraw/",
+      "revId": "e335cd56c53e193c79b63133a1c2ad8e4ea327af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

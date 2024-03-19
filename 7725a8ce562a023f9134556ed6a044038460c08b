@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8754f054_ef3169d7",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "067f4df3_ba82bc91",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7948255a_171c1a00",
@@ -65,6 +83,30 @@
       "writtenOn": "2024-03-19T08:36:16Z",
       "side": 1,
       "message": "It doesn\u0027t need to be a concrete value.\n\nHow about simply:\n\n\"Default values allow CUE to decide which element of a disjunction should be chosen when a configuration doesn’t specify a value.\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 46,
+        "endLine": 7,
+        "endChar": 60
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b44a4de_1da37819",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7948255a_171c1a00",
       "range": {
         "startLine": 7,
         "startChar": 46,
@@ -98,6 +140,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddd85bed_9ea23d3d",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87d789e5_49ad6b62",
+      "range": {
+        "startLine": 13,
+        "startChar": 43,
+        "endLine": 13,
+        "endChar": 75
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "792854f6_b4fff3a9",
@@ -115,6 +181,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "881d073f_2c501252",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "792854f6_b4fff3a9",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23202cd2_d1efad3b",
@@ -128,6 +212,30 @@
       "writtenOn": "2024-03-19T08:36:16Z",
       "side": 1,
       "message": "\"constraint\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 46,
+        "endLine": 6,
+        "endChar": 50
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9c8c125_0ffb5aea",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23202cd2_d1efad3b",
       "range": {
         "startLine": 6,
         "startChar": 46,
@@ -161,6 +269,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5172dd63_8909775b",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done. I was only keeping the \"new type\" language from the original because it felt like an explicit, subtly meaningful choice that I didn\u0027t want to override.",
+      "parentUuid": "a9a8daf8_0f0e5a83",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cae6844e_26c98990",
@@ -174,6 +306,30 @@
       "writtenOn": "2024-03-19T08:36:16Z",
       "side": 1,
       "message": "It\u0027s not a type. Just refer to \"A disjunction\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 12
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4a47b89_8b2c1aaa",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "As above. Done.",
+      "parentUuid": "cae6844e_26c98990",
       "range": {
         "startLine": 12,
         "startChar": 8,
@@ -207,6 +363,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10efbcd1_438ccde5",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ecdef8f_e36e2ebf",
+      "range": {
+        "startLine": 15,
+        "startChar": 51,
+        "endLine": 15,
+        "endChar": 68
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "284ba3d2_a515d590",
@@ -224,6 +404,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05b22730_e71fd2b0",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "284ba3d2_a515d590",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f5fcb50_13c8b707",
@@ -237,6 +435,30 @@
       "writtenOn": "2024-03-19T08:36:16Z",
       "side": 1,
       "message": "\"prefix preceding\" is a tautology to my mind mind. Let\u0027s keep the language simple:\n\n\"Any whitespace before the closing quotes must also prefix the lines between the quotes.\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 66,
+        "endLine": 18,
+        "endChar": 9
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d5cc95c_5fec0b27",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f5fcb50_13c8b707",
       "range": {
         "startLine": 17,
         "startChar": 66,
@@ -266,6 +488,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a9c8ec50_f71643df",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "I\u0027ve done another pass through both the prose and the example.\n\nI\u0027ve carefully edited the prose so its sentences start on new lines, so that the flow guides the reader\u0027s eye through to the important detail. I\u0027ve made the crucial third sentence clearer and more obvious, by including an inline example of the delimiter modification, and have removed the distracting example of the delimiter /usage/, which doesn\u0027t help because its not a concrete, mentally-copy\u0026paste-able example.\n\nI\u0027ve updated the example to use unification (so there\u0027s no duplication stutter in the output), with a comment that I believe makes it clearer what\u0027s being demonstrated. I\u0027ve changed the first example\u0027s string so that the reader sees the modified escape delimiter being used earlier in the string, rather than the /escaping/ of the delimiter that\u0027s now relegated to the end of the string.\n\nLeaving unresolved for re-review.",
+      "parentUuid": "365ce3cf_1c5601e6",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0ea6548d_7cacb97a",
         "filename": "content/docs/tour/types/top/en.md",
         "patchSetId": 36
@@ -277,6 +517,30 @@
       "writtenOn": "2024-03-19T08:36:16Z",
       "side": 1,
       "message": "Either:\n\n```\nwritten `_`\n```\n\nor \n\n```\nwritten \"`_`\"\n```\n\nConsistency with bottom and other pages please.",
+      "range": {
+        "startLine": 6,
+        "startChar": 17,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35c60993_59109334",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T12:24:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ea6548d_7cacb97a",
       "range": {
         "startLine": 6,
         "startChar": 17,
