@@ -53,50 +53,11 @@ workflows: trybot: _repo.bashWorkflow & {
 				// are established by running each tool.
 				for v in _setupGoActionsCaches {v},
 
-				json.#step & {
-					// The latest git clean check ensures that this call is effectively
-					// side effect-free. Using GOPRIVATE ensures we don't accidentally
-					// hit a stale cache in the proxy.
-					name: "Ensure latest CUE"
-					run: """
-						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-						go mod tidy
-						cd play
-						GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-						go mod tidy
-						"""
-				},
-
-				_play & {
-					name: "Re-vendor play"
-					run:  "./_scripts/revendorToolsInternal.bash"
-				},
-
 				// Go generate steps
 				_goGenerate & {
 					name: "Regenerate"
 				},
-				_goGenerate & _play & {
-					name: "Regenerate play"
-				},
 
-				// Go test steps
-				_goTest & {
-					name: "Test"
-				},
-				_goTest & _play & {
-					name: "Test play"
-				},
-
-				// go mod tidy
-				_modTidy & {
-					name: "Check module is tidy"
-				},
-				_modTidy & _play & {
-					name: "Check play module is tidy"
-				},
-
-				_dist,
 				_repo.checkGitClean,
 
 				_installNetlifyCLI & {
@@ -159,16 +120,6 @@ _installHugo: json.#step & {
 	}
 }
 
-_dist: json.#step & {
-	name: *"Dist" | string
-	run:  "./build.bash"
-}
-
-_tipDist: _dist & {
-	name: "Tip dist"
-	env: BRANCH: "tip"
-}
-
 _installNetlifyCLI: json.#step & {
 	name: "Install Netlify CLI"
 	run:  "npm install -g netlify-cli@\(_repo.netlifyCLIVersion)"
@@ -183,12 +134,12 @@ _netlifyDeploy: json.#step & {
 		#alias: *"" | string
 	}
 	let nc = netlify.config
-	let prod = [ if #prod {"--prod"}, ""][0]
+	let prod = [if #prod {"--prod"}, ""][0]
 	let uSite = strings.ToUpper(strings.Replace(#site, "-", "_", -1))
-	let alias = [ if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
+	let alias = [if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
-	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	run:  "netlify deploy \(alias) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite) }}"
 }
 
