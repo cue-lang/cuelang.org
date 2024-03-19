@@ -18,6 +18,263 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67573ca5_c932984a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 31
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "Still looking good!",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fcf3c07_72428abd",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "\"refer to\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 29,
+        "endLine": 6,
+        "endChar": 35
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21c2aa47_91d4bbb2",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "\"by\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 44,
+        "endLine": 6,
+        "endChar": 49
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de5148d5_d25c73fd",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "Per comments elsewhere, we should not use the word \"assign\" - it\u0027s overloaded in other languages and doesn\u0027t make sense in CUE.",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67882a45_430bb87b",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "delete \"name existing\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 52,
+        "endLine": 10,
+        "endChar": 65
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b4d44ff_7a69d3a2",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "The term is \"shadowed\" so I wouldn\u0027t bury that in the parentheses. It\u0027s well understood in other languages.",
+      "range": {
+        "startLine": 10,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c8034a9_20a00ef6",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "It\u0027s not correct to say an \"inner scope\" here. Because the point at which you want to refer to the field (that is shadowed) from an outer scope, an _inner scope_ is more nested than \"the current position\". I would keep the language simple here, and possibly just use the language from the current tour. Shadowed is well understood (else we can link to it and explain it elsewhere, it\u0027s at least shown in the example).",
+      "range": {
+        "startLine": 10,
+        "startChar": 73,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf8bae54_8a377ee2",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "Per previous suggestions, I would number the lines if that helps make references to fields precise.",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec80941e_2152b09b",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "Put the use of `A` below is definition?",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "469668f8_3c2459b6",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "Put the use of `B` below its definition?",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69df0888_36b9b348",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "I would not call this field \"shadowed\" - that will significantly confuse the user. A field is shadowed - naming a field \"shadowed\" just confuses things.",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a00139d5_5f8058e6",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "What does \"higher-level\" mean?\n\nPer my suggestions before, I would add line numbers and refer by line number.",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "137a1163_00573a78",
+        "filename": "content/docs/tour/references/emit/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "I\u0027m still not sure on the wording of this paragraph but I suggest we revisit later.",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1a47d98_f2e44e3f",
@@ -43,6 +300,53 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4bf8babb_989784d1",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "Yes, this :) \"index expression\" is the thing being defined",
+      "parentUuid": "f1a47d98_f2e44e3f",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f0c6c15_96efe5f4",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "Let\u0027s refer to it as a selector please. It\u0027s defined above (with the new wording).",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 12
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "09063098_edece85a",
         "filename": "content/docs/tour/references/selectors/en.md",
         "patchSetId": 31
@@ -54,6 +358,30 @@
       "writtenOn": "2024-03-18T16:56:41Z",
       "side": 1,
       "message": "```\nindex\n```",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 8
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f2f64f9_383c3e66",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:51:19Z",
+      "side": 1,
+      "message": "`index expression`",
+      "parentUuid": "09063098_edece85a",
       "range": {
         "startLine": 13,
         "startChar": 0,
