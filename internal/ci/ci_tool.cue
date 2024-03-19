@@ -22,7 +22,6 @@ import (
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 	"github.com/cue-lang/cuelang.org/internal/ci/github"
-	_netlify "github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
 // For the commands below, note we use simple yet hacky path resolution, rather
@@ -57,7 +56,7 @@ command: gen: {
 		for _workflowName, _workflow in github.workflows {
 			let _filename = _workflowName + ".yml"
 			"generate \(_filename)": file.Create & {
-				$after: [ for v in remove {v}]
+				$after: [for v in remove {v}]
 				filename: path.Join([_dir, _filename], _goos)
 				let donotedit = base.doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
 				contents: "# \(donotedit)\n\n\(yaml.Marshal(_workflow))"
@@ -66,16 +65,8 @@ command: gen: {
 	}
 }
 
-command: gen: netlify: file.Create & {
-	_dir:     path.FromSlash("../../", path.Unix)
-	filename: path.Join([_dir, "netlify.toml"], _goos)
-	let res = _netlify.#toToml & {#input: _netlify.config, _}
-	let donotedit = base.doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
-	contents: "# \(donotedit)\n\n\(res)\n"
-}
-
 command: gen: codereviewcfg: file.Create & {
-	_dir:     path.FromSlash("../../", path.Unix)
+	_dir: path.FromSlash("../../", path.Unix)
 	filename: path.Join([_dir, "codereview.cfg"], _goos)
 	let res = base.toCodeReviewCfg & {#input: repo.codeReview, _}
 	let donotedit = base.doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}

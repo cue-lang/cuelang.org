@@ -1,70 +1,8 @@
-# Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
-
 [build]
-  functions = "functions"
   publish = "_public"
-  command = "bash build.bash"
-
-[build.environment]
-GO_VERSION = "1.22.1"
-HUGO_ENV = "production"
-HUGO_VERSION = "0.120.3"
-NODE_VERSION = "18.17.0"
-
-[context.deploy-preview]
-command = "bash build.bash -b $DEPLOY_URL"
 
 [[redirects]]
-  from = "/cl/*"
-  to = "https://review.gerrithub.io/c/:splat"
+  from = "/*"
+  to = "https://cuelang.org/:splat"
   status = 302
   force = true
-
-[[redirects]]
-  from = "/issue/*"
-  to = "https://github.com/cue-lang/cue/issues/:splat"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/issues/*"
-  to = "https://github.com/cue-lang/cue/issues/:splat"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/discussion/*"
-  to = "https://github.com/cue-lang/cue/discussions/:splat"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/discussions/*"
-  to = "https://github.com/cue-lang/cue/discussions/:splat"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/releases/*"
-  to = "https://github.com/cue-lang/cue/releases/:splat"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/s/community-calendar"
-  to = "https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/go"
-  to = "/golang/go.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/go/*"
-  to = "/golang/go.html?:splat"
-  status = 302
-  force = true
-
