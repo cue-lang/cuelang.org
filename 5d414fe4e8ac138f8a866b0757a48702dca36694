@@ -108,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "95fe7fb6_ecc0744a",
+        "filename": "content/docs/tour/expressions/conditional/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T09:10:47Z",
+      "side": 1,
+      "message": "I would take this opportunity to combine some CUE with Yaml. The CUE can then be:\n\n```\nprice: number\n\n// High prices require a reason and the name of\n// the authorising person.\nif price \u003e 100 {\n\treason!:       string\n\tauthorisedBy!: string\n}\n```\n\nThe Yaml can only specify the `price` and fail with the same error you currently show.",
+      "parentUuid": "611ee35a_924253cc",
+      "revId": "5d414fe4e8ac138f8a866b0757a48702dca36694",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "119d2b78_9843dfc3",
         "filename": "content/docs/tour/expressions/fieldcomp/en.md",
         "patchSetId": 34
