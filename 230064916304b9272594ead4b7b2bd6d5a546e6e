@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "df3f0e53_5d0aea03",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:44:59Z",
+      "side": 1,
+      "message": "I\u0027ve removed the possessive form, but making your proposed change caused poor text flowing. I\u0027ll submit with the updated prose, but will flag to you for later review.",
+      "parentUuid": "62fa3d4d_2e6bed01",
+      "revId": "230064916304b9272594ead4b7b2bd6d5a546e6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2fbf692f_44388187",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-03-19T13:53:09Z",
       "side": 1,
       "message": "I would use \"escape delimiter\" throughout for clarity and consistency.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 13
+      },
+      "revId": "230064916304b9272594ead4b7b2bd6d5a546e6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a671a87_a3d9bc10",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T15:44:59Z",
+      "side": 1,
+      "message": "Unfortunately that flows the text poorly. I\u0027ve shortened to \"It is changed ...\" to avoid using the isolated \"delimiter\" word.",
+      "parentUuid": "2fbf692f_44388187",
       "range": {
         "startLine": 11,
         "startChar": 4,
