@@ -183,12 +183,12 @@ _netlifyDeploy: json.#step & {
 		#alias: *"" | string
 	}
 	let nc = netlify.config
-	let prod = [ if #prod {"--prod"}, ""][0]
+	let prod = [if #prod {"--prod"}, ""][0]
 	let uSite = strings.ToUpper(strings.Replace(#site, "-", "_", -1))
-	let alias = [ if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
+	let alias = [if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
-	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	run:  "netlify deploy \(alias) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite) }}"
 }
 
