@@ -33,6 +33,24 @@
       "message": "I think this looks a bit odd as a heading. I\u0027d make it a regular paragraph, or lose it altogether.",
       "revId": "8e678e5237918217015d63a2adc81814a377dfe1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7c9afc1_23f66f51",
+        "filename": "content/docs/tour/_en.md",
+        "patchSetId": 25
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T18:54:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d441ab32_7ff00731",
+      "revId": "8e678e5237918217015d63a2adc81814a377dfe1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
