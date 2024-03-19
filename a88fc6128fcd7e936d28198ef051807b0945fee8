@@ -16,6 +16,327 @@
       "message": "Please re-review.",
       "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e3b9058_e13a1c1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "This is looking really good. Last few small suggestions.",
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "279489ef_14be2bbf",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "Very nicely done.",
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95d00407_b80f5d25",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "Per previous comments, please don\u0027t use the word \"assign\" when it comes to fields. It creates too much confusion with respect to other languages.",
+      "range": {
+        "startLine": 7,
+        "startChar": 54,
+        "endLine": 7,
+        "endChar": 62
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c380b814_0bfa655b",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "\"Constraints\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6026cf43_8235d231",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "\"is unified\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 26,
+        "endLine": 11,
+        "endChar": 33
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "496a0bfd_ad938c0e",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "That\u0027s actually not what\u0027s happening in the code: the `person` constraint is unified with the struct value on the RHS. Perhaps you can tweak the language somehow:\n\n\"The `viola` field is specified as the unification between the `person` constraint and a struct which declare\u0027s Viola\u0027s name and age. Here we use the explicit `\u0026` unification operator.\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 13
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "777c89bc_39e88b3a",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "I\u0027m still not sure about this word appearing (for the first time in the tour?) without further context/explanation. But I hold that lightly for this pass.",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fc1cea5_d86bd8b1",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "This is SO much better. I think we can now remove the word \"duplicate\" everywhere except the title which, as we agreed, is more like a whimsical thing.",
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2731da0d_96ed1b95",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "I think you can delete \"duplicate\" here now?",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 13,
+        "endChar": 54
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b783142_c7ffb884",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "delete now?",
+      "range": {
+        "startLine": 15,
+        "startChar": 35,
+        "endLine": 15,
+        "endChar": 61
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fc0f671_3e2e4a24",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "delete now?",
+      "range": {
+        "startLine": 17,
+        "startChar": 46,
+        "endLine": 17,
+        "endChar": 72
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f6d5b85_57076887",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "\"A field can be specified with:\"\n\nAgain the possessive form harms readability here to my mind, especially when combined with \"values\"",
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34765f72_75e2ae42",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "(end with a \",\")",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3048fe8d_e63aa895",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "(end with a \",\")",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 35
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9b8cd12_f1a4e17d",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T06:10:30Z",
+      "side": 1,
+      "message": "\"or something\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
