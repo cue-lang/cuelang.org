@@ -1282,6 +1282,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8f9f0258_728b8e2e",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "I think we discussed this comment so you can mark it as resolved?",
+      "parentUuid": "931dda7d_75c48cce",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "63282d3b_e9d35375",
         "filename": "content/docs/tour/types/disjunctions/en.md",
         "patchSetId": 32
@@ -1986,6 +2004,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b045f1d_487640e7",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "I\u0027ve replied below.",
+      "parentUuid": "da01ed6d_1dc3c1cd",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "186958fb_93d77fcb",
         "filename": "content/docs/tour/types/stringraw/en.md",
         "patchSetId": 32
@@ -2197,6 +2233,24 @@
       "side": 1,
       "message": "I\u0027ve simplified this, whilst keeping an example that contrasts two ways to represent the same string. I\u0027ve included a motivation for the comparison.",
       "parentUuid": "1f04b6ee_9feecf30",
+      "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e3e0d90_02511af1",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "See my comments below.",
+      "parentUuid": "5ded9402_f16cdb6b",
       "revId": "32625c7bc96e068e7787e86c528064bab4c83cc8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },

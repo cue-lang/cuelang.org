@@ -16,6 +16,275 @@
       "message": "Please re-review.",
       "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f2842ec_e2e73b39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 36
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "Continuing to look good.",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "067f4df3_ba82bc91",
+        "filename": "content/docs/tour/types/bottom/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "Join to previous paragraph. You\u0027re continuing the explanation of `-i`.",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7948255a_171c1a00",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "It doesn\u0027t need to be a concrete value.\n\nHow about simply:\n\n\"Default values allow CUE to decide which element of a disjunction should be chosen when a configuration doesn’t specify a value.\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 46,
+        "endLine": 7,
+        "endChar": 60
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87d789e5_49ad6b62",
+        "filename": "content/docs/tour/types/defaults/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "It\u0027s not about concrete values per se:\n\n```\nx: *string | int\n```\n\nis perfectly valid.\n\nIt\u0027s about choosing a default value when none has been selected, either by virtue of no value at all having been specified, or by virtue of the value not disambiguating which element of the disjunction should be \"selected\".",
+      "range": {
+        "startLine": 13,
+        "startChar": 43,
+        "endLine": 13,
+        "endChar": 75
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "792854f6_b4fff3a9",
+        "filename": "content/docs/tour/types/defs/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "We\u0027ve lost the point about a definition closing something recursively.\n\nInstead of \"We say...\"\n\nperhaps\n\n\"Referring to a definition closes any structs and lists recursively. Structs and lists and can left open using `...`.\"",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23202cd2_d1efad3b",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "\"constraint\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 46,
+        "endLine": 6,
+        "endChar": 50
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9a8daf8_0f0e5a83",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "It\u0027s not a type.\n\nThis sentence is _so close_ to my mind!\n\nHow about:\n\n\"A disjunction, or sum type, defines a constraint consisting of two or more values as options that are allowed.\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cae6844e_26c98990",
+        "filename": "content/docs/tour/types/disjunctions/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "It\u0027s not a type. Just refer to \"A disjunction\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 12
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ecdef8f_e36e2ebf",
+        "filename": "content/docs/tour/types/lists/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "More generally, the `...` might contain a constraint. A type is a form of constraint.",
+      "range": {
+        "startLine": 15,
+        "startChar": 51,
+        "endLine": 15,
+        "endChar": 68
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "284ba3d2_a515d590",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "I would remove the emphasis here because you\u0027re losing whatever it is you are trying to emphasise. The words suffice to my mind.",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f5fcb50_13c8b707",
+        "filename": "content/docs/tour/types/stringlit/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "\"prefix preceding\" is a tautology to my mind mind. Let\u0027s keep the language simple:\n\n\"Any whitespace before the closing quotes must also prefix the lines between the quotes.\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 66,
+        "endLine": 18,
+        "endChar": 9
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "365ce3cf_1c5601e6",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "Reading this through \"from scratch\" it\u0027s not clear what I need to do to change the escape modifier. I have to read the prose sentence at the end of this paragraph. My eye is somewhat drawn towards the `\\##` but that\u0027s the modified escape sequence. \n\nGlancing forward to the example (and this was my point about it being a long example) it\u0027s really not clear where I need to look for a clean example of what it is that is being demonstrated here. \n\nI have to have read the final sentence in this paragraph, and understood it, to realise that it\u0027s the field `B` which uses the \"modified\" quotes and escape sequence. \n\nPerhaps we just leave it for now though, and we can revisit in another pass.",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ea6548d_7cacb97a",
+        "filename": "content/docs/tour/types/top/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T08:36:16Z",
+      "side": 1,
+      "message": "Either:\n\n```\nwritten `_`\n```\n\nor \n\n```\nwritten \"`_`\"\n```\n\nConsistency with bottom and other pages please.",
+      "range": {
+        "startLine": 6,
+        "startChar": 17,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
