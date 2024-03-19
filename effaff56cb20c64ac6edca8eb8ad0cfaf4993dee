@@ -731,6 +731,24 @@
       "message": "Trailing whitespace.",
       "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1332518_ec03849b",
+        "filename": "content/docs/tour/references/selectors/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T13:20:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "405546e4_c828eb64",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
