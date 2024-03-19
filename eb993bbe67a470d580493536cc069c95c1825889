@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fac28765_52e4234e",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Moved inside the 2nd paragraph.",
+      "parentUuid": "c4cdb979_5602ca43",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 57
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e0ce190_e98c90aa",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-18T09:38:12Z",
       "side": 1,
       "message": "\"... combines them using parentheses\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 76
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61078405_92a0e46f",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e0ce190_e98c90aa",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a1524e1_c9867128",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bfcb9fc_d110d8c2",
+      "range": {
+        "startLine": 15,
+        "startChar": 35,
+        "endLine": 15,
+        "endChar": 40
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0772529c_57d0c01b",
@@ -87,6 +159,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3b13128_7ab05dc2",
+        "filename": "content/docs/tour/packages/imports/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0772529c_57d0c01b",
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9a252a9_17482897",
@@ -100,6 +190,30 @@
       "writtenOn": "2024-03-18T09:30:07Z",
       "side": 1,
       "message": "\"A\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac27a9fd_f785dd4c",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9a252a9_17482897",
       "range": {
         "startLine": 7,
         "startChar": 0,
@@ -133,6 +247,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "faf5b5ba_81a95618",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1ffee52_3c8272df",
+      "range": {
+        "startLine": 8,
+        "startChar": 15,
+        "endLine": 8,
+        "endChar": 43
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "44bf4587_cb894716",
@@ -146,6 +284,30 @@
       "writtenOn": "2024-03-18T09:30:07Z",
       "side": 1,
       "message": "I wouldn\u0027t worry about including this reference here. It\u0027s a detail the user doesn\u0027t need to be worried about at the point they\u0027re at.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 71
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fde5351f_3d0e07c2",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44bf4587_cb894716",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -179,6 +341,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "24638465_5f971fc1",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a63f6b5_a07415e8",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 9
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa0ee6b9_b6045eec",
@@ -202,6 +388,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd5face3_f1deafcc",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa0ee6b9_b6045eec",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 20
+      },
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b83f3ba4_659f802c",
@@ -215,6 +425,24 @@
       "writtenOn": "2024-03-18T09:30:07Z",
       "side": 1,
       "message": "I feel like this is a detail not worth covering here, but if you do think it\u0027s worth it, I would put it below the code example.",
+      "revId": "eb993bbe67a470d580493536cc069c95c1825889",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "890d8d55_551a2e1d",
+        "filename": "content/docs/tour/packages/packages/en.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b83f3ba4_659f802c",
       "revId": "eb993bbe67a470d580493536cc069c95c1825889",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
