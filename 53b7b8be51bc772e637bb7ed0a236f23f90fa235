@@ -33,6 +33,24 @@
       "message": "nit: I\u0027d spell out \"Language Server\" or similar.",
       "revId": "53b7b8be51bc772e637bb7ed0a236f23f90fa235",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ad9c77d_6f44d2a3",
+        "filename": "content/community/_en.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc6cafbf_052bb612",
+      "revId": "53b7b8be51bc772e637bb7ed0a236f23f90fa235",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
