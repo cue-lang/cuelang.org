@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1b7c59d_4b30669a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 36
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T13:18:52Z",
+      "side": 1,
+      "message": "Please take a look at the remaining unresolved comment threads.",
+      "revId": "1aa491ea5f05d8ed03c252387b6297d22f56da11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
