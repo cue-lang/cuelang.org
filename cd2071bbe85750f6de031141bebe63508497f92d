@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdae6f8e_d8fb619a",
+        "filename": "content/docs/tour/_en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:51:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2714701_65ed6ccb",
+      "revId": "cd2071bbe85750f6de031141bebe63508497f92d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f9fad9a_48846127",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-03-16T14:00:20Z",
       "side": 1,
       "message": "I don\u0027t think the CUE-esque titles work. They look slightly out of place. I\u0027d suggest we leave them as proper titles, with different words if the existing words don\u0027t work.",
+      "revId": "cd2071bbe85750f6de031141bebe63508497f92d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f60deb3_596af423",
+        "filename": "content/docs/tour/_en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T16:51:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f9fad9a_48846127",
       "revId": "cd2071bbe85750f6de031141bebe63508497f92d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
