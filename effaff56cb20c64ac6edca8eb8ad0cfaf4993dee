@@ -176,6 +176,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe71d409_122b9433",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T13:54:57Z",
+      "side": 1,
+      "message": "LGTM.",
+      "parentUuid": "f86bf022_9bbcdd58",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67882a45_430bb87b",
@@ -352,6 +376,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c5be6b0_4a11d1c2",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T13:54:57Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "892d2fd0_da61f2c6",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec80941e_2152b09b",
@@ -488,6 +530,24 @@
       "side": 1,
       "message": "Line numbers aren\u0027t supported. See what you think of the revision.",
       "parentUuid": "a00139d5_5f8058e6",
+      "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a2f0b00_10a238c9",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 31
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T13:54:57Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3c2cb4e1_b3c1049a",
       "revId": "effaff56cb20c64ac6edca8eb8ad0cfaf4993dee",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
