@@ -98,6 +98,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c01263c7_33fee6dd",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c380b814_0bfa655b",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b255e36a_2c32f0b4",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95d00407_b80f5d25",
+      "range": {
+        "startLine": 7,
+        "startChar": 54,
+        "endLine": 7,
+        "endChar": 62
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6026cf43_8235d231",
@@ -111,6 +159,30 @@
       "writtenOn": "2024-03-19T06:10:30Z",
       "side": 1,
       "message": "\"is unified\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 26,
+        "endLine": 11,
+        "endChar": 33
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8f04c46_6cbbe5c1",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6026cf43_8235d231",
       "range": {
         "startLine": 11,
         "startChar": 26,
@@ -144,6 +216,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf7e9e91_a70abb15",
+        "filename": "content/docs/tour/basics/constraints/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "496a0bfd_ad938c0e",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 13
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "777c89bc_39e88b3a",
@@ -157,6 +253,30 @@
       "writtenOn": "2024-03-19T06:10:30Z",
       "side": 1,
       "message": "I\u0027m still not sure about this word appearing (for the first time in the tour?) without further context/explanation. But I hold that lightly for this pass.",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df8c9d5a_47ab5083",
+        "filename": "content/docs/tour/basics/definitions/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "The only other noun I think works without explanation is \"export\", but I\u0027m not sure that it\u0027s accurate. I\u0027ve left as \"evaluations\" for now, with a TODO marker.",
+      "parentUuid": "777c89bc_39e88b3a",
       "range": {
         "startLine": 15,
         "startChar": 13,
@@ -184,6 +304,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bba3dea9_ced3079e",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fc1cea5_d86bd8b1",
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2731da0d_96ed1b95",
@@ -197,6 +335,30 @@
       "writtenOn": "2024-03-19T06:10:30Z",
       "side": 1,
       "message": "I think you can delete \"duplicate\" here now?",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 13,
+        "endChar": 54
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb085447_6a6eebc7",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2731da0d_96ed1b95",
       "range": {
         "startLine": 13,
         "startChar": 45,
@@ -230,6 +392,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2913e9a_7052d2b8",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b783142_c7ffb884",
+      "range": {
+        "startLine": 15,
+        "startChar": 35,
+        "endLine": 15,
+        "endChar": 61
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fc0f671_3e2e4a24",
@@ -243,6 +429,30 @@
       "writtenOn": "2024-03-19T06:10:30Z",
       "side": 1,
       "message": "delete now?",
+      "range": {
+        "startLine": 17,
+        "startChar": 46,
+        "endLine": 17,
+        "endChar": 72
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcc0de2b_8f0f8244",
+        "filename": "content/docs/tour/basics/duplicate-fields/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fc0f671_3e2e4a24",
       "range": {
         "startLine": 17,
         "startChar": 46,
@@ -270,6 +480,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b60bd2a1_f5dcc555",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6d5b85_57076887",
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "34765f72_75e2ae42",
@@ -283,6 +511,30 @@
       "writtenOn": "2024-03-19T06:10:30Z",
       "side": 1,
       "message": "(end with a \",\")",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86dd23c7_c215c6e1",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34765f72_75e2ae42",
       "range": {
         "startLine": 12,
         "startChar": 20,
@@ -316,6 +568,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a239a322_1a300ae6",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3048fe8d_e63aa895",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 35
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9b8cd12_f1a4e17d",
@@ -329,6 +605,30 @@
       "writtenOn": "2024-03-19T06:10:30Z",
       "side": 1,
       "message": "\"or something\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "a88fc6128fcd7e936d28198ef051807b0945fee8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d910057a_3d3d0add",
+        "filename": "content/docs/tour/basics/types-are-values/en.md",
+        "patchSetId": 34
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9b8cd12_f1a4e17d",
       "range": {
         "startLine": 14,
         "startChar": 2,
