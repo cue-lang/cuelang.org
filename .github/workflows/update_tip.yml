@@ -50,7 +50,7 @@ jobs:
           echo "$x" >> $GITHUB_OUTPUT
           echo "EOD" >> $GITHUB_OUTPUT
       - if: |-
-          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"'))
         name: Check we don't have Dispatch-Trailer on a protected branch
