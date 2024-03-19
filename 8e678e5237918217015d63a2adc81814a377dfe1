@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "303a0534_cec4971f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T18:17:19Z",
+      "side": 1,
+      "message": "LGTM with one nit.",
+      "revId": "8e678e5237918217015d63a2adc81814a377dfe1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d441ab32_7ff00731",
+        "filename": "content/docs/tour/_en.md",
+        "patchSetId": 25
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T18:17:19Z",
+      "side": 1,
+      "message": "I think this looks a bit odd as a heading. I\u0027d make it a regular paragraph, or lose it altogether.",
+      "revId": "8e678e5237918217015d63a2adc81814a377dfe1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
