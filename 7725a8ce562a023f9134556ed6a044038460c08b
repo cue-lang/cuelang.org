@@ -504,6 +504,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db439648_8ab39c3e",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 36
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T13:53:09Z",
+      "side": 1,
+      "message": "Looks much better.",
+      "parentUuid": "a9c8ec50_f71643df",
+      "revId": "7725a8ce562a023f9134556ed6a044038460c08b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ea6548d_7cacb97a",

@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9ee6b8f_6b144679",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 41
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T13:53:09Z",
+      "side": 1,
+      "message": "Looks great, thanks. Last couple of changes.",
+      "revId": "230064916304b9272594ead4b7b2bd6d5a546e6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62fa3d4d_2e6bed01",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T13:53:09Z",
+      "side": 1,
+      "message": "Again, I would steer away from the possessive form:\n\n\"The escape delimiter for any given string can be modified...\"",
+      "revId": "230064916304b9272594ead4b7b2bd6d5a546e6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fbf692f_44388187",
+        "filename": "content/docs/tour/types/stringraw/en.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-19T13:53:09Z",
+      "side": 1,
+      "message": "I would use \"escape delimiter\" throughout for clarity and consistency.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 13
+      },
+      "revId": "230064916304b9272594ead4b7b2bd6d5a546e6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
