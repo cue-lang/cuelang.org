@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "901494b0_cef29914",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T14:09:04Z",
+      "side": 1,
+      "message": "I don\u0027t fully grok the deletions in this CL, but +2\u0027ing to unblock.",
+      "revId": "1e4d524dc2caa0dacad3019b5e47af81e13fdfe8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47e05954_b4e15660",
+        "filename": "netlify.toml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-19T14:09:04Z",
+      "side": 1,
+      "message": "I don\u0027t think you need this directive both here /and/ in `_public/_redirects`. (`_public/_redirects`, or `public/_redirects`?)\n\nIn fact, I\u0027d consider leaving the current contents of the entire `[[redirects]]` section intact, so we can check that Netlify\u0027s docs are accurate when they say the `_redirects` file\u0027s prefixes take precedence. That knowledge might prove useful, fixing any issues after the switch.",
+      "revId": "1e4d524dc2caa0dacad3019b5e47af81e13fdfe8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
