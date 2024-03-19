@@ -7,6 +7,7 @@ name: TryBot
       - ci/test
       - master
       - alpha
+      - beta
     tags-ignore:
       - v*
   pull_request: {}
@@ -49,7 +50,7 @@ jobs:
           echo "$x" >> $GITHUB_OUTPUT
           echo "EOD" >> $GITHUB_OUTPUT
       - if: |-
-          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/beta') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"'))
         name: Check we don't have Dispatch-Trailer on a protected branch
@@ -140,7 +141,7 @@ jobs:
         name: Get go build/test cache directory
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
       - if: |-
-          (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/beta') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache@v3
         with:
@@ -150,7 +151,7 @@ jobs:
           key: Linux-1.22.1-${{ github.run_id }}
           restore-keys: Linux-1.22.1
       - if: |-
-          ! (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          ! (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/beta') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache/restore@v3
         with:
@@ -160,34 +161,11 @@ jobs:
           key: Linux-1.22.1-${{ github.run_id }}
           restore-keys: Linux-1.22.1
       - if: |-
-          github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha') && (! (contains(github.event.head_commit.message, '
+          github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/beta') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
-      - name: Ensure latest CUE
-        run: |-
-          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-          go mod tidy
-          cd play
-          GOPRIVATE=cuelang.org/go go get -d cuelang.org/go@latest
-          go mod tidy
-      - name: Re-vendor play
-        run: ./_scripts/revendorToolsInternal.bash
-        working-directory: ./play
       - name: Regenerate
         run: go generate ./...
-      - name: Regenerate play
-        run: go generate ./...
-        working-directory: ./play
-      - name: Test
-        run: go test ./...
-      - name: Test play
-        run: go test ./...
-        working-directory: ./play
-      - name: Check module is tidy
-        run: go mod tidy
-      - name: Check play module is tidy
-        run: go mod tidy
-        working-directory: ./play
       - name: Dist
         run: ./build.bash
       - name: Check that git is clean at the end of the job
@@ -201,6 +179,6 @@ jobs:
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Deploy preview of CL
-        run: 'netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        run: 'netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -d _public -m "Deploy preview of CL" -s cue-cls --debug '
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS }}
