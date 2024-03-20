@@ -65,43 +65,21 @@ config: #config & {
 	context: "production": command:          "\(build.command) --baseURL https://cuelang.org"
 
 	redirects: [...{force: true, status: 302}]
-	redirects: [{
-		from: "/cl/*"
-		to:   "https://review.gerrithub.io/c/:splat"
-	}, {
-		from: "/issue/*"
-		to:   "https://github.com/cue-lang/cue/issues/:splat"
-	}, {
-		from: "/issues/*"
-		to:   "https://github.com/cue-lang/cue/issues/:splat"
-	}, {
-		from: "/discussion/*"
-		to:   "https://github.com/cue-lang/cue/discussions/:splat"
-	}, {
-		from: "/discussions/*"
-		to:   "https://github.com/cue-lang/cue/discussions/:splat"
-	}, {
-		from: "/releases/*"
-		to:   "https://github.com/cue-lang/cue/releases/:splat"
-	}, {
-		from: "/s/community-calendar"
-		to:   "https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
-	}, {
-		from: "/docs/tour/basics/"
-		to:   "/docs/tour/basics/json-superset/"
-	}, {
-		from: "/docs/tour/types/"
-		to:   "/docs/tour/types/types/"
-	}, {
-		from: "/docs/tour/references/"
-		to:   "/docs/tour/references/scopes/"
-	}, {
-		from: "/docs/tour/expressions/"
-		to:   "/docs/tour/expressions/operators/"
-	}, {
-		from: "/docs/tour/packages/"
-		to:   "/docs/tour/packages/packages/"
-	}]
+	redirects: [for k, v in _redirects {from: k, to: v}]
+	_redirects: {
+		"/cl/*":                   "https://review.gerrithub.io/c/:splat"
+		"/issue/*":                "https://github.com/cue-lang/cue/issues/:splat"
+		"/issues/*":               "https://github.com/cue-lang/cue/issues/:splat"
+		"/discussion/*":           "https://github.com/cue-lang/cue/discussions/:splat"
+		"/discussions/*":          "https://github.com/cue-lang/cue/discussions/:splat"
+		"/releases/*":             "https://github.com/cue-lang/cue/releases/:splat"
+		"/s/community-calendar":   "https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
+		"/docs/tour/basics/":      "/docs/tour/basics/json-superset/"
+		"/docs/tour/types/":       "/docs/tour/types/types/"
+		"/docs/tour/references/":  "/docs/tour/references/scopes/"
+		"/docs/tour/expressions/": "/docs/tour/expressions/operators/"
+		"/docs/tour/packages/":    "/docs/tour/packages/packages/"
+	}
 }
 
 #toToml: {
