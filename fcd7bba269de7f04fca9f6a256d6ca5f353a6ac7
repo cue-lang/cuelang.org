@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "fcd7bba269de7f04fca9f6a256d6ca5f353a6ac7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e02bd3f4_c00eed63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:27:05Z",
+      "side": 1,
+      "message": "This change isn\u0027t correct for a couple of reasons. Most importantly the order of iteration of a struct is not part of the spec yet, so not guaranteed. For a list it is guaranteed. And per https://docs.netlify.com/routing/redirects/:\n\n\u003e The redirects engine will process the first matching rule it finds, reading from top to bottom.\n\nSecondly, it seems like a minor cosmetic improvement to define a key-value pair at the cost of being able to specify the options that might be needed for a redirect:\n\nhttps://docs.netlify.com/routing/redirects/redirect-options/\n\nFor example, we want some of these redirects to be 301, i.e. we\u0027ve now permanently moved a page.",
+      "revId": "fcd7bba269de7f04fca9f6a256d6ca5f353a6ac7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
