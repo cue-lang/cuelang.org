@@ -80,9 +80,15 @@ other = "Click here if you are not redirected"
 
 # Error pages
 [error_404_title]
-other = "404 - Page not found"
+other = "{ status: 404, message: \"Page not found\" }"
 [error_404_description]
-other = "Oops! This page doesn't exist. Try going back to our <a href='/'>home page</a>"
+# This is raw HTML, and is only encoded as a multi-line string for our convenience
+other = """
+Oops! This page doesn't exist.<br><br>
+Try going back to our <strong><a href="/">home page</a></strong>,
+taking a look at our <strong><a href="/docs/">documentation</a></strong>,
+or <a href="/search">searching for a page</a></strong>.
+"""
 
 # Search
 [search_title]
