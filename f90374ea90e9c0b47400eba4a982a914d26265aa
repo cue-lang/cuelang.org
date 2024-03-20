@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a92573a_2c200b80",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:52:58Z",
+      "side": 1,
+      "message": "Really like the look of this, I think we need to work on the content and style.",
+      "revId": "f90374ea90e9c0b47400eba4a982a914d26265aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2f0cf2e_62d2b952",
+        "filename": "hugo/content/en/docs/integration/_index.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:52:58Z",
+      "side": 1,
+      "message": "The detail of whether a given adapter supports one or two way shouldn\u0027t be surfaced here to my mind. It\u0027s an important detail, but not that important.",
+      "revId": "f90374ea90e9c0b47400eba4a982a914d26265aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d8d3b6d_b739067d",
+        "filename": "hugo/content/en/docs/integration/_index.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:52:58Z",
+      "side": 1,
+      "message": "These descriptions seem to suggest the integration of JSON is limited to the `cue` command. I think we should be more high-level with these descriptions. Good points to cover here are whether this is a data or schema integration (which you do, and to have a common structure to the description, e.g. the first sentence includes that data/schema point. \n\nWe also need to be careful to not limit this to talking about files, because JSON and Yaml can come from anywhere for example.",
+      "revId": "f90374ea90e9c0b47400eba4a982a914d26265aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
