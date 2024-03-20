@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6eaac95_df66a1fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2024-03-20T04:23:18Z",
+      "side": 1,
+      "message": "Reviewing as \"self\" in order to unblock the flip of alpha.cuelang.org to cuelang.org",
+      "revId": "74b6352fec4bc91b43fa3e31791f842a25d1e585",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
