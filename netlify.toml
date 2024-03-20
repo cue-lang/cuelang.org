@@ -91,3 +91,87 @@
   to = "/docs/tour/packages/packages/"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/docs/usecases*"
+  to = "/search/?q=use%20case%20contentType:\"Concept%20Guides\""
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/integrations*"
+  to = "/docs/integration/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/concepts*"
+  to = "/docs/concept/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/references*"
+  to = "/docs/reference/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/intro/*"
+  to = "/docs/tour/basics/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/intro"
+  to = "/docs/tour/basics/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/types/*"
+  to = "/docs/tour/types/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/types"
+  to = "/docs/tour/types/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/references/*"
+  to = "/docs/tour/references/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/references"
+  to = "/docs/tour/references/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/expressions/*"
+  to = "/docs/tour/expressions/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/expressions"
+  to = "/docs/tour/expressions/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/packages/*"
+  to = "/docs/tour/packages/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/tutorials/tour/packages"
+  to = "/docs/tour/packages/"
+  status = 302
+  force = true

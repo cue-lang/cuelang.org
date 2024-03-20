@@ -79,6 +79,25 @@ config: #config & {
 		"/docs/tour/references/":  "/docs/tour/references/scopes/"
 		"/docs/tour/expressions/": "/docs/tour/expressions/operators/"
 		"/docs/tour/packages/":    "/docs/tour/packages/packages/"
+		// These old-site path globs deliberately don't include a trailing slash,
+		// so as to catch the slashless "/docs/foo" path by itself.
+		// They don't redirect to a specific page, but to the section index.
+		"/docs/usecases*":     #"/search/?q=use%20case%20contentType:"Concept%20Guides""#
+		"/docs/integrations*": "/docs/integration/"
+		"/docs/concepts*":     "/docs/concept/"
+		"/docs/references*":   "/docs/reference/"
+
+		// The old-site tour paths /do/ preserve trailing path elements.
+		"/docs/tutorials/tour/intro/*":       "/docs/tour/basics/:splat"
+		"/docs/tutorials/tour/intro":         "/docs/tour/basics/"
+		"/docs/tutorials/tour/types/*":       "/docs/tour/types/:splat"
+		"/docs/tutorials/tour/types":         "/docs/tour/types/"
+		"/docs/tutorials/tour/references/*":  "/docs/tour/references/:splat"
+		"/docs/tutorials/tour/references":    "/docs/tour/references/"
+		"/docs/tutorials/tour/expressions/*": "/docs/tour/expressions/:splat"
+		"/docs/tutorials/tour/expressions":   "/docs/tour/expressions/"
+		"/docs/tutorials/tour/packages/*":    "/docs/tour/packages/:splat"
+		"/docs/tutorials/tour/packages":      "/docs/tour/packages/"
 	}
 }
 
