@@ -14,7 +14,7 @@ githubRepositoryPath: "cue-lang/cuelang.org"
 alphaBranch: "alpha"
 
 defaultBranch: _
-protectedBranchPatterns: [defaultBranch, alphaBranch, "old"]
+protectedBranchPatterns: [defaultBranch, alphaBranch, "old", "tip"]
 
 botGitHubUser:      "cueckoo"
 botGitHubUserEmail: "cueckoo@gmail.com"

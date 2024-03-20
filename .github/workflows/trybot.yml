@@ -7,6 +7,7 @@
       - master
       - alpha
       - old
+      - tip
     tags-ignore:
       - v*
   pull_request: {}
@@ -53,7 +54,7 @@ jobs:
           echo "$x" >> $GITHUB_OUTPUT
           echo "EOD" >> $GITHUB_OUTPUT
       - if: |-
-          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old') && (! (contains(github.event.head_commit.message, '
+          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"'))
         name: Check we don't have Dispatch-Trailer on a protected branch
@@ -188,7 +189,7 @@ jobs:
         name: Get go build/test cache directory
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
       - if: |-
-          (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old') && (! (contains(github.event.head_commit.message, '
+          (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache@v3
         with:
@@ -200,7 +201,7 @@ jobs:
           key: ${{ runner.os }}-1.22.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.22.0
       - if: |-
-          ! (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old') && (! (contains(github.event.head_commit.message, '
+          ! (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache/restore@v3
         with:
@@ -212,7 +213,7 @@ jobs:
           key: ${{ runner.os }}-1.22.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.22.0
       - if: |-
-          github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old') && (! (contains(github.event.head_commit.message, '
+          github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
       - name: Check site CUE configuration
