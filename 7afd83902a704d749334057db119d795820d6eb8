@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "7afd83902a704d749334057db119d795820d6eb8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b705601a_7b73ae0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T08:34:11Z",
+      "side": 1,
+      "message": "LGTM assuming green trybots",
+      "revId": "7afd83902a704d749334057db119d795820d6eb8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
