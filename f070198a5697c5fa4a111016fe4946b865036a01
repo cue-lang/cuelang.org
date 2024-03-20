@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66513713_c3f8e3cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2024-03-20T04:19:25Z",
+      "side": 1,
+      "message": "Approving in order to unblock the flip of alpha.cuelang.org\n\nThis CL is similar to https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1184906 for comfort.",
+      "revId": "f070198a5697c5fa4a111016fe4946b865036a01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
