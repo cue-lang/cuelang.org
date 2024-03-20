@@ -16,6 +16,24 @@
       "message": "unintended?",
       "revId": "89d87a646f7f5df0f286da10c00c2f9c8efd7750",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17e941aa_b8d38d28",
+        "filename": "hugo/data/Repository.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T04:17:14Z",
+      "side": 1,
+      "message": "Was too late when I created this; per our conversation, not intended.",
+      "parentUuid": "b8253139_aa83dd2c",
+      "revId": "89d87a646f7f5df0f286da10c00c2f9c8efd7750",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
