@@ -16,6 +16,74 @@
       "message": "PTAL.",
       "revId": "21f2652871ee9576ea6a936fd1d05646a26645a6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28a7de35_bff4473a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:46:46Z",
+      "side": 1,
+      "message": "I like the look of the cards, just not sure about the mix of content/purpose here.",
+      "revId": "21f2652871ee9576ea6a936fd1d05646a26645a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e12d9fef_70f60dff",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:46:46Z",
+      "side": 1,
+      "message": "I find this heading a bit odd. We\u0027re in the `/docs` part of the site. So isn\u0027t this all documentation?",
+      "revId": "21f2652871ee9576ea6a936fd1d05646a26645a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3aa4963_5456563e",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:46:46Z",
+      "side": 1,
+      "message": "The links to API docs on pkg.go.dev is much closer to being reference docs my mind, but they could/should perhaps be from a specific page that discusses that? A \"top level\" link from the `/docs/reference` page feels a bit odd. What\u0027s the thinking here?",
+      "revId": "21f2652871ee9576ea6a936fd1d05646a26645a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e295393_8bdc88c9",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-20T18:46:46Z",
+      "side": 1,
+      "message": "Kind of related, but I find it a bit strange to have links to the GitHub repo, Gerrit etc below. What\u0027s the thinking in including those as links to \"reference documentation\"?",
+      "revId": "21f2652871ee9576ea6a936fd1d05646a26645a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
