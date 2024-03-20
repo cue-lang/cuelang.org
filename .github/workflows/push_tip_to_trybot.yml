@@ -7,6 +7,7 @@ name: Push tip to trybot
       - master
       - alpha
       - beta
+      - old
 concurrency: push_tip_to_trybot
 jobs:
   push:
