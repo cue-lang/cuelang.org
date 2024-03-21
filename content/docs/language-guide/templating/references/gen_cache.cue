@@ -8,14 +8,14 @@ package site
 						page: {
 							cache: {
 								code: {
-									"references-basics":            "Vkb9q0dqiRR6BOrZ7whia0YbsBFM1T/NNp3kXtTEM9Y="
-									"quoted-field-reference-error": "Q7MB0fJwjZXWV21ZFuFKYHpueOAIgO1lGHxw0Zy4lZQ="
-									aliases:                        "Nkd587gt0Mw65amvUF0xDDhM4zFTEaooBJK9XJh0Dv0="
-									"list-aliases":                 "Z3w1Is4JHT/zTsmwsNLpoPgjOZaBPUvYznonrDWQJko="
-									"value-alias":                  "y3z6GTq+9HLqQcPpvduhZcM5YD7yER6rx2O3ZID0jwE="
-									"field-selector":               "8hX5trnV23O4TiEwRMayfwYB4JOgZqHntpQANoESpsc="
-									"dynamic-field-selector":       "l/jbjq/XkwioFAghyxXERMMtj6RrI1vJ5p1kL0hxfEw="
-									"let-expressions":              "DLdHb/SX3G27hgfE1vj8JV87EbiqZVmMZSou02QG5/0="
+									"references-basics":            "Por5K/emQy8fVxsQAC9b37x9z74L3dRD4KfULR1o4pk="
+									"quoted-field-reference-error": "ymD4DpSqgNZAhLjlQVP4OG48hpbSEaLyEkVr8N17ZCk="
+									aliases:                        "6xKq3kKL22NZPyF5tdUCq9W+KdnPp3ttU4P8LoHGCcA="
+									"list-aliases":                 "7AmDn2xex5tk4tIE/MVhm7vP9RK0XHa8qIlg6JwM0WM="
+									"value-alias":                  "R/xFJiQg4U6BuO44Ik9s08TdY2wZUhSErlITEYWkuX0="
+									"field-selector":               "Y3ts6R3ro+NBH1WtIaMFr0TRSIqhTLJJmSlYI/aQ4wk="
+									"dynamic-field-selector":       "W1/7qEbjRNekLtnVSQPz3EnsPKdmJoik0TcOjU8JhYk="
+									"let-expressions":              "KfXhNwXAxcHMLILJ6gecm4NBlfJXv1IOKOvYVuSAV24="
 								}
 							}
 						}

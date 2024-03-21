@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "LtUDqoY5zGgAVHa273nwSQBdzbscCw/DIKKeyKL/sfU="
-								"config.cue":               "GYpg50W/IZDs6bQgZhBYyB02EUH5Pdpq+IstMp6w7h0="
-								"second-module-to-publish": "H9/ztP2QhmenNh8wlISq0dL9gmJUJiO2in2uB1BaLQk="
-								"update-frostyapp":         "EK1wmBFqzMkQaxjMn8vSR+LNaW0yW0S7L/6uLpot8LI="
-								"schema-v0.1.0":            "3H2z/qCmop2rkjJ7maKPOdK7puF8IvWehMUKa0K3d2M="
-								"edit-dependency-version":  "75xHrICXjeLJCKEuDnMtIKZTNHn7QSnk0FEocosSr9M="
+								"schema-v0.0.1":            "/kTjmEswzNf7M7nOwRLo2lIjBI05FtmZKCCIXUVve8Q="
+								"config.cue":               "9baXfuFr4d8gYTHKdTkvUVLI7YYiIbQ6ooNww7J3y7A="
+								"second-module-to-publish": "Gl203TOWUhaeuT+8p0A2oMlAQFxy9lOJDT5dZ7vjoyc="
+								"update-frostyapp":         "ju3LMxrQ24G2oK11j9jQiUFe6H88uChgspMBanXd8sM="
+								"schema-v0.1.0":            "eT9xCeSE7JyDWh+YIw0flZcHRQDoLscRAiuEEHwVm9g="
+								"edit-dependency-version":  "QdfmgC6lGK1DigsLjBxtAYGXMjTvW5tyHQNTk1QZUnA="
 							}
 							multi_step: {
-								"JGETRIN3KCK97H4TN9RG9PPQTF19SVVN281S560CT75QAM5JFCJG====": [{
+								"HE54C8NN95V8E270E1RD5LHC1KD7VP0OE3HNIT04IEKJLEFCUI80====": [{
 									doc: """
 											# TODO: this is inherently racey. But not a problem in practice...
 											# for now. When it does become a problem we can solve this properly
