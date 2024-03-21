@@ -98,8 +98,9 @@ template: ci.#writefs & {
 
 			ENV LC_ALL=C.UTF-8
 
-			# TODO: move away from defaulting to the pre-release of CUE
-			ENV PATH="/cues/prerelease:${PATH}"
+			# Default to the latest value of CUE. Guides can fix to a different
+			# version explicitly
+			ENV PATH="/cues/latest:${PATH}"
 
 			ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 			\#(
@@ -153,8 +154,7 @@ template: ci.#writefs & {
 			[notification]
 			    type = 'test'
 
-			    # TODO: move away from defaulting to the pre-release of CUE
-			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.prerelease)'
+			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.latest)'
 			    [notification.button]
 			        link = 'https://github.com/cue-lang/cue/releases'
 			        icon = 'download'
@@ -215,8 +215,7 @@ template: ci.#writefs & {
 			Contents: #"""
 			// \#(donotedit)
 
-			// TODO: move away from defaulting to the pre-release of CUE
-			export const CUEVersion = '\#(versions.cue.prerelease)';
+			export const CUEVersion = '\#(versions.cue.latest)';
 
 			"""#
 		}
