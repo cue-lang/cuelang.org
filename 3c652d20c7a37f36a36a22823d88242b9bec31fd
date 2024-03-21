@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b4b136f_26f6bc09",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:49:24Z",
+      "side": 1,
+      "message": "Removing the hold as we have fixed the import path to be the well-known module.",
+      "revId": "3c652d20c7a37f36a36a22823d88242b9bec31fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

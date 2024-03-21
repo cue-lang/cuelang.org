@@ -253,6 +253,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6757830_a49bc563",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:49:24Z",
+      "side": 1,
+      "message": "This is now fixed.",
+      "parentUuid": "13b4aa18_7544027b",
+      "range": {
+        "startLine": 100,
+        "startChar": 19,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff89fa7c_5fef2ff6",
