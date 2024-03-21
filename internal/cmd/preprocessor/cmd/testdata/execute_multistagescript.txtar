@@ -2,6 +2,8 @@
 # This includes formatting an upload node, running a script node, and
 # skipping formatting a file in another upload node.
 
+env CUE_TEST_LOGINS=blah
+
 unquote content/dir/en.md golden/content/dir/en.md.writeBack
 
 # Run the preprocessor
@@ -122,6 +124,10 @@ content: dir: page: {
 >{{{with script "en" "subst env var"}}}
 >echo $CUELANG_CUE_SOMEVERSION
 >{{{end}}}
+>
+>{{{with script "en" "passed in env var"}}}
+>echo $CUE_TEST_LOGINS
+>{{{end}}}
 -- golden/content/dir/en.md.writeBack --
 >---
 >title: JSON Superset
@@ -177,6 +183,10 @@ content: dir: page: {
 >
 >{{{with script "en" "subst env var"}}}
 >echo $CUELANG_CUE_SOMEVERSION
+>{{{end}}}
+>
+>{{{with script "en" "passed in env var"}}}
+>echo $CUE_TEST_LOGINS
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
@@ -237,6 +247,11 @@ $ nonexistent command
 $ echo v0.7.0
 v0.7.0
 ```
+
+```text { title="TERMINAL" codeToCopy="ZWNobyAkQ1VFX1RFU1RfTE9HSU5TCg==" }
+$ echo $CUE_TEST_LOGINS
+blah
+```
 -- golden/content/dir/gen_cache.cue --
 package site
 {
@@ -251,7 +266,7 @@ package site
 						"in-subdir":        "ilJ/5z3a7X4LciumymMpLlBaVRjhuQ3fyVSAxNRbvVA="
 					}
 					multi_step: {
-						"VPFGPIFS0LVEPDLQMEL6BNRVIFKJT1NUQI2AGKEP4I20I06U8HIG====": [{
+						"757LHM5I9D63J2FRLBNNVQU393MJB1OLV30LM7KAGTUSOMTFQUO0====": [{
 							doc: """
 									# script doc comment
 									#scripttag
@@ -305,6 +320,14 @@ package site
 							exitCode: 0
 							output: """
 									v0.7.0
+
+									"""
+						}, {
+							doc:      ""
+							cmd:      "echo $CUE_TEST_LOGINS"
+							exitCode: 0
+							output: """
+									blah
 
 									"""
 						}]
