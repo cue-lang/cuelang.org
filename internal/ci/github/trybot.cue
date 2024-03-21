@@ -151,6 +151,12 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_dist & {
 				_baseURL: _netlifyStep.#prime_url.CL
+
+				// TODO: remove this (and the credentials on the GitHub side in
+				// both the cuelang.org and cuelang.org-trybot repos) when we
+				// have a more principled solution to getting and passing
+				// temporary credentials.
+				env: CUE_TEST_LOGINS: "${{ secrets.CUECKOO_CUE_TEST_LOGINS }}"
 			},
 
 			// Check on clean repo prior to deploy
@@ -329,9 +335,9 @@ _netlifyDeploy: json.#step & {
 		#alias: *"" | string
 	}
 	let nc = netlify.config
-	let prod = [ if #prod {"--prod"}, ""][0]
+	let prod = [if #prod {"--prod"}, ""][0]
 	let uSite = strings.ToUpper(strings.Replace(#site, "-", "_", -1))
-	let alias = [ if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
+	let alias = [if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
 	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
