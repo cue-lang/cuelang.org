@@ -50,6 +50,24 @@
       "message": "I don\u0027t think you want to make this a 301; because in a later CL you want to re-instate `/integrations`, no?",
       "revId": "c779c97197bad64ecc9ea9698079dae44c708085",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27d88ad0_9145feb2",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:33:49Z",
+      "side": 1,
+      "message": "I\u0027m unsure if that\u0027s relevant, given that we\u0027d remove the redirect at the same time we introduced the new path. I\u0027ve made it a 302.",
+      "parentUuid": "0c84e930_d03e3151",
+      "revId": "c779c97197bad64ecc9ea9698079dae44c708085",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
