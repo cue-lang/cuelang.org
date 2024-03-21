@@ -8,44 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"3CB3KN5C5ELND2533A4LS66C852NGGJATJE14A5LS9H407NKQR90====": [{
+									"DA0QU9OJVP5TG16EHEAQHC9AR7SS396L9M8CK6VL8290TH47K5OG====": [{
 										doc:      ""
 										cmd:      "cue help mod tidy"
 										exitCode: 0
-										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
-												Tidy resolves all module dependencies in the current module and updates
-												the cue.mod/module.cue file to reflect them.
-
-												It also removes dependencies that are not needed.
-
-												It will attempt to fetch modules that aren't yet present in the
-												dependencies by fetching the latest available version from
-												a registry.
-
-												See "cue help environment" for details on how $CUE_REGISTRY is used to
-												determine the modules registry.
-
-												Note: you must enable the modules experiment with:
-												\texport CUE_EXPERIMENT=modules
-												for this command to work.
-
-												Usage:
-												  cue mod tidy [flags]
-
-												Flags:
-												      --check   check for tidiness only; do not update module.cue file
-
-												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
-												      --strict       report errors for lossy mappings
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
-
-												"""
+										output:   ""
 									}]
 								}
 							}
