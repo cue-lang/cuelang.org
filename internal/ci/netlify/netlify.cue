@@ -64,7 +64,7 @@ config: #config & {
 	context: "\(repo.alphaBranch)": command: "\(build.command) --baseURL https://alpha.cuelang.org"
 	context: "production": command:          "\(build.command) --baseURL https://cuelang.org"
 
-	redirects: [...{force: true, status: 302}]
+	redirects: [...{force: true, status: *302 | ( >=300 & <=308 )}]
 	redirects: [{
 		from: "/cl/*"
 		to:   "https://review.gerrithub.io/c/:splat"
@@ -101,7 +101,69 @@ config: #config & {
 	}, {
 		from: "/docs/tour/packages/"
 		to:   "/docs/tour/packages/packages/"
-	}]
+	},
+		// These old-site path globs deliberately don't include a trailing slash,
+		// so as to catch the slashless "/docs/foo" path by itself.
+		// They don't redirect to a specific page, but to the section index.
+		{
+			from:   "/docs/usecases*"
+			to:     "/search/?q=use%20case%20contentType:\"Concept%20Guides\""
+			status: 301
+		}, {
+			from:   "/docs/integrations*"
+			to:     "/docs/integration/"
+			status: 302 // We'll reuse this path, later.
+		}, {
+			from:   "/docs/concepts*"
+			to:     "/docs/concept/"
+			status: 301
+		}, {
+			from:   "/docs/references*"
+			to:     "/docs/reference/"
+			status: 301
+		},
+		// The old-site tour paths /do/ preserve trailing path elements.
+		{
+			from:   "/docs/tutorials/tour/intro/*"
+			to:     "/docs/tour/basics/:splat"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/intro"
+			to:     "/docs/tour/basics/"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/types/*"
+			to:     "/docs/tour/types/:splat"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/types"
+			to:     "/docs/tour/types/"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/references/*"
+			to:     "/docs/tour/references/:splat"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/references"
+			to:     "/docs/tour/references/"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/expressions/*"
+			to:     "/docs/tour/expressions/:splat"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/expressions"
+			to:     "/docs/tour/expressions/"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/packages/*"
+			to:     "/docs/tour/packages/:splat"
+			status: 301
+		}, {
+			from:   "/docs/tutorials/tour/packages"
+			to:     "/docs/tour/packages/"
+			status: 301
+		}]
 }
 
 #toToml: {
