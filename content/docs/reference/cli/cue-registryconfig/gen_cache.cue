@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"BPFLN0BT7221URKLKOICAQ7SV4CQGN30QCMNPMSUQEBEN0KLL04G====": [{
+									"ELM8I6JS6MMIMIFVGI21CDA04SR4TOP26HD3SU8OCK7PAM579E40====": [{
 										doc:      ""
 										cmd:      "cue help registryconfig"
 										exitCode: 0
