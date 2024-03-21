@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "c779c97197bad64ecc9ea9698079dae44c708085",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f33b51ae_11fc0de7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T09:10:24Z",
+      "side": 1,
+      "message": "LGTM but I think one of these should not be a 301.",
+      "revId": "c779c97197bad64ecc9ea9698079dae44c708085",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c84e930_d03e3151",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T09:10:24Z",
+      "side": 1,
+      "message": "I don\u0027t think you want to make this a 301; because in a later CL you want to re-instate `/integrations`, no?",
+      "revId": "c779c97197bad64ecc9ea9698079dae44c708085",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
