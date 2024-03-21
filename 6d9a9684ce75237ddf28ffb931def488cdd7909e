@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34713994_cdd3ae2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T15:33:30Z",
+      "side": 1,
+      "message": "PTAL. I think we need better words to put around \"a CUE command\" versus \"the `cue` command\" vs \"a `cue` subcommand\" etc etc. I\u0027ve gone with \"CUE *tool* command\", but I definitely acknowledge that that already feels overloaded.",
+      "revId": "6d9a9684ce75237ddf28ffb931def488cdd7909e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
