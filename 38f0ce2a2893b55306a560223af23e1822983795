@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6039b9cb_6a2ae0df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Superceded by https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1185192",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7cd9bbb7_287b019a",
@@ -14,6 +31,24 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Not clear we need this given the ToC on the left hand side serves exactly this role? If you want anything, I would go with the format of bullet points, following the style/format of what we do at the top of a tutorial:\n\nhttps://alpha.cuelang.org/docs/tutorial/working-with-a-custom-module-registry/\n\nIf we think we need something \"better\" in terms of an on-page ToC, then I suggest we add this to the list of stuff that we raise in a \"phase 2\" of UI/UX stuff.",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ff54dc5_87093359",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "I\u0027ve moved to a bullet pointed list. I feel this page (and the others like it) needs something on page, because the reader who arrived here from the front page has a strong chance of not spotting the LH nav TOC.\n\nA 5-/6-point list felt a tad too long (delaying access to the page\u0027s prose) so I tried to place the list in 2 columns, but failed and had to open cue-lang/cue#2971.",
+      "parentUuid": "7cd9bbb7_287b019a",
       "revId": "38f0ce2a2893b55306a560223af23e1822983795",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -81,6 +116,72 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4c4eb65_e77f0b8f",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f170b975_0c72843d",
+      "range": {
+        "startLine": 24,
+        "startChar": 3,
+        "endLine": 24,
+        "endChar": 35
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44844ef9_67836f00",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8783e5c9_e6c4a9f6",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6847ebf5_243688ad",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6f93672_4c9067be",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 29
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aaea0bb4_fb546947",
@@ -127,6 +228,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6795fbbd_ce08a735",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6161c5d_8fa41ae6",
+      "range": {
+        "startLine": 27,
+        "startChar": 47,
+        "endLine": 27,
+        "endChar": 56
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f36fd754_a510e883",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aaea0bb4_fb546947",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 33
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23f95c3c_35e1217a",
@@ -140,6 +289,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Not clear that it\u0027s related to configuration _generation_ just situations where there are configuration. So perhaps just \"configuration setup\"?",
+      "range": {
+        "startLine": 28,
+        "startChar": 7,
+        "endLine": 28,
+        "endChar": 17
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98427daa_c1dc4042",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23f95c3c_35e1217a",
       "range": {
         "startLine": 28,
         "startChar": 7,
@@ -173,6 +346,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43cf060d_037742d4",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70d38909_9df858f0",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 79
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79230364_32d9b4ed",
@@ -186,6 +383,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Acronym.",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 14
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ab2b640_bfba9fc3",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79230364_32d9b4ed",
       "range": {
         "startLine": 34,
         "startChar": 12,
@@ -213,6 +434,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "087c71ce_4d4a52b4",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "I think that\u0027s the opposite of what\u0027s encoded :-) The `-latest` tag can bump without \"our\" input, but at least we\u0027re using \"current\" / up-to-date software.\n\nI\u0027ve changed to \"supported runner\".",
+      "parentUuid": "59461855_0329caf2",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b55bc1d6_00590c74",
@@ -226,6 +465,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "More simply \"CUE\u0027s\", principally because it\u0027s simpler language, but also because it\u0027s not the language by itself that enables this.",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 19
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18476483_96e44b2c",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b55bc1d6_00590c74",
       "range": {
         "startLine": 125,
         "startChar": 0,
@@ -259,6 +522,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcc42006_82d1d005",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97944cc1_6333638d",
+      "range": {
+        "startLine": 126,
+        "startChar": 22,
+        "endLine": 126,
+        "endChar": 26
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f25204c_5ac8d95c",
@@ -276,6 +563,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0c296c7_d576efb9",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f25204c_5ac8d95c",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f6008e1_f45ba17a",
@@ -289,6 +594,24 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "This feels a bit busy and cluttered within comments in-line. Worth expanding to have clear lines between fields for readability?",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cf60b59_8893191f",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6008e1_f45ba17a",
       "revId": "38f0ce2a2893b55306a560223af23e1822983795",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -339,6 +662,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0ad15a8_667260ab",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39736bc8_a0d38a21",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b837df2_fec39705",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c58fc448_8ba7e3be",
+      "range": {
+        "startLine": 172,
+        "startChar": 29,
+        "endLine": 172,
+        "endChar": 59
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ede1bdb8_b495e93c",
@@ -352,6 +723,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "I think it\u0027s important to be clear that using CUE to help with configuration generation (and implicitly validation therefore) does not require you to have flipped the source of truth to be CUE. It can still be acting as a side car in this situation. Indeed, this is kind of the point of your example below, with the values coming from yaml. \n\nAgain, derisking by not requiring you to ALSO change the process (human or otherwise) that creates/generates/maintains the Yaml values.",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 52
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc2037cc_566d3114",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ede1bdb8_b495e93c",
       "range": {
         "startLine": 174,
         "startChar": 0,
@@ -385,6 +780,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5936864e_39d28728",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d930ba4_01ab0dc2",
+      "range": {
+        "startLine": 174,
+        "startChar": 54,
+        "endLine": 175,
+        "endChar": 67
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "000ca36d_567f7995",
@@ -398,6 +817,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "\"clear\" - simpler language.",
+      "range": {
+        "startLine": 176,
+        "startChar": 18,
+        "endLine": 176,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11a2493f_a5d07b97",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "000ca36d_567f7995",
       "range": {
         "startLine": 176,
         "startChar": 18,
@@ -431,6 +874,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e196b17_9aaa840a",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8efa0d66_35c9525d",
+      "range": {
+        "startLine": 177,
+        "startChar": 8,
+        "endLine": 177,
+        "endChar": 18
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3b25290_c6a0b2a0",
@@ -444,6 +911,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Per earlier comment, this distinction between partial and complete is lost on me!\n\nHappy to chat through what you were trying to achieve here.",
+      "range": {
+        "startLine": 179,
+        "startChar": 1,
+        "endLine": 179,
+        "endChar": 45
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e00a52d_1851ba53",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3b25290_c6a0b2a0",
       "range": {
         "startLine": 179,
         "startChar": 1,
@@ -471,6 +962,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d97ea032_76389fdb",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c7aa392_2d5d2e8b",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99dbc910_e749a521",
@@ -484,6 +993,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Per the comment below about `values.yaml` I would say \"input data and output configuration\" just to draw a distinction for the reader.",
+      "range": {
+        "startLine": 186,
+        "startChar": 63,
+        "endLine": 186,
+        "endChar": 68
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9df87fc3_21eb25f5",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99dbc910_e749a521",
       "range": {
         "startLine": 186,
         "startChar": 63,
@@ -511,6 +1044,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb6156d4_035eed22",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "989907a5_49631fae",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00ece773_a6747fde",
@@ -524,6 +1075,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "\"`cue` command\"",
+      "range": {
+        "startLine": 195,
+        "startChar": 40,
+        "endLine": 195,
+        "endChar": 49
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3120287_68f6684c",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00ece773_a6747fde",
       "range": {
         "startLine": 195,
         "startChar": 40,
@@ -557,6 +1132,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bb15649_e27bfa9d",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22e47246_e8413e00",
+      "range": {
+        "startLine": 196,
+        "startChar": 25,
+        "endLine": 196,
+        "endChar": 44
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "317ad584_f46e890d",
@@ -570,6 +1169,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Just `.` please - we don\u0027t need the package qualifier in this situation.",
+      "range": {
+        "startLine": 201,
+        "startChar": 16,
+        "endLine": 201,
+        "endChar": 24
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80ab938b_959f22a8",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "317ad584_f46e890d",
       "range": {
         "startLine": 201,
         "startChar": 16,
@@ -597,6 +1220,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9296be7_ff7916d6",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2de5274c_76399d99",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a0f72ad2_fbc36add",
@@ -610,6 +1251,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "This feels like an unnecessary qualification - I\u0027d suggest removing it.",
+      "range": {
+        "startLine": 273,
+        "startChar": 39,
+        "endLine": 274,
+        "endChar": 49
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "182e66d5_f8a87734",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0f72ad2_fbc36add",
       "range": {
         "startLine": 273,
         "startChar": 39,
@@ -643,6 +1308,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8aaa1da9_ae7d17da",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ec53da3_485c268e",
+      "range": {
+        "startLine": 275,
+        "startChar": 10,
+        "endLine": 276,
+        "endChar": 9
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea5beaed_f59d3e7e",
@@ -662,6 +1351,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e3096d13_3a9ebaf3",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "That feels a bit like it\u0027s solving the author\u0027s problem, and not the readers\u0027.\n\nIrrespective of the specific blocks used, the `code` blocks in both of these two (very similar) examples currently place the file data needed to understand the immediately proceeding prose right there, at hand, in one compact unit.\n\nI\u0027m not convinced that \"refer back to file XYZ.cue, several paragraphs above\" will increase reader comprehension; though it might improves the authorial/review experience.\n\nI\u0027d been thinking that perhaps we could extend `code` blocks to have some shorthand that picks up `upload`\u0027d file contents, so as to improve the content process but keep code blocks\u0027 self-contained rendering.",
+      "parentUuid": "ea5beaed_f59d3e7e",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ad35dab2_9d67355a",
         "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
         "patchSetId": 7
@@ -673,6 +1380,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Ditto.",
+      "range": {
+        "startLine": 282,
+        "startChar": 15,
+        "endLine": 282,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ab04a86_6a9552cb",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad35dab2_9d67355a",
       "range": {
         "startLine": 282,
         "startChar": 15,
@@ -706,6 +1437,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5772c033_c86a8091",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebb6a6e2_d5443f38",
+      "range": {
+        "startLine": 332,
+        "startChar": 62,
+        "endLine": 332,
+        "endChar": 78
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4e94f20_bbd14c14",
@@ -719,6 +1474,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "I struggled to parse and understand this sentence. Happy to chat through to figure out a different wording.",
+      "range": {
+        "startLine": 338,
+        "startChar": 8,
+        "endLine": 340,
+        "endChar": 73
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fc8b798_eaa71205",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Marked with a FIXME.",
+      "parentUuid": "f4e94f20_bbd14c14",
       "range": {
         "startLine": 338,
         "startChar": 8,
@@ -746,6 +1525,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6eabad9_c179762e",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab9194da_c65f92ef",
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0a84153_e8f82f04",
@@ -759,6 +1556,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "I\u0027m not clear this is the goal of a configuration language per se, largely because I don\u0027t think there is a design/specification of what a \"configuration language\" (whatever that might mean) actually does/should do.\n\nCan we not make this specific to CUE? Talking about the fact that CUE can translate or adapt between different formats etc?",
+      "range": {
+        "startLine": 443,
+        "startChar": 0,
+        "endLine": 444,
+        "endChar": 15
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e669b890_599c399b",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Tracked for discussion with an inline FIXME. (Because this CL will be abandoned shortly, following the alpha force push)",
+      "parentUuid": "b0a84153_e8f82f04",
       "range": {
         "startLine": 443,
         "startChar": 0,
@@ -792,6 +1613,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc7fc325_545f2104",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffbb2192_8e9c0c73",
+      "range": {
+        "startLine": 461,
+        "startChar": 14,
+        "endLine": 461,
+        "endChar": 23
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f946a65d_a25a8cd8",
@@ -805,6 +1650,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "I\u0027m not sure this word will mean anything to anyone at this point. Can we refer to incremental building of a configuration?",
+      "range": {
+        "startLine": 463,
+        "startChar": 14,
+        "endLine": 463,
+        "endChar": 24
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afa398d7_ff19bcd3",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f946a65d_a25a8cd8",
       "range": {
         "startLine": 463,
         "startChar": 14,
@@ -838,6 +1707,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4163fd3_23699c5d",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7975f735_3410a25b",
+      "range": {
+        "startLine": 467,
+        "startChar": 0,
+        "endLine": 472,
+        "endChar": 0
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee77805d_1655e5cc",
@@ -851,6 +1744,30 @@
       "writtenOn": "2024-03-17T08:39:33Z",
       "side": 1,
       "message": "Can we spin up a simple tutorial/howto based on the example in `cue help cmd`? Will really bring it to life.",
+      "range": {
+        "startLine": 476,
+        "startChar": 4,
+        "endLine": 477,
+        "endChar": 24
+      },
+      "revId": "38f0ce2a2893b55306a560223af23e1822983795",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "304bd3b8_ab85223c",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T08:10:06Z",
+      "side": 1,
+      "message": "Tracked in cue-lang/docs-and-content#102",
+      "parentUuid": "ee77805d_1655e5cc",
       "range": {
         "startLine": 476,
         "startChar": 4,
