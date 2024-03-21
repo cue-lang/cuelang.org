@@ -260,13 +260,13 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "wte/A1D20HrAWR4Gz0JykoyWHqHcoBbVLWy3Hi5VbYY="
-						"upload-some-cue":  "u9fUfg3FnVxCKNAAa80TzcXMGTJFYrrZP73tjXTWFek="
-						"upload-some-json": "udLyO91aSA2A734UFDEYClvsZyfonhSo7NU0IqmEF5Q="
-						"in-subdir":        "ilJ/5z3a7X4LciumymMpLlBaVRjhuQ3fyVSAxNRbvVA="
+						"hidden file":      "MGtNJz0q8cnehg75tImhxn07oIiaPKZp0xwVLwn99ug="
+						"upload-some-cue":  "c+maUqpmoHkAnvZMLuD6OP1I+ZcTSmZeeCHIYPQx+x0="
+						"upload-some-json": "wUTxygpV3YejUYxZbq57QJWNAOstcrigJAXxMUGJT3c="
+						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
 					}
 					multi_step: {
-						"757LHM5I9D63J2FRLBNNVQU393MJB1OLV30LM7KAGTUSOMTFQUO0====": [{
+						"B294I2VIL6SKB07A6ISTQJ5MPKQB5H8IPBUT1CE14QTLECN0F6B0====": [{
 							doc: """
 									# script doc comment
 									#scripttag
