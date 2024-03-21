@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee0fd5e3_1cf02148",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "Took the wording from https://cuelang.org/docs/tutorial/working-with-a-custom-module-registry/ so will leave for now.",
+      "parentUuid": "441909eb_f00340c8",
+      "range": {
+        "startLine": 29,
+        "startChar": 24,
+        "endLine": 29,
+        "endChar": 37
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "101c53f4_2db113d5",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-21T09:56:32Z",
       "side": 1,
       "message": "\"CUE\u0027s\"",
+      "range": {
+        "startLine": 49,
+        "startChar": 75,
+        "endLine": 49,
+        "endChar": 78
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "658e4e35_fc3765ec",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "Will leave this for now. We can finesse later.",
+      "parentUuid": "101c53f4_2db113d5",
       "range": {
         "startLine": 49,
         "startChar": 75,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e58df24a_7995e025",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07666776_500b87bc",
+      "range": {
+        "startLine": 85,
+        "startChar": 46,
+        "endLine": 86,
+        "endChar": 42
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8fcbcc31_2119f937",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-03-21T09:56:32Z",
       "side": 1,
       "message": "\"companion tutorial\"",
+      "range": {
+        "startLine": 87,
+        "startChar": 31,
+        "endLine": 87,
+        "endChar": 39
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72e2e49a_2d5636f3",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fcbcc31_2119f937",
       "range": {
         "startLine": 87,
         "startChar": 31,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "13b4aa18_7544027b",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "Yep, will leave this unresolved. I just need to publish the well-known modules.",
+      "parentUuid": "0f75f894_50e13d12",
+      "range": {
+        "startLine": 100,
+        "startChar": 19,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff89fa7c_5fef2ff6",
         "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
         "patchSetId": 3
@@ -129,6 +249,30 @@
       "writtenOn": "2024-03-21T09:56:32Z",
       "side": 1,
       "message": "\"tutorial\"",
+      "range": {
+        "startLine": 109,
+        "startChar": 64,
+        "endLine": 109,
+        "endChar": 72
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "884d5ebb_45ea5ab6",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff89fa7c_5fef2ff6",
       "range": {
         "startLine": 109,
         "startChar": 64,
@@ -162,6 +306,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc3da15d_3a56116f",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "360bc502_c3c4f5b7",
+      "range": {
+        "startLine": 113,
+        "startChar": 48,
+        "endLine": 113,
+        "endChar": 51
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ce636de_03831757",
@@ -175,6 +343,30 @@
       "writtenOn": "2024-03-21T09:56:32Z",
       "side": 1,
       "message": "... \", demonstrating that you\u0027re able to use the values published by the remote module\" etc etc",
+      "range": {
+        "startLine": 138,
+        "startChar": 28,
+        "endLine": 138,
+        "endChar": 32
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bae89fd_14dcd89c",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T10:13:14Z",
+      "side": 1,
+      "message": "I\u0027ve again mirrored https://cuelang.org/docs/tutorial/working-with-a-custom-module-registry/ here, so we can tweak later.",
+      "parentUuid": "7ce636de_03831757",
       "range": {
         "startLine": 138,
         "startChar": 28,
