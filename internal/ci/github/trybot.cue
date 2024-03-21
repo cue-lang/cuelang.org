@@ -177,9 +177,9 @@ workflows: trybot: _repo.bashWorkflow & {
 			_netlifyStep,
 
 			json.#step & {
-				// Only run in the main repo on the alpha branch. Because anywhere else
-				// doesn't make sense.
-				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.alphaBranch)')"
+				// Only run in the main repo on the default branch, so only live
+				// content gets indexed.
+				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)')"
 				run:                 "npm run algolia"
 				"working-directory": "hugo"
 				env: {
