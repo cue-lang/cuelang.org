@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30fa743e_ab253dff",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T12:14:37Z",
+      "side": 1,
+      "message": "You could add a default subject using the technique from https://stackoverflow.com/a/4782101.\n\nAlso, personally, I\u0027d plus-address this address.",
+      "revId": "39ace9085863c68197ea4a6f4705bd2008c7e6bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
