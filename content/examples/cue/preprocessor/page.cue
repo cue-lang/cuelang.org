@@ -1,6 +1,6 @@
 package site
 
-content: examples: preprocessor: page: {
+content: examples: cue: preprocessor: page: {
 	leftDelim:  "{{{{"
 	rightDelim: "}}}"
 }
