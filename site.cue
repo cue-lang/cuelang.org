@@ -13,8 +13,8 @@ versions: {
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		latest:     "v0.8.0"
-		prerelease: "v0.8.0"
-		tip:        "v0.8.0"
+		prerelease: "v0.9.0-0.dev.0.20240320164829-623b6a8972bf"
+		tip:        "v0.9.0-0.dev.0.20240320164829-623b6a8972bf"
 	}
 	testscript: "v1.11.0"
 }
