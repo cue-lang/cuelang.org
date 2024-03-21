@@ -16,6 +16,24 @@
       "message": "You could add a default subject using the technique from https://stackoverflow.com/a/4782101.\n\nAlso, personally, I\u0027d plus-address this address.",
       "revId": "39ace9085863c68197ea4a6f4705bd2008c7e6bc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c69116d_521c0925",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-21T12:20:38Z",
+      "side": 1,
+      "message": "Good point re subject. Done\n\nWill skip the plus address for now. We don\u0027t mind dealing with the firehose.",
+      "parentUuid": "30fa743e_ab253dff",
+      "revId": "39ace9085863c68197ea4a6f4705bd2008c7e6bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
