@@ -530,7 +530,7 @@ CUE has several powerful features that allow boilerplate configuration to be
 removed - as well as discovering and removing boilerplate automatically!
 
 They're discussed in depth in
-[how CUE enables boilerplate removal](#TODO),
+[how CUE enables boilerplate removal]({{< relref "how-cue-enables-boilerplate-removal" >}}),
 but here's a short example that demonstrates a couple of language features that
 make handling configurations in CUE so productive: **templates** and
 **defaults**.
@@ -639,6 +639,8 @@ reference documentation.
 Interested in learning more about CUE? Here's what you could try next:
 
 - Test out CUE in your browser, with the [CUE playground](/play)
+- Read about
+  [how CUE enables boilerplate removal]({{< relref "how-cue-enables-boilerplate-removal" >}})
 - Take a [tour through the CUE language]({{< relref "docs/tour" >}})
 - Read about [the technologies that CUE directly integrates with]({{< relref
   "docs/integration" >}})
