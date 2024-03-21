@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "441909eb_f00340c8",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "nit: split infinitive.",
+      "range": {
+        "startLine": 29,
+        "startChar": 24,
+        "endLine": 29,
+        "endChar": 37
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "101c53f4_2db113d5",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "\"CUE\u0027s\"",
+      "range": {
+        "startLine": 49,
+        "startChar": 75,
+        "endLine": 49,
+        "endChar": 78
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07666776_500b87bc",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "\"Because we won\u0027t publish this\nmodule, its module path is not significant.\"",
+      "range": {
+        "startLine": 85,
+        "startChar": 46,
+        "endLine": 86,
+        "endChar": 42
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8fcbcc31_2119f937",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "\"companion tutorial\"",
+      "range": {
+        "startLine": 87,
+        "startChar": 31,
+        "endLine": 87,
+        "endChar": 39
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f75f894_50e13d12",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "Needs replacing. Perhaps call it out in the current prose?",
+      "range": {
+        "startLine": 100,
+        "startChar": 19,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff89fa7c_5fef2ff6",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "\"tutorial\"",
+      "range": {
+        "startLine": 109,
+        "startChar": 64,
+        "endLine": 109,
+        "endChar": 72
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "360bc502_c3c4f5b7",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "\"our\"",
+      "range": {
+        "startLine": 113,
+        "startChar": 48,
+        "endLine": 113,
+        "endChar": 51
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ce636de_03831757",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-21T09:56:32Z",
+      "side": 1,
+      "message": "... \", demonstrating that you\u0027re able to use the values published by the remote module\" etc etc",
+      "range": {
+        "startLine": 138,
+        "startChar": 28,
+        "endLine": 138,
+        "endChar": 32
+      },
+      "revId": "9e8d12bfdbdd4d7a87e9f42ae98de5785396000f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
