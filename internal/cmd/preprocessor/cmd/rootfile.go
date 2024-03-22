@@ -624,6 +624,38 @@ func (m *multiStepScript) run() (runerr error) {
 		"-v", fmt.Sprintf("%s:/scripts", scriptsDir),
 	)
 
+	// Set userAuthn env vars for the users required. Doing so in the bash
+	// script ensure that we will cause a cache miss if the credentials have
+	// changed.
+	if len(m.page.config.UserAuthn) > 0 {
+		authMap, err := m.userAuthn()
+		if err != nil {
+			m.fatalf("%v: failed to load authn map: %v", m, err)
+		}
+		users := make(map[string]bool)
+		for _, u := range m.page.config.UserAuthn {
+			users[u] = true
+		}
+		var vars []string
+		for u := range users {
+			creds, ok := authMap[u]
+			if !ok {
+				m.errorf("%v: failed to find user authn credentials for %q", m, u)
+				continue
+			}
+			safeUser := strings.ReplaceAll(strings.ToUpper(u), "-", "_")
+			vars = append(vars, fmt.Sprintf("USER_AUTHN_%s=%s", safeUser, creds.AccessToken))
+		}
+		if m.isInError() {
+			return errorIfInError(m)
+		}
+		// Sort for stability
+		sort.Strings(vars)
+		for _, v := range vars {
+			args = append(args, "-e", v)
+		}
+	}
+
 	// Ensure we have a docker cache volume if one is required
 	if !m.noCacheVolume {
 		args = append(args, "-v", fmt.Sprintf("%s:/caches", m.cacheVolumeName))
