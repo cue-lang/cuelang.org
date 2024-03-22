@@ -15,13 +15,19 @@
 package cmd
 
 import (
+	"bytes"
 	"encoding/base64"
+	"encoding/json"
 	"fmt"
+	"io"
 	"io/fs"
+	"net/http"
 	"os"
 	"path/filepath"
 	"runtime/debug"
+	"sort"
 	"strings"
+	"sync"
 	"testing"
 
 	"cuelang.org/go/cue"
@@ -132,15 +138,107 @@ func (ec *executeContext) execute() error {
 		}
 	}
 
+	authnUsers := make(map[string]bool)
+
 	// Now load config per page
 	for _, d := range ec.order {
 		p := ec.pages[d]
 		p.loadConfig()
 
+		if p.config.UserAuthn != nil {
+			for _, u := range p.config.UserAuthn {
+				authnUsers[u] = true
+			}
+		}
+
 		// This doesn't feel very elegant in the non-concurrent mode
 		ec.updateInError(p.isInError())
 		ec.logf("%s", p.bytes())
 	}
+
+	if ec.testUserAuthn == nil {
+		ec.testUserAuthn = sync.OnceValues(func() (res map[string]wireToken, err error) {
+			// Fallback to calling the central registry
+			userAuthnSrc := "https://registry.cue.works/_api/test_user_tokens"
+
+			configDir, err := os.UserConfigDir()
+			if err != nil {
+				return nil, fmt.Errorf("failed to locate config directory: %v", err)
+			}
+
+			loginsJsonPath := filepath.Join(configDir, "cue", "logins.json")
+			loginsJson, err := os.ReadFile(loginsJsonPath)
+			if err != nil {
+				return nil, fmt.Errorf("failed to read config file %s: %v", loginsJsonPath, err)
+			}
+			var logins struct {
+				Registries map[string]wireToken
+			}
+
+			if err := json.Unmarshal(loginsJson, &logins); err != nil {
+				return nil, fmt.Errorf("failed to JSON unmarshal %s: %v", loginsJsonPath, err)
+			}
+
+			const centralRegistryHost = "registry.cue.works"
+
+			var centralRegistryWireToken *wireToken
+			if logins.Registries != nil {
+				v, ok := logins.Registries[centralRegistryHost]
+				if ok {
+					centralRegistryWireToken = &v
+				}
+			}
+			if centralRegistryWireToken == nil {
+				return nil, fmt.Errorf("failed to find auth credentials for %s in %s", centralRegistryHost, loginsJsonPath)
+			}
+
+			type testuserTokensArgs struct {
+				Usernames []string `json:"usernames"`
+			}
+
+			var args testuserTokensArgs
+			for u := range authnUsers {
+				args.Usernames = append(args.Usernames, u)
+			}
+			sort.Strings(args.Usernames)
+			argsByts, err := json.Marshal(args)
+			if err != nil {
+				return nil, fmt.Errorf("failed to marshal args for call: %v", err)
+			}
+
+			client := new(http.Client)
+			req, err := http.NewRequest("POST", userAuthnSrc, nil)
+			if err != nil {
+				return nil, fmt.Errorf("failed to create reqest to %s: %v", userAuthnSrc, err)
+			}
+			req.Header.Add("Authorization", fmt.Sprintf("Bearer %s", centralRegistryWireToken.AccessToken))
+			req.Body = io.NopCloser(bytes.NewReader(argsByts))
+
+			resp, err := client.Do(req)
+			if err != nil {
+				return nil, fmt.Errorf("failed to make call for test user tokens: %v", err)
+			}
+			defer resp.Body.Close()
+
+			userAuthnByts, err := io.ReadAll(resp.Body)
+			if err != nil {
+				return nil, fmt.Errorf("failed to read response for test user tokens: %v", err)
+			}
+
+			if resp.StatusCode < 200 || resp.StatusCode > 299 {
+				return nil, fmt.Errorf("failed to get test user tokens: %d: %s", resp.StatusCode, userAuthnByts)
+			}
+
+			if err := json.Unmarshal(userAuthnByts, &res); err != nil {
+				return nil, fmt.Errorf("failed to decode user authn map from %s: %v", userAuthnSrc, err)
+			}
+
+			return
+		})
+	}
+
+	// At this point we have config for each page, which means we know
+	// which pages n
 
 	if ec.isInError() {
 		return errorIfInError(ec)

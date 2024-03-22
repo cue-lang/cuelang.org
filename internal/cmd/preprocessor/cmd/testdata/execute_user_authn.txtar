@@ -1,0 +1,56 @@
+# Ensure that preprocessor can handle user authn credentials passed
+# via a flag (pointing to a filename) or the PREPROCESSOR_TEST_USER_AUTHN
+# environment variables.
+
+unquote content/dir/en.md
+
+# From a file
+cp content/dir/en.md golden/content/dir/en.md
+exec preprocessor execute --testuserauthn authn
+cp content/dir/en.md content/dir/en.md.writeBack
+cmp content/dir/en.md.writeBack golden/content/dir/en.md
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md.file
+
+# From an env var. Skip cache because different creds do not form
+# part of the cache key.
+env PREPROCESSOR_TEST_USER_AUTHN='{"cueckoo-user": {"access_token": "hello again"}}'
+exec preprocessor execute --skipcache
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md.env
+
+-- authn --
+{"cueckoo-user": {"access_token": "hello world"}}
+-- hugo/.keep --
+-- golden/content/dir/.keep --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+	userAuthn: ["cueckoo-user"]
+}
+-- content/dir/en.md --
+>---
+>title: Test page
+>---
+>{{{with script "en" "echo env var"}}}
+>echo $TEST_USER_AUTHN_CUECKOO_USER
+>{{{end}}}
+-- golden/hugo/content/en/dir/index.md.file --
+---
+title: Test page
+---
+```text { title="TERMINAL" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUgo=" }
+$ echo $TEST_USER_AUTHN_CUECKOO_USER
+******
+```
+-- golden/hugo/content/en/dir/index.md.env --
+---
+title: Test page
+---
+```text { title="TERMINAL" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUgo=" }
+$ echo $TEST_USER_AUTHN_CUECKOO_USER
+******
+```
