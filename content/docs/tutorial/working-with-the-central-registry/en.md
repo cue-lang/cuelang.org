@@ -13,7 +13,7 @@ toc_hide: true
 export PATH="/cues/prerelease:$PATH"
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
-$CUE_TEST_LOGINS
+{"registries":{"registry.cue.works":{"access_token":"${USER_AUTHN_CUE_NEW_USER}","token_type":"Bearer"}}}
 EOD
 {{{end}}}
 
@@ -35,6 +35,8 @@ This tutorial describes an experimental feature. All details are subject to chan
 Note that this guide depends on a pre-release version of CUE:
 
 {{{with script "en" "cue version"}}}
+env
+cat $HOME/.config/cue/logins.json
 #ellipsis 1
 cue version
 {{{end}}}

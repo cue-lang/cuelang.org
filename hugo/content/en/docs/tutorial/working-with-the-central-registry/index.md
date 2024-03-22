@@ -26,7 +26,37 @@ This tutorial describes an experimental feature. All details are subject to chan
 
 Note that this guide depends on a pre-release version of CUE:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
+```text { title="TERMINAL" codeToCopy="ZW52CmNhdCAkSE9NRS8uY29uZmlnL2N1ZS9sb2dpbnMuanNvbgpjdWUgdmVyc2lvbgo=" }
+$ env
+USER_UID=1000
+HOSTNAME=a5d4b7eba5cc
+USER_AUTHN_CUE_NEW_USER=devicev1_Rlw99wrbFWrw_8ApY2cXLw
+CUE_TEST_LOGINS={
+	"registries": {
+		"registry.cue.works": {
+			"access_token": "devicev1_Rlw99wrbFWrw_8ApY2cXLw",
+			"token_type": "Bearer"
+		}
+	}
+}
+PWD=/home/runner
+USER_GID=1000
+HOME=/home/runner
+GOLANG_VERSION=1.22.1
+TERM=dumb
+CUELANG_CUE_LATEST=v0.8.0
+CUELANG_CUE_PRERELEASE=v0.9.0-alpha.1
+SHLVL=1
+GOTOOLCHAIN=local
+NO_COLOR=true
+LC_ALL=C.UTF-8
+CUELANG_CUE_TIP=v0.9.0-alpha.1
+PATH=/cues/prerelease:/cues/latest:/go/bin:/usr/local/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+OLDPWD=/
+GOPATH=/go
+_=/usr/bin/env
+$ cat $HOME/.config/cue/logins.json
+{"registries":{"registry.cue.works":{"access_token":"devicev1_Rlw99wrbFWrw_8ApY2cXLw","token_type":"Bearer"}}}
 $ cue version
 cue version v0.9.0-alpha.1
 ...
