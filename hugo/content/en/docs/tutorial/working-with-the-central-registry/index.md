@@ -34,7 +34,30 @@ cue version v0.9.0-alpha.1
 
 ## Enable the modules experiment
 
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXMK" }
+```text { title="TERMINAL" codeToCopy="ZW52CmNhdCAkSE9NRS8uY29uZmlnL2N1ZS9sb2dpbnMuanNvbgpleHBvcnQgQ1VFX0VYUEVSSU1FTlQ9bW9kdWxlcwo=" }
+$ env
+USER_UID=1000
+HOSTNAME=ffef7fffa049
+CUE_TEST_LOGINS={"registries":{"registry.cue.works":{"access_token":"devicev1_aYaYAPV6-gNpSvoFEsBEkA"}}}
+PWD=/home/runner
+TEST_USER_AUTHN_CUE_USER_NEW=******
+USER_GID=1000
+HOME=/home/runner
+GOLANG_VERSION=1.22.1
+TERM=dumb
+CUELANG_CUE_LATEST=v0.8.0
+CUELANG_CUE_PRERELEASE=v0.9.0-alpha.1
+SHLVL=1
+GOTOOLCHAIN=local
+NO_COLOR=true
+LC_ALL=C.UTF-8
+CUELANG_CUE_TIP=v0.9.0-alpha.1
+PATH=/cues/prerelease:/cues/latest:/go/bin:/usr/local/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+OLDPWD=/
+GOPATH=/go
+_=/usr/bin/env
+$ cat $HOME/.config/cue/logins.json
+{"registries":{"registry.cue.works":{"access_token":"******","token_type":"Bearer"}}}
 $ export CUE_EXPERIMENT=modules
 ```
 

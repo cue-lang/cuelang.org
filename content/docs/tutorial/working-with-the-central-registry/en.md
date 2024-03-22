@@ -13,7 +13,7 @@ toc_hide: true
 export PATH="/cues/prerelease:$PATH"
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
-$CUE_TEST_LOGINS
+{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
 {{{end}}}
 
@@ -42,6 +42,8 @@ cue version
 ## Enable the modules experiment
 
 {{{with script "en" "enable modules"}}}
+env
+cat $HOME/.config/cue/logins.json
 export CUE_EXPERIMENT=modules
 {{{end}}}
 

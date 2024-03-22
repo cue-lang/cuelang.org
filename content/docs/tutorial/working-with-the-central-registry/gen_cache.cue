@@ -10,7 +10,7 @@ package site
 								"initial config.cue": "AOUIveMQEtui+WiCGiFL6OCQrLn/PDJVeZYIDOA4yXo="
 							}
 							multi_step: {
-								"LOSQU94DM1C487R8C0T833RFQGFEQBGKD4KFP1TAIGKQB6N72DB0====": [{
+								"76AAV68D3BLQGT3OJ8HR5M4FJA3CMCGC5GFK9D2FD6C4T87UBKOG====": [{
 									doc:      ""
 									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
 									exitCode: 0
@@ -24,7 +24,7 @@ package site
 									doc: ""
 									cmd: """
 											cat <<EOD >$HOME/.config/cue/logins.json
-											$CUE_TEST_LOGINS
+											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 											EOD
 											"""
 									exitCode: 0
@@ -36,6 +36,41 @@ package site
 									output: """
 											cue version v0.9.0-alpha.1
 											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "env"
+									exitCode: 0
+									output: """
+											USER_UID=1000
+											HOSTNAME=ffef7fffa049
+											CUE_TEST_LOGINS={"registries":{"registry.cue.works":{"access_token":"devicev1_aYaYAPV6-gNpSvoFEsBEkA"}}}
+											PWD=/home/runner
+											TEST_USER_AUTHN_CUE_USER_NEW=******
+											USER_GID=1000
+											HOME=/home/runner
+											GOLANG_VERSION=1.22.1
+											TERM=dumb
+											CUELANG_CUE_LATEST=v0.8.0
+											CUELANG_CUE_PRERELEASE=v0.9.0-alpha.1
+											SHLVL=1
+											GOTOOLCHAIN=local
+											NO_COLOR=true
+											LC_ALL=C.UTF-8
+											CUELANG_CUE_TIP=v0.9.0-alpha.1
+											PATH=/cues/prerelease:/cues/latest:/go/bin:/usr/local/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+											OLDPWD=/
+											GOPATH=/go
+											_=/usr/bin/env
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "cat $HOME/.config/cue/logins.json"
+									exitCode: 0
+									output: """
+											{"registries":{"registry.cue.works":{"access_token":"******","token_type":"Bearer"}}}
 
 											"""
 								}, {
