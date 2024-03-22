@@ -17,6 +17,7 @@ package cmd
 import (
 	"bytes"
 	"crypto/sha256"
+	"encoding/json"
 	"fmt"
 	"hash"
 	"io"
@@ -25,6 +26,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"sync"
 
 	"cuelang.org/go/cmd/cue/cmd"
 	"cuelang.org/go/cue"
@@ -48,6 +50,9 @@ const (
 	flagList            flagName = "ls"
 	flagCacheVolumeName flagName = "cachevolumename"
 	flagNoCacheVolume   flagName = "nocachevolume"
+	flagTestUserAuthn   flagName = "testuserauthn"
+
+	envTestUserAuthn = "PREPROCESSOR_TEST_USER_AUTHN"
 )
 
 const (
@@ -172,6 +177,22 @@ type executionContext struct {
 	// cacheVolumeName is the name of the cache volume to use to optimise
 	// multi-step scripts.
 	cacheVolumeName string
+
+	// testUserAuthn returns a map from GitHub username to wireToken. A
+	// wireToken describes the JSON encoding for an OAuth 2.0 token as specified
+	// in the [RFC 6749].
+	//
+	// In their config, pages declare that they require authn credentials for a
+	// given list of users, the preprocessor makes available environment
+	// variables for each user with the access_token from those credentials,
+	// taken that access_token from the wireToken in the testUserAuthn map.
+	//
+	// [RFC 6749]: https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2
+	testUserAuthn func() (map[string]wireToken, error)
+}
+
+type wireToken struct {
+	AccessToken string `json:"access_token"`
 }
 
 // tempDir creates a new temporary directory within the
@@ -245,6 +266,37 @@ func executeDef(c *Command, args []string) error {
 		siteSchema:        schema,
 		cacheVolumeName:   flagCacheVolumeName.String(c),
 		noCacheVolume:     flagNoCacheVolume.Bool(c),
+	}
+
+	if authFlag := flagTestUserAuthn.String(c); authFlag != "" {
+		// We have either a filename passed by the user via the flag, or a string
+		// JSON blob from the env var as a result of the flag not having been set
+		// and its value defaulting to the env var.
+
+		var byts []byte
+		var src string
+
+		var err error
+
+		if c.Flags().Changed(string(flagTestUserAuthn)) {
+			// The user set the flag
+			byts, err = os.ReadFile(authFlag)
+			if err != nil {
+				return fmt.Errorf("failed to read user authn map file %s: %v", authFlag, err)
+			}
+			src = fmt.Sprintf("--%s", flagTestUserAuthn)
+		} else {
+			// The user set the env var default
+			byts = []byte(authFlag)
+			src = envTestUserAuthn
+		}
+
+		ctx.testUserAuthn = sync.OnceValues(func() (res map[string]wireToken, err error) {
+			if err := json.Unmarshal(byts, &res); err != nil {
+				return nil, fmt.Errorf("failed to decode user authn map from %s: %v", src, err)
+			}
+			return
+		})
 	}
 
 	// Ensure we have a docker cache volume if one is required
