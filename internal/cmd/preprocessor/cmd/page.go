@@ -73,6 +73,13 @@ type pageConfig struct {
 	Comparators []comparatorMatcher
 
 	TestUserAuthn []string `json:"testUserAuthn"`
+
+	RandomVars map[string]randomVar `json:"randomVars"`
+}
+
+type randomVar struct {
+	Pattern     string  `json:"pattern"`
+	Replacement *string `json:"replacement"`
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
