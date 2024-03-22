@@ -17,14 +17,17 @@ package cmd
 import (
 	"bytes"
 	"crypto/sha256"
+	"encoding/json"
 	"fmt"
 	"hash"
 	"io"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
+	"sync"
 
 	"cuelang.org/go/cmd/cue/cmd"
 	"cuelang.org/go/cue"
@@ -48,6 +51,7 @@ const (
 	flagList            flagName = "ls"
 	flagCacheVolumeName flagName = "cachevolumename"
 	flagNoCacheVolume   flagName = "nocachevolume"
+	flagUserAuthn       flagName = "userauthn"
 )
 
 const (
@@ -172,6 +176,22 @@ type executionContext struct {
 	// cacheVolumeName is the name of the cache volume to use to optimise
 	// multi-step scripts.
 	cacheVolumeName string
+
+	// userAuthn is a map from GitHub username to wireToken. A wireToken
+	// describes the JSON encoding for an OAuth 2.0 token as specified in the
+	// [RFC 6749].
+	//
+	// In their config, pages declare that they require authn credentials for a
+	// given list of users, the preprocessor makes available environment
+	// variables for each user with the access_token from those credentials,
+	// taken that access_token from the wireToken in the userAuthn map.
+	//
+	// [RFC 6749]: https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2
+	userAuthn func() (map[string]wireToken, error)
+}
+
+type wireToken struct {
+	AccessToken string `json:"access_token"`
 }
 
 // tempDir creates a new temporary directory within the
@@ -236,6 +256,97 @@ func executeDef(c *Command, args []string) error {
 		return fmt.Errorf("failed to load site schema: %v", err)
 	}
 
+	// Load the user authn map if flag or env var provided
+	var userAuthn []byte
+	var src string
+	if authFlag := flagUserAuthn.String(c); authFlag != "" {
+		// We have either a filename passed by the user, or a string JSON blob from the env var
+
+		var err error
+
+		if c.Flags().Changed(string(flagUserAuthn)) {
+			// The user set the flag
+			userAuthn, err = os.ReadFile(authFlag)
+			if err != nil {
+				return fmt.Errorf("failed to read user authn map file %s: %v", authFlag, err)
+			}
+			src = authFlag
+		} else {
+			// The user set the env var default
+			userAuthn = []byte(authFlag)
+			src = string(flagUserAuthn)
+		}
+
+	}
+	userAuthnFn := sync.OnceValues(func() (map[string]wireToken, error) {
+		if userAuthn == nil {
+			// Fallback to calling the central registry
+			src = "https://registry.cue.works/_api/test_user_tokens"
+
+			configDir, err := os.UserConfigDir()
+			if err != nil {
+				return nil, fmt.Errorf("failed to locate config directory: %v", err)
+			}
+
+			loginsJsonPath := filepath.Join(configDir, "cue", "logins.json")
+			loginsJson, err := os.ReadFile(loginsJsonPath)
+			if err != nil {
+				return nil, fmt.Errorf("failed to read config file %s: %v", loginsJsonPath, err)
+			}
+			var logins struct {
+				Registries map[string]wireToken
+			}
+
+			if err := json.Unmarshal(loginsJson, &logins); err != nil {
+				return nil, fmt.Errorf("failed to JSON unmarshal %s: %v", loginsJsonPath, err)
+			}
+
+			const centralRegistryHost = "registry.cue.works"
+
+			var centralRegistryWireToken *wireToken
+			if logins.Registries != nil {
+				v, ok := logins.Registries[centralRegistryHost]
+				if ok {
+					centralRegistryWireToken = &v
+				}
+			}
+			if centralRegistryWireToken == nil {
+				return nil, fmt.Errorf("failed to find auth credentials for %s in %s", centralRegistryHost, loginsJsonPath)
+			}
+
+			client := new(http.Client)
+			req, err := http.NewRequest("POST", src, nil)
+			if err != nil {
+				return nil, fmt.Errorf("failed to create reqest to %s: %v", src, err)
+			}
+			req.Header.Add("Authorization", fmt.Sprintf("Bearer %s", centralRegistryWireToken.AccessToken))
+			req.Body = io.NopCloser(strings.NewReader(`{"usernames":["cue-user-new","cue-user-personal-publisher","cue-user-collaborator-rw","cue-user-collaborator-ro"]}`))
+
+			resp, err := client.Do(req)
+			if err != nil {
+				return nil, fmt.Errorf("failed to make call for test user tokens: %v", err)
+			}
+			defer resp.Body.Close()
+
+			userAuthn, err = io.ReadAll(resp.Body)
+			if err != nil {
+				return nil, fmt.Errorf("failed to read response for test user tokens: %v", err)
+			}
+
+			if resp.StatusCode < 200 || resp.StatusCode > 299 {
+				return nil, fmt.Errorf("failed to get test user tokens: %d: %s", resp.StatusCode, userAuthn)
+			}
+		}
+
+		authMap := make(map[string]wireToken)
+
+		if err := json.Unmarshal(userAuthn, &authMap); err != nil {
+			return nil, fmt.Errorf("failed to decode user authn map from %s: %v\n%s", src, err, userAuthn)
+		}
+
+		return authMap, nil
+	})
+
 	ctx := executionContext{
 		updateGoldenFiles: flagUpdate.Bool(c),
 		readonlyCache:     flagReadonlyCache.Bool(c),
@@ -245,6 +356,7 @@ func executeDef(c *Command, args []string) error {
 		siteSchema:        schema,
 		cacheVolumeName:   flagCacheVolumeName.String(c),
 		noCacheVolume:     flagNoCacheVolume.Bool(c),
+		userAuthn:         userAuthnFn,
 	}
 
 	// Ensure we have a docker cache volume if one is required

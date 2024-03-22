@@ -128,6 +128,11 @@ package preprocessor
 				exitCode?: int
 			}]
 		}
+
+		// userAuth is a list of GitHub usernames for which this page needs
+		// Central Registry credentials to be made available as environemnt
+		// variables (named after that username) in multi-step scripts.
+		userAuthn?: [...string]
 	}
 
 	content?: _siteContent

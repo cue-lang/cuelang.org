@@ -71,6 +71,8 @@ type pageConfig struct {
 
 	Sanitisers  []sanitiserMatcher
 	Comparators []comparatorMatcher
+
+	UserAuthn []string `json:"userAuthn"`
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
