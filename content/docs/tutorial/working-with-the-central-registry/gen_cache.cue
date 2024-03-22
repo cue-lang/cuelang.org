@@ -10,7 +10,7 @@ package site
 								"initial config.cue": "19XJ5B8rLYwMu6lavuHenXjCIkYVlQREGfPaZR+Sn/k="
 							}
 							multi_step: {
-								"6V38TIIRJCBM1VO1PJBP9K30Q5RJI3L4KG1I6TUT55B169OMJD10====": [{
+								"0ORIQKRES6Q5S3JKAFA3SG402F9A4A473DSRV5P72R7OIG5AREM0====": [{
 									doc:      ""
 									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
 									exitCode: 0
@@ -24,7 +24,7 @@ package site
 									doc: ""
 									cmd: """
 											cat <<EOD >$HOME/.config/cue/logins.json
-											$CUE_TEST_LOGINS
+											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 											EOD
 											"""
 									exitCode: 0
