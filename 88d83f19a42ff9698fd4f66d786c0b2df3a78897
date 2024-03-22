@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58d3e093_68288371",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-22T13:10:46Z",
+      "side": 1,
+      "message": "PTAL. All comments resolved, both here and in the abandoned alpha CL (https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1183455)",
+      "revId": "88d83f19a42ff9698fd4f66d786c0b2df3a78897",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
