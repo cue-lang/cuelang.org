@@ -157,6 +157,8 @@ workflows: trybot: _repo.bashWorkflow & {
 				// have a more principled solution to getting and passing
 				// temporary credentials.
 				env: CUE_TEST_LOGINS: "${{ secrets.CUECKOO_CUE_TEST_LOGINS }}"
+
+				env: PREPROCESSOR_USER_AUTHN: "${{ secrets.PREPROCESSOR_USER_AUTHN }}"
 			},
 
 			// Check on clean repo prior to deploy
