@@ -385,6 +385,39 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	// whereas we do when we docker run from the command line.
 	pf("export PATH=\"/cues/latest:/go/bin:/usr/local/go/bin:$PATH\"\n")
 
+	// Set userAuthn env vars for the users required. Doing so in the bash
+	// script ensure that we will cause a cache miss if the credentials have
+	// changed.
+	if len(rf.page.config.UserAuthn) > 0 {
+		users := make(map[string]bool)
+		for _, u := range rf.page.config.UserAuthn {
+			users[u] = true
+		}
+		var vars []string
+		for u := range users {
+			creds, ok := rf.userAuthn[u]
+			if !ok {
+				rf.errorf("%v: failed to find user authn credentials for %q", rf, u)
+				continue
+			}
+			safeUser := strings.ReplaceAll(strings.ToUpper(u), "-", "_")
+			quotedCreds, err := syntax.Quote(creds, syntax.LangBash)
+			if err != nil {
+				rf.errorf("%v: failed to quote authn credentials: %v", rf, err)
+				continue
+			}
+			vars = append(vars, fmt.Sprintf("USER_AUTHN_%s=\"%s\"", safeUser, quotedCreds))
+		}
+		if rf.isInError() {
+			return nil, errorIfInError(rf)
+		}
+		// Sort for stability
+		sort.Strings(vars)
+		for _, v := range vars {
+			pf("export %s\n", v)
+		}
+	}
+
 	// exitCodeVar is the name of the "temporary" variable used to capture
 	// the exit code from a command. Named something suitably esoteric to
 	// avoid user-declared variables

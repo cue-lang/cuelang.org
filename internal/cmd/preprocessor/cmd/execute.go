@@ -17,6 +17,7 @@ package cmd
 import (
 	"bytes"
 	"crypto/sha256"
+	"encoding/json"
 	"fmt"
 	"hash"
 	"io"
@@ -48,6 +49,7 @@ const (
 	flagList            flagName = "ls"
 	flagCacheVolumeName flagName = "cachevolumename"
 	flagNoCacheVolume   flagName = "nocachevolume"
+	flagUserAuthn       flagName = "userauthn"
 )
 
 const (
@@ -172,6 +174,12 @@ type executionContext struct {
 	// cacheVolumeName is the name of the cache volume to use to optimise
 	// multi-step scripts.
 	cacheVolumeName string
+
+	// userAuthn is a map from GitHub username to Central Registry token. Pages
+	// declare in their config that they require authn credentials for a given
+	// list of users, the preprocessor makes available environment variables
+	// for each user with those credentials, based on the userAuthn map.
+	userAuthn map[string]string
 }
 
 // tempDir creates a new temporary directory within the
@@ -236,6 +244,34 @@ func executeDef(c *Command, args []string) error {
 		return fmt.Errorf("failed to load site schema: %v", err)
 	}
 
+	// Load the user authn map if flag or env var provided
+	userAuthn := make(map[string]string)
+	if authFlag := flagUserAuthn.String(c); authFlag != "" {
+
+		// We have either a filename passed by the user, or a string JSON blob from the env var
+
+		var byts []byte
+		var err error
+		var src string
+
+		if c.Flags().Changed(string(flagUserAuthn)) {
+			// The user set the flag
+			byts, err = os.ReadFile(authFlag)
+			if err != nil {
+				return fmt.Errorf("failed to read user authn map file %s: %v", authFlag, err)
+			}
+			src = authFlag
+		} else {
+			// The user set the env var default
+			byts = []byte(authFlag)
+			src = string(flagUserAuthn)
+		}
+
+		if err := json.Unmarshal(byts, &userAuthn); err != nil {
+			return fmt.Errorf("failed to decode user authn map from %s: %v", src, err)
+		}
+	}
+
 	ctx := executionContext{
 		updateGoldenFiles: flagUpdate.Bool(c),
 		readonlyCache:     flagReadonlyCache.Bool(c),
@@ -245,6 +281,7 @@ func executeDef(c *Command, args []string) error {
 		siteSchema:        schema,
 		cacheVolumeName:   flagCacheVolumeName.String(c),
 		noCacheVolume:     flagNoCacheVolume.Bool(c),
+		userAuthn:         userAuthn,
 	}
 
 	// Ensure we have a docker cache volume if one is required
