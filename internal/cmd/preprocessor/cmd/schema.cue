@@ -133,6 +133,11 @@ package preprocessor
 		// Central Registry credentials to be made available as environemnt
 		// variables (named after that username) in multi-step scripts.
 		userAuthn?: [...string]
+
+		randomVars?: [string]: {
+			pattern!:     string
+			replacement?: string
+		}
 	}
 
 	content?: _siteContent
