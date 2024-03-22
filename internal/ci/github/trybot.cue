@@ -149,6 +149,16 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Check module is tidy"
 			},
 
+			json.#step & {
+				name: "write $HOME/.config/cue/logins.json"
+				run: """
+					mkdir -p $HOME/.config/cue
+					cat <<EOD > $HOME/.config/cue/logins.json
+					${{ secrets.PORCUEPINE_LOGINS_JSON }}
+					EOD
+					"""
+			},
+
 			_dist & {
 				_baseURL: _netlifyStep.#prime_url.CL
 
