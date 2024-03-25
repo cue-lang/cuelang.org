@@ -15,12 +15,17 @@
 package cmd
 
 import (
+	"bytes"
+	"crypto/sha256"
 	"encoding/json"
 	"fmt"
+	"math/rand"
 	"os"
 	"path/filepath"
 	"sort"
+	"strconv"
 	"strings"
+	"time"
 
 	"cuelang.org/go/cue"
 	"golang.org/x/exp/maps"
@@ -75,7 +80,117 @@ type pageConfig struct {
 
 	TestUserAuthn []string `json:"testUserAuthn"`
 
-	Vars map[string]pageVar `json:"vars"`
+	Vars                map[string]pageVar `json:"vars"`
+	randomVarsToReplace []randomVariable
+	unexpandVars        []variableValuePair
+}
+
+func (p pageConfig) unexpandReferences(src []byte) []byte {
+	// We know that the reverse map is unique, but what we don't know is whether
+	// the values overlap in any way with variable names. A dumb approach via
+	// replace all would therefore be susceptible to replacing part of a
+	// variable name with a further reference to another variable.
+	//
+	// For example, if we had the variables:
+	//
+	// CUE: "really long value"
+	// BANANA: "CUE"
+	//
+	// Then the value "really long value" would be unexpanded first, leaving us
+	// with {{{.CUE}}} in src. At which point we would replace "CUE" with
+	// {{{.BANANA}}} leaving us with {{{.{{{.BANANA}}}}}}. Which is clearly
+	// wrong.  This could be solved by text/template
+	//
+	// The simplest way to fix this is to first replace with known random
+	// values, then do a second pass to replace with the references. Doesn't
+	// have to be cryto random, just unpredictable.
+	randSource := rand.New(rand.NewSource(time.Now().UnixNano()))
+	h := func() []byte {
+		b := sha256.Sum256(strconv.AppendInt(nil, randSource.Int63(), 16))
+		return b[:]
+	}
+	var randVals [][]byte
+	for _, vp := range p.unexpandVars {
+		r := h()
+		src = bytes.ReplaceAll(src, []byte(vp.value), r)
+		randVals = append(randVals, r)
+	}
+	for i, vp := range p.unexpandVars {
+		r := randVals[i]
+		ref := fmt.Sprintf("%s.%s%s", p.LeftDelim, vp.name, p.RightDelim)
+		src = bytes.ReplaceAll(src, r, []byte(ref))
+	}
+	return src
+}
+
+func (p *pageConfig) init() error {
+	// Now pre-populate a longest-first slice of random variables
+	// that will be looped over when cleaning up output
+	for _, v := range p.Vars {
+		v, ok := v.(randomVariable)
+		if !ok {
+			continue
+		}
+		p.randomVarsToReplace = append(p.randomVarsToReplace, v)
+	}
+	sort.Slice(p.randomVarsToReplace, func(i, j int) bool {
+		lhs, rhs := p.randomVarsToReplace[i], p.randomVarsToReplace[j]
+		// Longest first
+		if diff := len(rhs.value()) - len(lhs.value()); diff != 0 {
+			return diff < 0
+		}
+		// Lexicographic order second
+		return lhs.value() < rhs.value()
+	})
+	for k, v := range p.Vars {
+		p.unexpandVars = append(p.unexpandVars, variableValuePair{
+			name:  k,
+			value: v.value(),
+		})
+	}
+	sort.Slice(p.unexpandVars, func(i, j int) bool {
+		lhs, rhs := p.unexpandVars[i], p.unexpandVars[j]
+		// Longest first
+		if diff := len(rhs.value) - len(lhs.value); diff != 0 {
+			return diff < 0
+		}
+		// Lexicographic order second
+		return lhs.value < rhs.value
+	})
+
+	// Now ensure that we have a unique reverse map of variable's values. This is
+	// required in order that we can return a source txtar to a normalised form.
+	varValues := make(map[string][]string)
+	for name, val := range p.Vars {
+		l := varValues[val.value()]
+		l = append(l, name)
+		varValues[val.value()] = l
+	}
+	// Iterate the values in a stable order
+	var varValuesList []string
+	for val := range varValues {
+		varValuesList = append(varValuesList, val)
+	}
+	sort.Strings(varValuesList)
+	for _, val := range varValuesList {
+		names := varValues[val]
+		if len(names) != 1 {
+			sort.Strings(names)
+			return fmt.Errorf("multiple variables map to the same value: %v", strings.Join(names, ", "))
+		}
+	}
+	return nil
+}
+
+func (p pageConfig) randomReplaceStr(src string) string {
+	return string(p.randomReplace([]byte(src)))
+}
+
+func (p pageConfig) randomReplace(src []byte) []byte {
+	for _, v := range p.randomVarsToReplace {
+		src = bytes.ReplaceAll(src, []byte(v.value()), []byte(v.transformedValue()))
+	}
+	return src
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -194,26 +309,8 @@ func (p *page) loadConfig() {
 		return
 	}
 
-	// Now ensure that we have a unique reverse map of variable's values. This is
-	// required in order that we can return a source txtar to a normalised form.
-	varValues := make(map[string][]string)
-	for name, val := range p.config.Vars {
-		l := varValues[val.value()]
-		l = append(l, name)
-		varValues[val.value()] = l
-	}
-	// Iterate the values in a stable order
-	var varValuesList []string
-	for val := range varValues {
-		varValuesList = append(varValuesList, val)
-	}
-	sort.Strings(varValuesList)
-	for _, val := range varValuesList {
-		names := varValues[val]
-		if len(names) != 1 {
-			sort.Strings(names)
-			p.errorf("%v: multiple variables map to the same value: %v", p, strings.Join(names, ", "))
-		}
+	if err := p.config.init(); err != nil {
+		p.errorf("%v: %v", p, err)
 	}
 }
 

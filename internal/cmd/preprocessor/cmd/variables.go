@@ -27,6 +27,11 @@ type pageVar interface {
 	transformedValue() string
 }
 
+type variableValuePair struct {
+	name  string
+	value string
+}
+
 type stringVar string
 
 var _ pageVar = stringVar("")

@@ -134,3 +134,15 @@ func (t *textNode) writeTransformTo(b *bytes.Buffer) error {
 	b.Write(t.transformText)
 	return nil
 }
+
+type referenceNode struct {
+	*nodeWrapper
+	reference string
+}
+
+func (r *referenceNode) writeTransformTo(b *bytes.Buffer) error {
+	// At this point we know the reference is valid, i.e. the variable exists.
+	val := r.rf.page.config.Vars[r.reference].transformedValue()
+	b.Write([]byte(val))
+	return nil
+}
