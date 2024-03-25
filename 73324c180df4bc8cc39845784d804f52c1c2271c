@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "036e1213_1d1dd199",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-25T10:56:10Z",
+      "side": 1,
+      "message": "LGTM, with one ignorable nit.",
+      "revId": "73324c180df4bc8cc39845784d804f52c1c2271c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d709172_8b8390cb",
+        "filename": "_scripts/dockerImage.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-25T10:56:10Z",
+      "side": 1,
+      "message": "nit: I\u0027d find this easier to grok at a glance if it were 2 lines:\n\\- `echo -n \"preprocessor:\"`\n\\- the `cat|...|awk` pipeline.",
+      "revId": "73324c180df4bc8cc39845784d804f52c1c2271c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

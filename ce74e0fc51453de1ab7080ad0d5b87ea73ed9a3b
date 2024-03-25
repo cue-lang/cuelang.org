@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4b154b6_9173b503",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-25T10:56:10Z",
+      "side": 1,
+      "message": "LGTM.",
+      "parentUuid": "04902c50_255a44fa",
+      "revId": "ce74e0fc51453de1ab7080ad0d5b87ea73ed9a3b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f72a84a_885054c1",
