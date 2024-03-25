@@ -92,6 +92,11 @@ package preprocessor
 		#unstableLineOrderComparator
 	}
 
+	#var: string | {
+		pattern!:     string & !=""
+		replacement!: string
+	}
+
 	#page: {
 		// It's questionable whether these leftDelim and rightDelim should be
 		// required or not. We can always relax this later.
@@ -133,6 +138,13 @@ package preprocessor
 		// Central Registry credentials to be made available as environemnt
 		// variables (named after that username) in multi-step scripts.
 		testUserAuthn?: [...string]
+
+		// vars defines a map of variables. Variables can be simple string values
+		// or specification of random variables. The only additional constraint
+		// on the variable map is that the values must themselves form a unique
+		// mapping to variable names. This is checked once the page configuration
+		// is loaded.
+		vars?: [string]: #var
 	}
 
 	content?: _siteContent
