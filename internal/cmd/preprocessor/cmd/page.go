@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -75,7 +76,28 @@ type pageConfig struct {
 
 	TestUserAuthn []string `json:"testUserAuthn"`
 
-	Vars map[string]pageVar `json:"vars"`
+	Vars                map[string]pageVar `json:"vars"`
+	randomVarsToReplace []randomVariable
+	unexpandVars        []variableValuePair
+}
+
+func (p pageConfig) unexpandReferences(src []byte) []byte {
+	for _, vp := range p.unexpandVars {
+		ref := fmt.Sprintf("%s.%s%s", p.LeftDelim, vp.name, p.RightDelim)
+		src = bytes.ReplaceAll(src, []byte(vp.value), []byte(ref))
+	}
+	return src
+}
+
+func (p pageConfig) randomReplaceStr(src string) string {
+	return string(p.randomReplace([]byte(src)))
+}
+
+func (p pageConfig) randomReplace(src []byte) []byte {
+	for _, v := range p.randomVarsToReplace {
+		src = bytes.ReplaceAll(src, []byte(v.value()), []byte(v.transformedValue()))
+	}
+	return src
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -193,6 +215,40 @@ func (p *page) loadConfig() {
 	if p.isInError() {
 		return
 	}
+
+	// Now pre-populate a longest-first slice of random variables
+	// that will be looped over when cleaning up output
+	for _, v := range p.config.Vars {
+		v, ok := v.(randomVariable)
+		if !ok {
+			continue
+		}
+		p.config.randomVarsToReplace = append(p.config.randomVarsToReplace, v)
+	}
+	sort.Slice(p.config.randomVarsToReplace, func(i, j int) bool {
+		lhs, rhs := p.config.randomVarsToReplace[i], p.config.randomVarsToReplace[j]
+		// Longest first
+		if diff := len(rhs.value()) - len(lhs.value()); diff != 0 {
+			return diff < 0
+		}
+		// Lexicographic order second
+		return lhs.value() < rhs.value()
+	})
+	for k, v := range p.config.Vars {
+		p.config.unexpandVars = append(p.config.unexpandVars, variableValuePair{
+			name:  k,
+			value: v.value(),
+		})
+	}
+	sort.Slice(p.config.unexpandVars, func(i, j int) bool {
+		lhs, rhs := p.config.unexpandVars[i], p.config.unexpandVars[j]
+		// Longest first
+		if diff := len(rhs.value) - len(lhs.value); diff != 0 {
+			return diff < 0
+		}
+		// Lexicographic order second
+		return lhs.value < rhs.value
+	})
 
 	// Now ensure that we have a unique reverse map of variable's values. This is
 	// required in order that we can return a source txtar to a normalised form.
