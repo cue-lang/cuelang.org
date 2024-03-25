@@ -8,8 +8,27 @@ cp content/dir/en.md golden/content/dir/en.md
 # Run the preprocessor
 exec preprocessor execute
 
+# Take a copy of the gen_cache.cue file because that should not change
+cp content/dir/gen_cache.cue golden/content/dir/gen_cache.cue
+
+exec cat content/dir/en.md
+
+# Copy the resulting soure file sideways and use that in comparison
+# so that we don't inadvertently update it when using CUE_UPDATE=1
+cp content/dir/en.md content/dir/en.md.writeBack
+
+# Verify that the source file is intact
+cmp content/dir/en.md.writeBack golden/content/dir/en.md
+
 # Verify that the target files matche the source contents
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+# Re-run the preprocessor and ensure we have a cache hit
+exec preprocessor execute --debug=cache
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for content.dir.page.cache.code."json-superset"; not running'
+
+# Ensure the cache file did not change
+cmp content/dir/gen_cache.cue golden/content/dir/gen_cache.cue
 
 -- hugo/.keep --
 -- golden/content/dir/.keep --
@@ -22,6 +41,7 @@ content: dir: page: {
 	leftDelim:  "{{{"
 	rightDelim: "}}}"
 	vars: {
+		IN_CUE: "in.cue"
 		NORMAL: "normal variable"
 		RANDOM: {
 			pattern: "${xxxx}-${dddd}-${XXXX}"
@@ -34,8 +54,81 @@ content: dir: page: {
 >title: JSON Superset
 >---
 >
+>Some text before
+>Normal: {{{.NORMAL}}}
+>Random: {{{.RANDOM}}}
+>
+>{{{with step}}}
+>Normal: {{{.NORMAL}}}
+>Random: {{{.RANDOM}}}
+>{{{end}}}
+
+>{{{with code "en" "json-superset"}}}
+>exec cue export {{{.IN_CUE}}}
+>cmp stdout stdout.json
+>-- {{{.IN_CUE}}} --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment {{{.RANDOM}}}
+
+>	member2: 4
+>}
+>-- stdout.json --
+>{
+>    "map": {
+>        "member1": 3,
+>        "member2": 4
+>    }
+>}
+>{{{end}}}
+>{{{with upload "en" "upload"}}}
+>-- {{{.IN_CUE}}} --
+>// A doc comment
+>
+>upload: 5 // a line comment {{{.RANDOM}}}
+>{{{end}}}
+>{{{with script "en" "script"}}}
+>echo {{{.IN_CUE}}} {{{.RANDOM}}}
+>{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---
 
+Some text before
+Normal: normal variable
+Random: stable replacement
+
+{{< step stepNumber="1" >}}
+Normal: normal variable
+Random: stable replacement
+{{< /step >}}
+
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue" area="top-left" >}}
+// A doc comment
+map: {
+	member1: 3 // a line comment stable replacement
+
+	member2: 4
+}
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="json" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBpbi5jdWU=" >}}
+$ cue export in.cue
+{
+    "map": {
+        "member1": 3,
+        "member2": 4
+    }
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+```cue { title="in.cue" }
+// A doc comment
+
+upload: 5 // a line comment stable replacement
+```
+```text { title="TERMINAL" codeToCopy="ZWNobyBpbi5jdWUgc3RhYmxlIHJlcGxhY2VtZW50Cg==" }
+$ echo in.cue stable replacement
+in.cue stable replacement
+```
