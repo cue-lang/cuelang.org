@@ -6,7 +6,6 @@ hide_summary: true
 ---
 
 {{< cards >}}
-
 {{< card
 	title="The Logic of CUE"
 	href="../the-logic-of-cue"
@@ -20,19 +19,39 @@ hide_summary: true
 	label=" "
 >}}
 {{< /card >}}
+{{< /cards >}}
 
+## Common use cases
+
+{{< cards >}}
 {{< card
-	title="CUE's Configuration use case"
-	href="../configuration-use-case"
+	title="Configuration"
+	href="../configuration-use-case/"
 	label=" "
 >}}
 {{< /card >}}
-
 {{< card
-	title="CUE's Data Validation use case"
-	href="../data-validation-use-case"
+	title="Data Validation"
+	href="../data-validation-use-case/"
 	label=" "
 >}}
 {{< /card >}}
-
+{{< card
+	title="Schema Definition"
+	href="../schema-definition-use-case/"
+	label=" "
+>}}
+{{< /card >}}
+{{< card
+	title="Code Generation and Extraction"
+	href="../code-generation-and-extraction-use-case/"
+	label=" "
+>}}
+{{< /card >}}
+{{< card
+	title="Querying"
+	href="../querying-use-case/"
+	label=" "
+>}}
+{{< /card >}}
 {{< /cards >}}

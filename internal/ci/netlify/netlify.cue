@@ -107,7 +107,7 @@ config: #config & {
 		// They don't redirect to a specific page, but to the section index.
 		{
 			from:   "/docs/usecases*"
-			to:     "/search/?q=use%20case%20contentType:\"Concept%20Guides\""
+			to:     "/docs/concept/popular-guides/#common-use-cases"
 			status: 301
 		}, {
 			from:   "/docs/integrations*"
