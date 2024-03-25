@@ -291,7 +291,9 @@ func tabIndent(b []byte) []byte {
 	return append([]byte("\t"), bytes.ReplaceAll(b, []byte("\n"), []byte("\n\t"))...)
 }
 
-func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
+func (s *codeNode) writeTransformTo(res *bytes.Buffer) error {
+	b := new(bytes.Buffer)
+
 	// A rather coarse switch based on number of filenames.
 	//
 	// TODO refactor and tidy up
@@ -316,7 +318,6 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 
 		p("%s", data)
 		p("```")
-		return nil
 
 	default:
 		p := bufPrintf(b)
@@ -417,6 +418,8 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 			p("{{< /code-tab >}}\n")
 		}
 		p("{{< /code-tabs >}}")
-		return nil
 	}
+
+	res.WriteString(s.rf.page.config.randomReplace(b.String()))
+	return nil
 }

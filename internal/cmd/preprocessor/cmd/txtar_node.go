@@ -45,13 +45,14 @@ func (t *txtarNode) nodeType() string {
 }
 
 func (t *txtarNode) writeToHasher(w io.Writer) {
-	fmt.Fprintf(w, "%q.%q:\n%s", t.nodeType(), t.nodeLabel(), tabIndent(txtar.Format(t.archive)))
+	ar := t.rf.page.config.randomReplace(string(txtar.Format(t.archive)))
+	fmt.Fprintf(w, "%q.%q:\n%s", t.nodeType(), t.nodeLabel(), tabIndent([]byte(ar)))
 }
 
 func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
 	p("%swith %s %q %q%s\n", t.rf.page.config.LeftDelim, t.typ, t.lang, t.label, t.rf.page.config.RightDelim)
-	p("%s", txtar.Format(t.archive))
+	p("%s", t.rf.page.config.unexpandReferences(txtar.Format(t.archive)))
 	p("%send%s", t.rf.page.config.LeftDelim, t.rf.page.config.RightDelim)
 }
 

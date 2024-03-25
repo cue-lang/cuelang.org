@@ -47,7 +47,8 @@ func (u *uploadNode) validate() {
 	}
 }
 
-func (u *uploadNode) writeTransformTo(b *bytes.Buffer) error {
+func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
+	b := new(bytes.Buffer)
 	p := bufPrintf(b)
 	// For now there will be a single file, ensured by validate()
 	f := u.archive.Files[0]
@@ -71,6 +72,7 @@ func (u *uploadNode) writeTransformTo(b *bytes.Buffer) error {
 	p(" }\n")
 	p("%s", f.Data)
 	p("```")
+	res.WriteString(u.rf.page.config.randomReplace(b.String()))
 	return nil
 }
 
