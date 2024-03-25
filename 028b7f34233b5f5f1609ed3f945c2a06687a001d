@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2a27f1a_5c64c226",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 9
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-25T13:43:21Z",
+      "side": 1,
+      "message": "unfinished?",
+      "revId": "028b7f34233b5f5f1609ed3f945c2a06687a001d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25752d0c_468c8d6b",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 9
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-25T13:43:21Z",
+      "side": 1,
+      "message": "write userAuthnSrc in terms of this constant?",
+      "revId": "028b7f34233b5f5f1609ed3f945c2a06687a001d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc6b3073_f949a5b0",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 9
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-25T13:43:21Z",
+      "side": 1,
+      "message": "perhaps add\n\n```\n; run `cue login`\n```",
+      "revId": "028b7f34233b5f5f1609ed3f945c2a06687a001d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
