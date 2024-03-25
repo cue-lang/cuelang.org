@@ -92,6 +92,21 @@ package preprocessor
 		#unstableLineOrderComparator
 	}
 
+	// #var defines a variable value. A string indicates a normal, regular
+	// variable value. A struct value indicates a random variable value which
+	// defines a pattern of the random parts, and a stable replacement string
+	// which appears in output.
+	//
+	// The following regex patterns are replaced by random values
+	//
+	// * \$\{x+\}     => a lowercase hex value as long as the sequence of 'x's
+	// * \$\{X+\}     => an uppercase hex value as long as the sequence of 'X's
+	// * \$\{d+\}     => an integer value as long as the sequence of 'd's
+	#var: string | {
+		pattern!:     string & !=""
+		replacement!: string
+	}
+
 	#page: {
 		// It's questionable whether these leftDelim and rightDelim should be
 		// required or not. We can always relax this later.
@@ -133,6 +148,13 @@ package preprocessor
 		// Central Registry credentials to be made available as environemnt
 		// variables (named after that username) in multi-step scripts.
 		testUserAuthn?: [...string]
+
+		// vars defines a map of variables. Variables can be simple string values
+		// or specification of random variables. The only additional constraint
+		// on the variable map is that the values must themselves form a unique
+		// mapping to variable names. This is checked once the page configuration
+		// is loaded.
+		vars?: [string]: #var
 	}
 
 	content?: _siteContent
