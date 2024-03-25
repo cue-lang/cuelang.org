@@ -292,7 +292,7 @@ The
 contains other useful functions which are demonstrated in guides that you can
 discover through the site's search page:
 &#x1F50D;&nbsp;
-[search for how-to guides mentioning "encoding/yaml"](/search/?q="encoding/yaml"%20contentType:"How-to%20Guides")
+[search for how-to guides mentioning "encoding/yaml"](/search/?q=encoding/yaml%20contentType:%22How-to%20Guides%22)
 
 ## Converting YAML files to CUE
 
