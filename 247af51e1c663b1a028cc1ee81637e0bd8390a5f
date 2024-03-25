@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "14cfbb2b_ebcfbb7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-25T11:09:58Z",
+      "side": 1,
+      "message": "I\u0027ve not pushed a new version, yet. Let\u0027s discuss the point you raised and I replied to.",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8a4164bd_8adac704",
@@ -37,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c3159356_b86d5a75",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-25T11:09:58Z",
+      "side": 1,
+      "message": "I\u0027m not sure I agree. The repetition is a function of the changes being made at each boilerplate-removal \"step\":\n\n- amend one or more data files and display their new contents\n- add boilerplate-removal CUE into \u003csome file\u003e and show the file\n- demonstrate that the combination of new data files and new CUE produces the same output by running exporting YAML.\n\nI don\u0027t think that changing to a script can eliminate this repetition.\n\nAlso, given that the rendered form of each code block is pretty much as small as it\u0027s possible to be, I suspect that moving to an upload/script block setup will elongate the page.\n\nLet\u0027s discuss. I\u0027m happy to throw out a version of the page which just changes the code blocks as upload/script blocks, without changing the prose, so we can see the impact on the rendered form, if that\u0027d be useful.\n\nI won\u0027t do a pass over the prose before we have a chat, however, as I feel that pass will be led by the choice we make, as the prose will be non-trivially different when introducing a code block versus upload/script sequences.",
+      "parentUuid": "8a4164bd_8adac704",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "478b7cfd_08b74a9a",
         "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
         "patchSetId": 6
@@ -48,6 +83,24 @@
       "writtenOn": "2024-03-18T14:11:19Z",
       "side": 1,
       "message": "Per my previous review, I\u0027m not a fan of the UI/UX of this kind of link block.",
+      "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67eeae66_24133ea3",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-25T11:09:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "478b7cfd_08b74a9a",
       "revId": "247af51e1c663b1a028cc1ee81637e0bd8390a5f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
