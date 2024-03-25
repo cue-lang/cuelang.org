@@ -526,7 +526,7 @@ func (m *multiStepScript) cachePath() cue.Path {
 	// In its current form it cannot participate in the hash because of temporary
 	// paths. Perhaps the way to do this is to write certain bits of information
 	// as comments at the top of the bash script?
-	fmt.Fprintf(work, "script:\n%s\n", m.bashScript)
+	fmt.Fprintf(work, "script:\n%s\n", m.rootFile.page.config.randomReplace(m.bashScript))
 
 	// Use base32 encoding, because the result will be a field name that humans
 	// might care to read.
@@ -791,6 +791,12 @@ func (m *multiStepScript) run() (runerr error) {
 					}
 				}
 
+				// Now replace all random values which have a replacement with that replacement
+				// in both the command and the output
+				stmt.Doc = m.rootFile.page.config.randomReplace(stmt.Doc)
+				stmt.Cmd = m.rootFile.page.config.randomReplace(stmt.Cmd)
+				stmt.Output = m.rootFile.page.config.randomReplace(stmt.Output)
+
 				// At this point, stmt.Output is sanitised.
 
 				if !cacheMiss {
@@ -845,6 +851,8 @@ func (m *multiStepScript) run() (runerr error) {
 		// We need to assign from the cache the output values to the stmts
 		for i, stmt := range m.scriptSteps {
 			cstmt := cachedOutStmts[i]
+			stmt.Doc = cstmt.Doc
+			stmt.Cmd = cstmt.Cmd
 			stmt.Output = cstmt.Output
 			stmt.ExitCode = cstmt.ExitCode
 		}

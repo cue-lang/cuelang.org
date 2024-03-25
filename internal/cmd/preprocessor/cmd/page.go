@@ -75,7 +75,114 @@ type pageConfig struct {
 
 	TestUserAuthn []string `json:"testUserAuthn"`
 
-	Vars map[string]pageVar `json:"vars"`
+	Vars             map[string]pageVar `json:"vars"`
+	randomReplacer   *strings.Replacer
+	unexpandReplacer *strings.Replacer
+}
+
+func (p pageConfig) unexpandReferences(src []byte) []byte {
+	// We know that the reverse map is unique, but what we don't know is whether
+	// the values overlap in any way with variable names. A dumb approach via
+	// replace all would therefore be susceptible to replacing part of a
+	// variable name with a further reference to another variable.
+	//
+	// For example, if we had the variables:
+	//
+	// CUE: "really long value"
+	// BANANA: "CUE"
+	//
+	// Then the value "really long value" would be unexpanded first, leaving us
+	// with {{{.CUE}}} in src. At which point we would replace "CUE" with
+	// {{{.BANANA}}} leaving us with {{{.{{{.BANANA}}}}}}. Which is clearly
+	// wrong.
+	//
+	// The simplest way to fix this is to first replace with known random
+	// values, then do a second pass to replace with the references. Doesn't
+	// have to be cryto random, just unpredictable.
+	return []byte(p.unexpandReplacer.Replace(string(src)))
+}
+
+func (p *pageConfig) init() error {
+	// First ensure that we have a unique reverse map of variable's values. This
+	// is required in order that we can return a source txtar to a normalised
+	// form.
+	varValues := make(map[string][]string)
+	for name, val := range p.Vars {
+		l := varValues[val.value()]
+		l = append(l, name)
+		varValues[val.value()] = l
+	}
+	// Iterate the values in a stable order
+	var varValuesList []string
+	// TODO: switch to using maps.Keys
+	for val := range varValues {
+		varValuesList = append(varValuesList, val)
+	}
+	sort.Strings(varValuesList)
+	for _, val := range varValuesList {
+		names := varValues[val]
+		if len(names) != 1 {
+			sort.Strings(names)
+			return fmt.Errorf("multiple variables map to the same value: %v", strings.Join(names, ", "))
+		}
+	}
+
+	// Create a replacer for the random variable values to their stable
+	// alternative.
+	var randomVarsToReplace []pageVar
+	for _, v := range p.Vars {
+		v, ok := v.(randomVariable)
+		if !ok {
+			continue
+		}
+		randomVarsToReplace = append(randomVarsToReplace, v)
+	}
+	slices.SortFunc(randomVarsToReplace, func(lhs, rhs pageVar) int {
+		// Longest first
+		if diff := len(rhs.value()) - len(lhs.value()); diff != 0 {
+			return diff
+		}
+		// Lexicographic order second
+		return strings.Compare(lhs.value(), rhs.value())
+	})
+	var randomReplacerArgs []string
+	for _, v := range randomVarsToReplace {
+		randomReplacerArgs = append(randomReplacerArgs, v.value(), v.transformedValue())
+	}
+	p.randomReplacer = strings.NewReplacer(randomReplacerArgs...)
+
+	// Create a replacer for the unexpanded reference version of a variable.
+	type pair struct {
+		n string
+		v string
+	}
+	var unexpandVars []pair
+	for k, v := range p.Vars {
+		unexpandVars = append(unexpandVars, pair{
+			n: k,
+			v: v.value(),
+		})
+	}
+	slices.SortFunc(unexpandVars, func(lhs, rhs pair) int {
+		// Longest first
+		if diff := len(rhs.v) - len(lhs.v); diff != 0 {
+			return diff
+		}
+		// Lexicographic order second
+		return strings.Compare(lhs.v, rhs.v)
+	})
+	var unexpandReplacerArgs []string
+	for _, v := range unexpandVars {
+		ref := fmt.Sprintf("%s.%s%s", p.LeftDelim, v.n, p.RightDelim)
+		unexpandReplacerArgs = append(unexpandReplacerArgs, v.v, ref)
+	}
+	p.unexpandReplacer = strings.NewReplacer(unexpandReplacerArgs...)
+
+	return nil
+}
+
+func (p pageConfig) randomReplace(src string) string {
+	return p.randomReplacer.Replace(src)
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -194,28 +301,8 @@ func (p *page) loadConfig() {
 		return
 	}
 
-	// Now ensure that we have a unique reverse map of variable's values. This is
-	// required in order that we can return a source txtar to a normalised form.
-	varValues := make(map[string][]string)
-	for name, val := range p.config.Vars {
-		l := varValues[val.value()]
-		l = append(l, name)
-		varValues[val.value()] = l
-	}
-	// Iterate the values in a stable order
-	//
-	// TODO: use maps.Values when it lands in the std lib
-	var varValuesList []string
-	for val := range varValues {
-		varValuesList = append(varValuesList, val)
-	}
-	sort.Strings(varValuesList)
-	for _, val := range varValuesList {
-		names := varValues[val]
-		if len(names) != 1 {
-			sort.Strings(names)
-			p.errorf("%v: multiple variables map to the same value: %v", p, strings.Join(names, ", "))
-		}
+	if err := p.config.init(); err != nil {
+		p.errorf("%v: %v", p, err)
 	}
 }
 
