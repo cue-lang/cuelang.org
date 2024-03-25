@@ -8,9 +8,5 @@
      data-searchbar-size="{{ if not (eq $type "results") }}small{{ end }}"
      data-searchbar-placeholder="{{ $placeholder }}"
 >
-    <div class="searchbar__logo">
-        {{ with resources.Get "svg/algolia-search.svg" }}{{ ( . | minify ).Content | safeHTML }}{{ end }}
-    </div>
-
     <div id="autocomplete-{{ $type }}"></div>
 </div>
