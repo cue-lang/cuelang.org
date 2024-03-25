@@ -1,0 +1,41 @@
+# Ensure that preprocessor understands pages declaring variables
+
+unquote content/dir/en.md
+
+# Make a golden file of the input to ensure it is written back intact
+cp content/dir/en.md golden/content/dir/en.md
+
+# Run the preprocessor
+exec preprocessor execute
+
+# Verify that the target files matche the source contents
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+-- hugo/.keep --
+-- golden/content/dir/.keep --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+	vars: {
+		NORMAL: "normal variable"
+		RANDOM: {
+			pattern: "${xxxx}-${dddd}-${XXXX}"
+			replacement: "stable replacement"
+		}
+	}
+}
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+-- golden/hugo/content/en/dir/index.md --
+---
+title: JSON Superset
+---
+

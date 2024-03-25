@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"cuelang.org/go/cue"
@@ -73,6 +74,8 @@ type pageConfig struct {
 	Comparators []comparatorMatcher
 
 	TestUserAuthn []string `json:"testUserAuthn"`
+
+	Vars map[string]pageVar `json:"vars"`
 }
 
 func (p *page) Format(state fmt.State, verb rune) {
@@ -139,6 +142,8 @@ func (p *page) loadConfig() {
 
 		Sanitisers  []json.RawMessage `json:"sanitisers"`
 		Comparators []json.RawMessage `json:"comparators"`
+
+		Vars map[string]json.RawMessage `json:"vars"`
 	}
 
 	s := shim{
@@ -166,6 +171,52 @@ func (p *page) loadConfig() {
 			return
 		}
 		p.config.Comparators = append(p.config.Comparators, realC)
+	}
+
+	if len(s.Vars) > 0 {
+		p.config.Vars = make(map[string]pageVar, len(s.Vars))
+	}
+	for k, v := range s.Vars {
+		// Attempt a string unmarshal first
+		var sv string
+		if err := json.Unmarshal(v, &sv); err == nil {
+			p.config.Vars[k] = stringVar(sv)
+			continue
+		}
+		var rv randomVariable
+		if err := json.Unmarshal(v, &rv); err == nil {
+			p.config.Vars[k] = newRandomVariable(rv)
+			continue
+		}
+		p.errorf("%v: failed to parse variable at key %q", p, k)
+	}
+	if p.isInError() {
+		return
+	}
+
+	// Now ensure that we have a unique reverse map of variable's values. This is
+	// required in order that we can return a source txtar to a normalised form.
+	varValues := make(map[string][]string)
+	for name, val := range p.config.Vars {
+		l := varValues[val.value()]
+		l = append(l, name)
+		varValues[val.value()] = l
+	}
+	// Iterate the values in a stable order
+	var varValuesList []string
+	for val := range varValues {
+		varValuesList = append(varValuesList, val)
+	}
+	sort.Strings(varValuesList)
+	for _, val := range varValuesList {
+		names := varValues[val]
+		if len(names) != 1 {
+			sort.Strings(names)
+			p.errorf("%v: multiple variables map to the same value: %v", p, strings.Join(names, ", "))
+		}
+	}
+	if p.isInError() {
+		return
 	}
 }
 
