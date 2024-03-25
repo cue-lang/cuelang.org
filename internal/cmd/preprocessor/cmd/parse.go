@@ -201,47 +201,48 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		return nil, rf.bodyError(c, "expected at least one arg, not zero")
 	}
 	arg0 := c.Args[0]
-	fn, ok := arg0.(*parse.IdentifierNode)
-	if !ok {
-		return nil, rf.bodyError(c, "expected identifier as first arg; got %T", arg0)
-	}
-	switch fn.Ident {
-	case fnCode:
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
-		if err != nil {
-			return nil, err
+	switch arg0 := arg0.(type) {
+	case *parse.IdentifierNode:
+		switch arg0.Ident {
+		case fnCode:
+			t, err := rf.parse_txtarNode(n, arg0.Ident, c.Args[1:])
+			if err != nil {
+				return nil, err
+			}
+			return &codeNode{
+				txtarNode:       t,
+				effectiveScript: t.archive.Comment,
+			}, nil
+		case fnStep:
+			// Increment first because we are numbering from 1
+			rf.stepNumber++
+			return rf.parse_stepNode(n, rf.stepNumber)
+		case fnUpload, fnHiddenUpload:
+			hidden := arg0.Ident == fnHiddenUpload
+			t, err := rf.parse_txtarNode(n, arg0.Ident, c.Args[1:])
+			if err != nil {
+				return nil, err
+			}
+			return &uploadNode{
+				txtarNode: t,
+				hidden:    hidden,
+			}, nil
+		case fnScript, fnHiddenScript:
+			hidden := arg0.Ident == fnHiddenScript
+			t, err := rf.parse_txtarNode(n, arg0.Ident, c.Args[1:])
+			if err != nil {
+				return nil, err
+			}
+			return &scriptNode{
+				txtarNode: t,
+				hidden:    hidden,
+			}, nil
+		case "sidetrack":
+		default:
+			return nil, rf.bodyError(arg0, "do not know how to handle with identifier %q", arg0.Ident)
 		}
-		return &codeNode{
-			txtarNode:       t,
-			effectiveScript: t.archive.Comment,
-		}, nil
-	case fnStep:
-		// Increment first because we are numbering from 1
-		rf.stepNumber++
-		return rf.parse_stepNode(n, rf.stepNumber)
-	case fnUpload, fnHiddenUpload:
-		hidden := fn.Ident == fnHiddenUpload
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
-		if err != nil {
-			return nil, err
-		}
-		return &uploadNode{
-			txtarNode: t,
-			hidden:    hidden,
-		}, nil
-	case fnScript, fnHiddenScript:
-		hidden := fn.Ident == fnHiddenScript
-		t, err := rf.parse_txtarNode(n, fn.Ident, c.Args[1:])
-		if err != nil {
-			return nil, err
-		}
-		return &scriptNode{
-			txtarNode: t,
-			hidden:    hidden,
-		}, nil
-	case "sidetrack":
 	default:
-		return nil, rf.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
+		return nil, rf.bodyError(c, "expected identifier or variable as first arg; got %T", arg0)
 	}
 	return &nodeWrapper{
 		rf:               rf,
@@ -282,17 +283,50 @@ func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse
 	}
 	lang, label := strArgs[0], strArgs[1]
 
-	// We only support a single TextNode body, i.e. the contents of a txtar archive
-	if n.List == nil || len(n.List.Nodes) != 1 {
-		return res, rf.bodyError(n, "%s must have a text-only body", kind)
+	// Assert that we only have a list of TextNodes possibly interleaved with
+	// ActionNodes which are simple references.
+
+	if len(n.List.Nodes) == 0 {
+		// TODO: not sure if this can actually happen
+		return res, rf.bodyError(n, "expected at least one body element")
 	}
-	tn, ok := n.List.Nodes[0].(*parse.TextNode)
-	if !ok {
-		return res, rf.bodyError(n, "%s must have a text-only body", kind)
+
+	var text []byte
+
+	for i, ln := range n.List.Nodes {
+		switch ln := ln.(type) {
+		case *parse.TextNode:
+			if i == 0 {
+				// We "always" use {{{ with .. }}} on a clean line. Strip the
+				// leading \n that therefore forms part of the body.
+				//
+				// TODO: feels like there should be a better way
+				text = append(text, ln.Text[1:]...)
+			} else {
+				text = append(text, ln.Text...)
+			}
+		case *parse.ActionNode:
+			possRefNode, err := rf.parse_ActionNode(ln)
+			if err != nil {
+				return res, err
+			}
+			refNode, ok := possRefNode.(*referenceNode)
+			if !ok {
+				return res, rf.bodyError(ln, "expected reference to variable")
+			}
+			v, ok := rf.page.config.Vars[refNode.reference]
+			if !ok {
+				return res, rf.bodyError(ln, "bad state: reference to variable %q that doesn't exist?", refNode.reference)
+			}
+			// Replace the reference here with the value. Later, when we come
+			// to calculate hashes and write output, we will (at the last minute)
+			// replace the random value with any replace value.
+			text = append(text, []byte(v.value())...)
+		default:
+			return res, rf.bodyError(ln, "must be text or reference to a variable")
+		}
 	}
-	// We "always" use {{{ with .. }}} on a clean line. Strip the leading \n that
-	// therefore forms part of the body.
-	text := tn.Text[1:]
+
 	ar := txtar.Parse(text)
 
 	res = txtarNode{
@@ -323,24 +357,45 @@ func (rf *rootFile) parse_ActionNode(n *parse.ActionNode) (node, error) {
 		return nil, rf.bodyError(c, "expected at least one arg, not zero")
 	}
 	arg0 := c.Args[0]
-	fn, ok := arg0.(*parse.IdentifierNode)
-	if !ok {
-		return nil, rf.bodyError(c, "expected identifier as first arg; got %T", arg0)
-	}
-	switch fn.Ident {
-	case "TODO":
-		// TODO implement parsing of TODO nodes
-	case "def":
-		// TODO implement parsing of def nodes
-	case "reference":
-		// TODO implement parsing of reference nodes
+	switch arg0 := arg0.(type) {
+	case *parse.FieldNode:
+		// We only support simply references for now, i.e. ".Test" and not
+		// ".Test.This"
+		if len(arg0.Ident) != 1 {
+			return nil, rf.bodyError(arg0, "expected a single simple variable reference")
+		}
+		refName := arg0.Ident[0]
+		// Ensure that the variable referenced exists
+		if _, ok := rf.page.config.Vars[refName]; !ok {
+			return nil, rf.bodyError(arg0, "reference to variable %q that does not exist", arg0.Ident)
+		}
+		return &referenceNode{
+			nodeWrapper: &nodeWrapper{
+				rf:               rf,
+				underlying:       n,
+				errorContext:     rf.errorContext,
+				executionContext: rf.executionContext,
+			},
+			reference: refName,
+		}, nil
+	case *parse.IdentifierNode:
+		switch arg0.Ident {
+		case "TODO":
+			// TODO implement parsing of TODO nodes
+		case "def":
+			// TODO implement parsing of def nodes
+		case "reference":
+			// TODO implement parsing of reference nodes
+		default:
+			return nil, rf.bodyError(arg0, "do not know how to handle with identifier %q", arg0.Ident)
+		}
+		return &nodeWrapper{
+			rf:               rf,
+			underlying:       n,
+			errorContext:     rf.errorContext,
+			executionContext: rf.executionContext,
+		}, nil
 	default:
-		return nil, rf.bodyError(fn, "do not know how to handle with identifier %q", fn.Ident)
+		return nil, rf.bodyError(c, "expected identifier or variable as first arg; got %T", arg0)
 	}
-	return &nodeWrapper{
-		rf:               rf,
-		underlying:       n,
-		errorContext:     rf.errorContext,
-		executionContext: rf.executionContext,
-	}, nil
 }
