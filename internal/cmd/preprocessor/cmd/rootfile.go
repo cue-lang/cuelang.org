@@ -178,6 +178,9 @@ func (rf *rootFile) transform(targetPath string) error {
 		return errorIfInError(rf)
 	}
 
+	// Post run, but before doing anything else, we now need to sanitise
+	// the random values that appear in scriptthat have replace
+
 	// Derive a map of hashes of the runnable nodes
 	if err := rf.writePageCache(); err != nil {
 		return err
@@ -197,6 +200,7 @@ func (rf *rootFile) transform(targetPath string) error {
 	if err := rf.writeTarget(transformed); err != nil {
 		return err
 	}
+
 	if err := writeIfDiff(transformed, targetPath, nil); err != nil {
 		return err
 	}
@@ -318,6 +322,9 @@ func (rf *rootFile) run() error {
 			} else { // skip cache
 				rf.debugf(rf.debugCache, "%v: skipping cache for %v; was a hit", rf, hashPath)
 			}
+
+			// Now replace any variables
+
 			r := n.run()
 			torun = append(torun, r)
 		}
@@ -526,7 +533,7 @@ func (m *multiStepScript) cachePath() cue.Path {
 	// In its current form it cannot participate in the hash because of temporary
 	// paths. Perhaps the way to do this is to write certain bits of information
 	// as comments at the top of the bash script?
-	fmt.Fprintf(work, "script:\n%s\n", m.bashScript)
+	fmt.Fprintf(work, "script:\n%s\n", m.rootFile.page.config.randomReplaceStr(m.bashScript))
 
 	// Use base32 encoding, because the result will be a field name that humans
 	// might care to read.
@@ -551,28 +558,7 @@ func (m *multiStepScript) run() (runerr error) {
 	if err != nil {
 		return m.errorf("%v: failed to create temp dir for running multistep script: %v", m, err)
 	}
-
 	scriptsDir := filepath.Join(td, "scripts")
-	if err := os.Mkdir(scriptsDir, 0777); err != nil {
-		m.fatalf("%v: failed to create scripts directory %v: %v", m, scriptsDir, err)
-	}
-	scriptsFile := filepath.Join(scriptsDir, "script.sh")
-	if err := os.WriteFile(scriptsFile, []byte(m.bashScript), 0777); err != nil {
-		m.fatalf("%v: failed to write temporary script to %v: %v", m, scriptsFile, err)
-	}
-
-	// Explicitly change the permissions for the scripts directory and the
-	// script itself so that when mounted within the docker container they are
-	// runnable by anyone. This is necessary because the bind mount used adopts
-	// the same owner and permissions as the host. Therefore, to be runnable
-	// by any user, including the user who ends up running the script as defined
-	// by the image we are using, we need to be liberal.
-	if err := os.Chmod(scriptsDir, 0777); err != nil {
-		m.fatalf("%v: failed to change permissions of %v: %v", m, scriptsDir, err)
-	}
-	if err := os.Chmod(scriptsFile, 0777); err != nil {
-		m.fatalf("%v: failed to change permissions of %v: %v", m, scriptsFile, err)
-	}
 
 	var args []string
 	args = append(args,
@@ -704,6 +690,28 @@ func (m *multiStepScript) run() (runerr error) {
 			m.debugf(m.debugCache, "%v: skipping cache for multi-step script; was a hit", m)
 		}
 
+		// Write out the bash script and fix up permissions
+		if err := os.Mkdir(scriptsDir, 0777); err != nil {
+			m.fatalf("%v: failed to create scripts directory %v: %v", m, scriptsDir, err)
+		}
+		scriptsFile := filepath.Join(scriptsDir, "script.sh")
+		if err := os.WriteFile(scriptsFile, []byte(m.bashScript), 0777); err != nil {
+			m.fatalf("%v: failed to write temporary script to %v: %v", m, scriptsFile, err)
+		}
+
+		// Explicitly change the permissions for the scripts directory and the
+		// script itself so that when mounted within the docker container they are
+		// runnable by anyone. This is necessary because the bind mount used adopts
+		// the same owner and permissions as the host. Therefore, to be runnable
+		// by any user, including the user who ends up running the script as defined
+		// by the image we are using, we need to be liberal.
+		if err := os.Chmod(scriptsDir, 0777); err != nil {
+			m.fatalf("%v: failed to change permissions of %v: %v", m, scriptsDir, err)
+		}
+		if err := os.Chmod(scriptsFile, 0777); err != nil {
+			m.fatalf("%v: failed to change permissions of %v: %v", m, scriptsFile, err)
+		}
+
 		m.debugf(m.debugScript, "%v: creating multi-step script container", m)
 		m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
 		m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
@@ -791,6 +799,12 @@ func (m *multiStepScript) run() (runerr error) {
 					}
 				}
 
+				// Now replace all random values which have a replacement with that replacement
+				// in both the command and the output
+				stmt.Doc = m.rootFile.page.config.randomReplaceStr(stmt.Doc)
+				stmt.Cmd = m.rootFile.page.config.randomReplaceStr(stmt.Cmd)
+				stmt.Output = m.rootFile.page.config.randomReplaceStr(stmt.Output)
+
 				// At this point, stmt.Output is sanitised.
 
 				if !cacheMiss {
@@ -845,6 +859,7 @@ func (m *multiStepScript) run() (runerr error) {
 		// We need to assign from the cache the output values to the stmts
 		for i, stmt := range m.scriptSteps {
 			cstmt := cachedOutStmts[i]
+			stmt.Cmd = cstmt.Cmd
 			stmt.Output = cstmt.Output
 			stmt.ExitCode = cstmt.ExitCode
 		}
