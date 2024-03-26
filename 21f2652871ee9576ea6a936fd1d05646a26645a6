@@ -90,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "22517492_7dc2bbcf",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T15:28:34Z",
+      "side": 1,
+      "message": "PTAL at the new layout.",
+      "parentUuid": "1872b360_a828e84f",
+      "revId": "21f2652871ee9576ea6a936fd1d05646a26645a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a3aa4963_5456563e",
         "filename": "content/docs/reference/_en.md",
         "patchSetId": 1
