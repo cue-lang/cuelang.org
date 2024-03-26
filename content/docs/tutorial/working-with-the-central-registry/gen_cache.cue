@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial config.cue": "IRXPFQRd/ngbiOludO+tQym48y01UwnkDp5OazJXenU="
+								"initial config.cue": "DPtdupHYynKkEIaXgLdeazbAUVzYARe9/t8QmfhftqQ="
 							}
 							multi_step: {
-								"F68746J937BSABF4NK5J8GGS9L3ITERAT25QA93ORFRCSNE8NBLG====": [{
+								"O3MKC60HS82JV1MI47I10R9LTA61JKH8B3Q3P0QILUUHT1B3UV3G====": [{
 									doc:      ""
 									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
 									exitCode: 0
