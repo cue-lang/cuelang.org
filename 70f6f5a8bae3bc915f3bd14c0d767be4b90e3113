@@ -35,6 +35,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cb2acec_46683cb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "Excellent - thank you :-)\n\nI can\u0027t post comments on that CL. In their place, here are a couple of minor typos I noticed in that CL\u0027s commit message: \n\n- `s/fiel/file/`\n- `s/we can stil say/we can still say/`",
+      "parentUuid": "6332b1e8_52d96584",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "239fcd7b_98e3d631",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "I think that change will be hugely helpful, not only to this guide and future pages like it, but also to help sharpen up the tooling-related phrasing in the replacement use-case docs (e.g. https://cuelang.org/cl/1185192)",
+      "parentUuid": "e6cc982d_0aef711f",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3dc4c27_aec03351",
@@ -76,6 +112,54 @@
         "startChar": 21,
         "endLine": 2,
         "endChar": 25
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07157dc0_c898933b",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f437aec5_fe02c919",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a336140_47e6705f",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "(Assuming `s/such a guide/such a tool`)\n\nI don\u0027t /think/ that\u0027s the purpose of this  guide. I wrote this page motivated by two main reasons:\n\n1. to show a simple command being executed, which we don\u0027t yet do **anywhere**, and\n2. to accept an inbound link from the bottom of https://cl-1185192-9--cue-cls.netlify.app/docs/concept/how-cue-enables-configuration/#tooling-and-automation, as suggested by you at https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1183455/comment/ee77805d_1655e5cc/.\n\nIf I misunderstood and mis-transcribed the thrust of your comment in CL 1183455, please could you (help me) update https://github.com/cue-lang/docs-and-content/issues/102 to better reflect the user need?",
+      "parentUuid": "e3dc4c27_aec03351",
+      "range": {
+        "startLine": 2,
+        "startChar": 7,
+        "endLine": 2,
+        "endChar": 14
       },
       "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -127,6 +211,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6880b725_4046ce4d",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a306ea2e_996ce439",
+      "range": {
+        "startLine": 11,
+        "startChar": 52,
+        "endLine": 11,
+        "endChar": 75
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dad47384_643e7b5b",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a3d938c_294a4f4e",
+      "range": {
+        "startLine": 11,
+        "startChar": 38,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff2b4c1f_1062eef0",
@@ -144,6 +276,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1848fd8_ebf3fa1f",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff2b4c1f_1062eef0",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb9ff2d5_8c1dc851",
@@ -157,6 +307,24 @@
       "writtenOn": "2024-03-26T05:51:18Z",
       "side": 1,
       "message": "Also link to https://cl-1185798-4--cue-cls.netlify.app/docs/reference/cli/cue-injection/ for more help with `-t` and friends.",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c8eee0f_555762bf",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-26T16:45:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb9ff2d5_8c1dc851",
       "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
