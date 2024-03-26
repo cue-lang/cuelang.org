@@ -1,6 +1,9 @@
 ---
 title: Contribution Guide
 weight: 10
+toc_hide: true
+aliases:
+- /community/contribution-guidelines
 ---
 
 The CUE project welcomes all contributors, and there are many ways that you can
