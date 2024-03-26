@@ -89,7 +89,7 @@
 [[footer]]
     parent = "column2"
     name = "Code of Conduct"
-    url = "/community/conduct"
+    url = "/docs/reference/code-of-conduct/"
     weight = 422
 [[footer]]
     identifier = "column3"

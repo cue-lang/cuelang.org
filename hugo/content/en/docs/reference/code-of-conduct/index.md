@@ -2,6 +2,8 @@
 title: Code of Conduct
 weight: 100
 toc_hide: false
+aliases:
+- /community/conduct
 ---
 
 ## About
