@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6cc982d_0aef711f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T05:51:18Z",
+      "side": 1,
+      "message": "I\u0027m going to propose a change in the main CUE repo to see if we can\u0027t shift from referring to \"CUE commands\" to \"CUE workflow commands\". The former is just too ambiguous when it comes to other, well, commands, not least `cue` commands like `export` etc.",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3dc4c27_aec03351",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T05:51:18Z",
+      "side": 1,
+      "message": "Isn\u0027t this guide more about writing such a guide in the first instance?",
+      "range": {
+        "startLine": 2,
+        "startChar": 7,
+        "endLine": 2,
+        "endChar": 14
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f437aec5_fe02c919",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T05:51:18Z",
+      "side": 1,
+      "message": "\"workflow command\" - see below for suggestion.",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a306ea2e_996ce439",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T05:51:18Z",
+      "side": 1,
+      "message": "This is detail that belongs elsewhere to my mind. Possibly below the code block?",
+      "range": {
+        "startLine": 11,
+        "startChar": 52,
+        "endLine": 11,
+        "endChar": 75
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a3d938c_294a4f4e",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T05:51:18Z",
+      "side": 1,
+      "message": "\"workflow command\"\n\nWe have never really landed on good language here. Using the word \"workflow\" in there helps I think. This stuff all exists in the tooling layer... but that\u0027s not a point we need to make here.",
+      "range": {
+        "startLine": 11,
+        "startChar": 38,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff2b4c1f_1062eef0",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T05:51:18Z",
+      "side": 1,
+      "message": "I think a single tagged field is sufficient to make the point. Having two makes it twice as hard to read, for no benefit to my mind.",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb9ff2d5_8c1dc851",
+        "filename": "content/docs/howto/run-a-cue-tool-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T05:51:18Z",
+      "side": 1,
+      "message": "Also link to https://cl-1185798-4--cue-cls.netlify.app/docs/reference/cli/cue-injection/ for more help with `-t` and friends.",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
