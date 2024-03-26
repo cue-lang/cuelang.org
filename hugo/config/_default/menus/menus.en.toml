@@ -84,7 +84,7 @@
 [[footer]]
     parent = "column2"
     name = "Contributing"
-    url = "/community/contribution-guidelines"
+    url = "/docs/reference/contribution-guidelines/"
     weight = 421
 [[footer]]
     parent = "column2"

@@ -1,6 +1,9 @@
 ---
 title: Contribution Guide
 weight: 10
+toc_hide: true
+aliases:
+- /community/contribution-guidelines
 ---
 
 The CUE project welcomes all contributors, and there are many ways that you can
@@ -306,10 +309,16 @@ automatically as it is "merged" in GerritHub. Congratulations! You will have
 made your first contribution to the CUE project.
 
 
-## Preparing for GerritHub [CL](https://google.github.io/eng-practices/#terminology) Contributions
+## Preparing for GerritHub CL Contributions
 
 CUE maintainers use GerritHub for code review. It has a powerful review
 interface with comments that are attributed to patchsets (versions of a change).
+
+GerritHub's unit of change is the "CL", or changelist.
+A CL is one self-contained change which is undergoing code review,
+and is represented by a single commit.
+Other organizations often call this a “change”, “patch”, or “pull-request”.
+
 Orienting changes around a single commit allows for "stacked" changes, and also
 encourages unrelated changes to be broken into separate CLs because the process
 of creating and linking CLs is so easy.
