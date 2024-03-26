@@ -1008,5 +1008,5 @@ flag will now be implied every time a commit is created.
 ## Code of Conduct
 
 Guidelines for participating in CUE community spaces and a reporting process for
-handling issues can be found in the [Code of
-Conduct](https://cuelang.org/docs/contribution_guidelines/conduct).
+handling issues can be found in the
+[Code of Conduct]({{< relref "docs/reference/code-of-conduct" >}}).
