@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6332b1e8_52d96584",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-03-26T07:06:04Z",
+      "side": 1,
+      "message": "See https://review.gerrithub.io/c/cue-lang/cue/+/1187654",
+      "revId": "70f6f5a8bae3bc915f3bd14c0d767be4b90e3113",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3dc4c27_aec03351",
