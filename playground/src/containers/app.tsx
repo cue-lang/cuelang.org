@@ -86,6 +86,7 @@ export class App extends React.Component<AppProps, AppState>
         let saved = false;
         const urlSearchParams = getSearchParamsFromUrl();
         const params: hashParams = getHashParamsFromUrl();
+        const defaultCUEInput = 'welcome-to-cue';
 
         // Check if we have saved code to get
         const id = urlSearchParams.get('id');
@@ -115,6 +116,12 @@ export class App extends React.Component<AppProps, AppState>
                 } else {
                     // Remove example from searchparams when it's not a valid example
                     urlSearchParams.delete('example');
+                }
+            } else { // If we don't have an example, default to displaying a specific example's content
+                const example = examples.find(item => item.slug === defaultCUEInput);
+                if (example) {
+                    activeWorkspace = availableWorkspaces[example.workspace];
+                    activeWorkspace.config = example.workspaceConfig;
                 }
             }
         }
