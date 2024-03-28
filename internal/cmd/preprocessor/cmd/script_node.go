@@ -65,7 +65,7 @@ func (s *scriptNode) validate() {
 	// Now ensure that we can parse the script
 	//
 	// Per @mvdan, use https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Parser.Stmts
-	file, err := syntax.NewParser(syntax.KeepComments(true)).Parse(bytes.NewReader(s.effectiveArchive.Comment), "")
+	file, err := syntax.NewParser(syntax.KeepComments(true)).Parse(bytes.NewReader(s.archive.Comment), "")
 	if err != nil {
 		// If we get an error here we cannot proceed to further
 		// validation analysis
@@ -73,7 +73,7 @@ func (s *scriptNode) validate() {
 		return
 	}
 
-	s.debugf(s.debugScript, "parsed %q, gave %v statements", s.effectiveArchive.Comment, len(file.Stmts))
+	s.debugf(s.debugScript, "parsed %q, gave %v statements", s.archive.Comment, len(file.Stmts))
 
 	// Now render each statement, creating doc comments for each as we go, and
 	// gathering any non-doc comments as script node-level comments.
