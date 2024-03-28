@@ -11,17 +11,17 @@ import { OPTION_TYPE } from '@models/options';
 // Clone config because we don't want to change the original workspace config
 const config = cloneDeep<WorkspaceConfig>(functionWorkspace.config);
 
-export const defaultExample: Example = {
-    slug: 'welcome-to-cue',
+export const exIntroWelcomeToCue: Example = {
+    slug: 'intro-welcome-to-cue',
     title: 'Welcome to CUE!',
-    category: 'Category 1',
+    category: 'Introduction',
     workspace: WORKSPACE.FUNC,
     workspaceConfig: {
         ...config,
         inputTabs: config.inputTabs.map((tab) => {
             if (tab.type === OPTION_TYPE.INPUT) {
-                // This text is a manually sync'd copy of defaultExample.cue, produced by
-		//   cue export text: defaultExample.cue
+                // This text is a manually sync'd copy of <basename>.cue, produced by
+		//   cue export text: <basename>.cue
                 // TODO: make this better (cue-lang/cue#2995)
                 tab.code = "// Welcome to CUE!\n//\n// Play around with CUE by typing directly into this window,\n// or use the Examples menu to load some CUE.\n//\n// There are many examples of how to use the language on the CUE\n// documentation site, https://cuelang.org/docs/, with the language\n// tour being a great place to start: https://cuelang.org/docs/tour/.\n// Just Ctrl-click links to open them in a new window.\n//\n// You can safely delete the text in this editor window - simply\n// reload the page to see this message again. Happy CUEing!\n\n// This is a comment\n_greeting: \"Welcome\" // Hidden fields start with \"_\"\n#project:  \"CUE\"     // Definitions start with \"#\"\n\nmessage: \"\\(_greeting) to \\(#project)!\" // Regular fields are exported\n";
             }

@@ -1,13 +1,18 @@
-import { Example } from '@models/example';
-import { defaultExample } from '@config/examples/defaultExample';
-import { testExample } from '@config/examples/example';
 import { cloneDeep } from 'lodash';
-import { testExample2 } from '@config/examples/example2';
-import { testExample3 } from '@config/examples/example3';
+import { Example } from '@models/example';
+import { exIntroWelcomeToCue} from '@config/examples/exIntroWelcomeToCue';
+import { exIntroBasicTypes} from '@config/examples/exIntroBasicTypes';
+import { exIntroStructsAndLists} from '@config/examples/exIntroStructsAndLists';
+import { exTourBasicsJsonSuperset } from '@config/examples/exTourBasicsJsonSuperset';
+import { exTourBasicsTypesAreValues } from '@config/examples/exTourBasicsTypesAreValues';
+// import { exPolicy } from '@config/examples/exPolicy';
 
 export const examples: Example[] = [
-    cloneDeep(defaultExample),
-    cloneDeep(testExample),
-    cloneDeep(testExample2),
-    cloneDeep(testExample3),
+    cloneDeep(exIntroWelcomeToCue),
+    cloneDeep(exIntroBasicTypes),
+    cloneDeep(exIntroStructsAndLists),
+    cloneDeep(exTourBasicsJsonSuperset),
+    cloneDeep(exTourBasicsTypesAreValues),
+    // Policy workspace is currently disabled.
+    // cloneDeep(exPolicy),
 ];

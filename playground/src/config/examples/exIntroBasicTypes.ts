@@ -11,16 +11,19 @@ import { OPTION_TYPE } from '@models/options';
 // Clone config because we don't want to change the original workspace config
 const config = cloneDeep<WorkspaceConfig>(functionWorkspace.config);
 
-export const testExample: Example = {
-    slug: 'test-example',
-    title: 'Test example',
-    category: 'Category 1',
+export const exIntroBasicTypes: Example = {
+    slug: 'intro-basic-types',
+    title: 'Basic Types',
+    category: 'Introduction',
     workspace: WORKSPACE.FUNC,
     workspaceConfig: {
         ...config,
         inputTabs: config.inputTabs.map((tab) => {
             if (tab.type === OPTION_TYPE.INPUT) {
-                tab.code = 'Examples are coming soon!';
+                // This text is a manually sync'd copy of <basename>.cue, produced by
+		//   cue export text: <basename>.cue
+                // TODO: make this better (cue-lang/cue#2995)
+                tab.code = "// CUE has several basic types:\n\na: int\nb: float\nc: string\nd: bool\ne: null\nf: bytes\ng: number\n\n// Each type has a literal form:\n\na: 42\nb: 42.0\nc: \"42\"\nd: true\ne: null\nf: '42'\ng: 42 | 42.0 // number is compatible with int or float\n";
             }
             return tab;
         }),
