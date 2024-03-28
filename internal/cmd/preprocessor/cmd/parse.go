@@ -211,7 +211,10 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		if err != nil {
 			return nil, err
 		}
-		return &codeNode{txtarNode: t}, nil
+		return &codeNode{
+			txtarNode:       t,
+			effectiveScript: t.archive.Comment,
+		}, nil
 	case fnStep:
 		// Increment first because we are numbering from 1
 		rf.stepNumber++
@@ -299,11 +302,10 @@ func (rf *rootFile) parse_txtarNode(n *parse.WithNode, kind string, args []parse
 			errorContext:     rf.errorContext,
 			executionContext: rf.executionContext,
 		},
-		typ:              kind,
-		lang:             lang,
-		label:            label,
-		sourceArchive:    ar,
-		effectiveArchive: ar, // This gets updated in a run step if one happens
+		typ:     kind,
+		lang:    lang,
+		label:   label,
+		archive: ar,
 
 		analysis: analyseTxtarArchive(ar),
 	}
