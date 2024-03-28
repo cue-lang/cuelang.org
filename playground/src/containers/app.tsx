@@ -86,7 +86,7 @@ export class App extends React.Component<AppProps, AppState>
         let saved = false;
         const urlSearchParams = getSearchParamsFromUrl();
         const params: hashParams = getHashParamsFromUrl();
-        const defaultCUEInput = 'welcome-to-cue';
+        const defaultCUEInput = 'intro-welcome-to-cue';
 
         // Check if we have saved code to get
         const id = urlSearchParams.get('id');

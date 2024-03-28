@@ -1,4 +1,5 @@
 export const categoryWeight: {[key: string]: number } = {
-    'Category 1': 10,
-    'Category 2': 20,
+    'Introduction': 1,
+    'Tour': 10,
+    'Commented CUE': 20,
 }

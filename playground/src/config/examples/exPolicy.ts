@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash';
 import { Example } from '@models/example';
 import { WORKSPACE, WorkspaceConfig } from '@models/workspace';
-import { functionWorkspace } from '@config/workspaces';
+import { policyWorkspace } from '@config/workspaces';
 import { OPTION_TYPE } from '@models/options';
 
 /*  In the future we can also let the pre-processor create examples based on one of the workspace config's
@@ -9,18 +9,21 @@ import { OPTION_TYPE } from '@models/options';
     is correct for the chosen workspace. */
 
 // Clone config because we don't want to change the original workspace config
-const config = cloneDeep<WorkspaceConfig>(functionWorkspace.config);
+const config = cloneDeep<WorkspaceConfig>(policyWorkspace.config);
 
-export const testExample: Example = {
-    slug: 'test-example',
-    title: 'Test example',
-    category: 'Category 1',
-    workspace: WORKSPACE.FUNC,
+export const exPolicy: Example = {
+    slug: 'policy',
+    title: 'Policy example',
+    category: 'TODO',
+    workspace: WORKSPACE.POLICY,
     workspaceConfig: {
         ...config,
         inputTabs: config.inputTabs.map((tab) => {
             if (tab.type === OPTION_TYPE.INPUT) {
-                tab.code = 'Examples are coming soon!';
+                tab.code = 'Examples for policy input are coming soon!';
+            }
+            if (tab.type === OPTION_TYPE.POLICY) {
+                tab.code = 'Examples for policy are coming soon!';
             }
             return tab;
         }),
