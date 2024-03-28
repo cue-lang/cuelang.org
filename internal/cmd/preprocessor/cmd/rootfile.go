@@ -431,7 +431,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 			didWork = true
 
 			// We know that for now we have a single file per uploadNode.
-			f := n.effectiveArchive.Files[0]
+			f := n.archive.Files[0]
 
 			cmdEchoFence := rf.getFence()
 
