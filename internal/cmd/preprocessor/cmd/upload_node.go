@@ -50,7 +50,7 @@ func (u *uploadNode) validate() {
 func (u *uploadNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 	// For now there will be a single file, ensured by validate()
-	f := u.effectiveArchive.Files[0]
+	f := u.archive.Files[0]
 	a := u.analysis.fileNames[0]
 	props := tabProps{
 		Name:     f.Name,

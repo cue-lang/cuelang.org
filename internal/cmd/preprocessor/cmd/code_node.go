@@ -37,6 +37,7 @@ const (
 // code.
 type codeNode struct {
 	txtarNode
+	effectiveScript []byte
 }
 
 func (c *codeNode) nodeType() string {
@@ -47,6 +48,7 @@ var _ runnableNode = (*codeNode)(nil)
 var _ validatingNode = (*codeNode)(nil)
 
 type codeNodeRunContext struct {
+	codeNode *codeNode
 	*txtarRunContext
 }
 
@@ -57,13 +59,6 @@ func (s *codeNode) validate() {
 	if l := len(s.analysis.fileNames); l == 1 {
 		return
 	}
-
-	// Is there a script to run? If there is no effective script, i.e. non blank
-	// non comment lines, we might need to fill one in when running. There are
-	// shorthand versions of sidebyside nodes which don't have a script and yet
-	// we want to run a predefined set of commands and write the files back.
-	effectiveArchive := *s.sourceArchive
-	s.effectiveArchive = &effectiveArchive
 
 	// used below, declare early for visibility
 	var ok bool
@@ -114,8 +109,7 @@ func (s *codeNode) validate() {
 	}
 
 	if !s.analysis.hasEffectiveComment {
-		effectiveArchive.Comment, ok = s.buildEffectiveScript(s.analysis, s.effectiveArchive)
-		if !ok {
+		if ok := s.buildEffectiveScript(); !ok {
 			s.errorf("%v: failed to build effective comment", s)
 			// Cannot proceed with this error
 			return
@@ -126,16 +120,17 @@ func (s *codeNode) validate() {
 	// need to create a script, or we didn't and we had to create one.
 	// In either case, we want to take the first non-comment line as
 	// the command, stripping the leading "exec"
-	s.analysis.cmd = extractCommand(effectiveArchive.Comment)
+	s.analysis.cmd = extractCommand(s.effectiveScript)
 	if s.analysis.cmd == "" {
-		s.errorf("%v: failed to find effective command in script:\n%s", s, tabIndent(effectiveArchive.Comment))
+		s.errorf("%v: failed to find effective command in script:\n%s", s, tabIndent(s.effectiveScript))
 	}
 }
 
-func (s *codeNode) buildEffectiveScript(a txtarAnalysis, ar *txtar.Archive) ([]byte, bool) {
+func (s *codeNode) buildEffectiveScript() bool {
+	a := s.analysis
 	// We only know how to build an effective script for the in/out pattern
 	if !a.isInOut {
-		return nil, false
+		return false
 	}
 
 	// Try to build up a real script. Logic as follows
@@ -163,11 +158,11 @@ func (s *codeNode) buildEffectiveScript(a txtarAnalysis, ar *txtar.Archive) ([]b
 		In  filenameAnalysis
 		Out filenameAnalysis
 	}
-	cmd := s.templateScript(`
+	s.effectiveScript = s.templateScript(`
 		{{if eq .Out.Ext "err"}}! {{end}}exec cue {{if and (eq .In.Ext "cue") (eq .Out.Ext "cue")}}eval{{else}}export{{end}} {{with .Out.Ext}}{{if ne . "err"}}--out {{.}}{{end}}{{end}} {{.In.Ext}}: {{.In.Filepath}}
 		cmp {{if eq .Out.Ext "err"}}stderr{{else}}stdout{{end}} {{.Out.Filepath}}
 		`, args{In: in, Out: out})
-	return []byte(cmd), true
+	return true
 }
 
 func (s codeNode) templateScript(tmpl string, arg any) []byte {
@@ -193,6 +188,7 @@ func (s codeNode) templateScript(tmpl string, arg any) []byte {
 
 func (s *codeNode) run() runnable {
 	return &codeNodeRunContext{
+		codeNode: s,
 		txtarRunContext: &txtarRunContext{
 			txtarNode:        s.txtarNode,
 			executionContext: s.executionContext,
@@ -216,9 +212,9 @@ func (s *codeNodeRunContext) run() (err error) {
 		return nil
 	}
 
-	// Update the effective files in from the source files
-	for i, f := range s.sourceArchive.Files {
-		s.effectiveArchive.Files[i].Data = f.Data
+	effectiveArchive := &txtar.Archive{
+		Comment: s.codeNode.effectiveScript,
+		Files:   s.archive.Files,
 	}
 
 	// Skip entirely if the #norun tag is present
@@ -234,7 +230,7 @@ func (s *codeNodeRunContext) run() (err error) {
 	}
 	targetFile := filepath.Join(td, "script.txtar")
 	containerFile := "/tmp/script.txtar"
-	if err := os.WriteFile(targetFile, txtar.Format(s.effectiveArchive), 0666); err != nil {
+	if err := os.WriteFile(targetFile, txtar.Format(effectiveArchive), 0666); err != nil {
 		s.fatalf("%v: failed to write script: %v", s, err)
 	}
 	ts := s.dockerCmd(
@@ -244,7 +240,7 @@ func (s *codeNodeRunContext) run() (err error) {
 		fmt.Sprintf("-u=%v", s.updateGoldenFiles),
 		containerFile,
 	)
-	s.debugf(s.debugCode, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(s.effectiveArchive)))
+	s.debugf(s.debugCode, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(effectiveArchive)))
 
 	if byts, err := ts.CombinedOutput(); err != nil {
 		s.fatalf("%v: failed to run %v: %v\n%s", s, ts, err, tabIndent(byts))
@@ -255,8 +251,8 @@ func (s *codeNodeRunContext) run() (err error) {
 	if err != nil {
 		s.fatalf("%v: failed to read resulting archvie %s: %v", s, targetFile, err)
 	}
-	for i := range s.effectiveArchive.Files {
-		s.effectiveArchive.Files[i] = resArchive.Files[i]
+	for i := range effectiveArchive.Files {
+		s.archive.Files[i] = resArchive.Files[i]
 	}
 
 	return nil
@@ -306,7 +302,7 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 
 		// There will only be one file
 		a := s.analysis.fileNames[0]
-		f := s.effectiveArchive.Files[0]
+		f := s.archive.Files[0]
 
 		// TODO tidy up templating etc
 		p("```%s\n", a.Language)
@@ -336,7 +332,7 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 				locations = append(locations, codeTabLocation(l))
 			}
 		} else {
-			switch l := len(s.effectiveArchive.Files); l {
+			switch l := len(s.archive.Files); l {
 			case 2:
 				// real side-by-side.
 				locations = []codeTabLocation{codeTabTopLeft, codeTabTopRight}
@@ -385,7 +381,7 @@ func (s *codeNode) writeTransformTo(b *bytes.Buffer) error {
 		}
 		// TODO tidy up templating etc
 		p("{{< code-tabs >}}\n")
-		for i, f := range s.effectiveArchive.Files {
+		for i, f := range s.archive.Files {
 			t := tabs[i]
 			args := []string{
 				fmt.Sprintf("name=%q", t.Name),

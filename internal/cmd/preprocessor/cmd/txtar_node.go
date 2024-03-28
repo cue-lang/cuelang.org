@@ -28,11 +28,10 @@ import (
 
 type txtarNode struct {
 	*nodeWrapper
-	typ              string
-	lang             string
-	label            string
-	sourceArchive    *txtar.Archive
-	effectiveArchive *txtar.Archive
+	typ     string
+	lang    string
+	label   string
+	archive *txtar.Archive
 
 	analysis txtarAnalysis
 }
@@ -46,13 +45,13 @@ func (t *txtarNode) nodeType() string {
 }
 
 func (t *txtarNode) writeToHasher(w io.Writer) {
-	fmt.Fprintf(w, "%q.%q:\n%s", t.nodeType(), t.nodeLabel(), tabIndent(txtar.Format(t.sourceArchive)))
+	fmt.Fprintf(w, "%q.%q:\n%s", t.nodeType(), t.nodeLabel(), tabIndent(txtar.Format(t.archive)))
 }
 
 func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 	p := bufPrintf(b)
 	p("%swith %s %q %q%s\n", t.rf.page.config.LeftDelim, t.typ, t.lang, t.label, t.rf.page.config.RightDelim)
-	p("%s", txtar.Format(t.sourceArchive))
+	p("%s", txtar.Format(t.archive))
 	p("%send%s", t.rf.page.config.LeftDelim, t.rf.page.config.RightDelim)
 }
 
@@ -64,7 +63,7 @@ func (t *txtarNode) writeSourceTo(b *bytes.Buffer) {
 //
 // TODO: add an explicit test for when arg != ""
 func (t *txtarNode) tag(key, arg string) (args []string, present bool, err error) {
-	args, present, err = findTag(t.sourceArchive.Comment, key, arg)
+	args, present, err = findTag(t.archive.Comment, key, arg)
 	if err != nil {
 		err = fmt.Errorf("%s: %v", t.label, err)
 	}
@@ -250,8 +249,8 @@ func (t *txtarRunContext) formatFiles() error {
 	}
 
 	// First format all non-output files
-	for i := range t.sourceArchive.Files {
-		f := &t.sourceArchive.Files[i]
+	for i := range t.archive.Files {
+		f := &t.archive.Files[i]
 		if _, ok, _ := t.tag(tagNoFmt, f.Name); ok {
 			continue
 		}
