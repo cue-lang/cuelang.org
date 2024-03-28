@@ -11,10 +11,10 @@ import { OPTION_TYPE } from '@models/options';
 // Clone config because we don't want to change the original workspace config
 const config = cloneDeep<WorkspaceConfig>(policyWorkspace.config);
 
-export const testExample3: Example = {
-    slug: 'test-example-3',
-    title: 'Some other example',
-    category: 'Category 2',
+export const exPolicy: Example = {
+    slug: 'policy',
+    title: 'Policy example',
+    category: 'TODO',
     workspace: WORKSPACE.POLICY,
     workspaceConfig: {
         ...config,
