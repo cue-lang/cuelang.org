@@ -22,7 +22,7 @@ But CUE makes a best effort to encode as much as possible.
 
 CUE currently only supports generating OpenAPI through its API.
 The Istio project has a
-[command line tool](https://github.com/istio/tools/tree/master/cmd/cue-gen)
+[command line tool](https://github.com/istio/tools/tree/b5e3dec7a2ddbe11e36085261fcd64d15a0e1ab8/cmd/cue-gen)
 to generate OpenAPI, built upon this API.
 
 Generating an OpenAPI definition can be as simple as
