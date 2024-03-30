@@ -43,7 +43,7 @@ This tutorial describes an experimental feature. All details are subject to chan
 
 This tutorial is written using the following version of `cmd/cue`:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
+```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.8.0
 ...
@@ -59,7 +59,7 @@ We would like to be able to share the schema between several consumers.
 {{< step stepNumber="1" >}}
 
 Create a directory to hold the schema code:
-```text { title="TERMINAL" codeToCopy="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZwo=" }
+```text { title="TERMINAL" codeToCopy="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZw==" }
 $ mkdir frostyconfig
 $ cd frostyconfig
 ```
@@ -71,7 +71,7 @@ you will create as they are needed.
 {{< step stepNumber="2" >}}
 
 Initialize the directory as a module:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWNvbmZpZ0B2MAo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWNvbmZpZ0B2MA==" }
 $ cue mod init glacial-tech.example/frostyconfig@v0
 ```
 
@@ -144,7 +144,7 @@ it represents the schema of the configuration data expected by `FrostyApp`.
 
 If you do not have access to an OCI registry, start one locally:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSBsb2NhbGhvc3Q6NTAwMAo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSBsb2NhbGhvc3Q6NTAwMA==" }
 $ cue mod registry localhost:5000
 ```
 
@@ -155,7 +155,7 @@ the [Google Artifact Registry](https://cloud.google.com/artifact-registry),
 as CUE uses the standard OCI protocols spoken by such registries. For example,
 here are some alternatives:
 
-```text { title="TERMINAL" codeToCopy="ZG9ja2VyIHJ1biAtcCA1MDAwOjUwMDAgcmVnaXN0cnkKcG9kbWFuIHJ1biAtcCA1MDAwOjUwMDAgcmVnaXN0cnkK" }
+```text { title="TERMINAL" codeToCopy="ZG9ja2VyIHJ1biAtcCA1MDAwOjUwMDAgcmVnaXN0cnkKcG9kbWFuIHJ1biAtcCA1MDAwOjUwMDAgcmVnaXN0cnk=" }
 # running a local registry via docker
 $ docker run -p 5000:5000 registry
 
@@ -174,7 +174,7 @@ tutorial.
 {{< step stepNumber="5" >}}
 
 Set up some required envirionment variables:
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXMKZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMC9jdWVtb2R1bGVzCg==" }
+```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXMKZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMC9jdWVtb2R1bGVz" }
 $ export CUE_EXPERIMENT=modules
 $ export CUE_REGISTRY=localhost:5000/cuemodules
 ```
@@ -193,7 +193,7 @@ to holding CUE modules.
 {{< step stepNumber="6" >}}
 
 Ensure the `module.cue` file is tidy:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5Cg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
 ```
 This command checks that modules for all imported packages
@@ -206,7 +206,7 @@ have any dependencies, we will run `cue mod tidy` anyway.
 {{< step stepNumber="7" >}}
 
 Publish the first version of this module:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
 published glacial-tech.example/frostyconfig@v0.0.1
 ```
@@ -237,7 +237,7 @@ published.
 {{< step stepNumber="8" >}}
 
 Create a directory for the new module and initalize it:
-```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5YXBwQHYwCg==" }
+```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5YXBwQHYw" }
 $ mkdir ../frostyapp
 $ cd ../frostyapp
 $ cue mod init glacial-tech.example/frostyapp@v0
@@ -268,14 +268,14 @@ constrained by the `frostyconfig.#Config` schema.
 {{< step stepNumber="10" >}}
 
 Ensure the module is tidy, pulling all dependencies:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5Cg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
 ```
 
 We can see that the dependencies have now been added to the
 `cue.mod/module.cue` file:
 
-```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQo=" }
+```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
@@ -300,7 +300,7 @@ flowchart TD
 {{< step stepNumber="11" >}}
 
 Export the configuration as YAML:
-```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1sCg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 config:
   appName: alpha
@@ -325,7 +325,7 @@ other source of truth.
 {{< step stepNumber="12" >}}
 
 Create a directory for the new module and initalize it:
-```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKY3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eXRlbXBsYXRlQHYwCg==" }
+```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKY3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eXRlbXBsYXRlQHYw" }
 $ mkdir ../frostytemplate
 $ cd ../frostytemplate
 $ cue mod init glacial-tech.example/frostytemplate@v0
@@ -363,7 +363,7 @@ We import the schema to constrain the default values, just as we did with the
 {{< step stepNumber="14" >}}
 
 Publish the `frostytemplate` module:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4wLjEK" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4wLjE=" }
 $ cue mod tidy
 $ cue mod publish v0.0.1
 published glacial-tech.example/frostytemplate@v0.0.1
@@ -377,7 +377,7 @@ published glacial-tech.example/frostytemplate@v0.0.1
 Update the `frostyapp` module to make use of this new template
 module:
 
-```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5YXBwCg==" }
+```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5YXBw" }
 $ cd ../frostyapp
 ```
 
@@ -399,7 +399,7 @@ requirements of the configuration.
 {{< step stepNumber="16" >}}
 
 Resolve dependencies in `frostyapp`:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5Cg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
 ```
 
@@ -408,7 +408,7 @@ use `frostytemplate` as well as `frostyconfig`.
 
 Here is what the `cue.mod/module.cue` file now looks like:
 
-```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQo=" }
+```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
@@ -434,7 +434,7 @@ flowchart TD
 {{< step stepNumber="17" >}}
 
 Re-render the configuration as YAML:
-```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1sCg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 config:
   appName: alpha
@@ -458,7 +458,7 @@ We will add that field to the schema and update the app to use it.
 {{< step stepNumber="18" >}}
 
 Update the schema to add a new `maxConcurrency` field:
-```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5Y29uZmlnCg==" }
+```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5Y29uZmln" }
 $ cd ../frostyconfig
 ```
 
@@ -492,7 +492,7 @@ The schema is unchanged except for the new `maxConcurrency` field.
 {{< step stepNumber="19" >}}
 
 Upload a new version of the `frostyconfig` schema:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4xLjAK" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4xLjA=" }
 $ cue mod tidy
 $ cue mod publish v0.1.0
 published glacial-tech.example/frostyconfig@v0.1.0
@@ -508,7 +508,7 @@ compatible feature has been added.
 
 Edit the `cue.mod/module.cue` file to use the new version:
 
-```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5YXBwCg==" }
+```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5YXBw" }
 $ cd ../frostyapp
 ```
 
@@ -545,7 +545,7 @@ future the `cue` command will be able to perform this kind of update.
 {{< step stepNumber="21" >}}
 
 Check that everything still works and that your configuration is still valid:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBleHBvcnQgLS1vdXQgeWFtbAo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBleHBvcnQgLS1vdXQgeWFtbA==" }
 $ cue mod tidy
 $ cue export --out yaml
 config:

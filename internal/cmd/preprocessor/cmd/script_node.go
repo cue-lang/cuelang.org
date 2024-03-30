@@ -218,8 +218,10 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	// if copy-pasted.
 	var copyCmdStr strings.Builder
 	enc := base64.NewEncoder(base64.StdEncoding, &copyCmdStr)
+	var start string
 	for _, stmt := range s.stmts {
-		fmt.Fprintf(enc, "%s\n", stmt.Cmd)
+		fmt.Fprintf(enc, "%s%s", start, stmt.Cmd)
+		start = "\n"
 	}
 	enc.Close()
 

@@ -26,7 +26,7 @@ This tutorial describes an experimental feature. All details are subject to chan
 
 Note that this guide depends on a pre-release version of CUE:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24K" }
+```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.9.0-alpha.1
 ...
@@ -34,7 +34,7 @@ cue version v0.9.0-alpha.1
 
 ## Enable the modules experiment
 
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXMK" }
+```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXM=" }
 $ export CUE_EXPERIMENT=modules
 ```
 
@@ -65,7 +65,7 @@ or by <a href="mailto:contact@cue.works?subject=Joining the Central Registry exp
 
 Authenticate the `cue` command (a one-off process):
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGxvZ2luCg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGxvZ2lu" }
 $ cue login
 ```
 
@@ -77,7 +77,7 @@ $ cue login
 
 Initialize a local CUE module. We will not publish this module:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MAo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MA==" }
 $ cue mod init glacial-tech.example/frostyapp@v0
 ```
 
@@ -117,13 +117,13 @@ schema.
 {{< step stepNumber="5" >}}
 
 Ensure the module is tidy, pulling all dependencies:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5Cg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
 ```
 
 We can see that the dependencies have now been added to the `cue.mod/module.cue` file:
 
-```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQo=" }
+```text { title="TERMINAL" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
@@ -145,7 +145,7 @@ deps: {
 Export the configuration as YAML:
 
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1sCg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 config:
   appName: alpha
