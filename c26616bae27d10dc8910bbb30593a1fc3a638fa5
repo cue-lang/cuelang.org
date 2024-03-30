@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d62b628_df6e2098",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-30T21:07:20Z",
+      "side": 1,
+      "message": "`cue-lang/cue#2978`",
+      "revId": "c26616bae27d10dc8910bbb30593a1fc3a638fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a927daba_728f6664",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-30T21:07:20Z",
+      "side": 1,
+      "message": "nit:\n\n```suggestion\n\t\tfind . -name gen_cache.cue -type f -delete\n```",
+      "revId": "c26616bae27d10dc8910bbb30593a1fc3a638fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
