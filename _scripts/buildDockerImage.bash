@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euxo pipefail
+set -euo pipefail
 
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
@@ -26,6 +26,12 @@ package cmd
 
 const dockerImageTag = "$tag"
 EOD
+
+# Only build the docker image if it doesn't exist
+if docker inspect $tag > /dev/null 2>&1; then
+	echo "docker image $tag already exists; skipping build"
+	exit 0
+fi
 
 caching=""
 if [ "${CI:-}" == "true" ]
