@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgaW5wdXRzCg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgaW5wdXRz" }
 $ cue help inputs
 Many commands apply to a set of inputs:
 

@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZ2V0IGdvCg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZ2V0IGdv" }
 $ cue help get go
 go converts Go types into CUE definitions
 
