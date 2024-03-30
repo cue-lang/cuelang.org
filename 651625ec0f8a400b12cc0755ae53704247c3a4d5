@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cb56e66_cbc28fa4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-03-30T21:03:29Z",
+      "side": 1,
+      "message": "`cue-lang/cue#2981`",
+      "revId": "651625ec0f8a400b12cc0755ae53704247c3a4d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
