@@ -42,6 +42,11 @@ then
 
 	if [ "${CI:-}" == "true" ]
 	then
+		# Even though we set --skipcache below, we remove gen_cache.cue files
+		# in order to deal with the fact the preprocessor does not clean up stale
+		# gen_cache.cue files.
+		find . -name gen_cache.cue -exec rm '{}' \;
+
 		# See comment above for readonlycache
 		skipcache="--skipcache"
 	else
