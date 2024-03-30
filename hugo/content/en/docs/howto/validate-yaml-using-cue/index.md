@@ -59,7 +59,7 @@ people: [X=string]: #Person & {
 
 Run the following `cue` command in your:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWwK" }
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWw=" }
 $ cue vet x.cue x.yaml
 ```
 
@@ -85,7 +85,7 @@ people:
 
 Validate again with `cue vet`
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWwK" }
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWw=" }
 $ cue vet x.cue x.yaml
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
@@ -116,7 +116,7 @@ people:
 
 Validate with `cue vet` again
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWwK" }
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWw=" }
 $ cue vet x.cue x.yaml
 ```
 

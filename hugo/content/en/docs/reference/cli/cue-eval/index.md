@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZXZhbAo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZXZhbA==" }
 $ cue help eval
 eval evaluates, validates, and prints a configuration.
 

@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgaGVscAo=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgaGVscA==" }
 $ cue help help
 Help provides help for any command in the application.
 Simply type cue help [path to command] for full details.

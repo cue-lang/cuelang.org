@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgdmV0Cg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgdmV0" }
 $ cue help vet
 vet validates CUE and other data files
 
