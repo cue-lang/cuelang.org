@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIHRpZHkK" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIHRpZHk=" }
 $ cue help mod tidy
 WARNING: THIS COMMAND IS EXPERIMENTAL.
 

@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZXhwb3J0Cg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZXhwb3J0" }
 $ cue help export
 export evaluates the configuration found in the current
 directory and prints the emit value to stdout.
