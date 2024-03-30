@@ -126,7 +126,7 @@ $ cue export in.cue
 
 upload: 5 // a line comment stable replacement
 ```
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlCg==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3Vl" }
 $ cue eval in.cue
 upload: 5
 ```

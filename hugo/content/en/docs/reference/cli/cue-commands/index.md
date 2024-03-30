@@ -5,7 +5,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgY29tbWFuZHMK" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgY29tbWFuZHM=" }
 $ cue help commands
 Commands define actions on instances. For example, they may
 specify how to upload a configuration to Kubernetes. Commands are
