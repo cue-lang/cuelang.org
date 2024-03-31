@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46b54650_0a38be82",
+        "filename": "internal/cmd/preprocessor/cmd/nodes.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T09:52:45Z",
+      "side": 1,
+      "message": "nit: WriteString",
+      "revId": "586fbedd93d0370304a7ce00223b5ed9dbb72be3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d830ae93_2975a5cf",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T09:52:45Z",
+      "side": 1,
+      "message": "unfinished sentence?",
+      "revId": "586fbedd93d0370304a7ce00223b5ed9dbb72be3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e2f4237_a3df2295",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T09:52:45Z",
+      "side": 1,
+      "message": "or replace from longest to shortest strings? that is the common solution to this kind of overlap issue. perhaps not, given that the string you replace with can have a different length.",
+      "revId": "586fbedd93d0370304a7ce00223b5ed9dbb72be3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c7fc1be_777e42e2",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T09:52:45Z",
+      "side": 1,
+      "message": "nit: consider slices.SortFunc",
+      "revId": "586fbedd93d0370304a7ce00223b5ed9dbb72be3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d032e916_568134b8",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T09:52:45Z",
+      "side": 1,
+      "message": "TODO about maps.Keys?",
+      "revId": "586fbedd93d0370304a7ce00223b5ed9dbb72be3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb3519f9_f1a544bc",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T09:52:45Z",
+      "side": 1,
+      "message": "did you consider using either bytes or string consistently? I might do string everywhere with strings.Builder",
+      "revId": "586fbedd93d0370304a7ce00223b5ed9dbb72be3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ec085ce_2ed4f187",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_variables.txtar",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T09:52:45Z",
+      "side": 1,
+      "message": "debugging?",
+      "revId": "586fbedd93d0370304a7ce00223b5ed9dbb72be3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
