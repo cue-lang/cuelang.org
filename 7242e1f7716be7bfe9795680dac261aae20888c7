@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b22570c7_35a4f1dc",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T08:51:12Z",
+      "side": 1,
+      "message": "add a TODO to use maps.Values once it lands in std",
+      "revId": "7242e1f7716be7bfe9795680dac261aae20888c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "115b6710_76c538a5",
+        "filename": "internal/cmd/preprocessor/cmd/variables.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-03-31T08:51:12Z",
+      "side": 1,
+      "message": "consider using https://pkg.go.dev/strings#Replacer, particularly since the replacing is the same every time",
+      "revId": "7242e1f7716be7bfe9795680dac261aae20888c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
