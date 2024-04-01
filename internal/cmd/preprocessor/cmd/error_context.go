@@ -110,15 +110,12 @@ type fatalError struct {
 	error
 }
 
-func recoverFatalError(err *error) {
+func recoverFatalError(ctx errorContext) {
 	switch r := recover().(type) {
 	case nil:
 		// normal behaviour
 	case fatalError:
-		if *err != nil {
-			panic("error value already set?")
-		}
-		*err = r.error
+		ctx.errorf("%v", r.error)
 	default:
 		// Unknown value - panic on
 		panic(r)

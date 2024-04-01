@@ -57,6 +57,9 @@ fi
 # Build playground
 bash playground/_scripts/build.bash
 
+# Build the docker image as required (it is a no-op if it exists)
+bash _scripts/buildDockerImage.bash
+
 # Run the preprocessor
 bash _scripts/runPreprocessor.bash execute $readonlycache $nocachevolume $skipcache
 
