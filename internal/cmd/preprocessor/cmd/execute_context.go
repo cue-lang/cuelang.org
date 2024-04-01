@@ -23,6 +23,7 @@ import (
 	"io/fs"
 	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"runtime/debug"
 	"sort"
@@ -55,6 +56,10 @@ type executeContext struct {
 	// key is the full directory path of the page source.
 	pages map[string]*page
 
+	// dockerImageChecker is a sync.Once checker for ensuring that the image
+	// dockerImageTag exists before a start/run command.
+	dockerImageChecker func() error
+
 	errorContext
 	*executionContext
 }
@@ -64,13 +69,23 @@ func (ec *executeContext) Format(state fmt.State, verb rune) {
 }
 
 func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
-	return &executeContext{
+	res := &executeContext{
 		executor:         e,
 		pages:            make(map[string]*page),
 		filter:           filter,
 		executionContext: e.executionContext,
 		errorContext:     e.errorContext,
 	}
+
+	res.dockerImageChecker = sync.OnceValue(func() error {
+		cmd := exec.Command("docker", "inspect", dockerImageTag)
+		if out, err := cmd.CombinedOutput(); err != nil {
+			return fmt.Errorf("failed to find docker image %s: %s", dockerImageTag, out)
+		}
+		return nil
+	})
+
+	return res
 }
 
 func (ec *executeContext) execute() error {

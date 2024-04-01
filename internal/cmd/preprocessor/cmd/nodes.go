@@ -79,7 +79,7 @@ type validatingNode interface {
 // completion or run.
 type runnable interface {
 	bufferedErrorContext
-	run() error
+	run()
 }
 
 // nodeWrapper is a simple wrapper around an underlying
