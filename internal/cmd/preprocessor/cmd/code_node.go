@@ -196,17 +196,17 @@ func (s *codeNode) run() runnable {
 	}
 }
 
-func (s *codeNodeRunContext) run() (err error) {
-	defer recoverFatalError(&err)
+func (s *codeNodeRunContext) run() {
+	defer recoverFatalError(s)
 
 	if err := s.formatFiles(); err != nil {
-		return s.errorf("%v: failed to format files: %v", s, err)
+		s.fatalf("%v: failed to format files: %v", s, err)
 	}
 
 	// If we only have one file, behave like an old code node
 	// and return early.
 	if l := len(s.analysis.fileNames); l == 1 {
-		return nil
+		return
 	}
 
 	effectiveArchive := &txtar.Archive{
@@ -219,7 +219,12 @@ func (s *codeNodeRunContext) run() (err error) {
 
 	// Skip entirely if the #norun tag is present
 	if _, ok, _ := s.tag(tagNorun, ""); ok {
-		return nil
+		return
+	}
+
+	// Early check to ensure we have the required docker image available
+	if err := dockerImageChecker(); err != nil {
+		s.fatalf("%v", err)
 	}
 
 	// Now that the archive is updated with valid formatted files, run the
@@ -254,8 +259,6 @@ func (s *codeNodeRunContext) run() (err error) {
 	for i := range effectiveArchive.Files {
 		s.archive.Files[i] = resArchive.Files[i]
 	}
-
-	return nil
 }
 
 // extractCommand returns the first non-comment, non-blank line in b, stripping

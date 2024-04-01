@@ -23,6 +23,7 @@ import (
 	"io/fs"
 	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"runtime/debug"
 	"sort"
@@ -568,3 +569,13 @@ func (c centralRegistryTestUserFetcher) fetch() (res map[string]wireToken, err e
 
 	return
 }
+
+// dockerImageChecker is a sync.Once checker for ensuring that the image
+// dockerImageTag exists before a start/run command.
+var dockerImageChecker = sync.OnceValue(func() error {
+	cmd := exec.Command("docker", "image", "inspect", dockerImageTag)
+	if out, err := cmd.CombinedOutput(); err != nil {
+		return fmt.Errorf("failed to find docker image %s: %s", dockerImageTag, out)
+	}
+	return nil
+})
