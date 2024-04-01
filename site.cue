@@ -209,6 +209,11 @@ template: ci.#writefs & {
 			color = "red"
 			weight = 90
 
+			[[tags]]
+			name = "go api"
+			color = "lavender"
+			weight = 100
+
 			"""#
 		}
 		"playground/src/config/gen_cuelang_org_go_version.ts": {
