@@ -92,17 +92,15 @@ func (u *uploadNode) run() runnable {
 	}
 }
 
-func (u *uploadNodeRunContext) run() (err error) {
-	defer recoverFatalError(&err)
+func (u *uploadNodeRunContext) run() {
+	defer recoverFatalError(u)
 
 	// Skip entirely if the #norun tag is present
 	if _, ok, _ := u.tag(tagNorun, ""); ok {
-		return nil
+		return
 	}
 
 	if err := u.formatFiles(); err != nil {
-		return u.errorf("%v: failed to format files: %v", u, err)
+		u.errorf("%v: failed to format files: %v", u, err)
 	}
-
-	return nil
 }

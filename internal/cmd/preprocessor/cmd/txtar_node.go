@@ -292,6 +292,10 @@ func (t *txtarRunContext) formatFiles() error {
 		})
 	}
 
+	if err := dockerImageChecker(); err != nil {
+		t.fatalf("%v", err)
+	}
+
 	// Start the formatting jobs
 	for _, j := range jobs {
 		j.cmd.Stdout = &j.out
