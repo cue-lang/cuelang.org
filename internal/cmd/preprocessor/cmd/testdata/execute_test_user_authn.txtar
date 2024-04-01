@@ -6,7 +6,7 @@ unquote content/dir/en.md
 
 # From a file
 cp content/dir/en.md golden/content/dir/en.md
-exec preprocessor execute --testuserauthn authn
+exec preprocessor execute --testuserauthn authn --debug=all
 cp content/dir/en.md content/dir/en.md.writeBack
 cmp content/dir/en.md.writeBack golden/content/dir/en.md
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md.file

@@ -545,11 +545,12 @@ func (m *multiStepScript) cachePath() cue.Path {
 //
 // A good amount of potential overlap here with the code node use of
 // docker but we can (and will) DRY that up later.
-func (m *multiStepScript) run() (runerr error) {
-	defer recoverFatalError(&runerr)
+func (m *multiStepScript) run() {
+	defer recoverFatalError(m)
+
 	td, err := m.tempDir("multistep")
 	if err != nil {
-		return m.errorf("%v: failed to create temp dir for running multistep script: %v", m, err)
+		m.fatalf("%v: failed to create temp dir for running multistep script: %v", m, err)
 	}
 
 	scriptsDir := filepath.Join(td, "scripts")
@@ -572,6 +573,43 @@ func (m *multiStepScript) run() (runerr error) {
 	}
 	if err := os.Chmod(scriptsFile, 0777); err != nil {
 		m.fatalf("%v: failed to change permissions of %v: %v", m, scriptsFile, err)
+	}
+
+	m.debugf(m.debugCache, "%v: config value: %v\n", m, m.config)
+
+	cachePath := m.cachePath()
+	cachedOut := m.config.LookupPath(cachePath)
+	cacheMiss := !cachedOut.Exists()
+	var cachedOutStmts []*commandStmt
+	if !cacheMiss {
+		if err := cachedOut.Decode(&cachedOutStmts); err != nil {
+			m.fatalf("%v: failed to decoded cached steps: %v", m, err)
+		}
+	}
+
+	var out []byte
+	if !cacheMiss && !m.skipCache {
+		m.debugf(m.debugCache, "%v: cache hit for multi-step script; not running", m)
+
+		// We need to assign from the cache the output values to the stmts
+		for i, stmt := range m.scriptSteps {
+			cstmt := cachedOutStmts[i]
+			stmt.Doc = cstmt.Doc
+			stmt.Cmd = cstmt.Cmd
+			stmt.Output = cstmt.Output
+			stmt.ExitCode = cstmt.ExitCode
+		}
+		return
+	}
+
+	if cacheMiss {
+		m.debugf(m.debugCache, "%v: cache miss for multi-step script", m)
+	} else {
+		m.debugf(m.debugCache, "%v: skipping cache for multi-step script; was a hit", m)
+	}
+
+	if err := m.page.ctx.dockerImageChecker(); err != nil {
+		m.fatalf("%v", err)
 	}
 
 	var args []string
@@ -626,6 +664,16 @@ func (m *multiStepScript) run() (runerr error) {
 
 	var sensitiveValues []string
 
+	// Ensure we have a docker cache volume if one is required
+	if !m.noCacheVolume {
+		args = append(args, "-v", fmt.Sprintf("%s:/caches", m.cacheVolumeName))
+	}
+
+	// We cannot perform the --network=host trick here, even if the user wants
+	// to be unsafe, because we might, for example, run cue mod registry which
+	// requires its own networking isolation for binding to the port it will
+	// use.
+
 	// Set userAuthn env vars for the users required if we are running with
 	// --readonlycache unset. Doing so in the bash script ensure that we will
 	// cause a cache miss if the credentials have changed.
@@ -650,7 +698,7 @@ func (m *multiStepScript) run() (runerr error) {
 			sensitiveValues = append(sensitiveValues, creds.AccessToken)
 		}
 		if m.isInError() {
-			return errorIfInError(m)
+			return
 		}
 		// Sort for stability
 		sort.Strings(vars)
@@ -658,16 +706,6 @@ func (m *multiStepScript) run() (runerr error) {
 			args = append(args, "-e", v)
 		}
 	}
-
-	// Ensure we have a docker cache volume if one is required
-	if !m.noCacheVolume {
-		args = append(args, "-v", fmt.Sprintf("%s:/caches", m.cacheVolumeName))
-	}
-
-	// We cannot perform the --network=host trick here, even if the user wants
-	// to be unsafe, because we might, for example, run cue mod registry which
-	// requires its own networking isolation for binding to the port it will
-	// use.
 
 	args = append(args,
 		// TODO: support per-guide docker images
@@ -683,182 +721,147 @@ func (m *multiStepScript) run() (runerr error) {
 	createCmd.Stdout = &createStdout
 	createCmd.Stderr = &createStderr
 
-	m.debugf(m.debugCache, "%v: config value: %v\n", m, m.config)
+	m.debugf(m.debugScript, "%v: creating multi-step script container", m)
+	m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
+	m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
 
-	cachePath := m.cachePath()
-	cachedOut := m.config.LookupPath(cachePath)
-	cacheMiss := !cachedOut.Exists()
-	var cachedOutStmts []*commandStmt
-	if !cacheMiss {
-		if err := cachedOut.Decode(&cachedOutStmts); err != nil {
-			m.fatalf("%v: failed to decoded cached steps: %v", m, err)
-		}
+	if err := createCmd.Run(); err != nil {
+		m.fatalf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
 	}
 
-	var out []byte
-	if cacheMiss || m.skipCache {
-		var err error
-		if cacheMiss {
-			m.debugf(m.debugCache, "%v: cache miss for multi-step script", m)
-		} else {
-			m.debugf(m.debugCache, "%v: skipping cache for multi-step script; was a hit", m)
+	instance := strings.TrimSpace(createStdout.String())
+
+	startCmd := exec.Command("docker", "start", "-a", instance)
+	out, err = startCmd.CombinedOutput()
+	if err != nil {
+		var script string
+		if m.debugGeneral {
+			// Logging the script we generated is very noisy - only do so when
+			// debug=general set.
+			script = fmt.Sprintf("\nscript was:\n%s", m.bashScript)
 		}
+		m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s%s", m, createCmd, err, out, script)
+	}
 
-		m.debugf(m.debugScript, "%v: creating multi-step script container", m)
-		m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
-		m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
+	// Because we are running in -t mode, replace all \r\n with \n
+	out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
 
-		if err := createCmd.Run(); err != nil {
-			return fmt.Errorf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
+	// At the earliest opportunity, replace any instances of values we known
+	// to be sensitive in the output with '******'. We first sort the
+	// sensitiveValues for stable behaviour.
+	sort.Strings(sensitiveValues)
+	for _, v := range sensitiveValues {
+		out = bytes.ReplaceAll(out, []byte(v), []byte("******"))
+	}
+
+	m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
+
+	walk := out
+	advanceWalk := func(end []byte) string {
+		before, after, found := bytes.Cut(walk, end)
+		if !found {
+			m.fatalf("%v: failed to find %q before end of output:\n%q\nOutput was: %q\n", m, end, walk, out)
 		}
+		walk = after
+		return string(before)
+	}
 
-		instance := strings.TrimSpace(createStdout.String())
-
-		startCmd := exec.Command("docker", "start", "-a", instance)
-		out, err = startCmd.CombinedOutput()
-		if err != nil {
-			var script string
-			if m.debugGeneral {
-				// Logging the script we generated is very noisy - only do so when
-				// debug=general set.
-				script = fmt.Sprintf("\nscript was:\n%s", m.bashScript)
-			}
-			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s%s", m, createCmd, err, out, script)
-		}
-
-		// Because we are running in -t mode, replace all \r\n with \n
-		out := bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))
-
-		// At the earliest opportunity, replace any instances of values we known
-		// to be sensitive in the output with '******'. We first sort the
-		// sensitiveValues for stable behaviour.
-		sort.Strings(sensitiveValues)
-		for _, v := range sensitiveValues {
-			out = bytes.ReplaceAll(out, []byte(v), []byte("******"))
-		}
-
-		m.debugf(m.debugScript, "%v: output:\n===========\n%s\n============", m, out)
-
-		walk := out
-		advanceWalk := func(end []byte) string {
-			before, after, found := bytes.Cut(walk, end)
-			if !found {
-				m.fatalf("%v: failed to find %q before end of output:\n%q\nOutput was: %q\n", m, end, walk, out)
-			}
-			walk = after
-			return string(before)
-		}
-
-		// TODO we should tidy this up to not be a walk... it's getting verbose
-		var i int
-		m.walkBody(func(n node) error {
-			step, ok := n.(*scriptNode)
-			if !ok {
-				return nil
-			}
-			if _, noRun, _ := step.tag(tagNorun, ""); noRun {
-				return nil
-			}
-			for _, stmt := range step.stmts {
-				fence := []byte(stmt.outputFence + "\n")
-				advanceWalk(fence) // Ignore everything before the fence
-
-				stmt.Output = advanceWalk(fence)
-				exitCodeStr := advanceWalk([]byte("\n"))
-				stmt.ExitCode, err = strconv.Atoi(exitCodeStr)
-				if err != nil {
-					m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
-				}
-
-				var sans []sanitiser
-				if stmt.sanitisers != nil {
-					sans = stmt.sanitisers
-				} else {
-					for _, s := range m.page.config.Sanitisers {
-						matched, err := s.matches(stmt)
-						if err != nil {
-							m.fatalf("%v: failed to determine if sanitiser should apply for %q: %v", m, stmt.Cmd, err)
-						}
-						if !matched {
-							continue
-						}
-						sans = append(sans, s)
-					}
-				}
-				for _, s := range sans {
-					if err := s.sanitise(stmt); err != nil {
-						m.fatalf("%v: failed to sanitise output for %q: %v", m, stmt.Cmd, err)
-					}
-				}
-
-				// Now replace all random values which have a replacement with that replacement
-				// in both the command and the output
-				stmt.Doc = m.rootFile.page.config.randomReplace(stmt.Doc)
-				stmt.Cmd = m.rootFile.page.config.randomReplace(stmt.Cmd)
-				stmt.Output = m.rootFile.page.config.randomReplace(stmt.Output)
-
-				// At this point, stmt.Output is sanitised.
-
-				if !cacheMiss {
-					// In this code path, we had a cache hit but because of a
-					// flag/other we intentionally skipped the cache. This means
-					// that cmd.Output might be the same as cstmt.Output. But it
-					// might not, because of variations like test times in the
-					// output from commands like 'go test'. This is where
-					// comparators come in.
-					//
-					// Comparators normalise the output of commands in order to
-					// allow for "fuzzy" comparisons. Running the comparators on
-					// both the cached and actual output gives us something we can
-					// then compare byte-for-byte. If the results from the
-					// normalization compare equal, then we can safely write the
-					// output from the cached version to the actual. The actual is
-					// what will get written back to disk.
-
-					cstmt := cachedOutStmts[i]
-					actualAccum := stmt.Output
-					cachedAccum := cstmt.Output
-					for _, cmp := range m.page.config.Comparators {
-						var err error
-						matched, err := cmp.matches(stmt)
-						if err != nil {
-							m.fatalf("%v: failed to determine if comparator should apply for %q: %v", m, stmt.Cmd, err)
-						}
-						if !matched {
-							continue
-						}
-						f := m.getFence()
-						actualAccum, err = cmp.normalize(stmt, actualAccum, f)
-						if err != nil {
-							return err
-						}
-						cachedAccum, err = cmp.normalize(stmt, cachedAccum, f)
-						if err != nil {
-							return err
-						}
-					}
-					if actualAccum == cachedAccum {
-						stmt.Output = cstmt.Output
-					}
-				}
-				i++ // TODO - remove this as part of TODO from above
-			}
+	// TODO we should tidy this up to not be a walk... it's getting verbose
+	var i int
+	m.walkBody(func(n node) error {
+		step, ok := n.(*scriptNode)
+		if !ok {
 			return nil
-		})
-	} else {
-		m.debugf(m.debugCache, "%v: cache hit for multi-step script; not running", m)
-
-		// We need to assign from the cache the output values to the stmts
-		for i, stmt := range m.scriptSteps {
-			cstmt := cachedOutStmts[i]
-			stmt.Doc = cstmt.Doc
-			stmt.Cmd = cstmt.Cmd
-			stmt.Output = cstmt.Output
-			stmt.ExitCode = cstmt.ExitCode
 		}
-	}
+		if _, noRun, _ := step.tag(tagNorun, ""); noRun {
+			return nil
+		}
+		for _, stmt := range step.stmts {
+			fence := []byte(stmt.outputFence + "\n")
+			advanceWalk(fence) // Ignore everything before the fence
 
-	return nil
+			stmt.Output = advanceWalk(fence)
+			exitCodeStr := advanceWalk([]byte("\n"))
+			stmt.ExitCode, err = strconv.Atoi(exitCodeStr)
+			if err != nil {
+				m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
+			}
+
+			var sans []sanitiser
+			if stmt.sanitisers != nil {
+				sans = stmt.sanitisers
+			} else {
+				for _, s := range m.page.config.Sanitisers {
+					matched, err := s.matches(stmt)
+					if err != nil {
+						m.fatalf("%v: failed to determine if sanitiser should apply for %q: %v", m, stmt.Cmd, err)
+					}
+					if !matched {
+						continue
+					}
+					sans = append(sans, s)
+				}
+			}
+			for _, s := range sans {
+				if err := s.sanitise(stmt); err != nil {
+					m.fatalf("%v: failed to sanitise output for %q: %v", m, stmt.Cmd, err)
+				}
+			}
+
+			// Now replace all random values which have a replacement with that replacement
+			// in both the command and the output
+			stmt.Doc = m.rootFile.page.config.randomReplace(stmt.Doc)
+			stmt.Cmd = m.rootFile.page.config.randomReplace(stmt.Cmd)
+			stmt.Output = m.rootFile.page.config.randomReplace(stmt.Output)
+
+			// At this point, stmt.Output is sanitised.
+
+			if !cacheMiss {
+				// In this code path, we had a cache hit but because of a
+				// flag/other we intentionally skipped the cache. This means
+				// that cmd.Output might be the same as cstmt.Output. But it
+				// might not, because of variations like test times in the
+				// output from commands like 'go test'. This is where
+				// comparators come in.
+				//
+				// Comparators normalise the output of commands in order to
+				// allow for "fuzzy" comparisons. Running the comparators on
+				// both the cached and actual output gives us something we can
+				// then compare byte-for-byte. If the results from the
+				// normalization compare equal, then we can safely write the
+				// output from the cached version to the actual. The actual is
+				// what will get written back to disk.
+
+				cstmt := cachedOutStmts[i]
+				actualAccum := stmt.Output
+				cachedAccum := cstmt.Output
+				for _, cmp := range m.page.config.Comparators {
+					var err error
+					matched, err := cmp.matches(stmt)
+					if err != nil {
+						m.fatalf("%v: failed to determine if comparator should apply for %q: %v", m, stmt.Cmd, err)
+					}
+					if !matched {
+						continue
+					}
+					f := m.getFence()
+					actualAccum, err = cmp.normalize(stmt, actualAccum, f)
+					if err != nil {
+						return err
+					}
+					cachedAccum, err = cmp.normalize(stmt, cachedAccum, f)
+					if err != nil {
+						return err
+					}
+				}
+				if actualAccum == cachedAccum {
+					stmt.Output = cstmt.Output
+				}
+			}
+			i++ // TODO - remove this as part of TODO from above
+		}
+		return nil
+	})
 }
 
 // hashRunnableNode computes a hash of n, writing that hash to w, and returns

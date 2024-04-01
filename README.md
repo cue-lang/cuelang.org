@@ -54,8 +54,7 @@ Can be ignored
 To serve the site locally run:
 
 ```
-./_scripts/npmInstall.bash # one-off
-./_scripts/buildDockerImage.bash # one-off, or when internal/cmd/preprocessor/cmd changes
+./_scripts/build.bash # one-off to ensure everything works
 ./_scripts/serve.bash
 ```
 
