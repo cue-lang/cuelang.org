@@ -1,0 +1,249 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "143575e1_d7b70bc4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "I /really/ like how to-the-point these steps can be!\n\nIn the absence of a specific request, I\u0027ve reviewed this as if it *weren\u0027t* a first cut, and needed to receive all relevant feedback before being submitted.\n\nPlease treat everything I\u0027ve added as nits that I\u0027d *personally* change (or consider) before submitting, but can be ignored if you choose.",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a0907bb_96a4a0f1",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "We don\u0027t yet have this tag. How about establishing it as `api/go`?",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99d26b60_25bac4d2",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "```suggestion\nThis tutorial demonstrates how to get started with\n```",
+      "range": {
+        "startLine": 15,
+        "startChar": 56,
+        "endLine": 15,
+        "endChar": 58
+      },
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb448059_e0e9de61",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "```suggestion\n[CUE\u0027s Go API](https://pkg.go.dev/cuelang.org/go) by writing a Go program to load and\n```",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 3
+      },
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8eda1491_f9df0509",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "The `cmd/` prefix, whilst accurate for both `go` and `cue`, feels like it\u0027ll confuse some proportion of newcomers.",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5d108e7_4f43abb9",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "Perhaps add a sentence relaxing any assumed constraint on the reader\u0027s versions matching these versions.",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf76cc6f_0b7dfdb2",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "Given we\u0027re going to have a bunch of these tutorials, we /could/ opt for some cross-tutorial naming consistency that allows a user to have a bunch of them co-existing happily. How about this, with `cue.example` as the FQDN and the page\u0027s URL path as the module\u0027s path?  \n\n```suggestion\ncue mod init cue.example/loading-cue-go-api\n```\n\nIt won\u0027t work for tutorials that have to publish to a registry, but solving that complexity will be an implicit requirement of such tutorials.",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32ed4931_0cd819af",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "```suggestion\ncue export\n```",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ade07ed_6e7dbdaa",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "```suggestion\ngo mod init cue.example/loading-cue-go-api\n```",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96389c8c_ac2336f3",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "```suggestion\nWrite a Go program to load the CUE and print a message based on the `output` field:\n```",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2e2eb7d_ccd9bd60",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "It\u0027s not clear to me which case \"this\" is.",
+      "range": {
+        "startLine": 107,
+        "startChar": 41,
+        "endLine": 107,
+        "endChar": 50
+      },
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66a92367_03d0d234",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "The `@latest` caveat feels like extra detail that\u0027s either not needed in this tutorial, or should follow after the step.",
+      "range": {
+        "startLine": 127,
+        "startChar": 38,
+        "endLine": 128,
+        "endChar": 17
+      },
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "223cad16_1aa8690e",
+        "filename": "content/docs/tutorial/loading-cue-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T13:33:50Z",
+      "side": 1,
+      "message": "```suggestion\nWell done - you\u0027ve successfully written your first Go program to load and evaluate CUE.\n```",
+      "revId": "ef81bf6b01da3ea759211be1237022f14f00f41f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
