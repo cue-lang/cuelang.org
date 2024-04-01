@@ -16,6 +16,24 @@
       "message": "do you mean the cue issue tracker?",
       "revId": "3372af5018598bf1af0da749ef7f7ab7cf42d7f2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d449a273_7ab5b3c3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T05:26:13Z",
+      "side": 1,
+      "message": "I\u0027ve made that mistake in virtually every CL in this stack. Thanks for catching.",
+      "parentUuid": "1e4b34b8_65bb9d0a",
+      "revId": "3372af5018598bf1af0da749ef7f7ab7cf42d7f2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
