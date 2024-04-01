@@ -1,0 +1,277 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c2020ca_6c0ab8dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "**This** is the length and form that I think the \"custom registry\" mirror of this tutorial should adopt. The brevity is *fab*!\n\nWhilst it might be slightly fiddly to achieve, I think we should make this tutorial\u0027s examples copy-n-paste-able, removing the `cueckoo` text from as many command blocks as possible.\n\nIn comments, I suggest perhaps using envvars, but that\u0027s just an obvious idea. I really don\u0027t think we should require the user to be constantly watching out for places where we\u0027ve told them to type a command that explicitly won\u0027t work; or, if we do, we should visually flag each and every occurrence, somehow. Of those two options, however, I strongly prefer the option of reducing the \"wrong\" commands down to a single one or (if it\u0027s even possible) zero.",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2bd43b2_1c2acb21",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "```suggestion\nIn this tutorial you will publish a module to the Central Registry, and then create a second module that depends on the first.\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0df225ac_7d1cc0db",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "This sentence feels like implementation detail not necessary in the tutorial\u0027s summary block.",
+      "range": {
+        "startLine": 23,
+        "startChar": 36,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "754deba3_2c884057",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "+ A GitHub account.\n+ A Central Registry account (perhaps move all the signup contact detail up here)",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96d718a8_6927986d",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "The `cmd/` prefix feels like it will confuse some users.",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f6ac474_7e410344",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "This link feels like unneeded detail that could be relegated to the `Related content` section.",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bbd9e1e_a94c51ce",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "This command isn\u0027t copy-able by the reader. I feel we should work harder to give them a copy-and-paste-able set of commands.\n\nPerhaps we could be env-var driven, with only the personalised setup of the envvar needing the explanation of /how/ to derive it?",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f55575c2_ead31c11",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "I feel this needs the linking context of something like ...\n\n```suggestion\n`cueckoo`, and because each GitHub user controls the repositories that live in their personal namespace (e.g. `github.com/cueckoo`), we know that our `cueckoo` user controls `{{{.MODULE1}}}` and can publish modules to the Central Registry in\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f24605ba_48171209",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "\"CUE Labs\" here vs `cue.works` in the email address is slightly jarring.\n\nIs \"The **CUE Labs** Central Registry\" necessary branding, or could it just be\n\n```suggestion\nThe Central Registry is in alpha testing. If you do not yet have access\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f86d9c7_048024ce",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "Perhaps add a subject to the mailto: link.",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cc3863f_a0d841cf",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "\"actual\" reads oddly, here.",
+      "range": {
+        "startLine": 158,
+        "startChar": 11,
+        "endLine": 158,
+        "endChar": 17
+      },
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fd79733_8498b698",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "Whilst \"pulling\" is succinct, is it adequately defined for what we\u0027re doing here?",
+      "range": {
+        "startLine": 191,
+        "startChar": 27,
+        "endLine": 191,
+        "endChar": 34
+      },
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eb83b1a_e9bea6cc",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "The title of this tutorial is \"Publishing modules to the Central Registry\", which has been achieved by this point.\n\nThe data being emitted here is 100% contained within the consuming module. Because we\u0027re just consuming a type-based schema there\u0027s no extra data added via templating/etc. The value of the schema, whilst definitely non-zero, isn\u0027t *tangible* on this page.\n\nGiven that this *is* a tutorial, it\u0027s (pretty much) the only context in which we can force the user to make a *mistake* and then learn by correcting it.\n\nHow about really emphasising the **value** of the whole process they\u0027ve just performed by making them make a mistake in their consuming CUE which is flagged up by their use of the published schema, and then letting them fix the problem based on the `cue` error message?",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b1c116b_455945b1",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "```suggestion\nThat\u0027s it! You have just created a module and published it to the Central Registry,\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f5d4170_2b600e28",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-01T14:26:22Z",
+      "side": 1,
+      "message": "```suggestion\nand then used the newly published module to check a concrete configuration held in a different module.\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
