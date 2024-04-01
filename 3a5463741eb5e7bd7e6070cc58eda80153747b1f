@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddcfbd1b_f332d8e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2024-04-01T05:49:01Z",
+      "side": 1,
+      "message": "Emergency approving on behalf of myitcv to fix broken Netlify deploy",
+      "revId": "3a5463741eb5e7bd7e6070cc58eda80153747b1f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
