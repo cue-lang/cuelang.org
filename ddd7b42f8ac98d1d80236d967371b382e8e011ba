@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3f42e94_51a52344",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "This is a hard thing to achieve when publishing a module (to the central registry), because we cannot provide something that will work for the user. Unless they provide us some indication of a namespace that they control. So, for this kind of publishing example, it\u0027s the best we can do for now. Later, we can provide a means by which the user can give us their GitHub username and/or the name of a repository that they do control.",
+      "parentUuid": "7c2020ca_6c0ab8dc",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b2bd43b2_1c2acb21",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-01T14:26:22Z",
       "side": 1,
       "message": "```suggestion\nIn this tutorial you will publish a module to the Central Registry, and then create a second module that depends on the first.\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03640228_19bbc2ff",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2bd43b2_1c2acb21",
       "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -58,6 +94,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3f7d7c2_389c248a",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Agreed, deleted and covered below.",
+      "parentUuid": "0df225ac_7d1cc0db",
+      "range": {
+        "startLine": 23,
+        "startChar": 36,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "754deba3_2c884057",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-04-01T14:26:22Z",
       "side": 1,
       "message": "+ A GitHub account.\n+ A Central Registry account (perhaps move all the signup contact detail up here)",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e09a3485_7ccf5e3f",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Done. I\u0027ve left the comment below because it\u0027s possible the user will miss the prerequisites.",
+      "parentUuid": "754deba3_2c884057",
       "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -92,6 +170,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db65f868_88b5d949",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96d718a8_6927986d",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f6ac474_7e410344",
@@ -105,6 +201,24 @@
       "writtenOn": "2024-04-01T14:26:22Z",
       "side": 1,
       "message": "This link feels like unneeded detail that could be relegated to the `Related content` section.",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71fd7a74_476ea256",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Ok, deleted.",
+      "parentUuid": "4f6ac474_7e410344",
       "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -128,6 +242,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "66c7ba7b_1d0e9ec0",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Per above, that\u0027s very hard right now. We would ultimately need to provide the user with an input box or two where they can enter repository paths that they control and then we could substitute whatever value they provide. Env vars won\u0027t work because the user copies files contents to create... which will contain the wrong import path or something with a `$variable` in it which won\u0027t make sense.\n\nFor now the best we can do is provide direction to replace the paths/import paths.",
+      "parentUuid": "0bbd9e1e_a94c51ce",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f55575c2_ead31c11",
         "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
         "patchSetId": 13
@@ -139,6 +271,24 @@
       "writtenOn": "2024-04-01T14:26:22Z",
       "side": 1,
       "message": "I feel this needs the linking context of something like ...\n\n```suggestion\n`cueckoo`, and because each GitHub user controls the repositories that live in their personal namespace (e.g. `github.com/cueckoo`), we know that our `cueckoo` user controls `{{{.MODULE1}}}` and can publish modules to the Central Registry in\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73df3695_0d59c702",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f55575c2_ead31c11",
       "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -160,6 +310,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a2feba9_24d080e7",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "It\u0027s not critical here because it\u0027s clear when you land there. Removed.",
+      "parentUuid": "f24605ba_48171209",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f86d9c7_048024ce",
@@ -177,6 +345,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb16c9e6_a2de9d54",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f86d9c7_048024ce",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cc3863f_a0d841cf",
@@ -190,6 +376,30 @@
       "writtenOn": "2024-04-01T14:26:22Z",
       "side": 1,
       "message": "\"actual\" reads oddly, here.",
+      "range": {
+        "startLine": 158,
+        "startChar": 11,
+        "endLine": 158,
+        "endChar": 17
+      },
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "037e0ea1_5a7742bd",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Deleted.",
+      "parentUuid": "6cc3863f_a0d841cf",
       "range": {
         "startLine": 158,
         "startChar": 11,
@@ -223,6 +433,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17a11ba2_50bcca3a",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "I changed to \"adding missing dependencies\"",
+      "parentUuid": "6fd79733_8498b698",
+      "range": {
+        "startLine": 191,
+        "startChar": 27,
+        "endLine": 191,
+        "endChar": 34
+      },
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9eb83b1a_e9bea6cc",
@@ -236,6 +470,24 @@
       "writtenOn": "2024-04-01T14:26:22Z",
       "side": 1,
       "message": "The title of this tutorial is \"Publishing modules to the Central Registry\", which has been achieved by this point.\n\nThe data being emitted here is 100% contained within the consuming module. Because we\u0027re just consuming a type-based schema there\u0027s no extra data added via templating/etc. The value of the schema, whilst definitely non-zero, isn\u0027t *tangible* on this page.\n\nGiven that this *is* a tutorial, it\u0027s (pretty much) the only context in which we can force the user to make a *mistake* and then learn by correcting it.\n\nHow about really emphasising the **value** of the whole process they\u0027ve just performed by making them make a mistake in their consuming CUE which is flagged up by their use of the published schema, and then letting them fix the problem based on the `cue` error message?",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa2d8877_1bcf2ccd",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "I think that starts to stray beyond the purpose of the tutorial. This is all about publishing, using the Central Registry. At that point we get into the realms of validation. Which is clearly related in the context of schemas, but orthogonal. I would prefer we leave it as is for now.",
+      "parentUuid": "9eb83b1a_e9bea6cc",
       "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -257,6 +509,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7542e131_06680d8e",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b1c116b_455945b1",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f5d4170_2b600e28",
@@ -270,6 +540,24 @@
       "writtenOn": "2024-04-01T14:26:22Z",
       "side": 1,
       "message": "```suggestion\nand then used the newly published module to check a concrete configuration held in a different module.\n```",
+      "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18111f85_23a5bddd",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-01T18:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f5d4170_2b600e28",
       "revId": "ddd7b42f8ac98d1d80236d967371b382e8e011ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
