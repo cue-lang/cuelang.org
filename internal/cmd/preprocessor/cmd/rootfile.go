@@ -626,10 +626,10 @@ func (m *multiStepScript) run() (runerr error) {
 
 	var sensitiveValues []string
 
-	// Set userAuthn env vars for the users required. Doing so in the bash
-	// script ensure that we will cause a cache miss if the credentials have
-	// changed.
-	if len(m.page.config.TestUserAuthn) > 0 {
+	// Set userAuthn env vars for the users required if we are running with
+	// --readonlycache unset. Doing so in the bash script ensure that we will
+	// cause a cache miss if the credentials have changed.
+	if !m.readonlyCache && len(m.page.config.TestUserAuthn) > 0 {
 		authMap, err := m.testUserAuthn()
 		if err != nil {
 			m.fatalf("%v: failed to load authn map: %v", m, err)
