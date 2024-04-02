@@ -34,7 +34,7 @@ if docker inspect $tag > /dev/null 2>&1; then
 fi
 
 caching=""
-if [ "${CI:-}" == "true" ]
+if [[ "${CI:-}" == "true" ]]
 then
 	caching="--cache-from=type=local,src=$HOME/.cache/dockercache --cache-to=type=local,dest=$HOME/.cache/dockercache"
 fi
