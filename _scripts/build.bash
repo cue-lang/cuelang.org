@@ -57,8 +57,13 @@ fi
 # Build playground
 bash playground/_scripts/build.bash
 
-# Build the docker image as required (it is a no-op if it exists)
-bash _scripts/buildDockerImage.bash
+# Build the docker image as required (it is a no-op if it exists) but only if
+# we are not on Netlify (because if we are we don't have docker and we have
+# zero intention of running anything).
+if [ "${NETLIFY:-}" != "true" ]
+then
+	bash _scripts/buildDockerImage.bash
+fi
 
 # Run the preprocessor
 bash _scripts/runPreprocessor.bash execute $readonlycache $nocachevolume $skipcache
