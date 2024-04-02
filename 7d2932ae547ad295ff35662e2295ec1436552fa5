@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "7d2932ae547ad295ff35662e2295ec1436552fa5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfca1aea_135923aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:29:47Z",
+      "side": 1,
+      "message": "LGTM pending the resolution of the issue in the LHS menu",
+      "revId": "7d2932ae547ad295ff35662e2295ec1436552fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce07e3d7_a738b3e8",
+        "filename": "content/docs/reference/contribution-guidelines/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:29:47Z",
+      "side": 1,
+      "message": "There is something odd going on in the LHS menu. Will send a Discord message with screenshot.",
+      "revId": "7d2932ae547ad295ff35662e2295ec1436552fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
