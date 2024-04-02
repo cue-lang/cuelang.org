@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0450b7d9_abb0a4d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:54:02Z",
+      "side": 1,
+      "message": "With some last nits.",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd095e6d_489734ae",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:54:02Z",
+      "side": 1,
+      "message": "\"against the schema `#Spec`\" - I think we can afford and benefit from using the word \"schema\" here.",
+      "range": {
+        "startLine": 147,
+        "startChar": 61,
+        "endLine": 147,
+        "endChar": 70
+      },
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b012e720_89af48fd",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:54:02Z",
+      "side": 1,
+      "message": "\"reduces\"",
+      "range": {
+        "startLine": 196,
+        "startChar": 40,
+        "endLine": 196,
+        "endChar": 49
+      },
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78162c50_a8e8ef15",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:54:02Z",
+      "side": 1,
+      "message": "I like this, but I think we can still be a bit more precise below.",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "394e1863_518a74a1",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:54:02Z",
+      "side": 1,
+      "message": "Who defined this? Again, making it personal. I think \"the whole team\" is an appropriate group to have agreed this.",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "779db965_c2bc6483",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:54:02Z",
+      "side": 1,
+      "message": "I would make clear who is setting this policy. It\u0027s a hypothetical example, but it makes it clear the different roles/responsibilities involved and how CUE helps to \"bring them together\". \"Management\" for example?",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
