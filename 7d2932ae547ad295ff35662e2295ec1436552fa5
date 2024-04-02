@@ -50,6 +50,24 @@
       "message": "There is something odd going on in the LHS menu. Will send a Discord message with screenshot.",
       "revId": "7d2932ae547ad295ff35662e2295ec1436552fa5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35611c8f_3e74d130",
+        "filename": "content/docs/reference/contribution-guidelines/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T09:58:31Z",
+      "side": 1,
+      "message": "Resolved by inlining the definition of \"CL\" and removing the link.",
+      "parentUuid": "ce07e3d7_a738b3e8",
+      "revId": "7d2932ae547ad295ff35662e2295ec1436552fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
