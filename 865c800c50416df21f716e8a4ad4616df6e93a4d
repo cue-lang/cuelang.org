@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ad0e11e_5f69e051",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T04:24:12Z",
+      "side": 1,
+      "message": "Good catch, thanks.",
+      "parentUuid": "d1783bc2_25fb3457",
+      "revId": "865c800c50416df21f716e8a4ad4616df6e93a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b379bbf7_6b2846ec",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-02T02:16:08Z",
       "side": 1,
       "message": "given that `dockerImageTag` appears to be a global, perhaps make this sync.OnceValue global too? otherwise it seems to carry some state or info from a particular executor, which I\u0027m pretty sure it actually doesn\u0027t",
+      "revId": "865c800c50416df21f716e8a4ad4616df6e93a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d979e646_bbf6f8e5",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T04:24:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b379bbf7_6b2846ec",
       "revId": "865c800c50416df21f716e8a4ad4616df6e93a4d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
