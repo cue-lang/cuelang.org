@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "911cd253_6371f95c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T19:06:40Z",
+      "side": 1,
+      "message": "LGTM - would be great to hack on a JavaScript-based solution that doesn\u0027t require these lengthy caveated wordings as discussed. But that\u0027s not for now. This is much improved.",
+      "revId": "cb83b0fb9f8adef31754136ccbde63ef0e9eaf4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23901835_81f6b405",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T19:06:40Z",
+      "side": 1,
+      "message": "Just to highlight, the module path being wrong would also cause the publish step to fail.",
+      "revId": "cb83b0fb9f8adef31754136ccbde63ef0e9eaf4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
