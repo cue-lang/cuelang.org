@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b379bbf7_6b2846ec",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-02T02:16:08Z",
+      "side": 1,
+      "message": "given that `dockerImageTag` appears to be a global, perhaps make this sync.OnceValue global too? otherwise it seems to carry some state or info from a particular executor, which I\u0027m pretty sure it actually doesn\u0027t",
+      "revId": "865c800c50416df21f716e8a4ad4616df6e93a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
