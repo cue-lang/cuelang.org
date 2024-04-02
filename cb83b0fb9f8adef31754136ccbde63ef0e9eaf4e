@@ -33,6 +33,24 @@
       "message": "Just to highlight, the module path being wrong would also cause the publish step to fail.",
       "revId": "cb83b0fb9f8adef31754136ccbde63ef0e9eaf4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36a7a76f_696f7824",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T19:58:43Z",
+      "side": 1,
+      "message": "Sure. I\u0027m not sure that we can provide an effective escape route for that kind of generic \"made a typo at /some/ point\" error.\n\nBetter -- I /think/! -- to leave them in a state where it fails, then our tightly-scoped mitigation fails, and then they have to ask in Slack/GitHub (or take the initiative to try again from scratch).\n\nThat\u0027s my feeling, anyway - the branching paths of mitigation paragraphs get a bit too gnarly, otherwise. I /think/ ...",
+      "parentUuid": "23901835_81f6b405",
+      "revId": "cb83b0fb9f8adef31754136ccbde63ef0e9eaf4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
