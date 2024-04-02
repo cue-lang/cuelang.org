@@ -16,6 +16,24 @@
       "message": "this is bash; use `[[`? e.g. see the start of the script (and in fact other bits also use the single `[` and should be tweaked)",
       "revId": "0b86d908d6904358ca7704d5925866ed9310f0b3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "331d254a_90de7f22",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T05:12:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04f152f8_3309768a",
+      "revId": "0b86d908d6904358ca7704d5925866ed9310f0b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
