@@ -9,6 +9,8 @@ tags:
 toc_hide: true
 ---
 
+<!-- vim_ syntax highlighting hack -->
+
 ## Introduction
 
 In this tutorial you will publish a module to the Central Registry, and then
@@ -16,22 +18,32 @@ create a second module that depends on the first.
 
 ## Prerequisites
 
-- A [GitHub](https://github.com) account.
-- A Central Registry account. _The Central Registry is in alpha testing. If you
-  do not yet have access please request access via the `#modules` channel in
-  [Slack](https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE)
-  or via <a href="mailto:contact@cue.works?subject=Joining the Central Registry
-  experiment">contact@cue.works</a>._
-- **A tool to edit text files**. Any text editor you have will be fine, for
-  example [VSCode](https://code.visualstudio.com/).
-- **A command terminal**. `cue` works on all platforms, so any terminal on Linux
-  or macOS, and on PowerShell, `cmd.exe` or
-  [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) in Windows.
-- **An installed `cue` binary**
-  ([installation details]({{< relref "/docs/introduction/installation" >}}))
-- **Some awareness of CUE schemata**
-  ([Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
-   [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) in the CUE tour)
+- **A [GitHub](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github#signing-up-for-a-new-personal-account) account**.
+  The Central Registry currently requires a GitHub user account to authenticate with.
+- **A GitHub repository**
+  created under your personal GitHub account, called **`frostyconfig`**.
+  It doesn't matter if this repository is public or private.
+- **A [Central Registry](https://registry.cue.works/) account**.
+  The Central Registry is in alpha testing - if you do not yet have access
+  please request it in the
+  [Slack `#modules` channel](https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE)
+  or via email to
+  <a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">contact@cue.works</a>
+- **An installed `cue` binary**.
+  Follow the [installation instructions]({{< relref "/docs/introduction/installation" >}})
+  to install `cue`
+- **A tool to edit text files**.
+  Any text editor you have will be fine - for example
+  [VSCode](https://code.visualstudio.com/),
+  [Notepad](https://apps.microsoft.com/detail/9msmlrh6lzf3), or
+  [Vim](https://www.vim.org/download.php)
+- **A command terminal**.
+  `cue` works on all platforms - you can use any Linux, macOS, or Windows terminal,
+  such as PowerShell, cmd, or [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+- **Some awareness of CUE schemata**.
+  The CUE tour's sections on
+  [Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
+  [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) are a good refresher
 
 This tutorial is written using the following version of `cue`:
 
@@ -46,7 +58,8 @@ cue version v0.9.0-alpha.1
 In this tutorial we will focus on an imaginary application called `FrostyApp`,
 which consumes its configuration in YAML format.
 You will define the configuration in CUE and use a CUE schema to validate it.
-We would like to be able to share the schema between several consumers.
+We would like to be able to share the schema between several consumers,
+so we will publish it to the Central Registry.
 
 {{< step stepNumber="1" >}}
 
@@ -68,20 +81,29 @@ $ export CUE_EXPERIMENT=modules
 
 {{< /step >}}
 
-{{< step stepNumber="3" >}}
+---
 
-Initialize the directory as a module. Replace `cueckoo` with your GitHub
-username in this and following steps:
+{{< caution >}}
+**You need to adapt the command shown in the next step.**
+
+Don't copy and paste the command into your terminal.\
+Instead, **replace the example username, `cueckoo`, with your own GitHub username.**
+
+You need to make this replacement *everywhere* you see
+the username `cueckoo` in this tutorial.
+{{< /caution >}}
+
+{{< step stepNumber="3" >}}
+Initialize the directory as a module:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGh1Yi5jb20vY3VlY2tvby9mcm9zdHljb25maWdAdjA=" }
+# Replace "cueckoo" with *your* GitHub username
 $ cue mod init github.com/cueckoo/frostyconfig@v0
 ```
 
-Because we are writing this guide from the perspective of the GitHub user
-`cueckoo`, and because each GitHub user controls the repositories that live in
-their personal namespace (e.g. `github.com/cueckoo`), we know that our `cueckoo`
-user controls `github.com/cueckoo/frostyconfig` and can publish modules to the Central Registry
-in that namespace.
+The GitHub user `cueckoo` controls all the repositories under `github.com/cueckoo/`,
+so they can publish modules to the Central Registry inside that namespace.
+The same is true for your GitHub username.
 
 {{< /step >}}
 
@@ -119,16 +141,13 @@ As a one-off, login to the Central Registry:
 $ cue login
 ```
 
+The Central Registry is in alpha testing -
+if you do not yet have access please request it in the
+[Slack `#modules` channel](https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE)
+or via email to
+<a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">contact@cue.works</a>.
+
 {{< /step >}}
-
-{{< info >}}
-The Central Registry is in alpha testing. If you do not yet have access please
-request access via the `#modules` channel in
-[Slack](https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE)
-or via <a href="mailto:contact@cue.works?subject=Joining the Central Registry
-experiment">contact@cue.works</a>.
-{{< /info >}}
-
 
 {{< step stepNumber="6" >}}
 
@@ -141,6 +160,15 @@ $ cue mod tidy
 
 {{< step stepNumber="7" >}}
 
+If you haven't already done so,
+[create a repository](https://github.com/new?org=)
+called `frostyconfig` under your personal username at GitHub.
+It doesn't matter if the repository is public or private.
+
+{{< /step >}}
+
+{{< step stepNumber="8" >}}
+
 Publish the first version of this module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
@@ -149,14 +177,34 @@ published github.com/cueckoo/frostyconfig@v0.0.1
 
 {{< /step >}}
 
+{{< warning >}}
+This command should mention **your** GitHub username,
+and should publish the module successfully.
+
+If the command fails with an error message that mentions *your* GitHub username
+then you probably haven't created the `frostyconfig` repository under your GitHub username.
+Create it, and try the step again.
+
+If the command fails with an error message that mentions `cueckoo/frostyconfig`
+then you probably forgot to adapt the command in step 3, above.
+Don't worry - this **isn't** a serious problem!
+
+The easiest way to fix this is to delete your `frostyconfig` directory
+and restart the tutorial from step 1.
+<!-- TODO: link to step 1 when https://cuelang.org/issue/2971 is resolved -->
+{{< /warning >}}
+
 ## Create a new `frostyapp` module that depends on the first module
 
 Define the `FrostyApp` configuration, constrained by the schema you just
 published.
 
-{{< step stepNumber="8" >}}
+{{< step stepNumber="9" >}}
 
-Create a directory for the new module and initalize it:
+Create a directory for the new module and initalize it,
+changing `cueckoo` to *your* GitHub username:
+<!-- Not strictly neccessary, but it might confuse if we don't point it out -->
+
 ```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgZ2l0aHViLmNvbS9jdWVja29vL2Zyb3N0eWFwcEB2MA==" }
 $ mkdir ../frostyapp
 $ cd ../frostyapp
@@ -164,12 +212,14 @@ $ cue mod init github.com/cueckoo/frostyapp@v0
 ```
 {{< /step >}}
 
-{{< step stepNumber="9" >}}
+{{< step stepNumber="10" >}}
 
 Create the code for the new module:
-```cue { title="frostyapp/config.cue" }
+
+```cue { title="frostyapp/config.cue" linenos="table" }
 package frostyapp
 
+// Adapt this line to your GitHub username.
 import "github.com/cueckoo/frostyconfig@v0"
 
 config: frostyconfig.#Config & {
@@ -179,9 +229,11 @@ config: frostyconfig.#Config & {
 }
 ```
 
+**Remember to change `cueckoo` to *your* GitHub username on line 4.**
+
 {{< /step >}}
 
-{{< step stepNumber="10" >}}
+{{< step stepNumber="11" >}}
 
 Ensure the module is tidy, adding missing dependencies:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
@@ -208,7 +260,7 @@ deps: {
 
 ## Evaluate the configuration
 
-{{< step stepNumber="11" >}}
+{{< step stepNumber="12" >}}
 
 Export the configuration as YAML:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
@@ -223,6 +275,8 @@ config:
 We can use this new module code just like any other CUE code.
 
 {{< /step >}}
+
+<!-- TODO: prompt the reader to delete the authz-related repo from GitHub? -->
 
 ## Congratulations!
 
