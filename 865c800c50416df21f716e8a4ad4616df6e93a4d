@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d1783bc2_25fb3457",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-02T02:21:00Z",
+      "side": 1,
+      "message": "better to use `docker image inspect`, which will require the argument to exist as an image: https://docs.docker.com/reference/cli/docker/image/inspect/\n\notherwise `docker inspect` will work on any docker object like a container, which you don\u0027t want it to.",
+      "revId": "865c800c50416df21f716e8a4ad4616df6e93a4d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b379bbf7_6b2846ec",
         "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
         "patchSetId": 3
