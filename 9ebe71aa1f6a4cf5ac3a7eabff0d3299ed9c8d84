@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ba2754e_5cb371dd",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T11:18:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd095e6d_489734ae",
+      "range": {
+        "startLine": 147,
+        "startChar": 61,
+        "endLine": 147,
+        "endChar": 70
+      },
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b012e720_89af48fd",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-04-02T08:54:02Z",
       "side": 1,
       "message": "\"reduces\"",
+      "range": {
+        "startLine": 196,
+        "startChar": 40,
+        "endLine": 196,
+        "endChar": 49
+      },
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "131984f2_d222115f",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T11:18:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b012e720_89af48fd",
       "range": {
         "startLine": 196,
         "startChar": 40,
@@ -83,6 +131,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8be59add_de58eb60",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T11:18:31Z",
+      "side": 1,
+      "message": "I\u0027ve revised the layout of this, reflecting the fact that, whilst 3 of the 4 CUE files might still be \"controlled by a hypothetical operations team\", we don\u0027t need to focus on that \"control\".\n\nInstead, I\u0027ve placed all 4 files in a table, with a column allow each file\u0027s contents\u0027 *stakeholders* to be listed - IMHO making it clear that the collaborative, unification-based approach takes input from across the board.\n\nTake a look and let me know what you think. The table\u0027s single-line layout (i.e. *not* flowing into multiple lines in any cell) is pretty fragile, and adding much/any more text will move the table into a less pleasing layout. It\u0027s fine to add text, of course - but I\u0027ve tried hard, selecting wording that achieves the single-line layout, because (IMHO!) it looks better without multi-line table cells.",
+      "parentUuid": "78162c50_a8e8ef15",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "394e1863_518a74a1",
         "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
         "patchSetId": 10
@@ -94,6 +160,24 @@
       "writtenOn": "2024-04-02T08:54:02Z",
       "side": 1,
       "message": "Who defined this? Again, making it personal. I think \"the whole team\" is an appropriate group to have agreed this.",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb116246_c10d79c8",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T11:18:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "394e1863_518a74a1",
       "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -111,6 +195,24 @@
       "writtenOn": "2024-04-02T08:54:02Z",
       "side": 1,
       "message": "I would make clear who is setting this policy. It\u0027s a hypothetical example, but it makes it clear the different roles/responsibilities involved and how CUE helps to \"bring them together\". \"Management\" for example?",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdb6ef7a_6f4beaa2",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T11:18:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "779db965_c2bc6483",
       "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
