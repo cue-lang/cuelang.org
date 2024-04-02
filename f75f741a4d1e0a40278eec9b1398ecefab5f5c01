@@ -16,6 +16,24 @@
       "message": "Nit: you are missing a `Preview-Path: /docs/howto/about-commented-cue-guides` but I checked and it looks fine.\n\nThe one thing you might like to consider is limiting the default number of search results on each page if that\u0027s possible? They are quite long as it is.",
       "revId": "f75f741a4d1e0a40278eec9b1398ecefab5f5c01",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c285c93a_55f59c39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-02T14:39:55Z",
+      "side": 1,
+      "message": "\u003e missing Preview-Path: /docs/howto/about-commented-cue-guides\n\nAdded for completeness, and because I had to rebase anyway.\n\n\u003e limiting the default number of search results on each page if that\u0027s possible\n\nhttps://cuelang.org/examples/shortcodes/search/ doesn\u0027t expose it as an option, and https://github.com/cue-lang/cuelang.org/blob/master/hugo/assets/ts/widgets/search-results.ts#L62 /appears/ to hard code it.\n\nTracked as https://github.com/cue-lang/cue/issues/3001.",
+      "parentUuid": "f786d72e_54a56075",
+      "revId": "f75f741a4d1e0a40278eec9b1398ecefab5f5c01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
