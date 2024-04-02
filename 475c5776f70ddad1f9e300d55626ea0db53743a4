@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "475c5776f70ddad1f9e300d55626ea0db53743a4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ededff9_d0898cfc",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:33:25Z",
+      "side": 1,
+      "message": "I\u0027m still not sure on the `reference/*` format here, not least because it suggests a path when that\u0027s not actually the path you end up on. Would short-form titles not suffice?",
+      "revId": "475c5776f70ddad1f9e300d55626ea0db53743a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2d2e210_c75d15ac",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-02T08:33:25Z",
+      "side": 1,
+      "message": "Ditto re the `api/*` format - it suggests an (import) path which is invalid... and I just think it confuses when a title would suffice.",
+      "revId": "475c5776f70ddad1f9e300d55626ea0db53743a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
