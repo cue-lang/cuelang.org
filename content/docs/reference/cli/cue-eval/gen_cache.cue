@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									"K4VTH0TO2L1JCVAR0I44F9HF5GC1BSDRQDJP6POATSJ41R7BS5KG====": [{
+									"IRGT968L33KHJRPIO89Q5JN0QO6AHDJKR7606H1N1T8TT4FTTE80====": [{
 										doc:      ""
 										cmd:      "cue help eval"
 										exitCode: 0
