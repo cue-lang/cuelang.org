@@ -51,6 +51,24 @@
       "parentUuid": "23901835_81f6b405",
       "revId": "cb83b0fb9f8adef31754136ccbde63ef0e9eaf4e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf80be63_98346d83",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-03T09:31:01Z",
+      "side": 1,
+      "message": "That\u0027s fine for now.",
+      "parentUuid": "36a7a76f_696f7824",
+      "revId": "cb83b0fb9f8adef31754136ccbde63ef0e9eaf4e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
