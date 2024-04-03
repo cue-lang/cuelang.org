@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1988b861_e7c69f61",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "I\u0027ve updated the /title/ to \"Converting JSON Schema to CUE\", but have left the URL path as is, so as not to orphan the comments in this CL (yet).",
+      "parentUuid": "227d49af_c04bb1e4",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40fa210c_799e6cfb",
         "filename": "content/docs/tutorial/working-with-json-schema/en.md",
         "patchSetId": 4
@@ -48,6 +66,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "I feel the current intro sentence needs a motivational preamble about why one might want to convert JSON Schema to CUE; /possibly/ including why one wouldn\u0027t keep it as .json and use `cue` to reference the source schema directly.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc673716_1cdf319a",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40fa210c_799e6cfb",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -69,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffa471d3_8fe4ff75",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee4bb44f_d1410276",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "525023fc_97fdeb4c",
@@ -82,6 +136,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "I really like the little prereq library I worked up in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1190798/4/content/docs/tutorial/publishing-modules-to-the-central-registry/en.md, as (IMHO!) it renders quite a bit nicer.\n\nMight be worth copying the relevant points.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7636496_f7fa5901",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "525023fc_97fdeb4c",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +192,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33f767e8_188a8ca7",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36af2812_b87d760b",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5f9665b_89db22d4",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b21e940_8d336bbb",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f9d09cf_9e1f2a7a",
@@ -133,6 +241,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "You end up validating YAML on this page.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18cbc05e_900d90ca",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f9d09cf_9e1f2a7a",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -154,6 +280,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "930926d1_fb0d0333",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afd93032_78810f44",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d8b6403f_f3c46db1",
@@ -167,6 +311,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "As above. I\u0027d stick with \n```suggestion\nConvert the JSON Schema to a CUE definition called `#restaurant`:\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc6c0738_2f069b3d",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8b6403f_f3c46db1",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -188,6 +350,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1ff989c_b2424449",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d71d07df_31f5ef84",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cea25649_08eeeb07",
@@ -201,6 +381,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "I\u0027m not sure why, but I always feel like definitions \"look better\" when capitalised as `#Restaurant` 🤷",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbf13af5_e300737e",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cea25649_08eeeb07",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -239,6 +437,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d9c6b05_8fb761ee",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5402afb1_3c2765b1",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7d5a324d_f499740c",
@@ -252,6 +468,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "As above, the page says it\u0027ll end up validating JSON data.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41d013e0_b4e6cc11",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d5a324d_f499740c",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -273,6 +507,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7bfa67f_6b65c0e0",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5a7e310_5d5f3973",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f2f3f2c_e3eb1bf2",
@@ -286,6 +538,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "Add something like:\n\n```\nUnlike here, `cue vet` is silent when validation succeeds.\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fb1000e_de7b1e7d",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f2f3f2c_e3eb1bf2",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -307,6 +577,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "893441cb_4c1f8569",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e11c3798_1660665e",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "13fd9410_3b0e9038",
@@ -320,6 +608,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "```\n`cue vet`\u0027s silence confirms that the data now validates successfully.\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f568d6c2_56f265b2",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13fd9410_3b0e9038",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -341,6 +647,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61714828_6b812c8e",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd7ef0f8_7349470d",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16979af7_435df0e1",
@@ -354,6 +678,24 @@
       "writtenOn": "2024-04-03T10:13:46Z",
       "side": 1,
       "message": "Revise/delete.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "148d159c_25e4950e",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16979af7_435df0e1",
       "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

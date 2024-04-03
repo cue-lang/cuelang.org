@@ -16,6 +16,24 @@
       "message": "This is a tutorial, not a howto.",
       "revId": "8ee70c86d1afbab5d02cda467565df4b5e7f35be",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c40de0d7_b26636c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T11:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "efbc8b3b_2cf6283f",
+      "revId": "8ee70c86d1afbab5d02cda467565df4b5e7f35be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
