@@ -111,7 +111,8 @@ Registry inside that namespace.  The same is true for your GitHub username.
 {{< step stepNumber="3" >}}
 
 Create the configuration schema:
-```cue { title="frostyconfig/config.cue" }
+{{< code-tabs >}}
+{{< code-tab name="frostyconfig/config.cue" language="cue" area="top-left" >}}
 package frostyconfig
 
 // #Config defines the schema for the FrostyApp configuration.
@@ -130,7 +131,7 @@ package frostyconfig
 		analytics?: bool
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -234,7 +235,8 @@ $ cue mod init --source=git github.com/cueckoo/frostyapp@v0
 
 Create the code for the new module:
 
-```cue { title="frostyapp/config.cue" linenos="table" }
+{{< code-tabs >}}
+{{< code-tab name="frostyapp/config.cue" language="cue" area="top-left" linenos="table" >}}
 package frostyapp
 
 // Adapt this line to your GitHub username, lower-cased.
@@ -245,7 +247,7 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 **Remember to change `cueckoo` to *your* GitHub username, lower-cased, on line 4.**
 

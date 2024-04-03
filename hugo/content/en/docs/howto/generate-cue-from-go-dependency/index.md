@@ -40,14 +40,15 @@ you're interested in, add it as a dependency.
 Create a Go file to signal the required package to the `go` command.
 Our example depends on a Kubernetes package:
 
-```go { title="deps.go" }
+{{< code-tabs >}}
+{{< code-tab name="deps.go" language="go" area="top-left" >}}
 //go:build deps
 // +build deps
 
 package deps
 
 import _ "k8s.io/api/apps/v1"
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="4" >}}
@@ -99,7 +100,8 @@ These are *dependencies* of the target package.
 {{< step stepNumber="7" >}}
 Use the generated code in a CUE package:
 
-```cue { title="example.cue" }
+{{< code-tabs >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 import (
@@ -111,7 +113,7 @@ service: [string]:     core.#Service
 deployment: [string]:  apps.#Deployment
 daemonSet: [string]:   apps.#DaemonSet
 statefulSet: [string]: apps.#StatefulSet
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="8" >}}

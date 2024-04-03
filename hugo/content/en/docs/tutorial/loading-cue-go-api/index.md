@@ -50,12 +50,13 @@ $ cue mod init company.example/configuration
 {{< step stepNumber="2" >}}
 Write some CUE code:
 
-```cue { title="some.cue" }
+{{< code-tabs >}}
+{{< code-tab name="some.cue" language="cue" area="top-left" >}}
 package example
 
 output: "Hello \(name)"
 name:   "Joe"
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -88,7 +89,8 @@ $ go mod init company.example/configuration
 Write a Go program to load the CUE and print a message based on the `output`
 field:
 
-```go { title="main.go" }
+{{< code-tabs >}}
+{{< code-tab name="main.go" language="go" area="top-left" >}}
 package main
 
 import (
@@ -119,7 +121,7 @@ func main() {
 	output := v.LookupPath(cue.ParsePath("output"))
 	fmt.Println(output)
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 
