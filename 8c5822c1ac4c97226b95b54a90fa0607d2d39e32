@@ -16,6 +16,23 @@
       "message": "Very minor fixups. PTAL.",
       "revId": "8c5822c1ac4c97226b95b54a90fa0607d2d39e32",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bde0fc4_a0976838",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-03T16:59:12Z",
+      "side": 1,
+      "message": "I think it\u0027s fair to use \"language\" here, but we need to be careful we are just referring to language features when we say this. Because `cue trim` is not a language feature; it\u0027s an example of a very powerful aspect of CUE that allows the tooling layer to powerfully interplay with language features.",
+      "revId": "8c5822c1ac4c97226b95b54a90fa0607d2d39e32",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
