@@ -40,7 +40,8 @@ different subcommands.
 
 Let's start with a simple CUE schema:
 
-```cue { title="schema.cue" }
+{{< code-tabs >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 // A schema for the pet API.
 package api
 
@@ -58,7 +59,7 @@ $version: "v1.2.3"
 
 // Kind encodes the different pets we handle.
 #Kind: "cat" | "dog" | "goldfish"
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The [`cue def`]({{< relref "docs/reference/cli/cue-def" >}}) command can
 express CUE constraints as OpenAPI data schemas, in OpenAPI's
@@ -80,7 +81,8 @@ $ cue def schema.cue -o api.pet.yaml --out openapi+yaml
 ```
 The `cue def` command creates the `api.pet.yaml` OpenAPI document:
 
-```yaml { title="api.pet.yaml" }
+{{< code-tabs >}}
+{{< code-tab name="api.pet.yaml" language="yaml" area="top-left" >}}
 openapi: 3.0.0
 info:
   title: A schema for the pet API.
@@ -113,7 +115,7 @@ components:
           minimum: 0
           maximum: 100
           exclusiveMaximum: true
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 Because CUE is more expressive than OpenAPI,
 it isn't possible to generate a precise OpenAPI equivalent for *every* CUE constraint.
 CUE does the best conversion it can,
@@ -129,7 +131,8 @@ $ cue import -p api api.pet.yaml
 This produces the following CUE, which is as close to the original `schema.cue`
 as OpenAPI currently permits:
 
-```cue { title="api.pet.cue" }
+{{< code-tabs >}}
+{{< code-tab name="api.pet.cue" language="cue" area="top-left" >}}
 // A schema for the pet API.
 package api
 
@@ -150,18 +153,19 @@ info: {
 	age?: int & >=0 & <100
 	...
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 The [`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}}) command can
 directly use constraints from OpenAPI data schemas to validate data.
 
 Let's check the details of a well-known animal,
 [Jonathan the tortoise](https://en.wikipedia.org/wiki/Jonathan_(tortoise)):
 
-```yml { title="jonathan.yml" }
+{{< code-tabs >}}
+{{< code-tab name="jonathan.yml" language="yml" area="top-left" >}}
 name: Jonathan
 kind: tortoise
 website: https://en.wikipedia.org/wiki/Jonathan_(tortoise)
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Let's validate Jonathan against the contents of our OpenAPI document, `api.pet.yaml`.
 CUE automatically recognises the constraints in the `components.schemas` namespace,
@@ -191,7 +195,8 @@ CUE can also access and generate OpenAPI through its
 Go API.
 
 Generating an OpenAPI definition can be as simple as this:
-```go { title="main.go" }
+{{< code-tabs >}}
+{{< code-tab name="main.go" language="go" area="top-left" >}}
 package main
 
 import (
@@ -223,7 +228,7 @@ func main() {
 	}
 	fmt.Printf("%s\n", out.Bytes())
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 Running this code successfully expresses the constraints in our original
 `schema.cue` file as an OpenAPI document:
 

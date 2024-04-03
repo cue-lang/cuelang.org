@@ -56,7 +56,8 @@ and then using the result to validate some YAML.
 {{< step stepNumber="1" >}}
 Create a JSON schema file:
 
-```json { title="schema.json" }
+{{< code-tabs >}}
+{{< code-tab name="schema.json" language="json" area="top-left" >}}
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
@@ -100,7 +101,7 @@ Create a JSON schema file:
         }
     }
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 This schema validates data that defines a restaurant.
 {{< /step >}}
@@ -116,7 +117,8 @@ Here, we choose the `cuisine` package.
 
 `cue import` creates the file `schema.cue` containing this CUE:
 
-```cue { title="schema.cue" }
+{{< code-tabs >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package cuisine
 
 #restaurant: {
@@ -130,7 +132,7 @@ package cuisine
 		view?: bool
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 CUE natively understands JSON Schema, and is able to convert all of the JSON
 Schema constraints into CUE constraints. Notice the CUE schema is also
 considerably more concise and readable.
@@ -140,23 +142,25 @@ considerably more concise and readable.
 {{< step stepNumber="3" >}}
 Create some data files that contain restaurant details:
 
-```yml { title="split_pea.yml" }
+{{< code-tabs >}}
+{{< code-tab name="split_pea.yml" language="yml" area="top-left" >}}
 name: The Split Pea
 cuisine: Contemporary
 tables:
   - seats: 4
     view: true
   - seats: 6
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
-```yml { title="pomodoro.yml" }
+{{< code-tabs >}}
+{{< code-tab name="pomodoro.yml" language="yml" area="top-left" >}}
 name: Il Pomodoro Marcio
 cuisine: Italian
 tables:
   - seats: 100
   - seats: 8
     view: true
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 One of these files contains a deliberate problem that `cue` will catch for us,
 shortly.  If you spotted the problem while entering the data, make sure you
@@ -181,14 +185,15 @@ are some validation errors.
 {{< step stepNumber="5" >}}
 Fix the data validation error by updating your `pomodoro.yml` file:
 
-```yml { title="pomodoro.yml" }
+{{< code-tabs >}}
+{{< code-tab name="pomodoro.yml" language="yml" area="top-left" >}}
 name: Il Pomodoro Marcio
 cuisine: Italian
 tables:
   - seats: 10
   - seats: 8
     view: true
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 

@@ -113,7 +113,8 @@ registry.
 {{< step stepNumber="3" >}}
 
 Create the configuration schema:
-```cue { title="frostyconfig/config.cue" }
+{{< code-tabs >}}
+{{< code-tab name="frostyconfig/config.cue" language="cue" area="top-left" >}}
 package frostyconfig
 
 // #Config defines the schema for the FrostyApp configuration.
@@ -132,7 +133,7 @@ package frostyconfig
 		analytics?: bool
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The details of the schema are not too important. For the purposes of this tutorial,
 it represents the schema of the configuration data expected by `FrostyApp`.
@@ -262,7 +263,8 @@ $ cue mod init --source=git glacial-tech.example/frostyapp@v0
 {{< step stepNumber="10" >}}
 
 Create the code for the new module:
-```cue { title="frostyapp/config.cue" }
+{{< code-tabs >}}
+{{< code-tab name="frostyapp/config.cue" language="cue" area="top-left" >}}
 package frostyapp
 
 import "glacial-tech.example/frostyconfig@v0"
@@ -272,7 +274,7 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 This imports the `frostyconfig` package from the first
 module you published and
@@ -360,7 +362,8 @@ be the final configuration.
 {{< step stepNumber="14" >}}
 
 Define the CUE template:
-```cue { title="frostytemplate/template.cue" }
+{{< code-tabs >}}
+{{< code-tab name="frostytemplate/template.cue" language="cue" area="top-left" >}}
 package frostytemplate
 
 import "glacial-tech.example/frostyconfig@v0"
@@ -374,7 +377,7 @@ Config: frostyconfig.#Config & {
 		analytics: *true | _
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 We import the schema to constrain the default values, just as we did with the
 `frostyapp` module.
@@ -411,7 +414,8 @@ module:
 $ cd ../frostyapp
 ```
 
-```cue { title="frostyapp/config.cue" }
+{{< code-tabs >}}
+{{< code-tab name="frostyapp/config.cue" language="cue" area="top-left" >}}
 package frostyapp
 
 import "glacial-tech.example/frostytemplate@v0"
@@ -419,7 +423,7 @@ import "glacial-tech.example/frostytemplate@v0"
 config: frostytemplate.Config & {
 	appName: "alpha"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The `frostyapp` module now gains the benefit of the new defaults. We can remove
 some fields because they are now provided by the template, satisfying the
@@ -495,7 +499,8 @@ Update the schema to add a new `maxConcurrency` field:
 $ cd ../frostyconfig
 ```
 
-```cue { title="frostyconfig/config.cue" }
+{{< code-tabs >}}
+{{< code-tab name="frostyconfig/config.cue" language="cue" area="top-left" >}}
 package frostyconfig
 
 // #Config defines the schema for the FrostyApp configuration.
@@ -517,7 +522,7 @@ package frostyconfig
 		analytics?: bool
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The schema is unchanged except for the new `maxConcurrency` field.
 {{< /step >}}

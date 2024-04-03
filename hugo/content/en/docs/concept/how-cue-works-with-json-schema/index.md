@@ -37,7 +37,8 @@ produce CUE from JSON Schema.
 
 Let's start with this JSON Schema:
 
-```json { title="schema.json" }
+{{< code-tabs >}}
+{{< code-tab name="schema.json" language="json" area="top-left" >}}
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
@@ -72,7 +73,7 @@ Let's start with this JSON Schema:
         }
     }
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 
 We use `cue import` to convert the JSON Schema to CUE:
@@ -85,7 +86,8 @@ schema's constraints to create a shorter, more readable CUE representation.
 Our `-l` parameter tells `cue` to place the constraints inside the `#Person`
 definition:
 
-```cue { title="schema.cue" }
+{{< code-tabs >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 import "strings"
 
 #Person: {
@@ -107,18 +109,20 @@ import "strings"
 	"home phone"?: string @deprecated()
 	...
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 We use the imported schema to validate some known-good data (`good.json`)
 and known-bad data (`bad.json`):
 
-```json { title="good.json" }
+{{< code-tabs >}}
+{{< code-tab name="good.json" language="json" area="top-left" >}}
 {
     "name": "Dorothy Cartwright",
     "address": "Ripon, North Yorkshire"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
-```json { title="bad.json" }
+{{< code-tabs >}}
+{{< code-tab name="bad.json" language="json" area="top-left" >}}
 {
     "name": [
         "Charlie",
@@ -126,7 +130,7 @@ and known-bad data (`bad.json`):
     ],
     "address": "Ripon, North Yorkshire"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The
 [`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}})
@@ -174,7 +178,8 @@ fully-formed context: controlling data validation at a lower level.
 
 This Go program validates a JSON data file against a JSON Schema:
 
-```go { title="main.go" }
+{{< code-tabs >}}
+{{< code-tab name="main.go" language="go" area="top-left" >}}
 package main
 
 import (
@@ -249,7 +254,7 @@ func main() {
 	// If no errors, print the data value
 	fmt.Printf("%v\n", res)
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 Running the command validates the data file in the second argument against the
 JSON schema in the first argument - printing the data if it's valid and
 displaying a validation error otherwise. Here we use it to validate the same

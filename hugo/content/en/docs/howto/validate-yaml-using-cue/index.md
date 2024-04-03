@@ -28,7 +28,8 @@ value in a YAML file is the _data type_ it's supposed to be, using the CUE comma
 
 Create a YAML file called `x.yaml` with the following:
 
-```yaml { title="x.yaml" }
+{{< code-tabs >}}
+{{< code-tab name="x.yaml" language="yaml" area="top-left" >}}
 people:
   Gopher:
     name: Gopher
@@ -38,14 +39,15 @@ people:
     name: Ken
     age: 21
     address: The Blue Sky
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Create a CUE file named `x.cue`
 
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-```cue { title="x.cue" }
+{{< code-tabs >}}
+{{< code-tab name="x.cue" language="cue" area="top-left" >}}
 #Person: {
 	name:    string
 	age:     int
@@ -55,7 +57,7 @@ constraints for every person.
 people: [X=string]: #Person & {
 	name: X
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Run the following `cue` command in your:
 
@@ -67,7 +69,8 @@ _NOTE: `cue vet` is silent when run successfully. Output will only show on error
 
 Add another person to your YAML data.
 
-```yaml { title="x.yaml" }
+{{< code-tabs >}}
+{{< code-tab name="x.yaml" language="yaml" area="top-left" >}}
 people:
   Gopher:
     name: Gopher
@@ -81,7 +84,7 @@ people:
     name: Rob
     age: 42.2
     address: CUEtopia
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Validate again with `cue vet`
 
@@ -98,7 +101,8 @@ the (type) constraints that you have declared.
 
 Fix up the YAML
 
-```yaml { title="x.yaml" }
+{{< code-tabs >}}
+{{< code-tab name="x.yaml" language="yaml" area="top-left" >}}
 people:
   Gopher:
     name: Gopher
@@ -112,7 +116,7 @@ people:
     name: Rob
     age: 42
     address: CUEtopia
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Validate with `cue vet` again
 

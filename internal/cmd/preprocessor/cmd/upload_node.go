@@ -16,6 +16,8 @@ package cmd
 
 import (
 	"bytes"
+	"fmt"
+	"strings"
 )
 
 const (
@@ -53,11 +55,11 @@ func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
 	// For now there will be a single file, ensured by validate()
 	f := u.archive.Files[0]
 	a := u.analysis.fileNames[0]
-	props := tabProps{
-		Name:     f.Name,
-		Language: a.Language,
+	args := []string{
+		fmt.Sprintf("name=%q", f.Name),
+		fmt.Sprintf("language=%q", a.Language),
+		"area=\"top-left\"",
 	}
-	p("```%s { title=%q", props.Language, props.Name)
 
 	// Work out if there are any code-tab options specified via the codetab tag.
 	// If there are, add them.
@@ -65,13 +67,13 @@ func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
 	if err != nil {
 		return u.errorf("failed to search for tag %v(%v): %v", tagCodeTab, f.Name, err)
 	}
-	for _, o := range opts {
-		p(" %s", o)
-	}
+	args = append(args, opts...)
 
-	p(" }\n")
+	p("{{< code-tabs >}}\n")
+	p("{{< code-tab %s >}}\n", strings.Join(args, " "))
 	p("%s", f.Data)
-	p("```")
+	p("{{< /code-tab >}}")
+	p("{{< /code-tabs >}}")
 	res.WriteString(u.rf.page.config.randomReplace(b.String()))
 	return nil
 }
