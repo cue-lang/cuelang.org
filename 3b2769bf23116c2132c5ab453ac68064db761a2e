@@ -16,6 +16,24 @@
       "message": "I think showing how `cue` can be used directly using JSON schema makes for a much more powerful demo. I would consider having either another tutorial, or a \"step 0\" where it is briefly shown how to use the json schema without conversion.",
       "revId": "3b2769bf23116c2132c5ab453ac68064db761a2e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "561dfa34_ebcdf3f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-03T18:14:34Z",
+      "side": 1,
+      "message": "Per our discussion and the new patchset, whilst the approach of being able to \"inline\" demonstrate that JSON Schema is natively understood by `cue`, the JSON Schema declaration required to \"prove\" that is at odds with how I understand most people declare their schemas. In the world of JSON Schema, my understanding is that the majority use case is using said schema to validate a file. That is one \"object\" per file. VSCode effectively helps to \"enforce\" this approach by allowing you to say which JSON Schema file should be used to validate a given JSON/Yaml data file.\n\nAs such, people coming from a world of JSON Schema will not expect a JSON Schema that declares a top-level `restaurants` field which itself is constrained by a `restaurant` JSON Schema definition. Instead, they will expect the top level schema itself to be that of a restaurant, and then use that schema to validate data files that contain the definitions of individuals restaurants. \n\nI\u0027ve therefore updated the tutorial to reflect this more likely common approach (note my comments here are based largely on the approach used by schemastore.org schemas, including GitHub Actions Workflow and GitLab CI).\n\nI will create follow-up issues in the main CUE repo to ensure we have a good one-liner approach for using an existing JSON Schema for data files.",
+      "parentUuid": "fe073dae_d0727910",
+      "revId": "3b2769bf23116c2132c5ab453ac68064db761a2e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
