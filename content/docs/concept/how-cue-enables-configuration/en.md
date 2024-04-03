@@ -11,7 +11,7 @@ aliases:
 **Configuration is one of CUE's core tasks**. People often start using CUE
 because it makes it *safer and easier* to produce new configuration files and
 to validate existing files - but its capabilities run deeper.
-In this guide we'll begin with the basics of how CUE make configuration better,
+In this guide we'll begin with the basics of how CUE makes configuration better,
 and then explore the potential of some of its more advanced features for configuration.
 Here's what you'll find in this guide:
 
@@ -387,11 +387,11 @@ compatible and that any configuration data meets the combined requirements.
 
 ## Reducing boilerplate
 
-CUE has several powerful features that allow configuration sources to **reduce boilerplate**
+CUE has several language features that allow configuration sources to **reduce boilerplate**
 \- as well as a command that **removes boilerplate automatically**!
 
 <!-- They're discussed in depth in [how CUE enables boilerplate removal](#TODO), but -->
-Here's a short example that demonstrates a couple of language features that
+Here's a short example that demonstrates a couple of features that
 make it really productive to describe configurations in CUE:
 [templates]({{< relref "docs/tour/types/templates" >}}) and
 [defaults]({{< relref "docs/tour/types/defaults" >}}).
