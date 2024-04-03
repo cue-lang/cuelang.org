@@ -43,7 +43,8 @@ Declare the CUE schema that you wish to walk.
 We'll use the following `example.cue` file,
 but you should use some CUE that's specific to your situation.
 
-```cue { title="example.cue" }
+{{< code-tabs >}}
+{{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example
 
 #Person: {
@@ -70,7 +71,7 @@ anAddress: #Address & {
 
 someData: aValue:      42
 _aHiddenField: aValue: 139
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Our `example.cue` file contains two
 [definitions]({{< relref "docs/tour/types/defs/" >}}) that we want to process:
@@ -94,7 +95,8 @@ $ cue vet
 {{< step stepNumber="5" >}}
 Create the file `main.go` and add the following code:
 
-```go { title="main.go" }
+{{< code-tabs >}}
+{{< code-tab name="main.go" language="go" area="top-left" >}}
 package main
 
 import (
@@ -148,7 +150,7 @@ func structToType(name cue.Selector, val cue.Value) {
 
 	fmt.Printf("}\n")
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="6" >}}

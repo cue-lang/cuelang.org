@@ -21,7 +21,8 @@ first-class CUE value constraints.
 Let's start by **converting Protobuf to CUE** using the `cue` command.
 We'll begin with this Protobuf file, `basic.proto`:
 
-```proto { title="basic.proto" }
+{{< code-tabs >}}
+{{< code-tab name="basic.proto" language="proto" area="top-left" >}}
 syntax = "proto3";
 
 // Package basic is rather basic.
@@ -38,7 +39,7 @@ message MyType {
     // A method must start with a capital letter.
     repeated string method = 2 [(cue.val) = '[...=~"^[A-Z]"]'];
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The `cue import` command converts Protobuf to CUE.
 It indicates success by displaying no output:
@@ -48,7 +49,8 @@ $ cue import basic.proto
 ```
 The command creates this CUE file:
 
-```cue { title="basic.cue" }
+{{< code-tabs >}}
+{{< code-tab name="basic.cue" language="cue" area="top-left" >}}
 // Package basic is rather basic.
 package basic
 
@@ -60,7 +62,7 @@ package basic
 	method?: [...string] @protobuf(2,string)
 	method?: [...=~"^[A-Z]"]
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 Do you notice how the `method` field's type and constraints are split over two lines?
 That's exactly as expected, because CUE's core operation is to automatically
 *unify* each field's right-hand-side.
@@ -78,7 +80,8 @@ CUE's Go API can achieve the same result as the `cue import` command,
 This simple Go code takes the `basic.proto` file shown above, and prints the
 equivalent CUE:
 
-```go { title="main.go" }
+{{< code-tabs >}}
+{{< code-tab name="main.go" language="go" area="top-left" >}}
 package main
 
 import (
@@ -99,7 +102,7 @@ func main() {
 	b, _ := format.Node(file)
 	fmt.Println(string(b))
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 Here's the program's output:
 
 ```text { title="TERMINAL" codeToCopy="Z28gcnVuIG1haW4uZ28=" }
