@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d9df235f_ecf7e08c",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-03T12:43:56Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "1988b861_e7c69f61",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40fa210c_799e6cfb",
         "filename": "content/docs/tutorial/working-with-json-schema/en.md",
         "patchSetId": 4
