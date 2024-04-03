@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddf13583_5d58bc9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "LGTM. A few points I\u0027d personally address, but other than the JSON-vs-YAML must-fix issue it\u0027s good to go.\n\nI\u0027m +2\u0027ing so as not to block - feel free to get me to re-review if you\u0027d like.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "227d49af_c04bb1e4",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "This generic title could describe several different tasks involving JSON Schema. Could it be more precise? Some options might include:\n\n- Importing JSON Schema to validate data\n- Converting JSON Schema to CUE\n\nI\u0027m not sure which specific operations you\u0027d like to highlight as the irreducible core of this tutorial.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40fa210c_799e6cfb",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "I feel the current intro sentence needs a motivational preamble about why one might want to convert JSON Schema to CUE; /possibly/ including why one wouldn\u0027t keep it as .json and use `cue` to reference the source schema directly.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee4bb44f_d1410276",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "Diataxis\u0027 approach suggests that tutorials are about the \"doing\", not the learning.\n\nHow about:\n\n```suggestion\nIn this tutorial you will use the `cue` command to convert JSON Schema to CUE, and then use it to validate some data.\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "525023fc_97fdeb4c",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "I really like the little prereq library I worked up in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1190798/4/content/docs/tutorial/publishing-modules-to-the-central-registry/en.md, as (IMHO!) it renders quite a bit nicer.\n\nMight be worth copying the relevant points.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36af2812_b87d760b",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "The parenthetical verb reads 5% oddly. How about:\n\n```suggestion\nThis tutorial takes you through converting some JSON Schema to a CUE definition using the `cue import` command, and then using ... \n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b21e940_8d336bbb",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "This sentence would pop more if it were the start of a `## Steps` section, instead of being slightly lost at the end of the prereqs section. This would also create a TOC-visible target for the \"meat\" of the page, which is missing at the moment.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f9d09cf_9e1f2a7a",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "You end up validating YAML on this page.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afd93032_78810f44",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "```suggestion\nCreate a JSON Schema file:\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8b6403f_f3c46db1",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "As above. I\u0027d stick with \n```suggestion\nConvert the JSON Schema to a CUE definition called `#restaurant`:\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d71d07df_31f5ef84",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "Maybe add something like:\n\n```\nIt\u0027s good practise to tell `cue` to place imported CUE inside a package. Here, we use the `cuisine` package.\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cea25649_08eeeb07",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "I\u0027m not sure why, but I always feel like definitions \"look better\" when capitalised as `#Restaurant` 🤷",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98fd92dc_9aa3e5f0",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "FYI the broken highlighting on tags\u0027 `@` is included in https://github.com/cue-lang/cue/issues/2980#issuecomment-2012102548",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5402afb1_3c2765b1",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "```suggestion\nCreate a YAML file that defines some restaurant data:\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d5a324d_f499740c",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "As above, the page says it\u0027ll end up validating JSON data.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5a7e310_5d5f3973",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "```suggestion\nCreate a CUE file that constrains the `restaurants` field by the `#restaurant` definition:\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f2f3f2c_e3eb1bf2",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "Add something like:\n\n```\nUnlike here, `cue vet` is silent when validation succeeds.\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e11c3798_1660665e",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "```suggestion\nFix the data validation error by updating your `data.yml` file:\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13fd9410_3b0e9038",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "```\n`cue vet`\u0027s silence confirms that the data now validates successfully.\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd7ef0f8_7349470d",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "```\n## Conclusion\n\nYou\u0027ve completed this tutorial - well done!\n\nIn this tutorial you converted JSON Schema to CUE using `cue import`, and then used the resulting CUE to catch and fix an error in some data.\n```",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16979af7_435df0e1",
+        "filename": "content/docs/tutorial/working-with-json-schema/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-03T10:13:46Z",
+      "side": 1,
+      "message": "Revise/delete.",
+      "revId": "8d006661ce6de995c7df0ea943287141ab2fdc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
