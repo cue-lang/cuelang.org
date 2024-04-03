@@ -112,7 +112,8 @@ The same is true for your GitHub username.
 {{< step stepNumber="4" >}}
 
 Create the configuration schema:
-```cue { title="frostyconfig/config.cue" }
+{{< code-tabs >}}
+{{< code-tab name="frostyconfig/config.cue" language="cue" >}}
 package frostyconfig
 
 // #Config defines the schema for the FrostyApp configuration.
@@ -131,7 +132,7 @@ package frostyconfig
 		analytics?: bool
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -219,7 +220,8 @@ $ cue mod init github.com/cueckoo/frostyapp@v0
 
 Create the code for the new module:
 
-```cue { title="frostyapp/config.cue" linenos="table" }
+{{< code-tabs >}}
+{{< code-tab name="frostyapp/config.cue" language="cue" linenos="table" >}}
 package frostyapp
 
 // Adapt this line to your GitHub username.
@@ -230,7 +232,7 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 **Remember to change `cueckoo` to *your* GitHub username on line 4.**
 
