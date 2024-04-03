@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efbc8b3b_2cf6283f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-03T07:29:52Z",
+      "side": 1,
+      "message": "This is a tutorial, not a howto.",
+      "revId": "8ee70c86d1afbab5d02cda467565df4b5e7f35be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
