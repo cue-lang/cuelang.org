@@ -40,29 +40,32 @@ validate - two JSON files and some YAML:
 
 <!-- TODO: move to multi-file upload when https://cuelang.org/issues/2991 is resolved -->
 {{< columns >}}
-```json { title="alex.json" }
+{{< code-tabs >}}
+{{< code-tab name="alex.json" language="json" area="top-left" >}}
 {
     "name": "Alex Atkinson",
     "type": "dog",
     "height": 55,
     "diet": "kibble"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< columns-separator >}}
-```json { title="bryn.json" }
+{{< code-tabs >}}
+{{< code-tab name="bryn.json" language="json" area="top-left" >}}
 {
     "name": "Bryn Brown",
     "type": "goldfish",
     "height": "2",
     "diet": "flakes"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< columns-separator >}}
-```yaml { title="charlie.yaml" }
+{{< code-tabs >}}
+{{< code-tab name="charlie.yaml" language="yaml" area="top-left" >}}
 name: Charlie Cartwright
 type: cat
 diet: chicken
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /columns >}}
 
 Writing a schema that validates these data files isn't difficult.
@@ -70,13 +73,14 @@ We just mirror the data structure in a CUE file,
 marking important fields as either *optional* or *required* with `?:` and `!:` respectively,
 and add some type information:
 
-```cue { title="schema.cue" }
+{{< code-tabs >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package validation
 
 name!:   string // All animals have a name.
 type!:   string // Every animal must have a type.
 height?: int    // Optional, as we haven't managed to measure *every* animal just yet.
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The `cue vet` command validates our three data files against this schema.
 Each file is validated independently:
@@ -93,14 +97,15 @@ The error message tells us that the problem is on line 4 of the `bryn.json` file
 in the `height` field.
 Let's correct that data:
 
-```json { title="bryn.json" }
+{{< code-tabs >}}
+{{< code-tab name="bryn.json" language="json" area="top-left" >}}
 {
     "name": "Bryn Brown",
     "type": "goldfish",
     "height": 2,
     "diet": "flakes"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 We can then repeat the `cue vet` command:
 
@@ -139,48 +144,53 @@ Let's see some examples of different data validations that CUE makes possible,
 using the same three data files that we worked with above:
 
 {{< columns >}}
-```json { title="alex.json" }
+{{< code-tabs >}}
+{{< code-tab name="alex.json" language="json" area="top-left" >}}
 {
     "name": "Alex Atkinson",
     "type": "dog",
     "height": 55,
     "diet": "kibble"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< columns-separator >}}
-```json { title="bryn.json" }
+{{< code-tabs >}}
+{{< code-tab name="bryn.json" language="json" area="top-left" >}}
 {
     "name": "Bryn Brown",
     "type": "goldfish",
     "height": 2,
     "diet": "flakes"
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< columns-separator >}}
-```yaml { title="charlie.yaml" }
+{{< code-tabs >}}
+{{< code-tab name="charlie.yaml" language="yaml" area="top-left" >}}
 name: Charlie Cartwright
 type: cat
 diet: chicken
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /columns >}}
 
 The `schema.cue` file is in place, as before. Let's create `policy.cue` as well:
 
 {{<columns>}}
-```cue { title="schema.cue" }
+{{< code-tabs >}}
+{{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package validation
 
 name!:   string
 type!:   string
 height?: int
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
-```cue { title="policy.cue" }
+{{< code-tabs >}}
+{{< code-tab name="policy.cue" language="cue" area="top-left" >}}
 package validation
 
 type?:   "dog" | "cat"
 height?: >10
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{</columns>}}
 
 The `policy.cue` file contains additional constraints for some data fields,
@@ -204,12 +214,13 @@ height: invalid value 2 (out of bound >10):
 It turns out that our new policy constraints are too restrictive, as they don't
 permit goldfish, or short animals. Let's correct this by loosening our policies:
 
-```cue { title="policy.cue" }
+{{< code-tabs >}}
+{{< code-tab name="policy.cue" language="cue" area="top-left" >}}
 package validation
 
 type?:   "dog" | "cat" | "goldfish"
 height?: >=1
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 We can then run `cue vet` again:
 
@@ -370,19 +381,21 @@ Let's start with a trivial
 [Protobuf]({{< relref "docs/concept/how-cue-works-with-protocol-buffers" >}})
 schema that defines `ExampleType`:
 
-```proto { title="schema.proto" }
+{{< code-tabs >}}
+{{< code-tab name="schema.proto" language="proto" area="top-left" >}}
 message ExampleType {
   string aString = 1;
   int32  anInt   = 2;
   float  aFloat  = 3;
   bool   aBool   = 4;
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Let's include a JSON Schema file that adds some constraints to a couple of
 `ExampleType`'s fields:
 
-```json { title="schema.json" }
+{{< code-tabs >}}
+{{< code-tab name="schema.json" language="json" area="top-left" >}}
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "definitions": {
@@ -403,12 +416,13 @@ Let's include a JSON Schema file that adds some constraints to a couple of
         }
     }
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 And let's add some CUE policy that constrains `ExampleType`'s fields in ways
 that the other formats can't express:
 
-```cue { title="policy.cue" }
+{{< code-tabs >}}
+{{< code-tab name="policy.cue" language="cue" area="top-left" >}}
 import "strings"
 
 #ExampleType: {
@@ -423,17 +437,18 @@ import "strings"
 	aFloat?: _
 	aBool?:  _
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 We'll carefully construct some data such that it violates constraints from each
 of these schema and policy files:
 
-```yml { title="data.yml" }
+{{< code-tabs >}}
+{{< code-tab name="data.yml" language="yml" area="top-left" >}}
 aString: "Doesn't start with 'Multiplication', and doesn't contain the square of anInt"
 anInt: 5
 aFloat: 99.0
 aBool: "this is not a boolean value"
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The `cue vet` command unifies all the constraints, showing us the full extent
 of our data validation problem:
@@ -463,12 +478,13 @@ However, if we update and fix the data, then the same `cue vet` command is
 silent - indicating that the data validated succesfully against the unified set
 of constraints:
 
-```yml { title="data.yml" }
+{{< code-tabs >}}
+{{< code-tab name="data.yml" language="yml" area="top-left" >}}
 aString: Multiplication - 5 x 5 == 25
 anInt: 5
 aFloat: 4.0
 aBool: false
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
 $ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'

@@ -221,27 +221,30 @@ title: JSON Superset
 ---
 {{< step stepNumber="1" >}}
 
-```cue { title="in.cue" linenos="table" }
+{{< code-tabs >}}
+{{< code-tab name="in.cue" language="cue" area="top-left" linenos="table" >}}
 // A doc comment
 map: {
 	member1: 3 // a line comment
 	member2: 4
 }
-```
-```json { title="in.json" }
+{{< /code-tab >}}{{< /code-tabs >}}
+{{< code-tabs >}}
+{{< code-tab name="in.json" language="json" area="top-left" >}}
 {
 "x": 5
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" codeToCopy="d2MgLWwgaW4uanNvbg==" }
 $ wc -l in.json
 3 in.json
 ```
-```json { title="in/sub/dir/in.json" }
+{{< code-tabs >}}
+{{< code-tab name="in/sub/dir/in.json" language="json" area="top-left" >}}
 {
     "x": 5
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAplY2hvIGhlbGxv" }
 # script doc comment
 # script doc comment part 2
