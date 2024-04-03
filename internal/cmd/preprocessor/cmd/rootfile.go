@@ -464,7 +464,10 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 				pf("mkdir -p \"$(dirname $%s)\"\n", targetFileVar)
 			}
 			pf("cat <<'%s' > $%s\n", fence, targetFileVar)
-			pf("%s\n", f.Data)
+			pf("%s", f.Data)
+			if !bytes.HasSuffix(f.Data, []byte("\n")) {
+				pf("\n")
+			}
 			pf("%s\n", fence)
 
 			// Check the exit code

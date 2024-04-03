@@ -95,6 +95,9 @@ content: dir: page: {
 >"x": 5
 >}
 >{{{end}}}
+>{{{with script "end" "verify upload length"}}}
+>wc -l in.json
+>{{{end}}}
 >{{{with upload "en" "in-subdir"}}}
 >-- in/sub/dir/in.json --
 >{
@@ -155,6 +158,9 @@ content: dir: page: {
 >"x": 5
 >}
 >{{{end}}}
+>{{{with script "end" "verify upload length"}}}
+>wc -l in.json
+>{{{end}}}
 >{{{with upload "en" "in-subdir"}}}
 >-- in/sub/dir/in.json --
 >{
@@ -204,6 +210,10 @@ map: {
 {
 "x": 5
 }
+```
+```text { title="TERMINAL" codeToCopy="d2MgLWwgaW4uanNvbg==" }
+$ wc -l in.json
+3 in.json
 ```
 ```json { title="in/sub/dir/in.json" }
 {
@@ -266,7 +276,15 @@ package site
 						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
 					}
 					multi_step: {
-						"B294I2VIL6SKB07A6ISTQJ5MPKQB5H8IPBUT1CE14QTLECN0F6B0====": [{
+						"UQMDOUICFBPRMF25FJT0TR5M1UVUI7TDTDJBPT45JGSBFBK64JJG====": [{
+							doc:      ""
+							cmd:      "wc -l in.json"
+							exitCode: 0
+							output: """
+									3 in.json
+
+									"""
+						}, {
 							doc: """
 									# script doc comment
 									#scripttag
