@@ -29,7 +29,8 @@ command line.
 {{< step stepNumber="1" >}}
 Create a JSON file called `x.json` with the following:
 
-```json { title="x.json" }
+{{< code-tabs >}}
+{{< code-tab name="x.json" language="json" area="top-left" >}}
 {
     "people": {
         "Gopher": {
@@ -44,7 +45,7 @@ Create a JSON file called `x.json` with the following:
         }
     }
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -55,7 +56,8 @@ Create a CUE file named `x.cue`
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-```cue { title="x.cue" }
+{{< code-tabs >}}
+{{< code-tab name="x.cue" language="cue" area="top-left" >}}
 #Person: {
 	name:    string
 	age:     int
@@ -65,7 +67,7 @@ constraints for every person.
 people: [X=string]: #Person & {
 	name: X
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -83,7 +85,8 @@ _NOTE: `cue vet` is silent when run successfully. Output will only show on error
 Add another person to your JSON data by replacing your `x.json` file with the
 following:
 
-```json { title="x.json" }
+{{< code-tabs >}}
+{{< code-tab name="x.json" language="json" area="top-left" >}}
 {
     "people": {
         "Gopher": {
@@ -103,7 +106,7 @@ following:
         }
     }
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -126,7 +129,8 @@ the (type) constraints that you have declared.
 {{< step stepNumber="6" >}}
 Fix up the JSON:
 
-```json { title="x.json" }
+{{< code-tabs >}}
+{{< code-tab name="x.json" language="json" area="top-left" >}}
 {
     "people": {
         "Gopher": {
@@ -146,7 +150,7 @@ Fix up the JSON:
         }
     }
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
 

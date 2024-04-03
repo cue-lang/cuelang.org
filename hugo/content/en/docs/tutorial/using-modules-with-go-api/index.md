@@ -71,7 +71,8 @@ You won't publish this module, so the name you give it is unimportant.
 {{< step stepNumber="3" >}}
 Create the file `main.cue`, holding the code for the main module:
 
-```cue { title="main.cue" }
+{{< code-tabs >}}
+{{< code-tab name="main.cue" language="cue" area="top-left" >}}
 package config
 
 import "github.com/cue-labs/examples/frostyconfig@v0"
@@ -81,7 +82,7 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Your main module defines some concrete values for a configuration,
 constrained by the `frostyconfig.#Config` schema.
@@ -140,7 +141,8 @@ You won't publish this module, so the name you give it is unimportant.
 {{< step stepNumber="7" >}}
 Create the file `main.go` containing this Go program:
 
-```go { title="main.go" }
+{{< code-tabs >}}
+{{< code-tab name="main.go" language="go" area="top-left" >}}
 package main
 
 import (
@@ -181,7 +183,7 @@ func main() {
 	config := v.LookupPath(cue.ParsePath("config"))
 	fmt.Println(config)
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 This program loads the CUE package in the current directory,
 and then prints a message based on the `config` field.

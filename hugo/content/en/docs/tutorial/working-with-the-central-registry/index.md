@@ -74,7 +74,8 @@ relref "docs/tutorial/working-with-a-custom-module-registry" >}}).
 
 Create the code for the new module:
 
-```cue { title="config.cue" }
+{{< code-tabs >}}
+{{< code-tab name="config.cue" language="cue" area="top-left" >}}
 package frostyapp
 
 import "github.com/cue-labs/examples/frostyconfig@v0"
@@ -84,7 +85,7 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 This imports the `frostyconfig` package first introduced in the tutorial on
 [working with a custom registry]({{< relref

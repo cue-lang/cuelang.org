@@ -250,7 +250,8 @@ $ cp frontend/breaddispatcher/kube.cue .
 
 Modify this file as below.
 
-```cue { title="tmp/services/kube.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/kube.cue" language="cue" area="top-left" >}}
 package kube
 
 service: [ID=_]: {
@@ -293,7 +294,7 @@ deployment: [ID=_]: {
 		}
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 By replacing the service and deployment name with `[ID=_]` we have changed the
 definition into a template matching any field.
@@ -446,7 +447,8 @@ A first thing to note is that DaemonSets and StatefulSets share a similar
 structure to Deployments.
 We generalize the top-level template as follows:
 
-```cue { title="tmp/services/kube2.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/kube2.cue" language="cue" area="top-left" >}}
 package kube
 
 daemonSet: [ID=_]: _spec & {
@@ -488,7 +490,7 @@ _spec: {
 		spec: containers: [{name: _name}]
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 The common configuration has been factored out into `_spec`.
 We introduced `_name` to aid both specifying and referring
@@ -504,7 +506,8 @@ Next we observe that all deployments, stateful sets and daemon sets have
 an accompanying service which shares many of the same fields.
 We add:
 
-```cue { title="tmp/services/kube3.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/kube3.cue" language="cue" area="top-left" >}}
 package kube
 
 // Define the _export option and set the default to true
@@ -530,7 +533,7 @@ for x in [deployment, daemonSet, statefulSet] for k, v in x {
 		]
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 This example introduces a few new concepts.
 Open-ended lists are indicated with an ellipsis (`...`).
@@ -662,7 +665,8 @@ Also, most have two prometheus-related annotations, while some have one.
 We leave the inconsistencies in ports, but add both annotations
 unconditionally.
 
-```cue { title="tmp/services/frontend/kube2.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/frontend/kube2.cue" language="cue" area="top-left" >}}
 package kube
 
 deployment: [string]: spec: template: {
@@ -674,7 +678,7 @@ deployment: [string]: spec: template: {
 		ports: [{containerPort: *7080 | int}] // 7080 is the default
 	}]
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q=" }
 $ cue eval -c ./... >snapshot2
@@ -723,7 +727,8 @@ two or three disks with similar patterns.
 
 Let's add everything but the disks for now:
 
-```cue { title="tmp/services/kitchen/kube2.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/kitchen/kube2.cue" language="cue" area="top-left" >}}
 package kube
 
 deployment: [string]: spec: template: {
@@ -742,7 +747,7 @@ deployment: [string]: spec: template: {
 		}
 	}]
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 A diff reveals that one prometheus annotation was added to a service.
 We assume this to be an accidental omission and accept the differences
@@ -753,7 +758,8 @@ We prefer to keep these two definitions together.
 We take the volumes definition from `expiditer` (the first config in that
 directory with two disks), and generalize it:
 
-```cue { title="tmp/services/kitchen/kube3.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/kitchen/kube3.cue" language="cue" area="top-left" >}}
 package kube
 
 deployment: [ID=_]: spec: template: spec: {
@@ -782,15 +788,16 @@ deployment: [ID=_]: spec: template: spec: {
 		}]
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
-```cue { title="tmp/services/kitchen/souschef/kube2.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/kitchen/souschef/kube2.cue" language="cue" area="top-left" >}}
 package kube
 
 deployment: souschef: spec: template: spec: {
 	_hasDisks: false
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 This template definition is not ideal: the definitions are positional, so if
 configurations were to define the disks in a different order, there would be
@@ -899,7 +906,8 @@ To work with Kubernetes we need to convert our map of Kubernetes objects
 back to a simple list.
 We create the tool file to do just that.
 
-```cue { title="tmp/services/kube_tool.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/kube_tool.cue" language="cue" area="top-left" >}}
 package kube
 
 objects: [for v in objectSets for x in v {x}]
@@ -911,7 +919,7 @@ objectSets: [
 	daemonSet,
 	configMap,
 ]
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 ### Listing objects
 
@@ -923,7 +931,8 @@ download a web page, or execute a command.
 
 We start by defining the `ls` command which dumps all our objects
 
-```cue { title="tmp/services/ls_tool.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/ls_tool.cue" language="cue" area="top-left" >}}
 package kube
 
 import (
@@ -946,7 +955,7 @@ command: ls: {
 		contents: task.print.text
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 <!-- TODO: use "let" once implemented-->
 
@@ -997,7 +1006,8 @@ The following adds a command to dump the selected objects as a YAML stream.
 TODO: add command line flags to filter object types.
 -->
 
-```cue { title="tmp/services/dump_tool.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/dump_tool.cue" language="cue" area="top-left" >}}
 package kube
 
 import (
@@ -1010,7 +1020,7 @@ command: dump: {
 		text: yaml.MarshalStream(objects)
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 <!--
 TODO: with new API as well as conversions implemented
@@ -1028,7 +1038,8 @@ stream of YAML values.
 
 The `create` command sends a list of objects to `kubectl create`.
 
-```cue { title="tmp/services/create_tool.cue" }
+{{< code-tabs >}}
+{{< code-tab name="tmp/services/create_tool.cue" language="cue" area="top-left" >}}
 package kube
 
 import (
@@ -1048,7 +1059,7 @@ command: create: {
 		text: task.kube.stdout
 	}
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 This command has two tasks, named `kube` and `display`.
 The `display` task depends on the output of the `kube` task.
 The `cue` tool does a static analysis of the dependencies and runs all

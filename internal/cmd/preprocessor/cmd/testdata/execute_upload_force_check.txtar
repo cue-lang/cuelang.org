@@ -117,13 +117,15 @@ title: JSON Superset
 
 Some text before
 
-```txt { title="something.txt" }
+{{< code-tabs >}}
+{{< code-tab name="something.txt" language="txt" area="top-left" >}}
 something.txt
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
-```txt { title="something.txt" }
+{{< code-tabs >}}
+{{< code-tab name="something.txt" language="txt" area="top-left" >}}
 something forced
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 ```text { title="TERMINAL" codeToCopy="Y2F0IHNvbWV0aGluZy50eHQ=" }
 $ cat something.txt
@@ -136,9 +138,10 @@ title: JSON Superset
 
 Some text before
 
-```txt { title="else.txt" }
+{{< code-tabs >}}
+{{< code-tab name="else.txt" language="txt" area="top-left" >}}
 else.txt
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 ```text { title="TERMINAL" codeToCopy="Y2F0IGVsc2UudHh0" }
 $ cat else.txt
