@@ -147,6 +147,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbec9bc8_c97a0926",
+        "filename": "content/docs/concept/how-cue-enables-configuration/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-03T10:48:25Z",
+      "side": 1,
+      "message": "LGTM for now, thanks.",
+      "parentUuid": "8be59add_de58eb60",
+      "revId": "9ebe71aa1f6a4cf5ac3a7eabff0d3299ed9c8d84",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "394e1863_518a74a1",
