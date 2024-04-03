@@ -65,22 +65,24 @@ Create a data file named `charlie.yml` to hold Charlie the cat's details.
 Place this information in it, including the deliberate mistake in the `species`
 field:
 
-```yml { title="validating-yaml-with-cue/charlie.yml" }
+{{< code-tabs >}}
+{{< code-tab name="validating-yaml-with-cue/charlie.yml" language="yml" area="top-left" >}}
 name:
   first: Charlie
   last:  Cartwright
 species: goldfish
 age: "15"
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="4" >}}
 Create a file called `pets.cue` to hold your schema, and place this CUE in it:
 
-```cue { title="validating-yaml-with-cue/pets.cue" }
+{{< code-tabs >}}
+{{< code-tab name="validating-yaml-with-cue/pets.cue" language="cue" area="top-left" >}}
 species!: "cat" | "dog"
 age?:     number
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 `cue` will check that your data files are valid, that they satisfy this schema.
 
@@ -158,13 +160,14 @@ Update `charlie.yml` to:
 
 Your corrected data file should read as follows:
 
-```yml { title="validating-yaml-with-cue/charlie.yml" }
+{{< code-tabs >}}
+{{< code-tab name="validating-yaml-with-cue/charlie.yml" language="yml" area="top-left" >}}
 name:
   first: Charlie
   last:  Cartwright
 species: cat
 age: 15
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="7" >}}
@@ -195,13 +198,14 @@ Add a second data file containing the details of another pet.
 
 Create a data file named `toby.yml` to hold Toby the dog's details:
 
-```yml { title="validating-yaml-with-cue/toby.yml" }
+{{< code-tabs >}}
+{{< code-tab name="validating-yaml-with-cue/toby.yml" language="yml" area="top-left" >}}
 name:
   first: Toby
   last: Dog
 species: dog
 age: 12.5
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="9" >}}
