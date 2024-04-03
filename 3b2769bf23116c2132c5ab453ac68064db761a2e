@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe073dae_d0727910",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013536
+      },
+      "writtenOn": "2024-04-03T15:04:58Z",
+      "side": 1,
+      "message": "I think showing how `cue` can be used directly using JSON schema makes for a much more powerful demo. I would consider having either another tutorial, or a \"step 0\" where it is briefly shown how to use the json schema without conversion.",
+      "revId": "3b2769bf23116c2132c5ab453ac68064db761a2e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
