@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ab761a1_5748be82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "PTAL at my comments on /this/ CL, but in the context of the update now visible at https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1191489. (New CL because of the alpha force-push).",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c7677c8_0fb6de03",
@@ -31,6 +48,30 @@
       "writtenOn": "2024-03-01T05:52:13Z",
       "side": 1,
       "message": "Is this part of the sentence necessary?\n\nI\u0027m not sure I understand what an \"invocation environment\" is either?",
+      "range": {
+        "startLine": 16,
+        "startChar": 45,
+        "endLine": 18,
+        "endChar": 0
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96dfb863_44dd31d5",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c7677c8_0fb6de03",
       "range": {
         "startLine": 16,
         "startChar": 45,
@@ -64,6 +105,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "010a7945_e0bfab6a",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6690901_77e90055",
+      "range": {
+        "startLine": 15,
+        "startChar": 14,
+        "endLine": 20,
+        "endChar": 42
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa639646_8c54e061",
@@ -77,6 +142,24 @@
       "writtenOn": "2024-03-01T05:52:13Z",
       "side": 1,
       "message": "Not sure this needs a specific heading (to save some space)\n\n\u003e Given the CUE file:\n\n... and then continue.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e6a922e_b51eddad",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa639646_8c54e061",
       "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -98,6 +181,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "426f5fe4_46bd0359",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7e8a6cc_9fae459c",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab5df274_6acfcd03",
@@ -115,6 +216,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd7b6f22_f9c3b712",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab5df274_6acfcd03",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc6a6bad_18a04390",
@@ -128,6 +247,30 @@
       "writtenOn": "2024-03-01T05:52:13Z",
       "side": 1,
       "message": "This is implied by the explanation relating it to `--outfile`. So I would delete.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 42
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ba304a2_14bfbcf7",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "I\u0027ve left this in, as I now have more vertical room to fill after the move to a column-based layout. See what you think.",
+      "parentUuid": "dc6a6bad_18a04390",
       "range": {
         "startLine": 49,
         "startChar": 0,
@@ -161,6 +304,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd6f5469_64cb527a",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e26c3d6_7c91b01c",
+      "range": {
+        "startLine": 50,
+        "startChar": 44,
+        "endLine": 52,
+        "endChar": 0
+      },
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5beaa3ac_ae8d0177",
@@ -178,6 +345,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ee67224_1014e5e4",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5beaa3ac_ae8d0177",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32c2e1c2_0f865d5e",
@@ -191,6 +376,24 @@
       "writtenOn": "2024-03-01T05:52:13Z",
       "side": 1,
       "message": "I would drop this info block. What is meant to be a simple howto is getting pretty long at this point. It\u0027s not wrong per se, just that the level of explanation exceeds what is required to get someone logging stats. If you want to link via related content to a different bit of content, maybe.",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3e2a532_14c1f621",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32c2e1c2_0f865d5e",
       "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -214,6 +417,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df90a361_0b03f67b",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "See what you think of the coverage in the current patchset. Happy to remove the section entirely if you still think it doesn\u0027t add to the page by helping a reader avoid a trip to the reference documentation.",
+      "parentUuid": "abf37da9_1899b3a1",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "57db9159_c14fa3c1",
         "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
         "patchSetId": 6
@@ -225,6 +446,24 @@
       "writtenOn": "2024-03-01T05:52:13Z",
       "side": 1,
       "message": "You could link to https://github.com/cue-lang/cue/issues/2856",
+      "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "438043fd_53cdda09",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:45:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57db9159_c14fa3c1",
       "revId": "912b9ef023986bd02c131829b30dfa1098deb9ae",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
