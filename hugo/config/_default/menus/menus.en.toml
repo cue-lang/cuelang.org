@@ -40,6 +40,12 @@
     url = "https://bsky.app/profile/cuelang.org"
     pre = "social-bluesky"
     weight = 203
+[[icons]]
+    identifier = "youtube"
+    name = "YouTube"
+    url = "https://www.youtube.com/@cuelang/videos"
+    pre = "social-youtube"
+    weight = 204
 
 # CTA
 [[cta]]
