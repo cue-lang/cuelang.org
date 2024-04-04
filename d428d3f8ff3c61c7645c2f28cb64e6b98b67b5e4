@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5d6dae1_9d63133a",
+        "filename": "content/docs/tutorial/converting-json-schema-to-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-04T09:59:39Z",
+      "side": 1,
+      "message": "In multi-step scripts that\u0027s always been possible. Code nodes are different, because they are running testscript which is a subset of shell and hence not supported. We could/should align the two at some point.",
+      "parentUuid": "d5e8794a_067a1b2c",
+      "revId": "d428d3f8ff3c61c7645c2f28cb64e6b98b67b5e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4052225c_25f49333",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-04-04T05:40:13Z",
       "side": 1,
       "message": "```suggestion\nThe \"silent\" lack of output from `cue vet` confirms that the fixed data validates successfully.\n```",
+      "revId": "d428d3f8ff3c61c7645c2f28cb64e6b98b67b5e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f16dccc_d8330584",
+        "filename": "content/docs/tutorial/converting-json-schema-to-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-04T09:59:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4052225c_25f49333",
       "revId": "d428d3f8ff3c61c7645c2f28cb64e6b98b67b5e4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
