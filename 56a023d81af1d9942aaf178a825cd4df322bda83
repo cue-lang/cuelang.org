@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a5cbc74_93df2a33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T09:47:24Z",
+      "side": 1,
+      "message": "PTAL at the new column-based layout of this guide, which I feel brings several advantages around page flow and much-shortened length.\n\nYour previous comments at https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1176904 have been mostly addressed, with some left unresolved over on that alpha-based CL for your visibility.",
+      "revId": "56a023d81af1d9942aaf178a825cd4df322bda83",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
