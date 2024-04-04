@@ -16,6 +16,57 @@
       "message": "@github@hello.jonathanmatthews.com - over to you for a final review and +2 please (discussed with Marcel offline)",
       "revId": "d428d3f8ff3c61c7645c2f28cb64e6b98b67b5e4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33259434_eac894d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T05:40:13Z",
+      "side": 1,
+      "message": "LGTM.",
+      "revId": "d428d3f8ff3c61c7645c2f28cb64e6b98b67b5e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5e8794a_067a1b2c",
+        "filename": "content/docs/tutorial/converting-json-schema-to-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T05:40:13Z",
+      "side": 1,
+      "message": "When did we gain the ability to use globs? That\u0027ll be really useful!",
+      "revId": "d428d3f8ff3c61c7645c2f28cb64e6b98b67b5e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4052225c_25f49333",
+        "filename": "content/docs/tutorial/converting-json-schema-to-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-04T05:40:13Z",
+      "side": 1,
+      "message": "```suggestion\nThe \"silent\" lack of output from `cue vet` confirms that the fixed data validates successfully.\n```",
+      "revId": "d428d3f8ff3c61c7645c2f28cb64e6b98b67b5e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
