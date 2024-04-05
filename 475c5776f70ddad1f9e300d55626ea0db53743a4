@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd3c17e0_3e298848",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T12:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ededff9_d0898cfc",
+      "revId": "475c5776f70ddad1f9e300d55626ea0db53743a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b2d2e210_c75d15ac",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-04-02T08:33:25Z",
       "side": 1,
       "message": "Ditto re the `api/*` format - it suggests an (import) path which is invalid... and I just think it confuses when a title would suffice.",
+      "revId": "475c5776f70ddad1f9e300d55626ea0db53743a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0522f435_2c159a09",
+        "filename": "content/docs/reference/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T12:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2d2e210_c75d15ac",
       "revId": "475c5776f70ddad1f9e300d55626ea0db53743a4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
