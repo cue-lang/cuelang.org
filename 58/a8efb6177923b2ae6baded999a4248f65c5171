@@ -1,0 +1,9 @@
+TryBot-Result+1: CUEcueckoo <cueckoo@cuelang.org>
+Code-Review+2: Paul Jolly <paul@myitcv.io>
+Submitted-by: Rustam Abdullaev <rustam@cue.works>
+Submitted-at: Fri, 05 Apr 2024 16:33:08 +0000
+Reviewed-on: https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1191910
+Comments-Total: 2
+Comments-Unresolved: 1
+Project: cue-lang/cuelang.org
+Branch: refs/heads/master
