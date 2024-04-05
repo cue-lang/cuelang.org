@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f24af463_218f9d7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T10:15:49Z",
+      "side": 1,
+      "message": "Superseded by https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1191908.",
+      "revId": "93bd9f5fadf304a08686a2b6dfdd133c5c271d09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d626f156_83004272",
@@ -31,6 +48,30 @@
       "writtenOn": "2024-03-16T16:43:31Z",
       "side": 1,
       "message": "We need to agree on this generally speaking but I think:\n\n\"`cue` command\"\n\nis simplest, and avoids three letter acronyms that don\u0027t necessarily translate well/at all.",
+      "range": {
+        "startLine": 14,
+        "startChar": 52,
+        "endLine": 14,
+        "endChar": 66
+      },
+      "revId": "93bd9f5fadf304a08686a2b6dfdd133c5c271d09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "723051fb_2f0b6cd2",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T10:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d626f156_83004272",
       "range": {
         "startLine": 14,
         "startChar": 52,
@@ -58,6 +99,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9887d040_8c4a1a8e",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T10:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b60ae8b8_3842f0ae",
+      "revId": "93bd9f5fadf304a08686a2b6dfdd133c5c271d09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c23e454_034f6ff8",
@@ -71,6 +130,30 @@
       "writtenOn": "2024-03-16T16:43:31Z",
       "side": 1,
       "message": "\"file to CUE that is written to `stdout`:\"",
+      "range": {
+        "startLine": 67,
+        "startChar": 53,
+        "endLine": 67,
+        "endChar": 65
+      },
+      "revId": "93bd9f5fadf304a08686a2b6dfdd133c5c271d09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24f66a37_8d6a284a",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T10:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c23e454_034f6ff8",
       "range": {
         "startLine": 67,
         "startChar": 53,
@@ -122,6 +205,54 @@
         "startChar": 9,
         "endLine": 146,
         "endChar": 20
+      },
+      "revId": "93bd9f5fadf304a08686a2b6dfdd133c5c271d09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1ed9b90_ee8ff952",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T10:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ee89de1_4a3eb4b0",
+      "range": {
+        "startLine": 146,
+        "startChar": 9,
+        "endLine": 146,
+        "endChar": 20
+      },
+      "revId": "93bd9f5fadf304a08686a2b6dfdd133c5c271d09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f6679f9_cff5f428",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T10:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48be02ad_2c485fd1",
+      "range": {
+        "startLine": 146,
+        "startChar": 32,
+        "endLine": 146,
+        "endChar": 39
       },
       "revId": "93bd9f5fadf304a08686a2b6dfdd133c5c271d09",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
