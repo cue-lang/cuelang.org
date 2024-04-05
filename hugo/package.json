@@ -41,7 +41,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hugo": "hugo serve -D --renderToDisk",
+    "hugo": "hugo serve -D",
     "icons": "npm run icons:ui",
     "icons:ui": "svgstore -o \"./static/img/ui.svg\" -p \"icon--\" ./assets/svg/ui/*.svg",
     "lint": "npm run lint-ts && npm run lint-sass && npm run lint-html",
