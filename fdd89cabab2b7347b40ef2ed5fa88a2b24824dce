@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb5ac718_2acbbacd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T17:54:33Z",
+      "side": 1,
+      "message": "FIXME",
+      "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d64514fd_ce9b9f4d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T17:54:33Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fb62ac5_795a05ef",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T17:54:33Z",
+      "side": 1,
+      "message": "FIXME",
+      "range": {
+        "startLine": 346,
+        "startChar": 51,
+        "endLine": 346,
+        "endChar": 56
+      },
+      "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
