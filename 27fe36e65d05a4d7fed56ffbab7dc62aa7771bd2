@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "991ddfe7_c747e292",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-05T17:20:42Z",
+      "side": 1,
+      "message": "PTAL and see what Go example makes sense for the guide\u0027s final section.",
+      "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
