@@ -6,8 +6,10 @@ tags:
 - cue command
 - encodings
 ---
+{{< sidenote text="CUE v0.8.0 or later" >}}
 
 ## Introduction
+{{< sidenote text="CUE v0.8.0 or later" >}}
 
 CUE is a concise and powerful language for describing and constraining data, but
 not all systems speak CUE. Some systems can only produce schemas formatted in
@@ -19,6 +21,7 @@ In this tutorial you'll use `cue` to convert a JSON Schema to CUE,
 and then use the result to validate some data.
 
 ## Prerequisites
+{{< sidenote text="CUE v0.8.0 or later" >}}
 
 - **The `cue` binary** --
   follow the [installation instructions]({{< relref "/docs/introduction/installation" >}})
@@ -38,15 +41,10 @@ and then use the result to validate some data.
   [Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
   [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) are a good refresher
 
-This tutorial is written using the following version of `cue`:
-
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
-$ cue version
-cue version v0.8.0
-...
-```
+{{< sidenote text="CUE v0.8.0 or later" >}}
 
 ## Steps
+{{< sidenote text="CUE v0.8.0 or later" >}}
 
 This tutorial takes you through converting some JSON Schema to a CUE definition
 using the `cue import` command,

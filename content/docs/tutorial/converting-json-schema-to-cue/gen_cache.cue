@@ -14,16 +14,7 @@ package site
 								"pomodoro.yml fixed": "1Mn+kQSwS/KcMXWFuy8PMB86n0RnbhmfWycpLSgWYSM="
 							}
 							multi_step: {
-								"DVCEGC7H472TTN527EA9CSQ0I8S0VKECN14I36TQIGJA74C8OLTG====": [{
-									doc:      "#ellipsis 1"
-									cmd:      "cue version"
-									exitCode: 0
-									output: """
-											cue version v0.8.0
-											...
-
-											"""
-								}, {
+								"6V5GM5L6LM3FHN3CDIP7ULH273IVDHR038E8672AK774VOEEJ2E0====": [{
 									doc:      ""
 									cmd:      "cue import -l '#restaurant:' -p cuisine schema.json"
 									exitCode: 0
