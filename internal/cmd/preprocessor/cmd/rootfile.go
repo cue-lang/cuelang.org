@@ -21,6 +21,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"io"
+	"io/fs"
 	"math/rand"
 	"os"
 	"os/exec"
@@ -35,6 +36,7 @@ import (
 	"cuelang.org/go/cue/format"
 	"github.com/cue-lang/cuelang.org/internal/parse"
 	"golang.org/x/exp/maps"
+	"golang.org/x/tools/txtar"
 	"mvdan.cc/sh/v3/syntax"
 )
 
@@ -50,6 +52,7 @@ var (
 		fnHiddenUpload: true,
 		fnScript:       true,
 		fnHiddenScript: true,
+		fnUploadDir:    true,
 		"reference":    true,
 		"def":          true,
 		"sidetrack":    true,
@@ -392,6 +395,52 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 
 	var scriptSteps []*commandStmt
 
+	upload := func(f txtar.File) {
+		cmdEchoFence := rf.getFence()
+
+		// The upload target path provided via the txtar filename _might_ be
+		// absolute. We don't know.  When it is, we should treat it as such.
+		// Otherwise, as a convenience we treat it as relative to the starting
+		// working directory of the script, i.e. $HOME. The problem is that we
+		// can only determine if the target is absolute in the script itself
+		// (allowing for env var expansion, etc). So we use a unique variable
+		// name to store the target file path, which is made absolute as
+		// required.
+		targetFileVar := "target" + rf.getFence()
+		pf("if [[ \"%s\" != /* ]]; then %s=\"$HOME/%s\"; else %s=\"%s\"; fi\n", f.Name, targetFileVar, f.Name, targetFileVar, f.Name)
+
+		// First echo the commands that we will run to make debugging
+		// easier. Notice this block is surrounded in a no-interpolation
+		// cat using a pseudo-random string fence.
+		pf("cat <<'%s'\n", cmdEchoFence)
+		if strings.Contains(f.Name, "/") {
+			pf("$ mkdir -p \"$(dirname $%s)\"\n", targetFileVar)
+		}
+		pf("$ cat <<EOD > $%s\n", targetFileVar)
+		pf("%s\n", f.Data)
+		pf("EOD\n")
+		pf("%s\n", cmdEchoFence)
+
+		// Now write the actual commands to the file.
+		fence := rf.getFence()
+		if strings.Contains(f.Name, "/") {
+			pf("mkdir -p \"$(dirname $%s)\"\n", targetFileVar)
+		}
+		pf("cat <<'%s' > $%s\n", fence, targetFileVar)
+		pf("%s", f.Data)
+		if !bytes.HasSuffix(f.Data, []byte("\n")) {
+			pf("\n")
+		}
+		pf("%s\n", fence)
+
+		// Check the exit code
+		pf("%s=$?\n", exitCodeVar)
+		pf("if [[ $%s -ne 0 ]]\n", exitCodeVar)
+		pf("then\n")
+		pf("exit 1\n")
+		pf("fi\n")
+	}
+
 	rf.walkBody(func(n node) error {
 		switch n := n.(type) {
 		case *scriptNode:
@@ -432,50 +481,46 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 
 			// We know that for now we have a single file per uploadNode.
 			f := n.archive.Files[0]
+			upload(f)
 
-			cmdEchoFence := rf.getFence()
+		case *uploadDirNode:
+			didWork = true
 
-			// The upload target path provided via the txtar filename _might_ be
-			// absolute. We don't know.  When it is, we should treat it as such.
-			// Otherwise, as a convenience we treat it as relative to the starting
-			// working directory of the script, i.e. $HOME. The problem is that we
-			// can only determine if the target is absolute in the script itself
-			// (allowing for env var expansion, etc). So we use a unique variable
-			// name to store the target file path, which is made absolute as
-			// required.
-			targetFileVar := "target" + rf.getFence()
-			pf("if [[ \"%s\" != /* ]]; then %s=\"$HOME/%s\"; else %s=\"%s\"; fi\n", f.Name, targetFileVar, f.Name, targetFileVar, f.Name)
+			// Walk the directory and add each file to the script as if an
+			// individual upload
+			err := filepath.WalkDir(n.dir, func(path string, d fs.DirEntry, err error) error {
+				if err != nil {
+					return err
+				}
 
-			// First echo the commands that we will run to make debugging
-			// easier. Notice this block is surrounded in a no-interpolation
-			// cat using a pseudo-random string fence.
-			pf("cat <<'%s'\n", cmdEchoFence)
-			if strings.Contains(f.Name, "/") {
-				pf("$ mkdir -p \"$(dirname $%s)\"\n", targetFileVar)
+				if d.IsDir() {
+					return nil // recurse
+				}
+
+				rel, err := filepath.Rel(n.dir, path)
+				if err != nil {
+					return fmt.Errorf("failed to determine %s relative to %s: %v", path, n.dir, err)
+				}
+
+				// We have a file
+				byts, err := os.ReadFile(path)
+				if err != nil {
+					return fmt.Errorf("failed to read %s: %v", path, err)
+				}
+
+				f := txtar.File{
+					Name: rel,
+					Data: byts,
+				}
+
+				upload(f)
+
+				return nil
+			})
+			if err != nil {
+				return fmt.Errorf("%v: failed to walk upload dir %s: %v", n, n.dir, err)
 			}
-			pf("$ cat <<EOD > $%s\n", targetFileVar)
-			pf("%s\n", f.Data)
-			pf("EOD\n")
-			pf("%s\n", cmdEchoFence)
 
-			// Now write the actual commands to the file.
-			fence := rf.getFence()
-			if strings.Contains(f.Name, "/") {
-				pf("mkdir -p \"$(dirname $%s)\"\n", targetFileVar)
-			}
-			pf("cat <<'%s' > $%s\n", fence, targetFileVar)
-			pf("%s", f.Data)
-			if !bytes.HasSuffix(f.Data, []byte("\n")) {
-				pf("\n")
-			}
-			pf("%s\n", fence)
-
-			// Check the exit code
-			pf("%s=$?\n", exitCodeVar)
-			pf("if [[ $%s -ne 0 ]]\n", exitCodeVar)
-			pf("then\n")
-			pf("exit 1\n")
-			pf("fi\n")
 		default:
 			// Nothing to do; other nodes don't contribute
 		}
