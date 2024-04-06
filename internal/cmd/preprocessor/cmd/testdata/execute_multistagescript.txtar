@@ -68,13 +68,18 @@ content: dir: page: {
 		},
 	]
 }
+-- content/dir/_something/nested/file.txt --
+Hello!
 -- content/dir/en.md --
 >---
 >title: JSON Superset
 >---
 >{{{with step}}}
 >
+>{{{uploaddir "_something"}}}
+>
 >{{{with _script_ "en" "hidden script"}}}
+>cat nested/file.txt
 >echo hello
 >{{{end}}}
 >
@@ -141,7 +146,10 @@ content: dir: page: {
 >---
 >{{{with step}}}
 >
+>{{{uploaddir "_something"}}}
+>
 >{{{with _script_ "en" "hidden script"}}}
+>cat nested/file.txt
 >echo hello
 >{{{end}}}
 >
@@ -207,6 +215,7 @@ content: dir: page: {
 title: JSON Superset
 ---
 {{< step stepNumber="1" >}}
+
 ```cue { title="in.cue" linenos="table" }
 // A doc comment
 map: {
@@ -284,7 +293,15 @@ package site
 						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
 					}
 					multi_step: {
-						"RAMUGBEE0SAQFTFH4PDCBTU2NRV5HA3S9Q6L9KQ2OP2FUEUSDC2G====": [{
+						"OI1OQDIIM3ELSTMCNH9QNAQBPSD56VNEEIR52HTLSOUS0K6RPOKG====": [{
+							doc:      ""
+							cmd:      "cat nested/file.txt"
+							exitCode: 0
+							output: """
+									Hello!
+
+									"""
+						}, {
 							doc:      ""
 							cmd:      "echo hello"
 							exitCode: 0

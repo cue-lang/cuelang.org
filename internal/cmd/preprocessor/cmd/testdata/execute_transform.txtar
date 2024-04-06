@@ -45,6 +45,8 @@ content: dir: page: {
 	leftDelim:  "{{{"
 	rightDelim: "}}}"
 }
+-- content/dir/_hidden/something.txt --
+Hello!
 -- content/dir/en.md --
 >---
 >title: JSON Superset
@@ -120,6 +122,7 @@ x: 5
 Some text after
 
 -- structure.golden --
+content/dir/_hidden/something.txt
 content/dir/en.md
 content/dir/gen_cache.cue
 content/dir/page.cue
