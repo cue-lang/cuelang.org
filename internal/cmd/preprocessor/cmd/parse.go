@@ -17,7 +17,9 @@ package cmd
 import (
 	"bytes"
 	"fmt"
+	"io/fs"
 	"os"
+	"path/filepath"
 	"strings"
 	"unicode"
 
@@ -378,6 +380,12 @@ func (rf *rootFile) parse_ActionNode(n *parse.ActionNode) (node, error) {
 			reference: refName,
 		}, nil
 	case *parse.IdentifierNode:
+		nw := &nodeWrapper{
+			rf:               rf,
+			underlying:       n,
+			errorContext:     rf.errorContext,
+			executionContext: rf.executionContext,
+		}
 		switch arg0.Ident {
 		case "TODO":
 			// TODO implement parsing of TODO nodes
@@ -385,15 +393,40 @@ func (rf *rootFile) parse_ActionNode(n *parse.ActionNode) (node, error) {
 			// TODO implement parsing of def nodes
 		case "reference":
 			// TODO implement parsing of reference nodes
+		case fnUploadDir:
+			// We need a single argument
+			if len(c.Args) < 2 {
+				return nil, rf.bodyError(arg0, "%s takes at least one argument; saw %d", fnUploadDir, len(c.Args)-1)
+			}
+
+			sn, ok := c.Args[1].(*parse.StringNode)
+			if !ok {
+				return nil, rf.bodyError(arg0, "%s takes initial string argument; saw %T", fnUploadDir, c.Args[1])
+			}
+
+			relDir := filepath.FromSlash(sn.Text)
+			if !filepath.IsLocal(relDir) {
+				return nil, rf.bodyError(arg0, "directory %q must be relative to page root", relDir)
+			}
+
+			targetPath := filepath.Join(rf.page.dir, relDir)
+
+			fi, err := os.Stat(targetPath)
+			if errors.Is(err, fs.ErrNotExist) {
+				return nil, rf.bodyError(arg0, "directory %q does not exist", relDir)
+			}
+			if !fi.IsDir() {
+				return nil, rf.bodyError(arg0, "%q is not a directory", relDir)
+			}
+
+			return &uploadDirNode{
+				dir:         targetPath,
+				nodeWrapper: nw,
+			}, nil
 		default:
 			return nil, rf.bodyError(arg0, "do not know how to handle with identifier %q", arg0.Ident)
 		}
-		return &nodeWrapper{
-			rf:               rf,
-			underlying:       n,
-			errorContext:     rf.errorContext,
-			executionContext: rf.executionContext,
-		}, nil
+		return nw, nil
 	default:
 		return nil, rf.bodyError(c, "expected identifier or variable as first arg; got %T", arg0)
 	}
