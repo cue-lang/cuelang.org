@@ -74,7 +74,11 @@ content: dir: page: {
 >---
 >{{{with step}}}
 >
->{{{with _upload "en" "hidden file"}}}
+>{{{with _script_ "en" "hidden script"}}}
+>echo hello
+>{{{end}}}
+>
+>{{{with _upload_ "en" "hidden file"}}}
 >-- hidden.txt --
 >Secret message
 >{{{end}}}
@@ -137,7 +141,11 @@ content: dir: page: {
 >---
 >{{{with step}}}
 >
->{{{with _upload "en" "hidden file"}}}
+>{{{with _script_ "en" "hidden script"}}}
+>echo hello
+>{{{end}}}
+>
+>{{{with _upload_ "en" "hidden file"}}}
 >-- hidden.txt --
 >Secret message
 >{{{end}}}
@@ -270,13 +278,21 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "MGtNJz0q8cnehg75tImhxn07oIiaPKZp0xwVLwn99ug="
+						"hidden file":      "6Xa6s3fj5HXSmmr4nTooOes4t5ju1xN7EgYIPg7cENA="
 						"upload-some-cue":  "c+maUqpmoHkAnvZMLuD6OP1I+ZcTSmZeeCHIYPQx+x0="
 						"upload-some-json": "wUTxygpV3YejUYxZbq57QJWNAOstcrigJAXxMUGJT3c="
 						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
 					}
 					multi_step: {
-						"UQMDOUICFBPRMF25FJT0TR5M1UVUI7TDTDJBPT45JGSBFBK64JJG====": [{
+						"RAMUGBEE0SAQFTFH4PDCBTU2NRV5HA3S9Q6L9KQ2OP2FUEUSDC2G====": [{
+							doc:      ""
+							cmd:      "echo hello"
+							exitCode: 0
+							output: """
+									hello
+
+									"""
+						}, {
 							doc:      ""
 							cmd:      "wc -l in.json"
 							exitCode: 0

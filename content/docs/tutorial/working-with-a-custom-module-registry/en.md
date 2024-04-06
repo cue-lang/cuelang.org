@@ -9,7 +9,7 @@ tags:
 toc_hide: true
 ---
 
-{{{with _script "en" "cue mod registry"}}}
+{{{with _script_ "en" "cue mod registry"}}}
 # TODO: this is inherently racey. But not a problem in practice...
 # for now. When it does become a problem we can solve this properly
 # using a nc-based wait loop or similar.
