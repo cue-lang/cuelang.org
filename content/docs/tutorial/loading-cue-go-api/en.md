@@ -7,7 +7,7 @@ authors:
 toc_hide: true
 ---
 
-{{{with _script "en" "set caches to speed up re-running"}}}
+{{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
 {{{end}}}
