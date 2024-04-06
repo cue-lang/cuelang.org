@@ -111,7 +111,7 @@ Convert the JSON Schema to a CUE definition called `#restaurant`:
 cue import -l '#restaurant:' -p cuisine schema.json
 {{{end}}}
 
-{{{with _script "en" "backup imported schema"}}}
+{{{with _script_ "en" "backup imported schema"}}}
 cp schema.cue .schema.cue
 {{{end}}}
 
@@ -137,7 +137,7 @@ package cuisine
 }
 {{{end}}}
 
-{{{with _script "en" "assert schema.cue"}}}
+{{{with _script_ "en" "assert schema.cue"}}}
 diff -u .schema.cue schema.cue
 {{{end}}}
 

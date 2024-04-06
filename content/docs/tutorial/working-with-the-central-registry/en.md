@@ -9,7 +9,7 @@ tags:
 toc_hide: true
 ---
 
-{{{with _script "en" "use prelrelease"}}}
+{{{with _script_ "en" "use prelrelease"}}}
 export PATH="/cues/prerelease:$PATH"
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json

@@ -27,7 +27,7 @@ import (
 
 const (
 	fnScript       = "script"
-	fnHiddenScript = "_script"
+	fnHiddenScript = "_script_"
 )
 
 type scriptNode struct {

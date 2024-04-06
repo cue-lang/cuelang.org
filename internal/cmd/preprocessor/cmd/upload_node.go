@@ -20,7 +20,7 @@ import (
 
 const (
 	fnUpload       = "upload"
-	fnHiddenUpload = "_upload"
+	fnHiddenUpload = "_upload_"
 )
 
 type uploadNode struct {
