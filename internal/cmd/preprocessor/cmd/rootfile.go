@@ -395,8 +395,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 
 	var scriptSteps []*commandStmt
 
-	upload := func(f txtar.File) {
-		cmdEchoFence := rf.getFence()
+	upload := func(f txtar.File, force bool) {
 
 		// The upload target path provided via the txtar filename _might_ be
 		// absolute. We don't know.  When it is, we should treat it as such.
@@ -409,9 +408,19 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 		targetFileVar := "target" + rf.getFence()
 		pf("if [[ \"%s\" != /* ]]; then %s=\"$HOME/%s\"; else %s=\"%s\"; fi\n", f.Name, targetFileVar, f.Name, targetFileVar, f.Name)
 
+		// If we are not in force mode, first check if the file exists
+		if !force {
+			cmdEchoFence := rf.getFence()
+			pf("cat <<'%s'\n", cmdEchoFence)
+			pf("$ if [ -f $%s ]; then echo target file $%s already exists; exit 1; fi\n", targetFileVar, targetFileVar)
+			pf("%s\n", cmdEchoFence)
+			pf("if [ -f $%s ]; then echo target file $%s already exists; exit 1; fi\n", targetFileVar, targetFileVar)
+		}
+
 		// First echo the commands that we will run to make debugging
 		// easier. Notice this block is surrounded in a no-interpolation
 		// cat using a pseudo-random string fence.
+		cmdEchoFence := rf.getFence()
 		pf("cat <<'%s'\n", cmdEchoFence)
 		if strings.Contains(f.Name, "/") {
 			pf("$ mkdir -p \"$(dirname $%s)\"\n", targetFileVar)
@@ -479,9 +488,11 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 		case *uploadNode:
 			didWork = true
 
+			_, force, _ := n.tag(tagForce, "")
+
 			// We know that for now we have a single file per uploadNode.
 			f := n.archive.Files[0]
-			upload(f)
+			upload(f, force)
 
 		case *uploadDirNode:
 			didWork = true
@@ -513,7 +524,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 					Data: byts,
 				}
 
-				upload(f)
+				upload(f, n.force)
 
 				return nil
 			})

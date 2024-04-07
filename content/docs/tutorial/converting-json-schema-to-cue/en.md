@@ -121,6 +121,7 @@ Here, we choose the `cuisine` package.
 `cue import` creates the file `schema.cue` containing this CUE:
 
 {{{with upload "en" "schema.cue"}}}
+#force
 -- schema.cue --
 package cuisine
 
@@ -191,6 +192,7 @@ are some validation errors.
 Fix the data validation error by updating your `pomodoro.yml` file:
 
 {{{with upload "en" "pomodoro.yml fixed"}}}
+#force
 -- pomodoro.yml --
 name: Il Pomodoro Marcio
 cuisine: Italian

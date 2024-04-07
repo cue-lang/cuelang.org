@@ -379,6 +379,7 @@ cd ../frostyapp
 {{{end}}}
 
 {{{with upload "en" "update-frostyapp"}}}
+#force
 -- frostyapp/config.cue --
 package frostyapp
 
@@ -442,6 +443,7 @@ cd ../frostyconfig
 {{{end}}}
 
 {{{with upload "en" "schema-v0.1.0"}}}
+#force
 -- frostyconfig/config.cue --
 package frostyconfig
 
@@ -492,6 +494,7 @@ cd ../frostyapp
 {{{end}}}
 
 {{{with upload "en" "edit-dependency-version"}}}
+#force
 -- frostyapp/cue.mod/module.cue --
 module: "glacial-tech.example/frostyapp@v0"
 deps: {
