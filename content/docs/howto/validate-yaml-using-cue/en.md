@@ -70,6 +70,7 @@ _NOTE: `cue vet` is silent when run successfully. Output will only show on error
 Add another person to your YAML data.
 
 {{{with upload "en" "another person"}}}
+#force
 -- x.yaml --
 people:
   Gopher:
@@ -98,6 +99,7 @@ the (type) constraints that you have declared.
 Fix up the YAML
 
 {{{with upload "en" "fixed yaml"}}}
+#force
 -- x.yaml --
 people:
   Gopher:

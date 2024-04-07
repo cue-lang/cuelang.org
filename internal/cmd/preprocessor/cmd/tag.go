@@ -47,7 +47,21 @@ const (
 	//
 	tagLocation = "location"
 
+	// tagEllipsis indicates that the command to which the directive is attached
+	// should have its output trimmed according to the argument. The argument is
+	// an integer showing the max number of lines that should be shown before an
+	// ellipsis ("...") is output to indicate more lines were present. e.g.
+	//
+	//     #ellipsis 1
+	//
+	// will ensure at most one line of real output is shown. If more lines were
+	// present then they are represented by "..." as the last "line" of the
+	// output.
 	tagEllipsis = "ellipsis"
+
+	// tagForce indicates that an upload or uploaddir should ignore if a target
+	// file already exists.
+	tagForce = "force"
 )
 
 // findTag searches for the first #$key (or #$key($arg) if arg is non empty)
