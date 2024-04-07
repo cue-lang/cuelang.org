@@ -37,7 +37,7 @@ type sanitiserMatcher interface {
 }
 
 type matcher interface {
-	matches(cmd *commandStmt) (bool, error)
+	matches(cmd *syntax.Stmt) (bool, error)
 }
 
 // kindAndCommand is the structure common to various types that are tied to
@@ -89,8 +89,7 @@ func (m *matchSpec) init() error {
 	return nil
 }
 
-func (m *matchSpec) matches(cmd *commandStmt) (bool, error) {
-	got := cmd.stmt
+func (m *matchSpec) matches(got *syntax.Stmt) (bool, error) {
 	want := m.stmt
 
 	// Negated state must match
@@ -118,6 +117,9 @@ func (m *matchSpec) matches(cmd *commandStmt) (bool, error) {
 		if matched, err := matchArgs(m, got.Args, want.Args); err != nil || !matched {
 			return matched, err
 		}
+	case *syntax.BinaryCmd:
+		// Match the X part only
+		return m.matches(got.X)
 	default:
 		return false, fmt.Errorf("don't know how to handle stmt of type %T", got)
 	}

@@ -1,0 +1,44 @@
+# Ensure that various shell scripts can be handled by the sanitiser checker.
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+exec preprocessor execute
+
+# Verify that the target files matche the source contents
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+-- hugo/.keep --
+-- content/dir/site.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+
+	sanitisers: [
+		// Need at least one sanitiser
+		{
+			kind: "ellipsisSanitiser"
+			command: "ls"
+		},
+	]
+}
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "en" "zero"}}}
+>#BinaryCmd (the pipe)
+>ls | echo hello
+>{{{end}}}
+-- golden/hugo/content/en/dir/index.md --
+---
+title: JSON Superset
+---
+
+```text { title="TERMINAL" codeToCopy="bHMgfCBlY2hvIGhlbGxv" }
+$ ls | echo hello
+...
+```
