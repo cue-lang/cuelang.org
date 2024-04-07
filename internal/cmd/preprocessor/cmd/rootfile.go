@@ -841,7 +841,7 @@ func (m *multiStepScript) run() {
 				sans = stmt.sanitisers
 			} else {
 				for _, s := range m.page.config.Sanitisers {
-					matched, err := s.matches(stmt)
+					matched, err := s.matches(stmt.stmt)
 					if err != nil {
 						m.fatalf("%v: failed to determine if sanitiser should apply for %q: %v", m, stmt.Cmd, err)
 					}
@@ -886,7 +886,7 @@ func (m *multiStepScript) run() {
 				cachedAccum := cstmt.Output
 				for _, cmp := range m.page.config.Comparators {
 					var err error
-					matched, err := cmp.matches(stmt)
+					matched, err := cmp.matches(stmt.stmt)
 					if err != nil {
 						m.fatalf("%v: failed to determine if comparator should apply for %q: %v", m, stmt.Cmd, err)
 					}
