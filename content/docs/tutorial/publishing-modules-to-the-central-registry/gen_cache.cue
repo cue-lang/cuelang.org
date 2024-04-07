@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "nqTYyExUoFzL7Ek2chO3gq7TYBOjPjdDOQ3c5OP7n4A="
-								"config.cue":    "wOJ+l2iHr4NVU/NFBFZ7Cis0PtmbOT/1c0oxahqR2zU="
+								"schema-v0.0.1": "UuEog+aNZQlFv+l6a5QK+frF0vuAS9Jco5cuTDzUgsg="
+								"config.cue":    "zcHqF309IkwOSAab8hTGbaXSMkcnMKZWHaYcnfCop/U="
 							}
 							multi_step: {
-								"SIDTFPF5347VQEBOGP6J7K4SIC2O5J0EJ5P31EUUVVE44JFN2Q00====": [{
+								"AK5VNU3EB9ILO47FIQ9D0S5TVPA5FJ93ACUF7BV42HRQBRFV7V4G====": [{
 									doc:      ""
 									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
 									exitCode: 0
