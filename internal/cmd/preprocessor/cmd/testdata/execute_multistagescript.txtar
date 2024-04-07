@@ -293,7 +293,7 @@ package site
 						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
 					}
 					multi_step: {
-						"OI1OQDIIM3ELSTMCNH9QNAQBPSD56VNEEIR52HTLSOUS0K6RPOKG====": [{
+						"B55E6TPQDQ0M6200U4HA1KM971JIH4GP5NB7DNNKNEF8KHM6MDI0====": [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
 							exitCode: 0

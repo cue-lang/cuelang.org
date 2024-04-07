@@ -39,10 +39,10 @@ content: dir: page: {
 >{{{end}}}
 >
 >{{{with upload "en" "5"}}}
->-- one.txt --
+>-- three.txt --
 >{{{end}}}
 >{{{with upload "en" "6"}}}
->-- another/two.txt --
+>-- another/four.txt --
 >{{{end}}}
 >
 >{{{with script "en" "7"}}}
@@ -76,9 +76,9 @@ $ find $HOME -type f | sort
 $ cd another
 ```
 
-```txt { title="one.txt" }
+```txt { title="three.txt" }
 ```
-```txt { title="another/two.txt" }
+```txt { title="another/four.txt" }
 ```
 
 ```text { title="TERMINAL" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }
@@ -86,7 +86,9 @@ $ find $HOME -type f | sort
 /home/runner/.bash_logout
 /home/runner/.bashrc
 /home/runner/.profile
+/home/runner/another/four.txt
 /home/runner/another/two.txt
 /home/runner/one.txt
+/home/runner/three.txt
 ```
 

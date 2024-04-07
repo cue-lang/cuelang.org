@@ -1,0 +1,146 @@
+# Ensure that upload and uploaddir work as expected with and without force
+# directives.
+
+unquote content/upload/en.md content/upload/en.md.force
+unquote content/uploaddir/en.md content/uploaddir/en.md.force
+
+# Run the preprocessor to ensure we get failures without force
+! exec preprocessor execute
+stderr 'target file /home/runner/something.txt already exists'
+stderr 'target file /home/runner/else.txt already exists'
+
+# Add the force directive and ensure we can run the preprocessor
+mv content/upload/en.md.force content/upload/en.md
+mv content/uploaddir/en.md.force content/uploaddir/en.md
+exec preprocessor execute --debug=all
+
+# Compare hugo output for completeness
+cmp hugo/content/en/upload/index.md golden/hugo/content/en/upload/index.md
+cmp hugo/content/en/uploaddir/index.md golden/hugo/content/en/uploaddir/index.md
+
+-- hugo/.keep --
+-- golden/content/dir/.keep --
+-- content/site.cue --
+package site
+-- content/upload/page.cue --
+package site
+
+content: upload: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/upload/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>{{{with upload "en" "initial upload"}}}
+>-- something.txt --
+>something.txt
+>{{{end}}}
+>
+>{{{with upload "en" "upload that will fail"}}}
+>-- something.txt --
+>something.txt
+>{{{end}}}
+>
+-- content/upload/en.md.force --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>{{{with upload "en" "initial upload"}}}
+>-- something.txt --
+>something.txt
+>{{{end}}}
+>
+>{{{with upload "en" "upload that will succeed"}}}
+>#force
+>-- something.txt --
+>something forced
+>{{{end}}}
+>
+>{{{with script "en" "cat file"}}}
+>cat something.txt
+>{{{end}}}
+-- content/uploaddir/page.cue --
+package site
+
+content: uploaddir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/uploaddir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>{{{with upload "en" "initial upload"}}}
+>-- else.txt --
+>else.txt
+>{{{end}}}
+>
+>{{{uploaddir "_hidden" }}}
+>
+>{{{with script "en" "cat file"}}}
+>cat else.txt
+>{{{end}}}
+-- content/uploaddir/en.md.force --
+>---
+>title: JSON Superset
+>---
+>
+>Some text before
+>
+>{{{with upload "en" "initial upload"}}}
+>-- else.txt --
+>else.txt
+>{{{end}}}
+>
+>{{{uploaddir "_hidden" "#force"}}}
+>
+>{{{with script "en" "cat file"}}}
+>cat else.txt
+>{{{end}}}
+-- content/uploaddir/_hidden/else.txt --
+else forced
+-- golden/hugo/content/en/upload/index.md --
+---
+title: JSON Superset
+---
+
+Some text before
+
+```txt { title="something.txt" }
+something.txt
+```
+
+```txt { title="something.txt" }
+something forced
+```
+
+```text { title="TERMINAL" codeToCopy="Y2F0IHNvbWV0aGluZy50eHQ=" }
+$ cat something.txt
+something forced
+```
+-- golden/hugo/content/en/uploaddir/index.md --
+---
+title: JSON Superset
+---
+
+Some text before
+
+```txt { title="else.txt" }
+else.txt
+```
+
+```text { title="TERMINAL" codeToCopy="Y2F0IGVsc2UudHh0" }
+$ cat else.txt
+else forced
+```

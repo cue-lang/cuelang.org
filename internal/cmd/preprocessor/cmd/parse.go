@@ -419,8 +419,26 @@ func (rf *rootFile) parse_ActionNode(n *parse.ActionNode) (node, error) {
 				return nil, rf.bodyError(arg0, "%q is not a directory", relDir)
 			}
 
+			// Now try to grab any directives from remaining args
+			var directives []string
+			for _, a := range c.Args[2:] {
+				sn, ok := a.(*parse.StringNode)
+				if !ok {
+					return nil, rf.bodyError(arg0, "%s expects variadic string arguments; saw %T", fnUploadDir, a)
+				}
+				directives = append(directives, sn.Text)
+			}
+
+			var force bool
+			for _, d := range directives {
+				if _, found, _ := findTag([]byte(d), tagForce, ""); found {
+					force = true
+				}
+			}
+
 			return &uploadDirNode{
 				dir:         targetPath,
+				force:       force,
 				nodeWrapper: nw,
 			}, nil
 		default:

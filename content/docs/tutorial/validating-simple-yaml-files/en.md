@@ -151,6 +151,7 @@ Update `charlie.yml` to:
 Your corrected data file should read as follows:
 
 {{{with upload "en" "yamlFixed"}}}
+#force
 -- validating-yaml-with-cue/charlie.yml --
 name:
   first: Charlie

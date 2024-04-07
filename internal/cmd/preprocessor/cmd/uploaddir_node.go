@@ -23,6 +23,10 @@ type uploadDirNode struct {
 
 	// dir is the relative directory to upload
 	dir string
+
+	// force indicates that the uploaddir should overwrite existing files if
+	// they exist
+	force bool
 }
 
 func (u *uploadDirNode) isHidden() bool {
