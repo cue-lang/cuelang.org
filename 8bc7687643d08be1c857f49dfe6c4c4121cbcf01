@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd13463c_0838f570",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-08T05:32:04Z",
+      "side": 1,
+      "message": "Great point. Done in https://cuelang.org/cl/1192701",
+      "parentUuid": "f0a5f4f7_3d1c4d88",
+      "revId": "8bc7687643d08be1c857f49dfe6c4c4121cbcf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc9a1e86_8b1288e6",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-08T01:48:17Z",
       "side": 1,
       "message": "some of these files are unexpectedly executable",
+      "revId": "8bc7687643d08be1c857f49dfe6c4c4121cbcf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2cad3bf_f451a9d2",
+        "filename": "content/docs/tutorial/k8s/_ref/original/services/frontend/waiter/kube.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-08T05:32:04Z",
+      "side": 1,
+      "message": "Fixed in https://cuelang.org/cl/1192701.",
+      "parentUuid": "dc9a1e86_8b1288e6",
       "revId": "8bc7687643d08be1c857f49dfe6c4c4121cbcf01",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
