@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0a5f4f7_3d1c4d88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-08T01:48:17Z",
+      "side": 1,
+      "message": "it might have been a good idea to copy the tutorial from the cue repo exactly as-is in one commit, perhaps disabled to keep CI green, then a follow-up commit would make the necessary changes like uploaddir and generate the output. This way it\u0027s obvious what changes were necessary, and it\u0027s also easy to verify that the contents copied from the original repo were identical.",
+      "revId": "8bc7687643d08be1c857f49dfe6c4c4121cbcf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc9a1e86_8b1288e6",
+        "filename": "content/docs/tutorial/k8s/_ref/original/services/frontend/waiter/kube.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-08T01:48:17Z",
+      "side": 1,
+      "message": "some of these files are unexpectedly executable",
+      "revId": "8bc7687643d08be1c857f49dfe6c4c4121cbcf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
