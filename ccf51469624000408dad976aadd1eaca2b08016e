@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa78fade_a6d92967",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-08T13:40:31Z",
+      "side": 1,
+      "message": "PTAL. I can\u0027t get this and its follow up cache-rewriting CL to both pass CI. I\u0027m sure I\u0027m missing /something/, but I can\u0027t see what it might be. I\u0027ve tried placing the k8s tutorial\u0027s change (in the `hugo` hierarchy) inside the first, then the second, commit - but neither setup allows both changes to pass CI simultaneously.",
+      "revId": "ccf51469624000408dad976aadd1eaca2b08016e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
