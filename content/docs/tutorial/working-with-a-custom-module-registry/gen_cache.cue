@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "cKyT2wg8ThYEUedgAsYHSh+t/VaTiLThu/kwrk14nyE="
-								"config.cue":               "HqIW6DhNhUMFM2ZMyrB2P8IT+AWVEMX3Buw5KBKIJRg="
-								"second-module-to-publish": "kI+fl08/AL35vXScSKG5zA0bECEE98YdyfZtkjEsTI0="
-								"update-frostyapp":         "Qk26omfV5BbxoEhgbGy+Z5tferoWQjK1hVXLfMjFbqs="
-								"schema-v0.1.0":            "A616hF4rpszMOPrddy3FAY5eme6T/1iwL5NqsBrV2hc="
-								"edit-dependency-version":  "IPIRMtU5pRR6g6l5wpND6Bbw3oWDkcn4+0iudFXDTyk="
+								"schema-v0.0.1":            "JvTCKj7dkhNrCya3/5KR/MEQtE+Irw7gSga/6GkiEAM="
+								"config.cue":               "y+/9UTJWGgD/M3aeEckLOjPDlMogLdVTc3sGdMangB4="
+								"second-module-to-publish": "vEb/9lIdNn0C3eIb2F2g1HsFEw50LWIsm8Maay9YDlw="
+								"update-frostyapp":         "mn8Cb5m1Ak7aombWROd3g/KlkmpIiWF8jUHJomrXtlI="
+								"schema-v0.1.0":            "irdq3T2T1ZID3n1XdvcmnOwq2vX648JEsR+dINgcsRY="
+								"edit-dependency-version":  "A82/w4hgRkB2AhZ5udN03XOL+LTKS6ShK3ABm7M+BE0="
 							}
 							multi_step: {
-								hash:       "HLAP8PSE0T47TGJPNG6PFHDQRNQ7S4LRR6I6QB43BP115PRDGP60===="
+								hash:       "547K4U08DGK04FL4F06E493C8TOGL0GE9UH04RH32USR6JSL707G===="
 								scriptHash: "RL8PANMFI862S2CVH8SQSKIDO08E5M0V0BLCCKDO5KOK7J5ORVEG===="
 								steps: [{
 									doc: """
