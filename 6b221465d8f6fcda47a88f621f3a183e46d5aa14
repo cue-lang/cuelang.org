@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5ffb84b_40f4e7c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-08T08:54:40Z",
+      "side": 1,
+      "message": "Supersedes https://cuelang.org/cl/1183402.",
+      "revId": "6b221465d8f6fcda47a88f621f3a183e46d5aa14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28078555_70bee524",
+        "filename": "content/docs/integration/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-08T08:54:40Z",
+      "side": 1,
+      "message": "Originally from @paul@myitcv.io on https://cuelang.org/cl/1183402:\n\n\u003e These descriptions seem to suggest the integration of JSON is limited to the cue command. I think we should be more high-level with these descriptions. Good points to cover here are whether this is a data or schema integration (which you do, and to have a common structure to the description, e.g. the first sentence includes that data/schema point.\n\nI\u0027m going to need to sit and think about how to make them more high-level in a way which is still useful for the reader who\u0027s merely glancing at this marketing-focused page.\n\n\u003e We also need to be careful to not limit this to talking about files, because JSON and Yaml can come from anywhere for example.",
+      "revId": "6b221465d8f6fcda47a88f621f3a183e46d5aa14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
