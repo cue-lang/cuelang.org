@@ -3,6 +3,8 @@ title: K8s tutorial
 draft: true
 ---
 
+{{{uploaddir "_ref"}}}
+
 In this tutorial we show how to convert Kubernetes configuration files
 for a collection of microservices.
 
@@ -36,20 +38,10 @@ in practice.
 The given YAML files are ordered in following directory
 (you can use `find` if you don't have tree):
 
-```
-$ tree ./original | head
-.
-└── services
-    ├── frontend
-    │   ├── bartender
-    │   │   └── kube.yaml
-    │   ├── breaddispatcher
-    │   │   └── kube.yaml
-    │   ├── host
-    │   │   └── kube.yaml
-    │   ├── maitred
-...
-```
+{{{with script "en" "find original"}}}
+#ellipsis 5
+find ./original -type f | sort
+{{{end}}}
 
 Each subdirectory contains related microservices that often share similar
 characteristics and configurations.
@@ -67,30 +59,34 @@ directory.
 
 We first make a copy of the data directory.
 
-```
-$ cp -a original tmp
-$ cd tmp
-```
+{{{with script "en" "original cp"}}}
+cp -a original tmp
+cd tmp
+{{{end}}}
 
 We initialize a module so that we can treat all our configuration files
 in the subdirectories as part of one package.
 We do that later by giving all the same package name.
 
-```
-$ cue mod init
-```
+{{{with script "en" "cue mod init k8s.example"}}}
+cue mod init k8s.example
+{{{end}}}
 
 Creating a module also allows our packages import external packages.
 
 We initialize a Go module so that later we can resolve the
 `k8s.io/api/apps/v1` Go package dependency:
 
-```
-$ go mod init mod.test
-```
+{{{with script "en" "go mod init k8s.example"}}}
+go mod init k8s.example
+{{{end}}}
 
 Let's try to use the `cue import` command to convert the given YAML files
 into CUE.
+
+{{{with script "en" "move into services"}}}
+cd services
+{{{end}}}
 
 ```
 $ cd services
@@ -99,10 +95,9 @@ $ cd services
 Since we have multiple packages and files, we need to specify the package to
 which they should belong.
 
-```
-$ cue import ./... -p kube
-path, list, or files flag needed to handle multiple objects in file ./services/frontend/bartender/kube.yaml
-```
+{{{with script "en" "import attempt 1"}}}
+! cue import ./... -p kube
+{{{end}}}
 
 Many of the files contain more than one Kubernetes object.
 Moreover, we are creating a single configuration that contains all objects
@@ -116,9 +111,9 @@ just as is allowed by Kubernetes.
 To accomplish this, we tell `cue` to put each object in the configuration
 tree at the path with the "kind" as first element and "name" as second.
 
-```
-$ cue import ./... -p kube -l 'strings.ToCamel(kind)' -l metadata.name -f
-```
+{{{with script "en" "import attempt 2"}}}
+cue import ./... -p kube -l 'strings.ToCamel(kind)' -l metadata.name -f
+{{{end}}}
 
 The added `-l` flag defines the labels for each object, based on values from
 each object, using the usual CUE syntax for field labels.
@@ -128,19 +123,10 @@ We also added the `-f` flag to overwrite the few files that succeeded before.
 
 Let's see what happened:
 
-```
-$ tree . | head
-.
-└── services
-    ├── frontend
-    │   ├── bartender
-    │   │   ├── kube.cue
-    │   │   └── kube.yaml
-    │   ├── breaddispatcher
-    │   │   ├── kube.cue
-    │   │   └── kube.yaml
-...
-```
+{{{with script "en" "find post import attempt 2"}}}
+#ellipsis 5
+find . -type f | sort
+{{{end}}}
 
 Each of the YAML files is converted to corresponding CUE files.
 Comments of the YAML files are preserved.
@@ -148,19 +134,9 @@ Comments of the YAML files are preserved.
 The result is not fully pleasing, though.
 Take a look at `mon/prometheus/configmap.cue`.
 
-```
-$ cat mon/prometheus/configmap.cue
-package kube
-
-apiVersion: "v1"
-kind:       "ConfigMap"
-metadata: name: "prometheus"
-data: {
-    "alert.rules": """
-        groups:
-        - name: rules.yaml
-...
-```
+{{{with script "en" "check import attempt 2 result"}}}
+head mon/prometheus/configmap.cue
+{{{end}}}
 
 The configuration file still contains YAML embedded in a string value of one
 of the fields.
@@ -172,28 +148,15 @@ in the configuration files and then converts these recursively.
 
 <!-- TODO: update import label format -->
 
-```
-$ cue import ./... -p kube -l 'strings.ToCamel(kind)' -l metadata.name -f -R
-```
+{{{with script "en" "import attempt 3"}}}
+cue import ./... -p kube -l 'strings.ToCamel(kind)' -l metadata.name -f -R
+{{{end}}}
 
 Now the file looks like:
 
-```
-$ cat mon/prometheus/configmap.cue
-package kube
-
-import "encoding/yaml"
-
-configMap: prometheus: {
-    apiVersion: "v1"
-    kind:       "ConfigMap"
-    metadata: name: "prometheus"
-    data: {
-        "alert.rules": yaml.Marshal(_cue_alert_rules)
-        _cue_alert_rules: {
-            groups: [{
-...
-```
+{{{with script "en" "check import attempt 3 result"}}}
+head mon/prometheus/configmap.cue
+{{{end}}}
 
 That looks better!
 The resulting configuration file replaces the original embedded string
@@ -202,19 +165,10 @@ a string with an equivalent YAML file.
 Fields starting with an underscore (`_`) are not included when emitting
 a configuration file (they are when enclosed in double quotes).
 
-```
-$ cue eval ./mon/prometheus -e configMap.prometheus
-apiVersion: "v1"
-kind:       "ConfigMap"
-metadata: {
-    name: "prometheus"
-}
-data: {
-    "alert.rules": """
-        groups:
-          - name: rules.yaml
-...
-```
+{{{with script "en" "eval initial import"}}}
+#ellipsis 10
+cue eval ./mon/prometheus -e configMap.prometheus
+{{{end}}}
 
 Yay!
 
@@ -235,9 +189,9 @@ Now we have imported the YAML files we can start the simplification process.
 Before we start the restructuring, lets save a full evaluation so that we
 can verify that simplifications yield the same results.
 
-```
-$ cue eval -c ./... >snapshot
-```
+{{{with script "en" "snapshot initial import"}}}
+cue eval -c ./... >snapshot
+{{{end}}}
 
 The `-c` option tells `cue` that only concrete values, that is valid JSON,
 are allowed.
@@ -248,14 +202,15 @@ common structure.
 We copy one of the files containing both as a basis for creating our template
 to the root of the directory tree.
 
-```
-$ cp frontend/breaddispatcher/kube.cue .
-```
+{{{with script "en" "start creating template"}}}
+cp frontend/breaddispatcher/kube.cue .
+{{{end}}}
 
 Modify this file as below.
 
-```
-$ cat <<EOF > kube.cue
+{{{with upload "en" "initial template"}}}
+#force
+-- tmp/services/kube.cue --
 package kube
 
 service: [ID=_]: {
@@ -298,8 +253,7 @@ deployment: [ID=_]: {
 		}
 	}
 }
-EOF
-```
+{{{end}}}
 
 By replacing the service and deployment name with `[ID=_]` we have changed the
 definition into a template matching any field.
@@ -335,17 +289,10 @@ other a user of the template will want to specify.
 
 Let's compare the result of merging our new template to our original snapshot.
 
-```
-$ cue eval -c ./... >snapshot2
-// /workdir/services/mon/alertmanager
-deployment.alertmanager.spec.template.metadata.labels.component: incomplete value string:
-    ./kube.cue:36:16
-service.alertmanager.metadata.labels.component: incomplete value string:
-    ./kube.cue:11:15
-service.alertmanager.spec.selector.component: incomplete value string:
-    ./kube.cue:11:15
-...
-```
+{{{with script "en" "test template"}}}
+#ellipsis 10
+! cue eval -c ./... >snapshot2
+{{{end}}}
 
 Oops.
 The alert manager does not specify the `component` label.
@@ -365,51 +312,50 @@ EOF
 ```
 -->
 
-```
+{{{with script "en" "fix things up"}}}
 # set the component label to our new top-level field
-$ sed -i.bak 's/component:.*string/component: #Component/' kube.cue
-$ rm kube.cue.bak
+sed -i.bak 's/component:.*string/component: #Component/' kube.cue
+rm kube.cue.bak
 
 # add the new top-level field to our previous template definitions
-$ cat <<EOF >> kube.cue
+cat <<EOF >> kube.cue
 
 #Component: string
 EOF
 
 # add a file with the component label to each directory
-$ ls -d */ | sed 's/.$//' | xargs -I DIR sh -c 'cd DIR; echo "package kube
+ls -d */ | sed 's/.$//' | xargs -I DIR sh -c 'cd DIR; echo "package kube
 
 #Component: \"DIR\"
 " > kube.cue; cd ..'
 
 # format the files
-$ cue fmt kube.cue */kube.cue
-```
+cue fmt kube.cue */kube.cue
+{{{end}}}
 
 Let's try again to see if it is fixed:
 
-```
-$ cue eval -c ./... >snapshot2
-$ diff -wu snapshot snapshot2
-...
-```
+{{{with script "en" "test template again"}}}
+cue eval -c ./... >snapshot2
+#ellipsis 20
+! diff -wu snapshot snapshot2
+{{{end}}}
 
 Except for having more consistent labels and some reordering, nothing changed.
 We are happy and save the result as the new baseline.
 
-```
-$ cp snapshot2 snapshot
-```
+{{{with script "en" "save snapshot 2"}}}
+cp snapshot2 snapshot
+{{{end}}}
 
 The corresponding boilerplate can now be removed with `cue trim`.
 
-```
-$ find . | grep kube.cue | xargs wc -l | tail -1
- 1887 total
-$ cue trim ./...
-$ find . | grep kube.cue | xargs wc -l | tail -1
- 1312 total
-```
+
+{{{with script "en" "cue trim 1"}}}
+find . | grep kube.cue | xargs wc -l | tail -1
+cue trim ./...
+find . | grep kube.cue | xargs wc -l | tail -1
+{{{end}}}
 
 `cue trim` removes configuration from files that is already generated
 by templates or comprehensions.
@@ -417,19 +363,19 @@ In doing so it removed over 500 lines of configuration, or over 30%!
 
 The following is proof that nothing changed semantically:
 
-```
-$ cue eval -c ./... >snapshot2
-$ diff -wu snapshot snapshot2 | wc -l
-0
-```
+{{{with script "en" "verify boilerplate removal 1"}}}
+cue eval -c ./... >snapshot2
+diff -wu snapshot snapshot2 | wc -l
+{{{end}}}
 
 We can do better, though.
 A first thing to note is that DaemonSets and StatefulSets share a similar
 structure to Deployments.
 We generalize the top-level template as follows:
 
-```
-$ cat <<EOF >> kube.cue
+{{{with upload "en" "kube2"}}}
+-- tmp/services/kube2.cue --
+package kube
 
 daemonSet: [ID=_]: _spec & {
 	apiVersion: "apps/v1"
@@ -470,9 +416,7 @@ _spec: {
 		spec: containers: [{name: _name}]
 	}
 }
-EOF
-$ cue fmt
-```
+{{{end}}}
 
 The common configuration has been factored out into `_spec`.
 We introduced `_name` to aid both specifying and referring
@@ -488,8 +432,9 @@ Next we observe that all deployments, stateful sets and daemon sets have
 an accompanying service which shares many of the same fields.
 We add:
 
-```
-$ cat <<EOF >> kube.cue
+{{{with upload "en" "kube3"}}}
+-- tmp/services/kube3.cue --
+package kube
 
 // Define the _export option and set the default to true
 // for all ports defined in all containers.
@@ -514,9 +459,7 @@ for x in [deployment, daemonSet, statefulSet] for k, v in x {
 		]
 	}
 }
-EOF
-$ cue fmt
-```
+{{{end}}}
 
 This example introduces a few new concepts.
 Open-ended lists are indicated with an ellipsis (`...`).
@@ -545,31 +488,33 @@ to include them in the service and explicitly set this to false
 for the respective ports in `infra/events`, `infra/tasks`, and `infra/watcher`.
 
 For the purpose of this tutorial, here are some quick patches:
-```
-$ cat <<EOF >>infra/events/kube.cue
+
+{{{with script "en" "patches"}}}
+cat <<EOF >>infra/events/kube.cue
 
 deployment: events: spec: template: spec: containers: [{ ports: [{_export: false}, _] }]
 EOF
-$ cat <<EOF >>infra/tasks/kube.cue
+cat <<EOF >>infra/tasks/kube.cue
 
 deployment: tasks: spec: template: spec: containers: [{ ports: [{_export: false}, _] }]
 EOF
-$ cat <<EOF >>infra/watcher/kube.cue
+cat <<EOF >>infra/watcher/kube.cue
 
 deployment: watcher: spec: template: spec: containers: [{ ports: [{_export: false}, _] }]
 EOF
-```
+{{{end}}}
+
 In practice it would be more proper form to add this field in the original
 port declaration.
 
 We verify that all changes are acceptable and store another snapshot.
 Then we run trim to further reduce our configuration:
 
-```
-$ cue trim ./...
-$ find . | grep kube.cue | xargs wc -l | tail -1
- 1242 total
-```
+{{{with script "en" "verify template improvement"}}}
+cue trim ./...
+find . | grep kube.cue | xargs wc -l | tail -1
+{{{end}}}
+
 This is after removing the rewritten and now redundant deployment definition.
 
 We shaved off almost another 100 lines, even after adding the template.
@@ -581,30 +526,18 @@ But we have another trick up our sleeve.
 With the `-s` or `--simplify` option we can tell `trim` or `fmt` to collapse
 structs with a single element onto a single line. For instance:
 
-```
-$ head frontend/breaddispatcher/kube.cue
-package kube
+{{{with script "en" "view unsimplified version"}}}
+head frontend/breaddispatcher/kube.cue
+{{{end}}}
 
-deployment: breaddispatcher: {
-	spec: {
-		template: {
-			metadata: {
-				annotations: {
-					"prometheus.io.scrape": "true"
-					"prometheus.io.port":   "7080"
-				}
-$ cue trim ./... -s
-$ head -7 frontend/breaddispatcher/kube.cue
-package kube
+{{{with script "en" "simplify"}}}
+cue trim ./... -s
+head frontend/breaddispatcher/kube.cue
+{{{end}}}
 
-deployment: breaddispatcher: spec: template: {
-	metadata: annotations: {
-		"prometheus.io.scrape": "true"
-		"prometheus.io.port":   "7080"
-	}
-$ find . | grep kube.cue | xargs wc -l | tail -1
- 1090 total
-```
+{{{with script "en" "check lines post simplify"}}}
+find . | grep kube.cue | xargs wc -l | tail -1
+{{{end}}}
 
 Another 150 lines lost!
 Collapsing lines like this can improve the readability of a configuration
@@ -612,10 +545,10 @@ by removing considerable amounts of punctuation.
 
 We save the result as the new baseline:
 
-```
-$ cue eval -c ./... >snapshot2
-$ cp snapshot2 snapshot
-```
+{{{with script "en" "save snapshot post simplfiy"}}}
+cue eval -c ./... >snapshot2
+cp snapshot2 snapshot
+{{{end}}}
 
 
 ### Repeat for several subdirectories
@@ -636,8 +569,9 @@ Also, most have two prometheus-related annotations, while some have one.
 We leave the inconsistencies in ports, but add both annotations
 unconditionally.
 
-```
-$ cat <<EOF >> frontend/kube.cue
+{{{with upload "en" "template frontend"}}}
+-- tmp/services/frontend/kube2.cue --
+package kube
 
 deployment: [string]: spec: template: {
 	metadata: annotations: {
@@ -648,40 +582,21 @@ deployment: [string]: spec: template: {
 		ports: [{containerPort: *7080 | int}] // 7080 is the default
 	}]
 }
-EOF
-$ cue fmt ./frontend
+{{{end}}}
 
-# check differences
-$ cue eval -c ./... >snapshot2
-$ diff -wu snapshot snapshot2
---- snapshot	2022-02-21 06:04:10.919832150 +0000
-+++ snapshot2	2022-02-21 06:04:11.907780310 +0000
-@@ -188,6 +188,7 @@
-                 metadata: {
-                     annotations: {
-                         "prometheus.io.scrape": "true"
-+                        "prometheus.io.port":   "7080"
-                     }
-                     labels: {
-                         app:       "host"
-@@ -327,6 +328,7 @@
-                 metadata: {
-                     annotations: {
-                         "prometheus.io.scrape": "true"
-+                        "prometheus.io.port":   "8080"
-                     }
-                     labels: {
-                         app:       "valeter"
-$ cp snapshot2 snapshot
-```
+{{{with script "en" "check differences post frontend template"}}}
+cue eval -c ./... >snapshot2
+#ellipsis 10
+! diff -wu snapshot snapshot2
+cp snapshot2 snapshot
+{{{end}}}
 
 Two lines with annotations added, improving consistency.
 
-```
-$ cue trim ./frontend/... -s
-$ find . | grep kube.cue | xargs wc -l | tail -1
- 1046 total
-```
+{{{with script "en" "trim post frontend template"}}}
+cue trim ./frontend/... -s
+find . | grep kube.cue | xargs wc -l | tail -1
+{{{end}}}
 
 Another 40 odd lines removed.
 We may have gotten used to larger reductions, but at this point there is just
@@ -690,10 +605,10 @@ of configuration left.
 
 We save the result as the new baseline:
 
-```
-$ cue eval -c ./... >snapshot2
-$ cp snapshot2 snapshot
-```
+{{{with script "en" "save snapshot post frontend template"}}}
+cue eval -c ./... >snapshot2
+cp snapshot2 snapshot
+{{{end}}}
 
 
 #### Directory `kitchen`
@@ -705,8 +620,9 @@ two or three disks with similar patterns.
 
 Let's add everything but the disks for now:
 
-```
-$ cat <<EOF >> kitchen/kube.cue
+{{{with upload "en" "template kitchen"}}}
+-- tmp/services/kitchen/kube2.cue --
+package kube
 
 deployment: [string]: spec: template: {
 	metadata: annotations: "prometheus.io.scrape": "true"
@@ -724,9 +640,7 @@ deployment: [string]: spec: template: {
 		}
 	}]
 }
-EOF
-$ cue fmt ./kitchen
-```
+{{{end}}}
 
 A diff reveals that one prometheus annotation was added to a service.
 We assume this to be an accidental omission and accept the differences
@@ -737,8 +651,9 @@ We prefer to keep these two definitions together.
 We take the volumes definition from `expiditer` (the first config in that
 directory with two disks), and generalize it:
 
-```
-$ cat <<EOF >> kitchen/kube.cue
+{{{with upload "en" "kitchen3"}}}
+-- tmp/services/kitchen/kube3.cue --
+package kube
 
 deployment: [ID=_]: spec: template: spec: {
 	_hasDisks: *true | bool
@@ -766,17 +681,16 @@ deployment: [ID=_]: spec: template: spec: {
 		}]
 	}
 }
-EOF
+{{{end}}}
 
-$ cat <<EOF >> kitchen/souschef/kube.cue
+{{{with upload "en" "sous"}}}
+-- tmp/services/kitchen/souschef/kube2.cue --
+package kube
 
 deployment: souschef: spec: template: spec: {
 	_hasDisks: false
 }
-
-EOF
-$ cue fmt ./kitchen/...
-```
+{{{end}}}
 
 This template definition is not ideal: the definitions are positional, so if
 configurations were to define the disks in a different order, there would be
@@ -793,17 +707,16 @@ Later in this document we introduce a manually optimized configuration.
 We add the two disk by default and define a `_hasDisks` option to opt out.
 The `souschef` configuration is the only one that defines no disks.
 
-```
-$ cue trim -s ./kitchen/...
+{{{with script "en" "post kitchen tweaks"}}}
+cue trim -s ./kitchen/...
 
 # check differences
-$ cue eval -c ./... >snapshot2
-$ diff -wu snapshot snapshot2
-...
-$ cp snapshot2 snapshot
-$ find . | grep kube.cue | xargs wc -l | tail -1
-  925 total
-```
+cue eval -c ./... >snapshot2
+#ellipsis
+! diff -wu snapshot snapshot2
+cp snapshot2 snapshot
+find . | grep kube.cue | xargs wc -l | tail -1
+{{{end}}}
 
 The diff shows that we added the `_hasDisks` option, but otherwise reveals no
 differences.
@@ -885,8 +798,8 @@ To work with Kubernetes we need to convert our map of Kubernetes objects
 back to a simple list.
 We create the tool file to do just that.
 
-```
-$ cat <<EOF > kube_tool.cue
+{{{with upload "en" "kube tool"}}}
+-- tmp/services/kube_tool.cue --
 package kube
 
 objects: [for v in objectSets for x in v {x}]
@@ -898,8 +811,7 @@ objectSets: [
 	daemonSet,
 	configMap,
 ]
-EOF
-```
+{{{end}}}
 
 ### Listing objects
 
@@ -911,8 +823,8 @@ download a web page, or execute a command.
 
 We start by defining the `ls` command which dumps all our objects
 
-```
-$ cat <<EOF > ls_tool.cue
+{{{with upload "ls" "ls tool"}}}
+-- tmp/services/ls_tool.cue --
 package kube
 
 import (
@@ -935,8 +847,8 @@ command: ls: {
 		contents: task.print.text
 	}
 }
-EOF
-```
+{{{end}}}
+
 <!-- TODO: use "let" once implemented-->
 
 NOTE: THE API OF THE TASK DEFINITIONS WILL CHANGE.
@@ -944,19 +856,9 @@ Although we may keep supporting this form if needed.
 
 The command is now available in the `cue` tool:
 
-```
-$ cue cmd ls ./frontend/maitred
-Service      frontend   maitred
-Deployment   frontend   maitred
-```
-
-As long as the name does not conflict with an existing command it can be
-used as a top-level command as well:
-```
-$ cue ls ./frontend/maitred
-Service      frontend   maitred
-Deployment   frontend   maitred
-```
+{{{with script "en" "ls 1"}}}
+cue cmd ls ./frontend/maitred
+{{{end}}}
 
 If more than one instance is selected the `cue` tool may either operate
 on them one by one or merge them.
@@ -970,28 +872,10 @@ but our per-type maps of Kubernetes objects should be free of conflict
 (if there is, we have a problem with Kubernetes down the line).
 A merge thus gives us a unified view of all objects.
 
-```
-$ cue ls ./...
-Service       frontend   bartender
-Service       frontend   breaddispatcher
-Service       frontend   host
-Service       frontend   maitred
-Service       frontend   valeter
-Service       frontend   waiter
-Service       frontend   waterdispatcher
-Service       infra      download
-Service       infra      etcd
-Service       infra      events
-...
-
-Deployment    proxy      nginx
-StatefulSet   infra      etcd
-DaemonSet     mon        node-exporter
-ConfigMap     mon        alertmanager
-ConfigMap     mon        prometheus
-ConfigMap     proxy      authproxy
-ConfigMap     proxy      nginx
-```
+{{{with script "en" "ls 2"}}}
+#ellipsis 10
+cue cmd ls ./...
+{{{end}}}
 
 ### Dumping a YAML Stream
 
@@ -1000,8 +884,9 @@ The following adds a command to dump the selected objects as a YAML stream.
 <!--
 TODO: add command line flags to filter object types.
 -->
-```
-$ cat <<EOF > dump_tool.cue
+
+{{{with upload "en" "dump tool"}}}
+-- tmp/services/dump_tool.cue --
 package kube
 
 import (
@@ -1014,8 +899,7 @@ command: dump: {
 		text: yaml.MarshalStream(objects)
 	}
 }
-EOF
-```
+{{{end}}}
 
 <!--
 TODO: with new API as well as conversions implemented
@@ -1033,8 +917,8 @@ stream of YAML values.
 
 The `create` command sends a list of objects to `kubectl create`.
 
-```
-$ cat <<EOF > create_tool.cue
+{{{with upload "en" "create tool"}}}
+-- tmp/services/create_tool.cue --
 package kube
 
 import (
@@ -1054,8 +938,20 @@ command: create: {
 		text: task.kube.stdout
 	}
 }
-EOF
-```
+{{{end}}}
+
+{{{with _upload_ "en" "kubectl"}}}
+#nofmt
+-- .bin/kubectl --
+#!/bin/sh
+
+cat -
+{{{end}}}
+
+{{{with _script_ "en" "make kubectl exec"}}}
+chmod +x $HOME/.bin/kubectl
+export PATH="$HOME/.bin:$PATH"
+{{{end}}}
 
 This command has two tasks, named `kube` and `display`.
 The `display` task depends on the output of the `kube` task.
@@ -1063,23 +959,10 @@ The `cue` tool does a static analysis of the dependencies and runs all
 tasks which dependencies are satisfied in parallel while blocking tasks
 for which an input is missing.
 
-```
-$ cue create ./frontend/...
-service/bartender created (dry run)
-service/breaddispatcher created (dry run)
-service/host created (dry run)
-service/maitred created (dry run)
-service/valeter created (dry run)
-service/waiter created (dry run)
-service/waterdispatcher created (dry run)
-deployment.apps/bartender created (dry run)
-deployment.apps/breaddispatcher created (dry run)
-deployment.apps/host created (dry run)
-deployment.apps/maitred created (dry run)
-deployment.apps/valeter created (dry run)
-deployment.apps/waiter created (dry run)
-deployment.apps/waterdispatcher created (dry run)
-```
+{{{with script "en" "run create"}}}
+#ellipsis 10
+cue cmd create ./frontend/...
+{{{end}}}
 
 A production real-life version of this could should omit the `--dry-run=client` flag
 of course.
