@@ -16,6 +16,24 @@
       "message": "use [[?\n\nAlso, should we worry about special shell characters in %s? there is https://pkg.go.dev/mvdan.cc/sh/v3/syntax#Quote if so, in general I might use it for any \"shell injection\" to be safe by default",
       "revId": "da8a4d301eaebdfc5eecf19dcc0d047f3ee4f1f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acf4f15d_4fdcad30",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-08T05:09:28Z",
+      "side": 1,
+      "message": "Err, I thought `[[ ... ]]` was only for the string comparisons like `\u003d\u003d`. But then again I have amply shown my inability with shell over the years! TIL! \n\nRe quoting, here we are safe. Because we are printing the name of a variable, which gets expanded at runtime in bash itself.\n\nBut I have added a TODO in the code to tidy things up.\n\nThe mitigating factor here is that all of this execution happens within a container, and so the blast radius is limited.",
+      "parentUuid": "f9d8f293_cadaa456",
+      "revId": "da8a4d301eaebdfc5eecf19dcc0d047f3ee4f1f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
