@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23c4226d_6ee12c35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-08T08:55:01Z",
+      "side": 1,
+      "message": "Superseded by https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1192707.",
+      "revId": "f90374ea90e9c0b47400eba4a982a914d26265aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2f0cf2e_62d2b952",
@@ -31,6 +48,24 @@
       "writtenOn": "2024-03-20T18:52:58Z",
       "side": 1,
       "message": "The detail of whether a given adapter supports one or two way shouldn\u0027t be surfaced here to my mind. It\u0027s an important detail, but not that important.",
+      "revId": "f90374ea90e9c0b47400eba4a982a914d26265aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffd60534_694406d5",
+        "filename": "hugo/content/en/docs/integration/_index.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-08T08:55:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2f0cf2e_62d2b952",
       "revId": "f90374ea90e9c0b47400eba4a982a914d26265aa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
