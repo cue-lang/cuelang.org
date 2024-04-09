@@ -573,31 +573,39 @@ type multiStepScript struct {
 	bufferedErrorContext
 }
 
-// cachePath computes the path at which to find/place the output from the
+// cachePath returns the path at which to find/place the output from the
 // multi-step script represented by m.
 func (m *multiStepScript) cachePath() cue.Path {
-	work := sha256.New()
+	return cue.MakePath(append(m.pageCacheSelectors(), cue.Str("multi_step"))...)
+}
 
-	// TODO: work out a more principled way of including this "standard"
-	// material in the hash.
+type multiStepScriptCache struct {
+	Hash       string         `json:"hash"`
+	ScriptHash string         `json:"scriptHash"`
+	Steps      []*commandStmt `json:"steps"`
+}
+
+// hash computes the hash of self. This by definition includes the hash of
+// dependencies such as the Go major version, preprocessor version and docker
+// image.
+func (m *multiStepScript) hash() string {
+	work := sha256.New()
 	fmt.Fprintf(work, "Go major version: %s\n", goMajorVersion)
 	fmt.Fprintf(work, "preprocessor version: %s\n", m.selfHash)
 	fmt.Fprintf(work, "docker image: %s\n", dockerImageTag)
-
-	// TODO: work out how to include the command in some way shape or form.
-	// In its current form it cannot participate in the hash because of temporary
-	// paths. Perhaps the way to do this is to write certain bits of information
-	// as comments at the top of the bash script?
 	fmt.Fprintf(work, "script:\n%s\n", m.rootFile.page.config.randomReplace(m.bashScript))
+	return base32.HexEncoding.EncodeToString(work.Sum(nil))
+}
 
-	// Use base32 encoding, because the result will be a field name that humans
-	// might care to read.
-	workSum := base32.HexEncoding.EncodeToString(work.Sum(nil))
-
-	return cue.MakePath(append(m.pageCacheSelectors(),
-		cue.Str("multi_step"),
-		cue.Str(workSum),
-	)...)
+// scriptHash computes a hash of the bash script only.
+//
+// TODO: make this more precise in only being a hash of the author-specified
+// commands and file contents. The auxiliary bash that we generate should not
+// be part of this hash.
+func (m *multiStepScript) scriptHash() string {
+	work := sha256.New()
+	fmt.Fprintf(work, "script:\n%s\n", m.rootFile.page.config.randomReplace(m.bashScript))
+	return base32.HexEncoding.EncodeToString(work.Sum(nil))
 }
 
 // run runs the multi-step bash script in docker, and sets the output
@@ -639,13 +647,15 @@ func (m *multiStepScript) run() {
 
 	m.debugf(m.debugCache, "%v: config value: %v\n", m, m.config)
 
-	cachePath := m.cachePath()
-	cachedOut := m.config.LookupPath(cachePath)
-	cacheMiss := !cachedOut.Exists()
-	var cachedOutStmts []*commandStmt
+	var multiStepCache multiStepScriptCache
+	cacheVal := m.config.LookupPath(m.cachePath())
+	cacheMiss := !cacheVal.Exists()
+	scriptCacheMiss := cacheMiss // initial value, refined below
+
 	if !cacheMiss {
-		if err := cachedOut.Decode(&cachedOutStmts); err != nil {
-			m.fatalf("%v: failed to decoded cached steps: %v", m, err)
+		if err := cacheVal.Decode(&multiStepCache); err == nil {
+			cacheMiss = multiStepCache.Hash != m.hash()
+			scriptCacheMiss = multiStepCache.ScriptHash != m.scriptHash()
 		}
 	}
 
@@ -655,7 +665,7 @@ func (m *multiStepScript) run() {
 
 		// We need to assign from the cache the output values to the stmts
 		for i, stmt := range m.scriptSteps {
-			cstmt := cachedOutStmts[i]
+			cstmt := multiStepCache.Steps[i]
 			stmt.Doc = cstmt.Doc
 			stmt.Cmd = cstmt.Cmd
 			stmt.Output = cstmt.Output
@@ -879,8 +889,8 @@ func (m *multiStepScript) run() {
 
 			// At this point, stmt.Output is sanitised.
 
-			if !cacheMiss {
-				// In this code path, we had a cache hit but because of a
+			if !scriptCacheMiss {
+				// In this code path, we had a script cache hit but because of a
 				// flag/other we intentionally skipped the cache. This means
 				// that cmd.Output might be the same as cstmt.Output. But it
 				// might not, because of variations like test times in the
@@ -895,7 +905,7 @@ func (m *multiStepScript) run() {
 				// output from the cached version to the actual. The actual is
 				// what will get written back to disk.
 
-				cstmt := cachedOutStmts[i]
+				cstmt := multiStepCache.Steps[i]
 				actualAccum := stmt.Output
 				cachedAccum := cstmt.Output
 				for _, cmp := range m.page.config.Comparators {
@@ -972,7 +982,11 @@ func (rf *rootFile) writePageCache() error {
 	}
 	if rf.script != nil {
 		p := rf.script.cachePath()
-		v = v.FillPath(p, rf.script.scriptSteps)
+		v = v.FillPath(p, multiStepScriptCache{
+			Hash:       rf.script.hash(),
+			ScriptHash: rf.script.scriptHash(),
+			Steps:      rf.script.scriptSteps,
+		})
 		didWork = true
 	}
 	if !didWork {
