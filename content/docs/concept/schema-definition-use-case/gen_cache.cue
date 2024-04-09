@@ -7,9 +7,9 @@ package site
 					page: {
 						cache: {
 							code: {
-								"api-cue":            "m4iiNfm4sWfzsmNdmlzA3WKAJC0zZi8VYUzOTF+izWs="
-								"api-go":             "DmI/MkCJb1c10C+7hH7QmnkOHXmZ8jufCCOuHQQ7VHc="
-								"openapi-comparison": "X5pYi1g1UHGua3tdg1z1a4geBjzmUCKB8mnrABcgBRo="
+								"api-cue":            "HJdB/X9lJBPAuldXv30OufvGJRTYpv6B6fAKkYLImB4="
+								"api-go":             "D+1JaiT90OF12wdsi6uMoWE3S6FqUeWJoFGa2W0Ixo4="
+								"openapi-comparison": "K4ANP277D+pPJ5IJ6VFoFWHFQeAKgPalSe1Iwx1bKCk="
 							}
 						}
 					}
