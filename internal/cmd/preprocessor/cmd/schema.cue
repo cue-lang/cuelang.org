@@ -136,12 +136,22 @@ package preprocessor
 		cache?: {
 			upload?: [string]: string
 			code?: [string]:   string
-			multi_step?: [string]: [...{
-				doc?:      string
-				cmd?:      string
-				output?:   string
-				exitCode?: int
-			}]
+			multi_step?: {
+				[!~"^(hash|scriptHash|steps)$"]: [...{
+					doc?:      string
+					cmd?:      string
+					output?:   string
+					exitCode?: int
+				}]
+				hash?:       string
+				scriptHash?: string
+				steps: [...{
+					doc?:      string
+					cmd?:      string
+					output?:   string
+					exitCode?: int
+				}]
+			}
 		}
 
 		// testUserAuthn is a list of GitHub usernames for which this page needs
