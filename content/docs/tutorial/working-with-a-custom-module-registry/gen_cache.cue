@@ -7,15 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "d03iuUK9mVlsTxhIllIJzv2TB500w7EL/rUXJdNLKHo="
-								"config.cue":               "2+yG08T8L5ZI6vzCjKI83549NIlJrNVixQJnldfYzrg="
-								"second-module-to-publish": "uJMeIn1mrEICPXXf1pYxoG/bYyWHvAB54HsDv31BdiQ="
-								"update-frostyapp":         "xYsN1uTB0jFf95GhCMhhGoitZeV8sqtgMYTBYsyawG8="
-								"schema-v0.1.0":            "yPZpGQCEE3sQaZOB55WE2XEmwaqQHj4woHfjfovUdUc="
-								"edit-dependency-version":  "e1sCPiakgvkviLmfyKnBIL/ejU5+QUjPiCiR2rjU1sE="
+								"schema-v0.0.1":            "cKyT2wg8ThYEUedgAsYHSh+t/VaTiLThu/kwrk14nyE="
+								"config.cue":               "HqIW6DhNhUMFM2ZMyrB2P8IT+AWVEMX3Buw5KBKIJRg="
+								"second-module-to-publish": "kI+fl08/AL35vXScSKG5zA0bECEE98YdyfZtkjEsTI0="
+								"update-frostyapp":         "Qk26omfV5BbxoEhgbGy+Z5tferoWQjK1hVXLfMjFbqs="
+								"schema-v0.1.0":            "A616hF4rpszMOPrddy3FAY5eme6T/1iwL5NqsBrV2hc="
+								"edit-dependency-version":  "IPIRMtU5pRR6g6l5wpND6Bbw3oWDkcn4+0iudFXDTyk="
 							}
 							multi_step: {
-								"BBTK48I60MSQ463QF1JQ63PNNUB5OFTV5OT4P9H7PE768953E5RG====": [{
+								hash:       "HLAP8PSE0T47TGJPNG6PFHDQRNQ7S4LRR6I6QB43BP115PRDGP60===="
+								scriptHash: "RL8PANMFI862S2CVH8SQSKIDO08E5M0V0BLCCKDO5KOK7J5ORVEG===="
+								steps: [{
 									doc: """
 											# TODO: this is inherently racey. But not a problem in practice...
 											# for now. When it does become a problem we can solve this properly
