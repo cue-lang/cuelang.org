@@ -293,7 +293,9 @@ package site
 						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
 					}
 					multi_step: {
-						"B55E6TPQDQ0M6200U4HA1KM971JIH4GP5NB7DNNKNEF8KHM6MDI0====": [{
+						hash:       "B55E6TPQDQ0M6200U4HA1KM971JIH4GP5NB7DNNKNEF8KHM6MDI0===="
+						scriptHash: "I9I775A8755L8FKKH4DNSA9PUMAHKK3SHS9RK0H6BVK2LAPHOIGG===="
+						steps: [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
 							exitCode: 0
