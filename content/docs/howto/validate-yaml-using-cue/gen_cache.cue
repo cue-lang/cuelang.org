@@ -7,13 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "l4uZKQw5hGdCvomIbQmwFR5wn9yDRdf1NZ3H8Is+ysg="
-								"initial x.cue":  "gPLNQzahiLCe7EIWN1KyTb2kJoLw0yQ9Qwmnk5tBcJc="
-								"another person": "2297syxECAeEJoJ9eSbx3a3Mp35UbDNujvx91NcrnYk="
-								"fixed yaml":     "T7Wn3gW50XoqE0X1wqQD0S4cI16Lhngg32aYNd3q+3I="
+								"initial x.yaml": "V6GmyvVeafS5VcT40nWXFTJ1Hl+Xa5gJHLf5WxJpsZg="
+								"initial x.cue":  "F00jF4Y4SzChS7bJb0uWlM2X4aa57AP1goaTUyN/HU4="
+								"another person": "H6vaTyW8WRtBoftdISgfs1keA0wSzJKpdjsgqDUfY4U="
+								"fixed yaml":     "/pDkl0/nBbOwNAyYta06llVKg6Ue39pAriIFLqXowr4="
 							}
 							multi_step: {
-								"5VSCH0HTFHQP8GECTJOQI6ULRML6FKUC0PIQ611VGV272J0OIQHG====": [{
+								hash:       "SHN7Q8QGRDRTVLESIFHUI51B0N83A2MNSEK34IQ9ESOVHUN5314G===="
+								scriptHash: "DE9VH3D0G7UR7VTKS164SH6455EO8BDDJ06SC0TH6SBBKB4RMM60===="
+								steps: [{
 									doc:      ""
 									cmd:      "cue vet x.cue x.yaml"
 									exitCode: 0
