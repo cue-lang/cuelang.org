@@ -261,6 +261,11 @@ template: ci.#writefs & {
 			name = "workflow command"
 			color = "blue"
 
+			[[tags]]
+			name = "java api"
+			color = "red"
+			weight = 110
+
 			"""#
 		}
 		"playground/src/config/gen_cuelang_org_go_version.ts": {
