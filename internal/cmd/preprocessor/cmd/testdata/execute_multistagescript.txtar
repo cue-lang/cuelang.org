@@ -287,13 +287,13 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "6Xa6s3fj5HXSmmr4nTooOes4t5ju1xN7EgYIPg7cENA="
-						"upload-some-cue":  "c+maUqpmoHkAnvZMLuD6OP1I+ZcTSmZeeCHIYPQx+x0="
-						"upload-some-json": "wUTxygpV3YejUYxZbq57QJWNAOstcrigJAXxMUGJT3c="
-						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
+						"hidden file":      "s5O6mXjPTGCBn21XglJpAZaPDB+Kid4tGS2nRnP1pgc="
+						"upload-some-cue":  "yIT6Dixpd2pJ12MXFa4saqbrz96etUmSCvSNTqSIugc="
+						"upload-some-json": "it0H6wR8TfYz+UklgyXQcFNx1HIGVY9q/NjTBsZcAdU="
+						"in-subdir":        "RxEWHns0kXjYKUABLKOpNt/MgTBQyjJ1baDKlbdfmJU="
 					}
 					multi_step: {
-						"B55E6TPQDQ0M6200U4HA1KM971JIH4GP5NB7DNNKNEF8KHM6MDI0====": [{
+						"DKGQHUGI15L63A5FUD4DLUL23PKJLLRAHP4701HOHPNG9FIV0USG====": [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
 							exitCode: 0
