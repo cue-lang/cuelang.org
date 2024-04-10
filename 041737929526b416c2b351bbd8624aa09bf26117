@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6581a41f_be701119",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-10T16:34:14Z",
+      "side": 1,
+      "message": "I wonder, could we have instead made the output stable, e.g. use diff with flags that hide non-deterministic parts like timestamps, or massage the output to do that?",
+      "revId": "041737929526b416c2b351bbd8624aa09bf26117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc3d3a56_21196a3c",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-10T16:34:14Z",
+      "side": 1,
+      "message": "can we use consistent vars for both, e.g. cacheMiss and scriptCacheMiss, or cacheHit and scriptCacheHit?",
+      "revId": "041737929526b416c2b351bbd8624aa09bf26117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
