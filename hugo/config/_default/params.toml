@@ -64,3 +64,8 @@ color = "lavender"
 [[tags]]
 name = "workflow command"
 color = "blue"
+
+[[tags]]
+name = "java api"
+color = "red"
+weight = 110
