@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec016829_d7a96e60",
+        "filename": "content/docs/tutorial/build-cue-java-api/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-11T06:45:50Z",
+      "side": 1,
+      "message": "This guide needs Go caches at least, like https://github.com/cue-lang/cuelang.org/blob/742eb9333a39b4a54626494656a9ce1db6321515/content/docs/tutorial/loading-cue-go-api/en.md#L10-L13",
+      "revId": "a76a0f943f212aa0984591c92bcc20fd9a569528",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
