@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d1fe42c_93d06864",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-11T06:46:54Z",
+      "side": 1,
+      "message": "Please can you provide some links/references here?\n\nFor example, I have no idea whether/if we should be trusting https://packages.adoptium.net.",
+      "revId": "37c045dde26452eb1081fd173888ed8b44e44bbc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
