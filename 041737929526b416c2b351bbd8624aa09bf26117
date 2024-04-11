@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dedd458_81cc79dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-11T05:15:13Z",
+      "side": 1,
+      "message": "Yes, good observation. The main reason for wanting to fix this quickly now is that initially I had no idea what was going on. It was only after about 10 mins digging that I figured out the problem. A quick fix later, and the problem is sorted as far as we\u0027ll need to sort it for some time, on the basis we make changes that fall into one of those two categories: infra or guide content.\n\nBut you\u0027re absolutely right to say that in this case, with `diff`, we could have used a sanitiser to \"fix\" the output (probably by removing the timestamps) with no real impact on readability, because for the purpose of this guide at least the timestamps aren\u0027t relevant. And sanitising the output in this way is preferrable to passing lots of flags to `diff` each time, which is one of the alternatives that I\u0027m aware of:\n\n```\ndiff -wu --label path/to/a --label path/to/b path/to/a path/to/a\n```",
+      "parentUuid": "6581a41f_be701119",
+      "revId": "041737929526b416c2b351bbd8624aa09bf26117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fc3d3a56_21196a3c",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-10T16:34:14Z",
       "side": 1,
       "message": "can we use consistent vars for both, e.g. cacheMiss and scriptCacheMiss, or cacheHit and scriptCacheHit?",
+      "revId": "041737929526b416c2b351bbd8624aa09bf26117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3153c296_86016363",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-11T05:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc3d3a56_21196a3c",
       "revId": "041737929526b416c2b351bbd8624aa09bf26117",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
