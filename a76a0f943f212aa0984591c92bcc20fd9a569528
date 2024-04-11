@@ -16,6 +16,40 @@
       "message": "This guide needs Go caches at least, like https://github.com/cue-lang/cuelang.org/blob/742eb9333a39b4a54626494656a9ce1db6321515/content/docs/tutorial/loading-cue-go-api/en.md#L10-L13",
       "revId": "a76a0f943f212aa0984591c92bcc20fd9a569528",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50edd23d_3cdb3e31",
+        "filename": "content/docs/tutorial/build-cue-java-api/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-11T06:52:59Z",
+      "side": 1,
+      "message": "This is not stable in terms of output. Do you need `-l`?",
+      "revId": "a76a0f943f212aa0984591c92bcc20fd9a569528",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45d9e544_0b6b06de",
+        "filename": "hugo/content/en/docs/tutorial/build-cue-java-api/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-11T06:52:59Z",
+      "side": 1,
+      "message": "Per our offline conversation, we should probably teach the preprocessor to strip ansi control sequences. But let\u0027s pick that up next week.",
+      "revId": "a76a0f943f212aa0984591c92bcc20fd9a569528",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
