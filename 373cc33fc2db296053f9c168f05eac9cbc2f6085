@@ -33,6 +33,24 @@
       "message": "Should it also be in the footer?",
       "revId": "373cc33fc2db296053f9c168f05eac9cbc2f6085",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4eb1fce_8e1425ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-15T16:04:31Z",
+      "side": 1,
+      "message": "Hmmm. That section of the page, which needs scrolling over to get to \"Report an Issue\" is getting a /little/ vertically-chonky. I\u0027ll open a separate CL for you to see what you think.",
+      "parentUuid": "75df5172_6d6c302b",
+      "revId": "373cc33fc2db296053f9c168f05eac9cbc2f6085",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
