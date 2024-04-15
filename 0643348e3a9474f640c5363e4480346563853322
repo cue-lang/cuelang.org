@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23a0bc2a_0dfcd4a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-15T18:19:11Z",
+      "side": 1,
+      "message": "PTAL. The footer this change expands is getting quite deep.",
+      "revId": "0643348e3a9474f640c5363e4480346563853322",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
