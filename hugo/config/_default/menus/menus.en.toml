@@ -132,6 +132,11 @@
     name = "Bluesky"
     url = "https://bsky.app/profile/cuelang.org"
     weight = 443
+[[footer]]
+    parent = "column4"
+    name = "YouTube"
+    url = "https://www.youtube.com/@cuelang/videos"
+    weight = 444
 
 # Legal
 [[legal]]
