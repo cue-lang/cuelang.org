@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "373cc33fc2db296053f9c168f05eac9cbc2f6085",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75df5172_6d6c302b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-15T15:58:48Z",
+      "side": 1,
+      "message": "Should it also be in the footer?",
+      "revId": "373cc33fc2db296053f9c168f05eac9cbc2f6085",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
