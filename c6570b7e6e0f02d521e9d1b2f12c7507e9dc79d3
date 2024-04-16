@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb838a1a_b9558472",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T16:14:42Z",
+      "side": 1,
+      "message": "Looks great! If you feel a comment for `stringSet` helps, please add it. Otherwise these final fixups are all that\u0027s needed 👍",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04ca6f74_173ea8c6",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T16:14:42Z",
+      "side": 1,
+      "message": "We generally line-wrap at 72/80/ish characters.",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa196ab8_1b837fa6",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T16:14:42Z",
+      "side": 1,
+      "message": "I don\u0027t /think/ we require an explicit `#location` tag when it\u0027s the same 2-file/left-right pair as the implicit default.",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26c61f11_a551366d",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T16:14:42Z",
+      "side": 1,
+      "message": "Do we perhaps want a comment explaining any part of how `stringSet` works, or what it results in?\n\nI\u0027m genuinely unsure if something like https://cuelang.org/docs/howto/use-encoding-base64-decode/ might be beneficial or not ...",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fffa742_9549adff",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T16:14:42Z",
+      "side": 1,
+      "message": "**Great** wording - really clear.",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
