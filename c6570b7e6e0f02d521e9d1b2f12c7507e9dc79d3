@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "545d1120_2cc1a55f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T17:17:20Z",
+      "side": 1,
+      "message": "I agree that there\u0027s value in adding comments in the example. It took me a bit of thought, and I\u0027m not sure how clear the outcome is",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04ca6f74_173ea8c6",
@@ -31,6 +48,24 @@
       "writtenOn": "2024-04-16T16:14:42Z",
       "side": 1,
       "message": "We generally line-wrap at 72/80/ish characters.",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71e553cb_76499a93",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T17:17:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04ca6f74_173ea8c6",
       "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +87,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5af23fe_40df64c7",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T17:17:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "fa196ab8_1b837fa6",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26c61f11_a551366d",
@@ -65,6 +118,24 @@
       "writtenOn": "2024-04-16T16:14:42Z",
       "side": 1,
       "message": "Do we perhaps want a comment explaining any part of how `stringSet` works, or what it results in?\n\nI\u0027m genuinely unsure if something like https://cuelang.org/docs/howto/use-encoding-base64-decode/ might be beneficial or not ...",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f194de72_0666bb54",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T17:17:20Z",
+      "side": 1,
+      "message": "Since this is a tricky bit of code, I think it can help to add a few comments.\n\nIn general I try to avoid comments when possible - in the case you shared I\u0027m not sure it adds a lot, since the wording in the comments is very similar to the actual cue, so it might add a bit more noise than signal",
+      "parentUuid": "26c61f11_a551366d",
       "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
