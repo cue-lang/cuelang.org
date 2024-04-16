@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c763ad0_4c0cb94d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T11:46:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae1d70c_1f0f9813",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "358b5bcd_c92e71a2",
@@ -49,6 +67,24 @@
       "writtenOn": "2024-04-16T08:29:33Z",
       "side": 1,
       "message": "If this doesn\u0027t `Close cue-lang/docs-and-content#105`, and really does just update that issue, then a description of the remaining work required to close that issue should be captured somewhere.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbb21238_fa1e4e04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T11:46:23Z",
+      "side": 1,
+      "message": "sorry, I wasn\u0027t familiar with the difference between For/Closes - changed to Closes.",
+      "parentUuid": "358b5bcd_c92e71a2",
       "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -104,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c65acf51_1e02c51d",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T11:46:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "120d0ada_54ee82fd",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eee6c326_ca9e65a7",
@@ -117,6 +171,24 @@
       "writtenOn": "2024-04-16T08:29:33Z",
       "side": 1,
       "message": "@paul@myitcv.io has reminded me that the CUE spec doesn\u0027t mandate order under iteration and that we\u0027d like to avoid future CUE version upgrades changing the ordering here. So, despite me suggesting that you remove a sorting pass from your originally proposed txtar, I think we\u0027d like to add one back in, so the output definitely remains stable.\n\nI think it\u0027s worth briefly calling out (either in prose or comments) that we\u0027re doing this for stability, and that it\u0027s not an intrinsic requirement of the list-\u003eset operation.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed8027e3_5242ce36",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T11:46:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eee6c326_ca9e65a7",
       "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -138,6 +210,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4975258_74637a77",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T11:46:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6dbbc91f_a385e06a",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "86b9bc08_0f2a5559",
@@ -151,6 +241,24 @@
       "writtenOn": "2024-04-16T08:29:33Z",
       "side": 1,
       "message": "Worth also linking to https://cuelang.org/docs/reference/spec/#embedding as that\u0027s an important part of the slightly odd `set: {[...]}` syntax.\n\nYou won\u0027t be able to use `linkto/reference` as it can\u0027t cope with URL fragments.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac6f615e_abb08ade",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T11:46:23Z",
+      "side": 1,
+      "message": "just to make sure I understand - the link should be absolute here, including the `https://cuelang.org/...`?",
+      "parentUuid": "86b9bc08_0f2a5559",
       "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
