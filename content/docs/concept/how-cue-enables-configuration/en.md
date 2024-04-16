@@ -303,8 +303,9 @@ app:
 }
 {{{end}}}
 
-But watch what happens when a developer updates their `values.yml` file with a
-setting which results in a policy violation.
+But watch what happens when a developer updates their `replicas` field with a
+setting which causes a policy violation on the *derived* value of the
+`replicaMem` field.
 An early `cue vet` on the developer's laptop helps prevent a deployment failure
 by shortening their feedback cycle:
 
@@ -317,7 +318,7 @@ cmp stderr out
 app:
   name: frontend-ng
   memory: 3072
-  # Holiday season: 20% traffic increase expected
+  # 20% more traffic expected: increase replica baseline from 3.
   replicas: 4
 -- schema.cue --
 package config
