@@ -261,6 +261,24 @@
       "parentUuid": "86b9bc08_0f2a5559",
       "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd252a9b_ef5283c5",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-16T12:43:30Z",
+      "side": 1,
+      "message": "made relative with `relref`",
+      "parentUuid": "ac6f615e_abb08ade",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
