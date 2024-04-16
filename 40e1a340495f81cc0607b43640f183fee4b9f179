@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dae1d70c_1f0f9813",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:30:00Z",
+      "side": 1,
+      "message": "```\ndocs/howto: producing a set of strings from a list\n```",
+      "parentUuid": "6b4355d9_33597207",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "358b5bcd_c92e71a2",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
