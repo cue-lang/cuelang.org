@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f60da6c1_5bf44fe9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T09:57:42Z",
+      "side": 1,
+      "message": "PTAL. I recall that we removed language close to this, during the review process for this page, and cue-lang/cue#3023 seems like a good excuse to reinstate it.",
+      "revId": "3f464f7edf272de7adf128f6f414dd7003d40817",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
