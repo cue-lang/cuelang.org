@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b4355d9_33597207",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:29:33Z",
+      "side": 1,
+      "message": "I\u0027d go with\n\n```\ndocs/howto/: producing a set of strings from a list\n```\n\n... both because it removes the duplication and reduces the line length below git\u0027s suggested max (50?).",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "358b5bcd_c92e71a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:29:33Z",
+      "side": 1,
+      "message": "If this doesn\u0027t `Close cue-lang/docs-and-content#105`, and really does just update that issue, then a description of the remaining work required to close that issue should be captured somewhere.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "2892bf70_d3eb2487",
@@ -14,6 +48,91 @@
       "writtenOn": "2024-04-15T12:57:14Z",
       "side": 1,
       "message": "Noam - apologies for the delay here, I\u0027ve been somewhat swamped the last couple of weeks.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9933e754_adcd2e7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:29:33Z",
+      "side": 1,
+      "message": "This is looking good, @noam.tzvi.dolovich@gmail.com :-)\n\nI have a few comments, including me backtracking on a change I suggested when we were discussing this as a GitHub issue - your instincts to include a sorting element were good!",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "120d0ada_54ee82fd",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:29:33Z",
+      "side": 1,
+      "message": "Perhaps add ... `that might include duplicate values`, or something similar.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eee6c326_ca9e65a7",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:29:33Z",
+      "side": 1,
+      "message": "@paul@myitcv.io has reminded me that the CUE spec doesn\u0027t mandate order under iteration and that we\u0027d like to avoid future CUE version upgrades changing the ordering here. So, despite me suggesting that you remove a sorting pass from your originally proposed txtar, I think we\u0027d like to add one back in, so the output definitely remains stable.\n\nI think it\u0027s worth briefly calling out (either in prose or comments) that we\u0027re doing this for stability, and that it\u0027s not an intrinsic requirement of the list-\u003eset operation.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dbbc91f_a385e06a",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:29:33Z",
+      "side": 1,
+      "message": "Please add a prefix that informs the reader of the site section they\u0027ll be going to:\n\n- Language Tour: [Field Comprehensions]()\n\nIf https://cuelang.org/cl/1193130 gets merged soon, please move over to its `linkto/related/tour` shortcode.",
+      "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86b9bc08_0f2a5559",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-16T08:29:33Z",
+      "side": 1,
+      "message": "Worth also linking to https://cuelang.org/docs/reference/spec/#embedding as that\u0027s an important part of the slightly odd `set: {[...]}` syntax.\n\nYou won\u0027t be able to use `linkto/reference` as it can\u0027t cope with URL fragments.",
       "revId": "40e1a340495f81cc0607b43640f183fee4b9f179",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
