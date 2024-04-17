@@ -94,18 +94,24 @@ export CUE_EXPERIMENT=modules
 {{< caution >}}
 **You need to adapt the command shown in the next step.**
 
-Don't copy and paste the command into your terminal.\
-Instead, **replace the example username, `{{{.githubUser}}}`, with your own GitHub username.**
+Don't simply paste the command into your terminal and run it.
 
-You need to make this replacement *everywhere* you see
-the username `{{{.githubUser}}}` in this tutorial.
+Before running the command, replace the example username,
+`{{{.githubUser}}}`,
+with **the lower-cased form of YOUR GitHub username.**
+For example:
+if your GitHub username is `_TomHanks`
+then you would replace `{{{.githubUser}}}` with `_tomhanks`.
+
+**You need to make this replacement *everywhere* you see
+the username `{{{.githubUser}}}` in this tutorial.**
 {{< /caution >}}
 
 {{{with step}}}
 Initialize the directory as a module:
 
 {{{with script "en" "initialize-module-1"}}}
-# Replace "{{{.githubUser}}}" with *your* GitHub username
+# Replace "{{{.githubUser}}}" with *your* GitHub username, lower-cased.
 cue mod init {{{.MODULE1}}}@v0
 {{{end}}}
 
@@ -212,7 +218,7 @@ published.
 {{{with step}}}
 
 Create a directory for the new module and initalize it,
-changing `{{{.githubUser}}}` to *your* GitHub username:
+changing `{{{.githubUser}}}` to *your* GitHub username, lower-cased:
 <!-- Not strictly neccessary, but it might confuse if we don't point it out -->
 
 {{{with script "en" "init-frostyapp"}}}
@@ -231,7 +237,7 @@ Create the code for the new module:
 -- frostyapp/config.cue --
 package frostyapp
 
-// Adapt this line to your GitHub username.
+// Adapt this line to your GitHub username, lower-cased.
 import "{{{.MODULE1}}}@v0"
 
 config: {{{.module1Repo}}}.#Config & {
@@ -241,7 +247,7 @@ config: {{{.module1Repo}}}.#Config & {
 }
 {{{end}}}
 
-**Remember to change `{{{.githubUser}}}` to *your* GitHub username on line 4.**
+**Remember to change `{{{.githubUser}}}` to *your* GitHub username, lower-cased, on line 4.**
 
 {{{end}}}
 

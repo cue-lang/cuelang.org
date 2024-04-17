@@ -88,18 +88,24 @@ $ export CUE_EXPERIMENT=modules
 {{< caution >}}
 **You need to adapt the command shown in the next step.**
 
-Don't copy and paste the command into your terminal.\
-Instead, **replace the example username, `cueckoo`, with your own GitHub username.**
+Don't simply paste the command into your terminal and run it.
 
-You need to make this replacement *everywhere* you see
-the username `cueckoo` in this tutorial.
+Before running the command, replace the example username,
+`cueckoo`,
+with **the lower-cased form of YOUR GitHub username.**
+For example:
+if your GitHub username is `_TomHanks`
+then you would replace `cueckoo` with `_tomhanks`.
+
+**You need to make this replacement *everywhere* you see
+the username `cueckoo` in this tutorial.**
 {{< /caution >}}
 
 {{< step stepNumber="3" >}}
 Initialize the directory as a module:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGh1Yi5jb20vY3VlY2tvby9mcm9zdHljb25maWdAdjA=" }
-# Replace "cueckoo" with *your* GitHub username
+# Replace "cueckoo" with *your* GitHub username, lower-cased.
 $ cue mod init github.com/cueckoo/frostyconfig@v0
 ```
 
@@ -205,7 +211,7 @@ published.
 {{< step stepNumber="9" >}}
 
 Create a directory for the new module and initalize it,
-changing `cueckoo` to *your* GitHub username:
+changing `cueckoo` to *your* GitHub username, lower-cased:
 <!-- Not strictly neccessary, but it might confuse if we don't point it out -->
 
 ```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgZ2l0aHViLmNvbS9jdWVja29vL2Zyb3N0eWFwcEB2MA==" }
@@ -222,7 +228,7 @@ Create the code for the new module:
 ```cue { title="frostyapp/config.cue" linenos="table" }
 package frostyapp
 
-// Adapt this line to your GitHub username.
+// Adapt this line to your GitHub username, lower-cased.
 import "github.com/cueckoo/frostyconfig@v0"
 
 config: frostyconfig.#Config & {
@@ -232,7 +238,7 @@ config: frostyconfig.#Config & {
 }
 ```
 
-**Remember to change `cueckoo` to *your* GitHub username on line 4.**
+**Remember to change `cueckoo` to *your* GitHub username, lower-cased, on line 4.**
 
 {{< /step >}}
 
