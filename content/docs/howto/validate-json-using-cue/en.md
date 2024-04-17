@@ -26,35 +26,38 @@ command line.
 
 ## Steps
 
-{{< step stepNumber="1" >}}
+{{{with step}}}
 Create a JSON file called `x.json` with the following:
 
-```{title="x.json"}
+{{{with upload "en" "x.json"}}}
+-- x.json --
 {
-  "people": {
-    "Gopher": {
-      "name": "Gopher",
-      "age": 12,
-      "address": "Mountain View"
-    },
-    "Ken": {
-      "name": "Ken",
-      "age": 21,
-      "address": "The Blue Sky"
+    "people": {
+        "Gopher": {
+            "name": "Gopher",
+            "age": 12,
+            "address": "Mountain View"
+        },
+        "Ken": {
+            "name": "Ken",
+            "age": 21,
+            "address": "The Blue Sky"
+        }
     }
-  }
 }
-```
+{{{end}}}
 
-{{< /step >}}
+{{{end}}}
 
-{{< step stepNumber="2" >}}
+
+{{{with step}}}
 Create a CUE file named `x.cue`
 
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-```{title="x.cue"}
+{{{with upload "en" "x.cue"}}}
+-- x.cue --
 #Person: {
 	name:    string
 	age:     int
@@ -64,99 +67,101 @@ constraints for every person.
 people: [X=string]: #Person & {
 	name: X
 }
-```
+{{{end}}}
 
-{{< /step >}}
+{{{end}}}
 
-{{< step stepNumber="3" >}}
+{{{with step}}}
 Run the following `cue` command in your terminal:
 
-```console
-$ cue vet x.cue x.json
-```
+{{{with script "en" "successful first vet"}}}
+cue vet x.cue x.json
+{{{end}}}
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
-{{< /step >}}
+{{{end}}}
 
-{{< step stepNumber="4" >}}
+{{{with step}}}
 Add another person to your JSON data by replacing your `x.json` file with the
 following:
 
-```{title="x.json"}
+{{{with upload "en" "x.json v2"}}}
+#force
+-- x.json --
 {
-  "people": {
-    "Gopher": {
-      "name": "Gopher",
-      "age": 12,
-      "address": "Mountain View"
-    },
-    "Ken": {
-      "name": "Ken",
-      "age": 21,
-      "address": "The Blue Sky"
-    },
-    "Rob": {
-      "name": "Rob",
-      "age": 42.2,
-      "address": "CUEtopia"
+    "people": {
+        "Gopher": {
+            "name": "Gopher",
+            "age": 12,
+            "address": "Mountain View"
+        },
+        "Ken": {
+            "name": "Ken",
+            "age": 21,
+            "address": "The Blue Sky"
+        },
+        "Rob": {
+            "name": "Rob",
+            "age": 42.2,
+            "address": "CUEtopia"
+        }
     }
-  }
 }
-```
+{{{end}}}
 
-{{< /step >}}
+{{{end}}}
 
-{{< step stepNumber="5" >}}
+{{{with step}}}
 Validate again with `cue vet`:
 
-```console
-$ cue vet x.cue x.json
-people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
-    ./x.cue:3:11
-    ./x.cue:7:21
-    ./x.json:13:11
-```
+{{{with script "en" "failing vet"}}}
+! cue vet x.cue x.json
+{{{end}}}
 
 The command output shows validation errors where the JSON violates
 the (type) constraints that you have declared.
-{{< /step >}}
 
-{{< step stepNumber="6" >}}
+{{{end}}}
+
+{{{with step}}}
 Fix up the JSON:
 
-```{title="x.json"}
+{{{with upload "en" "fixed x.json"}}}
+#force
+-- x.json --
 {
-  "people": {
-    "Gopher": {
-      "name": "Gopher",
-      "age": 12,
-      "address": "Mountain View"
-    },
-    "Ken": {
-      "name": "Ken",
-      "age": 21,
-      "address": "The Blue Sky"
-    },
-    "Rob": {
-      "name": "Rob",
-      "age": 42,
-      "address": "CUEtopia"
+    "people": {
+        "Gopher": {
+            "name": "Gopher",
+            "age": 12,
+            "address": "Mountain View"
+        },
+        "Ken": {
+            "name": "Ken",
+            "age": 21,
+            "address": "The Blue Sky"
+        },
+        "Rob": {
+            "name": "Rob",
+            "age": 42,
+            "address": "CUEtopia"
+        }
     }
-  }
 }
-```
+{{{end}}}
 
-{{< /step >}}
+{{{end}}}
 
-{{< step stepNumber="7" >}}
+{{{with step}}}
 Validate with `cue vet` again
 
-```console
-$ cue vet x.cue x.json
-```
+{{{with script "en" "re-vet"}}}
+cue vet x.cue x.json
+{{{end}}}
 
 The `cue vet` command will show no output on success.
-{{< /step >}}
+
+{{{end}}}
 
 Well done! Any future data errors on names, ages, and addresses in your JSON
 will be detected. This is especially helpful with JSON files with 100s (and
