@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5d9259f_d1548dde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T19:24:44Z",
+      "side": 1,
+      "message": "With one final suggestion.",
+      "revId": "857d600f9aa1a6af032f7aa45d77242fa286b196",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb65404b_ed0ab2ca",
+        "filename": "hugo/content/en/docs/reference/_index.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T19:24:44Z",
+      "side": 1,
+      "message": "I\u0027m going to make one final suggestion, and that is to drop the emphasis within the card itself. Because, at least to my eye, it means there is too much visually going on within a card. Take the \"Code of Conduct\" card for example.",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 23
+      },
+      "revId": "857d600f9aa1a6af032f7aa45d77242fa286b196",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
