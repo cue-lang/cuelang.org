@@ -140,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7c6b8ec_903d8105",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-17T14:22:40Z",
+      "side": 1,
+      "message": "My honest opinion is that I feel it\u0027s clearer *without* the comments.\n\nI can\u0027t personally think of a succinct one-line comment to attach to the embedding (as that\u0027s the important element) that makes a critical difference to the **user**, versus the merely-interested reader who thinks \"I want to understand the *implementation*, expressed in one comment because I don\u0027t want to go read up on embedding\".\n\nSo: I vote we let the CUE speak for itself, and don\u0027t comment either the map or the list - let\u0027s see if we get issues opened or questions asked in Slack :-)",
+      "parentUuid": "f194de72_0666bb54",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "6fffa742_9549adff",
