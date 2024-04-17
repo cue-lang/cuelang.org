@@ -29,24 +29,25 @@ command line.
 {{< step stepNumber="1" >}}
 Create a JSON file called `x.json` with the following:
 
-```{title="x.json"}
+```json { title="x.json" }
 {
-  "people": {
-    "Gopher": {
-      "name": "Gopher",
-      "age": 12,
-      "address": "Mountain View"
-    },
-    "Ken": {
-      "name": "Ken",
-      "age": 21,
-      "address": "The Blue Sky"
+    "people": {
+        "Gopher": {
+            "name": "Gopher",
+            "age": 12,
+            "address": "Mountain View"
+        },
+        "Ken": {
+            "name": "Ken",
+            "age": 21,
+            "address": "The Blue Sky"
+        }
     }
-  }
 }
 ```
 
 {{< /step >}}
+
 
 {{< step stepNumber="2" >}}
 Create a CUE file named `x.cue`
@@ -54,7 +55,7 @@ Create a CUE file named `x.cue`
 The following CUE creates a CUE definition that describes the data type
 constraints for every person.
 
-```{title="x.cue"}
+```cue { title="x.cue" }
 #Person: {
 	name:    string
 	age:     int
@@ -71,7 +72,7 @@ people: [X=string]: #Person & {
 {{< step stepNumber="3" >}}
 Run the following `cue` command in your terminal:
 
-```console
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
 $ cue vet x.cue x.json
 ```
 
@@ -82,25 +83,25 @@ _NOTE: `cue vet` is silent when run successfully. Output will only show on error
 Add another person to your JSON data by replacing your `x.json` file with the
 following:
 
-```{title="x.json"}
+```json { title="x.json" }
 {
-  "people": {
-    "Gopher": {
-      "name": "Gopher",
-      "age": 12,
-      "address": "Mountain View"
-    },
-    "Ken": {
-      "name": "Ken",
-      "age": 21,
-      "address": "The Blue Sky"
-    },
-    "Rob": {
-      "name": "Rob",
-      "age": 42.2,
-      "address": "CUEtopia"
+    "people": {
+        "Gopher": {
+            "name": "Gopher",
+            "age": 12,
+            "address": "Mountain View"
+        },
+        "Ken": {
+            "name": "Ken",
+            "age": 21,
+            "address": "The Blue Sky"
+        },
+        "Rob": {
+            "name": "Rob",
+            "age": 42.2,
+            "address": "CUEtopia"
+        }
     }
-  }
 }
 ```
 
@@ -109,40 +110,41 @@ following:
 {{< step stepNumber="5" >}}
 Validate again with `cue vet`:
 
-```console
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
 $ cue vet x.cue x.json
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
     ./x.cue:7:21
-    ./x.json:13:11
+    ./x.json:15:20
 ```
 
 The command output shows validation errors where the JSON violates
 the (type) constraints that you have declared.
+
 {{< /step >}}
 
 {{< step stepNumber="6" >}}
 Fix up the JSON:
 
-```{title="x.json"}
+```json { title="x.json" }
 {
-  "people": {
-    "Gopher": {
-      "name": "Gopher",
-      "age": 12,
-      "address": "Mountain View"
-    },
-    "Ken": {
-      "name": "Ken",
-      "age": 21,
-      "address": "The Blue Sky"
-    },
-    "Rob": {
-      "name": "Rob",
-      "age": 42,
-      "address": "CUEtopia"
+    "people": {
+        "Gopher": {
+            "name": "Gopher",
+            "age": 12,
+            "address": "Mountain View"
+        },
+        "Ken": {
+            "name": "Ken",
+            "age": 21,
+            "address": "The Blue Sky"
+        },
+        "Rob": {
+            "name": "Rob",
+            "age": 42,
+            "address": "CUEtopia"
+        }
     }
-  }
 }
 ```
 
@@ -151,11 +153,12 @@ Fix up the JSON:
 {{< step stepNumber="7" >}}
 Validate with `cue vet` again
 
-```console
+```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
 $ cue vet x.cue x.json
 ```
 
 The `cue vet` command will show no output on success.
+
 {{< /step >}}
 
 Well done! Any future data errors on names, ages, and addresses in your JSON
