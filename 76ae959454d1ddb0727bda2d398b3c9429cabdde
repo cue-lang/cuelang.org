@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "76ae959454d1ddb0727bda2d398b3c9429cabdde",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c4fffa4_feb8e584",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T19:21:08Z",
+      "side": 1,
+      "message": "This seems fine to me, the basis there is a significant amount of copy-paste required in this guide (which we are tracking separately)",
+      "revId": "76ae959454d1ddb0727bda2d398b3c9429cabdde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
