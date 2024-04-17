@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de981916_15a6343b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-17T15:18:43Z",
+      "side": 1,
+      "message": "I\u0027m taking this CL over.",
+      "revId": "a65c7cc4a96f02d03fbb88b0b213dc8cfd86d261",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
