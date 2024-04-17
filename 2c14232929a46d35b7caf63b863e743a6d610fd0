@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fd59f32_6f6b7b82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T06:56:53Z",
+      "side": 1,
+      "message": "But the \"future\" section needs breaking part as indicated. Then will be LGTM.\n\ncc @mvdan@mvdan.cc given this is encodings related.",
+      "revId": "2c14232929a46d35b7caf63b863e743a6d610fd0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bd06b0d_1f3e26c0",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T06:56:53Z",
+      "side": 1,
+      "message": "https://pkg.go.dev/cuelang.org/go@v0.8.1/encoding/protobuf/textproto and https://pkg.go.dev/cuelang.org/go@v0.8.1/encoding/protobuf/jsonpb already exist so this text needs to be updated. I suggest you include separate sub sections above for each where we can fill out text based on the package comment for both.",
+      "range": {
+        "startLine": 151,
+        "startChar": 36,
+        "endLine": 151,
+        "endChar": 66
+      },
+      "revId": "2c14232929a46d35b7caf63b863e743a6d610fd0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
