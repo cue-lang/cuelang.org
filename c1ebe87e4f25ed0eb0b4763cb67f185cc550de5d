@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d276d3b1_1d402dfb",
+        "filename": "content/docs/howto/generate-cue-from-go-dependency/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T14:00:03Z",
+      "side": 1,
+      "message": "This is actually more `cmd/cue` - it\u0027s certainly not the Go API.",
+      "revId": "c1ebe87e4f25ed0eb0b4763cb67f185cc550de5d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
