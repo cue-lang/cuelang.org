@@ -33,6 +33,24 @@
       "message": "nit: I\u0027d line-wrap at the end of the first sentence.",
       "revId": "eae485fdd17efb922cd84ac81e74a9ab995e7a36",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb271b2e_67588ffe",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-17T14:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfc9c6b4_8801ca32",
+      "revId": "eae485fdd17efb922cd84ac81e74a9ab995e7a36",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

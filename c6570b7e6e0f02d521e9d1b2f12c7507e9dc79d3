@@ -160,6 +160,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e0c9c7fd_fb5ffa04",
+        "filename": "content/docs/howto/produce-string-set-from-list/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1037843
+      },
+      "writtenOn": "2024-04-17T14:43:57Z",
+      "side": 1,
+      "message": "excellent, I completely agree",
+      "parentUuid": "b7c6b8ec_903d8105",
+      "revId": "c6570b7e6e0f02d521e9d1b2f12c7507e9dc79d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "6fffa742_9549adff",
         "filename": "content/docs/howto/produce-string-set-from-list/en.md",
         "patchSetId": 6
