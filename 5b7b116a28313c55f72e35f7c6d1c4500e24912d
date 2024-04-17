@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "5b7b116a28313c55f72e35f7c6d1c4500e24912d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2de7be6e_3a4af49e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T19:22:31Z",
+      "side": 1,
+      "message": "But I really want to get rid of these Hugo shortcodes not enhance them :)",
+      "revId": "5b7b116a28313c55f72e35f7c6d1c4500e24912d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
