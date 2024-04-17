@@ -8,11 +8,11 @@ package site
 						cache: {
 							upload: {
 								"schema-v0.0.1": "NeWw+Q5opwWhA4sfb2LTpXdcDZX7Jlxr05tmACLH3zk="
-								"config.cue":    "4I6kiV30iWOP7Gf24KDEIQ14JiTf4bSoa8/x0r3eFMA="
+								"config.cue":    "djZ1Y6vG8T68ObbHIzLQBXmdIBcwEQpD8BgedQXbUOk="
 							}
 							multi_step: {
-								hash:       "118BHDDUP6PGIO5NG3O362R5CB2TI9PJMS981E3E0CTBOENBT15G===="
-								scriptHash: "GNVC75FNAS4AAS3LB4O3HRNRUU12IVJPS7FE6GL45M40CBL3L7V0===="
+								hash:       "QN73U2RC83M8D7631T4JBDGJRS3QAF0N51KE36O6IKTR00AR23JG===="
+								scriptHash: "J97IEIF154DV04JTUGS3VOART72TUSF7CC8P7F4M4VH9GLDAOGO0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
@@ -57,7 +57,7 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      "# Replace \"cueckoo\" with *your* GitHub username"
+									doc:      "# Replace \"cueckoo\" with *your* GitHub username, lower-cased."
 									cmd:      "cue mod init github.com/cueckoo/frostyconfig@v0"
 									exitCode: 0
 									output:   ""
