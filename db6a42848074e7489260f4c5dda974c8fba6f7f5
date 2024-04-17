@@ -16,6 +16,121 @@
       "message": "PTAL.",
       "revId": "db6a42848074e7489260f4c5dda974c8fba6f7f5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ce5ce3f_06024eb3",
+        "filename": "content/docs/howto/generate-cue-from-go-dependency/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T18:45:52Z",
+      "side": 1,
+      "message": "\"package\"",
+      "range": {
+        "startLine": 44,
+        "startChar": 40,
+        "endLine": 44,
+        "endChar": 46
+      },
+      "revId": "db6a42848074e7489260f4c5dda974c8fba6f7f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80cbd642_b1d7a599",
+        "filename": "content/docs/howto/generate-cue-from-go-dependency/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T18:45:52Z",
+      "side": 1,
+      "message": "\"depends on\"",
+      "range": {
+        "startLine": 45,
+        "startChar": 12,
+        "endLine": 45,
+        "endChar": 15
+      },
+      "revId": "db6a42848074e7489260f4c5dda974c8fba6f7f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6b7d9e3_29e27c62",
+        "filename": "content/docs/howto/generate-cue-from-go-dependency/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T18:45:52Z",
+      "side": 1,
+      "message": "\"... version of the Go package, and tidy the main module:\"",
+      "range": {
+        "startLine": 59,
+        "startChar": 31,
+        "endLine": 59,
+        "endChar": 38
+      },
+      "revId": "db6a42848074e7489260f4c5dda974c8fba6f7f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2db397a_662b2b38",
+        "filename": "content/docs/howto/generate-cue-from-go-dependency/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T18:45:52Z",
+      "side": 1,
+      "message": "\"@latest would also work\"\n\nThe package path is conventionally not used here.",
+      "range": {
+        "startLine": 63,
+        "startChar": 37,
+        "endLine": 63,
+        "endChar": 46
+      },
+      "revId": "db6a42848074e7489260f4c5dda974c8fba6f7f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f0b3925_2aaac2df",
+        "filename": "content/docs/howto/generate-cue-from-go-dependency/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-17T18:45:52Z",
+      "side": 1,
+      "message": "\"the target package\"?",
+      "range": {
+        "startLine": 72,
+        "startChar": 59,
+        "endLine": 72,
+        "endChar": 69
+      },
+      "revId": "db6a42848074e7489260f4c5dda974c8fba6f7f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
