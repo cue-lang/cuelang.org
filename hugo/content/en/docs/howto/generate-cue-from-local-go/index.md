@@ -163,3 +163,4 @@ Your Go code will probably have known-good and known-bad data for testing your g
 
 - {{< linkto/related/reference "cli/cue-get-go" >}}
 - Issue {{< issue 452 >}}#452{{</issue>}}: path resolution issue for get go generated files
+- {{< linkto/related/howto "generate-cue-from-go-dependency" >}}
