@@ -1,5 +1,5 @@
 ---
-title: Generate CUE from a Go dependency
+title: Generating CUE from a Go dependency
 toc_hide: true
 tags:
 - cue command
@@ -131,3 +131,4 @@ statefulSet: {}
 - Issue {{< issue 2865 >}}#2865{{</issue>}} tracks the plans for CUE to support
   finding well-known types (such as the Kubernetes example used above) at a
   well-known location, without having to import them manually.
+- {{< linkto/related/howto "generate-cue-from-local-go" >}}

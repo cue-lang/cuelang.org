@@ -158,3 +158,7 @@ $ cue vet -d '#Config' . config.json
 
 Your Go code will probably have known-good and known-bad data for testing your generated CUE.
 {{< /step >}}
+
+## Related content
+
+- {{< linkto/related/howto "generate-cue-from-go-dependency" >}}
