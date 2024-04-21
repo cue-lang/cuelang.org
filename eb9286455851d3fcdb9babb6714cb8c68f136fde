@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73cc2124_cd07202b",
+        "filename": "content/docs/howto/generate-cue-from-local-go/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-21T08:33:08Z",
+      "side": 1,
+      "message": "Related content:\n\n- ref: `cue get go`\n- issue cue-lang/cue#452",
+      "revId": "eb9286455851d3fcdb9babb6714cb8c68f136fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
