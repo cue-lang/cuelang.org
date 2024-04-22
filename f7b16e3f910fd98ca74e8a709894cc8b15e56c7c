@@ -16,6 +16,24 @@
       "message": "```\nCloses cue-lang/cue#3049\n```",
       "revId": "f7b16e3f910fd98ca74e8a709894cc8b15e56c7c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "252e1187_123e6940",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-22T12:30:42Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "41683d14_92603422",
+      "revId": "f7b16e3f910fd98ca74e8a709894cc8b15e56c7c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
