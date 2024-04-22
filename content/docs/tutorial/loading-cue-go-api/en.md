@@ -129,7 +129,7 @@ Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
 {{{with script "en" "go test"}}}
 #ellipsis 0
-go get cuelang.org/go@$CUELANG_CUE_PRERELEASE
+go get cuelang.org/go@$CUELANG_CUE_LATEST
 #ellipsis 0
 go mod tidy
 {{{end}}}

@@ -11,8 +11,8 @@ package site
 								"initial go code":  "r6Sg7z0Zg9D6oLy2pXYu10YLnAGwl+JZqFfNg8U5llI="
 							}
 							multi_step: {
-								hash:       "PL3M7V69596JQK036A8A4Q9ETQ25CPDABH8JUBQN0SA0BFFMVCK0===="
-								scriptHash: "EO4Q6R80AACHP70KSS83OKLCCU79SQJJQDUNFVNUMDH07OV23K00===="
+								hash:       "4L051F6FBVMJABM727VMAABEQATUIPRO0L8AJHPKU3MAP5UDKAJ0===="
+								scriptHash: "5OM3T23J6D5P19849QBL4G0BOPPV8CSL9VQULNI1J6JVPNA3VM60===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -66,7 +66,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.9.0-alpha.1"
+									cmd:      "go get cuelang.org/go@v0.8.0"
 									exitCode: 0
 									output: """
 											...

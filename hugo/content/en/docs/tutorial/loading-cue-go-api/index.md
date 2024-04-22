@@ -126,8 +126,8 @@ func main() {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMC1hbHBoYS4xCmdvIG1vZCB0aWR5" }
-$ go get cuelang.org/go@v0.9.0-alpha.1
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjguMApnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.8.0
 ...
 $ go mod tidy
 ...
