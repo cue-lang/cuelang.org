@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "vSNjy1zY8+VQyjQUYXVrRjdf4z2Bu11p1vPVOV5NYXA="
-								kube2:               "M+O6BB8mavln6RkQbWAl9ZvvhcOEL37G6Rz9wUu0LKY="
-								kube3:               "ymA0oWstK3NwjFeV9A6X/yNNTGs6ToDKSsX7tTKa/LI="
-								"template frontend": "5Wapid8ZLtia/qmVBHAama8ASslrmNzQJ+WgOLE2+c8="
-								"template kitchen":  "gdPTsCnC/AholI5yR2SWusm9uJvqWdA8LB4mUoVUp9E="
-								kitchen3:            "JglqfOtY7o8EHn3Cr4X/V54i1FEspviPaAi05O6c2vk="
-								sous:                "ehOoF/atyMiepAcOL3DGb+lQE7BvQVBxZ0uaaYaWhSE="
-								"kube tool":         "YVGaihv7NZb+yKhqOfAIQYX8wETjkwuSs7BFQq7qyxk="
-								"ls tool":           "ptDG/JlFt4SjNHyhGmJG752u0FxnjqQA5+2emyFqyZ0="
-								"dump tool":         "tpp+/fW4YeqBy6cSPKmfHwhOKWzlMHD99gV7izub77k="
-								"create tool":       "le51Bspud6OaiGolh2SWIZzPi6eCc20ddHLORBlYE2s="
-								kubectl:             "ifh6LVXr+YBoBIp0VuDXC8l1QWwnQ7OuGluZIOHr0kI="
+								"initial template":  "oJ1n3P8bcsA9YdZhWC1AgoefZcstJiRgy3F/ZI9XAWc="
+								kube2:               "G4BV4rzLdn2665wfhTjr2bpxX0H3bNFdJJ/L369cPbc="
+								kube3:               "81l0MS5iobcA4rdQPqgDlUfMMBp3KzyP9h8a8AbBrf4="
+								"template frontend": "MBPegAcEa4XaH5egx+laVfHd1Z8AVziMdoAc0nZ1jaY="
+								"template kitchen":  "epaGsL6fdaytAe6CKOrz2bDWHvGTsjv7bNL6w7ohr6Y="
+								kitchen3:            "RYZGCCdSFpoGRTEuFA3cvNXEmUfkKmGbpD4DmckNk48="
+								sous:                "/mM7HAvhwzzKQhcqRlvBKZnhnqKxvyy+8kPpMfC1N28="
+								"kube tool":         "aoMm+odWxaBxXcmh7QnfoQN9MLEFTyfT7PnTzBluSFc="
+								"ls tool":           "Ls6RBoGBqBhOoq/CquSgxxQyxcaYS6EK5NZdByz9WOI="
+								"dump tool":         "CGWDwu/G9vjk61dL/wS8n2y9x1ZNXepJ78cdeIbuZg0="
+								"create tool":       "9rTa3DD1+aBU1sobcCzsdmb10QPRODvpDZiPocCzk4Q="
+								kubectl:             "6G86KeosXJRUsj0dycWcps317+wb9b8C9NHgchhl/vE="
 							}
 							multi_step: {
-								hash:       "UN5HQ5RDHNAGNF9HJGOACOFP60JQNIJ96E7PT0D9MJ8TRPSAP8T0===="
+								hash:       "TRQ5K72JKSMIDTC1K9QA01RSNSUBNN5NBUUA4KTO6O04AUC36KDG===="
 								scriptHash: "LR318RA04R3HQUPEG0109ELOLG5FR4A2UBFVOFSDDU56KC36PC10===="
 								steps: [{
 									doc:      "#ellipsis 5"
@@ -255,7 +255,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1883 total
+											 1833 total
 
 											"""
 								}, {
@@ -268,7 +268,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1308 total
+											 1266 total
 
 											"""
 								}, {
@@ -324,7 +324,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1174 total
+											 1132 total
 
 											"""
 								}, {
@@ -363,7 +363,7 @@ package site
 											\t}
 											\tspec: containers: [{
 											\t\timage: "gcr.io/myproj/breaddispatcher:v0.3.24"
-											\t\tports: [{
+											\t\tports: [{containerPort: 7080}]
 
 											"""
 								}, {
@@ -371,7 +371,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1022 total
+											  980 total
 
 											"""
 								}, {
@@ -422,7 +422,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  968 total
+											  938 total
 
 											"""
 								}, {
@@ -463,7 +463,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  801 total
+											  785 total
 
 											"""
 								}, {

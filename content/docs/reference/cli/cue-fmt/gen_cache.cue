@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "CB51MTSGDCN9P41DS4OQB0CU5L59OAG4MRBPDJNPGTB4R2F49750===="
+									hash:       "URUO4CSSB1I65GFHHQID0TCODT57T1QPS9T0SNGPJHL7874K3L0G===="
 									scriptHash: "OML4CMQGVV75S8I7JA7TKT2JNPT1JDHHN8ET4NU39TFE9PLLV6HG===="
 									steps: [{
 										doc:      ""
@@ -19,6 +19,9 @@ package site
 
 												Usage:
 												  cue fmt [-s] [inputs] [flags]
+
+												Flags:
+												      --check   exits with non-zero status if any files are not formatted
 
 												Global Flags:
 												  -E, --all-errors   print all available errors

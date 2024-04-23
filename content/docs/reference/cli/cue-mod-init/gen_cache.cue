@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "5VD7GDQLKKI0T0A9M1L7FQCBJS6VIE21E2IIOEIE683ID728A860===="
+									hash:       "784ACV1CBN25SEG71RMJA3OS9OSIS3667910KS7LN6V6KECL1R40===="
 									scriptHash: "BS8EE3LI2O2UHJLE5T3J6KU1QNUUN0IF8NPVKFT7PBF7U4GEL350===="
 									steps: [{
 										doc:      ""
@@ -28,7 +28,8 @@ package site
 												  cue mod init [module] [flags]
 
 												Flags:
-												  -f, --force   force moving old-style cue.mod file
+												  -f, --force           force moving old-style cue.mod file
+												      --source string   set the source field
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
