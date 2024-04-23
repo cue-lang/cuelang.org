@@ -7,22 +7,22 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "vSNjy1zY8+VQyjQUYXVrRjdf4z2Bu11p1vPVOV5NYXA="
-								kube2:               "M+O6BB8mavln6RkQbWAl9ZvvhcOEL37G6Rz9wUu0LKY="
-								kube3:               "ymA0oWstK3NwjFeV9A6X/yNNTGs6ToDKSsX7tTKa/LI="
-								"template frontend": "5Wapid8ZLtia/qmVBHAama8ASslrmNzQJ+WgOLE2+c8="
-								"template kitchen":  "gdPTsCnC/AholI5yR2SWusm9uJvqWdA8LB4mUoVUp9E="
-								kitchen3:            "JglqfOtY7o8EHn3Cr4X/V54i1FEspviPaAi05O6c2vk="
-								sous:                "ehOoF/atyMiepAcOL3DGb+lQE7BvQVBxZ0uaaYaWhSE="
-								"kube tool":         "YVGaihv7NZb+yKhqOfAIQYX8wETjkwuSs7BFQq7qyxk="
-								"ls tool":           "ptDG/JlFt4SjNHyhGmJG752u0FxnjqQA5+2emyFqyZ0="
-								"dump tool":         "tpp+/fW4YeqBy6cSPKmfHwhOKWzlMHD99gV7izub77k="
-								"create tool":       "le51Bspud6OaiGolh2SWIZzPi6eCc20ddHLORBlYE2s="
-								kubectl:             "ifh6LVXr+YBoBIp0VuDXC8l1QWwnQ7OuGluZIOHr0kI="
+								"initial template":  "j0DLmoZExKMETj/dRmTzOuQ6CnzhFEx6+l8aJ1BCBBg="
+								kube2:               "OteDEYN/gx2YcVGmBvZrP9xHmTHU7chZkhv4Gtnhjjw="
+								kube3:               "5u7Phmgrhq2BN3FYOZQmDYifAezuuubUE9SQXUMPYKQ="
+								"template frontend": "im9G8ghpwXKtfcIr6TtvYuqoyE+bZlyimFPlmGoIrpY="
+								"template kitchen":  "YXRP1iSl6iats91sw+1waGGvmnKukYTrr8Azf5LplUk="
+								kitchen3:            "fuxIkA990jUWWOQMsuen90zJ3qxPF+yWPSSX6n3w9pE="
+								sous:                "PNpQvxd81t48xur8BEbpPvSL3mQ97LiTvlLeZsx2Gik="
+								"kube tool":         "x+AXy5YyrLeWmwPhL3aYiELbrEPkJXtgeAbruDSTuik="
+								"ls tool":           "oAckPxmeq2yyCrTD2DAvrwW34v0xAaTJrJc1Asmd778="
+								"dump tool":         "yK+7yN3nt5qoH0OOKIiBYEgA7Y4DEKzJXCFNhAE9lu8="
+								"create tool":       "eWb4TTBJBCyngdcKxsFJMWbqv41hvnwyVGMD7rWuXug="
+								kubectl:             "xczeYqwq0RhCPukRs6+yHb9aeN7RDkViEaef91YXn50="
 							}
 							multi_step: {
-								hash:       "UN5HQ5RDHNAGNF9HJGOACOFP60JQNIJ96E7PT0D9MJ8TRPSAP8T0===="
-								scriptHash: "LR318RA04R3HQUPEG0109ELOLG5FR4A2UBFVOFSDDU56KC36PC10===="
+								hash:       "J00T3A0FHERPPMJ1JO8AB7N77EAEFHFPRN3H5K4FL1K3RMJTVUJ0===="
+								scriptHash: "VPBDOT4K1OVRLN2B826PPIO4SS7248GCSBUBUAITEFQAKCDR2J0G===="
 								steps: [{
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"
@@ -222,8 +222,8 @@ package site
 									cmd:      "diff -wu snapshot snapshot2"
 									exitCode: 1
 									output: """
-											--- snapshot\t2024-04-09 18:24:35.068159793 +0000
-											+++ snapshot2\t2024-04-09 18:24:36.576157401 +0000
+											--- snapshot\t2024-04-24 12:04:55.771001485 +0000
+											+++ snapshot2\t2024-04-24 12:04:57.295001394 +0000
 											@@ -1,3 +1,9 @@
 											+service: {}
 											+deployment: {}
@@ -394,8 +394,8 @@ package site
 									cmd:      "diff -wu snapshot snapshot2"
 									exitCode: 1
 									output: """
-											--- snapshot\t2024-04-09 18:24:44.744144393 +0000
-											+++ snapshot2\t2024-04-09 18:24:45.992142398 +0000
+											--- snapshot\t2024-04-24 12:05:05.675000902 +0000
+											+++ snapshot2\t2024-04-24 12:05:06.899000831 +0000
 											@@ -190,6 +190,7 @@
 											                 metadata: {
 											                     annotations: {
