@@ -86,7 +86,7 @@ cue login
 Initialize a local CUE module. We will not publish this module:
 
 {{{with script "en" "cue mod init"}}}
-cue mod init glacial-tech.example/frostyapp@v0
+cue mod init --source=self glacial-tech.example/frostyapp@v0
 {{{end}}}
 
 We refer to such a module as the main module. Because we won't publish this

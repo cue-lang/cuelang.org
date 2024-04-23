@@ -51,7 +51,7 @@ This tutorial is written using the following version of `cue`:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.8.0
+cue version v0.9.0-alpha.2.0.20240424105213-3519740dc4cc
 ...
 ```
 
@@ -104,9 +104,9 @@ the username `cueckoo` in this tutorial.**
 {{< step stepNumber="3" >}}
 Initialize the directory as a module:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGh1Yi5jb20vY3VlY2tvby9mcm9zdHljb25maWdAdjA=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IC0tc291cmNlPXNlbGYgZ2l0aHViLmNvbS9jdWVja29vL2Zyb3N0eWNvbmZpZ0B2MA==" }
 # Replace "cueckoo" with *your* GitHub username, lower-cased.
-$ cue mod init github.com/cueckoo/frostyconfig@v0
+$ cue mod init --source=self github.com/cueckoo/frostyconfig@v0
 ```
 
 The GitHub user `cueckoo` controls all the repositories under `github.com/cueckoo/`,
@@ -179,7 +179,8 @@ It doesn't matter if the repository is public or private.
 {{< step stepNumber="8" >}}
 
 Publish the first version of this module:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBlZGl0IC0tc291cmNlPXNlbGYgIyBUT0RPOiByZW1vdmUKY3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
+$ cue mod edit --source=self # TODO: remove
 $ cue mod publish v0.0.1
 published github.com/cueckoo/frostyconfig@v0.0.1
 ```
@@ -214,10 +215,10 @@ Create a directory for the new module and initalize it,
 changing `cueckoo` to *your* GitHub username, lower-cased:
 <!-- Not strictly neccessary, but it might confuse if we don't point it out -->
 
-```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgZ2l0aHViLmNvbS9jdWVja29vL2Zyb3N0eWFwcEB2MA==" }
+```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgLS1zb3VyY2Ugc2VsZiBnaXRodWIuY29tL2N1ZWNrb28vZnJvc3R5YXBwQHYw" }
 $ mkdir ../frostyapp
 $ cd ../frostyapp
-$ cue mod init github.com/cueckoo/frostyapp@v0
+$ cue mod init --source self github.com/cueckoo/frostyapp@v0
 ```
 {{< /step >}}
 
@@ -256,7 +257,10 @@ We can see that the dependencies have now been added to the
 $ cat cue.mod/module.cue
 module: "github.com/cueckoo/frostyapp@v0"
 language: {
-	version: "v0.8.0"
+	version: "v0.9.0-alpha.2"
+}
+source: {
+	kind: "self"
 }
 deps: {
 	"github.com/cueckoo/frostyconfig@v0": {
