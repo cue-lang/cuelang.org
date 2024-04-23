@@ -388,8 +388,8 @@ Let's try again to see if it is fixed:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDI=" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2
---- snapshot	2024-04-24 13:08:58.110261825 +0000
-+++ snapshot2	2024-04-24 13:08:58.226261720 +0000
+--- snapshot	2024-04-24 12:04:55.771001485 +0000
++++ snapshot2	2024-04-24 12:04:57.295001394 +0000
 @@ -1,3 +1,9 @@
 +service: {}
 +deployment: {}
@@ -679,8 +679,8 @@ deployment: [string]: spec: template: {
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIKY3Agc25hcHNob3QyIHNuYXBzaG90" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2
---- snapshot	2024-04-24 13:08:58.662261327 +0000
-+++ snapshot2	2024-04-24 13:08:58.718261277 +0000
+--- snapshot	2024-04-24 12:05:05.675000902 +0000
++++ snapshot2	2024-04-24 12:05:06.899000831 +0000
 @@ -190,6 +190,7 @@
                  metadata: {
                      annotations: {
