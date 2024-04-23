@@ -35,7 +35,6 @@ cue: {
 		execCmd: "cue help"
 		title:   "cue"
 	}
-	version:        _
 	cmd:            _
 	commands:       _
 	completion:     _
@@ -53,7 +52,9 @@ cue: {
 	import:         _
 	injection:      _
 	inputs:         _
+	login:          _
 	mod:            _
+	"mod edit":     _
 	"mod get":      _
 	"mod init":     _
 	"mod publish":  _

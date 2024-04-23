@@ -45,7 +45,7 @@ This tutorial is written using the following version of `cmd/cue`:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.8.0
+cue version v0.9.0-alpha.3
 ...
 ```
 
@@ -71,8 +71,8 @@ you will create as they are needed.
 {{< step stepNumber="2" >}}
 
 Initialize the directory as a module:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWNvbmZpZ0B2MA==" }
-$ cue mod init glacial-tech.example/frostyconfig@v0
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IC0tc291cmNlPXNlbGYgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5Y29uZmlnQHYw" }
+$ cue mod init --source=self glacial-tech.example/frostyconfig@v0
 ```
 
 In order to publish the module to a registry, the code must hold a
@@ -237,10 +237,10 @@ published.
 {{< step stepNumber="8" >}}
 
 Create a directory for the new module and initalize it:
-```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5YXBwQHYw" }
+```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgLS1zb3VyY2U9c2VsZiBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHlhcHBAdjA=" }
 $ mkdir ../frostyapp
 $ cd ../frostyapp
-$ cue mod init glacial-tech.example/frostyapp@v0
+$ cue mod init --source=self glacial-tech.example/frostyapp@v0
 ```
 {{< /step >}}
 
@@ -279,7 +279,10 @@ We can see that the dependencies have now been added to the
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.8.0"
+	version: "v0.9.0-alpha.3"
+}
+source: {
+	kind: "self"
 }
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {
@@ -325,10 +328,10 @@ other source of truth.
 {{< step stepNumber="12" >}}
 
 Create a directory for the new module and initalize it:
-```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKY3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eXRlbXBsYXRlQHYw" }
+```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKY3VlIG1vZCBpbml0IC0tc291cmNlPXNlbGYgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5dGVtcGxhdGVAdjA=" }
 $ mkdir ../frostytemplate
 $ cd ../frostytemplate
-$ cue mod init glacial-tech.example/frostytemplate@v0
+$ cue mod init --source=self glacial-tech.example/frostytemplate@v0
 ```
 
 This defines another module. We have named it `frostytemplate`
@@ -412,7 +415,10 @@ Here is what the `cue.mod/module.cue` file now looks like:
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.8.0"
+	version: "v0.9.0-alpha.3"
+}
+source: {
+	kind: "self"
 }
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {
@@ -506,22 +512,14 @@ compatible feature has been added.
 
 {{< step stepNumber="20" >}}
 
-Edit the `cue.mod/module.cue` file to use the new version:
+Use the new version of `glacial-tech.example/frostyconfig@v0`:
 
 ```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5YXBw" }
 $ cd ../frostyapp
 ```
 
-```cue { title="frostyapp/cue.mod/module.cue" }
-module: "glacial-tech.example/frostyapp@v0"
-deps: {
-	"glacial-tech.example/frostyconfig@v0": {
-		v: "v0.1.0" // Note: this changed from before.
-	}
-	"glacial-tech.example/frostytemplate@v0": {
-		v: "v0.0.1"
-	}
-}
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBnZXQgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5Y29uZmlnQHYwLjEuMA==" }
+$ cue mod get glacial-tech.example/frostyconfig@v0.1.0
 ```
 
 CUE modules "lock in" the versions of any dependencies, storing

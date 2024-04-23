@@ -20,7 +20,8 @@ Usage:
   cue mod init [module] [flags]
 
 Flags:
-  -f, --force   force moving old-style cue.mod file
+  -f, --force           force moving old-style cue.mod file
+      --source string   set the source field
 
 Global Flags:
   -E, --all-errors   print all available errors
