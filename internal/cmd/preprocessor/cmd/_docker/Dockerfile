@@ -21,19 +21,19 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/latest go install -trimpath cuelang.org/go/cmd/cue@v0.8.0
+  GOBIN=/cues/latest go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.2.0.20240423155700-1c3f536579cc
 
 RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/prerelease go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.1
+  GOBIN=/cues/prerelease go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.2.0.20240423155700-1c3f536579cc
 
 RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/tip go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.1
+  GOBIN=/cues/tip go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.2.0.20240423155700-1c3f536579cc
 
 FROM golang:1.22.1
 
@@ -48,9 +48,9 @@ ENV LC_ALL=C.UTF-8
 ENV PATH="/cues/latest:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
-ENV CUELANG_CUE_LATEST="v0.8.0"
-ENV CUELANG_CUE_PRERELEASE="v0.9.0-alpha.1"
-ENV CUELANG_CUE_TIP="v0.9.0-alpha.1"
+ENV CUELANG_CUE_LATEST="v0.9.0-alpha.2.0.20240423155700-1c3f536579cc"
+ENV CUELANG_CUE_PRERELEASE="v0.9.0-alpha.2.0.20240423155700-1c3f536579cc"
+ENV CUELANG_CUE_TIP="v0.9.0-alpha.2.0.20240423155700-1c3f536579cc"
 
 WORKDIR /
 
