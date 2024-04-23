@@ -39,6 +39,30 @@
       },
       "revId": "2c14232929a46d35b7caf63b863e743a6d610fd0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b9b5f41_b7443e96",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-23T10:16:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bd06b0d_1f3e26c0",
+      "range": {
+        "startLine": 151,
+        "startChar": 36,
+        "endLine": 151,
+        "endChar": 66
+      },
+      "revId": "2c14232929a46d35b7caf63b863e743a6d610fd0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
