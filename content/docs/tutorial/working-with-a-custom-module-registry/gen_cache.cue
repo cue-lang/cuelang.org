@@ -7,16 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "NeWw+Q5opwWhA4sfb2LTpXdcDZX7Jlxr05tmACLH3zk="
-								"config.cue":               "877wOFHrKCMbJOhFNc61YSy2zhXh5Tu9cn8eKRwv9YQ="
-								"second-module-to-publish": "8nMYJRwcoJXO825DZ9aW2cqQrL5a3n3WyFBfD0puCrY="
-								"update-frostyapp":         "Q0/49AYdZ+4mIkUH9bOLR48ecYVS+cbmrBdHt8vFH4c="
-								"schema-v0.1.0":            "okWXQgQSbhpsba4HBULYr7/DrID3NbBJp9tInjFL1w4="
-								"edit-dependency-version":  "wPptz34wOB9sbu8EHRmozvVQiNI2DwyHEbqnCJyiBvk="
+								"schema-v0.0.1":            "EyrsiXDEWnu8KpzrkU6cMePJnESmupB6RSUeCskuBqg="
+								"config.cue":               "XgbaA5TAR0CGrrLgq5cj4a12MehV3K2EjnM9+FYA4WQ="
+								"second-module-to-publish": "2teavXJe1LasFuhxFgLi8Th2s7OsRCAq5FGY8lPfaH4="
+								"update-frostyapp":         "IKGUpWODBo6y4Yy02pe8i6NCoWbM3mBERXKfGnQwV2Q="
+								"schema-v0.1.0":            "Zj721INrqO/OAeNQZxE+HV90xbRZ4Y/RnYhVMu7VpRE="
 							}
 							multi_step: {
-								hash:       "TFDG0AAIN8RLJ7OD6MD00OCFSJ5PEMBBMLHM9O2Q025ED25MIBM0===="
-								scriptHash: "RL8PANMFI862S2CVH8SQSKIDO08E5M0V0BLCCKDO5KOK7J5ORVEG===="
+								hash:       "LVM7HARU0K5KA2F2GA2QKVBPE2SM0TKTB1F7Q298S0G6BTJORD4G===="
+								scriptHash: "FDP9KPVEA1QRGCL5FCD9V2UKC44FRIV4AKLI0GT2A66HP84LLK3G===="
 								steps: [{
 									doc: """
 											# TODO: this is inherently racey. But not a problem in practice...
@@ -31,7 +30,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.8.0
+											cue version v0.9.0-alpha.2.0.20240423155700-1c3f536579cc
 											...
 
 											"""
@@ -47,7 +46,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init glacial-tech.example/frostyconfig@v0"
+									cmd:      "cue mod init --source=self glacial-tech.example/frostyconfig@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -63,6 +62,11 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod edit --source=self # TODO: remove"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -85,7 +89,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init glacial-tech.example/frostyapp@v0"
+									cmd:      "cue mod init --source=self glacial-tech.example/frostyapp@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -100,7 +104,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.8.0"
+											\tversion: "v0.9.0-alpha.2"
 											}
 											deps: {
 											\t"glacial-tech.example/frostyconfig@v0": {
@@ -133,12 +137,17 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init glacial-tech.example/frostytemplate@v0"
+									cmd:      "cue mod init --source=self glacial-tech.example/frostytemplate@v0"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod edit --source=self # TODO: remove"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -166,7 +175,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.8.0"
+											\tversion: "v0.9.0-alpha.2"
 											}
 											deps: {
 											\t"glacial-tech.example/frostyconfig@v0": {
@@ -204,6 +213,11 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
+									cmd:      "cue mod edit --source=self # TODO: remove"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
 									cmd:      "cue mod publish v0.1.0"
 									exitCode: 0
 									output: """
@@ -213,6 +227,11 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cd ../frostyapp"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod get glacial-tech.example/frostyconfig@v0.1.0"
 									exitCode: 0
 									output:   ""
 								}, {

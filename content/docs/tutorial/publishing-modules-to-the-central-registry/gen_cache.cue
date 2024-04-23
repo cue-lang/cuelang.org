@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "NeWw+Q5opwWhA4sfb2LTpXdcDZX7Jlxr05tmACLH3zk="
-								"config.cue":    "djZ1Y6vG8T68ObbHIzLQBXmdIBcwEQpD8BgedQXbUOk="
+								"schema-v0.0.1": "EyrsiXDEWnu8KpzrkU6cMePJnESmupB6RSUeCskuBqg="
+								"config.cue":    "BXFI12BUljX3zgiQpNd8F+w4tej3joXDjnvy+/g+BjE="
 							}
 							multi_step: {
-								hash:       "QN73U2RC83M8D7631T4JBDGJRS3QAF0N51KE36O6IKTR00AR23JG===="
-								scriptHash: "J97IEIF154DV04JTUGS3VOART72TUSF7CC8P7F4M4VH9GLDAOGO0===="
+								hash:       "7LOE9POQHNN18S0TJSNLNU7D2PB0BFB50HAR8COOH3V1ICM6AM2G===="
+								scriptHash: "2LGNFHGO84HRIPUMA2IDP8IQGAQJHEG6TR81LA0NNNCV1JF17G70===="
 								steps: [{
 									doc:      ""
 									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
@@ -37,7 +37,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.9.0-alpha.1
+											cue version v0.9.0-alpha.2.0.20240423155700-1c3f536579cc
 											...
 
 											"""
@@ -58,12 +58,17 @@ package site
 									output:   ""
 								}, {
 									doc:      "# Replace \"cueckoo\" with *your* GitHub username, lower-cased."
-									cmd:      "cue mod init github.com/cueckoo/frostyconfig@v0"
+									cmd:      "cue mod init --source=self github.com/cueckoo/frostyconfig@v0"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod edit --source=self # TODO: remove"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -86,7 +91,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init github.com/cueckoo/frostyapp@v0"
+									cmd:      "cue mod init --source self github.com/cueckoo/frostyapp@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -101,7 +106,7 @@ package site
 									output: """
 											module: "github.com/cueckoo/frostyapp@v0"
 											language: {
-											\tversion: "v0.9.0-alpha.1"
+											\tversion: "v0.9.0-alpha.2"
 											}
 											deps: {
 											\t"github.com/cueckoo/frostyconfig@v0": {

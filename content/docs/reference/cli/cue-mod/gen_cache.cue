@@ -8,20 +8,27 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "7FC12NV2G9MLLERKC1FP0P8RCQNBOJH1QNAN9Q33ISN2HA2Q74O0===="
+									hash:       "K6KVTUDOQ20LVL64KH2CK4SEV1F9IP2L0CH6E4OE79U4S39HFBH0===="
 									scriptHash: "NV9BLBP8KO0EB3A3NN8PHB6F1V5J9NHLC8I0JFQI7IEBOL0UCDV0===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help mod"
 										exitCode: 0
 										output: """
+												Mod groups commands which operate on CUE modules.
 
+												Note that support for modules is built into all the cue commands, not
+												just 'cue mod'.
+
+												See also:
+												\tcue help modules
 
 												Usage:
 												  cue mod <cmd> [arguments] [flags]
 												  cue mod [command]
 
 												Available Commands:
+												  edit        edit cue.mod/module.cue
 												  get         add and upgrade module dependencies
 												  init        initialize new module in current directory
 												  publish     publish the current module to a registry

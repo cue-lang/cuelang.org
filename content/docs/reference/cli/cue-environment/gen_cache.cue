@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "B03J7D83N76TADB0U0LFO80QOO0VB3O6EEG0JCR32E0KC58H4000===="
+									hash:       "V68KQCRILRLA5H2RSIF8VP36BAGH2QN9FJ21G217PQQPFDGJ18MG===="
 									scriptHash: "I2K2J4PJ1Q1QQBQU37PBLENVKV09PSPUMICPUIDTQM1BGH71OQGG===="
 									steps: [{
 										doc:      ""
@@ -38,16 +38,16 @@ package site
 												\t\t\t"%AppData%/cue" on Windows
 
 												\tCUE_DEBUG
-												\t\tComma-separated list of debug flags to enable. Current possible
-												\t\tvalues are:
+												\t\tComma-separated list of debug flags to enable or disable.
+												\t\tCurrent possible values are:
 												\t\t\thttp
 												\t\t\t\tPrint log messages in JSON format, one per line showing
 												\t\t\t\tHTTP requests and responses made when interacting with
 												\t\t\t\tmodule registries.
 
 												\tCUE_EXPERIMENT
-												\t\tComma-separated list of experiments to enable. The
-												\t\tlist of available experiments may change arbitrarily over time.
+												\t\tComma-separated list of experiments to enable or disable.
+												\t\tThe list of available experiments may change arbitrarily over time.
 												\t\tSee exp.go in package cuelang.org/go/internal/cueexperiment for
 												\t\tcurrently valid values.
 
