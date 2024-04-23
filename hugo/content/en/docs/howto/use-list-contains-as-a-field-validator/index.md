@@ -35,7 +35,7 @@ aList: list.Contains("TWO") // validation failure
 // if the value is equal to any of the elements being compared.
 // The tracking issue for these rules is
 // https://github.com/cue-lang/docs-and-content/issues/49
-aList: list.Contains({asInt: 3})          // validation failure
+aList: list.Contains({asInt: 3}) // validation failure
 aList: list.Contains({asInt: 3, asString: "three"})
 aList: list.Contains([4, "four"])
 aList: list.Contains(["four", 4, 4.0]) // validation failure

@@ -7,13 +7,20 @@ tags:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9k" }
 $ cue help mod
+Mod groups commands which operate on CUE modules.
 
+Note that support for modules is built into all the cue commands, not
+just 'cue mod'.
+
+See also:
+	cue help modules
 
 Usage:
   cue mod <cmd> [arguments] [flags]
   cue mod [command]
 
 Available Commands:
+  edit        edit cue.mod/module.cue
   get         add and upgrade module dependencies
   init        initialize new module in current directory
   publish     publish the current module to a registry
