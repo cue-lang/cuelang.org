@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3a72cde_e69bc140",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-23T11:55:24Z",
+      "side": 1,
+      "message": "Yes, the hidden `_script_` blocks above and below ensure that the generated `.basic.cue` is identical to the uploaded `basic.cue`.\n\nA replacement for this style of inelegant solution is requested in cue-lang/cue#2798",
+      "parentUuid": "e653193f_49c22c31",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d15694bf_3ad1b645",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-04-23T10:27:23Z",
       "side": 1,
       "message": "I would just say \"added flexibility\" here.",
+      "range": {
+        "startLine": 83,
+        "startChar": 53,
+        "endLine": 84,
+        "endChar": 8
+      },
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b311a73_a6f4e55c",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-23T11:55:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d15694bf_3ad1b645",
       "range": {
         "startLine": 83,
         "startChar": 53,
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07372685_541c1862",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-23T11:55:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b9cb49e_fca2246c",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b24c2efa_6a8ab7e2",
@@ -88,6 +148,24 @@
       "writtenOn": "2024-04-23T10:27:23Z",
       "side": 1,
       "message": "why the trailing `, \"\"`?",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3229cf51_f7d4b331",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-23T11:55:24Z",
+      "side": 1,
+      "message": "Paging @paul@myitcv.io.",
+      "parentUuid": "b24c2efa_6a8ab7e2",
       "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -111,6 +189,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7fb01ce4_dfb5caff",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-23T11:55:24Z",
+      "side": 1,
+      "message": "I\u0027m afraid that I reached the limits of my knowledge here, whilst adapting the text from https://cuelang.org/docs/integration/protobuf/#extract-cue-from-multiple-interdependent-proto-files. I couldn\u0027t personally get `cue import` to work with these kinds of scenario, but I can\u0027t say for sure that they\u0027re API-only. Can you suggest accurate wording that you feel is sufficiently unambiguous?",
+      "parentUuid": "8ff31368_e564bf66",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ac761311_91b21c31",
         "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
         "patchSetId": 3
@@ -122,6 +218,30 @@
       "writtenOn": "2024-04-23T10:27:23Z",
       "side": 1,
       "message": "nit: I would say \"feedback\"",
+      "range": {
+        "startLine": 151,
+        "startChar": 7,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61c99033_6d3db474",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-23T11:55:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac761311_91b21c31",
       "range": {
         "startLine": 151,
         "startChar": 7,
