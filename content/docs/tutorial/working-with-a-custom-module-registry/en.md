@@ -78,7 +78,7 @@ you will create as they are needed.
 
 Initialize the directory as a module:
 {{{with script "en" "initialize-frostyconfig-module"}}}
-cue mod init glacial-tech.example/frostyconfig@v0
+cue mod init --source=self glacial-tech.example/frostyconfig@v0
 {{{end}}}
 
 In order to publish the module to a registry, the code must hold a
@@ -218,6 +218,7 @@ have any dependencies, we will run `cue mod tidy` anyway.
 
 Publish the first version of this module:
 {{{with script "en" "frostyconfig-v0.0.1-publish"}}}
+cue mod edit --source=self # TODO: remove
 cue mod publish v0.0.1
 {{{end}}}
 
@@ -250,7 +251,7 @@ Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostyapp"}}}
 mkdir ../frostyapp
 cd    ../frostyapp
-cue mod init glacial-tech.example/frostyapp@v0
+cue mod init --source=self glacial-tech.example/frostyapp@v0
 {{{end}}}
 {{{end}}}
 
@@ -325,7 +326,7 @@ Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostytemplate"}}}
 mkdir ../frostytemplate
 cd    ../frostytemplate
-cue mod init glacial-tech.example/frostytemplate@v0
+cue mod init --source=self glacial-tech.example/frostytemplate@v0
 {{{end}}}
 
 This defines another module. We have named it `frostytemplate`
@@ -363,6 +364,7 @@ We import the schema to constrain the default values, just as we did with the
 Publish the `frostytemplate` module:
 {{{with script "en" "frostytemplate-v0.0.1-publish"}}}
 cue mod tidy
+cue mod edit --source=self # TODO: remove
 cue mod publish v0.0.1
 {{{end}}}
 {{{end}}}
@@ -476,6 +478,7 @@ The schema is unchanged except for the new `maxConcurrency` field.
 Upload a new version of the `frostyconfig` schema:
 {{{with script "en" "upload-schema2"}}}
 cue mod tidy
+cue mod edit --source=self # TODO: remove
 cue mod publish v0.1.0
 {{{end}}}
 
@@ -487,24 +490,14 @@ compatible feature has been added.
 
 {{{with step}}}
 
-Edit the `cue.mod/module.cue` file to use the new version:
+Use the new version of `glacial-tech.example/frostyconfig@v0`:
 
 {{{with script "en" "return to app to use updated schema"}}}
 cd ../frostyapp
 {{{end}}}
 
-{{{with upload "en" "edit-dependency-version"}}}
-#force
--- frostyapp/cue.mod/module.cue --
-module: "glacial-tech.example/frostyapp@v0"
-deps: {
-	"glacial-tech.example/frostyconfig@v0": {
-		v: "v0.1.0" // Note: this changed from before.
-	}
-	"glacial-tech.example/frostytemplate@v0": {
-		v: "v0.0.1"
-	}
-}
+{{{with script "en" "bump-dependency-version"}}}
+cue mod get glacial-tech.example/frostyconfig@v0.1.0
 {{{end}}}
 
 CUE modules "lock in" the versions of any dependencies, storing

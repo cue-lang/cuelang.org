@@ -112,7 +112,7 @@ Initialize the directory as a module:
 
 {{{with script "en" "initialize-module-1"}}}
 # Replace "{{{.githubUser}}}" with *your* GitHub username, lower-cased.
-cue mod init {{{.MODULE1}}}@v0
+cue mod init --source=self {{{.MODULE1}}}@v0
 {{{end}}}
 
 The GitHub user `{{{.githubUser}}}` controls all the repositories under `github.com/{{{.githubUser}}}/`,
@@ -188,6 +188,7 @@ It doesn't matter if the repository is public or private.
 
 Publish the first version of this module:
 {{{with script "en" "module-1-v0.0.1-publish"}}}
+cue mod edit --source=self # TODO: remove
 cue mod publish v0.0.1
 {{{end}}}
 
@@ -224,7 +225,7 @@ changing `{{{.githubUser}}}` to *your* GitHub username, lower-cased:
 {{{with script "en" "init-frostyapp"}}}
 mkdir ../frostyapp
 cd    ../frostyapp
-cue mod init {{{.MODULE2}}}@v0
+cue mod init --source self {{{.MODULE2}}}@v0
 {{{end}}}
 {{{end}}}
 
