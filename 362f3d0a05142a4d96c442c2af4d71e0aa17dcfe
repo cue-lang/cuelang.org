@@ -16,6 +16,120 @@
       "message": "PTAL. @mvdan@mvdan.cc does this feel accurate?",
       "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e653193f_49c22c31",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:27:23Z",
+      "side": 1,
+      "message": "is the CUE below automatically generated from, or checked against, the `cue import basic.proto` command above in any way? if not, that seems unfortunate as we basically maintain it manually",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d15694bf_3ad1b645",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:27:23Z",
+      "side": 1,
+      "message": "I would just say \"added flexibility\" here.",
+      "range": {
+        "startLine": 83,
+        "startChar": 53,
+        "endLine": 84,
+        "endChar": 8
+      },
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b9cb49e_fca2246c",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:27:23Z",
+      "side": 1,
+      "message": "nit: split std imports into the first group",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b24c2efa_6a8ab7e2",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:27:23Z",
+      "side": 1,
+      "message": "why the trailing `, \"\"`?",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ff31368_e564bf66",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:27:23Z",
+      "side": 1,
+      "message": "does this mean that `cue import` does not support such a scenario? it\u0027s slightly ambiguous with the existing wording, I would perhaps clarify one way or the other.",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac761311_91b21c31",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:27:23Z",
+      "side": 1,
+      "message": "nit: I would say \"feedback\"",
+      "range": {
+        "startLine": 151,
+        "startChar": 7,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
