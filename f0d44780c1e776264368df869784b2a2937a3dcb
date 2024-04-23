@@ -1,0 +1,198 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94ecc97c_1db8065f",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "perhaps mention the command in question directly, i.e. `cue get go`?",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 4
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea054442_33567065",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "assuming you change the commands above to say `cue get go`, I would move this link further up as well",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05705208_f74fe0d1",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "a bit of meta feedback: I would personally tab-indent these `{{{with` sections, because almost every single one of them is basically a code block, so they would be both more readable in plaintext and in markdown if indented. this would assist my reviews, as I can quickly skim the document and tell which parts are English prose and which are code blocks.\n\ndoesn\u0027t have to happen in this CL of course, perhaps as a separate task/CL if this sounds like a good idea.",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52845157_e86569bc",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "nit: I would name this cueSource or cueSchema for clarity",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef18353c_487d20c0",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "`v` isn\u0027t used again, so I would inline this to merge with the line below - the fewer variable names in scope, the easier the example is to follow",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0aab5917_09c281d8",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "the earlier example used the capitalized `#Schema`, I would be consistent throughout the doc",
+      "range": {
+        "startLine": 267,
+        "startChar": 1,
+        "endLine": 267,
+        "endChar": 7
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fc3b7ea_ce3937d0",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "nit: Go embedding",
+      "range": {
+        "startLine": 273,
+        "startChar": 31,
+        "endLine": 273,
+        "endChar": 39
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88662351_dd2da735",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "nit: \"from\" or \"via\" a string? \"as a string\" makes it seem that the result is a string, when it\u0027s not",
+      "range": {
+        "startLine": 274,
+        "startChar": 12,
+        "endLine": 274,
+        "endChar": 14
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3579541_a593f9ba",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "nit: join with the std group",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6774cc25_fa8cb86d",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-23T10:50:32Z",
+      "side": 1,
+      "message": "same as before, join into a single `schema :\u003d` line. Also, this line split here seems odd.",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
