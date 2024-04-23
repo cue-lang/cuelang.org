@@ -28,6 +28,7 @@ index.setSettings({
     highlightPostTag: '</strong>',
     attributesToSnippet: ['summary:30'],
     attributesToHighlight: ['title', 'summary', 'content'],
+    separatorsToIndex: '-./_',
 }).then(() => {
     console.log('Updating Algolia Settings successful');
 }).catch((error) => {
