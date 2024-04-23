@@ -111,7 +111,7 @@ Initialize the directory as a module:
 
 {{{with script "en" "initialize-module-1"}}}
 # Replace "{{{.githubUser}}}" with *your* GitHub username, lower-cased.
-cue mod init {{{.MODULE1}}}@v0
+cue mod init --source=self {{{.MODULE1}}}@v0
 {{{end}}}
 
 The GitHub user `{{{.githubUser}}}` controls all the repositories under `github.com/{{{.githubUser}}}/`,
@@ -223,7 +223,7 @@ changing `{{{.githubUser}}}` to *your* GitHub username, lower-cased:
 {{{with script "en" "init-frostyapp"}}}
 mkdir ../frostyapp
 cd    ../frostyapp
-cue mod init {{{.MODULE2}}}@v0
+cue mod init --source=self {{{.MODULE2}}}@v0
 {{{end}}}
 {{{end}}}
 
