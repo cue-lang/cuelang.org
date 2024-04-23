@@ -388,8 +388,8 @@ Let's try again to see if it is fixed:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDI=" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2
---- snapshot	2024-04-24 09:55:05.550045501 +0000
-+++ snapshot2	2024-04-24 09:55:07.090047331 +0000
+--- snapshot	2024-04-24 13:19:41.929632326 +0000
++++ snapshot2	2024-04-24 13:19:42.041632210 +0000
 @@ -1,3 +1,9 @@
 +service: {}
 +deployment: {}
@@ -423,10 +423,10 @@ The corresponding boilerplate can now be removed with `cue trim`.
 
 ```text { title="TERMINAL" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQpjdWUgdHJpbSAuLy4uLgpmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1883 total
+ 1833 total
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1308 total
+ 1266 total
 ```
 
 `cue trim` removes configuration from files that is already generated
@@ -584,7 +584,7 @@ Then we run trim to further reduce our configuration:
 ```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLi8uLi4KZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1174 total
+ 1132 total
 ```
 
 This is after removing the rewritten and now redundant deployment definition.
@@ -624,12 +624,12 @@ deployment: breaddispatcher: spec: template: {
 	}
 	spec: containers: [{
 		image: "gcr.io/myproj/breaddispatcher:v0.3.24"
-		ports: [{
+		ports: [{containerPort: 7080}]
 ```
 
 ```text { title="TERMINAL" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1022 total
+  980 total
 ```
 
 Another 150 lines lost!
@@ -679,8 +679,8 @@ deployment: [string]: spec: template: {
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIKY3Agc25hcHNob3QyIHNuYXBzaG90" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2
---- snapshot	2024-04-24 09:55:15.498057320 +0000
-+++ snapshot2	2024-04-24 09:55:16.822058893 +0000
+--- snapshot	2024-04-24 13:19:42.477631762 +0000
++++ snapshot2	2024-04-24 13:19:42.533631704 +0000
 @@ -190,6 +190,7 @@
                  metadata: {
                      annotations: {
@@ -698,7 +698,7 @@ Two lines with annotations added, improving consistency.
 ```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./frontend/... -s
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  968 total
+  938 total
 ```
 
 Another 40 odd lines removed.
@@ -816,7 +816,7 @@ $ diff -wu snapshot snapshot2
 ...
 $ cp snapshot2 snapshot
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  801 total
+  785 total
 ```
 
 The diff shows that we added the `_hasDisks` option, but otherwise reveals no
