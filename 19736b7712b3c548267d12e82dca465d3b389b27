@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "993b9806_ef889947",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T16:37:25Z",
+      "side": 1,
+      "message": "I found a couple of the diffs (e.g. Dockerfile) slightly jarring, as this change performs both jobs of upgrading the current prerelease and tip versions, whilst also aligning the latest version with them.\n\nWould it be reasonable to make the \"alignment\" change before this (i.e. just bump latest from v0.8.0 to v0.9.0-alpha-1), so this change can contain only the alpha-1 to -3 bump?",
+      "revId": "19736b7712b3c548267d12e82dca465d3b389b27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee5f0734_6e76af6f",
+        "filename": "hugo/config/_default/params.toml",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T16:37:25Z",
+      "side": 1,
+      "message": "nit: this wording now feels somewhat misleading. Do we want to prompt folks happily running a released version of `cue` to feel they *must* download an alpha to be able to use any of the features documented across the site?\n\nHow about (in a follow up):\n\n```\n**Note:** Some of the documentation on this site demonstrates the most recent version of CUE (v1.2.3)\n```",
+      "revId": "19736b7712b3c548267d12e82dca465d3b389b27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
