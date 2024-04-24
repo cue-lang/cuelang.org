@@ -140,12 +140,8 @@ type executionContext struct {
 	config cue.Value
 
 	// cueVersions is a map of name to version of CUE versions configured on the
-	// site. e.g.
-	//
-	// latest => v0.7.1
-	// prerelease => v0.8.0-alpha.1
-	cueVersions map[string]string
-
+	// site.
+	cueVersions map[string]cueVersion
 	// cueEnvVersions is a map of env var name to CUE versions, derived from
 	// cueVersions. For example the entry:
 	//
@@ -189,6 +185,15 @@ type executionContext struct {
 	//
 	// [RFC 6749]: https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2
 	testUserAuthn func() (map[string]wireToken, error)
+}
+
+type cueVersion struct {
+	// V is the semver version
+	V string `json:"v"`
+
+	// Var is the special environment variable name associated with this
+	// version
+	Var string `json:"var"`
 }
 
 type wireToken struct {

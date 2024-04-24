@@ -1,6 +1,7 @@
 package site
 
 import (
+	"list"
 	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/ci"
@@ -12,10 +13,15 @@ versions: {
 	go:            "go1.22.1"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
-		latest:     "v0.8.0"
-		prerelease: "v0.9.0-alpha.1"
-		tip:        "v0.9.0-alpha.1"
+		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
+		latest: v:       "v0.8.0"
+		prerelease: v:   "v0.9.0-alpha.1"
+		tip: v:          "v0.9.0-alpha.1"
 	}
+	let versionSet = {for _, v in cue {"\(v.v)": true}}
+	_cueVersionList: list.SortStrings([
+		for k, _ in versionSet {k},
+	])
 	testscript: "v1.11.0"
 }
 
@@ -115,13 +121,13 @@ template: ci.#writefs & {
 
 			RUN mkdir /cues
 
-			\#(strings.Join([for name, version in versions.cue {
+			\#(strings.Join([for _, version in versions._cueVersionList {
 				#"""
 					RUN \
 					  --mount=type=cache,target=/cache/gocache \
 					  --mount=type=cache,target=/cache/gomodcache \
 					  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-					  GOBIN=/cues/\#(name) go install -trimpath cuelang.org/go/cmd/cue@\#(version)
+					  GOBIN=/cues/\#(version) go install -trimpath cuelang.org/go/cmd/cue@\#(version)
 					"""#
 			}], "\n\n"))
 
@@ -135,13 +141,13 @@ template: ci.#writefs & {
 
 			# Default to the latest value of CUE. Guides can fix to a different
 			# version explicitly
-			ENV PATH="/cues/latest:${PATH}"
+			ENV PATH="/cues/\#(versions.cue.latest.v):${PATH}"
 
 			ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 			\#(
-				strings.Join([for name, version in versions.cue {
+				strings.Join([for _, version in versions.cue {
 					"""
-					ENV CUELANG_CUE_\(strings.ToUpper(name))="\(version)"
+					ENV \(version.var)="\(version.v)"
 					"""
 				},
 				], "\n"))
@@ -155,9 +161,9 @@ template: ci.#writefs & {
 
 			COPY --from=build /go/bin/testscript /go/bin
 			\#(
-				strings.Join([for name, version in versions.cue {
+				strings.Join([for _, version in versions._cueVersionList {
 					"""
-					COPY --from=build /cues/\(name)/cue /cues/\(name)/cue
+					COPY --from=build /cues/\(version)/cue /cues/\(version)/cue
 					"""
 				},
 				], "\n"))
@@ -189,7 +195,7 @@ template: ci.#writefs & {
 			[notification]
 			    type = 'test'
 
-			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.latest)'
+			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.latest.v)'
 			    [notification.button]
 			        link = 'https://github.com/cue-lang/cue/releases'
 			        icon = 'download'
@@ -255,7 +261,7 @@ template: ci.#writefs & {
 			Contents: #"""
 			// \#(donotedit)
 
-			export const CUEVersion = '\#(versions.cue.latest)';
+			export const CUEVersion = '\#(versions.cue.latest.v)';
 
 			"""#
 		}
