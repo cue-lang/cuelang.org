@@ -10,8 +10,8 @@ package site
 								"initial config.cue": "QsAbvoWzVwL3VXxeBEeDwB21vAa6HDsDa3+LyeNW1go="
 							}
 							multi_step: {
-								hash:       "UHQE149TK0P9FACQ85T8B8KOJR9QHGF2QNBE20U9GNH6FTK2V0O0===="
-								scriptHash: "TTHE7GLTHNEBO4EIH7TI2E9NHSTQK7DT78A20340DF8D7UI4A560===="
+								hash:       "MMJUI7PB90CQUCUBB2QJC96NDAP8E3E8VBGUM4670HADBJPMIEV0===="
+								scriptHash: "IK7KKNC8QIKJ2L06A4L0H8TGUC8D97CEL0GRE11I6P52B4MP62J0===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -42,7 +42,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init --source=self glacial-tech.example/frostyapp@v0"
+									cmd:      "cue mod init --source=git glacial-tech.example/frostyapp@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -60,7 +60,7 @@ package site
 											\tversion: "v0.9.0-alpha.3"
 											}
 											source: {
-											\tkind: "self"
+											\tkind: "git"
 											}
 											deps: {
 											\t"github.com/cue-labs/examples/frostyconfig@v0": {

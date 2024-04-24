@@ -10,6 +10,9 @@ toc_hide: true
 ---
 
 {{{with _script_ "en" "cue mod registry"}}}
+git config --global user.email 'cueckoo@cue.works'
+git config --global user.name cueckoo
+
 # TODO: this is inherently racey. But not a problem in practice...
 # for now. When it does become a problem we can solve this properly
 # using a nc-based wait loop or similar.
@@ -78,7 +81,8 @@ you will create as they are needed.
 
 Initialize the directory as a module:
 {{{with script "en" "initialize-frostyconfig-module"}}}
-cue mod init --source=self glacial-tech.example/frostyconfig@v0
+git init -q
+cue mod init --source=git glacial-tech.example/frostyconfig@v0
 {{{end}}}
 
 In order to publish the module to a registry, the code must hold a
@@ -215,6 +219,16 @@ have any dependencies, we will run `cue mod tidy` anyway.
 {{{end}}}
 
 {{{with step}}}
+Create a git commit:
+
+{{{with script "en" "git commit frostyconfig"}}}
+git add -A
+git commit -q -m 'Initial commit'
+{{{end}}}
+
+{{{end}}}
+
+{{{with step}}}
 
 Publish the first version of this module:
 {{{with script "en" "frostyconfig-v0.0.1-publish"}}}
@@ -250,7 +264,8 @@ Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostyapp"}}}
 mkdir ../frostyapp
 cd    ../frostyapp
-cue mod init --source=self glacial-tech.example/frostyapp@v0
+git init -q
+cue mod init --source=git glacial-tech.example/frostyapp@v0
 {{{end}}}
 {{{end}}}
 
@@ -325,7 +340,8 @@ Create a directory for the new module and initalize it:
 {{{with script "en" "init-frostytemplate"}}}
 mkdir ../frostytemplate
 cd    ../frostytemplate
-cue mod init --source=self glacial-tech.example/frostytemplate@v0
+git init -q
+cue mod init --source=git glacial-tech.example/frostytemplate@v0
 {{{end}}}
 
 This defines another module. We have named it `frostytemplate`
@@ -359,10 +375,20 @@ We import the schema to constrain the default values, just as we did with the
 {{{end}}}
 
 {{{with step}}}
+Tidy the module and create a git commit:
+
+{{{with script "en" "git commit frostytemplate"}}}
+cue mod tidy
+git add -A
+git commit -q -m 'Initial commit'
+{{{end}}}
+
+{{{end}}}
+
+{{{with step}}}
 
 Publish the `frostytemplate` module:
 {{{with script "en" "frostytemplate-v0.0.1-publish"}}}
-cue mod tidy
 cue mod publish v0.0.1
 {{{end}}}
 {{{end}}}
@@ -472,10 +498,20 @@ The schema is unchanged except for the new `maxConcurrency` field.
 {{{end}}}
 
 {{{with step}}}
+Tidy the module and create a git commit:
+
+{{{with script "en" "git commit frostyconfig 2"}}}
+cue mod tidy
+git add -A
+git commit -q -m 'Second commit'
+{{{end}}}
+
+{{{end}}}
+
+{{{with step}}}
 
 Upload a new version of the `frostyconfig` schema:
 {{{with script "en" "upload-schema2"}}}
-cue mod tidy
 cue mod publish v0.1.0
 {{{end}}}
 

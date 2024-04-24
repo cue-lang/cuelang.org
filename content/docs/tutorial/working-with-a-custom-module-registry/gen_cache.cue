@@ -14,9 +14,19 @@ package site
 								"schema-v0.1.0":            "jtVbORAQu9Q3NTupiCGxj2XibBbUuSZ83KkfbGyLqT8="
 							}
 							multi_step: {
-								hash:       "5GNSH7HOQ44NLR7RS6GQSF78GP2N1IHSO5OU5NM1TR4L806USCDG===="
-								scriptHash: "11E58M4BLNV32KTGU409S1RARBVN9TC3CUMJMES3KRFNMIO51QB0===="
+								hash:       "N6N4252SLEN63NIAG4K850288T14TLKGCPJ6LQU069FPJ7OKUG3G===="
+								scriptHash: "9R2704JI6R0H7ES8IVHVE7PTC3HAF928HRV7QNQ4HDJDDM2UIUA0===="
 								steps: [{
+									doc:      ""
+									cmd:      "git config --global user.email 'cueckoo@cue.works'"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git config --global user.name cueckoo"
+									exitCode: 0
+									output:   ""
+								}, {
 									doc: """
 											# TODO: this is inherently racey. But not a problem in practice...
 											# for now. When it does become a problem we can solve this properly
@@ -46,7 +56,12 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init --source=self glacial-tech.example/frostyconfig@v0"
+									cmd:      "git init -q"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod init --source=git glacial-tech.example/frostyconfig@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -62,6 +77,16 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git add -A"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git commit -q -m 'Initial commit'"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -84,7 +109,12 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init --source=self glacial-tech.example/frostyapp@v0"
+									cmd:      "git init -q"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod init --source=git glacial-tech.example/frostyapp@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -102,7 +132,7 @@ package site
 											\tversion: "v0.9.0-alpha.3"
 											}
 											source: {
-											\tkind: "self"
+											\tkind: "git"
 											}
 											deps: {
 											\t"glacial-tech.example/frostyconfig@v0": {
@@ -135,12 +165,27 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init --source=self glacial-tech.example/frostytemplate@v0"
+									cmd:      "git init -q"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod init --source=git glacial-tech.example/frostytemplate@v0"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git add -A"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git commit -q -m 'Initial commit'"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -171,7 +216,7 @@ package site
 											\tversion: "v0.9.0-alpha.3"
 											}
 											source: {
-											\tkind: "self"
+											\tkind: "git"
 											}
 											deps: {
 											\t"glacial-tech.example/frostyconfig@v0": {
@@ -205,6 +250,16 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git add -A"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git commit -q -m 'Second commit'"
 									exitCode: 0
 									output:   ""
 								}, {
