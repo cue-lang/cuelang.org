@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59aa042c_91dcc150",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T19:16:55Z",
+      "side": 1,
+      "message": "PTAL - I\u0027ve just pushed a new patchset here so you will need to +2",
+      "revId": "78b6971a95a57cbd6384d2e9d228cbb4a7fe0d0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
