@@ -7,22 +7,22 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "DaMN6CEBiYoZZV4bwlhMnhHhpw4CuGDaYGE6msgUJFE="
-								kube2:               "25NXoVpxRURKZVOEM4AqX8JUTlE2LQNw4fJalmofTYk="
-								kube3:               "2k98ZoKtl4PrpnmxHS8pasZImq6YQpmnFmUIrPEwu7o="
-								"template frontend": "g/lN38h/LK5JYRuFGMynV/Lhw2yQSUbzfIEdd15e4/g="
-								"template kitchen":  "hfLA3alX4MFMeBAYEmozMoowT8ViL5xDil69dFT+Tx0="
-								kitchen3:            "WVCFKIOT7Mmm0NaRqa+wHXizZumlaSh4gH8WQg4htHo="
-								sous:                "JqBAeRqqRYso4mdx/cn0UYSK3VUyDPtMJ1+4ExL8mhs="
-								"kube tool":         "JX3bCrbma/s7zHryAjQBHDOb8WkZ5glLmu/rnyWdNVY="
-								"ls tool":           "zIA95gZsXUEx4rGO6w/cyK4A9nxwrv7uKaNf4w3H5Jo="
-								"dump tool":         "sC9QEgv3QTS6EaJtwFunZLvcUGiwZGcMnCnDSvCmirQ="
-								"create tool":       "rTqULOE8eab7HTfbbJ3UT7Mj6ybMhDzWhEoY0fJuNb8="
-								kubectl:             "WNLFo/AmzJXAJyzgse51ChdCxYnULCxScx/iT1sw2XE="
+								"initial template":  "vSNjy1zY8+VQyjQUYXVrRjdf4z2Bu11p1vPVOV5NYXA="
+								kube2:               "M+O6BB8mavln6RkQbWAl9ZvvhcOEL37G6Rz9wUu0LKY="
+								kube3:               "ymA0oWstK3NwjFeV9A6X/yNNTGs6ToDKSsX7tTKa/LI="
+								"template frontend": "5Wapid8ZLtia/qmVBHAama8ASslrmNzQJ+WgOLE2+c8="
+								"template kitchen":  "gdPTsCnC/AholI5yR2SWusm9uJvqWdA8LB4mUoVUp9E="
+								kitchen3:            "JglqfOtY7o8EHn3Cr4X/V54i1FEspviPaAi05O6c2vk="
+								sous:                "ehOoF/atyMiepAcOL3DGb+lQE7BvQVBxZ0uaaYaWhSE="
+								"kube tool":         "YVGaihv7NZb+yKhqOfAIQYX8wETjkwuSs7BFQq7qyxk="
+								"ls tool":           "ptDG/JlFt4SjNHyhGmJG752u0FxnjqQA5+2emyFqyZ0="
+								"dump tool":         "tpp+/fW4YeqBy6cSPKmfHwhOKWzlMHD99gV7izub77k="
+								"create tool":       "le51Bspud6OaiGolh2SWIZzPi6eCc20ddHLORBlYE2s="
+								kubectl:             "ifh6LVXr+YBoBIp0VuDXC8l1QWwnQ7OuGluZIOHr0kI="
 							}
 							multi_step: {
-								hash:       "S4PL7C3MPITSF3AN9FVJQNBJN72QHEB4SLA91N1OF4I9I9F8B5DG===="
-								scriptHash: "VPBDOT4K1OVRLN2B826PPIO4SS7248GCSBUBUAITEFQAKCDR2J0G===="
+								hash:       "UN5HQ5RDHNAGNF9HJGOACOFP60JQNIJ96E7PT0D9MJ8TRPSAP8T0===="
+								scriptHash: "LR318RA04R3HQUPEG0109ELOLG5FR4A2UBFVOFSDDU56KC36PC10===="
 								steps: [{
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"
@@ -222,8 +222,8 @@ package site
 									cmd:      "diff -wu snapshot snapshot2"
 									exitCode: 1
 									output: """
-											--- snapshot\t2024-04-24 11:03:56.343865776 +0000
-											+++ snapshot2\t2024-04-24 11:03:56.623865919 +0000
+											--- snapshot\t2024-04-09 18:24:35.068159793 +0000
+											+++ snapshot2\t2024-04-09 18:24:36.576157401 +0000
 											@@ -1,3 +1,9 @@
 											+service: {}
 											+deployment: {}
@@ -255,7 +255,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1833 total
+											 1883 total
 
 											"""
 								}, {
@@ -268,7 +268,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1266 total
+											 1308 total
 
 											"""
 								}, {
@@ -324,7 +324,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1132 total
+											 1174 total
 
 											"""
 								}, {
@@ -363,7 +363,7 @@ package site
 											\t}
 											\tspec: containers: [{
 											\t\timage: "gcr.io/myproj/breaddispatcher:v0.3.24"
-											\t\tports: [{containerPort: 7080}]
+											\t\tports: [{
 
 											"""
 								}, {
@@ -371,7 +371,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  980 total
+											 1022 total
 
 											"""
 								}, {
@@ -394,8 +394,8 @@ package site
 									cmd:      "diff -wu snapshot snapshot2"
 									exitCode: 1
 									output: """
-											--- snapshot\t2024-04-24 11:03:58.647866959 +0000
-											+++ snapshot2\t2024-04-24 11:03:58.727867000 +0000
+											--- snapshot\t2024-04-09 18:24:44.744144393 +0000
+											+++ snapshot2\t2024-04-09 18:24:45.992142398 +0000
 											@@ -190,6 +190,7 @@
 											                 metadata: {
 											                     annotations: {
@@ -422,7 +422,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  938 total
+											  968 total
 
 											"""
 								}, {
@@ -463,7 +463,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  785 total
+											  801 total
 
 											"""
 								}, {

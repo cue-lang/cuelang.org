@@ -41,7 +41,6 @@ Available Commands:
   get            add dependencies to the current module
   help           Help about any command
   import         convert other formats to CUE files
-  login          log into a CUE registry
   mod            module maintenance
   trim           remove superfluous fields
   version        print CUE version
@@ -62,7 +61,6 @@ Additional help topics:
   cue flags          common flags for composing packages
   cue injection      inject files or values into specific fields for a build
   cue inputs         package list, patterns, and files
-  cue modules        module support
   cue registryconfig module registry configuration
 
 Use "cue [command] --help" for more information about a command.

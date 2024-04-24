@@ -25,9 +25,9 @@ import "strings"
 
 #censusData: [
 	{name: "Kinshasa", pop: 16_315_534},
-	{name: "Lagos", pop: 15_300_000},
-	{name: "Cairo", pop: 10_100_166},
-	{name: "Giza", pop: 9_250_791},
+	{name: "Lagos", pop:    15_300_000},
+	{name: "Cairo", pop:    10_100_166},
+	{name: "Giza", pop:     9_250_791},
 ]
 
 // city maps from a city's name to its details.

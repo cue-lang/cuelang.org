@@ -10,7 +10,7 @@ toc_hide: true
 ---
 
 {{{with _script_ "en" "use prelrelease"}}}
-export PATH="/cues/prerelease:$PATH"
+export PATH="/cues/$CUELANG_CUE_PRERELEASE:$PATH"
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
