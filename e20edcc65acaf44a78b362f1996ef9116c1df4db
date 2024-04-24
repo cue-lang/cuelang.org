@@ -39,6 +39,30 @@
       },
       "revId": "e20edcc65acaf44a78b362f1996ef9116c1df4db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3009fe6b_8871f613",
+        "filename": "content/docs/howto/generate-cue-from-local-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T20:04:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "994748af_8a750619",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 92
+      },
+      "revId": "e20edcc65acaf44a78b362f1996ef9116c1df4db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
