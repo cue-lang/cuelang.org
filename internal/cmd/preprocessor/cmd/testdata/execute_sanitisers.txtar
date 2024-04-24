@@ -22,6 +22,12 @@ content: dir: page: {
 			kind: "ellipsisSanitiser"
 			command: "ls"
 		},
+		{
+			kind: "patternSanitiser"
+			commandPrefix: "! diff"
+			pattern: expr: #"(?m)^((?:---|\+\+\+)\s+\S+\s+)(.+)$"#
+			replacement: "$1"
+		},
 	]
 }
 -- content/dir/en.md --
@@ -29,16 +35,45 @@ content: dir: page: {
 >title: JSON Superset
 >---
 >
+>{{{with upload "en" "a"}}}
+>-- a --
+>content in a
+>{{{end}}}
+>{{{with upload "en" "b"}}}
+>-- b --
+>content in b
+>{{{end}}}
+>
 >{{{with script "en" "zero"}}}
 >#BinaryCmd (the pipe)
 >ls | echo hello
+>{{{end}}}
+>
+>{{{with script "en" "diff"}}}
+>! diff -wu a b
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
 ---
 
+``` { title="a" }
+content in a
+```
+``` { title="b" }
+content in b
+```
+
 ```text { title="TERMINAL" codeToCopy="bHMgfCBlY2hvIGhlbGxv" }
 $ ls | echo hello
 ...
+```
+
+```text { title="TERMINAL" codeToCopy="ZGlmZiAtd3UgYSBi" }
+$ diff -wu a b
+--- a	
++++ b	
+@@ -1 +1 @@
+-content in a
++content in b
 ```
