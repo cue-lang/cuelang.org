@@ -170,6 +170,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91ea850f_2073ddda",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T14:53:17Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "3229cf51_f7d4b331",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ff31368_e564bf66",
@@ -219,6 +237,24 @@
       "side": 1,
       "message": "My understanding is that it should work, e.g: https://github.com/cue-lang/cue/blob/1c3f536579cc82adf9441297661385c161c85b60/cmd/cue/cmd/testdata/script/import_proto.txtar\n\nyou don\u0027t have to show both mechanisms in this guide, particularly if you think it would get fairly long, but perhaps reword slightly to say that this is also possible via `cue import proto`.",
       "parentUuid": "7fb01ce4_dfb5caff",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13e8a3b8_9774bfb8",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T14:53:17Z",
+      "side": 1,
+      "message": "Thanks - I\u0027ve reworded a few pieces, up and down the page, to reflect `cue import`\u0027s wider capabilities. PTAL.",
+      "parentUuid": "704ee94e_53c53cf8",
       "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
