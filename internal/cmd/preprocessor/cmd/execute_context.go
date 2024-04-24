@@ -125,7 +125,7 @@ func (ec *executeContext) execute() error {
 	ec.config = v
 
 	// Load the CUE versions configured as part of the site
-	ec.cueVersions = make(map[string]string)
+	ec.cueVersions = make(map[string]cueVersion)
 	ec.cueEnvVersions = make(map[string]string)
 	cueVersionsPath := cue.ParsePath("versions.cue")
 	cueVersions := ec.config.LookupPath(cueVersionsPath)
@@ -133,9 +133,8 @@ func (ec *executeContext) execute() error {
 		if err := cueVersions.Decode(&ec.cueVersions); err != nil {
 			return ec.errorf("%v: failed to decode %v: %v", cueVersionsPath, err)
 		}
-		for k, v := range ec.cueVersions {
-			key := fmt.Sprintf("CUELANG_CUE_%s", strings.ToUpper(k))
-			ec.cueEnvVersions[key] = v
+		for _, v := range ec.cueVersions {
+			ec.cueEnvVersions[v.Var] = v.V
 		}
 	}
 

@@ -21,19 +21,13 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/latest go install -trimpath cuelang.org/go/cmd/cue@v0.8.0
+  GOBIN=/cues/v0.8.0 go install -trimpath cuelang.org/go/cmd/cue@v0.8.0
 
 RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/prerelease go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.1
-
-RUN \
-  --mount=type=cache,target=/cache/gocache \
-  --mount=type=cache,target=/cache/gomodcache \
-  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/tip go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.1
+  GOBIN=/cues/v0.9.0-alpha.1 go install -trimpath cuelang.org/go/cmd/cue@v0.9.0-alpha.1
 
 FROM golang:1.22.1
 
@@ -45,7 +39,7 @@ ENV LC_ALL=C.UTF-8
 
 # Default to the latest value of CUE. Guides can fix to a different
 # version explicitly
-ENV PATH="/cues/latest:${PATH}"
+ENV PATH="/cues/v0.8.0:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 ENV CUELANG_CUE_LATEST="v0.8.0"
@@ -60,8 +54,7 @@ RUN chmod 755 /usr/bin/entrypoint.sh
 RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
-COPY --from=build /cues/latest/cue /cues/latest/cue
-COPY --from=build /cues/prerelease/cue /cues/prerelease/cue
-COPY --from=build /cues/tip/cue /cues/tip/cue
+COPY --from=build /cues/v0.8.0/cue /cues/v0.8.0/cue
+COPY --from=build /cues/v0.9.0-alpha.1/cue /cues/v0.9.0-alpha.1/cue
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]

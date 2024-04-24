@@ -33,7 +33,12 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step scri
 -- site.cue --
 package site
 
-versions: cue: someversion: "v0.7.0"
+import "strings"
+
+// TODO: we should inject the following as a policy
+versions: cue: [x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
+
+versions: cue: someversion: v: "v0.7.0"
 -- content/dir/page.cue --
 package site
 
@@ -287,14 +292,14 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "6Xa6s3fj5HXSmmr4nTooOes4t5ju1xN7EgYIPg7cENA="
-						"upload-some-cue":  "c+maUqpmoHkAnvZMLuD6OP1I+ZcTSmZeeCHIYPQx+x0="
-						"upload-some-json": "wUTxygpV3YejUYxZbq57QJWNAOstcrigJAXxMUGJT3c="
-						"in-subdir":        "lNMxeD1bgjB3kccBWRGIUazd6d+F9sXBgTaIXwAULFM="
+						"hidden file":      "W2RLUIQVCiVeyjMf0i7JNDomw/pVYUGmDQyxWOWD+RQ="
+						"upload-some-cue":  "2gK3CLv4qOT/NEEdw4ScqvCRqj2zjTPvuaSf7OGfAUc="
+						"upload-some-json": "EEFYGaxYOVfLBpj3DfOSmoMlW2GQMFN87/y9j8gUyUc="
+						"in-subdir":        "q1mMO5pazwwqV9yycYUfefmvVMpkR8uWWXnMzcaDKt4="
 					}
 					multi_step: {
-						hash:       "B55E6TPQDQ0M6200U4HA1KM971JIH4GP5NB7DNNKNEF8KHM6MDI0===="
-						scriptHash: "I9I775A8755L8FKKH4DNSA9PUMAHKK3SHS9RK0H6BVK2LAPHOIGG===="
+						hash:       "O728KULMJVFTBNEJCAUUG6L84M81KC7SK22OAQ1LB66UE2N7NKM0===="
+						scriptHash: "VR7P6R0HRDGSDRSFDORLE338EV4L3B5H95DFVL7FAFSFPQ6E7NBG===="
 						steps: [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
