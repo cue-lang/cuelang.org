@@ -16,6 +16,24 @@
       "message": "Related content:\n\n- ref: `cue get go`\n- issue cue-lang/cue#452",
       "revId": "eb9286455851d3fcdb9babb6714cb8c68f136fde",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afb7ebde_59a8fd61",
+        "filename": "content/docs/howto/generate-cue-from-local-go/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T19:14:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73cc2124_cd07202b",
+      "revId": "eb9286455851d3fcdb9babb6714cb8c68f136fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
