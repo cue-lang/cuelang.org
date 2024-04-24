@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "CG71HLDHRPNRP2MHLIFTHHCVKBC8VGIOEUMCK0757VIDNTRLV980===="
-									scriptHash: "G61NMTRS8EPG0PB8PHV4G9V8KNST4O45JF4RH1RJI9GBEA2BPT00===="
+									hash:       "EEUALJ9SAPVBAUEPS1SPCLHF7AS20GJ5DUVK94SAAF3J5OFTHSK0===="
+									scriptHash: "NDFE9RTC1QK03JDI51OOADNADG8ANKKC9HPAB5HC6LJCF5DQPD8G===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help"
@@ -49,7 +49,6 @@ package site
 												  get            add dependencies to the current module
 												  help           Help about any command
 												  import         convert other formats to CUE files
-												  login          log into a CUE registry
 												  mod            module maintenance
 												  trim           remove superfluous fields
 												  version        print CUE version
@@ -70,7 +69,6 @@ package site
 												  cue flags          common flags for composing packages
 												  cue injection      inject files or values into specific fields for a build
 												  cue inputs         package list, patterns, and files
-												  cue modules        module support
 												  cue registryconfig module registry configuration
 
 												Use "cue [command] --help" for more information about a command.

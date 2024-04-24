@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "EHGNIK6SGJUGID6C7ETQA98PDR5BKEJQ5AG4R9FBM9BHIDJ9QU70===="
-									scriptHash: "HQTJ5S0VSVG8B5JLU63HNNRV2TC8MHA8QB0PC8C4ODMI2K11OAFG===="
+									hash:       "9PKO46N7JMH5CATKSUMLAQCOMSLIFNMQGOLMKC5ODVT96M6O1FJ0===="
+									scriptHash: "GDRI50MJ9SUULC2M994P3A8607GBA2EUF2JT64K1UQPTQN6RU5FG===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help inputs"
@@ -29,7 +29,7 @@ package site
 												element-- is interpreted as a file system path and denotes the
 												package instance in that directory.
 
-												Otherwise, the import path P denotes an external package found
+												Otherwise, the import path P denotes and external package found
 												in cue.mod/{pkg|gen|usr}/P.
 
 												An import path may contain one or more "..." to match any
