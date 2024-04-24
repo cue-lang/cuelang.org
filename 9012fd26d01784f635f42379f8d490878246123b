@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "9012fd26d01784f635f42379f8d490878246123b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "207d6f45_167e13c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T19:17:41Z",
+      "side": 1,
+      "message": "Removing myself as a review because @mvdan@mvdan.cc is on the case.",
+      "revId": "9012fd26d01784f635f42379f8d490878246123b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
