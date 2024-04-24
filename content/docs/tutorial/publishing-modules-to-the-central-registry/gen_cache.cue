@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "NeWw+Q5opwWhA4sfb2LTpXdcDZX7Jlxr05tmACLH3zk="
-								"config.cue":    "djZ1Y6vG8T68ObbHIzLQBXmdIBcwEQpD8BgedQXbUOk="
+								"schema-v0.0.1": "jcDLzbnZFGVMJU28cQNC5v3zicwwBQH/OSV8w3C/qgA="
+								"config.cue":    "FtmfsHhEHrxZyx35oGk+AVxWEW5gXBT7cilQzUzisYA="
 							}
 							multi_step: {
-								hash:       "O1JK6QSOJQD1P85GRVCSBOT23UJC1VFQS2BEIF0PNGFN4C8AKKFG===="
-								scriptHash: "TPJ8VQJQMAL8ER6TH6C9TV46E8AEAFFG6QNH1T8J34EJ63SD7M5G===="
+								hash:       "JOOG31OJ1O3HJSA62SMESV161C4G60L52UUGMJLS8UUH26QVNGKG===="
+								scriptHash: "ACVL7JVVN91FQJJ45F6RRIJ1CUAOVUD6STBSNSDIOISK4C0T090G===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -32,7 +32,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.8.0
+											cue version v0.9.0-alpha.3
 											...
 
 											"""
@@ -53,7 +53,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "# Replace \"cueckoo\" with *your* GitHub username, lower-cased."
-									cmd:      "cue mod init github.com/cueckoo/frostyconfig@v0"
+									cmd:      "cue mod init --source=self github.com/cueckoo/frostyconfig@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -81,7 +81,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init github.com/cueckoo/frostyapp@v0"
+									cmd:      "cue mod init --source=self github.com/cueckoo/frostyapp@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -96,7 +96,10 @@ package site
 									output: """
 											module: "github.com/cueckoo/frostyapp@v0"
 											language: {
-											\tversion: "v0.8.0"
+											\tversion: "v0.9.0-alpha.3"
+											}
+											source: {
+											\tkind: "self"
 											}
 											deps: {
 											\t"github.com/cueckoo/frostyconfig@v0": {

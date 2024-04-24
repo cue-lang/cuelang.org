@@ -4,30 +4,27 @@ package site
 		docs: {
 			reference: {
 				cli: {
-					"cue-mod-publish": {
+					"cue-login": {
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "8E5V85PVFLIJITAJ4IR5QRFKKCKS5VB5PKFCS3L42RTTNSM12D60===="
-									scriptHash: "S7UQQ96MAIU3RHJAPQ6I9R6SRJANCTJS1QH2STSG70L9KB94GMT0===="
+									hash:       "4LOAL5D0IQV2SN31HF0OOF1EKLATNH7P0TL5A81PCNR82JDFKO50===="
+									scriptHash: "B9UPMOB4H46FLDD9V7QEF6VQD6R9Q3RJUUIEIRFN9J21FGAQCRR0===="
 									steps: [{
 										doc:      ""
-										cmd:      "cue help mod publish"
+										cmd:      "cue help login"
 										exitCode: 0
 										output: """
 												WARNING: THIS COMMAND IS EXPERIMENTAL.
 
-												Publish the current module to an OCI registry. It consults
-												$CUE_REGISTRY to determine where the module should be published (see
-												"cue help environment" for details). Also note that this command does
-												no dependency or other checks at the moment.
+												Log into a CUE registry via the OAuth 2.0 Device Authorization Grant.
+												Without an argument, CUE_REGISTRY is used if it points to a single registry.
 
-												Note: you must enable the modules experiment with:
-												\texport CUE_EXPERIMENT=modules
-												for this command to work.
+												Once the authorization is successful, a token is stored in a logins.json file
+												inside $CUE_CONFIG_DIR; see 'cue help environment'.
 
 												Usage:
-												  cue mod publish <version> [flags]
+												  cue login [registry] [flags]
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
