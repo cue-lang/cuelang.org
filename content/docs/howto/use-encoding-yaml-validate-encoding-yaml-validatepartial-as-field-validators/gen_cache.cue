@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							code: {
-								cc: "KeUOhKVaVCAafDwjr6tYRMFVjC59FjFwWORyvkU/7qg="
+								cc: "myeUi9Rjq2FplKNZTCqD4PZaZetEvwf13bpzQyr105Y="
 							}
 						}
 					}

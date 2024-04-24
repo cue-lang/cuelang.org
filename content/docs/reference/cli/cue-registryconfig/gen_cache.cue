@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VUVGNB5KT3688HE9N7S35BBA492RIGSTVQFIDC65743G1A70UE70===="
-									scriptHash: "ULAGVBSUMNL4N6UOBCR0LSG0VA4AQUC4PQ054F7QS5SQ7TRSLM70===="
+									hash:       "IO3DDQGQM39JQHC5MAK162FDU25K447JB6371131904DLJRGIO1G===="
+									scriptHash: "KL5IR3DM8DB7V9D6MOVT7USV130UK9E38S1KODOEP2AJ9G4THD9G===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help registryconfig"
@@ -33,6 +33,9 @@ package site
 												\tCUE_REGISTRY=myregistry.example
 												\tCUE_REGISTRY=localhost:5000
 												\tCUE_REGISTRY='[::1]:5000'
+
+												The special name "none" can be used to indicate that no registry
+												should be used.
 
 												If a path is present too, all modules will be stored under that path.
 
@@ -69,6 +72,18 @@ package site
 												Note that the syntax above implies that the ordering of the elements in
 												CUE_REGISTRY isn't important because the resolution algorithm is
 												order-independent.
+
+												To specify that no registry should be used for a given module prefix,
+												the special name "none" can be used.
+
+												For example:
+
+												\tCUE_REGISTRY='foo.example/bar=none,myregistry.example'
+
+												In the above example, any attempt to fetch a module under
+												"foo.example/bar" will result in a failure. Note that this will not
+												take effect if the module is already present in the on-disk cache,
+												which is consulted before looking at CUE_REGISTRY.
 
 
 												Customizing Name Resolution
@@ -136,9 +151,15 @@ package site
 												\t\t// repoPrefix is used to determine the repository to use for a
 												\t\t// specific module.
 												\t\t//
+												\t\t// As a special case, the registry may be "none", indicating
+												\t\t// that there is no registry for its associated modules.
+												\t\t// If a module resolves to a "none" registry, the resolver
+												\t\t// will return an error.
+												\t\t//
 												\t\t// Examples:
 												\t\t//\t"localhost:1234"
 												\t\t//\t"myregistry.example/my-modules+secure"
+												\t\t//\t"none"
 												\t\tregistry!: string
 
 												\t\t// pathEncoding specifies how module versions map to
@@ -172,7 +193,7 @@ package site
 
 												\t// TODO more specific schemas below
 												\t#modulePath: string
-												\t#tag: string
+												\t#tag:        string
 
 
 												"""
