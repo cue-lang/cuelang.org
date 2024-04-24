@@ -21,8 +21,8 @@ package site
 								kubectl:             "ifh6LVXr+YBoBIp0VuDXC8l1QWwnQ7OuGluZIOHr0kI="
 							}
 							multi_step: {
-								hash:       "UN5HQ5RDHNAGNF9HJGOACOFP60JQNIJ96E7PT0D9MJ8TRPSAP8T0===="
-								scriptHash: "LR318RA04R3HQUPEG0109ELOLG5FR4A2UBFVOFSDDU56KC36PC10===="
+								hash:       "H40N4TOHEME8HRTJEB9GU3NTPDQLJ94JH408DHHS8FAFUNCSMKI0===="
+								scriptHash: "TTDK4HBCSS5A5LQKTNPLEK9LGI6QF6U65OD61NPKUGJU0DL51J2G===="
 								steps: [{
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"
@@ -219,11 +219,11 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 20"
-									cmd:      "diff -wu snapshot snapshot2"
+									cmd:      "diff -wu snapshot snapshot2 --label snapshot --label snapshot2"
 									exitCode: 1
 									output: """
-											--- snapshot\t2024-04-09 18:24:35.068159793 +0000
-											+++ snapshot2\t2024-04-09 18:24:36.576157401 +0000
+											--- snapshot
+											+++ snapshot2
 											@@ -1,3 +1,9 @@
 											+service: {}
 											+deployment: {}
@@ -391,11 +391,11 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 10"
-									cmd:      "diff -wu snapshot snapshot2"
+									cmd:      "diff -wu snapshot snapshot2 --label snapshot --label snapshot2"
 									exitCode: 1
 									output: """
-											--- snapshot\t2024-04-09 18:24:44.744144393 +0000
-											+++ snapshot2\t2024-04-09 18:24:45.992142398 +0000
+											--- snapshot
+											+++ snapshot2
 											@@ -190,6 +190,7 @@
 											                 metadata: {
 											                     annotations: {
@@ -447,7 +447,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis"
-									cmd:      "diff -wu snapshot snapshot2"
+									cmd:      "diff -wu snapshot snapshot2 --label snapshot --label snapshot2"
 									exitCode: 1
 									output: """
 											...

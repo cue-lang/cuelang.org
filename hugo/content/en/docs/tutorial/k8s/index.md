@@ -385,11 +385,11 @@ $ cue fmt kube.cue */kube.cue
 
 Let's try again to see if it is fixed:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDI=" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90Mg==" }
 $ cue eval -c ./... >snapshot2
-$ diff -wu snapshot snapshot2
---- snapshot	2024-04-09 18:24:35.068159793 +0000
-+++ snapshot2	2024-04-09 18:24:36.576157401 +0000
+$ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
+--- snapshot
++++ snapshot2
 @@ -1,3 +1,9 @@
 +service: {}
 +deployment: {}
@@ -676,11 +676,11 @@ deployment: [string]: spec: template: {
 }
 ```
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIKY3Agc25hcHNob3QyIHNuYXBzaG90" }
+```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q=" }
 $ cue eval -c ./... >snapshot2
-$ diff -wu snapshot snapshot2
---- snapshot	2024-04-09 18:24:44.744144393 +0000
-+++ snapshot2	2024-04-09 18:24:45.992142398 +0000
+$ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
+--- snapshot
++++ snapshot2
 @@ -190,6 +190,7 @@
                  metadata: {
                      annotations: {
@@ -807,12 +807,12 @@ Later in this document we introduce a manually optimized configuration.
 We add the two disk by default and define a `_hasDisks` option to opt out.
 The `souschef` configuration is the only one that defines no disks.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLXMgLi9raXRjaGVuLy4uLgpjdWUgZXZhbCAtYyAuLy4uLiA+c25hcHNob3QyCmRpZmYgLXd1IHNuYXBzaG90IHNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3QKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
+```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLXMgLi9raXRjaGVuLy4uLgpjdWUgZXZhbCAtYyAuLy4uLiA+c25hcHNob3QyCmRpZmYgLXd1IHNuYXBzaG90IHNuYXBzaG90MiAtLWxhYmVsIHNuYXBzaG90IC0tbGFiZWwgc25hcHNob3QyCmNwIHNuYXBzaG90MiBzbmFwc2hvdApmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x" }
 $ cue trim -s ./kitchen/...
 
 # check differences
 $ cue eval -c ./... >snapshot2
-$ diff -wu snapshot snapshot2
+$ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 ...
 $ cp snapshot2 snapshot
 $ find . | grep kube.cue | xargs wc -l | tail -1
