@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "798e0950_1950b66d",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T18:47:38Z",
+      "side": 1,
+      "message": "I worded it the other way around so that the order matched that of the commands.",
+      "parentUuid": "abae2cca_5081f5e3",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "634ac6e3_4f3d40c3",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-24T16:59:25Z",
       "side": 1,
       "message": "Place this above the comment, so the comment binds most closely to the command it\u0027s meant to affect.",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fc1d726_b2a7a98a",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T18:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "634ac6e3_4f3d40c3",
       "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8f0b2cb0_5841c1d6",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T18:47:38Z",
+      "side": 1,
+      "message": "I\u0027ve added some commentary. Please let me know what you think. I struggled to find any definitive https://git-scm.com/ documentation on what it means for the working tree to be \"clean\".",
+      "parentUuid": "0347534d_95e94327",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d5acc096_c21d2ddb",
         "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
         "patchSetId": 2
@@ -65,6 +119,24 @@
       "writtenOn": "2024-04-24T16:59:25Z",
       "side": 1,
       "message": "```suggestion\nInitialize the directory as a git repository and a module:\n```",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e1df934_8e114a0e",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T18:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5acc096_c21d2ddb",
       "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -88,6 +160,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6ae686eb_59a70583",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T18:47:38Z",
+      "side": 1,
+      "message": "I\u0027ll leave this open just so that we remember to update here too.",
+      "parentUuid": "c1a5ff15_f2e89a50",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "614b09fe_e33dc3b6",
         "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
         "patchSetId": 2
@@ -99,6 +189,24 @@
       "writtenOn": "2024-04-24T16:59:25Z",
       "side": 1,
       "message": "The other tutorials modified in this CL have a `git init -q` added before `--source\u003dgit` is used.",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f596f0d0_586f4050",
+        "filename": "content/docs/tutorial/working-with-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T18:47:38Z",
+      "side": 1,
+      "message": "Good catch. The other modules need to be published. This one does not, so we can elide `--source` in this instance. It is only required if we publish.",
+      "parentUuid": "614b09fe_e33dc3b6",
       "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
