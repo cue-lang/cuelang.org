@@ -259,6 +259,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39e76271_3f140309",
+        "filename": "content/docs/concept/how-cue-works-with-protocol-buffers/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-24T14:57:58Z",
+      "side": 1,
+      "message": "LGTM",
+      "parentUuid": "13e8a3b8_9774bfb8",
+      "revId": "362f3d0a05142a4d96c442c2af4d71e0aa17dcfe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac761311_91b21c31",
