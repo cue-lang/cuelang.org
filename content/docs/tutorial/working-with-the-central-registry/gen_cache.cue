@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial config.cue": "UjYu+zGTaUKG+NxXr/vgYuCQdX6/kgzIiGCK3fKre00="
+								"initial config.cue": "QsAbvoWzVwL3VXxeBEeDwB21vAa6HDsDa3+LyeNW1go="
 							}
 							multi_step: {
-								hash:       "7NVA2KLDQB7OS73U1KAGTAO5581BL0IT3N9DOHELSLUMESHNUDH0===="
-								scriptHash: "G07GGQBFHGPBT8GFCNF526J742JOC8K403MVKLFLJQF625K25DC0===="
+								hash:       "UHQE149TK0P9FACQ85T8B8KOJR9QHGF2QNBE20U9GNH6FTK2V0O0===="
+								scriptHash: "TTHE7GLTHNEBO4EIH7TI2E9NHSTQK7DT78A20340DF8D7UI4A560===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -31,7 +31,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.8.0
+											cue version v0.9.0-alpha.3
 											...
 
 											"""
@@ -42,7 +42,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init glacial-tech.example/frostyapp@v0"
+									cmd:      "cue mod init --source=self glacial-tech.example/frostyapp@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -57,7 +57,10 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.8.0"
+											\tversion: "v0.9.0-alpha.3"
+											}
+											source: {
+											\tkind: "self"
 											}
 											deps: {
 											\t"github.com/cue-labs/examples/frostyconfig@v0": {
