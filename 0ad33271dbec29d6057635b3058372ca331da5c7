@@ -212,6 +212,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9f9aef0_3ce0276e",
+        "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T20:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ae686eb_59a70583",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "614b09fe_e33dc3b6",
