@@ -16,6 +16,24 @@
       "message": "Make consistent with above",
       "revId": "c2270d1dd0b3bf332db9d5a4c511b0f8e2cd03be",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9740dfba_4644533e",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T15:46:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30b0596d_f4aba92d",
+      "revId": "c2270d1dd0b3bf332db9d5a4c511b0f8e2cd03be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
