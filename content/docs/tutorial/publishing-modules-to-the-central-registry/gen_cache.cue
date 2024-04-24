@@ -11,14 +11,9 @@ package site
 								"config.cue":    "djZ1Y6vG8T68ObbHIzLQBXmdIBcwEQpD8BgedQXbUOk="
 							}
 							multi_step: {
-								hash:       "QN73U2RC83M8D7631T4JBDGJRS3QAF0N51KE36O6IKTR00AR23JG===="
-								scriptHash: "J97IEIF154DV04JTUGS3VOART72TUSF7CC8P7F4M4VH9GLDAOGO0===="
+								hash:       "O1JK6QSOJQD1P85GRVCSBOT23UJC1VFQS2BEIF0PNGFN4C8AKKFG===="
+								scriptHash: "TPJ8VQJQMAL8ER6TH6C9TV46E8AEAFFG6QNH1T8J34EJ63SD7M5G===="
 								steps: [{
-									doc:      ""
-									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
-									exitCode: 0
-									output:   ""
-								}, {
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
 									exitCode: 0
@@ -37,7 +32,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.9.0-alpha.1
+											cue version v0.8.0
 											...
 
 											"""
@@ -101,7 +96,7 @@ package site
 									output: """
 											module: "github.com/cueckoo/frostyapp@v0"
 											language: {
-											\tversion: "v0.9.0-alpha.1"
+											\tversion: "v0.8.0"
 											}
 											deps: {
 											\t"github.com/cueckoo/frostyconfig@v0": {

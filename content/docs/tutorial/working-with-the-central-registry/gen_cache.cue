@@ -10,14 +10,9 @@ package site
 								"initial config.cue": "UjYu+zGTaUKG+NxXr/vgYuCQdX6/kgzIiGCK3fKre00="
 							}
 							multi_step: {
-								hash:       "95JT2CPUH1JKDK5QQDRQPOAETES47N304JVNIJ6T0BUA775HFQCG===="
-								scriptHash: "79EI54ELAHRJ0SH62VI5BJ25O8CGO605J2DJFNNMND8UDR90SAD0===="
+								hash:       "7NVA2KLDQB7OS73U1KAGTAO5581BL0IT3N9DOHELSLUMESHNUDH0===="
+								scriptHash: "G07GGQBFHGPBT8GFCNF526J742JOC8K403MVKLFLJQF625K25DC0===="
 								steps: [{
-									doc:      ""
-									cmd:      "export PATH=\"/cues/prerelease:$PATH\""
-									exitCode: 0
-									output:   ""
-								}, {
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
 									exitCode: 0
@@ -36,7 +31,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.9.0-alpha.1
+											cue version v0.8.0
 											...
 
 											"""
@@ -62,7 +57,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.9.0-alpha.1"
+											\tversion: "v0.8.0"
 											}
 											deps: {
 											\t"github.com/cue-labs/examples/frostyconfig@v0": {
