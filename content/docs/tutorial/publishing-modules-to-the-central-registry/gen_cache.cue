@@ -11,9 +11,19 @@ package site
 								"config.cue":    "FtmfsHhEHrxZyx35oGk+AVxWEW5gXBT7cilQzUzisYA="
 							}
 							multi_step: {
-								hash:       "JOOG31OJ1O3HJSA62SMESV161C4G60L52UUGMJLS8UUH26QVNGKG===="
-								scriptHash: "ACVL7JVVN91FQJJ45F6RRIJ1CUAOVUD6STBSNSDIOISK4C0T090G===="
+								hash:       "0JULBGT4C7EEST967OLOHVJPMDBSEGFM0U7TI4UQ12AS9JJ84MHG===="
+								scriptHash: "GG5P8DAA0RC1NFGCVOH9K3EQ44QBQ562O08EDO6SB0F1MRGQBPQG===="
 								steps: [{
+									doc:      ""
+									cmd:      "git config --global user.email 'cueckoo@cue.works'"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git config --global user.name cueckoo"
+									exitCode: 0
+									output:   ""
+								}, {
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
 									exitCode: 0
@@ -53,12 +63,27 @@ package site
 									output:   ""
 								}, {
 									doc:      "# Replace \"cueckoo\" with *your* GitHub username, lower-cased."
-									cmd:      "cue mod init --source=self github.com/cueckoo/frostyconfig@v0"
+									cmd:      "git init -q"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod init --source=git github.com/cueckoo/frostyconfig@v0"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git add -A"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "git commit -q -m 'Initial commit'"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -81,7 +106,12 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init --source=self github.com/cueckoo/frostyapp@v0"
+									cmd:      "git init -q"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod init --source=git github.com/cueckoo/frostyapp@v0"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -99,7 +129,7 @@ package site
 											\tversion: "v0.9.0-alpha.3"
 											}
 											source: {
-											\tkind: "self"
+											\tkind: "git"
 											}
 											deps: {
 											\t"github.com/cueckoo/frostyconfig@v0": {

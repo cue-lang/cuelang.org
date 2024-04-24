@@ -10,6 +10,9 @@ toc_hide: true
 ---
 
 {{{with _script_ "en" "use prelrelease"}}}
+git config --global user.email '{{{.githubUser}}}@cue.works'
+git config --global user.name {{{.githubUser}}}
+
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_COLLABORATOR_RW}","token_type":"Bearer"}}}
@@ -111,7 +114,8 @@ Initialize the directory as a module:
 
 {{{with script "en" "initialize-module-1"}}}
 # Replace "{{{.githubUser}}}" with *your* GitHub username, lower-cased.
-cue mod init --source=self {{{.MODULE1}}}@v0
+git init -q
+cue mod init --source=git {{{.MODULE1}}}@v0
 {{{end}}}
 
 The GitHub user `{{{.githubUser}}}` controls all the repositories under `github.com/{{{.githubUser}}}/`,
@@ -182,6 +186,15 @@ It doesn't matter if the repository is public or private.
 
 {{{end}}}
 
+{{{with step}}}
+Create a git commit:
+
+{{{with script "en" "git commit"}}}
+git add -A
+git commit -q -m 'Initial commit'
+{{{end}}}
+
+{{{end}}}
 
 {{{with step}}}
 
@@ -223,7 +236,8 @@ changing `{{{.githubUser}}}` to *your* GitHub username, lower-cased:
 {{{with script "en" "init-frostyapp"}}}
 mkdir ../frostyapp
 cd    ../frostyapp
-cue mod init --source=self {{{.MODULE2}}}@v0
+git init -q
+cue mod init --source=git {{{.MODULE2}}}@v0
 {{{end}}}
 {{{end}}}
 
