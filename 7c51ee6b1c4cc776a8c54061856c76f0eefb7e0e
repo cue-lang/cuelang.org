@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "7c51ee6b1c4cc776a8c54061856c76f0eefb7e0e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba341742_2c2ddc14",
+        "filename": "content/docs/howto/log-statistics-from-the-cue-evaluator/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T19:02:58Z",
+      "side": 1,
+      "message": "I think this section can be dropped for brevity\u0027s sake, and in its place a note that `-` can be used as a filename to instead output to `stderr`. It\u0027s otherwise not really adding much in the way of useful output. You might also in-line the reference to `cue help filetypes` when talking about varying `yaml:` vs other types/",
+      "revId": "7c51ee6b1c4cc776a8c54061856c76f0eefb7e0e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
