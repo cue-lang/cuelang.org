@@ -16,6 +16,24 @@
       "message": "nit: trailing blanks",
       "revId": "23c4a09602326adf92299b843d28809e85e1460f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d84a4164_70aa2b39",
+        "filename": "_scripts/regenPostInfraChange.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T18:47:38Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "8fb4aa78_8223b768",
+      "revId": "23c4a09602326adf92299b843d28809e85e1460f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
