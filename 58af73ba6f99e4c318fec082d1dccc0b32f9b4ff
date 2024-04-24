@@ -16,6 +16,23 @@
       "message": "Thanks for the initial review - PTAL at the proposed wording.",
       "revId": "58af73ba6f99e4c318fec082d1dccc0b32f9b4ff",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7785cd0c_1c82eec6",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T19:15:00Z",
+      "side": 1,
+      "message": "Add the motivation for the `--source\u003dgit` here, without explaining the clean worktree yet:\n\n```\nThe `--source\u003dgit` flag tells `cue` to use the same file-inclusion rules as `git`, when publishing this module.\n```",
+      "revId": "58af73ba6f99e4c318fec082d1dccc0b32f9b4ff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

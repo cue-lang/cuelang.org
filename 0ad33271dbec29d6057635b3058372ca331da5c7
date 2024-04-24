@@ -108,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "481349da_3ce89b31",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T19:15:00Z",
+      "side": 1,
+      "message": "Ah, I\u0027ve now understood the purpose of the commit!\n\nHow about:\n\n```\nEarlier, you initialized this module with `--source\u003dgit`, which told the `cue`\ncommand that it should publish only those files that `git` knows about. The git commit\nyou just performed leaves the directory in a \"clean\" state, which is necessary for\n`cue` to operate safely and predictably.\n```",
+      "parentUuid": "8f0b2cb0_5841c1d6",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d5acc096_c21d2ddb",
         "filename": "content/docs/tutorial/working-with-a-custom-module-registry/en.md",
         "patchSetId": 2
