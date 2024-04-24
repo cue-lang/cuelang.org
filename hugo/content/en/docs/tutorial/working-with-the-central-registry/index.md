@@ -77,8 +77,8 @@ $ cue login
 
 Initialize a local CUE module. We will not publish this module:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IC0tc291cmNlPXNlbGYgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5YXBwQHYw" }
-$ cue mod init --source=self glacial-tech.example/frostyapp@v0
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MA==" }
+$ cue mod init glacial-tech.example/frostyapp@v0
 ```
 
 We refer to such a module as the main module. Because we won't publish this
@@ -128,9 +128,6 @@ $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
 	version: "v0.9.0-alpha.3"
-}
-source: {
-	kind: "self"
 }
 deps: {
 	"github.com/cue-labs/examples/frostyconfig@v0": {

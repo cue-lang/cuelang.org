@@ -70,9 +70,10 @@ you will create as they are needed.
 
 {{< step stepNumber="2" >}}
 
-Initialize the directory as a module:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IC0tc291cmNlPXNlbGYgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5Y29uZmlnQHYw" }
-$ cue mod init --source=self glacial-tech.example/frostyconfig@v0
+Initialize the directory as a git repository and a CUE  module:
+```text { title="TERMINAL" codeToCopy="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHljb25maWdAdjA=" }
+$ git init -q
+$ cue mod init --source=git glacial-tech.example/frostyconfig@v0
 ```
 
 In order to publish the module to a registry, the code must hold a
@@ -100,6 +101,10 @@ lower-case ASCII letters, ASCII digits, dots (`.`), and dashes (`-`).
 The
 [OCI distribution spec](https://github.com/opencontainers/distribution-spec/blob/main/spec.md#pulling-manifests)
 contains full details of the naming restrictions.
+
+The `--source=git` flag tells `cue` to use the same file-inclusion rules as
+`git`, when publishing this module.
+
 {{< /step >}}
 
 {{< info >}}
@@ -204,6 +209,22 @@ have any dependencies, we will run `cue mod tidy` anyway.
 {{< /step >}}
 
 {{< step stepNumber="7" >}}
+Create a git commit:
+
+```text { title="TERMINAL" codeToCopy="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=" }
+$ git add -A
+$ git commit -q -m 'Initial commit'
+```
+
+Earlier, you initialized this module with `--source=git`, which told the `cue`
+command that it should publish only those files that `git` knows about. The git
+commit you just created leaves the directory in a "clean" state, which is
+necessary for `cue` to know exactly which files to include in the published
+module.
+
+{{< /step >}}
+
+{{< step stepNumber="8" >}}
 
 Publish the first version of this module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
@@ -234,17 +255,19 @@ while the registry received and stored the module.
 Define the actual `FrostyApp` configuration, constrained by the schema you just
 published.
 
-{{< step stepNumber="8" >}}
+{{< step stepNumber="9" >}}
 
-Create a directory for the new module and initalize it:
-```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApjdWUgbW9kIGluaXQgLS1zb3VyY2U9c2VsZiBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHlhcHBAdjA=" }
+Create a directory and initalize a git repository and a new CUE
+module within it:
+```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApnaXQgaW5pdCAtcQpjdWUgbW9kIGluaXQgLS1zb3VyY2U9Z2l0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MA==" }
 $ mkdir ../frostyapp
 $ cd ../frostyapp
-$ cue mod init --source=self glacial-tech.example/frostyapp@v0
+$ git init -q
+$ cue mod init --source=git glacial-tech.example/frostyapp@v0
 ```
 {{< /step >}}
 
-{{< step stepNumber="9" >}}
+{{< step stepNumber="10" >}}
 
 Create the code for the new module:
 ```cue { title="frostyapp/config.cue" }
@@ -265,7 +288,7 @@ defines some concrete values for the configuration,
 constrained by the `frostyconfig.#Config` schema.
 {{< /step >}}
 
-{{< step stepNumber="10" >}}
+{{< step stepNumber="11" >}}
 
 Ensure the module is tidy, pulling all dependencies:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
@@ -282,7 +305,7 @@ language: {
 	version: "v0.9.0-alpha.3"
 }
 source: {
-	kind: "self"
+	kind: "git"
 }
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {
@@ -300,7 +323,7 @@ flowchart TD
 
 ## Evaluate the configuration
 
-{{< step stepNumber="11" >}}
+{{< step stepNumber="12" >}}
 
 Export the configuration as YAML:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
@@ -325,13 +348,15 @@ be useful to demonstrate how dependencies work. Having different modules like
 this can also be a useful separation of concerns when a schema comes from some
 other source of truth.
 
-{{< step stepNumber="12" >}}
+{{< step stepNumber="13" >}}
 
-Create a directory for the new module and initalize it:
-```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKY3VlIG1vZCBpbml0IC0tc291cmNlPXNlbGYgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5dGVtcGxhdGVAdjA=" }
+Create a directory and initalize a git repository and a new CUE
+module within it:
+```text { title="TERMINAL" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKZ2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHl0ZW1wbGF0ZUB2MA==" }
 $ mkdir ../frostytemplate
 $ cd ../frostytemplate
-$ cue mod init --source=self glacial-tech.example/frostytemplate@v0
+$ git init -q
+$ cue mod init --source=git glacial-tech.example/frostytemplate@v0
 ```
 
 This defines another module. We have named it `frostytemplate`
@@ -340,7 +365,7 @@ defines default values and derived data but is not intended to
 be the final configuration.
 {{< /step >}}
 
-{{< step stepNumber="13" >}}
+{{< step stepNumber="14" >}}
 
 Define the CUE template:
 ```cue { title="frostytemplate/template.cue" }
@@ -363,11 +388,21 @@ We import the schema to constrain the default values, just as we did with the
 `frostyapp` module.
 {{< /step >}}
 
-{{< step stepNumber="14" >}}
+{{< step stepNumber="15" >}}
+Tidy the module and create a git commit:
+
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnSW5pdGlhbCBjb21taXQn" }
+$ cue mod tidy
+$ git add -A
+$ git commit -q -m 'Initial commit'
+```
+
+{{< /step >}}
+
+{{< step stepNumber="16" >}}
 
 Publish the `frostytemplate` module:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4wLjE=" }
-$ cue mod tidy
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
 published glacial-tech.example/frostytemplate@v0.0.1
 ```
@@ -375,7 +410,7 @@ published glacial-tech.example/frostytemplate@v0.0.1
 
 ## Update the `frostyapp` module
 
-{{< step stepNumber="15" >}}
+{{< step stepNumber="17" >}}
 
 Update the `frostyapp` module to make use of this new template
 module:
@@ -399,7 +434,7 @@ some fields because they are now provided by the template, satisfying the
 requirements of the configuration.
 {{< /step >}}
 
-{{< step stepNumber="16" >}}
+{{< step stepNumber="18" >}}
 
 Resolve dependencies in `frostyapp`:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
@@ -418,7 +453,7 @@ language: {
 	version: "v0.9.0-alpha.3"
 }
 source: {
-	kind: "self"
+	kind: "git"
 }
 deps: {
 	"glacial-tech.example/frostyconfig@v0": {
@@ -437,7 +472,7 @@ flowchart TD
 {{< /mermaid >}}
 {{< /step >}}
 
-{{< step stepNumber="17" >}}
+{{< step stepNumber="19" >}}
 
 Re-render the configuration as YAML:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
@@ -461,7 +496,7 @@ Suppose that `FrostyApp` has gained the ability to limit the amount of
 concurrency it uses, configured with a new `maxConcurrency` field.
 We will add that field to the schema and update the app to use it.
 
-{{< step stepNumber="18" >}}
+{{< step stepNumber="20" >}}
 
 Update the schema to add a new `maxConcurrency` field:
 ```text { title="TERMINAL" codeToCopy="Y2QgLi4vZnJvc3R5Y29uZmln" }
@@ -495,11 +530,21 @@ package frostyconfig
 The schema is unchanged except for the new `maxConcurrency` field.
 {{< /step >}}
 
-{{< step stepNumber="19" >}}
+{{< step stepNumber="21" >}}
+Tidy the module and create a git commit:
+
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnU2Vjb25kIGNvbW1pdCc=" }
+$ cue mod tidy
+$ git add -A
+$ git commit -q -m 'Second commit'
+```
+
+{{< /step >}}
+
+{{< step stepNumber="22" >}}
 
 Upload a new version of the `frostyconfig` schema:
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBtb2QgcHVibGlzaCB2MC4xLjA=" }
-$ cue mod tidy
+```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjEuMA==" }
 $ cue mod publish v0.1.0
 published glacial-tech.example/frostyconfig@v0.1.0
 ```
@@ -510,7 +555,7 @@ compatible feature has been added.
 
 ## Update the `frostyapp` module to use the new schema version
 
-{{< step stepNumber="20" >}}
+{{< step stepNumber="23" >}}
 
 Use the new version of `glacial-tech.example/frostyconfig@v0`:
 
@@ -540,7 +585,7 @@ Here, you updated the version in the `module.cue` file manually, but in the
 future the `cue` command will be able to perform this kind of update.
 {{< /info >}}
 
-{{< step stepNumber="21" >}}
+{{< step stepNumber="24" >}}
 
 Check that everything still works and that your configuration is still valid:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBleHBvcnQgLS1vdXQgeWFtbA==" }
