@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "RRC4884MOB90EPPIK09470NBBICNLQLNACPJA21711IDJ58AO950===="
-									scriptHash: "2NO8UUBV70JJPSCQULLSKTE1BNGOFF8LLOAO3NFMBKFQNKO2A5E0===="
+									hash:       "BQD71V4KB6530V7QL4NR7O4BA0HLFC485TA6F6LU47VBFBLCU8BG===="
+									scriptHash: "PJTAAUIGF5ER52381RVOBDE9OVVOGMEIBB5NB08RA5BHKVFPRJ20===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help get go"

@@ -10,6 +10,9 @@ toc_hide: true
 ---
 
 {{{with _script_ "en" "cue mod registry"}}}
+# Use the pre-release of CUE for the --source flag and friends
+export PATH="/cues/prerelease:$PATH"
+
 # TODO: this is inherently racey. But not a problem in practice...
 # for now. When it does become a problem we can solve this properly
 # using a nc-based wait loop or similar.

@@ -22,7 +22,7 @@ aList: list.UniqueItems
 aList: [1, 2.0, 3, "four", 5, 5.0, false,
 	{a: 1, b: "2", c: false}, // validation error
 	{a: 1, b: "2", c: true},
-	{a: 1, b: 2, c: false},
+	{a: 1, b: 2, c:   false},
 	{a: 1, b: "2", c: false}, // validation error
 ]
 {{< /code-tab >}}
