@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "ddcfaabe_d29b3f15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb5ac718_2acbbacd",
+      "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d64514fd_ce9b9f4d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -72,6 +90,30 @@
       "side": 1,
       "message": "Broadly there are plans, from most likely to happen soon to least likely, to have:\n* More data encodings: TOML, INI, etc\n* A common interface between encodings, so they can be combined or swapped more easily\n* Improved schema encoding and decoding, as e.g. OpenAPI currently has a number of bugs and limitations\n* Better support for generating CUE from code, e.g. a more powerful and customizable `cue get go`\n* Initial support for generating code from CUE to include its logic, like you mention here \n\nI\u0027m not sure how much you want to say here. I would personally not say too much, because we don\u0027t want to over-promise. For example, we currently only have milestoned work on the first two of those goals, the others might not happen until late in the year.",
       "parentUuid": "0fb62ac5_795a05ef",
+      "range": {
+        "startLine": 346,
+        "startChar": 51,
+        "endLine": 346,
+        "endChar": 56
+      },
+      "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d7bdfa0_d73ba1d9",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "I hadn\u0027t correctly distinguished type generation from code generation. Nicely, that distinction now permits a 2-clause, \"and also\" sentence.\n\nPlease let me know that I\u0027m not being inaccurate with ...\n\n---\n\n```\nTo serve that goal the project has plans to extend CUE so that it can directly\ngenerate native Go types, and also generate Go *code* that enforces the\nconstraints placed on data in CUE.\n```",
+      "parentUuid": "c7ed1779_f378dea7",
       "range": {
         "startLine": 346,
         "startChar": 51,

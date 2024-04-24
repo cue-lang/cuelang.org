@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c70179a4_df2b1e9c",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "I think that, as a summary section on possibly the second (or even first!) cuelang.org page that a CUE-newcomer-Go-person has ever seen, we don\u0027t need that level of distinction this early. This section\u0027s job is to prompt the reader to continue reading, not to be exhaustive in terms of the precise command that\u0027s run. \n\nThis might be the moment when they\u0027re initially **learning that the `cue` command exists**, which makes me think that we should gently ease them into its capabilities/etc ...",
+      "parentUuid": "94ecc97c_1db8065f",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 4
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea054442_33567065",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-04-23T10:50:32Z",
       "side": 1,
       "message": "assuming you change the commands above to say `cue get go`, I would move this link further up as well",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "216e4660_8fd98cc5",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "I\u0027ve moved it further up, as is is indeed currently too far from the use of the command.",
+      "parentUuid": "ea054442_33567065",
       "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d9c83a6_513ead2a",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "This isn\u0027t possible, unfortunately! I\u0027ve raised this as cue-lang/cue#3059.",
+      "parentUuid": "05705208_f74fe0d1",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52845157_e86569bc",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-04-23T10:50:32Z",
       "side": 1,
       "message": "nit: I would name this cueSource or cueSchema for clarity",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "745fa7b0_8ffb509f",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52845157_e86569bc",
       "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -92,6 +170,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74e65eb4_385f6ffd",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef18353c_487d20c0",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0aab5917_09c281d8",
@@ -105,6 +201,30 @@
       "writtenOn": "2024-04-23T10:50:32Z",
       "side": 1,
       "message": "the earlier example used the capitalized `#Schema`, I would be consistent throughout the doc",
+      "range": {
+        "startLine": 267,
+        "startChar": 1,
+        "endLine": 267,
+        "endChar": 7
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e3a8acf_92a85463",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0aab5917_09c281d8",
       "range": {
         "startLine": 267,
         "startChar": 1,
@@ -138,6 +258,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a3690b7_20a98c98",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6fc3b7ea_ce3937d0",
+      "range": {
+        "startLine": 273,
+        "startChar": 31,
+        "endLine": 273,
+        "endChar": 39
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88662351_dd2da735",
@@ -151,6 +295,30 @@
       "writtenOn": "2024-04-23T10:50:32Z",
       "side": 1,
       "message": "nit: \"from\" or \"via\" a string? \"as a string\" makes it seem that the result is a string, when it\u0027s not",
+      "range": {
+        "startLine": 274,
+        "startChar": 12,
+        "endLine": 274,
+        "endChar": 14
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4a71997_6d9c9c96",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88662351_dd2da735",
       "range": {
         "startLine": 274,
         "startChar": 12,
@@ -178,6 +346,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e4139dc_d5adaad2",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3579541_a593f9ba",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6774cc25_fa8cb86d",
@@ -191,6 +377,24 @@
       "writtenOn": "2024-04-23T10:50:32Z",
       "side": 1,
       "message": "same as before, join into a single `schema :\u003d` line. Also, this line split here seems odd.",
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e19c2412_9d9c36c4",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-24T17:27:06Z",
+      "side": 1,
+      "message": "Done. The line split was the result of an earlier iteration of this page, where I\u0027d placed this code in a 2-column layout and needed to reduce the width of this specific file by a few characters :-)",
+      "parentUuid": "6774cc25_fa8cb86d",
       "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
