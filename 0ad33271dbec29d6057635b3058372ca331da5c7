@@ -124,6 +124,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b30fd8b_cede8b8c",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T20:09:51Z",
+      "side": 1,
+      "message": "Done, with some minor tweaks on your suggestion.",
+      "parentUuid": "481349da_3ce89b31",
+      "revId": "0ad33271dbec29d6057635b3058372ca331da5c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5acc096_c21d2ddb",

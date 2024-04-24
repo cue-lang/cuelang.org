@@ -33,6 +33,24 @@
       "message": "Add the motivation for the `--source\u003dgit` here, without explaining the clean worktree yet:\n\n```\nThe `--source\u003dgit` flag tells `cue` to use the same file-inclusion rules as `git`, when publishing this module.\n```",
       "revId": "58af73ba6f99e4c318fec082d1dccc0b32f9b4ff",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3e23a66_42b9a34e",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-24T20:09:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7785cd0c_1c82eec6",
+      "revId": "58af73ba6f99e4c318fec082d1dccc0b32f9b4ff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
