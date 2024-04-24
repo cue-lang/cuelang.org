@@ -338,7 +338,7 @@ Let's try again to see if it is fixed:
 {{{with script "en" "test template again"}}}
 cue eval -c ./... >snapshot2
 #ellipsis 20
-! diff -wu snapshot snapshot2
+! diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 {{{end}}}
 
 Except for having more consistent labels and some reordering, nothing changed.
@@ -587,7 +587,7 @@ deployment: [string]: spec: template: {
 {{{with script "en" "check differences post frontend template"}}}
 cue eval -c ./... >snapshot2
 #ellipsis 10
-! diff -wu snapshot snapshot2
+! diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 cp snapshot2 snapshot
 {{{end}}}
 
@@ -713,7 +713,7 @@ cue trim -s ./kitchen/...
 # check differences
 cue eval -c ./... >snapshot2
 #ellipsis
-! diff -wu snapshot snapshot2
+! diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 cp snapshot2 snapshot
 find . | grep kube.cue | xargs wc -l | tail -1
 {{{end}}}
