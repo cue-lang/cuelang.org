@@ -124,6 +124,24 @@
       "parentUuid": "a5c10c07_4c7602f3",
       "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39f569ad_d6188e45",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-25T13:35:23Z",
+      "side": 1,
+      "message": "Apologies - I\u0027d wrongly internalised the presence of the message line\n\n    The following approvals got outdated and were removed:\n\n... during `git codereview mail` as indicating that a re-review was required.\n\nMy bad - thanks for putting me straight!",
+      "parentUuid": "0a828d4f_6d84a7d1",
+      "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
