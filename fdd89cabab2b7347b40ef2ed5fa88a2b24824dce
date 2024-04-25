@@ -146,6 +146,30 @@
       },
       "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47b58e10_b2a69a13",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-25T14:18:14Z",
+      "side": 1,
+      "message": "TVM! I\u0027ve adapted your wording somewhat, but I think I\u0027ve kept the underlying concepts ...",
+      "parentUuid": "89c0a57e_7b28df60",
+      "range": {
+        "startLine": 346,
+        "startChar": 51,
+        "endLine": 346,
+        "endChar": 56
+      },
+      "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
