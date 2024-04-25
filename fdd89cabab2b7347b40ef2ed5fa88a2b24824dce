@@ -122,6 +122,30 @@
       },
       "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89c0a57e_7b28df60",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-25T08:00:30Z",
+      "side": 1,
+      "message": "it\u0027s not so much \"type\" vs \"code\", e.g. you can think of `cue export` in JSON to still be a generation step, just that it generates data. The next step in terms of complexity is generating schemas like jsonschema or openapi, which we already support - those schema languages tend to be able to encode many constraints from CUE, such as types or regular expressions, but not all.\n\nThe last step in terms of complexity is generating turing complete languages (code) that encode CUE schemas, constraints, and logic. In theory we can encode any logic this way, but in practice it\u0027s relatively complex to implement properly and we haven\u0027t gotten to it yet. But it would be really powerful - allowing you to e.g. declare type schemas and data validation in CUE, but actually run the validation in pure Go without needing to involve CUE\u0027s runtime or evaluator. This would help in terms of efficiency for Go, and for other languages, it would open doors as we don\u0027t have CUE evaluators implemented in e.g. pure Python or Java.\n\nOr, for example, being able to codegen javascript could open the door to CUE use cases in the browser or WASM, as running the full evaluator in those cases is likely not a possibility.\n\nWhat you wrote above is fine as a short summary. Just two nits:\n* codegen isn\u0027t the only way to have CUE as the \"lingua franca\", one can still do that today without codegen by e.g. using the evaluator via the Go API, or calling cmd/cue from scripts. It does add flexibility as described above, though.\n* codegen doesn\u0027t have to be limited to Go. as described above, one of the main advantages is being able to codegen languages that we don\u0027t support directly.\n\nHow about:\n\u003e To better serve that goal, the project has plans to extend CUE so that it can directly generate code in Go and other languages. Not just to declare native types to mirror their CUE counterparts, but also to generate native code that implements CUE constraints defined in CUE, such as data validation.\n\n(not wedded to the prose in particular, but that\u0027s the sort of idea I\u0027d want to get across)",
+      "parentUuid": "2d7bdfa0_d73ba1d9",
+      "range": {
+        "startLine": 346,
+        "startChar": 51,
+        "endLine": 346,
+        "endChar": 56
+      },
+      "revId": "fdd89cabab2b7347b40ef2ed5fa88a2b24824dce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

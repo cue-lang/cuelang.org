@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea8c58e7_56797e14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-25T08:00:30Z",
+      "side": 1,
+      "message": "SGTM, feel free to merge with whatever wording you prefer for that last open comment, as I\u0027m just nitpicking at this point :)",
+      "revId": "12e30b8531518043aeb4eae7e4aa5e33b174a095",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -48,6 +48,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72bf2910_f670fded",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-25T08:00:30Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "c70179a4_df2b1e9c",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 4
+      },
+      "revId": "f0d44780c1e776264368df869784b2a2937a3dcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea054442_33567065",
