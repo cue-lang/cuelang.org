@@ -16,6 +16,24 @@
       "message": "@mvdan@mvdan.cc Please re-+2 after the required rebase I just pushed.",
       "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ee9c082_87655632",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-25T12:21:43Z",
+      "side": 1,
+      "message": "I don\u0027t think that\u0027s necessary or possible. Our code-reviews stay when someone pushes new patchsets, so if you only rebased, there\u0027s no need for me to do anything at all.",
+      "parentUuid": "953f2e94_96203f59",
+      "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
