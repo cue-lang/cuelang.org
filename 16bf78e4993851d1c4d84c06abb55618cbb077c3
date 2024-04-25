@@ -34,6 +34,24 @@
       "parentUuid": "953f2e94_96203f59",
       "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48458c71_7c9c3ad4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-25T12:33:33Z",
+      "side": 1,
+      "message": "Of course - to be more accurate, I meant a rebase on top of some repo changes which caused a cache file to get updated, even though nothing on-page changed in any way :-)",
+      "parentUuid": "4ee9c082_87655632",
+      "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
