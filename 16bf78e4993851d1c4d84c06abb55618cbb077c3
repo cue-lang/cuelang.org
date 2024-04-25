@@ -106,6 +106,24 @@
       "parentUuid": "4be5b5ee_290128ba",
       "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a828d4f_6d84a7d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-04-25T13:13:20Z",
+      "side": 1,
+      "message": "Maybe we are talking past each other - my Code-Review+2 label stayed in place even after your extra patchsets. My comment at 13:21 seems like it\u0027s re-adding my label, but it was never gone. See how Paul\u0027s +1 is still in place, even though he didn\u0027t re-add it at any point past patchset 2. So indeed I didn\u0027t need to do antyhing at all here after my last review yesterday.",
+      "parentUuid": "a5c10c07_4c7602f3",
+      "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
