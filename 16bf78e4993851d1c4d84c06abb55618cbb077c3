@@ -88,6 +88,24 @@
       "parentUuid": "6fd0727a_4caaec50",
       "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5c10c07_4c7602f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-25T13:11:05Z",
+      "side": 1,
+      "message": "Me too - but I don\u0027t believe I could have avoided one, correct? Or is there some shorthand I\u0027m missing that would let me ask \"please re-add your previous +2, but I\u0027ll assert that you don\u0027t need to re-read any of the change\"?",
+      "parentUuid": "4be5b5ee_290128ba",
+      "revId": "16bf78e4993851d1c4d84c06abb55618cbb077c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
