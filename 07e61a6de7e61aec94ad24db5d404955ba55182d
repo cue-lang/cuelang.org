@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "07e61a6de7e61aec94ad24db5d404955ba55182d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b330914e_7297482c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-26T14:33:39Z",
+      "side": 1,
+      "message": "I don\u0027t understand why CI failed.",
+      "revId": "07e61a6de7e61aec94ad24db5d404955ba55182d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
