@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cf8c760_8f932ded",
+        "filename": "content/docs/howto/use-your-first-cue-workflow-command/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-26T13:10:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30959c34_1b695022",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 34
+      },
+      "revId": "c89a73d53961b230524319bef35b716a4ef0afc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "727efd9e_03a84507",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-04-24T19:23:28Z",
       "side": 1,
       "message": "Technically speaking this is correct, but it doesn\u0027t seem like particularly friendly language to a newcomer. Do you think it\u0027s ok here?\n\n\"Information\" is also a bit value - more precisely a string value can be \"passed\" (or injected) from the command line to set the value of a tagged field.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 48
+      },
+      "revId": "c89a73d53961b230524319bef35b716a4ef0afc9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78b26cc4_c51675d8",
+        "filename": "content/docs/howto/use-your-first-cue-workflow-command/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-26T13:10:58Z",
+      "side": 1,
+      "message": "I\u0027ve gone with the friendlier:\n\n```\nThis specific workflow command allows a `-t` flag to inject\na value into the process so that it can be referred to.\n```\n\nI\u0027ll merge with that wording, and we can amend if needed.",
+      "parentUuid": "727efd9e_03a84507",
       "range": {
         "startLine": 12,
         "startChar": 0,
