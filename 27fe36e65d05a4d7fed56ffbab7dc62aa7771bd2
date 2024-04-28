@@ -16,6 +16,23 @@
       "message": "PTAL and see what Go example makes sense for the guide\u0027s final section.",
       "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b22d397_cfbdeff7",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-28T07:43:50Z",
+      "side": 1,
+      "message": "I don\u0027t understand this paragraph.",
+      "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
