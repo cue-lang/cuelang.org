@@ -173,6 +173,24 @@
       "parentUuid": "75c38692_528449ce",
       "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ddde1d_2e3311d2",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-29T19:25:01Z",
+      "side": 1,
+      "message": "Alternatively, we can land https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1194059 and then the problem goes away.",
+      "parentUuid": "782db8f1_9f0d8a25",
+      "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
