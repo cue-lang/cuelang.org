@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial config.cue": "QsAbvoWzVwL3VXxeBEeDwB21vAa6HDsDa3+LyeNW1go="
+								"initial config.cue": "GGHqb+628Ov2RM2661H7mrl3yGi/WAyvd2JL61ZyLcg="
 							}
 							multi_step: {
-								hash:       "9762R9QOC1E5L7VGTCP6S2K748UA1SO6J52OQTUAH1VV84293110===="
-								scriptHash: "VB9NM202BFUIUPEM36TNBLM9M18LVLOPKTVUUGRKMVSB285V3M0G===="
+								hash:       "5TNTLIB57F8S3VR7FAIE9VRN72J1BG7FNKHOS1LCCSHA9G8Q1700===="
+								scriptHash: "NERIN1SD98NVD1LT0GN21K688EL8B9E01R6GM36HNQ662M36S3HG===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
