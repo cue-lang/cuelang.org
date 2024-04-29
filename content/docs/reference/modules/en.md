@@ -1,5 +1,5 @@
 ---
-title: "CUE Modules Reference"
+title: CUE Modules
 authors:
 - rogpeppe
 toc_hide: true
