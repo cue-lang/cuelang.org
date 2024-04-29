@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79be521a_180996b5",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-29T18:03:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88ace391_b6924903",
+      "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5a18ccbf_e6a83330",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-04-29T17:02:40Z",
       "side": 1,
       "message": "I don\u0027t think we refer to a \"local\" CUE module; instead a \"main module\"",
+      "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3052b4ea_08716cc5",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-29T18:03:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a18ccbf_e6a83330",
       "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +122,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9e1b0a4_9fc9d7cf",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-29T18:03:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3efdff1_150a8e85",
+      "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75c38692_528449ce",
@@ -99,6 +153,24 @@
       "writtenOn": "2024-04-29T17:02:40Z",
       "side": 1,
       "message": "Why did this get changed to `@latest`? That is not stable.",
+      "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "782db8f1_9f0d8a25",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-29T18:03:37Z",
+      "side": 1,
+      "message": "I flagged this in the code comment above this change:\n\n```\nTODO: this tutorial *works* with v0.8.x.\nShould we imply that the non-alpha-consuming beginner *HAS*\nto use an alpha version in order to make our CI more stable?\n```\n\nI\u0027m unsure about encoding the current alpha version in a beginner-level tutorial like this. It feels like it prioritises our needs as authors over the reader\u0027s need for simplicity in not consuming a pre-release version. \n\nWe *could* encode the latest 0.8.x version, statically, with a TODO to update it.\n\nWhat do you think?",
+      "parentUuid": "75c38692_528449ce",
       "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
