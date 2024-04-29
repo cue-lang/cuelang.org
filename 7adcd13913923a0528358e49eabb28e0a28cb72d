@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3f1c08e_9a3043c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-29T20:57:35Z",
+      "side": 1,
+      "message": "`something`",
+      "revId": "7adcd13913923a0528358e49eabb28e0a28cb72d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8778625b_53d6655e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-29T20:57:35Z",
+      "side": 1,
+      "message": "I wholeheartedly agree with this change! +2 modulo green CI.",
+      "revId": "7adcd13913923a0528358e49eabb28e0a28cb72d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf941029_2f0047de",
+        "filename": "playground/src/config/gen_cuelang_org_go_version.ts",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-04-29T20:57:35Z",
+      "side": 1,
+      "message": "I haven\u0027t properly dug into how the playground builds \u0026 downloads the WASM blob that\u0027s shipped to the browser. I have a nagging /feeling/ that this message is solely related to the message in the playground hamburger menu; currently:\n\n```\nCUE Release: v0.9.0-alpha.3\n```\n\nThus: if this message has changed, but there\u0027s no other sign of the WASM blob\u0027s build process getting modified in this commit, then it feels like we\u0027re possibly desyncing the playground\u0027s operative CUE version from the advertised version.\n\nOr I could be wrong, and this one value really does drive both the WASM and the on-page message :-)",
+      "revId": "7adcd13913923a0528358e49eabb28e0a28cb72d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
