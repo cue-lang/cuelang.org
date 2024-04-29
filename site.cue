@@ -14,7 +14,7 @@ versions: {
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
-		latest: v:       "v0.9.0-alpha.3"
+		latest: v:       "v0.8.2"
 		prerelease: v:   "v0.9.0-alpha.3"
 		tip: v:          prerelease.v
 		default: v:      prerelease.v
@@ -197,7 +197,7 @@ template: ci.#writefs & {
 			[notification]
 			    type = 'test'
 
-			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.latest.v)'
+			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.prerelease.v)'
 			    [notification.button]
 			        link = 'https://github.com/cue-lang/cue/releases'
 			        icon = 'download'
