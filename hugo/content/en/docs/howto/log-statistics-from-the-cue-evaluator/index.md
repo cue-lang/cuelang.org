@@ -34,8 +34,8 @@ CUE: {
 	Retained:     0
 }
 Go: {
-	AllocBytes:   4458160
-	AllocObjects: 49722
+	AllocBytes:   4461144
+	AllocObjects: 49719
 }
 ```
 

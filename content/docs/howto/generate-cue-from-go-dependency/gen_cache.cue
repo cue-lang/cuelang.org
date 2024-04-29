@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"deps.go":     "Tebm10btxfl4OS8S6sBRLXt8Olr6A7h6v/vlXHUvepw="
-								"example.cue": "NAdk2kwEtYQao1BLLPSfvGf6/ohPuJ/RxZPAp0tVWyc="
+								"deps.go":     "gsiKdDdN4hfs5ZI7yBrEaP32DY5081gq4Y4VA8cRDd4="
+								"example.cue": "fCrLHSqvbEsHvGcvlVUmgmgcmVTaKx18YfwaM4ullJg="
 							}
 							multi_step: {
-								hash:       "4S7D0FOP3OP5ILNH8B66SLFCABN4S1E0D4L6LNKJ8O5D0KG2OIC0===="
-								scriptHash: "KOM8ADDMJHB9HE7M8FF0SOK89UQICPQ3R9UM76AFHBBP2ABNJBMG===="
+								hash:       "HGA87RVRSVGEM0BUA3MBCVR11Q6P8KPPNKCFM1INUSSPP9MCSHF0===="
+								scriptHash: "IBPI0R7VGSITCB5CCO2NCFGJAJ0LS71Q3I3AEBH5QIF66QS5CRSG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"

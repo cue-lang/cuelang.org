@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "jcDLzbnZFGVMJU28cQNC5v3zicwwBQH/OSV8w3C/qgA="
-								"config.cue":               "mNyKS70eCTAvOlTJva7pGaz0h1qN5kRdBSDBn2MgfJY="
-								"second-module-to-publish": "S6XtCRvpHExpd+7842ZVTTLalKRCkE98N4mgozMHdEY="
-								"update-frostyapp":         "I3ZG2fh3zTPHRPkINfGj2/haOS3+Ue2KpvX/gnLfdHc="
-								"schema-v0.1.0":            "jtVbORAQu9Q3NTupiCGxj2XibBbUuSZ83KkfbGyLqT8="
+								"schema-v0.0.1":            "X6eFOT7CQPn5hJfPTnHaTdxR7DnSE/A8Vm9iLR2NfA8="
+								"config.cue":               "9MVfGQfIfKmjdyt/JoAbDOYhyaFgB8PaUkuD3ZfIoY8="
+								"second-module-to-publish": "CsOWB6dulYvRb4qzsNcAsV6W6RTPM3sHAw/BlhLhKPA="
+								"update-frostyapp":         "6UyozuSaWmYYfEcqp6XCNN8S1RUZg/92UCGZWJbJcNU="
+								"schema-v0.1.0":            "PAaX3u/ntz5fHzc2OHEzS7VB3s5Hu2sbSWrEvUk+f30="
 							}
 							multi_step: {
-								hash:       "N6N4252SLEN63NIAG4K850288T14TLKGCPJ6LQU069FPJ7OKUG3G===="
-								scriptHash: "9R2704JI6R0H7ES8IVHVE7PTC3HAF928HRV7QNQ4HDJDDM2UIUA0===="
+								hash:       "RTEL8SPQCFGM9OKA7HQM5TKT2DI55QLP7JOUEL8U617VBVTSO7P0===="
+								scriptHash: "U1F1AFOPA3TQTTAVNJ8RHP47AKMNC0RKENHEEMJ3885J6PSV0A9G===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
