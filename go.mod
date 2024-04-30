@@ -6,7 +6,6 @@ require (
 	cuelang.org/go v0.8.0
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
-	github.com/cockroachdb/apd/v2 v2.0.2
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/go-quicktest/qt v1.101.0
 	github.com/rogpeppe/go-internal v1.12.0
