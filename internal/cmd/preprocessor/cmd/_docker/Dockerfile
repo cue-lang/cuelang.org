@@ -31,7 +31,7 @@ RUN mkdir -p /go/bin
 
 ENV LC_ALL=C.UTF-8
 
-# Default to the latest value of CUE. Guides can fix to a different
+# Default to the default value of CUE. Guides can fix to a different
 # version explicitly
 ENV PATH="/cues/v0.9.0-alpha.3:${PATH}"
 
@@ -39,6 +39,8 @@ ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 ENV CUELANG_CUE_LATEST="v0.9.0-alpha.3"
 ENV CUELANG_CUE_PRERELEASE="v0.9.0-alpha.3"
 ENV CUELANG_CUE_TIP="v0.9.0-alpha.3"
+ENV CUELANG_CUE_DEFAULT="v0.9.0-alpha.3"
+ENV CUELANG_CUE_PLAYGROUND="v0.9.0-alpha.3"
 
 WORKDIR /
 
