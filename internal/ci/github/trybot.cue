@@ -117,6 +117,12 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Regenerate"
 			},
 
+			// Go generate steps in playground
+			_goGenerate & {
+				name:                "Regenerate"
+				"working-directory": "playground"
+			},
+
 			// Early check on clean repo
 			_repo.checkGitClean,
 
@@ -138,15 +144,34 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Test"
 			},
 
+			// Go test steps in playground
+			_goTest & {
+				name:                "Test"
+				"working-directory": "playground"
+			},
+
 			// Run staticcheck
 			json.#step & {
 				name: "staticcheck"
 				run:  "./_scripts/staticcheck.bash"
 			},
 
+			// Run staticcheck in playground
+			json.#step & {
+				name:                "staticcheck"
+				run:                 "./_scripts/staticcheck.bash"
+				"working-directory": "playground"
+			},
+
 			// go mod tidy
 			_modTidy & {
 				name: "Check module is tidy"
+			},
+
+			// go mod tidy playground
+			_modTidy & {
+				name:                "Check module is tidy"
+				"working-directory": "playground"
 			},
 
 			json.#step & {
