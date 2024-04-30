@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								file: "yNsbkEokrniZXYSS9+4Wkt75rd7F0w3HiDa72vplPP8="
+								file: "moqIRcTdJE93+cfEyA3EddOLa7rX6VZLOAEYbbMjI8E="
 							}
 							multi_step: {
-								hash:       "EC3M0J424S7VO97PKO2UGTVTDKHHUOP7CKSHIM44JMTDF2S35M2G===="
-								scriptHash: "LB8A769942N1SDEQHOUQDM8CDG8BFNMIFLI6VIGILI2C4K7PSHUG===="
+								hash:       "LUKJBCGN4771C4OHFO4B9DHIE2T4EBU45S69FM4EIFIMCI8C5RHG===="
+								scriptHash: "HJ6F16PVM5R51CRIHNQVO53OFBM44DDS5QVFKQUAO2SO9APOU95G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export CUE_STATS_FILE=stats.cue"
@@ -37,8 +37,8 @@ package site
 											\tRetained:     0
 											}
 											Go: {
-											\tAllocBytes:   4396448
-											\tAllocObjects: 49713
+											\tAllocBytes:   4459304
+											\tAllocObjects: 49729
 											}
 
 											"""
