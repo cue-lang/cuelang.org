@@ -395,6 +395,13 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 
 	var scriptSteps []*commandStmt
 
+	// build up a hash of the author-specified commands and file contents
+	work := sha256.New()
+	user := func(format string, args ...any) {
+		s := fmt.Sprintf(format, args...)
+		fmt.Fprint(work, rf.page.config.randomReplace(s))
+	}
+
 	// TODO: do a pass over all the shell generated below to ensure that we are
 	// quoting everything that we need to.
 
@@ -451,6 +458,9 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 		pf("then\n")
 		pf("exit 1\n")
 		pf("fi\n")
+
+		// The file contents are author-specified
+		user("filename: %s, contents: %s\n", f.Name, f.Data)
 	}
 
 	rf.walkBody(func(n node) error {
@@ -487,6 +497,9 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 				pf("echo $%s\n", exitCodeVar)
 
 				scriptSteps = append(scriptSteps, stmt)
+
+				// Each stmt is author-specified
+				user("negated: %v, cmd: %s\n", stmt.negated, stmt.Cmd)
 			}
 		case *uploadNode:
 			didWork = true
@@ -552,6 +565,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 
 	mss := multiStepScript{
 		bashScript:  sb.String(),
+		scriptHash:  base32.HexEncoding.EncodeToString(work.Sum(nil)),
 		rootFile:    rf,
 		scriptSteps: scriptSteps,
 		bufferedErrorContext: &errorContextBuffer{
@@ -568,6 +582,7 @@ func (rf *rootFile) getFence() string {
 
 type multiStepScript struct {
 	bashScript  string
+	scriptHash  string
 	scriptSteps []*commandStmt
 	*rootFile
 	bufferedErrorContext
@@ -593,17 +608,6 @@ func (m *multiStepScript) hash() string {
 	fmt.Fprintf(work, "Go major version: %s\n", goMajorVersion)
 	fmt.Fprintf(work, "preprocessor version: %s\n", m.selfHash)
 	fmt.Fprintf(work, "docker image: %s\n", dockerImageTag)
-	fmt.Fprintf(work, "script:\n%s\n", m.rootFile.page.config.randomReplace(m.bashScript))
-	return base32.HexEncoding.EncodeToString(work.Sum(nil))
-}
-
-// scriptHash computes a hash of the bash script only.
-//
-// TODO: make this more precise in only being a hash of the author-specified
-// commands and file contents. The auxiliary bash that we generate should not
-// be part of this hash.
-func (m *multiStepScript) scriptHash() string {
-	work := sha256.New()
 	fmt.Fprintf(work, "script:\n%s\n", m.rootFile.page.config.randomReplace(m.bashScript))
 	return base32.HexEncoding.EncodeToString(work.Sum(nil))
 }
@@ -655,7 +659,7 @@ func (m *multiStepScript) run() {
 	if !cacheMiss {
 		if err := cacheVal.Decode(&multiStepCache); err == nil {
 			cacheMiss = multiStepCache.Hash != m.hash()
-			scriptCacheMiss = multiStepCache.ScriptHash != m.scriptHash()
+			scriptCacheMiss = multiStepCache.ScriptHash != m.scriptHash
 		}
 	}
 
@@ -984,7 +988,7 @@ func (rf *rootFile) writePageCache() error {
 		p := rf.script.cachePath()
 		v = v.FillPath(p, multiStepScriptCache{
 			Hash:       rf.script.hash(),
-			ScriptHash: rf.script.scriptHash(),
+			ScriptHash: rf.script.scriptHash,
 			Steps:      rf.script.scriptSteps,
 		})
 		didWork = true
