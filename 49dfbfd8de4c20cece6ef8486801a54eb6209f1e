@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cca9ea01_6c9e764f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-30T17:34:44Z",
+      "side": 1,
+      "message": "Note on why we pull forward one of the cache files. Because this change causes the script hash to change.",
+      "revId": "49dfbfd8de4c20cece6ef8486801a54eb6209f1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e458fcb3_620847e2",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-30T17:34:44Z",
+      "side": 1,
+      "message": "Better var name",
+      "range": {
+        "startLine": 399,
+        "startChar": 1,
+        "endLine": 399,
+        "endChar": 5
+      },
+      "revId": "49dfbfd8de4c20cece6ef8486801a54eb6209f1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "347fea32_ab049741",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-04-30T17:34:44Z",
+      "side": 1,
+      "message": "userScriptHash  - with doc comment from before.",
+      "range": {
+        "startLine": 585,
+        "startChar": 1,
+        "endLine": 585,
+        "endChar": 11
+      },
+      "revId": "49dfbfd8de4c20cece6ef8486801a54eb6209f1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
