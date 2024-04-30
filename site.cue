@@ -16,7 +16,9 @@ versions: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: v:       "v0.9.0-alpha.3"
 		prerelease: v:   "v0.9.0-alpha.3"
-		tip: v:          "v0.9.0-alpha.3"
+		tip: v:          prerelease.v
+		default: v:      prerelease.v
+		playground: v:   prerelease.v
 	}
 	let versionSet = {for _, v in cue {"\(v.v)": true}}
 	_cueVersionList: list.SortStrings([
@@ -139,9 +141,9 @@ template: ci.#writefs & {
 
 			ENV LC_ALL=C.UTF-8
 
-			# Default to the latest value of CUE. Guides can fix to a different
+			# Default to the default value of CUE. Guides can fix to a different
 			# version explicitly
-			ENV PATH="/cues/\#(versions.cue.latest.v):${PATH}"
+			ENV PATH="/cues/\#(versions.cue.default.v):${PATH}"
 
 			ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 			\#(

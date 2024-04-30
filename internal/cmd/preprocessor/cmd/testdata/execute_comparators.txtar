@@ -23,8 +23,14 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for multi-step scri
 cmp content/dir/gen_cache.cue content/dir/gen_cache.cue.copy
 
 -- hugo/.keep --
--- content/site.cue --
+-- site.cue --
 package site
+
+import "strings"
+
+versions: cue: [x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
+
+versions: cue: default: v: "v0.9.0-alpha.3"
 -- content/dir/page.cue --
 package site
 
