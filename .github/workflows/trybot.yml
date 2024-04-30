@@ -220,6 +220,9 @@ jobs:
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate
         run: go generate ./...
+      - name: Regenerate
+        run: go generate ./...
+        working-directory: playground
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./_scripts/buildDockerImage.bash
@@ -227,10 +230,19 @@ jobs:
         working-directory: hugo
       - name: Test
         run: go test ./...
+      - name: Test
+        run: go test ./...
+        working-directory: playground
       - name: staticcheck
         run: ./_scripts/staticcheck.bash
+      - name: staticcheck
+        run: ../_scripts/staticcheck.bash
+        working-directory: playground
       - name: Check module is tidy
         run: go mod tidy
+      - name: Check module is tidy
+        run: go mod tidy
+        working-directory: playground
       - name: write $HOME/.config/cue/logins.json
         run: |-
           mkdir -p $HOME/.config/cue
@@ -243,6 +255,7 @@ jobs:
           CUE_TEST_LOGINS: ${{ secrets.CUECKOO_CUE_TEST_LOGINS }}
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
+      - run: ./playground/_scripts/checkCUEVersion.bash
       - run: npm run lint
         working-directory: hugo
       - if: |-

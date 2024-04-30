@@ -117,6 +117,12 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Regenerate"
 			},
 
+			// Go generate steps in playground
+			_goGenerate & {
+				name:                "Regenerate"
+				"working-directory": "playground"
+			},
+
 			// Early check on clean repo
 			_repo.checkGitClean,
 
@@ -138,15 +144,34 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Test"
 			},
 
+			// Go test steps in playground
+			_goTest & {
+				name:                "Test"
+				"working-directory": "playground"
+			},
+
 			// Run staticcheck
 			json.#step & {
 				name: "staticcheck"
 				run:  "./_scripts/staticcheck.bash"
 			},
 
+			// Run staticcheck in playground
+			json.#step & {
+				name:                "staticcheck"
+				run:                 "../_scripts/staticcheck.bash"
+				"working-directory": "playground"
+			},
+
 			// go mod tidy
 			_modTidy & {
 				name: "Check module is tidy"
+			},
+
+			// go mod tidy playground
+			_modTidy & {
+				name:                "Check module is tidy"
+				"working-directory": "playground"
 			},
 
 			json.#step & {
@@ -171,6 +196,15 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Check on clean repo prior to deploy
 			_repo.checkGitClean,
+
+			// Now that we are generated, tested, and the repo is confirmed
+			// as clean, verify that the playground CUE version matches the
+			// site default
+			json.#step & {
+				run: """
+					./playground/_scripts/checkCUEVersion.bash
+					"""
+			},
 
 			// Now the frontend build has happened, ensure that linters pass
 			json.#step & {

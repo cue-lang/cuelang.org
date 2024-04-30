@@ -102,11 +102,11 @@ template: ci.#writefs & {
 		"content/docs/reference/cli/cue-*/*.md",
 	]
 	Create: {
-		"_scripts/defaultCUEVersion.bash": {
+		"_scripts/playgroundCUEVersion.bash": {
 			Contents: #"""
 			# \#(donotedit)
 
-			export \#(versions.cue.default.var)="\#(versions.cue.default.v)"
+			export \#(versions.cue.default.var)="\#(versions.cue.prerelease.v)"
 
 			"""#
 		}
@@ -271,7 +271,7 @@ template: ci.#writefs & {
 			Contents: #"""
 			// \#(donotedit)
 
-			export const CUEVersion = '\#(versions.cue.latest.v)';
+			export const CUEVersion = '\#(versions.cue.prerelease.v)';
 
 			"""#
 		}
