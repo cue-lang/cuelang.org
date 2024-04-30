@@ -1,22 +1,17 @@
 package yaml
 
 import (
-	"bytes"
 	"encoding/base64"
-	"errors"
 	"fmt"
-	"io"
-	"io/ioutil"
 	"math"
-	"reflect"
 	"strconv"
 	"strings"
-	"time"
 
 	"cuelang.org/go/cue/ast"
 	"cuelang.org/go/cue/literal"
 	"cuelang.org/go/cue/token"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/source"
 )
 
 const (
@@ -48,36 +43,11 @@ type parser struct {
 	event    yaml_event_t
 	doc      *node
 	info     *token.File
-	last     *node
 	doneInit bool
 }
 
-func readSource(filename string, src interface{}) ([]byte, error) {
-	if src != nil {
-		switch s := src.(type) {
-		case string:
-			return []byte(s), nil
-		case []byte:
-			return s, nil
-		case *bytes.Buffer:
-			// is io.Reader, but src is already available in []byte form
-			if s != nil {
-				return s.Bytes(), nil
-			}
-		case io.Reader:
-			var buf bytes.Buffer
-			if _, err := io.Copy(&buf, s); err != nil {
-				return nil, err
-			}
-			return buf.Bytes(), nil
-		}
-		return nil, errors.New("invalid source")
-	}
-	return ioutil.ReadFile(filename)
-}
-
 func newParser(filename string, src interface{}) (*parser, error) {
-	b, err := readSource(filename, src)
+	b, err := source.ReadAll(filename, src)
 	if err != nil {
 		return nil, err
 	}
@@ -236,6 +206,8 @@ func (p *parser) sequence() *node {
 	}
 	if len(n.children) > 0 {
 		n.endPos = n.children[len(n.children)-1].endPos
+	} else {
+		n.endPos = p.event.start_mark
 	}
 	p.expect(yaml_SEQUENCE_END_EVENT)
 	return n
@@ -264,16 +236,8 @@ type decoder struct {
 	aliases      map[*node]bool
 	terrors      []string
 	prev         token.Pos
-	lastNode     ast.Node
 	forceNewline bool
 }
-
-var (
-	durationType   = reflect.TypeOf(time.Duration(0))
-	defaultMapType = reflect.TypeOf(map[interface{}]interface{}{})
-	timeType       = reflect.TypeOf(time.Time{})
-	ptrTimeType    = reflect.TypeOf(&time.Time{})
-)
 
 func newDecoder(p *parser) *decoder {
 	d := &decoder{p: p}
@@ -362,7 +326,7 @@ func (d *decoder) attachLineComment(m yaml_mark_t, pos int8, expr ast.Node) {
 }
 
 func (d *decoder) pos(m yaml_mark_t) token.Pos {
-	pos := d.p.info.Pos(m.index+1, token.NoRelPos)
+	pos := d.absPos(m)
 
 	if d.forceNewline {
 		d.forceNewline = false
@@ -390,7 +354,7 @@ func (d *decoder) pos(m yaml_mark_t) token.Pos {
 }
 
 func (d *decoder) absPos(m yaml_mark_t) token.Pos {
-	return d.p.info.Pos(m.index+1, token.NoRelPos)
+	return d.p.info.Pos(m.index, token.NoRelPos)
 }
 
 func (d *decoder) start(n *node) token.Pos {
@@ -425,8 +389,6 @@ func (d *decoder) alias(n *node) ast.Expr {
 	delete(d.aliases, n)
 	return node
 }
-
-var zeroValue reflect.Value
 
 func (d *decoder) scalar(n *node) ast.Expr {
 	var tag string

@@ -118,7 +118,7 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	encConf := &encoding.Config{
 		Out: &outBuf,
 	}
-	e, err := encoding.NewEncoder(f, encConf)
+	e, err := encoding.NewEncoder(ctx, f, encConf)
 	if err != nil {
 		return "", fmt.Errorf("failed to build encoder: %v", err)
 	}

@@ -18,12 +18,9 @@
 package encoding
 
 import (
-	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/url"
-	"os"
 	"strings"
 
 	"cuelang.org/go/cue"
@@ -41,13 +38,15 @@ import (
 	"cuelang.org/go/encoding/protobuf/jsonpb"
 	"cuelang.org/go/encoding/protobuf/textproto"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/encoding/yaml"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
-	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/third_party/yaml"
+	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/source"
 	"golang.org/x/text/encoding/unicode"
 	"golang.org/x/text/transform"
 )
 
 type Decoder struct {
+	ctx            *cue.Context
 	cfg            *Config
 	closer         io.Closer
 	next           func() (ast.Expr, error)
@@ -62,7 +61,7 @@ type Decoder struct {
 	err            error
 }
 
-type interpretFunc func(*cue.Instance) (file *ast.File, id string, err error)
+type interpretFunc func(cue.Value) (file *ast.File, id string, err error)
 type rewriteFunc func(*ast.File) (file *ast.File, err error)
 
 // ID returns a canonical identifier for the decoded object or "" if no such
@@ -104,30 +103,21 @@ func (i *Decoder) doInterpret() {
 		}
 	}
 	if i.interpretFunc != nil {
-		var r cue.Runtime
 		i.file = i.File()
-		inst, err := r.CompileFile(i.file)
-		if err != nil {
+		v := i.ctx.BuildFile(i.file)
+		if err := v.Err(); err != nil {
 			i.err = err
 			return
 		}
-		i.file, i.id, i.err = i.interpretFunc(inst)
+		i.file, i.id, i.err = i.interpretFunc(v)
 	}
-}
-
-func toFile(x ast.Expr) *ast.File {
-	return internal.ToFile(x)
-}
-
-func valueToFile(v cue.Value) *ast.File {
-	return internal.ToFile(v.Syntax())
 }
 
 func (i *Decoder) File() *ast.File {
 	if i.file != nil {
 		return i.file
 	}
-	return toFile(i.expr)
+	return internal.ToFile(i.expr)
 }
 
 func (i *Decoder) Err() error {
@@ -138,7 +128,9 @@ func (i *Decoder) Err() error {
 }
 
 func (i *Decoder) Close() {
-	i.closer.Close()
+	if i.closer != nil {
+		i.closer.Close()
+	}
 }
 
 type Config struct {
@@ -168,11 +160,11 @@ type Config struct {
 // NewDecoder returns a stream of non-rooted data expressions. The encoding
 // type of f must be a data type, but does not have to be an encoding that
 // can stream. stdin is used in case the file is "-".
-func NewDecoder(f *build.File, cfg *Config) *Decoder {
+func NewDecoder(ctx *cue.Context, f *build.File, cfg *Config) *Decoder {
 	if cfg == nil {
 		cfg = &Config{}
 	}
-	i := &Decoder{filename: f.Filename, cfg: cfg}
+	i := &Decoder{filename: f.Filename, ctx: ctx, cfg: cfg}
 	i.next = func() (ast.Expr, error) {
 		if i.err != nil {
 			return nil, i.err
@@ -182,16 +174,22 @@ func NewDecoder(f *build.File, cfg *Config) *Decoder {
 
 	if file, ok := f.Source.(*ast.File); ok {
 		i.file = file
-		i.closer = ioutil.NopCloser(strings.NewReader(""))
 		i.validate(file, f)
 		return i
 	}
 
-	rc, err := reader(f, cfg.Stdin)
-	i.closer = rc
-	i.err = err
-	if err != nil {
-		return i
+	var srcr io.Reader
+	if f.Source == nil && f.Filename == "-" {
+		// TODO: should we allow this?
+		srcr = cfg.Stdin
+	} else {
+		rc, err := source.Open(f.Filename, f.Source)
+		i.closer = rc
+		i.err = err
+		if i.err != nil {
+			return i
+		}
+		srcr = rc
 	}
 
 	// For now we assume that all encodings require UTF-8. This will not be the
@@ -200,19 +198,19 @@ func NewDecoder(f *build.File, cfg *Config) *Decoder {
 	// TODO: this code also allows UTF16, which is too permissive for some
 	// encodings. Switch to unicode.UTF8Sig once available.
 	t := unicode.BOMOverride(unicode.UTF8.NewDecoder())
-	r := transform.NewReader(rc, t)
+	r := transform.NewReader(srcr, t)
 
 	switch f.Interpretation {
 	case "":
 	case build.Auto:
 		openAPI := openAPIFunc(cfg, f)
 		jsonSchema := jsonSchemaFunc(cfg, f)
-		i.interpretFunc = func(inst *cue.Instance) (file *ast.File, id string, err error) {
-			switch i.interpretation = Detect(inst.Value()); i.interpretation {
+		i.interpretFunc = func(v cue.Value) (file *ast.File, id string, err error) {
+			switch i.interpretation = Detect(v); i.interpretation {
 			case build.JSONSchema:
-				return jsonSchema(inst)
+				return jsonSchema(v)
 			case build.OpenAPI:
-				return openAPI(inst)
+				return openAPI(v)
 			}
 			return i.file, "", i.err
 		}
@@ -245,16 +243,16 @@ func NewDecoder(f *build.File, cfg *Config) *Decoder {
 		i.next = json.NewDecoder(nil, path, r).Extract
 		i.Next()
 	case build.YAML:
-		d, err := yaml.NewDecoder(path, r)
+		b, err := io.ReadAll(r)
 		i.err = err
-		i.next = d.Decode
+		i.next = yaml.NewDecoder(path, b).Decode
 		i.Next()
 	case build.Text:
-		b, err := ioutil.ReadAll(r)
+		b, err := io.ReadAll(r)
 		i.err = err
 		i.expr = ast.NewString(string(b))
 	case build.Binary:
-		b, err := ioutil.ReadAll(r)
+		b, err := io.ReadAll(r)
 		i.err = err
 		s := literal.Bytes.WithTabIndent(1).Quote(string(b))
 		i.expr = ast.NewLit(token.STRING, s)
@@ -265,7 +263,7 @@ func NewDecoder(f *build.File, cfg *Config) *Decoder {
 		}
 		i.file, i.err = protobuf.Extract(path, r, paths)
 	case build.TextProto:
-		b, err := ioutil.ReadAll(r)
+		b, err := io.ReadAll(r)
 		i.err = err
 		if err == nil {
 			d := textproto.NewDecoder()
@@ -279,10 +277,10 @@ func NewDecoder(f *build.File, cfg *Config) *Decoder {
 }
 
 func jsonSchemaFunc(cfg *Config, f *build.File) interpretFunc {
-	return func(i *cue.Instance) (file *ast.File, id string, err error) {
+	return func(v cue.Value) (file *ast.File, id string, err error) {
 		id = f.Tags["id"]
 		if id == "" {
-			id, _ = i.Lookup("$id").String()
+			id, _ = v.LookupPath(cue.MakePath(cue.Str("$id"))).String()
 		}
 		if id != "" {
 			u, err := url.Parse(id)
@@ -298,7 +296,7 @@ func jsonSchemaFunc(cfg *Config, f *build.File) interpretFunc {
 
 			Strict: cfg.Strict,
 		}
-		file, err = jsonschema.Extract(i, cfg)
+		file, err = jsonschema.Extract(v, cfg)
 		// TODO: simplify currently erases file line info. Reintroduce after fix.
 		// file, err = simplify(file, err)
 		return file, id, err
@@ -307,8 +305,8 @@ func jsonSchemaFunc(cfg *Config, f *build.File) interpretFunc {
 
 func openAPIFunc(c *Config, f *build.File) interpretFunc {
 	cfg := &openapi.Config{PkgName: c.PkgName}
-	return func(i *cue.Instance) (file *ast.File, id string, err error) {
-		file, err = openapi.Extract(i, cfg)
+	return func(v cue.Value) (file *ast.File, id string, err error) {
+		file, err = openapi.Extract(v, cfg)
 		// TODO: simplify currently erases file line info. Reintroduce after fix.
 		// file, err = simplify(file, err)
 		return file, "", err
@@ -323,29 +321,6 @@ func protobufJSONFunc(cfg *Config, file *build.File) rewriteFunc {
 		}
 		return f, jsonpb.NewDecoder(cfg.Schema).RewriteFile(f)
 	}
-}
-
-func reader(f *build.File, stdin io.Reader) (io.ReadCloser, error) {
-	switch s := f.Source.(type) {
-	case nil:
-		// Use the file name.
-	case string:
-		return ioutil.NopCloser(strings.NewReader(s)), nil
-	case []byte:
-		return ioutil.NopCloser(bytes.NewReader(s)), nil
-	case *bytes.Buffer:
-		// is io.Reader, but it needs to be readable repeatedly
-		if s != nil {
-			return ioutil.NopCloser(bytes.NewReader(s.Bytes())), nil
-		}
-	default:
-		return nil, fmt.Errorf("invalid source type %T", f.Source)
-	}
-	// TODO: should we allow this?
-	if f.Filename == "-" {
-		return ioutil.NopCloser(stdin), nil
-	}
-	return os.Open(f.Filename)
 }
 
 func shouldValidate(i *filetypes.FileInfo) bool {
@@ -463,22 +438,4 @@ func (v *validator) validate(n ast.Node) bool {
 		// Other types are either always okay or handled elsewhere.
 	}
 	return ok
-}
-
-// simplify reformats a File. To be used as a wrapper for Extract functions.
-//
-// It currently does so by formatting the file using fmt.Format and then
-// reparsing it. This is not ideal, but the package format does not provide a
-// way to do so differently.
-func simplify(f *ast.File, err error) (*ast.File, error) {
-	if err != nil {
-		return nil, err
-	}
-	// This needs to be a function that modifies f in order to maintain line
-	// number information.
-	b, err := format.Node(f, format.Simplify())
-	if err != nil {
-		return nil, err
-	}
-	return parser.ParseFile(f.Filename, b, parser.ParseComments)
 }
