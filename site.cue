@@ -263,7 +263,7 @@ template: ci.#writefs & {
 			Contents: #"""
 			// \#(donotedit)
 
-			export const CUEVersion = '\#(versions.cue.latest.v)';
+			export const CUEVersion = '\#(versions.cue.prerelease.v)';
 
 			"""#
 		}
