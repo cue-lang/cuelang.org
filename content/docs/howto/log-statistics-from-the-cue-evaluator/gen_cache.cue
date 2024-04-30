@@ -37,8 +37,8 @@ package site
 											\tRetained:     0
 											}
 											Go: {
-											\tAllocBytes:   4456248
-											\tAllocObjects: 49722
+											\tAllocBytes:   4462112
+											\tAllocObjects: 49718
 											}
 
 											"""

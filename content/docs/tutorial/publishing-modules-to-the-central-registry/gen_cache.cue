@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "jcDLzbnZFGVMJU28cQNC5v3zicwwBQH/OSV8w3C/qgA="
-								"config.cue":    "FtmfsHhEHrxZyx35oGk+AVxWEW5gXBT7cilQzUzisYA="
+								"schema-v0.0.1": "pidtn/ktkJehewFqFFkdQarF18V3D1iU2V6kgvIg76M="
+								"config.cue":    "yq0C3NaUspiJsQtpW8q8FFY+Ej/hXPrFdNfbH8psCgw="
 							}
 							multi_step: {
-								hash:       "893M8E2E9CKHDFULS19NOU6K2DFACCT5JAGT8GGNHJIHMLLP9850===="
-								scriptHash: "6D5BU5D8I7FGOPIV2DNCTJ5H7T6N4UGAA44SI0LDDNI365HKBRK0===="
+								hash:       "7J05E1QS5341GQ2Q5T0GHKUUSKAKQJ6009HPGH2LV1SVIB01CKG0===="
+								scriptHash: "GBGN4S2RAIK1DVTDBATJOTA2CNNHSUOBJUO3JM9B87C4EAVNTORG===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
