@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "fytGQnjO61FyWU7xYIXX6lwzznzyjvo9oka3ttXOhaU="
-								"initial go code":  "Bye43FKqcVgGSomKbtz86bsoIDDvp2F4qZfPLTZXBnY="
+								"initial cue code": "IgXWgBcYjvrgJVizK2j9sd3WtbJOvojljfCao1sGVMo="
+								"initial go code":  "u6STNjDusWDngOuAePgxvqk/doFlHGMQbao2uQ0YOfo="
 							}
 							multi_step: {
-								hash:       "9EPU39KEDCOH1BV4ARR1NA06MR8VKU12BE24VQLU9AJ41FVIIB90===="
-								scriptHash: "84O49TSNS9VKHQ4CI1J9K3G9O3CBI56EJEF8E8FEGVOBUB8GN5LG===="
+								hash:       "MI6GSKUFSR27NGFOJH9SM9NSQGBKBD4QC4422AOB524AMJSBA5KG===="
+								scriptHash: "BKU4SPGKMEPT9J4PJQREFOP2KJ7K8F2JIBPE986KTG685CH7NT6G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"

@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"basic.proto":            "3PT7Rkl8+Y8VYxljE9vvG1yv0ioAhrABfJMvcs6Uqe4="
-								"basic.cue":              "PqcA/pqe506MK2WlDa57xiSgiXhx2VfWJA8DXNTYrIc="
-								"go convert basic.proto": "oj0YVltD7bXbBUMi7gjVEOi8eolGECrODlLDGQdGlas="
+								"basic.proto":            "uk4z5ssM7zIZ78wsd9xt+RiwlsQLHClboTXJ9iDbY0k="
+								"basic.cue":              "csJTy9MWV28MwtKvTpHgKO+HTJFJ0Q46mf7i9Y8iRJ8="
+								"go convert basic.proto": "mQaz5Omff91gDJ14eCPMaBwmH5uzm/FW0zyEZGHnHy8="
 							}
 							multi_step: {
-								hash:       "E1CPCK8RVGTQVGDSOU1JUIJA8O8QQLDSB1K9529A9T63VGTMPN5G===="
-								scriptHash: "019B40ENSRLK5MDNNFJEEMCBC9BI7VKUOIVJ891LUA1H29L9IHV0===="
+								hash:       "0EBQKO2EPF4UMJHDTP2LU45F494A4RD0LHOCO5A7MNCFBN748AN0===="
+								scriptHash: "R32RG86P495TIEKINUV9AOQ07LE0EQ18N0OCR029RT6FSF2AE420===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue import basic.proto"
