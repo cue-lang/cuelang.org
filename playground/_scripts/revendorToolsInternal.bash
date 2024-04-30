@@ -8,6 +8,7 @@ set -eux
 # is used from the cuelang.org repo).
 command cd "$( command cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/.."
 
+go mod tidy
 go mod download
 path="cuelang.org/go"
 version=$(go list -m -f={{.Version}} $path)

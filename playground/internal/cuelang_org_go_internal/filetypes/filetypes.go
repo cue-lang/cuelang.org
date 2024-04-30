@@ -95,8 +95,7 @@ func FromFile(b *build.File, mode Mode) (*FileInfo, error) {
 		}, nil
 	}
 
-	i := cuegenInstance.Value()
-	i, errs := update(nil, i, i, "modes", mode.String())
+	i, errs := update(nil, cuegenValue, cuegenValue, "modes", mode.String())
 	v := i.LookupDef("FileInfo")
 	v = v.Fill(b)
 
@@ -177,6 +176,17 @@ func ParseArgs(args []string) (files []*build.File, err error) {
 					hasFiles = true
 					continue
 				}
+
+				// The CUE command works just fine without this (how?),
+				// but the API tests require this for some reason.
+				//
+				// This is almost certainly wrong, and in the wrong place.
+				//
+				// TODO(aram): why do we need this here?
+				if len(a) == 1 && strings.HasSuffix(a[0], ".wasm") {
+					continue
+				}
+
 				inst, v, err = parseType("", Input)
 				if err != nil {
 					return nil, err
@@ -282,7 +292,7 @@ func toFile(i, v cue.Value, filename string) (*build.File, error) {
 }
 
 func parseType(s string, mode Mode) (inst, val cue.Value, err error) {
-	i := cuegenInstance.Value()
+	i := cuegenValue
 	i = i.Unify(i.Lookup("modes", mode.String()))
 	v := i.LookupDef("File")
 

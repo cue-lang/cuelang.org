@@ -13,16 +13,14 @@
 // limitations under the License.
 
 //go:build ignore
-// +build ignore
 
 package main
 
 import (
-	"io/ioutil"
 	"log"
 	"os"
 
-	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/encoding/gocode"
 )
@@ -33,21 +31,22 @@ func main() {
 		log.Fatal(err)
 	}
 
-	inst := cue.Build(load.Instances([]string{"types.cue"}, &load.Config{
+	ctx := cuecontext.New()
+	insts, err := ctx.BuildInstances(load.Instances([]string{"types.cue"}, &load.Config{
 		Dir:        cwd,
 		ModuleRoot: cwd,
 		Module:     "cuelang.org/go/cue/build",
-	}))[0]
-	if inst.Err != nil {
-		log.Fatal(inst.Err)
-	}
-
-	b, err := gocode.Generate(".", inst, &gocode.Config{})
+	}))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if err := ioutil.WriteFile("types.go", b, 0644); err != nil {
+	b, err := gocode.Generate(".", insts[0], &gocode.Config{})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := os.WriteFile("types.go", b, 0644); err != nil {
 		log.Fatal(err)
 	}
 }
