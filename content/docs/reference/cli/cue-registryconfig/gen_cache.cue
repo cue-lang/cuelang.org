@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "IO3DDQGQM39JQHC5MAK162FDU25K447JB6371131904DLJRGIO1G===="
-									scriptHash: "KL5IR3DM8DB7V9D6MOVT7USV130UK9E38S1KODOEP2AJ9G4THD9G===="
+									hash:       "IP34G34FIKSM5TFNQTNN4QN5HC0H06N9CQ09862PH1MA7NIPVGOG===="
+									scriptHash: "LK0L4EIBL3DILIMQ6KOL4N6P4VE6M2NRIVG839GN8PQCH0UBE8R0===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help registryconfig"
