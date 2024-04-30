@@ -299,7 +299,7 @@ package site
 					}
 					multi_step: {
 						hash:       "LHTFP7RACKEULVR1GQ01EF74VUA1V0PTOB0ORGOG73AE51OHQBA0===="
-						scriptHash: "VR7P6R0HRDGSDRSFDORLE338EV4L3B5H95DFVL7FAFSFPQ6E7NBG===="
+						scriptHash: "SBOJDG8O6BTTGSGVAS9DUAHSKQ2UGRR7TT4QG0M159I4BT0HVGSG===="
 						steps: [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
