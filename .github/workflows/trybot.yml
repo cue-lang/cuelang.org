@@ -231,6 +231,9 @@ jobs:
         run: ./_scripts/staticcheck.bash
       - name: Check module is tidy
         run: go mod tidy
+      - name: Check module is tidy
+        run: go mod tidy
+        working-directory: playground
       - name: write $HOME/.config/cue/logins.json
         run: |-
           mkdir -p $HOME/.config/cue

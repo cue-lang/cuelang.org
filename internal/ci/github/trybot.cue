@@ -149,6 +149,12 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "Check module is tidy"
 			},
 
+			// go mod tidy playground
+			_modTidy & {
+				name:                "Check module is tidy"
+				"working-directory": "playground"
+			},
+
 			json.#step & {
 				name: "write $HOME/.config/cue/logins.json"
 				run: """
