@@ -16,7 +16,9 @@ versions: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: v:       "v0.9.0-alpha.3"
 		prerelease: v:   "v0.9.0-alpha.3"
-		tip: v:          "v0.9.0-alpha.3"
+		tip: v:          prerelease.v
+		default: v:      prerelease.v
+		playground: v:   prerelease.v
 	}
 	let versionSet = {for _, v in cue {"\(v.v)": true}}
 	_cueVersionList: list.SortStrings([
@@ -100,6 +102,14 @@ template: ci.#writefs & {
 		"content/docs/reference/cli/cue-*/*.md",
 	]
 	Create: {
+		"_scripts/defaultCUEVersion.bash": {
+			Contents: #"""
+			# \#(donotedit)
+
+			export \#(versions.cue.default.var)="\#(versions.cue.default.v)"
+
+			"""#
+		}
 		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": {
 			Contents: #"""
 			# syntax=docker/dockerfile:1
