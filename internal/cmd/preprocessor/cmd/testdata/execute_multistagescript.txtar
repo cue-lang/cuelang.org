@@ -38,7 +38,7 @@ import "strings"
 // TODO: we should inject the following as a policy
 versions: cue: [x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 
-versions: cue: someversion: v: "v0.7.0"
+versions: cue: default: v: "v0.9.0-alpha.3"
 -- content/dir/page.cue --
 package site
 
@@ -139,7 +139,7 @@ Hello!
 >{{{end}}}
 >
 >{{{with script "en" "subst env var"}}}
->echo $CUELANG_CUE_SOMEVERSION
+>echo $CUELANG_CUE_DEFAULT
 >{{{end}}}
 >
 >{{{with script "en" "passed in env var"}}}
@@ -209,7 +209,7 @@ Hello!
 >{{{end}}}
 >
 >{{{with script "en" "subst env var"}}}
->echo $CUELANG_CUE_SOMEVERSION
+>echo $CUELANG_CUE_DEFAULT
 >{{{end}}}
 >
 >{{{with script "en" "passed in env var"}}}
@@ -275,9 +275,9 @@ $ nonexistent command
 ```
 {{< /step >}}
 
-```text { title="TERMINAL" codeToCopy="ZWNobyB2MC43LjA=" }
-$ echo v0.7.0
-v0.7.0
+```text { title="TERMINAL" codeToCopy="ZWNobyB2MC45LjAtYWxwaGEuMw==" }
+$ echo v0.9.0-alpha.3
+v0.9.0-alpha.3
 ```
 
 ```text { title="TERMINAL" codeToCopy="ZWNobyAkQ1VFX1RFU1RfTE9HSU5T" }
@@ -292,14 +292,14 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "OuAE2oionbC7wTqnLKQIDfJtYV/w5+rv2cHCctuvAYo="
-						"upload-some-cue":  "b+UlJtdKOufUPFGzlb6donEDOiKtyZYW6CSDbSdAs/4="
-						"upload-some-json": "SI9hPZ7IKu+iGrk3Nb2r64H84clhLwTiX140Z5dhJ2U="
-						"in-subdir":        "u31xp4TSGX8BLoDP2v9qnu1SpnCVjhxplRCfqPMV0cc="
+						"hidden file":      "q4RWPEC74PjgeiKfVJTABRHo31pkfalf8UI+K6oD5PU="
+						"upload-some-cue":  "QSre6w9LwVouXs+Ql2bpgVGL4aujqKS+VTEBMKSysI0="
+						"upload-some-json": "AgMEIw1Y0LSwx9hUfPWdOwnxfK4aedNMDT7nrBwuZDU="
+						"in-subdir":        "6DfmOrHD7JKtY8B+uDmMP6t54jysfIDf5O2+X+n/w+s="
 					}
 					multi_step: {
-						hash:       "LHTFP7RACKEULVR1GQ01EF74VUA1V0PTOB0ORGOG73AE51OHQBA0===="
-						scriptHash: "VR7P6R0HRDGSDRSFDORLE338EV4L3B5H95DFVL7FAFSFPQ6E7NBG===="
+						hash:       "6G8P0UKDP0O2K61MRUUH090EG457QG9AMQPGDLL48O0E7IH1NRL0===="
+						scriptHash: "RPH8E5HCL6V7IDMATSDQBJSDBTIIQM0GOT1P1QILJSPO6FG82K5G===="
 						steps: [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
@@ -374,10 +374,10 @@ package site
 									"""
 						}, {
 							doc:      ""
-							cmd:      "echo v0.7.0"
+							cmd:      "echo v0.9.0-alpha.3"
 							exitCode: 0
 							output: """
-									v0.7.0
+									v0.9.0-alpha.3
 
 									"""
 						}, {
