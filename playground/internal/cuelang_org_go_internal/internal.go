@@ -22,11 +22,10 @@ package internal // import "github.com/cue-lang/cuelang.org/playground/internal/
 import (
 	"bufio"
 	"fmt"
-	"os"
 	"path/filepath"
 	"strings"
 
-	"github.com/cockroachdb/apd/v2"
+	"github.com/cockroachdb/apd/v3"
 
 	"cuelang.org/go/cue/ast"
 	"cuelang.org/go/cue/ast/astutil"
@@ -39,15 +38,60 @@ import (
 // Right now Decimal is aliased to apd.Decimal. This may change in the future.
 type Decimal = apd.Decimal
 
+// Context wraps apd.Context for CUE's custom logic.
+//
+// Note that it avoids pointers to make it easier to make copies.
+type Context struct {
+	apd.Context
+}
+
+// WithPrecision mirrors upstream, but returning our type without a pointer.
+func (c Context) WithPrecision(p uint32) Context {
+	c.Context = *c.Context.WithPrecision(p)
+	return c
+}
+
+// apd/v2 used to call Reduce on the result of Quo and Rem,
+// so that the operations always trimmed all but one trailing zeros.
+// apd/v3 does not do that at all.
+// For now, get the old behavior back by calling Reduce ourselves.
+// Note that v3's Reduce also removes all trailing zeros,
+// whereas v2's Reduce would leave ".0" behind.
+// Get that detail back as well, to consistently show floats with decimal points.
+//
+// TODO: Rather than reducing all trailing zeros,
+// we should keep a number of zeros that makes sense given the operation.
+
+func reduceKeepingFloats(d *apd.Decimal) {
+	oldExponent := d.Exponent
+	d.Reduce(d)
+	// If the decimal had decimal places, like "3.000" and "5.000E+5",
+	// Reduce gives us "3" and "5E+5", but we want "3.0" and "5.0E+5".
+	if oldExponent < 0 && d.Exponent >= 0 {
+		d.Exponent--
+		// TODO: we can likely make the NewBigInt(10) a static global to reduce allocs
+		d.Coeff.Mul(&d.Coeff, apd.NewBigInt(10))
+	}
+}
+
+func (c Context) Quo(d, x, y *apd.Decimal) (apd.Condition, error) {
+	res, err := c.Context.Quo(d, x, y)
+	reduceKeepingFloats(d)
+	return res, err
+}
+
+func (c Context) Sqrt(d, x *apd.Decimal) (apd.Condition, error) {
+	res, err := c.Context.Sqrt(d, x)
+	reduceKeepingFloats(d)
+	return res, err
+}
+
 // ErrIncomplete can be used by builtins to signal the evaluation was
 // incomplete.
 var ErrIncomplete = errors.New("incomplete value")
 
-// MakeInstance makes a new instance from a value.
-var MakeInstance func(value interface{}) (instance interface{})
-
-// BaseContext is used as CUEs default context for arbitrary-precision decimals
-var BaseContext = apd.BaseContext.WithPrecision(24)
+// BaseContext is used as CUE's default context for arbitrary-precision decimals.
+var BaseContext = Context{*apd.BaseContext.WithPrecision(34)}
 
 // APIVersionSupported is the back version until which deprecated features
 // are still supported.
@@ -62,6 +106,16 @@ const (
 func Version(minor, patch int) int {
 	return -1000 + 100*minor + patch
 }
+
+type EvaluatorVersion int
+
+const (
+	DefaultVersion EvaluatorVersion = iota
+
+	// The DevVersion is used for new implementations of the evaluator that
+	// do not cover all features of the CUE language yet.
+	DevVersion
+)
 
 // ListEllipsis reports the list type and remaining elements of a list. If we
 // ever relax the usage of ellipsis, this function will likely change. Using
@@ -216,9 +270,8 @@ func NewAttr(name, str string) *ast.Attribute {
 	buf.WriteByte('@')
 	buf.WriteString(name)
 	buf.WriteByte('(')
-	fmt.Fprintf(buf, str)
+	buf.WriteString(str)
 	buf.WriteByte(')')
-
 	return &ast.Attribute{Text: buf.String()}
 }
 
@@ -262,46 +315,23 @@ func ToExpr(n ast.Node) ast.Expr {
 //
 // Adjusts the spacing of x when needed.
 func ToFile(n ast.Node) *ast.File {
-	switch x := n.(type) {
-	case nil:
+	if n == nil {
 		return nil
+	}
+	switch n := n.(type) {
 	case *ast.StructLit:
-		return &ast.File{Decls: x.Elts}
+		f := &ast.File{Decls: n.Elts}
+		// Ensure that the comments attached to the struct literal are not lost.
+		ast.SetComments(f, ast.Comments(n))
+		return f
 	case ast.Expr:
-		ast.SetRelPos(x, token.NoSpace)
-		return &ast.File{Decls: []ast.Decl{&ast.EmbedDecl{Expr: x}}}
+		ast.SetRelPos(n, token.NoSpace)
+		return &ast.File{Decls: []ast.Decl{&ast.EmbedDecl{Expr: n}}}
 	case *ast.File:
-		return x
+		return n
 	default:
-		panic(fmt.Sprintf("Unsupported node type %T", x))
+		panic(fmt.Sprintf("Unsupported node type %T", n))
 	}
-}
-
-// ToStruct gets the non-preamble declarations of a file and puts them in a
-// struct.
-func ToStruct(f *ast.File) *ast.StructLit {
-	start := 0
-	for i, d := range f.Decls {
-		switch d.(type) {
-		case *ast.Package, *ast.ImportDecl:
-			start = i + 1
-		case *ast.Attribute, *ast.CommentGroup:
-		default:
-			break
-		}
-	}
-	s := ast.NewStruct()
-	s.Elts = f.Decls[start:]
-	return s
-}
-
-func IsBulkField(d ast.Decl) bool {
-	if f, ok := d.(*ast.Field); ok {
-		if _, ok := f.Label.(*ast.ListLit); ok {
-			return true
-		}
-	}
-	return false
 }
 
 func IsDef(s string) bool {
@@ -415,17 +445,6 @@ func IsEllipsis(x ast.Decl) bool {
 
 // GenPath reports the directory in which to store generated files.
 func GenPath(root string) string {
-	info, err := os.Stat(filepath.Join(root, "cue.mod"))
-	if os.IsNotExist(err) || !info.IsDir() {
-		// Try legacy pkgDir mode
-		pkgDir := filepath.Join(root, "pkg")
-		if err == nil && !info.IsDir() {
-			return pkgDir
-		}
-		if info, err := os.Stat(pkgDir); err == nil && info.IsDir() {
-			return pkgDir
-		}
-	}
 	return filepath.Join(root, "cue.mod", "gen")
 }
 

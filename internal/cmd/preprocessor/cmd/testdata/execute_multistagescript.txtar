@@ -38,7 +38,7 @@ import "strings"
 // TODO: we should inject the following as a policy
 versions: cue: [x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 
-versions: cue: someversion: v: "v0.7.0"
+versions: cue: default: v: "v0.9.0-alpha.3"
 -- content/dir/page.cue --
 package site
 
@@ -275,9 +275,9 @@ $ nonexistent command
 ```
 {{< /step >}}
 
-```text { title="TERMINAL" codeToCopy="ZWNobyB2MC43LjA=" }
-$ echo v0.7.0
-v0.7.0
+```text { title="TERMINAL" codeToCopy="ZWNobyAkQ1VFTEFOR19DVUVfU09NRVZFUlNJT04=" }
+$ echo $CUELANG_CUE_SOMEVERSION
+
 ```
 
 ```text { title="TERMINAL" codeToCopy="ZWNobyAkQ1VFX1RFU1RfTE9HSU5T" }
@@ -292,14 +292,14 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "OuAE2oionbC7wTqnLKQIDfJtYV/w5+rv2cHCctuvAYo="
-						"upload-some-cue":  "b+UlJtdKOufUPFGzlb6donEDOiKtyZYW6CSDbSdAs/4="
-						"upload-some-json": "SI9hPZ7IKu+iGrk3Nb2r64H84clhLwTiX140Z5dhJ2U="
-						"in-subdir":        "u31xp4TSGX8BLoDP2v9qnu1SpnCVjhxplRCfqPMV0cc="
+						"hidden file":      "q4RWPEC74PjgeiKfVJTABRHo31pkfalf8UI+K6oD5PU="
+						"upload-some-cue":  "QSre6w9LwVouXs+Ql2bpgVGL4aujqKS+VTEBMKSysI0="
+						"upload-some-json": "AgMEIw1Y0LSwx9hUfPWdOwnxfK4aedNMDT7nrBwuZDU="
+						"in-subdir":        "6DfmOrHD7JKtY8B+uDmMP6t54jysfIDf5O2+X+n/w+s="
 					}
 					multi_step: {
-						hash:       "LHTFP7RACKEULVR1GQ01EF74VUA1V0PTOB0ORGOG73AE51OHQBA0===="
-						scriptHash: "VR7P6R0HRDGSDRSFDORLE338EV4L3B5H95DFVL7FAFSFPQ6E7NBG===="
+						hash:       "A8SOMV9O1VET2MK4VTGJQ8V3M4T4VVSDIM9G1CISCLM522BGK7P0===="
+						scriptHash: "0RC0L83B98AEFG7CMFHCRLJK944L2P20HCAJ93TTUH9MSVUFNON0===="
 						steps: [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
@@ -374,10 +374,10 @@ package site
 									"""
 						}, {
 							doc:      ""
-							cmd:      "echo v0.7.0"
+							cmd:      "echo $CUELANG_CUE_SOMEVERSION"
 							exitCode: 0
 							output: """
-									v0.7.0
+
 
 									"""
 						}, {
