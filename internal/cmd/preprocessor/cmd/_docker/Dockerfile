@@ -39,6 +39,7 @@ ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 ENV CUELANG_CUE_LATEST="v0.9.0-alpha.3"
 ENV CUELANG_CUE_PRERELEASE="v0.9.0-alpha.3"
 ENV CUELANG_CUE_TIP="v0.9.0-alpha.3"
+ENV CUELANG_CUE_DEFAULT="v0.9.0-alpha.3"
 
 WORKDIR /
 
