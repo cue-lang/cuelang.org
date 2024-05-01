@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66cd7501_6fc98d69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T13:56:26Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "cf340c93278ce4150926fd42c6a165c5470c1f76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "729ae3ca_0b8c68a0",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T13:56:26Z",
+      "side": 1,
+      "message": "@paul@myitcv.io What is this block for?\n\nMy assumption is that it makes sure that the API code doesn\u0027t pick up the envvar during the subsequent `go run .`, and doesn\u0027t alter its behaviour in an non-code-driven manner - ensuring that the \"module-aware mode\" **must** therefore be baked into the code sample that\u0027s visible on the page.",
+      "revId": "cf340c93278ce4150926fd42c6a165c5470c1f76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -191,6 +191,24 @@
       "parentUuid": "782db8f1_9f0d8a25",
       "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec2acfac_450c557e",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T13:56:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23ddde1d_2e3311d2",
+      "revId": "b6a39ddd6cce7645294bbfcfbc4c308f6a6b467d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
