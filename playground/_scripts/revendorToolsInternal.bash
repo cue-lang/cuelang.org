@@ -9,6 +9,7 @@ cd "$rootDir/playground"
 
 playVersion="$(../_scripts/playgroundCUEVersion.bash)"
 go mod edit -require cuelang.org/go@$playVersion
+go mod tidy
 go mod download
 path="cuelang.org/go"
 version=$(go list -m -f={{.Version}} $path)

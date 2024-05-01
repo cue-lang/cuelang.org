@@ -58,6 +58,7 @@ cue: {
 	"mod get":      _
 	"mod init":     _
 	"mod publish":  _
+	"mod resolve":  _
 	"mod tidy":     _
 	registryconfig: _
 	trim:           _

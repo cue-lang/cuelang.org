@@ -28,7 +28,7 @@ Note that this guide depends on a pre-release version of CUE:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.9.0-alpha.3
+cue version v0.9.0-alpha.4
 ...
 ```
 
@@ -127,7 +127,7 @@ We can see that the dependencies have now been added to the `cue.mod/module.cue`
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.9.0-alpha.3"
+	version: "v0.9.0"
 }
 deps: {
 	"github.com/cue-labs/examples/frostyconfig@v0": {
