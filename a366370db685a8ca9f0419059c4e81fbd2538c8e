@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f8aab39_94986119",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2024-05-01T17:18:39Z",
+      "side": 1,
+      "message": "+2 assuming green CI on behalf of myitcv; fixing a broken build.",
+      "revId": "a366370db685a8ca9f0419059c4e81fbd2538c8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
