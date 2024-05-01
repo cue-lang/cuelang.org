@@ -45,7 +45,7 @@ Here is how they differ:
 ## Modules
 
 A module contains a configuration layed out in a directory hierarchy.
-It contains the everything that is needed to deterministically
+It contains everything that is needed to deterministically
 determine the outcome of a CUE configuration.
 The root of this directory is marked by containing a `cue.mod`
 directory.
