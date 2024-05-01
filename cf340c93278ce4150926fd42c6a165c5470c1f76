@@ -35,6 +35,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1dd0ca3_3f725c74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T15:20:22Z",
+      "side": 1,
+      "message": "PTAL. I\u0027m unsure who should +2 this (though I can see Gerrit is giving me the option).",
+      "revId": "cf340c93278ce4150926fd42c6a165c5470c1f76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "729ae3ca_0b8c68a0",
@@ -66,6 +83,24 @@
       "side": 1,
       "message": "It ensures that the Go code does not rely on the value of `CUE_EXPERIMENT`.",
       "parentUuid": "729ae3ca_0b8c68a0",
+      "revId": "cf340c93278ce4150926fd42c6a165c5470c1f76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be8e0e84_e8a8697d",
+        "filename": "content/docs/tutorial/using-modules-with-go-api/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T15:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b96947f_d4b68486",
       "revId": "cf340c93278ce4150926fd42c6a165c5470c1f76",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
