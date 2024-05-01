@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4399bf02_d8fc0458",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T07:22:50Z",
+      "side": 1,
+      "message": "Discuss why we need a new Go module: because that allows us to isolate the Go version used by the playground code. That the version is controlled by the `playground` version in site.cue\n\nDiscuss the changes needed in CI to also run certain steps in the new Go module\n\nThat the revendor script ensures that we require the right version",
+      "revId": "0b044140b6cd04e2410abd0782c69b6cb813217c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1989fa58_b675fc59",
+        "filename": "playground/_scripts/revendorToolsInternal.bash",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T07:22:50Z",
+      "side": 1,
+      "message": "Add a mod tidy script that ensures the version corresponds with the default version",
+      "revId": "0b044140b6cd04e2410abd0782c69b6cb813217c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
