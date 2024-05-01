@@ -1,7 +1,7 @@
 ---
 title: Disjunctions
 weight: 20
-draft: true
+draft: false
 ---
 
 ### Enums and Sum types

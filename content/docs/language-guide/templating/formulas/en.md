@@ -1,7 +1,7 @@
 ---
 title: Formuals
 weight: 20
-draft: true
+draft: false
 ---
 
 Formulas compute values from other values.
