@@ -5,6 +5,11 @@ weight: 30
 toc_hide: false
 ---
 
+{{< caution >}}
+The content on this page has largely been superseded by ["How CUE works with
+Go"]({{< relref "docs/concept/how-cue-works-with-go" >}}).
+{{< /caution >}}
+
 CUE is not specific to Go, or to cloud applications, but like many of
 new cloud technologies, CUE is written in Go. It has a rich set of APIs
 available to Go developers and interacts with CUE in various ways.
