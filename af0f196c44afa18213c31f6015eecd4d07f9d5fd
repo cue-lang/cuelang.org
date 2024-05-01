@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f858ceba_7c27e37f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab5d6aaa_74666319",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "718acdc2_75c569e0",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-05-01T12:44:01Z",
       "side": 1,
       "message": "`As part of a previous change we also generated a script that included ...`",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7344ad88_eef391a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Fixed - because the script is not actually generated any more, this comment did not survive a refactor in terms of its (the comment\u0027s) accuracy.",
+      "parentUuid": "718acdc2_75c569e0",
       "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61d7270e_eb5b9aaf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "493a49ee_21500a48",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "10445bee_15840f2c",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-05-01T12:44:01Z",
       "side": 1,
       "message": "Some missing text at the start of this sentence.",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07970e75_1e271484",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Fixed: sentence should have been deleted (got missed halfway through a rebase and reword)",
+      "parentUuid": "10445bee_15840f2c",
       "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90f01e37_14cc5dae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "724cdfe2_0de36093",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b169876_b2cb5dba",
@@ -99,6 +189,24 @@
       "writtenOn": "2024-05-01T12:44:01Z",
       "side": 1,
       "message": "`versions.cue.playground.v` ?",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a37b4f7_14f1531f",
+        "filename": "site.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b169876_b2cb5dba",
       "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
