@@ -584,7 +584,7 @@ Then we run trim to further reduce our configuration:
 ```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLi8uLi4KZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1132 total
+ 1131 total
 ```
 
 This is after removing the rewritten and now redundant deployment definition.
@@ -629,7 +629,7 @@ deployment: breaddispatcher: spec: template: {
 
 ```text { title="TERMINAL" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  980 total
+  979 total
 ```
 
 Another 150 lines lost!
@@ -698,7 +698,7 @@ Two lines with annotations added, improving consistency.
 ```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./frontend/... -s
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  938 total
+  937 total
 ```
 
 Another 40 odd lines removed.
@@ -816,7 +816,7 @@ $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 ...
 $ cp snapshot2 snapshot
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  785 total
+  774 total
 ```
 
 The diff shows that we added the `_hasDisks` option, but otherwise reveals no

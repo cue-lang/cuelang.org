@@ -242,6 +242,7 @@ module.
 
 Publish the first version of this module:
 {{{with script "en" "frostyconfig-v0.0.1-publish"}}}
+#ellipsis 0
 cue mod publish v0.0.1
 {{{end}}}
 
@@ -401,6 +402,7 @@ git commit -q -m 'Initial commit'
 
 Publish the `frostytemplate` module:
 {{{with script "en" "frostytemplate-v0.0.1-publish"}}}
+#ellipsis 0
 cue mod publish v0.0.1
 {{{end}}}
 {{{end}}}
@@ -524,6 +526,7 @@ git commit -q -m 'Second commit'
 
 Upload a new version of the `frostyconfig` schema:
 {{{with script "en" "upload-schema2"}}}
+#ellipsis 0
 cue mod publish v0.1.0
 {{{end}}}
 
