@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "y4so7OptFtAHuKFdZWcrsXq5j9Fi6CAQsmmsO1Fs2oY="
-								"config.cue":    "VTZiw7xLHO2cyfqB176qnp9+rucUJfbcmJFUZUPtkb8="
+								"schema-v0.0.1": "DgNAVpBwXRAbustGXACIJR4FxWo7ABC31+2nGnr+QUk="
+								"config.cue":    "ihZrPxmcUj5nJ1jCbPpWzkxLyIf4jniBUuIkEOC+fo4="
 							}
 							multi_step: {
-								hash:       "ONOA8CPFNMLCULLKNK4K10GM00DM8TOLJ5D8SHN37K9RG1TUAKQG===="
-								scriptHash: "M8K5HBPDCTPR5R7EM0A64HL0LTLKQPP1B01P46TEBAUQFMVQ2J90===="
+								hash:       "U178B5Q4KVJDNO0SNIQPS5KDG2EUVIDL3L7O458D1S646V91QH0G===="
+								scriptHash: "EL3GNRMV7IQ6PKGPHNSFEBKTJ8BMR0DKQEFKNE7S9QU3FA5VJNT0===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
@@ -42,7 +42,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.9.0-alpha.3
+											cue version v0.9.0-alpha.4
 											...
 
 											"""
@@ -87,11 +87,11 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      ""
+									doc:      "#ellipsis 0"
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											published github.com/cueckoo/frostyconfig@v0.0.1
+											...
 
 											"""
 								}, {
@@ -126,7 +126,7 @@ package site
 									output: """
 											module: "github.com/cueckoo/frostyapp@v0"
 											language: {
-											\tversion: "v0.9.0-alpha.3"
+											\tversion: "v0.9.0"
 											}
 											source: {
 											\tkind: "git"
