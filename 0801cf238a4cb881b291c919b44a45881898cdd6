@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed04f913_233db0c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T07:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3863fb_7451d238",
+      "revId": "0801cf238a4cb881b291c919b44a45881898cdd6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "747684fb_6c7078cf",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc3cc0d2_f0b6b9e2",
+        "filename": "_scripts/defaultCUEVersion.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T07:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "747684fb_6c7078cf",
+      "revId": "0801cf238a4cb881b291c919b44a45881898cdd6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8b97262_7077c6d2",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-05-01T05:01:02Z",
       "side": 1,
       "message": "Also add playground as a version ahead of the next CL.",
+      "revId": "0801cf238a4cb881b291c919b44a45881898cdd6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a832b1ea_29ece430",
+        "filename": "site.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T07:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8b97262_7077c6d2",
       "revId": "0801cf238a4cb881b291c919b44a45881898cdd6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
