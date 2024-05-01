@@ -68,6 +68,24 @@
       "message": "I haven\u0027t properly dug into how the playground builds \u0026 downloads the WASM blob that\u0027s shipped to the browser. I have a nagging /feeling/ that this message is solely related to the message in the playground hamburger menu; currently:\n\n```\nCUE Release: v0.9.0-alpha.3\n```\n\nThus: if this message has changed, but there\u0027s no other sign of the WASM blob\u0027s build process getting modified in this commit, then it feels like we\u0027re possibly desyncing the playground\u0027s operative CUE version from the advertised version.\n\nOr I could be wrong, and this one value really does drive both the WASM and the on-page message :-)",
       "revId": "7adcd13913923a0528358e49eabb28e0a28cb72d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e0fab5c_199d55bd",
+        "filename": "playground/src/config/gen_cuelang_org_go_version.ts",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T07:22:50Z",
+      "side": 1,
+      "message": "This is now fixed and as you\u0027ve seen in the previous CL we name (and can therefore define) the playground version independent of the other versions used in guides etc.",
+      "parentUuid": "cf941029_2f0047de",
+      "revId": "7adcd13913923a0528358e49eabb28e0a28cb72d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
