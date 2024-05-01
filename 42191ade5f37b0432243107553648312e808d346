@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "387154be_44772b6f",
+        "filename": "content/docs/introduction/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T13:02:25Z",
+      "side": 1,
+      "message": "I had to look up the precise definition, and even though it\u0027s now spelled correctly I\u0027m unsure that we\u0027re (a) using the right word and (b) not coming across as a *little* wordy. Pretentious? I mean, I wouldn\u0027t **say** that ...\n\nIf we\u0027re making a change here, I\u0027d propose:\n\n```\nautomation that is difficult (if not impossible) for most other approaches.\n```",
+      "range": {
+        "startLine": 300,
+        "startChar": 19,
+        "endLine": 300,
+        "endChar": 30
+      },
+      "revId": "42191ade5f37b0432243107553648312e808d346",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
