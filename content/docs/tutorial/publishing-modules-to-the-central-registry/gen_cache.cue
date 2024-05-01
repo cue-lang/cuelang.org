@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "y4so7OptFtAHuKFdZWcrsXq5j9Fi6CAQsmmsO1Fs2oY="
-								"config.cue":    "VTZiw7xLHO2cyfqB176qnp9+rucUJfbcmJFUZUPtkb8="
+								"schema-v0.0.1": "/lA4OxGoCg4m6IvwJF8JAD9+JLw26gQ9LKYhOGkXTWA="
+								"config.cue":    "B+YJFAzAJHJ0b/BynmVHZY3uPQ7DXEw6MXu84cAsFuY="
 							}
 							multi_step: {
-								hash:       "ONOA8CPFNMLCULLKNK4K10GM00DM8TOLJ5D8SHN37K9RG1TUAKQG===="
+								hash:       "67NG3T7644R1HTN55AAN9E0HCB84577ONOQR2PM0G29EM06KDRS0===="
 								scriptHash: "M8K5HBPDCTPR5R7EM0A64HL0LTLKQPP1B01P46TEBAUQFMVQ2J90===="
 								steps: [{
 									doc:      ""
@@ -42,7 +42,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.9.0-alpha.3
+											cue version v0.9.0-alpha.3.0.20240501134849-612f1aed155f
 											...
 
 											"""
@@ -91,7 +91,7 @@ package site
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											published github.com/cueckoo/frostyconfig@v0.0.1
+											published github.com/cueckoo/frostyconfig@v0.0.1 to registry.cue.works/github.com/cueckoo/frostyconfig:v0.0.1@sha256:c2f7ac1f7e15ca817bf72a93f06113ef04d5520768daf69f9cc27be64ae43b88
 
 											"""
 								}, {
@@ -126,7 +126,7 @@ package site
 									output: """
 											module: "github.com/cueckoo/frostyapp@v0"
 											language: {
-											\tversion: "v0.9.0-alpha.3"
+											\tversion: "v0.9.0"
 											}
 											source: {
 											\tkind: "git"

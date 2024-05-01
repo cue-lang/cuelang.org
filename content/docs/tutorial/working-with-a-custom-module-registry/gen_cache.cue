@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "y4so7OptFtAHuKFdZWcrsXq5j9Fi6CAQsmmsO1Fs2oY="
-								"config.cue":               "F4RTlyUc6sWwG8Bk7nV+2lh3hbSMyFdBCxA85QfpTDY="
-								"second-module-to-publish": "CvXjmy66HjFZxO4v4pdbsQrpkUdDzYX4lhnZfmo1gfE="
-								"update-frostyapp":         "iVzJ/8HfnrzU1jIlZKnoJFrrvcC/JkPUtHY4pJoK1Qs="
-								"schema-v0.1.0":            "w+jVYdDJ3Npzggx1RJL+QLDU6vUgrF6z870fPG5v220="
+								"schema-v0.0.1":            "/lA4OxGoCg4m6IvwJF8JAD9+JLw26gQ9LKYhOGkXTWA="
+								"config.cue":               "LsIqJ0VSA0m+MkaEfLmAMdIuAWojcktIKWF5QKVbt0A="
+								"second-module-to-publish": "6lb97bTAvWRPWCh18bS/nErdMbptQYpp6y12nqVg6xQ="
+								"update-frostyapp":         "gBP9sH3vAYdwzOpZwdQPXFgjOzMQK+/nDszO77nJ8/8="
+								"schema-v0.1.0":            "rPdZ7GxQHId5PeRh4ug4ETz39tchp+yP3WngiSc33Qk="
 							}
 							multi_step: {
-								hash:       "OL8526CEK7EUCTNLG2GB7F6R41R2KQV04CONR5P6FAK3BVFJ1P2G===="
+								hash:       "US44LMG18CQ2M9IDKL5QESAR58AROCQHVVHSFHKTQMRHM2DJ9BI0===="
 								scriptHash: "QK65HPIJN1S1O85IQT89P50GUIOSJECAOU71GT802887HSA76UBG===="
 								steps: [{
 									doc:      ""
@@ -40,7 +40,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.9.0-alpha.3
+											cue version v0.9.0-alpha.3.0.20240501134849-612f1aed155f
 											...
 
 											"""
@@ -94,7 +94,7 @@ package site
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											published glacial-tech.example/frostyconfig@v0.0.1
+											published glacial-tech.example/frostyconfig@v0.0.1 to localhost:5000/cuemodules/glacial-tech.example/frostyconfig:v0.0.1@sha256:5f9cfe616889296903152c7a4ff227181d48ac7bd10e76903979abdb9a7cfe26
 
 											"""
 								}, {
@@ -129,7 +129,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.9.0-alpha.3"
+											\tversion: "v0.9.0"
 											}
 											source: {
 											\tkind: "git"
@@ -193,7 +193,7 @@ package site
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											published glacial-tech.example/frostytemplate@v0.0.1
+											published glacial-tech.example/frostytemplate@v0.0.1 to localhost:5000/cuemodules/glacial-tech.example/frostytemplate:v0.0.1@sha256:792887e8604508ea527be801d0111a10c09857f09da6623c269fcde5f61f08c8
 
 											"""
 								}, {
@@ -213,7 +213,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.9.0-alpha.3"
+											\tversion: "v0.9.0"
 											}
 											source: {
 											\tkind: "git"
@@ -267,7 +267,7 @@ package site
 									cmd:      "cue mod publish v0.1.0"
 									exitCode: 0
 									output: """
-											published glacial-tech.example/frostyconfig@v0.1.0
+											published glacial-tech.example/frostyconfig@v0.1.0 to localhost:5000/cuemodules/glacial-tech.example/frostyconfig:v0.1.0@sha256:fe6c83fa843658c5c45629422f9b21e3e2aa307f66122aca45a987770a0310bc
 
 											"""
 								}, {
