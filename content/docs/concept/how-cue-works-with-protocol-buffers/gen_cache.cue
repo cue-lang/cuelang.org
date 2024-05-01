@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"basic.proto":            "3PT7Rkl8+Y8VYxljE9vvG1yv0ioAhrABfJMvcs6Uqe4="
-								"basic.cue":              "PqcA/pqe506MK2WlDa57xiSgiXhx2VfWJA8DXNTYrIc="
-								"go convert basic.proto": "oj0YVltD7bXbBUMi7gjVEOi8eolGECrODlLDGQdGlas="
+								"basic.proto":            "OxOVpRsGzzl1zpveRsAHe/D2ly6n/C54mKn94WXrSL8="
+								"basic.cue":              "R75Pm/egKRgJoyEQy+TmnjRTQgx//C1yc2WhvFlqoUU="
+								"go convert basic.proto": "kQSMBFxph1pJ1zhW8UcC95JekjQcXoDipzAtj1k1aN8="
 							}
 							multi_step: {
-								hash:       "E1CPCK8RVGTQVGDSOU1JUIJA8O8QQLDSB1K9529A9T63VGTMPN5G===="
+								hash:       "HSGQ8B3OMTKAR2AI9E9AOCCETICTT3ERI2SEBTSK3K81H5173KB0===="
 								scriptHash: "019B40ENSRLK5MDNNFJEEMCBC9BI7VKUOIVJ891LUA1H29L9IHV0===="
 								steps: [{
 									doc:      ""
