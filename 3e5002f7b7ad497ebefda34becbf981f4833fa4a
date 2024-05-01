@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "394024f6_5b8c6e7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T16:40:12Z",
+      "side": 1,
+      "message": "`cue`",
+      "range": {
+        "startLine": 9,
+        "startChar": 38,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "165b4452_d4661f3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T16:40:12Z",
+      "side": 1,
+      "message": "`driven`",
+      "range": {
+        "startLine": 17,
+        "startChar": 46,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "071bd67b_2501c713",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T16:40:12Z",
+      "side": 1,
+      "message": "Reference it once logged, if that\u0027s done first.",
+      "range": {
+        "startLine": 22,
+        "startChar": 36,
+        "endLine": 22,
+        "endChar": 42
+      },
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d184347_6b3832a0",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T16:40:12Z",
+      "side": 1,
+      "message": "nit: even in the context of the commit message, I\u0027m not a fan of this as it feels like it removes the validation information of \"I got this comment right\" that a tutorial-follower very might well need.\n\nCan we use a page-level sanitiser/etc to still emit /something/ representative?",
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
