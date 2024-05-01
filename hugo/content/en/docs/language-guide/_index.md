@@ -2,5 +2,5 @@
 title: Language Guide
 weight: 20
 toc_hide: false
-draft: true
+draft: false
 ---

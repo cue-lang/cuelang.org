@@ -1,7 +1,7 @@
 ---
 title: Maps and Fields
 weight: 60
-draft: true
+draft: false
 ---
 
 A map associates a value with a given set of keys. Each key-value pair is called

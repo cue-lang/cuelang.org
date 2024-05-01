@@ -1,7 +1,7 @@
 ---
 title: Bytes values
 weight: 50
-draft: true
+draft: false
 ---
 
 Bytes are similar to strings, but can hold arbitrary bytes instead of just valid

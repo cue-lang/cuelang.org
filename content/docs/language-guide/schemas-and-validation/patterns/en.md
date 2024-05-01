@@ -1,7 +1,7 @@
 ---
 title: Patterns
 weight: 60
-draft: true
+draft: false
 ---
 
 
