@@ -86,6 +86,24 @@
       "parentUuid": "cf941029_2f0047de",
       "revId": "7adcd13913923a0528358e49eabb28e0a28cb72d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bb0951d_181fb839",
+        "filename": "playground/src/config/gen_cuelang_org_go_version.ts",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e0fab5c_199d55bd",
+      "revId": "7adcd13913923a0528358e49eabb28e0a28cb72d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3d6860e_1ea672ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14858845_dadc06b8",
+      "range": {
+        "startLine": 14,
+        "startChar": 63,
+        "endLine": 14,
+        "endChar": 67
+      },
+      "revId": "4753cdddf658ffbb80b469267c7dd3c0b77412cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59965c04_63275b66",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-01T12:49:24Z",
       "side": 1,
       "message": "nit: this comment is rendered a tad ambiguous, it not being clear if it means the repo\u0027s, Go\u0027s, or git\u0027s \"latest\".",
+      "range": {
+        "startLine": 144,
+        "startChar": 20,
+        "endLine": 144,
+        "endChar": 26
+      },
+      "revId": "4753cdddf658ffbb80b469267c7dd3c0b77412cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5f74a28_fc6861b6",
+        "filename": "site.cue",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "The generated Dockerfile is actually wrong in this situation: it should depend on `versions.cue.default.v`. Fixed in the earlier CL and the comment adjusted there too.",
+      "parentUuid": "59965c04_63275b66",
       "range": {
         "startLine": 144,
         "startChar": 20,
