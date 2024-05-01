@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14858845_dadc06b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:49:24Z",
+      "side": 1,
+      "message": "`would use`",
+      "range": {
+        "startLine": 14,
+        "startChar": 63,
+        "endLine": 14,
+        "endChar": 67
+      },
+      "revId": "4753cdddf658ffbb80b469267c7dd3c0b77412cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59965c04_63275b66",
+        "filename": "site.cue",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:49:24Z",
+      "side": 1,
+      "message": "nit: this comment is rendered a tad ambiguous, it not being clear if it means the repo\u0027s, Go\u0027s, or git\u0027s \"latest\".",
+      "range": {
+        "startLine": 144,
+        "startChar": 20,
+        "endLine": 144,
+        "endChar": 26
+      },
+      "revId": "4753cdddf658ffbb80b469267c7dd3c0b77412cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
