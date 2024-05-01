@@ -76,10 +76,10 @@ if err1 != nil || err2 != nil || err3 != nil {
 }
 
 // Check if V2 is backwards compatible with V1
-fmt.Println(v2.Value.Subsumes(v1.Value))) // true
+fmt.Println(v2.Value.Subsumes(v1.Value)) // true
 
 // Check if V3 is backwards compatible with V2
-fmt.Println(v3.Value.Subsumes(v2.Value))) // false
+fmt.Println(v3.Value.Subsumes(v2.Value)) // false
 ```
 
 It is as simple as that.
@@ -227,7 +227,7 @@ info: version: "v1beta1"
 The difference gets more extreme as more constraints and logical
 combinators are used.
 
-OpenAPI and CUE both have theirs roles.
+OpenAPI and CUE both have their roles.
 The JSON format of OpenAPI makes it good interchange standard.
 CUE, on the other hand, can serve as an engine to generate and interpret
 OpenAPI constraints.
