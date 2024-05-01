@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c47be1d6_cd872270",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:30:51Z",
+      "side": 1,
+      "message": "nit: I understand the list at the end of this sentence, but only after a couple of read-throughs. An extra verb, comma, or conjunction might make it easier to parse.",
+      "revId": "b807f8d23fb28169019eca9f7717919972b52e8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0d5d14d_dca777a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:30:51Z",
+      "side": 1,
+      "message": "`s/as a the/as the/`",
+      "revId": "b807f8d23fb28169019eca9f7717919972b52e8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
