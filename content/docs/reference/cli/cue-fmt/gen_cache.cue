@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VJLA2BBUR3ICQEN13LSRNEHITR875FSQNL64FSKJ1O1HIT71TUDG===="
+									hash:       "G6EBFJ404ORS71BMO5SGPKDKFFG9DEVMLIO5LRCAFVLGN9GDE0H0===="
 									scriptHash: "6UI6HB62IA675IOOR4I0SRJ3CA5SKT5F9KRKTOO3L8JAI9MPJ410===="
 									steps: [{
 										doc:      ""
@@ -22,6 +22,7 @@ package site
 
 												Flags:
 												      --check   exits with non-zero status if any files are not formatted
+												  -d, --diff    display diffs instead of rewriting files
 
 												Global Flags:
 												  -E, --all-errors   print all available errors

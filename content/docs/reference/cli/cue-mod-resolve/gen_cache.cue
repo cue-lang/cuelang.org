@@ -4,40 +4,37 @@ package site
 		docs: {
 			reference: {
 				cli: {
-					"cue-mod-tidy": {
+					"cue-mod-resolve": {
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "PERO961FPKO4AIPQPVH7HMKAS0ERR7SCHIMKCO4KU208A5K1A88G===="
-									scriptHash: "TVCS3F6LMT3U2OG3ISLNF0PG1CUC2RHRH4BM3R5CB5QNSPOCR98G===="
+									hash:       "9PFB664J0P3PAS701SNJF6P5K6P7DCNNFQUJUI83VOUQDLU8PV40===="
+									scriptHash: "GQ8DVHRF6490Q2KMAGC9PCNU144RCC663AEQL8KDBTJ1DVM1POLG===="
 									steps: [{
 										doc:      ""
-										cmd:      "cue help mod tidy"
+										cmd:      "cue help mod resolve"
 										exitCode: 0
 										output: """
 												WARNING: THIS COMMAND IS EXPERIMENTAL.
 
-												Tidy resolves all module dependencies in the current module and updates
-												the cue.mod/module.cue file to reflect them.
+												This command prints information about how a given
+												module path will resolve to an actual registry in the
+												form of an OCI reference.
 
-												It also removes dependencies that are not needed.
+												If the module version (which must be a canonical semver version)
+												is omitted, it omits the tag from the reference.
 
-												It will attempt to fetch modules that aren't yet present in the
-												dependencies by fetching the latest available version from
-												a registry.
-
-												See "cue help environment" for details on how $CUE_REGISTRY is used to
-												determine the modules registry.
+												It only consults local information - it works lexically
+												with respect to the registry configuration (see "cue help registryconfig")
+												and does not make any network calls to check whether
+												the module exists.
 
 												Note: you must enable the modules experiment with:
 												\texport CUE_EXPERIMENT=modules
 												for this command to work.
 
 												Usage:
-												  cue mod tidy [flags]
-
-												Flags:
-												      --check   check for tidiness only; do not update module.cue file
+												  cue mod resolve <modulepath>[@<version>] ... [flags]
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
