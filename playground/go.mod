@@ -3,7 +3,7 @@ module github.com/cue-lang/cuelang.org/playground
 go 1.22
 
 require (
-	cuelang.org/go v0.9.0-alpha.3
+	cuelang.org/go v0.9.0-alpha.3.0.20240501134849-612f1aed155f
 	github.com/cockroachdb/apd/v3 v3.2.1
 	golang.org/x/text v0.14.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -19,6 +19,7 @@ require (
 	github.com/opencontainers/image-spec v1.1.0 // indirect
 	github.com/protocolbuffers/txtpbfmt v0.0.0-20230328191034-3462fbc510c0 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
+	golang.org/x/mod v0.16.0 // indirect
 	golang.org/x/net v0.22.0 // indirect
 	golang.org/x/oauth2 v0.18.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
