@@ -210,7 +210,6 @@ module.
 
 Publish the first version of this module:
 {{{with script "en" "module-1-v0.0.1-publish"}}}
-#ellipsis 0
 cue mod publish v0.0.1
 {{{end}}}
 

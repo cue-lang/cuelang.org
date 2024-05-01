@@ -229,7 +229,7 @@ module.
 Publish the first version of this module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
-...
+published glacial-tech.example/frostyconfig@v0.0.1 to localhost:5000/cuemodules/glacial-tech.example/frostyconfig:v0.0.1@sha256:781cab40003d8016ba6485c374868dc2cf20c9c74dded119740d8d020995bd6b
 ```
 
 This command uploads the module to the registry and publishes it
@@ -404,7 +404,7 @@ $ git commit -q -m 'Initial commit'
 Publish the `frostytemplate` module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
-...
+published glacial-tech.example/frostytemplate@v0.0.1 to localhost:5000/cuemodules/glacial-tech.example/frostytemplate:v0.0.1@sha256:ca750db99b37f0f951f51d9ab58d6e5d69bab696aacb694197d6f27c1f1763ee
 ```
 {{< /step >}}
 
@@ -546,7 +546,7 @@ $ git commit -q -m 'Second commit'
 Upload a new version of the `frostyconfig` schema:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjEuMA==" }
 $ cue mod publish v0.1.0
-...
+published glacial-tech.example/frostyconfig@v0.1.0 to localhost:5000/cuemodules/glacial-tech.example/frostyconfig:v0.1.0@sha256:9b8cb6dd8f63eff7f5a09a5565e30dde3193bcfb8aae70054dbbac3476dae87b
 ```
 
 We incremented the minor version to signify that a backwardly

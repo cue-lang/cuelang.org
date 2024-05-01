@@ -11,8 +11,8 @@ package site
 								"config.cue":    "ihZrPxmcUj5nJ1jCbPpWzkxLyIf4jniBUuIkEOC+fo4="
 							}
 							multi_step: {
-								hash:       "U178B5Q4KVJDNO0SNIQPS5KDG2EUVIDL3L7O458D1S646V91QH0G===="
-								scriptHash: "EL3GNRMV7IQ6PKGPHNSFEBKTJ8BMR0DKQEFKNE7S9QU3FA5VJNT0===="
+								hash:       "M62RPUGONCAA059DHQKH4UAN2FFOIFI36DPKS7O54PQ8V4PM63L0===="
+								scriptHash: "M8K5HBPDCTPR5R7EM0A64HL0LTLKQPP1B01P46TEBAUQFMVQ2J90===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
@@ -87,11 +87,11 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      "#ellipsis 0"
+									doc:      ""
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											...
+											published github.com/cueckoo/frostyconfig@v0.0.1 to registry.cue.works/github.com/cueckoo/frostyconfig:v0.0.1@sha256:a9e174a2e17e24461ae16db9c5d07a749c24fa827fecc575990ef72060fa42ee
 
 											"""
 								}, {

@@ -14,8 +14,8 @@ package site
 								"schema-v0.1.0":            "/CVnMtGuOmPmpH3lfc55G6vuEWZiR9jvSH0LRY3YWx4="
 							}
 							multi_step: {
-								hash:       "3B7UUAFCGF8NMLMACC9IJ1ENKF4O5DBH76LVJC3S1FJFAJ1RR1Q0===="
-								scriptHash: "0QHOV3FSRNO1VCE0OC3CPV5V01BSSA69PVC2T1QJJKF2FTT9508G===="
+								hash:       "E33BB9L75020NS9PL13V8JJN3G9B4VG46BIALCLNHSSUCSHSO020===="
+								scriptHash: "QK65HPIJN1S1O85IQT89P50GUIOSJECAOU71GT802887HSA76UBG===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
@@ -90,11 +90,11 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      "#ellipsis 0"
+									doc:      ""
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											...
+											published glacial-tech.example/frostyconfig@v0.0.1 to localhost:5000/cuemodules/glacial-tech.example/frostyconfig:v0.0.1@sha256:781cab40003d8016ba6485c374868dc2cf20c9c74dded119740d8d020995bd6b
 
 											"""
 								}, {
@@ -189,11 +189,11 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      "#ellipsis 0"
+									doc:      ""
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											...
+											published glacial-tech.example/frostytemplate@v0.0.1 to localhost:5000/cuemodules/glacial-tech.example/frostytemplate:v0.0.1@sha256:ca750db99b37f0f951f51d9ab58d6e5d69bab696aacb694197d6f27c1f1763ee
 
 											"""
 								}, {
@@ -263,11 +263,11 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      "#ellipsis 0"
+									doc:      ""
 									cmd:      "cue mod publish v0.1.0"
 									exitCode: 0
 									output: """
-											...
+											published glacial-tech.example/frostyconfig@v0.1.0 to localhost:5000/cuemodules/glacial-tech.example/frostyconfig:v0.1.0@sha256:9b8cb6dd8f63eff7f5a09a5565e30dde3193bcfb8aae70054dbbac3476dae87b
 
 											"""
 								}, {
