@@ -16,6 +16,24 @@
       "message": "Comment about how currently the Go module drives the playground version but that that is fixed in a later CL.\n\nAlso includes a code fix for recent internal changes.\n\nrevendor script hack will also be fixed marked by a TODO.\n\nAdd preview of playground, and make comment that that should work.",
       "revId": "ea334fd1d5ed9ebe245d94262b708b26124c76c9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "251767e0_36d1b3fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T07:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "707c6bc9_5d356515",
+      "revId": "ea334fd1d5ed9ebe245d94262b708b26124c76c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
