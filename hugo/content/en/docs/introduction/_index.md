@@ -26,7 +26,7 @@ CUE orders them in a single hierarchy (a lattice, to be precise).
 This is a very powerful concept that allows CUE to do
 many fancy things.
 It also simplifies matters.
-For instance, there is no need for generics and enums, sum types
+For instance, there is no need for generics, and enums, sum types
 and null coalescing are all the same thing.
 
 
