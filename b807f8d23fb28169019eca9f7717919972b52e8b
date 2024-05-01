@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e231f9d0_cb1623d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Rephrased to make things a bit clearer.",
+      "parentUuid": "c47be1d6_cd872270",
+      "revId": "b807f8d23fb28169019eca9f7717919972b52e8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0d5d14d_dca777a2",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-05-01T12:30:51Z",
       "side": 1,
       "message": "`s/as a the/as the/`",
+      "revId": "b807f8d23fb28169019eca9f7717919972b52e8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5a9d45c_1794649c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:12:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0d5d14d_dca777a2",
       "revId": "b807f8d23fb28169019eca9f7717919972b52e8b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
