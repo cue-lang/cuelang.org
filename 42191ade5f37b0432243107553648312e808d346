@@ -22,6 +22,30 @@
       },
       "revId": "42191ade5f37b0432243107553648312e808d346",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b9bf227_f84ade9b",
+        "filename": "content/docs/introduction/_en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T13:05:08Z",
+      "side": 1,
+      "message": "I\u0027d suggest we can revisit this in a later revision. In computer science, this term is in fairly common usage: https://www.umsl.edu/~siegelj/information_theory/classassignments/Lombardo/04_intractableproblems.html. Whether we should be using such a term is not for this CL.",
+      "parentUuid": "387154be_44772b6f",
+      "range": {
+        "startLine": 300,
+        "startChar": 19,
+        "endLine": 300,
+        "endChar": 30
+      },
+      "revId": "42191ade5f37b0432243107553648312e808d346",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
