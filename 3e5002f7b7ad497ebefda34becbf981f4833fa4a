@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3282faa8_214699a8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T16:54:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "394024f6_5b8c6e7b",
+      "range": {
+        "startLine": 9,
+        "startChar": 38,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "165b4452_d4661f3a",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b2a3d19_66be53ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T16:54:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "165b4452_d4661f3a",
+      "range": {
+        "startLine": 17,
+        "startChar": 46,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "071bd67b_2501c713",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-05-01T16:40:12Z",
       "side": 1,
       "message": "Reference it once logged, if that\u0027s done first.",
+      "range": {
+        "startLine": 22,
+        "startChar": 36,
+        "endLine": 22,
+        "endChar": 42
+      },
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "deaf02c3_92e5088b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T16:54:11Z",
+      "side": 1,
+      "message": "Going to get this submitted first, but will reference this CL in the bug.",
+      "parentUuid": "071bd67b_2501c713",
       "range": {
         "startLine": 22,
         "startChar": 36,
@@ -101,6 +173,24 @@
       "side": 1,
       "message": "Right now we need to get the docs out for this version. This is entirely related to the bug, so I\u0027m going to focus on investigating what\u0027s happening there first.",
       "parentUuid": "4d184347_6b3832a0",
+      "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d1d8b74_2b797647",
+        "filename": "content/docs/tutorial/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-01T16:54:11Z",
+      "side": 1,
+      "message": "Per other comments, will log the bug, fix, then we can revert the `#ellipsis` entirely. Because the output should be stable.",
+      "parentUuid": "1cbc77d1_e856ad96",
       "revId": "3e5002f7b7ad497ebefda34becbf981f4833fa4a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
