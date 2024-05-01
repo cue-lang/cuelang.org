@@ -45,7 +45,7 @@ This tutorial is written using the following version of `cmd/cue`:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.9.0-alpha.3
+cue version v0.9.0-alpha.4
 ...
 ```
 
@@ -229,7 +229,7 @@ module.
 Publish the first version of this module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
-published glacial-tech.example/frostyconfig@v0.0.1
+...
 ```
 
 This command uploads the module to the registry and publishes it
@@ -302,7 +302,7 @@ We can see that the dependencies have now been added to the
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.9.0-alpha.3"
+	version: "v0.9.0"
 }
 source: {
 	kind: "git"
@@ -404,7 +404,7 @@ $ git commit -q -m 'Initial commit'
 Publish the `frostytemplate` module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
-published glacial-tech.example/frostytemplate@v0.0.1
+...
 ```
 {{< /step >}}
 
@@ -450,7 +450,7 @@ Here is what the `cue.mod/module.cue` file now looks like:
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.9.0-alpha.3"
+	version: "v0.9.0"
 }
 source: {
 	kind: "git"
@@ -546,7 +546,7 @@ $ git commit -q -m 'Second commit'
 Upload a new version of the `frostyconfig` schema:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjEuMA==" }
 $ cue mod publish v0.1.0
-published glacial-tech.example/frostyconfig@v0.1.0
+...
 ```
 
 We incremented the minor version to signify that a backwardly

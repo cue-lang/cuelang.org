@@ -14,6 +14,7 @@ Usage:
 
 Flags:
       --check   exits with non-zero status if any files are not formatted
+  -d, --diff    display diffs instead of rewriting files
 
 Global Flags:
   -E, --all-errors   print all available errors

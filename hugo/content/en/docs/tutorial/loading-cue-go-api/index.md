@@ -30,7 +30,7 @@ This tutorial is written using the following versions of `go` and `cue`:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24KZ28gdmVyc2lvbg==" }
 $ cue version
-cue version v0.9.0-alpha.3
+cue version v0.9.0-alpha.4
 ...
 $ go version
 go version go1.22.1 linux/amd64
