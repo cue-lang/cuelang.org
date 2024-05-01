@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab5d6aaa_74666319",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:44:01Z",
+      "side": 1,
+      "message": "`defined`",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "718acdc2_75c569e0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:44:01Z",
+      "side": 1,
+      "message": "`As part of a previous change we also generated a script that included ...`",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "493a49ee_21500a48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:44:01Z",
+      "side": 1,
+      "message": "nit: clarify for the casual reader which of the 3 scripts mentioned in the previous paragraph this refers to.",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10445bee_15840f2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:44:01Z",
+      "side": 1,
+      "message": "Some missing text at the start of this sentence.",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "724cdfe2_0de36093",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:44:01Z",
+      "side": 1,
+      "message": "nit: `that the`",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b169876_b2cb5dba",
+        "filename": "site.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-01T12:44:01Z",
+      "side": 1,
+      "message": "`versions.cue.playground.v` ?",
+      "revId": "af0f196c44afa18213c31f6015eecd4d07f9d5fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
