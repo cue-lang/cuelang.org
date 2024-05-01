@@ -201,7 +201,7 @@ module.
 Publish the first version of this module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
-...
+published github.com/cueckoo/frostyconfig@v0.0.1 to registry.cue.works/github.com/cueckoo/frostyconfig:v0.0.1@sha256:a9e174a2e17e24461ae16db9c5d07a749c24fa827fecc575990ef72060fa42ee
 ```
 
 {{< /step >}}
