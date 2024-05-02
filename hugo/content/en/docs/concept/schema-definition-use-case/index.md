@@ -1,5 +1,5 @@
 ---
-title: "Schema Definition use case"
+title: Schema Definition use case
 description: "Defining schema to communicate an API or standard"
 toc_hide: true
 ---
@@ -29,7 +29,7 @@ are backwards-compatible with older versions.
 
 Consider the following versions of the same API:
 
-```cue
+```cue { title="schema.cue" }
 // Release notes:
 // - You can now specify your age and your hobby!
 #V1: {
@@ -63,23 +63,36 @@ if the old one is an instance of the new one.
 
 This can be computed using the API:
 
-```go
-inst, err := r.Compile("apis", /* text of the above API */)
-if err != nil {
-    // handle error
-}
-v1, err1 := inst.LookupField("V1")
-v2, err2 := inst.LookupField("V2")
-v3, err3 := inst.LookupField("V3")
-if err1 != nil || err2 != nil || err3 != nil {
-	 // handle errors
-}
+```go { title="main.go" }
+package main
 
-// Check if V2 is backwards compatible with V1
-fmt.Println(v2.Value.Subsumes(v1.Value)) // true
+import (
+	_ "embed"
+	"fmt"
 
-// Check if V3 is backwards compatible with V2
-fmt.Println(v3.Value.Subsumes(v2.Value)) // false
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+)
+
+//go:embed schema.cue
+var schemaFile string
+
+func main() {
+	ctx := cuecontext.New()
+	rootValue := ctx.CompileString(schemaFile)
+
+	v1 := rootValue.LookupPath(cue.ParsePath("#V1"))
+	v2 := rootValue.LookupPath(cue.ParsePath("#V2"))
+	v3 := rootValue.LookupPath(cue.ParsePath("#V3"))
+
+	fmt.Println("V2 is backwards compatible with V1:", v2.Subsume(v1) == nil)
+	fmt.Println("V3 is backwards compatible with V2:", v3.Subsume(v2) == nil)
+}
+```
+```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
+$ go run .
+V2 is backwards compatible with V1: true
+V3 is backwards compatible with V2: false
 ```
 
 It is as simple as that.
