@@ -1,8 +1,16 @@
 ---
-title: "Schema Definition use case"
-description: "Defining schema to communicate an API or standard"
+title: Schema Definition use case
+description: Defining schema to communicate an API or standard
+tags:
+- go api
+- validation
 toc_hide: true
 ---
+
+{{{with _script_ "en" "HIDDEN: set caches to speed up re-running"}}}
+export GOMODCACHE=/caches/gomodcache
+export GOCACHE=/caches/gobuild
+{{{end}}}
 
 A data definition language describes the structure of data.
 The structure defined by such a language can, in turn, be used
@@ -29,8 +37,8 @@ are backwards-compatible with older versions.
 
 Consider the following versions of the same API:
 
-{{{with code "en" "api-cue"}}}
--- in.cue --
+{{{with upload "en" "api-cue"}}}
+-- schema.cue --
 // Release notes:
 // - You can now specify your age and your hobby!
 #V1: {
@@ -64,25 +72,44 @@ if the old one is an instance of the new one.
 
 This can be computed using the API:
 
-{{{with code "en" "api-go"}}}
-#nofmt in.go - not intended to compile
--- in.go --
-inst, err := r.Compile("apis", /* text of the above API */)
-if err != nil {
-    // handle error
-}
-v1, err1 := inst.LookupField("V1")
-v2, err2 := inst.LookupField("V2")
-v3, err3 := inst.LookupField("V3")
-if err1 != nil || err2 != nil || err3 != nil {
-	 // handle errors
-}
+{{{with upload "en" "api-go"}}}
+-- main.go --
+package main
 
-// Check if V2 is backwards compatible with V1
-fmt.Println(v2.Value.Subsumes(v1.Value)) // true
+import (
+	_ "embed"
+	"fmt"
 
-// Check if V3 is backwards compatible with V2
-fmt.Println(v3.Value.Subsumes(v2.Value)) // false
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+)
+
+//go:embed schema.cue
+var schemaFile string
+
+func main() {
+	ctx := cuecontext.New()
+	rootValue := ctx.CompileString(schemaFile)
+
+	v1 := rootValue.LookupPath(cue.ParsePath("#V1"))
+	v2 := rootValue.LookupPath(cue.ParsePath("#V2"))
+	v3 := rootValue.LookupPath(cue.ParsePath("#V3"))
+
+	fmt.Println("V2 is backwards compatible with V1:", v2.Subsume(v1) == nil)
+	fmt.Println("V3 is backwards compatible with V2:", v3.Subsume(v2) == nil)
+}
+{{{end}}}
+
+{{{with _script_ "en" "HIDDEN: go mod tidy"}}}
+go mod init cue.example
+#ellipsis 0
+go get cuelang.org/go@${CUELANG_CUE_LATEST}
+#ellipsis 0
+go mod tidy
+{{{end}}}
+
+{{{with script "en" "go run"}}}
+go run .
 {{{end}}}
 
 It is as simple as that.
