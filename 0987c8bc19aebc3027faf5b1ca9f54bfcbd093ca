@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41e59233_f6730b83",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-02T17:13:10Z",
+      "side": 1,
+      "message": "FIXME: Related content.",
+      "revId": "0987c8bc19aebc3027faf5b1ca9f54bfcbd093ca",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

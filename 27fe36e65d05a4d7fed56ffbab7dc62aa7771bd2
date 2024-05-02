@@ -33,6 +33,24 @@
       "message": "I don\u0027t understand this paragraph.",
       "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0b7e0e1_0e620f15",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-02T17:13:10Z",
+      "side": 1,
+      "message": "What I\u0027m trying to communicate is that, because OpenAPI is \"just\" data, and CUE can validate and emit data, it\u0027s possible to construct CUE to emit or validate entirely arbitrary OpenAPI schemas.\n\nBy including this, I\u0027m trying to give the user who comes across unsupported OpenAPI features (e.g. things that don\u0027t just live under the `components.schemas` path) the surety of knowing that they can use CUE, no matter what, to generate and validate their OpenAPI schema. They just don\u0027t get the benefit of using the underlying OpenAPI schema **as** a schema, inside CUE.\n\nI\u0027m not currently sure how to word this differently, but I\u0027ll think on it. Any ideas you had would be gratefully received!",
+      "parentUuid": "1b22d397_cfbdeff7",
+      "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
