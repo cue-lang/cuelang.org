@@ -6,10 +6,67 @@ package site
 				"schema-definition-use-case": {
 					page: {
 						cache: {
+							upload: {
+								"api-cue": "S1onMjCLf/M8wPjVQI8syZcEEVpldh3iH3Fo+9wOiY4="
+								"api-go":  "IKbFFYhEh1qToDZgZG7k96Tx9nVxLDP2coBm+J+PsD8="
+							}
 							code: {
-								"api-cue":            "GAR5fxYDOTE5MgLpbRJuB+OoMNyB3DFYyZMBnOmwAbQ="
-								"api-go":             "TW/DvnBcI2DYLzWzlTBNGp3WVn/ZgP55mrYWWKvIPMA="
 								"openapi-comparison": "RYRT071hUV/nngIXVc33xt08kRNkQdLcpCqH3Jhn160="
+							}
+							multi_step: {
+								hash:       "0KI161MMORMNUKPQKU6MELLL7MV5LHC1ABMV644GF0MDEE39SI50===="
+								scriptHash: "GG5HJTPLS836VN1V7KLSGC8EH4JO107GNPOFOSIBDT0BJRUC5Q90===="
+								steps: [{
+									doc:      ""
+									cmd:      "export LC_ALL=C"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "export GOMODCACHE=/caches/gomodcache"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "export GOCACHE=/caches/gobuild"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+											go: to add module requirements and sums:
+											\tgo mod tidy
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.8.2"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 0
+									output: """
+											V2 is backwards compatible with V1: true
+											V3 is backwards compatible with V2: false
+
+											"""
+								}]
 							}
 						}
 					}
