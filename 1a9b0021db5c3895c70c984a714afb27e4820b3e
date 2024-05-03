@@ -33,6 +33,24 @@
       "message": "Please put the cache setting code at the top, following the \"pattern\" we have established elsewhere.",
       "revId": "1a9b0021db5c3895c70c984a714afb27e4820b3e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0aabca09_571e13c1",
+        "filename": "content/docs/concept/schema-definition-use-case/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-03T14:18:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "879a1b35_100751d8",
+      "revId": "1a9b0021db5c3895c70c984a714afb27e4820b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
