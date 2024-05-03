@@ -51,6 +51,24 @@
       "parentUuid": "1b22d397_cfbdeff7",
       "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dac5755a_f78470d5",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-03T04:28:09Z",
+      "side": 1,
+      "message": "I\u0027m afraid I still don\u0027t get the point. \n\nWhat are the \"unsupported OpenAPI features\" we are talking about here? That seems key to your motivation. \n\n\u003e the surety of knowing that they can use CUE, no matter what, to generate and validate their OpenAPI schema\n\nI\u0027m not sure how if they are \"not supported\" they can be validated?\n\nUnless this is a reference to the fact that there is an OpenAPI JSON schema for validating OpenAPI schemas? \n\nLet\u0027s discuss in any case - that might help move my understanding forward.",
+      "parentUuid": "c0b7e0e1_0e620f15",
+      "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
