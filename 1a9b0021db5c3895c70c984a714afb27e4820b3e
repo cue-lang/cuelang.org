@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d33d5f64_a455e0f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-03T04:19:49Z",
+      "side": 1,
+      "message": "LGTM with one suggestion.",
+      "revId": "1a9b0021db5c3895c70c984a714afb27e4820b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "879a1b35_100751d8",
+        "filename": "content/docs/concept/schema-definition-use-case/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-03T04:19:49Z",
+      "side": 1,
+      "message": "Please put the cache setting code at the top, following the \"pattern\" we have established elsewhere.",
+      "revId": "1a9b0021db5c3895c70c984a714afb27e4820b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
