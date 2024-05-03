@@ -5,12 +5,6 @@ weight: 40
 
 Field comprehensions can be used to add fields conditionally.
 
-{{< info >}}
-When `cue export` processes multiple files it *unifies* their contents.
-The value of the `price` field in `stock.yaml` is available inside `file.cue`,
-and triggers the conditional inclusion of the required fields.
-{{< /info >}}
-
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 price: number
@@ -34,3 +28,8 @@ reason: field is required but not present:
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
+{{< info >}}
+When `cue export` processes multiple files it *unifies* their contents.
+The value of the `price` field in `stock.yaml` is available inside `file.cue`,
+and triggers the conditional inclusion of the required fields.
+{{< /info >}}
