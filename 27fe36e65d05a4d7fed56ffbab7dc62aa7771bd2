@@ -87,6 +87,24 @@
       "parentUuid": "dac5755a_f78470d5",
       "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de9c5ca7_6623158c",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-08T07:34:41Z",
+      "side": 1,
+      "message": "SGTM. Just want to re-emphasize that I haven\u0027t looked closely at jsonschema and openapi yet, so my thinking on the contents of this doc might change over time.",
+      "parentUuid": "3b323112_12aca35b",
+      "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
