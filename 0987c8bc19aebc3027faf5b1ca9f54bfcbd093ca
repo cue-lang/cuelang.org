@@ -16,6 +16,24 @@
       "message": "FIXME: Related content.",
       "revId": "0987c8bc19aebc3027faf5b1ca9f54bfcbd093ca",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad6055a0_6fc9bb1c",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-08T15:27:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41e59233_f6730b83",
+      "revId": "0987c8bc19aebc3027faf5b1ca9f54bfcbd093ca",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

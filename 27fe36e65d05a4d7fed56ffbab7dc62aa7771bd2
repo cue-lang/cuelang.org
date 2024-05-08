@@ -123,6 +123,24 @@
       "parentUuid": "de9c5ca7_6623158c",
       "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ae98fb2_2a7d645e",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-08T15:27:23Z",
+      "side": 1,
+      "message": "I\u0027ve opened cue-lang/cue#3133 and linked to it from the `Related content` tail of this guide. I\u0027ve also opened cue-lang/docs-and-content#141.\n\nThis guide has been updated in line with the above, and a later discussion with @paul@myitcv.io.",
+      "parentUuid": "cbf1c952_7edcbcdc",
+      "revId": "27fe36e65d05a4d7fed56ffbab7dc62aa7771bd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
