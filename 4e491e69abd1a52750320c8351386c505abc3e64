@@ -33,6 +33,57 @@
       "message": "LGTM. I\u0027ll leave @mvdan@mvdan.cc to +2.",
       "revId": "4e491e69abd1a52750320c8351386c505abc3e64",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "606af2f5_95180f89",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-08T17:22:55Z",
+      "side": 1,
+      "message": "interesting that `cue import` for schemas is the reverse of `cue def`, when one would imagine the pair to instead be `cue import` and `cue export`.",
+      "revId": "4e491e69abd1a52750320c8351386c505abc3e64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bfb39c8_bb479d3f",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-08T17:22:55Z",
+      "side": 1,
+      "message": "nit: elsewhere we have called this \"insts\", which I think is more intuitive",
+      "revId": "4e491e69abd1a52750320c8351386c505abc3e64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51aebfe9_dcd7e629",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-08T17:22:55Z",
+      "side": 1,
+      "message": "nit: use `:\u003d` here for simplicity and consistency, you don\u0027t need to modify the earlier err value.",
+      "revId": "4e491e69abd1a52750320c8351386c505abc3e64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
