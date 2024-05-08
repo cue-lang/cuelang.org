@@ -16,6 +16,46 @@
       "message": "PTAL.",
       "revId": "0db9650c3ec17be4a16101a0ec4b39d53a37f53b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eac85c5_749ffddb",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-08T20:10:22Z",
+      "side": 1,
+      "message": "Building on comments about OpenAPI. In a document where we want to be focussing on CUE\u0027s first class support for JSON Schema, I don\u0027t think we should lede by discussing how its encoding is also one of CUE\u0027s other first class data formats. The focus of this document should be on how CUE works with and represents schemas that are represented as JSON Schema. The detail that you could represent the concrete data that is the JSON encoding of a JSON Schema as CUE should perhaps not even be mentioned on this page.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 62
+      },
+      "revId": "0db9650c3ec17be4a16101a0ec4b39d53a37f53b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93d886ac_ca92498b",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-08T20:10:22Z",
+      "side": 1,
+      "message": "This document not mentioning the lack of `export` (or equivalent) support feels odd to me. It\u0027s an obvious question given that we want to document and share with folks CUE\u0027s ability to act as a two-way interlingua.",
+      "revId": "0db9650c3ec17be4a16101a0ec4b39d53a37f53b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
