@@ -16,6 +16,97 @@
       "message": "PTAL. I realised we didn\u0027t have an example of direct OpenAPI use on this page, to the detriment of the wider interlingua narrative.",
       "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d005194_aaa497e0",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T09:19:02Z",
+      "side": 1,
+      "message": "Too much emphasis again to my mind. There is more formatted text in this sentence than unformatted. There is no emphasis in such situations. Does this sentence not read sufficiently clearly without emphasis?",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c35cadd6_94d082f6",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T09:19:02Z",
+      "side": 1,
+      "message": "This feels like it\u0027s not complete?",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccfe51c6_67209765",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T09:19:02Z",
+      "side": 1,
+      "message": "I suggest simpler language:\n\n\"One of CUE\u0027s goals is to act as an interlingua: a bidirectional bridge...\"",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5b8110d_260ff84e",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T09:19:02Z",
+      "side": 1,
+      "message": "This is a long wordy paragraph. Please can we simplify? Perhaps something along the lines of:\n\n\"For now, only the `components.schemas` part of the OpenAPI specification is encoded to/from CUE. More complete support is tracked in N.\"",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b95c3eba_f67406af",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T09:19:02Z",
+      "side": 1,
+      "message": "What are \"fixed\" fields?",
+      "range": {
+        "startLine": 261,
+        "startChar": 10,
+        "endLine": 261,
+        "endChar": 22
+      },
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
