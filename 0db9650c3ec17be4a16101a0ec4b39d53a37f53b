@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b5e2bba_4b138a75",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-09T07:51:12Z",
+      "side": 1,
+      "message": "I\u0027d tend to agree - it\u0027s not wrong, but it\u0027s also not a necessary step to understand how to ouse the jsonschema encoding, and it may confuse some users who aren\u0027t familiar with this \"second level encoding\" of jsonschema on top of json, so I\u0027d avoid bringing it up so close to the top of the doc.",
+      "parentUuid": "7eac85c5_749ffddb",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 62
+      },
+      "revId": "0db9650c3ec17be4a16101a0ec4b39d53a37f53b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "93d886ac_ca92498b",
         "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
         "patchSetId": 5
