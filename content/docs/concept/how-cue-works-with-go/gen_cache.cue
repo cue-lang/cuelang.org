@@ -9,15 +9,15 @@ package site
 							upload: {
 								"cue get go - main cue":      "4zu0FOLHebbIA2EHCkfYZ73Ne1HYoHr69hozAPEPDEw="
 								"load cue - cue data":        "NG3kubWytVvTqodp8QVetNNJgBtrswSH1NfuaKnvjrU="
-								"load cue - main.go":         "/CCsut+j/XhWJ+EupvFYwwOh4dNkEIa8uFshaBCUm4g="
+								"load cue - main.go":         "2m4bSb919oQ53d+P/bdxr2Z+XtLdeVHxInCRSqpsSL8="
 								"load non-cue - main.go":     "WbpwjjpBRfTzDIkXtX3z9dLC+CDkIRXF6qsvNEbBBcw="
 								"load non-cue - yaml file":   "cfW6GoVFbv3VKgxCHRWxinacbUrOFugNQDoHLLtYZnw="
 								"check go data - cue schema": "Qiar44XOkOVUo+CFxjcgxGL8QBf7Buj3Igi3sxfneTI="
 								"check go data - main.go":    "j93vJRdMarE9SrkbqT7NgCeUgLwaJQL/EUGEh+wUnME="
 							}
 							multi_step: {
-								hash:       "AA51A9K5T44HNKA35THC1IR896MQGD353G2Q7EI6UPD08JBJ1FHG===="
-								scriptHash: "4EFG7VK8RM90J7VS307FJ1JBSU59E9SLHL4VH4JIFRTM81J0V9JG===="
+								hash:       "3VNQLHPJDKA88RUAUGCLS9SV9BMQTROPV8V639RUUOJE3LPSV4JG===="
+								scriptHash: "5V9TNDN0DEKNNQ7UVV7IEEA1AE9RBUKLFN2RF4GUEGI5MV7TB2J0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
