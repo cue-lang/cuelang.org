@@ -150,8 +150,8 @@ import (
 
 func main() {
 	ctx := cuecontext.New()
-	bis := load.Instances([]string{"."}, nil)
-	v := ctx.BuildInstance(bis[0])
+	insts := load.Instances([]string{"."}, nil)
+	v := ctx.BuildInstance(insts[0])
 	fmt.Printf("%v\n", v)
 }
 {{{end}}}
