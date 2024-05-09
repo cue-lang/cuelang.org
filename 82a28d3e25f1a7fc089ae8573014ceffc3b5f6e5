@@ -16,6 +16,52 @@
       "message": "PTAL.",
       "revId": "82a28d3e25f1a7fc089ae8573014ceffc3b5f6e5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9417672f_4bc7be02",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T10:17:20Z",
+      "side": 1,
+      "message": "I\u0027m not sure exactly what you\u0027re trying to say with the \"source of truth\" bit here. Why not just say that CUE has first-class support for JSON Schema?",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 37
+      },
+      "revId": "82a28d3e25f1a7fc089ae8573014ceffc3b5f6e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cad8006_7f4c02de",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T10:17:20Z",
+      "side": 1,
+      "message": "The phrasing of this sentence seems to suggest there are two different \"modes\" of support: there really is just one. Whether the JSON Schema input is written to a CUE file (`import`) or not is really a minor detail. I suspect the wording is made tricky by trying to avoid using the word \"import\", but I think we can simplify this sentence a bit to be more plain speaking: it just feels a bit verbose right now.",
+      "range": {
+        "startLine": 20,
+        "startChar": 39,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "82a28d3e25f1a7fc089ae8573014ceffc3b5f6e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
