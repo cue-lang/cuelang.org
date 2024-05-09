@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "edd4502f_4fe15068",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T09:53:30Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d005194_aaa497e0",
@@ -31,6 +48,24 @@
       "writtenOn": "2024-05-09T09:19:02Z",
       "side": 1,
       "message": "Too much emphasis again to my mind. There is more formatted text in this sentence than unformatted. There is no emphasis in such situations. Does this sentence not read sufficiently clearly without emphasis?",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7a819d3_de788e8a",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T09:53:30Z",
+      "side": 1,
+      "message": "The purpose of the bold text wasn\u0027t to change the clarity of the sentence, but to give the time-poor reader who is skimming through the page some text for their eye to latch onto, and to prompt them to read this section if the specific capability is of particular interest. I\u0027ve changed the formatting to normal text.",
+      "parentUuid": "9d005194_aaa497e0",
       "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +87,41 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d0a911e_2f3e9f90",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T09:53:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c35cadd6_94d082f6",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02c9fb2f_f372124b",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T09:53:30Z",
+      "side": 1,
+      "message": "I\u0027ve removed the bold text here, as well, for consistency.",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ccfe51c6_67209765",
@@ -65,6 +135,24 @@
       "writtenOn": "2024-05-09T09:19:02Z",
       "side": 1,
       "message": "I suggest simpler language:\n\n\"One of CUE\u0027s goals is to act as an interlingua: a bidirectional bridge...\"",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c790ef7_75307272",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T09:53:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ccfe51c6_67209765",
       "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +174,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f85f78dd_cee40189",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T09:53:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5b8110d_260ff84e",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b95c3eba_f67406af",
@@ -99,6 +205,30 @@
       "writtenOn": "2024-05-09T09:19:02Z",
       "side": 1,
       "message": "What are \"fixed\" fields?",
+      "range": {
+        "startLine": 261,
+        "startChar": 10,
+        "endLine": 261,
+        "endChar": 22
+      },
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ca88c4c_f8736672",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T09:53:30Z",
+      "side": 1,
+      "message": "I took it from the OpenAPI spec: https://swagger.io/specification/#fixed-fields. This sentence has been updated, as per the above.",
+      "parentUuid": "b95c3eba_f67406af",
       "range": {
         "startLine": 261,
         "startChar": 10,
