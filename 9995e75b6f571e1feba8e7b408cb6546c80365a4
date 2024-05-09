@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47355a66_d4fde772",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T11:06:08Z",
+      "side": 1,
+      "message": "Picking up on this point in the JSON Schema docs as well: it might seem like a small point, but CUE _always_ converts OpenAPI constraints to its internal CUE format. Whether they are written out to a `.cue` file is a detail. Perhaps this confusion for the reader arises because we are using \"conversion\" in place of \"import\"?",
+      "revId": "9995e75b6f571e1feba8e7b408cb6546c80365a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

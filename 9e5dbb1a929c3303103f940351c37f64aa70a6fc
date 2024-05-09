@@ -70,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46b50cc7_8a186ec3",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-09T11:06:08Z",
+      "side": 1,
+      "message": "As we\u0027ve discussed before, I think the over emphasis has the exact opposite effect: it makes it harder to reader, so negatively affects the clarity to my mind. \n\nIt\u0027s not just emphasis that helps the user determine whether they should read a (sub) section or not. Indeed it\u0027s the job of the  the first paragraph (sentence) in the (sub)section to do just that. \n\nVisually as well, it makes the page appeared cluttered to have lots of emphasis. I would rather be more reserved in our use of emphasis, and use it where it really makes a difference.",
+      "parentUuid": "a7a819d3_de788e8a",
+      "revId": "9e5dbb1a929c3303103f940351c37f64aa70a6fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c35cadd6_94d082f6",
