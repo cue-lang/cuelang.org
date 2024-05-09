@@ -10,11 +10,12 @@ package site
 								"schema.cue":           "IhWYgY2d4XJ14dVZmRAuFEOvvNEGp0VQ4d4KmUiGPOI="
 								"api.pet.yaml":         "a59sa6kiZ8MIhIuFnjuABOwBKtJb6/0GvCczVlyVRrc="
 								"api.pet.cue":          "pfphGZPbu+Bc4/4G9UHYevOhe+M796iWteICO8ORgbg="
+								"jonathan.yml":         "BaiutFPB+8Z7tnLMkAboBPn/FG1RHqcOMEPwYO0ezEs="
 								"go emit openapi main": "iJ3M385hdYxCdbNbUSo2fUp8UxBgDb0Kra0vI/FTaFE="
 							}
 							multi_step: {
-								hash:       "3AL269A7I4O2UGG9L7R6CMJ7NQ924KQM0LG8COQNQG9S8BUJ8VEG===="
-								scriptHash: "5JNL3Q47AL0NUVFJA6OLQ28R6PVKQCQTRNKUO3BRGGFHPLF77K4G===="
+								hash:       "V4S5CLIEUE4LMIQRLLOUDGKG370RGR60ONF9H596NNJAR961UC8G===="
+								scriptHash: "4PHNDF99TIHAR98RKNG67LQL7U87P3UKVSJ389JEGN6ESRORN2AG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -65,6 +66,24 @@ package site
 									cmd:      "rm .api.pet.cue # tidy up"
 									exitCode: 0
 									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue vet api.pet.yaml jonathan.yml -d '#Pet'"
+									exitCode: 1
+									output: """
+											kind: 3 errors in empty disjunction:
+											kind: conflicting values "cat" and "tortoise":
+											    ./api.pet.yaml:11:7
+											    ./api.pet.yaml:26:11
+											    ./jonathan.yml:2:7
+											kind: conflicting values "dog" and "tortoise":
+											    ./api.pet.yaml:26:11
+											    ./jonathan.yml:2:7
+											kind: conflicting values "goldfish" and "tortoise":
+											    ./api.pet.yaml:26:11
+											    ./jonathan.yml:2:7
+
+											"""
 								}, {
 									doc:      ""
 									cmd:      "go mod init mod.example"

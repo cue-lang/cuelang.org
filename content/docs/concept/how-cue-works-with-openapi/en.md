@@ -25,11 +25,20 @@ given that they meet different needs for different types of users, CUE's
 ability to round-trip between CUE and OpenAPI's data schema subset acts as a
 useful bridge between their two worlds.
 
-## Reading and writing OpenAPI with the `cue` command
+## Using OpenAPI with the `cue` command
 
-The `cue` command can convert CUE schemas into OpenAPI's `components.schemas`.
-CUE files can be converted into OpenAPI so long as they only specify
-definitions and metadata (`info`, `$version`, etc) at their top-level.
+The `cue` command can **convert constraints back and forth between CUE and
+OpenAPI**, and can **use OpenAPI constraints directly**, without conversion.
+
+CUE constraints can be converted into OpenAPI's `components.schemas` namespace
+so long as the top-level constraints are specified using only CUE definitions.
+Optional fields such as OpenAPI's `info` and `$version` metadata are also converted.
+
+When producing CUE from OpenAPI schemas, constraints stored in OpenAPI's
+`components.schemas` namespace are converted into CUE's more expressive and
+flexible form. This namespace is also treated as the source of truth when an
+OpenAPI schema is used directly by the `cue` command, without explicit
+conversion to CUE.
 
 Let's start with a trivial CUE schema that we want to convert to OpenAPI:
 
@@ -163,9 +172,25 @@ diff -wu api.pet.cue .api.pet.cue
 rm .api.pet.cue # tidy up
 {{{end}}}
 
-## Using CUE's Go API
+The `cue` command can also use the OpenAPI constraints from `api.pet.yaml`
+directly. Let's use it to validate the details of a well-known animal:
 
-CUE can also generate OpenAPI through its Go API.
+{{{with upload "en" "jonathan.yml"}}}
+-- jonathan.yml --
+name: Jonathan
+kind: tortoise
+website: https://en.wikipedia.org/wiki/Jonathan_(tortoise)
+{{{end}}}
+
+{{{with script "en" "cue vet directly against openapi"}}}
+! cue vet api.pet.yaml jonathan.yml -d '#Pet'
+{{{end}}}
+
+Perhaps our `#Pet` schema should be updated ...
+
+## Using OpenAPI with the Go API
+
+CUE can also **generate OpenAPI through its Go API**.
 
 Generating an OpenAPI definition can be as simple as this:
 
@@ -226,11 +251,21 @@ constraints, and so on. The *expanding references* option enables the
 "Structural OpenAPI" form required by CRDs targeting Kubernetes version 1.15
 and later.
 
+## Future plans
+
+The CUE project believes that its role can be one of interlingua: a
+*bidirectional* bridge between all the formats that CUE speaks, linking the
+sources of truth for constraints with data, no matter where they exist.
+
+As part of this goal, the project is considering how to support the import and
+export of fixed fields defined by the OpenAPI standard which are not *directly*
+schema-related. This work is tracked in {{<issue 3133/>}}.
+
 ## Related content
 
-- CUE supports OpenAPI's `components.schemas` namespace, and metadata such as the `info` field --
-  {{<issue 3133/>}} tracks the support of other namespaces defined by the OpenAPI standard
-- The [OpenAPI 3.0.0 specification](https://github.com/OAI/OpenAPI-Specification/tree/3.0.0)
+- {{<issue 3133>}}Issue #3133{{</issue>}} tracks the support of other namespaces defined by
+  [the OpenAPI standard](https://github.com/OAI/OpenAPI-Specification/tree/3.0.0)
 - {{< linkto/related/reference "cli/cue-def" >}}
 - {{< linkto/related/reference "cli/cue-import" >}}
+- {{< linkto/related/reference "cli/cue-vet" >}}
 - The [`encoding/openapi`](https://pkg.go.dev/cuelang.org/go/encoding/openapi) package
