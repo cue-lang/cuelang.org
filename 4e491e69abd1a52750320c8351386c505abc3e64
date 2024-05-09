@@ -69,6 +69,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4edfbe43_9724648e",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T07:21:49Z",
+      "side": 1,
+      "message": "Done. I\u0027ll also make that change in `How CUE works with Go`, which is the only inconsistent instance I can find on the site.",
+      "parentUuid": "7bfb39c8_bb479d3f",
+      "revId": "4e491e69abd1a52750320c8351386c505abc3e64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "51aebfe9_dcd7e629",
@@ -82,6 +100,24 @@
       "writtenOn": "2024-05-08T17:22:55Z",
       "side": 1,
       "message": "nit: use `:\u003d` here for simplicity and consistency, you don\u0027t need to modify the earlier err value.",
+      "revId": "4e491e69abd1a52750320c8351386c505abc3e64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c89c300_84e7aecc",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T07:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51aebfe9_dcd7e629",
       "revId": "4e491e69abd1a52750320c8351386c505abc3e64",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
