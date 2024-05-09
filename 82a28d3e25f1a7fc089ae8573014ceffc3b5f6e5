@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "64aaf408_42487b28",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T12:05:37Z",
+      "side": 1,
+      "message": "Following our offline chat, I\u0027ve substantially revised this guide\u0027s introduction. Leaving unresolved for your review.",
+      "parentUuid": "9417672f_4bc7be02",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 37
+      },
+      "revId": "82a28d3e25f1a7fc089ae8573014ceffc3b5f6e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4cad8006_7f4c02de",
         "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
         "patchSetId": 8
@@ -54,6 +78,30 @@
       "writtenOn": "2024-05-09T10:17:20Z",
       "side": 1,
       "message": "The phrasing of this sentence seems to suggest there are two different \"modes\" of support: there really is just one. Whether the JSON Schema input is written to a CUE file (`import`) or not is really a minor detail. I suspect the wording is made tricky by trying to avoid using the word \"import\", but I think we can simplify this sentence a bit to be more plain speaking: it just feels a bit verbose right now.",
+      "range": {
+        "startLine": 20,
+        "startChar": 39,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "82a28d3e25f1a7fc089ae8573014ceffc3b5f6e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "978c7bc4_966a361c",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T12:05:37Z",
+      "side": 1,
+      "message": "I believe I\u0027ve simplified this in line with our chat - let me know what you think, and I\u0027ll use the same ideas to update the `OpenAPI` guide.",
+      "parentUuid": "4cad8006_7f4c02de",
       "range": {
         "startLine": 20,
         "startChar": 39,
