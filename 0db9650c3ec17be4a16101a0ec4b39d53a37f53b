@@ -65,6 +65,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33ffe11b_8959f425",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T07:53:10Z",
+      "side": 1,
+      "message": "Good points. I\u0027ve updated the intro to jump straight in to the JSON Schema capabilities.",
+      "parentUuid": "7eac85c5_749ffddb",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 62
+      },
+      "revId": "0db9650c3ec17be4a16101a0ec4b39d53a37f53b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93d886ac_ca92498b",
@@ -78,6 +102,24 @@
       "writtenOn": "2024-05-08T20:10:22Z",
       "side": 1,
       "message": "This document not mentioning the lack of `export` (or equivalent) support feels odd to me. It\u0027s an obvious question given that we want to document and share with folks CUE\u0027s ability to act as a two-way interlingua.",
+      "revId": "0db9650c3ec17be4a16101a0ec4b39d53a37f53b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f531d8bf_ae220d66",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-09T07:53:10Z",
+      "side": 1,
+      "message": "Done. I\u0027ve added a `Future plans` section that makes the aim clear, in line with the approach we took in `How CUE works with Go`.",
+      "parentUuid": "93d886ac_ca92498b",
       "revId": "0db9650c3ec17be4a16101a0ec4b39d53a37f53b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
