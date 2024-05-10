@@ -41,6 +41,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "970e77ab_f032165d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-10T19:15:46Z",
+      "side": 1,
+      "message": "LGTM with one suggested changed. In future, if you are going to rename a file, please do that in one patchset (immediately if possible), and then make changes to the file in a later patchset. Otherwise, I lose the ability to easily see what has changed from my earlier patchset.",
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21c6f8d7_67fa6733",
@@ -60,6 +77,47 @@
         "endLine": 15,
         "endChar": 53
       },
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5e5abdf_2b312253",
+        "filename": "content/docs/howto/walk-schemas-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-10T19:15:46Z",
+      "side": 1,
+      "message": "Correct.",
+      "parentUuid": "21c6f8d7_67fa6733",
+      "range": {
+        "startLine": 15,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 53
+      },
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "829389fd_d8e535d7",
+        "filename": "content/docs/howto/walk-schemas-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-10T19:15:46Z",
+      "side": 1,
+      "message": "\", inspect its structure and types.\"",
       "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
