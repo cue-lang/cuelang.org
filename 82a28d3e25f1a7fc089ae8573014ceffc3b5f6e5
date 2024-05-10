@@ -65,6 +65,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a123c2da_9fca044a",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-10T15:17:43Z",
+      "side": 1,
+      "message": "Reads much better, thanks.",
+      "parentUuid": "64aaf408_42487b28",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 37
+      },
+      "revId": "82a28d3e25f1a7fc089ae8573014ceffc3b5f6e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4cad8006_7f4c02de",
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "I believe I\u0027ve simplified this in line with our chat - let me know what you think, and I\u0027ll use the same ideas to update the `OpenAPI` guide.",
       "parentUuid": "4cad8006_7f4c02de",
+      "range": {
+        "startLine": 20,
+        "startChar": 39,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "82a28d3e25f1a7fc089ae8573014ceffc3b5f6e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f46cad2_a01de491",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-10T15:17:43Z",
+      "side": 1,
+      "message": "Reads much better, thanks.",
+      "parentUuid": "978c7bc4_966a361c",
       "range": {
         "startLine": 20,
         "startChar": 39,
