@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8296584_18ed1691",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-10T17:41:29Z",
+      "side": 1,
+      "message": "FIXME.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0949aaf2_d10012f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-10T17:41:29Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21c6f8d7_67fa6733",
+        "filename": "content/docs/howto/walk-schemas-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-10T17:41:29Z",
+      "side": 1,
+      "message": "FIXME",
+      "range": {
+        "startLine": 15,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 53
+      },
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
