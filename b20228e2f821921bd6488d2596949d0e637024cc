@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b58b0bfb_864e0b6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-13T17:00:25Z",
+      "side": 1,
+      "message": "I\u0027d appreciate a steer on the new section on the page that contains links to CUE by example. \n\nI still need to word the Go card, so don\u0027t worry about doing a full review yet.",
+      "revId": "b20228e2f821921bd6488d2596949d0e637024cc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8994f50a_719e58cb",
+        "filename": "content/docs/integration/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-13T17:00:25Z",
+      "side": 1,
+      "message": "FIXME.",
+      "revId": "b20228e2f821921bd6488d2596949d0e637024cc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
