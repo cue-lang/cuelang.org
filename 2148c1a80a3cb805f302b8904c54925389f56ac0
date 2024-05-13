@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2ecc7291_25725918",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-13T12:42:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8296584_18ed1691",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0949aaf2_d10012f2",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -54,6 +78,24 @@
       "writtenOn": "2024-05-10T19:15:46Z",
       "side": 1,
       "message": "LGTM with one suggested changed. In future, if you are going to rename a file, please do that in one patchset (immediately if possible), and then make changes to the file in a later patchset. Otherwise, I lose the ability to easily see what has changed from my earlier patchset.",
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c39788e_4c668a10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-13T12:42:43Z",
+      "side": 1,
+      "message": "Understood.",
+      "parentUuid": "970e77ab_f032165d",
       "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -105,6 +147,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33a28e78_290e0f8a",
+        "filename": "content/docs/howto/walk-schemas-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-13T12:42:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5e5abdf_2b312253",
+      "range": {
+        "startLine": 15,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 53
+      },
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "829389fd_d8e535d7",
@@ -118,6 +184,24 @@
       "writtenOn": "2024-05-10T19:15:46Z",
       "side": 1,
       "message": "\", inspect its structure and types.\"",
+      "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44b2fa6e_9c6e4e49",
+        "filename": "content/docs/howto/walk-schemas-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-13T12:42:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "829389fd_d8e535d7",
       "revId": "2148c1a80a3cb805f302b8904c54925389f56ac0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
