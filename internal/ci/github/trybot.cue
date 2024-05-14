@@ -135,7 +135,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			//
 			// TODO: make this a more principled change.
 			json.#step & {
-				run:                 "npm install"
+				run:                 "npm install --loglevel timing"
 				"working-directory": "hugo"
 			},
 
@@ -364,7 +364,7 @@ _tipDist: _dist & {
 
 _installNetlifyCLI: json.#step & {
 	name: "Install Netlify CLI"
-	run:  "npm install -g netlify-cli@\(_repo.netlifyCLIVersion)"
+	run:  "npm install --loglevel timing -g netlify-cli@\(_repo.netlifyCLIVersion)"
 }
 
 // _netlifyDeploy is used to push CLs for preview but also to deploy tip
