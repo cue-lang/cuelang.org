@@ -226,7 +226,7 @@ jobs:
       - name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./_scripts/buildDockerImage.bash
-      - run: npm install
+      - run: npm install --loglevel verbose
         working-directory: hugo
       - name: Test
         run: go test ./...
@@ -262,7 +262,7 @@ jobs:
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Install Netlify CLI
-        run: npm install -g netlify-cli@17.0.1
+        run: npm install --loglevel verbose -g netlify-cli@17.0.1
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
