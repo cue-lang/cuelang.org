@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "30f57bfcc55a565c22c86409bef721e6462a77ce",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b933c9b_13f3b82c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-15T04:36:06Z",
+      "side": 1,
+      "message": "I\u0027d suggest there won\u0027t be much to learn here; instead we should just cache the NPM target directories.",
+      "revId": "30f57bfcc55a565c22c86409bef721e6462a77ce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
