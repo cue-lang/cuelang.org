@@ -331,14 +331,14 @@ Let's compare the result of merging our new template to our original snapshot.
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90Mg==" }
 $ cue eval -c ./... >snapshot2
-// k8s.example/services/mon/alertmanager:kube
+// k8s.example/services/mon/alertmanager@v0:kube
 deployment.alertmanager.spec.template.metadata.labels.component: incomplete value string:
     ./kube.cue:36:16
 service.alertmanager.metadata.labels.component: incomplete value string:
     ./kube.cue:11:15
 service.alertmanager.spec.selector.component: incomplete value string:
     ./kube.cue:11:15
-// k8s.example/services/mon/nodeexporter:kube
+// k8s.example/services/mon/nodeexporter@v0:kube
 service."node-exporter".metadata.labels.component: incomplete value string:
     ./kube.cue:11:15
 ...
