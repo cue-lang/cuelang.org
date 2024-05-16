@@ -272,7 +272,7 @@ func (t *txtarRunContext) formatFiles() error {
 			cmd = t.dockerCmd(nil, "gofmt")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "cue":
-			cmd = t.dockerCmd(nil, "cue", "fmt", "-")
+			cmd = t.dockerCmd(nil, "cue", "fmt", "--files", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "proto":
 			// TODO: add support for proto formatting, after working out how to make
