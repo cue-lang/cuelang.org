@@ -30,10 +30,10 @@ This tutorial is written using the following versions of `go` and `cue`:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24KZ28gdmVyc2lvbg==" }
 $ cue version
-cue version v0.9.0-alpha.4
+cue version v0.9.0-alpha.4.0.20240517091053-05453ff5230f
 ...
 $ go version
-go version go1.22.1 linux/amd64
+go version go1.22.3 linux/amd64
 ```
 
 ## Create a CUE module
