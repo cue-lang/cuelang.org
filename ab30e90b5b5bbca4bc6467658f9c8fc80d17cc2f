@@ -16,6 +16,23 @@
       "message": "Need to add docs for `cue mod fix`",
       "revId": "ab30e90b5b5bbca4bc6467658f9c8fc80d17cc2f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "771a9878_0838ffd9",
+        "filename": "internal/cmd/preprocessor/cmd/txtar_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-16T15:56:47Z",
+      "side": 1,
+      "message": "This needs to be reverted, i.e. v0.9.0-alpha.5 should not need this fix.",
+      "revId": "ab30e90b5b5bbca4bc6467658f9c8fc80d17cc2f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
