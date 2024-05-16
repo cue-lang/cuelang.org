@@ -8,22 +8,22 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "MN0N6FLVB4G0F300ADJBOV4IG6TNVFORA7J8BMP4PD3QBC5PBCU0===="
+									hash:       "QODE8C7J2LQTVTSFH0HCN26DLAO2HVPIVQHP3EVKBVURKF4S9TR0===="
 									scriptHash: "2PNR000KRN3LFNF73ROK30TG1GTKJ9P2684VELOKLCIG8U7CK720===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help commands"
 										exitCode: 0
 										output: """
-												Commands define actions on instances. For example, they may
-												specify how to upload a configuration to Kubernetes. Commands are
-												defined directly in tool files, which are regular CUE files
-												within the same package with a filename ending in _tool.cue.
-												These are typically defined at the module root so that they apply
-												to all instances.
+												Workflow commands define actions on instances. For example, they
+												may specify how to upload a configuration to Kubernetes. Workflow
+												commands are defined directly in tool files, which are regular
+												CUE files within the same package with a filename ending in
+												_tool.cue.  These are typically defined at the module root so
+												that they apply to all instances.
 
-												Each command consists of one or more tasks. A task may, for
-												example, load or write a file, consult a user on the command
+												Each workflow command consists of one or more tasks. A task may,
+												for example, load or write a file, consult a user on the command
 												line, fetch a web page, and so on. Each task has inputs and
 												outputs. Outputs are typically filled out by the task
 												implementation as the task completes.
@@ -39,12 +39,10 @@ package site
 
 												\thttps://pkg.go.dev/cuelang.org/go/pkg/tool?tab=subdirectories
 
-												More on tasks can be found in the commands help topic.
-
 												Examples:
 
-												In this simple example, we define a command called "hello",
-												which declares a single task called "print" which uses
+												In this simple example, we define a workflow command called
+												"hello", which declares a single task called "print" which uses
 												"tool/exec.Run" to execute a shell command that echos output to
 												the terminal:
 
@@ -64,7 +62,7 @@ package site
 												\t}
 												\tEOF
 
-												We run the "hello" command like this:
+												We run the "hello" workflow command like this:
 
 												\t$ cue cmd hello
 												\tHello World! Welcome to Amsterdam.
@@ -73,12 +71,13 @@ package site
 												\tHello Jan! Welcome to Amsterdam.
 
 
-												In this example we declare the "prompted" command which has four
-												tasks. The first task prompts the user for a string input. The
-												second task depends on the first, and echos the response back to
-												the user with a friendly message. The third task pipes the output
-												from the second to a file. The fourth task pipes the output from
-												the second to standard output (i.e. it echos it again).
+												In this example we declare the "prompted" workflow command which
+												has four tasks. The first task prompts the user for a string
+												input. The second task depends on the first, and echos the
+												response back to the user with a friendly message. The third task
+												pipes the output from the second to a file. The fourth task pipes
+												the output from the second to standard output (i.e. it echos it
+												again).
 
 												\tpackage foo
 

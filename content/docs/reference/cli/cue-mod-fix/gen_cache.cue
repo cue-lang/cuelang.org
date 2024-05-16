@@ -4,37 +4,37 @@ package site
 		docs: {
 			reference: {
 				cli: {
-					"cue-mod-resolve": {
+					"cue-mod-fix": {
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "O75PI5DEGQBVFD28KCF6L9E9J0TRDN9UDH6OIR2HI4LJKQK0CTK0===="
-									scriptHash: "GQ8DVHRF6490Q2KMAGC9PCNU144RCC663AEQL8KDBTJ1DVM1POLG===="
+									hash:       "O3P5SVGGIJT5LCJ3FVPQNU5B204N13DB69FAUT6TFEOSPQNJJ93G===="
+									scriptHash: "LHNJL29ND9SA1PH5FBU1J322PE8QP43C7E0IU7FO3727LLCJ811G===="
 									steps: [{
 										doc:      ""
-										cmd:      "cue help mod resolve"
+										cmd:      "cue help mod fix"
 										exitCode: 0
 										output: """
 												WARNING: THIS COMMAND IS EXPERIMENTAL.
 
-												This command prints information about how a given
-												module path will resolve to an actual registry in the
-												form of an OCI reference.
+												Fix provides a way to migrate from a legacy module.cue file
+												to the new standard syntax. It
 
-												If the module version (which must be a canonical semver version)
-												is omitted, it omits the tag from the reference.
+												- adds a language.version field
+												- moves unrecognized fields into the custom.legacy field
+												- adds a major version to the module path
 
-												It only consults local information - it works lexically
-												with respect to the registry configuration (see "cue help registryconfig")
-												and does not make any network calls to check whether
-												the module exists.
+												If there is no module path, it chooses an arbitrary path (test.example@v0).
+
+												If the module.cue file is already compatible with the new syntax,
+												it is just formatted without making any other changes.
 
 												Note: you must enable the modules experiment with:
 												\texport CUE_EXPERIMENT=modules
 												for this command to work.
 
 												Usage:
-												  cue mod resolve <modulepath>[@<version>] ... [flags]
+												  cue mod fix [flags]
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
