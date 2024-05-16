@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "AxUBkhyv0S+TWZlg4RDRSAkKDAJMefgpFvOybxI2AtE="
-								kube2:               "6KmfnBieUsD5LRBsX3wD+U2nnMdGj+LAefWaW8H0Z7Y="
-								kube3:               "I63eIEwdDUdQMSLJgWrC4fzBDbAJ5UvErRXFs5Yr1CE="
-								"template frontend": "fFBr2cI0rvBIekslavTK423zgdqQx73mZPWvO5UfAI4="
-								"template kitchen":  "7iqCcS6HVEd3BgzcnMNjyql4DgAAeejzPt9McJYkm9w="
-								kitchen3:            "1o5vfBAHurVRAM+jzwQkZeOW079M/YOAJRrWkEwgutk="
-								sous:                "nrnUygwbwjPSwHgwSacN3IAEHf/bhFeuQrKdhDjvEdE="
-								"kube tool":         "etWYjLY2063qBMv7S7dZwmOXTVzYAnlKUPJMT3ZhXa0="
-								"ls tool":           "jWIIKhyhkgrOmdP70gssCTpDNtymRYqjy19sHFuwVAU="
-								"dump tool":         "w02fwU2IdlR/Ew1nLOesm6rDk+WFDU7BMTym2hojaCQ="
-								"create tool":       "Y4A3F381WoRrRpFO/aiwAESyP6ceJZ6PitMA9SMVwLs="
-								kubectl:             "zSyNyY93TpJI/R++VyvVwXmRtgmFKyvxrc7UWXtuePo="
+								"initial template":  "MySH+gCqhZHEgjVxd2ouFueC95EdqnpXACsZiugCi9k="
+								kube2:               "ik/XNDZD7/QG0F5w5xmAbjvAr60TyQ+dC814VQ3VkiM="
+								kube3:               "ILW0jM7XIATZfg1iwoTw+wJM/EVmGsf1nIRsDurcdS4="
+								"template frontend": "YnOONLYXbImSTs6Tj7vx1uEhNRH+QoYdjAcDJDTKlEs="
+								"template kitchen":  "YdIto6PcLMYXXGg7M1UV70UB6I2I73eBGwbPZQogmck="
+								kitchen3:            "R8c8/d53WYpcCY32xOhCF1uw7UTK53a66dGmnPsv4+w="
+								sous:                "NzrBO5H1Keb5YXJeoz3qIV4w9V+fwfw62iU5lTTcWRQ="
+								"kube tool":         "qhZ2LIsDSriJqF0+Wm+IVNDOjb2lWAHRMABPC29gUQ8="
+								"ls tool":           "MSMe6rpIEIXbmtw0CNkL4cQxB4Mk5ylylwvTCXO8yRc="
+								"dump tool":         "YovLeNmaqwci7A39HBkZoBnO6PTzl6y4UAiSKbp0InQ="
+								"create tool":       "C33TFoDWfyuM/ABPB0ktfyQ9uCVYS7BzhnU491yjI4o="
+								kubectl:             "6AU0Ynl0d5IJ1VtBMsfVPVflglO+qjtKC+Gukzbnsto="
 							}
 							multi_step: {
-								hash:       "VUC4EMMKVSPPQDSVSQOLB96JG8O17J5ME0ARSGMPSCAGROR1QP80===="
+								hash:       "KURT2T5FQIH6M4AQFBAUMF3LDF0SAV87INPUTT6FTR2HORJ22NFG===="
 								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
 								steps: [{
 									doc:      "#ellipsis 5"
@@ -164,14 +164,14 @@ package site
 									cmd:      "cue eval -c ./... >snapshot2"
 									exitCode: 1
 									output: """
-											// k8s.example/services/mon/alertmanager:kube
+											// k8s.example/services/mon/alertmanager@v0:kube
 											deployment.alertmanager.spec.template.metadata.labels.component: incomplete value string:
 											    ./kube.cue:36:16
 											service.alertmanager.metadata.labels.component: incomplete value string:
 											    ./kube.cue:11:15
 											service.alertmanager.spec.selector.component: incomplete value string:
 											    ./kube.cue:11:15
-											// k8s.example/services/mon/nodeexporter:kube
+											// k8s.example/services/mon/nodeexporter@v0:kube
 											service."node-exporter".metadata.labels.component: incomplete value string:
 											    ./kube.cue:11:15
 											...
