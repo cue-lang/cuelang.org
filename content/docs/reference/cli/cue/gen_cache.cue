@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "ESCGQ147JG9ODDTH8FG00K8L17VF8236IVTVQ58DQFQPKDCP3QDG===="
+									hash:       "PA8TVN93TBNDA8EPR3IU4P7KT67ALUI7U116CG31H9AO2L160N6G===="
 									scriptHash: "VLC8CVP03NLVG8HQNQNJATQENR1Q3O2UKK3JH01F27V5ABP5KEG0===="
 									steps: [{
 										doc:      ""
@@ -39,7 +39,7 @@ package site
 												  cue [command]
 
 												Available Commands:
-												  cmd            run a user-defined shell command
+												  cmd            run a user-defined workflow command
 												  completion     Generate completion script
 												  def            print consolidated definitions
 												  eval           evaluate and print a configuration
