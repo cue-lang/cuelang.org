@@ -55,6 +55,7 @@ cue: {
 	login:          _
 	mod:            _
 	"mod edit":     _
+	"mod fix":      _
 	"mod get":      _
 	"mod init":     _
 	"mod publish":  _

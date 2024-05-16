@@ -21,6 +21,7 @@ Usage:
 
 Available Commands:
   edit        edit cue.mod/module.cue
+  fix         fix a legacy cue.mod/module.cue file
   get         add and upgrade module dependencies
   init        initialize new module in current directory
   publish     publish the current module to a registry
