@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "EE75QUKE7QS5CIEV0RH0OORP68AMVGM3DSSL1537IDA8RC23L2EG===="
+									hash:       "3FJHNL1A33Q4DJFBTJL28KE8CC5G86F7D8E5B8NLQKUNS6CCNCHG===="
 									scriptHash: "6UI6HB62IA675IOOR4I0SRJ3CA5SKT5F9KRKTOO3L8JAI9MPJ410===="
 									steps: [{
 										doc:      ""
@@ -17,12 +17,18 @@ package site
 										output: """
 												Fmt formats the given files or the files for the given packages in place
 
+												Arguments are interpreted as import paths (see 'cue help inputs') unless --files is set,
+												in which case the arguments are file paths to descend into and format all CUE files.
+												Directories named "cue.mod" and those beginning with "." and "_" are skipped unless
+												given as explicit arguments.
+
 												Usage:
 												  cue fmt [-s] [inputs] [flags]
 
 												Flags:
 												      --check   exits with non-zero status if any files are not formatted
 												  -d, --diff    display diffs instead of rewriting files
+												      --files   treat arguments as file paths to descend into rather than import paths
 
 												Global Flags:
 												  -E, --all-errors   print all available errors

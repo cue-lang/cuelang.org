@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "E8FF3247I7613NIT35VN2AQOMV25IU00O9E8UO536ELCCGMMJV4G===="
+									hash:       "RCEIK09AM229R4H5SKF9ASF79EP15E3TICIIGIGHOSHPEIB448H0===="
 									scriptHash: "L7UTCTQ3UD312KV4IKGP7VIQH41K7AN2VDJIKGRJP4OHBIE4NC2G===="
 									steps: [{
 										doc:      ""
@@ -46,12 +46,13 @@ package site
 												Examples:
 
 												  # Check files against a CUE file:
-												  cue vet foo.yaml foo.cue
+												  cue vet foo.cue foo.yaml
 
 												  # Check files against a particular expression
-												  cue vet translations/*.yaml foo.cue -d '#Translation'
+												  cue vet foo.cue translations/*.yaml -d '#Translation'
 
-												If more than one expression is given, all must match all values.
+												More than one expression may be given using multiple -d flags. Each non-CUE
+												file must match all expression values.
 
 												Usage:
 												  cue vet [flags]
