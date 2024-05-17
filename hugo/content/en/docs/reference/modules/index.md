@@ -7,11 +7,6 @@ tags:
 - modules
 ---
 
-{{<info>}}
-This document describes the experimental modules feature introduced in CUE v0.8.0.
-It is a work in progress.
-{{</info>}}
-
 ## Introduction {#intro}
 
 Modules are how CUE manages dependencies.
@@ -22,18 +17,7 @@ directly from the [Go modules reference](https://go.dev/ref/mod).
 Thanks very much to Russ Cox and the Go team for their
 amazing work there.
 
-### Enabling the experiment {#enable-experiment}
-
-Module support is currently experimental.
-To enable any of the functionality described here, the
-experiment must be enabled by setting the `CUE_EXPERIMENT`
-[environment variable]({{< relref "docs/reference/cli/cue-environment" >}}):
-
-```
-export CUE_EXPERIMENT=modules
-```
-
-Note: this document largely supercedes the
+This document largely supercedes the
 [prior modules documentation]({{< relref "docs/concept/modules-packages-instances" >}})
 although, as a transitionary measure, the CUE tool still supports
 the import of packages present in the `cue.mod/pkg`, `cue.mod/usr` and

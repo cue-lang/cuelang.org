@@ -24,10 +24,6 @@ Along the way you will:
 - Update the top level module to depend on the template
 - Update the schema and its version, and update the top level module to depend on the new version
 
-{{< info >}}
-This tutorial describes an experimental feature. All details are subject to change.
-{{< /info >}}
-
 ## Prerequisites
 
 - **A tool to edit text files**. Any text editor you have will be fine, for
@@ -178,14 +174,10 @@ tutorial.
 
 {{< step stepNumber="5" >}}
 
-Set up some required envirionment variables:
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXMKZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMC9jdWVtb2R1bGVz" }
-$ export CUE_EXPERIMENT=modules
+Set up a required environment variable:
+```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMC9jdWVtb2R1bGVz" }
 $ export CUE_REGISTRY=localhost:5000/cuemodules
 ```
-
-The `CUE_EXPERIMENT` variable is necessary because the modules registry
-support is currently in its experimental phase.
 
 The `CUE_REGISTRY` variable tells the `cue` command which
 registry to use when fetching and pushing modules.

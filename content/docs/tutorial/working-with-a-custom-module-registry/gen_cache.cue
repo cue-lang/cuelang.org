@@ -14,8 +14,8 @@ package site
 								"schema-v0.1.0":            "/9hbseAtmFduCi+p1o+LSlQGr+Wou2QcJFnAk8z2GOY="
 							}
 							multi_step: {
-								hash:       "K6LI99VPFDDUPUI34LC4SMMBCRN7A7DDSDEQL7GJ5B65325DK5IG===="
-								scriptHash: "0QHOV3FSRNO1VCE0OC3CPV5V01BSSA69PVC2T1QJJKF2FTT9508G===="
+								hash:       "9HHQFCJRJI235CC4K2HH7GGB6942E9M1RDU489TKJSM6UH2GOD60===="
+								scriptHash: "PMH5AVE2C5BAA7Q29P6IR5G6NLTKFPE8QOTMPFF4OD909IL98N2G===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
@@ -62,11 +62,6 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cue mod init --source=git glacial-tech.example/frostyconfig@v0"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "export CUE_EXPERIMENT=modules"
 									exitCode: 0
 									output:   ""
 								}, {
