@@ -15,8 +15,8 @@ export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
 {{{end}}}
 
-{{{with _script_ "en" "HIDDEN use non-prerelease cue command to mirror API use"}}}
-export PATH=/cues/$CUELANG_CUE_LATEST:$PATH
+{{{with _script_ "en" "HIDDEN use prerelease cue command to exercise modules bugfixes ahead of v0.9.0 release "}}}
+export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
 {{{with _script_ "en" "HIDDEN setup auth"}}}
@@ -38,10 +38,6 @@ Along the way you will:
 - Use `cue mod tidy` to fetch and organise your module's dependencies
 - Load your CUE using the Go API working in a modules-aware mode
 
-{{< info >}}
-This tutorial describes an experimental feature whose details are subject to change.
-{{< /info >}}
-
 ## Prerequisites
 
 - **Access to the [Central Registry](https://registry.cue.works)** -- if you
@@ -55,15 +51,14 @@ This tutorial describes an experimental feature whose details are subject to cha
 - **An installed `go` binary** -- [installation details](https://go.dev/doc/install)
 - **An installed `cue` binary** -- [installation details]({{< relref "/docs/introduction/installation" >}})
 
+This tutorial uses the following version of CUE:
+
+{{{with script "en" "show cue version"}}}
+#ellipsis 1
+cue version
+{{{end}}}
+
 ## Set up the `cue` command
-
-{{{with step}}}
-Enable the modules experiment:
-
-{{{with script "en" "enable modules"}}}
-export CUE_EXPERIMENT=modules
-{{{end}}}
-{{{end}}}
 
 {{{with step}}}
 Authenticate the `cue` command with the Central Registry:
@@ -139,10 +134,6 @@ dependency from the Central Registry.
 
 ## Create a Go module and program
 
-{{{with _script_ "en" "HIDDEN unset CUE_EXPERIMENT so Go code's behaviour can't rely on it"}}}
-unset CUE_EXPERIMENT
-{{{end}}}
-
 {{{with step}}}
 Initialize a Go module for your program:
 
@@ -210,12 +201,16 @@ Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
 {{{with script "en" "go test"}}}
 #ellipsis 0
-go get cuelang.org/go@$CUELANG_CUE_LATEST
+go get cuelang.org/go@$CUELANG_CUE_PRERELEASE
 #ellipsis 0
 go mod tidy
 {{{end}}}
 
+<!-- TODO: add this paragraph back in when v0.9.0 is released, and the command above stops being
+  "go get cuelang.org/go@$CUELANG_CUE_PRERELEASE" and swaps back to CUELANG_CUE_LATEST
+
 You can use `@latest` in place of the specific version mentioned here.
+-->
 {{{end}}}
 
 ## Run the Go program

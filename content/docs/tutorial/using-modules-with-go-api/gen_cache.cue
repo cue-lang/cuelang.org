@@ -11,8 +11,8 @@ package site
 								"initial go code":  "lpImkEmEKHPWH8eIDmzKggB1V1JN9CDjVc86XyZfMEM="
 							}
 							multi_step: {
-								hash:       "KD7100EFA5P942T6TBK0UQ4FIBHHA3IE0JPK8K0B3F4M6ECK7A10===="
-								scriptHash: "RFAN5OA0N7FHCG58RI26POLSG0QQMN9PS72O0V65QH0EA4FU1G00===="
+								hash:       "A4E54M0RTPU5L7H04E09RC0V1ECDLRRO9N8904A2TAUEAAV0E020===="
+								scriptHash: "RO0QNE592UUKSK7M5CCQ9IK3705PQHCJMHDLP4F30SHT588LT76G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -25,7 +25,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.8.2:$PATH"
+									cmd:      "export PATH=/cues/v0.9.0-alpha.5:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -43,10 +43,14 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      ""
-									cmd:      "export CUE_EXPERIMENT=modules"
+									doc:      "#ellipsis 1"
+									cmd:      "cue version"
 									exitCode: 0
-									output:   ""
+									output: """
+											cue version v0.9.0-alpha.5
+											...
+
+											"""
 								}, {
 									doc:      ""
 									cmd:      "cue mod init an.example/config@v0"
@@ -74,11 +78,6 @@ package site
 
 											"""
 								}, {
-									doc:      ""
-									cmd:      "unset CUE_EXPERIMENT"
-									exitCode: 0
-									output:   ""
-								}, {
 									doc:      "#ellipsis 0"
 									cmd:      "go mod init an.example/config"
 									exitCode: 0
@@ -88,7 +87,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.8.2"
+									cmd:      "go get cuelang.org/go@v0.9.0-alpha.5"
 									exitCode: 0
 									output: """
 											...

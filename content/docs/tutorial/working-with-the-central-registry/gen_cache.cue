@@ -10,8 +10,8 @@ package site
 								"initial config.cue": "5NZlyk/WaF99B6pWSQvBYjgQHs99fjcWlC1nSDHAllw="
 							}
 							multi_step: {
-								hash:       "EJPF96Q87G3K1I2BUJ7CUTUOOMTV7QKQ6AFVLTHCCS2A27TEACDG===="
-								scriptHash: "6PRGQH3C73KE1DSDD4SOMC5BMNL1QF3Q9CVKPTHES9SFGU00Q61G===="
+								hash:       "B43EAOOTSPTTIOV6U0U7CV2VUA4Q25DVFCBNL5MPPJ1R59T8AJOG===="
+								scriptHash: "309JG38ICM25CV4OUDBDNSEHGI2PDVAS73RPFA0JKVHBTJHU8CH0===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -35,11 +35,6 @@ package site
 											...
 
 											"""
-								}, {
-									doc:      ""
-									cmd:      "export CUE_EXPERIMENT=modules"
-									exitCode: 0
-									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "cue mod init glacial-tech.example/frostyapp@v0"
