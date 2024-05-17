@@ -11,8 +11,8 @@ package site
 								"config.cue":    "+MVCzwc2LKBqLPzcLK46tY6vsssYPNyQ2u7pWkx8BYg="
 							}
 							multi_step: {
-								hash:       "EKOEVAG6OV56HB393H9L6K5R7QCU4QU1ODLGD32QLPDS42937U4G===="
-								scriptHash: "EL3GNRMV7IQ6PKGPHNSFEBKTJ8BMR0DKQEFKNE7S9QU3FA5VJNT0===="
+								hash:       "UD09NEMB6UT7K6DNUVRD6OASTHBU0AQUQJ6GKF08JT9OJ4P7RO2G===="
+								scriptHash: "SV2DHL950F2OJ34H73NG8QRM3BSI3B0J4UONRI6BV95QJ0GPQOP0===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
@@ -54,11 +54,6 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cd frostyconfig"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "export CUE_EXPERIMENT=modules"
 									exitCode: 0
 									output:   ""
 								}, {

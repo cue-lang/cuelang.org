@@ -81,18 +81,6 @@ cd {{{.module1Repo}}}
 
 {{{end}}}
 
-{{{with step}}}
-
-Enable the modules experiment:
-
-{{{with script "en" "init-environ"}}}
-export CUE_EXPERIMENT=modules
-{{{end}}}
-
-{{{end}}}
-
----
-
 {{< caution >}}
 **You need to adapt the command shown in the next step.**
 
