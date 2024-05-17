@@ -73,18 +73,6 @@ $ cd frostyconfig
 
 {{< /step >}}
 
-{{< step stepNumber="2" >}}
-
-Enable the modules experiment:
-
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXM=" }
-$ export CUE_EXPERIMENT=modules
-```
-
-{{< /step >}}
-
----
-
 {{< caution >}}
 **You need to adapt the command shown in the next step.**
 
@@ -101,7 +89,7 @@ then you would replace `cueckoo` with `_tomhanks`.
 the username `cueckoo` in this tutorial.**
 {{< /caution >}}
 
-{{< step stepNumber="3" >}}
+{{< step stepNumber="2" >}}
 Initialize the directory as a git repository and a CUE module:
 
 ```text { title="TERMINAL" codeToCopy="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnaXRodWIuY29tL2N1ZWNrb28vZnJvc3R5Y29uZmlnQHYw" }
@@ -120,7 +108,7 @@ Registry inside that namespace.  The same is true for your GitHub username.
 
 {{< /step >}}
 
-{{< step stepNumber="4" >}}
+{{< step stepNumber="3" >}}
 
 Create the configuration schema:
 ```cue { title="frostyconfig/config.cue" }
@@ -146,7 +134,7 @@ package frostyconfig
 
 {{< /step >}}
 
-{{< step stepNumber="5" >}}
+{{< step stepNumber="4" >}}
 
 As a one-off, login to the Central Registry:
 
@@ -162,7 +150,7 @@ or via email to
 
 {{< /step >}}
 
-{{< step stepNumber="6" >}}
+{{< step stepNumber="5" >}}
 
 Ensure the `module.cue` file is tidy:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
@@ -171,7 +159,7 @@ $ cue mod tidy
 
 {{< /step >}}
 
-{{< step stepNumber="7" >}}
+{{< step stepNumber="6" >}}
 
 If you haven't already done so,
 [create a repository](https://github.com/new?org=)
@@ -180,7 +168,7 @@ It doesn't matter if the repository is public or private.
 
 {{< /step >}}
 
-{{< step stepNumber="8" >}}
+{{< step stepNumber="7" >}}
 Create a git commit:
 
 ```text { title="TERMINAL" codeToCopy="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=" }
@@ -196,7 +184,7 @@ module.
 
 {{< /step >}}
 
-{{< step stepNumber="9" >}}
+{{< step stepNumber="8" >}}
 
 Publish the first version of this module:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
@@ -228,7 +216,7 @@ and restart the tutorial from step 1.
 Define the `FrostyApp` configuration, constrained by the schema you just
 published.
 
-{{< step stepNumber="10" >}}
+{{< step stepNumber="9" >}}
 
 Create a directory for the new module and initalize it,
 changing `cueckoo` to *your* GitHub username, lower-cased:
@@ -242,7 +230,7 @@ $ cue mod init --source=git github.com/cueckoo/frostyapp@v0
 ```
 {{< /step >}}
 
-{{< step stepNumber="11" >}}
+{{< step stepNumber="10" >}}
 
 Create the code for the new module:
 
@@ -263,7 +251,7 @@ config: frostyconfig.#Config & {
 
 {{< /step >}}
 
-{{< step stepNumber="12" >}}
+{{< step stepNumber="11" >}}
 
 Ensure the module is tidy, adding missing dependencies:
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
@@ -293,7 +281,7 @@ deps: {
 
 ## Evaluate the configuration
 
-{{< step stepNumber="13" >}}
+{{< step stepNumber="12" >}}
 
 Export the configuration as YAML:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }

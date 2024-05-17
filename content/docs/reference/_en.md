@@ -17,7 +17,7 @@ Help texts for the `cue` command and its subcommands
 
 <!-- The trailing "\" on the next line vertically aligns the card's body with the spec card's body -->
 {{< card title="Modules" label="reference/modules" href="modules/" >}}\
-CUE's experimental dependency management system
+CUE's dependency management system
 {{< /card >}}
 
 {{< card title="Glossary" label="reference/glossary" href="glossary/" >}}
