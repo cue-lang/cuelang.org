@@ -74,7 +74,10 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		Dir:        "/",
 		ModuleRoot: "/",
 		Overlay: map[string]load.Source{
-			"/cue.mod/module.cue": load.FromString(`module: "example.com"`),
+			"/cue.mod/module.cue": load.FromString(`
+				module: "example.test"
+				language: version: "v0.9.0"
+			`),
 		},
 	}
 	builds := load.Instances([]string{string(in) + ":", "-"}, loadCfg)
