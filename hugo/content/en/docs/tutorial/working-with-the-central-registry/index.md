@@ -20,10 +20,6 @@ Along the way you will:
 - Create a module that depends on an existing, well-known module
 - Use `cue mod tidy` to automatically add dependencies and their versions to the `module.cue` file
 
-{{< info >}}
-This tutorial describes an experimental feature. All details are subject to change.
-{{< /info >}}
-
 Note that this guide depends on a pre-release version of CUE:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
@@ -31,20 +27,6 @@ $ cue version
 cue version v0.9.0-alpha.5
 ...
 ```
-
-## Enable the modules experiment
-
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXM=" }
-$ export CUE_EXPERIMENT=modules
-```
-
-Discussion [#2939](https://github.com/cue-lang/cue/discussions/2939) introduces
-v3 of the proposal to introduce modules and dependency management for CUE. The
-[v0.8.0](https://github.com/cue-lang/cue/releases/tag/v0.8.0) release included
-experimental support for modules that implements part of that proposal. If we
-accept #2939, then modules and package management will become a first-class
-citizen of CUE. Until then, we need to set the `CUE_EXPERIMENT` environment
-variable.
 
 ## Login to the Central Registry
 
