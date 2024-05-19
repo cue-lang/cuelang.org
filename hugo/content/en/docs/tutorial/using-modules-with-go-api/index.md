@@ -22,10 +22,6 @@ Along the way you will:
 - Use `cue mod tidy` to fetch and organise your module's dependencies
 - Load your CUE using the Go API working in a modules-aware mode
 
-{{< info >}}
-This tutorial describes an experimental feature whose details are subject to change.
-{{< /info >}}
-
 ## Prerequisites
 
 - **Access to the [Central Registry](https://registry.cue.works)** -- if you
@@ -42,14 +38,6 @@ This tutorial describes an experimental feature whose details are subject to cha
 ## Set up the `cue` command
 
 {{< step stepNumber="1" >}}
-Enable the modules experiment:
-
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPW1vZHVsZXM=" }
-$ export CUE_EXPERIMENT=modules
-```
-{{< /step >}}
-
-{{< step stepNumber="2" >}}
 Authenticate the `cue` command with the Central Registry:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGxvZ2lu" }
@@ -62,7 +50,7 @@ the Central Registry, which requires authentication.
 
 ## Create a CUE module
 
-{{< step stepNumber="3" >}}
+{{< step stepNumber="2" >}}
 Initialize a new main CUE module in an empty directory:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGFuLmV4YW1wbGUvY29uZmlnQHYw" }
@@ -72,7 +60,7 @@ $ cue mod init an.example/config@v0
 You won't publish this module, so the name you give it is unimportant.
 {{< /step >}}
 
-{{< step stepNumber="4" >}}
+{{< step stepNumber="3" >}}
 Create the file `main.cue`, holding the code for the main module:
 
 ```cue { title="main.cue" }
@@ -97,7 +85,7 @@ Your module imports and uses the `frostyconfig` package first introduced in the 
 You don't need to follow that tutorial right now - it's only mentioned for context.
 {{< /info >}}
 
-{{< step stepNumber="5" >}}
+{{< step stepNumber="4" >}}
 Ensure the CUE module is tidy:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCB0aWR5" }
@@ -108,7 +96,7 @@ This fetches the `frostyconfig` module (and any dependencies it might have)
 from the Central Registry.
 {{< /step >}}
 
-{{< step stepNumber="6" >}}
+{{< step stepNumber="5" >}}
 Export the configuration from your CUE module:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydA==" }
@@ -129,7 +117,8 @@ dependency from the Central Registry.
 {{< /step >}}
 
 ## Create a Go module and program
-{{< step stepNumber="7" >}}
+
+{{< step stepNumber="6" >}}
 Initialize a Go module for your program:
 
 ```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgYW4uZXhhbXBsZS9jb25maWc=" }
@@ -140,7 +129,7 @@ $ go mod init an.example/config
 You won't publish this module, so the name you give it is unimportant.
 {{< /step >}}
 
-{{< step stepNumber="8" >}}
+{{< step stepNumber="7" >}}
 Create the file `main.go` containing this Go program:
 
 ```go { title="main.go" }
@@ -153,24 +142,14 @@ import (
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/load"
-	"cuelang.org/go/mod/modconfig"
 )
 
 func main() {
 	ctx := cuecontext.New()
 
-	// Create a registry client. Passing a nil config
-	// will give us client that behaves like the cue command.
-	reg, err := modconfig.NewRegistry(nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	// Load the package from the current directory.
 	// We don't need to specify a Config in this example.
-	insts := load.Instances([]string{"."}, &load.Config{
-		Registry: reg,
-	})
+	insts := load.Instances([]string{"."}, nil)
 
 	// The current directory just has one file without any build tags,
 	// and that file belongs to the example package, so we get a single
@@ -190,11 +169,11 @@ This program loads the CUE package in the current directory,
 and then prints a message based on the `config` field.
 {{< /step >}}
 
-{{< step stepNumber="9" >}}
+{{< step stepNumber="8" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjguMgpnbyBtb2QgdGlkeQ==" }
-$ go get cuelang.org/go@v0.8.2
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMC1hbHBoYS41CmdvIG1vZCB0aWR5" }
+$ go get cuelang.org/go@v0.9.0-alpha.5
 ...
 $ go mod tidy
 ...
@@ -205,7 +184,7 @@ You can use `@latest` in place of the specific version mentioned here.
 
 ## Run the Go program
 
-{{< step stepNumber="10" >}}
+{{< step stepNumber="9" >}}
 Run the Go program:
 
 ```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }

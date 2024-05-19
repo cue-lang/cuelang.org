@@ -8,11 +8,11 @@ package site
 						cache: {
 							upload: {
 								"initial main.cue": "J4niKcsVLeRbfiAn2u32FzbuzOKtwfW0ndpPwWGglA4="
-								"initial go code":  "lpImkEmEKHPWH8eIDmzKggB1V1JN9CDjVc86XyZfMEM="
+								"initial go code":  "VKbWUUY9qq3SONH7mEjyoN2LMdfSvJLlds0XHd6l3Bw="
 							}
 							multi_step: {
-								hash:       "KD7100EFA5P942T6TBK0UQ4FIBHHA3IE0JPK8K0B3F4M6ECK7A10===="
-								scriptHash: "RFAN5OA0N7FHCG58RI26POLSG0QQMN9PS72O0V65QH0EA4FU1G00===="
+								hash:       "A1K4GTOPDM1TUFAEH5E6VL1UBF3FG5VSKQ61CC18Q1JUVJ4O4DA0===="
+								scriptHash: "PSIP2V88DEJ1IRGM6DN05S6CBN2PH3AIPETA5MSKN4178BGQI4V0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -25,7 +25,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.8.2:$PATH"
+									cmd:      "export PATH=/cues/v0.9.0-alpha.5:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -40,11 +40,6 @@ package site
 											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 											EOD
 											"""
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "export CUE_EXPERIMENT=modules"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -74,11 +69,6 @@ package site
 
 											"""
 								}, {
-									doc:      ""
-									cmd:      "unset CUE_EXPERIMENT"
-									exitCode: 0
-									output:   ""
-								}, {
 									doc:      "#ellipsis 0"
 									cmd:      "go mod init an.example/config"
 									exitCode: 0
@@ -88,7 +78,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.8.2"
+									cmd:      "go get cuelang.org/go@v0.9.0-alpha.5"
 									exitCode: 0
 									output: """
 											...
