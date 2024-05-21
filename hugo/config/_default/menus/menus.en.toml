@@ -90,7 +90,7 @@
 [[footer]]
     parent = "column2"
     name = "Contributing"
-    url = "/docs/reference/contribution-guidelines/"
+    url = "https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide"
     weight = 421
 [[footer]]
     parent = "column2"
