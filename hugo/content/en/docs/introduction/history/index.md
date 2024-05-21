@@ -1,6 +1,6 @@
 ---
-title: History
-weight: 40
+title: The History of CUE
+weight: 50
 ---
 
 Although it is a very different language, the roots of CUE lie in GCL,
