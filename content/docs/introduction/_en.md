@@ -8,289 +8,84 @@ aliases:
 - /docs/about
 ---
 
-## Welcome!
+### Welcome to CUE!
 
-CUE is an open-source data validation language and inference engine
-with its roots in logic programming.
-Although the language is not a general-purpose programming language,
-it has many applications, such as
-data validation, data templating, configuration, querying,
-code generation and even scripting.
-The inference engine can be used to validate
-data in code or to include it as part of a code generation pipeline.
+CUE is an
+<dfn title='License: "Apache-2.0", DCO: true, CLA: false'>open-source</dfn>
+data validation language with its roots in logic programming.
+It combines succinct yet clear syntax with powerful, flexible constraints that
+enable data, schema, policy, and constraints to coexist seamlessly:
 
-A key thing that sets CUE apart from its peer languages
-is that it merges types and values into a single concept.
-Whereas in most languages types and values are strictly distinct,
-CUE orders them in a single hierarchy (a lattice, to be precise).
-This is a very powerful concept that allows CUE to do
-many fancy things.
-It also simplifies matters.
-For instance, there is no need for generics, and enums, sum types
-and null coalescing are all the same thing.
-
-
-## Applications
-
-CUE's design ensures that combining CUE values in any
-order always gives the same result
-(it is associative, commutative and idempotent).
-This makes CUE particularly well-suited for cases where CUE
-constraints are combined from different sources:
-
-- Data validation: different departments or groups can each
-define their own constraints to apply to the same set of data.
-
-- Code extraction and generation: extract CUE definitions from
-multiple sources (Go code, Protobuf), combine them into a single
-definition, and use that to generate definitions in another
-format (e.g. OpenAPI).
-
-- Configuration: values can be combined from different sources
-  without one having to import the other.
-
-The ordering of values also allows set containment analysis of entire
-configurations.
-Where most validation systems are limited to checking whether a concrete
-value matches a schema, CUE can validate whether any instance of
-one schema is also an instance of another (is it backwards compatible?),
-or compute a new schema that represents all instances that match
-two other schema.
-
-## Philosophy and principles
-
-### Types are Values
-
-CUE does not distinguish between values and types.
-This is a powerful notion that allows CUE to define ultra-detailed
-constraints, but it also simplifies things considerably:
-there is no separate schema or data definition language to learn
-and related language constructs such as sum types, enums,
-and even null coalescing collapse onto a single construct.
-
-Below is a demonstration of this concept.
-On the left one can see a JSON object (in CUE syntax) with some properties
-about the city of Moscow.
-The middle column shows a possible schema for any municipality.
-On the right one sees a mix between data and schema as is exemplary of CUE.
-
-{{< columns >}}
-Data
-{{{with code "en" "data"}}}
--- in.cue --
-moscow: {
-	name:    "Moscow"
-	pop:     11.92M
-	capital: true
-}
-{{{end}}}
-{{< columns-separator >}}
-Schema
-{{{with code "en" "schema"}}}
--- in.cue --
-municipality: {
-	name:    string
-	pop:     int
-	capital: bool
-}
-{{{end}}}
-{{< columns-separator >}}
-CUE
-{{{with code "en" "CUE"}}}
--- in.cue --
-largeCapital: {
-	name:    string
-	pop:     >5M
-	capital: true
-}
-{{{end}}}
-{{< /columns >}}
-
-In general, in CUE one starts with a broad definition of a type, describing
-all possible instances.
-One then narrows down these definitions, possibly by combining constraints
-from different sources (departments, users), until a concrete data instance
-remains.
-
-
-### Push, not pull, constraints
-
-CUE's constraints act as data validators, but also double as
-a mechanism to reduce boilerplate.
-This is a powerful approach, but requires some different thinking.
-With traditional inheritance approaches one specifies the templates that
-are to be inherited from at each point they should be used.
-In CUE, instead, one selects a set of nodes in the configuration to which
-to apply a template.
-This selection can be at a different point in the configuration altogether.
-
-Another way to view this, a JSON configuration, say, can be
-defined as a sequence of path-leaf values.
-For instance,
-{{{with code "en" "json"}}}
--- in.json --
-{
-    "a": 3,
-    "b": {
-        "c": "foo"
-    }
-}
+{{{with code "en" "example"}}}
+#location left right
+! exec cue vet example.cue
+cmp stderr out
+-- example.cue --
+length: 20 & int
+width:  10.1 & >10 // Must be greater than 10
+area:   length * width
+area:   <=100 // Must be less than or equal to 100
+-- out --
+area: invalid value 202.0 (out of bound <=100):
+    ./example.cue:4:9
+    ./example.cue:3:9
 {{{end}}}
 
-could be represented as
+In its mission to support people using the language and to promote its
+adoption, the CUE project develops and publishes a variety of documentation and
+tools, including:
 
-{{{with code "en" "cue form of json"}}}
--- in.cue --
-"a": 3
-"b": "c": "foo"
-{{{end}}}
+{{< table >}}
+| Resource | Description
+| --- | ---
+| [The `cue` command]({{< relref "installation" >}}) | A command line tool that evaluates CUE, optionally combining it with structured data and other schema formats to validate, transform, and output data and constraints.
+| [`cuelang.org/go` APIs](https://pkg.go.dev/cuelang.org/go/cue#section-documentation) | Go APIs that enable CUE's capabilities to be embedded in Go programs. <!-- TODO: change link when https://github.com/cue-lang/docs-and-content/issues/153 is addressed -->
+| [The CUE Language Specification]({{< ref "docs/reference/spec" >}}) | The formal specification of CUE that defines how implementations of the language should behave.
+| [cuelang.org](/) | This website, including a foundational [tour through the language]({{< relref "/docs/tour" >}}), hands-on [tutorials]({{< relref "/docs/tutorial" >}}) and [how-to guides]({{< relref "/docs/howto" >}}), and informative [concept guides]({{< relref "/docs/concept" >}}).
+| [The CUE Playground](/play/) | A browser-based tool that lets you try out CUE without installing anything.
+{{< /table >}}
+<hr>
 
-All the information of the original JSON file is retained in this
-representation.
+By design, CUE isn't a general-purpose programming language,
+but its power and flexibility drive its use across a wide range of
+applications. It's often used to define, validate and generate
+[configuration]({{< relref "/docs/concept/how-cue-enables-configuration" >}}).
+CUE also excels at
+[validating data]({{< relref "/docs/concept/how-cue-enables-data-validation" >}})
+(such as JSON and YAML) against CUE schemas and policies, whilst also allowing schemas encoded in a variety of
+[other formats]({{< relref "/docs/integration/" >}})
+(such as JSON Schema, Protobuf, and OpenAPI) to be used simultaneously.
 
-CUE generalizes this notion to the following pattern:
-{{{with code "en" "nodes"}}}
-#nofmt
--- nodes.cue --
-<set of nodes>: <constraints>
-{{{end}}}
+CUE's language features enables you to
+[template data]({{< relref "/docs/tour/types/templates" >}}),
+reducing boilerplate by specifying fields in bulk and allowing data's
+important characteristics to stand out prominently. It's also used for
+[code generation]({{< relref "/docs/concept/code-generation-and-extraction-use-case" >}}),
+and to leverage existing schemas defined in formats such as
+[Protobuf]({{< relref "/docs/concept/how-cue-works-with-protocol-buffers" >}}),
+[JSON Schema]({{< relref "/docs/concept/how-cue-works-with-json-schema" >}}),
+and
+[Go]({{< relref "/docs/concept/how-cue-works-with-go" >}}) types.
 
-Each field declaration in CUE defines a set of nodes to which to apply
-a specific constraint.
-Because order doesn't matter, multiple constraints can be applied to the
-same nodes, all of which need to apply simultaneously.
-Such constraints may even be in different files.
-But they may never contradict each other:
-if one declaration says a field is `5`, another may not override it to be `6`.
-Declaring a field to be both `>5` and `<10` is valid, though.
+Over the next few pages you'll learn about some unique properties of the CUE
+language, including:
 
-This approach is more restricted than full-blown inheritance;
-it may not be possible to reuse existing configurations.
-On the other hand, it is also a more powerful boilerplate remover.
-For instance, suppose each job in a set needs to use a specific
-template.
-Instead of having to spell this out at each point,
-one can declare this separately in a one blanket statement.
+- why the merged concepts of "types" and "values" enable succinct and clear
+  constraints
+- how some of CUE's core design principles combine so that the source of each
+  specific value is never in doubt -- no more hunting through confusing layers
+  of "overrides" to figure out which files disagree about a particular value
+- the advanced tooling that's made possible by CUE's careful design, including
+  automated boilerplate removal!
+<!-- TODO: something about modules? That would require extending the intro somewhat ... -->
 
-So instead of
+<!-- This is only a Hugo warning because that element renders in the site's
+yellow colour, and not because this text contains the word "warning". -->
+{{< warning >}}
+Welcome to
+<a href="{{< relref "/community" >}}" style="font-weight: normal;">the CUE community</a>
+-- but be warned ... \
+**Prolonged exposure to CUE can seriously affect how you approach data and configuration - for good!**
+{{< /warning >}}
 
-{{{with code "en" "non-dry"}}}
--- in.cue --
-jobs: {
-	foo: acmeMonitoring & {...}
-	bar: acmeMonitoring & {...}
-	baz: acmeMonitoring & {...}
-}
-{{{end}}}
-
-one can write
-
-{{{with code "en" "dry"}}}
--- in.cue --
-jobs: [string]: acmeMonitoring
-
-jobs: {
-	foo: {...}
-	bar: {...}
-	baz: {...}
-}
-{{{end}}}
-
-There is no need to repeat the reference to the monitoring template for
-each job, as the first already states that all jobs _must_ use `acmeMonitoring`.
-Such requirements can be specified across files.
-
-This approach not only reduces the boilerplate contained in `acmeMonitoring`
-but also removes the repetitiveness of having to specify
-this template for each job in `jobs`.
-At the same time, this statement acts as a type enforcement.
-This dual function is a key aspect of CUE and
-typed feature structure languages in general.
-
-This approach breaks down, of course, if the restrictions in
-`acmeMonitoring` are too stringent and jobs need to override them.
-To this extent, CUE provides mechanisms to allow defaults, opt-out, and
-soft constraints.
-
-
-### Separate configuration from computation
-
-There comes a time that one (seemingly) will need do complex
-computations to generate some configuration data.
-But simplicity of a configuration language can be paramount when one quickly
-needs to make changes.
-These are obviously conflicting interests.
-
-CUE takes the stance that computation and configuration should
-be separated.
-And CUE actually makes this easy.
-The data that needs to be computed can be generated outside of CUE
-and put in a file that is to be mixed in.
-The data can even be generated in CUE's scripting layer and automatically
-injected in a configuration pipeline.
-Both approaches rely on CUE's property that the order in which this data gets
-added is irrelevant.
-
-
-
-### Be useful at all scales
-
-The usefulness of a language may depend on the scale of the project.
-Having too many different languages can put a cognitive strain on
-developers, though, and migrating from one language to another as
-scaling requirements change can be very costly.
-CUE aims to minimize these costs
-by covering a myriad of data- and configuration-related tasks at all scales.
-
-**Small scale**
-At small scales, reducing boilerplate in configurations is not necessarily
-the best thing to do.
-Even at a small scale, however, repetition can be error prone.
-For such cases, CUE can define schema to validate otherwise
-typeless data files.
-
-**Medium scale**
-As soon the desire arises to reduce boilerplate, the `cue` tool can
-help to automatically rewrite configurations.
-See the Quick and Dirty section of the
-[Kubernetes tutorial](https://github.com/cue-labs/cue-by-example/blob/main/003_kubernetes_tutorial/README.md)
-for an example using the `import` and `trim` tool.
-Thousands of lines can be obliterated automatically using this approach.
-
-**Large scale**
-CUE's underlying formalism was developed for large-scale configuration.
-Its import model incorporates best practices for large-scale engineering
-and it is optimized for automation.
-A key to this is advanced tooling.
-The mathematical model underlying CUE's operations allows for
-automation that is intractable for most other approaches.
-CUE's `trim` command is an example of this.
-
-
-### Tooling
-
-Automation is key.
-Nowadays, a good chunk of code gets generated, analyzed, reformatted,
-and so on by machines.
-The CUE language, APIs, and tooling have been designed to allow for
-machine manipulation.
-Aspects of this are:
-
-- make the language easy to scan and parse,
-- restrictions on imports,
-- allow any piece of data to be split across files and generated
-  from different sources,
-- define packages at the directory level,
-- and of course its value and type model.
-
-The order independence also plays a key role in this.
-It allows combining constraints from various sources without having
-to define any order in which they are to be applied to get
-predictable results.
-
-
-<!-- something about this?
-Not turing complete.
-Run in contexts where cost is hard to attribute.
-Easier to make claims about termination (smart contracts).
--->
+*Next page:* [A Familiar Look and Feel]({{< relref "cue-is-familiar" >}})
