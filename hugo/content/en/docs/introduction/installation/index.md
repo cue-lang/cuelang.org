@@ -1,6 +1,6 @@
 ---
-title: Installation
-weight: 20
+title: Installing CUE
+weight: 50
 aliases:
 - /docs/install
 - /download
