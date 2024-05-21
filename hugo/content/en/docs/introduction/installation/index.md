@@ -1,6 +1,6 @@
 ---
 title: Installation
-weight: 20
+weight: 30
 aliases:
 - /docs/install
 - /download
