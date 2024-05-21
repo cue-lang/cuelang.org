@@ -8,62 +8,42 @@ aliases:
 - /dl
 ---
 
-The Go APIs for CUE are defined in the
+Visit
+[cuelang.org/play](https://cuelang.org/play/)
+to try out CUE without installing anything on your computer.
+
+## Installing the `cue` command
+
+The `cue` command is available from various sources.
+Choose how you prefer to install software:
+
+{{< table >}}
+| Source | How to install | Operating Systems
+| :---  | :--- | :---
+| All officially release binaries | Download from [github.com/cue-lang/cue/releases](https://github.com/cue-lang/cue/releases/) | Linux \| macOS \| Windows
+| Latest (non-prerelease) binaries | Download from [github.com/cue-lang/cue/releases/latest](https://github.com/cue-lang/cue/releases/latest) | Linux \| macOS \| Windows
+| Homebrew ([brew.sh](https://brew.sh)) | `brew install cue-lang/tap/cue` | Linux \| macOS
+| Arch Linux ([archlinux.org](https://archlinux.org)) | `pacman -S extra/cue` | Linux
+| Docker Hub ([hub.docker.com](https://hub.docker.com/r/cuelang/cue)) | `docker pull cuelang/cue:latest` | [Docker-supported platforms](https://docs.docker.com/engine/install/)
+| Go source code ([go.dev](https://go.dev)) | `go install cuelang.org/go/cmd/cue@latest` | [Go-supported platforms](https://go.dev/dl/#stable)
+{{< /table >}}
+
+If you don't have a preference, install the
+[latest non-prerelease binary](https://github.com/cue-lang/cue/releases/latest)
+that's appropriate for your operating system.
+
+## Installing the Go API
+
+CUE's Go APIs are defined in the
 [`cuelang.org/go`](https://pkg.go.dev/cuelang.org/go) module, which can be added
-as a dependency using [Go's native dependency
-management](https://go.dev/doc/modules/managing-dependencies).
+as a versioned dependency using Go's
+[dependency management](https://go.dev/doc/modules/managing-dependencies)
+workflows. All available versions are listed at
+[pkg.go.dev/cuelang.org/go](https://pkg.go.dev/cuelang.org/go?tab=versions).
 
-The `cue` binary can be installed using one of the following methods.
+For example, to fetch the latest non-prerelease version:
 
-## Install CUE from official release binaries
-
-### Download
-
-Binaries for various operating systems, including Linux, Microsoft Windows,
-and macOS can be downloaded from
-[official CUE releases](https://github.com/cue-lang/cue/releases/).
-
-### Install using Homebrew
-
-In addition, CUE can be installed with using [`brew`](https://brew.sh/) on macOS
-and Linux:
-
-```
-brew install cue-lang/tap/cue
-```
-
-### Installation on Arch Linux
-
-Arch Linux has an official package that you can install by running:
-
-```
-pacman -S cue
-```
-
-## Install CUE from source
-
-### Prerequisites
-
-Go 1.16 or higher (see below for instructions on installing Go).
-
-### Installing CUE
-
-To install the `cue` command line tool:
-
-```
-go install cuelang.org/go/cmd/cue@latest
-```
-
-### Installing Go
-
-#### Download Go
-
-Download the binary for Microsoft Windows, macOS, and Linux at
-https://go.dev/dl/. If you use a different OS you can [install Go from
-source](https://go.dev/doc/install/source).
-
-#### Install Go
-
-Follow the instructions at https://go.dev/doc/install. Make sure the `go`
-binary is in your `PATH`, then follow the instructions above to install CUE
-from source.
+{{{with script "en" "go get cue"}}}
+#norun
+go get cuelang.org/go@latest
+{{{end}}}
