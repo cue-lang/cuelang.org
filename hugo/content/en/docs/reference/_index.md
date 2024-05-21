@@ -24,11 +24,6 @@ CUE's experimental dependency management system
 Index and glossary of terms used by CUE
 {{< /card >}}
 
-<!-- TODO: it'd be nice if we could line-wrap the label after "reference/" -->
-{{< card title="Contributing to CUE" label="reference/contribution-guidelines" href="contribution-guidelines/" >}}
-Guidance on how to contribute to the CUE project
-{{< /card >}}
-
 <!-- The space in label="[...]code-of- conduct" permits a line wrap which, for some reason, doesn't
 happen otherwise. It's needed to avoid the "...conduct" text crashing into the label's chevron.
 TODO: it'd be nice if we could line-wrap the label after "reference/" -->
@@ -59,5 +54,9 @@ Includes adaptors for YAML, JSON, Go, Protobuf, and OpenAPI
 
 {{< card title="cue-lang/cue" label="github.com" href="https://github.com/cue-lang/cue" >}}
 The CUE project issue tracker, and source code for the CUE Go implementation
+{{< /card >}}
+
+{{< card title="Contributing to CUE" label="github.com" href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" >}}
+Guidance on how to contribute to the CUE project
 {{< /card >}}
 {{< /cards >}}
