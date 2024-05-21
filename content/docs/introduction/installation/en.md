@@ -8,6 +8,28 @@ aliases:
 - /dl
 ---
 
+Visit
+[cuelang.org/play](https://cuelang.org/play/)
+to try out the CUE language without installing anything on your computer!
+
+### Installing the `cue` command
+
+The `cue` command 
+
+{{< table >}}
+| | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+{{< /table >}}
+
+Binaries for various operating systems, including Linux, Microsoft Windows,
+and macOS can be downloaded from
+[official CUE releases](https://github.com/cue-lang/cue/releases/).
+
+
+### Installing the Go API
+
 The Go APIs for CUE are defined in the
 [`cuelang.org/go`](https://pkg.go.dev/cuelang.org/go) module, which can be added
 as a dependency using [Go's native dependency
