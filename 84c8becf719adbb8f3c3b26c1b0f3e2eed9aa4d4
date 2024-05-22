@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f15330f_39b5f723",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93e5e136_1838bcb6",
@@ -31,6 +48,24 @@
       "writtenOn": "2024-05-22T09:54:30Z",
       "side": 1,
       "message": "I think we need to be careful not to suggest that this stuff isn\u0027t possible via the Go API.",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b42207b_2fb32860",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93e5e136_1838bcb6",
       "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +87,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "088180a7_099bd64d",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Updated. I\u0027m not a fan of the increased page length that this requires (although this single example is definitely trivial), and I\u0027ll welcome a design pass over how we can increase the density of script and upload examples.\n\n\u003e I\u0027m also reminded about https://github.com/cue-lang/cue/issues/2975 reading this page.\n\nAgreed. I find myself needing to write preamble text like the following, on this page, ahead of upload blocs, to mitigate what I perceive as a problematic lack of \"pop\" in their filename elements:\n\n```\nThe `schema.cue` file is present from before. Let’s create `policy.cue` as well:\n```",
+      "parentUuid": "fd72dc22_fd7e7954",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17ab94f2_b8682d49",
@@ -69,6 +122,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2f002cf_9f306673",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17ab94f2_b8682d49",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c622040_cd9056b9",
@@ -82,6 +153,30 @@
       "writtenOn": "2024-05-22T09:54:30Z",
       "side": 1,
       "message": "Is it \"nuanced\"? I would use simpler language. \"involved\", \"complicated\", \"precise\"?",
+      "range": {
+        "startLine": 128,
+        "startChar": 32,
+        "endLine": 128,
+        "endChar": 39
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e72ff6df_b451b814",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c622040_cd9056b9",
       "range": {
         "startLine": 128,
         "startChar": 32,
@@ -115,6 +210,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "41ee04dd_c0c15c79",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec078de6_733e677b",
+      "range": {
+        "startLine": 163,
+        "startChar": 25,
+        "endLine": 163,
+        "endChar": 32
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ad7684e_82746f8b",
@@ -132,6 +251,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ecaa598_fa0dc3d3",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad7684e_82746f8b",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b269de5f_47992de0",
@@ -145,6 +282,30 @@
       "writtenOn": "2024-05-22T09:54:30Z",
       "side": 1,
       "message": "\"aspects\" - \"facet\" is not a term that we have used until now, and aspect oriented programming and things having multiple aspects is a well-known concept. Same applies for later occurrences.",
+      "range": {
+        "startLine": 217,
+        "startChar": 54,
+        "endLine": 217,
+        "endChar": 60
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0069a712_10164c4a",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Whoops - that was indeed the term I was reaching for!",
+      "parentUuid": "b269de5f_47992de0",
       "range": {
         "startLine": 217,
         "startChar": 54,
@@ -178,6 +339,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cd6567c_a0a5dba1",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Well, I meant \"CUE doesn\u0027t impose any limits, so the only limits are those which are required by your specific scenario\", but I can see that the word \"limit\" is a red flag we\u0027d probably prefer to avoid. I\u0027ve reworded around the term \"guided\".",
+      "parentUuid": "ec80a113_d48a22f7",
+      "range": {
+        "startLine": 217,
+        "startChar": 63,
+        "endLine": 218,
+        "endChar": 58
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc8306f0_a7be8b80",
@@ -191,6 +376,30 @@
       "writtenOn": "2024-05-22T09:54:30Z",
       "side": 1,
       "message": "The last past of this sentence doesn\u0027t read very clearly for me. Please can we try and simplify the language?",
+      "range": {
+        "startLine": 223,
+        "startChar": 49,
+        "endLine": 225,
+        "endChar": 10
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bf2711e_5fcab509",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "I believe the reworded form now reads better.",
+      "parentUuid": "cc8306f0_a7be8b80",
       "range": {
         "startLine": 223,
         "startChar": 49,
@@ -224,6 +433,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67ed4dba_428ac91e",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "It\u0027s the term I\u0027m aware of that\u0027s used in regular expressions for `a|b`. I chose to mention it here because folks who are data-validation-focused will often reach for regex early in any given task, so it made sense to me to call it out as a hint to use disjunctions *instead* of building some massive regex (in CUE or otherwise).\n\nI\u0027ve added \"sum types\" to this sentence, but have kept \"alternation\" for the above reason.",
+      "parentUuid": "e9d50904_9f975d2f",
+      "range": {
+        "startLine": 235,
+        "startChar": 33,
+        "endLine": 235,
+        "endChar": 44
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ca6ec93_200361bd",
@@ -243,6 +476,47 @@
         "endLine": 248,
         "endChar": 8
       },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7454738_4d3bf3b9",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "Well, TBH I /was/! I think the propensity of data-validation folks to reach for regex for many tasks is something we should help push back against, by pointing out how CUE gives them more (better! simpler!) tools to use. I\u0027ve gone with your wording, here, as my point is made explicitly in the following sentence.",
+      "parentUuid": "7ca6ec93_200361bd",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 8
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27e7ccca_c51f0a5e",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-22T16:54:32Z",
+      "side": 1,
+      "message": "I\u0027ve made these examples single-column.",
       "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
