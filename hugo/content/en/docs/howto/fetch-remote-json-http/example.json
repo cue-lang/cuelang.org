@@ -1,0 +1,6 @@
+{
+    "aString": "a string value",
+    "aBoolean": true,
+    "aFloat": 13.9,
+    "anInt": 42
+}
