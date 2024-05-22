@@ -105,6 +105,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e48c8cb6_39dc1f00",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:49:55Z",
+      "side": 1,
+      "message": "\u003e I\u0027ll welcome a design pass over how we can increase the density of script and upload examples.\n\nThat\u0027s fine. I\u0027d rather not try and (re)design things. Let\u0027s leave the warts sticking out and obvious, linked from an issue, then we clearly have something to aim at.",
+      "parentUuid": "088180a7_099bd64d",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17ab94f2_b8682d49",
@@ -363,6 +381,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a705891a_4bd0079e",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:49:55Z",
+      "side": 1,
+      "message": "Reads much better.",
+      "parentUuid": "2cd6567c_a0a5dba1",
+      "range": {
+        "startLine": 217,
+        "startChar": 63,
+        "endLine": 218,
+        "endChar": 58
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc8306f0_a7be8b80",
@@ -400,6 +442,30 @@
       "side": 1,
       "message": "I believe the reworded form now reads better.",
       "parentUuid": "cc8306f0_a7be8b80",
+      "range": {
+        "startLine": 223,
+        "startChar": 49,
+        "endLine": 225,
+        "endChar": 10
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e29241b9_52bcf467",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:49:55Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "6bf2711e_5fcab509",
       "range": {
         "startLine": 223,
         "startChar": 49,

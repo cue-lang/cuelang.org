@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6dea632_4a129546",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:49:55Z",
+      "side": 1,
+      "message": "Read well. Just a few last suggestions.",
+      "revId": "b473101d99783d68ada6bcfdc5e6a58d2cdaff89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c98c60f1_83c14c3e",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:49:55Z",
+      "side": 1,
+      "message": "Sorry but I think the order of these needs to be reversed. The majority of people will encounter CUE through `cmd/cue`. There should then be an \"also\" for the Go API.",
+      "revId": "b473101d99783d68ada6bcfdc5e6a58d2cdaff89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "913b6245_9a09bca1",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:49:55Z",
+      "side": 1,
+      "message": "Link to something useful? Install instructions?",
+      "range": {
+        "startLine": 19,
+        "startChar": 72,
+        "endLine": 19,
+        "endChar": 85
+      },
+      "revId": "b473101d99783d68ada6bcfdc5e6a58d2cdaff89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57927b16_b1b7ff89",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:49:55Z",
+      "side": 1,
+      "message": "This is not a detail I would include here. I would suggest removing this line entirely.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 75
+      },
+      "revId": "b473101d99783d68ada6bcfdc5e6a58d2cdaff89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
