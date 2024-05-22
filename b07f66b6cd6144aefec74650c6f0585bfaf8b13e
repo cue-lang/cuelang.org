@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a910722d_820b886d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T15:16:43Z",
+      "side": 1,
+      "message": "I think the \"Technologies\" section is a good approach for now. And we can easily revisit.",
+      "revId": "b07f66b6cd6144aefec74650c6f0585bfaf8b13e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
