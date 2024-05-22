@@ -16,6 +16,23 @@
       "message": "PTAL. I\u0027ve had a click around the preview site, looking for anything odd, but nothing showed up.",
       "revId": "ae00b2f204f5fadf3efeb4cad9901c4e49190838",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e86b4a65_7ee3c725",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T18:43:38Z",
+      "side": 1,
+      "message": "There is no requirement to make this change, but also no harm.",
+      "revId": "ae00b2f204f5fadf3efeb4cad9901c4e49190838",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
