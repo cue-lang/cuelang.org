@@ -1,0 +1,250 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6099b8e0_c24f7319",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "This has a good shape to i!",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93e5e136_1838bcb6",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "I think we need to be careful not to suggest that this stuff isn\u0027t possible via the Go API.",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd72dc22_fd7e7954",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "This one I think should appear in non-column format: it\u0027s just a little surprising to have the terminal on the RHS. I\u0027m also reminded about https://github.com/cue-lang/cue/issues/2975 reading this page.",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17ab94f2_b8682d49",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "I\u0027m not sure I would go this far. The constraints you have declared here are at the package level. It was perhaps an error for us not to close package values when used/referenced. See https://github.com/cue-lang/cue/issues/629#issuecomment-1111867269 for commentary on that point. \n\nSo I wouldn\u0027t say that it\u0027s deliberate - that\u0027s too strong. Instead I would explain that the package value (of which the constraints you have declared are part) is open.",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c622040_cd9056b9",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "Is it \"nuanced\"? I would use simpler language. \"involved\", \"complicated\", \"precise\"?",
+      "range": {
+        "startLine": 128,
+        "startChar": 32,
+        "endLine": 128,
+        "endChar": 39
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec078de6_733e677b",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "\"present from before\" just reads a bit strangely to me. A bit simpler language again?\n\n\"as before\"?",
+      "range": {
+        "startLine": 163,
+        "startChar": 25,
+        "endLine": 163,
+        "endChar": 32
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ad7684e_82746f8b",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "Again I would keep it consistent with the terminal across the full width.",
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b269de5f_47992de0",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "\"aspects\" - \"facet\" is not a term that we have used until now, and aspect oriented programming and things having multiple aspects is a well-known concept. Same applies for later occurrences.",
+      "range": {
+        "startLine": 217,
+        "startChar": 54,
+        "endLine": 217,
+        "endChar": 60
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec80a113_d48a22f7",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "What limits are you referring to here?",
+      "range": {
+        "startLine": 217,
+        "startChar": 63,
+        "endLine": 218,
+        "endChar": 58
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc8306f0_a7be8b80",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "The last past of this sentence doesn\u0027t read very clearly for me. Please can we try and simplify the language?",
+      "range": {
+        "startLine": 223,
+        "startChar": 49,
+        "endLine": 225,
+        "endChar": 10
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9d50904_9f975d2f",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "Which languages?\n\n\"Sum types\" is the more common term to my mind.",
+      "range": {
+        "startLine": 235,
+        "startChar": 33,
+        "endLine": 235,
+        "endChar": 44
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ca6ec93_200361bd",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-22T09:54:30Z",
+      "side": 1,
+      "message": "\"also provides\" - the \"however\" sounds like you are making a point arguing against the use of regular expressions.",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 8
+      },
+      "revId": "84c8becf719adbb8f3c3b26c1b0f3e2eed9aa4d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
