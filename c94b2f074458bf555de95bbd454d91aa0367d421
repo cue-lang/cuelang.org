@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "052527a8_2bbde483",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-23T11:43:40Z",
+      "side": 1,
+      "message": "Please can you take over on this CL?",
+      "revId": "c94b2f074458bf555de95bbd454d91aa0367d421",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
