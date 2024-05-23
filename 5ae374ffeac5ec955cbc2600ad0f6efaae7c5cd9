@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "590c9cf0_0f302406",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-23T13:52:39Z",
+      "side": 1,
+      "message": "I\u0027ve taken this CL over. PTAL at the small set of changes I\u0027ve proposed.",
+      "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
