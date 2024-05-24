@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a953f95_10c24a71",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-24T14:37:20Z",
+      "side": 1,
+      "message": "Agreed. I\u0027ll keep that 80/20, 60/40 majority in mind for other pages as well.",
+      "parentUuid": "c98c60f1_83c14c3e",
+      "revId": "b473101d99783d68ada6bcfdc5e6a58d2cdaff89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "913b6245_9a09bca1",
@@ -58,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5da6387_d6728a10",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-24T14:37:20Z",
+      "side": 1,
+      "message": "I\u0027ve linked to /docs/introduction/installation, but I don\u0027t feel it\u0027s a great page to receive inbound links in its current form.\n\nI feel this points to a need for the /docs/reference/cli/ reorg that I proposed in https://github.com/cue-lang/docs-and-content/issues/125#issue-2256485828, which would give us space to place a non-generated \"`cue` reference guide` hierarchy - which could be constructed to be better suited to link to from /this/ page, IMHO.",
+      "parentUuid": "913b6245_9a09bca1",
+      "range": {
+        "startLine": 19,
+        "startChar": 72,
+        "endLine": 19,
+        "endChar": 85
+      },
+      "revId": "b473101d99783d68ada6bcfdc5e6a58d2cdaff89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "57927b16_b1b7ff89",
@@ -71,6 +113,30 @@
       "writtenOn": "2024-05-22T18:49:55Z",
       "side": 1,
       "message": "This is not a detail I would include here. I would suggest removing this line entirely.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 75
+      },
+      "revId": "b473101d99783d68ada6bcfdc5e6a58d2cdaff89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f4cd429_52b61a08",
+        "filename": "content/docs/concept/how-cue-enables-data-validation/en.md",
+        "patchSetId": 26
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-24T14:37:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57927b16_b1b7ff89",
       "range": {
         "startLine": 20,
         "startChar": 0,
