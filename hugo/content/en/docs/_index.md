@@ -11,7 +11,7 @@ CUE is an open-source data validation language and inference engine
 with its roots in logic programming.
 Although the language is not a general-purpose programming language
 it supports and simplifies a wide variety of applications, such as
-[data validation]({{< relref "concept/data-validation-use-case" >}}),
+[data validation]({{< relref "concept/how-cue-enables-data-validation" >}}),
 [configuration]({{< relref "concept/how-cue-enables-configuration" >}}),
 [querying]({{< relref "docs/concept/querying-use-case" >}}),
 and [code generation]({{< relref "concept/code-generation-and-extraction-use-case" >}}).
