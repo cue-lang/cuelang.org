@@ -21,6 +21,7 @@ If a new tag is needed then add it:
 {{</* tag "cue command" */>}}: TODO\
 {{</* tag "go api" */>}}: Pages including non-trivial mentions of the CUE Go API\
 {{</* tag "user question" */>}}: Pages written in the specific Q&A narrative style\
+{{</* tag "workflow command" */>}}: Pages including non-trivial mentions of workflow commands\
 {{</* tag ecosystem */>}}: TODO\
 {{</* tag encodings */>}}: TODO\
 {{</* tag language */>}}: TODO\
@@ -33,6 +34,7 @@ If a new tag is needed then add it:
 {{< tag "cue command" >}}: TODO\
 {{< tag "go api" >}}: Pages including non-trivial mentions of the CUE Go API\
 {{< tag "user question" >}}: Pages written in the specific Q&A narrative style\
+{{< tag "workflow command" >}}: Pages including non-trivial mentions of workflow commands\
 {{< tag ecosystem >}}: TODO\
 {{< tag encodings >}}: TODO\
 {{< tag language >}}: TODO\
