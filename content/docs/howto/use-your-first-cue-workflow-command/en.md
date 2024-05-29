@@ -4,7 +4,7 @@ toc_hide: true
 authors:
 - jpluscplusm
 tags:
-- cue command
+- workflow command
 ---
 
 This guide demonstrates how to define a very simple CUE *workflow command*,
