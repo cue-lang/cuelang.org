@@ -205,57 +205,40 @@ template: ci.#writefs & {
 
 
 			# Tags
+			# The order of the tags in this file determines their relative positions
+			# on all rendered pages.
 			# Color can be one of: red, orange, green, pink, purple, lilac, blue, lavender
 
 			[[tags]]
 			name = "ecosystem"
 			color = "red"
-			weight = 10
-
 			[[tags]]
 			name = "encodings"
 			color = "green"
-			weight = 20
-
 			[[tags]]
 			name = "cue command"
 			color = "purple"
-			weight = 30
-
 			[[tags]]
 			name = "language"
 			color = "blue"
-			weight = 40
-
 			[[tags]]
 			name = "validation"
 			color = "lilac"
-			weight = 50
-
 			[[tags]]
 			name = "tooling"
 			color = "orange"
-			weight = 60
-
 			[[tags]]
 			name = "commented cue"
 			color = "pink"
-			weight = 70
-
 			[[tags]]
 			name = "user question"
 			color = "red"
-			weight = 80
-
 			[[tags]]
 			name = "modules"
 			color = "red"
-			weight = 90
-
 			[[tags]]
 			name = "go api"
 			color = "lavender"
-			weight = 100
 
 			"""#
 		}
