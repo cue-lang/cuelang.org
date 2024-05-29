@@ -1,6 +1,8 @@
 ---
 title: How CUE enables configuration
 tags:
+- validation
+- workflow command
 authors:
 - jpluscplusm
 toc_hide: true
@@ -473,10 +475,10 @@ Some of these tools have significant overlaps in functionality, along with
 areas where they're particularly strong - and yet linking them together or
 *composing* them is painful, as they haven't been designed for interoperability.
 
-**This is where CUE's tooling layer can help**.\
-It builds on CUE configurations, extending them to enable **data-driven workflows**.
+This is where CUE's tooling layer can help, using
+"workflow commands" to extend CUE configurations and enable **data-driven workflows**.
 
-CUE's tooling layer allows the particular strengths of existing, individual
+Workflow commands allow the particular strengths of existing, individual
 tools to be harnessed, by allowing configurations to be **built up incrementally**.
 The output of each tool can be processed through CUE's powerful language
 constraints, before being transformed and used as the validated input that
@@ -486,15 +488,15 @@ The tooling layer enables **declarative specification of how external data,
 schema, and policy are combined** by modifying CUE's normal operation and
 allowing tasks to fetch information directly from external sources.
 Reading files, calling APIs, invoking external commands, fetching files from
-source control
-\- if it can be scripted, then CUE's tooling layer can extract its information
-to use as data, schema, and policy.
+source control - if it can be scripted, then a workflow command can extract
+its information to use as data, schema, and policy.
 
 <!-- TODO: link to a more introductory text for tooling -->
 <!-- https://github.com/cue-lang/docs-and-content/issues/102 -->
-For more information on CUE tooling, and how its ability to deterministically
-combine data from static and dynamic sources can supercharge automation, see
-the [`cue commands`]({{< relref "docs/reference/cli/cue-commands" >}})
+For more information on workflow commands, and how their ability to
+deterministically combine data from static and dynamic sources can supercharge
+automation, see the
+[`cue commands`]({{< relref "docs/reference/cli/cue-commands" >}})
 reference documentation.
 
 ## Abstractions versus direct access
