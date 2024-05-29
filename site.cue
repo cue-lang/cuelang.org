@@ -237,6 +237,9 @@ template: ci.#writefs & {
 			[[tags]]
 			name = "go api"
 			color = "lavender"
+			[[tags]]
+			name = "workflow command"
+			color = "blue"
 
 			"""#
 		}
