@@ -16,6 +16,57 @@
       "message": "I\u0027ve taken this CL over. PTAL at the small set of changes I\u0027ve proposed.",
       "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ac77a72_5e97470d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T20:57:08Z",
+      "side": 1,
+      "message": "LGTM with some wording suggestions.",
+      "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d35c91b2_32ec638f",
+        "filename": "content/docs/howto/validate-go-cuego/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T20:57:08Z",
+      "side": 1,
+      "message": "\"The API\" doesn\u0027t do anything itself per se. I would simply join this to the previous sentence to make things flow and sidestep the problem.\n\n```\nThis guide demonstrates how to validate Go values using the\n[`cuego`](https://pkg.go.dev/cuelang.org/go/cuego#section-documentation) API,\nwith CUE constraints expressed in [Go struct tags](https://go.dev/ref/spec#Struct_types).\n```",
+      "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33f8265e_b427d2c9",
+        "filename": "content/docs/howto/validate-go-cuego/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T20:57:08Z",
+      "side": 1,
+      "message": "Per my comment in the JSON Go API CL, by having this additional information before the code block are we not breaking with a now well-established style of having little text before and more context after?",
+      "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
