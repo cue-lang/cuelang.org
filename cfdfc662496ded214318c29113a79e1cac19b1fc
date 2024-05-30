@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "0a52e5ad_c7c03327",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-30T12:46:48Z",
+      "side": 1,
+      "message": "I had also assumed that, but I experimented with changing the weights and saw no reordering occur ... thus this CL :-)\n\nI\u0027ve now dug in very slightly deeper, and have discovered that the on-page order for any given page\u0027s tags is determined **globally**, by the order in which the tags are defined in `hugo/config/_default/params.toml` (i.e. `site.cue`).",
+      "parentUuid": "d0e26ac7_8d3267e6",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 50
+      },
+      "revId": "cfdfc662496ded214318c29113a79e1cac19b1fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "67cc9bde_7979fc52",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
