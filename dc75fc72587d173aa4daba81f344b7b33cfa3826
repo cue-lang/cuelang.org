@@ -69,6 +69,24 @@
       "parentUuid": "2c1e3db7_fae73532",
       "revId": "dc75fc72587d173aa4daba81f344b7b33cfa3826",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "661dcd41_296929b6",
+        "filename": "internal/genspec/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-30T13:40:21Z",
+      "side": 1,
+      "message": "D\u0027oh! https://github.com/golang/go/issues/43646 is related but not the same. Very surprised that it does do a network request in this (happy) scenario.",
+      "parentUuid": "97dbcaf5_485d1743",
+      "revId": "dc75fc72587d173aa4daba81f344b7b33cfa3826",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
