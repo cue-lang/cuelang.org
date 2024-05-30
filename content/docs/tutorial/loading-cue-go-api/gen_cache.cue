@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "U1q3woId5JUdW2HFFLs/zJamUT+l1OjN5kJwkTduiEE="
-								"initial go code":  "JlD1hFBxLHfoPj61hpbTHMGz93VbLXHjzcadajH1YI8="
+								"initial cue code": "xz3SBhQVprBJeYDCqv7gKz/wH8HLvbrMDasBWz7RDyo="
+								"initial go code":  "XlK6MF+LIBwSXCu1h/Ni0n90U0FJbDTxf/tGYGGhu08="
 							}
 							multi_step: {
-								hash:       "KEJCF6URTT0NN09BLJ2R6CQJ23NITNVKLQEV33E52P7SQQCUP80G===="
+								hash:       "E6AA5T8DFJRIGJSGDE1CGSI8T6EJ6V54AQPLEDJC1IDIQEQJ7QG0===="
 								scriptHash: "G7MA64NNUFUS5CSPACV7CB2PD02D1LTE6FPVRJLNKQQKGJUQEGU0===="
 								steps: [{
 									doc:      ""
@@ -28,7 +28,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.9.0-alpha.5
+											cue version v0.9.0-alpha.5.0.20240530095928-7ab80025ba4b
 											...
 
 											"""
