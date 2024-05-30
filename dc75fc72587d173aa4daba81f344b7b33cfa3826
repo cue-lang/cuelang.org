@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98dc11bc_fd0d269a",
+        "filename": "internal/genspec/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-30T13:21:21Z",
+      "side": 1,
+      "message": "perhaps add a TODO for https://github.com/golang/go/issues/44203 which would remove the need for a temporary module and the extra steps. I don\u0027t believe it will get fixed anytime soon, but fingers crossed maybe in three years... :)",
+      "revId": "dc75fc72587d173aa4daba81f344b7b33cfa3826",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c1e3db7_fae73532",
+        "filename": "internal/genspec/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-05-30T13:21:21Z",
+      "side": 1,
+      "message": "why not do this always? it should be very cheap if the precise semver is already in the local module cache, and you avoid some of the logic and repetition.",
+      "revId": "dc75fc72587d173aa4daba81f344b7b33cfa3826",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
