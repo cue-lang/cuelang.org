@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0e26ac7_8d3267e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T10:01:18Z",
+      "side": 1,
+      "message": "What defines the order in which tags are presented? I had assumed prior to this CL that it was the weight. \n\nhttps://cuelang.org/docs/tutorial/publishing-modules-to-the-central-registry/",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 50
+      },
+      "revId": "cfdfc662496ded214318c29113a79e1cac19b1fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "67cc9bde_7979fc52",
