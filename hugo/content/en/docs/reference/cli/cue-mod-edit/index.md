@@ -7,8 +7,6 @@ tags:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIGVkaXQ=" }
 $ cue help mod edit
-WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 Edit provides a command-line interface for editing cue.mod/module.cue.
 It reads only that file; it does not look up information about the modules
 involved.
@@ -26,9 +24,7 @@ The --module flag changes the module's path (the module.cue file's module field)
 The --source flag changes the module's declared source.
 The --drop-source flag removes the source field.
 
-Note: you must enable the modules experiment with:
-	export CUE_EXPERIMENT=modules
-for this command to work.
+Note that this command is not yet stable and may be changed.
 
 Usage:
   cue mod edit [flags]
