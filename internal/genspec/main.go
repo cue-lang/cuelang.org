@@ -26,17 +26,56 @@ import (
 	"strings"
 
 	// imported for side effect of module being available in cache
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+	"cuelang.org/go/cue/load"
 	_ "cuelang.org/go/pkg"
 )
 
 func main() {
-	var cueDir bytes.Buffer
-	cmd := exec.Command("go", "list", "-m", "-f={{.Dir}}", "cuelang.org/go")
-	cmd.Stdout = &cueDir
-	if err := cmd.Run(); err != nil {
-		log.Fatal(fmt.Errorf("failed to run %v: %w", strings.Join(cmd.Args, " "), err))
+	defer handleRunError()
+
+	// Use git to locate the root of the repo which coincides with the
+	// root of the Go and CUE modules.
+	rootDir := run(".", "git", "rev-parse", "--show-toplevel")
+
+	// Get the "latest" CUE version specified by the site
+	ctx := cuecontext.New()
+	bis := load.Instances([]string{"."}, &load.Config{
+		Dir: rootDir,
+	})
+	site := ctx.BuildInstance(bis[0])
+	if err := site.Err(); err != nil {
+		log.Fatal(fmt.Errorf("failed to load site CUE: %w", err))
 	}
-	srcSpecPath := filepath.Join(strings.TrimSpace(cueDir.String()), "doc", "ref", "spec.md")
+	latest, err := site.LookupPath(cue.ParsePath("versions.cue.latest.v")).String()
+	if err != nil {
+		log.Fatal(fmt.Errorf("failed to get latest CUE version: %w", err))
+	}
+
+	// Switch to a temporary directory and setup a temporary Go module
+	td, err := os.MkdirTemp("", "")
+	if err != nil {
+		log.Fatal(fmt.Errorf("failed to create a working temp dir: %w", err))
+	}
+	defer os.RemoveAll(td)
+	run(td, "go", "mod", "init", "mod.example")
+	run(td, "go", "mod", "edit", "-require", "cuelang.org/go@"+latest)
+
+	cueDir := run(td, "go", "list", "-m", "-f={{.Dir}}", "cuelang.org/go")
+	if cueDir == "" {
+		// Not in the modules cache; do a go get and retry
+		run(td, "go", "get", "cuelang.org/go@"+latest)
+		cueDir = run(td, "go", "list", "-m", "-f={{.Dir}}", "cuelang.org/go")
+
+		// We need a directory at this point
+		if cueDir == "" {
+			log.Fatal("failed to determine cache directory for cuelang.org/go")
+		}
+	}
+
+	// We now definitely have a directory for cuelang.org/go within the module cache
+	srcSpecPath := filepath.Join(cueDir, "doc", "ref", "spec.md")
 	srcSpec, err := os.ReadFile(srcSpecPath)
 	if err != nil {
 		log.Fatal(fmt.Errorf("failed to read %v: %w", srcSpecPath, err))
@@ -67,5 +106,36 @@ Notes on the formalism underlying this specification can be found
 	dstPath := "en.md"
 	if err := os.WriteFile(dstPath, out.Bytes(), 0666); err != nil {
 		log.Fatal(fmt.Errorf("failed to write to %v: %w", dstPath, err))
+	}
+}
+
+type runError struct {
+	cmd *exec.Cmd
+	err error
+	out []byte
+}
+
+func run(dir, cmd string, args ...string) string {
+	c := exec.Command(cmd, args...)
+	c.Dir = dir
+	out, err := c.CombinedOutput()
+	if err != nil {
+		panic(runError{
+			cmd: c,
+			err: err,
+			out: out,
+		})
+	}
+	return strings.TrimSpace(string(out))
+}
+
+func handleRunError() {
+	switch r := recover().(type) {
+	case runError:
+		log.Fatal(fmt.Errorf("failed to run [%v]: %w\n%s", r.cmd, r.err, r.out))
+	case nil:
+		// nothing to do
+	default:
+		panic(r)
 	}
 }
