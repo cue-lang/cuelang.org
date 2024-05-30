@@ -24,7 +24,7 @@ Note that this guide depends on a pre-release version of CUE:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.9.0-alpha.5
+cue version v0.9.0-alpha.5.0.20240530144752-6cd7bbf31614
 ...
 ```
 
