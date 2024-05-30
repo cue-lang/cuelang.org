@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e0ec2a6_90d353a7",
+        "filename": "internal/genspec/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T13:38:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98dc11bc_fd0d269a",
+      "revId": "dc75fc72587d173aa4daba81f344b7b33cfa3826",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c1e3db7_fae73532",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-05-30T13:21:21Z",
       "side": 1,
       "message": "why not do this always? it should be very cheap if the precise semver is already in the local module cache, and you avoid some of the logic and repetition.",
+      "revId": "dc75fc72587d173aa4daba81f344b7b33cfa3826",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97dbcaf5_485d1743",
+        "filename": "internal/genspec/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T13:38:07Z",
+      "side": 1,
+      "message": "Because a `go get` always hits the network (rightly or wrongly), even if it is present in the module cache:\n\n```\nenv GOMODCACHE\u003d$WORK/.modcache\ngo mod init mod.example\n\ngo get -x cuelang.org/go@v0.9.0-alpha.5\nstderr \u0027list: 200 OK\u0027\n\ngo get -x cuelang.org/go@v0.9.0-alpha.5\nstderr \u0027list: 200 OK\u0027\n```\n\nI\u0027ve added a comment to this effect.\n\n(Arguably it\u0027s a total waste to hit the network if there is a precise hit in the module cache - I can\u0027t right now find a Go issue about this...)",
+      "parentUuid": "2c1e3db7_fae73532",
       "revId": "dc75fc72587d173aa4daba81f344b7b33cfa3826",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
