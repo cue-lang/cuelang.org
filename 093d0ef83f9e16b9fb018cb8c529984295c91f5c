@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b2b9787_52f22393",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T20:50:17Z",
+      "side": 1,
+      "message": "This is not correct given your previous response.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "093d0ef83f9e16b9fb018cb8c529984295c91f5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96e5c1e9_eb13c936",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T20:50:17Z",
+      "side": 1,
+      "message": "LGTM with a couple of fixes.",
+      "revId": "093d0ef83f9e16b9fb018cb8c529984295c91f5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
