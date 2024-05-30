@@ -15,7 +15,7 @@
 // Package internal exposes some cue internals to other packages.
 //
 // A better name for this package would be technicaldebt.
-package internal // import "github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal"
+package internal
 
 // TODO: refactor packages as to make this package unnecessary.
 
@@ -150,9 +150,11 @@ func GetPackageInfo(f *ast.File) PkgInfo {
 		case *ast.Attribute:
 		case *ast.Package:
 			if x.Name == nil {
-				break
+				return PkgInfo{}
 			}
 			return PkgInfo{x, i, x.Name.Name}
+		default:
+			return PkgInfo{}
 		}
 	}
 	return PkgInfo{}
