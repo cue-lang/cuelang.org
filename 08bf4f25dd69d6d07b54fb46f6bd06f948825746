@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e75564b_525cf090",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-30T13:19:29Z",
+      "side": 1,
+      "message": "I was working on *precisely* this `alpha.5` update when Gerrit notified me about this CL :-) Any chance we could break this out into an isolated CL and submit it soonest?",
+      "revId": "08bf4f25dd69d6d07b54fb46f6bd06f948825746",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d14e456_bd5290b2",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/import_basic.txtar",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-30T13:19:29Z",
+      "side": 1,
+      "message": "Does this need alpha.5\u0027s mandatory(?) trailing `@v0`?",
+      "revId": "08bf4f25dd69d6d07b54fb46f6bd06f948825746",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
