@@ -8,62 +8,104 @@ aliases:
 - /dl
 ---
 
-The Go APIs for CUE are defined in the
-[`cuelang.org/go`](https://pkg.go.dev/cuelang.org/go) module, which can be added
-as a dependency using [Go's native dependency
-management](https://go.dev/doc/modules/managing-dependencies).
+{{{with _script_ "en" "HIDDEN_ set up caches"}}}
+export GOMODCACHE=/caches/gomodcache
+export GOCACHE=/caches/gobuild
+{{{end}}}
 
-The `cue` binary can be installed using one of the following methods.
+{{<sidenote text="Try out CUE - no install required!" >}}
+You can use CUE **without installing it** by visiting
+[cuelang.org/play](https://cuelang.org/play/)
+in your browser.
 
-## Install CUE from official release binaries
+---
 
-### Download
+## Installing the `cue` command
 
-Binaries for various operating systems, including Linux, Microsoft Windows,
-and macOS can be downloaded from
+The `cue` command is available from various sources, listed on this page.
+If you don't know which source to choose, download and unpack the
+[latest non-prerelease version](https://github.com/cue-lang/cue/releases/latest)
+that's appropriate for your operating system.
+
+#### Download an official CUE binary
+
+On Linux, Microsoft Windows, and macOS, the `cue` command can be downloaded from the
 [official CUE releases](https://github.com/cue-lang/cue/releases/).
 
-### Install using Homebrew
+These releases include *prereleases*, which are cutting-edge versions of `cue`
+made available to help expose bugs and flush out unintended behaviours. Alternatively, the
+[latest *non-prerelease* version](https://github.com/cue-lang/cue/releases/latest)
+is always available.
 
-In addition, CUE can be installed with using [`brew`](https://brew.sh/) on macOS
-and Linux:
+#### Install using Homebrew
 
-```
+On macOS and Linux, `cue` can be installed using Homebrew
+([brew.sh](https://brew.sh)):
+
+{{{with script "en" "brew install"}}}
+#norun
 brew install cue-lang/tap/cue
-```
+{{{end}}}
 
-### Installation on Arch Linux
+#### Install from Docker Hub
 
-Arch Linux has an official package that you can install by running:
+The CUE project publishes official container images containing `cue` on Docker Hub
+([hub.docker.com/r/cuelang/cue](https://hub.docker.com/r/cuelang/cue)).
+They can be used on
+[platforms supported by Docker](https://docs.docker.com/engine/install/).
 
-```
-pacman -S cue
-```
+Various tags are available that let you select container images for different
+machine architectures and CUE versions. To use the latest non-prerelease
+version that's appropriate for your machine, use the `latest` tag:
 
-## Install CUE from source
+{{{with script "en" "docker pull"}}}
+#norun
+docker pull cuelang/cue:latest
+{{{end}}}
 
-### Prerequisites
+#### Install from source
 
-Go 1.16 or higher (see below for instructions on installing Go).
+On
+[platforms supported by Go](https://go.dev/dl/#stable),
+`cue` can be installed from source using any of its released versions.
 
-### Installing CUE
+For example, to fetch the latest non-prerelease version:
 
-To install the `cue` command line tool:
-
-```
+{{{with script "en" "go install"}}}
+#ellipsis 0
 go install cuelang.org/go/cmd/cue@latest
-```
+{{{end}}}
 
-### Installing Go
+This method requires that you already have [Go](https://go.dev) installed.
+ 
+#### Install on Arch Linux
 
-#### Download Go
+On Arch Linux
+([archlinux.org](https://archlinux.org)),
+`cue` can be installed from a package in the official Arch `extra` repository:
 
-Download the binary for Microsoft Windows, macOS, and Linux at
-https://go.dev/dl/. If you use a different OS you can [install Go from
-source](https://go.dev/doc/install/source).
+{{{with script "en" "pacman"}}}
+#norun
+pacman -S extra/cue
+{{{end}}}
 
-#### Install Go
+This package is not published by the CUE project.
 
-Follow the instructions at https://go.dev/doc/install. Make sure the `go`
-binary is in your `PATH`, then follow the instructions above to install CUE
-from source.
+## Installing the Go API
+
+CUE's Go APIs are defined in the
+[`cuelang.org/go`](https://pkg.go.dev/cuelang.org/go) module, which can be added
+as a versioned dependency using Go's
+[dependency management](https://go.dev/doc/modules/managing-dependencies)
+workflows. All available versions are listed at
+[pkg.go.dev/cuelang.org/go](https://pkg.go.dev/cuelang.org/go?tab=versions).
+
+For example, to fetch the latest non-prerelease version:
+
+{{{with _script_ "en" "HIDDEN: go mod init"}}}
+go mod init go.example
+{{{end}}}
+{{{with script "en" "go get cue"}}}
+#ellipsis 0
+go get cuelang.org/go@latest
+{{{end}}}
