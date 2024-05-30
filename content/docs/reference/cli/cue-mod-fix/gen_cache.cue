@@ -8,15 +8,13 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "9HET7HN5U008H49E6850QPMSBVLQT7PVJ32L4GCS3N9DS8BD09QG===="
+									hash:       "M7Q6VDREQ0S7QG16QAC8P7A8T37FATL4JMBG0FIMSUA1CA8QBLLG===="
 									scriptHash: "LHNJL29ND9SA1PH5FBU1J322PE8QP43C7E0IU7FO3727LLCJ811G===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help mod fix"
 										exitCode: 0
 										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 												Fix provides a way to migrate from a legacy module.cue file
 												to the new standard syntax. It
 
@@ -29,9 +27,7 @@ package site
 												If the module.cue file is already compatible with the new syntax,
 												it is just formatted without making any other changes.
 
-												Note: you must enable the modules experiment with:
-												\texport CUE_EXPERIMENT=modules
-												for this command to work.
+												Note that this command is not yet stable and may be changed.
 
 												Usage:
 												  cue mod fix [flags]

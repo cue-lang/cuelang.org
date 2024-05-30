@@ -8,15 +8,13 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "1GV4FH4G4VQJFH2F3H5ISEM37COBUV4FO72F8R0H2INM5G62K0H0===="
+									hash:       "FLPKF45HMMU4GUJGK531A812O1TK0RES6MN2RC839H4HRTF9R8RG===="
 									scriptHash: "RGV6K58FRSQDV83BTCVDF7CSTR0SD97UATGNM6MJAESNDLPPCCT0===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help mod get"
 										exitCode: 0
 										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 												Get updates module dependencies, fetching new dependencies if
 												needed and changing versions to specified versions. It can downgrade
 												a version only when a higher version is not required by other
@@ -39,9 +37,7 @@ package site
 												See "cue help environment" for details on how $CUE_REGISTRY is used to
 												determine the modules registry.
 
-												Note: you must enable the modules experiment with:
-												\texport CUE_EXPERIMENT=modules
-												for this command to work.
+												Note that this command is not yet stable and may be changed.
 
 												Usage:
 												  cue mod get [flags]

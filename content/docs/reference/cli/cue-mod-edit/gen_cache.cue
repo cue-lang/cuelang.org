@@ -8,15 +8,13 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "DNIMEFGJFJES8V2M6DQ998R3GSVUF7VLNMTI07NI7CSKTSCA8IL0===="
+									hash:       "V76I28GQ7GL3TF96TL8174VLCAH1EBFNE437L9E6E2ECLG1VIN80===="
 									scriptHash: "F8L8RPCJHGKHIIHKIJIJ6J2NJT1US5H9UKKQ5BSC7B04T8RLV000===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help mod edit"
 										exitCode: 0
 										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 												Edit provides a command-line interface for editing cue.mod/module.cue.
 												It reads only that file; it does not look up information about the modules
 												involved.
@@ -34,9 +32,7 @@ package site
 												The --source flag changes the module's declared source.
 												The --drop-source flag removes the source field.
 
-												Note: you must enable the modules experiment with:
-												\texport CUE_EXPERIMENT=modules
-												for this command to work.
+												Note that this command is not yet stable and may be changed.
 
 												Usage:
 												  cue mod edit [flags]
