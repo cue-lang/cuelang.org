@@ -81,6 +81,17 @@ config: #config & {
 		from: "/discussions/*"
 		to:   "https://github.com/cue-lang/cue/discussions/:splat"
 	}, {
+		// Include a top-level shortcut to list all open projects starting with the newest,
+		// as the default list view for GitHub sorts by activity and shows the private templates.
+		from: "/projects/"
+		to:   "https://github.com/orgs/cue-lang/projects?query=is%3Aopen+sort%3Acreated-desc+is%3Apublic"
+	}, {
+		from: "/project/*"
+		to:   "https://github.com/orgs/cue-lang/projects/:splat"
+	}, {
+		from: "/projects/*"
+		to:   "https://github.com/orgs/cue-lang/projects/:splat"
+	}, {
 		from: "/releases/*"
 		to:   "https://github.com/cue-lang/cue/releases/:splat"
 	}, {

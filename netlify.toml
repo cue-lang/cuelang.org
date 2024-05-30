@@ -51,6 +51,24 @@
   force = true
 
 [[redirects]]
+  from = "/projects/"
+  to = "https://github.com/orgs/cue-lang/projects?query=is%3Aopen+sort%3Acreated-desc+is%3Apublic"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/project/*"
+  to = "https://github.com/orgs/cue-lang/projects/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/projects/*"
+  to = "https://github.com/orgs/cue-lang/projects/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/releases/*"
   to = "https://github.com/cue-lang/cue/releases/:splat"
   status = 302
