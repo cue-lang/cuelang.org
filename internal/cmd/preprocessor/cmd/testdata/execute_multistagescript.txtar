@@ -259,7 +259,7 @@ hello
 ```text { title="TERMINAL" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
 $ export MYVAR=value
 $ cue version
-cue version v0.9.0-alpha.5
+cue version v0.9.0-rc.1
 
 go version go1.22.3
       -buildmode exe
@@ -293,13 +293,13 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "spSWzxS42Exb3uWR1T/qJZRMcF1BODnhSbxiRlgHjQM="
-						"upload-some-cue":  "vpMTtf7OOStXOvGbz6E/cMuj6RrHcBqUNHGzypnLAVk="
-						"upload-some-json": "rFvJI5L+VVa3w1xXe97GBL8SRcME5M4Z5K07La059i0="
-						"in-subdir":        "tvxjBIe71fLquejKjiUmdmOEDaKBBtCMJ0c4BztuoHA="
+						"hidden file":      "zb/4wfEtDp1Ixtrb4W6kb4Ax8jrzfky2d9SHCDv1W/Q="
+						"upload-some-cue":  "3t4YDlUcXgEx0Ahn3dRJA9dPO2vOASyRL0y0VW87VUQ="
+						"upload-some-json": "FHSr4Es4OZDurnlU+yUseEiAfgC+yan/x6b8llDjRHA="
+						"in-subdir":        "Ns73B447Ocj7WcOP/ezp9W3VLcNNLhthd8vQos9PUfU="
 					}
 					multi_step: {
-						hash:       "GIV94NMG9IDU21H3M8B9G94CAIP6E0U7T6UDO4J832DF9I43IJIG===="
+						hash:       "JOIGTQCPHGFTC1VVC526MI1MBRF05F71O12H68F0HEDEQ71RMR30===="
 						scriptHash: "RTE18RDQ3BFG4B5U2VR92496OPO5NOT61C424QBCDDT1RAAGPOUG===="
 						steps: [{
 							doc:      ""
@@ -361,7 +361,7 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.9.0-alpha.5
+									cue version v0.9.0-rc.1
 
 									go version go1.22.3
 									      -buildmode exe

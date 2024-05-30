@@ -7,8 +7,6 @@ tags:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIHJlc29sdmU=" }
 $ cue help mod resolve
-WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 This command prints information about how a given
 module path will resolve to an actual registry in the
 form of an OCI reference.
@@ -21,9 +19,7 @@ with respect to the registry configuration (see "cue help registryconfig")
 and does not make any network calls to check whether
 the module exists.
 
-Note: you must enable the modules experiment with:
-	export CUE_EXPERIMENT=modules
-for this command to work.
+Note that this command is not yet stable and may be changed.
 
 Usage:
   cue mod resolve <modulepath>[@<version>] ... [flags]

@@ -7,8 +7,6 @@ tags:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIGZpeA==" }
 $ cue help mod fix
-WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 Fix provides a way to migrate from a legacy module.cue file
 to the new standard syntax. It
 
@@ -21,9 +19,7 @@ If there is no module path, it chooses an arbitrary path (test.example@v0).
 If the module.cue file is already compatible with the new syntax,
 it is just formatted without making any other changes.
 
-Note: you must enable the modules experiment with:
-	export CUE_EXPERIMENT=modules
-for this command to work.
+Note that this command is not yet stable and may be changed.
 
 Usage:
   cue mod fix [flags]

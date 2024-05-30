@@ -7,16 +7,10 @@ tags:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIHB1Ymxpc2g=" }
 $ cue help mod publish
-WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 Publish the current module to an OCI registry. It consults
 $CUE_REGISTRY to determine where the module should be published (see
 "cue help environment" for details). Also note that this command does
 no dependency or other checks at the moment.
-
-Note: you must enable the modules experiment with:
-	export CUE_EXPERIMENT=modules
-for this command to work.
 
 When the --dryrun flag is specified, nothing will actually be written
 to a registry, but all other checks will take place.
@@ -26,6 +20,8 @@ The --json flag can be used to find out more information about the upload.
 The --out flag can be used to write the module's contents to a directory
 in OCI Image Layout format. See this link for more details on the format:
 https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md
+
+Note that this command is not yet stable and may be changed.
 
 Usage:
   cue mod publish <version> [flags]
