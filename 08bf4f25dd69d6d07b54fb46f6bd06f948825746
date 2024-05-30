@@ -33,6 +33,24 @@
       "message": "Does this need alpha.5\u0027s mandatory(?) trailing `@v0`?",
       "revId": "08bf4f25dd69d6d07b54fb46f6bd06f948825746",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a296c38b_8f31bc13",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/import_basic.txtar",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-30T13:21:33Z",
+      "side": 1,
+      "message": "No; if a module is not published it\u0027s not required. `cue mod fix` adds the trailing `@v0` because it\u0027s harmless and strictly more useful to add it than requiring someone to then add it by hand in case they want to publish. And it also forces someone to change it in case they are at `v1`.",
+      "parentUuid": "0d14e456_bd5290b2",
+      "revId": "08bf4f25dd69d6d07b54fb46f6bd06f948825746",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
