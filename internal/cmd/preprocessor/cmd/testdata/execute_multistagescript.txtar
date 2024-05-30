@@ -293,13 +293,13 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "GWuntCYP5ulzw64vLwk2+ciMZQBnRbTfuiMsLQbbSOw="
-						"upload-some-cue":  "1B9Xa/G2nEJRkdawavscIQrEYuS9akHMu5ABp8sMyx4="
-						"upload-some-json": "XcOTLNw6DbgNonQKwimVuxsJoEgLA6JPIqziT79N2qA="
-						"in-subdir":        "em3B5tzwbBpCFdBsU2p42zky2R14dVDsylVEswcZLBw="
+						"hidden file":      "3XLL+SdvDJ/kE7kEp0Gcb3qzEfz6u7N2L7RSOHPhONY="
+						"upload-some-cue":  "qr8B54TBBUL7nVRFAozMXufriGsDVYPpFuhWjiaHWtc="
+						"upload-some-json": "WxiKz1heV59z6mqcPnXZFcmWalYkWqMWQqzrNWb10rE="
+						"in-subdir":        "krBpj3dhQJb3Q4nkb1EfJ8UYJQZYEXuusz1oUOpR//c="
 					}
 					multi_step: {
-						hash:       "LGN35VAKN2691EN2U228K7U5DNM67AMHRPOBUT0IUPSIPE91QM4G===="
+						hash:       "GVIO2D81KMP0GE117JVQ7KA00DO6MR36D1HI8QPOR9QSMC4IJV20===="
 						scriptHash: "RTE18RDQ3BFG4B5U2VR92496OPO5NOT61C424QBCDDT1RAAGPOUG===="
 						steps: [{
 							doc:      ""
