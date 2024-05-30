@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -493,8 +494,20 @@ const (
 	mergeTag     = "!!merge"
 )
 
+// rxAnyOctalYaml11 uses the implicit tag resolution regular expression for base-8 integers
+// from YAML's 1.1 spec, but including the 8 and 9 digits which aren't valid for octal integers.
+var rxAnyOctalYaml11 = regexp.MustCompile(`^[-+]?0[0-9_]+$`)
+
 func (d *decoder) scalar(yn *yaml.Node) (ast.Expr, error) {
-	switch tag := yn.ShortTag(); tag {
+	tag := yn.ShortTag()
+	// If the YAML scalar has no explicit tag, yaml.v3 infers a float tag,
+	// and the value looks like a YAML 1.1 octal literal,
+	// that means the input value was like `01289` and not a valid octal integer.
+	// The safest thing to do, and what most YAML decoders do, is to interpret as a string.
+	if yn.Style&yaml.TaggedStyle == 0 && tag == floatTag && rxAnyOctalYaml11.MatchString(yn.Value) {
+		tag = strTag
+	}
+	switch tag {
 	// TODO: use parse literal or parse expression instead.
 	case timestampTag:
 		return &ast.BasicLit{
@@ -542,8 +555,10 @@ func (d *decoder) scalar(yn *yaml.Node) (ast.Expr, error) {
 		// We make the assumption that any valid YAML integer literal will be a valid
 		// CUE integer literal as well, with the only exception of octal numbers above.
 		// Note that `!!int 123.456` is not allowed.
-		if err := literal.ParseNum(value, &info); err != nil || !info.IsInt() {
-			return nil, d.posErrorf(yn, "cannot decode %q as %s", value, yn.ShortTag())
+		if err := literal.ParseNum(value, &info); err != nil {
+			return nil, d.posErrorf(yn, "cannot decode %q as %s: %v", value, tag, err)
+		} else if !info.IsInt() {
+			return nil, d.posErrorf(yn, "cannot decode %q as %s: not a literal number", value, tag)
 		}
 		return d.makeNum(yn, value, token.INT), nil
 
@@ -563,7 +578,7 @@ func (d *decoder) scalar(yn *yaml.Node) (ast.Expr, error) {
 			// CUE float literal as well, with the only exception of Inf/NaN above.
 			// Note that `!!float 123` is allowed.
 			if err := literal.ParseNum(value, &info); err != nil {
-				return nil, d.posErrorf(yn, "cannot decode %q as %s", value, yn.ShortTag())
+				return nil, d.posErrorf(yn, "cannot decode %q as %s: %v", value, tag, err)
 			}
 			// If the decoded YAML scalar was explicitly or implicitly a float,
 			// and the scalar literal looks like an integer,
