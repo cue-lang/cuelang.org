@@ -8,15 +8,13 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "HF7U50B0GSSIBOIOTQPOA24P5LBP97OSPEFSM0BDRK94DOPE7NRG===="
+									hash:       "MPADKM1THRK565DSE02T90BC6INRQVI1V0MS010762Q1G4BFIJM0===="
 									scriptHash: "TVCS3F6LMT3U2OG3ISLNF0PG1CUC2RHRH4BM3R5CB5QNSPOCR98G===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help mod tidy"
 										exitCode: 0
 										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 												Tidy resolves all module dependencies in the current module and updates
 												the cue.mod/module.cue file to reflect them.
 
@@ -29,9 +27,7 @@ package site
 												See "cue help environment" for details on how $CUE_REGISTRY is used to
 												determine the modules registry.
 
-												Note: you must enable the modules experiment with:
-												\texport CUE_EXPERIMENT=modules
-												for this command to work.
+												Note that this command is not yet stable and may be changed.
 
 												Usage:
 												  cue mod tidy [flags]

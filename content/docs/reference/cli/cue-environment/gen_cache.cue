@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KRAE31NAVB7NRGHV94PC3CO97GT8MH2O4BKSNP98T2LGC7NH0L1G===="
+									hash:       "SVL305HLN8QBTER5C3SH8AICM0452S99R7DLBSG6JR65TKMSCRD0===="
 									scriptHash: "HH51UG725DMMBP6BFHH46NO0D0SUMLUEGBL2G8V627OFF2BPL9A0===="
 									steps: [{
 										doc:      ""
@@ -16,50 +16,56 @@ package site
 										exitCode: 0
 										output: """
 												The cue command consults environment variables for configuration.
-												If an environment variable is unset or empty, it uses a sensible default
-												setting.
+												If an environment variable is unset or empty, sensible default setting is used.
 
 												\tCUE_CACHE_DIR
-												\t\tThe directory where the cue command keeps a cache of files to be
-												\t\treused. This defaults to a directory for user-specific temporary
-												\t\tcache data, such as:
+												\t\tA directory structure to hold files which are reused between operations.
+												\t\tIt defaults to a directory for user-specific temporary data, such as:
 
-												\t\t\t"$XDG_CACHE_HOME/cue" or "$HOME/.cache/cue" on Linux
-												\t\t\t"$HOME/Library/Caches/cue" on MacOS
-												\t\t\t"%LocalAppData%/cue" on Windows
+												\t\t- "$XDG_CACHE_HOME/cue" or "$HOME/.cache/cue" on Linux
+												\t\t- "$HOME/Library/Caches/cue" on MacOS
+												\t\t- "%LocalAppData%/cue" on Windows
+
+												\t\tIts contents are generally read-only and include:
+
+												\t\t- mod/download for modules fetched from registries
+												\t\t- mod/extract for extracted module archives
 
 												\tCUE_CONFIG_DIR
-												\t\tThe directory where the cue command keeps configuration and
-												\t\tstate files. This defaults to a directory for user-specific
-												\t\tconfiguration data, such as:
+												\t\tA directory to hold configuration and long-lived state files.
+												\t\tIt defaults to a directory for user-specific persistent data, such as:
 
-												\t\t\t"$XDG_CONFIG_HOME/cue" or "$HOME/.config/cue" on Linux
-												\t\t\t"$HOME/Library/Application Support/cue" on MacOS
-												\t\t\t"%AppData%/cue" on Windows
-
-												\tCUE_DEBUG
-												\t\tComma-separated list of debug flags to enable or disable.
-												\t\tCurrent possible values are:
-												\t\t\thttp
-												\t\t\t\tPrint log messages in JSON format, one per line showing
-												\t\t\t\tHTTP requests and responses made when interacting with
-												\t\t\t\tmodule registries.
-
-												\tCUE_EXPERIMENT
-												\t\tComma-separated list of experiments to enable or disable.
-												\t\tThe list of available experiments may change arbitrarily over time.
-												\t\tSee exp.go in package cuelang.org/go/internal/cueexperiment for
-												\t\tcurrently valid values.
-
-												\t\tWarning: This variable is provided for the development and
-												\t\ttesting of the cue commands itself. Use beyond that purpose is
-												\t\tunsupported.
+												\t\t- "$XDG_CONFIG_HOME/cue" or "$HOME/.config/cue" on Linux
+												\t\t- "$HOME/Library/Application Support/cue" on MacOS
+												\t\t- "%AppData%/cue" on Windows
 
 												\tCUE_REGISTRY
+												\t\tThe configuration to use when downloading and publishing modules.
+												\t\tSee "cue help registryconfig" for details.
 
-												\t\tThis variable specifies which registry or registries to use for
-												\t\tdownloading and publishing modules. See "cue help registryconfig"
-												\t\tfor details.
+												\tCUE_EXPERIMENT
+												\t\tComma-separated list of experiment flags to enable or disable:
+
+												\t\tmodules (default true)
+												\t\t\tEnable support for the Modules and package management proposal
+												\t\t\tas described in https://cuelang.org/discussion/2939.
+												\t\tyamlv3decoder (default true)
+												\t\t\tEnable the new YAML decoder based on yaml.v3.
+												\t\tevalv3
+												\t\t\tEnable the new CUE evaluator, addressing performance issues
+												\t\t\tand bringing a better disjunction algorithm.
+
+												\tCUE_DEBUG
+												\t\tComma-separated list of debug flags to enable or disable, such as:
+
+												\t\thttp
+												\t\t\tLog a JSON message per HTTP request and response made
+												\t\t\twhen interacting with module registries.
+
+												CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
+												where the value is a boolean "true" or "1" if omitted. For example:
+
+												\tCUE_EXPERIMENT=toenable,todisable=0
 
 
 												"""
