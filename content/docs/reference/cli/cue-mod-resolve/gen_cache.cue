@@ -8,15 +8,13 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "T4GI4V3JIOLVBA8BE7KBK6VGFJ8V8BCP3TAK19J7JHC36IKGBGSG===="
+									hash:       "JLS3C6RFJP1C2QFTH8PIT0JR45SGVMGN8U9HE2E4VGKF8QT13KTG===="
 									scriptHash: "GQ8DVHRF6490Q2KMAGC9PCNU144RCC663AEQL8KDBTJ1DVM1POLG===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue help mod resolve"
 										exitCode: 0
 										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 												This command prints information about how a given
 												module path will resolve to an actual registry in the
 												form of an OCI reference.
@@ -29,9 +27,7 @@ package site
 												and does not make any network calls to check whether
 												the module exists.
 
-												Note: you must enable the modules experiment with:
-												\texport CUE_EXPERIMENT=modules
-												for this command to work.
+												Note that this command is not yet stable and may be changed.
 
 												Usage:
 												  cue mod resolve <modulepath>[@<version>] ... [flags]
