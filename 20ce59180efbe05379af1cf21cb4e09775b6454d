@@ -33,6 +33,23 @@
       "message": "PTAL.",
       "revId": "20ce59180efbe05379af1cf21cb4e09775b6454d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0840e5ec_331aeb16",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-05-31T18:57:33Z",
+      "side": 1,
+      "message": "Suggestion: move this to be a hidden field inside `display`:\n\n```\ndisplay: cli.Print \u0026 {\n    _data: #info \u0026 json.Unmarshal(fetch.response.body)\n    text: \"CUE version \\(_data.Version) was released with commit hash \\(_data.Origin.Hash)\"\n}\n```",
+      "revId": "20ce59180efbe05379af1cf21cb4e09775b6454d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
