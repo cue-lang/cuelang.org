@@ -75,6 +75,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0816a633_3f5d1d0c",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c23bd872_3c508e46",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 30
+      },
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f779fe35_51dbcc56",
@@ -88,6 +112,30 @@
       "writtenOn": "2024-05-30T20:32:00Z",
       "side": 1,
       "message": "I would delete this sentence it doesn\u0027t add anything, it only repeats what\u0027s already written above.",
+      "range": {
+        "startLine": 36,
+        "startChar": 72,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a26d92b7_77b8a50e",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f779fe35_51dbcc56",
       "range": {
         "startLine": 36,
         "startChar": 72,
@@ -121,6 +169,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8ee034b_17a20da4",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6be04ad3_15334071",
+      "range": {
+        "startLine": 58,
+        "startChar": 51,
+        "endLine": 59,
+        "endChar": 7
+      },
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5c22e687_188c094f",
@@ -144,6 +216,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b01ec2a6_bf3c320d",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c22e687_188c094f",
+      "range": {
+        "startLine": 72,
+        "startChar": 26,
+        "endLine": 72,
+        "endChar": 55
+      },
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c764742_0b2b5a31",
@@ -157,6 +253,30 @@
       "writtenOn": "2024-05-30T20:32:00Z",
       "side": 1,
       "message": "\"Using the Go API\"",
+      "range": {
+        "startLine": 94,
+        "startChar": 3,
+        "endLine": 94,
+        "endChar": 13
+      },
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30dba46e_d9c42384",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c764742_0b2b5a31",
       "range": {
         "startLine": 94,
         "startChar": 3,
@@ -213,6 +333,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a0dadb9_527d4991",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a8a5b97_e3ed5a9f",
+      "range": {
+        "startLine": 103,
+        "startChar": 16,
+        "endLine": 103,
+        "endChar": 21
+      },
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7ab8299_bb3e9824",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e82c53b_18f63c09",
+      "range": {
+        "startLine": 103,
+        "startChar": 26,
+        "endLine": 103,
+        "endChar": 55
+      },
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f813a502_59391512",
@@ -226,6 +394,24 @@
       "writtenOn": "2024-05-30T20:32:00Z",
       "side": 1,
       "message": "I would also link here immediately to a guide that uses the Go API.",
+      "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad39ef99_9a337a49",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f813a502_59391512",
       "revId": "82662b69e324deb23d039229bc25e9529b8c8532",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
