@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "7bd3efa7_00c84883",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T15:07:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bccc9f8_f419bab4",
+      "range": {
+        "startLine": 18,
+        "startChar": 26,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "08f804db_0ec39740",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -75,6 +99,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e295db3_dbf05816",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T15:07:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc97b7be_bff1ab3d",
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e78f43ec_04b9780e",
@@ -88,6 +130,30 @@
       "writtenOn": "2024-05-30T20:48:46Z",
       "side": 1,
       "message": "Stutter of the word \"command\" - call the command `info` to keep things simple.",
+      "range": {
+        "startLine": 28,
+        "startChar": 9,
+        "endLine": 28,
+        "endChar": 23
+      },
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1d0ba20_232a0980",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T15:07:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e78f43ec_04b9780e",
       "range": {
         "startLine": 28,
         "startChar": 9,
@@ -115,6 +181,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c1e7763_763266a1",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T15:07:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c5d9b40_af9a92a8",
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "439e20be_ca4f3264",
@@ -128,6 +212,24 @@
       "writtenOn": "2024-05-30T20:48:46Z",
       "side": 1,
       "message": "I\u0027m not clear we are actually validating things as we should because the following succeeds:\n\n```\npackage example\n\nimport (\n\t\"tool/http\"\n\t\"tool/cli\"\n\t\"encoding/json\"\n)\n\ncommand: tool: {\n\tfetch: http.Get \u0026 {\n\t\turl: \"https://proxy.golang.org/cached-only/cuelang.org/go/@v/v0.8.2.info\"\n\t}\n\tdisplay: cli.Print \u0026 {\n\t\tlet data \u003d json.Unmarshal(fetch.response.body) \u0026 #info\n\t\ttext: \"CUE version \\(data.Version) was released with commit hash \\(data.Origin.Hash)\"\n\t}\n}\n\n// The data received is validated against this schema. This is good practice\n// but is not required before using the data.\n#info: {\n\tVersion!: bool\n\tOrigin?: {\n\t\tHash!: string\n\t\t...\n\t}\n\t...\n}\n```\n\nIf my test is correct, please can you raise an issue for the lack of validation (see also my comment in https://github.com/cue-lang/cue/issues/2520#issuecomment-2140835776) and drop the validation from this example for now, with a TODO that it should be added back when the issue you create is fixed.",
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d414a7e4_cb87dd7b",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T15:07:05Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed your test and have opened cue-lang/cue#3187.\n\nI\u0027m unsure why this issue requires removal of the workflow command\u0027s validation. cue-lang/cue#3187 tracks the fact that a `let` declaration appears to trigger a lack of validation, but the workflow command doesn\u0027t use a `let`. The worst issue that the workflow command suffers from is tracked in cue-lang/cue#3186 (which I also just opened). That feels like suboptimal UX, but where at least the validation is correctly engaged.\n\nTo confirm: does cue-lang/cue#3187 require the removal of validation from this workflow command, despite the different techniques being used? If not, does cue-lang/cue#3186 require its removal? I\u0027d vote that neither requires validation to be removed, but I hold that lightly.",
+      "parentUuid": "439e20be_ca4f3264",
       "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -149,6 +251,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "187d4c7e_d853d7aa",
+        "filename": "content/docs/howto/fetch-json-data-http/example.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T15:07:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa8bfd1_747f9eb7",
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e2abc5b_ac5aa03c",
@@ -162,6 +282,24 @@
       "writtenOn": "2024-05-30T20:48:46Z",
       "side": 1,
       "message": "Per my comments in the commit message we can remove this file.",
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "228fa321_d5052a98",
+        "filename": "hugo/content/en/docs/howto/fetch-json-data-http/example.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T15:07:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e2abc5b_ac5aa03c",
       "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
