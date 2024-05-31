@@ -234,6 +234,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc5fc3fd_af1dec6c",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-05-31T16:25:02Z",
+      "side": 1,
+      "message": "Resolved as discussed offline by moving validation to a hidden field.",
+      "parentUuid": "d414a7e4_cb87dd7b",
+      "revId": "1b2903527bc3a335c51b0f27145073e58369513a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fa8bfd1_747f9eb7",
