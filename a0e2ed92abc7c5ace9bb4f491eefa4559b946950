@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5b0b298_3074cb9e",
+        "filename": "content/docs/howto/validate-json-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T17:20:15Z",
+      "side": 1,
+      "message": "As per offline discussion, we\u0027re keeping this text as a preamble as the guide is a howto. cf. https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1194712/comment/33f8265e_b427d2c9/",
+      "parentUuid": "e5ab09d7_61e6253c",
+      "revId": "a0e2ed92abc7c5ace9bb4f491eefa4559b946950",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e250508_b63cf1e6",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-05-30T20:53:54Z",
       "side": 1,
       "message": "Please let\u0027s continue to avoid trying to work around the multiple file upload problem until it\u0027s fixed. There is (on my preview) a rendering bug with this approach in any case. I know it\u0027s frustrating to lose the vertical height, but we know a fix is coming.",
+      "revId": "a0e2ed92abc7c5ace9bb4f491eefa4559b946950",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca1af0d2_173b6dc5",
+        "filename": "content/docs/howto/validate-json-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T17:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e250508_b63cf1e6",
       "revId": "a0e2ed92abc7c5ace9bb4f491eefa4559b946950",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +122,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c11d1ba0_4f516b5a",
+        "filename": "content/docs/howto/validate-json-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T17:20:15Z",
+      "side": 1,
+      "message": "As per offline discussion, we\u0027re keeping this text as a preamble as the guide is a howto. cf. https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1194712/comment/33f8265e_b427d2c9/",
+      "parentUuid": "132741d4_a1984c35",
+      "revId": "a0e2ed92abc7c5ace9bb4f491eefa4559b946950",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "492d0eb5_ee5701a0",
@@ -99,6 +153,24 @@
       "writtenOn": "2024-05-30T20:53:54Z",
       "side": 1,
       "message": "This line of detail feels like it belongs after the code block, in line with our \"style\" elsewhere?",
+      "revId": "a0e2ed92abc7c5ace9bb4f491eefa4559b946950",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "090490a6_96fb766b",
+        "filename": "content/docs/howto/validate-json-using-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T17:20:15Z",
+      "side": 1,
+      "message": "As per offline discussion, we\u0027re keeping this text as a preamble as the guide is a howto. cf. https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1194712/comment/33f8265e_b427d2c9/",
+      "parentUuid": "492d0eb5_ee5701a0",
       "revId": "a0e2ed92abc7c5ace9bb4f491eefa4559b946950",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
