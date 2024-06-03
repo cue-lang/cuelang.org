@@ -1,11 +1,11 @@
 <div class="note note--info" role="alert">
-    {{ partial "icon.html" (dict "icon" "exclamation" "class" "note__icon") }}
+    {{- partial "icon.html" (dict "icon" "exclamation" "class" "note__icon") -}}
 
     <div class="note__content">
-        {{ if eq .Page.File.Ext "md" -}}
-            {{ .Inner | markdownify }}
-        {{ else -}}
-            {{ .Inner | htmlUnescape | safeHTML }}
-        {{- end }}
+        {{- if eq .Page.File.Ext "md" -}}
+            {{- .Inner | markdownify -}}
+        {{- else -}}
+            {{- .Inner | htmlUnescape | safeHTML -}}
+        {{- end -}}
     </div>
 </div>

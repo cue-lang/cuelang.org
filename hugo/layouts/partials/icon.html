@@ -1,6 +1,7 @@
 {{ $icon     := .icon | default "help" }}
 {{ $sprite   := .sprite | default "ui"  }}
 {{ $cssClass := .class | default "" }}
+
 <svg class="icon{{ if $cssClass }} {{ $cssClass }}{{ end }}" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
          xlink:href="{{ (printf "/img/%s.svg" $sprite) | absURL }}#icon--{{ $icon }}"></use>
