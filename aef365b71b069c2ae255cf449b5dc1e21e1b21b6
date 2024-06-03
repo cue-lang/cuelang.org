@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cc2ae1f_76805672",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T14:37:43Z",
+      "side": 1,
+      "message": "Needs a `cue-lang/cue#` prefix.",
+      "revId": "aef365b71b069c2ae255cf449b5dc1e21e1b21b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "837749f2_6224841e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T14:37:43Z",
+      "side": 1,
+      "message": "I scanned through the rendered form of each changed page and validated that nothing obviously broke.",
+      "revId": "aef365b71b069c2ae255cf449b5dc1e21e1b21b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
