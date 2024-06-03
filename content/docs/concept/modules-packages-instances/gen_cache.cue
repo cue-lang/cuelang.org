@@ -14,8 +14,8 @@ package site
 								"import-path-explicit-package-name":  "d2IA9UNTGi3RxmZRTr5suvq2MNYnLhPv1pBHZCRQZXg="
 								"import-path-implicit-package-name":  "lFjnVaBTsmwmJ4f/ZrzL3IgHsSoB1TO+F7JWGS4K8nQ="
 								"general-module-import-path":         "4X1DBpbfixYS8/BDuV0hcOzoUsMZ5gjQ24xTfM9A2As="
-								"example-module-import-path":         "Hkl3E8E9fIYViE9JZqNY09rNyb+/SeIGXAo51u85dZY="
-								"module-root-directory-contents":     "jBeSIxY4MN7e+hTKpOmuhWiExo651C6lA/6s/udXEXY="
+								"example-module-import-path":         "7ip5UfAJIxKd0ExYCpP1QAOHy1cVECKjV83nyzMG+ws="
+								"module-root-directory-contents":     "sXwsfJsVawzY1nKQkxRKv5oqQj8RJ1YbzCAZRu5c6Sk="
 								"cue-import-example":                 "ISpflIJHayoYue5CwQDCe8xpcQsHF6tL7MefadsJaOc="
 								"regexp-import-example":              "zqdQd1MCvHQ+g/4Nv6eSeMClARnTP0q/DaBK+J+xTaQ="
 							}
