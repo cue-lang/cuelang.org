@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6ddc92c_f262fb9e",
+        "filename": "content/docs/howto/validate-go-cuego/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T17:07:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d35c91b2_32ec638f",
+      "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33f8265e_b427d2c9",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-05-30T20:57:08Z",
       "side": 1,
       "message": "Per my comment in the JSON Go API CL, by having this additional information before the code block are we not breaking with a now well-established style of having little text before and more context after?",
+      "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b973ed5_6b3dfacb",
+        "filename": "content/docs/howto/validate-go-cuego/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T17:07:03Z",
+      "side": 1,
+      "message": "Per offline discussion, I\u0027ve moved the explanatory portion of this below the code, but left the note that this is merely a starting point to adapt from, as a preamble to the code.\n\nThis serves the howto reader (who is at work, hence we anticipate will be bringing their existing \"I already have Go types/CUE/etc\" context into their reading of the guide) differently from the tutorial reader, who is learning and will benefit most from the ultra-short preamble that you allude to.",
+      "parentUuid": "33f8265e_b427d2c9",
       "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

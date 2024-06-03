@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebd16a94_fcdc03d5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T17:07:03Z",
+      "side": 1,
+      "message": "PTAL. I\u0027ve added code comments since you last reviewed this.",
+      "revId": "497073b26dc47ba492bf64580aa9f18835efce15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
