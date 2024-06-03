@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2a47ef5_50684b41",
+        "filename": "content/docs/integration/openapi/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-03T14:41:03Z",
+      "side": 0,
+      "message": "Interesting - this stale cache file didn\u0027t get noticed by any processes (CI or local) since I turned its path into a redirection to a concept guide, some weeks ago, but forgot to delete this file.",
+      "revId": "aef365b71b069c2ae255cf449b5dc1e21e1b21b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
