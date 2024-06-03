@@ -16,6 +16,24 @@
       "message": "Interesting - this stale cache file didn\u0027t get noticed by any processes (CI or local) since I turned its path into a redirection to a concept guide, some weeks ago, but forgot to delete this file.",
       "revId": "aef365b71b069c2ae255cf449b5dc1e21e1b21b6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3fcb104_afdb3292",
+        "filename": "content/docs/integration/openapi/gen_cache.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-03T16:39:23Z",
+      "side": 0,
+      "message": "Per offline chat, this is effectively still a \"bug\" in tip. We never actually made the change to catch this.",
+      "parentUuid": "d2a47ef5_50684b41",
+      "revId": "aef365b71b069c2ae255cf449b5dc1e21e1b21b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
