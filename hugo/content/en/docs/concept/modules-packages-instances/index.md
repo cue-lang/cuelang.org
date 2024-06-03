@@ -192,12 +192,12 @@ by using the following import path:
 <module identifier>/<relative position of package within module>:<package name>
 ```
 
-So suppose our module is identified as `example.com/pkg` and a package
+So suppose our module is identified as `example.com/transport` and a package
 located at `schemas/trains` and has the package name `track`,
 then other packages can import this packages as:
 
 ```txt
-import "example.com/pkg/schemas/trains:track"
+import "example.com/transport/schemas/trains:track"
 ```
 
 Putting it all together:
@@ -205,12 +205,12 @@ Putting it all together:
 ```txt
 root                    // must contain:
 |-- cue.mod
-|   |-- module.cue      // module: "example.com/pkg"
+|   |-- module.cue      // module: "example.com/transport"
 |-- schemas
 |   |-- trains
 |   |   |-- track.cue   // package track
 ...
-|-- data.cue            // import "example.com/pkg/schemas/trains:track"
+|-- data.cue            // import "example.com/transport/schemas/trains:track"
 ```
 
 The relative position may not be within the `cue.mod` directory.

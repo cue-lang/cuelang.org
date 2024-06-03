@@ -199,13 +199,13 @@ by using the following import path:
 <module identifier>/<relative position of package within module>:<package name>
 {{{end}}}
 
-So suppose our module is identified as `example.com/pkg` and a package
+So suppose our module is identified as `example.com/transport` and a package
 located at `schemas/trains` and has the package name `track`,
 then other packages can import this packages as:
 
 {{{with code "en" "example-module-import-path"}}}
 -- plain.txt --
-import "example.com/pkg/schemas/trains:track"
+import "example.com/transport/schemas/trains:track"
 {{{end}}}
 
 Putting it all together:
@@ -214,12 +214,12 @@ Putting it all together:
 -- plain.txt --
 root                    // must contain:
 |-- cue.mod
-|   |-- module.cue      // module: "example.com/pkg"
+|   |-- module.cue      // module: "example.com/transport"
 |-- schemas
 |   |-- trains
 |   |   |-- track.cue   // package track
 ...
-|-- data.cue            // import "example.com/pkg/schemas/trains:track"
+|-- data.cue            // import "example.com/transport/schemas/trains:track"
 {{{end}}}
 
 The relative position may not be within the `cue.mod` directory.
