@@ -63,6 +63,30 @@
       },
       "revId": "94a7ddda36db96043f89a974bbece22c0265a629",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "819409cc_fb4107d0",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-04T19:33:53Z",
+      "side": 1,
+      "message": "FYI if this is still an issue, logins.json has both access and refresh tokens, so you should be able to indefinitely refresh the access token with the central registry via the refresh token. `cue login` doesn\u0027t expose a simple CLI way to do this, but maybe it should, as it already has all the logic to do so. Alternatively you could do it via Go code, but it would require a nontrivial amount of copy pasting.\n\nSo if you would want something like `cue login --refresh`, please open an issue and we can look into it.",
+      "parentUuid": "d0f781c8_5442b450",
+      "range": {
+        "startLine": 38,
+        "startChar": 42,
+        "endLine": 40,
+        "endChar": 34
+      },
+      "revId": "94a7ddda36db96043f89a974bbece22c0265a629",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
