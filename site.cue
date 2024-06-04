@@ -170,6 +170,24 @@ template: ci.#writefs & {
 				},
 				], "\n"))
 
+			# We use the JDK provided by Eclipse Temurin.
+			# Eclipse Temurin is the most common JDK distribution,
+			# supported by many organizations, such as Red Hat and IBM.
+			#
+			# OpenJDK itself recommends Eclipse Temurin: https://wiki.openjdk.org/display/JDKUpdates/JDK+21u
+			#
+			# Microsoft officially supports and recommends it on Azure: https://learn.microsoft.com/en-us/azure/developer/java/fundamentals/java-support-on-azure
+			#
+			# This article also recommends Eclipse Temurin: https://whichjdk.com
+			RUN \
+				apt-get update && apt-get install -y wget apt-transport-https software-properties-common gnupg && \
+				wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | apt-key add - && \
+				echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list && \
+				apt-get update && \
+				apt-get install -y temurin-22-jdk
+
+			RUN apt-get install -y maven
+
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
 			"""#
