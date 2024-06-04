@@ -6,21 +6,22 @@ package site
 				page: {
 					cache: {
 						upload: {
-							"file one":      "kdS+mZ3YYNIyD+V+coREkKiNRpzCBO4m2Rgxoqoa764="
-							"file two":      "62ecFhcfTtXqTrxEftYS/4fb0xWCJf/NfNJ3D7EezpU="
-							"a hidden file": "knse7nSL9KYJ/jYSscNsF2bF8hoRImbK86x3u/fPRnk="
+							"upload initial files":   "qT+Nx5k36YtMF/mBaU3zTYVdHeMHAPFESBaiRk5s9FE="
+							"upload additional file": "ETP9Oi7fObgQcQrGFt0nai//CnRiM6idEP9Mj7I7RqI="
+							"a hidden file":          "LGIlC2NoAcCA8tkzPeDHwBP9EDdmPIeIk5XE6KfrSBY="
 						}
 						code: {
-							"a code example": "yXbjgo2ut9weStypkvjm30jdQy6cCnCa+vBrUU/XioU="
+							"a code example": "KTvDBwJImYkSIKpFZy2gLoQ8X/7fvN//2krORo1yrB0="
 						}
 						multi_step: {
-							hash:       "KDKGN3ATHAFHC6MB53MI8NUMKBHSO1S6R2D3R445GB4VH60VDJGG===="
-							scriptHash: "E5NI97NUHDU688HAUL4HNFJ9D89OK3NMLI3HQ5QRFJ58GTDJ6GAG===="
+							hash:       "08VFD0UFLI3HTJ81Q3DJFU74F1J3ORBRC38CK1AMB43D8KRE3SM0===="
+							scriptHash: "1K5IR4L5KQL27R6E7ANJ8AGBNEVTHEJKDL4DS7JRTOBCVG32LFNG===="
 							steps: [{
 								doc:      ""
 								cmd:      "cue eval"
 								exitCode: 0
 								output: """
+										y: 2
 										x: 1
 
 										"""
@@ -35,6 +36,7 @@ package site
 								exitCode: 0
 								output: """
 										y: 2
+										z: 3
 										x: 1
 
 										"""
