@@ -52,65 +52,38 @@ type codeNodeRunContext struct {
 	*txtarRunContext
 }
 
-func (s *codeNode) validate() {
+func (c *codeNode) validate() {
 	// If there is just one file, we behave like the old "code" node did.  Just
 	// render a ```-based code block. Otherwise fall through to the old
 	// sidebyside validation.
-	if l := len(s.analysis.fileNames); l == 1 {
+	if l := len(c.analysis.fileNames); l == 1 {
 		return
 	}
-
-	// used below, declare early for visibility
-	var ok bool
 
 	// Validate that we know how to layout the txtar archive. It's always possible to
 	// use the #location tag, just so long as the number of files matches the number of
 	// "arguments" to that tag. In case there are 2 or 3 files, there are sensible
 	// defaults, otherwise if there are >3 files the #location tag is required.
-	locations, ok, err := s.tag(tagLocation, "")
-	if err != nil {
-		s.errorf("%v: failed to extract #%s tag: %v", s, tagLocation, err)
-		// Can't validate further
-		return
-	}
-	if !ok {
-		// This case is only a problem if we have >3 files
-		if l := len(s.analysis.fileNames); l > 3 {
-			s.errorf("%v: #%s tag required for %d files", s, tagLocation, l)
-		}
-	} else {
-		// We have a tag, do we have enough arguments?
-		nargs := len(locations)
-		nfiles := len(s.analysis.fileNames)
-		if nargs != nfiles {
-			s.errorf("%v: saw %d files but only %d arguments to #%s", s, nfiles, nargs, tagLocation)
-		}
-
-		// Ensure we can parse the locations
-		for _, l := range locations {
-			// TODO: switch to an auto-generated function that tries to parse
-			switch codeTabLocation(l) {
-			case codeTabTop, codeTabBottom, codeTabLeft, codeTabRight,
-				codeTabTopLeft, codeTabTopRight, codeTabBottomLeft, codeTabBottomRight:
-			default:
-				s.errorf("%v: unknown location %q", s, l)
-			}
-		}
+	ok := c.validateLocationDirective()
+	l := len(c.analysis.fileNames)
+	if !ok && l > 3 {
+		c.errorf("%v: #%s tag required for %d files", c, tagLocation, l)
 	}
 
 	// Return early in case we are already in error
-	if s.isInError() {
+	if c.isInError() {
 		return
 	}
 
 	// Return early if we have been told to #norun this archive
-	if _, found, _ := s.tag(tagNorun, ""); found {
+	if _, found, _ := c.tag(tagNorun, ""); found {
 		return
 	}
 
-	if !s.analysis.hasEffectiveComment {
-		if s.effectiveScript, err = s.buildEffectiveScript(); err != nil {
-			s.errorf("%v: failed to build effective comment: %v", s, err)
+	var err error
+	if !c.analysis.hasEffectiveComment {
+		if c.effectiveScript, err = c.buildEffectiveScript(); err != nil {
+			c.errorf("%v: failed to build effective comment: %v", c, err)
 			return
 		}
 	}
@@ -119,9 +92,9 @@ func (s *codeNode) validate() {
 	// need to create a script, or we didn't and we had to create one.
 	// In either case, we want to take the first non-comment line as
 	// the command, stripping the leading "exec"
-	s.analysis.cmd = extractCommand(s.effectiveScript)
-	if s.analysis.cmd == "" {
-		s.errorf("%v: failed to find effective command in script:\n%s", s, tabIndent(s.effectiveScript))
+	c.analysis.cmd = extractCommand(c.effectiveScript)
+	if c.analysis.cmd == "" {
+		c.errorf("%v: failed to find effective command in script:\n%s", c, tabIndent(c.effectiveScript))
 	}
 }
 
