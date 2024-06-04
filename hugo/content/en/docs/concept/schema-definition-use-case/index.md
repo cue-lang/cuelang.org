@@ -54,7 +54,8 @@ Consider the following versions of the same API:
 #V3: {
 	age: >=0 & <=150
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Declarations with a name starting with `#` are definitions.
 Definitions are not emitted when converting to data, for instance when
@@ -93,7 +94,8 @@ func main() {
 	fmt.Println("V2 is backwards compatible with V1:", v2.Subsume(v1) == nil)
 	fmt.Println("V3 is backwards compatible with V2:", v3.Subsume(v2) == nil)
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 ```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 V2 is backwards compatible with V1: true

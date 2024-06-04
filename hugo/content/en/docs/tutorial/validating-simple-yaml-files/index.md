@@ -72,7 +72,8 @@ name:
   last:  Cartwright
 species: goldfish
 age: "15"
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="4" >}}
@@ -82,7 +83,8 @@ Create a file called `pets.cue` to hold your schema, and place this CUE in it:
 {{< code-tab name="validating-yaml-with-cue/pets.cue" language="cue" area="top-left" >}}
 species!: "cat" | "dog"
 age?:     number
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 `cue` will check that your data files are valid, that they satisfy this schema.
 
@@ -167,7 +169,8 @@ name:
   last:  Cartwright
 species: cat
 age: 15
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="7" >}}
@@ -205,7 +208,8 @@ name:
   last: Dog
 species: dog
 age: 12.5
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="9" >}}

@@ -73,7 +73,8 @@ Let's start with this JSON Schema:
         }
     }
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 
 We use `cue import` to convert the JSON Schema to CUE:
@@ -109,7 +110,8 @@ import "strings"
 	"home phone"?: string @deprecated()
 	...
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 We use the imported schema to validate some known-good data (`good.json`)
 and known-bad data (`bad.json`):
 
@@ -119,7 +121,8 @@ and known-bad data (`bad.json`):
     "name": "Dorothy Cartwright",
     "address": "Ripon, North Yorkshire"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< code-tabs >}}
 {{< code-tab name="bad.json" language="json" area="top-left" >}}
@@ -130,7 +133,8 @@ and known-bad data (`bad.json`):
     ],
     "address": "Ripon, North Yorkshire"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The
 [`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}})
@@ -254,7 +258,8 @@ func main() {
 	// If no errors, print the data value
 	fmt.Printf("%v\n", res)
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 Running the command validates the data file in the second argument against the
 JSON schema in the first argument - printing the data if it's valid and
 displaying a validation error otherwise. Here we use it to validate the same

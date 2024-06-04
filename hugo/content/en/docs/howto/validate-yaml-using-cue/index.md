@@ -39,7 +39,8 @@ people:
     name: Ken
     age: 21
     address: The Blue Sky
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Create a CUE file named `x.cue`
 
@@ -57,7 +58,8 @@ constraints for every person.
 people: [X=string]: #Person & {
 	name: X
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Run the following `cue` command in your:
 
@@ -84,7 +86,8 @@ people:
     name: Rob
     age: 42.2
     address: CUEtopia
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Validate again with `cue vet`
 
@@ -116,7 +119,8 @@ people:
     name: Rob
     age: 42
     address: CUEtopia
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Validate with `cue vet` again
 

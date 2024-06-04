@@ -80,7 +80,8 @@ func main() {
 		fmt.Printf("First val name: %q.\n", cfg.Vals[0].Name)
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 `config.json` contains a sample configuration to test our example program:
 
@@ -99,7 +100,8 @@ func main() {
         }
     ]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 We check that our example code accepts the sample configuration:
 
@@ -147,7 +149,8 @@ package main
 	name:  string @go(Name)
 	value: string @go(Value)
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 ## Test the generated CUE

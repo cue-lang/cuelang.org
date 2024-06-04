@@ -60,11 +60,13 @@ title: JSON Superset
 {{< code-tabs >}}
 {{< code-tab name="a" language="" area="top-left" >}}
 content in a
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< code-tabs >}}
 {{< code-tab name="b" language="" area="top-left" >}}
 content in b
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 ```text { title="TERMINAL" codeToCopy="bHMgfCBlY2hvIGhlbGxv" }
 $ ls | echo hello

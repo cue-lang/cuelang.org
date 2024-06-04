@@ -85,7 +85,8 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This imports the `frostyconfig` package first introduced in the tutorial on
 [working with a custom registry]({{< relref
