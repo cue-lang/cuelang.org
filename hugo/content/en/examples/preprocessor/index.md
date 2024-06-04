@@ -31,28 +31,32 @@ the preceding `script` and `upload` blocks.
 
 ```
 Here is the start of a CUE package:
-{{{with upload "en" "file one"}}}
+{{{with upload "en" "upload initial files"}}}
 -- foo.cue --
 package example
 
 x: 1
-{{{end}}}
-
-Here is the package being evaluated:
-{{{with script "en" "cue eval one"}}}
-cue eval
-{{{end}}}
-
-Here we add to the package:
-{{{with upload "en" "file two"}}}
 -- bar.cue --
 package example
 
 y: 2
 {{{end}}}
 
+Here is the package being evaluated:
+{{{with script "en" "cue eval initial files"}}}
+cue eval
+{{{end}}}
+
+Here we add to the package:
+{{{with upload "en" "upload additional file"}}}
+-- baz.cue --
+package example
+
+z: 3
+{{{end}}}
+
 Here is the package being evaluated again:
-{{{with script "en" "cue eval two"}}}
+{{{with script "en" "cue eval all files"}}}
 cue eval > result.txt
 cat *.txt
 {{{end}}}
@@ -66,20 +70,25 @@ Here is the start of a CUE package:
 package example
 
 x: 1
+{{< /code-tab >}}{{< code-tab name="bar.cue" language="cue" area="top-left" >}}
+package example
+
+y: 2
 {{< /code-tab >}}{{< /code-tabs >}}
 
 Here is the package being evaluated:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWw=" }
 $ cue eval
+y: 2
 x: 1
 ```
 
 Here we add to the package:
 {{< code-tabs >}}
-{{< code-tab name="bar.cue" language="cue" area="top-left" >}}
+{{< code-tab name="baz.cue" language="cue" area="top-left" >}}
 package example
 
-y: 2
+z: 3
 {{< /code-tab >}}{{< /code-tabs >}}
 
 Here is the package being evaluated again:
@@ -87,6 +96,7 @@ Here is the package being evaluated again:
 $ cue eval >result.txt
 $ cat *.txt
 y: 2
+z: 3
 x: 1
 ```
 
