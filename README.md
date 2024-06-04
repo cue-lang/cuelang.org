@@ -33,26 +33,18 @@ giving the issue's title a "`cuelang.org: `" prefix.
   things)
    * [Podman](https://podman.io/) has been used successfully, instead of
      Docker, but its use is currently undocumented
+* When adding or changing pages that interact with the CUE Central Registry,
+  your registry account must have been granted the `test manager` role, and you
+  must have run `cue login` successfully.
 
-### Folders
+### Directory structure
 
-#### content
-This contains the unprocessed content for the website
-
-#### playground
-This contains the app code for the cue-playground
-
-#### functions
-This contains cloud functions
-
-#### hugo
-This contains all code to build the hugo-website.
-
-#### internal
-Internal stuff: can be ignored
-
-#### cue.mod, go.mod, go.sum
-Can be ignored
+- `content`: the unprocessed website content
+- `hugo`: hugo-specific content, likely generated from the `content` directory by the preprocessor
+- `playground`: the app code for the cue-playground (`/play`)
+- `functions`: cloud functions
+- `internal`: internal stuff that can be ignored
+- `cue.mod`/`go.mod`/`go.sum`: can be ignored
 
 ### Developing the site locally
 
