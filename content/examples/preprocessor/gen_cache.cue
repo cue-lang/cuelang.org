@@ -6,21 +6,22 @@ package site
 				page: {
 					cache: {
 						upload: {
-							"file one":      "AY/vc9fGzpq4y5xYEztlHSd9nsUBj3ODKXWrYfXF6ug="
-							"file two":      "9fpTKof6lA9R8n1MFPgwl7qZvknnG9MuArTFiJg13Gk="
-							"a hidden file": "Dw7Kia+K4uSZYDDQOfLyeeNcI5WILoF6opzAwIF9Hvo="
+							"upload initial files":   "kNUQk6SF3Ja8dhxZBzkGvpMmVTwom1HtgPdzc/BlJus="
+							"upload additional file": "rs0+g9MZEmTaO+r8U9iLUsW7KjthAVuRrATOrfH75qI="
+							"a hidden file":          "Dw7Kia+K4uSZYDDQOfLyeeNcI5WILoF6opzAwIF9Hvo="
 						}
 						code: {
 							"a code example": "aqdU91Xo7d35sMxJEfa/tIfr9FIg3Mil8x7doWSBIIM="
 						}
 						multi_step: {
-							hash:       "9ILUM7CPRD0B69OLH0OL3H0ILL1SGIU40JAGRIN94DT74RFCTCG0===="
-							scriptHash: "E5NI97NUHDU688HAUL4HNFJ9D89OK3NMLI3HQ5QRFJ58GTDJ6GAG===="
+							hash:       "2JJ7B9J2DBKTD2K94VVBPD8RQAL9N15LMD2NBTHSCHUM04R4693G===="
+							scriptHash: "1K5IR4L5KQL27R6E7ANJ8AGBNEVTHEJKDL4DS7JRTOBCVG32LFNG===="
 							steps: [{
 								doc:      ""
 								cmd:      "cue eval"
 								exitCode: 0
 								output: """
+										y: 2
 										x: 1
 
 										"""
@@ -35,6 +36,7 @@ package site
 								exitCode: 0
 								output: """
 										y: 2
+										z: 3
 										x: 1
 
 										"""
