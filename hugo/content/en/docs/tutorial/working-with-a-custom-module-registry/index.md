@@ -133,7 +133,8 @@ package frostyconfig
 		analytics?: bool
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The details of the schema are not too important. For the purposes of this tutorial,
 it represents the schema of the configuration data expected by `FrostyApp`.
@@ -274,7 +275,8 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This imports the `frostyconfig` package from the first
 module you published and
@@ -377,7 +379,8 @@ Config: frostyconfig.#Config & {
 		analytics: *true | _
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 We import the schema to constrain the default values, just as we did with the
 `frostyapp` module.
@@ -423,7 +426,8 @@ import "glacial-tech.example/frostytemplate@v0"
 config: frostytemplate.Config & {
 	appName: "alpha"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The `frostyapp` module now gains the benefit of the new defaults. We can remove
 some fields because they are now provided by the template, satisfying the
@@ -522,7 +526,8 @@ package frostyconfig
 		analytics?: bool
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The schema is unchanged except for the new `maxConcurrency` field.
 {{< /step >}}

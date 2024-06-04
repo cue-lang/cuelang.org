@@ -59,7 +59,8 @@ $version: "v1.2.3"
 
 // Kind encodes the different pets we handle.
 #Kind: "cat" | "dog" | "goldfish"
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The [`cue def`]({{< relref "docs/reference/cli/cue-def" >}}) command can
 express CUE constraints as OpenAPI data schemas, in OpenAPI's
@@ -115,7 +116,8 @@ components:
           minimum: 0
           maximum: 100
           exclusiveMaximum: true
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 Because CUE is more expressive than OpenAPI,
 it isn't possible to generate a precise OpenAPI equivalent for *every* CUE constraint.
 CUE does the best conversion it can,
@@ -153,7 +155,8 @@ info: {
 	age?: int & >=0 & <100
 	...
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 The [`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}}) command can
 directly use constraints from OpenAPI data schemas to validate data.
 
@@ -165,7 +168,8 @@ Let's check the details of a well-known animal,
 name: Jonathan
 kind: tortoise
 website: https://en.wikipedia.org/wiki/Jonathan_(tortoise)
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Let's validate Jonathan against the contents of our OpenAPI document, `api.pet.yaml`.
 CUE automatically recognises the constraints in the `components.schemas` namespace,
@@ -228,7 +232,8 @@ func main() {
 	}
 	fmt.Printf("%s\n", out.Bytes())
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 Running this code successfully expresses the constraints in our original
 `schema.cue` file as an OpenAPI document:
 

@@ -59,6 +59,8 @@ package example
 
 output: "Hello \(name)"
 name:   "Joe"
+-- another_file.txt --
+Some content
 {{{end}}}
 
 {{{end}}}

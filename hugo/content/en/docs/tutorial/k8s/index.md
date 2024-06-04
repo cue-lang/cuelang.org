@@ -294,7 +294,8 @@ deployment: [ID=_]: {
 		}
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 By replacing the service and deployment name with `[ID=_]` we have changed the
 definition into a template matching any field.
@@ -490,7 +491,8 @@ _spec: {
 		spec: containers: [{name: _name}]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The common configuration has been factored out into `_spec`.
 We introduced `_name` to aid both specifying and referring
@@ -533,7 +535,8 @@ for x in [deployment, daemonSet, statefulSet] for k, v in x {
 		]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This example introduces a few new concepts.
 Open-ended lists are indicated with an ellipsis (`...`).
@@ -678,7 +681,8 @@ deployment: [string]: spec: template: {
 		ports: [{containerPort: *7080 | int}] // 7080 is the default
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q=" }
 $ cue eval -c ./... >snapshot2
@@ -747,7 +751,8 @@ deployment: [string]: spec: template: {
 		}
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 A diff reveals that one prometheus annotation was added to a service.
 We assume this to be an accidental omission and accept the differences
@@ -788,7 +793,8 @@ deployment: [ID=_]: spec: template: spec: {
 		}]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< code-tabs >}}
 {{< code-tab name="tmp/services/kitchen/souschef/kube2.cue" language="cue" area="top-left" >}}
@@ -797,7 +803,8 @@ package kube
 deployment: souschef: spec: template: spec: {
 	_hasDisks: false
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This template definition is not ideal: the definitions are positional, so if
 configurations were to define the disks in a different order, there would be
@@ -919,7 +926,8 @@ objectSets: [
 	daemonSet,
 	configMap,
 ]
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 ### Listing objects
 
@@ -955,7 +963,8 @@ command: ls: {
 		contents: task.print.text
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 <!-- TODO: use "let" once implemented-->
 
@@ -1020,7 +1029,8 @@ command: dump: {
 		text: yaml.MarshalStream(objects)
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 <!--
 TODO: with new API as well as conversions implemented
@@ -1059,7 +1069,8 @@ command: create: {
 		text: task.kube.stdout
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 This command has two tasks, named `kube` and `display`.
 The `display` task depends on the output of the `kube` task.
 The `cue` tool does a static analysis of the dependencies and runs all
