@@ -400,6 +400,32 @@ without the need to download the entire module archive.
 <!-- TODO: more complete docs for the format -->
 <!-- TODO: diagram showing structure of storage -->
 
+## Determining zip file contents
+
+The `source` field in `module.cue` is used by `cue mod publish` to determine
+what files to include in a module zip. It is required when publishing a module.
+The `source.kind` field specifies the kind of source.
+
+The special value `source: kind: "self"` determines the module file list from
+the contents of the directory (and its subdirectories) that contains the
+`cue.mod` directory.
+
+`source: kind: "git"` requires that the directory that contains `cue.mod`
+directory be under the control of a Git VCS repository. The `git ls-files`
+command is then used to determine the module file list.  Regardless of the
+`source`, the [constraints on file paths and sizes](#zip-path-size-constraints)
+apply.  When the `source.kind` is a VCS system, each file must be "clean" with
+respect to the current commit.
+
+The initial list of files determined by the `source` is then filtered according
+to [file path and size constraints](#zip-path-size-constraints).
+
+Finally, when publishing a module that is not in the repository root directory,
+if the module does not have a file named `LICENSE` in its root directory
+(alongside `cue.mod`) and `source.kind` is a VCS system (e.g. `"git"`), the `cue
+mod publish` will copy the file named `LICENSE` from the repository root
+directory if it is present in the same revision.
+
 ## File path and size constraints {#zip-path-size-constraints}
 
 There are a number of restrictions on the content of module zip files. These
