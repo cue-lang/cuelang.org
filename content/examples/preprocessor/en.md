@@ -31,28 +31,32 @@ the preceding `script` and `upload` blocks.
 
 ```
 Here is the start of a CUE package:
-{{{with upload "en" "file one"}}}
+{{{with upload "en" "upload initial files"}}}
 -- foo.cue --
 package example
 
 x: 1
-{{{end}}}
-
-Here is the package being evaluated:
-{{{with script "en" "cue eval one"}}}
-cue eval
-{{{end}}}
-
-Here we add to the package:
-{{{with upload "en" "file two"}}}
 -- bar.cue --
 package example
 
 y: 2
 {{{end}}}
 
+Here is the package being evaluated:
+{{{with script "en" "cue eval initial files"}}}
+cue eval
+{{{end}}}
+
+Here we add to the package:
+{{{with upload "en" "upload additional file"}}}
+-- baz.cue --
+package example
+
+z: 3
+{{{end}}}
+
 Here is the package being evaluated again:
-{{{with script "en" "cue eval two"}}}
+{{{with script "en" "cue eval all files"}}}
 cue eval > result.txt
 cat *.txt
 {{{end}}}
@@ -61,31 +65,36 @@ cat *.txt
 ### Rendered output
 
 Here is the start of a CUE package:
-{{{{with upload "en" "file one"}}}
+{{{{with upload "en" "upload initial files"}}}}
 -- foo.cue --
 package example
 
 x: 1
-{{{{end}}}
-
-Here is the package being evaluated:
-{{{{with script "en" "cue eval one"}}}
-cue eval
-{{{{end}}}
-
-Here we add to the package:
-{{{{with upload "en" "file two"}}}
 -- bar.cue --
 package example
 
 y: 2
-{{{{end}}}
+{{{{end}}}}
+
+Here is the package being evaluated:
+{{{{with script "en" "cue eval initial files"}}}}
+cue eval
+{{{{end}}}}
+
+Here we add to the package:
+{{{{with upload "en" "upload additional file"}}}}
+-- baz.cue --
+package example
+
+z: 3
+{{{{end}}}}
 
 Here is the package being evaluated again:
-{{{{with script "en" "cue eval two"}}}
+{{{{with script "en" "cue eval all files"}}}}
 cue eval > result.txt
 cat *.txt
-{{{{end}}}
+{{{{end}}}}
+
 
 ## Hidden scripts and uploads
 
@@ -119,17 +128,19 @@ Here is some more prose.
 ### Rendered output
 
 Here is some prose, followed by a hidden upload:
-{{{{with _upload_ "en" "a hidden file"}}}
+{{{{with _upload_ "en" "a hidden file"}}}}
+
 -- foo.txt --
 bar
-{{{{end}}}
+{{{{end}}}}}
 
 Here is a hidden script and, whilst it isn't visible, if any of the commands in
 this script fail to return the anticipated exit code then the site build will
 not succeed:
-{{{{with _script_ "en" "check hidden file"}}}
+{{{{with _script_ "en" "check hidden file"}}}}
+
 grep bar foo.txt
-{{{{end}}}
+{{{{end}}}}}
 
 Here is some more prose.
 
@@ -190,7 +201,8 @@ Some content that needs its own pane
 
 Here is a standalone code example:
 
-{{{{with code "en" "a code example"}}}
+{{{{with code "en" "a code example"}}}}
+
 #location top-left top-left top-left top-right bottom
 exec wc -l file1.txt file2.txt file3.txt file4.txt
 cmp stdout out
@@ -211,4 +223,4 @@ Some content that needs its own pane
  3 file3.txt
  1 file4.txt
  7 total
-{{{{end}}}
+{{{{end}}}}}
