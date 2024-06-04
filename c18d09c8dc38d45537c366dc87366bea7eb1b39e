@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e08a17a_a20afd6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-04T19:31:58Z",
+      "side": 1,
+      "message": "SGTM modulo my nits in the original CL",
+      "revId": "c18d09c8dc38d45537c366dc87366bea7eb1b39e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
