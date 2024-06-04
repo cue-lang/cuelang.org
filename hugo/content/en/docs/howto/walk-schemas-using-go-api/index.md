@@ -71,7 +71,8 @@ anAddress: #Address & {
 
 someData: aValue:      42
 _aHiddenField: aValue: 139
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Our `example.cue` file contains two
 [definitions]({{< relref "docs/tour/types/defs/" >}}) that we want to process:
@@ -150,7 +151,8 @@ func structToType(name cue.Selector, val cue.Value) {
 
 	fmt.Printf("}\n")
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="6" >}}

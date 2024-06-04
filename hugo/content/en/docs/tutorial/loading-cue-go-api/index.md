@@ -56,7 +56,8 @@ package example
 
 output: "Hello \(name)"
 name:   "Joe"
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -121,7 +122,8 @@ func main() {
 	output := v.LookupPath(cue.ParsePath("output"))
 	fmt.Println(output)
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 

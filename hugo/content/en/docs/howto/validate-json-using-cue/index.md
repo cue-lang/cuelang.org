@@ -45,7 +45,8 @@ Create a JSON file called `x.json` with the following:
         }
     }
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -67,7 +68,8 @@ constraints for every person.
 people: [X=string]: #Person & {
 	name: X
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -106,7 +108,8 @@ following:
         }
     }
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -150,7 +153,8 @@ Fix up the JSON:
         }
     }
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 

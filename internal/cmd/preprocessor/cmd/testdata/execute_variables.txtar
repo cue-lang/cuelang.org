@@ -126,7 +126,8 @@ $ cue export in.cue
 // A doc comment
 
 upload: 5 // a line comment stable replacement
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 ```text { title="TERMINAL" codeToCopy="ZWNobyBpbi5jdWUgc3RhYmxlIHJlcGxhY2VtZW50" }
 $ echo in.cue stable replacement
 in.cue stable replacement
