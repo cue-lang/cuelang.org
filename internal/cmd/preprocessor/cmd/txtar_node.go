@@ -71,6 +71,41 @@ func (t *txtarNode) tag(key, arg string) (args []string, present bool, err error
 	return args, present, err
 }
 
+// validateLocationDirective ensures the values passed to a #location
+// directive are valid.
+func (t *txtarNode) validateLocationDirective() (found bool) {
+	locations, found, err := t.tag(tagLocation, "")
+	if err != nil {
+		t.errorf("failed to extract #%s tag: %v", tagLocation, err)
+		return found
+	}
+	if !found {
+		return found
+	}
+
+	// Validate the locations we were given
+	nargs := len(locations)
+	nfiles := len(t.analysis.fileNames)
+	if nargs != nfiles {
+		t.errorf("%v: saw %d files but only %d arguments to #%s", t, nfiles, nargs, tagLocation)
+		return found
+	}
+
+	// Ensure we can parse the locations
+	for _, l := range locations {
+		// TODO: switch to an auto-generated function that tries to parse
+		switch codeTabLocation(l) {
+		case codeTabTop, codeTabBottom, codeTabLeft, codeTabRight,
+			codeTabTopLeft, codeTabTopRight, codeTabBottomLeft, codeTabBottomRight:
+		default:
+			t.errorf("%v: unknown location %q", t, l)
+			return found
+		}
+	}
+
+	return found
+}
+
 // parseLineArgs is factored out of the testscript code. We use the same logic
 // for quoting in tag arguments as we do in testscript commands. Expansion does
 // not happen for tag arguments.
