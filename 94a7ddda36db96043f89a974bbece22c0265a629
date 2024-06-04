@@ -39,6 +39,30 @@
       },
       "revId": "94a7ddda36db96043f89a974bbece22c0265a629",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5579ef71_b1958a90",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-04T15:12:08Z",
+      "side": 1,
+      "message": "You\u0027re right - it definitely used to be the case, early on, but I can now see a token is issued that doesn\u0027t expire for 3 months.",
+      "parentUuid": "d0f781c8_5442b450",
+      "range": {
+        "startLine": 38,
+        "startChar": 42,
+        "endLine": 40,
+        "endChar": 34
+      },
+      "revId": "94a7ddda36db96043f89a974bbece22c0265a629",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
