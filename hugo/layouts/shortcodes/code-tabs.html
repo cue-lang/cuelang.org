@@ -52,7 +52,7 @@
         </div>
     {{- end -}}
 
-    {{ if $tabsRight }}
+    {{- if $tabsRight -}}
         <div class="code-tabs__item code-tabs__item--right">
             {{- partial "tabs.html" (dict
                 "groupId" $groupId
@@ -60,9 +60,9 @@
                 "modifier" "code"
             ) -}}
         </div>
-    {{ end }}
+    {{- end -}}
 
-    {{ if $tabsTopRight }}
+    {{- if $tabsTopRight -}}
         <div class="code-tabs__item code-tabs__item--top-right">
             {{- partial "tabs.html" (dict
                 "groupId" $groupId
@@ -70,9 +70,9 @@
                 "modifier" "code"
             ) -}}
         </div>
-    {{ end }}
+    {{- end -}}
 
-    {{ if $tabsBottomRight }}
+    {{- if $tabsBottomRight -}}
         <div class="code-tabs__item code-tabs__item--bottom-right">
             {{- partial "tabs.html" (dict
                 "groupId" $groupId
@@ -80,9 +80,9 @@
                 "modifier" "code"
             ) -}}
         </div>
-    {{ end }}
+    {{- end -}}
 
-    {{ if $tabsBottom }}
+    {{- if $tabsBottom -}}
         <div class="code-tabs__item code-tabs__item--bottom">
             {{- partial "tabs.html" (dict
                 "groupId" $groupId
@@ -90,5 +90,5 @@
                 "modifier" "code"
             ) -}}
         </div>
-    {{ end }}
+    {{- end -}}
 </div>

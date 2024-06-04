@@ -1,4 +1,4 @@
-{{ if .Parent }}
+{{- if .Parent -}}
     {{ $name := trim (.Get "name") " " }}
     {{ $area := .Get "area" | default "top-left" }}
     {{ $language := .Get "language" | default "" }}
@@ -9,11 +9,11 @@
     {{ $arrayName := printf "tabs-%s" $area }}
     {{ $content := printf "```%s {type=\"%s\", linenos=\"%s\", codeToCopy=\"%s\" modifier=\"code-block--tab\" }%s```" $language $type $lineos $codeToCopy .Inner }}
 
-    {{ if not (.Parent.Scratch.Get $arrayName) }}
+    {{- if not (.Parent.Scratch.Get $arrayName) -}}
         {{ .Parent.Scratch.Set $arrayName slice }}
-    {{ end }}
+    {{- end -}}
 
-    {{ with .Inner }}
+    {{- with .Inner -}}
         {{ $.Parent.Scratch.Add $arrayName (dict
             "name" $name
             "area" $area
@@ -22,7 +22,7 @@
             "groupId" $groupId
             "content" $content
         ) }}
-    {{ end }}
-{{ else }}
+    {{- end -}}
+{{- else -}}
     {{- errorf "[%s] %q: code-tab shortcode is missing its parent" site.Language.Lang .Page.Path -}}
-{{ end}}
+{{- end -}}
