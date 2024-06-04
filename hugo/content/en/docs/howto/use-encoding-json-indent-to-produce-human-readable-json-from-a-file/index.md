@@ -30,7 +30,19 @@ indent: json.Indent(json.Marshal(input), " ", "  ")
 input: _
 {{< /code-tab >}}
 {{< code-tab name="data.json" language="json" area="top-right" >}}
-{"a":1,"b":{"c":"two","d":3.0},"e":false,"f":[4,5.0,"A\nMulti\nLine\nString"]}
+{
+    "a": 1,
+    "b": {
+        "c": "two",
+        "d": 3.0
+    },
+    "e": false,
+    "f": [
+        4,
+        5.0,
+        "A\nMulti\nLine\nString"
+    ]
+}
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtbCBpbnB1dDogZGF0YS5qc29uIC1lIGluZGVudCAtLW91dCB0ZXh0" >}}
 $ cue export file.cue -l input: data.json -e indent --out text

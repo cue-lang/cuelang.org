@@ -38,7 +38,19 @@ indent: json.Indent(json.Marshal(input), " ", "  ")
 // the -l parameter.
 input: _
 -- data.json --
-{"a":1,"b":{"c":"two","d":3.0},"e":false,"f":[4,5.0,"A\nMulti\nLine\nString"]}
+{
+    "a": 1,
+    "b": {
+        "c": "two",
+        "d": 3.0
+    },
+    "e": false,
+    "f": [
+        4,
+        5.0,
+        "A\nMulti\nLine\nString"
+    ]
+}
 -- out --
 {
    "a": 1,
