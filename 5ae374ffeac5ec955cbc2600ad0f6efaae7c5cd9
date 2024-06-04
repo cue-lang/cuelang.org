@@ -103,6 +103,24 @@
       "parentUuid": "33f8265e_b427d2c9",
       "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77587517_172ab752",
+        "filename": "content/docs/howto/validate-go-cuego/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-04T09:02:39Z",
+      "side": 1,
+      "message": "Great, thanks for explaining the thinking here with respect to howtos.",
+      "parentUuid": "0b973ed5_6b3dfacb",
+      "revId": "5ae374ffeac5ec955cbc2600ad0f6efaae7c5cd9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

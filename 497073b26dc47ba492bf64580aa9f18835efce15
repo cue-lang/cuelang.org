@@ -16,6 +16,23 @@
       "message": "PTAL. I\u0027ve added code comments since you last reviewed this.",
       "revId": "497073b26dc47ba492bf64580aa9f18835efce15",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8970cba1_6d150e49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-04T09:02:39Z",
+      "side": 1,
+      "message": "Still LGTM.",
+      "revId": "497073b26dc47ba492bf64580aa9f18835efce15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
