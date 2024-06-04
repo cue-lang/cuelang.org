@@ -54,6 +54,8 @@ cue mod init company.example/configuration
 Write some CUE code:
 
 {{{with upload "en" "initial cue code"}}}
+-- a_file_that_doesnt_matter.txt --
+Create this first
 -- some.cue --
 package example
 
