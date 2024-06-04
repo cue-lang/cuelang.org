@@ -51,6 +51,9 @@ $ cue mod init company.example/configuration
 Write some CUE code:
 
 {{< code-tabs >}}
+{{< code-tab name="a_file_that_doesnt_matter.txt" language="txt" area="top-left" >}}
+Create this first
+{{< /code-tab >}}
 {{< code-tab name="some.cue" language="cue" area="top-left" >}}
 package example
 
