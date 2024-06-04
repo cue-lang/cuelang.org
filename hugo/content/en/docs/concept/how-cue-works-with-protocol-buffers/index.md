@@ -39,7 +39,8 @@ message MyType {
     // A method must start with a capital letter.
     repeated string method = 2 [(cue.val) = '[...=~"^[A-Z]"]'];
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The `cue import` command converts Protobuf to CUE.
 It indicates success by displaying no output:
@@ -62,7 +63,8 @@ package basic
 	method?: [...string] @protobuf(2,string)
 	method?: [...=~"^[A-Z]"]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 Do you notice how the `method` field's type and constraints are split over two lines?
 That's exactly as expected, because CUE's core operation is to automatically
 *unify* each field's right-hand-side.
@@ -102,7 +104,8 @@ func main() {
 	b, _ := format.Node(file)
 	fmt.Println(string(b))
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 Here's the program's output:
 
 ```text { title="TERMINAL" codeToCopy="Z28gcnVuIG1haW4uZ28=" }

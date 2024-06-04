@@ -25,7 +25,8 @@ You can use any schema that's relevant to your specific data, but our example us
 	name?: string
 	age?:  int
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 
@@ -40,7 +41,8 @@ You may already have some representative test data. This data is relevant to our
     "name": "Charlie Cartwright",
     "age": 80
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< code-tabs >}}
 {{< code-tab name="bad.json" language="json" area="top-left" >}}
@@ -51,7 +53,8 @@ You may already have some representative test data. This data is relevant to our
     ],
     "age": "173"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="3" >}}
@@ -135,7 +138,8 @@ func main() {
 
 	fmt.Println("✅ JSON: ok")
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This example code embeds the CUE from `schema.cue` and uses it to validate a
 single JSON file, printing the validation result to its standard output stream.

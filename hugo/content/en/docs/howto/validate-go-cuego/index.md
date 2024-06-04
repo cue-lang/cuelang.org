@@ -73,7 +73,8 @@ func main() {
 	fmt.Printf("good: %v\n", check(good))
 	fmt.Printf("bad: %v\n", check(bad))
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This example code uses `cuego`
 to check two instances of a simple struct type (`good` / `bad`)

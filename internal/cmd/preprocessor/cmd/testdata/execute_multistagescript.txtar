@@ -95,15 +95,13 @@ Hello!
 >
 >{{{with upload "en" "upload-some-cue"}}}
 >#codetab(in.cue) linenos="table"
+>#nofmt(in.json)
 >-- in.cue --
 >// A doc comment
 >map: {
 >member1: 3 // a line comment
 >member2: 4
 >}
->{{{end}}}
->{{{with upload "en" "upload-some-json"}}}
->#nofmt(in.json)
 >-- in.json --
 >{
 >"x": 5
@@ -165,15 +163,13 @@ Hello!
 >
 >{{{with upload "en" "upload-some-cue"}}}
 >#codetab(in.cue) linenos="table"
+>#nofmt(in.json)
 >-- in.cue --
 >// A doc comment
 >map: {
->	member1: 3 // a line comment
->	member2: 4
+>member1: 3 // a line comment
+>member2: 4
 >}
->{{{end}}}
->{{{with upload "en" "upload-some-json"}}}
->#nofmt(in.json)
 >-- in.json --
 >{
 >"x": 5
@@ -225,16 +221,16 @@ title: JSON Superset
 {{< code-tab name="in.cue" language="cue" area="top-left" linenos="table" >}}
 // A doc comment
 map: {
-	member1: 3 // a line comment
-	member2: 4
+member1: 3 // a line comment
+member2: 4
 }
-{{< /code-tab >}}{{< /code-tabs >}}
-{{< code-tabs >}}
+{{< /code-tab >}}
 {{< code-tab name="in.json" language="json" area="top-left" >}}
 {
 "x": 5
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 ```text { title="TERMINAL" codeToCopy="d2MgLWwgaW4uanNvbg==" }
 $ wc -l in.json
 3 in.json
@@ -244,7 +240,8 @@ $ wc -l in.json
 {
     "x": 5
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAplY2hvIGhlbGxv" }
 # script doc comment
 # script doc comment part 2
@@ -296,14 +293,13 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":      "zb/4wfEtDp1Ixtrb4W6kb4Ax8jrzfky2d9SHCDv1W/Q="
-						"upload-some-cue":  "3t4YDlUcXgEx0Ahn3dRJA9dPO2vOASyRL0y0VW87VUQ="
-						"upload-some-json": "FHSr4Es4OZDurnlU+yUseEiAfgC+yan/x6b8llDjRHA="
-						"in-subdir":        "Ns73B447Ocj7WcOP/ezp9W3VLcNNLhthd8vQos9PUfU="
+						"hidden file":     "zb/4wfEtDp1Ixtrb4W6kb4Ax8jrzfky2d9SHCDv1W/Q="
+						"upload-some-cue": "zJ8n2uZuIAs4a+JrelhSGu0TUJXa7pWPO9KtZia+/Cg="
+						"in-subdir":       "Ns73B447Ocj7WcOP/ezp9W3VLcNNLhthd8vQos9PUfU="
 					}
 					multi_step: {
-						hash:       "JOIGTQCPHGFTC1VVC526MI1MBRF05F71O12H68F0HEDEQ71RMR30===="
-						scriptHash: "RTE18RDQ3BFG4B5U2VR92496OPO5NOT61C424QBCDDT1RAAGPOUG===="
+						hash:       "3IU49I8LCFSL0VDVHRETOBB03IIDDG209GNF8PECVDLSQOT6M8VG===="
+						scriptHash: "OBK61QAEMC1LKF86QH60O51GTKIULFB5KF9F3MNAKFSLOT80C88G===="
 						steps: [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
