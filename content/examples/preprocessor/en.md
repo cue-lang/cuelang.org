@@ -31,28 +31,32 @@ the preceding `script` and `upload` blocks.
 
 ```
 Here is the start of a CUE package:
-{{{with upload "en" "file one"}}}
+{{{with upload "en" "upload initial files"}}}
 -- foo.cue --
 package example
 
 x: 1
-{{{end}}}
-
-Here is the package being evaluated:
-{{{with script "en" "cue eval one"}}}
-cue eval
-{{{end}}}
-
-Here we add to the package:
-{{{with upload "en" "file two"}}}
 -- bar.cue --
 package example
 
 y: 2
 {{{end}}}
 
+Here is the package being evaluated:
+{{{with script "en" "cue eval initial files"}}}
+cue eval
+{{{end}}}
+
+Here we add to the package:
+{{{with upload "en" "upload additional file"}}}
+-- baz.cue --
+package example
+
+z: 3
+{{{end}}}
+
 Here is the package being evaluated again:
-{{{with script "en" "cue eval two"}}}
+{{{with script "en" "cue eval all files"}}}
 cue eval > result.txt
 cat *.txt
 {{{end}}}
@@ -61,28 +65,34 @@ cat *.txt
 ### Rendered output
 
 Here is the start of a CUE package:
-{{{{with upload "en" "file one"}}}
+{{{{with upload "en" "upload initial files"}}}
+
 -- foo.cue --
 package example
 
 x: 1
-{{{{end}}}
-
-Here is the package being evaluated:
-{{{{with script "en" "cue eval one"}}}
-cue eval
-{{{{end}}}
-
-Here we add to the package:
-{{{{with upload "en" "file two"}}}
 -- bar.cue --
 package example
 
 y: 2
 {{{{end}}}
 
+Here is the package being evaluated:
+{{{{with script "en" "cue eval initial files"}}}
+
+cue eval
+{{{{end}}}
+
+Here we add to the package:
+{{{{with upload "en" "upload additional file"}}}
+-- baz.cue --
+package example
+
+z: 3
+{{{{end}}}
+
 Here is the package being evaluated again:
-{{{{with script "en" "cue eval two"}}}
+{{{{with script "en" "cue eval all files"}}}
 cue eval > result.txt
 cat *.txt
 {{{{end}}}
