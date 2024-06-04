@@ -37,10 +37,12 @@ done
 
 # Fix up import paths
 regex='s+cuelang.org/go/internal+github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal+g'
-find ./internal/cuelang_org_go_internal -name "*.go" -exec sed -i $regex {} +
+find ./internal/cuelang_org_go_internal -name "*.go" -exec sed -i '' -e $regex {} +
+# "-i '' -e" allows -i to work with BSD sed (macOS' default) without creating a backup file.
 
 # Remove go:generate directives
-find ./internal/cuelang_org_go_internal -name "*.go" -exec sed -i '/^\/\/go:generate/d' {} +
+find ./internal/cuelang_org_go_internal -name "*.go" -exec sed -i '' -e '/^\/\/go:generate/d' {} +
+# "-i '' -e" allows -i to work with BSD sed (macOS' default) without creating a backup file.
 
 # Remove test files
 find ./internal/cuelang_org_go_internal/ -name "*_test.go" -exec rm {} +
