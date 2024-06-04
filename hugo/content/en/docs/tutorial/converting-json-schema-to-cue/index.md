@@ -101,7 +101,8 @@ Create a JSON schema file:
         }
     }
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This schema validates data that defines a restaurant.
 {{< /step >}}
@@ -132,7 +133,8 @@ package cuisine
 		view?: bool
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 CUE natively understands JSON Schema, and is able to convert all of the JSON
 Schema constraints into CUE constraints. Notice the CUE schema is also
 considerably more concise and readable.
@@ -150,7 +152,8 @@ tables:
   - seats: 4
     view: true
   - seats: 6
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< code-tabs >}}
 {{< code-tab name="pomodoro.yml" language="yml" area="top-left" >}}
@@ -160,7 +163,8 @@ tables:
   - seats: 100
   - seats: 8
     view: true
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 One of these files contains a deliberate problem that `cue` will catch for us,
 shortly.  If you spotted the problem while entering the data, make sure you
@@ -193,7 +197,8 @@ tables:
   - seats: 10
   - seats: 8
     view: true
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 

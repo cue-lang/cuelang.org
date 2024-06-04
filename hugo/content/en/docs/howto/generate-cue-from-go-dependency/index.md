@@ -48,7 +48,8 @@ Our example depends on a Kubernetes package:
 package deps
 
 import _ "k8s.io/api/apps/v1"
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="4" >}}
@@ -113,7 +114,8 @@ service: [string]:     core.#Service
 deployment: [string]:  apps.#Deployment
 daemonSet: [string]:   apps.#DaemonSet
 statefulSet: [string]: apps.#StatefulSet
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /step >}}
 
 {{< step stepNumber="8" >}}

@@ -347,7 +347,7 @@ func executeDef(c *Command, args []string) error {
 
 	e := newExecutor(&ctx, wd, projectRoot, c)
 	if flagServe.Bool(c) {
-		return e.serve(args)
+		return e.serve()
 	}
 
 	var filter map[string]bool

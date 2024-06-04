@@ -82,7 +82,8 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Your main module defines some concrete values for a configuration,
 constrained by the `frostyconfig.#Config` schema.
@@ -183,7 +184,8 @@ func main() {
 	config := v.LookupPath(cue.ParsePath("config"))
 	fmt.Println(config)
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This program loads the CUE package in the current directory,
 and then prints a message based on the `config` field.

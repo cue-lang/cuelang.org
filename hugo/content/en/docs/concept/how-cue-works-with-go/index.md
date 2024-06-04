@@ -80,7 +80,8 @@ service: [string]:     core.#Service
 deployment: [string]:  apps.#Deployment
 daemonSet: [string]:   apps.#DaemonSet
 statefulSet: [string]: apps.#StatefulSet
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Our configuration is currently empty - but any
 services, deployments, daemonSets, or statefulSets
@@ -128,7 +129,8 @@ package example
 l: [1, 2, 3]
 v: "hello"
 message: (v): "world!"
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The `cuelang.org/go/cue/load` package provides a similar interface to the `cue`
 command for loading CUE.
@@ -152,7 +154,8 @@ func main() {
 	v := ctx.BuildInstance(insts[0])
 	fmt.Printf("%v\n", v)
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Before running, we add a dependency on the `cuelang.org/go` module and tidy:
 
@@ -224,7 +227,8 @@ func main() {
 
 	fmt.Println("✅ YAML: ok")
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Here's the data we'll check against `#Schema`:
 
@@ -232,7 +236,8 @@ Here's the data we'll check against `#Schema`:
 {{< code-tab name="data.yml" language="yml" area="top-left" >}}
 name: Charlie Cartwright
 age: 99
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 We finish by adding a dependency on the `cuelang.org/go` module, tidying,
 and running the program:
@@ -261,7 +266,8 @@ package example
 	name?: string
 	age?:  int & <=150
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 We embed the schema file using [Go embedding](https://pkg.go.dev/embed),
 and load it via a string.
@@ -308,7 +314,8 @@ func main() {
 
 	fmt.Println("✅ Person: ok")
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 This time we see that CUE correctly caught a problem in our data:
 

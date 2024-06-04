@@ -66,7 +66,8 @@ Here is the start of a CUE package:
 package example
 
 x: 1
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Here is the package being evaluated:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWw=" }
@@ -80,7 +81,8 @@ Here we add to the package:
 package example
 
 y: 2
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Here is the package being evaluated again:
 ```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgPnJlc3VsdC50eHQKY2F0ICoudHh0" }
