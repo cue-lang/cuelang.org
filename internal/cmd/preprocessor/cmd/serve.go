@@ -73,7 +73,7 @@ func (e *executor) newServeContext(errs chan error) *serveContext {
 
 // serve establishes a file watcher on e.wd and runs e.execute() on each change.
 // It also runs hugo serve passing the non-flag arguments to execute.
-func (e *executor) serve(args []string) error {
+func (e *executor) serve() error {
 	var err error
 
 	// Create a channel on which errors are returned from async
