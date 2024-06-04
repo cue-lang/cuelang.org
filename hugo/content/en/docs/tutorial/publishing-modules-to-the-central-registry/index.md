@@ -131,7 +131,8 @@ package frostyconfig
 		analytics?: bool
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -247,7 +248,8 @@ config: frostyconfig.#Config & {
 	port:    80
 	features: logging: true
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 **Remember to change `cueckoo` to *your* GitHub username, lower-cased, on line 4.**
 

@@ -44,8 +44,8 @@ func (u *uploadNode) isHidden() bool {
 }
 
 func (u *uploadNode) validate() {
-	if l := len(u.analysis.fileNames); l != 1 {
-		u.errorf("%v: upload nodes can only contain a single file; saw %d", u, l)
+	if len(u.analysis.fileNames) == 0 {
+		u.errorf("%v: upload nodes must contain at least one file", u)
 	}
 }
 
@@ -53,26 +53,26 @@ func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
 	b := new(bytes.Buffer)
 	p := bufPrintf(b)
 	// For now there will be a single file, ensured by validate()
-	f := u.archive.Files[0]
-	a := u.analysis.fileNames[0]
-	args := []string{
-		fmt.Sprintf("name=%q", f.Name),
-		fmt.Sprintf("language=%q", a.Language),
-		"area=\"top-left\"",
-	}
-
-	// Work out if there are any code-tab options specified via the codetab tag.
-	// If there are, add them.
-	opts, _, err := u.tag(tagCodeTab, f.Name)
-	if err != nil {
-		return u.errorf("failed to search for tag %v(%v): %v", tagCodeTab, f.Name, err)
-	}
-	args = append(args, opts...)
 
 	p("{{< code-tabs >}}\n")
-	p("{{< code-tab %s >}}\n", strings.Join(args, " "))
-	p("%s", f.Data)
-	p("{{< /code-tab >}}")
+	for i, f := range u.archive.Files {
+		a := u.analysis.fileNames[i]
+		args := []string{
+			fmt.Sprintf("name=%q", f.Name),
+			fmt.Sprintf("language=%q", a.Language),
+			"area=\"top-left\"",
+		}
+		// Work out if there are any code-tab options specified via the codetab tag.
+		// If there are, add them.
+		opts, _, err := u.tag(tagCodeTab, f.Name)
+		if err != nil {
+			return u.errorf("failed to search for tag %v(%v): %v", tagCodeTab, f.Name, err)
+		}
+		args = append(args, opts...)
+		p("{{< code-tab %s >}}\n", strings.Join(args, " "))
+		p("%s", f.Data)
+		p("{{< /code-tab >}}\n")
+	}
 	p("{{< /code-tabs >}}")
 	res.WriteString(u.rf.page.config.randomReplace(b.String()))
 	return nil

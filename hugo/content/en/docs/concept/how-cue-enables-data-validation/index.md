@@ -48,7 +48,8 @@ validate - two JSON files and some YAML:
     "height": 55,
     "diet": "kibble"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< columns-separator >}}
 {{< code-tabs >}}
 {{< code-tab name="bryn.json" language="json" area="top-left" >}}
@@ -58,14 +59,16 @@ validate - two JSON files and some YAML:
     "height": "2",
     "diet": "flakes"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< columns-separator >}}
 {{< code-tabs >}}
 {{< code-tab name="charlie.yaml" language="yaml" area="top-left" >}}
 name: Charlie Cartwright
 type: cat
 diet: chicken
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /columns >}}
 
 Writing a schema that validates these data files isn't difficult.
@@ -80,7 +83,8 @@ package validation
 name!:   string // All animals have a name.
 type!:   string // Every animal must have a type.
 height?: int    // Optional, as we haven't managed to measure *every* animal just yet.
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The `cue vet` command validates our three data files against this schema.
 Each file is validated independently:
@@ -105,7 +109,8 @@ Let's correct that data:
     "height": 2,
     "diet": "flakes"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 We can then repeat the `cue vet` command:
 
@@ -152,7 +157,8 @@ using the same three data files that we worked with above:
     "height": 55,
     "diet": "kibble"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< columns-separator >}}
 {{< code-tabs >}}
 {{< code-tab name="bryn.json" language="json" area="top-left" >}}
@@ -162,14 +168,16 @@ using the same three data files that we worked with above:
     "height": 2,
     "diet": "flakes"
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< columns-separator >}}
 {{< code-tabs >}}
 {{< code-tab name="charlie.yaml" language="yaml" area="top-left" >}}
 name: Charlie Cartwright
 type: cat
 diet: chicken
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{< /columns >}}
 
 The `schema.cue` file is in place, as before. Let's create `policy.cue` as well:
@@ -182,7 +190,8 @@ package validation
 name!:   string
 type!:   string
 height?: int
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{<columns-separator>}}
 {{< code-tabs >}}
 {{< code-tab name="policy.cue" language="cue" area="top-left" >}}
@@ -190,7 +199,8 @@ package validation
 
 type?:   "dog" | "cat"
 height?: >10
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 {{</columns>}}
 
 The `policy.cue` file contains additional constraints for some data fields,
@@ -220,7 +230,8 @@ package validation
 
 type?:   "dog" | "cat" | "goldfish"
 height?: >=1
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 We can then run `cue vet` again:
 
@@ -389,7 +400,8 @@ message ExampleType {
   float  aFloat  = 3;
   bool   aBool   = 4;
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 Let's include a JSON Schema file that adds some constraints to a couple of
 `ExampleType`'s fields:
@@ -416,7 +428,8 @@ Let's include a JSON Schema file that adds some constraints to a couple of
         }
     }
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 And let's add some CUE policy that constrains `ExampleType`'s fields in ways
 that the other formats can't express:
@@ -437,7 +450,8 @@ import "strings"
 	aFloat?: _
 	aBool?:  _
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 We'll carefully construct some data such that it violates constraints from each
 of these schema and policy files:
@@ -448,7 +462,8 @@ aString: "Doesn't start with 'Multiplication', and doesn't contain the square of
 anInt: 5
 aFloat: 99.0
 aBool: "this is not a boolean value"
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 The `cue vet` command unifies all the constraints, showing us the full extent
 of our data validation problem:
@@ -484,7 +499,8 @@ aString: Multiplication - 5 x 5 == 25
 anInt: 5
 aFloat: 4.0
 aBool: false
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
 $ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'

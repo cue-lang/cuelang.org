@@ -504,11 +504,11 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 		case *uploadNode:
 			didWork = true
 
-			_, force, _ := n.tag(tagForce, "")
-
-			// We know that for now we have a single file per uploadNode.
-			f := n.archive.Files[0]
-			upload(f, force)
+			files, force, _ := n.tag(tagForce, "")
+			for _, f := range n.archive.Files {
+				forceFile := force && (len(files) == 0 || slices.Contains(files, f.Name))
+				upload(f, forceFile)
+			}
 
 		case *uploadDirNode:
 			didWork = true
@@ -817,11 +817,6 @@ func (m *multiStepScript) run() {
 	out, err = startCmd.CombinedOutput()
 	if err != nil {
 		var script string
-		if m.debugGeneral {
-			// Logging the script we generated is very noisy - only do so when
-			// debug=general set.
-			script = fmt.Sprintf("\nscript was:\n%s", m.bashScript)
-		}
 		m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s%s", m, createCmd, err, out, script)
 	}
 

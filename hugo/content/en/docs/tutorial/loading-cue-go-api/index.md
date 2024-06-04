@@ -56,7 +56,13 @@ package example
 
 output: "Hello \(name)"
 name:   "Joe"
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+
+{{< code-tab name="another_file.cue" language="cue" area="top-left" >}}
+Some content
+{{< /code-tab >}}
+
+{{< /code-tabs >}}
 
 {{< /step >}}
 
@@ -121,7 +127,8 @@ func main() {
 	output := v.LookupPath(cue.ParsePath("output"))
 	fmt.Println(output)
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
 {{< /step >}}
 
