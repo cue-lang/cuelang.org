@@ -57,11 +57,9 @@ package example
 output: "Hello \(name)"
 name:   "Joe"
 {{< /code-tab >}}
-
-{{< code-tab name="another_file.cue" language="cue" area="top-left" >}}
+{{< code-tab name="another_file.txt" language="txt" area="top-left" >}}
 Some content
 {{< /code-tab >}}
-
 {{< /code-tabs >}}
 
 {{< /step >}}
