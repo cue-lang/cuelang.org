@@ -1,6 +1,172 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de38f3f6_271ab472",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "My draft comments are back thankfully - publishing them all ASAP before they ghost again.",
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8d57e3f_42fa6adf",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "nit: which",
+      "range": {
+        "startLine": 411,
+        "startChar": 0,
+        "endLine": 411,
+        "endChar": 4
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f65647b3_11a5c760",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "this line doesn\u0027t add much, perhaps say something along the lines of \"the supported kinds are listed below\"?",
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb8099fd_ea19e088",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "I would drop this bit; \"self\" is not particularly special compared to \"git\", if anything it is just a simpler approach.",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 414,
+        "endChar": 18
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfb38547_26310c7f",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "directory tree? that\u0027s widely understood to mean \"a directory and all it contains underneath\"",
+      "range": {
+        "startLine": 415,
+        "startChar": 4,
+        "endLine": 415,
+        "endChar": 54
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c30d6aee_599a8d69",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "perhaps link to https://git-scm.com/",
+      "range": {
+        "startLine": 419,
+        "startChar": 36,
+        "endLine": 419,
+        "endChar": 43
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b25074d4_2eb90f3f",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "this does not seem to belong in the \"git\" paragraph, perhaps in a separate one?",
+      "range": {
+        "startLine": 420,
+        "startChar": 57,
+        "endLine": 423,
+        "endChar": 30
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5d6dfd0_718a8495",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:31:42Z",
+      "side": 1,
+      "message": "this is duplicated with the same anchor link above?",
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65a8222a_a2804fcf",
