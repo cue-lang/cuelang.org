@@ -26,7 +26,8 @@ then
 	# stale caches.
 	readonlycache=""
 
-	if [[ "${CI:-}" == "true" ]]
+	# TODO: make this a function of the CUE configuration in this repo
+	if [[ "${CI:-}" == "true" && "${GITHUB_REF}" == "refs/heads/master" ]]
 	then
 		# See comment above for readonlycache
 		skipcache="--skipcache"
