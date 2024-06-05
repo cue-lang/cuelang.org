@@ -16,6 +16,92 @@
       "message": "PTAL.",
       "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13573077_6229a07d",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T04:14:21Z",
+      "side": 1,
+      "message": "I would clarify this still further: it consumes markdown as markdown input, and produces markdown output for Hugo to consume.",
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72489ca8_f46b5dea",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T04:14:21Z",
+      "side": 1,
+      "message": "Can you give me an example of this not working? \n\nThey don\u0027t work for `code` blocks, but that\u0027s known.",
+      "range": {
+        "startLine": 23,
+        "startChar": 11,
+        "endLine": 23,
+        "endChar": 37
+      },
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "046d4096_521cc3bb",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T04:14:21Z",
+      "side": 1,
+      "message": "I would perhaps simplify this to say that the `upload` and `script` blocks are transformed to create one big bash script. Hence each operates on the state that results from previous `script` and `upload` blocks.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 72
+      },
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0a12090_83cc50d6",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T04:14:21Z",
+      "side": 1,
+      "message": "Perhaps use the phrase \"as tabs\" which is something people will be familiar with?",
+      "range": {
+        "startLine": 151,
+        "startChar": 57,
+        "endLine": 153,
+        "endChar": 0
+      },
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
