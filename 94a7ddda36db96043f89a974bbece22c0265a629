@@ -87,6 +87,30 @@
       },
       "revId": "94a7ddda36db96043f89a974bbece22c0265a629",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d43a719_9c757217",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-05T12:25:47Z",
+      "side": 1,
+      "message": "I don\u0027t personally need that feature, and I don\u0027t think that other authors will notice the burden of a 3-monthly webUI-based re-login flow, so I won\u0027t open that issue for now.",
+      "parentUuid": "819409cc_fb4107d0",
+      "range": {
+        "startLine": 38,
+        "startChar": 42,
+        "endLine": 40,
+        "endChar": 34
+      },
+      "revId": "94a7ddda36db96043f89a974bbece22c0265a629",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

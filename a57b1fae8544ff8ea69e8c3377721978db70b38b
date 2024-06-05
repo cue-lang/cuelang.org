@@ -16,6 +16,24 @@
       "message": "We might as well make this clear to those making changes to the Docker image or internals:\n\n```\nWhen adding or changing pages that interact with the CUE Central Registry \n(or making changes to \"infra\" bits like the `preprocessor`), ...\n```\n\n(or words to that effect).",
       "revId": "a57b1fae8544ff8ea69e8c3377721978db70b38b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82993e9d_dabc2127",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-05T12:25:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b11ec43d_b12b158b",
+      "revId": "a57b1fae8544ff8ea69e8c3377721978db70b38b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
