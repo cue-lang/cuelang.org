@@ -8,56 +8,55 @@ aliases:
 - /docs/about
 ---
 
-### Welcome!
+### Welcome to CUE!
 
-CUE is an open-source data validation language and inference engine
-with its roots in logic programming.
-Although the language is not a general-purpose programming language,
-it has many applications, such as
-data validation, data templating, configuration, querying,
-code generation and even scripting.
-The inference engine can be used to validate
-data in code or to include it as part of a code generation pipeline.
+CUE is an
+<dfn title='License: "Apache-2.0", DCO: true, CLA: false'>open-source</dfn>
+project that develops and publishes <!--FIXME: wording --> several interrelated resources:
 
-A key thing that sets CUE apart from its peer languages
-is that it merges types and values into a single concept.
-Whereas in most languages types and values are strictly distinct,
-CUE orders them in a single hierarchy (a lattice, to be precise).
-This is a very powerful concept that allows CUE to do
-many fancy things.
-It also simplifies matters.
-For instance, there is no need for generics, and enums, sum types
-and null coalescing are all the same thing.
+{{< table >}}
+| Resource | Description
+| --- | ---
+| [The CUE Language Specification]({{< ref "docs/reference/spec" >}}) | The formal specification for CUE -- a data validation language with its roots in logic programming.
+| [The `cue` command]({{< relref "installation" >}}) | A command line tool that evaluates CUE, optionally combining it with structured data and other schema formats to validate, transform, and output data and constraints.
+| [`cuelang.org/go` APIs](https://pkg.go.dev/cuelang.org/go/cue#section-documentation) | Go APIs that enable CUE's capabilities to be embedded in Go programs <!-- TODO: change link when https://github.com/cue-lang/docs-and-content/issues/153 is addressed -->
+| [cuelang.org](/) | This website!
+| [The CUE Playground](/play/) | A browser-based tool that lets you try out CUE without installing anything
+{{< /table >}}
+<hr>
 
-### Applications
+CUE, by design, isn't a general-purpose, Turing-complete programming language -
+but its power and flexibility drive its use across a wide range of
+applications. It's often used to define, validate and generate
+[configuration]({{< relref "/docs/concept/how-cue-enables-configuration" >}}).
+CUE also excels at
+[validating data]({{< relref "/docs/concept/how-cue-enables-data-validation" >}})
+(such as JSON and YAML) against CUE schemas and policies, whilst also allowing schemas encoded in a variety of
+[other formats]({{< relref "/docs/integration/" >}})
+(such as JSON Schema, Protobuf, and OpenAPI) to be used simultaneously, seamlessly.
 
-CUE's design ensures that combining CUE values in any
-order always gives the same result
-(it is associative, commutative and idempotent).
-This makes CUE particularly well-suited for cases where CUE
-constraints are combined from different sources:
+CUE's language features enables you to
+[template data]({{< relref "/docs/tour/types/templates" >}}),
+reducing boilerplate by specifying fields in bulk and allowing data's
+important, defining characteristics to be made more visible. It's also used for
+[code generation]({{< relref "/docs/concept/code-generation-and-extraction-use-case" >}}),
+and to use or extract schemas from existing definitions in formats such as
+[Protobuf]({{< relref "/docs/concept/how-cue-works-with-protocol-buffers" >}}),
+[JSON Schema]({{< relref "/docs/concept/how-cue-works-with-json-schema" >}}),
+and
+[Go]({{< relref "/docs/concept/how-cue-works-with-go" >}}).
 
-- Data validation: different departments or groups can each
-define their own constraints to apply to the same set of data.
+On the next page you'll learn about some unique properties of the CUE language,
+including:
 
-- Code extraction and generation: extract CUE definitions from
-multiple sources (Go code, Protobuf), combine them into a single
-definition, and use that to generate definitions in another
-format (e.g. OpenAPI).
+- why the merged concepts of "types" and "values" enable succinct and clear
+  constraints, and
+- how some of CUE's core design principles combine so that the source of each
+  specific value is never in doubt -- no more hunting through confusing layers
+  of "overrides" to figure out where data or configuration is specified.
 
-- Configuration: values can be combined from different sources
-  without one having to import the other.
+{{< warning >}}
+Welcome to CUE -- but be warned: **CUE can change how you think about data and configuration for good!**
+{{< /warning >}}
 
-The ordering of values also allows set containment analysis of entire
-configurations.
-Where most validation systems are limited to checking whether a concrete
-value matches a schema, CUE can validate whether any instance of
-one schema is also an instance of another (is it backwards compatible?),
-or compute a new schema that represents all instances that match
-two other schema.
-
-{{< cards >}}
-{{< card href="why-cue" label="Why CUE?" title="On the next page:" >}}
-Find out why CUE's unique approach is so powerful
-{{< /card >}}
-{{< /cards >}}
+*Next page:* [Why CUE?]({{< relref "why-cue" >}})
