@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53c26171_9123a73f",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8d57e3f_42fa6adf",
+      "range": {
+        "startLine": 411,
+        "startChar": 0,
+        "endLine": 411,
+        "endChar": 4
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f65647b3_11a5c760",
@@ -58,6 +82,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9dd63d4_23f842dd",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f65647b3_11a5c760",
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fb8099fd_ea19e088",
@@ -71,6 +113,30 @@
       "writtenOn": "2024-06-05T21:31:42Z",
       "side": 1,
       "message": "I would drop this bit; \"self\" is not particularly special compared to \"git\", if anything it is just a simpler approach.",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 414,
+        "endChar": 18
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "242e8e60_11a018c6",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb8099fd_ea19e088",
       "range": {
         "startLine": 414,
         "startChar": 0,
@@ -104,6 +170,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50f9c335_f4838e1c",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Done. And I\u0027ve also moved to use \"module root directory\" because it\u0027s a defined term on the page.",
+      "parentUuid": "dfb38547_26310c7f",
+      "range": {
+        "startLine": 415,
+        "startChar": 4,
+        "endLine": 415,
+        "endChar": 54
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c30d6aee_599a8d69",
@@ -117,6 +207,30 @@
       "writtenOn": "2024-06-05T21:31:42Z",
       "side": 1,
       "message": "perhaps link to https://git-scm.com/",
+      "range": {
+        "startLine": 419,
+        "startChar": 36,
+        "endLine": 419,
+        "endChar": 43
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be454818_d0d14899",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c30d6aee_599a8d69",
       "range": {
         "startLine": 419,
         "startChar": 36,
@@ -150,6 +264,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77607eba_b3166468",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b25074d4_2eb90f3f",
+      "range": {
+        "startLine": 420,
+        "startChar": 57,
+        "endLine": 423,
+        "endChar": 30
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c5d6dfd0_718a8495",
@@ -163,6 +301,24 @@
       "writtenOn": "2024-06-05T21:31:42Z",
       "side": 1,
       "message": "this is duplicated with the same anchor link above?",
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6283def_afb647ec",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Done. There was some duplication going on here. Trying to do too many things at once. And failing.",
+      "parentUuid": "c5d6dfd0_718a8495",
       "revId": "fe50168d6061558575d392436305d91801a7dc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -208,6 +364,54 @@
         "startChar": 56,
         "endLine": 430,
         "endChar": 70
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4dc29ab_ee9c1820",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "I  fixed this up by moving these comments about the `LICENSE` file copying to the `\"git\"` paragraph. We can reshape to apply to multiple VCS systems when we add the next one.",
+      "parentUuid": "6880de2a_bb0a40ba",
+      "range": {
+        "startLine": 430,
+        "startChar": 56,
+        "endLine": 430,
+        "endChar": 70
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f46fe1c_1e499a55",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-05T22:12:26Z",
+      "side": 1,
+      "message": "Deleted the bit in parentheses, because per above I\u0027ve spotted that \"module root directory\" is defined.",
+      "parentUuid": "65a8222a_a2804fcf",
+      "range": {
+        "startLine": 429,
+        "startChar": 51,
+        "endLine": 430,
+        "endChar": 21
       },
       "revId": "fe50168d6061558575d392436305d91801a7dc0f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
