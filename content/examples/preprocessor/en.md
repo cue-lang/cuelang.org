@@ -11,7 +11,7 @@ the pair of cooperating
 [`script` and `upload`](#script-and-upload-blocks)
 blocks, and the standalone
 [`code`](#code-blocks)
-block. `script` and `code` blocks can be
+block. `script` and `upload` blocks can be
 [hidden](#hidden-scripts-and-uploads) from the reader.
 
 ## `script` and `upload` blocks
