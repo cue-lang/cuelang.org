@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a3dbd5a_d317a174",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-05T13:17:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13573077_6229a07d",
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "72489ca8_f46b5dea",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-06-05T04:14:21Z",
       "side": 1,
       "message": "Can you give me an example of this not working? \n\nThey don\u0027t work for `code` blocks, but that\u0027s known.",
+      "range": {
+        "startLine": 23,
+        "startChar": 11,
+        "endLine": 23,
+        "endChar": 37
+      },
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cafaf5f_4c5c0c61",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-05T13:17:20Z",
+      "side": 1,
+      "message": "Sorry - you\u0027re right. `code` blocks are the context in which I\u0027d experienced this, and I incorrectly placed it in the `script` section. I\u0027ve moved this mention to the `code` section.",
+      "parentUuid": "72489ca8_f46b5dea",
       "range": {
         "startLine": 23,
         "startChar": 11,
@@ -81,6 +123,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ca63368_99e1d405",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-05T13:17:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "046d4096_521cc3bb",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 72
+      },
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a0a12090_83cc50d6",
@@ -94,6 +160,30 @@
       "writtenOn": "2024-06-05T04:14:21Z",
       "side": 1,
       "message": "Perhaps use the phrase \"as tabs\" which is something people will be familiar with?",
+      "range": {
+        "startLine": 151,
+        "startChar": 57,
+        "endLine": 153,
+        "endChar": 0
+      },
+      "revId": "cb8a59754b688f3f47ab229fd3af3ec6e057a8a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "708e34c1_336d9660",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-05T13:17:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0a12090_83cc50d6",
       "range": {
         "startLine": 151,
         "startChar": 57,
