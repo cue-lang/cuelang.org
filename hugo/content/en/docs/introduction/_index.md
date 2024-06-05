@@ -8,10 +8,19 @@ aliases:
 - /docs/about
 ---
 
-### Welcome!
+### Welcome to CUE!
 
-CUE is an open-source data validation language and inference engine
-with its roots in logic programming.
+CUE is an
+<dfn title='License: "Apache-2.0", DCO: true, CLA: false'>open-source</dfn>
+project that develops and publishes several interrelated <!--FIXME:word--> resources:
+
+- a [formal specification]({{< relref "docs/reference/spec" >}})
+  for "CUE", a data validation language that has its roots in logic programming
+- [`cue`]({{< relref "installation" >}}), a command line tool that evaluates CUE, combining it with structured data (e.g. JSON, YAML) and other schema formats (e.g. JSON Schema, Protobuf, OpenAPI) to validate, transform and produce data and constraints
+
+-------------
+
+
 Although the language is not a general-purpose programming language,
 it has many applications, such as
 data validation, data templating, configuration, querying,
