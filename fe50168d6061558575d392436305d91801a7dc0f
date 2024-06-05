@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65a8222a_a2804fcf",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:17:16Z",
+      "side": 1,
+      "message": "I would just say \"alongside `cue.mod`\" here",
+      "range": {
+        "startLine": 429,
+        "startChar": 51,
+        "endLine": 430,
+        "endChar": 21
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6880de2a_bb0a40ba",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-05T21:17:16Z",
+      "side": 1,
+      "message": "earlier you already say \"is a VCS system\", so I would list them there, and not repeat here.",
+      "range": {
+        "startLine": 430,
+        "startChar": 56,
+        "endLine": 430,
+        "endChar": 70
+      },
+      "revId": "fe50168d6061558575d392436305d91801a7dc0f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
