@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "8TETTC2R0P7RT3030BVSN6JAQ19K0KURBT0U9J4SBVEICVGHC6LG===="
+									hash:       "T3OI672Q519OQ5HOMKS2EKNSQKV9ELCFT76IRKHF465G08C14HDG===="
 									scriptHash: "I48D3VU931JL1FBJO27U6A5GCPAACJIS1A11RB1CKVO518OMCAO0===="
 									steps: [{
 										doc:      ""
@@ -20,7 +20,7 @@ package site
 												"cue help environment" for details). Also note that this command does
 												no dependency or other checks at the moment.
 
-												When the --dryrun flag is specified, nothing will actually be written
+												When the --dry-run flag is specified, nothing will actually be written
 												to a registry, but all other checks will take place.
 
 												The --json flag can be used to find out more information about the upload.
@@ -35,9 +35,9 @@ package site
 												  cue mod publish <version> [flags]
 
 												Flags:
-												  -n, --dryrun       only run simulation
-												      --json         print verbose information in JSON format (implies --dryrun)
-												      --out string   write module contents to specified directory in OCI Image Layout format (implies --dryrun)
+												  -n, --dry-run      only run simulation
+												      --json         print verbose information in JSON format (implies --dry-run)
+												      --out string   write module contents to specified directory in OCI Image Layout format (implies --dry-run)
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
