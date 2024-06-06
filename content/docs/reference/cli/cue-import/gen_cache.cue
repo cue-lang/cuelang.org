@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "0SCSCD0Q2GBNBJ0BBPRO19FVM35U9G34MME8QK7TP0O6TUCG38V0===="
+									hash:       "A7N16J5KFEO9DGBDD2DF75Q2V7BIOUP88QSG8M9FCK82RIV1OCIG===="
 									scriptHash: "LMATRJ8FI2NORP1E83PHSVTMQ729HLFTR844UK1TF8FBQVR96NI0===="
 									steps: [{
 										doc:      ""
@@ -225,7 +225,7 @@ package site
 												  cue import [mode] [inputs] [flags]
 
 												Flags:
-												      --dryrun                   only run simulation
+												      --dry-run                  only run simulation
 												      --ext stringArray          match files with these extensions
 												      --files                    split multiple entries into different files
 												  -f, --force                    force overwriting existing files

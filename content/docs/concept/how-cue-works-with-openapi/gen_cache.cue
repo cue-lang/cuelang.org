@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":           "TTgV53u/uJxoL3M85DCSqVS394VUKIJ34Xma9GaL6g8="
-								"api.pet.yaml":         "KWFz/dwGjlXOLYiq8fI1HsGt8PAdVK0x6a2e9NI6eFY="
-								"api.pet.cue":          "1oh9BwcRJfe27C+MtZJaA0JNLBs8gG4x3OrSMQ8+gQw="
-								"jonathan.yml":         "RDISVukhqa+DKq20u0Ajbff1KKgxc+/ehBBmi9vRyXg="
-								"go emit openapi main": "CxaUUpwbbxigGWIwHbUXSvICRl0hjhpXudCI0N6iVkY="
+								"schema.cue":           "4KmDXnd9zmLhem2Xt/LH7DzfUNTcgo+CT/vIJu5HLV8="
+								"api.pet.yaml":         "j6/JRtGC8YXOM3frml8BtN8iYm9NvmeHIzHGdQHoV9Q="
+								"api.pet.cue":          "lRyeD2REI3iphcP6o4F4RJ6T5t+gddjzQYQ16vQuWYM="
+								"jonathan.yml":         "Wdigi148rtBOaphUq+ildB4bnytYjoTMs7K4emHcqYU="
+								"go emit openapi main": "sg19M/vlVu5JkPxLkPhPH8SVuc3vOJrJ9aXHw8oNp3A="
 							}
 							multi_step: {
-								hash:       "DVHBVUB9SHMR1OFH8S91CR7S8E345HAEHTCDHBK6GS76BPDP5BV0===="
-								scriptHash: "4PHNDF99TIHAR98RKNG67LQL7U87P3UKVSJ389JEGN6ESRORN2AG===="
+								hash:       "GC1EQMV72N367MBT138BDVD83UI6QC2B9OTLCLR1UJKS7AE06QS0===="
+								scriptHash: "S0P80TOQHQAE8FK3O6FQS3IMP37TBDQTBO4Q6MCRBEG10MGI9IEG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -94,7 +94,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.8.2"
+									cmd:      "go get cuelang.org/go@v0.9.0-rc.1.0.20240605220750-a2292241985b"
 									exitCode: 0
 									output: """
 											...
