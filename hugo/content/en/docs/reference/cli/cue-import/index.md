@@ -217,7 +217,7 @@ Usage:
   cue import [mode] [inputs] [flags]
 
 Flags:
-      --dryrun                   only run simulation
+      --dry-run                  only run simulation
       --ext stringArray          match files with these extensions
       --files                    split multiple entries into different files
   -f, --force                    force overwriting existing files

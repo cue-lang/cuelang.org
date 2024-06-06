@@ -19,7 +19,7 @@ logo = "svg/logo.svg"
 [notification]
     type = 'test'
 
-    content = '**Note:** documentation on this site relies on CUE v0.9.0-rc.1'
+    content = '**Note:** documentation on this site relies on CUE v0.9.0-rc.1.0.20240605220750-a2292241985b'
     [notification.button]
         link = 'https://github.com/cue-lang/cue/releases'
         icon = 'download'
