@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bea4f4c_426b0dfe",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:22:57Z",
+      "side": 0,
+      "message": "Not mentioned (AFAICT) in the commit message.",
+      "revId": "a3c1b67478820e71ec36c28522fbfd600de4d8f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
