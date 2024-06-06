@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c598db35_2dd7212e",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "Added blank line.",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eed29c9_7870d1f1",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "Added blank line.",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ae934fb_a01c0f1b",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "Added blank line.",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "003ea821_8bf640b3",
+        "filename": "content/examples/preprocessor/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "Added blank line.",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e76dda22_032fa67d",
+        "filename": "content/examples/preprocessor/page.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "By only deviating this page\u0027s `leftDelim` from the default, I intended to allow the copy+paste operation between the example and rendered source to be completed with only a single follow-up replacement (`s/^{/{{/` or `s/^{//`, depending). Making the delimiters symmetric increases the fiddliness when doing updates - does it gain anything other than neatness?",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac453af1_6a84c7f0",
+        "filename": "hugo/content/en/examples/preprocessor/index.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "Unwanted `}`.",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d387e1f_178e942d",
+        "filename": "hugo/content/en/examples/preprocessor/index.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "Unwanted `}`.",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65859836_f835a125",
+        "filename": "hugo/content/en/examples/preprocessor/index.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-06T09:39:17Z",
+      "side": 1,
+      "message": "Trailing `}`.",
+      "revId": "e3754f9190a60c6784b3c301ba94b2bb00723ffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
