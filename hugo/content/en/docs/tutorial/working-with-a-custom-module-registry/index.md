@@ -41,7 +41,7 @@ This tutorial is written using the following version of `cmd/cue`:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.9.0-rc.1
+cue version v0.9.0
 ...
 ```
 

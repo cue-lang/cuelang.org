@@ -14,11 +14,11 @@ versions: {
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
-		latest: v:       "v0.8.2"
-		prerelease: v:   "v0.9.0-rc.1"
+		latest: v:       "v0.9.0"
+		prerelease: v:   latest.v
 		tip: v:          prerelease.v
-		default: v:      prerelease.v
-		playground: v:   prerelease.v
+		default: v:      latest.v
+		playground: v:   latest.v
 	}
 	let versionSet = {for _, v in cue {"\(v.v)": true}}
 	_cueVersionList: list.SortStrings([

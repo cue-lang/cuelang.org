@@ -84,8 +84,8 @@ and prints the validation result for each instance.
 {{< step stepNumber="3" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjguMgpnbyBtb2QgdGlkeQ==" }
-$ go get cuelang.org/go@v0.8.2
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMApnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.9.0
 ...
 $ go mod tidy
 ...
