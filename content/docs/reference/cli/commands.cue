@@ -29,12 +29,21 @@ cue: [SubCommand=string]: #CueCommand & {
 	})
 }
 
+// Exceptions to the defaults
 cue: {
 	cue: {
 		dir:     "cue"
 		execCmd: "cue help"
 		title:   "cue"
 	}
+	// "cue help" displays the same help text as "cue", and exists only so there
+	// isn't an odd gap where a user might expect to find some meta help page.
+	help: execCmd: "cue help"
+}
+
+// All commands
+cue: {
+	cue:            _
 	cmd:            _
 	commands:       _
 	completion:     _
@@ -61,6 +70,7 @@ cue: {
 	"mod publish":  _
 	"mod resolve":  _
 	"mod tidy":     _
+	modules:        _
 	registryconfig: _
 	trim:           _
 	version:        _
