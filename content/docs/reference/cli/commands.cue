@@ -29,12 +29,19 @@ cue: [SubCommand=string]: #CueCommand & {
 	})
 }
 
+// Exceptions to the defaults
 cue: {
 	cue: {
 		dir:     "cue"
 		execCmd: "cue help"
 		title:   "cue"
 	}
+	help: execCmd: "cue help"
+}
+
+// All commands
+cue: {
+	cue:            _
 	cmd:            _
 	commands:       _
 	completion:     _
@@ -61,6 +68,7 @@ cue: {
 	"mod publish":  _
 	"mod resolve":  _
 	"mod tidy":     _
+	modules:        _
 	registryconfig: _
 	trim:           _
 	version:        _
