@@ -3,6 +3,186 @@ title: Why CUE?
 weight: 10
 ---
 
+The features that make CUE so effective are the result of its careful design,
+which is the product of decades of experience in the data and cofiguration
+space. The language's behaviours are formally defined in
+[The CUE Language Specification]({{< relref "/docs/reference/spec" >}}),
+but you don't need to study the spec in order to understand how CUE can make
+life easier.
+
+Let's briefly run through a few of CUE's features, and discover the real-world
+impact they can have on data, configuration, schema, and policy - no matter
+your level of scale. On this page we'll see
+that [types are values](#types-are-values),
+why [order doesn't matter](#order-doesnt-matter), and also
+how [templates make important data stand out](#templates-make-important-data-stand-out).
+
+<!-- H3 so that it doesn't break the flow of the page-level LH TOC -->
+### Types Are Values
+
+CUE doesn't distinguish between types and values.
+In CUE, types *are* values ... and values are types.\
+This concept is fundamental to how CUE works, and here are some of its implications:
+
+**1) CUE has a single, unified syntax for data and for constraints**
+
+Here's an example of some simplistic CUE being used to plan out a garden:
+
+{{< code-tabs >}}
+{{< code-tab name="garden.cue" language="cue" area="left" >}}
+import "math"
+
+// Our planned garden features a circular lawn.
+lawnRadius: 15
+
+// We will pave around the lawn's circumference,
+// but we only have 100 units of paving slabs.
+pavingUnits: (2 * math.Pi * lawnRadius) & <=100
+
+// The lawn requires πr² turf units to construct.
+turfArea: math.Pi * (lawnRadius * lawnRadius)
+// The lawn needs to be large enough for parties.
+turfArea: >=750
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV2YWwgZ2FyZGVuLmN1ZQ==" >}}
+$ cue eval garden.cue
+turfArea: invalid value 706.8583470577034786540947612378881 (out of bound >=750):
+    ./garden.cue:13:11
+    ./garden.cue:11:11
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+This example uses a concrete value (`lawnRadius`) to calculate the
+values of two other fields, both of which have constraints placed on them using
+[bounds]({{< relref "docs/tour/types/bounds" >}}).
+In this simple form, everything -- the concrete data, the calculated fields,
+and their constraints -- can sit in the same file, in the same namespace, using
+the same syntax.
+Constraints can live inline, as with `pavingUnits`, or be placed separately,
+like `turfArea`. The intent of the constraints is clear for humans to read, but
+also succinct and precise, allowing the `cue vet` command to flag up that our
+planned lawn wouldn't be big enough!
+
+**FIXME) Constraints are first-class values**
+
+Constraints can be used like values because *they are values*.
+They can be referred to, combined ("unified"), and evaluated using the same
+consolidated syntax we saw above.
+
+Here's some data and some constraints being processed by `cue eval` - notice
+how CUE is able to *simplify* the unified constraints that apply to the
+`myNumber` field by ruling out options that aren't possible given the
+[disjunction]({{< relref "/docs/tour/types/disjunctions" >}})
+("`|`") and bounds being unified:
+
+{{< code-tabs >}}
+{{< code-tab name="constraints.cue" language="cue" area="left" >}}
+over10:    >10
+under50:   <50
+from5To40: >=5 & <=40
+options:   9 | 10 | 11 | 39 | 40 | 41
+
+myNumber: over10 & under50 & from5To40 & options
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV2YWwgY29uc3RyYWludHMuY3Vl" >}}
+$ cue eval constraints.cue
+over10:    >10
+under50:   <50
+from5To40: >=5 & <=40
+options:   9 | 10 | 11 | 39 | 40 | 41
+myNumber:  11 | 39 | 40
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+CUE only requires that values must be concrete (i.e. a value that could be
+represented in a format such as JSON or YAML) if they are exported, e.g. using
+`cue export`. The `cue eval` shown here allows us to see the result of the
+evaluation before any such export.
+
+**2) CUE provides some basic types, but they aren't special** \<\<FIXME:heading
+
+CUE handles constraints identically to the "basic types" that constraints build
+up from. The language doesn't treat the `float`  constraint as being any more
+important or fundamental than the additional constraint `float & >10`. CUE only
+cares about values' relative positions in its value lattice - a concept you can
+read more about in
+[The Logic of CUE]({{< relref "/docs/concept/the-logic-of-cue" >}}).
+
+**3) Any value can be used as a constraint**
+
+Because types are values, and values are types, any value can be *used* as a
+type or, as CUE prefers to say, any value can be used as a *constraint*.
+
+Each time a field is declared CUE links that field's *name* to a *value*. As
+you'll read shortly, in [Order Doesn't Matter](FIXME), that value can be
+further refined, resulting in the unified constraints that the field's concrete
+value *must* adhere to.
+
+Each fiel
+
+ The value might be By defining a field, we link that its name to that value, and also 
+
+i.e. Anything that can be declared as a LHS can be used as a RHS.
+Nested values. Nested constraints.
+
+Finish with (and extend) existing municipality/largeCapital example. e.g.
+
+```
+largeCapital: municipality
+moscow: largeCapital
+```
+
+### Order Doesn't Matter
+
+i.e. Order independence / irrelevance.
+Split into multiple files.
+Constraints are unified.
+Use existing "Separate configuration from computation" prose and the "mix in" idea.
+
+### Templates Make Important Data Stand Out
+
+i.e. Boilerplate avoidance; push constraints, don't pull; 
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
 ### Types are Values
 
 CUE does not distinguish between values and types.
