@@ -7,6 +7,7 @@ package site
 					page: {
 						cache: {
 							code: {
+								"unified syntax":   "3KtZ/RiCs9FRS4pdVxbW/+izzC7gGhMziT1rT3PzKlM="
 								data:               "76epf4Udq52mpqv9FbBzRSVWbam5QjfvM+/0MR+/JJ4="
 								schema:             "VY7BGIMZMkRXBYkzjK6frJW6y+MYCMs8WPJKGLf1m7A="
 								CUE:                "5Q1u0HXwjZpbE9QhKxFh5Cpzked2dItdoXLKggfxsAg="
