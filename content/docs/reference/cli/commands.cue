@@ -35,20 +35,20 @@ cue: {
 		execCmd: "cue help"
 		title:   "cue"
 	}
-	cmd:            _
-	commands:       _
-	completion:     _
-	def:            _
-	environment:    _
-	eval:           _
-	export:         _
-	filetypes:      _
-	fix:            _
-	flags:          _
-	fmt:            _
-	get:            _
-	"get go":       _
-	help:           _
+	cmd:         _
+	commands:    _
+	completion:  _
+	def:         _
+	environment: _
+	eval:        _
+	export:      _
+	filetypes:   _
+	fix:         _
+	flags:       _
+	fmt:         _
+	get:         _
+	"get go":    _
+	help: execCmd: "cue help"
 	import:         _
 	injection:      _
 	inputs:         _
@@ -61,6 +61,7 @@ cue: {
 	"mod publish":  _
 	"mod resolve":  _
 	"mod tidy":     _
+	modules:        _
 	registryconfig: _
 	trim:           _
 	version:        _
