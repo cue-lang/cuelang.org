@@ -3,7 +3,209 @@ title: Different, Yet Familiar
 weight: 10
 ---
 
-### Applications
+
+## CUE Is Familiar
+
+CUE will probably feel rather familiar if you've spent any time working with
+data. CUE shares some syntax with JSON, but **significantly** improves the
+experience of managing JSON by hand.
+
+In its very simplest form, CUE looks a lot like JSON.
+This is because CUE is a superset of JSON, which means that all valid JSON is
+CUE - but *not* vice versa.
+Manually managing JSON can be somewhat painful, so CUE introduces several
+conveniences to make writing and reading data much easier:
+
+- C-style comments ("`//`") are allowed
+- field names without special characters don’t need to be quoted
+- the outermost curly braces in a CUE file are optional
+- commas after a field are optional (and are usually omitted)
+- commas after the final element of a list are allowed
+- multiline strings don't require newlines to be escaped
+
+Here's some data encoded in commented CUE, alongside the equivalent JSON document
+(note the lack of curly braces at the top and bottom, and the missing commas after each field's value):
+
+{{< code-tabs >}}
+{{< code-tab name="example.cue" language="cue" area="left" >}}
+singleLineString: "some string"
+multiLineString: """
+	Triple quotes mark the start and end of a
+	multiline string. No newline-escaping required!
+	"""
+
+// Many field names don't need to be quoted (but
+// can be, if you really want to).
+foo:    1
+BAR:    2
+baz_42: 3 // Underscores don't require quotes.
+"quux": 4 // These quotes are optional.
+
+// Some field names do need quotes, such as those
+// that start with numbers, or contain spaces,
+// hyphens, or other special characters.
+"4foo":  5
+"b ar":  6
+"b-az":  7
+"q:uux": 8
+"q^uux": 9
+
+// A list's final element can be followed by
+// an optional comma, making additions or
+// deletions at the end of the list less fiddly.
+aList: [
+	"a",
+	"b",
+	"c",
+]
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBleGFtcGxlLmN1ZSAtLW91dCBqc29u" >}}
+$ cue export example.cue --out json
+{
+    "singleLineString": "some string",
+    "multiLineString": "Triple quotes mark the start and end of a\nmultiline string. No newline-escaping required!",
+    "foo": 1,
+    "BAR": 2,
+    "baz_42": 3,
+    "quux": 4,
+    "4foo": 5,
+    "b ar": 6,
+    "b-az": 7,
+    "q:uux": 8,
+    "q^uux": 9,
+    "aList": [
+        "a",
+        "b",
+        "c"
+    ]
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+
+## CUE Is Different
+
+As you've just seen, CUE can be used to encode data using a friendlier, more
+human-focussed syntax than JSON - and some folks do just that.
+Many teams, however, rely on the language's powerful capabilities to validate
+and secure their data and configurations, and these abilities build on some
+rather unique characteristics.
+
+Let's continue by taking a look at some aspects of CUE that you might not have
+experienced in a language before ...
+
+### Order Doesn't Matter
+
+In CUE, **fields can be declared in any order**.
+This property lies at the heart of many of CUE's behaviours and is often
+referred to as *order irrelevance*. It applies at all levels of granularity:
+
+- within the fields of each data *struct* (which is what JSON calls an "object"),
+- across the fields and structs defined inside a single `.cue` file,
+- when merging multiple `.cue` files that make up a CUE *package*.
+
+Order irrelevance flows from the fact that the rules of CUE's most fundamental
+operation guarantee that *every* possible ordering results in the same
+underlying data structure - so it doesn't matter which *specific* ordering is
+chosen. This operation is called **unification**.
+
+In formal terms, unification is associative, commutative and idempotent.
+In *practical* terms, unification means that:
+
+- Data is immutable: if a field is made concrete by assigning it a specific
+  value, that value is fixed and cannot be changed. This might appear
+  restrictive at first glance, but in reality CUE gives you plenty of options
+  to cater for the different problematic situations you might be imagining!
+- Data and constraints can be combined from multiple sources predictably and
+  efficiently, optionally using a convenient shorthand form for specifying
+  sparsely-populated structs.
+- If a field is declared more than once, then all its assigned values must be
+  compatible with each other. When only specifying concrete data, this
+  simplifies down: all the assigned values must be *identical*.
+
+Unification occurs explicitly when you use the `&` operator, or implicitly when
+you mention a field multiple times. In this example, `A` and `B` are specified
+using implicit and explicit unification, respectively:
+
+{{< code-tabs >}}
+{{< code-tab name="data.cue" language="cue" area="top-left" >}}
+A: 1
+
+B: 2 & 2
+
+C: 3
+A: 1
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBkYXRhLmN1ZSAtLW91dCB5YW1s" >}}
+$ cue export data.cue --out yaml
+A: 1
+B: 2
+C: 3
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+Reading that example, you might be wondering if the unifications have any point -
+surely no-one would *actually* specify `B: 2 & 2`? Wouldn't `B: 2` be sufficient?
+
+In the case of the `B` field, you'd be right - this is simply a demonstration
+of the syntax so that you can recognise it later.
+But with the `A` field, a more interesting situation occurs when we realise
+that **CUE unifies all the data it's given**. 
+
+This means that when we invoke the `cue` command and tell it about various
+different sources of data, the result is the *unification* of all those
+sources. In this example, we'll unify some CUE, some JSON, and some YAML,
+simply by mentioning the data files. Notice how the CUE data uses a convenient
+shorthand for adding deeply nested fields into the JSON and YAML data
+structures:
+
+{{< code-tabs >}}
+{{< code-tab name="data-1.cue" language="cue" area="top" >}}
+"data from CUE": true
+
+a: b: c: 1
+{{< /code-tab >}}
+{{< code-tab name="data-2.json" language="json" area="top" >}}
+{
+    "data from JSON": true,
+    "a": {
+        "b": {
+            "d": 2
+        }
+    }
+}
+{{< /code-tab >}}
+{{< code-tab name="data-3.yml" language="yml" area="top" >}}
+data from YAML: true
+a:
+  b:
+    e: 3
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBkYXRhLTEuY3VlIGRhdGEtMi5qc29uIGRhdGEtMy55bWwgLS1vdXQganNvbg==" >}}
+$ cue export data-1.cue data-2.json data-3.yml --out json
+{
+    "data from JSON": true,
+    "data from YAML": true,
+    "data from CUE": true,
+    "a": {
+        "b": {
+            "d": 2,
+            "e": 3,
+            "c": 1
+        }
+    }
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+
+
+But look what happens when we try and specify a field 
+
+Here's an example
+
+ CUE   There are exceptions to this rule, such as the members of a list (which are inherently ordered), but 
+
 
 CUE's design ensures that combining CUE values in any
 order always gives the same result
