@@ -3,7 +3,117 @@ title: Different, Yet Familiar
 weight: 10
 ---
 
-### Applications
+CUE will probably feel rather familiar if you've spent any time working with
+data. CUE shares some syntax with JSON, but **significantly** improves the
+experience of managing JSON by hand.
+
+Here are some of the ways that CUE makes manual data handling easier:
+
+## CUE Is Familiar
+
+In its very simplest form, CUE looks a lot like JSON.
+This is because CUE is a superset of JSON, and so all valid JSON is CUE - but
+*not* vice versa.
+Managing JSON by hand can be somewhat painful, so CUE introduces several
+conveniences to make writing and reading data easier:
+
+- C-style comments ("`//`") are allowed
+- field names without special characters don’t need to be quoted
+- the outermost curly braces in a CUE file are optional
+- commas after a field are optional (and are usually omitted)
+- commas after the final element of a list are allowed
+- multiline strings don't require newlines to be escaped
+
+Here's an example of some CUE that demonstrates each of these points,
+alongside the equivalent JSON document:
+
+{{< code-tabs >}}
+{{< code-tab name="example.cue" language="cue" area="left" >}}
+singleLineString: "some string"
+multiLineString: """
+	Triple quotes start and end a
+	multiline string. No newline-
+	escaping required!.
+	"""
+
+// Many field names don't need to be quoted.
+alpha: 1
+β:     2
+Gamma: 3
+
+// Some field names do need quoting, such as those
+// that start with numbers, or contain spaces or
+// hyphens.
+"4baz":  4
+"qu ux": 5
+"qu-ux": 6
+
+aList: [
+	7,
+	8,
+	9,
+]
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBleGFtcGxlLmN1ZSAtLW91dCBqc29u" >}}
+$ cue export example.cue --out json
+{
+    "singleLineString": "some string",
+    "multiLineString": "Triple quotes start and end a\nmultiline string. No newline-\nescaping required!.",
+    "alpha": 1,
+    "β": 2,
+    "Gamma": 3,
+    "4baz": 4,
+    "qu ux": 5,
+    "qu-ux": 6,
+    "aList": [
+        7,
+        8,
+        9
+    ]
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+
+## CUE Is Different
+
+As you've seen, CUE can be used to encode data using a friendlier, more
+human-focussed syntax than JSON - and some folks do just that. However, the
+language's unique capabilities that many teams rely on to validate and secure
+their data and configurations are built on top of some rather different
+characteristics.
+
+Let's continue by taking a look at some aspects of CUE that you might not have
+experienced in a language before ...
+
+### Order Doesn't Matter
+
+In CUE, **fields can be declared in any order**.
+This property lies at the heart of many of CUE's behaviours and is often
+referred to as *order irrelevance*. It applies at all levels of granularity:
+
+- within the fields of each data *struct* (which is what JSON calls an "object"),
+- across the fields and structs defined inside a single `.cue` file,
+- when merging multiple `.cue` files that make up a CUE *package*.
+
+Order irrelevance flows from the fact that the rules of CUE's most fundamental
+operation guarantee that *every* possible ordering results in the same
+underlying data structure - so it doesn't matter which *specific* ordering is
+chosen. This operation is called **unification**.
+
+In formal terms, unification is associative, commutative and idempotent.
+In *practical* terms, unification means that:
+
+- data is immutable: once a field has been made concrete by assigning it a
+  specific value, that value is fixed and cannot be changed (but this is far
+  less restrictive than it might appear at first glance!)
+- data and constraints can be combined from multiple sources predictably and
+  efficiently, using a convenient shorthand form for specifying sparsely-populated structs
+
+Here's an example
+
+ CUE   There are exceptions to this rule, such as the members of a list (which are inherently ordered), but 
+
 
 CUE's design ensures that combining CUE values in any
 order always gives the same result
