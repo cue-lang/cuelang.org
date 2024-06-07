@@ -3,7 +3,45 @@ title: Different, Yet Familiar
 weight: 10
 ---
 
-### Applications
+You'll see various examples of CUE's syntax in this introduction, which will
+probably feel rather familiar if you've spent any time working with data.
+In its most simple form CUE shares a few of JSON's patterns, but
+**significantly** improves the experience of managing JSON by hand.
+
+You can learn more about these improvements at the start of the
+[CUE tour]({{< relref "/docs/tour/basics/json-superset" >}}), but we'll
+continue here by taking a look at some characteristics of CUE that you might
+not have experienced in a language before ...
+
+### Order Doesn't Matter
+
+In CUE, **fields can be declared in any order**.
+This property lies at the heart of many of CUE's behaviours and is often
+referred to as *order irrelevance*. It applies at all levels of granularity:
+
+- within the fields of each data *struct* (which is what JSON calls an "object"),
+- across the fields and structs defined inside a single `.cue` file,
+- when merging multiple `.cue` files that make up a CUE *package*.
+
+Order irrelevance flows from the fact that the rules of CUE's most fundamental
+operation guarantee that *every* possible ordering results in the same
+underlying data structure - so it doesn't matter which *specific* ordering is
+chosen. This operation is called **unification**.
+
+In formal terms, unification is associative, commutative and idempotent.
+In *practical* terms, unification means that:
+
+- data is immutable: once a field has been made concrete by assigning it a
+  specific value, that value is fixed and cannot be changed (but this is far
+  less restrictive than it might appear at first glance!)
+- data and constraints can be combined from multiple sources predictably and
+  efficiently, using a convenient shorthand form for specifying sparsely-populated structs
+- 
+
+Here's an example
+
+ CUE   There are exceptions to this rule, such as the members of a list (which are inherently ordered), but 
+
 
 CUE's design ensures that combining CUE values in any
 order always gives the same result
