@@ -3,6 +3,82 @@ title: Why CUE?
 weight: 10
 ---
 
+The features that make CUE so effective are the result of its careful design, which is the product of decades of experience in the data and cofiguration space. The language's behaviours are formally defined in [The CUE Language Specification]({{< relref "/docs/reference/spec" >}}), but you don't need to read the spec to understand how CUE can make life easier.
+
+Let's briefly run through a few of its features and discover the real-world
+impact they can have on data, configuration, schemas, and policy - no matter
+what level of scale you're operating at. On this page we'll see:
+
+- that [Types Are Values](#types-are-values),
+- [Order Doesn't Matter](#order-doesnt-matter),
+- and how [Templates Let Important Data Shine](#templates-let-important-data-shine).
+
+<!-- H3 so that it doesn't break the flow of the page-level LH TOC -->
+### Types Are Values
+
+<!--
+In computing, the word "types" usually refers to a set of broad and
+commonly-used *data* types, where members of each type share one or more
+characteristics - such as "a string", "an integer", or "a boolean". Languages
+often define what they mean by "a string", and allow us to declare that variables *are* "a string".
+ is,      in CUE and beyond, are 
+-->
+
+CUE doesn't distinguish between types and values.
+In CUE, types *are* values.
+Put differently:\
+**Any value can be used as a type.**
+
+To understand the implications of this we also need to know that
+"a value" refers to *anything* that appears on the right-hand side of a field's declaration - including data, constraints, and *nested* data and constraints.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
 ### Types are Values
 
 CUE does not distinguish between values and types.
