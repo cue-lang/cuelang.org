@@ -3,179 +3,396 @@ title: Different, Yet Familiar
 weight: 10
 ---
 
-### Applications
+## CUE Is Familiar
 
-CUE's design ensures that combining CUE values in any
-order always gives the same result
-(it is associative, commutative and idempotent).
-This makes CUE particularly well-suited for cases where CUE
-constraints are combined from different sources:
+CUE will probably feel rather familiar if you've spent any time working with
+data. CUE shares some syntax with JSON, but **significantly** improves the
+experience of managing JSON by hand.
 
-- Data validation: different departments or groups can each
-define their own constraints to apply to the same set of data.
+In its very simplest form, CUE looks a lot like JSON.
+This is because CUE is a superset of JSON, which means that all valid JSON is
+CUE - but *not* vice versa.
+Managing JSON manually can be somewhat painful, so CUE introduces several
+conveniences to make writing and reading data easier:
 
-- Code extraction and generation: extract CUE definitions from
-multiple sources (Go code, Protobuf), combine them into a single
-definition, and use that to generate definitions in another
-format (e.g. OpenAPI).
+- comments are allowed, starting with `//` and extending to the end of the line
+- field names without special characters don’t need to be quoted
+- the outermost curly braces in a CUE file are optional
+- commas after a field are optional (and are usually omitted)
+- commas after the final element of a list are allowed
+- literal multiline strings are allowed, and don't require newlines to be encoded
+- nested structs containing one (or a few) fields have a convenient shorthand
 
-- Configuration: values can be combined from different sources
-  without one having to import the other.
+Here's some data encoded as commented CUE, alongside the equivalent JSON
+document. Notice how the CUE lacks curly braces at the top and bottom, and
+doesn't have commas after each field's value:
 
-The ordering of values also allows set containment analysis of entire
-configurations.
-Where most validation systems are limited to checking whether a concrete
-value matches a schema, CUE can validate whether any instance of
-one schema is also an instance of another (is it backwards compatible?),
-or compute a new schema that represents all instances that match
-two other schema.
-
-### Types are Values
-
-CUE does not distinguish between values and types.
-This is a powerful notion that allows CUE to define ultra-detailed
-constraints, but it also simplifies things considerably:
-there is no separate schema or data definition language to learn
-and related language constructs such as sum types, enums,
-and even null coalescing collapse onto a single construct.
-
-Below is a demonstration of this concept.
-On the left one can see a JSON object (in CUE syntax) with some properties
-about the city of Moscow.
-The middle column shows a possible schema for any municipality.
-On the right one sees a mix between data and schema as is exemplary of CUE.
-
-{{< columns >}}
-Data
-{{{with code "en" "data"}}}
--- in.cue --
-moscow: {
-	name:    "Moscow"
-	pop:     11.92M
-	capital: true
+{{{with code "en" "CUE improves on JSON"}}}
+#location left right
+exec cue export example.cue --out json
+cmp stdout out
+-- example.cue --
+strings: {
+	singleLine: "Double quotes == string literal"
+	multiLine: """
+		Multiline strings start and end with triple
+		double-quotes - no escaping of newlines!
+		"""
 }
-{{{end}}}
-{{< columns-separator >}}
-Schema
-{{{with code "en" "schema"}}}
--- in.cue --
-municipality: {
-	name:    string
-	pop:     int
-	capital: bool
-}
-{{{end}}}
-{{< columns-separator >}}
-CUE
-{{{with code "en" "CUE"}}}
--- in.cue --
-largeCapital: {
-	name:    string
-	pop:     >5M
-	capital: true
-}
-{{{end}}}
-{{< /columns >}}
 
-In general, in CUE one starts with a broad definition of a type, describing
-all possible instances.
-One then narrows down these definitions, possibly by combining constraints
-from different sources (departments, users), until a concrete data instance
-remains.
+// Many field names don't need to be quoted
+// (but can be, if you want).
+foo_Bar: 1
+baz2:    2.2
 
+// Some field names do need quotes, such as those
+// that start with numbers, or contain spaces,
+// hyphens, or other special characters.
+"qu ux": "3.33"
+"4":     "four"
 
-### Push, not pull, constraints
+a: deeply: nested: field: "value"
 
-CUE's constraints act as data validators, but also double as
-a mechanism to reduce boilerplate.
-This is a powerful approach, but requires some different thinking.
-With traditional inheritance approaches one specifies the templates that
-are to be inherited from at each point they should be used.
-In CUE, instead, one selects a set of nodes in the configuration to which
-to apply a template.
-This selection can be at a different point in the configuration altogether.
-
-Another way to view this, a JSON configuration, say, can be
-defined as a sequence of path-leaf values.
-For instance,
-{{{with code "en" "json"}}}
--- in.json --
+// A list's final element can be followed by
+// an optional comma, making additions or
+// deletions at the end of the list less fiddly.
+aList: [
+	"a",
+	"b",
+	"c",
+]
+anotherList: [1, 2, 3, 4, 5]
+-- out --
 {
-    "a": 3,
-    "b": {
-        "c": "foo"
+    "strings": {
+        "singleLine": "Double quotes == string literal",
+        "multiLine": "Multiline strings start and end with triple\ndouble-quotes - no escaping of newlines!"
+    },
+    "foo_Bar": 1,
+    "baz2": 2.2,
+    "qu ux": "3.33",
+    "4": "four",
+    "a": {
+        "deeply": {
+            "nested": {
+                "field": "value"
+            }
+        }
+    },
+    "aList": [
+        "a",
+        "b",
+        "c"
+    ],
+    "anotherList": [
+        1,
+        2,
+        3,
+        4,
+        5
+    ]
+}
+{{{end}}}
+
+## CUE Is Different
+
+As you've just seen, CUE can be used to encode data using a friendlier, more
+convenient syntax than JSON - and some folks do just that.
+However many teams also rely on the language's particular capabilities to
+validate and secure their data and configurations - and these abilities build
+on some rather unique characteristics.
+
+Let's take a look at some aspects of CUE that you might not have
+experienced in a language before ...
+
+### Order Doesn't Matter
+
+Most languages require variables, fields, or data to be declared before they're
+used - especially when one data value depends on the value of another.
+
+**CUE is different:** in CUE, *fields can be defined in any order*.
+
+This property drives many of CUE's most powerful features, and is referred to
+as *order irrelevance*. It applies at all levels of granularity:
+
+- within the fields of each data *struct* (which is what JSON calls an "object"),
+- across the fields and structs defined inside a single `.cue` file,
+- when merging multiple `.cue` files that make up a CUE *package*.
+
+Order irrelevance flows from the rules of CUE's most fundamental operation,
+called **unification**. Unification is the process by which CUE determines if
+values are compatible with one another. It occurs when you explicitly use
+the `&` operator, or implicitly when you mention a field multiple times.
+
+In formal terms, unification is defined so that the operation is associative,
+commutative, idempotent, and recursive. This means that when values are
+unified, CUE guarantees that every possible order in which they *might* be
+combined produces the same underlying data structure, and therefore it doesn't
+matter which *specific* ordering is chosen - even when unifying deeply nested
+data.
+
+In practical terms, unification's rules mean that:
+
+- Data is immutable: if a field is made concrete by assigning it a specific
+  value, that value is fixed and cannot be changed. (This might appear
+  restrictive at first glance, but in reality CUE gives you plenty of options
+  to cater for the different problematic situations you might be imagining!)
+- Data and constraints can be combined from multiple sources predictably and
+  efficiently, optionally using a convenient shorthand form for specifying
+  sparsely-populated structs.
+- If a field is declared more than once, then all its assigned values must be
+  compatible with each other. When only specifying concrete data, this
+  simplifies down: all the assigned values must be *identical*.
+
+In this example, `A` is specified using implicit unification, and `B` is
+specified using explicit unification:
+
+{{{with code "en" "simple unification"}}}
+exec cue export data.cue --out yaml
+cmp stdout out
+-- data.cue --
+A: 1
+B: 2 & 2
+A: 1
+-- out --
+A: 1
+B: 2
+{{{end}}}
+
+In this example you might be wondering if these unifications have any point -
+surely no-one would *actually* specify\
+`B: 2 & 2`? Wouldn't `B: 2` be sufficient?
+
+In the case of the value of `B`, you'd be right to wonder - this is simply a
+demonstration of explict unification so that you can recognise it, when it's
+used later in more interesting situations.
+Implicit unification, however (as with field `A`), becomes more interesting when
+we learn that, by default, *the `cue` command implicitly unifies the top level
+of all the data it's given*.
+This means that when we invoke the `cue` command and tell it about different
+sources of data, the evaluation result is the unification of all those sources.
+
+To see what this means in practice, we'll unify some CUE, JSON, and YAML,
+simply by mentioning the data files. Notice how `data-1.cue` uses CUE's
+shorthand to succinctly define a nested struct that contains a single field,
+avoiding several curly braces spread over several lines.
+
+{{{with code "en" "multi-file unification"}}}
+#location top-left top-right top-right bottom
+exec cue export data-1.cue data-2.json data-3.yml --out json
+cmp stdout out
+-- data-1.cue --
+CUE: true
+a: b: c: 1
+-- data-2.json --
+{
+    "JSON": true,
+    "a": {
+        "b": {
+            "d": 2
+        }
+    }
+}
+-- data-3.yml --
+YAML: true
+a:
+  b:
+    e: 3
+-- out --
+{
+    "JSON": true,
+    "YAML": true,
+    "CUE": true,
+    "a": {
+        "b": {
+            "d": 2,
+            "e": 3,
+            "c": 1
+        }
     }
 }
 {{{end}}}
 
-could be represented as
+But watch what happens when we try and specify a field with two incompatible
+values - the `cue` command emits an error message pointing out the
+incompatibility and the evaluation fails:
 
-{{{with code "en" "cue form of json"}}}
--- in.cue --
-"a": 3
-"b": "c": "foo"
-{{{end}}}
-
-All the information of the original JSON file is retained in this
-representation.
-
-CUE generalizes this notion to the following pattern:
-```
-<set of nodes>: <constraints>
-```
-Each field declaration in CUE defines a set of nodes to which to apply
-a specific constraint.
-Because order doesn't matter, multiple constraints can be applied to the
-same nodes, all of which need to apply simultaneously.
-Such constraints may even be in different files.
-But they may never contradict each other:
-if one declaration says a field is `5`, another may not override it to be `6`.
-Declaring a field to be both `>5` and `<10` is valid, though.
-
-This approach is more restricted than full-blown inheritance;
-it may not be possible to reuse existing configurations.
-On the other hand, it is also a more powerful boilerplate remover.
-For instance, suppose each job in a set needs to use a specific
-template.
-Instead of having to spell this out at each point,
-one can declare this separately in a one blanket statement.
-
-So instead of
-
-{{{with code "en" "non-dry"}}}
--- in.cue --
-jobs: {
-	foo: acmeMonitoring & {...}
-	bar: acmeMonitoring & {...}
-	baz: acmeMonitoring & {...}
+{{{with code "en" "unification failure"}}}
+! exec cue export data.cue data.json
+cmp stderr out
+-- data.cue --
+source: "CUE"
+-- data.json --
+{
+    "source": "JSON"
 }
+-- out --
+source: conflicting values "CUE" and "JSON":
+    ./data.cue:1:9
+    ./data.json:2:15
 {{{end}}}
 
-one can write
+CUE's design ensures that combining values in any order always gives the same
+result. Later, in *Why CUE?*, we'll see some of the situations and use cases
+that have elegant solutions enabled by this property.
 
-{{{with code "en" "dry"}}}
--- in.cue --
-jobs: [string]: acmeMonitoring
+### Types Are Values
 
-jobs: {
-	foo: {...}
-	bar: {...}
-	baz: {...}
+In many languages there's a strong distinction between the concrete "values"
+that a variable or field can be assigned (such as `"foo"`, `4.2`, or `true`)
+and the "types" that describe *sets* of permissible values (strings,
+floating-point numbers and booleans, respectively). Most languages don't
+provide a first-class mechanism to constrain values more precisely, leaving any
+nuanced value constraints for the user to implement in code and check
+explicitly, at runtime.
+
+**CUE is different:** *CUE doesn't differentiate between values and types*.
+
+This is a powerful concept that, as you'll see shortly, allows you to define
+detailed constraints - but it also simplifies the process of learning and using
+CUE. Because the language has a single, unified syntax for data and for
+constraints, there is no separate schema or data definition language to learn.
+The syntax even encompasses concepts such as sum types and enums - even null
+coalescing is reduced down to this single construct.
+
+So, whilst CUE does provide a type hierarchy that includes `string`, `float`,
+and `bool`, along with `bytes`, `int`, `number`, `null`, `[...]` (list), and
+`{...}` (struct), these are simply well-known names for constraints that limit
+a field's value to well-defined sets. The power of CUE comes from constructing
+precise constraints using these types as a starting point, progressively
+layering and unifying additional constraints built with CUE's rich set of
+primitives and built-in functions.
+
+Here's an example that uses
+[bounds]({{< relref "docs/tour/types/bounds" >}}) (`>`, `<=`, etc)
+to construct constraints that limit a number's value, unified with additional
+constraints from a
+[disjunction]({{< relref "/docs/tour/types/disjunctions" >}})
+("`|`") that requires a value to be one option from a prescribed set:
+
+{{{with code "en" "constraints are values too"}}}
+#location left right
+exec cue eval constraints.cue
+cmp stdout out
+-- constraints.cue --
+#over10:    >10
+#under50:   <50
+#from5To40: >=5 & <=40
+#options:   9 | 10 | 11 | 39 | 40 | 41
+
+myNumber: int & #over10 & #under50
+myNumber: #from5To40
+myNumber: #options
+-- out --
+#over10:    >10
+#under50:   <50
+#from5To40: >=5 & <=40
+#options:   9 | 10 | 11 | 39 | 40 | 41
+myNumber:   11 | 39 | 40
+{{{end}}}
+
+Notice how CUE is able to *simplify* the constraints that apply to the
+`myNumber` field by ruling out options that aren't possible, due to the
+implicit and explicit unification of the constraints that we defined.
+
+Later, in *Why CUE?*, we'll see how CUE's merging of types, values, and
+constraints into a single concept enables effective and concise schema and
+policy validation.
+
+### Push Constraints, Don't Pull Them
+
+CUE's constraints act as data validators:
+
+{{{with code "en" "constraints validate data"}}}
+#location top-left top-left top-right bottom
+! exec cue vet schema.cue policy.cue data.yml
+cmp stderr out
+-- schema.cue --
+A: int
+B: float
+C: string
+-- policy.cue --
+A: <=99
+B: >4.2
+C: !="rm -rf /"
+-- data.yml --
+A: 100
+B: 1.1
+C: "rm -rf /"
+-- out --
+A: invalid value 100 (out of bound <=99):
+    ./policy.cue:1:4
+    ./data.yml:1:4
+B: invalid value 1.1 (out of bound >4.2):
+    ./policy.cue:2:4
+    ./data.yml:2:4
+C: invalid value "rm -rf /" (out of bound !="rm -rf /"):
+    ./policy.cue:3:4
+    ./data.yml:3:4
+    ./schema.cue:3:4
+{{{end}}}
+
+*Pattern constraints* impose constraints on the fields whose names match their pattern.
+They're written as\
+`[pattern]: value`, where `pattern` must be either a value
+of type string, or the wildcard value `_` (called "top"). Here's an
+example of pattern constraints in action:
+
+{{{with code "en" "pattern constraints select fields"}}}
+#location top-left top-right bottom
+! exec cue vet constraints.cue data.yml
+cmp stderr out
+-- constraints.cue --
+A: {
+	// Every field  must be an int.
+	[_]: int
+	// Every field whose name starts with b must
+	// be 10 or greater.
+	[=~"^b"]: >=10
 }
+-- data.yml --
+A:
+  foo: 4.2
+  bar: 100
+  baz: 5
+-- out --
+A.foo: conflicting values 4.2 and int (mismatched types float and int):
+    ./constraints.cue:3:7
+    ./data.yml:2:8
+A.baz: invalid value 5 (out of bound >=10):
+    ./constraints.cue:6:12
+    ./data.yml:4:8
 {{{end}}}
 
-There is no need to repeat the reference to the monitoring template for
-each job, as the first already states that all jobs _must_ use `acmeMonitoring`.
-Such requirements can be specified across files.
+Pattern constraints *don't* instantiate every field that their pattern might
+match. If they *did*, then the example pattern constraint of `[string]: >10`
+would bring every field with a name matching `string` into existence, which
+would take an unacceptably long time to compute!
+So: a pattern constraint merely acts on fields by imposing its constraints on
+*existing* fields that match its pattern.
 
-This approach not only reduces the boilerplate contained in `acmeMonitoring`
-but also removes the repetitiveness of having to specify
-this template for each job in `jobs`.
-At the same time, this statement acts as a type enforcement.
-This dual function is a key aspect of CUE and
-typed feature structure languages in general.
+Many languages have a form of import, or perhaps inheritance, that allows
+lower-level (more deeply nested) components to pull restrictions in from some
+other entity by specifying them at the point of use.
 
-This approach breaks down, of course, if the restrictions in
-`acmeMonitoring` are too stringent and jobs need to override them.
-To this extent, CUE provides mechanisms to allow defaults, opt-out, and
-soft constraints.
+**CUE is different:** *unification and pattern constraints offer a simple way
+to impose constraints from above*.
+
+CUE has a robust
+[package]({{< relref "/docs/concept/modules-packages-instances" >}}) system
+and a carefully designed
+[module]({{< relref "/docs/reference/modules" >}}) system
+which support imports and cross-entity data and constraint sharing.
+Before reaching for those tools, however, it's worth discovering just how
+flexible and powerful pattern constraints and unification can be!
+
+In *Why CUE?* we'll see how pattern constraints are the backbone of a highly
+productive mechanism for reducing boilerplate data and configuration.
+
+{{< warning >}}
+**On the next page**: discover how CUE's differences make a real difference to
+data handling and validation, and why teams trust it with their configurations
+at all scales.
+{{< /warning >}}
+
+*Next page:* [Why CUE?]({{< relref "why-cue" >}})

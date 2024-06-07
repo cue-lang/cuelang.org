@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							code: {
-								data:               "CG7SCjPrssmv4QobsLcXjPN/zzgAD1CHvOl02cUeu30="
-								schema:             "gp3JIPRSJCZvHTf8RoxPLIU9LJqxpuCt5WJ/RTI4TV0="
-								CUE:                "EXkHX+IlscJw9cjmMwWxBKuI2i0755/UxU4JC6MQ8jc="
-								json:               "IMR8dtKzlPoyIZajszw+rPKIbrNVH2se9JWTLz22Cck="
-								"cue form of json": "kUivrYQoasDGujFg2ZtB25kEgo3oXlzM89rtwe8yImg="
-								"non-dry":          "kIwpLkBvEcnwoZYK9jeGeS58XXeOvgLQcj4KFUfjvbc="
-								dry:                "+DZ73AcAqArO4OvlD3rhoE2tO0VP6IfAULDi1sVdpU0="
+								"CUE improves on JSON":              "BXa4BWjyILLDRvZPzvB7Yu/EkYF+tkYXBZ+KA3fhzPU="
+								"simple unification":                "6UtM2OUwq+SzC+wenncdu86QxwKaJ51I7Y80+2VZNmI="
+								"multi-file unification":            "zGxJkYvAhQ85/p7n65GA32cMmccbQmAVTdcrNGRtask="
+								"unification failure":               "MRap3tAOpf90EG84wqZvCxlwIsJ+NpXPXXNrgJKTwSM="
+								"constraints are values too":        "flayuV6GEGUid+eBmAnzbUc4qkoQIf6zzooE5QFEg5A="
+								"constraints validate data":         "PhLYeuGd+zStGhRel2WXaxb/BxhYqr9rNpHkenDy1eU="
+								"pattern constraints select fields": "TRnbxXWBQzFG38MvUn9l/lGZQspt/0SZtyLwU6I3af8="
 							}
 						}
 					}
