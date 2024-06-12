@@ -50,6 +50,24 @@
       "message": "Please can you provide some links/references here?\n\nFor example, I have no idea whether/if we should be trusting https://packages.adoptium.net.",
       "revId": "37c045dde26452eb1081fd173888ed8b44e44bbc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "874ba006_4fd1973b",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-06-12T16:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d1fe42c_93d06864",
+      "revId": "37c045dde26452eb1081fd173888ed8b44e44bbc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
