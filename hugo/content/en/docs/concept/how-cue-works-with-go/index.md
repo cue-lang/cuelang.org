@@ -156,8 +156,8 @@ func main() {
 
 Before running, we add a dependency on the `cuelang.org/go` module and tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMApnbyBtb2QgdGlkeQ==" }
-$ go get cuelang.org/go@v0.9.0
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMS0wLjIwMjQwNjEyMTgyOTQ3LWQ4NzQyYzEzZGNlNgpnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.9.1-0.20240612182947-d8742c13dce6
 ...
 $ go mod tidy
 ...
@@ -237,8 +237,8 @@ age: 99
 We finish by adding a dependency on the `cuelang.org/go` module, tidying,
 and running the program:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMApnbyBtb2QgdGlkeQpnbyBydW4gLg==" }
-$ go get cuelang.org/go@v0.9.0
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMS0wLjIwMjQwNjEyMTgyOTQ3LWQ4NzQyYzEzZGNlNgpnbyBtb2QgdGlkeQpnbyBydW4gLg==" }
+$ go get cuelang.org/go@v0.9.1-0.20240612182947-d8742c13dce6
 ...
 $ go mod tidy
 ...
@@ -312,8 +312,8 @@ func main() {
 
 This time we see that CUE correctly caught a problem in our data:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMApnbyBtb2QgdGlkeQpnbyBydW4gLg==" }
-$ go get cuelang.org/go@v0.9.0
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMS0wLjIwMjQwNjEyMTgyOTQ3LWQ4NzQyYzEzZGNlNgpnbyBtb2QgdGlkeQpnbyBydW4gLg==" }
+$ go get cuelang.org/go@v0.9.1-0.20240612182947-d8742c13dce6
 ...
 $ go mod tidy
 ...
