@@ -16,6 +16,40 @@
       "message": "PTAL. Preview URL (because I forgot to include it in the commit message, but this is a sufficiently trivial change that it would feel wrong to re-invoke CI): https://cl-1196175-3--cue-cls.netlify.app/play/",
       "revId": "036ef5b2823a8f9e240547c7dc5565e1e42e7dda",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84270582_d66f6b35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-12T12:28:32Z",
+      "side": 1,
+      "message": "SGTM on the basis that no link is better than a dead link. We don\u0027t have any \"about\" content right now, nor do I think we need one right away, either.",
+      "revId": "036ef5b2823a8f9e240547c7dc5565e1e42e7dda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3909dec6_d993b3c9",
+        "filename": "playground/src/config/nav.ts",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-12T12:28:32Z",
+      "side": 1,
+      "message": "perhaps add a TODO or note? othewise leaving the commented out code as-is is going to confuse us down the line.",
+      "revId": "036ef5b2823a8f9e240547c7dc5565e1e42e7dda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
