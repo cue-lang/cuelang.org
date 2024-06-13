@@ -7,7 +7,6 @@ package site
 					page: {
 						cache: {
 							code: {
-								"CUE improves on JSON":              "lm+qm9NDqdKU2p0taOOFVqFyAzgSebcdOpMklMhkh/E="
 								"simple unification":                "mEf08tRRPCXFCuUSR71cuEIt6Ae13A6QBFSYAmSGmuY="
 								"multi-file unification":            "SIWN7VHwKJH7dmpX8vpbHtEFfLfdLgCTIBbEhTO0+QE="
 								"unification failure":               "HBh0hipkkACW6Uckg116ka/AxJocSHNCHoyxXSzjtA4="
