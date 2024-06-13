@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcc81e9d_374b39ca",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-13T15:50:29Z",
+      "side": 1,
+      "message": "Instead of adding these packages and installing via apt, I\u0027d like to suggest that we pull a container image from https://hub.docker.com/_/eclipse-temurin and copy the JDK into this image using something like the snippet included on that page under the heading \"Using a different base Image\".\n\nThis will avoid the issue of locking into using the artifact repo that has that \"free trial until ...\" message, as well as (AFAICT!) being somewhat of a more idiomatic install, given we\u0027re building a container. \n\nThe tags for that official container look like they\u0027re in a slightly odd order. I\u0027ve hunted through the tags, and `eclipse-temurin:22.0.1_8-jdk` (https://hub.docker.com/layers/library/eclipse-temurin/22.0.1_8-jdk/images/sha256-205a8e1f9474b4c179cb6856079aeb710444872ce6ec4a9c0fe1a6ec79a97ab1?context\u003dexplore) or similar seems appropriate - and, perhaps, pinnable, unlike the apt installation method.",
+      "revId": "e54fd2f524bf9f1a8eee6db7c12b5135190fd7f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3553783c_438bbec9",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-13T15:50:29Z",
+      "side": 1,
+      "message": "I don\u0027t know if the Adoptium repos contain an updated version of Maven, but I\u0027d hope that the Debian version (https://packages.debian.org/search?keywords\u003dmaven) would suffice, and hence could be installed on line 28, instead of here.",
+      "revId": "e54fd2f524bf9f1a8eee6db7c12b5135190fd7f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
