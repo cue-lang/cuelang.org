@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "924b4404_822b0b43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013536
+      },
+      "writtenOn": "2024-06-13T09:44:26Z",
+      "side": 1,
+      "message": "This should be advertised in Integrations.",
+      "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
