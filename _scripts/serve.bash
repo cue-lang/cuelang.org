@@ -13,6 +13,7 @@ source _scripts/runPreprocessor.bash execute \
     --serve \
     --hugo="--renderToMemory" \
     --hugo='--buildDrafts' \
+    --hugo='--disableFastRender' \
     --hugo='--navigateToChanged' \
     --debug=hugo \
     "$@"
