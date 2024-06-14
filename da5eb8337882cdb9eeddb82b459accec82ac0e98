@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05ebd4c5_d9156d7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-14T15:46:11Z",
+      "side": 1,
+      "message": "I can\u0027t parse this.",
+      "revId": "da5eb8337882cdb9eeddb82b459accec82ac0e98",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
