@@ -18,6 +18,7 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
+	"regexp"
 )
 
 const (
@@ -76,15 +77,22 @@ const (
 //
 // TODO: add an explicit test for when arg != ""
 func findTag(src []byte, key, arg string) (args []string, present bool, err error) {
-	prefix := "#" + key
+	prefix := "^#" + regexp.QuoteMeta(key)
 	if arg != "" {
-		prefix += "(" + arg + ")"
+		prefix += regexp.QuoteMeta("(" + arg + ")")
+	}
+	prefix += `($| )`
+	prefixRegexp, err := regexp.Compile(prefix)
+	if err != nil {
+		return nil, false, fmt.Errorf("failed to compile %q: %w", prefix, err)
 	}
 	sc := bufio.NewScanner(bytes.NewReader(src))
 	lineNo := 1
 	for sc.Scan() {
 		line := sc.Bytes()
-		if after, found := bytes.CutPrefix(bytes.TrimSpace(line), []byte(prefix)); found {
+		match := prefixRegexp.Find(line)
+		if match != nil {
+			after := line[len(match):]
 			args, err := parseLineArgs(string(after))
 			if err != nil {
 				err = fmt.Errorf("%d %w", lineNo, err)
