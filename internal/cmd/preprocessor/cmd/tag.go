@@ -80,6 +80,13 @@ func findTag(src []byte, key, arg string) (args []string, present bool, err erro
 	if arg != "" {
 		prefix += "(" + arg + ")"
 	}
+	// Must have a clear space before the first arg. This also ensures
+	// that we correctly distinguish between the following two cases:
+	//
+	//     #nofmt
+	//
+
+	prefix += " "
 	sc := bufio.NewScanner(bytes.NewReader(src))
 	lineNo := 1
 	for sc.Scan() {
