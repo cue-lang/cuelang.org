@@ -280,7 +280,7 @@ func (t *txtarRunContext) formatFiles() error {
 		case "txt", "csv":
 			// do nothing, simply avoid logging
 		default:
-			t.logf("%v: skipping formatting of file %s; unknown extension %q", t, a.Basename, a.Ext)
+			t.logf("%v: skipping formatting of file %q; unknown extension %q", t, a.Basename, a.Ext)
 		}
 		if cmd == nil {
 			// Nothing to do
