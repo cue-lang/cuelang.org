@@ -33,6 +33,24 @@
       "message": "This isn\u0027t the right change to my mind. It\u0027s an extremely expensive operation when we are not writing the cache, and this changes means that things run twice. Instead I would suggest looking at how to fix hugo in this situation. A quick (30s) local test shows that adding `--hugo\u003d\u0027--disableFastRender\u0027` to serve.bash works, but perhaps you could confirm.",
       "revId": "7fb73bd0bce7364171030e47725e7375e46d9b02",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58fb1315_7d13ebc0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-14T14:16:30Z",
+      "side": 1,
+      "message": "\u003e when we are not writing the cache\n\nI\u0027m missing something: when are we *not* writing the cache in a local-dev-server context?\n\n\u003e A quick (30s) local test shows that adding --hugo\u003d\u0027--disableFastRender\u0027 to serve.bash works, but perhaps you could confirm.\n\nIt doesn\u0027t fix the race condition locally for me - I wonder if perhaps your machine simply doesn\u0027t trigger the race.\n\nThe race is (as far as I can tell) that the preprocessor starts up Hugo before the hugo/ directory has been aligned with the content/ directory. This works so long as the state of the hugo/ directory allows Hugo to start serving - at which point \"broken\" pages don\u0027t cause Hugo to exit (modulo the behaviours in https://github.com/cue-lang/cue/issues/3109).\n\nHowever, if Hugo processes a file during its startup that is, from its perspective, broken, then Hugo never starts serving, and the preprocessor exits immediately.\n\nIs the startup of the local-dev-server process *that* poorly impacted by this change? It doesn\u0027t feel like it is, here, and as we know my machine is already somewhat slower than yours!",
+      "parentUuid": "0053e729_f6b4e98e",
+      "revId": "7fb73bd0bce7364171030e47725e7375e46d9b02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
