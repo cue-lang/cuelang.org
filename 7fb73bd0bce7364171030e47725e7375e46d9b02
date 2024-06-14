@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "7fb73bd0bce7364171030e47725e7375e46d9b02",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0053e729_f6b4e98e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-14T13:44:12Z",
+      "side": 1,
+      "message": "This isn\u0027t the right change to my mind. It\u0027s an extremely expensive operation when we are not writing the cache, and this changes means that things run twice. Instead I would suggest looking at how to fix hugo in this situation. A quick (30s) local test shows that adding `--hugo\u003d\u0027--disableFastRender\u0027` to serve.bash works, but perhaps you could confirm.",
+      "revId": "7fb73bd0bce7364171030e47725e7375e46d9b02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
