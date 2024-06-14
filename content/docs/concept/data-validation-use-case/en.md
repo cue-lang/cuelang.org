@@ -33,7 +33,7 @@ Given these two files, the `cue vet` command can verify that the values in
 #nofmt(ranges.yaml) https://github.com/cue-lang/cue/issues/2666: multi-document yaml files
 
 ! exec cue vet ranges.yaml check.cue
-cmp stderr output
+cmp stderr out
 -- check.cue --
 min?: *0 | number // 0 if undefined
 
@@ -45,7 +45,7 @@ max: 10
 ---
 min: 10
 max: 5
--- output --
+-- out --
 max: invalid value 5 (out of bound >10):
     ./check.cue:4:16
     ./ranges.yaml:5:6
