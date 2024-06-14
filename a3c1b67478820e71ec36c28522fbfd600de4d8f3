@@ -16,6 +16,24 @@
       "message": "Not mentioned (AFAICT) in the commit message.",
       "revId": "a3c1b67478820e71ec36c28522fbfd600de4d8f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57211218_33375abf",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-14T14:12:25Z",
+      "side": 0,
+      "message": "Done, by mentioning in the commit message.",
+      "parentUuid": "8bea4f4c_426b0dfe",
+      "revId": "a3c1b67478820e71ec36c28522fbfd600de4d8f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

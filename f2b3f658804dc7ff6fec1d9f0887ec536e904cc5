@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "53993acb_7da184cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-14T14:12:25Z",
+      "side": 1,
+      "message": "It\u0027s the earlier one which was superfluous, but done!",
+      "parentUuid": "86811d11_a92e1aca",
+      "range": {
+        "startLine": 20,
+        "startChar": 35,
+        "endLine": 20,
+        "endChar": 36
+      },
+      "revId": "f2b3f658804dc7ff6fec1d9f0887ec536e904cc5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "adab8def_f3658a97",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 8
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-06T09:22:57Z",
       "side": 1,
       "message": "This (un)formatting change seems somewhat unrelated to the rest of the change, but I may well be missing something.",
+      "range": {
+        "startLine": 172,
+        "startChar": 1,
+        "endLine": 172,
+        "endChar": 8
+      },
+      "revId": "f2b3f658804dc7ff6fec1d9f0887ec536e904cc5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdab8a7c_90e96cdf",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 8
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-14T14:12:25Z",
+      "side": 1,
+      "message": "It was intentional... and now I\u0027m glad I looked more closely again. I made this change to ensure that in a multi-upload scenario, `#nofmt` applies to the correct files: all, or those listed. As you can see from the state of this test file, it is incorrectly applying to all files, when it should just be `in.json`. Fixing now.",
+      "parentUuid": "d3b37dd6_c914264a",
       "range": {
         "startLine": 172,
         "startChar": 1,
