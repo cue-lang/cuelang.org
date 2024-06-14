@@ -84,6 +84,13 @@ func (e *executor) serve(args []string) error {
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
 
+	// Initial execute
+	if err := sc.e.execute(nil); err != nil {
+		sc.e.debugf(sc.e.debugGeneral, "failed to execute: %v", err)
+	}
+
+	// Start Hugo after initial execute to avoid racing on Hugo's input files
+	// (still a possibility of racing, but this minimises things).
 	if err := sc.startHugo(ctx); err != nil {
 		return e.errorf("%v: failed to start hugo: %v", e, err)
 	}
@@ -200,10 +207,6 @@ func (sc *serveContext) findGitTopLevel() {
 }
 
 func (sc *serveContext) watcherEventLoop() {
-	// Initial execute
-	if err := sc.e.execute(nil); err != nil {
-		sc.e.debugf(sc.e.debugGeneral, "failed to execute: %v", err)
-	}
 	for {
 		// TODO: see the TODO agains the signal handling in (*executor).serve for ideas on
 		// how we do better tidy up.
