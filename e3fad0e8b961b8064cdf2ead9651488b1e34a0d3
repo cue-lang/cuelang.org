@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "652a7ec6_f9f86d16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-15T19:12:07Z",
+      "side": 1,
+      "message": "Part of the stack with hugo fixes",
+      "revId": "e3fad0e8b961b8064cdf2ead9651488b1e34a0d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
