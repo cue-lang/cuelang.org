@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50f909b1_18b2f9fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-15T19:16:40Z",
+      "side": 1,
+      "message": "Part of the stack, because fixing the multiple upload CL required this.",
+      "revId": "6a596516b2fb2f1f55590ddf6175884266030803",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
