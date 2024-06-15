@@ -16,6 +16,24 @@
       "message": "I can\u0027t parse this.",
       "revId": "da5eb8337882cdb9eeddb82b459accec82ac0e98",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad64ac55_f5a36998",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-15T19:10:31Z",
+      "side": 1,
+      "message": "Reworded the entire commit message to be clearer.",
+      "parentUuid": "05ebd4c5_d9156d7b",
+      "revId": "da5eb8337882cdb9eeddb82b459accec82ac0e98",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
