@@ -110,6 +110,30 @@
       },
       "revId": "f2b3f658804dc7ff6fec1d9f0887ec536e904cc5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "765799c3_7ef656df",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 8
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-15T19:10:31Z",
+      "side": 1,
+      "message": "This is now fixed. There is not unformatting change, fixed by earlier CLs.",
+      "parentUuid": "fdab8a7c_90e96cdf",
+      "range": {
+        "startLine": 172,
+        "startChar": 1,
+        "endLine": 172,
+        "endChar": 8
+      },
+      "revId": "f2b3f658804dc7ff6fec1d9f0887ec536e904cc5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
