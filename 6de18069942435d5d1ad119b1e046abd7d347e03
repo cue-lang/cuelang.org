@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7a67e23_0cbd5218",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-17T19:20:06Z",
+      "side": 1,
+      "message": "Also: remove previously-imagined empty placeholder pages getting-started and what-is-cue.",
+      "revId": "6de18069942435d5d1ad119b1e046abd7d347e03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8af4893_e9bb00ed",
+        "filename": "content/docs/introduction/why-cue/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-17T19:20:06Z",
+      "side": 1,
+      "message": "existing",
+      "revId": "6de18069942435d5d1ad119b1e046abd7d347e03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f3b075f_7a245f40",
+        "filename": "content/docs/introduction/why-cue/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-17T19:20:06Z",
+      "side": 1,
+      "message": "path",
+      "range": {
+        "startLine": 18,
+        "startChar": 36,
+        "endLine": 18,
+        "endChar": 37
+      },
+      "revId": "6de18069942435d5d1ad119b1e046abd7d347e03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "312fc07a_b8672338",
+        "filename": "content/docs/introduction/why-cue/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-17T19:20:06Z",
+      "side": 1,
+      "message": "path",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 45
+      },
+      "revId": "6de18069942435d5d1ad119b1e046abd7d347e03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
