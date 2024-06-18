@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "67fc6d37_a79cf22c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-18T07:34:47Z",
+      "side": 1,
+      "message": "This CL should only update a single `gen_cache.cue` file, so I would expect it not to set this trailer, but to include the cache update itself.\n\nIf the following write-cache change updates (perhaps) *many* cache files, then it\u0027s likely that the stack isn\u0027t rebased on current tip of master, and/or has local environmental differences that are causing the cache misses :-)",
+      "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "30843016_21c20e39",
@@ -14,6 +31,23 @@
       "writtenOn": "2024-06-17T22:14:14Z",
       "side": 1,
       "message": "I am 100% guessing in terms of the changes here. We\u0027ll have to see if the website preview looks OK or not.",
+      "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98a445fc_00480cba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-18T07:34:47Z",
+      "side": 1,
+      "message": "Adding a comms channel feels like a project decision, not a content author decision, hence my +1.",
       "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
