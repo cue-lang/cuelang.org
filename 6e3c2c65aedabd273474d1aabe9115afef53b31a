@@ -16,6 +16,24 @@
       "message": "I don\u0027t believe these updates are correct or required. They might be present if this stack was based on an older commit than the current tip of master.",
       "revId": "6e3c2c65aedabd273474d1aabe9115afef53b31a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afa39d6d_7507e40f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-18T07:45:46Z",
+      "side": 1,
+      "message": "... or, I /believe/, if the version of Go used to build the preprocessor locally doesn\u0027t match the (major?) version specified in `go.mod`. I\u0027m sure @paul@myitcv.io can give you better info on the local-dev-env/cache interactions, however!",
+      "parentUuid": "71ff1961_b411bd5f",
+      "revId": "6e3c2c65aedabd273474d1aabe9115afef53b31a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
