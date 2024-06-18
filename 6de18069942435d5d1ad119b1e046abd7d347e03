@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4af3f77b_b0d73f9d",
+        "filename": "content/docs/introduction/why-cue/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-18T09:17:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8af4893_e9bb00ed",
+      "revId": "6de18069942435d5d1ad119b1e046abd7d347e03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f3b075f_7a245f40",
@@ -58,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bea7c35_107347de",
+        "filename": "content/docs/introduction/why-cue/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-18T09:17:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f3b075f_7a245f40",
+      "range": {
+        "startLine": 18,
+        "startChar": 36,
+        "endLine": 18,
+        "endChar": 37
+      },
+      "revId": "6de18069942435d5d1ad119b1e046abd7d347e03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "312fc07a_b8672338",
@@ -71,6 +113,30 @@
       "writtenOn": "2024-06-17T19:20:06Z",
       "side": 1,
       "message": "path",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 45
+      },
+      "revId": "6de18069942435d5d1ad119b1e046abd7d347e03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7eb7913_b3d92ef3",
+        "filename": "content/docs/introduction/why-cue/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-18T09:17:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "312fc07a_b8672338",
       "range": {
         "startLine": 20,
         "startChar": 44,
