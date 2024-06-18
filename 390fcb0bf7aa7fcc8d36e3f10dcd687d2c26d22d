@@ -50,6 +50,23 @@
       "message": "Adding a comms channel feels like a project decision, not a content author decision, hence my +1.",
       "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cfc4afb_9444b345",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-18T07:36:23Z",
+      "side": 1,
+      "message": "Resetting to 0 as the preview doesn\u0027t show any icon.",
+      "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
