@@ -2,11 +2,12 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import algoliasearch, { SearchClient } from 'algoliasearch';
-import { autocomplete, AutocompletePlugin, getAlgoliaResults, VNode } from '@algolia/autocomplete-js';
+import { autocomplete, AutocompletePlugin, getAlgoliaResults, GetSources, VNode } from '@algolia/autocomplete-js';
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
 import { AutocompleteQuerySuggestionsHit } from '@algolia/autocomplete-plugin-query-suggestions/dist/esm/types';
 import { AutocompleteApi } from '@algolia/autocomplete-js/dist/esm/types';
-import { BaseItem, OnSubmitParams } from '@algolia/autocomplete-shared/dist/esm/core';
+import { BaseItem, GetSourcesParams, OnSubmitParams } from '@algolia/autocomplete-shared/dist/esm/core';
+
 import { BaseWidget } from './base-widget';
 import { mapToAlgoliaFilters, parseQuery } from '../helpers/search';
 import { SearchItem } from '../interfaces/search';
@@ -14,6 +15,7 @@ import { SearchItem } from '../interfaces/search';
 export class SearchAutocomplete extends BaseWidget {
     public static readonly NAME = 'search-autocomplete';
 
+    private isOpen = false;
     private readonly searchClient: SearchClient;
     private readonly suggestionsClient: SearchClient;
     private readonly searchType: string;
@@ -21,6 +23,7 @@ export class SearchAutocomplete extends BaseWidget {
     private querySuggestionsPlugin: AutocompletePlugin<AutocompleteQuerySuggestionsHit, undefined>;
     private autocomplete: AutocompleteApi<BaseItem>;
     private readonly placeholder: string;
+    private readonly detachedModeMaxWidth = 1023;
 
     constructor(element: HTMLElement) {
         super(element);
@@ -64,14 +67,7 @@ export class SearchAutocomplete extends BaseWidget {
         }
 
         document.addEventListener('click', (e) => {
-            if (!this.element.contains(e.target as HTMLElement)) {
-                this.autocomplete.setIsOpen(false);
-
-                // Reset query to empty on all autocomplete except search results page
-                if (this.searchType !== 'results') {
-                    this.autocomplete.setQuery('');
-                }
-            }
+            this.handleDocumentClick(e);
         });
     }
 
@@ -117,13 +113,15 @@ export class SearchAutocomplete extends BaseWidget {
     }
 
     public initAutocompleteSearch(searchClient: SearchClient, searchType: string) {
-        this.autocomplete = autocomplete({
+        this.autocomplete = autocomplete<SearchItem>({
+            initialState: undefined,
+            insights: undefined,
             container: `#autocomplete-${ searchType }`,
             plugins: [this.querySuggestionsPlugin],
-            detachedMediaQuery: '(max-width: 1023px)',
+            detachedMediaQuery: `(max-width: ${ this.detachedModeMaxWidth }px)`,
             openOnFocus: this.searchType === 'results',
             placeholder: this.placeholder,
-            getSources() {
+            getSources: ((_params: GetSourcesParams<SearchItem>) => {
                 return [{
                     sourceId: 'documentation',
                     getItemInputValue({ item }) {
@@ -197,7 +195,7 @@ export class SearchAutocomplete extends BaseWidget {
                         },
                     },
                 }];
-            },
+            }) as GetSources<SearchItem>,
             navigator: {
                 navigate({ itemUrl }) {
                     window.location.assign(itemUrl);
@@ -246,7 +244,24 @@ export class SearchAutocomplete extends BaseWidget {
                 sourceHeader: '',
                 submitButton: `button button--icon searchbar__button${ this.searchbarSize === 'small' ? ' button--small' : '' }`,
             },
+            onStateChange: (props) => {
+                this.isOpen = props.state.isOpen;
+            },
         });
+    }
+
+    private handleDocumentClick(e: MouseEvent) {
+        const target = (e.target as HTMLElement);
+        const overlay = document.getElementsByClassName('searchbar__overlay').item(0);
+
+        if (this.isOpen && !this.element.contains(target) && !(overlay && overlay.contains(target))) {
+            this.autocomplete.setIsOpen(false);
+
+            /* Reset query to empty when closing except on the search results searchbar */
+            if (this.searchType !== 'results') {
+                this.autocomplete.setQuery('');
+            }
+        }
     }
 }
 
