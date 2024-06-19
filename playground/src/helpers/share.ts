@@ -1,7 +1,8 @@
-import { Workspace, WORKSPACE } from '@models/workspace';
+import { EditorView } from '@uiw/react-codemirror';
+
 import { OPTION_TYPE } from '@models/options';
 import { SharedCode } from '@models/share';
-import { editor } from 'monaco-editor';
+import { Workspace, WORKSPACE } from '@models/workspace';
 
 export const getShareUrl = (): string => {
     const prefix = window.location.host.startsWith('localhost') ? 'http://localhost:8081' : '';
@@ -52,12 +53,10 @@ export const parseSharedCode = (contents: string): SharedCode => {
     };
 }
 
-export const workspaceToShareContent = (workspace: Workspace, inputEditors: {
-    [key: string]: editor.IStandaloneCodeEditor
-}): string => {
+export const workspaceToShareContent = (workspace: Workspace, inputEditors: { [key: string]: EditorView }): string => {
     // TODO: Make share work for policy workspace
     const inputTab = workspace.config.inputTabs.find(tab => tab.type === OPTION_TYPE.INPUT);
     const editorId = `${ workspace.type }-${ inputTab.type }`;
     const inputEditor = inputEditors[editorId];
-    return inputEditor.getValue();
+    return inputEditor.state.doc.toString();
 }

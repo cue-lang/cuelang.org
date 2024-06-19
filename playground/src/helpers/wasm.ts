@@ -1,8 +1,9 @@
+import { EditorView } from '@uiw/react-codemirror';
+
 import { Workspace } from '@models/workspace';
-import { editor } from 'monaco-editor';
 
 export const workspaceToWasmConfig = (workspace: Workspace, inputEditors: {
-    [key: string]: editor.IStandaloneCodeEditor
+    [key: string]: EditorView
 }): WasmConfig => {
     const inputs = workspace.config.inputTabs.map(tab => {
         const editorId = `${ workspace.type }-${ tab.type }`;
@@ -10,11 +11,11 @@ export const workspaceToWasmConfig = (workspace: Workspace, inputEditors: {
         return {
             type: tab.type,
             language: tab.selected.value,
-            value: inputEditor ? inputEditor.getValue() : '',
+            value: inputEditor ? inputEditor.state.doc.toString() : '',
         }
     });
 
-    const output = workspace.config.outputTab.optionsReadonly ? null: workspace.config.outputTab.selected?.value;
+    const output = workspace.config.outputTab.optionsReadonly ? null : workspace.config.outputTab.selected?.value;
 
     return {
         workspace: workspace.type,

@@ -5,7 +5,9 @@
   "author": "",
   "main": "index.js",
   "dependencies": {
-    "@monaco-editor/react": "4.6.0",
+    "@uiw/react-codemirror": "4.22.2",
+    "@uiw/codemirror-extensions-langs": "4.22.2",
+    "@uiw/codemirror-theme-vscode": "4.22.2",
     "fuse.js": "7.0.0",
     "lodash.clonedeep": "4.5.0",
     "lodash.debounce": "4.0.8",

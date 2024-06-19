@@ -3,17 +3,25 @@
 
 .#{ $prefix }-editor {
     background: $c-white;
+    height: 100%;
+    max-width: 100vw;
     padding-top: 1rem;
+
+    .cm-editor {
+        height: 100%;
+    }
 
     &--terminal {
         background: $c-output-bcg;
 
-        .monaco-editor {
-            --vscode-editor-background: #{ $c-output-bcg };
-            --vscode-breadcrumb-background: #{ $c-output-bcg };
-            --vscode-editorGutter-background: #{ $c-output-bcg };
-            --vscode-editorMarkerNavigation-background: #{ $c-output-bcg };
-            --vscode-editorStickyScroll-background: #{ $c-output-bcg };
+        .cm-editor,
+        .cm-gutters {
+            background: $c-output-bcg;
+        }
+
+        .cm-activeLine,
+        .cm-activeLineGutter {
+            background: $c-output-highlight;
         }
     }
 }
