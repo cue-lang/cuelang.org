@@ -12,25 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as React from 'react';
-import { editor } from 'monaco-editor';
-import { Editor } from '@monaco-editor/react';
+import { LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
+import CodeMirror, { EditorView, Extension } from '@uiw/react-codemirror';
+import { vscodeLight } from '@uiw/codemirror-theme-vscode';
 import { debounce } from 'lodash';
-import { editorOptions, outputEditorOptions } from '@config/monaco-editor';
-import { availableWorkspaces, defaultWorkspace } from '@config/workspaces';
-import { OPTION_TYPE } from '@models/options';
-import { DropdownChange } from '@models/dropdown';
-import { Example } from '@models/example';
-import { HASH_KEY, hashParams } from '@models/hashParams';
-import { WORKSPACE, Workspace, Workspaces } from '@models/workspace';
-import { setupWorkspaceConfig } from '@helpers/workspace';
-import { getSharedCode, share, workspaceToShareContent } from '@helpers/share';
-import { getHashParamsFromUrl, getSearchParamsFromUrl, updateHash, workspaceToHashParams } from '@helpers/url-params';
+import * as React from 'react';
+
 import { Header } from '@components/header';
+import { Spinner } from '@components/spinner';
 import { Tab } from '@components/tab';
 import { Tabs } from '@components/tabs';
 import { examples } from '@config/examples';
-import { Spinner } from '@components/spinner';
+import { availableWorkspaces, defaultWorkspace } from '@config/workspaces';
+import { getSharedCode, share, workspaceToShareContent } from '@helpers/share';
+import { getHashParamsFromUrl, getSearchParamsFromUrl, updateHash, workspaceToHashParams } from '@helpers/url-params';
+import { setupWorkspaceConfig } from '@helpers/workspace';
+import { DropdownChange } from '@models/dropdown';
+import { Example } from '@models/example';
+import { HASH_KEY, hashParams } from '@models/hashParams';
+import { OPTION_TYPE } from '@models/options';
+import { WORKSPACE, Workspace, Workspaces } from '@models/workspace';
 
 interface AppProps
 {
@@ -50,8 +51,8 @@ interface AppState
 // App is the root of our React application
 export class App extends React.Component<AppProps, AppState>
 {
-    private inputEditors: { [key: string ]: editor.IStandaloneCodeEditor } = {};
-    private outputEditor: editor.IStandaloneCodeEditor;
+    private inputEditors: { [key: string ]: EditorView } = {};
+    private outputEditor: EditorView;
 
     constructor(props: AppProps) {
         super(props);
@@ -186,15 +187,8 @@ export class App extends React.Component<AppProps, AppState>
                 for (const inputTab of activeWorkspace.config.inputTabs) {
                     const editorId = `${ activeWorkspace.type }-${ inputTab.type }`;
                     const editor = this.inputEditors[editorId];
-                    inputTab.code = editor ? editor.getValue() : '';
+                    inputTab.code = editor ? editor.state.doc.toString() : '';
                 }
-
-                /* Note: Eventually code gets saved and loaded by either workspace config or because monaco-editor
-                 multi-model-editor takes care of that (https://github.com/suren-atoyan/monaco-react#multi-model-editor)
-                 We use the path attribute in the rendering of the editor to identify the model (workspace + input type)
-                 If an editor was already mounted the monaco model will take care of loading the saved code
-                 if editor wasn't already mounted it gets the code value from the workspace config when it mounts
-                */
 
                 // Update workspace in workspaces array
                 workspaces[activeWorkspace.type] = activeWorkspace;
@@ -272,15 +266,14 @@ export class App extends React.Component<AppProps, AppState>
                                                     onDropdownSelect={ this.handleDropdownChange.bind(this) }
                                                     name={ tab.title }
                                                 >
-                                                    <Editor
+                                                    <CodeMirror
                                                         className="cue-editor"
-                                                        language={ tab.selected.value }
+                                                        theme={ vscodeLight }
                                                         value={ tab.code ?? '' }
-                                                        options={ editorOptions }
-                                                        path={ id }
-                                                        onMount={ async (editor) => {
-                                                            this.inputEditors[id] = editor;
-                                                            this.updateOutput();
+                                                        extensions={ this.getExtensions(tab.selected.value) }
+                                                        onCreateEditor={ async (view) => {
+                                                            this.inputEditors[id] = view;
+                                                            // this.updateOutput();
                                                         } }
                                                         onChange={ this.onEditorInputChange.bind(this) }
                                                     />
@@ -301,14 +294,15 @@ export class App extends React.Component<AppProps, AppState>
                                         name={ outputTab.title }
                                         type="output"
                                     >
-                                        <Editor
+
+                                        <CodeMirror
                                             className="cue-editor cue-editor--terminal"
-                                            language={ outputTab.selected.value }
-                                            options={ outputEditorOptions }
-                                            path={ `${ activeWorkspace.type }-${ outputTab.type }` }
-                                            defaultValue="// ... loading WASM"
-                                            onMount={ (editor) => {
-                                                this.outputEditor = editor;
+                                            theme={ vscodeLight }
+                                            placeholder="// ... loading WASM"
+                                            editable={ false }
+                                            extensions={ this.getExtensions( outputTab.selected.value) }
+                                            onCreateEditor={ async(view) => {
+                                                this.outputEditor = view;
                                                 this.updateOutput();
                                             } }
                                         />
@@ -370,14 +364,12 @@ export class App extends React.Component<AppProps, AppState>
     public resetEditorLayout(): void {
         if (this.inputEditors) {
             for (const inputEditor of Object.values(this.inputEditors)) {
-                inputEditor.layout();
-                inputEditor.layout({ width: 0, height: 0 });
+                inputEditor.requestMeasure();
             }
         }
 
         if (this.outputEditor) {
-            this.outputEditor.layout({ width: 0, height: 0 });
-            this.outputEditor.layout();
+            this.outputEditor.requestMeasure();
         }
     }
 
@@ -397,7 +389,7 @@ export class App extends React.Component<AppProps, AppState>
         const output = activeWorkspace.config.outputTab.optionsReadonly ? 'cue' : activeWorkspace.config.outputTab.selected.value;
         const editorId = `${ activeWorkspace.type }-${ inputTab.type }`;
         const inputEditor = this.inputEditors[editorId];
-        const pre = inputEditor ? inputEditor.getValue() : '';
+        const pre = inputEditor ? inputEditor.state.doc.toString() : '';
         const result = this.props.WasmAPI.CUECompile(inputTab?.selected.value, func, output, pre);
 
         let val = result.error;
@@ -405,10 +397,11 @@ export class App extends React.Component<AppProps, AppState>
             val = result.value;
         }
 
-        this.outputEditor.setValue(val);
-        this.outputEditor.setSelection({
-            startLineNumber: 0, startColumn: 0, endLineNumber: 0, endColumn: 0
+        const transaction = this.outputEditor.state.update({
+            changes: { from: 0, to: this.outputEditor.state.doc.length, insert: val },
         });
+        this.outputEditor.dispatch(transaction);
+        this.outputEditor.dispatch({ selection: { anchor: 0 } });
         /* END OF FUNCTION CODE */
 
 
@@ -426,10 +419,11 @@ export class App extends React.Component<AppProps, AppState>
         //     }
         // }
         //
-        // this.outputEditor.setValue(result.output);
-        // this.outputEditor.setSelection({
-        //     startLineNumber: 0, startColumn: 0, endLineNumber: 0, endColumn: 0
+        // const transaction = this.outputEditor.state.update({
+        //     changes: { from: 0, to: this.outputEditor.state.doc.length, insert: result.output },
         // });
+        // this.outputEditor.dispatch(transaction);
+        // this.outputEditor.dispatch({ selection: { anchor: 0 } });
         /* END OF NEW CODE */
 
     }
@@ -442,5 +436,14 @@ export class App extends React.Component<AppProps, AppState>
             window.history.pushState({}, 'CUE Playground', '?id=' + data + window.location.hash);
             this.setState({ ...this.state, saved: true, showSaveURL: true });
         }
+    }
+
+    private getExtensions(languageValue: string): Extension[] {
+        const extensions: Extension[] = [];
+        const language = loadLanguage(languageValue as LanguageName);
+        if (language) {
+            extensions.push(language);
+        }
+        return extensions;
     }
 }
