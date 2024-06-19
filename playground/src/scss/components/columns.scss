@@ -7,6 +7,7 @@
     background: $c-grey-blue;
     display: grid;
     gap: 2px;
+    grid-template-rows: min-content;
     max-width: 100vw;
     padding: 4px;
 
