@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1284ab5_04e426fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-19T10:05:57Z",
+      "side": 1,
+      "message": "I dug around briefly, and rediscovered what I found out the /last/ time I looked at the social media header icons.\n\nThe icon needs to be part of the hugo/static/img/ui.svg multi-logo file. I don\u0027t know how it\u0027s intended to be added in there, or if there\u0027s a (manually-triggered) build process that merges files from where you already added it (hugo/assets/svg/ui/). If there is, I\u0027ve never seen it being invoked!\n\nIn case there /is/ something scripted, I\u0027ve also left a copy of the file where you placed it (with a `social-` prefix, as is the custom).\n\nFeel free to squash this into your change.",
+      "revId": "01e05658d3e2a9a819804be52b38eb4a2724c79f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
