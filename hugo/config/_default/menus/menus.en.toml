@@ -32,7 +32,7 @@
     identifier = "discord"
     name = "Discord"
     url = "https://discord.gg/Tnf2CdzRjr"
-    pre = "discord"
+    pre = "social-discord"
     weight = 202
 [[icons]]
     identifier = "x-twitter"
