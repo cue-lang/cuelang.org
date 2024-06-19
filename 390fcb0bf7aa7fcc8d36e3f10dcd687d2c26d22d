@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4934757c_d1d89745",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-19T09:07:54Z",
+      "side": 1,
+      "message": "I was using Go tip (master) which busted all caches, using Go 1.22.4 resolved the issue.",
+      "parentUuid": "67fc6d37_a79cf22c",
+      "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "30843016_21c20e39",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -65,6 +83,24 @@
       "writtenOn": "2024-06-18T07:36:23Z",
       "side": 1,
       "message": "Resetting to 0 as the preview doesn\u0027t show any icon.",
+      "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa616e5f_f9aa8f3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-19T09:07:54Z",
+      "side": 1,
+      "message": "Yes, but I don\u0027t know where the Slack icon is shown or rendered either. I only added the discord icon for consistency, and assuming that it might be needed for some reason.",
+      "parentUuid": "2cfc4afb_9444b345",
       "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
