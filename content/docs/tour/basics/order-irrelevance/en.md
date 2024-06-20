@@ -8,7 +8,7 @@ the order in which configurations are combined is unimportant.\
 We say that **order is irrelevant** in CUE.
 
 This crucial property explains how CUE is able to handle a field being specified
-[multiple times]({{< relref "duplicate-fields" >}}).
+[multiple times]({{< relref "unification" >}}).
 Because each occurrence of a field is as important as every other,
 *all* occurrences must not conflict with each other.
 

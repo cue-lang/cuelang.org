@@ -4,7 +4,7 @@ package site
 		docs: {
 			tour: {
 				basics: {
-					"duplicate-fields": {
+					unification: {
 						page: {
 							cache: {
 								code: {

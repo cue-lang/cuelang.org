@@ -15,7 +15,7 @@ In this example, the `cue export` output includes the data that Viola is a human
 This is because the `viola` field is specified as the unification of a struct
 which declares Viola's name and age, and the `person` constraint which
 additionally declares the `human` field.
-This unification uses the **explicit unification operator `&`**.
+This specification uses the **explicit unification operator:** `&`.
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}

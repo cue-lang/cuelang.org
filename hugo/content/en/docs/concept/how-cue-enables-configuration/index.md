@@ -381,7 +381,7 @@ matter how many people and teams feed data and constraints into the process:
   originates is never in doubt.
 - The
   [order-independent]({{< relref "docs/tour/basics/order-irrelevance" >}})
-  [unification]({{< relref "docs/tour/basics/duplicate-fields/" >}})
+  [unification]({{< relref "docs/tour/basics/unification" >}})
   of values *and* constraints removes the need for confusing, overlapping
   defaults that can be painful to understand.
 

@@ -29,7 +29,7 @@ Validating data files with the `cue` command is easy. All we do is:
 - tell the `cue` command to check that each data file **unifies** successfully
   with the constraints.
 
-[Unification]({{< relref "docs/tour/basics/duplicate-fields" >}}) is CUE's core
+[Unification]({{< relref "docs/tour/basics/unification" >}}) is CUE's core
 operation - it's central to how the language and its tooling works.
 It allows data and constraints to work at all scales, and is one of the
 mechanisms that enables CUE to perform automated processes such as removing
