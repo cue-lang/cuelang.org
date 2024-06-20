@@ -103,6 +103,24 @@
       "parentUuid": "2cfc4afb_9444b345",
       "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ada04f7d_6cdf5d61",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-20T09:25:19Z",
+      "side": 1,
+      "message": "I\u0027ve pushed https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1196483, which adds the icon to the site consistently with existing icons.",
+      "parentUuid": "aa616e5f_f9aa8f3d",
+      "revId": "390fcb0bf7aa7fcc8d36e3f10dcd687d2c26d22d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
