@@ -7,7 +7,7 @@ A struct may be **open** or **closed**, and is open *unless* it has been closed.
 
 Both open and closed structs can have any field defined as members.\
 Closed structs can only be
-[unified]({{< relref "docs/tour/basics/duplicate-fields" >}})
+[unified]({{< relref "docs/tour/basics/unification" >}})
 with structs that have fields permitted by the closed struct.
 
 A closed struct can be created using the `close()` builtin, but is more
