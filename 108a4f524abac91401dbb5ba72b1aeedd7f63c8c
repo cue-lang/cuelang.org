@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86f8554e_e83ad2a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-20T10:27:41Z",
+      "side": 1,
+      "message": "This works much better on (my) mobile than the current playground, but I\u0027m going to raise some issues to track a couple of not-great editing characteristics that /feel/ like they\u0027re within our control.\n\nHowever, given that (IMHO) the current playground state is unusable, this is a strict improvement, and I think it should be merged as-is.",
+      "revId": "108a4f524abac91401dbb5ba72b1aeedd7f63c8c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
