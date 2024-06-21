@@ -19,8 +19,6 @@ import (
 	"encoding/base64"
 	"fmt"
 	"html/template"
-	"os"
-	"path/filepath"
 	"strings"
 
 	"golang.org/x/tools/txtar"
@@ -195,40 +193,22 @@ func (s *codeNodeRunContext) run() {
 		return
 	}
 
-	// Early check to ensure we have the required docker image available
-	if err := dockerImageChecker(); err != nil {
-		s.fatalf("%v", err)
-	}
-
 	// Now that the archive is updated with valid formatted files, run the
 	// script
-	td, err := s.tempDir("")
-	if err != nil {
-		s.fatalf("%v: failed to create temp dir: %v", s, err)
-	}
-	targetFile := filepath.Join(td, "script.txtar")
-	containerFile := "/tmp/script.txtar"
-	if err := os.WriteFile(targetFile, txtar.Format(effectiveArchive), 0666); err != nil {
-		s.fatalf("%v: failed to write script: %v", s, err)
-	}
 	ts := s.dockerCmd(
-		// We need to mount the script
-		[]string{fmt.Sprintf("-v=%s:%s", targetFile, containerFile)},
-		"testscript",
+		"testscript.sh",
 		fmt.Sprintf("-u=%v", s.updateGoldenFiles),
-		containerFile,
 	)
+	ts.Stdin = bytes.NewReader(txtar.Format(effectiveArchive))
 	s.debugf(s.debugCode, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(effectiveArchive)))
 
-	if byts, err := ts.CombinedOutput(); err != nil {
+	byts, err := ts.CombinedOutput()
+	if err != nil {
 		s.fatalf("%v: failed to run %v: %v\n%s", s, ts, err, tabIndent(byts))
 	}
 
 	// Read the archive back and assign to indices of the effective archive
-	resArchive, err := txtar.ParseFile(targetFile)
-	if err != nil {
-		s.fatalf("%v: failed to read resulting archvie %s: %v", s, targetFile, err)
-	}
+	resArchive := txtar.Parse(byts)
 	for i := range effectiveArchive.Files {
 		s.archive.Files[i] = resArchive.Files[i]
 	}
