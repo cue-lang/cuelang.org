@@ -16,17 +16,20 @@ package cmd
 
 import (
 	"bytes"
+	"crypto/sha256"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
 	"io/fs"
+	"math/rand"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime/debug"
 	"sort"
+	"strconv"
 	"strings"
 	"sync"
 	"testing"
@@ -56,6 +59,15 @@ type executeContext struct {
 	// key is the full directory path of the page source.
 	pages map[string]*page
 
+	// fmtContainers is a map[string]string of the Docker image to container ID.
+	// The containers are used to perform formatting of files. A single
+	// container per image is started on first use.
+	fmtContainers     map[string]func() (string, error)
+	fmtContainersLock sync.Mutex
+
+	imageCheckers     map[string]func() error
+	imageCheckersLock sync.Mutex
+
 	errorContext
 	*executionContext
 }
@@ -71,6 +83,7 @@ func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 		filter:           filter,
 		executionContext: e.executionContext,
 		errorContext:     e.errorContext,
+		fmtContainers:    make(map[string]func() (string, error)),
 	}
 }
 
@@ -199,7 +212,101 @@ func (ec *executeContext) execute() error {
 		ec.logf("%s", p.bytes())
 	}
 
+	// Now kill any fmtContainers
+	for _, v := range ec.fmtContainers {
+		name, err := v()
+		if err != nil {
+			// We will already have captured an error here when we came
+			// to use the container. Just ignore.
+			continue
+		}
+		cmd := exec.Command("docker", "kill", name)
+		out, err := cmd.CombinedOutput()
+		if err != nil {
+			ec.errorf("%v: failed to run [%v]: %v\n%s", ec, cmd, err, out)
+		}
+	}
+
 	return errorIfInError(ec)
+}
+
+func (e *executeContext) image(image string) error {
+	e.imageCheckersLock.Lock()
+	f, ok := e.imageCheckers[image]
+	if !ok {
+		f = sync.OnceValue(func() error {
+			cmd := exec.Command("docker", "image", "inspect", image)
+			if out, err := cmd.CombinedOutput(); err != nil {
+				return fmt.Errorf("failed to find docker image %s: %s", image, out)
+			}
+			return nil
+		})
+	}
+	e.imageCheckersLock.Unlock()
+	return f()
+}
+
+func (e *executeContext) container(image string) (string, error) {
+	e.fmtContainersLock.Lock()
+	containerBuilder, ok := e.fmtContainers[image]
+	if !ok {
+		containerBuilder = sync.OnceValues(func() (string, error) {
+			if err := e.image(image); err != nil {
+				return "", err
+			}
+			return dockerRunDetached("preprocessor_format_", image)
+		})
+		e.fmtContainers[image] = containerBuilder
+	}
+	e.fmtContainersLock.Unlock()
+	return containerBuilder()
+}
+
+func dockerRunDetached(prefix, image string) (string, error) {
+	var args []string
+
+	// Generate a random suffix name for our container with a
+	// human-readable prefix
+	name := fmt.Sprintf("%s_%x", prefix,
+		sha256.Sum256(strconv.AppendInt(nil, rand.Int63(), 16)),
+	)
+
+	args = append(args,
+		"docker", "run", "--name", name,
+
+		// We want to detach from this container and 'docker exec' commands
+		// within it.
+		"-d",
+
+		// We do not want to leave this container lying around when it stops
+		"--rm",
+
+		// All docker images used by unity must support this interface
+		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
+		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
+	)
+
+	// If the user wants to be unsafe and _not_ isolate the network let them
+	// It results in much faster running times when working on changes in the
+	// preprocessor.
+	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
+		args = append(args, "--network=host")
+	}
+
+	args = append(args,
+		image,
+		"--",
+
+		// We need this command to run forever in a detached state
+		"sleep", "infinity",
+	)
+
+	cmd := exec.Command(args[0], args[1:]...)
+	out, err := cmd.CombinedOutput()
+	if err != nil {
+		return "", fmt.Errorf("failed to run [%v]: %v\n%s", cmd, err, out)
+	}
+	return name, nil
 }
 
 // findSiteCUE finds all the CUE inputs that contribute to the site
@@ -237,7 +344,7 @@ dirs:
 		var siteFilenames []string
 		// We only want the files that are part of the "site" package
 		for _, fn := range filenames {
-			f, err := parser.ParseFile(fn, nil)
+			f, err := parser.ParseFile(fn, nil, parser.PackageClauseOnly)
 			if err != nil {
 				ec.errorf("%v: failed to parse %s: %v", ec, fn, err)
 				continue
@@ -568,13 +675,3 @@ func (c centralRegistryTestUserFetcher) fetch() (res map[string]wireToken, err e
 
 	return
 }
-
-// dockerImageChecker is a sync.Once checker for ensuring that the image
-// dockerImageTag exists before a start/run command.
-var dockerImageChecker = sync.OnceValue(func() error {
-	cmd := exec.Command("docker", "image", "inspect", dockerImageTag)
-	if out, err := cmd.CombinedOutput(); err != nil {
-		return fmt.Errorf("failed to find docker image %s: %s", dockerImageTag, out)
-	}
-	return nil
-})
