@@ -13,8 +13,7 @@
 // limitations under the License.
 
 import { LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
-import CodeMirror, { EditorView, Extension } from '@uiw/react-codemirror';
-import { vscodeLight } from '@uiw/codemirror-theme-vscode';
+import CodeMirror, { basicSetup, EditorView, Extension } from '@uiw/react-codemirror';
 import { debounce } from 'lodash';
 import * as React from 'react';
 
@@ -22,6 +21,7 @@ import { Header } from '@components/header';
 import { Spinner } from '@components/spinner';
 import { Tab } from '@components/tab';
 import { Tabs } from '@components/tabs';
+import { vscodeLight, vscodeLightTerminal } from '@config/editor-theme';
 import { examples } from '@config/examples';
 import { availableWorkspaces, defaultWorkspace } from '@config/workspaces';
 import { getSharedCode, share, workspaceToShareContent } from '@helpers/share';
@@ -270,10 +270,11 @@ export class App extends React.Component<AppProps, AppState>
                                                         className="cue-editor"
                                                         theme={ vscodeLight }
                                                         value={ tab.code ?? '' }
+                                                        basicSetup={ false }
                                                         extensions={ this.getExtensions(tab.selected.value) }
                                                         onCreateEditor={ async (view) => {
                                                             this.inputEditors[id] = view;
-                                                            // this.updateOutput();
+                                                            this.updateOutput();
                                                         } }
                                                         onChange={ this.onEditorInputChange.bind(this) }
                                                     />
@@ -297,8 +298,9 @@ export class App extends React.Component<AppProps, AppState>
 
                                         <CodeMirror
                                             className="cue-editor cue-editor--terminal"
-                                            theme={ vscodeLight }
+                                            theme={ vscodeLightTerminal }
                                             placeholder="// ... loading WASM"
+                                            basicSetup={ false }
                                             editable={ false }
                                             extensions={ this.getExtensions( outputTab.selected.value) }
                                             onCreateEditor={ async(view) => {
@@ -439,11 +441,16 @@ export class App extends React.Component<AppProps, AppState>
     }
 
     private getExtensions(languageValue: string): Extension[] {
-        const extensions: Extension[] = [];
+        const extensions = basicSetup({
+            highlightActiveLine: false,
+            highlightActiveLineGutter: false,
+        });
+
         const language = loadLanguage(languageValue as LanguageName);
         if (language) {
             extensions.push(language);
         }
+
         return extensions;
     }
 }

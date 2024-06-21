@@ -13,15 +13,5 @@
 
     &--terminal {
         background: $c-output-bcg;
-
-        .cm-editor,
-        .cm-gutters {
-            background: $c-output-bcg;
-        }
-
-        .cm-activeLine,
-        .cm-activeLineGutter {
-            background: $c-output-highlight;
-        }
     }
 }
