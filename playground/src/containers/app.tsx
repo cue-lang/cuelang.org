@@ -14,7 +14,6 @@
 
 import { LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
 import CodeMirror, { EditorView, Extension } from '@uiw/react-codemirror';
-import { vscodeLight } from '@uiw/codemirror-theme-vscode';
 import { debounce } from 'lodash';
 import * as React from 'react';
 
@@ -22,6 +21,7 @@ import { Header } from '@components/header';
 import { Spinner } from '@components/spinner';
 import { Tab } from '@components/tab';
 import { Tabs } from '@components/tabs';
+import { vscodeLight } from '@config/editor-theme';
 import { examples } from '@config/examples';
 import { availableWorkspaces, defaultWorkspace } from '@config/workspaces';
 import { getSharedCode, share, workspaceToShareContent } from '@helpers/share';
@@ -273,7 +273,7 @@ export class App extends React.Component<AppProps, AppState>
                                                         extensions={ this.getExtensions(tab.selected.value) }
                                                         onCreateEditor={ async (view) => {
                                                             this.inputEditors[id] = view;
-                                                            // this.updateOutput();
+                                                            this.updateOutput();
                                                         } }
                                                         onChange={ this.onEditorInputChange.bind(this) }
                                                     />
