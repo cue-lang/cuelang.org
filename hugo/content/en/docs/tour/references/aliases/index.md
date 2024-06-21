@@ -16,23 +16,31 @@ which they are defined.
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
-// Alias A provides access to a top-level field
-// with a name that is not a valid identifier.
+// This alias appears in front of a label that is
+// not a valid identifier. It binds its identifier
+// (A) to the same value that the label would be
+// bound to if it were a valid identifier.
 A="a top level field": 1
 
-// Alias B provides access to a dynamic field.
-#b:     "a dynamic field"
+// This alias appears in front of a dynamic field
+// expression. It binds its identifier (B) to the
+// concrete label resulting from the evaluation of
+// the expression.
 B=(#b): 2
+#b:     "a dynamic field"
 
 a: A
 b: B
 
-// Alias C provides access to a field that's
-// shadowed in c's innermost scope.
-c: C={
-	field: value: 3
+// This alias appears before a value. It binds its
+// identifier (C) to the value it precedes, but
+// only within the scope of that value.
+x: C={
+	x: 3
 	d: {
-		field: C.field.value
+		x: 4
+		e: x
+		f: C.x
 	}
 }
 {{< /code-tab >}}
@@ -43,12 +51,12 @@ $ cue export file.cue
     "a": 1,
     "b": 2,
     "a dynamic field": 2,
-    "c": {
-        "field": {
-            "value": 3
-        },
+    "x": {
+        "x": 3,
         "d": {
-            "field": 3
+            "x": 4,
+            "e": 4,
+            "f": 3
         }
     }
 }
@@ -57,4 +65,4 @@ $ cue export file.cue
 
 The CUE language specification defines
 [the full list of positions]({{< relref "docs/reference/spec#aliases" >}})
-where an alias can be declared.
+where an alias can appear.
