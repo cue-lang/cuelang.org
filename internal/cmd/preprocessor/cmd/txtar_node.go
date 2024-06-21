@@ -297,17 +297,17 @@ func (t *txtarRunContext) formatFiles() error {
 		var cmd *exec.Cmd
 		switch a.Ext {
 		case "json":
-			cmd = t.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
+			cmd = t.dockerCmdExec("cue", "export", "--out=json", "json:", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "yaml", "yml":
 			// TODO: add support for yaml formatting, after working out how to make
 			// this tooling generally available in the base docker image. The problem
 			// is that right now CUE drops comments on Yaml export.
 		case "go":
-			cmd = t.dockerCmd(nil, "gofmt")
+			cmd = t.dockerCmdExec("gofmt")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "cue":
-			cmd = t.dockerCmd(nil, "cue", "fmt", "-")
+			cmd = t.dockerCmdExec("cue", "fmt", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "proto":
 			// TODO: add support for proto formatting, after working out how to make
@@ -325,10 +325,6 @@ func (t *txtarRunContext) formatFiles() error {
 			f:   f,
 			cmd: cmd,
 		})
-	}
-
-	if err := dockerImageChecker(); err != nil {
-		t.fatalf("%v", err)
 	}
 
 	// Start the formatting jobs
@@ -386,5 +382,26 @@ func (t *txtarRunContext) dockerCmd(dockerArgs []string, cmdArgs ...string) *exe
 	args = append(args, cmdArgs...)
 	cmd := exec.Command(args[0], args[1:]...)
 	cmd.Dir = td
+	return cmd
+}
+
+func (t *txtarRunContext) dockerCmdExec(cmdArgs ...string) *exec.Cmd {
+	// TODO: support per-guide docker images
+	container, err := t.rf.page.ctx.container(dockerImageTag)
+	if err != nil {
+		t.fatalf("%v: failed to get container for %s: %v", dockerImageTag, err)
+	}
+
+	args := []string{
+		"docker", "exec",
+
+		// Need to be able to pass stdin and also have a real tty
+		"-i",
+
+		container,
+	}
+
+	args = append(args, cmdArgs...)
+	cmd := exec.Command(args[0], args[1:]...)
 	return cmd
 }
