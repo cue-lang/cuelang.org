@@ -31,12 +31,14 @@ B=(#b): 2
 a: A
 b: B
 
-// Alias C provides access to a field that's
-// shadowed in c's innermost scope.
-c: C={
-	field: value: 3
+// Alias C provides access to a field that is
+// shadowed in the innermost scope of x.
+x: C={
+	x: 3
 	d: {
-		field: C.field.value
+		x: 4
+		e: x
+		f: C.x
 	}
 }
 -- out --
@@ -45,12 +47,12 @@ c: C={
     "a": 1,
     "b": 2,
     "a dynamic field": 2,
-    "c": {
-        "field": {
-            "value": 3
-        },
+    "x": {
+        "x": 3,
         "d": {
-            "field": 3
+            "x": 4,
+            "e": 4,
+            "f": 3
         }
     }
 }
