@@ -44,6 +44,9 @@ ENV CUELANG_CUE_PLAYGROUND="v0.9.1"
 
 WORKDIR /
 
+COPY ./testscript.sh /usr/bin/testscript.sh
+RUN chmod 755 /usr/bin/testscript.sh
+
 COPY ./entrypoint.sh /usr/bin/entrypoint.sh
 RUN chown root:root /usr/bin/entrypoint.sh
 RUN chmod 755 /usr/bin/entrypoint.sh
