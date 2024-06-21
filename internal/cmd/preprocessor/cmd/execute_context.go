@@ -16,17 +16,20 @@ package cmd
 
 import (
 	"bytes"
+	"crypto/sha256"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
 	"io/fs"
+	"math/rand"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime/debug"
 	"sort"
+	"strconv"
 	"strings"
 	"sync"
 	"testing"
@@ -56,6 +59,23 @@ type executeContext struct {
 	// key is the full directory path of the page source.
 	pages map[string]*page
 
+	// containers maintains a singleton map Docker image to sync.Once func that
+	// starts and returns a detached container's ID.
+	//
+	// containersLock guards access to containers, and is used in preference to
+	// a sync.Map to avoid allocating a new sync.Once value on each access.
+	containers     map[string]func() (string, error)
+	containersLock sync.Mutex
+
+	// imageCheckers is a map from Docker image to sync.Once func that verifies
+	// if a Docker image exists or not, returning nil or non-nil respectively.
+	//
+	// imageCheckersLock guards access to imageCheckers, and is used in
+	// preference to a sync.Map to avoid allocating a new sync.Once value on
+	// each access.
+	imageCheckers     map[string]func() error
+	imageCheckersLock sync.Mutex
+
 	errorContext
 	*executionContext
 }
@@ -71,6 +91,7 @@ func (e *executor) newExecuteContext(filter map[string]bool) *executeContext {
 		filter:           filter,
 		executionContext: e.executionContext,
 		errorContext:     e.errorContext,
+		containers:       make(map[string]func() (string, error)),
 	}
 }
 
@@ -199,7 +220,109 @@ func (ec *executeContext) execute() error {
 		ec.logf("%s", p.bytes())
 	}
 
+	// Now kill any fmtContainers
+	for _, v := range ec.containers {
+		name, err := v()
+		if err != nil {
+			// We will already have captured an error here when we came
+			// to use the container. Just ignore.
+			continue
+		}
+		cmd := exec.Command("docker", "kill", name)
+		out, err := cmd.CombinedOutput()
+		if err != nil {
+			ec.errorf("%v: failed to run [%v]: %v\n%s", ec, cmd, err, out)
+		}
+	}
+
 	return errorIfInError(ec)
+}
+
+// imageExists determines if Docker image exists locally, using 'docker image
+// inspect'. It returns a nil error in the case the image does exist locally,
+// or non-nil otherwise.
+func (e *executeContext) imageExists(image string) error {
+	e.imageCheckersLock.Lock()
+	f, ok := e.imageCheckers[image]
+	if !ok {
+		f = sync.OnceValue(func() error {
+			cmd := exec.Command("docker", "image", "inspect", image)
+			if out, err := cmd.CombinedOutput(); err != nil {
+				return fmt.Errorf("failed to find docker image %s: %s", image, out)
+			}
+			return nil
+		})
+	}
+	e.imageCheckersLock.Unlock()
+	return f()
+}
+
+// container returns the singleton Docker container ID for a given image,
+// starting one if required.
+func (e *executeContext) container(image string) (string, error) {
+	e.containersLock.Lock()
+	containerBuilder, ok := e.containers[image]
+	if !ok {
+		containerBuilder = sync.OnceValues(func() (string, error) {
+			if err := e.imageExists(image); err != nil {
+				return "", err
+			}
+			return dockerRunDetached("preprocessor_format_", image)
+		})
+		e.containers[image] = containerBuilder
+	}
+	e.containersLock.Unlock()
+	return containerBuilder()
+}
+
+// dockerRunDetached is used by the (*executeContext).container to run a new
+// detached Docker container, uniquely named using prefix as a name prefix, of
+// image.
+func dockerRunDetached(prefix, image string) (string, error) {
+	var args []string
+
+	// Generate a random suffix name for our container with a
+	// human-readable prefix
+	name := fmt.Sprintf("%s_%x", prefix,
+		sha256.Sum256(strconv.AppendInt(nil, rand.Int63(), 16)),
+	)
+
+	args = append(args,
+		"docker", "run", "--name", name,
+
+		// We want to detach from this container and 'docker exec' commands
+		// within it.
+		"-d",
+
+		// We do not want to leave this container lying around when it stops
+		"--rm",
+
+		// All docker images used by cuelang.org must support this interface
+		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
+		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
+	)
+
+	// If the user wants to be unsafe and _not_ isolate the network let them
+	// It results in much faster running times when working on changes in the
+	// preprocessor.
+	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
+		args = append(args, "--network=host")
+	}
+
+	args = append(args,
+		image,
+		"--",
+
+		// We need this command to run forever in a detached state
+		"sleep", "infinity",
+	)
+
+	cmd := exec.Command(args[0], args[1:]...)
+	out, err := cmd.CombinedOutput()
+	if err != nil {
+		return "", fmt.Errorf("failed to run [%v]: %v\n%s", cmd, err, out)
+	}
+	return name, nil
 }
 
 // findSiteCUE finds all the CUE inputs that contribute to the site
@@ -237,7 +360,7 @@ dirs:
 		var siteFilenames []string
 		// We only want the files that are part of the "site" package
 		for _, fn := range filenames {
-			f, err := parser.ParseFile(fn, nil)
+			f, err := parser.ParseFile(fn, nil, parser.PackageClauseOnly)
 			if err != nil {
 				ec.errorf("%v: failed to parse %s: %v", ec, fn, err)
 				continue
@@ -568,13 +691,3 @@ func (c centralRegistryTestUserFetcher) fetch() (res map[string]wireToken, err e
 
 	return
 }
-
-// dockerImageChecker is a sync.Once checker for ensuring that the image
-// dockerImageTag exists before a start/run command.
-var dockerImageChecker = sync.OnceValue(func() error {
-	cmd := exec.Command("docker", "image", "inspect", dockerImageTag)
-	if out, err := cmd.CombinedOutput(); err != nil {
-		return fmt.Errorf("failed to find docker image %s: %s", dockerImageTag, out)
-	}
-	return nil
-})
