@@ -297,17 +297,17 @@ func (t *txtarRunContext) formatFiles() error {
 		var cmd *exec.Cmd
 		switch a.Ext {
 		case "json":
-			cmd = t.dockerCmd(nil, "cue", "export", "--out=json", "json:", "-")
+			cmd = t.dockerCmd("cue", "export", "--out=json", "json:", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "yaml", "yml":
 			// TODO: add support for yaml formatting, after working out how to make
 			// this tooling generally available in the base docker image. The problem
 			// is that right now CUE drops comments on Yaml export.
 		case "go":
-			cmd = t.dockerCmd(nil, "gofmt")
+			cmd = t.dockerCmd("gofmt")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "cue":
-			cmd = t.dockerCmd(nil, "cue", "fmt", "-")
+			cmd = t.dockerCmd("cue", "fmt", "-")
 			cmd.Stdin = bytes.NewReader(f.Data)
 		case "proto":
 			// TODO: add support for proto formatting, after working out how to make
@@ -325,10 +325,6 @@ func (t *txtarRunContext) formatFiles() error {
 			f:   f,
 			cmd: cmd,
 		})
-	}
-
-	if err := dockerImageChecker(); err != nil {
-		t.fatalf("%v", err)
 	}
 
 	// Start the formatting jobs
@@ -353,38 +349,23 @@ func (t *txtarRunContext) formatFiles() error {
 	return errorIfInError(t)
 }
 
-func (t *txtarRunContext) dockerCmd(dockerArgs []string, cmdArgs ...string) *exec.Cmd {
-	td, err := t.tempDir("")
+func (t *txtarRunContext) dockerCmd(cmdArgs ...string) *exec.Cmd {
+	// TODO: support per-guide docker images
+	container, err := t.rf.page.ctx.container(dockerImageTag)
 	if err != nil {
-		t.fatalf("%v: failed to create temp dir: %v", t, err)
+		t.fatalf("%v: failed to get container for %s: %v", dockerImageTag, err)
 	}
-	var args []string
-	args = append(args,
-		"docker", "run", "--rm",
 
-		// Need to be able to pass stdin
+	args := []string{
+		"docker", "exec",
+
+		// Need to be able to pass stdin and also have a real tty
 		"-i",
 
-		// All docker images used by unity must support this interface
-		"-e", fmt.Sprintf("USER_UID=%v", os.Geteuid()),
-		"-e", fmt.Sprintf("USER_GID=%v", os.Getegid()),
-	)
-
-	// If the user wants to be unsafe and _not_ isolate the network let them
-	// It results in much faster running times when working on changes in the
-	// preprocessor.
-	if os.Getenv("CUE_UNSAFE_NETWORK_HOST") != "" {
-		args = append(args, "--network=host")
+		container,
 	}
 
-	args = append(args, dockerArgs...)
-	args = append(args,
-		// TODO: support per-guide docker images
-		dockerImageTag,
-		"--",
-	)
 	args = append(args, cmdArgs...)
 	cmd := exec.Command(args[0], args[1:]...)
-	cmd.Dir = td
 	return cmd
 }
