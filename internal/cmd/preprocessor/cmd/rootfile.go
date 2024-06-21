@@ -26,7 +26,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"runtime"
 	"slices"
 	"sort"
 	"strconv"
@@ -58,8 +57,6 @@ var (
 		"sidetrack":    true,
 		"TODO":         true,
 	}
-
-	goMajorVersion = computeGoMajorVersion()
 )
 
 // rootFile is a convenience data structure for keeping track of root files we
@@ -610,7 +607,6 @@ type multiStepScriptCache struct {
 // image.
 func (m *multiStepScript) hash() string {
 	work := sha256.New()
-	fmt.Fprintf(work, "Go major version: %s\n", goMajorVersion)
 	fmt.Fprintf(work, "preprocessor version: %s\n", m.selfHash)
 	fmt.Fprintf(work, "docker image: %s\n", dockerImageTag)
 	fmt.Fprintf(work, "script:\n%s\n", m.rootFile.page.config.randomReplace(m.bashScript))
@@ -690,7 +686,9 @@ func (m *multiStepScript) run() {
 	}
 
 	// Early check to ensure we have the required docker image available
-	if err := dockerImageChecker(); err != nil {
+	//
+	// TODO: use page-specified docker image
+	if err := m.page.ctx.imageExists(dockerImageTag); err != nil {
 		m.fatalf("%v", err)
 	}
 
@@ -710,10 +708,6 @@ func (m *multiStepScript) run() {
 
 		// otherwise stderr is not line buffered
 		"-t",
-
-		// All docker images used by unity must support this interface
-		"-e", fmt.Sprintf("USER_UID=%d", os.Geteuid()),
-		"-e", fmt.Sprintf("USER_GID=%d", os.Getegid()),
 
 		// TODO: as a temporary measure, pass CUE_TEST_LOGINS through from the
 		// host (documentation author) environment to the running multi-step
@@ -741,7 +735,7 @@ func (m *multiStepScript) run() {
 		"-e", "CUE_TEST_LOGINS",
 
 		// mount the bash script
-		"-v", fmt.Sprintf("%s:/scripts", scriptsDir),
+		"--mount", fmt.Sprintf("type=bind,source=%s,target=/scripts,readonly", scriptsDir),
 	)
 
 	var sensitiveValues []string
@@ -944,7 +938,6 @@ func (m *multiStepScript) run() {
 // hashRunnableNode computes a hash of n, writing that hash to w, and returns
 // the cue.Path at which a cache entry for such a hash could be found.
 func (rf *rootFile) hashRunnableNode(n runnableNode, w io.Writer) cue.Path {
-	fmt.Fprintf(w, "Go major version: %s\n", goMajorVersion)
 	fmt.Fprintf(w, "preprocessor version: %s\n", rf.selfHash)
 	fmt.Fprintf(w, "docker image: %s\n", dockerImageTag)
 	n.writeToHasher(w)
@@ -1116,13 +1109,4 @@ func writeIfDiff(b *bytes.Buffer, target string, curVal []byte) error {
 		return fmt.Errorf("failed to write to %s: %w", target, err)
 	}
 	return nil
-}
-
-func computeGoMajorVersion() string {
-	v := runtime.Version()
-	if strings.Count(v, ".") == 1 {
-		return v
-	}
-	i := strings.LastIndex(v, ".")
-	return v[:i]
 }

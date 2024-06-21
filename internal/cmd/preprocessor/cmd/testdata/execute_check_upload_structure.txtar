@@ -56,9 +56,6 @@ title: JSON Superset
 
 ```text { title="TERMINAL" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }
 $ find $HOME -type f | sort
-/home/runner/.bash_logout
-/home/runner/.bashrc
-/home/runner/.profile
 ```
 
 {{< code-tabs >}}
@@ -70,9 +67,6 @@ $ find $HOME -type f | sort
 
 ```text { title="TERMINAL" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydApjZCBhbm90aGVy" }
 $ find $HOME -type f | sort
-/home/runner/.bash_logout
-/home/runner/.bashrc
-/home/runner/.profile
 /home/runner/another/two.txt
 /home/runner/one.txt
 $ cd another
@@ -87,9 +81,6 @@ $ cd another
 
 ```text { title="TERMINAL" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }
 $ find $HOME -type f | sort
-/home/runner/.bash_logout
-/home/runner/.bashrc
-/home/runner/.profile
 /home/runner/another/four.txt
 /home/runner/another/two.txt
 /home/runner/one.txt
