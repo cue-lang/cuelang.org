@@ -16,6 +16,57 @@
       "message": "PTAL.",
       "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6139891b_2dfc7d9b",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:05:17Z",
+      "side": 1,
+      "message": "As a suggestion, I would align the explanation here with that of the spec. Here the alias appears in front of the label, and binds it to the same value as the field.",
+      "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf67cebb_34683d79",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:05:17Z",
+      "side": 1,
+      "message": "Ditto re aligning with the spec language.",
+      "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f9992a7_1c75f9c8",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:05:17Z",
+      "side": 1,
+      "message": "Ditto re the spec language of this alias appearing before the value. \n\nWhy not call this top-level field `c`? There are too many `x`\u0027s going on otherwise, which confuses things. You can then be precise about the fact that the field `c.d.f` uses the alias `C` to refer to `C.x` because as `c.d.e` shows a plain `x` in that scope would resolve to `c.d.x`.",
+      "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
