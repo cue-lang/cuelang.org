@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f10f42c_a4e13236",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T15:42:20Z",
+      "side": 1,
+      "message": "The test failure on patchset 5 appears to have been a flake",
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
