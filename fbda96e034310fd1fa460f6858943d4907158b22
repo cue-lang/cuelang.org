@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "fbda96e034310fd1fa460f6858943d4907158b22",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ff24f2f_e6dd9d86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T17:05:25Z",
+      "side": 1,
+      "message": "FYI - we might well have some language updates coming to tweak the terms unification, disjunction, conjunct, disjunct etc. But ahead of those changes making this consistent seems like a sensible step.",
+      "revId": "fbda96e034310fd1fa460f6858943d4907158b22",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
