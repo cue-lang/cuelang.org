@@ -2,7 +2,7 @@
 
 # Code generated site_tool.cue; DO NOT EDIT.
 
-FROM golang:1.22.3 AS build
+FROM golang:1.22.4 AS build
 
 ENV CGO_ENABLED=0
 
@@ -13,7 +13,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.11.0
+  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.12.0
 
 RUN mkdir /cues
 
@@ -23,7 +23,7 @@ RUN \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   GOBIN=/cues/v0.9.1 go install -trimpath cuelang.org/go/cmd/cue@v0.9.1
 
-FROM golang:1.22.3
+FROM golang:1.22.4
 
 RUN apt-get update && apt-get install -y tree
 
