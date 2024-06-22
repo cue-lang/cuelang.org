@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "042f8002_ddf650e5",
+        "filename": "content/docs/howto/conditionally-include-cue-files-using-build-attributes/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T14:46:31Z",
+      "side": 1,
+      "message": "I would argue that \"in this `example` package is implied given the paragraph before. And including it almost suggests that `foo.cue` and `bar.cue` do not belong to the package.",
+      "range": {
+        "startLine": 44,
+        "startChar": 31,
+        "endLine": 44,
+        "endChar": 56
+      },
+      "revId": "96cc2405ac54b69a3d1d1f4762cff67c33c9ce1a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
