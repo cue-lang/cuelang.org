@@ -3,7 +3,7 @@ module github.com/cue-lang/cuelang.org
 go 1.22
 
 require (
-	cuelang.org/go v0.9.0-alpha.5
+	cuelang.org/go v0.9.1
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/fsnotify/fsnotify v1.6.0
