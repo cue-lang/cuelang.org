@@ -10,7 +10,7 @@ import (
 )
 
 versions: {
-	go:            "go1.22.3"
+	go:            "go1.22.4"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
@@ -24,7 +24,7 @@ versions: {
 	_cueVersionList: list.SortStrings([
 		for k, _ in versionSet {k},
 	])
-	testscript: "v1.11.0"
+	testscript: "v1.12.0"
 }
 
 // _contentDefaults is a recursive template for setting defaults
