@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b9c4f75_a3889b22",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:19:04Z",
+      "side": 1,
+      "message": "I think this first sentence needs to explain more simply what is going on here. I think as currently written it assumes that \"inject\" is clear, and also that \"values\". I would drop the part of the sentence \"across various situations and different `cue` subcommands\" and use that saved space for either rewording, or a second sentence to help with the explanation.\n\nAs explain below I don\u0027t think we need the caveat in the sentence \"All the techniques...\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 70
+      },
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6207c3ec_3bc5699a",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:19:04Z",
+      "side": 1,
+      "message": "Which commands do not support `-t`? You don\u0027t call out any exceptions below as far as I can see. I would drop this caveat here, because generally speaking injection is supported wherever evaluation is support, which is everywhere.",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ce31fdb_4160f989",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:19:04Z",
+      "side": 1,
+      "message": "I would avoid this suggestion. It\u0027s brittle and so carries little weight.\n\nFWIW we are just about to publish a proposal for native embedding as part of https://github.com/cue-lang/cue/issues/2031 so injection will be slightly less important for structured values.",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af8c274d_d51d73ea",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:19:04Z",
+      "side": 1,
+      "message": "I don\u0027t think this section carries its own weight. It also lengthens the howto even more.",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cf375a8_6dfbff06",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-22T18:19:04Z",
+      "side": 1,
+      "message": "I would drop this because it\u0027s pretty esoteric. I\u0027ve never used it FWIW, and it just makes this howto longer. Someone interested will read the help text.",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
