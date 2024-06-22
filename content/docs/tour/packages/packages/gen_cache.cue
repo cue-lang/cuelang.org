@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									tour: "1myZtHkJmb0947BaB3GUwCQN3s47nkmqOeDmeMsAV/A="
+									tour: "1q1wLbJ1VZQ/E7KasaRB/o9R0+P21uXwTgWi0YGsHr0="
 								}
 							}
 						}

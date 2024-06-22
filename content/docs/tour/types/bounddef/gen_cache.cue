@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								code: {
-									identifiers: "8aoFatXtJlWc0eS1cicgVEwSUIrLdOHXlV0S2cs3IqU="
-									tour:        "l0X4ePXUlkGzYj6wB01jrchcLJaNB64vxlVFSNTDm+U="
+									identifiers: "OK2XmzFLaTJ38YySf9tGiN/qALiTRgP/pnkjudxie2k="
+									tour:        "vPqLQhd6vgDT85Ri3snYTdxIbdi3jpPf6IwVzfYbaew="
 								}
 							}
 						}
