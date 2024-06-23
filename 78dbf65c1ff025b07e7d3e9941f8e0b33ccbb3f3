@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b741dc28_856b3bc5",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-23T17:20:15Z",
+      "side": 1,
+      "message": "I\u0027ve made that change here, and for the other examples on this page, but I\u0027m personally not a fan. I feel the language alignment slightly increases technical correctness whilst non-trivially sacrificing clarity for the newcomer. I\u0027ll leave it up to you if I should include these comment changes in this CL.",
+      "parentUuid": "6139891b_2dfc7d9b",
+      "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bf67cebb_34683d79",
         "filename": "content/docs/tour/references/aliases/en.md",
         "patchSetId": 1
@@ -54,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c836f0a3_c83eb539",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-23T17:20:15Z",
+      "side": 1,
+      "message": "Ditto.",
+      "parentUuid": "bf67cebb_34683d79",
+      "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0f9992a7_1c75f9c8",
         "filename": "content/docs/tour/references/aliases/en.md",
         "patchSetId": 1
@@ -65,6 +101,24 @@
       "writtenOn": "2024-06-22T18:05:17Z",
       "side": 1,
       "message": "Ditto re the spec language of this alias appearing before the value. \n\nWhy not call this top-level field `c`? There are too many `x`\u0027s going on otherwise, which confuses things. You can then be precise about the fact that the field `c.d.f` uses the alias `C` to refer to `C.x` because as `c.d.e` shows a plain `x` in that scope would resolve to `c.d.x`.",
+      "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f48ee42_b1d31276",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-23T17:20:15Z",
+      "side": 1,
+      "message": "\u003e Ditto re the spec language of this alias appearing before the value.\n\nDone, as above.\n\n\u003e Why not call this top-level field c? \n\nThis CL began with [a user asking in Slack](https://cuelang.slack.com/archives/CLT4FD7KP/p1717104259870869) why the alias even existed, and why the top-level field (called `c` on [the current page](https://cuelang.org/docs/tour/references/aliases/)) couldn\u0027t be referenced directly.\n\nAs I call out in the commit message, for the alias to be **required**, in the tour\u0027s context-free data structure, two artificial problems need to be created for the alias to overcome: \n\n1. the inner shadowing\n2. blocking the use of a path from the structure\u0027s root\n\nAs mentioned in the commit, I\u0027ve not been able to come up with a *simpler* canned example that features both these problems, and therefore requires an alias to be used. If we rename the top-level field `c`, problem 2 stops striking and the user\u0027s original confusion isn\u0027t handled.\n\nI\u0027m happy with either approach - as per the commit, I think this update slightly complicates the example in order to mandate the use of an alias, and I can\u0027t see a way to satisfy both goals of not decreasing simplicity whilst also blocking the path from the root.\n\nIt might also solve the user\u0027s original confusion if we simply added to the comment. But I\u0027m not sure that variations on \"we use an alias here to access a shadowed field, even though it isn\u0027t actually shadowed because you can access it from the root; but this is how you\u0027d do it if for some reason you couldn\u0027t access the root\" would increase the user\u0027s clarity. I feel the next question to pop up in Slack would probably be \"but when *wouldn\u0027t* I be able to \u0027access the root\u0027?\", and we might as well provide a cast-iron (if 5% messier) example of a situation that definitely requires an alias.\n\nThat was the position I approached this change from, but the solution is totally your call :-) Let me know your thoughts!",
+      "parentUuid": "0f9992a7_1c75f9c8",
       "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
