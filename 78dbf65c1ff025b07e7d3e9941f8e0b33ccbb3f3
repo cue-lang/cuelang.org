@@ -121,6 +121,24 @@
       "parentUuid": "0f9992a7_1c75f9c8",
       "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ea7c6d5_310c6ea7",
+        "filename": "content/docs/tour/references/aliases/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T14:29:15Z",
+      "side": 1,
+      "message": "We discussed this offline and I\u0027m handing back to you here.",
+      "parentUuid": "7f48ee42_b1d31276",
+      "revId": "78dbf65c1ff025b07e7d3e9941f8e0b33ccbb3f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
