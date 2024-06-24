@@ -26,11 +26,17 @@ then
 	# stale caches.
 	readonlycache=""
 
-	if [[ "${CI:-}" == "true" ]]
-	then
-		# See comment above for readonlycache
-		skipcache="--skipcache"
-	else
+	# Default to skipping the reading of a cache unless we are told otherwise
+	# safe not to do so.
+	skipcache="--skipcache"
+
+	# When running locally or in a workflow that we determine to be safe for
+	# skipping the cache, do so.
+	if [[ "${CI:-}" != "true" || "${CI_NO_SKIP_CACHE:-}" == "true" ]]; then
+		skipcache=""
+	fi
+
+	if [[ "${CI:-}" != "true" ]]; then
 		# Locally we don't want to minify the results of Hugo to help make
 		# debugging easier
 		minify=""
