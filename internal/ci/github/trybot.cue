@@ -75,6 +75,19 @@ workflows: trybot: _repo.bashWorkflow & {
 				run:  "! ./_scripts/noWriteCache.bash HEAD"
 			},
 
+			// Set CI_NO_SKIP_CACHE if we detect we are in a situation where we
+			// can safely read the cache. To not be specific to the trybot repo we
+			// instead say it's safe to read the cache for any repo other than the
+			// main repo.
+			json.#step & {
+				if: "github.repository != '\(_repo.githubRepositoryPath)'"
+				run: """
+					echo 'Setting CI_NO_SKIP_CACHE=true'
+					echo "CI_NO_SKIP_CACHE=true" >> $GITHUB_ENV
+
+					"""
+			},
+
 			_repo.earlyChecks,
 
 			for v in _installDockerMacOS {v},

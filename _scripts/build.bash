@@ -26,11 +26,33 @@ then
 	# stale caches.
 	readonlycache=""
 
-	if [[ "${CI:-}" == "true" ]]
-	then
-		# See comment above for readonlycache
-		skipcache="--skipcache"
-	else
+	# Default to skipping the reading of a cache unless we are told otherwise
+	# safe not to do so.
+	skipcache="--skipcache"
+
+	if [[ "${CI:-}" == "true" && "${CI_NO_SKIP_CACHE:-}" == "true" ]]; then
+		# Safe to read from the cache when we are told it's safe to do so in CI
+		skipcache=""
+
+		# But as a means of helping to flush out changes to a piece of content
+		# that are not reproducible, we remove an gen_cache.cue files that
+		# changed as part of this commit. If the associated content is
+		# reproducible then these files will be recreated and we will have a
+		# clean commit at the end of the process.
+		for i in $(git show --pretty="" --name-only HEAD); do
+			if [[ "$(basename "$i")" == "gen_cache.cue" ]]; then
+				# We force here because the gen_cache.cue file in question might
+				# have been removed as part of this commit. We just know the file
+				# changed.
+				rm -f $i
+			fi
+		done
+	fi
+
+	if [[ "${CI:-}" != "true" ]]; then
+		# Safe to read from the cache locally too.
+		skipcache=""
+
 		# Locally we don't want to minify the results of Hugo to help make
 		# debugging easier
 		minify=""
