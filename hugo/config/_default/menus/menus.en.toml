@@ -29,23 +29,29 @@
     pre = "slack"
     weight = 201
 [[icons]]
+    identifier = "discord"
+    name = "Discord"
+    url = "https://discord.gg/Tnf2CdzRjr"
+    pre = "social-discord"
+    weight = 202
+[[icons]]
     identifier = "x-twitter"
     name = "X (Twitter)"
     url = "https://twitter.com/cue_lang"
     pre = "social-x"
-    weight = 202
+    weight = 203
 [[icons]]
     identifier = "bluesky"
     name = "Bluesky"
     url = "https://bsky.app/profile/cuelang.org"
     pre = "social-bluesky"
-    weight = 203
+    weight = 204
 [[icons]]
     identifier = "youtube"
     name = "YouTube"
     url = "https://www.youtube.com/@cuelang/videos"
     pre = "social-youtube"
-    weight = 204
+    weight = 205
 
 # CTA
 [[cta]]
@@ -124,19 +130,24 @@
     weight = 441
 [[footer]]
     parent = "column4"
+    name = "Discord"
+    url = "https://discord.gg/Tnf2CdzRjr"
+    weight = 442
+[[footer]]
+    parent = "column4"
     name = "X (Twitter)"
     url = "https://twitter.com/cue_lang"
-    weight = 442
+    weight = 443
 [[footer]]
     parent = "column4"
     name = "Bluesky"
     url = "https://bsky.app/profile/cuelang.org"
-    weight = 443
+    weight = 444
 [[footer]]
     parent = "column4"
     name = "YouTube"
     url = "https://www.youtube.com/@cuelang/videos"
-    weight = 444
+    weight = 445
 
 # Legal
 [[legal]]
