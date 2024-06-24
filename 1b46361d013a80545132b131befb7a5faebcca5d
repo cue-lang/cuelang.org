@@ -16,6 +16,40 @@
       "message": "@mvdan@mvdan.cc - mind giving the Go code a quick glance please? Ultimately the changes here were motivated by our original discussion to remove the Go version from the `preprocessor` cache key, which then caused a brief tangent for me to optimise the approach with respect to our use of docker.",
       "revId": "1b46361d013a80545132b131befb7a5faebcca5d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee2ae301_3ce87ad6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-24T12:23:35Z",
+      "side": 1,
+      "message": "SGTM, thanks for taking the time to do this! Last week when I did the discord changes, any rebuild with non-trivial changes would spin my CPU for over a minute.",
+      "revId": "1b46361d013a80545132b131befb7a5faebcca5d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b54d6049_eafe32c1",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-06-24T12:23:35Z",
+      "side": 1,
+      "message": "at some point you could/should lift this restriction, as we\u0027ve discussed in the past it\u0027s always a bit wonky to have the \"guest\" container write files back to the host filesystem directly. if the guest has to return or write some files, that could be done via some sort of RPC like writing a txtar archive to stdout.",
+      "revId": "1b46361d013a80545132b131befb7a5faebcca5d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
