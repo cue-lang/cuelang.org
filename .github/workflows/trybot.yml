@@ -73,6 +73,10 @@ jobs:
       - if: github.event.inputs.scheduled == 'true'
         name: Fail if Preprocessor-No-Write-Cache trailer is present for a scheduled workflow run
         run: '! ./_scripts/noWriteCache.bash HEAD'
+      - if: github.repository != 'cue-lang/cuelang.org'
+        run: |
+          echo 'Setting CI_NO_SKIP_CACHE=true'
+          echo "CI_NO_SKIP_CACHE=true" >> $GITHUB_ENV
       - name: Early git and code sanity checks
         run: |-
           # Ensure the recent commit messages have Signed-off-by headers. We
