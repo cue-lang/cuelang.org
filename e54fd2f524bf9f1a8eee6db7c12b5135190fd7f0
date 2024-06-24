@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d1b165f3_8af9f0fb",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-06-24T08:31:11Z",
+      "side": 1,
+      "message": "I could do that, but installing Maven (see below) will bring in the default Debian (old) version of the JDK, so we will end up with two JDKs in the image.",
+      "parentUuid": "fcc81e9d_374b39ca",
+      "revId": "e54fd2f524bf9f1a8eee6db7c12b5135190fd7f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3553783c_438bbec9",
         "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
         "patchSetId": 9
@@ -31,6 +49,24 @@
       "writtenOn": "2024-06-13T15:50:29Z",
       "side": 1,
       "message": "I don\u0027t know if the Adoptium repos contain an updated version of Maven, but I\u0027d hope that the Debian version (https://packages.debian.org/search?keywords\u003dmaven) would suffice, and hence could be installed on line 28, instead of here.",
+      "revId": "e54fd2f524bf9f1a8eee6db7c12b5135190fd7f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "429da80b_54e929ce",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-06-24T08:31:11Z",
+      "side": 1,
+      "message": "The problem is that installing Maven that way will bring in the default Debian JDK as a dependency, which we (probably) don\u0027t want.",
+      "parentUuid": "3553783c_438bbec9",
       "revId": "e54fd2f524bf9f1a8eee6db7c12b5135190fd7f0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
