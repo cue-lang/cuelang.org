@@ -16,6 +16,24 @@
       "message": "@github@hello.jonathanmatthews.com - when reviewing this CL (not the top of the stack), please give it (this CL) a go on your local machine:\n\n```\n./_scripts/runPreprocessor.bash execute\n```\n\nThis CL will cache miss (as expected) but the runtime should be significantly improved.",
       "revId": "666c5ef9e2d2d3e36020ef0a672a3fb9d1d4484e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "735f9490_ea4bc8e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T11:39:50Z",
+      "side": 1,
+      "message": "I don\u0027t have a direct wall-clock runtime comparison (as I\u0027m not running it against current tip again unless there\u0027s a dire emergency and/or I need to cook an egg on my laptop!), but running with this patchset does feel like a significant improvement.\n\nI noticed my system load seemed to be under 100, unlike my previous experience, at cue-lang/cue#3014, where the load of 254 was untenable. A simplistic check of `ps|grep docker` in a loop recorded a peak of 620 invocations. That doesn\u0027t necessarily correlate with 620 active containers (and I\u0027d expect a load above 100 if it did), but it compares positively with the 743 noticed in cue-lang/cue#3014.",
+      "parentUuid": "1218ac66_f39b47f3",
+      "revId": "666c5ef9e2d2d3e36020ef0a672a3fb9d1d4484e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

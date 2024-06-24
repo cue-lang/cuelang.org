@@ -1,6 +1,52 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "72fbdbe8_ee7362a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T11:39:50Z",
+      "side": 1,
+      "message": "`interfere`",
+      "range": {
+        "startLine": 21,
+        "startChar": 45,
+        "endLine": 21,
+        "endChar": 53
+      },
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5d03a70_ebd8b03c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T11:39:50Z",
+      "side": 1,
+      "message": "`compile`",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 8
+      },
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "6f10f42c_a4e13236",
@@ -14,6 +60,46 @@
       "writtenOn": "2024-06-22T15:42:20Z",
       "side": 1,
       "message": "The test failure on patchset 5 appears to have been a flake",
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "715f774f_f669b4a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T11:39:50Z",
+      "side": 1,
+      "message": "I\u0027ve +2\u0027d so as not to block you, but I don\u0027t feel I\u0027ve done more than a cursory \"does that make sense\" review on the Go changes.",
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a90da85_f47dc9e5",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T11:39:50Z",
+      "side": 1,
+      "message": "Is unity in scope for this repo?",
+      "range": {
+        "startLine": 300,
+        "startChar": 31,
+        "endLine": 300,
+        "endChar": 36
+      },
       "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
