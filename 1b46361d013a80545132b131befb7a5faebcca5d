@@ -50,6 +50,24 @@
       "message": "at some point you could/should lift this restriction, as we\u0027ve discussed in the past it\u0027s always a bit wonky to have the \"guest\" container write files back to the host filesystem directly. if the guest has to return or write some files, that could be done via some sort of RPC like writing a txtar archive to stdout.",
       "revId": "1b46361d013a80545132b131befb7a5faebcca5d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71378958_dda0de49",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T13:20:17Z",
+      "side": 1,
+      "message": "With the changes made in this CL that\u0027s now trivial, so I\u0027ve done it.",
+      "parentUuid": "b54d6049_eafe32c1",
+      "revId": "1b46361d013a80545132b131befb7a5faebcca5d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
