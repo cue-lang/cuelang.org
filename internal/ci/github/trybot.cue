@@ -397,9 +397,9 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	#os: "${{ runner.os }}"
 
 	#additionalCacheDirs: [
-		"/var/lib/docker",
+		"~/.cache/dockercache",
 		"~/.cache/node-gyp",
-		"~/.npm/",
+		"~/.npm",
 		"${{ github.workspace }}/playground/.webpack_cache",
 	]
 
