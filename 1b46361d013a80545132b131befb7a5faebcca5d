@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69a5825a_be170938",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T12:10:15Z",
+      "side": 1,
+      "message": "@mvdan@mvdan.cc - mind giving the Go code a quick glance please? Ultimately the changes here were motivated by our original discussion to remove the Go version from the `preprocessor` cache key, which then caused a brief tangent for me to optimise the approach with respect to our use of docker.",
+      "revId": "1b46361d013a80545132b131befb7a5faebcca5d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
