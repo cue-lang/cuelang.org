@@ -22,6 +22,30 @@
       },
       "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "987eacf2_f90a6e23",
+        "filename": "internal/ci/vendor/vendor_tool.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T12:08:30Z",
+      "side": 0,
+      "message": "Called out in the commit message to be more precise.",
+      "parentUuid": "2dd565be_bba4fc54",
+      "range": {
+        "startLine": 29,
+        "startChar": 50,
+        "endLine": 29,
+        "endChar": 56
+      },
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
