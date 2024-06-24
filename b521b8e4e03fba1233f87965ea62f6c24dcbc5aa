@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dd565be_bba4fc54",
+        "filename": "internal/ci/vendor/vendor_tool.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T11:42:17Z",
+      "side": 0,
+      "message": "Is this the \"bring inline with site configuration\" in the commit message, or is the alignment worth calling out more explicitly?",
+      "range": {
+        "startLine": 29,
+        "startChar": 50,
+        "endLine": 29,
+        "endChar": 56
+      },
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
