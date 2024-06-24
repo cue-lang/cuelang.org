@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "28067c70_6fb62a0e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T12:08:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72fbdbe8_ee7362a4",
+      "range": {
+        "startLine": 21,
+        "startChar": 45,
+        "endLine": 21,
+        "endChar": 53
+      },
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5d03a70_ebd8b03c",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-24T11:39:50Z",
       "side": 1,
       "message": "`compile`",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 8
+      },
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a2c8771_c4551cf4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T12:08:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5d03a70_ebd8b03c",
       "range": {
         "startLine": 47,
         "startChar": 0,
@@ -94,6 +142,30 @@
       "writtenOn": "2024-06-24T11:39:50Z",
       "side": 1,
       "message": "Is unity in scope for this repo?",
+      "range": {
+        "startLine": 300,
+        "startChar": 31,
+        "endLine": 300,
+        "endChar": 36
+      },
+      "revId": "b521b8e4e03fba1233f87965ea62f6c24dcbc5aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a8f4ced_d850325c",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T12:08:30Z",
+      "side": 1,
+      "message": "Copy-paste comment from elsewhere. Adjusted.",
+      "parentUuid": "3a90da85_f47dc9e5",
       "range": {
         "startLine": 300,
         "startChar": 31,

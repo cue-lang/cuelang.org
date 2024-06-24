@@ -52,6 +52,24 @@
       "parentUuid": "735f9490_ea4bc8e4",
       "revId": "666c5ef9e2d2d3e36020ef0a672a3fb9d1d4484e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0df97c81_63be9e21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-24T12:08:30Z",
+      "side": 1,
+      "message": "Re number of `docker` invocations. That will actually increase by 1. The big change is that we start a single container (actually we start as many as we have unique docker images, but that number is currently 1) and then `docker exec` against that container repeatedly. Which is much lighter. The prompt for me even making this change over the weekend was that I was starting to see Docker itself flake because I was putty so much load via `docker run` for each of the formatting calls, code nodes, and multi-step scripts. But the load (and latency) should be significantly reduced, and CI times appear to verify that.\n\nRe `gen_cache.cue` files not being regenerated. Yes, that is expected as this CL is marked with `Preprocessor-No-Write-Cache: true`",
+      "parentUuid": "96c86499_f55562c2",
+      "revId": "666c5ef9e2d2d3e36020ef0a672a3fb9d1d4484e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
