@@ -22,15 +22,24 @@ then
 	time="time -p"
 
 	# In CI or locally we want to write to cache files. But per below we only
-	# skip initially reading the cache in the case of CI. This is how we detect
-	# stale caches.
+	# skip initially reading the cache in the case of CI when CI_NO_SKIP_CACHE.
+	# This is how we detect stale caches.
 	readonlycache=""
 
-	if [[ "${CI:-}" == "true" ]]
-	then
-		# See comment above for readonlycache
-		skipcache="--skipcache"
-	else
+	# Default to skipping the reading of a cache unless we are told otherwise.
+	skipcache="--skipcache"
+
+	if [[ "${CI:-}" == "true" && "${CI_NO_SKIP_CACHE:-}" == "true" ]]; then
+		# Safe to read from the cache when we are told it's safe to do so in CI.
+		# CI_NO_SKIP_CACHE is set in trybot.cue when we are detected as not
+		# running in the main github repo, i.e. on the trybot repo or a PR fork.
+		skipcache=""
+	fi
+
+	if [[ "${CI:-}" != "true" ]]; then
+		# Safe to read from the cache locally.
+		skipcache=""
+
 		# Locally we don't want to minify the results of Hugo to help make
 		# debugging easier
 		minify=""
