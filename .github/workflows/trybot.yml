@@ -196,9 +196,9 @@ jobs:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
-            /var/lib/docker
+            ~/.cache/dockercache
             ~/.cache/node-gyp
-            ~/.npm/
+            ~/.npm
             ${{ github.workspace }}/playground/.webpack_cache
           key: ${{ runner.os }}-1.22.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.22.0
@@ -210,9 +210,9 @@ jobs:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
-            /var/lib/docker
+            ~/.cache/dockercache
             ~/.cache/node-gyp
-            ~/.npm/
+            ~/.npm
             ${{ github.workspace }}/playground/.webpack_cache
           key: ${{ runner.os }}-1.22.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.22.0
