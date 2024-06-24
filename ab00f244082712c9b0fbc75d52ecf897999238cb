@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f7d21b1_8af5ddd8",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T15:36:51Z",
+      "side": 1,
+      "message": "I\u0027ve added a brief preamble giving some context, and have shortened the existing prose.",
+      "parentUuid": "1b9c4f75_a3889b22",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 70
+      },
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6207c3ec_3bc5699a",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-06-22T18:19:04Z",
       "side": 1,
       "message": "Which commands do not support `-t`? You don\u0027t call out any exceptions below as far as I can see. I would drop this caveat here, because generally speaking injection is supported wherever evaluation is support, which is everywhere.",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6451143c_4a564806",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T15:36:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6207c3ec_3bc5699a",
       "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18b9bb61_fc32c7fb",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T15:36:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ce31fdb_4160f989",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af8c274d_d51d73ea",
@@ -75,6 +135,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0df395e7_860ba720",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T15:36:51Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "af8c274d_d51d73ea",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3cf375a8_6dfbff06",
@@ -88,6 +166,24 @@
       "writtenOn": "2024-06-22T18:19:04Z",
       "side": 1,
       "message": "I would drop this because it\u0027s pretty esoteric. I\u0027ve never used it FWIW, and it just makes this howto longer. Someone interested will read the help text.",
+      "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeb4a43e_06767eaa",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-24T15:36:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3cf375a8_6dfbff06",
       "revId": "ab00f244082712c9b0fbc75d52ecf897999238cb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
