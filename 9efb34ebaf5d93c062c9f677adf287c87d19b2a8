@@ -51,6 +51,24 @@
       "message": "I\u0027m not the best person to review this, as I do not know the docs architecture.\n\nContent is fine, with the exception that, as mentioned before, this should be published as an integration instead of / in addition to it being published as a tutorial.",
       "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40bd14c2_30445d99",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-06-25T09:16:14Z",
+      "side": 1,
+      "message": "Yep, adding Java to integrations and linking to this one in a subsequent CL.",
+      "parentUuid": "9283db91_67b14d06",
+      "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
