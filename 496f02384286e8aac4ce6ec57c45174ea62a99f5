@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "375bee38_25d104a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-25T10:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4d12a3b_0800005a",
+      "revId": "496f02384286e8aac4ce6ec57c45174ea62a99f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "595a5769_0daea982",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -43,6 +61,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "893582ed_50c9c84b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-25T10:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "595a5769_0daea982",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 17
+      },
+      "revId": "496f02384286e8aac4ce6ec57c45174ea62a99f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "7ee9a118_c99310d8",
         "filename": "_scripts/build.bash",
         "patchSetId": 4
@@ -54,6 +96,30 @@
       "writtenOn": "2024-06-25T09:01:26Z",
       "side": 1,
       "message": "nit: grammar(?)",
+      "range": {
+        "startLine": 29,
+        "startChar": 62,
+        "endLine": 30,
+        "endChar": 7
+      },
+      "revId": "496f02384286e8aac4ce6ec57c45174ea62a99f5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7c75488_d85d2507",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-06-25T10:11:06Z",
+      "side": 1,
+      "message": "Reworded.",
+      "parentUuid": "7ee9a118_c99310d8",
       "range": {
         "startLine": 29,
         "startChar": 62,
