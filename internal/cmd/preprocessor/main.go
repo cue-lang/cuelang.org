@@ -22,5 +22,6 @@ import (
 )
 
 func main() {
+	// This is a comment
 	os.Exit(cmd.Main())
 }
