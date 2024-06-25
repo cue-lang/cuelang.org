@@ -30,6 +30,7 @@ Along the way you will:
 Note that this guide depends on a pre-release version of CUE:
 
 {{{with script "en" "cue version"}}}
+echo hello
 #ellipsis 1
 cue version
 {{{end}}}
