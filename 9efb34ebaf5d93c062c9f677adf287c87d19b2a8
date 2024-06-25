@@ -34,6 +34,23 @@
       "parentUuid": "924b4404_822b0b43",
       "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9283db91_67b14d06",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013536
+      },
+      "writtenOn": "2024-06-25T08:49:53Z",
+      "side": 1,
+      "message": "I\u0027m not the best person to review this, as I do not know the docs architecture.\n\nContent is fine, with the exception that, as mentioned before, this should be published as an integration instead of / in addition to it being published as a tutorial.",
+      "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
