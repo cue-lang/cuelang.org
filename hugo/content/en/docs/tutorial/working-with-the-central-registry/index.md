@@ -22,7 +22,9 @@ Along the way you will:
 
 Note that this guide depends on a pre-release version of CUE:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
+```text { title="TERMINAL" codeToCopy="ZWNobyBoZWxsbwpjdWUgdmVyc2lvbg==" }
+$ echo hello
+hello
 $ cue version
 cue version v0.9.1
 ...

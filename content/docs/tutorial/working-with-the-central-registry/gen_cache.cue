@@ -10,8 +10,8 @@ package site
 								"initial config.cue": "h7lf/nfA7JECNhpCYJbEua7Qr0NsykbbCk779Y3BLao="
 							}
 							multi_step: {
-								hash:       "Q8MQ7HHHSOBJJTS3EORL7567QDOCI7TDGGTPM3G7IBR70C5KG7E0===="
-								scriptHash: "309JG38ICM25CV4OUDBDNSEHGI2PDVAS73RPFA0JKVHBTJHU8CH0===="
+								hash:       "DBMF9RFOMMFPG6HJTUG13QU0UH87F1PHFUPTESK3SRUV95447QIG===="
+								scriptHash: "UER8O7G852J9QTE1OB1DU0VQM7NJ7ARGHCNUS4SMQ6M84QPF0UOG===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -26,6 +26,14 @@ package site
 											"""
 									exitCode: 0
 									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "echo hello"
+									exitCode: 0
+									output: """
+											hello
+
+											"""
 								}, {
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
