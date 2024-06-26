@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fca25fc_e17bca58",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-26T09:05:49Z",
+      "side": 1,
+      "message": "The shortlog to use in the context of the content presented is:\n\n\u003e docs/tutorial: using CUE from Java",
+      "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c899893_47eb2462",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-26T09:05:49Z",
+      "side": 1,
+      "message": "To save a reviewer hunting through the site to find added/modified pages, each page that needs a reviewer to examine it should be listed as a trailer with a `Preview-Path` key and the URL path as the value. e.g.:\n\n\u003e Preview-Path: /docs/tutorial/cue-java-api/",
+      "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "924b4404_822b0b43",
@@ -67,6 +101,23 @@
       "side": 1,
       "message": "Yep, adding Java to integrations and linking to this one in a subsequent CL.",
       "parentUuid": "9283db91_67b14d06",
+      "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd4e5503_fe363292",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-06-26T09:05:49Z",
+      "side": 1,
+      "message": "I think that this content should be split up and presented as a few different guides. Right now it\u0027s serving multiple user needs, and it feels too long to be a single, please-follow-it-from-top-to-bottom tutorial for the newcomer.\n\n### Splitting this page\n\nWe\u0027re using Diataxis (https://diataxis.fr/) as our north star for docs. One of the more subtle distinctions the framework makes is between Tutorials and How-to Guides: https://diataxis.fr/tutorials-how-to/. That page is *extremely* worth reading (as is the whole site, which can be run through in under an hour and contains really valuable guidance!)\n\nI think the most relevant distinction the framework makes between these two types of content is this:\n\n\u003e A tutorial’s purpose is **to help the pupil acquire basic competence**.\n\u003e A how-to guide’s purpose is **to help the already-competent user perform a particular task correctly**.\n\nOne way it frames this difference is this:\n\n\u003e A tutorial **provides a learning experience**. People learn skills through practical, hands-on experience. What matters in a tutorial is what the learner does, and what they experience while doing it.\n\u003e A how-to guide **directs the user’s work**.\n\nAnother *critical* distinction is this:\n\n\u003e The tutorial follows a **carefully-managed path**, starting at a given point and working to a conclusion. Along that path, the learner must have the encounters that the lesson requires.\n\u003e The how-to guide aims for a successful result, and guides the user along the safest, surest way to the goal, but **the path can’t be managed**: it’s the real world, and anything could appear to disrupt the journey.\n\nWith that final distinction squarely in mind, I believe that this page should be split into:\n\n- a how-to guide that takes the user through compiling `libcue` and producing `target/CUE-0.0-devel.jar`.\n- a tutorial for each Java program that the page currently presents, with the how-to guide as a pre-requisite.\n\nThis will force any tricky, real-world environmental differences to be handled in the how-to guide by explicitly calling out and addressing choices that the user might need to make (e.g. libcue target filename and dynamic loader path; JAR target filename and directory), so that each tutorial can contain a single-path learning experience that *doesn\u0027t* require the learner to make any choices.\n\nThis would align well with the different aims of those two classes of documentation: learning-experience vs achieving-a-result. The user will (I submit!) be more commonly looking to \"install CUE with Java\" (i.e. following the how-to) a limited number of times, hence doesn\u0027t need to internalise any *lessons* from the following those steps. If they need to re-\"install\" the software, they\u0027ll simply follow the how-to again.\n\nEach tutorial\u0027s learning context should then be focused on the things we want them to gain competence at: actually *using* the installed Java+CUE libraries. Hence the shorter tutorial-per-Java-program where the learning path can be tightly constrained and constructed, avoiding choices and delivering learning-by-experience.\n\nI\u0027ll finish my review here, as it feels premature to do a review of the content presented in this single page before any split is made.",
       "revId": "9efb34ebaf5d93c062c9f677adf287c87d19b2a8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
