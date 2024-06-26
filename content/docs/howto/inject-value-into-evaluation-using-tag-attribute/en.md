@@ -13,8 +13,9 @@ into an evaluation. As described in the
 reference, CUE allows information to be introduced, or *injected*, by using tag
 attributes and tag variables.
 
-This guide demonstrates how to use tag attributes to inject values into CUE
-evaluations. <!-- TODO: add link to tag variables guide when it's available -->
+This guide demonstrates how to use tag attributes to inject arbitrary values
+into CUE evaluations. A separate guide describes how to inject
+[system information]({{< relref "/docs/howto/inject-system-information-into-evaluation-using-tag-variable" >}}).
 The techniques shown here are supported by the following commands:
 
 {{< columns>}}
@@ -131,7 +132,7 @@ affect which CUE files are included in an evaluation. Read TODO for more informa
 
 ## Related content
 
+- {{< linkto/related/howto "inject-system-information-into-evaluation-using-tag-variable" >}}
 - {{< linkto/related/reference "cli/cue-injection" >}} -- the `cue` command's help
   text for value and file injection
-<!-- TODO: link to similar howto guide about -T tag variables -->
 <!-- TODO: link to guide about build attributes? -->
