@@ -174,6 +174,12 @@ config: #config & {
 			from:   "/docs/tutorials/tour/packages"
 			to:     "/docs/tour/packages/"
 			status: 301
+		}, {
+			from: "/-/slack*"
+			to:   "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
+		}, {
+			from: "/-/discord*"
+			to:   "https://discord.gg/Tnf2CdzRjr"
 		}]
 }
 
