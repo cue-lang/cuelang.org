@@ -25,13 +25,13 @@
 [[icons]]
     identifier = "slack"
     name = "Slack"
-    url = "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
+    url = "/s/slack"
     pre = "slack"
     weight = 201
 [[icons]]
     identifier = "discord"
     name = "Discord"
-    url = "https://discord.gg/Tnf2CdzRjr"
+    url = "/s/discord"
     pre = "social-discord"
     weight = 202
 [[icons]]
@@ -126,12 +126,12 @@
 [[footer]]
     parent = "column4"
     name = "Slack"
-    url = "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
+    url = "/s/slack"
     weight = 441
 [[footer]]
     parent = "column4"
     name = "Discord"
-    url = "https://discord.gg/Tnf2CdzRjr"
+    url = "/s/discord"
     weight = 442
 [[footer]]
     parent = "column4"
