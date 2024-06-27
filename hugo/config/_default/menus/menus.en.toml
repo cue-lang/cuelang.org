@@ -82,6 +82,11 @@
     name = "Playground"
     url = "/play/"
     weight = 412
+[[footer]]
+    parent = "column1"
+    name = "Download"
+    url = "https://github.com/cue-lang/cue/releases"
+    weight = 413
 
 [[footer]]
     identifier = "column2"
@@ -103,16 +108,7 @@
     name = "Code of Conduct"
     url = "/docs/reference/code-of-conduct/"
     weight = 422
-[[footer]]
-    identifier = "column3"
-    name = "About"
-    url = "#"
-    weight = 402
-[[footer]]
-    parent = "column3"
-    name = "Download"
-    url = "https://github.com/cue-lang/cue/releases"
-    weight = 430
+
 [[footer]]
     identifier = "column4"
     name = "Connect"
