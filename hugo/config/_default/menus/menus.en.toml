@@ -108,6 +108,16 @@
     name = "Code of Conduct"
     url = "/docs/reference/code-of-conduct/"
     weight = 422
+[[footer]]
+    parent = "column2"
+    name = "Slack Workspace"
+    url = "/s/slack"
+    weight = 423
+[[footer]]
+    parent = "column2"
+    name = "Discord Server"
+    url = "/s/discord"
+    weight = 424
 
 [[footer]]
     identifier = "column4"
@@ -119,16 +129,6 @@
     name = "GitHub"
     url = "https://github.com/cue-lang/cue"
     weight = 440
-[[footer]]
-    parent = "column4"
-    name = "Slack"
-    url = "/s/slack"
-    weight = 441
-[[footer]]
-    parent = "column4"
-    name = "Discord"
-    url = "/s/discord"
-    weight = 442
 [[footer]]
     parent = "column4"
     name = "X (Twitter)"
