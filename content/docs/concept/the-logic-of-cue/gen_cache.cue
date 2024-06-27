@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							code: {
-								"order unaware":          "T9jICfoEyZjHj4rCV+OcyyUB9fyR1LXkDj10BgUZgYk="
-								"new order":              "CsZ6nb/zHEXau4x3O7pg7lpYkPzeeY20/4V/Mi+gq9w="
-								"allowed values":         "LslaatxmkNaqj3VirURL/C0xdBFjDb1jTCKh3TDwzds="
-								default:                  "gY4XNAc2aiKU2gh7K52RXwncz77KLus9mNoq6WFDJ08="
-								"revisit allowed values": "j2khUmyPI4hbajOiTfmh+wRJrwA+h11uyM36eQa0M5w="
-								"revisit default":        "zwTgKs54QeeM5xY3+VH3bJmqRRjizzRV5T672l6ev6E="
-								acmeMonitoring:           "beoewYxfwymnqCTcGrtMAzT3tcH330JTqlQ/Xn+NoRY="
-								cycles:                   "SkZa3WzLkCWyI5ppMHMDV8P5QM7Nyxh4OUSVj7aQsr4="
-								sums:                     "kD4VjVWbEe1Lg2+GgcT2U7D/PSqlnJ+c1j4F7FHCTzY="
-								"sums answers":           "krItEDprHb2unH2fOpXB8QBuMQW1Y5zJOqh9qgU3xi8="
+								"order unaware":          "4TQsqsveLNT38ymOby5mMnYKSGeX2BuQzbGI48efU2I="
+								"new order":              "MrCw36EQ9eUhXO9B70+KGmcFwxEgojHHLtIMl1onjbU="
+								"allowed values":         "sMBSX/doksoLtdCD184/hv2U5D1livGpdGCqXxSs8N4="
+								default:                  "X+g3Z05kNzrjm96DL85morCxXrR0Twar2NggotetmZ8="
+								"revisit allowed values": "A1O74kzsr5XzfWPnw+cNs7Ax3bxvwz1THPSqqhZSmpY="
+								"revisit default":        "TybbpiSWeyd8q3JZCMVqdYjb4J3LlWxngLrpvUYs3cs="
+								acmeMonitoring:           "bYvxd69fJ0kKr++eQfcuGLSOlS4VQANqIdzGBEi9be4="
+								cycles:                   "ynhSL4OJe/Kwi/43QSZUHI86oYoROQKCg2AYGnfHJJI="
+								sums:                     "VFe6bFBYzhUbMtHJIAQfayU4RoZP/ee6+sBkMrv/2P0="
+								"sums answers":           "9PBESq+JZ8jBfFVe6SXKXPAminOgJROrzP0nAyxOSzs="
 							}
 						}
 					}
