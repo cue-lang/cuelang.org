@@ -56,8 +56,8 @@
 # CTA
 [[cta]]
     identifier = "cta"
-    name = "Download"
-    url = "https://github.com/cue-lang/cue/releases"
+    name = "Install"
+    url = "/docs/introduction/installation/"
     post = "download"
     weight = 300
 
@@ -84,8 +84,8 @@
     weight = 412
 [[footer]]
     parent = "column1"
-    name = "Download"
-    url = "https://github.com/cue-lang/cue/releases"
+    name = "Install CUE"
+    url = "/docs/introduction/installation/"
     weight = 413
 
 [[footer]]
