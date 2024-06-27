@@ -14,7 +14,7 @@ versions: {
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
-		latest: v:       "v0.9.1"
+		latest: v:       "v0.9.2"
 		prerelease: v:   latest.v
 		tip: v:          prerelease.v
 		default: v:      latest.v
