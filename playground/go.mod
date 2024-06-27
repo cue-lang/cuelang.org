@@ -3,7 +3,7 @@ module github.com/cue-lang/cuelang.org/playground
 go 1.22
 
 require (
-	cuelang.org/go v0.9.1
+	cuelang.org/go v0.9.2
 	github.com/cockroachdb/apd/v3 v3.2.1
 	golang.org/x/text v0.15.0
 	gopkg.in/yaml.v3 v3.0.1
