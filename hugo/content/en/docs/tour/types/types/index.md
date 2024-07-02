@@ -86,7 +86,7 @@ both the x-axis and y-axis, that its coordinates *must* be `(x = 0, y = 0)`.
 
 {{< info >}}
 The output in this example is produced by
-[`cue eval`]({{< relref "docs/reference/cli/cue-eval" >}}).
+[`cue eval`]({{< relref "docs/reference/command/cue-help-eval" >}}).
 This command validates a configuration but, unlike `cue export`, doesn't
 require it to be completely concrete.
 `cue eval` produces CUE, not JSON or YAML.

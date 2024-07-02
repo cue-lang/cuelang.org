@@ -195,6 +195,6 @@ generator that takes each CUE definition and produces a matching Go struct type.
 - The [`cue`](https://pkg.go.dev/cuelang.org/go/cue) Go API
 - The [`cue/cuecontext`](https://pkg.go.dev/cuelang.org/go/cue/cuecontext) Go API
 - The [`cue/load`](https://pkg.go.dev/cuelang.org/go/cue/load) Go API
-- {{< linkto/related/reference "cli/cue-mod-init" >}}
-- {{< linkto/related/reference "cli/cue-vet" >}}
+- {{< linkto/related/reference "command/cue-help-mod-init" >}}
+- {{< linkto/related/reference "command/cue-help-vet" >}}
 - {{< linkto/related/tour "types/defs" >}}

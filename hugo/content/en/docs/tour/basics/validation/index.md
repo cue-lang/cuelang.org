@@ -9,7 +9,7 @@ whether held in CUE, YAML, JSON, or elsewhere.
 
 Here, a constraint is applied to all the languages stored in `data.yml`,
 and is validated using the
-[**`cue vet`**]({{< relref "docs/reference/cli/cue-vet" >}}) command.
+[**`cue vet`**]({{< relref "docs/reference/command/cue-help-vet" >}}) command.
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}

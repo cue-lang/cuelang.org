@@ -62,7 +62,7 @@ This generates some CUE packages, placing them alongside our main CUE module:
 tree -d cue.mod/gen/k8s.io
 {{{end}}}
 
-[`cue get go`]({{< relref "docs/reference/cli/cue-get-go" >}})
+[`cue get go`]({{< relref "docs/reference/command/cue-help-get-go" >}})
 also has a `--local` option that generates CUE alongside Go in a main module.
 
 Within *our* main module, we can import and refer to the CUE definitions generated from the Go types:
@@ -351,7 +351,7 @@ CUE features such as data validation, policy enforcement, and more.
 
 ## Related content
 
-- {{< linkto/related/reference "cli/cue-get-go" >}}
+- {{< linkto/related/reference "command/cue-help-get-go" >}}
 - Go API:
     [`cue`](https://pkg.go.dev/cuelang.org/go/cue#section-documentation)
   | [`cue/load`](https://pkg.go.dev/cuelang.org/go/cue/load#section-documentation)
