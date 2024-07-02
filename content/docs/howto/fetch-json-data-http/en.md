@@ -53,7 +53,7 @@ CUE version v0.8.2 was released with commit hash 596c99191ad1eb7c39d547e59bc7085
 
 ## Related content
 
-- {{< linkto/related/reference "cli/cue-commands" >}} -- CUE workflow commands
+- {{< linkto/related/reference "command/cue-help-commands" >}} -- CUE workflow commands
 - Go API:
   [`tool/http`](https://pkg.go.dev/cuelang.org/go/pkg/tool/http#section-documentation) --
   make HTTP requests in workflow commands

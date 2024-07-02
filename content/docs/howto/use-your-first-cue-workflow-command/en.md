@@ -10,7 +10,7 @@ tags:
 This guide demonstrates how to define a very simple CUE *workflow command*,
 and how to run it.
 This specific workflow command allows a `-t` flag to
-[inject]({{< relref "docs/reference/cli/cue-injection" >}})
+[inject]({{< relref "docs/reference/command/cue-help-injection" >}})
 a value into the process so that it can be referred to.
 
 {{{with code "en" "cc"}}}
@@ -43,7 +43,7 @@ they are stored in a file with a name ending `_tool.cue`.
 ## Related content
 
 <!-- TODO: link to some central /docs/ page on cue tools -->
-- {{< linkto/related/reference "cli/cue-commands" >}}
+- {{< linkto/related/reference "command/cue-help-commands" >}}
   -- more information about CUE workflow commands
-- {{< linkto/related/reference "cli/cue-injection" >}}
+- {{< linkto/related/reference "command/cue-help-injection" >}}
   -- injecting values into `cue` command invocations

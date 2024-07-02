@@ -78,7 +78,7 @@ That's exactly as expected, because CUE's core operation is to automatically
 
 The behaviour of the `cue import` command can be affected by the flags outlined
 in the `proto mode` section of
-[the command's help text]({{< relref "docs/reference/cli/cue-import" >}}).
+[the command's help text]({{< relref "docs/reference/command/cue-help-import" >}}).
 
 ## Using the Go API
 
@@ -141,7 +141,7 @@ If several `.proto` files import each other, and other centralized schema
 definitions, then things can get hairy!
 In these situations, CUE's Go API and the `cue` command have you covered.
 
-Both [`cue import`]({{< relref "docs/reference/cli/cue-import" >}}) and the
+Both [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) and the
 [`encoding/protobuf`](https://pkg.go.dev/cuelang.org/go/encoding/protobuf)
 package can be configured to handle custom import paths but, by default, when
 they encounter ...
@@ -183,8 +183,8 @@ CUE.
 
 ## Related content
 
-- {{< linkto/related/reference "cli/cue-import" >}}
-- {{< linkto/related/reference "cli/cue-filetypes" >}}
+- {{< linkto/related/reference "command/cue-help-import" >}}
+- {{< linkto/related/reference "command/cue-help-filetypes" >}}
 - Go API: [`encoding/protobuf`](https://pkg.go.dev/cuelang.org/go/encoding/protobuf)
 - Go API: [`encoding/protobuf/textproto`](https://pkg.go.dev/cuelang.org/go/encoding/protobuf/textproto)
 - Go API: [`encoding/protobuf/jsonpb`](https://pkg.go.dev/cuelang.org/go/encoding/protobuf/jsonpb)

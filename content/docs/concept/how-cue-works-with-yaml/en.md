@@ -18,7 +18,7 @@ those containing multiple documents.
 This allows YAML files to be processed by CUE's wide range of data, schema, and
 policy validation capabilities, and to convert input formats to YAML - as
 demonstrated here by
-[`cue export`]({{< relref "docs/reference/cli/cue-export" >}})
+[`cue export`]({{< relref "docs/reference/command/cue-help-export" >}})
 *unifying* all its YAML, JSON, and CUE input files as YAML:
 <!-- TODO: add links for capabilities -->
 <!-- TODO: add link to unification concept guide -->
@@ -63,7 +63,7 @@ using CUE's powerful and compact constraint syntax, it's easy to add
 "pre-flight" checks to existing processes with CUE.
 
 In this example,
-[`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}})
+[`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}})
 is used to check that a hypothetical system's YAML input files are valid - and
 catches a problematic deployment early in the process:
 
@@ -294,12 +294,12 @@ discover through the site's search page:
 
 ## Converting YAML files to CUE
 
-[`cue import`]({{< relref "docs/reference/cli/cue-import" >}})
+[`cue import`]({{< relref "docs/reference/command/cue-help-import" >}})
 can create a CUE file for each YAML file it's given, and can even recognise
 embedded YAML and JSON fields, and convert those structures recursively.
 
 Examples of this command being used can be found in the
-[`cue import` CLI reference documentation]({{< relref "docs/reference/cli/cue-import" >}}).
+[`cue import` CLI reference documentation]({{< relref "docs/reference/command/cue-help-import" >}}).
 
 <!-- TODO: refer to a better page than the plain text CLI help text -->
 <!-- TODO: what example could work inline, here? -->

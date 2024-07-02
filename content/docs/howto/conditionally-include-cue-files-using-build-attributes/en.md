@@ -58,5 +58,5 @@ do not need to overlap in any way:** they are entirely unrelated strings.
 
 ## Related content
 
-- {{< linkto/related/reference "cli/cue-injection" >}}
+- {{< linkto/related/reference "command/cue-help-injection" >}}
   -- injecting tags and values into `cue` command invocations
