@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9287fe9_73d2d433",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-02T08:38:14Z",
+      "side": 1,
+      "message": "Is there a particular precedent to `/-/`? I\u0027ve never seen it before, but it seems fine to me.",
+      "revId": "eaf5da5f70db6f84f3c460d7b76d653564491291",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
