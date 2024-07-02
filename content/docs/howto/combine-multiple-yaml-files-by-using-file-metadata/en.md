@@ -79,5 +79,5 @@ c.yaml:
 ## Related content
 
 - {{< linkto/related/howto "combine-multiple-json-files-by-using-file-metadata" >}}
-- {{< linkto/related/reference "cli/cue-flags" >}}
+- {{< linkto/related/reference "command/cue-help-flags" >}}
   documents the `--with-context` and `-l` flags

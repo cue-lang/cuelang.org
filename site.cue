@@ -6,7 +6,7 @@ import (
 
 	"github.com/cue-lang/cuelang.org/internal/ci"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
-	"github.com/cue-lang/cuelang.org/content/docs/reference/cli"
+	"github.com/cue-lang/cuelang.org/content/docs/reference/command"
 )
 
 versions: {
@@ -99,7 +99,7 @@ template: ci.#writefs & {
 		// the cache files, because otherwise on a Preprocessor-No-Write-Cache
 		// they will not get added back, a change that would, ironically, create
 		// noise in a commit where we are intending there to be less noise.
-		"content/docs/reference/cli/cue-*/*.md",
+		"content/docs/reference/command/*/*.md",
 	]
 	Create: {
 		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": {
@@ -257,8 +257,8 @@ template: ci.#writefs & {
 			"""#
 		}
 
-		for _, cmd in cli.cue {
-			"\(cli.contentRoot)/\(cmd.dir)/page.cue": {
+		for _, cmd in command.cue {
+			"\(command.contentRoot)/\(cmd.dir)/page.cue": {
 				Contents: #"""
 					// \#(donotedit)
 					package site
@@ -267,11 +267,12 @@ template: ci.#writefs & {
 
 					"""#
 			}
-			"\(cli.contentRoot)/\(cmd.dir)/en.md": {
+			"\(command.contentRoot)/\(cmd.dir)/en.md": {
 				Contents: #"""
 					---
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"
+					aliases: ["/docs/reference/cli/\#(cmd.oldDir)/"]
 					tags:
 					- cue command
 					---

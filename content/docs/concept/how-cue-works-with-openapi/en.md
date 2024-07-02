@@ -28,11 +28,11 @@ natively in CUE’s significantly more concise form.
 
 In this guide, we'll see:
 
-- [`cue def`]({{< relref "docs/reference/cli/cue-def" >}})
+- [`cue def`]({{< relref "docs/reference/command/cue-help-def" >}})
   generating an OpenAPI data schema from a CUE definition,
-- [`cue import`]({{< relref "docs/reference/cli/cue-import" >}})
+- [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}})
   turning the generated OpenAPI back into CUE,
-- [`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}})
+- [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}})
   using an OpenAPI data schema directly, to validate some data,
 - and the
   [`encoding/openapi`](https://pkg.go.dev/cuelang.org/go/encoding/openapi)
@@ -66,7 +66,7 @@ $version: "v1.2.3"
 #Kind: "cat" | "dog" | "goldfish"
 {{{end}}}
 
-The [`cue def`]({{< relref "docs/reference/cli/cue-def" >}}) command can
+The [`cue def`]({{< relref "docs/reference/command/cue-help-def" >}}) command can
 express CUE constraints as OpenAPI data schemas, in OpenAPI's
 `components.schemas` namespace - but *only* so long as all the top-level
 constraints are specified using CUE definitions.
@@ -137,7 +137,7 @@ it isn't possible to generate a precise OpenAPI equivalent for *every* CUE const
 CUE does the best conversion it can,
 limited by what OpenAPI's data schemas can represent.
 
-The [`cue import`]({{< relref "docs/reference/cli/cue-import" >}}) command
+The [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) command
 can take constraints found in OpenAPI data schemas and express them as CUE.
 Here we take the definition produced by `cue def`, above, and convert it back to CUE:
 
@@ -181,7 +181,7 @@ diff -wu api.pet.cue .api.pet.cue
 rm .api.pet.cue # tidy up
 {{{end}}}
 
-The [`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}}) command can
+The [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}}) command can
 directly use constraints from OpenAPI data schemas to validate data.
 
 Let's check the details of a well-known animal,
@@ -283,9 +283,9 @@ are handled by CUE. More complete support is tracked in {{<issue 3133/>}}.
 
 ## Related content
 
-- {{< linkto/related/reference "cli/cue-def" >}}
-- {{< linkto/related/reference "cli/cue-import" >}}
-- {{< linkto/related/reference "cli/cue-vet" >}}
+- {{< linkto/related/reference "command/cue-help-def" >}}
+- {{< linkto/related/reference "command/cue-help-import" >}}
+- {{< linkto/related/reference "command/cue-help-vet" >}}
 - The [`encoding/openapi`](https://pkg.go.dev/cuelang.org/go/encoding/openapi) package
 - {{<issue 3133>}}Issue #3133{{</issue>}} tracks the support of other namespaces defined by
   [the OpenAPI standard](https://github.com/OAI/OpenAPI-Specification/tree/3.0.0)
