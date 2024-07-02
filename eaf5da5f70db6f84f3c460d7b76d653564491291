@@ -33,6 +33,42 @@
       "message": "Don\u0027t we already have `/s/` for short-links?",
       "revId": "eaf5da5f70db6f84f3c460d7b76d653564491291",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "022acfa2_637f34e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-02T10:02:41Z",
+      "side": 1,
+      "message": "I think we use it in one place that I\u0027ve seen (the community calendar), and I\u0027d internalised it as indicating a calendar **S**ubscription, based on the prose surrounding its use.\n\nI selected `/-/` so that `^/-` could be use as an access log filter, in a way which `^/s` couldn\u0027t. I know that `^/s/` could, but having something punctuation-based feels more clearly-not-a-content-page-y.\n\nI hold it lightly, but I do like \u0026 prefer the `/-/` prefix.",
+      "parentUuid": "0f781d81_786fe34b",
+      "revId": "eaf5da5f70db6f84f3c460d7b76d653564491291",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0616e9ab_674e4754",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-02T10:02:41Z",
+      "side": 1,
+      "message": "Nope. I made it up, thinking about ways to make it clear that it\u0027s not a content page, and allowing for easier distinction from content pages when filtering traffic logs in the future. I also considered `/_/`, but felt that that alternative might well suffer from annoying terminal font-rendering problems and/or readability issues if we choose to use the prefix when creating clickable shortlinks from CLI help texts to site pages.",
+      "parentUuid": "b9287fe9_73d2d433",
+      "revId": "eaf5da5f70db6f84f3c460d7b76d653564491291",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
