@@ -93,5 +93,5 @@ $ cue export --with-context -l '_inputs:' -l filename a.json b.json c.json examp
 ## Related content
 
 - {{< linkto/related/howto "combine-multiple-yaml-files-into-a-list" >}}
-- {{< linkto/related/reference "cli/cue-flags" >}}
+- {{< linkto/related/reference "command/cue-help-flags" >}}
   documents the `--with-context` and `-l` flags

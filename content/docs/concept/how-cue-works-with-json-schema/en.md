@@ -25,9 +25,9 @@ validate data, and to represent them natively in CUE's more succinct and
 expressive form.
 
 In this guide we'll see:
-- [`cue import`]({{< relref "docs/reference/cli/cue-import" >}}) converting a
+- [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) converting a
   JSON Schema to CUE,
-- [`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}}) using JSON Schema
+- [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}}) using JSON Schema
   constraints directly,
 - and the
   [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema)
@@ -37,7 +37,7 @@ The ability to export CUE constraints as JSON Schema is tracked in {{<issue 929/
 
 ## Using JSON Schema with the `cue` command
 
-The [`cue import`]({{< relref "docs/reference/cli/cue-import" >}}) command can
+The [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) command can
 produce CUE from JSON Schema.
 
 Let's start with this JSON Schema:
@@ -148,7 +148,7 @@ and known-bad data (`bad.json`):
 {{{end}}}
 
 The
-[`cue vet`]({{< relref "docs/reference/cli/cue-vet" >}})
+[`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}})
 command validates our data against the `#Person` constraint:
 
 {{{with script "en" "validate against cue"}}}
@@ -164,7 +164,7 @@ The `cue vet` command can also validate the data using the JSON Schema directly:
 The `cue` command normally recognises JSON Schema's signature fields and treats
 the contents of JSON Schema as data constraints - not just additional data.
 A qualifier can be used to change this behaviour, as outlined in
-[`cue filetypes`]({{< relref "docs/reference/cli/cue-filetypes" >}}):
+[`cue filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}):
 
 {{{with script "en" "use json schema as json"}}}
 #ellipsis 4
@@ -295,8 +295,8 @@ tracked in {{<issue 929/>}}.
 
 ## Related content
 
-- {{< linkto/related/reference "cli/cue-import" >}}
+- {{< linkto/related/reference "command/cue-help-import" >}}
 - The [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema) Go API
-- {{< linkto/related/reference "cli/cue-vet" >}}
-- {{< linkto/related/reference "cli/cue-filetypes" >}}
+- {{< linkto/related/reference "command/cue-help-vet" >}}
+- {{< linkto/related/reference "command/cue-help-filetypes" >}}
 - {{<issue 929>}}Issue #929{{</issue>}} tracks the conversion of CUE to JSON Schema

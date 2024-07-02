@@ -496,7 +496,7 @@ its information to use as data, schema, and policy.
 For more information on workflow commands, and how their ability to
 deterministically combine data from static and dynamic sources can supercharge
 automation, see the
-[`cue commands`]({{< relref "docs/reference/cli/cue-commands" >}})
+[`cue commands`]({{< relref "docs/reference/command/cue-help-commands" >}})
 reference documentation.
 
 ## Abstractions versus direct access

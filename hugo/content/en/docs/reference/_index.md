@@ -11,7 +11,7 @@ The source of truth for how the CUE language should behave
 {{< /card >}}
 
 <!-- The trailing "\" on the next line vertically aligns the card's body with the spec card's body -->
-{{< card title="The cue command" label="reference/cli" href="cli/" >}}\
+{{< card title="The cue command" label="reference/command" href="command/" >}}\
 Help texts for the `cue` command and its subcommands
 {{< /card >}}
 

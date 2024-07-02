@@ -477,7 +477,7 @@ a wide range of platforms.
 By default, the `cue` command caches downloaded modules in the local
 filesystem. It uses the local user configuration directory by default, but
 that can be changed by setting `$CUE_CACHE_DIR`, which is
-documented under [`cue help environment`]({{< relref "docs/reference/cli/cue-environment" >}}).
+documented under [`cue help environment`]({{< relref "docs/reference/command/cue-help-environment" >}}).
 
 ## Authorization
 
