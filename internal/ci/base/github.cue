@@ -17,7 +17,7 @@ bashWorkflow: json.#Workflow & {
 
 installGo: json.#step & {
 	name: "Install Go"
-	uses: "actions/setup-go@v4"
+	uses: "actions/setup-go@v5"
 	with: {
 		// We do our own caching in setupGoActionsCaches.
 		cache:        false
@@ -28,7 +28,7 @@ installGo: json.#step & {
 checkoutCode: {
 	#actionsCheckout: json.#step & {
 		name: "Checkout code"
-		uses: "actions/checkout@v3"
+		uses: "actions/checkout@v4"
 
 		// "pull_request" builds will by default use a merge commit,
 		// testing the PR's HEAD merged on top of the master branch.
@@ -91,15 +91,7 @@ checkoutCode: {
 			name: "Check we don't have \(dispatchTrailer) on a protected branch"
 			if:   "\(isProtectedBranch) && \(containsDispatchTrailer)"
 			run:  """
-				echo "\(_dispatchTrailerVariable) contains \(dispatchTrailer)"
-				echo "\(_dispatchTrailerVariable) value"
-				cat <<EOD
-				${{ \(_dispatchTrailerVariable) }}
-				EOD
-				echo "containsDispatchTrailer expression"
-				cat <<EOD
-				\(containsDispatchTrailer)
-				EOD
+				echo "\(_dispatchTrailerVariable) contains \(dispatchTrailer) but we are on a protected branch"
 				false
 				"""
 		},
@@ -109,20 +101,6 @@ checkoutCode: {
 earlyChecks: json.#step & {
 	name: "Early git and code sanity checks"
 	run: #"""
-		# Ensure the recent commit messages have Signed-off-by headers. We
-		# only need to check the HEAD commit because all commits are tested
-		# in CI. Unclear why git log outputs blank lines when parsing trailers
-		# in this way, but we remove those blank lines so as not to skew the
-		# count of the trailers we are searching for.
-		#
-		# TODO: Remove once this is enforced for admins too;
-		# see https://bugs.chromium.org/p/gerrit/issues/detail?id=15229
-		if [[ "$(git log -1 --pretty='%(trailers:key=Signed-off-by)' | sed '/^\s*$/d' | wc -l)" -eq 0 ]]; then
-			echo -e "\nRecent commit is lacking Signed-off-by:\n"
-			git show --quiet
-			exit 1
-		fi
-
 		# Ensure that commit messages have a blank second line.
 		# We know that a commit message must be longer than a single
 		# line because each commit must be signed-off.
@@ -131,34 +109,32 @@ earlyChecks: json.#step & {
 			exit 1
 		fi
 
-		# Ensure that the commit author is the same as the signed-off-by.  This
-		# is a basic requirement of DCO. It is enforced by Gerrit (although
-		# noting that in Gerrit the author name does not have to match, only
-		# the email address), but _not_ by the DCO GitHub app:
+		# All authors, including co-authors, must have a signed-off trailer by email.
+		# Note that trailers are in the form "Name <email>", so grab the email with sed.
+		# For now, we require the sorted lists of author and signer emails to match.
+		# Note that this also fails if a commit isn't signed-off at all.
 		#
-		#   https://github.com/dcoapp/app/issues/201
-		#
-		# Provide a sanity check as part of GitHub workflows that should enforce
-		# this, e.g. trybot workflows.
-		#
-		# We do so by comparing the commit author and "Signed-off-by" trailer for
-		# strict equality. Whilst this is more strict than Gerrit, it should
-		# generally be the case, and we can always relax this when presented with
-		# specific situations where it is is a problem.
-
-		# commit author email address
-		commitauthor="$(git log -1 --pretty="%ae")"
-
-		# signed-off-by trailer email address. There is no way to parse just the
-		# email address from the trailer in the same way as git log, so instead
-		# grab the relevant trailer and then take the last whitespace-delimited
-		# part as the "<>" contained email address.
-		# Getting the Signed-off-by trailer in this way causes blank
-		# lines for some reason. Use awk to remove them.
-		commitsigner="$(git log -1 --pretty='%(trailers:key=Signed-off-by,valueonly)' | sed -ne 's/.* <\(.*\)>/\1/p')"
-
-		if [[ "$commitauthor" != "$commitsigner" ]]; then
-			echo "commit author email address does not match signed-off-by trailer"
+		# In Gerrit we already enable a form of this via https://gerrit-review.googlesource.com/Documentation/project-configuration.html#require-signed-off-by,
+		# but it does not support co-authors nor can it be used when testing GitHub PRs.
+		commit_authors="$(
+			{
+				git log -1 --pretty='%ae'
+				git log -1 --pretty='%(trailers:key=Co-authored-by,valueonly)' | sed -ne 's/.* <\(.*\)>/\1/p'
+			} | sort -u
+		)"
+		commit_signers="$(
+			{
+				git log -1 --pretty='%(trailers:key=Signed-off-by,valueonly)' | sed -ne 's/.* <\(.*\)>/\1/p'
+			} | sort -u
+		)"
+		if [[ "${commit_authors}" != "${commit_signers}" ]]; then
+			echo "Error: commit author email addresses do not match signed-off-by trailers"
+			echo
+			echo "Authors:"
+			echo "${commit_authors}"
+			echo
+			echo "Signers:"
+			echo "${commit_signers}"
 			exit 1
 		fi
 		"""#
@@ -239,7 +215,7 @@ setupGoActionsCaches: {
 		if !#readonly {
 			cacheStep & {
 				if:   readWriteCacheExpr
-				uses: "actions/cache@v3"
+				uses: "actions/cache@v4"
 			}
 		},
 
@@ -252,7 +228,7 @@ setupGoActionsCaches: {
 				if: "! \(readWriteCacheExpr)"
 			}
 
-			uses: "actions/cache/restore@v3"
+			uses: "actions/cache/restore@v4"
 		},
 
 		if #cleanTestCache {
@@ -278,7 +254,7 @@ setupGoActionsCaches: {
 // but array literals are not yet supported in expressions.
 isProtectedBranch: {
 	#trailers: [...string]
-	"((" + strings.Join([ for branch in protectedBranchPatterns {
+	"((" + strings.Join([for branch in protectedBranchPatterns {
 		(_matchPattern & {variable: "github.ref", pattern: "refs/heads/\(branch)"}).expr
 	}], " || ") + ") && (! \(containsDispatchTrailer)))"
 }
@@ -296,6 +272,7 @@ isReleaseTag: {
 
 checkGitClean: json.#step & {
 	name: "Check that git is clean at the end of the job"
+	if:   "always()"
 	run:  "test -z \"$(git status --porcelain)\" || (git status; git diff; false)"
 }
 
@@ -308,7 +285,7 @@ repositoryDispatch: json.#step & {
 
 	name: string
 	run:  #"""
-			\#(_curlGitHubAPI) -f --request POST --data-binary \#(strconv.Quote(encjson.Marshal(#arg))) https://api.github.com/repos/\#(#githubRepositoryPath)/dispatches
+			\#(_curlGitHubAPI) --fail --request POST --data-binary \#(strconv.Quote(encjson.Marshal(#arg))) https://api.github.com/repos/\#(#githubRepositoryPath)/dispatches
 			"""#
 }
 
@@ -354,7 +331,7 @@ containsDispatchTrailer: {
 	//
 	//     Dispatch-Trailer: {"type:}
 	//
-	let _typeCheck = [ if #type != _|_ {#type + "\""}, ""][0]
+	let _typeCheck = [if #type != _|_ {#type + "\""}, ""][0]
 	"""
 	(contains(\(_dispatchTrailerVariable), '\n\(dispatchTrailer): {"type":"\(_typeCheck)'))
 	"""
