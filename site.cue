@@ -276,6 +276,7 @@ template: ci.#writefs & {
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"
 					aliases: ["/docs/reference/cli/\#(cmd.oldDir)/"]
+					weight: 1000
 					tags:
 					- cue command
 					---
