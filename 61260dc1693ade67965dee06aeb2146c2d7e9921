@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be70ca3f_310750a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-02T15:21:48Z",
+      "side": 1,
+      "message": "PTAL.\n\nPlease note that the penultimate preview link (`docs/reference/cli/cue-help/`) demonstrates that it reaches a 404, which is the only \"old\" URL path that didn\u0027t end up with an alias in place. This was forced by the generated nature of the pages and their associated aliases. I don\u0027t feel this is a problem (hence mentioning it here, not in the commit), as I don\u0027t imagine that folks had that page bookmarked instead of the the bare \"cue\" page, which *does* have a working alias.",
+      "revId": "61260dc1693ade67965dee06aeb2146c2d7e9921",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
