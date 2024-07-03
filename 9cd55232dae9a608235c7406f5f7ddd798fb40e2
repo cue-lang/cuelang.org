@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15294df9_9af950e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-03T09:50:28Z",
+      "side": 1,
+      "message": "@paul@myitcv.io -- please take another look at this, and check that you\u0027re happy with the UX niggles outlined in cue-lang/cue#2841 and cue-lang/cue#3257, as mentioned in the commit message. I think it\u0027s ready for submission, following the fixes to mobile search.",
+      "revId": "9cd55232dae9a608235c7406f5f7ddd798fb40e2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
