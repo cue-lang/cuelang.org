@@ -69,6 +69,24 @@
       "parentUuid": "b9287fe9_73d2d433",
       "revId": "eaf5da5f70db6f84f3c460d7b76d653564491291",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0546dd7b_96e55263",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-03T09:07:15Z",
+      "side": 1,
+      "message": "Like Paul says, /s/ is for short - we copied this from golang.org. I just forgot we had already copied the pattern.\n\nWe already have one such prefix for short links, so I see no need to introduce a new one - particularly since we would then end up with two. I haven\u0027t seen /-/ being used anywhere before, so I think we just stick with /s/.",
+      "parentUuid": "022acfa2_637f34e3",
+      "revId": "eaf5da5f70db6f84f3c460d7b76d653564491291",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
