@@ -35,7 +35,8 @@ Create a CUE file which uses the
 [json](https://pkg.go.dev/cuelang.org/go/pkg/encoding/json) package to encode an
 inner value:
 
-```{title="nested-json.cue"}
+{{< code-tabs >}}
+{{< code-tab name="nested-json.cue" language="cue" area="top-left" >}}
 import "encoding/json"
 
 _innerData: {
@@ -44,11 +45,12 @@ _innerData: {
 
 nestedJSON:  json.Marshal(_innerData)
 outerString: "outside"
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 Use `cue export` to evaluate and encode the entire value:
 
-```json {title="$ cue export --out=json nested-json.cue"}
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQtanNvbi5jdWU=" }
+$ cue export nested-json.cue
 {
     "nestedJSON": "{\"innerString\":\"inside\"}",
     "outerString": "outside"
@@ -60,7 +62,8 @@ Use `cue export` to evaluate and encode the entire value:
 Use a different encoding package for encoding the nested value, such as
 [yaml](https://pkg.go.dev/cuelang.org/go/pkg/encoding/yaml):
 
-```{title="nested-yaml.cue"}
+{{< code-tabs >}}
+{{< code-tab name="nested-yaml.cue" language="cue" area="top-left" >}}
 import "encoding/yaml"
 
 _innerData: {
@@ -69,27 +72,31 @@ _innerData: {
 
 nestedYAML:  yaml.Marshal(_innerData)
 outerString: "outside"
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
-```{title= "$ cue export --out=json data.cue"}
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQteWFtbC5jdWU=" }
+$ cue export nested-yaml.cue
 {
-   "nestedYAML" : "innerString: inside\n",
-   "outerString" : "outside"
+    "nestedYAML": "innerString: inside\n",
+    "outerString": "outside"
 }
 ```
 
 ## Choosing different encodings with `cue export --out`
 
 Use a different encoding for the entire value via the `--out` flag, such as
-`yaml` or `cue`:
+`yaml`:
 
-```{title="$ cue export --out=yaml nested_yaml.cue"}
-nestedYAML: |
-  innerString: inside
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQtanNvbi5jdWUgLS1vdXQgeWFtbA==" }
+$ cue export nested-json.cue --out yaml
+nestedJSON: '{"innerString":"inside"}'
 outerString: outside
 ```
 
-```{title="$ cue export --out=cue nested_yaml.cue"}
+... or `cue`:
+
+```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQteWFtbC5jdWUgLS1vdXQgY3Vl" }
+$ cue export nested-yaml.cue --out cue
 nestedYAML: """
 	innerString: inside
 
@@ -97,4 +104,5 @@ nestedYAML: """
 outerString: "outside"
 ```
 
-For all encodings see the https://pkg.go.dev/cuelang.org/go/pkg/encoding/
+For all encodings see the
+[`encoding`](https://pkg.go.dev/cuelang.org/go/pkg/encoding/) package listing.

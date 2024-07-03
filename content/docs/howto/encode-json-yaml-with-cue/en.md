@@ -35,7 +35,8 @@ Create a CUE file which uses the
 [json](https://pkg.go.dev/cuelang.org/go/pkg/encoding/json) package to encode an
 inner value:
 
-```{title="nested-json.cue"}
+{{{with upload "en" "json"}}}
+-- nested-json.cue --
 import "encoding/json"
 
 _innerData: {
@@ -44,23 +45,21 @@ _innerData: {
 
 nestedJSON:  json.Marshal(_innerData)
 outerString: "outside"
-```
+{{{end}}}
 
 Use `cue export` to evaluate and encode the entire value:
 
-```json {title="$ cue export --out=json nested-json.cue"}
-{
-    "nestedJSON": "{\"innerString\":\"inside\"}",
-    "outerString": "outside"
-}
-```
+{{{with script "en" "export json"}}}
+cue export nested-json.cue
+{{{end}}}
 
 ## Encoding YAML to JSON
 
 Use a different encoding package for encoding the nested value, such as
 [yaml](https://pkg.go.dev/cuelang.org/go/pkg/encoding/yaml):
 
-```{title="nested-yaml.cue"}
+{{{with upload "en" "yaml"}}}
+-- nested-yaml.cue --
 import "encoding/yaml"
 
 _innerData: {
@@ -69,32 +68,26 @@ _innerData: {
 
 nestedYAML:  yaml.Marshal(_innerData)
 outerString: "outside"
-```
+{{{end}}}
 
-```{title= "$ cue export --out=json data.cue"}
-{
-   "nestedYAML" : "innerString: inside\n",
-   "outerString" : "outside"
-}
-```
+{{{with script "en" "export json 2"}}}
+cue export nested-yaml.cue
+{{{end}}}
 
 ## Choosing different encodings with `cue export --out`
 
 Use a different encoding for the entire value via the `--out` flag, such as
-`yaml` or `cue`:
+`yaml`:
 
-```{title="$ cue export --out=yaml nested_yaml.cue"}
-nestedYAML: |
-  innerString: inside
-outerString: outside
-```
+{{{with script "en" "export yaml"}}}
+cue export nested-json.cue --out yaml
+{{{end}}}
 
-```{title="$ cue export --out=cue nested_yaml.cue"}
-nestedYAML: """
-	innerString: inside
+... or `cue`:
 
-	"""
-outerString: "outside"
-```
+{{{with script "en" "export cue"}}}
+cue export nested-yaml.cue --out cue
+{{{end}}}
 
-For all encodings see the https://pkg.go.dev/cuelang.org/go/pkg/encoding/
+For all encodings see the
+[`encoding`](https://pkg.go.dev/cuelang.org/go/pkg/encoding/) package listing.
