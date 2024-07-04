@@ -16,7 +16,7 @@ versions: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: v:       "v0.9.2"
 		prerelease: v:   latest.v
-		tip: v:          prerelease.v
+		tip: v:          "v0.10.0-0.dev.0.20240711130617-fed43b04babe" // A version with @embed()
 		default: v:      latest.v
 		playground: v:   latest.v
 	}
