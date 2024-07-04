@@ -15,7 +15,7 @@ versions: {
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: v:       "v0.9.2"
-		prerelease: v:   latest.v
+		prerelease: v:   "v0.10.0-0.dev.0.20240712091910-3a379b7b9eca"
 		tip: v:          prerelease.v
 		default: v:      latest.v
 		playground: v:   latest.v
