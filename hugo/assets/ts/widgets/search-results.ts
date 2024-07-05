@@ -61,6 +61,7 @@ export class SearchResults extends BaseWidget {
             .search<SearchItem>(parsedQuery.cleanQuery, {
                 hitsPerPage: 100,
                 filters: filters,
+		advancedSyntax: true,
             })
             .then(results => {
                 const teasers = results.hits.map(hit => this.mapSearchHitToTeaser(hit));
