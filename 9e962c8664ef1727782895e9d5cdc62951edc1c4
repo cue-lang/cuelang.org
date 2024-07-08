@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93066b3b_9c365b6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-08T15:25:34Z",
+      "side": 1,
+      "message": "FYI. This is definitely WIP; I\u0027ll update it with prose once we\u0027re happy with the feel of the example.",
+      "revId": "9e962c8664ef1727782895e9d5cdc62951edc1c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
