@@ -69,6 +69,24 @@
       "parentUuid": "92481e23_47ac0903",
       "revId": "96d75f56997d18628ec14fca04e1cdf6c408ca60",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16e30a0e_0f34673d",
+        "filename": "netlify.toml",
+        "patchSetId": 3
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-08T14:26:35Z",
+      "side": 1,
+      "message": "Ah, good catch. I /knew/ I was remembering something trailing-slash related with Netlify, and this prompted me to find it again: https://docs.netlify.com/routing/redirects/redirect-options/#trailing-slash\n\nI\u0027ll remove the stars :-)",
+      "parentUuid": "54758d5b_f5afdd97",
+      "revId": "96d75f56997d18628ec14fca04e1cdf6c408ca60",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
