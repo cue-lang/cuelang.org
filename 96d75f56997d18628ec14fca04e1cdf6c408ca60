@@ -33,6 +33,24 @@
       "message": "why the stars? we don\u0027t want /s/discordddddd to also work the same. note that the calendar shortcut has no star.",
       "revId": "96d75f56997d18628ec14fca04e1cdf6c408ca60",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92481e23_47ac0903",
+        "filename": "netlify.toml",
+        "patchSetId": 3
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-08T13:03:46Z",
+      "side": 1,
+      "message": "\u003e why the stars?\n\nIt was an easy way to make `/s/discord/` (trailing slash) work, whilst also being optional.\n\n\u003e we don\u0027t want /s/discordddddd to also work the same\n\nDevil\u0027s advocate: do we **care** care?",
+      "parentUuid": "dfada95a_4f6119bc",
+      "revId": "96d75f56997d18628ec14fca04e1cdf6c408ca60",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
