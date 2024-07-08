@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71701a29_19d6ce7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-08T15:01:33Z",
+      "side": 1,
+      "message": "I see we resolved the point; hold removed!",
+      "revId": "af2dc3a0fd3ff45b51f421bf3f9fedbbbc5d20c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
