@@ -5,9 +5,20 @@ toc_hide: false
 aliases: [/docs/reference/cli]
 ---
 
-The `cue` command's various subcommands display a variety of help texts.
+### Guides
 
-These texts are presented here as plain text, pending changes proposed in
-{{< issue 9 />}}.
+{{<cards>}}
+{{< card
+    href="cue-export/"
+    title="The cue export command"
+>}}
+Use `cue export` to produce validated, concrete data for tools that need
+configurations encoded in formats like JSON or YAML.
+{{</card>}}
+{{</cards>}}
 
-## Available help texts
+### Help texts
+
+The `cue help` command displays a help text for every `cue` subcommand.
+If a guide is not yet available for a particular command (above)
+then refer to the related help text in this list:
