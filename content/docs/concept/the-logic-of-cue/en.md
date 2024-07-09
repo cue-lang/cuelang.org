@@ -191,11 +191,12 @@ graph TD
     I --> Z("0")
     I --> One("1")
     IFI("1.1")
+    LTC --> Z
+    LTC --> One
+    LTC --> IFI
     GEH --> One
     GEH --> IFI
     GEH --> CCF("20.0")
-    LTC --> One
-    LTC --> IFI
     Z --> E
     One --> E
     IFI --> E
