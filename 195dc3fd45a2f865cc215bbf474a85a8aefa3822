@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a814485_91d8eaa3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-09T18:40:57Z",
+      "side": 1,
+      "message": "An appropriate shortlog for this change in this repo is:\n\n```\ndocs/concept: add arc to logic-of-cue diagram\n```",
+      "revId": "195dc3fd45a2f865cc215bbf474a85a8aefa3822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b04d13c_15bb622e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-09T18:40:57Z",
+      "side": 1,
+      "message": "This repo\u0027s trybot links the page directly in its post-CI comment, in Gerrit, when a trailer like this is present:\n\n```\nPreview-Path: /docs/concept/the-logic-of-cue/#numbers\n```\n\nIf I recall correctly, the bot can\u0027t currently process query-strings properly (they end up getting URL encoded), but I don\u0027t /believe/ that including it will invalidate the path that gets linked.",
+      "revId": "195dc3fd45a2f865cc215bbf474a85a8aefa3822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5d13998_2ec11845",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-09T18:40:57Z",
+      "side": 1,
+      "message": "Good catch!",
+      "revId": "195dc3fd45a2f865cc215bbf474a85a8aefa3822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
