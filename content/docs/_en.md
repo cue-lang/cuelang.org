@@ -7,26 +7,43 @@ cascade:
 
 # Welcome to CUE!
 
-CUE is an open-source data validation language and inference engine
-with its roots in logic programming.
-Although the language is not a general-purpose programming language
-it supports and simplifies a wide variety of applications, such as
+CUE is an
+<dfn title='License: "Apache-2.0", DCO: true, CLA: false'>open-source</dfn>
+data validation language with its roots in logic programming.
+It combines succinct yet clear syntax with powerful, flexible constraints that
+enable data, schema, policy, and constraints to coexist seamlessly:
+
+{{{with code "en" "example"}}}
+#location left right
+! exec cue vet example.cue
+cmp stderr out
+-- example.cue --
+length: 20 & int
+width:  10.1 & >10 // Must be greater than 10
+area:   length * width
+area:   <=100 // Must be less than or equal to 100
+-- out --
+area: invalid value 202.0 (out of bound <=100):
+    ./example.cue:4:9
+    ./example.cue:3:9
+{{{end}}}
+
+CUE supports and simplifies a wide variety of applications, such as
 [data validation]({{< relref "concept/how-cue-enables-data-validation" >}}),
 [configuration]({{< relref "concept/how-cue-enables-configuration" >}}),
 [querying]({{< relref "docs/concept/querying-use-case" >}}),
-and [code generation]({{< relref "concept/code-generation-and-extraction-use-case" >}}).
+and [code generation]({{< relref "concept/code-generation-and-extraction-use-case" >}}),
+with its underlying inference engine enabling data validation in code, and
+flexible generation pipelines.
 
 <!-- TODO: add when content is expanded: -->
 <!-- [scripting](TODO)       https://github.com/cue-lang/docs-and-content/issues/27 -->
 <!-- [data templating](TODO) https://github.com/cue-lang/docs-and-content/issues/26 -->
 
-The inference engine can be used to validate
-data in code, or to include it as part of a code generation pipeline.
-
 ## How to use this documentation
 
-Select a section from the navigation bar on the left hand side of the page, or
-from this brief explanation of each section:
+Select a section from the navigation bar on the left hand side of the page.
+Here's what you'll find in each section:
 
 {{< cards >}}
 
