@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "0c483a9e888ada021746bfaf7e28db103dad546d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75c75649_9c3b0300",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-11T21:10:27Z",
+      "side": 1,
+      "message": "LGTM - placing a hold here until we update this to use v0.10.0-alpha.1",
+      "revId": "0c483a9e888ada021746bfaf7e28db103dad546d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
