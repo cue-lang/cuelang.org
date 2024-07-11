@@ -13,12 +13,11 @@ export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
 {{{end}}}
 
-{{<sidenote text="Try out CUE - no install required!" >}}
-You can use CUE **without installing it** by visiting
-[cuelang.org/play](https://cuelang.org/play/)
-in your browser.
-
----
+{{<warning>}}
+### Try out CUE in your browser!
+You can use CUE without installing anything -- just visit
+[cuelang.org/play](https://cuelang.org/play/) with your browser.
+{{</warning>}}
 
 ## Installing the `cue` command
 
