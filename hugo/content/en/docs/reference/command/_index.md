@@ -1,7 +1,7 @@
 ---
 title: The cue command
 weight: 50
-toc_hide: false
+toc_hide: true
 aliases: [/docs/reference/cli]
 ---
 
