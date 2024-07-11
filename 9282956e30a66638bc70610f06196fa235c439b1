@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "9282956e30a66638bc70610f06196fa235c439b1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a094f2e_9e3a2e58",
+        "filename": "content/docs/howto/conditionally-include-multiple-elements-in-list/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-11T16:28:06Z",
+      "side": 1,
+      "message": "Do we have a page elsewhere that demonstrates how to conditionally include a single value in a list? \n\nI would think that it\u0027s probably most efficient to combine both the single and multiple examples on the same page to avoid excessive linking/clicking?",
+      "revId": "9282956e30a66638bc70610f06196fa235c439b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
