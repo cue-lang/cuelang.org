@@ -33,6 +33,23 @@
       "message": "LGTM - placing a hold here until we update this to use v0.10.0-alpha.1",
       "revId": "0c483a9e888ada021746bfaf7e28db103dad546d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d36228c_8fda44bc",
+        "filename": "site.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-11T21:11:24Z",
+      "side": 1,
+      "message": "Actually the version you want to update here is `prerelease` - because tomorrow we will set the value to `v0.10.0-alpha.1`. `tip` will still want to be an alias for `prelrease` at that point.",
+      "revId": "0c483a9e888ada021746bfaf7e28db103dad546d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
