@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9b759fc_ae94b7e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-11T13:48:16Z",
+      "side": 1,
+      "message": "I\u0027d suggest updating to the current tip to ensure we get the \"right\" behaviour when working on the embed guide two CLs later.",
+      "revId": "74ca8c7a7c41403042fa32332c74e643706fe00d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
