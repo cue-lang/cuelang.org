@@ -16,6 +16,23 @@
       "message": "FYI. This is definitely WIP; I\u0027ll update it with prose once we\u0027re happy with the feel of the example.",
       "revId": "9e962c8664ef1727782895e9d5cdc62951edc1c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32d51c01_2b534af3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-11T13:49:02Z",
+      "side": 1,
+      "message": "Per offline feedback, I\u0027d suggest reducing this to a single howto for now. Things are still experimental, so this should really be a fairly general introduction that links to the proposal in https://cuelang.org/discussion/3264",
+      "revId": "9e962c8664ef1727782895e9d5cdc62951edc1c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
