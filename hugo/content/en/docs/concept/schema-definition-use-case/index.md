@@ -94,7 +94,7 @@ func main() {
 	fmt.Println("V3 is backwards compatible with V2:", v3.Subsume(v2) == nil)
 }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 V2 is backwards compatible with V1: true
 V3 is backwards compatible with V2: false

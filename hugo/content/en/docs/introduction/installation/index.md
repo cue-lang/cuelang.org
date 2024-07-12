@@ -34,7 +34,7 @@ made available to help expose bugs and flush out unintended behaviours.
 On macOS and Linux, `cue` can be installed using Homebrew
 ([brew.sh](https://brew.sh)):
 
-```text { title="TERMINAL" codeToCopy="YnJldyBpbnN0YWxsIGN1ZS1sYW5nL3RhcC9jdWU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="YnJldyBpbnN0YWxsIGN1ZS1sYW5nL3RhcC9jdWU=" }
 $ brew install cue-lang/tap/cue
 ```
 
@@ -49,7 +49,7 @@ Various tags are available that let you select container images for different
 machine architectures and CUE versions. To use the latest version that's
 appropriate for your machine, use the `latest` tag:
 
-```text { title="TERMINAL" codeToCopy="ZG9ja2VyIHB1bGwgY3VlbGFuZy9jdWU6bGF0ZXN0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZG9ja2VyIHB1bGwgY3VlbGFuZy9jdWU6bGF0ZXN0" }
 $ docker pull cuelang/cue:latest
 ```
 
@@ -61,7 +61,7 @@ On
 
 For example, to fetch the latest version:
 
-```text { title="TERMINAL" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQGxhdGVzdA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQGxhdGVzdA==" }
 $ go install cuelang.org/go/cmd/cue@latest
 ...
 ```
@@ -74,7 +74,7 @@ On Arch Linux
 ([archlinux.org](https://archlinux.org)),
 `cue` can be installed from a package in the official Arch `extra` repository:
 
-```text { title="TERMINAL" codeToCopy="cGFjbWFuIC1TIGV4dHJhL2N1ZQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="cGFjbWFuIC1TIGV4dHJhL2N1ZQ==" }
 $ pacman -S extra/cue
 ```
 
@@ -90,7 +90,7 @@ workflows. All available versions are listed at
 [pkg.go.dev/cuelang.org/go](https://pkg.go.dev/cuelang.org/go?tab=versions).
 
 For example, to add a dependency on the latest version:
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQGxhdGVzdA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQGxhdGVzdA==" }
 $ go get cuelang.org/go@latest
 ...
 ```
