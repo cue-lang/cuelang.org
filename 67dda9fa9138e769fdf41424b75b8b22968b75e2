@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3667b5cd_40ac4406",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:11:53Z",
+      "side": 1,
+      "message": "Just updated the commit message to include a Preview-Path that shows the fix in action.",
+      "revId": "67dda9fa9138e769fdf41424b75b8b22968b75e2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
