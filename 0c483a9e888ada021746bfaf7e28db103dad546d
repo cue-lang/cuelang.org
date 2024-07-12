@@ -50,6 +50,24 @@
       "message": "Actually the version you want to update here is `prerelease` - because tomorrow we will set the value to `v0.10.0-alpha.1`. `tip` will still want to be an alias for `prelrease` at that point.",
       "revId": "0c483a9e888ada021746bfaf7e28db103dad546d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b01789d7_551b0f19",
+        "filename": "site.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d36228c_8fda44bc",
+      "revId": "0c483a9e888ada021746bfaf7e28db103dad546d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
