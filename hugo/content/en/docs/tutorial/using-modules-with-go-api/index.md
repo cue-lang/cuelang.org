@@ -39,7 +39,7 @@ This tutorial uses the following version of CUE:
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.10.0-alpha.1
+cue version v0.9.2
 ...
 ```
 
@@ -192,18 +192,14 @@ and then prints a message based on the `config` field.
 {{< step stepNumber="8" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEwLjAtYWxwaGEuMQpnbyBtb2QgdGlkeQ==" }
-$ go get cuelang.org/go@v0.10.0-alpha.1
+```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.9.2
 ...
 $ go mod tidy
 ...
 ```
 
-<!-- TODO: add this paragraph back in when v0.9.0 is released, and the command above stops being
-  "go get cuelang.org/go@$CUELANG_CUE_PRERELEASE" and swaps back to CUELANG_CUE_LATEST
-
 You can use `@latest` in place of the specific version mentioned here.
--->
 {{< /step >}}
 
 ## Run the Go program

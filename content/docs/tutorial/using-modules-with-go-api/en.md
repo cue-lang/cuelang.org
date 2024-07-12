@@ -15,10 +15,6 @@ export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
 {{{end}}}
 
-{{{with _script_ "en" "HIDDEN use prerelease cue command to exercise modules bugfixes ahead of v0.9.0 release "}}}
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
-{{{end}}}
-
 {{{with _script_ "en" "HIDDEN setup auth"}}}
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
@@ -201,16 +197,12 @@ Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
 {{{with script "en" "go test"}}}
 #ellipsis 0
-go get cuelang.org/go@$CUELANG_CUE_PRERELEASE
+go get cuelang.org/go@$CUELANG_CUE_LATEST
 #ellipsis 0
 go mod tidy
 {{{end}}}
 
-<!-- TODO: add this paragraph back in when v0.9.0 is released, and the command above stops being
-  "go get cuelang.org/go@$CUELANG_CUE_PRERELEASE" and swaps back to CUELANG_CUE_LATEST
-
 You can use `@latest` in place of the specific version mentioned here.
--->
 {{{end}}}
 
 ## Run the Go program
