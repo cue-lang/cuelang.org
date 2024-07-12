@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "39ba84e3_050433ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be6fb53d_2a8fcc0b",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "a2d0cb9f_34653de8",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 9
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "259edf1c_2c1e0a94",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bee320b_4a8dc510",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "949b9d88_9270f04b",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-07-12T08:35:13Z",
       "side": 1,
       "message": "It\u0027s not actually limited to non-CUE data. Even standalone, data-only CUE could be embedded in this way. I would suggest borrowing language directly from the proposal here in this prelude: https://github.com/cue-lang/cue/discussions/3264",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8da685b4_af0ef6ba",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "949b9d88_9270f04b",
       "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -92,6 +146,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ff9feeb_0bc36f4f",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "beecbb49_da8a9906",
+      "range": {
+        "startLine": 21,
+        "startChar": 11,
+        "endLine": 21,
+        "endChar": 20
+      },
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a920065c_5aa48963",
@@ -105,6 +183,24 @@
       "writtenOn": "2024-07-12T08:43:14Z",
       "side": 1,
       "message": "Before this code block we need to call out the version of CUE required in the standard way please.",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ea658e9_a49d69f7",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a920065c_5aa48963",
       "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -126,6 +222,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "008a6a15_19a81d3a",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a692b3fb_05b44767",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc505fc1_4e68504f",
@@ -139,6 +253,24 @@
       "writtenOn": "2024-07-12T08:35:13Z",
       "side": 1,
       "message": "You could copy-paste parts of the proposal at this point if that helped with the explanation/narrative.",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "039f6868_9c02fba0",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc505fc1_4e68504f",
       "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -160,6 +292,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "58167b23_3345dc3b",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62a74842_58aa4cc8",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a2950ab_071f5579",
@@ -173,6 +323,24 @@
       "writtenOn": "2024-07-12T08:35:13Z",
       "side": 1,
       "message": "Both bullet points link to the same issue? Perhaps we can make this a simple heading with links/relevant words in separate paragraphs? Feels a bit odd to be linking to the same page twice as if it\u0027s two different bits of content.",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "350bb0f0_bc6fdf30",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T09:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a2950ab_071f5579",
       "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
