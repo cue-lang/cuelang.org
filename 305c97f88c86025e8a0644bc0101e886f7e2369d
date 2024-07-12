@@ -16,6 +16,108 @@
       "message": "PTAL.",
       "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bee320b_4a8dc510",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:35:13Z",
+      "side": 1,
+      "message": "Pre previous CL, this needs to point to `CUELANG_CUE_PRERELEASE`",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "949b9d88_9270f04b",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:35:13Z",
+      "side": 1,
+      "message": "It\u0027s not actually limited to non-CUE data. Even standalone, data-only CUE could be embedded in this way. I would suggest borrowing language directly from the proposal here in this prelude: https://github.com/cue-lang/cue/discussions/3264",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a692b3fb_05b44767",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:35:13Z",
+      "side": 1,
+      "message": "I wouldn\u0027t link to this; it\u0027s not part of the proposal and doesn\u0027t directly help. The proposal links to the relevant docs on this point: https://github.com/cue-lang/proposal/blob/main/designs/3264-embed.md#embedglobpattern. I would suggest such a link/detail in any case comes below the code block?",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc505fc1_4e68504f",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:35:13Z",
+      "side": 1,
+      "message": "You could copy-paste parts of the proposal at this point if that helped with the explanation/narrative.",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62a74842_58aa4cc8",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:35:13Z",
+      "side": 1,
+      "message": "Let\u0027s simplify the language here, and I would use `cue export`.\n\n\"Export the resulting configuration:\"",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a2950ab_071f5579",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:35:13Z",
+      "side": 1,
+      "message": "Both bullet points link to the same issue? Perhaps we can make this a simple heading with links/relevant words in separate paragraphs? Feels a bit odd to be linking to the same page twice as if it\u0027s two different bits of content.",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
