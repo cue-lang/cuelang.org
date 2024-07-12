@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "be6fb53d_2a8fcc0b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:39:22Z",
+      "side": 1,
+      "message": "I would also suggest we remove \"data\" from the path - the proposal itself is not actually specific to data. As incomplete CUE could also be loaded this way.",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a2d0cb9f_34653de8",
