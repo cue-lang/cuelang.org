@@ -28,7 +28,7 @@ evaluate some CUE.
 
 This tutorial is written using the following versions of `go` and `cue`:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24KZ28gdmVyc2lvbg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24KZ28gdmVyc2lvbg==" }
 $ cue version
 cue version v0.9.2
 ...
@@ -41,7 +41,7 @@ go version go1.22.4 linux/amd64
 {{< step stepNumber="1" >}}
 Initialize a CUE module to hold our configuration:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGNvbXBhbnkuZXhhbXBsZS9jb25maWd1cmF0aW9u" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGNvbXBhbnkuZXhhbXBsZS9jb25maWd1cmF0aW9u" }
 $ cue mod init company.example/configuration
 ```
 
@@ -63,7 +63,7 @@ name:   "Joe"
 {{< step stepNumber="3" >}}
 Verify that the configuration successfully evaluates:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydA==" }
 $ cue export
 {
     "output": "Hello Joe",
@@ -78,7 +78,7 @@ $ cue export
 {{< step stepNumber="4" >}}
 Initialize a Go module to contain your program:
 
-```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgY29tcGFueS5leGFtcGxlL2NvbmZpZ3VyYXRpb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgY29tcGFueS5leGFtcGxlL2NvbmZpZ3VyYXRpb24=" }
 $ go mod init company.example/configuration
 ...
 ```
@@ -128,7 +128,7 @@ func main() {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
 $ go get cuelang.org/go@v0.9.2
 ...
 $ go mod tidy
@@ -144,7 +144,7 @@ You can use `@latest` in place of a specified version.
 {{< step stepNumber="7" >}}
 Run the Go program:
 
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 "Hello Joe"
 ```

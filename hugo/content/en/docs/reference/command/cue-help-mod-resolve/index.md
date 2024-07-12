@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIHJlc29sdmU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHJlc29sdmU=" }
 $ cue help mod resolve
 This command prints information about how a given
 module path will resolve to an actual registry in the

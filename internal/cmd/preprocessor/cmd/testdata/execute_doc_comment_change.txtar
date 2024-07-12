@@ -52,7 +52,7 @@ content: dir: page: {
 ---
 title: A page
 ---
-```text { title="TERMINAL" codeToCopy="ZWNobyBoZWxsbw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 $ echo hello
 hello
 ```
@@ -60,7 +60,7 @@ hello
 ---
 title: A page
 ---
-```text { title="TERMINAL" codeToCopy="ZWNobyBoZWxsbw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 # This is a doc comment
 $ echo hello
 hello

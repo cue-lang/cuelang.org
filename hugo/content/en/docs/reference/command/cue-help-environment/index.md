@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZW52aXJvbm1lbnQ=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZW52aXJvbm1lbnQ=" }
 $ cue help environment
 The cue command consults environment variables for configuration.
 If an environment variable is unset or empty, sensible default setting is used.

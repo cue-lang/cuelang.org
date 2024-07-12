@@ -59,7 +59,7 @@ Verify that your schema accepts and rejects your test data appropriately.
 
 Our example schema is contained in the `#Schema` definition, which we reference explicitly:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBzY2hlbWEuY3VlIGdvb2QuanNvbiAtZCAnI1NjaGVtYScKY3VlIHZldCBzY2hlbWEuY3VlIGJhZC5qc29uIC1kICcjU2NoZW1hJw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBzY2hlbWEuY3VlIGdvb2QuanNvbiAtZCAnI1NjaGVtYScKY3VlIHZldCBzY2hlbWEuY3VlIGJhZC5qc29uIC1kICcjU2NoZW1hJw==" }
 $ cue vet schema.cue good.json -d '#Schema'
 $ cue vet schema.cue bad.json -d '#Schema'
 age: conflicting values "173" and int (mismatched types string and int):
@@ -76,7 +76,7 @@ name: conflicting values string and ["Moby","Dick"] (mismatched types string and
 {{< step stepNumber="4" >}}
 Initialize a Go module, or use an existing one if that's more suitable for your situation:
 
-```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
 $ go mod init go.example
 ...
 ```
@@ -143,7 +143,7 @@ single JSON file, printing the validation result to its standard output stream.
 
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
 $ go get cuelang.org/go@v0.9.2
 ...
 $ go mod tidy
@@ -156,7 +156,7 @@ $ go mod tidy
 {{< step stepNumber="7" >}}
 Verify that the Go program accepts and rejects your test data as expected:
 
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4gZ29vZC5qc29uCmdvIHJ1biAuIGJhZC5qc29u" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4gZ29vZC5qc29uCmdvIHJ1biAuIGJhZC5qc29u" }
 $ go run . good.json
 ✅ JSON: ok
 $ go run . bad.json

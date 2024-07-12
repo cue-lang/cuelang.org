@@ -78,7 +78,7 @@ Let's start with this JSON Schema:
 
 We use `cue import` to convert the JSON Schema to CUE:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGltcG9ydCAtbCAnI1BlcnNvbjonIHNjaGVtYS5qc29u" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI1BlcnNvbjonIHNjaGVtYS5qc29u" }
 $ cue import -l '#Person:' schema.json
 ```
 `cue import` recognises JSON Schema from its signature fields, and uses the
@@ -136,7 +136,7 @@ The
 [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}})
 command validates our data against the `#Person` constraint:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAtZCAnI1BlcnNvbicgc2NoZW1hLmN1ZSBnb29kLmpzb24gYmFkLmpzb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI1BlcnNvbicgc2NoZW1hLmN1ZSBnb29kLmpzb24gYmFkLmpzb24=" }
 $ cue vet -d '#Person' schema.cue good.json bad.json
 name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
     ./bad.json:2:13
@@ -145,7 +145,7 @@ name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (misma
 
 The `cue vet` command can also validate the data using the JSON Schema directly:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBzY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBzY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
 $ cue vet schema.json good.json bad.json
 name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
     ./bad.json:2:13
@@ -157,7 +157,7 @@ the contents of JSON Schema as data constraints - not just additional data.
 A qualifier can be used to change this behaviour, as outlined in
 [`cue filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}):
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGRlZiBqc29uOiBzY2hlbWEuanNvbg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiBqc29uOiBzY2hlbWEuanNvbg==" }
 $ cue def json: schema.json
 $schema:     "http://json-schema.org/draft-07/schema#"
 type:        "object"
@@ -260,7 +260,7 @@ JSON schema in the first argument - printing the data if it's valid and
 displaying a validation error otherwise. Here we use it to validate the same
 `good.json` and `bad.json` files from above:
 
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4gc2NoZW1hLmpzb24gZ29vZC5qc29uCmdvIHJ1biAuIHNjaGVtYS5qc29uIGJhZC5qc29u" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4gc2NoZW1hLmpzb24gZ29vZC5qc29uCmdvIHJ1biAuIHNjaGVtYS5qc29uIGJhZC5qc29u" }
 $ go run . schema.json good.json
 {
 	name:    "Dorothy Cartwright"
