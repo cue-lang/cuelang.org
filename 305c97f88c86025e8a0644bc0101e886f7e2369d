@@ -94,6 +94,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a920065c_5aa48963",
+        "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-12T08:43:14Z",
+      "side": 1,
+      "message": "Before this code block we need to call out the version of CUE required in the standard way please.",
+      "revId": "305c97f88c86025e8a0644bc0101e886f7e2369d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a692b3fb_05b44767",
         "filename": "content/docs/howto/embed-data-files-in-cue-evaluation/en.md",
         "patchSetId": 9
