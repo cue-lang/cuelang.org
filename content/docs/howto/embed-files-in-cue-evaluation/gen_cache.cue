@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								files: "7trPaZeasw0K1OgHiBJYzoOf6T64RAIMQkYuvx3G42k="
+								files: "tDaqLk6ZmuUbnbHzYc6a7mt3Ly5BBjO4QMUtNPS5GAM="
 							}
 							multi_step: {
-								hash:       "HA4GPLC2850F7RCVBB1G5N9TLSMBQTAKKEGMNF9DTB5RCUJTM2MG===="
-								scriptHash: "L3E3DME2F61TU6U7MM9RA4TEH3SJAKLP41HV48L2AHOCOJPST04G===="
+								hash:       "PEV2DB0BVTO6NDFU514BABGRVEO412LE0837KJ6COTSM8SGCM2PG===="
+								scriptHash: "4NM7M5GCDR3KKCKBP6THR342PMKGFK0KNG5ANQNSVTVQ46CNN2A0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export PATH=/cues/v0.10.0-alpha.1:$PATH"
@@ -35,10 +35,16 @@ package site
 									doc:      ""
 									cmd:      "cue eval"
 									exitCode: 0
-									output: """
-											oneFile: {
-											    aField: "a value"
-											}
+									output: #"""
+											oneFile: """
+											    # How to use this project
+
+											    ## Installation
+
+											    Fetch the latest release from the official site,
+											    and unpack it in your home directory. Next ...
+
+											    """
 											manyFiles: {
 											    "a.json": {
 											        aField: "a value"
@@ -55,7 +61,7 @@ package site
 											    }
 											}
 
-											"""
+											"""#
 								}]
 							}
 						}
