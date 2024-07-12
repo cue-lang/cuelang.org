@@ -25,7 +25,7 @@ giving the issue's title a "`cuelang.org: `" prefix.
 
 * [NodeJS](https://nodejs.org/) `v20.x`
 * [Go](https://golang.org/dl/) `>= go1.21` (not needed for only running `hugo`)
-* [Hugo](https://github.com/gohugoio/hugo/releases) `>= v0.126.1`
+* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.128.2`
   (["extended"](https://gohugo.io/troubleshooting/faq/#i-get-this-feature-is-not-available-in-your-current-hugo-version)
   binary version)
 * [Docker](https://docs.docker.com/get-docker/) CLI `>= 19.03` (for [`docker
