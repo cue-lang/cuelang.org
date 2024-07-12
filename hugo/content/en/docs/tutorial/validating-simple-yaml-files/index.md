@@ -51,7 +51,7 @@ Open a command prompt and create a new directory to hold this tutorial's files.
 
 For example:
 
-```text { title="TERMINAL" codeToCopy="cHdkICMgd2Ugc3RhcnQgaW4gb3VyIGhvbWUgZGlyZWN0b3J5LCBidXQgeW91IGRvIG5vdCBuZWVkIHRvCm1rZGlyIHZhbGlkYXRpbmcteWFtbC13aXRoLWN1ZQpjZCB2YWxpZGF0aW5nLXlhbWwtd2l0aC1jdWU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="cHdkICMgd2Ugc3RhcnQgaW4gb3VyIGhvbWUgZGlyZWN0b3J5LCBidXQgeW91IGRvIG5vdCBuZWVkIHRvCm1rZGlyIHZhbGlkYXRpbmcteWFtbC13aXRoLWN1ZQpjZCB2YWxpZGF0aW5nLXlhbWwtd2l0aC1jdWU="  }
 $ pwd # we start in our home directory, but you do not need to
 /home/runner
 $ mkdir validating-yaml-with-cue
@@ -111,7 +111,7 @@ constrain a field's value.
 Check that the `charlie.yml` data file satisfies the schema you defined in
 `pets.cue`:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbA=="  }
 $ cue vet pets.cue charlie.yml
 age: conflicting values "15" and number (mismatched types string and number):
     ./charlie.yml:5:6
@@ -173,7 +173,7 @@ age: 15
 {{< step stepNumber="7" >}}
 Re-check the data file against the CUE schema:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbA=="  }
 $ cue vet pets.cue charlie.yml
 ```
 
@@ -211,7 +211,7 @@ age: 12.5
 {{< step stepNumber="9" >}}
 Ask `cue` to check that both data files satisfy your schema in `pets.cue`:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbCB0b2J5LnltbA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbCB0b2J5LnltbA=="  }
 $ cue vet pets.cue charlie.yml toby.yml
 ```
 

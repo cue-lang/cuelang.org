@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIGZpeA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGZpeA=="  }
 $ cue help mod fix
 Fix provides a way to migrate from a legacy module.cue file
 to the new standard syntax. It

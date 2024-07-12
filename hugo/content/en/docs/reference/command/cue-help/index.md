@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHA=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHA="  }
 $ cue help
 cue evaluates CUE files, an extension of JSON, and sends them
 to user-defined commands for processing.

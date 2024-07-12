@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIGdldA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGdldA=="  }
 $ cue help mod get
 Get updates module dependencies, fetching new dependencies if
 needed and changing versions to specified versions. It can downgrade

@@ -19,7 +19,7 @@ It could be adapted to other schema-walking tasks - not just code generation.
 {{< step stepNumber="1" >}}
 Create a Go module, or use an existing one if that's more suitable for your situation:
 
-```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ=="  }
 $ go mod init go.example
 ...
 ```
@@ -28,7 +28,7 @@ $ go mod init go.example
 {{< step stepNumber="2" >}}
 Create a CUE module if you don't already have one:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl"  }
 $ cue mod init cue.example
 ```
 
@@ -84,7 +84,7 @@ order to demonstrate that they are *not* processed by the code presented below.
 {{< step stepNumber="4" >}}
 Ensure there are no errors in our CUE:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldA=="  }
 $ cue vet
 ```
 
@@ -156,7 +156,7 @@ func structToType(name cue.Selector, val cue.Value) {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ=="  }
 $ go get cuelang.org/go@v0.9.2
 ...
 $ go mod tidy
@@ -170,7 +170,7 @@ You can use `@latest` in place of a specific version.
 {{< step stepNumber="7" >}}
 Run the Go program:
 
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4="  }
 $ go run .
 package p
 

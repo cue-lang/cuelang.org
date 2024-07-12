@@ -41,7 +41,7 @@ and then use the result to validate some data.
 
 This tutorial is written using the following version of `cue`:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24="  }
 $ cue version
 cue version v0.9.2
 ...
@@ -109,7 +109,7 @@ This schema validates data that defines a restaurant.
 {{< step stepNumber="2" >}}
 Convert the JSON Schema to a CUE definition called `#restaurant`:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGltcG9ydCAtbCAnI3Jlc3RhdXJhbnQ6JyAtcCBjdWlzaW5lIHNjaGVtYS5qc29u" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI3Jlc3RhdXJhbnQ6JyAtcCBjdWlzaW5lIHNjaGVtYS5qc29u"  }
 $ cue import -l '#restaurant:' -p cuisine schema.json
 ```
 It's good practise to tell `cue` to place imported CUE inside a package.
@@ -171,7 +171,7 @@ shortly.  If you spotted the problem while entering the data, make sure you
 {{< step stepNumber="4" >}}
 Validate the data using the schema and constraints:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw="  }
 $ cue vet -d '#restaurant' schema.cue *.yml
 tables.0.seats: invalid value 100 (out of bound <=10):
     ./schema.cue:10:16
@@ -200,7 +200,7 @@ tables:
 {{< step stepNumber="6" >}}
 Re-validate the data using the schema and constraints:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw="  }
 $ cue vet -d '#restaurant' schema.cue *.yml
 ```
 

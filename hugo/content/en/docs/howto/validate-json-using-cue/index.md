@@ -74,7 +74,7 @@ people: [X=string]: #Person & {
 {{< step stepNumber="3" >}}
 Run the following `cue` command in your terminal:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24="  }
 $ cue vet x.cue x.json
 ```
 
@@ -113,7 +113,7 @@ following:
 {{< step stepNumber="5" >}}
 Validate again with `cue vet`:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24="  }
 $ cue vet x.cue x.json
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
@@ -157,7 +157,7 @@ Fix up the JSON:
 {{< step stepNumber="7" >}}
 Validate with `cue vet` again
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24="  }
 $ cue vet x.cue x.json
 ```
 

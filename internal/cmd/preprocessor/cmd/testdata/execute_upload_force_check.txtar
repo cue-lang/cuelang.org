@@ -127,7 +127,7 @@ something.txt
 something forced
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" codeToCopy="Y2F0IHNvbWV0aGluZy50eHQ=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IHNvbWV0aGluZy50eHQ="  }
 $ cat something.txt
 something forced
 ```
@@ -143,7 +143,7 @@ Some text before
 else.txt
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" codeToCopy="Y2F0IGVsc2UudHh0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGVsc2UudHh0"  }
 $ cat else.txt
 else forced
 ```

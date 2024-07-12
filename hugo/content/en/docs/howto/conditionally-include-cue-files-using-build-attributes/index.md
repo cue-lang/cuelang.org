@@ -39,7 +39,7 @@ presence or absence of tags:
 - `bar.cue` is included only when the `bar` tag is *not* present.
 - `qux.cue` is always included.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV4cG9ydApjdWUgZXhwb3J0IC10IGZvbwpjdWUgZXhwb3J0IC10IGJhcgpjdWUgZXhwb3J0IC10IGZvbyAtdCBiYXI=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydApjdWUgZXhwb3J0IC10IGZvbwpjdWUgZXhwb3J0IC10IGJhcgpjdWUgZXhwb3J0IC10IGZvbyAtdCBiYXI="  }
 $ cue export
 {
     "data from bar.cue": true,

@@ -36,7 +36,7 @@ in practice.
 The given YAML files are ordered in following directory
 (you can use `find` if you don't have tree):
 
-```text { title="TERMINAL" codeToCopy="ZmluZCAuL29yaWdpbmFsIC10eXBlIGYgfCBzb3J0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuL29yaWdpbmFsIC10eXBlIGYgfCBzb3J0"  }
 $ find ./original -type f | sort
 ./original/services/frontend/bartender/kube.yaml
 ./original/services/frontend/breaddispatcher/kube.yaml
@@ -62,7 +62,7 @@ directory.
 
 We first make a copy of the data directory.
 
-```text { title="TERMINAL" codeToCopy="Y3AgLWEgb3JpZ2luYWwgdG1wCmNkIHRtcA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3AgLWEgb3JpZ2luYWwgdG1wCmNkIHRtcA=="  }
 $ cp -a original tmp
 $ cd tmp
 ```
@@ -71,7 +71,7 @@ We initialize a module so that we can treat all our configuration files
 in the subdirectories as part of one package.
 We do that later by giving all the same package name.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGs4cy5leGFtcGxl" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGs4cy5leGFtcGxl"  }
 $ cue mod init k8s.example
 ```
 
@@ -80,7 +80,7 @@ Creating a module also allows our packages import external packages.
 We initialize a Go module so that later we can resolve the
 `k8s.io/api/apps/v1` Go package dependency:
 
-```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgazhzLmV4YW1wbGU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgazhzLmV4YW1wbGU="  }
 $ go mod init k8s.example
 go: creating new go.mod: module k8s.example
 go: to add module requirements and sums:
@@ -90,7 +90,7 @@ go: to add module requirements and sums:
 Let's try to use the `cue import` command to convert the given YAML files
 into CUE.
 
-```text { title="TERMINAL" codeToCopy="Y2Qgc2VydmljZXM=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y2Qgc2VydmljZXM="  }
 $ cd services
 ```
 
@@ -101,7 +101,7 @@ $ cd services
 Since we have multiple packages and files, we need to specify the package to
 which they should belong.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGltcG9ydCAuLy4uLiAtcCBrdWJl" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuLy4uLiAtcCBrdWJl"  }
 $ cue import ./... -p kube
 path, list, or files flag needed to handle multiple objects in file ./services/frontend/bartender/kube.yaml
 ```
@@ -118,7 +118,7 @@ just as is allowed by Kubernetes.
 To accomplish this, we tell `cue` to put each object in the configuration
 tree at the path with the "kind" as first element and "name" as second.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGltcG9ydCAuLy4uLiAtcCBrdWJlIC1sICdzdHJpbmdzLlRvQ2FtZWwoa2luZCknIC1sIG1ldGFkYXRhLm5hbWUgLWY=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuLy4uLiAtcCBrdWJlIC1sICdzdHJpbmdzLlRvQ2FtZWwoa2luZCknIC1sIG1ldGFkYXRhLm5hbWUgLWY="  }
 $ cue import ./... -p kube -l 'strings.ToCamel(kind)' -l metadata.name -f
 ```
 
@@ -130,7 +130,7 @@ We also added the `-f` flag to overwrite the few files that succeeded before.
 
 Let's see what happened:
 
-```text { title="TERMINAL" codeToCopy="ZmluZCAuIC10eXBlIGYgfCBzb3J0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIC10eXBlIGYgfCBzb3J0"  }
 $ find . -type f | sort
 ./frontend/bartender/kube.cue
 ./frontend/bartender/kube.yaml
@@ -146,7 +146,7 @@ Comments of the YAML files are preserved.
 The result is not fully pleasing, though.
 Take a look at `mon/prometheus/configmap.cue`.
 
-```text { title="TERMINAL" codeToCopy="aGVhZCBtb24vcHJvbWV0aGV1cy9jb25maWdtYXAuY3Vl" }
+```text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCBtb24vcHJvbWV0aGV1cy9jb25maWdtYXAuY3Vl"  }
 $ head mon/prometheus/configmap.cue
 package kube
 
@@ -170,13 +170,13 @@ in the configuration files and then converts these recursively.
 
 <!-- TODO: update import label format -->
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGltcG9ydCAuLy4uLiAtcCBrdWJlIC1sICdzdHJpbmdzLlRvQ2FtZWwoa2luZCknIC1sIG1ldGFkYXRhLm5hbWUgLWYgLVI=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuLy4uLiAtcCBrdWJlIC1sICdzdHJpbmdzLlRvQ2FtZWwoa2luZCknIC1sIG1ldGFkYXRhLm5hbWUgLWYgLVI="  }
 $ cue import ./... -p kube -l 'strings.ToCamel(kind)' -l metadata.name -f -R
 ```
 
 Now the file looks like:
 
-```text { title="TERMINAL" codeToCopy="aGVhZCBtb24vcHJvbWV0aGV1cy9jb25maWdtYXAuY3Vl" }
+```text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCBtb24vcHJvbWV0aGV1cy9jb25maWdtYXAuY3Vl"  }
 $ head mon/prometheus/configmap.cue
 package kube
 
@@ -197,7 +197,7 @@ a string with an equivalent YAML file.
 Fields starting with an underscore (`_`) are not included when emitting
 a configuration file (they are when enclosed in double quotes).
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLi9tb24vcHJvbWV0aGV1cyAtZSBjb25maWdNYXAucHJvbWV0aGV1cw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLi9tb24vcHJvbWV0aGV1cyAtZSBjb25maWdNYXAucHJvbWV0aGV1cw=="  }
 $ cue eval ./mon/prometheus -e configMap.prometheus
 apiVersion: "v1"
 kind:       "ConfigMap"
@@ -231,7 +231,7 @@ Now we have imported the YAML files we can start the simplification process.
 Before we start the restructuring, lets save a full evaluation so that we
 can verify that simplifications yield the same results.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90"  }
 $ cue eval -c ./... >snapshot
 ```
 
@@ -244,7 +244,7 @@ common structure.
 We copy one of the files containing both as a basis for creating our template
 to the root of the directory tree.
 
-```text { title="TERMINAL" codeToCopy="Y3AgZnJvbnRlbmQvYnJlYWRkaXNwYXRjaGVyL2t1YmUuY3VlIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3AgZnJvbnRlbmQvYnJlYWRkaXNwYXRjaGVyL2t1YmUuY3VlIC4="  }
 $ cp frontend/breaddispatcher/kube.cue .
 ```
 
@@ -330,7 +330,7 @@ other a user of the template will want to specify.
 
 Let's compare the result of merging our new template to our original snapshot.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90Mg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90Mg=="  }
 $ cue eval -c ./... >snapshot2
 // k8s.example/services/mon/alertmanager@v0:kube
 deployment.alertmanager.spec.template.metadata.labels.component: incomplete value string:
@@ -363,7 +363,7 @@ EOF
 ```
 -->
 
-```text { title="TERMINAL" codeToCopy="c2VkIC1pLmJhayAncy9jb21wb25lbnQ6LipzdHJpbmcvY29tcG9uZW50OiAjQ29tcG9uZW50Lycga3ViZS5jdWUKcm0ga3ViZS5jdWUuYmFrCmNhdCA8PEVPRiA+Pmt1YmUuY3VlCgojQ29tcG9uZW50OiBzdHJpbmcKRU9GCmxzIC1kICovIHwgc2VkICdzLy4kLy8nIHwgeGFyZ3MgLUkgRElSIHNoIC1jICdjZCBESVI7IGVjaG8gInBhY2thZ2Uga3ViZQoKI0NvbXBvbmVudDogXCJESVJcIgoiID4ga3ViZS5jdWU7IGNkIC4uJwpjdWUgZm10IGt1YmUuY3VlICova3ViZS5jdWU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="c2VkIC1pLmJhayAncy9jb21wb25lbnQ6LipzdHJpbmcvY29tcG9uZW50OiAjQ29tcG9uZW50Lycga3ViZS5jdWUKcm0ga3ViZS5jdWUuYmFrCmNhdCA8PEVPRiA+Pmt1YmUuY3VlCgojQ29tcG9uZW50OiBzdHJpbmcKRU9GCmxzIC1kICovIHwgc2VkICdzLy4kLy8nIHwgeGFyZ3MgLUkgRElSIHNoIC1jICdjZCBESVI7IGVjaG8gInBhY2thZ2Uga3ViZQoKI0NvbXBvbmVudDogXCJESVJcIgoiID4ga3ViZS5jdWU7IGNkIC4uJwpjdWUgZm10IGt1YmUuY3VlICova3ViZS5jdWU="  }
 # set the component label to our new top-level field
 $ sed -i.bak 's/component:.*string/component: #Component/' kube.cue
 $ rm kube.cue.bak
@@ -386,7 +386,7 @@ $ cue fmt kube.cue */kube.cue
 
 Let's try again to see if it is fixed:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90Mg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90Mg=="  }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 --- snapshot
@@ -415,14 +415,14 @@ $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 Except for having more consistent labels and some reordering, nothing changed.
 We are happy and save the result as the new baseline.
 
-```text { title="TERMINAL" codeToCopy="Y3Agc25hcHNob3QyIHNuYXBzaG90" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3Agc25hcHNob3QyIHNuYXBzaG90"  }
 $ cp snapshot2 snapshot
 ```
 
 The corresponding boilerplate can now be removed with `cue trim`.
 
 
-```text { title="TERMINAL" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQpjdWUgdHJpbSAuLy4uLgpmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQpjdWUgdHJpbSAuLy4uLgpmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x"  }
 $ find . | grep kube.cue | xargs wc -l | tail -1
  1833 total
 $ cue trim ./...
@@ -436,7 +436,7 @@ In doing so it removed over 500 lines of configuration, or over 30%!
 
 The following is proof that nothing changed semantically:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgfCB3YyAtbA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgfCB3YyAtbA=="  }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 | wc -l
 0
@@ -563,7 +563,7 @@ for the respective ports in `infra/events`, `infra/tasks`, and `infra/watcher`.
 
 For the purpose of this tutorial, here are some quick patches:
 
-```text { title="TERMINAL" codeToCopy="Y2F0IDw8RU9GID4+aW5mcmEvZXZlbnRzL2t1YmUuY3VlCgpkZXBsb3ltZW50OiBldmVudHM6IHNwZWM6IHRlbXBsYXRlOiBzcGVjOiBjb250YWluZXJzOiBbeyBwb3J0czogW3tfZXhwb3J0OiBmYWxzZX0sIF9dIH1dCkVPRgpjYXQgPDxFT0YgPj5pbmZyYS90YXNrcy9rdWJlLmN1ZQoKZGVwbG95bWVudDogdGFza3M6IHNwZWM6IHRlbXBsYXRlOiBzcGVjOiBjb250YWluZXJzOiBbeyBwb3J0czogW3tfZXhwb3J0OiBmYWxzZX0sIF9dIH1dCkVPRgpjYXQgPDxFT0YgPj5pbmZyYS93YXRjaGVyL2t1YmUuY3VlCgpkZXBsb3ltZW50OiB3YXRjaGVyOiBzcGVjOiB0ZW1wbGF0ZTogc3BlYzogY29udGFpbmVyczogW3sgcG9ydHM6IFt7X2V4cG9ydDogZmFsc2V9LCBfXSB9XQpFT0Y=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IDw8RU9GID4+aW5mcmEvZXZlbnRzL2t1YmUuY3VlCgpkZXBsb3ltZW50OiBldmVudHM6IHNwZWM6IHRlbXBsYXRlOiBzcGVjOiBjb250YWluZXJzOiBbeyBwb3J0czogW3tfZXhwb3J0OiBmYWxzZX0sIF9dIH1dCkVPRgpjYXQgPDxFT0YgPj5pbmZyYS90YXNrcy9rdWJlLmN1ZQoKZGVwbG95bWVudDogdGFza3M6IHNwZWM6IHRlbXBsYXRlOiBzcGVjOiBjb250YWluZXJzOiBbeyBwb3J0czogW3tfZXhwb3J0OiBmYWxzZX0sIF9dIH1dCkVPRgpjYXQgPDxFT0YgPj5pbmZyYS93YXRjaGVyL2t1YmUuY3VlCgpkZXBsb3ltZW50OiB3YXRjaGVyOiBzcGVjOiB0ZW1wbGF0ZTogc3BlYzogY29udGFpbmVyczogW3sgcG9ydHM6IFt7X2V4cG9ydDogZmFsc2V9LCBfXSB9XQpFT0Y="  }
 $ cat <<EOF >>infra/events/kube.cue
 
 deployment: events: spec: template: spec: containers: [{ ports: [{_export: false}, _] }]
@@ -584,7 +584,7 @@ port declaration.
 We verify that all changes are acceptable and store another snapshot.
 Then we run trim to further reduce our configuration:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLi8uLi4KZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi8uLi4KZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ=="  }
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
  1131 total
@@ -601,7 +601,7 @@ But we have another trick up our sleeve.
 With the `-s` or `--simplify` option we can tell `trim` or `fmt` to collapse
 structs with a single element onto a single line. For instance:
 
-```text { title="TERMINAL" codeToCopy="aGVhZCBmcm9udGVuZC9icmVhZGRpc3BhdGNoZXIva3ViZS5jdWU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCBmcm9udGVuZC9icmVhZGRpc3BhdGNoZXIva3ViZS5jdWU="  }
 $ head frontend/breaddispatcher/kube.cue
 package kube
 
@@ -615,7 +615,7 @@ deployment: breaddispatcher: {
 				}
 ```
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLi8uLi4gLXMKaGVhZCBmcm9udGVuZC9icmVhZGRpc3BhdGNoZXIva3ViZS5jdWU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi8uLi4gLXMKaGVhZCBmcm9udGVuZC9icmVhZGRpc3BhdGNoZXIva3ViZS5jdWU="  }
 $ cue trim ./... -s
 $ head frontend/breaddispatcher/kube.cue
 package kube
@@ -630,7 +630,7 @@ deployment: breaddispatcher: spec: template: {
 		ports: [{containerPort: 7080}]
 ```
 
-```text { title="TERMINAL" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ=="  }
 $ find . | grep kube.cue | xargs wc -l | tail -1
   979 total
 ```
@@ -641,7 +641,7 @@ by removing considerable amounts of punctuation.
 
 We save the result as the new baseline:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q="  }
 $ cue eval -c ./... >snapshot2
 $ cp snapshot2 snapshot
 ```
@@ -680,7 +680,7 @@ deployment: [string]: spec: template: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q="  }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 --- snapshot
@@ -699,7 +699,7 @@ $ cp snapshot2 snapshot
 
 Two lines with annotations added, improving consistency.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ=="  }
 $ cue trim ./frontend/... -s
 $ find . | grep kube.cue | xargs wc -l | tail -1
   937 total
@@ -712,7 +712,7 @@ of configuration left.
 
 We save the result as the new baseline:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q="  }
 $ cue eval -c ./... >snapshot2
 $ cp snapshot2 snapshot
 ```
@@ -814,7 +814,7 @@ Later in this document we introduce a manually optimized configuration.
 We add the two disk by default and define a `_hasDisks` option to opt out.
 The `souschef` configuration is the only one that defines no disks.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHRyaW0gLXMgLi9raXRjaGVuLy4uLgpjdWUgZXZhbCAtYyAuLy4uLiA+c25hcHNob3QyCmRpZmYgLXd1IHNuYXBzaG90IHNuYXBzaG90MiAtLWxhYmVsIHNuYXBzaG90IC0tbGFiZWwgc25hcHNob3QyCmNwIHNuYXBzaG90MiBzbmFwc2hvdApmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLXMgLi9raXRjaGVuLy4uLgpjdWUgZXZhbCAtYyAuLy4uLiA+c25hcHNob3QyCmRpZmYgLXd1IHNuYXBzaG90IHNuYXBzaG90MiAtLWxhYmVsIHNuYXBzaG90IC0tbGFiZWwgc25hcHNob3QyCmNwIHNuYXBzaG90MiBzbmFwc2hvdApmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x"  }
 $ cue trim -s ./kitchen/...
 
 # check differences
@@ -964,7 +964,7 @@ Although we may keep supporting this form if needed.
 
 The command is now available in the `cue` tool:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGNtZCBscyAuL2Zyb250ZW5kL21haXRyZWQ=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBscyAuL2Zyb250ZW5kL21haXRyZWQ="  }
 $ cue cmd ls ./frontend/maitred
 Service      frontend   maitred
 Deployment   frontend   maitred
@@ -983,7 +983,7 @@ but our per-type maps of Kubernetes objects should be free of conflict
 (if there is, we have a problem with Kubernetes down the line).
 A merge thus gives us a unified view of all objects.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGNtZCBscyAuLy4uLg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBscyAuLy4uLg=="  }
 $ cue cmd ls ./...
 Service       frontend   bartender
 Service       frontend   breaddispatcher
@@ -1066,7 +1066,7 @@ The `cue` tool does a static analysis of the dependencies and runs all
 tasks which dependencies are satisfied in parallel while blocking tasks
 for which an input is missing.
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGNtZCBjcmVhdGUgLi9mcm9udGVuZC8uLi4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBjcmVhdGUgLi9mcm9udGVuZC8uLi4="  }
 $ cue cmd create ./frontend/...
 apiVersion: v1
 kind: Service

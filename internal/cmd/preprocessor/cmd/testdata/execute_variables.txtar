@@ -127,7 +127,7 @@ $ cue export in.cue
 
 upload: 5 // a line comment stable replacement
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" codeToCopy="ZWNobyBpbi5jdWUgc3RhYmxlIHJlcGxhY2VtZW50" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBpbi5jdWUgc3RhYmxlIHJlcGxhY2VtZW50"  }
 $ echo in.cue stable replacement
 in.cue stable replacement
 ```

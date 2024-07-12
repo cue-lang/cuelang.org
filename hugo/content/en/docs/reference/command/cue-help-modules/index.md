@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kdWxlcw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kdWxlcw=="  }
 $ cue help modules
 Modules are how CUE publishes packages and manages dependencies.
 
