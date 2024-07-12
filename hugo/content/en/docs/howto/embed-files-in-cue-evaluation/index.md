@@ -26,7 +26,7 @@ with embedding.
 Using `@embed()` requires CUE version `v0.10.0-alpha.1` or later.
 This guide demonstrates the following version:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZlcnNpb24=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24="  }
 $ cue version
 cue version v0.10.0-alpha.1
 ...
@@ -38,7 +38,7 @@ cue version v0.10.0-alpha.1
 Enable the embed experiment:
 
 <!-- TODO(jcm): remove when embed is not experimental -->
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPWVtYmVk" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPWVtYmVk" }
 $ export CUE_EXPERIMENT=embed
 ```
 {{< /step >}}
@@ -95,7 +95,7 @@ an unknown filename extension can be loaded by adding the
 {{< step stepNumber="3" >}}
 Export the resulting configuration:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWw=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw="  }
 $ cue eval
 oneFile: """
     # How to use this project

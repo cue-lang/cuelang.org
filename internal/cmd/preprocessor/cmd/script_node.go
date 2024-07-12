@@ -225,7 +225,7 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	}
 	enc.Close()
 
-	p("```text { title=%q codeToCopy=%q", "TERMINAL", copyCmdStr.String())
+	p("```text { title=%q type=%q codeToCopy=%q ", "TERMINAL", "terminal", copyCmdStr.String())
 	p(" }\n")
 	var lastOutput string
 	for i, stmt := range s.stmts {

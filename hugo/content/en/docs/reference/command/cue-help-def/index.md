@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZGVm" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZGVm"  }
 $ cue help def
 def prints consolidated configuration as a single file.
 

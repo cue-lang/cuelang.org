@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9k" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9k"  }
 $ cue help mod
 Mod groups commands which operate on CUE modules.
 

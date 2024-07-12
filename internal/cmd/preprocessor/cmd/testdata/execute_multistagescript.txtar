@@ -231,7 +231,7 @@ map: {
 "x": 5
 }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" codeToCopy="d2MgLWwgaW4uanNvbg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="d2MgLWwgaW4uanNvbg=="  }
 $ wc -l in.json
 3 in.json
 ```
@@ -241,7 +241,7 @@ $ wc -l in.json
     "x": 5
 }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAplY2hvIGhlbGxv" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAplY2hvIGhlbGxv"  }
 # script doc comment
 # script doc comment part 2
 $ cue eval in.cue # test
@@ -255,7 +255,7 @@ map: {
 $ echo hello
 hello
 ```
-```text { title="TERMINAL" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u"  }
 $ export MYVAR=value
 $ cue version
 cue version v0.9.2
@@ -270,17 +270,17 @@ go version go1.22.4
             GOOS linux
 cue.lang.version v0.9.2
 ```
-```text { title="TERMINAL" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZA=="  }
 $ nonexistent command
 ```
 {{< /step >}}
 
-```text { title="TERMINAL" codeToCopy="ZWNobyB2MC45LjAtYWxwaGEuMw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyB2MC45LjAtYWxwaGEuMw=="  }
 $ echo v0.9.0-alpha.3
 v0.9.0-alpha.3
 ```
 
-```text { title="TERMINAL" codeToCopy="ZWNobyAkQ1VFX1RFU1RfTE9HSU5T" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkQ1VFX1RFU1RfTE9HSU5T"  }
 $ echo $CUE_TEST_LOGINS
 blah
 ```

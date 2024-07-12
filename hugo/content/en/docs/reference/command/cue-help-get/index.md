@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZ2V0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0"  }
 $ cue help get
 Get downloads packages or modules for CUE or another language
 to include them in the module's pkg directory.

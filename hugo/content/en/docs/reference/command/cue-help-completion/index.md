@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgY29tcGxldGlvbg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY29tcGxldGlvbg=="  }
 $ cue help completion
 Generate completion script
 

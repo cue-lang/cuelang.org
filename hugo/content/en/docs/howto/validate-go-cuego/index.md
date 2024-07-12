@@ -18,7 +18,7 @@ API to validate Go values against CUE constraints expressed in
 {{< step stepNumber="1" >}}
 Initialize a Go module, or use an existing one if that's more suitable for your situation:
 
-```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ=="  }
 $ go mod init go.example
 ...
 ```
@@ -84,7 +84,7 @@ and prints the validation result for each instance.
 {{< step stepNumber="3" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ=="  }
 $ go get cuelang.org/go@v0.9.2
 ...
 $ go mod tidy
@@ -96,7 +96,7 @@ $ go mod tidy
 {{< step stepNumber="4" >}}
 Run the program:
 
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4="  }
 $ go run .
 good: ✅ ok
 bad: Action: 2 errors in empty disjunction:

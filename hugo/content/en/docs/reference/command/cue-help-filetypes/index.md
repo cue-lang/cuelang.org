@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgZmlsZXR5cGVz" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZmlsZXR5cGVz"  }
 $ cue help filetypes
 The cue tools supports the following file types:
 

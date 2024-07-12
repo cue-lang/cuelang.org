@@ -85,7 +85,7 @@ height?: int    // Optional, as we haven't managed to measure *every* animal jus
 The `cue vet` command validates our three data files against this schema.
 Each file is validated independently:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s"  }
 $ cue vet . alex.json bryn.json charlie.yaml
 height: conflicting values "2" and int (mismatched types string and int):
     ./bryn.json:4:15
@@ -109,7 +109,7 @@ Let's correct that data:
 
 We can then repeat the `cue vet` command:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s"  }
 $ cue vet . alex.json bryn.json charlie.yaml
 ```
 
@@ -197,7 +197,7 @@ The `policy.cue` file contains additional constraints for some data fields,
 which CUE combines with the type constraints in `schema.cue` through a process
 called **unification**. Let's see it in action:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s"  }
 $ cue vet . alex.json bryn.json charlie.yaml
 type: 2 errors in empty disjunction:
 type: conflicting values "cat" and "goldfish":
@@ -224,7 +224,7 @@ height?: >=1
 
 We can then run `cue vet` again:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s"  }
 $ cue vet . alex.json bryn.json charlie.yaml
 ```
 
@@ -453,7 +453,7 @@ aBool: "this is not a boolean value"
 The `cue vet` command unifies all the constraints, showing us the full extent
 of our data validation problem:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw=="  }
 $ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
     ./data.yml:4:8
@@ -486,7 +486,7 @@ aFloat: 4.0
 aBool: false
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw=="  }
 $ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 ```
 

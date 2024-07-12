@@ -77,7 +77,7 @@ y: 2
 {{< /code-tab >}}{{< /code-tabs >}}
 
 Here is the package being evaluated:
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWw=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw="  }
 $ cue eval
 y: 2
 x: 1
@@ -92,7 +92,7 @@ z: 3
 {{< /code-tab >}}{{< /code-tabs >}}
 
 Here is the package being evaluated again:
-```text { title="TERMINAL" codeToCopy="Y3VlIGV2YWwgPnJlc3VsdC50eHQKY2F0ICoudHh0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgPnJlc3VsdC50eHQKY2F0ICoudHh0"  }
 $ cue eval >result.txt
 $ cat *.txt
 y: 2
