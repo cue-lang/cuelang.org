@@ -55,12 +55,12 @@ content: dir: page: {
 title: JSON Superset
 ---
 
-```text { title="TERMINAL" codeToCopy="c2VxIDEgNQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="c2VxIDEgNQ==" }
 $ seq 1 5
 ...
 ```
 
-```text { title="TERMINAL" codeToCopy="c2VxIDEgMTA=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="c2VxIDEgMTA=" }
 $ seq 1 10
 1
 2
@@ -70,14 +70,14 @@ $ seq 1 10
 ...
 ```
 
-```text { title="TERMINAL" codeToCopy="c2VxIDEgMjA=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="c2VxIDEgMjA=" }
 $ seq 1 20
 1
 2
 ...
 ```
 
-```text { title="TERMINAL" codeToCopy="dHJ1ZQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="dHJ1ZQ==" }
 $ true
 ...
 ```

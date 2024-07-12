@@ -66,12 +66,12 @@ content in a
 content in b
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" codeToCopy="bHMgfCBlY2hvIGhlbGxv" }
+```text { title="TERMINAL" type="terminal" codeToCopy="bHMgfCBlY2hvIGhlbGxv" }
 $ ls | echo hello
 ...
 ```
 
-```text { title="TERMINAL" codeToCopy="ZGlmZiAtd3UgYSBi" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZGlmZiAtd3UgYSBi" }
 $ diff -wu a b
 --- a	
 +++ b	

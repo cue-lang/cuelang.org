@@ -42,7 +42,7 @@ content: dir: page: {
 ---
 title: Test page
 ---
-```text { title="TERMINAL" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
 $ echo $TEST_USER_AUTHN_CUECKOO_USER
 ******
 ```
@@ -50,7 +50,7 @@ $ echo $TEST_USER_AUTHN_CUECKOO_USER
 ---
 title: Test page
 ---
-```text { title="TERMINAL" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
 $ echo $TEST_USER_AUTHN_CUECKOO_USER
 ******
 ```

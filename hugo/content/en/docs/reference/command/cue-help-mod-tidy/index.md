@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIHRpZHk=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHRpZHk=" }
 $ cue help mod tidy
 Tidy resolves all module dependencies in the current module and updates
 the cue.mod/module.cue file to reflect them.

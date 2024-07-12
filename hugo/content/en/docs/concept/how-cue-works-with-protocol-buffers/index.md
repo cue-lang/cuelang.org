@@ -44,7 +44,7 @@ message MyType {
 The `cue import` command converts Protobuf to CUE.
 It indicates success by displaying no output:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGltcG9ydCBiYXNpYy5wcm90bw==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCBiYXNpYy5wcm90bw==" }
 $ cue import basic.proto
 ```
 The command creates this CUE file:
@@ -105,7 +105,7 @@ func main() {
 {{< /code-tab >}}{{< /code-tabs >}}
 Here's the program's output:
 
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIG1haW4uZ28=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIG1haW4uZ28=" }
 $ go run main.go
 // Package basic is rather basic.
 package basic

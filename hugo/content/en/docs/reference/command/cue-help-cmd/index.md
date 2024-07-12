@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgY21k" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY21k" }
 $ cue help cmd
 cmd executes the named command for each of the named instances.
 

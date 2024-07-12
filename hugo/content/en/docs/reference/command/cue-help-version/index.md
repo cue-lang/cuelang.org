@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgdmVyc2lvbg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdmVyc2lvbg==" }
 $ cue help version
 print CUE version
 

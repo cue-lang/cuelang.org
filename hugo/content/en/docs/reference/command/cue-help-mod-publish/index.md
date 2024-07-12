@@ -7,7 +7,7 @@ tags:
 - cue command
 ---
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGhlbHAgbW9kIHB1Ymxpc2g=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHB1Ymxpc2g=" }
 $ cue help mod publish
 Publish the current module to an OCI registry. It consults
 $CUE_REGISTRY to determine where the module should be published (see

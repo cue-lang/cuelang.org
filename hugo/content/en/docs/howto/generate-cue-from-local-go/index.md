@@ -16,7 +16,7 @@ main package, placing the CUE in the same directory as the Go code.
 {{< step stepNumber="1" >}}
 Create a Go module, or use an existing one if that's more suitable for your situation:
 
-```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgYW4uZXhhbXBsZQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgYW4uZXhhbXBsZQ==" }
 $ go mod init an.example
 ...
 ```
@@ -25,7 +25,7 @@ $ go mod init an.example
 {{< step stepNumber="2" >}}
 Create a CUE module if you don't already have one:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGFuLmV4YW1wbGU=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGFuLmV4YW1wbGU=" }
 $ cue mod init an.example
 ```
 
@@ -103,7 +103,7 @@ func main() {
 
 We check that our example code accepts the sample configuration:
 
-```text { title="TERMINAL" codeToCopy="Y2F0IGNvbmZpZy5qc29uIHwgZ28gcnVuIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGNvbmZpZy5qc29uIHwgZ28gcnVuIC4=" }
 $ cat config.json | go run .
 Config level: 42.
 Val count: 2.
@@ -116,7 +116,7 @@ First val name: "cueckoo".
 {{< step stepNumber="4" >}}
 Use the `cue` command to generate CUE from the Go types in the `main` package:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIGdldCBnbyAtLWxvY2FsIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyAtLWxvY2FsIC4=" }
 $ cue get go --local .
 ```
 
@@ -155,7 +155,7 @@ package main
 {{< step stepNumber="6" >}}
 We can use `cue vet` to validate our sample config file against the generated CUE:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldCAtZCAnI0NvbmZpZycgLiBjb25maWcuanNvbg==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI0NvbmZpZycgLiBjb25maWcuanNvbg==" }
 $ cue vet -d '#Config' . config.json
 ```
 
