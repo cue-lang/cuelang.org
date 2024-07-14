@@ -1,7 +1,7 @@
 <a href="/issue/{{ .Get 0 }}">
 {{- if strings.ContainsNonSpace .Inner -}}
     {{ .Inner | markdownify }}
-{{ else -}}
+{{- else -}}
     issue #{{ .Get 0 }}
 {{- end -}}
 </a>
