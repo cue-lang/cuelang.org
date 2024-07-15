@@ -198,18 +198,6 @@ template: ci.#writefs & {
 			# Which logo to use in main header
 			logo = "svg/logo.svg"
 
-			# Add a site-wide notification-bar
-			# Contents allows for markdown, leave out the button if you don't want a button
-			[notification]
-			    type = 'test'
-
-			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.prerelease.v)'
-			    [notification.button]
-			        link = '/docs/introduction/installation/'
-			        icon = 'download'
-			        text = 'Install CUE'
-
-
 			# Tags
 			# The order of the tags in this file determines their relative positions
 			# on all rendered pages.
