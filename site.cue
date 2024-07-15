@@ -14,11 +14,14 @@ versions: {
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
-		latest: v:       "v0.9.2"
-		prerelease: v:   "v0.10.0-alpha.1"
-		tip: v:          prerelease.v
-		default: v:      latest.v
-		playground: v:   latest.v
+		latest: {
+			v:             "v0.9.2"
+			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
+		}
+		prerelease: v: "v0.10.0-alpha.1"
+		tip: v:        prerelease.v
+		default: v:    latest.v
+		playground: v: latest.v
 	}
 	let versionSet = {for _, v in cue {"\(v.v)": true}}
 	_cueVersionList: list.SortStrings([
@@ -201,9 +204,9 @@ template: ci.#writefs & {
 			# Add a site-wide notification-bar
 			# Contents allows for markdown, leave out the button if you don't want a button
 			[notification]
-			    type = 'test'
+			    type = 'cue-minor-release-\#(versions.cue.latest.majorDotMinor)'
 
-			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.prerelease.v)'
+			    content = 'CUE \#(versions.cue.latest.majorDotMinor) is now available -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\#(versions.cue.latest.majorDotMinor).0)'
 			    [notification.button]
 			        link = '/docs/introduction/installation/'
 			        icon = 'download'
