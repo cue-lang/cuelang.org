@@ -205,9 +205,9 @@ template: ci.#writefs & {
 
 			    content = '**Note:** documentation on this site relies on CUE \#(versions.cue.prerelease.v)'
 			    [notification.button]
-			        link = 'https://github.com/cue-lang/cue/releases'
+			        link = '/docs/introduction/installation/'
 			        icon = 'download'
-			        text = 'Download'
+			        text = 'Install CUE'
 
 
 			# Tags
