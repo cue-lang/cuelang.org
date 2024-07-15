@@ -33,6 +33,24 @@
       "message": "Do we have a page elsewhere that demonstrates how to conditionally include a single value in a list? \n\nI would think that it\u0027s probably most efficient to combine both the single and multiple examples on the same page to avoid excessive linking/clicking?",
       "revId": "9282956e30a66638bc70610f06196fa235c439b1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7882fa71_4e1da427",
+        "filename": "content/docs/howto/conditionally-include-multiple-elements-in-list/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-15T12:59:33Z",
+      "side": 1,
+      "message": "\u003e Do we have a page elsewhere that demonstrates how to conditionally include a single value in a list?\n\nNo.\n\n\u003e I would think that it\u0027s probably most efficient to combine both the single and multiple examples on the same page to avoid excessive linking/clicking?\n\nAdded to the page; page re-titled and re-homed appropriately.",
+      "parentUuid": "4a094f2e_9e3a2e58",
+      "revId": "9282956e30a66638bc70610f06196fa235c439b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
