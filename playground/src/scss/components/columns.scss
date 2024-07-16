@@ -13,6 +13,7 @@
 
     &__item {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
         min-height: 40vh;
 
