@@ -155,7 +155,7 @@ name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (misma
 The `cue` command normally recognises JSON Schema's signature fields and treats
 the contents of JSON Schema as data constraints - not just additional data.
 A qualifier can be used to change this behaviour, as outlined in
-[`cue filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}):
+[`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}):
 
 ```text { title="TERMINAL" codeToCopy="Y3VlIGRlZiBqc29uOiBzY2hlbWEuanNvbg==" }
 $ cue def json: schema.json
