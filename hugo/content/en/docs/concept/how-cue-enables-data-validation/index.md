@@ -491,10 +491,10 @@ $ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 ```
 
 The range of formats and encodings that CUE supports is outlined in <!-- TODO: link to a less CLI-y doc -->
-[`cue filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).
+[`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).
 The `cue` command can also process its standard input stream in any of the
 formats it understands, as described in
-[`cue inputs`]({{< relref "docs/reference/command/cue-help-inputs" >}}).
+[`cue help inputs`]({{< relref "docs/reference/command/cue-help-inputs" >}}).
 
 ## Future plans
 

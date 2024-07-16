@@ -15,7 +15,7 @@ variable is set to a filename.
 
 The filename is interpreted through the same rules that `cue export` applies to
 its `--outfile` argument, which are explained in
-[`cue filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).
+[`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).
 Statistics for each evaluation are written into the named file using the file's
 implied data format.
 The file is overwritten on each `cue` invocation, without confirmation.
@@ -41,7 +41,7 @@ Go: {
 
 Specifying the filename `-` causes `cue` to log statistics to its standard error stream as JSON.
 A different format may be selected using a qualifier prefix as outlined in
-[`cue filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).
+[`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).
 For example: to emit YAML, specify `yaml:-`.
 
 <!-- TODO: what do the emitted stats mean?
