@@ -164,7 +164,7 @@ The `cue vet` command can also validate the data using the JSON Schema directly:
 The `cue` command normally recognises JSON Schema's signature fields and treats
 the contents of JSON Schema as data constraints - not just additional data.
 A qualifier can be used to change this behaviour, as outlined in
-[`cue filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}):
+[`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}):
 
 {{{with script "en" "use json schema as json"}}}
 #ellipsis 4
