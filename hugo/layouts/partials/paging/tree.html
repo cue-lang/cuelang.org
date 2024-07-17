@@ -56,7 +56,8 @@
     {{ $pages := slice }}
     {{/* Only add pages that are active or have toc_hide set to false */}}
     {{ range (union $s.Pages $s.Sections).ByWeight -}}
-        {{ if or (eq . $p) (ne .Params.toc_hide true) -}}
+        {{ $pageIsActivePath := ($p.IsDescendant .) -}}
+        {{ if or (eq . $p) $pageIsActivePath (ne .Params.toc_hide true) -}}
             {{ $pages = $pages | append . }}
         {{- end }}
     {{- end }}
