@@ -46,6 +46,7 @@ interface AppState
     saved: boolean;
     showSaveURL: boolean;
     activeExample?: Example;
+    outputEditorValue?: string;
 }
 
 // App is the root of our React application
@@ -64,6 +65,7 @@ export class App extends React.Component<AppProps, AppState>
             saved: false,
             showSaveURL: false,
             activeExample: null,
+            outputEditorValue: undefined,
         };
     }
 
@@ -295,15 +297,15 @@ export class App extends React.Component<AppProps, AppState>
                                         name={ outputTab.title }
                                         type="output"
                                     >
-
                                         <CodeMirror
                                             className="cue-editor cue-editor--terminal"
                                             theme={ vscodeLightTerminal }
                                             placeholder="// ... loading WASM"
+                                            value={ this.state.outputEditorValue }
                                             basicSetup={ false }
                                             editable={ false }
                                             extensions={ this.getExtensions( outputTab.selected.value) }
-                                            onCreateEditor={ async(view) => {
+                                            onCreateEditor={ (view) => {
                                                 this.outputEditor = view;
                                                 this.updateOutput();
                                             } }
@@ -376,13 +378,12 @@ export class App extends React.Component<AppProps, AppState>
     }
 
     private updateOutput(): void {
-        const activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
-
-        if (this.props.WasmAPI.CUECompile === undefined ||
-            this.inputEditors === undefined || this.outputEditor === undefined) {
+        if (!this.props.WasmAPI.CUECompile ||
+            Object.keys(this.inputEditors).length === 0 || !this.outputEditor) {
             return;
         }
 
+        const activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
         /* TODO: this part is just to make current function workspace output to keep working with the new setup
     but it will be replaced by a dynamic setup for all workspaces: see commented out code below */
         /* START OF (OLD) FUNCTION CODE */
@@ -398,12 +399,7 @@ export class App extends React.Component<AppProps, AppState>
         if (val === '') {
             val = result.value;
         }
-
-        const transaction = this.outputEditor.state.update({
-            changes: { from: 0, to: this.outputEditor.state.doc.length, insert: val },
-        });
-        this.outputEditor.dispatch(transaction);
-        this.outputEditor.dispatch({ selection: { anchor: 0 } });
+        this.setState({ outputEditorValue: val });
         /* END OF FUNCTION CODE */
 
 
