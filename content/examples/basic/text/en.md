@@ -34,22 +34,23 @@ Also on simple detail page's you should generally not use a Heading 1 in the con
 This is because the main title of the page is already a Heading 1.
 
 
-### Heading - Custom Ids
+### Heading - Custom Ids {#custom-id}
 
-Adding custom IDs allows you to link directly to headings. To add a custom heading ID, enclose the custom ID in curly braces on the same line as the heading.
+ By default Hugo adds the slugified header as the id. For instance: "Heading 2" becomes id 'heading-2'.  Adding custom IDs allows you to link directly to headings using a custom id/anchor href.
+To add a custom heading ID, enclose the custom ID in curly braces on the same line as the heading.
 
 ```
 ### My Great Heading {#custom-id}
 ```
 
-You can link to headings with custom IDs in the file by creating a standard link with a number sign (#) followed by the custom heading ID. These are commonly referred to as anchor links.
+You can link to headings with (custom) IDs in the file by creating a standard link with a hash sign (#) followed by the custom heading ID. These are commonly referred to as anchor links.
 
 {{< columns >}}
 ```
-[Go to Paragraphs](#paragraphs)
+[Go to Custom Id Header](#custom-id)
 ```
 {{< columns-separator >}}
-[Go to Paragraphs](#paragraphs)
+[Go to Custom Id Header](#custom-id)
 {{< /columns >}}
 
 ---
