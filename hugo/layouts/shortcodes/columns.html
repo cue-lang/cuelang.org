@@ -1,7 +1,7 @@
 <div id="side-{{ .Ordinal }}" class="columns">
     <div class="columns__col">
         {{- if eq .Page.File.Ext "md" -}}
-            {{- .Inner | markdownify -}}
+            {{- .Inner | $.Page.RenderString  -}}
         {{- else -}}
             {{- .Inner | htmlUnescape | safeHTML -}}
         {{- end -}}

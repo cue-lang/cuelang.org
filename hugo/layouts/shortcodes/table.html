@@ -6,7 +6,7 @@
     {{- if $dataFile -}}
         {{- template "data-table" (dict "file" $dataFile) -}}
     {{- else -}}
-        {{- .Inner | markdownify -}}
+        {{- .Inner | $.Page.RenderString -}}
     {{- end -}}
 </div>
 
