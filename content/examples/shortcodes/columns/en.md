@@ -31,13 +31,13 @@ turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor es
 
 Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum posuere nisl quis bibendum fermentum.
 Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](/) erat.
 {{< columns-separator >}}
 #### Column 2
 
 Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum posuere nisl quis bibendum fermentum.
 Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](/) erat.
 {{< /columns >}}
 
 ## 3 columns
