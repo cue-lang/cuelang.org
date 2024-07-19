@@ -78,7 +78,7 @@
 
             <div class="dialog__content">
                 {{ with .Inner }}
-                    {{ . | markdownify }}
+                    {{ . | $.Page.RenderString }}
                 {{ end }}
 
                 {{ if and ($buttonUrl) ($buttonText) }}
