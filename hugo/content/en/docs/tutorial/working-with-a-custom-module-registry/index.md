@@ -613,4 +613,6 @@ dependency resolution.
 
 ## Related content
 
+- {{< linkto/related/tutorial "working-with-the-central-registry" >}}
+- {{< linkto/related/tutorial "publishing-modules-to-the-central-registry" >}}
 - {{< linkto/related/reference "modules" >}}
