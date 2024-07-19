@@ -3,7 +3,7 @@
 
     <div class="note__content">
         {{- if eq .Page.File.Ext "md" -}}
-            {{- .Inner | markdownify -}}
+            {{- .Inner | $.Page.RenderString -}}
         {{- else -}}
             {{- .Inner | htmlUnescape | safeHTML -}}
         {{- end -}}
