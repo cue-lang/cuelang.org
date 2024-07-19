@@ -15,7 +15,7 @@ In order to show an informative highlight, you can use `{{</* info */>}}`.
 
 Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum `posuere nisl` quis bibendum fermentum.
 Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#info) erat.
 {{</* /info */>}}
 ```
 
@@ -26,7 +26,7 @@ The rendered output looks like this:
 
 Lorem ipsum *dolor sit amet*, consectetur adipiscing elit. Phasellus tristique lectus ut bibendum tincidunt. Vestibulum `posuere nisl` quis bibendum fermentum.
 Aenean viverra commodo erat ac porttitor. Suspendisse **a interdum leo**. Etiam volutpat lectus auctor, porttitor urna et, egestas quam. Curabitur sodales,
-turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#link) erat.
+turpis id tristique blandit, purus orci efficitur velit, nec [molestie tortor est eget](#info) erat.
 {{< /info >}}
 
 ## Warning
