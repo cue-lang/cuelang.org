@@ -4,32 +4,32 @@ toc_hide: true
 tags: [modules]
 ---
 
-This wiki provides an extended FAQ for the release notes at
+This guide provides an extended FAQ for the release notes at
 https://github.com/cue-lang/cue/releases/tag/v0.9.0 and subsequent bugfix
 releases. In particular, this FAQ focuses on questions about the transition to
-the "new" modules implementation that is now enabled by default.
+the "new" modules implementation that is enabled by default, as of v0.9.0.
 
-### Modules? Where do I get started?
+## Modules? Where do I get started?
 
-["Working with modules and the Central Registry"](https://cuelang.org/docs/tutorial/working-with-the-central-registry/)
+[Working with modules and the Central Registry]({{< relref "docs/tutorial/working-with-the-central-registry" >}})
 and
-["Working with a custom module registry"](https://cuelang.org/docs/tutorial/working-with-a-custom-module-registry/)
+[Working with a custom module registry]({{< relref "docs/tutorial/working-with-a-custom-module-registry" >}})
 present an easy-to-digest introduction to modules.
-[The `modules` tag](https://cuelang.org/search/?q=tag:modules) shows other modules-related content.
-The [Modules Reference](https://cuelang.org/docs/reference/modules/) is the
-definitive reference document with all details on how modules work.
+The {{<tag modules>}} tag lists other modules-related content.
+{{< linkto/related/reference "modules" >}} is the definitive reference document
+that details how modules work.
 
-### What is the Central Registry?
+## What is the Central Registry?
 
 The Central Registry at [registry.cue.works](https://registry.cue.works/) is
-currently in alpha testing. The Central Registry will be a well known place for
-schemas for well known services and projects. We will share more details about
-the Central Registry in the future. For now, we are looking to get early
-feedback.
+currently in alpha testing, and will be a well-known place for schemas for
+well-known services and projects. We will share more details about the Central
+Registry in the future. For now, we are looking to get early feedback - please
+come and discuss it in the `#modules` [Slack channel](/slack).
 
-### What do you mean "new" and "old" modules implementations?
+## What do you mean "new" and "old" modules implementations?
 
-https://cuelang.org/issue/2939 presented a proposal for how CUE can
+{{<issue 2939>}}Issue #2939{{</issue>}} presented a proposal for how CUE can
 fully support package and dependency management. Over the course of v0.8.x
 releases and pre-releases leading up to v0.9.0, we have been experimenting with
 an implementation of this proposal: we refer to this as the "new" modules
@@ -37,23 +37,24 @@ implementation. In v0.9.0, this "new" implementation is the default. In
 previous CUE versions (v0.8.x and earlier), the "old" implementation is the
 default.
 
-### Why do I need to run `cue mod fix`?
+## Why do I need to run `cue mod fix`?
 
 v0.9.0 requires that `language.version` is declared in the `cue.mod/module.cue` file.
 Running
-[`cue mod fix`](https://cuelang.org/docs/reference/cli/cue-mod-fix/)
+[`cue mod fix`]({{< relref "docs/reference/command/cue-help-mod-fix" >}})
 does this automatically for you. It also moves unrecognized top-level fields to
 a `custom.legacy` field. If you already have a `language.version` field, then
 `cue mod fix` is a no-op in this regard.
 
-### Why is `language.version` now required?
+## Why is `language.version` now required?
 
 With v0.9.0, CUE requires that a language version be declared in a `cue.mod/module.cue` file:
 
-```
+{{{with upload "en" "module.cue example"}}}
+-- cue.mod/module.cue --
 module: "mod.example/hello@v0"
 language: version: "v0.9.0"
-```
+{{{end}}}
 
 When running `cue mod init` to create a new module, this line is added
 automatically. Where a `language.version` field is missing, CUE will error and
@@ -71,10 +72,10 @@ that it was written against an older version of the CUE language spec and
 semantics.
 
 See
-https://cuelang.org/docs/reference/modules/#cue-mod-file
+[the Modules reference document]({{< relref "docs/reference/modules" >}}#cue-mod-file)
 for an explanation of the various fields in a `cue.mod/module.cue` file.
 
-### What about my old modules that don't have a `language.version` field?
+## What about old modules that don't have a `language.version` field?
 
 In some cases, the above suggestion to use `cue mod fix` to migrate the
 `module.cue` file might not be possible. This might happen, for example, if you
@@ -86,7 +87,7 @@ experiment and revert to older modules resolution logic throughout by setting
 the environment variable `CUE_EXPERIMENT=modules=0`, although this option will
 be removed in time.
 
-### Why do I need to specify a source to publish a module?
+## Why do I need to specify a source to publish a module?
 
 `cue mod publish` needs to determine what files to include in a published
 module. Rather than rely on implicit heuristics such as whether a VCS exists or
@@ -94,28 +95,32 @@ is installed,to determine whether the file list should be determined from the
 files on disk, or from the contents of a Git commit,  we require the module
 author to be explicit.
 
-### Where do I configure which OCI registry to use for publishing/fetching modules?
+## How do I configure which OCI registry is used for publishing/fetching modules?
 
 As explained by
-[`cue help environment`](https://cuelang.org/docs/reference/cli/cue-environment/),
-`CUE_REGISTRY` determines the configuration to use when downloading and
-publishing modules. See
-[`cue help registryconfig`](https://cuelang.org/docs/reference/cli/cue-registryconfig/)
+[`cue help environment`]({{< relref "docs/reference/command/cue-help-environment" >}}),
+the `CUE_REGISTRY` environment variable determines the configuration to use
+when downloading and publishing modules. See
+[`cue help registryconfig`]({{< relref "docs/reference/command/cue-help-registryconfig" >}})
 for details.
 
-### Where can I find out more about modules commands?
+## Where can I find out more about modules commands?
 
-See [`cue help mod`](https://cuelang.org/docs/reference/cli/cue-mod/).
+See [`cue help mod`]({{< relref "docs/reference/command/cue-help-mod" >}}).
 
-### What about tag injection?
+## What about tag injection?
 
 Tag injection remains similar in the new module implementation, with the
-notable exception of `@if` attributes. Namely:
+notable exception of `@if` attributes. Specifically:
 - tags are injected only into packages explicitly mentioned on the command line
-  (or as explicit packages to
-  [cue/load.Instances](https://pkg.go.dev/cuelang.org/go/cue/load#Instances)).
-  This behavior has not changed
+  or as explicit packages to
+  [cue/load.Instances](https://pkg.go.dev/cuelang.org/go/cue/load#Instances).
+  (This behavior has not changed from versions of CUE before v0.9)
 - `@if` attributes only process tags when they are in files inside the main
-  module. In any external module, all tags are considered to be false. This
-  is a change from before, when there was no distinction between the
-  main and external modules.
+  module. In any external module, all tags are considered to be `false`. This
+  is a change from earlier versions, when there was no distinction between the
+  main module and external modules.
+
+<!-- TODO: @if(!foo) in an external module results in `!false == true`, so the file is included.
+Show this in an example.
+-->
