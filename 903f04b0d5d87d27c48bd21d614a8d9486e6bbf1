@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97f4c879_fe440d2a",
+        "filename": "content/docs/howto/conditionally-include-list-elements/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-21T05:02:54Z",
+      "side": 1,
+      "message": "I think you need a separating line here to make sure the comment above isn\u0027t attached (mentally speaking) to _both_ `if` blocks, i.e. implying that both are required.",
+      "revId": "903f04b0d5d87d27c48bd21d614a8d9486e6bbf1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f2e8ebd_d7093780",
+        "filename": "content/docs/howto/conditionally-include-list-elements/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-21T05:02:54Z",
+      "side": 1,
+      "message": "Same as above.\n\nAlthough I think you could make an argument for dropping the \"negative\" case in each; you\u0027ve made the point sufficiently already with the positive case. The negative case actually clutters things in both to my mind.",
+      "revId": "903f04b0d5d87d27c48bd21d614a8d9486e6bbf1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
