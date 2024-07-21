@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a37894a_f6da4574",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-21T04:54:01Z",
+      "side": 1,
+      "message": "LGTM with some suggestions on the flow.",
+      "revId": "042db204c86fe44ee49f6f6308815a0cfe4d1a7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "198fb0ac_9eb67965",
+        "filename": "content/docs/howto/inject-system-information-into-evaluation-using-tag-variable/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-21T04:54:01Z",
+      "side": 1,
+      "message": "This sentence feels somewhat incomplete. It feels like it\u0027s presented as a means of contrast to the previous sentence and as such should finish with something like \"... that might cause the output to vary\". \n\nThe point here is that injecting values in this way is an explicit step, one in which the caller is in full control, and can see quite clearly what might cause the evaluation to not be reproducible.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "042db204c86fe44ee49f6f6308815a0cfe4d1a7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd13e70d_769bf921",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-21T04:54:01Z",
+      "side": 1,
+      "message": "I\u0027m not clear we need/want this list here. \n\nSome motivating questions to help decide:\n\n* What question is being answered by including this list here? \n* Where else is this question answered? \n* Why do we feel the need to repeat the question here?\n\nAs an alternative, we could move this list below the single comment CUE code (see below comment) but make it into a paragraph, comma-separated list.",
+      "revId": "042db204c86fe44ee49f6f6308815a0cfe4d1a7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
