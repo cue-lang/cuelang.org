@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "59025947_b2cbee13",
+        "filename": "content/docs/howto/inject-system-information-into-evaluation-using-tag-variable/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-22T15:45:20Z",
+      "side": 1,
+      "message": "I\u0027ve adopted this wording on both pages, as well as moving the \"what this page demonstrates\" brief explanation/context above the intro paragraph on both pages. The resulting page flow feels better, to me - let me know what you think.",
+      "parentUuid": "198fb0ac_9eb67965",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "042db204c86fe44ee49f6f6308815a0cfe4d1a7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd13e70d_769bf921",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-07-21T04:54:01Z",
       "side": 1,
       "message": "I\u0027m not clear we need/want this list here. \n\nSome motivating questions to help decide:\n\n* What question is being answered by including this list here? \n* Where else is this question answered? \n* Why do we feel the need to repeat the question here?\n\nAs an alternative, we could move this list below the single comment CUE code (see below comment) but make it into a paragraph, comma-separated list.",
+      "revId": "042db204c86fe44ee49f6f6308815a0cfe4d1a7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fe58de4_65561481",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-22T15:45:20Z",
+      "side": 1,
+      "message": "I\u0027ve removed the list from both pages. I guess we\u0027ll only need to be more specific than the implicit \"use this to affect a CUE evaluation\" iff a `cue` subcommand gets introduced that performs evaluations that /can\u0027t/ be affected by tags/etc.",
+      "parentUuid": "fd13e70d_769bf921",
       "revId": "042db204c86fe44ee49f6f6308815a0cfe4d1a7f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
