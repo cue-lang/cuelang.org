@@ -23,7 +23,7 @@ and how to use the `cue/errors` package to examine their details.
 If you don't already have an existing CUE module,
 initialize one to contain a configuration:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
 $ cue mod init cue.example
 ```
 {{< /step >}}
@@ -51,7 +51,7 @@ val: #Schema & {
 {{< step stepNumber="3" >}}
 Verify that the configuration does not validate successfully, as expected:
 
-```text { title="TERMINAL" codeToCopy="Y3VlIHZldA==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldA==" }
 $ cue vet
 val.i: conflicting values int and "hello" (mismatched types int and string):
     ./bad.cue:4:5
@@ -68,7 +68,7 @@ val.s: conflicting values string and 42 (mismatched types string and int):
 If you don't already have an existing Go module,
 initialize one to contain a Go program:
 
-```text { title="TERMINAL" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
 $ go mod init go.example
 ...
 ```
@@ -122,7 +122,7 @@ func main() {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjkuMgpnbyBtb2QgdGlkeQ==" }
 $ go get cuelang.org/go@v0.9.2
 ...
 $ go mod tidy
@@ -137,7 +137,7 @@ You can use `@latest` in place of the specific version mentioned here.
 {{< step stepNumber="7" >}}
 Run the Go program:
 
-```text { title="TERMINAL" codeToCopy="Z28gcnVuIC4=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 # Error summary [err]:
 val.i: conflicting values int and "hello" (mismatched types int and string) (and 1 more errors)
