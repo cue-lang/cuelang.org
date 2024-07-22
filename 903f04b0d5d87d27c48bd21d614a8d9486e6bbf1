@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5749333_f63b5849",
+        "filename": "content/docs/howto/conditionally-include-list-elements/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-22T11:43:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97f4c879_fe440d2a",
+      "revId": "903f04b0d5d87d27c48bd21d614a8d9486e6bbf1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f2e8ebd_d7093780",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-07-21T05:02:54Z",
       "side": 1,
       "message": "Same as above.\n\nAlthough I think you could make an argument for dropping the \"negative\" case in each; you\u0027ve made the point sufficiently already with the positive case. The negative case actually clutters things in both to my mind.",
+      "revId": "903f04b0d5d87d27c48bd21d614a8d9486e6bbf1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "122fb363_d6120e75",
+        "filename": "content/docs/howto/conditionally-include-list-elements/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-22T11:43:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f2e8ebd_d7093780",
       "revId": "903f04b0d5d87d27c48bd21d614a8d9486e6bbf1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
