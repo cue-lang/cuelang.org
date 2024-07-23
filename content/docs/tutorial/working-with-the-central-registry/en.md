@@ -42,8 +42,7 @@ Visit https://registry.cue.works and login via GitHub.
 
 {{< info >}}
 If you would like to be one of the early testers of the Central Registry, please
-get in touch via the [`#modules` channel on
-Slack](https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE)
+get in touch via the [`#modules` channel on Slack](/s/slack)
 or by <a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">emailing us</a>.
 {{< /info >}}
 

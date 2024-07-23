@@ -26,7 +26,7 @@ create a second module that depends on the first.
 - **A [Central Registry](https://registry.cue.works/) account** --
   the Central Registry is in alpha testing: if you do not yet have access
   please request it in the
-  [Slack `#modules` channel](https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE)
+  [`#modules` channel on Slack](/s/slack)
   or via email to
   <a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">contact@cue.works</a>
 - **The `cue` binary** --
@@ -145,7 +145,7 @@ $ cue login
 
 The Central Registry is in alpha testing -
 if you do not yet have access please request it in the
-[Slack `#modules` channel](https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE)
+[`#modules` channel on Slack](/s/slack)
 or via email to
 <a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">contact@cue.works</a>.
 
