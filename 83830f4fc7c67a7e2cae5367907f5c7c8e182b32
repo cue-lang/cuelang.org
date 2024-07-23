@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "83830f4fc7c67a7e2cae5367907f5c7c8e182b32",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90393aa9_83a29ca4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-23T13:47:54Z",
+      "side": 1,
+      "message": "But please see my comment in this CL referring to the comment in the next CL about title and path.",
+      "revId": "83830f4fc7c67a7e2cae5367907f5c7c8e182b32",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f078cc4f_0e73fb53",
+        "filename": "content/docs/concept/FAQ/modules-v0.9/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-23T13:47:54Z",
+      "side": 1,
+      "message": "See my comment in the next CL about the title of this CL, and hence the path.",
+      "revId": "83830f4fc7c67a7e2cae5367907f5c7c8e182b32",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
