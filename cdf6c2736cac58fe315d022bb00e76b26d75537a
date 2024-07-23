@@ -16,6 +16,46 @@
       "message": "PTAL.",
       "revId": "cdf6c2736cac58fe315d022bb00e76b26d75537a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a24d9360_393c287b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-23T08:00:52Z",
+      "side": 1,
+      "message": "With a slight rewording please",
+      "revId": "cdf6c2736cac58fe315d022bb00e76b26d75537a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9219671_a75e106c",
+        "filename": "hugo/config/_default/params.toml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-23T08:00:52Z",
+      "side": 1,
+      "message": "This feels a bit salesy - can we go for something a little plainer?",
+      "range": {
+        "startLine": 22,
+        "startChar": 24,
+        "endLine": 22,
+        "endChar": 56
+      },
+      "revId": "cdf6c2736cac58fe315d022bb00e76b26d75537a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
