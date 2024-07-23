@@ -56,6 +56,30 @@
       },
       "revId": "cdf6c2736cac58fe315d022bb00e76b26d75537a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "707c4268_e2aa2b18",
+        "filename": "hugo/config/_default/params.toml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-23T10:16:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9219671_a75e106c",
+      "range": {
+        "startLine": 22,
+        "startChar": 24,
+        "endLine": 22,
+        "endChar": 56
+      },
+      "revId": "cdf6c2736cac58fe315d022bb00e76b26d75537a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
