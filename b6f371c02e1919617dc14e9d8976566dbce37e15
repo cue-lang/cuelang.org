@@ -16,6 +16,63 @@
       "message": "PTAL. It should now be more reviewable.",
       "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cbaffc6_242efb76",
+        "filename": "content/docs/concept/FAQ/modules-v0.9/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-23T13:46:03Z",
+      "side": 1,
+      "message": "Not sure whether we want to resolve this here or in a later edit, but this guide is now more an FAQ on \"new\" modules vs \"old\". In the body of the document we should motivate that prior to v0.9.0 \"old\" modules was the default (where \"new\" modules can be enabled by `CUE_EXPERIMENT\u003dmodules`) and in v0.9.0 and later \"new\" modules is the default (where \"old\" modules can be enabled by `CUE_EXPERIMENT\u003dmodules\u003d0`). \n\nI leave it to you whether we makes these changes now/later. But at some point this needs to be moved away from being a v0.9 specific note.",
+      "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee87f75f_c68ca519",
+        "filename": "content/docs/concept/FAQ/modules-v0.9/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-23T13:46:03Z",
+      "side": 1,
+      "message": "I\u0027m not sure this edit is correct. Because per https://cuelang.org/docs/reference/command/cue-help-registryconfig/ you can have multiple registries configured at the same time, distinguished by the module path. Hence there is more than one registry, and hence \"which\" is I think more correct.",
+      "range": {
+        "startLine": 98,
+        "startChar": 24,
+        "endLine": 98,
+        "endChar": 27
+      },
+      "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e099dfd7_070cf716",
+        "filename": "content/docs/concept/FAQ/modules-v0.9/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-23T13:46:03Z",
+      "side": 1,
+      "message": "Correct.",
+      "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
