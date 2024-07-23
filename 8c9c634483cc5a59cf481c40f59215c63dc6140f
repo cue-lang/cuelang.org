@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a476226f_4b6f91be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-23T10:50:48Z",
+      "side": 1,
+      "message": "PTAL.",
+      "revId": "8c9c634483cc5a59cf481c40f59215c63dc6140f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1aab5055_479b5264",
@@ -35,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c967e244_5817bbf6",
+        "filename": "content/docs/howto/conditionally-include-list-elements/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-23T10:50:48Z",
+      "side": 1,
+      "message": "I\u0027ve removed both single-line forms. I had thought that they helped demonstrate that adding elements conditionally doesn\u0027t /need/ to increase the line count by 3, each time, in that simple case - but I agree that they\u0027re not critical.",
+      "parentUuid": "1aab5055_479b5264",
+      "revId": "8c9c634483cc5a59cf481c40f59215c63dc6140f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f5faba3_7db2fe90",
@@ -48,6 +83,24 @@
       "writtenOn": "2024-07-23T08:15:32Z",
       "side": 1,
       "message": "Ditto.",
+      "revId": "8c9c634483cc5a59cf481c40f59215c63dc6140f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cf07ba3_0a459aab",
+        "filename": "content/docs/howto/conditionally-include-list-elements/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-23T10:50:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f5faba3_7db2fe90",
       "revId": "8c9c634483cc5a59cf481c40f59215c63dc6140f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
