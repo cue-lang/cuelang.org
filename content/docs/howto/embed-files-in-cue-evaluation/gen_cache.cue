@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								files: "g7zx6DvaOepyE3t5zhZclH4xuUPtUWD8x7NZy/ouJDQ="
+								files: "Yq6FQAfvpLvVL6fI8X/vqrnAnAyjTXjL9fV/QECXKcY="
 							}
 							multi_step: {
-								hash:       "SO8KRID56L66RE7V862UFAMD6KCRPLB8QP866T98O7OKRT3VUCDG===="
-								scriptHash: "4NM7M5GCDR3KKCKBP6THR342PMKGFK0KNG5ANQNSVTVQ46CNN2A0===="
+								hash:       "8940TDGA2UHJS532SIR1JFOHGDQ6LAP220ACNMEGVHQO9M9HM5NG===="
+								scriptHash: "DERJLMAR39DQKFOMSCUTF6V0K3K6530T9UMVRRAUO8TVVGE48QRG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.10.0-alpha.1:$PATH"
+									cmd:      "export PATH=/cues/v0.10.0-alpha.1.0.20240723163954-23fc4b1f0869:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -22,7 +22,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.10.0-alpha.1
+											cue version v0.10.0-alpha.1.0.20240723163954-23fc4b1f0869
 											...
 
 											"""
