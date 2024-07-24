@@ -261,7 +261,10 @@ in the host `registry.acme.example` at port 6000.
 A module is defined by a `cue.mod` directory in its root containing
 a `module.cue` CUE file.
 
-```cue
+<!-- TODO(jcm): remove #nofmt after v0.10.0 is released, fixing #722 -->
+{{{with code "en" "module.cue schema"}}}
+#nofmt(schema.cue)
+-- schema.cue --
 // module indicates the module's path.
 module!: #Module
 
@@ -323,11 +326,12 @@ custom?: [#Module | "legacy"]: [_]: _
 	// to determining the list of files in a module.
 	kind!: "self" | "git"
 }
-```
+{{{end}}}
 
 For example:
 
-```cue
+{{{with code "en" "module.cue example"}}}
+-- example.cue --
 language: version: "v0.4.3"
 
 module: "foo.example/my/thing@v1"
@@ -336,7 +340,7 @@ deps: {
 	"foo.example/other/thing@v1": v: "v1.0.2"
 	"foo.example/new/thing@v2": v:   "v2.3.4"
 }
-```
+{{{end}}}
 
 The `module.cue` file is designed to be human readable and machine writable. The
 `cue` command will provide several subcommands that manipulate `cue.mod/module.cue` files.

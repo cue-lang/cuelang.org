@@ -186,9 +186,12 @@ All the information of the original JSON file is retained in this
 representation.
 
 CUE generalizes this notion to the following pattern:
-```
+{{{with code "en" "nodes"}}}
+#nofmt
+-- nodes.cue --
 <set of nodes>: <constraints>
-```
+{{{end}}}
+
 Each field declaration in CUE defines a set of nodes to which to apply
 a specific constraint.
 Because order doesn't matter, multiple constraints can be applied to the
