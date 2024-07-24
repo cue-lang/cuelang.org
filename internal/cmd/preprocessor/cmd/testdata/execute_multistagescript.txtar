@@ -292,12 +292,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "5uOjrCCDXPyAgAkPrEyJBb53B5njOj/8RZGVj8KbKfw="
-						"upload-some-cue": "ZVDgSlpmfxafSIjOjR5c1uE/y4fzkjRZtipGEO6YG6U="
-						"in-subdir":       "JkHeXPqm5sH1xWLFZOEzgBjD/fQARHzZmhU4HdkiCtg="
+						"hidden file":     "GalyD9vkQBzdwfAlSvi9RVFDNFC3zhN9oc13MNVmPcQ="
+						"upload-some-cue": "FSOzzpR4wGpmoFEAlAdPWogeuyg+6r8nWKBivuTMwwM="
+						"in-subdir":       "G84bG7XZgm0sR6OfR+YROtrfR5AKxMUUhJrJBLlNw+I="
 					}
 					multi_step: {
-						hash:       "JOCDJNDN45INN90PB3OGA1AESH3R9J9LGMM5LG39VPU9G1K46DPG===="
+						hash:       "VLQB7IH3I672HGD4OCKN2SRP6RAHFIL7FHLC99JQ6S0I0IOFS950===="
 						scriptHash: "RTE18RDQ3BFG4B5U2VR92496OPO5NOT61C424QBCDDT1RAAGPOUG===="
 						steps: [{
 							doc:      ""
