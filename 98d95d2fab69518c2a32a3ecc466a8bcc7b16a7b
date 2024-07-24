@@ -187,6 +187,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2fc97d7_6e964497",
+        "filename": "hugo/content/en/docs/concept/cue-language-version/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T11:02:59Z",
+      "side": 1,
+      "message": "I\u0027ve gone with the identifiers in bold, as discussed.",
+      "parentUuid": "1e9c4e4a_ed806121",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a55d5e88_84cf01a8",
@@ -204,6 +222,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04ebf4ec_a469e9d0",
+        "filename": "hugo/content/en/docs/concept/cue-language-version/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T11:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a55d5e88_84cf01a8",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22da6692_63134aa8",
@@ -217,6 +253,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "```suggestion\n\u003cdelete\u003e\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff459ea7_a04063e7",
+        "filename": "hugo/content/en/docs/concept/cue-language-version/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T11:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22da6692_63134aa8",
       "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
