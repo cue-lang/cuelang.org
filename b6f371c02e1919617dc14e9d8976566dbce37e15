@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f53fa7d2_f6a58c6e",
+        "filename": "content/docs/concept/FAQ/modules-v0.9/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T11:11:54Z",
+      "side": 1,
+      "message": "I\u0027ve updated the path to reflect that new-vs-old role (so we don\u0027t need to drop aliases in place when it gets updated), and have left the title as is, with a v0.9 mention. cue-lang/docs-and-content#170 tracks the page\u0027s evolution after v0.10 is release.",
+      "parentUuid": "6cbaffc6_242efb76",
+      "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee87f75f_c68ca519",
@@ -58,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7daa3708_c110ae11",
+        "filename": "content/docs/concept/FAQ/modules-v0.9/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T11:11:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee87f75f_c68ca519",
+      "range": {
+        "startLine": 98,
+        "startChar": 24,
+        "endLine": 98,
+        "endChar": 27
+      },
+      "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e099dfd7_070cf716",
@@ -71,6 +113,24 @@
       "writtenOn": "2024-07-23T13:46:03Z",
       "side": 1,
       "message": "Correct.",
+      "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3d5e75f_109d7ecc",
+        "filename": "content/docs/concept/FAQ/modules-v0.9/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T11:11:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e099dfd7_070cf716",
       "revId": "b6f371c02e1919617dc14e9d8976566dbce37e15",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
