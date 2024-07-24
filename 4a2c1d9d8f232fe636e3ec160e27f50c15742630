@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f502fd8_5944ae63",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-24T08:46:12Z",
+      "side": 1,
+      "message": "nit: I think this should be `Fixes cue-lang/cue#3251` for the linking/closing on github to work properly.",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
