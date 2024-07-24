@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bef76f9_f92ce8c2",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d39857b6_edbf2d41",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "62b27459_fab794b3",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "```suggestion\nbackwards incompatible changes to the `module.cue` file syntax.\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d7c6894_ec8dc288",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62b27459_fab794b3",
       "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -88,6 +124,48 @@
         "endLine": 75,
         "endChar": 75
       },
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6e4767b_0d76a691",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9005977c_5d74df11",
+      "range": {
+        "startLine": 75,
+        "startChar": 73,
+        "endLine": 75,
+        "endChar": 75
+      },
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "987a190c_63e2738f",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58243064_6d4a218f",
       "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
