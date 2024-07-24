@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da37f470_b96475f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "As discussed, I have some more suggestions that I\u0027ll make in a follow-up CL but, modulo these changes, it LGTM to submit initially.",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d39857b6_edbf2d41",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "```suggestion\nAlthough the CUE developers will strive to avoid making backwards\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62b27459_fab794b3",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "```suggestion\nbackwards incompatible changes to the `module.cue` file syntax.\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58243064_6d4a218f",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "I\u0027d add a \"For example:\" sentence here, with some concrete versions mentioned. E.g. \n\n```\nThis would happen, for example, if you used v0.9.0 of the `cue` command to evaluate a module that declares a `language.version` field containing `v0.10.0`.\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9005977c_5d74df11",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "```suggestion\nthan that of the evaluator itself, it produces an error. This is because the evaluator cannot\n```",
+      "range": {
+        "startLine": 75,
+        "startChar": 73,
+        "endLine": 75,
+        "endChar": 75
+      },
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e9c4e4a_ed806121",
+        "filename": "hugo/content/en/docs/concept/cue-language-version/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "```suggestion\nGiven an evaluator version \"E\" and a CUE module that declares a `language.version` \"V\":\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a55d5e88_84cf01a8",
+        "filename": "hugo/content/en/docs/concept/cue-language-version/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "```suggestion\n- if V is before E, the evaluator will interpret the module as if it were evaluator version V\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22da6692_63134aa8",
+        "filename": "hugo/content/en/docs/concept/cue-language-version/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T09:46:36Z",
+      "side": 1,
+      "message": "```suggestion\n\u003cdelete\u003e\n```",
+      "revId": "98d95d2fab69518c2a32a3ecc466a8bcc7b16a7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
