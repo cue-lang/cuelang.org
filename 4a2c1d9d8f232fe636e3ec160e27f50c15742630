@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8447bac7_fd9af7b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0498e53e_1d8c9217",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c89f9e04_3da10bdc",
@@ -66,6 +84,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "The page already has an H1, and thus far we\u0027ve avoided adding anything apart from H2/3/4.\n\nIn general, we start pages without another header, going straight into some preamble/intro prose, and then use an H2 to mark the start of the first bit of \"named\" content on the page.",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6170dcf_20503989",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c89f9e04_3da10bdc",
       "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -87,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a3c0002_8c68ff15",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba520eea_74ec856c",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "065e8cf6_430467a6",
@@ -100,6 +154,30 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "```suggestion\nthe language version is closely related to the CUE toolchain (`cue` command\n```\n\n??",
+      "range": {
+        "startLine": 24,
+        "startChar": 62,
+        "endLine": 24,
+        "endChar": 64
+      },
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b908be44_ad4412ba",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "065e8cf6_430467a6",
       "range": {
         "startLine": 24,
         "startChar": 62,
@@ -133,6 +211,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e051045a_093332e3",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "changed to \"API\".",
+      "parentUuid": "01b2bbfd_cae05255",
+      "range": {
+        "startLine": 25,
+        "startChar": 3,
+        "endLine": 25,
+        "endChar": 9
+      },
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba6b4ee5_6d0caf5e",
@@ -146,6 +248,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "The use of hypophora works well at the start of this page, but I\u0027m not sure it needs to be repeated. How about ...\n\n```suggestion\nThe `language.version` field is required for two main reasons. The information that it encodes:\n```",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66e8ade6_4fc0a424",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba6b4ee5_6d0caf5e",
       "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -167,6 +287,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d716f73_21cd8823",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4206ca43_f9021261",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "548dbe70_26529b45",
@@ -180,6 +318,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "```suggestion\n- protects you from using CUE modules that rely on language features that aren\u0027t implemented in the version of CUE you have installed\n```",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4864cec1_e7995335",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "548dbe70_26529b45",
       "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -218,6 +374,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffd1c47f_96c4262a",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab485892_603b2a7b",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac518228_499ccdea",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Not done, as discussed online.",
+      "parentUuid": "16accc14_06a3b442",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8aa01b28_dd7f450f",
@@ -231,6 +423,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "Use `upload` ... possibly with a preceding `#nofmt` comment if the old alias syntax now doesn\u0027t format correctly!",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97b3b769_e07680cd",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done with `{{{code...``` as discussed online.",
+      "parentUuid": "8aa01b28_dd7f450f",
       "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -252,6 +462,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87f7b96c_09fac9bf",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f52fdb0_5c0f90dc",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9fd8f373_753bb569",
@@ -265,6 +493,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "`upload`.",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0975be3e_35e0a421",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done with `{{{code...``` as discussed online.",
+      "parentUuid": "9fd8f373_753bb569",
       "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -286,6 +532,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fc0e7fc_67597ea0",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17082b22_f4385a82",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de06509e_f8604dd7",
@@ -299,6 +563,24 @@
       "writtenOn": "2024-07-24T09:46:36Z",
       "side": 1,
       "message": "```suggestion\nprovides the CUE language designers with the freedom to both support the old syntax _and_ to repurpose it for other things\n```",
+      "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11cb2ab0_cf90c4b5",
+        "filename": "content/docs/concept/cue-language-version/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-07-24T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de06509e_f8604dd7",
       "revId": "4a2c1d9d8f232fe636e3ec160e27f50c15742630",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
