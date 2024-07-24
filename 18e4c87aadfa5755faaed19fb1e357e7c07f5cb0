@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "657b671c_efe70bd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-24T11:20:32Z",
+      "side": 1,
+      "message": "LGTM. I have some suggestions, but as discussed I\u0027ll propose them in a follow-up CL.",
+      "revId": "18e4c87aadfa5755faaed19fb1e357e7c07f5cb0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
