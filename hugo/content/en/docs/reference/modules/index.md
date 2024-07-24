@@ -262,7 +262,7 @@ A module is defined by a `cue.mod` directory in its root containing
 a `module.cue` CUE file.
 
 ```cue
-// module indicates the module's path.
+		// module indicates the module's path.
 module!: #Module
 
 // version indicates the language version used by the code in this module
