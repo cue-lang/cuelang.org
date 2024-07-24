@@ -13,7 +13,7 @@ has no duplicate items, use
 
 ## Strings
 
-```{title="CUE"}
+```cue
 import "list"
 
 items: ["a", "b", "c", "a"]
@@ -22,8 +22,7 @@ items: list.UniqueItems
 
 ## Integers
 
-```{title="CUE"}
-
+```cue
 import "list"
 
 items: [1, 2, 3, 1]
@@ -44,9 +43,9 @@ To ensure a list of structs has no duplicate keys, one common approach is to
 guarantee that the list has no duplicate items by constructing the list from a
 map.
 
-```txt {title="CUE", hl_lines=["5"]}
+```cue
 _items: {
-	joe: age: 30
+	joe: age:   30
 	alice: age: 35
 }
 _items: [name=string]: "name": name
@@ -54,27 +53,27 @@ _items: [name=string]: "name": name
 items: [
 	for item in _items {
 		item
-	}
+	},
 ]
 ```
 
 If the list must be constrained directly, you can write an auxiliary field that
 creates a mapping from the keys
 
-```txt {title="CUE", hl_lines=["15"]}
+```cue
 items: [
 	{
 		name: "joe"
-		age: 30
+		age:  30
 	},
 	{
 		name: "alice"
-		age: 35
+		age:  35
 	},
 	{
 		name: "joe"
-		age: 31
-	}
+		age:  31
+	},
 ]
 _itemsCheck: {
 	for i, item in items {
@@ -93,29 +92,29 @@ be used, using
 composite string key from the keys. Here, for example, the combination of `name`
 and `dateOfBirth` must be unique:
 
-```txt {title=CUE, hl_lines=["27"]}
+```cue
 import "encoding/json"
 
 items: [
 	{
-		name: "joe"
+		name:        "joe"
 		dateOfBirth: "1983-10-21"
-		country: "US"
+		country:     "US"
 	},
 	{
-		name: "alice"
+		name:        "alice"
 		dateOfBirth: "1987-10-15"
-		country: "DE"
+		country:     "DE"
 	},
 	{
-		name: "joe"
+		name:        "joe"
 		dateOfBirth: "2010-02-05"
-		country: "UK"
+		country:     "UK"
 	},
 	{
-		name: "alice"
+		name:        "alice"
 		dateOfBirth: "1987-10-15"
-		country: "BE"
+		country:     "BE"
 	},
 ]
 _itemsCheck: {

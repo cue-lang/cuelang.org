@@ -261,6 +261,7 @@ in the host `registry.acme.example` at port 6000.
 A module is defined by a `cue.mod` directory in its root containing
 a `module.cue` CUE file.
 
+<!-- TODO(jcm): remove #nofmt after v0.10.0 is released, fixing #722 -->
 ```cue
 // module indicates the module's path.
 module!: #Module
