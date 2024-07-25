@@ -1,5 +1,5 @@
 ---
-title: Encode JSON or YAML with CUE
+title: Encoding JSON or YAML with CUE
 weight:
 draft: false
 toc_hide: true

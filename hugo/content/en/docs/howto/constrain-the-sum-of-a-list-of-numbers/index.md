@@ -1,5 +1,5 @@
 ---
-title: Constrain the sum of a list of numbers
+title: Constraining the sum of a list of numbers
 authors:
 - jpluscplusm
 tags:
