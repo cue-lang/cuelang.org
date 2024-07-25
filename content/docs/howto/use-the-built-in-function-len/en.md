@@ -41,6 +41,6 @@ b: len("😎abc123🥶")
 
 ## Related content
 
-- Don't use the `len` function on a string, for the reason mentioned above.\
-  {{< linkto/related/howto "constrain-the-length-of-a-string" >}}
+- Don't use the `len` function on a string, for the reason mentioned above.
+  {{< linkto/inline "howto/constrain-the-length-of-a-string" >}}
   demonstrates using functions from the built-in `strings` package instead

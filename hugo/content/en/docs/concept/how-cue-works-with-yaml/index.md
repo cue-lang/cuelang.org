@@ -121,7 +121,7 @@ repository: invalid value "github.com/Alex_Personal_Account/alpha-fork" (out of 
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-Learn more in this {{< linkto/related/howto "validate-yaml-using-cue" >}}.
+Learn more in the How-to guide {{< linkto/inline "howto/validate-yaml-using-cue" >}}.
 
 ## Processing and transforming YAML files
 
@@ -146,10 +146,11 @@ c: 21
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-Learn more about transforming data with CUE in these guides:
+Learn more about transforming data with CUE in these How-to guides:
 
-- {{< linkto/related/howto "combine-multiple-yaml-files-into-a-list" >}}
-- {{< linkto/related/howto "combine-multiple-yaml-files-by-using-file-metadata" >}}
+- {{< linkto/inline "howto/transform-yaml-with-cue" >}}
+- {{< linkto/inline "howto/combine-multiple-yaml-files-into-a-list" >}}
+- {{< linkto/inline "howto/combine-multiple-yaml-files-by-using-file-metadata" >}}
 
 ## Embedding YAML in CUE
 

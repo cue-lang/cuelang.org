@@ -134,7 +134,7 @@ repository: invalid value "github.com/Alex_Personal_Account/alpha-fork" (out of 
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-Learn more in this {{< linkto/related/howto "validate-json-using-cue" >}}.
+Learn more in the How-to guide {{< linkto/inline "howto/validate-json-using-cue" >}}.
 
 ## Processing and transforming JSON files
 
@@ -163,10 +163,11 @@ $ cue export data.json transform.cue
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-Learn more about transforming data with CUE in these guides:
+Learn more about transforming data with CUE in these How-to guides:
 
-- {{< linkto/related/howto "combine-multiple-json-files-into-a-list" >}}
-- {{< linkto/related/howto "combine-multiple-json-files-by-using-file-metadata" >}}
+- {{< linkto/inline "howto/transform-json-with-cue" >}}
+- {{< linkto/inline "howto/combine-multiple-json-files-into-a-list" >}}
+- {{< linkto/inline "howto/combine-multiple-json-files-by-using-file-metadata" >}}
 
 ## Embedding JSON in CUE
 
