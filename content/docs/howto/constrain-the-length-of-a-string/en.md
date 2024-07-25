@@ -1,5 +1,5 @@
 ---
-title: Constrain the length of a string
+title: Constraining the length of a string
 authors:
 - jpluscplusm
 tags:

@@ -1,5 +1,5 @@
 ---
-title: How to validate YAML using CUE
+title: Validating YAML using CUE
 weight:
 draft: false
 toc_hide: true

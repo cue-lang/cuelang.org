@@ -1,5 +1,5 @@
 ---
-title: How to validate JSON using CUE
+title: Validating JSON using CUE
 weight:
 toc_hide: true
 tags:
