@@ -53,4 +53,4 @@ invalid: {
 
 ## Related content
 
-* {{< linkto/related/howto "use-the-built-in-functions-div-mod-quo-rem" >}}
+- {{< linkto/related/howto "use-the-built-in-functions-div-mod-quo-rem" >}}

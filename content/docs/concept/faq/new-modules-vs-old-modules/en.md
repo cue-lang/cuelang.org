@@ -16,8 +16,8 @@ and
 [Working with a custom module registry]({{< relref "docs/tutorial/working-with-a-custom-module-registry" >}})
 present an easy-to-digest introduction to modules.
 The {{<tag modules>}} tag lists other modules-related content.
-{{< linkto/related/reference "modules" >}} is the definitive reference document
-that details how modules work.
+The {{< linkto/inline "reference/modules" >}} reference is the definitive
+document that details how modules work.
 
 ## What is the Central Registry?
 
