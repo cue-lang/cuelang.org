@@ -26,7 +26,7 @@ Along the way you will:
 
 - **Access to the [Central Registry](https://registry.cue.works)** -- if you
   need to practise using the Central Registry, then first follow the
-  tutorial: [Working with the Central Registry]({{< relref "docs/tutorial/working-with-the-central-registry" >}})
+  tutorial {{< linkto/inline "tutorial/working-with-the-central-registry" >}}
 - **A tool to edit text files** -- any text editor you have will be fine;
     for example: [VSCode](https://code.visualstudio.com/) or [Vim](https://neovim.io/)
 - **A command terminal** -- the `cue` command works on all platforms;
@@ -89,8 +89,8 @@ constrained by the `frostyconfig.#Config` schema.
 {{< /step >}}
 
 {{< info >}}
-Your module imports and uses the `frostyconfig` package first introduced in the tutorial:
-[Working with a custom registry]({{< relref "docs/tutorial/working-with-a-custom-module-registry" >}}).
+Your module imports and uses the `frostyconfig` package first introduced in the tutorial
+{{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}.
 You don't need to follow that tutorial right now - it's only mentioned for context.
 {{< /info >}}
 
