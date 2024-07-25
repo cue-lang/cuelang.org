@@ -11,9 +11,8 @@ the "new" modules implementation that is enabled by default, as of v0.9.0.
 
 ## Modules? Where do I get started?
 
-[Working with modules and the Central Registry]({{< relref "docs/tutorial/working-with-the-central-registry" >}})
-and
-[Working with a custom module registry]({{< relref "docs/tutorial/working-with-a-custom-module-registry" >}})
+{{< linkto/inline "tutorial/working-with-the-central-registry" >}} and
+{{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}
 present an easy-to-digest introduction to modules.
 The {{<tag modules>}} tag lists other modules-related content.
 The {{< linkto/inline "reference/modules" >}} reference is the definitive
