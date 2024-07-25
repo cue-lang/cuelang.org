@@ -63,4 +63,4 @@ The CUE language specification defines
 [the full list of positions]({{< relref "docs/reference/spec#aliases" >}})
 where an alias can appear. A longer example exploring a problem that
 aliases are able to solve can be found in the concept guide
-[Alias and reference scopes]({{< relref "/docs/concept/alias-and-reference-scopes" >}}).
+{{< linkto/inline "concept/alias-and-reference-scopes" >}}.

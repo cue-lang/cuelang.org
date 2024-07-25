@@ -61,7 +61,7 @@ data: invalid value "{\n  \"a\": 1,\n  \"b\": \"two\"\n}" (does not satisfy enco
 To validate data stored in a separate `.json` file, use CUE's native and
 simpler unification instead.\
 This is documented in
-[validating JSON with CUE]({{< relref "validate-json-using-cue" >}})
+{{< linkto/inline "howto/validate-json-using-cue" >}}
 {{< /info >}}
 
 ## Related content

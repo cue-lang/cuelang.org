@@ -64,8 +64,8 @@ $ cue mod init glacial-tech.example/frostyapp@v0
 
 We refer to such a module as the main module. Because we won't publish this
 module, its module path is not significant. The module path we have chosen makes
-this guide consistent with the companion tutorial on [working with a custom registry]({{<
-relref "docs/tutorial/working-with-a-custom-module-registry" >}}).
+this guide consistent with its companion tutorial
+{{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}.
 
 {{< /step >}}
 
@@ -86,13 +86,12 @@ config: frostyconfig.#Config & {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
-This imports the `frostyconfig` package first introduced in the tutorial on
-[working with a custom registry]({{< relref
-"docs/tutorial/working-with-a-custom-module-registry" >}}). Instead of depending
-on a version of that module published to a custom registry, we have instead
-published a version to the Central Registry. In our local module we define some
-concrete values for the configuration, constrained by the `frostyconfig.#Config`
-schema.
+This imports the `frostyconfig` package first introduced in the tutorial
+{{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}.
+Instead of depending on a version of that module published to a custom
+registry, we have instead published a version to the Central Registry.
+In our local module we define some concrete values for the configuration,
+constrained by the `frostyconfig.#Config` schema.
 
 {{< /step >}}
 
