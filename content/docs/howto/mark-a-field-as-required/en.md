@@ -1,5 +1,5 @@
 ---
-title: Mark a field as required
+title: Marking a field as required
 tags:
 - language
 - commented cue

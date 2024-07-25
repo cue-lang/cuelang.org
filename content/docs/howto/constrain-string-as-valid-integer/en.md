@@ -1,5 +1,5 @@
 ---
-title: Constrain a string to be a valid integer
+title: Constraining a string to be a valid integer
 tags:
 - validation
 - commented cue

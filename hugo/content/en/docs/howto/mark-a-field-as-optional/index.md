@@ -1,5 +1,5 @@
 ---
-title: Mark a field as optional
+title: Marking a field as optional
 tags:
 - language
 - commented cue

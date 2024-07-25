@@ -1,5 +1,5 @@
 ---
-title: Validate JSON using the Go API
+title: Validating JSON using the Go API
 tags:
 - go api
 - validation
