@@ -1,0 +1,9 @@
+{{ $relPath := printf "docs/%s" (.Get 0) -}}
+{{ $linkToPage := site.GetPage $relPath -}}
+{{- if eq (strings.CountRunes $linkToPage.Title) 0 -}}
+	{{ errorf "[%s] %q: %q not found or has no title" site.Language.Lang .Page.File $relPath }}
+{{- end -}}
+{{ with $linkToPage -}}
+	{{- $opts := dict "path" $relPath -}}
+	<a href="{{ .RelRef $opts }}">{{ .Title }}</a>
+{{- end -}}
