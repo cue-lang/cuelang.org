@@ -17,38 +17,34 @@ to create a
 [disjunction]({{< relref "docs/reference/glossary#disjunction" >}})
 from a list.
 
+This allows the list to be used as a constraint that only permits values that
+are present in the list.
+
 {{{with code "en" "cc"}}}
-! exec cue vet .:example
-cmp stderr out
+exec cue eval -i .:example
+cmp stdout out
 -- example.cue --
 package example
 
 source: ["a", "b", "c"]
-
-// result is assigned "a" | "b" | "c"
 result: or(source)
 
-// each field in "test" must adhere to the
-// constraints of the "result" disjunction
+// Each field in "test" must have a value that
+// unifies successfully with a value in "source".
 test: [string]: result
 test: {
 	one:   "a"
 	two:   "b"
 	three: "c"
-	four:  "X" // invalid value
+	four:  "XYZ" // invalid value
 }
 -- out --
-test.four: 3 errors in empty disjunction:
-test.four: conflicting values "a" and "X":
-    ./example.cue:3:10
-    ./example.cue:10:17
-    ./example.cue:15:9
-test.four: conflicting values "b" and "X":
-    ./example.cue:3:15
-    ./example.cue:10:17
-    ./example.cue:15:9
-test.four: conflicting values "c" and "X":
-    ./example.cue:3:20
-    ./example.cue:10:17
-    ./example.cue:15:9
+source: ["a", "b", "c"]
+result: "a" | "b" | "c"
+test: {
+    one:   "a"
+    two:   "b"
+    three: "c"
+    four:  _|_ // test.four: 3 errors in empty disjunction: (and 3 more errors)
+}
 {{{end}}}
