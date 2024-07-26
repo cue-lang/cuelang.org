@@ -51,6 +51,24 @@
       "parentUuid": "2f92ff26_c57b5cb1",
       "revId": "3c4a1cea3da19f99ef8d2b1855c01e9d15c25f53",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f868a593_7028d8a7",
+        "filename": "hugo/content/en/docs/reference/modules/index.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-26T12:46:14Z",
+      "side": 1,
+      "message": "we still want to do alpha.3, then at least one RC after that, so we\u0027re probably 3 weeks away.",
+      "parentUuid": "65e90f4a_0ccacca4",
+      "revId": "3c4a1cea3da19f99ef8d2b1855c01e9d15c25f53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
