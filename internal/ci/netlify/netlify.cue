@@ -95,6 +95,10 @@ config: #config & {
 		from: "/releases/*"
 		to:   "https://github.com/cue-lang/cue/releases/:splat"
 	}, {
+		from:   "/go/*"
+		to:     "https://pkg.go.dev/cuelang.org/go/:splat"
+		status: 301 // Perhaps this will prompt the bots to stop fetching this hierarchy?
+	}, {
 		from: "/s/community-calendar"
 		to:   "https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
 	}, {
