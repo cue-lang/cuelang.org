@@ -218,3 +218,30 @@ config: #config & {
 	// TODO: move to encoding/toml when it exists. See cuelang.org/issue/68.
 	template.Execute(tmpl, #input)
 }
+
+#toRedirects: {
+	#input: #config
+	let tmpl = """
+		###############################################
+		# set server-side redirects in this file      #
+		# see https://www.netlify.com/docs/redirects/ #
+		# test at https://play.netlify.com/redirects  #
+		###############################################
+		
+		# Redirect golang vanity imports for cuelang.org
+		/go/* go-get=1 /golang/go.html 200
+		
+		# Redirect default Netlify subdomain to primary domain
+		https://cue.netlify.com/* https://cuelang.org/:splat 301!
+		https://cuelang.org/docs/concepts/intro/ https://cuelang.org/docs/concepts/logic/ 301!
+		
+		# Netlify redirects. See https://www.netlify.com/docs/redirects/
+		{{ `{{ range $p := .Site.Pages -}}` }}
+		{{ `{{ range .Aliases }}` }}
+		{{ `{{  . | printf "%-35s" }}	{{ $p.RelPermalink -}}` }}
+		{{ `{{ end -}}` }}
+		{{ `{{- end -}}` }}
+		"""
+
+	template.Execute(tmpl, #input)
+}
