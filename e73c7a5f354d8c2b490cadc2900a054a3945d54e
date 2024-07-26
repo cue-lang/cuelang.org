@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "777ca798_0d715711",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-26T18:11:07Z",
+      "side": 1,
+      "message": "PTAL, with a particularly sceptical eye on my argument around this change\u0027s lack of impact on the Go build process. Please don\u0027t assume I /know/ that process!",
+      "revId": "e73c7a5f354d8c2b490cadc2900a054a3945d54e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
