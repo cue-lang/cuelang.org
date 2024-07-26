@@ -33,6 +33,23 @@
       "message": "I didn\u0027t realise that removing Paul as a reviewer would also invalidate their (still valid) +2. Re-adding.",
       "revId": "832ddc7d2581fc067737755bb9d95f2f8fb42697",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c7ebae8_f2001ec8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-26T12:42:45Z",
+      "side": 1,
+      "message": "PS8..10 LGTM",
+      "revId": "832ddc7d2581fc067737755bb9d95f2f8fb42697",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
