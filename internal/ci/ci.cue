@@ -57,5 +57,8 @@ fs: #writefs & {
 		"../../netlify.toml": {
 			_res: _netlify.#toToml & {#input: _netlify.config, _}
 		}
+		"../../hugo/layouts/index.redir": {
+			_res: _netlify.#toRedirects & {#input: _netlify.config, _}
+		}
 	}
 }
