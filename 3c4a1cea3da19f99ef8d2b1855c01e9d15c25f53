@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "3c4a1cea3da19f99ef8d2b1855c01e9d15c25f53",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f92ff26_c57b5cb1",
+        "filename": "hugo/content/en/docs/reference/modules/index.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-26T11:55:22Z",
+      "side": 1,
+      "message": "oof. at least we plan on doing v0.10.0 soon, i.e. mid August.",
+      "revId": "3c4a1cea3da19f99ef8d2b1855c01e9d15c25f53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
