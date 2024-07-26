@@ -16,6 +16,39 @@ https://cuelang.org/docs/concepts/intro/ https://cuelang.org/docs/concepts/logic
 # Netlify redirects. See https://www.netlify.com/docs/redirects/
 {{ range $p := .Site.Pages -}}
 {{ range .Aliases }}
-{{  . | printf "%-35s" }}	{{ $p.RelPermalink -}}
+{{  . | printf "%-35s" }} {{ $p.RelPermalink -}}
 {{ end -}}
 {{- end -}}
+
+
+/cl/*                               https://review.gerrithub.io/c/:splat 302!
+/issue/*                            https://github.com/cue-lang/cue/issues/:splat 302!
+/issues/*                           https://github.com/cue-lang/cue/issues/:splat 302!
+/discussion/*                       https://github.com/cue-lang/cue/discussions/:splat 302!
+/discussions/*                      https://github.com/cue-lang/cue/discussions/:splat 302!
+/projects/                          https://github.com/orgs/cue-lang/projects?query=is%3Aopen+sort%3Acreated-desc+is%3Apublic 302!
+/project/*                          https://github.com/orgs/cue-lang/projects/:splat 302!
+/projects/*                         https://github.com/orgs/cue-lang/projects/:splat 302!
+/releases/*                         https://github.com/cue-lang/cue/releases/:splat 302!
+/s/community-calendar               https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20 302!
+/docs/tour/basics/                  /docs/tour/basics/json-superset/ 302!
+/docs/tour/types/                   /docs/tour/types/types/ 302!
+/docs/tour/references/              /docs/tour/references/scopes/ 302!
+/docs/tour/expressions/             /docs/tour/expressions/operators/ 302!
+/docs/tour/packages/                /docs/tour/packages/packages/ 302!
+/docs/usecases*                     /docs/concept/popular-guides/#common-use-cases 301!
+/docs/integrations*                 /docs/integration/ 302!
+/docs/concepts*                     /docs/concept/ 301!
+/docs/references*                   /docs/reference/ 301!
+/docs/tutorials/tour/intro/*        /docs/tour/basics/:splat 301!
+/docs/tutorials/tour/intro          /docs/tour/basics/ 301!
+/docs/tutorials/tour/types/*        /docs/tour/types/:splat 301!
+/docs/tutorials/tour/types          /docs/tour/types/ 301!
+/docs/tutorials/tour/references/*   /docs/tour/references/:splat 301!
+/docs/tutorials/tour/references     /docs/tour/references/ 301!
+/docs/tutorials/tour/expressions/*  /docs/tour/expressions/:splat 301!
+/docs/tutorials/tour/expressions    /docs/tour/expressions/ 301!
+/docs/tutorials/tour/packages/*     /docs/tour/packages/:splat 301!
+/docs/tutorials/tour/packages       /docs/tour/packages/ 301!
+/s/slack                            https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE 302!
+/s/discord                          https://discord.gg/CBUzN6CrRa 302!

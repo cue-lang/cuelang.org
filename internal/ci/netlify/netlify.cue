@@ -206,19 +206,14 @@ config: #config & {
 		  {{$key}} = {{printf "%q" $value -}}
 		{{end}}
 		{{- end}}
-		{{range .redirects}}
-		[[redirects]]
-		  from = {{printf "%q" .from}}
-		  to = {{printf "%q" .to}}
-		  status = {{printf "%d" .status}}
-		  force = {{printf "%t" .force}}
-		{{end}}
 		"""
 
 	// TODO: move to encoding/toml when it exists. See cuelang.org/issue/68.
 	template.Execute(tmpl, #input)
 }
 
+// This encodes redirects in Netlify's _redirects file syntax
+// cf. https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
 #toRedirects: {
 	#input: #config
 	let tmpl = """
@@ -238,9 +233,13 @@ config: #config & {
 		# Netlify redirects. See https://www.netlify.com/docs/redirects/
 		{{ `{{ range $p := .Site.Pages -}}` }}
 		{{ `{{ range .Aliases }}` }}
-		{{ `{{  . | printf "%-35s" }}	{{ $p.RelPermalink -}}` }}
+		{{ `{{  . | printf "%-35s" }} {{ $p.RelPermalink -}}` }}
 		{{ `{{ end -}}` }}
 		{{ `{{- end -}}` }}
+
+		{{range .redirects}}
+		{{.from | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
+		{{- end}}
 		"""
 
 	template.Execute(tmpl, #input)
