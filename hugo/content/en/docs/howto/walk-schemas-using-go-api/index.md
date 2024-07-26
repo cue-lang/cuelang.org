@@ -9,9 +9,8 @@ authors:
 
 This guide demonstrates how to walk a CUE schema using the Go API,
 programmatically inspecting its structure and types.
-
-The Go code shown here is a limited code generator which produces Go structs
-from simple CUE definitions.
+The Go code shown here is a limited code generator and,
+as presented, it generates Go structs from simple CUE definitions.
 It could be adapted to other schema-walking tasks - not just code generation.
 
 ## Initialize Go and CUE modules
