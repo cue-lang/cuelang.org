@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7048ab2_f16bedce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-26T11:58:30Z",
+      "side": 1,
+      "message": "interesting, I would have personally preferred this for as it\u0027s slightly shorter and easier to skim through in the index. does it not work as well as the present participle? you do explain the reasoning below, but present vs present participle isn\u0027t clear to me as a problem.",
+      "revId": "bd259f031e18278d087a010035810751fcf1a437",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a5c2724b_41a6cdd6",
