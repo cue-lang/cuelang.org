@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "b270859f1beaf52081114d720aa071f0a1e2fa47",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24b2e7b6_94bbf6b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-26T10:24:40Z",
+      "side": 1,
+      "message": "I also find the `eval` output more intuitive, as it shows the three cases that worked, and not just the one that failed.",
+      "revId": "b270859f1beaf52081114d720aa071f0a1e2fa47",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
