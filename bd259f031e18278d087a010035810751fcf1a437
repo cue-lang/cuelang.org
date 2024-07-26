@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "83a91060_1fd7a450",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-07-26T11:58:57Z",
+      "side": 1,
+      "message": "\u003e ...preferred this _form_ as it\u0027s...",
+      "parentUuid": "c7048ab2_f16bedce",
+      "revId": "bd259f031e18278d087a010035810751fcf1a437",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a5c2724b_41a6cdd6",
