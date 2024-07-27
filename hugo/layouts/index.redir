@@ -1,29 +1,23 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
-###############################################
-# set server-side redirects in this file      #
-# see https://www.netlify.com/docs/redirects/ #
-# test at https://play.netlify.com/redirects  #
-###############################################
-
-# Redirect golang vanity imports for cuelang.org.
+# Golang vanity imports for cuelang.org.
 # NB This MUST appear first, or "go get" commands will fail!
 /go/* go-get=1 /golang/go.html                          200!
-# Redirect for humans who open Go import paths in a browser.
+# Humans who open Go import paths in a browser.
 /go/*          https://pkg.go.dev/cuelang.org/go/:splat 302!
 
-# Redirect default Netlify subdomain to primary domain
+# Default Netlify subdomain.
 https://cue.netlify.com/* https://cuelang.org/:splat 301!
-https://cuelang.org/docs/concepts/intro/ https://cuelang.org/docs/concepts/logic/ 301!
 
-# Netlify redirects. See https://www.netlify.com/docs/redirects/
+# Aliases configured in the front matter of pages in content/, templated at
+# build-time by Hugo.
 {{ range $p := .Site.Pages -}}
 {{ range .Aliases }}
 {{  . | printf "%-35s" }} {{ $p.RelPermalink -}}
 {{ end -}}
 {{- end }}
 
-
+# Redirects configured in internal/ci/netlify/netlify.cue::config.redirects
 /cl/*                               https://review.gerrithub.io/c/:splat 302!
 /issue/*                            https://github.com/cue-lang/cue/issues/:splat 302!
 /issues/*                           https://github.com/cue-lang/cue/issues/:splat 302!
@@ -41,6 +35,7 @@ https://cuelang.org/docs/concepts/intro/ https://cuelang.org/docs/concepts/logic
 /docs/tour/packages/                /docs/tour/packages/packages/ 302!
 /docs/usecases*                     /docs/concept/popular-guides/#common-use-cases 301!
 /docs/integrations*                 /docs/integration/ 302!
+/docs/concepts/intro/               /docs/concept/the-logic-of-cue/ 302!
 /docs/concepts*                     /docs/concept/ 301!
 /docs/references*                   /docs/reference/ 301!
 /docs/tutorials/tour/intro/*        /docs/tour/basics/:splat 301!
