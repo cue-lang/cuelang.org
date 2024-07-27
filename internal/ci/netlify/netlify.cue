@@ -125,6 +125,9 @@ config: #config & {
 			to:     "/docs/integration/"
 			status: 302 // We'll reuse this path, later.
 		}, {
+			from: "/docs/concepts/intro/"
+			to:   "/docs/concept/the-logic-of-cue/"
+		}, {
 			from:   "/docs/concepts*"
 			to:     "/docs/concept/"
 			status: 301
@@ -212,35 +215,31 @@ config: #config & {
 	template.Execute(tmpl, #input)
 }
 
-// This encodes redirects in Netlify's _redirects file syntax
-// cf. https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
+// This encodes server-side redirects in Netlify's _redirects file syntax:
+// https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file.
+// Test syntax in their plaground at https://play.netlify.com/redirects.
 #toRedirects: {
 	#input: #config
 	let tmpl = """
-		###############################################
-		# set server-side redirects in this file      #
-		# see https://www.netlify.com/docs/redirects/ #
-		# test at https://play.netlify.com/redirects  #
-		###############################################
-
-		# Redirect golang vanity imports for cuelang.org.
+		# Golang vanity imports for cuelang.org.
 		# NB This MUST appear first, or "go get" commands will fail!
 		/go/* go-get=1 /golang/go.html                          200!
-		# Redirect for humans who open Go import paths in a browser.
+		# Humans who open Go import paths in a browser.
 		/go/*          https://pkg.go.dev/cuelang.org/go/:splat 302!
 
-		# Redirect default Netlify subdomain to primary domain
+		# Default Netlify subdomain.
 		https://cue.netlify.com/* https://cuelang.org/:splat 301!
-		https://cuelang.org/docs/concepts/intro/ https://cuelang.org/docs/concepts/logic/ 301!
 
-		# Netlify redirects. See https://www.netlify.com/docs/redirects/
+		# Aliases configured in the front matter of pages in content/, templated at
+		# build-time by Hugo.
 		{{ `{{ range $p := .Site.Pages -}}` }}
 		{{ `{{ range .Aliases }}` }}
 		{{ `{{  . | printf "%-35s" }} {{ $p.RelPermalink -}}` }}
 		{{ `{{ end -}}` }}
 		{{ `{{- end }}` }}
 
-		{{range .redirects}}
+		# Redirects configured in internal/ci/netlify/netlify.cue::config.redirects
+		{{- range .redirects}}
 		{{.from | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
 		{{- end}}
 		"""
