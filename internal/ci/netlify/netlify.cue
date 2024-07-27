@@ -222,14 +222,17 @@ config: #config & {
 		# see https://www.netlify.com/docs/redirects/ #
 		# test at https://play.netlify.com/redirects  #
 		###############################################
-		
-		# Redirect golang vanity imports for cuelang.org
-		/go/* go-get=1 /golang/go.html 200
-		
+
+		# Redirect golang vanity imports for cuelang.org.
+		# NB This MUST appear first, or "go get" commands will fail!
+		/go/* go-get=1 /golang/go.html                          200!
+		# Redirect for humans who open Go import paths in a browser.
+		/go/*          https://pkg.go.dev/cuelang.org/go/:splat 302!
+
 		# Redirect default Netlify subdomain to primary domain
 		https://cue.netlify.com/* https://cuelang.org/:splat 301!
 		https://cuelang.org/docs/concepts/intro/ https://cuelang.org/docs/concepts/logic/ 301!
-		
+
 		# Netlify redirects. See https://www.netlify.com/docs/redirects/
 		{{ `{{ range $p := .Site.Pages -}}` }}
 		{{ `{{ range .Aliases }}` }}
