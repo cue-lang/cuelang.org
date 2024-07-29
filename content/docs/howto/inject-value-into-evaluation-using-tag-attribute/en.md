@@ -16,6 +16,7 @@ into an evaluation that might cause the output to vary. As described in the
 [`cue help injection`]({{< relref "/docs/reference/command/cue-help-injection" >}})
 reference, CUE allows information to be introduced, or *injected*, by using tag
 attributes and tag variables. This guide demonstrates tag attributes.
+<!-- TODO(jcm): include a cue-cmd in the set of commands demonstrated on this page -->
 
 ## Injecting a value
 
@@ -86,33 +87,27 @@ A: conflicting values false and true:
 ## Injecting lists of values
 
 {{{with code "en" "list"}}}
-exec cue cmd -t a='["foo", "bar"]' printList
+exec cue eval -t a='["foo", "bar"]'
 cmp stdout out
--- list_tool.cue --
+-- list.cue --
 package example
 
-import (
-	"encoding/json"
-	"tool/cli"
-)
+import "encoding/json"
 
-A: string @tag(a)
+asString: string @tag(a)
 
 // Using a disjunction with the empty list ensures
 // that an evaluation can succeed even if no value
-// is provided at the command line.
-aList: *json.Unmarshal(A) | []
+// is provided for the tag value.
+asList: *json.Unmarshal(asString) | []
 
-command: printList: {
-	for i, v in aList {
-		"print-\(v)": cli.Print & {
-			text: "List element #\(i) is \(v)"
-		}
-	}
-}
+A: [
+	for e in asList {"\(e)-with-suffix"},
+]
 -- out --
-List element #1 is bar
-List element #0 is foo
+asString: "[\"foo\", \"bar\"]"
+asList: ["foo", "bar"]
+A: ["foo-with-suffix", "bar-with-suffix"]
 {{{end}}}
 
 ## Related content
