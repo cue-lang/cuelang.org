@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d445c41f_59929ec0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-29T14:11:46Z",
+      "side": 1,
+      "message": "FYI @mvdan@mvdan.cc",
+      "revId": "dd7c9e6d604a80a2e4c2e067f859c4d1288edb01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26be5f9e_266c036d",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-07-29T14:11:46Z",
+      "side": 1,
+      "message": "We should make _very_ sure that `go get` continues to work properly after merging this change. It looks correct, but please let\u0027s jump onto a call for a quick test.",
+      "revId": "dd7c9e6d604a80a2e4c2e067f859c4d1288edb01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
