@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ca2f97_2dde9170",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-29T17:03:49Z",
+      "side": 1,
+      "message": "The reason that I\u0027ve been leaning towards present participles on the site thus far (the exceptions/outliers for which are tidied up in this CL) wasn\u0027t just personal preference (I /think/!). It\u0027s because we need a way to link to pages from the \"Related content\" section at the end of each page.\n\nWe manually choose *which* \"related\" content to link to. We don\u0027t have a better way of doing that, yet. But the link\u0027s appearance on the page was the nudge towards the present participle.\n\nWe need some indicator of the type of page that\u0027s being linked to. If we don\u0027t have that, then the \"Validating YAML with CUE\" tutorial and howto guides (that might very well need linking from the same \"How CUE works with YAML\" page) won\u0027t be distinguished - the section would look like this:\n\n```\n## Related content\n\n- [Validating YAML with CUE](link to howto)\n- [Validating YAML with CUE](link to tutorial)\n```\n\nIf we manually choose each link\u0027s anchor text (or prefix or suffix), then we can, of course, just include an appropriate page type indicator. But it became apparent pretty quickly that we needed the author not to have to replicate the page title as the anchor text, because death-by-1000-cuts happened, and these links started to drift, as pages were updated. Taken across the whole site, the effect was annoying. \n\nSo, we need /something/ to take care of the anchor text for us. After the author has made the decision to include a link to `docs/howto/foo-bar-baz` in the Related content section, the \"system\" should handle and pick up any page title changes going forward. I wrote a set of very similar Hugo shortcodes (https://cuelang.org/examples/shortcodes/linkto/) which (after Hugo engages them) render the above example **as if** this Markdown were present:\n\n```\n## Related content\n\n- How-to Guide: _Validating YAML with CUE_\n- Tutorial: _Validating YAML with CUE_\n```\n\n... where only the page title (inside `_xxx_`) is the anchor text.\n\nThis works fine for tutorials and concept guides, but falls down for how-to guides, **because authors don\u0027t know if the \"How-to\" prefix should be read as an integral part of the page title or not**. I highlight this because it\u0027s the problem at the root of this change!\n\nIf we have some how-to guides on the site that need to be read with a \"how to ...\" prefix, and some that don\u0027t, then the `linkto/related/howto` shortcode is guaranteed to produce \"wrong\" output for some subset: either some links will have a doubled \"How to\" prefix, or some will be missing a required prefix, depending on the implementation choice we make.\n\nIn order to work around this, we chose to use a \"How-to Guide\" prefix to render the related-content links on the page, requiring the page title to be written in a way which *cannot* require a \"how to\" prefix (as `How-to Guide: How to validate YAML with CUE` looks sufficiently daft that we\u0027ll always choose to avoid it).\n\nSo, with that prefix in place, let\u0027s examine the choice between your verb preference and the present participle:\n\n    How-to Guide: Validate YAML with CUE\n\nVs\n\n    How-to Guide: Validating YAML with CUE\n\nThe first has a pretty annoying stutter, as if the \"Guide\" portion of the prefix were *maybe*(???) ... a mistake? The reader is left tripping over the text on the page: should they read it as \"How-to (ignore this word) validate YAML with CUE\", or \"This is a How-to Guide called \u0027Validate YAML with CUE\"? They don\u0027t know, and their brain ends up having to make this choice, silently, when reading each and every \"Related content\" section, which I feel will be quietly off-putting for a subset of readers.\n\nThe second form doesn\u0027t suffer from this. The use of the present participle avoids any sense or suggestion that the prefix is part of the title, leading to a subtly nicer reading experience.\n\nThat\u0027s my rationale, anyway! I just didn\u0027t want to leave you with the idea that this was a coin flip choice: there actually was a fair bit of thought and background motivation for it :-) Please do let me know if the slightly-shorter-to-read-in-the-index form feels like a big enough win to re-evaluate this, and I\u0027ll do so.",
+      "parentUuid": "83a91060_1fd7a450",
+      "revId": "bd259f031e18278d087a010035810751fcf1a437",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a5c2724b_41a6cdd6",
@@ -49,6 +67,23 @@
       "writtenOn": "2024-07-25T14:34:10Z",
       "side": 1,
       "message": "PTAL",
+      "revId": "bd259f031e18278d087a010035810751fcf1a437",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b64e72a4_5863ff58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-29T17:03:49Z",
+      "side": 1,
+      "message": "Apologies for the essay. If the weather were cooler I would have had sufficient brain power to make it shorter! I hope it makes sense 😊",
       "revId": "bd259f031e18278d087a010035810751fcf1a437",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
