@@ -2,11 +2,11 @@ package site
 
 content: docs: howto: "inject-system-information-into-evaluation-using-tag-variable": {
 	page: comparators: [
-		for cmd in ["export", "eval"] {
+		for prefix in ["cue export -T", "cue eval -T", "cue eval -Tt"] {
 			{
 				kind:          "patternComparator"
-				commandPrefix: "cue \(cmd) -T"
-				pattern: expr: #"^[a-zA-Z0-9]+: *"?(.*)"?"#
+				commandPrefix: prefix
+				pattern: expr: #"(?m)^[a-zA-Z0-9]+: *"?(.*)"?"#
 			}
 		},
 	]
