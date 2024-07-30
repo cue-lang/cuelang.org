@@ -16,6 +16,23 @@
       "message": "I never saw this trick before, it\u0027s subtle enough that I might have left a comment behind as a reminder.",
       "revId": "04df7f469e4c02bd35172aece36ab64a6fd92e8f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02205956_3469d35b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-30T15:53:44Z",
+      "side": 1,
+      "message": "As discussed with @aram@cue.works, I\u0027m taking this CL over.",
+      "revId": "04df7f469e4c02bd35172aece36ab64a6fd92e8f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
