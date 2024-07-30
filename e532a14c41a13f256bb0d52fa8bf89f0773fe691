@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee07a4cc_2e377725",
+        "filename": "hugo/layouts/index.redir",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-30T15:11:45Z",
+      "side": 1,
+      "message": "Ack. This CL doesn\u0027t change any redirects or their status codes - it just moves them between the two files that Netlify merges at runtime.",
+      "parentUuid": "cab13dc7_97b1512f",
+      "range": {
+        "startLine": 47,
+        "startChar": 65,
+        "endLine": 47,
+        "endChar": 68
+      },
+      "revId": "e532a14c41a13f256bb0d52fa8bf89f0773fe691",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a02d68d_eaeafc76",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-07-29T14:10:38Z",
       "side": 1,
       "message": "Same point re trailing whitespace.",
+      "revId": "e532a14c41a13f256bb0d52fa8bf89f0773fe691",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5db52334_62c83982",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-30T15:11:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a02d68d_eaeafc76",
       "revId": "e532a14c41a13f256bb0d52fa8bf89f0773fe691",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
