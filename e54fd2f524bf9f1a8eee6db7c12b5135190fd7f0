@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cb12bd5_aaf21b55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-30T15:46:33Z",
+      "side": 1,
+      "message": "As discussed with @aram@cue.works \u0026 @paul@myitcv.io, I\u0027m taking this CL over.",
+      "revId": "e54fd2f524bf9f1a8eee6db7c12b5135190fd7f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcc81e9d_374b39ca",
