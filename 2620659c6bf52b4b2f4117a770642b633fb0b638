@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e0f8d774_34c8c6a8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-30T15:11:08Z",
+      "side": 1,
+      "message": "\u003e It sort of feels odd that we are generating hugo/layouts/index.redir.\n\nAgreed. I call out the double templating in a later CL in this stack, along with one possible route away from having it exist at all; namely, that the preprocessor will have to learn how to iterate over the front matter for each page and hard code it into `hugo/_redirects`. Ending up with `hugo/_redirects` actually present in commits, and auditable, is one of the motivations for this stack - though this stack doesn\u0027t complete the process.\n\n\u003e Do we have a reference for what that file could/should contain?\n\nThis change deliberately makes no changes to `index.redir`, thus the guide to the expected content is the /current/ content, as of this CL. In a later CL I add a comment that links to https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file, but inside the CUE (near the authoritative template) not inside the `index.redir` file.\n\n\u003e It feels like hugo/layouts/index.redir should be the file that describes/encodes how the front matter from various pages is combined with \"additional\" redirects.\n\nThat\u0027s precisely what that file achieves, unless I\u0027m misunderstanding you. If you check inside any Netlify deployment, and then \"Browse files\" inside the \"Deploy file browser\" at the bottom of the deploy details, you can use the filename filter box to find the `_redirects` file, and view the final version of the file that Hugo generates.\n\n\u003e If it works and it\u0027s clear how things combine, I hold this lightly.\n\nGiven that confusion is what prompted me to open this stack, the aim is definitely to make things /more/ clear through this set of changes! I\u0027ll mark this as resolved for now and we can revisit after submission, as appropriate. I\u0027ll open the issue asking the preprocessor to learn how to generate `hugo/_redirects`.",
+      "parentUuid": "b0b8fbf1_407a2ab5",
+      "revId": "2620659c6bf52b4b2f4117a770642b633fb0b638",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0204c0b1_d86fff4f",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "writtenOn": "2024-07-29T14:08:44Z",
       "side": 1,
       "message": "FWIW I have Vim configured to strip trailing whitespace on lines in any file:\n\n```\nautocmd BufWritePre * call StripTrailingWhite()\nfunction! StripTrailingWhite()\n  let l:winview \u003d winsaveview()\n  let _s\u003d@/\n  silent! %s/\\s\\+$//\n  let @/\u003d_s\n  call histdel(\"/\", -1)\n  call winrestview(l:winview)\nendfunction\n```\n\nThat\u0027s why these lines render \"funny\" here in Gerrit.",
+      "revId": "2620659c6bf52b4b2f4117a770642b633fb0b638",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d613f674_96a94a4a",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-30T15:11:08Z",
+      "side": 1,
+      "message": "I\u0027ve fixed this. It was actually intentional; I\u0027ve opened cue-lang/docs-and-content#174 to track the root of my confusion :-)",
+      "parentUuid": "abeb068e_c61d876c",
       "revId": "2620659c6bf52b4b2f4117a770642b633fb0b638",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
