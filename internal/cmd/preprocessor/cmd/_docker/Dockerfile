@@ -69,4 +69,8 @@ COPY --from=build /cues/v0.9.2/cue /cues/v0.9.2/cue
 COPY --from=build /libcue/libcue.so /usr/local/lib/
 ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 
+ENV JAVA_HOME=/opt/java/openjdk
+COPY --from=docker.io/library/eclipse-temurin:22-jdk $JAVA_HOME $JAVA_HOME
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
