@@ -29,6 +29,14 @@ versions: {
 	])
 	testscript: "v1.12.0"
 	libcue:     "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf"
+
+	// Container image pinning: specify a tag with a ":" prefix, or pin to a
+	// specific digest by using a "@" prefix.
+	// cf. https://docs.docker.com/reference/dockerfile/#from
+	java: {
+		image: "docker.io/library/eclipse-temurin"
+		pin:   ":22-jdk"
+	}
 }
 
 // _contentDefaults is a recursive template for setting defaults
@@ -186,6 +194,12 @@ template: ci.#writefs & {
 
 			COPY --from=build /libcue/libcue.so /usr/local/lib/
 			ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+
+			ENV JAVA_HOME=/opt/java/openjdk
+			COPY --from=\#(versions.java.image)\#(versions.java.pin) $JAVA_HOME $JAVA_HOME
+			# Extending PATH here is insufficient; see the TODO in
+			# ./internal/cmd/preprocessor/cmd.buildMultistepScript
+			ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
