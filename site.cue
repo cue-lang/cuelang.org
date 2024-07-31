@@ -29,6 +29,9 @@ versions: {
 	])
 	testscript: "v1.12.0"
 	libcue:     "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf"
+	// Use an image container tag with a ":" prefix, or pin to a specific digest
+	// by using a "@" prefix: https://docs.docker.com/reference/dockerfile/#from
+	eclipseTemurin: ":22-jdk"
 }
 
 // _contentDefaults is a recursive template for setting defaults
@@ -185,6 +188,10 @@ template: ci.#writefs & {
 				], "\n"))
 
 			COPY --from=build /libcue/libcue.so /usr/local/lib/
+
+			ENV JAVA_HOME=/opt/java/openjdk
+			COPY --from=docker.io/library/eclipse-temurin\#(versions.eclipseTemurin) $JAVA_HOME $JAVA_HOME
+			ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
