@@ -29,6 +29,10 @@ RUN \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   GOBIN=/cues/v0.9.2 go install -trimpath cuelang.org/go/cmd/cue@v0.9.2
 
+RUN git clone https://github.com/cue-lang/libcue.git /libcue
+RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
+RUN CGO_ENABLED=1 go build -C /libcue -o libcue.so -buildmode=c-shared
+
 FROM golang:1.22.4
 
 RUN apt-get update && apt-get install -y tree
@@ -61,5 +65,8 @@ RUN chown root:root /usr/bin/entrypoint.sh
 COPY --from=build /go/bin/testscript /go/bin
 COPY --from=build /cues/v0.10.0-alpha.3/cue /cues/v0.10.0-alpha.3/cue
 COPY --from=build /cues/v0.9.2/cue /cues/v0.9.2/cue
+
+COPY --from=build /libcue/libcue.so /usr/local/lib/
+ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
