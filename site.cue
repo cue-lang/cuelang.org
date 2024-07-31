@@ -28,6 +28,7 @@ versions: {
 		for k, _ in versionSet {k},
 	])
 	testscript: "v1.12.0"
+	libcue:     "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf"
 }
 
 // _contentDefaults is a recursive template for setting defaults
@@ -139,6 +140,10 @@ template: ci.#writefs & {
 					"""#
 			}], "\n\n"))
 
+			RUN git clone https://github.com/cue-lang/libcue.git /libcue
+			RUN git -C /libcue reset --hard \#(versions.libcue)
+			RUN CGO_ENABLED=1 go build -C /libcue -o libcue.so -buildmode=c-shared
+
 			FROM golang:\#(versions.bareGoVersion)
 
 			RUN apt-get update && apt-get install -y tree
@@ -178,6 +183,9 @@ template: ci.#writefs & {
 					"""
 				},
 				], "\n"))
+
+			COPY --from=build /libcue/libcue.so /usr/local/lib/
+			ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
