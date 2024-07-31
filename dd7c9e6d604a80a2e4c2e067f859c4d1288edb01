@@ -33,6 +33,24 @@
       "message": "We should make _very_ sure that `go get` continues to work properly after merging this change. It looks correct, but please let\u0027s jump onto a call for a quick test.",
       "revId": "dd7c9e6d604a80a2e4c2e067f859c4d1288edb01",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b1c369e_11e0e807",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-07-31T08:54:29Z",
+      "side": 1,
+      "message": "As per a discussion thread elsewhere, I\u0027ll be making this change with @mvdan@mvdan.cc on hand to advise if anything needs investigating or rolling back. I\u0027ve looked at the state of the CL preview\u0027s responses to various requests, and believe this change will succeed.\n\nEdited to add (after submission, as I forgot to hit \"send\" on the preceding paragraph): this change has been tested, submitted, and re-tested on the live site. `go get` is still working.",
+      "parentUuid": "26be5f9e_266c036d",
+      "revId": "dd7c9e6d604a80a2e4c2e067f859c4d1288edb01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
