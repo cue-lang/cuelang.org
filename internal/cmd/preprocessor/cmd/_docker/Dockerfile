@@ -73,4 +73,10 @@ ENV JAVA_HOME=/opt/java/openjdk
 COPY --from=docker.io/library/eclipse-temurin:22-jdk $JAVA_HOME $JAVA_HOME
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
+ENV MAVEN_HOME /usr/share/maven
+COPY --from=docker.io/library/maven:3.9.8-eclipse-temurin-11 $MAVEN_HOME $MAVEN_HOME
+COPY --from=docker.io/library/maven:3.9.8-eclipse-temurin-11 /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh
+COPY --from=docker.io/library/maven:3.9.8-eclipse-temurin-11 $MAVEN_HOME/ref/settings-docker.xml $MAVEN_HOME/ref/settings-docker.xml
+ENV PATH="${MAVEN_HOME}/bin:${PATH}"
+
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
