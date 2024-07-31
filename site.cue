@@ -37,6 +37,10 @@ versions: {
 		image: "docker.io/library/eclipse-temurin"
 		pin:   ":22-jdk"
 	}
+	maven: {
+		image: "docker.io/library/maven"
+		pin:   ":3.9.8-eclipse-temurin-11"
+	}
 }
 
 // _contentDefaults is a recursive template for setting defaults
@@ -200,6 +204,14 @@ template: ci.#writefs & {
 			# Extending PATH here is insufficient; see the TODO in
 			# internal/cmd/preprocessor/cmd/rootfile.go::buildMultistepScript().
 			ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+			ENV MAVEN_HOME=/usr/share/maven
+			COPY --from=\#(versions.maven.image)\#(versions.maven.pin) $MAVEN_HOME $MAVEN_HOME
+			COPY --from=\#(versions.maven.image)\#(versions.maven.pin) /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh
+			COPY --from=\#(versions.maven.image)\#(versions.maven.pin) $MAVEN_HOME/ref/settings-docker.xml $MAVEN_HOME/ref/settings-docker.xml
+			# Extending PATH here is insufficient; see the TODO in
+			# internal/cmd/preprocessor/cmd/rootfile.go::buildMultistepScript().
+			ENV PATH="${MAVEN_HOME}/bin:${PATH}"
 
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
