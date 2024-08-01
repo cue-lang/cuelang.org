@@ -79,4 +79,19 @@ COPY --from=docker.io/library/maven:3.9.8-eclipse-temurin-11 /usr/local/bin/mvn-
 COPY --from=docker.io/library/maven:3.9.8-eclipse-temurin-11 $MAVEN_HOME/ref/settings-docker.xml $MAVEN_HOME/ref/settings-docker.xml
 ENV PATH="${MAVEN_HOME}/bin:${PATH}"
 
+# Building the CUE Java API (to make it available to content authors) is
+# done here, in the context of the runtime container image, because it
+# requires Maven and Java. We /could/ do this in the "build" container,
+# above, but that would require us to make Maven available in that
+# context. Given that Maven /also/ needs to be available to content
+# authors, we opt to perform the build here. We do so in a tmpfs to avoid
+# polluting the runtime container image with build artifacts.
+RUN --mount=type=tmpfs,target=/tmpfs/ \
+    git clone https://github.com/cue-lang/cue-api-java.git /tmpfs/cue-api-java/ \
+ && cd /tmpfs/cue-api-java \
+ && git reset --hard 3c12bb9e9ea203d4de8308b4145e876e4b60207e \
+ && mvn package \
+ && mkdir /usr/local/share/java/ \
+ && cp target/CUE*.jar /usr/local/share/java/CUE.jar
+
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
