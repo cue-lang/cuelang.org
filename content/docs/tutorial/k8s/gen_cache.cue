@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "3dzTKAhHA4hoVlGk5IzW6qrxU6YffoCtKuPZBQ0XVZE="
-								kube2:               "J2bGAWmTG0YKXDga1p5f5Qv8t2vFj11uzZBlpAFPH4U="
-								kube3:               "wJZ0bxYxLBv4UMnsWSsLCQRmJO7SQ9i7UYh6a7r9/m0="
-								"template frontend": "bgxWAyslhK4b8CevjodNliK3q/9mWisjA6MMfoatTDc="
-								"template kitchen":  "MLGIz8qhyUeiE75sPoIomsD4oVCI84/V4jJDTtwxhfs="
-								kitchen3:            "Z2EVdf3Y6b48eRT0pdCGasm9KrvG4qfiVF2vMRAe3ck="
-								sous:                "J1Bi5v7K03wB7V/hz65/3w+wWgbjQzM1cRoZQBX11Rc="
-								"kube tool":         "AOxNq0Tf1FJzsEr+GRZVdV41p1hNTwAh734LIjfMftE="
-								"ls tool":           "gbzGibTXeV7fwu8EU3fGWk/1Wti4gxEWsPrjCkg6Akg="
-								"dump tool":         "zUYwgAWjA3JiRq0oDk0kkAp05TwJXDYePJzmsd8wBEk="
-								"create tool":       "+6l3KNX4zgapZrFNZ9IvWvUXtm9yvaPtES0OgIWa/rk="
-								kubectl:             "pOT7v7clsHgbhAGQU+iUh8Ushvmt7zgSJtKG6amOeog="
+								"initial template":  "nexnYjytZnLTmg1JHzApyLTI828/Go1mkNlMhXxw914="
+								kube2:               "qybAyZ/ZPpBq+8dL+BRqT/EG+VwsVxCFYUYK0yiVp9I="
+								kube3:               "quH7Bj/SesfAqT1OPINFrDL+LxjBNavD0dBZasIxH6M="
+								"template frontend": "ylR63+HVQkZjZ3OzRZtkfaib94yrhpHJbYyy59hhCJI="
+								"template kitchen":  "eWWcY7qYrgB84ihTmEyqX2+qj9hiYmszm7F6Af3DBuQ="
+								kitchen3:            "yftQhOPjk4P1zixxXFfQjM1HsfnZePa3zVzOwjIjYAU="
+								sous:                "4C5is85528DamcCzAL2++RxXCZi2EMfEUzUzYgrr8cQ="
+								"kube tool":         "MmJVKyKq/ypaBnDW9ZRkBNMrK/tIVbykd7nB71THE0U="
+								"ls tool":           "WgEohSC25Db0L780t9mO7F+pIYoBbYXX2hB5Avp3Bws="
+								"dump tool":         "0pgFI/wMd0O+qbzO8YsTLDCA4nBNCMmBpLwE0wdz+ak="
+								"create tool":       "VJtH6SnMiB14ITMROduziG+98sqjJYQJxx5OLpbJHsM="
+								kubectl:             "ei1vyq10V2xTgyw/J4xRyAOj/p0wrq8JgCgHSHz0Iwg="
 							}
 							multi_step: {
-								hash:       "CVA3SGGCH6F6LQK9BQGHNMQE31ML3JDJA3DTG26GHED5I8TM4LTG===="
+								hash:       "9KD4HGCML0VPCC492UTHOP9PDI4AUBMCJU5MEOPS1AL5QBMC2100===="
 								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
 								steps: [{
 									doc:      "#ellipsis 5"
