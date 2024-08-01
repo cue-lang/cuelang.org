@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue get go - main cue":      "hdn+wcozwZfi5UWJjEwAoflYXq57s4vUw0SsjvImNa4="
-								"load cue - cue data":        "5nOqynCOqM0w3aNa6IA2b6h7RSzIvfyb97wxYr0kFwQ="
-								"load cue - main.go":         "+MU0v8EAIrxCfw/+yjJEhNw54ClJgslV4yw1JP5UwuI="
-								"load non-cue - main.go":     "8TOGSKsIJsRVfl7suIhyo0jtPzln72dbWNUpsMZF4kg="
-								"load non-cue - yaml file":   "DDj6QdgnmaVB/i2eHG2yRvi2GfuPvQhVAZbpNmKlu3Y="
-								"check go data - cue schema": "V1qrloO6pOaaTp43Q0V1gaMbjjFKvrU2SyTkbyjsKVk="
-								"check go data - main.go":    "CIsJ9t/R/u08xqRNiEF/feHnXaJc9h0tljXRhpNWq3A="
+								"cue get go - main cue":      "6pNf+9PGr6RXL+v6yl3vdRq6VYZtzRLcOzDn9z/4ugY="
+								"load cue - cue data":        "bWGF40DWeBOxnb7CXU8D38KkjXsCNsW39F6NLw0BEmo="
+								"load cue - main.go":         "wOWwU8adqTZitODF3omkj2HYyCXi47Ihf9a6SXx5WDw="
+								"load non-cue - main.go":     "P5P8K9uo77XWGorvEh64mWSRKHLOgB7s9VnZXBYW3bk="
+								"load non-cue - yaml file":   "sW7l9+ECPd3vX4JqUc++msb9djt394ar9vOV0nKR+Ks="
+								"check go data - cue schema": "I7WQBrcfkrCkuV+x1wiF1rBi/+rnW5Xxdqkdmcta5sY="
+								"check go data - main.go":    "fB43ynQwmpDnMdYqKW9P9ts52XP4rVqUjq2i5PU9zsU="
 							}
 							multi_step: {
-								hash:       "3JBR8H1OSHJQE1Q9B7G2QFQ42L19CKIQD25NNJOFAJI0S3952S3G===="
+								hash:       "51A1J0DJT4G28KG15GMBDEU39ET05KKFJ9RK40PPN3V8Q1OHCM40===="
 								scriptHash: "E7IDIF64R43TNRINFR9E6TK6R3VCANDEKA68K8FKNFCQL7N1SO3G===="
 								steps: [{
 									doc:      ""
