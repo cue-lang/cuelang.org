@@ -85,4 +85,21 @@ COPY ./maven-settings.xml /root/.m2/settings.xml
 # internal/cmd/preprocessor/cmd/rootfile.go::buildMultistepScript().
 ENV PATH="${MAVEN_HOME}/bin:${PATH}"
 
+# Building the CUE Java API (to make it available to content authors) is
+# done here, in the context of the runtime container image, because it
+# requires Maven and Java. We /could/ do this in the "build" container,
+# above, but that would require us to make Maven available in that
+# context. Given that Maven /also/ needs to be available to content
+# authors, we opt to perform the build here. To avoid polluting the
+# runtime container image with build artifacts we perform the build in a
+# tmpfs, and provide a cache mount for Maven's download cache.
+RUN --mount=type=tmpfs,target=/tmpfs/ \
+    --mount=type=cache,target=/caches/maven \
+    git clone https://github.com/cue-lang/cue-api-java.git /tmpfs/cue-api-java/ \
+ && cd /tmpfs/cue-api-java \
+ && git reset --hard 3c12bb9e9ea203d4de8308b4145e876e4b60207e \
+ && mvn package \
+ && mkdir -p /usr/local/share/java/ \
+ && cp target/CUE*.jar /usr/local/share/java/CUE.jar
+
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
