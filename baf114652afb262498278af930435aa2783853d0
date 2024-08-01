@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2871fb34_ca89400d",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-01T15:22:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "549436c3_f5034ec1",
+      "revId": "baf114652afb262498278af930435aa2783853d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d3977b6f_fd251526",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e5f3178_1f39c16c",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-01T15:22:33Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "d3977b6f_fd251526",
+      "revId": "baf114652afb262498278af930435aa2783853d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95992f97_2cbb70e1",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-08-01T14:11:18Z",
       "side": 1,
       "message": "I wouldn\u0027t mark that this is optional. Instead, per a comment in a previous CL, we should consider switching to tagged versions pretty soon, to make this appear less vulgar.",
+      "revId": "baf114652afb262498278af930435aa2783853d0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbe1a98b_575dc864",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-01T15:22:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95992f97_2cbb70e1",
       "revId": "baf114652afb262498278af930435aa2783853d0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
