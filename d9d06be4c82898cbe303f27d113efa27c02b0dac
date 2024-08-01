@@ -366,6 +366,24 @@
       "parentUuid": "a3ec525e_8d73cf96",
       "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "397f9e95_212592ef",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-01T19:42:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd747aee_ad51ed3d",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

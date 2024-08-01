@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc0d98d4_5097296a",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-01T19:42:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30d42671_eabf819a",
+      "revId": "238cf4575f7f5850cb561d1575d45b4246760756",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e75c2ff_e2500d26",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-08-01T17:56:27Z",
       "side": 1,
       "message": "s/and/or/",
+      "revId": "238cf4575f7f5850cb561d1575d45b4246760756",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1758ae8_18292a5c",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-01T19:42:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e75c2ff_e2500d26",
       "revId": "238cf4575f7f5850cb561d1575d45b4246760756",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
