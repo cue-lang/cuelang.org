@@ -28,7 +28,8 @@ versions: {
 		for k, _ in versionSet {k},
 	])
 	testscript: "v1.12.0"
-	libcue:     "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf"
+	libcue:     "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf" // https://github.com/cue-lang/libcue
+	cueApiJava: "3c12bb9e9ea203d4de8308b4145e876e4b60207e" // https://github.com/cue-lang/cue-api-java
 
 	// Container image pinning: specify a tag with a ":" prefix, or pin to a
 	// specific digest by using a "@" prefix.
@@ -208,6 +209,21 @@ template: ci.#writefs & {
 			COPY --from=\#(versions.maven.image)\#(versions.maven.pin) /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh
 			COPY --from=\#(versions.maven.image)\#(versions.maven.pin) $MAVEN_HOME/ref/settings-docker.xml $MAVEN_HOME/ref/settings-docker.xml
 			ENV PATH="${MAVEN_HOME}/bin:${PATH}"
+
+			# Building the CUE Java API (to make it available to content authors) is
+			# done here, in the context of the runtime container image, because it
+			# requires Maven and Java. We /could/ do this in the "build" container,
+			# above, but that would require us to make Maven available in that
+			# context. Given that Maven /also/ needs to be available to content
+			# authors, we opt to perform the build here. We do so in a tmpfs to avoid
+			# polluting the runtime container image with build artifacts.
+			RUN --mount=type=tmpfs,target=/tmpfs/ \
+			    git clone https://github.com/cue-lang/cue-api-java.git /tmpfs/cue-api-java/ \
+			 && cd /tmpfs/cue-api-java \
+			 && git reset --hard \#(versions.cueApiJava) \
+			 && mvn package \
+			 && mkdir /usr/local/share/java/ \
+			 && cp target/CUE*.jar /usr/local/share/java/CUE.jar
 
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
