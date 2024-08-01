@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "5u9UHh0GxDDVQh0/TV3jMXKd5NOGu18e5U++E4KeQoM="
-								"config.cue":               "aDH+G1mcmjdmzEH6tWjn3Ng/uc23OhbFoaUTtwmhItc="
-								"second-module-to-publish": "wLzSEzxcacyLi3AaibDsBygpu30HFDPBQYc/53xeadk="
-								"update-frostyapp":         "BTht+giwDB2i9Cxo5rUxebfg+EoKGfXKhvph3EmjsWI="
-								"schema-v0.1.0":            "dtfq8eiczrpcSrm3kP9ykkp8KCRkzuEsjJ67eaQPaKE="
+								"schema-v0.0.1":            "XZIzw9YLO3tWIy8gtdgrrOK4d8IeSrpzVDoBw395rTo="
+								"config.cue":               "SAY6mv/WAaIMpWzNzObV3ySFr7di8BewqN58/566508="
+								"second-module-to-publish": "gdNTGvS21Oa+xBqwCsjALuMYbva+IjLCw3D5eMiA7Bs="
+								"update-frostyapp":         "3m69z8Hb1iciQcEyNmISbwbSH8yFPv5VPMO8wYylLbE="
+								"schema-v0.1.0":            "W2uvvJTnneA99BQ0ST+aq0SwU9cKGJFouxdrzFrXpvg="
 							}
 							multi_step: {
-								hash:       "8I1S8EVEVPCVP31FVU0L76ET5K4P0LHSE09H2UFE0PKLDS739L10===="
+								hash:       "LCRO86KDV195ATOEK2RONRQTROCJ6FRV5Q5KFTU28JA814HRJ750===="
 								scriptHash: "PMH5AVE2C5BAA7Q29P6IR5G6NLTKFPE8QOTMPFF4OD909IL98N2G===="
 								steps: [{
 									doc:      ""
