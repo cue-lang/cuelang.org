@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5337cc00_62ccccd9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-01T13:47:13Z",
+      "side": 1,
+      "message": "Again, you don\u0027t mean tip. We are using a specific commit.",
+      "range": {
+        "startLine": 9,
+        "startChar": 28,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "7a12cf844339f3ffc3ef6e0b02372fe5d69b4afa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27ea4d48_382f03a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-01T13:47:13Z",
+      "side": 1,
+      "message": "LGTM but because there is nothing on top of this stack that requires/depends on the result, it\u0027s hard to confirm it as being sufficient.",
+      "revId": "7a12cf844339f3ffc3ef6e0b02372fe5d69b4afa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
