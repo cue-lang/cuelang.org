@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5286a653_005469d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-01T13:42:29Z",
+      "side": 1,
+      "message": "You don\u0027t mean this, because we actually use a specific commit.",
+      "range": {
+        "startLine": 9,
+        "startChar": 28,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "5530a1b7ff6e0550e5a4e8b548b6081a6e5c0a06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3989f483_e8f94200",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-01T13:42:29Z",
+      "side": 1,
+      "message": "LGTM but because there is nothing on top of this stack that requires/depends on the result, it\u0027s hard to confirm it as being sufficient.",
+      "revId": "5530a1b7ff6e0550e5a4e8b548b6081a6e5c0a06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
