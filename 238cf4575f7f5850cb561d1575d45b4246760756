@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3fae13a_49144c2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T17:56:27Z",
+      "side": 1,
+      "message": "LGTM after the minor changes below.",
+      "revId": "238cf4575f7f5850cb561d1575d45b4246760756",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30d42671_eabf819a",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T17:56:27Z",
+      "side": 1,
+      "message": "s/the compiler, language runtime or runtime loader/the compiler, the runtime loader, and potentially the language runtime/",
+      "revId": "238cf4575f7f5850cb561d1575d45b4246760756",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e75c2ff_e2500d26",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T17:56:27Z",
+      "side": 1,
+      "message": "s/and/or/",
+      "revId": "238cf4575f7f5850cb561d1575d45b4246760756",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
