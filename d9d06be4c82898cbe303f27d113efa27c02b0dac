@@ -16,6 +16,159 @@
       "message": "PTAL.",
       "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6fe7abd_c27f8d75",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "Delete \"is required\", or reword the whole sentence \"while Windows requires `cue.dll`\".",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96849990_7a5c5c5d",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "Delete comma.",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b35e4b80_30befef4",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "s/compiler/compiler or language runtime/",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec65ac0d_6be3288d",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "Add another sentence:\n\n\u003e Additionally, the runtime loader will also need to know the location of the library on your computer, at the time you run programs that use libcue.",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d939b841_f1cea9bf",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "s/compilers/compilers (or language runtimes)/",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "661d8851_e6cc81ba",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "s/a compiler\u0027s behaviour/the behavior of the runtime loader/",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1419367_edd5ef8b",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "On macOS it is `DYLD_LIBRARY_PATH`, but I don\u0027t know where that is documented.",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcf6a91e_18f9b45c",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "s/compilers/compilers and the runtime loader/",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a08d5b3f_1dd9872c",
+        "filename": "content/docs/howto/build-libcue-shared-library/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-01T15:45:48Z",
+      "side": 1,
+      "message": "I don\u0027t think we should instruct users to modify their systems globally, like this. Rather, we should tell them to use `LD_LIBRARY_PATH` (or the macOS/Windows equivalents).\n\nI think only package managers (apt, brew, etc), should install `libcue` globally, and they already know where to put shared libraries. This guide is aimed more towards users or programmers, I think.",
+      "revId": "d9d06be4c82898cbe303f27d113efa27c02b0dac",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
