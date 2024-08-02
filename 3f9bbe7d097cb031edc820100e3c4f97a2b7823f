@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28d0fc52_72c06c96",
+        "filename": "content/examples/java/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-02T09:21:02Z",
+      "side": 1,
+      "message": "So why not just set `CLASSPATH` directly instead of inventing a new variable?",
+      "revId": "3f9bbe7d097cb031edc820100e3c4f97a2b7823f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
