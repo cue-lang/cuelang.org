@@ -16,6 +16,24 @@
       "message": "or if you want to use the typical way to refer to Go names:\n\n    ./internal/cmd/preprocessor/cmd.buildMultistepScript",
       "revId": "d281b483db370e891f7de7b5b06b03a7fae325dc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "389649a8_fbd3d78d",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-02T13:55:56Z",
+      "side": 1,
+      "message": "I\u0027ll amend this in some unrelated follow up (so that I don\u0027t have to bump the preprocessor\u0027s tag for this commit and the two that come after, and also churn through a rebuild of the cache files).",
+      "parentUuid": "569a8514_a99c44fa",
+      "revId": "d281b483db370e891f7de7b5b06b03a7fae325dc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
