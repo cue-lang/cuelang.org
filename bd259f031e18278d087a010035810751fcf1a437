@@ -56,6 +56,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "eea9e646_5895e7a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-02T13:58:37Z",
+      "side": 1,
+      "message": "Ack, I don\u0027t feel strongly about it one way or another. In isolation I think \"Validate\" is nicer, but with the \"How-to Guide:\" prefix, I agree it\u0027s a bit better as \"Validating\". SGTM.",
+      "parentUuid": "23ca2f97_2dde9170",
+      "revId": "bd259f031e18278d087a010035810751fcf1a437",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "a5c2724b_41a6cdd6",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
