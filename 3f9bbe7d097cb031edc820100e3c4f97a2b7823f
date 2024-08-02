@@ -16,6 +16,24 @@
       "message": "So why not just set `CLASSPATH` directly instead of inventing a new variable?",
       "revId": "3f9bbe7d097cb031edc820100e3c4f97a2b7823f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc63c5a9_580c1c2a",
+        "filename": "content/examples/java/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-02T14:00:06Z",
+      "side": 1,
+      "message": "This CL is just a demo, and doesn\u0027t need a review :-)\n\nThe var came from here: https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1192934/11/content/docs/tutorial/cue-java-api/en.md#249. I didn\u0027t want to hard-code the path in these two invocations, but I might well do that, given the wildcard can now be static ...",
+      "parentUuid": "28d0fc52_72c06c96",
+      "revId": "3f9bbe7d097cb031edc820100e3c4f97a2b7823f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
