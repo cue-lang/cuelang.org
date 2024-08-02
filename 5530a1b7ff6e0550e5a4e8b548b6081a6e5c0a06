@@ -116,6 +116,24 @@
       "parentUuid": "22726e04_cc24aa20",
       "revId": "5530a1b7ff6e0550e5a4e8b548b6081a6e5c0a06",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4635464d_2bfdf48f",
+        "filename": "site.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-02T13:47:22Z",
+      "side": 1,
+      "message": "I\u0027ve opened cue-lang/cue#3356 to track this.",
+      "parentUuid": "dd595211_3b165cec",
+      "revId": "5530a1b7ff6e0550e5a4e8b548b6081a6e5c0a06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
