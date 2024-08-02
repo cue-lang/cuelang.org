@@ -98,6 +98,24 @@
       "message": "Is now the time to actually start tagging this repo and the others? \n\n@aram@cue.works?",
       "revId": "5530a1b7ff6e0550e5a4e8b548b6081a6e5c0a06",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd595211_3b165cec",
+        "filename": "site.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-02T09:27:25Z",
+      "side": 1,
+      "message": "I am not sure, it\u0027s too early I think. Neither the API nor the UX (as in the build procedure), nor the implementation is stable. In general people should use tip for now.\n\nWe could use 0.x.y versions, of course, but then we\u0027d have to invent/define a release process, when do we update the version? etc. It\u0027s not a lot of work, of course, but it\u0027s some work that seems to get in the way of development work, IMO.\n\nOf course, this ties the site to a specific commit, which contradicts what I said above about always using tip. I don\u0027t have any good solution here.",
+      "parentUuid": "22726e04_cc24aa20",
+      "revId": "5530a1b7ff6e0550e5a4e8b548b6081a6e5c0a06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
