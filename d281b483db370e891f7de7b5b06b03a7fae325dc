@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "569a8514_a99c44fa",
+        "filename": "internal/cmd/preprocessor/cmd/_docker/Dockerfile",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-02T09:25:40Z",
+      "side": 1,
+      "message": "or if you want to use the typical way to refer to Go names:\n\n    ./internal/cmd/preprocessor/cmd.buildMultistepScript",
+      "revId": "d281b483db370e891f7de7b5b06b03a7fae325dc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
