@@ -89,6 +89,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f30eb302_df336572",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-06T12:58:01Z",
+      "side": 1,
+      "message": "Good idea! Done.",
+      "parentUuid": "c479c65f_ff25ec5d",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bc097a3_77146b56",
@@ -142,6 +160,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e2958cd_4a4bfd0c",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-06T12:58:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "648dc42a_440fb128",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d74ec814_1d52e193",
@@ -191,6 +227,24 @@
       "side": 1,
       "message": "Acknowledged - TVM.",
       "parentUuid": "fb842ea8_f9fe1752",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44b18295_801dfeba",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-06T12:58:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40d0fb5e_91687d0a",
       "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
