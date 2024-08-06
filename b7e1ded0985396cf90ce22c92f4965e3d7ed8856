@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a224015b_ed299763",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-06T11:13:15Z",
+      "side": 1,
+      "message": "I think just `java --version` is enough.",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7376baaf_3e93a29d",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-06T11:13:15Z",
+      "side": 1,
+      "message": "Actually we are instructing the operating system dynamic loader to do this, not the JVM. The JVM just defers the process of finding the shared library to the operating system.",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bc097a3_77146b56",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-06T11:13:15Z",
+      "side": 1,
+      "message": "It\u0027s the operating system, really.",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d74ec814_1d52e193",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-06T11:13:15Z",
+      "side": 1,
+      "message": "Note that maven doesn\u0027t allow setting the runtime library path on the command line, which kind of contradicts the earlier advice of invoking Java with `-Djava.library.path\u003d...`.\n\nSo while in principle users of this library *can* (and should) invoke Java with `-Djava.library.path\u003d...`, for building the library itself with maven, they have to set `LD_LIBRARY_PATH` (or equivalent).",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
