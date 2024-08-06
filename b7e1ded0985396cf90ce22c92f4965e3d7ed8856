@@ -67,6 +67,24 @@
       "message": "Note that maven doesn\u0027t allow setting the runtime library path on the command line, which kind of contradicts the earlier advice of invoking Java with `-Djava.library.path\u003d...`.\n\nSo while in principle users of this library *can* (and should) invoke Java with `-Djava.library.path\u003d...`, for building the library itself with maven, they have to set `LD_LIBRARY_PATH` (or equivalent).",
       "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb842ea8_f9fe1752",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-06T11:20:12Z",
+      "side": 1,
+      "message": "Also to expand on this, one *can* add additional `-Djava` parameters to maven but they don\u0027t do what you\u0027d expect. Those parameters are passed to the JVM that runs maven, whereas we need them as parameters to the JVM maven will invoke for testing. AFAICT there is no way to tell maven to add JVM parameters to that, we have to reply on environment variables.",
+      "parentUuid": "d74ec814_1d52e193",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
