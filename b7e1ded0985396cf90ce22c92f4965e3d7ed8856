@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1be54c2c_e5793cac",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-06T12:17:41Z",
+      "side": 1,
+      "message": "Agreed. I\u0027ve updated this to test just the one command, but I\u0027ve gone with `javac` as\n1. it\u0027s the more important command used on this page and\n2. the output of the version we use is just a single line that doesn\u0027t require ellipses :-)",
+      "parentUuid": "a224015b_ed299763",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7376baaf_3e93a29d",
@@ -37,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2d255681_843f6eb8",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-06T12:17:41Z",
+      "side": 1,
+      "message": "I wrote it this way after stumbling across a post on (I /think/) Oracle\u0027s Java docs that suggested that Java actually uses the envvar directly, merging it into the `java.library.path` property. Annoyingly I\u0027ve now lost the post, but this test output seems to suggest that this is what happens:\n\n```\n$ LD_LIBRARY_PATH\u003d/foo/bar java -XshowSettings:properties -version                                                                     \nProperty settings:                                                                                                                     \n    file.encoding \u003d UTF-8                                                                                                              \n    file.separator \u003d /                                                                                                                 \n    java.class.path \u003d                                                                                                                  \n    java.class.version \u003d 66.0                                                                                                          \n    java.home \u003d /opt/java/openjdk                                                                                                      \n    java.io.tmpdir \u003d /tmp                                                                                                              \n    java.library.path \u003d /foo/bar                                                                                                       \n        /usr/java/packages/lib\n        /usr/lib64 \n        /lib64                                                     \n        /lib          \n        /usr/lib           \n...\n```\n\nGiven that, what do you prefer: \n\n1. Teach the Java runtime loader how to ...\n1. Teach Java how to ...\n1. Teach the runtime loader how to ...",
+      "parentUuid": "7376baaf_3e93a29d",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6bc097a3_77146b56",
         "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
         "patchSetId": 7
@@ -48,6 +84,24 @@
       "writtenOn": "2024-08-06T11:13:15Z",
       "side": 1,
       "message": "It\u0027s the operating system, really.",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d88cf6e7_505e9514",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-06T12:17:41Z",
+      "side": 1,
+      "message": "As above:\n\n1. The Java runtime loader needs to be ...\n1. Java needs to be ...\n1. The runtime loader needs to be ...",
+      "parentUuid": "6bc097a3_77146b56",
       "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -83,6 +137,24 @@
       "side": 1,
       "message": "Also to expand on this, one *can* add additional `-Djava` parameters to maven but they don\u0027t do what you\u0027d expect. Those parameters are passed to the JVM that runs maven, whereas we need them as parameters to the JVM maven will invoke for testing. AFAICT there is no way to tell maven to add JVM parameters to that, we have to reply on environment variables.",
       "parentUuid": "d74ec814_1d52e193",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40d0fb5e_91687d0a",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-06T12:17:41Z",
+      "side": 1,
+      "message": "Acknowledged - TVM.",
+      "parentUuid": "fb842ea8_f9fe1752",
       "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
