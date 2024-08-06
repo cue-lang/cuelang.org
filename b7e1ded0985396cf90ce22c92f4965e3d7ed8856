@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c479c65f_ff25ec5d",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-06T12:27:03Z",
+      "side": 1,
+      "message": "Hmm, interesting! How about:\n\n\u003e Teach Java and the operating system",
+      "parentUuid": "2d255681_843f6eb8",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6bc097a3_77146b56",
         "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
         "patchSetId": 7
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "As above:\n\n1. The Java runtime loader needs to be ...\n1. Java needs to be ...\n1. The runtime loader needs to be ...",
       "parentUuid": "6bc097a3_77146b56",
+      "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "648dc42a_440fb128",
+        "filename": "content/docs/howto/build-cue-api-java-jar/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1003505
+      },
+      "writtenOn": "2024-08-06T12:27:03Z",
+      "side": 1,
+      "message": "How about:\n\n\u003e Java (and potentially the operating system)",
+      "parentUuid": "d88cf6e7_505e9514",
       "revId": "b7e1ded0985396cf90ce22c92f4965e3d7ed8856",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
