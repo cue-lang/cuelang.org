@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec17e6da_e269653a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-06T09:50:48Z",
+      "side": 1,
+      "message": "typicaly we refer to other patches via https://cuelang.org/cl/NNN, because commit hashes are unstable - e.g. they change when merging or backporting, and if we ever had to rewrite the git history (hopefully never, but still).",
+      "revId": "d3f676236aacdfc237653f1fd6b19cab76bbcb64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "fcf055c6_16718446",
