@@ -21,7 +21,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.10.0-alpha.3 go install -trimpath cuelang.org/go/cmd/cue@v0.10.0-alpha.3
+  GOBIN=/cues/v0.10.0-alpha.3.0.20240807140239-677ece8a966e go install -trimpath cuelang.org/go/cmd/cue@v0.10.0-alpha.3.0.20240807140239-677ece8a966e
 
 RUN \
   --mount=type=cache,target=/cache/gocache \
@@ -43,8 +43,8 @@ ENV PATH="/cues/v0.9.2:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 ENV CUELANG_CUE_LATEST="v0.9.2"
-ENV CUELANG_CUE_PRERELEASE="v0.10.0-alpha.3"
-ENV CUELANG_CUE_TIP="v0.10.0-alpha.3"
+ENV CUELANG_CUE_PRERELEASE="v0.10.0-alpha.3.0.20240807140239-677ece8a966e"
+ENV CUELANG_CUE_TIP="v0.10.0-alpha.3.0.20240807140239-677ece8a966e"
 ENV CUELANG_CUE_DEFAULT="v0.9.2"
 ENV CUELANG_CUE_PLAYGROUND="v0.9.2"
 
@@ -59,7 +59,7 @@ RUN chmod 755 /usr/bin/entrypoint.sh
 RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
-COPY --from=build /cues/v0.10.0-alpha.3/cue /cues/v0.10.0-alpha.3/cue
+COPY --from=build /cues/v0.10.0-alpha.3.0.20240807140239-677ece8a966e/cue /cues/v0.10.0-alpha.3.0.20240807140239-677ece8a966e/cue
 COPY --from=build /cues/v0.9.2/cue /cues/v0.9.2/cue
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
