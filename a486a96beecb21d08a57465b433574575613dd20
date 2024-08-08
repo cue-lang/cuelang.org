@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8df70f38_1a2dea10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-08T12:59:08Z",
+      "side": 1,
+      "message": "nit: please add a reference page for `cue help embed` to `commands.cue` and re-go-generate.",
+      "revId": "a486a96beecb21d08a57465b433574575613dd20",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
