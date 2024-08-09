@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bbf54ea_26d9de4b",
+        "filename": "content/docs/tutorial/handle-errors-java-api/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-09T12:37:43Z",
+      "side": 1,
+      "message": "nit: mixing tabs and spaces :)",
+      "revId": "a4eb3f4d12ad1ce3c2b076ea193572f46786dd37",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
