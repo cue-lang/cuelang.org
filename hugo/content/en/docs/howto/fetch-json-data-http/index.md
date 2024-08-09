@@ -15,7 +15,7 @@ which is then used by the workflow command.
 <!-- TODO: consider demonstrating a validation failure when https://github.com/cue-lang/cue/issues/3186 is resolved -->
 
 {{< code-tabs >}}
-{{< code-tab name="a_tool.cue" language="cue" area="top" >}}
+{{< code-tab name="a_tool.cue" language="cue" area="top-left" >}}
 package example
 
 import (
@@ -44,12 +44,12 @@ command: info: {
 	}
 	...
 }
-{{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGNtZCBpbmZv" >}}
+{{< /code-tab >}}{{< /code-tabs >}}
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBpbmZv" }
 $ cue cmd info
 CUE version v0.8.2 was released with commit hash 596c99191ad1eb7c39d547e59bc7085751d7952b
-{{< /code-tab >}}
-{{< /code-tabs >}}
+```
 
 ## Related content
 
