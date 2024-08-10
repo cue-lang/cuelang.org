@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "5e311ffe571758fbd6fab55777796c584d4b5ad0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a5717e1_1e712811",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-10T13:13:19Z",
+      "side": 1,
+      "message": "nit: inline this func to save a bit of verbosity",
+      "revId": "5e311ffe571758fbd6fab55777796c584d4b5ad0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c37e19e_7f92ccbd",
+        "filename": "content/docs/howto/fetch-json-data-http/page.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-10T13:13:19Z",
+      "side": 1,
+      "message": "should we leave a TODO that this makes concurrent runs ipmossible, or is it OK given that we generate inside docker containers by default?\n\nalso, I\u0027m curious how you chose 127.1.2.3 - usually I would have used localhost or 127.0.0.1, so I\u0027m not sure if I\u0027m missing anything.",
+      "revId": "5e311ffe571758fbd6fab55777796c584d4b5ad0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
