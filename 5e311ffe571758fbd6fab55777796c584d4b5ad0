@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19085ad3_be0d0cce",
+        "filename": "content/docs/howto/fetch-json-data-http/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-12T12:05:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a5717e1_1e712811",
+      "revId": "5e311ffe571758fbd6fab55777796c584d4b5ad0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c37e19e_7f92ccbd",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-08-10T13:13:19Z",
       "side": 1,
       "message": "should we leave a TODO that this makes concurrent runs ipmossible, or is it OK given that we generate inside docker containers by default?\n\nalso, I\u0027m curious how you chose 127.1.2.3 - usually I would have used localhost or 127.0.0.1, so I\u0027m not sure if I\u0027m missing anything.",
+      "revId": "5e311ffe571758fbd6fab55777796c584d4b5ad0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25a72b9b_f0a34e09",
+        "filename": "content/docs/howto/fetch-json-data-http/page.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-12T12:05:44Z",
+      "side": 1,
+      "message": "\u003e should we leave a TODO that this makes concurrent runs ipmossible, or is it OK given that we generate inside docker containers by default?\n\nI don\u0027t actually know if the loopback\u0027s IP space is shared across all containers that are being executed, by dint of some Docker DevX oddity, or if they all have an uncontended `127.0.0.1/8`. We have very, very few pages that instantiate a listener (I can only think of `/content/docs/tutorial/working-with-a-custom-module-registry/en.md`, offhand), but I tried to mitigate any potential collision with ...\n\n\u003e also, I\u0027m curious how you chose 127.1.2.3 - usually I would have used localhost or 127.0.0.1, so I\u0027m not sure if I\u0027m missing anything.\n\nI chose a \"random\" `/32` from the loopback\u0027s `127.0.0.1/8` that has less chance of a collision with other pages than simply selecting `127.0.0.1:5000` (or similar).\n\nI\u0027ve left a note recording this :-)",
+      "parentUuid": "6c37e19e_7f92ccbd",
       "revId": "5e311ffe571758fbd6fab55777796c584d4b5ad0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
