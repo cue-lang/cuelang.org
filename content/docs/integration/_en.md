@@ -74,6 +74,17 @@ CUE understands **JSON Schema constraints** through its Go API and the `cue`
 command, enabling schemas to be used to constrain and validate data directly,
 and to be expressed in other formats - including CUE.
 {{< /card >}}
+
+{{< card
+    title="Java"
+    href="/docs/tutorial/get-started-cue-java/"
+    label="Learn more"
+>}}{{< sidenote text="Technology preview">}}
+
+Support for using CUE in Java is available through an experimental Java library.
+
+Follow this introductory tutorial to get started with CUE in Java.
+{{< /card >}}
 {{< /cards >}}
 
 ## Technologies
