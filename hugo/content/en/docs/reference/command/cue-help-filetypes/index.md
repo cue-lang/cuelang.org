@@ -15,7 +15,8 @@ The cue tools supports the following file types:
     cue         .cue            CUE source files.
     json        .json           JSON files.
     yaml        .yaml/.yml      YAML files.
-    jsonl       .jsonl/.ldjson  Line-separated JSON values.
+    toml        .toml           TOML files
+    jsonl       .jsonl/.ndjson  Line-separated JSON values.
     jsonschema                  JSON Schema.
     openapi                     OpenAPI schema.
 	pb                          Use Protobuf mappings (e.g. json+pb)

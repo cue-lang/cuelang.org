@@ -137,11 +137,11 @@ CUE has no switch or if-else construct, but these can be simulated using lists.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue" area="top-left" >}}
-mem:       2Gi
+mem: 2Gi
 footprint: [// select first
-		if mem < 1Gi {"small"},
-		if mem < 4Gi {"medium"},
-		"large",
+	if mem < 1Gi {"small"},
+	if mem < 4Gi {"medium"},
+	"large",
 ][0]
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}

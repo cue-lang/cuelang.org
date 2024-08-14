@@ -60,6 +60,7 @@ Usage:
   cue trim [flags]
 
 Flags:
+  -n, --dry-run          only run simulation
   -f, --force            force overwriting existing files
   -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue filetypes' for more info)
 

@@ -69,7 +69,7 @@ x = 5 // Don't use this old alias syntax!
 but in more recent CUE versions, this has been changed to:
 
 ```cue
- let x = 5
+let x = 5
 ```
 
 If the language were never to be changed in a backwards incompatible
