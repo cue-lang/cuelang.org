@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e709f5b_cf886597",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-14T16:18:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95a5b565_4d729e97",
+      "revId": "04ded4b169a9f24dfcf5f76807035fbe0dc5642c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "acfd133d_ef65bd1e",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "590ce06c_ca13adae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-14T16:18:35Z",
+      "side": 1,
+      "message": "We had inherited this from Go, but we\u0027ve relaxed a bit on it and we allow some markdown now on commit messages within reason. For example, we can only include inline snippets of @embed or other attributes if we `backquote them`, as otherwise github pings the person!",
+      "parentUuid": "acfd133d_ef65bd1e",
+      "revId": "04ded4b169a9f24dfcf5f76807035fbe0dc5642c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb08ec42_9c4254f4",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-08-14T15:58:58Z",
       "side": 1,
       "message": "`DO NOT SUBMIT` is the marker.",
+      "revId": "04ded4b169a9f24dfcf5f76807035fbe0dc5642c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14a8cf2e_1ef35313",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-14T16:18:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb08ec42_9c4254f4",
       "revId": "04ded4b169a9f24dfcf5f76807035fbe0dc5642c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
