@@ -10,14 +10,9 @@ package site
 								files: "kHki6qejp7i4t7JzS4yt2SjIzkE17xIF+hdGcQSECf0="
 							}
 							multi_step: {
-								hash:       "80EJKNB541TN1Q8QI1CO5H8D9BFLB13C8B3KT1BBTFI7FISIJENG===="
-								scriptHash: "ACSG049BGC84VE14836RS1LOQBRN4E9JVLI7IVCBEKNKUP2P21H0===="
+								hash:       "7I6LILNL909T4C60DC8FMVI3MTOV4RN55EBL2PS5OOVPE8M8PGJG===="
+								scriptHash: "TMVISIT0L7KO7FNL19TJOD1U6C9RHUT0JSTHSN89257P72DP3GVG===="
 								steps: [{
-									doc:      ""
-									cmd:      "export PATH=/cues/v0.10.0-rc.1.0.20240814100303-dc3ba30322ca:$PATH"
-									exitCode: 0
-									output:   ""
-								}, {
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0

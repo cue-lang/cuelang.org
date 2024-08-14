@@ -22,8 +22,7 @@ Your feedback on this feature will help guide how it works: please use
 with embedding.
 {{</info>}}
 
-<!-- TODO(jcm): reword this when 0.10.0 is released -->
-Using `@embed()` requires CUE version `v0.10.0-alpha.1` or later.
+Using `@embed()` requires CUE version `v0.10.0` or later.
 This guide demonstrates the following version:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
