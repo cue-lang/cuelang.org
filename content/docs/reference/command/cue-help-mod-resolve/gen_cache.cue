@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "QF7VPOSBT305V2UM6QI30U41HTADVCP0PITNTT9IBAAGAL5VC220===="
+									hash:       "T99CI6K3L7DSUAT6J32I3I4RCDVTRUKS32QSGM6RQCCBBVUGPAV0===="
 									scriptHash: "GQ8DVHRF6490Q2KMAGC9PCNU144RCC663AEQL8KDBTJ1DVM1POLG===="
 									steps: [{
 										doc:      ""
@@ -27,10 +27,14 @@ package site
 												and does not make any network calls to check whether
 												the module exists.
 
+												If no arguments are provided, the current module path is used.
+												This is equivalent to specifying "." as an argument, which
+												also refers to the current module.
+
 												Note that this command is not yet stable and may be changed.
 
 												Usage:
-												  cue mod resolve <modulepath>[@<version>] ... [flags]
+												  cue mod resolve [<modulepath>[@<version>] ...] [flags]
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
