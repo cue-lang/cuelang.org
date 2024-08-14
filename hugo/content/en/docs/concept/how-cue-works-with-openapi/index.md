@@ -146,8 +146,8 @@ info: {
 // A Pet is a pet that we handle.
 #Pet: {
 	// A pet has a name.
-	name: string
-	kind: #Kind
+	name!: string
+	kind!: #Kind
 
 	// Centenarian pets are not handled.
 	age?: int & >=0 & <100
