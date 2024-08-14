@@ -128,13 +128,13 @@ package cuisine
 
 #restaurant: {
 	@jsonschema(schema="http://json-schema.org/draft-07/schema#")
-	name:    string
-	cuisine: string
-	tables: [...#table]
+	name!:    string
+	cuisine!: string
+	tables!: [...#table]
 
 	#table: {
-		seats: >=2 & <=10
-		view?: bool
+		seats!: >=2 & <=10
+		view?:  bool
 	}
 }
 {{{end}}}

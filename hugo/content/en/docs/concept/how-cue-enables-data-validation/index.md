@@ -397,7 +397,7 @@ Let's include a JSON Schema file that adds some constraints to a couple of
 {{< code-tabs >}}
 {{< code-tab name="schema.json" language="json" area="top-left" >}}
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
         "ExampleType": {
             "type": "object",
