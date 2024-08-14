@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "NEH1UP3KNDVHNBUIJQPQK1PVRMOHCR041VAF7VTHEGAADLN6N8LG===="
+									hash:       "PN7GK6QOEI9VKR21GEPBBC8QSEOACDKAKNPQAL8H0EPD7M42JKP0===="
 									scriptHash: "HH51UG725DMMBP6BFHH46NO0D0SUMLUEGBL2G8V627OFF2BPL9A0===="
 									steps: [{
 										doc:      ""
@@ -54,6 +54,9 @@ package site
 												\t\tevalv3
 												\t\t\tEnable the new CUE evaluator, addressing performance issues
 												\t\t\tand bringing a better disjunction algorithm.
+												\t\tembed
+												\t\t\tEnable support for embedded data files as described in
+												\t\t\thttps://cuelang.org/discussion/3264.
 
 												\tCUE_DEBUG
 												\t\tComma-separated list of debug flags to enable or disable, such as:

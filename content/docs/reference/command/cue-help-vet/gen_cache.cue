@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "Q04U59QCN5LCTHHUCBJNS8G9NO34PFC8REB9KUJJBQBD0CECML4G===="
+									hash:       "LGAGBV8HGJ1IN8KM3QMKUUIMP7OB30P5BECDSER04M8P3KMCTEV0===="
 									scriptHash: "L7UTCTQ3UD312KV4IKGP7VIQH41K7AN2VDJIKGRJP4OHBIE4NC2G===="
 									steps: [{
 										doc:      ""
@@ -29,6 +29,7 @@ package site
 												  Format       Extensions
 												\tJSON       .json .jsonl .ndjson
 												\tYAML       .yaml .yml
+												\tTOML       .toml
 												\tTEXT       .txt  (validate a single string value)
 
 												To activate this mode, the non-cue files must be explicitly mentioned on the

@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "1SFG4MLD61NLECITNV1KR3417R48O07M3BAVOI2EIEEVBPMA3C1G===="
+									hash:       "KCODHV5GI6F1P2GB809V7VUV7T3Q4B5FI5EO5PDB36QAA1M1C850===="
 									scriptHash: "L02S760GCS8RKKBH88NQFEG1JQ0DMQOEN7HDVIKMUII2HP512H00===="
 									steps: [{
 										doc:      ""
@@ -20,16 +20,16 @@ package site
 												directory must not already exist. A legacy cue.mod file in the current
 												directory is moved to the new subdirectory.
 
-												A module name is optional, but if it is not given, a package
-												within the module cannot import another package defined
-												in the module.
+												If the module name is not provided, a default module path (cue.example) will be
+												used.
 
 												Usage:
 												  cue mod init [module] [flags]
 
 												Flags:
-												  -f, --force           force moving old-style cue.mod file
-												      --source string   set the source field
+												  -f, --force                     force moving old-style cue.mod file
+												      --language-version string   set the language version ('current' means current language version) (default "current")
+												      --source string             set the source field
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
