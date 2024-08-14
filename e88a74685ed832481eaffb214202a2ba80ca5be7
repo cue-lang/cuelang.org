@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fad07d62_bdf13618",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-14T19:21:21Z",
+      "side": 1,
+      "message": "@mvdan@mvdan.cc please incorporate these changes in the `content/` directory into your v0.10.0 upgrade stack. I suggest either as part of the v0.10.0 upgrade CL, or between that CL and the cache regeneration.\n\nOne part of bumping the minor version of CUE that the site documents (that I forgot to mention) is updating and, if needed, rewording the pages that rely on the prerelease version. They can be identified by searching for `CUELANG_CUE_PRERELEASE` inside `content/`.",
+      "revId": "e88a74685ed832481eaffb214202a2ba80ca5be7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
