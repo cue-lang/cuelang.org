@@ -53,8 +53,7 @@ cue: {
 	commands:       _
 	completion:     _
 	def:            _
-	// TODO: once CUE v0.10.0 is out, include `cue help embed`.
-	// embed:          _
+	embed:          _
 	environment:    _
 	eval:           _
 	export:         _

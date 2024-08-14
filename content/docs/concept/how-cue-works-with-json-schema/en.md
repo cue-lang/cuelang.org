@@ -107,7 +107,7 @@ import "strings"
 	@jsonschema(schema="http://json-schema.org/draft-07/schema#")
 
 	// What is this person called?
-	name: strings.MinRunes(1)
+	name!: strings.MinRunes(1)
 
 	// Where does this person live?
 	address?: strings.MinRunes(1) & strings.MaxRunes(200)

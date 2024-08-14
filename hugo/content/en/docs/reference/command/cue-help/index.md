@@ -40,8 +40,8 @@ Available Commands:
   export         output data in a standard format
   fix            rewrite packages to latest standards
   fmt            formats CUE configuration files
-  get            add dependencies to the current module
-  help           Help about any command
+  get            add non-CUE dependencies to the current module
+  help           show help text for a command or topic
   import         convert other formats to CUE files
   login          log into a CUE registry
   mod            module maintenance
@@ -59,6 +59,7 @@ Flags:
 
 Additional help topics:
   cue commands       user-defined commands
+  cue embed          file embedding
   cue environment    environment variables
   cue filetypes      supported file types and qualifiers
   cue flags          common flags for composing packages
