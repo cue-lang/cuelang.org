@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "716659d8_89d1df80",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-14T15:57:51Z",
+      "side": 1,
+      "message": "I /think/ we\u0027ve gone with a `site:` prefix for the content presented on the site (i.e. the CL that updates the pages on the site to document v0.10.0), and `deps:` for changes to the deps that actually /build/ the site; like this one.",
+      "revId": "ad15957a01bd052b11a433f13a504c25d65de87c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4aa97ae_faf4dbb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-14T15:57:51Z",
+      "side": 1,
+      "message": "```\nDO NOT SUBMIT\n```\n\n.. is the marker.",
+      "revId": "ad15957a01bd052b11a433f13a504c25d65de87c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
