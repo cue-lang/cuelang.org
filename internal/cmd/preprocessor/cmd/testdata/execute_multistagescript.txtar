@@ -260,11 +260,11 @@ $ export MYVAR=value
 $ cue version
 cue version v0.9.2
 
-go version go1.22.4
+go version go1.23.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
+  DefaultGODEBUG asynctimerchan=1,gotypesalias=0,httplaxcontentlength=1,httpmuxgo121=1,httpservecontentkeepheaders=1,tls10server=1,tls3des=1,tlskyber=0,tlsrsakex=1,tlsunsafeekm=1,winreadlinkvolume=0,winsymlink=0,x509keypairleaf=0,x509negativeserial=1
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
@@ -292,12 +292,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "iF3rj8zX48riDPYxs1+Xya4TfdyNwxob5V7GS/0G8qk="
-						"upload-some-cue": "bWRwJYm52LQHznIVfTDtAb+hH1TlkYNTTF5kDsf8i8o="
-						"in-subdir":       "xFcL6e3q5bieQ3QCox9b4aVzHqUl3gBLf3TwMDOnmOM="
+						"hidden file":     "snCOihpLT5b1MXRX3mU1j3DzwbbIiKMhcPC2DAeemIQ="
+						"upload-some-cue": "NXriwkn3N/ysVShF1n7DN2tRrXof3PGbVneEK/KsOrI="
+						"in-subdir":       "UNEq3fovzVRJaDkAGL5+LB7Tt7fkaX6unvrhJ8uxR8Q="
 					}
 					multi_step: {
-						hash:       "J541B17N8HTVOASPUD18P97K2I6M25JTGG4U7MPU9FGNSNM7TRI0===="
+						hash:       "MLKEF3HRI2IDIKB8G2UEKC8R601SBIQB0JNA7RPPHV02D8IE67TG===="
 						scriptHash: "RTE18RDQ3BFG4B5U2VR92496OPO5NOT61C424QBCDDT1RAAGPOUG===="
 						steps: [{
 							doc:      ""
@@ -361,11 +361,11 @@ package site
 							output: """
 									cue version v0.9.2
 
-									go version go1.22.4
+									go version go1.23.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG httplaxcontentlength=1,httpmuxgo121=1,tls10server=1,tlsrsakex=1,tlsunsafeekm=1
+									  DefaultGODEBUG asynctimerchan=1,gotypesalias=0,httplaxcontentlength=1,httpmuxgo121=1,httpservecontentkeepheaders=1,tls10server=1,tls3des=1,tlskyber=0,tlsrsakex=1,tlsunsafeekm=1,winreadlinkvolume=0,winsymlink=0,x509keypairleaf=0,x509negativeserial=1
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
