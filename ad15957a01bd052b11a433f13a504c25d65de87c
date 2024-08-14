@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d50a35b_7f38d814",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-14T16:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "716659d8_89d1df80",
+      "revId": "ad15957a01bd052b11a433f13a504c25d65de87c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4aa97ae_faf4dbb6",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-08-14T15:57:51Z",
       "side": 1,
       "message": "```\nDO NOT SUBMIT\n```\n\n.. is the marker.",
+      "revId": "ad15957a01bd052b11a433f13a504c25d65de87c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9964f49c_0f1f08d8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-14T16:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4aa97ae_faf4dbb6",
       "revId": "ad15957a01bd052b11a433f13a504c25d65de87c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
