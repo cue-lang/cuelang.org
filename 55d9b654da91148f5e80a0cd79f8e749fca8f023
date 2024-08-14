@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e679548_32ead58d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-14T16:01:02Z",
+      "side": 1,
+      "message": "```\ndeps: update to Go 1.23.0\n```",
+      "revId": "55d9b654da91148f5e80a0cd79f8e749fca8f023",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
