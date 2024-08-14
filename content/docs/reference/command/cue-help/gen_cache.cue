@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "F0M9U8F6HM5JHNN76LT841RAVPJ9K31A2JI0CSQPT73L1RS75FUG===="
+									hash:       "GPJ0CLI182791ABBJA1LETHI3QUDPOE0908IV12NA9Q4PJA46MAG===="
 									scriptHash: "VLC8CVP03NLVG8HQNQNJATQENR1Q3O2UKK3JH01F27V5ABP5KEG0===="
 									steps: [{
 										doc:      ""
@@ -46,8 +46,8 @@ package site
 												  export         output data in a standard format
 												  fix            rewrite packages to latest standards
 												  fmt            formats CUE configuration files
-												  get            add dependencies to the current module
-												  help           Help about any command
+												  get            add non-CUE dependencies to the current module
+												  help           show help text for a command or topic
 												  import         convert other formats to CUE files
 												  login          log into a CUE registry
 												  mod            module maintenance
@@ -65,6 +65,7 @@ package site
 
 												Additional help topics:
 												  cue commands       user-defined commands
+												  cue embed          file embedding
 												  cue environment    environment variables
 												  cue filetypes      supported file types and qualifiers
 												  cue flags          common flags for composing packages

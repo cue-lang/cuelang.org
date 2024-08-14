@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "A0QSLDO8MB5KULCR44R67E1VKD6DRB7017FN8AOSHG4JA1MMNOOG===="
+									hash:       "GG2UCDOFJJF574H0M6R2NHDKIIENH1PJ8L0GDL68QV1JK5BSMQ6G===="
 									scriptHash: "F8L8RPCJHGKHIIHKIJIJ6J2NJT1US5H9UKKQ5BSC7B04T8RLV000===="
 									steps: [{
 										doc:      ""
@@ -38,11 +38,12 @@ package site
 												  cue mod edit [flags]
 
 												Flags:
-												      --drop-require string   remove a requirement
-												      --drop-source           remove the source field (default )
-												      --module string         set the module path
-												      --require string        add a required module@version
-												      --source string         set the source field
+												      --drop-require string       remove a requirement
+												      --drop-source               remove the source field (default )
+												      --language-version string   set language.version ('current' means current language version)
+												      --module string             set the module path
+												      --require string            add a required module@version
+												      --source string             set the source field
 
 												Global Flags:
 												  -E, --all-errors   print all available errors

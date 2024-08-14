@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "Q6VCELCC7R75T8OK24OKI5O8F6NEAPAB1SESRBC1OBGISDIRE730===="
+									hash:       "BTMORP6P5RRIQV1B4EHV2VQ0FPMB2NTPVPQD2D9H3BQ4ORM7N5K0===="
 									scriptHash: "G0LEKBT1HLM270M1N5003OPF4A94HN2NTA0H9RAB9285M13KE34G===="
 									steps: [{
 										doc:      ""
@@ -66,6 +66,7 @@ package site
 												  cue trim [flags]
 
 												Flags:
+												  -n, --dry-run          only run simulation
 												  -f, --force            force overwriting existing files
 												  -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue filetypes' for more info)
 

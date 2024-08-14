@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "8B10AGUJ1UGFM276OMKT388ALE00G799C4L860M226GULF8DKNEG===="
+									hash:       "1SLO08LC1TTOENRN4Q5799NV207TJHLPRELHCE9ABS9SDUMRHQLG===="
 									scriptHash: "EASO9K634FKPK5IIIHBL47VOL5GA1NH1AN45JG3TAEOK020F497G===="
 									steps: [{
 										doc:      ""
@@ -21,7 +21,8 @@ package site
 												    cue         .cue            CUE source files.
 												    json        .json           JSON files.
 												    yaml        .yaml/.yml      YAML files.
-												    jsonl       .jsonl/.ldjson  Line-separated JSON values.
+												    toml        .toml           TOML files
+												    jsonl       .jsonl/.ndjson  Line-separated JSON values.
 												    jsonschema                  JSON Schema.
 												    openapi                     OpenAPI schema.
 												\tpb                          Use Protobuf mappings (e.g. json+pb)

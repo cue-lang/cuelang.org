@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "57SDKUURLSLLUAGL21TQCMRDSMS44JCV2QRUQFAMD92UHPM70DO0===="
+									hash:       "RRSFNT3IA97L5BDBBA7Q4A8LN2KH9K4FMOA62PGQ8795OJAJRS9G===="
 									scriptHash: "1PPCJSSTJ2I3TKAPQEUFR2UPQTOP2EIVIP3K1HU9D2SUGKN5EH9G===="
 									steps: [{
 										doc:      ""
@@ -24,7 +24,8 @@ package site
 												A "build" attribute defines a boolean expression that causes a file
 												to only be included in a build if its expression evaluates to true.
 												There may only be a single @if attribute per file and it must
-												appear before a package clause.
+												appear before a package clause, or before any CUE declarations
+												if there is no package clause.
 
 												The expression is a subset of CUE consisting only of identifiers
 												and the operators &&, ||, !, where identifiers refer to tags
@@ -38,6 +39,19 @@ package site
 
 												   package foo
 
+												Ignoring files
+
+												An "ignore" attribute causes a file to be unconditionally excluded
+												from a build. The @ignore attribute must appear before a package
+												clause or before any other CUE syntax if there is no package clause.
+
+												For example:
+
+												    @ignore()
+
+												    // This file will be excluded for all purposes.
+
+												    package foo
 
 												Injecting values
 
