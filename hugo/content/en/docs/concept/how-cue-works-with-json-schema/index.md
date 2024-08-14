@@ -97,7 +97,7 @@ import "strings"
 	@jsonschema(schema="http://json-schema.org/draft-07/schema#")
 
 	// What is this person called?
-	name: strings.MinRunes(1)
+	name!: strings.MinRunes(1)
 
 	// Where does this person live?
 	address?: strings.MinRunes(1) & strings.MaxRunes(200)
@@ -140,7 +140,7 @@ command validates our data against the `#Person` constraint:
 $ cue vet -d '#Person' schema.cue good.json bad.json
 name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
     ./bad.json:2:13
-    ./schema.cue:10:8
+    ./schema.cue:10:9
 ```
 
 The `cue vet` command can also validate the data using the JSON Schema directly:

@@ -51,8 +51,8 @@ output: [for v in input {
 	// Here, isANumber is implemented as a switch. Other, simpler,
 	// representations are also possible.
 	isANumber: [
-			if (v & number) != _|_ {true},
-			if (v & number) == _|_ {false},
+		if (v & number) != _|_ {true},
+		if (v & number) == _|_ {false},
 	][0]
 }]
 {{< /code-tab >}}

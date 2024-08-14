@@ -176,7 +176,7 @@ merging two maps.
 {{{with code "en" "let-expressions"}}}
 #norun open lists not implemented yet
 -- in.cue --
- let X = {list: []}
+let X = {list: []}
 a: X
 b: X
 c: X
