@@ -18,8 +18,9 @@ more info). This behavior can be overridden by specifying one of
 the following modes:
 
    Mode       Extensions
-   json       Look for JSON files (.json, .jsonl, .ldjson).
+   json       Look for JSON files (.json .jsonl .ndjson).
    yaml       Look for YAML files (.yaml .yml).
+   toml       Look for TOML files (.toml).
    text       Look for text files (.txt).
    binary     Look for files with extensions specified by --ext
               and interpret them as binary.
@@ -219,7 +220,7 @@ Usage:
   cue import [mode] [inputs] [flags]
 
 Flags:
-      --dry-run                  only run simulation
+      --dry-run                  show what files would be created
       --ext stringArray          match files with these extensions
       --files                    split multiple entries into different files
   -f, --force                    force overwriting existing files

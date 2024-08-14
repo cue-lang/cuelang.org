@@ -391,7 +391,7 @@ Let's include a JSON Schema file that adds some constraints to a couple of
 {{{with upload "en" "schema.json"}}}
 -- schema.json --
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
         "ExampleType": {
             "type": "object",

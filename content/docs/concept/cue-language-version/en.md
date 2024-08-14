@@ -72,7 +72,7 @@ but in more recent CUE versions, this has been changed to:
 
 {{{with code "en" "a2"}}}
 -- in.cue --
- let x = 5
+let x = 5
 {{{end}}}
 
 If the language were never to be changed in a backwards incompatible

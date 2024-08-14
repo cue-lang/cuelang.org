@@ -181,7 +181,7 @@ merging two maps.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue" area="top-left" >}}
- let X = {list: []}
+let X = {list: []}
 a: X
 b: X
 c: X

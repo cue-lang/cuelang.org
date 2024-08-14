@@ -4,10 +4,6 @@ authors: [jpluscplusm]
 toc_hide: true
 ---
 
-{{{with _script_ "en" "HIDDEN: use CUE prerelease for access to @embed() feature"}}}
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
-{{{end}}}
-
 Users frequently need to load JSON, YAML, or other types of files into their CUE code.
 Because CUE's `import` declarations only allow references to CUE packages,
 some workflows resort to using the tooling layer
@@ -26,8 +22,7 @@ Your feedback on this feature will help guide how it works: please use
 with embedding.
 {{</info>}}
 
-<!-- TODO(jcm): reword this when 0.10.0 is released -->
-Using `@embed()` requires CUE version `v0.10.0-alpha.1` or later.
+Using `@embed()` requires CUE version `v0.10.0` or later.
 This guide demonstrates the following version:
 
 {{{with script "en" "cue version"}}}
