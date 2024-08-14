@@ -71,11 +71,11 @@ definition.
 	name?: string
 }
 #Mammal: {
-	#Base// embedded
+	#Base // embedded
 	lungCapacityL: number
 }
 #Dog: {
-	#Mammal// embedded
+	#Mammal // embedded
 	kind!: "dog"
 	house: string
 }

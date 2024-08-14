@@ -32,11 +32,12 @@ Usage:
   cue mod edit [flags]
 
 Flags:
-      --drop-require string   remove a requirement
-      --drop-source           remove the source field (default )
-      --module string         set the module path
-      --require string        add a required module@version
-      --source string         set the source field
+      --drop-require string       remove a requirement
+      --drop-source               remove the source field (default )
+      --language-version string   set language.version ('current' means current language version)
+      --module string             set the module path
+      --require string            add a required module@version
+      --source string             set the source field
 
 Global Flags:
   -E, --all-errors   print all available errors
