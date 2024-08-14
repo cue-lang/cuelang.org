@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95a5b565_4d729e97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-14T15:58:58Z",
+      "side": 1,
+      "message": "```\nsite: update latest CUE to v0.10.0\n```",
+      "revId": "04ded4b169a9f24dfcf5f76807035fbe0dc5642c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acfd133d_ef65bd1e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-14T15:58:58Z",
+      "side": 1,
+      "message": "I\u0027ve had it suggested to avoid backticks, and to prefer \" or \u0027 in commit messages.\n\n```\nAlso: enable rendering of the \u0027cue help embed\u0027 page.\n```",
+      "revId": "04ded4b169a9f24dfcf5f76807035fbe0dc5642c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb08ec42_9c4254f4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-14T15:58:58Z",
+      "side": 1,
+      "message": "`DO NOT SUBMIT` is the marker.",
+      "revId": "04ded4b169a9f24dfcf5f76807035fbe0dc5642c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
