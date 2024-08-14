@@ -1,6 +1,6 @@
 module github.com/cue-lang/cuelang.org/playground
 
-go 1.22
+go 1.23
 
 require (
 	cuelang.org/go v0.10.0-rc.1.0.20240814100303-dc3ba30322ca
