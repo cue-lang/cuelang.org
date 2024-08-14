@@ -144,7 +144,7 @@ jobs:
         uses: actions/setup-go@v5
         with:
           cache: false
-          go-version: 1.22.0
+          go-version: 1.23.0
       - if: runner.os == 'Linux'
         name: Install Hugo (${{ runner.os }})
         uses: peaceiris/actions-hugo@v2
@@ -179,8 +179,8 @@ jobs:
             ~/.cache/node-gyp
             ~/.npm
             ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.22.0-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.22.0
+          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.23.0
       - if: |-
           ! (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
@@ -193,8 +193,8 @@ jobs:
             ~/.cache/node-gyp
             ~/.npm
             ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.22.0-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.22.0
+          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.23.0
       - if: |-
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
