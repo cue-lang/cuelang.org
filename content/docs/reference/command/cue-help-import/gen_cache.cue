@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "ILS81G65B1AKJQ1KK0MEBQT2HRO3NEUVF8JPB9JR28KBLEFO6S1G===="
+									hash:       "L4UKQ7PNCS760N7GVUG4FRQL1SMBECUF47E0TA1350J380CP4LEG===="
 									scriptHash: "LMATRJ8FI2NORP1E83PHSVTMQ729HLFTR844UK1TF8FBQVR96NI0===="
 									steps: [{
 										doc:      ""
@@ -24,8 +24,9 @@ package site
 												the following modes:
 
 												   Mode       Extensions
-												   json       Look for JSON files (.json, .jsonl, .ldjson).
+												   json       Look for JSON files (.json .jsonl .ndjson).
 												   yaml       Look for YAML files (.yaml .yml).
+												   toml       Look for TOML files (.toml).
 												   text       Look for text files (.txt).
 												   binary     Look for files with extensions specified by --ext
 												              and interpret them as binary.
@@ -225,7 +226,7 @@ package site
 												  cue import [mode] [inputs] [flags]
 
 												Flags:
-												      --dry-run                  only run simulation
+												      --dry-run                  show what files would be created
 												      --ext stringArray          match files with these extensions
 												      --files                    split multiple entries into different files
 												  -f, --force                    force overwriting existing files

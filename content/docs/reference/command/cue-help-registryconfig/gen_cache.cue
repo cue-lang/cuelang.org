@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VNAIJONTK5KH9VVUK2NONKERLNMOKJTG8IVKMNII5SN29G7BTIF0===="
+									hash:       "QDBSCEJQII3N6IJLL7IL1VKE6HRJTOPP9OU7LUPI2NS084REMU9G===="
 									scriptHash: "LK0L4EIBL3DILIMQ6KOL4N6P4VE6M2NRIVG839GN8PQCH0UBE8R0===="
 									steps: [{
 										doc:      ""
@@ -22,8 +22,8 @@ package site
 												given module is stored in, and what repository within that registry, without
 												making any network calls.
 
-												If no explicit registry configuration is present, a default central registry
-												(registry.cue.works) will be used for all modules.
+												If no explicit registry configuration is present, a default Central Registry
+												(registry.cue.works) is used for all modules.
 
 												The simplest way of specifying a registry configuration is to set $CUE_REGISTRY
 												to the hostname of that registry.
