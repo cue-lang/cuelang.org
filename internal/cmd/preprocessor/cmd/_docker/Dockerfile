@@ -2,7 +2,7 @@
 
 # Code generated site_tool.cue; DO NOT EDIT.
 
-FROM golang:1.22.4 AS build
+FROM golang:1.23.0 AS build
 
 ENV CGO_ENABLED=0
 
@@ -33,7 +33,7 @@ RUN git clone https://github.com/cue-lang/libcue.git /libcue
 RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
 RUN CGO_ENABLED=1 go build -C /libcue -o libcue.so -buildmode=c-shared
 
-FROM golang:1.22.4
+FROM golang:1.23.0
 
 RUN apt-get update && apt-get install -y tree
 
