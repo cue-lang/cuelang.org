@@ -22,6 +22,30 @@
       },
       "revId": "2f7d8ad594a6e58fec2ba4d8ba32584d5e20a801",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75f3ca78_f8d466cf",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-08-15T09:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f90a8731_7cea64b3",
+      "range": {
+        "startLine": 261,
+        "startChar": 12,
+        "endLine": 261,
+        "endChar": 19
+      },
+      "revId": "2f7d8ad594a6e58fec2ba4d8ba32584d5e20a801",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
