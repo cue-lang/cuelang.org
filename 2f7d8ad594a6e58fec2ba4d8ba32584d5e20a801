@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f90a8731_7cea64b3",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-15T09:03:13Z",
+      "side": 1,
+      "message": "A local `CUE_UPDATE\u003d1 go test -run TestScripts/execute_multistagescript` will update this to reflect the v0.10.0 release.",
+      "range": {
+        "startLine": 261,
+        "startChar": 12,
+        "endLine": 261,
+        "endChar": 19
+      },
+      "revId": "2f7d8ad594a6e58fec2ba4d8ba32584d5e20a801",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
