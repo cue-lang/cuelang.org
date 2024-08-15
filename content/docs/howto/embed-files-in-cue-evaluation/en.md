@@ -42,7 +42,7 @@ export CUE_EXPERIMENT=embed
 {{{end}}}
 
 {{{with step}}}
-Include the `@extern(embed)` directive at the top of each CUE file that the
+Include the `@extern(embed)` directive at the top of each CUE file that uses the
 `@embed()` attribute. Use `@embed()` to embed either a single named file, or a
 glob identifying multiple files:
 
