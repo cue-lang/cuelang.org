@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8612a999_1ee0185c",
+        "filename": "cue.mod/pkg/github.com/SchemaStore/schemastore/src/schemas/json/github-workflow.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-08-15T08:02:18Z",
+      "side": 1,
+      "message": "Aside: we should probably change the jsonschema code gen to include a comment saying that the code is auto-generated.",
+      "revId": "27ba911ddde8674c4aeafa425b08370587f2ff49",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
