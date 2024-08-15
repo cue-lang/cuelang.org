@@ -19,14 +19,14 @@ enable data, schema, and policy constraints to coexist seamlessly:
 ! exec cue vet example.cue
 cmp stderr out
 -- example.cue --
-length: 20 & int
-width:  10.1 & >10 // Must be greater than 10
 area:   length * width
-area:   <=100 // Must be less than or equal to 100
+area:   <100        // Must be less than 100
+width:  10.1 & >10  // Must be greater than 10
+length: 20 & >width // Must be greater than width
 -- out --
-area: invalid value 202.0 (out of bound <=100):
-    ./example.cue:4:9
-    ./example.cue:3:9
+area: invalid value 202.0 (out of bound <100):
+    ./example.cue:2:9
+    ./example.cue:1:9
 {{{end}}}
 
 CUE supports and simplifies a wide variety of applications, such as
