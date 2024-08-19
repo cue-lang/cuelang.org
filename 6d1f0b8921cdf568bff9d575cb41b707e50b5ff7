@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2dc4a4a_030e0908",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-19T09:39:19Z",
+      "side": 1,
+      "message": "PTAL.\n\nPlease don\u0027t review the fact that the concept guide\u0027s \"Inputs\" page uses the `page.cue` `vars` section to do some crude single-sourcing of common terms used on the page. This was added purely to allow me to iterate on those terms\u0027 wording and their formatting. I\u0027ve left it in place anticipating that you might like to explore alternatives for both, and we can trivially remove the templating before submission, if so desired.",
+      "revId": "6d1f0b8921cdf568bff9d575cb41b707e50b5ff7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
