@@ -132,7 +132,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Go generate steps in playground
 			_goGenerate & {
-				name:                "Regenerate"
+				name:                "Regenerate Playground"
 				"working-directory": "playground"
 			},
 
@@ -159,7 +159,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Go test steps in playground
 			_goTest & {
-				name:                "Test"
+				name:                "Test Playground"
 				"working-directory": "playground"
 			},
 
@@ -171,7 +171,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Run staticcheck in playground
 			json.#step & {
-				name:                "staticcheck"
+				name:                "staticcheck Playground"
 				run:                 "../_scripts/staticcheck.bash"
 				"working-directory": "playground"
 			},
@@ -183,7 +183,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// go mod tidy playground
 			_modTidy & {
-				name:                "Check module is tidy"
+				name:                "Check Playground module is tidy"
 				"working-directory": "playground"
 			},
 
