@@ -203,7 +203,7 @@ jobs:
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate
         run: go generate ./...
-      - name: Regenerate
+      - name: Regenerate Playground
         run: go generate ./...
         working-directory: playground
       - if: always()
@@ -214,17 +214,17 @@ jobs:
         working-directory: hugo
       - name: Test
         run: go test ./...
-      - name: Test
+      - name: Test Playground
         run: go test ./...
         working-directory: playground
       - name: staticcheck
         run: ./_scripts/staticcheck.bash
-      - name: staticcheck
+      - name: staticcheck Playground
         run: ../_scripts/staticcheck.bash
         working-directory: playground
       - name: Check module is tidy
         run: go mod tidy
-      - name: Check module is tidy
+      - name: Check Playground module is tidy
         run: go mod tidy
         working-directory: playground
       - name: write $HOME/.config/cue/logins.json
