@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab3963be_3733311b",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 21
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-19T09:17:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3749ad4_603030d5",
+      "range": {
+        "startLine": 116,
+        "startChar": 25,
+        "endLine": 116,
+        "endChar": 28
+      },
+      "revId": "faa901cab08ec81301bb9c64ff5a61e4bb647af2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "62d37607_9e575844",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-08-16T17:55:58Z",
       "side": 1,
       "message": "`does not emit CUE that contains` etc etc. Reword this to make it clear the input CUE can be anything, and it\u0027s just the output that\u0027s restricted to regular fields.",
+      "range": {
+        "startLine": 249,
+        "startChar": 13,
+        "endLine": 249,
+        "endChar": 19
+      },
+      "revId": "faa901cab08ec81301bb9c64ff5a61e4bb647af2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5487c6f7_6ed7a7c5",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 21
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-19T09:17:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62d37607_9e575844",
       "range": {
         "startLine": 249,
         "startChar": 13,
@@ -64,6 +112,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91071fee_97f0cf2d",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 21
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-19T09:17:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58fd0aad_73f98e7f",
+      "revId": "faa901cab08ec81301bb9c64ff5a61e4bb647af2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5db4e73e_d8fa094e",
@@ -77,6 +143,24 @@
       "writtenOn": "2024-08-16T17:55:58Z",
       "side": 1,
       "message": "Add some sort of wrap-up/conclusion.",
+      "revId": "faa901cab08ec81301bb9c64ff5a61e4bb647af2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44b14e60_b0755c12",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 21
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-19T09:17:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5db4e73e_d8fa094e",
       "revId": "faa901cab08ec81301bb9c64ff5a61e4bb647af2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
