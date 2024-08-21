@@ -1,13 +1,49 @@
 ---
-title: Modules in CUE v0.9
+title: New modules vs old modules
 toc_hide: true
 tags: [modules]
 ---
 
-This guide provides an extended FAQ for the release notes at
-https://github.com/cue-lang/cue/releases/tag/v0.9.0 and subsequent bugfix
-releases. In particular, this FAQ focuses on questions about the transition to
-the "new" modules implementation that is enabled by default, as of v0.9.0.
+The [v0.9.0](https://github.com/cue-lang/cue/releases/tag/v0.9.0) release of CUE
+made "new" modules the default. But what are "new" modules? Come to think of it,
+what are "old" modules? What is the difference between them?
+
+This guide provides an extended FAQ that focuses on these questions and more,
+including questions about the transition from "old" to "new" modules.
+
+## What do you mean "old" and "new" modules?
+
+The concept of a module has existed from the very early days of CUE. That early
+module support was very primitive: dependencies needed to be copied in place by
+hand. There was no native tooling for publishing or fetching modules from a
+remote store. Native module support within the CUE toolchain and APIs was
+missing. Everything was very minimal and manual. We refer to this original
+behaviour as the "old" modules implementation.
+
+To address the shortcomings of the "old" modules implementation, we went through
+a number of design and proposal iterations. These culminated in the [modules
+proposal v3](https://github.com/cue-lang/cue/discussions/2939), which was
+accompanied by an experimental implementation in pre-releases of the v0.8.x
+series, starting in
+[v0.8.0-alpha.1](https://github.com/cue-lang/cue/releases/tag/v0.8.0-alpha.1).
+"Old" modules remained the default behaviour at this time, with the experimental
+implementation turned on by setting `CUE_EXPERIMENT=modules`.
+
+The modules proposal v3 was
+[accepted](https://github.com/cue-lang/cue/discussions/2939#discussioncomment-9468945)
+on May 17 2024, following extensive testing and feedback from users. At this
+point, we started referring to the experimental implementation that supported
+the v3 proposal as "new" modules, reflecting the change away from it being an
+experiment. "Old" modules remained the default behaviour at this time, with
+"new" modules being enabled in the same way as before.
+
+[v0.9.0](https://github.com/cue-lang/cue/releases/tag/v0.9.0) was released on
+June 6 2024 and it was in this release that "new" modules became the default.
+This removed the need to set `CUE_EXPERIMENT=modules`. For those needing "old"
+modules in v0.9.0 or later versions could set `CUE_EXPERIMENT=modules=0` to
+revert to the old behaviour. At some point in the future, "old" modules support
+will be removed entirely.
+
 
 ## Modules? Where do I get started?
 
@@ -25,16 +61,6 @@ currently in alpha testing, and will be a well-known place for schemas for
 well-known services and projects. We will share more details about the Central
 Registry in the future. For now, we are looking to get early feedback - please
 come and discuss it in the `#modules` [Slack channel](/slack).
-
-## What do you mean "new" and "old" modules implementations?
-
-{{<issue 2939>}}Issue #2939{{</issue>}} presented a proposal for how CUE can
-fully support package and dependency management. Over the course of v0.8.x
-releases and pre-releases leading up to v0.9.0, we have been experimenting with
-an implementation of this proposal: we refer to this as the "new" modules
-implementation. In v0.9.0, this "new" implementation is the default. In
-previous CUE versions (v0.8.x and earlier), the "old" implementation is the
-default.
 
 ## Why do I need to run `cue mod fix`?
 
@@ -119,6 +145,28 @@ notable exception of `@if` attributes. Specifically:
   module. In any external module, all tags are considered to be `false`. This
   is a change from earlier versions, when there was no distinction between the
   main module and external modules.
+
+## Can I use `cue.mod/usr` with "new" modules?
+
+It is an error to have a dependency declared in your `module.cue` in the `deps`
+field, that also exists in any of the `cue.mod/{pkg,gen,usr}` directories:
+
+```
+mod.example@v0: import failed: cannot find package "github.com/cue-labs/examples/frostyconfig@v0": ambiguous import: found package github.com/cue-labs/examples/frostyconfig@v0 in multiple modules:
+        github.com/cue-labs/examples/frostyconfig@v0 v0.0.1 (.)
+        local (cue.mod/usr/github.com/cue-labs/examples/frostyconfig):
+```
+
+Essentially, the CUE loader is unable to determine which "wins". As such, "old"
+and "new" modules are mutually exclusive.
+
+We continue to support `cue.mod/{pkg,gen,usr}` for now. as we continue of our
+efforts to improve the CUE module ecosystem. In particular, we are looking to
+better understand how to support generated CUE modules (in the "old" modules
+world these live in `cue.mod/gen`) and user augmentations for
+dependencies/generated CUE modules (int he "old" modules world these live in
+`cue.mod/usr`). Work on the [Central Registry](https://registry.cue.works/) is a
+key part of both of these goals.
 
 <!-- TODO: @if(!foo) in an external module results in `!false == true`, so the file is included.
 Show this in an example.
