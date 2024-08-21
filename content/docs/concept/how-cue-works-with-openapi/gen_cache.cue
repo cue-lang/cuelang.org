@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":           "oLVh9Ohxh7Skbu8rHF4Aoz+zlOwIisuTVQzkByGiqXU="
-								"api.pet.yaml":         "CW71kh6A1YfQl+EZBfflW7gf848WH8MrVnNOnHLZWeI="
-								"api.pet.cue":          "dqsSHE2ltd+wQIVf6ZNmPbW+jr1+bzDp05Kb9UVRn8Q="
-								"jonathan.yml":         "A9gdFOgnYypcWTVSnaqyMhdLN+CisolVcHb7tfkXSUk="
-								"go emit openapi main": "M+k6v6pcLj8Gc0r0FGVPCR2Yv66cQ8pLguf6U7lJc7M="
+								"schema.cue":           "vIfBvPEB+zKgmb8lwzJgxrFP81MPdXl3zarytU9gX/s="
+								"api.pet.yaml":         "D8NdUgoejncBgaKq/N0fmtmYFobbFUVcYTBRle/OceA="
+								"api.pet.cue":          "lonksQzswYKKCrsIsIxPwo+y+sqIkgd2vToCKYr6CyE="
+								"jonathan.yml":         "/rJAe3jYyq2Gd8c/bBTUCp3Bos52jDeZOInMn3VDCfI="
+								"go emit openapi main": "0uIJWHZdWQ/ok8IdesuWTSUylycSCkOVtfYDlbMsr2U="
 							}
 							multi_step: {
-								hash:       "BL5MJIQ904CQJR1EL1L5T7H62MUVDNJE0G6FOPBP6C22OB0G313G===="
+								hash:       "PQDIQFBV9QKC6NQ4UP8QS54C5QF83843HFQC9FDLFM5RTA9M69O0===="
 								scriptHash: "1V7UFAMT7FRI5I04C16KM620ILLQ4GRI80ASNBLDG3NMT0N1MTLG===="
 								steps: [{
 									doc:      ""
