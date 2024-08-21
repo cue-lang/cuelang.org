@@ -20,7 +20,7 @@ versions: {
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
 		prerelease: v: latest.v
-		tip: v:        prerelease.v
+		tip: v:        "v0.11.0-0.dev.0.20240902110846-1440b9eae7fa"
 		default: v:    latest.v
 		playground: v: latest.v
 	}
