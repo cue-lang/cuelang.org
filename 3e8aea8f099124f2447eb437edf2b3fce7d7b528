@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f63beb7a_bf91ffdb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-21T09:40:25Z",
+      "side": 1,
+      "message": "Gerrit doesn\u0027t let me abandon this CL (because I\u0027m not the owner?) but it should be abandoned as it was superseded by a different stack.",
+      "revId": "3e8aea8f099124f2447eb437edf2b3fce7d7b528",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
