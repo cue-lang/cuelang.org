@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddbf7c11_b1e890f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-21T09:40:02Z",
+      "side": 1,
+      "message": "Gerrit doesn\u0027t let me abandon this CL (because I\u0027m not the owner?) but it should be abandoned as it was superseded by https://cuelang.org/cl/1198969.",
+      "revId": "63f6a8e1641472592463fddc5fd96a7962c5383b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
