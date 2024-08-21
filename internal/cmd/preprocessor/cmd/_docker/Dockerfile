@@ -23,6 +23,12 @@ RUN \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   GOBIN=/cues/v0.10.0 go install -trimpath cuelang.org/go/cmd/cue@v0.10.0
 
+RUN \
+  --mount=type=cache,target=/cache/gocache \
+  --mount=type=cache,target=/cache/gomodcache \
+  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
+  GOBIN=/cues/v0.11.0-0.dev.0.20240904084811-bb24c7ce1f04 go install -trimpath cuelang.org/go/cmd/cue@v0.11.0-0.dev.0.20240904084811-bb24c7ce1f04
+
 RUN git clone https://github.com/cue-lang/libcue.git /libcue
 RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
 RUN CGO_ENABLED=1 go build -C /libcue -o libcue.so -buildmode=c-shared
@@ -42,7 +48,7 @@ ENV PATH="/cues/v0.10.0:${PATH}"
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 ENV CUELANG_CUE_LATEST="v0.10.0"
 ENV CUELANG_CUE_PRERELEASE="v0.10.0"
-ENV CUELANG_CUE_TIP="v0.10.0"
+ENV CUELANG_CUE_TIP="v0.11.0-0.dev.0.20240904084811-bb24c7ce1f04"
 ENV CUELANG_CUE_DEFAULT="v0.10.0"
 ENV CUELANG_CUE_PLAYGROUND="v0.10.0"
 
@@ -58,6 +64,7 @@ RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
 COPY --from=build /cues/v0.10.0/cue /cues/v0.10.0/cue
+COPY --from=build /cues/v0.11.0-0.dev.0.20240904084811-bb24c7ce1f04/cue /cues/v0.11.0-0.dev.0.20240904084811-bb24c7ce1f04/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/
 ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
