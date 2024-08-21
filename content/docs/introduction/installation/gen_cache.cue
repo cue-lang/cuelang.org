@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "PIS1SI2709U3LCDNI3A6GG9I58SGBD8C0SQRDIQIOV4B7ANAIJK0===="
-								scriptHash: "D37M5I4CC9UQ54DHIBSQ5TTE5SQT8FQRIFIR5UV0EUS1PEIFG7QG===="
+								hash:       "QF287HCKHU8JD4V3FQ88JC7FGH1RSVUO2RI7PS632FC701MGO2V0===="
+								scriptHash: "T22RVEVNCSL1EBGJC1VB4CUC6NORBUOCAN65A6USMPUL369LHPLG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -22,6 +22,14 @@ package site
 								}, {
 									doc:      "#ellipsis 0"
 									cmd:      "go install cuelang.org/go/cmd/cue@latest"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go install cuelang.org/go/cmd/cue@master"
 									exitCode: 0
 									output: """
 											...
