@@ -31,7 +31,7 @@ that's appropriate for your operating system.
 On Linux, Microsoft Windows, and macOS, the `cue` command can be downloaded from the
 [official CUE releases](https://github.com/cue-lang/cue/releases/).
 
-These releases include *prereleases*, which are cutting-edge versions of `cue`
+These releases include *pre-releases*, which are cutting-edge versions of `cue`
 made available to help expose bugs and flush out unintended behaviours.
 
 #### Install using Homebrew
@@ -64,9 +64,9 @@ docker pull cuelang/cue:latest
 
 On
 [platforms supported by Go](https://go.dev/dl/#stable),
-`cue` can be installed from source using any of its released versions.
-
-For example, to fetch the latest version:
+`cue` can be installed from source using any of its
+release, pre-release, or as-yet-unreleased versions.
+For example, to fetch the `latest` version:
 
 {{{with script "en" "go install"}}}
 #ellipsis 0
