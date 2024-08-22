@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58bd62a6_9ed80735",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-22T07:24:15Z",
+      "side": 1,
+      "message": "A WIP review.",
+      "revId": "3322e27f920b01634b8d5f3ab16cbd91b2d59a48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc494aaf_f77d9db8",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-22T07:24:15Z",
+      "side": 1,
+      "message": "You could also demonstrate the installation of other installs:\n\n```\n# latest release\ngo install cuelang.org/go/cmd/cue@latest \n\n# specific pre-release\ngo install cuelang.org/go/cmd/cue@v0.10.0-alpha.1\n\n# tip version of CUE\ngo install cuelang.org/go/cmd/cue@master\n\n```",
+      "revId": "3322e27f920b01634b8d5f3ab16cbd91b2d59a48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
