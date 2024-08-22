@@ -16,6 +16,23 @@
       "message": "@github@hello.jonathanmatthews.com - I would be very happy for you to pick up on the pen on this one!",
       "revId": "5a53e7995c8d953558fa9150f3d85e8720b164e1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74781d2f_ddd3bf60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-22T15:30:08Z",
+      "side": 1,
+      "message": "As discussed, I\u0027m taking this CL over.",
+      "revId": "5a53e7995c8d953558fa9150f3d85e8720b164e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
