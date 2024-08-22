@@ -33,6 +33,24 @@
       "message": "You could also demonstrate the installation of other installs:\n\n```\n# latest release\ngo install cuelang.org/go/cmd/cue@latest \n\n# specific pre-release\ngo install cuelang.org/go/cmd/cue@v0.10.0-alpha.1\n\n# tip version of CUE\ngo install cuelang.org/go/cmd/cue@master\n\n```",
       "revId": "3322e27f920b01634b8d5f3ab16cbd91b2d59a48",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9232a722_3f277ae6",
+        "filename": "content/docs/introduction/installation/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-22T08:39:03Z",
+      "side": 1,
+      "message": "Done. I\u0027ve added a pointer to the pkg.go.dev list of releases and pre-releases, and also an example of `@master`.\n\nI think that demonstrating any /specific/ pre-release will be either unhelpful on the page, or will turn into an update chore, because either:\n\n- we\u0027ll be in the current, post release state, where the only available pre-prelease we could mention is older than the `latest` release; or\n- we\u0027ll have real, up-to-date pre-releases we /could/ mention, but we\u0027ll need to remember to manually update the pre-release that\u0027s specified periodically. We can\u0027t use the `prerelease` var that  `site.cue` sets up because it gets aligned with the `latest` version periodically.",
+      "parentUuid": "fc494aaf_f77d9db8",
+      "revId": "3322e27f920b01634b8d5f3ab16cbd91b2d59a48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
