@@ -16,6 +16,23 @@
       "message": "@github@hello.jonathanmatthews.com - please can you take over this CL?",
       "revId": "fec03e6c7213f7f11c697cb11daa2a282d65da1f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "804b68f0_55ec7d90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-22T14:03:15Z",
+      "side": 1,
+      "message": "As discussed, I\u0027m taking this CL over 👍.",
+      "revId": "fec03e6c7213f7f11c697cb11daa2a282d65da1f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
