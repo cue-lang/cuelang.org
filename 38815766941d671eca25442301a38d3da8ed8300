@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a05dfade_a4e86929",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-22T15:37:52Z",
+      "side": 1,
+      "message": "PTAL. I stumbled across the existence of Markdown footnotes the other day, and recalled that we had a crummy ad-hoc implementation of them in this one guide.\n\nI added them primarily so that the reader gets a \"take me back to the text\" link for each individual footnote, and thus doesn\u0027t have to go hunting for the page location they were reading before they followed a footnote link.",
+      "revId": "38815766941d671eca25442301a38d3da8ed8300",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
