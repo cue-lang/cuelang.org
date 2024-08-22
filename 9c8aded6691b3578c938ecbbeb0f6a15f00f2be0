@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e881a81_7f8f5aa9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-22T14:43:42Z",
+      "side": 1,
+      "message": "PTAL. I\u0027m not 100% sure that the multi-line string emitted by `go run .` is optimal - it seems to rely on downstream consumers being able to parse CUE string representations. Can we update the Go to emit the same output as the `cue` command example in step 3? Or perhaps the same string that it /would/ emit if the `--out text` were omitted (i.e. a single-line string with embedded literal `\\n` newlines)?",
+      "revId": "9c8aded6691b3578c938ecbbeb0f6a15f00f2be0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
