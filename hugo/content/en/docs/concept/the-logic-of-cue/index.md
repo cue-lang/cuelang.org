@@ -536,9 +536,11 @@ even across files.
 Once set, there is no need to look at the individual values and files to
 know these constraints apply.
 Such information is not readily available for
-fully expanded configurations.[$^1$](#footnotes)
+fully expanded configurations.[^a]
 But also with inheritance-based solutions
 that allow arbitrary overrides, templates give little information.
+
+[^a]: Although CUE could be used to verify those properties in such data-only configurations.
 
 The ability to enforce constraints top down is crucial for any
 large-scale configuration setup.
@@ -681,7 +683,12 @@ In CUE, though, we typically refer to `acmeMonitoring` as a constraint.
 After all, applying it will guarantee
 that a job implements monitoring in a certain way.
 If such a constraint also contains sensible defaults, however,
-it simultaneously validates _and_ reduces boilerplate.[$^2$](#footnotes)
+it simultaneously validates _and_ reduces boilerplate.[^b]
+
+[^b]: TFSs typically don't have default values, it is the structure itself that
+is boilerplate removing, as the structure itself is what is the useful value.
+But that is a different topic. It doesn't work quite as well if one needs
+numeric values.  This is why CUE adds defaults.
 
 This ability to simultaneously
 enforce constraints and remove boilerplate
@@ -741,8 +748,10 @@ just plain ol' logic.
 Most cycles that do not result in infinite structures can be handled by CUE.
 In fact, it could handle most infinite structures in bounded time
 as well, but it puts limits on such cycles for
-practical reasons.[$^3$](#footnotes)
+practical reasons.[^c]
 
+[^c]: Detection of structural cycles (an occurs check) is not yet implemented,
+and thus printing infinite structures will still result in a loop.
 
 ### File organization
 
@@ -782,21 +791,3 @@ One can read more about this in Ann Copestake's
 (2002, CSLI Publications, ISBN 1-57586-261-1).
 
 ## Footnotes
-
-<small>
-<ol>
-<li> Although CUE could be used to verify those properties in such
-   data-only configurations.
-
-<li> TFSs typically don't have default values, it is the structure
-   itself that is boilerplate removing, as the structure itself
-   is what is the useful value.
-   But that is a different topic.
-   It doesn't work quite as well if one needs numeric values.
-   This is why CUE adds defaults.
-
-<li> Detection of structural cycles (an occurs check)
-   is not yet implemented, and thus printing infinite structures
-   will still result in a loop.
-</ol>
-</small>

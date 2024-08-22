@@ -233,6 +233,56 @@ My favorite project is [CUE](https://cuelang.org "CUElang.org").
 
 ---
 
+## Footnotes
+
+The Markdown flavour understood by Hugo support footnotes.
+Each footnote is composed of two elements: the link to the footnote, and the footnote itself.
+The footnote gains an automatic link back to the initial link's location on the page.
+Each link is a superscript number, linked to the relevant numbered footnote.
+The footnote source reference id must match between the footnote link and the
+footnote text, but the reference id isn't exposed on the rendered page.
+
+The footnote will appear at the end of the page, **no matter where the
+footnote's text is specified in the Markdown document**. The footnote does need
+to be specified as a paragraph by itself, however, so it's not a bad idea to
+specify the note immediately after the paragraph containing the link, so that
+context isn't lost for the author.
+
+Because the location of the footnote block can't be controlled (and is at the
+bottom of the page, following the rendered document), consider including a
+"`## Footnotes`" H2-heading as the very last source line of any document that
+uses footnotes. This heading has been added to this page as an example.
+
+Here's an example of a footnote:
+
+```
+This is a link to a footnote.[^foo]
+This is the sentence following the link to the footnote.
+
+[^foo]: This is the footnote. It continues until the end of the paragraph.
+This means that source newlines don't stop the footnote.
+The entire paragraph is rendered at the bottom of the page.
+One or more newlines can be inserted using the standard trailing-backslash mechanism ...\
+\
+... but they don't look *great*. Probably best avoided.
+
+This is a new paragraph that's not part of the footnote.
+```
+
+This is a link to a footnote.[^foo]
+This is the sentence following the link to the footnote.
+
+[^foo]: This is the footnote. It continues until the end of the paragraph.
+This means that source newlines don't stop the footnote.
+The entire paragraph is rendered at the bottom of the page.
+One or more newlines can be inserted using the standard trailing-backslash mechanism ...\
+\
+... but they don't look *great*. Probably best avoided.
+
+This is a new paragraph that's not part of the footnote.
+
+---
+
 ## Escaping Characters
 
 To display a literal character that would otherwise be used to format text in a Markdown document, add a backslash (\\) in front of the character.
@@ -266,3 +316,5 @@ You can use a backslash to escape the following characters.
 | \!     | Exclamation sign    |                             |
 | &#124; | Pipe                | In tables use `&#124;`      |
 {{< /table >}}
+
+## Footnotes
