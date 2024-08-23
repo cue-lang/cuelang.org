@@ -34,14 +34,14 @@ linking to the language spec.
 ```
 - {{</* linkto/related/concept "the-logic-of-cue" */>}}
 - {{</* linkto/related/howto "use-strings-replace" */>}}
-- {{</* linkto/related/reference "modules" */>}}
+- {{</* linkto/related/reference "modules/manual" */>}}
 - {{</* linkto/related/tutorial "working-with-a-custom-module-registry" */>}}
 - {{</* linkto/related/tour "expressions/fieldcomp" */>}}
 ```
 
 - {{< linkto/related/concept "the-logic-of-cue" >}}
 - {{< linkto/related/howto "use-strings-replace" >}}
-- {{< linkto/related/reference "modules" >}}
+- {{< linkto/related/reference "modules/manual" >}}
 - {{< linkto/related/tutorial "working-with-a-custom-module-registry" >}}
 - {{< linkto/related/tour "expressions/fieldcomp" >}}
 
@@ -69,7 +69,7 @@ URL fragments cannot be included.
 There are several relevant pages: 
 {{</* linkto/inline "concept/the-logic-of-cue" */>}},
 {{</* linkto/inline "howto/use-strings-replace" */>}},
-{{</* linkto/inline "reference/modules" */>}},
+{{</* linkto/inline "reference/modules/manual" */>}},
 {{</* linkto/inline "tutorial/working-with-a-custom-module-registry" */>}}, and
 {{</* linkto/inline "tour/expressions/fieldcomp" */>}}.
 ```
@@ -77,6 +77,6 @@ There are several relevant pages:
 There are several relevant pages: 
 {{< linkto/inline "concept/the-logic-of-cue" >}},
 {{< linkto/inline "howto/use-strings-replace" >}},
-{{< linkto/inline "reference/modules" >}},
+{{< linkto/inline "reference/modules/manual" >}},
 {{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}, and
 {{< linkto/inline "tour/expressions/fieldcomp" >}}.

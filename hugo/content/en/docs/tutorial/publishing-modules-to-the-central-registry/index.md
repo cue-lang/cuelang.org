@@ -311,4 +311,4 @@ configuration held in a different module.
 
 - {{< linkto/related/tutorial "working-with-the-central-registry" >}}
 - {{< linkto/related/tutorial "working-with-a-custom-module-registry" >}}
-- {{< linkto/related/reference "modules" >}}
+- {{< linkto/related/reference "modules/manual" >}}
