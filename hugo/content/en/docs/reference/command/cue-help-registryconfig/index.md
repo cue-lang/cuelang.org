@@ -5,6 +5,7 @@ aliases: ["/docs/reference/cli/cue-registryconfig/"]
 weight: 1000
 tags:
 - cue command
+- modules
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgcmVnaXN0cnljb25maWc=" }

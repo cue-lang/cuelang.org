@@ -3,6 +3,7 @@ package site
 import (
 	"list"
 	"strings"
+	"encoding/yaml"
 
 	"github.com/cue-lang/cuelang.org/internal/ci"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
@@ -337,7 +338,7 @@ template: ci.#writefs & {
 					aliases: ["/docs/reference/cli/\#(cmd.oldDir)/"]
 					weight: 1000
 					tags:
-					- cue command
+					\#(strings.TrimSuffix(yaml.Marshal(cmd.tagList), "\n"))
 					---
 
 					{{{with script "en" "cue cli help text"}}}
