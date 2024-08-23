@@ -224,5 +224,5 @@ Well done - you've finished this tutorial! In completing it, you:
 
 ## Related content
 
-- {{< linkto/related/reference "modules" >}}
+- {{< linkto/related/reference "modules/manual" >}}
 - {{< linkto/related/tutorial "working-with-a-custom-module-registry" >}}
