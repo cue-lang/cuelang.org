@@ -1,10 +1,9 @@
 ---
 WARNING: "Code generated site_tool.cue; DO NOT EDIT."
 title: "cue help injection"
+tags: ["cue command"]
 aliases: ["/docs/reference/cli/cue-injection/"]
 weight: 1000
-tags:
-- cue command
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgaW5qZWN0aW9u" }

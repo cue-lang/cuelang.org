@@ -1,10 +1,9 @@
 ---
 WARNING: "Code generated site_tool.cue; DO NOT EDIT."
 title: "cue help get go"
+tags: ["cue command"]
 aliases: ["/docs/reference/cli/cue-get-go/"]
 weight: 1000
-tags:
-- cue command
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0IGdv" }

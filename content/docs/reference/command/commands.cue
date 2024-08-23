@@ -17,6 +17,7 @@ cuePathBase: {
 	title!:   string
 	execCmd!: string
 	cuePath!: string
+	tags!: [...]
 
 	// oldDir is used to populate the page-level "aliases" front matter key,
 	// temporarily, until our logs show us that few enough inbound links reach
@@ -31,6 +32,7 @@ cue: [SubCommand=string]: #CueCommand & {
 	execCmd:    *"cue help \(SubCommand)" | _
 	title:      *"cue help \(SubCommand)" | _
 	oldDir:     *"cue-\(_dirSuffix)" | _
+	tags: *[] | _
 	cuePath: json.Marshal(cuePathBase & {
 		_input: dir
 	})
@@ -48,36 +50,46 @@ cue: {
 
 // All commands
 cue: {
-	cue:            _
-	cmd:            _
-	commands:       _
-	completion:     _
-	def:            _
-	embed:          _
-	environment:    _
-	eval:           _
-	export:         _
-	filetypes:      _
-	fix:            _
-	flags:          _
-	fmt:            _
-	get:            _
-	"get go":       _
-	import:         _
-	injection:      _
-	inputs:         _
-	login:          _
-	mod:            _
-	"mod edit":     _
-	"mod fix":      _
-	"mod get":      _
-	"mod init":     _
-	"mod publish":  _
-	"mod resolve":  _
-	"mod tidy":     _
-	modules:        _
-	registryconfig: _
-	trim:           _
-	version:        _
-	vet:            _
+	cue:         _
+	cmd:         _
+	commands:    _
+	completion:  _
+	def:         _
+	embed:       _
+	environment: _
+	eval:        _
+	export:      _
+	filetypes:   _
+	fix:         _
+	flags:       _
+	fmt:         _
+	get:         _
+	"get go":    _
+	import:      _
+	injection:   _
+	inputs:      _
+	login:       _
+	mod:
+		tags: ["modules"]
+	"mod edit":
+		tags: ["modules"]
+	"mod fix":
+		tags: ["modules"]
+	"mod get":
+		tags: ["modules"]
+	"mod init":
+		tags: ["modules"]
+	"mod publish":
+		tags: ["modules"]
+	"mod resolve":
+		tags: ["modules"]
+	"mod tidy":
+		tags: ["modules"]
+	modules:
+		tags: ["modules"]
+	registryconfig:
+		tags: ["modules"]
+	trim:    _
+	version: _
+	vet:     _
 }

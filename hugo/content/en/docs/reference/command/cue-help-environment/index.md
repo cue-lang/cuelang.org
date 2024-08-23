@@ -1,10 +1,9 @@
 ---
 WARNING: "Code generated site_tool.cue; DO NOT EDIT."
 title: "cue help environment"
+tags: ["cue command"]
 aliases: ["/docs/reference/cli/cue-environment/"]
 weight: 1000
-tags:
-- cue command
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZW52aXJvbm1lbnQ=" }

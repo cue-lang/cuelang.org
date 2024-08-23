@@ -3,6 +3,7 @@ package site
 import (
 	"list"
 	"strings"
+	"encoding/json"
 
 	"github.com/cue-lang/cuelang.org/internal/ci"
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
@@ -334,10 +335,9 @@ template: ci.#writefs & {
 					---
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"
+					tags: \#(json.Marshal(list.FlattenN([cmd.tags, "cue command"], 1)))
 					aliases: ["/docs/reference/cli/\#(cmd.oldDir)/"]
 					weight: 1000
-					tags:
-					- cue command
 					---
 
 					{{{with script "en" "cue cli help text"}}}
