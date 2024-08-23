@@ -6,7 +6,7 @@ import (
 )
 
 contentRoot: "content/docs/reference/command"
-cuePathBase: {
+_cuePathBase: {
 	_input: string
 	// align this path's prefix with contentRoot
 	content: docs: reference: command: (_input): page: {}
@@ -17,6 +17,8 @@ cuePathBase: {
 	title!:   string
 	execCmd!: string
 	cuePath!: string
+	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
+	tagList!: [...]
 
 	// oldDir is used to populate the page-level "aliases" front matter key,
 	// temporarily, until our logs show us that few enough inbound links reach
@@ -31,7 +33,9 @@ cue: [SubCommand=string]: #CueCommand & {
 	execCmd:    *"cue help \(SubCommand)" | _
 	title:      *"cue help \(SubCommand)" | _
 	oldDir:     *"cue-\(_dirSuffix)" | _
-	cuePath: json.Marshal(cuePathBase & {
+	tagSet: *{} | _
+	tagList: [for tag, _ in tagSet {tag}]
+	cuePath: json.Marshal(_cuePathBase & {
 		_input: dir
 	})
 }
@@ -44,6 +48,29 @@ cue: {
 		title:   "cue help"
 		oldDir:  "cue"
 	}
+}
+
+// Hugo page tags
+cue: {
+	[_]: tagSet: "cue command": _
+	// This can't be reduced to a more general comprehension over the keys of the
+	// tags field because https://cuelang.org/issues/2013 strikes.
+	[or(tags.modules)]: tagSet: modules: _
+}
+tags: {
+	modules: [
+		"login",
+		"mod",
+		"mod edit",
+		"mod fix",
+		"mod get",
+		"mod init",
+		"mod publish",
+		"mod resolve",
+		"mod tidy",
+		"modules",
+		"registryconfig",
+	]
 }
 
 // All commands
