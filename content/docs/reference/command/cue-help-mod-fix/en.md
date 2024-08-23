@@ -5,6 +5,7 @@ aliases: ["/docs/reference/cli/cue-mod-fix/"]
 weight: 1000
 tags:
 - cue command
+- modules
 ---
 
 {{{with script "en" "cue cli help text"}}}
