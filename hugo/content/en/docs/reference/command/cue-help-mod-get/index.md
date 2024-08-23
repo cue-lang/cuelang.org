@@ -5,6 +5,7 @@ aliases: ["/docs/reference/cli/cue-mod-get/"]
 weight: 1000
 tags:
 - cue command
+- modules
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGdldA==" }
