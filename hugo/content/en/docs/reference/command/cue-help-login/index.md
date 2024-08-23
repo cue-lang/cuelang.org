@@ -5,6 +5,7 @@ aliases: ["/docs/reference/cli/cue-login/"]
 weight: 1000
 tags:
 - cue command
+- modules
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbG9naW4=" }
