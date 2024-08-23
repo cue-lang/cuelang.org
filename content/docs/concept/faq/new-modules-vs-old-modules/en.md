@@ -59,7 +59,7 @@ so we encourage you to explore and adopt them before then!
 {{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}
 present an easy-to-digest introduction to modules.
 The {{<tag modules>}} tag lists other modules-related content.
-The {{< linkto/inline "reference/modules" >}} reference is the definitive
+The {{< linkto/inline "reference/modules/manual" >}} reference is the definitive
 document that details how modules work.
 
 ## What is the Central Registry?
@@ -105,7 +105,7 @@ that it was written against an older version of the CUE language spec and
 semantics.
 
 See
-[the Modules reference document]({{< relref "docs/reference/modules" >}}#cue-mod-file)
+[the Modules reference document]({{< relref "docs/reference/modules/manual" >}}#cue-mod-file)
 for an explanation of the various fields in a `cue.mod/module.cue` file.
 
 ## What about old modules that don't have a `language.version` field?
