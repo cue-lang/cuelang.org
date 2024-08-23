@@ -1,10 +1,7 @@
 ---
-title: CUE Modules
-authors:
-- rogpeppe
-toc_hide: true
-tags:
-- modules
+title: Reference Manual
+authors: [rogpeppe]
+tags: [modules]
 ---
 
 ## Introduction {#intro}
