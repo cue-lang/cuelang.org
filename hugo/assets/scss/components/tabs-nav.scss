@@ -8,17 +8,16 @@
 
     border-bottom: 1px solid var(--tabs-nav-border,  transparentize($c-blue--darker, .9));
     display: flex;
-    overflow: hidden;
 
     &__tabs {
         display: flex;
-        overflow-x: auto;
         padding: 0 $p-gutter;
         scroll-behavior: smooth;
         scrollbar-width: none;
     }
 
     &__item {
+        display: flex;
         flex: 0 0 auto;
         padding-right: 1.75rem;
 
@@ -27,10 +26,24 @@
         }
     }
 
+    &__copy {
+        height: 36px;
+        position: relative;
+        width: 1rem;
+
+        &:focus,
+        &:hover {
+            .icon {
+                fill: $c-blue--light;
+            }
+        }
+    }
+
     &__tab {
         background-color: var(--tab-background, $c-white);
         color: var(--tab-color, $c-blue--darker);
-        display: block;
+        display: flex;
+        gap: 4px;
         height: var(--tab-height, 52px);
         line-height: var(--tab-height, 52px);
         position: relative;
@@ -62,7 +75,7 @@
             background-color: var(--tab-background-active, $c-white);
             color: var(--tab-color-active, $c-blue--darker);
             font-weight: $weight-bold;
-            pointer-events: none;
+            pointer-events: auto;
 
             &::after {
                 background-color: var(--tab-border-color-active, $c-yellow);
@@ -121,6 +134,38 @@
         height: 24px;
         position: relative;
         width: 24px;
+    }
+
+    &__message {
+        @include style-text-small;
+
+        background-color: $c-grey-blue;
+        border-radius: $b-radius;
+        color: $c-blue--darker;
+        display: block;
+        margin-right: 0.75rem;
+        padding: 4px 8px;
+        position: absolute;
+        left: -10px;
+        top: 48px;
+        width: fit-content;
+        z-index: 1;
+
+        &::before {
+            border-color:  transparent transparent $c-grey-blue transparent;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            content: '';
+            height: 0;
+            position: absolute;
+            left: 8px;
+            bottom: 100%;
+            width: 0;
+        }
+
+        &.is-hidden {
+            display: none;
+        }
     }
 
     &--prev {
