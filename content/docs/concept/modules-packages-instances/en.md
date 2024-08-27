@@ -5,6 +5,17 @@ tags: [modules]
 toc_hide: true
 ---
 
+{{<info>}}
+This guide describes "new" modules, which are the current implementation of
+dependencies in CUE.
+
+[The previous version of this guide]({{< relref "old-modules-packages-instances" >}})
+covers "old" modules, which were the previous way to manage CUE dependencies,
+and is preserved for reference by folks using older versions of CUE.
+The FAQ "{{< linkto/inline "concept/faq/new-modules-vs-old-modules" >}}"
+explains their differences.
+{{</info>}}
+
 ## Overview
 
 CUE heavily relies on its order independence for package organization.
@@ -42,12 +53,11 @@ Here is how they differ:
 
 {{< /info >}}
 
-
 ## Modules
 
-A module contains a configuration layed out in a directory hierarchy.
+A module contains a configuration laid out in a directory hierarchy.
 It contains everything that is needed to deterministically
-determine the outcome of a CUE configuration.
+calculate the outcome of a CUE configuration.
 The root of this directory is marked by containing a `cue.mod`
 directory.
 The contents of this directory are mostly managed by the `cue` tool.
@@ -77,17 +87,20 @@ are considered to be part of this module.
 A module can be created by running the following command
 within the module root:
 
-{{{with code "en" "cmd-cue-mod-init"}}}
--- plain.txt --
-cue mod init [module name]
+{{{with script "en" "cue mod init"}}}
+cue mod init a.module.name/with/an/optional/path@v0
 {{{end}}}
 
-The module name is required if a package within the module needs to
-import another package within the module.
+If the module name is not specified then a default value is used - currently
+`cue.example`. The module name must be used in CUE code if a package within the
+module needs to import another package within the module. Module names look
+similar to URLs, starting with a fully-qualified domain name and optional
+forward-slash-separated path and ending with an optional major version suffix.
+Ideally, the domain name and path would map to a resource that's controlled by
+the CUE user but this is not enforced (or even looked up) in any way.
 
 A module can also be created by setting up the `cue.mod` directory
-and `module.cue` file manually.
-
+and `module.cue` file manually, but this is not recommended.
 
 ### The cue.mod directory
 
@@ -97,38 +110,53 @@ The module directory has the following contents:
 -- plain.txt --
 cue.mod
 |-- module.cue  // The module file
-|-- pkg         // copies of external packages
-|-- gen         // files generated from external sources
-|-- usr         // user-defined constraints
+|-- pkg         // copies of external packages [DEPRECATED]
+|-- gen         // files generated from external sources [DEPRECATED]
+|-- usr         // user-defined constraints [DEPRECATED]
 {{{end}}}
 
-Aside from an occasional addition to the `usr` subdirectory or tweak
-to `module.cue`, this directory is
-predominantly managed by the `cue` tool.
+This directory is predominantly managed by the `cue` tool.
 
-The `module.cue` file defines settings such as
-globally unique _module identifier_ (more on this in the
-[Import Path]({{< relref "#import-path" >}}) section).
-This information allows packages defined within the module to be importable
-within the module itself.
-In the future, it may hold version information of imported packages to determine
-the precise origin of imported files.
+The `module.cue` file defines settings such as the globally unique
+[*module identifier*]({{< relref "#import-path" >}}), which
+allows packages defined within the module to be importable within the module
+itself. It also holds version information of imported packages to determine
+the precise origin of imported files. The modules reference fully specifies
+[the contents of `module.cue`]({{< relref "docs/reference/modules" >}}#cue-mod-file).
 
-The other directories hold packages that are facsimiles, derivatives, or
-augmentations of external packages:
+#### Deprecated directories
 
-- *pkg*: an imported external CUE package,
-- *gen*: CUE generated from external definitions, such as protobuf or Go,
-- *usr*: user-defined constraints for the above two directories.
+The `pkg`, `gen` and `usr` directories mentioned above can hold packages that
+are facsimiles, derivatives, or augmentations of external packages, but their
+use is deprecated. Their manually-specified contents
+[can be incompatible]({{< relref "docs/concept/faq/new-modules-vs-old-modules" >}}#can-i-use-cuemodusr-with-new-modules)
+with modules that the
+[`cue mod`]({{< relref "docs/reference/command/cue-help-mod" >}}) command
+manages automatically, but they are still supported as they can be useful in a
+limited set of circumstances. They are intended to be used for the following
+purposes, but only when CUE's current modules can't handle a particular use-case:
 
-These directories split files from the same package across different
+- `pkg`: manually managed and imported external packages
+- `gen`: CUE generated from external definitions, such as protobuf or Go
+- `usr`: user-defined constraints for external packages
+
+{{<info>}}
+Read the FAQ "{{< linkto/inline "concept/faq/new-modules-vs-old-modules" >}}" to
+learn about the differences between these two types of CUE module. Please help
+the CUE project by providing your feedback in {{<issue 2865/>}} whenever you
+find yourself needing to use these deprecated directories - this will help
+guide and shape the future of the modules implementation.
+{{</info>}}
+
+These three directories split files from the same package across different
 parallel hierarchies based on the origin of the content.
 But for all intent and purposes they should be seen as a single directory
 hierarchy.
 
-The `cue.mod/usr` directory is a bit special here.
-The `cue.mod/pkg` and `cue.mod/gen` directories are populated by the `cue` tool.
-The `cue.mod/usr` directory, on the other hand, holds user-defined
+The `usr` directory is a bit special here.
+The `gen` directory is populated by the `cue` tool and
+the `pkg` directory, whilst deprecated, can hold 3rd-party or external constraints.
+The `usr` directory, on the other hand, holds user-defined
 constraints for the packages defined in the other directories.
 
 User-defined constraints can be used to fill gaps in generated constraints;
@@ -137,7 +165,6 @@ They can also be used to enforce constraints on imported packages, for instance
 to enforce that a certain API feature is still provided or of the desired form.
 The `usr` directory allows for a cleaner organization compared to storing
 such user-defined constraints directly in the `cue`-managed directories.
-
 
 ## Packages
 
@@ -160,15 +187,15 @@ know the name of the package as well
 
 {{{with code "en" "cmd-cue-eval-directory-and-package"}}}
 -- plain.txt --
-cue eval -p pkgname ./mypkg
+cue eval ./mypkg:packageName
 {{{end}}}
 
-If no module is defined, it will just load the files in this directory.
-If a module is defined, it will _also_ load all files with the same
-package name in its ancestor directories up till the module root.
+If no module is defined then the `cue` command will only load the files in this
+directory.
+If a module is defined then it will *also* load all files with the same
+package name in its ancestor directories up to the module root.
 As we will see below,
 this strategy allows for defining organization-wide schemas and policies.
-
 
 ### Import path
 
@@ -236,53 +263,65 @@ with the import statement. For instance,
 -- in.cue --
 import (
 	"list"
-
 	"example.com/path/to/package"
 )
 {{{end}}}
 
-Packages for which the first path component is not a fully qualified
-domain name are builtin packages and are not stored on disk.
-For other packages, CUE determines the location on disk as follows:
+Packages for which the first path component is **not** a fully qualified domain
+name are builtin packages and are not stored on disk, as with `list` in the
+example above. For other packages, CUE determines the location on disk as
+follows:
 
-1. If a module identifier is defined and is a prefix of the import path,
-   the package is located at the corresponding location relative to the
-   module root.
-2. Otherwise, the package contents looked up in
-   the `cue.mod/pkg`, `cue.mod/gen`, and `cue.mod/usr` subdirectores.
+If a module identifier is defined and is a prefix of the import path, the
+package is located at the corresponding location relative to the module root.
+Otherwise: 
 
-In Step 2, an import path may match more than one directory.
-In that case, the contents of _all_ matched directories are used to build the
-package.
-Virtually, these directories should be seen as a single directory tree.
-
+1. If the import path (or some prefix of it) is defined in
+   [the `deps` field of the `cue.mod/module.cue` file]({{< relref "docs/reference/modules" >}}#cue-mod-file)
+   then the package contents are looked up in the
+   [shared module cache]({{< relref "docs/reference/modules" >}}#module-cache).
+2. The package contents are looked up, unconditionally, in the `cue.mod/pkg`,
+   `cue.mod/gen`, and `cue.mod/usr` directories. If they are found in any of
+   these three directories then the package contents are unified from the
+   relevant files in all the directories.
+3. If package contents were found by both steps #1 and #2 then
+   [an error occurs]({{< relref "docs/concept/faq/new-modules-vs-old-modules" >}}#can-i-use-cuemodusr-with-new-modules)
+   because packages must not exist in both locations simultaneously.
+4. If package contents were found by only one of steps #1 and #2 then the
+   successful step's result is used.
+5. If package contents were not found by either step #1 or #2 then an error
+   occurs.
 
 ## Builtin Packages
 
-CUE has a collection of builtin packages that are compiled into the `.cue`
-binary.
+CUE has a standard library of builtin packages that are compiled into the `cue`
+command.
 
-A list of these packages form
-can be found here https://pkg.go.dev/cuelang.org/go/pkg.
+A list of these packages can be found at
+[pkg.go.dev/cuelang/go/pkg](https://pkg.go.dev/cuelang.org/go/pkg).
 The intention is to have this documentation in CUE format, but for now
 we are piggybacking on the Go infrastructure to host and present the CUE
-packages.
+standard library documentatation.
 
 To use a builtin package, import its path relative to `cuelang.org/go/pkg`
 and invoke the functions using its qualified identifier.
 For instance:
 
-{{{with code "en" "regexp-import-example"}}}
-#location top bottom
+{{{with code "en" "stdlib-import-example"}}}
+exec cue eval
+cmp stdout out
+-- stdlib.cue --
+package example
 
-exec cue eval regexp.cue
-cmp stdout out.golden
--- regexp.cue --
-import "regexp"
+import "strings"
 
-matches: regexp.FindSubmatch(#"^([^:]*):(\d+)$"#, "localhost:443")
--- out.golden --
-matches: ["localhost:443", "localhost", "443"]
+A: "Hello, world!"
+B: strings.ToUpper(A)
+C: strings.HasPrefix(B, "HELLO")
+-- out --
+A: "Hello, world!"
+B: "HELLO, WORLD!"
+C: true
 {{{end}}}
 
 ## File Organization
