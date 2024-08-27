@@ -129,6 +129,8 @@ other = "Go to the website"
 # Copy button
 [copy_title]
 other = "Copy code"
+[copy_filename]
+other = "Copy filename"
 [copy_message]
 other = "Copied!"
 

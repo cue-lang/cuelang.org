@@ -4,6 +4,7 @@
     {{ $language := .Get "language" | default "" }}
     {{ $codeToCopy := .Get "codetocopy" }}
     {{ $type := .Get "type" | default "default" }}
+    {{ $fileIcon := .Get "fileIcon" | default true }}
     {{ $lineos := .Get "linenos" | default "false" }}
     {{ $groupId := .Get "groupId" | default "default" }}
     {{ $arrayName := printf "tabs-%s" $area }}
@@ -19,6 +20,7 @@
             "area" $area
             "language" $language
             "type" $type
+            "fileIcon" $fileIcon
             "groupId" $groupId
             "content" $content
         ) }}

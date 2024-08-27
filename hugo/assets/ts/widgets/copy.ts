@@ -40,13 +40,13 @@ export class Copy extends BaseWidget {
 
             navigator.clipboard.writeText(content).then(() => {
                 requestAnimationFrame(() => {
-                    messageElement.classList.remove('is-hidden');
-                    messageElement.setAttribute('aria-hidden', 'false');
+                    messageElement?.classList.remove('is-hidden');
+                    messageElement?.setAttribute('aria-hidden', 'false');
                     this.copyButton.classList.add('is-success');
 
                     setTimeout(() => {
-                        messageElement.classList.add('is-hidden');
-                        messageElement.setAttribute('aria-hidden', 'true');
+                        messageElement?.classList.add('is-hidden');
+                        messageElement?.setAttribute('aria-hidden', 'true');
                         this.copyButton.classList.remove('is-success');
                     }, 1000);
                 });
