@@ -20,7 +20,18 @@
                 data-tab-item="{{ .name | urlize }}"
                 data-tab-group="{{ $groupId }}"
                 class="tabs-nav__tab{{ if ne .type "default" }} tabs-nav__tab--{{ .type}}{{ end}}{{ cond (eq $idx 0) " is-active" ""}}"
-            >{{ .name }}</button>
+                {{- if and (eq .type "default") (eq .fileIcon true) -}} data-copy{{- end -}}
+            >
+                {{- if and (eq .type "default") (eq .fileIcon true) -}}
+                    <span title="{{ T "copy_filename" }}" class="tabs-nav__copy"  data-copy-button data-copy-type="text" data-copy-value="{{ .name }}">
+                        {{- partial "icon.html" (dict "class" "" "icon" "file") -}}
+                        <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            {{ T "copy_message" }}
+                        </span>
+                    </span>
+                {{- end -}}
+                {{ .name }}
+            </button>
         </li>
     {{- end -}}
 </ul>
@@ -37,7 +48,18 @@
                 data-tab-item="{{ .name | urlize }}"
                 data-tab-group="{{ $groupId }}"
                 class="tabs-nav__tab{{ if ne .type "default" }} tabs-nav__tab--{{ .type}}{{ end}}"
-            >{{ .name }}</div>
+                {{- if and (eq .type "default") (eq .fileIcon true) -}} data-copy{{- end -}}
+            >
+                {{- if and (eq .type "default") (eq .fileIcon true) -}}
+                    <button title="{{ T "copy_filename" }}" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="{{ .name }}">
+                        {{- partial "icon.html" (dict "class" "" "icon" "file") -}}
+                        <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            {{ T "copy_message" }}
+                        </span>
+                    </button>
+                {{- end -}}
+                {{ .name }}
+            </div>
         </div>
     {{- end -}}
 {{- end -}}

@@ -29,7 +29,7 @@ languages:
     name: Norwegian
 {{</* /code-tab */>}}
 
-{{</* code-tab name="data.yaml" language="yaml" linenos="true" area="bottom-left" */>}}
+{{</* code-tab name="data.yaml" language="yaml" linenos="true" area="bottom-left" fileIcon="false */>}}
 languages:
   - tag: en
     name: English
@@ -68,7 +68,7 @@ languages:
   name: Norwegian
 {{< /code-tab >}}
 
-{{< code-tab name="data.yaml" language="yaml" linenos="true" area="bottom-left" >}}
+{{< code-tab name="data.yaml" language="yaml" linenos="true" area="bottom-left" fileIcon="false" >}}
 languages:
 - tag: en
   name: English
@@ -124,6 +124,9 @@ codeToCopy
 : optional - By default the copy button copies the inner content. You can change that by passing in code with this attribute.
 Make sure it's base64 encoded when you pass something to this attribute.
 You can also set it to false to hide the copy button.
+
+fileIcon
+: optional - Showing file icon. Can be true or false. By default the value is true.
 
 ## Examples of usage of different area's
 
