@@ -9,7 +9,7 @@ tags:
 toc_hide: true
 ---
 
-{{{with _script_ "en" "use prelrelease"}}}
+{{{with _script_ "en" "HIDDEN: set up registry access"}}}
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
@@ -26,13 +26,6 @@ Along the way you will:
 - Login to the Central Registry, and authenticate the `cue` command
 - Create a module that depends on an existing, well-known module
 - Use `cue mod tidy` to automatically add dependencies and their versions to the `module.cue` file
-
-Note that this guide depends on a pre-release version of CUE:
-
-{{{with script "en" "cue version"}}}
-#ellipsis 1
-cue version
-{{{end}}}
 
 ## Login to the Central Registry
 
