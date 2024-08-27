@@ -14,21 +14,6 @@ data validation language with its roots in logic programming.
 It combines succinct yet clear syntax with powerful, flexible constraints that
 enable data, schema, and policy constraints to coexist seamlessly:
 
-{{{with code "en" "example"}}}
-#location left right
-! exec cue vet example.cue
-cmp stderr out
--- example.cue --
-area:   length * width
-area:   <100        // Must be less than 100.
-width:  33.3 & >10  // Must be greater than 10.
-length: 5 & !=width // Reject square areas.
--- out --
-area: invalid value 166.5 (out of bound <100):
-    ./example.cue:2:9
-    ./example.cue:1:9
-{{{end}}}
-
 CUE supports and simplifies a wide variety of applications, such as
 [data validation]({{< relref "concept/how-cue-enables-data-validation" >}}),
 [configuration]({{< relref "concept/how-cue-enables-configuration" >}}),
