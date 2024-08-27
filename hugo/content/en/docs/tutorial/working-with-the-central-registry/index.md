@@ -20,14 +20,6 @@ Along the way you will:
 - Create a module that depends on an existing, well-known module
 - Use `cue mod tidy` to automatically add dependencies and their versions to the `module.cue` file
 
-Note that this guide depends on a pre-release version of CUE:
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
-$ cue version
-cue version v0.10.0
-...
-```
-
 ## Login to the Central Registry
 
 {{< step stepNumber="1" >}}
