@@ -11,3 +11,8 @@ tags:
 {{{with script "en" "cue cli help text"}}}
 cue help modules
 {{{end}}}
+
+## Related content
+
+- {{< linkto/related/reference "command/cue-help-mod" >}}
+- {{< linkto/related/reference "command/cue-help-registryconfig" >}}
