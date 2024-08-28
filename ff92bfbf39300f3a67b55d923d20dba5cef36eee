@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "83c8619a_98c8ffde",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-28T08:13:39Z",
+      "side": 1,
+      "message": "I\u0027m not sure about `/docs/reference/modules/manual`. The \"manual\" bit just reads/sounds a bit odd.\n\nOstensibly you\u0027re using this path though, as you say, in order to free up `/docs/reference/modules` to act as a homepage.\n\nStepping back, is there a different way we can create such \"homepages\"?",
+      "revId": "ff92bfbf39300f3a67b55d923d20dba5cef36eee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "8a8eda23_9ec969b3",
