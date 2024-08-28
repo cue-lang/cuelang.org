@@ -33,6 +33,24 @@
       "message": "Referring to your top-level comments, you can do something like:\n\n```\n\noutput :\u003d complete.LookupPath(cue.ParsePath(\"output\")\nmsg, _ :\u003d output.String() // we know \u0027output\u0027 is a string type\nfmt.Printf(\"%v\\n\", msg)\n```",
       "revId": "9c8aded6691b3578c938ecbbeb0f6a15f00f2be0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66a06fbb_d3420983",
+        "filename": "content/docs/howto/place-data-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-28T21:16:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7a44e02_4fd4954d",
+      "revId": "9c8aded6691b3578c938ecbbeb0f6a15f00f2be0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
