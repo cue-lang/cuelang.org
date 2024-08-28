@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7782570f_2d90086c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-28T12:18:21Z",
+      "side": 1,
+      "message": "PTAL. I\u0027m not particularly proud of the CUE in `site.cue`, but I can\u0027t see an alternative. I\u0027m not sure how else to achieve the multiple \"levels\" of interpolation that seem to be required, and whose solution/pattern I stole from the CUE that drives the `Dockerfile` contents earlier in `site.cue`.",
+      "revId": "662f79177386402e25ce9729af35a4575960686b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
