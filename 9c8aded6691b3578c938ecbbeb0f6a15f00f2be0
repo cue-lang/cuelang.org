@@ -16,6 +16,23 @@
       "message": "PTAL. I\u0027m not 100% sure that the multi-line string emitted by `go run .` is optimal - it seems to rely on downstream consumers being able to parse CUE string representations. Can we update the Go to emit the same output as the `cue` command example in step 3? Or perhaps the same string that it /would/ emit if the `--out text` were omitted (i.e. a single-line string with embedded literal `\\n` newlines)?",
       "revId": "9c8aded6691b3578c938ecbbeb0f6a15f00f2be0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7a44e02_4fd4954d",
+        "filename": "content/docs/howto/place-data-go-api/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-28T09:33:21Z",
+      "side": 1,
+      "message": "Referring to your top-level comments, you can do something like:\n\n```\n\noutput :\u003d complete.LookupPath(cue.ParsePath(\"output\")\nmsg, _ :\u003d output.String() // we know \u0027output\u0027 is a string type\nfmt.Printf(\"%v\\n\", msg)\n```",
+      "revId": "9c8aded6691b3578c938ecbbeb0f6a15f00f2be0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
