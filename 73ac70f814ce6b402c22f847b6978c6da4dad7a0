@@ -16,6 +16,29 @@
       "message": "PTAL.",
       "revId": "73ac70f814ce6b402c22f847b6978c6da4dad7a0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c5aba62_53a6ec70",
+        "filename": "content/docs/reference/modules/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-28T08:11:15Z",
+      "side": 1,
+      "message": "Missing full-stop at the end of the sentence.",
+      "range": {
+        "startLine": 8,
+        "startChar": 28,
+        "endLine": 8,
+        "endChar": 40
+      },
+      "revId": "73ac70f814ce6b402c22f847b6978c6da4dad7a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
