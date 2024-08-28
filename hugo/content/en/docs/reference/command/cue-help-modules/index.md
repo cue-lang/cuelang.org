@@ -41,3 +41,8 @@ For information on how to specify the CUE registry:
 	cue help registryconfig
 
 ```
+
+## Related content
+
+- {{< linkto/related/reference "command/cue-help-mod" >}}
+- {{< linkto/related/reference "command/cue-help-registryconfig" >}}

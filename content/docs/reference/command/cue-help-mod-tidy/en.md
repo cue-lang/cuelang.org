@@ -11,3 +11,7 @@ tags:
 {{{with script "en" "cue cli help text"}}}
 cue help mod tidy
 {{{end}}}
+
+## Related content
+
+- {{< linkto/related/reference "command/cue-help-environment" >}}
