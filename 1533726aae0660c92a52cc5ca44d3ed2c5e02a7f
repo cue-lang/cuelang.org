@@ -16,6 +16,29 @@
       "message": "PTAL.",
       "revId": "1533726aae0660c92a52cc5ca44d3ed2c5e02a7f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b182fa5_9749ecef",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-08-28T08:18:21Z",
+      "side": 1,
+      "message": "I think you mean package here. Because the `cue.mod/{pkg,gen,usr}` hierarchy is package-based, with no reference to modules.",
+      "range": {
+        "startLine": 175,
+        "startChar": 11,
+        "endLine": 175,
+        "endChar": 17
+      },
+      "revId": "1533726aae0660c92a52cc5ca44d3ed2c5e02a7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
