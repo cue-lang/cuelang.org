@@ -344,9 +344,21 @@ template: ci.#writefs & {
 					{{{with script "en" "cue cli help text"}}}
 					\#(cmd.execCmd)
 					{{{end}}}
-
+					\#( strings.Join([if len(cmd.relatedCommands) > 0 for e in [
+						"## Related content",
+						"",
+						for c in cmd.relatedCommands
+						let path = strings.Replace(c, " ", "-", -1) {
+						#"- {{< linkto/related/reference "command/\#(path)" >}}"#
+					},
+				] {e},
+				], "\n"))
 					"""#
 			}
 		}
 	}
 }
+
+//		for _, related in cmd.relatedCommands {
+//			"- {{< linkto/related/reference \"command/\" >}}"
+//		}

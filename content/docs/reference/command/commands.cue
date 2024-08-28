@@ -19,6 +19,7 @@ _cuePathBase: {
 	cuePath!: string
 	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
 	tagList!: [...]
+	relatedCommands!: [...string]
 
 	// oldDir is used to populate the page-level "aliases" front matter key,
 	// temporarily, until our logs show us that few enough inbound links reach
@@ -35,6 +36,7 @@ cue: [SubCommand=string]: #CueCommand & {
 	oldDir:     *"cue-\(_dirSuffix)" | _
 	tagSet: *{} | _
 	tagList: [for tag, _ in tagSet {tag}]
+	relatedCommands: *[] | _
 	cuePath: json.Marshal(_cuePathBase & {
 		_input: dir
 	})
@@ -72,6 +74,21 @@ tags: cue: {
 		"mod tidy",
 		"modules",
 		"registryconfig",
+	]
+}
+
+// Related "docs/reference/command/" pages, manually adapted from help text
+// contents.
+cue: {
+	mod: relatedCommands: [
+		"cue help modules",
+		"cue help mod edit",
+		"cue help mod fix",
+		"cue help mod get",
+		"cue help mod init",
+		"cue help mod publish",
+		"cue help mod resolve",
+		"cue help mod tidy",
 	]
 }
 
