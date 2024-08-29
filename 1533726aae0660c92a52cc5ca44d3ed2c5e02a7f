@@ -39,6 +39,30 @@
       },
       "revId": "1533726aae0660c92a52cc5ca44d3ed2c5e02a7f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9754755_c23c0e61",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-29T15:00:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b182fa5_9749ecef",
+      "range": {
+        "startLine": 175,
+        "startChar": 11,
+        "endLine": 175,
+        "endChar": 17
+      },
+      "revId": "1533726aae0660c92a52cc5ca44d3ed2c5e02a7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
