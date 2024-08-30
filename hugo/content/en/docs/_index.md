@@ -6,6 +6,18 @@ cascade:
 disableNotification: true
 ---
 
+The following CUE will **not** be valid after 0.11 is released:
+
+{{< code-tabs >}}
+{{< code-tab name="broken-after-0-11.cue" language="cue" area="top-left" >}}
+x: [1,2,3] + [4,5,6]
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" >}}
+$ 
+x: [1,2,3,4,5,6]
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
 # Welcome to CUE!
 
 CUE is an

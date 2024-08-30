@@ -6,6 +6,18 @@ cascade:
 disableNotification: true
 ---
 
+The following CUE will **not** be valid after 0.11 is released:
+
+{{{with code "en" "demo"}}}
+#norun
+#nofmt
+exec cue eval
+-- broken-after-0-11.cue --
+x: [1,2,3] + [4,5,6]
+-- out --
+x: [1,2,3,4,5,6]
+{{{end}}}
+
 # Welcome to CUE!
 
 CUE is an
