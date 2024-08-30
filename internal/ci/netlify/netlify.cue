@@ -185,7 +185,7 @@ config: #config & {
 			to:   "https://discord.gg/CBUzN6CrRa"
 		}, {
 			from: "/e/v0.11-list-arithmetic"
-			to:   "/cl/1200221"
+			to:   "/docs/concept/faq/removing-list-arithmetic-operators-v0.11/"
 		}]
 }
 
