@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "a62dd30c_9dbfaeb2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-08-30T08:36:16Z",
+      "side": 1,
+      "message": "We can, of course, create topic-specific landing pages under any path we like. I\u0027m entirely ambivalent about the hierarchy in which they should sit, except insofar as different paths will inform a reader (who happens to be given one of their URLs, but not a page title) and let them make assumptions about its content.\n\nI\u0027d selected `/docs/reference/modules/` here (and, to a lesser degree, `/docs/reference/command/cue-export/` in https://cuelang.org/cl/1197464) because it felt like the page truly could be a reference for the topic. Not, as you\u0027ll find with both these examples, an **exhaustive** reference, but presenting content that\u0027s technically correct as far as it goes, written in the reference-guide voice, and with definitive onwards links - which are definitely technically correct because the links go to pages that *do* exist, and are on topic. (I don\u0027t have a particularly strong preference to use the `/docs/reference/` hierarchy - this just explains the rationale that informed my choice).\n\nSo, in this CL\u0027s specific case, if we don\u0027t want to use `docs/reference/modules/`, then what can we use? Here\u0027s a range of options that come to mind:\n\n1. a path outside `/docs/`:\n  - we already have the `/s/` short link hierarchy, but it would feel odd to use it for something other than a redirect to a content page. Could that content page *also* live outside `/docs/`? I\u0027d argue not: the content would definitely be \"a doc\", which the reader should be able to infer from the path hierarchy.\n1. `/docs/reference/mod`: similar to https://go.dev/ref/mod\n1. `/docs/reference/modules-landing-page/` (or similar, with a better suffix) \n1. `/docs/reference/about/modules/`\n1. `/docs/concept/modules/`\n1. `/docs/concept/about/modules/`\n1. `/docs/\u003csome-new-hierarchy-for-landing-pages\u003e/modules/` e.g.:\n  a. `/docs/about/modules/`\n  b. `/docs/learn/modules/`\n  c. `/docs/discover/modules/`\n  d. `/docs/explain/modules/`\n  \nOf these, I personally prefer option 5, then some of those in option 7. Our existing concept guides have page paths that would leave us free to reserve short, topic-specific names for landing pages. We could establish the convention that, in line with https://diataxis.fr/complex-hierarchies/#overviews-and-introductory-text:\n\n\u003e The content of a landing page itself should read like an overview\n\n... meaning that they can\u0027t simply be a list of links to other content, and must explain at least the bare minimum around the topic before linking onwards.\n\nMy suggestion, **if you feel it\u0027s important to maintain the modules reference guide content at `/docs/reference/modules/`**:\n- place this CL\u0027s modules landing page at `/docs/concept/modules/`\n- for `cue export`, in https://cuelang.org/cl/1197464:\n  - allow it still to place its short landing page at `/docs/reference/command/cue-export`, as that naturally fills a gap in the pages presented under `/docs/reference/command/`\n  - allow it still to place its main guide at `/docs/concept/using-the-cue-export-command`, establishing and reserving the `/docs/concept/using-the-X-command/` path pattern for future command-specific landing pages.",
+      "parentUuid": "83c8619a_98c8ffde",
+      "revId": "ff92bfbf39300f3a67b55d923d20dba5cef36eee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "8a8eda23_9ec969b3",
