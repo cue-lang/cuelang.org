@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b793e73_c266a3db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-02T17:25:33Z",
+      "side": 1,
+      "message": "PTAL. I think there\u0027s a tricky sequencing issue if this doc needs to be available before the first 0.11 alpha is released, and yet the doc still needs to refer to that (not yet released) version without quite a few faked-up command outputs.\n\nHowever, making a quick update to this doc *after* the alpha is released feels like the easier route to me - let me know if it\u0027s not an option, or if you\u0027d like to discuss.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
