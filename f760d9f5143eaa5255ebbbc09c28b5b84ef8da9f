@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "531bf0f6_df641e66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:35:39Z",
+      "side": 1,
+      "message": "FYI the list arithmetic CL was just merged to master.",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f3a975d_439cf538",
