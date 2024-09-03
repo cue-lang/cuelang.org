@@ -50,3 +50,4 @@ https://cue.netlify.com/* https://cuelang.org/:splat 301!
 /docs/tutorials/tour/packages       /docs/tour/packages/ 301!
 /s/slack                            https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE 302!
 /s/discord                          https://discord.gg/CBUzN6CrRa 302!
+/e/v0.11-list-arithmetic            /cl/1200221 302!

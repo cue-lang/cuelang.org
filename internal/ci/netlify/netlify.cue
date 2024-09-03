@@ -183,6 +183,9 @@ config: #config & {
 		}, {
 			from: "/s/discord"
 			to:   "https://discord.gg/CBUzN6CrRa"
+		}, {
+			from: "/e/v0.11-list-arithmetic"
+			to:   "/cl/1200221"
 		}]
 }
 
