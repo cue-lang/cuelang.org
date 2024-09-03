@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2835abb1_ade606c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T09:05:43Z",
+      "side": 1,
+      "message": "Looks good, but this does point to the configuration and docs for `cmd/cue` being more structured and the source of truth living in the main repo. But that\u0027s not for now.",
+      "revId": "8ac1ea5588da95bca98055f10caaeab1bd9050e5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
