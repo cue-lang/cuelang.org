@@ -70,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cf08593_647ee542",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "391d4c07_2ffb45f0",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67341b1e_94206082",
@@ -83,6 +101,24 @@
       "writtenOn": "2024-09-03T06:39:45Z",
       "side": 1,
       "message": "I\u0027m not a fan of the columns :) It just makes the page so busy.\n\nI think having one code block followed by another (see comment about promoting the solution) is fine.\n\nOr else a top-left and top-right with broken.cue and working.cue respectively.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e92b3e6_5a321ff3",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67341b1e_94206082",
       "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -104,6 +140,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2d6010b_90a8cf54",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21c99651_14e1428a",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "379a3a47_104cd70a",
@@ -117,6 +171,24 @@
       "writtenOn": "2024-09-03T06:39:45Z",
       "side": 1,
       "message": "I would put this further down. It sitting above the answer to \"how do I fix this\" doesn\u0027t feel right.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "243d6fd0_76c0f8ec",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "379a3a47_104cd70a",
       "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -138,6 +210,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab4181e2_45b2b21b",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7291c898_3bae68f1",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97823a64_8acd0803",
@@ -151,6 +241,24 @@
       "writtenOn": "2024-09-03T06:39:45Z",
       "side": 1,
       "message": "Ditto: move down the page, but relative ordering fine.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0d9ce18_127e3887",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97823a64_8acd0803",
       "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -172,6 +280,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd1e85a1_ccfeb420",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45c3bf15_25b85285",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d578da7c_9df5ab0b",
@@ -185,6 +311,24 @@
       "writtenOn": "2024-09-03T08:25:00Z",
       "side": 1,
       "message": "This question should be moved up to be the second question to my mind, after \"What’s being removed, and from where?\"",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42e1da0f_3b000dee",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "It now flows best in position 3, after:\n\n- what\u0027s being removed?\n- Is my CUE affected by this change?",
+      "parentUuid": "d578da7c_9df5ab0b",
       "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -206,6 +350,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06e759fd_f1bbd1bc",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1baa9f8d_a815bc07",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95cfbf04_d30b28fb",
@@ -219,6 +381,24 @@
       "writtenOn": "2024-09-03T08:25:00Z",
       "side": 1,
       "message": "In the case that `cue fix` didn\u0027t work, we need to tell people what to do. And show them via an example please.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20949149_c06e6351",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-03T12:47:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95cfbf04_d30b28fb",
       "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
