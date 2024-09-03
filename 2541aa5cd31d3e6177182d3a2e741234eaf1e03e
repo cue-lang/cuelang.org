@@ -16,6 +16,142 @@
       "message": "PTAL. I think there\u0027s a tricky sequencing issue if this doc needs to be available before the first 0.11 alpha is released, and yet the doc still needs to refer to that (not yet released) version without quite a few faked-up command outputs.\n\nHowever, making a quick update to this doc *after* the alpha is released feels like the easier route to me - let me know if it\u0027s not an option, or if you\u0027d like to discuss.",
       "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "222fa59e_dedcc34e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "Some WIP thoughts.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67341b1e_94206082",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of the columns :) It just makes the page so busy.\n\nI think having one code block followed by another (see comment about promoting the solution) is fine.\n\nOr else a top-left and top-right with broken.cue and working.cue respectively.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21c99651_14e1428a",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "I wouldn\u0027t bother with this to be honest. Instead, I would use this space to demonstrate what the answer is. The answer is currently buried further down the page.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "379a3a47_104cd70a",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "I would put this further down. It sitting above the answer to \"how do I fix this\" doesn\u0027t feel right.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7291c898_3bae68f1",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "I would also move this down the page, but relative ordering with respect to the previous heading is fine. \n\nI would also de-emphasise this bit and perhaps just include the commit message as code? The current formatting causes this to dominate the page.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97823a64_8acd0803",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "Ditto: move down the page, but relative ordering fine.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45c3bf15_25b85285",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "Isn\u0027t the easiest way to determine if you are affected to simply check if your code evaluates? \n\nModulo my question/comment in https://review.gerrithub.io/c/cue-lang/cue/+/1200221/5//COMMIT_MSG#22, the user will simply not be able to do anything other than fix their code.\n\nI would look to simplify this section considerably. \"If you get this error, then you are affected. Run `cue fix` to try and fix automatically.\" Installing alternative versions etc is a bit protracted and unnecessary to my mind.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1baa9f8d_a815bc07",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:39:45Z",
+      "side": 1,
+      "message": "Could simply use the trick we have done elsewhere of having an \"upload\" check the contents? I always find a buried `cat` rather much harder to read, and we lose the benefit of seeing what `cue fix` has done.",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
