@@ -25,6 +25,8 @@ import (
 )
 
 workflows: trybot: _repo.bashWorkflow & {
+	name: _repo.trybot.name
+
 	on: {
 		push: {
 			branches: list.Concat([[_repo.testDefaultBranch], _repo.protectedBranchPatterns]) // do not run PR branches
@@ -88,16 +90,16 @@ workflows: trybot: _repo.bashWorkflow & {
 					"""
 			},
 
-			_repo.earlyChecks,
-
 			for v in _installDockerMacOS {v},
 
 			_installMacOSUtils,
 			_setupBuildx,
 			_installNode,
-			_installGo,
+			for v in _installGo {v},
 			_installHugoLinux,
 			_installHugoMacOS,
+
+			_repo.earlyChecks,
 
 			// If the commit under test contains the trailer
 			// Preprocessor-No-Write-Cache: true, then set the
@@ -276,7 +278,8 @@ _installNode: json.#step & {
 }
 
 _installGo: _repo.installGo & {
-	with: "go-version": _repo.goVersion
+	#setupGo: with: "go-version": _repo.goVersion
+	_
 }
 
 _installHugoLinux: _linuxStep & {
@@ -403,7 +406,7 @@ _netlifyDeploy: json.#step & {
 
 // _setupGoActionsCaches is shared between trybot and update_tip.
 _setupGoActionsCaches: _repo.setupGoActionsCaches & {
-	#goVersion: _installGo.with."go-version"
+	#goVersion: _installGo.#setupGo.with."go-version"
 
 	// Unfortunate that we need to hardcode here. Ideally we would be able to derive
 	// the OS from the runner. i.e. from _linuxWorkflow somehow.
