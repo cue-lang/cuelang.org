@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "391d4c07_2ffb45f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-03T06:41:48Z",
+      "side": 1,
+      "message": "\u003e PTAL. I think there\u0027s a tricky sequencing issue if this doc needs to be available \nbefore the first 0.11 alpha is released, and yet the doc still needs to refer to that (not yet released) version without quite a few faked-up command outputs.\n\nThere is no issue here to my mind. This doc can be merged ahead of the first alpha, as the only doc depending on pre-release (which can be a tip pseudo version). Then we we release the alpha, we update the prerelease version to the alpha.",
+      "parentUuid": "5b793e73_c266a3db",
+      "revId": "2541aa5cd31d3e6177182d3a2e741234eaf1e03e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "67341b1e_94206082",
         "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
         "patchSetId": 7
