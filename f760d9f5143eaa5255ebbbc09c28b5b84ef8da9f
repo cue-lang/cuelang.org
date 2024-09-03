@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7468e07_aa5789fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "SGTM but I think this page should be about half as long as it currently is. Some ideas below.",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f3a975d_439cf538",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "nit: I think this word is unnecessary",
+      "range": {
+        "startLine": 11,
+        "startChar": 36,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23558f1d_de456934",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "v0.10.0-alpha.1",
+      "range": {
+        "startLine": 51,
+        "startChar": 19,
+        "endLine": 51,
+        "endChar": 24
+      },
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08951369_918d09e5",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "personally I would remove this paragraph - the next section repeats basically the same.",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac98a5e5_3e321b16",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "nit: we don\u0027t use `()` when referencing funcs or APIs, e.g. in Go, godoc links are `[foo.Bar]` and not `[foo.Bar()]`.\n\n(here and elsewhere)",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21ad4128_bbed4ba9",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "isn\u0027t this repeating what you just said above?",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a648a4e_2a2d2c90",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "personally I think this section and the next section are way too long - we don\u0027t need to go into details about how `cue fix` is pretty basic now and won\u0027t resolve all cases. You can basically just say:\n\n* Run `cue vet` to see if you are affected\n* Run `cue fix` if you are affected\n* Fix the code yourself as shown above if any errors remain, as `cue fix` is a bit simple today\n\nI would even remove the sections about running `cue vet` to see if a user is affected. If they are here, it\u0027s because they followed the link from an error message, so they _are affected_.\n\nIf we make this FAQ page fairly long, the truth is that most people won\u0027t read it. It needs to expand a bit on the error message, but it doesn\u0027t need to be this deep.",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f7a2d14_a64f8e9b",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-03T13:23:00Z",
+      "side": 1,
+      "message": "isn\u0027t this (short) section redundant with what you\u0027ve already said before?",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
