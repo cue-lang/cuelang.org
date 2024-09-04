@@ -15,7 +15,7 @@
 package ci
 
 import (
-	"encoding/yaml"
+	"encoding/json"
 	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/base"
@@ -27,38 +27,63 @@ import (
 // #writefs mirrors the type of the arguments expected by
 // internal/cmd/writefs
 #writefs: {
-	Remove: [...string]
-	Create: [string]: {
-		Type:     "symlink" | *"file"
-		Contents: *"" | string
+	// Tool is the name of the tool that generated the files declared in Create
+	Tool!: string
+
+	// Remove is the set of globs of filepaths to remove prior to Create
+	Remove?: [...string]
+
+	// Create is the set of files to create.
+	Create?: [filepath=string]: {
+		Type:     "symlink"
+		Contents: string
+	} | *{
+		Type: "file"
+
+		// In case filepath has an extension known to CUE (and writefs), the
+		// concrete CUE value of Contents can be of any type. Otherwise, Contents
+		// must be a string.
+		Contents: _
 	}
 }
 
 fs: #writefs & {
+	Tool: "internal/ci/ci_tool.cue"
+
 	Remove: [
 		"../../.github/workflows/*.yaml",
 	]
 
 	Create: {
-		[_]: {
-			// TODO: do not hardcode this to ci_tool
-			let donotedit = base.doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
-			_res:     string
-			Contents: "# \(donotedit)\n\n\(strings.TrimSpace(_res))\n"
+		let donotedit = base.doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
+
+		// GitHub workflows
+		let concreteWorkflows = json.Unmarshal(json.Marshal(github.workflows))
+		for _name, _workflow in concreteWorkflows {
+			"../../.github/workflows/\(_name)\(base.workflowFileExtension)": Contents: _workflow
 		}
-		for _name, _workflow in github.workflows {
-			"../../.github/workflows/\(_name)\(base.workflowFileExtension)": {
-				_res: yaml.Marshal(_workflow)
-			}
-		}
-		"../../codereview.cfg": {
-			_res: base.toCodeReviewCfg & {#input: repo.codeReview, _}
-		}
-		"../../netlify.toml": {
-			_res: _netlify.#toToml & {#input: _netlify.config, _}
-		}
+
+		// Netlify config
+		"../../netlify.toml": Contents: _netlify.config
+
 		"../../hugo/layouts/index.redir": {
-			_res: _netlify.#toRedirects & {#input: _netlify.config, _}
+			let contents = _netlify.#toRedirects & {#input: _netlify.config, _}
+			Contents: """
+			# \(donotedit)
+
+			\(strings.TrimSpace(contents))
+
+			"""
+		}
+
+		"../../codereview.cfg": {
+			let contents = base.toCodeReviewCfg & {#input: repo.codeReview, _}
+			Contents: """
+			# \(donotedit)
+
+			\(strings.TrimSpace(contents))
+
+			"""
 		}
 	}
 }
