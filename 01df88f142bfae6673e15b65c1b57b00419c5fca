@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abde9144_39fc01b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T07:44:08Z",
+      "side": 1,
+      "message": "SGTM assuming it gets updated with the CI changes",
+      "revId": "01df88f142bfae6673e15b65c1b57b00419c5fca",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
