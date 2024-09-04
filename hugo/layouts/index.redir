@@ -17,7 +17,7 @@ https://cue.netlify.com/* https://cuelang.org/:splat 301!
 {{ end -}}
 {{- end }}
 
-# Redirects configured in internal/ci/netlify/netlify.cue::config.redirects
+# Redirects configured in internal/ci/netlify.redirects
 /cl/*                               https://review.gerrithub.io/c/:splat 302!
 /issue/*                            https://github.com/cue-lang/cue/issues/:splat 302!
 /issues/*                           https://github.com/cue-lang/cue/issues/:splat 302!
