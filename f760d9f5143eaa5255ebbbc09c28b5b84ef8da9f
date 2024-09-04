@@ -58,6 +58,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfa97119_dca190a3",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T13:07:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f3a975d_439cf538",
+      "range": {
+        "startLine": 11,
+        "startChar": 36,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23558f1d_de456934",
@@ -71,6 +95,30 @@
       "writtenOn": "2024-09-03T13:23:00Z",
       "side": 1,
       "message": "v0.10.0-alpha.1",
+      "range": {
+        "startLine": 51,
+        "startChar": 19,
+        "endLine": 51,
+        "endChar": 24
+      },
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7b5e4cd_9fbc2f2c",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T13:07:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23558f1d_de456934",
       "range": {
         "startLine": 51,
         "startChar": 19,
@@ -98,6 +146,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce262bb2_a2d856ac",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T13:07:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08951369_918d09e5",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac98a5e5_3e321b16",
@@ -115,6 +181,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "690f4024_837dbd16",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T13:07:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac98a5e5_3e321b16",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21ad4128_bbed4ba9",
@@ -128,6 +212,24 @@
       "writtenOn": "2024-09-03T13:23:00Z",
       "side": 1,
       "message": "isn\u0027t this repeating what you just said above?",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87c7cd26_b8403abd",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T13:07:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21ad4128_bbed4ba9",
       "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -151,6 +253,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9dd640e9_19270ea5",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T13:07:48Z",
+      "side": 1,
+      "message": "I\u0027ve made the page shorter, in line with our discussions elsewhere, targeting it at the consumer who arrived at the page from a cmd/cue error message.\n\nI can make it even shorter by removing any of the last few questions. Let me know if any feel unhelpful or redundant.",
+      "parentUuid": "9a648a4e_2a2d2c90",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3f7a2d14_a64f8e9b",
         "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
         "patchSetId": 11
@@ -162,6 +282,24 @@
       "writtenOn": "2024-09-03T13:23:00Z",
       "side": 1,
       "message": "isn\u0027t this (short) section redundant with what you\u0027ve already said before?",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26edecd8_3b303c27",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T13:07:48Z",
+      "side": 1,
+      "message": "I wanted to make it absolutely clear how to identify the \"affected\" versions. I\u0027m happy to remove this if you feel the new, more \"just get me to a place where I can fix my CUE\" flow is negatively affected by its presence.",
+      "parentUuid": "3f7a2d14_a64f8e9b",
       "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
