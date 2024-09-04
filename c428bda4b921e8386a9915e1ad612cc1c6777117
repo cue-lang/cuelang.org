@@ -143,6 +143,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bd4706b_d9906f5b",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T19:46:57Z",
+      "side": 1,
+      "message": "You\u0027re right - I\u0027ve removed all this text. I was still holding on to the duplication in order to provide a more complete experience for the user who only reads that one question/answer, and not focusing on the intended reader\u0027s journey of consuming the entire page. Good call.",
+      "parentUuid": "52a466be_398df9b7",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 13
+      },
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "390d2ac6_472e8d8d",
