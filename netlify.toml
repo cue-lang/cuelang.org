@@ -1,21 +1,221 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
 [build]
-  functions = "functions"
-  publish = "_public"
-  command = "bash _scripts/build.bash"
-  ignore = "bash _scripts/ignoreBuild.bash"
+command = 'bash _scripts/build.bash'
+functions = 'functions'
+ignore = 'bash _scripts/ignoreBuild.bash'
+publish = '_public'
 
 [build.environment]
-  GO_VERSION = "1.23.0"
-  HUGO_ENV = "production"
-  HUGO_VERSION = "0.128.2"
-  NODE_VERSION = "20.9.0"
+GO_VERSION = '1.23.0'
+HUGO_ENV = 'production'
+HUGO_VERSION = '0.128.2'
+NODE_VERSION = '20.9.0'
 
 [context]
 [context.alpha]
-  command = "bash _scripts/build.bash --baseURL https://alpha.cuelang.org"
+command = 'bash _scripts/build.bash --baseURL https://alpha.cuelang.org'
+
 [context.deploy-preview]
-  command = "bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL"
+command = 'bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL'
+
 [context.production]
-  command = "bash _scripts/build.bash --baseURL https://cuelang.org"
+command = 'bash _scripts/build.bash --baseURL https://cuelang.org'
+
+[[redirects]]
+force = true
+from = '/cl/*'
+status = 302
+to = 'https://review.gerrithub.io/c/:splat'
+
+[[redirects]]
+force = true
+from = '/issue/*'
+status = 302
+to = 'https://github.com/cue-lang/cue/issues/:splat'
+
+[[redirects]]
+force = true
+from = '/issues/*'
+status = 302
+to = 'https://github.com/cue-lang/cue/issues/:splat'
+
+[[redirects]]
+force = true
+from = '/discussion/*'
+status = 302
+to = 'https://github.com/cue-lang/cue/discussions/:splat'
+
+[[redirects]]
+force = true
+from = '/discussions/*'
+status = 302
+to = 'https://github.com/cue-lang/cue/discussions/:splat'
+
+[[redirects]]
+force = true
+from = '/projects/'
+status = 302
+to = 'https://github.com/orgs/cue-lang/projects?query=is%3Aopen+sort%3Acreated-desc+is%3Apublic'
+
+[[redirects]]
+force = true
+from = '/project/*'
+status = 302
+to = 'https://github.com/orgs/cue-lang/projects/:splat'
+
+[[redirects]]
+force = true
+from = '/projects/*'
+status = 302
+to = 'https://github.com/orgs/cue-lang/projects/:splat'
+
+[[redirects]]
+force = true
+from = '/releases/*'
+status = 302
+to = 'https://github.com/cue-lang/cue/releases/:splat'
+
+[[redirects]]
+force = true
+from = '/s/community-calendar'
+status = 302
+to = 'https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20'
+
+[[redirects]]
+force = true
+from = '/docs/tour/basics/'
+status = 302
+to = '/docs/tour/basics/json-superset/'
+
+[[redirects]]
+force = true
+from = '/docs/tour/types/'
+status = 302
+to = '/docs/tour/types/types/'
+
+[[redirects]]
+force = true
+from = '/docs/tour/references/'
+status = 302
+to = '/docs/tour/references/scopes/'
+
+[[redirects]]
+force = true
+from = '/docs/tour/expressions/'
+status = 302
+to = '/docs/tour/expressions/operators/'
+
+[[redirects]]
+force = true
+from = '/docs/tour/packages/'
+status = 302
+to = '/docs/tour/packages/packages/'
+
+[[redirects]]
+force = true
+from = '/docs/usecases*'
+status = 301
+to = '/docs/concept/popular-guides/#common-use-cases'
+
+[[redirects]]
+force = true
+from = '/docs/integrations*'
+status = 302
+to = '/docs/integration/'
+
+[[redirects]]
+force = true
+from = '/docs/concepts/intro/'
+status = 302
+to = '/docs/concept/the-logic-of-cue/'
+
+[[redirects]]
+force = true
+from = '/docs/concepts*'
+status = 301
+to = '/docs/concept/'
+
+[[redirects]]
+force = true
+from = '/docs/references*'
+status = 301
+to = '/docs/reference/'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/intro/*'
+status = 301
+to = '/docs/tour/basics/:splat'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/intro'
+status = 301
+to = '/docs/tour/basics/'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/types/*'
+status = 301
+to = '/docs/tour/types/:splat'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/types'
+status = 301
+to = '/docs/tour/types/'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/references/*'
+status = 301
+to = '/docs/tour/references/:splat'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/references'
+status = 301
+to = '/docs/tour/references/'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/expressions/*'
+status = 301
+to = '/docs/tour/expressions/:splat'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/expressions'
+status = 301
+to = '/docs/tour/expressions/'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/packages/*'
+status = 301
+to = '/docs/tour/packages/:splat'
+
+[[redirects]]
+force = true
+from = '/docs/tutorials/tour/packages'
+status = 301
+to = '/docs/tour/packages/'
+
+[[redirects]]
+force = true
+from = '/s/slack'
+status = 302
+to = 'https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE'
+
+[[redirects]]
+force = true
+from = '/s/discord'
+status = 302
+to = 'https://discord.gg/CBUzN6CrRa'
+
+[[redirects]]
+force = true
+from = '/e/v0.11-list-arithmetic'
+status = 302
+to = '/docs/concept/faq/removing-list-arithmetic-operators-v0.11/'
