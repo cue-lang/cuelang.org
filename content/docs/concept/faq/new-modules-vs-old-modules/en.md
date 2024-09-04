@@ -28,10 +28,9 @@ To address the shortcomings of the old modules implementation, we went through
 a number of design and proposal iterations. These culminated in the
 {{<issue 2939>}}modules proposal v3{{</issue>}}, which was accompanied by an
 experimental implementation in pre-releases of the v0.8.x series from version
-[`v0.8.0-alpha.1`](/releases/v0.8.0-alpha.1) in February 2024.
-Old modules remained the default behaviour at this time, but the experimental
-implementation could be enabled by setting the
-[environment variable `CUE_EXPERIMENT=modules`]({{< relref "/docs/reference/command/cue-help-environment" >}}).
+`v0.8.0-alpha.1` in February 2024.  Old modules remained the default behaviour
+at this time, but the experimental implementation could be enabled by setting
+the environment variable `CUE_EXPERIMENT=modules`.
 
 In May 2024, after extensive testing and feedback from users, the modules
 proposal v3 was
@@ -39,19 +38,17 @@ proposal v3 was
 At this time we started referring to the experimental implementation that
 supported the v3 proposal as "new" modules, to reflect the change away from it
 being an experiment. The default behaviour was still that of old modules, with
-"new" modules being enabled using the same
-[environment variable]({{< relref "/docs/reference/command/cue-help-environment" >}})
-as before.
+"new" modules being enabled using the same `CUE_EXPERIMENT=modules` environment
+variable as before.
 
-At the start of June 2024 CUE [v0.9.0](/releases/v0.9.0) was released. It
-changed CUE's default behaviour - new modules were now enabled out of the box.
-This removed the need to enable them manually, but folks needing old
-modules in v0.9.0 or later could set
-[`CUE_EXPERIMENT=modules=0`]({{< relref "/docs/reference/command/cue-help-environment" >}})
-to revert to old modules behaviour.
+At the start of June 2024 CUE v0.9.0 was released. It changed CUE's default
+behaviour - new modules were now enabled out of the box.  This removed the need
+to enable them manually, but folks needing old modules in CUE v0.9.x or v0.10.x
+could set `CUE_EXPERIMENT=modules=0` to revert to the old behaviour.
 
-At some point in the future, support for old modules will be removed entirely,
-so we encourage you to explore and adopt them before then!
+The first pre-release for v0.11.0 dropped support for old modules: setting
+`CUE_EXPERIMENT=modules=0` causes an error with all CUE versions starting with
+`v0.11.0-alpha.1`.
 
 ## Modules? Where do I get started?
 
@@ -115,10 +112,7 @@ In some cases, the above suggestion to use `cue mod fix` to migrate the
 are using the CUE Go API and need to interpret older CUE code. There is now an
 `AcceptLegacyModules` field in the `cue/load.Config` struct that can direct the
 loader to fix the main module's `module.cue` file automatically without the
-need to change it on disk. It is also still possible to disable the modules
-experiment and revert to older modules resolution logic throughout by setting
-the environment variable `CUE_EXPERIMENT=modules=0`, although this option will
-be removed in time.
+need to change it on disk.
 
 ## Why do I need to specify a source to publish a module?
 
