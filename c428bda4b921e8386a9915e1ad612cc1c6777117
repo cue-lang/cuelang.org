@@ -48,6 +48,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "009551f2_a6561aa3",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T17:00:06Z",
+      "side": 1,
+      "message": "Oh my, I didn\u0027t know it worked this way! You\u0027re totally right.",
+      "parentUuid": "ace2c938_8adf8814",
+      "range": {
+        "startLine": 79,
+        "startChar": 44,
+        "endLine": 79,
+        "endChar": 56
+      },
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e86ed55a_86a5f562",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "Gerrit shows me that you\u0027ve highlighted 3 distinct sections with this comment:\n\n1. The reminder that the operators are valid when used outside a list context\n2. The proof that `cue fix` produced correctly-updated CUE\n3. The note that it can\u0027t help with all uses\n\nI agree that (2) can be omitted if we value that extra brevity more than we want to show the output (as that\u0027s the only place we demonstrate the output on the page), but I\u0027m not sure (1) and (3) should be removed. How strongly do you want to get rid of sections (1) and (3)?",
       "parentUuid": "e86ed55a_86a5f562",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 13
+      },
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52a466be_398df9b7",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T17:00:06Z",
+      "side": 1,
+      "message": "1 - the highlighted text says:\n\n\u003e Note that `cue fix` only updates CUE where the operators are used with lists. Using the operators to emit numbers, strings, or bytes remains valid CUE and should not be changed (as with fields `C`, `D`, and `E` in the above example).\n\nThis seems to directly repeat what you wrote earlier:\n\n\u003e The `*` and `+` operators continue to work as expected in all other situations,\nsuch as numeric arithmetic and string composition. They are **only** affected by this change if they are used with a list value on\ntheir left or right side.\n\n3 - the highligted text says:\n\n\u003e There are some uses of list arithmetic operators that `cue fix` can\u0027t help with.\nThe situations that require you to make manual changes are demonstrated in the\nnext section.\n\nWhy not just let the next section begin directly? It explains this edge case well, and its section title is a good transition.\n\nSo yes, personally I\u0027d delete both - but I won\u0027t hold up the CL over this.",
+      "parentUuid": "23335791_0d9d7d99",
       "range": {
         "startLine": 112,
         "startChar": 0,
