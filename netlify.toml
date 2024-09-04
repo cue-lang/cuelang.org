@@ -1,21 +1,23 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
 [build]
-  functions = "functions"
-  publish = "_public"
-  command = "bash _scripts/build.bash"
-  ignore = "bash _scripts/ignoreBuild.bash"
+command = 'bash _scripts/build.bash'
+functions = 'functions'
+ignore = 'bash _scripts/ignoreBuild.bash'
+publish = '_public'
 
 [build.environment]
-  GO_VERSION = "1.23.0"
-  HUGO_ENV = "production"
-  HUGO_VERSION = "0.128.2"
-  NODE_VERSION = "20.9.0"
+GO_VERSION = '1.23.0'
+HUGO_ENV = 'production'
+HUGO_VERSION = '0.128.2'
+NODE_VERSION = '20.9.0'
 
 [context]
 [context.alpha]
-  command = "bash _scripts/build.bash --baseURL https://alpha.cuelang.org"
+command = 'bash _scripts/build.bash --baseURL https://alpha.cuelang.org'
+
 [context.deploy-preview]
-  command = "bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL"
+command = 'bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL'
+
 [context.production]
-  command = "bash _scripts/build.bash --baseURL https://cuelang.org"
+command = 'bash _scripts/build.bash --baseURL https://cuelang.org'

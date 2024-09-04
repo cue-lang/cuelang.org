@@ -36,14 +36,13 @@ import (
 	}
 
 	context: [string]: #context
+}
 
-	redirects: [...{
-		from:   string
-		to:     string
-		status: int
-		force:  bool
-	}]
-
+#redirect: {
+	from:   string
+	to:     string
+	status: int
+	force:  bool
 }
 
 config: #config & {
@@ -63,9 +62,12 @@ config: #config & {
 	context: "deploy-preview": command:      "\(build.command) --baseURL $DEPLOY_PRIME_URL"
 	context: "\(repo.alphaBranch)": command: "\(build.command) --baseURL https://alpha.cuelang.org"
 	context: "production": command:          "\(build.command) --baseURL https://cuelang.org"
+}
 
-	redirects: [...{force: true, status: *302 | ( >=300 & <=308 )}]
-	redirects: [{
+redirects: [...#redirect]
+redirects: [...{force: true, status: *302 | ( >=300 & <=308 )}]
+redirects: [
+	{
 		from: "/cl/*"
 		to:   "https://review.gerrithub.io/c/:splat"
 	}, {
@@ -113,116 +115,87 @@ config: #config & {
 		from: "/docs/tour/packages/"
 		to:   "/docs/tour/packages/packages/"
 	},
-		// These old-site path globs deliberately don't include a trailing slash,
-		// so as to catch the slashless "/docs/foo" path by itself.
-		// They don't redirect to a specific page, but to the section index.
-		{
-			from:   "/docs/usecases*"
-			to:     "/docs/concept/popular-guides/#common-use-cases"
-			status: 301
-		}, {
-			from:   "/docs/integrations*"
-			to:     "/docs/integration/"
-			status: 302 // We'll reuse this path, later.
-		}, {
-			from: "/docs/concepts/intro/"
-			to:   "/docs/concept/the-logic-of-cue/"
-		}, {
-			from:   "/docs/concepts*"
-			to:     "/docs/concept/"
-			status: 301
-		}, {
-			from:   "/docs/references*"
-			to:     "/docs/reference/"
-			status: 301
-		},
-		// The old-site tour paths /do/ preserve trailing path elements.
-		{
-			from:   "/docs/tutorials/tour/intro/*"
-			to:     "/docs/tour/basics/:splat"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/intro"
-			to:     "/docs/tour/basics/"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/types/*"
-			to:     "/docs/tour/types/:splat"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/types"
-			to:     "/docs/tour/types/"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/references/*"
-			to:     "/docs/tour/references/:splat"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/references"
-			to:     "/docs/tour/references/"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/expressions/*"
-			to:     "/docs/tour/expressions/:splat"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/expressions"
-			to:     "/docs/tour/expressions/"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/packages/*"
-			to:     "/docs/tour/packages/:splat"
-			status: 301
-		}, {
-			from:   "/docs/tutorials/tour/packages"
-			to:     "/docs/tour/packages/"
-			status: 301
-		}, {
-			from: "/s/slack"
-			to:   "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
-		}, {
-			from: "/s/discord"
-			to:   "https://discord.gg/CBUzN6CrRa"
-		}, {
-			from: "/e/v0.11-list-arithmetic"
-			to:   "/docs/concept/faq/removing-list-arithmetic-operators-v0.11/"
-		}]
-}
-
-#toToml: {
-	#input: #config
-	let tmpl = """
-		{{with .build -}}
-		[build]
-		  functions = {{printf "%q" .functions}}
-		  publish = {{printf "%q" .publish}}
-		  command = {{printf "%q" .command}}
-		  ignore = {{printf "%q" .ignore}}
-
-		[build.environment]
-		{{- range $key, $value := .environment}}
-		  {{$key}} = {{printf "%q" $value -}}
-		{{end}}
-		{{- end}}
-
-		[context]
-		{{- range $context_name, $context_config := .context}}
-		[context.{{ $context_name }}]
-		{{- range $key, $value := $context_config}}
-		  {{$key}} = {{printf "%q" $value -}}
-		{{end}}
-		{{- end}}
-		"""
-
-	// TODO: move to encoding/toml when it exists. See cuelang.org/issue/68.
-	template.Execute(tmpl, #input)
-}
+	// These old-site path globs deliberately don't include a trailing slash,
+	// so as to catch the slashless "/docs/foo" path by itself.
+	// They don't redirect to a specific page, but to the section index.
+	{
+		from:   "/docs/usecases*"
+		to:     "/docs/concept/popular-guides/#common-use-cases"
+		status: 301
+	}, {
+		from:   "/docs/integrations*"
+		to:     "/docs/integration/"
+		status: 302 // We'll reuse this path, later.
+	}, {
+		from: "/docs/concepts/intro/"
+		to:   "/docs/concept/the-logic-of-cue/"
+	}, {
+		from:   "/docs/concepts*"
+		to:     "/docs/concept/"
+		status: 301
+	}, {
+		from:   "/docs/references*"
+		to:     "/docs/reference/"
+		status: 301
+	},
+	// The old-site tour paths /do/ preserve trailing path elements.
+	{
+		from:   "/docs/tutorials/tour/intro/*"
+		to:     "/docs/tour/basics/:splat"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/intro"
+		to:     "/docs/tour/basics/"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/types/*"
+		to:     "/docs/tour/types/:splat"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/types"
+		to:     "/docs/tour/types/"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/references/*"
+		to:     "/docs/tour/references/:splat"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/references"
+		to:     "/docs/tour/references/"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/expressions/*"
+		to:     "/docs/tour/expressions/:splat"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/expressions"
+		to:     "/docs/tour/expressions/"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/packages/*"
+		to:     "/docs/tour/packages/:splat"
+		status: 301
+	}, {
+		from:   "/docs/tutorials/tour/packages"
+		to:     "/docs/tour/packages/"
+		status: 301
+	}, {
+		from: "/s/slack"
+		to:   "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
+	}, {
+		from: "/s/discord"
+		to:   "https://discord.gg/CBUzN6CrRa"
+	}, {
+		from: "/e/v0.11-list-arithmetic"
+		to:   "/docs/concept/faq/removing-list-arithmetic-operators-v0.11/"
+	},
+]
 
 // This encodes server-side redirects in Netlify's _redirects file syntax:
 // https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file.
 // Test syntax in their plaground at https://play.netlify.com/redirects.
 #toRedirects: {
-	#input: #config
+	#input: [...#redirect]
 	let tmpl = """
 		# Golang vanity imports for cuelang.org.
 		# NB This MUST appear first, or "go get" commands will fail!
@@ -241,8 +214,8 @@ config: #config & {
 		{{ `{{ end -}}` }}
 		{{ `{{- end }}` }}
 
-		# Redirects configured in internal/ci/netlify/netlify.cue::config.redirects
-		{{- range .redirects}}
+		# Redirects configured in internal/ci/netlify.redirects
+		{{- range .}}
 		{{.from | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
 		{{- end}}
 		"""

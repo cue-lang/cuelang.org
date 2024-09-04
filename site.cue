@@ -112,6 +112,7 @@ let donotedit = base.doNotEditMessage & {#generatedBy: "site_tool.cue", _}
 // template is an io/fs.FS-like map of files that are templated
 // by site_tool.cue:gen for the working of cuelang.org
 template: ci.#writefs & {
+	Tool: "site_tool.cue"
 	Remove: [
 		// The generated artefacts from the CLI auto-generation. Do not remove
 		// the cache files, because otherwise on a Preprocessor-No-Write-Cache
@@ -238,78 +239,58 @@ template: ci.#writefs & {
 			"""#
 		}
 		"hugo/config/_default/params.toml": {
-			Contents: #"""
-			# \#(donotedit)
-
-			# Site Params
-
-			# Fallback Twitter card image (if not set on page)
-			images = ["img/social.png"]
-
-			# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-			github_repo = "https://github.com/cue-lang/cuelang.org"
-
-			# Google Custom Search Engine ID. Remove or comment out to disable search.
-			gcs_engine_id = "004591905419617723008:8rmik2a7xb3"
-
-			# Which logo to use in main header
-			logo = "svg/logo.svg"
-
-			# Add a site-wide notification-bar
-			# Contents allows for markdown, leave out the button if you don't want a button
-			[notification]
-			    type = 'cue-minor-release-\#(versions.cue.latest.majorDotMinor)'
-
-			    content = '**CUE \#(versions.cue.latest.majorDotMinor) is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\#(versions.cue.latest.majorDotMinor).0)'
-			    [notification.button]
-			        link = '/docs/introduction/installation/'
-			        icon = 'download'
-			        text = 'Install CUE'
-
-
-			# Tags
-			# The order of the tags in this file determines their relative positions
-			# on all rendered pages.
-			# Color can be one of: red, orange, green, pink, purple, lilac, blue, lavender
-
-			[[tags]]
-			name = "ecosystem"
-			color = "red"
-			[[tags]]
-			name = "encodings"
-			color = "green"
-			[[tags]]
-			name = "cue command"
-			color = "purple"
-			[[tags]]
-			name = "language"
-			color = "blue"
-			[[tags]]
-			name = "validation"
-			color = "lilac"
-			[[tags]]
-			name = "tooling"
-			color = "orange"
-			[[tags]]
-			name = "commented cue"
-			color = "pink"
-			[[tags]]
-			name = "user question"
-			color = "red"
-			[[tags]]
-			name = "modules"
-			color = "red"
-			[[tags]]
-			name = "go api"
-			color = "lavender"
-			[[tags]]
-			name = "java api"
-			color = "blue"
-			[[tags]]
-			name = "workflow command"
-			color = "blue"
-
-			"""#
+			Contents: {
+				images: ["img/social.png"]
+				github_repo:   "https://github.com/cue-lang/cuelang.org"
+				gcs_engine_id: "004591905419617723008:8rmik2a7xb3"
+				logo:          "svg/logo.svg"
+				notification: {
+					type: "cue-minor-release-\(versions.cue.latest.majorDotMinor)"
+					button: {
+						link: "/docs/introduction/installation/"
+						icon: "download"
+						text: "Install CUE"
+					}
+					content: "**CUE \(versions.cue.latest.majorDotMinor) is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\(versions.cue.latest.majorDotMinor).0)"
+				}
+				tags: [{
+					name:  "ecosystem"
+					color: "red"
+				}, {
+					name:  "encodings"
+					color: "green"
+				}, {
+					name:  "cue command"
+					color: "purple"
+				}, {
+					name:  "language"
+					color: "blue"
+				}, {
+					name:  "validation"
+					color: "lilac"
+				}, {
+					name:  "tooling"
+					color: "orange"
+				}, {
+					name:  "commented cue"
+					color: "pink"
+				}, {
+					name:  "user question"
+					color: "red"
+				}, {
+					name:  "modules"
+					color: "red"
+				}, {
+					name:  "go api"
+					color: "lavender"
+				}, {
+					name:  "java api"
+					color: "blue"
+				}, {
+					name:  "workflow command"
+					color: "blue"
+				}]
+			}
 		}
 		"playground/src/config/gen_cuelang_org_go_version.ts": {
 			Contents: #"""
