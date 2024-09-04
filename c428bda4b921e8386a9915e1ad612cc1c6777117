@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ace2c938_8adf8814",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T16:50:05Z",
+      "side": 1,
+      "message": "Oh - I had followed [the command\u0027s help text](https://cuelang.org/docs/reference/command/cue-help-fix/):\n\n    Without any packages, fix applies to all files within a module.\n\n... which does appear to be the case, except (as you can see from my update in cue-lang/cue#3438) with CUE files that aren\u0027t part of a package - which are the files we want to demonstrate with, in this guide, for brevity\u0027s sake.\n\nI\u0027ve refined the language away from the ambiguous \"default\".",
+      "parentUuid": "a9e6330f_0c53ae33",
+      "range": {
+        "startLine": 79,
+        "startChar": 44,
+        "endLine": 79,
+        "endChar": 56
+      },
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e86ed55a_86a5f562",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "23335791_0d9d7d99",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T16:50:05Z",
+      "side": 1,
+      "message": "Gerrit shows me that you\u0027ve highlighted 3 distinct sections with this comment:\n\n1. The reminder that the operators are valid when used outside a list context\n2. The proof that `cue fix` produced correctly-updated CUE\n3. The note that it can\u0027t help with all uses\n\nI agree that (2) can be omitted if we value that extra brevity more than we want to show the output (as that\u0027s the only place we demonstrate the output on the page), but I\u0027m not sure (1) and (3) should be removed. How strongly do you want to get rid of sections (1) and (3)?",
+      "parentUuid": "e86ed55a_86a5f562",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 13
+      },
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "390d2ac6_472e8d8d",
         "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
         "patchSetId": 14
@@ -60,6 +108,24 @@
       "writtenOn": "2024-09-04T15:49:40Z",
       "side": 1,
       "message": "I\u0027d add \"for the time being\" as this is only a limitation of the current code.",
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "444f7d1e_386fec55",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-04T16:50:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "390d2ac6_472e8d8d",
       "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
