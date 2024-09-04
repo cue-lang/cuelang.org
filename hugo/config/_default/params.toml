@@ -1,69 +1,61 @@
-# Code generated site_tool.cue; DO NOT EDIT.
+gcs_engine_id = '004591905419617723008:8rmik2a7xb3'
+github_repo = 'https://github.com/cue-lang/cuelang.org'
+images = ['img/social.png']
+logo = 'svg/logo.svg'
 
-# Site Params
-
-# Fallback Twitter card image (if not set on page)
-images = ["img/social.png"]
-
-# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/cue-lang/cuelang.org"
-
-# Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "004591905419617723008:8rmik2a7xb3"
-
-# Which logo to use in main header
-logo = "svg/logo.svg"
-
-# Add a site-wide notification-bar
-# Contents allows for markdown, leave out the button if you don't want a button
 [notification]
-    type = 'cue-minor-release-v0.10'
+content = '**CUE v0.10 is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/v0.10.0)'
+type = 'cue-minor-release-v0.10'
 
-    content = '**CUE v0.10 is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/v0.10.0)'
-    [notification.button]
-        link = '/docs/introduction/installation/'
-        icon = 'download'
-        text = 'Install CUE'
-
-
-# Tags
-# The order of the tags in this file determines their relative positions
-# on all rendered pages.
-# Color can be one of: red, orange, green, pink, purple, lilac, blue, lavender
+[notification.button]
+icon = 'download'
+link = '/docs/introduction/installation/'
+text = 'Install CUE'
 
 [[tags]]
-name = "ecosystem"
-color = "red"
+color = 'red'
+name = 'ecosystem'
+
 [[tags]]
-name = "encodings"
-color = "green"
+color = 'green'
+name = 'encodings'
+
 [[tags]]
-name = "cue command"
-color = "purple"
+color = 'purple'
+name = 'cue command'
+
 [[tags]]
-name = "language"
-color = "blue"
+color = 'blue'
+name = 'language'
+
 [[tags]]
-name = "validation"
-color = "lilac"
+color = 'lilac'
+name = 'validation'
+
 [[tags]]
-name = "tooling"
-color = "orange"
+color = 'orange'
+name = 'tooling'
+
 [[tags]]
-name = "commented cue"
-color = "pink"
+color = 'pink'
+name = 'commented cue'
+
 [[tags]]
-name = "user question"
-color = "red"
+color = 'red'
+name = 'user question'
+
 [[tags]]
-name = "modules"
-color = "red"
+color = 'red'
+name = 'modules'
+
 [[tags]]
-name = "go api"
-color = "lavender"
+color = 'lavender'
+name = 'go api'
+
 [[tags]]
-name = "java api"
-color = "blue"
+color = 'blue'
+name = 'java api'
+
 [[tags]]
-name = "workflow command"
-color = "blue"
+color = 'blue'
+name = 'workflow command'
