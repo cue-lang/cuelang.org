@@ -271,6 +271,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8908c2f_03740a98",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T15:49:40Z",
+      "side": 1,
+      "message": "The length is much better now, thank you. The only last thought I have is that most of \"Why are list arithmetic operators being removed?\" and \"Why were list arithmetic operators supported until now?\" apply to breaking language changes in general, so it could go into a separate page that summarizes our approach to them and how we phase deprecations and deletions. We don\u0027t have such a page today though, so perhaps leave a TODO to move that content at a later time?",
+      "parentUuid": "9dd640e9_19270ea5",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3f7a2d14_a64f8e9b",
         "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
         "patchSetId": 11
@@ -300,6 +318,24 @@
       "side": 1,
       "message": "I wanted to make it absolutely clear how to identify the \"affected\" versions. I\u0027m happy to remove this if you feel the new, more \"just get me to a place where I can fix my CUE\" flow is negatively affected by its presence.",
       "parentUuid": "3f7a2d14_a64f8e9b",
+      "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36ee8506_2948def5",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T15:49:40Z",
+      "side": 1,
+      "message": "Yes, I would remove this. Anyone running pre-releases will be looking at the release notes, which will mention this stuff anyway, and the majority of users only run stable versions - in which case \"0.11 or later\" is already obvious enough.",
+      "parentUuid": "26edecd8_3b303c27",
       "revId": "f760d9f5143eaa5255ebbbc09c28b5b84ef8da9f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

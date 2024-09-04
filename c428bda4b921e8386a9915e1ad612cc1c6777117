@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9e6330f_0c53ae33",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T15:49:40Z",
+      "side": 1,
+      "message": "what do you mean by this? the entire module is fixed only with `cue fix ./...`, which I wouldn\u0027t really say is the default. If anything, the default might imply `cue fix`, which just means \"the current package\".",
+      "range": {
+        "startLine": 79,
+        "startChar": 44,
+        "endLine": 79,
+        "endChar": 56
+      },
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e86ed55a_86a5f562",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T15:49:40Z",
+      "side": 1,
+      "message": "Personally I\u0027d remove this chunk - it overlaps quite a lot with the text above and below, and doesn\u0027t add anything of its own beyond proving with `cue vet` that the fixed code works, which isn\u0027t crucial to the reader.",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 13
+      },
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "390d2ac6_472e8d8d",
+        "filename": "content/docs/concept/faq/removing-list-arithmetic-operators-v0.11/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-04T15:49:40Z",
+      "side": 1,
+      "message": "I\u0027d add \"for the time being\" as this is only a limitation of the current code.",
+      "revId": "c428bda4b921e8386a9915e1ad612cc1c6777117",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
