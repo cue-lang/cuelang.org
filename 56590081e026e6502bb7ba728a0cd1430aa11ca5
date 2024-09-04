@@ -16,6 +16,24 @@
       "message": "this is another reason why setting GOTOOLCHAIN\u003dlocal as a global env var in the workflow/job would be better - it would have affected the early checks here, so the `go run` would have likely complained that the go.mod specifies a version that\u0027s too new compared to what is installed before setup-go has run.",
       "revId": "56590081e026e6502bb7ba728a0cd1430aa11ca5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9efa192f_66e25bff",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-04T09:18:59Z",
+      "side": 0,
+      "message": "Resolved per discussion in https://review.gerrithub.io/c/cue-lang/cue/+/1200599",
+      "parentUuid": "39d63908_357bfab8",
+      "revId": "56590081e026e6502bb7ba728a0cd1430aa11ca5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
