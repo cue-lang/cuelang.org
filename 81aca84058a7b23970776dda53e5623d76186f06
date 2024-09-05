@@ -101,6 +101,23 @@
       "message": "I\u0027d suggest avoiding regular fields in these definitions, as it\u0027s not generally considered good practice, and using either required or optional fields corresponds better to the way that `matchN` is usually used in practice.",
       "revId": "81aca84058a7b23970776dda53e5623d76186f06",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cf0a73f_02feae17",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-09-05T11:59:53Z",
+      "side": 1,
+      "message": "Paul suggested (and I agree) that we should have a short section at the bottom explaining that non-exported fields (private fields and definitions) are omitted when considering matching.\n\nFor example, this passes:\n\n```\nx: _foo: 1\nx: matchN(1, [{_foo: 2}])\n```\n\nAlso worth mentioning that this may well change in the future.",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
