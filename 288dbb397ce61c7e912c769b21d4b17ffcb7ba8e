@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "963422e5_044f85bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-05T11:05:40Z",
+      "side": 1,
+      "message": "Very neat. This dogfooding also means that TOML keeping the ordering and producing comments would benefit us directly, so we can ourselves be the first testers of the features once they land.",
+      "revId": "288dbb397ce61c7e912c769b21d4b17ffcb7ba8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1665ce2_c688c3a1",
+        "filename": "internal/ci/ci.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-05T11:05:40Z",
+      "side": 1,
+      "message": "I wonder if `{} | string` would be more faithful, as realistically, we will only ever json/toml/yaml encode a struct.",
+      "revId": "288dbb397ce61c7e912c769b21d4b17ffcb7ba8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d347fc92_f59da249",
+        "filename": "internal/cmd/writefs/main.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-05T11:05:40Z",
+      "side": 1,
+      "message": "duplicate line?",
+      "revId": "288dbb397ce61c7e912c769b21d4b17ffcb7ba8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
