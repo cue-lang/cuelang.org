@@ -36,7 +36,7 @@ import (
 
 fs: #writefs & {
 	Remove: [
-		"../../.github/workflows/*.yml",
+		"../../.github/workflows/*.yaml",
 	]
 
 	Create: {
@@ -47,7 +47,7 @@ fs: #writefs & {
 			Contents: "# \(donotedit)\n\n\(strings.TrimSpace(_res))\n"
 		}
 		for _name, _workflow in github.workflows {
-			"../../.github/workflows/\(_name).yml": {
+			"../../.github/workflows/\(_name).yaml": {
 				_res: yaml.Marshal(_workflow)
 			}
 		}
