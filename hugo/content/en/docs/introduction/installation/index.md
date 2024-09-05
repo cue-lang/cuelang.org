@@ -26,7 +26,7 @@ that's appropriate for your operating system.
 On Linux, Microsoft Windows, and macOS, the `cue` command can be downloaded from the
 [official CUE releases](https://github.com/cue-lang/cue/releases/).
 
-These releases include *prereleases*, which are cutting-edge versions of `cue`
+These releases include *pre-releases*, which are cutting-edge versions of `cue`
 made available to help expose bugs and flush out unintended behaviours.
 
 #### Install using Homebrew
@@ -57,16 +57,32 @@ $ docker pull cuelang/cue:latest
 
 On
 [platforms supported by Go](https://go.dev/dl/#stable),
-`cue` can be installed from source using any of its released versions.
+`cue` can be installed from source using any of its
+release, pre-release, or as-yet-unreleased versions.
+Installing from source requires that you already have
+[Go](https://go.dev)
+installed and available.
 
-For example, to fetch the latest version:
+For example, to fetch the `latest` version:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQGxhdGVzdA==" }
 $ go install cuelang.org/go/cmd/cue@latest
 ...
 ```
 
-This method requires that you already have [Go](https://go.dev) installed.
+[This page](https://pkg.go.dev/cuelang.org/go?tab=versions)
+lists the installable releases and pre-releases that you can specify instead of
+`latest`.
+
+You can also install the tip version of `cue` by specifying `master`:
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQG1hc3Rlcg==" }
+$ go install cuelang.org/go/cmd/cue@master
+...
+```
+
+The capabilities of the tip version change frequently because it contains the
+most recent, unreleased code.
  
 #### Install on Arch Linux
 
