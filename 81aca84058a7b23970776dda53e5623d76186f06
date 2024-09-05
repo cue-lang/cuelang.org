@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af9f5480_aa9a36d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-05T08:05:35Z",
+      "side": 1,
+      "message": "@rogpeppe@gmail.com - might I suggest it could be easier for you to take over this CL to get it into shape? Reason being, we now better understand the (current) limitations of `matchN` and getting the wording around that right is probably easiest if you give it a stab first. I also think we can probably reduce down to a single, commented code file of examples? But I defer on the readability of that point.",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a86ab1cc_63af5421",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-05T08:05:35Z",
+      "side": 1,
+      "message": "This should be an amber warning, not a red \"error\" please.",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d48b1172_1ae2f962",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-05T08:05:35Z",
+      "side": 1,
+      "message": "I will leave @rogpeppe@gmail.com to comment more precisely here, but we can\u0027t say this (for now at least).\n\nWe should also ( @rogpeppe@gmail.com to suggest) add a bit on what `matchN` _can\u0027t_ currently do (e.g. constraint non-data fields). Perhaps this is included with a bit of wording on how `matchN` currently works?",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
