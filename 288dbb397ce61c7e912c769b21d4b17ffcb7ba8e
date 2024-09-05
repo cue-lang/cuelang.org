@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bea320c_c3266c1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-05T11:15:23Z",
+      "side": 1,
+      "message": "Exactly why I like pushing hard to get these things landed. We catching things much quicker.",
+      "parentUuid": "963422e5_044f85bb",
+      "revId": "288dbb397ce61c7e912c769b21d4b17ffcb7ba8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1665ce2_c688c3a1",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b55f0ad6_af833575",
+        "filename": "internal/ci/ci.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-05T11:15:23Z",
+      "side": 1,
+      "message": "I\u0027ll leave this as-is for now. Not because I disagree with your point, but I\u0027m trying to keep this hacky code as a general experiment around `@export`. So I copy-paste the code various other places where there is more general usage.",
+      "parentUuid": "c1665ce2_c688c3a1",
+      "revId": "288dbb397ce61c7e912c769b21d4b17ffcb7ba8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d347fc92_f59da249",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-09-05T11:05:40Z",
       "side": 1,
       "message": "duplicate line?",
+      "revId": "288dbb397ce61c7e912c769b21d4b17ffcb7ba8e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "932d741f_26fc0013",
+        "filename": "internal/cmd/writefs/main.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-05T11:15:23Z",
+      "side": 1,
+      "message": "Bug 😊\n\nShould have been assigning to `cmd.Stderr`. But this can actually be simplified to use `CombinedOutput()`. I didn\u0027t \"see\" that until now because I was refactoring away from the use of `cuelang.org/go/cmd/cue/cmd.New`.\n\nDone",
+      "parentUuid": "d347fc92_f59da249",
       "revId": "288dbb397ce61c7e912c769b21d4b17ffcb7ba8e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
