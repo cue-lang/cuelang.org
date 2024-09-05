@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6764417f_a9e115dd",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-05T15:57:41Z",
+      "side": 1,
+      "message": "Done. I\u0027d used the red solely to make it /really/ stand out, as the first/only place on the site where we\u0027re pointing out that installation from source is required. Given our discussion elsewhere, I\u0027ve reworded this so it aligns with alpha-1\u0027s availability.",
+      "parentUuid": "a86ab1cc_63af5421",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d48b1172_1ae2f962",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-09-05T08:05:35Z",
       "side": 1,
       "message": "I will leave @rogpeppe@gmail.com to comment more precisely here, but we can\u0027t say this (for now at least).\n\nWe should also ( @rogpeppe@gmail.com to suggest) add a bit on what `matchN` _can\u0027t_ currently do (e.g. constraint non-data fields). Perhaps this is included with a bit of wording on how `matchN` currently works?",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f189525_337c360e",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-05T15:57:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d48b1172_1ae2f962",
       "revId": "81aca84058a7b23970776dda53e5623d76186f06",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +122,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5f6a535_1c0275ab",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-05T15:57:41Z",
+      "side": 1,
+      "message": "Hmm, good point. I know that I wanted `B` to fail validation here, but `matchN(1,` definitely isn\u0027t aligned with the section heading. I\u0027ll just remove this line - the next line fails adequately.",
+      "parentUuid": "8360dd0d_035ee522",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22243fa1_bed8f8dc",
@@ -103,6 +157,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eed22f0f_ffc015e5",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-05T15:57:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22243fa1_bed8f8dc",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cf0a73f_02feae17",
@@ -116,6 +188,24 @@
       "writtenOn": "2024-09-05T11:59:53Z",
       "side": 1,
       "message": "Paul suggested (and I agree) that we should have a short section at the bottom explaining that non-exported fields (private fields and definitions) are omitted when considering matching.\n\nFor example, this passes:\n\n```\nx: _foo: 1\nx: matchN(1, [{_foo: 2}])\n```\n\nAlso worth mentioning that this may well change in the future.",
+      "revId": "81aca84058a7b23970776dda53e5623d76186f06",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41089e01_51082e30",
+        "filename": "content/docs/howto/use-the-built-in-function-matchn/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-05T15:57:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cf0a73f_02feae17",
       "revId": "81aca84058a7b23970776dda53e5623d76186f06",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
