@@ -3,7 +3,7 @@
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 //     http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
@@ -56,15 +56,15 @@ package build
 	attributes?:   bool          // include/allow attributes
 }
 
-// knownExtensions derives all the known file extensions
-// from those that are mentioned in modes,
-// allowing us to quickly discard files with unknown extensions.
-knownExtensions: {
-	for mode in modes
-	for ext, _ in mode.extensions {
-		(ext): true
-	}
-}
+// fileForExtVanilla holds the extensions supported in
+// input mode with scope="" - the most common form
+// of file type to evaluate.
+//
+// It's also used as a source of truth for all known file
+// extensions as all modes define attributes for
+// all file extensions. If that ever changed, we'd need
+// to change this.
+fileForExtVanilla: modes.input.extensions
 
 // modes sets defaults for different operational modes.
 modes: [string]: {
@@ -92,6 +92,7 @@ modes: input: {
 	extensions: ".json": interpretation: *"auto" | _
 	extensions: ".yaml": interpretation: *"auto" | _
 	extensions: ".yml": interpretation:  *"auto" | _
+	extensions: ".toml": interpretation: *"auto" | _
 }
 
 modes: export: {
@@ -168,8 +169,10 @@ modes: [string]: {
 		".ndjson":    tags.jsonl
 		".yaml":      tags.yaml
 		".yml":       tags.yaml
+		".toml":      tags.toml
 		".txt":       tags.text
 		".go":        tags.go
+		".wasm":      tags.binary
 		".proto":     tags.proto
 		".textproto": tags.textproto
 		".textpb":    tags.textproto // perhaps also pbtxt
@@ -189,6 +192,11 @@ modes: [string]: {
 		stream:     *false | true
 		docs:       false
 		attributes: false
+	}
+
+	encodings: yaml: {
+		forms.graph
+		stream: false | *true
 	}
 
 	encodings: yaml: {
@@ -331,6 +339,7 @@ tags: {
 	json: encoding:      "json"
 	jsonl: encoding:     "jsonl"
 	yaml: encoding:      "yaml"
+	toml: encoding:      "toml"
 	proto: encoding:     "proto"
 	textproto: encoding: "textproto"
 	// "binpb":  encodings.binproto

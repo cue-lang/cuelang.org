@@ -102,6 +102,12 @@ _contentDefaults: {
 				pattern: expr: #"(?m)^\s*GOAMD64 .*\n"#
 				replacement: ""
 			},
+			{
+				kind:    "patternSanitiser"
+				command: "cue version"
+				pattern: expr: #"(?m)^\s*GOARM64 .*\n"#
+				replacement: ""
+			},
 		] | _
 	}
 }
