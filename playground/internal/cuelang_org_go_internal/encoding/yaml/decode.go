@@ -9,6 +9,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"sync"
 
 	"gopkg.in/yaml.v3"
 
@@ -120,10 +121,7 @@ func (d *decoder) Decode() (ast.Expr, error) {
 			// If the input is empty, we produce a single null literal with EOF.
 			// Note that when the input contains "---", we get an empty document
 			// with a null scalar value inside instead.
-			//
-			// TODO(mvdan): the old decoder seemingly intended to do this,
-			// but returned a "null" literal with io.EOF, which consumers ignored.
-			if false && !d.yamlNonEmpty {
+			if !d.yamlNonEmpty {
 				return &ast.BasicLit{
 					Kind:  token.NULL,
 					Value: "null",
@@ -401,7 +399,7 @@ outer:
 		if err != nil {
 			return err
 		}
-		d.addCommentsToNode(label, yk, 1)
+		d.addCommentsToNode(field, yk, 2)
 		field.Label = label
 
 		if mergeValues {
@@ -496,7 +494,9 @@ const (
 
 // rxAnyOctalYaml11 uses the implicit tag resolution regular expression for base-8 integers
 // from YAML's 1.1 spec, but including the 8 and 9 digits which aren't valid for octal integers.
-var rxAnyOctalYaml11 = regexp.MustCompile(`^[-+]?0[0-9_]+$`)
+var rxAnyOctalYaml11 = sync.OnceValue(func() *regexp.Regexp {
+	return regexp.MustCompile(`^[-+]?0[0-9_]+$`)
+})
 
 func (d *decoder) scalar(yn *yaml.Node) (ast.Expr, error) {
 	tag := yn.ShortTag()
@@ -504,7 +504,7 @@ func (d *decoder) scalar(yn *yaml.Node) (ast.Expr, error) {
 	// and the value looks like a YAML 1.1 octal literal,
 	// that means the input value was like `01289` and not a valid octal integer.
 	// The safest thing to do, and what most YAML decoders do, is to interpret as a string.
-	if yn.Style&yaml.TaggedStyle == 0 && tag == floatTag && rxAnyOctalYaml11.MatchString(yn.Value) {
+	if yn.Style&yaml.TaggedStyle == 0 && tag == floatTag && rxAnyOctalYaml11().MatchString(yn.Value) {
 		tag = strTag
 	}
 	switch tag {
