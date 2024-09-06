@@ -40,7 +40,7 @@ Let's start with this JSON Schema:
 {{< code-tabs >}}
 {{< code-tab name="schema.json" language="json" area="top-left" >}}
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "type": "object",
     "title": "Main Person schema.",
     "description": "This schema defines a person.",
@@ -94,7 +94,7 @@ import "strings"
 	// Main Person schema.
 	//
 	// This schema defines a person.
-	@jsonschema(schema="http://json-schema.org/draft-07/schema#")
+	@jsonschema(schema="https://json-schema.org/draft/2019-09/schema")
 
 	// What is this person called?
 	name!: strings.MinRunes(1)
@@ -159,7 +159,7 @@ A qualifier can be used to change this behaviour, as outlined in
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiBqc29uOiBzY2hlbWEuanNvbg==" }
 $ cue def json: schema.json
-$schema:     "http://json-schema.org/draft-07/schema#"
+$schema:     "https://json-schema.org/draft/2019-09/schema"
 type:        "object"
 title:       "Main Person schema."
 description: "This schema defines a person."
