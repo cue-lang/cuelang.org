@@ -8,14 +8,13 @@ hide_summary: true
 {{< cards >}}
 {{< card
 	title="The Logic of CUE"
-	href="../the-logic-of-cue"
+	href="../the-logic-of-cue/"
 	label=" "
 >}}
 {{< /card >}}
-
 {{< card
-	title="Modules, Packages, and Instances"
-	href="../modules-packages-instances"
+	title="CUE Modules"
+	href="../modules/"
 	label=" "
 >}}
 {{< /card >}}
