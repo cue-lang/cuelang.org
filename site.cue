@@ -244,12 +244,22 @@ template: ci.#writefs & {
 
 			"""#
 		}
+
+		// Hugo site-wide params.
 		"hugo/config/_default/params.toml": {
 			Contents: {
+				// Fallback Twitter card image (if not set on page).
 				images: ["img/social.png"]
-				github_repo:   "https://github.com/cue-lang/cuelang.org"
+				// Repository configuration (URLs for in-page links to opening issues and suggesting changes).
+				github_repo: "https://github.com/cue-lang/cuelang.org"
+				// Google Custom Search Engine ID. Remove or comment out to disable search.
 				gcs_engine_id: "004591905419617723008:8rmik2a7xb3"
-				logo:          "svg/logo.svg"
+				// Which logo to use in main header
+				logo: "svg/logo.svg"
+
+				// Site-wide notification-bar.
+				// The content field permits markdown.
+				// Omitting the button field removes the bar's button entirely.
 				notification: {
 					type: "cue-minor-release-\(versions.cue.latest.majorDotMinor)"
 					button: {
@@ -259,7 +269,14 @@ template: ci.#writefs & {
 					}
 					content: "**CUE \(versions.cue.latest.majorDotMinor) is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\(versions.cue.latest.majorDotMinor).0)"
 				}
-				tags: [{
+
+				// The tag order in this file determines their relative positions at
+				// the top and bottom of all rendered pages.
+				#tag: {
+					name:  string
+					color: "red" | "orange" | "green" | "pink" | "purple" | "lilac" | "blue" | "lavender"
+				}
+				tags: [...#tag] & [{
 					name:  "ecosystem"
 					color: "red"
 				}, {
