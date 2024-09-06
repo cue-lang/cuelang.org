@@ -29,7 +29,7 @@ popd > /dev/null
 
 # TODO this is very fragile - we need to move away from this to a proper
 # dependency-based approach to minimal copy
-for i in "" filetypes encoding third_party/yaml encoding/yaml astinternal cueexperiment envflag source
+for i in "" filetypes encoding encoding/yaml astinternal cueexperiment envflag source
 do
 	rsync -a --relative --delete $td/$path@$version/internal/./$i/ ./internal/cuelang_org_go_internal/
 	find ./internal/cuelang_org_go_internal/$i -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} +
