@@ -232,3 +232,5 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_INDEX_KEY }}
           ALGOLIA_INDEX_NAME: cuelang.org
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
+      - name: 'tip.cuelang.org: check if cuelang.org patch applies cleanly'
+        run: _scripts/tipPatchCheck.bash
