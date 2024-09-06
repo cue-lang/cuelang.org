@@ -248,6 +248,11 @@ workflows: trybot: _repo.bashWorkflow & {
 					ALGOLIA_INDEX_FILE: "../_public/algolia.json"
 				}
 			},
+
+			json.#step & {
+				name: "tip.cuelang.org: Apply tip's patch, checking that it applies cleanly"
+				run:  "_scripts/tipPatchApply.bash"
+			},
 		]
 	}
 
