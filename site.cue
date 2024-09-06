@@ -16,10 +16,10 @@ versions: {
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: {
-			v:             "v0.10.0"
+			v:             *"v0.10.0" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
-		prerelease: v: "v0.11.0-alpha.1"
+		prerelease: v: *"v0.11.0-alpha.1" | _
 		tip: v:        prerelease.v
 		default: v:    latest.v
 		playground: v: latest.v
