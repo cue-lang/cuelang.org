@@ -248,6 +248,8 @@ workflows: trybot: _repo.bashWorkflow & {
 					ALGOLIA_INDEX_FILE: "../_public/algolia.json"
 				}
 			},
+
+			_tipPatchCheck,
 		]
 	}
 
@@ -425,4 +427,9 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 _setupBuildx: json.#step & {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v2"
+}
+
+_tipPatchCheck: json.#step & {
+	name: "tip.cuelang.org: check if cuelang.org patch applies cleanly"
+	run:  "_scripts/tipPatchCheck.bash"
 }
