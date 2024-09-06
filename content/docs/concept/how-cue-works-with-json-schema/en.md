@@ -45,7 +45,7 @@ Let's start with this JSON Schema:
 {{{with upload "en" "schema.json"}}}
 -- schema.json --
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "title": "Main Person schema.",
     "description": "This schema defines a person.",
@@ -104,7 +104,7 @@ import "strings"
 	// Main Person schema.
 	//
 	// This schema defines a person.
-	@jsonschema(schema="https://json-schema.org/draft/2019-09/schema")
+	@jsonschema(schema="https://json-schema.org/draft/2020-12/schema")
 
 	// What is this person called?
 	name!: strings.MinRunes(1)

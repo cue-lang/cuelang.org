@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "mekeCmd3oBmYD+tyEiu495P7Xt+F1Wz3F+JfZ4gLjcQ="
-								"schema.cue":      "us0tQw2p23XJZpWisDJ5CWyPLju3hl9YP7+L0ZSdZ7Y="
+								"schema.json":     "phzJEykSsaxhnSzb0SJao4aJeQnRTupSzIhLl2O30w4="
+								"schema.cue":      "RYmHAxANqs+21mnEJOpmXi9mkbeoeUnAsNhdo5TXOUU="
 								good:              "BZc/C2v3pEZfH5TED4nx3GPzLVY79WiBjPZm0v8Ie5Y="
 								bad:               "JIl2zZ5hHHNEhL0nSIllu9mIoKtLL+jZsbv4uzEibyk="
 								"main go program": "ELzkOKCP0f2BcdSTRjCdTwXpey0lR70RDtBAuojilfk="
 							}
 							multi_step: {
-								hash:       "AEMTJ250THS1HHQVSJQUTJE7E9JI6VNLK94CBBQDFQU53V1HKB50===="
-								scriptHash: "HR5TBRUTVIESEDAHESLTV2AVC7Q19CEGO96DBR5L7H0OITN8KK80===="
+								hash:       "GKKKGSHF2B3S6UDF79MSKN4NUB0VV5RVBTU0VCL2IGH51NMPVD40===="
+								scriptHash: "00PMNUB0O1TO8KAKSMBHH9UAUMIUM16B4D8S3TJI5OTEV8JUR3M0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -66,7 +66,7 @@ package site
 									cmd:      "cue def json: schema.json"
 									exitCode: 0
 									output: """
-											$schema:     "https://json-schema.org/draft/2019-09/schema"
+											$schema:     "https://json-schema.org/draft/2020-12/schema"
 											type:        "object"
 											title:       "Main Person schema."
 											description: "This schema defines a person."
