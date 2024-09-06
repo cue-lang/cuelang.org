@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91adc935_7c20a54e",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-09-06T11:01:50Z",
+      "side": 1,
+      "message": "I\u0027d just go for the latest, tbh, and use that everywhere.\n\n\n```suggestion\n    \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n```",
+      "revId": "123151b07be30c53c4b559384ec9aa1596ec9307",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
