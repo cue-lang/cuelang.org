@@ -24,17 +24,6 @@ fi
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
-if [ "${BRANCH:-}" == "tip" ]
-then
-	# We need to update our dependencies (as the main module)
-	# to the tip of CUE and regenerate. Otherwise we do not
-	# want to regenerate (we should be relying on the files
- 	# commited)
-	GOPRIVATE=cuelang.org/go $time go get cuelang.org/go@master
-	$time ./_scripts/revendorToolsInternal.bash
-	$time go generate ./...
-fi
-
 if [ "${NETLIFY:-}" == "true" ]
 then
 	# Use the cache of playground node_modules
