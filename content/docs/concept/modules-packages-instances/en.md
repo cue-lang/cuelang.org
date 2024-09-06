@@ -1,6 +1,7 @@
 ---
-title: "Modules, Packages, and Instances"
-description: "How files are organized in CUE"
+title: Modules, Packages, and Instances
+description: How files are organized in CUE
+tags: [modules]
 toc_hide: true
 ---
 
