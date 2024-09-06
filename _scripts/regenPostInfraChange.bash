@@ -15,9 +15,6 @@ pushd playground > /dev/null
 go generate ./...
 popd > /dev/null
 
-# Playground revendor
-./playground/_scripts/revendorToolsInternal.bash
-
 ./_scripts/buildDockerImage.bash
 CUE_UPDATE=1 go test -run TestScripts/execute_multistagescript ./internal/cmd/preprocessor/cmd
 
