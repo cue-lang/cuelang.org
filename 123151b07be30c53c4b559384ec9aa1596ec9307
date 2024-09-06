@@ -16,6 +16,24 @@
       "message": "I\u0027d just go for the latest, tbh, and use that everywhere.\n\n\n```suggestion\n    \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n```",
       "revId": "123151b07be30c53c4b559384ec9aa1596ec9307",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7fed110_d8dbecf5",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-06T13:46:38Z",
+      "side": 1,
+      "message": "Please see https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1200806",
+      "parentUuid": "91adc935_7c20a54e",
+      "revId": "123151b07be30c53c4b559384ec9aa1596ec9307",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
