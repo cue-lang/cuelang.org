@@ -16,6 +16,24 @@
       "message": "I wonder where createTag even comes from, I can\u0027t find docs for it. I worry in case we might need deleteTag. but I think what you have here will work.",
       "revId": "75b9bb102b7598b9378dadce4dbe8982c2221df5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a15b9ae6_1c878536",
+        "filename": "project.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-06T09:37:51Z",
+      "side": 1,
+      "message": "Gerrit does validate the configuration when we push even a CL like this. So it\u0027s valid. Whether it does anything or not is another question 😊\n\nI\u0027ll leave for now, and we can further tweak in case things \"aren\u0027t working\"",
+      "parentUuid": "c3d35907_6f3fd9b2",
+      "revId": "75b9bb102b7598b9378dadce4dbe8982c2221df5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
