@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cb7f398_f770f5c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-06T13:40:56Z",
+      "side": 1,
+      "message": "Over to you on this and the linked CL stack.\n\nI\u0027ve included commentary in the commit message of this CL to suggest next steps.",
+      "revId": "1a7c50c5cf8d7e986b1dc34f8f8b5ea7fd1bd434",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
