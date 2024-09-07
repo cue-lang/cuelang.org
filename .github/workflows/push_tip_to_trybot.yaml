@@ -5,8 +5,6 @@ name: Push tip to trybot
   push:
     branches:
       - master
-      - alpha
-      - old
       - tip
 concurrency: push_tip_to_trybot
 jobs:
