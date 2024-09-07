@@ -39,7 +39,7 @@ jobs:
           echo "$x" >> $GITHUB_OUTPUT
           echo "EOD" >> $GITHUB_OUTPUT
       - if: |-
-          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/old' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
+          ((github.ref == 'refs/heads/master' || github.ref == 'refs/heads/tip') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"'))
         name: Check we don't have Dispatch-Trailer on a protected branch
@@ -78,7 +78,7 @@ jobs:
           # which match the protected branch patterns (globs).
           for j in $(curl -s -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.CUECKOO_GITHUB_PAT }}" -H "X-GitHub-Api-Version: 2022-11-28" -f https://api.github.com/repos/cue-lang/cuelang.org/branches | jq -r '.[] | .name')
           do
-          	for i in master alpha old tip
+          	for i in master tip
           	do
           		if [[ "$j" != $i ]]; then
           			continue
