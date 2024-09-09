@@ -110,6 +110,30 @@
       },
       "revId": "bf7ecc83cdf622f8314f82c8f1cab1a5ff5c8d95",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b01d2b5e_d00fdbfb",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T13:08:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6116689_58551dfe",
+      "range": {
+        "startLine": 51,
+        "startChar": 54,
+        "endLine": 51,
+        "endChar": 58
+      },
+      "revId": "bf7ecc83cdf622f8314f82c8f1cab1a5ff5c8d95",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
