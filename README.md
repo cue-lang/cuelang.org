@@ -2,6 +2,7 @@
 
 This repo is the home of [cuelang.org](https://cuelang.org). The site is built using [Hugo](https://gohugo.io/) and is
 based on the [docsy](https://www.docsy.dev/) theme.
+x
 
 The [CUE Language Specification](https://cuelang.org/docs/references/spec/)
 is generated from source files in the
