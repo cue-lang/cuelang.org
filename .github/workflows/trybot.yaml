@@ -234,3 +234,11 @@ jobs:
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
       - name: 'tip.cuelang.org: Check if tip''s patch applies cleanly'
         run: _scripts/tipPatchCheck.bash
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master')
+        name: 'tip.cuelang.org: Apply patch that allows site to build against tip of cue-lang/cue'
+        run: _scripts/tipPatchApply.bash
+        env:
+          GOPROXY: direct
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master')
+        name: 'tip.cuelang.org: Check if site builds against tip of cue-lang/cue'
+        run: _scripts/regenPostInfraChange.bash
