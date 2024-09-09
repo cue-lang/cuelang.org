@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "33f3e6ecac1ad7982a122646d20fb4946bc887a4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b080f4c_d9a4c0af",
+        "filename": "_scripts/tipPatchCheck.bash",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-09T18:34:52Z",
+      "side": 1,
+      "message": "Why not just apply the patch? Rather than check? That way, this script can be reused in the next CL",
+      "revId": "33f3e6ecac1ad7982a122646d20fb4946bc887a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
