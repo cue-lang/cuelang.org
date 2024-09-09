@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10593511_7cc3050c",
+        "filename": "_scripts/tipPatchApply.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-09T18:39:37Z",
+      "side": 1,
+      "message": "I don\u0027t think this is required any more?",
+      "revId": "2116534ad1f8ccd055617974f89b602ba6b74968",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce2c871c_ecba0505",
+        "filename": "_scripts/tipPatchApply.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-09T18:39:37Z",
+      "side": 1,
+      "message": "See comment about previous CL where you could re-use the \"apply patch\" script. Almost all of the previous logic is identical.",
+      "revId": "2116534ad1f8ccd055617974f89b602ba6b74968",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ba82c2_4d3e68dc",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-09T18:39:37Z",
+      "side": 1,
+      "message": "You need to be able to test this. So you will want some logic like:\n\nhttps://github.com/cue-lang/cue/blob/f4f38bf03ac716a362f644ba75afc359a956e8ed/internal/ci/github/trybot.cue#L122\n\nNotice the use of `_repo.isTestDefaultBranch`. However you will _not_ want to run the deploy in that case, so in later changes we will want the deploy as a separate step that only runs in the main repo on the default branch.",
+      "revId": "2116534ad1f8ccd055617974f89b602ba6b74968",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
