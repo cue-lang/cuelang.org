@@ -253,6 +253,26 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "tip.cuelang.org: Check if tip's patch applies cleanly"
 				run:  "_scripts/tipPatchCheck.bash"
 			},
+
+			// NB Working directory will be in a detatched, dirty state after this step.
+			json.#step & {
+				name: "tip.cuelang.org: Apply patch that allows site to build against tip of cue-lang/cue"
+				// Only run in the main repo on the default branch (not CLs)
+				// so that CLs aren't blocked by failures caused by unrelated changes.
+				if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)')"
+				// Force Go to bypass the module proxy, ensuring that the absolute
+				// latest CUE pseudo-version is available to test against.
+				run: "_scripts/tipPatchApply.bash"
+				env: GOPROXY: "direct"
+			},
+			// NB Working directory will be in a dirtier state after this step.
+			json.#step & {
+				name: "tip.cuelang.org: Check if site builds against tip of cue-lang/cue"
+				// Only run in the main repo on the default branch (not CLs)
+				// so that CLs aren't blocked by failures caused by unrelated changes.
+				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)')"
+				run: "_scripts/regenPostInfraChange.bash"
+			},
 		]
 	}
 
