@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25049392_1dc89a72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T16:51:07Z",
+      "side": 1,
+      "message": "This can now be abandoned as it\u0027s been superseded by https://cuelang.org/cl/1200804.",
+      "revId": "5f9fd58e28d4be12f2b3d9c400c79bf125324d72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
