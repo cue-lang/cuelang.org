@@ -16,6 +16,24 @@
       "message": "nit: I believe I understand why the script\u0027s invocation is removed from here, but perhaps it could be spelled out in the commit message.",
       "revId": "a78a952b85fd634a43bdaf642075812b6bfa1af3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c185f3c_c2944d5a",
+        "filename": "playground/_scripts/build.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-09T13:26:49Z",
+      "side": 0,
+      "message": "Done. I\u0027ve also removed another stray explicit invocation of the script and mentioned that in the commit message.",
+      "parentUuid": "a18d6c9a_45409647",
+      "revId": "a78a952b85fd634a43bdaf642075812b6bfa1af3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
