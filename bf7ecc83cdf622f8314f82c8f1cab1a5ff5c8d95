@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07bb2d57_660ff31e",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T12:40:48Z",
+      "side": 1,
+      "message": "I\u0027ve made this change. I was using the bare \"0.9\"/etc deliberately, trying to avoid the prose shenanigans of \"CUE release v0.9.0 (and all its pre-releases)\" each time the concept came up. I\u0027ll park it for now, and propose a page/README-entry/etc/ that fleshes out that idea more formally, and suggests a universe in which the term is permitted more globally.",
+      "parentUuid": "1e4efc2b_3ab62cda",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 7
+      },
+      "revId": "bf7ecc83cdf622f8314f82c8f1cab1a5ff5c8d95",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61dae57e_5d321eb7",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-09-06T13:54:58Z",
       "side": 1,
       "message": "This is the only tricky bit wording-wise. We could say something like:\n\n```\nv0.11.0 (and its pre-releases) drop support for old modules: setting \n`CUE_EXPERIMENT\u003dmodules\u003d0` causes an error.\n```\n\nBecause merging this now will confuse people because v0.11.0 is not out.\n\nBut I\u0027ll let @rogpeppe@gmail.com riff on the wording with you.",
+      "range": {
+        "startLine": 51,
+        "startChar": 54,
+        "endLine": 51,
+        "endChar": 58
+      },
+      "revId": "bf7ecc83cdf622f8314f82c8f1cab1a5ff5c8d95",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6116689_58551dfe",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T12:40:48Z",
+      "side": 1,
+      "message": "Done. I\u0027ve adapted your wording slightly.",
+      "parentUuid": "61dae57e_5d321eb7",
       "range": {
         "startLine": 51,
         "startChar": 54,
