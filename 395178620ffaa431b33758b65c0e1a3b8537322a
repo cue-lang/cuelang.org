@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c98fb626_abb4ff01",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T17:25:32Z",
+      "side": 1,
+      "message": "PTAL.\n\nThis isn\u0027t testable via CL, as it adds CI steps that deliberately only run on the main cuelang.org repo\u0027s default branch after CL submission. Apart from a reviewer running this pair of commands locally, there\u0027s not too much we can do to test this change before submission (assuming it looks correct in other respects, of course).\n\nPlease do cross-check the CI step conditions with a sceptical eye. I believe they\u0027re correct, but I\u0027m not 100% confident.",
+      "revId": "395178620ffaa431b33758b65c0e1a3b8537322a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
