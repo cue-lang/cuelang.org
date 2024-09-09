@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b6a3a51_96b9c6ab",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-09-09T13:01:58Z",
+      "side": 1,
+      "message": "nit: double space.",
+      "revId": "c7439bfaf5b28a5278bc9008628df6cd5b2f6017",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
