@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9334c6be_95925b0a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T13:59:45Z",
+      "side": 1,
+      "message": "nit: whilst/**if** you push a new patch to address the comment below this one, reword this clause so as not to anticipate the instantiation of tip in the future.",
+      "range": {
+        "startLine": 12,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 59
+      },
+      "revId": "33d9975b1e4d7a2b6827b2368b9aeb2d6621042c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e0738bc_e32bd357",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T13:59:45Z",
+      "side": 1,
+      "message": "This change isn\u0027t visible in the patch.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 34
+      },
+      "revId": "33d9975b1e4d7a2b6827b2368b9aeb2d6621042c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49111c5a_0760c17f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-09T13:59:45Z",
+      "side": 1,
+      "message": "I think you might have omitted a file from the most recent patch.",
+      "revId": "33d9975b1e4d7a2b6827b2368b9aeb2d6621042c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
