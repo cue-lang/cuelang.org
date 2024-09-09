@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "334b63b8_348b3528",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-09T14:15:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9334c6be_95925b0a",
+      "range": {
+        "startLine": 12,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 59
+      },
+      "revId": "33d9975b1e4d7a2b6827b2368b9aeb2d6621042c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e0738bc_e32bd357",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-09-09T13:59:45Z",
       "side": 1,
       "message": "This change isn\u0027t visible in the patch.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 34
+      },
+      "revId": "33d9975b1e4d7a2b6827b2368b9aeb2d6621042c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba440cf6_343a18bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-09T14:15:08Z",
+      "side": 1,
+      "message": "EBKAC.",
+      "parentUuid": "1e0738bc_e32bd357",
       "range": {
         "startLine": 15,
         "startChar": 0,
