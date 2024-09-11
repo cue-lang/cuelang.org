@@ -231,13 +231,16 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_INDEX_KEY }}
           ALGOLIA_INDEX_NAME: cuelang.org
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
-      - name: 'tip.cuelang.org: Apply tip''s patch, checking that it applies cleanly'
+      - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
         run: _scripts/tipPatchApply.bash
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
-        name: 'tip.cuelang.org: Resolve the tip version of cue-lang/cue and configure the site to use it'
+        name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
         run: _scripts/tipUseAlternativeCUE.bash
         env:
           GOPROXY: direct
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
-        name: 'tip.cuelang.org: Check if the site builds against the tip of cue-lang/cue'
+        name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
         run: _scripts/regenPostInfraChange.bash
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        name: 'tip.cuelang.org: Deploy the site'
+        run: _scripts/tipDeploy.bash 'cueckoo' 'cueckoo@gmail.com'

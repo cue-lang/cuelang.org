@@ -250,12 +250,12 @@ workflows: trybot: _repo.bashWorkflow & {
 			},
 
 			json.#step & {
-				name: "tip.cuelang.org: Apply tip's patch, checking that it applies cleanly"
+				name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
 				run:  "_scripts/tipPatchApply.bash"
 			},
 
 			json.#step & {
-				name: "tip.cuelang.org: Resolve the tip version of cue-lang/cue and configure the site to use it"
+				name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
 				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
 				// so that CLs aren't blocked by failures caused by unrelated changes.
 				if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
@@ -265,11 +265,17 @@ workflows: trybot: _repo.bashWorkflow & {
 				run: "_scripts/tipUseAlternativeCUE.bash"
 			},
 			json.#step & {
-				name: "tip.cuelang.org: Check if the site builds against the tip of cue-lang/cue"
+				name: "tip.cuelang.org: Build the site against the tip of cue-lang/cue"
 				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
 				// so that CLs aren't blocked by failures caused by unrelated changes.
 				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 				run: "_scripts/regenPostInfraChange.bash"
+			},
+			json.#step & {
+				name: "tip.cuelang.org: Deploy the site"
+				// Only run in the main repo on the default branch or its designated test branch.
+				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
+				run: "_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'"
 			},
 		]
 	}
