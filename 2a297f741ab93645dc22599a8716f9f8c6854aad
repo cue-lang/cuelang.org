@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "c393c7e4_5d333c04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-11T19:15:33Z",
+      "side": 1,
+      "message": "Done.\n\nI don\u0027t quite grok:\n\n\u003e hence the possibility of tip.cuelang.org being \"out of date\" if we get things out of sequence\n\nIs that related to interactions between runs manually triggered by `ci/test` and those automated on the default branch, or some other sequencing?",
+      "parentUuid": "60147193_72130f21",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "67e34237_3488c81d",
@@ -54,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "86c1d51d_6b9168fa",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-11T19:15:33Z",
+      "side": 1,
+      "message": "Just that the 2-line form seems somewhat simpler and clearer to me! Happy to cargo-cult the 1-liner if you\u0027d prefer :-)",
+      "parentUuid": "105d00e2_500f87ac",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28884985_cf733a72",
         "filename": "_scripts/tipDeploy.bash",
         "patchSetId": 6
@@ -71,6 +107,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "91f8aeb7_c57737d1",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-11T19:15:33Z",
+      "side": 1,
+      "message": "In this order, someone can fetch and checkout `tip`, and immediately work against the commit containing the content changes, instead of `HEAD^`.\n\nI figured that this order (thus being 5% more practical/useful for an operator) is fine because this specific pair of commits will ~only ever be used by an operator working out what content changes might\u0027ve caused a rendering/evaluation/etc problem.\n\nI can easily reverse the order with:\n\n```\ngit add . \u0027:^content/**/gen_cache.cue\u0027\ngit commit\ngit add .\ngit commit\n```\n\n... but the circumstances in which the commits will probably get used prompted this order choice.\n\nI\u0027m happy with either - what do you reckon?",
+      "parentUuid": "28884985_cf733a72",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d7e6a1ef_51adb284",
         "filename": "_scripts/tipDeploy.bash",
         "patchSetId": 6
@@ -82,6 +136,24 @@
       "writtenOn": "2024-09-11T18:45:21Z",
       "side": 1,
       "message": "Just to confirm: the force push _does_ trigger things on the Netlify side?",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44310cce_2680483f",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-11T19:15:33Z",
+      "side": 1,
+      "message": "Yep, confirmed.",
+      "parentUuid": "d7e6a1ef_51adb284",
       "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
