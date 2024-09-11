@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60147193_72130f21",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-11T18:45:21Z",
+      "side": 1,
+      "message": "I would rephrase this slightly to make clear what is deployed to tip.cuelang.org. In the case of the default branch of cuelang.org, it is the commit \"against\" which the trybot workflow runs (hence the possibility of tip.cuelang.org being \"out of date\" if we get things out of sequence). If it\u0027s `ci/test`, then it\u0027s the commit that triggered the workflow, not the tip of the default branch. In both cases, the tip of CUE is used.",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67e34237_3488c81d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-11T18:45:21Z",
+      "side": 1,
+      "message": "Generally LGTM!",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "105d00e2_500f87ac",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-11T18:45:21Z",
+      "side": 1,
+      "message": "Is there a reason to not use the standard form of this?",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28884985_cf733a72",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-11T18:45:21Z",
+      "side": 1,
+      "message": "These commits are in the wrong order, no? We typically have the cache files second. Feels strange to invert that here. Perhaps add everything, then `git reset` the cache files to unstage them? That allows you to do the \"actual\" changes in the first commit, followed by the cache changes.",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7e6a1ef_51adb284",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-11T18:45:21Z",
+      "side": 1,
+      "message": "Just to confirm: the force push _does_ trigger things on the Netlify side?",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
