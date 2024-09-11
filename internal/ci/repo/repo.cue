@@ -14,7 +14,7 @@ githubRepositoryPath: "cue-lang/cuelang.org"
 alphaBranch: "alpha"
 
 defaultBranch: _
-protectedBranchPatterns: [defaultBranch, "tip"]
+protectedBranchPatterns: [defaultBranch]
 
 botGitHubUser:      "cueckoo"
 botGitHubUserEmail: "cueckoo@gmail.com"
@@ -40,5 +40,4 @@ netlifyCLIVersion: "17.0.1"
 
 netlifySites: {
 	cls: "cue-cls"
-	tip: "cue-tip"
 }
