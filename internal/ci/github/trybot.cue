@@ -271,6 +271,12 @@ workflows: trybot: _repo.bashWorkflow & {
 				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 				run: "_scripts/regenPostInfraChange.bash"
 			},
+			json.#step & {
+				name: "tip.cuelang.org: Deploy the site"
+				// Only run in the main repo on the default branch or its designated test branch.
+				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
+				run: "_scripts/tipDeploy.bash"
+			},
 		]
 	}
 

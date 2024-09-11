@@ -241,3 +241,6 @@ jobs:
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         name: 'tip.cuelang.org: Check if the site builds against the tip of cue-lang/cue'
         run: _scripts/regenPostInfraChange.bash
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        name: 'tip.cuelang.org: Deploy the site'
+        run: _scripts/tipDeploy.bash
