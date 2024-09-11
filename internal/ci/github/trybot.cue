@@ -395,12 +395,6 @@ _dist: json.#step & {
 	run:      "./_scripts/build.bash --baseURL \(_baseURL)"
 }
 
-_tipDist: _dist & {
-	name:     "Tip dist"
-	_baseURL: "https://\(env.BRANCH).cuelang.org"
-	env: BRANCH: "tip"
-}
-
 _installNetlifyCLI: json.#step & {
 	name: "Install Netlify CLI"
 	run:  "npm install -g netlify-cli@\(_repo.netlifyCLIVersion)"
