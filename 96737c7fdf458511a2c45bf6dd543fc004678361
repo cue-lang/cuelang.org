@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f20ed19_1108f84f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-12T15:27:05Z",
+      "side": 1,
+      "message": "Successful `ci/test` run of patchset 9: https://github.com/cue-lang/cuelang.org/actions/runs/10833437501/job/30060219466\n\nPatchset 10 only adds `--verbose` flags to `git` operations in `tipDeploy.bash` in order to increase our visibility of what\u0027s been modified before deployment. I feel it\u0027s unnecessary to do an additional 20 minute `ci/test` cycle to prove this trivial update is correct as I\u0027ve validated that all three updated `git` commands support the flag.",
+      "revId": "96737c7fdf458511a2c45bf6dd543fc004678361",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
