@@ -56,6 +56,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4e886f87_34281cb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-12T14:57:50Z",
+      "side": 1,
+      "message": "Done. I\u0027ve performed a manual test to confirm that Netlify branch deploys are executed sequentially, not concurrently, and have updated the commit message accordingly.",
+      "parentUuid": "732566a0_b1e6025c",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "67e34237_3488c81d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -124,6 +142,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d270aa1f_0a2f70b6",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-12T14:57:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce9b0488_5fd989a8",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28884985_cf733a72",
@@ -173,6 +209,24 @@
       "side": 1,
       "message": "I think we stick with the order that we are used to elsewhere. So, in order that they should be created:\n\n1. A commit representing the applied patch + the non-`gen_cache.cue` files. You could even include a `Preprocessor-No-Write-Cache: true` trailer. \n2. The `gen_cache.cue` changes. \n\nThe consistency with the order we would expect to see in Gerrit (for example) is more important to my mind. I can also trivially setup a branch and rebase work etc in my normal workflow. \n\nSound good?",
       "parentUuid": "91f8aeb7_c57737d1",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c934dd28_4f7b6de1",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-12T14:57:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c308baa5_b366ce4f",
       "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
