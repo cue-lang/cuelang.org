@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "732566a0_b1e6025c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-12T04:50:00Z",
+      "side": 1,
+      "message": "Unless I am mistaken (quite possible!) this change causes the commit against which the trybot workflow runs to be deployed to tip.cuelang.org. More precisely, it is that commit, \"overlayed\" with the patches required to make cuelang.org work with CUE tip, with the site.cue CUE version set to the current `@master` version of CUE. \n\nThe current `@master` version of CUE is fine; it gets us to a point of eventual consistency. \n\nThe commit from the cuelang.org repo however does not have any such consistency guarantees. For example, if there are two commits merged to master in this repo in quick succession, there is in effect a race between which deploys to tip.cuelang.org last (because last wins). Similarly, if the deploy is trigged by a push to `ci/test`, it will actually be the commit at the tip of `ci/test` that is deployed (with the overlay etc) to tip.cuelang.org.\n\nSo my suggestion here is just clarifying the wording. It might be that the comment of \"latest run wins\" belongs in the code, with some commentary clarifying that \"that\u0027s good enough for tip.cuelang.org\" because the next commit to CUE or cuelang.org will probably cause things to \"go right again\". And the chances of \"things going wrong\" are low in the first place. So the comment here was more one for completeness\u0027 sake to make sure the reader is clear what is going on.",
+      "parentUuid": "c393c7e4_5d333c04",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "67e34237_3488c81d",
@@ -90,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ce9b0488_5fd989a8",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-12T04:50:00Z",
+      "side": 1,
+      "message": "For consistency probably keep it the same, thanks. I\u0027m no shell expert, but StackOverflow reliably informed me the incantation we have elsewhere is more durable.",
+      "parentUuid": "86c1d51d_6b9168fa",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28884985_cf733a72",
         "filename": "_scripts/tipDeploy.bash",
         "patchSetId": 6
@@ -119,6 +155,24 @@
       "side": 1,
       "message": "In this order, someone can fetch and checkout `tip`, and immediately work against the commit containing the content changes, instead of `HEAD^`.\n\nI figured that this order (thus being 5% more practical/useful for an operator) is fine because this specific pair of commits will ~only ever be used by an operator working out what content changes might\u0027ve caused a rendering/evaluation/etc problem.\n\nI can easily reverse the order with:\n\n```\ngit add . \u0027:^content/**/gen_cache.cue\u0027\ngit commit\ngit add .\ngit commit\n```\n\n... but the circumstances in which the commits will probably get used prompted this order choice.\n\nI\u0027m happy with either - what do you reckon?",
       "parentUuid": "28884985_cf733a72",
+      "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c308baa5_b366ce4f",
+        "filename": "_scripts/tipDeploy.bash",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-12T04:50:00Z",
+      "side": 1,
+      "message": "I think we stick with the order that we are used to elsewhere. So, in order that they should be created:\n\n1. A commit representing the applied patch + the non-`gen_cache.cue` files. You could even include a `Preprocessor-No-Write-Cache: true` trailer. \n2. The `gen_cache.cue` changes. \n\nThe consistency with the order we would expect to see in Gerrit (for example) is more important to my mind. I can also trivially setup a branch and rebase work etc in my normal workflow. \n\nSound good?",
+      "parentUuid": "91f8aeb7_c57737d1",
       "revId": "2a297f741ab93645dc22599a8716f9f8c6854aad",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
