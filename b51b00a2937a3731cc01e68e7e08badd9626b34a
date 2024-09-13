@@ -16,6 +16,24 @@
       "message": "I clicked +2 too quickly, on a day when I\u0027m not feeling well.\n\nDon\u0027t we need to `exit 1` always?",
       "revId": "b51b00a2937a3731cc01e68e7e08badd9626b34a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22231f66_87f76217",
+        "filename": "_scripts/ignoreBuild.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-13T10:07:55Z",
+      "side": 0,
+      "message": "You\u0027re right - I\u0027d glossed over this. I\u0027ve updated the script\u0027s comment to make it clearer (for myself!) in the future :-)",
+      "parentUuid": "ab429e16_de7110cb",
+      "revId": "b51b00a2937a3731cc01e68e7e08badd9626b34a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
