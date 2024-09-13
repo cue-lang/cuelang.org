@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab429e16_de7110cb",
+        "filename": "_scripts/ignoreBuild.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-13T09:57:03Z",
+      "side": 0,
+      "message": "I clicked +2 too quickly, on a day when I\u0027m not feeling well.\n\nDon\u0027t we need to `exit 1` always?",
+      "revId": "b51b00a2937a3731cc01e68e7e08badd9626b34a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
