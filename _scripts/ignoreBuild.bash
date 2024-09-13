@@ -22,6 +22,3 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 if _scripts/noWriteCache.bash; then
 	exit 0
 fi
-
-# Fall through to the default Netlify logic documented in the above page:
-git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF
