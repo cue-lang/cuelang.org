@@ -67,7 +67,7 @@ COPY --from=build /cues/v0.10.0/cue /cues/v0.10.0/cue
 COPY --from=build /cues/v0.11.0-alpha.1/cue /cues/v0.11.0-alpha.1/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/
-ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+ENV LD_LIBRARY_PATH="/usr/local/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
 ENV JAVA_HOME=/opt/java/openjdk
 COPY --from=docker.io/library/eclipse-temurin:22-jdk $JAVA_HOME $JAVA_HOME
