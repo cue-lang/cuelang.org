@@ -206,7 +206,7 @@ template: ci.#writefs & {
 				], "\n"))
 
 			COPY --from=build /libcue/libcue.so /usr/local/lib/
-			ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+			ENV LD_LIBRARY_PATH="/usr/local/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
 			ENV JAVA_HOME=/opt/java/openjdk
 			COPY --from=\#(versions.java.image)\#(versions.java.pin) $JAVA_HOME $JAVA_HOME
