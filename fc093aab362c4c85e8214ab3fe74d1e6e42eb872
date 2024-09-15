@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c75651e7_3e8f9c7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-15T12:19:39Z",
+      "side": 1,
+      "message": "Thanks for the fix! The contribution process in this repo is a bit strange, so I\u0027ve updated your CL with the relevant commit trailer, and followed the change by a regeneration of the cache files (we keep them separate in order to not lose the change details amongst a whole load of cache file changes). The contribution process could be better documented, and we will work on that.",
+      "revId": "fc093aab362c4c85e8214ab3fe74d1e6e42eb872",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
