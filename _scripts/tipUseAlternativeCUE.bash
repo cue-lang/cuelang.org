@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+set -x # 2024-09-18: increase verbosity to help debug CI failures.
 
 # Usage:
 #     tipUseAlternativeCUE.bash [CUE_COMMIT_REF]
@@ -22,13 +23,18 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 # setting to be controlled by this script's invocation.
 td=$(mktemp -d)
 trap "rm -rf $td" EXIT
-pushd $td > /dev/null
-go mod init mod.example &> /dev/null
-go get cuelang.org/go@$versionRef &> /dev/null
+pushd $td >/dev/null
+go mod init mod.example
+go get -v -x cuelang.org/go@$versionRef
 version=$(go list -m -f={{.Version}} cuelang.org/go)
-popd > /dev/null
+popd >/dev/null
 
-echo "Will use cuelang.org/go@$version"
+echo "tip: Will use cuelang.org/go@$version"
+
+# These variables, if set by the caller, aren't relevant after this point; they
+# would only serve to slow down the "go run" command if it should need to build
+# cmd/cue.
+unset GOPROXY GOPRIVATE
 
 # Override all versions of CUE referenced by the site to be $version.
 # This might change if any entries are added to the version matrix that
