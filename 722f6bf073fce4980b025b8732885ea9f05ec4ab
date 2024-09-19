@@ -16,6 +16,23 @@
       "message": "Still LGTM.",
       "revId": "722f6bf073fce4980b025b8732885ea9f05ec4ab",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1d03c96_5c5354e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-19T15:48:57Z",
+      "side": 1,
+      "message": "This CL was tested pre-submission, via `ci/test`, at https://github.com/cue-lang/cuelang.org/actions/runs/10944141679.",
+      "revId": "722f6bf073fce4980b025b8732885ea9f05ec4ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
