@@ -39,6 +39,30 @@
       },
       "revId": "c265b2d25d47a22dfbfa2e45df0952cd5a43e160",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f2f82fa_1588cc26",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-19T15:08:50Z",
+      "side": 1,
+      "message": "I\u0027ve clarified that the persistence of the cache volume is controlled by the invoking environment. Please re-review and check that my comment isn\u0027t misleading - you know the flow better than I!",
+      "parentUuid": "b0ab3ef4_d0780d22",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 44
+      },
+      "revId": "c265b2d25d47a22dfbfa2e45df0952cd5a43e160",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
