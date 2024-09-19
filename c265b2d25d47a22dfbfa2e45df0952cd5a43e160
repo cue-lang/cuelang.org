@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6a11fb4_4fbcff8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-19T14:59:35Z",
+      "side": 1,
+      "message": "LGTM. I will follow this up with some better docs around the logic per our discord thread.",
+      "revId": "c265b2d25d47a22dfbfa2e45df0952cd5a43e160",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0ab3ef4_d0780d22",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-19T14:59:35Z",
+      "side": 1,
+      "message": "This comment only applies in the case of CI. This branch applies to local builds too, FYI.",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 44
+      },
+      "revId": "c265b2d25d47a22dfbfa2e45df0952cd5a43e160",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
