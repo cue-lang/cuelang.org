@@ -31,6 +31,7 @@ import (
 	"cuelang.org/go/cmd/cue/cmd"
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/cuecontext"
+	"golang.org/x/oauth2"
 )
 
 type lang string
@@ -174,9 +175,8 @@ type executionContext struct {
 	// multi-step scripts.
 	cacheVolumeName string
 
-	// testUserAuthn returns a map from GitHub username to wireToken. A
-	// wireToken describes the JSON encoding for an OAuth 2.0 token as specified
-	// in the [RFC 6749].
+	// testUserAuthn returns a map from GitHub username to [oauth2.Token],
+	// which are OAuth 2.0 tokens as specified by [RFC 6749].
 	//
 	// In their config, pages declare that they require authn credentials for a
 	// given list of users, the preprocessor makes available environment
@@ -184,7 +184,7 @@ type executionContext struct {
 	// taken that access_token from the wireToken in the testUserAuthn map.
 	//
 	// [RFC 6749]: https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2
-	testUserAuthn func() (map[string]wireToken, error)
+	testUserAuthn func() (map[string]oauth2.Token, error)
 }
 
 type cueVersion struct {
@@ -194,10 +194,6 @@ type cueVersion struct {
 	// Var is the special environment variable name associated with this
 	// version
 	Var string `json:"var"`
-}
-
-type wireToken struct {
-	AccessToken string `json:"access_token"`
 }
 
 // tempDir creates a new temporary directory within the
@@ -296,7 +292,7 @@ func executeDef(c *Command, args []string) error {
 			src = envTestUserAuthn
 		}
 
-		ctx.testUserAuthn = sync.OnceValues(func() (res map[string]wireToken, err error) {
+		ctx.testUserAuthn = sync.OnceValues(func() (res map[string]oauth2.Token, err error) {
 			if err := json.Unmarshal(byts, &res); err != nil {
 				return nil, fmt.Errorf("failed to decode user authn map from %s: %v", src, err)
 			}

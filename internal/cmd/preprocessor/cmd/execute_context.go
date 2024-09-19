@@ -16,6 +16,7 @@ package cmd
 
 import (
 	"bytes"
+	"context"
 	"crypto/sha256"
 	"encoding/base64"
 	"encoding/json"
@@ -38,6 +39,7 @@ import (
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/cue/parser"
 	preprocessembed "github.com/cue-lang/cuelang.org"
+	"golang.org/x/oauth2"
 )
 
 type executeContext struct {
@@ -604,14 +606,23 @@ func (ec *executeContext) deriveHashOfSelf() (err error) {
 // context to its single method, fetch. This makes the process of "wrapping" a
 // call to centralRegistryTestUserFetcher.fetch with a sync.Values call simpler
 // than closing over a variable for the args.
-//
-// TODO: have the fetch method fully support OAuth2, with refresh tokens etc.
 type centralRegistryTestUserFetcher struct {
 	requiredUsers map[string]bool
 }
 
-func (c centralRegistryTestUserFetcher) fetch() (res map[string]wireToken, err error) {
-	const centralRegistryHost = "registry.cue.works"
+const centralRegistryHost = "registry.cue.works"
+
+// centralRegistryOAuthConfig is adapted from [cuelang.org/go/internal/cueconfig].
+// TODO(mvdan): do we need to expose this as public API somewhere?
+// Perhaps not needed once we implement the well-known metadata endpoint?
+var centralRegistryOAuthConfig = oauth2.Config{
+	Endpoint: oauth2.Endpoint{
+		DeviceAuthURL: "https://" + centralRegistryHost + "/login/device/code",
+		TokenURL:      "https://" + centralRegistryHost + "/login/oauth/token",
+	},
+}
+
+func (c centralRegistryTestUserFetcher) fetch() (res map[string]oauth2.Token, err error) {
 	// Fallback to calling the central registry
 	userAuthnSrc := fmt.Sprintf("https://%s/_api/test_user_tokens", centralRegistryHost)
 
@@ -620,27 +631,30 @@ func (c centralRegistryTestUserFetcher) fetch() (res map[string]wireToken, err e
 		return nil, fmt.Errorf("failed to locate config directory: %v", err)
 	}
 
+	// TODO(mvdan): should the cue module expose some Go API to load and use logins.json?
+	// cue/load uses it transparently but only to fetch modules;
+	// the Go API does not provide an oauth2 client.
 	loginsJsonPath := filepath.Join(configDir, "cue", "logins.json")
 	loginsJson, err := os.ReadFile(loginsJsonPath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read config file %s: %v", loginsJsonPath, err)
 	}
 	var logins struct {
-		Registries map[string]wireToken
+		Registries map[string]oauth2.Token
 	}
 
 	if err := json.Unmarshal(loginsJson, &logins); err != nil {
 		return nil, fmt.Errorf("failed to JSON unmarshal %s: %v", loginsJsonPath, err)
 	}
 
-	var centralRegistryWireToken *wireToken
+	var centralRegistryToken *oauth2.Token
 	if logins.Registries != nil {
 		v, ok := logins.Registries[centralRegistryHost]
 		if ok {
-			centralRegistryWireToken = &v
+			centralRegistryToken = &v
 		}
 	}
-	if centralRegistryWireToken == nil {
+	if centralRegistryToken == nil {
 		return nil, fmt.Errorf("failed to find auth credentials for %s in %s; run `cue login`", centralRegistryHost, loginsJsonPath)
 	}
 
@@ -658,12 +672,12 @@ func (c centralRegistryTestUserFetcher) fetch() (res map[string]wireToken, err e
 		return nil, fmt.Errorf("failed to marshal args for call: %v", err)
 	}
 
-	client := new(http.Client)
+	// TODO: thread a context.Context to x/oauth2 and net/http via the callers.
+	client := centralRegistryOAuthConfig.Client(context.TODO(), centralRegistryToken)
 	req, err := http.NewRequest("POST", userAuthnSrc, nil)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create reqest to %s: %v", userAuthnSrc, err)
 	}
-	req.Header.Add("Authorization", fmt.Sprintf("Bearer %s", centralRegistryWireToken.AccessToken))
 	req.Body = io.NopCloser(bytes.NewReader(argsByts))
 
 	resp, err := client.Do(req)
