@@ -120,8 +120,6 @@ jobs:
       - if: runner.os == 'macOS'
         name: Install Hugo (${{ runner.os }})
         run: brew install hugo
-      - name: Early git and code sanity checks
-        run: go run cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650
       - name: 'Set PREPROCESSOR_NOWRITECACHE if Preprocessor-No-Write-Cache: true'
         run: |
           if ./_scripts/noWriteCache.bash HEAD
@@ -167,6 +165,8 @@ jobs:
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
+      - name: Early git and code sanity checks
+        run: go run cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650
       - name: Check site CUE configuration
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate

@@ -99,8 +99,6 @@ workflows: trybot: _repo.bashWorkflow & {
 			_installHugoLinux,
 			_installHugoMacOS,
 
-			_repo.earlyChecks,
-
 			// If the commit under test contains the trailer
 			// Preprocessor-No-Write-Cache: true, then set the
 			// PREPROCESSOR_NOWRITECACHE env var to non-empty.
@@ -119,6 +117,10 @@ workflows: trybot: _repo.bashWorkflow & {
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
 			for v in _setupGoActionsCaches {v},
+
+			// Run these early checks after we have restored the Go caches,
+			// as the checks are Go programs themselves.
+			_repo.earlyChecks,
 
 			// We can perform an early check that ensures page.cue files are
 			// consistent with respect to their containing directory path.,
