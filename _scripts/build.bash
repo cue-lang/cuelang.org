@@ -18,6 +18,18 @@ if [[ "${NETLIFY:-}" != "true" ]]
 then
 	# Local or CI - just not Netlify
 
+    # Use a cache volume for this build. By itself, this does not imply that
+    # the cache volume's contents are cached between builds; merely that the
+    # volume is present, and will be shared across the pages of the site to be
+    # used if they experience a gen_cache.cue miss, or if the skipcache setting
+    # tells the preprocessor not to use the contents of the gen_cache.cue
+    # files.
+    # The persistence of the cache volume's contents across builds is
+    # controlled by the invoking environment. Currently it's persisted when run
+    # locally (subject to configuration/etc) but isn't persisted when run
+    # inside CI.
+    nocachevolume=""
+
 	# It's useful to see timings on steps
 	time="time -p"
 
@@ -43,9 +55,6 @@ then
 		# Locally we don't want to minify the results of Hugo to help make
 		# debugging easier
 		minify=""
-
-		# We do want to use cache volumes locally... and only locally.
-		nocachevolume=""
 	fi
 fi
 
