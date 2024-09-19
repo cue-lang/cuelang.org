@@ -63,6 +63,30 @@
       },
       "revId": "c265b2d25d47a22dfbfa2e45df0952cd5a43e160",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd138f7f_fd322953",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-19T15:27:51Z",
+      "side": 1,
+      "message": "LGTM.",
+      "parentUuid": "9f2f82fa_1588cc26",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 44
+      },
+      "revId": "c265b2d25d47a22dfbfa2e45df0952cd5a43e160",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
