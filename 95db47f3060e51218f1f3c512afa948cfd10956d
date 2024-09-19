@@ -33,6 +33,24 @@
       "message": "nice catch. where are these set btw?\n\nalso, I thought this would be GOPRIVATE, GONOPROXY, GONOSUMDB. GOPROXY could still be obeyed and it\u0027s probably fine.",
       "revId": "95db47f3060e51218f1f3c512afa948cfd10956d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "334e2b3c_fb53b2ea",
+        "filename": "_scripts/tipUseAlternativeCUE.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-19T12:52:13Z",
+      "side": 1,
+      "message": "\u003e nice catch. where are these set btw?\n\nIn the CI env: https://github.com/cue-lang/cuelang.org/blob/master/internal/ci/github/trybot.cue#L257\n\n\u003e Also, I thought this would be GOPRIVATE, GONOPROXY, GONOSUMDB. GOPROXY could still be obeyed and it\u0027s probably fine.\n\n`GOPROXY\u003ddirect` is what we currently use in CI which, whilst overkill, remains in place in this CL, hence needs to be unset (I /think/).\n\nAfter you pointed out the differing uses of `GONOPROXY` and `GONOSUMDB` I figured we can assume they\u0027re not being used for now, and we could evolve this script if they become relevant.",
+      "parentUuid": "ad366603_4589645f",
+      "revId": "95db47f3060e51218f1f3c512afa948cfd10956d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
