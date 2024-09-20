@@ -310,7 +310,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 _installNode: json.#step & {
 	name: "Install Node"
-	uses: "actions/setup-node@v3"
+	uses: "actions/setup-node@v4"
 	with: {
 		"node-version": _repo.nodeVersion
 	}
@@ -323,7 +323,7 @@ _installGo: _repo.installGo & {
 
 _installHugoLinux: _linuxStep & {
 	name: "Install Hugo (${{ runner.os }})"
-	uses: "peaceiris/actions-hugo@v2"
+	uses: "peaceiris/actions-hugo@v3"
 	with: {
 		"hugo-version": _repo.hugoVersion
 		extended:       true
@@ -457,5 +457,5 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 
 _setupBuildx: json.#step & {
 	name: "Set up Docker Buildx"
-	uses: "docker/setup-buildx-action@v2"
+	uses: "docker/setup-buildx-action@v3"
 }
