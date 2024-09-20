@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4931357_14d21a3f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:10:55Z",
+      "side": 1,
+      "message": "`porcuepine`",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1a81563_b36ba995",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:10:55Z",
+      "side": 1,
+      "message": "Given that I don\u0027t have visibility inside the central registry service, I expected that reading the code comment would explain why the porcuepine user is used, instead of cueckoo. Having read it, I only grok *that* porcuepine is used, and not why cueckoo isn\u0027t used.",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "77bef396_6bbaf803",
@@ -14,6 +48,63 @@
       "writtenOn": "2024-09-20T12:05:03Z",
       "side": 1,
       "message": "I did wonder why we still had this when I had to refresh the porcuepine logins.json secret :)",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2770eee5_9c50f9c4",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:10:55Z",
+      "side": 1,
+      "message": "spacing",
+      "range": {
+        "startLine": 200,
+        "startChar": 27,
+        "endLine": 200,
+        "endChar": 29
+      },
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e475d9c9_dfcbe769",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:10:55Z",
+      "side": 1,
+      "message": "`in order`",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27f96575_754175bd",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:10:55Z",
+      "side": 1,
+      "message": "typo",
       "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
