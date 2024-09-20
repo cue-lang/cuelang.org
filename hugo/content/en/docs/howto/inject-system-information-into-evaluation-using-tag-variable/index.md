@@ -41,15 +41,15 @@ when invoking a supported `cue` command:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtVCAtLW91dCBjdWUgfCBzb3J0" }
 $ cue export -T --out cue | sort
-cpuArchitecture: "amd64"
-currentHostname: "fd46025f571f"
-currentTimeA:    "2024-07-24T12:16:36.998462958Z"
-currentTimeB:    "2024-07-24T12:16:36.998462958Z"
+cpuArchitecture: "arm64"
+currentHostname: "7a3a38273ea4"
+currentTimeA:    "2024-09-20T16:36:14.481759557Z"
+currentTimeB:    "2024-09-20T16:36:14.481759557Z"
 currentUsername: "root"
 directory:       "/home/runner"
 operatingSystem: "linux"
-randomnessA:     191422226613386244533905883473376449771
-randomnessB:     191422226613386244533905883473376449771
+randomnessA:     303485362439881500771283549311960488816
+randomnessB:     303485362439881500771283549311960488816
 ```
 
 In the CUE source, notice that the `rand` and `now` tag variables were
@@ -63,10 +63,10 @@ the `now` and `rand` variables are completely unstable, as demonstrated here by
 their values being different to the values shown above:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVQgfCBncmVwIC1lIF5jdXJyZW50VGltZSAtZSBecmFuZG9t" }
 $ cue eval -T | grep -e ^currentTime -e ^random
-randomnessA:     311890454198696002262433839322444861509
-randomnessB:     311890454198696002262433839322444861509
-currentTimeA:    "2024-07-24T12:16:38.716151613Z"
-currentTimeB:    "2024-07-24T12:16:38.716151613Z"
+randomnessA:     203983921450966532178792620278273406567
+randomnessB:     203983921450966532178792620278273406567
+currentTimeA:    "2024-09-20T16:36:16.175964221Z"
+currentTimeB:    "2024-09-20T16:36:16.175964221Z"
 ```
 
 ## Overridding system information
@@ -87,7 +87,7 @@ information for fields associated with the tag:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVR0IGY9MTIzMTIzMTIzMDAwIHwgZ3JlcCBecmFuZG9t" }
 $ cue eval -Tt f=123123123000 | grep ^random
 randomnessA:     123123123000
-randomnessB:     297085020426887323714942717980521585483
+randomnessB:     52993096906768831100440191860360588041
 ```
 
 ## Related content

@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								example: "Xiuel2Uf5yPJ2E2s3nGnaYVif7xs+JaFOAqTjDO0RIo="
+								example: "L89+E25XKqT0julaYMbSlFL+BCRKxtviyr1+ALYFtRI="
 							}
 							multi_step: {
-								hash:       "F7VBPGHAQIA5P6FBRM270H9JV14JHK875U1AM82R1MNLOJ4GOHPG===="
+								hash:       "FA9J4KO4P8IIM85R6SNIF8OEFR6MT6CPUU2FO4EB39STI06749LG===="
 								scriptHash: "6PPT5UJN3U9APNN8NBEFAEO1S3PPKC3PB53DFF45QOQL1J9E0KUG===="
 								steps: [{
 									doc:      "# We use pipes on this page; make sure that `true|false|true` would fail:"
@@ -22,15 +22,15 @@ package site
 									cmd:      "cue export -T --out cue | sort"
 									exitCode: 0
 									output: """
-											cpuArchitecture: "amd64"
-											currentHostname: "fd46025f571f"
-											currentTimeA:    "2024-07-24T12:16:36.998462958Z"
-											currentTimeB:    "2024-07-24T12:16:36.998462958Z"
+											cpuArchitecture: "arm64"
+											currentHostname: "7a3a38273ea4"
+											currentTimeA:    "2024-09-20T16:36:14.481759557Z"
+											currentTimeB:    "2024-09-20T16:36:14.481759557Z"
 											currentUsername: "root"
 											directory:       "/home/runner"
 											operatingSystem: "linux"
-											randomnessA:     191422226613386244533905883473376449771
-											randomnessB:     191422226613386244533905883473376449771
+											randomnessA:     303485362439881500771283549311960488816
+											randomnessB:     303485362439881500771283549311960488816
 
 											"""
 								}, {
@@ -43,10 +43,10 @@ package site
 									cmd:      "cue eval -T | grep -e ^currentTime -e ^random"
 									exitCode: 0
 									output: """
-											randomnessA:     311890454198696002262433839322444861509
-											randomnessB:     311890454198696002262433839322444861509
-											currentTimeA:    "2024-07-24T12:16:38.716151613Z"
-											currentTimeB:    "2024-07-24T12:16:38.716151613Z"
+											randomnessA:     203983921450966532178792620278273406567
+											randomnessB:     203983921450966532178792620278273406567
+											currentTimeA:    "2024-09-20T16:36:16.175964221Z"
+											currentTimeB:    "2024-09-20T16:36:16.175964221Z"
 
 											"""
 								}, {
@@ -64,7 +64,7 @@ package site
 									exitCode: 0
 									output: """
 											randomnessA:     123123123000
-											randomnessB:     297085020426887323714942717980521585483
+											randomnessB:     52993096906768831100440191860360588041
 
 											"""
 								}]
