@@ -37,6 +37,42 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "5bb28f81_ede6e56a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4931357_14d21a3f",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "864e0b15_70bdeeff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "I\u0027ve tweaked the wording in the trybot.cue file. The only logic for now is that control of the porcuepine account aligns with CUE Labs running the Central Registry.",
+      "parentUuid": "b1a81563_b36ba995",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "77bef396_6bbaf803",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
@@ -92,6 +128,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "778e3798_1ff3ae92",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2770eee5_9c50f9c4",
+      "range": {
+        "startLine": 200,
+        "startChar": 27,
+        "endLine": 200,
+        "endChar": 29
+      },
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e475d9c9_dfcbe769",
@@ -109,6 +169,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6071915_4d0fe455",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e475d9c9_dfcbe769",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27f96575_754175bd",
@@ -122,6 +200,24 @@
       "writtenOn": "2024-09-20T12:10:55Z",
       "side": 1,
       "message": "typo",
+      "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa85fb21_d06d688c",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27f96575_754175bd",
       "revId": "f8a4e48e56c4428bde578ca4046ea412284ace23",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
