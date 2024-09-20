@@ -1,0 +1,9 @@
+TryBot-Result+1: CUEcueckoo <cueckoo@cuelang.org>
+Code-Review+2: Daniel Martí <mvdan@mvdan.cc>
+Code-Review+2: Jonathan Matthews <github@hello.jonathanmatthews.com>
+Submitted-by: Paul Jolly <paul@myitcv.io>
+Submitted-at: Fri, 20 Sep 2024 13:04:17 +0000
+Reviewed-on: https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1201532
+Comments-Total: 13
+Project: cue-lang/cuelang.org
+Branch: refs/heads/master
