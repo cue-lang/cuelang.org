@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								code: {
-									"multiline-strings":            "zFvEUg6qoVsKoMAfLHhlZiwQRxVgNNJ2ekQVt2abYgc="
-									"alternative-escape-sequences": "7dxRZkWmVj5b1S4r9btn1IfEDJRreYRa8xtNmSHH8GU="
+									"multiline-strings":            "bjc4UghGm5+kC0XcXTHxbzzNOE2LeY9qJjjxALIK2Zo="
+									"alternative-escape-sequences": "34pPaC6AjyNxVAu+5AGMkDvvp5qF7eNLiMdqCcQp5+A="
 								}
 							}
 						}
