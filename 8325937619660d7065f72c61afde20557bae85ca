@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73580ed0_ddaa194f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T17:25:02Z",
+      "side": 1,
+      "message": "I believe this might only improve build times locally; which is enough of a reason to do it, but might not be the impact hoped for.",
+      "revId": "8325937619660d7065f72c61afde20557bae85ca",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
