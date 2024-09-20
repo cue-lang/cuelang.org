@@ -261,9 +261,12 @@ workflows: trybot: _repo.bashWorkflow & {
 				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
 				// so that CLs aren't blocked by failures caused by unrelated changes.
 				if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-				// Force Go to bypass the module proxy, ensuring that the absolute
-				// latest CUE pseudo-version is available to test against.
-				env: GOPROXY: "direct"
+
+				// Force Go to bypass the module proxy for the cuelang.org/go
+				// module, ensuring that the absolute latest CUE pseudo-version is
+				// available to test against.
+				env: GOPRIVATE: "cuelang.org/go"
+
 				run: "_scripts/tipUseAlternativeCUE.bash"
 			},
 			json.#step & {
