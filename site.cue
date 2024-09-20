@@ -163,7 +163,11 @@ template: ci.#writefs & {
 
 			RUN git clone https://github.com/cue-lang/libcue.git /libcue
 			RUN git -C /libcue reset --hard \#(versions.libcue)
-			RUN CGO_ENABLED=1 go build -C /libcue -o libcue.so -buildmode=c-shared
+			RUN \
+				--mount=type=cache,target=/cache/gocache \
+				--mount=type=cache,target=/cache/gomodcache \
+				export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache CGO_ENABLED=1 && \
+				go build -C /libcue -o libcue.so -buildmode=c-shared
 
 			FROM golang:\#(versions.bareGoVersion)
 
