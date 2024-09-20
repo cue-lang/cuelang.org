@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca5f93cf_f826c668",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T11:50:40Z",
+      "side": 1,
+      "message": "Confirmed success on `ci/test` via https://github.com/cue-lang/cuelang.org/actions/runs/10958335023",
+      "revId": "40eff2e629940ed910a42ac86c3dbd15e0984d54",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
