@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e50eec05_a1912082",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-20T12:04:03Z",
+      "side": 1,
+      "message": "Perhaps leave a TODO to use different terminology, e.g. rather than \"cache\" vs \"cachevolume\", call them \"gencache\" vs \"cachevolume\", or \"gencache\" vs \"dockercache\".\n\nThat way it\u0027s not confusing that e.g. `--skipcache` does not affect the caching via volumes.",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee33bbcd_7120ddcb",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-20T12:04:03Z",
+      "side": 1,
+      "message": "interesting, I would expect CI to have --readonlycache set, because it should check that the user updated the cache properly - and not do the updating itself, as it cannot git commit or push.",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
