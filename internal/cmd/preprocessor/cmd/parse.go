@@ -20,12 +20,12 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"slices"
 	"strings"
 	"unicode"
 
 	"cuelang.org/go/cue/errors"
 	"github.com/cue-lang/cuelang.org/internal/parse"
-	"golang.org/x/exp/slices"
 	"golang.org/x/tools/txtar"
 )
 

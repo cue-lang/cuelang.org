@@ -23,13 +23,14 @@ import (
 	"fmt"
 	"io"
 	"io/fs"
+	"maps"
 	"math/rand"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime/debug"
-	"sort"
+	"slices"
 	"strconv"
 	"strings"
 	"sync"
@@ -647,38 +648,25 @@ func (c centralRegistryTestUserFetcher) fetch() (res map[string]oauth2.Token, er
 		return nil, fmt.Errorf("failed to JSON unmarshal %s: %v", loginsJsonPath, err)
 	}
 
-	var centralRegistryToken *oauth2.Token
-	if logins.Registries != nil {
-		v, ok := logins.Registries[centralRegistryHost]
-		if ok {
-			centralRegistryToken = &v
-		}
-	}
-	if centralRegistryToken == nil {
+	token, ok := logins.Registries[centralRegistryHost]
+	if !ok {
 		return nil, fmt.Errorf("failed to find auth credentials for %s in %s; run `cue login`", centralRegistryHost, loginsJsonPath)
 	}
 
-	type testuserTokensArgs struct {
-		Usernames []string `json:"usernames"`
-	}
-
-	var args testuserTokensArgs
-	for u := range c.requiredUsers {
-		args.Usernames = append(args.Usernames, u)
-	}
-	sort.Strings(args.Usernames)
-	argsByts, err := json.Marshal(args)
+	argsBytes, err := json.Marshal(map[string]any{
+		"usernames": slices.Sorted(maps.Keys(c.requiredUsers)),
+	})
 	if err != nil {
 		return nil, fmt.Errorf("failed to marshal args for call: %v", err)
 	}
 
 	// TODO: thread a context.Context to x/oauth2 and net/http via the callers.
-	client := centralRegistryOAuthConfig.Client(context.TODO(), centralRegistryToken)
+	client := centralRegistryOAuthConfig.Client(context.TODO(), &token)
 	req, err := http.NewRequest("POST", userAuthnSrc, nil)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create reqest to %s: %v", userAuthnSrc, err)
 	}
-	req.Body = io.NopCloser(bytes.NewReader(argsByts))
+	req.Body = io.NopCloser(bytes.NewReader(argsBytes))
 
 	resp, err := client.Do(req)
 	if err != nil {

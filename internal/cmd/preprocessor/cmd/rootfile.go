@@ -22,6 +22,7 @@ import (
 	"fmt"
 	"io"
 	"io/fs"
+	"maps"
 	"math/rand"
 	"os"
 	"os/exec"
@@ -34,7 +35,6 @@ import (
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/format"
 	"github.com/cue-lang/cuelang.org/internal/parse"
-	"golang.org/x/exp/maps"
 	"golang.org/x/tools/txtar"
 	"mvdan.cc/sh/v3/syntax"
 )
@@ -227,13 +227,9 @@ func (rf *rootFile) validate() error {
 		tld[l] = nls
 		return nil
 	})
-	types := maps.Keys(labels)
-	sort.Strings(types)
-	for _, t := range types {
+	for _, t := range slices.Sorted(maps.Keys(labels)) {
 		tld := labels[t]
-		labels := maps.Keys(tld)
-		sort.Strings(labels)
-		for _, l := range labels {
+		for _, l := range slices.Sorted(maps.Keys(tld)) {
 			nls := tld[l]
 			if len(nls) == 1 {
 				continue
