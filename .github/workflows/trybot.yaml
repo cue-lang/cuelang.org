@@ -95,9 +95,9 @@ jobs:
         name: Install macOS utils
         run: brew install coreutils
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20.9.0
       - name: Install Go
@@ -113,7 +113,7 @@ jobs:
           go env
       - if: runner.os == 'Linux'
         name: Install Hugo (${{ runner.os }})
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 0.128.2
           extended: true
