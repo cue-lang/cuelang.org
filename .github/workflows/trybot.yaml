@@ -237,7 +237,7 @@ jobs:
         name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
         run: _scripts/tipUseAlternativeCUE.bash
         env:
-          GOPROXY: direct
+          GOPRIVATE: cuelang.org/go
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
         run: _scripts/regenPostInfraChange.bash
