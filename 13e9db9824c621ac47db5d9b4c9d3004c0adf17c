@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e6766b5_6e8049d4",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-09-20T11:51:52Z",
+      "side": 1,
+      "message": "debugging line? is it worth keeping around?",
+      "revId": "13e9db9824c621ac47db5d9b4c9d3004c0adf17c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
