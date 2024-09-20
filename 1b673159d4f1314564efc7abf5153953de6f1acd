@@ -20,6 +20,63 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d7deb360_97b3791f",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:05:45Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "187d03b8_3c92eae6",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:05:45Z",
+      "side": 1,
+      "message": "Perhaps worth noting that such stale gen_cache.cue files will be \"caught\" (as I understand it!) by dint of them being updated (because `--readonlycache` isn\u0027t set) hence the working tree won\u0027t be clean.",
+      "range": {
+        "startLine": 77,
+        "startChar": 39,
+        "endLine": 77,
+        "endChar": 46
+      },
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6208872a_947bcf2b",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:05:45Z",
+      "side": 1,
+      "message": "This sentence\u0027s grammar doesn\u0027t parse, for me; though I understand its point.",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ee33bbcd_7120ddcb",
         "filename": "_scripts/build.bash",
         "patchSetId": 5
@@ -31,6 +88,23 @@
       "writtenOn": "2024-09-20T12:04:03Z",
       "side": 1,
       "message": "interesting, I would expect CI to have --readonlycache set, because it should check that the user updated the cache properly - and not do the updating itself, as it cannot git commit or push.",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06d50581_aa385703",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-09-20T12:05:45Z",
+      "side": 1,
+      "message": "typo",
       "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
