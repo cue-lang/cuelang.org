@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7b06f52_8631e9f3",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e50eec05_a1912082",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7deb360_97b3791f",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-09-20T12:05:45Z",
       "side": 1,
       "message": "typo",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae7fd02d_4e2ff32e",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7deb360_97b3791f",
       "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +111,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9946dc90_a518ff8a",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Thanks - I\u0027ve made exactly that point in a rewording in response to @mvdan@mvdan.cc\u0027s comments.",
+      "parentUuid": "187d03b8_3c92eae6",
+      "range": {
+        "startLine": 77,
+        "startChar": 39,
+        "endLine": 77,
+        "endChar": 46
+      },
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6208872a_947bcf2b",
@@ -88,6 +148,24 @@
       "writtenOn": "2024-09-20T12:05:45Z",
       "side": 1,
       "message": "This sentence\u0027s grammar doesn\u0027t parse, for me; though I understand its point.",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e68a1fb_b965c63d",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Not fully sure what you were referring to here. But I\u0027ve attempted some rewording with a best-efforts guess.",
+      "parentUuid": "6208872a_947bcf2b",
       "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -109,6 +187,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2d9ae44_e47308e0",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "That would work in terms of failing the workflow in case of a cache miss, but would not be very informative in terms of saying what the diff is as a result of re-running because of the cache miss. I\u0027ve added a brief explanation on this point to clarify.",
+      "parentUuid": "ee33bbcd_7120ddcb",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "06d50581_aa385703",
@@ -122,6 +218,24 @@
       "writtenOn": "2024-09-20T12:05:45Z",
       "side": 1,
       "message": "typo",
+      "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b294e1dc_ed11f1f5",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06d50581_aa385703",
       "revId": "1b673159d4f1314564efc7abf5153953de6f1acd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
