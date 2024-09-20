@@ -203,8 +203,6 @@ jobs:
           EOD
       - name: Dist
         run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app
-        env:
-          CUE_TEST_LOGINS: ${{ secrets.CUECKOO_CUE_TEST_LOGINS }}
       - if: always()
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
