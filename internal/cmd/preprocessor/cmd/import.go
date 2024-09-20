@@ -16,14 +16,13 @@ package cmd
 
 import (
 	"fmt"
+	"maps"
 	"os"
 	"path/filepath"
-	"sort"
+	"slices"
 	"strings"
 
 	"github.com/spf13/cobra"
-	"golang.org/x/exp/maps"
-	"golang.org/x/exp/slices"
 )
 
 const pageCUETemplate = `package %s
@@ -94,9 +93,7 @@ func importDef(c *Command, args []string) error {
 			return fmt.Errorf("failed to import from %s: %w", ldc.langRootDir, err)
 		}
 		// Ensure there are page.cue files in each directory into which we copied files
-		targetDirs := maps.Keys(ldc.walked)
-		sort.Strings(targetDirs)
-		for _, dir := range targetDirs {
+		for _, dir := range slices.Sorted(maps.Keys(ldc.walked)) {
 			relDir := ldc.walked[dir]
 			if err := ldc.createTemplateCUE(dir, relDir); err != nil {
 				return err
