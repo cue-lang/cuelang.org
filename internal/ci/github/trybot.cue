@@ -191,6 +191,17 @@ workflows: trybot: _repo.bashWorkflow & {
 				"working-directory": "playground"
 			},
 
+			// A number of pages that are part of cuelang.org require interacting
+			// with the Central Registry. These pages require users with slightly
+			// different access levels, in order to simulate (for example) private
+			// modules, with some users granted access whilst others are denied.
+			// The Central Registry has a special endpoint which generates access
+			// tokens for a set of such test user IDs. Access to this endpoint is
+			// sensitive, because in  theory there is privilege escalation (even
+			// though in reality the test user IDs are intentionally not used
+			// for anything sensitive). As such, we use porcupine here order to
+			// more carefully contronl in a CI environment who has access to
+			// this endpoint.
 			json.#step & {
 				name: "write $HOME/.config/cue/logins.json"
 				run: """
@@ -203,12 +214,6 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_dist & {
 				_baseURL: _netlifyStep.#prime_url.CL
-
-				// TODO: remove this (and the credentials on the GitHub side in
-				// both the cuelang.org and cuelang.org-trybot repos) when we
-				// have a more principled solution to getting and passing
-				// temporary credentials.
-				env: CUE_TEST_LOGINS: "${{ secrets.CUECKOO_CUE_TEST_LOGINS }}"
 			},
 
 			// Check on clean repo prior to deploy
