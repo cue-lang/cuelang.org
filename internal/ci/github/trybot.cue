@@ -280,7 +280,11 @@ workflows: trybot: _repo.bashWorkflow & {
 				name: "tip.cuelang.org: Deploy the site"
 				// Only run in the main repo on the default branch or its designated test branch.
 				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-				run: "_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'"
+				run: """
+				git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
+				git config -l
+				_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
+				"""
 			},
 		]
 	}
