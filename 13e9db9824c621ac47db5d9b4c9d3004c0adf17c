@@ -20,6 +20,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "efbc5e8d_4d071882",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-20T12:32:24Z",
+      "side": 1,
+      "message": "Successful `ci/test` run at https://github.com/cue-lang/cuelang.org/actions/runs/10958663238",
+      "revId": "13e9db9824c621ac47db5d9b4c9d3004c0adf17c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "53f8cdf1_08caa6f0",
         "filename": "internal/ci/github/trybot.cue",
         "patchSetId": 2
