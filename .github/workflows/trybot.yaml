@@ -236,6 +236,7 @@ jobs:
         run: _scripts/tipUseAlternativeCUE.bash
         env:
           GOPRIVATE: cuelang.org/go
+          GODEBUG: http2debug=1
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
         run: _scripts/regenPostInfraChange.bash

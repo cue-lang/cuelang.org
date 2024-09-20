@@ -271,7 +271,13 @@ workflows: trybot: _repo.bashWorkflow & {
 				// Force Go to bypass the module proxy for the cuelang.org/go
 				// module, ensuring that the absolute latest CUE pseudo-version is
 				// available to test against.
-				env: GOPRIVATE: "cuelang.org/go"
+				env: {
+					GOPRIVATE: "cuelang.org/go"
+					// Debug to help folks working on golang/go#69544 issue, as per
+					// https://github.com/golang/go/issues/69544#issuecomment-2364054727
+					// TODO(jcm): remove this.
+					GODEBUG: "http2debug=1"
+				}
 
 				run: "_scripts/tipUseAlternativeCUE.bash"
 			},
