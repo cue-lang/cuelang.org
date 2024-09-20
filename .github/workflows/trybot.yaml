@@ -243,4 +243,6 @@ jobs:
         run: _scripts/regenPostInfraChange.bash
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         name: 'tip.cuelang.org: Deploy the site'
-        run: _scripts/tipDeploy.bash 'cueckoo' 'cueckoo@gmail.com'
+        run: |-
+          git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
+          _scripts/tipDeploy.bash 'cueckoo' 'cueckoo@gmail.com'
