@@ -203,6 +203,8 @@ jobs:
           EOD
       - name: Dist
         run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app
+        env:
+          GODEBUG: http2debug=1
       - if: always()
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
@@ -236,6 +238,7 @@ jobs:
         run: _scripts/tipUseAlternativeCUE.bash
         env:
           GOPRIVATE: cuelang.org/go
+          GODEBUG: http2debug=1
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
         run: _scripts/regenPostInfraChange.bash
