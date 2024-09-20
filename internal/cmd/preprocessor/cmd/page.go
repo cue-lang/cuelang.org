@@ -17,14 +17,14 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"maps"
 	"os"
 	"path/filepath"
+	"slices"
 	"sort"
 	"strings"
 
 	"cuelang.org/go/cue"
-	"golang.org/x/exp/maps"
-	"golang.org/x/exp/slices"
 )
 
 type page struct {
@@ -388,8 +388,7 @@ func (p *page) parseComparator(m json.RawMessage) (comparatorMatcher, error) {
 // processes the set of root files that form the basis of a page root.
 func (p *page) process() error {
 	// langs are the languages "supported" by this page
-	langs := maps.Keys(p.langTargets)
-	slices.Sort(langs)
+	langs := slices.Sorted(maps.Keys(p.langTargets))
 
 	// langsWithLangDirs are the languages for which _$LANG-specific dirs exist. We need
 	// to recursively copy the contents of these after we have copied the
