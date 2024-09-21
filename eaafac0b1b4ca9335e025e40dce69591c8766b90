@@ -34,6 +34,24 @@
       "parentUuid": "c047b0c4_0243a563",
       "revId": "eaafac0b1b4ca9335e025e40dce69591c8766b90",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffa1ca28_9ef9d906",
+        "filename": "hugo/content/en/docs/howto/inject-system-information-into-evaluation-using-tag-variable/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-21T17:08:07Z",
+      "side": 1,
+      "message": "Ok, I understand how this happened now. Daniel and I had stacks which both required `Preprocessor-No-Write-Cache: true`. He ended up submitting his fairly quickly, so I rebased. The rebase in this situation naturally results in conflicts in the cache regeneration commit. My strategy up until now had been to remove the `gen_cache.cue` files and re-run the preprocessor. This is actually not the correct strategy. Because it totally blows away any opportunity for a multi-step _script_ to match, despite there being an overall cache miss (in this case because of a Dockerfile change). With no `gen_cache.cue` file, there is no opportunity for the comparators to determine \"there is logically no change in output here\". Hence the pages where comparators are used showed up as diffs in the CL, because they were fully regenerated, on a different architecture, different random values etc. \n\nSo the answer is as follows: when doing a rebase and dealing with the conflicts in the cache regeneration commit in such a scenario, do `git checkout --theirs -- **/gen_cache.cue`, continue the rebase, then re-run the preprocessor to ensure the files are not stale. \n\nWe should probably document this somewhere. Because it\u0027s not obvious per se what is \"wrong\" about deleting the cache files.",
+      "parentUuid": "eaaeaaa0_e334e260",
+      "revId": "eaafac0b1b4ca9335e025e40dce69591c8766b90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
