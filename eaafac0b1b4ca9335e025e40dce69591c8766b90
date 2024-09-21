@@ -16,6 +16,24 @@
       "message": "This looks 5% odd.\n\nWhy are we seeing this change /here/, and not\n\n1. in the CL before this; or\n2. not at all?",
       "revId": "eaafac0b1b4ca9335e025e40dce69591c8766b90",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eaaeaaa0_e334e260",
+        "filename": "hugo/content/en/docs/howto/inject-system-information-into-evaluation-using-tag-variable/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-09-21T08:43:04Z",
+      "side": 1,
+      "message": "There is something funky going on for sure. I\u0027ll try and dig in and work out what is going on.",
+      "parentUuid": "c047b0c4_0243a563",
+      "revId": "eaafac0b1b4ca9335e025e40dce69591c8766b90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
