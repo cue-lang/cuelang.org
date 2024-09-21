@@ -147,6 +147,13 @@ jobs:
             ${{ github.workspace }}/playground/.webpack_cache
           key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.23.0
+      - name: Check cache sizes
+        run: |-
+            du -sh ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
+            du -sh ${{ steps.go-cache-dir.outputs.dir }}
+            du -sh ~/.cache/dockercache
+            du -sh ~/.cache/node-gyp
+            du -sh ~/.npm
       - if: |-
           ! (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
