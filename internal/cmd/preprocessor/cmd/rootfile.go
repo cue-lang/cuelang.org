@@ -676,7 +676,7 @@ func (m *multiStepScript) run() {
 	}
 
 	if cacheMiss {
-		m.debugf(m.debugCache, "%v: cache miss for multi-step script", m)
+		m.debugf(m.debugCache, "%v: cache miss for multi-step script (scriptCacheMiss: %v)", m, scriptCacheMiss)
 	} else {
 		m.debugf(m.debugCache, "%v: skipping cache for multi-step script; was a hit", m)
 	}
