@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								basic:                   "/TxilK1w1A9J0lnhkvLTzUSlKUQjkaHHKjlcc0+C9is="
-								"one of":                "+0czCYWHLH3tfvLLv7nH2oissLXW84wvBs6rixPP7LM="
-								"any of":                "H7rtGeLhYmlA+w5miESAhUK0HdP7+IcrN4w3PRP9sxU="
-								"all of":                "fAlGCiKd6yj3DxjanoZdkbwsQIkqzWqzFDK1VHufx4M="
-								not:                     "LAwn5a/xeUXv3MX4JjUrYmWjSOmsTa6eQKkiTcWJvAU="
-								"all but one":           "zW3y6JK4n3GGc/nyDL+s6mkVLojWSkHKI5+WchwHK4Y="
-								composite:               "yg3UwcvKBfdZz6O0O8neIqFuEn+hboezvVvllWE0vsM="
-								"future: helper fields": "jGOJbj4Z+qHnDjv73YfvQtYNR9lgcNrfVstuDQf+ln8="
+								basic:                   "KoLcaOE7/OgVDm0XUZajkL8YTbvgwaRojyxC78g8zug="
+								"one of":                "bXvPzMcYrho5l70KIlPcUW+3NnPltrHX8fsCGtHJa60="
+								"any of":                "Uy38X1d+he30Juwy2DR0JcQghTKjk56Swrdx1Bp9++A="
+								"all of":                "BdFf0M7ILeMuQAFAZ9hNQrxRYX58xP/IQCzeYgUXd14="
+								not:                     "5QIeqs2BcdTS0XPHE2kc/NcqpyiXRRoxxErHwtF3uu8="
+								"all but one":           "gfH3B5r8GvOoWbd0qT8+iN3pnEBhfsvKfBIPxDQWDHA="
+								composite:               "0LsfnOrIk3++SVuDbOrKZjanomfn0B5t2ap4asnmqSg="
+								"future: helper fields": "+mq0z88SgC0P3xZXK1wGR5RDkuXIDraD3lDk19DD0xU="
 							}
 							multi_step: {
-								hash:       "MFPB0SKK41VB74DJIQQMG727HTLTGDURJPJIHRA5LAJ8DVG01O70===="
+								hash:       "IUO9RLOVNI3NQIHQ24P3CQ1NRA53Q1U45BILA4NJT0TKTBOONDH0===="
 								scriptHash: "BIBTM3M6P5Q255R5F3VMD7IPESA01O0DK832L3QM72FEI5B3N0J0===="
 								steps: [{
 									doc:      ""
