@@ -5,6 +5,8 @@
 
             <article class="article article--docs">
                 <div class="article__container">
+                    {{- partial "article--header" (dict "showTitle" false "context" .) -}}
+
                     <div class="article__content">
                         {{ .Content }}
 
@@ -19,7 +21,7 @@
 
             {{ partial "paging/prev-next.html" . }}
         </div>
-    
+
         <div id="docs-menu" class="docs__aside">
             <div class="docs__backdrop" data-docs-close="docs"></div>
             <div class="docs__nav">
