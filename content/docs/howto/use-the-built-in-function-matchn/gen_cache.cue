@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								basic:                   "KoLcaOE7/OgVDm0XUZajkL8YTbvgwaRojyxC78g8zug="
-								"one of":                "bXvPzMcYrho5l70KIlPcUW+3NnPltrHX8fsCGtHJa60="
-								"any of":                "Uy38X1d+he30Juwy2DR0JcQghTKjk56Swrdx1Bp9++A="
-								"all of":                "BdFf0M7ILeMuQAFAZ9hNQrxRYX58xP/IQCzeYgUXd14="
-								not:                     "5QIeqs2BcdTS0XPHE2kc/NcqpyiXRRoxxErHwtF3uu8="
-								"all but one":           "gfH3B5r8GvOoWbd0qT8+iN3pnEBhfsvKfBIPxDQWDHA="
-								composite:               "0LsfnOrIk3++SVuDbOrKZjanomfn0B5t2ap4asnmqSg="
-								"future: helper fields": "+mq0z88SgC0P3xZXK1wGR5RDkuXIDraD3lDk19DD0xU="
+								basic:                   "mAXUWaP5hxj+ASQJ6GIHVK9v/oG1LzulF6wzfuOE2ks="
+								"one of":                "66M5S4k+JISu3kPzq2zilZfpqcJs+AonGlhNjGKMU0g="
+								"any of":                "m/Qd7HyT2DTHxKuErfowtLS+7kuHTSCWkriczgi9sLk="
+								"all of":                "EIBb9cJIjh6QhbkCn7mem8aQNGavN5Xn3SP1LpXrO/4="
+								not:                     "9i1aHKabDMF+BTVGNwFYgI6WpybOoAq8fmwFRYpsT74="
+								"all but one":           "cLVa/8eV2Do4/oCR3BT+MkVzoAqVIY7SUJd5YA8RV1g="
+								composite:               "iwz5XZd9es86+g19xTEHY8/KL0TYEyfel/7b43BcD7g="
+								"future: helper fields": "WdYwFMRbF9fW/vNmz4BJS7/qU18KlQaFYbzzR74r9wA="
 							}
 							multi_step: {
-								hash:       "IUO9RLOVNI3NQIHQ24P3CQ1NRA53Q1U45BILA4NJT0TKTBOONDH0===="
-								scriptHash: "BIBTM3M6P5Q255R5F3VMD7IPESA01O0DK832L3QM72FEI5B3N0J0===="
+								hash:       "1TJ5DS3A78BMOA2F8NS6ST3H84CPQ4627U8P9H48QH80G1V5FGEG===="
+								scriptHash: "7H7OPCLJQUS2HFN023GBJE9DCUSVOL4DVC88CG88LK7Q6A47T1Q0===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.11.0-alpha.1:$PATH"
+									cmd:      "export PATH=/cues/v0.11.0-alpha.2:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -29,7 +29,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.0-alpha.1
+											cue version v0.11.0-alpha.2
 											...
 
 											"""
