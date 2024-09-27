@@ -2,8 +2,8 @@ package site
 {
 	content: {
 		docs: {
-			tutorial: {
-				k8s: {
+			draft: {
+				"cbe-003_kubernetes_tutorial": {
 					page: {
 						cache: {
 							upload: {
