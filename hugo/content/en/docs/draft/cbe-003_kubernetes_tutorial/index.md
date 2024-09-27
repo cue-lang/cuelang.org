@@ -1,7 +1,11 @@
 ---
-title: K8s tutorial
+title: Cue By Example - Controlling Kubernetes with CUE
 draft: true
 ---
+
+{{<caution>}}
+Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial
+{{</caution>}}
 
 In this tutorial we show how to convert Kubernetes configuration files
 for a collection of microservices.
