@@ -1,0 +1,456 @@
+image: node:8.10
+
+stages:
+  - prepare
+  - test
+  - build-backend
+  - deploy-backend
+  - provision-backend
+  - build-frontend
+  - deploy-frontend
+  - confidence-check
+
+prepare:
+  stage: prepare
+  script:
+    - wipCommits=`git log --grep=^WIP`; if [ -n "$wipCommits" ]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - yarn install --ignore-scripts --frozen-lockfile
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - node_modules/
+prepare_frontend:
+  stage: prepare
+  script:
+    - wipCommits=`git log --grep=^WIP`; if [ -n "$wipCommits" ]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - cd stacks/frontend
+    - yarn install --frozen-lockfile
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - stacks/frontend/node_modules/
+prepare_server:
+  stage: prepare
+  script:
+    - wipCommits=`git log --grep=^WIP`; if [ -n "$wipCommits" ]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - cd server
+    - yarn install --frozen-lockfile
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - server/node_modules/
+prepare_accounts:
+  stage: prepare
+  script:
+    - wipCommits=`git log --grep=^WIP`; if [ -n "$wipCommits" ]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - cd stacks/accounts
+    - yarn install --frozen-lockfile
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - stacks/accounts/node_modules/
+prepare_periodicals:
+  stage: prepare
+  script:
+    - wipCommits=`git log --grep=^WIP`; if [ -n "$wipCommits" ]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - cd stacks/periodicals
+    - yarn install --frozen-lockfile
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - stacks/periodicals/node_modules/
+
+test:
+  stage: test
+  dependencies:
+   - prepare
+  script:
+   - yarn run test
+test_frontend:
+  stage: test
+  dependencies:
+   - prepare
+   - prepare_frontend
+  script:
+    - cd stacks/frontend
+    - yarn run test --ci
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - stacks/frontend/__tests__/__coverage__/
+    when: always
+test_accounts:
+  stage: test
+  dependencies:
+    - prepare
+    - prepare_accounts
+  script:
+    - cd stacks/accounts
+    - yarn run test --ci
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - stacks/accounts/__tests__/__coverage__/
+    when: always
+test_periodicals:
+  stage: test
+  dependencies:
+    - prepare
+    - prepare_periodicals
+  script:
+    - cd stacks/periodicals
+    - yarn run test --ci
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - stacks/periodicals/__tests__/__coverage__/
+    when: always
+
+build_terraform:
+  stage: build-backend
+  dependencies:
+    # No previous assets needed for this job
+  script: echo "Dummy job to preserve artifacts for the undeploy job"
+  artifacts:
+    expire_in: 1 month
+    paths:
+    # The below files are needed for the undeploy jobs,
+    # because when undeploying the branch (and thus these files) is no longer available
+    - stacks.tf
+    - stacks/*.tf
+    - stacks/*/*.tf
+    - stacks/*/*_lambda_role_policy.json
+    - stacks/*/*_lambda_policy.json
+build_server:
+  stage: build-backend
+  dependencies:
+     - prepare_server
+  script:
+    - cd server
+    - yarn run build
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - server/dist/
+build_accounts:
+  stage: build-backend
+  dependencies:
+   - prepare
+   - prepare_accounts
+  script:
+    - cd stacks/accounts
+    - yarn run build
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - stacks/accounts/dist/
+build_periodicals:
+  stage: build-backend
+  dependencies:
+   - prepare
+   - prepare_periodicals
+  script:
+    - cd stacks/periodicals
+    - yarn run build
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - stacks/periodicals/dist/
+
+deploy_terraform:
+  stage: deploy-backend
+  image:
+    name: hashicorp/terraform:0.11.2
+    entrypoint:
+      # These values provided by https://github.com/hashicorp/docker-hub-images/issues/37#issuecomment-356330221
+      - '/usr/bin/env'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+  dependencies:
+   - build_terraform
+   - build_server
+   - build_accounts
+   - build_periodicals
+  script:
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export TF_VAR_aws_access_key_id=$AWS_ACCESS_KEY_ID_PRODUCTION; else export TF_VAR_aws_access_key_id=$AWS_ACCESS_KEY_ID; fi;
+    - export TF_VAR_aws_account_id=$AWS_ACCOUNT_ID
+    - export TF_VAR_aws_region=$AWS_REGION
+    - export TF_VAR_heroku_email=$HEROKU_EMAIL
+    - export TF_VAR_heroku_api_key=$HEROKU_API_KEY
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export TF_VAR_aws_secret_access_key=$AWS_SECRET_ACCESS_KEY_PRODUCTION; else export TF_VAR_aws_secret_access_key=$AWS_SECRET_ACCESS_KEY; fi;
+    - export TF_VAR_jwt_secret=$(echo "$JWT_SECRET$CI_COMMIT_REF_NAME" | sha512sum)
+    - export TF_VAR_frontend_url="https://$CI_COMMIT_REF_SLUG.flockademic.com"
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export TF_VAR_orcid_base_path="$ORCID_BASE_PATH_PRODUCTION"; export TF_VAR_orcid_client_id="$ORCID_CLIENT_ID_PRODUCTION"; export TF_VAR_orcid_client_secret="$ORCID_CLIENT_SECRET_PRODUCTION"; else export TF_VAR_orcid_base_path="$ORCID_BASE_PATH"; export TF_VAR_orcid_client_id="$ORCID_CLIENT_ID"; export TF_VAR_orcid_client_secret="$ORCID_CLIENT_SECRET"; fi;
+    # Use the branch/tag name as the TerraForm Workspace,
+    # limited to 26 chars (30 is the max length of Heroku app names, which we prepend with `fl9-`),
+    # and with a potential trailing dash stripped
+    # (Note that I'd rather name this $TF_WORKSPACE, but:
+    # https://github.com/hashicorp/terraform/issues/15874 )
+    - export WORKSPACE_NAME=`echo $CI_COMMIT_REF_SLUG | cut -c 1-26 | sed -e 's/-$//'`
+    # Deploy everything
+    - terraform version
+    - terraform init -backend-config="region=$TF_VAR_aws_region" -input=false
+    - terraform workspace select $WORKSPACE_NAME || terraform workspace new $WORKSPACE_NAME
+    - terraform get
+    - terraform graph
+    - terraform plan -out .tfplan -input=false | sed -e "s/$TF_VAR_aws_access_key_id/***/g" | sed -e "s/$TF_VAR_aws_secret_access_key/***/g"
+    - terraform apply -input=false .tfplan | sed -e "s/$TF_VAR_aws_access_key_id/***/g" | sed -e "s/$TF_VAR_aws_secret_access_key/***/g" | sed -e "s/$TF_VAR_orcid_client_secret/***/g"
+    # Store the API endpoint to a file so that we can pass it on to other jobs (without a trailing slash)
+    - terraform output heroku_web_url | sed s'/\/$//' > api_url
+    - terraform output heroku_git_url > heroku_git_url
+    # Copy everything to a dir to push to Heroku
+    - cd server
+    - mkdir -p dist/stacks/accounts
+    - mkdir -p dist/stacks/periodicals
+    - cp package.json yarn.lock dist
+    # Make sure that library dependencies are available to all stacks:
+    - cp ../package.json ../yarn.lock dist/stacks
+    - cp -r ../stacks/accounts/dist ../stacks/accounts/package.json ../stacks/accounts/yarn.lock dist/stacks/accounts
+    - cp -r ../stacks/periodicals/dist ../stacks/periodicals/package.json ../stacks/periodicals/yarn.lock dist/stacks/periodicals
+    - cd dist
+    - git init .
+    - git config user.email "ci@flockademic.com"
+    - git config user.name "CI deployment"
+    - git add .
+    - git commit -m "Create deployment package for Heroku"
+    - git remote add heroku `cat ../../heroku_git_url`
+    - echo "machine git.heroku.com login \"\" password $HEROKU_API_KEY" > ~/.netrc
+    - chmod 600 ~/.netrc
+    - git push --force heroku master
+  environment:
+    name: review_api/$CI_COMMIT_REF_SLUG
+    url: https://api.$CI_COMMIT_REF_SLUG.flockademic.com
+    on_stop: stop_terraform
+  artifacts:
+    # This is just needed for subsequent jobs, so 1 hour should be enough
+    expire_in: 1 hour
+    paths:
+     - api_url
+stop_terraform:
+  stage: deploy-backend
+  image:
+    name: hashicorp/terraform:0.11.2
+    entrypoint:
+      # These values provided by https://github.com/hashicorp/docker-hub-images/issues/37#issuecomment-356330221
+      - '/usr/bin/env'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+  variables:
+    GIT_STRATEGY: none
+  dependencies:
+   - build_terraform
+  script:
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export TF_VAR_aws_access_key_id=$AWS_ACCESS_KEY_ID_PRODUCTION; else export TF_VAR_aws_access_key_id=$AWS_ACCESS_KEY_ID; fi;
+    - export TF_VAR_aws_account_id=$AWS_ACCOUNT_ID
+    - export TF_VAR_aws_region=$AWS_REGION
+    - export TF_VAR_heroku_email=$HEROKU_EMAIL
+    - export TF_VAR_heroku_api_key=$HEROKU_API_KEY
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export TF_VAR_aws_secret_access_key=$AWS_SECRET_ACCESS_KEY_PRODUCTION; else export TF_VAR_aws_secret_access_key=$AWS_SECRET_ACCESS_KEY; fi;
+    - export TF_VAR_jwt_secret="irrelevant_for_undeployment"
+    - export TF_VAR_orcid_base_path="irrelevant_for_undeployment"
+    - export TF_VAR_orcid_client_id="irrelevant_for_undeployment"
+    - export TF_VAR_orcid_client_secret="irrelevant_for_undeployment"
+    - export TF_VAR_frontend_url="irrelevant_for_undeployment"
+    # Use the branch/tag name as the TerraForm Workspace,
+    # limited to 26 chars (30 is the max length of Heroku app names, which we prepend with `fl9-`),
+    # and with a potential trailing dash stripped
+    # (Note that I'd rather name this $TF_WORKSPACE, but:
+    # https://github.com/hashicorp/terraform/issues/15874 )
+    - export WORKSPACE_NAME=`echo $CI_COMMIT_REF_SLUG | cut -c 1-26 | sed -e 's/-$//'`
+    - terraform init -backend-config="region=$TF_VAR_aws_region" -input=false
+    - terraform workspace select $WORKSPACE_NAME
+    - terraform get
+    - terraform plan -destroy -input=false
+    - terraform destroy -input=false -force
+  when: manual
+  environment:
+    name: review_api/$CI_COMMIT_REF_SLUG
+    action: stop
+
+provision_databases:
+  stage: provision-backend
+  dependencies:
+   - deploy_terraform
+  image: alpine:3.6
+  script:
+    - apk add --no-cache curl jq postgresql-client
+    # Use the branch/tag name as the TerraForm Workspace,
+    # limited to 26 chars (30 is the max length of Heroku app names, which we prepend with `fl9-`),
+    # and with a potential trailing dash stripped
+    # (Note that I'd rather name this $TF_WORKSPACE, but:
+    # https://github.com/hashicorp/terraform/issues/15874 )
+    - export WORKSPACE_NAME=`echo $CI_COMMIT_REF_SLUG | cut -c 1-26 | sed -e 's/-$//'`
+    - "DATABASE_URL=`curl -X GET \"https://api.heroku.com/apps/fl9-${WORKSPACE_NAME}/config-vars\" -H \"Accept: application/vnd.heroku+json; version=3\" -H \"Authorization: Bearer ${HEROKU_API_KEY}\" | jq -r \".DATABASE_URL\"`"
+    # $DATABASE_URL is of the form `postgres://<username>:<password>@<hostname>:<port>/<database>
+    - export PGHOST=`echo ${DATABASE_URL:11} | cut -d '@' -f 2 | cut -d ':' -f 1`
+    - export PGPORT=`echo ${DATABASE_URL:11} | cut -d '@' -f 2 | cut -d ':' -f 2 | cut -d '/' -f 1`
+    - export PGUSER=`echo ${DATABASE_URL:11} | cut -d '@' -f 1 | cut -d ':' -f 1`
+    - export PGDATABASE=`echo ${DATABASE_URL:11} | cut -d '@' -f 2 | cut -d ':' -f 2 | cut -d '/' -f 2`
+    - echo "$PGHOST:$PGPORT:$PGDATABASE:$PGUSER:`echo ${DATABASE_URL:11} | cut -d '@' -f 1 | cut -d ':' -f 2`" > .pgpass.conf
+    - chmod 0600 .pgpass.conf
+    - export PGPASSFILE=.pgpass.conf
+    # Create the databases and provision them:
+    - sh stacks/provision_databases.sh stacks
+
+build_frontend:
+  stage: build-frontend
+  dependencies:
+   - prepare
+   - prepare_frontend
+   - deploy_terraform
+  script:
+    - cd stacks/frontend
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export ORCID_BASE_PATH="$ORCID_BASE_PATH_PRODUCTION"; export ORCID_CLIENT_ID="$ORCID_CLIENT_ID_PRODUCTION"; fi;
+    - export API_URL=`cat ../../api_url`
+    - export CODE_BRANCH="$CI_COMMIT_REF_SLUG"
+    - if [[ $CI_COMMIT_REF_NAME == $BRANCH_IN_MAINTENANCE ]]; then echo 'Building in maintenance mode.'; export MAINTENANCE_MODE=true; fi;
+    - yarn run build
+  artifacts:
+    expire_in: 1 month
+    paths:
+    - stacks/frontend/dist/
+    # The below files are needed for the undeploy jobs,
+    # because when undeploying the branch (and thus these files) is no longer available
+    - stacks/frontend/package.json
+    - stacks/frontend/build/
+
+deploy_frontend:
+  stage: deploy-frontend
+  dependencies:
+   - prepare_frontend
+   - build_frontend
+  script:
+    - cd stacks/frontend
+    - yarn run deploy
+    - yarn run awaitDeployTasks
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    url: https://$CI_COMMIT_REF_SLUG.flockademic.com
+    on_stop: stop_frontend
+  except:
+    - master
+deploy_frontend_prod:
+  stage: deploy-frontend
+  dependencies:
+   - prepare_frontend
+   - build_frontend
+  script:
+    - cd stacks/frontend
+    - export AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID_PRODUCTION"
+    - export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY_PRODUCTION"
+    - yarn run deploy
+    - yarn run awaitDeployTasks
+  environment:
+    # Since the deploy_terraform environment cannot have different environment names for production and review apps,
+    # we're not doing that here either in order to be able to match on the name and make certain variables only available to production.
+    name: review/$CI_COMMIT_REF_SLUG
+    url: https://flockademic.com
+  only:
+    - master
+stop_frontend:
+  stage: deploy-frontend
+  variables:
+    GIT_STRATEGY: none
+  dependencies:
+   - prepare_frontend
+   - build_frontend
+  script:
+    - cd stacks/frontend
+    - yarn run undeploy
+  when: manual
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    action: stop
+
+e2e:firefox:
+  stage: confidence-check
+  services:
+    - selenium/standalone-firefox:3.13
+  dependencies:
+   - prepare
+  script:
+    - if [[ $CI_COMMIT_REF_NAME == $BRANCH_IN_MAINTENANCE ]]; then echo 'Running checks in maintenance mode.'; export MAINTENANCE_MODE=true; fi;
+    - yarn run confidence-check --host=selenium__standalone-firefox
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - __e2e__/results/
+    - __e2e__/errorShots/
+    when: always
+  # GUI tests loading a full browser are notoriously unstable.
+  # See https://gitlab.com/Flockademic/Flockademic/issues/366
+  retry: 2
+e2e:chrome:
+  stage: confidence-check
+  services:
+    - selenium/standalone-chrome:3.13
+  dependencies:
+   - prepare
+  script:
+    - if [[ $CI_COMMIT_REF_NAME == $BRANCH_IN_MAINTENANCE ]]; then echo 'Running checks in maintenance mode.'; export MAINTENANCE_MODE=true; fi;
+    - yarn run confidence-check --host=selenium__standalone-chrome
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - __e2e__/results/
+    - __e2e__/errorShots/
+    when: always
+  # GUI tests loading a full browser are notoriously unstable.
+  # See https://gitlab.com/Flockademic/Flockademic/issues/366
+  retry: 2
+# See https://docs.gitlab.com/ce/ci/examples/sast.html
+sast:
+  stage: confidence-check
+  image: registry.gitlab.com/gitlab-org/gl-sast:latest
+  dependencies:
+   - prepare
+   - prepare_frontend
+   - prepare_accounts
+   - prepare_periodicals
+  script:
+    - /app/bin/run .
+  artifacts:
+    paths:
+    - gl-sast-report.json
+# See https://docs.gitlab.com/ee/ci/examples/dast.html
+dast:
+  stage: confidence-check
+  image: owasp/zap2docker-weekly
+  dependencies:
+  script:
+    - mkdir /zap/wrk/
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export SITE_URL=https://flockademic.com; else export SITE_URL=https://$CI_COMMIT_REF_SLUG.flockademic.com; fi;
+    - /zap/zap-baseline.py -J gl-dast-report.json -t $SITE_URL || true
+    - cp /zap/wrk/gl-dast-report.json .
+  artifacts:
+    paths: [gl-dast-report.json]
+# See https://docs.gitlab.com/ee/ci/examples/browser_performance.html
+performance:
+  stage: confidence-check
+  image: docker:git
+  dependencies:
+  services:
+    - docker:stable-dind
+  script:
+    - mkdir gitlab-exporter
+    - wget -O ./gitlab-exporter/index.js https://gitlab.com/gitlab-org/gl-performance/raw/master/index.js
+    - mkdir sitespeed-results
+    - if [[ $CI_COMMIT_REF_NAME == "master" ]]; then export SITE_URL=https://flockademic.com; else export SITE_URL=https://$CI_COMMIT_REF_SLUG.flockademic.com; fi;
+    - docker run --shm-size=1g --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:6.3.1 --plugins.add ./gitlab-exporter --outputFolder sitespeed-results $SITE_URL
+    - mv sitespeed-results/data/performance.json performance.json
+  artifacts:
+    paths:
+    - performance.json
+license_management:
+  stage: confidence-check
+  image: docker:stable
+  variables:
+    DOCKER_DRIVER: overlay2
+  allow_failure: true
+  services:
+    - docker:stable-dind
+  script:
+    - export LICENSE_MANAGEMENT_VERSION=$(echo "$CI_SERVER_VERSION" | sed 's/^\([0-9]*\)\.\([0-9]*\).*/\1-\2-stable/')
+    - docker run
+        --volume "$PWD:/code"
+        "registry.gitlab.com/gitlab-org/security-products/license-management:$LICENSE_MANAGEMENT_VERSION" analyze /code
+  artifacts:
+    paths: [gl-license-management-report.json]
