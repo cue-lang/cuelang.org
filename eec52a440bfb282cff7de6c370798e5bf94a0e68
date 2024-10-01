@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b19354e6_1d58ecfa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-01T06:48:02Z",
+      "side": 1,
+      "message": "Ooops, I reviewed this after checking it out locally. Removing +2 for now per commit message.",
+      "revId": "eec52a440bfb282cff7de6c370798e5bf94a0e68",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
