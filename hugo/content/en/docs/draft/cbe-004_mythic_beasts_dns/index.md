@@ -1,6 +1,5 @@
 ---
 title: CUE By Example - Managing Mythic Beasts DNS zones with CUE
-draft: true
 ---
 
 {{<caution>}}
