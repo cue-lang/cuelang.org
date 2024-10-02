@@ -15,8 +15,8 @@ export GOCACHE=/caches/gobuild
 
 {{<warning>}}
 ### Try out CUE in your browser!
-You can use CUE without installing anything -- just visit
-[cuelang.org/play](https://cuelang.org/play/) with your browser.
+You can use the latest version of CUE without installing anything -- just visit
+[cuelang.org/play](https://cuelang.org/play/)!
 {{</warning>}}
 
 ## Installing the `cue` command
@@ -24,15 +24,25 @@ You can use CUE without installing anything -- just visit
 The `cue` command is available from various sources, listed on this page.
 If you don't know which source to choose, download and unpack the
 [latest version](https://github.com/cue-lang/cue/releases/latest)
-that's appropriate for your operating system.
+that's appropriate for your operating system -- it contains the most recent
+features and bug fixes.
+The latest version of the `cue` command is:
+
+{{{with script "en" "cue version"}}}
+#ellipsis 1
+cue version
+{{{end}}}
 
 #### Download an official CUE binary
 
 On Linux, Microsoft Windows, and macOS, the `cue` command can be downloaded from the
 [official CUE releases](https://github.com/cue-lang/cue/releases/).
 
-These releases include *pre-releases*, which are cutting-edge versions of `cue`
-made available to help expose bugs and flush out unintended behaviours.
+These releases include *pre-releases*, which are cutting-edge versions of the
+`cue` command made available to help expose bugs and flush out unintended
+behaviours. You should choose to install the
+[latest release](https://github.com/cue-lang/cue/releases/latest) if you don't
+have a specific reason to select a pre-release.
 
 #### Install using Homebrew
 
