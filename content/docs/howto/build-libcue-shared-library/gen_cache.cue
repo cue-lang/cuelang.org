@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "TT9QA7KI4M2JG646IE6O75RUDR1533FNI5K1L0KFLNA8J2RHGBCG===="
+								hash:       "2US35MI8VGMGH2198IB7C0K76NT89GC2L0NOV9CJRASL01MG2VQ0===="
 								scriptHash: "PQ9E3ADC3Q25J0DVM5DHFDQNDJUGNGNFJN4RRPCO1A7BK6J191OG===="
 								steps: [{
 									doc:      ""
@@ -29,7 +29,7 @@ package site
 									cmd:      "go version"
 									exitCode: 0
 									output: """
-											go version go1.23.0 linux/amd64
+											go version go1.23.2 linux/amd64
 
 											"""
 								}, {
@@ -54,7 +54,7 @@ package site
 									cmd:      "git --version"
 									exitCode: 0
 									output: """
-											git version 2.39.2
+											git version 2.39.5
 
 											"""
 								}, {
