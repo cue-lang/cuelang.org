@@ -41,7 +41,7 @@ javac 22.0.2
 $ mvn --version
 ...
 $ git --version
-git version 2.39.2
+git version 2.39.5
 ```
 
 {{<warning>}}
