@@ -1,0 +1,4 @@
+name: "Dependent Pipeline Example (Tests)"
+steps:
+  - name: ":pipeline:"
+    command: "buildkite-agent pipeline upload"
