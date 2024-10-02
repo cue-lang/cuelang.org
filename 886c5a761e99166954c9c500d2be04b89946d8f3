@@ -51,6 +51,24 @@
       "parentUuid": "f432bd71_8ff4c08a",
       "revId": "886c5a761e99166954c9c500d2be04b89946d8f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9175c097_9fe2e6ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-02T14:26:02Z",
+      "side": 1,
+      "message": "Ack - as long as it\u0027s easy for you to do this, and to prevent potential overlaps and conflicts, I\u0027m happy to leave it to you. But please shout if in the future you prefer that I do the post-release step myself.",
+      "parentUuid": "ca42b5c8_eeea98d7",
+      "revId": "886c5a761e99166954c9c500d2be04b89946d8f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
