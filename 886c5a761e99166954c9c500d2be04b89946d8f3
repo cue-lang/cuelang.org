@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "886c5a761e99166954c9c500d2be04b89946d8f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f432bd71_8ff4c08a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-02T13:15:09Z",
+      "side": 1,
+      "message": "Oh - I had already done nearly all of this an hour ago, but I had to go AFK so I hadn\u0027t finished and mailed it yet :) the website channel is separate to the channel where we coordinate releases, so it\u0027s natural we didn\u0027t notice the overlap.\n\nIt\u0027s perfectly fine with me if you and Paul prefer to update the website yourselves. It\u0027s definitely easier for me to not have to remember how to do it, although with this script it\u0027s not particularly hard.\n\nFYI my commit also updated Go to 1.23.2 and testscript to 1.13.1, which I also noticed were out of date - you might want to do the same",
+      "revId": "886c5a761e99166954c9c500d2be04b89946d8f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
