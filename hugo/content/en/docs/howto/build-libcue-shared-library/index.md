@@ -36,7 +36,7 @@ Check that the Go prerequisites are met:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Z28gdmVyc2lvbgpnbyBlbnYgQ0dPX0VOQUJMRUQ=" }
 $ go version
-go version go1.23.0 linux/amd64
+go version go1.23.2 linux/amd64
 $ go env CGO_ENABLED
 1
 ```
@@ -48,7 +48,7 @@ $ cc --version
 cc (Debian 12.2.0-14) 12.2.0
 ...
 $ git --version
-git version 2.39.2
+git version 2.39.5
 ```
 {{< /step >}}
 

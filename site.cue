@@ -11,7 +11,7 @@ import (
 )
 
 versions: {
-	go:            "go1.23.0"
+	go:            "go1.23.2"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
@@ -19,7 +19,7 @@ versions: {
 			v:             *"v0.10.0" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
-		prerelease: v: *"v0.11.0-alpha.2" | _
+		prerelease: v: *"v0.11.0-alpha.3" | _
 		tip: v:        prerelease.v
 		default: v:    latest.v
 		playground: v: latest.v
@@ -28,7 +28,7 @@ versions: {
 	_cueVersionList: list.SortStrings([
 		for k, _ in versionSet {k},
 	])
-	testscript: "v1.12.0"
+	testscript: "v1.13.1"
 	libcue:     "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf" // https://github.com/cue-lang/libcue
 	cueApiJava: "3c12bb9e9ea203d4de8308b4145e876e4b60207e" // https://github.com/cue-lang/cue-api-java
 

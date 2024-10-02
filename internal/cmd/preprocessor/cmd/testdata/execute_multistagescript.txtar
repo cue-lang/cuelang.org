@@ -266,7 +266,7 @@ $ export MYVAR=value
 $ cue version
 cue version v0.10.0
 
-go version go1.23.0
+go version go1.23.2
       -buildmode exe
        -compiler gc
        -trimpath true
@@ -298,12 +298,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "5eRe5rDwqulI9h4bfnvWzZ5r6pOlJa9SwIFN5bwBmOo="
-						"upload-some-cue": "ANsn4RtU34ytLoK9gD/pROOwcizyYNkzl1mITari0AQ="
-						"in-subdir":       "3Iq4OBCuTsLp/+i7HwdzZBrK6QlXVRMirRII3y3lL38="
+						"hidden file":     "gpWnanGH+Fy/n8mASebopJvVqGRDf1xfKOlkU+JkCKU="
+						"upload-some-cue": "uG70Vg99HWNUPuam6aOH/9/e9cJz8w3dtuctJZ9yNz8="
+						"in-subdir":       "fTaZyGOccU3CvMqokl3TXro4bDeUpHrOwq8kTeQEKdk="
 					}
 					multi_step: {
-						hash:       "8TM787UE7EMP7V0AMS1560T4JHA75MSDCS3TE8A45AI89Q82TNI0===="
+						hash:       "P6FE6DHH1D9R3QP79BA9GHMJVEMPSTDC3RS9K5TU4BUA62G939CG===="
 						scriptHash: "RTE18RDQ3BFG4B5U2VR92496OPO5NOT61C424QBCDDT1RAAGPOUG===="
 						steps: [{
 							doc:      ""
@@ -367,7 +367,7 @@ package site
 							output: """
 									cue version v0.10.0
 
-									go version go1.23.0
+									go version go1.23.2
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true

@@ -2,7 +2,7 @@
 
 # Code generated site_tool.cue; DO NOT EDIT.
 
-FROM golang:1.23.0 AS build
+FROM golang:1.23.2 AS build
 
 ENV CGO_ENABLED=0
 
@@ -13,7 +13,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.12.0
+  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.13.1
 
 RUN mkdir /cues
 
@@ -27,7 +27,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.11.0-alpha.2 go install -trimpath cuelang.org/go/cmd/cue@v0.11.0-alpha.2
+  GOBIN=/cues/v0.11.0-alpha.3 go install -trimpath cuelang.org/go/cmd/cue@v0.11.0-alpha.3
 
 RUN git clone https://github.com/cue-lang/libcue.git /libcue
 RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
@@ -37,7 +37,7 @@ RUN \
 	export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache CGO_ENABLED=1 && \
 	go build -C /libcue -o libcue.so -buildmode=c-shared
 
-FROM golang:1.23.0
+FROM golang:1.23.2
 
 RUN apt-get update && apt-get install -y tree
 
@@ -51,8 +51,8 @@ ENV PATH="/cues/v0.10.0:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 ENV CUELANG_CUE_LATEST="v0.10.0"
-ENV CUELANG_CUE_PRERELEASE="v0.11.0-alpha.2"
-ENV CUELANG_CUE_TIP="v0.11.0-alpha.2"
+ENV CUELANG_CUE_PRERELEASE="v0.11.0-alpha.3"
+ENV CUELANG_CUE_TIP="v0.11.0-alpha.3"
 ENV CUELANG_CUE_DEFAULT="v0.10.0"
 ENV CUELANG_CUE_PLAYGROUND="v0.10.0"
 
@@ -68,7 +68,7 @@ RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
 COPY --from=build /cues/v0.10.0/cue /cues/v0.10.0/cue
-COPY --from=build /cues/v0.11.0-alpha.2/cue /cues/v0.11.0-alpha.2/cue
+COPY --from=build /cues/v0.11.0-alpha.3/cue /cues/v0.11.0-alpha.3/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/
 ENV LD_LIBRARY_PATH="/usr/local/lib"
