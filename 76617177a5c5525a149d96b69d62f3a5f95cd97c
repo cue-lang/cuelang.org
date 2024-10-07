@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7322926_91276bca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "No worries at all - I was very conscious of what a big chunk it was, and that I couldn\u0027t really break it up into smaller/incremental changes!",
+      "parentUuid": "7d3794ca_c1801b06",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c5a2c677_e2bb47ff",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "this quote renders as absolute massive text on my screen, is that intentional? The text feels at least twice as big as the rest, plus it has tons of padding, so it ends up taking half my screen - meaning that \"what\u0027s in this guide\" barely shows up at the bottom of my screen.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "726c4869_3cc66192",
+        "filename": "content/docs/concept/using-the-cue-export-command/_en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "I\u0027ve switched it for a markdown blockquote, which I\u0027ve avoided using anywhere, thus far (opting for the `quote` shortcode you initially reviewed) because I strongly dislike the  spacing that they contain and are also surrounded by -- double \"too much\" space -- and its lack of distinguishing background/etc. I\u0027ll open a `frontend` bug asking for its styling to be revisited.",
+      "parentUuid": "c5a2c677_e2bb47ff",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -77,6 +113,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d0160618_f5a33e79",
+        "filename": "content/docs/concept/using-the-cue-export-command/_en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "I think we do want to include \"validate\" early in this hierarchy\u0027s prose because it guides the user towards a very common use case for the command because `export` can only emit valid configurations, and which is appropriate because this isn\u0027t the reference page for the command -- but is a \"helping you to grok why you might use this command\" *Concept Guide*.\n\nOffhand, I can\u0027t think of an example of current `cue vet` failing where `cue export` would succeed (ignoring the `-e` flag targeting different sections of a configuration), and my understanding (hence prose) has been implicitly assuming that `cue export` is effectively the equivalent of `cue vet` from a validation perspective. Do you reckon I need to adjust my understanding of `cue export` and revisit pages where I\u0027ve perhaps baked in or assumed that equivalency?",
+      "parentUuid": "62a1d0c9_6661a2e6",
+      "range": {
+        "startLine": 25,
+        "startChar": 30,
+        "endLine": 25,
+        "endChar": 38
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "504e6fc3_762c515e",
         "filename": "content/docs/concept/using-the-cue-export-command/_en.md",
         "patchSetId": 24
@@ -88,6 +148,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "this warning rendering is very loud with its color, which feels too agressive for the list of sub-pages :) It should inform me of them, not warn me about them in a way that feels like I need to be very careful.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8d56ec5_008f858a",
+        "filename": "content/docs/concept/using-the-cue-export-command/_en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done. I\u0027ve also removed this block from the footer of the other pages (but left it as a header), as IMHO it flows better containing only a text-based lozenge pointer towards the next page of the concept guide.",
+      "parentUuid": "504e6fc3_762c515e",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -109,6 +187,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db0fefee_72a22d80",
+        "filename": "content/docs/concept/using-the-cue-export-command/evaluation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done.\n\nI vaguely recall including it for a deliberate but subtle reason (perhaps it was to demo that the command\u0027s error message only identifies a single \"wrong\" package identifier, and not \"all\" of the problems that exist?), but you\u0027re right: it\u0027s a distraction.",
+      "parentUuid": "12695839_3b58ce40",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c13a7ceb_8af3acae",
@@ -122,6 +218,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "same as before, I wonder if plain English \"or\" would be better here.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd182c8e_ee957403",
+        "filename": "content/docs/concept/using-the-cue-export-command/evaluation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Using \"or\" ~works for the first time the flag is introduced on a page, but reads oddly in subsequent places - where we want to mention both forms, but where using \"or\" ends up feeling too much like we\u0027re suggesting there are two *different* flags being mentioned ... even though we aren\u0027t!\n\nI\u0027ve gone with a construction that works throughout, to my eye; both in the initial use, here, and in follow-up mentions: \n\n    specify it with the `--expression` (`-e`) flag:\n\ne.g.\n\nspecify it with the `--expression` (`-e`) flag:",
+      "parentUuid": "c13a7ceb_8af3acae",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -143,6 +257,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d52220eb_b7c4dcf8",
+        "filename": "content/docs/concept/using-the-cue-export-command/evaluation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "I\u0027ve removed this sentence from its `info` block, which formats this link more like other links -- though it\u0027s still somewhat different because it\u0027s an inline code block.\n\nI\u0027ll open a issue asking for agreement on how we format inline code blocks inside info/warning/caution blocks and when they\u0027re links (and then any required frontend changes) as that\u0027s been 0.01% bugging me for a while.",
+      "parentUuid": "53db4823_8fa25d2d",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e03caac_2c0ea7c7",
@@ -156,6 +288,30 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "dupe?",
+      "range": {
+        "startLine": 27,
+        "startChar": 51,
+        "endLine": 27,
+        "endChar": 56
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9255657b_aaa7b4b7",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e03caac_2c0ea7c7",
       "range": {
         "startLine": 27,
         "startChar": 51,
@@ -223,6 +379,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b68bc7d7_3fbaf514",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done, throughout the page.",
+      "parentUuid": "1d2158f1_cb5310e6",
+      "range": {
+        "startLine": 51,
+        "startChar": 10,
+        "endLine": 52,
+        "endChar": 24
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2d1b6c5_5559df20",
@@ -236,6 +416,30 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "nit: \"as part of an argument\", because it\u0027s a suffix to one of the arguments, not an argument by itself (and I\u0027d avoid \"positional parameter\" throughout as mentioned before)",
+      "range": {
+        "startLine": 104,
+        "startChar": 31,
+        "endLine": 104,
+        "endChar": 43
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "531d8cac_f3f3c2e7",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2d1b6c5_5559df20",
       "range": {
         "startLine": 104,
         "startChar": 31,
@@ -265,6 +469,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e7d07b84_c93c2d64",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16d87e0a_ed625962",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "265e86d9_25ec4de4",
         "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
         "patchSetId": 24
@@ -276,6 +498,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "A significant amount of this relates to `cue help inputs` more so than it does to `cue export` - which is fine, because to properly explain `cue help inputs`, having one command to show examples is good, and `cue export` is likely the best candidate. But I\u0027m just checking that you won\u0027t repeat this amount of inputs detail for other commands too, like `cue def` or `cue vet`.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c203d27_8698a288",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "I have Thoughts and Feelings about the right balance of reducing duplication and requiring the reader to click through to other guides, especially outside the reference hierarchy. This came up recently in Slack: https://cuelang.slack.com/archives/CLT3ULF6C/p1727871157902339?thread_ts\u003d1727868605.174769\u0026cid\u003dCLT3ULF6C\n\nI\u0027ll make a note to include you in any discussions around getting this balance right across the different areas of the site 👍",
+      "parentUuid": "265e86d9_25ec4de4",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -293,6 +533,30 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "typo? (it might be a good idea to run a spell checker through the entire markdown content and skim the results for possible typos)",
+      "range": {
+        "startLine": 175,
+        "startChar": 12,
+        "endLine": 175,
+        "endChar": 19
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25a951a1_fe4aef03",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e3ffec8_e8acd452",
       "range": {
         "startLine": 175,
         "startChar": 12,
@@ -345,6 +609,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6bf99559_891b0f9a",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "I\u0027ve had a search for any authoritative rules on this, and I can\u0027t find anything specific to `-less`. The 2 most relevant opinions I\u0027ve found are:\n\n- \"do not hesitate to hyphenate a rare usage if it avoids confusion\" (https://www.grammarbook.com/punctuation/hyphens.asp)\n- Use a hyphen ... \"[w]hen a suffix is used in a new or unusual combination; e.g. briefcase-less\" (https://www.scribbr.co.uk/english-language/hyphen/)\n\nThus I\u0027ve added the hyphen, throughout, and I /think/ it looks 5% better in most cases. I\u0027d be interested in your impressions of the new preview.",
+      "parentUuid": "e6e9b8e5_5e484cce",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "88110b0b_18176f2f",
         "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
         "patchSetId": 24
@@ -356,6 +638,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "We are generally dropping the \"CUE is a superset of JSON\" motto, so I wonder if we should stop saying this too. For all I know, this might not necessarily be true forever.\n\nWe currently do parse/import JSON as if it were CUE in our code, as long as it\u0027s valid JSON, but we want to move to a proper JSON parser for the sake of better errors and performance.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdf44bb1_b5841cc2",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "I don\u0027t quite grok what change this implies for this doc, right here.\n\nI think we need to explicitly call out that JSON-on-stdin works out of the box, without a qualifier. Shall I just drop the first half of the sentence?\n\n\u003e The standard input stream can contain JSON without requiring a `json:` qualifier.",
+      "parentUuid": "88110b0b_18176f2f",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -383,6 +683,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9389f161_4744f488",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05d4a1c5_328337d5",
+      "range": {
+        "startLine": 717,
+        "startChar": 41,
+        "endLine": 717,
+        "endChar": 54
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e44412d6_7977ca17",
@@ -396,6 +720,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "or say \"their contents must unify without errors\"? because we do unify, we don\u0027t just test that they are capable of being unified.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c066c9e4_818bde23",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e44412d6_7977ca17",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -417,6 +759,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b088ee59_99d20af3",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e744172e_f060dec7",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a39dd08e_8d89bbc9",
@@ -430,6 +790,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "I wouldn\u0027t really phrase it this way to users - `--list` is not really for cases where the values don\u0027t unify, but rather for cases where one wants to extract, validate, or transform each of the values separately and individually, rather than together as a merged/unified value.\n\nThose are two entirely separate use cases. You might have a scenario where a list of values does unify OK, but you still want to use `--list` because they are entirely separate values you want to handle.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "262736a7_a93acbb8",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a39dd08e_8d89bbc9",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -451,6 +829,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b887a5ac_dc8eac01",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "The font /does/ get changed from variable- to fixed-width, but because the background colour is the same it\u0027s not easily identifiable. I\u0027ll raise an issue asking for background colour differentiation in headings.",
+      "parentUuid": "e71f898f_3f0c2f19",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63d94498_d5bee1ba",
@@ -464,6 +860,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "you might want to give 2-3 examples here and say something like \"and so on\", rather than trying to list all formats here. Because it\u0027s already out of date and it will only get longer; it\u0027s missing TOML, and soon we will add INI as well. Other pages also list all current encoding formats, e.g. \"cue export inputs\", and I think they suffer from the same medium-term problem.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f51618b8_fb16c0e7",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63d94498_d5bee1ba",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -485,6 +899,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7862a0f7_1bd1cb62",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "I\u0027ll raise an issue asking for the redundancy to be thought about. Given that it\u0027s the command\u0027s behaviour currently, I\u0027ll leave this explanation here for now.",
+      "parentUuid": "b31a9d8b_9e3a208a",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "242ad567_eaddbd64",
@@ -498,6 +930,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "perhaps mention that this is useful when embedding JSON inside HTML documents, as otherwise it seems like an odd feature to provide.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f78d1274_d0e15697",
+        "filename": "content/docs/concept/using-the-cue-export-command/output/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "242ad567_eaddbd64",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -519,6 +969,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e64dc3c5_dd6d83c6",
+        "filename": "content/docs/reference/command/cue-export/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "This was, in my head, deliberate; and aimed at making the reviewer\u0027s job easier. Given you didn\u0027t find it useful, I\u0027ve reflowed it :-)",
+      "parentUuid": "8b52c698_4a08dcab",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38ecfb0c_c555a49d",
@@ -536,6 +1004,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f0b91b3_514f8bf8",
+        "filename": "content/docs/reference/command/cue-export/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "\u003e Three sentences beginning by \"default\" - how about joining?\n\nDone.\n\n\u003e the standard output part is perhaps unnecessary\n\nI\u0027ve made the call to preserve the mention of stdin, as this page is in the reference hierarchy and (to me!) it feels more correct to be explicit - especially when that extra detail is pretty compact :-)",
+      "parentUuid": "38ecfb0c_c555a49d",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1f218f51_047788ab",
@@ -549,6 +1035,24 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "nit: are we using oxford commas as a general rule? because I\u0027m definitely trying to.",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a420876_d039ba18",
+        "filename": "content/docs/reference/command/cue-export/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-07T17:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f218f51_047788ab",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
