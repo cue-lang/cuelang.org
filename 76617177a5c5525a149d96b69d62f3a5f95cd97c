@@ -137,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "70bdfcaf_a6eae91b",
+        "filename": "content/docs/concept/using-the-cue-export-command/_en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-08T12:18:48Z",
+      "side": 1,
+      "message": "Yes, `cue vet` is currently a subset of `cue export`, but I mean that in the future it might not be. I can imagine a near term future where `cue vet` does more, akin to `go vet` or `staticcheck` versus `go build` or `go test`. And `cue help export` says \"evaluate\", not \"validate\", so it leaves that door open for us, as far as I can tell.\n\nI get that the docs are more intuitive if you use the word validate. I\u0027m just not sure that we\u0027re OK with promising to users that `cue vet` will always be a subset of `cue export`, as both perform validation given what you wrote here. cc @paul@myitcv.io for input; this is more of a mild concern for me.",
+      "parentUuid": "d0160618_f5a33e79",
+      "range": {
+        "startLine": 25,
+        "startChar": 30,
+        "endLine": 25,
+        "endChar": 38
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "504e6fc3_762c515e",
         "filename": "content/docs/concept/using-the-cue-export-command/_en.md",
         "patchSetId": 24
@@ -236,6 +260,24 @@
       "side": 1,
       "message": "Using \"or\" ~works for the first time the flag is introduced on a page, but reads oddly in subsequent places - where we want to mention both forms, but where using \"or\" ends up feeling too much like we\u0027re suggesting there are two *different* flags being mentioned ... even though we aren\u0027t!\n\nI\u0027ve gone with a construction that works throughout, to my eye; both in the initial use, here, and in follow-up mentions: \n\n    specify it with the `--expression` (`-e`) flag:\n\ne.g.\n\nspecify it with the `--expression` (`-e`) flag:",
       "parentUuid": "c13a7ceb_8af3acae",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b348f509_43c9c556",
+        "filename": "content/docs/concept/using-the-cue-export-command/evaluation/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-08T12:18:48Z",
+      "side": 1,
+      "message": "SGTM",
+      "parentUuid": "dd182c8e_ee957403",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -474,6 +516,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "978229d8_5ecd3513",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-08T12:18:48Z",
+      "side": 1,
+      "message": "You\u0027re correct, I keep forgetting this.",
+      "parentUuid": "5abe7d86_06dafe4b",
+      "range": {
+        "startLine": 104,
+        "startChar": 31,
+        "endLine": 104,
+        "endChar": 43
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16d87e0a_ed625962",
@@ -649,6 +715,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "762864d7_89e01742",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-08T12:18:48Z",
+      "side": 1,
+      "message": "Package-less in both paragraphs and section headers LGTM!",
+      "parentUuid": "6bf99559_891b0f9a",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88110b0b_18176f2f",
@@ -680,6 +764,24 @@
       "side": 1,
       "message": "I don\u0027t quite grok what change this implies for this doc, right here.\n\nI think we need to explicitly call out that JSON-on-stdin works out of the box, without a qualifier. Shall I just drop the first half of the sentence?\n\n\u003e The standard input stream can contain JSON without requiring a `json:` qualifier.",
       "parentUuid": "88110b0b_18176f2f",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bcffd0b_7b470185",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-08T12:18:48Z",
+      "side": 1,
+      "message": "Or just drop this paragraph entirely. I just wouldn\u0027t add any new content relating to all JSON being valid CUE, because we may want to drop that promise soon, and I know Marcel wants to do that. Existing content is OK, we can rewrite/remove later, but I wouldn\u0027t add \"CUE is a JSON superset\" bits to new pages.",
+      "parentUuid": "bdf44bb1_b5841cc2",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
