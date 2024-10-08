@@ -105,6 +105,19 @@ For example:
 {{< /step >}}
 
 {{< step group="other" stepNumber="2" >}}
-Create a data file named `charlie.yml` to hold Charlie the cat's details.
-Place this information in it, including the deliberate mistake in the `species`
+Write some CUE code:
+
+{{< code-tabs >}}
+{{< code-tab name="some.cue" language="cue" area="top-left" >}}
+package example
+
+output: "Hello \(name)"
+name:   "Joe"
+{{< /code-tab >}}
+
+{{< code-tab name="another_file.txt" language="txt" area="top-left" >}}
+Some content
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
 {{< /step >}}

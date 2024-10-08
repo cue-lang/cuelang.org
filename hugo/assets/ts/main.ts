@@ -99,10 +99,11 @@ class App {
             scrollToHash(hash);
         }
 
-        document.querySelectorAll('a[href^="#"]').forEach((element) => {
+        const currentPath = window.location.pathname;
+        document.querySelectorAll(`a[href^="#"], a[href^="${currentPath}#"]`).forEach((element) => {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = element.getAttribute('href');
+                const target = element.getAttribute('href').replace(currentPath, '');
                 window.history.replaceState(null, '', target);
                 scrollToHash(target);
             });
