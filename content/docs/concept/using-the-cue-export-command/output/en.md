@@ -5,19 +5,6 @@ authors: [jpluscplusm]
 toc_hide: false
 ---
 
-{{<info>}}
-### In [this guide]({{< relref "." >}}):
-1. [Inputs]({{< relref "inputs" >}}) --
-   learn how the inputs you provide are interpreted and combined
-1. [Evaluation]({{< relref "evaluation" >}}) --
-   find out about the aspects of the command's operation that you can control
-1. **This page** --
-   see how the command output's encoding can be selected, and directed into a
-   specific location
-{{</info>}}
-
----
-
 By default, a successful `cue export` displays the evaluation result on its
 standard output stream, encoded in JSON:
 
@@ -320,11 +307,8 @@ to be placed inside an HTML document.
 This guide showed you how to use `cue export`, and the ways in which you can
 customize its inputs, operation, and output.
 The command is often used to produce configurations for commands that require
-JSON, YAML, or TOML.
-You can read more about this common task in
-{{< linkto/inline "concept/how-cue-enables-configuration" >}}.
-
----
+JSON, YAML, TOML, or other encodings -- you can read more about this common
+task in {{< linkto/inline "concept/how-cue-enables-configuration" >}}.
 
 ## Related content
 

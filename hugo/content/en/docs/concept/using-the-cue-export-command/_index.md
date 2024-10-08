@@ -30,13 +30,17 @@ This guide shows you how to manage the inputs and output of `cue export`,
 and how to vary some aspects of the evaluation that it performs.
 Here's what you'll find:
 
-{{<info>}}
-### In this guide:
-1. [Inputs]({{< relref "inputs" >}}) --
-   learn how the inputs you provide are interpreted and combined
-1. [Evaluation]({{< relref "evaluation" >}}) --
-   find out about the aspects of the command's operation that you can control
-1. [Output]({{< relref "output" >}}) --
-   see how the command output's encoding can be selected, and directed into a
-   specific location
-{{</info>}}
+{{< cards >}}
+{{< card href="inputs/" title="Inputs" label=" " >}}
+  **Start here** and learn how the inputs you provide are interpreted and combined.
+{{< /card >}}
+
+{{< card href="evaluation/" title="Evaluation" label=" " >}}
+  Find out about the aspects of the command's operation that you can control.
+{{< /card >}}
+
+{{< card href="output/" title="Output" label=" " >}}
+  See how the command output's encoding can be selected, and directed into a
+  specific location.
+{{< /card >}}
+{{< /cards >}}

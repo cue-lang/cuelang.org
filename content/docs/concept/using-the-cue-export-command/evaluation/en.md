@@ -5,19 +5,6 @@ authors: [jpluscplusm]
 toc_hide: false
 ---
 
-{{<info>}}
-### In [this guide]({{< relref "." >}}):
-1. [Inputs]({{< relref "inputs" >}}) --
-   learn how the inputs you provide are interpreted and combined
-1. **This page** --
-   find out about the aspects of the command's operation that you can control
-1. [Output]({{< relref "output" >}}) --
-   see how the command output's encoding can be selected, and directed into a
-   specific location
-{{</info>}}
-
----
-
 As described on [the previous page]({{< relref "inputs" >}}), each `cue export`
 invocation first identifies and reads its inputs.
 
@@ -181,10 +168,6 @@ C: incomplete value <=99:
 The CUE evaluator can emit statistics about each evaluation it performs.
 For more details, read
 {{< linkto/inline "howto/log-statistics-from-the-cue-evaluator" >}}.
-
----
-
-{{<button href="../output" label="Next page: Output" theme="blue" icon="circle-arrow-right">}}
 
 ## Related content
 
