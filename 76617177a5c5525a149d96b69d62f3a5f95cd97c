@@ -159,6 +159,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "820a68c3_5c9a5f08",
+        "filename": "content/docs/concept/using-the-cue-export-command/_en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-08T13:20:58Z",
+      "side": 1,
+      "message": "Discussed with Paul offline - I\u0027ve removed the mention of `validation` in this paragraph, allowing the page\u0027s opening paragraph\u0027s mention of \"validated, concrete data\" to inform the reader.\n\nI\u0027ve left the pointer to `cue vet` to draw the distinction between the commands.",
+      "parentUuid": "70bdfcaf_a6eae91b",
+      "range": {
+        "startLine": 25,
+        "startChar": 30,
+        "endLine": 25,
+        "endChar": 38
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "504e6fc3_762c515e",
@@ -782,6 +806,24 @@
       "side": 1,
       "message": "Or just drop this paragraph entirely. I just wouldn\u0027t add any new content relating to all JSON being valid CUE, because we may want to drop that promise soon, and I know Marcel wants to do that. Existing content is OK, we can rewrite/remove later, but I wouldn\u0027t add \"CUE is a JSON superset\" bits to new pages.",
       "parentUuid": "bdf44bb1_b5841cc2",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31c3e9d3_da21548b",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-08T13:20:58Z",
+      "side": 1,
+      "message": "Done - removed the paragraph.",
+      "parentUuid": "3bcffd0b_7b470185",
       "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
