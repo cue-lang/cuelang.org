@@ -35,19 +35,6 @@ its optional trailing content checks) as needed to get the page to build, and
 open a cue-lang/docs-and-content issue tracking the breakage, labelled as
 "bug". -->
 
-{{<info>}}
-### In [this guide]({{< relref "." >}}):
-1. **This page** --
-   learn how the inputs you provide are interpreted and combined
-1. [Evaluation]({{< relref "evaluation" >}}) --
-   find out about the aspects of the command's operation that you can control
-1. [Output]({{< relref "output" >}}) --
-   see how the command output's encoding can be selected, and directed into a
-   specific location
-{{</info>}}
-
----
-
 The `cue export` command can be given any number of inputs to evaluate via file
 or package arguments. This page explains how the command interprets, assembles,
 and combines these inputs when handed different kinds and quantities of input.
@@ -916,10 +903,6 @@ and are demonstrated in the how-to guides
 {{< linkto/inline "howto/inject-system-information-into-evaluation-using-tag-variable" >}}
 and {{< linkto/inline "howto/inject-value-into-evaluation-using-tag-attribute" >}}.
 
----
-
-{{<button href="../evaluation" label="Next page: Evaluation" theme="blue" icon="circle-arrow-right">}}
-
 ## Related content
 
 - {{< linkto/related/reference "command/cue-export" >}}
@@ -929,7 +912,6 @@ and {{< linkto/inline "howto/inject-value-into-evaluation-using-tag-attribute" >
 - {{< linkto/related/reference "command/cue-help-injection" >}}
 - {{< linkto/related/reference "command/cue-help-inputs" >}}
 - {{< linkto/related/concept   "modules-packages-instances" >}}
-- {{< linkto/related/tour      "basics/json-superset" >}}
 - {{< linkto/related/tour      "packages/standard-library" >}}
 - {{< linkto/related/howto     "inject-system-information-into-evaluation-using-tag-variable" >}}
 - {{< linkto/related/howto     "inject-value-into-evaluation-using-tag-attribute" >}}
