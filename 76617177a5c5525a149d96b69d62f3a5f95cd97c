@@ -422,6 +422,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a02540a_30d5321c",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-08T13:23:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1989201a_452d56d4",
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d2158f1_cb5310e6",
@@ -694,6 +712,30 @@
       "writtenOn": "2024-10-07T10:04:35Z",
       "side": 1,
       "message": "@rogpeppe@gmail.com would it make sense to allow `cue export auto: foo.yaml` as an alias to `cue export foo.yaml`? We already have a notion of \"auto\" for build.Interpretation, and there\u0027s a default \"auto\" filetype, even though it appears to not be exposed to the CLI:\n\n```\n\tauto: interpretations.auto \u0026 {\n\t\tencoding: *\"json\" | string\n\t}\n```",
+      "range": {
+        "startLine": 179,
+        "startChar": 59,
+        "endLine": 180,
+        "endChar": 20
+      },
+      "revId": "76617177a5c5525a149d96b69d62f3a5f95cd97c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56bbc424_48522341",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-08T13:23:42Z",
+      "side": 1,
+      "message": "Resolving this thread so I can submit the CL. I\u0027ll raise this as an issue.",
+      "parentUuid": "ed38f30b_df73516e",
       "range": {
         "startLine": 179,
         "startChar": 59,
