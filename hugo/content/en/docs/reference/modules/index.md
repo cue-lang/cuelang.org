@@ -198,7 +198,7 @@ package `foo.example/a/b` is imported, and the module `foo.example/a` is in the
 build list, CUE will check whether `foo.example/a` contains the
 package, in the directory `b`. At least one file with the `.cue` extension must
 be present in a directory for it to be considered a package. [Build
-constraints](/pkg/go/build/#hdr-Build_Constraints) are not applied for this
+constraints](https://pkg.go.dev/go/build#hdr-Build_Constraints) are not applied for this
 purpose. If exactly one module in the build list provides the package, that
 module is used. If no modules provide the package or if two or more modules
 provide the package, CUE reports an error. The `cue mod tidy` command
