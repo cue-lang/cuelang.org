@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4710da87_63d5da3a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-09T13:15:54Z",
+      "side": 1,
+      "message": "Definitely hacky!",
+      "parentUuid": "8523183d_a2a885d6",
+      "revId": "58ccf36ed4c45043919bb98750499a8aee515286",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e75a6ddf_543b7e1f",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-09T12:51:28Z",
       "side": 1,
       "message": "Please add a TODO that indicates that this constraint should really exist in CUE (when we move the frontmatter etc to be under CUE\u0027s control)",
+      "revId": "58ccf36ed4c45043919bb98750499a8aee515286",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e30e4e9d_f6fe0e11",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-09T13:15:54Z",
+      "side": 1,
+      "message": "Done, and also noted in https://cuelang.org/issue/2825.",
+      "parentUuid": "e75a6ddf_543b7e1f",
       "revId": "58ccf36ed4c45043919bb98750499a8aee515286",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
