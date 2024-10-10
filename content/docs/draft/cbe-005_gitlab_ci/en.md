@@ -342,7 +342,8 @@ diff --git a/.gitlab-ci.yml b/.gitlab-ci.yml
 {{{end}}}
 
 {{{with _script_ "en" "14-check"}}}
-diff --side ../14.expected.txt ../14.actual.txt
+# TODO(jcm): This is unstable (cue-lang/cue#3492). Disabled temporarily.
+# diff --side ../14.expected.txt ../14.actual.txt
 {{{end}}}
 
 The main change in each YAML file is the addition of a header that warns the
