@@ -85,6 +85,21 @@ found packages "one" (1.cue) and "two" (2.cue) in "."
 
 ## One input argument
 
+The argument "`.`" refers to the single package in the current directory:
+
+{{{with code "en" "cue export . # package x1"}}}
+exec cue export .
+cmp stdout out
+-- 1.cue --
+package one
+
+message: "this is package one"
+-- out --
+{
+    "message": "this is package one"
+}
+{{{end}}}
+
 If you want to export the contents of a CUE package, but there is more than one
 package in the current directory, tell `cue export` which package to process by
 providing its *import path* as an argument:
