@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "ESAFGPCS9VLV54S481POHTUJQ1A7V2CIMLFK8JJIILM350Q5FU1G===="
+									hash:       "H3J45U23HD209UDMINTCLQ6I65VEONKF4BHCK1GOGE638SMM8D8G===="
 									scriptHash: "HH51UG725DMMBP6BFHH46NO0D0SUMLUEGBL2G8V627OFF2BPL9A0===="
 									steps: [{
 										doc:      ""
@@ -46,11 +46,6 @@ package site
 												\tCUE_EXPERIMENT
 												\t\tComma-separated list of experiment flags to enable or disable:
 
-												\t\tmodules (default true)
-												\t\t\tEnable support for the Modules and package management proposal
-												\t\t\tas described in https://cuelang.org/discussion/2939.
-												\t\tyamlv3decoder (default true)
-												\t\t\tEnable the new YAML decoder based on yaml.v3.
 												\t\tevalv3
 												\t\t\tEnable the new CUE evaluator, addressing performance issues
 												\t\t\tand bringing a better disjunction algorithm.
