@@ -127,7 +127,7 @@ func main() {
 	}
 	for it.Next() {
 		v := it.Value()
-		if !it.IsDefinition() || v.IncompleteKind() != cue.StructKind {
+		if !it.Selector().IsDefinition() || v.IncompleteKind() != cue.StructKind {
 			continue
 		}
 		structToType(it.Selector(), it.Value())
