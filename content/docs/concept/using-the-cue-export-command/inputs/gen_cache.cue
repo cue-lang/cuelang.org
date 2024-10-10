@@ -10,6 +10,7 @@ package site
 								code: {
 									"cue export # package x1":                                   "Hjt0LTE2tZBxcIbjDMhaJsEtRyRK0LgqZKetfJd5vsk="
 									"! cue export # package x2":                                 "eoNI8ogSjsJXcr046A2qM/rG2ZJAaf5UjL8jA9QD7Zk="
+									"cue export . # package x1":                                 "YCkp525fN+TJOhlFu29LAKD1oxbf+vp3flzBEcFaoq0="
 									"cue export .:one":                                          "ktZienI/S37JyGqjaYo0MNJ/X6BjDopspsUEyEmBpbA="
 									"cue export data.yaml":                                      "fVTi+rETHYUKfcZ9j1MsWGSaUWRpWdJzUuf6xF0qftE="
 									"cue export yaml: some.yaml.data":                           "RLZItKurm6/gs+8J7KZGxV8e5uBu+GHPedNJTRYb2Jk="

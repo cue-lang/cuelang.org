@@ -87,6 +87,22 @@ found packages "one" (1.cue) and "two" (2.cue) in "."
 
 ## One input argument
 
+The argument "`.`" refers to the single package in the current directory:
+
+{{< code-tabs >}}
+{{< code-tab name="1.cue" language="cue" area="top-left" >}}
+package one
+
+message: "this is package one"
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAu" >}}
+$ cue export .
+{
+    "message": "this is package one"
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
 If you want to export the contents of a CUE package, but there is more than one
 package in the current directory, tell `cue export` which package to process by
 providing its *import path* as an argument:
