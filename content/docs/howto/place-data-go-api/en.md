@@ -136,6 +136,11 @@ go run .
 {{{end}}}
 {{{end}}}
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Related content
 
 - {{< linkto/related/concept "how-cue-works-with-go" >}}

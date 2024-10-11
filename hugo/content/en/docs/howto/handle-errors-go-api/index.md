@@ -163,7 +163,6 @@ in each underlying error can be accessed by iterating through the slice of
 individual errors returned by the
 [`cue/errors.Errors`](https://pkg.go.dev/cuelang.org/go/cue/errors#Errors)
 method.
-
 ## Related content
 
 - Tag: {{< tag "go api" >}} -- pages documenting and using the Go API

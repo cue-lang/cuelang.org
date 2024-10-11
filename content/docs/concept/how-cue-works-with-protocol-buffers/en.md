@@ -133,6 +133,11 @@ go run main.go
 Notice that the ouput is identical to the CUE produced previously by `cue
 import`.
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Extracting CUE from several Protobuf files
 
 In some environments it might be necessary to import multiple Protobuf files

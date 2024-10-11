@@ -16,8 +16,8 @@ package site
 								"check go data - main.go":    "cHxe4tcqidTGttfDsGv2ovlzJ8DO40avBxIoPQzZK+w="
 							}
 							multi_step: {
-								hash:       "9IOG3Q4MVDH7PCS87IF1ON45406HV937GUU1C83K8T788SQRQV90===="
-								scriptHash: "1O5FLEU3HMHAO73UFG6MLD6S1DB9L7B5A61D46KAODRDQRKKV58G===="
+								hash:       "KU70K0HVM91CKDHQMT48ITAA4914F0C1KH13MUBCEHJQ3RIHBQ00===="
+								scriptHash: "R23SC1O2GMNFTHUEC08I2D22L0VAQDAF5U3DAHA8GDO3VT5IUI9G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -143,6 +143,16 @@ package site
 											"""
 								}, {
 									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
 									cmd:      "rm -rf $HOME/*"
 									exitCode: 0
 									output:   ""
@@ -178,6 +188,16 @@ package site
 											✅ YAML: ok
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "rm -rf $HOME/*"
@@ -217,6 +237,16 @@ package site
 											exit status 1
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}

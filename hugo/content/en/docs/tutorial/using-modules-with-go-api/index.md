@@ -218,7 +218,6 @@ $ go run .
 }
 ```
 {{< /step >}}
-
 ## Summary
 
 Well done - you've finished this tutorial! In completing it, you:

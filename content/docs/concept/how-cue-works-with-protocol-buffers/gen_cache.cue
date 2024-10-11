@@ -12,8 +12,8 @@ package site
 								"go convert basic.proto": "HXbXSFCpPtIX8R7OV7RdCyPwLXV9+XT2EqqaebGLGhU="
 							}
 							multi_step: {
-								hash:       "SIBKBA0QSNDDIDSBITH3K2LM3UHOCN25QF6A5B318HGG5VVVDV5G===="
-								scriptHash: "D3UJF2O6B2AP5HHOB5UM9U29KQDLAUTNN3FT5GFEK6BRA94GNK9G===="
+								hash:       "R0MCED1VV70E9AN48H78VDUHL85NBQA63021TDO0UJTE63QPF2BG===="
+								scriptHash: "8CH2J9BPAD1SK1L49BQVT0NN9GONLIN3IPNEO38NAJUIOPG8K690===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue import basic.proto"
@@ -89,6 +89,16 @@ package site
 
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}

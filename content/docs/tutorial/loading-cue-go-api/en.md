@@ -149,6 +149,11 @@ go run .
 
 {{{end}}}
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Congratulations!
 
 Well done - you've successfully written your first Go program to load and
