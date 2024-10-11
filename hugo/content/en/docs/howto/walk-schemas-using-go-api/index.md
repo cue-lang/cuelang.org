@@ -188,7 +188,6 @@ type Address struct {
 As you can see from its output, this Go program is a very limited form of code
 generator that takes each CUE definition and produces a matching Go struct type.
 {{< /step >}}
-
 ## Related content
 
 - The [`cue`](https://pkg.go.dev/cuelang.org/go/cue) Go API

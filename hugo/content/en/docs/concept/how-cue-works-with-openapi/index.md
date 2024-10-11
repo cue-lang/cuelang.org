@@ -252,7 +252,6 @@ package provides options to make a definition self-contained, to filter
 constraints, and so on. The *expanding references* option enables the
 "Structural OpenAPI" form required by CRDs targeting Kubernetes version 1.15
 and later.
-
 ## Future plans
 
 One of CUE's goals is to act as an *interlingua*: a bidirectional bridge

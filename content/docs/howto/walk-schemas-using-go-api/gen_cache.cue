@@ -11,8 +11,8 @@ package site
 								"go program": "YkDrAzBvLW1vaWal1K9lYlsicu9HVygOhTliT18wA/E="
 							}
 							multi_step: {
-								hash:       "U7U9EIJ0ODNCCTSQN60VM9DFLECU2OUFLO507CG6TKA58HA5MV50===="
-								scriptHash: "13610554DK0HIE5L3AO424MBGMHVDAV4MJMR1DHI3QOK70U8144G===="
+								hash:       "BK5E1TTRD427N0BQ2PVD8T4JCBE7NQE9O73KAV48RK8LIG22HMNG===="
+								scriptHash: "G4K2SLTSVSMTBF9U24H4UCNA4NERADB8FI675B207KKD0CLCNMBG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -76,6 +76,16 @@ package site
 											}
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}

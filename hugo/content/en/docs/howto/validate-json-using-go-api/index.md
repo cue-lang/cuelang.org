@@ -165,7 +165,6 @@ main.go:42: #Schema.name: conflicting values string and ["Moby","Dick"] (mismatc
 exit status 1
 ```
 {{< /step >}}
-
 ## Related content
 
 - Go API: [`cue`](https://pkg.go.dev/cuelang.org/go/cue#section-documentation) -- package documentation

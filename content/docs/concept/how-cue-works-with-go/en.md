@@ -173,6 +173,11 @@ go run .
 
 CUE values have a default formatter that renders them sensibly.
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ### Loading non-CUE data
 
 {{{with _script_ "en" "HIDDEN_ load non-cue - reset"}}}
@@ -244,6 +249,11 @@ go get cuelang.org/go@${CUELANG_CUE_LATEST}
 #ellipsis 0
 go mod tidy
 go run .
+{{{end}}}
+
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #2"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
 {{{end}}}
 
 ### Checking Go data with CUE schema
@@ -324,6 +334,11 @@ go get cuelang.org/go@${CUELANG_CUE_LATEST}
 #ellipsis 0
 go mod tidy
 ! go run .
+{{{end}}}
+
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #3"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
 {{{end}}}
 
 <!-- TODO

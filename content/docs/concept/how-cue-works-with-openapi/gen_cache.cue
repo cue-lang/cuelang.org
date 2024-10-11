@@ -14,8 +14,8 @@ package site
 								"go emit openapi main": "4l0Itno4TD+y6Xe7gGsJj0Wl+eXcBgLP9snsHxJgQtc="
 							}
 							multi_step: {
-								hash:       "L16LIVNK8OS351AM3BA4P7N3TUR7VRJRVBMIFREJFI6NVJRQLH5G===="
-								scriptHash: "1V7UFAMT7FRI5I04C16KM620ILLQ4GRI80ASNBLDG3NMT0N1MTLG===="
+								hash:       "IK318UIUUGLF0U1OJTL217743MQ9UTLARIS272HTTTH3OAPVPTU0===="
+								scriptHash: "KVF9S5PUUSQLMPEGJG76QI2K4SL74KK7R4OENAUTS7K2HACFPB9G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -126,6 +126,16 @@ package site
 											...
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}

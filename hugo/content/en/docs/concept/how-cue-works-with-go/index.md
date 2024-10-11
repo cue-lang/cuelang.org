@@ -177,7 +177,6 @@ $ go run .
 ```
 
 CUE values have a default formatter that renders them sensibly.
-
 ### Loading non-CUE data
 The API also makes it easy to validate data held in YAML and JSON files.
 
@@ -245,7 +244,6 @@ $ go mod tidy
 $ go run .
 ✅ YAML: ok
 ```
-
 ### Checking Go data with CUE schema
 CUE can also validate data that's only available inside Go.
 Perhaps it's only fetched at runtime, from some file;
@@ -322,7 +320,6 @@ $ go run .
 main.go:34: #Person.age: invalid value 999 (out of bound <=150)
 exit status 1
 ```
-
 <!-- TODO
   - Checking Go data with CUE schema
     - "CUE that validates that a struct have only keys beginning with "a" and values that are either `5 | string`"

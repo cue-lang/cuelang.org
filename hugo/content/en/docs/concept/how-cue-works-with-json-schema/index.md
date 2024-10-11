@@ -272,7 +272,6 @@ name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (misma
     schema.json:13:13
 exit status 1
 ```
-
 ## Future plans
 
 One of CUE's goals is to act as an *interlingua*: a bidirectional bridge

@@ -119,6 +119,11 @@ cue export --out yaml
 {{{end}}}
 {{{end}}}
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Related content
 
 - Issue {{< issue 2865 >}}#2865{{</issue>}} tracks the plans for CUE to support

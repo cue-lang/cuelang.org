@@ -150,6 +150,11 @@ individual errors returned by the
 [`cue/errors.Errors`](https://pkg.go.dev/cuelang.org/go/cue/errors#Errors)
 method.
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Related content
 
 - Tag: {{< tag "go api" >}} -- pages documenting and using the Go API
