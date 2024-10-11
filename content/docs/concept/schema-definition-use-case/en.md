@@ -313,3 +313,7 @@ It needs a specific interpreter.
 It also has some non-trivial aspects to its evaluation, making it much harder
 than OpenAPI to implement.
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}

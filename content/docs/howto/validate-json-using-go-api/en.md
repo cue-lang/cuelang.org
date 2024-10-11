@@ -161,6 +161,11 @@ go run . good.json
 {{{end}}}
 {{{end}}}
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Related content
 
 - Go API: [`cue`](https://pkg.go.dev/cuelang.org/go/cue#section-documentation) -- package documentation

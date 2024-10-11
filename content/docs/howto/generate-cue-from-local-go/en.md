@@ -174,6 +174,11 @@ cue vet -d '#Config' . config.json
 Your Go code will probably have known-good and known-bad data for testing your generated CUE.
 {{{end}}}
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Related content
 
 - {{< linkto/related/reference "command/cue-help-get-go" >}}

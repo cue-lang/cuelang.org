@@ -47,9 +47,6 @@ Our example depends on a Kubernetes package:
 
 {{{with upload "en" "deps.go"}}}
 -- deps.go --
-//go:build deps
-// +build deps
-
 package deps
 
 import _ "k8s.io/api/apps/v1"
@@ -117,6 +114,11 @@ Export an empty configuration to confirm that everything works:
 {{{with script "en" "export"}}}
 cue export --out yaml
 {{{end}}}
+{{{end}}}
+
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
 {{{end}}}
 
 ## Related content

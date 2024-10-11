@@ -42,9 +42,6 @@ Our example depends on a Kubernetes package:
 
 {{< code-tabs >}}
 {{< code-tab name="deps.go" language="go" area="top-left" >}}
-//go:build deps
-// +build deps
-
 package deps
 
 import _ "k8s.io/api/apps/v1"
@@ -127,7 +124,6 @@ daemonSet: {}
 statefulSet: {}
 ```
 {{< /step >}}
-
 ## Related content
 
 - Issue {{< issue 2865 >}}#2865{{</issue>}} tracks the plans for CUE to support
