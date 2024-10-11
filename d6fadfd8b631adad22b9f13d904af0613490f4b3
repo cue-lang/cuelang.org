@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6688c94_60047648",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-11T13:56:17Z",
+      "side": 1,
+      "message": "PTAL. The failure mode of the test in CI has been observed working correctly with PS2.",
+      "revId": "d6fadfd8b631adad22b9f13d904af0613490f4b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
