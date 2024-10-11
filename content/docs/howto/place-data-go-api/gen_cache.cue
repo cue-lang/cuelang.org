@@ -11,8 +11,8 @@ package site
 								"go program":       "2fiDvD/t9LWQYHwdmUFXn96X3g81B9zyvDzPuD1GWJQ="
 							}
 							multi_step: {
-								hash:       "1G0CBU6GO8LTFGT8S08G44SREBL4D696RIB5C1MR0H25J43N4BTG===="
-								scriptHash: "B2ACPKB2I7S9HP09ENHJFI1UHG1SO348DOOJ6DIDMB2U9GAQLNBG===="
+								hash:       "EUMVS92VJSU2L2VP53VM9J4A5ILRMAU3TRJRL4PFM94PFOR9TRB0===="
+								scriptHash: "FM8I5FJIS8HUEVAJ2BT0P94PJILCRC7KV3U0H3F1JI7S32Q9IQ4G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -70,6 +70,16 @@ package site
 											How's the weather in your part of the world?
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}

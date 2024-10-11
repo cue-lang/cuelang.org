@@ -150,7 +150,6 @@ $ go run .
 ```
 
 {{< /step >}}
-
 ## Congratulations!
 
 Well done - you've successfully written your first Go program to load and

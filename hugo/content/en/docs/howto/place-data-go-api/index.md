@@ -132,7 +132,6 @@ Hello, Charlie!
 How's the weather in your part of the world?
 ```
 {{< /step >}}
-
 ## Related content
 
 - {{< linkto/related/concept "how-cue-works-with-go" >}}

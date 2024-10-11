@@ -272,6 +272,11 @@ constraints, and so on. The *expanding references* option enables the
 "Structural OpenAPI" form required by CRDs targeting Kubernetes version 1.15
 and later.
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Future plans
 
 One of CUE's goals is to act as an *interlingua*: a bidirectional bridge

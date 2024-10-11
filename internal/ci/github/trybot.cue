@@ -122,10 +122,9 @@ workflows: trybot: _repo.bashWorkflow & {
 			// as the checks are Go programs themselves.
 			_repo.earlyChecks,
 
-			// TODO: move this assertion into CUE as part of https://cuelang.org/issue/2825.
 			json.#step & {
-				name: "Check the /docs/draft/ hierarchy contains only draft pages"
-				run:  "! git grep --files-without-match '^draft: true' 'hugo/content/*/docs/draft/**.md'"
+				name: "Perform early content checks"
+				run:  "_scripts/checkContent.bash"
 			},
 
 			// We can perform an early check that ensures page.cue files are

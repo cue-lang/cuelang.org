@@ -182,6 +182,11 @@ As you can see from its output, this Go program is a very limited form of code
 generator that takes each CUE definition and produces a matching Go struct type.
 {{{end}}}
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Related content
 
 - The [`cue`](https://pkg.go.dev/cuelang.org/go/cue) Go API

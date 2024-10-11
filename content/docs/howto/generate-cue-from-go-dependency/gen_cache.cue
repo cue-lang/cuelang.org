@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"deps.go":     "Zp+IAzxB+bCpGFB5P7y4KbAoCUvJh0OGenzwPXPC6Hc="
+								"deps.go":     "2C16nOgetsj6m2qa7zSw2+atE14jqqelnpoO4AbEwgw="
 								"example.cue": "Yrcsxg1j5frjiuyfCm5DaYMkrO/P50OYj+RTuU0+FWY="
 							}
 							multi_step: {
-								hash:       "2G1J8R33PREJF8LGS7R30T94UBE6E4OCI3392O4JL2VABCA57LG0===="
-								scriptHash: "6HO3AE9JDP8QHQKTBD6QNQUI1J68K68G5DAOUD8S9OG34U4BDK5G===="
+								hash:       "F5AL6UN7CLGB55IOSJ93OFAF7RFN1IMIEUU1P7KPCRL325H8V88G===="
+								scriptHash: "PNNDE185TOMDTIVG2QQG82Q0TB7N9JEGTRE2COVUBRQVS9EQLJ5G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -86,6 +86,16 @@ package site
 											statefulSet: {}
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}
