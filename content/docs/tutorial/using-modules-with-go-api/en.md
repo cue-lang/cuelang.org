@@ -215,6 +215,11 @@ go run .
 {{{end}}}
 {{{end}}}
 
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
+{{{end}}}
+
 ## Summary
 
 Well done - you've finished this tutorial! In completing it, you:

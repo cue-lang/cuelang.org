@@ -298,4 +298,3 @@ Unlike OpenAPI, CDDL is a domain-specific language (DSL).
 It needs a specific interpreter.
 It also has some non-trivial aspects to its evaluation, making it much harder
 than OpenAPI to implement.
-

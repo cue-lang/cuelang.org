@@ -14,8 +14,8 @@ package site
 								"openapi-comparison": "JmPd1zkOzqRmU9gZy9qFBlDCiTqvnVtYvqk0pSboqQ8="
 							}
 							multi_step: {
-								hash:       "66FLLLTBI3UUHMC0RNMPNICAEJC8443MLJVKAKQ0AVGSMDRGV980===="
-								scriptHash: "JMSVRRQ6P7ES1AAL0R2TU9L5SC3R20GQ01U30OJLDQ72L80AJ9HG===="
+								hash:       "RTC74LQ88KK0BA184RCT926NC6833SNQ1N4N2FJJLD3T3QOMKB00===="
+								scriptHash: "E0B7M8HIVJH7JUHDLA9NPRPLICF0PVP544DQG55O0MNULVNJO6DG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -61,6 +61,16 @@ package site
 											V3 is backwards compatible with V2: false
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}

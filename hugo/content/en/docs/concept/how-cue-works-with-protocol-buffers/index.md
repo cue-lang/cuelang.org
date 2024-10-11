@@ -123,7 +123,6 @@ package basic
 
 Notice that the ouput is identical to the CUE produced previously by `cue
 import`.
-
 ## Extracting CUE from several Protobuf files
 
 In some environments it might be necessary to import multiple Protobuf files

@@ -167,8 +167,8 @@ jobs:
         run: go clean -testcache
       - name: Early git and code sanity checks
         run: go run cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650
-      - name: Check the /docs/draft/ hierarchy contains only draft pages
-        run: '! git grep --files-without-match ''^draft: true'' ''hugo/content/*/docs/draft/**.md'''
+      - name: Perform early content checks
+        run: _scripts/checkContent.bash
       - name: Check site CUE configuration
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate
