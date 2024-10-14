@@ -37,7 +37,7 @@ workflows: close({
 	// Adding this constraint here, whilst clear for the reader,
 	// blows out evaluation time. This will be fixed as part of
 	// the performance work which is covered under various issues.
-	// [string]: json.#Workflow
+	// [string]: githubactions.#Workflow
 
 	_repo.trybotWorkflows
 
