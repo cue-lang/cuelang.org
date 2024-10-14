@@ -26,7 +26,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/SchemaStore/schemastore/src/schemas/json"
+	"github.com/cue-tmp/jsonschema-pub/exp1/githubactions"
 )
 
 #repositoryURL:                      string
@@ -53,7 +53,7 @@ _#linuxMachine: "ubuntu-20.04"
 #dispatchTrybot: "trybot"
 #dispatchUnity:  "unity"
 
-#dispatchWorkflow: json.#Workflow & {
+#dispatchWorkflow: githubactions.#Workflow & {
 	#type:                  #dispatchTrybot | #dispatchUnity
 	_#branchNameExpression: "\(#type)/${{ github.event.client_payload.payload.changeID }}/${{ github.event.client_payload.payload.commit }}/${{ steps.gerrithub_ref.outputs.gerrithub_ref }}"
 	name:                   "Dispatch \(#type)"
@@ -67,14 +67,14 @@ _#linuxMachine: "ubuntu-20.04"
 				#writeNetrcFile,
 				// Hack to get the ref (e.g. refs/changes/38/547738/7) in a format we can use in a
 				// branch name, e.g. _547738_7
-				json.#step & {
+				githubactions.#Step & {
 					id: "gerrithub_ref"
 					run: #"""
 						ref="$(echo ${{github.event.client_payload.payload.ref}} | sed -E 's/^refs\/changes\/[0-9]+\/([0-9]+)\/([0-9]+).*/\1\/\2/')"
 						echo "gerrithub_ref=$ref" >> $GITHUB_OUTPUT
 						"""#
 				},
-				json.#step & {
+				githubactions.#Step & {
 					name: "Trigger \(#type)"
 					run:  """
 						mkdir tmpgit
@@ -97,7 +97,7 @@ _#linuxMachine: "ubuntu-20.04"
 	}
 }
 
-#writeNetrcFile: json.#step & {
+#writeNetrcFile: githubactions.#Step & {
 	name: "Write netrc file for cueckoo Gerrithub"
 	run:  """
 		cat <<EOD > ~/.netrc
