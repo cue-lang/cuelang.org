@@ -19,7 +19,7 @@ import (
 	"strings"
 	"strconv"
 
-	"github.com/SchemaStore/schemastore/src/schemas/json"
+	"github.com/cue-tmp/jsonschema-pub/exp1/githubactions"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
@@ -71,7 +71,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// that such a workflow is triggered against the tip of the branch,
 			// alpha in this case) contains the Preprocessor-No-Write-Cache
 			// trailer.
-			json.#step & {
+			githubactions.#Step & {
 				name: "Fail if Preprocessor-No-Write-Cache trailer is present for a scheduled workflow run"
 				if:   "github.event.inputs.scheduled == 'true'"
 				run:  "! ./_scripts/noWriteCache.bash HEAD"
@@ -81,7 +81,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// can safely read the cache. To not be specific to the trybot repo we
 			// instead say it's safe to read the cache for any repo other than the
 			// main repo.
-			json.#step & {
+			githubactions.#Step & {
 				if: "github.repository != '\(_repo.githubRepositoryPath)'"
 				run: """
 					echo 'Setting CI_NO_SKIP_CACHE=true'
@@ -102,7 +102,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// If the commit under test contains the trailer
 			// Preprocessor-No-Write-Cache: true, then set the
 			// PREPROCESSOR_NOWRITECACHE env var to non-empty.
-			json.#step & {
+			githubactions.#Step & {
 				name: "Set PREPROCESSOR_NOWRITECACHE if Preprocessor-No-Write-Cache: true"
 				run: """
 					if ./_scripts/noWriteCache.bash HEAD
@@ -123,14 +123,14 @@ workflows: trybot: _repo.bashWorkflow & {
 			_repo.earlyChecks,
 
 			// TODO: move this assertion into CUE as part of https://cuelang.org/issue/2825.
-			json.#step & {
+			githubactions.#Step & {
 				name: "Check the /docs/draft/ hierarchy contains only draft pages"
 				run:  "! git grep --files-without-match '^draft: true' 'hugo/content/*/docs/draft/**.md'"
 			},
 
 			// We can perform an early check that ensures page.cue files are
 			// consistent with respect to their containing directory path.,
-			json.#step & {
+			githubactions.#Step & {
 				name: "Check site CUE configuration"
 				run:  "_scripts/runPreprocessor.bash execute --check"
 			},
@@ -150,14 +150,14 @@ workflows: trybot: _repo.bashWorkflow & {
 			_repo.checkGitClean,
 
 			// Rebuild docker image
-			json.#step & {
+			githubactions.#Step & {
 				run: "./_scripts/buildDockerImage.bash"
 			},
 
 			// npm install in hugo to allow serve test to pass
 			//
 			// TODO: make this a more principled change.
-			json.#step & {
+			githubactions.#Step & {
 				run:                 "npm install"
 				"working-directory": "hugo"
 			},
@@ -174,13 +174,13 @@ workflows: trybot: _repo.bashWorkflow & {
 			},
 
 			// Run staticcheck
-			json.#step & {
+			githubactions.#Step & {
 				name: "staticcheck"
 				run:  "./_scripts/staticcheck.bash"
 			},
 
 			// Run staticcheck in playground
-			json.#step & {
+			githubactions.#Step & {
 				name:                "staticcheck Playground"
 				run:                 "../_scripts/staticcheck.bash"
 				"working-directory": "playground"
@@ -209,7 +209,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// that is controlled by CUE Labs who also run the Central
 			// Registry) here in order to more carefully control in a CI
 			// environment who has access to this endpoint.
-			json.#step & {
+			githubactions.#Step & {
 				name: "write $HOME/.config/cue/logins.json"
 				run: """
 					mkdir -p $HOME/.config/cue
@@ -229,14 +229,14 @@ workflows: trybot: _repo.bashWorkflow & {
 			// Now that we are generated, tested, and the repo is confirmed
 			// as clean, verify that the playground CUE version matches the
 			// site default
-			json.#step & {
+			githubactions.#Step & {
 				run: """
 					./playground/_scripts/checkCUEVersion.bash
 					"""
 			},
 
 			// Now the frontend build has happened, ensure that linters pass
-			json.#step & {
+			githubactions.#Step & {
 				"working-directory": "hugo"
 				run: """
 					npm run lint
@@ -249,7 +249,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_netlifyStep,
 
-			json.#step & {
+			githubactions.#Step & {
 				// Only run in the main repo on the default branch, so only live
 				// content gets indexed.
 				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)')"
@@ -263,12 +263,12 @@ workflows: trybot: _repo.bashWorkflow & {
 				}
 			},
 
-			json.#step & {
+			githubactions.#Step & {
 				name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
 				run:  "_scripts/tipPatchApply.bash"
 			},
 
-			json.#step & {
+			githubactions.#Step & {
 				name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
 				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
 				// so that CLs aren't blocked by failures caused by unrelated changes.
@@ -281,14 +281,14 @@ workflows: trybot: _repo.bashWorkflow & {
 
 				run: "_scripts/tipUseAlternativeCUE.bash"
 			},
-			json.#step & {
+			githubactions.#Step & {
 				name: "tip.cuelang.org: Build the site against the tip of cue-lang/cue"
 				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
 				// so that CLs aren't blocked by failures caused by unrelated changes.
 				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 				run: "_scripts/regenPostInfraChange.bash"
 			},
-			json.#step & {
+			githubactions.#Step & {
 				name: "tip.cuelang.org: Deploy the site"
 				// Only run in the main repo on the default branch or its designated test branch.
 				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
@@ -302,23 +302,33 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	// TODO: this belongs in base. Captured in cuelang.org/issue/2327
 	_dispatchTrailerExpr: "fromJSON(steps.DispatchTrailer.outputs.value)"
-	_goGenerate: json.#step & {
+	_goGenerate: githubactions.#Step & {
 		name: string
-		run:  "go generate ./..."
+		env: {
+			// Note: this token has read-only access to the registry
+			// and is used only because we need some credentials
+			// to pull dependencies from the Central Registry.
+			CUE_LOGINS: "${{ secrets.NOTCUECKOO_CUE_LOGINS }}"
+		}
+		run: """
+			export CUE_CONFIG_DIR=$(mktemp -d)
+			echo "$CUE_LOGINS" > $CUE_CONFIG_DIR/logins.json
+			go generate ./...
+			"""
 	}
 
-	_goTest: json.#step & {
+	_goTest: githubactions.#Step & {
 		name: string
 		run:  "go test ./..."
 	}
 
-	_modTidy: json.#step & {
+	_modTidy: githubactions.#Step & {
 		name: string
 		run:  "go mod tidy"
 	}
 }
 
-_installNode: json.#step & {
+_installNode: githubactions.#Step & {
 	name: "Install Node"
 	uses: "actions/setup-node@v4"
 	with: {
@@ -355,14 +365,14 @@ _installDockerMacOS: [
 	// docker (via colima) work. If we don't set this to be a path within $HOME,
 	// then we end up with a mount-ed directory. And this does not work via -v
 	// bind mounts.
-	json.#step & {
+	githubactions.#Step & {
 		_name: "Set TMPDIR environment variable"
 		run: """
 			mkdir $HOME/.tmp
 			echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
 			"""
 	},
-	json.#step & {
+	githubactions.#Step & {
 		_name: "Write lima config"
 		run: """
 			mkdir -p ~/.lima/default
@@ -375,7 +385,7 @@ _installDockerMacOS: [
 			EOD
 			"""
 	},
-	json.#step & {
+	githubactions.#Step & {
 		_name: "Install Docker"
 		run: """
 			brew install colima docker
@@ -383,7 +393,7 @@ _installDockerMacOS: [
 			sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
 			"""
 	},
-	json.#step & {
+	githubactions.#Step & {
 		_name: "Set DOCKER_HOST environment variable"
 		run: """
 			echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
@@ -391,11 +401,11 @@ _installDockerMacOS: [
 	},
 ]
 
-_macOSStep: json.#step & {
+_macOSStep: githubactions.#Step & {
 	if: "runner.os == 'macOS'"
 }
 
-_linuxStep: json.#step & {
+_linuxStep: githubactions.#Step & {
 	if: "runner.os == 'Linux'"
 }
 
@@ -413,7 +423,7 @@ _installMacOSUtils: _macOSStep & {
 		"""
 }
 
-_dist: json.#step & {
+_dist: githubactions.#Step & {
 	name: *"Dist" | string
 	// enforce https, and allow trailing slash to be added universally *if
 	// needed* here, not by the _dist consumer.
@@ -421,13 +431,13 @@ _dist: json.#step & {
 	run:      "./_scripts/build.bash --baseURL \(_baseURL)"
 }
 
-_installNetlifyCLI: json.#step & {
+_installNetlifyCLI: githubactions.#Step & {
 	name: "Install Netlify CLI"
 	run:  "npm install -g netlify-cli@\(_repo.netlifyCLIVersion)"
 }
 
 // _netlifyDeploy is used to push CLs for preview but also to deploy tip
-_netlifyDeploy: json.#step & {
+_netlifyDeploy: githubactions.#Step & {
 	#prod:   *false | bool
 	#site:   string
 	#alias?: string
@@ -465,7 +475,7 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 	_
 }
 
-_setupBuildx: json.#step & {
+_setupBuildx: githubactions.#Step & {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v3"
 }
