@@ -1,0 +1,169 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "679ae5c8_52cbac2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "Good stuff! Here\u0027s a first pass t a review.",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91abcbfa_4280af3b",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "I\u0027m not sure quite how helpful this analogy is. To me, a key aspect of a URL is the method at the start (e.g. https://`) which isn\u0027t shared by module paths.",
+      "range": {
+        "startLine": 96,
+        "startChar": 58,
+        "endLine": 97,
+        "endChar": 15
+      },
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79eb38a2_5111069e",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "Perhaps mention that if the major version suffix is omitted, `@v0` is used?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "296ea401_a9d82e0e",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "Well, it\u0027s enforced by the Central Registry when uploading modules, so arguably \"in any way\" is a bit strong. Perhaps \"by the CUE tool\" ?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a669bd6c_4548559f",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "I think it\u0027s hard to argue that the module identifier really is globally unique, particular when `cue mod init` always uses `cue.example` by default. Maybe \"domain-qualified\" ? Or maybe just omit \"globally unique\"?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eecafbc2_91277ab1",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "\"their\" is slightly ambiguous here, and we could potentially indicate why they\u0027re deprecated. Perhaps be more explicit by saying \"but use of these directories is deprecated, as they interact poorly with use of shared dependencies\" ?\n\nIt might also be useful to point out that if there\u0027s any conflict between a package in the `cue.mod/*` directories and a package in an external module, we\u0027ll get an error, and also that such packages aren\u0027t visible if the module is used as a dependency.",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 0
+      },
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1902376d_3478413b",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "maybe \"the current directory\" rather than the rather vague \"this directory\" ?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78ce1bde_d70ee45c",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "This is technically not quite true: if a dependency declares a module path that has the current module path as a prefix and that contains a package that matches the import path, then it will be used as long as it\u0027s unambiguous.",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0599dcc_91712eb3",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2024-10-14T13:21:49Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this mention that modules are fetched from the configured registry if not present in the cache?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
