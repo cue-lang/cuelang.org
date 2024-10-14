@@ -18,6 +18,12 @@ hide_summary: true
 	label=" "
 >}}
 {{< /card >}}
+{{< card
+	title="Using the \"cue export\" command"
+	href="../using-the-cue-export-command/"
+	label=" "
+>}}
+{{< /card >}}
 {{< /cards >}}
 
 ## Common use cases
