@@ -34,8 +34,8 @@ jobs:
         run: touch -t 202211302355 $(find * -type d)
       - name: Restore git file modification times
         uses: chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe
-      - id: DispatchTrailer
-        name: Try to extract Dispatch-Trailer
+      - name: Try to extract Dispatch-Trailer
+        id: DispatchTrailer
         run: |-
           x="$(git log -1 --pretty='%(trailers:key=Dispatch-Trailer,valueonly)')"
           if [[ "$x" == "" ]]
@@ -51,28 +51,27 @@ jobs:
           echo "value<<EOD" >> $GITHUB_OUTPUT
           echo "$x" >> $GITHUB_OUTPUT
           echo "EOD" >> $GITHUB_OUTPUT
-      - if: |-
+      - name: Check we don't have Dispatch-Trailer on a protected branch
+        if: |-
           ((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"'))
-        name: Check we don't have Dispatch-Trailer on a protected branch
         run: |-
           echo "github.event.head_commit.message contains Dispatch-Trailer but we are on a protected branch"
           false
-      - if: github.event.inputs.scheduled == 'true'
-        name: Fail if Preprocessor-No-Write-Cache trailer is present for a scheduled workflow run
+      - name: Fail if Preprocessor-No-Write-Cache trailer is present for a scheduled workflow run
+        if: github.event.inputs.scheduled == 'true'
         run: '! ./_scripts/noWriteCache.bash HEAD'
       - if: github.repository != 'cue-lang/cuelang.org'
         run: |
           echo 'Setting CI_NO_SKIP_CACHE=true'
           echo "CI_NO_SKIP_CACHE=true" >> $GITHUB_ENV
       - if: runner.os == 'macOS'
-        name: Set TMPDIR environment variable (${{runner.os}})
         run: |-
           mkdir $HOME/.tmp
           echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
+        name: Set TMPDIR environment variable (${{runner.os}})
       - if: runner.os == 'macOS'
-        name: Write lima config (${{runner.os}})
         run: |-
           mkdir -p ~/.lima/default
           cat <<EOD > ~/.lima/default/lima.yaml
@@ -82,15 +81,16 @@ jobs:
             - location: "$TMPDIR"
           	 writable: true
           EOD
+        name: Write lima config (${{runner.os}})
       - if: runner.os == 'macOS'
-        name: Install Docker (${{runner.os}})
         run: |-
           brew install colima docker
           colima start --mount-type virtiofs
           sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
+        name: Install Docker (${{runner.os}})
       - if: runner.os == 'macOS'
-        name: Set DOCKER_HOST environment variable (${{runner.os}})
         run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
+        name: Set DOCKER_HOST environment variable (${{runner.os}})
       - if: runner.os == 'macOS'
         name: Install macOS utils
         run: brew install coreutils
@@ -127,17 +127,27 @@ jobs:
           	echo 'Found Preprocessor-No-Write-Cache trailer'
           	echo "PREPROCESSOR_NOWRITECACHE=true" >> $GITHUB_ENV
           fi
-      - id: go-mod-cache-dir
-        name: Get go mod cache directory
+      - name: Get go mod cache directory
+        id: go-mod-cache-dir
         run: echo "dir=$(go env GOMODCACHE)" >> ${GITHUB_OUTPUT}
-      - id: go-cache-dir
-        name: Get go build/test cache directory
+      - name: Get go build/test cache directory
+        id: go-cache-dir
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
-      - if: |-
+      - with:
+          path: |-
+            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
+            ${{ steps.go-cache-dir.outputs.dir }}
+            ~/.cache/dockercache
+            ~/.cache/node-gyp
+            ~/.npm
+            ${{ github.workspace }}/playground/.webpack_cache
+          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.23.0
+        if: |-
           (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache@v4
-        with:
+      - with:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
@@ -147,20 +157,10 @@ jobs:
             ${{ github.workspace }}/playground/.webpack_cache
           key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.23.0
-      - if: |-
+        uses: actions/cache/restore@v4
+        if: |-
           ! (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
-        uses: actions/cache/restore@v4
-        with:
-          path: |-
-            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
-            ${{ steps.go-cache-dir.outputs.dir }}
-            ~/.cache/dockercache
-            ~/.cache/node-gyp
-            ~/.npm
-            ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.23.0
       - if: |-
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
@@ -169,6 +169,12 @@ jobs:
         run: go run cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650
       - name: Check the /docs/draft/ hierarchy contains only draft pages
         run: '! git grep --files-without-match ''^draft: true'' ''hugo/content/*/docs/draft/**.md'''
+      - env:
+          CUE_LOGINS: ${{ secrets.NOTCUECKOO_CUE_LOGINS }}
+        run: |-
+          export CUE_CONFIG_DIR=$(mktemp -d)
+          echo "$CUE_LOGINS" > $CUE_CONFIG_DIR/logins.json
+          go run cuelang.org/go/cmd/cue mod tidy --check
       - name: Check site CUE configuration
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate
@@ -176,8 +182,8 @@ jobs:
       - name: Regenerate Playground
         run: go generate ./...
         working-directory: playground
-      - if: always()
-        name: Check that git is clean at the end of the job
+      - name: Check that git is clean at the end of the job
+        if: always()
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./_scripts/buildDockerImage.bash
       - run: npm install
@@ -205,16 +211,16 @@ jobs:
           EOD
       - name: Dist
         run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app
-      - if: always()
-        name: Check that git is clean at the end of the job
+      - name: Check that git is clean at the end of the job
+        if: always()
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./playground/_scripts/checkCUEVersion.bash
-      - run: npm run lint
-        working-directory: hugo
-      - if: |-
+      - working-directory: hugo
+        run: npm run lint
+      - name: Install Netlify CLI
+        if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
-        name: Install Netlify CLI
         run: npm install -g netlify-cli@17.0.1
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
@@ -233,16 +239,16 @@ jobs:
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
       - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
         run: _scripts/tipPatchApply.bash
-      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
-        name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
-        run: _scripts/tipUseAlternativeCUE.bash
+      - name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
+        if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         env:
           GOPRIVATE: cuelang.org/go
-      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
-        name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
+        run: _scripts/tipUseAlternativeCUE.bash
+      - name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
+        if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         run: _scripts/regenPostInfraChange.bash
-      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
-        name: 'tip.cuelang.org: Deploy the site'
+      - name: 'tip.cuelang.org: Deploy the site'
+        if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
         run: |-
           git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
           _scripts/tipDeploy.bash 'cueckoo' 'cueckoo@gmail.com'
