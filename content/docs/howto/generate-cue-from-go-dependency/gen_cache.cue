@@ -11,8 +11,8 @@ package site
 								"example.cue": "Yrcsxg1j5frjiuyfCm5DaYMkrO/P50OYj+RTuU0+FWY="
 							}
 							multi_step: {
-								hash:       "F5AL6UN7CLGB55IOSJ93OFAF7RFN1IMIEUU1P7KPCRL325H8V88G===="
-								scriptHash: "PNNDE185TOMDTIVG2QQG82Q0TB7N9JEGTRE2COVUBRQVS9EQLJ5G===="
+								hash:       "796OVV5Q5FN8OH2UBQ02MSOUFPVO29MED1QSN61USU44C8ETKNVG===="
+								scriptHash: "BU2K04AC6S5ENFVRE9ELG1FD8T7KRODO1BN7K9RKSIEU4I4D256G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -92,10 +92,13 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      ""
+									doc:      "#ellipsis 0"
 									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
 									exitCode: 0
-									output:   ""
+									output: """
+											...
+
+											"""
 								}]
 							}
 						}
