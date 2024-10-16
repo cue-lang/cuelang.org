@@ -16,6 +16,23 @@
       "message": "I\u0027ll let Daniel have a look at this as well...",
       "revId": "1c7214e8f9357caf1bcdcb9b3f5e4bddd970e364",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08555b2d_ff0b2bbc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-10-16T12:49:01Z",
+      "side": 1,
+      "message": "SGTM! Doing this in shell is definitely hackier than we\u0027d all prefer, but this definitely works for now.",
+      "revId": "1c7214e8f9357caf1bcdcb9b3f5e4bddd970e364",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
