@@ -118,6 +118,7 @@ cue export --out yaml
 
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
+#ellipsis 0
 go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
 {{{end}}}
 
