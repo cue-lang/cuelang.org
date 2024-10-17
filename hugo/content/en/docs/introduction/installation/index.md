@@ -25,7 +25,7 @@ The latest version of the `cue` command is:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.10.0
+cue version v0.11.0-alpha.3.0.20241017110013-860906a7f025
 ...
 ```
 
