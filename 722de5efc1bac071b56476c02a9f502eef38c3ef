@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3eb27dca_0bcaff3c",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91abcbfa_4280af3b",
+      "range": {
+        "startLine": 96,
+        "startChar": 58,
+        "endLine": 97,
+        "endChar": 15
+      },
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79eb38a2_5111069e",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-10-14T13:21:49Z",
       "side": 1,
       "message": "Perhaps mention that if the major version suffix is omitted, `@v0` is used?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0181358_b0274d2a",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "Given that `cue mod init cue.example/foo` doesn\u0027t emit `@v0` into `module.cue` (tested here with `v0.11.0-alpha.1.0.20240912132401-a558a4b46cdb`), what\u0027s the strictly accurate wording here?",
+      "parentUuid": "79eb38a2_5111069e",
       "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82735364_55608403",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "296ea401_a9d82e0e",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a669bd6c_4548559f",
@@ -88,6 +148,24 @@
       "writtenOn": "2024-10-14T13:21:49Z",
       "side": 1,
       "message": "I think it\u0027s hard to argue that the module identifier really is globally unique, particular when `cue mod init` always uses `cue.example` by default. Maybe \"domain-qualified\" ? Or maybe just omit \"globally unique\"?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc100ab4_653ef468",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "I\u0027ve removed the \"globally unique\" qualifier.",
+      "parentUuid": "a669bd6c_4548559f",
       "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -115,6 +193,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "75f534ba_0572001b",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eecafbc2_91277ab1",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 0
+      },
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1902376d_3478413b",
@@ -128,6 +230,24 @@
       "writtenOn": "2024-10-14T13:21:49Z",
       "side": 1,
       "message": "maybe \"the current directory\" rather than the rather vague \"this directory\" ?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e06759f8_fad883bc",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1902376d_3478413b",
       "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -151,6 +271,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "da94b212_d5860ea9",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "Ok, that little detail prompted me to completely rewrite this section! Please let me know that I\u0027ve managed to capture the current behaviour correctly :-)",
+      "parentUuid": "78ce1bde_d70ee45c",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f0599dcc_91712eb3",
         "filename": "content/docs/concept/modules-packages-instances/en.md",
         "patchSetId": 14
@@ -162,6 +300,24 @@
       "writtenOn": "2024-10-14T13:21:49Z",
       "side": 1,
       "message": "Shouldn\u0027t this mention that modules are fetched from the configured registry if not present in the cache?",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eaa15adb_e6022955",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-17T14:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0599dcc_91712eb3",
       "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
