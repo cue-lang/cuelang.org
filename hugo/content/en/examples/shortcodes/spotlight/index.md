@@ -12,8 +12,8 @@ In order to spotlight some content, you can use `{{</* spotlight */>}}`.
 
 ## Prerequisites
 
-- **A tool to edit text files.** Any text editor you have will be fine. Some popular text editors are VSCode, Vim, Nano, and Emacs; but if you need to use Notepad that will work fine.
-- **A command terminal.** `cue` works well using any terminal on Linux and Mac, and on PowerShell or `cmd.exe` in Windows.
+- **A tool to edit text files.** Any text editor you have will be fine. Some popular text editors are VSCode, Vim, Nano, and Emacs; but if you need to use Notepad that will work fine.
+- **A command terminal.** `cue` works well using any terminal on Linux and Mac, and on PowerShell or `cmd.exe` in Windows.
 
 {{</* /spotlight */>}}
 ```
@@ -24,8 +24,8 @@ The rendered output looks like this:
 
 ## Prerequisites
 
--   **A tool to edit text files.** Any text editor you have will be fine. Some popular text editors are VSCode, Vim, Nano, and Emacs; but if you need to use Notepad that will work fine.
--   **A command terminal.** `cue` works well using any terminal on Linux and Mac, and on PowerShell or `cmd.exe` in Windows.
+-   **A tool to edit text files.** Any text editor you have will be fine. Some popular text editors are VSCode, Vim, Nano, and Emacs; but if you need to use Notepad that will work fine.
+-   **A command terminal.** `cue` works well using any terminal on Linux and Mac, and on PowerShell or `cmd.exe` in Windows.
 
 {{< /spotlight >}}
 

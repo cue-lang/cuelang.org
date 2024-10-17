@@ -39,6 +39,7 @@ For example:
 {{</* step group="example" stepNumber="2" */>}}
 Create a data file named `charlie.yml` to hold Charlie the cat's details.
 Place this information in it, including the deliberate mistake in the `species`
+
 {{</* /step */>}}
 
 ````

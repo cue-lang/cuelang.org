@@ -9,7 +9,7 @@
                 <h3 class="cards__title">{{ $card.title }}</h3>
 
                 <div class="cards__content">
-                    {{ $card.content | markdownify }}
+                    {{ $card.content | $.Page.RenderString }}
                 </div>
 
                 {{ if and $card.href $card.label }}

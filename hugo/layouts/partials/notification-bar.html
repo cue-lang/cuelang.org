@@ -3,7 +3,7 @@
     <div class="notification-bar is-hidden" data-notification-bar="{{ .type | default "default" }}">
         <div class="notification-bar__container">
             <div class="notification-bar__content">
-                {{ .content | markdownify }}
+                {{ .content | $.Page.RenderString }}
             </div>
             {{ if .button -}}
                 <a class="button button--outline notification-bar__cta" href="{{ .button.link }}">
