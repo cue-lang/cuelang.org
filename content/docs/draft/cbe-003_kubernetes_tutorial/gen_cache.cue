@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "Ke30MhycacANqnbLeR5PG1qwYsIbQvbxiF7w/THo8+0="
-								kube2:               "EOjVDxjPJxczeEurjEtLGPCCC0CSdK4EUz/xcd+dZ2M="
-								kube3:               "czb8TJ/xa7GPJ9kpT4nvDbwo4zOR8fmkgd1eO++MQkA="
-								"template frontend": "urC0/n7Vqqnchj5hmEGHsgSq5+CO+Bww46KcF4FCuXg="
-								"template kitchen":  "7FHuxRn5yom64hERX0cuzieuTIb+FvnkG5FLKd9eOsE="
-								kitchen3:            "NH+H939QXSiNnXJwviyVgJeDzGdRdv/C/SU1ZHgyRoE="
-								sous:                "CkItG3zOO2I3F91lKQ3F4/Lryx1OImKFS6GbkIfx3Ds="
-								"kube tool":         "/vkOHfLnfidE2I4ZURfZMQP94xO8FQH4OB4S6wmJUog="
-								"ls tool":           "KAEM63EjOlZzP+rODBx5w7dmcEdv97a6rY5wb9wzHV4="
-								"dump tool":         "oTjk14xZG6x/EFopFnjJXBVbidUIjTNd8QlsWr5oFb0="
-								"create tool":       "N96cJ0Ze/E/7hz2QTl0JFnzSz1vc5fO79GnWvxGGh5U="
-								kubectl:             "4urmeOP6V/B7WLSWighyOnq2jReEvedUwHRfV+R0pKU="
+								"initial template":  "pVEoeG9VY/b20SUVnSy3S/CnZnZ40iR36ZEYMcNyBE4="
+								kube2:               "5Uy0Z7RaGn8e9d/HQg1rFZpQvqbEu0b6AdOa/6hKwIo="
+								kube3:               "pWCGutq+piczIv/el4IIk/PRRZ0+593V1gTLzaUxQLY="
+								"template frontend": "PUBi4TpSTD/PZeGKdqCvv2ynWMsJff5Hf9Gp9ePSNLA="
+								"template kitchen":  "kq6y5bpg6K9hHXpOBJXh0EcM0TizhHyZmf5djyLnR3I="
+								kitchen3:            "NsnjWHgP8qfarkJduicqxHHGgpovtozxN6OCGVw0wjQ="
+								sous:                "yzFN9I5wwWoNUmILgwhiwJtn05y3bIqk8DCzpuUJwKw="
+								"kube tool":         "vFUadwmBjq2Zc5mlzdn4CIH1Fch/IUsMw9TGHCVunYE="
+								"ls tool":           "QSK9/M0uKEglkMWoPjQ+tGf+cYrvU3DUXswdmr9BNs8="
+								"dump tool":         "etgQSvTr3u0+eq6z9qFkyWwQBlRZPG4vTpepX0Rpk8g="
+								"create tool":       "kanOvEQRSQvFf9Fu/b9XRXrwLOvtoX9+vGHRrO8D0NA="
+								kubectl:             "pjwTI0cQULkX2jHqPOJAT4Z0dR0IhRHaHtoOSpsBjZU="
 							}
 							multi_step: {
-								hash:       "0LG81SJR3NKSBU0A200Q1P96VCRC3633OJONI7OS7B7HFTRQL3FG===="
+								hash:       "0KMUTU40JNKKJ6QHIAVSV9L2IELQLDJ013SNG2B32ACF8VFG7R00===="
 								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
 								steps: [{
 									doc:      "#ellipsis 5"
@@ -121,14 +121,14 @@ package site
 									output: """
 											package kube
 
-											import yaml656e63 "encoding/yaml"
+											import "encoding/yaml"
 
 											configMap: prometheus: {
 											\tapiVersion: "v1"
 											\tkind:       "ConfigMap"
 											\tmetadata: name: "prometheus"
 											\tdata: {
-											\t\t"alert.rules": yaml656e63.Marshal(_cue_alert_rules)
+											\t\t"alert.rules": yaml.Marshal(_cue_alert_rules)
 
 											"""
 								}, {

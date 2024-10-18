@@ -7,22 +7,22 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "a/38lYrqGap8Utd1s1Lhn90To2kDRLJZSwtFGSbDL24="
-								"5":  "+4EE218FSZDv0qsMU5EgWlnaYjKPQ1kOYL0MTmg5IYI="
-								"10": "TsAomDqkxsjC5CXe3/kKn9lKFhuRv6AAhlf8PE72tvw="
-								"11": "x+NRZoOaYQhWzNPUtuBDYxF059+1WCBiXVaEDrl6ge0="
-								"12": "2NXVg3M94MzFdZgfa06RxCky25vzi8srX6flwXF/PMU="
-								"14": "OL9RAMC5JyJCxboxVSTWZVFOXtDQjA394qqLGzqjIME="
+								"4":  "To8F9ruykod46Ue8gFNwvv1XIVomP5h2iOa727Al6tk="
+								"5":  "wnOXBjMD+1X8HbjCCMW6SeyLhcXGgSThnPmLr45G8ho="
+								"10": "aqRFTrDSia2TlpJd7ybhzWHQtwsSzlPs6R6IPCFia2w="
+								"11": "Du/59z32z5XzlB2AYUBlFLs3eZ8y8/wTTsyCQBKnRBI="
+								"12": "cKldqrM9qZaHnNcOvxAJbIo5d2qfsY62CektCDWWPdM="
+								"14": "ZhTXilMfWx+qQpkSX0Ca1npJC0E9P3e94VdjjECccB0="
 							}
 							multi_step: {
-								hash:       "V3IVQVKH44E8AAF1ICOCC55GBTS8M3I8FDLUIMGA94FPS7664GMG===="
-								scriptHash: "MLK0NUP4TVCL0Q720L50J6AI3VO3Q40L83MK8TISSDGA0I6VCQ4G===="
+								hash:       "HVGBH3DDEO0SC64U8RCKLN5GMLKPHT2TJMEG1I63RFRP2TRIV020===="
+								scriptHash: "MQ7AEKVUPJC9IGOVHBEVN9EFQLFOUU8K32V9G84SVE64SGDH7G60===="
 								steps: [{
 									doc: """
 											# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
 											# is fixed in v0.11.0-alpha.2 and later.
 											"""
-									cmd:      "export PATH=/cues/v0.11.0-alpha.3:$PATH"
+									cmd:      "export PATH=/cues/v0.11.0-alpha.3.0.20241018151444-6e0525b34633:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
