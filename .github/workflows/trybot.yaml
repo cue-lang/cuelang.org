@@ -168,7 +168,7 @@ jobs:
       - name: Early git and code sanity checks
         run: go run cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650
       - name: Perform early content checks
-        run: _scripts/checkContent.bash
+        run: _scripts/contentLint.bash
       - name: Check site CUE configuration
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate
