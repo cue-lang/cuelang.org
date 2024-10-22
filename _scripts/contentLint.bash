@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# checkContent.bash asserts that specific pages under content/ and hugo/
+# contentLint.bash asserts that specific pages under content/ and hugo/
 # contain (or don't contain) particular content. These are checks which should
 # probably live elsewhere (e.g. the preprocessor), but are placed here until
 # implemented in a more principled manner.
