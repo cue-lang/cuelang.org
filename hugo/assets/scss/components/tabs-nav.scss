@@ -11,9 +11,11 @@
 
     &__tabs {
         display: flex;
+        overflow: auto hidden;
         padding: 0 $p-gutter;
         scroll-behavior: smooth;
-        scrollbar-width: none;
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
     }
 
     &__item {
