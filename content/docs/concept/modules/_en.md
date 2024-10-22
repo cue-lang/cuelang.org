@@ -4,13 +4,42 @@ tags: [modules]
 toc_hide: false
 ---
 
-Modules are how CUE manages native dependencies.
-They can be published to a registry, which allows users to fetch and work with their contents.
+Modules are how CUE manages dependencies.
 
-Learn about modules using these recommended guides, or
-browse through all the {{<tag modules>}} pages listed below:
+You can share a module by *publishing* it, and your CUE can depend on published modules.
 
-## Recommended guides
+*publish* a module to share it with 
+
+Modules can be shared with 
+A module contains a tree of CUE *packages* alongside metadata that describes
+the module's *path* (its name, or identity), its *version*, and its
+*dependencies*.  The metadata is generally managed by
+[`cue mod`]({{<relref "docs/reference/command/cue-help-mod">}})
+commands such as
+[`cue mod init`]({{<relref "docs/reference/command/cue-help-mod-init">}})
+(which initializes a module), and
+[`cue mod tidy`]({{<relref "docs/reference/command/cue-help-mod-tidy">}})
+(which resolves all dependencies in the current module and updates the metadata
+to reflect them).
+
+A module must be initialized and referred to if any package in the tree needs
+to be referenced by any other package -- whether that other package is inside
+the same module, or in some other module.
+When a package references (or *imports*) a package from a different module, the
+module containing the importing package is said to have a *dependency* on the
+module containing the imported package.
+
+Optionally, modules can be *published* to a *registry*.
+A published module can be used as a dependency by other modules, and will be
+fetched from the registry by CUE whenever required.
+A module only needs to be published when other modules have a dependency on it.
+A module containing a tree of packages that refer to each other (and aren't
+referenced by packages in other modules) does not need to be published -- but
+can be published if so desired.
+
+Learn about CUE modules using these suggested links,
+or browse through all the {{<tag modules>}} pages
+[listed below](#all-pages-tagged-modules):
 
 {{<cards>}}
 {{<card title="Reference manual"
