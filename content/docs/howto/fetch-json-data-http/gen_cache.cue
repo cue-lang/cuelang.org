@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"HIDDEN: server.go": "lML6LP95ZJuXsWG1gJ92vHGhFPlJTE4VQQgIH9QYC3A="
-								cc:                  "bh86wEvT3GdU5HyoTAqAYREXxEochkg0S2nyPEGPfos="
+								"HIDDEN: server.go": "7CBKR0C/DLgMB/n/K0LlPnowx4JHW0V/6ktBadbXkoQ="
+								cc:                  "kLJ7oyB9J+p3xqfKxFfHfZO/9f4Vw3Ot+FlxpgJwABs="
 							}
 							multi_step: {
-								hash:       "URSQEG6G99FUOGO5I5CF34RROKLMOTCQI5ACLDIG6GUDKVGO7RK0===="
+								hash:       "UA8JC8ICMLKA65NURD0C7AFR5SV3F5G765PD38M6MFVGFND07830===="
 								scriptHash: "HFFNH43U957JTQV8V6FJPCNFU0132TPRFDVKPL6ILOUIJKE4S4HG===="
 								steps: [{
 									doc:      ""
