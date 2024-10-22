@@ -124,7 +124,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			json.#step & {
 				name: "Perform early content checks"
-				run:  "_scripts/checkContent.bash"
+				run:  "_scripts/contentLint.bash"
 			},
 
 			// We can perform an early check that ensures page.cue files are
