@@ -12,8 +12,9 @@ They explore the foundations and implications of CUE's theoretical basis in
 depth, and provide background information to help the CUE user discover how
 best to take advantage of its unique and powerful features.
 
-Use this interface to browse and search through the contents, titles, examples,
-and tags of the guides, and to narrow down the list of guides to a specific
-topic:
+The [Popular guides]({{< relref "popular-guides" >}}) page contains a curated
+list of frequently-used concept guides -- or you can use this list to browse
+through all the concept guides, and to find guides with specific content,
+titles, and tags:
 
 {{< search contentType="Concept Guides" showContentTypes=false >}}
