@@ -124,7 +124,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			githubactions.#Step & {
 				name: "Perform early content checks"
-				run:  "_scripts/checkContent.bash"
+				run:  "_scripts/contentLint.bash"
 			},
 
 			// This is the only step that needs to be given (read-only) access to the Central Registry.
