@@ -1,0 +1,197 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1a4e4dd_e1c99814",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "Some thoughts.",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b55090c_47542d48",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "We made an explicit move to \"workflow commands\" a while back, but I don\u0027t /think/ we ironed out the nuances of its components.\n\nWhat is a \"CUE workflow\"? Is it distinct from a \"workflow **command**\"?\n\nI think I\u0027d go with \"... in a workflow command\" - losing the \"CUE\" prefix (so long as \"workflow\" isn\u0027t left being too generic, in isolation) as it feels tautologous given the docs\u0027 surrounding CUE context.",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2286d9d0_47bfd89d",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "How-to guides tend to have slightly different verbs forms in their titles vs URL paths. Assuming your existing title, I\u0027d go with your existing URL path, but modify the title to be\n\n```\ntitle: \"Determining the order of ...\"\n```",
+      "range": {
+        "startLine": 2,
+        "startChar": 7,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9cff4d75_f7a4f1c2",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "I think the dual meaning of \"determine\" (\"specify\" versus \"discover\") makes this a tad ambiguous. Perhaps \"specify\", \"fix\", or \"define\"?",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9cd3d854_7850420e",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "nit: I\u0027ve started using YAML inline list syntax for tags and authors, not least as they make elements easier to grep :-) YMMV!\n\ne.g. `authors: [myitcv]`",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99e3506a_750032b5",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "What\u0027s \"implicit or explicit\": the dependencies; the tasks; the workflow?\n\nI think I\u0027d go with something like:\n\n```\nThis [Commented CUE]() demonstrates how to use implicit and explicit dependencies\nto influence the order of execution for the tasks in a workflow command.\n```\n\nIf you want to use the wording of to your current prose, I suggest using double-hyphens (or even parens) to better delineate the parenthetical clause:\n\n```\nThis guide demonstrates how dependencies between tasks in a workflow -- implicit\nor explicit -- influence the order of execution.\n```\n\nor\n\n```\nThis guide demonstrates how dependencies between tasks in a workflow (implicit\nor explicit) influence the order of execution.\n```",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b60986fd_9fe0e068",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "I can see you\u0027ve not done `top-left top-right bottom` to avoid scrolling because of the width of the code.\n\nMight placing the `input.txt` file in the /bottom/ right nicely display the whole example in a single glance-able pane? (i.e. with the terminal in the bottom-left)",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c02cfc2_278ddf89",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "I\u0027d camelCase this name to make it stand out better, allowing the reference and specification to be more easily linked.",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec81e1be_ce5a865d",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "I think the `read` task name needs to be something camelCased, so that it\u0027s visually obvious as being not-an-English-word in this comment.",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2ab1826_aaaec8e2",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "`file read` feels triply ambiguous to the at-a-glance reader:\n\n- the file (called) \"read\" (\"hang on - I thought the /task/ was called read?\")\n- the file that was read\n- the file read operation\n\nAs mentioned below, I /think/ this sentence could be rewritten to draw a parallel with the other comment. e.g.\n\n```\n// The \"report\" task has an implicit dependency because it uses a value from\n// the \"read\" task.\n```\n\n... and\n\n```\n// The \"thank\" task has a pair of explicit dependencies because it uses the\n// $after meta field to mention two other tasks - ensuring that it will run\n// after both \"read\" and \"report\" have finished.\n```",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23e35a7e_7235188f",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-24T17:18:23Z",
+      "side": 1,
+      "message": "We use \"implicit\" and \"explicit\", above, without linking them to the kind of reference they mean. I feel the two comments above `report` and `thank` could be rewritten to be somewhat more symmetrical (and a tad simpler) using those two terms to draw out the tasks\u0027 dependency distinction.",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
