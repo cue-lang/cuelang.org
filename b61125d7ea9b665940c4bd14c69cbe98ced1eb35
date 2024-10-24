@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9d5919e_20cfc48b",
+        "filename": "content/docs/howto/combine-multiple-if-clauses/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-24T16:20:25Z",
+      "side": 1,
+      "message": "With reference back to the original user question/comment on this issue. This piece of content should I think focus on the difference between `if A if B` and `if A \u0026\u0026 B`. The multi vs single line point is I think far less significant (and could even be explained away in a comment rather than being spelt out). \n\nHence I think this needs an example that shows why the chained form is necessary over `\u0026\u0026`. Here is one such (bad) example:\n\n```\na: \"5\"\nif (a \u0026 int) !\u003d _|_ if a \u003e 2 {\n\tb: 4\n}\n```\n\nvs\n\n```\na: \"5\"\nif (a \u0026 int) !\u003d _|_ \u0026\u0026 a \u003e 2 {\n\tb: 4\n}\n```\n\nThe point being, CUE does not have short-circuit evaluation (for now, and it may never).",
+      "revId": "b61125d7ea9b665940c4bd14c69cbe98ced1eb35",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
