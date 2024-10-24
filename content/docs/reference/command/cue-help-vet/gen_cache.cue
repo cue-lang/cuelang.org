@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "842ICB6UIP9VPGJ9Q6S29SNK54019LNQU0HJQJMLVRISVBNCRFPG===="
+									hash:       "A80I38CQ1BLDGPE20DQT1LBJ4IK1LADO7KCAJ1CGUA1FKPJIOLEG===="
 									scriptHash: "L7UTCTQ3UD312KV4IKGP7VIQH41K7AN2VDJIKGRJP4OHBIE4NC2G===="
 									steps: [{
 										doc:      ""
@@ -76,7 +76,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --strict       report errors for lossy mappings
 												      --trace        trace computation
 												  -v, --verbose      print information about progress
 

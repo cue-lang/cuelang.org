@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "6GTJMMKGGKT9PBV22RMU2EP0O5FHRN07118HP7K0BA1OTIEK8L00===="
+									hash:       "916824A3FONAOJ64BL208L7F7BSET2DFETN2HO5VPNKRJV1GQ0RG===="
 									scriptHash: "LMATRJ8FI2NORP1E83PHSVTMQ729HLFTR844UK1TF8FBQVR96NI0===="
 									steps: [{
 										doc:      ""
@@ -233,7 +233,7 @@ package site
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
 												  -n, --name string              glob filter for non-CUE file names in directories
-												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue filetypes' for more info)
+												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
 												  -p, --package string           package name for non-CUE files
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
@@ -246,7 +246,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --strict       report errors for lossy mappings
 												      --trace        trace computation
 												  -v, --verbose      print information about progress
 

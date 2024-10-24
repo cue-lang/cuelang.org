@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue schema": "jwjNSoNKAQZtuDPHOzvAY3ygZdSY3okkpAp5Rg615vM="
-								"good data":  "bawnvrGLSTZ/f0K4cpECqL3KPeRL66iLw6KjESNyBlA="
-								"bad data":   "m/dAwtH6t3qut1K8VXuPNH/Hu5l/9fk7Yr7GldD04BE="
-								"main go":    "k+VHIbGAjEi6IXTonin7xjRGA/oYZJJ+AsZJltE69HY="
+								"cue schema": "rOPLzfAvOaPrcRefEH2TgYmCJkgSd+Baqjzk+2MKqnM="
+								"good data":  "zXbB3sK4xaA+ZmS6F4FOjl61nHXzpz+JpKtaAPRoZls="
+								"bad data":   "ZV2bnw7hkOaoKh18AuuvMmdRHmBLiOBbu8f/fsHg1JY="
+								"main go":    "QddL4sN7EgxQStF1m6IF3t3/MAp6XX9LgkpadZi66LU="
 							}
 							multi_step: {
-								hash:       "P4I22FCUOOC2I02PRVBBTL47EMKJKBOKPD16UPO8MHO782E78080===="
-								scriptHash: "U736GSJ64J3F2MR99IGP0HM0NO8OGTO2VB6317971O2ISCAP34FG===="
+								hash:       "RI5NUHHN7KJFH879P8J4MLS3PTI3UITC3I69TJP661SP36OTQ9DG===="
+								scriptHash: "A9USNJVBPLETQDCFGKV0K8FKEMVTB8BLNRDO79AUU56V20TJ8TD0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -53,7 +53,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.10.1"
+									cmd:      "go get cuelang.org/go@v0.11.0-alpha.3.0.20241024161207-80f4f236e293"
 									exitCode: 0
 									output: """
 											...

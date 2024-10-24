@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								basic:                   "cRNN1Jpde1WpBPNS0/yaySAluSSiHFazyL5aUqeDERI="
-								"one of":                "LdevLkslteeRKuJmcSwNoacg8VrjJmQh4y3pbGRp2Q8="
-								"any of":                "byzxjARpYnjXIKMbIgR3d0q83tiMsA+TszKuvzExtes="
-								"all of":                "LmIpSIVZ2ldVJ6deSnluItqM4EciI3c68/hBWa4mW0U="
-								not:                     "8GxkBR6+B9HkftXpHET0CHGegJHYrEo3EY5+rVTIC98="
-								"all but one":           "B03M8y6YK9Onqp1BGAooPunBxFBVZpHAWXm60kbHnAw="
-								composite:               "Yewc0ld47PAIV8Vb8DemVJU/UqrO9Zo8JAhpW3pbFwc="
-								"future: helper fields": "z+EPZAd0/BtA7ucPw5hgcvMOGXRT0SH08Eujrq77N3M="
+								basic:                   "V0+qVAYFlJWHs195Mdktbt3ps5Tnv8GV9Kf64hkCwK8="
+								"one of":                "IFlt8BFqlZ6QRkAbNkGXPDonqNBMlgUB+yHpon5Vn6E="
+								"any of":                "VXDzvJko9z47+MOsG80lcQS18RXG4PmC2RoQPu4BhDs="
+								"all of":                "8wF7vtuFa2HrI8Q+EXmwwpqYp25go3S/rk3dDBiJ+UY="
+								not:                     "LkOg/f07qVndkHPSdtrNW0av/FlUik4XinoukNuQJbo="
+								"all but one":           "d5OptEiCwZq+XKVpnIQydTMWfpoSpWvR6k0empSdOgI="
+								composite:               "GS7n3d9xw5mhmOeLDTDI5Unnm18xiHZKz/eIrHRTQLM="
+								"future: helper fields": "ZXZzyR8flBPVyGcdSRkafXroJu6wFa8meJznNm3FLNc="
 							}
 							multi_step: {
-								hash:       "3AT8KFMOE655GTS7RJ4LAMK2CIDJGH3RGOALPAN1J0IA78PFKLUG===="
-								scriptHash: "K36F1181MFNPOOFKS9J5615UECK3PKARC697GFHT9N348DHJFQN0===="
+								hash:       "KE39VRIA07L0ADU1Q6AAKLRATI6QA22CN45U79C6CMIFL6VDVGA0===="
+								scriptHash: "6UK9GV0KVCEEQJU8500DI1KCLNKPM539QNNI99DCCOK151R22EMG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.11.0-alpha.3:$PATH"
+									cmd:      "export PATH=/cues/v0.11.0-alpha.3.0.20241024161207-80f4f236e293:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -29,7 +29,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.0-alpha.3
+											cue version v0.11.0-alpha.3.0.20241024161207-80f4f236e293
 											...
 
 											"""
@@ -55,6 +55,11 @@ package site
 									cmd:      "cue vet .:oneOf"
 									exitCode: 1
 									output: """
+											B: invalid value 42 (does not satisfy matchN(1, [int,>10])): 2 matched, expected 1:
+											    ./one-of.cue:13:4
+											    ./one-of.cue:11:4
+											    ./one-of.cue:13:11
+											    ./one-of.cue:14:4
 											B: invalid value 42 (does not satisfy matchN(1, [string,>100])): 0 matched, expected 1:
 											    ./one-of.cue:14:4
 											    ./one-of.cue:11:4

@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									structs: "StHF9hAHP7wAKqYMUKqM+sZaovU/Lhk20tSOZwQyUXc="
+									structs: "eb8tHhjDI1ZFHqFfMsPJyRQpqljRSywzOcEhUTZaPn0="
 								}
 							}
 						}
