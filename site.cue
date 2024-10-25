@@ -137,6 +137,11 @@ template: ci.#writefs & {
 
 			FROM golang:\#(versions.bareGoVersion) AS build
 
+			ARG GOPRIVATE
+			ENV GOPRIVATE=$GOPRIVATE
+
+			RUN go env GOPRIVATE
+
 			ENV CGO_ENABLED=0
 
 			# TODO: mount the caches from the host system, having first established and
@@ -332,7 +337,7 @@ template: ci.#writefs & {
 					\#(cmd.cuePath)
 
 					"""#
-			"\(command.contentRoot)/\(cmd.dir)/en.md": Contents: #"""
+			"\(command.contentRoot)/\(cmd.dir)/en.md": Contents:    #"""
 					---
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"

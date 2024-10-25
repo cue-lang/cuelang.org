@@ -39,11 +39,13 @@ then
 	caching="--cache-from=type=local,src=$HOME/.cache/dockercache --cache-to=type=local,dest=$HOME/.cache/dockercache"
 fi
 
+commonBuildArgs="-t $tag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
+
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit
 # caching layer.  This is particularly important in CI.
 if docker help | grep -q podman
 then
-    docker build -t $tag -f ./_docker/Dockerfile ./_docker
+    docker build -v $commonBuildArgs
 else
-    docker buildx build $caching -t $tag --load -f ./_docker/Dockerfile ./_docker
+    docker buildx build $caching --load $commonBuildArgs
 fi
