@@ -286,6 +286,9 @@ workflows: trybot: _repo.bashWorkflow & {
 				// so that CLs aren't blocked by failures caused by unrelated changes.
 				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 				run: "_scripts/regenPostInfraChange.bash"
+
+				// TODO: XXX
+				env: GOPRIVATE: "cuelang.org/go"
 			},
 			json.#step & {
 				name: "tip.cuelang.org: Deploy the site"
@@ -320,9 +323,7 @@ workflows: trybot: _repo.bashWorkflow & {
 _installNode: json.#step & {
 	name: "Install Node"
 	uses: "actions/setup-node@v4"
-	with: {
-		"node-version": _repo.nodeVersion
-	}
+	with: "node-version": _repo.nodeVersion
 }
 
 _installGo: _repo.installGo & {
