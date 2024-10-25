@@ -8,22 +8,22 @@ package site
 						page: {
 							cache: {
 								code: {
-									"default output":             "L4EWAkF4t0UiMzmOdtxhq3wepfnis0rSqZdujVg0CYw="
-									"stdout yaml":                "LOb7WWWO8mdz9kM0fy2IN/Dc958b73WNz40k3sOneD0="
-									"yaml:-":                     "XwXm985u70NLRfUz3uufmqZN+/AjSPEwq95hmtWyZa8="
-									"--out cue":                  "DPlttd1D5hbXUafX7Et/hC483kTG1TMicXGKC/r6JAA="
-									"--out cue no hidden fields": "PoTA5QCnvzEQEIm3bew0PV1kFVJlQIeAC9JlmEMMaks="
-									"--out cue --package foo":    "O+OgVTornDwqLhtMTVcTKpaMbQP34WR/xLr8uq3N/Co="
-									"--escape":                   "e8idUGU1e3/JrR1gqFfiH5s0aAftZYxEWFCrZUAPzQY="
+									"default output":             "FEHtr9yqOku+L2XZTQDIpbvE0pRPw8XMkjYybnQ143o="
+									"stdout yaml":                "grw6AnH/PN2xfBBmM7+b3G3clwDusMTcvYDRoo/1GOY="
+									"yaml:-":                     "E3QzGLuA7DRbnUr7ycmWC4TmSkpDAcQqa6UD3i6+oeM="
+									"--out cue":                  "JGNt/78WfY1rFRdnru9EBWdX4lMkWnWTLWjn2yig2XQ="
+									"--out cue no hidden fields": "6rNSweuz3RjbkSYzyZkihGsyLxPhWD9DkQ+X80SR2qM="
+									"--out cue --package foo":    "3V83RxvOjtPRihKHFkZwG1t3FFyKdvNgM1zHusDIdKM="
+									"--escape":                   "4D1dWeDZ4dWEPrGzz2ISVjrNSWP0+YjWJjrp5kW1Z+I="
 								}
 								upload: {
-									"--outfile data.yml":            "oWhECbyCPdGxUFAfPIa6MDYJI1LYeoaF2aoPaVi9Fps="
-									"--outfile data.txt":            "jWzer48V/M3AtL+7UqKZhncJuXAHxY6GAwX67cm+MFU="
-									"--outfile datafile --out json": "k7wsXknQJ/GvbyktLg5j05MITyr8SX+2YoBVT1k2qyk="
-									"--outfile json:datafile":       "PHJCDtfr18PhzYB0Z+AIAY8hMrf6HWidKJ3JphFDN58="
+									"--outfile data.yml":            "D3ZAuLoUodKD4CnFIQJ/uRrt3GWM5j2OT7zFsAASOTg="
+									"--outfile data.txt":            "URAtj/WroqcLP6SG97v5Boj3HcplqeqXyDUnf4ieCdA="
+									"--outfile datafile --out json": "jvfjzIVLtg54z4nrT6OjytzXKVgJlL45yLUJxqDyqaU="
+									"--outfile json:datafile":       "v4079M7s3N8PKanrXEvA8aOK0GQckJmq3n4jr2kV3ig="
 								}
 								multi_step: {
-									hash:       "917AEQ0KNFK53MRIFCS14E6UBQOEO3RC1NB5L4UIR81PQNTTTAF0===="
+									hash:       "UD6LJ894VPHMPV4AES5E68P7O52ODTQBLMVIA050URRQG5EJ1UPG===="
 									scriptHash: "TVTCOHK1K6IF54PI4CB62FSIBJMCMB1BAOO6SNBVQ897AIDDN7UG===="
 									steps: [{
 										doc:      ""
