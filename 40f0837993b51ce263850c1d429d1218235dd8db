@@ -75,6 +75,66 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fafa7e8c_e9ad736d",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b55090c_47542d48",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a63730a_102c65b9",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Done. I\u0027ve gone with an abbreviated slug; please let me know if that works/not.",
+      "parentUuid": "2286d9d0_47bfd89d",
+      "range": {
+        "startLine": 2,
+        "startChar": 7,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3f8fe1f_692121ce",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Chose \"define\"",
+      "parentUuid": "9cff4d75_f7a4f1c2",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cd3d854_7850420e",
@@ -88,6 +148,24 @@
       "writtenOn": "2024-10-24T17:18:23Z",
       "side": 1,
       "message": "nit: I\u0027ve started using YAML inline list syntax for tags and authors, not least as they make elements easier to grep :-) YMMV!\n\ne.g. `authors: [myitcv]`",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1630af7b_99f898ef",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Done. Although there shouldn\u0027t really be any bike-shedding here. This will move to CUE ultimately.",
+      "parentUuid": "9cd3d854_7850420e",
       "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -109,6 +187,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a1cbc4a_e2c6f11f",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Taken your first suggestion, actually dropping the \"implicit or explicit\". In both cases the dependency is explicit, it\u0027s the mechanics of the dependency that we\u0027re demonstrating. I let the commented CUE make it a bit more obvious.",
+      "parentUuid": "99e3506a_750032b5",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b60986fd_9fe0e068",
@@ -122,6 +218,24 @@
       "writtenOn": "2024-10-24T17:18:23Z",
       "side": 1,
       "message": "I can see you\u0027ve not done `top-left top-right bottom` to avoid scrolling because of the width of the code.\n\nMight placing the `input.txt` file in the /bottom/ right nicely display the whole example in a single glance-able pane? (i.e. with the terminal in the bottom-left)",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1406406_1642c7cf",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "I think it would be odd to have the terminal (an output) bottom left and then an input (input.txt) bottom right. Chances are that people will not even look at input.txt so I don\u0027t think we lose much and we gain more with readability in taking advantage of the width.",
+      "parentUuid": "b60986fd_9fe0e068",
       "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -143,6 +257,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b1ab45b_20272dd7",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c02cfc2_278ddf89",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec81e1be_ce5a865d",
@@ -156,6 +288,24 @@
       "writtenOn": "2024-10-24T17:18:23Z",
       "side": 1,
       "message": "I think the `read` task name needs to be something camelCased, so that it\u0027s visually obvious as being not-an-English-word in this comment.",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84a540d9_24548fe1",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec81e1be_ce5a865d",
       "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -179,6 +329,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e0411839_9263c47b",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "See what you think to the rewording.",
+      "parentUuid": "a2ab1826_aaaec8e2",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "23e35a7e_7235188f",
         "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
         "patchSetId": 3
@@ -190,6 +358,24 @@
       "writtenOn": "2024-10-24T17:18:23Z",
       "side": 1,
       "message": "We use \"implicit\" and \"explicit\", above, without linking them to the kind of reference they mean. I feel the two comments above `report` and `thank` could be rewritten to be somewhat more symmetrical (and a tad simpler) using those two terms to draw out the tasks\u0027 dependency distinction.",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1afd8c9d_0a68703b",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-25T08:30:06Z",
+      "side": 1,
+      "message": "Per above, I\u0027ve dropped \u0027implicit\u0027 and \u0027explicit\u0027 and reworded. Marking this as resolve and leaving the previous comment unresolved.",
+      "parentUuid": "23e35a7e_7235188f",
       "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
