@@ -135,6 +135,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e3695ad_33f217ca",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "Replied in a different comment thread.",
+      "parentUuid": "9a63730a_102c65b9",
+      "range": {
+        "startLine": 2,
+        "startChar": 7,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cd3d854_7850420e",
@@ -341,6 +365,24 @@
       "side": 1,
       "message": "See what you think to the rewording.",
       "parentUuid": "a2ab1826_aaaec8e2",
+      "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d91b64a_8f272ce5",
+        "filename": "content/docs/howto/determine-order-tasks-in-cue-workflow/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0411839_9263c47b",
       "revId": "40f0837993b51ce263850c1d429d1218235dd8db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },

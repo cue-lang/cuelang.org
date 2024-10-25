@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "315a1c1d_e159e6aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "Just a FIXME reminder to write a commit message!",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b8f0f3b_fe32483a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "Reflect updated slug.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9691b52_028e60a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "Some nits, and a slug/title suggestion.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43f03f0b_68493902",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "I really like this sentence\u0027s use of \"influence\". It carries the meaning of specification, whilst also communicating that the order doesn\u0027t need to be 100% specified - and hints at that really nice property of workflow commands: only specify the deps that you care about, and let CUE figure everything else out.\n\nHow about:\n\n- slug: `howto/influence-workflow-command-task-order`\n- title: `Influencing the order of tasks in a workflow command`\n\nI don\u0027t think the title needs to be a strict superset of the slug, if they\u0027re close enough and communicate the same message.\n\nNote the slug also reads like a sentence, which is a property that works nicely in the howto hierarchy.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8cec249_0baf8047",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "nit: trailing `.`",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b8b147c_a629925a",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "nit: I\u0027d use \"prints\", as with `thankUser`. \"echos\" scans 1% oddly, to my eye.\n\nnit: trailing `.`\n\nnit: \"to the user\" feels superflous.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f71b679_9d9ce464",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "Given the fixed width of a code-tab on the rendered page, you have more width to play with here. I think you can get away with placing this comment as a single line.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93db6b17_8b0eb901",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-25T09:32:41Z",
+      "side": 1,
+      "message": "I\u0027d also link to https://cuelang.org/docs/reference/command/cue-help-cmd/ and https://cuelang.org/docs/reference/command/cue-help-commands/.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
