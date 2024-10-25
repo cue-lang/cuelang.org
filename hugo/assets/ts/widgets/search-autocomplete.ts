@@ -139,6 +139,7 @@ export class SearchAutocomplete extends BaseWidget {
                                     attributesToSnippet: ['title:6', 'summary:30'],
                                     snippetEllipsisText: '…',
                                     filters: filters,
+                                    advancedSyntax: true,
                                 },
                             }],
                         });
