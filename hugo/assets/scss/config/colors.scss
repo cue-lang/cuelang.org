@@ -1,8 +1,7 @@
 $c-blue--lightest:      #f8f9fd;
 $c-blue--lighter:       #f0f2fb;
-$c-grey--light-mid:     #e6e8f3;
-$c-blue--light:         #1b3987;
-$c-blue:                #232a68;
+$c-blue--light:         #e6e8f3;
+$c-blue:                #1b3987;
 $c-blue--bright:        #063AC0;
 $c-blue--dark:          #0c2c65;
 $c-blue--darker:        #0f1333;
@@ -67,7 +66,7 @@ $c-scrollbar-background:    $c-grey--lightest;
 // Shadows
 $shadow--light:         0 4px 4px transparentize($c-black, .25);
 $shadow:                0 4px 34px transparentize($c-black, .35);
-$shadow--blue:          0 10px 24px transparentize($c-blue--light, .85);
+$shadow--blue:          0 10px 24px transparentize($c-blue, .85);
 
 $shadow--header:        0 3px 12px transparentize($c-blue--dark, .8);
 $shadow--drawer:        0 3px 12px transparentize($c-blue--dark, .8);
