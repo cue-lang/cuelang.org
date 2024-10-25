@@ -20,7 +20,7 @@ version of the `cue` command:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.11.0-alpha.3
+cue version v0.11.0-alpha.4
 ...
 ```
 
@@ -96,6 +96,11 @@ C: matchN(1, [math.MultipleOf(3), math.MultipleOf(5)])
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOm9uZU9m" }
 $ cue vet .:oneOf
+B: invalid value 42 (does not satisfy matchN(1, [int,>10])): 2 matched, expected 1:
+    ./one-of.cue:13:4
+    ./one-of.cue:11:4
+    ./one-of.cue:13:11
+    ./one-of.cue:14:4
 B: invalid value 42 (does not satisfy matchN(1, [string,>100])): 0 matched, expected 1:
     ./one-of.cue:14:4
     ./one-of.cue:11:4
