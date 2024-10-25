@@ -130,8 +130,7 @@ template: ci.#writefs & {
 		"content/docs/reference/command/cue-help*/*.md",
 	]
 	Create: {
-		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": {
-			Contents: #"""
+		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": Contents: #"""
 			# syntax=docker/dockerfile:1
 
 			# \#(donotedit)
@@ -152,14 +151,14 @@ template: ci.#writefs & {
 			RUN mkdir /cues
 
 			\#(strings.Join([for _, version in versions._cueVersionList {
-				#"""
+			#"""
 					RUN \
 					  --mount=type=cache,target=/cache/gocache \
 					  --mount=type=cache,target=/cache/gomodcache \
 					  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
 					  GOBIN=/cues/\#(version) go install -trimpath cuelang.org/go/cmd/cue@\#(version)
 					"""#
-			}], "\n\n"))
+		}], "\n\n"))
 
 			RUN git clone https://github.com/cue-lang/libcue.git /libcue
 			RUN git -C /libcue reset --hard \#(versions.libcue)
@@ -183,12 +182,12 @@ template: ci.#writefs & {
 
 			ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 			\#(
-				strings.Join([for _, version in versions.cue {
-					"""
+			strings.Join([for _, version in versions.cue {
+				"""
 					ENV \(version.var)="\(version.v)"
 					"""
-				},
-				], "\n"))
+			},
+			], "\n"))
 
 			WORKDIR /
 
@@ -202,12 +201,12 @@ template: ci.#writefs & {
 
 			COPY --from=build /go/bin/testscript /go/bin
 			\#(
-				strings.Join([for _, version in versions._cueVersionList {
-					"""
+			strings.Join([for _, version in versions._cueVersionList {
+				"""
 					COPY --from=build /cues/\(version)/cue /cues/\(version)/cue
 					"""
-				},
-				], "\n"))
+			},
+			], "\n"))
 
 			COPY --from=build /libcue/libcue.so /usr/local/lib/
 			ENV LD_LIBRARY_PATH="/usr/local/lib"
@@ -247,7 +246,6 @@ template: ci.#writefs & {
 			ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
 			"""#
-		}
 
 		// Hugo site-wide params.
 		"hugo/config/_default/params.toml": {
@@ -319,27 +317,22 @@ template: ci.#writefs & {
 				}]
 			}
 		}
-		"playground/src/config/gen_cuelang_org_go_version.ts": {
-			Contents: #"""
+		"playground/src/config/gen_cuelang_org_go_version.ts": Contents: #"""
 			// \#(donotedit)
 
 			export const CUEVersion = '\#(versions.cue.playground.v)';
 
 			"""#
-		}
 
 		for _, cmd in command.cue {
-			"\(command.contentRoot)/\(cmd.dir)/page.cue": {
-				Contents: #"""
+			"\(command.contentRoot)/\(cmd.dir)/page.cue": Contents: #"""
 					// \#(donotedit)
 					package site
 
 					\#(cmd.cuePath)
 
 					"""#
-			}
-			"\(command.contentRoot)/\(cmd.dir)/en.md": {
-				Contents: #"""
+			"\(command.contentRoot)/\(cmd.dir)/en.md": Contents: #"""
 					---
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"
@@ -353,15 +346,14 @@ template: ci.#writefs & {
 					\#(cmd.execCmd)
 					{{{end}}}
 					\#( strings.Join([if len(cmd.relatedCommands) > 0 for e in [
-						"", "## Related content", "",
-						for c in cmd.relatedCommands
-						let path = strings.Replace(c, " ", "-", -1) {
-						#"- {{< linkto/related/reference "command/\#(path)" >}}"#
-					},
-				] {e},
-				], "\n"))
+										"", "## Related content", "",
+										for c in cmd.relatedCommands
+										let path = strings.Replace(c, " ", "-", -1) {
+					#"- {{< linkto/related/reference "command/\#(path)" >}}"#
+				},
+			] {e},
+			], "\n"))
 					"""#
-			}
 		}
 	}
 }
