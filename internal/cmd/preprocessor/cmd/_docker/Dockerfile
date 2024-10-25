@@ -4,6 +4,9 @@
 
 FROM golang:1.23.2 AS build
 
+ARG GOPRIVATE
+ENV GOPRIVATE=$GOPRIVATE
+
 ENV CGO_ENABLED=0
 
 # TODO: mount the caches from the host system, having first established and

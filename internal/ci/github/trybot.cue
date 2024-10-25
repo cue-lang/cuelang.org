@@ -273,9 +273,12 @@ workflows: trybot: _repo.bashWorkflow & {
 				// so that CLs aren't blocked by failures caused by unrelated changes.
 				if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 
-				// Force Go to bypass the module proxy for the cuelang.org/go
-				// module, ensuring that the absolute latest CUE pseudo-version is
-				// available to test against.
+				// Force Go to bypass the module proxy and sumdb for the
+				// cuelang.org/go module, ensuring that the absolute latest CUE
+				// pseudo-version is available to test against.
+				//
+				// TODO: is this really necessary? Tracking
+				// https://golang.org/issue/70042 to confirm.
 				env: GOPRIVATE: "cuelang.org/go"
 
 				run: "_scripts/tipUseAlternativeCUE.bash"
@@ -286,6 +289,9 @@ workflows: trybot: _repo.bashWorkflow & {
 				// so that CLs aren't blocked by failures caused by unrelated changes.
 				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 				run: "_scripts/regenPostInfraChange.bash"
+
+				// TODO: See comment in previous step
+				env: GOPRIVATE: "cuelang.org/go"
 			},
 			json.#step & {
 				name: "tip.cuelang.org: Deploy the site"
@@ -295,6 +301,9 @@ workflows: trybot: _repo.bashWorkflow & {
 				git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
 				_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
 				"""
+
+				// TODO: See comment in previous step
+				env: GOPRIVATE: "cuelang.org/go"
 			},
 		]
 	}
@@ -320,9 +329,7 @@ workflows: trybot: _repo.bashWorkflow & {
 _installNode: json.#step & {
 	name: "Install Node"
 	uses: "actions/setup-node@v4"
-	with: {
-		"node-version": _repo.nodeVersion
-	}
+	with: "node-version": _repo.nodeVersion
 }
 
 _installGo: _repo.installGo & {
