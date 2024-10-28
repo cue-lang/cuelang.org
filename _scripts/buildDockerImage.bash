@@ -45,7 +45,7 @@ commonBuildArgs="-t $tag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_doc
 # caching layer.  This is particularly important in CI.
 if docker help | grep -q podman
 then
-    docker build -v $commonBuildArgs
+    docker build $commonBuildArgs
 else
     docker buildx build $caching --load $commonBuildArgs
 fi
