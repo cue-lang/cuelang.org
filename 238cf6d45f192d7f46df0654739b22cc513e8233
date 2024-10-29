@@ -51,6 +51,24 @@
       "parentUuid": "a5a9b1b4_541c60af",
       "revId": "238cf6d45f192d7f46df0654739b22cc513e8233",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34b696e8_13fc809c",
+        "filename": "go.mod",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-29T16:11:03Z",
+      "side": 1,
+      "message": "Oh I was assuming it was a straightforward thing. No worries about bundling the two together...",
+      "parentUuid": "b1c64996_a6e8960e",
+      "revId": "238cf6d45f192d7f46df0654739b22cc513e8233",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
