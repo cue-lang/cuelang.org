@@ -33,6 +33,24 @@
       "message": "Please move this to a previous change. Otherwise we clutter what is actually meant to be changing here with \"other changes\"",
       "revId": "238cf6d45f192d7f46df0654739b22cc513e8233",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1c64996_a6e8960e",
+        "filename": "go.mod",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-29T13:45:44Z",
+      "side": 1,
+      "message": "@paul@myitcv.io I\u0027m having trouble doing that, and I\u0027d like to discuss the benefit (separating out modifications to 2 isolated `go.*` files out of the 17 files changed in this CL) versus the cost of solving the problem I\u0027m observing.\n\nThat cost /appears/ to be having to rework the way we work with the package contents of `github.com/SchemaStore/schemastore/src/schemas/json` - in a way which is currently unclear to me. At least one of the 0.11.0 alphas has changed its JSON Schema handling, such that when `go generate` imports the fixed, upstream SchemaStore commit, it no longer works with this repo\u0027s CUE.\n\nI can\u0027t see an obvious way to update the current CUE (the errors are pretty long, and quite complex). If I were to spend the time understanding the change needed, the very next CL in this stack (i.e. this CL) would immediately make those changes obsolete, as its entire purpose is to remove the static in-repo package and move to an imported package.\n\nI\u0027m not asking you to work on fixing this problem, but just to discuss with me the time implications of trying to solve it. The problem can be observed when taking the current tip of master, and running:\n\n```\ngo get cuelang.org/go@v0.11.0-alpha.4\ngo mod tidy\ngo generate ./...\n```",
+      "parentUuid": "a5a9b1b4_541c60af",
+      "revId": "238cf6d45f192d7f46df0654739b22cc513e8233",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
