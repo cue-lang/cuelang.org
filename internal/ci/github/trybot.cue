@@ -132,13 +132,8 @@ workflows: trybot: _repo.bashWorkflow & {
 			// TODO: add cache dir to CI cache when it's visible via https://cuelang.org/issue/2838.
 			githubactions.#Step & {
 				name: "Populate CUE dependency cache"
-				env: CUE_LOGINS: "${{ secrets.NOTCUECKOO_CUE_LOGINS }}"
-				run: """
-					export CUE_CONFIG_DIR="$(mktemp -d)"
-					echo "$CUE_LOGINS" >"$CUE_CONFIG_DIR/logins.json"
-					go run cuelang.org/go/cmd/cue mod tidy --check
-					rm -rfv "${CUE_CONFIG_DIR}"
-					"""
+				env: CUELANG_CUE_LOGINS: "${{ secrets.NOTCUECKOO_CUE_LOGINS }}"
+				run: "_scripts/cacheWarm.bash"
 			},
 
 			// We can perform an early check that ensures page.cue files are
