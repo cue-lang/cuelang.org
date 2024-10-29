@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86894fad_28082ce0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-29T19:13:40Z",
+      "side": 1,
+      "message": "PTAL.\n\nThis must be submitted along with its follow-up CL. The state of the stack has been proven to work inside Netlify via a manual push of the follow-up to `ci/test`: https://github.com/cue-lang/cuelang.org/actions/runs/11580530126/job/32239235526\n\nThe CI jobs triggered by that manual push eventually triggered a deployment of `tip`, which successfully deployed here: https://app.netlify.com/sites/cue/deploys/672131e51e61100008e00a67\n\nThe sequencing involved here is unfortunate, caused by two independent breakages in `cue-lang/cuelang.org:{master,tip}` which require two different fixes to be submitted at the same time. Neither will run successfully if submitted in isolation, and I\u0027ve tested them to the best of my ability.\n\nIf we had an additional `ci-test` \"branch deploy\" site in Netlify, the testing process for this stack would be significantly easier. That change is proposed for disucssion elsewhere.",
+      "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
