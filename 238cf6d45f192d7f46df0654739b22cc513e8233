@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a76b44ed_5f9d701f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-29T08:34:21Z",
+      "side": 1,
+      "message": "LGTM generally, but please separate out the upgrade of the CUE version for the repo.",
+      "revId": "238cf6d45f192d7f46df0654739b22cc513e8233",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5a9b1b4_541c60af",
+        "filename": "go.mod",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-29T08:34:21Z",
+      "side": 1,
+      "message": "Please move this to a previous change. Otherwise we clutter what is actually meant to be changing here with \"other changes\"",
+      "revId": "238cf6d45f192d7f46df0654739b22cc513e8233",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
