@@ -43,6 +43,15 @@ $ export CUE_EXPERIMENT=embed
 {{< /step >}}
 
 {{< step stepNumber="2" >}}
+Initialize a CUE module, or use an existing module if that's appropriate in
+your situation:
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0" }
+$ cue mod init
+```
+{{< /step >}}
+
+{{< step stepNumber="3" >}}
 Include the `@extern(embed)` directive at the top of each CUE file that uses the
 `@embed()` attribute. Use `@embed()` to embed either a single named file, or a
 glob identifying multiple files:
@@ -91,7 +100,7 @@ an unknown filename extension can be loaded by adding the
 [`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes/" >}}).
 {{< /step >}}
 
-{{< step stepNumber="3" >}}
+{{< step stepNumber="4" >}}
 Export the resulting configuration:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw=" }
