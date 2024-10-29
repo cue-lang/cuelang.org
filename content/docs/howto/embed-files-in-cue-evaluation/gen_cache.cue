@@ -10,8 +10,8 @@ package site
 								files: "+OLguupjBfN0UO75A+1+DHxj3FWAC707RjS5PlC0e/Q="
 							}
 							multi_step: {
-								hash:       "HL4T04ANCFJCL6JHIMCMIV5R23QQS8FRUVEE81T3G4NMG7N5JJFG===="
-								scriptHash: "TMVISIT0L7KO7FNL19TJOD1U6C9RHUT0JSTHSN89257P72DP3GVG===="
+								hash:       "0MVJ6P62ONIB4PAECEFPLTEPUFIUJI31QS0G5V6OPISEJH1I1T00===="
+								scriptHash: "6GLSE1QMLM2LEKB1QURI6OIII8VNOKIK7NPS7UH1PCC8N2UMLROG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
@@ -24,6 +24,11 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "export CUE_EXPERIMENT=embed"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod init"
 									exitCode: 0
 									output:   ""
 								}, {

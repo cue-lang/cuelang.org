@@ -42,6 +42,15 @@ export CUE_EXPERIMENT=embed
 {{{end}}}
 
 {{{with step}}}
+Initialize a CUE module, or use an existing module if that's appropriate in
+your situation:
+
+{{{with script "en" "cue mod init"}}}
+cue mod init
+{{{end}}}
+{{{end}}}
+
+{{{with step}}}
 Include the `@extern(embed)` directive at the top of each CUE file that uses the
 `@embed()` attribute. Use `@embed()` to embed either a single named file, or a
 glob identifying multiple files:
