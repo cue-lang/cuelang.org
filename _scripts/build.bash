@@ -32,7 +32,10 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 #
 # * Locally, in development
 # * In CI, both as part of a trybot run, or on the default branch post submit
-# * In Netlify during deploy
+# * In Netlify, during deployment of:
+#   - the production site ("cuelang.org")
+#   - the site built against the tip of cue-lang/cue ("tip")
+#   - any PR preview
 #
 # Rather than declare a "fall-through" of logic, each environment is separately
 # handled with comments to make clear the logic/reasoning behind each flag value.
@@ -151,6 +154,11 @@ else
 	# --minify for Hugo.
 	minify=""
 
+fi
+
+# Fetch any CUE dependencies.
+if [[ "${NETLIFY:-}" == "true" ]]; then
+    bash _scripts/cacheWarm.bash
 fi
 
 # Build playground

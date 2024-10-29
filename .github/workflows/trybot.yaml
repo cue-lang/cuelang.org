@@ -171,12 +171,8 @@ jobs:
         run: _scripts/checkContent.bash
       - name: Populate CUE dependency cache
         env:
-          CUE_LOGINS: ${{ secrets.NOTCUECKOO_CUE_LOGINS }}
-        run: |-
-          export CUE_CONFIG_DIR="$(mktemp -d)"
-          echo "$CUE_LOGINS" >"$CUE_CONFIG_DIR/logins.json"
-          go run cuelang.org/go/cmd/cue mod tidy --check
-          rm -rfv "${CUE_CONFIG_DIR}"
+          CUELANG_CUE_LOGINS: ${{ secrets.NOTCUECKOO_CUE_LOGINS }}
+        run: _scripts/cacheWarm.bash
       - name: Check site CUE configuration
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate
