@@ -7,10 +7,12 @@
 {{ $heading := printf "search_%s_heading" $translationKey }}
 {{ $inputLabel := printf "search_%s_input" $translationKey }}
 {{ $noResults := printf "search_%s_no-results" $translationKey }}
+{{ $preselectedItems := .preselectedItems }}
 
 <details class="filter{{ if $cssClass }} {{ $cssClass }}{{ end }} is-loading"
          data-dropdown data-filter="{{ $name }}"
          data-filter-items="{{ $filters | jsonify }}"
+         {{ if $preselectedItems }} data-preselected-items="{{ $preselectedItems }}"{{ end }}
          {{ if $open }} open{{ end }}
 >
     <summary class="filter__title button button--small button--white">

@@ -89,7 +89,7 @@ export const parseQuery = (query: string): ParsedQuery => {
 
         const regExp = new RegExp(`${ facetInput }:([^"]\\S+)`, 'g');
         const regExpWithQuotes = new RegExp(`${ facetInput }:"([^"]+)"|(\\+)`, 'g');
-        const matches = [ ...query.matchAll(regExp), ...query.matchAll(regExpWithQuotes) ];
+        const matches = [...query.matchAll(regExp), ...query.matchAll(regExpWithQuotes)];
 
         for (const match of matches) {
             if (match) {
