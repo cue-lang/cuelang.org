@@ -2,6 +2,7 @@
 {{ $showContentTypes := .showContentTypes | default true }}
 {{ $contentTypes := slice }}
 {{ $contentType := .contentType | default "" }}
+{{ $preselectedTags := .preselectedTags | default "" }}
 {{ $type := .type | default "full" }}
 {{ $placeholder := (T "search_placeholder" ) }}
 
@@ -46,6 +47,7 @@
                     "translationKey" "tags"
                     "name" "tags"
                     "filters" .Site.Params.tags
+                    "preselectedItems" $preselectedTags
                 ) -}}
 
                 {{ if $showContentTypes }}

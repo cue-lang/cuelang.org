@@ -1,8 +1,8 @@
 // eslint-disable-next-line
 import Fuse from 'fuse.js';
-import { BaseWidget } from './base-widget';
-import { FilterEvent, FilterItem, ParsedQuery, SearchEvents } from '../interfaces/search';
 import { parseQuery, queryToUrlParams } from '../helpers/search';
+import { FilterEvent, FilterItem, ParsedQuery, SearchEvents } from '../interfaces/search';
+import { BaseWidget } from './base-widget';
 
 export class SearchFilter extends BaseWidget {
     public static readonly NAME = 'filter';
@@ -14,6 +14,7 @@ export class SearchFilter extends BaseWidget {
     private readonly items: FilterItem[];
     private filteredItems: FilterItem[];
     private selectedItems: string[];
+    private preselectedItems: string[];
     private parsedQuery: ParsedQuery;
     private fuse: Fuse<FilterItem>;
 
@@ -51,7 +52,7 @@ export class SearchFilter extends BaseWidget {
         };
         this.fuse = new Fuse(this.items, options);
 
-        this.getParamsFromUrl();
+        this.getParams();
         this.searchList();
         this.initListeners();
         this.element.classList.remove('is-loading');
@@ -139,21 +140,40 @@ export class SearchFilter extends BaseWidget {
         this.updateUrl();
     }
 
-    private updateUrl() {
-        window.location.href = `${ window.location.href.split('?')[0] }?${ queryToUrlParams(this.parsedQuery) }`;
+    private updateUrl(refresh = true) {
+        const url = `${ window.location.href.split('?')[0] }?${ queryToUrlParams(this.parsedQuery) }`;
+        if (!refresh) {
+            window.history.pushState(null, '', url);
+        } else {
+            window.location.href = url;
+        }
     }
 
-    private getParamsFromUrl(): void {
+    private getParams(): void {
+        // Get url params
         const url = new URL(window.location.href);
         const searchParams = new URLSearchParams(url.search);
         const query = searchParams.get('q');
 
         this.parsedQuery = parseQuery(query);
 
-        if (!query) {
-            this.selectedItems = [];
-        } else {
-            this.selectedItems = this.parsedQuery.facets[this.filterName] ?? [];
+        let urlParamsChanged = false;
+        let selectedItems = this.parsedQuery.facets[this.filterName] ?? [];
+
+        // Get preselected items if no items set in url (if set in urL: url wins from preselected)
+        if (!query && selectedItems.length === 0 && this.element.dataset.preselectedItems && this.element.dataset.preselectedItems !== '') {
+            this.preselectedItems = this.element.dataset.preselectedItems.split(',').map(val => val.trim());
+            // Update selected items
+            selectedItems = Array.from(new Set([...selectedItems, ...this.preselectedItems]));
+            urlParamsChanged = true;
+        }
+
+        // Update parsed query & save selected items
+        this.parsedQuery.facets[this.filterName] = selectedItems;
+        this.selectedItems = selectedItems;
+
+        if (urlParamsChanged) {
+            this.updateUrl(false);
         }
     }
 }
