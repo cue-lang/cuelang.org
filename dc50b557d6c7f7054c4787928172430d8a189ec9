@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "692f3b34_41ba7a58",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-30T10:02:50Z",
+      "side": 1,
+      "message": "\u003e Does this have any effect?\n\nRemoved, as per discussion.\n\n\u003e we started the convention of using the user\u0027s username as part of the env var\n\nAs discussed, we have slightly better abstraction capabilities inside GitHub Actions that allow us to use username-prefixed \"secrets\" to denote different variables. In Netlify (the primary target of these changes), we have neither a different namespace for secrets and environment variables, nor a pre-invocation interpolation phase similar to GitHub Actions.",
+      "parentUuid": "9fbc1438_1b18b3a3",
+      "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37118d0f_56040c8d",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-10-30T07:19:52Z",
       "side": 1,
       "message": "Per question above, I\u0027m not sure of the value of unexporting here.",
+      "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82dc1483_19fbb413",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-10-30T10:02:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37118d0f_56040c8d",
       "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
