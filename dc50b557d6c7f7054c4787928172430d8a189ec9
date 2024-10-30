@@ -16,6 +16,57 @@
       "message": "PTAL.\n\nThis must be submitted along with its follow-up CL. The state of the stack has been proven to work inside Netlify via a manual push of the follow-up to `ci/test`: https://github.com/cue-lang/cuelang.org/actions/runs/11580530126/job/32239235526\n\nThe CI jobs triggered by that manual push eventually triggered a deployment of `tip`, which successfully deployed here: https://app.netlify.com/sites/cue/deploys/672131e51e61100008e00a67\n\nThe sequencing involved here is unfortunate, caused by two independent breakages in `cue-lang/cuelang.org:{master,tip}` which require two different fixes to be submitted at the same time. Neither will run successfully if submitted in isolation, and I\u0027ve tested them to the best of my ability.\n\nIf we had an additional `ci-test` \"branch deploy\" site in Netlify, the testing process for this stack would be significantly easier. That change is proposed for disucssion elsewhere.",
       "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d6253e4_6824ee81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-30T07:19:52Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fbc1438_1b18b3a3",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-30T07:19:52Z",
+      "side": 1,
+      "message": "Does this have any effect?\n\nAs discussed yesterday, we started the convention of using the user\u0027s username as part of the env var:\n\nhttps://github.com/cue-lang/cue/blob/edef5486f905f61d3bdca8141f6e94ed6a4bace4/.github/workflows/trybot.yaml#L171\n\nSo I think this would be `NOTCUECKOO_CUE_LOGINS`?",
+      "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37118d0f_56040c8d",
+        "filename": "_scripts/build.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-30T07:19:52Z",
+      "side": 1,
+      "message": "Per question above, I\u0027m not sure of the value of unexporting here.",
+      "revId": "dc50b557d6c7f7054c4787928172430d8a189ec9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
