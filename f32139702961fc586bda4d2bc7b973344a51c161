@@ -16,6 +16,23 @@
       "message": "@mvdan@mvdan.cc For visibility.",
       "revId": "f32139702961fc586bda4d2bc7b973344a51c161",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "121d7ae6_8f0308c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-10-31T13:57:18Z",
+      "side": 1,
+      "message": "FYI @rogpeppe@gmail.com",
+      "revId": "f32139702961fc586bda4d2bc7b973344a51c161",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
