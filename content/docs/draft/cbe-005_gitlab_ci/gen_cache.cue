@@ -15,8 +15,8 @@ package site
 								"14": "U3CbYQ0viVRaklzhlEknDxcUj4/DtH1Ugwo7WxdCzl8="
 							}
 							multi_step: {
-								hash:       "1DE0U0BJVH0AIG8PBUF44NKCQC4GS1OM1G08S58CNQ3TUQ0KHM4G===="
-								scriptHash: "3S2NSE10ODTS7RUIO4HH6AJ2FNNJ5GPL1MQO8322VK0U5DN4QCUG===="
+								hash:       "1IDAPD6OR11PR9O62REVB4P8R0U7PJ4IVBL79K13OCLNCVCD7P3G===="
+								scriptHash: "IVS5FP8VISFOJ2PF93OMKF2470LMT73GR58B5A29UT9N93GFK4OG===="
 								steps: [{
 									doc: """
 											# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
@@ -144,7 +144,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue import jsonschema+strictFeatures=0: internal/ci/gitlab/gitlab.cicd.pipeline.schema.json -p gitlab -l '#Pipeline:'"
+									cmd:      "cue import -p gitlab -l '#Pipeline:' internal/ci/gitlab/gitlab.cicd.pipeline.schema.json"
 									exitCode: 0
 									output:   ""
 								}, {
