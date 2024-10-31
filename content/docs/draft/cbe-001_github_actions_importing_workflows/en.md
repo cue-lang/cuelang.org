@@ -14,6 +14,12 @@ Source: https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_
 # is fixed in v0.11.0-alpha.2 and later.
 export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 
+# Required to interact with the central registry.
+mkdir -p $HOME/.config/cue
+cat <<EOD > $HOME/.config/cue/logins.json
+{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
+EOD
+
 # Set up example content as a git repo.
 cd github-actions-example
 #ellipsis 0
@@ -42,16 +48,19 @@ you're managing your workflows with CUE.
 
 ## Prerequisites
 
+- You have a set of GitHub Actions workflow files.
+  - The examples shown in this guide use the state of the first commit of CUE's
+    [github-actions-example](https://github.com/cue-examples/github-actions-example/tree/2b9d2f240d0c677c30218282dc10f95dfd566453/.github/workflows)
+    repository, but you don't need to use that repository in any way.
 - You have
   [CUE installed](https://alpha.cuelang.org/docs/introduction/installation/)
-  locally. This allows you to run `cue` commands.
-- You have a set of GitHub Actions workflow files. The examples shown in this
-  guide use the state of the first commit of CUE's
-  [github-actions-example repository](https://github.com/cue-examples/github-actions-example/tree/2b9d2f240d0c677c30218282dc10f95dfd566453/.github/workflows),
-  but you don't need to use that repository in any way.
+  locally -- this allows you to run `cue` commands
+  - You must have version `v0.11.0-alpha.2` or later installed.
+- You have a [GitHub](https://github.com) account -- this allows you to use the
+  CUE Central Registry.
+- You have a [Central Registry](https://registry.cue.works) account -- this
+  allows you to fetch a schema to validate your GitHub Actions workflows.
 - You have [`git` installed](https://git-scm.com/downloads).
-- You have [`curl` installed](https://curl.se/dlwiz/), or can fetch a file from
-  a website some other way.
 
 ## Steps
 
@@ -167,28 +176,34 @@ mv ./.github/workflows/*.cue internal/ci/github
 
 ### Validate workflows
 
-#### :arrow_right: Fetch a workflow schema
+#### :arrow_right: Authenticate the `cue ` command against the CUE Central Registry
 
-Fetch a schema for GitHub Actions workflows, as defined by the 3rd party
-[JSON Schema Store](https://www.schemastore.org/) project, and place it in the
-`internal/ci/github` directory:
+Run this command, and follow the instructions it displays:
 
 :computer: `terminal`
 {{{with script "en" "8"}}}
-curl -sSo internal/ci/github/github.actions.workflow.schema.json https://raw.githubusercontent.com/SchemaStore/schemastore/f728a2d857a938979f09b0a7f014fbe0bc1898ee/src/schemas/json/github-workflow.json
+#norun
+cue login
 {{{end}}}
 
-We use a specific commit from the upstream repository to make sure that this
-process is reproducible.
+This will allow you to fetch modules from the Central Registry.
 
-#### :arrow_right: Import the schema
-
-Import the schema into CUE:
+#### :arrow_right: Add a dependency on a module in the Central Registry
 
 :computer: `terminal`
 {{{with script "en" "9"}}}
-cue import -f -l '#Workflow:' -p github internal/ci/github/github.actions.workflow.schema.json
+cue mod get github.com/cue-tmp/jsonschema-pub/exp1/githubactions@v0.3.0
 {{{end}}}
+
+This uses a specific version of the upstream module to make sure that this
+process is reproducible.
+
+This upstream module *looks* like it has a temporary location because it was
+created as part of the CUE project's work to figure out how and where to store
+third-party schemas. Whilst it will eventually live at a more permanent and
+appropriate location (which this guide will be updated to reflect), this
+*version* of the module won't disappear from its "temporary" location - so it's
+safe to use!
 
 #### :arrow_right: Apply the schema
 
@@ -203,14 +218,32 @@ that *doesn't* already exist. Place the file in the `internal/ci/github/`
 directory.
 
 :floppy_disk: `internal/ci/github/workflows.cue`
-
 {{{with upload "en" "10"}}}
 -- github-actions-example/internal/ci/github/workflows.cue --
 package github
 
+import "github.com/cue-tmp/jsonschema-pub/exp1/githubactions"
+
 // Each member of the workflows struct must be a valid #Workflow.
-workflows: [_]: #Workflow
+workflows: [_]: githubactions.#Workflow
 {{{end}}}
+
+#### :arrow_right: Validate your workflows
+
+:computer: `terminal`
+{{{with script "en" "10.5"}}}
+cue vet ./internal/ci/github
+{{{end}}}
+
+If this command fails and produces any output, then CUE believes that at least
+one of your workflows isn't valid. It's very likely that CUE is correct, and it
+has found a problem, even if GitHub Actions manages to process your workflow
+files successfully -- because GitHub Actions can be lax and overly permissive
+in enforcing its own schema rules!  You'll need to resolve this before
+continuing, by updating your workflows inside your new CUE files. If you're
+having difficulty fixing them, please come and ask for help in the friendly CUE
+[Slack workspace](https://cuelang.org/s/slack) or
+[Discord server](https://cuelang.org/s/discord)!
 
 ### Generate YAML from CUE
 

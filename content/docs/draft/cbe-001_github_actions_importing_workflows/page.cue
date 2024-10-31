@@ -1,3 +1,5 @@
 package site
 
-content: docs: draft: "cbe-001_github_actions_importing_workflows": page: _
+content: docs: draft: "cbe-001_github_actions_importing_workflows": page: {
+	testUserAuthn: ["cue-user-new"]
+}

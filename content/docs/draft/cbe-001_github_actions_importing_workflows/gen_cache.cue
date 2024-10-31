@@ -9,20 +9,34 @@ package site
 							upload: {
 								"4":  "8yKs1AQyCrckEN+6QQ7m+IN6LbsU+bDrPT1I0YpY+08="
 								"5":  "w32haJ4EWSMiIynyFJBXZPezFt04xLsZvT28OsZZVyc="
-								"10": "QnMx8hC3Hhn19Xf1jrJYE3EdsEUWQwX/VULxLGdn6JY="
+								"10": "tdExby0cHThPH77qzC6kyz9db9TUoPdvZgUPWP6i7C0="
 								"11": "HEkf6Wy4HmpcsF13X+3vv0eH6piWNsURV0LCHSr4xeM="
 								"12": "yUUyySOGHQF7GrUjZ6dqtMVNRRzMWfhwYD2foEM6BLs="
 								"14": "EGisr6laXk/r8Q/M0A5lLCTueLZbMIRj4ENwveEdULw="
 							}
 							multi_step: {
-								hash:       "JVD3IAHFUHRS8DPJ5O2NBON40ATU9TCARPJL014L21FAA1GSRCUG===="
-								scriptHash: "BTLQNAQGN6P5L63CQHKRE1VF4I0TBJH6KH6BGC1NDCJ1TE6L86P0===="
+								hash:       "U2QGIEPI4EC4Q9ATFCOJTC7L12A6VDLD2MD56HK7N9CU2QIJTBB0===="
+								scriptHash: "K8FF5NJCH1H0702Q4D2SIMFSIF50BQJN2IP8G3Q47D0LLAVV0NP0===="
 								steps: [{
 									doc: """
 											# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
 											# is fixed in v0.11.0-alpha.2 and later.
 											"""
 									cmd:      "export PATH=/cues/v0.11.0-alpha.4:$PATH"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "# Required to interact with the central registry."
+									cmd:      "mkdir -p $HOME/.config/cue"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc: ""
+									cmd: """
+											cat <<EOD >$HOME/.config/cue/logins.json
+											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
+											EOD
+											"""
 									exitCode: 0
 									output:   ""
 								}, {
@@ -125,12 +139,12 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "curl -sSo internal/ci/github/github.actions.workflow.schema.json https://raw.githubusercontent.com/SchemaStore/schemastore/f728a2d857a938979f09b0a7f014fbe0bc1898ee/src/schemas/json/github-workflow.json"
+									cmd:      "cue mod get github.com/cue-tmp/jsonschema-pub/exp1/githubactions@v0.3.0"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue import -f -l '#Workflow:' -p github internal/ci/github/github.actions.workflow.schema.json"
+									cmd:      "cue vet ./internal/ci/github"
 									exitCode: 0
 									output:   ""
 								}, {
