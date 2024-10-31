@@ -30,14 +30,12 @@ Along the way you will:
 ## Login to the Central Registry
 
 {{{with step}}}
-Visit https://registry.cue.works and login via GitHub.
-{{{end}}}
+Visit the Central Registry at https://registry.cue.works and login via GitHub.
 
-{{< info >}}
-If you would like to be one of the early testers of the Central Registry, please
-get in touch via the [`#modules` channel on Slack](/s/slack)
-or by <a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">emailing us</a>.
-{{< /info >}}
+The Central Registry is in alpha testing -
+please give us your feedback about the service in the
+`#modules` channel [on Slack](/s/slack) or [on Discord](/s/discord)!
+{{{end}}}
 
 ## Authenticate the `cue` command
 

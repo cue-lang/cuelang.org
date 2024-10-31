@@ -23,12 +23,7 @@ create a second module that depends on the first.
   <!-- TODO: reword as&when a GH account isn't a strict requirement -->
 - **A GitHub repository called `frostyconfig`** --
   create it under your personal GitHub account (it doesn't matter if it is public or private)
-- **A [Central Registry](https://registry.cue.works/) account** --
-  the Central Registry is in alpha testing: if you do not yet have access
-  please request it in the
-  [`#modules` channel on Slack](/s/slack)
-  or via email to
-  <a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">contact@cue.works</a>
+- **A [Central Registry](https://registry.cue.works/) account**
 - **The `cue` binary** --
   follow the [installation instructions]({{< relref "/docs/introduction/installation" >}})
   if you don't already use `cue`
@@ -144,10 +139,8 @@ $ cue login
 ```
 
 The Central Registry is in alpha testing -
-if you do not yet have access please request it in the
-[`#modules` channel on Slack](/s/slack)
-or via email to
-<a href="mailto:contact@cue.works?subject=Joining the Central Registry experiment">contact@cue.works</a>.
+please give us your feedback about the service in the
+`#modules` channel [on Slack](/s/slack) or [on Discord](/s/discord)!
 
 {{< /step >}}
 
