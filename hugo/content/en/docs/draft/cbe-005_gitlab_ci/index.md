@@ -24,16 +24,18 @@ know you're managing your pipelines with CUE.
 
 ## Prerequisites
 
-- You have [`cue` installed](https://cuelang.org/docs/install/).
 - You have a GitLab pipeline file.
-  - The example shown throughout this guide uses the state of a specific commit
-    from the
-    [Flockademic repository](https://gitlab.com/Flockademic/Flockademic/-/blob/8efcea927b10c2773790fe78bb858905a75cf3ef/.gitlab-ci.yml)
-    on gitlab.com, as linked from
-    [GitLab's documentation pages](https://docs.gitlab.com/ee/ci/examples/end_to_end_testing_webdriverio/index.html),
-    but you don't need to use that repository in any way.\
-    It is used here as it represents a reasonably complex example of a GitLab
+  - The example shown throughout this guide uses the pipeline file from a
+    specific commit in the
+    [`gitlab-org/gitlab` repository](https://gitlab.com/gitlab-org/gitlab/-/blob/3308936efcd70839cc61e0545dcb780756e4ec28/.gitlab-ci.yml)
+    on gitlab.com, as linked from GitLab's
+    [CI documentation pages](https://docs.gitlab.com/ee/ci/yaml/),
+    but **you don't need to use that repository in any way**. It's used as the
+    example in this guide only because it's a reasonably complex GitLab
     pipeline file.
+- You have [`cue` installed](https://cuelang.org/docs/install/).
+  - You must have version `v0.11.0-alpha.4` or later installed. Using an
+    earlier version will cause certain commands in this guide to fail.
 - You have [`git` installed](https://git-scm.com/downloads).
 - You have [`curl` installed](https://curl.se/dlwiz/), or can fetch a remote
   file some other way.
@@ -49,8 +51,8 @@ pipeline file, and ensure you start this process with a clean git state, with
 no modified files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgRmxvY2thZGVtaWMgIyBvdXIgZXhhbXBsZSByZXBvc2l0b3J5CmdpdCBzdGF0dXMgIyBzaG91bGQgcmVwb3J0ICJ3b3JraW5nIHRyZWUgY2xlYW4i" }
-$ cd Flockademic # our example repository
+```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgZ2l0bGFiICMgb3VyIGV4YW1wbGUgcmVwb3NpdG9yeQpnaXQgc3RhdHVzICMgc2hvdWxkIHJlcG9ydCAid29ya2luZyB0cmVlIGNsZWFuIg==" }
+$ cd gitlab # our example repository
 $ git status # should report "working tree clean"
 On branch master
 nothing to commit, working tree clean
@@ -62,8 +64,8 @@ Initialise a CUE module named after the organisation and repository you're
 working with, but containing only lowercase letters and numbers. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGxhYi5jb20vZmxvY2thZGVtaWMvZmxvY2thZGVtaWM=" }
-$ cue mod init gitlab.com/flockademic/flockademic
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWI=" }
+$ cue mod init gitlab.com/gitlab-org/gitlab
 ```
 
 #### :arrow_right: Import YAML pipeline
@@ -111,12 +113,12 @@ The output should reflect your pipeline. In our example:
 package gitlab
 
 pipelines: ".gitlab-ci": {
-	image: "node:8.10"
 	stages: [
+		"sync",
+		"preflight",
 		"prepare",
-		"test",
-		"build-backend",
-		"deploy-backend",
+		"build-images",
+		"fixtures",
 {{< /code-tab >}}{{< /code-tabs >}}
 #### :arrow_right: Store CUE pipelines in a dedicated directory
 
@@ -147,8 +149,8 @@ Fetch a schema for GitLab pipelines, as defined by the GitLab project, and
 place it in the `internal/ci/gitlab` directory:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VybCAtc1NvIGludGVybmFsL2NpL2dpdGxhYi9naXRsYWIuY2ljZC5waXBlbGluZS5zY2hlbWEuanNvbiBodHRwczovL2dpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWIvLS9yYXcvN2FhNjE3MGM0YzgxYTk4ZjM3MmQ3YzUyZjM5MTg4NThjNGI2OWNjYS9hcHAvYXNzZXRzL2phdmFzY3JpcHRzL2VkaXRvci9zY2hlbWEvY2kuanNvbg==" }
-$ curl -sSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/7aa6170c4c81a98f372d7c52f3918858c4b69cca/app/assets/javascripts/editor/schema/ci.json
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VybCAtc1NvIGludGVybmFsL2NpL2dpdGxhYi9naXRsYWIuY2ljZC5waXBlbGluZS5zY2hlbWEuanNvbiBodHRwczovL2dpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWIvLS9yYXcvMjc3YzlmNmI2NDNjOTJkMDAxMDFhY2EwZjJiNGI4NzRhMTQ0ZjdjNS9hcHAvYXNzZXRzL2phdmFzY3JpcHRzL2VkaXRvci9zY2hlbWEvY2kuanNvbg==" }
+$ curl -sSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json
 ```
 
 We use a specific commit from the upstream repository to make sure that this
@@ -179,12 +181,26 @@ Create the file in the `internal/ci/gitlab/` directory and add this CUE:
 :floppy_disk: `internal/ci/gitlab/pipelines.cue`
 
 {{< code-tabs >}}
-{{< code-tab name="Flockademic/internal/ci/gitlab/pipelines.cue" language="cue" area="top-left" >}}
+{{< code-tab name="gitlab/internal/ci/gitlab/pipelines.cue" language="cue" area="top-left" >}}
 package gitlab
 
 // each member of the pipelines struct must be a valid #Pipeline
-pipeline: [_]: #Pipeline
+pipelines: [_]: #Pipeline
 {{< /code-tab >}}{{< /code-tabs >}}
+
+#### :arrow_right: Validate your pipelines
+
+:computer: `terminal`
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuL2ludGVybmFsL2NpL2dpdGxhYg==" }
+$ cue vet ./internal/ci/gitlab
+```
+
+If this command fails and produces any output, then CUE believes that at least
+one of your pipelines isn't valid. You'll need to resolve this before
+continuing, by updating your pipelines inside your new CUE files. If you're
+having difficulty fixing them, please come and ask for help in the friendly CUE
+[Slack workspace](https://cuelang.org/s/slack) or
+[Discord server](https://cuelang.org/s/discord)!
 
 ### Generate YAML from CUE
 
@@ -195,7 +211,7 @@ Adapt the element commented with `TODO`:
 
 :floppy_disk: `internal/ci/gitlab/ci_tool.cue`
 {{< code-tabs >}}
-{{< code-tab name="Flockademic/internal/ci/gitlab/ci_tool.cue" language="cue" area="top-left" >}}
+{{< code-tab name="gitlab/internal/ci/gitlab/ci_tool.cue" language="cue" area="top-left" >}}
 package gitlab
 
 import (
@@ -244,22 +260,18 @@ workflow command is available **from a shell sitting at the repository root**. F
 example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiIHwgaGVhZCAtNCA+Li4vMTIuZXhwZWN0ZWQudHh0CnN5bmM=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiIHwgaGVhZCAtNCA+Li4vMTIuYWN0dWFsLnR4dA==" }
 $ cd $(git rev-parse --show-toplevel) # make sure we're sitting at the repository root
 
 # Actual command in CUE-By-Example guide:
 # cue help cmd regenerate ./internal/ci/gitlab   # the "./" prefix is required
-$ cue help cmd regenerate ./internal/ci/gitlab | head -4 >../12.expected.txt
-
-# Sometimes the above command's regeneration of the YAML file doesn't get
-# sync'd to disk before we git-diff it, below. Make sure that it does.
-$ sync
+$ cue help cmd regenerate ./internal/ci/gitlab | head -4 >../12.actual.txt
 ```
 
 The output of the `cue help` command **must** begin with the following:
 
 {{< code-tabs >}}
-{{< code-tab name="12.actual.txt" language="txt" area="top-left" >}}
+{{< code-tab name="12.expected.txt" language="txt" area="top-left" >}}
 Regenerate pipeline files
 
 Usage:
@@ -285,13 +297,18 @@ Check that your YAML pipeline file has a single *material* change from the
 original:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGRpZmYgLS0gLmdpdGxhYi1jaS55bWwgfCBncmVwIC12RSAnXmluZGV4IFswLTlhLWZdezd9XC5cLlswLTlhLWZdezd9JyB8IGhlYWQgLTEwID4uLi8xNC5hY3R1YWwudHh0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="c2xlZXAgMQpzeW5jCmdpdCBkaWZmIC0tIC5naXRsYWItY2kueW1sIHwgZ3JlcCAtdkUgJ15pbmRleCBbMC05YS1mXXs3fVwuXC5bMC05YS1mXXs3fScgfCBoZWFkIC05ID4uLi8xNC5hY3R1YWwudHh0" }
+# 2 commands not present in CUE-By-Example guide, added as an attempt to work
+# around cue-lang/cue#3492. DELETE THESE COMMANDS!
+$ sleep 1
+$ sync
+
 # Actual command in CUE-By-Example guide:
 # git diff .gitlab-ci.yml
 # For some unknown reason the trailing '>../...' redirection *only* works when
 # the diff command is given a '--' separator. I'm utterly stumped, but let's
 # just give it what it wants!
-$ git diff -- .gitlab-ci.yml | grep -vE '^index [0-9a-f]{7}\.\.[0-9a-f]{7}' | head -10 >../14.actual.txt
+$ git diff -- .gitlab-ci.yml | grep -vE '^index [0-9a-f]{7}\.\.[0-9a-f]{7}' | head -9 >../14.actual.txt
 ```
 
 Your output should look similar to the following example:
@@ -301,13 +318,12 @@ Your output should look similar to the following example:
 diff --git a/.gitlab-ci.yml b/.gitlab-ci.yml
 --- a/.gitlab-ci.yml
 +++ b/.gitlab-ci.yml
-@@ -1,5 +1,6 @@
--image: node:8.10
+@@ -1,3 +1,5 @@
 +# Code generated by internal/ci/gitlab/ci_tool.cue; DO NOT EDIT.
- 
-+image: node:8.10
++
  stages:
-   - prepare
+   - sync
+   - preflight
 {{< /code-tab >}}{{< /code-tabs >}}
 The main change in each YAML file is the addition of a header that warns the
 reader not to edit the file directly.

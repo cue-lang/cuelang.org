@@ -8,15 +8,15 @@ package site
 						cache: {
 							upload: {
 								"4":  "qlFgYLWiExD4s+LL0HpI0+zi2ar6W8GYQ9+kS/d8WbQ="
-								"5":  "si8+M/I9Hm1HzzLf/o/TH3dyqsLLLNIrySWCZfwjiao="
-								"10": "NhZ6xrCVQsIebEqXHZ0lFS4Y9Ms4Ujj8NHMyinVj5o4="
-								"11": "qZjvSiXel+VPIBcPlIIcGOdEYdAcSIN9syB35a9hixM="
-								"12": "16yZUhoE0tRlEYse56HnQlU6xolOGlRhVYvjDt6OUyU="
-								"14": "U3CbYQ0viVRaklzhlEknDxcUj4/DtH1Ugwo7WxdCzl8="
+								"5":  "A/4TLoi0XnDkfYEVIp8t/jPyAlp0aIL+FLBATEzqRsY="
+								"10": "En3G8+vF3Miolfz0uvQEXV7FRWtxjg9D3shPU68yAV4="
+								"11": "KRTLuuzhmOFWvgwwVrmpyHXZ8Lbfb1sNG8jwmU9rObM="
+								"12": "v4JudRwTrtvlNSc3vYxnk7QfpSbwXZ5BsjYvk7h0BtY="
+								"14": "8pAEzSv4YBV5tvsNaJ88V8+Pe8fZZHSJEIHAVqS3yXc="
 							}
 							multi_step: {
-								hash:       "1IDAPD6OR11PR9O62REVB4P8R0U7PJ4IVBL79K13OCLNCVCD7P3G===="
-								scriptHash: "IVS5FP8VISFOJ2PF93OMKF2470LMT73GR58B5A29UT9N93GFK4OG===="
+								hash:       "0PTMV30A2P4E02JD0F3CAKJ934EEUIUG6QUCMSP3JUQCUD2EIQ7G===="
+								scriptHash: "VO0U61BNH9F5CE9RKCSOQD1MBTBDJPBBF5TTGSV9HRTSPIBS5D00===="
 								steps: [{
 									doc: """
 											# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
@@ -27,7 +27,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "# Set up example content as a git repo."
-									cmd:      "cd Flockademic"
+									cmd:      "cd gitlab"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -68,7 +68,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cd Flockademic # our example repository"
+									cmd:      "cd gitlab # our example repository"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -82,7 +82,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue mod init gitlab.com/flockademic/flockademic"
+									cmd:      "cue mod init gitlab.com/gitlab-org/gitlab"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -119,12 +119,12 @@ package site
 											package gitlab\t\t\t\t\t\t\tpackage gitlab
 
 											pipelines: ".gitlab-ci": {\t\t\t\t\tpipelines: ".gitlab-ci": {
-											\timage: "node:8.10"\t\t\t\t\t\timage: "node:8.10"
 											\tstages: [\t\t\t\t\t\t\tstages: [
+											\t\t"sync",\t\t\t\t\t\t\t\t"sync",
+											\t\t"preflight",\t\t\t\t\t\t\t"preflight",
 											\t\t"prepare",\t\t\t\t\t\t\t"prepare",
-											\t\t"test",\t\t\t\t\t\t\t\t"test",
-											\t\t"build-backend",\t\t\t\t\t\t"build-backend",
-											\t\t"deploy-backend",\t\t\t\t\t\t"deploy-backend",
+											\t\t"build-images",\t\t\t\t\t\t\t"build-images",
+											\t\t"fixtures",\t\t\t\t\t\t\t"fixtures",
 
 											"""
 								}, {
@@ -139,12 +139,17 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "curl -sSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/7aa6170c4c81a98f372d7c52f3918858c4b69cca/app/assets/javascripts/editor/schema/ci.json"
+									cmd:      "curl -sSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "cue import -p gitlab -l '#Pipeline:' internal/ci/gitlab/gitlab.cicd.pipeline.schema.json"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue vet ./internal/ci/gitlab"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -157,15 +162,7 @@ package site
 											# Actual command in CUE-By-Example guide:
 											# cue help cmd regenerate ./internal/ci/gitlab   # the "./" prefix is required
 											"""
-									cmd:      "cue help cmd regenerate ./internal/ci/gitlab | head -4 >../12.expected.txt"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc: """
-											# Sometimes the above command's regeneration of the YAML file doesn't get
-											# sync'd to disk before we git-diff it, below. Make sure that it does.
-											"""
-									cmd:      "sync"
+									cmd:      "cue help cmd regenerate ./internal/ci/gitlab | head -4 >../12.actual.txt"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -180,15 +177,44 @@ package site
 									output:   ""
 								}, {
 									doc: """
+											# 2 commands not present in CUE-By-Example guide, added as an attempt to work
+											# around cue-lang/cue#3492. DELETE THESE COMMANDS!
+											"""
+									cmd:      "sleep 1"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "sync"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc: """
 											# Actual command in CUE-By-Example guide:
 											# git diff .gitlab-ci.yml
 											# For some unknown reason the trailing '>../...' redirection *only* works when
 											# the diff command is given a '--' separator. I'm utterly stumped, but let's
 											# just give it what it wants!
 											"""
-									cmd:      "git diff -- .gitlab-ci.yml | grep -vE '^index [0-9a-f]{7}\\.\\.[0-9a-f]{7}' | head -10 >../14.actual.txt"
+									cmd:      "git diff -- .gitlab-ci.yml | grep -vE '^index [0-9a-f]{7}\\.\\.[0-9a-f]{7}' | head -9 >../14.actual.txt"
 									exitCode: 0
 									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "diff --side ../14.expected.txt ../14.actual.txt"
+									exitCode: 0
+									output: """
+											diff --git a/.gitlab-ci.yml b/.gitlab-ci.yml\t\t\tdiff --git a/.gitlab-ci.yml b/.gitlab-ci.yml
+											--- a/.gitlab-ci.yml\t\t\t\t\t\t--- a/.gitlab-ci.yml
+											+++ b/.gitlab-ci.yml\t\t\t\t\t\t+++ b/.gitlab-ci.yml
+											@@ -1,3 +1,5 @@\t\t\t\t\t\t\t@@ -1,3 +1,5 @@
+											+# Code generated by internal/ci/gitlab/ci_tool.cue; DO NOT E\t+# Code generated by internal/ci/gitlab/ci_tool.cue; DO NOT E
+											+\t\t\t\t\t\t\t\t+
+											 stages:\t\t\t\t\t\t\t stages:
+											   - sync\t\t\t\t\t\t\t   - sync
+											   - preflight\t\t\t\t\t\t\t   - preflight
+
+											"""
 								}, {
 									doc:      ""
 									cmd:      "git add .gitlab-ci.yml internal/ci/gitlab/ cue.mod/module.cue"
