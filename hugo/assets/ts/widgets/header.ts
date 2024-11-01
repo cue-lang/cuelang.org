@@ -45,7 +45,7 @@ export class Header extends BaseWidget {
 
     public onScroll(): void {
         this.scrollY = window.scrollY;
-        this.scrollingDown = (this.scrollY > this.scrollYOld);
+        this.scrollingDown = (this.scrollY >= this.scrollYOld);
         this.scrollYOld = this.scrollY;
 
         if (!this.updateScheduled) {
