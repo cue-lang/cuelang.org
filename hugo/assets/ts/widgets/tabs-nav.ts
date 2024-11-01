@@ -38,6 +38,10 @@ export class TabsNav extends BaseWidget {
     }
 
     public init(): void {
+        if (!this.tabList) {
+            return;
+        }
+
         this.checkPaginationEnabled();
 
         // Reset scroll + check for pagination on resize
@@ -63,6 +67,7 @@ export class TabsNav extends BaseWidget {
             this.handlePagination('next');
         });
     }
+
     public checkPaginationEnabled(): void {
         // Calculate if tablist doesn't fit in container
         const elemWidth = this.element.offsetWidth +
