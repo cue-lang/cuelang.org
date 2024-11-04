@@ -358,6 +358,9 @@ diff --git a/.gitlab-ci.yml b/.gitlab-ci.yml
 {{{end}}}
 
 {{{with _script_ "en" "14-check"}}}
+# Disable for now, as per
+# https://github.com/cue-lang/cue/issues/3492#issuecomment-2454930642
+#norun
 diff --side ../14.expected.txt ../14.actual.txt
 {{{end}}}
 
