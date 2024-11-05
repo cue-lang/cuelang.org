@@ -33,6 +33,24 @@
       "message": "Ideally break lines to make Gerrit diffs more legible.",
       "revId": "8ee386419ff36dabba54c15575aa7ed84093d405",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d448679d_ae895c5e",
+        "filename": "hugo/assets/ts/widgets/search-filter.ts",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-05T16:38:52Z",
+      "side": 1,
+      "message": "I\u0027ll ask the folks maintaining this code via GitHub to keep that in mind in the future 👍",
+      "parentUuid": "fd09eb4a_caf9e7bf",
+      "revId": "8ee386419ff36dabba54c15575aa7ed84093d405",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
