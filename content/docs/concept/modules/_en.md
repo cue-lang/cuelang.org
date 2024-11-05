@@ -7,9 +7,10 @@ toc_hide: false
 Modules are how CUE manages native dependencies.
 They can be published to a registry, which allows users to fetch and work with their contents.
 
-Learn about CUE modules using the suggested links below,
-or follow the {{<tag modules>}} tag to explore the full range of modules-related
-pages on the site.
+Learn about modules using these recommended guides, or
+browse through all the {{<tag modules>}} pages listed below:
+
+## Recommended guides
 
 {{<cards>}}
 {{<card title="Reference manual"
@@ -54,3 +55,7 @@ Publishing modules to the Central Registry
 Working with a custom module registry
 {{</card>}}
 {{</cards>}}
+
+## All pages tagged "modules"
+
+{{<search tags="modules">}}
