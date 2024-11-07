@@ -20,7 +20,7 @@ version of the `cue` command:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.11.0-alpha.4
+cue version v0.11.0-alpha.5
 ...
 ```
 
@@ -55,12 +55,12 @@ B: matchN(3, [int, >10, >100])
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOmJhc2lj" }
 $ cue vet .:basic
-B: invalid value 42 (does not satisfy matchN(1, [int,>10])): 2 matched, expected 1:
+B: invalid value 42 (does not satisfy matchN): 2 matched, expected 1:
     ./basic.cue:11:4
     ./basic.cue:9:4
     ./basic.cue:11:11
     ./basic.cue:12:4
-B: invalid value 42 (does not satisfy matchN(3, [int,>10,>100])): 2 matched, expected 3:
+B: invalid value 42 (does not satisfy matchN): 2 matched, expected 3:
     ./basic.cue:12:4
     ./basic.cue:9:4
     ./basic.cue:11:4
@@ -96,17 +96,17 @@ C: matchN(1, [math.MultipleOf(3), math.MultipleOf(5)])
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOm9uZU9m" }
 $ cue vet .:oneOf
-B: invalid value 42 (does not satisfy matchN(1, [int,>10])): 2 matched, expected 1:
+B: invalid value 42 (does not satisfy matchN): 2 matched, expected 1:
     ./one-of.cue:13:4
     ./one-of.cue:11:4
     ./one-of.cue:13:11
     ./one-of.cue:14:4
-B: invalid value 42 (does not satisfy matchN(1, [string,>100])): 0 matched, expected 1:
+B: invalid value 42 (does not satisfy matchN): 0 matched, expected 1:
     ./one-of.cue:14:4
     ./one-of.cue:11:4
     ./one-of.cue:13:4
     ./one-of.cue:14:11
-C: invalid value 15 (does not satisfy matchN(1, [math.MultipleOf(3),math.MultipleOf(5)])): 2 matched, expected 1:
+C: invalid value 15 (does not satisfy matchN): 2 matched, expected 1:
     ./one-of.cue:18:4
     ./one-of.cue:16:4
     ./one-of.cue:18:11
@@ -132,7 +132,7 @@ B: matchN(>0, [string, >100])
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOmFueU9m" }
 $ cue vet .:anyOf
-B: invalid value 42 (does not satisfy matchN(>0, [string,>100])): 0 matched, expected >0:
+B: invalid value 42 (does not satisfy matchN): 0 matched, expected >0:
     ./any-of.cue:10:4
     ./any-of.cue:8:4
     ./any-of.cue:10:11
@@ -163,12 +163,12 @@ B: matchN(4, [int, >10, <100, math.MultipleOf(41)])
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOmFsbE9m" }
 $ cue vet .:allOf
-B: invalid value 42 (does not satisfy matchN(3, [int,>10,>100])): 2 matched, expected 3:
+B: invalid value 42 (does not satisfy matchN): 2 matched, expected 3:
     ./all-of.cue:13:4
     ./all-of.cue:11:4
     ./all-of.cue:13:11
     ./all-of.cue:14:4
-B: invalid value 42 (does not satisfy matchN(4, [int,>10,<100,math.MultipleOf(41)])): 3 matched, expected 4:
+B: invalid value 42 (does not satisfy matchN): 3 matched, expected 4:
     ./all-of.cue:14:4
     ./all-of.cue:11:4
     ./all-of.cue:13:4
@@ -204,19 +204,19 @@ B: matchN(0, [42, >100, strings.HasSuffix("4")])
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOm5vdA==" }
 $ cue vet .:not
-B: invalid value 42 (does not satisfy matchN(0, [int])): 1 matched, expected 0:
+B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
     ./not.cue:16:4
     ./not.cue:14:4
     ./not.cue:16:11
     ./not.cue:17:4
     ./not.cue:18:4
-B: invalid value 42 (does not satisfy matchN(0, [string,number])): 1 matched, expected 0:
+B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
     ./not.cue:17:4
     ./not.cue:14:4
     ./not.cue:16:4
     ./not.cue:17:11
     ./not.cue:18:4
-B: invalid value 42 (does not satisfy matchN(0, [42,>100,strings.HasSuffix("4")])): 1 matched, expected 0:
+B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
     ./not.cue:18:4
     ./not.cue:14:4
     ./not.cue:16:4
@@ -246,7 +246,7 @@ B: matchN(len(#C)-1, #C)
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOmFsbEJ1dE9uZQ==" }
 $ cue vet .:allButOne
-B: invalid value 42.0 (does not satisfy matchN(2, [number,int,>100])): 1 matched, expected 2:
+B: invalid value 42.0 (does not satisfy matchN): 1 matched, expected 2:
     ./all-but-one.cue:9:4
     ./all-but-one.cue:8:4
     ./all-but-one.cue:9:11
@@ -289,10 +289,10 @@ E: [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
 {{< /code-tab >}}{{< /code-tabs >}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOmNvbXBvc2l0ZQ==" }
 $ cue vet .:composite
-B: invalid value {x:4.2,y:4.2,z:4.2} (does not satisfy matchN(>0, [{x!:int},{y!:string,z?:float}])): 0 matched, expected >0:
+B: invalid value {x:4.2,y:4.2,z:4.2} (does not satisfy matchN): 0 matched, expected >0:
     ./composite.cue:9:4
     ./composite.cue:9:11
-E: invalid value [11,12,13] (does not satisfy matchN(1, [[],[],[]])): 2 matched, expected 1:
+E: invalid value [11,12,13] (does not satisfy matchN): 2 matched, expected 1:
     ./composite.cue:24:19
     ./composite.cue:24:4
     ./composite.cue:24:26
