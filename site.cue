@@ -19,7 +19,7 @@ versions: {
 			v:             *"v0.10.1" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
-		prerelease: v: *"v0.11.0-alpha.4" | _
+		prerelease: v: *"v0.11.0-alpha.5" | _
 		tip: v:        prerelease.v
 		default: v:    latest.v
 		playground: v: latest.v
