@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "w+0SXLmwYMNt91f0wMpna3NKBlYHd+WIpA4mFevAOp4="
-								"initial x.cue":  "RLsjKlS9Hnsc4DpPWmUEOj2sg89GX5Pm6YvPI9vt17s="
-								"another person": "vkRDvoec+9+wQm4HqmNLWVhwlJ8sAotrBZzssWhekFs="
-								"fixed yaml":     "HIeHj7lbpXKLxcmEo1bKthy/CV2j1XYmmDzwGiA6MOY="
+								"initial x.yaml": "FPfuWVIZlXR+dMMkvUCl/yruTe2PrTVbdueKrykL0JM="
+								"initial x.cue":  "SuZyJpG1UFqF5/WagOhiYmjdCM1vrsc5bSwoF4A7eLc="
+								"another person": "ID+Zl9LYXPJDLCJQrABfTnBynAKsMVW3DDu9KZMzC+o="
+								"fixed yaml":     "kBn1pUMIbeJMpnREmzpaJ4nuhUMzDWrSixnqubJ8VbA="
 							}
 							multi_step: {
-								hash:       "4F3SQHLJT4IEGA9LR2R5S7VGHE29VPQSR35CV1G0R6C5340R9O0G===="
+								hash:       "FM506UGSL95P4MI2ODS25GL9J7G8NV68F809HJP845IBM77GNFRG===="
 								scriptHash: "7O25FPHJVUHC297BLS0S5A0O6M4E37ITUK3M1O5FHBH097GTHAAG===="
 								steps: [{
 									doc:      ""
