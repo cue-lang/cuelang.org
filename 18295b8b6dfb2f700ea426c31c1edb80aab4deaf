@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5f8ee68_25469cf8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-08T12:47:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "315a1c1d_e159e6aa",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b8f0f3b_fe32483a",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-25T09:32:41Z",
       "side": 1,
       "message": "Reflect updated slug.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "072fe56b_c226de61",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-08T12:47:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b8f0f3b_fe32483a",
       "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -88,6 +124,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2d089c60_7101d731",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-08T12:47:56Z",
+      "side": 1,
+      "message": "Addressed in my PS 5. Leaving unresolved to prompt a review.",
+      "parentUuid": "43f03f0b_68493902",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f8cec249_0baf8047",
         "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
         "patchSetId": 4
@@ -99,6 +153,24 @@
       "writtenOn": "2024-10-25T09:32:41Z",
       "side": 1,
       "message": "nit: trailing `.`",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2cbfada_f70c2489",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-08T12:47:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8cec249_0baf8047",
       "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -120,6 +192,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "deabb12f_2ef9011a",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-08T12:47:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b8b147c_a629925a",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f71b679_9d9ce464",
@@ -137,6 +227,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a07e08fe_0c6d27b1",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-08T12:47:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f71b679_9d9ce464",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93db6b17_8b0eb901",
@@ -150,6 +258,24 @@
       "writtenOn": "2024-10-25T09:32:41Z",
       "side": 1,
       "message": "I\u0027d also link to https://cuelang.org/docs/reference/command/cue-help-cmd/ and https://cuelang.org/docs/reference/command/cue-help-commands/.",
+      "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "626d60ff_91225c03",
+        "filename": "content/docs/howto/defining-order-tasks-workflow-command/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-08T12:47:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93db6b17_8b0eb901",
       "revId": "18295b8b6dfb2f700ea426c31c1edb80aab4deaf",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
