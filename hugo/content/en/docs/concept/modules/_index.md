@@ -2,6 +2,7 @@
 title: Modules
 tags: [modules]
 toc_hide: false
+weight: 30
 ---
 
 Modules are how CUE manages native dependencies.
