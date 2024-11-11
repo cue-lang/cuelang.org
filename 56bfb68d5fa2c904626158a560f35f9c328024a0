@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24eadb1d_7883c3e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-11T11:52:57Z",
+      "side": 1,
+      "message": "PTAL, and also check you\u0027re happy with the solution to the committer-email-address problem I outlined in the PR, at https://github.com/cue-lang/cuelang.org/pull/479#issuecomment-2467987164.",
+      "revId": "56bfb68d5fa2c904626158a560f35f9c328024a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
