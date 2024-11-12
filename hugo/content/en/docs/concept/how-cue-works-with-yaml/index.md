@@ -7,7 +7,7 @@ authors:
 - jpluscplusm
 toc_hide: true
 aliases:
-- yaml
+- /docs/concept/yaml
 ---
 
 ## Reading and writing YAML

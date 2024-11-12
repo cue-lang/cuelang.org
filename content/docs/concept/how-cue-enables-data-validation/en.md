@@ -3,7 +3,7 @@ title: How CUE enables data validation
 tags:
 - validation
 aliases:
-- docs/concept/data-validation-use-case
+- /docs/concept/data-validation-use-case
 authors:
 - jpluscplusm
 toc_hide: true

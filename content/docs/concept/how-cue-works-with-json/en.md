@@ -7,7 +7,7 @@ authors:
 - jpluscplusm
 toc_hide: true
 aliases:
-- json
+- /docs/concept/json
 ---
 
 ## Reading and writing JSON

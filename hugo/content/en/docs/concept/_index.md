@@ -4,7 +4,7 @@ weight: 50
 toc_hide: false
 index_hide: true
 aliases:
-- find-a-guide
+- /docs/concept/find-a-guide
 ---
 
 Concept guides explain the systems and ideas that drive CUE's design.

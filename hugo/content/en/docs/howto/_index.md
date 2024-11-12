@@ -4,7 +4,7 @@ weight: 40
 toc_hide: false
 index_hide: true
 aliases:
-- find-a-guide
+- /docs/howto/find-a-guide
 ---
 
 How-to guides contain either step-by-step instructions or stand-alone CUE.

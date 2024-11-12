@@ -2,7 +2,7 @@
 title: Unification
 weight: 90
 aliases:
-- duplicate-fields
+- /docs/tour/basics/duplicate-fields
 ---
 
 CUE allows fields to be specified multiple times, so long as all the values
