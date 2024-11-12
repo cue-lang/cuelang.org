@@ -5,6 +5,7 @@ node_modules
 # IDE's
 .idea
 .vscode/
+*.code-workspace
 
 # Project
 /_public/
