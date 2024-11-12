@@ -6,7 +6,7 @@ authors:
 - jpluscplusm
 toc_hide: true
 aliases:
-- ensure-min-max-list
+- /docs/howto/ensure-min-max-list
 ---
 
 This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})

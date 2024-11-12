@@ -4,7 +4,7 @@ weight: 30
 toc_hide: false
 index_hide: true
 aliases:
-- find-a-tutorial
+- /docs/tutorial/find-a-tutorial
 ---
 
 CUE tutorials are practical lessons that help you try out language features,

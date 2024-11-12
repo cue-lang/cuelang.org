@@ -2,7 +2,7 @@
 title: Structs
 weight: 70
 aliases:
-- optional
+- /docs/tour/types/optional
 ---
 
 CUE's most important composite type is the **struct**,
