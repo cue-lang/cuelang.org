@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a52a793_fa2ce50f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-13T17:25:19Z",
+      "side": 1,
+      "message": "LGTM with a couple of tweaks.",
+      "revId": "e0e570590a934a462683074251157c0c08c93951",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d216cb26_19f8cd9c",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-13T17:25:19Z",
+      "side": 1,
+      "message": "I think we should call out exactly what is \"incomplete\" here to be precise.",
+      "revId": "e0e570590a934a462683074251157c0c08c93951",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "758fcd07_41289810",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-13T17:25:19Z",
+      "side": 1,
+      "message": "This sentence is a bit too much like word soup for my liking. I think we should be plainer and simpler. I\u0027d suggest doing that with reference to the fields in question.",
+      "revId": "e0e570590a934a462683074251157c0c08c93951",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6aca9f60_8ab190a2",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-13T17:25:19Z",
+      "side": 1,
+      "message": "\"Here\" doesn\u0027t feel quite right. We are just creating the file in the block that follows.",
+      "revId": "e0e570590a934a462683074251157c0c08c93951",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
