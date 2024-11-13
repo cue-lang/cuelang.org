@@ -1,4 +1,4 @@
-### `github.com/cue-lang/cuelang.org` - the home of cuelang.org
+### [cue-lang/cuelang.org](https://github.com/cue-lang/cuelang.org): the home of cuelang.org
 
 This repo is the home of [cuelang.org](https://cuelang.org). The site is built using [Hugo](https://gohugo.io/) and is
 based on the [docsy](https://www.docsy.dev/) theme.
