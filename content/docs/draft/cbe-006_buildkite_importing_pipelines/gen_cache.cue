@@ -7,23 +7,23 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "aVwNA9Qa4WL8ipHkRZw9Ukgl8e4KXf4Qk58VIt3qjGo="
-								"5":  "XQ+6gfo1705erafVysDS+dRdnIdsCFQ1VjHGMzD1UcI="
-								"8":  "QyLbj1KJ9tW2cg+pEGyuSlQmx3SzU5D7hlE9QOTjzO4="
-								"9":  "x6t6kq28ydBtga0E1HPVmgNjHD9s87Bs926dSiJfZ0k="
-								"10": "Nsv6WX0afcSQqUu5MzVAYwB1IADDEII76pPz7YLpNRo="
-								"11": "6t3Cw1ppVrlG3vsnkIj66VpjE/frQ61kbsCpzgjFYZ0="
-								"13": "R9s3vgfCwy8b9ZxL6hqhS6KsjyKGVsmVuMrXbb14gXQ="
+								"4":  "q1DZ80NVNgghrznHKuJd+U2cKhcyNa6fdg+TV4oEvdE="
+								"5":  "xrOc6gs43AIju1EMR8QjQdO+jQYEwgbb/Mk9fxJwvwk="
+								"8":  "zKrHa3/pZEyNJwvbnLYh1psK3ROHiow5zapQtWJ//ds="
+								"9":  "I0Sh8jQtiKj4iwZBvR80ZnRGqI+sfDvj4lM0HinYt74="
+								"10": "9VqllK38ndEMNE8dp/BIOkSc3Mw0ZYkmLpb3YW2ynwI="
+								"11": "uEIWkKdOdEJghov0nJheLKkxG+51TH9XCC+vNBDtszs="
+								"13": "oytES9ImLV3YBF1I77fi5ELinWfw/MsMyE3LUEZ+PbY="
 							}
 							multi_step: {
-								hash:       "TBBUT1JRPG5JKGCKKMIA0CKQD3GDRHO3F36G2F3GH52B4JBF7090===="
-								scriptHash: "C8GRTEF7L33SB0MVURQSKNCVKL7A9LKMNS5ULQVU0NNA9UE8C4EG===="
+								hash:       "6CIJ60G0P7CM9D6UF7VS6FEOMHQB61I76NDNKRAHG7P6PS2GRMDG===="
+								scriptHash: "PM283GFEMIDP8DQO25T46LAD39BH89AJ9PKNISRMPM83QV7FT430===="
 								steps: [{
 									doc: """
 											# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
 											# is fixed in v0.11.0-alpha.2 and later.
 											"""
-									cmd:      "export PATH=/cues/v0.11.0-alpha.5:$PATH"
+									cmd:      "export PATH=/cues/v0.11.0-rc.1:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {

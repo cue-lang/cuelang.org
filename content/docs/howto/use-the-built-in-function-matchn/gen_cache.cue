@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								basic:                   "M9qOBQJvG8yNHzuhx+clf+s/gQagp91sWhk/slbachY="
-								"one of":                "pj4/R/OLJSxE/eYIonTOrI+2Ehj6qCORxoJOpggmN8Q="
-								"any of":                "t2NZHV9gPLPAO9wfhwcpkLQvM/BykzjN5bKgFGUe4RA="
-								"all of":                "QAJvwlM7DEbGw3Ebe/Dtr54lgujs8M8dKWHqgspoqTA="
-								not:                     "Sz5BE9p0N9qIuqd3nKYMkDHK33vsAFoHtnTiC8Z8TFA="
-								"all but one":           "7BIJvh/xvMkPuGlwyXtLYdNz4niVGSWZcki3v6j8G4c="
-								composite:               "Yxn73T66ecW3yJMvgIjq1kTZCEZXdutMOyGC/uH4W6s="
-								"future: helper fields": "4LsFYBd8Wc+f2l4/Jws7q59gi3wYVl1kxMEU8b2V77s="
+								basic:                   "dh2I6kcHmkjcQPh5LYJ0K8SJKukTZcTyfAtcnWKfIsk="
+								"one of":                "RGn/a4aBbtu/Li0vD0lxK/TmpjCm0D5Bx3QA5n/mjbQ="
+								"any of":                "wu68NBANQTB/2CbReiG8aeMwwJE7Hd2NacAYNaUHKiY="
+								"all of":                "dMFbsgInprYbvOV/en2CTn3ZIm3WaSRvXfDpSxvPS2k="
+								not:                     "I9wzsh6+WFT2+v1lrvVDzB+BwUNkHrKHAc66X0X3Wqo="
+								"all but one":           "5zLi0/JTajFSgCymSXDW6KVUU2CpvuQNGylfyTNfb4c="
+								composite:               "4BNfjeK/GBVtBnKOjmfP8tEpzTvODzbm0GphbAY2Bgw="
+								"future: helper fields": "pUh7o2MfOpVBz0rt0rA+EZXtcwkSqLEDEh3jXWJWqLg="
 							}
 							multi_step: {
-								hash:       "K5P68L7UOTSKN1FBSPD4LBINNM5O3S6JN9GC96E8IORQMBIUCBC0===="
-								scriptHash: "IS41AK3CHLRFD76K4RS5VCDAI5VN9B2U8FJNV1OB82KF1H3BRIQG===="
+								hash:       "E8LM2MIP373CR5HBA5EATL1U80Q0RC9FV3CS0UQTS5568NN2JAIG===="
+								scriptHash: "UQ9LBFDATARBC290N4RP845IRKGV69UAP08H2GJ2NOUJS53J9MDG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.11.0-alpha.5:$PATH"
+									cmd:      "export PATH=/cues/v0.11.0-rc.1:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -29,7 +29,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.0-alpha.5
+											cue version v0.11.0-rc.1
 											...
 
 											"""
