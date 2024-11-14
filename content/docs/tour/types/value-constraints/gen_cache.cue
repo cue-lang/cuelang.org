@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									"value constraint": "g6jjIkGgvdnDMvMZfyUgJqMoelzRECDswwu8O40zB2I="
+									"value constraint": "oCj/WMIyZDetOpSRENDHg2PkPlL1rHh411RNHA+dD4k="
 								}
 							}
 						}
