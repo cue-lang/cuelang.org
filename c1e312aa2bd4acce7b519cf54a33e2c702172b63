@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6aaf97cf_b5fbd577",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-15T18:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b5a73ad_79fa3fbd",
+      "revId": "c1e312aa2bd4acce7b519cf54a33e2c702172b63",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce03dd33_1c978764",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-10-17T14:09:13Z",
       "side": 1,
       "message": "@rogpeppe@gmail.com Section re-written entirely - please review!",
+      "revId": "c1e312aa2bd4acce7b519cf54a33e2c702172b63",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d08086e_67634952",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-15T18:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce03dd33_1c978764",
       "revId": "c1e312aa2bd4acce7b519cf54a33e2c702172b63",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

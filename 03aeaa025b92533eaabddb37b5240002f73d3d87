@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fed661e2_664fb9b5",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-15T18:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "080dd671_d0d2ec42",
+      "revId": "03aeaa025b92533eaabddb37b5240002f73d3d87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "39b3bb60_904cbe09",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "553d6854_524747a6",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-15T18:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39b3bb60_904cbe09",
+      "revId": "03aeaa025b92533eaabddb37b5240002f73d3d87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a5f4ecb_2f64de9a",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-11-13T16:57:30Z",
       "side": 1,
       "message": "We seem to use \"module identifier\" and \"module name\" interchangeably in this document. Elsewhere (in a number of `cue help` pages) we also use \"module path\".\n\nWe should probably pick one and stick to it. FWIW I\u0027m not keen on \"identifier\", as it sounds reminiscent of a CUE identifier, and packages do have such identifiers.\n\nPerhaps \"module path\" is the best term here - it\u0027s the one that Go uses.\n\nI also don\u0027t know what is meant by \"If a module identifier is defined\" here. Defined by what?",
+      "revId": "03aeaa025b92533eaabddb37b5240002f73d3d87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79ed6d51_2c2518f2",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-15T18:15:37Z",
+      "side": 1,
+      "message": "I\u0027ve changed to `module path` throughout.\n\n\u003e I also don\u0027t know what is meant by \"If a module identifier is defined\" here. Defined by what?\n\nAs discussed offline, this is text from the current version of the page that appears to mean \"if some CUE is within a module\". Given that there\u0027s now a requirement for non-builtin packages to be imported from CUE code that\u0027s in a module, I\u0027ve made that explicit in this section and removed this specific wording.",
+      "parentUuid": "1a5f4ecb_2f64de9a",
       "revId": "03aeaa025b92533eaabddb37b5240002f73d3d87",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

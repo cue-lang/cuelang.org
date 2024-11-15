@@ -100,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd2bcc6e_03521903",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-15T18:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0181358_b0274d2a",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "296ea401_a9d82e0e",
@@ -283,6 +301,24 @@
       "side": 1,
       "message": "Ok, that little detail prompted me to completely rewrite this section! Please let me know that I\u0027ve managed to capture the current behaviour correctly :-)",
       "parentUuid": "78ce1bde_d70ee45c",
+      "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8fb56a3_1d474f3d",
+        "filename": "content/docs/concept/modules-packages-instances/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-15T18:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da94b212_d5860ea9",
       "revId": "722de5efc1bac071b56476c02a9f502eef38c3ef",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
