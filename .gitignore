@@ -5,6 +5,9 @@
 /resources
 /themes
 
+# Ignore vscode workspace files
+*.code-workspace
+
 # Contains the preprocessor for alpha.cuelang.org
 /.gobin
 
