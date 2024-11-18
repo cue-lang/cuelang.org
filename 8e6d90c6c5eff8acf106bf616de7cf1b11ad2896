@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddc811ec_170ee9f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-18T15:02:09Z",
+      "side": 1,
+      "message": "PTAL. The post-submission CI steps have been shown to pass on `ci/test`, at https://github.com/cue-lang/cuelang.org/actions/runs/11894791169/job/33142821959.",
+      "revId": "8e6d90c6c5eff8acf106bf616de7cf1b11ad2896",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
