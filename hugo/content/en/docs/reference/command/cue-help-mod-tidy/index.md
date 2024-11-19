@@ -28,13 +28,12 @@ Usage:
   cue mod tidy [flags]
 
 Flags:
-      --check   check for tidiness only; do not update module.cue file
+      --check   check for tidiness after fetching dependencies; fail if module.cue would be updated
 
 Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --strict       report errors for lossy mappings
       --trace        trace computation
   -v, --verbose      print information about progress
 ```

@@ -40,17 +40,15 @@ If an environment variable is unset or empty, sensible default setting is used.
 	CUE_EXPERIMENT
 		Comma-separated list of experiment flags to enable or disable:
 
-		modules (default true)
-			Enable support for the Modules and package management proposal
-			as described in https://cuelang.org/discussion/2939.
-		yamlv3decoder (default true)
-			Enable the new YAML decoder based on yaml.v3.
 		evalv3
 			Enable the new CUE evaluator, addressing performance issues
 			and bringing a better disjunction algorithm.
 		embed
 			Enable support for embedded data files as described in
 			https://cuelang.org/discussion/3264.
+		decodeint64
+			Tweak cue.Value.Decode to choose "int64" rather than "int"
+			as the default Go type for CUE integer values.
 
 	CUE_DEBUG
 		Comma-separated list of debug flags to enable or disable, such as:

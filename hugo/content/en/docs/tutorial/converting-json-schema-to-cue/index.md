@@ -43,7 +43,7 @@ This tutorial is written using the following version of `cue`:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.10.1
+cue version v0.11.0
 ...
 ```
 
@@ -123,14 +123,16 @@ package cuisine
 
 #restaurant: {
 	@jsonschema(schema="http://json-schema.org/draft-07/schema#")
-	name!:    string
-	cuisine!: string
-	tables!: [...#table]
+	close({
+		name!:    string
+		cuisine!: string
+		tables!: [...#table]
+	})
 
-	#table: {
+	#table: close({
 		seats!: >=2 & <=10
 		view?:  bool
-	}
+	})
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 CUE natively understands JSON Schema, and is able to convert all of the JSON
@@ -174,7 +176,7 @@ Validate the data using the schema and constraints:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
 $ cue vet -d '#restaurant' schema.cue *.yml
 tables.0.seats: invalid value 100 (out of bound <=10):
-    ./schema.cue:10:17
+    ./schema.cue:12:17
     ./pomodoro.yml:4:12
 ```
 

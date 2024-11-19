@@ -54,7 +54,7 @@ _missingFieldSchema: {
 	c!: bool // validation failure for yaml.Validate only
 }
 -- out --
-data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate({a!:>99,b!:string})): error in call to encoding/yaml.Validate: invalid value 1 (out of bound >99):
+data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: invalid value 1 (out of bound >99):
     ./file.cue:12:7
     ./file.cue:5:7
     ./file.cue:13:7
@@ -62,14 +62,14 @@ data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate(
     ./file.cue:17:7
     ./file.cue:20:6
     yaml.Validate:1:4
-data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate({a!:int,b!:string,c!:bool})): error in call to encoding/yaml.Validate: field is required but not present:
+data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: field is required but not present:
     ./file.cue:13:7
     ./file.cue:5:7
     ./file.cue:12:7
     ./file.cue:16:7
     ./file.cue:17:7
     ./file.cue:26:2
-data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.ValidatePartial({a!:>99,b!:string})): error in call to encoding/yaml.ValidatePartial: invalid value 1 (out of bound >99):
+data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.ValidatePartial): error in call to encoding/yaml.ValidatePartial: invalid value 1 (out of bound >99):
     ./file.cue:16:7
     ./file.cue:5:7
     ./file.cue:12:7
