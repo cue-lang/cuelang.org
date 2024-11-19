@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "V3RH53DA8NG02E20TC1H9MD8TVNQ5PKDNCQ1TACJK3D0MT18AGLG===="
+									hash:       "R15JPJSR0PVNQCV7U68CNEMJFFGTAU2DLM8G6U88PP22KR5I2CPG===="
 									scriptHash: "TVCS3F6LMT3U2OG3ISLNF0PG1CUC2RHRH4BM3R5CB5QNSPOCR98G===="
 									steps: [{
 										doc:      ""
@@ -33,13 +33,12 @@ package site
 												  cue mod tidy [flags]
 
 												Flags:
-												      --check   check for tidiness only; do not update module.cue file
+												      --check   check for tidiness after fetching dependencies; fail if module.cue would be updated
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --strict       report errors for lossy mappings
 												      --trace        trace computation
 												  -v, --verbose      print information about progress
 
