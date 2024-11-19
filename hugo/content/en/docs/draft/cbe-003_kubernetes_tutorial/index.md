@@ -184,14 +184,14 @@ Now the file looks like:
 $ head mon/prometheus/configmap.cue
 package kube
 
-import yaml656e63 "encoding/yaml"
+import "encoding/yaml"
 
 configMap: prometheus: {
 	apiVersion: "v1"
 	kind:       "ConfigMap"
 	metadata: name: "prometheus"
 	data: {
-		"alert.rules": yaml656e63.Marshal(_cue_alert_rules)
+		"alert.rules": yaml.Marshal(_cue_alert_rules)
 ```
 
 That looks better!

@@ -10,10 +10,6 @@ Source: https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_
 {{{uploaddir "_ref"}}}
 
 {{{with _script_ "en" "cuelang.org setup"}}}
-# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
-# is fixed in v0.11.0-alpha.2 and later.
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
-
 # Required to interact with the central registry.
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json

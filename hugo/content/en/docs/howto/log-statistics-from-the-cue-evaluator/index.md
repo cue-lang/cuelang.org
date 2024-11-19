@@ -25,6 +25,7 @@ $ export CUE_STATS_FILE=stats.cue
 $ cue vet someFile.cue
 $ cat stats.cue
 CUE: {
+	EvalVersion:  2
 	Unifications: 4
 	Disjuncts:    4
 	Conjuncts:    4
@@ -34,8 +35,8 @@ CUE: {
 	Retained:     0
 }
 Go: {
-	AllocBytes:   4439056
-	AllocObjects: 45198
+	AllocBytes:   4015312
+	AllocObjects: 42077
 }
 ```
 

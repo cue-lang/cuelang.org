@@ -10,10 +10,6 @@ Source: https://raw.githubusercontent.com/cue-labs/cue-by-example/refs/heads/mai
 {{{uploaddir "_ref"}}}
 
 {{{with _script_ "en" "cuelang.org setup"}}}
-# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
-# is fixed in v0.11.0-alpha.2 and later.
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
-
 # Set up example content as a git repo.
 cd gitlab
 #ellipsis 0
