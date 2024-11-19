@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86003e4b_baee1029",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-19T16:05:47Z",
+      "side": 1,
+      "message": "PTAL. I\u0027m not sure it\u0027s worth going through a `ci/test` cycle to prove this change to master-only logic, especially given that the race condition it protects against is very unlikely to occur during that testing.",
+      "revId": "c3f3a4362f08d65fc4cc70cdcbf4663744a13042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
