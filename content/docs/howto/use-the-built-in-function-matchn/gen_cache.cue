@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								basic:                   "dh2I6kcHmkjcQPh5LYJ0K8SJKukTZcTyfAtcnWKfIsk="
-								"one of":                "RGn/a4aBbtu/Li0vD0lxK/TmpjCm0D5Bx3QA5n/mjbQ="
-								"any of":                "wu68NBANQTB/2CbReiG8aeMwwJE7Hd2NacAYNaUHKiY="
-								"all of":                "dMFbsgInprYbvOV/en2CTn3ZIm3WaSRvXfDpSxvPS2k="
-								not:                     "I9wzsh6+WFT2+v1lrvVDzB+BwUNkHrKHAc66X0X3Wqo="
-								"all but one":           "5zLi0/JTajFSgCymSXDW6KVUU2CpvuQNGylfyTNfb4c="
-								composite:               "4BNfjeK/GBVtBnKOjmfP8tEpzTvODzbm0GphbAY2Bgw="
-								"future: helper fields": "pUh7o2MfOpVBz0rt0rA+EZXtcwkSqLEDEh3jXWJWqLg="
+								basic:                   "H/ZYq7H3oANlDh39Wf4p4r5n1fBYA9E0eNyr/XT9qDU="
+								"one of":                "ovjYmA/IXtFHA/JiqvBMfOhZQz+QuvqhFZYFhq9aJrE="
+								"any of":                "iICWIer0lxOB+zoWLwW9cPo9aoBM+l/r0k9+VQS0LFE="
+								"all of":                "zlpK7TBigWH6+ATMgsQpWFLjCoxporV+kITi5GCrHSc="
+								not:                     "IQ4m7StT1AWZrnp2LQKU3WauzwDFg6CnL91B34M+4XU="
+								"all but one":           "UAj8G9aniqjoQAv/6rKKd+VG2qTLef7eQkgr1SZ/zNU="
+								composite:               "QKDe86cPB/s/sww37/YZ5lsquvZKZWkSTpHKOAjskog="
+								"future: helper fields": "M0PhZwKHfwgo213Tn+lxVGiCQtOQRfKqbUZUvZgxc40="
 							}
 							multi_step: {
-								hash:       "E8LM2MIP373CR5HBA5EATL1U80Q0RC9FV3CS0UQTS5568NN2JAIG===="
-								scriptHash: "UQ9LBFDATARBC290N4RP845IRKGV69UAP08H2GJ2NOUJS53J9MDG===="
+								hash:       "ISLBVG79M6TSD8HI4VV0VB515P5NLJIQSHJCP81DRTENM3TSKQS0===="
+								scriptHash: "M0NA2GTSRG9NPM0LLCU499MMLBC119FTA5G2SM0CT9U217MR4S60===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.11.0-rc.1:$PATH"
+									cmd:      "export PATH=/cues/v0.11.0:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -29,7 +29,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.0-rc.1
+											cue version v0.11.0
 											...
 
 											"""
