@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								file: "6vWwn8sUtf1NKuuZx8Nw1phlJQbR0OdkJTAoDfm0ypo="
+								file: "J1G94ytECvYEZlUQ1/ar/IpFITAU6IYEEMfiOmn039Q="
 							}
 							multi_step: {
-								hash:       "MJHB9G90LO2GGA9480G7FJDDAALR43EKAPKPGQ7L5IH9KH6KFA6G===="
+								hash:       "4FCBMKG21DUSDVM23MJ756G0LHA6MNE545TVPBTHH5UV3NP5HP0G===="
 								scriptHash: "HJ6F16PVM5R51CRIHNQVO53OFBM44DDS5QVFKQUAO2SO9APOU95G===="
 								steps: [{
 									doc:      ""
@@ -28,6 +28,7 @@ package site
 									exitCode: 0
 									output: """
 											CUE: {
+											\tEvalVersion:  2
 											\tUnifications: 4
 											\tDisjuncts:    4
 											\tConjuncts:    4
@@ -37,8 +38,8 @@ package site
 											\tRetained:     0
 											}
 											Go: {
-											\tAllocBytes:   4439056
-											\tAllocObjects: 45198
+											\tAllocBytes:   4015312
+											\tAllocObjects: 42077
 											}
 
 											"""
