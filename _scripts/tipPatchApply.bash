@@ -21,4 +21,4 @@ then
 fi
 
 # --index: working tree and index must be identical.
-git apply --index $patchPath
+git apply --index $patchPath --allow-empty

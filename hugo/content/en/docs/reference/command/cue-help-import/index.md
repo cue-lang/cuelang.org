@@ -227,7 +227,7 @@ Flags:
       --list                     concatenate multiple objects into a list
       --merge                    merge non-CUE files (default true)
   -n, --name string              glob filter for non-CUE file names in directories
-  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue filetypes' for more info)
+  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
   -p, --package string           package name for non-CUE files
   -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
       --proto_enum string        mode for rendering enums (int|json) (default "int")
@@ -240,7 +240,6 @@ Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --strict       report errors for lossy mappings
       --trace        trace computation
   -v, --verbose      print information about progress
 ```
