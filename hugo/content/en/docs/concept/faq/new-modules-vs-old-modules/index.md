@@ -1,7 +1,7 @@
 ---
 title: New modules vs old modules
-toc_hide: true
 tags: [modules]
+toc_hide: false
 ---
 
 The [v0.9.0](/releases/v0.9.0) release of CUE
