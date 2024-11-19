@@ -2,7 +2,7 @@
 title: Removing list arithmetic operators in CUE 0.11
 authors: [jpluscplusm]
 tags: [language]
-toc_hide: true
+toc_hide: false
 ---
 
 This guide answers some questions about a language change that happened in CUE
