@@ -48,7 +48,7 @@ _missingFieldSchema: {
 	c!: bool // NOT a validation failure
 }
 -- out --
-data: invalid value "{\n  \"a\": 1,\n  \"b\": \"two\"\n}" (does not satisfy encoding/json.Validate({a!:>99,b!:string})): error in call to encoding/json.Validate: invalid value 1 (out of bound >99):
+data: invalid value "{\n  \"a\": 1,\n  \"b\": \"two\"\n}" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: invalid value 1 (out of bound >99):
     ./file.cue:14:7
     ./file.cue:5:7
     ./file.cue:15:7
