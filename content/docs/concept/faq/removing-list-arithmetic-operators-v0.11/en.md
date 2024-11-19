@@ -2,7 +2,7 @@
 title: Removing list arithmetic operators in CUE 0.11
 authors: [jpluscplusm]
 tags: [language]
-toc_hide: true
+toc_hide: false
 ---
 
 {{{with _script_ "en" "HIDDEN: set up access to CUE v0.11 before release"}}}
