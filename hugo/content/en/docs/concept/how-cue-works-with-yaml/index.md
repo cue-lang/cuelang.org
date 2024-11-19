@@ -273,12 +273,12 @@ item: painting: """
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBmdXJuaXR1cmUuY3Vl" >}}
 $ cue vet furniture.cue
-item.painting: invalid value "width: 34\nHEIGHT: 12\ndepth: 0.2" (does not satisfy encoding/yaml.Validate({width:number,depth:number,height:number})): error in call to encoding/yaml.Validate: field not allowed:
+item.painting: invalid value "width: 34\nHEIGHT: 12\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: field not allowed:
     ./furniture.cue:10:17
     ./furniture.cue:3:14
     ./furniture.cue:25:17
     yaml.Validate:2:1
-item.table: invalid value "width: \"34\"\nheight: 23\ndepth: 0.2" (does not satisfy encoding/yaml.Validate({width:number,depth:number,height:number})): error in call to encoding/yaml.Validate: conflicting values number and "34" (mismatched types number and string):
+item.table: invalid value "width: \"34\"\nheight: 23\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: conflicting values number and "34" (mismatched types number and string):
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:19:14

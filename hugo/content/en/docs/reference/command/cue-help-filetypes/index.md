@@ -70,6 +70,14 @@ defaults as requested.
     graph       Like data, but allow references.
     schema      Export data and definitions.
 
+The following tags are only valid in combination with other tags,
+and influence the functioning of the codec. The tag they are
+valid with is mentioned in parentheses at the end.
+
+    strictFeatures	report errors for lossy mappings. (jsonschema)
+    strictKeywords	report errors for unknown keywords (jsonschema)
+    strict			report errors for either of the above (jsonschema)
+
 Many commands also support the --out and --outfile/-o flags.
 The --out flag specifies the output type using a qualifier
 (without the ':'). The -o flag specifies an output file

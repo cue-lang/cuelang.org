@@ -272,13 +272,13 @@ item: painting: #"{ "width": 34, "HEIGHT": 12, "depth": 0.2 }"#
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBmdXJuaXR1cmUuY3Vl" >}}
 $ cue vet furniture.cue
-item.painting: invalid value "{ \"width\": 34, \"HEIGHT\": 12, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate({width:number,depth:number,height:number})): error in call to encoding/json.Validate: field not allowed:
+item.painting: invalid value "{ \"width\": 34, \"HEIGHT\": 12, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: field not allowed:
     ./furniture.cue:10:17
     ./furniture.cue:3:14
     ./furniture.cue:17:17
     json.Validate:1:1
     json.Validate:1:16
-item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate({width:number,depth:number,height:number})): error in call to encoding/json.Validate: conflicting values number and "34" (mismatched types number and string):
+item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: conflicting values number and "34" (mismatched types number and string):
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:15:14
