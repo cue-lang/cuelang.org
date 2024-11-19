@@ -7,25 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "YI1tM1Y/4cUYzd2lie5dPNuHodnmb4DulIY5VmxlP9s="
-								"5":  "ImMiVSrixVv+Lv93eZ23KDjwvjU4Ar3pykRWtmJ2X7I="
-								"10": "xpQhyCd99yj2Lb1V9oTuTdBnXglze1EYL1xXfIElIR4="
-								"11": "hXjXXNeZLh7Vn/VYtDAlusOezgvweeNp/iMViCeWykQ="
-								"12": "0P+MyzkceqkcQOJRqcqLMo7KFjBw+1O/JIHsdY/fIAc="
-								"14": "xpA9AWa2dvVimyGAYMj7m8QS9gFKr5VYurXJZEU92F4="
+								"4":  "InJV3jfKMSn3BZeZ8LLS4Uoo9ZtXkROa3MoAzfljjj4="
+								"5":  "1pbj5Pv3HSRiQc1H0KhXPILrHBpr3ZGwjx0Zn2UEgJI="
+								"10": "Y1pcT6kv2OEjL/gdhZ4aEqzaK2HnP4dZUazF9VREdxU="
+								"11": "FsKoLALzAmpBf8h1eZVK2u4J24hz6dxbNn1bpgUIWfc="
+								"12": "hBcoWXqqHGtTmNQ6nFQ2t4sD841j/QquRT3+Bk69sfA="
+								"14": "CwfxnvuU0H/jyGsY3q4iX813YcpqpkMfo01i31P7o/Y="
 							}
 							multi_step: {
-								hash:       "7DA0KGL1OKFS50CAALOUDTKUH6U7566QMUCLEGGLU0LDKOM9TSM0===="
-								scriptHash: "OL26CQT59VP3NJKQ6E290QPQ7I1PLKUDGPGIOJ1QJHV52ER8VUHG===="
+								hash:       "IBRPAQ993GOOK606SFIR16GFUI30T729L3V5DR51ACP419NSBUTG===="
+								scriptHash: "JDMFCRKCVQU5H71EDL64A02NTJMOLU86EKO0PU80IOJJD6S24T6G===="
 								steps: [{
-									doc: """
-											# Required because v0.10.0 suffers from https://cuelang.org/issue/3462, which
-											# is fixed in v0.11.0-alpha.2 and later.
-											"""
-									cmd:      "export PATH=/cues/v0.11.0-rc.1:$PATH"
-									exitCode: 0
-									output:   ""
-								}, {
 									doc:      "# Required to interact with the central registry."
 									cmd:      "mkdir -p $HOME/.config/cue"
 									exitCode: 0
