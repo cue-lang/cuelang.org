@@ -2,7 +2,7 @@
 # This includes formatting an upload node, running a script node, and
 # skipping formatting a file in another upload node.
 
-env CUE_TEST_LOGINS=blah
+env CUE_TEST_TOKEN=blah
 
 unquote content/dir/en.md golden/content/dir/en.md.writeBack
 
@@ -148,7 +148,7 @@ Hello!
 >{{{end}}}
 >
 >{{{with script "en" "passed in env var"}}}
->echo $CUE_TEST_LOGINS
+>echo $CUE_TEST_TOKEN
 >{{{end}}}
 -- golden/content/dir/en.md.writeBack --
 >---
@@ -217,7 +217,7 @@ Hello!
 >{{{end}}}
 >
 >{{{with script "en" "passed in env var"}}}
->echo $CUE_TEST_LOGINS
+>echo $CUE_TEST_TOKEN
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
@@ -286,8 +286,8 @@ $ echo v0.9.0-alpha.3
 v0.9.0-alpha.3
 ```
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkQ1VFX1RFU1RfTE9HSU5T" }
-$ echo $CUE_TEST_LOGINS
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkQ1VFX1RFU1RfVE9LRU4=" }
+$ echo $CUE_TEST_TOKEN
 blah
 ```
 -- golden/content/dir/gen_cache.cue --
@@ -303,8 +303,8 @@ package site
 						"in-subdir":       "0qJmh3aq7QZU2/HOLE30MQebvDJcPzZbV6DUBf0kyNM="
 					}
 					multi_step: {
-						hash:       "J4VHBNFQTQD3N68LBEHKLFF8JBD9SEROLP4Q44MPPKE5AGTIUVRG===="
-						scriptHash: "RTE18RDQ3BFG4B5U2VR92496OPO5NOT61C424QBCDDT1RAAGPOUG===="
+						hash:       "GD1187QULVR0CAVNEKJSF6FI2AM4140HV1PAG1US1BHP0JF9DPO0===="
+						scriptHash: "02PJ6F8RO7BKDOHF8KB22BHP1NPHBPA69GLCGOB70RKPN9PG8IIG===="
 						steps: [{
 							doc:      ""
 							cmd:      "cat nested/file.txt"
@@ -388,7 +388,7 @@ package site
 									"""
 						}, {
 							doc:      ""
-							cmd:      "echo $CUE_TEST_LOGINS"
+							cmd:      "echo $CUE_TEST_TOKEN"
 							exitCode: 0
 							output: """
 									blah
