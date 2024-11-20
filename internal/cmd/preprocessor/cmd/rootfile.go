@@ -705,10 +705,10 @@ func (m *multiStepScript) run() {
 		// otherwise stderr is not line buffered
 		"-t",
 
-		// TODO: as a temporary measure, pass CUE_TEST_LOGINS through from the
+		// TODO: as a temporary measure, pass CUE_TEST_TOKEN through from the
 		// host (documentation author) environment to the running multi-step
-		// script. CUE_TEST_LOGINS should be set to a string that can be written
-		// to $CUE_CONFIG_DIR/logins.json. This allows us to perform a headless
+		// script. CUE_TEST_TOKEN should be set to a string that can be used
+		// via `cue login --token`. This allows us to perform a headless
 		// 'cue login' step in a guide, whilst asking the user (via #norun
 		// script) to perform an actual 'cue login'.
 		//
@@ -724,11 +724,11 @@ func (m *multiStepScript) run() {
 		// well-known test users it requires. The preprocessor can then lookup
 		// the credentials in the host-provided blob, and make the credentials
 		// available via well-known environment variables e.g.
-		// USER1_CUE_TEST_LOGINS or similar. This approach will also allow us to
+		// USER1_CUE_TEST_TOKEN or similar. This approach will also allow us to
 		// know precisely what data that is passed in is credentials. We can also
 		// therefore perform a final "blanking" phase for safety's sake where we
 		// string replace credentials with '*****' or similar.
-		"-e", "CUE_TEST_LOGINS",
+		"-e", "CUE_TEST_TOKEN",
 
 		// mount the bash script
 		"--mount", fmt.Sprintf("type=bind,source=%s,target=/scripts,readonly", scriptsDir),
