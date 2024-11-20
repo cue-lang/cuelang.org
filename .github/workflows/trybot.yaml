@@ -201,12 +201,8 @@ jobs:
       - name: Check Playground module is tidy
         run: go mod tidy
         working-directory: playground
-      - name: write $HOME/.config/cue/logins.json
-        run: |-
-          mkdir -p $HOME/.config/cue
-          cat <<EOD > $HOME/.config/cue/logins.json
-          ${{ secrets.PORCUEPINE_LOGINS_JSON }}
-          EOD
+      - name: log into the central registry as porcuepine
+        run: go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - name: Dist
         run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app
       - name: Check that git is clean at the end of the job
