@@ -41,15 +41,15 @@ when invoking a supported `cue` command:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtVCAtLW91dCBjdWUgfCBzb3J0" }
 $ cue export -T --out cue | sort
-cpuArchitecture: "amd64"
-currentHostname: "fd46025f571f"
-currentTimeA:    "2024-07-24T12:16:36.998462958Z"
-currentTimeB:    "2024-07-24T12:16:36.998462958Z"
+cpuArchitecture: "arm64"
+currentHostname: "7c8be7f9b8ee"
+currentTimeA:    "2024-11-21T12:24:01.928819957Z"
+currentTimeB:    "2024-11-21T12:24:01.928819957Z"
 currentUsername: "root"
 directory:       "/home/runner"
 operatingSystem: "linux"
-randomnessA:     191422226613386244533905883473376449771
-randomnessB:     191422226613386244533905883473376449771
+randomnessA:     48143939811130088532707076255718137665
+randomnessB:     48143939811130088532707076255718137665
 ```
 
 In the CUE source, notice that the `rand` and `now` tag variables were
@@ -63,10 +63,10 @@ the `now` and `rand` variables are completely unstable, as demonstrated here by
 their values being different to the values shown above:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVQgfCBncmVwIC1lIF5jdXJyZW50VGltZSAtZSBecmFuZG9t" }
 $ cue eval -T | grep -e ^currentTime -e ^random
-randomnessA:     311890454198696002262433839322444861509
-randomnessB:     311890454198696002262433839322444861509
-currentTimeA:    "2024-07-24T12:16:38.716151613Z"
-currentTimeB:    "2024-07-24T12:16:38.716151613Z"
+randomnessA:     256474124597080097645628343043781257633
+randomnessB:     256474124597080097645628343043781257633
+currentTimeA:    "2024-11-21T12:24:03.630382379Z"
+currentTimeB:    "2024-11-21T12:24:03.630382379Z"
 ```
 
 ## Overridding system information
@@ -87,7 +87,7 @@ information for fields associated with the tag:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVR0IGY9MTIzMTIzMTIzMDAwIHwgZ3JlcCBecmFuZG9t" }
 $ cue eval -Tt f=123123123000 | grep ^random
 randomnessA:     123123123000
-randomnessB:     297085020426887323714942717980521585483
+randomnessB:     154463835233876152095912350456117094604
 ```
 
 ## Related content
