@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								example:                 "4X7UYRFETna6/wGMazrdvy1TOKOWTf1Z/v1VFWHHeVw="
-								"future: helper fields": "ZipPagP/IqhtVNt4ifsAVo3F8mrs/nferA/p/+x7Id0="
+								example:                 "3T3SG2/OEg7Mb9589yMFINvMUoLZo2yJGv/0O90Kb4s="
+								"future: helper fields": "n8oxV/RYKW1BbzcGIZLfZBF0mbI8C4+/22qVIV2k5eo="
 							}
 							multi_step: {
-								hash:       "SK8HBU466GI9G88LE83ORDAL9B79JINK25LENS2E3OJ1VTMPQDN0===="
+								hash:       "4AC2E5EG944VTT9M2374J9GALJB79GBNFE7P297AN62EM2LVS5GG===="
 								scriptHash: "DFQ7AR8CM6AD7KN6T2GG9RC389GLMATEH3D0IR21BEIBFDQ95BSG===="
 								steps: [{
 									doc:      ""
