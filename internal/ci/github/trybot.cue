@@ -132,7 +132,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// TODO: add cache dir to CI cache when it's visible via https://cuelang.org/issue/2838.
 			githubactions.#Step & {
 				name: "Populate CUE dependency cache"
-				env: CUELANG_CUE_LOGINS: "${{ secrets.NOTCUECKOO_CUE_LOGINS }}"
+				env: CUE_TOKEN: "${{ secrets.NOTCUECKOO_CUE_TOKEN }}"
 				run: "_scripts/cacheWarm.bash"
 			},
 
