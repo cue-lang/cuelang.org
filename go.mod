@@ -3,7 +3,7 @@ module github.com/cue-lang/cuelang.org
 go 1.23
 
 require (
-	cuelang.org/go v0.11.0-alpha.4
+	cuelang.org/go v0.11.0
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/fsnotify/fsnotify v1.6.0
@@ -14,8 +14,8 @@ require (
 	golang.org/x/mod v0.21.0
 	golang.org/x/oauth2 v0.23.0
 	golang.org/x/sync v0.8.0
-	golang.org/x/text v0.18.0
-	golang.org/x/tools v0.25.0
+	golang.org/x/text v0.19.0
+	golang.org/x/tools v0.26.0
 	mvdan.cc/sh/v3 v3.7.0
 )
 
@@ -36,7 +36,7 @@ require (
 	github.com/protocolbuffers/txtpbfmt v0.0.0-20240823084532-8e6b51fa9bef // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/tetratelabs/wazero v1.6.0 // indirect
-	golang.org/x/net v0.29.0 // indirect
-	golang.org/x/sys v0.25.0 // indirect
+	golang.org/x/net v0.30.0 // indirect
+	golang.org/x/sys v0.26.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
