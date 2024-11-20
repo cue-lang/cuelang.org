@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "78B4GBOBAV6ONGGIU5R9D78J8C6LT928123IBB42KLCO60JVEN5G===="
+									hash:       "02FU151U97IFQLP4ORGU1G4DVE3BO11GG2V10SASAQUTC8PIA9O0===="
 									scriptHash: "GQ8DVHRF6490Q2KMAGC9PCNU144RCC663AEQL8KDBTJ1DVM1POLG===="
 									steps: [{
 										doc:      ""
