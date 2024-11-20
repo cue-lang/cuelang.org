@@ -16,6 +16,24 @@
       "message": "nit: prefix with `deps: `.",
       "revId": "ecf574c961c57c11bf302a2b540f7937ab15a3ed",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b000165_879e2c44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-11-20T14:10:42Z",
+      "side": 1,
+      "message": "I see a variety of prefixes in the past, and from what I know we really only enforce prefixes for packages, so I hope it\u0027s OK that I skip this nit for the sake of not spending another 10m rebasing and re-testing this chain.",
+      "parentUuid": "f8b51209_c3a40353",
+      "revId": "ecf574c961c57c11bf302a2b540f7937ab15a3ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
