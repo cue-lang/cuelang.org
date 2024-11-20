@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									"list-example": "7OkL7ixEAKLXgpL4AWdnaVrEh0oigwGpHVbLU+KT+e4="
+									"list-example": "KDnT/kTGhTAZrukWQq0l9hXJq3uJ0vqq2umwYeuFn/I="
 								}
 							}
 						}
