@@ -218,13 +218,8 @@ workflows: trybot: _repo.bashWorkflow & {
 			// Registry) here in order to more carefully control in a CI
 			// environment who has access to this endpoint.
 			githubactions.#Step & {
-				name: "write $HOME/.config/cue/logins.json"
-				run: """
-					mkdir -p $HOME/.config/cue
-					cat <<EOD > $HOME/.config/cue/logins.json
-					${{ secrets.PORCUEPINE_LOGINS_JSON }}
-					EOD
-					"""
+				name: "log into the central registry as porcuepine"
+				run: "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
 			},
 
 			_dist & {
