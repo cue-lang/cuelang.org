@@ -171,7 +171,7 @@ jobs:
         run: _scripts/contentLint.bash
       - name: Populate CUE dependency cache
         env:
-          CUELANG_CUE_LOGINS: ${{ secrets.NOTCUECKOO_CUE_LOGINS }}
+          CUE_TOKEN: ${{ secrets.NOTCUECKOO_CUE_TOKEN }}
         run: _scripts/cacheWarm.bash
       - name: Check site CUE configuration
         run: _scripts/runPreprocessor.bash execute --check
