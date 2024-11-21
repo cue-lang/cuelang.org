@@ -705,31 +705,6 @@ func (m *multiStepScript) run() {
 		// otherwise stderr is not line buffered
 		"-t",
 
-		// TODO: as a temporary measure, pass CUE_TEST_LOGINS through from the
-		// host (documentation author) environment to the running multi-step
-		// script. CUE_TEST_LOGINS should be set to a string that can be written
-		// to $CUE_CONFIG_DIR/logins.json. This allows us to perform a headless
-		// 'cue login' step in a guide, whilst asking the user (via #norun
-		// script) to perform an actual 'cue login'.
-		//
-		// The proper/complete solution here is to have the host provide a blob
-		// of JSON that maps from a set of well-known users to credentials. These
-		// well-known users are isolated and limited bot accounts that we define
-		// to perform well-known roles. e.g. user1 has access to these repos,
-		// write access to these others, but no access to these private repos.
-		// We will document the role each such user plays. The central registry
-		// will then give those with sufficient permissions the ability to create
-		// short-lived tokens for these users. The short-lived tokens can then be
-		// passed to the preprocessor. Each guide can then declare the list of
-		// well-known test users it requires. The preprocessor can then lookup
-		// the credentials in the host-provided blob, and make the credentials
-		// available via well-known environment variables e.g.
-		// USER1_CUE_TEST_LOGINS or similar. This approach will also allow us to
-		// know precisely what data that is passed in is credentials. We can also
-		// therefore perform a final "blanking" phase for safety's sake where we
-		// string replace credentials with '*****' or similar.
-		"-e", "CUE_TEST_LOGINS",
-
 		// mount the bash script
 		"--mount", fmt.Sprintf("type=bind,source=%s,target=/scripts,readonly", scriptsDir),
 	)
