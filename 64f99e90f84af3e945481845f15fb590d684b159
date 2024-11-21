@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e812e57_701cb85b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-21T18:05:41Z",
+      "side": 1,
+      "message": "PTAL. I\u0027m interested if there\u0027s better terminology than \"type check\" for `if (X \u0026 #X) !\u003d _|_`, or a better way to reference the \"inequality test\".",
+      "revId": "64f99e90f84af3e945481845f15fb590d684b159",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
