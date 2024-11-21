@@ -33,6 +33,24 @@
       "message": "I don\u0027t believe we currently use `CUE_TEST_LOGINS` in any on-page scripts. Instead, we manually construct `cue/tokens.json` by interpolating values from vars like `$TEST_USER_AUTHN_CUE_USER_COLLABORATOR_RW`. e.g. near the top of `content/docs/tutorial/publishing-modules-to-the-central-registry/en.md`.\n\nGiven that I\u0027ve never used the variable that this change is replacing, and we don\u0027t have any live uses that would prove its correctness beyond the test (which isn\u0027t actually using such a token), I feel I need to ask @paul@myitcv.io to take a look and validate that the new behaviour would be in line with his intent from the original comment.",
       "revId": "3af21f0e631f35fed8d563359bc4008d8253bf3e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d334991_e0a35f21",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-21T12:26:37Z",
+      "side": 1,
+      "message": "I resolved this by adding another CL into the stack. `CUE_TEST_LOGINS` was legacy, so easily removed.",
+      "parentUuid": "a7ac851d_00f153c3",
+      "revId": "3af21f0e631f35fed8d563359bc4008d8253bf3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
