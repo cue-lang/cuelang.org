@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0934eb7_7d37d66d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-22T15:44:12Z",
+      "side": 1,
+      "message": "PTAL and re-review in light of the following:\n\nBuilding on the discussion with @matthew@cue.works in https://discord.com/channels/1238032673109311508/1306633189078597712 I\u0027ve broadened the explanation of \"incomplete\" away from just \"fields that aren\u0027t present\", and included language that\u0027s more in line with [the spec](https://cuelang.org/docs/reference/spec/#expressions). It leans more on the point-in-time nature of a CUE evaluation, and the fact that extra information can always be added to a later evaluation of the same CUE.",
+      "revId": "f81f5d0d913feaa7153710f0a82ca96a86771609",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
