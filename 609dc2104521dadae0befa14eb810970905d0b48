@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87de253f_bfd15e41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-23T06:16:57Z",
+      "side": 1,
+      "message": "Added a brief thought on what I see as the key sentence/paragraph.",
+      "revId": "609dc2104521dadae0befa14eb810970905d0b48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b0acd58_9c552b35",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-23T06:16:57Z",
+      "side": 1,
+      "message": "\"otherwise valid\" - bit wordy otherwise.",
+      "range": {
+        "startLine": 16,
+        "startChar": 21,
+        "endLine": 16,
+        "endChar": 48
+      },
+      "revId": "609dc2104521dadae0befa14eb810970905d0b48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "960ac7f9_b024c8bb",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-23T06:16:57Z",
+      "side": 1,
+      "message": "I think the worded \"added\" here is a bit unfortunate given that the calculation that cannot be completed is an addition 😊\n\nAlso, the presence of two \"b\" fields: `b` and `B` could easily be avoided.\n\nThe first sentence of this paragraph is key to the document to my mind. It\u0027s not quite right to say that only \"data\" can be added later. It\u0027s about the fact that CUE is in the business of combining (through unification) any amount of data, schema and everything in between (regardless of the source format): values in general. Or information if you will (I quite like that use). It\u0027s just that the CUE in example.cue alone is not sufficient to give us a concrete result. So \"in the future\" is a bit vague: unified with additional values, it could be made complete. And notice that we don\u0027t need to unify with data to make this example complete:\n\n```\nA: x: A.b\n```\n\nwould suffice.\n\nSo time isn\u0027t really the key point here; the main point is that we need more information. \n\nAlso, there is no limit to unifying with further values: it might not add anything, but just so long as the unification didn\u0027t result in an error, you\u0027re fine.\n\nSo I would see if we can get this reworded a bit.",
+      "range": {
+        "startLine": 30,
+        "startChar": 31,
+        "endLine": 30,
+        "endChar": 36
+      },
+      "revId": "609dc2104521dadae0befa14eb810970905d0b48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
