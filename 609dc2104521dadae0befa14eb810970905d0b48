@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b8181cba_5f974fec",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-25T13:27:23Z",
+      "side": 1,
+      "message": "I had used the term in this sentence, but pivoted away from it towards something (I felt that) a non-native-English speaker would find it easier to grok.\n\nI\u0027ve put it back in, in the current version. I\u0027m interested in your take on the native-speaker context versus a version using simpler language for a wider audience.",
+      "parentUuid": "8b0acd58_9c552b35",
+      "range": {
+        "startLine": 16,
+        "startChar": 21,
+        "endLine": 16,
+        "endChar": 48
+      },
+      "revId": "609dc2104521dadae0befa14eb810970905d0b48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "960ac7f9_b024c8bb",
         "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
         "patchSetId": 10
@@ -54,6 +78,30 @@
       "writtenOn": "2024-11-23T06:16:57Z",
       "side": 1,
       "message": "I think the worded \"added\" here is a bit unfortunate given that the calculation that cannot be completed is an addition 😊\n\nAlso, the presence of two \"b\" fields: `b` and `B` could easily be avoided.\n\nThe first sentence of this paragraph is key to the document to my mind. It\u0027s not quite right to say that only \"data\" can be added later. It\u0027s about the fact that CUE is in the business of combining (through unification) any amount of data, schema and everything in between (regardless of the source format): values in general. Or information if you will (I quite like that use). It\u0027s just that the CUE in example.cue alone is not sufficient to give us a concrete result. So \"in the future\" is a bit vague: unified with additional values, it could be made complete. And notice that we don\u0027t need to unify with data to make this example complete:\n\n```\nA: x: A.b\n```\n\nwould suffice.\n\nSo time isn\u0027t really the key point here; the main point is that we need more information. \n\nAlso, there is no limit to unifying with further values: it might not add anything, but just so long as the unification didn\u0027t result in an error, you\u0027re fine.\n\nSo I would see if we can get this reworded a bit.",
+      "range": {
+        "startLine": 30,
+        "startChar": 31,
+        "endLine": 30,
+        "endChar": 36
+      },
+      "revId": "609dc2104521dadae0befa14eb810970905d0b48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae29bdd2_7dedda0c",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-25T13:27:23Z",
+      "side": 1,
+      "message": "I think I\u0027ve addressed this. (To my mind) there\u0027s a nuance around the concept of incompleteness: is our example CUE incomplete at the file level; or at the package level; or (if it\u0027s only ever going to be unified with non-CUE data) is it only incomplete (or complete) for each specific evaluation that involves the CUE?\n\nI think this nuanced question can wait for a sync chat sometime, but it\u0027s a tension that I think the [spec](https://cuelang.org/docs/reference/spec/#expressions) technically answers, and where we\u0027d be helped by some more (perhaps not spec-based) examples to refer to.",
+      "parentUuid": "960ac7f9_b024c8bb",
       "range": {
         "startLine": 30,
         "startChar": 31,
