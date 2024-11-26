@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98e1aaff_33188b87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-26T15:57:39Z",
+      "side": 1,
+      "message": "PTAL. I\u0027ve made the changes we discussed.",
+      "revId": "a4f05c82a1540a23db20917cd36ad0e49231b739",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
