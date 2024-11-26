@@ -89,6 +89,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "97de9b53_88f84f92",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T13:17:22Z",
+      "side": 1,
+      "message": "I simply didn\u0027t return to finishing this sentence 😊\n\nThis wording, absent other wording on the page, might suggest to the reader that it\u0027s only type checks that require the chaining of `if` comprehensions. But per comments elsewhere, I think we should be clear it\u0027s an example of where an error would otherwise result in the second condition.",
+      "parentUuid": "16b2b703_b9af240c",
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bac1493e_68cada6b",
         "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
         "patchSetId": 5
