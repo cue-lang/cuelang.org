@@ -35,6 +35,31 @@ Learn about CUE modules using these suggested links,
 or browse through all the {{<tag modules>}} pages
 [listed below](#all-pages-tagged-modules):
 
+<!--
+{{<cards>}}
+{{<card title="Importing packages within a module"
+        label="module/local-import"
+        href="."
+>}}
+How using a module allows you to reference one package from another, inside the same package tree.
+{{</card>}}
+
+{{<card title="Do I need to publish my module?"
+        label="module/publishing"
+        href="."
+>}}
+Only certain workflows require modules to be published. Find out about them here ...
+{{</card>}}
+
+{{<card title="Adding a module dependency"
+        label="module/cue-mod-tidy"
+        href="."
+>}}
+Teach CUE that your module needs to use another module ...
+{{</card>}}
+{{</cards>}}
+-->
+
 {{<cards>}}
 {{<card title="Reference manual"
         label="reference/manual"
