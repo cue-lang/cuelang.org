@@ -33,6 +33,93 @@
       "message": "I\u0027m not fond of this example, because it only doesn\u0027t error because of a feature that users may not have realised.\n\nIf you change the example to:\n\n```\nA: x: 2\nB: A.x + C + 100\n```\n\nthen you can\u0027t eval this. You get `reference \"C\" not found`. What\u0027s different? It\u0027s just another undefined field right?\n\nIf we turn A into a definition:\n\n```\n#A: x: 2\nB: #A.x + #A.y + 100\n```\n\nthen it also doesn\u0027t work. Sadly, you get exactly a rather unhelpful error message: `undefined field: y`\n\nThe thing is, in the case of the original, the `A.o` doesn\u0027t error because for open structs, essentially you have an implicit pattern constraint `[string]: _`. Given `A` can be resolved, it then follows that `A.o` resolves to top, which doesn\u0027t error.\n\nIn the `C` case, well `C` can\u0027t be resolved at all, and although the top level package scope should behave like an open struct, name resolution doesn\u0027t default to any particular lexical scope.\n\nIn the definition case, the struct is closed, so that implicit `[string]: _` is gone, and so the field can\u0027t be found.\n\nAll of which is to say that I think this example, to me, suggests a general behaviour when it comes to unknown fields/variables that personally I think I would probably like, but is not consistent with how CUE behaves.\n\nWhat I think I would prefer to see would be an explicit top. So something like:\n\n```\nA: x: 2\nA: o: _\nB: A.x + A.o + 100\n```\n\nThis sidesteps needing to reason about whether the struct is open or closed, and the details of identifier resolution, but keeps the fact that we can\u0027t do maths involving top, and so illustrates your point about incomplete data.",
       "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a660b703_0e2c3c78",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T13:32:42Z",
+      "side": 1,
+      "message": "I like this reasoning, and the conclusion on what example to include.",
+      "parentUuid": "7a099c28_07a89ec4",
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7be307b_b5c9e744",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T13:32:42Z",
+      "side": 1,
+      "message": "Superfluous phrasing?",
+      "range": {
+        "startLine": 30,
+        "startChar": 12,
+        "endLine": 30,
+        "endChar": 33
+      },
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cb94e32_ec0ab8b9",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T13:32:42Z",
+      "side": 1,
+      "message": "Is this an attempt to word about the point \"does not introduce errors\"? If so, I would actually spell that out: \"correct\" isn\u0027t a defined term, and so will be vague/ambiguous. I think this paragraph will need a bit of tweaking following the change suggested by Matthew above.",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 15
+      },
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "127fbd2f_717e7d3a",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T13:32:42Z",
+      "side": 1,
+      "message": "I thought I had included a comment about this before but I can\u0027t find it!\n\n\"Fixing\" incomplete CUE is not limited to unifying data. (Data to me implies concrete values). e.g. the following incomplete CUE:\n\n```\na: x: _\na: y: 10\nb: a.x + a.y\n```\n\ncan be made complete by unifying with:\n\n```\na: x: a.y\n```\n\nwhich is not data.",
+      "range": {
+        "startLine": 51,
+        "startChar": 12,
+        "endLine": 51,
+        "endChar": 22
+      },
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
