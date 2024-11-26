@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adf15a19_5505e06d",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:47:00Z",
+      "side": 1,
+      "message": "It\u0027s not limited to the scenario of adding fields. For example it can be used in the case of list values:\n\n```\n[5, if true if true {4}]\n```",
+      "range": {
+        "startLine": 7,
+        "startChar": 55,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3b4b33f_ecf6850b",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:47:00Z",
+      "side": 1,
+      "message": "This is too vague to my mind. This paragraph is talking about \"conditional tests\" - can we not be precise that we are talking about an \"`if` comprehension\"? Is there a reason to not use that phrase?\n\nI think we can also briefly spell out the two ways of spelling an `if` comprehension that contains multiple conditions that must all hold: `if A \u0026\u0026 B` and `if A if B`. We can then explain that this howto explains how/when to use one vs the other. That way, the language is clear, and people are immediately clear on the reason to read on. The detail about not short-circuiting feels like it is a \"below the example\" explanation.",
+      "range": {
+        "startLine": 8,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd7e995b_547efb62",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:47:00Z",
+      "side": 1,
+      "message": "This seems a bit vague - I think we can more precise but that explanation probably sits below the example. The main driver for using chained `if` comprehensions is when the first condition can result in an error. Type checks are one such example, non-existent fields are another. Indeed I think checking for a non-existent field is probably clearer to most (citation required), because it\u0027s likely more common:\n\n```\nA: y: 5\n\nif A.x !\u003d _|_ if A.x \u003e 5 {\n  B: \"ok\"\n}\n```\n\nThen the below-the-example explanation can include a list of other situations that (like the type check) give rise to an error in case the first condition does _not_ short-circuit and the second condition is attempted.",
+      "range": {
+        "startLine": 11,
+        "startChar": 12,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16b2b703_b9af240c",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:47:00Z",
+      "side": 1,
+      "message": "This wording seems to suggest that",
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bac1493e_68cada6b",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:47:00Z",
+      "side": 1,
+      "message": "What is this example providing beyond the previous type check example?",
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
