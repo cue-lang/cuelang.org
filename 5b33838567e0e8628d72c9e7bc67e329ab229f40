@@ -33,6 +33,132 @@
       "message": "@rogpeppe@gmail.com - please can you review here?",
       "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03fcca61_2046494f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:33:58Z",
+      "side": 1,
+      "message": "Offering a brief review ahead of @rogpeppe@gmail.com who will be able to be far more precise and helpful 😊",
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac1dd276_e5ab2fb4",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:33:58Z",
+      "side": 1,
+      "message": "I would advise against making this sentence entirely bold. \n\nBut that aside; it feels a bit awkward to have this: \"yes, CUE supports symlinks except where it doesn\u0027t\", broken out by headings. It feels like we\u0027re forcing the introduction of headings where we don\u0027t need them. Can we not simply explain the point that CUE generally does support symlinks and then explain the caveats?\n\nI also feel like we need a simply bullet list of the situations that are supported. We enumerate some of them by example below, having that list of things that are supported here adds emphasis to the fact that they are generally supported. \n\nThe wording on what is not supported can then be more plain in referring to module dependencies consumed from a remote registry, and the publishing of such modules (or words to that effect - I\u0027ll leave to @rogpeppe@gmail.com).\n\n(we need not include mention of it because we don\u0027t yet support them, but local directory-based replace directives will also mean that symlinks in the target module are also honoured).",
+      "range": {
+        "startLine": 15,
+        "startChar": 49,
+        "endLine": 17,
+        "endChar": 23
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebb7254a_753ef8c5",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:33:58Z",
+      "side": 1,
+      "message": "This needs to be a bit more precise to my mind. Is the target of the symlink included as if a regular file? Or something else?",
+      "range": {
+        "startLine": 24,
+        "startChar": 63,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b009a42f_31219e64",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:33:58Z",
+      "side": 1,
+      "message": "This also needs to be made more precise given the previous point says they are not included in published modules. I think the point you are referring to here is that a module published by some other means than `cmd/cue`, i.e. a method that _did_ preserve symlinks as links in the zip file, will simply be ignored.",
+      "range": {
+        "startLine": 27,
+        "startChar": 7,
+        "endLine": 27,
+        "endChar": 69
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6c0e572_58d289f4",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:33:58Z",
+      "side": 1,
+      "message": "Any reason we have upper case file names here?",
+      "range": {
+        "startLine": 43,
+        "startChar": 3,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29ce2b75_baf12af2",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-26T12:33:58Z",
+      "side": 1,
+      "message": "I wouldn\u0027t include this here, as it suggests it\u0027s a \"first class\" use of symlinks. I would more say it\u0027s a workaround for a lack of features in `cue cmd`. Happy for it to exist as a howto elsewhere.",
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
