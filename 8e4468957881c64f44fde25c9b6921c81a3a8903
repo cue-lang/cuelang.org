@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "8e4468957881c64f44fde25c9b6921c81a3a8903",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a62e8344_c393d73e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-27T13:39:19Z",
+      "side": 1,
+      "message": "@paul@myitcv.io Please check that my introduction of a default (for real-world verisimilitude!) feels acceptable. I note that the Go code emits a result that includes the default, which feels 5% odd ... is there a code fix for this that we could/should add?",
+      "revId": "8e4468957881c64f44fde25c9b6921c81a3a8903",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
