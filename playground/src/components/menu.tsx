@@ -8,6 +8,7 @@ interface MenuProps {
     id: string;
     icon?: string;
     open?: boolean;
+    showOverlay?: boolean;
     title: string;
     type?: 'default' | 'icon' | 'icon-mobile';
     onOpen?: () => void;
@@ -106,7 +107,7 @@ export class Menu extends React.Component<PropsWithChildren<MenuProps>, MenuStat
                     </div>
                 }
 
-                { this.state.open &&
+                { (this.state.open && this.props.showOverlay !== false) &&
                     <div className="cue-menu__overlay" ref={ this.overlayRef }></div>
                 }
           </div>
@@ -132,6 +133,7 @@ export class Menu extends React.Component<PropsWithChildren<MenuProps>, MenuStat
 
     private onToggleClick(event: MouseEvent) {
         event.preventDefault();
+
         if (this.state.open) {
             this.hide();
         } else {
