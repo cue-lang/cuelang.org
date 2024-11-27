@@ -1,0 +1,88 @@
+@import '../config/colors';
+@import '../config/prefix';
+@import '../config/sizes';
+@import '../config/typography';
+@import '../mixins/list-reset';
+@import '../mixins/svg';
+
+.#{ $prefix }-tab-menu {
+    $self: &;
+
+    line-height: 1;
+    padding: 0.5rem 0;
+    position: relative;
+
+    &__list {
+        @include list-reset;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            > #{ $self }__list {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    &__title {
+        color: var(--tab-menu-color, $c-blue--darker);
+        font-weight: $weight-bold;
+        margin-bottom: 0.25rem;
+        padding: 0.25rem 1rem;
+        position: relative;
+
+        &::after {
+            background: var(--tab-menu-border, $c-grey-blue--medium);
+            content: '';
+            display: block;
+            height: 1px;
+            left: 0.5rem;
+            position: absolute;
+            right: 0.5rem;
+            top: 100%;
+        }
+    }
+
+    &__link {
+        color: var(--tab-menu-color, $c-blue--darker);
+        display: block;
+        font-size: 0.875rem;
+        font-weight: $weight-medium;
+        padding: 0.5rem 1rem;
+        position: relative;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        width: 100%;
+
+        &:focus-visible,
+        &:hover {
+            background-color: $c-grey--lighter;
+        }
+
+        &:disabled {
+            --tab-menu-color: #{ $c-grey };
+
+            pointer-events: none;
+        }
+
+        &--group {
+            padding-left: 1.75rem;
+
+            &.is-active {
+                &::before {
+                    @include svg('check', $c-black);
+
+                    display: block;
+                    height: 12px;
+                    left: 0.75rem;
+                    line-height: 12px;
+                    position: absolute;
+                    top: 0.6rem;
+                    vertical-align: -3px;
+                    width: 12px;
+                }
+            }
+
+        }
+    }
+}
