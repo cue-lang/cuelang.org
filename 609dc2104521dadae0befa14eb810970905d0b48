@@ -65,6 +65,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce97a002_adddb615",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-27T13:37:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8181cba_5f974fec",
+      "range": {
+        "startLine": 16,
+        "startChar": 21,
+        "endLine": 16,
+        "endChar": 48
+      },
+      "revId": "609dc2104521dadae0befa14eb810970905d0b48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "960ac7f9_b024c8bb",

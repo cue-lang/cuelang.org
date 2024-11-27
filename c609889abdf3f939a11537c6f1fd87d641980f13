@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "135b45d8_6bd1f4a7",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-27T13:37:33Z",
+      "side": 1,
+      "message": "We\u0027ve discussed this offline, and have opted for a real-world scenario without an entirely-missing field. This benefits from the familiarity of a link to a situation that user might actually be facing, with the explicit clarity of the points that Matthew makes above.",
+      "parentUuid": "a660b703_0e2c3c78",
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b7be307b_b5c9e744",
         "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
         "patchSetId": 11
@@ -66,6 +84,30 @@
       "writtenOn": "2024-11-26T13:32:42Z",
       "side": 1,
       "message": "Superfluous phrasing?",
+      "range": {
+        "startLine": 30,
+        "startChar": 12,
+        "endLine": 30,
+        "endChar": 33
+      },
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb3fd8ae_d36a4867",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-27T13:37:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7be307b_b5c9e744",
       "range": {
         "startLine": 30,
         "startChar": 12,
@@ -99,6 +141,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77e3d719_e612558e",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-27T13:37:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7cb94e32_ec0ab8b9",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 15
+      },
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "127fbd2f_717e7d3a",
@@ -112,6 +178,30 @@
       "writtenOn": "2024-11-26T13:32:42Z",
       "side": 1,
       "message": "I thought I had included a comment about this before but I can\u0027t find it!\n\n\"Fixing\" incomplete CUE is not limited to unifying data. (Data to me implies concrete values). e.g. the following incomplete CUE:\n\n```\na: x: _\na: y: 10\nb: a.x + a.y\n```\n\ncan be made complete by unifying with:\n\n```\na: x: a.y\n```\n\nwhich is not data.",
+      "range": {
+        "startLine": 51,
+        "startChar": 12,
+        "endLine": 51,
+        "endChar": 22
+      },
+      "revId": "c609889abdf3f939a11537c6f1fd87d641980f13",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3969c346_f1d875e1",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-27T13:37:33Z",
+      "side": 1,
+      "message": "I\u0027ve switched \"data\" for \"information\" here, which I think still makes the point whilst being technically corrrect.",
+      "parentUuid": "127fbd2f_717e7d3a",
       "range": {
         "startLine": 51,
         "startChar": 12,
