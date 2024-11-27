@@ -33,6 +33,24 @@
       "message": "@paul@myitcv.io Please check that my introduction of a default (for real-world verisimilitude!) feels acceptable. I note that the Go code emits a result that includes the default, which feels 5% odd ... is there a code fix for this that we could/should add?",
       "revId": "8e4468957881c64f44fde25c9b6921c81a3a8903",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8a5412a_ff46106d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-27T14:18:37Z",
+      "side": 1,
+      "message": "Default removed.",
+      "parentUuid": "a62e8344_c393d73e",
+      "revId": "8e4468957881c64f44fde25c9b6921c81a3a8903",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
