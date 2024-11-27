@@ -30,6 +30,7 @@
         --button-radius: #{ $b-radius };
 
         font-weight: $weight-bold;
+        gap: 1rem;
         line-height: 1;
         padding: 0 0.65rem 0 0.75rem;
 
@@ -43,16 +44,6 @@
         display: block;
         height: 18px;
         width: 18px;
-    }
-
-    &__icon {
-        & + #{ $self }__text {
-            margin-left: 0.5rem;
-        }
-    }
-
-    &__text {
-        margin-right: 0.5rem;
     }
 
     &__chevron {
@@ -150,6 +141,34 @@
         }
     }
 
+    &--tab {
+        min-width: $w-tab;
+
+        #{ $self }__button {
+            --button-background: transparent;
+            --button-border: transparent;
+            --button-color: #{ $c-blue--darker };
+            --button-background-hover: #{ $c-grey-blue--lighter };
+            --button-border-hover: #{ $c-grey-blue };
+            --button-color-hover: #{ $c-blue--darker };
+
+            font-size: 0.875rem;
+            font-weight: $weight-medium;
+            gap: 0.5rem;
+            height: 24px;
+            line-height: 22px;
+            padding: 0 .5rem;
+        }
+
+        #{ $self }__chevron {
+            margin-right: -6px;
+        }
+
+        #{ $self }__dropdown {
+            margin-top: 0;
+        }
+    }
+
     @include screen($screen-medium) {
         position: relative;
 
@@ -205,6 +224,18 @@
         &--wide {
             #{ $self }__dropdown {
                 width: 450px;
+            }
+        }
+
+        &--tab {
+            #{ $self }__button {
+                min-width: $w-tab;
+            }
+
+            #{ $self }__dropdown {
+                margin-top: 0;
+                min-width: $w-tab;
+                width: fit-content;
             }
         }
     }

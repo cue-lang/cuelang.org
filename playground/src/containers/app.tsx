@@ -30,8 +30,8 @@ import { setupWorkspaceConfig } from '@helpers/workspace';
 import { DropdownChange } from '@models/dropdown';
 import { Example } from '@models/example';
 import { HASH_KEY, hashParams } from '@models/hashParams';
-import { OPTION_TYPE } from '@models/options';
-import { WORKSPACE, Workspace, Workspaces } from '@models/workspace';
+import { OPTION_TYPE, optionCUE } from '@models/options';
+import { WORKSPACE, Workspace, Workspaces, WorkspaceTab } from '@models/workspace';
 
 interface AppProps
 {
@@ -108,28 +108,20 @@ export class App extends React.Component<AppProps, AppState>
         }
 
         // If we don't have saved code: check for example param in the url
-        if (!saved) {
-            const exampleSlug = urlSearchParams.get('example');
-            if (exampleSlug) {
-                const example = examples.find(item => item.slug === exampleSlug);
-                if (example) {
-                    activeWorkspace = availableWorkspaces[example.workspace];
-                    activeWorkspace.config = example.workspaceConfig;
-                    activeExample = example;
-                } else {
-                    // Remove example from searchparams when it's not a valid example
-                    urlSearchParams.delete('example');
-                }
-            } else { // If we don't have an example, default to displaying a specific example's content
-                const example = examples.find(item => item.slug === defaultCUEInput);
-                if (example) {
-                    activeWorkspace = availableWorkspaces[example.workspace];
-                    activeWorkspace.config = example.workspaceConfig;
-                }
+        const exampleSlug = urlSearchParams.get('example');
+        if (!saved && exampleSlug) {
+            const example = examples.find(item => item.slug === exampleSlug);
+            if (example) {
+                activeWorkspace = availableWorkspaces[example.workspace];
+                activeWorkspace.config = example.workspaceConfig;
+                activeExample = example;
+            } else {
+                // Remove example from searchparams when it's not a valid example
+                urlSearchParams.delete('example');
             }
         }
 
-        // If no workspace is set from saved code: get from params
+        // If no workspace is set from saved code or example: get from params
         if (!activeWorkspace && params[HASH_KEY.WORKSPACE]) {
             const workspaceKey = params[HASH_KEY.WORKSPACE] as WORKSPACE;
             activeWorkspace = availableWorkspaces[workspaceKey];
@@ -138,6 +130,15 @@ export class App extends React.Component<AppProps, AppState>
         // If still no workspace set, or selected workspace is not enabled: use default
         if (!activeWorkspace || !activeWorkspace.enabled) {
             activeWorkspace = defaultWorkspace;
+        }
+
+        // If we don't have an example or saved code, default to displaying a specific example's content if it fits workspace in url
+        if (!saved && !activeExample) {
+            const example = examples.find(item => item.slug === defaultCUEInput);
+            if (example && example.workspace === activeWorkspace.type) {
+                activeWorkspace = availableWorkspaces[example.workspace];
+                activeWorkspace.config = example.workspaceConfig;
+            }
         }
 
         // Setup workspace config from url params
@@ -243,7 +244,7 @@ export class App extends React.Component<AppProps, AppState>
                         showSaveURL={ this.state.showSaveURL }
                         share={ this.share.bind(this) }
                         handleOptionsChange={ this.handleOptionsChange.bind(this) }
-                        onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                        onDropdownSelect={ this.handleOptionChange.bind(this) }
                         switchWorkspace={ this.switchWorkspace.bind(this) }
                     ></Header>
                 </div>
@@ -257,16 +258,28 @@ export class App extends React.Component<AppProps, AppState>
                             <div className="cue-columns__item">
                                 { activeWorkspace.config.inputTabs.map((tab) => {
                                     const id = `${ activeWorkspace.type }-${ tab.type }`;
+
                                     return (
                                         <div className="cue-columns__subitem" key={ id }>
                                             <Tabs>
                                                 <Tab
                                                     activeItem={ tab.selected }
                                                     groupId={ tab.type }
-                                                    items={ tab.options }
-                                                    readonly={ tab.optionsReadonly }
-                                                    onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                                                    menu={ {
+                                                        options: tab.options,
+                                                        actions: {
+                                                            format: {
+                                                                show: true,
+                                                                disabled: tab.selected.value !== optionCUE.value
+                                                            },
+                                                        },
+                                                    } }
                                                     name={ tab.title }
+                                                    onOptionSelect={ this.handleOptionChange.bind(this) }
+                                                    onFormatClick={ () => {
+                                                        this.formatCode(tab);
+                                                    } }
+                                                    readonly={ tab.optionsReadonly }
                                                 >
                                                     <CodeMirror
                                                         className="cue-editor"
@@ -291,9 +304,12 @@ export class App extends React.Component<AppProps, AppState>
                                     <Tab
                                         activeItem={ outputTab.selected }
                                         groupId={ outputTab.type }
-                                        items={ outputTab.options }
+                                        menu={ {
+                                            options: outputTab.options,
+                                            actions: false,
+                                        }}
                                         readonly={ outputTab.optionsReadonly || (funcTab.enabled && funcTab.selected.value !== 'export') }
-                                        onDropdownSelect={ this.handleDropdownChange.bind(this) }
+                                        onOptionSelect={ this.handleOptionChange.bind(this) }
                                         name={ outputTab.title }
                                         type="output"
                                     >
@@ -361,7 +377,7 @@ export class App extends React.Component<AppProps, AppState>
         this.updateHash(activeWorkspace);
     }
 
-    private handleDropdownChange(change: DropdownChange): void {
+    private handleOptionChange(change: DropdownChange): void {
         this.handleOptionsChange([ change ]);
     }
 
@@ -417,13 +433,36 @@ export class App extends React.Component<AppProps, AppState>
         //     }
         // }
         //
-        // const transaction = this.outputEditor.state.update({
-        //     changes: { from: 0, to: this.outputEditor.state.doc.length, insert: result.output },
-        // });
-        // this.outputEditor.dispatch(transaction);
-        // this.outputEditor.dispatch({ selection: { anchor: 0 } });
+        // this.setState({ outputEditorValue: result.output });
         /* END OF NEW CODE */
 
+    }
+
+    private async formatCode(tab: WorkspaceTab): Promise<void> {
+        if (!this.props.WasmAPI.CUECompile ||
+            Object.keys(this.inputEditors).length === 0) {
+            return;
+        }
+
+        const activeWorkspace = this.state.workspaces[this.state.activeWorkspaceName];
+        const inputEditor = this.inputEditors[`${ activeWorkspace.type }-${ tab.type }`];
+        const code = inputEditor ? inputEditor.state.doc.toString() : '';
+        const language = tab.selected.value;
+
+        // Get result from wasm
+        const result = this.props.WasmAPI.CUECompile(language, 'fmt', language, code);
+
+        let val = result.value;
+        if (result.error !== '') {
+            console.log('error: '+result.error)
+            val = code
+        }
+
+        // Update editor
+        const transaction = inputEditor.state.update({
+            changes: { from: 0, to: inputEditor.state.doc.length, insert: val },
+        });
+        inputEditor.dispatch(transaction);
     }
 
     private async share(): Promise<void> {
@@ -435,6 +474,7 @@ export class App extends React.Component<AppProps, AppState>
             this.setState({ ...this.state, saved: true, showSaveURL: true });
         }
     }
+
 
     private getExtensions(languageValue: string): Extension[] {
         const extensions = basicSetup({
