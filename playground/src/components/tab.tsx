@@ -6,14 +6,21 @@ export interface TabProps {
     activeItem: DropdownItem;
     children: ReactNode;
     disabled?: boolean;
-    disabledText?: string;
     groupId: string;
-    items: DropdownItem[];
     name: string;
-    onDropdownSelect?: {(change: DropdownChange): void};
     open?: boolean;
-    readonly ?: boolean;
+    readonly?: boolean;
     type?: string;
+    menu?: TabMenu;
+    onOptionSelect?: {(change: DropdownChange): void};
+    onFormatClick?: { (): void }
+}
+
+export interface TabMenu {
+    options: DropdownItem[];
+    actions: {
+        format: boolean;
+    } | false;
 }
 
 const defaultProps = {

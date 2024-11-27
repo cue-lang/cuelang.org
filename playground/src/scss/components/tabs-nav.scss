@@ -51,13 +51,18 @@
 
         &.is-active {
             background-color: var(--tab-background-active, $c-white);
-            pointer-events: none;
         }
 
         &--output {
             --tab-background: #{ $c-output-bcg };
             --tab-background-hover: #{ darken($c-output-bcg, 0.2) };
             --tab-background-active: #{ $c-output-bcg };
+        }
+
+        &--button {
+            &.is-active {
+                pointer-events: none;
+            }
         }
     }
 
