@@ -16,6 +16,23 @@
       "message": "PTAL. I\u0027ve made the changes we discussed.",
       "revId": "a4f05c82a1540a23db20917cd36ad0e49231b739",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ddd98f8_5dc32ab7",
+        "filename": "content/docs/concept/modules/_en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-28T06:26:57Z",
+      "side": 1,
+      "message": "Let\u0027s jump onto a quick call to discuss the tone/detail here. I feel like this high-level introduction is going into a bit too much detail.",
+      "revId": "a4f05c82a1540a23db20917cd36ad0e49231b739",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
