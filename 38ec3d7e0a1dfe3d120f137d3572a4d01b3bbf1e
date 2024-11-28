@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ffb3bab_b08d8b54",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-28T06:23:51Z",
+      "side": 1,
+      "message": "\"a concrete `string` value\"",
+      "range": {
+        "startLine": 39,
+        "startChar": 9,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "38ec3d7e0a1dfe3d120f137d3572a4d01b3bbf1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48854b10_be0be786",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-28T06:23:51Z",
+      "side": 1,
+      "message": "We should add a comment in here linking to https://github.com/cue-lang/cue/issues/2120. We really should be able to do just `cue vet` here.",
+      "revId": "38ec3d7e0a1dfe3d120f137d3572a4d01b3bbf1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0ca86d1_c2ad9d62",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-28T06:23:51Z",
+      "side": 1,
+      "message": "\"results in incomplete values\"",
+      "range": {
+        "startLine": 57,
+        "startChar": 21,
+        "endLine": 57,
+        "endChar": 44
+      },
+      "revId": "38ec3d7e0a1dfe3d120f137d3572a4d01b3bbf1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
