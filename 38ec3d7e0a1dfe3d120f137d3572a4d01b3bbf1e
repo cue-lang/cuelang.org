@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e263146_09d41a60",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-28T13:33:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ffb3bab_b08d8b54",
+      "range": {
+        "startLine": 39,
+        "startChar": 9,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "38ec3d7e0a1dfe3d120f137d3572a4d01b3bbf1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48854b10_be0be786",
@@ -41,6 +65,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b2fb2b6_821d2b1d",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-28T13:33:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48854b10_be0be786",
+      "revId": "38ec3d7e0a1dfe3d120f137d3572a4d01b3bbf1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e0ca86d1_c2ad9d62",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-11-28T06:23:51Z",
       "side": 1,
       "message": "\"results in incomplete values\"",
+      "range": {
+        "startLine": 57,
+        "startChar": 21,
+        "endLine": 57,
+        "endChar": 44
+      },
+      "revId": "38ec3d7e0a1dfe3d120f137d3572a4d01b3bbf1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63803436_aff39f15",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-28T13:33:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0ca86d1_c2ad9d62",
       "range": {
         "startLine": 57,
         "startChar": 21,
