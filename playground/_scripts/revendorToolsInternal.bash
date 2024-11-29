@@ -9,7 +9,10 @@ cd "$rootDir/playground"
 
 playVersion="$(../_scripts/playgroundCUEVersion.bash)"
 go mod edit -require cuelang.org/go@$playVersion
-go mod tidy
+
+# Note we cannot tidy here because the playground code might not be in a valid state.
+# go mod tidy
+
 go mod download
 path="cuelang.org/go"
 version=$(go list -m -f={{.Version}} $path)
@@ -26,6 +29,8 @@ fi
 unzip -q $modCache/cache/download/$path/@v/$version.zip
 popd > /dev/null
 
+# Ensure the target of the rsync exists
+mkdir -p ./internal/cuelang_org_go_internal
 
 # TODO this is very fragile - we need to move away from this to a proper
 # dependency-based approach to minimal copy
@@ -47,3 +52,6 @@ find ./internal/cuelang_org_go_internal/ -name "*_test.go" -exec rm {} +
 
 # Retain a copy of the license
 cp $td/$path@$version/LICENSE ./internal/cuelang_org_go_internal
+
+# Now do a go mod tidy - this should now work.
+go mod tidy
