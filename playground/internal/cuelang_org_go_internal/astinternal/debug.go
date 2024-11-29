@@ -16,6 +16,8 @@ package astinternal
 
 import (
 	"fmt"
+	gotoken "go/token"
+	"reflect"
 	"strconv"
 	"strings"
 
@@ -23,6 +25,193 @@ import (
 	"cuelang.org/go/cue/token"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal"
 )
+
+// AppendDebug writes a multi-line Go-like representation of a syntax tree node,
+// including node position information and any relevant Go types.
+func AppendDebug(dst []byte, node ast.Node, config DebugConfig) []byte {
+	d := &debugPrinter{
+		cfg: config,
+		buf: dst,
+	}
+	if d.value(reflect.ValueOf(node), nil) {
+		d.newline()
+	}
+	return d.buf
+}
+
+// DebugConfig configures the behavior of [AppendDebug].
+type DebugConfig struct {
+	// Filter is called before each value in a syntax tree.
+	// Values for which the function returns false are omitted.
+	Filter func(reflect.Value) bool
+
+	// OmitEmpty causes empty strings, empty structs, empty lists,
+	// nil pointers, invalid positions, and missing tokens to be omitted.
+	OmitEmpty bool
+}
+
+type debugPrinter struct {
+	buf   []byte
+	cfg   DebugConfig
+	level int
+}
+
+// value produces the given value, omitting type information if
+// its type is the same as implied type. It reports whether
+// anything was produced.
+func (d *debugPrinter) value(v reflect.Value, impliedType reflect.Type) bool {
+	start := d.pos()
+	d.value0(v, impliedType)
+	return d.pos() > start
+}
+
+func (d *debugPrinter) value0(v reflect.Value, impliedType reflect.Type) {
+	if d.cfg.Filter != nil && !d.cfg.Filter(v) {
+		return
+	}
+	// Skip over interfaces and pointers, stopping early if nil.
+	concreteType := v.Type()
+	for {
+		k := v.Kind()
+		if k != reflect.Interface && k != reflect.Pointer {
+			break
+		}
+		if v.IsNil() {
+			if !d.cfg.OmitEmpty {
+				d.printf("nil")
+			}
+			return
+		}
+		v = v.Elem()
+		if k == reflect.Interface {
+			// For example, *ast.Ident can be the concrete type behind an ast.Expr.
+			concreteType = v.Type()
+		}
+	}
+
+	if d.cfg.OmitEmpty && v.IsZero() {
+		return
+	}
+
+	t := v.Type()
+	switch v := v.Interface().(type) {
+	// Simple types which can stringify themselves.
+	case token.Pos:
+		d.printf("%s(%q", t, v)
+		// Show relative positions too, if there are any, as they affect formatting.
+		if v.HasRelPos() {
+			d.printf(", %v", v.RelPos())
+		}
+		d.printf(")")
+		return
+	case token.Token:
+		d.printf("%s(%q)", t, v)
+		return
+	}
+
+	switch t.Kind() {
+	default:
+		// We assume all other kinds are basic in practice, like string or bool.
+		if t.PkgPath() != "" {
+			// Mention defined and non-predeclared types, for clarity.
+			d.printf("%s(%#v)", t, v)
+		} else {
+			d.printf("%#v", v)
+		}
+
+	case reflect.Slice, reflect.Struct:
+		valueStart := d.pos()
+		// We print the concrete type when it differs from an implied type.
+		if concreteType != impliedType {
+			d.printf("%s", concreteType)
+		}
+		d.printf("{")
+		d.level++
+		var anyElems bool
+		if t.Kind() == reflect.Slice {
+			anyElems = d.sliceElems(v, t.Elem())
+		} else {
+			anyElems = d.structFields(v)
+		}
+		d.level--
+		if !anyElems && d.cfg.OmitEmpty {
+			d.truncate(valueStart)
+		} else {
+			if anyElems {
+				d.newline()
+			}
+			d.printf("}")
+		}
+	}
+}
+
+func (d *debugPrinter) sliceElems(v reflect.Value, elemType reflect.Type) (anyElems bool) {
+	for i := 0; i < v.Len(); i++ {
+		ev := v.Index(i)
+		elemStart := d.pos()
+		d.newline()
+		// Note: a slice literal implies the type of its elements
+		// so we can avoid mentioning the type
+		// of each element if it matches.
+		if d.value(ev, elemType) {
+			anyElems = true
+		} else {
+			d.truncate(elemStart)
+		}
+	}
+	return anyElems
+}
+
+func (d *debugPrinter) structFields(v reflect.Value) (anyElems bool) {
+	t := v.Type()
+	for i := 0; i < v.NumField(); i++ {
+		f := t.Field(i)
+		if !gotoken.IsExported(f.Name) {
+			continue
+		}
+		switch f.Name {
+		// These fields are cyclic, and they don't represent the syntax anyway.
+		case "Scope", "Node", "Unresolved":
+			continue
+		}
+		elemStart := d.pos()
+		d.newline()
+		d.printf("%s: ", f.Name)
+		if d.value(v.Field(i), nil) {
+			anyElems = true
+		} else {
+			d.truncate(elemStart)
+		}
+	}
+	val := v.Addr().Interface()
+	if val, ok := val.(ast.Node); ok {
+		// Comments attached to a node aren't a regular field, but are still useful.
+		// The majority of nodes won't have comments, so skip them when empty.
+		if comments := ast.Comments(val); len(comments) > 0 {
+			anyElems = true
+			d.newline()
+			d.printf("Comments: ")
+			d.value(reflect.ValueOf(comments), nil)
+		}
+	}
+	return anyElems
+}
+
+func (d *debugPrinter) printf(format string, args ...any) {
+	d.buf = fmt.Appendf(d.buf, format, args...)
+}
+
+func (d *debugPrinter) newline() {
+	d.buf = fmt.Appendf(d.buf, "\n%s", strings.Repeat("\t", d.level))
+}
+
+func (d *debugPrinter) pos() int {
+	return len(d.buf)
+}
+
+func (d *debugPrinter) truncate(pos int) {
+	d.buf = d.buf[:pos]
+}
 
 func DebugStr(x interface{}) (out string) {
 	if n, ok := x.(ast.Node); ok {

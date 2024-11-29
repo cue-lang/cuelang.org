@@ -22,7 +22,7 @@ versions: {
 		prerelease: v: *latest.v | _
 		tip: v:        prerelease.v
 		default: v:    latest.v
-		playground: v: latest.v
+		playground: v: "v0.11.0"
 	}
 	let versionSet = {for _, v in cue {"\(v.v)": true}}
 	_cueVersionList: list.SortStrings([

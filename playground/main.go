@@ -15,8 +15,6 @@
 //go:build js && wasm
 // +build js,wasm
 
-//go:generate ./_scripts/revendorToolsInternal.bash
-
 package main
 
 import (
