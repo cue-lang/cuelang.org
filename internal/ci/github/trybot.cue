@@ -219,7 +219,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// environment who has access to this endpoint.
 			githubactions.#Step & {
 				name: "log into the central registry as porcuepine"
-				run: "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
+				run:  "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
 			},
 
 			_dist & {
@@ -264,50 +264,6 @@ workflows: trybot: _repo.bashWorkflow & {
 					ALGOLIA_INDEX_NAME: "cuelang.org"
 					ALGOLIA_INDEX_FILE: "../_public/algolia.json"
 				}
-			},
-
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
-				run:  "_scripts/tipPatchApply.bash"
-			},
-
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
-				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
-				// so that CLs aren't blocked by failures caused by unrelated changes.
-				if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-
-				// Force Go to bypass the module proxy and sumdb for the
-				// cuelang.org/go module, ensuring that the absolute latest CUE
-				// pseudo-version is available to test against.
-				//
-				// TODO: is this really necessary? Tracking
-				// https://golang.org/issue/70042 to confirm.
-				env: GOPRIVATE: "cuelang.org/go"
-
-				run: "_scripts/tipUseAlternativeCUE.bash"
-			},
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Build the site against the tip of cue-lang/cue"
-				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
-				// so that CLs aren't blocked by failures caused by unrelated changes.
-				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-				run: "_scripts/regenPostInfraChange.bash"
-
-				// TODO: See comment in previous step
-				env: GOPRIVATE: "cuelang.org/go"
-			},
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Deploy the site"
-				// Only run in the main repo on the default branch or its designated test branch.
-				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-				run: """
-				git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
-				_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
-				"""
-
-				// TODO: See comment in previous step
-				env: GOPRIVATE: "cuelang.org/go"
 			},
 		]
 	}
