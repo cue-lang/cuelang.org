@@ -30,8 +30,6 @@ import (
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
 )
 
-//go:generate ./_scripts/cpWasmExec.bash
-
 type function string
 
 const (
