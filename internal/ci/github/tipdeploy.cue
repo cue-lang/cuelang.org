@@ -1,4 +1,4 @@
-// Copyright 2022 The CUE Authors
+// Copyright 2024 The CUE Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,15 +24,11 @@ import (
 	"github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
-workflows: trybot: _repo.bashWorkflow & {
-	name: _repo.trybot.name
+workflows: tipdeploy: _repo.bashWorkflow & {
+	name: "tip deploy"
 
 	on: {
-		push: {
-			branches: list.Concat([[_repo.testDefaultBranch], _repo.protectedBranchPatterns]) // do not run PR branches
-			"tags-ignore": [_repo.releaseTagPattern]
-		}
-		pull_request: {}
+		push: branches: list.Concat([[_repo.testDefaultBranch], _repo.protectedBranchPatterns]) // do not run PR branches
 
 		// Allow the trybots to run in response to a workflow_dispatch event.
 		// One source of workflow_dispatch events is the daily_tip_check
@@ -51,19 +47,13 @@ workflows: trybot: _repo.bashWorkflow & {
 
 	jobs: test: {
 		"runs-on": _repo.linuxMachine
-
-		// Only run a deploy of tip if we are running as part of the trybot repo,
-		// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
-		let _netlifyStep = _netlifyDeploy & {
-			if:     "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
-			#site:  _repo.netlifySites.cls
-			#alias: "cl-${{ \(_dispatchTrailerExpr).CL }}-${{ \(_dispatchTrailerExpr).patchset }}"
-			name:   "Deploy preview of CL"
+		concurrency: {
+			group: "tip deploy"
+			// We do not set this to avoid getting failure messages for a cancel.
+			// "cancel-in-progress": true
 		}
 
 		steps: [
-			_updateHomebrew,
-
 			for v in _repo.checkoutCode {v},
 
 			// Early check to fail in case we are running as a transitive result
@@ -136,75 +126,6 @@ workflows: trybot: _repo.bashWorkflow & {
 				run: "_scripts/cacheWarm.bash"
 			},
 
-			// We can perform an early check that ensures page.cue files are
-			// consistent with respect to their containing directory path.,
-			githubactions.#Step & {
-				name: "Check site CUE configuration"
-				run:  "_scripts/runPreprocessor.bash execute --check"
-			},
-
-			// Go generate steps
-			_goGenerate & {
-				name: "Regenerate"
-			},
-
-			// Go generate steps in playground
-			_goGenerate & {
-				name:                "Regenerate Playground"
-				"working-directory": "playground"
-			},
-
-			// Early check on clean repo
-			_repo.checkGitClean,
-
-			// Rebuild docker image
-			githubactions.#Step & {
-				run: "./_scripts/buildDockerImage.bash"
-			},
-
-			// npm install in hugo to allow serve test to pass
-			//
-			// TODO: make this a more principled change.
-			githubactions.#Step & {
-				run:                 "npm install"
-				"working-directory": "hugo"
-			},
-
-			// Go test steps
-			_goTest & {
-				name: "Test"
-			},
-
-			// Go test steps in playground
-			_goTest & {
-				name:                "Test Playground"
-				"working-directory": "playground"
-			},
-
-			// Run staticcheck
-			githubactions.#Step & {
-				name: "staticcheck"
-				run:  "./_scripts/staticcheck.bash"
-			},
-
-			// Run staticcheck in playground
-			githubactions.#Step & {
-				name:                "staticcheck Playground"
-				run:                 "../_scripts/staticcheck.bash"
-				"working-directory": "playground"
-			},
-
-			// go mod tidy
-			_modTidy & {
-				name: "Check module is tidy"
-			},
-
-			// go mod tidy playground
-			_modTidy & {
-				name:                "Check Playground module is tidy"
-				"working-directory": "playground"
-			},
-
 			// A number of pages that are part of cuelang.org require interacting
 			// with the Central Registry. These pages require users with slightly
 			// different access levels, in order to simulate (for example) private
@@ -222,48 +143,48 @@ workflows: trybot: _repo.bashWorkflow & {
 				run:  "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
 			},
 
-			_dist & {
-				_baseURL: _netlifyStep.#prime_url.CL
+			githubactions.#Step & {
+				name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
+				run:  "_scripts/tipPatchApply.bash"
 			},
 
-			// Check on clean repo prior to deploy
-			_repo.checkGitClean,
-
-			// Now that we are generated, tested, and the repo is confirmed
-			// as clean, verify that the playground CUE version matches the
-			// site default
 			githubactions.#Step & {
+				name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
+				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
+				// so that CLs aren't blocked by failures caused by unrelated changes.
+				if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
+
+				// Force Go to bypass the module proxy and sumdb for the
+				// cuelang.org/go module, ensuring that the absolute latest CUE
+				// pseudo-version is available to test against.
+				//
+				// TODO: is this really necessary? Tracking
+				// https://golang.org/issue/70042 to confirm.
+				env: GOPRIVATE: "cuelang.org/go"
+
+				run: "_scripts/tipUseAlternativeCUE.bash"
+			},
+			githubactions.#Step & {
+				name: "tip.cuelang.org: Build the site against the tip of cue-lang/cue"
+				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
+				// so that CLs aren't blocked by failures caused by unrelated changes.
+				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
+				run: "_scripts/regenPostInfraChange.bash"
+
+				// TODO: See comment in previous step
+				env: GOPRIVATE: "cuelang.org/go"
+			},
+			githubactions.#Step & {
+				name: "tip.cuelang.org: Deploy the site"
+				// Only run in the main repo on the default branch or its designated test branch.
+				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 				run: """
-					./playground/_scripts/checkCUEVersion.bash
-					"""
-			},
+				git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
+				_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
+				"""
 
-			// Now the frontend build has happened, ensure that linters pass
-			githubactions.#Step & {
-				"working-directory": "hugo"
-				run: """
-					npm run lint
-					"""
-			},
-
-			_installNetlifyCLI & {
-				if: "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
-			},
-
-			_netlifyStep,
-
-			githubactions.#Step & {
-				// Only run in the main repo on the default branch, so only live
-				// content gets indexed.
-				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)')"
-				run:                 "npm run algolia"
-				"working-directory": "hugo"
-				env: {
-					ALGOLIA_APP_ID:     "5LXFM0O81Q"
-					ALGOLIA_ADMIN_KEY:  "${{ secrets.ALGOLIA_INDEX_KEY }}"
-					ALGOLIA_INDEX_NAME: "cuelang.org"
-					ALGOLIA_INDEX_FILE: "../_public/algolia.json"
-				}
+				// TODO: See comment in previous step
+				env: GOPRIVATE: "cuelang.org/go"
 			},
 		]
 	}
