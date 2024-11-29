@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6b2e37f_2ccf57e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-29T20:55:00Z",
+      "side": 1,
+      "message": "Proof that the corresponding tip deploy worked in https://github.com/cue-lang/cuelang.org/actions/runs/12090408555/job/33717316598",
+      "revId": "b01fd4bf274466f1b44e4750c87ca5186d1895e6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
