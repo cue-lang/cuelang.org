@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9048b97e_319513ae",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-29T12:37:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff50c499_f184373c",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 22
+      },
+      "revId": "a9ade56eb34e9f1f6dfa828775522d051c615ca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c90786a_3502d854",
@@ -64,6 +88,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0fcbb5a_40ce646c",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-29T12:37:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c90786a_3502d854",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 59,
+        "endChar": 24
+      },
+      "revId": "a9ade56eb34e9f1f6dfa828775522d051c615ca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f8276b4_87f509a8",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-11-29T11:26:24Z",
       "side": 1,
       "message": "\"resolved to or calculated as a concrete value\" - something like that?",
+      "range": {
+        "startLine": 63,
+        "startChar": 66,
+        "endLine": 63,
+        "endChar": 76
+      },
+      "revId": "a9ade56eb34e9f1f6dfa828775522d051c615ca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95ace5e0_700bec34",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-11-29T12:37:36Z",
+      "side": 1,
+      "message": "Good clarification. I\u0027ve gone with the single verb \"must be able to be resolved to  a concrete value\", as that\u0027s closest to my original intent behind \"calculated\". I feel we don\u0027t explicitly care (hence don\u0027t need to distinguish) if the value was (numerically) calculated, interpolated, or otherwise; just as long the reader understands that the result must be a concrete value.",
+      "parentUuid": "8f8276b4_87f509a8",
       "range": {
         "startLine": 63,
         "startChar": 66,
