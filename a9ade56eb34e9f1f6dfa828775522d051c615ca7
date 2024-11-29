@@ -16,6 +16,75 @@
       "message": "PTAL.",
       "revId": "a9ade56eb34e9f1f6dfa828775522d051c615ca7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff50c499_f184373c",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-29T11:26:24Z",
+      "side": 1,
+      "message": "\"by itself\" - I think it\u0027s plainer.",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 22
+      },
+      "revId": "a9ade56eb34e9f1f6dfa828775522d051c615ca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c90786a_3502d854",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-29T11:26:24Z",
+      "side": 1,
+      "message": "Sorry, I meant for this to be a comment in markdown; not visible to the end reader.",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 59,
+        "endChar": 24
+      },
+      "revId": "a9ade56eb34e9f1f6dfa828775522d051c615ca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f8276b4_87f509a8",
+        "filename": "content/docs/concept/working-with-incomplete-cue/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-11-29T11:26:24Z",
+      "side": 1,
+      "message": "\"resolved to or calculated as a concrete value\" - something like that?",
+      "range": {
+        "startLine": 63,
+        "startChar": 66,
+        "endLine": 63,
+        "endChar": 76
+      },
+      "revId": "a9ade56eb34e9f1f6dfa828775522d051c615ca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
