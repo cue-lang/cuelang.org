@@ -25,7 +25,7 @@ td=$(mktemp -d)
 trap "rm -rf $td" EXIT
 pushd $td >/dev/null
 go mod init mod.example
-go get -v -x cuelang.org/go@$versionRef
+go get cuelang.org/go@$versionRef
 version=$(go list -m -f={{.Version}} cuelang.org/go)
 popd >/dev/null
 
