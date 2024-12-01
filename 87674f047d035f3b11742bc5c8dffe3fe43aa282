@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04579fa6_1350a635",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-01T09:01:15Z",
+      "side": 1,
+      "message": "Proof that corresponding tip deploy worked at PS11 https://github.com/cue-lang/cuelang.org/actions/runs/12103955905/job/33746788654",
+      "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
