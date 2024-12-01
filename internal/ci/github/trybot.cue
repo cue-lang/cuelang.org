@@ -71,7 +71,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// that such a workflow is triggered against the tip of the branch,
 			// alpha in this case) contains the Preprocessor-No-Write-Cache
 			// trailer.
-			githubactions.#Step & {
+			{
 				name: "Fail if Preprocessor-No-Write-Cache trailer is present for a scheduled workflow run"
 				if:   "github.event.inputs.scheduled == 'true'"
 				run:  "! ./_scripts/noWriteCache.bash HEAD"
@@ -81,7 +81,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// can safely read the cache. To not be specific to the trybot repo we
 			// instead say it's safe to read the cache for any repo other than the
 			// main repo.
-			githubactions.#Step & {
+			{
 				if: "github.repository != '\(_repo.githubRepositoryPath)'"
 				run: """
 					echo 'Setting CI_NO_SKIP_CACHE=true'
@@ -99,20 +99,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			_installHugoLinux,
 			_installHugoMacOS,
 
-			// If the commit under test contains the trailer
-			// Preprocessor-No-Write-Cache: true, then set the
-			// PREPROCESSOR_NOWRITECACHE env var to non-empty.
-			githubactions.#Step & {
-				name: "Set PREPROCESSOR_NOWRITECACHE if Preprocessor-No-Write-Cache: true"
-				run: """
-					if ./_scripts/noWriteCache.bash HEAD
-					then
-						echo 'Found Preprocessor-No-Write-Cache trailer'
-						echo "PREPROCESSOR_NOWRITECACHE=true" >> $GITHUB_ENV
-					fi
-
-					"""
-			},
+			_setNoWriteCache,
 
 			// cachePre must come after installing Node and Go, because the cache locations
 			// are established by running each tool.
@@ -122,23 +109,13 @@ workflows: trybot: _repo.bashWorkflow & {
 			// as the checks are Go programs themselves.
 			_repo.earlyChecks,
 
-			githubactions.#Step & {
-				name: "Perform early content checks"
-				run:  "_scripts/contentLint.bash"
-			},
+			_contentLint,
 
-			// This is the only step that needs to be given (read-only) access to the Central Registry.
-			// TODO: adopt any more specific command coming from https://cuelang.org/issue/3512.
-			// TODO: add cache dir to CI cache when it's visible via https://cuelang.org/issue/2838.
-			githubactions.#Step & {
-				name: "Populate CUE dependency cache"
-				env: CUE_TOKEN: "${{ secrets.NOTCUECKOO_CUE_TOKEN }}"
-				run: "_scripts/cacheWarm.bash"
-			},
+			_cacheWarm,
 
 			// We can perform an early check that ensures page.cue files are
 			// consistent with respect to their containing directory path.,
-			githubactions.#Step & {
+			{
 				name: "Check site CUE configuration"
 				run:  "_scripts/runPreprocessor.bash execute --check"
 			},
@@ -158,17 +135,11 @@ workflows: trybot: _repo.bashWorkflow & {
 			_repo.checkGitClean,
 
 			// Rebuild docker image
-			githubactions.#Step & {
+			{
 				run: "./_scripts/buildDockerImage.bash"
 			},
 
-			// npm install in hugo to allow serve test to pass
-			//
-			// TODO: make this a more principled change.
-			githubactions.#Step & {
-				run:                 "npm install"
-				"working-directory": "hugo"
-			},
+			_npmInstall,
 
 			// Go test steps
 			_goTest & {
@@ -182,13 +153,13 @@ workflows: trybot: _repo.bashWorkflow & {
 			},
 
 			// Run staticcheck
-			githubactions.#Step & {
+			{
 				name: "staticcheck"
 				run:  "./_scripts/staticcheck.bash"
 			},
 
 			// Run staticcheck in playground
-			githubactions.#Step & {
+			{
 				name:                "staticcheck Playground"
 				run:                 "../_scripts/staticcheck.bash"
 				"working-directory": "playground"
@@ -205,22 +176,7 @@ workflows: trybot: _repo.bashWorkflow & {
 				"working-directory": "playground"
 			},
 
-			// A number of pages that are part of cuelang.org require interacting
-			// with the Central Registry. These pages require users with slightly
-			// different access levels, in order to simulate (for example) private
-			// modules, with some users granted access whilst others are denied.
-			// The Central Registry has a special endpoint which generates access
-			// tokens for a set of such test user IDs. Access to this endpoint is
-			// sensitive, because in theory there is privilege escalation (even
-			// though in reality the test user IDs are intentionally not used
-			// for anything sensitive). As such, we use porcuepine (an account
-			// that is controlled by CUE Labs who also run the Central
-			// Registry) here in order to more carefully control in a CI
-			// environment who has access to this endpoint.
-			githubactions.#Step & {
-				name: "log into the central registry as porcuepine"
-				run: "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
-			},
+			_porcuepineCueLogin,
 
 			_dist & {
 				_baseURL: _netlifyStep.#prime_url.CL
@@ -232,14 +188,14 @@ workflows: trybot: _repo.bashWorkflow & {
 			// Now that we are generated, tested, and the repo is confirmed
 			// as clean, verify that the playground CUE version matches the
 			// site default
-			githubactions.#Step & {
+			{
 				run: """
 					./playground/_scripts/checkCUEVersion.bash
 					"""
 			},
 
 			// Now the frontend build has happened, ensure that linters pass
-			githubactions.#Step & {
+			{
 				"working-directory": "hugo"
 				run: """
 					npm run lint
@@ -252,7 +208,7 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_netlifyStep,
 
-			githubactions.#Step & {
+			{
 				// Only run in the main repo on the default branch, so only live
 				// content gets indexed.
 				if:                  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)')"
@@ -365,14 +321,14 @@ _installDockerMacOS: [
 	// docker (via colima) work. If we don't set this to be a path within $HOME,
 	// then we end up with a mount-ed directory. And this does not work via -v
 	// bind mounts.
-	githubactions.#Step & {
+	{
 		_name: "Set TMPDIR environment variable"
 		run: """
 			mkdir $HOME/.tmp
 			echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
 			"""
 	},
-	githubactions.#Step & {
+	{
 		_name: "Write lima config"
 		run: """
 			mkdir -p ~/.lima/default
@@ -385,7 +341,7 @@ _installDockerMacOS: [
 			EOD
 			"""
 	},
-	githubactions.#Step & {
+	{
 		_name: "Install Docker"
 		run: """
 			brew install colima docker
@@ -393,7 +349,7 @@ _installDockerMacOS: [
 			sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
 			"""
 	},
-	githubactions.#Step & {
+	{
 		_name: "Set DOCKER_HOST environment variable"
 		run: """
 			echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
@@ -478,4 +434,60 @@ _setupGoActionsCaches: _repo.setupGoActionsCaches & {
 _setupBuildx: githubactions.#Step & {
 	name: "Set up Docker Buildx"
 	uses: "docker/setup-buildx-action@v3"
+}
+
+// _setNoWriteCache ensures that if the commit under test contains the trailer
+// Preprocessor-No-Write-Cache: true, then we set the PREPROCESSOR_NOWRITECACHE
+// env var to non-empty for subsequent steps.:w
+_setNoWriteCache: githubactions.#Step & {
+	name: "Set PREPROCESSOR_NOWRITECACHE if Preprocessor-No-Write-Cache: true"
+	run: """
+		if ./_scripts/noWriteCache.bash HEAD
+		then
+			echo 'Found Preprocessor-No-Write-Cache trailer'
+			echo "PREPROCESSOR_NOWRITECACHE=true" >> $GITHUB_ENV
+		fi
+
+		"""
+}
+
+_contentLint: githubactions.#Step & {
+	name: "Perform early content checks"
+	run:  "_scripts/contentLint.bash"
+}
+
+// _cacheWarm warms the CUE module cache with any CUE dependencies, so that any
+// credentials used to authenticate to the central registry only need to be in
+// scope for the duration of this script.
+//
+// This is the only step that needs to be given (read-only) access to the Central Registry.
+// TODO: adopt any more specific command coming from https://cuelang.org/issue/3512.
+// TODO: add cache dir to CI cache when it's visible via https://cuelang.org/issue/2838.
+_cacheWarm: githubactions.#Step & {
+	name: "Populate CUE dependency cache"
+	env: CUE_TOKEN: "${{ secrets.NOTCUECKOO_CUE_TOKEN }}"
+	run: "_scripts/cacheWarm.bash"
+}
+
+// A number of pages that are part of cuelang.org require interacting
+// with the Central Registry. These pages require users with slightly
+// different access levels, in order to simulate (for example) private
+// modules, with some users granted access whilst others are denied.
+// The Central Registry has a special endpoint which generates access
+// tokens for a set of such test user IDs. Access to this endpoint is
+// sensitive, because in theory there is privilege escalation (even
+// though in reality the test user IDs are intentionally not used
+// for anything sensitive). As such, we use porcuepine (an account
+// that is controlled by CUE Labs who also run the Central
+// Registry) here in order to more carefully control in a CI
+// environment who has access to this endpoint.
+_porcuepineCueLogin: githubactions.#Step & {
+	name: "log into the central registry as porcuepine"
+	run:  "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
+}
+
+// npm install in hugo to allow serve test to pass
+_npmInstall: githubactions.#Step & {
+	run:                 "npm install"
+	"working-directory": "hugo"
 }
