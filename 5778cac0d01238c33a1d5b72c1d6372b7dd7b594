@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10b8d1a2_b215f21e",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-02T12:26:28Z",
+      "side": 0,
+      "message": "I can\u0027t see where this constraint is templated back in -- both here, and throughout the file where a step\u0027s fields are left inline. The commit message mentions that they\u0027re \"redundant annotations\", but I\u0027ve had a look through the CUE package and can\u0027t see why they\u0027re redundant. I may well simply be missing something, of course!",
+      "revId": "5778cac0d01238c33a1d5b72c1d6372b7dd7b594",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
