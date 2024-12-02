@@ -16,6 +16,24 @@
       "message": "I can\u0027t see where this constraint is templated back in -- both here, and throughout the file where a step\u0027s fields are left inline. The commit message mentions that they\u0027re \"redundant annotations\", but I\u0027ve had a look through the CUE package and can\u0027t see why they\u0027re redundant. I may well simply be missing something, of course!",
       "revId": "5778cac0d01238c33a1d5b72c1d6372b7dd7b594",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d019621b_e16c6fcb",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-02T13:12:22Z",
+      "side": 0,
+      "message": "https://github.com/cue-lang/cuelang.org/commit/fa8a48aff6f9db3b52a919bc5f504f9998010e0d#diff-22fc85cb05518ecddaa83d62d654c435754ca6716fa6cd76928022a3a7d3f200R27 templates this in, after a few indirections.",
+      "parentUuid": "10b8d1a2_b215f21e",
+      "revId": "5778cac0d01238c33a1d5b72c1d6372b7dd7b594",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
