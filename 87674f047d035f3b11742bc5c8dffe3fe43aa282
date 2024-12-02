@@ -16,6 +16,40 @@
       "message": "Proof that corresponding tip deploy worked at PS11 https://github.com/cue-lang/cuelang.org/actions/runs/12103955905/job/33746788654",
       "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14c92e96_c994a2c0",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-02T12:46:15Z",
+      "side": 1,
+      "message": "This limits the job\u0027s concurrency, which will achieve our aim, but I think it would be more appropriate to limit the workflow\u0027s concurrency with a top-level `concurrency` field (cf. https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#concurrency)",
+      "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46e5b47a_45ee164c",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-02T12:46:15Z",
+      "side": 1,
+      "message": "Is this re-ordered to be later in the workflow (after `tipPatchApply`) relative to its current location in `trybot.cue` in order to permit a failing patch to be flagged as soon as possible?",
+      "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

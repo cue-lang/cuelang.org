@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "341ce798_f197667a",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-02T12:46:15Z",
+      "side": 0,
+      "message": "The patch step still needs to be present in the trybot workflow, so that the patch can be shown to apply to the repo successfully before CLs are submitted.",
+      "revId": "fa8a48aff6f9db3b52a919bc5f504f9998010e0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
