@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f630561a_16572233",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "I don\u0027t think so? It\u0027s impossible for commits to land at exactly the same time: they have to be ordered. I\u0027ve reworded to avoid the term in any case, preferring \"in quick succession\".",
+      "parentUuid": "3ce94fbb_61d146c4",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f47504c5_90d6f7c8",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-12-03T13:05:01Z",
       "side": 1,
       "message": "`triggered`",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ddf5e9b_340259d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f47504c5_90d6f7c8",
       "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +122,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd9479ef_40a0e81c",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 16
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "Reworded:\n\n```\n// Much of the \"setup\" phase of this workflow mimics and therefore reuses steps\n// in the trybot workflow.\n```",
+      "parentUuid": "0c509962_79568eee",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d2c7ea0_10f1e731",
@@ -103,6 +157,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "edfbcdc6_6470dade",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "Done, and below.",
+      "parentUuid": "0d2c7ea0_10f1e731",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdcd415d_553c4726",
@@ -116,6 +188,30 @@
       "writtenOn": "2024-12-03T13:05:01Z",
       "side": 1,
       "message": "I don\u0027t see a `serve` invocation inside `regenPostInfraChange.bash`.\nDoes `./_scripts/runPreprocessor.bash execute --update` invoke Hugo?",
+      "range": {
+        "startLine": 83,
+        "startChar": 35,
+        "endLine": 85,
+        "endChar": 15
+      },
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ad9e811_a6741266",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "See https://github.com/cue-lang/cuelang.org/blob/5a279d61f3043025d4457572a02a42000d5bdf6c/internal/cmd/preprocessor/main_test.go#L34. It\u0027s therefore run as part of `go test ./...`.",
+      "parentUuid": "cdcd415d_553c4726",
       "range": {
         "startLine": 83,
         "startChar": 35,
