@@ -222,49 +222,17 @@ workflows: trybot: _repo.bashWorkflow & {
 				}
 			},
 
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
-				run:  "_scripts/tipPatchApply.bash"
-			},
+			// We do this on all branches to catch changes in CL that cause the
+			// application of tip patches to fail. This doesn't guarantee later
+			// success, but it's a useful early indicator.
+			_applyTipPatches,
 
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
-				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
-				// so that CLs aren't blocked by failures caused by unrelated changes.
-				if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
+			// npm install post applying of tip patches in case there is an relevant patch
+			_mainRepoDefaulBranch & _npmInstall,
 
-				// Force Go to bypass the module proxy and sumdb for the
-				// cuelang.org/go module, ensuring that the absolute latest CUE
-				// pseudo-version is available to test against.
-				//
-				// TODO: is this really necessary? Tracking
-				// https://golang.org/issue/70042 to confirm.
-				env: GOPRIVATE: "cuelang.org/go"
-
-				run: "_scripts/tipUseAlternativeCUE.bash"
-			},
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Build the site against the tip of cue-lang/cue"
-				// Only run in the main repo on the default branch or its designated test branch (i.e not CLs)
-				// so that CLs aren't blocked by failures caused by unrelated changes.
-				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-				run: "_scripts/regenPostInfraChange.bash"
-
-				// TODO: See comment in previous step
-				env: GOPRIVATE: "cuelang.org/go"
-			},
-			githubactions.#Step & {
-				name: "tip.cuelang.org: Deploy the site"
-				// Only run in the main repo on the default branch or its designated test branch.
-				if:  "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-				run: """
-				git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
-				_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
-				"""
-
-				// TODO: See comment in previous step
-				env: GOPRIVATE: "cuelang.org/go"
-			},
+			_mainRepoDefaulBranch & _useTipOfCUE,
+			_mainRepoDefaulBranch & _regenPostInfraChange,
+			_mainRepoDefaulBranch & _deployTipCuelangOrg,
 		]
 	}
 
@@ -284,6 +252,10 @@ workflows: trybot: _repo.bashWorkflow & {
 		name: string
 		run:  "go mod tidy"
 	}
+}
+
+_mainRepoDefaulBranch: githubactions.#Step & {
+	if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 }
 
 _installNode: githubactions.#Step & {
@@ -488,6 +460,46 @@ _porcuepineCueLogin: githubactions.#Step & {
 
 // npm install in hugo to allow serve test to pass
 _npmInstall: githubactions.#Step & {
+	name:                "npm install in hugo dir"
 	run:                 "npm install"
 	"working-directory": "hugo"
+}
+
+_applyTipPatches: githubactions.#Step & {
+	name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
+	run:  "_scripts/tipPatchApply.bash"
+}
+
+_useTipOfCUE: githubactions.#Step & {
+	name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
+
+	// Force Go to bypass the module proxy and sumdb for the
+	// cuelang.org/go module, ensuring that the absolute latest CUE
+	// pseudo-version is available to test against.
+	//
+	// TODO: is the use of GOPRIVATE (as opposed to GONOPROXY) really
+	// necessary? Tracking https://golang.org/issue/70042 to confirm.
+	env: GOPRIVATE: "cuelang.org/go"
+
+	run: "_scripts/tipUseAlternativeCUE.bash"
+}
+
+_regenPostInfraChange: githubactions.#Step & {
+	name: "tip.cuelang.org: Build the site against the tip of cue-lang/cue"
+	run:  "_scripts/regenPostInfraChange.bash"
+
+	// TODO: See comment in previous step
+	env: GOPRIVATE: "cuelang.org/go"
+}
+
+_deployTipCuelangOrg: githubactions.#Step & {
+	name: "tip.cuelang.org: Deploy the site"
+	// Only run in the main repo on the default branch or its designated test branch.
+	run: """
+				git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
+				_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
+				"""
+
+	// TODO: See comment in previous step
+	env: GOPRIVATE: "cuelang.org/go"
 }
