@@ -184,7 +184,8 @@ jobs:
         if: always()
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./_scripts/buildDockerImage.bash
-      - run: npm install
+      - name: npm install in hugo dir
+        run: npm install
         working-directory: hugo
       - name: Test
         run: go test ./...
@@ -231,22 +232,19 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_INDEX_KEY }}
           ALGOLIA_INDEX_NAME: cuelang.org
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
-      - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
+      - name: Patch the site to be compatible with the tip of cue-lang/cue
         run: _scripts/tipPatchApply.bash
-      - name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
-        if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        name: npm install in hugo dir
+        run: npm install
+        working-directory: hugo
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        name: Configure the site to use the tip of cue-lang/cue
         env:
           GOPRIVATE: cuelang.org/go
         run: _scripts/tipUseAlternativeCUE.bash
-      - name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
-        if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        name: Build the site against the tip of cue-lang/cue
         run: _scripts/regenPostInfraChange.bash
-        env:
-          GOPRIVATE: cuelang.org/go
-      - name: 'tip.cuelang.org: Deploy the site'
-        if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
-        run: |-
-          git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
-          _scripts/tipDeploy.bash 'cueckoo' 'cueckoo@gmail.com'
         env:
           GOPRIVATE: cuelang.org/go
