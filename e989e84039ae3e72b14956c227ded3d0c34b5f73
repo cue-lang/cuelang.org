@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a378981d_3e30145f",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T12:50:51Z",
+      "side": 1,
+      "message": "nit: `a CL`?",
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6eb0d091_26e751da",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T12:50:51Z",
+      "side": 1,
+      "message": "nit: `a relevant patch`",
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9be2531_3baf758a",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T12:50:51Z",
+      "side": 1,
+      "message": "I like that we break this out. It\u0027s been a messy bit of config I\u0027ve copy/pasted a few times - good to have it centralised.\n\nField name is a typo; should be `_mainRepoDefaultBranch`.\n\nI\u0027d personally find it easier to reason about steps that reference it (above) if it contained a naming element that made it clearer it wasn\u0027t the actual name, itself, but a conditional. E.g. `_ifMainRepoDefaultBranch`.",
+      "range": {
+        "startLine": 257,
+        "startChar": 0,
+        "endLine": 257,
+        "endChar": 21
+      },
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a7d8b19_d5734def",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T12:50:51Z",
+      "side": 1,
+      "message": "This comment is now out of place, as it\u0027s not asserted directly, here.",
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
