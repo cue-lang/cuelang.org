@@ -16,6 +16,24 @@
       "message": "The patch step still needs to be present in the trybot workflow, so that the patch can be shown to apply to the repo successfully before CLs are submitted.",
       "revId": "fa8a48aff6f9db3b52a919bc5f504f9998010e0d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d883339_d082903a",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T10:57:01Z",
+      "side": 0,
+      "message": "Good point. We actually want to keep these steps as part of the trybot workflow, with the exception of the deploy step. I\u0027ve done that in another patchset.",
+      "parentUuid": "341ce798_f197667a",
+      "revId": "fa8a48aff6f9db3b52a919bc5f504f9998010e0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2b8704e_52256256",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T10:57:01Z",
+      "side": 1,
+      "message": "Done. I had fully intended to do that, clearly just placed it at the wrong level!",
+      "parentUuid": "14c92e96_c994a2c0",
+      "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "323e0c6b_67c6699a",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54cd68f0_fee32930",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T10:57:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "323e0c6b_67c6699a",
+      "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46e5b47a_45ee164c",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-12-02T12:46:15Z",
       "side": 1,
       "message": "Is this re-ordered to be later in the workflow (after `tipPatchApply`) relative to its current location in `trybot.cue` in order to permit a failing patch to be flagged as soon as possible?",
+      "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f751177a_8cf68c62",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T10:57:01Z",
+      "side": 1,
+      "message": "Correct. Also because the patch might also include aspects that are relevant to `npm install`.",
+      "parentUuid": "46e5b47a_45ee164c",
       "revId": "87674f047d035f3b11742bc5c8dffe3fe43aa282",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
