@@ -52,6 +52,24 @@
       "parentUuid": "1d883339_d082903a",
       "revId": "fa8a48aff6f9db3b52a919bc5f504f9998010e0d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcfa5dd8_f3d84e6d",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T13:05:01Z",
+      "side": 0,
+      "message": "Apologies if that wasn\u0027t clear - keeping just the first tip-related step (the patch apply) in the trybot workflow was what I\u0027d intended to communicate.",
+      "parentUuid": "57b9571d_35db4038",
+      "revId": "fa8a48aff6f9db3b52a919bc5f504f9998010e0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

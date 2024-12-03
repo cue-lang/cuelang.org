@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ce94fbb_61d146c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T13:05:01Z",
+      "side": 1,
+      "message": "nit: did you mean `multiple commits \"land\" at the same time in the main ...`?",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f47504c5_90d6f7c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T13:05:01Z",
+      "side": 1,
+      "message": "`triggered`",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "3cc0a8be_ff8c6d39",
@@ -31,6 +65,63 @@
       "writtenOn": "2024-12-03T12:02:32Z",
       "side": 1,
       "message": "PTAL",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c509962_79568eee",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 16
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T13:05:01Z",
+      "side": 1,
+      "message": "\"follows\" implies something sequence-related to me.",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d2c7ea0_10f1e731",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T13:05:01Z",
+      "side": 1,
+      "message": "`s/Allow/Cause/`, or similar. \"Allow\" feels like there might be something explicit an operator has to do, in order to make this happen.",
+      "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdcd415d_553c4726",
+        "filename": "internal/ci/github/tipdeploy.cue",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-03T13:05:01Z",
+      "side": 1,
+      "message": "I don\u0027t see a `serve` invocation inside `regenPostInfraChange.bash`.\nDoes `./_scripts/runPreprocessor.bash execute --update` invoke Hugo?",
+      "range": {
+        "startLine": 83,
+        "startChar": 35,
+        "endLine": 85,
+        "endChar": 15
+      },
       "revId": "3cc76b5faa43a378fe0d634127042c4ad5c5d2f7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
