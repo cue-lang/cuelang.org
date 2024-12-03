@@ -226,13 +226,6 @@ workflows: trybot: _repo.bashWorkflow & {
 			// application of tip patches to fail. This doesn't guarantee later
 			// success, but it's a useful early indicator.
 			_applyTipPatches,
-
-			// npm install post applying of tip patches in case there is an relevant patch
-			_mainRepoDefaulBranch & _npmInstall,
-
-			_mainRepoDefaulBranch & _useTipOfCUE,
-			_mainRepoDefaulBranch & _regenPostInfraChange,
-			_mainRepoDefaulBranch & _deployTipCuelangOrg,
 		]
 	}
 
