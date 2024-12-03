@@ -34,6 +34,24 @@
       "parentUuid": "341ce798_f197667a",
       "revId": "fa8a48aff6f9db3b52a919bc5f504f9998010e0d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57b9571d_35db4038",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 11
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T11:47:49Z",
+      "side": 0,
+      "message": "Actually, I concluded that only testing the application of the patches made sense, otherwise we would be doing serious duplicate amounts of work.",
+      "parentUuid": "1d883339_d082903a",
+      "revId": "fa8a48aff6f9db3b52a919bc5f504f9998010e0d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
