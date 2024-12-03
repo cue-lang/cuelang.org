@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f62b7bd4_6d9395fb",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a378981d_3e30145f",
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6eb0d091_26e751da",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-12-03T12:50:51Z",
       "side": 1,
       "message": "nit: `a relevant patch`",
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acc28adc_c6012d13",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "Done. I also made the wording slightly clearer.",
+      "parentUuid": "6eb0d091_26e751da",
       "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -58,6 +94,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25ec6960_20064e86",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "\u003e I like that we break this out. It\u0027s been a messy bit of config I\u0027ve copy/pasted a few times - good to have it centralised.\n\u003e \n\u003e Field name is a typo; should be `_mainRepoDefaultBranch`.\n\u003e \n\u003e I\u0027d personally find it easier to reason about steps that reference it (above) if it contained a naming element that made it clearer it wasn\u0027t the actual name, itself, but a conditional. E.g. `_ifMainRepoDefaultBranch`.\n\nDone. Thanks for the suggestion and catch on typo.",
+      "parentUuid": "c9be2531_3baf758a",
+      "range": {
+        "startLine": 257,
+        "startChar": 0,
+        "endLine": 257,
+        "endChar": 21
+      },
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a7d8b19_d5734def",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-12-03T12:50:51Z",
       "side": 1,
       "message": "This comment is now out of place, as it\u0027s not asserted directly, here.",
+      "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0820fe98_851c5f7b",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-03T13:44:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a7d8b19_d5734def",
       "revId": "e989e84039ae3e72b14956c227ded3d0c34b5f73",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
