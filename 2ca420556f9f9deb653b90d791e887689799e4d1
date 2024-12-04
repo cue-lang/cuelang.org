@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5eec9086_af0db9f6",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-04T17:59:13Z",
+      "side": 1,
+      "message": "\"become the contents\" - this feels a bit vague wording-wise. Subject to the previous wording question in this sentence, \"... when they are part of a CUE module published to a module registry\"?",
+      "range": {
+        "startLine": 10,
+        "startChar": 57,
+        "endLine": 10,
+        "endChar": 76
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db4bdc1e_fbdefe00",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-04T17:59:13Z",
+      "side": 1,
+      "message": "I\u0027m not clear how both \"rejected\" and \"ignored\" can be true? \"Rejected\" suggests to me that an error is triggered.",
+      "range": {
+        "startLine": 10,
+        "startChar": 22,
+        "endLine": 10,
+        "endChar": 42
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70b63942_03603b29",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-04T17:59:13Z",
+      "side": 1,
+      "message": "\"in such a module\"? i.e. you are referring specifically to the CUE code contained in a published module, no?",
+      "range": {
+        "startLine": 41,
+        "startChar": 21,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9927f8f7_4d67c49f",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-04T17:59:13Z",
+      "side": 1,
+      "message": "I don\u0027t know what this means, or really what is trying to be said here. What point is this referring to?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 77
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c26cc12_06b856cd",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-04T17:59:13Z",
+      "side": 1,
+      "message": "What is done separately? I\u0027ve lost the context at this point.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 23
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ed9f9e0_f7175741",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-04T17:59:13Z",
+      "side": 1,
+      "message": "I suspect the inclusion of this paragraph may have been in response to a detail/caveat to a point I made in a previous review, so please take this comment with a pinch of salt. But given the good rewording otherwise in this CL, it feels like a level of detail that 99% of people will not care about. Thoughts?",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 49
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
