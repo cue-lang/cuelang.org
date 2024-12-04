@@ -75,6 +75,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a59f8db_7f1decac",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-04T14:42:04Z",
+      "side": 1,
+      "message": "Please re-review in light of the full rewrite in the latest PS.",
+      "parentUuid": "ac1dd276_e5ab2fb4",
+      "range": {
+        "startLine": 15,
+        "startChar": 49,
+        "endLine": 17,
+        "endChar": 23
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ebb7254a_753ef8c5",
@@ -88,6 +112,30 @@
       "writtenOn": "2024-11-26T12:33:58Z",
       "side": 1,
       "message": "This needs to be a bit more precise to my mind. Is the target of the symlink included as if a regular file? Or something else?",
+      "range": {
+        "startLine": 24,
+        "startChar": 63,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "883242cc_42bb2706",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-04T14:42:04Z",
+      "side": 1,
+      "message": "Please re-review in light of the full rewrite in the latest PS.",
+      "parentUuid": "ebb7254a_753ef8c5",
       "range": {
         "startLine": 24,
         "startChar": 63,
@@ -121,6 +169,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c71936be_f212f892",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-04T14:42:04Z",
+      "side": 1,
+      "message": "Please re-review in light of the full rewrite in the latest PS.",
+      "parentUuid": "b009a42f_31219e64",
+      "range": {
+        "startLine": 27,
+        "startChar": 7,
+        "endLine": 27,
+        "endChar": 69
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6c0e572_58d289f4",
@@ -144,6 +216,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18919e7c_307e672d",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-04T14:42:04Z",
+      "side": 1,
+      "message": "Examples removed in the latest PS.",
+      "parentUuid": "c6c0e572_58d289f4",
+      "range": {
+        "startLine": 43,
+        "startChar": 3,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29ce2b75_baf12af2",
@@ -157,6 +253,24 @@
       "writtenOn": "2024-11-26T12:33:58Z",
       "side": 1,
       "message": "I wouldn\u0027t include this here, as it suggests it\u0027s a \"first class\" use of symlinks. I would more say it\u0027s a workaround for a lack of features in `cue cmd`. Happy for it to exist as a howto elsewhere.",
+      "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8c7fbf8_a7474383",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-04T14:42:04Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "29ce2b75_baf12af2",
       "revId": "5b33838567e0e8628d72c9e7bc67e329ab229f40",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "594d700d_daa21028",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-04T14:42:04Z",
+      "side": 1,
+      "message": "PTAL.\n\nI\u0027ve discussed this offline with @rogpeppe@gmail.com, leading to this stripped back version of the page that doesn\u0027t contain examples.\n\nI\u0027ve also taken the previous review\u0027s points about not forcing headings in for the sake of headings.\n\nI do think this page needs to contain questions, given its narrative conceit of being \"an FAQ\", but I\u0027ve reduced them to the core 3 questions I think any user might ask. (ok; the final question is borderline, I\u0027ll concede ...)",
+      "revId": "db3b0c26103004ddc0045bbd7d8e79354eb1545c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
