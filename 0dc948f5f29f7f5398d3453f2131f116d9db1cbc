@@ -39,6 +39,30 @@
       },
       "revId": "0dc948f5f29f7f5398d3453f2131f116d9db1cbc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41650cb9_43f95c63",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-05T13:00:09Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "19ad2a9d_264ba925",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 44
+      },
+      "revId": "0dc948f5f29f7f5398d3453f2131f116d9db1cbc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
