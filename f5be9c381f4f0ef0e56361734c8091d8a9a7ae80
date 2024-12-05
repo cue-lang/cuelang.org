@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a5ea47c_60648331",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-05T12:53:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d7f75c2_a3ae501c",
+      "range": {
+        "startLine": 10,
+        "startChar": 65,
+        "endLine": 10,
+        "endChar": 77
+      },
+      "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92883c3a_721ac1fe",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-12-05T11:53:46Z",
       "side": 1,
       "message": "Is it worth noting as a point of detail as a final paragraph in answer to this point, that the symlink can be to anywhere on disk, and is not restricted to pointing to somewhere within the module? Because by contrast, it is not possible to embed a file that sits outside of a module.",
+      "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e48283fe_9a6dd083",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-05T12:53:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92883c3a_721ac1fe",
       "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -81,6 +123,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6ea6533_88f1bf0d",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-05T12:53:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83499d83_ac96c932",
+      "range": {
+        "startLine": 20,
+        "startChar": 36,
+        "endLine": 20,
+        "endChar": 47
+      },
+      "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e93fcdd7_dc19a049",
@@ -94,6 +160,30 @@
       "writtenOn": "2024-12-05T11:53:46Z",
       "side": 1,
       "message": "\"data\" is I think superfluous. Any file can be embedded, not just data.",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 7
+      },
+      "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6721bf1_3e6cda5a",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-05T12:53:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e93fcdd7_dc19a049",
       "range": {
         "startLine": 24,
         "startChar": 6,
@@ -129,6 +219,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2920d295_92906873",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-05T12:53:07Z",
+      "side": 1,
+      "message": "As discussed offline, I\u0027ve changed this answer to hedge slightly and to be more *technically* correct. I think I\u0027ve found wording that\u0027s both accurate, and doesn\u0027t over-complicate the reader\u0027s understanding. Let me know what you think.",
+      "parentUuid": "f8fded7a_67cc1d70",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 38,
+        "endChar": 4
+      },
+      "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4f4f173e_6964df10",
         "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
         "patchSetId": 9
@@ -140,6 +254,30 @@
       "writtenOn": "2024-12-05T11:53:46Z",
       "side": 1,
       "message": "\"never\" is perhaps a stronger and more clear word to use here?",
+      "range": {
+        "startLine": 44,
+        "startChar": 9,
+        "endLine": 44,
+        "endChar": 12
+      },
+      "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97596e97_6928e46f",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-05T12:53:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f4f173e_6964df10",
       "range": {
         "startLine": 44,
         "startChar": 9,
