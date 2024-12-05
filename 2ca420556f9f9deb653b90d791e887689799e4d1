@@ -189,6 +189,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5f17699_baf63b07",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-05T11:53:46Z",
+      "side": 1,
+      "message": "Thanks, picked up comments inline.",
+      "parentUuid": "33393873_68070cb0",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 77
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c26cc12_06b856cd",
@@ -273,6 +297,30 @@
       "side": 1,
       "message": "I\u0027ve removed this paragraph. Please re-review the flow of the page and the questions being answered.",
       "parentUuid": "2ed9f9e0_f7175741",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 49
+      },
+      "revId": "2ca420556f9f9deb653b90d791e887689799e4d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4122408_32fa7bb8",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-05T11:53:46Z",
+      "side": 1,
+      "message": "Looks better.",
+      "parentUuid": "4cd7a9e0_09b380a5",
       "range": {
         "startLine": 51,
         "startChar": 0,
