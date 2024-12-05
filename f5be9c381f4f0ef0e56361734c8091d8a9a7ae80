@@ -241,6 +241,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc30a563_5960c013",
+        "filename": "content/docs/concept/faq/symbolic-link-support/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-05T12:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2920d295_92906873",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 38,
+        "endChar": 4
+      },
+      "revId": "f5be9c381f4f0ef0e56361734c8091d8a9a7ae80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f4f173e_6964df10",
