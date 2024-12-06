@@ -25,7 +25,9 @@ import (
 	"cuelang.org/go/cue/errors"
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/load"
+	"cuelang.org/go/cue/parser"
 	"cuelang.org/go/cue/token"
+	"cuelang.org/go/pkg/encoding/json"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/encoding"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
 )
@@ -36,6 +38,7 @@ const (
 	functionExport function = "export"
 	functionEval   function = "eval"
 	functionDef    function = "def"
+	functionFmt    function = "fmt"
 )
 
 type input string
@@ -57,7 +60,7 @@ const (
 func handleCUECompile(in input, fn function, out output, inputVal string) (string, error) {
 	// TODO implement more functions
 	switch fn {
-	case functionExport, functionEval, functionDef:
+	case functionExport, functionEval, functionDef, functionFmt:
 	default:
 		return "", fmt.Errorf("function %q is not implemented", fn)
 	}
@@ -67,6 +70,29 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	default:
 		return "", fmt.Errorf("unknown input type: %v", in)
 	}
+
+	switch out {
+	case outputCUE, outputJSON, outputYaml:
+	default:
+		return "", fmt.Errorf("unknown ouput type: %v", out)
+	}
+
+	if fn == functionFmt {
+		// For Fmt, we require in and out to be the same.
+		if in != input(out) {
+			return "", fmt.Errorf("fmt input output mismatch: input = %q, output = %q", in, out)
+		}
+
+		// Error in case we are trying to format something we can't
+		switch in {
+		case inputCUE, inputJSON:
+		default:
+			return "", fmt.Errorf("don't (yet) know how to format %q", in)
+		}
+
+		return formatInput(in, inputVal), nil
+	}
+
 	loadCfg := &load.Config{
 		Stdin:      strings.NewReader(inputVal),
 		Dir:        "/",
@@ -88,11 +114,6 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	v := ctx.BuildInstance(builds[0])
 	if err := v.Err(); err != nil {
 		return "", fmt.Errorf("failed to build: %w", err)
-	}
-	switch out {
-	case outputCUE, outputJSON, outputYaml:
-	default:
-		return "", fmt.Errorf("unknown ouput type: %v", out)
 	}
 	cueOpts := []cue.Option{
 		cue.Docs(true),
@@ -126,6 +147,9 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 
 	// TODO(mvdan): Note that formatOpts appear to do nothing at all.
 	// For instance, the tests indent JSON with four spaces instead of two.
+	//
+	// TODO(myitcv): make the sharing of format options consistent with
+	// formatInput.
 	var formatOpts []format.Option
 	switch out {
 	case outputCUE:
@@ -157,5 +181,33 @@ func getSyntax(v cue.Value, opts []cue.Option) *ast.File {
 		return &ast.File{Decls: []ast.Decl{&ast.EmbedDecl{Expr: x}}}
 	default:
 		panic("unreachable")
+	}
+}
+
+// formatInput attempts to format s according to the filetype in. On success it
+// returns the formatted result, otherwise it returns s. formatInput panics on
+// an unsupported in filetype.
+func formatInput(in input, s string) string {
+	switch in {
+	case inputCUE:
+		// TODO(myitcv): make the sharing of format options consistent with
+		// handleCUECompile.
+		n, err := parser.ParseFile("cue:-", s, parser.ParseComments)
+		if err != nil {
+			return s
+		}
+		b, err := format.Node(n, format.TabIndent(true))
+		if err != nil {
+			return s
+		}
+		return string(b)
+	case inputJSON:
+		res, err := json.Indent([]byte(s), "", "  ")
+		if err != nil {
+			return s
+		}
+		return res
+	default:
+		panic(fmt.Errorf("don't know how to format %q", in))
 	}
 }
