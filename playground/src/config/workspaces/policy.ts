@@ -10,7 +10,7 @@ export const policyWorkspace: Workspace = deepFreeze<Workspace>({
     icon: 'workspace-policy',
     config: {
         func: {
-            enabled: false,
+            enabled: true,
         },
         inputTabs: [
             {
