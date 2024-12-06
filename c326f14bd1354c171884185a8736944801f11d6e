@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe56e779_1fdf855c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-06T16:04:49Z",
+      "side": 1,
+      "message": "This LGTM in its amended state, but I\u0027m not able to review any of the TS changes. +2\u0027ing to unblock as needed.",
+      "revId": "c326f14bd1354c171884185a8736944801f11d6e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
