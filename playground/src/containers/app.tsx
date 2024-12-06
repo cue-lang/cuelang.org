@@ -30,7 +30,7 @@ import { setupWorkspaceConfig } from '@helpers/workspace';
 import { DropdownChange } from '@models/dropdown';
 import { Example } from '@models/example';
 import { HASH_KEY, hashParams } from '@models/hashParams';
-import { OPTION_TYPE, optionCUE } from '@models/options';
+import { OPTION_TYPE } from '@models/options';
 import { WORKSPACE, Workspace, Workspaces, WorkspaceTab } from '@models/workspace';
 
 interface AppProps
@@ -270,7 +270,7 @@ export class App extends React.Component<AppProps, AppState>
                                                         actions: {
                                                             format: {
                                                                 show: true,
-                                                                disabled: tab.selected.value !== optionCUE.value
+                                                                disabled: false,
                                                             },
                                                         },
                                                     } }
