@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d120a29_11b350bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2024-12-06T17:16:39Z",
+      "side": 1,
+      "message": "Changing to CR+1 so the CL doesn\u0027t show up on @mvdan@mvdan.cc\u0027s dashboard as already +2\u0027d.",
+      "revId": "70778cb3f9810aa50f5d14e3bef9f4fe64f64aa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
