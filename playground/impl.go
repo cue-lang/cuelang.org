@@ -25,7 +25,10 @@ import (
 	"cuelang.org/go/cue/errors"
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/load"
+	"cuelang.org/go/cue/parser"
 	"cuelang.org/go/cue/token"
+	"cuelang.org/go/encoding/json"
+	"cuelang.org/go/encoding/yaml"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/encoding"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
 )
@@ -36,6 +39,7 @@ const (
 	functionExport function = "export"
 	functionEval   function = "eval"
 	functionDef    function = "def"
+	functionFmt    function = "fmt"
 )
 
 type input string
@@ -54,10 +58,15 @@ const (
 	outputYaml output = output(inputYaml)
 )
 
-func handleCUECompile(in input, fn function, out output, inputVal string) (string, error) {
+func handleCUECompile(in input, origFn function, out output, inputVal string) (string, error) {
+	// fn is the effective function. origFunction is what we were called with.
+	// See below for comment about how formatting of CUE code changes the
+	// effective function.
+	fn := origFn
+
 	// TODO implement more functions
 	switch fn {
-	case functionExport, functionEval, functionDef:
+	case functionExport, functionEval, functionDef, functionFmt:
 	default:
 		return "", fmt.Errorf("function %q is not implemented", fn)
 	}
@@ -67,32 +76,89 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	default:
 		return "", fmt.Errorf("unknown input type: %v", in)
 	}
-	loadCfg := &load.Config{
-		Stdin:      strings.NewReader(inputVal),
-		Dir:        "/",
-		ModuleRoot: "/",
-		Overlay: map[string]load.Source{
-			"/cue.mod/module.cue": load.FromString(`
-				module: "example.test"
-				language: version: "v0.9.0"
-			`),
-		},
-	}
-	builds := load.Instances([]string{string(in) + ":", "-"}, loadCfg)
-	if err := builds[0].Err; err != nil {
-		return "", fmt.Errorf("failed to load: %w", err)
-	}
 
-	ctx := cuecontext.New()
-
-	v := ctx.BuildInstance(builds[0])
-	if err := v.Err(); err != nil {
-		return "", fmt.Errorf("failed to build: %w", err)
-	}
 	switch out {
 	case outputCUE, outputJSON, outputYaml:
 	default:
 		return "", fmt.Errorf("unknown ouput type: %v", out)
+	}
+
+	if fn == functionFmt {
+		// For Fmt, we require in and out to be the same.
+		if in != input(out) {
+			return "", fmt.Errorf("fmt input output mismatch: input = %q, output = %q", in, out)
+		}
+
+		// If CUE is being formatted we can short-circuit with a trivial parse and format of AST.
+		// For JSON and Yaml we fall through to an export
+		switch in {
+		case inputCUE:
+			return formatCUE(inputVal), nil
+		case inputJSON, inputYaml:
+			// For JSON and Yaml we effectively perform an export, knowing from
+			// our earlier check that the output filetype matches the input. So
+			// whilst not necessarily the most efficient we know it will work like
+			// cmd/cue.
+			fn = functionExport
+		default:
+			return "", fmt.Errorf("don't know how to format %q", in)
+		}
+	}
+
+	// In case we are formatting, we don't want to return an error, rather the
+	// original value. Rather that litter lots of return paths with this logic
+	// below, wrap up in a closure
+	//
+	// Only call with a non-nil error.
+	origOrErr := func(err error) (string, error) {
+		if err == nil {
+			panic("only call with a non-nil error")
+		}
+		if origFn == functionFmt {
+			return inputVal, nil
+		}
+		return "", err
+	}
+
+	ctx := cuecontext.New()
+	var v cue.Value
+
+	switch in {
+	case inputCUE:
+
+		loadCfg := &load.Config{
+			Stdin:      strings.NewReader(inputVal),
+			Dir:        "/",
+			ModuleRoot: "/",
+			Overlay: map[string]load.Source{
+				"/cue.mod/module.cue": load.FromString(`
+				module: "example.test"
+				language: version: "v0.9.0"
+			`),
+			},
+		}
+		builds := load.Instances([]string{string(in) + ":", "-"}, loadCfg)
+		if err := builds[0].Err; err != nil {
+			return origOrErr(fmt.Errorf("failed to load: %w", err))
+		}
+
+		v = ctx.BuildInstance(builds[0])
+	case inputJSON:
+		e, err := json.Extract("-", []byte(inputVal))
+		if err != nil {
+			return origOrErr(fmt.Errorf("failed to extract JSON: %w", err))
+		}
+		v = ctx.BuildExpr(e)
+	case inputYaml:
+		f, err := yaml.Extract("-", inputVal)
+		if err != nil {
+			return origOrErr(fmt.Errorf("failed to extract Yaml: %w", err))
+		}
+		v = ctx.BuildFile(f)
+	}
+
+	if err := v.Err(); err != nil {
+		return origOrErr(fmt.Errorf("failed to build: %w", err))
 	}
 	cueOpts := []cue.Option{
 		cue.Docs(true),
@@ -107,7 +173,7 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		cueOpts = append(cueOpts, cue.Final(), cue.Concrete(true))
 	}
 	if err := v.Validate(cueOpts...); err != nil {
-		return "", err
+		return origOrErr(err)
 	}
 	f, err := filetypes.ParseFile(string(out)+":-", filetypes.Export)
 	if err != nil {
@@ -121,11 +187,14 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	}
 	e, err := encoding.NewEncoder(ctx, f, encConf)
 	if err != nil {
-		return "", fmt.Errorf("failed to build encoder: %v", err)
+		return origOrErr(fmt.Errorf("failed to build encoder: %v", err))
 	}
 
 	// TODO(mvdan): Note that formatOpts appear to do nothing at all.
 	// For instance, the tests indent JSON with four spaces instead of two.
+	//
+	// TODO(myitcv): make the sharing of format options consistent with
+	// formatCUE.
 	var formatOpts []format.Option
 	switch out {
 	case outputCUE:
@@ -139,7 +208,7 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	encConf.Format = formatOpts
 	synF := getSyntax(v, cueOpts)
 	if err := e.EncodeFile(synF); err != nil {
-		return "", fmt.Errorf("failed to encode: %w", err)
+		return origOrErr(fmt.Errorf("failed to encode: %w", err))
 	}
 	return outBuf.String(), nil
 }
@@ -158,4 +227,23 @@ func getSyntax(v cue.Value, opts []cue.Option) *ast.File {
 	default:
 		panic("unreachable")
 	}
+}
+
+func formatCUE(s string) string {
+	f, err := parser.ParseFile("cue:-", s, parser.ParseComments)
+	if err != nil {
+		// Simply return the input, i.e. leave the input untouched. This is what
+		// the LSP does. Because like the LSP, the user will already be able to
+		// see from the RHS that there is an error in the LHS. They don't need a
+		// further error telling them that the code cannot be parsed.
+		return s
+	}
+
+	// TODO(myitcv): make the sharing of format options consistent with
+	// handleCUECompile.
+	b, err := format.Node(f, format.TabIndent(true))
+	if err != nil {
+		return s
+	}
+	return string(b)
 }

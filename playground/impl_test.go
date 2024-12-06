@@ -89,6 +89,46 @@ var testTable = []struct {
 		"x: {\n\tx2: \"foo\"\n}\ny: x.missing\n",
 		"",
 	},
+
+	// Simple format checks; no errors
+	{
+		inputCUE, functionFmt, outputCUE,
+		"  package foo\n",
+		"package foo\n",
+		"",
+	},
+	{
+		inputJSON, functionFmt, outputJSON,
+		"{\n\"x\":  5\n}\n",
+		"{\n    \"x\": 5\n}\n",
+		"",
+	},
+	{
+		inputYaml, functionFmt, outputYaml,
+		"x:      5\n",
+		"x: 5\n",
+		"",
+	},
+
+	// Error format checks
+	{
+		inputCUE, functionFmt, outputCUE,
+		"  {\n",
+		"  {\n",
+		"",
+	},
+	{
+		inputJSON, functionFmt, outputJSON,
+		"{\nx:  5\n}\n",
+		"{\nx:  5\n}\n",
+		"",
+	},
+	{
+		inputYaml, functionFmt, outputYaml,
+		"  :      5\n",
+		"  :      5\n",
+		"",
+	},
 }
 
 func TestHandleCUECompile(t *testing.T) {
