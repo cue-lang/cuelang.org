@@ -25,6 +25,7 @@ import (
 	"cuelang.org/go/cue/errors"
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/load"
+	"cuelang.org/go/cue/parser"
 	"cuelang.org/go/cue/token"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/encoding"
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
@@ -36,6 +37,7 @@ const (
 	functionExport function = "export"
 	functionEval   function = "eval"
 	functionDef    function = "def"
+	functionFmt    function = "fmt"
 )
 
 type input string
@@ -54,10 +56,15 @@ const (
 	outputYaml output = output(inputYaml)
 )
 
-func handleCUECompile(in input, fn function, out output, inputVal string) (string, error) {
+func handleCUECompile(in input, origFn function, out output, inputVal string) (string, error) {
+	// fn is the effective function. origFunction is what we were called with.
+	// See below for comment about how formatting of CUE code changes the
+	// effective function.
+	fn := origFn
+
 	// TODO implement more functions
 	switch fn {
-	case functionExport, functionEval, functionDef:
+	case functionExport, functionEval, functionDef, functionFmt:
 	default:
 		return "", fmt.Errorf("function %q is not implemented", fn)
 	}
@@ -67,6 +74,29 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	default:
 		return "", fmt.Errorf("unknown input type: %v", in)
 	}
+
+	if fn == functionFmt {
+		// For Fmt, we require in and out to be the same.
+		if in != input(out) {
+			return "", fmt.Errorf("fmt input output mismatch: input = %q, output = %q", in, out)
+		}
+
+		// If CUE is being formatted we can short-circuit with a trivial parse and format of AST.
+		// For JSON and Yaml we fall through to an export
+		switch in {
+		case inputCUE:
+			return formatCUE(inputVal)
+		case inputJSON, inputYaml:
+			// For JSON and Yaml we effectively perform an export, knowing from
+			// our earlier check that the output filetype matches the input. So
+			// whilst not necessarily the most efficient we know it will work like
+			// cmd/cue.
+			fn = functionExport
+		default:
+			return "", fmt.Errorf("don't know how to format %q", in)
+		}
+	}
+
 	loadCfg := &load.Config{
 		Stdin:      strings.NewReader(inputVal),
 		Dir:        "/",
@@ -107,6 +137,13 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		cueOpts = append(cueOpts, cue.Final(), cue.Concrete(true))
 	}
 	if err := v.Validate(cueOpts...); err != nil {
+		// In case we are formatting, an error here requires us to simply
+		// return the input.
+		//
+		// XXX: Ensure that we test this
+		if origFn == functionFmt {
+			return inputVal, nil
+		}
 		return "", err
 	}
 	f, err := filetypes.ParseFile(string(out)+":-", filetypes.Export)
@@ -158,4 +195,12 @@ func getSyntax(v cue.Value, opts []cue.Option) *ast.File {
 	default:
 		panic("unreachable")
 	}
+}
+
+func formatCUE(s string) (string, error) {
+	f, err := parser.ParseFile("cue:-", s, parser.ParseComments)
+	if err != nil {
+		return "", fmt.Errorf("failed to parse ")
+	}
+
 }
