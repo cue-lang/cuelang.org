@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "edee0414_62afb754",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-12-07T22:32:10Z",
+      "side": 1,
+      "message": "this is the very same repo, so say just #482? although the link should still work though, I\u0027m confused.",
+      "revId": "70778cb3f9810aa50f5d14e3bef9f4fe64f64aa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "4d120a29_11b350bf",
@@ -14,6 +31,23 @@
       "writtenOn": "2024-12-06T17:16:39Z",
       "side": 1,
       "message": "Changing to CR+1 so the CL doesn\u0027t show up on @mvdan@mvdan.cc\u0027s dashboard as already +2\u0027d.",
+      "revId": "70778cb3f9810aa50f5d14e3bef9f4fe64f64aa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6c5dd6a_e0264ff8",
+        "filename": "playground/impl.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-12-07T22:32:10Z",
+      "side": 1,
+      "message": "FYI there\u0027s also the https://pkg.go.dev/cuelang.org/go/cue/format#Source shortcut, which also does a ParseFile with comments.",
       "revId": "70778cb3f9810aa50f5d14e3bef9f4fe64f64aa1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
