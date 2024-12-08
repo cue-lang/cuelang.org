@@ -13,7 +13,7 @@ version of the `cue` command:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.11.0
+cue version v0.12.0-0.dev.0.20241208100708-432c1141e6e7
 ...
 ```
 
