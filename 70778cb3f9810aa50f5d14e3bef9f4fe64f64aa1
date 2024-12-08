@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "c96b7986_a89c579a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-08T05:51:16Z",
+      "side": 1,
+      "message": "Ha good spot. I hadn\u0027t even checked. Yes, I\u0027ve switched to the plain `#482`, but the reason it doesn\u0027t work is that our pattern doesn\u0027t allow `.` in the second part of the slug. I\u0027ll fix up that pattern another time.",
+      "parentUuid": "edee0414_62afb754",
+      "revId": "70778cb3f9810aa50f5d14e3bef9f4fe64f64aa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "4d120a29_11b350bf",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -48,6 +66,24 @@
       "writtenOn": "2024-12-07T22:32:10Z",
       "side": 1,
       "message": "FYI there\u0027s also the https://pkg.go.dev/cuelang.org/go/cue/format#Source shortcut, which also does a ParseFile with comments.",
+      "revId": "70778cb3f9810aa50f5d14e3bef9f4fe64f64aa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d693d15_10912c81",
+        "filename": "playground/impl.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-08T05:51:16Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "d6c5dd6a_e0264ff8",
       "revId": "70778cb3f9810aa50f5d14e3bef9f4fe64f64aa1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
