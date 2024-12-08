@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							code: {
-								basic:              "/7RdOfNf2J7JxcwtdyJJSnKB60af3nXX9OY9MNszz9c="
-								"unification-1":    "44ybdNbXkMVPxBPcuhJpnCrmkgz351q4Kth8rZ+gR0M="
-								"unification-2":    "JDB+Q1lPRSiIXbjU6IP6zEQoT/OsdcbGw1xlAYpKzqs="
-								"failure-1":        "7U5BNAuzJYQLXfpcSVSGZHksEwEWQNP1d/GQpfAKGm8="
-								"error-2":          "HN3Lkoj24Gwcls7Zj2LjE1pxIzXjwd//suuxFNx2MWw="
-								references:         "evcZ8gaNCa6kyHxCCjX1nWsauB086QC7eWEbPwL7DW0="
-								complex:            "h/EFP6TYWTyTvpYKFq0PFmW66ac/WHfYrL47vUhPDXw="
-								"multiple-success": "1q9XdL0KKcKFSvxRSzgQ0vMaMmbSjEFsoP6SS2XPzjc="
-								"multiple-failure": "mU1EJB3AV4CRv2Q3qow6h8kOcctRmA6cg2naU5tz9TU="
-								"large example":    "6xKGG0TZ5ZsL8Zhav9E8llvfk3l/+3Exy0kZLnkY9YM="
+								basic:              "L7gG7fktAfOXGKhOnHDE7uyfdPKzoDK0Q8chQ2vyhzo="
+								"unification-1":    "yL9lcEjOr7hh5I6W+gVocvlmQtaZaowfXpEl7teh1Rg="
+								"unification-2":    "1UgTTXgc0geHVQrTqMFbcjR38LrqgEypy96szRXdiP4="
+								"failure-1":        "MXW/mOu66dmjXwVQ9VSmhYBHJCqDvJrRFVdVGdukzRw="
+								"error-2":          "aVnYSgDyXDVLQBcYHvekwUx1ROdoTd8OMmE838rrmlM="
+								references:         "mYetsNd10e00SaWzQ+GQ8eMyYs47ZPqWslSrBLru3Vw="
+								complex:            "SXSj0QyzWFmcxiVryz3pqbGPo49fqDtntBDHsDbKH94="
+								"multiple-success": "Vj7Q3fKDXCKk/viEcka8V50KU9BsGF0iV6KQTpjC+IU="
+								"multiple-failure": "E2bvGNVroBE/hkENczXWm4yAvRxjPoZWKSaRhY5lbL0="
+								"large example":    "ld8pvN+ATEs4V7HXQchts62dYogfqH1G3FfpV0DMasU="
 							}
 						}
 					}
