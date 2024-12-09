@@ -27,7 +27,7 @@ This guide demonstrates the following version:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.11.0
+cue version v0.12.0-0.dev.0.20241209170035-d298a53db8bc
 ...
 ```
 
