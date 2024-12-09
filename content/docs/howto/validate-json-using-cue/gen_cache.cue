@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"x.json":       "s/Ig99DAnlL0Ndm1XtW/idpWYV5YoNjC44MVvSSBLXg="
-								"x.cue":        "4pCXdUSiHbDeCEtKHKZuhPtNaAKaw7Xra1tm8Bhk3Mk="
-								"x.json v2":    "1T6CMCAcpzH7aXnCSAF1L2moDQe3OVblnR4KErUWat0="
-								"fixed x.json": "2hZKLeA+XamEwTeqcplyL+VqzW779qtUydvq9nn0y30="
+								"x.json":       "a9J32DDtf1r6mtNZsK4Eq/Q44svyj9F2cUGs6J+hBeY="
+								"x.cue":        "CvOJYWMn9jzAniR1cDI4dGJO/VpGEV9ICK0L6przAZk="
+								"x.json v2":    "3aIcx+OYfOg8oHxWupWZA+lN4D0Os+P3iIIk5zfdbkg="
+								"fixed x.json": "Ly2sipQC/BSIsSGzOi1LdUeXAvIivlGR/FSyKCzxk1A="
 							}
 							multi_step: {
-								hash:       "9MFM1AO8O1L036IE1SQFRNGKAQT2IF8LEGVQ0JA5O49ABEM48T10===="
+								hash:       "66JJFN1J7EL75BC97K87PD86DGL0D5S39M1ND33VHAS4B8J5M9BG===="
 								scriptHash: "UMP1JTJB5F0SVS45CSPDVU8KSNKPQ7SI0OEVSC7IQVT5NDCE1PM0===="
 								steps: [{
 									doc:      ""
