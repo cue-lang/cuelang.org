@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "7CRINRAH7457CN1N29RPCOUSHIAC1BABE4RTSHL4J3DAO7RUGN3G===="
+									hash:       "CUK9G1O1017SDVA1KK2NH8D3B81K0284KF20DA11KRDAHSCRTG50===="
 									scriptHash: "SP2USA7FC8CU3I046VQU8A8BOCI7D5R9OOLOMETUQKE7771BS4Q0===="
 									steps: [{
 										doc:      ""
@@ -61,7 +61,7 @@ package site
 
 												To handle multi-document files, such as JSON Lines or YAML
 												files with document separators (---), the user must specify
-												a the --path, --list, or --files flag.
+												the --path, --list, or --files flag.
 												The --path flag merges each element into a single package as
 												if each element was defined in a separate file. The --list flag
 												concatenates each entry in a file into a list.
