@@ -104,7 +104,7 @@ class App {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = element.getAttribute('href').replace(currentPath, '');
-                window.history.replaceState(null, '', target);
+                window.location.href = target;
                 scrollToHash(target);
             });
         });
