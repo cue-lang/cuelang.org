@@ -52,6 +52,7 @@ body {
 
     background-color: var(--body-background, $c-white);
     color: var(--text-color);
+    -webkit-text-size-adjust: 100%;
 }
 
 h1,
