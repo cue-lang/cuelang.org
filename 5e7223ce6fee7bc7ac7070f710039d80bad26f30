@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3887f980_4d8d06dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-17T18:24:56Z",
+      "side": 1,
+      "message": "Proof that a tip deploy succeeds with this CL: https://github.com/cue-lang/cuelang.org/actions/runs/12378605260/job/34550867850",
+      "revId": "5e7223ce6fee7bc7ac7070f710039d80bad26f30",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
