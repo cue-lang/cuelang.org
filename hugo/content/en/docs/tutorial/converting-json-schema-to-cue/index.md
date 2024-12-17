@@ -59,7 +59,7 @@ Create a JSON schema file:
 {{< code-tabs >}}
 {{< code-tab name="schema.json" language="json" area="top-left" >}}
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "additionalProperties": false,
     "required": [
@@ -81,7 +81,7 @@ Create a JSON schema file:
             }
         }
     },
-    "definitions": {
+    "$defs": {
         "table": {
             "type": "object",
             "additionalProperties": false,
@@ -122,7 +122,7 @@ Here, we choose the `cuisine` package.
 package cuisine
 
 #restaurant: {
-	@jsonschema(schema="http://json-schema.org/draft-07/schema#")
+	@jsonschema(schema="https://json-schema.org/draft/2020-12/schema")
 	close({
 		name!:    string
 		cuisine!: string

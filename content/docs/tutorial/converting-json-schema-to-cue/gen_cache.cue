@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"json schema":        "jfEbTSe7qSCZzRSleBi4PCmRHTtKWjQHA0gfziyren8="
-								"schema.cue":         "iKD/BMEMVrR2UYOyDSEcz34lqrW7XscResx21BBLZB0="
+								"json schema":        "iEVS2DSLh/ky16GL3ikDxbDTvIoZMv454zcFfWjBk/Y="
+								"schema.cue":         "3MbJbkYu0kPoCoId58kRl+Y8xmflaaWwoKmU6lQHptg="
 								"split_pea.yml":      "UxEgCk8nWpEluNf8r6tVMWJl9Sh1rS/8SX3/Xpl/1+U="
 								"pomodoro.yml":       "Pt5o2CsF9LCtktGp5Odo3B/vanYAwn7hjVQG1S9sDoU="
 								"pomodoro.yml fixed": "iKrYngHQKdG8RN6GyUeyk74mQ53lSnQnnfqlNHNACCE="
 							}
 							multi_step: {
-								hash:       "SS1JHSITK2AVITGDUMB1T0HS8V74OFNSKTFE44GCUM0B0OB1OCB0===="
-								scriptHash: "F13IT2J3MN36GG3N09O9518426I38RFFPOPK0L8BIOG0OSCEHI0G===="
+								hash:       "BO5358MUA58V67556OOVNF5IBAS6QSA9M18FNV6U1BE5HODBO4E0===="
+								scriptHash: "C4LR0D5POADT8TNNESICONGVCB5E89FSU7UHCQ06E31VTC5S7HF0===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
