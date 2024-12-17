@@ -33,6 +33,24 @@
       "message": "I assume we need a patch file because stable vs tip produce different output.",
       "revId": "5e7223ce6fee7bc7ac7070f710039d80bad26f30",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db11e775_a4f5177c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-17T18:34:42Z",
+      "side": 1,
+      "message": "It\u0027s more because of the lack of feature per https://cuelang.org/issue/2798 to assert a file\u0027s content\u0027s in a way that respects `--update` when set. A solution there would obviate many of the requirements for tip patches, including this one.",
+      "parentUuid": "e58b257b_049dd835",
+      "revId": "5e7223ce6fee7bc7ac7070f710039d80bad26f30",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
