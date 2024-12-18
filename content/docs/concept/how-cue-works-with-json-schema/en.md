@@ -98,12 +98,13 @@ definition:
 
 {{{with upload "en" "schema.cue"}}}
 -- schema.cue --
+// Main Person schema.
+//
+// This schema defines a person.
+
 import "strings"
 
 #Person: {
-	// Main Person schema.
-	//
-	// This schema defines a person.
 	@jsonschema(schema="https://json-schema.org/draft/2020-12/schema")
 
 	// What is this person called?

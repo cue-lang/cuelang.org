@@ -254,7 +254,7 @@ hello
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
 $ export MYVAR=value
 $ cue version
-cue version v0.11.0
+cue version v0.12.0-0.dev.0.20241218161113-f2775f863f4c
 
 go version go1.23.2
       -buildmode exe
@@ -264,7 +264,7 @@ go version go1.23.2
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
-cue.lang.version v0.11.0
+cue.lang.version v0.12.0
 ```
 ```text { title="TERMINAL" type="terminal" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZA==" }
 $ nonexistent command
@@ -283,12 +283,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "8Gw9RATA7Z8qg94hzRDMSfMHg0QyfcfoCDIi568cbvo="
-						"upload-some-cue": "Qi6/hAlPrh2bY9UQD2CLMlZB3ku1oOrkRfdrwHyYtRk="
-						"in-subdir":       "0qJmh3aq7QZU2/HOLE30MQebvDJcPzZbV6DUBf0kyNM="
+						"hidden file":     "SExG3Vhw9jfUd/zE9QQdb3tw6U6uEn+hfpdmOCUTcag="
+						"upload-some-cue": "UUE+8UvuWbKv/o4crn+wLTZsEAGbZef33X7IGvxurQw="
+						"in-subdir":       "nFPKEEpdctPpmoG6U+Xtskor5bvES632buPFEhgiQ4E="
 					}
 					multi_step: {
-						hash:       "VIP77P8O62HK9CELKATL279BJ4GLEA4IBHAA10DCIR66FIDSENO0===="
+						hash:       "AG5P5419KGAG8MCN1ON5T3I3B6KJNAU07B7MHOTB7DIE75GLI130===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -350,7 +350,7 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.11.0
+									cue version v0.12.0-0.dev.0.20241218161113-f2775f863f4c
 
 									go version go1.23.2
 									      -buildmode exe
@@ -360,7 +360,7 @@ package site
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
-									cue.lang.version v0.11.0
+									cue.lang.version v0.12.0
 
 									"""
 						}, {
