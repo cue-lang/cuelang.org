@@ -4,6 +4,7 @@
 .anchor {
     $self: &;
 
+    cursor: default;
     left: -$p-gutter;
     padding-right: 2rem; // make sure there is overlap between anchor and heading
     position: absolute;
