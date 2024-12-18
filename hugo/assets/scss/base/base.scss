@@ -337,22 +337,16 @@ pre {
 }
 
 code {
+    --pre-background-color: #{ $c-grey-blue };
+
+    background-color: var(--pre-background-color);
+    border-radius: 2px;
     font-size: inherit;
     font-style: normal;
     font-weight: inherit;
     line-height: inherit;
+    padding: 0 4px;
     white-space: pre;
-
-    ul &,
-    ol &,
-    dl &,
-    p & {
-        --pre-background-color: #{ $c-grey-blue };
-
-        background-color: var(--pre-background-color);
-        border-radius: 2px;
-        padding: 0 4px;
-    }
 }
 
 pre {
@@ -365,6 +359,10 @@ pre {
     max-width: 100%;
     overflow-x: auto;
     padding: 0.875rem 1rem;
+
+    code {
+        --pre-background-color: transparent;
+    }
 }
 
 audio,
