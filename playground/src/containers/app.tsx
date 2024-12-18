@@ -25,7 +25,13 @@ import { vscodeLight, vscodeLightTerminal } from '@config/editor-theme';
 import { examples } from '@config/examples';
 import { availableWorkspaces, defaultWorkspace } from '@config/workspaces';
 import { getSharedCode, share, workspaceToShareContent } from '@helpers/share';
-import { getHashParamsFromUrl, getSearchParamsFromUrl, updateHash, workspaceToHashParams } from '@helpers/url-params';
+import {
+    getHashParamsFromUrl,
+    getSearchParamsFromUrl,
+    updateHash,
+    updateSearchParams,
+    workspaceToHashParams
+} from '@helpers/url-params';
 import { setupWorkspaceConfig } from '@helpers/workspace';
 import { DropdownChange } from '@models/dropdown';
 import { Example } from '@models/example';
@@ -98,6 +104,12 @@ export class App extends React.Component<AppProps, AppState>
             if (sharedCode) {
                 saved = true;
                 activeWorkspace = availableWorkspaces[sharedCode.workspace] ?? defaultWorkspace;
+
+                if (urlSearchParams.get('example')) {
+                    urlSearchParams.delete('example');
+                    updateSearchParams(urlSearchParams, true);
+                }
+
                 for (const savedInput of sharedCode.inputs) {
                     const inputTab = activeWorkspace.config.inputTabs.find(tab => tab.type = savedInput.type);
                     if (inputTab) {
