@@ -58,6 +58,27 @@
         margin-right: auto;
     }
 
+    &__content {
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        > h5,
+        > h6 {
+            position: relative;
+
+            &:hover {
+                .anchor {
+                    cursor: pointer;
+                }
+
+                .anchor__icon {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
     &__content,
     &__footer {
         @include container($w-content--small);
@@ -127,24 +148,11 @@
             @include container($w-content);
         }
 
-        h4,
-        h5,
-        h6 {
-            font-size: 1rem;
-        }
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        position: relative;
-
-        &:hover {
-            .anchor__icon {
-                visibility: visible;
+        #{ $self }__content {
+            h4,
+            h5,
+            h6 {
+                font-size: 1rem;
             }
         }
     }
