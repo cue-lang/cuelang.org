@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial config.cue": "oH6Ybf/6KxQ64/Zkns2oV7Qd2l0xPoQ/tiklzFoAtyU="
+								"initial config.cue": "AMHDRMsnNno0IRRpckcrBReLZoqAv05w4+sIotqJMVQ="
 							}
 							multi_step: {
-								hash:       "K24A089RRPJF0MTO3U58HCU2MFOJPC4VSATQ3N12A7OF9MUTOHOG===="
+								hash:       "JO562H55P97FJEHGE72CH19S22SNUAM0COMLR5MGOL1FG8FNPOV0===="
 								scriptHash: "GJ54NFDKNIU9S4SES5TA4K59P6HGVANA0UVCIEM5TFOR2ORO15RG===="
 								steps: [{
 									doc:      ""
@@ -43,7 +43,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.11.1"
+											\tversion: "v0.12.0"
 											}
 											deps: {
 											\t"github.com/cue-labs/examples/frostyconfig@v0": {
