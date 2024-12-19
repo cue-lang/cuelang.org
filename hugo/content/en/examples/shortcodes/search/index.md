@@ -24,3 +24,6 @@ showContentTypes
 
 tags
 : optional - Adds preselected tags
+
+searchTerm
+: optional - Prefills the search bar

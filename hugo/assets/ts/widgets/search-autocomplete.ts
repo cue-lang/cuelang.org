@@ -14,6 +14,7 @@ export class SearchAutocomplete extends BaseWidget {
     public static readonly NAME = 'search-autocomplete';
 
     private isOpen = false;
+    private queryAlreadySet = false;
     private readonly searchClient: SearchClient;
     private readonly suggestionsClient: SearchClient;
     private readonly searchType: string;
@@ -21,6 +22,7 @@ export class SearchAutocomplete extends BaseWidget {
     private querySuggestionsPlugin: AutocompletePlugin<AutocompleteQuerySuggestionsHit, undefined>;
     private autocomplete: AutocompleteApi<BaseItem>;
     private readonly placeholder: string;
+    private readonly searchTerm: string;
     private readonly detachedModeMaxWidth = 1023;
     private readonly facetInputs: NodeListOf<HTMLInputElement>;
 
@@ -32,6 +34,7 @@ export class SearchAutocomplete extends BaseWidget {
         this.searchType = this.element.dataset.searchAutocomplete || '';
         this.searchbarSize = this.element.dataset.searchbarSize;
         this.placeholder = this.element.dataset.searchbarPlaceholder ?? '';
+        this.searchTerm = this.element.dataset.searchbarSearchTerm ?? '';
         this.facetInputs = document.querySelectorAll<HTMLInputElement>('[data-search-results] input[name^="facet-"]');
     }
 
@@ -58,11 +61,16 @@ export class SearchAutocomplete extends BaseWidget {
 
         // Prefill autocomplete with query from url on search results page
         if (this.searchType === 'results') {
-            const url = new URL(window.location.href);
-            const searchParams = new URLSearchParams(url.search);
-            const query = searchParams.get('q') || '';
-            if (query && query !== '') {
-                this.autocomplete.setQuery(query);
+            if (!this.queryAlreadySet) {
+                const url = new URL(window.location.href);
+                const searchParams = new URLSearchParams(url.search);
+                const queryFromUrl = searchParams.get('q') || '';
+                const query = (this.searchTerm && this.searchTerm.trim() !== '') ? this.searchTerm : queryFromUrl;
+
+                if (query && query !== '') {
+                    this.autocomplete.setQuery(query);
+                    this.queryAlreadySet = true;
+                }
             }
         }
 
