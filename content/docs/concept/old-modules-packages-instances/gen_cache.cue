@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							code: {
-								"cmd-cue-mod-init":                   "orio7X03ZxxsoDdGuIbtwVjzLpScsxspaEPKNCEYmNw="
-								"cue-module-directory":               "bQJpjS5VibAUXlJ++r5tTqAt2gkFB7HpPm8GOoDdPps="
-								"cmd-cue-eval-directory":             "CYyxNZAKUWQXHT+feBKrx0Y+qT5cwCS8cdeB/7+PjuE="
-								"cmd-cue-eval-directory-and-package": "ImsmvqZOxYuWZL/40gSoUbCQQ6+F9pSUeTu0J5yWb+Y="
-								"import-path-explicit-package-name":  "aJ4xqN5xwc8DtuuehmzsAhdwT7fOY23hDYmPQwlHsJI="
-								"import-path-implicit-package-name":  "YpxkPb482EQIVohhqjfkyah6E9j/x4LEdAXaZend48M="
-								"general-module-import-path":         "fL0Xd3vFSjntHjr/+FsCyZUSv55cDVWtD02/Jck7UHw="
-								"example-module-import-path":         "neHPGHi6r6zfWKmDEt6EqVQkHvIAxHasVqyEMQXsnFE="
-								"module-root-directory-contents":     "hyBzDnhLbzrBIO9PTiV0dTx0KlGoildaXOm+RcdRKtc="
-								"cue-import-example":                 "tX7JmnvfCo8isoWHLCuemj8DyJ+BRIA929ehlg+0GQo="
-								"regexp-import-example":              "m8Bp5kFC2YVkg6UQIkjePQC+ogXmuZnmu2QbqE6ng2E="
+								"cmd-cue-mod-init":                   "TcDQ0MTpyB/wc0gjsyEI7RItQl0wk/G5az86X1zo+24="
+								"cue-module-directory":               "Upbx51IdzWqiXoSHJQVZCSlB+Rny8WVyYb/ZVeouzSE="
+								"cmd-cue-eval-directory":             "YbSwth6CeFj7sPyaFW2iY4Dg9chdmJPSocpTDbVXvtQ="
+								"cmd-cue-eval-directory-and-package": "bbLspUxeEazRs/mp6PqhV2MqB8voSwt7jOc+ySyLyNQ="
+								"import-path-explicit-package-name":  "ZkmJEjltDkINcnmdmwd6MkhRSoyo1NAc/ZJDD1FYsKc="
+								"import-path-implicit-package-name":  "bY+KxZ6brOKeYKU6Z38k7rmADelk76y0qGkgZRSpef8="
+								"general-module-import-path":         "vSK65776mZqGMl5PfGj6bnVLG9PIUCd4zKmO5NxMAAA="
+								"example-module-import-path":         "GS4VhXSJobErb3p3fdbeHuoQrt7jrSbzf4cxQPA3bzA="
+								"module-root-directory-contents":     "pOfz9jPbIs9jSTATihgnGE15V/kyxH0DvQ+FkVfQ0I8="
+								"cue-import-example":                 "kMfZBYtsG7RQtPgeIUMF1N2j8P0F2VdQ3OgIlCLPqB4="
+								"regexp-import-example":              "fVQpZ/7S5753j1zebaLCYmUZjBamPoo6h2T3XlW7BGM="
 							}
 						}
 					}
