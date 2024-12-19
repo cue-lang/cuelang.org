@@ -3,10 +3,12 @@
 {{ $modifier := .modifier | default "" }}
 {{ $type := .type | default "" }}
 {{ $placeholder := .placeholder | default "" }}
+{{ $searchTerm := .searchTerm | default "" }}
 
 <div data-search-autocomplete="{{ $type }}"
      data-searchbar-size="{{ if not (eq $type "results") }}small{{ end }}"
      data-searchbar-placeholder="{{ $placeholder }}"
+     data-searchbar-search-term="{{ $searchTerm }}"
 >
     <div id="autocomplete-{{ $type }}"></div>
 </div>

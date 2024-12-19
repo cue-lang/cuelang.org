@@ -1,11 +1,13 @@
 {{- $contentType := .Get "contentType" | default "" -}}
 {{- $showContentTypes := .Get "showContentTypes" | default true -}}
 {{- $preselectedTags := .Get "tags" | default "" -}}
+{{- $searchTerm := .Get "searchTerm" | default "" -}}
 
 {{- partial "search"  (dict
     "type" "widget"
     "contentType" $contentType
     "showContentTypes" $showContentTypes
     "preselectedTags" $preselectedTags
+    "searchTerm" $searchTerm
     "context" .
 ) -}}
