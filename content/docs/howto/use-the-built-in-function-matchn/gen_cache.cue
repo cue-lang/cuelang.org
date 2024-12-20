@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								basic:                   "pL0S6z1v2rPQ30BRrDA2VyvcHGe6fZtIAy8EwlI0lOU="
-								"one of":                "+Fw7c8rjAy6BPqfEinPh5PODg6w3HIQ+fUZjP+HJOHg="
-								"any of":                "4R/VFH35Hrm5c5d9fi3WhDz7086gQNWGMAl8r45SNPs="
-								"all of":                "8vPE1zFIz/yz+89XuTVfZlRSwlpONX3Gj/kjY/e1+K8="
-								not:                     "lId4fTdoI5nyuMxUgVJQPj5CIfYWOBErz/eDIERKFDg="
-								"all but one":           "f7B5QAh7g3ZepW4jTlL3dzEVAdRSSHkxQgpGQgW3kMo="
-								composite:               "9eOlPnXQbjXzhXWQEEjPQSOVv835Bky5OOiC+GNxuD4="
-								"future: helper fields": "4PonEY4Z2EF9f3IV9AUPcBuFdPLSDUJkXWRdgQv27Vc="
+								basic:                   "WQv7zUVcU1nTt8SjFQMCB9UMBslkjgLQbWWP9I8aFMA="
+								"one of":                "Npy/ssOgcHOINKGDkmBF/xZQLYKmrVDD3IWS13YehD4="
+								"any of":                "Brlt6/9rDcpanyM+9va80CAS3+thsurgBwB98To5THQ="
+								"all of":                "UV5vdaDNY0ScVU7n8362o6X0Q/6luUxTNK5kNjn5Vv4="
+								not:                     "BofYZYPiRLgBHaD3WdpLstkBaUhBvSdGHKkZYBI4Ti4="
+								"all but one":           "uTyGMUBwkjS11Y8kG91LLrXMSSdY0r8sNy7qRkQ0Jzk="
+								composite:               "LKnRPfe7FyPJmj9iZQBqd2w7Zxx6C9jooZZc+U5LgkA="
+								"future: helper fields": "kG+8jDvo13DpJgdsd65SJtvhEALjUmMXaBDNK/HD2ec="
 							}
 							multi_step: {
-								hash:       "RC85MMFUKIFN7DVS9HKTM4V3138LN2SPEAUC1TPDQVPC42DGFHJ0===="
-								scriptHash: "DRFU8R3D86LGM1DPOT0M0LLKSUVNSSAMI71B5A16BOKC2J783QO0===="
+								hash:       "0ERDCD26KSC67U4RSE60UUMSR51I3VC8HOE92LSJTHCTLMUR821G===="
+								scriptHash: "KQ4OKE8F1TU0VH5P4C7CJQ5MUGP78SPJ2O2RHLFTCPH922HL2K70===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.11.1:$PATH"
+									cmd:      "export PATH=/cues/v0.12.0-alpha.1.0.20241220130530-e4c4b8e8a15f:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -29,7 +29,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.1
+											cue version v0.12.0-alpha.1.0.20241220130530-e4c4b8e8a15f
 											...
 
 											"""

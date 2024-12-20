@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								example:                 "18GcN7wtNhQJTfUI0WnoRVJ9Qb5nUziuWTTHGRS7BP0="
-								"future: helper fields": "JhwaATM40yOrH0LHJhS5K7rJjCwg+HsTg5vByox5mYs="
+								example:                 "C/pwB4YdwE/2FDLzztPUwoQdAgNSmqpR8rhSmhjc8tY="
+								"future: helper fields": "XWTmWFF8e3bRnKE8uM0Zxj0Mw8UThSOPQj+fWkyA71Q="
 							}
 							multi_step: {
-								hash:       "USFFA4S5EN2IOEB5COSKRAP7LOC7KNTAU09CKLS7EDUFG6V9OHOG===="
-								scriptHash: "MJLF7BQ0PCD04D0MGRPCENG1E75OKBQ1J3P1OUDHGIN137JFI2HG===="
+								hash:       "GK3517NBFV5CBQ6LV17OASAPNNSLN9CVS7B87C0C952809U54CBG===="
+								scriptHash: "VNA9UV3Q2QN3MTIPLKPLKSNIDBI8K6I9DCNHQUSQIG2MHMV7D3EG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.11.1:$PATH"
+									cmd:      "export PATH=/cues/v0.12.0-alpha.1.0.20241220130530-e4c4b8e8a15f:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -23,7 +23,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.1
+											cue version v0.12.0-alpha.1.0.20241220130530-e4c4b8e8a15f
 											...
 
 											"""

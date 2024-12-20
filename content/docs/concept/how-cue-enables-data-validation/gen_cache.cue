@@ -7,29 +7,29 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"data: alex":                    "MvZTD9JJ2WSDff6I6hs3teMqAxCKSc6TNS7/FLqvslY="
-								"data: bryn (broken)":           "ocvqIi6lYGB2DxoHPx75LdG0v3mNpIObDlfoCtMrJtQ="
-								"data: charlie":                 "NN68N6Il3nY9Hloayk8ephgQshHYik/hFKe955hORMs="
-								"schema: CUE":                   "uto4ZAYMUMY1TaOrnbG4y96CJDuuXuQ0I7GYoCHOa/A="
-								"data: bryn (fixed)":            "AO/JGVsFlXAQvKjmDFr4pgteSw8H6QZ+fUyX/Rtgj9Y="
-								"data: alex (reminder)":         "pv63WYjmsGGPfwpSBUog4axzReu8jJ6sqDWZl/2vQAQ="
-								"data: bryn (reminder)":         "yKIoT0eTUjEwd7jauccOHslL5Pm3SOKj0r9AnTEzanc="
-								"data: charlie (reminder)":      "CaRTNiGJhVAmbF1MUxKCmaogiAc0gQQH/kWe4G+ek3Y="
-								"schema: CUE (reminder)":        "gK1WWwPIR70mqGExPOsZz1hyu3tFeUGBWpGcEQlL0V0="
-								"policy: CUE (too restrictive)": "AW4GnolccqfQVWaCUZhf+GovNkCHr++IIDOlFStF/Lw="
-								"policy: CUE (correct)":         "NMflnJ+4clbJr0P50MFrvuPRQLbrLJREKri9Q74JJ/k="
-								"schema.proto":                  "4b5I5dx2Iw6jQJQwor7NDUd/+hoHVyk6Ch1Koj63nYM="
-								"schema.json":                   "xjk3+orFs3OgkI5WNjFLzGQlxXgQhbXDD0wJvh+rdoc="
-								"policy.cue":                    "N0BXwG/vKx5qtVHbkXV+nk85PTePDP+oFJmNji9AvoI="
-								"data.yml (broken)":             "m4hdOXiES1XUk20OWTUq07MNfUesBJ2o6YRFLuYXLSI="
-								"data.yml (fixed)":              "HCzBYgZ/P9FNkRdpZ+aG6OID3tCpmY9N26oGvgFFoGc="
+								"data: alex":                    "gYH/DlKb06CE1UYvdzzRiUxe/sc5OW+Aq/7Pm6DKYM4="
+								"data: bryn (broken)":           "JVeNMlvKZJ/GuSHrFUg3rZvkoeR8YSkpel0eBrKKHVE="
+								"data: charlie":                 "fJSFDpPPKfmYu3JdPzz2mgwsEPrgrPoYamD+5UMvfh0="
+								"schema: CUE":                   "p+VSdYcZOdWf+ZYDoi49N04qzPUI4qdnaGuSos2190I="
+								"data: bryn (fixed)":            "XhLkc/yPgLZn6W866KrY2zUOqF/9lDPBKraUqlbWVy8="
+								"data: alex (reminder)":         "xM0XyEWr9GJYCOC3O9mnf1/1Hh4AsSLdGaLo7ROyZH8="
+								"data: bryn (reminder)":         "bLrpon20EHfKpbgS637DNHz/nwBU1p9+HjQ4T/d4x70="
+								"data: charlie (reminder)":      "1GNGDIq9cci5fpnwA/iDKKGTnhdOl4YDrFlNIXNJ1ig="
+								"schema: CUE (reminder)":        "WB4M4EvhuV60jxR5VbstUDOQ4HmjYF71msd3vPFdQnY="
+								"policy: CUE (too restrictive)": "Y3oSfJl1vYF+Q7KEzR6ilmSGfe9vi8n72OtXLiOMPDs="
+								"policy: CUE (correct)":         "Q/VmitBnqjrfann7r/NKSV71evjXHOFMlQot+wU5TEs="
+								"schema.proto":                  "vERILg7iKk8tthg3ykmDNNdIaOUt9cbUdew99B/yE2g="
+								"schema.json":                   "+F5rHIUIWZC1uAYAic+ORBscwunb1WNs061cqlnCTkQ="
+								"policy.cue":                    "L72G5e5z2HzTGGPLN+gylgPjimxD+f3W5WTcnnbLLGo="
+								"data.yml (broken)":             "ykOQTaNeNStOyAdI5GCuV8Nsl8M9E3PlC9BT0GoIkcc="
+								"data.yml (fixed)":              "4a4phFMmbbz23bHDh5746UjceaaJu0kofiieR8//9Lk="
 							}
 							code: {
-								constraints: "dOAFBjzkQ9Hz8cjhG5MEy1YZvOgh5IUYYpZIDF6E+iM="
-								definition:  "fTycbZPKwIuVnYhuEBchhM/DKLe3/cxNndhGo6W1WYs="
+								constraints: "INZrvNhE+c5tRiEMs/K4yQiWnIPCfMVP6M4NwFDbHBo="
+								definition:  "1scjy8wNhtd3mPKsAlLLciZJAt9d/fmUyxN3gBrCRjM="
 							}
 							multi_step: {
-								hash:       "5B8G7ROIJ9G5711THJR9Q9V32B3QJ6H3VPEAP2IQ7TT7D9DRSLB0===="
+								hash:       "BI7P0QPA8NSR4QSF1UDGJ1FNMUKKFT7PPULTNBIK9TKHU8VKF930===="
 								scriptHash: "5IRU0HUMAKN4O1TE41F2439MMECK8AS890TU89R3REV16HVJRUN0===="
 								steps: [{
 									doc:      ""
@@ -81,15 +81,15 @@ package site
 											aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
 											    ./data.yml:4:8
 											    ./schema.proto:5:3
+											anInt: incompatible integer bounds >99.0 and <100:
+											    ./policy.cue:9:10
+											    ./schema.json:14:21
 											aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (does not satisfy strings.Contains("25")):
 											    ./policy.cue:6:12
 											    ./data.yml:1:10
 											    ./policy.cue:6:29
 											    ./schema.json:9:21
 											    ./schema.proto:2:3
-											anInt: invalid value 5 (out of bound >99.0):
-											    ./policy.cue:9:10
-											    ./data.yml:2:8
 											aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (out of bound =~"^Multiplication"):
 											    ./schema.json:9:21
 											    ./data.yml:1:10
