@@ -4,7 +4,7 @@ import Fuse from 'fuse.js';
 import { Example, ExamplesByCategory } from '@models/example';
 import { examples } from '@config/examples';
 import { categoryWeight } from '@config/examples/categories';
-import { getSearchParamsFromUrl, updateSearchParams } from '@helpers/url-params';
+import { updateSearchParams } from '@helpers/url-params';
 import cx from 'classnames';
 
 interface ExampleMenuProps {
@@ -81,9 +81,9 @@ export class ExamplesMenu extends React.Component<ExampleMenuProps, ExampleMenuS
     }
 
     public updateUrl(example: Example) {
-        const params = getSearchParamsFromUrl();
+        const params = new URLSearchParams();
         params.set('example', example.slug);
-        updateSearchParams(params);
+        updateSearchParams(params, true);
         this.props.onClose();
     }
 
