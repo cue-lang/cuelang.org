@@ -33,6 +33,10 @@ func AppendDebug(dst []byte, node ast.Node, config DebugConfig) []byte {
 		cfg: config,
 		buf: dst,
 	}
+	if config.IncludeNodeRefs {
+		d.nodeRefs = make(map[ast.Node]int)
+		d.addNodeRefs(reflect.ValueOf(node))
+	}
 	if d.value(reflect.ValueOf(node), nil) {
 		d.newline()
 	}
@@ -48,12 +52,23 @@ type DebugConfig struct {
 	// OmitEmpty causes empty strings, empty structs, empty lists,
 	// nil pointers, invalid positions, and missing tokens to be omitted.
 	OmitEmpty bool
+
+	// IncludeNodeRefs causes a Node reference in an identifier
+	// to indicate which (if any) ast.Node it refers to.
+	IncludeNodeRefs bool
+
+	// IncludePointers causes all nodes to be printed with their pointer
+	// values; setting this also implies [DebugConfig.IncludeNodeRefs]
+	// and references will be printed as pointers.
+	IncludePointers bool
 }
 
 type debugPrinter struct {
-	buf   []byte
-	cfg   DebugConfig
-	level int
+	buf      []byte
+	cfg      DebugConfig
+	level    int
+	nodeRefs map[ast.Node]int
+	refID    int
 }
 
 // value produces the given value, omitting type information if
@@ -71,6 +86,8 @@ func (d *debugPrinter) value0(v reflect.Value, impliedType reflect.Type) {
 	}
 	// Skip over interfaces and pointers, stopping early if nil.
 	concreteType := v.Type()
+	refName := ""
+	ptrVal := uintptr(0)
 	for {
 		k := v.Kind()
 		if k != reflect.Interface && k != reflect.Pointer {
@@ -81,6 +98,14 @@ func (d *debugPrinter) value0(v reflect.Value, impliedType reflect.Type) {
 				d.printf("nil")
 			}
 			return
+		}
+		if k == reflect.Pointer {
+			if n, ok := v.Interface().(ast.Node); ok {
+				ptrVal = v.Pointer()
+				if id, ok := d.nodeRefs[n]; ok {
+					refName = refIDToName(id)
+				}
+			}
 		}
 		v = v.Elem()
 		if k == reflect.Interface {
@@ -124,6 +149,13 @@ func (d *debugPrinter) value0(v reflect.Value, impliedType reflect.Type) {
 		// We print the concrete type when it differs from an implied type.
 		if concreteType != impliedType {
 			d.printf("%s", concreteType)
+		}
+		if d.cfg.IncludePointers {
+			if ptrVal != 0 {
+				d.printf("@%#x", ptrVal)
+			}
+		} else if refName != "" {
+			d.printf("@%s", refName)
 		}
 		d.printf("{")
 		d.level++
@@ -169,9 +201,25 @@ func (d *debugPrinter) structFields(v reflect.Value) (anyElems bool) {
 		if !gotoken.IsExported(f.Name) {
 			continue
 		}
+		if f.Name == "Node" {
+			nodeVal := v.Field(i)
+			if (!d.cfg.IncludeNodeRefs && !d.cfg.IncludePointers) || nodeVal.IsNil() {
+				continue
+			}
+			d.newline()
+			if d.cfg.IncludePointers {
+				if nodeVal.Kind() == reflect.Interface {
+					nodeVal = nodeVal.Elem()
+				}
+				d.printf("Node: @%#v (%v)", nodeVal.Pointer(), nodeVal.Elem().Type())
+			} else {
+				d.printf("Node: @%s (%v)", refIDToName(d.nodeRefs[nodeVal.Interface().(ast.Node)]), nodeVal.Elem().Type())
+			}
+			continue
+		}
 		switch f.Name {
 		// These fields are cyclic, and they don't represent the syntax anyway.
-		case "Scope", "Node", "Unresolved":
+		case "Scope", "Unresolved":
 			continue
 		}
 		elemStart := d.pos()
@@ -211,6 +259,62 @@ func (d *debugPrinter) pos() int {
 
 func (d *debugPrinter) truncate(pos int) {
 	d.buf = d.buf[:pos]
+}
+
+// addNodeRefs does a first pass over the value looking for
+// [ast.Ident] nodes that refer to other nodes.
+// This means when we find such a node, we can include
+// an anchor name for it
+func (d *debugPrinter) addNodeRefs(v reflect.Value) {
+	// Skip over interfaces and pointers, stopping early if nil.
+	for ; v.Kind() == reflect.Interface || v.Kind() == reflect.Pointer; v = v.Elem() {
+		if v.IsNil() {
+			return
+		}
+	}
+
+	t := v.Type()
+	switch v := v.Interface().(type) {
+	case token.Pos, token.Token:
+		// Simple types which can't contain an ast.Node.
+		return
+	case ast.Ident:
+		if v.Node != nil {
+			if _, ok := d.nodeRefs[v.Node]; !ok {
+				d.refID++
+				d.nodeRefs[v.Node] = d.refID
+			}
+		}
+		return
+	}
+
+	switch t.Kind() {
+	case reflect.Slice:
+		for i := 0; i < v.Len(); i++ {
+			d.addNodeRefs(v.Index(i))
+		}
+	case reflect.Struct:
+		t := v.Type()
+		for i := 0; i < v.NumField(); i++ {
+			f := t.Field(i)
+			if !gotoken.IsExported(f.Name) {
+				continue
+			}
+			switch f.Name {
+			// These fields don't point to any nodes that Node can refer to.
+			case "Scope", "Node", "Unresolved":
+				continue
+			}
+			d.addNodeRefs(v.Field(i))
+		}
+	}
+}
+
+func refIDToName(id int) string {
+	if id == 0 {
+		return "unknown"
+	}
+	return fmt.Sprintf("ref%03d", id)
 }
 
 func DebugStr(x interface{}) (out string) {
