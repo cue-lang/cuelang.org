@@ -51,7 +51,7 @@ fs: #writefs & {
 	Tool: "internal/ci/ci_tool.cue"
 
 	Remove: [
-		"../../.github/workflows/*)\(base.workflowFileExtension)",
+		"../../.github/workflows/*\(base.workflowFileExtension)",
 	]
 
 	Create: {
