@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5879008e_0d87804e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2024-12-26T17:23:52Z",
+      "side": 1,
+      "message": "Very well spotted - it appears the mistake was introduced in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1200709. CC Paul to sign off before merging.",
+      "revId": "28c2fdc266cabe2731bf76b1833e513de59cdd2d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
