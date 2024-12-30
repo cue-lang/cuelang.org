@@ -15,14 +15,9 @@ package site
 									"references: fixed":     "ZozhZKFakYVoerJNHsksvK3Vc5KTyh1b129yablmClI="
 								}
 								multi_step: {
-									hash:       "N7IREOHQGL944SJBJBAJI35DLV2BKKQ4I2UAG4M4VCMOFFF1E99G===="
-									scriptHash: "E7I0926EB2FHGKQ4NU1U0297MLTS3N4R2MVPLDVCPPVKFD86DBFG===="
+									hash:       "NNP1L7SP3M6S3MG4AG40LPQ1JHT3A5175P9KADGHL1B5SPKR1NVG===="
+									scriptHash: "VLNGG98FUABM36HDGI2AH2IQCN9I2OP2RSHEFN8T9SKDP3F1HRP0===="
 									steps: [{
-										doc:      ""
-										cmd:      "export PATH=/cues/v0.11.1:$PATH"
-										exitCode: 0
-										output:   ""
-									}, {
 										doc:      ""
 										cmd:      "cue vet list-arithmetic.cue"
 										exitCode: 1

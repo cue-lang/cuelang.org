@@ -51,8 +51,7 @@ B: Addition of lists is superseded by list.Concat; see https://cuelang.org/e/v0.
 
 [`cue fix`]({{< relref "/docs/reference/command/cue-help-fix" >}})
 will make these changes for you in many cases, but only if you are using `cue`
-command version\
-`v0.11.0-alpha.1` or later. Here's how to use `cue fix`:
+command version `v0.11.0` or later. Here's how to use `cue fix`:
 
 Start with some CUE that requires changes because it uses list arithmetic operators:
 

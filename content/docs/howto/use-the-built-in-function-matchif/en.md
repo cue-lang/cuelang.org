@@ -4,24 +4,13 @@ authors: [jpluscplusm]
 toc_hide: true
 ---
 
-{{{with _script_ "en" "HIDDEN: access to cue tip"}}}
-export PATH=/cues/$CUELANG_CUE_TIP:$PATH
-{{{end}}}
-
 This guide demonstrates how to use the
 [built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
-function `matchIf` as a field validator.
-The function currently requires a
-[pre-release]({{< relref "/docs/introduction/installation" >}}#download-an-official-cue-binary)
-version of the `cue` command:
+function `matchIf`.
+It may only be used as a field validator and
+can't be called as a function that returns a boolean value.
 
-{{{with script "en" "cue version"}}}
-#ellipsis 1
-cue version
-{{{end}}}
-
-The `matchIf` function must be used as a field validator; it cannot be called
-as a function that returns a boolean value. It requires three arguments:
+`matchIf` requires three arguments:
 
 1. the *if-value*
 2. the *then-value*
@@ -36,9 +25,10 @@ If the test fails, then the field's value is invalid:
 - If the field's value **could not** unify successfully with the *if-value*,
   can the field's value also unify successfully with the *else-value*?
 
-<!-- We use upload/script pairs because code blocks can't access non-default
-versions of CUE cf. https://cuelang.org/issues/3265 -->
-{{{with upload "en" "example"}}}
+{{{with code "en" "example"}}}
+#location top bottom
+! exec cue vet
+cmp stderr out
 -- example.cue --
 package matchIf
 
@@ -60,9 +50,18 @@ D: matchIf({x?: int}, _oUnder100, _oOver100)
 
 _oUnder100: {o?: <100}
 _oOver100: {o?: >100}
-{{{end}}}
-{{{with script "en" "basic"}}}
-! cue vet
+-- out --
+B: invalid value 42 (does not satisfy matchIf): invalid value 42 (out of bound >100):
+    ./example.cue:9:4
+    ./example.cue:5:4
+    ./example.cue:9:12
+    ./example.cue:9:17
+    ./example.cue:9:23
+D: invalid value {x:"some string",o:99} (does not satisfy matchIf): invalid value 99 (out of bound >100):
+    ./example.cue:17:4
+    ./example.cue:13:4
+    ./example.cue:13:26
+    ./example.cue:20:17
 {{{end}}}
 
 ## Future enhancements
@@ -71,28 +70,23 @@ The current release of `matchIf` does not consider hidden fields or definitions
 when checking for a match with any of its parameters
 (the *if-value*, the *then-value*, or the *else-value*):
 
-{{{with upload "en" "future: helper fields"}}}
+{{{with code "en" "future: helper fields"}}}
+#location top bottom
+exec cue vet .:helperFields # this command succeeds
+cmp stdout out
 -- helper-fields.cue --
 package helperFields
 
-A: {
-	_foo: "some string"
-	#bar: 42
-	baz:  4.2
-}
-// A validates successfully.
-A: matchIf(#A, #A, #A)
-
 #A: {
-	_foo?: int
-	#bar?: string
-	baz!:  float
+	_aString: string
+	#anInt:   int
 }
-{{{end}}}
 
-{{{with script "en" "future: helper fields"}}}
-# This command currently succeeds:
-cue vet .:helperFields
+A: matchIf(#A, #A, #A) & {
+	_aString: 42
+	#anInt:   "not an int"
+}
+-- out --
 {{{end}}}
 
 This behaviour *may* change with future CUE releases.

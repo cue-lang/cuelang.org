@@ -5,10 +5,6 @@ tags: [language]
 toc_hide: false
 ---
 
-{{{with _script_ "en" "HIDDEN: set up access to CUE v0.11 before release"}}}
-export PATH=/cues/$CUELANG_CUE_TIP:$PATH
-{{{end}}}
-
 This guide answers some questions about a language change that happened in CUE
 version 0.11 -- including how to tell if the change affects your CUE, and how
 to update any CUE that's affected.
@@ -51,8 +47,7 @@ that contains list arithmetic operators:
 
 [`cue fix`]({{< relref "/docs/reference/command/cue-help-fix" >}})
 will make these changes for you in many cases, but only if you are using `cue`
-command version\
-`v0.11.0-alpha.1` or later. Here's how to use `cue fix`:
+command version `v0.11.0` or later. Here's how to use `cue fix`:
 
 Start with some CUE that requires changes because it uses list arithmetic operators:
 
