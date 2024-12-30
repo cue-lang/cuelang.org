@@ -16,6 +16,23 @@
       "message": "Very well spotted - it appears the mistake was introduced in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1200709. CC Paul to sign off before merging.",
       "revId": "28c2fdc266cabe2731bf76b1833e513de59cdd2d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c709e84_2b668c11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2024-12-30T13:20:54Z",
+      "side": 1,
+      "message": "Thank you, good catch!",
+      "revId": "28c2fdc266cabe2731bf76b1833e513de59cdd2d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
