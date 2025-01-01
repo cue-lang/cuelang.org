@@ -16,7 +16,7 @@ git config --global user.name cueckoo
 # TODO: this is inherently racey. But not a problem in practice...
 # for now. When it does become a problem we can solve this properly
 # using a nc-based wait loop or similar.
-nohup cue mod registry localhost:5000 > /tmp/cue_mod_registry 2>&1 &
+nohup cue mod registry localhost:5001 > /tmp/cue_mod_registry 2>&1 &
 {{{end}}}
 
 ## Introduction
@@ -158,10 +158,14 @@ If you do not have access to an OCI registry, start one locally:
 {{{with script "en" "start-registry"}}}
 #norun
 
-cue mod registry localhost:5000
+cue mod registry localhost:5001
 {{{end}}}
 
 `cue mod registry` is a very simple in-memory OCI server.
+If this command fails with a message mentioning "address already in use",
+then some other program on your computer is already using port 5001.
+To resolve this, select a different port number and re-run the command using the new value.
+**You will also need to update any commands that use port 5001 as you follow this guide.**
 
 CUE should work with all OCI-compatible artifact registries, such as
 the [Google Artifact Registry](https://cloud.google.com/artifact-registry),
@@ -172,13 +176,13 @@ here are some alternatives:
 #norun
 
 # running a local registry via docker
-docker run -p 5000:5000 registry
+docker run -p 5001:5000 registry
 
 # running a local registry via podman
-podman run -p 5000:5000 registry
+podman run -p 5001:5000 registry
 {{{end}}}
 
-In our example we will run a local instance of the in-memory registry on port 5000.
+In our example we will run a local instance of the in-memory registry on port 5001.
 If you need to run one locally, invoke the above `docker` command in a separate
 terminal so the registry remains running while you follow the rest of this
 tutorial.
@@ -190,7 +194,7 @@ tutorial.
 
 Set up a required environment variable:
 {{{with script "en" "init-environ"}}}
-export CUE_REGISTRY=localhost:5000/cuemodules
+export CUE_REGISTRY=localhost:5001/cuemodules
 {{{end}}}
 
 The `CUE_REGISTRY` variable tells the `cue` command which
