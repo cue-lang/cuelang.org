@@ -146,26 +146,30 @@ it represents the schema of the configuration data expected by `FrostyApp`.
 
 If you do not have access to an OCI registry, start one locally:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSBsb2NhbGhvc3Q6NTAwMA==" }
-$ cue mod registry localhost:5000
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSBsb2NhbGhvc3Q6NTAwMQ==" }
+$ cue mod registry localhost:5001
 ```
 
 `cue mod registry` is a very simple in-memory OCI server.
+If this command fails with a message mentioning "address already in use",
+then some other program on your computer is already using port 5001.
+To resolve this, select a different port number and re-run the command using the new value.
+**You will also need to update any commands that use port 5001 as you follow this guide.**
 
 CUE should work with all OCI-compatible artifact registries, such as
 the [Google Artifact Registry](https://cloud.google.com/artifact-registry),
 as CUE uses the standard OCI protocols spoken by such registries. For example,
 here are some alternatives:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZG9ja2VyIHJ1biAtcCA1MDAwOjUwMDAgcmVnaXN0cnkKcG9kbWFuIHJ1biAtcCA1MDAwOjUwMDAgcmVnaXN0cnk=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZG9ja2VyIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnkKcG9kbWFuIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnk=" }
 # running a local registry via docker
-$ docker run -p 5000:5000 registry
+$ docker run -p 5001:5000 registry
 
 # running a local registry via podman
-$ podman run -p 5000:5000 registry
+$ podman run -p 5001:5000 registry
 ```
 
-In our example we will run a local instance of the in-memory registry on port 5000.
+In our example we will run a local instance of the in-memory registry on port 5001.
 If you need to run one locally, invoke the above `docker` command in a separate
 terminal so the registry remains running while you follow the rest of this
 tutorial.
@@ -176,8 +180,8 @@ tutorial.
 {{< step stepNumber="5" >}}
 
 Set up a required environment variable:
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMC9jdWVtb2R1bGVz" }
-$ export CUE_REGISTRY=localhost:5000/cuemodules
+```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMS9jdWVtb2R1bGVz" }
+$ export CUE_REGISTRY=localhost:5001/cuemodules
 ```
 
 The `CUE_REGISTRY` variable tells the `cue` command which
