@@ -14,8 +14,8 @@ package site
 								"schema-v0.1.0":            "CreDsaMOCejqPfYNe3Hgpi/8Tc2WQaUlwnpZF4320BA="
 							}
 							multi_step: {
-								hash:       "0A6TVTP610NGNS1ERFS93OHLSBRB2DCMO0TLEKEF0PJBB11KMO70===="
-								scriptHash: "PMH5AVE2C5BAA7Q29P6IR5G6NLTKFPE8QOTMPFF4OD909IL98N2G===="
+								hash:       "6IKQKMDEVA0611H684NV0OS7LH1MU6R3LEQ8F67NU1VKHQ30V7NG===="
+								scriptHash: "MHNUU8GT0EEGLQCV7OVKG62H1EG7POGJ8ANFSN43U1OTV4QH2F3G===="
 								steps: [{
 									doc:      ""
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
@@ -32,7 +32,7 @@ package site
 											# for now. When it does become a problem we can solve this properly
 											# using a nc-based wait loop or similar.
 											"""
-									cmd:      "nohup cue mod registry localhost:5000 >/tmp/cue_mod_registry 2>&1 &"
+									cmd:      "nohup cue mod registry localhost:5001 >/tmp/cue_mod_registry 2>&1 &"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -66,7 +66,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "export CUE_REGISTRY=localhost:5000/cuemodules"
+									cmd:      "export CUE_REGISTRY=localhost:5001/cuemodules"
 									exitCode: 0
 									output:   ""
 								}, {
