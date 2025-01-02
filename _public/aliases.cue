@@ -16,6 +16,8 @@ package aliases
   { from: "/docs/tour/types/defs/", to: "/docs/tour/types/definitions/" },
   { from: "/docs/tour/basics/duplicate-fields/", to: "/docs/tour/basics/unification/" },
   { from: "/community/conduct/", to: "/docs/reference/code-of-conduct/" },
+  { from: "/docs/howto/list-no-duplicates/", to: "/docs/howto/ensure-list-contains-no-duplicates/" },
+  { from: "/docs/howto/use-list-uniqueitems-as-a-field-validator/", to: "/docs/howto/ensure-list-contains-no-duplicates/" },
   { from: "/docs/concept/json/", to: "/docs/concept/how-cue-works-with-json/" },
   { from: "/docs/concept/yaml/", to: "/docs/concept/how-cue-works-with-yaml/" },
   { from: "/docs/howto/ensure-min-max-list/", to: "/docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/" },
