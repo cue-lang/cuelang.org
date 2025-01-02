@@ -56,6 +56,8 @@
 /docs/tour/types/defs/              /docs/tour/types/definitions/ 302!
 /docs/tour/basics/duplicate-fields/ /docs/tour/basics/unification/ 302!
 /community/conduct/                 /docs/reference/code-of-conduct/ 302!
+/docs/howto/list-no-duplicates/     /docs/howto/ensure-list-contains-no-duplicates/ 302!
+/docs/howto/use-list-uniqueitems-as-a-field-validator/ /docs/howto/ensure-list-contains-no-duplicates/ 302!
 /docs/concept/json/                 /docs/concept/how-cue-works-with-json/ 302!
 /docs/concept/yaml/                 /docs/concept/how-cue-works-with-yaml/ 302!
 /docs/howto/ensure-min-max-list/    /docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/ 302!
