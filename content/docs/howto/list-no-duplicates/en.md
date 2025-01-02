@@ -1,40 +1,81 @@
 ---
-title: Ensuring lists have no duplicate items
-weight:
-draft: false
+title: Ensuring that lists don't contain duplicate elements
 toc_hide: true
-tags:
-    - language
+tags: [language]
 ---
 
-In CUE, you often will work with lists of all sorts of values. To ensure a list
-has no duplicate items, use
-[list.UniqueItems](https://pkg.go.dev/cuelang.org/go/pkg/list#UniqueItems).
+Structured data often includes fields with list values, and sometimes you'll
+want to ensure that lists don't contain repeated or duplicate elements.
+This guide demonstrates how to use the built-in function
+[`list.UniqueItems`](https://pkg.go.dev/cuelang.org/go/pkg/list#UniqueItems)
+as a field validator to check that your lists' elements' concrete values are
+unique.
 
-## Strings
+## Simple, concrete values
 
-{{{with code "en" "strings"}}}
--- strings.cue --
+Check `string` and `integer` values using `list.UniqueItems`:
+
+{{{with code "en" "simple-strings-integers"}}}
+#location top bottom
+! exec cue vet
+cmp stderr out
+-- file.cue --
+package example
+
 import "list"
 
-items: ["a", "b", "c", "a"]
-items: list.UniqueItems
+// A validates successfully.
+A: ["a", "b", 1, "c", "d"]
+A: list.UniqueItems
+
+// B and C fail to validate.
+B: ["X", "b", 1, "X", "d"]
+B: list.UniqueItems
+C: list.UniqueItems & [
+	1, 2, 42, 3, 40 + 2,
+]
+-- out --
+B: invalid value ["X","b",1,"X","d"] (does not satisfy list.UniqueItems):
+    ./file.cue:10:4
+    ./file.cue:11:4
+C: invalid value [1,2,42,3,42] (does not satisfy list.UniqueItems):
+    ./file.cue:12:4
 {{{end}}}
 
-## Integers
+Values of type `float` can also be checked with `list.UniqueItems`, as
+demonstrated below.
+However there are corner cases where `list.UniqueItems` doesn't behave as you
+might expect when checking these values.
 
-{{{with code "en" "ints"}}}
--- ints.cue --
+{{{with code "en" "simple-floats-numbers"}}}
+#location top bottom
+! exec cue vet
+cmp stderr out
+-- file.cue --
+package example
+
 import "list"
 
-items: [1, 2, 3, 1]
-items: list.UniqueItems
+// A validates successfully, as expected.
+A: [1.0, 2.0, 42.0, 3, 42]
+A: list.UniqueItems
+
+// B fails to validate, as expected.
+B: list.UniqueItems & [
+	1.0, 2.0, 42.0, 3, 40 + 2.0,
+]
+
+// C validates, unexpectedly.
+C: list.UniqueItems & [
+	1.0, 2.0, 42.0, 3, 42.00,
+]
+-- out --
+B: invalid value [1.0,2.0,42.0,3,42.0] (does not satisfy list.UniqueItems):
+    ./file.cue:10:4
 {{{end}}}
 
-{{< warning >}}
-Note that this approach does not work correctly on non-integer values.
-See {{< issue 2192 />}} for details.
-{{< /warning >}}
+The unexpected behaviour above, where `C` validates successfully, is tracked in
+{{<issue 2192/>}}.
 
 ## Structs
 
@@ -60,11 +101,26 @@ items: [
 ]
 {{{end}}}
 
-If the list must be constrained directly, you can write an auxiliary field that
+If the list must be constrained directly, you can embed a hidden field that
 creates a mapping from the keys
 
 {{{with code "en" "auxiliary field"}}}
 -- auxiliary-field.cue --
+FIXME
+
+x: {
+	[...]
+	_check: list.UniqueItems & [
+		for e in x {a: e.a, b: e.b},
+	]
+}
+
+x: [
+	{a: 1, b: 1, c: false},
+	{a: 1, b: 2, c: true},
+	{a: 1, b: 1, c: true},
+]
+
 items: [
 	{
 		name: "joe"
