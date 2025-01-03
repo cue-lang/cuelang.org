@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							code: {
-								"cmd-cue-mod-init":                   "TcDQ0MTpyB/wc0gjsyEI7RItQl0wk/G5az86X1zo+24="
-								"cue-module-directory":               "Upbx51IdzWqiXoSHJQVZCSlB+Rny8WVyYb/ZVeouzSE="
-								"cmd-cue-eval-directory":             "YbSwth6CeFj7sPyaFW2iY4Dg9chdmJPSocpTDbVXvtQ="
-								"cmd-cue-eval-directory-and-package": "bbLspUxeEazRs/mp6PqhV2MqB8voSwt7jOc+ySyLyNQ="
-								"import-path-explicit-package-name":  "ZkmJEjltDkINcnmdmwd6MkhRSoyo1NAc/ZJDD1FYsKc="
-								"import-path-implicit-package-name":  "bY+KxZ6brOKeYKU6Z38k7rmADelk76y0qGkgZRSpef8="
-								"general-module-import-path":         "vSK65776mZqGMl5PfGj6bnVLG9PIUCd4zKmO5NxMAAA="
-								"example-module-import-path":         "GS4VhXSJobErb3p3fdbeHuoQrt7jrSbzf4cxQPA3bzA="
-								"module-root-directory-contents":     "pOfz9jPbIs9jSTATihgnGE15V/kyxH0DvQ+FkVfQ0I8="
-								"cue-import-example":                 "kMfZBYtsG7RQtPgeIUMF1N2j8P0F2VdQ3OgIlCLPqB4="
-								"regexp-import-example":              "fVQpZ/7S5753j1zebaLCYmUZjBamPoo6h2T3XlW7BGM="
+								"cmd-cue-mod-init":                   "Q5tLzts3TB3rzqchPnOabUmieF16J2HTPRrLHLsek+U="
+								"cue-module-directory":               "lRmyTME8c683vIHcNEoUobY/7Og6yc/oV29nK+KamaY="
+								"cmd-cue-eval-directory":             "mT8gJ/hN3XqztNDGzHbx2kaQvu7oXQOwCE+E6d3u4HM="
+								"cmd-cue-eval-directory-and-package": "SkYx6GlRpQDxw1oCQoSfpKyVeC8X2FyaAmeHh/+rKl8="
+								"import-path-explicit-package-name":  "CGjUN/rKT1PwIEuwNdU9ILgNjfQKSwvwqnKFKTm27L4="
+								"import-path-implicit-package-name":  "0Jq5zSk0Fog9oPcTuyIJoMC5fQ1XU5cVM9Rd+8PvxNg="
+								"general-module-import-path":         "Ywl8yN8oZFy5zlKgSrZrcsdMCPEbXleZaLfsqxDgTJE="
+								"example-module-import-path":         "ypgWJ7umm3kIR9P3XYRE4QqCqt/1qGMtknU2CNofys8="
+								"module-root-directory-contents":     "kET1XjOeiX+i4XD0S7IygPeDBMMLYBAxKJYfdZSrZMQ="
+								"cue-import-example":                 "UmBITKG+Vh2MIwDo5iivoxQfYIL3UhlOzIkaO6FFA2U="
+								"regexp-import-example":              "UHQ+ep/xQvfA5M5jMOLQFhmBG6kf2kn+FXknRpZ+U3U="
 							}
 						}
 					}
