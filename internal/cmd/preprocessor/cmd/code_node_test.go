@@ -55,7 +55,7 @@ func TestExtractCommand(t *testing.T) {
 		{
 			name: "two script blocks",
 			in:   "env PATH=something:$PATH\n\nexec hello world\ncmp hello hello.golden\n\n#hello",
-			want: "env PATH=something:$PATH",
+			want: "hello world",
 		},
 		{
 			name: "script block wrapped with newlines",
