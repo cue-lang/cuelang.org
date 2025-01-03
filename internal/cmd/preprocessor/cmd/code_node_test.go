@@ -33,6 +33,11 @@ func TestExtractCommand(t *testing.T) {
 			want: "",
 		},
 		{
+			name: "just blank lines",
+			in:   "\n\n\n\n",
+			want: "",
+		},
+		{
 			name: "single line script",
 			in:   "exec hello world\ncmp hello hello.golden",
 			want: "hello world",
@@ -41,6 +46,21 @@ func TestExtractCommand(t *testing.T) {
 			name: "first line comment",
 			in:   "#hello\nexec hello world\ncmp hello hello.golden",
 			want: "hello world",
+		},
+		{
+			name: "script surrounded by comment blocks",
+			in:   "#hello\n\nexec hello world\ncmp hello hello.golden\n\n#hello",
+			want: "hello world",
+		},
+		{
+			name: "two script blocks",
+			in:   "env PATH=something:$PATH\n\nexec hello world\ncmp hello hello.golden\n\n#hello",
+			want: "hello world",
+		},
+		{
+			name: "script block wrapped with newlines",
+			in:   "\n! exec cue export\ncmp stderr out.err\n",
+			want: "cue export",
 		},
 	}
 	for _, tc := range testCases {
