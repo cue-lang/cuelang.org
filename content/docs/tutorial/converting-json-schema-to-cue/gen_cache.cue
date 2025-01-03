@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"json schema":        "2YJs7Tq3s40bcc6aDb05QcvFtjWQacYxosHwb8UiN3A="
-								"schema.cue":         "bjTcAyaJRPC5gfRg8UrFssGZktGCCI3xiXSP1qcenaI="
-								"split_pea.yml":      "E+mzDJraZHNQyu4ha5/Qwq3Vg2yvEXIWU23a/FGm7NQ="
-								"pomodoro.yml":       "DQIUCVJDmPyQOHrxXW/fG1Z2N5WAXAeEZoNSPyIuk+g="
-								"pomodoro.yml fixed": "zy39Bsmk5z8XJzVFVmOzaGRGPY0F5Sch/KqpO3qt7fg="
+								"json schema":        "RS1cfQhuDwy/eCy9by9gA03/4BSQd8URuOJUXdOLBrQ="
+								"schema.cue":         "QSVF7WUt2UsIE/Zg1Syzwex+itqPtZtK3TPbDAUh3a8="
+								"split_pea.yml":      "5rpGJXpGcjW5ksQTI3ZTITXIsz9vXcmxHC/WVfzrWDA="
+								"pomodoro.yml":       "Zc21jXydXlYVHY37NSeB1pjlS1eAJsg/GuEUaoE37ns="
+								"pomodoro.yml fixed": "KnFJhGi5vpLU4l3Obdn30yXiEI96neFdyUg/SSWUv5U="
 							}
 							multi_step: {
-								hash:       "9GOPH196JRRHA9A90ED7HK7PNFK0CISMNPIA2AOKNK46ROUDTVEG===="
-								scriptHash: "C4LR0D5POADT8TNNESICONGVCB5E89FSU7UHCQ06E31VTC5S7HF0===="
+								hash:       "E2S0FBH325FORDPLUAKAOCCP8BLJE48B8STVM8JA5171SI9AF8NG===="
+								scriptHash: "EEKUOTTD6EPHLI57C8VDPJM17PGNAHR4LE3VPVJK8JJJ1NVQDBEG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.1
+											cue version v0.12.0-alpha.1.0.20250103143946-3f4e72d4d171
 											...
 
 											"""
@@ -46,7 +46,7 @@ package site
 									exitCode: 1
 									output: """
 											tables.0.seats: invalid value 100 (out of bound <=10):
-											    ./schema.cue:12:17
+											    ./schema.cue:13:17
 											    ./pomodoro.yml:4:12
 
 											"""
