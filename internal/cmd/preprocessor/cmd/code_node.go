@@ -214,28 +214,37 @@ func (s *codeNodeRunContext) run() {
 	}
 }
 
-// extractCommand returns the first non-comment, non-blank line in b, stripping
-// an "exec " prefix. extractCommand returns "" in case there was no such line.
+// extractCommand returns the first non-comment, non-blank line of the last
+// contiguous script block in b, stripping an "exec " prefix. extractCommand
+// returns "" in case there was no such line.
 //
 // TODO strip trailing comments in an argument-aware manner.
 func extractCommand(b []byte) string {
-	lines := bytes.Split(b, []byte("\n"))
-	for _, line := range lines {
-		line = bytes.TrimSpace(line)
-		if len(line) == 0 || bytes.HasPrefix(line, []byte("#")) {
-			continue
+	// Find the last contiguous block
+	blocks := bytes.Split(b, []byte("\n\n"))
+	if len(blocks) == 0 {
+		return ""
+	}
+	// Walk backwards through the blocks
+	for i := len(blocks) - 1; i >= 0; i-- {
+		lines := bytes.Split(blocks[i], []byte("\n"))
+		for _, line := range lines {
+			line = bytes.TrimSpace(line)
+			if len(line) == 0 || bytes.HasPrefix(line, []byte("#")) {
+				continue
+			}
+
+			cmd := string(line)
+
+			// We might have a leading ! if we are expecting a command to fail
+			cmd = strings.TrimSpace(strings.TrimPrefix(cmd, "!"))
+
+			// We have exec as a prefix on most commands, because we are executing
+			// testscript
+			cmd = strings.TrimSpace(strings.TrimPrefix(cmd, "exec"))
+
+			return cmd
 		}
-
-		cmd := string(line)
-
-		// We might have a leading ! if we are expecting a command to fail
-		cmd = strings.TrimSpace(strings.TrimPrefix(cmd, "!"))
-
-		// We have exec as a prefix on most commands, because we are executing
-		// testscript
-		cmd = strings.TrimSpace(strings.TrimPrefix(cmd, "exec"))
-
-		return cmd
 	}
 	return ""
 }
