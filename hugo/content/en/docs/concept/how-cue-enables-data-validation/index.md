@@ -458,15 +458,15 @@ $ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
     ./data.yml:4:8
     ./schema.proto:5:3
+anInt: incompatible integer bounds >99.0 and <100:
+    ./policy.cue:9:10
+    ./schema.json:14:21
 aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (does not satisfy strings.Contains("25")):
     ./policy.cue:6:12
     ./data.yml:1:10
     ./policy.cue:6:29
     ./schema.json:9:21
     ./schema.proto:2:3
-anInt: invalid value 5 (out of bound >99.0):
-    ./policy.cue:9:10
-    ./data.yml:2:8
 aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (out of bound =~"^Multiplication"):
     ./schema.json:9:21
     ./data.yml:1:10

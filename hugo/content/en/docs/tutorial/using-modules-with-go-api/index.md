@@ -39,7 +39,7 @@ This tutorial uses the following version of CUE:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.11.1
+cue version v0.12.0-alpha.1.0.20250103143946-3f4e72d4d171
 ...
 ```
 
@@ -192,8 +192,8 @@ and then prints a message based on the `config` field.
 {{< step stepNumber="8" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjExLjEKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.11.1
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEyLjAtYWxwaGEuMS4wLjIwMjUwMTAzMTQzOTQ2LTNmNGU3MmQ0ZDE3MQpnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.12.0-alpha.1.0.20250103143946-3f4e72d4d171
 ...
 $ go mod tidy
 ...
