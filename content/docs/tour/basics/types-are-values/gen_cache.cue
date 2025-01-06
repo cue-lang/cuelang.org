@@ -8,9 +8,9 @@ package site
 						page: {
 							cache: {
 								code: {
-									schema:     "4OrL8R8RkqmN08xK2PYzjsOj4arDU/8M4fB0RT076TA="
-									constraint: "vCGLgqEbyCMegoelllq+E54/2Go6hsibdhtvuS2gl80="
-									data:       "n3dpJHMDIaSxY9DmXgQQNQNFajnjhQabpMTnV2Qp0r0="
+									schema:     "3WK8x6mdpZ7RyQktQNDXBbzkSqdPItMPAXeIoh4TsHs="
+									constraint: "JwCVL48NlPBHIocYTzlPX8QPjow9hd0uRIg4S1EoeuE="
+									data:       "g+K0VHFW2o5fX5FCJuYdXcYOBnQ2AsBROyFZQd7ZNSc="
 								}
 							}
 						}
