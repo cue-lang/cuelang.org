@@ -86,6 +86,24 @@
       "parentUuid": "c89947e3_0c890f32",
       "revId": "6fee47437095c230c6759eab7bac54e24454832e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8eddd485_f86d816e",
+        "filename": "internal/cmd/preprocessor/cmd/execute_doc.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-06T17:22:58Z",
+      "side": 1,
+      "message": "I\u0027d missed that it\u0027s scaled relative to the CPU count, and isn\u0027t an absolute ceiling by itself 👍",
+      "parentUuid": "b4e123df_109092f8",
+      "revId": "6fee47437095c230c6759eab7bac54e24454832e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
