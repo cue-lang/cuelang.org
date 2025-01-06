@@ -19,6 +19,8 @@ import (
 	"encoding/base64"
 	"fmt"
 	"html/template"
+	"maps"
+	"slices"
 	"strings"
 
 	"golang.org/x/tools/txtar"
@@ -193,12 +195,16 @@ func (s *codeNodeRunContext) run() {
 		return
 	}
 
+	args := []string{"testscript.sh"}
+	varNames := slices.Sorted(maps.Keys(s.cueEnvVersions))
+	for _, v := range varNames {
+		args = append(args, fmt.Sprintf("-e=%s", v))
+	}
+	args = append(args, fmt.Sprintf("-u=%v", s.updateGoldenFiles))
+
 	// Now that the archive is updated with valid formatted files, run the
 	// script
-	ts := s.dockerCmd(
-		"testscript.sh",
-		fmt.Sprintf("-u=%v", s.updateGoldenFiles),
-	)
+	ts := s.dockerCmd(args...)
 	ts.Stdin = bytes.NewReader(txtar.Format(effectiveArchive))
 	s.debugf(s.debugCode, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(effectiveArchive)))
 
