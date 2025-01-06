@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "664cb8a9_c2e02cfb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-06T16:58:12Z",
+      "side": 1,
+      "message": "+1 as a Go-aware review is probably in order.",
+      "revId": "6fee47437095c230c6759eab7bac54e24454832e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cf40bf0_d81f3315",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-06T16:58:12Z",
+      "side": 1,
+      "message": "```suggestion\n\tflagConcurrencyFactor flagName \u003d \"concurrencyfactor\"\n```",
+      "revId": "6fee47437095c230c6759eab7bac54e24454832e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c89947e3_0c890f32",
+        "filename": "internal/cmd/preprocessor/cmd/execute_doc.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-06T16:58:12Z",
+      "side": 1,
+      "message": "If this `2.0` is the default value applied when neither flag nor envvar are present, I reckon it should be higher - if only so we don\u0027t need to override/set it in various different places in CI.\n\nIn other words, I\u0027m (personally!) happy being an outlier who\u0027s not using an M4 Mac, and needs to set this value on my slower machine, and I don\u0027t think there\u0027s a need to slow down everyone\u0027s preprocessing by default.\n\nYMMV!",
+      "revId": "6fee47437095c230c6759eab7bac54e24454832e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
