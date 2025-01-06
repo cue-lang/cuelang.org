@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a5f4472_a009aed9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-06T11:48:21Z",
+      "side": 1,
+      "message": "PTAL. If you could review this stack (2x CLs) ahead of https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1206632 being submitted, that would be useful. Not a problem if not, however.",
+      "revId": "d46e66fca3a878804be6382c8d03af72d7f13720",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
