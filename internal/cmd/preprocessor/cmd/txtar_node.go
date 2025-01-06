@@ -332,18 +332,16 @@ func (t *txtarRunContext) formatFiles() error {
 		j.cmd.Stdout = &j.out
 		j.cmd.Stderr = &j.out
 		t.debugf(t.debugFormatting, "%v: running %v", t, j.cmd)
-		if err := j.cmd.Start(); err != nil {
-			t.errorf("%v: failed to start %v: %v", t, j.cmd, err)
-		}
-	}
-
-	// Wait for the formatting jobs in order
-	for _, j := range jobs {
-		if err := j.cmd.Wait(); err != nil {
-			t.errorf("%v: failed to run %v: %v\n%s", t, j.cmd, err, tabIndent(j.out.Bytes()))
-		} else {
-			j.f.Data = j.out.Bytes()
-		}
+		t.doWithSemaphore(func() {
+			if err := j.cmd.Start(); err != nil {
+				t.errorf("%v: failed to start %v: %v", t, j.cmd, err)
+			}
+			if err := j.cmd.Wait(); err != nil {
+				t.errorf("%v: failed to run %v: %v\n%s", t, j.cmd, err, tabIndent(j.out.Bytes()))
+			} else {
+				j.f.Data = j.out.Bytes()
+			}
+		})
 	}
 
 	return errorIfInError(t)

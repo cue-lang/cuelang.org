@@ -772,18 +772,21 @@ func (m *multiStepScript) run() {
 	m.debugf(m.debugScript, "%v: cmd: %v", m, createCmd)
 	m.debugf(m.debugScript, "%v: script: %s", m, m.bashScript)
 
-	if err := createCmd.Run(); err != nil {
-		m.fatalf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
-	}
+	m.doWithSemaphore(func() {
+		if err := createCmd.Run(); err != nil {
+			m.fatalf("failed %v: %v\n%s", createCmd, err, createStderr.Bytes())
+		}
+	})
 
 	instance := strings.TrimSpace(createStdout.String())
 
 	startCmd := exec.Command("docker", "start", "-a", instance)
-	out, err = startCmd.CombinedOutput()
-	if err != nil {
-		var script string
-		m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s%s", m, createCmd, err, out, script)
-	}
+	m.doWithSemaphore(func() {
+		out, err = startCmd.CombinedOutput()
+		if err != nil {
+			m.fatalf("%v: failed to start instance for multi-step script [%v]: %v\n%s", m, createCmd, err, out)
+		}
+	})
 
 	// Because we are running in -t mode, replace all \r\n with \n
 	out = bytes.ReplaceAll(out, []byte("\r\n"), []byte("\n"))

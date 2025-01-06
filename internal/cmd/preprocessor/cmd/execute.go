@@ -21,10 +21,13 @@ import (
 	"fmt"
 	"hash"
 	"io"
+	"math"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"regexp"
+	"runtime"
+	"strconv"
 	"strings"
 	"sync"
 
@@ -39,19 +42,20 @@ type lang string
 const (
 	langEn lang = "en"
 
-	flagDir             flagName = "dir"
-	flagDebug           flagName = "debug"
-	flagServe           flagName = "serve"
-	flagUpdate          flagName = "update"
-	flagReadonlyCache   flagName = "readonlycache"
-	flagSkipCache       flagName = "skipcache"
-	flagHugoFlag        flagName = "hugo"
-	flagNoWriteCache    flagName = "nowritecache"
-	flagCheck           flagName = "check"
-	flagList            flagName = "ls"
-	flagCacheVolumeName flagName = "cachevolumename"
-	flagNoCacheVolume   flagName = "nocachevolume"
-	flagTestUserAuthn   flagName = "testuserauthn"
+	flagDir               flagName = "dir"
+	flagDebug             flagName = "debug"
+	flagServe             flagName = "serve"
+	flagUpdate            flagName = "update"
+	flagReadonlyCache     flagName = "readonlycache"
+	flagSkipCache         flagName = "skipcache"
+	flagHugoFlag          flagName = "hugo"
+	flagNoWriteCache      flagName = "nowritecache"
+	flagCheck             flagName = "check"
+	flagList              flagName = "ls"
+	flagCacheVolumeName   flagName = "cachevolumename"
+	flagNoCacheVolume     flagName = "nocachevolume"
+	flagTestUserAuthn     flagName = "testuserauthn"
+	flagConcurrencyFactor flagName = "concurrencyfactor"
 
 	envTestUserAuthn = "PREPROCESSOR_TEST_USER_AUTHN"
 )
@@ -185,6 +189,16 @@ type executionContext struct {
 	//
 	// [RFC 6749]: https://datatracker.ietf.org/doc/html/rfc6749#section-4.2.2
 	testUserAuthn func() (map[string]oauth2.Token, error)
+
+	// procSemaphore is a buffered channel designed to act as a semaphore to
+	// control the number of processes concurrently spawned by the preprocessor.
+	procSemaphore chan struct{}
+}
+
+func (e *executionContext) doWithSemaphore(f func()) {
+	e.procSemaphore <- struct{}{}
+	defer func() { <-e.procSemaphore }()
+	f()
 }
 
 type cueVersion struct {
@@ -258,6 +272,12 @@ func executeDef(c *Command, args []string) error {
 		return fmt.Errorf("failed to load site schema: %v", err)
 	}
 
+	concFactor, err := strconv.ParseFloat(flagConcurrencyFactor.String(c), 64)
+	if err != nil {
+		return fmt.Errorf("failed to parse float from flag %s", flagConcurrencyFactor)
+	}
+	maxConcurrent := int(math.Floor(float64(runtime.NumCPU()) * concFactor))
+
 	ctx := executionContext{
 		updateGoldenFiles: flagUpdate.Bool(c),
 		readonlyCache:     flagReadonlyCache.Bool(c),
@@ -267,6 +287,7 @@ func executeDef(c *Command, args []string) error {
 		siteSchema:        schema,
 		cacheVolumeName:   flagCacheVolumeName.String(c),
 		noCacheVolume:     flagNoCacheVolume.Bool(c),
+		procSemaphore:     make(chan struct{}, maxConcurrent),
 	}
 
 	if authFlag := flagTestUserAuthn.String(c); authFlag != "" {
