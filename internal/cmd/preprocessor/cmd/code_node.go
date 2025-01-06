@@ -208,10 +208,15 @@ func (s *codeNodeRunContext) run() {
 	ts.Stdin = bytes.NewReader(txtar.Format(effectiveArchive))
 	s.debugf(s.debugCode, "%v: running %v\n%s", s, ts, tabIndent(txtar.Format(effectiveArchive)))
 
-	byts, err := ts.CombinedOutput()
-	if err != nil {
-		s.fatalf("%v: failed to run %v: %v\n%s", s, ts, err, tabIndent(byts))
-	}
+	var (
+		byts []byte
+		err  error
+	)
+	s.doWithSemaphore(func() {
+		if byts, err = ts.CombinedOutput(); err != nil {
+			s.fatalf("%v: failed to run %v: %v\n%s", s, ts, err, tabIndent(byts))
+		}
+	})
 
 	// Read the archive back and assign to indices of the effective archive
 	resArchive := txtar.Parse(byts)

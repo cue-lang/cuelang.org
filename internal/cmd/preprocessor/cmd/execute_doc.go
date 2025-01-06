@@ -161,6 +161,7 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	cmd.Flags().String(string(flagCacheVolumeName), envOrDefault("CUE_CACHE_VOLUME", "cuelang_org_caches"), "the name of the cache volume to use; this flag overrides CUE_CACHE_VOLUME")
 	cmd.Flags().Bool(string(flagNoCacheVolume), false, "do not use a shared docker volume cache for mult-step scripts")
 	cmd.Flags().String(string(flagTestUserAuthn), os.Getenv(envTestUserAuthn), "a JSON map of test user credentials for the Central Registry. Can also be set with non-empty "+envTestUserAuthn)
+	cmd.Flags().String(string(flagConcurrencyFactor), envOrDefault("PREPROCESSOR_CONCURRENCY_FACTOR", "2.0"), "a float factor applied to runtime.NumCPU() to determine the max number of concurrent processes spawned")
 	return cmd
 }
 
