@@ -16,6 +16,23 @@
       "message": "PTAL.\n\nI don\u0027t believe the lack of a separate CL performing an isolated rename of the underlying page should be a problem, as the page that\u0027s updated is almost entirely rewritten, and (I believe) should be reviewed as if it were a new guide. It aims to obsolete and replace two other guides, hence its delta compared to either is (to my eye) not relevant and doesn\u0027t need to be made visible by being broken out as a separate commit. I\u0027m of course happy to split this into 2 CLs if you feel that would make your review easier!",
       "revId": "d9c049eb527e4cee0abf77dfcde9b356bc549794",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0be55ccd_76319fe3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-07T17:04:47Z",
+      "side": 1,
+      "message": "This is being rewritten in light of the changes to `list.UniqueItems` that will land in 0.12, but it\u0027s on hold given the regression that those changes introduced as tracked in cue-lang/cue#3652.",
+      "revId": "d9c049eb527e4cee0abf77dfcde9b356bc549794",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
