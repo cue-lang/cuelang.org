@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16dfe507_86ab19b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-01-07T07:58:48Z",
+      "side": 1,
+      "message": "Apologies, I missed these comments when hitting \"submit including parents\" in the next CL in the chain.",
+      "parentUuid": "eba9fe37_8d586054",
+      "revId": "dd77c7f9f6d66d50de53188a9c4087a71dafb032",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3d8e22d_7af28af5",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-01-06T17:22:58Z",
       "side": 1,
       "message": "(If you push an update):\n\n`Fixes: cue-lang/cue#3014`",
+      "revId": "dd77c7f9f6d66d50de53188a9c4087a71dafb032",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcb6ed84_db356a1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-01-07T07:58:48Z",
+      "side": 1,
+      "message": "Per my other response, I missed your replies entirely 😞\n\nWill resolve manually.",
+      "parentUuid": "b3d8e22d_7af28af5",
       "revId": "dd77c7f9f6d66d50de53188a9c4087a71dafb032",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
