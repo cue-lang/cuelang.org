@@ -171,7 +171,7 @@ If the package name within the directory is not unique, `cue` needs to
 know the name of the package as well
 
 ```txt
-cue eval -p pkgname ./mypkg
+cue eval ./mypkg:pkgname
 ```
 
 If no module is defined, it will just load the files in this directory.

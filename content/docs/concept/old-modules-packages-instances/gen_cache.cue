@@ -10,7 +10,7 @@ package site
 								"cmd-cue-mod-init":                   "Uf4/eCXZwTnOU00FSzrDRK4QB4GhFjzQmzxSwVzwtnk="
 								"cue-module-directory":               "vU2Z3nW9ImGaTCbcJ3Zo6HetRVeqf5+0gJIlvGi2Y84="
 								"cmd-cue-eval-directory":             "nyiYo2PIR7dbJQCxEYpoKKEDeYnMA0Dg+1akUYzDuDs="
-								"cmd-cue-eval-directory-and-package": "fHkG1iaH5pJlAed4MAR4p3p0ZVkJDYC/utEw8K+WGOg="
+								"cmd-cue-eval-directory-and-package": "FZuxbgzES/7TOfIKfZAv4zbBECkJcknUQTM0frbZxyU="
 								"import-path-explicit-package-name":  "cPCSo5hv2DSheFMmrxrUPusMBkxkvpPim6w+RNcqdVs="
 								"import-path-implicit-package-name":  "csO7esHd6bC9T9Nf71hes3rsXvZyNJcFm4x6CijhRvE="
 								"general-module-import-path":         "ELqYTsWeonUnU9Q6FoyDAPPvCSXMNorSkECUIQcDXgQ="
