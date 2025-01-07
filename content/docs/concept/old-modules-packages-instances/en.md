@@ -175,7 +175,7 @@ know the name of the package as well
 
 {{{with code "en" "cmd-cue-eval-directory-and-package"}}}
 -- plain.txt --
-cue eval -p pkgname ./mypkg
+cue eval ./mypkg:pkgname
 {{{end}}}
 
 If no module is defined, it will just load the files in this directory.
