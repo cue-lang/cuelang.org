@@ -40,7 +40,13 @@
             </div>
 
             <div class="search__filters">
-                <p class="search__filters-title"> {{ T "search_filters_title" }}</p>
+                <p class="search__filters-title">
+                    {{ T "search_filters_title" }}
+                    <a href="/docs/howto/search-this-site/"
+                       title={{ T "search_help_link_text" }} >
+                        &#9432;
+                    </a>
+                </p>
 
                 {{- partial "filter.html" (dict
                     "cssClass" "search__filter"
