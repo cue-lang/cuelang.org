@@ -4,7 +4,7 @@ package site
 		docs: {
 			tour: {
 				types: {
-					defs: {
+					definitions: {
 						page: {
 							cache: {
 								code: {
