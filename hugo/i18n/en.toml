@@ -87,7 +87,7 @@ other = """
 Oops! This page doesn't exist.<br><br>
 Try going back to our <strong><a href="/">home page</a></strong>,
 taking a look at our <strong><a href="/docs/">documentation</a></strong>,
-or <a href="/search">searching for a page</a></strong>.
+or <a href="/search/">searching for a page</a></strong>.
 """
 
 # Search
@@ -99,6 +99,8 @@ other = "What are you looking for?"
 other = "documents found"
 [search_filters_title]
 other = "Filters"
+[search_help_link_text]
+other = "How can I customize this search?"
 [search_placeholder]
 other = "Search in cuelang.org"
 [search_placeholder_content_type]
