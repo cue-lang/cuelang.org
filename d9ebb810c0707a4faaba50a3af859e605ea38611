@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c03c31c6_ab1f1926",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-09T17:05:25Z",
+      "side": 1,
+      "message": "We don\u0027t encode the upstream anywhere (other than this commit message), do we?",
+      "revId": "d9ebb810c0707a4faaba50a3af859e605ea38611",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
