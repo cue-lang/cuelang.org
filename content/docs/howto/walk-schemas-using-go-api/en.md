@@ -78,7 +78,7 @@ _aHiddenField: aValue: 139
 {{{end}}}
 
 Our `example.cue` file contains two
-[definitions]({{< relref "docs/tour/types/defs/" >}}) that we want to process:
+[definitions]({{< relref "docs/tour/types/definitions" >}}) that we want to process:
 `#Person` and `#Address`.
 It also includes concrete data fields and a hidden field,
 which we don't consider as schema. The data and hidden fields are included in
@@ -195,4 +195,4 @@ go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...
 - The [`cue/load`](https://pkg.go.dev/cuelang.org/go/cue/load) Go API
 - {{< linkto/related/reference "command/cue-help-mod-init" >}}
 - {{< linkto/related/reference "command/cue-help-vet" >}}
-- {{< linkto/related/tour "types/defs" >}}
+- {{< linkto/related/tour "types/definitions" >}}
