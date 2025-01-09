@@ -338,6 +338,7 @@ pre {
 
 code {
     --pre-background-color: #{ $c-grey-blue };
+    --pre-padding: 0 4px;
 
     background-color: var(--pre-background-color);
     border-radius: 2px;
@@ -345,7 +346,7 @@ code {
     font-style: normal;
     font-weight: inherit;
     line-height: inherit;
-    padding: 0 4px;
+    padding: var(--pre-padding);
     white-space: pre;
 }
 
@@ -362,6 +363,7 @@ pre {
 
     code {
         --pre-background-color: transparent;
+        --pre-padding: 0;
     }
 }
 
