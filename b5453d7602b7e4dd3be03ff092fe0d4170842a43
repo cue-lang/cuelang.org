@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6394025_b7d6dc3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-10T17:33:15Z",
+      "side": 1,
+      "message": "PTAL.\n\nThe test passing is shown here: https://github.com/cue-lang/cuelang.org-trybot/actions/runs/12714233473/job/35443866194#step:28:9\n\nI\u0027ve successfully observed a test failure locally, prompted by this CL and its parent being swapped so that the previous CL\u0027s fixups weren\u0027t yet in scope for this test.",
+      "revId": "b5453d7602b7e4dd3be03ff092fe0d4170842a43",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
