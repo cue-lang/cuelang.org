@@ -15,6 +15,15 @@ aliases: [/docs/reference/cli]
 Use `cue export` to produce validated, concrete data for tools that need
 configurations encoded in formats like JSON or YAML.
 {{</card>}}
+
+{{< card
+    href="cue-vet/"
+    title="The cue vet command"
+>}}
+\
+The `cue vet` command validates CUE, and checks that non-CUE data files are
+compatible with schemas, policies, and other constraints.
+{{</card>}}
 {{</cards>}}
 
 ### Help texts
