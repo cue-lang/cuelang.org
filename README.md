@@ -23,16 +23,24 @@ giving the issue's title a "`cuelang.org: `" prefix.
 
 ### Requirements for local development
 
-* [NodeJS](https://nodejs.org/) `v20.x`
-* [Go](https://golang.org/dl/) `>= go1.23` (not needed for only running `hugo`)
+#### To run `hugo` alone
+
 * [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.128.2`
   (["extended"](https://gohugo.io/troubleshooting/faq/#i-get-this-feature-is-not-available-in-your-current-hugo-version)
   binary version)
+* [NodeJS](https://nodejs.org/) `v20.x`
+
+#### To run any other development workflows
+
+In addition to the `hugo` requirements listed above:
+
+* [Go](https://golang.org/dl/) `>= go1.23`
 * [Docker](https://docs.docker.com/get-docker/) CLI `>= 19.03` (for [`docker
   buildx`](https://github.com/docker/buildx#installing) use, amongst other
   things)
    * [Podman](https://podman.io/) has been used successfully, instead of
      Docker, but its use is currently undocumented
+* [CUE](https://cuelang.org/dl) -- use the `latest` version
 * When adding or changing pages that interact with the CUE Central Registry (or
   making changes to "infra" bits like the `preprocessor`), your registry
   account must have been granted the `test manager` role, and you must have run
@@ -52,8 +60,10 @@ giving the issue's title a "`cuelang.org: `" prefix.
 To serve the site locally run:
 
 ```
-./_scripts/build.bash             # one-off to ensure everything works
-./_scripts/serve.bash [--update]  # update flag writes changes back into source files under content/
+cue login                         # A one-time login
+# Follow the prompts to authorise the Central Registry to read your GitHub account
+./_scripts/build.bash             # Ensure everything works
+./_scripts/serve.bash [--update]  # [Optional update flag writes changes back into source files under content/]
 ```
 
 The site will be served at http://localhost:1313/.
@@ -83,16 +93,16 @@ go get cuelang.org/go@latest
 
 ### tip.cuelang.org
 
-[tip.cuelang.org](https://tip.cuelang.org/) currently redirects to cuelang.org,
-but it is intended that this site should:
+[tip.cuelang.org](https://tip.cuelang.org/) has the same template and content as
+[cuelang.org](https://cuelang.org), except that all pages have their data
+formatted and output emitted by `cuelang.org/go@master`, and the site is
+re-built and re-deployed when any commit is added to `master` on
+`cue-lang/cuelang.org` (this repo) or
+[`cue-lang/cue`](https://github.com/cue-lang/cue).
+Tip includes the CUE Playground running `cuelang.org/go@master`.
 
-- have the same template and content as
-  [cuelang.org](https://cuelang.org), except that all pages will have their
-  data formatted and output emitted by `cuelang.org/go@master`;
-- be redeployed when any commit is added to to `master` on
-  `cue-lang/cuelang.org` or [`cue-lang/cue`](https://github.com/cue-lang/cue).
-
-This is not currently implemented, and is tracked in https://cuelang.org/issues/2538.
+Serving multi-versioned documentation (e.g. current stable release; previous
+stable release; etc) is tracked in https://cuelang.org/issues/2538.
 
 ### History
 
