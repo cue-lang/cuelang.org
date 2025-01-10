@@ -35,6 +35,15 @@ Dedicated guides for common `cue` sub-commands:
 Use `cue export` to produce validated, concrete data for tools that need
 configurations encoded in formats like JSON or YAML.
 {{</card>}}
+
+{{< card
+    href="cue-vet/"
+    title="The cue vet command"
+>}}
+\
+The `cue vet` command validates CUE, and checks that non-CUE data files are
+compatible with schemas, policies, and other constraints.
+{{</card>}}
 {{</cards>}}
 
 <!-- H3 heading so this *doesn't* show up in the left-hand nav, which can serve as a command index. -->
