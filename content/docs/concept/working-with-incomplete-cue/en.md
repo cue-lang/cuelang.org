@@ -56,6 +56,19 @@ cue eval database.cue
 ! cue export database.cue
 {{{end}}}
 
+The `cue vet` command spots that an export would fail (because it includes
+incomplete regular fields) and lets us know with a general error message:
+
+{{{with script "en" "cue vet fails"}}}
+! cue vet database.cue
+{{{end}}}
+
+Discover which regular fields are incomplete with `cue vet -c=true`, or disable
+incompleteness checks by telling `cue vet` to fail *only* when it encounters
+invalid values by using `cue vet -c=false`.
+
+## Fixing incomplete errors
+
 A configuration that results in incomplete values can be made *complete* by
 unifying it with the right information. This means that every field that
 contributes to the emitted configuration must be able to be resolved to a
