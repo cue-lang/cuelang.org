@@ -12,8 +12,8 @@ package site
 								go:   "Ax2B3QCd0gMIgSNyxC47ON3JskMrJnCEhBxMKbYfOeM="
 							}
 							multi_step: {
-								hash:       "IO8PDDU5JUES36DOP639CQGJKUURGP6RIQ5NMST8PF4I7873QL30===="
-								scriptHash: "FOD44E6R7J6CSS0408202O1SLIR31B35BTAS6TP8QISK0GLBP1C0===="
+								hash:       "PFUE3RU9Q53DR7ABV1OAGN72OI4LI838BKR9RQO4858G49LPQRS0===="
+								scriptHash: "B8BTHI4GOHIKH08RQNSESOQK9MVIK21J8J04PFGSRD3QJSHGKG90===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -53,6 +53,14 @@ package site
 											connectionString: invalid interpolation: non-concrete value string (type string):
 											    ./database.cue:3:19
 											    ./database.cue:10:11
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "cue vet database.cue"
+									exitCode: 1
+									output: """
+											some instances are incomplete; use the -c flag to show errors or -c=false to allow incomplete instances
 
 											"""
 								}, {
