@@ -525,7 +525,7 @@ benefit from the language's advanced capabilities.
 
 Interested in learning more about CUE? Here's what you could try next:
 
-- Test out CUE in your browser in the [CUE playground](/play)
+- Test out CUE in your browser in the [CUE playground]({{< relref "play" >}})
 - Take a tour through the CUE language with the
   [language tour]({{< relref "docs/tour" >}})
 - Read about

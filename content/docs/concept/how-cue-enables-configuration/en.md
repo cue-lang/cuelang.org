@@ -531,7 +531,7 @@ specific requirements.
 
 Interested in learning more about CUE? Here's what you could try next:
 
-- Test out CUE in your browser, with the [CUE playground](/play)
+- Test out CUE in your browser, with the [CUE playground]({{< relref "play" >}})
 - Take a [tour through the CUE language]({{< relref "docs/tour" >}})
 - Read about [the technologies that CUE directly integrates with]({{< relref
   "docs/integration" >}})

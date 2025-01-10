@@ -230,7 +230,7 @@ Blockquotes can contain other Markdown formatted elements. Not all elements can 
 >
 >  *Everything* is going according to **plan**.
 
-Check out the [quote shortcode](/examples/shortcodes/quote) for a more advanced quote component.
+Check out the [quote shortcode]({{< relref "examples/shortcodes/quote" >}}) for a more advanced quote component.
 
 ### Blockquotes - Best practices
 
@@ -243,4 +243,4 @@ Try to put a blank line before...
 ```
 
 ## Code Blocks
-Example for Code Blocks have moved to a separate page: [/examples/basic/code-block](/examples/basic/code-block)
+Examples for code blocks have moved to [a separate page]({{< relref "examples/basic/code-block" >}}).

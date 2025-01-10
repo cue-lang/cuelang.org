@@ -3,7 +3,7 @@ title: Quote
 weight: 28
 ---
 
-Next to the regular (very basic) [markdown blockquotes](/examples/basic/block#blockquotes), there is an option to use the `{{</* quote */>}}` shortcode. With this shortcode you can also add an author name and their role. But unlike the markdown blockquotes, the `quote` shortcode does not accept markdown.
+Next to the regular (very basic) [markdown blockquotes]({{< relref "examples/basic/block" >}}#blockquotes), there is an option to use the `{{</* quote */>}}` shortcode. With this shortcode you can also add an author name and their role. But unlike the markdown blockquotes, the `quote` shortcode does not accept markdown.
 
 ## Example
 
