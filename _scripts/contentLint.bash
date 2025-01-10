@@ -26,3 +26,18 @@ filesWithGoModInitAndTxtarGoFiles="$(git grep -l '^-- .*\.go --$' -- $filesWithG
 
 if git grep --files-without-match '^go vet \./\.\.\.$' -- $filesWithGoModInitAndTxtarGoFiles; then exit 1; fi
 if git grep --files-without-match '^go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...$' -- $filesWithGoModInitAndTxtarGoFiles; then exit 1; fi
+
+echo 'Checking that internal links to other pages on the site are not direct (i.e. they must use "{{<relref>}}") ...'
+# This grep pattern first checks all markdown pages under content/ for the
+# 3-character string "](/", which is assumed to return only lines containing
+# markdown links where the link target is internal (i.e. on the same site) and
+# does not use "relref" to resolve the page path (is "direct").
+# The use of relref is desirable as it checks that links' target pages exist.
+# However, because Hugo doesn't know about Netlify server-side redirects, we
+# also need an exclusion list of internal link targets that *are* permitted to
+# be direct. The exclusion list is encoded as a trailing negative lookahead
+# alternation. It's not exhaustive, so might need to be expanded when the site
+# uses a larger set of acceptable internal direct links.
+# Some of the list's entries are complete (e.g. slack/discord, which end with
+# an escaped ")"); the rest encode permitted path prefixes.
+if git grep -P '\]\(/(?!s/slack\)|s/discord\)|releases/|go/|search/)' 'content/**/*.md'; then exit 1; fi
