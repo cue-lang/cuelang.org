@@ -63,6 +63,20 @@ connectionString: invalid interpolation: non-concrete value string (type string)
     ./database.cue:10:11
 ```
 
+The `cue vet` command spots that an export would fail (because it includes
+incomplete regular fields) and lets us know with a general error message:
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBkYXRhYmFzZS5jdWU=" }
+$ cue vet database.cue
+some instances are incomplete; use the -c flag to show errors or suppress this message
+```
+
+Discover which regular fields are incomplete with `cue vet -c=true`, or disable
+incompleteness checks by telling `cue vet` to fail *only* when it encounters
+invalid values by using `cue vet -c=false`.
+
+## Fixing incomplete values
+
 A configuration that results in incomplete values can be made *complete* by
 unifying it with the right information. This means that every field that
 contributes to the emitted configuration must be able to be resolved to a
