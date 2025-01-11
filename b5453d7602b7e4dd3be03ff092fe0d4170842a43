@@ -16,6 +16,46 @@
       "message": "PTAL.\n\nThe test passing is shown here: https://github.com/cue-lang/cuelang.org-trybot/actions/runs/12714233473/job/35443866194#step:28:9\n\nI\u0027ve successfully observed a test failure locally, prompted by this CL and its parent being swapped so that the previous CL\u0027s fixups weren\u0027t yet in scope for this test.",
       "revId": "b5453d7602b7e4dd3be03ff092fe0d4170842a43",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f476a26_7bc37288",
+        "filename": "_scripts/contentLint.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-01-11T23:32:38Z",
+      "side": 1,
+      "message": "nit: perhaps `i.e.`?",
+      "range": {
+        "startLine": 33,
+        "startChar": 52,
+        "endLine": 33,
+        "endChar": 54
+      },
+      "revId": "b5453d7602b7e4dd3be03ff092fe0d4170842a43",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d38cf700_c9ffea72",
+        "filename": "_scripts/contentLint.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-01-11T23:32:38Z",
+      "side": 1,
+      "message": "personally I would try to reduce the size of this block of text, but I also can\u0027t complain about being detailed in the docs :)",
+      "revId": "b5453d7602b7e4dd3be03ff092fe0d4170842a43",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
