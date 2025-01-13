@@ -33,6 +33,24 @@
       "message": "I forgot to mention this unrelated change in the commit message. Hopefully it\u0027s sufficiently trivial (avoiding a client-visible redirect when this link is selected from the site\u0027s 404 page) that it feels acceptable to skip an update-and-trybot-re-run cycle.",
       "revId": "5ba20e1d645c32912e20624f9a17d29fdf113908",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b828bb9e_f4ced4e3",
+        "filename": "hugo/i18n/en.toml",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-13T13:39:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "259f42f9_c29986c2",
+      "revId": "5ba20e1d645c32912e20624f9a17d29fdf113908",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
