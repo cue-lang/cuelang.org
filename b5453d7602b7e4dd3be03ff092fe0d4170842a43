@@ -43,6 +43,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2e1e4321_908e254c",
+        "filename": "_scripts/contentLint.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-13T12:19:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f476a26_7bc37288",
+      "range": {
+        "startLine": 33,
+        "startChar": 52,
+        "endLine": 33,
+        "endChar": 54
+      },
+      "revId": "b5453d7602b7e4dd3be03ff092fe0d4170842a43",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d38cf700_c9ffea72",
         "filename": "_scripts/contentLint.bash",
         "patchSetId": 1
@@ -54,6 +78,24 @@
       "writtenOn": "2025-01-11T23:32:38Z",
       "side": 1,
       "message": "personally I would try to reduce the size of this block of text, but I also can\u0027t complain about being detailed in the docs :)",
+      "revId": "b5453d7602b7e4dd3be03ff092fe0d4170842a43",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5601c4e3_55d7094f",
+        "filename": "_scripts/contentLint.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-13T12:19:47Z",
+      "side": 1,
+      "message": "I\u0027ve shortened and tidied up the comment a little, but I don\u0027t think I can make it much smaller without reducing the info it contains ... and I don\u0027t feel that\u0027d be very fair to future colleagues (or future me!) given there\u0027s a load-bearing regex :-)",
+      "parentUuid": "d38cf700_c9ffea72",
       "revId": "b5453d7602b7e4dd3be03ff092fe0d4170842a43",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
