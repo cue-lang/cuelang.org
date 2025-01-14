@@ -19,11 +19,27 @@ package site
 								"dump tool":         "HS0+0AZNtOcKcKUZ64/0jWgrkQahfYWTzw3oUl1LPJs="
 								"create tool":       "mrpegODpH+3CSMPvUzy7hQahnnq5PsD0IkaTy3o7FkQ="
 								kubectl:             "8luM2xhc13tLh7xQnck5/2r76Ai3Aj7JQVed1rWE5Zw="
+								"k8s defs":          "ucmeMFfIKO5NF6yv3NP3K76Nsh/62G6kXzRfrx1NiVw="
+								cloud:               "0sa7TNCXjvqlGR/1waqg21myh91AUHpDtq6QQYHJV2c="
 							}
 							multi_step: {
-								hash:       "MF5RPQ78A1M84N681HB09D7E8TGD9IA6T0A5J70ENG3KNLV3E6H0===="
-								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
+								hash:       "L0DESPJQQQJFE1DGGS63GLCFAESR5H6Q531MQEM9VAPFQUEUUV10===="
+								scriptHash: "QSV2I3E3GSR99A0FE6EP5R4F9ECE43AH15PC1TEA17QBQGO2UEH0===="
 								steps: [{
+									doc:      ""
+									cmd:      "mkdir -p $HOME/.config/cue"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc: ""
+									cmd: """
+											cat <<EOD >$HOME/.config/cue/logins.json
+											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
+											EOD
+											"""
+									exitCode: 0
+									output:   ""
+								}, {
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"
 									exitCode: 0
@@ -51,16 +67,6 @@ package site
 									cmd:      "cue mod init k8s.example"
 									exitCode: 0
 									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "go mod init k8s.example"
-									exitCode: 0
-									output: """
-											go: creating new go.mod: module k8s.example
-											go: to add module requirements and sums:
-											\tgo mod tidy
-
-											"""
 								}, {
 									doc:      ""
 									cmd:      "cd services"
@@ -522,6 +528,21 @@ package site
 											...
 
 											"""
+								}, {
+									doc:      ""
+									cmd:      "cue mod tidy"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue fmt"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue vet -c ./..."
+									exitCode: 0
+									output:   ""
 								}]
 							}
 						}
