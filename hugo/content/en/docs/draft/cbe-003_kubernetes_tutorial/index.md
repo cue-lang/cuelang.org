@@ -84,13 +84,6 @@ Creating a module also allows our packages import external packages.
 We initialize a Go module so that later we can resolve the
 `k8s.io/api/apps/v1` Go package dependency:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgazhzLmV4YW1wbGU=" }
-$ go mod init k8s.example
-go: creating new go.mod: module k8s.example
-go: to add module requirements and sums:
-	go mod tidy
-```
-
 Let's try to use the `cue import` command to convert the given YAML files
 into CUE.
 
@@ -1100,13 +1093,13 @@ $ cue get go k8s.io/api/apps/v1
 
 Now that we have the Kubernetes definitions in our module, we can import and use them:
 
-```
-$ cat <<EOF > k8s_defs.cue
+{{< code-tabs >}}
+{{< code-tab name="k8s_defs.cue" language="cue" area="top-left" >}}
 package kube
 
 import (
-	"k8s.io/api/core/v1"
-	apps_v1 "k8s.io/api/apps/v1"
+	"github.com/cue-tmp/jsonschema-pub/exp1/k8s.io/api/core/v1"
+	apps_v1 "github.com/cue-tmp/jsonschema-pub/exp1/k8s.io/api/apps/v1"
 )
 
 service: [string]:     v1.#Service
@@ -1114,12 +1107,13 @@ deployment: [string]:  apps_v1.#Deployment
 daemonSet: [string]:   apps_v1.#DaemonSet
 statefulSet: [string]: apps_v1.#StatefulSet
 EOF
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 And, finally, we'll format again:
 
-```
-cue fmt
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGZtdApjdWUgdmV0IC1jIC4vLi4u" }
+$ cue fmt
+$ cue vet -c ./...
 ```
 
 ## Manually tailored configuration
@@ -1150,26 +1144,25 @@ the Kubernetes object upon conversion.
 
 We define one top-level file with our generic definitions.
 
-```
-// file cloud.cue
+{{< code-tabs >}}
+{{< code-tab name="cloud.cue" language="cue" area="top-left" >}}
 package cloud
 
 service: [Name=_]: {
-    name: *Name | string // the name of the service
+	name: *Name | string // the name of the service
 
-    ...
+	...
 
-    // Kubernetes-specific options that get mixed in when converting
-    // to Kubernetes.
-    kubernetes: {
-    }
+	// Kubernetes-specific options that get mixed in when converting
+	// to Kubernetes.
+	kubernetes: {}
 }
 
 deployment: [Name=_]: {
-    name: *Name | string
-   ...
+	name: *Name | string
+	...
 }
-```
+{{< /code-tab >}}{{< /code-tabs >}}
 
 A Kubernetes-specific file then contains the definitions to
 convert the generic objects to Kubernetes.
