@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "277f035d_6e11dc77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-01-14T15:24:10Z",
+      "side": 1,
+      "message": "Assuming we can see drafts in this preview :)",
+      "revId": "e8844b43c6affe7d0cd1d4e0df2bfd98c8fdc812",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
