@@ -349,7 +349,7 @@ _dist: githubactions.#Step & {
 	// enforce https, and allow trailing slash to be added universally *if
 	// needed* here, not by the _dist consumer.
 	_baseURL: string & =~"^https://" & !~"/$"
-	run:      "./_scripts/build.bash --baseURL \(_baseURL)"
+	run:      "./_scripts/build.bash --baseURL \(_baseURL) --buildDrafts"
 }
 
 _installNetlifyCLI: githubactions.#Step & {
