@@ -21,3 +21,6 @@ command = 'bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL'
 
 [context.production]
 command = 'bash _scripts/build.bash --baseURL https://cuelang.org'
+
+[context.tip]
+command = 'bash _scripts/build.bash --buildDrafts'
