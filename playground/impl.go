@@ -114,19 +114,34 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	if err := v.Err(); err != nil {
 		return "", fmt.Errorf("failed to build: %w", err)
 	}
-	cueOpts := []cue.Option{
+	syntaxOpts := []cue.Option{
 		cue.Docs(true),
 		cue.Attributes(true),
 		cue.Optional(true),
 		cue.Definitions(true),
 	}
+	var validateOpts []cue.Option
 	switch fn {
 	case functionEval:
-		cueOpts = append(cueOpts, cue.Final())
+		// Don't want to validate cue.Final() here - because that would generate
+		// errors in cases like the following:
+		//
+		//     x: string
+		//     y: (x): string
+		//
+		// But we do want to select defaults in the rendered value, to behave like
+		// cue eval
+		syntaxOpts = append(syntaxOpts, cue.Final())
 	case functionExport:
-		cueOpts = append(cueOpts, cue.Final(), cue.Concrete(true))
+		// cue.Concrete(true) implies cue.Final()
+		validateOpts = append(validateOpts, cue.Concrete(true))
 	}
-	if err := v.Validate(cueOpts...); err != nil {
+
+	// Given that we validate first, any validation opts must also apply for
+	// syntax (if they are irrelevant then cue.Value.Syntax will ignore them).
+	syntaxOpts = append(syntaxOpts, validateOpts...)
+
+	if err := v.Validate(validateOpts...); err != nil {
 		return "", err
 	}
 	f, err := filetypes.ParseFile(string(out)+":-", filetypes.Export)
@@ -160,7 +175,7 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		)
 	}
 	encConf.Format = formatOpts
-	synF := getSyntax(v, cueOpts)
+	synF := getSyntax(v, syntaxOpts)
 	if err := e.EncodeFile(synF); err != nil {
 		return "", fmt.Errorf("failed to encode: %w", err)
 	}
