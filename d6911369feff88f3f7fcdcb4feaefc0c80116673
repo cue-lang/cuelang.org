@@ -33,6 +33,24 @@
       "message": "nit: drop the comma",
       "revId": "d6911369feff88f3f7fcdcb4feaefc0c80116673",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e7c92f4_e1567f22",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-01-15T10:59:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "103bca2b_90aaf5df",
+      "revId": "d6911369feff88f3f7fcdcb4feaefc0c80116673",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
