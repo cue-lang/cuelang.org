@@ -7,6 +7,8 @@ name: tip deploy
       - ci/test
       - master
   workflow_dispatch: {}
+env:
+  CUE_EXPERIMENT: evalv3=1
 concurrency:
   group: tip deploy
   cancel-in-progress: false
