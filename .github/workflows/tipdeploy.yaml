@@ -7,6 +7,8 @@ name: tip deploy
       - ci/test
       - master
   workflow_dispatch: {}
+env:
+  CUE_EXPERIMENT: evalv3=1
 concurrency:
   group: tip deploy
   cancel-in-progress: false
@@ -53,11 +55,12 @@ jobs:
           echo "github.event.head_commit.message contains Dispatch-Trailer but we are on a protected branch"
           false
       - if: runner.os == 'macOS'
+        name: Set TMPDIR environment variable (${{runner.os}})
         run: |-
           mkdir $HOME/.tmp
           echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
-        name: Set TMPDIR environment variable (${{runner.os}})
       - if: runner.os == 'macOS'
+        name: Write lima config (${{runner.os}})
         run: |-
           mkdir -p ~/.lima/default
           cat <<EOD > ~/.lima/default/lima.yaml
@@ -67,16 +70,15 @@ jobs:
             - location: "$TMPDIR"
           	 writable: true
           EOD
-        name: Write lima config (${{runner.os}})
       - if: runner.os == 'macOS'
+        name: Install Docker (${{runner.os}})
         run: |-
           brew install colima docker
           colima start --mount-type virtiofs
           sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
-        name: Install Docker (${{runner.os}})
       - if: runner.os == 'macOS'
-        run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
         name: Set DOCKER_HOST environment variable (${{runner.os}})
+        run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
       - if: runner.os == 'macOS'
         name: Install macOS utils
         run: brew install coreutils
