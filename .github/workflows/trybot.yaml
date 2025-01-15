@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-22.04
     defaults:
       run:
-        shell: bash
+        shell: bash --noprofile --norc -euo pipefail {0}
     steps:
       - if: runner.os == 'macOS'
         name: Update Homebrew (macOS)
