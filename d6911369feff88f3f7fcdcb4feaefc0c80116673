@@ -16,6 +16,23 @@
       "message": "Verifying that ci/test works:\n\n* trybots: https://github.com/cue-lang/cuelang.org/actions/runs/12786355579/job/35643254183\n* tip deploy: https://github.com/cue-lang/cuelang.org/actions/runs/12786355557/job/35643254596",
       "revId": "d6911369feff88f3f7fcdcb4feaefc0c80116673",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "103bca2b_90aaf5df",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-01-15T10:57:49Z",
+      "side": 1,
+      "message": "nit: drop the comma",
+      "revId": "d6911369feff88f3f7fcdcb4feaefc0c80116673",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
