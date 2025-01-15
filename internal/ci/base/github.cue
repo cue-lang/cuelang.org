@@ -12,7 +12,11 @@ import (
 )
 
 bashWorkflow: githubactions.#Workflow & {
-	jobs: [string]: defaults: run: shell: "bash"
+	// Use a custom default shell that extends the GitHub default to also fail
+	// on access to unset variables.
+	//
+	// https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#defaultsrunshell
+	jobs: [string]: defaults: run: shell: "bash --noprofile --norc -euo pipefail {0}"
 }
 
 installGo: {
@@ -67,7 +71,7 @@ checkoutCode: {
 		name: "Checkout code"
 		uses: "actions/checkout@v4"
 
-		// "pull_request" builds will by default use a merge commit,
+		// "pull_request_target" builds will by default use a merge commit,
 		// testing the PR's HEAD merged on top of the master branch.
 		// For consistency with Gerrit, avoid that merge commit entirely.
 		// This doesn't affect builds by other events like "push",
@@ -286,6 +290,24 @@ repositoryDispatch: githubactions.#Step & {
 	name: string
 	run:  #"""
 			\#(_curlGitHubAPI) --fail --request POST --data-binary \#(strconv.Quote(json.Marshal(#arg))) https://api.github.com/repos/\#(#githubRepositoryPath)/dispatches
+			"""#
+}
+
+workflowDispatch: githubactions.#Step & {
+	#githubRepositoryPath:         *githubRepositoryPath | string
+	#botGitHubUserTokenSecretsKey: *botGitHubUserTokenSecretsKey | string
+	#workflowID:                   string
+
+	// params are defined per https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event
+	#params: *{
+		ref: defaultBranch
+	} | _
+
+	_curlGitHubAPI: curlGitHubAPI & {#tokenSecretsKey: #botGitHubUserTokenSecretsKey, _}
+
+	name: string
+	run:  #"""
+			\#(_curlGitHubAPI) --fail --request POST --data-binary \#(strconv.Quote(json.Marshal(#params))) https://api.github.com/repos/\#(#githubRepositoryPath)/actions/workflows/\#(#workflowID)/dispatches
 			"""#
 }
 
