@@ -7,16 +7,18 @@ name: tip deploy
       - ci/test
       - master
   workflow_dispatch: {}
+env:
+  CUE_EXPERIMENT: evalv3
 concurrency:
   group: tip deploy
   cancel-in-progress: false
 jobs:
   test:
-    runs-on: ubuntu-22.04
-    if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
     defaults:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
+    runs-on: ubuntu-22.04
+    if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -53,11 +55,12 @@ jobs:
           echo "github.event.head_commit.message contains Dispatch-Trailer but we are on a protected branch"
           false
       - if: runner.os == 'macOS'
+        name: Set TMPDIR environment variable (${{runner.os}})
         run: |-
           mkdir $HOME/.tmp
           echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
-        name: Set TMPDIR environment variable (${{runner.os}})
       - if: runner.os == 'macOS'
+        name: Write lima config (${{runner.os}})
         run: |-
           mkdir -p ~/.lima/default
           cat <<EOD > ~/.lima/default/lima.yaml
@@ -67,16 +70,15 @@ jobs:
             - location: "$TMPDIR"
           	 writable: true
           EOD
-        name: Write lima config (${{runner.os}})
       - if: runner.os == 'macOS'
+        name: Install Docker (${{runner.os}})
         run: |-
           brew install colima docker
           colima start --mount-type virtiofs
           sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
-        name: Install Docker (${{runner.os}})
       - if: runner.os == 'macOS'
-        run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
         name: Set DOCKER_HOST environment variable (${{runner.os}})
+        run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
       - if: runner.os == 'macOS'
         name: Install macOS utils
         run: brew install coreutils
@@ -156,9 +158,9 @@ jobs:
       - name: Perform early content checks
         run: _scripts/contentLint.bash
       - name: Populate CUE dependency cache
-        run: _scripts/cacheWarm.bash
         env:
           CUE_TOKEN: ${{ secrets.NOTCUECKOO_CUE_TOKEN }}
+        run: _scripts/cacheWarm.bash
       - name: log into the central registry as porcuepine
         run: go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
@@ -167,9 +169,9 @@ jobs:
         run: npm install
         working-directory: hugo
       - name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
-        run: _scripts/tipUseAlternativeCUE.bash
         env:
           GOPRIVATE: cuelang.org/go
+        run: _scripts/tipUseAlternativeCUE.bash
       - name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
         run: _scripts/regenPostInfraChange.bash
         env:
