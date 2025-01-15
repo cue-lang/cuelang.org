@@ -204,8 +204,12 @@ jobs:
         working-directory: playground
       - name: log into the central registry as porcuepine
         run: go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}
+      - if: |-
+          github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
+          Dispatch-Trailer: {"type":"trybot"'))
+        run: echo "BUILD_DRAFTS=--buildDrafts" >> $GITHUB_ENV
       - name: Dist
-        run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app --buildDrafts
+        run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app ${BUILD_DRAFTS:-}
       - name: Check that git is clean at the end of the job
         if: always()
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
