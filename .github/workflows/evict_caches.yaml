@@ -4,6 +4,8 @@ name: Evict caches
 "on":
   schedule:
     - cron: 0 2 * * *
+env:
+  CUE_EXPERIMENT: evalv3
 jobs:
   test:
     defaults:
