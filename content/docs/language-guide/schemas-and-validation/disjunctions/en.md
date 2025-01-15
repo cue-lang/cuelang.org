@@ -2,6 +2,7 @@
 title: Disjunctions
 weight: 20
 draft: true
+no_index: true
 ---
 
 ### Enums and Sum types

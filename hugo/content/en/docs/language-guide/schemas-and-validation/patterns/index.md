@@ -2,6 +2,7 @@
 title: Patterns
 weight: 60
 draft: true
+no_index: true
 ---
 
 

@@ -2,6 +2,7 @@
 title: Formuals
 weight: 20
 draft: true
+no_index: true
 ---
 
 Formulas compute values from other values.

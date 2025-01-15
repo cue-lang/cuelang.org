@@ -2,6 +2,7 @@
 title: Bytes values
 weight: 50
 draft: true
+no_index: true
 ---
 
 Bytes are similar to strings, but can hold arbitrary bytes instead of just valid

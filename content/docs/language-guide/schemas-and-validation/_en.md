@@ -2,6 +2,7 @@
 title: Schemas and Validation
 weight: 50
 draft: true
+no_index: true
 ---
 
 A {{{def "schema"}}} defines the shape of an API or data in general.

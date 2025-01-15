@@ -2,6 +2,7 @@
 title: Types
 weight: 10
 draft: true
+no_index: true
 ---
 
 ## Basic Types
