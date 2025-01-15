@@ -42,13 +42,15 @@ workflows: close({
 	_repo.trybotWorkflows
 
 	trybot: _
-	trybot_dispatch: #dummyDispatch: dummyDispatch
+	trybot_dispatch: #dummyDispatch: _dummyDispatch
+
+	tipdeploy: _
 })
 
 _linuxWorkflow: {
 	jobs: [string]: "runs-on": _repo.linuxMachine
 }
 
-dummyDispatch: _repo.#dispatch & {
+_dummyDispatch: _repo.#dispatch & {
 	type: _repo.trybot.key
 }

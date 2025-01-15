@@ -119,21 +119,11 @@ jobs:
       - name: Get go build/test cache directory
         id: go-cache-dir
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
-      - with:
-          path: |-
-            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
-            ${{ steps.go-cache-dir.outputs.dir }}
-            ~/.cache/dockercache
-            ~/.cache/node-gyp
-            ~/.npm
-            ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.23.0
-        if: |-
+      - if: |-
           (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache@v4
-      - with:
+        with:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
@@ -143,10 +133,20 @@ jobs:
             ${{ github.workspace }}/playground/.webpack_cache
           key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.23.0
-        uses: actions/cache/restore@v4
-        if: |-
+      - if: |-
           ! (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
+        uses: actions/cache/restore@v4
+        with:
+          path: |-
+            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
+            ${{ steps.go-cache-dir.outputs.dir }}
+            ~/.cache/dockercache
+            ~/.cache/node-gyp
+            ~/.npm
+            ${{ github.workspace }}/playground/.webpack_cache
+          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.23.0
       - if: |-
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')

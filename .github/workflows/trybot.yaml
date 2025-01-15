@@ -133,21 +133,11 @@ jobs:
       - name: Get go build/test cache directory
         id: go-cache-dir
         run: echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}
-      - with:
-          path: |-
-            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
-            ${{ steps.go-cache-dir.outputs.dir }}
-            ~/.cache/dockercache
-            ~/.cache/node-gyp
-            ~/.npm
-            ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.23.0
-        if: |-
+      - if: |-
           (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         uses: actions/cache@v4
-      - with:
+        with:
           path: |-
             ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
             ${{ steps.go-cache-dir.outputs.dir }}
@@ -157,10 +147,20 @@ jobs:
             ${{ github.workspace }}/playground/.webpack_cache
           key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-1.23.0
-        uses: actions/cache/restore@v4
-        if: |-
+      - if: |-
           ! (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
+        uses: actions/cache/restore@v4
+        with:
+          path: |-
+            ${{ steps.go-mod-cache-dir.outputs.dir }}/cache/download
+            ${{ steps.go-cache-dir.outputs.dir }}
+            ~/.cache/dockercache
+            ~/.cache/node-gyp
+            ~/.npm
+            ${{ github.workspace }}/playground/.webpack_cache
+          key: ${{ runner.os }}-1.23.0-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.23.0
       - if: |-
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
@@ -178,8 +178,8 @@ jobs:
       - name: Regenerate
         run: go generate ./...
       - name: Regenerate Playground
-        run: go generate ./...
         working-directory: playground
+        run: go generate ./...
       - name: Check that git is clean at the end of the job
         if: always()
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
@@ -190,8 +190,8 @@ jobs:
       - name: Test
         run: go test ./...
       - name: Test Playground
-        run: go test ./...
         working-directory: playground
+        run: go test ./...
       - name: staticcheck
         run: ./_scripts/staticcheck.bash
       - name: staticcheck Playground
@@ -200,8 +200,8 @@ jobs:
       - name: Check module is tidy
         run: go mod tidy
       - name: Check Playground module is tidy
-        run: go mod tidy
         working-directory: playground
+        run: go mod tidy
       - name: log into the central registry as porcuepine
         run: go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - if: |-
@@ -216,10 +216,10 @@ jobs:
       - run: ./playground/_scripts/checkCUEVersion.bash
       - working-directory: hugo
         run: npm run lint
-      - name: Install Netlify CLI
-        if: |-
+      - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
+        name: Install Netlify CLI
         run: npm install -g netlify-cli@17.0.1
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '

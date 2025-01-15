@@ -1,11 +1,9 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
-name: Push tip to trybot
 "on":
   push:
     branches:
       - master
-concurrency: push_tip_to_trybot
 jobs:
   push:
     runs-on: ubuntu-22.04
@@ -48,3 +46,5 @@ jobs:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
     if: ${{github.repository == 'cue-lang/cuelang.org'}}
+name: Push tip to trybot
+concurrency: push_tip_to_trybot
