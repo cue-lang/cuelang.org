@@ -178,6 +178,15 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_porcuepineCueLogin,
 
+			// Set BUILD_DRAFTS=--buildDrafts if we are in the trybot repo for CL.
+			// This env var, is used by the _dist step.
+			{
+				if: "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
+				run: """
+					echo "BUILD_DRAFTS=--buildDrafts" >> $GITHUB_ENV
+					"""
+			},
+
 			_dist & {
 				_baseURL: _netlifyStep.#prime_url.CL
 			},
@@ -349,7 +358,7 @@ _dist: githubactions.#Step & {
 	// enforce https, and allow trailing slash to be added universally *if
 	// needed* here, not by the _dist consumer.
 	_baseURL: string & =~"^https://" & !~"/$"
-	run:      "./_scripts/build.bash --baseURL \(_baseURL) --buildDrafts"
+	run:      "./_scripts/build.bash --baseURL \(_baseURL) ${BUILD_DRAFTS:-}"
 }
 
 _installNetlifyCLI: githubactions.#Step & {
