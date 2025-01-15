@@ -2,6 +2,7 @@
 title: Organizing Configuration
 weight: 20
 draft: true
+no_index: true
 ---
 
 One of CUE's most powerful features is the ability to merge two variants, or

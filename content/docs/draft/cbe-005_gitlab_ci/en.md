@@ -1,6 +1,7 @@
 ---
 title: CUE By Example - Driving GitLab CI/CD pipelines with CUE
 draft: true
+no_index: true
 ---
 
 {{<caution>}}

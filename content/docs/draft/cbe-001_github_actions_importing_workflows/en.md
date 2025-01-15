@@ -1,6 +1,7 @@
 ---
 title: CUE By Example - Driving GitHub Actions workflows with CUE
 draft: true
+no_index: true
 ---
 
 {{<caution>}}

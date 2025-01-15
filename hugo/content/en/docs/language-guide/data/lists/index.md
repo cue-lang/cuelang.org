@@ -2,6 +2,7 @@
 title: Lists
 weight: 70
 draft: true
+no_index: true
 ---
 
 CUE lists are identical to JSON lists.

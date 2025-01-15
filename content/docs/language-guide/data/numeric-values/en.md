@@ -2,6 +2,7 @@
 title: Numeric values
 weight: 30
 draft: true
+no_index: true
 ---
 
 CUE extends JSON numerals with:
