@@ -29,4 +29,7 @@ bash _scripts/gitWriteHash.bash
 
 GOBIN=$PWD/.gobin go install -trimpath -buildvcs=false ./internal/cmd/preprocessor
 
+# TODO(myitcv): remove the next lined when unblocked by https://cuelang.org/issue/3706
+CUE_EXPERIMENT=evalv3=0
+
 exec $PWD/.gobin/preprocessor "$@"
