@@ -37,6 +37,13 @@ var schemaFile string
 // using the same version of Cobra) for consistency. Panic is used as a
 // strategy for early-return from any running command.
 func Main() {
+
+	// TODO(myitcv): remove the next line when unblocked by
+	// https://cuelang.org/issue/3706. We set here in order to catch all
+	// potential ways of running the preprocessor, whether by script, via 'go
+	// test' etc.
+	os.Setenv("CUE_EXPERIMENT", "evalv3=0")
+
 	cwd, _ := os.Getwd()
 	err := mainErr(context.Background(), os.Args[1:])
 	if err != nil {
