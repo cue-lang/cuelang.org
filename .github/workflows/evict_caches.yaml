@@ -4,6 +4,8 @@ name: Evict caches
 "on":
   schedule:
     - cron: 0 2 * * *
+env:
+  CUE_EXPERIMENT: evalv3=1
 jobs:
   test:
     defaults:
@@ -38,11 +40,11 @@ jobs:
           echo "value<<EOD" >> $GITHUB_OUTPUT
           echo "$x" >> $GITHUB_OUTPUT
           echo "EOD" >> $GITHUB_OUTPUT
-      - name: Check we don't have Dispatch-Trailer on a protected branch
-        if: |-
+      - if: |-
           ((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"'))
+        name: Check we don't have Dispatch-Trailer on a protected branch
         run: |-
           echo "github.event.head_commit.message contains Dispatch-Trailer but we are on a protected branch"
           false
