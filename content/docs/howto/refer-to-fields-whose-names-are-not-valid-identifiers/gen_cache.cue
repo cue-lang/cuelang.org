@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							code: {
-								emit: "QkH5cHHi4UgH9YWBxWu+SW9El5gv5hW7zTx7ZYKlA1A="
+								emit: "r3VIq0Vg5o0HJ/l4Z7N5chZ+exoosKDQAb48HW5BYSY="
 							}
 						}
 					}
