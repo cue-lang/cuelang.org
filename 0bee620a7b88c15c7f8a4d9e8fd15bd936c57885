@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd96a3f7_c17d6e46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-16T13:40:20Z",
+      "side": 1,
+      "message": "Marked CL as WIP as the current PS doesn\u0027t look great on my mobile browser.",
+      "revId": "0bee620a7b88c15c7f8a4d9e8fd15bd936c57885",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
