@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47903d95_212fc07b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-01-16T14:07:40Z",
+      "side": 1,
+      "message": "I like where this is heading, with some simplification of language and presentation.",
+      "revId": "1828f9e352b2a0219809a3069c7a9ce14b87bb88",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65ca0dad_84a76dfe",
+        "filename": "content/docs/howto/search-this-site/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-01-16T14:07:40Z",
+      "side": 1,
+      "message": "This is a mouthful: what are you actually referring to here? \n\nI think what we\u0027re trying to say here is:\n\n* Pages have a content type\n* Pages be further classified with tags\n\nAs well as free-text search, you can limit to certain content types or limit to pages that contain certain tags.\n\nI would tend towards plainer language and avoid the term \"indexes\" because I\u0027m not clear we need/want it.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "1828f9e352b2a0219809a3069c7a9ce14b87bb88",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "733f2722_85e657d1",
+        "filename": "content/docs/howto/search-this-site/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-01-16T14:07:40Z",
+      "side": 1,
+      "message": "Perhaps rather than this be a long list of ways to refine searches, we can \"inline\" examples above with the explanation of the different content types etc?",
+      "revId": "1828f9e352b2a0219809a3069c7a9ce14b87bb88",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
