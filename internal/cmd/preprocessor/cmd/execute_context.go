@@ -342,9 +342,27 @@ func (ec *executeContext) findSiteCUE() (inputs []string) {
 	// package. Ensure that the content/**/*.cue files that are in page roots
 	// are well structured.
 	order := append([]string{ec.executor.root}, ec.order...)
+	seen := map[string]bool{
+		ec.executor.root: true,
+	}
 
 dirs:
-	for _, absDir := range order {
+	for len(order) != 0 {
+		var absDir string
+		absDir, order = order[0], order[1:]
+
+		// Add any directories between absDir and ec.executor.root, noting that
+		// in the first iteration of the outer for loop we are starting from
+		// ec.executor.root.
+		if absDir != ec.executor.root {
+			for d := filepath.Dir(absDir); d != ec.executor.root; d = filepath.Dir(d) {
+				if !seen[d] {
+					seen[d] = true
+					order = append(order, d)
+				}
+			}
+		}
+
 		// Load the files in the directory (assuming they all belong
 		// to the same package)
 		var filenames []string

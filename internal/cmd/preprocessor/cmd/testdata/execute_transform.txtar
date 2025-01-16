@@ -38,6 +38,8 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.pag
 -- golden/content/dir/.keep --
 -- content/site.cue --
 package site
+
+content: dir: page: vars: SOME_VAR: "something"
 -- content/dir/page.cue --
 package site
 
@@ -52,7 +54,7 @@ Hello!
 >title: JSON Superset
 >---
 >
->Some text before
+>Some text before {{{.SOME_VAR}}}
 >
 >{{{with step}}}
 >{{{with code "en" "json-superset"}}}
@@ -89,7 +91,7 @@ Hello!
 title: JSON Superset
 ---
 
-Some text before
+Some text before something
 
 {{< step stepNumber="1" >}}
 {{< code-tabs >}}
