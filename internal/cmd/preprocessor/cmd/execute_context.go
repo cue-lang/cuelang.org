@@ -37,6 +37,7 @@ import (
 	"testing"
 
 	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/errors"
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/cue/parser"
 	preprocessembed "github.com/cue-lang/cuelang.org"
@@ -140,7 +141,7 @@ func (ec *executeContext) execute() error {
 	}
 	v := ec.executor.ctx.BuildInstance(bps[0])
 	if err := v.Err(); err != nil {
-		return ec.errorf("%v: error in site configuration: %v", ec, err)
+		return ec.errorf("%v: error in site configuration: %s", ec, errors.Details(err, nil))
 	}
 	v = v.Unify(ec.executor.siteSchema)
 	if err := v.Err(); err != nil {
@@ -346,7 +347,6 @@ func (ec *executeContext) findSiteCUE() (inputs []string) {
 		ec.executor.root: true,
 	}
 
-dirs:
 	for len(order) != 0 {
 		var absDir string
 		absDir, order = order[0], order[1:]
@@ -392,79 +392,10 @@ dirs:
 			}
 		}
 
-		if doList {
-			continue
-		}
-
-		// No CUE files is also fine. We don't require CUE anywhere
-		if len(siteFilenames) == 0 {
-			continue
-		}
 		inputs = append(inputs, siteFilenames...)
 
-		bps := load.Instances(siteFilenames, &load.Config{
-			Dir: absDir,
-		})
-		if l := len(bps); l != 1 {
-			ec.errorf("%s: expected 1 build package; saw %d", absDir, l)
-			continue
-		}
-		v := ec.ctx.BuildInstance(bps[0])
-
-		// If we have an error at this stage we can't be
-		// sure  things are fine. Bail early
-		if err := v.Err(); err != nil {
-			ec.errorf("%s: error loading .cue files: %v", absDir, err)
-			continue
-		}
-
-		// Now only do a structure check if we are not in the root of the site
-		if absDir == ec.executor.root {
-			continue
-		}
-
-		// derive the relative dirPath of d to the root, in canonical dirPath format
-		// (i.e. not OS-specific)
-		relDir := strings.TrimPrefix(absDir, ec.executor.root+string(os.PathSeparator))
-		dirPath := filepath.ToSlash(filepath.Clean(relDir))
-		parts := strings.Split(dirPath, "/")
-
-		// We now want to walk down into v to ensure that the only fields that
-		// exist at each "level" are consistent with the elements of path
-		var selectors []cue.Selector
-		for _, elem := range parts {
-			path := cue.MakePath(selectors...)
-			toCheck := v.LookupPath(path)
-			fieldIter, err := toCheck.Fields(cue.Definitions(true), cue.Hidden(true))
-			if err != nil {
-				ec.errorf("%v: %s: failed to create iterator over CUE value at path %v: %v", ec, absDir, path, err)
-				continue dirs
-			}
-			// Could be multiple bad fields at this level, report them all
-			var inError bool
-			for fieldIter.Next() {
-				sel := fieldIter.Selector()
-				if sel.LabelType() != cue.StringLabel || sel.Unquoted() != elem {
-					inError = true
-					val := fieldIter.Value()
-					badPath := cue.MakePath(append(selectors, sel)...)
-
-					// val.Pos() is the position of the _value_ (the RHS), not the
-					// field name.  Hence we need to construct the format string by
-					// hand.
-					//
-					// TODO: work out whether we can get the location(s) of the
-					// label for this value in a more principled way.
-					pos := val.Pos()
-					ec.errorf("%v:%d: %v: field not allowed; expected %q", pos.Filename(), pos.Line(), badPath, elem)
-				}
-			}
-			if inError {
-				// No point descending further at this point
-				continue dirs
-			}
-			selectors = append(selectors, cue.Str(elem))
-		}
+		// Note we don't evaluate this directory's files in isolation because
+		// there is no requirement that should work.
 	}
 	return inputs
 }

@@ -36,10 +36,21 @@ stderr $WORK${/}'content'${/}'dir'${/}'en.md: skipping cache for content.dir.pag
 
 -- hugo/.keep --
 -- golden/content/dir/.keep --
+-- site.cue --
+package site
+
+import "strings"
+
+versions: {
+       cue: {
+               [x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
+               latest: v:             "v0.11.1"
+       }
+}
 -- content/site.cue --
 package site
 
-content: dir: page: vars: SOME_VAR: "something"
+content: dir: page: vars: CUELANG_CUE_LATEST: versions.cue.latest.v
 -- content/dir/page.cue --
 package site
 
@@ -54,7 +65,7 @@ Hello!
 >title: JSON Superset
 >---
 >
->Some text before {{{.SOME_VAR}}}
+>Some text before {{{.CUELANG_CUE_LATEST}}}
 >
 >{{{with step}}}
 >{{{with code "en" "json-superset"}}}
@@ -91,7 +102,7 @@ Hello!
 title: JSON Superset
 ---
 
-Some text before something
+Some text before v0.11.1
 
 {{< step stepNumber="1" >}}
 {{< code-tabs >}}

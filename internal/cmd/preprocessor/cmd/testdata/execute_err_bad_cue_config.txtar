@@ -3,7 +3,8 @@
 
 unquote content/dir/en.md
 ! exec preprocessor execute --debug=all
-stderr 'error loading .cue files: expected label or '':'', found ''IDENT'' is'
+stderr 'error in site configuration: expected label or '':'', found ''IDENT'' is'
+stderr $WORK${/}content${/}dir${/}page.cue:3:6
 
 -- hugo/.keep --
 -- content/site.cue --
