@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "R6k4s3jwqfhEdLCUpP0HT+kaMypBCYvHVpsxAcozxRg="
-								"schema.cue":      "SxonDv13mAKGzQM3dtQt/EwCeD5p6XOpYsFzmK2qL7o="
-								good:              "qIK09wCOzzqUza4VnA1a+HCWxR7Eo0uKSOyX6honNl4="
-								bad:               "yK5f0w8ixY4FccjDQM9+ubG6YHlExofKeZ0uT2M81Rk="
-								"main go program": "bLhoURWQOj+T1Wp4udgmVx8uLgiXO18EGYV3ctni4Qo="
+								"schema.json":     "QneJU+Lk9cUI0CvHS/TJ49VknpICobpfQt0YEf/PF3Y="
+								"schema.cue":      "ACHHYj40QyhwO2DllwyHMMI47tnjK4+N6stgKqXVVwg="
+								good:              "wMftnS8W1vsAfwQhop8DWlx97l1yIn3eV1p/nz5WlgU="
+								bad:               "ctL+RfDJVfkKqeeA1DV6ReEQCqjHv4DsUO6PYq+H0d0="
+								"main go program": "5fIBDpo080Z9JRz/1gHn5H09jt/0Mn61UIA8qhGk3rk="
 							}
 							multi_step: {
-								hash:       "GS4599IHNE46OGR42ILQA050SLIFFGBD4AJEHN9QR58QQLQL3N5G===="
+								hash:       "KKG521E68SFQABTC8N3A852ORNBNKD052IFG76ANFE3E1J71MASG===="
 								scriptHash: "QVK1T6KFQKETVCM4T73LFCIULRT7ENBRAQBGNBARVTUH2R5S698G===="
 								steps: [{
 									doc:      ""
