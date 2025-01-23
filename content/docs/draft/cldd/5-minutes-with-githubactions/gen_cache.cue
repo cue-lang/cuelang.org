@@ -8,10 +8,10 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1": "9g5KVQI8EdOteQbdmAACkr5fsbTliQDgpqhJgY8rKRc="
+									"1": "qWvVDWzvK8C3W1+gCOPOTUM6/1yLcOykIF6YO0I8aH4="
 								}
 								multi_step: {
-									hash:       "VFJKBJG5CVMDSGRDILDETDB2CVTPT95PJ59A3QL0CA6144S4CJCG===="
+									hash:       "9P99IARN544KLO7HKCU2H6R8JPRIUGA5SBMPARQA32O75NFU71QG===="
 									scriptHash: "LDUF2BB040TG6KC891JEB4FIA4QDEPJ9E1UH9J71V6OPT0B3I7IG===="
 									steps: [{
 										doc:      ""
