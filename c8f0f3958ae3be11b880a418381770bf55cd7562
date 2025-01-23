@@ -16,6 +16,24 @@
       "message": "nit: given that all(?) the changes in this CL stem from the change in site.cue, I\u0027d use a `site: ` prefix.",
       "revId": "c8f0f3958ae3be11b880a418381770bf55cd7562",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4979d548_5b78d84d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-01-23T15:11:28Z",
+      "side": 1,
+      "message": "they don\u0027t - see internal/ci/repo/repo.cue - but done in any case.",
+      "parentUuid": "2fae4ff3_4971be76",
+      "revId": "c8f0f3958ae3be11b880a418381770bf55cd7562",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
