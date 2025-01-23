@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "527d6edc_971d8076",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-23T15:01:25Z",
+      "side": 1,
+      "message": "Leaving for @paul@myitcv.io to +2 the Go changes.",
+      "revId": "fd60f10568450ecc5b8d5e39e074ad5558ec2490",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

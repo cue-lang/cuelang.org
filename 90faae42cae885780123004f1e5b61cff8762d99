@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2affaf42_8f8a6a07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-23T15:01:25Z",
+      "side": 1,
+      "message": "nit: we\u0027ve used a `deps: ` prefix, previously.",
+      "revId": "90faae42cae885780123004f1e5b61cff8762d99",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
