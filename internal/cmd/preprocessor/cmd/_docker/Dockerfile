@@ -2,7 +2,7 @@
 
 # Code generated site_tool.cue; DO NOT EDIT.
 
-FROM golang:1.23.2 AS build
+FROM golang:1.23.5 AS build
 
 ARG GOPRIVATE
 ENV GOPRIVATE=$GOPRIVATE
@@ -40,7 +40,7 @@ RUN \
 	export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache CGO_ENABLED=1 && \
 	go build -C /libcue -o libcue.so -buildmode=c-shared
 
-FROM golang:1.23.2
+FROM golang:1.23.5
 
 RUN apt-get update && apt-get install -y tree
 

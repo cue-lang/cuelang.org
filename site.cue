@@ -11,7 +11,7 @@ import (
 )
 
 versions: {
-	go:            "go1.23.2"
+	go:            "go1.23.5"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
