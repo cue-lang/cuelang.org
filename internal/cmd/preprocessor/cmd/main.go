@@ -36,7 +36,7 @@ var schemaFile string
 // We follow the same approach here as the cue command (as well as using the
 // using the same version of Cobra) for consistency. Panic is used as a
 // strategy for early-return from any running command.
-func Main() int {
+func Main() {
 	cwd, _ := os.Getwd()
 	err := mainErr(context.Background(), os.Args[1:])
 	if err != nil {
@@ -45,9 +45,8 @@ func Main() int {
 				Cwd: cwd,
 			})
 		}
-		return 1
+		os.Exit(1)
 	}
-	return 0
 }
 
 func mainErr(ctx context.Context, args []string) (err error) {

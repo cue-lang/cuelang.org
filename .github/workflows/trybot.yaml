@@ -17,10 +17,10 @@ name: TryBot
         default: "false"
 jobs:
   test:
-    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
+    runs-on: ubuntu-22.04
     steps:
       - if: runner.os == 'macOS'
         name: Update Homebrew (macOS)
@@ -66,13 +66,12 @@ jobs:
         run: |
           echo 'Setting CI_NO_SKIP_CACHE=true'
           echo "CI_NO_SKIP_CACHE=true" >> $GITHUB_ENV
-      - if: runner.os == 'macOS'
-        run: |-
+      - run: |-
           mkdir $HOME/.tmp
           echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
+        if: runner.os == 'macOS'
         name: Set TMPDIR environment variable (${{runner.os}})
-      - if: runner.os == 'macOS'
-        run: |-
+      - run: |-
           mkdir -p ~/.lima/default
           cat <<EOD > ~/.lima/default/lima.yaml
           mounts:
@@ -81,15 +80,16 @@ jobs:
             - location: "$TMPDIR"
           	 writable: true
           EOD
+        if: runner.os == 'macOS'
         name: Write lima config (${{runner.os}})
-      - if: runner.os == 'macOS'
-        run: |-
+      - run: |-
           brew install colima docker
           colima start --mount-type virtiofs
           sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
+        if: runner.os == 'macOS'
         name: Install Docker (${{runner.os}})
-      - if: runner.os == 'macOS'
-        run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
+      - run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
+        if: runner.os == 'macOS'
         name: Set DOCKER_HOST environment variable (${{runner.os}})
       - if: runner.os == 'macOS'
         name: Install macOS utils
@@ -170,9 +170,9 @@ jobs:
       - name: Perform early content checks
         run: _scripts/contentLint.bash
       - name: Populate CUE dependency cache
-        run: _scripts/cacheWarm.bash
         env:
           CUE_TOKEN: ${{ secrets.NOTCUECKOO_CUE_TOKEN }}
+        run: _scripts/cacheWarm.bash
       - name: Check site CUE configuration
         run: _scripts/runPreprocessor.bash execute --check
       - name: Regenerate

@@ -28,11 +28,11 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	os.Exit(testscript.RunMain(m, map[string]func() int{
+	testscript.Main(m, map[string]func(){
 		"preprocessor": Main,
 		"cmd-find":     findCmd,
 		"cue":          cueCmd,
-	}))
+	})
 }
 
 func TestScripts(t *testing.T) {
@@ -58,7 +58,7 @@ func TestScripts(t *testing.T) {
 // findCmd is rather like Unix find. It is used to list files and directories
 // contained by the working directory. By default directory paths are listed,
 // and .keep files are totally ignored.
-func findCmd() int {
+func findCmd() {
 	fDir := flag.Bool("dir", false, "print directory paths")
 	flag.Parse()
 
@@ -82,11 +82,9 @@ func findCmd() int {
 	for _, d := range dirsToWalk {
 		filepath.WalkDir(d, findImpl)
 	}
-
-	return 0
 }
 
 // cueCmd simulates cmd/cue
-func cueCmd() int {
-	return cmd.Main()
+func cueCmd() {
+	os.Exit(cmd.Main())
 }
