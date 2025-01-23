@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "GJJFOV2B206NLIK479PRL07L35LALLH0VU6P4G1P2VH8A3OU2T8G===="
+								hash:       "7JKHVO2R5NUFPMUK1TNHRCPAKU8NKVQ6F2UU5GH6CD6EFH43906G===="
 								scriptHash: "PQ9E3ADC3Q25J0DVM5DHFDQNDJUGNGNFJN4RRPCO1A7BK6J191OG===="
 								steps: [{
 									doc:      ""
@@ -29,7 +29,7 @@ package site
 									cmd:      "go version"
 									exitCode: 0
 									output: """
-											go version go1.23.2 linux/amd64
+											go version go1.23.5 linux/amd64
 
 											"""
 								}, {
