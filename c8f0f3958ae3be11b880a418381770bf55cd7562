@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fae4ff3_4971be76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-23T15:06:31Z",
+      "side": 1,
+      "message": "nit: given that all(?) the changes in this CL stem from the change in site.cue, I\u0027d use a `site: ` prefix.",
+      "revId": "c8f0f3958ae3be11b880a418381770bf55cd7562",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
