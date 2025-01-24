@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3e1b904_a7954346",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-24T15:14:36Z",
+      "side": 1,
+      "message": "PTAL. The desire for non-WSL Windows instructions will be polled and tracked elsewhere.",
+      "revId": "22caa053b08205da0b6c9cc37cbaf6d24dde15b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
