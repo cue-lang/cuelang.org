@@ -8,7 +8,7 @@ require (
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/go-quicktest/qt v1.101.0
-	github.com/rogpeppe/go-internal v1.13.1
+	github.com/rogpeppe/go-internal v1.13.2-0.20241226121412-a5dc8ff20d0a
 	github.com/rogpeppe/testscript v1.1.0
 	github.com/spf13/cobra v1.8.1
 	golang.org/x/mod v0.21.0
