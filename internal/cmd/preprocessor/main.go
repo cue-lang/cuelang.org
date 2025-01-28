@@ -16,11 +16,9 @@
 package main
 
 import (
-	"os"
-
 	"github.com/cue-lang/cuelang.org/internal/cmd/preprocessor/cmd"
 )
 
 func main() {
-	os.Exit(cmd.Main())
+	cmd.Main()
 }
