@@ -16,6 +16,23 @@
       "message": "We don\u0027t encode the upstream anywhere (other than this commit message), do we?",
       "revId": "d9ebb810c0707a4faaba50a3af859e605ea38611",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "822a6720_50abc330",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-01-29T17:09:35Z",
+      "side": 1,
+      "message": "I think this was superseded by https://cuelang.org/cl/1207213 and can be abandoned.",
+      "revId": "d9ebb810c0707a4faaba50a3af859e605ea38611",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
