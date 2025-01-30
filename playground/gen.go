@@ -15,4 +15,3 @@
 package main
 
 //go:generate ./_scripts/cpWasmExec.bash
-//go:generate ./_scripts/revendorToolsInternal.bash
