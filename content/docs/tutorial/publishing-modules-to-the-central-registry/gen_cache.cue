@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "CIvC0bNtHVzmgz76KaSPrwjFmo7UDLCmoCDZYqywhIQ="
-								"config.cue":    "RsyRioqn2GLm8fXIA6oISwokvI7JJgMRjyeUZ1WaHjk="
+								"schema-v0.0.1": "pHogrX2kLZUmYTQpdMNvAyOuPjrNn3VuOnUm1Wz77Ro="
+								"config.cue":    "kruQCoZ55J1fG/VkqkOXmv+f/hX/nOA+h+bbVE8kwZM="
 							}
 							multi_step: {
-								hash:       "ESBFEAP8PBU9AOT7MI53V4GBCKRT42JM04CFBA34HH5HKKDEMQA0===="
+								hash:       "7EP19N15UN464SMIS6S91A0GP2LJENMJGOPNPMOD4Q1KV7PI4OG0===="
 								scriptHash: "SV2DHL950F2OJ34H73NG8QRM3BSI3B0J4UONRI6BV95QJ0GPQOP0===="
 								steps: [{
 									doc:      ""
@@ -42,7 +42,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.11.2
+											cue version v0.12.0
 											...
 
 											"""
@@ -121,7 +121,7 @@ package site
 									output: """
 											module: "github.com/cueckoo/frostyapp@v0"
 											language: {
-											\tversion: "v0.11.2"
+											\tversion: "v0.12.0"
 											}
 											source: {
 											\tkind: "git"
