@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "2L7Q87CHVS5N3NU5BKI7L4O9MI433DN1IBCP09RIAQVR7QUMQT30===="
+									hash:       "1JRNMTQVCBBCTN3OA2RGNU74FIPT1PJ0LS5O8OD35HE33ICDN680===="
 									scriptHash: "JEMKKHDF96NCQ79A4M6JT7EB0LP63PT08FUJAF9MEBDI9HRE8LS0===="
 									steps: [{
 										doc:      ""
@@ -33,6 +33,7 @@ package site
 												  get         add and upgrade module dependencies
 												  init        initialize new module in current directory
 												  publish     publish the current module to a registry
+												  rename      rename the current module
 												  resolve     Show how a module path resolves to a registry
 												  tidy        download and tidy module dependencies
 

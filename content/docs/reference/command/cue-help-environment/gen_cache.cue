@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "OAB9IO6RS9T1T0R6LAAEAQVGASL2RV36PJ0R492QQKA0V1BGII9G===="
+									hash:       "S38S7EGQLH0TFO3FHPV0CBOKS9CAPK7JLS9BG7FGK3PM7GC70240===="
 									scriptHash: "HH51UG725DMMBP6BFHH46NO0D0SUMLUEGBL2G8V627OFF2BPL9A0===="
 									steps: [{
 										doc:      ""
@@ -52,9 +52,12 @@ package site
 												\t\tembed
 												\t\t\tEnable support for embedded data files as described in
 												\t\t\thttps://cuelang.org/discussion/3264.
-												\t\tdecodeint64
+												\t\tdecodeint64 (default true)
 												\t\t\tTweak cue.Value.Decode to choose "int64" rather than "int"
 												\t\t\tas the default Go type for CUE integer values.
+												\t\ttoposort
+												\t\t\tEnable topological sorting of struct fields.
+												\t\t\tProvide feedback via https://cuelang.org/issue/3558
 
 												\tCUE_DEBUG
 												\t\tComma-separated list of debug flags to enable or disable, such as:
@@ -62,6 +65,12 @@ package site
 												\t\thttp
 												\t\t\tLog a JSON message per HTTP request and response made
 												\t\t\twhen interacting with module registries.
+												\t\tsortfields
+												\t\t\tForce fields in stucts to be sorted lexicographically.
+												\t\topeninline (default true)
+												\t\t\tPermit disallowed fields to be selected into literal struct
+												\t\t\tthat would normally result in a close error, mimicking evalv2
+												\t\t\tclosedness behavior in evalv3 to aid the transition.
 
 												CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 												where the value is a boolean "true" or "1" if omitted. For example:
