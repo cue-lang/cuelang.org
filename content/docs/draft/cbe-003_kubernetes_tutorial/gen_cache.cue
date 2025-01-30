@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "KPe0e9pId0vR3+Dn31CIhcohWytMZOMF+Rkd6ymy4gE="
-								kube2:               "5nL7T7lRh8uvIQqwThocvfCafUTsiUER6ce5Ji8G/rw="
-								kube3:               "5R4vKArMsk7xq40VBpuAf2s5lg7FE+8NrWrP//s7xCc="
-								"template frontend": "wgijcS4dBjnaQTTa5mFxkBERWzOaOezFPhu7h1Cj6lI="
-								"template kitchen":  "vSiw+UaJc/6GBYl6SbonIM96oqmssN1WmW+QuddwFBs="
-								kitchen3:            "Vn5zK98KZQlJcU1rQBvM4qwrJMTYKt1Bxti4pJzGjhQ="
-								sous:                "xGhty3P0qsox00Is/KS60fObkatoIpkR+4L34ghwCHA="
-								"kube tool":         "lI0GB4X9gb53LEC+99jSc09R6YwZIW4TbMvQqrJSs9Q="
-								"ls tool":           "6RttvP9EI0DhnDxCXlIw7XXvGkJVjSI2IrxW5SIQCIs="
-								"dump tool":         "Wpp5xHW3bdfpsOaTDvsrcFTe6PyQXgUaAv3pE+qE8c0="
-								"create tool":       "oYgV33xLl+SRDtua9JgJwDEC84mt1C4UU6YV/xdrJVw="
-								kubectl:             "47FDMnSrFHsvU3zQVyLa1tl7bs+tfOG6MJ2O3j5ieuw="
+								"initial template":  "0uoUyWuCNvd/IMHOE1YL6mbi0Z6b2Wt930XUkWZd43A="
+								kube2:               "CEmYJMsBZ57Mf4JEj5NNnX4vo1LqSR2ZB3p7yhpQgr0="
+								kube3:               "VzvLUmwoVhZhaabwoivdRnJngvvSQi3XFg82JnYMzyE="
+								"template frontend": "nDZwwX1JVnaudM5jUCUbwcNvrkavKDyy0cCOvovdjzI="
+								"template kitchen":  "Am4y/jHYI1xe4ggBIZBU1flDxWZsF9PYjLDT5PBQgkY="
+								kitchen3:            "SRDdDKudeW9vCbJVooxre3gorwNt6jLT4vzroxt1Dgg="
+								sous:                "pYwJepWnyWt265VfFNxJOBP8UkvZFP7Q3UPZt5zbqs8="
+								"kube tool":         "NKfyoV87jlbxqqLixAVZABBM11skvx9l8gWCBAfXByg="
+								"ls tool":           "zdr77pnBNWvXly1Dqo6KD8z/1DaoGox38jjQEHx62G8="
+								"dump tool":         "MFCpieWPNYEws4PsQX2x4Cj0fEKj1/e753V51mPbEuU="
+								"create tool":       "D2/I2zJNi5wGC2z9+4Mfr+KVVCq0ffKMjPBCKG/mXSs="
+								kubectl:             "cIoY0eL84LU8i6bBm/wMU+n2EY/WJg+EGqLdpKzu5fs="
 							}
 							multi_step: {
-								hash:       "BUDHMGK3OI75Q8FPQES2PK6QMSG6KCHME6B9MA9BUGL0FSMI1UC0===="
+								hash:       "6A1JEITSBSELABBJH3N4GK16L1GS67KOT8LNAEAD80MNC1MER5QG===="
 								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
 								steps: [{
 									doc:      "#ellipsis 5"
@@ -281,7 +281,7 @@ package site
 									cmd:      "diff -wu snapshot snapshot2 | wc -l"
 									exitCode: 0
 									output: """
-											0
+											603
 
 											"""
 								}, {
@@ -396,7 +396,7 @@ package site
 									output: """
 											--- snapshot
 											+++ snapshot2
-											@@ -190,6 +190,7 @@
+											@@ -169,6 +169,7 @@
 											                 metadata: {
 											                     annotations: {
 											                         "prometheus.io.scrape": "true"

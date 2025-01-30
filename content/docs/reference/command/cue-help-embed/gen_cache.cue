@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "FFGT6RCUMIP944P4HKGVOFBMD93AUJJKFCBKQH6DMEFRKSK1N6AG===="
+									hash:       "BM2TM7J2FA4RTQ5AM8L6TPFC297G9OQE4N61OC01I2BQQ8FSNGJG===="
 									scriptHash: "44GNGDAPS9QM1GQBR3816KBAIA92J8J3HIE49DK2QNIG8MOUOC50===="
 									steps: [{
 										doc:      ""
@@ -44,8 +44,8 @@ package site
 
 												Note that embedding cue files is not supported at this time.
 
-												Note: support for embed is experimental, and is enabled via
-												CUE_EXPERIMENT=embed.
+												Note: support for embed is experimental, and can be disabled via
+												CUE_EXPERIMENT=embed=0.
 
 												For more details and discussion, see the proposal linked from
 												https://cuelang.org/discussion/3264.

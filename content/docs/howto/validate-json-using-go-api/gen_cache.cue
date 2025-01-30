@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue schema": "suVeFjlzWRzTEzSeIKjuhYS63D4AFKaW1HqC5RsrRgg="
-								"good data":  "75pZTN5u1UNraWpjIaUUrugnoTadlfB+z1HrGTCtGJs="
-								"bad data":   "ri08Vq+4dBhSEtnwfTe4jBBbCqMrdT3XEd/HWkq7XH8="
-								"main go":    "SPBmN+Wrakvq+q8gl7EEEIZPw7JzQKvo1nf4I5gDBRI="
+								"cue schema": "Vbef4iPbwGUvdV4eQ2+1wLE0P59f7C5SAoPOMdrwO+Y="
+								"good data":  "RWJ7JxX8nz/aT9E6SiYjrgHM2utB5cKrcfB2x/etN1o="
+								"bad data":   "NSEAptkkqMmRDCC36d3nRwsG0PQTVvAdgq+7BZnJ77w="
+								"main go":    "pSWjLvpi7+v2YoBKYZ2dKhRD5qfG2Y7O0z+/8ULUyV8="
 							}
 							multi_step: {
-								hash:       "7PFPKB09KBPNNTRQDF6N6D9D7K66N0R1KIJD7HHH5LG81M23UF3G===="
-								scriptHash: "D8JBODJ3IQL0OH1F8KA6DF54IHIVLK2MB5N033CRQ0MSDJC4SJIG===="
+								hash:       "R6RSPK8RJ66DJPEQ8E857S0LR314GK24NKCTDHA0J6S9GV66IGB0===="
+								scriptHash: "PBBESNLADHL9N7R3DNPECB64QOF1Q5VODUGH40PFVJGRRDNJUSLG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -53,7 +53,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.11.2"
+									cmd:      "go get cuelang.org/go@v0.12.0"
 									exitCode: 0
 									output: """
 											...
@@ -81,7 +81,7 @@ package site
 									exitCode: 1
 									output: """
 											❌ JSON: NOT ok
-											main.go:42: #Schema.name: conflicting values string and ["Moby","Dick"] (mismatched types string and list) (and 1 more errors)
+											#Schema.name: conflicting values string and ["Moby","Dick"] (mismatched types string and list) (and 1 more errors)
 											exit status 1
 
 											"""

@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "QneJU+Lk9cUI0CvHS/TJ49VknpICobpfQt0YEf/PF3Y="
-								"schema.cue":      "ACHHYj40QyhwO2DllwyHMMI47tnjK4+N6stgKqXVVwg="
-								good:              "wMftnS8W1vsAfwQhop8DWlx97l1yIn3eV1p/nz5WlgU="
-								bad:               "ctL+RfDJVfkKqeeA1DV6ReEQCqjHv4DsUO6PYq+H0d0="
-								"main go program": "5fIBDpo080Z9JRz/1gHn5H09jt/0Mn61UIA8qhGk3rk="
+								"schema.json":     "C+KgZN4Ou6GOe/xZDHV62KtNjMToILK3wN8cmY6vaJY="
+								"schema.cue":      "agYAu2GqPgqRSYjYwkDNAlDh6DUAUPbTIJ7u2G++EF8="
+								good:              "CKLNUXD6hHrDpudQp5XThS6FFBGNq4m8xieeJUTBkQ4="
+								bad:               "jwZL5StX1wVUU/h4KtONx26uUlrrAyelCs3enbS0O0w="
+								"main go program": "JepV0FjYqQGYAIxELeCQeK5kQDSsXi51NOsyYo8KQuM="
 							}
 							multi_step: {
-								hash:       "KKG521E68SFQABTC8N3A852ORNBNKD052IFG76ANFE3E1J71MASG===="
-								scriptHash: "QVK1T6KFQKETVCM4T73LFCIULRT7ENBRAQBGNBARVTUH2R5S698G===="
+								hash:       "PAF5HPQ76PPEJDPG8I207V8JSS3IF80T4E029QHT44ITOAA10BP0===="
+								scriptHash: "O4TD599RMLPE9QM36KOQASI4U3PL7QTC8E58RUEK8T5394SG4LUG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -48,7 +48,7 @@ package site
 									output: """
 											name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
 											    ./bad.json:2:13
-											    ./schema.cue:10:9
+											    ./schema.cue:11:9
 
 											"""
 								}, {
@@ -83,7 +83,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.11.2"
+									cmd:      "go get cuelang.org/go@v0.12.0"
 									exitCode: 0
 									output: """
 											...
