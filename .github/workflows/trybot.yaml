@@ -66,12 +66,13 @@ jobs:
         run: |
           echo 'Setting CI_NO_SKIP_CACHE=true'
           echo "CI_NO_SKIP_CACHE=true" >> $GITHUB_ENV
-      - run: |-
+      - if: runner.os == 'macOS'
+        run: |-
           mkdir $HOME/.tmp
           echo "TMPDIR=$HOME/.tmp" >> $GITHUB_ENV
-        if: runner.os == 'macOS'
         name: Set TMPDIR environment variable (${{runner.os}})
-      - run: |-
+      - if: runner.os == 'macOS'
+        run: |-
           mkdir -p ~/.lima/default
           cat <<EOD > ~/.lima/default/lima.yaml
           mounts:
@@ -80,16 +81,15 @@ jobs:
             - location: "$TMPDIR"
           	 writable: true
           EOD
-        if: runner.os == 'macOS'
         name: Write lima config (${{runner.os}})
-      - run: |-
+      - if: runner.os == 'macOS'
+        run: |-
           brew install colima docker
           colima start --mount-type virtiofs
           sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
-        if: runner.os == 'macOS'
         name: Install Docker (${{runner.os}})
-      - run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
-        if: runner.os == 'macOS'
+      - if: runner.os == 'macOS'
+        run: echo "DOCKER_HOST=unix://$HOME/.colima/default/docker.sock" >> $GITHUB_ENV
         name: Set DOCKER_HOST environment variable (${{runner.os}})
       - if: runner.os == 'macOS'
         name: Install macOS utils
