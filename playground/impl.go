@@ -16,19 +16,17 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"strings"
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/ast"
 	"cuelang.org/go/cue/cuecontext"
-	"cuelang.org/go/cue/errors"
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/cue/token"
-	"cuelang.org/go/pkg/encoding/json"
-	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/encoding"
-	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/filetypes"
+	cueyaml "cuelang.org/go/encoding/yaml"
 )
 
 type function string
@@ -144,57 +142,50 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	if err := v.Validate(validateOpts...); err != nil {
 		return "", err
 	}
-	f, err := filetypes.ParseFile(string(out)+":-", filetypes.Export)
-	if err != nil {
-		var buf bytes.Buffer
-		errors.Print(&buf, err, nil)
-		panic(fmt.Errorf("failed to parse file from %v: %s", string(out)+":-", buf.Bytes()))
-	}
-	var outBuf bytes.Buffer
-	encConf := &encoding.Config{
-		Out: &outBuf,
-	}
-	e, err := encoding.NewEncoder(ctx, f, encConf)
-	if err != nil {
-		return "", fmt.Errorf("failed to build encoder: %v", err)
-	}
 
-	// TODO(mvdan): Note that formatOpts appear to do nothing at all.
-	// For instance, the tests indent JSON with four spaces instead of two.
-	//
-	// TODO(myitcv): make the sharing of format options consistent with
-	// formatInput.
-	var formatOpts []format.Option
+	// TODO(mvdan): once we have a consistent interface for encodings,
+	// this could possibly be an exposed API upstream, much like cue/load
+	// already knows how to decode each of these.
+	// For now, we emulate the essence of what cmd/cue does via internal/encoding
+	// to encode a CUE value as CUE, JSON, and YAML.
+	var dst []byte
+	var err error
 	switch out {
 	case outputCUE:
-		formatOpts = append(formatOpts, format.TabIndent(true))
-	case outputJSON, outputYaml:
-		formatOpts = append(formatOpts,
-			format.TabIndent(false),
-			format.UseSpaces(2),
-		)
+		node := v.Syntax(syntaxOpts...)
+		dst, err = format.Node(toFile(node))
+	case outputJSON:
+		dst, err = json.MarshalIndent(v, "", "    ")
+		dst = append(dst, '\n')
+	case outputYaml:
+		dst, err = cueyaml.Encode(v)
 	}
-	encConf.Format = formatOpts
-	synF := getSyntax(v, syntaxOpts)
-	if err := e.EncodeFile(synF); err != nil {
+	if err != nil {
 		return "", fmt.Errorf("failed to encode: %w", err)
 	}
-	return outBuf.String(), nil
+	return string(dst), nil
 }
 
-// getSyntax is copied from cmd/cue/cmd/eval.go
-func getSyntax(v cue.Value, opts []cue.Option) *ast.File {
-	n := v.Syntax(opts...)
-	switch x := n.(type) {
-	case *ast.File:
-		return x
+// toFile is copied from CUE's internal.toFile;
+// mainly needed so that CUE outputs don't always contain braces
+// for the top-level struct in a value.
+func toFile(n ast.Node) *ast.File {
+	if n == nil {
+		return nil
+	}
+	switch n := n.(type) {
 	case *ast.StructLit:
-		return &ast.File{Decls: x.Elts}
+		f := &ast.File{Decls: n.Elts}
+		// Ensure that the comments attached to the struct literal are not lost.
+		ast.SetComments(f, ast.Comments(n))
+		return f
 	case ast.Expr:
-		ast.SetRelPos(x, token.NoSpace)
-		return &ast.File{Decls: []ast.Decl{&ast.EmbedDecl{Expr: x}}}
+		ast.SetRelPos(n, token.NoSpace)
+		return &ast.File{Decls: []ast.Decl{&ast.EmbedDecl{Expr: n}}}
+	case *ast.File:
+		return n
 	default:
-		panic("unreachable")
+		panic(fmt.Sprintf("Unsupported node type %T", n))
 	}
 }
 
@@ -212,11 +203,11 @@ func formatInput(in input, s string) string {
 		}
 		return string(b)
 	case inputJSON:
-		res, err := json.Indent([]byte(s), "", "  ")
-		if err != nil {
+		var buf bytes.Buffer
+		if err := json.Indent(&buf, []byte(s), "", "  "); err != nil {
 			return s
 		}
-		return res
+		return buf.String()
 	default:
 		panic(fmt.Errorf("don't know how to format %q", in))
 	}
