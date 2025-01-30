@@ -156,8 +156,8 @@ func main() {
 
 Before running, we add a dependency on the `cuelang.org/go` module and tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjExLjIKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.11.2
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEyLjAKZ28gbW9kIHRpZHk=" }
+$ go get cuelang.org/go@v0.12.0
 ...
 $ go mod tidy
 ...
@@ -236,8 +236,8 @@ age: 99
 We finish by adding a dependency on the `cuelang.org/go` module, tidying,
 and running the program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjExLjIKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
-$ go get cuelang.org/go@v0.11.2
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEyLjAKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
+$ go get cuelang.org/go@v0.12.0
 ...
 $ go mod tidy
 ...
@@ -310,14 +310,14 @@ func main() {
 
 This time we see that CUE correctly caught a problem in our data:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjExLjIKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
-$ go get cuelang.org/go@v0.11.2
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEyLjAKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
+$ go get cuelang.org/go@v0.12.0
 ...
 $ go mod tidy
 ...
 $ go run .
 ❌ Person: NOT ok
-main.go:34: #Person.age: invalid value 999 (out of bound <=150)
+#Person.age: invalid value 999 (out of bound <=150)
 exit status 1
 ```
 <!-- TODO

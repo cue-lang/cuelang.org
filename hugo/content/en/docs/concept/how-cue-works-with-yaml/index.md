@@ -42,13 +42,13 @@ h: 4.4 * 2
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1sIGRhdGEueW1sIGRhdGEuanNvbiBkYXRhLmN1ZQ==" >}}
 $ cue export --out yaml data.yml data.json data.cue
-e: 5
 a: 1
 b: "2"
 c: three
-g: seven
-"f": "6"
 d: 4.4
+e: 5
+"f": "6"
+g: seven
 h: 8.8
 {{< /code-tab >}}
 {{< /code-tabs >}}

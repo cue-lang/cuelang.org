@@ -249,13 +249,13 @@ $ cue export .:A data.cue
 }
 $ cue export .:A packageB.cue
 {
-    "y": 2,
-    "x": "foo"
+    "x": "foo",
+    "y": 2
 }
 $ cue export .:A data.yml
 {
-    "y": 2,
-    "x": "foo"
+    "x": "foo",
+    "y": 2
 }
 $ cue export .:A schema.json
 {
@@ -447,15 +447,15 @@ $ cue export data.cue .:A
 no encoding specified for file ".:A"
 $ cue export .:A data.yml
 {
-    "y": 2,
-    "x": "foo"
+    "x": "foo",
+    "y": 2
 }
 $ cue export data.yml .:A
 no encoding specified for file ".:A"
 $ cue export .:A packageB.cue
 {
-    "y": 2,
-    "x": "foo"
+    "x": "foo",
+    "y": 2
 }
 $ cue export packageB.cue .:A
 no encoding specified for file ".:A"
@@ -473,8 +473,8 @@ found packages "A" (packageA.cue) and "B" (packageB.cue) in "/home/runner"
 # input that's present."
 $ cue export .:A packageB.cue
 {
-    "y": 2,
-    "x": "foo"
+    "x": "foo",
+    "y": 2
 }
 
 # Tidy up.
@@ -555,8 +555,8 @@ x: 50
 {{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOm9uZSBtaW4uY3VlIG1heC5jdWUgZGF0YS55bWwgY2FsYy5jdWU=" >}}
 $ cue export .:one min.cue max.cue data.yml calc.cue
 {
-    "z": 100,
-    "x": 50
+    "x": 50,
+    "z": 100
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}

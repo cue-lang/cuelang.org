@@ -6,35 +6,36 @@ import (
 	"github.com/cue-lang/cuelang.org/playground/internal/cuelang_org_go_internal/envflag"
 )
 
-// Flags holds the set of CUE_EXPERIMENT flags. It is initialized by Init.
+// Flags holds the set of global CUE_EXPERIMENT flags. It is initialized by Init.
 //
 // When adding, deleting, or modifying entries below,
 // update cmd/cue/cmd/help.go as well for `cue help environment`.
 var Flags struct {
-	Modules bool `envflag:"deprecated,default:true"`
-
-	// YAMLV3Decoder swaps the old internal/third_party/yaml decoder with the new
-	// decoder implemented in internal/encoding/yaml on top of yaml.v3.
-	// We keep it around for v0.11 for the sake of not breaking users
-	// with CUE_EXPERIMENT=yamlv3decoder=1 who must still suppport older CUE versions,
-	// but currently the feature is always enabled.
-	// TODO(mvdan): remove for v0.12.
-	YAMLV3Decoder bool `envflag:"deprecated,default:true"`
-
 	// EvalV3 enables the new evaluator. The new evaluator addresses various
 	// performance concerns.
 	EvalV3 bool
 
 	// Embed enables file embedding.
-	Embed bool
+	Embed bool `envflag:"default:true"`
 
 	// DecodeInt64 changes [cuelang.org/go/cue.Value.Decode] to choose
 	// `int64` rather than `int` as the default type for CUE integer values
 	// to ensure consistency with 32-bit platforms.
-	DecodeInt64 bool
+	DecodeInt64 bool `envflag:"default:true"`
 
-	// Enable topological sorting of struct fields
-	TopoSort bool
+	// Enable topological sorting of struct fields.
+	TopoSort bool `envflag:"default:true"`
+
+	// The flags below describe completed experiments; they can still be set
+	// as long as the value aligns with the final behavior once the experiment finished.
+	// Breaking users who set such a flag seems unnecessary,
+	// and it simplifies using the same experiment flags across a range of CUE versions.
+
+	// Modules was an experiment which ran from early 2023 to late 2024.
+	Modules bool `envflag:"deprecated,default:true"`
+
+	// YAMLV3Decoder was an experiment which ran from early 2024 to late 2024.
+	YAMLV3Decoder bool `envflag:"deprecated,default:true"`
 }
 
 // Init initializes Flags. Note: this isn't named "init" because we
@@ -46,8 +47,6 @@ func Init() error {
 	return initOnce()
 }
 
-var initOnce = sync.OnceValue(initAlways)
-
-func initAlways() error {
+var initOnce = sync.OnceValue(func() error {
 	return envflag.Init(&Flags, "CUE_EXPERIMENT")
-}
+})

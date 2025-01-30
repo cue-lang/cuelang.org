@@ -28,6 +28,7 @@ Available Commands:
   get         add and upgrade module dependencies
   init        initialize new module in current directory
   publish     publish the current module to a registry
+  rename      rename the current module
   resolve     Show how a module path resolves to a registry
   tidy        download and tidy module dependencies
 

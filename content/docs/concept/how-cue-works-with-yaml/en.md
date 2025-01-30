@@ -42,13 +42,13 @@ d: 4.4
 g: "seven"
 h: 4.4 * 2
 -- out --
-e: 5
 a: 1
 b: "2"
 c: three
-g: seven
-"f": "6"
 d: 4.4
+e: 5
+"f": "6"
+g: seven
 h: 8.8
 {{{end}}}
 
