@@ -39,12 +39,12 @@ s: X={
 // Valid reference using an index expression.
 FooAndBar: s["foo_and_bar"]
 -- out --
-a: "foo"
-b: "bar"
+a:      "foo"
+b:      "bar"
+foobar: "foobar"
 s: {
     foo_and_bar: "foobar"
     FooAndBar:   "foobar"
 }
-foobar:    "foobar"
 FooAndBar: "foobar"
 {{{end}}}

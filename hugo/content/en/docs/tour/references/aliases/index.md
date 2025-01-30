@@ -44,9 +44,9 @@ c: C={
 $ cue export file.cue
 {
     "a top level field": 1,
+    "some dynamic field": 2,
     "a": 1,
     "b": 2,
-    "some dynamic field": 2,
     "c": {
         "d": 3,
         "e": {

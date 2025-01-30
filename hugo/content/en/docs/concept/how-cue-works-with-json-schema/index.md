@@ -88,12 +88,13 @@ definition:
 
 {{< code-tabs >}}
 {{< code-tab name="schema.cue" language="cue" area="top-left" >}}
+// Main Person schema.
+//
+// This schema defines a person.
+
 import "strings"
 
 #Person: {
-	// Main Person schema.
-	//
-	// This schema defines a person.
 	@jsonschema(schema="https://json-schema.org/draft/2020-12/schema")
 
 	// What is this person called?
@@ -105,7 +106,7 @@ import "strings"
 	// This is a very long comment for some reason, which will keep
 	// going and going past the point where it should probably have
 	// stopped.
-	children?: [...string] | *null
+	children?: [...string]
 	"home phone"?: string @deprecated()
 	...
 }
@@ -140,7 +141,7 @@ command validates our data against the `#Person` constraint:
 $ cue vet -d '#Person' schema.cue good.json bad.json
 name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
     ./bad.json:2:13
-    ./schema.cue:10:9
+    ./schema.cue:11:9
 ```
 
 The `cue vet` command can also validate the data using the JSON Schema directly:

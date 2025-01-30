@@ -39,13 +39,13 @@ FooAndBar: s["foo_and_bar"]
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgZmlsZS5jdWU=" >}}
 $ cue eval file.cue
-a: "foo"
-b: "bar"
+a:      "foo"
+b:      "bar"
+foobar: "foobar"
 s: {
     foo_and_bar: "foobar"
     FooAndBar:   "foobar"
 }
-foobar:    "foobar"
 FooAndBar: "foobar"
 {{< /code-tab >}}
 {{< /code-tabs >}}

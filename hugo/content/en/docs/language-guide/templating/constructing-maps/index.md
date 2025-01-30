@@ -26,8 +26,8 @@ c: "baz"
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 a:      5
 b:      "bar"
-foobar: 5
 c:      "baz"
+foobar: 5
 foobaz: 6
 {{< /code-tab >}}
 {{< /code-tabs >}}

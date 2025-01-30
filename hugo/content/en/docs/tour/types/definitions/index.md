@@ -38,8 +38,8 @@ valid: {
     n: 3
 }
 invalid: {
-    n: int
     N: _|_ // invalid.N: field not allowed
+    n: int
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}

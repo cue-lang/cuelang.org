@@ -94,14 +94,14 @@ output: petsBySpecies: {
             {
                 "Name": "Charlie",
                 "Age": 15,
-                "Owner": "Dorothy Cartwright",
-                "DoB": 2008
+                "DoB": 2008,
+                "Owner": "Dorothy Cartwright"
             },
             {
                 "Name": "George",
                 "Age": 5,
-                "Owner": "Dorothy Cartwright",
-                "DoB": 2018
+                "DoB": 2018,
+                "Owner": "Dorothy Cartwright"
             }
         ],
         "dog": [
@@ -115,8 +115,8 @@ output: petsBySpecies: {
             {
                 "Name": "Fred",
                 "Age": 8,
-                "Owner": "Dorothy Cartwright",
-                "DoB": 2015
+                "DoB": 2015,
+                "Owner": "Dorothy Cartwright"
             }
         ]
     }

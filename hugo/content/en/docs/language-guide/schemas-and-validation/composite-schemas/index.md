@@ -90,8 +90,8 @@ definition.
     lungCapacityL: number
 }
 #Dog: {
-    kind!:         "dog"
     lungCapacityL: number
+    kind!:         "dog"
     house:         string
 }
 {{< /code-tab >}}

@@ -43,13 +43,13 @@ $ cue export file.cue
 {
     "job": {
         "nginx": {
+            "replicas": 2,
             "name": "nginx",
-            "command": "exec nginx",
-            "replicas": 2
+            "command": "exec nginx"
         },
         "manager": {
-            "name": "manager",
             "command": "monit -I",
+            "name": "manager",
             "replicas": 1
         },
         "policyd": {
@@ -58,14 +58,14 @@ $ cue export file.cue
             "replicas": 1
         },
         "boltdb": {
+            "replicas": 3,
             "name": "boltdb",
-            "command": "exec boltdb",
-            "replicas": 3
+            "command": "exec boltdb"
         },
         "postgres": {
+            "replicas": 5,
             "name": "postgres",
-            "command": "exec postgres",
-            "replicas": 5
+            "command": "exec postgres"
         }
     }
 }

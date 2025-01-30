@@ -128,6 +128,7 @@ package cuisine
 
 #restaurant: {
 	@jsonschema(schema="https://json-schema.org/draft/2020-12/schema")
+
 	close({
 		name!:    string
 		cuisine!: string

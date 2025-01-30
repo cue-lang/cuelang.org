@@ -296,12 +296,12 @@ app:
   replicas: 3
 -- out --
 {
-    "appName": "frontend-ng.service",
     "appMemory": 3072,
     "replicaCount": 3,
-    "clusterName": "PROD",
     "region": "AMEA",
-    "id": "frontend-ng.service.prod.amea"
+    "clusterName": "PROD",
+    "id": "frontend-ng.service.prod.amea",
+    "appName": "frontend-ng.service"
 }
 {{{end}}}
 
@@ -434,25 +434,25 @@ job: [#DB]: replicas: >=3
 -- out --
 job:
   nginx:
+    replicas: 2
     name: nginx
     command: exec nginx
-    replicas: 2
   manager:
-    name: manager
     command: monit -I
+    name: manager
     replicas: 1
   policyd:
     name: policyd
     command: exec policyd
     replicas: 1
   boltdb:
+    replicas: 3
     name: boltdb
     command: exec boltdb
-    replicas: 3
   postgres:
+    replicas: 5
     name: postgres
     command: exec postgres
-    replicas: 5
 {{{end}}}
 
 ## Tooling and automation

@@ -444,7 +444,7 @@ The following is proof that nothing changed semantically:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgfCB3YyAtbA==" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 | wc -l
-0
+603
 ```
 
 We can do better, though.
@@ -690,7 +690,7 @@ $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 --- snapshot
 +++ snapshot2
-@@ -190,6 +190,7 @@
+@@ -169,6 +169,7 @@
                  metadata: {
                      annotations: {
                          "prometheus.io.scrape": "true"
