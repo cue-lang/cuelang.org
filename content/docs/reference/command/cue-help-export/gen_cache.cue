@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "298E9UIK72M61DA2VVEU8T3LS56MKL90BH52GGSCA7DO77711HE0===="
+									hash:       "DOBQN1OQPUE3NQ5429TOI56EEOPA79S1R0CB0VEOGSNPB09LVOD0===="
 									scriptHash: "ND1CP9IC0KPA5THTHDD7KDFKQO44IEQPRI81S8U4CNFUJN5DHG70===="
 									steps: [{
 										doc:      ""
@@ -27,13 +27,13 @@ package site
 												\t# multiple files: these are combined at the top-level. Order doesn't matter.
 												\tcue export file1.cue foo/file2.cue
 
-												\t# all files within the "mypkg" package: this includes all files in the
+												\t# all files within the "cloud" package, including all files in the
 												\t# current directory and its ancestor directories that are marked with the
-												\t# same package.
-												\tcue export -p cloud
+												\t# same package, up to the root of the containing module.
+												\tcue export .:cloud
 
-												\t# the -p flag can be omitted if the directory only contains files for
-												\t# the "mypkg" package.
+												\t# the package name can be omitted if the directory only contains files for
+												\t# the "cloud" package.
 												\tcue export
 
 												Emit value:
@@ -60,9 +60,10 @@ package site
 
 												In absence of arguments, the current directory is loaded as a package instance.
 												A package instance for a directory contains all files in the directory and its
-												ancestor directories, up to the module root, belonging to the same package.
-												If the package is not explicitly defined by the '-p' flag, it must be uniquely
-												defined by the files in the current directory.
+												ancestor directories, up to the module root, belonging to the same package. If
+												a single package is not uniquely defined by the files in the current directory
+												then the package name must be specified as an explicit argument using
+												".:<package-name>" syntax.
 
 
 												Formats

@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue get go - main cue":      "ub9p7S4Xn7LHpEFo7pn49V39I/CJIiCm5qD+dUmpHUw="
-								"load cue - cue data":        "aOtN4TfLUMpbyasSEzntlU/n4PsaSVvgk9xtEBf56kY="
-								"load cue - main.go":         "g7wLU5Iu93/F7+9hxkW0wS4SWrlZFsiye7gOuNNkAXs="
-								"load non-cue - main.go":     "bRVD5mWyhdn9SJgcJAumw2D4wKcHJMfkgdY2g8oMPsQ="
-								"load non-cue - yaml file":   "tlTx04sYdKEW0vtlYFP19v6+BZtp7HmiLQtZ3cr0img="
-								"check go data - cue schema": "U1N8dfbskAN/qhIJ0S1MO1h3eWXQkhkAXgrfgQFqxFI="
-								"check go data - main.go":    "+pOZsxCwAVMmUSP+MHgduBQGpX+9Y7My197SMPnD/dM="
+								"cue get go - main cue":      "aJ08bUEO9f9QBHLu3qKXlLRn8SYS1LvHD+HqZZjvUtc="
+								"load cue - cue data":        "t+cjiSlb3+Z9XzMVSv6UCHzvzWYUXh9GfrZQEFKgKKQ="
+								"load cue - main.go":         "qdn6j0Ohem+JO/8FGrVKsTZ00avnTWth1KLJvuvDaOY="
+								"load non-cue - main.go":     "1PMy3N8ZHpAPkPOi2FdSVv7maKe4xPT2y1tkRzUIkNo="
+								"load non-cue - yaml file":   "6z879hv3zsx9PKoCJ42SzMRXclTp5lnW8ZGfEBbdUqE="
+								"check go data - cue schema": "CcYOUaXPVVRxnjxovtc8VIhz/Kmq34/SaknHCh3aI74="
+								"check go data - main.go":    "AVxN4jCJqTL/WJQS7duTxqPY2ShIHIhqCI0paYYXzF4="
 							}
 							multi_step: {
-								hash:       "K8FIN9CJ3384MQN4GEIDLAVAKUK25FG1CR602A5USJAHE6ERN2P0===="
-								scriptHash: "08VQ3TQTF0VKUNFM03A74VBN72AG1BR9DODBCEGA52UKL4LKGJAG===="
+								hash:       "IKVS6QPO40QRJONU878S5U5BK4RPRHN0HDJKPTJSGRKTAEFR5HV0===="
+								scriptHash: "VHE7QT5EDQ53N1M0GJNPKI6VDJN6MNJ06FI62EC56SOHLHTOUNG0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -113,7 +113,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.11.2"
+									cmd:      "go get cuelang.org/go@v0.12.0"
 									exitCode: 0
 									output: """
 											...
@@ -169,7 +169,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.11.2"
+									cmd:      "go get cuelang.org/go@v0.12.0"
 									exitCode: 0
 									output: """
 											...
@@ -219,7 +219,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.11.2"
+									cmd:      "go get cuelang.org/go@v0.12.0"
 									exitCode: 0
 									output: """
 											...
@@ -239,7 +239,7 @@ package site
 									exitCode: 1
 									output: """
 											❌ Person: NOT ok
-											main.go:34: #Person.age: invalid value 999 (out of bound <=150)
+											#Person.age: invalid value 999 (out of bound <=150)
 											exit status 1
 
 											"""
