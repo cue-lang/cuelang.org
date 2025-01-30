@@ -25,8 +25,8 @@ c: "baz"
 -- out.cue --
 a:      5
 b:      "bar"
-foobar: 5
 c:      "baz"
+foobar: 5
 foobaz: 6
 {{{end}}}
 

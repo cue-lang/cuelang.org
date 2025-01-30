@@ -46,9 +46,12 @@ If an environment variable is unset or empty, sensible default setting is used.
 		embed
 			Enable support for embedded data files as described in
 			https://cuelang.org/discussion/3264.
-		decodeint64
+		decodeint64 (default true)
 			Tweak cue.Value.Decode to choose "int64" rather than "int"
 			as the default Go type for CUE integer values.
+		toposort
+			Enable topological sorting of struct fields.
+			Provide feedback via https://cuelang.org/issue/3558
 
 	CUE_DEBUG
 		Comma-separated list of debug flags to enable or disable, such as:
@@ -56,6 +59,12 @@ If an environment variable is unset or empty, sensible default setting is used.
 		http
 			Log a JSON message per HTTP request and response made
 			when interacting with module registries.
+		sortfields
+			Force fields in stucts to be sorted lexicographically.
+		openinline (default true)
+			Permit disallowed fields to be selected into literal struct
+			that would normally result in a close error, mimicking evalv2
+			closedness behavior in evalv3 to aid the transition.
 
 CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 where the value is a boolean "true" or "1" if omitted. For example:

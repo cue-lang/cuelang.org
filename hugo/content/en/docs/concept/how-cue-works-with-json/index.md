@@ -49,10 +49,10 @@ $ cue export data.json data.yml data.cue
     "a": 1,
     "b": "2",
     "c": "three",
-    "e": 5,
-    "g": "seven",
     "d": 4.4,
+    "e": 5,
     "f": "6",
+    "g": "seven",
     "h": 8.8
 }
 {{< /code-tab >}}

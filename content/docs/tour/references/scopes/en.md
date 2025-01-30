@@ -33,8 +33,8 @@ B: val // Matches the top-level val
 val: 1
 A: {
     val: 2
-    C:   1
     B:   2
+    C:   1
 }
 B: 1
 {{{end}}}

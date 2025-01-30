@@ -98,12 +98,13 @@ definition:
 
 {{{with upload "en" "schema.cue"}}}
 -- schema.cue --
+// Main Person schema.
+//
+// This schema defines a person.
+
 import "strings"
 
 #Person: {
-	// Main Person schema.
-	//
-	// This schema defines a person.
 	@jsonschema(schema="https://json-schema.org/draft/2020-12/schema")
 
 	// What is this person called?
@@ -115,7 +116,7 @@ import "strings"
 	// This is a very long comment for some reason, which will keep
 	// going and going past the point where it should probably have
 	// stopped.
-	children?: [...string] | *null
+	children?: [...string]
 	"home phone"?: string @deprecated()
 	...
 }

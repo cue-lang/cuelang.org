@@ -43,7 +43,7 @@ This tutorial is written using the following version of `cue`:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.11.2
+cue version v0.12.0
 ...
 ```
 
@@ -123,6 +123,7 @@ package cuisine
 
 #restaurant: {
 	@jsonschema(schema="https://json-schema.org/draft/2020-12/schema")
+
 	close({
 		name!:    string
 		cuisine!: string
@@ -176,7 +177,7 @@ Validate the data using the schema and constraints:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
 $ cue vet -d '#restaurant' schema.cue *.yml
 tables.0.seats: invalid value 100 (out of bound <=10):
-    ./schema.cue:12:17
+    ./schema.cue:13:17
     ./pomodoro.yml:4:12
 ```
 
