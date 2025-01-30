@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "bd10df4c3b2e7f14afcf75ed56152c5d1c1de4ed",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b295124_feb210bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-01-30T13:24:19Z",
+      "side": 1,
+      "message": "LGTM, the toposort stuff is causing a reorder of fields in yaml files",
+      "revId": "bd10df4c3b2e7f14afcf75ed56152c5d1c1de4ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
