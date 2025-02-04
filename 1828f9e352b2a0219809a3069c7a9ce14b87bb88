@@ -65,6 +65,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d3883c1_fbab5946",
+        "filename": "content/docs/howto/search-this-site/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-04T06:18:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d9dcb7d_8d0c466a",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "1828f9e352b2a0219809a3069c7a9ce14b87bb88",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "733f2722_85e657d1",
@@ -96,6 +120,24 @@
       "side": 1,
       "message": "I\u0027ve done this, to a degree, by breaking the list up into sections that have an explanatory preamble. Most examples demanded some short explanation which didn\u0027t lend itself to being presented in a single paragraph for each search type, and are thus kept as list entries. PTAL.",
       "parentUuid": "733f2722_85e657d1",
+      "revId": "1828f9e352b2a0219809a3069c7a9ce14b87bb88",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c836d5e5_d1a7acdc",
+        "filename": "content/docs/howto/search-this-site/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-04T06:18:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a481929_8977246c",
       "revId": "1828f9e352b2a0219809a3069c7a9ce14b87bb88",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
