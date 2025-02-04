@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0470a2d6_f9062e24",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-04T17:41:21Z",
+      "side": 1,
+      "message": "+2\u0027d to allow @rogpeppe@gmail.com to amend and submit on a time crunch.",
+      "revId": "be2a11faa3658d02e709cf948c4bd6dd684bbf79",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
