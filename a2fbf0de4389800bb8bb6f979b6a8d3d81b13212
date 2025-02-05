@@ -16,6 +16,24 @@
       "message": "FYI, this also means you are shadowing any other experiment set by the host env here; I wonder if the pattern might be to do `os.Setenv(\"CUE_EXPERIMENT\", os.Getenv(\"CUE_EXPERIMENT\")+\",evalv3\u003d0\")` so that the parent env var is not thrown away.\n\nAkin to how one might add an element to $PATH without throwing away the previous value.\n\nThis is the same bug that Roger unintentionally introduced in the services repo via `os.Setenv(\"CUE_EXPERIMENT\", \"embed\")` - which caused me to not be able to enable evalv3 at all.\n\nThis is currently tricky because empty elements in the comma-separated list are not allowed; I have sent https://review.gerrithub.io/c/cue-lang/cue/+/1208334 to relax that.",
       "revId": "a2fbf0de4389800bb8bb6f979b6a8d3d81b13212",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b8630e5_90fda398",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 12
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-05T11:57:27Z",
+      "side": 1,
+      "message": "Good catch. Handled a different more defensive way for now.",
+      "parentUuid": "27bccb83_017beda1",
+      "revId": "a2fbf0de4389800bb8bb6f979b6a8d3d81b13212",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
