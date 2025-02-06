@@ -20,7 +20,7 @@ const index = client.initIndex(indexName);
 
 index.setSettings({
     queryLanguages: ['en'],
-    searchableAttributes: ['title', 'content', 'summary', 'tags', 'contentType', 'authors'],
+    searchableAttributes: ['title', 'summary', 'content', 'tags', 'contentType', 'authors'],
     attributesForFaceting: ['tags', 'contentType', 'authors'],
     distinct: true,
     attributeForDistinct: 'link',

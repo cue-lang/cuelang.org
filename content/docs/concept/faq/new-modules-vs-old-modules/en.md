@@ -2,6 +2,10 @@
 title: New modules vs old modules
 tags: [modules]
 toc_hide: false
+summary: |
+  Frequently Asked Questions (FAQ) about the differences between CUE's old
+  modules implementation and its new modules implementation that became the
+  default with CUE v0.9.0.
 ---
 
 The [v0.9.0](/releases/v0.9.0) release of CUE
