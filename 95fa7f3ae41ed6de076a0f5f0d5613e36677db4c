@@ -33,6 +33,24 @@
       "message": "This list is not complete. Will ping you offline to sync on this.",
       "revId": "95fa7f3ae41ed6de076a0f5f0d5613e36677db4c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bfececa_1c979e00",
+        "filename": "content/community/talks/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-07T16:47:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91bcd5d2_93b0c023",
+      "revId": "95fa7f3ae41ed6de076a0f5f0d5613e36677db4c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
