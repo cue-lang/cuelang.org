@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4179f143_554b3e94",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-07T10:30:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "692f6720_03a4ac38",
+      "range": {
+        "startLine": 6,
+        "startChar": 35,
+        "endLine": 6,
+        "endChar": 47
+      },
+      "revId": "e3374586734884e622af524e8af79eafadbb8787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f222357_b35fbceb",
@@ -54,6 +78,24 @@
       "writtenOn": "2025-02-07T08:46:30Z",
       "side": 1,
       "message": "Should `tags` not be higher than `content`?",
+      "revId": "e3374586734884e622af524e8af79eafadbb8787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d12bf296_3b72f9cd",
+        "filename": "hugo/algolia-settings.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-07T10:30:37Z",
+      "side": 1,
+      "message": "I\u0027m not sure, but I don\u0027t /think/ so.\n\nTags have the explicit `tag:foo` search operator, which is the primary way that users will interact with them, as it\u0027s what\u0027s linked from the on-page tag lozenges. No content in `content` can rank \"better\" than a direct tag match *with the operator*.\n\nFor search strings outside the `tag:` operator, I need to do some discovery with the search backend to understand how these search matches are processed when they\u0027re present in tags, and thus how bumping tags up the `searchableAttributes` list will affect result ordering. This implies that I get myself set up with a local procedure for mutating a testing/non-production search index - which isn\u0027t in place as it hasn\u0027t been a priority thus far.\n\nWe\u0027ve also needed to do a pass over the site\u0027s tags for a little while: defining what each tag should be used for (both for authors, and (perhaps separately) for users), and ensuring full and consistent page tagging. I think *this* work should probably be prioritised above a change to where tag contents is positioned in search results.\n\nI\u0027ve tracked the tags\u0027 place in `searchableAttributes` as cue-lang/cue#3734, and the review of tags as cue-lang/docs-and-content#197.",
+      "parentUuid": "2f222357_b35fbceb",
       "revId": "e3374586734884e622af524e8af79eafadbb8787",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
