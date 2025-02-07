@@ -16,6 +16,46 @@
       "message": "PTAL.",
       "revId": "e3374586734884e622af524e8af79eafadbb8787",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "692f6720_03a4ac38",
+        "filename": "content/docs/concept/faq/new-modules-vs-old-modules/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:46:30Z",
+      "side": 1,
+      "message": "This is superfluous to my mind. I\u0027ve never seen an FAQ that only lists questions.",
+      "range": {
+        "startLine": 6,
+        "startChar": 35,
+        "endLine": 6,
+        "endChar": 47
+      },
+      "revId": "e3374586734884e622af524e8af79eafadbb8787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f222357_b35fbceb",
+        "filename": "hugo/algolia-settings.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:46:30Z",
+      "side": 1,
+      "message": "Should `tags` not be higher than `content`?",
+      "revId": "e3374586734884e622af524e8af79eafadbb8787",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
