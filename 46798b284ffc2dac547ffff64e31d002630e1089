@@ -16,6 +16,686 @@
       "message": "PTAL.",
       "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3df7b6a0_5d5ff494",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "I\u0027ve done a first pass. Happy to jump onto a call to discuss or come up with ideas for how/where we restructure.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5adb0d18_265a4fea",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "It feels like we\u0027re repeating again here what is covered on the index page. Not only that, it\u0027s somewhat buried at the end of this paragraph what this page is due to cover, and instead ledes with what this page is _not_ about. Perhaps flipping things round in this paragraph fixes that?",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9931422_113a8f6e",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This needs to be in a separate paragraph to my mind. The could be mistaken into thinking it\u0027s a continuation of the previous sentence.",
+      "range": {
+        "startLine": 53,
+        "startChar": 20,
+        "endLine": 55,
+        "endChar": 14
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01771ba4_860c1c29",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "I suspect you\u0027ve done it to draw attention to the difference in package names, but please can we flip these to `a` and `b` - it\u0027s not best practice (to my knowledge) to use upper case in package names. Please can we change this wherever the comment applies.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec1519e9_6ff36034",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "You don\u0027t appear to use `..` FWIW.",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 0
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fed843b5_b8f72095",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "I think we need to motivate a bit better _why_ the user might want to be doing this? Otherwise it feels a bit like we\u0027re enumerating all the possible input permutations.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1856137c_dbee58f6",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Is this really an important case to cover? If so, I\u0027d suggest we need to make the wording simpler and plainer. And I don\u0027t think we need to talk about the edge case of one of the files belonging to one of the packages that we have supplied as an input. A single sentence along the lines:\n\n\"It is an error to specify a non-package input along with multiple package inputs:\"",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c67169f7_30a49124",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Does this example carry its weight? It feels a bit like we\u0027re trying to document all the edge cases... which will to my mind have the effect of causing the user to get bored, and attention get taken away from the more likely common use cases (for some hypothesis on what they are)",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 6
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b41ed7d_e0f28eec",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "On a page about CUE inputs, this seems out of place?",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a07994f3_91d5aed1",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "What is the user actually doing in this situation? Yes it\u0027s possible to do this, but what use case are they fulfilling? \n\nIt feels more useful to my mind to show a JSON Schema being used to validate a JSON data file. And such an example belongs on another page.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8098b403_d02b6d49",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Again, I\u0027d have the question: what is the user doing here? Why are they doing this? It\u0027s not clear to me that vet will be used in this way in anything other than exceptional/irregular circumstances.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ce037cc_232e8cf2",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This section applies to `cue vet` generally, correct?\n\nI\u0027m not sure it belongs here on this page, specifically referring to CUE inputs therefore?",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9c629c9_b431ef0a",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "I am finding this paragraph hard to consume. I think this paragraph needs to have the default behaviour as the lede.\n\nThen I think we need a more plain English explanation of the behaviour. Perhaps something along the following lines.\n\n\"By default, in addition to checking there are no errors, `cue vet` verifies that its inputs are concrete. In other words, it ensures that we could export a JSON or Yaml configuration from them. It shows an error if this is not the case\"\n\n(existing example)\n\n\"To display specific errors about incomplete regular fields use the --concrete/-c flag:\"\n\n(use the same example from above - it doesn\u0027t need to be any bigger)",
+      "range": {
+        "startLine": 333,
+        "startChar": 1,
+        "endLine": 334,
+        "endChar": 73
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09dfa36b_9c8bc7df",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This is superfluous to my mind.",
+      "range": {
+        "startLine": 370,
+        "startChar": 0,
+        "endLine": 371,
+        "endChar": 33
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24297103_d51ccde6",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Again I think we can use plainer English here:\n\n\"To allow incomplete fields and just check for consistency use `-c\u003dfalse` or `--concrete\u003dfalse`:\"",
+      "range": {
+        "startLine": 374,
+        "startChar": 35,
+        "endLine": 374,
+        "endChar": 51
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51c30250_8a2c9280",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This is a negative way of specifying what `cue vet` does in this mode. I would suggest we specify what it does positively.\n\n\"`cue vet -c\u003dfalse` can therefore be used to find consistency errors in your CUE:\"",
+      "range": {
+        "startLine": 388,
+        "startChar": 24,
+        "endLine": 388,
+        "endChar": 34
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ab55300_2006ed4b",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "I think we should add a footnote about the redesign of `cue vet`.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10d9a591_4c175b93",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Feels like we are missing links etc at the bottom of the page?",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7d3d50d_2624a297",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Do we need this word? Can we not just say more plainly \"inputs\"?",
+      "range": {
+        "startLine": 10,
+        "startChar": 45,
+        "endLine": 10,
+        "endChar": 55
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d6d5716_85c15cee",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Link?\n\nSee also comments on the CUE page.",
+      "range": {
+        "startLine": 18,
+        "startChar": 1,
+        "endLine": 18,
+        "endChar": 46
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebf29fd8_6791108c",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This paragraph, and the last sentence of the previous paragraph, feel like \"below the line\" detail. I\u0027m thinking that most readers of this page just want to get into the detail of validating data files.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3c765b1_baca4dab",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This example comes much too far down the page to my mind. This example is the entire reason that someone is on this page. Almost all of the detail about CUE, and the schema constraints should, to my mind, come _after_ the example. Otherwise, you are presenting all the options to someone before they even get started. And I feel like that\u0027s going to lose them.\n\nIf anything, such a list of possibilities should come at the bottom of this page.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68bf59b9_c046e898",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Per my comment in the other file, are you switching to uppercase field names for a reason?",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d47d3f8_70c60c55",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Can we not say this more plainly? I don\u0027t think we need the mention of relative/absolute?\n\n\"Multiple data files are validated independently.\"",
+      "range": {
+        "startLine": 78,
+        "startChar": 1,
+        "endLine": 79,
+        "endChar": 50
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9371814a_e305f8b1",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "superfluous word?",
+      "range": {
+        "startLine": 102,
+        "startChar": 29,
+        "endLine": 102,
+        "endChar": 33
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "857e1b69_831f78ee",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "More plainly perhaps:\n\n\"You can specify `-d` multiple times in order to validate a data input against multiple constraints:\"",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 0
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "830e7934_a337b3de",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "\"`cue vet` succeeds with silent output if all those validation succeed.\" \n\nA bit plainer?",
+      "range": {
+        "startLine": 191,
+        "startChar": 10,
+        "endLine": 191,
+        "endChar": 77
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2ece2dc_9e7d894d",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "I think this is superfluous.",
+      "range": {
+        "startLine": 192,
+        "startChar": 1,
+        "endLine": 193,
+        "endChar": 65
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "309e4ac4_a08de49f",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "We might want to spell out what this means:\n\n\"i.e. there is no output\" \n\nAnd give a short example.",
+      "range": {
+        "startLine": 197,
+        "startChar": 25,
+        "endLine": 197,
+        "endChar": 31
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56f6f7d3_248b9df9",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "See comments on the location of this in the other guide.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3513bf25_c7ddc1d6",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Not part of this CL, but I think this page needs some text to set the scene, motivate the cards that follow.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c2616af_8ce09569",
+        "filename": "content/docs/reference/command/cue-vet/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This leaves the user hanging to my mind. Given what you\u0027ve already mentioned it seems somewhat \"obvious\" that I should be able to call it with a data file to validate that data file. This paragraph confirms that, but rather mysteriously refers to parameters and inputs. The question I\u0027m left with is: \"ok, so how do I validate a data file?\"\n\nWe don\u0027t answer that this in this paragraph, nor do we link to anything.\n\nOr are we relying on the user reading forward to \"To learn more, refer to\"?\n\nI also think the paragraph should be much plainer language. \"can be overriden using parameters to control its inputs and its operation\" - I\u0027m not clear what the user takes from this, it doesn\u0027t substantively increase their understanding of what `cue vet` does, nor does it say how to invoke that incantation.",
+      "range": {
+        "startLine": 56,
+        "startChar": 1,
+        "endLine": 58,
+        "endChar": 61
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d53b1372_30d25136",
+        "filename": "content/docs/reference/command/cue-vet/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "This needs to be plainer language please.\n\nAgain after this paragraph I\u0027m left with the question: \"ok, so how do I do X?\"\n\nIn particular, it feels like we should be linking to something about this from `/docs/concept/using-the-cue-vet-command/`.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 63
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43d2ce9d_c552bd17",
+        "filename": "content/docs/reference/command/cue-vet/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-07T08:41:53Z",
+      "side": 1,
+      "message": "Is it perhaps worth linking to the specific concept guides here? Rather than making someone jump through the hoop of the index page? Given the wording above, it feels like they\u0027re going to want to jump straight to a page, given we cover the different \"modes\" above. To have the modes \"repeated\" back to them on an index page feels repetitive.\n\nSo would it make more sense to expand this bullet to the links from the concept index?\n\nOf course it\u0027s entirely possible for people to land on that index page; via a different route. It still serves a purpose. Just not as a target from this page to my mind.",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
