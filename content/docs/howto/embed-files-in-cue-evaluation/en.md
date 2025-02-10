@@ -12,18 +12,8 @@ to load non-CUE files. This can complicate the process if the tooling layer's
 advanced features aren't otherwise needed.
 
 The `@embed()` attribute is designed to simplify workflows that require data to
-be loaded at evaluation time.
-
-{{<info>}}
-Because the `@embed()` attribute is experimental, its behaviour is subject to change.
-
-Your feedback on this feature will help guide how it works: please use
-{{<issue 3264>}}discussion #3264{{</issue>}} to tell us about your experience
-with embedding.
-{{</info>}}
-
-Using `@embed()` requires CUE version `v0.10.0` or later.
-This guide demonstrates the following version:
+be loaded at evaluation time, and is available by default from version
+`v0.12.0` of CUE onwards. This guide demonstrates the following version:
 
 {{{with script "en" "cue version"}}}
 #ellipsis 1
@@ -31,15 +21,6 @@ cue version
 {{{end}}}
 
 ## Embedding files in an evaluation
-
-{{{with step}}}
-Enable the embed experiment:
-
-<!-- TODO(jcm): remove when embed is not experimental -->
-{{{with script "en" "enable embed experiment"}}}
-export CUE_EXPERIMENT=embed
-{{{end}}}
-{{{end}}}
 
 {{{with step}}}
 Initialize a CUE module, or use an existing module if that's appropriate in
@@ -104,17 +85,10 @@ an unknown filename extension can be loaded by adding the
 Export the resulting configuration:
 
 {{{with script "en" "display result"}}}
-cue eval
+cue export --out yaml
 {{{end}}}
 {{{end}}}
 
-## Next steps
+## Related content
 
-[The embedding proposal](https://github.com/cue-lang/proposal/blob/main/designs/3264-embed.md)
-contains more detail about the `@embed()` feature. Your feedback on the proposal
-is most welcome - please submit it via
-{{<issue 3264>}}discussion #3264{{</issue>}}.
-
-{{<issue 3264>}}Discussion #3264{{</issue>}} will be updated when the embedding
-proposal is accepted or modified, and when feedback is posted: please subscribe
-to the discussion to receive these updates.
+- {{<linkto/related/reference "command/cue-help-filetypes/" >}}
