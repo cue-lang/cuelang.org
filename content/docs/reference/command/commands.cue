@@ -13,10 +13,11 @@ _cuePathBase: {
 }
 
 #CueCommand: {
-	dir!:     string & =~#"^[a-zA-Z0-9-]+$"#
-	title!:   string
-	execCmd!: string
-	cuePath!: string
+	dir!:          string & =~#"^[a-zA-Z0-9-]+$"#
+	title!:        string
+	execCmd!:      string
+	cuePath!:      string
+	introduction!: string
 	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
 	tagList!: [...]
 	relatedCommands!: [...string]
@@ -29,11 +30,12 @@ _cuePathBase: {
 }
 
 cue: [SubCommand=string]: #CueCommand & {
-	_dirSuffix: strings.Replace(SubCommand, " ", "-", -1)
-	dir:        *"cue-help-\(_dirSuffix)" | _
-	execCmd:    *"cue help \(SubCommand)" | _
-	title:      *"cue help \(SubCommand)" | _
-	oldDir:     *"cue-\(_dirSuffix)" | _
+	_dirSuffix:   strings.Replace(SubCommand, " ", "-", -1)
+	dir:          *"cue-help-\(_dirSuffix)" | _
+	execCmd:      *"cue help \(SubCommand)" | _
+	title:        *"cue help \(SubCommand)" | _
+	oldDir:       *"cue-\(_dirSuffix)" | _
+	introduction: *"" | _
 	tagSet: *{} | _
 	tagList: [for tag, _ in tagSet {tag}]
 	relatedCommands: *[] | _
@@ -50,6 +52,7 @@ cue: {
 		title:   "cue help"
 		oldDir:  "cue"
 	}
+	"exp gengotypes": introduction: _warningExperimental
 }
 
 // Hugo page tags
@@ -108,38 +111,49 @@ cue: {
 	]
 }
 
+_warningExperimental: """
+	{{<warning>}}
+	This command is still in an experimental stage, which means that it may be
+	changed or removed at any time.
+	The objective is for the CUE project to gain experience and feedback from
+	this experimental command, and then move the feature elsewhere.
+	{{</warning>}}
+	"""
+
 // All commands
 cue: {
-	cue:            _
-	cmd:            _
-	commands:       _
-	completion:     _
-	def:            _
-	embed:          _
-	environment:    _
-	eval:           _
-	export:         _
-	filetypes:      _
-	fix:            _
-	flags:          _
-	fmt:            _
-	get:            _
-	"get go":       _
-	import:         _
-	injection:      _
-	inputs:         _
-	login:          _
-	mod:            _
-	"mod edit":     _
-	"mod fix":      _
-	"mod get":      _
-	"mod init":     _
-	"mod publish":  _
-	"mod resolve":  _
-	"mod tidy":     _
-	modules:        _
-	registryconfig: _
-	trim:           _
-	version:        _
-	vet:            _
+	cue:              _
+	cmd:              _
+	commands:         _
+	completion:       _
+	def:              _
+	embed:            _
+	environment:      _
+	eval:             _
+	exp:              _
+	"exp gengotypes": _
+	export:           _
+	filetypes:        _
+	fix:              _
+	flags:            _
+	fmt:              _
+	get:              _
+	"get go":         _
+	import:           _
+	injection:        _
+	inputs:           _
+	login:            _
+	mod:              _
+	"mod edit":       _
+	"mod fix":        _
+	"mod get":        _
+	"mod init":       _
+	"mod publish":    _
+	"mod resolve":    _
+	"mod tidy":       _
+	modules:          _
+	registryconfig:   _
+	trim:             _
+	version:          _
+	vet:              _
 }
