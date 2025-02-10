@@ -344,7 +344,7 @@ template: ci.#writefs & {
 					tags:
 					\#(strings.TrimSuffix(yaml.Marshal(cmd.tagList), "\n"))
 					---
-
+					\#(cmd.introduction)
 					{{{with script "en" "cue cli help text"}}}
 					\#(cmd.execCmd)
 					{{{end}}}
