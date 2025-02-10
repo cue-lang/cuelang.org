@@ -12,18 +12,8 @@ to load non-CUE files. This can complicate the process if the tooling layer's
 advanced features aren't otherwise needed.
 
 The `@embed()` attribute is designed to simplify workflows that require data to
-be loaded at evaluation time.
-
-{{<info>}}
-Because the `@embed()` attribute is experimental, its behaviour is subject to change.
-
-Your feedback on this feature will help guide how it works: please use
-{{<issue 3264>}}discussion #3264{{</issue>}} to tell us about your experience
-with embedding.
-{{</info>}}
-
-Using `@embed()` requires CUE version `v0.10.0` or later.
-This guide demonstrates the following version:
+be loaded at evaluation time, and is available by default from version
+`v0.12.0` of CUE onwards. This guide demonstrates the following version:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
@@ -34,15 +24,6 @@ cue version v0.12.0
 ## Embedding files in an evaluation
 
 {{< step stepNumber="1" >}}
-Enable the embed experiment:
-
-<!-- TODO(jcm): remove when embed is not experimental -->
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9FWFBFUklNRU5UPWVtYmVk" }
-$ export CUE_EXPERIMENT=embed
-```
-{{< /step >}}
-
-{{< step stepNumber="2" >}}
 Initialize a CUE module, or use an existing module if that's appropriate in
 your situation:
 
@@ -51,7 +32,7 @@ $ cue mod init
 ```
 {{< /step >}}
 
-{{< step stepNumber="3" >}}
+{{< step stepNumber="2" >}}
 Include the `@extern(embed)` directive at the top of each CUE file that uses the
 `@embed()` attribute. Use `@embed()` to embed either a single named file, or a
 glob identifying multiple files:
@@ -100,45 +81,34 @@ an unknown filename extension can be loaded by adding the
 [`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes/" >}}).
 {{< /step >}}
 
-{{< step stepNumber="4" >}}
+{{< step stepNumber="3" >}}
 Export the resulting configuration:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw=" }
-$ cue eval
-oneFile: """
-    # How to use this project
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
+$ cue export --out yaml
+oneFile: |
+  # How to use this project
 
-    ## Installation
+  ## Installation
 
-    Fetch the latest release from the official site,
-    and unpack it in your home directory. Next ...
-
-    """
-manyFiles: {
-    "a.json": {
-        aField: "a value"
-    }
-    "b.json": {
-        aList: [1, 2, 3]
-    }
-    "c.json": {
-        anObject: {
-            foo: "a"
-            bar: "b"
-            baz: "c"
-        }
-    }
-}
+  Fetch the latest release from the official site,
+  and unpack it in your home directory. Next ...
+manyFiles:
+  a.json:
+    aField: a value
+  b.json:
+    aList:
+      - 1
+      - 2
+      - 3
+  c.json:
+    anObject:
+      foo: a
+      bar: b
+      baz: c
 ```
 {{< /step >}}
 
-## Next steps
+## Related content
 
-[The embedding proposal](https://github.com/cue-lang/proposal/blob/main/designs/3264-embed.md)
-contains more detail about the `@embed()` feature. Your feedback on the proposal
-is most welcome - please submit it via
-{{<issue 3264>}}discussion #3264{{</issue>}}.
-
-{{<issue 3264>}}Discussion #3264{{</issue>}} will be updated when the embedding
-proposal is accepted or modified, and when feedback is posted: please subscribe
-to the discussion to receive these updates.
+- {{<linkto/related/reference "command/cue-help-filetypes/" >}}
