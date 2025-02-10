@@ -10,8 +10,8 @@ package site
 								files: "gMXxoXZqpqlJ3M7Pk6/dWZc6v7Bvtd4B0GheFUCOSpk="
 							}
 							multi_step: {
-								hash:       "F70ETPME4LPH0IGF8NGGIS274HSMK613E5336G3SJ6N64MKJ89U0===="
-								scriptHash: "6GLSE1QMLM2LEKB1QURI6OIII8VNOKIK7NPS7UH1PCC8N2UMLROG===="
+								hash:       "UNL917D1GKDQGDTC8IDPMP0TDLCIFCTSQ4ESU7L9LF45CKR0J1H0===="
+								scriptHash: "6CVB0H73A96VKBHC2QKK1U9V1JH3C87HJA96GOMVDOJ279QGJRJ0===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
@@ -23,45 +23,36 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "export CUE_EXPERIMENT=embed"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
 									cmd:      "cue mod init"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue eval"
+									cmd:      "cue export --out yaml"
 									exitCode: 0
-									output: #"""
-											oneFile: """
-											    # How to use this project
+									output: """
+											oneFile: |
+											  # How to use this project
 
-											    ## Installation
+											  ## Installation
 
-											    Fetch the latest release from the official site,
-											    and unpack it in your home directory. Next ...
+											  Fetch the latest release from the official site,
+											  and unpack it in your home directory. Next ...
+											manyFiles:
+											  a.json:
+											    aField: a value
+											  b.json:
+											    aList:
+											      - 1
+											      - 2
+											      - 3
+											  c.json:
+											    anObject:
+											      foo: a
+											      bar: b
+											      baz: c
 
-											    """
-											manyFiles: {
-											    "a.json": {
-											        aField: "a value"
-											    }
-											    "b.json": {
-											        aList: [1, 2, 3]
-											    }
-											    "c.json": {
-											        anObject: {
-											            foo: "a"
-											            bar: "b"
-											            baz: "c"
-											        }
-											    }
-											}
-
-											"""#
+											"""
 								}]
 							}
 						}
