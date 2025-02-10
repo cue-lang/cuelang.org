@@ -110,36 +110,38 @@ cue: {
 
 // All commands
 cue: {
-	cue:            _
-	cmd:            _
-	commands:       _
-	completion:     _
-	def:            _
-	embed:          _
-	environment:    _
-	eval:           _
-	export:         _
-	filetypes:      _
-	fix:            _
-	flags:          _
-	fmt:            _
-	get:            _
-	"get go":       _
-	import:         _
-	injection:      _
-	inputs:         _
-	login:          _
-	mod:            _
-	"mod edit":     _
-	"mod fix":      _
-	"mod get":      _
-	"mod init":     _
-	"mod publish":  _
-	"mod resolve":  _
-	"mod tidy":     _
-	modules:        _
-	registryconfig: _
-	trim:           _
-	version:        _
-	vet:            _
+	cue:              _
+	cmd:              _
+	commands:         _
+	completion:       _
+	def:              _
+	embed:            _
+	environment:      _
+	eval:             _
+	exp:              _
+	"exp gengotypes": _
+	export:           _
+	filetypes:        _
+	fix:              _
+	flags:            _
+	fmt:              _
+	get:              _
+	"get go":         _
+	import:           _
+	injection:        _
+	inputs:           _
+	login:            _
+	mod:              _
+	"mod edit":       _
+	"mod fix":        _
+	"mod get":        _
+	"mod init":       _
+	"mod publish":    _
+	"mod resolve":    _
+	"mod tidy":       _
+	modules:          _
+	registryconfig:   _
+	trim:             _
+	version:          _
+	vet:              _
 }

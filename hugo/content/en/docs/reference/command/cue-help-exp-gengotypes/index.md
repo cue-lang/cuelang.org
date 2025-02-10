@@ -1,0 +1,53 @@
+---
+WARNING: "Code generated site_tool.cue; DO NOT EDIT."
+title: "cue help exp gengotypes"
+aliases: ["/docs/reference/cli/cue-exp-gengotypes/"]
+weight: 1000
+tags:
+- cue command
+---
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhwIGdlbmdvdHlwZXM=" }
+$ cue help exp gengotypes
+gengotypes generates Go type definitions from exported CUE definitions.
+
+The generated Go types are guaranteed to accept any value accepted by the CUE definitions,
+but may be more general. For example, "string | int" will translate into the Go
+type "any" because the Go type system is not able to express
+disjunctions.
+
+To ensure that the resulting Go code works, any imported CUE packages or
+referenced CUE definitions are transitively generated as well.
+The generated code is placed in cue_gen.go files in the directory of each CUE package.
+
+Generated Go type and field names may differ from the original CUE names by default.
+For instance, an exported definition "#foo" becomes "Foo",
+given that Go uses capitalization to export names in a package,
+and a nested definition like "#foo.#bar" becomes "Foo_Bar",
+given that Go does not allow declaring nested types.
+
+@go attributes can be used to override which name or type to be generated, for example:
+
+	package foo
+	@go(betterpkgname)
+
+	renamed: int @go(BetterName)
+	retyped: string @go(,type=foo.com/bar.NamedString)
+
+The attribute "@go(-)" can be used to ignore a definition or field, for example:
+
+	#ignoredDefinition: {
+		@go(-)
+	}
+	ignoredField: int @go(-)
+
+Usage:
+  cue exp gengotypes [flags]
+
+Global Flags:
+  -E, --all-errors   print all available errors
+  -i, --ignore       proceed in the presence of errors
+  -s, --simplify     simplify output
+      --trace        trace computation
+  -v, --verbose      print information about progress
+```
