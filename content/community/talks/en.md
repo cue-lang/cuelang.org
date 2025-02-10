@@ -2,11 +2,11 @@
 title: Talks and Presentations by the CUE Team
 ---
 
-{{<warning>}}
-Check out the CUE YouTube channel where we regularly upload our community
-calls, conference talks, and live streams --
+The CUE team regularly gives talks and presentations about CUE all across the
+world, and online - here are links to recordings of some of them.
+You can also check out the official CUE YouTube channel where we regularly
+upload our community calls, conference talks, and live streams:
 [youtube.com/@cuelang](https://www.youtube.com/@cuelang)
-{{</warning>}}
 
 ## 2025
 
