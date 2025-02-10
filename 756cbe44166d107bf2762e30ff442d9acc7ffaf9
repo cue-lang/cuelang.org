@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9c10a3a_27e4728a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-10T17:30:57Z",
+      "side": 1,
+      "message": "PTAL. Change made at Dominik\u0027s request.",
+      "revId": "756cbe44166d107bf2762e30ff442d9acc7ffaf9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
