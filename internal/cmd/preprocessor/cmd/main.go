@@ -42,9 +42,9 @@ func Main() {
 	// https://cuelang.org/issue/3706. We set here in order to catch all
 	// potential ways of running the preprocessor, whether by script, via 'go
 	// test' etc.
-	exps := strings.Split(os.Getenv("CUE_EXPERIMENT"), ",")
-	exps = append(exps, "evalv3=0")
-	os.Setenv("CUE_EXPERIMENT", strings.Join(exps, ","))
+	// exps := strings.Split(os.Getenv("CUE_EXPERIMENT"), ",")
+	// exps = append(exps, "evalv3=0")
+	// os.Setenv("CUE_EXPERIMENT", strings.Join(exps, ","))
 
 	cwd, _ := os.Getwd()
 	err := mainErr(context.Background(), os.Args[1:])
