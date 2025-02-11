@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11ea44cc_fac0db64",
+        "filename": "internal/cmd/preprocessor/cmd/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-11T11:50:14Z",
+      "side": 1,
+      "message": "remove entirely? with the git history, it seems unnecessary to leave this behind but commented out.",
+      "revId": "e235f00ff1118e1ffa7f5b0b953a42972991d3c7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
