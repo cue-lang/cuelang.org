@@ -339,7 +339,6 @@ template: ci.#writefs & {
 					---
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"
-					aliases: ["/docs/reference/cli/\#(cmd.oldDir)/"]
 					weight: 1000
 					tags:
 					\#(strings.TrimSuffix(yaml.Marshal(cmd.tagList), "\n"))
