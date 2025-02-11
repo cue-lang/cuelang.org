@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue schema": "wCXTRLfWS3eVEAPe6FLRnNVzsomz+2sG6njJZDLftk8="
-								"good data":  "vpsoqUQFk7GrLLsj4jsYgCbJsZT75xEMAB1f6Oz3p/g="
-								"bad data":   "7VhTEdXhyVWofEwhE2bnkVdBKN6QPhzF0As4nx2suXQ="
-								"main go":    "6p8UJQcU8dpFvrn5aa8nwAFnJfy78OX1QnavAVWFyU8="
+								"cue schema": "P5oQfzkLNOS+kkrK8ZcOGbjp+r9Auchu+ieVbND5cJU="
+								"good data":  "1HymW5lfG4y0CstvkMLGcFcAqMlcsDIDocDz393NFqg="
+								"bad data":   "ejkhC/a9AQiG6WQgABehyx3FivVt1gRJWNdRLqvVbEg="
+								"main go":    "vxSGzeWNKz9H5Ub8AZ+L4Wp9rshBFvcI8BmVS8ASuTc="
 							}
 							multi_step: {
-								hash:       "VE7DK5JGQ467RSBU1P14B6ELIQAMM3TISV91E8MJQPI52VFOF7E0===="
+								hash:       "ENMF3D4F933T72IL48CEAGVMB4Q9O3UC5IOD2VDK5E4Q70C14NB0===="
 								scriptHash: "PBBESNLADHL9N7R3DNPECB64QOF1Q5VODUGH40PFVJGRRDNJUSLG===="
 								steps: [{
 									doc:      ""

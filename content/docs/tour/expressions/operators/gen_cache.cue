@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									operators: "WNsp916YQR9Wl/ybKWy8XC/ng2yjabBaSjJRkWpvxMw="
+									operators: "GXqe1KWmFXSJVuOha0//Jm6CBq88kKKii613ZQnY03k="
 								}
 							}
 						}

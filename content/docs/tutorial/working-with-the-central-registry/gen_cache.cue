@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial config.cue": "kjqtj8LpGCfdmdcURexhf0tTiZRs2/okFp1LQaru4vk="
+								"initial config.cue": "MFgoIwoGahnYpuHo2KI6sSBoqT8ZslEJrRbcx0beC74="
 							}
 							multi_step: {
-								hash:       "F75VOKA26RJCBA7GN2J30KTN4AT1QGDURL23CUUIH8PF96Q4RF2G===="
+								hash:       "ICBKG2H6A96FCKJL1EAOHF6QMI4T5I75D80C1RL5NBIPL0BP57DG===="
 								scriptHash: "GJ54NFDKNIU9S4SES5TA4K59P6HGVANA0UVCIEM5TFOR2ORO15RG===="
 								steps: [{
 									doc:      ""
