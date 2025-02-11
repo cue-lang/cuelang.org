@@ -8,10 +8,10 @@ package site
 						page: {
 							cache: {
 								code: {
-									"field-names-double-quotes":      "i1bbTCMlPWdycN3H+vn2XhOvtrUOolY7yvGrfh5ZhCU="
-									"merging-of-quoted-and-unquoted": "x0D+bhdeDaQAxEv92xt9UnU/jFDZEcbgjibzORoPk2I="
-									"helper-fields":                  "TgohV6jp0SxpEMac2J9mXQEgoHBJV99rl3yAdVHgOG4="
-									"embedded-scalars":               "6Wi2B+4Sh306bVo1Tb39RFhhHKxx4OeG83PwKSewSsc="
+									"field-names-double-quotes":      "mMtQyV0pUjzgY+dMMVEaE11PIb+K4ivKM89Hsfoj6zI="
+									"merging-of-quoted-and-unquoted": "pbGRVHcgX30NXzo+/wuQ3LI5k9ZLqBeyu4V8ZhQcnl4="
+									"helper-fields":                  "2qQ/VT1VHgWVVcySuJh3sLq3Si9Vmu1zOos+Zn3D3+E="
+									"embedded-scalars":               "GBYZDZWTvb2j1hYaTlCcxWVJ72ennbz0e7qusjXtRVM="
 								}
 							}
 						}
