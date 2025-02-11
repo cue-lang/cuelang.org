@@ -21,12 +21,6 @@ _cuePathBase: {
 	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
 	tagList!: [...]
 	relatedCommands!: [...string]
-
-	// oldDir is used to populate the page-level "aliases" front matter key,
-	// temporarily, until our logs show us that few enough inbound links reach
-	// the "old" URL paths (/docs/reference/cli/cue-foo); after which point it
-	// (and the aliases it drives (in /site.cue)) can be removed.
-	oldDir!: string
 }
 
 cue: [SubCommand=string]: #CueCommand & {
@@ -34,7 +28,6 @@ cue: [SubCommand=string]: #CueCommand & {
 	dir:          *"cue-help-\(_dirSuffix)" | _
 	execCmd:      *"cue help \(SubCommand)" | _
 	title:        *"cue help \(SubCommand)" | _
-	oldDir:       *"cue-\(_dirSuffix)" | _
 	introduction: *"" | _
 	tagSet: *{} | _
 	tagList: [for tag, _ in tagSet {tag}]
@@ -50,7 +43,6 @@ cue: {
 		dir:     "cue-help"
 		execCmd: "cue help"
 		title:   "cue help"
-		oldDir:  "cue"
 	}
     [=~"^exp "]: introduction: _warningExperimental
 }
