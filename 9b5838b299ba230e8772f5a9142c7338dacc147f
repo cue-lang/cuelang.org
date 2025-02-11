@@ -33,6 +33,23 @@
       "message": ".",
       "revId": "9b5838b299ba230e8772f5a9142c7338dacc147f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e75ed3a0_4741168c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-11T14:13:02Z",
+      "side": 1,
+      "message": "SGTM. We\u0027ve agreed that we should move towards something more automatic to derive which commands to render, and which of those are hidden/experimental, via something like `cue list-commands` printing JSON.",
+      "revId": "9b5838b299ba230e8772f5a9142c7338dacc147f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
