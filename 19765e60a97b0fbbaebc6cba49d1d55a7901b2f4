@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b3172d74_3c98c9a0",
+        "filename": ".env",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-12T17:09:07Z",
+      "side": 1,
+      "message": "Deleted.",
+      "parentUuid": "28fcbd71_df31add5",
+      "revId": "19765e60a97b0fbbaebc6cba49d1d55a7901b2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "3fd01199_8237b509",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2

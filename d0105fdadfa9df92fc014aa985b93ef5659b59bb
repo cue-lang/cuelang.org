@@ -50,6 +50,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "3806365d_2e483e2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-12T17:09:07Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "4c4acc74_90bb15e6",
+      "range": {
+        "startLine": 11,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 14
+      },
+      "revId": "d0105fdadfa9df92fc014aa985b93ef5659b59bb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "76832dad_c4acfc2b",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
