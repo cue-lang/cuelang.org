@@ -16,6 +16,24 @@
       "message": "`cue-lang/cue#3706`",
       "revId": "54170349086abf6cb0ebe13ec3e5d063407f20f0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e949b4d_eea512d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-12T14:02:25Z",
+      "side": 1,
+      "message": "We prefer https://cuelang.org/issue/3706 for portability, but fixed.",
+      "parentUuid": "c8208f2d_ad367fe6",
+      "revId": "54170349086abf6cb0ebe13ec3e5d063407f20f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
