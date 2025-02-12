@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b1c9e5f_c2cef4c3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-12T16:06:41Z",
+      "side": 1,
+      "message": "I note that the CL deployment at https://app.netlify.com/sites/cue-cls/deploys/67acbcfded926f90adbdc5c9 didn\u0027t use this file partly because the build phase was skipped, as with all CLs, but also because of https://docs.netlify.com/environment-variables/get-started/#work-with-env-files: `the build system does not read .env files\".\n\nWould it be worth testing this change\u0027s impact inside Netlify via `ci/test` before submitting? Or is the Netlify build system not in scope for this change?",
+      "range": {
+        "startLine": 11,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 14
+      },
+      "revId": "d0105fdadfa9df92fc014aa985b93ef5659b59bb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
