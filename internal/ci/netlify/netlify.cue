@@ -49,8 +49,8 @@ config: #config & {
 	build: {
 		functions: "functions"
 		publish:   "_public"
-		command:   "bash _scripts/build.bash"
-		ignore:    "bash _scripts/ignoreBuild.bash"
+		command:   "bash _scripts/netlify.bash _scripts/build.bash"
+		ignore:    "bash _scripts/netlify.bash _scripts/ignoreBuild.bash"
 		environment: {
 			HUGO_ENV:     "production"
 			GO_VERSION:   repo.goVersion

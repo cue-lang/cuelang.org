@@ -1,9 +1,9 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
 [build]
-command = 'bash _scripts/build.bash'
+command = 'bash _scripts/netlify.bash _scripts/build.bash'
 functions = 'functions'
-ignore = 'bash _scripts/ignoreBuild.bash'
+ignore = 'bash _scripts/netlify.bash _scripts/ignoreBuild.bash'
 publish = '_public'
 
 [build.environment]
@@ -14,13 +14,13 @@ NODE_VERSION = '20.9.0'
 
 [context]
 [context.alpha]
-command = 'bash _scripts/build.bash --baseURL https://alpha.cuelang.org'
+command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL https://alpha.cuelang.org'
 
 [context.deploy-preview]
-command = 'bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL'
+command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL'
 
 [context.production]
-command = 'bash _scripts/build.bash --baseURL https://cuelang.org'
+command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL https://cuelang.org'
 
 [context.tip]
-command = 'bash _scripts/build.bash --buildDrafts'
+command = 'bash _scripts/netlify.bash _scripts/build.bash --buildDrafts'
