@@ -85,5 +85,15 @@ fs: #writefs & {
 
 			"""
 		}
+
+		"../../.env": {
+			let contents = strings.Join([for k, v in repo.env {"\(k)=\(v)"}], "\n")
+			Contents: """
+			# \(donotedit)
+
+			\(contents)
+
+			"""
+		}
 	}
 }

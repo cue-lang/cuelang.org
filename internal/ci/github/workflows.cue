@@ -39,7 +39,7 @@ import (
 // cue export the github package as a test.
 workflows: close({
 	[string]: githubactions.#Workflow & {
-		env: CUE_EXPERIMENT: "evalv3=1"
+		env: _repo.env
 	}
 
 	_repo.trybotWorkflows
