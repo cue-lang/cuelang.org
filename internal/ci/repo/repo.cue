@@ -41,3 +41,5 @@ netlifyCLIVersion: "17.0.1"
 netlifySites: {
 	cls: "cue-cls"
 }
+
+env: CUE_EXPERIMENT: "evalv3=1"
