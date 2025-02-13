@@ -16,6 +16,24 @@
       "message": "@rogpeppe@gmail.com - not sure whether we could/should advocate `matchN` in this situation as the error message is much more precise: https://tip.cuelang.org/play/?id\u003dCLIWyGjCwrX#w\u003dfunction\u0026i\u003dcue\u0026f\u003deval\u0026o\u003dcue",
       "revId": "d145aedb9d2ff6dab34ccf01afff5a8e3d36a898",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f605b01_fda4448a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-02-13T15:32:30Z",
+      "side": 1,
+      "message": "I\u0027m not convinced that `matchN` is better here: it doesn\u0027t say anything about the values that it is actually expected to match, unlike the disjunction error.",
+      "parentUuid": "486d29dd_46b19682",
+      "revId": "d145aedb9d2ff6dab34ccf01afff5a8e3d36a898",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
