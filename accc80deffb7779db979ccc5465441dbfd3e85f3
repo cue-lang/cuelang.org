@@ -50,6 +50,24 @@
       "message": "Intentional change? If so please call it out in the commit message.",
       "revId": "accc80deffb7779db979ccc5465441dbfd3e85f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3f33d99_0ce003d5",
+        "filename": "content/docs/howto/embed-files-in-cue-evaluation/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-13T14:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f03375ea_78890630",
+      "revId": "accc80deffb7779db979ccc5465441dbfd3e85f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
