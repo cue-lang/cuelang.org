@@ -44,7 +44,7 @@ cue: {
 		execCmd: "cue help"
 		title:   "cue help"
 	}
-    [=~"^exp "]: introduction: _warningExperimental
+	[=~"^exp "]: introduction: _warningExperimental
 }
 
 _warningExperimental: """
@@ -113,7 +113,7 @@ cue: {
 }
 
 // All commands
-cue: {
+cue: close({
 	cue:              _
 	cmd:              _
 	commands:         _
@@ -148,4 +148,4 @@ cue: {
 	trim:             _
 	version:          _
 	vet:              _
-}
+})
