@@ -91,6 +91,7 @@ cue: {
 		"cue help mod get",
 		"cue help mod init",
 		"cue help mod publish",
+		"cue help mod rename",
 		"cue help mod resolve",
 		"cue help mod tidy",
 	]
@@ -141,6 +142,7 @@ cue: close({
 	"mod get":        _
 	"mod init":       _
 	"mod publish":    _
+	"mod rename":     _
 	"mod resolve":    _
 	"mod tidy":       _
 	modules:          _
