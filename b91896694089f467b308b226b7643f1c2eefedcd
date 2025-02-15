@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "b91896694089f467b308b226b7643f1c2eefedcd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5efaddbb_e52194bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-15T15:07:31Z",
+      "side": 1,
+      "message": "@github@hello.jonathanmatthews.com - I\u0027ve raised https://github.com/cue-lang/cue/issues/3758 so we avoid needing to do this by hand, at least for non-hidden commands. For hidden commands we should probably make an explicit decision to opt-in to generate pages, on the basis the command is hidden.",
+      "revId": "b91896694089f467b308b226b7643f1c2eefedcd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
