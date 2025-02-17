@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2f5df86_a49570aa",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T11:57:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f51e2afe_9d194871",
+      "range": {
+        "startLine": 7,
+        "startChar": 74,
+        "endLine": 7,
+        "endChar": 82
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6320fb4e_89aa5927",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-02-15T09:48:40Z",
       "side": 1,
       "message": "importing before exporting reads better to my mind.",
+      "range": {
+        "startLine": 10,
+        "startChar": 1,
+        "endLine": 10,
+        "endChar": 10
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d84e6a1_44bdb1d7",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T11:57:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6320fb4e_89aa5927",
       "range": {
         "startLine": 10,
         "startChar": 1,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "37a54c7b_9b1b7364",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T11:57:25Z",
+      "side": 1,
+      "message": "Added. See what you think of how the longer sentence reads.",
+      "parentUuid": "53a65f5c_6492ee1d",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "beb4fc0a_795875d9",
         "filename": "content/docs/reference/command/_en.md",
         "patchSetId": 3
@@ -83,6 +155,30 @@
       "writtenOn": "2025-02-15T09:48:40Z",
       "side": 1,
       "message": "\"working with dependencies via CUE modules and modules registries\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 50,
+        "endLine": 12,
+        "endChar": 54
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b85705d7_26e10a1a",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T11:57:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "beb4fc0a_795875d9",
       "range": {
         "startLine": 12,
         "startChar": 50,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6c0e8e28_de2f0d58",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T11:57:25Z",
+      "side": 1,
+      "message": "I think in this reference section of the site, generally dedicated to web renderings of the CLI help texts, it\u0027s appropriate to point folks to the definitive, full list first. (The list currently has to appear last on the page as it uses the Hugo in-page index to render the list).\n\nI think that when the Guides section has been expanded to include some more significant command entries then it might withstand being mentioned first. Until then, I think the page\u0027s main purpose is to present that full list - and linking to it first feels appropriate to me.\n\nThoughts?",
+      "parentUuid": "996de9f9_11541513",
+      "range": {
+        "startLine": 16,
+        "startChar": 21,
+        "endLine": 16,
+        "endChar": 25
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a57f154_8a886909",
         "filename": "content/docs/reference/command/_en.md",
         "patchSetId": 3
@@ -129,6 +249,30 @@
       "writtenOn": "2025-02-15T09:48:40Z",
       "side": 1,
       "message": "This sort of phrase feels unnecessarily wordy. How about something like:\n\n\u003e These guides include curated links to related content, including howtos and tutorials.\n\n\"from across the site\" limits to links in the site (which is not necessarily a constraint to my mind) and it doesn\u0027t really add anything for the user.",
+      "range": {
+        "startLine": 20,
+        "startChar": 32,
+        "endLine": 20,
+        "endChar": 52
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4589fb00_32fd0c3f",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T11:57:25Z",
+      "side": 1,
+      "message": "Done, but I\u0027ve left the \"relevant documentation\" trailer as --currently-- the main value of the onwards links from the dedicated `cue export` guide is to the associated concept guide, and I\u0027m trying not to give the impression that howtos or tutorials are the only links readers will find. PTAL.",
+      "parentUuid": "8a57f154_8a886909",
       "range": {
         "startLine": 20,
         "startChar": 32,
