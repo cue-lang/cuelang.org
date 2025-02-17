@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "180a280d_2cb505ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T19:12:23Z",
+      "side": 1,
+      "message": "PTAL. I popped this together as a starting point - please do let me know any changes in content, structure, tone, etc that you feel would turn this into the guide you had in mind.",
+      "revId": "d30c54d9892f0a2ee47965569af5c7e4f22cd035",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
