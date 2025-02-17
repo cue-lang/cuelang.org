@@ -33,6 +33,24 @@
       "message": "See https://github.com/cue-lang/cue/issues/3758. We might want to consider emitting a different structure given a blank sheet of paper.",
       "revId": "ae3ca543fe75b0ceeefc7348cc13bc2fd166e52b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72a3529d_9f366300",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-17T10:32:31Z",
+      "side": 1,
+      "message": "Agreed. As I\u0027ve noted in https://github.com/cue-lang/cue/issues/3758#issuecomment-2662670217, the pages that result from the structure need to have consistency across the change, or we\u0027ll need to maintain a map of URL paths which can drive temporary HTTP redirects for a period.",
+      "parentUuid": "26b0ff8d_64f29a11",
+      "revId": "ae3ca543fe75b0ceeefc7348cc13bc2fd166e52b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
