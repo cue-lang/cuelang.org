@@ -16,6 +16,58 @@
       "message": "Before I spend time wrapping prose around this example, please could you take a look and let me know if this 5-file level of visual complexity feels acceptable to you?\n\nI couldn\u0027t make a `code`-block-based example much smaller than this (without merging the first two CUE files, which felt unhelpful to the reader), so if it\u0027s **not** ok then I\u0027ll have to restructure and present it as a `script`-based example.",
       "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36dae3a6_8482587e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:44:36Z",
+      "side": 1,
+      "message": "Please see my comment in the main content file.",
+      "parentUuid": "72b6861c_02ba490d",
+      "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fa0fa03_7ea965e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:44:36Z",
+      "side": 1,
+      "message": "aa",
+      "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "468ebd3e_83a54818",
+        "filename": "content/docs/howto/validate-data-files-against-local-schema-using-file-embedding/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:44:36Z",
+      "side": 1,
+      "message": "I\u0027m guessing you\u0027ve split these out here because the line lengths were otherwise too long 😊\n\nIt\u0027s actually a bit more confusing my mind to the reader to do this, because it seems to suggest, absent other information, that you _have_ to split out the embedding from the constraints. \n\nThis combined with the fact that this single block of files feels very cluttered... I think it is going to be clearer as a script-based example.",
+      "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
