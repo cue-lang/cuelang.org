@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bedd7bc8_6e769f0b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-18T11:26:05Z",
+      "side": 1,
+      "message": "PTAL. This is a relatively shallow fix for cue-lang/cue#3767 - do let me know if you had a more substantial update in mind.",
+      "revId": "a5eae9e84fc620990d518ed8037ef60bc8a3df29",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
