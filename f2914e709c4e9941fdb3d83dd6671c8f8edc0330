@@ -142,6 +142,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43853b50_ed62ea26",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:30:43Z",
+      "side": 1,
+      "message": "I\u0027ll reply separately on this.",
+      "parentUuid": "37a54c7b_9b1b7364",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "beb4fc0a_795875d9",
@@ -238,6 +262,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "56c252c9_9934ea4f",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:30:43Z",
+      "side": 1,
+      "message": "I don\u0027t hold the point strongly. Just that it feels odd to refer to them out of order here.\n\n\u003e The list currently has to appear last on the page as it uses the Hugo in-page index to render the list\n\nEven if this weren\u0027t a limitation, we wouldn\u0027t (to my mind) have a long sprawling list first. Because otherwise the other comment would be buried off the bottom.",
+      "parentUuid": "6c0e8e28_de2f0d58",
+      "range": {
+        "startLine": 16,
+        "startChar": 21,
+        "endLine": 16,
+        "endChar": 25
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a57f154_8a886909",
         "filename": "content/docs/reference/command/_en.md",
         "patchSetId": 3
@@ -273,6 +321,30 @@
       "side": 1,
       "message": "Done, but I\u0027ve left the \"relevant documentation\" trailer as --currently-- the main value of the onwards links from the dedicated `cue export` guide is to the associated concept guide, and I\u0027m trying not to give the impression that howtos or tutorials are the only links readers will find. PTAL.",
       "parentUuid": "8a57f154_8a886909",
+      "range": {
+        "startLine": 20,
+        "startChar": 32,
+        "endLine": 20,
+        "endChar": 52
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45a61749_135de73a",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:30:43Z",
+      "side": 1,
+      "message": "Reads better now, thanks.",
+      "parentUuid": "4589fb00_32fd0c3f",
       "range": {
         "startLine": 20,
         "startChar": 32,

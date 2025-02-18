@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fb705ef_30151dae",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:30:43Z",
+      "side": 1,
+      "message": "I found this sentence pretty hard to consume. How about we go with something plainer, referring to something like \"creating data-driven workflows\"? Is the word \"arbitrary trying to convey something? Same question for the verb \"interacting\"?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 69
+      },
+      "revId": "32db03002b5921e2b241bad800f8f3b447b9fa66",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
