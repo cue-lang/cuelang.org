@@ -1,0 +1,221 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91ed54ab_fb9e067d",
+        "filename": "content/docs/concept/using-the-cue-vet-command/_en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "This paragraph appears to repeat everything in the first paragraph?\n\nHow about dropping the heading and the second paragraph, and replacing with something more like:\n\n\"This guide explores these different aspects of `cue vet` including:\"",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d0d4f21_a9d0c50b",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "This is very hard to parse, and it feels like we\u0027re trying to be precise here at the expense of easy-reading. We\u0027ve already qualified that we\u0027re doing relative imports above.",
+      "range": {
+        "startLine": 85,
+        "startChar": 31,
+        "endLine": 85,
+        "endChar": 68
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c22d698b_06060922",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "It sort of feels like this paragraph is unfinished, certainly when compared to the better introduction on the CUE page?\n\nI think we need/want consistency with the \"intros\" and first headings on each page.",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4bab60b_7d1025e0",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "Against what? That point seems to be left unanswered here. A brief mention is necessary. I think. It could be below-the-line detail for this example, where you explain what happens in this case.",
+      "range": {
+        "startLine": 15,
+        "startChar": 59,
+        "endLine": 15,
+        "endChar": 69
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f40fbc43_530b98b3",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "I\u0027m struggling to think that a first-time reader is going to get the significance of this point. Validating data is a really good entry point. It feels like with such an explanation we\u0027re introducing a \"bar\" that they also need to understand the significant of CUE validation to proceed. Why not simply explain why data mode behaves in this way? You could then get away with a throw-away sentence of how CUE mode is different, for people who are interested.",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27c9ab13_43cfa2d9",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "I\u0027m finding this list fairly impenetrable, and I think the new user will too. My main concern arises from the fact that we\u0027re still relatively near the top of a page that talks about validating data, and it feels like we\u0027re trying to exhaustively list in precise terms what we can do. I wonder if there\u0027s a way we can prioritise what to include in this list, dropping down to examples. Happy to iterate offline on how we can simplify this. For example, I think showing an example where the constraints come from a CUE package + CUE file is an edge-case.",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72027157_c2564fdd",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "What\u0027s the significance of highlighting this here? We\u0027ve already mentioned the point above?",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 40
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c262725c_95c9998c",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "Related to my previous comment, it feels like we\u0027re a long way down the page, with lots of other detail, before we get to the happy path explanation.",
+      "range": {
+        "startLine": 72,
+        "startChar": 72,
+        "endLine": 72,
+        "endChar": 78
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1518e33_d4416632",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "This starting a new paragraph, when it refers to the last sentence of the previous paragraph feels strange?",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a02ac5b1_423451af",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "I would place this immediately after the CUE input. It\u0027s visually misleading to my mind to have it appear after the data. Then it reads something like:\n\n\"In this CUE package, choose this schema\"",
+      "range": {
+        "startLine": 138,
+        "startChar": 27,
+        "endLine": 138,
+        "endChar": 40
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2d63060_e651b830",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T16:19:39Z",
+      "side": 1,
+      "message": "It feels slightly unfortunate to have the entire block repeated, taking up visual space?",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
