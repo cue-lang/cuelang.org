@@ -91,4 +91,5 @@ cue export --out yaml
 
 ## Related content
 
-- {{<linkto/related/reference "command/cue-help-filetypes/" >}}
+- {{<linkto/related/reference"command/cue-help-embed">}}
+- {{<linkto/related/reference"command/cue-help-filetypes">}}
