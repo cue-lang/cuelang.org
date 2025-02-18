@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72b6861c_02ba490d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-18T16:46:16Z",
+      "side": 1,
+      "message": "Before I spend time wrapping prose around this example, please could you take a look and let me know if this 5-file level of visual complexity feels acceptable to you?\n\nI couldn\u0027t make a `code`-block-based example much smaller than this (without merging the first two CUE files, which felt unhelpful to the reader), so if it\u0027s **not** ok then I\u0027ll have to restructure and present it as a `script`-based example.",
+      "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
