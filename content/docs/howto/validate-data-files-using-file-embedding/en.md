@@ -1,0 +1,76 @@
+---
+title: Validating data files using file embedding
+toc_hide: true
+authors: [jpluscplusm]
+tags: [validation]
+---
+
+CUE's
+[file embedding]({{<relref"docs/reference/command/cue-help-embed">}})
+feature provides a flexible way to validate the contents of data files, and to
+record the precise constraints that should be used to validate each file in the
+future.
+File embedding is an alternative to using
+[the `--path`/`-l` flag]({{<relref"docs/concept/using-the-cue-export-command/inputs/#static-locations">}})
+to specify data files' locations using command line parameters.
+<!-- TODO: swap the above link for a section in the cue-vet command when it's published -->
+
+This guide demonstrates a simple example of validating two data files against
+schemas defined in the local module, but file embedding isn't limited to
+individually named files -- read
+{{<linkto/inline"howto/embed-files-in-cue-evaluation">}} for more detail.
+
+{{{with code "en" "example"}}}
+#location top-left top-left top-right top-right bottom
+exec cue mod init
+
+! exec cue vet -c .:validate
+cmp stderr out
+-- validate.cue --
+// Enable file embedding.
+@extern(embed)
+
+package validate
+
+// Embed the contents of some data files and
+// constrain their contents using two schemas.
+alpha: schema.#A @embed(file=data/alpha.json)
+beta:  schema.#B @embed(file=data/beta.yaml)
+-- constraints.cue --
+package validate
+
+schema: {
+	// #A permits two fields with integer values.
+	#A: {X: int, O: int}
+
+	// #B schema extends #A by requiring
+	// each field's value to be 100 or greater.
+	#B: #A & {[_]: >=100}
+}
+-- data/alpha.json --
+{
+    "X": 1,
+    "O": 2.2
+}
+-- data/beta.yaml --
+X: 11
+O: 222
+-- out --
+alpha.O: conflicting values int and 2.2 (mismatched types int and float):
+    ./constraints.cue:5:18
+    data/alpha.json:3:10
+beta.X: invalid value 11 (out of bound >=100):
+    ./constraints.cue:9:17
+    data/beta.yaml:1:4
+{{{end}}}
+
+File embedding can only be used inside a module - use
+[`cue mod init`]({{<relref"docs/reference/command/cue-help-mod-init">}})
+to initialize a new module if required.
+File embedding is available in CUE version v0.12.0 and later.
+
+## Related content
+
+- {{<linkto/related/reference"command/cue-help-embed">}}
+- {{<linkto/related/howto"embed-files-in-cue-evaluation">}}
+- {{<linkto/related/reference"command/cue-help-mod-init">}}
