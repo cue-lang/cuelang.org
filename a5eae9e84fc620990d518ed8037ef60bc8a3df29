@@ -16,6 +16,52 @@
       "message": "PTAL. This is a relatively shallow fix for cue-lang/cue#3767 - do let me know if you had a more substantial update in mind.",
       "revId": "a5eae9e84fc620990d518ed8037ef60bc8a3df29",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97e411a8_247210b6",
+        "filename": "content/community/_en.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:38:41Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this so prominently on this page.",
+      "range": {
+        "startLine": 29,
+        "startChar": 58,
+        "endLine": 29,
+        "endChar": 96
+      },
+      "revId": "a5eae9e84fc620990d518ed8037ef60bc8a3df29",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c99690b3_aafbec31",
+        "filename": "content/community/_en.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-18T18:38:41Z",
+      "side": 1,
+      "message": "`cue lsp`",
+      "range": {
+        "startLine": 53,
+        "startChar": 77,
+        "endLine": 53,
+        "endChar": 83
+      },
+      "revId": "a5eae9e84fc620990d518ed8037ef60bc8a3df29",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
