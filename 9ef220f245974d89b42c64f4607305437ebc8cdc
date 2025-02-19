@@ -1,0 +1,215 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "385e8d38_db39ea36",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "Where do we explain _why_ a user might want to use this? For example, an intro could be like:\n\n\u003e When a Go program works with CUE, it may be useful to declare Go types which mirror its CUE schemas. For example, if the program loads a YAML config and validates it with a CUE schema, it\u0027s useful to have the config as a Go struct value to configure how the program should behave.\n\u003e `gengotypes` enables you to declare your schemas in CUE, and automatically derive compatible Go types without having to repeat yourself or maintain two versions of the same structure.\n\nif we had a doc page for https://pkg.go.dev/cuelang.org/go/cue@master#Value.Decode we could link to it too, as it\u0027s the API you would use in the example use case above.",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93060522_14517e69",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "I would just say `CUE v0.12.0`.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 42
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b831379e_7bfd713a",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "nit: I would remove this, as pretty much everything that cmd/cue does can be described as \"automatic\".",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c69df804_71f9b26c",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "Listing the options available to the user here will be prone to get out of sync, e.g. we are about to add an option to control whether to represent CUE optional fields as Go pointers (https://github.com/cue-lang/cue/issues/3760). Hence I would be a bit more general, like \"and can be configured via CUE attributes, such as to replace a type name or expression\".",
+      "range": {
+        "startLine": 11,
+        "startChar": 31,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62bd3697_17ecfd48",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "can we use less fancy words? there\u0027s no need to throw off non native speakers :)",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "771f9a08_dcca98d0",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "is there a reason you called this `aDog` rather than just `Dog`?",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67efc190_2329a4ea",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "nit: the vast majority of users will only have one CUE package for directory, so introducing them to the `.:packagename` syntax feels unnecessary. presumably we already have a guide elsewhere on package names, qualifiers, etc that we can link to if necessary?",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48adda7e_4888be88",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "with the assumption that this is a bug, I would honestly omit this info section.",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d57a471b_fb3c4ba4",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "I would not draw attention to this, because arguably any inline comments should be present in the generated Go as well. Even if they are not part of the godoc, they may still be useful.\n\nI haven\u0027t felt like this is a significant enough issue to file a bug or fix it, but I also wouldn\u0027t document it as a behavior we designed on purpose. It\u0027s entirely accidental.",
+      "range": {
+        "startLine": 78,
+        "startChar": 27,
+        "endLine": 78,
+        "endChar": 69
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b506786a_15d6d15a",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "I would clarify that this is because the Go type system is simpler and less powerful than CUE. I would actually drive this point with a constraint field, and not a regular field with concrete data, as constraints are rather common in schemas/definitions, and cannot be expressed in Go types.\n\nConcrete data in CUE definitions is more common with template definitions, and there\u0027s generally no use to `gengotypes` with CUE templates.",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63eea092_9c470f9d",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-19T08:57:42Z",
+      "side": 1,
+      "message": "again I might suggest a simpler word :) I had to google this one, and I was even confused if this was yet another instance of e.g. `aDog` vs `Dog`. After googling, I\u0027m even more confused why this isn\u0027t e.g. `anAardvark`.",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
