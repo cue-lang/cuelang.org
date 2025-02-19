@@ -22,6 +22,30 @@
       },
       "revId": "32db03002b5921e2b241bad800f8f3b447b9fa66",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6c893b4_753275b0",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-19T15:20:19Z",
+      "side": 1,
+      "message": "\"Arbitrary\" was trying to draw a distinction between the \"tools\" provided by `cue` and those which `cue cmd` can drive. \"Interact\" was trying to give a sense of both getting data from tools, and providing it to them.\n\nI\u0027ve used your suggestion\u0027s form, and simplified to \"running [data-driven workflows]()\".",
+      "parentUuid": "0fb705ef_30151dae",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 69
+      },
+      "revId": "32db03002b5921e2b241bad800f8f3b447b9fa66",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
