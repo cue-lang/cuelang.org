@@ -53,6 +53,15 @@ cue: {
 		title:   "cue help"
 	}
 	[=~"^exp "]: experimental: true
+	"mod mirror": {
+		cueVersion:   #CueTip
+		experimental: true
+	}
+	refactor: cueVersion: #CueTip
+	"refactor imports": {
+		cueVersion:   #CueTip
+		experimental: true
+	}
 }
 
 // Introduce experimental and unreleased commands.
@@ -64,12 +73,12 @@ cue: [_]: {
 
 	if experimental && !unreleased {
 		introduction: """
-			{{<warning>}}
+			{{<info>}}
 			This command is still in an experimental stage, which means that it may be
 			changed or removed at any time.
 			The objective is for the CUE project to gain experience and feedback from
 			this experimental command, and then move the feature elsewhere.
-			{{</warning>}}
+			{{</info>}}
 			"""
 	}
 
@@ -162,39 +171,42 @@ cue: {
 
 // All commands
 cue: close({
-	cue:              _
-	cmd:              _
-	commands:         _
-	completion:       _
-	def:              _
-	embed:            _
-	environment:      _
-	eval:             _
-	exp:              _
-	"exp gengotypes": _
-	export:           _
-	filetypes:        _
-	fix:              _
-	flags:            _
-	fmt:              _
-	get:              _
-	"get go":         _
-	import:           _
-	injection:        _
-	inputs:           _
-	login:            _
-	mod:              _
-	"mod edit":       _
-	"mod fix":        _
-	"mod get":        _
-	"mod init":       _
-	"mod publish":    _
-	"mod rename":     _
-	"mod resolve":    _
-	"mod tidy":       _
-	modules:          _
-	registryconfig:   _
-	trim:             _
-	version:          _
-	vet:              _
+	cue:                _
+	cmd:                _
+	commands:           _
+	completion:         _
+	def:                _
+	embed:              _
+	environment:        _
+	eval:               _
+	exp:                _
+	"exp gengotypes":   _
+	export:             _
+	filetypes:          _
+	fix:                _
+	flags:              _
+	fmt:                _
+	get:                _
+	"get go":           _
+	import:             _
+	injection:          _
+	inputs:             _
+	login:              _
+	mod:                _
+	"mod edit":         _
+	"mod fix":          _
+	"mod get":          _
+	"mod init":         _
+	"mod publish":      _
+	"mod mirror":       _
+	"mod rename":       _
+	"mod resolve":      _
+	"mod tidy":         _
+	modules:            _
+	refactor:           _
+	"refactor imports": _
+	registryconfig:     _
+	trim:               _
+	version:            _
+	vet:                _
 })
