@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgaW5qZWN0aW9u" }
 $ cue help injection
 Many of the cue commands allow injecting values or

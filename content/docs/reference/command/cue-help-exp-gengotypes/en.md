@@ -5,12 +5,12 @@ weight: 1000
 tags:
 - cue command
 ---
-{{<warning>}}
-This command is still in an experimental stage, which means that it may be
-changed or removed at any time.
-The objective is for the CUE project to gain experience and feedback from
-this experimental command, and then move the feature elsewhere.
-{{</warning>}}
+{{{with _script_ "en" "HIDDEN: access required CUE version"}}}
+export PATH=/cues/$CUELANG_CUE_LATEST:$PATH
+{{{end}}}
+{{<info>}}
+This command is still in an experimental stage -- it may be changed or removed at any time.
+{{</info>}}
 {{{with script "en" "cue cli help text"}}}
 cue help exp gengotypes
 {{{end}}}

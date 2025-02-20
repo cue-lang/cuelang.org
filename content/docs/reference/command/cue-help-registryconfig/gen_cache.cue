@@ -8,9 +8,14 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "S69C5OUAMU6T31ABRMK05KOGQ8E5JCO712JIMJ25QLNGUEJV26I0===="
-									scriptHash: "LK0L4EIBL3DILIMQ6KOL4N6P4VE6M2NRIVG839GN8PQCH0UBE8R0===="
+									hash:       "O6RGA6EGST1HPF88CTJF3ITLNVOB70JG3F3CPSRMPTM3RL3PODD0===="
+									scriptHash: "5UNA96TFSQD7FLFMUQ73L26B9NPVMITLJ3C4NH6V5FB3N52AS64G===="
 									steps: [{
+										doc:      ""
+										cmd:      "export PATH=/cues/v0.12.0:$PATH"
+										exitCode: 0
+										output:   ""
+									}, {
 										doc:      ""
 										cmd:      "cue help registryconfig"
 										exitCode: 0

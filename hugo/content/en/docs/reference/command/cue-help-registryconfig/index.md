@@ -6,7 +6,6 @@ tags:
 - cue command
 - modules
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgcmVnaXN0cnljb25maWc=" }
 $ cue help registryconfig
 The registry configuration determines how CUE maps modules to their locations in

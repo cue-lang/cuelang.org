@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0" }
 $ cue help get
 Get downloads packages or modules for non-CUE languages
