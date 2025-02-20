@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "f80787b3_4a239d49",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T20:04:44Z",
+      "side": 1,
+      "message": "I would split this into a separate CL. It\u0027s very little cost.",
+      "revId": "e9007cf4be5033cf516599f0b7c05e3c022464ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "8bd686d6_1b0725d3",
@@ -14,6 +31,23 @@
       "writtenOn": "2025-02-20T18:23:30Z",
       "side": 1,
       "message": "PTAL.",
+      "revId": "e9007cf4be5033cf516599f0b7c05e3c022464ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76551329_545cb0e0",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T20:04:44Z",
+      "side": 1,
+      "message": "Per the previous CL, with the correct constraint on the schema the string `\"tip\"` is sufficient here.",
       "revId": "e9007cf4be5033cf516599f0b7c05e3c022464ee",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
