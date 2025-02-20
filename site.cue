@@ -352,6 +352,9 @@ template: ci.#writefs & {
 					tags:
 					\#(strings.TrimSuffix(yaml.Marshal(cmd.tagList), "\n"))
 					---
+					{{{with _script_ "en" "HIDDEN: access required CUE version"}}}
+					export PATH=/cues/$CUELANG_CUE_\#(strings.ToUpper(cmd.cueVersion)):$PATH
+					{{{end}}}
 					\#(cmd.introduction)
 					{{{with script "en" "cue cli help text"}}}
 					\#(cmd.execCmd)

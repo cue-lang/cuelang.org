@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHJlbmFtZQ==" }
 $ cue help mod rename
 Rename changes the name of the current module,

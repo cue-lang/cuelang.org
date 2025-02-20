@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgaW1wb3J0" }
 $ cue help import
 import converts other formats, like JSON and YAML to CUE files

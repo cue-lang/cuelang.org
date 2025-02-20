@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgaW5wdXRz" }
 $ cue help inputs
 Many commands apply to a set of inputs:
