@@ -8,9 +8,14 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "0RNJ8M51BU2H5BAA52IPP9P7TQQQ3L2JUSATUD22RGDUUSPDBHAG===="
-									scriptHash: "322SS9NP8937821HII5DSM5AV0IIHVM65A08I04MTURA61T4HTBG===="
+									hash:       "DIG9P1GT0JIGEOU5T6C911KB730JC84GVHTLAH970QV7N148EMI0===="
+									scriptHash: "MJTESBEU5BRJUFUN51MMJN1B6CC9MPJFPMNH2EEVDML301OM4E5G===="
 									steps: [{
+										doc:      ""
+										cmd:      "export PATH=/cues/v0.12.0:$PATH"
+										exitCode: 0
+										output:   ""
+									}, {
 										doc:      ""
 										cmd:      "cue help mod rename"
 										exitCode: 0

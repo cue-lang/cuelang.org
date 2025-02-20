@@ -6,7 +6,6 @@ tags:
 - cue command
 - modules
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHRpZHk=" }
 $ cue help mod tidy
 Tidy resolves all module dependencies in the current module and updates

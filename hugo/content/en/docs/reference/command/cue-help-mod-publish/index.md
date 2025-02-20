@@ -6,7 +6,6 @@ tags:
 - cue command
 - modules
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHB1Ymxpc2g=" }
 $ cue help mod publish
 Publish the current module to an OCI registry. It consults

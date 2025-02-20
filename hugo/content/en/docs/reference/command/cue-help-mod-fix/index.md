@@ -6,7 +6,6 @@ tags:
 - cue command
 - modules
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGZpeA==" }
 $ cue help mod fix
 Fix provides a way to migrate from a legacy module.cue file

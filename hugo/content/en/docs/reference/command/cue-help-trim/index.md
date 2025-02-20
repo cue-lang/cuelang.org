@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdHJpbQ==" }
 $ cue help trim
 trim removes fields from structs that can be inferred from constraints
