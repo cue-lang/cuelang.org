@@ -8,9 +8,14 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "IRNJE6CT2EU0EHANB90CU15H643IT629AVBALB9KGBGM2TEFNT60===="
-									scriptHash: "U8I8QU2PNLAQOE6HCRT9M1G1736KFSRIQ4D25RPCINJ71LIA279G===="
+									hash:       "005NDJLN7BS50LHVEF4885GF8QSGEGF8AMOHI77QMEIG3C3TVI1G===="
+									scriptHash: "FHMII83G586JV49CVQ00MR26R0PMVHML2JVDET5UU3VTEHIS408G===="
 									steps: [{
+										doc:      ""
+										cmd:      "export PATH=/cues/v0.12.0:$PATH"
+										exitCode: 0
+										output:   ""
+									}, {
 										doc:      ""
 										cmd:      "cue help exp gengotypes"
 										exitCode: 0

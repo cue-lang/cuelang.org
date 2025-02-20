@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY29tbWFuZHM=" }
 $ cue help commands
 Workflow commands define actions on instances. For example, they

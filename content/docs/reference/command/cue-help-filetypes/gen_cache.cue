@@ -8,9 +8,14 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "568EJ5U19CD6L49H840JEF3DB9VQJRUM6HLQRF7G4V0NGGFUU3UG===="
-									scriptHash: "EASO9K634FKPK5IIIHBL47VOL5GA1NH1AN45JG3TAEOK020F497G===="
+									hash:       "AIQB1FJ8PLSKEGR476PPMRLCC49QDQGKFRDFPIHGV1TVJTGR0B80===="
+									scriptHash: "87EU34QGIA77GRFB3KFUP1H2S8BGEB2GUTU786CSGJFSKMN632H0===="
 									steps: [{
+										doc:      ""
+										cmd:      "export PATH=/cues/v0.12.0:$PATH"
+										exitCode: 0
+										output:   ""
+									}, {
 										doc:      ""
 										cmd:      "cue help filetypes"
 										exitCode: 0

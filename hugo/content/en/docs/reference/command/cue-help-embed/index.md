@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZW1iZWQ=" }
 $ cue help embed
 The @embed attribute can be used to load files as part of CUE evaluation.
