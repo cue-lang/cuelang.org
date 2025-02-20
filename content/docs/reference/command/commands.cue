@@ -1,8 +1,9 @@
 package command
 
 import (
-	"strings"
 	"encoding/json"
+	"strings"
+	//"list"
 )
 
 contentRoot: "content/docs/reference/command"
@@ -17,17 +18,30 @@ _cuePathBase: {
 	title!:        string
 	execCmd!:      string
 	cuePath!:      string
+	cueVersion!:   or(#siteCueVersionLabels)
+	experimental!: bool
 	introduction!: string
 	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
 	tagList!: [...]
 	relatedCommands!: [...string]
 }
 
+// We can't import the site package to derive this list ourselves as the site package
+// already imports this package and we'd like to avoid an import cycle. So we require
+// that the user of this package passes completes this list for us.
+#siteCueVersionLabels!: [...string]
+
+// We rely on the presence of "latest" in the site's CUE versions, so let's demand it here.
+// Uncommenting this constraint causes an evaluation failure, but not a panic.
+//#siteCueVersionLabels?: list.Contains("latest")
+
 cue: [SubCommand=string]: #CueCommand & {
 	_dirSuffix:   strings.Replace(SubCommand, " ", "-", -1)
 	dir:          *"cue-help-\(_dirSuffix)" | _
 	execCmd:      *"cue help \(SubCommand)" | _
 	title:        *"cue help \(SubCommand)" | _
+	cueVersion:   *"latest" | _
+	experimental: *false | _
 	introduction: *"" | _
 	tagSet: *{} | _
 	tagList: [for tag, _ in tagSet {tag}]
@@ -44,17 +58,26 @@ cue: {
 		execCmd: "cue help"
 		title:   "cue help"
 	}
-	[=~"^exp "]: introduction: _warningExperimental
+	[=~"^exp "]: experimental: true
 }
 
-_warningExperimental: """
-	{{<warning>}}
-	This command is still in an experimental stage, which means that it may be
-	changed or removed at any time.
-	The objective is for the CUE project to gain experience and feedback from
-	this experimental command, and then move the feature elsewhere.
-	{{</warning>}}
-	"""
+// Introduce experimental and unreleased commands.
+cue: [_]: {
+	experimental: _
+	cueVersion:   _
+	// TODO(jm): distinguish between commands which require tip and those which require the site's CUE prerelease.
+	let unreleased = (cueVersion != "latest")
+
+	if experimental || unreleased {
+		introduction: strings.Join([
+			"{{<warning>}}",
+			if unreleased {"This command is not yet available in the latest CUE release."},
+			if unreleased && experimental {"\n"},
+			if experimental {"This command is still in an experimental stage, which means that it may be changed or removed at any time."},
+			"{{</warning>}}",
+		], "\n")
+	}
+}
 
 // Hugo page tags
 cue: {

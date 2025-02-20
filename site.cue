@@ -335,8 +335,8 @@ template: ci.#writefs & {
 			export const CUEVersion = '\#(versions.cue.playground.v)';
 
 			"""#
-
-		for _, cmd in command.cue {
+		_labels: [for label, _ in versions.cue {label}]
+		for _, cmd in (command & {#siteCueVersionLabels: _labels}).cue {
 			"\(command.contentRoot)/\(cmd.dir)/page.cue": Contents: #"""
 					// \#(donotedit)
 					package site
@@ -352,6 +352,9 @@ template: ci.#writefs & {
 					tags:
 					\#(strings.TrimSuffix(yaml.Marshal(cmd.tagList), "\n"))
 					---
+					{{with _script_ "en" "HIDDEN: access required CUE version"}}}
+					export PATH=/cues/$CUELANG_CUE_\#(strings.ToUpper(cmd.cueVersion)):$PATH
+					{{{end}}}
 					\#(cmd.introduction)
 					{{{with script "en" "cue cli help text"}}}
 					\#(cmd.execCmd)
