@@ -233,7 +233,6 @@ $ cue mod edit --source self
 $ cue mod rename github.com/cue-examples/splotpolicy
 $ export CUE_REGISTRY=github.com/cue-examples=127.0.0.1:55443
 $ cue mod publish v0.0.1
-tagged github.com/cue-examples/splotpolicy@v0.0.1
 published github.com/cue-examples/splotpolicy@v0.0.1 to 127.0.0.1:55443/github.com/cue-examples/splotpolicy:v0.0.1
 $ cue import -p splotservice1 -l 'content:' docker-compose.yaml
 $ cat docker-compose.cue

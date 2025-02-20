@@ -10,6 +10,11 @@ mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
+
+# TODO: this is inherently racey. But not a problem in practice...
+# for now. When it does become a problem we can solve this properly
+# using a nc-based wait loop or similar.
+nohup cue mod registry localhost:55443 > /tmp/cue_mod_registry 2>&1 &
 {{{end}}}
 
 Here's how we can use CUE with a registry, including:
@@ -211,10 +216,8 @@ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
 {{{end}}}
 
 {{{with script "en" "start local registry"}}}
+#norun
 cue mod registry 127.0.0.1:55443 &
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: sleep to allow registry to start"}}}
-sleep 2
 {{{end}}}
 {{{with script "en" "break this out into steps"}}}
 cue mod edit --source self
