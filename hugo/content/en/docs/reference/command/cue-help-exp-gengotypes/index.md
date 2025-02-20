@@ -5,12 +5,12 @@ weight: 1000
 tags:
 - cue command
 ---
-{{<warning>}}
+{{<info>}}
 This command is still in an experimental stage, which means that it may be
 changed or removed at any time.
 The objective is for the CUE project to gain experience and feedback from
 this experimental command, and then move the feature elsewhere.
-{{</warning>}}
+{{</info>}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhwIGdlbmdvdHlwZXM=" }
 $ cue help exp gengotypes
 gengotypes generates Go type definitions from exported CUE definitions.
