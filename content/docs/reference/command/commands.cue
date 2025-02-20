@@ -17,17 +17,25 @@ _cuePathBase: {
 	title!:        string
 	execCmd!:      string
 	cuePath!:      string
+	cueVersion!:   *#CueLatest | #CuePrerelease | #CueTip
+	experimental!: bool
 	introduction!: string
 	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
 	tagList!: [...]
 	relatedCommands!: [...string]
 }
 
+#CueLatest:     "latest"
+#CuePrerelease: "prerelease"
+#CueTip:        "tip"
+
 cue: [SubCommand=string]: #CueCommand & {
 	_dirSuffix:   strings.Replace(SubCommand, " ", "-", -1)
 	dir:          *"cue-help-\(_dirSuffix)" | _
 	execCmd:      *"cue help \(SubCommand)" | _
 	title:        *"cue help \(SubCommand)" | _
+	cueVersion:   *#CueLatest | _
+	experimental: *false | _
 	introduction: *"" | _
 	tagSet: *{} | _
 	tagList: [for tag, _ in tagSet {tag}]
@@ -44,17 +52,56 @@ cue: {
 		execCmd: "cue help"
 		title:   "cue help"
 	}
-	[=~"^exp "]: introduction: _warningExperimental
+	[=~"^exp "]: experimental: true
 }
 
-_warningExperimental: """
-	{{<warning>}}
-	This command is still in an experimental stage, which means that it may be
-	changed or removed at any time.
-	The objective is for the CUE project to gain experience and feedback from
-	this experimental command, and then move the feature elsewhere.
-	{{</warning>}}
-	"""
+// Introduce experimental and unreleased commands.
+cue: [_]: {
+	experimental: _
+	cueVersion:   _
+	// TODO(jm): distinguish between commands which require tip and those which require the site's CUE prerelease.
+	let unreleased = cueVersion != #CueLatest
+
+	if experimental && !unreleased {
+		introduction: """
+			{{<warning>}}
+			This command is still in an experimental stage, which means that it may be
+			changed or removed at any time.
+			The objective is for the CUE project to gain experience and feedback from
+			this experimental command, and then move the feature elsewhere.
+			{{</warning>}}
+			"""
+	}
+
+	if !experimental && unreleased {
+		introduction: """
+			\(_cueTipPath)
+			{{<info>}}
+			This command is not yet available in the latest CUE release.
+			{{</info>}}
+			"""
+	}
+
+	if experimental && unreleased {
+		introduction: """
+			\(_cueTipPath)
+			{{<info>}}
+			This experimental command is not yet available in the latest CUE release.
+
+			Because this command is still in an experimental stage it may be changed
+			or removed at any time. The objective is for the CUE project to gain
+			experience and feedback from this experimental command, and then move
+			the feature elsewhere.
+			{{</info>}}
+			"""
+	}
+
+	_cueTipPath: """
+		{{{with _script_ "en" "HIDDEN: access CUE tip"}}}
+		export PATH=/cues/$CUELANG_CUE_TIP:$PATH
+		{{{end}}}
+		"""
+}
 
 // Hugo page tags
 cue: {
