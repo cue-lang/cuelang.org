@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "T5BrZzQ3LEDWeX55gw840SbCuFOGl16iF68Q8zSu45o="
-								"5":  "HFrbaPdtZ8P8knjxWl9BMyye5o1WnBi3UioUStDEPgI="
-								"10": "yllq9CidmUu1DAmTg92JazBxHk5DAqgAHNgHmfctmMw="
-								"11": "gkf/HrAPLvh/8Eu6hzh4JJP4doOZoL8B4iPCvnuGm1A="
-								"12": "DY3JLkSQtGKPiOp+KP6HGAjxiZE7ZjwmWivf6st91vk="
-								"14": "GhpjIWrGPzMjz2OSvjWVzplVxKn+JHiWyFqoZMcBe4E="
+								"4":  "8CSQfN0cERyyoD/oF50zHz5K0J2uBSOju43JTtgp3SY="
+								"5":  "nu9LkqMEsPaEDeBP7KMacWVkfm4JkIgV5XmgF6QlMNo="
+								"10": "dNS6azZThAk1SlxlU5alc/qMxibHbi8GtopH/HRCPws="
+								"11": "1QqWLSHrRLzjEAP1z54oWeAjga4C2+KFHG5qwyM7Xjk="
+								"12": "xlDUuaKvMufJ7HWNILU3HF0cXdXl86jSVAZWKs6hVFo="
+								"14": "VYJHvDbhptJYOZ884kAk9o4TqJTbbhRrLhsEePKeGXU="
 							}
 							multi_step: {
-								hash:       "5IUN52BAT9375N6NNCB14R8O91K597JOG837VGC3NURDNK0OT7IG===="
+								hash:       "IHB8UAJFF4CKO3TDQL3HVR2NRP1LJQJ2F0EE4HO58PDKP06KICFG===="
 								scriptHash: "PD6KSPE0N7DV4196GSTFR55BJUE39C81CC5UKBUIJ6I5I64PIV70===="
 								steps: [{
 									doc:      "# Set up example content as a git repo."
