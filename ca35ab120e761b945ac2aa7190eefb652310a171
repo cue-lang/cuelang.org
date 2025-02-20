@@ -16,6 +16,69 @@
       "message": "PTAL.",
       "revId": "ca35ab120e761b945ac2aa7190eefb652310a171",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0007b6ff_ffdcbe9a",
+        "filename": "content/docs/howto/export-top-level-list-element/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T16:12:12Z",
+      "side": 1,
+      "message": "I think we can simplify this to a list of values of the same type. \n\nIt feels like it just adds noise (and requires a comment) to explain things.\n\nOr just flip to a JSON list if it\u0027s not clear enough that we\u0027re working with a list)",
+      "revId": "ca35ab120e761b945ac2aa7190eefb652310a171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b1b9812_0a0afa16",
+        "filename": "content/docs/howto/export-top-level-list-element/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T16:12:12Z",
+      "side": 1,
+      "message": "It feels odd to list this first because it\u0027s not what\u0027s used above. I\u0027d suggest something like:\n\n```\nFirstly, the `-l` flag (which can alternatively be spelled `--path`)...\n```\n\nAnd same for the other flag. Otherwise there\u0027s an immediate \"what?\" going on here to my mind.",
+      "range": {
+        "startLine": 35,
+        "startChar": 14,
+        "endLine": 35,
+        "endChar": 20
+      },
+      "revId": "ca35ab120e761b945ac2aa7190eefb652310a171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8fe04696_e93cfd0c",
+        "filename": "content/docs/howto/export-top-level-list-element/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T16:12:12Z",
+      "side": 1,
+      "message": "I\u0027m not clear we need to spell this out. With a list of a single scalar type, we keep the example clear and clear.",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 39
+      },
+      "revId": "ca35ab120e761b945ac2aa7190eefb652310a171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
