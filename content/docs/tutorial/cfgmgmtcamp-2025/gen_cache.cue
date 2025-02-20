@@ -15,8 +15,8 @@ package site
 								"link splotpolicy and splotservice1": "6CezQzOHIPesaD+TMVMXradpBGiOrlumANisD/8WrZE="
 							}
 							multi_step: {
-								hash:       "RN45AJ5PA48OMOAUCJPN7577C8E3TKFAB4DFD8NEIEUHULIN33T0===="
-								scriptHash: "5OO4HCMKJB0PJES0F1V45ANB3RDU3J2ST81QK3SQ94S89UFP3U30===="
+								hash:       "3B2UKIOGL952BLN63S649O7U49AVKUDH52VVJAJ5O80VTB7BVH10===="
+								scriptHash: "8AFU798PDNT4KTRT4B2LIC3URPSGP0HUNSQ9OO5S94B7AH9AI4SG===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -98,10 +98,13 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      ""
+									doc:      "#ellipsis 0"
 									cmd:      "cue mod registry 127.0.0.1:55443 &"
 									exitCode: 0
-									output:   ""
+									output: """
+											...
+
+											"""
 								}, {
 									doc:      ""
 									cmd:      "sleep 2"

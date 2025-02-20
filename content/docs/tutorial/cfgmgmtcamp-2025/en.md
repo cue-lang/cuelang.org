@@ -211,6 +211,7 @@ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
 {{{end}}}
 
 {{{with script "en" "start local registry"}}}
+#ellipsis 0
 cue mod registry 127.0.0.1:55443 &
 {{{end}}}
 {{{with _script_ "en" "HIDDEN: sleep to allow registry to start"}}}
