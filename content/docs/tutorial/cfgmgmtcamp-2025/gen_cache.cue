@@ -15,8 +15,8 @@ package site
 								"link splotpolicy and splotservice1": "6CezQzOHIPesaD+TMVMXradpBGiOrlumANisD/8WrZE="
 							}
 							multi_step: {
-								hash:       "RN45AJ5PA48OMOAUCJPN7577C8E3TKFAB4DFD8NEIEUHULIN33T0===="
-								scriptHash: "5OO4HCMKJB0PJES0F1V45ANB3RDU3J2ST81QK3SQ94S89UFP3U30===="
+								hash:       "QBVT0FFGURHCASQS0PP02MJ8TN1C6NB4GM5B2GN7O0I1IQVINMB0===="
+								scriptHash: "UKHVMC4J69LALJPOJUMUAS9QGHFCE9J6SMLG10I56IJAAIRACJL0===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -29,6 +29,15 @@ package site
 											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 											EOD
 											"""
+									exitCode: 0
+									output:   ""
+								}, {
+									doc: """
+											# TODO: this is inherently racey. But not a problem in practice...
+											# for now. When it does become a problem we can solve this properly
+											# using a nc-based wait loop or similar.
+											"""
+									cmd:      "nohup cue mod registry localhost:55443 >/tmp/cue_mod_registry 2>&1 &"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -99,19 +108,6 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod registry 127.0.0.1:55443 &"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "sleep 2"
-									exitCode: 0
-									output: """
-											listening on 127.0.0.1:55443
-
-											"""
-								}, {
-									doc:      ""
 									cmd:      "cue mod edit --source self"
 									exitCode: 0
 									output:   ""
@@ -130,7 +126,6 @@ package site
 									cmd:      "cue mod publish v0.0.1"
 									exitCode: 0
 									output: """
-											tagged github.com/cue-examples/splotpolicy@v0.0.1
 											published github.com/cue-examples/splotpolicy@v0.0.1 to 127.0.0.1:55443/github.com/cue-examples/splotpolicy:v0.0.1
 
 											"""
