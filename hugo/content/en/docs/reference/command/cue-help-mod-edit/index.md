@@ -6,7 +6,6 @@ tags:
 - cue command
 - modules
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGVkaXQ=" }
 $ cue help mod edit
 Edit provides a command-line interface for editing cue.mod/module.cue.

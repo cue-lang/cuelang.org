@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdmVyc2lvbg==" }
 $ cue help version
 print CUE version

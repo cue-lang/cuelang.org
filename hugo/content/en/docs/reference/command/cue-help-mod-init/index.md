@@ -6,7 +6,6 @@ tags:
 - cue command
 - modules
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGluaXQ=" }
 $ cue help mod init
 Init initializes a cue.mod directory in the current directory, in effect

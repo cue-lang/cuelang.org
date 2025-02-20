@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0IGdv" }
 $ cue help get go
 go converts Go types into CUE definitions

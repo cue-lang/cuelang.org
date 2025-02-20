@@ -6,7 +6,6 @@ tags:
 - cue command
 - modules
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHJlc29sdmU=" }
 $ cue help mod resolve
 This command prints information about how a given

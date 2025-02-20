@@ -5,7 +5,6 @@ weight: 1000
 tags:
 - cue command
 ---
-
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZml4" }
 $ cue help fix
 Fix finds CUE programs that use old syntax and old APIs and rewrites them to use newer ones.
