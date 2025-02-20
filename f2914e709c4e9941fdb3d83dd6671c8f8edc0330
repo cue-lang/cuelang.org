@@ -308,6 +308,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccc2fd4e_9e07f895",
+        "filename": "content/docs/reference/command/_en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T15:09:15Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "bce85fc2_f8d7ba2f",
+      "range": {
+        "startLine": 16,
+        "startChar": 21,
+        "endLine": 16,
+        "endChar": 25
+      },
+      "revId": "f2914e709c4e9941fdb3d83dd6671c8f8edc0330",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8a57f154_8a886909",
