@@ -227,6 +227,7 @@ $ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSAxMjcuMC4wLjE6NTU0NDMgJg==" }
 $ cue mod registry 127.0.0.1:55443 &
+...
 ```
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBlZGl0IC0tc291cmNlIHNlbGYKY3VlIG1vZCByZW5hbWUgZ2l0aHViLmNvbS9jdWUtZXhhbXBsZXMvc3Bsb3Rwb2xpY3kKZXhwb3J0IENVRV9SRUdJU1RSWT1naXRodWIuY29tL2N1ZS1leGFtcGxlcz0xMjcuMC4wLjE6NTU0NDMKY3VlIG1vZCBwdWJsaXNoIHYwLjAuMQpjdWUgaW1wb3J0IC1wIHNwbG90c2VydmljZTEgLWwgJ2NvbnRlbnQ6JyBkb2NrZXItY29tcG9zZS55YW1sCmNhdCBkb2NrZXItY29tcG9zZS5jdWU=" }
 $ cue mod edit --source self
