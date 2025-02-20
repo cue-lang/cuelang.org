@@ -16,6 +16,97 @@
       "message": "PTAL.",
       "revId": "6133d77623790194e6098d234d8ea9e844000b87",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cdd20b8_9d7832fa",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T20:01:43Z",
+      "side": 1,
+      "message": "Specifying a default with a required field constraint doesn\u0027t really make sense. Because despite the default you\u0027re saying \"you still have to specify this field, passing `_` is sufficient.\" Which negates the point of the default to my mind. If you want to have this be the schema, don\u0027t specify the default here.",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c106e0c_1c8e52ed",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T20:01:43Z",
+      "side": 1,
+      "message": "The set of valid versions is actually defined by the keys of:\n\nhttps://github.com/cue-lang/cuelang.org/blob/f5c2148ab796debdb996876bdb66c419d25aee37/site.cue#L16",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "293af078_f9a00db0",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T20:01:43Z",
+      "side": 1,
+      "message": "This doesn\u0027t apply to all experimental commands. For example many of the `cue mod *` commands were experimental. And then they didn\u0027t move. I would keep it simple in terms of the explanation.",
+      "range": {
+        "startLine": 71,
+        "startChar": 30,
+        "endLine": 71,
+        "endChar": 65
+      },
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd44eab2_a93d9005",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T20:01:43Z",
+      "side": 1,
+      "message": "I would keep the explanation identical for it being experimental. We don\u0027t need subtly different wording. That just needs maintaining/reviewing separately.\n\nA separate sentence regarding whether something is in an actual release will suffice.\n\nThat will save lots of the conditional blocks here.",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e626263_e4cf0ec4",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-20T20:01:43Z",
+      "side": 1,
+      "message": "This doesn\u0027t need to be specialised to tip to my mind. You know the version string is valid (see my earlier point about the valid versions) so you can simply do the following unconditionally:\n\n```\n\t\t{{{with _script_ \"en\" \"HIDDEN: set path for cueVersion tip\"}}}\n\t\texport PATH\u003d/cues/$CUELANG_CUE_\\(strings.ToUpper(cueVersion)):$PATH\n\t\t{{{end}}}\n```",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
