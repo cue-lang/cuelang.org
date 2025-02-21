@@ -14,6 +14,13 @@ cmp content/dir1/en.md golden/content/dir1/en.md
 cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md
 
 -- hugo/.keep --
+-- site.cue --
+package site
+
+baseEnv: {
+	CUE_EXPERIMENT: "evalv3=0"
+	CUE_DEBUG:      ""
+}
 -- content/dir1/site.cue --
 package site
 

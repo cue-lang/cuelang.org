@@ -148,6 +148,10 @@ func (ec *executeContext) execute() error {
 	}
 	ec.config = v
 
+	// TODO: we should switch to an approach that uses 'cue exp gengotypes' when
+	// it comes to the Go types that correspond to the site configuration like
+	// versions and baseEnv.
+
 	// Load the CUE versions configured as part of the site
 	ec.cueVersions = make(map[string]cueVersion)
 	ec.cueEnvVersions = make(map[string]string)
@@ -159,6 +163,15 @@ func (ec *executeContext) execute() error {
 		}
 		for _, v := range ec.cueVersions {
 			ec.cueEnvVersions[v.Var] = v.V
+		}
+	}
+
+	// Load baseEnv
+	ec.baseEnv = make(map[string]string)
+	baseEnvPath := cue.ParsePath("baseEnv")
+	if v := ec.config.LookupPath(baseEnvPath); v.Exists() {
+		if err := v.Decode(&ec.baseEnv); err != nil {
+			return ec.errorf("%v: failed to decode %v: %v", baseEnvPath, err)
 		}
 	}
 
