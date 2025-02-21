@@ -4,6 +4,10 @@ draft: true
 no_index: true
 ---
 
+{{{with _script_ "en" "use cue tip"}}}
+export PATH="/cues/$CUELANG_CUE_TIP:$PATH"
+{{{end}}}
+
 {{<caution>}}
 Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial
 {{</caution>}}
@@ -44,6 +48,7 @@ The given YAML files are ordered in following directory
 (you can use `find` if you don't have tree):
 
 {{{with script "en" "find original"}}}
+cue version
 #ellipsis 5
 find ./original -type f | sort
 {{{end}}}
@@ -590,6 +595,13 @@ deployment: [string]: spec: template: {
 {{{end}}}
 
 {{{with script "en" "check differences post frontend template"}}}
+echo hello
+pwd
+cd ../../
+cp -a . /save
+cd tmp/services
+cue version
+env
 cue eval -c ./... >snapshot2
 #ellipsis 10
 ! diff -wu snapshot snapshot2 --label snapshot --label snapshot2

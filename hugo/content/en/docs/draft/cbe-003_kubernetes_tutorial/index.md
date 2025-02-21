@@ -41,7 +41,19 @@ in practice.
 The given YAML files are ordered in following directory
 (you can use `find` if you don't have tree):
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuL29yaWdpbmFsIC10eXBlIGYgfCBzb3J0" }
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24KZmluZCAuL29yaWdpbmFsIC10eXBlIGYgfCBzb3J0" }
+$ cue version
+cue version v0.13.0-0.dev.0.20250225142354-26a698fe9ae9
+
+go version go1.24.0
+      -buildmode exe
+       -compiler gc
+       -trimpath true
+  DefaultGODEBUG gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,x509rsacrt=0,x509usepolicies=0
+     CGO_ENABLED 0
+          GOARCH amd64
+            GOOS linux
+cue.lang.version v0.13.0
 $ find ./original -type f | sort
 ./original/services/frontend/bartender/kube.yaml
 ./original/services/frontend/breaddispatcher/kube.yaml
@@ -432,7 +444,7 @@ $ find . | grep kube.cue | xargs wc -l | tail -1
  1833 total
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1266 total
+ 1275 total
 ```
 
 `cue trim` removes configuration from files that is already generated
@@ -444,7 +456,7 @@ The following is proof that nothing changed semantically:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgfCB3YyAtbA==" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 | wc -l
-603
+587
 ```
 
 We can do better, though.
@@ -592,7 +604,7 @@ Then we run trim to further reduce our configuration:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi8uLi4KZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1131 total
+ 1212 total
 ```
 
 This is after removing the rewritten and now redundant deployment definition.
@@ -610,14 +622,14 @@ structs with a single element onto a single line. For instance:
 $ head frontend/breaddispatcher/kube.cue
 package kube
 
+service: breaddispatcher: {
+	spec: {
+		ports: [{}]
+	}
+}
 deployment: breaddispatcher: {
 	spec: {
 		template: {
-			metadata: {
-				annotations: {
-					"prometheus.io.scrape": "true"
-					"prometheus.io.port":   "7080"
-				}
 ```
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi8uLi4gLXMKaGVhZCBmcm9udGVuZC9icmVhZGRpc3BhdGNoZXIva3ViZS5jdWU=" }
@@ -625,6 +637,7 @@ $ cue trim ./... -s
 $ head frontend/breaddispatcher/kube.cue
 package kube
 
+service: breaddispatcher: spec: ports: [{}]
 deployment: breaddispatcher: spec: template: {
 	metadata: annotations: {
 		"prometheus.io.scrape": "true"
@@ -632,12 +645,11 @@ deployment: breaddispatcher: spec: template: {
 	}
 	spec: containers: [{
 		image: "gcr.io/myproj/breaddispatcher:v0.3.24"
-		ports: [{containerPort: 7080}]
 ```
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  979 total
+ 1020 total
 ```
 
 Another 150 lines lost!
@@ -685,7 +697,50 @@ deployment: [string]: spec: template: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgLS1sYWJlbCBzbmFwc2hvdCAtLWxhYmVsIHNuYXBzaG90MgpjcCBzbmFwc2hvdDIgc25hcHNob3Q=" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbwpwd2QKY2QgLi4vLi4vCmNwIC1hIC4gL3NhdmUKY2QgdG1wL3NlcnZpY2VzCmN1ZSB2ZXJzaW9uCmVudgpjdWUgZXZhbCAtYyAuLy4uLiA+c25hcHNob3QyCmRpZmYgLXd1IHNuYXBzaG90IHNuYXBzaG90MiAtLWxhYmVsIHNuYXBzaG90IC0tbGFiZWwgc25hcHNob3QyCmNwIHNuYXBzaG90MiBzbmFwc2hvdA==" }
+$ echo hello
+hello
+$ pwd
+/home/runner/tmp/services
+$ cd ../../
+$ cp -a . /save
+$ cd tmp/services
+$ cue version
+cue version v0.13.0-0.dev.0.20250225142354-26a698fe9ae9
+
+go version go1.24.0
+      -buildmode exe
+       -compiler gc
+       -trimpath true
+  DefaultGODEBUG gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,x509rsacrt=0,x509usepolicies=0
+     CGO_ENABLED 0
+          GOARCH amd64
+            GOOS linux
+cue.lang.version v0.13.0
+$ env
+HOSTNAME=9b64b07dce03
+JAVA_HOME=/opt/java/openjdk
+PWD=/home/runner/tmp/services
+CUELANG_CUE_PLAYGROUND=v0.12.0
+HOME=/home/runner
+CUE_DEBUG=openinline=0
+GOLANG_VERSION=1.24.0
+TERM=dumb
+CUELANG_CUE_LATEST=v0.12.0
+MAVEN_HOME=/usr/share/maven
+CUELANG_CUE_PRERELEASE=v0.12.0
+SHLVL=1
+GOTOOLCHAIN=local
+CUE_EXPERIMENT=evalv3=1
+NO_COLOR=true
+LD_LIBRARY_PATH=/usr/local/lib
+CUELANG_CUE_DEFAULT=v0.12.0
+LC_ALL=C.UTF-8
+CUELANG_CUE_TIP=v0.13.0-0.dev.0.20250225142354-26a698fe9ae9
+PATH=/cues/v0.13.0-0.dev.0.20250225142354-26a698fe9ae9:/usr/share/maven/bin:/opt/java/openjdk/bin:/cues/v0.12.0:/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+OLDPWD=/home/runner
+GOPATH=/go
+_=/usr/bin/env
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 --- snapshot
@@ -707,7 +762,7 @@ Two lines with annotations added, improving consistency.
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./frontend/... -s
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  937 total
+ 1005 total
 ```
 
 Another 40 odd lines removed.
@@ -828,7 +883,7 @@ $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 ...
 $ cp snapshot2 snapshot
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  774 total
+  997 total
 ```
 
 The diff shows that we added the `_hasDisks` option, but otherwise reveals no
