@@ -18,10 +18,10 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
-	"html/template"
 	"maps"
 	"slices"
 	"strings"
+	"text/template"
 
 	"golang.org/x/tools/txtar"
 )
@@ -125,14 +125,24 @@ func (s *codeNode) buildEffectiveScript() ([]byte, error) {
 	default:
 		s.fatalf("%v: unknown output extension %q on %s", s, out.Ext, out.Filepath)
 	}
+
+	// Build up the default env
+	var env strings.Builder
+	for _, k := range slices.Sorted(maps.Keys(s.baseEnv)) {
+		fmt.Fprintf(&env, "env %s='%s'\n", k, s.baseEnv[k])
+	}
+
 	type args struct {
+		Env string
 		In  filenameAnalysis
 		Out filenameAnalysis
 	}
+
 	return s.templateScript(`
+	   {{.Env}}
 		{{if eq .Out.Ext "err"}}! {{end}}exec cue {{if and (eq .In.Ext "cue") (eq .Out.Ext "cue")}}eval{{else}}export{{end}} {{with .Out.Ext}}{{if ne . "err"}}--out {{.}}{{end}}{{end}} {{.In.Ext}}: {{.In.Filepath}}
 		cmp {{if eq .Out.Ext "err"}}stderr{{else}}stdout{{end}} {{.Out.Filepath}}
-		`, args{In: in, Out: out}), nil
+		`, args{Env: env.String(), In: in, Out: out}), nil
 }
 
 func (s codeNode) templateScript(tmpl string, arg any) []byte {
