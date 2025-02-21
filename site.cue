@@ -45,6 +45,15 @@ versions: {
 	}
 }
 
+// baseEnv provides the base environment for code node or multi-step scripts on
+// the site. Any guide can in theory override this base, by setting a different
+// value "on page".
+baseEnv: [string]: string
+baseEnv: {
+	CUE_EXPERIMENT: "evalv3=0"
+	CUE_DEBUG:      ""
+}
+
 // _contentDefaults is a recursive template for setting defaults
 // on pages declared under 'content'. They are, in effect, site
 // defaults, templated to each page.

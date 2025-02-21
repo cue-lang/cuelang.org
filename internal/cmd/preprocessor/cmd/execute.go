@@ -157,6 +157,14 @@ type executionContext struct {
 	// CUELANG_CUE_LATEST => v0.7.0
 	cueEnvVersions map[string]string
 
+	// baseEnv defines a set of environment variables we set as a preamble of
+	// each code node and multi-step script. This in effect means the values set
+	// in baseEnv act as default for each page on the site. Each code node or
+	// script block has the ability to subsequently override this by setting a
+	// different value in its (the code node or multi-step script element's)
+	// script via an 'export VAR=value' like.
+	baseEnv map[string]string
+
 	// selfHash is the hash of the preprocessor itself that hashing calculations
 	// should use if they need the preprocessor to affect the hash result.
 	selfHash string

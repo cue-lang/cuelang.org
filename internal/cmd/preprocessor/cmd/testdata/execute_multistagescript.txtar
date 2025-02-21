@@ -33,6 +33,11 @@ package site
 
 import "strings"
 
+baseEnv: {
+	CUE_EXPERIMENT: "evalv3=0"
+	CUE_DEBUG:      ""
+}
+
 // TODO: we should inject the following as a policy
 versions: cue: [x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 
@@ -288,7 +293,7 @@ package site
 						"in-subdir":       "pq05djSks/k5beG3FAunIhBX/Uv6BK2Xal5kPzQQ5qI="
 					}
 					multi_step: {
-						hash:       "QFFT4L9D979E84EUN16J1D8DEDQ54O1I6ASLCUPJST82RUDQSSTG===="
+						hash:       "OT8C0A053G40HGKOO63ES33EAAN0KSDOIGBIR5HOSH3GN0R8K6T0===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
