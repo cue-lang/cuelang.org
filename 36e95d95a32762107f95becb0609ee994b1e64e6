@@ -16,6 +16,24 @@
       "message": "Do we need this conditional? In which contexts, post-this-commit, will running with Go \u003c1.24.0 be permitted?",
       "revId": "36e95d95a32762107f95becb0609ee994b1e64e6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e35fb3de_db474497",
+        "filename": "playground/_scripts/cpWasmExec.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "True. We\u0027ve never had to test with a previous version. I\u0027ll revert this to the simplest fix that does not pivot on go version.",
+      "parentUuid": "35703d31_2bf848b3",
+      "revId": "36e95d95a32762107f95becb0609ee994b1e64e6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
