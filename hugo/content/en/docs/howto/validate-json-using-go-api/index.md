@@ -65,9 +65,11 @@ $ cue vet schema.cue bad.json -d '#Schema'
 age: conflicting values "173" and int (mismatched types string and int):
     ./bad.json:6:12
     ./schema.cue:3:9
-name: conflicting values string and ["Moby","Dick"] (mismatched types string and list):
+name: conflicting values ["Moby","Dick"] and string (mismatched types list and string):
     ./bad.json:2:13
     ./schema.cue:2:9
+name.0: field not allowed:
+    ./bad.json:2:13
 ```
 {{< /step >}}
 
@@ -161,7 +163,7 @@ $ go run . good.json
 ✅ JSON: ok
 $ go run . bad.json
 ❌ JSON: NOT ok
-#Schema.name: conflicting values string and ["Moby","Dick"] (mismatched types string and list) (and 1 more errors)
+#Schema.name.0: field not allowed (and 2 more errors)
 exit status 1
 ```
 {{< /step >}}
