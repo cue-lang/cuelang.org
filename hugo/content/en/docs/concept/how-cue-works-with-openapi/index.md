@@ -173,16 +173,11 @@ making them available as the `#Pet` schema:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBhcGkucGV0LnlhbWwgam9uYXRoYW4ueW1sIC1kICcjUGV0Jw==" }
 $ cue vet api.pet.yaml jonathan.yml -d '#Pet'
-kind: 3 errors in empty disjunction:
+kind: 2 errors in empty disjunction:
 kind: conflicting values "cat" and "tortoise":
     ./api.pet.yaml:11:7
-    ./api.pet.yaml:26:11
     ./jonathan.yml:2:7
 kind: conflicting values "dog" and "tortoise":
-    ./api.pet.yaml:26:11
-    ./jonathan.yml:2:7
-kind: conflicting values "goldfish" and "tortoise":
-    ./api.pet.yaml:26:11
     ./jonathan.yml:2:7
 ```
 
