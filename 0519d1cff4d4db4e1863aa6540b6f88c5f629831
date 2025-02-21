@@ -68,6 +68,24 @@
       "message": "I\u0027m not sure why this line\u0027s been removed. I don\u0027t think it\u0027s important, so long as it\u0027s not also going to cause (or is a sign of) CI flakes.",
       "revId": "0519d1cff4d4db4e1863aa6540b6f88c5f629831",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "749c6f53_2475ef0a",
+        "filename": "hugo/content/en/docs/tutorial/cfgmgmtcamp-2025/index.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-21T12:35:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80f10d56_6dc3e0c5",
+      "revId": "0519d1cff4d4db4e1863aa6540b6f88c5f629831",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
