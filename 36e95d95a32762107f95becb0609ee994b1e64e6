@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35703d31_2bf848b3",
+        "filename": "playground/_scripts/cpWasmExec.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-21T12:22:29Z",
+      "side": 1,
+      "message": "Do we need this conditional? In which contexts, post-this-commit, will running with Go \u003c1.24.0 be permitted?",
+      "revId": "36e95d95a32762107f95becb0609ee994b1e64e6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
