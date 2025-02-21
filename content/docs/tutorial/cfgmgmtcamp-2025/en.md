@@ -5,6 +5,10 @@ toc_hide: true
 no_index: true
 ---
 
+{{{with _script_ "en" "use cue tip"}}}
+export PATH="/cues/$CUELANG_CUE_TIP:$PATH"
+{{{end}}}
+
 {{{with _script_ "en" "HIDDEN: cue login"}}}
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json

@@ -167,7 +167,7 @@ After `cue mod tidy` completes, check out the contents of `cue.mod/module.cue`:
 $ cat cue.mod/module.cue
 module: "cue.example"
 language: {
-	version: "v0.12.0"
+	version: "v0.13.0"
 }
 deps: {
 	"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
@@ -187,18 +187,7 @@ more complete schema checking:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
 $ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
 services.web.volume: field not allowed:
-    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:8:2
-    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:8:8
-    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:18:22
-    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:19:4
-    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:19:30
-    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:272:18
-    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:475:3
     ./docker-compose.yaml:6:5
-    ./moreschema.cue:7:14
-    ./schema.cue:3:14
-    ./schema.cue:7:4
-    ./schema.cue:15:13
 ```
 
 Whoops - it's spotted an error in our original YAML file: the `web` service's
@@ -268,15 +257,12 @@ content.services.db.image: 3 errors in empty disjunction:
 content.services.db.image: conflicting values "docker.io/library/postgres:16.4" and "docker.io/library/postgres:17":
     ./docker-compose.cue:12:13
     ./schema.cue:10:12
-    ./service1.cue:5:10
 content.services.db.image: conflicting values "docker.io/library/postgres:16.5" and "docker.io/library/postgres:17":
     ./docker-compose.cue:12:13
     ./schema.cue:11:5
-    ./service1.cue:5:10
 content.services.db.image: conflicting values "docker.io/library/postgres:16.6" and "docker.io/library/postgres:17":
     ./docker-compose.cue:12:13
     ./schema.cue:12:5
-    ./service1.cue:5:10
 $ sed -i 's/postgres:17/postgres:16.4/' docker-compose.cue
 $ cue vet .:splotservice1
 ```

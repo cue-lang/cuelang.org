@@ -432,7 +432,7 @@ $ find . | grep kube.cue | xargs wc -l | tail -1
  1833 total
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1266 total
+ 1275 total
 ```
 
 `cue trim` removes configuration from files that is already generated
@@ -444,7 +444,7 @@ The following is proof that nothing changed semantically:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgfCB3YyAtbA==" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 | wc -l
-603
+587
 ```
 
 We can do better, though.
@@ -592,7 +592,7 @@ Then we run trim to further reduce our configuration:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi8uLi4KZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1131 total
+ 1212 total
 ```
 
 This is after removing the rewritten and now redundant deployment definition.
@@ -610,14 +610,14 @@ structs with a single element onto a single line. For instance:
 $ head frontend/breaddispatcher/kube.cue
 package kube
 
+service: breaddispatcher: {
+	spec: {
+		ports: [{}]
+	}
+}
 deployment: breaddispatcher: {
 	spec: {
 		template: {
-			metadata: {
-				annotations: {
-					"prometheus.io.scrape": "true"
-					"prometheus.io.port":   "7080"
-				}
 ```
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi8uLi4gLXMKaGVhZCBmcm9udGVuZC9icmVhZGRpc3BhdGNoZXIva3ViZS5jdWU=" }
@@ -625,6 +625,7 @@ $ cue trim ./... -s
 $ head frontend/breaddispatcher/kube.cue
 package kube
 
+service: breaddispatcher: spec: ports: [{}]
 deployment: breaddispatcher: spec: template: {
 	metadata: annotations: {
 		"prometheus.io.scrape": "true"
@@ -632,12 +633,11 @@ deployment: breaddispatcher: spec: template: {
 	}
 	spec: containers: [{
 		image: "gcr.io/myproj/breaddispatcher:v0.3.24"
-		ports: [{containerPort: 7080}]
 ```
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  979 total
+ 1020 total
 ```
 
 Another 150 lines lost!
@@ -707,7 +707,7 @@ Two lines with annotations added, improving consistency.
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./frontend/... -s
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  937 total
+ 1005 total
 ```
 
 Another 40 odd lines removed.
@@ -828,7 +828,7 @@ $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 ...
 $ cp snapshot2 snapshot
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  774 total
+  997 total
 ```
 
 The diff shows that we added the `_hasDisks` option, but otherwise reveals no
