@@ -376,6 +376,9 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	pf("#!/usr/bin/env -S bash -l\n")
 	pf("export TERM=dumb\n")
 	pf("export NO_COLOR=true\n")
+	for _, k := range slices.Sorted(maps.Keys(rf.baseEnv)) {
+		pf("export %s='%s'\n", k, rf.baseEnv[k])
+	}
 
 	// TODO: work out why we are not inheriting PATH from the setpriv environment
 	// whereas we do when we docker run from the command line.
