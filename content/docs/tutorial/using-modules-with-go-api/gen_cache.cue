@@ -11,7 +11,7 @@ package site
 								"initial go code":  "J/z9ocI557+JHA6IatltI0Jg7XrQzF6eN1P6e9JbWCk="
 							}
 							multi_step: {
-								hash:       "T52K44C7OGGNA16OMG57EFAEMCA7B1I1TBEGOQO6LI08SJCFH87G===="
+								hash:       "RDF6O20LJB1B4TL62V49FH9GOIT02C0RN5A7GQ07JKFCMOVC1FO0===="
 								scriptHash: "T0HS0O4UVLK9919E2VN9FPJTB0SOGNGOBTTGI9RRT679K8MO4F5G===="
 								steps: [{
 									doc:      ""

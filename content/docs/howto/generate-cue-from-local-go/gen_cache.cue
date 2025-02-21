@@ -12,7 +12,7 @@ package site
 								"generated cue": "A+ATHAzR4KRtgsZo3PN69jb88cxukImdZDnqNrplKt8="
 							}
 							multi_step: {
-								hash:       "JQQ845J2QL0KJFL8P0392GVSCT7TCJ4QC7V4NVTTD9EFUVI27Q10===="
+								hash:       "O07GK4333M7AMD0S6I81NOPFL8IE30CK2RVKGK8DKI52CG8M6JE0===="
 								scriptHash: "B0NV97C8H2CLFIPS1PTCFRE9O9OQD0C7TU4OPI3196788J6KNHU0===="
 								steps: [{
 									doc:      ""

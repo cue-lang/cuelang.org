@@ -10,7 +10,7 @@ package site
 								examples: "nLFAn/4cls6DlX+MfCKQVA0rtPgwaUt3mUyg6gw6AfY="
 							}
 							multi_step: {
-								hash:       "QOL66EJ0UUO91OB3EI5G528TPRQF840K7FMPILLGOIN7AUO509K0===="
+								hash:       "DQQ69E6LC3Q5R38K4UVHJ0G1OLV0NN7RV90I55V6Q9IAMOKTTBD0===="
 								scriptHash: "5U9IOJ0N56KQI44J6UAVMMRA03QJV5U3BQ36TEPH57N054J4NMJ0===="
 								steps: [{
 									doc:      ""

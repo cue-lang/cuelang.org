@@ -11,7 +11,7 @@ package site
 								"config.cue":    "j+c1VJWD0JLO7Vv0gFLgYtamg2Yy7CIXnFmL+YbEB/E="
 							}
 							multi_step: {
-								hash:       "5EDP11E59IGPTHQUMNMJ4FE7IMS0NVEED8O0HABONRJQG0EM6P70===="
+								hash:       "VBNSE737BN5BB17HVP7IKF0TALGC9U03SNDHGLAE87PPEA2EVJ6G===="
 								scriptHash: "SV2DHL950F2OJ34H73NG8QRM3BSI3B0J4UONRI6BV95QJ0GPQOP0===="
 								steps: [{
 									doc:      ""

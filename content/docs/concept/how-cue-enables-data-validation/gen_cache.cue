@@ -29,7 +29,7 @@ package site
 								definition:  "AR6jKTWvLqm6BOFD7KheexzumPSRCSf27NE1wW1Bp7o="
 							}
 							multi_step: {
-								hash:       "H9O1779GSC413FDS4I04SNA5CQ95G3OBTD3SAGGSTP9R256S8SB0===="
+								hash:       "B75U887A4APMM9JJIIIMD2M5B12NA5KIKIVNUHHJ5L956VDLAB4G===="
 								scriptHash: "5IRU0HUMAKN4O1TE41F2439MMECK8AS890TU89R3REV16HVJRUN0===="
 								steps: [{
 									doc:      ""
@@ -81,9 +81,6 @@ package site
 											aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
 											    ./data.yml:4:8
 											    ./schema.proto:5:3
-											anInt: incompatible integer bounds >99.0 and <100:
-											    ./policy.cue:9:10
-											    ./schema.json:14:21
 											aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (does not satisfy strings.Contains("25")):
 											    ./policy.cue:6:12
 											    ./data.yml:1:10
@@ -95,6 +92,9 @@ package site
 											    ./data.yml:1:10
 											    ./policy.cue:6:12
 											    ./schema.proto:2:3
+											anInt: incompatible integer bounds >99.0 and <100:
+											    ./schema.json:14:21
+											    ./policy.cue:9:10
 
 											"""
 								}, {

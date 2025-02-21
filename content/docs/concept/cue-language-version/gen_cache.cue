@@ -14,7 +14,7 @@ package site
 								a2: "QNqhIZ0k98G+v/FftAN5jYcdZ3T5Oxmjs8enSznSLUc="
 							}
 							multi_step: {
-								hash:       "9D2VM0D56AM82H4UFTKGCEEVFBFGL6E7PKCEJGGNF7LJHF66MNQG===="
+								hash:       "M8UJQOHSLL62GK5P35CEDE128R9V2KRK460PEAMR7JU19BDUOI5G===="
 								scriptHash: "75S3R6NI2BDQPFNHU17CSJJD4CCGUE9ETKOC8F0BOIHJBVI4624G===="
 								steps: []
 							}

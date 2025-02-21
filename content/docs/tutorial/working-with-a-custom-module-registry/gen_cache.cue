@@ -14,7 +14,7 @@ package site
 								"schema-v0.1.0":            "cufJbf93vxjNpuUo4XKoZG7Jxfz+YZs9bV2FhiJlefw="
 							}
 							multi_step: {
-								hash:       "GG533RJCUKN6HH8THK6B4V27C21R0GA1U0L3STEAPT70F8JHKHK0===="
+								hash:       "CLME0QATLTU0E29E730TRUP0EIH183GKRNNCJTGN6J9T1SDBE0UG===="
 								scriptHash: "MHNUU8GT0EEGLQCV7OVKG62H1EG7POGJ8ANFSN43U1OTV4QH2F3G===="
 								steps: [{
 									doc:      ""

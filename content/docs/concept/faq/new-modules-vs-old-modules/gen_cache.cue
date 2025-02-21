@@ -11,7 +11,7 @@ package site
 									"module.cue example": "EmWxsGhnRnd8oOf7D14ELSdQJrE/ANpKZHTIdNZok8w="
 								}
 								multi_step: {
-									hash:       "Q5LN35M9M4TG2QL4VOJJIG32714Q6TT76K2LECJARV9GS7MLRMB0===="
+									hash:       "4UD552AN5615L2CJ23RDNKI0U1DQT681SOTV640SAN4NOS5IQ8FG===="
 									scriptHash: "2Q0BEPQQI0IQ2R27G3FIQBF4LR0VVDRIN184O07266B10HKNBHV0===="
 									steps: []
 								}

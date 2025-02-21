@@ -12,7 +12,7 @@ package site
 								go:   "vRJNnFcLaYdngsLZRa8safC1jJxsgdsT/iMzwroTC1U="
 							}
 							multi_step: {
-								hash:       "TO79CTIFPTN7DI2TBGAFCL428IDBVGA1UH0NLV7S6C1STK4O89VG===="
+								hash:       "6MDHNFQ5BENJ4N20KEGCI3RJ9RQVLESHMUK8TK3T9PAP2KMI4330===="
 								scriptHash: "PN6Q9NILM79PUCS8M43BMBQ3R6ARPS41AKCPRJRVB6GCLJ5Q1C9G===="
 								steps: [{
 									doc:      ""

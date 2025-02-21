@@ -14,7 +14,7 @@ package site
 								"pomodoro.yml fixed": "99o+E11QkoGb7+9JLac27d/zdLBJTMOQFJqR4p3ezWE="
 							}
 							multi_step: {
-								hash:       "V88ARNHT131SDJSQKAQUT87UFIPU3LOVC8L59370VUB40455VQT0===="
+								hash:       "B6JLOCMJP10D34RQFCKCLN1O8HG7HIR65L2CD0VD8E5R75GKD9HG===="
 								scriptHash: "EEKUOTTD6EPHLI57C8VDPJM17PGNAHR4LE3VPVJK8JJJ1NVQDBEG===="
 								steps: [{
 									doc:      "#ellipsis 1"

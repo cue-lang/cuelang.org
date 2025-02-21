@@ -12,7 +12,7 @@ package site
 								"go convert basic.proto": "2IN+o7cBIDPRJ5z4ijqbP//3su6iXnnCkP/RKDvJs3M="
 							}
 							multi_step: {
-								hash:       "2BNMH8QQO8D8SQDKEBMOLCIOVN8MQMI330R73I5FCDDD3J5FHVJ0===="
+								hash:       "M68UGI34EKRLI8LQDOVOJS7O38P1Q9I2J2SRU1UVST19OBEQC6FG===="
 								scriptHash: "3QAATU2H20J6547PO3G51TE816SGFQMBO598VPOITD8PVM0F1M9G===="
 								steps: [{
 									doc:      ""

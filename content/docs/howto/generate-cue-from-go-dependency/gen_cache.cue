@@ -11,7 +11,7 @@ package site
 								"example.cue": "xZZDgKpHHKuehvljeyecC9R3rbrh7u6k3nixP68pT8M="
 							}
 							multi_step: {
-								hash:       "ILQMCHCGDHHNHSH88V801HJ4EML6DQ39QNV18RPGS38LC3FF1V70===="
+								hash:       "KPVVABLEANE2PLR372817T3K8JCJUKEV0J6M1VSKRE0ULEAUEDDG===="
 								scriptHash: "CN5VV8RD1CP4DU7D0I02KSLJU5MESQDV5BDJQ1D6LDEAQ0KICGSG===="
 								steps: [{
 									doc:      ""

@@ -15,7 +15,7 @@ package site
 									"references: fixed":     "tUrG3tD38kOlN/pdP2LNSX0FBZtqPgElDmFiISOCDUQ="
 								}
 								multi_step: {
-									hash:       "UL66BL4D950G1HTL5B3OHQOMTMFBQV1H5ONUMA5UK9C43MOQP500===="
+									hash:       "QK0SMRA30UU81SF78MGBJB0TFKGE030JCV91OQDHR609FORQH2UG===="
 									scriptHash: "VLNGG98FUABM36HDGI2AH2IQCN9I2OP2RSHEFN8T9SKDP3F1HRP0===="
 									steps: [{
 										doc:      ""

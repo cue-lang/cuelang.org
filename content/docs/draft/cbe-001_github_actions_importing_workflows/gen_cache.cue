@@ -15,7 +15,7 @@ package site
 								"14": "512JeJ5EKC+VZPa+svUb532RYTVjXlV3RwI1Ne3b8KA="
 							}
 							multi_step: {
-								hash:       "L1UOPDFLIAFEHTU81JLOBBTQ3MAVSQ8JEU9HKNPM9A5TQ0FRGB3G===="
+								hash:       "NFK40PKBJM7J2OLG5N2OGLU9N7V3BFD8JU20IVR1G4J9IH1PTML0===="
 								scriptHash: "JDMFCRKCVQU5H71EDL64A02NTJMOLU86EKO0PU80IOJJD6S24T6G===="
 								steps: [{
 									doc:      "# Required to interact with the central registry."

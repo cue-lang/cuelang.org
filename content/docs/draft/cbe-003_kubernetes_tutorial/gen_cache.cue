@@ -21,9 +21,14 @@ package site
 								kubectl:             "Czv/yRk01OehPP8wfIRdcnlImrdj44zi92Bd4dtbPm4="
 							}
 							multi_step: {
-								hash:       "Q3VIFQUMKATVRO14PI191K0GE53DA8U8PBU36J8I8U4C185QGLO0===="
-								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
+								hash:       "L7VCMRRGGAR5TJN47K2FT065DFEA37D0Q03905HCCSJ0LOH6M1FG===="
+								scriptHash: "HT1S278F158LNELGIPMLLF0J4QH7423NP218LVCG1TQ1FB184QTG===="
 								steps: [{
+									doc:      ""
+									cmd:      "export PATH=\"/cues/v0.12.0:$PATH\""
+									exitCode: 0
+									output:   ""
+								}, {
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"
 									exitCode: 0
@@ -268,7 +273,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1266 total
+											 1833 total
 
 											"""
 								}, {
@@ -281,7 +286,7 @@ package site
 									cmd:      "diff -wu snapshot snapshot2 | wc -l"
 									exitCode: 0
 									output: """
-											603
+											0
 
 											"""
 								}, {
@@ -324,7 +329,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1131 total
+											 1839 total
 
 											"""
 								}, {
@@ -334,14 +339,14 @@ package site
 									output: """
 											package kube
 
-											deployment: breaddispatcher: {
-											\tspec: {
-											\t\ttemplate: {
-											\t\t\tmetadata: {
-											\t\t\t\tannotations: {
-											\t\t\t\t\t"prometheus.io.scrape": "true"
-											\t\t\t\t\t"prometheus.io.port":   "7080"
-											\t\t\t\t}
+											service: breaddispatcher: {
+											\tapiVersion: "v1"
+											\tkind:       "Service"
+											\tmetadata: {
+											\t\tname: "breaddispatcher"
+											\t\tlabels: {
+											\t\t\tapp:       "breaddispatcher"
+											\t\t\tdomain:    "prod"
 
 											"""
 								}, {
@@ -356,14 +361,14 @@ package site
 									output: """
 											package kube
 
-											deployment: breaddispatcher: spec: template: {
-											\tmetadata: annotations: {
-											\t\t"prometheus.io.scrape": "true"
-											\t\t"prometheus.io.port":   "7080"
-											\t}
-											\tspec: containers: [{
-											\t\timage: "gcr.io/myproj/breaddispatcher:v0.3.24"
-											\t\tports: [{containerPort: 7080}]
+											service: breaddispatcher: {
+											\tapiVersion: "v1"
+											\tkind:       "Service"
+											\tmetadata: {
+											\t\tname: "breaddispatcher"
+											\t\tlabels: {
+											\t\t\tapp:       "breaddispatcher"
+											\t\t\tdomain:    "prod"
 
 											"""
 								}, {
@@ -371,7 +376,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  979 total
+											 1839 total
 
 											"""
 								}, {
@@ -422,7 +427,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  937 total
+											 1839 total
 
 											"""
 								}, {
@@ -463,7 +468,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  774 total
+											 1839 total
 
 											"""
 								}, {
@@ -512,11 +517,11 @@ package site
 											apiVersion: v1
 											kind: Service
 											metadata:
-											  name: bartender
 											  labels:
 											    app: bartender
-											    domain: prod
 											    component: frontend
+											    domain: prod
+											  name: bartender
 											spec:
 											  ports:
 											...

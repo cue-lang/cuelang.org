@@ -14,7 +14,7 @@ package site
 								"openapi-comparison": "NlJWYhBE/5yiaNGKSqIT9W/Weg9bwS/T4593nxYvHDA="
 							}
 							multi_step: {
-								hash:       "DB4BGKTJDPR6NNLR2L8FR9R8O9RAIU9AQG96VKTRFDQO5COEA780===="
+								hash:       "3FH9AQLLILGMROGOO0EHQK26U8BSFLH2QQSFOGNO18O34AQGBLR0===="
 								scriptHash: "GK2719D2TJ8UKQBRCC89E4BBQERL8R0M4H3U8294FH13A2BLSPOG===="
 								steps: [{
 									doc:      ""

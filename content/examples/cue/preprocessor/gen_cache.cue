@@ -15,7 +15,7 @@ package site
 								"a code example": "TbnR82ELtPc+uXEqkNM8DAddBfqi0CR/2g1YIpYpNp4="
 							}
 							multi_step: {
-								hash:       "VLF54FIL8MKHI6EQ1MTJEB2UIE659INRTMG4NEKKN4FFA45AD2V0===="
+								hash:       "61JR5DFS23QKUF7SR82GG0SQ18EB9GC996S107JS667LB6N4COR0===="
 								scriptHash: "1K5IR4L5KQL27R6E7ANJ8AGBNEVTHEJKDL4DS7JRTOBCVG32LFNG===="
 								steps: [{
 									doc:      ""
