@@ -12,8 +12,8 @@ package site
 								"generated cue": "9NV86YXTr0/KXTnCWri0OE/rFudpLGtVb7cAPfiQyJM="
 							}
 							multi_step: {
-								hash:       "V51K61MUVAB0GS33O0I2KJ9275IMVOGEB4FAVVKNQJOKMM3IU910===="
-								scriptHash: "4J95S039LLFGF0ODSNUD78KFRU1MIU6UGV5D7A3AMT19OS750I80===="
+								hash:       "BI31BVGK4BEI89NP80QKF05ND9QOSGHC7HKRSE2PSTSKFED79GGG===="
+								scriptHash: "B0NV97C8H2CLFIPS1PTCFRE9O9OQD0C7TU4OPI3196788J6KNHU0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -74,7 +74,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
 									exitCode: 0
 									output: """
 											...
