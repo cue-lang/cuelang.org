@@ -27,7 +27,7 @@ filesWithGoModInit="$(git grep -l 'go mod init' 'content/**.md')"
 filesWithGoModInitAndTxtarGoFiles="$(git grep -l '^-- .*\.go --$' -- $filesWithGoModInit)"
 
 if git grep --files-without-match '^go vet \./\.\.\.$' -- $filesWithGoModInitAndTxtarGoFiles; then exit 1; fi
-if git grep --files-without-match '^go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./...$' -- $filesWithGoModInitAndTxtarGoFiles; then exit 1; fi
+if git grep --files-without-match '^go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...$' -- $filesWithGoModInitAndTxtarGoFiles; then exit 1; fi
 
 echo 'Checking that internal links to other pages on the site are not direct (i.e. they must use "{{<relref>}}") ...'
 # This grep pattern first checks all markdown pages under content/ for the
