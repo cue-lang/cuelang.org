@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99b0d7a9_f7bc2058",
+        "filename": "content/docs/tutorial/cfgmgmtcamp-2025/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "Fixed as discussed.",
+      "parentUuid": "fbfa3072_fc3095cb",
+      "revId": "0519d1cff4d4db4e1863aa6540b6f88c5f629831",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80f10d56_6dc3e0c5",
