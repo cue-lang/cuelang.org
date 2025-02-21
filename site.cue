@@ -50,8 +50,8 @@ versions: {
 // value "on page".
 baseEnv: [string]: string
 baseEnv: {
-	CUE_EXPERIMENT: "evalv3=0"
-	CUE_DEBUG:      ""
+	CUE_EXPERIMENT: "evalv3=1"
+	CUE_DEBUG:      "openinline=0"
 }
 
 // _contentDefaults is a recursive template for setting defaults

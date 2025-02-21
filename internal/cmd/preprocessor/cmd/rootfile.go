@@ -559,6 +559,8 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	// trailing newline.
 	pf("echo")
 
+	os.WriteFile("/tmp/script.sh", []byte(sb.String()), 0666)
+
 	mss := multiStepScript{
 		bashScript:     sb.String(),
 		userScriptHash: base32.HexEncoding.EncodeToString(userScriptHash.Sum(nil)),
@@ -707,6 +709,8 @@ func (m *multiStepScript) run() {
 
 		// otherwise stderr is not line buffered
 		"-t",
+
+		"-v", "/tmp/save:/save",
 
 		// mount the bash script
 		"--mount", fmt.Sprintf("type=bind,source=%s,target=/scripts,readonly", scriptsDir),
