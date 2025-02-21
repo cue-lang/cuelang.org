@@ -12,8 +12,8 @@ package site
 								"go convert basic.proto": "JIY0ecSPseWCmf2tCkgGeCWCwIG2uYI+O6nV/lnplxw="
 							}
 							multi_step: {
-								hash:       "P9E6S3V31JL3O27NILDL2M2OG58Q0L74G98Q3AKVPNOQEPNSUVD0===="
-								scriptHash: "69FE7RE2G7D6ALRTAP748CKPCBF1O0JJBO0PJOO769K61AJA1SFG===="
+								hash:       "J0P45D4MNS7N0CSAR4GN2V0P1P0ONKIQR02LLR5M5NPBFKPIEAGG===="
+								scriptHash: "3QAATU2H20J6547PO3G51TE816SGFQMBO598VPOITD8PVM0F1M9G===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue import basic.proto"
@@ -96,7 +96,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
 									exitCode: 0
 									output: """
 											...
