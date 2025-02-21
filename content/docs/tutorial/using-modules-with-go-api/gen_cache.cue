@@ -11,8 +11,8 @@ package site
 								"initial go code":  "ydyAjktEaRhZ5yM09iI+21rzmhFuTlAU/1M8xjP8Nc8="
 							}
 							multi_step: {
-								hash:       "FE3M19K4VPQI9PRO91DQ3I2DUIMHE0E5387O1V832B4AA7VEO9J0===="
-								scriptHash: "9PD14153S4UU8C2R2JPOQDE1R5ROCHUVV7O3SRH9PAF4J54ASD0G===="
+								hash:       "FF1JDIL3L4QOSCCRUU8R49G4VGFACB4GC3AL9R5CRGV4QATRCSHG===="
+								scriptHash: "T0HS0O4UVLK9919E2VN9FPJTB0SOGNGOBTTGI9RRT679K8MO4F5G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -117,7 +117,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
 									exitCode: 0
 									output: """
 											...

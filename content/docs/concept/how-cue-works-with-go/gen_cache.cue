@@ -16,8 +16,8 @@ package site
 								"check go data - main.go":    "oZSjQVkP7rswnQeVxH9F+jEQsHIv0SbsEtB6lU/IH4M="
 							}
 							multi_step: {
-								hash:       "UBV7D4CNOTA50F76CHBGCFQP6B3FB8PHLQ79A2SB4GNI1UTBG5P0===="
-								scriptHash: "VHE7QT5EDQ53N1M0GJNPKI6VDJN6MNJ06FI62EC56SOHLHTOUNG0===="
+								hash:       "0HDG4N5BPRGLJGVKHQLOB9NA2M2O66LBV0P76P3NO1MVJ0PFNPU0===="
+								scriptHash: "5NTIV9FF7O983QF1LEU366P57P7Q9GOGJGPOR0A3HD9A9CC5FICG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -148,7 +148,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
 									exitCode: 0
 									output: """
 											...
@@ -198,7 +198,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
 									exitCode: 0
 									output: """
 											...
@@ -250,7 +250,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.5.1 ./..."
+									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
 									exitCode: 0
 									output: """
 											...
