@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "498138a0_e6ba4256",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "Good catch. I actually chose to fix this by escaping the single quote according to the convention of testscript, which is `\u0027\u0027`",
+      "parentUuid": "69ed95b3_6a3190da",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a3adb899_b6f3f6d9",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-02-21T10:55:01Z",
       "side": 1,
       "message": "nit: I might call this `EnvCmds` for clarity",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1201057a_62565011",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3adb899_b6f3f6d9",
       "revId": "120a05c1282337543400398e4aacc1c41cb85875",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9f449a7_04cf509c",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "Thanks - fixed by extracting to a variable and removing all the indenting, using a `[1:]` trick to removing the leading newline.",
+      "parentUuid": "676ca5a1_acdf78fa",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e49903ac_e038978c",
@@ -65,6 +119,30 @@
       "writtenOn": "2025-02-21T10:55:01Z",
       "side": 1,
       "message": "default values we set? otherwise I\u0027m not sure how to parse this",
+      "range": {
+        "startLine": 160,
+        "startChar": 51,
+        "endLine": 160,
+        "endChar": 72
+      },
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcce39aa_55aa009a",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "Reworded, and expanded the text slightly to make clearer.",
+      "parentUuid": "e49903ac_e038978c",
       "range": {
         "startLine": 160,
         "startChar": 51,
@@ -98,6 +176,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa645a74_b781f341",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "It\u0027s clearly catching. Done!",
+      "parentUuid": "29c04ca4_7425105b",
+      "range": {
+        "startLine": 151,
+        "startChar": 53,
+        "endLine": 151,
+        "endChar": 55
+      },
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da385667_ba0f8cb5",
@@ -111,6 +213,24 @@
       "writtenOn": "2025-02-21T10:55:01Z",
       "side": 1,
       "message": "likewise with single quotes; I might suggest that you reject single quotes as soon as baseEnv is loaded.",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e3ee761_8b6affe4",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-21T12:41:19Z",
+      "side": 1,
+      "message": "Fixed per my other comment.",
+      "parentUuid": "da385667_ba0f8cb5",
       "revId": "120a05c1282337543400398e4aacc1c41cb85875",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
