@@ -50,8 +50,8 @@ versions: {
 // value "on page".
 baseEnv: [string]: string
 baseEnv: {
-	CUE_EXPERIMENT: "evalv3=0"
-	CUE_DEBUG:      ""
+	CUE_EXPERIMENT: "evalv3=1"
+	CUE_DEBUG:      "openinline=0"
 }
 
 // _contentDefaults is a recursive template for setting defaults
@@ -273,7 +273,7 @@ template: ci.#writefs & {
 
 				// Site-wide notification-bar.
 				notification: {
-					type: "cue-minor-release-\(versions.cue.latest.majorDotMinor)"
+					type: "cue-tip-release-\(versions.cue.tip.v)"
 					// Omitting the button field removes the bar's button entirely.
 					button: {
 						link: "/docs/introduction/installation/"
@@ -281,7 +281,7 @@ template: ci.#writefs & {
 						text: "Install CUE"
 					}
 					// Markdown is permitted in the content field.
-					content: "**CUE \(versions.cue.latest.majorDotMinor) is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\(versions.cue.latest.majorDotMinor).0)"
+					content: "**CUE tip \(versions.cue.tip.v) ** -- with CUE_EXPERIMENT=evalv3=1 and CUE_DEBUG=openinline=0"
 				}
 
 				// The tag order in this file determines their relative positions at

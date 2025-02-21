@@ -92,7 +92,6 @@ Validate again with `cue vet`
 $ cue vet x.cue x.yaml
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
-    ./x.cue:7:21
     ./x.yaml:12:10
 ```
 

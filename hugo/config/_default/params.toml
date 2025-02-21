@@ -6,8 +6,8 @@ images = ['img/social.png']
 logo = 'svg/logo.svg'
 
 [notification]
-content = '**CUE v0.12 is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/v0.12.0)'
-type = 'cue-minor-release-v0.12'
+content = '**CUE tip v0.13.0-0.dev.0.20250225142354-26a698fe9ae9 ** -- with CUE_EXPERIMENT=evalv3=1 and CUE_DEBUG=openinline=0'
+type = 'cue-tip-release-v0.13.0-0.dev.0.20250225142354-26a698fe9ae9'
 
 [notification.button]
 icon = 'download'
