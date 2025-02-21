@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cdefbc7_eff1ed7e",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-21T10:55:01Z",
+      "side": 0,
+      "message": "oops!\n\nFWIW for this reason I sometimes rename `text/template` to `texttemplate` when imported, to make it super clear and obvious which one I mean to use.",
+      "revId": "31c713f5fc60da161965342cf94a8f20e87c5552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

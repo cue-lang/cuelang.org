@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69ed95b3_6a3190da",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-21T10:55:01Z",
+      "side": 1,
+      "message": "should we panic/fail if the env value has a single quote character? unlikely to happen, but if it did, the syntax error message would be really confusing.",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3adb899_b6f3f6d9",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-21T10:55:01Z",
+      "side": 1,
+      "message": "nit: I might call this `EnvCmds` for clarity",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "676ca5a1_acdf78fa",
+        "filename": "internal/cmd/preprocessor/cmd/code_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-21T10:55:01Z",
+      "side": 1,
+      "message": "mixing tabs and spaces?",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e49903ac_e038978c",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-21T10:55:01Z",
+      "side": 1,
+      "message": "default values we set? otherwise I\u0027m not sure how to parse this",
+      "range": {
+        "startLine": 160,
+        "startChar": 51,
+        "endLine": 160,
+        "endChar": 72
+      },
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29c04ca4_7425105b",
+        "filename": "internal/cmd/preprocessor/cmd/execute_context.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-21T10:55:01Z",
+      "side": 1,
+      "message": "cue ;)",
+      "range": {
+        "startLine": 151,
+        "startChar": 53,
+        "endLine": 151,
+        "endChar": 55
+      },
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da385667_ba0f8cb5",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-21T10:55:01Z",
+      "side": 1,
+      "message": "likewise with single quotes; I might suggest that you reject single quotes as soon as baseEnv is loaded.",
+      "revId": "120a05c1282337543400398e4aacc1c41cb85875",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
