@@ -4,6 +4,10 @@ draft: true
 no_index: true
 ---
 
+{{{with _script_ "en" "use cue tip"}}}
+export PATH="/cues/$CUELANG_CUE_LATEST:$PATH"
+{{{end}}}
+
 {{<caution>}}
 Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial
 {{</caution>}}
