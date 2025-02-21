@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac15c560_a7c18403",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-21T17:41:19Z",
+      "side": 1,
+      "message": "This was a typo; the default is also present in the `cue` block, below. Fixed.",
+      "parentUuid": "4cdd20b8_9d7832fa",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c106e0c_1c8e52ed",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e195d3ad_dd5cd504",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-21T17:41:19Z",
+      "side": 1,
+      "message": "I tried to use this canonical set, but failed as we then discussed. I left a TODO in the code tracking the only reference available: https://cuelang.org/cl/1209140.",
+      "parentUuid": "4c106e0c_1c8e52ed",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "293af078_f9a00db0",
@@ -65,6 +101,30 @@
       "writtenOn": "2025-02-20T20:01:43Z",
       "side": 1,
       "message": "This doesn\u0027t apply to all experimental commands. For example many of the `cue mod *` commands were experimental. And then they didn\u0027t move. I would keep it simple in terms of the explanation.",
+      "range": {
+        "startLine": 71,
+        "startChar": 30,
+        "endLine": 71,
+        "endChar": 65
+      },
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a0dfbc9_e3e4736b",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-21T17:41:19Z",
+      "side": 1,
+      "message": "Text updated and shortened to fit on a single line.",
+      "parentUuid": "293af078_f9a00db0",
       "range": {
         "startLine": 71,
         "startChar": 30,
@@ -94,6 +154,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3db6a7e0_cbf668f4",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-21T17:41:19Z",
+      "side": 1,
+      "message": "\u003e I would keep the explanation identical for it being experimental. We don\u0027t need subtly different wording. That just needs maintaining/reviewing separately.\n\nDone.\n\n\u003e A separate sentence regarding whether something is in an actual release will suffice.\n\nDone.\n\n\u003e That will save lots of the conditional blocks here.\n\nI wasn\u0027t able to figure out a way to reduce the number of conditionals, but hopefully the current flow is easier to follow and maintain.",
+      "parentUuid": "fd44eab2_a93d9005",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6e626263_e4cf0ec4",
         "filename": "content/docs/reference/command/commands.cue",
         "patchSetId": 1
@@ -105,6 +183,24 @@
       "writtenOn": "2025-02-20T20:01:43Z",
       "side": 1,
       "message": "This doesn\u0027t need to be specialised to tip to my mind. You know the version string is valid (see my earlier point about the valid versions) so you can simply do the following unconditionally:\n\n```\n\t\t{{{with _script_ \"en\" \"HIDDEN: set path for cueVersion tip\"}}}\n\t\texport PATH\u003d/cues/$CUELANG_CUE_\\(strings.ToUpper(cueVersion)):$PATH\n\t\t{{{end}}}\n```",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53871941_624ad4d4",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-21T17:41:19Z",
+      "side": 1,
+      "message": "Good point - done.",
+      "parentUuid": "6e626263_e4cf0ec4",
       "revId": "6133d77623790194e6098d234d8ea9e844000b87",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
