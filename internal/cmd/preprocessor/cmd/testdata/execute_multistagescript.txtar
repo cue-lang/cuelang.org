@@ -256,11 +256,11 @@ $ export MYVAR=value
 $ cue version
 cue version v0.12.0
 
-go version go1.23.5
+go version go1.24.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG asynctimerchan=1,gotypesalias=0,httpservecontentkeepheaders=1,tls3des=1,tlskyber=0,x509keypairleaf=0,x509negativeserial=1
+  DefaultGODEBUG asynctimerchan=1,gotestjsonbuildtext=1,gotypesalias=0,httpservecontentkeepheaders=1,multipathtcp=0,randseednop=0,rsa1024min=0,tls3des=1,tlsmlkem=0,x509keypairleaf=0,x509negativeserial=1,x509rsacrt=0,x509usepolicies=0
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
@@ -283,12 +283,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "CLbDbojR6t7jwdzmVRRiUodKyFMO3WKkya3MRH5qdHk="
-						"upload-some-cue": "UNc5Bpc2n0GKR/BKwQFZWBinkzbBMhVjn0G0pfeXZnQ="
-						"in-subdir":       "MYIosXvbriPfSEdG8rph1m2VM5MB+GazT2r7evHhwpc="
+						"hidden file":     "8001BtJu0Zx1uJmd4E5PQaWqN5w8jau0ALvR1t6abSk="
+						"upload-some-cue": "Cc428LRhDZ2L6oL6t/vfxw7UjsjEZXXy7B70IVoziKU="
+						"in-subdir":       "69+bKAk1tM9CI/FUgCZ0g1VlR82dIu9Rj+oXAE+2j2c="
 					}
 					multi_step: {
-						hash:       "3MPRLM53BT6P80BDHEB9P7F6OMQ7LFEA9I3PHFFBSM48V5R5JN70===="
+						hash:       "C18V17FJ65JOHF5UC4BEA3HK2DP7GDMNIH3G63ARJ1NJR02NUAJG===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -352,11 +352,11 @@ package site
 							output: """
 									cue version v0.12.0
 
-									go version go1.23.5
+									go version go1.24.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG asynctimerchan=1,gotypesalias=0,httpservecontentkeepheaders=1,tls3des=1,tlskyber=0,x509keypairleaf=0,x509negativeserial=1
+									  DefaultGODEBUG asynctimerchan=1,gotestjsonbuildtext=1,gotypesalias=0,httpservecontentkeepheaders=1,multipathtcp=0,randseednop=0,rsa1024min=0,tls3des=1,tlsmlkem=0,x509keypairleaf=0,x509negativeserial=1,x509rsacrt=0,x509usepolicies=0
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
