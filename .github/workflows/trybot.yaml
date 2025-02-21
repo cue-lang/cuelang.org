@@ -106,7 +106,7 @@ jobs:
         uses: actions/setup-go@v5
         with:
           cache: false
-          go-version: 1.23.5
+          go-version: 1.24.0
       - name: Set common go env vars
         run: |-
           go env -w GOTOOLCHAIN=local
@@ -147,8 +147,8 @@ jobs:
             ~/.cache/node-gyp
             ~/.npm
             ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.23.5-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.23.5
+          key: ${{ runner.os }}-1.24.0-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.24.0
       - if: |-
           ! (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
@@ -161,8 +161,8 @@ jobs:
             ~/.cache/node-gyp
             ~/.npm
             ${{ github.workspace }}/playground/.webpack_cache
-          key: ${{ runner.os }}-1.23.5-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-1.23.5
+          key: ${{ runner.os }}-1.24.0-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-1.24.0
       - if: |-
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
