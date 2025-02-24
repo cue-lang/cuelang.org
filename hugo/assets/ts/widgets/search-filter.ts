@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import Fuse from 'fuse.js';
-import { parseQuery, queryToUrlParams } from '../helpers/search';
+import { parseQuery, updateSearchParams } from '../helpers/search';
 import { FilterEvent, FilterItem, ParsedQuery, SearchEvents } from '../interfaces/search';
 import { BaseWidget } from './base-widget';
 
@@ -141,12 +141,7 @@ export class SearchFilter extends BaseWidget {
     }
 
     private updateUrl(refresh = true) {
-        const url = `${ window.location.href.split('?')[0] }?${ queryToUrlParams(this.parsedQuery) }`;
-        if (!refresh) {
-            window.history.pushState(null, '', url);
-        } else {
-            window.location.href = url;
-        }
+        updateSearchParams(this.parsedQuery, refresh);
     }
 
     private getParams(): void {

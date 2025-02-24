@@ -3,6 +3,7 @@
 {{ $contentTypes := slice }}
 {{ $contentType := .contentType | default "" }}
 {{ $preselectedTags := .preselectedTags | default "" }}
+{{ $searchTerm := .searchTerm | default "" }}
 {{ $type := .type | default "full" }}
 {{ $placeholder := (T "search_placeholder" ) }}
 
@@ -32,6 +33,7 @@
                 "type" "results"
                 "inputId" "searchbar"
                 "placeholder" $placeholder
+                "searchTerm" $searchTerm
             ) -}}
         </div>
         <div class="search__options">
