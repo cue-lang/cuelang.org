@@ -14,7 +14,7 @@ package site
 								"schema-v0.1.0":            "Zely3Os0lX3fz3v2uYDOUaef0QQSJhNAZYt5gEHwCdA="
 							}
 							multi_step: {
-								hash:       "5HK2JQ61V5RG1JGTKPMBQCALP5H1QS27MQ1O82A7IV5A1LA67190===="
+								hash:       "9JI50AUNF17NB7VFV3HE43PLHG96I4VRPOLGPK62DJ71CIA0F6L0===="
 								scriptHash: "MHNUU8GT0EEGLQCV7OVKG62H1EG7POGJ8ANFSN43U1OTV4QH2F3G===="
 								steps: [{
 									doc:      ""

@@ -10,7 +10,7 @@ package site
 								files: "b06K1UwHEpQuiAgoBt8C796Mjn/P+LpTkXbvr0v5E5s="
 							}
 							multi_step: {
-								hash:       "8Q5FRP7UTONB0H0440TS6QQLI13R2KEPN025SIJ8G3BAEFR82ING===="
+								hash:       "D1284ASFBOF9PR0G5AM3GIC627SINHUMR7AJN6ENB63SE14M5290===="
 								scriptHash: "6CVB0H73A96VKBHC2QKK1U9V1JH3C87HJA96GOMVDOJ279QGJRJ0===="
 								steps: [{
 									doc:      "#ellipsis 1"

@@ -10,7 +10,7 @@ package site
 								"main.go": "spz0lrTxIdzLLL8CW1XRR2CAn52oOK0uaCDA0xxx0ug="
 							}
 							multi_step: {
-								hash:       "UHB5N88JHSL8TAR7QQMMV167EJ5JA8I01IOP9JCIQT7EB7CRGUS0===="
+								hash:       "N3U5JNVPJ2BM4MTB7N6C12OTOEV477C28E1FL1VV50DCONNCKJJ0===="
 								scriptHash: "PFS09EA9LAL72BMA75LO63UMQGUA8EVJ31A2KS1T8A6OTDB30DL0===="
 								steps: [{
 									doc:      ""

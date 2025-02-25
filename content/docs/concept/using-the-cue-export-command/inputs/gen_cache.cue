@@ -38,7 +38,7 @@ package site
 									"stdin data":                                 "hRdwqwhGJgwySULBdzaeLAfXPu/eHCK65Y8/buTmNrc="
 								}
 								multi_step: {
-									hash:       "LK0JICKQ0CTCH455F970QHBDPDOUIJ81PJR527117PM2U20TEPVG===="
+									hash:       "JD4IEU3O7I7ROLC8555IL2EKBKRUPA7DP2VGV3NBG35K1VFK9PUG===="
 									scriptHash: "89HBMOT8AA8UQ8IK2O3ALTSIC68PN1CPK8P82O16CPN7KV1FOF80===="
 									steps: [{
 										doc:      "# \"A <u style='text-decoration-style: dotted;'>CUE package</u> input can either be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs,\""

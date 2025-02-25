@@ -16,7 +16,7 @@ package site
 								"check go data - main.go":    "RE50ydWtni//NoLdyWa5Hyxur7IFY8ukC2pzLOHcW3c="
 							}
 							multi_step: {
-								hash:       "841SG088J0VRLO0ACLH32R9MKUJ63U5SC5OE1JCIU0NT6OF42ROG===="
+								hash:       "9FQ8H8ML1KPP501FIGMQJVEF26BI5GTRGTGN8JO858OK54F6IPNG===="
 								scriptHash: "5NTIV9FF7O983QF1LEU366P57P7Q9GOGJGPOR0A3HD9A9CC5FICG===="
 								steps: [{
 									doc:      ""

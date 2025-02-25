@@ -14,7 +14,7 @@ package site
 								"main go program": "7sm021+68Gl2Pp2WXRRSQc9eVtNGZ9mO5iRVnxkFrxc="
 							}
 							multi_step: {
-								hash:       "0MR4SITR62U4V7Q5V7F5UFHI7K861170TF0214D05HCKHU22VPR0===="
+								hash:       "P8UK7FKS9MTNP1ARMMLLK13VBJ45UJ7276T96CAE81KO49DFM7I0===="
 								scriptHash: "K8P2K9ARENNNU45COQ81H3NU9Q6DCPBO5SB6DQKPQKBNBIJ43OD0===="
 								steps: [{
 									doc:      ""
@@ -46,9 +46,12 @@ package site
 									cmd:      "cue vet -d '#Person' schema.cue good.json bad.json"
 									exitCode: 1
 									output: """
-											name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    ./bad.json:2:13
 											    ./schema.cue:11:9
+											name.0: field not allowed:
+											    ./schema.cue:11:9
+											    ./bad.json:3:9
 
 											"""
 								}, {
@@ -56,7 +59,7 @@ package site
 									cmd:      "cue vet schema.json good.json bad.json"
 									exitCode: 1
 									output: """
-											name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    ./bad.json:2:13
 											    ./schema.json:13:13
 
@@ -113,7 +116,7 @@ package site
 									cmd:      "go run . schema.json bad.json"
 									exitCode: 1
 									output: """
-											name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    bad.json:2:13
 											    schema.json:13:13
 											exit status 1

@@ -15,7 +15,7 @@ package site
 								"14": "bsRuP6/nL8bLgfUA1WvMCDpFnqsdEbpWKxHiIwevVaY="
 							}
 							multi_step: {
-								hash:       "64ROONN0E17S0FS4NOFJERO226051ES37VJ8UPMKLUG69RC81CVG===="
+								hash:       "U1HB2JI2Q73ELNLN966NP05LMJJ5B5J4QGU2CTIL1TJSUVVD5EP0===="
 								scriptHash: "JDMFCRKCVQU5H71EDL64A02NTJMOLU86EKO0PU80IOJJD6S24T6G===="
 								steps: [{
 									doc:      "# Required to interact with the central registry."

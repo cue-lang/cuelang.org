@@ -13,7 +13,7 @@ package site
 								"fixed x.json": "lJroPiZzd9e61icGbeqm17213pEsO6HbYn94tEkJ+30="
 							}
 							multi_step: {
-								hash:       "79J867BJECVPKE0VO8109R04H6NNQ09Q9RDJI2B0URFM19FCRC40===="
+								hash:       "U3VQCKJ2LV5RJ06MOBND5KCSC5S78OV9UR8JCED5F2J9DDMAPF20===="
 								scriptHash: "UMP1JTJB5F0SVS45CSPDVU8KSNKPQ7SI0OEVSC7IQVT5NDCE1PM0===="
 								steps: [{
 									doc:      ""
@@ -27,7 +27,6 @@ package site
 									output: """
 											people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
 											    ./x.cue:3:11
-											    ./x.cue:7:21
 											    ./x.json:15:20
 
 											"""

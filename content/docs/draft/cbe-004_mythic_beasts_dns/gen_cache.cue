@@ -15,7 +15,7 @@ package site
 								"6": "7PPvOeFiZ03Xq1Hufk/0LS0iSufAE9LHSxNriYiFLWQ="
 							}
 							multi_step: {
-								hash:       "P0F07OVC7D571CU50ODGEA7BJECLA3DTL3GFJI24QK9L9067K4E0===="
+								hash:       "Q369NDA5KGO2I66M2BE6SC7UVO4EJ3FQD9QJ30J7S1OV58EVCQTG===="
 								scriptHash: "8T5T0B0K6S3NGIIOLM9255HN4DPN78BO9MK4UGDNESVR2HJLV9MG===="
 								steps: [{
 									doc: """

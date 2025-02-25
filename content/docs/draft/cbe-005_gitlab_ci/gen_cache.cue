@@ -15,7 +15,7 @@ package site
 								"14": "j9ruddZ6HYUOF81QzVNyRVE7EYORcseS8jiAlP6SSi0="
 							}
 							multi_step: {
-								hash:       "KG43GP6899PH7M0659RH7NC4IBNTJNKJQQDS7MMP3M8DPNNU6QG0===="
+								hash:       "NHR6UN289Q8HGDEFT2UHCFFCKM5S32OHHV97GF1KLSTO0PM7LRFG===="
 								scriptHash: "PD6KSPE0N7DV4196GSTFR55BJUE39C81CC5UKBUIJ6I5I64PIV70===="
 								steps: [{
 									doc:      "# Set up example content as a git repo."

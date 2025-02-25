@@ -13,7 +13,7 @@ package site
 								"main go":    "scWhsy8V/lLNCNGBDugaJCbVumu+JLu/tRxwEYzSBiI="
 							}
 							multi_step: {
-								hash:       "0476NPQCREQ5QM2SB0SVSDMNR8Q5KS2UKTS0NRHEKB3A2KUHI8R0===="
+								hash:       "2G9GM3MPA0NJ6AM6EUTACCSDG9BEC3HK85JPB9A9VEKBNDMFVI00===="
 								scriptHash: "VRCU95HO8RBJS50LVBVRRKDRP7V6EITLDGDQIOKP8UQJ0PCVV25G===="
 								steps: [{
 									doc:      ""
@@ -38,9 +38,11 @@ package site
 											age: conflicting values "173" and int (mismatched types string and int):
 											    ./bad.json:6:12
 											    ./schema.cue:3:9
-											name: conflicting values string and ["Moby","Dick"] (mismatched types string and list):
+											name: conflicting values ["Moby","Dick"] and string (mismatched types list and string):
 											    ./bad.json:2:13
 											    ./schema.cue:2:9
+											name.0: field not allowed:
+											    ./bad.json:2:13
 
 											"""
 								}, {
@@ -81,7 +83,7 @@ package site
 									exitCode: 1
 									output: """
 											❌ JSON: NOT ok
-											#Schema.name: conflicting values string and ["Moby","Dick"] (mismatched types string and list) (and 1 more errors)
+											#Schema.name.0: field not allowed (and 2 more errors)
 											exit status 1
 
 											"""

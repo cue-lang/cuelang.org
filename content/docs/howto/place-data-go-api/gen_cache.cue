@@ -11,7 +11,7 @@ package site
 								"go program":       "3jMgVIlKiN3IiMFyPAUis6y+op/CUKnDUaYSK0tlYc8="
 							}
 							multi_step: {
-								hash:       "DJRFTFIO2TD3METS9TQJTJ7CDJT3LCHKC2RT61C82TSLNIMQRM8G===="
+								hash:       "3V8RL4QHEUNV25PP0DB814F81SL5TQSGGR3TFU4898ACUG0SSR20===="
 								scriptHash: "R2AL3PVAL0HKM48I6UECPS1K1EMCAFIU5RUE5FRAUV3A7G9KP300===="
 								steps: [{
 									doc:      ""
