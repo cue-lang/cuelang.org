@@ -74,8 +74,8 @@ package splotpolicy
 
 Validate your data file:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
-$ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+$ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 services: field is required but not present:
     ./schema.cue:4:2
 ```
@@ -114,8 +114,8 @@ There might be some minor differences, such as the specific version of Postgres 
 
 Check that it satisfies the schema with a final `cue vet`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
-$ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+$ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 ```
 
 This is great - we can now assert some useful properties of the docker compose
@@ -184,8 +184,8 @@ file acts as a kind of lock file.
 Now let's re-run our `cue vet` command, taking advantage of the
 more complete schema checking:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
-$ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+$ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 services.web.volume: field not allowed:
     .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:8:2
     .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:8:8
@@ -221,8 +221,8 @@ services:
 
 A quick `cue vet` shows us that we're -- at last! -- in possession of some properly formed data:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
-$ cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+$ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 ```
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSAxMjcuMC4wLjE6NTU0NDMgJg==" }
@@ -260,10 +260,10 @@ import "github.com/cue-examples/splotpolicy"
 content: splotpolicy.#WebService
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE2LjQvcG9zdGdyZXM6MTcvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE3L3Bvc3RncmVzOjE2LjQvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAuOnNwbG90c2VydmljZTE=" }
-$ cue vet .:splotservice1
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE2LjQvcG9zdGdyZXM6MTcvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAtYyAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE3L3Bvc3RncmVzOjE2LjQvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAtYyAuOnNwbG90c2VydmljZTE=" }
+$ cue vet -c .:splotservice1
 $ sed -i 's/postgres:16.4/postgres:17/' docker-compose.cue
-$ cue vet .:splotservice1
+$ cue vet -c .:splotservice1
 content.services.db.image: 3 errors in empty disjunction:
 content.services.db.image: conflicting values "docker.io/library/postgres:16.4" and "docker.io/library/postgres:17":
     ./docker-compose.cue:12:13
@@ -278,7 +278,7 @@ content.services.db.image: conflicting values "docker.io/library/postgres:16.6" 
     ./schema.cue:12:5
     ./service1.cue:5:10
 $ sed -i 's/postgres:17/postgres:16.4/' docker-compose.cue
-$ cue vet .:splotservice1
+$ cue vet -c .:splotservice1
 ```
 
 This is basically as far as we managed to get during the CfgMgmtCamp 2025 demo
