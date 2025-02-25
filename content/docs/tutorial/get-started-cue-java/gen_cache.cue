@@ -10,7 +10,7 @@ package site
 								code: "lJc6UYT04yN+2D/aSCQsFsqgFw8VbBUZl2ovThEhtHs="
 							}
 							multi_step: {
-								hash:       "5U59QP88469UBN4GJA5M28E3CQM8FRHKO3S9EHGSRP9PMHQ9415G===="
+								hash:       "H588OT9HBADT72HHK8QP2K4TTC3LE5OV73CIF809BIMPE8D52C7G===="
 								scriptHash: "T0PHHPSK4D6A7JS96MQHACJ64720C9HHCHC3NISF0GBCG8N3VO3G===="
 								steps: [{
 									doc:      ""

@@ -14,7 +14,7 @@ package site
 								"go emit openapi main": "tb8vuCetCiwwREBAvV1g0t5jfC++P1TgQNTA6JtjZms="
 							}
 							multi_step: {
-								hash:       "UBQRE7OSUSGCKLB8IN4GHHGRHUDNEAOIFHJMM4BBDQLJP4C66DIG===="
+								hash:       "F2CFKUER37G31NDKMMT6JB99MIUTM1Q0FUTCI9D5B55M88PVRLS0===="
 								scriptHash: "TNDK8UALPJGGVMFVVAGSMV3QJA3CTFB1OD27P0HB9NBS0FPB1APG===="
 								steps: [{
 									doc:      ""
@@ -71,16 +71,11 @@ package site
 									cmd:      "cue vet api.pet.yaml jonathan.yml -d '#Pet'"
 									exitCode: 1
 									output: """
-											kind: 3 errors in empty disjunction:
+											kind: 2 errors in empty disjunction:
 											kind: conflicting values "cat" and "tortoise":
 											    ./api.pet.yaml:11:7
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 											kind: conflicting values "dog" and "tortoise":
-											    ./api.pet.yaml:26:11
-											    ./jonathan.yml:2:7
-											kind: conflicting values "goldfish" and "tortoise":
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 
 											"""

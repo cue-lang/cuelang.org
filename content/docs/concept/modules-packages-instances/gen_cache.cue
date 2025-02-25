@@ -19,7 +19,7 @@ package site
 								"stdlib-import-example":              "njaow+ggeRrENLHb72uNv3U/i+vDfuGxhL5XjhnMTus="
 							}
 							multi_step: {
-								hash:       "BCI4BPPR29JHR6IH7DVUFN06T5NNRUJK0HTTGMQFI9O70IMNUEN0===="
+								hash:       "43D062JG9J5KLUGFKP5VQIU8RR0RLLUKFNGGER2LBGG9LICJ0N30===="
 								scriptHash: "33TKFARPDRS0K4SESKA9PSPQMK0NJGIBVF6IBCMSIHOEUFBKUQHG===="
 								steps: [{
 									doc:      ""

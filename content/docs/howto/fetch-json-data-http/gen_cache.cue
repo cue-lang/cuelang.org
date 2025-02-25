@@ -11,7 +11,7 @@ package site
 								cc:                  "LUDltrgS2NBoD+zm95QNZeOweeBZsEUFhBy77LDErPg="
 							}
 							multi_step: {
-								hash:       "5QUDIIBUBFQ59EAA3I4G13OVHL7AQLBEN3KBADM2J5QIKEODU1GG===="
+								hash:       "NNMV8UI4KBV3G4KAFIIPIJBTFR7NQSTKMI5NF4FV1FHR4JM9G4SG===="
 								scriptHash: "HFFNH43U957JTQV8V6FJPCNFU0132TPRFDVKPL6ILOUIJKE4S4HG===="
 								steps: [{
 									doc:      ""

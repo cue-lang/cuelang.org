@@ -10,7 +10,7 @@ package site
 								"initial config.cue": "OrkRyKqgX7/bYkMAy8HWy+qzGZvwdYAMTuY4BVsKEiQ="
 							}
 							multi_step: {
-								hash:       "FMED3EN3B0J8BPM9QR2DNC5DKEIBHE2G7EOBOR1PR2B7Q0TNEG30===="
+								hash:       "QBMUVMGG8DQ4SD95T3G7ADFEV7LJ5KS9077GUF6OMT2L5RI1FR6G===="
 								scriptHash: "GJ54NFDKNIU9S4SES5TA4K59P6HGVANA0UVCIEM5TFOR2ORO15RG===="
 								steps: [{
 									doc:      ""

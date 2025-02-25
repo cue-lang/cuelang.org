@@ -11,7 +11,7 @@ package site
 								"test load":                              "6k23Qww24Z8Gub79BzW8QYheVQBGAFPJoOHe2jS0r6Y="
 							}
 							multi_step: {
-								hash:       "TDJ20G16AQQ0H5J12VK13QOK7C2D922RO5PMILGIHL1ADQ33IG2G===="
+								hash:       "S2FI84NMNEIHCO820O73AU5F19JMU10KN4F1OMF04HCQD757R700===="
 								scriptHash: "D3P3UH58SHI11V1TRCCG8IUA6R9GR7J8MAFOVUOVTVDEO8T6MKEG===="
 								steps: [{
 									doc:      ""
