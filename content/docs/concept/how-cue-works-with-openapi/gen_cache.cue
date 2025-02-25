@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":           "x40pe/I+0OiSEVdRj4D2JR4G4b2U0agMdUT965fibjs="
-								"api.pet.yaml":         "CrvidRF7mH/wQtHZKS0rET3Madax4RDi35Px9CWNlsg="
-								"api.pet.cue":          "XCKGuEP3Qp7B8qDsHsqnljJn6w8E1fkX4A9LyU3CTZY="
-								"jonathan.yml":         "kuNmIkq6ntzN3ziWvF/RXCBTZBc0EkdDFT4hvS8UppA="
-								"go emit openapi main": "ZlacNUtyIg09ZlgxsrwN/bIsM28PhML3VFfo+vpEw9g="
+								"schema.cue":           "ORjiCMQaMu74IlPmbTnp6Omg+Gmt4cs97yyJEoi8MdI="
+								"api.pet.yaml":         "Tm4SI8jIkOoURawyqLrvVcDz3n6OR2d1dRXAFKnxW+U="
+								"api.pet.cue":          "5zRvVST4fVT983veWt3l8d64/gvrllhpoqvThKDGKAk="
+								"jonathan.yml":         "RCnyPLNl4a0mHRc3TZULDmHsNn+JiCLIITJQlzTtGH4="
+								"go emit openapi main": "tb8vuCetCiwwREBAvV1g0t5jfC++P1TgQNTA6JtjZms="
 							}
 							multi_step: {
-								hash:       "CQS19HUCJVD17MGF1JKGOVU9I2CS3J1U0939M8E8D27IMGCBHFC0===="
+								hash:       "F2CFKUER37G31NDKMMT6JB99MIUTM1Q0FUTCI9D5B55M88PVRLS0===="
 								scriptHash: "TNDK8UALPJGGVMFVVAGSMV3QJA3CTFB1OD27P0HB9NBS0FPB1APG===="
 								steps: [{
 									doc:      ""
@@ -71,16 +71,11 @@ package site
 									cmd:      "cue vet api.pet.yaml jonathan.yml -d '#Pet'"
 									exitCode: 1
 									output: """
-											kind: 3 errors in empty disjunction:
+											kind: 2 errors in empty disjunction:
 											kind: conflicting values "cat" and "tortoise":
 											    ./api.pet.yaml:11:7
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 											kind: conflicting values "dog" and "tortoise":
-											    ./api.pet.yaml:26:11
-											    ./jonathan.yml:2:7
-											kind: conflicting values "goldfish" and "tortoise":
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 
 											"""

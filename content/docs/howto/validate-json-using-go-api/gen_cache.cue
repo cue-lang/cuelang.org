@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue schema": "G5+ETg2F5XvRY+lNGdQtDjmDItNk7aHSO9It6iOrpx0="
-								"good data":  "QC038l/HdfW+N+LCEEmn3Bq+bj1mdTpWrRpOSvcVUiU="
-								"bad data":   "c+fAWJjEyGDyacgmzMcQKStULgJNpOYKrZXo3qRYYvA="
-								"main go":    "j7tQecgh5FDj8hicKl4EvMqE1UZdTqE04OyPMRrghPc="
+								"cue schema": "XmouWR8MPNhftQKsWPEVWIgyGDtKJkWfZa4e4WY1l9o="
+								"good data":  "HpiG75eufMQ582a6+aWdHdUMKQoM/0ik9AebvI+oQ9Q="
+								"bad data":   "07Ks9S0kOnBdRkCj/zR8Cy1XPIi6+MXvvWNAMpl9mvo="
+								"main go":    "scWhsy8V/lLNCNGBDugaJCbVumu+JLu/tRxwEYzSBiI="
 							}
 							multi_step: {
-								hash:       "HKDVPSA3LQ2NITRSH3RD5ANL7R226H3P0R87P30GDRSLTEOR8I7G===="
+								hash:       "2G9GM3MPA0NJ6AM6EUTACCSDG9BEC3HK85JPB9A9VEKBNDMFVI00===="
 								scriptHash: "VRCU95HO8RBJS50LVBVRRKDRP7V6EITLDGDQIOKP8UQJ0PCVV25G===="
 								steps: [{
 									doc:      ""
@@ -38,9 +38,11 @@ package site
 											age: conflicting values "173" and int (mismatched types string and int):
 											    ./bad.json:6:12
 											    ./schema.cue:3:9
-											name: conflicting values string and ["Moby","Dick"] (mismatched types string and list):
+											name: conflicting values ["Moby","Dick"] and string (mismatched types list and string):
 											    ./bad.json:2:13
 											    ./schema.cue:2:9
+											name.0: field not allowed:
+											    ./bad.json:2:13
 
 											"""
 								}, {
@@ -81,7 +83,7 @@ package site
 									exitCode: 1
 									output: """
 											❌ JSON: NOT ok
-											#Schema.name: conflicting values string and ["Moby","Dick"] (mismatched types string and list) (and 1 more errors)
+											#Schema.name.0: field not allowed (and 2 more errors)
 											exit status 1
 
 											"""
