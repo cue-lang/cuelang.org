@@ -170,6 +170,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9529a32_fb4f5342",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-25T15:54:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3db6a7e0_cbf668f4",
+      "revId": "6133d77623790194e6098d234d8ea9e844000b87",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e626263_e4cf0ec4",

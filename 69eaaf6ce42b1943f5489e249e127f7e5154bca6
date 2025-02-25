@@ -50,6 +50,24 @@
       "message": "Commented out remnant.",
       "revId": "69eaaf6ce42b1943f5489e249e127f7e5154bca6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39331e40_1bd9bf9f",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-25T15:54:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8191d96e_03b6127c",
+      "revId": "69eaaf6ce42b1943f5489e249e127f7e5154bca6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
