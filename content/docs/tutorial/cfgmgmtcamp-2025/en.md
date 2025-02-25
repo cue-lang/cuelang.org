@@ -87,7 +87,7 @@ package splotpolicy
 Validate your data file:
 
 {{{with script "en" "vet 1"}}}
-! cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+! cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 {{{end}}}
 
 Oh dear! We've definitely found at least one problem in our
@@ -126,7 +126,7 @@ There might be some minor differences, such as the specific version of Postgres 
 Check that it satisfies the schema with a final `cue vet`:
 
 {{{with script "en" "vet 2"}}}
-cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 {{{end}}}
 
 This is great - we can now assert some useful properties of the docker compose
@@ -187,7 +187,7 @@ Now let's re-run our `cue vet` command, taking advantage of the
 more complete schema checking:
 
 {{{with script "en" "cue vet against imported module fail"}}}
-! cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+! cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 {{{end}}}
 
 Whoops - it's spotted an error in our original YAML file: the `web` service's
@@ -212,7 +212,7 @@ services:
 A quick `cue vet` shows us that we're -- at last! -- in possession of some properly formed data:
 
 {{{with script "en" "cue vet against imported module pass"}}}
-cue vet .:splotpolicy docker-compose.yaml -d '#WebService'
+cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 {{{end}}}
 
 {{{with script "en" "start local registry"}}}
@@ -238,11 +238,11 @@ content: splotpolicy.#WebService
 {{{end}}}
 
 {{{with script "en" "cue vet of consumer module"}}}
-cue vet .:splotservice1
+cue vet -c .:splotservice1
 sed -i 's/postgres:16.4/postgres:17/' docker-compose.cue
-! cue vet .:splotservice1
+! cue vet -c .:splotservice1
 sed -i 's/postgres:17/postgres:16.4/' docker-compose.cue
-cue vet .:splotservice1
+cue vet -c .:splotservice1
 {{{end}}}
 
 This is basically as far as we managed to get during the CfgMgmtCamp 2025 demo

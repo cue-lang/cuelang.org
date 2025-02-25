@@ -15,8 +15,8 @@ package site
 								"link splotpolicy and splotservice1": "WRzU5nu61zqrAUWp5sqr+pt25L4IdtKZ/qHs59op/kg="
 							}
 							multi_step: {
-								hash:       "KT3TKFC0OJNGKIVN75OCP1C4IR1RVVPVQ6VO56QU0RE2289CFVGG===="
-								scriptHash: "UKHVMC4J69LALJPOJUMUAS9QGHFCE9J6SMLG10I56IJAAIRACJL0===="
+								hash:       "B4DMCRTCBPBKFU30MHNSILRU8HRN8J7N4EHNKJNLFC198OGJPKVG===="
+								scriptHash: "D400CN0SES1U7PK9SLC4NJT5DJ9RNFL9M51DT6ONBCC5N2KGFOP0===="
 								steps: [{
 									doc:      ""
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -42,7 +42,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet .:splotpolicy docker-compose.yaml -d '#WebService'"
+									cmd:      "cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'"
 									exitCode: 1
 									output: """
 											services: field is required but not present:
@@ -51,7 +51,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet .:splotpolicy docker-compose.yaml -d '#WebService'"
+									cmd:      "cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -83,7 +83,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet .:splotpolicy docker-compose.yaml -d '#WebService'"
+									cmd:      "cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'"
 									exitCode: 1
 									output: """
 											services.web.volume: field not allowed:
@@ -103,7 +103,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet .:splotpolicy docker-compose.yaml -d '#WebService'"
+									cmd:      "cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -156,7 +156,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet .:splotservice1"
+									cmd:      "cue vet -c .:splotservice1"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -166,7 +166,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet .:splotservice1"
+									cmd:      "cue vet -c .:splotservice1"
 									exitCode: 1
 									output: """
 											content.services.db.image: 3 errors in empty disjunction:
@@ -191,7 +191,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet .:splotservice1"
+									cmd:      "cue vet -c .:splotservice1"
 									exitCode: 0
 									output:   ""
 								}]
