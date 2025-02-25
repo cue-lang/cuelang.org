@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04644dc2_7dadb9d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-25T15:48:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba20b57b_4468999e",
+      "range": {
+        "startLine": 7,
+        "startChar": 33,
+        "endLine": 7,
+        "endChar": 40
+      },
+      "revId": "7e4a29a70accabf82d41865e5395dd636453dd63",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24726b49_46c42d09",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-02-25T14:22:50Z",
       "side": 1,
       "message": "Please document that the only change made here is to the CUE version then re-running `_scripts/regenPostInfraChange.bash`.",
+      "revId": "7e4a29a70accabf82d41865e5395dd636453dd63",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bc58b00_63ae45e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-25T15:48:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24726b49_46c42d09",
       "revId": "7e4a29a70accabf82d41865e5395dd636453dd63",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -95,6 +137,30 @@
       "side": 1,
       "message": "Reload: please use v0.13.0-0.dev.0.20250225142354-26a698fe9ae9",
       "parentUuid": "adeb5eeb_c38fec26",
+      "range": {
+        "startLine": 23,
+        "startChar": 50,
+        "endLine": 23,
+        "endChar": 62
+      },
+      "revId": "7e4a29a70accabf82d41865e5395dd636453dd63",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f955acc_07776986",
+        "filename": "site.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-25T15:48:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aac327a_eda81c2f",
       "range": {
         "startLine": 23,
         "startChar": 50,
