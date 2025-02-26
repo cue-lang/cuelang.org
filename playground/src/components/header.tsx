@@ -100,7 +100,7 @@ export class Header extends React.Component<HeaderProps, HeaderState>
                           icon="dots-vertical" id="menu" title="Menu" type="icon">
                         <div className="cue-menu__header">
                             <p className="cue-menu__title">CUE Playground</p>
-                            <p className="cue-menu__subtitle">CUE Release: { CUEVersion }</p>
+                            <p className="cue-menu__subtitle">CUE { CUEVersion }</p>
                         </div>
                         <div className="cue-menu__content">
                             <ul className="cue-nav">
