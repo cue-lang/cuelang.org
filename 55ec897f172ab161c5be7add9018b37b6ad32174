@@ -16,6 +16,57 @@
       "message": "PTAL.",
       "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "526f347d_36e751b7",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T17:31:41Z",
+      "side": 1,
+      "message": "Same comment as previously with respect to the change in path presenting as \"all the content has changed\" \n\nChanging the path in the previous or later CL avoids that.\n\nNot critical per se in this case.",
+      "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ffc50a6_6a4ee8e7",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T17:31:41Z",
+      "side": 1,
+      "message": "I\u0027ll have a think about rewording this slightly, I\u0027m not feeling particularly creative right now.",
+      "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af9982d0_7779a9fb",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T17:31:41Z",
+      "side": 1,
+      "message": "Per my comment in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1209309, we should be explicit with either `cue vet -c` or `cue vet -c\u003dfalse`",
+      "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
