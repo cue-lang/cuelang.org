@@ -16,7 +16,7 @@ fi
 
 echo "Building WASM backend"
 GOOS=js GOARCH=wasm go build -o main.wasm
-cp $(go env GOROOT)/misc/wasm/wasm_exec.js ./src
+./_scripts/cpWasmExec.bash
 
 echo "Running npm run start"
 npm run start
