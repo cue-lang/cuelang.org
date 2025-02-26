@@ -102,6 +102,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c4ee21bd_12a30d0c",
+        "filename": "content/docs/howto/export-top-level-list-element/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T09:32:36Z",
+      "side": 1,
+      "message": "I don\u0027t understand the suggestion. The disconnect that my eye is drawn to is that we demonstrate the short form but, as I said in my comment, we explain the long form _first_. i.e. the user has to read past the long form to see the parenthesised short form that they\u0027ve just seen in the example. Does that not strike you as a slight disconnect?",
+      "parentUuid": "37c08377_7e30157f",
+      "range": {
+        "startLine": 35,
+        "startChar": 14,
+        "endLine": 35,
+        "endChar": 20
+      },
+      "revId": "ca35ab120e761b945ac2aa7190eefb652310a171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8fe04696_e93cfd0c",
         "filename": "content/docs/howto/export-top-level-list-element/en.md",
         "patchSetId": 2
