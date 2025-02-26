@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da0a7337_1d97851b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T16:34:46Z",
+      "side": 1,
+      "message": "I\u0027ll defer to @mvdan@mvdan.cc on a number of points, so this is just a quick drive-by review.",
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a911f7b7_94edf603",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T16:34:46Z",
+      "side": 1,
+      "message": "Isn\u0027t this more of an FAQ?",
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31537cec_aafe9532",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T16:34:46Z",
+      "side": 1,
+      "message": "I think we want to encourage the full spelling of these environment variables to avoid an ambiguity:\n\n```\nCUE_EXPERIMENT\u003devalv3\u003d1\n```",
+      "range": {
+        "startLine": 28,
+        "startChar": 56,
+        "endLine": 28,
+        "endChar": 62
+      },
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e3624a4_35f43e44",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T16:34:46Z",
+      "side": 1,
+      "message": "Ditto re full spelling of the environment variable value they should set. Forcing the user to go to another page to understand the values doesn\u0027t feel like the right thing to do here. I think we should explicitly spell out what the options are, and when they should choose those options.",
+      "range": {
+        "startLine": 103,
+        "startChar": 54,
+        "endLine": 103,
+        "endChar": 64
+      },
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
