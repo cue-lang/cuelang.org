@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb8eade0_60689c79",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-26T16:43:54Z",
+      "side": 1,
+      "message": "Grammar. Reword entire sentence.",
+      "range": {
+        "startLine": 76,
+        "startChar": 19,
+        "endLine": 78,
+        "endChar": 27
+      },
+      "revId": "d5ba13aebb2887996913e23a0383e84c441631ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
