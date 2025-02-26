@@ -91,16 +91,16 @@ go install cuelang.org/go/cmd/cue@latest
 lists the installable releases and pre-releases that you can specify instead of
 `latest`.
 
-You can also install the tip version of `cue` by specifying `master`:
+You can also install the development version of `cue` by specifying `master`:
 
 {{{with script "en" "go install cmd/cue@master"}}}
 #ellipsis 0
 go install cuelang.org/go/cmd/cue@master
 {{{end}}}
 
-The capabilities of the tip version change frequently because it contains the
+The capabilities of the development version change frequently because it contains the
 most recent, unreleased code.
- 
+
 #### Install on Arch Linux
 
 On Arch Linux
