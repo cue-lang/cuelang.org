@@ -4,15 +4,16 @@ package site
 		docs: {
 			draft: {
 				cldd: {
-					"5-minutes-with-k8s-io": {
+					"getting-started-with-kubernetes-cue": {
 						page: {
 							cache: {
 								upload: {
-									"1": "m48EjUUf+mIr+b1Bg8u8BGCdKhq91FB7kw7rSYovOBU="
+									"1":  "434/ETFDDclRkFccxC4Uh04qsBIEMZ+PlqhZ1aH+wpA="
+									yaml: "uG8k0cmXAPrb0JNFCnYFRNpFCGiolwX0VTblcZHRrmk="
 								}
 								multi_step: {
-									hash:       "OBPDQ1H8ILOKOD6N16M9OJH3347R64B8LU01DJRJD88PQO89RCO0===="
-									scriptHash: "AKQJBFIOFSP4VHKKRF9R5DJMS6EC5TH788QLJ75DCPBCBKVE84A0===="
+									hash:       "AGDODQA2GIQ9DDLO4K5PVGVBBMN0TNUNBDNTKN4T80HLTVBQ0FOG===="
+									scriptHash: "2G5IJTIP72L6EQGN0URVKJ26L16U97T46UKPEIS6KIVMOHAJ33DG===="
 									steps: [{
 										doc:      ""
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -29,7 +30,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue mod init"
+										cmd:      "cue mod init cue.example"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,40 +40,24 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue vet .:k8s"
+										cmd:      "cue vet"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue export .:k8s --outfile manifest.yml"
+										cmd:      "cue export --outfile manifest.yml"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cat manifest.yml"
+										cmd:      "mv manifest.yml .manifest.yml"
 										exitCode: 0
-										output: """
-												apiVersion: apps/v1
-												kind: Deployment
-												metadata:
-												  labels:
-												    app: example1
-												  name: example1
-												spec:
-												  replicas: 1
-												  selector:
-												    matchLabels:
-												      app: example1
-												  template:
-												    metadata:
-												      labels:
-												        app: example1
-												    spec:
-												      containers:
-												        - image: nginx:latest
-												          name: nginx
-
-												"""
+										output:   ""
+									}, {
+										doc:      ""
+										cmd:      "diff manifest.yml .manifest.yml"
+										exitCode: 0
+										output:   ""
 									}]
 								}
 							}
