@@ -57,6 +57,30 @@
       },
       "revId": "f083dec20e30cb53bb27f3f87b4ade57bf4741f1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bfb9168_8e2ecd69",
+        "filename": "internal/patch/tip.diff",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-26T12:02:50Z",
+      "side": 1,
+      "message": "I\u0027m going to rely on the fact that tip.cuelang.org is clue enough for now. This notification is too long already.",
+      "parentUuid": "eafa2a37_239dd656",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "f083dec20e30cb53bb27f3f87b4ade57bf4741f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
