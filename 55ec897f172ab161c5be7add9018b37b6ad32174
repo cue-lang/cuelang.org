@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eea714b0_4f8a4e70",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-26T18:07:38Z",
+      "side": 1,
+      "message": "I didn\u0027t think that applied in this context, as this is a fresh CL updating an existing page without any existing patchsets; but I now realise I should\u0027ve made the change as a preparatory PS/CL. Apologies - I /had/ actually thought about this, but was keeping in mind your previous request in the context of \"CL with a previously-reviewed PS\".\n\n\u003e Not critical per se in this case.\n\nRename is left as-is, given this.",
+      "parentUuid": "526f347d_36e751b7",
+      "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ffc50a6_6a4ee8e7",
@@ -65,6 +83,24 @@
       "writtenOn": "2025-02-26T17:31:41Z",
       "side": 1,
       "message": "Per my comment in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1209309, we should be explicit with either `cue vet -c` or `cue vet -c\u003dfalse`",
+      "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f528a4a0_4e68de91",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-26T18:07:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af9982d0_7779a9fb",
       "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
