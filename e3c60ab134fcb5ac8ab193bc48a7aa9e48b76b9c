@@ -39,6 +39,30 @@
       },
       "revId": "e3c60ab134fcb5ac8ab193bc48a7aa9e48b76b9c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07f81b2a_6114f25d",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:46:47Z",
+      "side": 1,
+      "message": "Done. Linked from each non-heading use of the term.",
+      "parentUuid": "061b14ca_81ffec41",
+      "range": {
+        "startLine": 14,
+        "startChar": 8,
+        "endLine": 14,
+        "endChar": 24
+      },
+      "revId": "e3c60ab134fcb5ac8ab193bc48a7aa9e48b76b9c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
