@@ -70,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "191fa1ab_7d07eb31",
+        "filename": "content/docs/draft/cldd/getting-started-with-kubernetes-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T11:32:51Z",
+      "side": 1,
+      "message": "We can leave this for later.",
+      "parentUuid": "3ffc50a6_6a4ee8e7",
+      "revId": "55ec897f172ab161c5be7add9018b37b6ad32174",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af9982d0_7779a9fb",
