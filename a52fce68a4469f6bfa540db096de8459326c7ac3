@@ -16,6 +16,126 @@
       "message": "PTAL.",
       "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1bd6857_829d88e7",
+        "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T10:54:15Z",
+      "side": 1,
+      "message": "We don\u0027t need to emphasise this. The words do the job!",
+      "range": {
+        "startLine": 37,
+        "startChar": 52,
+        "endLine": 38,
+        "endChar": 17
+      },
+      "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "522a15be_112055a5",
+        "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T10:54:15Z",
+      "side": 1,
+      "message": "Link to registry.cue.works.",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 24
+      },
+      "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36c5d3d1_c435e6d5",
+        "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T10:54:15Z",
+      "side": 1,
+      "message": "\"modules\".",
+      "range": {
+        "startLine": 93,
+        "startChar": 48,
+        "endLine": 93,
+        "endChar": 55
+      },
+      "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ab5aabd_cdc2d831",
+        "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T10:54:15Z",
+      "side": 1,
+      "message": "Given my suggestion below regarding `cat cue.mod/module.cue`, doing `cue mod tidy` will not give a stable result. So we need to do a hidden `cue mod get $mod@$version` for now, and _then_ a `cue mod tidy`.",
+      "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd90b8d6_78766ec9",
+        "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T10:54:15Z",
+      "side": 1,
+      "message": "I would suggest `cat`-ing `cue.mod/module.cue` to show the dependency has been added.",
+      "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "188a8840_89f5545f",
+        "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T10:54:15Z",
+      "side": 1,
+      "message": "I would suggest including a line in here about how updating to a later version of curated module follows a different route, and that we will add a guide on that too.\n\nReason being, someone might be left under the impression that `cue refactor imports` is the way of managing versions. If they\u0027re not familiar with modules etc. So we can \"fix\" that by being explicit about an action they will likely want to take at some point.",
+      "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
