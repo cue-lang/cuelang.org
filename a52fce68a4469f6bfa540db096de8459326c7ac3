@@ -89,6 +89,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d4ec18a7_ea5a740c",
+        "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-02-27T13:09:54Z",
+      "side": 1,
+      "message": "I\u0027d actually omit the `@v0` here. It\u0027s largely idiomatic to omit the major version from import paths when there\u0027s only one major version a module in play.",
+      "revId": "a52fce68a4469f6bfa540db096de8459326c7ac3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6ab5aabd_cdc2d831",
         "filename": "content/docs/draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry/en.md",
         "patchSetId": 3
