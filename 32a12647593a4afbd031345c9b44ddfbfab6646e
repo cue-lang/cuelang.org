@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c73f43d2_72380caa",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:46:26Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "3f25ff39_b89b4db6",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88810156_5028b18c",
@@ -65,6 +83,24 @@
       "writtenOn": "2025-02-27T13:38:03Z",
       "side": 1,
       "message": "should the link to `cue help environment` be dropped now that it\u0027s at the bottom of the page on its own? this applies to all four links at the bottom, but while the other three are crucial to each of the sections, this one is not nearly as important.",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1089a75d_bf1d510c",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:46:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88810156_5028b18c",
       "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -92,6 +128,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d64dbf67_34ab3bde",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:46:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ace2086_396cf8d2",
+      "range": {
+        "startLine": 38,
+        "startChar": 68,
+        "endLine": 38,
+        "endChar": 77
+      },
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be58bc01_3f1471d4",
@@ -109,6 +169,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5013ac7_152ca83a",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:46:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be58bc01_3f1471d4",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ab3e165_9475c228",
@@ -122,6 +200,24 @@
       "writtenOn": "2025-02-27T13:38:03Z",
       "side": 1,
       "message": "if we want this to be a question too, which I lean towards, we could word it like:\n\n\u003e Why am I getting new \"field not allowed\" errors?",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fe7f7fe_d00e00f4",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:46:26Z",
+      "side": 1,
+      "message": "I\u0027d chosen not to update this section header, but as I\u0027m doing at least one more PS I\u0027ll flip this heading too.",
+      "parentUuid": "5ab3e165_9475c228",
       "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
