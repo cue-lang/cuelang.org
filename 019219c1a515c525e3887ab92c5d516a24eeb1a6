@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2568e88_d1f48f9d",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:21:08Z",
+      "side": 1,
+      "message": "Done. Updated to `evalv2`/`evalv3` in fixed width font, as per offline discussion.",
+      "parentUuid": "66e34cf0_35dc710b",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "019219c1a515c525e3887ab92c5d516a24eeb1a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f545f47d_1fe8a655",
@@ -54,6 +78,24 @@
       "writtenOn": "2025-02-27T11:30:47Z",
       "side": 1,
       "message": "We should spell out the full Go file to my mind. These sorts of standalone bits of code are harder to understand and rot _very_ quickly.\n\n\n```\npackage main\n\nimport (\n\t\"fmt\"\n\n\t\"cuelang.org/go/cue/cuecontext\"\n)\n\nfunc main() {\n\tctx :\u003d cuecontext.New(cuecontext.EvaluatorVersion(cuecontext.EvalV3))\n\tv :\u003d ctx.CompileString(\"42\")\n\tfmt.Println(v)\n}\n```\n\nAnd in hidden commands we should run this to make sure it works.",
+      "revId": "019219c1a515c525e3887ab92c5d516a24eeb1a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "171cd281_96838db1",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T13:21:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f545f47d_1fe8a655",
       "revId": "019219c1a515c525e3887ab92c5d516a24eeb1a6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
