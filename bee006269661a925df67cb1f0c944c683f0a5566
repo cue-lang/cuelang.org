@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "14cf3ba9_57a2cdb2",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T06:59:54Z",
+      "side": 1,
+      "message": "We haven\u0027t worded the page as a list of questions. I suspect it\u0027s probably more of a (brief) concept guide, given the form it ended up taking; but I\u0027m not sure the distinction is important for the critical path of getting this page submitted before this afternoon. I\u0027ll defer to you on that, however.",
+      "parentUuid": "a911f7b7_94edf603",
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "31537cec_aafe9532",
         "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
         "patchSetId": 2
@@ -48,6 +66,30 @@
       "writtenOn": "2025-02-26T16:34:46Z",
       "side": 1,
       "message": "I think we want to encourage the full spelling of these environment variables to avoid an ambiguity:\n\n```\nCUE_EXPERIMENT\u003devalv3\u003d1\n```",
+      "range": {
+        "startLine": 28,
+        "startChar": 56,
+        "endLine": 28,
+        "endChar": 62
+      },
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "502eb3eb_bbfe75ab",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T06:59:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31537cec_aafe9532",
       "range": {
         "startLine": 28,
         "startChar": 56,
@@ -71,6 +113,30 @@
       "writtenOn": "2025-02-26T16:34:46Z",
       "side": 1,
       "message": "Ditto re full spelling of the environment variable value they should set. Forcing the user to go to another page to understand the values doesn\u0027t feel like the right thing to do here. I think we should explicitly spell out what the options are, and when they should choose those options.",
+      "range": {
+        "startLine": 103,
+        "startChar": 54,
+        "endLine": 103,
+        "endChar": 64
+      },
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81ccabb4_e222dbb1",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T06:59:54Z",
+      "side": 1,
+      "message": "Done, as I believe there are no additional options that need to be mentioned on this page.",
+      "parentUuid": "7e3624a4_35f43e44",
       "range": {
         "startLine": 103,
         "startChar": 54,
