@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b1a7198e_bdde5e60",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T11:30:47Z",
+      "side": 1,
+      "message": "I think we should phrase them as questions. \n\ne.g.\n\n```\nHow do I switch to Evalv3?\nHow do I fix \"field not allowed\" errors?\n```\n\n\nIt would then sit nicely alongside https://cuelang.org/docs/concept/faq/new-modules-vs-old-modules/.",
+      "parentUuid": "14cf3ba9_57a2cdb2",
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "31537cec_aafe9532",
         "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
         "patchSetId": 2
@@ -137,6 +155,30 @@
       "side": 1,
       "message": "Done, as I believe there are no additional options that need to be mentioned on this page.",
       "parentUuid": "7e3624a4_35f43e44",
+      "range": {
+        "startLine": 103,
+        "startChar": 54,
+        "endLine": 103,
+        "endChar": 64
+      },
+      "revId": "bee006269661a925df67cb1f0c944c683f0a5566",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d04dd641_42833260",
+        "filename": "content/docs/howto/upgrade-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-27T11:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81ccabb4_e222dbb1",
       "range": {
         "startLine": 103,
         "startChar": 54,
