@@ -16,6 +16,114 @@
       "message": "PTAL.",
       "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24738225_77613af5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-27T13:38:03Z",
+      "side": 1,
+      "message": "SGTM! Just a few last nits. Only being so nitpicky because this page will be very important, and read by almost every CUE user :)",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f25ff39_b89b4db6",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-27T13:38:03Z",
+      "side": 1,
+      "message": "FYI I ran this section past Marcel to sanity check I didn\u0027t get anything wrong, or forget some big change/refactor that happened in evalv3. He gave a thumbs up, saying it\u0027s \"pretty good overall\".",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88810156_5028b18c",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-27T13:38:03Z",
+      "side": 1,
+      "message": "should the link to `cue help environment` be dropped now that it\u0027s at the bottom of the page on its own? this applies to all four links at the bottom, but while the other three are crucial to each of the sections, this one is not nearly as important.",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ace2086_396cf8d2",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-27T13:38:03Z",
+      "side": 1,
+      "message": "how about \"with a `cuecontext` option:\"? it\u0027s a bit more precise that way.",
+      "range": {
+        "startLine": 38,
+        "startChar": 68,
+        "endLine": 38,
+        "endChar": 77
+      },
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be58bc01_3f1471d4",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-27T13:38:03Z",
+      "side": 1,
+      "message": "How about:\n\n\n\u003e What might break when I switch to `evalv3`?\n\nA bit shorter, and avoids the word \"breakage\", which I always find a bit awkward.",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ab3e165_9475c228",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-02-27T13:38:03Z",
+      "side": 1,
+      "message": "if we want this to be a question too, which I lean towards, we could word it like:\n\n\u003e Why am I getting new \"field not allowed\" errors?",
+      "revId": "32a12647593a4afbd031345c9b44ddfbfab6646e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
