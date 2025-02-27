@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3642baf0_9ae52ff9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-27T14:38:28Z",
+      "side": 1,
+      "message": "@mvdan@mvdan.cc PTAL at PS6..7",
+      "revId": "b3ec4687046819b09f8e7cbbeba7ddd342a85b9c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
