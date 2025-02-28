@@ -33,6 +33,109 @@
       "message": "+Rog",
       "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d569b99_45995244",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-28T16:56:54Z",
+      "side": 1,
+      "message": "We need to very clearly and explicitly call out with a warning that these docs are work in progress, and feedback in encouraged. With a link to the ability to raise an issue.",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 5,
+        "endChar": 2
+      },
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53815458_bd2c7e3c",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-28T16:56:54Z",
+      "side": 1,
+      "message": "Link to docs explaining modules.",
+      "range": {
+        "startLine": 8,
+        "startChar": 49,
+        "endLine": 8,
+        "endChar": 56
+      },
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c3a0d5b_a4d13baf",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-28T16:56:54Z",
+      "side": 1,
+      "message": "Follow this list with something along the lines of \"In the future, the search function of Central Registry will be used the primary means of discovery...\"",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "442b596f_8e70be46",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-28T16:56:54Z",
+      "side": 1,
+      "message": "I\u0027ll see what @rogpeppe@gmail.com thinks but we could/should have a \"standard\" command at this point something like:\n\n```\ncue mod get github.com/cue-tmp/jsonschema-pub/exp3/k8s.io@latest\n```\n\nThat feels better than words explaining the import path.\n\nThis however doesn\u0027t really align with the rest of the docs which encourage `cue mod tidy`.",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28ab8ee9_b51e2140",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-28T16:56:54Z",
+      "side": 1,
+      "message": "Missing target",
+      "range": {
+        "startLine": 128,
+        "startChar": 20,
+        "endLine": 128,
+        "endChar": 22
+      },
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
