@@ -16,6 +16,24 @@
       "message": "FYI I took advantage of this CL to also drop the openinline default note comment, given https://review.gerrithub.io/c/cue-lang/cue/+/1209503. See the change to the commit message too.",
       "revId": "8e75e5bcc5f23c5ff226c4d67584116072697c98",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a40c9d4e_464d209d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-28T15:21:03Z",
+      "side": 1,
+      "message": "LGTM, unless there\u0027s any uncertainty about CL 1209503 getting submitted.",
+      "parentUuid": "e5c2a287_c5c2a153",
+      "revId": "8e75e5bcc5f23c5ff226c4d67584116072697c98",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
