@@ -12,8 +12,8 @@ package site
 									"manifest post": "qJnDT+PmKsDlDyUW7KCPZ8j7nyD+FzPuImtENP2qRys="
 								}
 								multi_step: {
-									hash:       "E99RU13PL94S4O972MF4M1JU8MAIPFPOJ8OLJAOUJ2UB0V3QQH0G===="
-									scriptHash: "MU3NISVR7BIUF4MUGG12S9FHQB74SH2DUHAM9CP70NAPCPI950B0===="
+									hash:       "9GBFS5KP4D0G1IFM6EGAOQFL1LGLQE571FSE3NCU0QD8LEAK5K3G===="
+									scriptHash: "0SCUK8G2ACVAAD8UE99CHSHL8F6R0526DPH15NVO8KF5LE5AOOPG===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -65,10 +65,13 @@ package site
 
 												"""
 									}, {
-										doc:      ""
+										doc:      "#ellipsis 0"
 										cmd:      "go get k8s.io/apimachinery"
 										exitCode: 0
-										output:   ""
+										output: """
+												...
+
+												"""
 									}, {
 										doc:      ""
 										cmd:      "cue get go k8s.io/api/apps/v1"
