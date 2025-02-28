@@ -8,6 +8,7 @@ The CUE [Central Registry](https://registry.cue.works)
 provides some carefully selected and curated CUE modules that you can use to
 create validated configurations across a range of popular projects and
 services, or to check that your existing configurations are valid.
+(Find out more about the Central Registry [over on its FAQ]({{<relref"central-registry-faq">}}))
 
 Here are some common questions that folks have asked about curated modules.
 Please do join [the CUE community]({{<relref"community">}}) and ask us anything
