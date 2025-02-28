@@ -58,6 +58,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a48b9bac_fa371ce5",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-28T17:24:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d569b99_45995244",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 5,
+        "endChar": 2
+      },
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "53815458_bd2c7e3c",
@@ -71,6 +95,30 @@
       "writtenOn": "2025-02-28T16:56:54Z",
       "side": 1,
       "message": "Link to docs explaining modules.",
+      "range": {
+        "startLine": 8,
+        "startChar": 49,
+        "endLine": 8,
+        "endChar": 56
+      },
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa939ed7_7ec43ccd",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-28T17:24:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53815458_bd2c7e3c",
       "range": {
         "startLine": 8,
         "startChar": 49,
@@ -98,6 +146,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "578032cd_482cc70a",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-28T17:24:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c3a0d5b_a4d13baf",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "442b596f_8e70be46",
@@ -117,6 +183,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "98a89dd2_9175170b",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-28T17:24:28Z",
+      "side": 1,
+      "message": "My latest PS doesn\u0027t change anything in this area - I\u0027ll wait to see what conclusion is reached.",
+      "parentUuid": "442b596f_8e70be46",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28ab8ee9_b51e2140",
         "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
         "patchSetId": 2
@@ -128,6 +212,30 @@
       "writtenOn": "2025-02-28T16:56:54Z",
       "side": 1,
       "message": "Missing target",
+      "range": {
+        "startLine": 128,
+        "startChar": 20,
+        "endLine": 128,
+        "endChar": 22
+      },
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbbd92b2_8c4e7234",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-02-28T17:24:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28ab8ee9_b51e2140",
       "range": {
         "startLine": 128,
         "startChar": 20,
