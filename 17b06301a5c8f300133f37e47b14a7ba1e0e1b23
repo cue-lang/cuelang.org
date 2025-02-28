@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "17b06301a5c8f300133f37e47b14a7ba1e0e1b23",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f11c16db_c0b459ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-02-28T13:08:30Z",
+      "side": 1,
+      "message": "Assuming green CI.",
+      "revId": "17b06301a5c8f300133f37e47b14a7ba1e0e1b23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
