@@ -27,6 +27,7 @@ cue mod init kube.example
 go mod init kube.example
 #ellipsis 0
 go get k8s.io/api
+#ellipsis 0
 go get k8s.io/apimachinery
 {{{end}}}
 {{{with script "en" "cue get go"}}}
