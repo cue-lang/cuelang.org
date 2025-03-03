@@ -39,9 +39,8 @@ way to discover suitable modules to use.
 "*Kubernetes, also known as K8s, is an open source system for automating deployment, scaling, and management of containerized applications.*"
 ([kubernetes.io](https://kubernetes.io/))
 
-Each package in this module is named after its respective Go source code package.\
-For example, to use the schemas defined in the Go package `k8s.io/api/core/v1`
-import the CUE package `github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/core/v1`.
+Each package in this module is named after its respective Go source code package.
+For example, to use the schemas defined in the Go package `k8s.io/api/core/v1` use the following:
 ```cue
 import "github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/core/v1"
 ```
