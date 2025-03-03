@@ -67,6 +67,24 @@
       "message": "Is that backslash deliberate?",
       "revId": "f944f823d8ca8bba9ceec81cef74a7785c3a3bdf",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32bb8658_0532d422",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-03T16:28:30Z",
+      "side": 1,
+      "message": "Yes - at the end of a line it causes a line break. If you recall, we reviewed it with and without this line break, and the form without the line break pushed the CUE package name in the following sentence on to a new line, which we both felt rendered poorly. IIRC!",
+      "parentUuid": "cf3cc091_85414c6a",
+      "revId": "f944f823d8ca8bba9ceec81cef74a7785c3a3bdf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
