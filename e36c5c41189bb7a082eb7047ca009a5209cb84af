@@ -199,6 +199,40 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51028cdb_d0e9330f",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-03-03T14:57:48Z",
+      "side": 1,
+      "message": "We _really_ need to get non-versioned doc links working.",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9fcd7f3_0803b7f8",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-03-03T14:57:48Z",
+      "side": 1,
+      "message": "I think just \"Import path\" would work fine here and elsewhere.",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28ab8ee9_b51e2140",
