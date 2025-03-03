@@ -1,0 +1,13 @@
+{{- $baseUrl := urls.Parse $.Site.Params.Baseurl -}}
+{{- $versionCommit := print $.Site.Params.github_repo "/commit/" .Site.Data.Repository.Revision -}}
+{{- $issueBody := (print
+    "### What page were you looking at?\n\n"
+    .Page.Permalink "\n\n"
+    "### What version of the site were you looking at?\n\n"
+    $versionCommit "\n\n"
+    "### What did you do?\n\n\n\n"
+    "### What did you expect?\n\n\n\n"
+    "### What did you see instead?\n\n") | urlquery
+-}}
+{{- (print "https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&title=cuelang.org:%20&body="
+$issueBody) | htmlUnescape | safeHTML -}}
