@@ -25,7 +25,7 @@ The curated modules currently published cover:
 - [Kubernetes](#kubernetes)
 - [GitHub Actions](#github-actions)
 - [GitLab CI](#gitlab-ci)
-- [Buildkite](#buildkite)
+- [Buildkite Pipelines](#buildkite-pipelines)
 - [Azure Pipelines](#azure-pipelines)
 - [Argo CD](#argo-cd)
 - [Go Releaser](#go-releaser)
@@ -39,78 +39,86 @@ way to discover suitable modules to use.
 "*Kubernetes, also known as K8s, is an open source system for automating deployment, scaling, and management of containerized applications.*"
 ([kubernetes.io](https://kubernetes.io/))
 
-Each package in this module is named after its respective Go source code
-package. For example, to use the schemas defined in the Go package
-`k8s.io/api/core/v1` import the CUE package
-`github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/core/v1`.
-
-Module path: `github.com/cue-tmp/jsonschema-pub/exp3/k8s.io`.
+Each package in this module is named after its respective Go source code package.\
+For example, to use the schemas defined in the Go package `k8s.io/api/core/v1`
+import the CUE package `github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/core/v1`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/core/v1"
+```
 Learn more with:
 - {{<linkto/inline"draft/cldd/getting-started-with-kubernetes-cue">}}
 - {{<linkto/inline"draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry">}} by replacing existing `cue get go` schemas
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/k8s.io@v0.1.0)
 
 ### GitHub Actions
-*GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD: build, test, and deploy your code right from GitHub.*
+"*GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD: build, test, and deploy your code right from GitHub.*"
 ([github.com](https://github.com/features/actions))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/githubactions`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
+```
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/githubactions@v0.6.0)
 
 ### GitLab CI
-*GitLab’s complete CI/CD solution that accelerates delivery with automation.*
+"*GitLab’s complete CI/CD solution that accelerates delivery with automation.*"
 ([gitlab.com](https://about.gitlab.com/solutions/continuous-integration/))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci"
+```
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/gitlab@v0.2.0)
 
 ### Buildkite Pipelines
-*An advanced, scalable, and composable workflow orchestration engine that enables blazing fast delivery at any scale.*
+"*An advanced, scalable, and composable workflow orchestration engine that enables blazing fast delivery at any scale.*"
 ([buildkite.com](https://buildkite.com/))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/buildkite`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/buildkite"
+```
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/buildkite@v0.0.0)
 
 ### Azure Pipelines
-*Continuously build, test, and deploy to any platform and cloud.*
+"*Continuously build, test, and deploy to any platform and cloud.*"
 ([azure.microsoft.com](https://azure.microsoft.com/en-us/products/devops/pipelines/))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
+```
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@v0.0.0)
 
 ### Argo CD
-*A declarative, GitOps continuous delivery tool for Kubernetes.*
+"*A declarative, GitOps continuous delivery tool for Kubernetes.*"
 ([argo-cd.readthedocs.io](https://argo-cd.readthedocs.io/en/stable/))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/argocd`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
+```
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/argocd@v0.0.0)
 
 ### Go Releaser
-*GoReleaser does everything you need to create a professional release process for Go, Rust, and Zig projects.*
+"*GoReleaser does everything you need to create a professional release process for Go, Rust, and Zig projects.*"
 ([goreleaser.com](https://goreleaser.com/))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/goreleaser`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
+```
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@v0.1.0)
 
 ### Docker Compose
-*A specification for developer-centric application definition used in Cloud Native Applications.*
+"*A specification for developer-centric application definition used in Cloud Native Applications.*"
 ([compose-spec.io](https://compose-spec.io/))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/dockercompose`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
+```
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/dockercompose@v0.0.0)
 
 ### npm's `package.json`
-*npm is the standard package manager for Node.js.*
+"*npm is the standard package manager for Node.js.*"
 ([nodejs.org](https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager))
-
-Import path: `github.com/cue-tmp/jsonschema-pub/exp3/npmpackage`.
+```cue
+import "github.com/cue-tmp/jsonschema-pub/exp3/npmpackage"
+```
 Learn more with:
 - [Specifics of npm's package.json handling](https://docs.npmjs.com/cli/v11/configuring-npm/package-json)
 <!-- TODO: link to Central Registry when docs pages don't break on modules that have dependencies. -->
