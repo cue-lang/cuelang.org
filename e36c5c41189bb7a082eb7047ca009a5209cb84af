@@ -201,6 +201,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e57ff104_bbaf1985",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-03T15:19:43Z",
+      "side": 1,
+      "message": "In offline discussion with @rogpeppe@gmail.com we\u0027ve concluded that the infrequency of `cue mod get` being the user\u0027s go-to command to \"install\" a module, and the lack of alignment with the \"usual\" `cue mod tidy` workflow, means that demo\u0027ing `cue mod get` on the page in place of the very short preamble to the module/import path doesn\u0027t feel like the right solution.",
+      "parentUuid": "98a89dd2_9175170b",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "51028cdb_d0e9330f",
         "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
         "patchSetId": 2
@@ -229,6 +247,24 @@
       "writtenOn": "2025-03-03T14:57:48Z",
       "side": 1,
       "message": "I think just \"Import path\" would work fine here and elsewhere.",
+      "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ce1ce5a_b087a0ca",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-03T15:19:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9fcd7f3_0803b7f8",
       "revId": "e36c5c41189bb7a082eb7047ca009a5209cb84af",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
