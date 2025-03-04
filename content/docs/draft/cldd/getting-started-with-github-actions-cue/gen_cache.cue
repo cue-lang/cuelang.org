@@ -8,13 +8,14 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1": "tnjnqb1ujmzwqGvwMwrn7g9lC6jJBCWL/DdgRd9df6A="
+									"1":  "bgG0YjFw4MMAIgbVcNF5tz1t4robO6U8UVFkMardTuE="
+									yaml: "RsvosuOxTNGvcoVCgLQuoUkgUVEHUxMbpWijoIHMXS0="
 								}
 								multi_step: {
-									hash:       "V0SVNGDJG18SPOADVTGK2EFPNM1TAJ5A1DCEG6SBSOUM7JVGGPI0===="
-									scriptHash: "LDUF2BB040TG6KC891JEB4FIA4QDEPJ9E1UH9J71V6OPT0B3I7IG===="
+									hash:       "74UDN6922LGBPKNKR6I4LO837IN8JTEU6CODEOUSNPM7LALVU7P0===="
+									scriptHash: "OJCF6VF6BT7OGR1SH1M6PP59OMSU2ILB9RS5SU14OFNFJSDO67VG===="
 									steps: [{
-										doc:      ""
+										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
 										exitCode: 0
 										output:   ""
@@ -29,7 +30,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue mod init"
+										cmd:      "cue mod init cue.example"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,35 +40,29 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue vet .:gha"
+										cmd:      "cue vet -c"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue export .:gha --outfile workflow.yml"
+										cmd:      "mkdir -p .github/workflows/"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cat workflow.yml"
+										cmd:      "cue export --outfile .github/workflows/workflow.yml -e workflows.example"
 										exitCode: 0
-										output: """
-												jobs:
-												  check-bats-version:
-												    runs-on: ubuntu-latest
-												    steps:
-												      - uses: actions/checkout@v4
-												      - uses: actions/setup-node@v4
-												        with:
-												          node-version: "20"
-												      - run: npm install -g bats
-												      - run: bats -v
-												name: learn-github-actions
-												run-name: ${{ github.actor }} is learning GitHub Actions
-												"on":
-												  - push
-
-												"""
+										output:   ""
+									}, {
+										doc:      ""
+										cmd:      "mv .github/workflows/workflow.yml{,.got}"
+										exitCode: 0
+										output:   ""
+									}, {
+										doc:      ""
+										cmd:      "diff -u .github/workflows/workflow.yml{,.got}"
+										exitCode: 0
+										output:   ""
 									}]
 								}
 							}
