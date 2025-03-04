@@ -1,31 +1,62 @@
 ---
-title: 5 minutes with ... githubactions
+title: Getting started with GitHub Actions + CUE
 draft: true
 no_index: true
 ---
 
-{{{with _script_ "en" "HIDDEN setup auth"}}}
+{{{with _script_ "en" "HIDDEN setup"}}}
+# Registry auth
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
+# Local git repo
+git config --global user.email 'user@cue.example'
+git config --global user.name user
+git init -q
+{{{end}}}
+{{{with _upload_ "en" "gitignore"}}}
+#nofmt
+-- .gitignore --
+/.cache/
+/.config/
+/.gitconfig
+/.workflow.yml
+/.gitignore
 {{{end}}}
 
-## Login to the Central Registry
+The CUE
+[Central Registry](https://registry.cue.works/)
+provides a well-known location for well-known schemas, including those for
+[YAML workflow files](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
+used by [GitHub Actions](https://github.com/features/actions).
 
+This guide shows you how to get started defining your GitHub Actions workflows in CUE.
+
+## Login to the Central Registry
 {{{with script "en" "cue login"}}}
 #norun
 cue login
 {{{end}}}
+The
+[Central Registry](https://registry.cue.works)
+requires authentication, so you need to login before you can use its schemas.
 
 ## Initialise your local CUE module
-
 {{{with script "en" "cue mod init"}}}
 cue mod init
 {{{end}}}
+CUE that uses schemas and modules from the
+[Central Registry](https://registry.cue.works)
+needs to exist
+within its own CUE module. You can choose any module name you like - it's easy to
+[change it later]({{<relref"docs/reference/command/cue-help-mod-rename">}}).
 
-## Create a CUE manifest
+It makes sense for your CUE module to exist at the root of a git repository
+that's hosted on GitHub. Other setups are possible, but this guide assumes that
+you're running these commands from the top level directory of a git repository.
 
+## Create a CUE workflow
 {{{with upload "en" "1"}}}
 # Taken from https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow#creating-an-example-workflow
 -- workflow.cue --
@@ -49,22 +80,81 @@ githubactions.#Workflow & {
 	}
 }
 {{{end}}}
+The `import` at the top references the appropriate curated module for the workflow.
+Its path is currently temporary, but only while its proper location is being decided.
+The temporary path isn't a problem because one important property of the
+[Central Registry](https://registry.cue.works)
+is that, once a schema is published, it will always be
+available at that location.
+When the curated module’s location is finalised and versions are published
+under the new path, you can use the
+[`cue refactor imports`]({{<relref"docs/reference/command/cue-help-refactor-imports">}})
+command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
-
 {{{with script "en" "tidy"}}}
 cue mod tidy
 {{{end}}}
+Tidying a module is an important part of using curated modules from the
+[Central Registry](https://registry.cue.works).
+Always use
+[`cue mod tidy`]({{<relref"docs/reference/command/cue-help-mod-tidy">}})
+when you use a curated module for the first time.
 
-## Validate and export your workflow as YAML
+## Validate your workflow
+{{{with script "en" "vet"}}}
+cue vet -c
+{{{end}}}
+Because `cue vet` doesn't display any errors, you know that the curated schema has validated your workflow.
 
+## Export your workflow as YAML
+Before exporting your workflow you'll need to create a directory to hold it, as expected by GitHub Actions:
 {{{with script "en" "export"}}}
-cue vet .:gha
-cue export .:gha --outfile workflow.yml
+mkdir -p .github/workflows/
+cue export --outfile .github/workflows/workflow.yml
+{{{end}}}
+{{{with _script_ "en" "HIDDEN: move"}}}
+mv .github/workflows/workflow.yml .workflow.yml
+{{{end}}}
+If you used the example workflow from above, your validated YAML workflow will look like this:
+{{{with upload "en" "yaml"}}}
+-- .github/workflows/workflow.yml --
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install -g bats
+      - run: bats -v
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+"on":
+  - push
+{{{end}}}
+{{{with _script_ "en" "HIDDEN: diff"}}}
+diff .github/workflows/workflow.yml .workflow.yml
 {{{end}}}
 
-## Review your YAML workflow
-
-{{{with script "en" "display"}}}
-cat workflow.yml
+## Record your new files in git
+These files need to be stored in your git repository:
+{{{with script "en" "git commit"}}}
+git add -v cue.mod .github/workflows/ workflow.cue
+git commit -q -m 'Add GitHub Actions workflow validated by CUE'
 {{{end}}}
+{{{with _script_ "en" "HIDDEN: clean git state"}}}
+# This checks that the preceding git commands didn't miss any user-visible files generated by the rest of the page.
+test -z "$(git status --porcelain)" || (git status; git --no-pager diff; false)
+{{{end}}}
+Each time you update your CUE workflow, re-run the `cue export` command from
+above, and then use `git` to record any changes to these files.
+
+## Run your workflow
+Push your repository and its new workflow to GitHub:
+{{{with script "en" "git push"}}}
+#norun
+git push origin
+{{{end}}}
+The outcome of your workflow will be visible under the repository's "Actions" tab on GitHub.
