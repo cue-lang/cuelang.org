@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1":  "yyjwqW6arDyC6Yy5gYqsz2Oiw807WUX6hLxCAv9lzKg="
-									yaml: "RsvosuOxTNGvcoVCgLQuoUkgUVEHUxMbpWijoIHMXS0="
+									"1":  "OHrHSEwUEkXbS2ZjNo11u3/C3N6b8wMKsdpN7eLW3lE="
+									yaml: "TpLKAfd9Y9MuO5oxTmly2dL+LqWD7aeFqvo6/Y8NmK4="
 								}
 								multi_step: {
-									hash:       "BJQN5CEHGK696NK7HP49F024JH0383CINDCO1M2JU8HHDHGMAMB0===="
-									scriptHash: "M8DKEQIOOOS2VLLNA0E99I7TEFIGNE37634F5ENMLEOI77LRTRCG===="
+									hash:       "J5738VB5DCND8TJGTNULCIPAAJMCCSDRDA5HDVVA3FC7AD9HUFGG===="
+									scriptHash: "858DBS019OFSRCKDORV21TTTNLB8UG52Q2PQ8AAPQCRFC03CBO80===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -45,40 +45,19 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "mkdir -p .github/workflows/"
+										cmd:      "cue export --outfile .gitlab-ci.yml -e pipelines.example"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue export --outfile .github/workflows/workflow.yml -e workflow.example"
+										cmd:      "mv .gitlab-ci.yml{,.got}"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "mv .github/workflows/workflow.yml{,.got}"
+										cmd:      "diff -u .gitlab-ci.yml{,.got}"
 										exitCode: 0
 										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff --side .github/workflows/workflow.yml{,.got}"
-										exitCode: 0
-										output: """
-												name: learn-github-actions\t\t\t\t\tname: learn-github-actions
-												run-name: ${{ github.actor }} is learning GitHub Actions\trun-name: ${{ github.actor }} is learning GitHub Actions
-												"on":\t\t\t\t\t\t\t\t"on":
-												  - push\t\t\t\t\t\t\t  - push
-												jobs:\t\t\t\t\t\t\t\tjobs:
-												  check-bats-version:\t\t\t\t\t\t  check-bats-version:
-												    runs-on: ubuntu-latest\t\t\t\t\t    runs-on: ubuntu-latest
-												    steps:\t\t\t\t\t\t\t    steps:
-												      - uses: actions/checkout@v4\t\t\t\t      - uses: actions/checkout@v4
-												      - uses: actions/setup-node@v4\t\t\t\t      - uses: actions/setup-node@v4
-												        with:\t\t\t\t\t\t\t        with:
-												          node-version: "20"\t\t\t\t\t          node-version: "20"
-												      - run: npm install -g bats\t\t\t\t      - run: npm install -g bats
-												      - run: bats -v\t\t\t\t\t\t      - run: bats -v
-
-												"""
 									}]
 								}
 							}
