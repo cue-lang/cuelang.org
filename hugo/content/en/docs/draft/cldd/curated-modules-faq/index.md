@@ -27,7 +27,7 @@ The curated modules currently published cover:
 - [GitLab CI](#gitlab-ci)
 - [Buildkite Pipelines](#buildkite-pipelines)
 - [Azure Pipelines](#azure-pipelines)
-- [Argo CD](#argo-cd)
+- [Argo Workflows](#argo-workflows)
 - [Go Releaser](#go-releaser)
 - [Docker Compose](#docker-compose)
 - [npm's `package.json`](#npms-packagejson)
@@ -85,9 +85,12 @@ import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
 Learn more with:
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@v0.1.0)
 
-### Argo CD
-"*A declarative, GitOps continuous delivery tool for Kubernetes.*"
-([argo-cd.readthedocs.io](https://argo-cd.readthedocs.io/en/stable/))
+### Argo Workflows
+"*An open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.*"
+([argo-workflows.readthedocs.io](https://argo-workflows.readthedocs.io/en/latest/))
+
+We're aware that this module's import path is slightly unsuitable.
+It will be updated soon, but is safe to use as-is:
 ```cue
 import "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
 ```
