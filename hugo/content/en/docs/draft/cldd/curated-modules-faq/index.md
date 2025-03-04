@@ -56,7 +56,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
 ```
 Learn more with:
-- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/githubactions@v0.6.0)
+- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/githubactions@v0.2.0)
 
 ### GitLab CI
 "*GitLab’s complete CI/CD solution that accelerates delivery with automation.*"
@@ -74,7 +74,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/buildkite"
 ```
 Learn more with:
-- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/buildkite@v0.0.0)
+- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/buildkite@v0.1.0)
 
 ### Azure Pipelines
 "*Continuously build, test, and deploy to any platform and cloud.*"
@@ -83,7 +83,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
 ```
 Learn more with:
-- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@v0.0.0)
+- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@v0.1.0)
 
 ### Argo CD
 "*A declarative, GitOps continuous delivery tool for Kubernetes.*"
@@ -101,7 +101,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
 ```
 Learn more with:
-- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@v0.1.0)
+- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@v0.2.0)
 
 ### Docker Compose
 "*A specification for developer-centric application definition used in Cloud Native Applications.*"
@@ -110,7 +110,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
 ```
 Learn more with:
-- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/dockercompose@v0.0.0)
+- The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/dockercompose@v0.1.0)
 
 ### npm's `package.json`
 "*npm is the standard package manager for Node.js.*"
