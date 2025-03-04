@@ -8,13 +8,13 @@ package site
 						page: {
 							cache: {
 								upload: {
-									gitignore: "YIk1/rgL7E55N9JrrJJ3By4p+cElB4fb1aXjTfWxuQQ="
-									"1":       "kvbfkLDuBE6xPIWem8VrH4ETHT0ANsbLem2FoGWKq70="
-									yaml:      "DMg6E09RqI7w9PAmN22AEKY6PLqWTzPL7Czd7AAkvsc="
+									gitignore: "QVoli2wppJ9j2gi3EXcpFdOejVH0lt5inssg5sK4lCY="
+									"1":       "HptPK+//ElS6SJt6i09J5YLYFUMziTmPmfewdnExZeY="
+									yaml:      "WEDCLBFB4WigMMB+SvHJubUzHEtg67uFlDuq0apDuQQ="
 								}
 								multi_step: {
-									hash:       "4TCGHP6QONANBLA3H4S3IIHOIKN91QMDCF1JCUA58I6JJV0QUN1G===="
-									scriptHash: "A058C35GOOLAMCRDJ5MF47MNE5NML886USOPLHVJF7PPNMM5AB4G===="
+									hash:       "B799R297Q6AJCQRTN43I2GT1DB02DLIN5BJMHTPFSEEGQQS7664G===="
+									scriptHash: "EOKKQVSHVRCDFBDNGV6TGCJ66DR58B3KEJ3HKL61SRKB3EAQA6L0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -61,37 +61,60 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "mkdir -p .github/workflows/"
+										cmd:      "cue export --outfile .gitlab-ci.yml"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue export --outfile .github/workflows/workflow.yml"
+										cmd:      "mv .gitlab-ci.yml .pipeline.yml"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "mv .github/workflows/workflow.yml .workflow.yml"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff .github/workflows/workflow.yml .workflow.yml"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "git add -v cue.mod .github/workflows/ workflow.cue"
+										cmd:      "diff --side .gitlab-ci.yml .pipeline.yml"
 										exitCode: 0
 										output: """
-												add '.github/workflows/workflow.yml'
-												add 'cue.mod/module.cue'
-												add 'workflow.cue'
+												default:\t\t\t\t\t\t\tdefault:
+												  image: ruby:3.2\t\t\t\t\t\t  image: ruby:3.2
+												workflow:\t\t\t\t\t\t\tworkflow:
+												  rules:\t\t\t\t\t\t\t  rules:
+												    - if: $CI_COMMIT_BRANCH\t\t\t\t\t    - if: $CI_COMMIT_BRANCH
+												deploy-pages:\t\t\t\t\t\t\tdeploy-pages:
+												  rules:\t\t\t\t\t\t\t  rules:
+												    - if: $CI_COMMIT_BRANCH == "main"\t\t\t\t    - if: $CI_COMMIT_BRANCH == "main"
+												  script:\t\t\t\t\t\t\t  script:
+												    - gem install bundler\t\t\t\t\t    - gem install bundler
+												    - bundle install\t\t\t\t\t\t    - bundle install
+												    - bundle exec jekyll build -d public\t\t\t    - bundle exec jekyll build -d public
+												  stage: deploy\t\t\t\t\t\t\t  stage: deploy
+												  environment: production\t\t\t\t\t  environment: production
+												  pages: true\t\t\t\t\t\t\t  pages: true
+												test:\t\t\t\t\t\t\t\ttest:
+												  rules:\t\t\t\t\t\t\t  rules:
+												    - if: $CI_COMMIT_BRANCH != "main"\t\t\t\t    - if: $CI_COMMIT_BRANCH != "main"
+												  script:\t\t\t\t\t\t\t  script:
+												    - gem install bundler\t\t\t\t\t    - gem install bundler
+												    - bundle install\t\t\t\t\t\t    - bundle install
+												    - bundle exec jekyll build -d test\t\t\t\t    - bundle exec jekyll build -d test
+												  stage: test\t\t\t\t\t\t\t  stage: test
+												  artifacts:\t\t\t\t\t\t\t  artifacts:
+												    paths:\t\t\t\t\t\t\t    paths:
+												      - test\t\t\t\t\t\t\t      - test
 
 												"""
 									}, {
 										doc:      ""
-										cmd:      "git commit -q -m 'Add GitHub Actions workflow validated by CUE'"
+										cmd:      "git add -v cue.mod .gitlab-ci.yml pipeline.cue"
+										exitCode: 0
+										output: """
+												add '.gitlab-ci.yml'
+												add 'cue.mod/module.cue'
+												add 'pipeline.cue'
+
+												"""
+									}, {
+										doc:      ""
+										cmd:      "git commit -q -m 'Add GitLab CI/CD pipeline validated by CUE'"
 										exitCode: 0
 										output:   ""
 									}, {
