@@ -1,5 +1,5 @@
 ---
-title: Getting started with GitHub Actions + CUE
+title: Getting started with GitLab CI/CD + CUE
 draft: true
 no_index: true
 ---
@@ -20,10 +20,10 @@ Please [report any issues]({{<report-issue-url>}}) you find.
 The CUE
 [Central Registry](https://registry.cue.works/)
 provides a well-known location for well-known schemas, including those for
-[YAML workflow files](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
-used by [GitHub Actions](https://github.com/features/actions).
+[YAML pipeline files](https://docs.gitlab.com/ci/yaml/)
+used by [GitLab CI/CD](https://about.gitlab.com/solutions/continuous-integration/).
 
-This guide shows you how to get started defining your GitHub Actions workflows in CUE using
+This guide shows you how to get started defining your GitLab CI/CD pipelines in CUE using
 [curated modules]({{<relref"curated-modules-faq">}}).
 
 ## Login to the Central Registry
@@ -47,38 +47,49 @@ cue mod init cue.example
 You can choose any module name you like - it's easy to
 [change it later]({{<relref"docs/reference/command/cue-help-mod-rename">}}).
 It makes sense for your CUE module to exist at the root of a git repository
-that's hosted on GitHub, but the commands in this guide will work in any setup.
+that's hosted on GitLab, but the commands in this guide will work in any setup.
 
-## Create a GitHub workflow
+## Create a GitLab Pipeline
 
-In later guides we'll add more workflows to the `workflow` struct, but this
-initial `example` workflow comes from
-[GitHub's documentation](https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow#creating-an-example-workflow),
+In later guides we'll add more pipelines to the `pipeline` struct, but this
+initial `example` pipeline comes from
+[GitLab's documentation](https://docs.gitlab.com/user/project/pages/getting_started/pages_from_scratch/#specify-a-stage-to-deploy),
 converted to CUE using
 [`cue import`]({{<relref"docs/reference/command/cue-help-import">}}):
 
 {{{with upload "en" "1"}}}
--- workflow.cue --
-package gha
+-- pipeline.cue --
+package cicd
 
-import "github.com/cue-tmp/jsonschema-pub/exp1/githubactions"
+import "github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci"
 
-workflow: example: githubactions.#Workflow & {
-	name:       "learn-github-actions"
-	"run-name": "${{ github.actor }} is learning GitHub Actions"
-	on: ["push"]
-	jobs: "check-bats-version": {
-		"runs-on": "ubuntu-latest"
-		steps: [
-			{uses: "actions/checkout@v4"},
-			{uses: "actions/setup-node@v4", with: "node-version": "20"},
-			{run: "npm install -g bats"},
-			{run: "bats -v"},
+pipeline: example: gitlabci.#Pipeline & {
+	default: image: "ruby:3.2"
+	workflow: rules: [{if: "$CI_COMMIT_BRANCH"}]
+	"deploy-pages": {
+		stage: "deploy"
+		script: [
+			"gem install bundler",
+			"bundle install",
+			"bundle exec jekyll build -d public",
 		]
+		pages: true
+		rules: [{if: "$CI_COMMIT_BRANCH == \"main\""}]
+		environment: "production"
+	}
+	test: {
+		stage: "test"
+		script: [
+			"gem install bundler",
+			"bundle install",
+			"bundle exec jekyll build -d test",
+		]
+		artifacts: paths: ["test"]
+		rules: [{if: "$CI_COMMIT_BRANCH != \"main\""}]
 	}
 }
 {{{end}}}
-The `import` at the top references the appropriate curated module for the workflow.
+The `import` at the top references the appropriate curated module for the pipeline.
 Its path is currently temporary, but only while its proper location is being decided.
 The temporary path isn't a problem because one important property of the
 [Central Registry](https://registry.cue.works)
@@ -100,53 +111,63 @@ Always use
 [`cue mod tidy`]({{<relref"docs/reference/command/cue-help-mod-tidy">}})
 when you use a curated module for the first time.
 
-## Validate your workflow
+## Validate your pipeline
 
 {{{with script "en" "vet"}}}
 cue vet -c
 {{{end}}}
-Because `cue vet` doesn't display any errors, you know that the curated schema has validated your workflow.
+Because `cue vet` doesn't display any errors, you know that the curated schema has validated your pipeline.
 
-## Export your workflow as YAML
+## Export your pipeline as YAML
 
-Before exporting your workflow you'll need to create a directory to hold it, as expected by GitHub Actions:
 {{{with script "en" "export"}}}
-mkdir -p .github/workflows/
-cue export --outfile .github/workflows/workflow.yml -e workflow.example
+cue export --outfile .gitlab-ci.yml -e pipeline.example
 {{{end}}}
 {{{with _script_ "en" "HIDDEN: move before diff"}}}
-mv .github/workflows/workflow.yml{,.got}
+mv .gitlab-ci.yml{,.got}
 {{{end}}}
 
-If you chose to export the `workflow.example` shown above,
-your validated YAML workflow will look like this:
+If you chose to export the `pipeline.example` shown above,
+your validated YAML pipeline will look like this:
 {{{with upload "en" "yaml"}}}
--- .github/workflows/workflow.yml --
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-"on":
-  - push
-jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - run: npm install -g bats
-      - run: bats -v
+-- .gitlab-ci.yml --
+default:
+  image: ruby:3.2
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH
+deploy-pages:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - gem install bundler
+    - bundle install
+    - bundle exec jekyll build -d public
+  stage: deploy
+  environment: production
+  pages: true
+test:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "main"
+  script:
+    - gem install bundler
+    - bundle install
+    - bundle exec jekyll build -d test
+  stage: test
+  artifacts:
+    paths:
+      - test
 {{{end}}}
 {{{with _script_ "en" "HIDDEN: diff"}}}
-diff --side .github/workflows/workflow.yml{,.got}
+diff --side .gitlab-ci.yml{,.got}
 {{{end}}}
 
-## Run your workflow
+## Run your pipeline
 
-The `cue.mod` and `.github` directories need to be stored in your git
-repository, along with your `workflow.cue` file.
-After recording them in a commit you can push your branch to GitHub and trigger
-the workflow.
+The `cue.mod` directory needs to be stored in your git repository, along with
+your `pipeline.cue` and `.gitlab-ci.yml` files.
+After recording them in a commit you can push your branch to GitLab and trigger
+the pipeline.
 
-Whenever you update your CUE workflow, re-run the `cue export` command shown
+Whenever you update your CUE pipeline, re-run the `cue export` command shown
 above, and then use `git` to record any changes to these files and directories.
