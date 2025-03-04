@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97be97ec_f72893e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-04T06:14:44Z",
+      "side": 1,
+      "message": "PTAL, and please do submit this if it\u0027s acceptable (as I won\u0027t be back online until this afternoon).\n\nI used `cue mod get ...` to re-discover the latest version of each curated module. This isn\u0027t setting a precedent for frequent manual updates, but it made sense to do whilst I was fixing the `githubactions` error.",
+      "revId": "2270fde353bd7d581e76e8f37f892dd83f216147",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
