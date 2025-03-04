@@ -24,7 +24,7 @@ you think we've missed!
 The curated modules currently published cover:
 - [Kubernetes](#kubernetes)
 - [GitHub Actions](#github-actions)
-- [GitLab CI](#gitlab-ci)
+- [GitLab CI](#gitlab-cicd)
 - [Buildkite Pipelines](#buildkite-pipelines)
 - [Azure Pipelines](#azure-pipelines)
 - [Argo Workflows](#argo-workflows)
@@ -61,7 +61,7 @@ Learn more with:
 - {{<linkto/inline"draft/cldd/getting-started-with-github-actions-cue">}}
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/githubactions@v0.2.0)
 
-### GitLab CI
+### GitLab CI/CD
 "*GitLab’s complete CI/CD solution that accelerates delivery with automation.*"
 ([gitlab.com](https://about.gitlab.com/solutions/continuous-integration/))
 {{{with code "en" "gitlab"}}}
@@ -69,6 +69,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci"
 {{{end}}}
 Learn more with:
+- {{<linkto/inline"draft/cldd/getting-started-with-gitlab-cicd-cue">}}
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/gitlab@v0.2.0)
 
 ### Buildkite Pipelines

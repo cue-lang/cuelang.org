@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1":  "4bbunkHirWAiJ6KNTUsH96f6ZQgYkHfEkhLDxd9Uqwc="
-									yaml: "mIUEC5CY49La415Rv8/N1LCbDs9m+ZoBRc54r6tRVhg="
+									"1":  "nwb6k2/wcgFkVyIKAyaIDQGMC0AskVUDSAdn0Gl0EvU="
+									yaml: "Pqm12EN2Jvvnsdugt6eQdwTOVDBOOmMCulvGfoADzrw="
 								}
 								multi_step: {
-									hash:       "PK4QPAIEQS6LF7J4CPT6CB9KG1VJCB9EQL8G0ILEBB2136HHFDHG===="
-									scriptHash: "2O6Q22NN1B5L1RFLUCDI68QM0C7ETH5VLLF63NPB5LU9O7I90G60===="
+									hash:       "26RP9333MRNMDG238C7N72M5JD29SGB0M2MKNN2852GNJI182090===="
+									scriptHash: "EOJK55S89PJAF9OHIAS7G28NL3J3I5PM7E2S6USBJV08LOA2LGEG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -45,22 +45,17 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "mkdir -p .github/workflows/"
+										cmd:      "cue export --outfile .gitlab-ci.yml"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue export --outfile .github/workflows/workflow.yml"
+										cmd:      "mv .gitlab-ci.yml{,.got}"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "mv .github/workflows/workflow.yml{,.got}"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff .github/workflows/workflow.yml{,.got}"
+										cmd:      "diff .gitlab-ci.yml{,.got}"
 										exitCode: 0
 										output:   ""
 									}]
