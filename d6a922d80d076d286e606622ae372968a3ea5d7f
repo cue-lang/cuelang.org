@@ -33,6 +33,24 @@
       "message": "Maybe add a note to say that we\u0027re aware that the module path is not appropriate and will change it?",
       "revId": "d6a922d80d076d286e606622ae372968a3ea5d7f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5678f01e_f6ee80dc",
+        "filename": "content/docs/draft/cldd/curated-modules-faq/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-04T12:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f962c47_5b8c81ad",
+      "revId": "d6a922d80d076d286e606622ae372968a3ea5d7f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
