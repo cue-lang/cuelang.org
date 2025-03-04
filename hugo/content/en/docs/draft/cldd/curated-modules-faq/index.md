@@ -56,6 +56,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
 ```
 Learn more with:
+- {{<linkto/inline"draft/cldd/getting-started-with-github-actions-cue">}}
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/githubactions@v0.2.0)
 
 ### GitLab CI
