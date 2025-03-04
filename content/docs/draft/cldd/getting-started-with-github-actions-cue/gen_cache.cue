@@ -4,7 +4,7 @@ package site
 		docs: {
 			draft: {
 				cldd: {
-					"5-minutes-with-githubactions": {
+					"getting-started-with-github-actions-cue": {
 						page: {
 							cache: {
 								upload: {
