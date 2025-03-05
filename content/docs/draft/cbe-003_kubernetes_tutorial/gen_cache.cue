@@ -7,23 +7,28 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "n3Htw7uRnwrQcmoFGxKSR85/mic2hzavlf5sNp0j6Kw="
-								kube2:               "RJdjhg6sz+98brEbHnCb3MORNeKp/LXK68Y7X5FrCzY="
-								kube3:               "In5c8VGHGDOJv1PuPZWWQ42GdRWqPFKbPopmfrWX5qI="
-								"template frontend": "VUMIu7foPX4HGXOhi0kmMWd1TE7PCGLWnjbsnAjeFn4="
-								"template kitchen":  "Jf905CpjtVrdWGxt0k+Jkr5SN5kk68qKADEGrrsBByw="
-								kitchen3:            "lofAYy7GqfHeB2cTtDYDb5Ryi1jHWSkfsv6k0KmKMCI="
-								sous:                "7FTtG/M4L/vaR/JGIvyFG2oCZIU4FyTafJvFWAp51Xo="
-								"kube tool":         "2qYsSIyDmb7qA8XcSNNy0q5wF8oYvIk2XYcjo01YYio="
-								"ls tool":           "E7CkHBTOfRGzyvBTpCG3vdVhYverb3jDdCkcNRlDTqQ="
-								"dump tool":         "SS/6pHU3t2vRSZUPkq8yXOvacntHam661ryZkmmpYFw="
-								"create tool":       "mrJ8HyAz0zWDEkRt4eRyUXKJ0mM+Ua/rQyNbLKcUb84="
-								kubectl:             "/5D+AzD3Oyvrtgj+kwNlryU/RTcLGIjWWjYOrnkLhVo="
+								"initial template":  "lA4x6vy1ItUyuAW3ztMlxKfDuq3YDbhr51Gp2UzPSHQ="
+								kube2:               "xprAmKFbnE3bky8zwdujOM3eZJcZKyiTVBg35HPjWmg="
+								kube3:               "40cHsC/RWpQWDK+Y3RYZjYfz9hymVzphYvzAvKxBA6E="
+								"template frontend": "cyzuzdfYkQPdqOkdQHikTuOpeq8COvwvx7Se6o6Uuwc="
+								"template kitchen":  "fD1r6hoGbGzxpAASba+SYt4uozKTt4Od6OKAtrGJkps="
+								kitchen3:            "OUNSD3J1UPgF8ltPO5Nswc9S6SWIFUNegDUg7foEQI0="
+								sous:                "cVE55udCFk8kfULFEwi1VbpQpQH8AobVo3L0EbaFluc="
+								"kube tool":         "8dRN/hGc/8Owm55MiBx4UnAuuwvjGT7g8xhRRB4suC4="
+								"ls tool":           "gNj+rHKULRkaFvIWtPGxSdgnq4JuCYBGgHPgkIV6OmA="
+								"dump tool":         "hfrmwcsy8i5ZuEsftRdC5UFyoQ0nzQQQ6ZAWNqNSYPQ="
+								"create tool":       "xSuaHhcGV6UXc3cof+xdWxqIBnGAjxiry0pr5ErylQ8="
+								kubectl:             "SJ0vlTD4wvy3e9aAXj79He/FHeNfwFTgeyXisRIRFyo="
 							}
 							multi_step: {
-								hash:       "2J3EUIG4O6C0M2FOOBBFDP0I4H8URURK8HG7OB73TPUTJNOIJ29G===="
-								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
+								hash:       "HG6E3IQ2UUR46RCNUJFT0U6E214OOUMRDSLI3JT1G5B31NAB90VG===="
+								scriptHash: "MC8US6LLPO2PRRG9TPT8DJLK73P6QSNP2FCANJHPVNAMEIJE10MG===="
 								steps: [{
+									doc:      ""
+									cmd:      "export PATH=\"/cues/v0.13.0-0.dev.0.20250305124614-153fc8a559ad:$PATH\""
+									exitCode: 0
+									output:   ""
+								}, {
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"
 									exitCode: 0
@@ -268,7 +273,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1266 total
+											 1275 total
 
 											"""
 								}, {
@@ -281,7 +286,7 @@ package site
 									cmd:      "diff -wu snapshot snapshot2 | wc -l"
 									exitCode: 0
 									output: """
-											603
+											587
 
 											"""
 								}, {
@@ -324,7 +329,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1131 total
+											 1212 total
 
 											"""
 								}, {
@@ -334,14 +339,14 @@ package site
 									output: """
 											package kube
 
+											service: breaddispatcher: {
+											\tspec: {
+											\t\tports: [{}]
+											\t}
+											}
 											deployment: breaddispatcher: {
 											\tspec: {
 											\t\ttemplate: {
-											\t\t\tmetadata: {
-											\t\t\t\tannotations: {
-											\t\t\t\t\t"prometheus.io.scrape": "true"
-											\t\t\t\t\t"prometheus.io.port":   "7080"
-											\t\t\t\t}
 
 											"""
 								}, {
@@ -356,6 +361,7 @@ package site
 									output: """
 											package kube
 
+											service: breaddispatcher: spec: ports: [{}]
 											deployment: breaddispatcher: spec: template: {
 											\tmetadata: annotations: {
 											\t\t"prometheus.io.scrape": "true"
@@ -363,7 +369,6 @@ package site
 											\t}
 											\tspec: containers: [{
 											\t\timage: "gcr.io/myproj/breaddispatcher:v0.3.24"
-											\t\tports: [{containerPort: 7080}]
 
 											"""
 								}, {
@@ -371,7 +376,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  979 total
+											 1020 total
 
 											"""
 								}, {
@@ -396,7 +401,7 @@ package site
 									output: """
 											--- snapshot
 											+++ snapshot2
-											@@ -169,6 +169,7 @@
+											@@ -170,6 +170,7 @@
 											                 metadata: {
 											                     annotations: {
 											                         "prometheus.io.scrape": "true"
@@ -422,7 +427,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  937 total
+											 1005 total
 
 											"""
 								}, {
@@ -463,7 +468,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  774 total
+											  997 total
 
 											"""
 								}, {

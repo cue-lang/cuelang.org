@@ -8,10 +8,10 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1": "kvbfkLDuBE6xPIWem8VrH4ETHT0ANsbLem2FoGWKq70="
+									"1": "8INKC6xV17bevHil13CLRGD5L9RXc4PB3Iy2V479k7Y="
 								}
 								multi_step: {
-									hash:       "FRN6DGGT7AR39PU9IJT3LTT5MC92L3R7TOJ7AU8EVNOFCH1RGCTG===="
+									hash:       "QACADB11K4IB0Q7179OJ4T34HOI7SJA0T5U8MM5E8SOT5FIBRFI0===="
 									scriptHash: "LDUF2BB040TG6KC891JEB4FIA4QDEPJ9E1UH9J71V6OPT0B3I7IG===="
 									steps: [{
 										doc:      ""
@@ -63,9 +63,9 @@ package site
 												      - run: npm install -g bats
 												      - run: bats -v
 												name: learn-github-actions
-												run-name: ${{ github.actor }} is learning GitHub Actions
 												"on":
 												  - push
+												run-name: ${{ github.actor }} is learning GitHub Actions
 
 												"""
 									}]

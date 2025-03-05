@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":           "ORjiCMQaMu74IlPmbTnp6Omg+Gmt4cs97yyJEoi8MdI="
-								"api.pet.yaml":         "Tm4SI8jIkOoURawyqLrvVcDz3n6OR2d1dRXAFKnxW+U="
-								"api.pet.cue":          "5zRvVST4fVT983veWt3l8d64/gvrllhpoqvThKDGKAk="
-								"jonathan.yml":         "RCnyPLNl4a0mHRc3TZULDmHsNn+JiCLIITJQlzTtGH4="
-								"go emit openapi main": "tb8vuCetCiwwREBAvV1g0t5jfC++P1TgQNTA6JtjZms="
+								"schema.cue":           "ZBxy6aOHvn3hb9cYP2Ag3jTigl/a2aHFMiuvTRW3Ges="
+								"api.pet.yaml":         "5Qix6SdtYYPacOnHPZrSrGZQxETTIr+QGt9oP1jpYNI="
+								"api.pet.cue":          "Ih9+2Ad/du1a5DrpnHDHdrvZoLNlWRjg6rty9c01fuw="
+								"jonathan.yml":         "IeLFN4gs5Npw7/ks1+xly+/tMfcIKbe/fEFGXU7ySds="
+								"go emit openapi main": "wRk6G7gUQF+1/QZytk1SP3q2+nzYhL1fXqMEMhULMV0="
 							}
 							multi_step: {
-								hash:       "UBQRE7OSUSGCKLB8IN4GHHGRHUDNEAOIFHJMM4BBDQLJP4C66DIG===="
-								scriptHash: "TNDK8UALPJGGVMFVVAGSMV3QJA3CTFB1OD27P0HB9NBS0FPB1APG===="
+								hash:       "4UBAM83T76OBQ4VHNDKTO5MKF3IE8HU0MFAG9LBUFEIETI8E18C0===="
+								scriptHash: "KMH19ICTJ0N1JH5S0UN6P834HLMP94PT7QA6LF37BIJINUVEGOI0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -71,16 +71,11 @@ package site
 									cmd:      "cue vet api.pet.yaml jonathan.yml -d '#Pet'"
 									exitCode: 1
 									output: """
-											kind: 3 errors in empty disjunction:
+											kind: 2 errors in empty disjunction:
 											kind: conflicting values "cat" and "tortoise":
 											    ./api.pet.yaml:11:7
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 											kind: conflicting values "dog" and "tortoise":
-											    ./api.pet.yaml:26:11
-											    ./jonathan.yml:2:7
-											kind: conflicting values "goldfish" and "tortoise":
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 
 											"""
@@ -94,7 +89,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.0"
+									cmd:      "go get cuelang.org/go@v0.13.0-0.dev.0.20250305124614-153fc8a559ad"
 									exitCode: 0
 									output: """
 											...
