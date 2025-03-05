@@ -259,17 +259,17 @@ hello
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
 $ export MYVAR=value
 $ cue version
-cue version v0.12.0
+cue version v0.13.0-0.dev.0.20250305124614-153fc8a559ad
 
 go version go1.24.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG asynctimerchan=1,gotestjsonbuildtext=1,gotypesalias=0,httpservecontentkeepheaders=1,multipathtcp=0,randseednop=0,rsa1024min=0,tls3des=1,tlsmlkem=0,x509keypairleaf=0,x509negativeserial=1,x509rsacrt=0,x509usepolicies=0
+  DefaultGODEBUG gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,x509rsacrt=0,x509usepolicies=0
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
-cue.lang.version v0.12.0
+cue.lang.version v0.13.0
 ```
 ```text { title="TERMINAL" type="terminal" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZA==" }
 $ nonexistent command
@@ -288,12 +288,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "4ZI5Xm148yOhF3g5Js30VAGHXGoS9Jj7LtCOJQ2CCQ0="
-						"upload-some-cue": "6UC24tdJJQgooqpzIo/wxcOzqV1dwlnmxJJYeKwropQ="
-						"in-subdir":       "nzXmYJHLTFlwizWwYxik3NUSUbEy93eVe1goTFH/Jrc="
+						"hidden file":     "7iLD80FhdYYrATStd/rMEPnKe7yCSKoY5jonE+r6lFY="
+						"upload-some-cue": "AAR/5DkLKYdPqqLQQtaO9HBIsndv6bTug/UZJX256mY="
+						"in-subdir":       "1xMR9YE/8pQLvcE+oVHEXf2VbaXtF2p3IwvOFTTSE1Y="
 					}
 					multi_step: {
-						hash:       "IV61AG3IIQ2J4TSPAJ68JO7EJ7PKACTUQRARFSTC0N6EUOET5C90===="
+						hash:       "9SATOA3O638488IU7SARLPO26IM28OCUCORF6QGLBN3RG7ARBIG0===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -355,17 +355,17 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.12.0
+									cue version v0.13.0-0.dev.0.20250305124614-153fc8a559ad
 
 									go version go1.24.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG asynctimerchan=1,gotestjsonbuildtext=1,gotypesalias=0,httpservecontentkeepheaders=1,multipathtcp=0,randseednop=0,rsa1024min=0,tls3des=1,tlsmlkem=0,x509keypairleaf=0,x509negativeserial=1,x509rsacrt=0,x509usepolicies=0
+									  DefaultGODEBUG gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,x509rsacrt=0,x509usepolicies=0
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
-									cue.lang.version v0.12.0
+									cue.lang.version v0.13.0
 
 									"""
 						}, {

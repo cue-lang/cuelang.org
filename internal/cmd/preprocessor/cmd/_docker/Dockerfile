@@ -24,13 +24,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.12.0 go install -trimpath cuelang.org/go/cmd/cue@v0.12.0
-
-RUN \
-  --mount=type=cache,target=/cache/gocache \
-  --mount=type=cache,target=/cache/gomodcache \
-  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.13.0-0.dev.0.20250225142354-26a698fe9ae9 go install -trimpath cuelang.org/go/cmd/cue@v0.13.0-0.dev.0.20250225142354-26a698fe9ae9
+  GOBIN=/cues/v0.13.0-0.dev.0.20250305124614-153fc8a559ad go install -trimpath cuelang.org/go/cmd/cue@v0.13.0-0.dev.0.20250305124614-153fc8a559ad
 
 RUN git clone https://github.com/cue-lang/libcue.git /libcue
 RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
@@ -50,14 +44,14 @@ ENV LC_ALL=C.UTF-8
 
 # Default to the default value of CUE. Guides can fix to a different
 # version explicitly
-ENV PATH="/cues/v0.12.0:${PATH}"
+ENV PATH="/cues/v0.13.0-0.dev.0.20250305124614-153fc8a559ad:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
-ENV CUELANG_CUE_LATEST="v0.12.0"
-ENV CUELANG_CUE_PRERELEASE="v0.12.0"
-ENV CUELANG_CUE_TIP="v0.13.0-0.dev.0.20250225142354-26a698fe9ae9"
-ENV CUELANG_CUE_DEFAULT="v0.12.0"
-ENV CUELANG_CUE_PLAYGROUND="v0.12.0"
+ENV CUELANG_CUE_LATEST="v0.13.0-0.dev.0.20250305124614-153fc8a559ad"
+ENV CUELANG_CUE_PRERELEASE="v0.13.0-0.dev.0.20250305124614-153fc8a559ad"
+ENV CUELANG_CUE_TIP="v0.13.0-0.dev.0.20250305124614-153fc8a559ad"
+ENV CUELANG_CUE_DEFAULT="v0.13.0-0.dev.0.20250305124614-153fc8a559ad"
+ENV CUELANG_CUE_PLAYGROUND="v0.13.0-0.dev.0.20250305124614-153fc8a559ad"
 
 WORKDIR /
 
@@ -70,8 +64,7 @@ RUN chmod 755 /usr/bin/entrypoint.sh
 RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
-COPY --from=build /cues/v0.12.0/cue /cues/v0.12.0/cue
-COPY --from=build /cues/v0.13.0-0.dev.0.20250225142354-26a698fe9ae9/cue /cues/v0.13.0-0.dev.0.20250225142354-26a698fe9ae9/cue
+COPY --from=build /cues/v0.13.0-0.dev.0.20250305124614-153fc8a559ad/cue /cues/v0.13.0-0.dev.0.20250305124614-153fc8a559ad/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/
 ENV LD_LIBRARY_PATH="/usr/local/lib"

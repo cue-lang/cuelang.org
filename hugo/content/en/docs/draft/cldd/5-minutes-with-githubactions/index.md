@@ -69,7 +69,7 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
 "on":
   - push
+run-name: ${{ github.actor }} is learning GitHub Actions
 ```
