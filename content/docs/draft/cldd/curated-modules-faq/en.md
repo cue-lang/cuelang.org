@@ -4,6 +4,13 @@ draft: true
 no_index: true
 ---
 
+{{{with _script_ "en" "HIDDEN: set up registry access"}}}
+mkdir -p $HOME/.config/cue
+cat <<EOD > $HOME/.config/cue/logins.json
+{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
+EOD
+{{{end}}}
+
 {{<warning>}}
 This page is a work in progress -- your feedback is very welcome!
 Please [report any issues]({{<report-issue-url>}}) you find.
@@ -127,8 +134,10 @@ Learn more with:
 "*npm is the standard package manager for Node.js.*"
 ([nodejs.org](https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager))
 {{{with code "en" "npmpackage"}}}
+exec cue mod init
+exec cue mod tidy
 -- example.cue --
-import "github.com/cue-tmp/jsonschema-pub/exp3/npmpackage"
+import "github.com/not-an-org/not-a-repo/not-a-package"
 {{{end}}}
 Learn more with:
 - [Specifics of npm's package.json handling](https://docs.npmjs.com/cli/v11/configuring-npm/package-json)

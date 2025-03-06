@@ -119,7 +119,7 @@ Learn more with:
 "*npm is the standard package manager for Node.js.*"
 ([nodejs.org](https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager))
 ```cue
-import "github.com/cue-tmp/jsonschema-pub/exp3/npmpackage"
+import "github.com/not-an-org/not-a-repo/not-a-package"
 ```
 Learn more with:
 - [Specifics of npm's package.json handling](https://docs.npmjs.com/cli/v11/configuring-npm/package-json)
