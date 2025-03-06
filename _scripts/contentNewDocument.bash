@@ -40,7 +40,7 @@ function main() {
 
     # Create new content directory, or copy existing.
     if [ -z "$copyDir" ]; then
-        mkdir "$newDirArg"
+        mkdir -p "$newDirArg"
     else
         # assert that copyDir actually exists
         [ -d "$copyDir" ] || _fatal "$copyDir does not exist"
@@ -65,6 +65,9 @@ function main() {
     cuePath="$(for p in $cuePathSpaceSeparated; do echo -n \"$p\": ; done ; echo 'page: _')"
 
     # Create page.cue.
+    # TODO(jm): this creates a page.cue that doesn't set up Central Registry
+    # users, etc - which may have been part of the reason an existing directory
+    # was selected to be copied. Inherit the page.cue contents from $copyDir.
     echo -e "package site\n$cuePath" >"$newDir/page.cue"
     cue fmt -s "$newDir/page.cue"
 
