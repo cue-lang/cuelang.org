@@ -100,9 +100,10 @@ We're aware that this module's import path is slightly unsuitable.
 It will be updated soon, but is safe to use as-is:
 {{{with code "en" "argo"}}}
 -- example.cue --
-import "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
+import argoworkflows "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
 {{{end}}}
 Learn more with:
+- {{<linkto/inline"draft/cldd/getting-started-with-argo-workflows-cue">}}
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/argocd@v0.0.0)
 
 ### Go Releaser
