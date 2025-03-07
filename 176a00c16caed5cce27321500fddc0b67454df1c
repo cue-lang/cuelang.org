@@ -16,6 +16,24 @@
       "message": "I replicated this change locally with:\n\n```\ncue refactor imports github.com/cue-tmp/jsonschema-pub/exp1/githubactions github.com/cue-tmp/jsonschema-pub/exp3/githubactions\ncue mod tidy\n```\n\nOut of interest (and to inform docs I might be asked to write) does that feel idiomatic for this class of dependency change?",
       "revId": "176a00c16caed5cce27321500fddc0b67454df1c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5367e581_4fddd574",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-03-07T13:08:38Z",
+      "side": 1,
+      "message": "yes, that\u0027s what I used :)",
+      "parentUuid": "1e6e2772_8fa9c4aa",
+      "revId": "176a00c16caed5cce27321500fddc0b67454df1c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
