@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af48205d_fe17cdee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-08T09:00:03Z",
+      "side": 1,
+      "message": "Putting this URL \"full\" form is entirely legitimate, and indeed somewhat preferable in case we were to migrate away from GitHub.",
+      "parentUuid": "3d3d8caa_27fed245",
+      "range": {
+        "startLine": 9,
+        "startChar": 43,
+        "endLine": 9,
+        "endChar": 71
+      },
+      "revId": "31051f81aaa4d26f00e99111c8af6212ef03d24d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aca712df_07697d5a",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-03-08T08:46:26Z",
       "side": 1,
       "message": "Just to check my understanding of the intent: this\u0027ll dump the env just once, at container build, which we\u0027ll then have to correlate at some temporal \u0026 logging distance from the runtime \"GO_PRIVATE might not be set and/or working?\" problem that cue-lang/cue#3794 posits. Do I have that right?",
+      "revId": "31051f81aaa4d26f00e99111c8af6212ef03d24d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e521b3f5_d3bddabb",
+        "filename": "site.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-08T09:00:03Z",
+      "side": 1,
+      "message": "The linked issue points out that sum.golang.org is being contacted during the image build step. It\u0027s part of the Docker output. Which suggests that our \"passing through\" of `GOPRIVATE` is not working. Doing a `go env` step just before the step which showed the sum.golang.org connection attempt will verify as closely as possible that the Go environment is as expected.",
+      "parentUuid": "aca712df_07697d5a",
       "revId": "31051f81aaa4d26f00e99111c8af6212ef03d24d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
