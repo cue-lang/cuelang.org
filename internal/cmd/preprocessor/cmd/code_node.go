@@ -55,8 +55,17 @@ type codeNodeRunContext struct {
 func (c *codeNode) validate() {
 	// If there is just one file, we behave like the old "code" node did.  Just
 	// render a ```-based code block. Otherwise fall through to the old
-	// sidebyside validation.
+	// sidebyside validation. Enforce that the comment is empty.
 	if l := len(c.analysis.fileNames); l == 1 {
+		// Ensure we only have comments in the script
+		lines := strings.Split(string(c.archive.Comment), "\n")
+		for _, line := range lines {
+			line = strings.TrimSpace(line)
+			line, _, _ = strings.Cut(line, "#")
+			if line != "" {
+				c.errorf("%v: cannot have a script with simple code listing", c)
+			}
+		}
 		return
 	}
 
