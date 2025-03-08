@@ -154,6 +154,13 @@ template: ci.#writefs & {
 			# TODO: mount the caches from the host system, having first established and
 			# switched to a user with the same UID and GID as the caller.
 
+			# Dump our environment for logging purposes
+			RUN \
+			  --mount=type=cache,target=/cache/gocache \
+			  --mount=type=cache,target=/cache/gomodcache \
+			  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
+			  go env
+
 			RUN \
 			  --mount=type=cache,target=/cache/gocache \
 			  --mount=type=cache,target=/cache/gomodcache \

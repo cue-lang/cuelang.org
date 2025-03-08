@@ -31,11 +31,6 @@ popd >/dev/null
 
 echo "tip: Will use cuelang.org/go@$version"
 
-# These variables, if set by the caller, aren't relevant after this point; they
-# would only serve to slow down the "go run" command if it should need to build
-# cmd/cue.
-unset GOPROXY GOPRIVATE
-
 # Override all versions of CUE referenced by the site to be $version.
 # This might change if any entries are added to the version matrix that
 # deliberately make a previous version of CUE available but, for now, we don't
