@@ -9,7 +9,7 @@ package site
 							cache: {
 								upload: {
 									"main.go":                 "hkPaCeuLKw2LjBSn3jBhvlL4cZnbyfIdG4MbZPa0wxI="
-									"HIDDEN: required output": "EYXKGIQOANzPwgJcePzlkmCRfEzghQJk8E9w5PLLDto="
+									"HIDDEN: required output": "fpuWCOjsdUXHLiryQqCeK3TimD3wLT4nkL/wByUbZHk="
 								}
 								code: {
 									"openinline: evalv2":                  "Fxo+BCJ9BZYFkxN8sPGy34fguJ/x3fzj+RYeJI7rOGQ="
@@ -17,8 +17,8 @@ package site
 									"openinline: evalv3: with openinline": "IYUdUDzmSVJFocEWFX6wzMa1HZxWQ3PjNPEXZ8lXjIQ="
 								}
 								multi_step: {
-									hash:       "38RBK38DD4UAJ3SS1U3QQD5GOAJ1FD1QIG8P26H4ANGCSTO6LLKG===="
-									scriptHash: "KA0TB7AGE97NH9M1904MEG37VEOGT5VOVI5IFBG76ARIOSFI0ECG===="
+									hash:       "MDMTNLNKK9LFEPIBAHFS9FVD4H99732BEMAMF42JTI0QK34RJBCG===="
+									scriptHash: "BJ46KNJFGBS2SL251SBDIMKK8EQD5QGU255AHQLSJK08PO0SLNIG===="
 									steps: [{
 										doc:      ""
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -47,12 +47,12 @@ package site
 												"""
 									}, {
 										doc:      ""
-										cmd:      "go run main.go >output.got"
+										cmd:      "go run main.go >output.got.txt"
 										exitCode: 0
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "diff output.want output.got"
+										cmd:      "diff output.want.txt output.got.txt"
 										exitCode: 0
 										output:   ""
 									}, {
