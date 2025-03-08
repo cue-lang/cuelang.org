@@ -54,7 +54,7 @@ func main() {
 {{{end}}}
 
 {{{with _upload_ "en" "HIDDEN: required output"}}}
--- output.want --
+-- output.want.txt --
 42
 {{{end}}}
 {{{with _script_ "en" "HIDDEN: test main.go"}}}
@@ -62,8 +62,8 @@ func main() {
 go mod init evalv3.example
 #ellipsis 0
 go mod tidy
-go run main.go >output.got
-diff output.want output.got
+go run main.go >output.got.txt
+diff output.want.txt output.got.txt
 {{{end}}}
 
 ## Which CUE version do I need to use `evalv3`?
