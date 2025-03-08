@@ -1,0 +1,30 @@
+# Ensure that a single file code node does not allow a script
+
+unquote content/noscript/en.md
+
+! exec preprocessor execute
+cmpenv stderr stderr.golden
+
+-- golden/content/noscript/.keep --
+-- content/noscript/site.cue --
+package site
+
+content: noscript: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/noscript/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with code "en" "json-superset"}}}
+>echo hello world
+>
+>-- in.cue --
+>     field: 3
+>{{{end}}}
+-- hugo/.gitkeep --
+-- stderr.golden --
+** $WORK/content/noscript/en.md:5:8: cannot have a script with simple code listing
+terminating because of errors
