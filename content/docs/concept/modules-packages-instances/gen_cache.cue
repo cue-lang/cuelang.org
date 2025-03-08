@@ -7,19 +7,19 @@ package site
 					page: {
 						cache: {
 							code: {
-								"cue-module-directory":               "q/zTv683Rw3lkghBuQTA2WoR2YJ2XOvxBhqYR8mIxYc="
-								"cmd-cue-eval-directory":             "MjvzvAMUX4fofCW1BkS7VPbmNLIqHm97vo766eewFrQ="
-								"cmd-cue-eval-directory-and-package": "wOk0haMJ4kASC05R7FL99dbtGSRohrmNzXQo8UwmJfE="
-								"import-path-explicit-package-name":  "FZEiDCw/qIKq04p68gIdX7dscHK7yDwnjSq6eOO4q7E="
-								"import-path-implicit-package-name":  "qSzmAJE0lMElpDZ4140/Dn7po66wHpT58lrx4kdiaxI="
-								"general-module-import-path":         "dW0awC7cEJw3EGvbsRbOkU3eC3tdtzvkAxxAiOdXv3g="
-								"example-module-import-path":         "r9mEE8PwFzj4u2B8dyAUL7TYkrb51DytboMoXFOl7CY="
-								"module-root-directory-contents":     "NqP1bpwp+1IV/VSxhWorZGprIGBfoWonR/JJTaneotk="
-								"cue-import-example":                 "E/H73E+B74V98vPgnDZcmzIZ/UYn42Ryw1gvWlGHC3s="
-								"stdlib-import-example":              "NRzCiQa0zaAldTCn5sS3uhG2KmxZEEMstl1YGS0Yom4="
+								"cue-module-directory":               "B15Oc0VrReY2o5IzVi8Edf4+8o+iZkVJMcCjmWhG8VA="
+								"cmd-cue-eval-directory":             "fP73IdNW44f99udPmvAlrxIiA2XiTpixTYp0hFN2vOE="
+								"cmd-cue-eval-directory-and-package": "X2C+aHSYl408k/8pqT/AxknkHwO0Yz25UqgoZR+bVc0="
+								"import-path-explicit-package-name":  "pwaRTXVtYkt9q4t/zpjQoP+QUSOVParsZrfGvEWwbtw="
+								"import-path-implicit-package-name":  "9NfJDmx2admezTurro/aD4ACDto5kd3sPI0cv+uYRjk="
+								"general-module-import-path":         "Ce3dMqiKOafXtMQ9JCaHnzSy/GqrLg84riuwLtY9d/w="
+								"example-module-import-path":         "Vy+DYp25wvzSAZIrqMZLasPUR7tdmFNtIOkIhBIoxlU="
+								"module-root-directory-contents":     "BxvI3rvq7xg2kVVXgGXg/XOD+3Z+RB+xpXfVjXS7l00="
+								"cue-import-example":                 "BEgg8OjbOa8F5GCU/zvQFYTlb2hWKjm0uXpeK79qAfw="
+								"stdlib-import-example":              "JgvOWXn80TYUo7/ufwiiXguiNMVDPHCauT2HF9ziirg="
 							}
 							multi_step: {
-								hash:       "3F9DVLMSIT6V5S60U9HQMMG7ATVTB37DRUIBBH9CR0V52DGMAANG===="
+								hash:       "39FUULCK0V9I20RFVGDJCQ2JE096PDRLLNKBVO95D5S4R8VISL80===="
 								scriptHash: "33TKFARPDRS0K4SESKA9PSPQMK0NJGIBVF6IBCMSIHOEUFBKUQHG===="
 								steps: [{
 									doc:      ""

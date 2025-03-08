@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue schema": "4KTQpqteLGQZNUgSdr7XtUNXJJpnMKJm1d+NNTr/GD8="
-								"good data":  "r7/Hacp8opdDUqSckuZNP/XOF2EftemaUs0EXWlwK8A="
-								"bad data":   "+P4XuDT1DN9BPfe3EWp+oceF/FhyIyUNKphqxsmxZy8="
-								"main go":    "qtzB3zKE0R3WL8XSf4oIkK81UXMriPNklG+xsEpvt14="
+								"cue schema": "A0teqok/kqCxhTrG/5d378J9RXAJD7CyLDIQbTv0CJY="
+								"good data":  "wgxpmDAIvAnHaVOU9tyvX6fKGTPi6byvuSt3W2snFqc="
+								"bad data":   "aVW5JLfsAa6ILcaSBvH4qps/F3zNWXgwfKfOpFx4Mbg="
+								"main go":    "MKPvpNPVtTWzddX8tO0hjtsdF8ozyeGeQA/5VfNsy3A="
 							}
 							multi_step: {
-								hash:       "J4TC5F9CVNI6F5I6DRGQQ67BBGKQC1769K9PDPSJLJOHKQU589H0===="
-								scriptHash: "VRCU95HO8RBJS50LVBVRRKDRP7V6EITLDGDQIOKP8UQJ0PCVV25G===="
+								hash:       "F43KL96TEK9E6C3JJ33VR6ADRISA6D8LLIR2KNAVK1FUJEUJB0P0===="
+								scriptHash: "3RJFI2PCVETEU0KBTIN45L8P45I2IFRFMKFQ62NE3OG0A5D0F86G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -38,7 +38,7 @@ package site
 											age: conflicting values "173" and int (mismatched types string and int):
 											    ./bad.json:6:12
 											    ./schema.cue:3:9
-											name: conflicting values string and ["Moby","Dick"] (mismatched types string and list):
+											name: conflicting values ["Moby","Dick"] and string (mismatched types list and string):
 											    ./bad.json:2:13
 											    ./schema.cue:2:9
 
@@ -53,7 +53,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.0"
+									cmd:      "go get cuelang.org/go@v0.13.0-0.dev.0.20250306134408-5d2da079a295"
 									exitCode: 0
 									output: """
 											...

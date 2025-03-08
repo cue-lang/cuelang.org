@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "CDHdDRml2wG+So1newSGjNWSiaueWQjameaUmfdCj1s="
-								"initial go code":  "qCH82DJN5GqxzsxEpXucbjT1PI6GB/ejj+GvyRCcMDo="
+								"initial cue code": "I1auguWrb//b9cA1afQQ1Dg+kqV7whAs+RJojLxsLUA="
+								"initial go code":  "gj62oJnmC22c3VSLuNFh+/IqXivaGTJAx4SoSrD6XNU="
 							}
 							multi_step: {
-								hash:       "PNTHC0CCQ7C4KFPVBNAOITUBBQLLJ3U6GPUQ9M8QRES5VH8NFHLG===="
-								scriptHash: "SJ1H12AFHUJO81CUSK6TIKFUQFV647U2AIBFP0J3OMGUN1P2LTJG===="
+								hash:       "VVB7CM35JA316K0EVER6ALPM22DK94SP3K0ERKVV4PLLL255U2JG===="
+								scriptHash: "S17A7R3U106BLE5SAGDGMVF9FO1HLB01H47M2UN25DUPL8FU09E0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -33,10 +33,10 @@ package site
 									cmd:      "cue vet"
 									exitCode: 1
 									output: """
-											val.i: conflicting values int and "hello" (mismatched types int and string):
+											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    ./bad.cue:4:5
 											    ./bad.cue:9:5
-											val.s: conflicting values string and 42 (mismatched types string and int):
+											val.s: conflicting values 42 and string (mismatched types int and string):
 											    ./bad.cue:5:5
 											    ./bad.cue:10:5
 
@@ -51,7 +51,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.0"
+									cmd:      "go get cuelang.org/go@v0.13.0-0.dev.0.20250306134408-5d2da079a295"
 									exitCode: 0
 									output: """
 											...
@@ -71,13 +71,13 @@ package site
 									exitCode: 0
 									output: """
 											# Error summary [err]:
-											val.i: conflicting values int and "hello" (mismatched types int and string) (and 1 more errors)
+											val.i: conflicting values "hello" and int (mismatched types string and int) (and 1 more errors)
 
 											# Error details [errors.Details(err)]:
-											val.i: conflicting values int and "hello" (mismatched types int and string):
+											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    /home/runner/bad.cue:4:5
 											    /home/runner/bad.cue:9:5
-											val.s: conflicting values string and 42 (mismatched types string and int):
+											val.s: conflicting values 42 and string (mismatched types int and string):
 											    /home/runner/bad.cue:5:5
 											    /home/runner/bad.cue:10:5
 
