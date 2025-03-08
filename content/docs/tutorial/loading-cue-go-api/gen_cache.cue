@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "SaXVPpvz3S7yu1nl+98Y5h8T8c5JIoPhrUr7Haql1EQ="
-								"initial go code":  "40ESAbxDda5YTJoEiXekfKYf2UG3epp30aueYVatQoY="
+								"initial cue code": "Sqk4Nk3ssHDd8nVDd7r5L6TIJtt6KDPaWgoCt73ssKQ="
+								"initial go code":  "YdcxU7+FlnFwnjwh1bdSsOt/T1LyQuoLLJONdOotlaw="
 							}
 							multi_step: {
-								hash:       "A8CLEAFS2AD2SO0K70PCLS7N34EERNP7TJ7EPLGRBUVNE4LD5D5G===="
+								hash:       "F9DLC26T3IOV9205T0KD191BKV0CITRJSEPC7F4CBFGCQHBAGLQ0===="
 								scriptHash: "DDML0L1N15CJUNFI1P7KLB46TQ8NFT8KKEL3E8GAML509BTR6T1G===="
 								steps: [{
 									doc:      ""
