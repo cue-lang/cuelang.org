@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d3d8caa_27fed245",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-08T08:46:26Z",
+      "side": 1,
+      "message": "nit: `cue-lang/cue#3794`",
+      "range": {
+        "startLine": 9,
+        "startChar": 43,
+        "endLine": 9,
+        "endChar": 71
+      },
+      "revId": "31051f81aaa4d26f00e99111c8af6212ef03d24d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aca712df_07697d5a",
+        "filename": "site.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-08T08:46:26Z",
+      "side": 1,
+      "message": "Just to check my understanding of the intent: this\u0027ll dump the env just once, at container build, which we\u0027ll then have to correlate at some temporal \u0026 logging distance from the runtime \"GO_PRIVATE might not be set and/or working?\" problem that cue-lang/cue#3794 posits. Do I have that right?",
+      "revId": "31051f81aaa4d26f00e99111c8af6212ef03d24d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
