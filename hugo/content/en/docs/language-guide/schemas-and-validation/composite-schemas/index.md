@@ -50,8 +50,7 @@ a: c & {b: 2}
 {{< /code-tab >}}
 {{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
 a.b: field not allowed:
-    ./in.cue:1:10
-    ./in.cue:3:4
+    ./in.cue:1:4
     ./in.cue:3:9
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -90,9 +89,9 @@ definition.
     lungCapacityL: number
 }
 #Dog: {
-    lungCapacityL: number
     kind!:         "dog"
     house:         string
+    lungCapacityL: number
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
