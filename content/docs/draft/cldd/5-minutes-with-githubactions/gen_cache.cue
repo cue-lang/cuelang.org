@@ -8,10 +8,10 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1": "HaqA4U48fMh0ueoV+eOQ5T6z4BVQ87YVI+LPxKfc7kE="
+									"1": "5niNtkMIqKia1sh88T5sFVNRE2/FvLq9mK7ux2Km+4s="
 								}
 								multi_step: {
-									hash:       "SF3NMU4UVVV0GQMS998145DLHA9F5B7JR6TDR3RKLI1MFNJNA5A0===="
+									hash:       "TM7UBBEJFQJ4RFLIEAIIOJF50LFJ7JC0K8H9H2MAD1HOGLAG37S0===="
 									scriptHash: "LDUF2BB040TG6KC891JEB4FIA4QDEPJ9E1UH9J71V6OPT0B3I7IG===="
 									steps: [{
 										doc:      ""
@@ -52,6 +52,7 @@ package site
 										cmd:      "cat workflow.yml"
 										exitCode: 0
 										output: """
+												name: learn-github-actions
 												jobs:
 												  check-bats-version:
 												    runs-on: ubuntu-latest
@@ -62,10 +63,9 @@ package site
 												          node-version: "20"
 												      - run: npm install -g bats
 												      - run: bats -v
-												name: learn-github-actions
-												run-name: ${{ github.actor }} is learning GitHub Actions
 												"on":
 												  - push
+												run-name: ${{ github.actor }} is learning GitHub Actions
 
 												"""
 									}]

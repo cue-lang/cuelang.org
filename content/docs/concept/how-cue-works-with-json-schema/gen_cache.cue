@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "Z1Mq+PqjTHVoKTWX+gY+w4jHYywO3sl3gF/9HfaNN/Y="
-								"schema.cue":      "lKyeK/oYbxm5TdICWSYhfW8/Id1LWmb38OvalZ/oAiE="
-								good:              "1jzKMhk/PxT2dZgImFkLrQBVDCvEiqKZHF5kQLHXDeQ="
-								bad:               "TjLDLO0c2KzVQH0O7DudkGELwFm61QQ3hrkUwZnCevk="
-								"main go program": "7CdfFu6Mdm9/u7RjNVvd1N7eIBaeL/n9+DFokJoLe7Q="
+								"schema.json":     "vr9v0lZMs/G3UAbPzvSOHYoZ1k4GK8IS5ZRLGcwNAdg="
+								"schema.cue":      "c7MeefW1bTEIGfzETyJ/ZYuIL/ZA1wpu+ustw4trfbo="
+								good:              "o1SzqmIowoBb59/qwVTWwcXELQkwp4Zy4L9L511bBEM="
+								bad:               "I4GRqtXOWwiEDkbQeHcH5ZyGlFF6kpMUGFubfOTVgkg="
+								"main go program": "sgXrVnOX212rfzr3Nw8+HFmBY/0N9V477PNsVdlxi38="
 							}
 							multi_step: {
-								hash:       "K89S7TOE3UGBC060A7OEFJKRU7AR8PKO6LE0LCDS350H8IP92OO0===="
-								scriptHash: "K8P2K9ARENNNU45COQ81H3NU9Q6DCPBO5SB6DQKPQKBNBIJ43OD0===="
+								hash:       "J2U1T5OFFOBSMB2FN6GGOCPR54PHA8V08QLH0P8HSOJIKE8ME3GG===="
+								scriptHash: "J8A3PIS9FECER6T2FQN0FTH10CKK4KKKLGT67U4O29IDPQR9GJF0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -46,9 +46,12 @@ package site
 									cmd:      "cue vet -d '#Person' schema.cue good.json bad.json"
 									exitCode: 1
 									output: """
-											name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    ./bad.json:2:13
 											    ./schema.cue:11:9
+											name.0: field not allowed:
+											    ./schema.cue:11:9
+											    ./bad.json:3:9
 
 											"""
 								}, {
@@ -56,7 +59,7 @@ package site
 									cmd:      "cue vet schema.json good.json bad.json"
 									exitCode: 1
 									output: """
-											name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    ./bad.json:2:13
 											    ./schema.json:13:13
 
@@ -83,7 +86,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.0"
+									cmd:      "go get cuelang.org/go@v0.13.0-0.dev.0.20250310212608-931fecbeb96f"
 									exitCode: 0
 									output: """
 											...
@@ -113,7 +116,7 @@ package site
 									cmd:      "go run . schema.json bad.json"
 									exitCode: 1
 									output: """
-											name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    bad.json:2:13
 											    schema.json:13:13
 											exit status 1

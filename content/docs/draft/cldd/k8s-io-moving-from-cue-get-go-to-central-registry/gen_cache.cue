@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"manifest pre":  "8jq+jmQW5NPNd51jcaMXsbryrpscb2+/BqXJ2iVzD64="
-									"manifest post": "wL19Sm/DAkBL/y3Rbo9dtgGyCNTFzmVjVLRnewwpgx8="
+									"manifest pre":  "6cBBIaXi4PcxXqjz710pRdsZ+F3kFePqd4/yYZJmHcA="
+									"manifest post": "VmkmKwi9OIOZh4Zjm86ie0lO6arHlX/b+b/hQSgIHeU="
 								}
 								multi_step: {
-									hash:       "NRPMOH5FE6EPETBLS4SD8H1KU68OEUDRQL5S54UD7MNNUD3H01CG===="
-									scriptHash: "0SCUK8G2ACVAAD8UE99CHSHL8F6R0526DPH15NVO8KF5LE5AOOPG===="
+									hash:       "15LG7IFEASPOIJBLBKPDOCR1U63CQCLFT7L0E8K1AJTPFIG58MH0===="
+									scriptHash: "ETT7JE7FTU94FBH6MBDUJOU778ISRL7LFBSJFLR8STCN30G44G3G===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -26,7 +26,7 @@ package site
 										output:   ""
 									}, {
 										doc:      "# Access \"cue refactor imports\" command."
-										cmd:      "export PATH=/cues/v0.13.0-0.dev.0.20250225142354-26a698fe9ae9:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-0.dev.0.20250310212608-931fecbeb96f:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
