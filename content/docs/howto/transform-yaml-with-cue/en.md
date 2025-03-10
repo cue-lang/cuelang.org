@@ -78,22 +78,22 @@ pets:
 location: Ripon, North Yorkshire, England
 petsBySpecies:
   cat:
-    - Name: Charlie
-      Age: 15
+    - Age: 15
       DoB: 2008
+      Name: Charlie
       Owner: Dorothy Cartwright
-    - Name: George
-      Age: 5
+    - Age: 5
       DoB: 2018
+      Name: George
       Owner: Dorothy Cartwright
   dog:
-    - Name: Lola
-      Breed: dachshund
+    - Breed: dachshund
+      Name: Lola
       Owner: Dorothy Cartwright
   goldfish:
-    - Name: Fred
-      Age: 8
+    - Age: 8
       DoB: 2015
+      Name: Fred
       Owner: Dorothy Cartwright
 {{{end}}}
 

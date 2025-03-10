@@ -297,11 +297,11 @@ app:
 -- out --
 {
     "appMemory": 3072,
-    "replicaCount": 3,
-    "region": "AMEA",
+    "appName": "frontend-ng.service",
     "clusterName": "PROD",
     "id": "frontend-ng.service.prod.amea",
-    "appName": "frontend-ng.service"
+    "region": "AMEA",
+    "replicaCount": 3
 }
 {{{end}}}
 

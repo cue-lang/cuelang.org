@@ -58,6 +58,7 @@ $ cue export .:gha --outfile workflow.yml
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IHdvcmtmbG93LnltbA==" }
 $ cat workflow.yml
+name: learn-github-actions
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -68,8 +69,7 @@ jobs:
           node-version: "20"
       - run: npm install -g bats
       - run: bats -v
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
 "on":
   - push
+run-name: ${{ github.actor }} is learning GitHub Actions
 ```

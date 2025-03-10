@@ -278,7 +278,7 @@ item.painting: invalid value "width: 34\nHEIGHT: 12\ndepth: 0.2" (does not satis
     ./furniture.cue:3:14
     ./furniture.cue:25:17
     yaml.Validate:2:1
-item.table: invalid value "width: \"34\"\nheight: 23\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: conflicting values number and "34" (mismatched types number and string):
+item.table: invalid value "width: \"34\"\nheight: 23\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: conflicting values "34" and number (mismatched types string and number):
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:19:14

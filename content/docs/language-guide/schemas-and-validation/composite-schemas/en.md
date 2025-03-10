@@ -49,8 +49,7 @@ c: close({a: 1})
 a: c & {b: 2}
 -- out.err --
 a.b: field not allowed:
-    ./in.cue:1:10
-    ./in.cue:3:4
+    ./in.cue:1:4
     ./in.cue:3:9
 {{{end}}}
 
@@ -88,9 +87,9 @@ definition.
     lungCapacityL: number
 }
 #Dog: {
-    lungCapacityL: number
     kind!:         "dog"
     house:         string
+    lungCapacityL: number
 }
 {{{end}}}
 
