@@ -5,7 +5,7 @@ import { AutocompleteQuerySuggestionsHit } from '@algolia/autocomplete-plugin-qu
 import { BaseItem, GetSourcesParams, OnSubmitParams } from '@algolia/autocomplete-shared/dist/esm/core';
 import algoliasearch, { SearchClient } from 'algoliasearch';
 import merge from 'lodash.merge';
-import { getHiddenInputFacets, mapToAlgoliaFilters, parseQuery } from '../helpers/search';
+import { getHiddenInputFacets, mapToAlgoliaFilters, parseQuery, updateSearchParams } from '../helpers/search';
 import { SearchFacets, SearchItem } from '../interfaces/search';
 import { BaseWidget } from './base-widget';
 
@@ -21,6 +21,7 @@ export class SearchAutocomplete extends BaseWidget {
     private querySuggestionsPlugin: AutocompletePlugin<AutocompleteQuerySuggestionsHit, undefined>;
     private autocomplete: AutocompleteApi<BaseItem>;
     private readonly placeholder: string;
+    private readonly searchTerm: string;
     private readonly detachedModeMaxWidth = 1023;
     private readonly facetInputs: NodeListOf<HTMLInputElement>;
 
@@ -32,6 +33,7 @@ export class SearchAutocomplete extends BaseWidget {
         this.searchType = this.element.dataset.searchAutocomplete || '';
         this.searchbarSize = this.element.dataset.searchbarSize;
         this.placeholder = this.element.dataset.searchbarPlaceholder ?? '';
+        this.searchTerm = this.element.dataset.searchbarSearchTerm ?? '';
         this.facetInputs = document.querySelectorAll<HTMLInputElement>('[data-search-results] input[name^="facet-"]');
     }
 
@@ -55,6 +57,7 @@ export class SearchAutocomplete extends BaseWidget {
     public init(): void {
         this.initQuerySuggestions();
         this.initAutocompleteSearch(this.searchClient, this.searchType);
+        this.initSearchTerm();
 
         // Prefill autocomplete with query from url on search results page
         if (this.searchType === 'results') {
@@ -236,6 +239,23 @@ export class SearchAutocomplete extends BaseWidget {
                 this.isOpen = props.state.isOpen;
             },
         });
+    }
+
+    private initSearchTerm() {
+        if (this.searchTerm) {
+            const url = new URL(window.location.href);
+            const searchParams = new URLSearchParams(url.search);
+            const query = searchParams.get('q');
+            const parsedQuery = parseQuery(query);
+
+            const searchTermIsSet = sessionStorage.getItem(`searchterm-${this.searchTerm}`);
+
+            if (!searchTermIsSet) {
+                parsedQuery.cleanQuery = this.searchTerm;
+                updateSearchParams(parsedQuery, false);
+                sessionStorage.setItem(`searchterm-${this.searchTerm}`, String(true));
+            }
+        }
     }
 
     private handleDocumentClick(e: MouseEvent) {
