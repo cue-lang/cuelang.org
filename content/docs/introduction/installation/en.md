@@ -91,7 +91,9 @@ go install cuelang.org/go/cmd/cue@latest
 lists the installable releases and pre-releases that you can specify instead of
 `latest`.
 
-You can also install the development version of `cue` by specifying `master`:
+##### Development version
+
+You can install the development version of `cue` from source by specifying `master`:
 
 {{{with script "en" "go install cmd/cue@master"}}}
 #ellipsis 0
