@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12954bfe_b30df527",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-11T16:39:02Z",
+      "side": 1,
+      "message": "PTAL. @rogpeppe@gmail.com I\u0027m particularly interested in your view of the specific language I use in \"step 3\".",
+      "revId": "2470e438dbf78815584b458d6942821b2a70b6ce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
