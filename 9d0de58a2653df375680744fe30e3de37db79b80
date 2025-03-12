@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fe4b43d_e3bb9f04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T18:16:44Z",
+      "side": 1,
+      "message": "PTAL. I submitted https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1211204 before realising I could also have included this change.",
+      "revId": "9d0de58a2653df375680744fe30e3de37db79b80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
