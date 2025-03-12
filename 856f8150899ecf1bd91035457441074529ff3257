@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a515fc57_621c7251",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T16:25:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81d5366f_b3e38453",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52e11816_382970d6",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-03-12T10:22:07Z",
       "side": 1,
       "message": "I\u0027m assuming we\u0027re using headings rather than steps here because we don\u0027t have that UI feature on CLLDD? Are we tracking that?",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bea7c18_55d982d3",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T16:25:27Z",
+      "side": 1,
+      "message": "\u003e I\u0027m assuming we\u0027re using headings rather than steps here because we don\u0027t have that UI feature on CLLDD?\n\nYes.\n\n\u003e Are we tracking that?\n\nNo. I previously got the steer to route around the availability of otherwise non-critical UI elements for CLDD, and I don\u0027t have an issue tracker for that site.",
+      "parentUuid": "52e11816_382970d6",
       "revId": "856f8150899ecf1bd91035457441074529ff3257",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5db22d1c_4351c636",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T16:25:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f4414bc_e560ce5d",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d979b506_8221651d",
@@ -69,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3bf41b9_76e709ff",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T16:25:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d979b506_8221651d",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b3682f5_999883b8",
@@ -82,6 +154,24 @@
       "writtenOn": "2025-03-12T10:22:07Z",
       "side": 1,
       "message": "I would suggest this isn\u0027t the heading we want here. The use of git is really the detail. What they want to be doing at this point is \"running their pipelines\" or similar.",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf0f01c1_60764bd3",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T16:25:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b3682f5_999883b8",
       "revId": "856f8150899ecf1bd91035457441074529ff3257",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
