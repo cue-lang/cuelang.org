@@ -12,8 +12,8 @@ package site
 									"manifest post": "oFxoCRMPko9mwhbwXy2myWOIBqHKDXZSOb50hG2I5AI="
 								}
 								multi_step: {
-									hash:       "VG74509MEQUAQOJLPCQIAJH5G1P6GVVBMOOGQ99FSGK59R237DF0===="
-									scriptHash: "0SCUK8G2ACVAAD8UE99CHSHL8F6R0526DPH15NVO8KF5LE5AOOPG===="
+									hash:       "9DRGVCFMKCSVHI1N5SAK97596P9MM89BCLV7510TBN1P9K0LTBB0===="
+									scriptHash: "75A69G0KO5MTNE2GIDT8RR5VEG4PMH0V2IC9H6LQIESIBD6K1FFG===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -26,7 +26,7 @@ package site
 										output:   ""
 									}, {
 										doc:      "# Access \"cue refactor imports\" command."
-										cmd:      "export PATH=/cues/v0.13.0-0.dev.0.20250225142354-26a698fe9ae9:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -77,6 +77,15 @@ package site
 										cmd:      "cue get go k8s.io/api/apps/v1"
 										exitCode: 0
 										output:   ""
+									}, {
+										doc:      "#ellipsis 1"
+										cmd:      "cue version"
+										exitCode: 0
+										output: """
+												cue version v0.13.0-alpha.1
+												...
+
+												"""
 									}, {
 										doc:      ""
 										cmd:      "cue vet -c"
