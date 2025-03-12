@@ -8,16 +8,16 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"main.go":                 "XnREwVGoyKFXEoWrXwDFyQ4xpOJr8xxtQU0PLdtN9Jc="
-									"HIDDEN: required output": "j56GyrnaRoEd/e7kzji25K0ShXKWFOatWW/W0BXxjRo="
+									"main.go":                 "athFPPWMmrJDvJYNgOcGPiAG/CGifCRx85ht1V6D41Q="
+									"HIDDEN: required output": "d6LhtnRZzBwMy6oEJJDHz7jczdDU4N/z5RdyzmCd9GM="
 								}
 								code: {
-									"openinline: evalv2":                  "2tKbPUL+CR0RIWCsx0o96rtuFt8VbJ82Ci0uN+K/SyQ="
-									"openinline: evalv3: broken":          "1Nrqsa30oAhq7rj1v5JpQOfGyC1nHcQAGsDzqp5PYPY="
-									"openinline: evalv3: with openinline": "ApmFPANHCOUZkZMkMUIZOwJ8ufUOrPHkGfzUQ6+HGh4="
+									"openinline: evalv2":                  "KGIR9QrIBMmwgXyys4NNC+ENbBNAgXU5Pv8kOhJTpsw="
+									"openinline: evalv3: broken":          "Ch8wFKedDR0xV8A59hj5DZ1mq+MTWQRAznc3Mho1CAw="
+									"openinline: evalv3: with openinline": "+iON6/DlozlAuH4b15k1z+bkGyNH/e5rdfFvWypkZfk="
 								}
 								multi_step: {
-									hash:       "L6I0T4KUFVLEFQ5PKGF9NBNNH591R3TTMUFGGCUKP9NG800F6T7G===="
+									hash:       "0K680I8DL9KIVLSE8VPT81KK5FJ84H7HCOU7NFGMCFJ32PG1VL0G===="
 									scriptHash: "BJ46KNJFGBS2SL251SBDIMKK8EQD5QGU255AHQLSJK08PO0SLNIG===="
 									steps: [{
 										doc:      ""
