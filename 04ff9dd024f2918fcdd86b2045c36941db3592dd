@@ -16,6 +16,46 @@
       "message": "PTAL.",
       "revId": "04ff9dd024f2918fcdd86b2045c36941db3592dd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b521f5bc_226eb4d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:43:20Z",
+      "side": 1,
+      "message": "Per my offline message let\u0027s catch up on this one.",
+      "revId": "04ff9dd024f2918fcdd86b2045c36941db3592dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bc83452_5be89d55",
+        "filename": "content/docs/howto/update-imports-after-reorganising-packages/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:43:20Z",
+      "side": 1,
+      "message": "Please let\u0027s use plainer language here. What the command is doing to my mind is updating \"CUE source files\" when package dependencies move to a different import path. Trying to be too precise in our language here runs the risk of confusing the user, because we won\u0027t be able to be concise enough to be correct _and_ helpful. So I suggest we lean more towards a slightly looser explanation that is more readable, that we later make precise as required.",
+      "range": {
+        "startLine": 14,
+        "startChar": 35,
+        "endLine": 14,
+        "endChar": 83
+      },
+      "revId": "04ff9dd024f2918fcdd86b2045c36941db3592dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
