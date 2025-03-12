@@ -16,6 +16,24 @@
       "message": "This is broken FYI",
       "revId": "4da41460d4f7dbb456ef9cb0449863b2a259b398",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fd4f127_d81720d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T16:26:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5108b781_2a79c04c",
+      "revId": "4da41460d4f7dbb456ef9cb0449863b2a259b398",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
