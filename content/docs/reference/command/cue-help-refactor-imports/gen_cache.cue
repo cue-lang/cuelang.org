@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "R0SJ3E5A1U41KC14RK379O7CUMNEGQSFB1VUMOMHIJOTS46N7F6G===="
-									scriptHash: "3F4EFIM49J05HLHRJORHFBFFPVHJV25211MATB3CFJ1B8ELCL69G===="
+									hash:       "67TFTP4426PAHQH9924B3KLKQFNK9NACBU23Q79BQ5TDU8TTA90G===="
+									scriptHash: "HUNH84JSNHPQKDHBL4T59IOGCU3RO0JQABUBU16ASODND6D319V0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.0-0.dev.0.20250225142354-26a698fe9ae9:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -28,10 +28,13 @@ package site
 												It does not attempt to adjust the contents of the cue.mod/module.cue file:
 												use "cue mod get" or "cue mod tidy" for that.
 
-												If the major version suffix is omitted from oldImportPath, then the
-												major version will match the default major version specified in the
-												module.cue file for that import path unless --all-major is specified,
-												in which case all major versions will match.
+												If oldImportPath is underneath one of the dependency modules,
+												only imports in that module will be altered, unless --all-major
+												is specified, in which case all modules with that as a prefix will be
+												refactored.
+
+												Note: if oldImportPath specifies a major version, then it
+												*must* be underneath a dependency module.
 
 												If the --exact flag is specified, then oldImportPath is only
 												considered to match when the entire path matches, rather than matching
@@ -39,12 +42,16 @@ package site
 												or newImportPath contain an explicit package qualifier or when the
 												--ident flag is specified.
 
-												If oldImportPath is omitted and --exact is not specified,
-												oldImportPath is taken to be the same as newImportPath but with the
-												major version suffix omitted (see above for details). If oldImportPath
-												is omitted and --exact *is* specified, oldImportPath is taken to be
-												the same as newImportPath (this is useful in conjunction with
-												--ident).
+												With only one argument, the command will first resolve the current
+												default major version for the argument (ignoring any major version)
+												and then take oldImportPath to be path of the argument with that major
+												version. This means that the single argument form can be used to
+												upgrade the major version of a module, assuming the packages in that
+												module remain stable.
+
+												If oldImportPath is omitted and --exact *is* specified, oldImportPath
+												is taken to be the same as newImportPath. This is useful in
+												conjunction with --ident.
 
 												By default the identifier that the package is imported as will be kept
 												the same (this is to minimize code churn). However, if --update-ident
@@ -76,9 +83,6 @@ package site
 
 												\t# Update only foo.com/bar, not (say) foo.com/baz/somethingelse
 												\tcue refactor imports --exact foo.com/bar foo.com/baz
-
-												\t# Refactor, for example github.com/foo/bar/something.v2/pkg to foo.example/something/v2/pkg
-												\tcue refactor imports 'github.com/foo/bar/(.*)\\.(v[0-9]+)(.*)' 'foo.example/$1/$2$3'
 
 												Usage:
 												  cue refactor imports [<oldImportPath] <newImportPath> [flags]
