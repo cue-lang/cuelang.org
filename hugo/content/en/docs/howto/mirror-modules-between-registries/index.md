@@ -19,12 +19,12 @@ to a local, in-memory registry. The contents of this local registry are
 ephemeral: they disappear when it shuts down -- so don't use this registry to
 store your important modules!
 
-The `cue mod mirror` command is not yet available in the latest version of CUE.
+The `cue mod mirror` command is not yet available in the latest CUE release.
 This guide demonstrates the following
-[development version]({{<relref"docs/introduction/installation/#development-version">}}):
+[pre-release version]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}):
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0-0.dev.0.20250225142354-26a698fe9ae9
+cue version v0.13.0-alpha.1
 ...
 ```
 
