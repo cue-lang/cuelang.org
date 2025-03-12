@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2e6c744_06cd4593",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:27:07Z",
+      "side": 1,
+      "message": "Per my comment elsewhere (apologies, it appears I review this stack slightly out of order) please let\u0027s have clear lines after headings.",
+      "revId": "a5032f6aa39062f5b7eb71704b52d19659fc8df4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "606c3100_87645a82",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:27:07Z",
+      "side": 1,
+      "message": "We need some \"above the line\" text here please.\n\nSame comment as in the GitLab page regarding \"CUE workflow\" - that will not mean very much to a new user. It\u0027s a \"GitHub Actions workflow\" (or some spelling) that just happens to be declared in CUE.",
+      "revId": "a5032f6aa39062f5b7eb71704b52d19659fc8df4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fdbb98b_54d234a2",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:27:07Z",
+      "side": 1,
+      "message": "Just lodging a \"marker\" here regarding the same comment from the GitLab example about a single top-level workflow. Happy to discuss offline.",
+      "revId": "a5032f6aa39062f5b7eb71704b52d19659fc8df4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e2539e8_f33e6f8b",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:27:07Z",
+      "side": 1,
+      "message": "Same comment regarding the wording around git as my gitlab review",
+      "revId": "a5032f6aa39062f5b7eb71704b52d19659fc8df4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
