@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81d5366f_b3e38453",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:22:07Z",
+      "side": 1,
+      "message": "Generally speaking, please can we continue with our existing best practice of having clear lines after headings? It otherwise makes review/editing the source harder. Need not be in this change.",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52e11816_382970d6",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:22:07Z",
+      "side": 1,
+      "message": "I\u0027m assuming we\u0027re using headings rather than steps here because we don\u0027t have that UI feature on CLLDD? Are we tracking that?",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f4414bc_e560ce5d",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:22:07Z",
+      "side": 1,
+      "message": "This needs some \"above the line\" text.\n\nAlso, what is a \"CUE pipeline\"? I think we need to refer to the target system here, not the language in which we will declare it... which we can cover in the \"above the line\" text.",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d979b506_8221651d",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:22:07Z",
+      "side": 1,
+      "message": "I\u0027m not clear this is a good pattern to start people on because it means they cannot have multiple top-level pipelines. \n\nWhat is the plan with respect to \"migrating\" them to a more complete setup?\n\nHappy to discuss offline.",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b3682f5_999883b8",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:22:07Z",
+      "side": 1,
+      "message": "I would suggest this isn\u0027t the heading we want here. The use of git is really the detail. What they want to be doing at this point is \"running their pipelines\" or similar.",
+      "revId": "856f8150899ecf1bd91035457441074529ff3257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
