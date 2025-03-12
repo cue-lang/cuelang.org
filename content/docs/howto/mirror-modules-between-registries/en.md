@@ -19,7 +19,7 @@ EOD
 nohup cue mod registry localhost:55443 > /tmp/cue_mod_registry 2>&1 &
 
 # Access to "cue mod mirror" via tip of cmd/cue.
-export PATH=/cues/$CUELANG_CUE_TIP:$PATH
+export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
 This guide demonstrates how to use the
@@ -36,9 +36,9 @@ to a local, in-memory registry. The contents of this local registry are
 ephemeral: they disappear when it shuts down -- so don't use this registry to
 store your important modules!
 
-The `cue mod mirror` command is not yet available in the latest version of CUE.
+The `cue mod mirror` command is not yet available in the latest CUE release.
 This guide demonstrates the following
-[development version]({{<relref"docs/introduction/installation/#development-version">}}):
+[pre-release version]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}):
 {{{with script "en" "cue version"}}}
 #ellipsis 1
 cue version
