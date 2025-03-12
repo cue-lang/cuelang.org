@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85a9b8d7_9ee769fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-12T10:27:38Z",
+      "side": 1,
+      "message": "I\u0027ll leave this unreviewed for now, because it\u0027s just a copy-paste CL that we can trivially review later.",
+      "revId": "c5dd5bf335d5090c1681027e836aec75fc289947",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
