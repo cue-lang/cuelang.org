@@ -6,7 +6,8 @@ tags:
 - cue command
 ---
 {{<info>}}
-This command is not yet available in the latest CUE release.
+This command is only available in a recent CUE
+[pre-release]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}).
 
 
 This command is still in an experimental stage -- it may be changed or removed at any time.
@@ -21,10 +22,13 @@ prefix matching oldImportPath to replace that prefix by newImportPath.
 It does not attempt to adjust the contents of the cue.mod/module.cue file:
 use "cue mod get" or "cue mod tidy" for that.
 
-If the major version suffix is omitted from oldImportPath, then the
-major version will match the default major version specified in the
-module.cue file for that import path unless --all-major is specified,
-in which case all major versions will match.
+If oldImportPath is underneath one of the dependency modules,
+only imports in that module will be altered, unless --all-major
+is specified, in which case all modules with that as a prefix will be
+refactored.
+
+Note: if oldImportPath specifies a major version, then it
+*must* be underneath a dependency module.
 
 If the --exact flag is specified, then oldImportPath is only
 considered to match when the entire path matches, rather than matching
@@ -32,12 +36,16 @@ any path prefix. The --exact flag is implied if either oldImportPath
 or newImportPath contain an explicit package qualifier or when the
 --ident flag is specified.
 
-If oldImportPath is omitted and --exact is not specified,
-oldImportPath is taken to be the same as newImportPath but with the
-major version suffix omitted (see above for details). If oldImportPath
-is omitted and --exact *is* specified, oldImportPath is taken to be
-the same as newImportPath (this is useful in conjunction with
---ident).
+With only one argument, the command will first resolve the current
+default major version for the argument (ignoring any major version)
+and then take oldImportPath to be path of the argument with that major
+version. This means that the single argument form can be used to
+upgrade the major version of a module, assuming the packages in that
+module remain stable.
+
+If oldImportPath is omitted and --exact *is* specified, oldImportPath
+is taken to be the same as newImportPath. This is useful in
+conjunction with --ident.
 
 By default the identifier that the package is imported as will be kept
 the same (this is to minimize code churn). However, if --update-ident
@@ -69,9 +77,6 @@ For example:
 
 	# Update only foo.com/bar, not (say) foo.com/baz/somethingelse
 	cue refactor imports --exact foo.com/bar foo.com/baz
-
-	# Refactor, for example github.com/foo/bar/something.v2/pkg to foo.example/something/v2/pkg
-	cue refactor imports 'github.com/foo/bar/(.*)\.(v[0-9]+)(.*)' 'foo.example/$1/$2$3'
 
 Usage:
   cue refactor imports [<oldImportPath] <newImportPath> [flags]

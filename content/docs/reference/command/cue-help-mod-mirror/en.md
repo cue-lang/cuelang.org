@@ -6,10 +6,11 @@ tags:
 - cue command
 ---
 {{{with _script_ "en" "HIDDEN: access required CUE version"}}}
-export PATH=/cues/$CUELANG_CUE_TIP:$PATH
+export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 {{<info>}}
-This command is not yet available in the latest CUE release.
+This command is only available in a recent CUE
+[pre-release]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}).
 
 
 This command is still in an experimental stage -- it may be changed or removed at any time.
