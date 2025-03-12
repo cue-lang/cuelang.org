@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1703cf2_0409e07c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T15:02:50Z",
+      "side": 1,
+      "message": "@paul@myitcv.io PTAL. I won\u0027t submit this despite the current +2 until you also +2.",
+      "revId": "2470e438dbf78815584b458d6942821b2a70b6ce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "790edece_0b2fc382",
@@ -31,6 +48,30 @@
       "writtenOn": "2025-03-12T10:12:37Z",
       "side": 1,
       "message": "We don\u0027t demonstrate the use of `\u0026` here - it\u0027s simpler to leave this detail to the use. Please remove this so that it is consistent with other guides.",
+      "range": {
+        "startLine": 63,
+        "startChar": 33,
+        "endLine": 63,
+        "endChar": 34
+      },
+      "revId": "2470e438dbf78815584b458d6942821b2a70b6ce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "916ca83f_54f13a54",
+        "filename": "content/docs/howto/mirror-modules-between-registries/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T15:02:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "790edece_0b2fc382",
       "range": {
         "startLine": 63,
         "startChar": 33,
@@ -58,6 +99,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba0340b6_337cf3d7",
+        "filename": "content/docs/howto/mirror-modules-between-registries/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T15:02:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96631f0f_935b3fb5",
+      "revId": "2470e438dbf78815584b458d6942821b2a70b6ce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2643d59_574d9e87",
@@ -75,6 +134,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "845a4894_ed8de4b7",
+        "filename": "content/docs/howto/mirror-modules-between-registries/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T15:02:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2643d59_574d9e87",
+      "revId": "2470e438dbf78815584b458d6942821b2a70b6ce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd6dc030_f81aae3f",
@@ -88,6 +165,24 @@
       "writtenOn": "2025-03-12T10:12:37Z",
       "side": 1,
       "message": "Please remove this step. Again, to keep things simple and consistent with other guides, we can leave stopping the local registry to the user. It\u0027s a very much below the line level of detail we don\u0027t need here.",
+      "revId": "2470e438dbf78815584b458d6942821b2a70b6ce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c63b96b_2588bb99",
+        "filename": "content/docs/howto/mirror-modules-between-registries/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-12T15:02:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd6dc030_f81aae3f",
       "revId": "2470e438dbf78815584b458d6942821b2a70b6ce",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
