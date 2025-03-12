@@ -53,12 +53,12 @@ cue: {
 	}
 	[=~"^exp "]: experimental: true
 	"mod mirror": {
-		cueVersion:   "tip"
+		cueVersion:   "prerelease"
 		experimental: true
 	}
-	refactor: cueVersion: "tip"
+	refactor: cueVersion: "prerelease"
 	"refactor imports": {
-		cueVersion:   "tip"
+		cueVersion:   "prerelease"
 		experimental: true
 	}
 }
@@ -67,14 +67,18 @@ cue: {
 cue: [_]: {
 	experimental: _
 	cueVersion:   _
-	// TODO: distinguish between commands which require tip and those which require the
-	// site's CUE prerelease.
 	let unreleased = (cueVersion != "latest")
+	let tip = (cueVersion == "tip")
+	let prerelease = (cueVersion == "prerelease")
 
 	if experimental || unreleased {
 		introduction: strings.Join([
 			"{{<info>}}",
-			if unreleased {"This command is not yet available in the latest CUE release."},
+			if unreleased && tip {"This command is not yet available in the latest CUE release."},
+			if unreleased && prerelease {"""
+				This command is only available in a recent CUE
+				[pre-release]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}).
+				"""},
 			if unreleased && experimental {"\n"},
 			if experimental {"This command is still in an experimental stage -- it may be changed or removed at any time."},
 			"{{</info>}}",
