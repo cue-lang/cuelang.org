@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3c1fc9f_bdf8c0f9",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-13T13:50:30Z",
+      "side": 1,
+      "message": "Thanks, that is _much_ better.",
+      "parentUuid": "b4bcdc72_e4e7b14e",
+      "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6614675_f5581893",
