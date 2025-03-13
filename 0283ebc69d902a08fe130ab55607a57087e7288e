@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4bcdc72_e4e7b14e",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-13T13:36:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8277f1c7_1b7e1f48",
+      "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6614675_f5581893",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf7c56dc_126313e0",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-13T13:36:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6614675_f5581893",
+      "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d24c6ba6_a835c2ef",
@@ -48,6 +84,24 @@
       "writtenOn": "2025-03-13T06:32:27Z",
       "side": 1,
       "message": "Please use unified diffs, `-u`. It\u0027s the most commonly and easily read format because it is the default for git output. Everything else will require some level of people having to learn/understand it.",
+      "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bb94a05_5d377be5",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-13T13:36:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d24c6ba6_a835c2ef",
       "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
