@@ -12,8 +12,8 @@ package site
 									"manifest post": "Xm2zHWFNjbVaki7euWHAG3P49i7svoI7+VkX7Y7xZME="
 								}
 								multi_step: {
-									hash:       "TIOTAHF34FS9T5R6T15B84B4ORH7PT72T0FN74VR93M3U0R7O8IG===="
-									scriptHash: "75A69G0KO5MTNE2GIDT8RR5VEG4PMH0V2IC9H6LQIESIBD6K1FFG===="
+									hash:       "QCBATPJJQ20LFL09SFMGITU1KO1NR8O10JS385BUPIM7EAU5ADCG===="
+									scriptHash: "KRGDTNI6LR4MP3ETL35IKI4SGS02IMC1SUH3M25V67B0KRT4JE30===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -22,11 +22,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "export GOCACHE=/caches/gobuild"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      "# Access \"cue refactor imports\" command."
-										cmd:      "export PATH=/cues/v0.13.0-alpha.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -41,6 +36,15 @@ package site
 												{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 												EOD
 												"""
+										exitCode: 0
+										output:   ""
+									}, {
+										doc: """
+												# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
+												# and it's easiest to align behaviours here, inline, rather than using
+												# the internal/patch/tip.diff mechanism.
+												"""
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -82,7 +86,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.13.0-alpha.1
+												cue version v0.13.0-alpha.1.0.20250313135405-2fe368efde2b
 												...
 
 												"""

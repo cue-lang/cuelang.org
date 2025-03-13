@@ -10,6 +10,11 @@ mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
+
+# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
+# and it's easiest to align behaviours here, inline, rather than using
+# the internal/patch/tip.diff mechanism.
+export PATH=/cues/$CUELANG_CUE_TIP:$PATH
 {{{end}}}
 
 {{<info>}}
@@ -123,9 +128,6 @@ your validated YAML workflow will look like this:
 {{{with upload "en" "yaml"}}}
 -- .github/workflows/workflow.yml --
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-"on":
-  - push
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -136,6 +138,9 @@ jobs:
           node-version: "20"
       - run: npm install -g bats
       - run: bats -v
+"on":
+  - push
+run-name: ${{ github.actor }} is learning GitHub Actions
 {{{end}}}
 {{{with _script_ "en" "HIDDEN: diff"}}}
 diff -u .github/workflows/workflow.yml{,.got}
