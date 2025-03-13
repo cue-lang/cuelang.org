@@ -31,15 +31,22 @@ A: string @tag(a)
 // A default provides a value if the related key
 // is not specified for the cue command.
 B: *"bar" | string @tag(b)
+
+C: string @tag(name)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtdCBhPWZvbw==" >}}
-$ cue export -t a=foo
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtdCBhPWZvbyAtdCBuYW1lPSRVU0VS" >}}
+$ cue export -t a=foo -t name=$USER
 {
     "A": "foo",
-    "B": "bar"
+    "B": "bar",
+    "C": "robin"
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
+Environment variables must be injected explicitly by the shell, as shown here
+with the `name` tag. {{<issue 3811>}}Issue #3811{{</issue>}} tracks a proposal
+to simplify the injection of multiple environment variables -- please do
+provide your feedback on that issue.
 
 ## Injecting a numeric value
 
@@ -122,3 +129,5 @@ A: ["foo-with-suffix", "bar-with-suffix"]
 - {{< linkto/related/howto "conditionally-include-cue-files-using-build-attributes" >}}
   -- shorthand tag attributes can also be used as build attributes, which
   affect which CUE files are included in an evaluation
+- {{<issue 3811>}}Issue #3811{{</issue>}} tracks a proposal to simplify the
+  injection of multiple environment variables
