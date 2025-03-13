@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8277f1c7_1b7e1f48",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-13T06:32:27Z",
+      "side": 1,
+      "message": "The first part of the first sentence of this above-the-line text is about something we will do later. Again, I think we need to move to plainer, more straight-to-the-point language. What is happening here? That\u0027s what the user is interested in. Not what is going to happen later, not the detail of the workflow struct (that is a below-the-line detail), not the fact that it came from `cue import`. No, what\u0027s happening here is that we are declaring a GitHub Actions workflow in CUE, based on an example from the GitHub documentation. Then show the example, then provide below-the-line detail.",
+      "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6614675_f5581893",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-13T06:32:27Z",
+      "side": 1,
+      "message": "I would suggest this should be spelled `workflows`: there are multiple of them.",
+      "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d24c6ba6_a835c2ef",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-13T06:32:27Z",
+      "side": 1,
+      "message": "Please use unified diffs, `-u`. It\u0027s the most commonly and easily read format because it is the default for git output. Everything else will require some level of people having to learn/understand it.",
+      "revId": "0283ebc69d902a08fe130ab55607a57087e7288e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
