@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"1":  "dJfFi5zMxuQeNhGGK2q6NQpf2kDfl3u/lEoZYBynw0U="
-									yaml: "aBjEYRUoOnbP0LDJyLvZSt9wkxY26O1/w5vUxbNBrGY="
+									yaml: "S9VRU5ynjgJl4htVSBakLyqYs1uVmwPTrdmVa9Z4f28="
 								}
 								multi_step: {
-									hash:       "1GJM0CTQBE8UF9D5AIUJO4BSUQRIQKDO5FEIG90LOM11SSURN7R0===="
-									scriptHash: "OJCF6VF6BT7OGR1SH1M6PP59OMSU2ILB9RS5SU14OFNFJSDO67VG===="
+									hash:       "EEE19RJPR0LRF621PD04U60AS2TT76GFSUPCIHECCQDPB5LD6EIG===="
+									scriptHash: "77VLSJL3FIUDKQTKHKD5SPH3I0V9UKSAJLLVKACA4G920H2B9NQG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -26,6 +26,15 @@ package site
 												{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 												EOD
 												"""
+										exitCode: 0
+										output:   ""
+									}, {
+										doc: """
+												# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
+												# and it's easiest to align behaviours here, inline, rather than using
+												# the internal/patch/tip.diff mechanism.
+												"""
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {

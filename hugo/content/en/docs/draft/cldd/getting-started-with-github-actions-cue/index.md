@@ -110,9 +110,6 @@ your validated YAML workflow will look like this:
 {{< code-tabs >}}
 {{< code-tab name=".github/workflows/workflow.yml" language="yml" area="top-left" >}}
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-"on":
-  - push
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -123,6 +120,9 @@ jobs:
           node-version: "20"
       - run: npm install -g bats
       - run: bats -v
+"on":
+  - push
+run-name: ${{ github.actor }} is learning GitHub Actions
 {{< /code-tab >}}{{< /code-tabs >}}
 ## Run your workflow
 

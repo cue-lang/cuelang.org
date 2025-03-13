@@ -8,13 +8,17 @@ no_index: true
 # Caches.
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
-# Access "cue refactor imports" command.
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
+
 # Registry access.
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
+
+# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
+# and it's easiest to align behaviours here, inline, rather than using
+# the internal/patch/tip.diff mechanism.
+export PATH=/cues/$CUELANG_CUE_TIP:$PATH
 {{{end}}}
 
 If you're already using CUE to validate or generate Kubernetes manifests then
