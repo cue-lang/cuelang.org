@@ -80,6 +80,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/buildkite"
 {{{end}}}
 Learn more with:
+- {{<linkto/inline"draft/cldd/getting-started-with-buildkite-cue">}}
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/buildkite@v0.1.0)
 
 ### Azure Pipelines
