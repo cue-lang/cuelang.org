@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"docker-compose.yml broken":          "n0bceZj6iQxTydgojpTQdVrh7adBnwBlt35igvGp1jI="
-								schema:                               "SVC+6Me5ReYcUyGB80/0PwKw0Qlcd6MvElDT/jEUshg="
-								"docker-compose.yaml fixed":          "MUTGTv8WcDUarpsqFFKN2drDRw9k+aolL3VeRjfzduA="
-								"moreschema.cue":                     "Rkts6FKjozwElRlNJrexG3hYH3eqzlPrkCIeShfuGfM="
-								"docker-compose.yaml really fixed":   "S3kRuiwxR4gx48oGvQRf3Bi0FR7FpNg+RgxeBDm3iOc="
-								"link splotpolicy and splotservice1": "z0dvJCXlEQqixG/4GZkTAQoekMWTqCy6yUX24+U5xmo="
+								"docker-compose.yml broken":          "CsBD2VPsi/GdU3c3nk2puu15qyq9xvPUFQ1E9rgsex8="
+								schema:                               "jkIK61L5sComH89bR46ffm6v1ON8pPa8vB9/xgBpVAA="
+								"docker-compose.yaml fixed":          "YbVb7C3+mvIveWkW/dTzTv28zP1YuSurxgq0pWyBK3A="
+								"moreschema.cue":                     "TCAXi4BpjnU08/iD0FwnBarJF1pd90W+UCmEqqVxAuE="
+								"docker-compose.yaml really fixed":   "w1GPZTHkJyxNbU4FT8awac9ByJfwUFFfbDXWvxQguKQ="
+								"link splotpolicy and splotservice1": "qfys3/x8UUIEV4gng1X3w3CilH5GPM8bMxEOFTBffI8="
 							}
 							multi_step: {
-								hash:       "TN7BO602896DU4QAOT53VNIMST4IF3ESIHLAFI253NLD4M4DSVA0===="
+								hash:       "UNS8RBU4DGVJ739EAMJC12M7HCJJ6QHLR81ON2F4P24JH0RSKGL0===="
 								scriptHash: "D400CN0SES1U7PK9SLC4NJT5DJ9RNFL9M51DT6ONBCC5N2KGFOP0===="
 								steps: [{
 									doc:      ""
