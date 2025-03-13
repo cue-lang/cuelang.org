@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c84dbcf_8b490d1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-03-13T17:48:55Z",
+      "side": 1,
+      "message": "SGTM in principle, but I\u0027ll leave the +2 to Paul on this one as it\u0027s not as trivial as the others.",
+      "revId": "cb0ba4decba331e6351ff81fed6b951b0fe64e2c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
