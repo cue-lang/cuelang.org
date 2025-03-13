@@ -16,6 +16,23 @@
       "message": "SGTM in principle, but I\u0027ll leave the +2 to Paul on this one as it\u0027s not as trivial as the others.",
       "revId": "cb0ba4decba331e6351ff81fed6b951b0fe64e2c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c180efe_100829a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-03-13T17:53:04Z",
+      "side": 1,
+      "message": "On a second review, and since Jonathan mentions that cuelang.org master is broken without this, SGTM.",
+      "revId": "cb0ba4decba331e6351ff81fed6b951b0fe64e2c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
