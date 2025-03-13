@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4521dd4b_c1608461",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-13T06:38:55Z",
+      "side": 1,
+      "message": "Same comments as applied to the GitHub guide.",
+      "revId": "7e472886adb2da5783600990ab01464e8cde0870",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f148721_aea19dc5",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-13T06:38:55Z",
+      "side": 1,
+      "message": "`pipelines`?",
+      "revId": "7e472886adb2da5783600990ab01464e8cde0870",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad49e85a_621d6c7d",
+        "filename": "content/docs/draft/cldd/getting-started-with-gitlab-cicd-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-13T06:38:55Z",
+      "side": 1,
+      "message": "Same comment regarding unified diff.",
+      "revId": "7e472886adb2da5783600990ab01464e8cde0870",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
