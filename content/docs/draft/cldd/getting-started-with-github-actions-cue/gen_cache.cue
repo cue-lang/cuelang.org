@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1":  "dJfFi5zMxuQeNhGGK2q6NQpf2kDfl3u/lEoZYBynw0U="
+									"1":  "Pcil3z9T+IqXAjHNP6eG8ZSDvPiF3r7tgzym2VFc3hU="
 									yaml: "S9VRU5ynjgJl4htVSBakLyqYs1uVmwPTrdmVa9Z4f28="
 								}
 								multi_step: {
-									hash:       "EEE19RJPR0LRF621PD04U60AS2TT76GFSUPCIHECCQDPB5LD6EIG===="
-									scriptHash: "77VLSJL3FIUDKQTKHKD5SPH3I0V9UKSAJLLVKACA4G920H2B9NQG===="
+									hash:       "JOV9D1SDA79M0LMB10QC089R27D1TCITGQPBHCCAK7H9HUO6EJGG===="
+									scriptHash: "KRFEC9D8N62KD4DL9T1KK87FIJ3RP9P14N8SUNUQQMNPHQRU92GG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
