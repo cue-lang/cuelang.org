@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4066daa_92cd7c03",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-14T17:01:40Z",
+      "side": 1,
+      "message": "PTAL. This only landed yesterday, so the outdated version shouldn\u0027t have affected too many folks just yet.",
+      "revId": "bc94051e82e3a68cbf6fcfe9b1bad102de3642fd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
