@@ -8,16 +8,16 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"main.go":                 "5gqVjQM2e/D34bpPbKuWdnwDDTrTzJtQ0H8WKWPgRmY="
-									"HIDDEN: required output": "d7EWw1iIEOhZWRLqm7cvbHWi4I0wzI/HXQWxAIFmzmU="
+									"main.go":                 "OVtw3nlzIwhALeaU5eBnv6F/rgaWQChm4ZeOXIY6Wew="
+									"HIDDEN: required output": "FoMoxyX6dZJLNbtVPVHSa7qw49bd+597zeDcenb/Wm4="
 								}
 								code: {
-									"openinline: evalv2":                  "4KAr9cUPDaEnfjck7qCcwYwoGogAcydD7T1HDGmgyhg="
-									"openinline: evalv3: broken":          "9IWslz8NGQOpK+diB0DXCsizJvKticvh3LQB81Lh3dY="
-									"openinline: evalv3: with openinline": "swtWrx39MjlvY1n+y+jkkP1nGl/H7TjPP6zcZCWRHyI="
+									"openinline: evalv2":                  "tw6hPV3wyd2eEGXoc/FVATJCrpNRc2zQ9X2unpqjPXo="
+									"openinline: evalv3: broken":          "qI9hI7b8Tl71CmyHu2Z7rNcK6jlm30BxA4CoSAlxAEs="
+									"openinline: evalv3: with openinline": "1QljoeE/0/qHNw2PqZSsyGMg6hvWuUcfkVntoC+nABk="
 								}
 								multi_step: {
-									hash:       "LT9825E1JPTEGKAS4C2K4755PDNU8DHII8KGQ7HLQIVBAQN4LH1G===="
+									hash:       "68N1C9GOCE315KUU0A6ONGVPJ1OC9Q49UHNI61SJ76JST3E256EG===="
 									scriptHash: "BJ46KNJFGBS2SL251SBDIMKK8EQD5QGU255AHQLSJK08PO0SLNIG===="
 									steps: [{
 										doc:      ""
@@ -60,7 +60,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.12.0
+												cue version v0.13.0-alpha.1.0.20250314174817-9e333c606194
 												...
 
 												"""

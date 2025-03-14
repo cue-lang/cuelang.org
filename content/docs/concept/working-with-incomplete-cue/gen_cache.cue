@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								cue:  "+yRx+Wb348/BBGQb7q6uZ0EFCjLGEWMFogEl8w2XJDA="
-								data: "EkUFmQfoCr87B9W2ZKbADio5M7zkR3LmG35cSXRSBzc="
-								go:   "dsjpMil/hZTxQtZgyNot+vN3sJnmU9ivK/im2sBeh+8="
+								cue:  "Wvc31XgzYlK0grZxHOIlXbs2BDOvqFJSkbCh03icUXo="
+								data: "2pxwXXNrMrRVuf+BuxaqTXeLkXKkwRG1R4jFDgG5QvA="
+								go:   "a1/6OmlcvLfgF5Yt8mzoogHu2r7j+kwAf2oNbrNnZLc="
 							}
 							multi_step: {
-								hash:       "5GBSM70GBGTL4QK1NO75OQ62MHEUEFTEGFNKHD5FM8RNSGV0FEM0===="
-								scriptHash: "PN6Q9NILM79PUCS8M43BMBQ3R6ARPS41AKCPRJRVB6GCLJ5Q1C9G===="
+								hash:       "AJ8T8HU92RTO09T2KCHPLFATE4M8TL39NFGDL9KUTAISUGHOG0RG===="
+								scriptHash: "IN1DB3N8S6CNOD550OVAGVIU0AD70UOL42NJCT3UROE1571DCOQG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -84,7 +84,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.0"
+									cmd:      "go get cuelang.org/go@v0.13.0-alpha.1.0.20250314174817-9e333c606194"
 									exitCode: 0
 									output: """
 											...

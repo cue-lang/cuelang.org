@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"manifest pre":  "+YYxreyfIc9gyIMoNBu1NjoaCxMrLP5M/HOkGcQhigs="
-									"manifest post": "Xm2zHWFNjbVaki7euWHAG3P49i7svoI7+VkX7Y7xZME="
+									"manifest pre":  "q9+dq6oLD2oni43zoq4F74mOYP8UHekZGnvE7bY9nL0="
+									"manifest post": "+uzzgxyrHeL4EW4cbvfI0bO3MK9XsFrMvf5ogG+xjhE="
 								}
 								multi_step: {
-									hash:       "QCBATPJJQ20LFL09SFMGITU1KO1NR8O10JS385BUPIM7EAU5ADCG===="
-									scriptHash: "KRGDTNI6LR4MP3ETL35IKI4SGS02IMC1SUH3M25V67B0KRT4JE30===="
+									hash:       "B3524Q265CR4DK8E5V0SBBV6CE77RC9EP5JOBOIO81CVEVKO9IO0===="
+									scriptHash: "054AAEE12NOU51248CDI4175IFBGFAVULDJ7QGQ9PTLAVRJ5RMD0===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -44,7 +44,7 @@ package site
 												# and it's easiest to align behaviours here, inline, rather than using
 												# the internal/patch/tip.diff mechanism.
 												"""
-										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250314174817-9e333c606194:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -86,7 +86,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.13.0-alpha.1.0.20250313135405-2fe368efde2b
+												cue version v0.13.0-alpha.1.0.20250314174817-9e333c606194
 												...
 
 												"""
