@@ -31,19 +31,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.12.0 go install -trimpath cuelang.org/go/cmd/cue@v0.12.0
-
-RUN \
-  --mount=type=cache,target=/cache/gocache \
-  --mount=type=cache,target=/cache/gomodcache \
-  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.13.0-alpha.1 go install -trimpath cuelang.org/go/cmd/cue@v0.13.0-alpha.1
-
-RUN \
-  --mount=type=cache,target=/cache/gocache \
-  --mount=type=cache,target=/cache/gomodcache \
-  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b go install -trimpath cuelang.org/go/cmd/cue@v0.13.0-alpha.1.0.20250313135405-2fe368efde2b
+  GOBIN=/cues/v0.13.0-alpha.1.0.20250314174817-9e333c606194 go install -trimpath cuelang.org/go/cmd/cue@v0.13.0-alpha.1.0.20250314174817-9e333c606194
 
 RUN git clone https://github.com/cue-lang/libcue.git /libcue
 RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
@@ -63,14 +51,14 @@ ENV LC_ALL=C.UTF-8
 
 # Default to the default value of CUE. Guides can fix to a different
 # version explicitly
-ENV PATH="/cues/v0.12.0:${PATH}"
+ENV PATH="/cues/v0.13.0-alpha.1.0.20250314174817-9e333c606194:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
-ENV CUELANG_CUE_LATEST="v0.12.0"
-ENV CUELANG_CUE_PRERELEASE="v0.13.0-alpha.1"
-ENV CUELANG_CUE_TIP="v0.13.0-alpha.1.0.20250313135405-2fe368efde2b"
-ENV CUELANG_CUE_DEFAULT="v0.12.0"
-ENV CUELANG_CUE_PLAYGROUND="v0.12.0"
+ENV CUELANG_CUE_LATEST="v0.13.0-alpha.1.0.20250314174817-9e333c606194"
+ENV CUELANG_CUE_PRERELEASE="v0.13.0-alpha.1.0.20250314174817-9e333c606194"
+ENV CUELANG_CUE_TIP="v0.13.0-alpha.1.0.20250314174817-9e333c606194"
+ENV CUELANG_CUE_DEFAULT="v0.13.0-alpha.1.0.20250314174817-9e333c606194"
+ENV CUELANG_CUE_PLAYGROUND="v0.13.0-alpha.1.0.20250314174817-9e333c606194"
 
 WORKDIR /
 
@@ -83,9 +71,7 @@ RUN chmod 755 /usr/bin/entrypoint.sh
 RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
-COPY --from=build /cues/v0.12.0/cue /cues/v0.12.0/cue
-COPY --from=build /cues/v0.13.0-alpha.1/cue /cues/v0.13.0-alpha.1/cue
-COPY --from=build /cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b/cue /cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b/cue
+COPY --from=build /cues/v0.13.0-alpha.1.0.20250314174817-9e333c606194/cue /cues/v0.13.0-alpha.1.0.20250314174817-9e333c606194/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/
 ENV LD_LIBRARY_PATH="/usr/local/lib"
