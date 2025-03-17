@@ -22,6 +22,30 @@
       },
       "revId": "fe970c97aea96e5c8d6833b6487c604c6a6bcaa0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee9e1c80_38749738",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-17T12:48:17Z",
+      "side": 1,
+      "message": "\u003e What is this a reference to?\n\nI triggered Buildkite using the YAML pipeline that\u0027s emitted.\n\n\u003e Feels like a slightly over the top explanation given that we don\u0027t test the GitHub actions examples?\n\nBoth the Github and GitLab examples use unmodified upstream examples, but the Buildkite one doesn\u0027t (as they don\u0027t publish an example which is self-contained without external script files/etc). I personally feel more confident in my use of GitHub (and GitLab) examples, and can recognise if a guide encodes common mistakes that nevertheless look plausible.\n\nBecause of these differences, I felt that if I could assert that, at least initially, the otherwise unproven pipeline produced a positive outcome (beyond being merely syntatically valid, as per the schema) it would be useful to do so - but only if the cost of doing so was low. I already had a ~working Buildkite setup configured from when I wrote the cue-by-example guides, so I took a few minutes to get it running and test the pipeline. I don\u0027t feel it\u0027s inappropriate to record it in the commit message that introduces this guide, but I\u0027m happy to remove it if you feel the noise is unhelpful.",
+      "parentUuid": "8890eba0_393e1e98",
+      "range": {
+        "startLine": 17,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 8
+      },
+      "revId": "fe970c97aea96e5c8d6833b6487c604c6a6bcaa0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
