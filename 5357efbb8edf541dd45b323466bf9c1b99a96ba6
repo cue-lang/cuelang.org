@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d61c893_0bf3d92b",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-17T13:18:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b358183a_8843d447",
+      "range": {
+        "startLine": 47,
+        "startChar": 22,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "5357efbb8edf541dd45b323466bf9c1b99a96ba6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1062952_54bb721b",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-03-17T09:45:59Z",
       "side": 1,
       "message": "I think you need to explain what the environment variable name is here too. Otherwise the user is cutting between the explanation and the code above needlessly.",
+      "range": {
+        "startLine": 48,
+        "startChar": 16,
+        "endLine": 48,
+        "endChar": 19
+      },
+      "revId": "5357efbb8edf541dd45b323466bf9c1b99a96ba6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37cafeb1_fecb6700",
+        "filename": "content/docs/howto/inject-value-into-evaluation-using-tag-attribute/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-17T13:18:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1062952_54bb721b",
       "range": {
         "startLine": 48,
         "startChar": 16,
