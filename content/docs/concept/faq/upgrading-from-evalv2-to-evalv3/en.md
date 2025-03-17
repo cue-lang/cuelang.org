@@ -80,7 +80,7 @@ cue version
 {{{end}}}
 
 If you encounter any unexpected issues, we would also encourage you to try `evalv3` on
-[the development version]({{<relref"docs/introduction/installation">}}#install-from-source)
+[the development version]({{<relref"docs/introduction/installation#development-version">}})
 of CUE, as your issue may have already been fixed since the latest release.
 
 ## What might break when I switch to `evalv3`?
