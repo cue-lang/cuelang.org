@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8890eba0_393e1e98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-17T10:22:17Z",
+      "side": 1,
+      "message": "What is this a reference to? The bash script that is part of the resulting pipeline? Feels like a slightly over the top explanation given that we don\u0027t test the GitHub actions examples?",
+      "range": {
+        "startLine": 17,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 8
+      },
+      "revId": "fe970c97aea96e5c8d6833b6487c604c6a6bcaa0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
