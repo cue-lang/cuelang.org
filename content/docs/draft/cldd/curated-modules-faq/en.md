@@ -114,6 +114,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
 {{{end}}}
 Learn more with:
+- {{<linkto/inline"draft/cldd/getting-started-with-goreleaser-cue">}}
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@v0.2.0)
 
 ### Docker Compose
