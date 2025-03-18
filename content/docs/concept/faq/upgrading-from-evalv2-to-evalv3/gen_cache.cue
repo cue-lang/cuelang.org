@@ -11,11 +11,6 @@ package site
 									"main.go":                 "5gqVjQM2e/D34bpPbKuWdnwDDTrTzJtQ0H8WKWPgRmY="
 									"HIDDEN: required output": "d7EWw1iIEOhZWRLqm7cvbHWi4I0wzI/HXQWxAIFmzmU="
 								}
-								code: {
-									"openinline: evalv2":                  "4KAr9cUPDaEnfjck7qCcwYwoGogAcydD7T1HDGmgyhg="
-									"openinline: evalv3: broken":          "9IWslz8NGQOpK+diB0DXCsizJvKticvh3LQB81Lh3dY="
-									"openinline: evalv3: with openinline": "swtWrx39MjlvY1n+y+jkkP1nGl/H7TjPP6zcZCWRHyI="
-								}
 								multi_step: {
 									hash:       "LT9825E1JPTEGKAS4C2K4755PDNU8DHII8KGQ7HLQIVBAQN4LH1G===="
 									scriptHash: "BJ46KNJFGBS2SL251SBDIMKK8EQD5QGU255AHQLSJK08PO0SLNIG===="
