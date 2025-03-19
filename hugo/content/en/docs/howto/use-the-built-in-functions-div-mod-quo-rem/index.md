@@ -2,101 +2,124 @@
 title: Using the built-in functions "div", "mod", "quo", and "rem"
 tags:
 - language
-- commented cue
 authors:
 - jpluscplusm
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
-demonstrates how to use the
-[built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
-functions
-[`div()`]({{< relref "docs/reference/glossary#div-built-in-function" >}})
+This guide demonstrates how to perform integer division using the two pairs of
+built-in functions
+[`div()`]({{< relref "docs/reference/glossary#div-built-in-function" >}}) and
+[`mod()`]({{< relref "docs/reference/glossary#mod-built-in-function" >}}),
 and
-[`mod()`]({{< relref "docs/reference/glossary#mod-built-in-function" >}})
-to perform
-[Euclidean division](https://en.wikipedia.org/wiki/Euclidean_division),
-and how to use
-[`quo()`]({{< relref "docs/reference/glossary#quo-built-in-function" >}})
-and
+[`quo()`]({{< relref "docs/reference/glossary#quo-built-in-function" >}}) and
 [`rem()`]({{< relref "docs/reference/glossary#rem-built-in-function" >}})
-to perform truncated division.
-
-The behaviours of these functions are defined in
+-- as defined in
 [the CUE language specification]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}}).
 
+When used with integers that divide exactly (leaving no remainder),
+the `div()` and `quo()` functions behave identically, and
+the `mod()` and `rem()` functions return zero:
+
 {{< code-tabs >}}
-{{< code-tab name="example.cue" language="cue" area="top-left" >}}
-package example
+{{< code-tab name="no-remainder.cue" language="cue" area="top-left" >}}
+// No remainder results in identical behaviours.
+quotient:  div(15, 3) & quo(15, 3)
+remainder: mod(15, 3) & rem(15, 3)
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgbm8tcmVtYWluZGVyLmN1ZQ==" >}}
+$ cue eval no-remainder.cue
+quotient:  5
+remainder: 0
+{{< /code-tab >}}
+{{< /code-tabs >}}
 
-// div returns Euclidean division's
-// integer quotient
-euclidean: quotient: {
-	a: div(15, 4)
-	b: div(15, -4)
-	c: div(-15, 4)
-	d: div(-15, -4)
+The `div()` and `mod()` functions implement
+[Euclidean division](https://en.wikipedia.org/wiki/Euclidean_division),
+which behaves as follows when used with integers that don't divide exactly,
+leaving a non-zero remainder:
+
+{{< code-tabs >}}
+{{< code-tab name="euclidean.cue" language="cue" area="top-left" >}}
+// div() and mod() implement Euclidean division.
+"15 divided by 4": {
+	quotient:  div(15, 4)
+	remainder: mod(15, 4)
 }
-
-// mod returns Euclidean division's
-// integer remainder
-euclidean: remainder: {
-	a: mod(15, 4)
-	b: mod(15, -4)
-	c: mod(-15, 4)
-	d: mod(-15, -4)
+"15 divided by negative 4": {
+	quotient:  div(15, -4)
+	remainder: mod(15, -4)
 }
-
-// quo returns truncated division's
-// integer quotient
-truncated: quotient: {
-	a: quo(15, 4)
-	b: quo(15, -4)
-	c: quo(-15, 4)
-	d: quo(-15, -4)
+"negative 15 divided by 4": {
+	quotient:  div(-15, 4)
+	remainder: mod(-15, 4)
 }
-
-// rem returns truncated division's
-// integer remainder
-truncated: remainder: {
-	a: rem(15, 4)
-	b: rem(15, -4)
-	c: rem(-15, 4)
-	d: rem(-15, -4)
+"negative 15 divided by negative 4": {
+	quotient:  div(-15, -4)
+	remainder: mod(-15, -4)
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydA==" >}}
-$ cue export
-{
-    "euclidean": {
-        "quotient": {
-            "a": 3,
-            "b": -3,
-            "c": -4,
-            "d": 4
-        },
-        "remainder": {
-            "a": 3,
-            "b": 3,
-            "c": 1,
-            "d": 1
-        }
-    },
-    "truncated": {
-        "quotient": {
-            "a": 3,
-            "b": -3,
-            "c": -3,
-            "d": 3
-        },
-        "remainder": {
-            "a": 3,
-            "b": 3,
-            "c": -3,
-            "d": -3
-        }
-    }
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgZXVjbGlkZWFuLmN1ZQ==" >}}
+$ cue eval euclidean.cue
+"15 divided by 4": {
+    quotient:  3
+    remainder: 3
+}
+"15 divided by negative 4": {
+    quotient:  -3
+    remainder: 3
+}
+"negative 15 divided by 4": {
+    quotient:  -4
+    remainder: 1
+}
+"negative 15 divided by negative 4": {
+    quotient:  4
+    remainder: 1
+}
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+The `quo()` and `rem()` functions implement truncated division, with `quo()`'s
+value being truncated towards zero:
+
+{{< code-tabs >}}
+{{< code-tab name="truncated.cue" language="cue" area="top-left" >}}
+// quo() and rem() implement truncated division.
+"15 divided by 4": {
+	quotient:  quo(15, 4)
+	remainder: rem(15, 4)
+}
+"15 divided by negative 4": {
+	quotient:  quo(15, -4)
+	remainder: rem(15, -4)
+}
+"negative 15 divided by 4": {
+	quotient:  quo(-15, 4)
+	remainder: rem(-15, 4)
+}
+"negative 15 divided by negative 4": {
+	quotient:  quo(-15, -4)
+	remainder: rem(-15, -4)
+}
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgdHJ1bmNhdGVkLmN1ZQ==" >}}
+$ cue eval truncated.cue
+"15 divided by 4": {
+    quotient:  3
+    remainder: 3
+}
+"15 divided by negative 4": {
+    quotient:  -3
+    remainder: 3
+}
+"negative 15 divided by 4": {
+    quotient:  -3
+    remainder: -3
+}
+"negative 15 divided by negative 4": {
+    quotient:  3
+    remainder: -3
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
