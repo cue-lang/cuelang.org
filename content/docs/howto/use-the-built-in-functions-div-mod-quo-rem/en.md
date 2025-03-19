@@ -2,100 +2,91 @@
 title: Using the built-in functions "div", "mod", "quo", and "rem"
 tags:
 - language
-- commented cue
 authors:
 - jpluscplusm
 toc_hide: true
 ---
 
-This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
-demonstrates how to use the
-[built-in]({{< relref "docs/reference/glossary#built-in-functions" >}})
-functions
-[`div()`]({{< relref "docs/reference/glossary#div-built-in-function" >}})
+This guide demonstrates integer division using the pairs of built-in functions
+[`div()`]({{< relref "docs/reference/glossary#div-built-in-function" >}}) &
+[`mod()`]({{< relref "docs/reference/glossary#mod-built-in-function" >}}),
 and
-[`mod()`]({{< relref "docs/reference/glossary#mod-built-in-function" >}})
-to perform
-[Euclidean division](https://en.wikipedia.org/wiki/Euclidean_division),
-and how to use
-[`quo()`]({{< relref "docs/reference/glossary#quo-built-in-function" >}})
-and
-[`rem()`]({{< relref "docs/reference/glossary#rem-built-in-function" >}})
-to perform truncated division.
+[`quo()`]({{< relref "docs/reference/glossary#quo-built-in-function" >}}) &
+[`rem()`]({{< relref "docs/reference/glossary#rem-built-in-function" >}}).
 
-The behaviours of these functions are defined in
-[the CUE language specification]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}}).
+When used with two integers where one divides the other evenly
+the `div()` and `quo()` functions behave identically, and
+the `mod()` and `rem()` functions return zero:
 
-{{{with code "en" "cc"}}}
-exec cue export
+{{{with code "en" "no remainder"}}}
+exec cue eval no-remainder.cue
 cmp stdout out
--- example.cue --
-package example
-
-// div returns Euclidean division's
-// integer quotient
-euclidean: quotient: {
-	a: div(15, 4)
-	b: div(15, -4)
-	c: div(-15, 4)
-	d: div(-15, -4)
-}
-
-// mod returns Euclidean division's
-// integer remainder
-euclidean: remainder: {
-	a: mod(15, 4)
-	b: mod(15, -4)
-	c: mod(-15, 4)
-	d: mod(-15, -4)
-}
-
-// quo returns truncated division's
-// integer quotient
-truncated: quotient: {
-	a: quo(15, 4)
-	b: quo(15, -4)
-	c: quo(-15, 4)
-	d: quo(-15, -4)
-}
-
-// rem returns truncated division's
-// integer remainder
-truncated: remainder: {
-	a: rem(15, 4)
-	b: rem(15, -4)
-	c: rem(-15, 4)
-	d: rem(-15, -4)
-}
+-- no-remainder.cue --
+// 15 divides 3 evenly, leaving no remainder.
+quotient:  div(15, 3) & quo(15, 3)
+remainder: mod(15, 3) & rem(15, 3)
 -- out --
-{
-    "euclidean": {
-        "quotient": {
-            "a": 3,
-            "b": -3,
-            "c": -4,
-            "d": 4
-        },
-        "remainder": {
-            "a": 3,
-            "b": 3,
-            "c": 1,
-            "d": 1
-        }
-    },
-    "truncated": {
-        "quotient": {
-            "a": 3,
-            "b": -3,
-            "c": -3,
-            "d": 3
-        },
-        "remainder": {
-            "a": 3,
-            "b": 3,
-            "c": -3,
-            "d": -3
-        }
-    }
-}
+quotient:  5
+remainder: 0
 {{{end}}}
+
+The `div()` and `mod()` functions implement
+[Euclidean division](https://en.wikipedia.org/wiki/Euclidean_division),
+which behaves as follows when used with integers that don't divide evenly
+(leaving a non-zero remainder):
+
+{{{with code "en" "div and mod"}}}
+exec cue eval euclidean.cue
+cmp stdout out
+-- euclidean.cue --
+// div() and mod() implement Euclidean division.
+"div(15, 4)":   div(15, 4)
+"mod(15, 4)":   mod(15, 4)
+"div(15, -4)":  div(15, -4)
+"mod(15, -4)":  mod(15, -4)
+"div(-15, 4)":  div(-15, 4)
+"mod(-15, 4)":  mod(-15, 4)
+"div(-15, -4)": div(-15, -4)
+"mod(-15, -4)": mod(-15, -4)
+-- out --
+"div(15, 4)":   3
+"mod(15, 4)":   3
+"div(15, -4)":  -3
+"mod(15, -4)":  3
+"div(-15, 4)":  -4
+"mod(-15, 4)":  1
+"div(-15, -4)": 4
+"mod(-15, -4)": 1
+{{{end}}}
+
+The `quo()` and `rem()` functions implement *truncated division*,
+with `quo()`'s value being truncated towards zero:
+
+{{{with code "en" "quo and rem"}}}
+exec cue eval truncated.cue
+cmp stdout out
+-- truncated.cue --
+// quo() and rem() implement truncated division.
+"quo(15, 4)":   quo(15, 4)
+"rem(15, 4)":   rem(15, 4)
+"quo(15, -4)":  quo(15, -4)
+"rem(15, -4)":  rem(15, -4)
+"quo(-15, 4)":  quo(-15, 4)
+"rem(-15, 4)":  rem(-15, 4)
+"quo(-15, -4)": quo(-15, -4)
+"rem(-15, -4)": rem(-15, -4)
+-- out --
+"quo(15, 4)":   3
+"rem(15, 4)":   3
+"quo(15, -4)":  -3
+"rem(15, -4)":  3
+"quo(-15, 4)":  -3
+"rem(-15, 4)":  -3
+"quo(-15, -4)": 3
+"rem(-15, -4)": -3
+{{{end}}}
+
+## Related content
+
+- The behaviours of the integer divison functions are defined in
+  [The CUE Language Specification]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
