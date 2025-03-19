@@ -8,7 +8,7 @@
     "### What did you expect?\n\n\n\n"
     "### What did you see instead?\n\n") | urlquery
 }}
-{{ $issueUrl := (print "https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&title=cuelang.org:%20&body=" $issueBody) | htmlUnescape | safeHTML }}
+{{ $issueUrl := (print "https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&title=cuelang.org:%20&template=bug_report.md&body=" $issueBody) | htmlUnescape | safeHTML }}
 
 <!doctype html>
 <html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection }}" class="no-js">
