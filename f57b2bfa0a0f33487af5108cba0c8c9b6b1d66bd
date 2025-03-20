@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd2369b8_d2b10ce6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-20T05:48:18Z",
+      "side": 1,
+      "message": "Understood, but we can lightly adapt such an example to massively reduce it, no?",
+      "revId": "f57b2bfa0a0f33487af5108cba0c8c9b6b1d66bd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9de2566_e709e4c7",
+        "filename": "content/docs/draft/cldd/getting-started-with-azure-pipelines-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-20T05:48:18Z",
+      "side": 1,
+      "message": "I\u0027d suggest an example that a non-cron based example is likely to be a) shorter and b) more easily understood. I think we can relatively easily take the example from https://learn.microsoft.com/en-us/azure/devops/pipelines/process/run-stages?view\u003dazure-devops#view-the-entire-yaml-pipeline and cut it down by removing some of the stages, no?",
+      "revId": "f57b2bfa0a0f33487af5108cba0c8c9b6b1d66bd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bbb6887_91ad23f1",
+        "filename": "content/docs/draft/cldd/getting-started-with-azure-pipelines-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-20T05:48:18Z",
+      "side": 1,
+      "message": "Same comment re evalv3. We don\u0027t need to word-smith around this, because it will be the default.",
+      "revId": "f57b2bfa0a0f33487af5108cba0c8c9b6b1d66bd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
