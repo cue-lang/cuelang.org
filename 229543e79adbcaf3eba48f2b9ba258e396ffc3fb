@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c81045cc_189ca928",
+        "filename": "content/docs/draft/cldd/getting-started-with-argo-workflows-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-20T14:44:55Z",
+      "side": 1,
+      "message": "I\u0027ve replaced the example with a substantially shorter one from the upstream project.",
+      "parentUuid": "3c448d53_c48a3517",
+      "revId": "229543e79adbcaf3eba48f2b9ba258e396ffc3fb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33fc202d_9156c439",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-03-20T05:41:40Z",
       "side": 1,
       "message": "This can be a hidden script, and you can avoid mentioning below. Because evalv3 will be the default when we go live. And any use of the curated modules requires evalv3.",
+      "revId": "229543e79adbcaf3eba48f2b9ba258e396ffc3fb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "beb6bc40_7a132fc3",
+        "filename": "content/docs/draft/cldd/getting-started-with-argo-workflows-cue/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-20T14:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33fc202d_9156c439",
       "revId": "229543e79adbcaf3eba48f2b9ba258e396ffc3fb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
