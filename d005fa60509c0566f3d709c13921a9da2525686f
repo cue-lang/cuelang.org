@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "d005fa60509c0566f3d709c13921a9da2525686f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70a1c05a_6d8f905e",
+        "filename": "content/docs/howto/use-the-built-in-functions-div-mod-quo-rem/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-20T18:08:23Z",
+      "side": 1,
+      "message": "Writing things out in a \"human\" form like this doesn\u0027t really help to my mind. I suggest we do something like:\n\n```\n\"rem(15,4)\": rem(15,4)\n\"quo(15,4)\": quo(15,4)\n...\n```\n\nBut let\u0027s discuss first please.",
+      "revId": "d005fa60509c0566f3d709c13921a9da2525686f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
