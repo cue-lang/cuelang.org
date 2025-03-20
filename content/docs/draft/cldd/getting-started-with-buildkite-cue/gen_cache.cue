@@ -12,8 +12,8 @@ package site
 									yaml: "Gp4AnRLm9IPj+1g3cwqEtBBbw1ZVOR9DZeQCN8NVo5w="
 								}
 								multi_step: {
-									hash:       "UNFJO08KQS53AJ3C5AJ0FUF9KU6V4KT8LVEBG30V87P2RPI7T1V0===="
-									scriptHash: "RV90L1G24CDNPQEL1EGQBE26EPC8NADG88G2BL02U2DKJJNQC2N0===="
+									hash:       "HVTPKDJ2VGD711BIKIQB87I31RSEINK10V5I435KS11IBKHA51VG===="
+									scriptHash: "KOEGIV5VABJLF70VJAA4AKQPRQ930ATKFLEMI7O3H0HH7NE4N8EG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -26,6 +26,15 @@ package site
 												{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 												EOD
 												"""
+										exitCode: 0
+										output:   ""
+									}, {
+										doc: """
+												# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
+												# and it's easiest to align behaviours here, inline, rather than using
+												# the internal/patch/tip.diff mechanism.
+												"""
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250324111431-1eccc4649d73:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
