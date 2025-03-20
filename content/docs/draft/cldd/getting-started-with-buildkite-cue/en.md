@@ -10,6 +10,11 @@ mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
+
+# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
+# and it's easiest to align behaviours here, inline, rather than using
+# the internal/patch/tip.diff mechanism.
+export PATH=/cues/$CUELANG_CUE_TIP:$PATH
 {{{end}}}
 
 {{<info>}}
@@ -137,6 +142,5 @@ The `cue.mod` and `.buildkite` directories need to be stored in your git
 repository, along with your `pipeline.cue` file.
 After recording them in a commit you can push your branch to your git remote
 and trigger the pipeline.
-
 Whenever you update your CUE pipeline, re-run the `cue export` command shown
 above, and then use `git` to record any changes to these files and directories.
