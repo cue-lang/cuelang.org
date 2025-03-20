@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aca28d08_4ead8d5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-20T05:51:53Z",
+      "side": 1,
+      "message": "Why does a longer example help in that respect?\n\nI would argue that keeping something simple at this stage is actually more important. The aspects of CUE that lend themselves to more involve setup (templates, references etc) are not something we are covering in this example. So just making the example long for the sake of it actually seems to hard readability?",
+      "range": {
+        "startLine": 18,
+        "startChar": 47,
+        "endLine": 20,
+        "endChar": 0
+      },
+      "revId": "740a54768d62dde92ca39612f67e45b47284a485",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
