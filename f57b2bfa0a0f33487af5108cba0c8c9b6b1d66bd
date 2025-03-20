@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "569b4cd3_7df37c41",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-20T16:38:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd2369b8_d2b10ce6",
+      "revId": "f57b2bfa0a0f33487af5108cba0c8c9b6b1d66bd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9de2566_e709e4c7",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5a4c5bf_3c293d53",
+        "filename": "content/docs/draft/cldd/getting-started-with-azure-pipelines-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-20T16:38:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9de2566_e709e4c7",
+      "revId": "f57b2bfa0a0f33487af5108cba0c8c9b6b1d66bd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0bbb6887_91ad23f1",
@@ -48,6 +84,24 @@
       "writtenOn": "2025-03-20T05:48:18Z",
       "side": 1,
       "message": "Same comment re evalv3. We don\u0027t need to word-smith around this, because it will be the default.",
+      "revId": "f57b2bfa0a0f33487af5108cba0c8c9b6b1d66bd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6d3d72c_1c49f757",
+        "filename": "content/docs/draft/cldd/getting-started-with-azure-pipelines-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-20T16:38:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0bbb6887_91ad23f1",
       "revId": "f57b2bfa0a0f33487af5108cba0c8c9b6b1d66bd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
