@@ -22,6 +22,30 @@
       },
       "revId": "740a54768d62dde92ca39612f67e45b47284a485",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbb9e4a2_42b75c03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-20T16:27:29Z",
+      "side": 1,
+      "message": "Done. The guide now uses a shorter, self-contained example from the upstream project.",
+      "parentUuid": "aca28d08_4ead8d5c",
+      "range": {
+        "startLine": 18,
+        "startChar": 47,
+        "endLine": 20,
+        "endChar": 0
+      },
+      "revId": "740a54768d62dde92ca39612f67e45b47284a485",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
