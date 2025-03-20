@@ -120,6 +120,5 @@ The `cue.mod` and `.buildkite` directories need to be stored in your git
 repository, along with your `pipeline.cue` file.
 After recording them in a commit you can push your branch to your git remote
 and trigger the pipeline.
-
 Whenever you update your CUE pipeline, re-run the `cue export` command shown
 above, and then use `git` to record any changes to these files and directories.

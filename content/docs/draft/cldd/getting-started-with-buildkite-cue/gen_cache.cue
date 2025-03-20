@@ -12,8 +12,8 @@ package site
 									yaml: "fubPPqMndi/1PaVhGnuFr4GFjGqV761bp5skIneKyG8="
 								}
 								multi_step: {
-									hash:       "75FPHGU04UCC96PTU7H9NAOITPCH6QVIVHN4JRLCME1VF85HTLO0===="
-									scriptHash: "RV90L1G24CDNPQEL1EGQBE26EPC8NADG88G2BL02U2DKJJNQC2N0===="
+									hash:       "LD03QARGAKJMA6OE39J2KP4J39CM2HBCTF513MJG0JBC3VED24B0===="
+									scriptHash: "I941VA9FBMON3VUTFS8O7IV75IA9DGNTIHTG9B9QS6OPE9L9CQPG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -26,6 +26,24 @@ package site
 												{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 												EOD
 												"""
+										exitCode: 0
+										output:   ""
+									}, {
+										doc: """
+												# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
+												# and it's easiest to align behaviours here, inline, rather than using
+												# the internal/patch/tip.diff mechanism.
+												"""
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b:$PATH"
+										exitCode: 0
+										output:   ""
+									}, {
+										doc: """
+												# Use evalv3, as that's required for curated modules.
+												# TODO(jm): remove this after the site's cmd/cue tip version reaches a version
+												# which has evalv3 enabled by default.
+												"""
+										cmd:      "export CUE_EXPERIMENT=evalv3=1"
 										exitCode: 0
 										output:   ""
 									}, {
