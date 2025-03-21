@@ -39,6 +39,30 @@
       },
       "revId": "9b200a046326db0166b0ace3fac8843c5ba0a161",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b162497_d020afe4",
+        "filename": "content/docs/draft/cldd/checking-existing-github-actions-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-21T17:39:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ca0be9d_7423ddec",
+      "range": {
+        "startLine": 38,
+        "startChar": 14,
+        "endLine": 38,
+        "endChar": 16
+      },
+      "revId": "9b200a046326db0166b0ace3fac8843c5ba0a161",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
