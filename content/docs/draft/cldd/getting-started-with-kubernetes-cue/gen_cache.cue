@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1":  "2JXGRJQxMQr+lsFZkFd3QJlsK2gl2BBZnJU0kewFaP4="
-									yaml: "2WHsj4SC34HVmmD9QC6peQUdsn8RAd92YevwkHsWSgs="
+									"1":  "Sx1V9t7TTRwJVtfVGfb8qeX0ruvxxl9AkRA1QH6VJ/0="
+									yaml: "gDOANeaLxaINpxRtOZLSy88dz0LP8TAvV64fzWyK2wQ="
 								}
 								multi_step: {
-									hash:       "D4JL4JHS003CRHVR25FAEBSA6UA3310CBPM7I6NSI10N89D6RFH0===="
-									scriptHash: "EKQ7O3LB37JG86RV361UOVAB64OGF8R43URL82KMKI8KHKQLTR60===="
+									hash:       "7B6HOAPL2IBR6AU4EM6PFKCQ2P49DECE0MJRBPMDC6KJV5J6Q3EG===="
+									scriptHash: "OM79744O3V3QOD7KVCIUPAN9EUUVHJCAO75JMSHMHLELQJ3UORKG===="
 									steps: [{
 										doc:      ""
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -34,7 +34,7 @@ package site
 												# and it's easiest to align behaviours here, inline, rather than using
 												# the internal/patch/tip.diff mechanism.
 												"""
-										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250313135405-2fe368efde2b:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250321144843-86e62b281609:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
