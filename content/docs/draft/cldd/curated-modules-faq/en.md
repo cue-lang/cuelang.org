@@ -19,11 +19,11 @@ you think we've missed!
 The curated modules currently published cover:
 - [Kubernetes](#kubernetes)
 - [GitHub Actions](#github-actions)
-- [GitLab CI](#gitlab-cicd)
+- [GitLab CI/CD](#gitlab-cicd)
 - [Buildkite Pipelines](#buildkite-pipelines)
 - [Azure Pipelines](#azure-pipelines)
 - [Argo Workflows](#argo-workflows)
-- [Go Releaser](#go-releaser)
+- [GoReleaser](#goreleaser)
 - [Docker Compose](#docker-compose)
 - [npm's `package.json`](#npms-packagejson)
 
@@ -53,6 +53,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
 {{{end}}}
 Learn more with:
+- [Checking existing GitHub Actions files using CUE]({{<relref"checking-existing-github-actions-files">}})
 - [Getting started with GitHub Actions + CUE]({{<relref"getting-started-with-github-actions-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/githubactions@v0.2.0)
 
@@ -64,6 +65,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci"
 {{{end}}}
 Learn more with:
+- [Checking existing GitLab CI/CD files using CUE]({{<relref"checking-existing-gitlab-cicd-files">}})
 - [Getting started with GitLab CI/CD + CUE]({{<relref"getting-started-with-gitlab-cicd-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/gitlab@v0.2.0)
 
@@ -75,6 +77,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/buildkite"
 {{{end}}}
 Learn more with:
+- [Checking existing Buildkite Pipelines files using CUE]({{<relref"checking-existing-buildkite-pipelines-files">}})
 - [Getting started with Buildkite + CUE]({{<relref"getting-started-with-buildkite-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/buildkite@v0.1.0)
 
@@ -86,6 +89,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
 {{{end}}}
 Learn more with:
+- [Checking existing Azure Pipelines files using CUE]({{<relref"checking-existing-azure-pipelines-files">}})
 - [Getting started with Azure Pipelines + CUE]({{<relref"getting-started-with-azure-pipelines-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@v0.1.0)
 
@@ -100,10 +104,11 @@ It will be updated soon, but is safe to use as-is:
 import argoworkflows "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
 {{{end}}}
 Learn more with:
+- [Checking existing Argo Workflows files using CUE]({{<relref"checking-existing-argo-workflows-files">}})
 - [Getting started with Argo Workflows + CUE]({{<relref"getting-started-with-argo-workflows-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/argocd@v0.0.0)
 
-### Go Releaser
+### GoReleaser
 "*GoReleaser does everything you need to create a professional release process for Go, Rust, and Zig projects.*"
 ([goreleaser.com](https://goreleaser.com/))
 {{{with code "en" "goreleaser"}}}
@@ -111,6 +116,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
 {{{end}}}
 Learn more with:
+- [Checking existing GoReleaser files using CUE]({{<relref"checking-existing-goreleaser-files">}})
 - [Getting started with GoReleaser + CUE]({{<relref"getting-started-with-goreleaser-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@v0.2.0)
 
@@ -122,6 +128,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
 {{{end}}}
 Learn more with:
+- [Checking existing Docker Compose files using CUE]({{<relref"checking-existing-docker-compose-files">}})
 - [Getting started with Docker Compose + CUE]({{<relref"getting-started-with-docker-compose-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/dockercompose@v0.1.0)
 
