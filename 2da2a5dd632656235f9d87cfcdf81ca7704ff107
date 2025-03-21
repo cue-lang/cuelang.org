@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c11e4a03_3530635a",
+        "filename": "content/docs/howto/place-data-files-different-locations-file-embedding/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-21T14:42:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3016ac5b_604c0eba",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "2da2a5dd632656235f9d87cfcdf81ca7704ff107",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fde312d4_0f9b1f43",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-03-20T17:58:17Z",
       "side": 1,
       "message": "Embedding data \"into\" a definition like this is odd.\n\nI would suggest embedding into a hidden field that is constrained by the definition, which is more useful/likely (for example if the definition comes from another package).",
+      "revId": "2da2a5dd632656235f9d87cfcdf81ca7704ff107",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62eaf2c5_0f652479",
+        "filename": "content/docs/howto/place-data-files-different-locations-file-embedding/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-21T14:42:53Z",
+      "side": 1,
+      "message": "I\u0027ve switched to a hidden field, which has removed the defintion entirely.\n\nI can re-introduce a definition if you feel it would be useful to demonstrate the approach that\u0027d be needed if an another package were the source of the constraint. \n\nHowever, I think that to do so here would elongate the example in a way which I\u0027m not sure would improve the page overall. PTAL.",
+      "parentUuid": "fde312d4_0f9b1f43",
       "revId": "2da2a5dd632656235f9d87cfcdf81ca7704ff107",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
