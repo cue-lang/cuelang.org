@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							code: {
-								example:                 "/6MPPZrHTtW6by2P8piTRRA8SPkeEztCGLa9zoWBMAc="
-								"future: helper fields": "TnNsDQaK/bF6zvcv7rvieR72ukkDs7/iLNIv8bTbK4k="
+								example:                 "c3Sh3CdS6C7f/DQfgacOGT9En+SFxuex/plDuWFp6rE="
+								"future: helper fields": "VHWUQvQr9rfS5rdZnv9S4vVvpbeaOOlazwrcxhb429Y="
 							}
 						}
 					}
