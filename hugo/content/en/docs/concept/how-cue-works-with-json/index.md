@@ -278,11 +278,10 @@ item.painting: invalid value "{ \"width\": 34, \"HEIGHT\": 12, \"depth\": 0.2 }"
     ./furniture.cue:17:17
     json.Validate:1:1
     json.Validate:1:16
-item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: conflicting values number and "34" (mismatched types number and string):
+item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: conflicting values "34" and number (mismatched types string and number):
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:15:14
-    json.Validate:1:1
     json.Validate:1:12
 {{< /code-tab >}}
 {{< /code-tabs >}}

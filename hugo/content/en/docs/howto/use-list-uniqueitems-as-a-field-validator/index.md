@@ -28,7 +28,7 @@ aList: [1, 2.0, 3, "four", 5, 5.0, false,
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
-some instances are incomplete; use the -c flag to show errors or suppress this message
+some instances are incomplete; use the -c flag to show errors or -c=false to allow incomplete instances
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

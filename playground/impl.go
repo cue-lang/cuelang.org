@@ -106,7 +106,11 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		return "", fmt.Errorf("failed to load: %w", err)
 	}
 
-	ctx := cuecontext.New()
+	// TODO: ensure the options here align with site.cue baseEnv
+	ctx := cuecontext.New(
+		cuecontext.CUE_DEBUG("openinline=0"),
+		cuecontext.EvaluatorVersion(cuecontext.EvalV3),
+	)
 
 	v := ctx.BuildInstance(builds[0])
 	if err := v.Err(); err != nil {
