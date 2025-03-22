@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VEAO18R2F0CT9S58UBA0UBLBMNH6QGDRBG3G52SN6AK0F5HF68NG===="
-									scriptHash: "BI2T076NG4RJCDOL16RVBAU10MDOE4N7LJIT8FN1RQPQJVUFC850===="
+									hash:       "9LH6RDNDCBRAK86B6DH19D8LAVEL7TRQNF6QA32PN6US46GSHH60===="
+									scriptHash: "0NO8PGV2SBTM14O22M7Q809G8VBDCGOLIFQ7UUSUFB60IBDIMVJ0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.0:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250322080417-cfbeb48088c9:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,8 +20,6 @@ package site
 										cmd:      "cue help login"
 										exitCode: 0
 										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 												Log into a CUE registry via the OAuth 2.0 Device Authorization Grant.
 												Without an argument, CUE_REGISTRY is used if it points to a single registry.
 

@@ -7,29 +7,29 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"data: alex":                    "/JLb/66Ow79zBA9um1yZO0dAJAa6ckZxVYw91rO9bMM="
-								"data: bryn (broken)":           "WoijecXEf2a4jjNVjAGA+nsOUq1rbTcoyKkFZdy1ZRw="
-								"data: charlie":                 "Jd6hl4qBV1dT8hBl842oVapzI1fJ+6Jm90Xkz29L6Ms="
-								"schema: CUE":                   "0iPCfV4A30VjeAqv4/ycygxZ+Fgtul1yz3uv7LlK+kU="
-								"data: bryn (fixed)":            "016xWEOnESbTX1L/36YLJr3DWpzDh+DnmhxLInpxvZU="
-								"data: alex (reminder)":         "oqOdViTlH+KA+Dvv0WI31oXOttO4B52xkOjF8Qaj4Xc="
-								"data: bryn (reminder)":         "Fa88yrXDP6eSilEUZ7RIiQyI3hl9kQUUUaKBGhFwcM0="
-								"data: charlie (reminder)":      "TJRgdG6AAvR2EPYZiWLv/vGvuASg/dXZwT4IYwxnJ2g="
-								"schema: CUE (reminder)":        "O9NYaWBctnE5yCt99baPAdxnNPafQY8PTMpweQl4Nvo="
-								"policy: CUE (too restrictive)": "RcnwHqOpQN7Ru6Gc2tgIN7w/sL6v1Hhcgf6JZYZRA/s="
-								"policy: CUE (correct)":         "X74Cs+rIy10+BJ6K9BrnVntuT/TNZ9ICrvtcdLEat90="
-								"schema.proto":                  "VSckjZ4hj+x/rdUMZNA/Ztm0/5tQmCF32n+783+goG0="
-								"schema.json":                   "g6ONtHyRJXdzw5fYjPG4clS8H4yo2d7ZHVVBgz9uvf0="
-								"policy.cue":                    "EaYQXjogsjHMcrgrspUGbZ8Sklc1pQ+oI2N1s95R/Zg="
-								"data.yml (broken)":             "Yg/M5hkLuPQ65zn+uYqUzOazAWio3urDvDHfY3IbtAo="
-								"data.yml (fixed)":              "J0yjHRtswozFlCd/dDjCvt6dfMy/KuEx1sLBXhMVPEU="
+								"data: alex":                    "v30p2n9n4KPEWwVTlnbPxj6GOWxyCcFtFVJR+ylJ9E4="
+								"data: bryn (broken)":           "ZTl5F2Vjny4+V86b6jnRXNoQpEaPghdCkdsCMpDvoAE="
+								"data: charlie":                 "hkK3yj60OIJL/Rj/kgbZeQon2bZGlz38l05KMlU0yG0="
+								"schema: CUE":                   "A7pMLng+1HVbinSLOzxnyRp6T4qD1d7mj5waEEjaepk="
+								"data: bryn (fixed)":            "Gpd4vh2zj9qf9FecPnnklLZhsKw5X2pP55BVz/pvdYs="
+								"data: alex (reminder)":         "QsORQD36pZyTrVAutByxfmKVnJ4YOHUe0mDNo+il55U="
+								"data: bryn (reminder)":         "V2FmBxMbpH4lB2yZ8iKB81GUihTOigojBOFVbNglWYo="
+								"data: charlie (reminder)":      "miJuMu1CWxawLBDdmGe7I8WoYKTdXyD2lWNCZb5+s5A="
+								"schema: CUE (reminder)":        "bAg/qf2HCqX7FOnJzzo8GTKB1tVIdrvYF8cL0lI7Xz0="
+								"policy: CUE (too restrictive)": "1x5nYV3ybxjdM2+u87tbTAUs/kCu7Osx/nDi4hKaOnE="
+								"policy: CUE (correct)":         "VTF6uxFjy2rPptodoHWIJUYonkbwU2akBJ44UTUEHg4="
+								"schema.proto":                  "dNLSNRKpbNfGGd0VZnlWalZUdwAK0dLUf5eaRI/8ld0="
+								"schema.json":                   "tQCWH3EK+zgcwwD+ysZxZ9TlmYei5x97gBZFb5z4L/s="
+								"policy.cue":                    "FO3Htuh6AzzeA1dJ1awcuCRbVuJnpWQ+bPVsOEN+GvE="
+								"data.yml (broken)":             "QtJkLt4lIeQSQ8ARzQkcfDzW6qmhCv/NkLhXhfUAYmo="
+								"data.yml (fixed)":              "qkedELHyfXU1aof2p9E+T6+JsMS+o5jGAKvM7UADvrU="
 							}
 							code: {
-								constraints: "rcqFoylCH6u/wAu6NQXIpaDQ4ggBhx3AwrOwg77bHf4="
-								definition:  "mvEjoqQqWmhLwmFD8ch6jRCzrtEb5unb91J2hZ2E7X0="
+								constraints: "+Kn/8i/LZfDmp4fK4C7HcSjPZQfRXrsrL78cEV/JkAg="
+								definition:  "Q9aNwuQeYFH11rB+WYlnFkRl1LscRAhnGBYwe62YEwc="
 							}
 							multi_step: {
-								hash:       "QVQBFDFIC9NR0NCBGIQ9R1ASB34RDKD5Q5OQDVNICDQU670PGOI0===="
+								hash:       "FFTS5G1M5T562M64LIT4H328UT1AM6PC4MFCU9BG7F1LVL7LI3Q0===="
 								scriptHash: "5IRU0HUMAKN4O1TE41F2439MMECK8AS890TU89R3REV16HVJRUN0===="
 								steps: [{
 									doc:      ""
@@ -81,9 +81,6 @@ package site
 											aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
 											    ./data.yml:4:8
 											    ./schema.proto:5:3
-											anInt: incompatible integer bounds >99.0 and <100:
-											    ./policy.cue:9:10
-											    ./schema.json:14:21
 											aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (does not satisfy strings.Contains("25")):
 											    ./policy.cue:6:12
 											    ./data.yml:1:10
@@ -95,6 +92,9 @@ package site
 											    ./data.yml:1:10
 											    ./policy.cue:6:12
 											    ./schema.proto:2:3
+											anInt: incompatible integer bounds >99.0 and <100:
+											    ./schema.json:14:21
+											    ./policy.cue:9:10
 
 											"""
 								}, {

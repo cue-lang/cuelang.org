@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "G7KMJ5OQCJ5AHT2OUI6RFJECJVV4AVG6VBNUOJEUSUIS4NJILQDG===="
-									scriptHash: "Q0VKECLVNVDH8R6RGBPF5C3VSKT4BJ949J8CDQM2SQ71IMI1GGJG===="
+									hash:       "88GP9OJ266H2CL3OLD5AQQF2F2DMI9B5MKJFCL0D8I50TT6E0990===="
+									scriptHash: "J6QPKHJN0IG448RF3SKGA3R6I3BT0NK44NEK0VDAQ9GFM06O3KB0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.0-alpha.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250322080417-cfbeb48088c9:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -25,16 +25,15 @@ package site
 												This commmand ensures that a set of modules and their dependencies
 												are available ("mirrored") in a registry.
 
-												For each module specified on the command line, it ensures that the
-												module and all the modules in depends on
-												are present in both the "from" registry and the "to" registry and that the
-												contents are the same in each. If the --no-deps is specified, only
-												the module itself but not its dependencies will be mirrored.
+												For each module specified on the command line, it ensures that the module and
+												all the modules it depends on are present in both the "from" registry and the
+												"to" registry, and that the contents are the same in each. If --no-deps is
+												specified then the module will be mirrored without its dependencies.
 
 												A module may be specified as <module>@<version>, in which case the
 												specified version will be mirrored. If the version is canonical (for example v1.2.3), then
-												exactly that version will be mirrored, otherwise the latest corresponding
-												version will be mirrored (or all corresponding versions if --all-versions
+												exactly that version will be mirrored, otherwise (for example v1) the latest
+												corresponding version will be mirrored (or all corresponding versions if --all-versions
 												is specified).
 
 												For example:

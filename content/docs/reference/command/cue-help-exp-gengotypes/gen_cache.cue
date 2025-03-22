@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "RKM78E2MA3OUBEPJGLGOFP6M9L2FJ6K60CO408M5B42NAU0CKJLG===="
-									scriptHash: "FHMII83G586JV49CVQ00MR26R0PMVHML2JVDET5UU3VTEHIS408G===="
+									hash:       "4K4AM28KL1JBOGA4S5M5UIB7F1FGM952QI4U7BM7NDRQKU4B69GG===="
+									scriptHash: "9H7UBIM2LDO5F92MJBR8FLN0H3835AFFLH8G62HIUJPI4DSM32VG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.0:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250322080417-cfbeb48088c9:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -22,6 +22,8 @@ package site
 										output: """
 												gengotypes generates Go type definitions from exported CUE definitions.
 
+												*This command is experimental and may be changed at any time - see "cue help exp"*
+
 												The generated Go types are guaranteed to accept any value accepted by the CUE definitions,
 												but may be more general. For example, "string | int" will translate into the Go
 												type "any" because the Go type system is not able to express
@@ -29,7 +31,8 @@ package site
 
 												To ensure that the resulting Go code works, any imported CUE packages or
 												referenced CUE definitions are transitively generated as well.
-												The generated code is placed in cue_gen.go files in the directory of each CUE package.
+												The generated code is placed in cue_types*_gen.go files in the directory of
+												each CUE package.
 
 												Generated Go type and field names may differ from the original CUE names by default.
 												For instance, an exported definition "#foo" becomes "Foo",
@@ -42,8 +45,11 @@ package site
 												\tpackage foo
 												\t@go(betterpkgname)
 
-												\trenamed: int @go(BetterName)
-												\tretyped: string @go(,type=foo.com/bar.NamedString)
+												\t#Bar: {
+												\t\t@go(BetterBarTypeName)
+												\t\trenamed: int    @go(BetterFieldName)
+												\t\tretyped: string @go(,type=foo.com/bar.NamedString)
+												\t}
 
 												The attribute "@go(-)" can be used to ignore a definition or field, for example:
 
