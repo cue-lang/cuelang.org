@@ -16,6 +16,24 @@
       "message": "`content/docs/draft/cldd/checking-existing-github-actions-files/en.md` also needs updating.",
       "revId": "22cd68c8caf3e0763987cd2cf2332e6b83d88906",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a266eb39_5a566a1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-24T13:30:19Z",
+      "side": 1,
+      "message": "I don\u0027t think so because https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1211968 is not yet merged?",
+      "parentUuid": "3d9e7ac1_d868d8ad",
+      "revId": "22cd68c8caf3e0763987cd2cf2332e6b83d88906",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
