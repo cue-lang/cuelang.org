@@ -16,6 +16,24 @@
       "message": "I think having this message at the bottom of the tip site is worthwhile, even if only references the pseudo-version. Having tip display \"CUE 0.13 is now available\" before the release feels wrong.",
       "revId": "df609f10f74669d50b2abcba5b9f1d411f23da8b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "892f0a8a_60b32e4e",
+        "filename": "internal/patch/tip.diff",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-24T13:36:52Z",
+      "side": 0,
+      "message": "Agreed. I\u0027ve \"reverted\" this to show the tip version that is in use.",
+      "parentUuid": "3a9bb150_99b9943a",
+      "revId": "df609f10f74669d50b2abcba5b9f1d411f23da8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
