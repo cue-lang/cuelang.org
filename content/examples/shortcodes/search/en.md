@@ -8,10 +8,10 @@ With this shortcode you can embed a search results widget on the page.
 ## Example
 
 ```
-{{</* search contentType="How-to Guides" showContentTypes=false tags="encodings,commented cue" */>}}
+{{</* search contentType="Tutorials" showContentTypes=false tags="encodings,cue command" searchTerm="\"json schema\"" */>}}
 ```
 
-{{< search contentType="How-to Guides" showContentTypes=false tags="encodings,commented cue" >}}
+{{< search contentType="Tutorials" showContentTypes=false tags="encodings,cue command" searchTerm="\"json schema\"" >}}
 
 
 ## Attributes
@@ -24,3 +24,6 @@ showContentTypes
 
 tags
 : optional - Adds preselected tags
+
+searchTerm
+: optional - Prefills the search bar
