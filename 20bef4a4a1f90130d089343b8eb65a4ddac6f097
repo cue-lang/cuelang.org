@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a47402f7_34b4f7cb",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_format_input_cue.txtar",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-24T13:32:07Z",
+      "side": 0,
+      "message": "The commit message seems limited in scope to just one of the changes present in these lines.",
+      "revId": "20bef4a4a1f90130d089343b8eb65a4ddac6f097",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e80e243_db959028",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_multistagescript.txtar",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-24T13:32:07Z",
+      "side": 0,
+      "message": "Ditto.",
+      "revId": "20bef4a4a1f90130d089343b8eb65a4ddac6f097",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
