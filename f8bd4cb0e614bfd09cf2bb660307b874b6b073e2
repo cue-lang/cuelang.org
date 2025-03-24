@@ -33,6 +33,24 @@
       "message": "This is no longer needed, per the earlier stack.",
       "revId": "f8bd4cb0e614bfd09cf2bb660307b874b6b073e2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7be74104_0b32490a",
+        "filename": "content/docs/draft/cldd/getting-started-with-buildkite-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-24T16:44:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f46edc3_612f0dc2",
+      "revId": "f8bd4cb0e614bfd09cf2bb660307b874b6b073e2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
