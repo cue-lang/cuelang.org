@@ -28,7 +28,7 @@ The curated modules currently published cover:
 - [Buildkite Pipelines](#buildkite-pipelines)
 - [Azure Pipelines](#azure-pipelines)
 - [Argo Workflows](#argo-workflows)
-- [Go Releaser](#go-releaser)
+- [GoReleaser](#goreleaser)
 - [Docker Compose](#docker-compose)
 - [npm's `package.json`](#npms-packagejson)
 
@@ -107,13 +107,14 @@ Learn more with:
 - [Getting started with Argo Workflows + CUE]({{<relref"getting-started-with-argo-workflows-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/argocd@v0.0.0)
 
-### Go Releaser
+### GoReleaser
 "*GoReleaser does everything you need to create a professional release process for Go, Rust, and Zig projects.*"
 ([goreleaser.com](https://goreleaser.com/))
 ```cue
 import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
 ```
 Learn more with:
+- {{<linkto/inline"draft/cldd/checking-existing-goreleaser-files">}}
 - [Getting started with GoReleaser + CUE]({{<relref"getting-started-with-goreleaser-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@v0.2.0)
 
