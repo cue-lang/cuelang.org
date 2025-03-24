@@ -51,6 +51,24 @@
       "message": "I /think/ the stored diff needs this line at the top of its per-file patch.",
       "revId": "df609f10f74669d50b2abcba5b9f1d411f23da8b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfb64c88_dfe881e7",
+        "filename": "internal/patch/tip.diff",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-24T13:43:21Z",
+      "side": 0,
+      "message": "It doesn\u0027t appear to. I tested after making the change to ensure that the patch applied correctly. And CI will hopefully confirm the same.",
+      "parentUuid": "6e4904c0_6fff552c",
+      "revId": "df609f10f74669d50b2abcba5b9f1d411f23da8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
