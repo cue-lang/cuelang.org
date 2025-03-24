@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								code: {
-									"composition-simple-success":   "B2iYtpjrSbOk3nUbYsO/xccU2FlBQeGVYWLTOlIhSn4="
-									"composition-simple-error":     "+xgcbLCzJJKH0FLyKTLAF73jUEG9OxUW/nzrC3JJOW8="
-									"composition-composite":        "UfpQgCjt3IgvPa++zVB/66C61WIOBgFWmt/JUw9B0mg="
-									"composition-single-field-map": "gmiu56J8fPcR2uFP9VybbXqKebT+Dh08iNzA3xfBKtc="
-									"composition-operator":         "4Ngh+MS0vIM+fOaseFATJGKL4KYrKke6hMIfGYm9hyc="
-									packages:                       "qjZhKeocrC/ZlIkdqH9yJBuYiN90ntH3t0VmjwOSoG0="
+									"composition-simple-success":   "AYMkrO7Joc2XcO9VaWr7ye0XBaC+E09g05vnYVc+B48="
+									"composition-simple-error":     "s0EtvFDaTHRWoUjTwvwzJfrnQie4+HPan+umNuKHShA="
+									"composition-composite":        "fgjxWPpRiezoCnF18Qax6m6ARA+ul1+YfuCg3sQwZfk="
+									"composition-single-field-map": "ITG/4yWPbe7EtpufC6obA+XdNTzgdc3w3Hh+43LCaVA="
+									"composition-operator":         "N5FtYWOLuQIEhb7dQNLFczOKX+VNRQyAY4CgdSWL/9A="
+									packages:                       "BuR1Iqyo/G5Q8/tGqi9vQ4LYjKHmT6nlebkP19kn0pk="
 								}
 							}
 						}
