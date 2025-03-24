@@ -42,4 +42,4 @@ netlifySites: {
 	cls: "cue-cls"
 }
 
-env: CUE_EXPERIMENT: "evalv3=1"
+env: {}

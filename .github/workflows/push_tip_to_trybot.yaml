@@ -1,6 +1,7 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
 concurrency: push_tip_to_trybot
+env: {}
 jobs:
   push:
     defaults:
@@ -48,5 +49,3 @@ name: Push tip to trybot
   push:
     branches:
       - master
-env:
-  CUE_EXPERIMENT: evalv3=1
