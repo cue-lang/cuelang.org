@@ -133,6 +133,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
 {{{end}}}
 Learn more with:
+- {{<linkto/inline"draft/cldd/checking-existing-docker-compose-files">}}
 - [Getting started with Docker Compose + CUE]({{<relref"getting-started-with-docker-compose-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/dockercompose@v0.1.0)
 
