@@ -6,8 +6,7 @@ name: Dispatch trybot
   push:
     branches:
       - ci/test
-env:
-  CUE_EXPERIMENT: evalv3=1
+env: {}
 jobs:
   trybot:
     defaults:
