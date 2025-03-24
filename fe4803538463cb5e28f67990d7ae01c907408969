@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "fe4803538463cb5e28f67990d7ae01c907408969",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49d54afe_246baffa",
+        "filename": "content/docs/draft/cldd/checking-existing-github-actions-files/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-24T14:49:12Z",
+      "side": 1,
+      "message": "I don\u0027t think we need both of these. Our sample here can be based on the upstream example. I\u0027d go for one trigger, and use `main` as the name of the branch. Otherwise we potentially trigger more questions in people\u0027s minds. It also shortens things.",
+      "revId": "fe4803538463cb5e28f67990d7ae01c907408969",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
