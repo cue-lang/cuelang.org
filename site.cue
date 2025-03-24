@@ -50,7 +50,7 @@ versions: {
 // value "on page".
 baseEnv: [string]: string
 baseEnv: {
-	CUE_EXPERIMENT: "evalv3=0"
+	CUE_EXPERIMENT: ""
 	CUE_DEBUG:      ""
 }
 
