@@ -15,11 +15,6 @@ EOD
 # and it's easiest to align behaviours here, inline, rather than using
 # the internal/patch/tip.diff mechanism.
 export PATH=/cues/$CUELANG_CUE_TIP:$PATH
-
-# Use evalv3, as that's required for curated modules.
-# TODO(jm): remove this after the site's cmd/cue tip version reaches a version
-# which has evalv3 enabled by default.
-export CUE_EXPERIMENT=evalv3=1
 {{{end}}}
 
 {{<info>}}
