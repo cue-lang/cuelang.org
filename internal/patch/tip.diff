@@ -1,83 +1,9 @@
-diff --git a/content/docs/draft/cbe-003_kubernetes_tutorial/en.md b/content/docs/draft/cbe-003_kubernetes_tutorial/en.md
-index c0725665f..0106e1259 100644
---- a/content/docs/draft/cbe-003_kubernetes_tutorial/en.md
-+++ b/content/docs/draft/cbe-003_kubernetes_tutorial/en.md
-@@ -4,6 +4,10 @@ draft: true
- no_index: true
- ---
- 
-+{{{with _script_ "en" "use cue tip"}}}
-+export PATH="/cues/$CUELANG_CUE_TIP:$PATH"
-+{{{end}}}
-+
- {{<caution>}}
- Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial
- {{</caution>}}
-diff --git a/content/docs/tutorial/cfgmgmtcamp-2025/en.md b/content/docs/tutorial/cfgmgmtcamp-2025/en.md
-index ac26dc584..6397f69b6 100644
---- a/content/docs/tutorial/cfgmgmtcamp-2025/en.md
-+++ b/content/docs/tutorial/cfgmgmtcamp-2025/en.md
-@@ -5,6 +5,10 @@ toc_hide: true
- no_index: true
- ---
- 
-+{{{with _script_ "en" "use cue tip"}}}
-+export PATH="/cues/$CUELANG_CUE_TIP:$PATH"
-+{{{end}}}
-+
- {{{with _script_ "en" "HIDDEN: cue login"}}}
- mkdir -p $HOME/.config/cue
- cat <<EOD > $HOME/.config/cue/logins.json
-diff --git a/playground/impl.go b/playground/impl.go
-index d80bb6fdc..b65105d84 100644
---- a/playground/impl.go
-+++ b/playground/impl.go
-@@ -106,7 +106,11 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
- 		return "", fmt.Errorf("failed to load: %w", err)
- 	}
- 
--	ctx := cuecontext.New()
-+	// TODO: ensure the options here align with site.cue baseEnv
-+	ctx := cuecontext.New(
-+		cuecontext.CUE_DEBUG("openinline=0"),
-+		cuecontext.EvaluatorVersion(cuecontext.EvalV3),
-+	)
- 
- 	v := ctx.BuildInstance(builds[0])
- 	if err := v.Err(); err != nil {
-diff --git a/playground/src/components/header.tsx b/playground/src/components/header.tsx
-index 5a24b581a..ea53e49b3 100644
---- a/playground/src/components/header.tsx
-+++ b/playground/src/components/header.tsx
-@@ -100,7 +100,7 @@ export class Header extends React.Component<HeaderProps, HeaderState>
-                           icon="dots-vertical" id="menu" title="Menu" type="icon">
-                         <div className="cue-menu__header">
-                             <p className="cue-menu__title">CUE Playground</p>
--                            <p className="cue-menu__subtitle">CUE { CUEVersion }</p>
-+                            <p className="cue-menu__subtitle">CUE { CUEVersion } - <code>CUE_EXPERIMENT=evalv3=1</code> <code>CUE_DEBUG=openinline=0</code></p>
-                         </div>
-                         <div className="cue-menu__content">
-                             <ul className="cue-nav">
-diff --git a/site.cue b/site.cue
 index 5a48f7da7..4e9fb42e2 100644
 --- a/site.cue
 +++ b/site.cue
-@@ -50,8 +50,10 @@ versions: {
- // value "on page".
- baseEnv: [string]: string
- baseEnv: {
--	CUE_EXPERIMENT: "evalv3=0"
--	CUE_DEBUG:      ""
-+	// TODO: ensure that these values align with playground/implg.go
-+	// cuecontext.New() call.
-+	CUE_EXPERIMENT: "evalv3=1"
-+	CUE_DEBUG:      "openinline=0"
- }
- 
- // _contentDefaults is a recursive template for setting defaults
 @@ -272,16 +274,12 @@ template: ci.#writefs & {
  				logo: "svg/logo.svg"
- 
+
  				// Site-wide notification-bar.
 +				//
 +				// TODO: ensure the content below aligns with baseEnv above
@@ -92,7 +18,7 @@ index 5a48f7da7..4e9fb42e2 100644
 +					type: "cue-tip-release-\(versions.cue.tip.v)"
  					// Markdown is permitted in the content field.
 -					content: "**CUE \(versions.cue.latest.majorDotMinor) is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\(versions.cue.latest.majorDotMinor).0)"
-+					content: "**CUE \(versions.cue.tip.v)** -- with CUE_EXPERIMENT=evalv3=1 and CUE_DEBUG=openinline=0"
++					content: "**CUE \(versions.cue.tip.v)**"
  				}
- 
+
  				// The tag order in this file determines their relative positions at
