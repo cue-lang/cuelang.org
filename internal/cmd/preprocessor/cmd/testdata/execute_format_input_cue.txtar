@@ -17,10 +17,6 @@ cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md
 -- site.cue --
 package site
 
-baseEnv: {
-	CUE_EXPERIMENT: "evalv3=0"
-	CUE_DEBUG:      ""
-}
 -- content/dir1/site.cue --
 package site
 
