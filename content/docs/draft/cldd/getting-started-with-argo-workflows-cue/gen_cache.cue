@@ -12,8 +12,8 @@ package site
 									yaml: "xJSBaP9yFrAdNzaDGZKYNNd0ELbDCaWUkgs9nCtrhRc="
 								}
 								multi_step: {
-									hash:       "RC1VC66L79DG3O7ONGMR49VS8F546P85C8TQCG837R0FJ027DJVG===="
-									scriptHash: "IQ0BO0CTCNCUBHQTO9AS21VRF6IQQ2EV0UAS64AVRF834GG5LJ40===="
+									hash:       "20D6GDFF1KNDHI34HUSUM6EF9DAG3AQTC822OTSS54OSKMOTV3FG===="
+									scriptHash: "G3HQIS8272VJ1G6VDIK42IHAULUAA02U8JGGKKGTP8UU3COD5H60===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -35,15 +35,6 @@ package site
 												# the internal/patch/tip.diff mechanism.
 												"""
 										cmd:      "export PATH=/cues/v0.13.0-alpha.1.0.20250324111431-1eccc4649d73:$PATH"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc: """
-												# Use evalv3, as that's required for curated modules.
-												# TODO(jm): remove this after the site's cmd/cue tip version reaches a version
-												# which has evalv3 enabled by default.
-												"""
-										cmd:      "export CUE_EXPERIMENT=evalv3=1"
 										exitCode: 0
 										output:   ""
 									}, {
