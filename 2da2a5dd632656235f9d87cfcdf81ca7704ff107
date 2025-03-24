@@ -81,6 +81,24 @@
       "parentUuid": "fde312d4_0f9b1f43",
       "revId": "2da2a5dd632656235f9d87cfcdf81ca7704ff107",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2219213_2b239dca",
+        "filename": "content/docs/howto/place-data-files-different-locations-file-embedding/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-24T14:20:42Z",
+      "side": 1,
+      "message": "Thanks. If someone is embedding into a package, with a view to that package being used as a dependency, it\u0027s entirely likely they would simply embed into a regular field.",
+      "parentUuid": "62eaf2c5_0f652479",
+      "revId": "2da2a5dd632656235f9d87cfcdf81ca7704ff107",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
