@@ -94,6 +94,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
 {{{end}}}
 Learn more with:
+- {{<linkto/inline"draft/cldd/checking-existing-azure-pipelines-files">}}
 - [Getting started with Azure Pipelines + CUE]({{<relref"getting-started-with-azure-pipelines-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@v0.1.0)
 
