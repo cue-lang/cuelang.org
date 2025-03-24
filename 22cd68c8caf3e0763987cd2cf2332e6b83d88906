@@ -34,6 +34,24 @@
       "parentUuid": "3d9e7ac1_d868d8ad",
       "revId": "22cd68c8caf3e0763987cd2cf2332e6b83d88906",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9aaba40_da5e0c92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-24T13:33:51Z",
+      "side": 1,
+      "message": "My mistake - I misread a local grep as matching the already-published GitHub Actions guide in the CLDD hierarchy.",
+      "parentUuid": "a266eb39_5a566a1a",
+      "revId": "22cd68c8caf3e0763987cd2cf2332e6b83d88906",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
