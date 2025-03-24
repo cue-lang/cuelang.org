@@ -51,6 +51,23 @@
       "parentUuid": "49d54afe_246baffa",
       "revId": "fe4803538463cb5e28f67990d7ae01c907408969",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c230924_70c6a663",
+        "filename": "content/docs/draft/cldd/checking-existing-github-actions-files/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-24T15:03:11Z",
+      "side": 1,
+      "message": "Noting that `@latest` is not stable. But it\u0027s the best we can do for now, until we get something like https://github.com/cue-lang/cue/issues/3846",
+      "revId": "fe4803538463cb5e28f67990d7ae01c907408969",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
