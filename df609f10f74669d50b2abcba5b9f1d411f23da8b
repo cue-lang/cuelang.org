@@ -34,6 +34,23 @@
       "parentUuid": "3a9bb150_99b9943a",
       "revId": "df609f10f74669d50b2abcba5b9f1d411f23da8b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e4904c0_6fff552c",
+        "filename": "internal/patch/tip.diff",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-24T13:39:58Z",
+      "side": 0,
+      "message": "I /think/ the stored diff needs this line at the top of its per-file patch.",
+      "revId": "df609f10f74669d50b2abcba5b9f1d411f23da8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
