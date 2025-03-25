@@ -50,7 +50,7 @@ needs to exist within its own CUE module.
 cue mod init cue.example
 {{{end}}}
 You can choose any module name you like - it's easy to
-[change it later]({{<relref"docs/reference/command/cue-help-mod-rename">}}).
+[change it later](https://cuelang.org/docs/reference/command/cue-help-mod-rename/).
 It makes sense for your CUE module to exist at the root of a git repository that's
 [supported by Azure Pipelines](https://learn.microsoft.com/azure/devops/pipelines/repos),
 but the commands in this guide will work in any setup.
@@ -101,7 +101,7 @@ is that, once a schema is published, it will always be
 available at that location.
 When the curated module’s location is finalised and versions are published
 under the new path, you can use the
-[`cue refactor imports`]({{<relref"docs/reference/command/cue-help-refactor-imports">}})
+[`cue refactor imports`](https://cuelang.org/docs/reference/command/cue-help-refactor-imports/)
 command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
@@ -112,7 +112,7 @@ cue mod tidy
 Tidying a module is an important part of using curated modules from the
 [Central Registry](https://registry.cue.works).
 Always use
-[`cue mod tidy`]({{<relref"docs/reference/command/cue-help-mod-tidy">}})
+[`cue mod tidy`](https://cuelang.org/docs/reference/command/cue-help-mod-tidy/)
 when you use a curated module for the first time.
 
 ## Validate your pipeline
