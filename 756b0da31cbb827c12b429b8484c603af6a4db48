@@ -16,6 +16,24 @@
       "message": "Mention that tip also gets bumped.",
       "revId": "756b0da31cbb827c12b429b8484c603af6a4db48",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18a9efc3_4545a14d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-25T16:21:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfa518cf_019f4e8e",
+      "revId": "756b0da31cbb827c12b429b8484c603af6a4db48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
