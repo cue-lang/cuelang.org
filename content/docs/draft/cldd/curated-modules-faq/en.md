@@ -46,8 +46,8 @@ For example, to use the schemas defined in the Go package `k8s.io/api/core/v1` u
 import "github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/core/v1"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-kubernetes-cue">}}
-- {{<linkto/inline"draft/cldd/k8s-io-moving-from-cue-get-go-to-central-registry">}} by replacing existing `cue get go` schemas
+- [Getting started with Kubernetes + CUE]({{<relref"getting-started-with-kubernetes-cue">}})
+- [Migrating to the Central Registry's curated Kubernetes Schemas]({{<relref"k8s-io-moving-from-cue-get-go-to-central-registry">}}) by replacing existing `cue get go` schemas
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/k8s.io@v0.1.0)
 
 ### GitHub Actions
@@ -58,7 +58,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-github-actions-cue">}}
+- [Getting started with GitHub Actions + CUE]({{<relref"getting-started-with-github-actions-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/githubactions@v0.2.0)
 
 ### GitLab CI/CD
@@ -69,7 +69,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-gitlab-cicd-cue">}}
+- [Getting started with GitLab CI/CD + CUE]({{<relref"getting-started-with-gitlab-cicd-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/gitlab@v0.2.0)
 
 ### Buildkite Pipelines
@@ -80,7 +80,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/buildkite"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-buildkite-cue">}}
+- [Getting started with Buildkite + CUE]({{<relref"getting-started-with-buildkite-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/buildkite@v0.1.0)
 
 ### Azure Pipelines
@@ -91,7 +91,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-azure-pipelines-cue">}}
+- [Getting started with Azure Pipelines + CUE]({{<relref"getting-started-with-azure-pipelines-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@v0.1.0)
 
 ### Argo Workflows
@@ -105,7 +105,7 @@ It will be updated soon, but is safe to use as-is:
 import argoworkflows "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-argo-workflows-cue">}}
+- [Getting started with Argo Workflows + CUE]({{<relref"getting-started-with-argo-workflows-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/argocd@v0.0.0)
 
 ### Go Releaser
@@ -116,7 +116,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-goreleaser-cue">}}
+- [Getting started with GoReleaser + CUE]({{<relref"getting-started-with-goreleaser-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@v0.2.0)
 
 ### Docker Compose
@@ -127,7 +127,7 @@ Learn more with:
 import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
 {{{end}}}
 Learn more with:
-- {{<linkto/inline"draft/cldd/getting-started-with-docker-compose-cue">}}
+- [Getting started with Docker Compose + CUE]({{<relref"getting-started-with-docker-compose-cue">}})
 - The Central Registry's [module documentation](https://registry.cue.works/docs/github.com/cue-tmp/jsonschema-pub/exp3/dockercompose@v0.1.0)
 
 ### npm's `package.json`
@@ -169,6 +169,6 @@ We also suggest that you upgrade to
 of CUE so that you can switch to the new evaluator.
 All curated modules are tested using `evalv3`, so its use is strongly recommended.
 Many questions about `evalv3` are answered in
-{{<linkto/inline"concept/faq/upgrading-from-evalv2-to-evalv3">}} -- and if you
-have an unanswered question, please join
+[Upgrading from evalv2 to evalv3](https://cuelang.org/docs/concept/faq/upgrading-from-evalv2-to-evalv3/)
+-- and if you have an unanswered question, please join
 [the CUE community](https://cuelang.org/community/) and ask for help!
