@@ -16,6 +16,46 @@
       "message": "PTAL at this template for a `cue vet; fix file; cue vet` page.\n\nLet me know if a sync discussion would be useful to explain some of the thinking around the title and the page\u0027s narrative flow.",
       "revId": "fa3254f40a54db9557c5dd05a95ef59e197ed45c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f2d0c9f_655b7d9d",
+        "filename": "content/docs/draft/cldd/spotting-errors-earlier-github-actions-files/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-25T18:08:08Z",
+      "side": 1,
+      "message": "As discussed earlier, highlight the line we want to reference (because line numbers don\u0027t work with our comment hack for now)",
+      "revId": "fa3254f40a54db9557c5dd05a95ef59e197ed45c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7e58d2e_8777a335",
+        "filename": "content/docs/draft/cldd/spotting-errors-earlier-github-actions-files/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-25T18:08:08Z",
+      "side": 1,
+      "message": "Per comments elsewhere, we can drop this paragraph now. We now we will be in a good target state.",
+      "range": {
+        "startLine": 91,
+        "startChar": 15,
+        "endLine": 92,
+        "endChar": 6
+      },
+      "revId": "fa3254f40a54db9557c5dd05a95ef59e197ed45c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
