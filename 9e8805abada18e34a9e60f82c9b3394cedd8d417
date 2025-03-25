@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb7e35a3_e878459d",
+        "filename": "content/docs/draft/cldd/checking-existing-gitlab-cicd-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-25T17:31:39Z",
+      "side": 1,
+      "message": "I think this part of the sentence (here and in all such guides) is superfluous?",
+      "range": {
+        "startLine": 27,
+        "startChar": 45,
+        "endLine": 27,
+        "endChar": 77
+      },
+      "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09c36922_dbdd7621",
+        "filename": "content/docs/draft/cldd/checking-existing-gitlab-cicd-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-25T17:31:39Z",
+      "side": 1,
+      "message": "I think these words are superfluous.",
+      "range": {
+        "startLine": 28,
+        "startChar": 64,
+        "endLine": 29,
+        "endChar": 16
+      },
+      "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
