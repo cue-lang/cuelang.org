@@ -45,8 +45,7 @@ that's hosted on GitHub, but the commands in this guide will work in any setup.
 Declare a GitHub Actions workflow in CUE. This one is based on an example from
 [GitHub's documentation](https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow#creating-an-example-workflow):
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.cue" language="cue" area="top-left" >}}
+```cue { title="workflow.cue" }
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
@@ -65,7 +64,7 @@ workflows: example: githubactions.#Workflow & {
 		]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `workflows` struct.
 
@@ -107,8 +106,7 @@ $ cue export --outfile .github/workflows/workflow.yml -e workflows.example
 ```
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".github/workflows/workflow.yml" language="yml" area="top-left" >}}
+```yml { title=".github/workflows/workflow.yml" }
 name: learn-github-actions
 jobs:
   check-bats-version:
@@ -123,7 +121,7 @@ jobs:
 "on":
   - push
 run-name: ${{ github.actor }} is learning GitHub Actions
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your workflow
 
 The `cue.mod` and `.github` directories need to be stored in your git

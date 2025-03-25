@@ -45,8 +45,7 @@ that's hosted on GitLab, but the commands in this guide will work in any setup.
 Declare a GitLab pipeline in CUE. This one is based on an example from
 [GitLab's documentation](https://docs.gitlab.com/user/project/pages/getting_started/pages_from_scratch/#specify-a-stage-to-deploy):
 
-{{< code-tabs >}}
-{{< code-tab name="pipeline.cue" language="cue" area="top-left" >}}
+```cue { title="pipeline.cue" }
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci"
@@ -76,7 +75,7 @@ pipelines: example: gitlabci.#Pipeline & {
 		rules: [{if: "$CI_COMMIT_BRANCH != \"main\""}]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `pipelines` struct.
 
@@ -116,8 +115,7 @@ $ cue export --outfile .gitlab-ci.yml -e pipelines.example
 ```
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".gitlab-ci.yml" language="yml" area="top-left" >}}
+```yml { title=".gitlab-ci.yml" }
 default:
   image: ruby:3.2
 workflow:
@@ -144,7 +142,7 @@ test:
   artifacts:
     paths:
       - test
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your pipeline
 
 The `cue.mod` directory needs to be stored in your git repository, along with
