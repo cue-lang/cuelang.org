@@ -48,12 +48,12 @@ and schemas, including those from the Kubernetes project.
 You can easily modify your CUE to rely on up-to-date, curated schemas published on the
 [Central Registry](https://registry.cue.works)
 by using the
-[`cue refactor imports`]({{<relref"docs/reference/command/cue-help-refactor-imports">}})
+[`cue refactor imports`](https://cuelang.org/docs/reference/command/cue-help-refactor-imports/)
 command. This guide shows you how.
 
 The `cue refactor imports` command is not yet available in the latest CUE release.
 To use the command,
-[install]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}})
+[install](https://cuelang.org/docs/introduction/installation/#download-an-official-cue-binary)
 the most recent CUE prerelease. This page demonstrates the following version of CUE:
 
 {{{with script "en" "cue version"}}}
@@ -113,7 +113,7 @@ This allows you to fetch the curated Kubernetes module, which contains the curat
 
 ## Update your CUE files
 To update the relevant imports across every CUE file in your module, run the
-[`cue refactor imports`]({{<relref"docs/reference/command/cue-help-refactor-imports">}})
+[`cue refactor imports`](https://cuelang.org/docs/reference/command/cue-help-refactor-imports/)
 command with a "before" and "after" prefix.
 In the case of Kubernetes schemas, this is the command you need to run:
 

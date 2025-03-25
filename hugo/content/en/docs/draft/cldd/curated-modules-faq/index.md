@@ -11,12 +11,12 @@ Please [report any issues]({{<report-issue-url>}}) you find.
 
 The CUE [Central Registry](https://registry.cue.works)
 provides some carefully selected and curated
-[CUE modules]({{<relref"docs/concept/modules">}}) that you can use to
+[CUE modules](https://cuelang.org/docs/concept/modules/) that you can use to
 create validated configurations across a range of popular projects and
 services, or to check that your existing configurations are valid.
 
 Here are some common questions that folks have asked about curated modules.
-Please do join [the CUE community]({{<relref"community">}}) and ask us anything
+Please do join [the CUE community](https://cuelang.org/community/) and ask us anything
 you think we've missed!
 
 ## What curated modules are available?
@@ -148,7 +148,7 @@ is that, once a schema is published, it will always be available at that
 location. Your CUE can rely on the "temporary" paths mentioned on this page for
 as long as you like. When the proper namespace is decided, you can then easily
 use the
-[`cue refactor imports`]({{<relref"docs/reference/command/cue-help-refactor-imports">}})
+[`cue refactor imports`](https://cuelang.org/docs/reference/command/cue-help-refactor-imports/)
 command to update your CUE.
 
 ## What do I need to use a curated module?
@@ -156,10 +156,10 @@ command to update your CUE.
 You'll need to authenticate to the CUE
 [Central Registry](https://registry.cue.works).
 We also suggest that you upgrade to
-[the latest version]({{<relref"docs/introduction/installation">}})
+[the latest version](https://cuelang.org/docs/introduction/installation/)
 of CUE so that you can switch to the new evaluator.
 All curated modules are tested using `evalv3`, so its use is strongly recommended.
 Many questions about `evalv3` are answered in
 {{<linkto/inline"concept/faq/upgrading-from-evalv2-to-evalv3">}} -- and if you
 have an unanswered question, please join
-[the CUE community]({{<relref"community">}}) and ask for help!
+[the CUE community](https://cuelang.org/community/) and ask for help!
