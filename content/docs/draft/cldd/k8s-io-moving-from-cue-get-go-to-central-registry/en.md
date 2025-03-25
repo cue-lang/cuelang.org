@@ -197,8 +197,3 @@ cue vet -c
 {{{end}}}
 Because `cue vet` doesn't print any errors, we know that the manifest still
 validates successfully against the new schemas.
-
-## Related content
-
-- {{<linkto/related/reference"command/cue-help-refactor-imports">}}
-- The CUE [Central Registry](https://registry.cue.works)
