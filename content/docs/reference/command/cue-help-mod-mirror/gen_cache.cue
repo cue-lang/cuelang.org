@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "OJ8GEV34LLI5V00N44MR558DM32U6A0DOVIFUK7CAQCNPTD8A5VG===="
-									scriptHash: "Q0VKECLVNVDH8R6RGBPF5C3VSKT4BJ949J8CDQM2SQ71IMI1GGJG===="
+									hash:       "MKKIAPE28N9E88T3V39TJP6IEG08FJ58MQ5331OFP4AL8O533P7G===="
+									scriptHash: "I3L9NS0TUEH0NCEPLMVPGOTUASRARSFE8KVOGNQ1V42PAAD6N2BG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.0-alpha.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -25,16 +25,15 @@ package site
 												This commmand ensures that a set of modules and their dependencies
 												are available ("mirrored") in a registry.
 
-												For each module specified on the command line, it ensures that the
-												module and all the modules in depends on
-												are present in both the "from" registry and the "to" registry and that the
-												contents are the same in each. If the --no-deps is specified, only
-												the module itself but not its dependencies will be mirrored.
+												For each module specified on the command line, it ensures that the module and
+												all the modules it depends on are present in both the "from" registry and the
+												"to" registry, and that the contents are the same in each. If --no-deps is
+												specified then the module will be mirrored without its dependencies.
 
 												A module may be specified as <module>@<version>, in which case the
 												specified version will be mirrored. If the version is canonical (for example v1.2.3), then
-												exactly that version will be mirrored, otherwise the latest corresponding
-												version will be mirrored (or all corresponding versions if --all-versions
+												exactly that version will be mirrored, otherwise (for example v1) the latest
+												corresponding version will be mirrored (or all corresponding versions if --all-versions
 												is specified).
 
 												For example:

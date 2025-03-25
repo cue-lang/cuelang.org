@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							code: {
-								example: "MrT+jvma3dGrEzAe34YTgbuUO4Qw91/Rp8AJvvt/eFI="
+								example: "SMowppPgqOrqG7pca+F4lRLyT4s9h8HNvSO7Ksc5w4c="
 							}
 						}
 					}
