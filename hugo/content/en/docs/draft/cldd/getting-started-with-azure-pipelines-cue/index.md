@@ -46,8 +46,7 @@ but the commands in this guide will work in any setup.
 Declare a Azure pipeline in CUE. This one is based on an example from
 [the Azure Pipelines documentation](https://learn.microsoft.com/azure/devops/pipelines/process/run-stages):
 
-{{< code-tabs >}}
-{{< code-tab name="pipeline.cue" language="cue" area="top-left" >}}
+```cue { title="pipeline.cue" }
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
@@ -75,7 +74,7 @@ pipelines: example: azurepipelines.#Pipeline & {
 		}]
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `pipelines` struct.
 
@@ -115,8 +114,7 @@ $ cue export --outfile pipeline.yml -e pipelines.example
 ```
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
-{{< code-tabs >}}
-{{< code-tab name="pipeline.yml" language="yml" area="top-left" >}}
+```yml { title="pipeline.yml" }
 trigger:
   - main
 pool:
@@ -132,7 +130,7 @@ stages:
             displayName: Restore dependencies
           - script: echo "Running unit tests..."
             displayName: Run unit tests
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your pipeline
 
 The `cue.mod` directory needs to be stored in your git repository, along with
