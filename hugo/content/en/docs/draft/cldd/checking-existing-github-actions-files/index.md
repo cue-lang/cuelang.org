@@ -38,8 +38,9 @@ This example is adapted from GitHub's
 repository, but you should use any GitHub Actions workflow file that's relevant
 to your situation.
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.yml" language="yml" area="top-left" >}}
+```yml { title="workflow.yml" codeToCopy="bmFtZTogR28Kb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6IFsgbWFpbiBdCmpvYnM6CiAgYnVpbGQ6CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgIC0gdXNlczogYWN0aW9ucy9jaGVja291dEB2NAogICAgLSBuYW1lOiBTZXQgdXAgR28KICAgICAgdXNlczogYWN0aW9ucy9zZXR1cC1nb0B2NAogICAgICB3aXRoOgogICAgICAgIGdvLXZlcnNpb246ICcxLjIwJwogICAgLSBuYW1lOiBCdWlsZAogICAgICBydW46IGdvIGJ1aWxkIC12IC4vLi4uCiAgICAtIG5hbWU6IFRlc3QKICAgICAgcnVuOiBnbyB0ZXN0IC12IC4vLi4uCg==" }
+# filepath: workflow.yml
+
 name: Go
 on:
   pull_request:
@@ -57,7 +58,7 @@ jobs:
       run: go build -v ./...
     - name: Test
       run: go test -v ./...
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 ## Validate the workflow file
 

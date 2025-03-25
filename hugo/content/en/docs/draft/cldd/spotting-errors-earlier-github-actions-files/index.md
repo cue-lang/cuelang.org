@@ -41,8 +41,9 @@ This example is adapted from GitHub's
 repository -- but the errors we've deliberately introduced here, of course, are
 not part of the original file!
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.yml" language="yml" area="top-left" >}}
+```yml { title="workflow.yml" codeToCopy="bmFtZTogR28Kb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6IFsgbWFpbiBdCmpvYjoKICBidWlsZDoKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKICAgIHN0ZXBzOgogICAgLSB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY0CiAgICAtIG5hbWU6IFNldCB1cCBHbwogICAgICB1c2VzOiBhY3Rpb25zL3NldHVwLWdvQHY0CiAgICAgIHdpdGg6CiAgICAgICAgZ28tdmVyc2lvbjogJzEuMjAnCiAgICAtIG5hbWU6IEJ1aWxkCiAgICAgIHJ1bjogZ28gYnVpbGQgLXYgLi8uLi4KICAgIC0gbmFtZTogVGVzdAogICAgICBydW46IGdvIHRlc3QgLXYgLi8uLi4K" }
+# filepath: workflow.yml
+
 name: Go
 on:
   pull_request:
@@ -60,7 +61,7 @@ job:
       run: go build -v ./...
     - name: Test
       run: go test -v ./...
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 ## Validate the workflow file
 
@@ -90,8 +91,9 @@ discover that the field should instead be named `jobs`.
 We fix our workflow file by updating line 5, as mentioned by `cue vet`, and the
 file becomes:
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.yml" language="yml" area="top-left" >}}
+```yml { title="workflow.yml" codeToCopy="bmFtZTogR28Kb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6IFsgbWFpbiBdCmpvYnM6CiAgYnVpbGQ6CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgIC0gdXNlczogYWN0aW9ucy9jaGVja291dEB2NAogICAgLSBuYW1lOiBTZXQgdXAgR28KICAgICAgdXNlczogYWN0aW9ucy9zZXR1cC1nb0B2NAogICAgICB3aXRoOgogICAgICAgIGdvLXZlcnNpb246ICcxLjIwJwogICAgLSBuYW1lOiBCdWlsZAogICAgICBydW46IGdvIGJ1aWxkIC12IC4vLi4uCiAgICAtIG5hbWU6IFRlc3QKICAgICAgcnVuOiBnbyB0ZXN0IC12IC4vLi4uCg==" }
+# filepath: workflow.yml
+
 name: Go
 on:
   pull_request:
@@ -109,7 +111,7 @@ jobs:
       run: go build -v ./...
     - name: Test
       run: go test -v ./...
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 ## Re-validate the workflow file
 

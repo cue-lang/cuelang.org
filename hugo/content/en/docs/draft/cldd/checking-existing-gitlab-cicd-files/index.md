@@ -37,8 +37,9 @@ This example is adapted from
 [GitLab's documentation](https://docs.gitlab.com/user/project/pages/getting_started/pages_from_scratch/#deploy-specific-branches-to-a-pages-site),
 but you should use any pipeline file that's relevant to your situation.
 
-{{< code-tabs >}}
-{{< code-tab name="pipeline.yml" language="yml" area="top-left" >}}
+```yml { title="pipeline.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApjcmVhdGUtcGFnZXM6CiAgc2NyaXB0OgogICAgLSBnZW0gaW5zdGFsbCBidW5kbGVyCiAgICAtIGJ1bmRsZSBpbnN0YWxsCiAgICAtIGJ1bmRsZSBleGVjIGpla3lsbCBidWlsZCAtZCBwdWJsaWMKICBwYWdlczogdHJ1ZQogIHJ1bGVzOgogICAgLSBpZjogJENJX0NPTU1JVF9CUkFOQ0ggPT0gIm1haW4iCg==" }
+# filepath: pipeline.yml
+
 default:
   image: ruby:3.2
 workflow:
@@ -52,7 +53,7 @@ create-pages:
   pages: true
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 ## Validate the pipeline file
 

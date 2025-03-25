@@ -38,8 +38,9 @@ This example is adapted from the
 repository, but you should use any GoReleaser configuration file that's
 relevant to your situation.
 
-{{< code-tabs >}}
-{{< code-tab name="goreleaser.yml" language="yml" area="top-left" >}}
+```yml { title="goreleaser.yml" codeToCopy="cHJvamVjdF9uYW1lOiBleGFtcGxlCmJ1aWxkczoKICAtIGdvb3M6IFsgbGludXgsIHdpbmRvd3MsIGRhcndpbiBdCiAgICBnb2FyY2g6IFsgYW1kNjQsIGFybTY0IF0KICAgIGVudjoKICAgICAgLSBDR09fRU5BQkxFRD0wCmRvY2tlcnM6CiAgLSBkb2NrZXJmaWxlOiBEb2NrZXJmaWxlCiAgICBpbWFnZV90ZW1wbGF0ZXM6CiAgICAgIC0gZ2hjci5pby9nb3JlbGVhc2VyL2V4YW1wbGU6e3sgLlZlcnNpb24gfX0KICAgIGJ1aWxkX2ZsYWdfdGVtcGxhdGVzOgogICAgICAtIC0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLnRpdGxlPXt7IC5Qcm9qZWN0TmFtZSB9fQogICAgICAtIC0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLnVybD1odHRwczovL2dpdGh1Yi5jb20vZ29yZWxlYXNlci9leGFtcGxlCm5mcG1zOgogIC0gZm9ybWF0czogWyBkZWIsIHJwbSwgYXBrIF0KICAgIGhvbWVwYWdlOiBodHRwczovL2dpdGh1Yi5jb20vY2FhcmxvczAvdGFza3RpbWVyCiAgICBtYWludGFpbmVyOiBDYXJsb3MgQSBCZWNrZXIgPHJvb3RAY2FybG9zYmVja2VyLmRldj4KICAgIGRlc2NyaXB0aW9uOiBTYW1wbGUgcHJvamVjdC4KICAgIGxpY2Vuc2U6IE1JVAo=" }
+# filepath: goreleaser.yml
+
 project_name: example
 builds:
   - goos: [ linux, windows, darwin ]
@@ -59,7 +60,7 @@ nfpms:
     maintainer: Carlos A Becker <root@carlosbecker.dev>
     description: Sample project.
     license: MIT
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 ## Validate the configuration file
 

@@ -37,8 +37,9 @@ This example comes from
 [the Argo Workflows project](https://github.com/argoproj/argo-workflows/blob/main/examples/arguments-parameters.yaml),
 but you should use any Argo workflow file that's relevant to your situation.
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.yml" language="yml" area="top-left" >}}
+```yml { title="workflow.yml" codeToCopy="YXBpVmVyc2lvbjogYXJnb3Byb2ouaW8vdjFhbHBoYTEKa2luZDogV29ya2Zsb3cKbWV0YWRhdGE6CiAgZ2VuZXJhdGVOYW1lOiBhcmd1bWVudHMtcGFyYW1ldGVycy0Kc3BlYzoKICBlbnRyeXBvaW50OiBwcmludC1tZXNzYWdlCiAgIyBQYXJhbWV0ZXJzIGNhbiBiZSBwYXNzZWQvb3ZlcnJpZGRlbiB2aWEgdGhlIGFyZ28gQ0xJLgogICMgVG8gb3ZlcnJpZGUgdGhlIHByaW50ZWQgbWVzc2FnZSwgcnVuIGBhcmdvIHN1Ym1pdGAgd2l0aCB0aGUgLXAgb3B0aW9uOgogICMgJCBhcmdvIHN1Ym1pdCBleGFtcGxlcy9hcmd1bWVudHMtcGFyYW1ldGVycy55YW1sIC1wIG1lc3NhZ2U9Imdvb2RieWUgd29ybGQiCiAgYXJndW1lbnRzOgogICAgcGFyYW1ldGVyczoKICAgIC0gbmFtZTogbWVzc2FnZQogICAgICB2YWx1ZTogaGVsbG8gd29ybGQKCiAgdGVtcGxhdGVzOgogIC0gbmFtZTogcHJpbnQtbWVzc2FnZQogICAgaW5wdXRzOgogICAgICBwYXJhbWV0ZXJzOgogICAgICAtIG5hbWU6IG1lc3NhZ2UKICAgIGNvbnRhaW5lcjoKICAgICAgaW1hZ2U6IGJ1c3lib3gKICAgICAgY29tbWFuZDogW2VjaG9dCiAgICAgIGFyZ3M6IFsie3tpbnB1dHMucGFyYW1ldGVycy5tZXNzYWdlfX0iXQo=" }
+# filepath: workflow.yml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
@@ -62,7 +63,7 @@ spec:
       image: busybox
       command: [echo]
       args: ["{{inputs.parameters.message}}"]
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 ## Validate the workflow file
 
