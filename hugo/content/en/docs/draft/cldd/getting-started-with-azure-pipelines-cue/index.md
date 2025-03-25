@@ -46,8 +46,9 @@ but the commands in this guide will work in any setup.
 Declare a Azure pipeline in CUE. This one is based on an example from
 [the Azure Pipelines documentation](https://learn.microsoft.com/azure/devops/pipelines/process/run-stages):
 
-{{< code-tabs >}}
-{{< code-tab name="pipeline.cue" language="cue" area="top-left" >}}
+```cue { title="pipeline.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAzL2F6dXJlcGlwZWxpbmVzIgoKcGlwZWxpbmVzOiBleGFtcGxlOiBhenVyZXBpcGVsaW5lcy4jUGlwZWxpbmUgJiB7Cgl0cmlnZ2VyOiBbIm1haW4iXQoJcG9vbDogdm1JbWFnZTogInVidW50dS1sYXRlc3QiCglzdGFnZXM6IFt7CgkJc3RhZ2U6ICAgICAgICJCdWlsZCIKCQlkaXNwbGF5TmFtZTogIkJ1aWxkIFN0YWdlIgoJCWpvYnM6IFt7CgkJCWpvYjogICAgICAgICAiQnVpbGRKb2IiCgkJCWRpc3BsYXlOYW1lOiAiQnVpbGQgSm9iIgoJCQlzdGVwczogW3sKCQkJCXNjcmlwdDogIiIiCgkJCQkJZWNobyAiUmVzdG9yaW5nIHByb2plY3QgZGVwZW5kZW5jaWVzLi4uIgoJCQkJCSIiIgoJCQkJZGlzcGxheU5hbWU6ICJSZXN0b3JlIGRlcGVuZGVuY2llcyIKCQkJfSwgewoJCQkJc2NyaXB0OiAiIiIKCQkJCQllY2hvICJSdW5uaW5nIHVuaXQgdGVzdHMuLi4iCgkJCQkJIiIiCgkJCQlkaXNwbGF5TmFtZTogIlJ1biB1bml0IHRlc3RzIgoJCQl9XQoJCX1dCgl9XQp9Cg==" }
+// filepath: pipeline.cue
+
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines"
@@ -75,7 +76,7 @@ pipelines: example: azurepipelines.#Pipeline & {
 		}]
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `pipelines` struct.
 
@@ -115,8 +116,9 @@ $ cue export --outfile pipeline.yml -e pipelines.example
 ```
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
-{{< code-tabs >}}
-{{< code-tab name="pipeline.yml" language="yml" area="top-left" >}}
+```yml { title="pipeline.yml" codeToCopy="dHJpZ2dlcjoKICAtIG1haW4KcG9vbDoKICB2bUltYWdlOiB1YnVudHUtbGF0ZXN0CnN0YWdlczoKICAtIHN0YWdlOiBCdWlsZAogICAgZGlzcGxheU5hbWU6IEJ1aWxkIFN0YWdlCiAgICBqb2JzOgogICAgICAtIGpvYjogQnVpbGRKb2IKICAgICAgICBkaXNwbGF5TmFtZTogQnVpbGQgSm9iCiAgICAgICAgc3RlcHM6CiAgICAgICAgICAtIHNjcmlwdDogZWNobyAiUmVzdG9yaW5nIHByb2plY3QgZGVwZW5kZW5jaWVzLi4uIgogICAgICAgICAgICBkaXNwbGF5TmFtZTogUmVzdG9yZSBkZXBlbmRlbmNpZXMKICAgICAgICAgIC0gc2NyaXB0OiBlY2hvICJSdW5uaW5nIHVuaXQgdGVzdHMuLi4iCiAgICAgICAgICAgIGRpc3BsYXlOYW1lOiBSdW4gdW5pdCB0ZXN0cwo=" }
+# filepath: pipeline.yml
+
 trigger:
   - main
 pool:
@@ -132,7 +134,7 @@ stages:
             displayName: Restore dependencies
           - script: echo "Running unit tests..."
             displayName: Run unit tests
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your pipeline
 
 The `cue.mod` directory needs to be stored in your git repository, along with

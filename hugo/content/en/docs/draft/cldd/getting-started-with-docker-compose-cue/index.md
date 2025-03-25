@@ -46,8 +46,9 @@ repository, but the commands in this guide will work in any setup.
 Declare a compose file in CUE. This one is based on a PostgreSQL example from
 [`docker/awesome-compose`](https://github.com/docker/awesome-compose/tree/18f59bdb09ecf520dd5758fbf90dec314baec545/postgresql-pgadmin):
 
-{{< code-tabs >}}
-{{< code-tab name="compose.cue" language="cue" area="top-left" >}}
+```cue { title="compose.cue" codeToCopy="cGFja2FnZSBkZXYKCmltcG9ydCAiZ2l0aHViLmNvbS9jdWUtdG1wL2pzb25zY2hlbWEtcHViL2V4cDMvZG9ja2VyY29tcG9zZSIKCmZpbGVzOiBleGFtcGxlOiBkb2NrZXJjb21wb3NlLiNTY2hlbWEgJiB7CglzZXJ2aWNlczogewoJCXBvc3RncmVzOiB7CgkJCWNvbnRhaW5lcl9uYW1lOiAicG9zdGdyZXMiCgkJCWltYWdlOiAgICAgICAgICAicG9zdGdyZXM6bGF0ZXN0IgoJCQllbnZpcm9ubWVudDogWwoJCQkJIlBPU1RHUkVTX1VTRVI9JHtQT1NUR1JFU19VU0VSfSIsCgkJCQkiUE9TVEdSRVNfUEFTU1dPUkQ9JHtQT1NUR1JFU19QV30iLAoJCQkJIlBPU1RHUkVTX0RCPSR7UE9TVEdSRVNfREJ9IiwKCQkJXQoJCQlwb3J0czogWyI1NDMyOjU0MzIiXQoJCQlyZXN0YXJ0OiAiYWx3YXlzIgoJCX0KCQlwZ2FkbWluOiB7CgkJCWNvbnRhaW5lcl9uYW1lOiAicGdhZG1pbiIKCQkJaW1hZ2U6ICAgICAgICAgICJkcGFnZS9wZ2FkbWluNDpsYXRlc3QiCgkJCWVudmlyb25tZW50OiBbCgkJCQkiUEdBRE1JTl9ERUZBVUxUX0VNQUlMPSR7UEdBRE1JTl9NQUlMfSIsCgkJCQkiUEdBRE1JTl9ERUZBVUxUX1BBU1NXT1JEPSR7UEdBRE1JTl9QV30iLAoJCQldCgkJCXBvcnRzOiBbIjUwNTA6ODAiXQoJCQlyZXN0YXJ0OiAiYWx3YXlzIgoJCX0KCX0KfQo=" }
+// filepath: compose.cue
+
 package dev
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
@@ -77,7 +78,7 @@ files: example: dockercompose.#Schema & {
 		}
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `files` struct.
 
@@ -117,8 +118,9 @@ $ cue export --outfile compose.yaml -e files.example
 ```
 If you chose to export the `files.example` shown above,
 your validated YAML file will look like this:
-{{< code-tabs >}}
-{{< code-tab name="compose.yaml" language="yaml" area="top-left" >}}
+```yaml { title="compose.yaml" codeToCopy="c2VydmljZXM6CiAgcG9zdGdyZXM6CiAgICBjb250YWluZXJfbmFtZTogcG9zdGdyZXMKICAgIGVudmlyb25tZW50OgogICAgICAtIFBPU1RHUkVTX1VTRVI9JHtQT1NUR1JFU19VU0VSfQogICAgICAtIFBPU1RHUkVTX1BBU1NXT1JEPSR7UE9TVEdSRVNfUFd9CiAgICAgIC0gUE9TVEdSRVNfREI9JHtQT1NUR1JFU19EQn0KICAgIGltYWdlOiBwb3N0Z3JlczpsYXRlc3QKICAgIHBvcnRzOgogICAgICAtICI1NDMyOjU0MzIiCiAgICByZXN0YXJ0OiBhbHdheXMKICBwZ2FkbWluOgogICAgY29udGFpbmVyX25hbWU6IHBnYWRtaW4KICAgIGVudmlyb25tZW50OgogICAgICAtIFBHQURNSU5fREVGQVVMVF9FTUFJTD0ke1BHQURNSU5fTUFJTH0KICAgICAgLSBQR0FETUlOX0RFRkFVTFRfUEFTU1dPUkQ9JHtQR0FETUlOX1BXfQogICAgaW1hZ2U6IGRwYWdlL3BnYWRtaW40OmxhdGVzdAogICAgcG9ydHM6CiAgICAgIC0gIjUwNTA6ODAiCiAgICByZXN0YXJ0OiBhbHdheXMK" }
+# filepath: compose.yaml
+
 services:
   postgres:
     container_name: postgres
@@ -139,7 +141,7 @@ services:
     ports:
       - "5050:80"
     restart: always
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your compose file
 
 Start the compose-based services by using the `docker compose up` or `podman

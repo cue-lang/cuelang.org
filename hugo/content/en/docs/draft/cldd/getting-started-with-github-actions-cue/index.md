@@ -45,8 +45,9 @@ that's hosted on GitHub, but the commands in this guide will work in any setup.
 Declare a GitHub Actions workflow in CUE. This one is based on an example from
 [GitHub's documentation](https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow#creating-an-example-workflow):
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.cue" language="cue" area="top-left" >}}
+```cue { title="workflow.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAzL2dpdGh1YmFjdGlvbnMiCgp3b3JrZmxvd3M6IGV4YW1wbGU6IGdpdGh1YmFjdGlvbnMuI1dvcmtmbG93ICYgewoJbmFtZTogICAgICAgImxlYXJuLWdpdGh1Yi1hY3Rpb25zIgoJInJ1bi1uYW1lIjogIiR7eyBnaXRodWIuYWN0b3IgfX0gaXMgbGVhcm5pbmcgR2l0SHViIEFjdGlvbnMiCglvbjogWyJwdXNoIl0KCWpvYnM6ICJjaGVjay1iYXRzLXZlcnNpb24iOiB7CgkJInJ1bnMtb24iOiAidWJ1bnR1LWxhdGVzdCIKCQlzdGVwczogWwoJCQl7dXNlczogImFjdGlvbnMvY2hlY2tvdXRAdjQifSwKCQkJe3VzZXM6ICJhY3Rpb25zL3NldHVwLW5vZGVAdjQiLCB3aXRoOiAibm9kZS12ZXJzaW9uIjogIjIwIn0sCgkJCXtydW46ICJucG0gaW5zdGFsbCAtZyBiYXRzIn0sCgkJCXtydW46ICJiYXRzIC12In0sCgkJXQoJfQp9Cg==" }
+// filepath: workflow.cue
+
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
@@ -65,7 +66,7 @@ workflows: example: githubactions.#Workflow & {
 		]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `workflows` struct.
 
@@ -107,8 +108,9 @@ $ cue export --outfile .github/workflows/workflow.yml -e workflows.example
 ```
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".github/workflows/workflow.yml" language="yml" area="top-left" >}}
+```yml { title=".github/workflows/workflow.yml" codeToCopy="bmFtZTogbGVhcm4tZ2l0aHViLWFjdGlvbnMKam9iczoKICBjaGVjay1iYXRzLXZlcnNpb246CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgICAgLSB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY0CiAgICAgIC0gdXNlczogYWN0aW9ucy9zZXR1cC1ub2RlQHY0CiAgICAgICAgd2l0aDoKICAgICAgICAgIG5vZGUtdmVyc2lvbjogIjIwIgogICAgICAtIHJ1bjogbnBtIGluc3RhbGwgLWcgYmF0cwogICAgICAtIHJ1bjogYmF0cyAtdgoib24iOgogIC0gcHVzaApydW4tbmFtZTogJHt7IGdpdGh1Yi5hY3RvciB9fSBpcyBsZWFybmluZyBHaXRIdWIgQWN0aW9ucwo=" }
+# filepath: .github/workflows/workflow.yml
+
 name: learn-github-actions
 jobs:
   check-bats-version:
@@ -123,7 +125,7 @@ jobs:
 "on":
   - push
 run-name: ${{ github.actor }} is learning GitHub Actions
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your workflow
 
 The `cue.mod` and `.github` directories need to be stored in your git

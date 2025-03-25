@@ -2,6 +2,7 @@
 # shorthand that we use.
 
 unquote content/dir/en.md
+unquote content/docs/draft/cldd/example/en.md
 
 # Make a golden file of the input to ensure it is written back intact
 cp content/dir/en.md golden/content/dir/en.md
@@ -25,6 +26,7 @@ cmp content/dir/en.md.writeBack golden/content/dir/en.md
 
 # Verify that the target files matche the source contents
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+cmp hugo/content/en/docs/draft/cldd/example/index.md golden/hugo/content/en/docs/draft/cldd/example/index.md
 
 # Re-run the preprocessor and ensure we have a cache hit
 exec preprocessor execute --debug=all
@@ -84,6 +86,26 @@ Hello!
 >
 >Some text after
 >
+-- content/docs/draft/cldd/example/page.cue --
+package site
+
+content: docs: draft: cldd: example: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/docs/draft/cldd/example/en.md --
+>---
+>title: cldd
+>---
+>
+>{{{with upload "en" "json-superset"}}}
+>-- in.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
@@ -121,10 +143,28 @@ x: 5
 
 Some text after
 
+-- golden/hugo/content/en/docs/draft/cldd/example/index.md --
+---
+title: cldd
+---
+
+```cue { title="in.cue" codeToCopy="Ly8gQSBkb2MgY29tbWVudAptYXA6IHsKCW1lbWJlcjE6IDMgLy8gYSBsaW5lIGNvbW1lbnQKCW1lbWJlcjI6IDQKfQo=" }
+// filepath: in.cue
+
+// A doc comment
+map: {
+	member1: 3 // a line comment
+	member2: 4
+}
+```
 -- structure.golden --
 content/dir/_hidden/something.txt
 content/dir/en.md
 content/dir/gen_cache.cue
 content/dir/page.cue
+content/docs/draft/cldd/example/en.md
+content/docs/draft/cldd/example/gen_cache.cue
+content/docs/draft/cldd/example/page.cue
 content/site.cue
 hugo/content/en/dir/index.md
+hugo/content/en/docs/draft/cldd/example/index.md

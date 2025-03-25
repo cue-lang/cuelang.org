@@ -45,8 +45,9 @@ repository, but the commands in this guide will work in any setup.
 Declare an Argo workflow in CUE. This one comes from
 [Argo's examples](https://github.com/argoproj/argo-workflows/blob/main/examples/steps.yaml):
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.cue" language="cue" area="top-left" >}}
+```cue { title="workflow.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgYXJnb3dvcmtmbG93cyAiZ2l0aHViLmNvbS9jdWUtdG1wL2pzb25zY2hlbWEtcHViL2V4cDMvYXJnb2NkIgoKd29ya2Zsb3dzOiBleGFtcGxlOiBhcmdvd29ya2Zsb3dzLiNXb3JrZmxvdyAmIHsKCS8vIFRoaXMgdGVtcGxhdGUgZGVtb25zdHJhdGVzIGEgc3RlcHMgdGVtcGxhdGUgYW5kIGhvdyB0byBjb250cm9sIHNlcXVlbnRpYWwgdnMuIHBhcmFsbGVsIHN0ZXBzLgoJLy8gSW4gdGhpcyBleGFtcGxlLCB0aGUgaGVsbG8xIGNvbXBsZXRlcyBiZWZvcmUgdGhlIGhlbGxvMmEsIGFuZCBoZWxsbzJiIHN0ZXBzLCB3aGljaCBydW4gaW4gcGFyYWxsZWwuCglhcGlWZXJzaW9uOiAiYXJnb3Byb2ouaW8vdjFhbHBoYTEiCglraW5kOiAgICAgICAiV29ya2Zsb3ciCgltZXRhZGF0YTogZ2VuZXJhdGVOYW1lOiAic3RlcHMtIgoJc3BlYzogewoJCWVudHJ5cG9pbnQ6ICJoZWxsby1oZWxsby1oZWxsbyIKCQl0ZW1wbGF0ZXM6IFt7CgkJCW5hbWU6ICJoZWxsby1oZWxsby1oZWxsbyIKCQkJc3RlcHM6IFtbewoJCQkJbmFtZTogICAgICJoZWxsbzEiCgkJCQl0ZW1wbGF0ZTogInByaW50LW1lc3NhZ2UiCgkJCQlhcmd1bWVudHM6IHBhcmFtZXRlcnM6IFt7bmFtZTogIm1lc3NhZ2UiLCB2YWx1ZTogImhlbGxvMSJ9XQoJCQl9XSwgW3sKCQkJCW5hbWU6ICAgICAiaGVsbG8yYSIKCQkJCXRlbXBsYXRlOiAicHJpbnQtbWVzc2FnZSIKCQkJCWFyZ3VtZW50czogcGFyYW1ldGVyczogW3tuYW1lOiAibWVzc2FnZSIsIHZhbHVlOiAiaGVsbG8yYSJ9XQoJCQl9LCB7CgkJCQluYW1lOiAgICAgImhlbGxvMmIiCgkJCQl0ZW1wbGF0ZTogInByaW50LW1lc3NhZ2UiCgkJCQlhcmd1bWVudHM6IHBhcmFtZXRlcnM6IFt7bmFtZTogIm1lc3NhZ2UiLCB2YWx1ZTogImhlbGxvMmIifV0KCQkJfV0sCgkJCV0KCQl9LCB7CgkJCW5hbWU6ICJwcmludC1tZXNzYWdlIgoJCQlpbnB1dHM6IHBhcmFtZXRlcnM6IFt7bmFtZTogIm1lc3NhZ2UifV0KCQkJY29udGFpbmVyOiB7CgkJCQlpbWFnZTogImJ1c3lib3giCgkJCQljb21tYW5kOiBbImVjaG8iXQoJCQkJYXJnczogWyJ7e2lucHV0cy5wYXJhbWV0ZXJzLm1lc3NhZ2V9fSJdCgkJCX0KCQl9XQoJfQp9Cg==" }
+// filepath: workflow.cue
+
 package cicd
 
 import argoworkflows "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
@@ -86,7 +87,7 @@ workflows: example: argoworkflows.#Workflow & {
 		}]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 In later guides we'll add more entries to the `workflows` struct.
 
 The `import` at the top references the appropriate curated module for the workflow.
@@ -125,8 +126,9 @@ $ cue export --outfile workflow.yml -e workflows.example
 ```
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
-{{< code-tabs >}}
-{{< code-tab name="workflow.yml" language="yml" area="top-left" >}}
+```yml { title="workflow.yml" codeToCopy="YXBpVmVyc2lvbjogYXJnb3Byb2ouaW8vdjFhbHBoYTEKa2luZDogV29ya2Zsb3cKbWV0YWRhdGE6CiAgZ2VuZXJhdGVOYW1lOiBzdGVwcy0Kc3BlYzoKICBlbnRyeXBvaW50OiBoZWxsby1oZWxsby1oZWxsbwogIHRlbXBsYXRlczoKICAgIC0gbmFtZTogaGVsbG8taGVsbG8taGVsbG8KICAgICAgc3RlcHM6CiAgICAgICAgLSAtIG5hbWU6IGhlbGxvMQogICAgICAgICAgICB0ZW1wbGF0ZTogcHJpbnQtbWVzc2FnZQogICAgICAgICAgICBhcmd1bWVudHM6CiAgICAgICAgICAgICAgcGFyYW1ldGVyczoKICAgICAgICAgICAgICAgIC0gbmFtZTogbWVzc2FnZQogICAgICAgICAgICAgICAgICB2YWx1ZTogaGVsbG8xCiAgICAgICAgLSAtIG5hbWU6IGhlbGxvMmEKICAgICAgICAgICAgdGVtcGxhdGU6IHByaW50LW1lc3NhZ2UKICAgICAgICAgICAgYXJndW1lbnRzOgogICAgICAgICAgICAgIHBhcmFtZXRlcnM6CiAgICAgICAgICAgICAgICAtIG5hbWU6IG1lc3NhZ2UKICAgICAgICAgICAgICAgICAgdmFsdWU6IGhlbGxvMmEKICAgICAgICAgIC0gbmFtZTogaGVsbG8yYgogICAgICAgICAgICB0ZW1wbGF0ZTogcHJpbnQtbWVzc2FnZQogICAgICAgICAgICBhcmd1bWVudHM6CiAgICAgICAgICAgICAgcGFyYW1ldGVyczoKICAgICAgICAgICAgICAgIC0gbmFtZTogbWVzc2FnZQogICAgICAgICAgICAgICAgICB2YWx1ZTogaGVsbG8yYgogICAgLSBuYW1lOiBwcmludC1tZXNzYWdlCiAgICAgIGlucHV0czoKICAgICAgICBwYXJhbWV0ZXJzOgogICAgICAgICAgLSBuYW1lOiBtZXNzYWdlCiAgICAgIGNvbnRhaW5lcjoKICAgICAgICBpbWFnZTogYnVzeWJveAogICAgICAgIGNvbW1hbmQ6CiAgICAgICAgICAtIGVjaG8KICAgICAgICBhcmdzOgogICAgICAgICAgLSAne3tpbnB1dHMucGFyYW1ldGVycy5tZXNzYWdlfX0nCg==" }
+# filepath: workflow.yml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
@@ -164,7 +166,7 @@ spec:
           - echo
         args:
           - '{{inputs.parameters.message}}'
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your workflow
 
 You can now
