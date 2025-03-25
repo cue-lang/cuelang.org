@@ -45,6 +45,23 @@
       },
       "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cea715f_cacae0ab",
+        "filename": "content/docs/draft/cldd/checking-existing-gitlab-cicd-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-03-25T17:34:39Z",
+      "side": 1,
+      "message": "I think we need to spell this as follows:\n\n```\ncue vet -c -d \u0027#Pipeline\u0027 github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci@latest pipeline.yml \n```\n\nAnd explain afterwards what is going on. \"Using the `#Pipeline` definition from the `gitlabci` package, we validate `pipeline.yml` file.\" Or something along those lines.",
+      "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
