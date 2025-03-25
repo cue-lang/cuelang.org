@@ -1,0 +1,250 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82515c50_4109d59a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "cc",
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a000a38b_625c0e15",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "Backticks around \"evalv3`.",
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d0649e1_a00cd483",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "We\u0027ve not previously used \"/\" as shorthand for \"and\" or \"or\" anywhere I can recall.\n\n```suggestion\nThe simplest and most reliable way to get started using evalv3 is to install and use\n```",
+      "range": {
+        "startLine": 43,
+        "startChar": 76,
+        "endLine": 43,
+        "endChar": 77
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97bf4c60_59ec0223",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "Backticks.",
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db53f510_14de1c35",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "```suggestion\nthe [`v0.13.0-alpha.2`]({{\u003crelref\"docs/introduction/installation\"\u003e}})\n```",
+      "range": {
+        "startLine": 44,
+        "startChar": 22,
+        "endLine": 44,
+        "endChar": 73
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c06c39e5_2f3ec7a6",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "Duplicated word.",
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0355dbd_9b7ad1db",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "Grammar seems off to my eye (singular \"API\" followed by a \"such as\" clarifier), unless that\u0027s an idiomatic way of saying that.",
+      "range": {
+        "startLine": 51,
+        "startChar": 9,
+        "endLine": 51,
+        "endChar": 47
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38c53014_6cad61e0",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "```suggestion\nThe simplest and most reliable way to get started using evalv3 is to install and use\n```",
+      "range": {
+        "startLine": 87,
+        "startChar": 69,
+        "endLine": 87,
+        "endChar": 80
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9477a88e_92a4ca04",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "backticks",
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f3ccab7_ad3b3aae",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "```suggestion\nthe [`v0.13.0-alpha.2`]({{\u003crelref\"docs/introduction/installation\"\u003e}})\n```",
+      "range": {
+        "startLine": 88,
+        "startChar": 5,
+        "endLine": 88,
+        "endChar": 12
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58f60530_7fde4b7b",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "backticks",
+      "range": {
+        "startLine": 89,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 25
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1588c9b5_72d6da56",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:12:26Z",
+      "side": 1,
+      "message": "```suggestion\nvariables `CUE_EXPERIMENT` and `CUE_DEBUG` are unset.\n```",
+      "range": {
+        "startLine": 90,
+        "startChar": 11,
+        "endLine": 90,
+        "endChar": 25
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
