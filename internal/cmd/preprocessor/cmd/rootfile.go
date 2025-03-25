@@ -122,15 +122,20 @@ type rootFile struct {
 	*executionContext
 }
 
+// absFilename gives the absolute path to the rootfile
+func (r *rootFile) absFilename() string {
+	return filepath.Join(r.page.dir, r.filename)
+}
+
 func (r *rootFile) Format(f fmt.State, verb rune) {
-	fmt.Fprint(f, r.filename)
+	fmt.Fprint(f, r.absFilename())
 }
 
 // newRootFile creates a new rootFile for fn.
 func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 	return &rootFile{
 		page:             p,
-		filename:         filepath.Join(p.dir, fn),
+		filename:         fn,
 		lang:             lang,
 		prefix:           prefix,
 		ext:              ext,
@@ -146,13 +151,13 @@ func (rf *rootFile) transform(targetPath string) error {
 	// For now, we only support en as a main language. For other languages
 	// we simply copy from source to target.
 	if rf.lang != langEn {
-		if err := copyFile(rf.filename, targetPath); err != nil {
+		if err := copyFile(rf.absFilename(), targetPath); err != nil {
 			return rf.errorf("%v: %v", rf, err)
 		}
 	}
 	// HTML files don't need any special processing
 	if rf.ext == "html" {
-		if err := copyFile(rf.filename, targetPath); err != nil {
+		if err := copyFile(rf.absFilename(), targetPath); err != nil {
 			return rf.errorf("%v: %v", rf, err)
 		}
 	}
@@ -188,7 +193,7 @@ func (rf *rootFile) transform(targetPath string) error {
 	if err := rf.writeSource(writeBack); err != nil {
 		return err
 	}
-	if err := writeIfDiff(writeBack, rf.filename, rf.contents); err != nil {
+	if err := writeIfDiff(writeBack, rf.absFilename(), rf.contents); err != nil {
 		return err
 	}
 

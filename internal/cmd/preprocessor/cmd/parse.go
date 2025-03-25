@@ -38,7 +38,7 @@ const (
 // parse parses a root file into its component parse: a header and body. The body
 // is parsed as a text/template document.
 func (rf *rootFile) parse() error {
-	f, err := os.ReadFile(rf.filename)
+	f, err := os.ReadFile(rf.absFilename())
 	if err != nil {
 		return rf.errorf("%v: failed to read: %v", rf, err)
 	}
