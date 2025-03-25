@@ -4,10 +4,20 @@ toc_hide: true
 authors: [mvdan, jpluscplusm]
 ---
 
+{{{with _script_ "en" "HIDDEN: access required CUE version"}}}
+export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
+{{{end}}}
+
 {{{with _script_ "en" "HIDDEN_ set up caches"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
 {{{end}}}
+
+{{< warning >}}
+`evalv3` is now **on** by default in
+[`v0.13.0-alpha.2`](https://github.com/cue-lang/cue/releases/tag/v0.13.0-alpha.2)
+and later versions!
+{{< /warning >}}
 
 ## What is `evalv3`?
 
@@ -30,9 +40,15 @@ with more improvements still to come.
 
 ## How can I switch to `evalv3`?
 
-You can switch to `evalv3` by setting the `CUE_EXPERIMENT=evalv3=1` environment
-variable. This variable affects invocations of the `cue` command (such as `cue
-export`) as well as Go programs using CUE's Go API such as `cue/load`.
+The simplest and most reliable way to get started using `evalv3` is to install or use
+the [`v0.13.0-alpha.2`]({{<relref"docs/introduction/installation">}})
+pre-release, where `evalv3` is on by default. Simply ensure that the environment
+variables `CUE_EXPERIMENT` and `CUE_DEBUG` are unset.
+
+If you are using an earlier version of CUE you can switch to `evalv3` by
+setting the `CUE_EXPERIMENT=evalv3=1` environment variable. This variable
+affects invocations of the `cue` command (such as `cue export`) as well as Go
+programs using CUE's Go API such as `cue/load`.
 
 Users of the Go API can also directly specify the evaluator version with a
 `cuecontext` option:
@@ -68,11 +84,10 @@ diff output.want.txt output.got.txt
 
 ## Which CUE version do I need to use `evalv3`?
 
-We strongly recommend that you upgrade to
-[the latest release]({{<relref"docs/introduction/installation">}})
-of CUE before you try `evalv3` as the new evaluator is under active development
--- otherwise you may run into bugs or performance issues which have already
-been fixed. The latest release is currently:
+The simplest and most reliable way to get started using `evalv3` is to install or use
+the [`v0.13.0-alpha.2`]({{<relref"docs/introduction/installation">}})
+pre-release, where `evalv3` is on by default. Simply ensure that the environment
+variables `CUE_EXPERIMENT` and `CUE_DEBUG` are unset.
 
 {{{with script "en" "cue version"}}}
 #ellipsis 1
