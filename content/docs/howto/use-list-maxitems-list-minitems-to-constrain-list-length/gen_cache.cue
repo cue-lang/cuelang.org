@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							code: {
-								cc:  "fnIB/GAb3IQoWultPuPuPOW1ZOQ0MROI7oaehFBSn/I="
-								min: "AGix9VqEQLv6eLfqVlCAZHcBFNZBB1pmLHCRn3iu/bs="
+								cc:  "uQn+LiS+8L4ChrCOa9yrOTe4tRukCGuA4Hg5Nr8255A="
+								min: "jqsbRLk8lXd8Tav3Arpegb3j94ZoedvCr6EetECBlxY="
 							}
 						}
 					}

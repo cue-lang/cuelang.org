@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							code: {
-								string:  "2Sr+/h+BK837nhyU3KaUtsvTuMiNd+qj+SJJgDYStX4="
-								number:  "2UlLegVyXWJ+VuzyX4kECmWhfgbzF2iTmCQBEY4PCZs="
-								boolean: "SyTPgvk+hoS7cpswuASvn51kU+OnUALtYb3AKruNXFs="
-								list:    "xF0w6B1fbqvDLE16EsEgom96545YwfNnsN8yYek5xhc="
+								string:  "Fvq6kKsiLVBBCBGQoAe3XH0LG1lZoDM2JoD3G0rBP0w="
+								number:  "K2qdXTEQev0KNfHJB7vXFg6VS8NWUG4Ro2Lq/auzWt0="
+								boolean: "IadK/kzpg3Y5XVIx4aa4p/BV6KUReDne3a94jeIC8xg="
+								list:    "Hnhn+AsYtSSi4ArKv5dnrLqjJHlFCqIJq1WZTNiMEKs="
 							}
 						}
 					}
