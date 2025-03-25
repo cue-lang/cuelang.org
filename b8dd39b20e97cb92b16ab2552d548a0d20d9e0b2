@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41e7511e_88a1da29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T17:37:57Z",
+      "side": 1,
+      "message": "LGTM from a content and intent perspective. Go code is substantively unreviewed.",
+      "revId": "b8dd39b20e97cb92b16ab2552d548a0d20d9e0b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
