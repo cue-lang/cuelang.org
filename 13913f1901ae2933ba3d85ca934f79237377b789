@@ -37,6 +37,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e2f03268_9794f06a",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:14:47Z",
+      "side": 1,
+      "message": "```suggestion\n[`v0.13.0-alpha.2`](https://github.com/cue-lang/cue/releases/tag/v0.13.0-alpha.2)\n```",
+      "range": {
+        "startLine": 18,
+        "startChar": 1,
+        "endLine": 18,
+        "endChar": 16
+      },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d0649e1_a00cd483",
         "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
         "patchSetId": 1
@@ -94,6 +117,23 @@
         "endLine": 44,
         "endChar": 73
       },
+      "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9c931db_c5fb8f5e",
+        "filename": "content/docs/concept/faq/upgrading-from-evalv2-to-evalv3/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-25T16:14:47Z",
+      "side": 1,
+      "message": "```suggestion\nvariables `CUE_EXPERIMENT` and `CUE_DEBUG` are unset.\n```",
       "revId": "13913f1901ae2933ba3d85ca934f79237377b789",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
