@@ -48,12 +48,29 @@ func (u *uploadNode) validate() {
 		u.errorf("%v: upload nodes must contain at least one file", u)
 	}
 
+	if u.rf.page.isClddContent() && len(u.analysis.fileNames) != 1 {
+		u.errorf("%v: cldd upload nodes must contain exactly one file", u)
+	}
+
 	// We just default to stacking all files in case no locations are provided.
 	u.validateLocationDirective()
 }
 
 func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
 	b := new(bytes.Buffer)
+	var err error
+	if u.rf.page.isClddContent() {
+		err = u.clddWriteTransformTo(b)
+	} else {
+		err = u.regularWriteTransformTo(b)
+	}
+	if err != nil {
+		return err
+	}
+	res.WriteString(u.rf.page.config.randomReplace(b.String()))
+	return nil
+}
+func (u *uploadNode) regularWriteTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 
 	// Invariant: we will have zero locations or the right number of
@@ -86,7 +103,33 @@ func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
 		p("{{< /code-tab >}}")
 	}
 	p("{{< /code-tabs >}}")
-	res.WriteString(u.rf.page.config.randomReplace(b.String()))
+	return nil
+}
+
+func (u *uploadNode) clddWriteTransformTo(b *bytes.Buffer) error {
+	p := bufPrintf(b)
+	// For now there will be a single file, ensured by validate()
+	f := u.archive.Files[0]
+	a := u.analysis.fileNames[0]
+	props := tabProps{
+		Name:     f.Name,
+		Language: a.Language,
+	}
+	p("```%s { title=%q", props.Language, props.Name)
+
+	// Work out if there are any code-tab options specified via the codetab tag.
+	// If there are, add them.
+	opts, _, err := u.tag(tagCodeTab, f.Name)
+	if err != nil {
+		return u.errorf("failed to search for tag %v(%v): %v", tagCodeTab, f.Name, err)
+	}
+	for _, o := range opts {
+		p(" %s", o)
+	}
+
+	p(" }\n")
+	p("%s", f.Data)
+	p("```")
 	return nil
 }
 

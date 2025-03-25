@@ -189,6 +189,10 @@ func (p *page) Format(state fmt.State, verb rune) {
 	fmt.Fprintf(state, "%s", p.dir)
 }
 
+func (p *page) isClddContent() bool {
+	return strings.HasPrefix(p.contentRelPath, "docs/draft/cldd/")
+}
+
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
 	contentDir := filepath.Join(ec.executor.root, "content")
 	contentRelPath, err := filepath.Rel(contentDir, dir)

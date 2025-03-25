@@ -46,8 +46,7 @@ but the commands in this guide will work in any setup.
 Declare a Buildkite pipeline in CUE. This one is based on
 [a Buildkite example](https://github.com/buildkite/bash-example):
 
-{{< code-tabs >}}
-{{< code-tab name="pipeline.cue" language="cue" area="top-left" >}}
+```cue { title="pipeline.cue" }
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp1/buildkite"
@@ -66,7 +65,7 @@ pipelines: example: buildkite.#Pipeline & {
 			"""
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `pipelines` struct.
 
@@ -108,12 +107,11 @@ $ cue export --outfile .buildkite/pipeline.yml -e pipelines.example
 ```
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".buildkite/pipeline.yml" language="yml" area="top-left" >}}
+```yml { title=".buildkite/pipeline.yml" }
 steps:
   - label: ':hammer: Example Script'
     command: "echo \"--- :package: Build job checkout directory\"\npwd\nls -la\necho \"--- :evergreen_tree: Build job environment\"\nenv\necho \"+++ :hammer: Example tests\"\necho \"Congratulations! You've successfully run your first build on Buildkite! \U0001F44D\""
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your pipeline
 
 The `cue.mod` and `.buildkite` directories need to be stored in your git

@@ -45,8 +45,7 @@ repository, but the commands in this guide will work in any setup.
 Declare an Argo workflow in CUE. This one comes from
 [Argo's examples](https://github.com/argoproj/argo-workflows/blob/main/examples/steps.yaml):
 
-{{< code-tabs >}}
-{{< code-tab name="workflow.cue" language="cue" area="top-left" >}}
+```cue { title="workflow.cue" }
 package cicd
 
 import argoworkflows "github.com/cue-tmp/jsonschema-pub/exp3/argocd"
@@ -86,7 +85,7 @@ workflows: example: argoworkflows.#Workflow & {
 		}]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 In later guides we'll add more entries to the `workflows` struct.
 
 The `import` at the top references the appropriate curated module for the workflow.
@@ -125,8 +124,7 @@ $ cue export --outfile workflow.yml -e workflows.example
 ```
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
-{{< code-tabs >}}
-{{< code-tab name="workflow.yml" language="yml" area="top-left" >}}
+```yml { title="workflow.yml" }
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
@@ -164,7 +162,7 @@ spec:
           - echo
         args:
           - '{{inputs.parameters.message}}'
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your workflow
 
 You can now

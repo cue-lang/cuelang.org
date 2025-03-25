@@ -46,8 +46,7 @@ repository, but the commands in this guide will work in any setup.
 Declare a compose file in CUE. This one is based on a PostgreSQL example from
 [`docker/awesome-compose`](https://github.com/docker/awesome-compose/tree/18f59bdb09ecf520dd5758fbf90dec314baec545/postgresql-pgadmin):
 
-{{< code-tabs >}}
-{{< code-tab name="compose.cue" language="cue" area="top-left" >}}
+```cue { title="compose.cue" }
 package dev
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
@@ -77,7 +76,7 @@ files: example: dockercompose.#Schema & {
 		}
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `files` struct.
 
@@ -117,8 +116,7 @@ $ cue export --outfile compose.yaml -e files.example
 ```
 If you chose to export the `files.example` shown above,
 your validated YAML file will look like this:
-{{< code-tabs >}}
-{{< code-tab name="compose.yaml" language="yaml" area="top-left" >}}
+```yaml { title="compose.yaml" }
 services:
   postgres:
     container_name: postgres
@@ -139,7 +137,7 @@ services:
     ports:
       - "5050:80"
     restart: always
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your compose file
 
 Start the compose-based services by using the `docker compose up` or `podman

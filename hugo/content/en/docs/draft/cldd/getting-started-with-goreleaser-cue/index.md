@@ -45,8 +45,7 @@ repository, but the commands in this guide will work in any setup.
 Declare a configuration file in CUE. This one is taken from
 [`goreleaser/example`](https://github.com/goreleaser/example/blob/master/.goreleaser.yaml):
 
-{{< code-tabs >}}
-{{< code-tab name="goreleaser.cue" language="cue" area="top-left" >}}
+```cue { title="goreleaser.cue" }
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
@@ -80,7 +79,7 @@ files: example: goreleaser.#Project & {
 		formats: ["deb", "rpm", "apk"]
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `files` struct.
 
@@ -120,8 +119,7 @@ $ cue export --outfile .goreleaser.yaml -e files.example
 ```
 If you chose to export the `files.example` shown above,
 your validated YAML file will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".goreleaser.yaml" language="yaml" area="top-left" >}}
+```yaml { title=".goreleaser.yaml" }
 project_name: example
 builds:
   - goos:
@@ -155,7 +153,7 @@ nfpms:
     maintainer: Carlos A Becker <root@carlosbecker.dev>
     description: Sample project.
     license: MIT
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Use your configuration file
 
 Your validated `.goreleaser.yml` file can now be used by
