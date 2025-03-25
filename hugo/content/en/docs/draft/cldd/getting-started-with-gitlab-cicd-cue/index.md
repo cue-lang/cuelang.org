@@ -45,8 +45,9 @@ that's hosted on GitLab, but the commands in this guide will work in any setup.
 Declare a GitLab pipeline in CUE. This one is based on an example from
 [GitLab's documentation](https://docs.gitlab.com/user/project/pages/getting_started/pages_from_scratch/#specify-a-stage-to-deploy):
 
-{{< code-tabs >}}
-{{< code-tab name="pipeline.cue" language="cue" area="top-left" >}}
+```cue { title="pipeline.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAzL2dpdGxhYi9naXRsYWJjaSIKCnBpcGVsaW5lczogZXhhbXBsZTogZ2l0bGFiY2kuI1BpcGVsaW5lICYgewoJZGVmYXVsdDogaW1hZ2U6ICJydWJ5OjMuMiIKCXdvcmtmbG93OiBydWxlczogW3tpZjogIiRDSV9DT01NSVRfQlJBTkNIIn1dCgkiZGVwbG95LXBhZ2VzIjogewoJCXN0YWdlOiAiZGVwbG95IgoJCXNjcmlwdDogWwoJCQkiZ2VtIGluc3RhbGwgYnVuZGxlciIsCgkJCSJidW5kbGUgaW5zdGFsbCIsCgkJCSJidW5kbGUgZXhlYyBqZWt5bGwgYnVpbGQgLWQgcHVibGljIiwKCQldCgkJcGFnZXM6IHRydWUKCQlydWxlczogW3tpZjogIiRDSV9DT01NSVRfQlJBTkNIID09IFwibWFpblwiIn1dCgkJZW52aXJvbm1lbnQ6ICJwcm9kdWN0aW9uIgoJfQoJdGVzdDogewoJCXN0YWdlOiAidGVzdCIKCQlzY3JpcHQ6IFsKCQkJImdlbSBpbnN0YWxsIGJ1bmRsZXIiLAoJCQkiYnVuZGxlIGluc3RhbGwiLAoJCQkiYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHRlc3QiLAoJCV0KCQlhcnRpZmFjdHM6IHBhdGhzOiBbInRlc3QiXQoJCXJ1bGVzOiBbe2lmOiAiJENJX0NPTU1JVF9CUkFOQ0ggIT0gXCJtYWluXCIifV0KCX0KfQo=" }
+// filepath: pipeline.cue
+
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci"
@@ -76,7 +77,7 @@ pipelines: example: gitlabci.#Pipeline & {
 		rules: [{if: "$CI_COMMIT_BRANCH != \"main\""}]
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `pipelines` struct.
 
@@ -116,8 +117,9 @@ $ cue export --outfile .gitlab-ci.yml -e pipelines.example
 ```
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".gitlab-ci.yml" language="yml" area="top-left" >}}
+```yml { title=".gitlab-ci.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApkZXBsb3ktcGFnZXM6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSCA9PSAibWFpbiIKICBzY3JpcHQ6CiAgICAtIGdlbSBpbnN0YWxsIGJ1bmRsZXIKICAgIC0gYnVuZGxlIGluc3RhbGwKICAgIC0gYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHB1YmxpYwogIHN0YWdlOiBkZXBsb3kKICBlbnZpcm9ubWVudDogcHJvZHVjdGlvbgogIHBhZ2VzOiB0cnVlCnRlc3Q6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSCAhPSAibWFpbiIKICBzY3JpcHQ6CiAgICAtIGdlbSBpbnN0YWxsIGJ1bmRsZXIKICAgIC0gYnVuZGxlIGluc3RhbGwKICAgIC0gYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHRlc3QKICBzdGFnZTogdGVzdAogIGFydGlmYWN0czoKICAgIHBhdGhzOgogICAgICAtIHRlc3QK" }
+# filepath: .gitlab-ci.yml
+
 default:
   image: ruby:3.2
 workflow:
@@ -144,7 +146,7 @@ test:
   artifacts:
     paths:
       - test
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your pipeline
 
 The `cue.mod` directory needs to be stored in your git repository, along with

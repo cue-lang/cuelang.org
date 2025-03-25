@@ -45,8 +45,9 @@ repository, but the commands in this guide will work in any setup.
 Declare a configuration file in CUE. This one is taken from
 [`goreleaser/example`](https://github.com/goreleaser/example/blob/master/.goreleaser.yaml):
 
-{{< code-tabs >}}
-{{< code-tab name="goreleaser.cue" language="cue" area="top-left" >}}
+```cue { title="goreleaser.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAzL2dvcmVsZWFzZXIiCgpmaWxlczogZXhhbXBsZTogZ29yZWxlYXNlci4jUHJvamVjdCAmIHsKCXByb2plY3RfbmFtZTogImV4YW1wbGUiCglidWlsZHM6IFt7CgkJZW52OiBbIkNHT19FTkFCTEVEPTAiXQoJCWdvb3M6IFsibGludXgiLCAid2luZG93cyIsICJkYXJ3aW4iXQoJCWdvYXJjaDogWyJhbWQ2NCIsICJhcm02NCJdCgl9XQoJZG9ja2VyczogW3sKCQlpbWFnZV90ZW1wbGF0ZXM6IFsiZ2hjci5pby9nb3JlbGVhc2VyL2V4YW1wbGU6e3sgLlZlcnNpb24gfX0iXQoJCWRvY2tlcmZpbGU6ICJEb2NrZXJmaWxlIgoJCWJ1aWxkX2ZsYWdfdGVtcGxhdGVzOiBbCgkJCSItLWxhYmVsPW9yZy5vcGVuY29udGFpbmVycy5pbWFnZS50aXRsZT17eyAuUHJvamVjdE5hbWUgfX0iLAoJCQkiLS1sYWJlbD1vcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UuZGVzY3JpcHRpb249e3sgLlByb2plY3ROYW1lIH19IiwKCQkJIi0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLnVybD1odHRwczovL2dpdGh1Yi5jb20vZ29yZWxlYXNlci9leGFtcGxlIiwKCQkJIi0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZT1odHRwczovL2dpdGh1Yi5jb20vZ29yZWxlYXNlci9leGFtcGxlIiwKCQkJIi0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb249e3sgLlZlcnNpb24gfX0iLAoJCQkiLS1sYWJlbD1vcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UuY3JlYXRlZD17eyB0aW1lIFwiMjAwNi0wMS0wMlQxNTowNDowNVowNzowMFwiIH19IiwKCQkJIi0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLnJldmlzaW9uPXt7IC5GdWxsQ29tbWl0IH19IiwKCQkJIi0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLmxpY2Vuc2VzPU1JVCIsCgkJXQoJfV0KCW5mcG1zOiBbewoJCW1haW50YWluZXI6ICAiQ2FybG9zIEEgQmVja2VyIDxyb290QGNhcmxvc2JlY2tlci5kZXY+IgoJCWRlc2NyaXB0aW9uOiAiU2FtcGxlIHByb2plY3QuIgoJCWhvbWVwYWdlOiAgICAiaHR0cHM6Ly9naXRodWIuY29tL2NhYXJsb3MwL3Rhc2t0aW1lciIKCQlsaWNlbnNlOiAgICAgIk1JVCIKCQlmb3JtYXRzOiBbImRlYiIsICJycG0iLCAiYXBrIl0KCX1dCn0K" }
+// filepath: goreleaser.cue
+
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
@@ -80,7 +81,7 @@ files: example: goreleaser.#Project & {
 		formats: ["deb", "rpm", "apk"]
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `files` struct.
 
@@ -120,8 +121,9 @@ $ cue export --outfile .goreleaser.yaml -e files.example
 ```
 If you chose to export the `files.example` shown above,
 your validated YAML file will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".goreleaser.yaml" language="yaml" area="top-left" >}}
+```yaml { title=".goreleaser.yaml" codeToCopy="cHJvamVjdF9uYW1lOiBleGFtcGxlCmJ1aWxkczoKICAtIGdvb3M6CiAgICAgIC0gbGludXgKICAgICAgLSB3aW5kb3dzCiAgICAgIC0gZGFyd2luCiAgICBnb2FyY2g6CiAgICAgIC0gYW1kNjQKICAgICAgLSBhcm02NAogICAgZW52OgogICAgICAtIENHT19FTkFCTEVEPTAKZG9ja2VyczoKICAtIGRvY2tlcmZpbGU6IERvY2tlcmZpbGUKICAgIGltYWdlX3RlbXBsYXRlczoKICAgICAgLSBnaGNyLmlvL2dvcmVsZWFzZXIvZXhhbXBsZTp7eyAuVmVyc2lvbiB9fQogICAgYnVpbGRfZmxhZ190ZW1wbGF0ZXM6CiAgICAgIC0gLS1sYWJlbD1vcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGU9e3sgLlByb2plY3ROYW1lIH19CiAgICAgIC0gLS1sYWJlbD1vcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UuZGVzY3JpcHRpb249e3sgLlByb2plY3ROYW1lIH19CiAgICAgIC0gLS1sYWJlbD1vcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudXJsPWh0dHBzOi8vZ2l0aHViLmNvbS9nb3JlbGVhc2VyL2V4YW1wbGUKICAgICAgLSAtLWxhYmVsPW9yZy5vcGVuY29udGFpbmVycy5pbWFnZS5zb3VyY2U9aHR0cHM6Ly9naXRodWIuY29tL2dvcmVsZWFzZXIvZXhhbXBsZQogICAgICAtIC0tbGFiZWw9b3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb249e3sgLlZlcnNpb24gfX0KICAgICAgLSAtLWxhYmVsPW9yZy5vcGVuY29udGFpbmVycy5pbWFnZS5jcmVhdGVkPXt7IHRpbWUgIjIwMDYtMDEtMDJUMTU6MDQ6MDVaMDc6MDAiIH19CiAgICAgIC0gLS1sYWJlbD1vcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UucmV2aXNpb249e3sgLkZ1bGxDb21taXQgfX0KICAgICAgLSAtLWxhYmVsPW9yZy5vcGVuY29udGFpbmVycy5pbWFnZS5saWNlbnNlcz1NSVQKbmZwbXM6CiAgLSBmb3JtYXRzOgogICAgICAtIGRlYgogICAgICAtIHJwbQogICAgICAtIGFwawogICAgaG9tZXBhZ2U6IGh0dHBzOi8vZ2l0aHViLmNvbS9jYWFybG9zMC90YXNrdGltZXIKICAgIG1haW50YWluZXI6IENhcmxvcyBBIEJlY2tlciA8cm9vdEBjYXJsb3NiZWNrZXIuZGV2PgogICAgZGVzY3JpcHRpb246IFNhbXBsZSBwcm9qZWN0LgogICAgbGljZW5zZTogTUlUCg==" }
+# filepath: .goreleaser.yaml
+
 project_name: example
 builds:
   - goos:
@@ -155,7 +157,7 @@ nfpms:
     maintainer: Carlos A Becker <root@carlosbecker.dev>
     description: Sample project.
     license: MIT
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Use your configuration file
 
 Your validated `.goreleaser.yml` file can now be used by

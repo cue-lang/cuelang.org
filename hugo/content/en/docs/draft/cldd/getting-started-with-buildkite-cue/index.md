@@ -46,8 +46,9 @@ but the commands in this guide will work in any setup.
 Declare a Buildkite pipeline in CUE. This one is based on
 [a Buildkite example](https://github.com/buildkite/bash-example):
 
-{{< code-tabs >}}
-{{< code-tab name="pipeline.cue" language="cue" area="top-left" >}}
+```cue { title="pipeline.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAxL2J1aWxka2l0ZSIKCnBpcGVsaW5lczogZXhhbXBsZTogYnVpbGRraXRlLiNQaXBlbGluZSAmIHsKCXN0ZXBzOiBbewoJCWxhYmVsOiAiOmhhbW1lcjogRXhhbXBsZSBTY3JpcHQiCgkJY29tbWFuZDogIiIiCgkJCWVjaG8gIi0tLSA6cGFja2FnZTogQnVpbGQgam9iIGNoZWNrb3V0IGRpcmVjdG9yeSIKCQkJcHdkCgkJCWxzIC1sYQoJCQllY2hvICItLS0gOmV2ZXJncmVlbl90cmVlOiBCdWlsZCBqb2IgZW52aXJvbm1lbnQiCgkJCWVudgoJCQllY2hvICIrKysgOmhhbW1lcjogRXhhbXBsZSB0ZXN0cyIKCQkJZWNobyAiQ29uZ3JhdHVsYXRpb25zISBZb3UndmUgc3VjY2Vzc2Z1bGx5IHJ1biB5b3VyIGZpcnN0IGJ1aWxkIG9uIEJ1aWxka2l0ZSEg8J+RjSIKCQkJIiIiCgl9XQp9Cg==" }
+// filepath: pipeline.cue
+
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp1/buildkite"
@@ -66,7 +67,7 @@ pipelines: example: buildkite.#Pipeline & {
 			"""
 	}]
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 
 In later guides we'll add more entries to the `pipelines` struct.
 
@@ -108,12 +109,13 @@ $ cue export --outfile .buildkite/pipeline.yml -e pipelines.example
 ```
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
-{{< code-tabs >}}
-{{< code-tab name=".buildkite/pipeline.yml" language="yml" area="top-left" >}}
+```yml { title=".buildkite/pipeline.yml" codeToCopy="c3RlcHM6CiAgLSBsYWJlbDogJzpoYW1tZXI6IEV4YW1wbGUgU2NyaXB0JwogICAgY29tbWFuZDogImVjaG8gXCItLS0gOnBhY2thZ2U6IEJ1aWxkIGpvYiBjaGVja291dCBkaXJlY3RvcnlcIlxucHdkXG5scyAtbGFcbmVjaG8gXCItLS0gOmV2ZXJncmVlbl90cmVlOiBCdWlsZCBqb2IgZW52aXJvbm1lbnRcIlxuZW52XG5lY2hvIFwiKysrIDpoYW1tZXI6IEV4YW1wbGUgdGVzdHNcIlxuZWNobyBcIkNvbmdyYXR1bGF0aW9ucyEgWW91J3ZlIHN1Y2Nlc3NmdWxseSBydW4geW91ciBmaXJzdCBidWlsZCBvbiBCdWlsZGtpdGUhIFxVMDAwMUY0NERcIiIK" }
+# filepath: .buildkite/pipeline.yml
+
 steps:
   - label: ':hammer: Example Script'
     command: "echo \"--- :package: Build job checkout directory\"\npwd\nls -la\necho \"--- :evergreen_tree: Build job environment\"\nenv\necho \"+++ :hammer: Example tests\"\necho \"Congratulations! You've successfully run your first build on Buildkite! \U0001F44D\""
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 ## Run your pipeline
 
 The `cue.mod` and `.buildkite` directories need to be stored in your git

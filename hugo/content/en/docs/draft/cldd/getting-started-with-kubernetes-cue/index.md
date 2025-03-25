@@ -37,8 +37,9 @@ within its own CUE module. You can choose any module name you like - it's easy t
 
 If you don't have an example you want to
 use, create the `manifest.cue` file with this contents:
-{{< code-tabs >}}
-{{< code-tab name="manifest.cue" language="cue" area="top-left" >}}
+```cue { title="manifest.cue" codeToCopy="cGFja2FnZSBrdWJlCgppbXBvcnQgYXBwcyAiZ2l0aHViLmNvbS9jdWUtdG1wL2pzb25zY2hlbWEtcHViL2V4cDMvazhzLmlvL2FwaS9hcHBzL3YxIgoKYXBwcy4jRGVwbG95bWVudCAmIHsKCWFwaVZlcnNpb246ICJhcHBzL3YxIgoJa2luZDogICAgICAgIkRlcGxveW1lbnQiCgltZXRhZGF0YTogewoJCWxhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJbmFtZTogImV4YW1wbGUxIgoJfQoJc3BlYzogewoJCXJlcGxpY2FzOiAxCgkJc2VsZWN0b3I6IG1hdGNoTGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQl0ZW1wbGF0ZTogewoJCQltZXRhZGF0YTogbGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQkJc3BlYzogY29udGFpbmVyczogW3sKCQkJCWltYWdlOiAibmdpbng6bGF0ZXN0IgoJCQkJbmFtZTogICJuZ2lueCIKCQkJfV0KCQl9Cgl9Cn0K" }
+// filepath: manifest.cue
+
 package kube
 
 import apps "github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/apps/v1"
@@ -62,7 +63,7 @@ apps.#Deployment & {
 		}
 	}
 }
-{{< /code-tab >}}{{< /code-tabs >}}
+```
 The `import` at the top references the appropriate curated module for the
 deployment contained in the manifest.
 Its path is currently temporary, but only while its proper location is being decided.
@@ -96,8 +97,9 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 $ cue export --outfile manifest.yml
 ```
 If you used the example manifest from above, your validated YAML manifest will look like this:
-{{< code-tabs >}}
-{{< code-tab name="manifest.yml" language="yml" area="top-left" >}}
+```yml { title="manifest.yml" codeToCopy="YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGxhYmVsczoKICAgIGFwcDogZXhhbXBsZTEKICBuYW1lOiBleGFtcGxlMQpzcGVjOgogIHJlcGxpY2FzOiAxCiAgc2VsZWN0b3I6CiAgICBtYXRjaExhYmVsczoKICAgICAgYXBwOiBleGFtcGxlMQogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGxhYmVsczoKICAgICAgICBhcHA6IGV4YW1wbGUxCiAgICBzcGVjOgogICAgICBjb250YWluZXJzOgogICAgICAgIC0gaW1hZ2U6IG5naW54OmxhdGVzdAogICAgICAgICAgbmFtZTogbmdpbngK" }
+# filepath: manifest.yml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -117,4 +119,4 @@ spec:
       containers:
         - image: nginx:latest
           name: nginx
-{{< /code-tab >}}{{< /code-tabs >}}
+```
