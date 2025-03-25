@@ -12,9 +12,14 @@ package site
 									"HIDDEN: required output": "a+mrL4iiIBfFlIz0EFnkCNAsG3N/94ij7jQGo2wgihQ="
 								}
 								multi_step: {
-									hash:       "FTBDH6F0H9FNL4OES14DR727JCS67319KPUHMSLK5IA5LJJ1NI3G===="
-									scriptHash: "BJ46KNJFGBS2SL251SBDIMKK8EQD5QGU255AHQLSJK08PO0SLNIG===="
+									hash:       "UITNS6TKU8F1UDG59MJGNGD383I10GM6O14LTOOAOP5TQEHBG50G===="
+									scriptHash: "0GRK6TFSKSRK5LUU1LD6BDITI3MRMH2ES02200KTF0ODE6FRDET0===="
 									steps: [{
+										doc:      ""
+										cmd:      "export PATH=/cues/v0.13.0-alpha.2:$PATH"
+										exitCode: 0
+										output:   ""
+									}, {
 										doc:      ""
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
 										exitCode: 0
@@ -55,7 +60,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.12.0
+												cue version v0.13.0-alpha.2
 												...
 
 												"""
