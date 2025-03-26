@@ -146,7 +146,7 @@ cue vet references.cue
 
 Early versions of the CUE language allowed lists to be used with the arithmetic
 operators "`+`" and "`*`". This feature was removed from the language specification
-[some years ago](https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/+/172f0060cd405f30c5873b793e44300e1a3588cb%5E%21/),
+[some years ago](https://github.com/cue-lang/cue/commit/172f0060cd405f30c5873b793e44300e1a3588cb),
 with the removal being completed in CUE version 0.11.
 
 The commit that removed them from the CUE language specification in 2021
