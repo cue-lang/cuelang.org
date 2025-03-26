@@ -33,6 +33,24 @@
       "message": "I would avoid mentioning line numbers in prose because they very easily bit rot.",
       "revId": "64ea45187906fce3885ca24e16d1ce07e18749c5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3191d3ed_0dc9e15b",
+        "filename": "content/docs/draft/cldd/spotting-errors-earlier-github-actions-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-26T14:39:10Z",
+      "side": 1,
+      "message": "Removed one mention, and kept one, as discussed offline.",
+      "parentUuid": "c6bd4426_a1c2958d",
+      "revId": "64ea45187906fce3885ca24e16d1ce07e18749c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
