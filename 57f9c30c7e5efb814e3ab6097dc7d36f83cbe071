@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c8498ce_6598ddcc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-26T07:33:13Z",
+      "side": 1,
+      "message": "All \"checking existing XXX files\" guides\u0027 CLs (in the original stack above this) have been merged into this CL for expediency.",
+      "revId": "57f9c30c7e5efb814e3ab6097dc7d36f83cbe071",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

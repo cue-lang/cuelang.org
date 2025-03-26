@@ -16,6 +16,24 @@
       "message": "Let\u0027s drop this warning. We will not need it next week. It\u0027s just taking up space now 😊",
       "revId": "374d2ea7c4611c559a76274d7fb6d7a60b184a4b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3148bde_a7ba0fc1",
+        "filename": "content/docs/draft/cldd/checking-existing-github-actions-files/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-26T07:33:13Z",
+      "side": 1,
+      "message": "Done across all guides.",
+      "parentUuid": "08a6ad1f_33ad35a1",
+      "revId": "374d2ea7c4611c559a76274d7fb6d7a60b184a4b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
