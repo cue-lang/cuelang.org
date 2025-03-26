@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16d14590_d72b0b55",
+        "filename": "content/docs/draft/cldd/checking-existing-gitlab-cicd-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-26T07:33:33Z",
+      "side": 1,
+      "message": "Done across all guides.",
+      "parentUuid": "eb7e35a3_e878459d",
+      "range": {
+        "startLine": 27,
+        "startChar": 45,
+        "endLine": 27,
+        "endChar": 77
+      },
+      "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09c36922_dbdd7621",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc416719_3d218ec7",
+        "filename": "content/docs/draft/cldd/checking-existing-gitlab-cicd-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-26T07:33:33Z",
+      "side": 1,
+      "message": "Done across all guides.",
+      "parentUuid": "09c36922_dbdd7621",
+      "range": {
+        "startLine": 28,
+        "startChar": 64,
+        "endLine": 29,
+        "endChar": 16
+      },
+      "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cea715f_cacae0ab",
@@ -60,6 +108,24 @@
       "writtenOn": "2025-03-25T17:34:39Z",
       "side": 1,
       "message": "I think we need to spell this as follows:\n\n```\ncue vet -c -d \u0027#Pipeline\u0027 github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci@latest pipeline.yml \n```\n\nAnd explain afterwards what is going on. \"Using the `#Pipeline` definition from the `gitlabci` package, we validate `pipeline.yml` file.\" Or something along those lines.",
+      "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd3f5cd6_2bfe0240",
+        "filename": "content/docs/draft/cldd/checking-existing-gitlab-cicd-files/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-26T07:33:33Z",
+      "side": 1,
+      "message": "Done across all guides.",
+      "parentUuid": "6cea715f_cacae0ab",
       "revId": "9e8805abada18e34a9e60f82c9b3394cedd8d417",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
