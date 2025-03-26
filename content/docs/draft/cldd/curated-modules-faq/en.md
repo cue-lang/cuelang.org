@@ -4,11 +4,6 @@ draft: true
 no_index: true
 ---
 
-{{<warning>}}
-This page is a work in progress -- your feedback is very welcome!
-Please [report any issues]({{<report-issue-url>}}) you find.
-{{</warning>}}
-
 The CUE [Central Registry](https://registry.cue.works)
 provides some carefully selected and curated
 [CUE modules](https://cuelang.org/docs/concept/modules/) that you can use to
