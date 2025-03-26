@@ -17,11 +17,6 @@ EOD
 export PATH=/cues/$CUELANG_CUE_TIP:$PATH
 {{{end}}}
 
-{{<info>}}
-Curated modules are a work in progress and your feedback is important!
-Please [report any issues]({{<report-issue-url>}}) you find.
-{{</info>}}
-
 The CUE
 [Central Registry](https://registry.cue.works/)
 provides a well-known location for well-known schemas, including those for
