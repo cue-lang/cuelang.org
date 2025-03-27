@@ -11,10 +11,8 @@ cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
 
-# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
-# and it's easiest to align behaviours here, inline, rather than using
-# the internal/patch/tip.diff mechanism.
-export PATH=/cues/$CUELANG_CUE_TIP:$PATH
+# TODO(jm): revert to latest when it has evalv3 as default.
+export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
 The easiest way to start taking advantage of CUE's powerful validation is to

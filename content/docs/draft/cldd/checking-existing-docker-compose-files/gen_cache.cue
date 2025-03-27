@@ -11,8 +11,8 @@ package site
 									file: "9/UWWD6052xM5D0NMKCKmPdl64bYPpkj1SxjVc2gbbU="
 								}
 								multi_step: {
-									hash:       "QN7HPT586048ABH1ONRE7FQ5J4NQMJ6N71LUBC2BLBB6N3KGJ590===="
-									scriptHash: "M2ROK9H3FCU8P067TOOH99T3AKQGQ3Q4HGVU5U6PUVGTBMVLETH0===="
+									hash:       "76P7ONA5P9HHPEEBGS0DG4HV1PUSC5S02JC05N432K17D5HMFGLG===="
+									scriptHash: "TM21DA429GJT308Q32J6PBS3TDAG5BB2GQNJFKJ75DNQAAH1LAG0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -28,11 +28,7 @@ package site
 										exitCode: 0
 										output:   ""
 									}, {
-										doc: """
-												# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
-												# and it's easiest to align behaviours here, inline, rather than using
-												# the internal/patch/tip.diff mechanism.
-												"""
+										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
 										cmd:      "export PATH=/cues/v0.13.0-alpha.2:$PATH"
 										exitCode: 0
 										output:   ""

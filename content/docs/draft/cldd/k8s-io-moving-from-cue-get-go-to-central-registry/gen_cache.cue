@@ -12,8 +12,8 @@ package site
 									"manifest post": "Ix3fTRI9yM4wPI+ih02KRuNczYB+F+6kPhKNDa23lbY="
 								}
 								multi_step: {
-									hash:       "Q66RTDDU7QTUG7BGQ2AEV6ET3S1KUQ1O0DIKG86A5M6L0USSJ59G===="
-									scriptHash: "3L0K996VUFKHLRJSP11T1HGKGS7ITSK2GM08161NDLR3KO2U6IPG===="
+									hash:       "P38SKJ5916V4K6IQM6HVH7RODL98MT3HDENT56P1AGV92Q2C0MT0===="
+									scriptHash: "6LTKTDL0NBR5EKOQJCKEPIH4O1DMCV0FVD4STDKA3L9L4B36MPJG===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -39,11 +39,7 @@ package site
 										exitCode: 0
 										output:   ""
 									}, {
-										doc: """
-												# Switch to CUE tip, as this page will only be seen on tip.cuelang.org
-												# and it's easiest to align behaviours here, inline, rather than using
-												# the internal/patch/tip.diff mechanism.
-												"""
+										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
 										cmd:      "export PATH=/cues/v0.13.0-alpha.2:$PATH"
 										exitCode: 0
 										output:   ""
