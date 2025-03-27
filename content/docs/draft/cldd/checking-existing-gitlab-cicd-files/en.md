@@ -63,7 +63,7 @@ create-pages:
 ## Validate the pipeline file
 
 {{{with script "en" "cue vet"}}}
-cue vet -c -d '#Pipeline' github.com/cue-tmp/jsonschema-pub/exp3/gitlab/gitlabci@latest pipeline.yml
+cue vet -c -d '#Pipeline' test.cue.works/x1/gitlab/gitlabci@latest pipeline.yml
 {{{end}}}
 
 This command uses the `#Pipeline` definition from the `gitlabci` package to
