@@ -1,7 +1,5 @@
 ---
 title: CUE By Example - Driving Buildkite Pipelines with CUE
-draft: true
-no_index: true
 ---
 
 {{<caution>}}

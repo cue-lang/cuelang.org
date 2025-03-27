@@ -1,7 +1,5 @@
 ---
 title: Getting started with GitHub Actions + CUE
-draft: true
-no_index: true
 ---
 
 {{{with _script_ "en" "HIDDEN setup"}}}

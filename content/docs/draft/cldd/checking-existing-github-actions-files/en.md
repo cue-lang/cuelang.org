@@ -1,7 +1,5 @@
 ---
 title: Checking existing GitHub Actions files using CUE
-draft: true
-no_index: true
 ---
 
 {{{with _script_ "en" "HIDDEN setup"}}}

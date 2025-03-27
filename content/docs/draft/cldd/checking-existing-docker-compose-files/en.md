@@ -1,7 +1,5 @@
 ---
 title: Checking existing Docker Compose files using CUE
-draft: true
-no_index: true
 ---
 
 {{{with _script_ "en" "HIDDEN setup"}}}

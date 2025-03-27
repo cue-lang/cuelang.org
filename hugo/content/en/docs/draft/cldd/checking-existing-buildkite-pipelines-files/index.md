@@ -1,7 +1,5 @@
 ---
 title: Checking existing Buildkite Pipelines files using CUE
-draft: true
-no_index: true
 ---
 
 The easiest way to start taking advantage of CUE's powerful validation is to

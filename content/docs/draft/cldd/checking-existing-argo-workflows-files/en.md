@@ -1,7 +1,5 @@
 ---
 title: Checking existing Argo Workflows files using CUE
-draft: true
-no_index: true
 ---
 
 {{{with _script_ "en" "HIDDEN setup"}}}
