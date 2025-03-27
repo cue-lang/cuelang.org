@@ -1,7 +1,5 @@
 ---
 title: Checking existing GitLab CI/CD files using CUE
-draft: true
-no_index: true
 ---
 
 The easiest way to start taking advantage of CUE's powerful validation is to

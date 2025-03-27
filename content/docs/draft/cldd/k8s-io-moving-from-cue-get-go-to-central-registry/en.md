@@ -1,7 +1,5 @@
 ---
 title: Migrating to the Central Registry's curated Kubernetes Schemas
-draft: true
-no_index: true
 ---
 
 {{{with _script_ "en" "HIDDEN: setup"}}}

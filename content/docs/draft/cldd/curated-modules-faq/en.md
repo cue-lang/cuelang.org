@@ -1,7 +1,5 @@
 ---
 title: Curated Modules
-draft: true
-no_index: true
 ---
 
 The CUE [Central Registry](https://registry.cue.works)

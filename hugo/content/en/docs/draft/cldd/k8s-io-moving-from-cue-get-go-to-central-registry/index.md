@@ -1,7 +1,5 @@
 ---
 title: Migrating to the Central Registry's curated Kubernetes Schemas
-draft: true
-no_index: true
 ---
 
 If you're already using CUE to validate or generate Kubernetes manifests then

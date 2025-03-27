@@ -1,7 +1,5 @@
 ---
 title: CUE By Example - Controlling Kubernetes with CUE
-draft: true
-no_index: true
 ---
 
 {{<caution>}}

@@ -1,7 +1,5 @@
 ---
 title: Getting started with Docker Compose + CUE
-draft: true
-no_index: true
 ---
 
 The CUE
