@@ -53,7 +53,7 @@ use, create the `manifest.cue` file with this contents:
 -- manifest.cue --
 package kube
 
-import apps "github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/apps/v1"
+import apps "test.cue.works/x1/k8s.io/api/apps/v1"
 
 apps.#Deployment & {
 	apiVersion: "apps/v1"

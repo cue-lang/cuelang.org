@@ -58,8 +58,8 @@ nfpms:
 
 ## Validate the configuration file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1Byb2plY3QnIGdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAzL2dvcmVsZWFzZXJAbGF0ZXN0IGdvcmVsZWFzZXIueW1s" }
-$ cue vet -c -d '#Project' github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@latest goreleaser.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1Byb2plY3QnIHRlc3QuY3VlLndvcmtzL3gxL2dvcmVsZWFzZXJAbGF0ZXN0IGdvcmVsZWFzZXIueW1s" }
+$ cue vet -c -d '#Project' test.cue.works/x1/goreleaser@latest goreleaser.yml
 ```
 
 This command uses the `#Project` definition from the `goreleaser` package to

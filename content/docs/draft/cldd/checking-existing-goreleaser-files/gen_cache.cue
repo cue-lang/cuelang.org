@@ -11,8 +11,8 @@ package site
 									file: "9/vtUIJtIFXmgvJmvqmPsgmWllqTaOIvYsBUxCRNEAY="
 								}
 								multi_step: {
-									hash:       "VKR6E5P4K5JA7RBI933M55Q993NR8RMKNGHTAKDBN9BRIRK9VKRG===="
-									scriptHash: "RUIP663GBAUNEJJUHK8GUE92CGM4E5B8VBBGC2MV9MLLSH118410===="
+									hash:       "OSJMOTV1JGBM0P27MR74P7MRRMGR77P3AODMHUB7GR3K6MSTRV60===="
+									scriptHash: "K2LIIOO08NB7UM95C56O028GO9E8PSCUURE3GTU3ATEBLOBJ0G80===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -34,7 +34,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue vet -c -d '#Project' github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@latest goreleaser.yml"
+										cmd:      "cue vet -c -d '#Project' test.cue.works/x1/goreleaser@latest goreleaser.yml"
 										exitCode: 0
 										output:   ""
 									}]

@@ -56,7 +56,7 @@ Declare a configuration file in CUE. This one is taken from
 -- goreleaser.cue --
 package cicd
 
-import "github.com/cue-tmp/jsonschema-pub/exp3/goreleaser"
+import "test.cue.works/x1/goreleaser"
 
 files: example: goreleaser.#Project & {
 	project_name: "example"

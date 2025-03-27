@@ -91,17 +91,17 @@ To update the relevant imports across every CUE file in your module, run the
 command with a "before" and "after" prefix.
 In the case of Kubernetes schemas, this is the command you need to run:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHJlZmFjdG9yIGltcG9ydHMgazhzLmlvIGdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAzL2s4cy5pbw==" }
-$ cue refactor imports k8s.io github.com/cue-tmp/jsonschema-pub/exp3/k8s.io
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHJlZmFjdG9yIGltcG9ydHMgazhzLmlvIHRlc3QuY3VlLndvcmtzL3gxL2s4cy5pbw==" }
+$ cue refactor imports k8s.io test.cue.works/x1/k8s.io
 ```
 
 CUE files are re-written, updating `import` lines as required:
-```cue { title="manifest.cue" codeToCopy="cGFja2FnZSBrdWJlCgppbXBvcnQgYXBwcyAiZ2l0aHViLmNvbS9jdWUtdG1wL2pzb25zY2hlbWEtcHViL2V4cDMvazhzLmlvL2FwaS9hcHBzL3YxIgoKYXBwcy4jRGVwbG95bWVudCAmIHsKCWFwaVZlcnNpb246ICJhcHBzL3YxIgoJa2luZDogICAgICAgIkRlcGxveW1lbnQiCgltZXRhZGF0YTogewoJCWxhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJbmFtZTogImV4YW1wbGUxIgoJfQoJc3BlYzogewoJCXJlcGxpY2FzOiAxCgkJc2VsZWN0b3I6IG1hdGNoTGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQl0ZW1wbGF0ZTogewoJCQltZXRhZGF0YTogbGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQkJc3BlYzogY29udGFpbmVyczogW3sKCQkJCWltYWdlOiAibmdpbng6bGF0ZXN0IgoJCQkJbmFtZTogICJuZ2lueCIKCQkJfV0KCQl9Cgl9Cn0K" }
+```cue { title="manifest.cue" codeToCopy="cGFja2FnZSBrdWJlCgppbXBvcnQgYXBwcyAidGVzdC5jdWUud29ya3MveDEvazhzLmlvL2FwaS9hcHBzL3YxIgoKYXBwcy4jRGVwbG95bWVudCAmIHsKCWFwaVZlcnNpb246ICJhcHBzL3YxIgoJa2luZDogICAgICAgIkRlcGxveW1lbnQiCgltZXRhZGF0YTogewoJCWxhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJbmFtZTogImV4YW1wbGUxIgoJfQoJc3BlYzogewoJCXJlcGxpY2FzOiAxCgkJc2VsZWN0b3I6IG1hdGNoTGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQl0ZW1wbGF0ZTogewoJCQltZXRhZGF0YTogbGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQkJc3BlYzogY29udGFpbmVyczogW3sKCQkJCWltYWdlOiAibmdpbng6bGF0ZXN0IgoJCQkJbmFtZTogICJuZ2lueCIKCQkJfV0KCQl9Cgl9Cn0K" }
 // filepath: manifest.cue
 
 package kube
 
-import apps "github.com/cue-tmp/jsonschema-pub/exp3/k8s.io/api/apps/v1"
+import apps "test.cue.works/x1/k8s.io/api/apps/v1"
 
 apps.#Deployment & {
 	apiVersion: "apps/v1"
@@ -148,8 +148,8 @@ language: {
 	version: "v0.13.0"
 }
 deps: {
-	"github.com/cue-tmp/jsonschema-pub/exp3/k8s.io@v0": {
-		v: "v0.0.0"
+	"test.cue.works/x1/k8s.io@v0": {
+		v: "v0.3.0"
 	}
 }
 ```
