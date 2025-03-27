@@ -1,7 +1,5 @@
 ---
 title: Getting started with Kubernetes + CUE
-draft: true
-no_index: true
 ---
 
 {{{with _script_ "en" "HIDDEN setup auth"}}}

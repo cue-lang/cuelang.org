@@ -1,7 +1,5 @@
 ---
 title: Getting started with Buildkite + CUE
-draft: true
-no_index: true
 ---
 
 The CUE

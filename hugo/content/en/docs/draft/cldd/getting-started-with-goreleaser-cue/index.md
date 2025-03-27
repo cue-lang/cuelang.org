@@ -1,7 +1,5 @@
 ---
 title: Getting started with GoReleaser + CUE
-draft: true
-no_index: true
 ---
 
 The CUE

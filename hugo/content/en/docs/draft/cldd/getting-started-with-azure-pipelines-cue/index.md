@@ -1,7 +1,5 @@
 ---
 title: Getting started with Azure Pipelines + CUE
-draft: true
-no_index: true
 ---
 
 The CUE

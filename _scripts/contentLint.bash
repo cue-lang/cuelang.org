@@ -10,14 +10,11 @@ set -euo pipefail
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 # TODO: move this assertion into CUE as part of https://cuelang.org/issue/2825.
-echo 'Checking that the /docs/{draft,language-guide}/ hierarchies contain only draft, non-site-mapped pages ...'
+echo 'Checking that the /docs/draft/ hierarchy does *not* contain draft:false pages ...'
 # We use an "if" here because "! git grep ..." failing wouldn't cause the
 # script to exit, as "set -e" doesn't apply when a command is negated.
 # cf. https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
-if git grep --files-without-match '^draft: true' 'hugo/content/*/docs/draft/**.md' ; then exit 1; fi
-if git grep --files-without-match '^draft: true' 'hugo/content/*/docs/language-guide/**.md' ; then exit 1; fi
-if git grep --files-without-match '^no_index: true' 'hugo/content/*/docs/draft/**.md'; then exit 1; fi
-if git grep --files-without-match '^no_index: true' 'hugo/content/*/docs/language-guide/**.md'; then exit 1; fi
+if git grep '^draft:.*false' 'hugo/content/*/docs/draft/**.md' ; then exit 1; fi
 
 # TODO: move this assertion into the preprocessor as part of https://cuelang.org/issue/3496.
 echo 'Checking that every page presenting Go code also contains "go vet" and "staticcheck" ...'
