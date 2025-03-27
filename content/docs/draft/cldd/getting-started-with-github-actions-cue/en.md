@@ -58,7 +58,7 @@ Declare a GitHub Actions workflow in CUE. This one is based on an example from
 -- workflow.cue --
 package cicd
 
-import "github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
+import "test.cue.works/x1/githubactions"
 
 workflows: example: githubactions.#Workflow & {
 	name:       "learn-github-actions"

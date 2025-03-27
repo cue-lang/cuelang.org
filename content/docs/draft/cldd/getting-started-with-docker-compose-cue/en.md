@@ -59,7 +59,7 @@ Declare a compose file in CUE. This one is based on a PostgreSQL example from
 -- compose.cue --
 package dev
 
-import "github.com/cue-tmp/jsonschema-pub/exp3/dockercompose"
+import "test.cue.works/x1/dockercompose"
 
 files: example: dockercompose.#Schema & {
 	services: {

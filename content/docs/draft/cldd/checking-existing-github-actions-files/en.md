@@ -70,7 +70,7 @@ jobs:
 ## Validate the workflow file
 
 {{{with script "en" "cue vet"}}}
-cue vet -c -d '#Workflow' github.com/cue-tmp/jsonschema-pub/exp3/githubactions@latest workflow.yml
+cue vet -c -d '#Workflow' test.cue.works/x1/githubactions@latest workflow.yml
 {{{end}}}
 
 This command uses the `#Workflow` definition from the `githubactions` package

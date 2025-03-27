@@ -11,8 +11,8 @@ package site
 									workflow: "hTVciwCRtljNu+rtJiwgH74yx9Uzx2Y49hwtD3AjopI="
 								}
 								multi_step: {
-									hash:       "FQ0G6SUGSAIGCE2VD2IMITLGSM06D5LG0J7CBL9PS1PBG0RCCSPG===="
-									scriptHash: "9E9T8TAGFA3BQ81C83HPAK8OAFDAE7K891AITM9N7ILE2L35PED0===="
+									hash:       "9PB8D54VI3MMC7SFCS96R108VVJAEND63B39GQMHHG9A25RPAPS0===="
+									scriptHash: "VAEM88NSNCFTTRV0VANEBE09NS336LJNVKQSAB96ODCS6UOAJKVG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -38,7 +38,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue vet -c -d '#Workflow' github.com/cue-tmp/jsonschema-pub/exp3/githubactions@latest workflow.yml"
+										cmd:      "cue vet -c -d '#Workflow' test.cue.works/x1/githubactions@latest workflow.yml"
 										exitCode: 0
 										output:   ""
 									}]

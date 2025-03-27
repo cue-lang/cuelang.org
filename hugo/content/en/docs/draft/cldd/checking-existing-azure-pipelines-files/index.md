@@ -53,8 +53,8 @@ stages:
 
 ## Validate the pipeline file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBnaXRodWIuY29tL2N1ZS10bXAvanNvbnNjaGVtYS1wdWIvZXhwMy9henVyZXBpcGVsaW5lc0BsYXRlc3QgcGlwZWxpbmUueW1s" }
-$ cue vet -c -d '#Pipeline' github.com/cue-tmp/jsonschema-pub/exp3/azurepipelines@latest pipeline.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyB0ZXN0LmN1ZS53b3Jrcy94MS9henVyZXBpcGVsaW5lc0BsYXRlc3QgcGlwZWxpbmUueW1s" }
+$ cue vet -c -d '#Pipeline' test.cue.works/x1/azurepipelines@latest pipeline.yml
 ```
 
 This command uses the `#Pipeline` definition from the `azurepipelines` package

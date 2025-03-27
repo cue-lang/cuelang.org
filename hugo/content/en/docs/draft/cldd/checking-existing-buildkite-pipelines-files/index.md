@@ -44,8 +44,8 @@ steps:
 
 ## Validate the pipeline file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBnaXRodWIuY29tL2N1ZS10bXAvanNvbnNjaGVtYS1wdWIvZXhwMy9idWlsZGtpdGVAbGF0ZXN0IHBpcGVsaW5lLnltbA==" }
-$ cue vet -c -d '#Pipeline' github.com/cue-tmp/jsonschema-pub/exp3/buildkite@latest pipeline.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyB0ZXN0LmN1ZS53b3Jrcy94MS9idWlsZGtpdGVAbGF0ZXN0IHBpcGVsaW5lLnltbA==" }
+$ cue vet -c -d '#Pipeline' test.cue.works/x1/buildkite@latest pipeline.yml
 ```
 
 This command uses the `#Pipeline` definition from the `buildkite` package to

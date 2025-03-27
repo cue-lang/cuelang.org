@@ -72,7 +72,7 @@ nfpms:
 ## Validate the configuration file
 
 {{{with script "en" "cue vet"}}}
-cue vet -c -d '#Project' github.com/cue-tmp/jsonschema-pub/exp3/goreleaser@latest goreleaser.yml
+cue vet -c -d '#Project' test.cue.works/x1/goreleaser@latest goreleaser.yml
 {{{end}}}
 
 This command uses the `#Project` definition from the `goreleaser` package to

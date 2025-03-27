@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"manifest pre":  "/U63S+O6tuXVuFdJFpSQPDVaNqZ+Ab72JmdJeQFAmGE="
-									"manifest post": "Ix3fTRI9yM4wPI+ih02KRuNczYB+F+6kPhKNDa23lbY="
+									"manifest post": "iKcQ5VJyNRnZuC4JhNcsUcF/CpAOyFFZYfBJs9/uZPU="
 								}
 								multi_step: {
-									hash:       "Q66RTDDU7QTUG7BGQ2AEV6ET3S1KUQ1O0DIKG86A5M6L0USSJ59G===="
-									scriptHash: "3L0K996VUFKHLRJSP11T1HGKGS7ITSK2GM08161NDLR3KO2U6IPG===="
+									hash:       "RPAF0OGNSFNJ5HUG6A6R6VGO2SHK6VPPP5H7T8CLSVAFDE9HBCBG===="
+									scriptHash: "JNK3H2RSKJEFQ6500TLHJJIL3BF7IO0E70JT879PEEPO0OIPO2J0===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -97,7 +97,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue refactor imports k8s.io github.com/cue-tmp/jsonschema-pub/exp3/k8s.io"
+										cmd:      "cue refactor imports k8s.io test.cue.works/x1/k8s.io"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -112,7 +112,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue mod get github.com/cue-tmp/jsonschema-pub/exp3/k8s.io@v0.0.0"
+										cmd:      "cue mod get test.cue.works/x1/k8s.io@v0.3.0"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -130,8 +130,8 @@ package site
 												\tversion: "v0.13.0"
 												}
 												deps: {
-												\t"github.com/cue-tmp/jsonschema-pub/exp3/k8s.io@v0": {
-												\t\tv: "v0.0.0"
+												\t"test.cue.works/x1/k8s.io@v0": {
+												\t\tv: "v0.3.0"
 												\t}
 												}
 

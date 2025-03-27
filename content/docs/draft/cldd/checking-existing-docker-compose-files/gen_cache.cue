@@ -11,8 +11,8 @@ package site
 									file: "9/UWWD6052xM5D0NMKCKmPdl64bYPpkj1SxjVc2gbbU="
 								}
 								multi_step: {
-									hash:       "QN7HPT586048ABH1ONRE7FQ5J4NQMJ6N71LUBC2BLBB6N3KGJ590===="
-									scriptHash: "M2ROK9H3FCU8P067TOOH99T3AKQGQ3Q4HGVU5U6PUVGTBMVLETH0===="
+									hash:       "07Q4M0C348804L8P9VEBQ78HNF83DKLFNJ7QDM8Q6UK6QS27TDSG===="
+									scriptHash: "OOS2CM679ACFFTCQH1O057MOFF42B09TDFV4C62BDAEUUSO39L3G===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -38,7 +38,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue vet -c -d '#Schema' github.com/cue-tmp/jsonschema-pub/exp3/dockercompose@latest compose.yml"
+										cmd:      "cue vet -c -d '#Schema' test.cue.works/x1/dockercompose@latest compose.yml"
 										exitCode: 0
 										output:   ""
 									}]
