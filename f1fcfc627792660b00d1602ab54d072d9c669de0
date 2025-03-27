@@ -16,6 +16,24 @@
       "message": "You might want to leave a check in place to ensure that no page declares `draft:.*false`.",
       "revId": "f1fcfc627792660b00d1602ab54d072d9c669de0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b97a737_e2381379",
+        "filename": "_scripts/contentLint.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-03-27T17:04:20Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "311e7fb3_bf481e52",
+      "revId": "f1fcfc627792660b00d1602ab54d072d9c669de0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
