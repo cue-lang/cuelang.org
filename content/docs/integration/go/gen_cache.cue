@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							code: {
-								"cue-get-k8s":        "4NsAtEmBtlKcEDDJxBvkJgVn9uHycQUMfrL98kRYGGI="
-								"cue-use-k8s":        "3hLLg67FshG14qEPppEdzMeh23kgLQWDRKKuyyuHdcg="
-								"go-embed-cue":       "IbT9ZpvkOO+zTshDXda53L7WF0otzF2lFfEvNTWpafI="
-								"go-validate-values": "b0iVayjCLpapiquVqX6ss3vBxaMG6183thLxDQ/tWa4="
-								"go-decode-cue":      "T1uxE5WCrrYkQu2L5/zLJXH5vx6ywRZcuHRMZOGxIHM="
-								"go-modify-cue":      "t9LnMteOrcSHyETQ0yiW+7obbV1l2FpnjgCZj2fbpkk="
-								"go-generate-go":     "0bWUpRlhN7l9Tf26QRPUTVcq2msFc5FYmTNlHUeSPpM="
+								"cue-get-k8s":        "o75B79GRdjM2bpf3xrxZttLrsE8krSmgQxnl6PX0RAI="
+								"cue-use-k8s":        "63MjSjQpna8NnEYJmOr6FkJrJQpGC4SdspIO92OD1Kc="
+								"go-embed-cue":       "Uaku/sq+Dp0Q4Np/cpadmxU8OkbU4SxhF5aZrBm3PLw="
+								"go-validate-values": "nPeoxl8ldzjZ2Iq1znhjpWvvjVHobExg3eAH4WNUgo8="
+								"go-decode-cue":      "NspNq5dGHiY0WVOJuTsU57l+j+G+QMl+9I464vpb2EE="
+								"go-modify-cue":      "pu8Lc3vGesMCTzSxTb3pFvVU0jvzj1JPLYx8rLle4uQ="
+								"go-generate-go":     "roCR1P9vXa/uoJNGI1lL1G+bnp1EVATzXR2OnEOuu+w="
 							}
 						}
 					}

@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"docker-compose.yml broken":          "uG/r61RdzisxruuQ891/8Fwr/L+tif6MBMCouSa8tAw="
-								schema:                               "2TAUEMeyb6ncedXKRrsWo8h6g4VZ+niVC0ecqbDtnn4="
-								"docker-compose.yaml fixed":          "WhhtOVSDvOqjJV0Mno6DNqiq6nMTDvlBuGKzuksmSFA="
-								"moreschema.cue":                     "RAfNlfh0pqs0k7jJeGlpCmToscYo3A104Bl0qWIfZpE="
-								"docker-compose.yaml really fixed":   "ixsmAfSi0eHqHFTamnaMZX1GWyIqxqmHe6KRQ8H2OHo="
-								"link splotpolicy and splotservice1": "5nSULBwJqZ0N5RwOTdSj0mjUaxt9eZe2s9D36mVoyMg="
+								"docker-compose.yml broken":          "baolecvCDnk1+54U6CuWEqRNHplZzv9tnfl8iA/WUmQ="
+								schema:                               "st63hSr4LaeYqe25QxC6W7NudfaGPiDTfX+qjpCdDyg="
+								"docker-compose.yaml fixed":          "dshx4uu0Ch0UP7nvb4xZvoEjU5PhaieZAmsHFaM4pFI="
+								"moreschema.cue":                     "HgOjTFwos8XmwDsyLPFbuy+oma3OCxpR7Y4wMDLV1ZI="
+								"docker-compose.yaml really fixed":   "sPum1Lu5/7X3Cxq4Fb3zwhSnjx9C5JujdYB2AzpjwoQ="
+								"link splotpolicy and splotservice1": "bosbZlkpeb09WeYAPcKobPPIK09dmXJhrhs2UlsWkH8="
 							}
 							multi_step: {
-								hash:       "BT23SOKUB7LEGQ5TVPJF6G9H5A6MJUI3KJMKNG6FMU0I9Q6AN7C0===="
+								hash:       "P6GO4FTUNPOH7LCUQQU4G22G87AK4IF77O5AL9V3ABVO9559C14G===="
 								scriptHash: "D400CN0SES1U7PK9SLC4NJT5DJ9RNFL9M51DT6ONBCC5N2KGFOP0===="
 								steps: [{
 									doc:      ""
@@ -71,7 +71,7 @@ package site
 									output: """
 											module: "cue.example"
 											language: {
-											\tversion: "v0.12.0"
+											\tversion: "v0.13.0"
 											}
 											deps: {
 											\t"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
@@ -87,18 +87,7 @@ package site
 									exitCode: 1
 									output: """
 											services.web.volume: field not allowed:
-											    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:8:2
-											    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:8:8
-											    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:18:22
-											    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:19:4
-											    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:19:30
-											    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:272:18
-											    .cache/cue/mod/extract/github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0.0.1/schema.cue:475:3
 											    ./docker-compose.yaml:6:5
-											    ./moreschema.cue:7:14
-											    ./schema.cue:3:14
-											    ./schema.cue:7:4
-											    ./schema.cue:15:13
 
 											"""
 								}, {
@@ -173,15 +162,12 @@ package site
 											content.services.db.image: conflicting values "docker.io/library/postgres:16.4" and "docker.io/library/postgres:17":
 											    ./docker-compose.cue:12:13
 											    ./schema.cue:10:12
-											    ./service1.cue:5:10
 											content.services.db.image: conflicting values "docker.io/library/postgres:16.5" and "docker.io/library/postgres:17":
 											    ./docker-compose.cue:12:13
 											    ./schema.cue:11:5
-											    ./service1.cue:5:10
 											content.services.db.image: conflicting values "docker.io/library/postgres:16.6" and "docker.io/library/postgres:17":
 											    ./docker-compose.cue:12:13
 											    ./schema.cue:12:5
-											    ./service1.cue:5:10
 
 											"""
 								}, {

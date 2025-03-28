@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"manifest pre":  "/U63S+O6tuXVuFdJFpSQPDVaNqZ+Ab72JmdJeQFAmGE="
-									"manifest post": "iKcQ5VJyNRnZuC4JhNcsUcF/CpAOyFFZYfBJs9/uZPU="
+									"manifest pre":  "pZ6wqkVIL55JX/9C12qknarr+ADcS0eb8XCgMcjutqY="
+									"manifest post": "gPnSx/78eyYvK+4gX/lsja8LCPLQEbGfk/cKJArAF7Y="
 								}
 								multi_step: {
-									hash:       "HD6ODF4KRTNU9I4QIE19SV8TR3M4TB0U6UMOQULB8EC6AA4RDG3G===="
-									scriptHash: "16ERTUP4K7Q73U7H3B2HTU2996QO6TS60QN4DF4LSNKNF3SEL6V0===="
+									hash:       "IF7GOR5CFQUUP36E67P5MEC6S15KSJKMG26UN53SHT3PMHCNLV80===="
+									scriptHash: "RVD8Q55JROBT2GLHH4U3H5C29L466K4AQ82344V8GIDK5MQ3IL30===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -40,7 +40,7 @@ package site
 										output:   ""
 									}, {
 										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
-										cmd:      "export PATH=/cues/v0.13.0-alpha.2:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.2.0.20250328144635-721ca5db06fc:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -82,7 +82,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.13.0-alpha.2
+												cue version v0.13.0-alpha.2.0.20250328144635-721ca5db06fc
 												...
 
 												"""
