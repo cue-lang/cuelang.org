@@ -60,13 +60,21 @@ In addition to the `hugo` requirements listed above:
 To serve the site locally run:
 
 ```
-cue login                         # A one-time login
-# Follow the prompts to authorise the Central Registry to read your GitHub account
-./_scripts/build.bash             # Ensure everything works
-./_scripts/serve.bash [--update]  # [Optional update flag writes changes back into source files under content/]
+cue login               # A one-time login.
+# Follow the prompts to authorise the Central Registry to read your GitHub account.
+./_scripts/build.bash   # Ensure everything works.
+./_scripts/serve.bash   # Serve the site locally at http://localhost:1313/.
 ```
 
-The site will be served at http://localhost:1313/.
+Useful flags you can provide to `serve.bash` include:
+
+- `--update`: write changes back into source files under `content/`.
+- `--hugo='<someHugoFlag>'`: any flag which needs to be passed to the
+  underlying `hugo serve` command. For example:
+  - `--hugo=--buildDrafts`: include draft pages in the locally-served site.
+  - `--hugo=--bind=0.0.0.0 --hugo=--baseURL=http://<networkInterfaceIP>:1313`:
+    serve the site on all non-localhost network interfaces, and cause absolute
+    inter-page links to work correctly with the new IP.
 
 ### Updating the version of CUE documented by the site
 
