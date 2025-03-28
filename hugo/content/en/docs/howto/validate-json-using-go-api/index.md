@@ -65,7 +65,7 @@ $ cue vet schema.cue bad.json -d '#Schema'
 age: conflicting values "173" and int (mismatched types string and int):
     ./bad.json:6:12
     ./schema.cue:3:9
-name: conflicting values string and ["Moby","Dick"] (mismatched types string and list):
+name: conflicting values ["Moby","Dick"] and string (mismatched types list and string):
     ./bad.json:2:13
     ./schema.cue:2:9
 ```
@@ -143,8 +143,8 @@ single JSON file, printing the validation result to its standard output stream.
 
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEyLjAKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.12.0
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEzLjAtYWxwaGEuMi4wLjIwMjUwMzI4MTQ0NjM1LTcyMWNhNWRiMDZmYwpnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.13.0-alpha.2.0.20250328144635-721ca5db06fc
 ...
 $ go mod tidy
 ...

@@ -21,10 +21,8 @@ price: 200
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSBzdG9jay55YW1s" >}}
 $ cue export file.cue stock.yaml
-authorisedBy: field is required but not present:
-    ./file.cue:5:1
-reason: field is required but not present:
-    ./file.cue:5:1
+authorisedBy: field is required but not present
+reason: field is required but not present
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
