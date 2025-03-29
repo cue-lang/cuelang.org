@@ -20,7 +20,7 @@ provides a well-known location for well-known schemas, including those for
 used by [GoReleaser](https://goreleaser.com/).
 
 This guide shows you how to get started defining your GoReleaser configurations
-in CUE using [curated modules]({{<relref"curated-modules-faq">}}).
+in CUE using curated modules.
 
 ## Login to the Central Registry
 

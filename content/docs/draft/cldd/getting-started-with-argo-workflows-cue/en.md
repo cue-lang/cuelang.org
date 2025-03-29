@@ -20,7 +20,7 @@ provides a well-known location for well-known schemas, including those for
 used by [Argo Workflows](https://argo-workflows.readthedocs.io/en/latest/).
 
 This guide shows you how to get started defining your Argo workflows in CUE using
-[curated modules]({{<relref"curated-modules-faq">}}).
+curated modules.
 
 ## Login to the Central Registry
 

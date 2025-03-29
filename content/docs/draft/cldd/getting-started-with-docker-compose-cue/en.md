@@ -21,7 +21,7 @@ used by [Docker Compose](https://docs.docker.com/compose/) and
 [podman-compose](https://github.com/containers/podman-compose).
 
 This guide shows you how to get started defining your compose files in CUE using
-[curated modules]({{<relref"curated-modules-faq">}}).
+curated modules.
 
 ## Login to the Central Registry
 
