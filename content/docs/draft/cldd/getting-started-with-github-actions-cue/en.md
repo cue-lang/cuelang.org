@@ -20,7 +20,9 @@ provides a well-known location for well-known schemas, including those for
 used by [GitHub Actions](https://github.com/features/actions).
 
 This guide shows you how to get started defining your GitHub Actions workflows in CUE using
-[curated modules]({{<relref"curated-modules-faq">}}).
+[a curated module](/getting-started/github-actions-workflows/)
+from
+[the schema library](/getting-started/schema-library/).
 
 ## Login to the Central Registry
 

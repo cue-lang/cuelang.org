@@ -11,7 +11,10 @@ their Go source code. By using the curated schemas published on the
 [Central Registry](https://registry.cue.works),
 now you can get started creating validated Kubernetes manifests in minutes!
 
-Here's how to begin ...
+This guide shows you how to get started defining your Kubernetes configurations using
+[a curated module](/getting-started/kubernetes/)
+from
+[the schema library](/getting-started/schema-library/).
 
 ## Login to the Central Registry
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }

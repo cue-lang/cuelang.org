@@ -10,7 +10,9 @@ used by [Docker Compose](https://docs.docker.com/compose/) and
 [podman-compose](https://github.com/containers/podman-compose).
 
 This guide shows you how to get started defining your compose files in CUE using
-[curated modules]({{<relref"curated-modules-faq">}}).
+[a curated module](/getting-started/docker-compose/)
+from
+[the schema library](/getting-started/schema-library/).
 
 ## Login to the Central Registry
 

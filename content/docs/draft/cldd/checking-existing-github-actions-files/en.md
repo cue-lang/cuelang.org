@@ -20,8 +20,8 @@ you can catch and fix errors before they affect downstream
 systems.
 
 This guide shows you how to use the `cue` command to validate a GitHub Actions
-workflow file using a
-[curated module](https://cuelang.org/docs/draft/cldd/curated-modules-faq/) from the
+workflow file using
+[a curated module](/getting-started/github-actions-workflows/] from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 
