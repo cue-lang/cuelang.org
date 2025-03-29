@@ -9,7 +9,9 @@ provides a well-known location for well-known schemas, including those for
 used by [Azure pipelines](https://learn.microsoft.com/azure/devops/pipelines).
 
 This guide shows you how to get started defining your Azure pipelines in CUE using
-[curated modules]({{<relref"curated-modules-faq">}}).
+[a curated module](/getting-started/azure-pipelines/)
+from
+[the schema library](/getting-started/schema-library/).
 
 ## Login to the Central Registry
 

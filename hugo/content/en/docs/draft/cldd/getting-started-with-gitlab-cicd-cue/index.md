@@ -9,7 +9,9 @@ provides a well-known location for well-known schemas, including those for
 used by [GitLab CI/CD](https://about.gitlab.com/solutions/continuous-integration/).
 
 This guide shows you how to get started defining your GitLab CI/CD pipelines in CUE using
-[curated modules]({{<relref"curated-modules-faq">}}).
+[a curated module](/getting-started/gitlab-ci-cd-pipelines/)
+from
+[the schema library](/getting-started/schema-library/).
 
 ## Login to the Central Registry
 

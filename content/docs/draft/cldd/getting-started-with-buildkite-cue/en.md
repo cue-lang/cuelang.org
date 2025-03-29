@@ -20,7 +20,9 @@ provides a well-known location for well-known schemas, including those for
 used by [Buildkite pipelines](https://buildkite.com/docs/pipelines).
 
 This guide shows you how to get started defining your Buildkite pipelines in CUE using
-[curated modules]({{<relref"curated-modules-faq">}}).
+[a curated module](/getting-started/buildkite-pipelines/)
+from
+[the schema library](/getting-started/schema-library/).
 
 ## Login to the Central Registry
 
