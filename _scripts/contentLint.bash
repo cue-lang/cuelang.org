@@ -39,4 +39,4 @@ echo 'Checking that internal links to other pages on the site are not direct (i.
 # uses a larger set of acceptable internal direct links.
 # Some of the list's entries are complete (e.g. slack/discord, which end with
 # an escaped ")"); the rest encode permitted path prefixes.
-if git grep -P '\]\(/(?!s/slack\)|s/discord\)|releases/|go/|search/)' 'content/**/*.md'; then exit 1; fi
+if git grep -P '\]\(/(?!s/slack\)|s/discord\)|releases/|go/|search/|getting-started/|products/)' 'content/**/*.md'; then exit 1; fi
