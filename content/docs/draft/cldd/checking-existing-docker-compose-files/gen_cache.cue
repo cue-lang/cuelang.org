@@ -11,8 +11,8 @@ package site
 									file: "e+Wig40N6p0bJ9ucnFMUdrJtqJuQEgzjPubTmTKWFQM="
 								}
 								multi_step: {
-									hash:       "JQH17JAKHMK7Q96U6SHD5QSCC3OTJQ1A0Q8RITJML6B2C1CIKNJ0===="
-									scriptHash: "FKHHTI4L8480TNQ0G9HR80M0LS26P3BG5K5IM6G5LOSO24MEVI90===="
+									hash:       "0QD6S6UJ71RD72N4USMALTBMC1JVH8ASGNGE9R6QCBDLIH008CJ0===="
+									scriptHash: "M4TP233G5S3QQ8111CLUBH5NJFJDTIP7QK2610QRR289LC3OS0FG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -32,6 +32,15 @@ package site
 										cmd:      "export PATH=/cues/v0.13.0-alpha.3:$PATH"
 										exitCode: 0
 										output:   ""
+									}, {
+										doc:      "#ellipsis 1"
+										cmd:      "cue version"
+										exitCode: 0
+										output: """
+												cue version v0.13.0-alpha.3
+												...
+
+												"""
 									}, {
 										doc:      ""
 										cmd:      "cue vet -c -d '#Schema' test.cue.works/x1/dockercompose@latest compose.yml"

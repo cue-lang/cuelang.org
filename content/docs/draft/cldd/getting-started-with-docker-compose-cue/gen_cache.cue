@@ -12,8 +12,8 @@ package site
 									yaml: "ycb75bNAuWopMkMyT//mn1+iWrhh5h4ACrZL1LfghxQ="
 								}
 								multi_step: {
-									hash:       "6PN7FSD084UPI5FUIB956U0QDDLHC1M9VPDQIUTUVDBA8QR4MB90===="
-									scriptHash: "IB1TVAAA59UT4V0O3ABJHI547VUSHAV4URQ20T8KUIVOI2AHVQOG===="
+									hash:       "R8VSACCHRIC7RV0TIVCROLCF0TQG6JP81BB7MLD0N539QC46HT40===="
+									scriptHash: "ILSFQG57HG5361OGPBA4PO6J6MOEN1B1EKH0OS16G41DACKDVPH0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -33,6 +33,15 @@ package site
 										cmd:      "export PATH=/cues/v0.13.0-alpha.3:$PATH"
 										exitCode: 0
 										output:   ""
+									}, {
+										doc:      "#ellipsis 1"
+										cmd:      "cue version"
+										exitCode: 0
+										output: """
+												cue version v0.13.0-alpha.3
+												...
+
+												"""
 									}, {
 										doc:      ""
 										cmd:      "cue mod init cue.example"

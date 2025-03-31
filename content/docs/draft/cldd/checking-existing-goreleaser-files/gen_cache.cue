@@ -11,8 +11,8 @@ package site
 									file: "QLZGuMS5UHWngCZI4JgoslFqK2HgfJQPq9APSvrqnqA="
 								}
 								multi_step: {
-									hash:       "1JQ1QGM8GFR2U439SB819GD51996UHMFS4BEVCGTQ2R6OIA19UCG===="
-									scriptHash: "K55CN80OK4JP5LI77GMOTQPDD8LBS6DJE9MVFDEKU6IVOTVK9IQ0===="
+									hash:       "AVSVB3VA0RM8JNQSA92K44LTN7U5QVGHBE8JBG0DA3OSDVO6O990===="
+									scriptHash: "S4JS3EE1SP588JUCQILCEC5QS0FI62NEUM64KRMDJPK579RNOOK0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -32,6 +32,15 @@ package site
 										cmd:      "export PATH=/cues/v0.13.0-alpha.3:$PATH"
 										exitCode: 0
 										output:   ""
+									}, {
+										doc:      "#ellipsis 1"
+										cmd:      "cue version"
+										exitCode: 0
+										output: """
+												cue version v0.13.0-alpha.3
+												...
+
+												"""
 									}, {
 										doc:      ""
 										cmd:      "cue vet -c -d '#Project' test.cue.works/x1/goreleaser@latest goreleaser.yml"
