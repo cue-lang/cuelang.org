@@ -18,11 +18,17 @@ The CUE
 provides a well-known location for well-known schemas, including those for
 [YAML workflow files](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 used by [GitHub Actions](https://github.com/features/actions).
-
 This guide shows you how to get started defining your GitHub Actions workflows in CUE using
 [a curated module](/getting-started/github-actions-workflows/)
 from
 [the schema library](/getting-started/schema-library/).
+
+The latest pre-release of the `cue` command is required -- please
+[upgrade to this version](TODO) if it's not already installed:
+{{{with script "en" "cue version"}}}
+#ellipsis 1
+cue version
+{{{end}}}
 
 ## Login to the Central Registry
 
@@ -32,7 +38,8 @@ cue login
 {{{end}}}
 The
 [Central Registry](https://registry.cue.works)
-requires authentication, so you need to login before you can use its schemas.
+requires authentication while it's in beta testing,
+so you need to login before you can use its schemas.
 
 ## Initialise your local CUE module
 

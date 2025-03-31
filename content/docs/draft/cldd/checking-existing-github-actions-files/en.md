@@ -25,6 +25,14 @@ workflow file using
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 
+The latest pre-release of the `cue` command is required -- please
+[upgrade to this version](TODO) if it's not already installed:
+{{{with script "en" "cue version"}}}
+#ellipsis 1
+cue version
+{{{end}}}
+
+
 ## Login to the Central Registry
 
 {{{with script "en" "cue login"}}}
@@ -33,7 +41,8 @@ cue login
 {{{end}}}
 The
 [Central Registry](https://registry.cue.works)
-requires authentication, so you need to login before you can use its modules.
+requires authentication while it's in beta testing,
+so you need to login before you can use its schemas.
 
 ## Choose a GitHub Actions workflow file
 
