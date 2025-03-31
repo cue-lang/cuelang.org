@@ -22,11 +22,8 @@ by using the
 [`cue refactor imports`](https://cuelang.org/docs/reference/command/cue-help-refactor-imports/)
 command. This guide shows you how.
 
-The `cue refactor imports` command is not yet available in the latest CUE release.
-To use the command,
-[install](https://cuelang.org/docs/introduction/installation/#download-an-official-cue-binary)
-the most recent CUE prerelease. This page demonstrates the following version of CUE:
-
+The latest pre-release of the `cue` command is required -- please
+[upgrade to this version](TODO) if it's not already installed:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.13.0-alpha.2
@@ -73,15 +70,15 @@ $ cue vet -c
 Because `cue vet` doesn't print any errors, we know that the manifest currently
 validates successfully.
 
-## Authenticate to the Central Registry
-You need to be authenticated to the
-[Central Registry](https://registry.cue.works)
--- so if you haven't
-done so previously you'll need to login:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
-$ cue login
+## Login to the Central Registry
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
+$ cue login # only during beta
 ```
-This allows you to fetch the curated Kubernetes module, which contains the curated schemas.
+The
+[Central Registry](https://registry.cue.works)
+requires authentication while it's in beta testing,
+so you need to login before you can fetch the curated Kubernetes module.
 
 ## Update your CUE files
 To update the relevant imports across every CUE file in your module, run the

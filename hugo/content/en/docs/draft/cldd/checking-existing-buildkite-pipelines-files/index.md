@@ -10,18 +10,27 @@ systems.
 
 This guide shows you how to use the `cue` command to validate a Buildkite
 pipeline file using
-[a curated module](/getting-started/buildkite-pipelines/] from the
+[a curated module](/getting-started/buildkite-pipelines/) from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 
+The latest pre-release of the `cue` command is required -- please
+[upgrade to this version](TODO) if it's not already installed:
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+$ cue version
+cue version v0.13.0-alpha.2
+...
+```
+
 ## Login to the Central Registry
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
-$ cue login
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
+$ cue login # only during beta
 ```
 The
 [Central Registry](https://registry.cue.works)
-requires authentication, so you need to login before you can use its modules.
+requires authentication while it's in beta testing,
+so you need to login before you can use its schemas.
 
 ## Choose a Buildkite pipeline file
 

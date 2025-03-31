@@ -16,13 +16,23 @@ This guide shows you how to get started defining your Kubernetes configurations 
 from
 [the schema library](/getting-started/schema-library/).
 
+The latest pre-release of the `cue` command is required -- please
+[upgrade to this version](TODO) if it's not already installed:
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+$ cue version
+cue version v0.13.0-alpha.2
+...
+```
+
 ## Login to the Central Registry
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
-$ cue login
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
+$ cue login # only during beta
 ```
 The
 [Central Registry](https://registry.cue.works)
-requires authentication, so you need to login before you can use its schemas.
+requires authentication while it's in beta testing,
+so you need to login before you can use its schemas.
 
 ## Initialise your local CUE module
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }

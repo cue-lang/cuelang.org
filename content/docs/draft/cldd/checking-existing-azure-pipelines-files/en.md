@@ -21,19 +21,27 @@ systems.
 
 This guide shows you how to use the `cue` command to validate an Azure pipeline
 file using
-[a curated module](/getting-started/azure-pipelines/] from the
+[a curated module](/getting-started/azure-pipelines/) from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
+
+The latest pre-release of the `cue` command is required -- please
+[upgrade to this version](TODO) if it's not already installed:
+{{{with script "en" "cue version"}}}
+#ellipsis 1
+cue version
+{{{end}}}
 
 ## Login to the Central Registry
 
 {{{with script "en" "cue login"}}}
 #norun
-cue login
+cue login # only during beta
 {{{end}}}
 The
 [Central Registry](https://registry.cue.works)
-requires authentication, so you need to login before you can use its modules.
+requires authentication while it's in beta testing,
+so you need to login before you can use its schemas.
 
 ## Choose an Azure pipeline file
 
