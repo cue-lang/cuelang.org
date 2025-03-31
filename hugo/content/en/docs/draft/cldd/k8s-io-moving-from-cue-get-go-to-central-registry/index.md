@@ -29,7 +29,7 @@ the most recent CUE prerelease. This page demonstrates the following version of 
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0-alpha.2
+cue version v0.13.0-alpha.3
 ...
 ```
 
