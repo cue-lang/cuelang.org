@@ -71,7 +71,7 @@ stages:
 ## Validate the pipeline file
 
 {{{with script "en" "cue vet"}}}
-cue vet -c -d '#Pipeline' test.cue.works/x1/azurepipelines@latest pipeline.yml
+cue vet -c -d '#Pipeline' cue.dev/x/azurepipelines@latest pipeline.yml
 {{{end}}}
 
 This command uses the `#Pipeline` definition from the `azurepipelines` package

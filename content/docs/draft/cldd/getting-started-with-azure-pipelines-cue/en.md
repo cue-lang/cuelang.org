@@ -64,7 +64,7 @@ Declare a Azure pipeline in CUE. This one is based on an example from
 -- pipeline.cue --
 package cicd
 
-import "test.cue.works/x1/azurepipelines"
+import "cue.dev/x/azurepipelines"
 
 pipelines: example: azurepipelines.#Pipeline & {
 	trigger: ["main"]

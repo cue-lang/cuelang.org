@@ -63,7 +63,7 @@ Declare a GitLab pipeline in CUE. This one is based on an example from
 -- pipeline.cue --
 package cicd
 
-import "test.cue.works/x1/gitlab/gitlabci"
+import "cue.dev/x/gitlab/gitlabci"
 
 pipelines: example: gitlabci.#Pipeline & {
 	default: image: "ruby:3.2"

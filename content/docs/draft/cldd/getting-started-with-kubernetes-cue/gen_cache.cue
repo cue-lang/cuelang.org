@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1":  "usr4k/UbspcNFSZybxUvkq4H9pKaJrnGRVHdvD6QUjI="
+									"1":  "OpfU6/77X8IM774KRdQ3357QWywGbPbQTjOW1Op22kU="
 									yaml: "5WJEo4FBwemmRNAPjHcG2kbxWDDnEZe7Nfzkq8E/Wlo="
 								}
 								multi_step: {
-									hash:       "VVH2GKNRLRDSUBRHP8HKM8BTQNKJ1GL705BJHAEAVFFIU3SKMKQ0===="
-									scriptHash: "J6LDIRCELC8LOFPID928EN8SLM7LSI00ACHMUK216QNJHDQBP1LG===="
+									hash:       "HRCCG7QTDA4JLA1NP56T8Q597KOROQ1TH7UOVC81NHOPII21RN30===="
+									scriptHash: "33FB7CRJDNN197QC4IV8P7K4HIEVNU8UD6DLH85GS0MSE9JRRAC0===="
 									steps: [{
 										doc:      ""
 										cmd:      "mkdir -p $HOME/.config/cue"

@@ -58,8 +58,8 @@ create-pages:
 
 ## Validate the pipeline file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyB0ZXN0LmN1ZS53b3Jrcy94MS9naXRsYWIvZ2l0bGFiY2lAbGF0ZXN0IHBpcGVsaW5lLnltbA==" }
-$ cue vet -c -d '#Pipeline' test.cue.works/x1/gitlab/gitlabci@latest pipeline.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvZ2l0bGFiL2dpdGxhYmNpQGxhdGVzdCBwaXBlbGluZS55bWw=" }
+$ cue vet -c -d '#Pipeline' cue.dev/x/gitlab/gitlabci@latest pipeline.yml
 ```
 
 This command uses the `#Pipeline` definition from the `gitlabci` package to
