@@ -23,7 +23,7 @@ by using the
 command. This guide shows you how.
 
 The latest pre-release of the `cue` command is required -- please
-[upgrade to this version](TODO) if it's not already installed:
+[upgrade to this version](/docs/installing-cue/) if it's not already installed:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.13.0-alpha.3

@@ -39,4 +39,13 @@ echo 'Checking that internal links to other pages on the site are not direct (i.
 # uses a larger set of acceptable internal direct links.
 # Some of the list's entries are complete (e.g. slack/discord, which end with
 # an escaped ")"); the rest encode permitted path prefixes.
-if git grep -P '\]\(/(?!s/slack\)|s/discord\)|releases/|go/|search/|getting-started/|products/)' 'content/**/*.md'; then exit 1; fi
+# Docs in content/docs/draft/ are excluded from this check, as they can
+# link directly to pages which don't exist on cuelang.org.
+if git grep \
+    --untracked \
+    --perl-regexp \
+    '\]\(/(?!s/slack\)|s/discord\)|releases/|go/|search/)' \
+    ':^content/docs/draft/' \
+    'content/**/*.md'; then
+    exit 1
+fi

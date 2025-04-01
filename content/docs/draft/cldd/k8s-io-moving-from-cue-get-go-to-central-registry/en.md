@@ -48,7 +48,7 @@ by using the
 command. This guide shows you how.
 
 The latest pre-release of the `cue` command is required -- please
-[upgrade to this version](TODO) if it's not already installed:
+[upgrade to this version](/docs/installing-cue/) if it's not already installed:
 {{{with script "en" "cue version"}}}
 #ellipsis 1
 cue version
