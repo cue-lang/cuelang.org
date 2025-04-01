@@ -25,15 +25,15 @@ package site
 								"data.yml (fixed)":              "tHvxqx3e3mQknXyWeN1WVaSkYBeGgWAjzKQw4Cy/T5M="
 							}
 							code: {
-								constraints: "0pl7+wefYIVCeg0tBJ4h9bgyaLmC+FBCExaBttFY4pw="
-								definition:  "EcEyHCnhklFKHo3jRfYzC5LbhEt9la0QZG/Qqb5uPdI="
+								constraints: "Dx0ZWcyJPqzSZCFoUunzXLLyPtYOxXd769rSXmDAC78="
+								definition:  "J9vPB/7+woWhGhKAo0j+jEAGwjPi/iYIKzVOMbaVaO4="
 							}
 							multi_step: {
-								hash:       "QPH43MHLB3Q9749AS6HP0OAHLT0CHLQBVL83G3RCMTPN4D02VNCG===="
-								scriptHash: "5IRU0HUMAKN4O1TE41F2439MMECK8AS890TU89R3REV16HVJRUN0===="
+								hash:       "E3LGKGU7PJS0MEJHF1JEL151UGJ75SJ3J0MUIG04P1QBP14LGCA0===="
+								scriptHash: "I810RVUS4KMU003KOBIBKJ0OSCMTLPSLOID2M86CFKAO5BUPA5GG===="
 								steps: [{
 									doc:      ""
-									cmd:      "cue vet . alex.json bryn.json charlie.yaml"
+									cmd:      "cue vet -c . alex.json bryn.json charlie.yaml"
 									exitCode: 1
 									output: """
 											height: conflicting values "2" and int (mismatched types string and int):
@@ -43,12 +43,12 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet . alex.json bryn.json charlie.yaml"
+									cmd:      "cue vet -c . alex.json bryn.json charlie.yaml"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet . alex.json bryn.json charlie.yaml"
+									cmd:      "cue vet -c . alex.json bryn.json charlie.yaml"
 									exitCode: 1
 									output: """
 											type: 2 errors in empty disjunction:
@@ -65,7 +65,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet . alex.json bryn.json charlie.yaml"
+									cmd:      "cue vet -c . alex.json bryn.json charlie.yaml"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -75,7 +75,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'"
+									cmd:      "cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'"
 									exitCode: 1
 									output: """
 											aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
@@ -99,7 +99,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'"
+									cmd:      "cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'"
 									exitCode: 0
 									output:   ""
 								}]
