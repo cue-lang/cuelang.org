@@ -11,8 +11,8 @@ package site
 									pipeline: "s0BPqol/WvrG4l1OZm10MKaxsmmeR9w3TMPwI7ODJ5g="
 								}
 								multi_step: {
-									hash:       "7HNSVEUAJB13T2QECQSEUIN739OG7PE1R2G5RI4A05L4LR3IQ9K0===="
-									scriptHash: "PVAIGK7UFK1DRTOEPQL1DRCLCE9RB5850S4CHK1FDEPFUVLD356G===="
+									hash:       "8MFI6JF3PMP4LE4Q12DQJO980167SFJQMPVN3JPNIIPFS3MNPSQG===="
+									scriptHash: "BTQ8U35M7VJTQTE6LQ35L4S8BOGF67P8IK37R2HHFK2OA6PAG800===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -43,7 +43,7 @@ package site
 												"""
 									}, {
 										doc:      ""
-										cmd:      "cue vet -c -d '#Pipeline' test.cue.works/x1/azurepipelines@latest pipeline.yml"
+										cmd:      "cue vet -c -d '#Pipeline' cue.dev/x/azurepipelines@latest pipeline.yml"
 										exitCode: 0
 										output:   ""
 									}]

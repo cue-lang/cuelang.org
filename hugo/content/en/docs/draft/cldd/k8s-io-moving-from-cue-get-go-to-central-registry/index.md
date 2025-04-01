@@ -86,17 +86,17 @@ To update the relevant imports across every CUE file in your module, run the
 command with a "before" and "after" prefix.
 In the case of Kubernetes schemas, this is the command you need to run:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHJlZmFjdG9yIGltcG9ydHMgazhzLmlvIHRlc3QuY3VlLndvcmtzL3gxL2s4cy5pbw==" }
-$ cue refactor imports k8s.io test.cue.works/x1/k8s.io
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHJlZmFjdG9yIGltcG9ydHMgazhzLmlvIGN1ZS5kZXYveC9rOHMuaW8=" }
+$ cue refactor imports k8s.io cue.dev/x/k8s.io
 ```
 
 CUE files are re-written, updating `import` lines as required:
-```cue { title="manifest.cue" codeToCopy="cGFja2FnZSBrdWJlCgppbXBvcnQgYXBwcyAidGVzdC5jdWUud29ya3MveDEvazhzLmlvL2FwaS9hcHBzL3YxIgoKYXBwcy4jRGVwbG95bWVudCAmIHsKCWFwaVZlcnNpb246ICJhcHBzL3YxIgoJa2luZDogICAgICAgIkRlcGxveW1lbnQiCgltZXRhZGF0YTogewoJCWxhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJbmFtZTogImV4YW1wbGUxIgoJfQoJc3BlYzogewoJCXJlcGxpY2FzOiAxCgkJc2VsZWN0b3I6IG1hdGNoTGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQl0ZW1wbGF0ZTogewoJCQltZXRhZGF0YTogbGFiZWxzOiBhcHA6ICJleGFtcGxlMSIKCQkJc3BlYzogY29udGFpbmVyczogW3sKCQkJCWltYWdlOiAibmdpbng6bGF0ZXN0IgoJCQkJbmFtZTogICJuZ2lueCIKCQkJfV0KCQl9Cgl9Cn0K" }
+```cue { title="manifest.cue" codeToCopy="cGFja2FnZSBrdWJlCgppbXBvcnQgYXBwcyAiY3VlLmRldi94L2s4cy5pby9hcGkvYXBwcy92MSIKCmFwcHMuI0RlcGxveW1lbnQgJiB7CglhcGlWZXJzaW9uOiAiYXBwcy92MSIKCWtpbmQ6ICAgICAgICJEZXBsb3ltZW50IgoJbWV0YWRhdGE6IHsKCQlsYWJlbHM6IGFwcDogImV4YW1wbGUxIgoJCW5hbWU6ICJleGFtcGxlMSIKCX0KCXNwZWM6IHsKCQlyZXBsaWNhczogMQoJCXNlbGVjdG9yOiBtYXRjaExhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJdGVtcGxhdGU6IHsKCQkJbWV0YWRhdGE6IGxhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJCXNwZWM6IGNvbnRhaW5lcnM6IFt7CgkJCQlpbWFnZTogIm5naW54OmxhdGVzdCIKCQkJCW5hbWU6ICAibmdpbngiCgkJCX1dCgkJfQoJfQp9Cg==" }
 // filepath: manifest.cue
 
 package kube
 
-import apps "test.cue.works/x1/k8s.io/api/apps/v1"
+import apps "cue.dev/x/k8s.io/api/apps/v1"
 
 apps.#Deployment & {
 	apiVersion: "apps/v1"
@@ -143,8 +143,8 @@ language: {
 	version: "v0.13.0"
 }
 deps: {
-	"test.cue.works/x1/k8s.io@v0": {
-		v: "v0.3.0"
+	"cue.dev/x/k8s.io@v0": {
+		v: "v0.0.0"
 	}
 }
 ```

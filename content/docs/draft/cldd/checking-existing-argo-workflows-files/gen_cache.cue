@@ -11,8 +11,8 @@ package site
 									workflow: "Riqq7ck2kqxnjS8lHTy6lRoSpMaY/2H5p0S/9nKM5BM="
 								}
 								multi_step: {
-									hash:       "DDKB0V9NKRKD3R3LLAFHOHBC6SDO21LKIHDKT63SIONOQM13T2P0===="
-									scriptHash: "ADH6IA982S9FKOVN875UL9E1FTJ6L1N1Q8456J5LVGMSU3QKAV0G===="
+									hash:       "9GP8C85TC06SPFV52LBV4MS1PTMK4LEVVPLOE6TDOGATG57MC2CG===="
+									scriptHash: "S50AT8TDFMMAVH49HT0KMATNPLFJ6BI92JGNMOHN0MCH9O05A2S0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -43,7 +43,7 @@ package site
 												"""
 									}, {
 										doc:      ""
-										cmd:      "cue vet -c -d '#Workflow' test.cue.works/x1/argocd@latest workflow.yml"
+										cmd:      "cue vet -c -d '#Workflow' cue.dev/x/argocd@latest workflow.yml"
 										exitCode: 0
 										output:   ""
 									}]

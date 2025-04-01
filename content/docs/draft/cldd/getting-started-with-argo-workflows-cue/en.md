@@ -63,7 +63,7 @@ Declare an Argo workflow in CUE. This one comes from
 -- workflow.cue --
 package cicd
 
-import argoworkflows "test.cue.works/x1/argocd"
+import argoworkflows "cue.dev/x/argocd"
 
 workflows: example: argoworkflows.#Workflow & {
 	// This template demonstrates a steps template and how to control sequential vs. parallel steps.

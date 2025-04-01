@@ -66,8 +66,8 @@ services:
 
 ## Validate the compose file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1NjaGVtYScgdGVzdC5jdWUud29ya3MveDEvZG9ja2VyY29tcG9zZUBsYXRlc3QgY29tcG9zZS55bWw=" }
-$ cue vet -c -d '#Schema' test.cue.works/x1/dockercompose@latest compose.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1NjaGVtYScgY3VlLmRldi94L2RvY2tlcmNvbXBvc2VAbGF0ZXN0IGNvbXBvc2UueW1s" }
+$ cue vet -c -d '#Schema' cue.dev/x/dockercompose@latest compose.yml
 ```
 
 This command uses the `#Schema` definition from the `dockercompose` package to

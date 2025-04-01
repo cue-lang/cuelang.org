@@ -64,8 +64,8 @@ spec:
 
 ## Validate the workflow file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyB0ZXN0LmN1ZS53b3Jrcy94MS9hcmdvY2RAbGF0ZXN0IHdvcmtmbG93LnltbA==" }
-$ cue vet -c -d '#Workflow' test.cue.works/x1/argocd@latest workflow.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvYXJnb2NkQGxhdGVzdCB3b3JrZmxvdy55bWw=" }
+$ cue vet -c -d '#Workflow' cue.dev/x/argocd@latest workflow.yml
 ```
 
 This command uses the `#Workflow` definition from the `argocd` package to check

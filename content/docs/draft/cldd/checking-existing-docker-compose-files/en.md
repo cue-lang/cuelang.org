@@ -77,7 +77,7 @@ services:
 ## Validate the compose file
 
 {{{with script "en" "cue vet"}}}
-cue vet -c -d '#Schema' test.cue.works/x1/dockercompose@latest compose.yml
+cue vet -c -d '#Schema' cue.dev/x/dockercompose@latest compose.yml
 {{{end}}}
 
 This command uses the `#Schema` definition from the `dockercompose` package to

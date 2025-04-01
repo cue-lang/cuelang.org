@@ -63,8 +63,8 @@ jobs:
 
 ## Validate the workflow file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyB0ZXN0LmN1ZS53b3Jrcy94MS9naXRodWJhY3Rpb25zQGxhdGVzdCB3b3JrZmxvdy55bWw=" }
-$ cue vet -c -d '#Workflow' test.cue.works/x1/githubactions@latest workflow.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvZ2l0aHViYWN0aW9uc0BsYXRlc3Qgd29ya2Zsb3cueW1s" }
+$ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest workflow.yml
 ```
 
 This command uses the `#Workflow` definition from the `githubactions` package

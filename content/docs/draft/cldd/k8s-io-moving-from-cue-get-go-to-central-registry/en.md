@@ -111,7 +111,7 @@ command with a "before" and "after" prefix.
 In the case of Kubernetes schemas, this is the command you need to run:
 
 {{{with script "en" "refactor"}}}
-cue refactor imports k8s.io test.cue.works/x1/k8s.io
+cue refactor imports k8s.io cue.dev/x/k8s.io
 {{{end}}}
 
 CUE files are re-written, updating `import` lines as required:
@@ -122,7 +122,7 @@ mv manifest.cue .manifest.cue
 -- manifest.cue --
 package kube
 
-import apps "test.cue.works/x1/k8s.io/api/apps/v1"
+import apps "cue.dev/x/k8s.io/api/apps/v1"
 
 apps.#Deployment & {
 	apiVersion: "apps/v1"
@@ -160,7 +160,7 @@ command to update your CUE again!
 
 ## Tidy your CUE module
 {{{with _script_ "en" "HIDDEN: fetch a static version so cue.mod/module.cue content, below, is stable"}}}
-cue mod get test.cue.works/x1/k8s.io@v0.3.0
+cue mod get cue.dev/x/k8s.io@v0.0.0
 {{{end}}}
 {{{with script "en" "cue mod tidy"}}}
 cue mod tidy
