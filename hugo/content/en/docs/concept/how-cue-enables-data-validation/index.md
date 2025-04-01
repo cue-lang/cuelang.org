@@ -85,8 +85,8 @@ height?: int    // Optional, as we haven't managed to measure *every* animal jus
 The `cue vet` command validates our three data files against this schema.
 Each file is validated independently:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
-$ cue vet . alex.json bryn.json charlie.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+$ cue vet -c . alex.json bryn.json charlie.yaml
 height: conflicting values "2" and int (mismatched types string and int):
     ./bryn.json:4:15
     ./schema.cue:5:10
@@ -109,8 +109,8 @@ Let's correct that data:
 
 We can then repeat the `cue vet` command:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
-$ cue vet . alex.json bryn.json charlie.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+$ cue vet -c . alex.json bryn.json charlie.yaml
 ```
 
 The command is silent, which tells us that our data validated successfully ...
@@ -197,8 +197,8 @@ The `policy.cue` file contains additional constraints for some data fields,
 which CUE combines with the type constraints in `schema.cue` through a process
 called **unification**. Let's see it in action:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
-$ cue vet . alex.json bryn.json charlie.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+$ cue vet -c . alex.json bryn.json charlie.yaml
 type: 2 errors in empty disjunction:
 type: conflicting values "cat" and "goldfish":
     ./bryn.json:3:13
@@ -224,8 +224,8 @@ height?: >=1
 
 We can then run `cue vet` again:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
-$ cue vet . alex.json bryn.json charlie.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+$ cue vet -c . alex.json bryn.json charlie.yaml
 ```
 
 CUE unifies all the constraints that apply to a field, and checks that they're
@@ -296,8 +296,8 @@ data:
   b: supersede
   c: Superman
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuIGRhdGEueW1s" >}}
-$ cue vet . data.yml
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuIGRhdGEueW1s" >}}
+$ cue vet -c . data.yml
 data.b: invalid value "supersede" (does not satisfy strings.HasPrefix("Super")):
     ./example.cue:7:7
     ./data.yml:3:6
@@ -352,8 +352,8 @@ package validation
 - name: Charlie Cartwright
   age: 80
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuIGRhdGEueW1sIC1kICcjUGVvcGxlJw==" >}}
-$ cue vet . data.yml -d '#People'
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuIGRhdGEueW1sIC1kICcjUGVvcGxlJw==" >}}
+$ cue vet -c . data.yml -d '#People'
 2.age: field not allowed:
     ./data.yml:1:1
     ./data.yml:5:3
@@ -453,8 +453,8 @@ aBool: "this is not a boolean value"
 The `cue vet` command unifies all the constraints, showing us the full extent
 of our data validation problem:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
-$ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
+$ cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
     ./data.yml:4:8
     ./schema.proto:5:3
@@ -486,8 +486,8 @@ aFloat: 4.0
 aBool: false
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
-$ cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
+$ cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 ```
 
 The range of formats and encodings that CUE supports is outlined in <!-- TODO: link to a less CLI-y doc -->

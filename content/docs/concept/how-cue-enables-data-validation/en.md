@@ -86,7 +86,7 @@ The `cue vet` command validates our three data files against this schema.
 Each file is validated independently:
 
 {{{with script "en" "cue vet #1"}}}
-! cue vet . alex.json bryn.json charlie.yaml
+! cue vet -c . alex.json bryn.json charlie.yaml
 {{{end}}}
 
 `cue vet` caught a common JSON error in our data: a number incorrectly encoded as a string.
@@ -108,7 +108,7 @@ Let's correct that data:
 We can then repeat the `cue vet` command:
 
 {{{with script "en" "cue vet #2"}}}
-cue vet . alex.json bryn.json charlie.yaml
+cue vet -c . alex.json bryn.json charlie.yaml
 {{{end}}}
 
 The command is silent, which tells us that our data validated successfully ...
@@ -200,7 +200,7 @@ which CUE combines with the type constraints in `schema.cue` through a process
 called **unification**. Let's see it in action:
 
 {{{with script "en" "cue vet: policy (failure)"}}}
-! cue vet . alex.json bryn.json charlie.yaml
+! cue vet -c . alex.json bryn.json charlie.yaml
 {{{end}}}
 
 It turns out that our new policy constraints are too restrictive, as they don't
@@ -218,7 +218,7 @@ height?: >=1
 We can then run `cue vet` again:
 
 {{{with script "en" "cue vet: policy (success)"}}}
-cue vet . alex.json bryn.json charlie.yaml
+cue vet -c . alex.json bryn.json charlie.yaml
 {{{end}}}
 
 CUE unifies all the constraints that apply to a field, and checks that they're
@@ -266,7 +266,7 @@ Here we use a pair of functions that can validate string data in a more
 straightforward and clear way than regular expressions.
 
 {{{with code "en" "constraints"}}}
-! exec cue vet . data.yml
+! exec cue vet -c . data.yml
 cmp stderr out
 -- example.cue --
 package validation
@@ -326,7 +326,7 @@ Here's an example of a definition being used to flag up an extra field that
 shouldn't be present in our data:
 
 {{{with code "en" "definition"}}}
-! exec cue vet . data.yml -d '#People'
+! exec cue vet -c . data.yml -d '#People'
 cmp stderr out
 -- schema.cue --
 package validation
@@ -448,7 +448,7 @@ The `cue vet` command unifies all the constraints, showing us the full extent
 of our data validation problem:
 
 {{{with script "en" "multi-format cue vet (failure)"}}}
-! cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
+! cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 {{{end}}}
 
 However, if we update and fix the data, then the same `cue vet` command is
@@ -465,7 +465,7 @@ aBool: false
 {{{end}}}
 
 {{{with script "en" "multi-format cue vet (success)"}}}
-cue vet policy.cue schema.proto schema.json data.yml -d '#ExampleType'
+cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 {{{end}}}
 
 The range of formats and encodings that CUE supports is outlined in <!-- TODO: link to a less CLI-y doc -->
