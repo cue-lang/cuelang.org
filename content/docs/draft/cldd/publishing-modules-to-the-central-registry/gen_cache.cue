@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"schema-v0.0.1": "4vF5aowXsvvL7LEy/cHgOG8LSTHVeaZ2fKJ0VTkmooQ="
-									"config.cue":    "b5UtVbmCXxaoB9GNwJtrMvtJe0Ey6DEqOeyRDid4g6k="
+									"config.cue":    "nZe7QLAlV9lraCVkSgEhig3VXKUIp1ko1tNv2d4yH4Q="
 								}
 								multi_step: {
-									hash:       "3VIQO9M54O0HOF9VEHBCL0B44RUMG6DDPHBIDV771SANDQ8L1T20===="
-									scriptHash: "SV2DHL950F2OJ34H73NG8QRM3BSI3B0J4UONRI6BV95QJ0GPQOP0===="
+									hash:       "9VC45GV2J442JO3M4M9SP9V9LOEDCOJ5BS919U62QDJD2070O4V0===="
+									scriptHash: "KJPTVSIJNO42KBQN3ATSSD3IEU9FNQKH8J0R3LTVFG9E9ND253S0===="
 									steps: [{
 										doc:      ""
 										cmd:      "git config --global user.email 'cueckoo@cue.works'"
@@ -39,11 +39,16 @@ package site
 										exitCode: 0
 										output:   ""
 									}, {
+										doc:      "# Opt in to CUE prerelease, for consistency with other CLDD pages."
+										cmd:      "export PATH=/cues/v0.13.0-alpha.3:$PATH"
+										exitCode: 0
+										output:   ""
+									}, {
 										doc:      "#ellipsis 1"
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.12.0
+												cue version v0.13.0-alpha.3
 												...
 
 												"""
@@ -122,7 +127,7 @@ package site
 										output: """
 												module: "github.com/cueckoo/frostyapp@v0"
 												language: {
-												\tversion: "v0.12.0"
+												\tversion: "v0.13.0"
 												}
 												source: {
 												\tkind: "git"
