@@ -1,7 +1,5 @@
 ---
 title: Spotting errors earlier in GoReleaser files
-draft: true
-no_index: true
 ---
 
 {{{with _script_ "en" "HIDDEN setup"}}}
