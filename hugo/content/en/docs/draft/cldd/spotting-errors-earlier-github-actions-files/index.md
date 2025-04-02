@@ -1,7 +1,5 @@
 ---
 title: Spotting errors earlier in GitHub Actions files
-draft: true
-no_index: true
 ---
 
 An easy first step with CUE is shown in
