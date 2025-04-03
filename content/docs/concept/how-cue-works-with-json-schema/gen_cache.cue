@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "9GysRY05VV7EhUTi3I0teIxq9c00zOLFEI4BUKNVnh8="
-								"schema.cue":      "NPLcSFI5ZawLfzjZ/Bu/fUzgxamFoSlC4lW8ehDEUxw="
-								good:              "+H7nfWFJ8oqcALsn6XiLPspF+me1FzKS0E0nh3irBP8="
-								bad:               "8cdxVXTslBAdVHVTVRz+aDYmG5u8ShhQcChjHFfrK7o="
-								"main go program": "/5bvbwp/XmtqCoL5prntzleBwRz89vK7KYbl4W1vZB4="
+								"schema.json":     "DLibVfr89wfMnof03oydXsqVexgE9NtvjwEzC823h7Y="
+								"schema.cue":      "+o6PjZvpeP+BDLU+GlEMXnDlNHtMeLSH2s20s5aPTKk="
+								good:              "ShclL1SWUijuXF2tndl7w4gxCoNV0Fh2qJXZBI0se9A="
+								bad:               "a1/gc3cJ4lfGLM30chBEUaSsMOje1e3xs+fCJR5ovpc="
+								"main go program": "v9w2N6swZ1mlbLXNSs7SdM05dRJ3qGuouKc/HHAKXJ8="
 							}
 							multi_step: {
-								hash:       "QGOKRS75K1BGST7OCM47SLA08AEOQJPKVE92I1SU3A4IA2QP3070===="
-								scriptHash: "K8P2K9ARENNNU45COQ81H3NU9Q6DCPBO5SB6DQKPQKBNBIJ43OD0===="
+								hash:       "CBMO2V0Q9N9OHH4T1UMDKFSKPJ7FJED33QDN2EJ79I2QOB2O31G0===="
+								scriptHash: "IHHMKKBEK0IVI460VI7PHSROHJ9AUDCA0VIM60HAV44JOAE3ORCG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -83,7 +83,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.0"
+									cmd:      "go get cuelang.org/go@v0.12.1"
 									exitCode: 0
 									output: """
 											...
