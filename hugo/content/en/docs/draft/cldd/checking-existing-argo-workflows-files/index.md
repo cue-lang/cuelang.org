@@ -2,6 +2,12 @@
 title: Checking existing Argo Workflows files using CUE
 ---
 
+[Central Registry](/getting-started/with-the-central-registry/) >>
+[Schema Library](/getting-started/schema-library/) >>
+[Argo Workflows](/getting-started/argo-workflows/) >>
+[Checking existing Argo Workflows files using CUE](.)
+<hr>
+
 The easiest way to start taking advantage of CUE's powerful validation is to
 use it to check existing configuration files.
 By adding this check to your development or deployment process
@@ -80,3 +86,9 @@ its first-class templating, referencing, and policy features. Take the first
 step with
 [Getting started with Argo Workflows + CUE]({{<relref"getting-started-with-argo-workflows-cue">}})
 ...
+
+---
+[Central Registry](/getting-started/with-the-central-registry/) >>
+[Schema Library](/getting-started/schema-library/) >>
+[Argo Workflows](/getting-started/argo-workflows/) >>
+[Checking existing Argo Workflows files using CUE](.)
