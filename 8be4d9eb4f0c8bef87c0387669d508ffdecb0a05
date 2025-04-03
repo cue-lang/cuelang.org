@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00e9ea2e_043c98ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-03T16:40:31Z",
+      "side": 1,
+      "message": "PTAL. The draft/cldd rendering isn\u0027t the intended form, of course, but this WIP can\u0027t be demonstrated elsewhere given the current content promotion pipeline.",
+      "revId": "8be4d9eb4f0c8bef87c0387669d508ffdecb0a05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
