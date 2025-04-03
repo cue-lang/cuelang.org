@@ -117,8 +117,11 @@ func (u *uploadNode) clddWriteTransformTo(b *bytes.Buffer) error {
 
 	// Because we output the target filename as a comment (for now)
 	// we need to emit a codeToCopy property that does not include
-	// that comment.
-	codeToCopy := base64.StdEncoding.EncodeToString(f.Data)
+	// that comment. And because we are effectively rendering something
+	// that the user will see at this point, we also need to perform
+	// the random replace here.
+	userFile := u.rf.page.config.randomReplace(string(f.Data))
+	codeToCopy := base64.StdEncoding.EncodeToString([]byte(userFile))
 
 	p("```%s { title=%q codeToCopy=%q", a.Language, f.Name, codeToCopy)
 
