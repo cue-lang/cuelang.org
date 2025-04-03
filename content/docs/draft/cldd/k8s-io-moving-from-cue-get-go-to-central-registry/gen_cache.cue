@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"manifest pre":  "f1UTkQpj9FtBRR3sJC2d+rLypUsZt9uRI+aLZYaNzlU="
-									"manifest post": "CEvd7nlIiLO9Ai0yH12aL2yYNG5CNtI2JUqTUW+7T98="
+									"manifest pre":  "Cke2pi8MiJdtS2s3WhW9t7up5yiFPLx6AwYlpxd7dDg="
+									"manifest post": "qrzGuZOnZzbM5bgLtBlkMub7IQ4MfF4p6nkzScIsu64="
 								}
 								multi_step: {
-									hash:       "ATFM7K4PVN2OKEH9JM1UJ9F5TIT4S3LKMJQ0AAJADL9CNIIO2O10===="
+									hash:       "S72PCGGIE8QFONI47JROI71VQBLNJA90Q2N3E1KE24NA86T6NAOG===="
 									scriptHash: "2HJTFA27NBOPRAQIPTH1J3MVGNKS3H7MPA63F613BFV3OUK4O350===="
 									steps: [{
 										doc:      "# Caches."
