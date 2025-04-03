@@ -1,6 +1,7 @@
 # Ensure that preprocessor understands pages declaring variables
 
 unquote content/dir/en.md
+unquote content/docs/draft/cldd/example/en.md
 
 # Make a golden file of the input to ensure it is written back intact
 cp content/dir/en.md golden/content/dir/en.md
@@ -20,6 +21,7 @@ cmp content/dir/en.md.writeBack golden/content/dir/en.md
 
 # Verify that the target files matche the source contents
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+cmp hugo/content/en/docs/draft/cldd/example/index.md golden/hugo/content/en/docs/draft/cldd/example/index.md
 
 # Re-run the preprocessor and ensure we have a cache hit
 exec preprocessor execute --debug=cache
@@ -88,6 +90,28 @@ content: dir: page: {
 >{{{with script "en" "script"}}}
 >echo {{{.IN_CUE}}} {{{.RANDOM}}}
 >{{{end}}}
+-- content/docs/draft/cldd/example/page.cue --
+package site
+
+content: docs: draft: cldd: example: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+	vars: {
+		RANDOM: {
+			pattern: "${xxxx}-${dddd}-${XXXX}"
+			replacement: "stable replacement"
+		}
+	}
+}
+-- content/docs/draft/cldd/example/en.md --
+>---
+>title: cldd
+>---
+>
+>{{{with upload "en" "json-superset"}}}
+>-- in.cue --
+>// {{{.RANDOM}}}
+>{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
@@ -130,4 +154,14 @@ upload: 5 // a line comment stable replacement
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBpbi5jdWUgc3RhYmxlIHJlcGxhY2VtZW50" }
 $ echo in.cue stable replacement
 in.cue stable replacement
+```
+-- golden/hugo/content/en/docs/draft/cldd/example/index.md --
+---
+title: cldd
+---
+
+```cue { title="in.cue" codeToCopy="Ly8gc3RhYmxlIHJlcGxhY2VtZW50Cg==" }
+// filepath: in.cue
+
+// stable replacement
 ```
