@@ -64,13 +64,9 @@ config:
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBwcm9ibGVtMS5jdWUgLS1vdXQgeWFtbA==" >}}
 $ cue export problem1.cue --out yaml
-config.serviceA.metadata.name: incomplete value string:
+#Metadata.name: incomplete value string:
     ./problem1.cue:2:13
-config.serviceA.metadata.namespace: incomplete value string:
-    ./problem1.cue:3:13
-config.serviceB.metadata.name: incomplete value string:
-    ./problem1.cue:2:13
-config.serviceB.metadata.namespace: incomplete value string:
+#Metadata.namespace: incomplete value string:
     ./problem1.cue:3:13
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -171,13 +167,9 @@ config:
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBwcm9ibGVtMi5jdWUgLS1vdXQgeWFtbA==" >}}
 $ cue export problem2.cue --out yaml
-config.serviceA.metadata.name: incomplete value string:
+#Metadata.name: incomplete value string:
     ./problem2.cue:2:13
-config.serviceA.metadata.namespace: incomplete value string:
-    ./problem2.cue:3:13
-config.serviceB.metadata.name: incomplete value string:
-    ./problem2.cue:2:13
-config.serviceB.metadata.namespace: incomplete value string:
+#Metadata.namespace: incomplete value string:
     ./problem2.cue:3:13
 {{< /code-tab >}}
 {{< /code-tabs >}}

@@ -63,13 +63,9 @@ config:
       name: test
       namespace: dev
 -- out --
-config.serviceA.metadata.name: incomplete value string:
+#Metadata.name: incomplete value string:
     ./problem1.cue:2:13
-config.serviceA.metadata.namespace: incomplete value string:
-    ./problem1.cue:3:13
-config.serviceB.metadata.name: incomplete value string:
-    ./problem1.cue:2:13
-config.serviceB.metadata.namespace: incomplete value string:
+#Metadata.namespace: incomplete value string:
     ./problem1.cue:3:13
 {{{end}}}
 
@@ -169,13 +165,9 @@ config:
       name: test
       namespace: dev
 -- out --
-config.serviceA.metadata.name: incomplete value string:
+#Metadata.name: incomplete value string:
     ./problem2.cue:2:13
-config.serviceA.metadata.namespace: incomplete value string:
-    ./problem2.cue:3:13
-config.serviceB.metadata.name: incomplete value string:
-    ./problem2.cue:2:13
-config.serviceB.metadata.namespace: incomplete value string:
+#Metadata.namespace: incomplete value string:
     ./problem2.cue:3:13
 {{{end}}}
 
