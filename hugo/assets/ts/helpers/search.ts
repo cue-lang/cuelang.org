@@ -63,6 +63,15 @@ export const queryToUrlParams = (query: ParsedQuery): string => {
     return queryString;
 };
 
+export const updateSearchParams = (parsedQuery: ParsedQuery, refresh = true): void => {
+    const url = `${ window.location.href.split('?')[0] }?${ queryToUrlParams(parsedQuery) }`;
+    if (!refresh) {
+        window.history.pushState(null, '', url);
+    } else {
+        window.location.href = url;
+    }
+};
+
 // eslint-disable-next-line max-lines-per-function
 export const parseQuery = (query: string): ParsedQuery => {
     if (!query) {
