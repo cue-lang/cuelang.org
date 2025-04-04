@@ -37,7 +37,7 @@
     --scrollbar-color-hover: #{ $c-scrollbar-color-hover };
     --table-head-background: #{ $c-blue--lightest };
     --table-row-background: #{ $c-blue--lightest };
-    --table-border-color: #{ transparentize($c-blue--light, 0.85) };
+    --table-border-color: #{ transparentize($c-blue, 0.85) };
 }
 
 html,
