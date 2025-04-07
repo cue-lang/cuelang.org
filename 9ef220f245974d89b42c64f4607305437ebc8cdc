@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "acfc07f8_8eb2b677",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "\u003e For example, an intro could be like:\n\nThat\u0027s great - I\u0027ve adapted this slightly and placed it after the page intro.\n\n\u003e if we had a doc page for https://pkg.go.dev/cuelang.org/go/cue@master#Value.Decode we could link to it too, as it\u0027s the API you would use in the example use case above.\n\nI believe the question of where \u0026 how the Go API documention should be split between godoc comments, automatically generated cuelang.org docs, and manually curated cuelang.org pages is currently unresolved. As much as I understand folks\u0027 feelings that manual curation of page-per-function docs might not scale, I personally feel the lack of cuelang.org page-per-function `cuelang.org/go/pkg` docs pretty keenly. I\u0027ll raise this again, expanding the context to not-just-`pkg` functions.",
+      "parentUuid": "385e8d38_db39ea36",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93060522_14517e69",
@@ -31,6 +49,30 @@
       "writtenOn": "2025-02-19T08:57:42Z",
       "side": 1,
       "message": "I would just say `CUE v0.12.0`.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 42
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "703545ee_429e35b2",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93060522_14517e69",
       "range": {
         "startLine": 8,
         "startChar": 0,
@@ -64,6 +106,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f2da3b1_10d6acff",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b831379e_7bfd713a",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c69df804_71f9b26c",
@@ -77,6 +143,30 @@
       "writtenOn": "2025-02-19T08:57:42Z",
       "side": 1,
       "message": "Listing the options available to the user here will be prone to get out of sync, e.g. we are about to add an option to control whether to represent CUE optional fields as Go pointers (https://github.com/cue-lang/cue/issues/3760). Hence I would be a bit more general, like \"and can be configured via CUE attributes, such as to replace a type name or expression\".",
+      "range": {
+        "startLine": 11,
+        "startChar": 31,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db890014_ce2fde18",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "I\u0027ve reworded this section - let me know how it reads.",
+      "parentUuid": "c69df804_71f9b26c",
       "range": {
         "startLine": 11,
         "startChar": 31,
@@ -104,6 +194,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65e5cc6b_fd076c15",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62bd3697_17ecfd48",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "771f9a08_dcca98d0",
@@ -117,6 +225,24 @@
       "writtenOn": "2025-02-19T08:57:42Z",
       "side": 1,
       "message": "is there a reason you called this `aDog` rather than just `Dog`?",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df674818_e847b823",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Yes - I was trying to use the \"show, don\u0027t tell\" principle to demonstrate the initial-upper-casing of the generated Go type, without having to write prose to call it out on the page. It\u0027s not *un*idiomatic CUE, is it?\n\nRegardless, I\u0027ve moved to lower-case CUE definition names that will therefore --by default-- get renamed when emitted as Go, which serves the same purpose.",
+      "parentUuid": "771f9a08_dcca98d0",
       "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -138,6 +264,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfbbcf05_f97b383c",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Changed to `cue exp gengotypes .`. I *feel* it\u0027s better to make a parameter visible, rather than the no-parameter default, so that folks don\u0027t see the command as an uncontrollable, \"do some magic here\" entity.\n\n\u003e presumably we already have a guide elsewhere on package names, qualifiers, etc that we can link to if necessary?\n\nWe only have the [`cue help inputs`](https://cuelang.org/docs/reference/command/cue-help-inputs/) text to link to, which I\u0027ve wanted to augment for some time (https://github.com/cue-lang/docs-and-content/issues/88), and the contents of https://cuelang.org/docs/concept/modules-packages-instances/ which I personally feel isn\u0027t very approachable for newcomers.",
+      "parentUuid": "67efc190_2329a4ea",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48adda7e_4888be88",
@@ -151,6 +295,24 @@
       "writtenOn": "2025-02-19T08:57:42Z",
       "side": 1,
       "message": "with the assumption that this is a bug, I would honestly omit this info section.",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "598b3f96_492c170e",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "48adda7e_4888be88",
       "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -178,6 +340,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b86d640_2f6509a0",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Removed the trailing comment, and this bullet point.",
+      "parentUuid": "d57a471b_fb3c4ba4",
+      "range": {
+        "startLine": 78,
+        "startChar": 27,
+        "endLine": 78,
+        "endChar": 69
+      },
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b506786a_15d6d15a",
@@ -195,6 +381,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2215b0a_ea87e43e",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b506786a_15d6d15a",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63eea092_9c470f9d",
@@ -208,6 +412,24 @@
       "writtenOn": "2025-02-19T08:57:42Z",
       "side": 1,
       "message": "again I might suggest a simpler word :) I had to google this one, and I was even confused if this was yet another instance of e.g. `aDog` vs `Dog`. After googling, I\u0027m even more confused why this isn\u0027t e.g. `anAardvark`.",
+      "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e51d5a9f_a472b1cb",
+        "filename": "hugo/content/en/docs/howto/generate-go-types-from-cue-definitions/index.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-07T12:28:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63eea092_9c470f9d",
       "revId": "9ef220f245974d89b42c64f4607305437ebc8cdc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
