@@ -169,10 +169,10 @@ Learn more about transforming data with CUE in these How-to guides:
 - {{< linkto/inline "howto/combine-multiple-json-files-into-a-list" >}}
 - {{< linkto/inline "howto/combine-multiple-json-files-by-using-file-metadata" >}}
 
-## Embedding JSON in CUE
+## Encoding JSON inside CUE
 
 CUE is frequently used to generate configuration files. Some systems allow
-their configuration files to contain JSON embedded inside string fields,
+their configuration files to contain JSON encoded in string fields,
 irrespective of the file's main data format.
 
 CUE's standard library provides
@@ -180,10 +180,10 @@ CUE's standard library provides
 containing functions that generate, parse, validate, and format JSON from
 within CUE - some of which are shown here.
 
-### Generating embedded JSON
+### Generating encoded JSON
 
 In this example a *Kubernetes ConfigMap* contains a JSON file encoded as a
-single string field, embedded inside YAML. This is enabled by the
+single string field, stored inside YAML. This is enabled by the
 `json.Marshal` function:
 
 {{< code-tabs >}}
@@ -203,13 +203,13 @@ configMap:
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-### Parsing embedded JSON
+### Parsing encoded JSON
 
 The `json.Unmarshal` function performs the reverse operation to `json.Marshal`:
-it turns a string containing embedded JSON into the structure represented by
-the underlying data.
+it turns a string containing JSON into the structure represented by
+the encoded data.
 
-Here, a *JSON Web Token* is emitted as YAML:
+Here, some encoded JSON data (a *JSON Web Token*) is emitted as YAML:
 
 {{< code-tabs >}}
 {{< code-tab name="token.cue" language="cue" area="top-left" >}}
@@ -241,9 +241,9 @@ output:
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-### Validating embedded JSON
+### Validating encoded JSON
 
-The `json.Validate` function allows embedded JSON to be validated against
+The `json.Validate` function allows encoded JSON to be validated against
 native CUE schema constraints.
 
 Here, each member of the `item` map is checked against the `#Dimensions`
@@ -307,7 +307,7 @@ one very easy way to convert JSON files to CUE is simply to rename them from
 In more complex situations
 [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}})
 can create a CUE file for each JSON file it's given, and can even recognise
-embedded YAML and JSON fields, and convert those structures recursively.
+encoded YAML and JSON fields, and convert those structures recursively.
 
 Examples of this command being used can be found in the
 [`cue import` CLI reference documentation]({{< relref "docs/reference/command/cue-help-import" >}}).
