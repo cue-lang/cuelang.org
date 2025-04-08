@@ -13,8 +13,8 @@ package site
 								"main go":    "UAy2YXijJHvAnTuBRQCoiKrRZIih+ZcrmXm1KrUXubk="
 							}
 							multi_step: {
-								hash:       "G7KVM10IT6MO5K0VSQG7RHU0MFD3IBVQ0BC5IBMV23IQSDMHB5A0===="
-								scriptHash: "LFBLF63C9C2M58O9PR7HCO2Q3P2CJD8DPMT40VCFEJ1O807I8H40===="
+								hash:       "DN8T957NL674O2LSQPMO757BDC85NV064353JAFL18GU3VUN1NH0===="
+								scriptHash: "1A0FSMPOOI5DS1QQVPAA43DAMNI3Q0Q3NSHCQ8FU69ITD7VV82E0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -27,12 +27,12 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet schema.cue good.json -d '#Schema'"
+									cmd:      "cue vet -c schema.cue good.json -d '#Schema'"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet schema.cue bad.json -d '#Schema'"
+									cmd:      "cue vet -c schema.cue bad.json -d '#Schema'"
 									exitCode: 1
 									output: """
 											age: conflicting values "173" and int (mismatched types string and int):

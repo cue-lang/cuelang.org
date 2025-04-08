@@ -15,11 +15,11 @@ package site
 									"references: fixed":     "zeN+0KVa+m5o0UKReOTJrEmBquC3EjhHLLZJsuJqznk="
 								}
 								multi_step: {
-									hash:       "PUUPSFO64LBG59KJ49RFHJ393SC7P4BO0O6B7LP355ESTAJ6C8GG===="
-									scriptHash: "VLNGG98FUABM36HDGI2AH2IQCN9I2OP2RSHEFN8T9SKDP3F1HRP0===="
+									hash:       "7KOQDOKFDOMK1GFIBIEUOP90HDB6IJAUVVGBDUUK3A2NB442L870===="
+									scriptHash: "SBEFDKT04I04B6RCD2P46K2LSE31D1LS9EPISLM626C7D6BAQG20===="
 									steps: [{
 										doc:      ""
-										cmd:      "cue vet list-arithmetic.cue"
+										cmd:      "cue vet -c list-arithmetic.cue"
 										exitCode: 1
 										output: """
 												A: Multiplication of lists is superseded by list.Repeat; see https://cuelang.org/e/v0.11-list-arithmetic:
@@ -45,7 +45,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue vet references.cue"
+										cmd:      "cue vet -c references.cue"
 										exitCode: 0
 										output:   ""
 									}]

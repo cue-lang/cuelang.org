@@ -20,9 +20,9 @@ Statistics for each evaluation are written into the named file using the file's
 implied data format.
 The file is overwritten on each `cue` invocation, without confirmation.
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9TVEFUU19GSUxFPXN0YXRzLmN1ZQpjdWUgdmV0IHNvbWVGaWxlLmN1ZQpjYXQgc3RhdHMuY3Vl" }
+```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9TVEFUU19GSUxFPXN0YXRzLmN1ZQpjdWUgdmV0IC1jIHNvbWVGaWxlLmN1ZQpjYXQgc3RhdHMuY3Vl" }
 $ export CUE_STATS_FILE=stats.cue
-$ cue vet someFile.cue
+$ cue vet -c someFile.cue
 $ cat stats.cue
 CUE: {
 	EvalVersion:  2
@@ -35,8 +35,8 @@ CUE: {
 	Retained:     0
 }
 Go: {
-	AllocBytes:   4079824
-	AllocObjects: 42098
+	AllocBytes:   3967792
+	AllocObjects: 42729
 }
 ```
 

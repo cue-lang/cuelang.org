@@ -11,8 +11,8 @@ package site
 								"initial go code":  "NogtmhS/0ugNPkfh0m5Sj0HtrIZ5fXjTBYP/Hl6OHsU="
 							}
 							multi_step: {
-								hash:       "QOJ6N7P4PEH8PUNNT4PG8L3KR69REFD764QS2J05PHL4I0NMVB40===="
-								scriptHash: "TTU63SDHBGCD741TU7QLMDBBPRCUO5TN3MB3UHLSRDMHD5AUKAM0===="
+								hash:       "AGF7TB3PHU8A0AJIUSMNBDTGVFIJTU11CSPAO0JAGTREVKLDO3N0===="
+								scriptHash: "9CAC8NGVPSA84IRKKLT1TLQVCS02P82O28682TE9EHV3KD2CTUKG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -30,7 +30,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet"
+									cmd:      "cue vet -c"
 									exitCode: 1
 									output: """
 											val.i: conflicting values int and "hello" (mismatched types int and string):

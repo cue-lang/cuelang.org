@@ -15,8 +15,8 @@ package site
 								"14": "a1BvWyxoD0zqr0P/d9gUYGkIo5aKldDPU9cTg1lle94="
 							}
 							multi_step: {
-								hash:       "FFE4FJ27OLPO3MEC387HSC9NKB447ASMULK94RCPDEGNVD62J980===="
-								scriptHash: "PD6KSPE0N7DV4196GSTFR55BJUE39C81CC5UKBUIJ6I5I64PIV70===="
+								hash:       "T9P5ASK7MGB1R1ME280F41I29AA8M0V19R0SB1IB3361R7GQ75LG===="
+								scriptHash: "9GOVSC02MRTRRI2J2D16DARV432R11BI0PII3E67QVL7RERCQR2G===="
 								steps: [{
 									doc:      "# Set up example content as a git repo."
 									cmd:      "cd gitlab"
@@ -141,7 +141,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet ./internal/ci/gitlab"
+									cmd:      "cue vet -c ./internal/ci/gitlab"
 									exitCode: 0
 									output:   ""
 								}, {

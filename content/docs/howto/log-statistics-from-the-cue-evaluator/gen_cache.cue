@@ -10,8 +10,8 @@ package site
 								file: "Ixbw26/fTVwIs5vRRJRERtS/rjeP6glZCJvwL4jSuO8="
 							}
 							multi_step: {
-								hash:       "162F7E2F89TVHSMBA3ETR70MR0NMLUA4JDLOOG28B1FTV88QVOJG===="
-								scriptHash: "HJ6F16PVM5R51CRIHNQVO53OFBM44DDS5QVFKQUAO2SO9APOU95G===="
+								hash:       "4CAHT1S1MVIAG277V9BMTIOEF86OU2S93FMALFG57TOL8ML23I9G===="
+								scriptHash: "H32HT1IOKP19JHS8HDBLNV00ED6AAUJQ170GRGOP7JT6QKSTSIO0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export CUE_STATS_FILE=stats.cue"
@@ -19,7 +19,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet someFile.cue"
+									cmd:      "cue vet -c someFile.cue"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -38,8 +38,8 @@ package site
 											\tRetained:     0
 											}
 											Go: {
-											\tAllocBytes:   4079824
-											\tAllocObjects: 42098
+											\tAllocBytes:   3967792
+											\tAllocObjects: 42729
 											}
 
 											"""

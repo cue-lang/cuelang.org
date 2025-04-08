@@ -171,8 +171,8 @@ Let's validate Jonathan against the contents of our OpenAPI document, `api.pet.y
 CUE automatically recognises the constraints in the `components.schemas` namespace,
 making them available as the `#Pet` schema:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBhcGkucGV0LnlhbWwgam9uYXRoYW4ueW1sIC1kICcjUGV0Jw==" }
-$ cue vet api.pet.yaml jonathan.yml -d '#Pet'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBhcGkucGV0LnlhbWwgam9uYXRoYW4ueW1sIC1kICcjUGV0Jw==" }
+$ cue vet -c api.pet.yaml jonathan.yml -d '#Pet'
 kind: 3 errors in empty disjunction:
 kind: conflicting values "cat" and "tortoise":
     ./api.pet.yaml:11:7
