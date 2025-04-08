@@ -25,8 +25,8 @@ B: ["a", "b", "b", "E"]
 // B must be a subset of _X.
 B: [...or(_X)]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 B.3: 3 errors in empty disjunction:
 B.3: conflicting values "a" and "E":
     ./file.cue:3:6

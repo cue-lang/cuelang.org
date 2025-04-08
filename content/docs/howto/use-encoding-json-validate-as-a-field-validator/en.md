@@ -19,7 +19,7 @@ constraints by checking that the data and schema unify successfully.
 {{{with code "en" "cc"}}}
 #location top bottom
 
-! exec cue vet
+! exec cue vet -c
 cmp stderr out
 -- file.cue --
 package example

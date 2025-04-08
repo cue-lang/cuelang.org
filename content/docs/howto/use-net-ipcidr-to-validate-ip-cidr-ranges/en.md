@@ -16,7 +16,7 @@ to check that values represent valid IPv4 or IPv6 addresses or subnets in
 {{{with code "en" "cc"}}}
 #location top bottom
 
-! exec cue vet 
+! exec cue vet -c 
 cmp stderr out
 -- file.cue --
 package example

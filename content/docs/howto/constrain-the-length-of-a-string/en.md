@@ -22,7 +22,7 @@ bytes, and also in runes, as introduced by
 
 {{{with code "en" "cc"}}}
 #location top bottom
-! exec cue vet .:example
+! exec cue vet -c .:example
 cmp stderr out.err
 -- example.cue --
 package example

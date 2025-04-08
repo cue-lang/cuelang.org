@@ -153,13 +153,13 @@ The
 command validates our data against the `#Person` constraint:
 
 {{{with script "en" "validate against cue"}}}
-! cue vet -d '#Person' schema.cue good.json bad.json
+! cue vet -c -d '#Person' schema.cue good.json bad.json
 {{{end}}}
 
 The `cue vet` command can also validate the data using the JSON Schema directly:
 
 {{{with script "en" "validate against json schema"}}}
-! cue vet schema.json good.json bad.json
+! cue vet -c schema.json good.json bad.json
 {{{end}}}
 
 The `cue` command normally recognises JSON Schema's signature fields and treats

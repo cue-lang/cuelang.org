@@ -27,7 +27,7 @@ If the test fails, then the field's value is invalid:
 
 {{{with code "en" "example"}}}
 #location top bottom
-! exec cue vet
+! exec cue vet -c
 cmp stderr out
 -- example.cue --
 package matchIf
@@ -72,7 +72,7 @@ when checking for a match with any of its parameters
 
 {{{with code "en" "future: helper fields"}}}
 #location top bottom
-exec cue vet .:helperFields # this command succeeds
+exec cue vet -c .:helperFields # this command succeeds
 cmp stdout out
 -- helper-fields.cue --
 package helperFields

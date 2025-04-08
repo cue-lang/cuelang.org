@@ -31,8 +31,8 @@ a: uint & -1
 b: uint8 & 256
 c: int32 & math.Pow(2, 31) // 2^31
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCBmaWxlLmN1ZQ==" >}}
-$ cue vet file.cue
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYyBmaWxlLmN1ZQ==" >}}
+$ cue vet -c file.cue
 a: invalid value -1 (out of bound >=0):
     ./file.cue:3:11
 b: invalid value 256 (out of bound <=255):

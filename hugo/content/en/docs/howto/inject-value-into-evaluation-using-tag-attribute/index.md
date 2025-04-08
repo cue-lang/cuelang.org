@@ -88,8 +88,8 @@ A: bool @tag(a,type=bool)
 // This constraint causes the evaluation to fail.
 A: false
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtdCBhPXRydWU=" >}}
-$ cue vet -t a=true
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYyAtdCBhPXRydWU=" >}}
+$ cue vet -c -t a=true
 A: conflicting values false and true:
     ./boolean.cue:6:4
 {{< /code-tab >}}

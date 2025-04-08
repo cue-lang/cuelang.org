@@ -190,8 +190,8 @@ pipelines: [_]: #Pipeline
 #### :arrow_right: Validate your pipelines
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuL2ludGVybmFsL2NpL2dpdGxhYg==" }
-$ cue vet ./internal/ci/gitlab
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuL2ludGVybmFsL2NpL2dpdGxhYg==" }
+$ cue vet -c ./internal/ci/gitlab
 ```
 
 If this command fails and produces any output, then CUE believes that at least

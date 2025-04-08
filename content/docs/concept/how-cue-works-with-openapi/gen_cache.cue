@@ -14,8 +14,8 @@ package site
 								"go emit openapi main": "t6y4Bqi3THjvRBZRYAtRqOvYidWMmM5R0+D+/kX05qU="
 							}
 							multi_step: {
-								hash:       "01D0BO8C02A7NCKMSUSDC977Q8C45VPHBA26GGERHJA9G8DJMD80===="
-								scriptHash: "P3T6SIGBCSU00AMVSHIEUJDIA5DQ7OQQTUMC1O86V1ICQ8SVP3PG===="
+								hash:       "D2NM3RF988SMRVN0GH1HJN7BAF3MSLA706I4GTLTBIUU0A9A00NG===="
+								scriptHash: "EFMRM7PLOQK417L4B1J0RNA28O3BVFCBETC8VEVN5K9LP0IHD3PG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -68,7 +68,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet api.pet.yaml jonathan.yml -d '#Pet'"
+									cmd:      "cue vet -c api.pet.yaml jonathan.yml -d '#Pet'"
 									exitCode: 1
 									output: """
 											kind: 3 errors in empty disjunction:

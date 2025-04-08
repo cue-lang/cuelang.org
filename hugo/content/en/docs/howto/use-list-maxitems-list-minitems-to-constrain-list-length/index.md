@@ -34,8 +34,8 @@ b: list.MinItems(6)
 // c must contain at least 2 items, and no more than 6 items
 c: list.MinItems(2) & list.MaxItems(6)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 a: invalid value [1,2,3,4,5] (does not satisfy list.MaxItems(2)): len(list) > MaxItems(2) (5 > 2):
     ./file.cue:10:4
     ./file.cue:5:4
@@ -61,8 +61,8 @@ f: [_, _, _, ...]
 
 f: [1, 2]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 f: incompatible list lengths (2 and 3)
 {{< /code-tab >}}
 {{< /code-tabs >}}

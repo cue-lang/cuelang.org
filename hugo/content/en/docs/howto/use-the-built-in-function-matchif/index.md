@@ -48,8 +48,8 @@ D: matchIf({x?: int}, _oUnder100, _oOver100)
 _oUnder100: {o?: <100}
 _oOver100: {o?: >100}
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 B: invalid value 42 (does not satisfy matchIf): invalid value 42 (out of bound >100):
     ./example.cue:9:4
     ./example.cue:5:4
@@ -84,8 +84,8 @@ A: matchIf(#A, #A, #A) & {
 	#anInt:   "not an int"
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmhlbHBlckZpZWxkcyAjIHRoaXMgY29tbWFuZCBzdWNjZWVkcw==" >}}
-$ cue vet .:helperFields # this command succeeds
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmhlbHBlckZpZWxkcyAjIHRoaXMgY29tbWFuZCBzdWNjZWVkcw==" >}}
+$ cue vet -c .:helperFields # this command succeeds
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

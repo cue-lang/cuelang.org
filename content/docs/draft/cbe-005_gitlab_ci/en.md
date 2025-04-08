@@ -215,7 +215,7 @@ pipelines: [_]: #Pipeline
 
 :computer: `terminal`
 {{{with script "en" "10.5"}}}
-cue vet ./internal/ci/gitlab
+cue vet -c ./internal/ci/gitlab
 {{{end}}}
 
 If this command fails and produces any output, then CUE believes that at least

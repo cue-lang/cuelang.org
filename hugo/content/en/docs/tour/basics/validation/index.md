@@ -30,8 +30,8 @@ languages:
   - Name: Norwegian
     Tag: "no"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBmaWxlLmN1ZSBkYXRhLnlhbWw=" >}}
-$ cue vet file.cue data.yaml
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyBmaWxlLmN1ZSBkYXRhLnlhbWw=" >}}
+$ cue vet -c file.cue data.yaml
 languages.1.Name: invalid value "dutch" (out of bound =~"^\\p{Lu}"):
     ./file.cue:4:8
     ./data.yaml:4:11

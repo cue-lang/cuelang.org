@@ -80,7 +80,7 @@ Injecting a single value can affect multiple fields.
 ## Injecting a boolean value
 
 {{{with code "en" "boolean"}}}
-! exec cue vet -t a=true
+! exec cue vet -c -t a=true
 cmp stderr out
 -- boolean.cue --
 package example

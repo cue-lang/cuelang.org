@@ -14,8 +14,8 @@ package site
 								"pomodoro.yml fixed": "FdWnGV8Dcr6yo8dkj/sJv8U4OLAX4E396S/ggkrEViQ="
 							}
 							multi_step: {
-								hash:       "0G93DTJHLUSTHTB460SDUCB1EUJ1CMVIE3C5N17GMJPI2CPKE89G===="
-								scriptHash: "EEKUOTTD6EPHLI57C8VDPJM17PGNAHR4LE3VPVJK8JJJ1NVQDBEG===="
+								hash:       "BRAQTGJA9U2DV5838I64RVCC42PVNKFP8MD98JIPQ9AJLKDQHBK0===="
+								scriptHash: "S1P1N4BEQ13PVKLHR7S49GT6BCDNEBPHJ3GI7AJEV2HUL129L28G===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
@@ -42,7 +42,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet -d '#restaurant' schema.cue *.yml"
+									cmd:      "cue vet -c -d '#restaurant' schema.cue *.yml"
 									exitCode: 1
 									output: """
 											tables.0.seats: invalid value 100 (out of bound <=10):
@@ -52,7 +52,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet -d '#restaurant' schema.cue *.yml"
+									cmd:      "cue vet -c -d '#restaurant' schema.cue *.yml"
 									exitCode: 0
 									output:   ""
 								}]

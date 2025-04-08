@@ -18,7 +18,7 @@ to require that a list contains a maximum and/or minimum number of items.
 {{{with code "en" "cc"}}}
 #location top bottom
 
-! exec cue vet
+! exec cue vet -c
 cmp stderr out
 -- file.cue --
 package example
@@ -54,7 +54,7 @@ If the number of required items is both small and known in advance, then this
 core language syntax might be preferred instead of `list.MinItems`:
 
 {{{with code "en" "min"}}}
-! exec cue vet
+! exec cue vet -c
 cmp stderr out
 -- file.cue --
 package example

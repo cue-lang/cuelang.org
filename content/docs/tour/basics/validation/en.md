@@ -12,7 +12,7 @@ and is validated using the
 [**`cue vet`**]({{< relref "docs/reference/command/cue-help-vet" >}}) command.
 
 {{{with code "en" "tour"}}}
-! exec cue vet file.cue data.yaml
+! exec cue vet -c file.cue data.yaml
 cmp stderr out
 -- file.cue --
 #Language: {
