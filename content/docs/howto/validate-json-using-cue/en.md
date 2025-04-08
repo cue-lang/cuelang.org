@@ -75,7 +75,7 @@ people: [X=string]: #Person & {
 Run the following `cue` command in your terminal:
 
 {{{with script "en" "successful first vet"}}}
-cue vet x.cue x.json
+cue vet -c x.cue x.json
 {{{end}}}
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
@@ -115,7 +115,7 @@ following:
 Validate again with `cue vet`:
 
 {{{with script "en" "failing vet"}}}
-! cue vet x.cue x.json
+! cue vet -c x.cue x.json
 {{{end}}}
 
 The command output shows validation errors where the JSON violates
@@ -156,7 +156,7 @@ Fix up the JSON:
 Validate with `cue vet` again
 
 {{{with script "en" "re-vet"}}}
-cue vet x.cue x.json
+cue vet -c x.cue x.json
 {{{end}}}
 
 The `cue vet` command will show no output on success.

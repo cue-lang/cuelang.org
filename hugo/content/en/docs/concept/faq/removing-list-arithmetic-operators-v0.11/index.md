@@ -32,8 +32,8 @@ their left or right side.
 CUE versions 0.11 and later report the following errors when evaluating CUE
 that contains list arithmetic operators:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBsaXN0LWFyaXRobWV0aWMuY3Vl" }
-$ cue vet list-arithmetic.cue
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBsaXN0LWFyaXRobWV0aWMuY3Vl" }
+$ cue vet -c list-arithmetic.cue
 A: Multiplication of lists is superseded by list.Repeat; see https://cuelang.org/e/v0.11-list-arithmetic:
     ./list-arithmetic.cue:1:4
 B: Addition of lists is superseded by list.Concat; see https://cuelang.org/e/v0.11-list-arithmetic:

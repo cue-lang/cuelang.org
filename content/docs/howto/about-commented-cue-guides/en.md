@@ -16,7 +16,7 @@ that `cue` has caught the deliberate mistakes in our example data.
 Here's an example:
 
 {{{with code "en" "example"}}}
-! exec cue vet .:example data.yml
+! exec cue vet -c .:example data.yml
 cmp stderr out.err
 -- example.cue --
 package example

@@ -32,8 +32,8 @@ v6Address: "::1/128"
 v4SubnetMaskTooLarge: "10.0.0.0/50"
 v6MalformedPrefix:    ":::1/128"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 v4SubnetMaskTooLarge: invalid value "10.0.0.0/50" (does not satisfy net.IPCIDR): error in call to net.IPCIDR: netip.ParsePrefix("10.0.0.0/50"): prefix length out of range:
     ./file.cue:6:6
     ./file.cue:15:23

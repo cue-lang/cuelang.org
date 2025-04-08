@@ -74,8 +74,8 @@ people: [X=string]: #Person & {
 {{< step stepNumber="3" >}}
 Run the following `cue` command in your terminal:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
-$ cue vet x.cue x.json
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
+$ cue vet -c x.cue x.json
 ```
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
@@ -113,8 +113,8 @@ following:
 {{< step stepNumber="5" >}}
 Validate again with `cue vet`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
-$ cue vet x.cue x.json
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
+$ cue vet -c x.cue x.json
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
     ./x.cue:7:21
@@ -157,8 +157,8 @@ Fix up the JSON:
 {{< step stepNumber="7" >}}
 Validate with `cue vet` again
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4Lmpzb24=" }
-$ cue vet x.cue x.json
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
+$ cue vet -c x.cue x.json
 ```
 
 The `cue vet` command will show no output on success.

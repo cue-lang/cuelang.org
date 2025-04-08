@@ -100,8 +100,8 @@ cluster: live05
 region: APAC
 repository: source.company.example/alpha
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBzY2hlbWEuY3VlIC1kICcjQ29uZmlnJyBjb25maWctYS55YW1sIGNvbmZpZy1iLnlhbWwgY29uZmlnLWMueWFtbA==" >}}
-$ cue vet schema.cue -d '#Config' config-a.yaml config-b.yaml config-c.yaml
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyBzY2hlbWEuY3VlIC1kICcjQ29uZmlnJyBjb25maWctYS55YW1sIGNvbmZpZy1iLnlhbWwgY29uZmlnLWMueWFtbA==" >}}
+$ cue vet -c schema.cue -d '#Config' config-a.yaml config-b.yaml config-c.yaml
 region: 2 errors in empty disjunction:
 region: conflicting values "APAC" and "UK":
     ./config-b.yaml:3:9
@@ -271,8 +271,8 @@ item: painting: """
 	depth: 0.2
 	"""
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBmdXJuaXR1cmUuY3Vl" >}}
-$ cue vet furniture.cue
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyBmdXJuaXR1cmUuY3Vl" >}}
+$ cue vet -c furniture.cue
 item.painting: invalid value "width: 34\nHEIGHT: 12\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: field not allowed:
     ./furniture.cue:10:17
     ./furniture.cue:3:14

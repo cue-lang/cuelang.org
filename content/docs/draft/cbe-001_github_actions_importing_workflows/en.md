@@ -227,7 +227,7 @@ workflows: [_]: githubactions.#Workflow
 
 :computer: `terminal`
 {{{with script "en" "10.5"}}}
-cue vet ./internal/ci/github
+cue vet -c ./internal/ci/github
 {{{end}}}
 
 If this command fails and produces any output, then CUE believes that at least

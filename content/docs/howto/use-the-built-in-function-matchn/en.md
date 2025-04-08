@@ -32,7 +32,7 @@ unifies successfully with the **number constraint**:
 
 {{{with code "en" "basic"}}}
 #location top bottom
-! exec cue vet .:basic
+! exec cue vet -c .:basic
 cmp stderr out
 -- basic.cue --
 package basic
@@ -68,7 +68,7 @@ constraints**:
 
 {{{with code "en" "one of"}}}
 #location top bottom
-! exec cue vet .:oneOf
+! exec cue vet -c .:oneOf
 cmp stderr out
 -- one-of.cue --
 package oneOf
@@ -113,7 +113,7 @@ one of the **list of constraints** unifies with the field's value:
 
 {{{with code "en" "any of"}}}
 #location top bottom
-! exec cue vet .:anyOf
+! exec cue vet -c .:anyOf
 cmp stderr out
 -- any-of.cue --
 package anyOf
@@ -141,7 +141,7 @@ items in the list:
 
 {{{with code "en" "all of"}}}
 #location top bottom
-! exec cue vet .:allOf
+! exec cue vet -c .:allOf
 cmp stderr out
 -- all-of.cue --
 package allOf
@@ -179,7 +179,7 @@ constraints**:
 
 {{{with code "en" "not"}}}
 #location top bottom
-! exec cue vet .:not
+! exec cue vet -c .:not
 cmp stderr out
 -- not.cue --
 package not
@@ -229,7 +229,7 @@ Either argument to `matchN` can be resolved through a reference:
 
 {{{with code "en" "all but one"}}}
 #location top bottom
-! exec cue vet .:allButOne
+! exec cue vet -c .:allButOne
 cmp stderr out
 -- all-but-one.cue --
 package allButOne
@@ -257,7 +257,7 @@ primitive values. Use it with both structs and lists:
 
 {{{with code "en" "composite"}}}
 #location top bottom
-! exec cue vet .:composite
+! exec cue vet -c .:composite
 cmp stderr out
 -- composite.cue --
 package composite
@@ -306,7 +306,7 @@ when checking for a match:
 
 {{{with code "en" "future: helper fields"}}}
 #location top bottom
-exec cue vet .:helperFields # this command succeeds
+exec cue vet -c .:helperFields # this command succeeds
 cmp stdout out
 -- helper-fields.cue --
 package helperFields

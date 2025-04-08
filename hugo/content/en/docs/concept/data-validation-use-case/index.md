@@ -43,8 +43,8 @@ max: 10
 min: 10
 max: 5
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCByYW5nZXMueWFtbCBjaGVjay5jdWU=" >}}
-$ cue vet ranges.yaml check.cue
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyByYW5nZXMueWFtbCBjaGVjay5jdWU=" >}}
+$ cue vet -c ranges.yaml check.cue
 max: invalid value 5 (out of bound >10):
     ./check.cue:4:16
     ./ranges.yaml:5:6

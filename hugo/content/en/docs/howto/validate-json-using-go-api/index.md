@@ -59,9 +59,9 @@ Verify that your schema accepts and rejects your test data appropriately.
 
 Our example schema is contained in the `#Schema` definition, which we reference explicitly:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBzY2hlbWEuY3VlIGdvb2QuanNvbiAtZCAnI1NjaGVtYScKY3VlIHZldCBzY2hlbWEuY3VlIGJhZC5qc29uIC1kICcjU2NoZW1hJw==" }
-$ cue vet schema.cue good.json -d '#Schema'
-$ cue vet schema.cue bad.json -d '#Schema'
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBzY2hlbWEuY3VlIGdvb2QuanNvbiAtZCAnI1NjaGVtYScKY3VlIHZldCAtYyBzY2hlbWEuY3VlIGJhZC5qc29uIC1kICcjU2NoZW1hJw==" }
+$ cue vet -c schema.cue good.json -d '#Schema'
+$ cue vet -c schema.cue bad.json -d '#Schema'
 age: conflicting values "173" and int (mismatched types string and int):
     ./bad.json:6:12
     ./schema.cue:3:9

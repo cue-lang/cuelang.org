@@ -18,7 +18,7 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates constraining the sum of a list of numbers.
 
 {{{with code "en" "cc"}}}
-! exec cue vet .:example data.yml
+! exec cue vet -c .:example data.yml
 cmp stderr out.err
 -- schema.cue --
 package example

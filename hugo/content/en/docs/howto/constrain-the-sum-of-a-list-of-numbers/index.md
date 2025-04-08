@@ -38,8 +38,8 @@ _bad_sum:  <=99.5 & list.Sum(bad_list)
 good_list: [ 1,2,3,4 ]
 bad_list:  [ 1,2,3,100.5 ]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
-$ cue vet .:example data.yml
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
+$ cue vet -c .:example data.yml
 _bad_sum: invalid value 106.5 (out of bound <=99.5):
     ./schema.cue:14:12
     ./schema.cue:14:21

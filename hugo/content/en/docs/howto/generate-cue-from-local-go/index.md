@@ -155,8 +155,8 @@ package main
 {{< step stepNumber="6" >}}
 We can use `cue vet` to validate our sample config file against the generated CUE:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI0NvbmZpZycgLiBjb25maWcuanNvbg==" }
-$ cue vet -d '#Config' . config.json
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI0NvbmZpZycgLiBjb25maWcuanNvbg==" }
+$ cue vet -c -d '#Config' . config.json
 ```
 
 Your Go code will probably have known-good and known-bad data for testing your generated CUE.

@@ -11,8 +11,8 @@ package site
 								"go program": "eKNbnoWZU82XmI6y29YUE7cAXzRQjKZvUsb+BdEadCo="
 							}
 							multi_step: {
-								hash:       "K41GSGFCI2USJAULEHA068KBVGQ0FVL2I0AUCBFE8HP8TKP6GQGG===="
-								scriptHash: "06O38MR511P13E2PB207N3I97NSFTBF0GGOC1RL8KTE0G8DJH6C0===="
+								hash:       "I1PNGB6AA5R7KM468J7TUTI34OKLVPCQ9829F98ULRTND8RSAT9G===="
+								scriptHash: "LFQB5DS7KDPAFVR7BS236BM3ON9D1OG6V94MVCIMNDSPOJT86KCG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -38,7 +38,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet"
+									cmd:      "cue vet -c"
 									exitCode: 0
 									output:   ""
 								}, {

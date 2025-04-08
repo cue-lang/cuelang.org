@@ -20,7 +20,7 @@ demonstrates how to constrain fields to contain string representations of
 integer values.
 
 {{{with code "en" "example"}}}
-! exec cue vet .:example data.yml
+! exec cue vet -c .:example data.yml
 cmp stderr out.err
 -- example.cue --
 package example

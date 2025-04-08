@@ -47,7 +47,7 @@ it has the chance to affect a deployment:
 {{{with code "en" "validate"}}}
 #location top top bottom
 
-! exec cue vet check.cue .github/workflows/deploy-to-ecs.yml -d 'Workflow'
+! exec cue vet -c check.cue .github/workflows/deploy-to-ecs.yml -d 'Workflow'
 cmp stderr out
 -- check.cue --
 Workflow: {
@@ -151,7 +151,7 @@ that contains some of the types and constraints CUE can encode, along with the
 detail that's provided when validation fails:
 
 {{{with code "en" "type checking"}}}
-! exec cue vet spec.cue aSpec.yaml -d '#Spec'
+! exec cue vet -c spec.cue aSpec.yaml -d '#Spec'
 cmp stderr out
 -- spec.cue --
 import "strings"
@@ -314,7 +314,7 @@ by shortening their feedback cycle:
 {{{with code "en" "generate failure"}}}
 #location bottom bottom bottom top
 
-! exec cue vet . values.yml -d '{ app: App }'
+! exec cue vet -c . values.yml -d '{ app: App }'
 cmp stderr out
 -- values.yml --
 app:

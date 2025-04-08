@@ -17,7 +17,7 @@ demonstrates using the **required field** marker in a schema to make sure that a
 field is present in data.
 
 {{{with code "en" "cc"}}}
-! exec cue vet .:example data.yml
+! exec cue vet -c .:example data.yml
 cmp stderr out.err
 -- schema.cue --
 package example

@@ -38,8 +38,8 @@ s1: "137"
 # s2 is not a valid integer
 s2: "42.7"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
-$ cue vet .:example data.yml
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
+$ cue vet -c .:example data.yml
 s2: invalid interpolation: error in call to strconv.Atoi: strconv.Atoi: parsing "42.7": invalid syntax:
     ./example.cue:9:6
     ./example.cue:9:9

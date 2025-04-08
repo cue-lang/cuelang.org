@@ -13,16 +13,16 @@ package site
 								"fixed x.json": "A4eTMIpTJgM1PpzFfzeaRDiE2GZ/Yo0bm2oJjuPUwEM="
 							}
 							multi_step: {
-								hash:       "616D3FC7VROSSRSQGP7KGBC27FQAJ136IBLGOMAD0R3OKVU1R150===="
-								scriptHash: "UMP1JTJB5F0SVS45CSPDVU8KSNKPQ7SI0OEVSC7IQVT5NDCE1PM0===="
+								hash:       "IESCQUURRLNK6V4LNOIEFS5DQBK4T5HNIMUO7EF6JLIMPIQK8FAG===="
+								scriptHash: "U165M0FDB210K43KGC992DB07G23RP7ULJKBO7O7UJ28GPM1DEFG===="
 								steps: [{
 									doc:      ""
-									cmd:      "cue vet x.cue x.json"
+									cmd:      "cue vet -c x.cue x.json"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet x.cue x.json"
+									cmd:      "cue vet -c x.cue x.json"
 									exitCode: 1
 									output: """
 											people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
@@ -33,7 +33,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet x.cue x.json"
+									cmd:      "cue vet -c x.cue x.json"
 									exitCode: 0
 									output:   ""
 								}]
