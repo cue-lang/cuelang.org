@@ -17,7 +17,7 @@ demonstrates using an **optional field** marker to constrain a field's value -
 *but only if it is present*.
 
 {{{with code "en" "cc"}}}
-! exec cue vet .:example data.yml
+! exec cue vet -c .:example data.yml
 cmp stderr out.err
 -- schema.cue --
 package example

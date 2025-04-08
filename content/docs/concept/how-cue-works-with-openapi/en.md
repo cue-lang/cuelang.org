@@ -199,7 +199,7 @@ CUE automatically recognises the constraints in the `components.schemas` namespa
 making them available as the `#Pet` schema:
 
 {{{with script "en" "cue vet directly against openapi"}}}
-! cue vet api.pet.yaml jonathan.yml -d '#Pet'
+! cue vet -c api.pet.yaml jonathan.yml -d '#Pet'
 {{{end}}}
 
 Perhaps our `#Pet` schema should be updated to handle more animal types!

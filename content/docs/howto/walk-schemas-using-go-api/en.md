@@ -89,7 +89,7 @@ order to demonstrate that they are *not* processed by the code presented below.
 Ensure there are no errors in our CUE:
 
 {{{with script "en" "vet"}}}
-cue vet
+cue vet -c
 {{{end}}}
 
 {{{end}}}

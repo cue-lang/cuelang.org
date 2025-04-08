@@ -77,8 +77,8 @@ emoji_constrain_bytes: {
 	#bytes: len(content) & >=10
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGU=" >}}
-$ cue vet .:example
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGU=" >}}
+$ cue vet -c .:example
 ascii_constrain_runes: invalid value "only ASCII characters" (does not satisfy strings.MaxRunes(8)):
     ./example.cue:8:46
     ./example.cue:6:24

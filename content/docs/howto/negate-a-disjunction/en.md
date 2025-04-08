@@ -14,7 +14,7 @@ such that evaluation is only successful if the field's value would **not** be
 permitted by the disjunction.
 
 {{{with code "en" "example"}}}
-! exec cue vet
+! exec cue vet -c
 cmp stderr out
 -- example.cue --
 package example

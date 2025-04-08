@@ -137,8 +137,8 @@ The
 [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}})
 command validates our data against the `#Person` constraint:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI1BlcnNvbicgc2NoZW1hLmN1ZSBnb29kLmpzb24gYmFkLmpzb24=" }
-$ cue vet -d '#Person' schema.cue good.json bad.json
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BlcnNvbicgc2NoZW1hLmN1ZSBnb29kLmpzb24gYmFkLmpzb24=" }
+$ cue vet -c -d '#Person' schema.cue good.json bad.json
 name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
     ./bad.json:2:13
     ./schema.cue:11:9
@@ -146,8 +146,8 @@ name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (misma
 
 The `cue vet` command can also validate the data using the JSON Schema directly:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBzY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
-$ cue vet schema.json good.json bad.json
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBzY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
+$ cue vet -c schema.json good.json bad.json
 name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
     ./bad.json:2:13
     ./schema.json:13:13

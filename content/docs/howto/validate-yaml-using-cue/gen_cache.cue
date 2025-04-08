@@ -13,16 +13,16 @@ package site
 								"fixed yaml":     "cLs9OS4kMxrpXS7C40VLDEu7YqeQJLOtDM6IpCo1/Nk="
 							}
 							multi_step: {
-								hash:       "AIPQKV1QFROUU991D1A5S9SUHU3JI4EC158D92V4GKEQDH1T0T5G===="
-								scriptHash: "7O25FPHJVUHC297BLS0S5A0O6M4E37ITUK3M1O5FHBH097GTHAAG===="
+								hash:       "PMV7V71323EENUTV6TMTV9OAM47FAALV2LP99E658904D54NRSUG===="
+								scriptHash: "C4EFM89Q7KNVBA7IOJ3DV94IERP38E0P6JP82M64M56U8OD3P5B0===="
 								steps: [{
 									doc:      ""
-									cmd:      "cue vet x.cue x.yaml"
+									cmd:      "cue vet -c x.cue x.yaml"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet x.cue x.yaml"
+									cmd:      "cue vet -c x.cue x.yaml"
 									exitCode: 1
 									output: """
 											people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
@@ -33,7 +33,7 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet x.cue x.yaml"
+									cmd:      "cue vet -c x.cue x.yaml"
 									exitCode: 0
 									output:   ""
 								}]

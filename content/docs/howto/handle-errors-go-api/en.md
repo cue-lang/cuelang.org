@@ -57,7 +57,7 @@ val: #Schema & {
 Verify that the configuration does not validate successfully, as expected:
 
 {{{with script "en" "cue export"}}}
-! cue vet
+! cue vet -c
 {{{end}}}
 {{{end}}}
 

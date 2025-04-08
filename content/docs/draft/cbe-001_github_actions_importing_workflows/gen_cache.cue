@@ -15,8 +15,8 @@ package site
 								"14": "xfoQz3eSuhYbsWAdr8Lj+CmsjMqLLx0FxoJilwMgZx8="
 							}
 							multi_step: {
-								hash:       "RU6J590BM5L0VPABNCKC8ADM387KDA4MVLE3TC56V4P1QOB0IV60===="
-								scriptHash: "JDMFCRKCVQU5H71EDL64A02NTJMOLU86EKO0PU80IOJJD6S24T6G===="
+								hash:       "KJ5NMBINAPKCTL7769J109R30B47FA1CRJ89CS02UNT3D2NNH9EG===="
+								scriptHash: "V6MFVA50A0EO31MT02SEL74V4D5N9JGMMGHCME73JE06JLCRC260===="
 								steps: [{
 									doc:      "# Required to interact with the central registry."
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -136,7 +136,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet ./internal/ci/github"
+									cmd:      "cue vet -c ./internal/ci/github"
 									exitCode: 0
 									output:   ""
 								}, {

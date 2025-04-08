@@ -30,8 +30,8 @@ address: Ripon, North Yorkshire
 species: cat
 age: 15.5
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuIGRhdGEueWFtbA==" >}}
-$ cue vet . data.yaml
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuIGRhdGEueWFtbA==" >}}
+$ cue vet -c . data.yaml
 explicit error (_|_ literal) in source:
     ./file.cue:10:7
 {{< /code-tab >}}

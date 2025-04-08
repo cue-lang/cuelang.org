@@ -65,8 +65,8 @@ Verify that your schema accepts and rejects your test data appropriately.
 Our example schema is contained in the `#Schema` definition, which we reference explicitly:
 
 {{{with script "en" "test schema"}}}
-cue vet   schema.cue good.json -d '#Schema'
-! cue vet schema.cue bad.json  -d '#Schema'
+cue vet -c   schema.cue good.json -d '#Schema'
+! cue vet -c schema.cue bad.json  -d '#Schema'
 {{{end}}}
 {{{end}}}
 

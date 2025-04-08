@@ -33,7 +33,7 @@ CUE versions 0.11 and later report the following errors when evaluating CUE
 that contains list arithmetic operators:
 
 {{{with script "en" "removed"}}}
-! cue vet list-arithmetic.cue
+! cue vet -c list-arithmetic.cue
 {{{end}}}
 
 ## What changes are needed in my CUE?
@@ -138,7 +138,7 @@ B: list.Concat([x, y])
 {{{end}}}
 
 {{{with _script_ "en" "HIDDEN: references: cue vet"}}}
-cue vet references.cue
+cue vet -c references.cue
 {{{end}}}
 
 ## Why are list arithmetic operators being removed?

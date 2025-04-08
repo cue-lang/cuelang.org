@@ -51,8 +51,8 @@ val: #Schema & {
 {{< step stepNumber="3" >}}
 Verify that the configuration does not validate successfully, as expected:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldA==" }
-$ cue vet
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+$ cue vet -c
 val.i: conflicting values int and "hello" (mismatched types int and string):
     ./bad.cue:4:5
     ./bad.cue:9:5

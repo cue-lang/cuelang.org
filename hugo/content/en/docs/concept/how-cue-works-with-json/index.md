@@ -113,8 +113,8 @@ import "strings"
     "repository": "source.company.example/alpha"
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBzY2hlbWEuY3VlIC1kICcjQ29uZmlnJyBjb25maWctYS5qc29uIGNvbmZpZy1iLmpzb24gY29uZmlnLWMuanNvbg==" >}}
-$ cue vet schema.cue -d '#Config' config-a.json config-b.json config-c.json
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyBzY2hlbWEuY3VlIC1kICcjQ29uZmlnJyBjb25maWctYS5qc29uIGNvbmZpZy1iLmpzb24gY29uZmlnLWMuanNvbg==" >}}
+$ cue vet -c schema.cue -d '#Config' config-a.json config-b.json config-c.json
 region: 2 errors in empty disjunction:
 region: conflicting values "APAC" and "UK":
     ./config-b.json:4:15
@@ -270,8 +270,8 @@ item: table: #"{ "width": "34", "height": 23, "depth": 0.2 }"#
 // painting's height field name is incorrectly upper-cased.
 item: painting: #"{ "width": 34, "HEIGHT": 12, "depth": 0.2 }"#
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBmdXJuaXR1cmUuY3Vl" >}}
-$ cue vet furniture.cue
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyBmdXJuaXR1cmUuY3Vl" >}}
+$ cue vet -c furniture.cue
 item.painting: invalid value "{ \"width\": 34, \"HEIGHT\": 12, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: field not allowed:
     ./furniture.cue:10:17
     ./furniture.cue:3:14

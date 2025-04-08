@@ -111,8 +111,8 @@ constrain a field's value.
 Check that the `charlie.yml` data file satisfies the schema you defined in
 `pets.cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
-$ cue vet pets.cue charlie.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
+$ cue vet -c pets.cue charlie.yml
 age: conflicting values "15" and number (mismatched types string and number):
     ./charlie.yml:5:6
     ./pets.cue:2:11
@@ -173,8 +173,8 @@ age: 15
 {{< step stepNumber="7" >}}
 Re-check the data file against the CUE schema:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
-$ cue vet pets.cue charlie.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
+$ cue vet -c pets.cue charlie.yml
 ```
 
 Notice how the command returns instantly, with no output.
@@ -211,8 +211,8 @@ age: 12.5
 {{< step stepNumber="9" >}}
 Ask `cue` to check that both data files satisfy your schema in `pets.cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBwZXRzLmN1ZSBjaGFybGllLnltbCB0b2J5LnltbA==" }
-$ cue vet pets.cue charlie.yml toby.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbCB0b2J5LnltbA==" }
+$ cue vet -c pets.cue charlie.yml toby.yml
 ```
 
 The command's success (and lack of any error message) confirms that both data

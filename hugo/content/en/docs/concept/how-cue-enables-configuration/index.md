@@ -123,8 +123,8 @@ jobs:
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBjaGVjay5jdWUgLmdpdGh1Yi93b3JrZmxvd3MvZGVwbG95LXRvLWVjcy55bWwgLWQgJ1dvcmtmbG93Jw==" >}}
-$ cue vet check.cue .github/workflows/deploy-to-ecs.yml -d 'Workflow'
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyBjaGVjay5jdWUgLmdpdGh1Yi93b3JrZmxvd3MvZGVwbG95LXRvLWVjcy55bWwgLWQgJ1dvcmtmbG93Jw==" >}}
+$ cue vet -c check.cue .github/workflows/deploy-to-ecs.yml -d 'Workflow'
 jobs.deploy."runs-on": conflicting values "ubuntu-latest" and "ubuntu-20.04":
     .github/workflows/deploy-to-ecs.yml:22:14
     ./check.cue:6:3
@@ -180,8 +180,8 @@ users:
   max: 1024
 maxLoad: "4.2"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCBzcGVjLmN1ZSBhU3BlYy55YW1sIC1kICcjU3BlYyc=" >}}
-$ cue vet spec.cue aSpec.yaml -d '#Spec'
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyBzcGVjLmN1ZSBhU3BlYy55YW1sIC1kICcjU3BlYyc=" >}}
+$ cue vet -c spec.cue aSpec.yaml -d '#Spec'
 maxLoad: conflicting values "4.2" and number (mismatched types string and number):
     ./aSpec.yaml:7:10
     ./spec.cue:11:12
@@ -362,8 +362,8 @@ Config: {
 	region:       "EU" | "NA" | "APAC" | "AMEA"
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top" type="terminal" codetocopy="Y3VlIHZldCAuIHZhbHVlcy55bWwgLWQgJ3sgYXBwOiBBcHAgfSc=" >}}
-$ cue vet . values.yml -d '{ app: App }'
+{{< code-tab name="TERMINAL" language="" area="top" type="terminal" codetocopy="Y3VlIHZldCAtYyAuIHZhbHVlcy55bWwgLWQgJ3sgYXBwOiBBcHAgfSc=" >}}
+$ cue vet -c . values.yml -d '{ app: App }'
 app.replicaMem: invalid value 768.0 (out of bound >=1024):
     ./policy.cue:9:32
     ./policy.cue:9:14

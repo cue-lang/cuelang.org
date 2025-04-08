@@ -9,7 +9,7 @@ package site
 							cache: {
 								code: {
 									identifiers: "xyKeIzB7nTsEi+22vgKABJjRsrRj+8MHyb7YIjrzipY="
-									tour:        "hrUZZhcX7o9KD08q8R3J9FB4czfW+TdtljUokzvGngg="
+									tour:        "qYkqPcuDvY5B+j3iYzXxB1WDP24e6oUsIzwpbALuvgM="
 								}
 							}
 						}

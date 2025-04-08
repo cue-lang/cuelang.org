@@ -36,8 +36,8 @@ v4TooManyOctets: "198.51.100.14.0"
 v4OctetTooLarge: [300, 51, 100, 14]
 v6ByteTooLarge: [300, 1, 13, 184, 133, 163, 0, 0, 1, 0, 138, 46, 3, 112, 115, 52]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 v4OctetTooLarge: invalid value [300,51,100,14] (does not satisfy net.IP):
     ./file.cue:6:6
     ./file.cue:19:18

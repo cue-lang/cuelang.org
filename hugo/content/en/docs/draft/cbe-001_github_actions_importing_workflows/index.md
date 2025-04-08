@@ -199,8 +199,8 @@ workflows: [_]: githubactions.#Workflow
 #### :arrow_right: Validate your workflows
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAuL2ludGVybmFsL2NpL2dpdGh1Yg==" }
-$ cue vet ./internal/ci/github
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuL2ludGVybmFsL2NpL2dpdGh1Yg==" }
+$ cue vet -c ./internal/ci/github
 ```
 
 If this command fails and produces any output, then CUE believes that at least

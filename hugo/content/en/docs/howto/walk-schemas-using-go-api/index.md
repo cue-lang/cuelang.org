@@ -83,8 +83,8 @@ order to demonstrate that they are *not* processed by the code presented below.
 {{< step stepNumber="4" >}}
 Ensure there are no errors in our CUE:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldA==" }
-$ cue vet
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+$ cue vet -c
 ```
 
 {{< /step >}}

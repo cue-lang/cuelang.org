@@ -174,8 +174,8 @@ shortly.  If you spotted the problem while entering the data, make sure you
 {{< step stepNumber="4" >}}
 Validate the data using the schema and constraints:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
-$ cue vet -d '#restaurant' schema.cue *.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
+$ cue vet -c -d '#restaurant' schema.cue *.yml
 tables.0.seats: invalid value 100 (out of bound <=10):
     ./schema.cue:13:17
     ./pomodoro.yml:4:12
@@ -203,8 +203,8 @@ tables:
 {{< step stepNumber="6" >}}
 Re-validate the data using the schema and constraints:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
-$ cue vet -d '#restaurant' schema.cue *.yml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
+$ cue vet -c -d '#restaurant' schema.cue *.yml
 ```
 
 The "silent" lack of output from `cue vet` confirms that the fixed data

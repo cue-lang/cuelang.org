@@ -27,7 +27,7 @@ x: 1, y: 2.2, z: "3.33" // This hidden file's contents aren't important.
 
 {{{with script "en" "example"}}}
 export CUE_STATS_FILE=stats.cue
-cue vet someFile.cue
+cue vet -c someFile.cue
 cat stats.cue
 {{{end}}}
 

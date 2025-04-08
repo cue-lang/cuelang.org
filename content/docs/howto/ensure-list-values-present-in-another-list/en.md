@@ -12,7 +12,7 @@ In other words, how to ensure that one list is a "subset" of another list (even
 though a list isn't a set, strictly speaking).
 
 {{{with code "en" "cc"}}}
-! exec cue vet
+! exec cue vet -c
 cmp stderr out
 -- file.cue --
 package example

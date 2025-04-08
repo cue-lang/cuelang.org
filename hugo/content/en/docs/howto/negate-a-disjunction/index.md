@@ -30,8 +30,8 @@ B: "four"
 _A_ok: true & ((A & #OneTwoThree) == _|_)
 _B_ok: true & ((B & #OneTwoThree) == _|_)
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 _A_ok: conflicting values false and true:
     ./example.cue:13:8
     ./example.cue:13:16

@@ -62,7 +62,7 @@ people: [X=string]: #Person & {
 Run the following `cue` command in your:
 
 {{{with script "en" "initial vet"}}}
-cue vet x.cue x.yaml
+cue vet -c x.cue x.yaml
 {{{end}}}
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
@@ -90,7 +90,7 @@ people:
 Validate again with `cue vet`
 
 {{{with script "en" "broken vet"}}}
-! cue vet x.cue x.yaml
+! cue vet -c x.cue x.yaml
 {{{end}}}
 
 The command output shows validation errors where the YAML violates
@@ -119,7 +119,7 @@ people:
 Validate with `cue vet` again
 
 {{{with script "en" "fixed vet"}}}
-cue vet x.cue x.yaml
+cue vet -c x.cue x.yaml
 {{{end}}}
 
 The `cue vet` command will show no output on success.
