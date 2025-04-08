@@ -152,10 +152,10 @@ Learn more about transforming data with CUE in these How-to guides:
 - {{< linkto/inline "howto/combine-multiple-yaml-files-into-a-list" >}}
 - {{< linkto/inline "howto/combine-multiple-yaml-files-by-using-file-metadata" >}}
 
-## Embedding YAML in CUE
+## Encoding YAML inside CUE
 
 CUE is frequently used to generate configuration files. Some systems allow
-their configuration files to contain YAML embedded inside string fields,
+their configuration files to contain YAML encoded in string fields,
 irrespective of the file's main data format.
 
 CUE's standard library provides
@@ -163,10 +163,10 @@ CUE's standard library provides
 containing functions that generate, parse, and validate YAML from
 within CUE - some of which are shown here.
 
-### Generating embedded YAML
+### Generating encoded YAML
 
 In this example a *Kubernetes ConfigMap* contains a YAML file encoded as a
-single string field, embedded inside JSON. This is enabled by the
+single string field, stored inside JSON. This is enabled by the
 `yaml.Marshal` function:
 
 {{< code-tabs >}}
@@ -190,13 +190,13 @@ $ cue export config.cue --out json
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-### Parsing embedded YAML
+### Parsing encoded YAML
 
 The `yaml.Unmarshal` function performs the reverse operation to `yaml.Marshal`:
-it turns a string containing embedded YAML into the structure represented by
-the underlying data.
+it turns a string containing YAML into the structure represented by
+the encoded data.
 
-Here, some embedded YAML data is emitted as JSON:
+Here, some encoded YAML data is emitted as JSON:
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
@@ -230,9 +230,9 @@ $ cue export file.cue -e output
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-### Validating embedded YAML
+### Validating encoded YAML
 
-The `yaml.Validate` and `yaml.ValidatePartial` functions allow embedded YAML to
+The `yaml.Validate` and `yaml.ValidatePartial` functions allow encoded YAML to
 be validated against native CUE schema constraints.
 
 Here, each member of the `item` map is checked against the `#Dimensions`
@@ -299,7 +299,7 @@ discover through the site's search page:
 
 [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}})
 can create a CUE file for each YAML file it's given, and can even recognise
-embedded YAML and JSON fields, and convert those structures recursively.
+encoded YAML and JSON fields, and convert those structures recursively.
 
 Examples of this command being used can be found in the
 [`cue import` CLI reference documentation]({{< relref "docs/reference/command/cue-help-import" >}}).
