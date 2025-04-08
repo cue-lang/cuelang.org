@@ -12,8 +12,8 @@ package site
 								"generated cue": "tOwXsx/lrKBSICB8kAwnA5WYNeePfMoEGKkgIAopz70="
 							}
 							multi_step: {
-								hash:       "ONUDSTJ6SFM5S89FMVF4P4KA4FRLQOOBAK2LR780I5GSNA2QFM9G===="
-								scriptHash: "B0NV97C8H2CLFIPS1PTCFRE9O9OQD0C7TU4OPI3196788J6KNHU0===="
+								hash:       "MG3D8OK7SROCFOELERJ4NB7U523VAMJIJ52K2E1LB733M6GAIJ50===="
+								scriptHash: "8NPJVQT3L4JIND2MHTV8MSAB3CCFSG33VL0Q0LEB9I2T0CSFPBIG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -64,7 +64,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet -d '#Config' . config.json"
+									cmd:      "cue vet -c -d '#Config' . config.json"
 									exitCode: 0
 									output:   ""
 								}, {

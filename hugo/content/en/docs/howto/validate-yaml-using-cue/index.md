@@ -61,8 +61,8 @@ people: [X=string]: #Person & {
 
 Run the following `cue` command in your:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWw=" }
-$ cue vet x.cue x.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4LnlhbWw=" }
+$ cue vet -c x.cue x.yaml
 ```
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
@@ -88,8 +88,8 @@ people:
 
 Validate again with `cue vet`
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWw=" }
-$ cue vet x.cue x.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4LnlhbWw=" }
+$ cue vet -c x.cue x.yaml
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
     ./x.cue:7:21
@@ -120,8 +120,8 @@ people:
 
 Validate with `cue vet` again
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCB4LmN1ZSB4LnlhbWw=" }
-$ cue vet x.cue x.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4LnlhbWw=" }
+$ cue vet -c x.cue x.yaml
 ```
 
 The `cue vet` command will show no output on success.

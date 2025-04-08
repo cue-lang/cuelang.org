@@ -185,7 +185,7 @@ shortly.  If you spotted the problem while entering the data, make sure you
 Validate the data using the schema and constraints:
 
 {{{with script "en" "validate 1"}}}
-! cue vet -d '#restaurant' schema.cue *.yml
+! cue vet -c -d '#restaurant' schema.cue *.yml
 {{{end}}}
 
 `cue vet` outputs nothing when validation succeeds. But as you can see, there
@@ -212,7 +212,7 @@ tables:
 Re-validate the data using the schema and constraints:
 
 {{{with script "en" "validate 2"}}}
-cue vet -d '#restaurant' schema.cue *.yml
+cue vet -c -d '#restaurant' schema.cue *.yml
 {{{end}}}
 
 The "silent" lack of output from `cue vet` confirms that the fixed data

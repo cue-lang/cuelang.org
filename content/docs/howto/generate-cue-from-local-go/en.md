@@ -168,7 +168,7 @@ diff main_go_gen.cue .main_go_gen.cue
 We can use `cue vet` to validate our sample config file against the generated CUE:
 
 {{{with script "en" "vet config using CUE"}}}
-cue vet -d '#Config' . config.json
+cue vet -c -d '#Config' . config.json
 {{{end}}}
 
 Your Go code will probably have known-good and known-bad data for testing your generated CUE.
