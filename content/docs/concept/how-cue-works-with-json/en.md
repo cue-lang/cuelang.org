@@ -77,7 +77,7 @@ catches a problematic deployment early in the process:
 # TODO: add mistakes into more than 1 JSON file when https://github.com/cue-lang/cue/issues/2511 is closed
 # TODO: remove a required field when https://github.com/cue-lang/cue/issues/2869 is closed
 
-! exec cue vet schema.cue -d '#Config' config-a.json config-b.json config-c.json
+! exec cue vet -c schema.cue -d '#Config' config-a.json config-b.json config-c.json
 cmp stderr out
 -- schema.cue --
 import "strings"
@@ -250,7 +250,7 @@ data:
 {{{with code "en" "validate"}}}
 #location top bottom
 
-! exec cue vet furniture.cue
+! exec cue vet -c furniture.cue
 cmp stderr out
 -- furniture.cue --
 import "encoding/json"

@@ -16,7 +16,7 @@ function
 to unify all the elements of a list.
 
 {{{with code "en" "cc"}}}
-! exec cue vet .:example
+! exec cue vet -c .:example
 cmp stderr out
 -- example.cue --
 package example

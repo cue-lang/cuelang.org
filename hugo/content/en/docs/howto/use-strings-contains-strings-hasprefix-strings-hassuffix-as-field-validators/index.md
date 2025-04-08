@@ -36,8 +36,8 @@ suffix: strings.HasSuffix("incorrect suffix")
 // None of the built-in functions demonstrated here accept regular expressions.
 contains: strings.Contains(".*")
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 prefix: invalid value "Some numbers (123) and letters" (does not satisfy strings.HasPrefix("incorrect prefix")):
     ./file.cue:10:9
     ./file.cue:5:11

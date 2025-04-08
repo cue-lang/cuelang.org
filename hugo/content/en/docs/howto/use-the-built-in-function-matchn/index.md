@@ -45,8 +45,8 @@ B: 42
 B: matchN(1, [int, >10])
 B: matchN(3, [int, >10, >100])
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmJhc2lj" >}}
-$ cue vet .:basic
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmJhc2lj" >}}
+$ cue vet -c .:basic
 B: invalid value 42 (does not satisfy matchN): 2 matched, expected 1:
     ./basic.cue:11:4
     ./basic.cue:9:4
@@ -87,8 +87,8 @@ C: 15
 // C fails to validate.
 C: matchN(1, [math.MultipleOf(3), math.MultipleOf(5)])
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOm9uZU9m" >}}
-$ cue vet .:oneOf
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOm9uZU9m" >}}
+$ cue vet -c .:oneOf
 B: invalid value 42 (does not satisfy matchN): 2 matched, expected 1:
     ./one-of.cue:13:4
     ./one-of.cue:11:4
@@ -124,8 +124,8 @@ B: 42
 // B fails to validate.
 B: matchN(>0, [string, >100])
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmFueU9m" >}}
-$ cue vet .:anyOf
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmFueU9m" >}}
+$ cue vet -c .:anyOf
 B: invalid value 42 (does not satisfy matchN): 0 matched, expected >0:
     ./any-of.cue:10:4
     ./any-of.cue:8:4
@@ -156,8 +156,8 @@ B: 42
 B: matchN(3, [int, >10, >100])
 B: matchN(4, [int, >10, <100, math.MultipleOf(41)])
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmFsbE9m" >}}
-$ cue vet .:allOf
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmFsbE9m" >}}
+$ cue vet -c .:allOf
 B: invalid value 42 (does not satisfy matchN): 2 matched, expected 3:
     ./all-of.cue:13:4
     ./all-of.cue:11:4
@@ -198,8 +198,8 @@ B: matchN(0, [int])
 B: matchN(0, [string, number])
 B: matchN(0, [42, >100, strings.HasSuffix("4")])
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOm5vdA==" >}}
-$ cue vet .:not
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOm5vdA==" >}}
+$ cue vet -c .:not
 B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
     ./not.cue:16:4
     ./not.cue:14:4
@@ -241,8 +241,8 @@ B: matchN(len(#C)-1, #C)
 
 #C: [number, int, >100]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmFsbEJ1dE9uZQ==" >}}
-$ cue vet .:allButOne
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmFsbEJ1dE9uZQ==" >}}
+$ cue vet -c .:allButOne
 B: invalid value 42.0 (does not satisfy matchN): 1 matched, expected 2:
     ./all-but-one.cue:9:4
     ./all-but-one.cue:8:4
@@ -285,8 +285,8 @@ E: [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
 #F2: [...>10]
 #F3: [...>100]
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmNvbXBvc2l0ZQ==" >}}
-$ cue vet .:composite
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmNvbXBvc2l0ZQ==" >}}
+$ cue vet -c .:composite
 B: invalid value {x:4.2,y:4.2,z:4.2} (does not satisfy matchN): 0 matched, expected >0:
     ./composite.cue:9:4
     ./composite.cue:9:11
@@ -318,8 +318,8 @@ A: matchN(1, [#A]) & {
 	#anInt:   "not an int"
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmhlbHBlckZpZWxkcyAjIHRoaXMgY29tbWFuZCBzdWNjZWVkcw==" >}}
-$ cue vet .:helperFields # this command succeeds
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmhlbHBlckZpZWxkcyAjIHRoaXMgY29tbWFuZCBzdWNjZWVkcw==" >}}
+$ cue vet -c .:helperFields # this command succeeds
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

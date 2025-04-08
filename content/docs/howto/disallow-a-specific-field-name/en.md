@@ -12,7 +12,7 @@ demonstrates how to disallow specific data fields inside an otherwise open
 schema.
 
 {{{with code "en" "emit"}}}
-! exec cue vet . data.yaml
+! exec cue vet -c . data.yaml
 cmp stderr out
 -- file.cue --
 package example

@@ -41,8 +41,8 @@ f1: "some string value"
 s1:
   f3: 7
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
-$ cue vet .:example data.yml
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
+$ cue vet -c .:example data.yml
 "f-2": field is required but not present:
     ./schema.cue:10:1
 {{< /code-tab >}}

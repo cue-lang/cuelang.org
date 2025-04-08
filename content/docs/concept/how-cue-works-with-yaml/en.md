@@ -72,7 +72,7 @@ catches a problematic deployment early in the process:
 # TODO: add mistakes into more than 1 YAML file when https://github.com/cue-lang/cue/issues/2511 is closed
 # TODO: remove a required field when https://github.com/cue-lang/cue/issues/2869 is closed
 
-! exec cue vet schema.cue -d '#Config' config-a.yaml config-b.yaml config-c.yaml
+! exec cue vet -c schema.cue -d '#Config' config-a.yaml config-b.yaml config-c.yaml
 cmp stderr out
 -- schema.cue --
 import "strings"
@@ -239,7 +239,7 @@ data:
 {{{with code "en" "validate"}}}
 #location top bottom
 
-! exec cue vet furniture.cue
+! exec cue vet -c furniture.cue
 cmp stderr out
 -- furniture.cue --
 import "encoding/yaml"

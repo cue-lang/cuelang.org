@@ -36,8 +36,8 @@ f1: 123
 # f2 is actually a string
 f2: "some string value"
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
-$ cue vet .:example data.yml
+{{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
+$ cue vet -c .:example data.yml
 f1: conflicting values 123 and string (mismatched types int and string):
     ./data.yml:2:5
     ./example.cue:7:5

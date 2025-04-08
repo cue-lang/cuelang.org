@@ -50,8 +50,8 @@ _missingFieldSchema: {
 	c!: bool // validation failure for yaml.Validate only
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: invalid value 1 (out of bound >99):
     ./file.cue:12:7
     ./file.cue:5:7

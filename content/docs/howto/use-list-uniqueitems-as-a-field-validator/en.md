@@ -15,7 +15,7 @@ to ensure that a list's items are unique.
 {{{with code "en" "cc"}}}
 #location top bottom
 
-! exec cue vet
+! exec cue vet -c
 cmp stderr out
 -- file.cue --
 package example
@@ -30,7 +30,9 @@ aList: [1, 2.0, 3, "four", 5, 5.0, false,
 	{a: 1, b: "2", c: false}, // validation error
 ]
 -- out --
-some instances are incomplete; use the -c flag to show errors or suppress this message
+aList: invalid value [1,2.0,3,"four",5,5.0,false,{a:1,b:"2",c:false},{a:1,b:"2",c:true},{a:1,b:2,c:false},{a:1,b:"2",c:false}] (does not satisfy list.UniqueItems): equal values at position 7 and 10:
+    ./file.cue:5:8
+    ./file.cue:6:8
 {{{end}}}
 
 {{< info >}}

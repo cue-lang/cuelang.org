@@ -13,8 +13,8 @@ package site
 								yaml2:      "tGjdlJiNZBiYm2/sAHwIEvsMYSkWqAowsujNJzjS2/E="
 							}
 							multi_step: {
-								hash:       "T6OVMBF0FIRMSA8RJSD1DOVJDL3IK240TU6DAFLTL0R5KH7VMF6G===="
-								scriptHash: "CT8B9VRADUB82ORG7R3FRB2UVANK87TJ8JQR8JAOKTIAA4J9721G===="
+								hash:       "G4N263SOC3IEPA8P1LO0I1T41N8ECV2LGVQ12OD1E47KT95TEGGG===="
+								scriptHash: "1E9PKU732954L3NDO39VSV45AFEOJLKHIDRR2D3QBEIE988955M0===="
 								steps: [{
 									doc:      ""
 									cmd:      "pwd # we start in our home directory, but you do not need to"
@@ -35,7 +35,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet pets.cue charlie.yml"
+									cmd:      "cue vet -c pets.cue charlie.yml"
 									exitCode: 1
 									output: """
 											age: conflicting values "15" and number (mismatched types string and number):
@@ -52,12 +52,12 @@ package site
 											"""
 								}, {
 									doc:      ""
-									cmd:      "cue vet pets.cue charlie.yml"
+									cmd:      "cue vet -c pets.cue charlie.yml"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue vet pets.cue charlie.yml toby.yml"
+									cmd:      "cue vet -c pets.cue charlie.yml toby.yml"
 									exitCode: 0
 									output:   ""
 								}]

@@ -40,8 +40,8 @@ aList: list.Contains({asInt: 3, asString: "three"})
 aList: list.Contains([4, "four"])
 aList: list.Contains(["four", 4, 4.0]) // validation failure
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 aList: invalid value [1,"two",{asInt:3,asString:"three"},[4,"four"]] (does not satisfy list.Contains("TWO")):
     ./file.cue:15:8
     ./file.cue:6:8

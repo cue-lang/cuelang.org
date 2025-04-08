@@ -32,8 +32,8 @@ data: {
 	d: 1001
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGU=" >}}
-$ cue vet .:example
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGU=" >}}
+$ cue vet -c .:example
 data.a: conflicting values 4.2 and int & >99 & <1000 (mismatched types float and int):
     ./example.cue:8:17
     ./example.cue:10:5

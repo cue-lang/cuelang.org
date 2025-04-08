@@ -21,8 +21,8 @@ area:   <100        // Must be less than 100.
 width:  33.3 & >10  // Must be greater than 10.
 length: 5 & !=width // Reject square areas.
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIHZldCBleGFtcGxlLmN1ZQ==" >}}
-$ cue vet example.cue
+{{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIHZldCAtYyBleGFtcGxlLmN1ZQ==" >}}
+$ cue vet -c example.cue
 area: invalid value 166.5 (out of bound <100):
     ./example.cue:2:9
     ./example.cue:1:9

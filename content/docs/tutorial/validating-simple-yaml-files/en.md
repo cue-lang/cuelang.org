@@ -112,7 +112,7 @@ Check that the `charlie.yml` data file satisfies the schema you defined in
 `pets.cue`:
 
 {{{with script "en" "vet-failure-1"}}}
-! cue vet pets.cue charlie.yml
+! cue vet -c pets.cue charlie.yml
 {{{end}}}
 
 `cue vet` is telling you that there are problems with 2 fields in your data
@@ -165,7 +165,7 @@ age: 15
 Re-check the data file against the CUE schema:
 
 {{{with script "en" "vet-success-1"}}}
-cue vet pets.cue charlie.yml
+cue vet -c pets.cue charlie.yml
 {{{end}}}
 
 Notice how the command returns instantly, with no output.
@@ -203,7 +203,7 @@ age: 12.5
 Ask `cue` to check that both data files satisfy your schema in `pets.cue`:
 
 {{{with script "en" "vet-success-2"}}}
-cue vet pets.cue charlie.yml toby.yml
+cue vet -c pets.cue charlie.yml toby.yml
 {{{end}}}
 
 The command's success (and lack of any error message) confirms that both data

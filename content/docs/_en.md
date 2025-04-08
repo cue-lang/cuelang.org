@@ -16,7 +16,7 @@ enable data, schema, and policy constraints to coexist seamlessly:
 
 {{{with code "en" "example"}}}
 #location left right
-! exec cue vet example.cue
+! exec cue vet -c example.cue
 cmp stderr out
 -- example.cue --
 area:   length * width

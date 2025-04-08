@@ -49,8 +49,8 @@ _sortAtSymbolCountDescending: {
 stringsCountDescending: ["@", "@@", "X"]
 stringsCountDescending: list.IsSorted(_sortAtSymbolCountDescending) // validation failure
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldA==" >}}
-$ cue vet
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
+$ cue vet -c
 stringsDescending: invalid value ["A","B","C"] (does not satisfy list.IsSorted({T:number | string,x:number | string,y:number | string,less:_|_(Descending.less: unresolved disjunction number | string (type (string|number)) (and 1 more errors))})):
     ./file.cue:16:20
     ./file.cue:17:20
