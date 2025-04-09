@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b00b178_f26ab542",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2025-04-09T18:10:05Z",
+      "side": 1,
+      "message": "Approving on behalf of @paul@myitcv.io in order to unblock failing CI",
+      "revId": "29f5cff36a5e09890a22ae1c66282c285e3e8dc4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
