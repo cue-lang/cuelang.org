@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ade8c34_d83e1993",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-09T13:56:54Z",
+      "side": 1,
+      "message": "We should not maintain this list by hand, if it\u0027s something that can be generated based on config. It seems to me that we should therefore template this file based on the configuration we have.",
+      "revId": "65841146aa38ec885a1dc3288d2d827f6b7d3cfd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
