@@ -462,8 +462,9 @@ _porcuepineCueLogin: githubactions.#Step & {
 // npm install in hugo to allow serve test to pass
 _npmInstall: githubactions.#Step & {
 	name:                "npm install in hugo dir"
-	run:                 "npm install"
+	run:                 "npm install --loglevel verbose"
 	"working-directory": "hugo"
+	"timeout-minutes":   5 // TODO: solve this more generally, elsewhere
 }
 
 _applyTipPatches: githubactions.#Step & {
