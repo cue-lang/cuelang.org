@@ -186,7 +186,9 @@ jobs:
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./_scripts/buildDockerImage.bash
       - name: npm install in hugo dir
-        run: npm install --loglevel verbose
+        run: npm --loglevel=silly --timing=true install
+        env:
+          NODE_OPTIONS: --dns-result-order=ipv4first
         working-directory: hugo
         timeout-minutes: 5
       - name: Test
