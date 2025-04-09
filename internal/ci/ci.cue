@@ -76,6 +76,16 @@ fs: #writefs & {
 			"""
 		}
 
+		"../../hugo/layouts/robots.txt": {
+			let contents = _netlify.#toRobotsTxt & {#input: null, _}
+			Contents: """
+			# \(donotedit)
+
+			\(strings.TrimSpace(contents))
+
+			"""
+		}
+
 		"../../codereview.cfg": {
 			let contents = base.toCodeReviewCfg & {#input: repo.codeReview, _}
 			Contents: """
