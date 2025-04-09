@@ -77,7 +77,7 @@ fs: #writefs & {
 		}
 
 		"../../hugo/layouts/robots.txt": {
-			let contents = _netlify.#toRobotsTxt & {#input: null, _}
+			let contents = _netlify.#toRobotsTxt & {#input: _netlify.redirects, _}
 			Contents: """
 			# \(donotedit)
 
