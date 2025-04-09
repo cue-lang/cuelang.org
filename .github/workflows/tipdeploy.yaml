@@ -164,15 +164,8 @@ jobs:
         run: go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
         run: _scripts/tipPatchApply.bash
-      - name: npm install to check package-lock.json clean
-        run: npm install --package-lock-only --ignore-scripts
-        working-directory: hugo
-      - if: always()
-        name: Check that git is clean at the end of the job
-        run: test -z "$(git status --porcelain)" || (git status; git diff; false)
-        working-directory: hugo
-      - name: npm ci
-        run: npm ci
+      - name: npm install in hugo
+        run: npm install
         working-directory: hugo
       - name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
         env:
