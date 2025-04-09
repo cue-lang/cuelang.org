@@ -464,6 +464,7 @@ _npmInstall: githubactions.#Step & {
 	name:                "npm install in hugo dir"
 	run:                 "npm install"
 	"working-directory": "hugo"
+	"timeout-minutes":   5 // TODO: solve this more generally, elsewhere
 }
 
 _applyTipPatches: githubactions.#Step & {

@@ -188,6 +188,7 @@ jobs:
       - name: npm install in hugo dir
         run: npm install
         working-directory: hugo
+        timeout-minutes: 5
       - name: Test
         run: go test ./...
       - name: Test Playground
