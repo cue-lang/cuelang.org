@@ -18,6 +18,7 @@ package netlify
 
 import (
 	"text/template"
+	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 )
@@ -39,10 +40,20 @@ import (
 }
 
 #redirect: {
-	from:   string
-	to:     string
-	status: int
-	force:  bool
+	from!:        string
+	queryString!: string
+	to!:          string
+	status!:      int
+	robotsTxt?: {
+		// Create a robots.txt Disallow: entry associated with this redirect?
+		disallow!: bool
+		// Disallow which path prefix?
+		prefix?: string
+		if disallow {
+			prefix!: _
+		}
+	}
+	force?: bool
 }
 
 config: #config & {
@@ -66,9 +77,61 @@ config: #config & {
 }
 
 redirects: [...#redirect]
-redirects: [...{force: true, status: *302 | ( >=300 & <=308 )}]
+
+redirects: [...{
+	from:        _
+	queryString: *"" | _
+	force:       true
+	status:      *302 | ( >=300 & <=308 ) | 200
+	robotsTxt: {
+		// Does the redirect's "from" field ends with a known Netlify wildcard
+		// form, indicating that it encodes a path hierarchy?
+		let suffix = "/*"
+		let hasSuffix = strings.HasSuffix(from, suffix)
+
+		// If so, default to disallowing that hierarchy in /robots.txt.
+		if hasSuffix {
+			disallow: *true | _
+			prefix:   *"\(strings.TrimSuffix(from, suffix))/" | _
+		}
+
+		// Else, default to not disallowing the hierarchy; but also default the
+		// path prefix that /would/ be disallowed if "disallow:true" were set.
+		if !hasSuffix {
+			disallow: *false | _
+			prefix:   *from | _
+		}
+	}
+}]
+
+redirects: [{
+	// NB This MUST appear first or public "go get" commands will fail.
+	from!:        "/go/*"
+	queryString!: "go-get=1"
+	to!:          "/golang/go.html"
+	status!:      200
+	force!:       true
+	robotsTxt?: disallow!: true
+}, ...]
+
 redirects: [
 	{
+		// Golang vanity imports for cuelang.org.
+		from:        "/go/*"
+		queryString: "go-get=1"
+		to:          "/golang/go.html"
+		status:      200
+		force:       true
+		robotsTxt: disallow: true
+	}, {
+		// Humans who open Go import paths in a browser.
+		from:        "/go/*"
+		queryString: ""
+		to:          "https://pkg.go.dev/cuelang.org/go/:splat"
+		status:      302
+		force:       true
+		robotsTxt: disallow: false // No need to duplicate the Disallow entry from above.
+	}, {
 		from: "/cl/*"
 		to:   "https://review.gerrithub.io/c/:splat"
 	}, {
@@ -197,19 +260,12 @@ redirects: [
 // Test syntax in their playground at https://play.netlify.com/redirects.
 #toRedirects: {
 	#input: [...#redirect]
+	template.Execute(tmpl, #input)
+
 	let tmpl = """
-		# Golang vanity imports for cuelang.org.
-		# NB This MUST appear first, or "go get" commands will fail!
-		/go/* go-get=1 /golang/go.html                          200!
-		# Humans who open Go import paths in a browser.
-		/go/*          https://pkg.go.dev/cuelang.org/go/:splat 302!
-
-		# Default Netlify subdomain.
-		https://cue.netlify.com/* https://cuelang.org/:splat 301!
-
 		# Redirects configured in internal/ci/netlify.redirects
 		{{- range .}}
-		{{.from | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
+		{{ printf "%v %v" .from .queryString | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
 		{{- end}}
 
 		# Aliases configured in the front matter of pages in content/, templated at
@@ -220,21 +276,29 @@ redirects: [
 		{{ `{{ end -}}` }}
 		{{ `{{- end }}` }}
 		"""
-
-	template.Execute(tmpl, #input)
 }
 
-// This encodes the current (static) robots.txt Hugo template.
+// This encodes the robots.txt Hugo template as a mixture of static disallow
+// lines that can't be inferred from data, and data-driven paths found in
+// Netlify's server-side redirects. The sitemap URL is hardcoded as we only ever
+// want to cause the production site to be crawled.
 #toRobotsTxt: {
-	#input: *null | _
+	#input: [...#redirect]
+	template.Execute(tmpl, #input)
+
 	let tmpl = """
 		User-agent: *
 		Allow: /
 		Disallow: /play/*?*id=
 		Disallow: /search/
+		Disallow: /s/
+		Disallow: /e/
+		{{- range .}}
+		{{- if .robotsTxt.disallow}}
+		Disallow: {{.robotsTxt.prefix}}
+		{{- end}}
+		{{- end}}
 
 		Sitemap: https://cuelang.org/sitemap.xml
 		"""
-
-	template.Execute(tmpl, #input)
 }
