@@ -1,15 +1,8 @@
 # Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
 
-# Golang vanity imports for cuelang.org.
-# NB This MUST appear first, or "go get" commands will fail!
-/go/* go-get=1 /golang/go.html                          200!
-# Humans who open Go import paths in a browser.
-/go/*          https://pkg.go.dev/cuelang.org/go/:splat 302!
-
-# Default Netlify subdomain.
-https://cue.netlify.com/* https://cuelang.org/:splat 301!
-
 # Redirects configured in internal/ci/netlify.redirects
+/go/*                               go-get=1 /golang/go.html 200!
+/go/*                               https://pkg.go.dev/cuelang.org/go/:splat 302!
 /cl/*                               https://review.gerrithub.io/c/:splat 302!
 /issue/*                            https://github.com/cue-lang/cue/issues/:splat 302!
 /issues/*                           https://github.com/cue-lang/cue/issues/:splat 302!
