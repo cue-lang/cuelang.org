@@ -185,10 +185,16 @@ jobs:
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./_scripts/buildDockerImage.bash
-      - name: npm install in hugo dir
-        run: npm install --loglevel verbose
+      - name: npm install to check package-lock.json clean
+        run: npm install --package-lock-only --ignore-scripts
         working-directory: hugo
-        timeout-minutes: 5
+      - if: always()
+        name: Check that git is clean at the end of the job
+        run: test -z "$(git status --porcelain)" || (git status; git diff; false)
+        working-directory: hugo
+      - name: npm ci
+        run: npm ci
+        working-directory: hugo
       - name: Test
         run: go test ./...
       - name: Test Playground

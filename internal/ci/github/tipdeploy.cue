@@ -83,7 +83,7 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 
 			// npm install in hugo to allow serve test to pass which is run as
 			// part of regenPostInfraChange.bash
-			_npmInstall,
+			for v in _npmInstall {v},
 
 			_useTipOfCUE,
 
