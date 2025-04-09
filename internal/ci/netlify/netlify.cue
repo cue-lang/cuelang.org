@@ -194,7 +194,7 @@ redirects: [
 
 // This encodes server-side redirects in Netlify's _redirects file syntax:
 // https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file.
-// Test syntax in their plaground at https://play.netlify.com/redirects.
+// Test syntax in their playground at https://play.netlify.com/redirects.
 #toRedirects: {
 	#input: [...#redirect]
 	let tmpl = """
@@ -219,6 +219,21 @@ redirects: [
 		{{- range .}}
 		{{.from | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
 		{{- end}}
+		"""
+
+	template.Execute(tmpl, #input)
+}
+
+// This encodes the current (static) robots.txt Hugo template.
+#toRobotsTxt: {
+	#input: null
+	let tmpl = """
+		User-agent: *
+		Allow: /
+		Disallow: /play/*?*id=
+		Disallow: /search/
+
+		Sitemap: {{ `{{ absURL "sitemap.xml" }}` }}
 		"""
 
 	template.Execute(tmpl, #input)
