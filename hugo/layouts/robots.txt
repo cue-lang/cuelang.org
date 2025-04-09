@@ -2,5 +2,14 @@ User-agent: *
 Allow: /
 Disallow: /play/*?*id=
 Disallow: /search/
+Disallow: /cl/
+Disallow: /issue/
+Disallow: /issues/
+Disallow: /discussion/
+Disallow: /discussions/
+Disallow: /project/
+Disallow: /projects/
+Disallow: /releases/
+Disallow: /s/
 
 Sitemap: {{ absURL "sitemap.xml" }}
