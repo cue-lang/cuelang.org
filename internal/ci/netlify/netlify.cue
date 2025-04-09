@@ -18,6 +18,7 @@ package netlify
 
 import (
 	"text/template"
+	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 )
@@ -224,17 +225,39 @@ redirects: [
 	template.Execute(tmpl, #input)
 }
 
-// This encodes the current (static) robots.txt Hugo template.
+// This encodes the robots.txt Hugo template as a mixture of static
+// disallow lines that can't be inferred from data, and data-driven
+// paths found in Netlify's server-side redirects.
 #toRobotsTxt: {
-	#input: null
+	#input: [...#redirect]
+
+	// Robots.txt encodes path *prefixes* (though non-standardised
+	// extensions can handle basic regex, as we use with "/play/*?...").
+	// We only want to encode path prefixes if they represent entire
+	// hierarchies that will be unconditionally redirected elsewhere,
+	// with no chance of a content page being served anywhere in the
+	// hierarchy. These hierarchies are identified through Netlify's
+	// "/*" suffix which is removed here, before templating.
+	let suffix = "/*"
+	let wildcardRedirectsWithoutSuffix = [
+		for e in #input if strings.HasSuffix(e.from, suffix) {
+			from: strings.TrimSuffix(e.from, suffix)
+		},
+	]
 	let tmpl = """
 		User-agent: *
 		Allow: /
 		Disallow: /play/*?*id=
 		Disallow: /search/
+		Disallow: /go/
+		Disallow: /s/
+		Disallow: /e/
+		{{- range .}}
+		Disallow: {{.from}}/
+		{{- end}}
 
 		Sitemap: {{ `{{ absURL "sitemap.xml" }}` }}
 		"""
 
-	template.Execute(tmpl, #input)
+	template.Execute(tmpl, wildcardRedirectsWithoutSuffix)
 }
