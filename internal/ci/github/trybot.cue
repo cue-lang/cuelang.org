@@ -138,7 +138,7 @@ workflows: trybot: _repo.bashWorkflow & {
 				run: "./_scripts/buildDockerImage.bash"
 			},
 
-			_npmInstall,
+			for v in _npmInstall {v},
 
 			// Go test steps
 			_goTest & {
@@ -460,12 +460,21 @@ _porcuepineCueLogin: githubactions.#Step & {
 }
 
 // npm install in hugo to allow serve test to pass
-_npmInstall: githubactions.#Step & {
-	name:                "npm install in hugo dir"
-	run:                 "npm install --loglevel verbose"
+_npmInstall: [...githubactions.#Step & {
 	"working-directory": "hugo"
-	"timeout-minutes":   5 // TODO: solve this more generally, elsewhere
-}
+}] & [
+	{
+		// Minimal step to see if package-lock.json is dirty with respect to
+		// package.json
+		name: "npm install to check package-lock.json clean"
+		run:  "npm install --package-lock-only --ignore-scripts"
+	},
+	_repo.checkGitClean,
+	{
+		name: "npm ci"
+		run:  "npm ci"
+	},
+]
 
 _applyTipPatches: githubactions.#Step & {
 	name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
