@@ -18,6 +18,7 @@ package netlify
 
 import (
 	"text/template"
+	"strings"
 
 	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 )
@@ -39,10 +40,19 @@ import (
 }
 
 #redirect: {
-	from:   string
-	to:     string
-	status: int
-	force:  bool
+	from!:   string
+	to!:     string
+	status!: int
+	robotsTxt?: {
+		// Create a /robots.txt Disallow entry for this redirect's path(s)?
+		disallow!: bool
+		// Disallow which specific path prefix?
+		prefix?: string
+		if disallow {
+			prefix!: _
+		}
+	}
+	force?: bool
 }
 
 config: #config & {
@@ -66,7 +76,27 @@ config: #config & {
 }
 
 redirects: [...#redirect]
-redirects: [...{force: true, status: *302 | ( >=300 & <=308 )}]
+redirects: [...{
+	force:  true
+	status: *302 | ( >=300 & <=308 )
+	from:   _
+	robotsTxt: {
+		let suffix = "/*"
+
+		// If the redirect's "from" field ends with a known Netlify wildcard
+		// form, indicating that it's applicable to a path hierarchy, default to
+		// disallowing that hierarchy in /robots.txt.
+		if strings.HasSuffix(from, suffix) {
+			disallow: *true | _
+			prefix:   *"\(strings.TrimSuffix(from, suffix))/" | _
+		}
+
+		// Else, default to not disallowing the hierarchy.
+		if !strings.HasSuffix(from, suffix) {
+			disallow: *false | _
+		}
+	}
+}]
 redirects: [
 	{
 		from: "/cl/*"
@@ -224,17 +254,27 @@ redirects: [
 	template.Execute(tmpl, #input)
 }
 
-// This encodes the current (static) robots.txt Hugo template.
+// This encodes the robots.txt Hugo template as a mixture of static
+// disallow lines that can't be inferred from data, and data-driven
+// paths found in Netlify's server-side redirects.
 #toRobotsTxt: {
-	#input: *null | _
+	#input: [...#redirect]
+	template.Execute(tmpl, #input)
+
 	let tmpl = """
 		User-agent: *
 		Allow: /
 		Disallow: /play/*?*id=
 		Disallow: /search/
+		Disallow: /go/
+		Disallow: /s/
+		Disallow: /e/
+		{{- range .}}
+		{{- if .robotsTxt.disallow}}
+		Disallow: {{.robotsTxt.prefix}}
+		{{- end}}
+		{{- end}}
 
 		Sitemap: {{ `{{ absURL "sitemap.xml" }}` }}
 		"""
-
-	template.Execute(tmpl, #input)
 }

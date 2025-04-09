@@ -4,5 +4,21 @@ User-agent: *
 Allow: /
 Disallow: /play/*?*id=
 Disallow: /search/
+Disallow: /go/
+Disallow: /s/
+Disallow: /e/
+Disallow: /cl/
+Disallow: /issue/
+Disallow: /issues/
+Disallow: /discussion/
+Disallow: /discussions/
+Disallow: /project/
+Disallow: /projects/
+Disallow: /releases/
+Disallow: /docs/tutorials/tour/intro/
+Disallow: /docs/tutorials/tour/types/
+Disallow: /docs/tutorials/tour/references/
+Disallow: /docs/tutorials/tour/expressions/
+Disallow: /docs/tutorials/tour/packages/
 
 Sitemap: {{ absURL "sitemap.xml" }}
