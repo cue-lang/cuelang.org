@@ -100,7 +100,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.9.0
+          node-version: 22.14.0
       - name: Install Go
         uses: actions/setup-go@v5
         with:
@@ -222,7 +222,7 @@ jobs:
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Install Netlify CLI
-        run: npm install -g netlify-cli@17.0.1
+        run: npm install -g netlify-cli@20.0.0
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))

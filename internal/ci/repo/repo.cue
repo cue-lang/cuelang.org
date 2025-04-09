@@ -29,14 +29,14 @@ goVersion: "1.24.0"
 
 // Use a specific version of NodeJS for deploy purposes. This version
 // is consistent between netlify and GitHub Actions usage.
-nodeVersion: "20.9.0"
+nodeVersion: "22.14.0"
 
 // hugoVersion is the version of hugo used in generating our static site
 hugoVersion: "0.128.2"
 
 // netlifyCLIVersion is the version of the Netlify CLI used to deploy tip and
 // deploy previews of CLs
-netlifyCLIVersion: "17.0.1"
+netlifyCLIVersion: "20.0.0"
 
 netlifySites: {
 	cls: "cue-cls"
