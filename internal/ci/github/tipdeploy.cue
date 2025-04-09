@@ -82,8 +82,14 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 			_applyTipPatches,
 
 			// npm install in hugo to allow serve test to pass which is run as
-			// part of regenPostInfraChange.bash
-			for v in _npmInstall {v},
+			// part of regenPostInfraChange.bash. And we specifically want
+			// npm install here, as opposed to npm ci, because we might have
+			// patched things.
+			{
+				name:                "npm install in hugo"
+				run:                 "npm install"
+				"working-directory": "hugo"
+			},
 
 			_useTipOfCUE,
 
