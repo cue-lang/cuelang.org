@@ -16,6 +16,24 @@
       "message": "If this command were to start failing, as with the `npm install` that it replaces, our debugging would be eased if we had access to the previous, succesful verbose output emitted by:\n   \n```suggestion\n        run: npm --loglevel\u003dsilly --timing\u003dtrue ci\n```",
       "revId": "58a5a03f6dddc81a5c39fe9193564005fc42807f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58a37526_4fee850a",
+        "filename": ".github/workflows/tipdeploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-09T18:54:01Z",
+      "side": 1,
+      "message": "I\u0027m not clear how. It didn\u0027t really help with any of the debugging thus far today. We can address later if this is incorrect.",
+      "parentUuid": "87eccf73_c5d3af42",
+      "revId": "58a5a03f6dddc81a5c39fe9193564005fc42807f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
