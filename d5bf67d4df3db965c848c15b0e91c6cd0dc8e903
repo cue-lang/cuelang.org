@@ -1,6 +1,52 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "46d0e252_2ecf7d4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-10T08:20:30Z",
+      "side": 1,
+      "message": "```suggestion\n\"install\" logic from the trybots, which embeds a clean worktree check that will fail when tip\u0027s patch contains any changes.\n```",
+      "range": {
+        "startLine": 12,
+        "startChar": 40,
+        "endLine": 13,
+        "endChar": 43
+      },
+      "revId": "d5bf67d4df3db965c848c15b0e91c6cd0dc8e903",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98f8c019_8739f40b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-10T08:20:30Z",
+      "side": 1,
+      "message": "I think that someone who patches package.json must also patch the lock file appropriately, which I believe would allow `npm ci` to be used even if the full contents of `_npmInstall` couldn\u0027t be used due to its embedded git-is-clean check.",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 43
+      },
+      "revId": "d5bf67d4df3db965c848c15b0e91c6cd0dc8e903",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "eb1f60e2_108e3f3a",
