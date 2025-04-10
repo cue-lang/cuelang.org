@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "64cafb9a252f5e849125c83a46e76d261976ff7b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18d4a3da_2b0a43b0",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-10T08:44:04Z",
+      "side": 1,
+      "message": "I think you mean for this to be `*null | _`",
+      "revId": "64cafb9a252f5e849125c83a46e76d261976ff7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
