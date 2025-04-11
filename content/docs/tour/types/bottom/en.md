@@ -31,7 +31,7 @@ a: _|_ // a: conflicting values 2 and 1
 b: [50, _|_, // b.1: conflicting values 200 and 100
 ]
 c: [0, 1, 2]
-d: _|_ // d: invalid list index 5 (out of bounds)
+d: _|_ // d: index out of range [5] with length 3
 {{{end}}}
 
 Notice how the `-i` flag changes how `cue eval` behaves.

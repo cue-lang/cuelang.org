@@ -105,11 +105,9 @@ $ cue vet -c schema.cue -d '#Config' config-a.yaml config-b.yaml config-c.yaml
 region: 2 errors in empty disjunction:
 region: conflicting values "APAC" and "UK":
     ./config-b.yaml:3:9
-    ./schema.cue:5:15
     ./schema.cue:9:10
 region: conflicting values "IMEA" and "UK":
     ./config-b.yaml:3:9
-    ./schema.cue:5:15
     ./schema.cue:9:19
 cluster: invalid value "live03333333333333" (does not satisfy strings.MaxRunes(16)):
     ./schema.cue:4:15
@@ -275,10 +273,9 @@ item: painting: """
 $ cue vet -c furniture.cue
 item.painting: invalid value "width: 34\nHEIGHT: 12\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: field not allowed:
     ./furniture.cue:10:17
-    ./furniture.cue:3:14
     ./furniture.cue:25:17
     yaml.Validate:2:1
-item.table: invalid value "width: \"34\"\nheight: 23\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: conflicting values number and "34" (mismatched types number and string):
+item.table: invalid value "width: \"34\"\nheight: 23\ndepth: 0.2" (does not satisfy encoding/yaml.Validate): error in call to encoding/yaml.Validate: conflicting values "34" and number (mismatched types string and number):
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:19:14

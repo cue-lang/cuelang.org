@@ -58,6 +58,9 @@ B: invalid value 42 (does not satisfy matchN): 2 matched, expected 3:
     ./basic.cue:9:4
     ./basic.cue:11:4
     ./basic.cue:12:11
+B: invalid value 42 (out of bound >100):
+    ./basic.cue:12:25
+    ./basic.cue:9:4
 {{{end}}}
 
 ## "One of"
@@ -90,6 +93,9 @@ C: 15
 // C fails to validate.
 C: matchN(1, [math.MultipleOf(3), math.MultipleOf(5)])
 -- out --
+B: conflicting values 42 and string (mismatched types int and string):
+    ./one-of.cue:11:4
+    ./one-of.cue:14:15
 B: invalid value 42 (does not satisfy matchN): 2 matched, expected 1:
     ./one-of.cue:13:4
     ./one-of.cue:11:4
@@ -100,6 +106,9 @@ B: invalid value 42 (does not satisfy matchN): 0 matched, expected 1:
     ./one-of.cue:11:4
     ./one-of.cue:13:4
     ./one-of.cue:14:11
+B: invalid value 42 (out of bound >100):
+    ./one-of.cue:14:23
+    ./one-of.cue:11:4
 C: invalid value 15 (does not satisfy matchN): 2 matched, expected 1:
     ./one-of.cue:18:4
     ./one-of.cue:16:4
@@ -127,10 +136,16 @@ B: 42
 // B fails to validate.
 B: matchN(>0, [string, >100])
 -- out --
+B: conflicting values 42 and string (mismatched types int and string):
+    ./any-of.cue:8:4
+    ./any-of.cue:10:16
 B: invalid value 42 (does not satisfy matchN): 0 matched, expected >0:
     ./any-of.cue:10:4
     ./any-of.cue:8:4
     ./any-of.cue:10:11
+B: invalid value 42 (out of bound >100):
+    ./any-of.cue:10:24
+    ./any-of.cue:8:4
 {{{end}}}
 
 ## "All of"
@@ -169,6 +184,12 @@ B: invalid value 42 (does not satisfy matchN): 3 matched, expected 4:
     ./all-of.cue:11:4
     ./all-of.cue:13:4
     ./all-of.cue:14:11
+B: invalid value 42 (does not satisfy math.MultipleOf(41)):
+    ./all-of.cue:14:31
+    ./all-of.cue:11:4
+    ./all-of.cue:13:4
+    ./all-of.cue:14:4
+    ./all-of.cue:14:47
 {{{end}}}
 
 ## "Not"
@@ -213,12 +234,6 @@ B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
     ./not.cue:16:4
     ./not.cue:17:11
     ./not.cue:18:4
-B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
-    ./not.cue:18:4
-    ./not.cue:14:4
-    ./not.cue:16:4
-    ./not.cue:17:4
-    ./not.cue:18:11
 {{{end}}}
 
 ## More complex uses
@@ -244,10 +259,16 @@ B: matchN(len(#C)-1, #C)
 
 #C: [number, int, >100]
 -- out --
+B: conflicting values 42.0 and int (mismatched types float and int):
+    ./all-but-one.cue:8:4
+    ./all-but-one.cue:11:14
 B: invalid value 42.0 (does not satisfy matchN): 1 matched, expected 2:
     ./all-but-one.cue:9:4
     ./all-but-one.cue:8:4
     ./all-but-one.cue:9:11
+B: invalid value 42.0 (out of bound >100):
+    ./all-but-one.cue:11:19
+    ./all-but-one.cue:8:4
 {{{end}}}
 
 ### Composite data structures
@@ -288,6 +309,12 @@ E: [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
 #F2: [...>10]
 #F3: [...>100]
 -- out --
+B.x: conflicting values 4.2 and int (mismatched types float and int):
+    ./composite.cue:10:5
+    ./composite.cue:14:11
+B.y: conflicting values 4.2 and string (mismatched types float and string):
+    ./composite.cue:11:5
+    ./composite.cue:16:6
 B: invalid value {x:4.2,y:4.2,z:4.2} (does not satisfy matchN): 0 matched, expected >0:
     ./composite.cue:9:4
     ./composite.cue:9:11
@@ -295,6 +322,9 @@ E: invalid value [11,12,13] (does not satisfy matchN): 2 matched, expected 1:
     ./composite.cue:24:19
     ./composite.cue:24:4
     ./composite.cue:24:26
+E.0: invalid value 11 (out of bound >100):
+    ./composite.cue:27:10
+    ./composite.cue:24:5
 {{{end}}}
 
 The sub-optimal error reporting for field `E` is tracked in {{<issue 3389/>}}.

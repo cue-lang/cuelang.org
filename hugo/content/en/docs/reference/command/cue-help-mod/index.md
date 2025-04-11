@@ -25,6 +25,7 @@ Available Commands:
   fix         fix a legacy cue.mod/module.cue file
   get         add and upgrade module dependencies
   init        initialize new module in current directory
+  mirror      mirror module content between registries
   publish     publish the current module to a registry
   rename      rename the current module
   resolve     Show how a module path resolves to a registry

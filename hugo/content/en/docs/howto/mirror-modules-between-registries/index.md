@@ -24,7 +24,7 @@ This guide demonstrates the following
 [pre-release version]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}):
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0-alpha.3
+cue version v0.13.0-alpha.3.0.20250411164907-08c3542c9d96
 ...
 ```
 
