@@ -5,7 +5,7 @@
 {{ else }}{{ with .Site.Params.description -}}{{- . | $.RenderString | plainify -}}
 {{ end }}{{ end }}{{ end -}}">
 {{ hugo.Generator }}
-{{ if and (eq (getenv "HUGO_ENV") "production") (ne .Params.no_index true) (ne .Type "examples") }}
+{{ if and (strings.HasPrefix (absURL "") "https://cuelang.org") (ne .Params.no_index true) (ne .Type "examples") }}
 <meta name="robots" content="index, follow">
 {{ else }}
 <meta name="robots" content="noindex, nofollow">
@@ -18,7 +18,7 @@
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
 {{- template "_internal/opengraph.html" . -}}
 {{- template "_internal/twitter_cards.html" . -}}
-{{ if eq (getenv "HUGO_ENV") "production" }}
+{{ if (strings.HasPrefix (absURL "") "https://cuelang.org") }}
     {{ template "_internal/google_analytics.html" . }}
 {{ end }}
 {{ partialCached "site/css.html" . }}
