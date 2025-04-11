@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21dd5ba6_b18c554a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-11T15:39:07Z",
+      "side": 1,
+      "message": "PTAL.\n\nI\u0027ve pushed this to `ci/test`, such that the contents of https://tip.cuelang.org can be observed (currently; until overwritten by someone else\u0027s cue-lang/cue submission) to contain the correct `noindex, nofollow` element.\n \nThere\u0027s no test that can be run for this change to prove that it won\u0027t make the same change on cuelang.org, wrongly. This is a change where we need tip to differ from cuelang.org, and where cuelang.org being a unique deployment is the entire point of this change.\n\nAfter we land this change we\u0027ll need to quickly check the contents of cuelang.org, and revert immediately if the page contains `noindex, nofollow`.",
+      "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
