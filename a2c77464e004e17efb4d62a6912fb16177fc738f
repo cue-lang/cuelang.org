@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05fbe150_10920819",
+        "filename": "content/docs/concept/how-cue-works-with-json/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-11T15:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c5a4253_972368b2",
+      "range": {
+        "startLine": 185,
+        "startChar": 21,
+        "endLine": 185,
+        "endChar": 27
+      },
+      "revId": "a2c77464e004e17efb4d62a6912fb16177fc738f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8bc219c6_ba92a7da",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-04-11T14:35:10Z",
       "side": 1,
       "message": "Same comment as other document.",
+      "range": {
+        "startLine": 168,
+        "startChar": 21,
+        "endLine": 168,
+        "endChar": 27
+      },
+      "revId": "a2c77464e004e17efb4d62a6912fb16177fc738f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a27547a_626b8e0a",
+        "filename": "content/docs/concept/how-cue-works-with-yaml/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-11T15:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bc219c6_ba92a7da",
       "range": {
         "startLine": 168,
         "startChar": 21,
