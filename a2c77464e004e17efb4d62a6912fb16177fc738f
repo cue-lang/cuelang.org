@@ -16,6 +16,52 @@
       "message": "PTAL",
       "revId": "a2c77464e004e17efb4d62a6912fb16177fc738f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c5a4253_972368b2",
+        "filename": "content/docs/concept/how-cue-works-with-json/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-11T14:35:10Z",
+      "side": 1,
+      "message": "\"stored\" isn\u0027t right to my mind: \"in\" a Yaml document\" is probably sufficient?",
+      "range": {
+        "startLine": 185,
+        "startChar": 21,
+        "endLine": 185,
+        "endChar": 27
+      },
+      "revId": "a2c77464e004e17efb4d62a6912fb16177fc738f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bc219c6_ba92a7da",
+        "filename": "content/docs/concept/how-cue-works-with-yaml/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-11T14:35:10Z",
+      "side": 1,
+      "message": "Same comment as other document.",
+      "range": {
+        "startLine": 168,
+        "startChar": 21,
+        "endLine": 168,
+        "endChar": 27
+      },
+      "revId": "a2c77464e004e17efb4d62a6912fb16177fc738f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
