@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									broken: "bVVHzMBwd+FgOuw+J/N9c7secslA5lFvs52+0Qpzdwg="
-									fixed:  "k4Ym755onsLAb4Ba68L0obDx1euZXXwI/1oQ92jRyns="
+									broken: "sHSH3CiyoNKVOoPAZnXXF5cpLCiTNBmI70j20CbZIZ0="
+									fixed:  "XQzD8CVAgFKfzGqnHdN/riQrFEZDfaPzc0waJR7S7hk="
 								}
 								multi_step: {
-									hash:       "QU4FGT06OEN20GJ7QE7BM5N4S9G7U3T6FAVB6R21AEPIJCEOTJIG===="
-									scriptHash: "4MMBJL47AND5HU2SNB24T6TJVJ0G9C3M0FFN9N925V50EJ157TU0===="
+									hash:       "9ONLCT1AT5IPGM64FC8KT5F45R1I6EE24OM7SACJ70PMOKTK8A2G===="
+									scriptHash: "V9G3PVCTBJSI9GV5MSJL2DFB2RSS0SR6LBAE2BO8LMN0EM81I6OG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -30,7 +30,7 @@ package site
 										output:   ""
 									}, {
 										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
-										cmd:      "export PATH=/cues/v0.13.0-alpha.3:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.3.0.20250411164907-08c3542c9d96:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {

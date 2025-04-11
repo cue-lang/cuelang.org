@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "D39948CR7GFIN7G7LOLOJM7VNN5EB99N6NS3CCDCGO3R8VQAKRM0===="
-									scriptHash: "KDHPE5B72U4LNJH7KPMJH9P81PLS8DQCH0M5D5PA9BLAC08KV980===="
+									hash:       "2SKV5LJU4R2LIKE39Q3KOI592EK3HECOH0T06VGPTRLC5G4UHCS0===="
+									scriptHash: "HPN4SVRBF9MBPFRKT607DMFNHHU2ELDIHASBD20QQ0G3S0I9K9MG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.3.0.20250411164907-08c3542c9d96:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -42,7 +42,7 @@ package site
 
 												Available tasks can be found in the package documentation at
 
-												\thttps://pkg.go.dev/cuelang.org/go/pkg/tool?tab=subdirectories
+												\thttps://cuelang.org/go/pkg/tool#section-directories
 
 												Examples:
 

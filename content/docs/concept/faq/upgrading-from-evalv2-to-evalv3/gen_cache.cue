@@ -8,15 +8,15 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"main.go":                 "fwM02P48sNxCoMtXSN4meiSDwNISribruhTnHlPAGyY="
-									"HIDDEN: required output": "02PmN3bXJF9l78grBx7yFyPeoRWRC5S18UmfIK0x7Kc="
+									"main.go":                 "ch0CsZRn4T7ADys+WBmRZHmy5WqgnQjQWacUqWkuVmQ="
+									"HIDDEN: required output": "1fWKU6hoUoe7qjsFyf9bWUqUj0dJAQIQCDPUKbcozS0="
 								}
 								multi_step: {
-									hash:       "UIG400M2P5VGQQECB5D92R4V8M6DIN2MB9I4Q955B01V9T1C4HSG===="
-									scriptHash: "8EUC72B2B1KUNASSG2IHA1TKNBNROFKDC59S8SUN40M8LPG033HG===="
+									hash:       "VJ57IDQ10F5B2JAEB9F2II1VVNOLIGQNMOUFBSHOFOQMD89BQLP0===="
+									scriptHash: "J6C5KIL3VDAVUN44SLA0OP88R839EC04UOHK7BFO41U5SBHIOGB0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.0-alpha.3:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.3.0.20250411164907-08c3542c9d96:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -60,7 +60,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.13.0-alpha.3
+												cue version v0.13.0-alpha.3.0.20250411164907-08c3542c9d96
 												...
 
 												"""

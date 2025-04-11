@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "SQF2IN9M8ICNS5H3EA1QP6101MDIVB6982VFK5ELTHMNCCF84H10===="
-									scriptHash: "8F26VRR3D2BGHJSK1SAHEIO2AK5SV57LOMH0ITV3D6RVNJBO0MGG===="
+									hash:       "SBT4M5JMH600E45CS7SOGUVL1384USFTH2GR439KBVCAALEA15FG===="
+									scriptHash: "VNNGPCJ5824FGL03MUG50604S4ISPADLPKJT341E6FREDFDCL080===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.3.0.20250411164907-08c3542c9d96:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,7 +20,7 @@ package site
 										cmd:      "cue help filetypes"
 										exitCode: 0
 										output: """
-												The cue tools supports the following file types:
+												The cue tool supports the following file types:
 
 												    Tag         Extensions      Description
 												    cue         .cue            CUE source files.
@@ -45,7 +45,7 @@ package site
 												default, but may be selected to operate in data mode.
 
 												The cue tool will infer a file's type from its extension by
-												default. The user my override this behavior by using qualifiers.
+												default. The user may override this behavior by using qualifiers.
 												A qualifier takes the form
 
 												    <tag>{'+'<tag>}':'

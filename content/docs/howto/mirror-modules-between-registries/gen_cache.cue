@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "NB2JCFVRR35ATO41CMER52I9OO1TOMGPJCKRE1P8GSJDA25BMQ80===="
-								scriptHash: "FB1UIQ8SSEAL2CK6E5GUCPFS6GF1F3846AB1LMQPVVLJ88FRD4E0===="
+								hash:       "ETRLDDFNE6V2FDFOIR961TB1S5U033561R4B9H541VPBOU0A4QFG===="
+								scriptHash: "V9DFQIALP0UN1I5NJ4799OFTQMR1FGTVMSEUI7JD6SGD4EDMLNQ0===="
 								steps: [{
 									doc:      "# Access to Central Registry."
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -35,7 +35,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "# Access to \"cue mod mirror\" via tip of cmd/cue."
-									cmd:      "export PATH=/cues/v0.13.0-alpha.3:$PATH"
+									cmd:      "export PATH=/cues/v0.13.0-alpha.3.0.20250411164907-08c3542c9d96:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -43,7 +43,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.13.0-alpha.3
+											cue version v0.13.0-alpha.3.0.20250411164907-08c3542c9d96
 											...
 
 											"""
