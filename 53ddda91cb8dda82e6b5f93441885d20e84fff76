@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "268e6464_e6c0b250",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-11T13:48:47Z",
+      "side": 1,
+      "message": "PTAL.\n\nTo review, observe the absence of a rel\u003d\"canonical\" link in the source of https://cuelang.org/docs/, versus its presence on the linked CL preview page\u0027s source. Also compare the implementation against the linked Google documentation.",
+      "revId": "53ddda91cb8dda82e6b5f93441885d20e84fff76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
