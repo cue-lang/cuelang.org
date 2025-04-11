@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "6c021c6009e02d518d5d1916e329328a8f7ac047",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e71f1375_b0cedbc2",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 13
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-11T12:40:14Z",
+      "side": 1,
+      "message": "This logic feels like it belongs in the config above. The default based on whether there is a splat should be just that - so it\u0027s overridable.",
+      "revId": "6c021c6009e02d518d5d1916e329328a8f7ac047",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
