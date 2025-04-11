@@ -8,7 +8,6 @@ publish = '_public'
 
 [build.environment]
 GO_VERSION = '1.24.0'
-HUGO_ENV = 'production'
 HUGO_VERSION = '0.128.2'
 NODE_VERSION = '22.14.0'
 
@@ -21,6 +20,9 @@ command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL $DEPLOY_PRIM
 
 [context.production]
 command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL https://cuelang.org'
+
+[context.production.environment]
+HUGO_ENV = 'production'
 
 [context.tip]
 command = 'bash _scripts/netlify.bash _scripts/build.bash --buildDrafts'
