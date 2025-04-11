@@ -71,6 +71,23 @@ This command uses the `#Workflow` definition from the `githubactions` package
 to check the `workflow.yml` file. Because `cue vet` doesn't display any errors,
 you know that the curated module has validated your configuration file.
 
+## Validate more workflow files
+
+GitHub repositories often contain multiple workflow files whose jobs get
+triggered by different events or perform different tasks. To check each
+workflow you could repeat the `cue vet` command for one or more files, like
+this:
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvZ2l0aHViYWN0aW9uc0BsYXRlc3QgZGVwbG95LnltbApjdWUgdmV0IC1jIC1kICcjV29ya2Zsb3cnIGN1ZS5kZXYveC9naXRodWJhY3Rpb25zQGxhdGVzdCB0ZXN0LnltbCBtaWdyYXRlLnltbA==" }
+$ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest deploy.yml
+$ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest test.yml migrate.yml
+```
+
+However, an easy alternative is to set up a simple CUE file that *embeds* your
+workflow files and validates them all with a single command.
+Read more about this option in
+[Validating multiple GitHub Actions workflow files]({{<relref"validating-several-github-actions-files">}}) ...
+
 ## Next steps
 
 Validating your existing configuration files with CUE can help make development
