@@ -273,6 +273,8 @@ template: ci.#writefs & {
 				images: ["img/social.png"]
 				// Base URL for on-page links for reporting issues.
 				github_repo: "https://github.com/cue-lang/cuelang.org"
+				// Base URL for 'rel="canonical"' links
+				canonicalUrlPrefix: "https://cuelang.org"
 				// Google Custom Search Engine ID. GCS is disabled if not present.
 				gcs_engine_id: "004591905419617723008:8rmik2a7xb3"
 				// Which logo to use in the main header.
