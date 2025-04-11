@@ -33,6 +33,23 @@
       "message": "I worked out how to demo this elsewhere, in https://cuelang.org/cl/1212852.",
       "revId": "8be4d9eb4f0c8bef87c0387669d508ffdecb0a05",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "894dace4_96efc4fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-11T14:43:10Z",
+      "side": 1,
+      "message": "Let\u0027s put all of this on hold please until we decide/switch on the docs solution for cue.dev.",
+      "revId": "8be4d9eb4f0c8bef87c0387669d508ffdecb0a05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
