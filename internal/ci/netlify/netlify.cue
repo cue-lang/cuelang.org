@@ -32,7 +32,8 @@ import (
 	}
 
 	#context: {
-		command: string
+		command?: string
+		environment?: [string]: string
 	}
 
 	context: [string]: #context
