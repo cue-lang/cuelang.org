@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "754532b5_8ad3518f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-04-13T18:57:53Z",
+      "side": 1,
+      "message": "FYI this command is hidden as it\u0027s quasi experimental:\n\n```\n\t\t// This command is hidden, for now at least,\n\t\t// because it\u0027s not clear whether it should be\n\t\t// officially supported.\n\t\tHidden: true,\n```\n\nstill agreed with this patch though; we have generated pages for other experimental or hidden commands already.",
+      "revId": "57339e47c9a665718117356f6656e984ca8a473d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
