@@ -95,21 +95,19 @@ cue: {
 }
 // Ensure that all tagged pages exist as actual pages.
 tags: "cue": [_]: [...or([for command, _ in cue {command}])]
-tags: cue: {
-	modules: [
-		"login",
-		"mod",
-		"mod edit",
-		"mod fix",
-		"mod get",
-		"mod init",
-		"mod publish",
-		"mod resolve",
-		"mod tidy",
-		"modules",
-		"registryconfig",
-	]
-}
+tags: cue: modules: [
+	"login",
+	"mod",
+	"mod edit",
+	"mod fix",
+	"mod get",
+	"mod init",
+	"mod publish",
+	"mod resolve",
+	"mod tidy",
+	"modules",
+	"registryconfig",
+]
 
 // Related "docs/reference/command/" pages, manually extracted from help text
 // contents.
@@ -174,6 +172,7 @@ cue: close({
 	"mod mirror":       _
 	"mod publish":      _
 	"mod rename":       _
+	"mod registry":     _
 	"mod resolve":      _
 	"mod tidy":         _
 	modules:            _
