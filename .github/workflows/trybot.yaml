@@ -166,8 +166,9 @@ jobs:
           github.repository == 'cue-lang/cuelang.org' && (((github.ref == 'refs/heads/master') && (! (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"')))) || github.ref == 'refs/heads/ci/test')
         run: go clean -testcache
+      - run: go env
       - name: Early git and code sanity checks
-        run: go run cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650
+        run: go run -x cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650
       - name: Perform early content checks
         run: _scripts/contentLint.bash
       - name: Populate CUE dependency cache
