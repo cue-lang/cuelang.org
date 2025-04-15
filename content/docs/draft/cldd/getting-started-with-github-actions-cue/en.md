@@ -151,3 +151,11 @@ the workflow.
 
 Whenever you update your CUE workflow, re-run the `cue export` command shown
 above, and then use `git` to record any changes to these files and directories.
+
+## Next steps
+
+CUE's powerful and unique language features are often used to reduce
+boilerplate -- making sure that important differences stand out when you're
+defining multiple configuration files.
+Discover how CUE makes configurations clearer, more succinct, and easier to understand in
+[DRYing up GitHub Actions workflows]({{<relref"drying-up-github-actions-workflows">}}).
