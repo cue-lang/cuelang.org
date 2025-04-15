@@ -138,3 +138,8 @@ the workflow.
 
 Whenever you update your CUE workflow, re-run the `cue export` command shown
 above, and then use `git` to record any changes to these files and directories.
+
+## Next steps
+
+{{< todo "TODO: introduce DRYing up guide" >}}
+[DRYing up GitHub Actions workflows]({{<relref"drying-up-github-actions-workflows">}})
