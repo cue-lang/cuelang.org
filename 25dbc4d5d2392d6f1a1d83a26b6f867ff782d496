@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "042a1974_5a5e1195",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-04-15T09:12:22Z",
+      "side": 1,
+      "message": "LGTM - this is perfectly fine as a first cut. We can iterate/improve as we add more features to gengotypes, or as users ask questions about how to use it.",
+      "revId": "25dbc4d5d2392d6f1a1d83a26b6f867ff782d496",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
