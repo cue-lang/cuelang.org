@@ -98,8 +98,6 @@ title: "The CUE Language Specification"
 weight: 10
 authors:
 - mpvl
-aliases:
-- /docs/references/spec
 ---
 
 {{< info >}}
