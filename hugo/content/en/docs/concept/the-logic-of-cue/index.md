@@ -4,8 +4,6 @@ description: "Learn about CUE's theoretical basis and what makes it different."
 weight: 20
 toc_hide: false
 math: true
-aliases:
-- /docs/concepts/logic
 ---
 
 This page explains the core concept on which pretty much everything that is CUE
