@@ -9,31 +9,6 @@
 # Default Netlify subdomain.
 https://cue.netlify.com/* https://cuelang.org/:splat 301!
 
-# Aliases configured in the front matter of pages in content/, templated at
-# build-time by Hugo.
-
-/community/contribution-guidelines  /docs/reference/contribution-guidelines/
-/docs/introduction/welcome          /docs/introduction/
-/docs/about                         /docs/introduction/
-/docs/references/spec               /docs/reference/spec/
-/docs/install                       /docs/introduction/installation/
-/download                           /docs/introduction/installation/
-/install                            /docs/introduction/installation/
-/dl                                 /docs/introduction/installation/
-/docs/concepts/logic                /docs/concept/the-logic-of-cue/
-/docs/tour/expressions/interpolfield /docs/tour/expressions/dynamic-fields/
-/docs/tutorial/find-a-tutorial      /docs/tutorial/
-/docs/howto/find-a-guide            /docs/howto/
-/docs/concept/find-a-guide          /docs/concept/
-/docs/tour/types/optional           /docs/tour/types/structs/
-/docs/tour/types/defs               /docs/tour/types/definitions/
-/docs/tour/basics/duplicate-fields  /docs/tour/basics/unification/
-/community/conduct                  /docs/reference/code-of-conduct/
-/docs/usecases/configuration        /docs/concept/configuration-use-case/
-/docs/concept/json                  /docs/concept/how-cue-works-with-json/
-/docs/concept/yaml                  /docs/concept/how-cue-works-with-yaml/
-/docs/howto/ensure-min-max-list     /docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/
-
 # Redirects configured in internal/ci/netlify.redirects
 /cl/*                               https://review.gerrithub.io/c/:splat 302!
 /issue/*                            https://github.com/cue-lang/cue/issues/:splat 302!
@@ -50,10 +25,13 @@ https://cue.netlify.com/* https://cuelang.org/:splat 301!
 /docs/tour/references/              /docs/tour/references/scopes/ 302!
 /docs/tour/expressions/             /docs/tour/expressions/operators/ 302!
 /docs/tour/packages/                /docs/tour/packages/packages/ 302!
+/docs/usecases/configuration/       /docs/concept/configuration-use-case/ 302!
 /docs/usecases*                     /docs/concept/popular-guides/#common-use-cases 301!
 /docs/integrations*                 /docs/integration/ 302!
 /docs/concepts/intro/               /docs/concept/the-logic-of-cue/ 302!
+/docs/concepts/logic/               /docs/concept/the-logic-of-cue/ 302!
 /docs/concepts*                     /docs/concept/ 301!
+/docs/references/spec/              /docs/reference/spec/ 302!
 /docs/references*                   /docs/reference/ 301!
 /docs/tutorials/tour/intro/*        /docs/tour/basics/:splat 301!
 /docs/tutorials/tour/intro          /docs/tour/basics/ 301!

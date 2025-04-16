@@ -2,8 +2,6 @@
 title: "Configuration use case"
 description: "Managing text-based files to define a desired state of a system"
 toc_hide: true
-aliases:
-- /docs/usecases/configuration
 ---
 
 Arguably, validation should be the foremost task of any configuration language.
