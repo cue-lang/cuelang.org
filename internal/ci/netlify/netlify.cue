@@ -60,7 +60,6 @@ config: #config & {
 		command:   "bash _scripts/netlify.bash _scripts/build.bash"
 		ignore:    "bash _scripts/netlify.bash _scripts/ignoreBuild.bash"
 		environment: {
-			HUGO_ENV:     "production"
 			GO_VERSION:   repo.goVersion
 			NODE_VERSION: repo.nodeVersion
 			HUGO_VERSION: repo.hugoVersion
@@ -69,7 +68,7 @@ config: #config & {
 
 	context: "deploy-preview": command:      "\(build.command) --baseURL $DEPLOY_PRIME_URL"
 	context: "\(repo.alphaBranch)": command: "\(build.command) --baseURL https://alpha.cuelang.org"
-	context: "production": command:          "\(build.command) --baseURL https://cuelang.org"
+	context: production: command:            "\(build.command) --baseURL https://cuelang.org"
 	context: tip: command:                   "\(build.command) --buildDrafts"
 }
 
