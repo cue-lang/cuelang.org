@@ -8,7 +8,9 @@ node_modules
 *.code-workspace
 
 # Project
-/_public/
+/_public/*
+!/_public/_redirects
+!/_public/robots.txt
 /playground/_dist/
 /playground/.webpack_cache/
 /playground/main.wasm
