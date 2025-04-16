@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "59317ca8_5ba807f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T18:33:00Z",
+      "side": 1,
+      "message": "Why is it unclear? Surely we should be totally clear on the only case we care about, namely cuelang.org. Everything else should be false but we don\u0027t care how it\u0027s false.",
+      "range": {
+        "startLine": 17,
+        "startChar": 13,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "8599bd9ad694800660f2c9c4be38e824a214e733",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "1760fd53_cfda260d",
