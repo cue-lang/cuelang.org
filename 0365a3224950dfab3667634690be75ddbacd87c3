@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6371e53e_1996771b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T18:35:37Z",
+      "side": 1,
+      "message": "If you want to go to this effort, rather than simply relying on what is to my mind should be stable behaviour, then I would at least reference the docs that explain why this change should be unnecssary:\n\nhttps://gohugo.io/functions/hugo/environment/",
+      "revId": "0365a3224950dfab3667634690be75ddbacd87c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "81deeb38_3fbaabf3",
