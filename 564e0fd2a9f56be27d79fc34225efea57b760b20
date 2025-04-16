@@ -33,6 +33,24 @@
       "message": "Has the diff been analysed vs the existing prod site?",
       "revId": "564e0fd2a9f56be27d79fc34225efea57b760b20",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4590386e_4f258231",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T11:31:22Z",
+      "side": 1,
+      "message": "Yes. Here\u0027s the diff versus the parent commit:\n\n```\n$ diff production.xml cl.xml \n4,5d3\n\u003c                 \u003cloc\u003ehttp://localhost/docs/reference/contribution-guidelines/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-05-21T13:33:51+01:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n10,11d7\n\u003c                 \u003cloc\u003ehttp://localhost/docs/integration/json/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-04-25T16:00:33+01:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n46,47d41\n\u003c                 \u003cloc\u003ehttp://localhost/docs/integration/yaml/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-04-25T16:00:33+01:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n78,79d71\n\u003c                 \u003cloc\u003ehttp://localhost/docs/integration/openapi/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-05-10T17:11:51+01:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n88,89d79\n\u003c                 \u003cloc\u003ehttp://localhost/docs/integration/protobuf/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-04-25T16:00:33+01:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n230,237d219\n\u003c                 \u003cloc\u003ehttp://localhost/docs/tour/references/next/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-03-10T13:09:13+00:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n\u003c                 \u003cloc\u003ehttp://localhost/docs/tour/expressions/next/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-03-10T13:09:13+00:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n\u003c                 \u003cloc\u003ehttp://localhost/docs/tour/types/next/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-03-10T13:09:13+00:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n\u003c                 \u003cloc\u003ehttp://localhost/docs/tour/basics/next/\u003c/loc\u003e\n\u003c                     \u003clastmod\u003e2024-03-10T13:09:13+00:00\u003c/lastmod\u003e\u003c/url\u003e\u003curl\u003e\n```\n\nAll changes are as expected - they\u0027re all pages which emit a client-side redirection page.\n\nThe contribution-guidelines page\u0027s presence in the diff correctly reflects the fact that it redirects to the canonical guidelines on GitHub.com, where the contents will be indexed.",
+      "parentUuid": "8edd502b_3b69d96d",
+      "revId": "564e0fd2a9f56be27d79fc34225efea57b760b20",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
