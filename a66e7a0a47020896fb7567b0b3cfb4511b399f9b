@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "a66e7a0a47020896fb7567b0b3cfb4511b399f9b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e42946c8_cbe79e6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:05:41Z",
+      "side": 1,
+      "message": "Confirming we are putting this on hold for now. I will have a go at a specific guide, along the lines of what I discussed on the community call yesterday.",
+      "revId": "a66e7a0a47020896fb7567b0b3cfb4511b399f9b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
