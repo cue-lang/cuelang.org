@@ -207,14 +207,6 @@ redirects: [
 		# Default Netlify subdomain.
 		https://cue.netlify.com/* https://cuelang.org/:splat 301!
 
-		# Aliases configured in the front matter of pages in content/, templated at
-		# build-time by Hugo.
-		{{ `{{ range $p := .Site.Pages -}}` }}
-		{{ `{{ range .Aliases }}` }}
-		{{ `{{  . | printf "%-35s" }} {{ $p.RelPermalink -}}` }}
-		{{ `{{ end -}}` }}
-		{{ `{{- end }}` }}
-
 		# Redirects configured in internal/ci/netlify.redirects
 		{{- range .}}
 		{{.from | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
