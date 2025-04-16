@@ -87,6 +87,24 @@
       "parentUuid": "3cc49fc1_3a3b5a5a",
       "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b186c751_a5400ef1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T18:00:16Z",
+      "side": 1,
+      "message": "Addressed both here (value checking) and in a follow up (value setting).",
+      "parentUuid": "7486663e_16125b21",
+      "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
