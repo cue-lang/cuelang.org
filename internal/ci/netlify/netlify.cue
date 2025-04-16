@@ -233,7 +233,7 @@ redirects: [
 		Disallow: /play/*?*id=
 		Disallow: /search/
 
-		Sitemap: {{ `{{ absURL "sitemap.xml" }}` }}
+		Sitemap: https://cuelang.org/sitemap.xml
 		"""
 
 	template.Execute(tmpl, #input)
