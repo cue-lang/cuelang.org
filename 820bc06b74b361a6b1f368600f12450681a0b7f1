@@ -33,6 +33,24 @@
       "message": "Why are we not doing this in robots.txt?",
       "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e3aa3b2_0716a109",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:33:51Z",
+      "side": 1,
+      "message": "This was not meant to be marked resolved.",
+      "parentUuid": "a25c269d_d7dac7ec",
+      "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
