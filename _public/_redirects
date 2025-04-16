@@ -1,0 +1,49 @@
+# Code generated internal/ci/ci_tool.cue; DO NOT EDIT.
+
+# Golang vanity imports for cuelang.org.
+# NB This MUST appear first, or "go get" commands will fail!
+/go/* go-get=1 /golang/go.html                          200!
+# Humans who open Go import paths in a browser.
+/go/*          https://pkg.go.dev/cuelang.org/go/:splat 302!
+
+# Default Netlify subdomain.
+https://cue.netlify.com/* https://cuelang.org/:splat 301!
+
+# Aliases configured in the front matter of pages in content/, templated at
+# build-time by Hugo.
+
+
+# Redirects configured in internal/ci/netlify.redirects
+/cl/*                               https://review.gerrithub.io/c/:splat 302!
+/issue/*                            https://github.com/cue-lang/cue/issues/:splat 302!
+/issues/*                           https://github.com/cue-lang/cue/issues/:splat 302!
+/discussion/*                       https://github.com/cue-lang/cue/discussions/:splat 302!
+/discussions/*                      https://github.com/cue-lang/cue/discussions/:splat 302!
+/projects/                          https://github.com/orgs/cue-lang/projects?query=is%3Aopen+sort%3Acreated-desc+is%3Apublic 302!
+/project/*                          https://github.com/orgs/cue-lang/projects/:splat 302!
+/projects/*                         https://github.com/orgs/cue-lang/projects/:splat 302!
+/releases/*                         https://github.com/cue-lang/cue/releases/:splat 302!
+/s/community-calendar               https://calendar.google.com/calendar/u/0?cid=Y19lNzkxMWQ5OWQ4ZGIyMmU2ZTVjMzhkMTVkNjY2ZTVlNjdiNWE5ODNkZWU4N2JmNTU2NDY3NzI1OGIxYjJhMTFhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20 302!
+/docs/tour/basics/                  /docs/tour/basics/json-superset/ 302!
+/docs/tour/types/                   /docs/tour/types/types/ 302!
+/docs/tour/references/              /docs/tour/references/scopes/ 302!
+/docs/tour/expressions/             /docs/tour/expressions/operators/ 302!
+/docs/tour/packages/                /docs/tour/packages/packages/ 302!
+/docs/usecases*                     /docs/concept/popular-guides/#common-use-cases 301!
+/docs/integrations*                 /docs/integration/ 302!
+/docs/concepts/intro/               /docs/concept/the-logic-of-cue/ 302!
+/docs/concepts*                     /docs/concept/ 301!
+/docs/references*                   /docs/reference/ 301!
+/docs/tutorials/tour/intro/*        /docs/tour/basics/:splat 301!
+/docs/tutorials/tour/intro          /docs/tour/basics/ 301!
+/docs/tutorials/tour/types/*        /docs/tour/types/:splat 301!
+/docs/tutorials/tour/types          /docs/tour/types/ 301!
+/docs/tutorials/tour/references/*   /docs/tour/references/:splat 301!
+/docs/tutorials/tour/references     /docs/tour/references/ 301!
+/docs/tutorials/tour/expressions/*  /docs/tour/expressions/:splat 301!
+/docs/tutorials/tour/expressions    /docs/tour/expressions/ 301!
+/docs/tutorials/tour/packages/*     /docs/tour/packages/:splat 301!
+/docs/tutorials/tour/packages       /docs/tour/packages/ 301!
+/s/slack                            https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE 302!
+/s/discord                          https://discord.gg/CBUzN6CrRa 302!
+/e/v0.11-list-arithmetic            /docs/concept/faq/removing-list-arithmetic-operators-v0.11/ 302!
