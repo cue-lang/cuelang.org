@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2aca2138_e09aef8c",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:20:52Z",
+      "side": 1,
+      "message": "I would hoist the `strings.HasSuffix(from, suffix)` to a let. It\u0027s repeated twice.",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b20b6f8b_ad708fd4",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:20:52Z",
+      "side": 1,
+      "message": "In the `else` case I would suggest defaulting the `prefix` to be the `from` field. That way, it\u0027s a simple one-liner to opt-in to a disallow with `disallow: true`. See below",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec505a61_6dd6a50d",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:20:52Z",
+      "side": 1,
+      "message": "We should make the following change in a preceding CL. But these manual go redirects are unnecessary. See my offline comment about this.",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aef6512_346573ff",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:20:52Z",
+      "side": 1,
+      "message": "Do we need this?",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0d4fad5_dbf42392",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:20:52Z",
+      "side": 1,
+      "message": "Isn\u0027t this the default?",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd334740_738e8731",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:20:52Z",
+      "side": 1,
+      "message": "Per my comment above, these manual entries are no longer necessary if we template all redirects.",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1eab09ab_8566d0e4",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T07:20:52Z",
+      "side": 1,
+      "message": "These are also not required. With the change proposed above to default `prefix: from` then we can disallow these with a simple `robotsTxt: disallow: true`.",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
