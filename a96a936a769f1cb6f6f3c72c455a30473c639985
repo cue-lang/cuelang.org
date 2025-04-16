@@ -16,6 +16,40 @@
       "message": "PTAL.",
       "revId": "a96a936a769f1cb6f6f3c72c455a30473c639985",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4201b37_07e471f6",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 26
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T18:28:39Z",
+      "side": 1,
+      "message": "This is surely required? I would keep it simple for now, because this part of the schema is not totally obvious to me. The defaulting logic below ensures the field will always be set in practice.",
+      "revId": "a96a936a769f1cb6f6f3c72c455a30473c639985",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64179100_46726e9d",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 26
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T18:28:39Z",
+      "side": 1,
+      "message": "If you feel it appropriate to go the effort of extracting the policy above, please don\u0027t spell it out twice. Either use `_`, or extract to a `let`.\n\nFWIW, I think extracting to a \"policy\" is overkill, and a clearly worded comment will suffice.\n\nThere is any number of things that will go wrong if we get these redirects wrong.",
+      "revId": "a96a936a769f1cb6f6f3c72c455a30473c639985",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
