@@ -51,6 +51,24 @@
       "parentUuid": "a25c269d_d7dac7ec",
       "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cc49fc1_3a3b5a5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T11:23:44Z",
+      "side": 1,
+      "message": "`robots.txt` and the `\u003cmeta name\u003drobots\u003e` element serve different purposes:\n\n- `robots.txt` tells search engine crawlers what parts of the site they’re allowed to access, but doesn\u0027t prevent indexing if the URL is linked to, from elsewhere.\n- The `meta` element, which this CL affects, controls indexing and link-following behavior on a per-page basis after it’s been fetched - potentially after being linked from elsewhere (e.g. GerritHub trybot replies, GitHub issues, etc)\n\nWe should use both methods to disallow crawling and indexing of non-production sites - this CL addresses just the one, in isolation, as it\u0027s easy to do so via the `HUGO_ENV` envvar. Varying the `robots.txt` contents on a per-site basis is unresolved.",
+      "parentUuid": "2e3aa3b2_0716a109",
+      "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
