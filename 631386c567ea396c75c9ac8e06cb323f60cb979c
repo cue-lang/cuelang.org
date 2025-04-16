@@ -106,6 +106,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55c00f5c_a27876be",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T16:42:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9a3b144_5c00b55c",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9aef6512_346573ff",
@@ -176,6 +194,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1d12d92_fb601828",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T16:42:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fdaedf20_63d361f7",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd334740_738e8731",
@@ -242,6 +278,24 @@
       "side": 1,
       "message": "That doesn\u0027t seem quite right with /s/ and /e/. Those hierarchies don\u0027t contain a single redirect - they\u0027re made up from different entries (/s/slack, /s/discord, /e/v0.11-list-arithmetic).\n\nWe could choose a single entry from each prefix\u0027s entries and tag it as the sole entry to be included in robots.txt, with a custom `prefix`; but that feels 5% odd versus their current status as hardcoded exceptions.\n\nThoughts?",
       "parentUuid": "1eab09ab_8566d0e4",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05a8c878_2cee9034",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T16:42:30Z",
+      "side": 1,
+      "message": "Resolved as discussed offline.",
+      "parentUuid": "449d69cb_78d65a1d",
       "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
