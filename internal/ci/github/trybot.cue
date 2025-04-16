@@ -127,6 +127,8 @@ workflows: trybot: _repo.bashWorkflow & {
 				run:  "_scripts/runPreprocessor.bash execute --check"
 			},
 
+			for v in _npmInstall {v},
+
 			// Go generate steps
 			_goGenerate & {
 				name: "Regenerate"
@@ -145,8 +147,6 @@ workflows: trybot: _repo.bashWorkflow & {
 			{
 				run: "./_scripts/buildDockerImage.bash"
 			},
-
-			for v in _npmInstall {v},
 
 			// Go test steps
 			_goTest & {
