@@ -9,7 +9,6 @@ package aliases
   { from: "/download", to: "/docs/introduction/installation/" },
   { from: "/install", to: "/docs/introduction/installation/" },
   { from: "/dl", to: "/docs/introduction/installation/" },
-  { from: "/docs/concepts/logic", to: "/docs/concept/the-logic-of-cue/" },
   { from: "/docs/tour/expressions/interpolfield", to: "/docs/tour/expressions/dynamic-fields/" },
   { from: "/docs/tutorial/find-a-tutorial", to: "/docs/tutorial/" },
   { from: "/docs/howto/find-a-guide", to: "/docs/howto/" },

@@ -131,6 +131,9 @@ redirects: [
 		from: "/docs/concepts/intro/"
 		to:   "/docs/concept/the-logic-of-cue/"
 	}, {
+		from: "/docs/concepts/logic/"
+		to:   "/docs/concept/the-logic-of-cue/"
+	}, {
 		from:   "/docs/concepts*"
 		to:     "/docs/concept/"
 		status: 301
@@ -206,14 +209,6 @@ redirects: [
 
 		# Default Netlify subdomain.
 		https://cue.netlify.com/* https://cuelang.org/:splat 301!
-
-		# Aliases configured in the front matter of pages in content/, templated at
-		# build-time by Hugo.
-		{{ `{{ range $p := .Site.Pages -}}` }}
-		{{ `{{ range .Aliases }}` }}
-		{{ `{{  . | printf "%-35s" }} {{ $p.RelPermalink -}}` }}
-		{{ `{{ end -}}` }}
-		{{ `{{- end }}` }}
 
 		# Redirects configured in internal/ci/netlify.redirects
 		{{- range .}}

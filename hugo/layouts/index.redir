@@ -9,14 +9,6 @@
 # Default Netlify subdomain.
 https://cue.netlify.com/* https://cuelang.org/:splat 301!
 
-# Aliases configured in the front matter of pages in content/, templated at
-# build-time by Hugo.
-{{ range $p := .Site.Pages -}}
-{{ range .Aliases }}
-{{  . | printf "%-35s" }} {{ $p.RelPermalink -}}
-{{ end -}}
-{{- end }}
-
 # Redirects configured in internal/ci/netlify.redirects
 /cl/*                               https://review.gerrithub.io/c/:splat 302!
 /issue/*                            https://github.com/cue-lang/cue/issues/:splat 302!
@@ -36,6 +28,7 @@ https://cue.netlify.com/* https://cuelang.org/:splat 301!
 /docs/usecases*                     /docs/concept/popular-guides/#common-use-cases 301!
 /docs/integrations*                 /docs/integration/ 302!
 /docs/concepts/intro/               /docs/concept/the-logic-of-cue/ 302!
+/docs/concepts/logic/               /docs/concept/the-logic-of-cue/ 302!
 /docs/concepts*                     /docs/concept/ 301!
 /docs/references*                   /docs/reference/ 301!
 /docs/tutorials/tour/intro/*        /docs/tour/basics/:splat 301!
