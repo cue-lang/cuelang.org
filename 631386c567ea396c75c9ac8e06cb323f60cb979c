@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5eed23b5_eeb6ddd0",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T15:43:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2aca2138_e09aef8c",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b20b6f8b_ad708fd4",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-04-16T07:20:52Z",
       "side": 1,
       "message": "In the `else` case I would suggest defaulting the `prefix` to be the `from` field. That way, it\u0027s a simple one-liner to opt-in to a disallow with `disallow: true`. See below",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d613d24_46ad9e03",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T15:43:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b20b6f8b_ad708fd4",
       "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c9a3b144_5c00b55c",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T15:43:30Z",
+      "side": 1,
+      "message": "Because of the added nuance of respecting the critical `go-get\u003d1` query string I\u0027ve rolled their elimination as hardcoded elements into this CL. PTAL.",
+      "parentUuid": "ec505a61_6dd6a50d",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9aef6512_346573ff",
         "filename": "internal/ci/netlify/netlify.cue",
         "patchSetId": 18
@@ -65,6 +119,24 @@
       "writtenOn": "2025-04-16T07:20:52Z",
       "side": 1,
       "message": "Do we need this?",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "066d3081_cbdde6e2",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T15:43:30Z",
+      "side": 1,
+      "message": "Probably not. I can\u0027t see anyone choosing to visit that FQDN; and if it were to get crawled the recent changes we made to add source-level \"\u003clink rel\u003dcanonical ...\u003e\" pointing towards cuelang.org should take care of any \"duplicate page\" problems.\n\nI\u0027ve removed it.",
+      "parentUuid": "9aef6512_346573ff",
       "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -88,6 +160,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fdaedf20_63d361f7",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T15:43:30Z",
+      "side": 1,
+      "message": "I think so, but I also think that placing this here explicitly doesn\u0027t hurt - versus the potential downside of a non-compliant search index noticing its absence and refusing to index the whole site. The presence of `User-agent: *` means we\u0027re not 100% data driven (given the current data model), so including one extra hardcoded line which is such an exception doesn\u0027t feel too bad to me.",
+      "parentUuid": "b0d4fad5_dbf42392",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd334740_738e8731",
         "filename": "internal/ci/netlify/netlify.cue",
         "patchSetId": 18
@@ -99,6 +189,24 @@
       "writtenOn": "2025-04-16T07:20:52Z",
       "side": 1,
       "message": "Per my comment above, these manual entries are no longer necessary if we template all redirects.",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bfc20ef_b2e0fd32",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T15:43:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd334740_738e8731",
       "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -116,6 +224,24 @@
       "writtenOn": "2025-04-16T07:20:52Z",
       "side": 1,
       "message": "These are also not required. With the change proposed above to default `prefix: from` then we can disallow these with a simple `robotsTxt: disallow: true`.",
+      "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "449d69cb_78d65a1d",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 18
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-16T15:43:30Z",
+      "side": 1,
+      "message": "That doesn\u0027t seem quite right with /s/ and /e/. Those hierarchies don\u0027t contain a single redirect - they\u0027re made up from different entries (/s/slack, /s/discord, /e/v0.11-list-arithmetic).\n\nWe could choose a single entry from each prefix\u0027s entries and tag it as the sole entry to be included in robots.txt, with a custom `prefix`; but that feels 5% odd versus their current status as hardcoded exceptions.\n\nThoughts?",
+      "parentUuid": "1eab09ab_8566d0e4",
       "revId": "631386c567ea396c75c9ac8e06cb323f60cb979c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
