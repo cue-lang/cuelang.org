@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0300cd0d_b51fdfab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T18:20:10Z",
+      "side": 1,
+      "message": "Please document in this CL how we will test various redirects we currently support.",
+      "revId": "f61c83b19bb14a675a73490f022dec7b05faab96",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00a2b0d5_47fa6477",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T18:20:10Z",
+      "side": 1,
+      "message": "As discussed, we can get rid of these. Perhaps a useful point to do it in this CL?",
+      "revId": "f61c83b19bb14a675a73490f022dec7b05faab96",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
