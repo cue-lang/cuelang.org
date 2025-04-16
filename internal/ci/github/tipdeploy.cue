@@ -71,7 +71,17 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 
 			for v in _setupGoActionsCaches {v},
 
-			_repo.earlyChecks,
+			// TODO: remove this debugging step when we work out what is going on
+			// in the next step, why it is taking quite so long.
+			{
+				run: "go env"
+			},
+
+			// Run these early checks after we have restored the Go caches,
+			// as the checks are Go programs themselves.
+			_repo.earlyChecks & {
+				run: "go run -x cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650"
+			},
 
 			_contentLint,
 
