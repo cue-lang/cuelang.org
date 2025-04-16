@@ -69,6 +69,24 @@
       "parentUuid": "2e3aa3b2_0716a109",
       "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7486663e_16125b21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-16T12:47:38Z",
+      "side": 1,
+      "message": "Please add this context in the commit message, it\u0027s useful for the uninitiated like me.\n\nBTW, I\u0027m not clear setting `HUGO_ENV` is necessary. Rather we should be using:\n\nhttps://gohugo.io/functions/hugo/isproduction/",
+      "parentUuid": "3cc49fc1_3a3b5a5a",
+      "revId": "820bc06b74b361a6b1f368600f12450681a0b7f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
