@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26d24903_42d8c372",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-17T15:18:17Z",
+      "side": 1,
+      "message": "Updated, as discussed.",
+      "parentUuid": "82afc0cd_c84b2b6a",
+      "revId": "5f4d18154d7e5daf1fa30be75b5d9717b2d3dfcd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f0e1745_68e7c32b",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8cf68c9_6dd4ba85",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-17T15:18:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f0e1745_68e7c32b",
+      "revId": "5f4d18154d7e5daf1fa30be75b5d9717b2d3dfcd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8cf8d969_a60e1fc6",
@@ -48,6 +84,24 @@
       "writtenOn": "2025-04-16T18:18:32Z",
       "side": 1,
       "message": "I don\u0027t understand this paragraph either. \n\nMy understanding is that we simply want `_public/_redirect` and `_public/robots.txt` as committed to reflect what will be in the cuelang.org site (which is a production build). \n\nWe don\u0027t appear to be making that clear here, and that\u0027s the most important top level detail.\n\nAssuming my understanding is correct, we should further make clear that the contents of robots.txt in particular will change in later CLs as we drive its disallow contents from the existing Netlify redirects. \n\nIf the above is not correct, then I think we need to check in: the committed contents should, to my mind, reflect the cuelang.org production deploy.\n\nWhich raises the question (which does not appear to be covered here): what happens for deploys other than cuelang.org? `_redirects` should be the same, but `robots.txt`? \n\nI would suggest this commit message needs to talk about the behaviour of search engines etc with respect to the different deploys we have, which of those deploys are production etc. \n\nAs we discussed earlier, calling something a \"production\" site is misleading; all CL deploys should be production from a Hugo perspective.",
+      "revId": "5f4d18154d7e5daf1fa30be75b5d9717b2d3dfcd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdafbd47_e75ee18d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-17T15:18:17Z",
+      "side": 1,
+      "message": "Done, as discussed.",
+      "parentUuid": "8cf8d969_a60e1fc6",
       "revId": "5f4d18154d7e5daf1fa30be75b5d9717b2d3dfcd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
