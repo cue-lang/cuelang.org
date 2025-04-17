@@ -11,6 +11,7 @@ node_modules
 /_public/*
 !/_public/_redirects
 !/_public/robots.txt
+!/_public/aliases.cue
 /playground/_dist/
 /playground/.webpack_cache/
 /playground/main.wasm
