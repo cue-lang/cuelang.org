@@ -30,7 +30,7 @@ disableAliases = false
 
 # Output configuration
 [outputs]
-    home = ["HTML", "RSS", "REDIR", "Algolia"]
+    home = ["HTML", "RSS", "REDIR", "Algolia", "aliases"]
     section = ["HTML"]
 
 [outputFormats]
@@ -46,10 +46,17 @@ disableAliases = false
         isPlainText = true
         mediaType = "application/json"
         notAlternative = true
+    [outputFormats.aliases]
+        baseName = "aliases"
+        mediaType = "notARealMediaType/cue"
+        isPlainText = true
+        notAlternative = true
 
 [mediaTypes]
     [mediaTypes."text/netlify"]
         delimiter = ""
+    [mediaTypes."notARealMediaType/cue"]
+        suffixes = ["cue"]
 
 [build]
     noJSConfigInAssets = true
