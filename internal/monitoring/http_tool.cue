@@ -2,6 +2,7 @@ package monitoring
 
 import (
 	"encoding/json"
+	"list"
 	"strings"
 	"tool/exec"
 	"tool/http"
@@ -15,25 +16,11 @@ schemeHost: *"http://localhost" | string @tag(schemeHost)
 
 command: checkEndpoints: redirections: {
 
-	// clientSide iterates over a list of path/redirection field pairs, and
-	// instantiates an http.Get for each pair that checks that fetching the path
-	// returns a HTML meta-refresh element referencing the redirection's value.
-	clientSide: {for e in hugoAliases let Url = "\(schemeHost)\(e.path)" {
-		(Url): http.Get & {
-			url: Url
-			response: {
-				let Content = #"<meta http-equiv="?refresh"? content="0; url=\#(schemeHost)\#(e.redirection)">"#
-				statusCode: >=200 & <300
-				body:       string & =~Content
-			}
-		}
-	}}
-
 	// serverSide iterates over a list of path/redirection field pairs, and
 	// invokes curl for each pair's path, and then checks that the response
 	// returned is a real HTTP 3xx redirect to the redirection field's value.
 	// TODO: replace with http.Get if https://cuelang.org/issue/3896 allows.
-	serverSide: {for e in netlifyRedirects let Url = "\(schemeHost)\(e.path)" {
+	serverSide: {for e in list.Concat([netlifyRedirects, hugoAliases]) let Url = "\(schemeHost)\(e.path)" {
 		(Url): exec.Run & {
 			// We can't use http.Get (as it follows an HTTP 3xx response for us)
 			// so we need to fall back to this direct curl invocation; which:
@@ -83,7 +70,14 @@ command: checkEndpoints: content: {
 }
 
 let hugoAliases = [...#redirect] & [
-	for i in aliases {path: i.from, redirection: i.to},
+	for i in aliases {
+		path: i.from
+		// Ensure a leading "http(s)://$fqdn" is present in the expected redirection.
+		// Same comment as below, in netlifyRedirects, except that Hugo's aliases cannot
+		// be cross-site redirections to a different site because they represent a
+		// page declaring that it's an alias for some other URL on the same site.
+		redirection: "\(schemeHost)\(i.to)"
+	},
 ]
 let netlifyRedirects = [...#redirect] & [
 	for e in netlify.redirects
