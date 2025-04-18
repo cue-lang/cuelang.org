@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d953f89_abac9b6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-18T15:24:24Z",
+      "side": 1,
+      "message": "PTAL.\n\nI\u0027d be particularly grateful for your knowledgeable perspective on the likelihood of this change being safe for non-CL workflows:\n\n- tip\n- scheduled jobs\n- anything master-related\n\nI\u0027ve tested as far as I\u0027m able, with `ci/test`:\n\n- trybot: https://github.com/cue-lang/cuelang.org/actions/runs/14537319088/job/40788211518\n- tipdeploy: https://github.com/cue-lang/cuelang.org/actions/runs/14537319084/job/40788211576 (not updated by this change)",
+      "revId": "9981d2dae2372240017177a94abc9b05a68fbcf0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
