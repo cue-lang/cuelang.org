@@ -19,8 +19,6 @@ package aliases
   { from: "/docs/tour/basics/duplicate-fields", to: "/docs/tour/basics/unification/" },
   { from: "/community/conduct", to: "/docs/reference/code-of-conduct/" },
   { from: "/docs/usecases/configuration", to: "/docs/concept/configuration-use-case/" },
-  { from: "/docs/concept/configuration-use-case", to: "/docs/concept/how-cue-enables-configuration/" },
-  { from: "/docs/concept/data-validation-use-case", to: "/docs/concept/how-cue-enables-data-validation/" },
   { from: "/docs/concept/json", to: "/docs/concept/how-cue-works-with-json/" },
   { from: "/docs/concept/yaml", to: "/docs/concept/how-cue-works-with-yaml/" },
   { from: "/docs/howto/ensure-min-max-list", to: "/docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/" },]

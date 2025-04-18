@@ -6,8 +6,6 @@ tags:
 authors:
 - jpluscplusm
 toc_hide: true
-aliases:
-- /docs/concept/configuration-use-case
 ---
 
 **Configuration is one of CUE's core tasks**. People often start using CUE
