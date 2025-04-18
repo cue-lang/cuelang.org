@@ -223,6 +223,12 @@ workflows: trybot: _repo.bashWorkflow & {
 			},
 
 			_netlifyStep,
+			_monitoringStep & {
+				// Only run post-preview-deployment monitoring if we're part of
+				// CI check of the trybot workflow.
+				if:    "github.repository == '\(_repo.trybotRepositoryPath)' && \(_repo.containsTrybotTrailer)"
+				#host: _netlifyStep.#prime_url.CL
+			},
 
 			{
 				// Only run in the main repo on the default branch, so only live
@@ -340,6 +346,15 @@ _installDockerMacOS: [
 
 _macOSStep: githubactions.#Step & {
 	if: "runner.os == 'macOS'"
+}
+
+_monitoringStep: githubactions.#Step & {
+	#host!: string
+
+	name: *"Perform monitoring checks on \(#host)" | string
+	run:  """
+        go run cuelang.org/go/cmd/cue cmd checkEndpoints ./internal/monitoring -t host=\(#host)
+        """
 }
 
 _linuxStep: githubactions.#Step & {
