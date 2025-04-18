@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44fdc567_0769c81f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-18T15:24:54Z",
+      "side": 1,
+      "message": "This is now done in 2 CLs earlier in the stack.",
+      "parentUuid": "0300cd0d_b51fdfab",
+      "revId": "f61c83b19bb14a675a73490f022dec7b05faab96",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00a2b0d5_47fa6477",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-04-16T18:20:10Z",
       "side": 1,
       "message": "As discussed, we can get rid of these. Perhaps a useful point to do it in this CL?",
+      "revId": "f61c83b19bb14a675a73490f022dec7b05faab96",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebc2287a_a45e4e1a",
+        "filename": "internal/ci/netlify/netlify.cue",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-18T15:24:54Z",
+      "side": 1,
+      "message": "I don\u0027t think we can remove these specific entries - they\u0027re part of the tour\u0027s UX.\n\nI\u0027ll take a note to review the historic entries in this list and propose an update in a later CL.",
+      "parentUuid": "00a2b0d5_47fa6477",
       "revId": "f61c83b19bb14a675a73490f022dec7b05faab96",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "162959e9_dc8f1fc8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-18T15:24:54Z",
+      "side": 1,
+      "message": "PTAL. This CL has changed purpose as the stack evolved.",
+      "revId": "aaf2959643f08084f79450644ff0fedb2a34b9df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
