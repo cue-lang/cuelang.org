@@ -2,10 +2,10 @@
 title: Installation
 weight: 20
 aliases:
-- /docs/install
-- /download
-- /install
-- /dl
+- /docs/install/
+- /download/
+- /install/
+- /dl/
 ---
 
 {{<warning>}}
