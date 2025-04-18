@@ -30,8 +30,6 @@ https://cue.netlify.com/* https://cuelang.org/:splat 301!
 /docs/tour/basics/duplicate-fields  /docs/tour/basics/unification/
 /community/conduct                  /docs/reference/code-of-conduct/
 /docs/usecases/configuration        /docs/concept/configuration-use-case/
-/docs/concept/configuration-use-case /docs/concept/how-cue-enables-configuration/
-/docs/concept/data-validation-use-case /docs/concept/how-cue-enables-data-validation/
 /docs/concept/json                  /docs/concept/how-cue-works-with-json/
 /docs/concept/yaml                  /docs/concept/how-cue-works-with-yaml/
 /docs/howto/ensure-min-max-list     /docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/
