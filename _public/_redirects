@@ -43,3 +43,26 @@ https://cue.netlify.com/* https://cuelang.org/:splat 301!
 /s/slack                            https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE 302!
 /s/discord                          https://discord.gg/CBUzN6CrRa 302!
 /e/v0.11-list-arithmetic            /docs/concept/faq/removing-list-arithmetic-operators-v0.11/ 302!
+
+# Aliases configured in the front matter of content pages, templated at build-time by Hugo.
+/community/contribution-guidelines/ /docs/reference/contribution-guidelines/ 302!
+/docs/introduction/welcome/         /docs/introduction/ 302!
+/docs/about/                        /docs/introduction/ 302!
+/docs/references/spec/              /docs/reference/spec/ 302!
+/docs/install/                      /docs/introduction/installation/ 302!
+/download/                          /docs/introduction/installation/ 302!
+/install/                           /docs/introduction/installation/ 302!
+/dl/                                /docs/introduction/installation/ 302!
+/docs/concepts/logic/               /docs/concept/the-logic-of-cue/ 302!
+/docs/tour/expressions/interpolfield/ /docs/tour/expressions/dynamic-fields/ 302!
+/docs/tutorial/find-a-tutorial/     /docs/tutorial/ 302!
+/docs/howto/find-a-guide/           /docs/howto/ 302!
+/docs/concept/find-a-guide/         /docs/concept/ 302!
+/docs/tour/types/optional/          /docs/tour/types/structs/ 302!
+/docs/tour/types/defs/              /docs/tour/types/definitions/ 302!
+/docs/tour/basics/duplicate-fields/ /docs/tour/basics/unification/ 302!
+/community/conduct/                 /docs/reference/code-of-conduct/ 302!
+/docs/usecases/configuration/       /docs/concept/configuration-use-case/ 302!
+/docs/concept/json/                 /docs/concept/how-cue-works-with-json/ 302!
+/docs/concept/yaml/                 /docs/concept/how-cue-works-with-yaml/ 302!
+/docs/howto/ensure-min-max-list/    /docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/ 302!
