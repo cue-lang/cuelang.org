@@ -220,6 +220,13 @@ redirects: [
 		{{- range .}}
 		{{.from | printf "%-35s" }} {{.to}} {{.status}}{{if .force}}!{{end}}
 		{{- end}}
+
+		# Aliases configured in the front matter of content pages, templated at build-time by Hugo.
+		{{ `{{- range $p := .Site.Pages }}` }}
+		{{ `{{- range .Aliases }}` }}
+		{{ `{{ printf "%-35s" . }} {{ $p.RelPermalink }} 302!` }}
+		{{ `{{- end }}` }}
+		{{ `{{- end }}` }}
 		"""
 
 	template.Execute(tmpl, #input)

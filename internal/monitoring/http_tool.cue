@@ -2,6 +2,7 @@ package monitoring
 
 import (
 	"encoding/json"
+	"list"
 	"strings"
 	"tool/exec"
 	"tool/http"
@@ -15,19 +16,7 @@ schemeHost: *"http://localhost" | string @tag(schemeHost)
 
 command: checkEndpoints: redirections: {
 
-	clientSide: {for e in hugoAliases {
-		let Url = "\(schemeHost)\(e.path)"
-		(Url): http.Get & {
-			url: Url
-			response: {
-				let Content = #"<meta http-equiv="?refresh"? content="0; url=\#(schemeHost)\#(e.redirection)">"#
-				statusCode: >=200 & <300
-				body:       string & =~Content
-			}
-		}
-	}}
-
-	serverSide: {for e in netlifyRedirects {
+	serverSide: {for e in list.Concat([netlifyRedirects, hugoAliases]) {
 		let Url = "\(schemeHost)\(e.path)"
 		(Url): exec.Run & {
 			// TODO: replace with http.Get if https://cuelang.org/issue/3896 allows.
