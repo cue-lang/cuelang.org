@@ -2,7 +2,7 @@
 title: Dynamic Fields
 weight: 30
 aliases:
-- /docs/tour/expressions/interpolfield
+- /docs/tour/expressions/interpolfield/
 ---
 
 A **dynamic field** is a field whose name, or *label*, is determined by

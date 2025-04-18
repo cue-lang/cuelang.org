@@ -2,7 +2,7 @@
 title: Definitions
 weight: 90
 aliases:
-- /docs/tour/types/defs
+- /docs/tour/types/defs/
 ---
 
 In CUE, schemas are typically written as **definitions**.
