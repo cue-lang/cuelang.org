@@ -5,7 +5,7 @@ weight: 10
 authors:
 - mpvl
 aliases:
-- /docs/references/spec
+- /docs/references/spec/
 ---
 
 {{< info >}}

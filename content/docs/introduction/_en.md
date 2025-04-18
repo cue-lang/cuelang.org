@@ -4,8 +4,8 @@ weight: 10
 toc_hide: false
 index_hide: true
 aliases:
-- /docs/introduction/welcome
-- /docs/about
+- /docs/introduction/welcome/
+- /docs/about/
 ---
 
 ## Welcome!
