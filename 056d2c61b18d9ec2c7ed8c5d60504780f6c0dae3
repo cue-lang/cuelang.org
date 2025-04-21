@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "056d2c61b18d9ec2c7ed8c5d60504780f6c0dae3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4cfd996_689397a9",
+        "filename": "_public/_redirects",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-21T05:10:59Z",
+      "side": 1,
+      "message": "Per my questions/comments elsewhere, how many of these do we actually want to continue serving?",
+      "revId": "056d2c61b18d9ec2c7ed8c5d60504780f6c0dae3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
