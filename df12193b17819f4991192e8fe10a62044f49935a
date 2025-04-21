@@ -1,6 +1,46 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4829f50_af383b06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-21T05:10:17Z",
+      "side": 1,
+      "message": "\"needlessly\"",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82114862_c50cc74e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-21T05:10:17Z",
+      "side": 1,
+      "message": "As I understand it, one option is a redirect:\n\n```\n/aliases.cue /404.html 404\n```",
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "bcd38a56_a779ea51",
@@ -14,6 +54,69 @@
       "writtenOn": "2025-04-18T15:12:24Z",
       "side": 1,
       "message": "PTAL",
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3472a7bd_f8511cb0",
+        "filename": "_public/aliases.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-21T05:10:17Z",
+      "side": 1,
+      "message": "Clean line here, to make review more obviously correct.",
+      "range": {
+        "startLine": 26,
+        "startChar": 123,
+        "endLine": 26,
+        "endChar": 124
+      },
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ab21024_93bcb19f",
+        "filename": "hugo/config/_default/config.toml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-21T05:10:17Z",
+      "side": 1,
+      "message": "Can we not avoid this unnecessary complication by simply generating and serving JSON?",
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aae6a37a_de42bc85",
+        "filename": "hugo/layouts/index.aliases.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-21T05:10:17Z",
+      "side": 1,
+      "message": "You will likely want to drop this to to chomping the whitespace before the closing `]`. \n\nPer other comments, probably easier and cleaner just to serve JSON?",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 9
+      },
       "revId": "df12193b17819f4991192e8fe10a62044f49935a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
