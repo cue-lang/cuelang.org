@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cadb5ccb_0243238b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4829f50_af383b06",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "82114862_c50cc74e",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-04-21T05:10:17Z",
       "side": 1,
       "message": "As I understand it, one option is a redirect:\n\n```\n/aliases.cue /404.html 404\n```",
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e7f7393_77f16743",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:03:25Z",
+      "side": 1,
+      "message": "Done. Mention left of this tactic in the commit message.",
+      "parentUuid": "82114862_c50cc74e",
       "revId": "df12193b17819f4991192e8fe10a62044f49935a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22ac82ce_265e11be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "154927bf_6803eba1",
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3472a7bd_f8511cb0",
@@ -88,6 +148,30 @@
       "writtenOn": "2025-04-21T05:10:17Z",
       "side": 1,
       "message": "Clean line here, to make review more obviously correct.",
+      "range": {
+        "startLine": 26,
+        "startChar": 123,
+        "endLine": 26,
+        "endChar": 124
+      },
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b10e223_38d44c8c",
+        "filename": "_public/aliases.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3472a7bd_f8511cb0",
       "range": {
         "startLine": 26,
         "startChar": 123,
@@ -115,6 +199,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7b3626a_b8c1b70c",
+        "filename": "hugo/config/_default/config.toml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:03:25Z",
+      "side": 1,
+      "message": "As discussed offline, there\u0027s no neat solution here due to JSON\u0027s requirement for no trailing comma in the list, and the shape of the data we\u0027re iterating over. As we concluded, we\u0027ll emit CUE for now.\n\nI\u0027ve modified the `mediaType` param to be an obvious placeholder (`notARealMediaType/cue`) to avoid giving anyone the incorrect impression that we\u0027re setting a precedent here.",
+      "parentUuid": "9ab21024_93bcb19f",
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aae6a37a_de42bc85",
@@ -128,6 +230,30 @@
       "writtenOn": "2025-04-21T05:10:17Z",
       "side": 1,
       "message": "You will likely want to drop this to to chomping the whitespace before the closing `]`. \n\nPer other comments, probably easier and cleaner just to serve JSON?",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "191f8898_85652485",
+        "filename": "hugo/layouts/index.aliases.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:03:25Z",
+      "side": 1,
+      "message": "Done; and answered elsewhere in another comment.",
+      "parentUuid": "aae6a37a_de42bc85",
       "range": {
         "startLine": 8,
         "startChar": 8,
