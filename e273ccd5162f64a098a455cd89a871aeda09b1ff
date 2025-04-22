@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acb729cc_a1b5c062",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:51:12Z",
+      "side": 1,
+      "message": "PTAL. Downstream tests:\n\n- Trybot `ci/test`: https://github.com/cue-lang/cuelang.org/actions/runs/14598848146/job/40951603499\n- Netlify `ci/test`: https://app.netlify.com/sites/cue/deploys/6807b7b3191b7f00089de5f4\n- Netlify `tip`: https://app.netlify.com/sites/cue/deploys/6807b9c5ea1e7d00073d6ad4",
+      "revId": "e273ccd5162f64a098a455cd89a871aeda09b1ff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
