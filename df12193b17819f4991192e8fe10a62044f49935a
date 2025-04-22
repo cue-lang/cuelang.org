@@ -60,6 +60,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "154927bf_6803eba1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T09:42:08Z",
+      "side": 1,
+      "message": "It feels like this change would ultimately be rendered useless if we implemented https://github.com/cue-lang/cue/issues/2825. Would you agree? If so, I would mention this CL in the commit message.",
+      "revId": "df12193b17819f4991192e8fe10a62044f49935a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3472a7bd_f8511cb0",
         "filename": "_public/aliases.cue",
         "patchSetId": 2
