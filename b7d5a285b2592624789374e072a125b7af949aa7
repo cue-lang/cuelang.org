@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "b7d5a285b2592624789374e072a125b7af949aa7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dab15387_c8c9951d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T17:12:41Z",
+      "side": 1,
+      "message": "PTAL. @dominik@cue.works isn\u0027t a reviewer on this repo.",
+      "revId": "b7d5a285b2592624789374e072a125b7af949aa7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
