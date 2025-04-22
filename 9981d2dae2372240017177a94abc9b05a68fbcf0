@@ -34,6 +34,24 @@
       "parentUuid": "9d953f89_abac9b6a",
       "revId": "9981d2dae2372240017177a94abc9b05a68fbcf0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dde675c0_978848aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T12:10:22Z",
+      "side": 1,
+      "message": "Fine per our discussion on the basis we want to keep the check on CLs only for now. Please create an issue for tip and cuelang.org being tested somehow/somewhere.",
+      "parentUuid": "4ac731d2_8a1fcf62",
+      "revId": "9981d2dae2372240017177a94abc9b05a68fbcf0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
