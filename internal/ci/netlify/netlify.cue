@@ -69,7 +69,7 @@ config: #config & {
 	context: "deploy-preview": command:      "\(build.command) --baseURL $DEPLOY_PRIME_URL"
 	context: "\(repo.alphaBranch)": command: "\(build.command) --baseURL https://alpha.cuelang.org"
 	context: production: command:            "\(build.command) --baseURL https://cuelang.org"
-	context: tip: command:                   "\(build.command) --buildDrafts"
+	context: tip: command:                   "\(build.command) --baseURL https://tip.cuelang.org --buildDrafts"
 }
 
 redirects: [...#redirect] & [...{
