@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e09f1b7b_02b6c583",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "Can we not do that now, and link to it?",
+      "range": {
+        "startLine": 18,
+        "startChar": 30,
+        "endLine": 18,
+        "endChar": 64
+      },
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "ddd83ae5_a565c59d",
@@ -14,6 +37,142 @@
       "writtenOn": "2025-04-18T15:18:39Z",
       "side": 1,
       "message": "PTAL",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a58a95bc_e09f8281",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "We have defaulting here, but the calling shell script appears to require an argument?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59ec57a8_6ac1b8f5",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "Comment please.",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a11e56ad_406819bd",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "Comment please.",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74667c1a_36bb9437",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "What\u0027s going on here?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a80929ae_41b001a0",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "Just `\"\"`?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6c7962b_24da3abf",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "I don\u0027t follow this comment at all I\u0027m afraid. Perhaps an example will make clear what you are trying to say?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8de7054_1b37c3e7",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "This is the first redirect. What about the second?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0022daf_fdbe399f",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-22T10:02:02Z",
+      "side": 1,
+      "message": "Why are these needed as regular fields?",
       "revId": "f762fffe657af86261b164d745252c55c18f99c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
