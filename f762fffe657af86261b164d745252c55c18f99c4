@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "873490a9_98688177",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "In order to include some stable/tangible commands to run (which will demonstrate this CL\u0027s script failing to validate tip.cuelang.org) I\u0027m going to wait until after this stack is submitted before I open the issue. I\u0027ll point from the issue to this CL, so there\u0027ll be a 1-way link at least.",
+      "parentUuid": "e09f1b7b_02b6c583",
+      "range": {
+        "startLine": 18,
+        "startChar": 30,
+        "endLine": 18,
+        "endChar": 64
+      },
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ddd83ae5_a565c59d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
@@ -58,6 +82,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d8e9ae4_a045f26c",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "The defaulting is to prevent an invocation of `cue cmd checkEndpoints` (bypassing the shell script wrapper) that forgets to specify the tag from seeing an incorrect command success. This failure mode is tracked in https://cuelang.org/issue/3897.",
+      "parentUuid": "a58a95bc_e09f8281",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59ec57a8_6ac1b8f5",
@@ -71,6 +113,24 @@
       "writtenOn": "2025-04-22T10:02:02Z",
       "side": 1,
       "message": "Comment please.",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b97a40af_7586b7dd",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59ec57a8_6ac1b8f5",
       "revId": "f762fffe657af86261b164d745252c55c18f99c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -92,6 +152,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f43f4aeb_450b9c5a",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a11e56ad_406819bd",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74667c1a_36bb9437",
@@ -105,6 +183,24 @@
       "writtenOn": "2025-04-22T10:02:02Z",
       "side": 1,
       "message": "What\u0027s going on here?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e78ae270_be483c14",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "Comments added.",
+      "parentUuid": "74667c1a_36bb9437",
       "revId": "f762fffe657af86261b164d745252c55c18f99c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -126,6 +222,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e601f016_6b5dbdb5",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a80929ae_41b001a0",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6c7962b_24da3abf",
@@ -139,6 +253,24 @@
       "writtenOn": "2025-04-22T10:02:02Z",
       "side": 1,
       "message": "I don\u0027t follow this comment at all I\u0027m afraid. Perhaps an example will make clear what you are trying to say?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "082d763b_c48bf2c0",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "Normalisation moved to the comprehension at the bottom of the file; comment made clearer here (explaining the curl invocation) and also below, where an example is added.",
+      "parentUuid": "e6c7962b_24da3abf",
       "revId": "f762fffe657af86261b164d745252c55c18f99c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -160,6 +292,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6d7387d_2bc3a878",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "This check is an outlier, as it\u0027s the only test where we\u0027re explicitly checking for required content on the page - hence the `checkEndpoints.content` path. (The client-side redirects do, technically, check for content, but they\u0027re replaced later in the stack with server-side redirects so this is the only HTTP-200 check that will be present as a result of this stack.)\n\nThe second entry in the Netlify `_redirects` file with a path of `/go/*` is a server-side redirection, which is checked elsewhere in this workflow command.",
+      "parentUuid": "b8de7054_1b37c3e7",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0022daf_fdbe399f",
@@ -173,6 +323,24 @@
       "writtenOn": "2025-04-22T10:02:02Z",
       "side": 1,
       "message": "Why are these needed as regular fields?",
+      "revId": "f762fffe657af86261b164d745252c55c18f99c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29c6de26_dc06c1c5",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:04:08Z",
+      "side": 1,
+      "message": "Changed to `let`s.",
+      "parentUuid": "f0022daf_fdbe399f",
       "revId": "f762fffe657af86261b164d745252c55c18f99c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
