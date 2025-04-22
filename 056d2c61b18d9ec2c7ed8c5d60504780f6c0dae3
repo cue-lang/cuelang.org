@@ -33,6 +33,24 @@
       "message": "Per my questions/comments elsewhere, how many of these do we actually want to continue serving?",
       "revId": "056d2c61b18d9ec2c7ed8c5d60504780f6c0dae3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7172b278_b31aa65e",
+        "filename": "_public/_redirects",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:03:36Z",
+      "side": 1,
+      "message": "These will be addressed/removed in a followup after this stack has been submitted.",
+      "parentUuid": "c4cfd996_689397a9",
+      "revId": "056d2c61b18d9ec2c7ed8c5d60504780f6c0dae3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
