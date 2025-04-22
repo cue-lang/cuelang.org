@@ -22,4 +22,4 @@ command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL $DEPLOY_PRIM
 command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL https://cuelang.org'
 
 [context.tip]
-command = 'bash _scripts/netlify.bash _scripts/build.bash --buildDrafts'
+command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL https://tip.cuelang.org --buildDrafts'
