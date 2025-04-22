@@ -52,6 +52,24 @@
       "parentUuid": "4ac731d2_8a1fcf62",
       "revId": "9981d2dae2372240017177a94abc9b05a68fbcf0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "352d5bc3_e1e59293",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-22T15:05:52Z",
+      "side": 1,
+      "message": "\u003e Please create an issue for tip and cuelang.org being tested somehow/somewhere.\n\nWill be captured once this stack\u0027s submitted, so the issue can reference the command that will then be available in `master`.",
+      "parentUuid": "dde675c0_978848aa",
+      "revId": "9981d2dae2372240017177a94abc9b05a68fbcf0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
