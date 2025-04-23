@@ -1,10 +1,12 @@
-# Languages
+# Code generated site_tool.cue; DO NOT EDIT.
+
 [en]
-    languageName = "English"
-    contentDir = "content/en"
-    languageDirection = "ltr"
-    title = "CUE"
-    weight = 1
-    [en.params]
-        description = "Validate and define text-based and dynamic configuration"
-        time_format = "January 2, 2006"
+contentDir = 'content/en'
+languageDirection = 'ltr'
+languageName = 'English'
+title = 'CUE'
+weight = 1
+
+[en.params]
+description = 'Validate and define text-based and dynamic configuration'
+time_format = 'January 2, 2006'

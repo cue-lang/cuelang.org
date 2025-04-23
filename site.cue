@@ -128,6 +128,9 @@ let donotedit = base.doNotEditMessage & {#generatedBy: "site_tool.cue", _}
 // by site_tool.cue:gen for the working of cuelang.org
 template: ci.#writefs & {
 	Tool: "site_tool.cue"
+
+	let configDefault = "hugo/config/_default"
+
 	Remove: [
 		// The generated artefacts from the CLI auto-generation. Do not remove
 		// the cache files, because otherwise on a Preprocessor-No-Write-Cache
@@ -137,6 +140,13 @@ template: ci.#writefs & {
 		// so that a manually-added "cue-help-foo" page (which *could* exist)
 		// wouldn't break the build.
 		"content/docs/reference/command/cue-help*/*.md",
+
+		// Remove all generated Hugo config files
+		//
+		// TODO: per the TODO below, we probably want a more "automated"
+		// way of doing this, but being semi-explicit is fine for now.
+		"\(configDefault)/*.toml",
+		"\(configDefault)/menus/*.toml",
 	]
 	Create: {
 		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": Contents: #"""
@@ -266,78 +276,22 @@ template: ci.#writefs & {
 
 			"""#
 
-		// Hugo site-wide params.
-		"hugo/config/_default/params.toml": {
-			Contents: {
-				// Fallback Twitter card image (if not set on page).
-				images: ["img/social.png"]
-				// Base URL for on-page links for reporting issues.
-				github_repo: "https://github.com/cue-lang/cuelang.org"
-				// Base URL for 'rel="canonical"' links
-				canonicalUrlPrefix: "https://cuelang.org"
-				// Google Custom Search Engine ID. GCS is disabled if not present.
-				gcs_engine_id: "004591905419617723008:8rmik2a7xb3"
-				// Which logo to use in the main header.
-				logo: "svg/logo.svg"
-
-				// Site-wide notification-bar.
-				notification: {
-					type: "cue-minor-release-\(versions.cue.latest.majorDotMinor)"
-					// Omitting the button field removes the bar's button entirely.
-					button: {
-						link: "/docs/introduction/installation/"
-						icon: "download"
-						text: "Install CUE"
-					}
-					// Markdown is permitted in the content field.
-					content: "**CUE \(versions.cue.latest.majorDotMinor) is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\(versions.cue.latest.majorDotMinor).0)"
-				}
-
-				// The tag order in this file determines their relative positions at
-				// the top and bottom of all rendered pages.
-				#tag: {
-					name:  string
-					color: "red" | "orange" | "green" | "pink" | "purple" | "lilac" | "blue" | "lavender"
-				}
-				tags: [...#tag] & [{
-					name:  "ecosystem"
-					color: "red"
-				}, {
-					name:  "encodings"
-					color: "green"
-				}, {
-					name:  "cue command"
-					color: "purple"
-				}, {
-					name:  "language"
-					color: "blue"
-				}, {
-					name:  "validation"
-					color: "lilac"
-				}, {
-					name:  "tooling"
-					color: "orange"
-				}, {
-					name:  "commented cue"
-					color: "pink"
-				}, {
-					name:  "user question"
-					color: "red"
-				}, {
-					name:  "modules"
-					color: "red"
-				}, {
-					name:  "go api"
-					color: "lavender"
-				}, {
-					name:  "java api"
-					color: "blue"
-				}, {
-					name:  "workflow command"
-					color: "blue"
-				}]
-			}
+		// Hugo config files
+		//
+		// TODO: work out a better way of writing this out in a more
+		// "automated" way, rather than needing to list files
+		// individually. The need for listing them individually stems
+		// from the way that hugo applies precedence to config, allowing
+		// for overrides per language etc. We need to maintain our CUE in
+		// such a way that we can derive that somehow, but that's not
+		// an exercise for now.
+		for v in ["config", "languages", "markup", "params"] {
+			"\(configDefault)/\(v).toml": Contents: site[v]
 		}
+		for v in ["en"] {
+			"\(configDefault)/menus/menus.\(v).toml": Contents: site.menus[v]
+		}
+
 		"playground/src/config/gen_cuelang_org_go_version.ts": Contents: #"""
 			// \#(donotedit)
 
