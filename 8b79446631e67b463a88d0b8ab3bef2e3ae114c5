@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6346cd87_121e20e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-23T14:51:53Z",
+      "side": 1,
+      "message": "This doesn\u0027t look like it completes the Plausible install for 404s, even alongside https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1213929. I don\u0027t think the result of https://plausible.io/docs/error-pages-tracking-404#step-1-enable-404-error-pages-for-your-site (step 1) will be in effect after this change.",
+      "revId": "8b79446631e67b463a88d0b8ab3bef2e3ae114c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d4da6f6_0e38222c",
