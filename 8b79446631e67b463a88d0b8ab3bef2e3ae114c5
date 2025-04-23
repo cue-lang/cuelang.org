@@ -22,6 +22,30 @@
       },
       "revId": "8b79446631e67b463a88d0b8ab3bef2e3ae114c5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fed7e646_32867b97",
+        "filename": "hugo/layouts/404.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-23T14:37:55Z",
+      "side": 1,
+      "message": "That is a really good catch. In fact we should have done the same for the previous CL as well. I\u0027ll fix that in this stack.",
+      "parentUuid": "4d4da6f6_0e38222c",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 30
+      },
+      "revId": "8b79446631e67b463a88d0b8ab3bef2e3ae114c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
