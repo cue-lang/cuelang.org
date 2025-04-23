@@ -147,11 +147,6 @@
 
 # Legal
 [[legal]]
-    identifier = "copyright"
-    name = "Copyright"
-    url = "#"
-    weight = 500
-[[legal]]
     identifier = "privacy"
     name = "Privacy policy"
     url = "/docs/reference/privacy-policy/"
