@@ -154,5 +154,5 @@
 [[legal]]
     identifier = "privacy"
     name = "Privacy policy"
-    url = "#"
+    url = "/docs/reference/privacy-policy/"
     weight = 501
