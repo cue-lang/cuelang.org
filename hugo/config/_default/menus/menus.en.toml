@@ -1,158 +1,176 @@
-# Main
-[[main]]
-    identifier = "docs"
-    name = "Documentation"
-    url = "/docs/"
-    weight = 100
-[[main]]
-    identifier = "play"
-    name = "Play"
-    url = "/play/"
-    weight = 101
-[[main]]
-    identifier = "community"
-    name = "Community"
-    url = "/community/"
-    weight = 102
+# Code generated site_tool.cue; DO NOT EDIT.
 
-# Icons
-[[icons]]
-    identifier = "github"
-    name = "GitHub"
-    url = "https://github.com/cue-lang/cue"
-    pre = "github"
-    weight = 200
-[[icons]]
-    identifier = "slack"
-    name = "Slack"
-    url = "/s/slack"
-    pre = "slack"
-    weight = 201
-[[icons]]
-    identifier = "discord"
-    name = "Discord"
-    url = "/s/discord"
-    pre = "social-discord"
-    weight = 202
-[[icons]]
-    identifier = "x-twitter"
-    name = "X (Twitter)"
-    url = "https://twitter.com/cue_lang"
-    pre = "social-x"
-    weight = 203
-[[icons]]
-    identifier = "bluesky"
-    name = "Bluesky"
-    url = "https://bsky.app/profile/cuelang.org"
-    pre = "social-bluesky"
-    weight = 204
-[[icons]]
-    identifier = "youtube"
-    name = "YouTube"
-    url = "https://www.youtube.com/@cuelang/videos"
-    pre = "social-youtube"
-    weight = 205
-
-# CTA
 [[cta]]
-    identifier = "cta"
-    name = "Install"
-    url = "/docs/introduction/installation/"
-    post = "download"
-    weight = 300
-
-# Footer
-[[footer]]
-    identifier = "column1"
-    name = "Get Started"
-    url = "#"
-    weight = 400
-[[footer]]
-    parent = "column1"
-    name = "Documentation"
-    url = "/docs/"
-    weight = 410
-[[footer]]
-    parent = "column1"
-    name = "Language Tour"
-    url = "/docs/tour/"
-    weight = 411
-[[footer]]
-    parent = "column1"
-    name = "Playground"
-    url = "/play/"
-    weight = 412
-[[footer]]
-    parent = "column1"
-    name = "Install CUE"
-    url = "/docs/introduction/installation/"
-    weight = 413
+identifier = 'cta'
+name = 'Install'
+post = 'download'
+url = '/docs/introduction/installation/'
+weight = 300
 
 [[footer]]
-    identifier = "column2"
-    name = "Community"
-    url = "#"
-    weight = 401
-[[footer]]
-    parent = "column2"
-    name = "The CUE Community"
-    url = "/community"
-    weight = 420
-[[footer]]
-    parent = "column2"
-    name = "Contributing"
-    url = "https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide"
-    weight = 421
-[[footer]]
-    parent = "column2"
-    name = "Code of Conduct"
-    url = "/docs/reference/code-of-conduct/"
-    weight = 422
-[[footer]]
-    parent = "column2"
-    name = "Slack Workspace"
-    url = "/s/slack"
-    weight = 423
-[[footer]]
-    parent = "column2"
-    name = "Discord Server"
-    url = "/s/discord"
-    weight = 424
+identifier = 'column1'
+name = 'Get Started'
+url = '#'
+weight = 400
 
 [[footer]]
-    identifier = "column4"
-    name = "Connect"
-    url = "#"
-    weight = 403
-[[footer]]
-    parent = "column4"
-    name = "GitHub"
-    url = "https://github.com/cue-lang/cue"
-    weight = 440
-[[footer]]
-    parent = "column4"
-    name = "X (Twitter)"
-    url = "https://twitter.com/cue_lang"
-    weight = 443
-[[footer]]
-    parent = "column4"
-    name = "Bluesky"
-    url = "https://bsky.app/profile/cuelang.org"
-    weight = 444
-[[footer]]
-    parent = "column4"
-    name = "YouTube"
-    url = "https://www.youtube.com/@cuelang/videos"
-    weight = 445
+name = 'Documentation'
+parent = 'column1'
+url = '/docs/'
+weight = 410
 
-# Legal
+[[footer]]
+name = 'Language Tour'
+parent = 'column1'
+url = '/docs/tour/'
+weight = 411
+
+[[footer]]
+name = 'Playground'
+parent = 'column1'
+url = '/play/'
+weight = 412
+
+[[footer]]
+name = 'Install CUE'
+parent = 'column1'
+url = '/docs/introduction/installation/'
+weight = 413
+
+[[footer]]
+identifier = 'column2'
+name = 'Community'
+url = '#'
+weight = 401
+
+[[footer]]
+name = 'The CUE Community'
+parent = 'column2'
+url = '/community'
+weight = 420
+
+[[footer]]
+name = 'Contributing'
+parent = 'column2'
+url = 'https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide'
+weight = 421
+
+[[footer]]
+name = 'Code of Conduct'
+parent = 'column2'
+url = '/docs/reference/code-of-conduct/'
+weight = 422
+
+[[footer]]
+name = 'Slack Workspace'
+parent = 'column2'
+url = '/s/slack'
+weight = 423
+
+[[footer]]
+name = 'Discord Server'
+parent = 'column2'
+url = '/s/discord'
+weight = 424
+
+[[footer]]
+identifier = 'column4'
+name = 'Connect'
+url = '#'
+weight = 403
+
+[[footer]]
+name = 'GitHub'
+parent = 'column4'
+url = 'https://github.com/cue-lang/cue'
+weight = 440
+
+[[footer]]
+name = 'X (Twitter)'
+parent = 'column4'
+url = 'https://twitter.com/cue_lang'
+weight = 443
+
+[[footer]]
+name = 'Bluesky'
+parent = 'column4'
+url = 'https://bsky.app/profile/cuelang.org'
+weight = 444
+
+[[footer]]
+name = 'YouTube'
+parent = 'column4'
+url = 'https://www.youtube.com/@cuelang/videos'
+weight = 445
+
+[[icons]]
+identifier = 'github'
+name = 'GitHub'
+pre = 'github'
+url = 'https://github.com/cue-lang/cue'
+weight = 200
+
+[[icons]]
+identifier = 'slack'
+name = 'Slack'
+pre = 'slack'
+url = '/s/slack'
+weight = 201
+
+[[icons]]
+identifier = 'discord'
+name = 'Discord'
+pre = 'social-discord'
+url = '/s/discord'
+weight = 202
+
+[[icons]]
+identifier = 'x-twitter'
+name = 'X (Twitter)'
+pre = 'social-x'
+url = 'https://twitter.com/cue_lang'
+weight = 203
+
+[[icons]]
+identifier = 'bluesky'
+name = 'Bluesky'
+pre = 'social-bluesky'
+url = 'https://bsky.app/profile/cuelang.org'
+weight = 204
+
+[[icons]]
+identifier = 'youtube'
+name = 'YouTube'
+pre = 'social-youtube'
+url = 'https://www.youtube.com/@cuelang/videos'
+weight = 205
+
 [[legal]]
-    identifier = "copyright"
-    name = "Copyright"
-    url = "#"
-    weight = 500
+identifier = 'copyright'
+name = 'Copyright'
+url = '#'
+weight = 500
+
 [[legal]]
-    identifier = "privacy"
-    name = "Privacy policy"
-    url = "#"
-    weight = 501
+identifier = 'privacy'
+name = 'Privacy policy'
+url = '#'
+weight = 501
+
+[[main]]
+identifier = 'docs'
+name = 'Documentation'
+url = '/docs/'
+weight = 100
+
+[[main]]
+identifier = 'play'
+name = 'Play'
+url = '/play/'
+weight = 101
+
+[[main]]
+identifier = 'community'
+name = 'Community'
+url = '/community/'
+weight = 102

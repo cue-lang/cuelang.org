@@ -1,66 +1,53 @@
-baseURL = "/"
-title = "CUE"
-publishDir = "../_public"
+# Code generated site_tool.cue; DO NOT EDIT.
 
-defaultContentLanguage = "en"
+baseURL = '/'
+defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
-enableMissingTranslationPlaceholders = true  # Useful when translating
-
-enableRobotsTXT = true # Render robots.txt
-enableGitInfo = true # Will give git-info values to .Lastmod etc.
-disableKinds = ["RSS", "taxonomy", "term"]
-
-# We use Netlify server-side redirects instead of generated aliases,
-# but the 2 aren't mutually exclusive. Allow Hugo to generate aliases
-# if requested.
 disableAliases = false
-
-# Hugo allows theme composition (and inheritance). Precedence is from left to right.
-# theme = ["docsy"]
-
-# Image processing
-[imaging]
-    # See https://github.com/disintegration/imaging
-    # CatmullRom is a sharp bicubic filter which should fit the docs site well with its many screenshots.
-    # Note - you can also set this per image processing.
-    resampleFilter = "CatmullRom"
-    # Default JPEG quality setting. Default is 75.
-    quality = 75
-    anchor = "smart"
-
-# Output configuration
-[outputs]
-    home = ["HTML", "RSS", "REDIR", "Algolia", "aliases"]
-    section = ["HTML"]
-
-[outputFormats]
-    [outputFormats.RSS]
-        baseName = "feed"
-    [outputFormats.REDIR]
-        mediatype = "text/netlify"
-        baseName = "_redirects"
-        isPlainText = true
-        notAlternative = true
-    [outputFormats.Algolia]
-        baseName = "algolia"
-        isPlainText = true
-        mediaType = "application/json"
-        notAlternative = true
-    [outputFormats.aliases]
-        baseName = "aliases"
-        mediaType = "notARealMediaType/cue"
-        isPlainText = true
-        notAlternative = true
-
-[mediaTypes]
-    [mediaTypes."text/netlify"]
-        delimiter = ""
-    [mediaTypes."notARealMediaType/cue"]
-        suffixes = ["cue"]
+disableKinds = ['RSS', 'taxonomy', 'term']
+enableGitInfo = true
+enableMissingTranslationPlaceholders = true
+enableRobotsTXT = true
+publishDir = '../_public'
+title = 'CUE'
 
 [build]
-    noJSConfigInAssets = true
+noJSConfigInAssets = true
 
-# [services]
-#     [services.googleAnalytics]
-#         id = "UA-00000000-0" # Comment out to disable GA tracking. Also disables the feature [params.ui.feedback]
+[imaging]
+anchor = 'smart'
+quality = 75
+resampleFilter = 'CatmullRom'
+
+[mediaTypes]
+[mediaTypes.'notARealMediaType/cue']
+suffixes = ['cue']
+
+[mediaTypes.'text/netlify']
+delimiter = ''
+
+[outputFormats]
+[outputFormats.Algolia]
+baseName = 'algolia'
+isPlainText = true
+mediaType = 'application/json'
+notAlternative = true
+
+[outputFormats.REDIR]
+baseName = '_redirects'
+isPlainText = true
+mediatype = 'text/netlify'
+notAlternative = true
+
+[outputFormats.RSS]
+baseName = 'feed'
+
+[outputFormats.aliases]
+baseName = 'aliases'
+isPlainText = true
+mediaType = 'notARealMediaType/cue'
+notAlternative = true
+
+[outputs]
+home = ['HTML', 'RSS', 'REDIR', 'Algolia', 'aliases']
+section = ['HTML']
