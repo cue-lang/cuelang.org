@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d4da6f6_0e38222c",
+        "filename": "hugo/layouts/404.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-23T14:35:48Z",
+      "side": 1,
+      "message": "Do we want this code included and firing events to the collector on all CLs, tip, and all PRs?\n\nIf not, gate this as per CL 1213354 instead.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 30
+      },
+      "revId": "8b79446631e67b463a88d0b8ab3bef2e3ae114c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
