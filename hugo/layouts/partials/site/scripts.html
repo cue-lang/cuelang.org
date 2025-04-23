@@ -5,9 +5,6 @@
     {{ $jsMainMin := $jsMain | minify | fingerprint }}
     <script src="{{ $jsMainMin.RelPermalink }}" integrity="{{ $jsMainMin.Data.Integrity }}" async></script>
 {{ end }}
-{{ if eq .Site.BaseURL .Site.Params.canonicalUrlPrefix }}
-    <script defer data-domain="cuelang.org" src="https://plausible.io/js/script.js"></script>
-{{ end }}
 
 {{ if or (.Page.Store.Get "jsMermaid") (.Params.mermaid) }}
     <script src="{{ "/js/mermaid/mermaid.min.js" | relURL }}" async></script>
