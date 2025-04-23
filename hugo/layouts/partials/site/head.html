@@ -19,7 +19,8 @@
 {{- template "_internal/opengraph.html" . -}}
 {{- template "_internal/twitter_cards.html" . -}}
 {{ if eq .Site.BaseURL .Site.Params.canonicalUrlPrefix }}
-    {{ template "_internal/google_analytics.html" . }}
+    <script defer data-domain="cuelang.org" src="https://plausible.io/js/script.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 {{ end }}
 {{ partialCached "site/css.html" . }}
 {{ $jsHead := (resources.Get "ts/head.ts" | js.Build) }}
