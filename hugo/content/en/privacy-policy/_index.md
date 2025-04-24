@@ -1,5 +1,6 @@
 ---
-title: Privacy Policy
+title: Privacy policy
+type: blog
 ---
 
 The protection of your privacy and the confidentiality of your personal data are
