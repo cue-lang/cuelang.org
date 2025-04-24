@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ed1c48d_b055d075",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T16:11:35Z",
+      "side": 1,
+      "message": "I\u0027ve tweaked the script to be a one-liner that achieves the same thing.",
+      "parentUuid": "20e64b00_087d20fc",
+      "revId": "5ebb16d0e52093227d8937bdca5f877407397db6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "834f01f9_2bd87a6a",
@@ -41,6 +59,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09c9db20_f60819c8",
+        "filename": "site.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T16:11:35Z",
+      "side": 1,
+      "message": "Weird. I made this change, but it must have been lost at some point. Done",
+      "parentUuid": "834f01f9_2bd87a6a",
+      "range": {
+        "startLine": 289,
+        "startChar": 4,
+        "endLine": 289,
+        "endChar": 25
+      },
+      "revId": "5ebb16d0e52093227d8937bdca5f877407397db6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "634d5cb3_f2f13691",
@@ -54,6 +96,30 @@
       "writtenOn": "2025-04-24T13:35:36Z",
       "side": 1,
       "message": "Use `configDefault`?",
+      "range": {
+        "startLine": 292,
+        "startChar": 4,
+        "endLine": 292,
+        "endChar": 25
+      },
+      "revId": "5ebb16d0e52093227d8937bdca5f877407397db6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6602b252_65aa25f0",
+        "filename": "site.cue",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T16:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "634d5cb3_f2f13691",
       "range": {
         "startLine": 292,
         "startChar": 4,
