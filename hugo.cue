@@ -1,5 +1,7 @@
 package site
 
+import "strings"
+
 site: config: {
 	baseURL:                              "/"
 	title:                                "CUE"
@@ -99,10 +101,32 @@ site: markup: {
 site: params: {
 	// Fallback Twitter card image (if not set on page).
 	images: ["img/social.png"]
-	// Base URL for on-page links for reporting issues.
+
+	// The GitHub repo associated with this site
 	github_repo: "https://github.com/cue-lang/cuelang.org"
-	// Base URL for 'rel="canonical"' links
-	canonicalUrlPrefix: "https://cuelang.org"
+
+	// The base URL of the "live" site. This is used as the basis for URLs for
+	// 'rel="canonical"' links.
+	//
+	// Note this is distinct from the Hugo-native config parameter baseURL (used
+	// as .Site.BaseURL). .Site.BaseURL is the target of the current deploy.
+	// We have multiple different deploy targets including tip.cuelang.org,
+	// CL previews, PR previews, and the "live" site. Hence .Site.BaseURL
+	// will vary based on that deploy target, but canonicalUrlPrefix will
+	// not.
+	//
+	// Hence the case where .Site.BaseURL and .Site.Params.canonicalUrlPrefix
+	// are equal can be used as "we are deploying the live site", and inequality
+	// covers all other cases.
+	//
+	// The constraint on requiring a '/' suffix is a function of the lack of
+	// URL-handling functions within Hugo. Enforcing a trailing '/' makes our
+	// handling of .Site.Params.canonicalUrlPrefix cleaner elsewhere
+	// (.Site.BaseURL automatically normalises the configured base URL to add a
+	// trailing slash)
+	canonicalUrlPrefix: strings.HasSuffix("/")
+	canonicalUrlPrefix: "https://cuelang.org/"
+
 	// Google Custom Search Engine ID. GCS is disabled if not present.
 	gcs_engine_id: "004591905419617723008:8rmik2a7xb3"
 	// Which logo to use in the main header.
