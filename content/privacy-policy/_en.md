@@ -1,6 +1,9 @@
 ---
-title: Privacy Policy
+title: Privacy policy
+type: docs
 ---
+
+# Privacy policy
 
 The protection of your privacy and the confidentiality of your personal data are
 of particular concern to us. We therefore explain to you below which of your
