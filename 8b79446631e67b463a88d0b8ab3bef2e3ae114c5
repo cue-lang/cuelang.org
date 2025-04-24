@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "920ef2c0_cfd6a193",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T13:06:03Z",
+      "side": 1,
+      "message": "Done. This CL now fixes our installation of Plausible, and also includes the expanded snippet required for handling of the 404 event.",
+      "parentUuid": "1de845e3_3b8b379c",
+      "revId": "8b79446631e67b463a88d0b8ab3bef2e3ae114c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d4da6f6_0e38222c",
