@@ -22,6 +22,30 @@
       },
       "revId": "7eb9e10bea4f727a8a2669304b3b333fcead7be0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a458fbb_3fca05b1",
+        "filename": "hugo/layouts/partials/site/head.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T20:15:52Z",
+      "side": 1,
+      "message": "As a result of fixes in the previous CL, this is now confirmed as working locally via:\n\n```\n\n```",
+      "parentUuid": "b6529acd_8226ee99",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 59
+      },
+      "revId": "7eb9e10bea4f727a8a2669304b3b333fcead7be0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
