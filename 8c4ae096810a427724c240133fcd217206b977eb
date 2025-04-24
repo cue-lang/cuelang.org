@@ -16,6 +16,40 @@
       "message": "PTAL. The PS1 preview will be unchanged by PS2 (in case PS2\u0027s preview hasn\u0027t been published at the point this is reviewed).",
       "revId": "8c4ae096810a427724c240133fcd217206b977eb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "967a3917_7638328c",
+        "filename": "content/privacy-policy/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T20:26:24Z",
+      "side": 1,
+      "message": "This doesn\u0027t render at all well to my mind. Happy to discuss, but I think `blog` is what you were looking for here.",
+      "revId": "8c4ae096810a427724c240133fcd217206b977eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18964578_9175b05e",
+        "filename": "content/privacy-policy/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T20:26:24Z",
+      "side": 1,
+      "message": "I don\u0027t think this is required with the `blog` page type.",
+      "revId": "8c4ae096810a427724c240133fcd217206b977eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
