@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6529acd_8226ee99",
+        "filename": "hugo/layouts/partials/site/head.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-24T13:44:24Z",
+      "side": 1,
+      "message": "I think it would be worth confirming that the correct content ends up in the `_public` site source when the site is built locally using the same (baseUrl) param that Netlify uses when building cuelang.org.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 59
+      },
+      "revId": "7eb9e10bea4f727a8a2669304b3b333fcead7be0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
