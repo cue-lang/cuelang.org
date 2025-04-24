@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66da8077_8842a6b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-24T17:20:28Z",
+      "side": 1,
+      "message": "PTAL.\n\nI added this because it has slightly concerned me (both when running these checks locally on cuelang.org whilst updating the workflow command and when looking at the in-CI invocations) that I wasn\u0027t 100% confident in what checks were being run, especially in light of problems like cue-lang/cue#3897.\n\nI say \"like\" because I recognise that 3897 is now resolved in a way which would have protected this workflow command - this change gives us confidence (**if** we ever find we need to examime CI\u0027s output) that we\u0027ll know what checks passed. This CL would have felt less necessary (but not wholly unnecessary) if cue-lang/cue#3900 hadn\u0027t been discovered whilst working on providing better assurances that some baseline number of checks were being performed.",
+      "revId": "2ac06538af6787db8aae5927bb70aa06ab5cdafc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
