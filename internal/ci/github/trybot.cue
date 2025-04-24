@@ -65,11 +65,14 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			for v in _repo.checkoutCode {v},
 
-			// Early check to fail in case we are running as a transitive result
-			// of the daily_tip_check workflow and the HEAD commit (remembering
-			// that such a workflow is triggered against the tip of the branch,
-			// alpha in this case) contains the Preprocessor-No-Write-Cache
-			// trailer.
+			// Early check to fail in case we are running as a result of the cache
+			// purge trybot run workflow to ensure the HEAD commit (remembering
+			// that such a workflow is triggered against the tip of the
+			// protected branches) does not contain the
+			// Preprocessor-No-Write-Cache trailer. Such a state would be a
+			// serious problem; i.e. we have somehow ended up with an errant
+			// commit in the default branch, when they should only ever exist
+			// as an ephemeral artefact in the trybot trigger.
 			{
 				name: "Fail if Preprocessor-No-Write-Cache trailer is present for a scheduled workflow run"
 				if:   "github.event.inputs.scheduled == 'true'"
