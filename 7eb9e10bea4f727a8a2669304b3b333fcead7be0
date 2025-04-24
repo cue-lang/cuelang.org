@@ -46,6 +46,30 @@
       },
       "revId": "7eb9e10bea4f727a8a2669304b3b333fcead7be0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c00ec79_6ed5de8e",
+        "filename": "hugo/layouts/partials/site/head.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T20:18:27Z",
+      "side": 1,
+      "message": "Submitted early. Tested locally via:\n\n```\n./_scripts/build.bash --baseURL https://cuelang.org\n```",
+      "parentUuid": "2a458fbb_3fca05b1",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 59
+      },
+      "revId": "7eb9e10bea4f727a8a2669304b3b333fcead7be0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
