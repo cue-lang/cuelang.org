@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db86506e_edcb21d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-24T16:49:27Z",
+      "side": 1,
+      "message": "PTAL. The PS1 preview will be unchanged by PS2 (in case PS2\u0027s preview hasn\u0027t been published at the point this is reviewed).",
+      "revId": "8c4ae096810a427724c240133fcd217206b977eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
