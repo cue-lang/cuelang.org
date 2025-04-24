@@ -33,6 +33,24 @@
       "message": "We discussed making this specific.",
       "revId": "1e0cecad386a5a0bd5e1746d86d108f3c54d4b30",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "499aa873_cd684fcb",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-24T11:37:11Z",
+      "side": 1,
+      "message": "Ah; I\u0027d thought that was around the (current CL) contents of line 68 (which was made more specific in a previous CL). I\u0027ve updated this here as well.",
+      "parentUuid": "3000cff6_dd5d1c78",
+      "revId": "1e0cecad386a5a0bd5e1746d86d108f3c54d4b30",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
