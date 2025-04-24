@@ -10,7 +10,7 @@
 {{ else }}
 <meta name="robots" content="noindex, nofollow">
 {{ end }}
-<link rel="canonical" href="{{.Site.Params.canonicalUrlPrefix}}{{ .RelPermalink | safeURL }}" />
+<link rel="canonical" href="{{printf "%s%s" .Site.Params.canonicalUrlPrefix (strings.TrimPrefix "/" .RelPermalink) | safeURL }}" />
 {{ range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink | safeURL }}">
 {{ end -}}
