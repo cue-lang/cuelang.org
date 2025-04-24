@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "1e0cecad386a5a0bd5e1746d86d108f3c54d4b30",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3000cff6_dd5d1c78",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T10:34:52Z",
+      "side": 1,
+      "message": "We discussed making this specific.",
+      "revId": "1e0cecad386a5a0bd5e1746d86d108f3c54d4b30",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
