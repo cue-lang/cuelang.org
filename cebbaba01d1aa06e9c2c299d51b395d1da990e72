@@ -22,6 +22,30 @@
       },
       "revId": "cebbaba01d1aa06e9c2c299d51b395d1da990e72",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc4a413f_799b8d6a",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T16:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e3df46f_0cf3045b",
+      "range": {
+        "startLine": 71,
+        "startChar": 32,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "cebbaba01d1aa06e9c2c299d51b395d1da990e72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
