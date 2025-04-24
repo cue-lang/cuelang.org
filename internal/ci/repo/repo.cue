@@ -11,8 +11,6 @@ base
 
 githubRepositoryPath: "cue-lang/cuelang.org"
 
-alphaBranch: "alpha"
-
 defaultBranch: _
 protectedBranchPatterns: [defaultBranch]
 
