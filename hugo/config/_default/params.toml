@@ -1,6 +1,6 @@
 # Code generated site_tool.cue; DO NOT EDIT.
 
-canonicalUrlPrefix = 'https://cuelang.org'
+canonicalUrlPrefix = 'https://cuelang.org/'
 gcs_engine_id = '004591905419617723008:8rmik2a7xb3'
 github_repo = 'https://github.com/cue-lang/cuelang.org'
 images = ['img/social.png']
