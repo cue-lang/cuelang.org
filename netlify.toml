@@ -12,9 +12,6 @@ HUGO_VERSION = '0.128.2'
 NODE_VERSION = '22.14.0'
 
 [context]
-[context.alpha]
-command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL https://alpha.cuelang.org'
-
 [context.deploy-preview]
 command = 'bash _scripts/netlify.bash _scripts/build.bash --baseURL $DEPLOY_PRIME_URL'
 
