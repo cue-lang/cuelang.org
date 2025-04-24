@@ -81,6 +81,30 @@
       },
       "revId": "8b79446631e67b463a88d0b8ab3bef2e3ae114c5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0a72a2b_c5badabf",
+        "filename": "hugo/layouts/404.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-24T13:03:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fed7e646_32867b97",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 30
+      },
+      "revId": "8b79446631e67b463a88d0b8ab3bef2e3ae114c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
