@@ -3,6 +3,7 @@ package monitoring
 import (
 	"list"
 	"strings"
+	"tool/cli"
 	"tool/http"
 
 	"github.com/cue-lang/cuelang.org/_public:aliases"
@@ -18,7 +19,7 @@ command: checkEndpoints: redirections: {
 	// invokes curl for each pair's path, and then checks that the response
 	// returned is a real HTTP 3xx redirect to the redirection field's value.
 	serverSide: {for e in list.Concat([netlifyRedirects, hugoAliases]) let Url = "\(schemeHost)\(e.path)" {
-		(Url): http.Get & {
+		Get=(Url): http.Get & {
 			url:             Url
 			followRedirects: false
 			response: {
@@ -26,33 +27,33 @@ command: checkEndpoints: redirections: {
 				header: Location: [e.redirection]
 			}
 		}
+		"Display \(Url)": cli.Print & {
+			$after: Get
+			text:   "\(Get.url) \(Get.response.statusCode) \(Get.response.header.Location[0])"
+		}
 	}}
 }
 
 // content checks that specific endpoints serve required content via an HTTP 200.
 command: checkEndpoints: content: {
 
-	[_]: {
+	[=~"^https?://"]: {
 		followRedirects: false
 		response: statusCode: 200
 	}
 
 	let metaGoImport = #"<meta name="go-import" content="cuelang.org/go git https://review.gerrithub.io/cue-lang/cue">"#
-
-	// cuelang.org/go Go module root.
-	"go get cuelang.org/go": {
-		let Url = "\(schemeHost)/go?go-get=1"
-		(Url): http.Get & {
+	for Url in [
+		"\(schemeHost)/go?go-get=1",              // cuelang.org/go Go module root
+		"\(schemeHost)/go/\(dummyPath)?go-get=1", // some cuelang.org/go Go package
+	] {
+		Get=(Url): http.Get & {
 			url: Url
 			response: body: strings.Contains(metaGoImport)
 		}
-	}
-	// Some package inside the cuelang.org/go Go module.
-	"go get cuelang.org/go/\(dummyPath)": {
-		let Url = "\(schemeHost)/go/\(dummyPath)?go-get=1"
-		(Url): http.Get & {
-			url: Url
-			response: body: strings.Contains(metaGoImport)
+		"Display \(Url)": cli.Print & {
+			$after: Get
+			text:   "\(Get.url) \(Get.response.statusCode)"
 		}
 	}
 }
