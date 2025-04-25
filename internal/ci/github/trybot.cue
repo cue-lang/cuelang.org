@@ -481,21 +481,8 @@ _cacheWarm: githubactions.#Step & {
 	run: "_scripts/cacheWarm.bash"
 }
 
-// A number of pages that are part of cuelang.org require interacting
-// with the Central Registry. These pages require users with slightly
-// different access levels, in order to simulate (for example) private
-// modules, with some users granted access whilst others are denied.
-// The Central Registry has a special endpoint which generates access
-// tokens for a set of such test user IDs. Access to this endpoint is
-// sensitive, because in theory there is privilege escalation (even
-// though in reality the test user IDs are intentionally not used
-// for anything sensitive). As such, we use porcuepine (an account
-// that is controlled by CUE Labs who also run the Central
-// Registry) here in order to more carefully control in a CI
-// environment who has access to this endpoint.
-_porcuepineCueLogin: githubactions.#Step & {
-	name: "log into the central registry as porcuepine"
-	run:  "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
+_porcuepineCueLogin: _repo.loginCentralRegistry & {
+	#tokenExpression: "${{ secrets.PORCUEPINE_CUE_TOKEN }}"
 }
 
 // npm install in hugo to allow serve test to pass
