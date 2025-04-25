@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								examples: "2Ju0TY8GWu26IR5ojuAT5570vNULqhje068OjEgWFDA="
+								examples: "2sLI76Lw/O34X2CzbXmrxijyuuIOoum8Eu8nT3Wzng0="
 							}
 							multi_step: {
-								hash:       "29L9LNDIPBIA6PNDECSA57FS2DN8QFCT6F2Q1PF7RHRDKETITO80===="
-								scriptHash: "5U9IOJ0N56KQI44J6UAVMMRA03QJV5U3BQ36TEPH57N054J4NMJ0===="
+								hash:       "PAIJ6FF7UPVT9BQGQ3UMF2KPV1RVJB7QL35VMTV6SHCT4K36ODAG===="
+								scriptHash: "OP5EC8DILTRT2467KRDHBO4QBQT045F1HIFP02QC1ANBCCVP7SRG===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue export"
@@ -19,7 +19,7 @@ package site
 									output: """
 											{
 											    "data from bar.cue": true,
-											    "data from qux.cue": true
+											    "data from baz.cue": true
 											}
 
 											"""
@@ -30,6 +30,7 @@ package site
 									output: """
 											{
 											    "data from bar.cue": true,
+											    "data from baz.cue": true,
 											    "data from foo.cue": true,
 											    "data from qux.cue": true
 											}
@@ -41,6 +42,7 @@ package site
 									exitCode: 0
 									output: """
 											{
+											    "data from baz.cue": true,
 											    "data from qux.cue": true
 											}
 
@@ -51,8 +53,8 @@ package site
 									exitCode: 0
 									output: """
 											{
-											    "data from foo.cue": true,
-											    "data from qux.cue": true
+											    "data from baz.cue": true,
+											    "data from foo.cue": true
 											}
 
 											"""
