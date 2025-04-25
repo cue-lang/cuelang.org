@@ -16,6 +16,24 @@
       "message": "PTAL.\n\nBecause of the 3m30s(!) that it takes to [discover the tip version of cuelang.org/go](https://github.com/cue-lang/cuelang.org/actions/runs/14664734827/job/41156764221#step:31:1), the race condition isn\u0027t even close for tip.cuelang.org - it\u0027ll always occur. This means that each commit to master will cause monitoring to be run on the /previous/ deployment of tip. I /think/ that\u0027s ok (if sub-optimal), given that we don\u0027t expect tip.cuelang.org and cuelang.org to differ in the redirections they serve; and because we have no equivalent race condition when checking CL previews, which are definitely checked properly.",
       "revId": "83de1caa6347c945e05476ca84aa845490f596db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af10c8ae_403ebffe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-25T13:17:27Z",
+      "side": 1,
+      "message": "ok, let\u0027s see how we go.",
+      "parentUuid": "ccccad32_60ad803f",
+      "revId": "83de1caa6347c945e05476ca84aa845490f596db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
