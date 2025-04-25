@@ -25,7 +25,7 @@ package gerrithub
 import (
 	"path"
 	"strings"
-	"github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
+	"cue.dev/x/githubactions"
 )
 
 #repositoryURL:                      string

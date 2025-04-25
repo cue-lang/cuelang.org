@@ -16,7 +16,7 @@
 package github
 
 import (
-	"github.com/cue-tmp/jsonschema-pub/exp3/githubactions"
+	"cue.dev/x/githubactions"
 )
 
 // Note: the name of the workflows (and hence the corresponding .yml filenames)
