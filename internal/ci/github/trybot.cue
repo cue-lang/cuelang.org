@@ -186,7 +186,9 @@ workflows: trybot: _repo.bashWorkflow & {
 				"working-directory": "playground"
 			},
 
-			_porcuepineCueLogin,
+			_repo.loginCentralRegistry & {
+				#tokenExpression: "${{ secrets.PORCUEPINE_CUE_TOKEN }}"
+			},
 
 			// Set BUILD_DRAFTS=--buildDrafts if we are in the trybot repo for CL.
 			// This env var is used by the _dist step.

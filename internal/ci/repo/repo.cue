@@ -41,3 +41,5 @@ netlifySites: {
 }
 
 env: {}
+
+cueCommand: "go run cuelang.org/go/cmd/cue"
