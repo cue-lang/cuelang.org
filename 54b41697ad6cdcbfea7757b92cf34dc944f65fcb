@@ -22,6 +22,30 @@
       },
       "revId": "54b41697ad6cdcbfea7757b92cf34dc944f65fcb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2220317_2ca76f3d",
+        "filename": "hugo.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-25T11:55:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbe4b72e_07ccafa5",
+      "range": {
+        "startLine": 106,
+        "startChar": 22,
+        "endLine": 106,
+        "endChar": 29
+      },
+      "revId": "54b41697ad6cdcbfea7757b92cf34dc944f65fcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
