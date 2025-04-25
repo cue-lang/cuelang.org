@@ -250,5 +250,11 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_INDEX_KEY }}
           ALGOLIA_INDEX_NAME: cuelang.org
           ALGOLIA_INDEX_FILE: ../_public/algolia.json
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        name: Perform monitoring checks on https://cuelang.org
+        run: _scripts/checkEndpoints.bash https://cuelang.org
       - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
         run: _scripts/tipPatchApply.bash
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        name: Perform monitoring checks on https://tip.cuelang.org
+        run: _scripts/checkEndpoints.bash https://tip.cuelang.org
