@@ -493,9 +493,8 @@ _cacheWarm: githubactions.#Step & {
 // that is controlled by CUE Labs who also run the Central
 // Registry) here in order to more carefully control in a CI
 // environment who has access to this endpoint.
-_porcuepineCueLogin: githubactions.#Step & {
-	name: "log into the central registry as porcuepine"
-	run:  "go run cuelang.org/go/cmd/cue login --token ${{ secrets.PORCUEPINE_CUE_TOKEN }}"
+_porcuepineCueLogin: _repo.loginCentralRegistry & {
+	#tokenExpression: "${{ secrets.PORCUEPINE_CUE_TOKEN }}"
 }
 
 // npm install in hugo to allow serve test to pass
