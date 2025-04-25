@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40987051_aac224fa",
+        "filename": "content/privacy-policy/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-25T11:20:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "967a3917_7638328c",
+      "revId": "8c4ae096810a427724c240133fcd217206b977eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "18964578_9175b05e",
@@ -48,6 +66,24 @@
       "writtenOn": "2025-04-24T20:26:24Z",
       "side": 1,
       "message": "I don\u0027t think this is required with the `blog` page type.",
+      "revId": "8c4ae096810a427724c240133fcd217206b977eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "beb77ff3_d177066e",
+        "filename": "content/privacy-policy/_en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-25T11:20:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18964578_9175b05e",
       "revId": "8c4ae096810a427724c240133fcd217206b977eb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
