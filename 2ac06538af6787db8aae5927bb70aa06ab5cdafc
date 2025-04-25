@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42c65553_31e49791",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-25T12:00:31Z",
+      "side": 1,
+      "message": "Acknowledged. Will be done in a follow up before this is submitted.",
+      "parentUuid": "45f5fb4e_e5a100f1",
+      "revId": "2ac06538af6787db8aae5927bb70aa06ab5cdafc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7f97a20_a7c051cb",
@@ -58,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c8e0f25_da97ab52",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-25T12:00:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7f97a20_a7c051cb",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 6
+      },
+      "revId": "2ac06538af6787db8aae5927bb70aa06ab5cdafc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c47907bd_e755b462",
@@ -71,6 +113,24 @@
       "writtenOn": "2025-04-24T20:05:26Z",
       "side": 1,
       "message": "Use a list of the two URLs here instead of repeating the structure twice?",
+      "revId": "2ac06538af6787db8aae5927bb70aa06ab5cdafc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d05fed1a_a640624e",
+        "filename": "internal/monitoring/http_tool.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-25T12:00:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c47907bd_e755b462",
       "revId": "2ac06538af6787db8aae5927bb70aa06ab5cdafc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
