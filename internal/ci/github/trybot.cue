@@ -247,10 +247,25 @@ workflows: trybot: _repo.bashWorkflow & {
 				}
 			},
 
+			// We run our monitoring checks as late in the workflow as possible.
+			// This gives the Netlify deployments triggered by the same commit
+			// that started this workflow the strongest chance of having
+			// completed by the time execution reaches this point.
+			_monitoringStep & {
+				_ifMainRepoDefaultBranch
+				#site: "https://cuelang.org"
+			},
+
 			// We do this on all branches to catch changes in a CL that cause the
 			// application of tip patches to fail. This doesn't guarantee later
 			// success, but it's a useful early indicator.
 			_applyTipPatches,
+			// This monitoring check occurs after the tip patch was applied just
+			// in case the monitoring workflow command was patched.
+			_monitoringStep & {
+				_ifMainRepoDefaultBranch
+				#site: "https://tip.cuelang.org"
+			},
 		]
 	}
 
