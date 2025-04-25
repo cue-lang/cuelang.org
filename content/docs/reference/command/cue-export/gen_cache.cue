@@ -8,7 +8,7 @@ package site
 						page: {
 							cache: {
 								code: {
-									"cue export": "P0Mi49QICerYiIzZPhccfMtoxXgxqV4K79vgDmcKSSA="
+									"cue export": "o9edPUOyGvJn0NJ+38Io1wrdw/tyE5QDfLp0uyTM/MU="
 								}
 							}
 						}
