@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbe4b72e_07ccafa5",
+        "filename": "hugo.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-25T11:46:03Z",
+      "side": 1,
+      "message": "nit:\n\n```suggestion\n\tcanonicalUrlPrefix: strings.HasSuffix(\"/\")\n```\n\nI just (personally) prefer the explanatory clarity of this named function over regex, where a static suffix/prefix is needed. It might even obviate the `This must end in a \u0027/\u0027` comment.",
+      "range": {
+        "startLine": 106,
+        "startChar": 22,
+        "endLine": 106,
+        "endChar": 29
+      },
+      "revId": "54b41697ad6cdcbfea7757b92cf34dc944f65fcb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
