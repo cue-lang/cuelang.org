@@ -3,6 +3,7 @@
 {{ $contentTypes := slice }}
 {{ $contentType := .contentType | default "" }}
 {{ $preselectedTags := .preselectedTags | default "" }}
+{{ $searchTerm := .searchTerm | default "" }}
 {{ $type := .type | default "full" }}
 {{ $placeholder := (T "search_placeholder" ) }}
 
@@ -48,6 +49,7 @@
                     "name" "tags"
                     "filters" .Site.Params.tags
                     "preselectedItems" $preselectedTags
+                    "searchTerm" $searchTerm
                 ) -}}
 
                 {{ if $showContentTypes }}
