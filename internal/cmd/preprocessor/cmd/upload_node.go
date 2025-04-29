@@ -33,6 +33,20 @@ type uploadNode struct {
 	// hidden is set to indicate the script exists for side effects
 	// only and will not be rendered
 	hidden bool
+
+	// assert, force and forceFiles are only deemed set after a call to
+	// validate() and assuming the node is not in error after that validate
+	// call.
+	assert     bool
+	force      bool
+	forceFiles []string
+
+	// currentFileFences is a list of "fences", a unique string used to
+	// delineate the start and end of the on-disk file contents. This slice is
+	// populated regardless of whether we are in --update mode or not. This
+	// could be optimised in the future. This slice is only set after the
+	// multi-step script has been built.
+	currentFileFences []string
 }
 
 var _ validatingNode = (*uploadNode)(nil)
@@ -66,8 +80,25 @@ func (u *uploadNode) validate() {
 		u.errorf("%v: cldd upload nodes must contain exactly one file", u)
 	}
 
+	var err error
+	// #assert and #force are mutually exclusive. Enforce that
+	u.forceFiles, u.force, err = u.tag(tagForce, "")
+	if err != nil {
+		u.errorf("%v: failed trying to find %q tag: %v", u, tagForce, err)
+	}
+	_, u.assert, err = u.tag(tagAssert, "")
+	if err != nil {
+		u.errorf("%v: failed trying to find %q tag: %v", u, tagAssert, err)
+	}
+	if u.force && u.assert {
+		u.errorf("%v: %s and %s are mutually exclusive; found both", u, tagForce, tagAssert)
+	}
+
 	// We just default to stacking all files in case no locations are provided.
 	u.validateLocationDirective()
+
+	// TODO: could optimise here to only allocate when required
+	u.currentFileFences = make([]string, len(u.analysis.fileNames))
 }
 
 func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
