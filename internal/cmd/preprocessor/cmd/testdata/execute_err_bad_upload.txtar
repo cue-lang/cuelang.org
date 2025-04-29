@@ -1,12 +1,16 @@
 # Ensure that we get errors for various bad forms of upload node
 
 unquote content/dir/en.md
+unquote content/dir2/en.md
 
 # Run the preprocessor
 ! exec preprocessor execute
 
 # Assert that we get an error message about in.cue being listed multiple times
 stderr $WORK${/}'content'${/}'dir'${/}'en.md:5:8: file "in.cue" listed multiple times'
+
+# Assert that we get an error message about #assert and #force both being used
+stderr $WORK${/}'content'${/}'dir2'${/}'en.md:5:8: force and assert are mutually exclusive; found both'
 
 -- hugo/.keep --
 -- golden/content/dir/.keep --
@@ -27,4 +31,22 @@ content: dir: page: {
 >{{{with upload "en" "repeated files"}}}
 >-- in.cue --
 >-- in.cue --
+>{{{end}}}
+-- content/dir2/page.cue --
+package site
+
+content: dir2: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir2/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with upload "en" "force and assert"}}}
+>#force
+>#assert
+>-- 1.cue --
+>-- 2.cue --
 >{{{end}}}
