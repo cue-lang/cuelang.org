@@ -401,7 +401,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 	// TODO: do a pass over all the shell generated below to ensure that we are
 	// quoting everything that we need to.
 
-	upload := func(f txtar.File, force bool) {
+	upload := func(f txtar.File, assert, force bool) (assertFence string) {
 
 		// The upload target path provided via the txtar filename _might_ be
 		// absolute. We don't know.  When it is, we should treat it as such.
@@ -414,8 +414,45 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 		targetFileVar := "target" + rf.getFence()
 		pf("if [[ \"%s\" != /* ]]; then %s=\"$HOME/%s\"; else %s=\"%s\"; fi\n", f.Name, targetFileVar, f.Name, targetFileVar, f.Name)
 
-		// If we are not in force mode, first check if the file exists
+		// By this point we know we don't have both assert and force. We could
+		// have neither.
+
+		if assert {
+			// File must exist. We must fail if we can't cat the file
+			assertFence = rf.getFence()
+			pf("echo %s\n", assertFence)
+			pf("cat $%s\n", targetFileVar)
+			pf("echo %s\n", assertFence)
+			pf("%s=$?\n", exitCodeVar)
+			pf("if [[ $%s != 0 ]]\n", exitCodeVar)
+			pf("then\n")
+			pf("exit 1\n")
+			pf("fi\n")
+
+			// If we are not in update mode, diff the file. Note
+			// we always grab the wantFence, otherwise we would
+			// generate a different script based on whether --update
+			// was set or not which would break the caching logic.
+			wantFence := rf.getFence()
+			if !rf.updateGoldenFiles {
+				pf("diff -u --label $%s.got $%s --label $%s.want <(cat <<'%s'\n", targetFileVar, targetFileVar, targetFileVar, wantFence)
+				pf("%s", f.Data)
+				pf("%s\n", wantFence)
+				pf(")\n")
+				// We need to force an exit if the diff found differences
+				pf("if [[ $? != 0 ]]\n")
+				pf("then\n")
+				pf("exit 1\n")
+				pf("fi\n")
+			}
+
+			// We can return now, because assert is mutually exclusive with a regular
+			// upload, so no logic below applies
+			return
+		}
+
 		if !force {
+			// If we are not in force mode, first check if the file exists
 			cmdEchoFence := rf.getFence()
 			pf("cat <<'%s'\n", cmdEchoFence)
 			pf("$ if [[ -f $%s ]]; then echo target file $%s already exists; exit 1; fi\n", targetFileVar, targetFileVar)
@@ -457,6 +494,8 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 
 		// The file contents are author-specified
 		userScript("filename: %s, contents: %s\n", f.Name, f.Data)
+
+		return assertFence
 	}
 
 	rf.walkBody(func(n node) error {
@@ -500,10 +539,12 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 		case *uploadNode:
 			didWork = true
 
-			files, force, _ := n.tag(tagForce, "")
-			for _, f := range n.archive.Files {
-				forceFile := force && (len(files) == 0 || slices.Contains(files, f.Name))
-				upload(f, forceFile)
+			// At this stage we know, post-validation of the uploadNode, that we either
+			// have force or assert, not both, and that we were
+
+			for i, f := range n.archive.Files {
+				forceFile := n.force && (len(n.forceFiles) == 0 || slices.Contains(n.forceFiles, f.Name))
+				n.currentFileFences[i] = upload(f, n.assert, forceFile)
 			}
 
 		case *uploadDirNode:
@@ -536,7 +577,7 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 					Data: byts,
 				}
 
-				upload(f, n.force)
+				upload(f, false, n.force)
 
 				return nil
 			})
@@ -905,6 +946,20 @@ func (m *multiStepScript) run() {
 					}
 				}
 				i++ // TODO - remove this as part of TODO from above
+			}
+		case *uploadNode:
+			// We only have work to do here if we are an assert node and in
+			// --update mode. In which case we need to update the contents of the
+			// upload node, which is the "want" in the comparison.
+			if !step.assert || !m.updateGoldenFiles {
+				return nil
+			}
+			for i, f := range step.currentFileFences {
+				fence := []byte(f + "\n")
+				// Ignore everything before the start fence
+				advanceWalk(fence)
+				// The actual contents are everything before the end fence
+				step.archive.Files[i].Data = []byte(advanceWalk(fence))
 			}
 		}
 		return nil
