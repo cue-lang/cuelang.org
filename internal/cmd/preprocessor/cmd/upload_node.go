@@ -46,11 +46,23 @@ func (u *uploadNode) isHidden() bool {
 }
 
 func (u *uploadNode) validate() {
+	// Ensure we have a unique set of files, otherwise confusion will reign
+	files := make(map[string]bool)
+	for _, f := range u.archive.Files {
+		if files[f.Name] {
+			u.errorf("%v: file %q listed multiple times", u, f.Name)
+		}
+		files[f.Name] = true
+	}
+	if u.isInError() {
+		return
+	}
+
 	if len(u.analysis.fileNames) == 0 {
 		u.errorf("%v: upload nodes must contain at least one file", u)
 	}
 
-	if u.rf.page.isClddContent() && len(u.analysis.fileNames) != 1 {
+	if !u.hidden && u.rf.page.isClddContent() && len(u.analysis.fileNames) != 1 {
 		u.errorf("%v: cldd upload nodes must contain exactly one file", u)
 	}
 
