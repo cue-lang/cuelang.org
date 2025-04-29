@@ -1,0 +1,30 @@
+# Ensure that we get errors for various bad forms of upload node
+
+unquote content/dir/en.md
+
+# Run the preprocessor
+! exec preprocessor execute
+
+# Assert there was no cache hit
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:5:8: file "in.cue" listed multiple times'
+
+-- hugo/.keep --
+-- golden/content/dir/.keep --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with upload "en" "repeated files"}}}
+>-- in.cue --
+>-- in.cue --
+>{{{end}}}
