@@ -1,0 +1,93 @@
+# Ensure that we can assert files exist, and update when they don't
+
+unquote content/dir/en.md
+unquote golden/content/dir/en.md
+
+# Ensure we get an error in case the assert-ions are not satisfied
+! exec preprocessor execute
+stderr '--- /home/runner/path/to/file\.txt\.got'
+stderr '\+\+\+ /home/runner/path/to/file\.txt\.want'
+stderr '-hello'
+stderr '\+goodbye'
+
+# Update the assertions based on the actual contents
+exec preprocessor execute --update
+
+# Verify that we get the expected output, but also that the input
+# page is updated with the updated upload node (containing the
+# assert directive)
+cmp content/dir/en.md golden/content/dir/en.md
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+# Verify that we can run the preprocessor again, no flag required
+exec preprocessor execute
+
+# Same comparisons as before, i.e. that the output is as expected
+# and the input file reflects the updated upload node
+cmp content/dir/en.md golden/content/dir/en.md
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+-- hugo/.keep --
+-- golden/content/dir/.keep --
+-- content/site.cue --
+package site
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "en" "create file.txt"}}}
+>mkdir -p path/to
+>cat <<EOD > path/to/file.txt
+>hello
+>EOD
+>{{{end}}}
+>
+>{{{with upload "en" "create file"}}}
+>#assert
+>-- path/to/file.txt --
+>goodbye
+>{{{end}}}
+>
+-- golden/content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "en" "create file.txt"}}}
+>mkdir -p path/to
+>cat <<EOD > path/to/file.txt
+>hello
+>EOD
+>{{{end}}}
+>
+>{{{with upload "en" "create file"}}}
+>#assert
+>-- path/to/file.txt --
+>hello
+>{{{end}}}
+>
+-- golden/hugo/content/en/dir/index.md --
+---
+title: JSON Superset
+---
+
+```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgcGF0aC90bwpjYXQgPDxFT0QgPnBhdGgvdG8vZmlsZS50eHQKaGVsbG8KRU9E" }
+$ mkdir -p path/to
+$ cat <<EOD >path/to/file.txt
+hello
+EOD
+```
+
+{{< code-tabs >}}
+{{< code-tab name="path/to/file.txt" language="txt" area="top-left" >}}
+hello
+{{< /code-tab >}}{{< /code-tabs >}}
+
