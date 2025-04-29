@@ -63,6 +63,11 @@ const (
 	// tagForce indicates that an upload or uploaddir should ignore if a target
 	// file already exists.
 	tagForce = "force"
+
+	// tagAssert indicates that an upload node should ensure the contents of files
+	// on disk match those specified. The --update flag allows for the upload node
+	// using the #assert directive to be updated to reflect the contents on disk.
+	tagAssert = "assert"
 )
 
 // findTag searches for the first #$key (or #$key($arg) if arg is non empty)
