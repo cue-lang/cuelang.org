@@ -8,15 +8,15 @@ package site
 						page: {
 							cache: {
 								code: {
-									kubernetes: "fcEJIoi/QpstYALSkSBwy2CVZuixuFGhn35dl84pDZM="
-									github:     "o3GnrpT8VMQ6cA492572MNZY32EPq+kqsOuH1FqG68o="
-									gitlab:     "5BOnyBygffFUN0BKBZIpXMtI7G3JMqtrTkCr83tcJwI="
-									buildkite:  "RukwBhQy2fAPjiqe13fxuxHypww/dVXQNuJlqj75nmk="
-									azure:      "+Wx+UHT6nDiC2NQplvD3OLx+mp8vqLHA2oUsEl84fio="
-									argo:       "4UMwn8k6cguegscqZXyKGcQPU+mEk6IZPa/SWW/KOek="
-									goreleaser: "pilhWfA3AGiXhoqceYM7lZ7N5WpWIZnCCjKvWnbOKdE="
-									compose:    "xAQJvV2ic/XB9l1OO5p9CEMv8Y4v9UsMxm1zfK3Gszg="
-									npmpackage: "2SMs2UMPs43Qx+06eJme6G2ct38+0evJ9WT0n4Sdw2o="
+									kubernetes: "6uWIPgbxe+GmiPooRS3cufo8XpGENTfCyQMG5LLz1qc="
+									github:     "Bf3u2Ir98aRGigxcVckcgDQCunsFqJtJkkoS8FyaKfI="
+									gitlab:     "p3gls3US/jwseJtg4Img2P5htI0ep025jfo0UL2e7DU="
+									buildkite:  "4XK7Sj95zM1OrYgMrzH7FMrnLHbQGxXtUqs5uLt9rg0="
+									azure:      "UJZ4f1u+GsuF96OBK+NO6aKTvcKJ6NJKtW3uLvQ+WtM="
+									argo:       "oA9YJERnUUHK9FxBIYIca0WsGkAZto+CR8WTTCtpqOM="
+									goreleaser: "gAIucYLTqGKplDVvYLjLe50H0CZ5qOCciEBYL5M7f1k="
+									compose:    "vFP6rNUgzzZ1lXbFiPTHGJum7CVDnOk4s68Meeq0YWo="
+									npmpackage: "lM9IUw7/XN9xUCFco1w30fg7sUuslLbeqRCcY8/8pII="
 								}
 							}
 						}
