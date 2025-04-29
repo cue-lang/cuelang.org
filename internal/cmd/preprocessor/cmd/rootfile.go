@@ -817,96 +817,95 @@ func (m *multiStepScript) run() {
 	// TODO we should tidy this up to not be a walk... it's getting verbose
 	var i int
 	m.walkBody(func(n node) error {
-		step, ok := n.(*scriptNode)
-		if !ok {
-			return nil
-		}
-		if _, noRun, _ := step.tag(tagNorun, ""); noRun {
-			return nil
-		}
-		for _, stmt := range step.stmts {
-			fence := []byte(stmt.outputFence + "\n")
-			advanceWalk(fence) // Ignore everything before the fence
-
-			stmt.Output = advanceWalk(fence)
-			exitCodeStr := advanceWalk([]byte("\n"))
-			stmt.ExitCode, err = strconv.Atoi(exitCodeStr)
-			if err != nil {
-				m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
+		switch step := n.(type) {
+		case *scriptNode:
+			if _, noRun, _ := step.tag(tagNorun, ""); noRun {
+				return nil
 			}
+			for _, stmt := range step.stmts {
+				fence := []byte(stmt.outputFence + "\n")
+				advanceWalk(fence) // Ignore everything before the fence
 
-			var sans []sanitiser
-			if stmt.sanitisers != nil {
-				sans = stmt.sanitisers
-			} else {
-				for _, s := range m.page.config.Sanitisers {
-					matched, err := s.matches(stmt.stmt)
-					if err != nil {
-						m.fatalf("%v: failed to determine if sanitiser should apply for %q: %v", m, stmt.Cmd, err)
-					}
-					if !matched {
-						continue
-					}
-					sans = append(sans, s)
+				stmt.Output = advanceWalk(fence)
+				exitCodeStr := advanceWalk([]byte("\n"))
+				stmt.ExitCode, err = strconv.Atoi(exitCodeStr)
+				if err != nil {
+					m.fatalf("%v: failed to parse exit code from %q at position %v in output: %v\n%s", m, exitCodeStr, len(out)-len(walk)-len(exitCodeStr)-1, err, out)
 				}
-			}
-			for _, s := range sans {
-				if err := s.sanitise(stmt); err != nil {
-					m.fatalf("%v: failed to sanitise output for %q: %v", m, stmt.Cmd, err)
-				}
-			}
 
-			// Now replace all random values which have a replacement with that replacement
-			// in both the command and the output
-			stmt.Doc = m.rootFile.page.config.randomReplace(stmt.Doc)
-			stmt.Cmd = m.rootFile.page.config.randomReplace(stmt.Cmd)
-			stmt.Output = m.rootFile.page.config.randomReplace(stmt.Output)
-
-			// At this point, stmt.Output is sanitised.
-
-			if !scriptCacheMiss {
-				// In this code path, we had a script cache hit but because of a
-				// flag/other we intentionally skipped the cache. This means
-				// that cmd.Output might be the same as cstmt.Output. But it
-				// might not, because of variations like test times in the
-				// output from commands like 'go test'. This is where
-				// comparators come in.
-				//
-				// Comparators normalise the output of commands in order to
-				// allow for "fuzzy" comparisons. Running the comparators on
-				// both the cached and actual output gives us something we can
-				// then compare byte-for-byte. If the results from the
-				// normalization compare equal, then we can safely write the
-				// output from the cached version to the actual. The actual is
-				// what will get written back to disk.
-
-				cstmt := multiStepCache.Steps[i]
-				actualAccum := stmt.Output
-				cachedAccum := cstmt.Output
-				for _, cmp := range m.page.config.Comparators {
-					var err error
-					matched, err := cmp.matches(stmt.stmt)
-					if err != nil {
-						m.fatalf("%v: failed to determine if comparator should apply for %q: %v", m, stmt.Cmd, err)
-					}
-					if !matched {
-						continue
-					}
-					f := m.getFence()
-					actualAccum, err = cmp.normalize(stmt, actualAccum, f)
-					if err != nil {
-						return err
-					}
-					cachedAccum, err = cmp.normalize(stmt, cachedAccum, f)
-					if err != nil {
-						return err
+				var sans []sanitiser
+				if stmt.sanitisers != nil {
+					sans = stmt.sanitisers
+				} else {
+					for _, s := range m.page.config.Sanitisers {
+						matched, err := s.matches(stmt.stmt)
+						if err != nil {
+							m.fatalf("%v: failed to determine if sanitiser should apply for %q: %v", m, stmt.Cmd, err)
+						}
+						if !matched {
+							continue
+						}
+						sans = append(sans, s)
 					}
 				}
-				if actualAccum == cachedAccum {
-					stmt.Output = cstmt.Output
+				for _, s := range sans {
+					if err := s.sanitise(stmt); err != nil {
+						m.fatalf("%v: failed to sanitise output for %q: %v", m, stmt.Cmd, err)
+					}
 				}
+
+				// Now replace all random values which have a replacement with that replacement
+				// in both the command and the output
+				stmt.Doc = m.rootFile.page.config.randomReplace(stmt.Doc)
+				stmt.Cmd = m.rootFile.page.config.randomReplace(stmt.Cmd)
+				stmt.Output = m.rootFile.page.config.randomReplace(stmt.Output)
+
+				// At this point, stmt.Output is sanitised.
+
+				if !scriptCacheMiss {
+					// In this code path, we had a script cache hit but because of a
+					// flag/other we intentionally skipped the cache. This means
+					// that cmd.Output might be the same as cstmt.Output. But it
+					// might not, because of variations like test times in the
+					// output from commands like 'go test'. This is where
+					// comparators come in.
+					//
+					// Comparators normalise the output of commands in order to
+					// allow for "fuzzy" comparisons. Running the comparators on
+					// both the cached and actual output gives us something we can
+					// then compare byte-for-byte. If the results from the
+					// normalization compare equal, then we can safely write the
+					// output from the cached version to the actual. The actual is
+					// what will get written back to disk.
+
+					cstmt := multiStepCache.Steps[i]
+					actualAccum := stmt.Output
+					cachedAccum := cstmt.Output
+					for _, cmp := range m.page.config.Comparators {
+						var err error
+						matched, err := cmp.matches(stmt.stmt)
+						if err != nil {
+							m.fatalf("%v: failed to determine if comparator should apply for %q: %v", m, stmt.Cmd, err)
+						}
+						if !matched {
+							continue
+						}
+						f := m.getFence()
+						actualAccum, err = cmp.normalize(stmt, actualAccum, f)
+						if err != nil {
+							return err
+						}
+						cachedAccum, err = cmp.normalize(stmt, cachedAccum, f)
+						if err != nil {
+							return err
+						}
+					}
+					if actualAccum == cachedAccum {
+						stmt.Output = cstmt.Output
+					}
+				}
+				i++ // TODO - remove this as part of TODO from above
 			}
-			i++ // TODO - remove this as part of TODO from above
 		}
 		return nil
 	})
