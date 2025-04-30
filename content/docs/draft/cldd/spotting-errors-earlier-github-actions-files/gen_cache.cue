@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								upload: {
-									broken: "wkIXn0Gvfpw05ZpG8WYJaDLQvCP6lQAyrpLZO0SZmks="
-									fixed:  "qxe3V8HvpzvaZ4OisoksZEe1pZvROm6zNPe0pmxGFiI="
+									broken: "7lNds/QSYkYcJBnJyXR997v9de6Oq+72qV1okXaaP2g="
+									fixed:  "ZJlUju0OWZLoNj3PUExjKTPEDxCNPPH17MKK1D/gK9M="
 								}
 								multi_step: {
-									hash:       "B2VLFO4RHJ3N30LN6KJG8SVQMLSDB72TJS1VDD33GVIRVBBVE1G0===="
+									hash:       "2H346E4RERD2F7KHI5U3R43DF4MVK3G57NDLFFL6R28O7QJU4HD0===="
 									scriptHash: "RNNHC3G4I63AQ470V4MEBFCS1VTTBM58RT11FEKPF52FU4Q9BOVG===="
 									steps: [{
 										doc:      "# Registry auth"
