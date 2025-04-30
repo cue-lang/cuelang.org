@@ -16,7 +16,7 @@ The latest pre-release of the `cue` command is required -- please
 [upgrade to this version](/docs/installing-cue/) if it's not already installed:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0-alpha.4
+cue version v0.13.0-alpha.4.0.20250430133040-3ba376f34cb6
 ...
 ```
 

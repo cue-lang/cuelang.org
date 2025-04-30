@@ -53,10 +53,10 @@ Verify that the configuration does not validate successfully, as expected:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
 $ cue vet -c
-val.i: conflicting values int and "hello" (mismatched types int and string):
+val.i: conflicting values "hello" and int (mismatched types string and int):
     ./bad.cue:4:5
     ./bad.cue:9:5
-val.s: conflicting values string and 42 (mismatched types string and int):
+val.s: conflicting values 42 and string (mismatched types int and string):
     ./bad.cue:5:5
     ./bad.cue:10:5
 ```
@@ -122,8 +122,8 @@ func main() {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEyLjEKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.12.1
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEzLjAtYWxwaGEuNC4wLjIwMjUwNDMwMTMzMDQwLTNiYTM3NmYzNGNiNgpnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.13.0-alpha.4.0.20250430133040-3ba376f34cb6
 ...
 $ go mod tidy
 ...
@@ -140,13 +140,13 @@ Run the Go program:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 # Error summary [err]:
-val.i: conflicting values int and "hello" (mismatched types int and string) (and 1 more errors)
+val.i: conflicting values "hello" and int (mismatched types string and int) (and 1 more errors)
 
 # Error details [errors.Details(err)]:
-val.i: conflicting values int and "hello" (mismatched types int and string):
+val.i: conflicting values "hello" and int (mismatched types string and int):
     /home/runner/bad.cue:4:5
     /home/runner/bad.cue:9:5
-val.s: conflicting values string and 42 (mismatched types string and int):
+val.s: conflicting values 42 and string (mismatched types int and string):
     /home/runner/bad.cue:5:5
     /home/runner/bad.cue:10:5
 
