@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8720b2c_56887ab0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T17:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a96008de_54a5f01f",
+      "range": {
+        "startLine": 13,
+        "startChar": 11,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "a8d2476a9ca0880c42c8d4162cd7b011a396f597",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be86b072_fe952ae9",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3ffd913_f782a1ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T17:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be86b072_fe952ae9",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "a8d2476a9ca0880c42c8d4162cd7b011a396f597",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b1395aa7_bce73315",
@@ -60,6 +108,30 @@
       "writtenOn": "2025-04-30T16:59:26Z",
       "side": 1,
       "message": "delineate?",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 13
+      },
+      "revId": "a8d2476a9ca0880c42c8d4162cd7b011a396f597",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c931534_eeb65de2",
+        "filename": "internal/cmd/preprocessor/cmd/upload_node.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T17:06:38Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "b1395aa7_bce73315",
       "range": {
         "startLine": 45,
         "startChar": 4,
