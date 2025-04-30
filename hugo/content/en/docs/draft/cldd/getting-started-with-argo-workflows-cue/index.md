@@ -127,8 +127,10 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgd29ya2Zsb3cueW1sIC1lIHdvcmtmbG93cy5leGFtcGxl" }
 $ cue export --outfile workflow.yml -e workflows.example
 ```
+
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
+
 ```yml { title="workflow.yml" codeToCopy="YXBpVmVyc2lvbjogYXJnb3Byb2ouaW8vdjFhbHBoYTEKa2luZDogV29ya2Zsb3cKbWV0YWRhdGE6CiAgZ2VuZXJhdGVOYW1lOiBzdGVwcy0Kc3BlYzoKICBlbnRyeXBvaW50OiBoZWxsby1oZWxsby1oZWxsbwogIHRlbXBsYXRlczoKICAgIC0gbmFtZTogaGVsbG8taGVsbG8taGVsbG8KICAgICAgc3RlcHM6CiAgICAgICAgLSAtIG5hbWU6IGhlbGxvMQogICAgICAgICAgICB0ZW1wbGF0ZTogcHJpbnQtbWVzc2FnZQogICAgICAgICAgICBhcmd1bWVudHM6CiAgICAgICAgICAgICAgcGFyYW1ldGVyczoKICAgICAgICAgICAgICAgIC0gbmFtZTogbWVzc2FnZQogICAgICAgICAgICAgICAgICB2YWx1ZTogaGVsbG8xCiAgICAgICAgLSAtIG5hbWU6IGhlbGxvMmEKICAgICAgICAgICAgdGVtcGxhdGU6IHByaW50LW1lc3NhZ2UKICAgICAgICAgICAgYXJndW1lbnRzOgogICAgICAgICAgICAgIHBhcmFtZXRlcnM6CiAgICAgICAgICAgICAgICAtIG5hbWU6IG1lc3NhZ2UKICAgICAgICAgICAgICAgICAgdmFsdWU6IGhlbGxvMmEKICAgICAgICAgIC0gbmFtZTogaGVsbG8yYgogICAgICAgICAgICB0ZW1wbGF0ZTogcHJpbnQtbWVzc2FnZQogICAgICAgICAgICBhcmd1bWVudHM6CiAgICAgICAgICAgICAgcGFyYW1ldGVyczoKICAgICAgICAgICAgICAgIC0gbmFtZTogbWVzc2FnZQogICAgICAgICAgICAgICAgICB2YWx1ZTogaGVsbG8yYgogICAgLSBuYW1lOiBwcmludC1tZXNzYWdlCiAgICAgIGlucHV0czoKICAgICAgICBwYXJhbWV0ZXJzOgogICAgICAgICAgLSBuYW1lOiBtZXNzYWdlCiAgICAgIGNvbnRhaW5lcjoKICAgICAgICBpbWFnZTogYnVzeWJveAogICAgICAgIGNvbW1hbmQ6CiAgICAgICAgICAtIGVjaG8KICAgICAgICBhcmdzOgogICAgICAgICAgLSAne3tpbnB1dHMucGFyYW1ldGVycy5tZXNzYWdlfX0nCg==" }
 # filepath: workflow.yml
 
@@ -170,6 +172,7 @@ spec:
         args:
           - '{{inputs.parameters.message}}'
 ```
+
 ## Run your workflow
 
 You can now

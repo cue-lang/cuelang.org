@@ -137,13 +137,12 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 {{{with script "en" "export"}}}
 cue export --outfile workflow.yml -e workflows.example
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move"}}}
-mv workflow.yml{,.got}
-{{{end}}}
 
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- workflow.yml --
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
@@ -182,9 +181,6 @@ spec:
           - echo
         args:
           - '{{inputs.parameters.message}}'
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff -u workflow.yml{,.got}
 {{{end}}}
 
 ## Run your workflow

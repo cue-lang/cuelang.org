@@ -75,6 +75,7 @@ type Dog struct {
 	Age float64 `json:"age,omitempty"`
 }
 {{< /code-tab >}}{{< /code-tabs >}}
+
 Notice these differences between the contents of
 [`pets.cue`](#step-1)
 and

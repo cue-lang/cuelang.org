@@ -107,7 +107,9 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgbWFuaWZlc3QueW1s" }
 $ cue export --outfile manifest.yml
 ```
+
 If you used the example manifest from above, your validated YAML manifest will look like this:
+
 ```yml { title="manifest.yml" codeToCopy="YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGxhYmVsczoKICAgIGFwcDogZXhhbXBsZTEKICBuYW1lOiBleGFtcGxlMQpzcGVjOgogIHJlcGxpY2FzOiAxCiAgc2VsZWN0b3I6CiAgICBtYXRjaExhYmVsczoKICAgICAgYXBwOiBleGFtcGxlMQogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGxhYmVsczoKICAgICAgICBhcHA6IGV4YW1wbGUxCiAgICBzcGVjOgogICAgICBjb250YWluZXJzOgogICAgICAgIC0gaW1hZ2U6IG5naW54OmxhdGVzdAogICAgICAgICAgbmFtZTogbmdpbngK" }
 # filepath: manifest.yml
 

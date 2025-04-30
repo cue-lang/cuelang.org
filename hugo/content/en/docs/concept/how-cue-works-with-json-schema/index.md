@@ -81,6 +81,7 @@ We use `cue import` to convert the JSON Schema to CUE:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI1BlcnNvbjonIHNjaGVtYS5qc29u" }
 $ cue import -l '#Person:' schema.json
 ```
+
 `cue import` recognises JSON Schema from its signature fields, and uses the
 schema's constraints to create a shorter, more readable CUE representation.
 Our `-l` parameter tells `cue` to place the constraints inside the `#Person`
@@ -111,6 +112,7 @@ import "strings"
 	...
 }
 {{< /code-tab >}}{{< /code-tabs >}}
+
 We use the imported schema to validate some known-good data (`good.json`)
 and known-bad data (`bad.json`):
 

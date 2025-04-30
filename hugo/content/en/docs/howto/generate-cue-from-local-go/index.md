@@ -127,6 +127,7 @@ The `--local` flag is required because of {{< issue 452 />}}, and when that
 issue is resolved the flag won't be needed (so long as the CUE and Go package
 import paths are identical).
 {{< /step >}}
+
 {{< step stepNumber="5" >}}
 Inspect the generated CUE code:
 
@@ -150,6 +151,7 @@ package main
 {{< /code-tab >}}{{< /code-tabs >}}
 
 {{< /step >}}
+
 ## Test the generated CUE
 
 {{< step stepNumber="6" >}}
