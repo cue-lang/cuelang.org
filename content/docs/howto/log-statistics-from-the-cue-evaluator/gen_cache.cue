@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								file: "VlCeQZrm6MQgRhndMIYhyAVPpkE0AG1YsQ2a5+g7Wyg="
+								file: "OMk2LjKoujpvx9wIsXaEc7qwjIR4k/wD9qvNHS5UjLk="
 							}
 							multi_step: {
-								hash:       "3VC311Q3P0P7HVCOJIJLMOEOFRFB18VMFDURGK4CQSRGJNO0CUC0===="
+								hash:       "B1NDLLQT0COAOTA1OMNSDDE1L73PLSMPC9SS22MUFB02US3DUG6G===="
 								scriptHash: "H32HT1IOKP19JHS8HDBLNV00ED6AAUJQ170GRGOP7JT6QKSTSIO0===="
 								steps: [{
 									doc:      ""
@@ -28,18 +28,20 @@ package site
 									exitCode: 0
 									output: """
 											CUE: {
-											\tEvalVersion:  2
+											\tEvalVersion:  3
 											\tUnifications: 4
-											\tDisjuncts:    4
+											\tDisjuncts:    0
 											\tConjuncts:    4
-											\tFreed:        4
-											\tReused:       2
-											\tAllocs:       2
+											\tCloseIDElems: 0
+											\tNumCloseIDs:  0
+											\tFreed:        0
+											\tReused:       0
+											\tAllocs:       4
 											\tRetained:     0
 											}
 											Go: {
-											\tAllocBytes:   3967792
-											\tAllocObjects: 42729
+											\tAllocBytes:   15478624
+											\tAllocObjects: 89354
 											}
 
 											"""

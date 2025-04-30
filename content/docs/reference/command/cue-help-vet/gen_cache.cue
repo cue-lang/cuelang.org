@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "42Q8VFD665IMB5GJUSP6I1P3KVOIHEBA4TRRKDPFMJG2BKLGS2K0===="
-									scriptHash: "7D42K01333ECOFFSJFP0O07KS36H2TRHD5BV6TUBETOCQARBJBSG===="
+									hash:       "B7PJ224VB3G6FCAVDNMUQ5RHGVJPEV1HQIJBNSV9NGNMDGGL0PKG===="
+									scriptHash: "SQ236GTNUITICMB22DPSRS6RA3UIONSSEP1OOS75H3TK7PAPKI8G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.4.0.20250430133040-3ba376f34cb6:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -52,10 +52,10 @@ package site
 												Examples:
 
 												  # Check files against a CUE file:
-												  cue vet foo.cue foo.yaml
+												  cue vet -c foo.cue foo.yaml
 
 												  # Check files against a particular expression
-												  cue vet foo.cue lang/en.yaml lang/de.yaml -d '#Translation'
+												  cue vet -c foo.cue lang/en.yaml lang/de.yaml -d '#Translation'
 
 												More than one expression may be given using multiple -d flags. Each non-CUE
 												file must match all expression values.

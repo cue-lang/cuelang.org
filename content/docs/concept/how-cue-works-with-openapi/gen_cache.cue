@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":           "A9iXzD1B56Xw6scbXPzR20ufD/VHEdm3Uo6CfeF73ks="
-								"api.pet.yaml":         "vB5BwSdVQTF4A1DS8Jgz4bdJJiMwStM/e66A2cYeuIo="
-								"api.pet.cue":          "Qw0GZiuMBSxvGGpBx3vMJ4eP5BfcIEim3wYqQtTx2Yk="
-								"jonathan.yml":         "PC08VydAEy9U5eq/7mbRcsdf5Yyi/OeqI4O+ngtOWzs="
-								"go emit openapi main": "Zfs3cAyPzB327XD2YY9vxh5MLuMR7Mr1ceOcNoQs/iE="
+								"schema.cue":           "q3MgRUNvKKbW/LDIo5igx9C7so3bz5vyaGt4DO3KzBI="
+								"api.pet.yaml":         "wI982tTfEeLgumn5PpGcALsV8HQBV1ihnndbg6Xiqwo="
+								"api.pet.cue":          "fTL/QLV9VQ8hlONIoC9CqJwmqRoIcz2ayvP6LAnoIZA="
+								"jonathan.yml":         "P7iqh6NcFZ0FFjN09XBpx1u3ZGTMzfHq+ElQDmWN2SA="
+								"go emit openapi main": "F/7sByMIUAmvmqqvPUKefmj8AVy0+sXVWz0x8XNx6+g="
 							}
 							multi_step: {
-								hash:       "EMVA4OO7FADABLBNJOJJ4JCM14JTGN6FC2CPIADRDCT4H8PDGUS0===="
-								scriptHash: "0JPDR4GSSJCUJ5C61HGE2E2QM9BT7ACALRDLKLJUFLB9SQRL6TNG===="
+								hash:       "E9904OFADTKTMM4QL9G9424Q41FCDUBDCOBV8SS10IVHCV9FPH90===="
+								scriptHash: "R6EELA5B3RNSKG0CV0B6VNDG6JPUS1CT3PGEIFD9SIBPUVMA0FGG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -41,16 +41,11 @@ package site
 									cmd:      "cue vet -c api.pet.yaml jonathan.yml -d '#Pet'"
 									exitCode: 1
 									output: """
-											kind: 3 errors in empty disjunction:
+											kind: 2 errors in empty disjunction:
 											kind: conflicting values "cat" and "tortoise":
 											    ./api.pet.yaml:11:7
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 											kind: conflicting values "dog" and "tortoise":
-											    ./api.pet.yaml:26:11
-											    ./jonathan.yml:2:7
-											kind: conflicting values "goldfish" and "tortoise":
-											    ./api.pet.yaml:26:11
 											    ./jonathan.yml:2:7
 
 											"""
@@ -64,7 +59,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.1"
+									cmd:      "go get cuelang.org/go@v0.13.0-alpha.4.0.20250430133040-3ba376f34cb6"
 									exitCode: 0
 									output: """
 											...

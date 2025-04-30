@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "SE5HSORNLEPO2V3BFDT21U7Q1SJEHRMQ6MSSNOKMQKCSIJJ9CA2G===="
-									scriptHash: "8HIAH9I6TNUTKLUJQ9SATUB2JEUJB220505L1O1K91IIET709360===="
+									hash:       "7KHVNEVS1H3CBPOH7M19KE7EE1H5EUJT581IA9IJQS2SIGJRAGU0===="
+									scriptHash: "PHSMKSJQPTL2A357D32LKSGHBNK7GISOL85MH4H0HCDI0CJRN7FG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.4.0.20250430133040-3ba376f34cb6:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -51,7 +51,7 @@ package site
 												\tCUE_EXPERIMENT
 												\t\tComma-separated list of experiment flags to enable or disable:
 
-												\t\tevalv3
+												\t\tevalv3 (default true)
 												\t\t\tEnable the new CUE evaluator, addressing performance issues
 												\t\t\tand bringing a better disjunction algorithm.
 												\t\tembed
@@ -72,10 +72,6 @@ package site
 												\t\t\twhen interacting with module registries.
 												\t\tsortfields
 												\t\t\tForce fields in stucts to be sorted lexicographically.
-												\t\topeninline (default true)
-												\t\t\tPermit disallowed fields to be selected into literal struct
-												\t\t\tthat would normally result in a close error, mimicking evalv2
-												\t\t\tclosedness behavior in evalv3 to aid the transition.
 
 												CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 												where the value is a boolean "true" or "1" if omitted. For example:

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "L7RAUD5V5LUG6QMNJH1E7T2TQ9UV87D4GGR93MDL410LVTGC66K0===="
-									scriptHash: "TSD15ASKUUDKT0HBE9FGFSQ1DI7LT9DPEQB0V5H7J60NFCO5ONG0===="
+									hash:       "KJ7JFA83KELBI0GM9OPSGS7UT8P2J0A5R3PEG6PDLTLQ98TBBN6G===="
+									scriptHash: "PU92GENQFG3PNJR2P4M99FN1GD21CDAHO82Q5DKQI71FBMSUDLBG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-alpha.4.0.20250430133040-3ba376f34cb6:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -37,6 +37,7 @@ package site
 												  fix         fix a legacy cue.mod/module.cue file
 												  get         add and upgrade module dependencies
 												  init        initialize new module in current directory
+												  mirror      mirror module content between registries
 												  publish     publish the current module to a registry
 												  rename      rename the current module
 												  resolve     Show how a module path resolves to a registry
