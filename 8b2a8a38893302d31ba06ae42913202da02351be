@@ -16,6 +16,24 @@
       "message": "nit: add `continue` here so that you don\u0027t error about the same file many times, e.g. if it appears five times you want one error and not four.",
       "revId": "8b2a8a38893302d31ba06ae42913202da02351be",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2df19653_da3fe022",
+        "filename": "internal/cmd/preprocessor/cmd/upload_node.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:44:26Z",
+      "side": 1,
+      "message": "Not sure how the `continue` would work, given that we\u0027re not counting the number of times we have seen a file. Given you left it as a nit, I\u0027ll leave for now and catch up another time on this. The error appearing multiple times is a) unlikely and b) not seen by end users so I\u0027m not overly worried.",
+      "parentUuid": "4f624695_db5c8911",
+      "revId": "8b2a8a38893302d31ba06ae42913202da02351be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
