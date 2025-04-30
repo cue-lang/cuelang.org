@@ -25,3 +25,15 @@ go test ./...
 popd > /dev/null
 
 ./_scripts/runPreprocessor.bash execute --update
+
+# We need to re-run the preprocessor here in case the --update above
+# wrote back changes via an assert directive. Because in that case
+# the multi-step script derived from the page will change, and hence
+# cause a cache miss.
+#
+# Strictly speaking we could push this "do we need to re-run" logic
+# into the preprocessor, but that's not a change we need to make now.
+# It suffices to "hack" it here. Not least because the cost of re-running
+# the preprocessor will be ~0 because most of the time all pages will
+# experience a full cache hit.
+./_scripts/runPreprocessor.bash execute
