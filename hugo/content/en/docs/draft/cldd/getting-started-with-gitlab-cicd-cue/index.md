@@ -118,8 +118,10 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgLmdpdGxhYi1jaS55bWwgLWUgcGlwZWxpbmVzLmV4YW1wbGU=" }
 $ cue export --outfile .gitlab-ci.yml -e pipelines.example
 ```
+
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
+
 ```yml { title=".gitlab-ci.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApkZXBsb3ktcGFnZXM6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSCA9PSAibWFpbiIKICBzY3JpcHQ6CiAgICAtIGdlbSBpbnN0YWxsIGJ1bmRsZXIKICAgIC0gYnVuZGxlIGluc3RhbGwKICAgIC0gYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHB1YmxpYwogIHN0YWdlOiBkZXBsb3kKICBlbnZpcm9ubWVudDogcHJvZHVjdGlvbgogIHBhZ2VzOiB0cnVlCnRlc3Q6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSCAhPSAibWFpbiIKICBzY3JpcHQ6CiAgICAtIGdlbSBpbnN0YWxsIGJ1bmRsZXIKICAgIC0gYnVuZGxlIGluc3RhbGwKICAgIC0gYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHRlc3QKICBzdGFnZTogdGVzdAogIGFydGlmYWN0czoKICAgIHBhdGhzOgogICAgICAtIHRlc3QK" }
 # filepath: .gitlab-ci.yml
 
@@ -150,6 +152,7 @@ test:
     paths:
       - test
 ```
+
 ## Run your pipeline
 
 The `cue.mod` directory needs to be stored in your git repository, along with

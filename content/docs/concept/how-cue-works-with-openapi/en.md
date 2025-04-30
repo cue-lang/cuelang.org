@@ -85,13 +85,10 @@ all formats possess CUE's succinctness and economy of expression!
 cue def schema.cue -o api.pet.yaml --out openapi+yaml
 {{{end}}}
 
-{{{with _script_ "en" "HIDDEN: move api.pet.yaml sideways"}}}
-mv api.pet.yaml .api.pet.yaml
-{{{end}}}
-
 The `cue def` command creates the `api.pet.yaml` OpenAPI document:
 
 {{{with upload "en" "api.pet.yaml"}}}
+#assert
 -- api.pet.yaml --
 openapi: 3.0.0
 info:
@@ -127,11 +124,6 @@ components:
           exclusiveMaximum: true
 {{{end}}}
 
-{{{with _script_ "en" "HIDDEN: diff api.pet.yaml"}}}
-diff -wu api.pet.yaml .api.pet.yaml
-rm .api.pet.yaml # tidy up
-{{{end}}}
-
 Because CUE is more expressive than OpenAPI,
 it isn't possible to generate a precise OpenAPI equivalent for *every* CUE constraint.
 CUE does the best conversion it can,
@@ -145,14 +137,11 @@ Here we take the definition produced by `cue def`, above, and convert it back to
 cue import -p api api.pet.yaml
 {{{end}}}
 
-{{{with _script_ "en" "HIDDEN: move api.pet.cue sideways"}}}
-mv api.pet.cue .api.pet.cue
-{{{end}}}
-
 This produces the following CUE, which is as close to the original `schema.cue`
 as OpenAPI currently permits:
 
 {{{with upload "en" "api.pet.cue"}}}
+#assert
 -- api.pet.cue --
 // A schema for the pet API.
 package api
@@ -174,11 +163,6 @@ info: {
 	age?: int & >=0 & <100
 	...
 }
-{{{end}}}
-
-{{{with _script_ "en" "HIDDEN: diff api.pet.cue"}}}
-diff -wu api.pet.cue .api.pet.cue
-rm .api.pet.cue # tidy up
 {{{end}}}
 
 The [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}}) command can

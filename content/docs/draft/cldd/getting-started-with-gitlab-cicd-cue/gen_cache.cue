@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"1":  "RwS+cn0kIN5dqfdXILy/gtLffE2VoESm6EIVCsXdMk8="
-									yaml: "WtFyKAiaP4Vcuk2j1h2THlJ+907GrqvM+49Kfbi8EZU="
+									yaml: "P74IreTBx7Q1YPImmyRmeWM6AjqFKuPn8unjIoH3/5E="
 								}
 								multi_step: {
-									hash:       "L5DP7MOJKRTCQJ2QLMOL7MROIRJNTIOUL93ICA9JUK33JHRBCDJ0===="
-									scriptHash: "QRBVGQCL2TT8C619J9M39N4RK3IE7VDUMDMN1HEN5EU6B217HFT0===="
+									hash:       "O2I6PLFK9M0G7UF183FK9TUB9PDG4EUQIFP400NLU4EKEF1BTK8G===="
+									scriptHash: "TS2RP11EGU7CO3E2IR9DFT216PMEQMQO3VU2SITBLI51KC4G4N70===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -60,16 +60,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue export --outfile .gitlab-ci.yml -e pipelines.example"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv .gitlab-ci.yml{,.got}"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff -u .gitlab-ci.yml{,.got}"
 										exitCode: 0
 										output:   ""
 									}]

@@ -8,14 +8,14 @@ package site
 						cache: {
 							upload: {
 								"schema.json":     "ETDVi5hlZEf2VdOaibpBEsRPl65pz2HTWQ4aH840ens="
-								"schema.cue":      "9QO64Ztexjk61yw/LzipIryUVYYPdM1N7YNIQWNiHiY="
+								"schema.cue":      "WMkDXvARModLG7tCPTGqFi3P0qnY5R7CMp1/qlFjUls="
 								good:              "xVPeA25iwt8R/h3oO3NuSGHByhd7iy3Kbxs2lVLjQbE="
 								bad:               "FdToJZ5wMp8s3EqIlhgBD5q3Kc1qr72SkrLKBZqHrA0="
 								"main go program": "K+fUwrFlvM3CQLX8EY4M8FO++qo5Hhrv0yjDblfQjfI="
 							}
 							multi_step: {
-								hash:       "91R7GN0JU415Q0C73UJ3ETPRVKGQ55JQNKQI7RR3LS282TORNJQG===="
-								scriptHash: "0QBB44JCNILEDN778EG80GSEQ2TOI0CQJJ3S603K1PQ3FGK4ABB0===="
+								hash:       "G9FQNCRDSVR9JTV59QOQNHGN1O4Q8UQEEK5GPBDH38FVR07H4AT0===="
+								scriptHash: "SN0QDDVADCPR5JHH41CCCMF3085RFTKUK87R25QDJUHNPRJRMO10===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -29,16 +29,6 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cue import -l '#Person:' schema.json"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "mv schema.cue .schema.cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff -u schema.cue .schema.cue"
 									exitCode: 0
 									output:   ""
 								}, {

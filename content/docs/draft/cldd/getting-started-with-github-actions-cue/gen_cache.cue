@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"1":  "nfMoUEgVS9785P2fIw1WhBuASPqMNUHFvQ70vKzpBw8="
-									yaml: "uWPbMwwdgF9IhHj/dnldUeI+yYEjiEcpoho67nHVjAc="
+									yaml: "iFNJ2rqRVe7J1GiGLJVBLvNb6LgZd+ar/qaMNBcC+2A="
 								}
 								multi_step: {
-									hash:       "1M3FDQ3S2FQQP87KO184TUE8DQSAT10TM481IEURGI2E8RNML5QG===="
-									scriptHash: "57DNFJISEI9SMIG6KOK88L5QGF8PCBAABQC69EI2SPGQIOPEJKVG===="
+									hash:       "96467F9D9K66IO1FPE7EFTBSRQ0A67J7VMLA45E7LIJ7HRQUO4I0===="
+									scriptHash: "5F92FBQ1GNK29HESISMFO8951N399IRPCOQ9CIDBFTSPLKNIIU20===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -65,16 +65,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue export --outfile .github/workflows/workflow.yml -e workflows.example"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv .github/workflows/workflow.yml{,.got}"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff -u .github/workflows/workflow.yml{,.got}"
 										exitCode: 0
 										output:   ""
 									}]

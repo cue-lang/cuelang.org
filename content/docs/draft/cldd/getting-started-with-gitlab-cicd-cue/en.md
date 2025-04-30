@@ -128,13 +128,12 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 {{{with script "en" "export"}}}
 cue export --outfile .gitlab-ci.yml -e pipelines.example
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move before diff"}}}
-mv .gitlab-ci.yml{,.got}
-{{{end}}}
 
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- .gitlab-ci.yml --
 default:
   image: ruby:3.2
@@ -162,9 +161,6 @@ test:
   artifacts:
     paths:
       - test
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff -u .gitlab-ci.yml{,.got}
 {{{end}}}
 
 ## Run your pipeline

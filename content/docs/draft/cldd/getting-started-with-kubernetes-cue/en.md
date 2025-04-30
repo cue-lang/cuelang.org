@@ -117,11 +117,11 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 {{{with script "en" "export"}}}
 cue export --outfile manifest.yml
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move"}}}
-mv manifest.yml .manifest.yml
-{{{end}}}
+
 If you used the example manifest from above, your validated YAML manifest will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- manifest.yml --
 apiVersion: apps/v1
 kind: Deployment
@@ -142,7 +142,4 @@ spec:
       containers:
         - image: nginx:latest
           name: nginx
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff manifest.yml .manifest.yml
 {{{end}}}

@@ -10,13 +10,13 @@ package site
 								upload: {
 									removed:                 "xr2GagZQ3ZYtM9UU44EcTdHQ5bh6Ysceio4JNsdbVho="
 									changes:                 "SuUrMegMQQJ7LGA4TP/vx2dJGrpgcs/FFZ0El4DrSps="
-									"changes: updated file": "X2+I7G8ZahcOLWSeoOYJ3GfJiVOpr4HcZWNhY2SNMIA="
+									"changes: updated file": "/NjyjG0IGHuPwkSlUbi8dBELCVIq7JkjzDgXh+XaDvw="
 									"references: broken":    "BqqMwEIv3ihBi+yAk4+4rv0gDekfaumxr88bzqGSkzk="
 									"references: fixed":     "Cf+6xXg61BCg9lkNNZbGqay7a1G9Z+0eVsq9xMX0YPs="
 								}
 								multi_step: {
-									hash:       "DI272PALBJ2S6985A9NCFDC7IIO9285EUHO8LO0A4AMA3VJ92AAG===="
-									scriptHash: "SBEFDKT04I04B6RCD2P46K2LSE31D1LS9EPISLM626C7D6BAQG20===="
+									hash:       "HLDO3BDR2OQQHGLI1U2MMS0800I6O0VOQIOAA6F9GP2NB874F9OG===="
+									scriptHash: "CQLN0JB91J0J500G73ET7JLAEUQ73QC37IB3PEFB4O462O83DV2G===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue vet -c list-arithmetic.cue"
@@ -31,16 +31,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue fix changes-required.cue"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv changes-required.cue .changes-required.cue"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff changes-required.cue .changes-required.cue"
 										exitCode: 0
 										output:   ""
 									}, {

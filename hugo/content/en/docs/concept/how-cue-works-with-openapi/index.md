@@ -79,6 +79,7 @@ all formats possess CUE's succinctness and economy of expression!
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiBzY2hlbWEuY3VlIC1vIGFwaS5wZXQueWFtbCAtLW91dCBvcGVuYXBpK3lhbWw=" }
 $ cue def schema.cue -o api.pet.yaml --out openapi+yaml
 ```
+
 The `cue def` command creates the `api.pet.yaml` OpenAPI document:
 
 {{< code-tabs >}}
@@ -116,6 +117,7 @@ components:
           maximum: 100
           exclusiveMaximum: true
 {{< /code-tab >}}{{< /code-tabs >}}
+
 Because CUE is more expressive than OpenAPI,
 it isn't possible to generate a precise OpenAPI equivalent for *every* CUE constraint.
 CUE does the best conversion it can,
@@ -128,6 +130,7 @@ Here we take the definition produced by `cue def`, above, and convert it back to
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtcCBhcGkgYXBpLnBldC55YW1s" }
 $ cue import -p api api.pet.yaml
 ```
+
 This produces the following CUE, which is as close to the original `schema.cue`
 as OpenAPI currently permits:
 
@@ -154,6 +157,7 @@ info: {
 	...
 }
 {{< /code-tab >}}{{< /code-tabs >}}
+
 The [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}}) command can
 directly use constraints from OpenAPI data schemas to validate data.
 

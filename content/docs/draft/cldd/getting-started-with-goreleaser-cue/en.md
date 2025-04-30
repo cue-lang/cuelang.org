@@ -132,13 +132,12 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 {{{with script "en" "export"}}}
 cue export --outfile .goreleaser.yaml -e files.example
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move before diff"}}}
-mv .goreleaser.yaml{,.got}
-{{{end}}}
 
 If you chose to export the `files.example` shown above,
 your validated YAML file will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- .goreleaser.yaml --
 project_name: example
 builds:
@@ -173,9 +172,6 @@ nfpms:
     maintainer: Carlos A Becker <root@carlosbecker.dev>
     description: Sample project.
     license: MIT
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff -u .goreleaser.yaml{,.got}
 {{{end}}}
 
 ## Use your configuration file

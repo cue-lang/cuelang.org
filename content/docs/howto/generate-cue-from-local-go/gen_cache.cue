@@ -9,11 +9,11 @@ package site
 							upload: {
 								"main.go":       "pZmbxQkCs2kFvGTootIWsWvxYFqtFEz/SxKHBd7HyDk="
 								"config.json":   "ET0iAJSlvZeKdQjf1LKhiZtW+acPklEVowwZMpBrrqQ="
-								"generated cue": "vXnMqr8Spq4rcybfAaNR9ER7PdhTplTJns5Uk5qnWCQ="
+								"generated cue": "8uYfsoNiSY1FABhxA0YQecVUE5LWgEBTHGB1SRrWIq0="
 							}
 							multi_step: {
-								hash:       "FGEVN3MVCNHC4R67BKA921R6M4UNPIK9H24QULQAF34EV28DFAQG===="
-								scriptHash: "8NPJVQT3L4JIND2MHTV8MSAB3CCFSG33VL0Q0LEB9I2T0CSFPBIG===="
+								hash:       "UGN2S6GFM8QN1PPUOUOMLVEBHHG45LJSC9I9OFOD13ADDQKMKPC0===="
+								scriptHash: "DF9MSVF3K3RQES8FHOGAE3T2H6R4UD144QBFLUA58NJSEFUPVUT0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -50,16 +50,6 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cue get go --local ."
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "mv main_go_gen.cue .main_go_gen.cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff main_go_gen.cue .main_go_gen.cue"
 									exitCode: 0
 									output:   ""
 								}, {

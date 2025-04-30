@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"1":  "5FJ3Y9m/0e/G7J35bIdwEiF6aZWDDAxuRyOUcGyQAc0="
-									yaml: "4MnHv5g4eIY3IV58BObHyePWWQn417UMT3EgkAk0Ang="
+									yaml: "8MRzk+CLDhJGEAbSLXTmyCVbrivw8X2Au2A9yDuB8oA="
 								}
 								multi_step: {
-									hash:       "R5EE497AHO3M4BR7IJ09D3KQ916DQMHFBTV586R4PGCUJE3QU55G===="
-									scriptHash: "2K5RFSNAIB60CEP47DJEDUCNQ4PQBF07AT53E2VGMMS0L25Q0MBG===="
+									hash:       "P7FOJL3K3AKNML5ATH3GNBV0LCARL8ADBVEGBTMM3AD4S0I4TDJG===="
+									scriptHash: "F642FNEBFR00F0JBKKGA1PL1NEBRA0BTTABML1E2LRPPNUMHE9K0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -60,16 +60,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue export --outfile .goreleaser.yaml -e files.example"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv .goreleaser.yaml{,.got}"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff -u .goreleaser.yaml{,.got}"
 										exitCode: 0
 										output:   ""
 									}]
