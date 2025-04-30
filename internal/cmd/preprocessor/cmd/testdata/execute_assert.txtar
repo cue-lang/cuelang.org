@@ -3,6 +3,7 @@
 # --update.
 
 unquote content/dir/en.md
+unquote content/dir2/en.md
 unquote golden/content/dir/en.md
 
 # Ensure we get an error in case the assert-ions are not satisfied
@@ -21,8 +22,24 @@ exec preprocessor execute --update
 cmp content/dir/en.md golden/content/dir/en.md
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
 
-# Verify that we can run the preprocessor again, no flag required
-exec preprocessor execute
+# Verify that we can run the preprocessor again, no flag required.
+# But ensure we see the cache miss that must occur because of the
+# updated source file. But not a cache miss in the page that
+# otherwise succeeded.
+exec preprocessor execute --debug=all
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache miss for multi-step script'
+stderr $WORK${/}'content'${/}'dir2'${/}'en.md: cache hit for multi-step script'
+
+# Same comparisons as before, i.e. that the output is as expected
+# and the input file reflects the updated upload node
+cmp content/dir/en.md golden/content/dir/en.md
+cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+
+# Verify that we can run the preprocessor again, no flag required, and that there
+# are no cache misses.
+exec preprocessor execute --debug=all
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache hit for multi-step script'
+stderr $WORK${/}'content'${/}'dir2'${/}'en.md: cache hit for multi-step script'
 
 # Same comparisons as before, i.e. that the output is as expected
 # and the input file reflects the updated upload node
@@ -58,6 +75,24 @@ content: dir: page: {
 >goodbye
 >{{{end}}}
 >
+-- content/dir2/page.cue --
+package site
+
+content: dir2: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir2/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "en" "create file.txt"}}}
+>mkdir -p path/to
+>cat <<EOD > path/to/file.txt
+>hello
+>EOD
+>{{{end}}}
 -- golden/content/dir/en.md --
 >---
 >title: JSON Superset
