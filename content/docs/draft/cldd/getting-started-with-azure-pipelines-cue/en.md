@@ -127,13 +127,12 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 {{{with script "en" "export"}}}
 cue export --outfile pipeline.yml -e pipelines.example
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move before diff"}}}
-mv pipeline.yml{,.got}
-{{{end}}}
 
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- pipeline.yml --
 trigger:
   - main
@@ -150,9 +149,6 @@ stages:
             displayName: Restore dependencies
           - script: echo "Running unit tests..."
             displayName: Run unit tests
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff -u pipeline.yml{,.got}
 {{{end}}}
 
 ## Run your pipeline

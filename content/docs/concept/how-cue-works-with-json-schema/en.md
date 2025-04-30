@@ -87,16 +87,13 @@ We use `cue import` to convert the JSON Schema to CUE:
 cue import -l '#Person:' schema.json
 {{{end}}}
 
-{{{with _script_ "en" "HIDDEN: move schema.cue sideways"}}}
-mv schema.cue .schema.cue
-{{{end}}}
-
 `cue import` recognises JSON Schema from its signature fields, and uses the
 schema's constraints to create a shorter, more readable CUE representation.
 Our `-l` parameter tells `cue` to place the constraints inside the `#Person`
 definition:
 
 {{{with upload "en" "schema.cue"}}}
+#assert
 -- schema.cue --
 // Main Person schema.
 //
@@ -120,10 +117,6 @@ import "strings"
 	"home phone"?: string @deprecated()
 	...
 }
-{{{end}}}
-
-{{{with _script_ "en" "HIDDEN: diff schema.cue"}}}
-diff -u schema.cue .schema.cue
 {{{end}}}
 
 We use the imported schema to validate some known-good data (`good.json`)

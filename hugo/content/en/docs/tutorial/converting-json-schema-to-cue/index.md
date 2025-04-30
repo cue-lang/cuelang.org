@@ -112,6 +112,7 @@ Convert the JSON Schema to a CUE definition called `#restaurant`:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI3Jlc3RhdXJhbnQ6JyAtcCBjdWlzaW5lIHNjaGVtYS5qc29u" }
 $ cue import -l '#restaurant:' -p cuisine schema.json
 ```
+
 It's good practise to tell `cue` to place imported CUE inside a package.
 Here, we choose the `cuisine` package.
 
@@ -136,6 +137,7 @@ package cuisine
 	})
 }
 {{< /code-tab >}}{{< /code-tabs >}}
+
 CUE natively understands JSON Schema, and is able to convert all of the JSON
 Schema constraints into CUE constraints. Notice the CUE schema is also
 considerably more concise and readable.
