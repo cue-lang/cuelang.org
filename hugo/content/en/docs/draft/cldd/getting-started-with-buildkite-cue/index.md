@@ -110,8 +110,10 @@ Before exporting your pipeline you'll need to create a directory to hold it, as 
 $ mkdir .buildkite
 $ cue export --outfile .buildkite/pipeline.yml -e pipelines.example
 ```
+
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
+
 ```yml { title=".buildkite/pipeline.yml" codeToCopy="c3RlcHM6CiAgLSBsYWJlbDogJzpoYW1tZXI6IEV4YW1wbGUgU2NyaXB0JwogICAgY29tbWFuZDogImVjaG8gXCItLS0gOnBhY2thZ2U6IEJ1aWxkIGpvYiBjaGVja291dCBkaXJlY3RvcnlcIlxucHdkXG5scyAtbGFcbmVjaG8gXCItLS0gOmV2ZXJncmVlbl90cmVlOiBCdWlsZCBqb2IgZW52aXJvbm1lbnRcIlxuZW52XG5lY2hvIFwiKysrIDpoYW1tZXI6IEV4YW1wbGUgdGVzdHNcIlxuZWNobyBcIkNvbmdyYXR1bGF0aW9ucyEgWW91J3ZlIHN1Y2Nlc3NmdWxseSBydW4geW91ciBmaXJzdCBidWlsZCBvbiBCdWlsZGtpdGUhIFxVMDAwMUY0NERcIiIK" }
 # filepath: .buildkite/pipeline.yml
 
@@ -119,6 +121,7 @@ steps:
   - label: ':hammer: Example Script'
     command: "echo \"--- :package: Build job checkout directory\"\npwd\nls -la\necho \"--- :evergreen_tree: Build job environment\"\nenv\necho \"+++ :hammer: Example tests\"\necho \"Congratulations! You've successfully run your first build on Buildkite! \U0001F44D\""
 ```
+
 ## Run your pipeline
 
 The `cue.mod` and `.buildkite` directories need to be stored in your git

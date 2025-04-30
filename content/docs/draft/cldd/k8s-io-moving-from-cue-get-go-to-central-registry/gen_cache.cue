@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"manifest pre":  "YbgN7ItCiW+uVfTzQlHWbDn6tTMEDHaJkQ8naCFIqtA="
-									"manifest post": "oSJyR9UYwpUxsgP+WnhyIKQ/xF2pXRcP3ZmpqrYCxbo="
+									"manifest post": "AA5zhgMMq1FXSCP5j8qlV1AiqpGZW1dls8xbSgtU6Y0="
 								}
 								multi_step: {
-									hash:       "BMQ1JDSAKL3QSL6CC82KDIFHUHK6GJH3LBD3CSVDGDMFN0K53TOG===="
-									scriptHash: "LG91C8P90AQAVG4OFHISIT3GDQ3E8T59RTD7RH2KI4UGQTOMEL3G===="
+									hash:       "9A6MFU0I8E5RDLLVAFBO19NANRBM3FSJ83JU14UCC5JFAN74SP90===="
+									scriptHash: "6RI21BAR465FRIN2H8S8LDJHRAQ2UAOOKIE0BN1GCDHQ8S3AGIC0===="
 									steps: [{
 										doc:      "# Caches."
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -94,16 +94,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue refactor imports k8s.io cue.dev/x/k8s.io"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv manifest.cue .manifest.cue"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff manifest.cue .manifest.cue"
 										exitCode: 0
 										output:   ""
 									}, {

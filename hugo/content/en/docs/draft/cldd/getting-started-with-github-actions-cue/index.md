@@ -109,8 +109,10 @@ Before exporting your workflow you'll need to create a directory to hold it, as 
 $ mkdir -p .github/workflows/
 $ cue export --outfile .github/workflows/workflow.yml -e workflows.example
 ```
+
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
+
 ```yml { title=".github/workflows/workflow.yml" codeToCopy="bmFtZTogbGVhcm4tZ2l0aHViLWFjdGlvbnMKam9iczoKICBjaGVjay1iYXRzLXZlcnNpb246CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgICAgLSB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY0CiAgICAgIC0gdXNlczogYWN0aW9ucy9zZXR1cC1ub2RlQHY0CiAgICAgICAgd2l0aDoKICAgICAgICAgIG5vZGUtdmVyc2lvbjogIjIwIgogICAgICAtIHJ1bjogbnBtIGluc3RhbGwgLWcgYmF0cwogICAgICAtIHJ1bjogYmF0cyAtdgoib24iOgogIC0gcHVzaApydW4tbmFtZTogJHt7IGdpdGh1Yi5hY3RvciB9fSBpcyBsZWFybmluZyBHaXRIdWIgQWN0aW9ucwo=" }
 # filepath: .github/workflows/workflow.yml
 
@@ -129,6 +131,7 @@ jobs:
   - push
 run-name: ${{ github.actor }} is learning GitHub Actions
 ```
+
 ## Run your workflow
 
 The `cue.mod` and `.github` directories need to be stored in your git

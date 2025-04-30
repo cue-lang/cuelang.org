@@ -8,14 +8,14 @@ package site
 						cache: {
 							upload: {
 								"schema.cue":           "Sm7RvNR2D4RCOiLVbyqIKwFzqVGKOZxqQyVONf6l0tM="
-								"api.pet.yaml":         "han+s/a4PxbhxXBc7XjAu0YEWHMZPAb6+NA+y7XVTZU="
-								"api.pet.cue":          "zKZ2T1RG494Rm7mkW5Qas5RNykBU7miuuHFxVwwZ8YY="
+								"api.pet.yaml":         "bl9TrinVooHAV2I8YTxNfEUt0benaAtyDvO3KpjkZIA="
+								"api.pet.cue":          "GlZNCld+6uJlsSE5VzM2chZG9t8FNU1dYhQbBLVnkr4="
 								"jonathan.yml":         "od3d/iDL2RHAtbGI773CDazib36/M84e/ReYWmpuLuM="
 								"go emit openapi main": "wflDAA7feJ2yX/G6qgvzJRQZsdlviH9IHA7yBAoXkcM="
 							}
 							multi_step: {
-								hash:       "9TNGDGVNAO7D7L0GOM3K2ETMJBM3F0QH1B6OQUHHJE7GQK5R90V0===="
-								scriptHash: "EFMRM7PLOQK417L4B1J0RNA28O3BVFCBETC8VEVN5K9LP0IHD3PG===="
+								hash:       "65Q5PJT9F13CHIODS2MHASQHP5R32ER5LQ2Q1VF1MTDPMKIP6VT0===="
+								scriptHash: "0JPDR4GSSJCUJ5C61HGE2E2QM9BT7ACALRDLKLJUFLB9SQRL6TNG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -33,37 +33,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "mv api.pet.yaml .api.pet.yaml"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff -wu api.pet.yaml .api.pet.yaml"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "rm .api.pet.yaml # tidy up"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
 									cmd:      "cue import -p api api.pet.yaml"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "mv api.pet.cue .api.pet.cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff -wu api.pet.cue .api.pet.cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "rm .api.pet.cue # tidy up"
 									exitCode: 0
 									output:   ""
 								}, {

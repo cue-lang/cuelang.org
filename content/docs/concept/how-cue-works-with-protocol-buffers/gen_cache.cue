@@ -8,25 +8,15 @@ package site
 						cache: {
 							upload: {
 								"basic.proto":            "bfwsQh84R6EdxdRqMuiaj4dAIPbhswu0VGXCe3IDmlk="
-								"basic.cue":              "55qre6KMY+2JfMWH69jGV6F1j+d8bBXDdJktxup8Djk="
+								"basic.cue":              "xCd90AD77OsqPdZEC1U47eLczTVvJ/BuQrZYKKmflA4="
 								"go convert basic.proto": "5YlmjoKazjYcbnceuiGpTAAbsxryHh0GkQi0RXA2IQc="
 							}
 							multi_step: {
-								hash:       "2M5T9JH8RU6USP96L9TKNB8Q7QPRO785621G53EHEVO4UR8C6IAG===="
-								scriptHash: "A0RP6D0KIEKQB3K16R6Q1NC4Q35FMJMLKKNI0833SMV4DGS19ITG===="
+								hash:       "QA3TCQ52NPVOG1I0DS2CK03C70V9CROFFQ6UB5A7UUBGGM45JTTG===="
+								scriptHash: "CQCEB8K49EH3ETOTR4P0P5RQSV04C6PDA2FSJM101N9PMV1NQ7B0===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue import basic.proto"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "mv basic.cue .basic.cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff basic.cue .basic.cue"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -41,7 +31,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "rm basic.cue .basic.cue"
+									cmd:      "rm basic.cue"
 									exitCode: 0
 									output:   ""
 								}, {

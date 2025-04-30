@@ -115,10 +115,9 @@ cue refactor imports k8s.io cue.dev/x/k8s.io
 {{{end}}}
 
 CUE files are re-written, updating `import` lines as required:
-{{{with _script_ "en" "HIDDEN: move manifest"}}}
-mv manifest.cue .manifest.cue
-{{{end}}}
+
 {{{with upload "en" "manifest post"}}}
+#assert
 -- manifest.cue --
 package kube
 
@@ -143,9 +142,6 @@ apps.#Deployment & {
 		}
 	}
 }
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff manifest"}}}
-diff manifest.cue .manifest.cue
 {{{end}}}
 
 The `import` line at the top now references the appropriate curated module for

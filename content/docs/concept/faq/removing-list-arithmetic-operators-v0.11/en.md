@@ -77,10 +77,8 @@ cue fix changes-required.cue
 
 `cue fix` updates its inputs in place, rewriting files on disk:
 
-{{{with _script_ "en" "HIDDEN: changes: move file aside"}}}
-mv changes-required.cue .changes-required.cue
-{{{end}}}
 {{{with upload "en" "changes: updated file"}}}
+#assert
 -- changes-required.cue --
 import "list"
 
@@ -97,9 +95,6 @@ B: [for i in [1, 2, 3] {i}, for i in [4, 5, 6] {i}]
 C: 1 + 2*3.3
 D: 2*"O." + 3*"X."
 E: 2*'X.' + 3*'O.'
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: changes: diff uploaded file"}}}
-diff changes-required.cue .changes-required.cue
 {{{end}}}
 
 ## Why do I still get evaluation failures after running `cue fix`?
