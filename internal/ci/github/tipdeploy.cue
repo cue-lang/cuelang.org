@@ -105,6 +105,12 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 
 			_regenPostInfraChange,
 
+			// Re-run the preprocessor to catch any pages whose content was updated
+			// via assert directives
+			{
+				run: "./_scripts/runPreprocessor.bash execute"
+			},
+
 			_deployTipCuelangOrg,
 		]
 	}
