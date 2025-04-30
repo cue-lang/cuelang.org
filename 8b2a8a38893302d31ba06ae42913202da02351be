@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f624695_db5c8911",
+        "filename": "internal/cmd/preprocessor/cmd/upload_node.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-04-30T14:18:23Z",
+      "side": 1,
+      "message": "nit: add `continue` here so that you don\u0027t error about the same file many times, e.g. if it appears five times you want one error and not four.",
+      "revId": "8b2a8a38893302d31ba06ae42913202da02351be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
