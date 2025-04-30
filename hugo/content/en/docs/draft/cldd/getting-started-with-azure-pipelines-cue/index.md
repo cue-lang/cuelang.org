@@ -117,8 +117,10 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgcGlwZWxpbmUueW1sIC1lIHBpcGVsaW5lcy5leGFtcGxl" }
 $ cue export --outfile pipeline.yml -e pipelines.example
 ```
+
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
+
 ```yml { title="pipeline.yml" codeToCopy="dHJpZ2dlcjoKICAtIG1haW4KcG9vbDoKICB2bUltYWdlOiB1YnVudHUtbGF0ZXN0CnN0YWdlczoKICAtIHN0YWdlOiBCdWlsZAogICAgZGlzcGxheU5hbWU6IEJ1aWxkIFN0YWdlCiAgICBqb2JzOgogICAgICAtIGpvYjogQnVpbGRKb2IKICAgICAgICBkaXNwbGF5TmFtZTogQnVpbGQgSm9iCiAgICAgICAgc3RlcHM6CiAgICAgICAgICAtIHNjcmlwdDogZWNobyAiUmVzdG9yaW5nIHByb2plY3QgZGVwZW5kZW5jaWVzLi4uIgogICAgICAgICAgICBkaXNwbGF5TmFtZTogUmVzdG9yZSBkZXBlbmRlbmNpZXMKICAgICAgICAgIC0gc2NyaXB0OiBlY2hvICJSdW5uaW5nIHVuaXQgdGVzdHMuLi4iCiAgICAgICAgICAgIGRpc3BsYXlOYW1lOiBSdW4gdW5pdCB0ZXN0cwo=" }
 # filepath: pipeline.yml
 
@@ -138,6 +140,7 @@ stages:
           - script: echo "Running unit tests..."
             displayName: Run unit tests
 ```
+
 ## Run your pipeline
 
 The `cue.mod` directory needs to be stored in your git repository, along with

@@ -8,14 +8,14 @@ package site
 						cache: {
 							upload: {
 								"json schema":        "6sfFf8leqtbDVC0xDJ8H1+43RT37hvFXuk8N9ZFSPnM="
-								"schema.cue":         "jhEjnc+IaEsP/seaQmWAoJSRpWsCy8APO2PyK+HNzkE="
+								"schema.cue":         "TmOwhTxZexMT5wymQV6mj9DhIeRNL/h6KiecRU5i1wQ="
 								"split_pea.yml":      "nxTRRPJT1gpx32KW9xjCDgEvGQWZ/7TW/XOic2xYwSM="
 								"pomodoro.yml":       "uJwtpCGIZh/jt9N9QMWrXVTnbFIAP4nt4v7xxnm40U4="
 								"pomodoro.yml fixed": "tebS4xRXEQxOsc8EN1UguRL1mF0nvD0NzbG6v6ownac="
 							}
 							multi_step: {
-								hash:       "PFH62ICGT4STVMR72CI3J4RSTIJUGTOVJTNRJKGBN1UBHKCO1C9G===="
-								scriptHash: "S1P1N4BEQ13PVKLHR7S49GT6BCDNEBPHJ3GI7AJEV2HUL129L28G===="
+								hash:       "CIO0B2IKENFOTMIH2N7E7QAIA70IJUN2LUOKCGQIT46GL3UG8F0G===="
+								scriptHash: "G1P78LAGG4P0LTVP123AUGTEBMR9LFCQE6P9P3HR8DBT7BUG71SG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
@@ -28,16 +28,6 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "cue import -l '#restaurant:' -p cuisine schema.json"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "cp schema.cue .schema.cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff -u .schema.cue schema.cue"
 									exitCode: 0
 									output:   ""
 								}, {

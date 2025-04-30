@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"1":  "981o5ZZeOMfR+rMWuRaI9ZnadHVNL+YRztPx25uSIz8="
-									yaml: "/Wgv29lhAIuy17Ac3+5jhWrlZQDflYcKF8Uodcrh01s="
+									yaml: "rX10kXd3WI7fgLyniE40yrC2xM2V+/FGCsOiKbHYKxA="
 								}
 								multi_step: {
-									hash:       "TNIUTO7MN40CUGME7R6IGIQC6FLMA7PDE3FUK9JE5HRMSGVK0GLG===="
-									scriptHash: "CEQUFPLH7MKGFA77C6JHNGD9TK4CVNLC572NTUPUA2R1E5N81A6G===="
+									hash:       "DFUJUNINPVI06STM6K44UBHTQ1LS66NJ9LMBEN7R2MHAO8F905H0===="
+									scriptHash: "5PAJ7IHCHBE09DORRHCP6ITD4L1MLM0AGOEN4OQ22J5APD4CNDS0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -60,16 +60,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue export --outfile pipeline.yml -e pipelines.example"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv pipeline.yml{,.got}"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff -u pipeline.yml{,.got}"
 										exitCode: 0
 										output:   ""
 									}]

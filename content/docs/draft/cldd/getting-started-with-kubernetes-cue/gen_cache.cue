@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"1":  "XW5Cy4g1qzFXzYZ64viLcOESbYVP4LRGJhnkxHpnIFE="
-									yaml: "W54hDTGU/VdSfE3oVuaXkv+BvlI5aDHYYIYKA6aGUGM="
+									yaml: "GI5iG+e/P7k+5qjuWng206DKjGm6g1HFwnJwaAmYSvU="
 								}
 								multi_step: {
-									hash:       "UT1L8PJU7P6UKDGPKE05NA0FGAIJVU2TT0T44U3VOQ09M35ERJBG===="
-									scriptHash: "V1QJ5T74J1OV9G3D1BL2B80239ILM3R4MGQJ1MPEUUG0AHNFHT9G===="
+									hash:       "DSLL4P65HHMHMAC5HKJFBNIGE4TP3IV417H7AK4L8PF9O606MI70===="
+									scriptHash: "1NV1DHTRQC5OLUDLE9G9O6HN9FC0SABNL2KCQTSBJBG6DAIJF6GG===="
 									steps: [{
 										doc:      ""
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -60,16 +60,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue export --outfile manifest.yml"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv manifest.yml .manifest.yml"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff manifest.yml .manifest.yml"
 										exitCode: 0
 										output:   ""
 									}]

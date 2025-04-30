@@ -48,13 +48,10 @@ It indicates success by displaying no output:
 cue import basic.proto
 {{{end}}}
 
-{{{with _script_ "en" "HIDDEN_ move .cue sideways"}}}
-mv basic.cue .basic.cue
-{{{end}}}
-
 The command creates this CUE file:
 
 {{{with upload "en" "basic.cue"}}}
+#assert
 -- basic.cue --
 // Package basic is rather basic.
 package basic
@@ -67,9 +64,6 @@ package basic
 	method?: [...string] @protobuf(2,string)
 	method?: [...=~"^[A-Z]"]
 }
-{{{end}}}
-{{{with _script_ "en" "HIDDEN_ verify generated basic.cue matches uploaded file"}}}
-diff basic.cue .basic.cue
 {{{end}}}
 
 Do you notice how the `method` field's type and constraints are split over two lines?
@@ -116,7 +110,7 @@ func main() {
 {{{with _script_ "en" "HIDDEN_ setup"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
-rm basic.cue .basic.cue
+rm basic.cue
 go mod init cue.example
 #ellipsis 0
 go get cuelang.org/go@$CUELANG_CUE_LATEST

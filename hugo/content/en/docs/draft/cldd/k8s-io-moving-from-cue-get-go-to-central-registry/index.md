@@ -91,6 +91,7 @@ $ cue refactor imports k8s.io cue.dev/x/k8s.io
 ```
 
 CUE files are re-written, updating `import` lines as required:
+
 ```cue { title="manifest.cue" codeToCopy="cGFja2FnZSBrdWJlCgppbXBvcnQgYXBwcyAiY3VlLmRldi94L2s4cy5pby9hcGkvYXBwcy92MSIKCmFwcHMuI0RlcGxveW1lbnQgJiB7CglhcGlWZXJzaW9uOiAiYXBwcy92MSIKCWtpbmQ6ICAgICAgICJEZXBsb3ltZW50IgoJbWV0YWRhdGE6IHsKCQlsYWJlbHM6IGFwcDogImV4YW1wbGUxIgoJCW5hbWU6ICJleGFtcGxlMSIKCX0KCXNwZWM6IHsKCQlyZXBsaWNhczogMQoJCXNlbGVjdG9yOiBtYXRjaExhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJdGVtcGxhdGU6IHsKCQkJbWV0YWRhdGE6IGxhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJCXNwZWM6IGNvbnRhaW5lcnM6IFt7CgkJCQlpbWFnZTogIm5naW54OmxhdGVzdCIKCQkJCW5hbWU6ICAibmdpbngiCgkJCX1dCgkJfQoJfQp9Cg==" }
 // filepath: manifest.cue
 
@@ -118,6 +119,7 @@ apps.#Deployment & {
 	}
 }
 ```
+
 The `import` line at the top now references the appropriate curated module for
 the deployment contained in the manifest. Its path is currently temporary, but
 only while its proper location is being decided. The temporary path isn’t a
