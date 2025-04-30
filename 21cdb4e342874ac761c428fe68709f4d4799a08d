@@ -1,0 +1,324 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87d30732_09be090f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "Done a quick review. Overall looks good.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f04cb10_a308d86b",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "\"powerful\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 19,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffe9b79a_e9f1df83",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "Let\u0027s use simpler language here. \"to simplify your GitHub Actions workflows\"\n\nOr similar. Less words \u003d\u003d more 😊",
+      "range": {
+        "startLine": 25,
+        "startChar": 47,
+        "endLine": 26,
+        "endChar": 33
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8766662a_23efade8",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "Please provide spaces around these blocks. Otherwise review is harder, spotting where the gaps as rendered on the page translate to \"gaps\" in this source.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "537fd187_8f80bbd8",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "Why are we doing this here? Are they not picking up from the previous step? We\u0027ve referenced the previous guide above, so if we are intentionally starting from a clean slate we need some wording about that.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e8d91ef_01ca0864",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "\"Go\"",
+      "range": {
+        "startLine": 68,
+        "startChar": 10,
+        "endLine": 68,
+        "endChar": 16
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23dc49b3_6d206b86",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "As discussed, I wouldn\u0027t bother with this. It\u0027s a distraction. We can (and should) have a follow-up guide on that.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cf5e07f_b5e7ecd9",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "Use the new `#assert` here? Two colums, as above?",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccd50f0a_80f3ea1c",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "A key point worth mentioning here is that this DRY-ing up isn\u0027t entirely about \"reducing the number of lines of code\" but rather (or more) introducing and enforcing consistency by design.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ca7d385_e1d3e0d4",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "What does this mean? \n\nPrefer using simple language to state actually where files in the same packag live: in the same directory.",
+      "range": {
+        "startLine": 234,
+        "startChar": 45,
+        "endLine": 234,
+        "endChar": 76
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb3d541a_c7b9ddca",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "Might be worth adding a comment here, alluding to the fact that some of these declarations could be re-used between different repositories. i.e. the reuse isn\u0027t limited.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "758ea430_74316ea5",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "\"test\"?",
+      "range": {
+        "startLine": 297,
+        "startChar": 7,
+        "endLine": 297,
+        "endChar": 14
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80934ee9_b2464105",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "\"uses\"?",
+      "range": {
+        "startLine": 297,
+        "startChar": 24,
+        "endLine": 297,
+        "endChar": 31
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "154cf842_fa2456b3",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "Is there something significant in the wording difference here, compared to above?",
+      "range": {
+        "startLine": 330,
+        "startChar": 51,
+        "endLine": 330,
+        "endChar": 72
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af6f056d_d616a1e2",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "I would just tend to stick to a brief explanation of the `-race` flag. But I wouldn\u0027t bother to my mind.",
+      "range": {
+        "startLine": 334,
+        "startChar": 48,
+        "endLine": 334,
+        "endChar": 61
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "509b1d30_3aa269c8",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-04-30T14:38:10Z",
+      "side": 1,
+      "message": "This needs updating to show folks how to import from an existing workflow; otherwise there\u0027s a \"jump\"",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
