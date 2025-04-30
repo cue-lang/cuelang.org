@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "627263fd_c97f86de",
+        "filename": "content/docs/draft/cldd/checking-existing-github-actions-files/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-30T16:37:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae8f5d5c_c32a1120",
+      "revId": "083077ebb09b60e9deaf43d91e0d6a484634fc0a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f00d3ddc_2f2b0dee",
@@ -69,6 +87,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4050c627_8700245a",
+        "filename": "content/docs/draft/cldd/validating-several-github-actions-files/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-30T16:37:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f00d3ddc_2f2b0dee",
+      "revId": "083077ebb09b60e9deaf43d91e0d6a484634fc0a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ccc07d0_e5845280",
@@ -82,6 +118,30 @@
       "writtenOn": "2025-04-30T15:02:01Z",
       "side": 1,
       "message": "\"as argument\" - simpler? Again, I think we want to tend towards plain language. It conveys a much stronger message through its simplicity.",
+      "range": {
+        "startLine": 89,
+        "startChar": 18,
+        "endLine": 89,
+        "endChar": 50
+      },
+      "revId": "083077ebb09b60e9deaf43d91e0d6a484634fc0a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34618ce5_da847c70",
+        "filename": "content/docs/draft/cldd/validating-several-github-actions-files/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-30T16:37:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ccc07d0_e5845280",
       "range": {
         "startLine": 89,
         "startChar": 18,

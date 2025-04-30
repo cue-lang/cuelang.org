@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48d56e80_ca546fa0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-04-30T16:37:00Z",
+      "side": 1,
+      "message": "PTAL. I\u0027ve reordered the steps slightly to minimise the distance between the embedding CUE being shown and the simplicity of the single `cue vet -c` command.",
+      "revId": "5b360d1258d97321dde8cf5d100785a400283e32",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
