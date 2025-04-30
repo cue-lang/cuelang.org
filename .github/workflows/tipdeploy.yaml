@@ -176,6 +176,7 @@ jobs:
         run: _scripts/regenPostInfraChange.bash
         env:
           GOPRIVATE: cuelang.org/go
+      - run: ./_scripts/runPreprocessor.bash execute
       - name: 'tip.cuelang.org: Deploy the site'
         run: |-
           git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
