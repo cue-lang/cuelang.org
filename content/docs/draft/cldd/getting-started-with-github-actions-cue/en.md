@@ -119,13 +119,12 @@ Before exporting your workflow you'll need to create a directory to hold it, as 
 mkdir -p .github/workflows/
 cue export --outfile .github/workflows/workflow.yml -e workflows.example
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move before diff"}}}
-mv .github/workflows/workflow.yml{,.got}
-{{{end}}}
 
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- .github/workflows/workflow.yml --
 name: learn-github-actions
 jobs:
@@ -141,9 +140,6 @@ jobs:
 "on":
   - push
 run-name: ${{ github.actor }} is learning GitHub Actions
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff -u .github/workflows/workflow.yml{,.got}
 {{{end}}}
 
 ## Run your workflow
