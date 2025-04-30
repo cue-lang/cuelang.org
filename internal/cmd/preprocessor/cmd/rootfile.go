@@ -361,6 +361,8 @@ func (rf *rootFile) run() error {
 	return nil
 }
 
+const updateGoldenFilesVar = "____updateGoldenFiles"
+
 // buildMultistepScript constructs a bash file that will be run within docker
 // and returns a runnable representing that unit of work.
 func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
@@ -434,17 +436,18 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 			// generate a different script based on whether --update
 			// was set or not which would break the caching logic.
 			wantFence := rf.getFence()
-			if !rf.updateGoldenFiles {
-				pf("diff -u --label $%s.got $%s --label $%s.want <(cat <<'%s'\n", targetFileVar, targetFileVar, targetFileVar, wantFence)
-				pf("%s", f.Data)
-				pf("%s\n", wantFence)
-				pf(")\n")
-				// We need to force an exit if the diff found differences
-				pf("if [[ $? != 0 ]]\n")
-				pf("then\n")
-				pf("exit 1\n")
-				pf("fi\n")
-			}
+			pf("if [[ \"$%s\" == \"false\" ]]\n", updateGoldenFilesVar)
+			pf("then\n")
+			pf("diff -u --label $%s.got $%s --label $%s.want <(cat <<'%s'\n", targetFileVar, targetFileVar, targetFileVar, wantFence)
+			pf("%s", f.Data)
+			pf("%s\n", wantFence)
+			pf(")\n")
+			// We need to force an exit if the diff found differences
+			pf("if [[ $? != 0 ]]\n")
+			pf("then\n")
+			pf("exit 1\n")
+			pf("fi\n")
+			pf("fi\n")
 
 			// We can return now, because assert is mutually exclusive with a regular
 			// upload, so no logic below applies
@@ -751,6 +754,9 @@ func (m *multiStepScript) run() {
 
 		// mount the bash script
 		"--mount", fmt.Sprintf("type=bind,source=%s,target=/scripts,readonly", scriptsDir),
+
+		// whether we are updating golden files or not
+		"-e", fmt.Sprintf("%s=%v", updateGoldenFilesVar, m.updateGoldenFiles),
 	)
 
 	var sensitiveValues []string
