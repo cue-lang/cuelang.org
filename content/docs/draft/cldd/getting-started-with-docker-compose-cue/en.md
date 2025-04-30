@@ -129,13 +129,12 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 {{{with script "en" "export"}}}
 cue export --outfile compose.yaml -e files.example
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move before diff"}}}
-mv compose.yaml{,.got}
-{{{end}}}
 
 If you chose to export the `files.example` shown above,
 your validated YAML file will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- compose.yaml --
 services:
   postgres:
@@ -157,9 +156,6 @@ services:
     ports:
       - "5050:80"
     restart: always
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff -u compose.yaml{,.got}
 {{{end}}}
 
 ## Run your compose file

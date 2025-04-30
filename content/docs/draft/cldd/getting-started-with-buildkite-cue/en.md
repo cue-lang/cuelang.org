@@ -120,20 +120,16 @@ Before exporting your pipeline you'll need to create a directory to hold it, as 
 mkdir .buildkite
 cue export --outfile .buildkite/pipeline.yml -e pipelines.example
 {{{end}}}
-{{{with _script_ "en" "HIDDEN: move before diff"}}}
-mv .buildkite/pipeline.yml{,.got}
-{{{end}}}
 
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
+
 {{{with upload "en" "yaml"}}}
+#assert
 -- .buildkite/pipeline.yml --
 steps:
   - label: ':hammer: Example Script'
     command: "echo \"--- :package: Build job checkout directory\"\npwd\nls -la\necho \"--- :evergreen_tree: Build job environment\"\nenv\necho \"+++ :hammer: Example tests\"\necho \"Congratulations! You've successfully run your first build on Buildkite! \U0001F44D\""
-{{{end}}}
-{{{with _script_ "en" "HIDDEN: diff"}}}
-diff -u .buildkite/pipeline.yml{,.got}
 {{{end}}}
 
 ## Run your pipeline

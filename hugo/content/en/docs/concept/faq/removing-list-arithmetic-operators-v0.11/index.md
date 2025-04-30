@@ -80,6 +80,7 @@ $ cue fix changes-required.cue
 ```
 
 `cue fix` updates its inputs in place, rewriting files on disk:
+
 {{< code-tabs >}}
 {{< code-tab name="changes-required.cue" language="cue" area="top-left" >}}
 import "list"
@@ -98,6 +99,7 @@ C: 1 + 2*3.3
 D: 2*"O." + 3*"X."
 E: 2*'X.' + 3*'O.'
 {{< /code-tab >}}{{< /code-tabs >}}
+
 ## Why do I still get evaluation failures after running `cue fix`?
 
 `cue fix` can only update CUE where the list arithmetic operators are used with

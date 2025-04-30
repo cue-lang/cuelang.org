@@ -47,6 +47,7 @@ It indicates success by displaying no output:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCBiYXNpYy5wcm90bw==" }
 $ cue import basic.proto
 ```
+
 The command creates this CUE file:
 
 {{< code-tabs >}}
@@ -63,6 +64,7 @@ package basic
 	method?: [...=~"^[A-Z]"]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
+
 Do you notice how the `method` field's type and constraints are split over two lines?
 That's exactly as expected, because CUE's core operation is to automatically
 *unify* each field's right-hand-side.

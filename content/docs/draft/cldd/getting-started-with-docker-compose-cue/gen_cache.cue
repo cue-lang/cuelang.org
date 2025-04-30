@@ -9,11 +9,11 @@ package site
 							cache: {
 								upload: {
 									"1":  "n5z48x3O+N6UMGvb2b6YMY/xklkFbHNu9nVzxa/eP6U="
-									yaml: "RzSUb8CiIE9NS4x0Pv0npox1mEmNOPZVsUBfEUdhyjE="
+									yaml: "zGAiJpNozT+nj0tsFiuACRxluPx3B9ervFdfQBVEOOE="
 								}
 								multi_step: {
-									hash:       "KJTOSCDSCFGVA0OO9SAUA6KQJ2O0H5OGQURLP5OTJ311FG35GOF0===="
-									scriptHash: "LCCQ4IHTLL5PKKKS2ADAE1GUSF5VMPNDLLFP4005VNASP14OLP60===="
+									hash:       "M79VLDG0SN6IRDBIPAM6V82DQU38IRI9K0R3C1E5UMD1QNBR0LC0===="
+									scriptHash: "IDK3N5K5SNGTJ9B0IJQSRRAIIR2LRKM539R3KB7KVQDED8IKQNB0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -60,16 +60,6 @@ package site
 									}, {
 										doc:      ""
 										cmd:      "cue export --outfile compose.yaml -e files.example"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "mv compose.yaml{,.got}"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      ""
-										cmd:      "diff -u compose.yaml{,.got}"
 										exitCode: 0
 										output:   ""
 									}]

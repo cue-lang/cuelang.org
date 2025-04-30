@@ -112,17 +112,13 @@ Convert the JSON Schema to a CUE definition called `#restaurant`:
 cue import -l '#restaurant:' -p cuisine schema.json
 {{{end}}}
 
-{{{with _script_ "en" "backup imported schema"}}}
-cp schema.cue .schema.cue
-{{{end}}}
-
 It's good practise to tell `cue` to place imported CUE inside a package.
 Here, we choose the `cuisine` package.
 
 `cue import` creates the file `schema.cue` containing this CUE:
 
 {{{with upload "en" "schema.cue"}}}
-#force
+#assert
 -- schema.cue --
 package cuisine
 
@@ -140,10 +136,6 @@ package cuisine
 		view?:  bool
 	})
 }
-{{{end}}}
-
-{{{with _script_ "en" "assert schema.cue"}}}
-diff -u .schema.cue schema.cue
 {{{end}}}
 
 CUE natively understands JSON Schema, and is able to convert all of the JSON

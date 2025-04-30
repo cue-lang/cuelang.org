@@ -8,13 +8,13 @@ package site
 						cache: {
 							upload: {
 								"example 1":          "Hhbo1qNwCYJNxeR+u/s6LRuIbGmdWbKYhavzbyAnJfw="
-								"cue_types_gen.go 1": "XEWjXapd4EiwuoXKmNtQgbUi/RIh5B9IPdeDJFEKFp4="
+								"cue_types_gen.go 1": "J/aVlvQVg+tATi7CFPzfFx4bUpd1VNDxfImC/KaBr/E="
 								"example 2":          "6z3RnpErcIKeywfsefWmCMgBe486YvtR+0tmgBQfO4U="
-								"cue_types_gen.go 2": "wtB35y2uOZrAfjEuVKU41f4oxYANcbdfWFOmPdjnzgw="
+								"cue_types_gen.go 2": "/pMZ+k+CPtyoQ1wPqGsrpXTBb7qHR4AsiQVk+yddoqw="
 							}
 							multi_step: {
-								hash:       "I6L6Q789K069E2OA0P15FGA7MQQ86E73N3H5QC8QQVTQB7BBQNTG===="
-								scriptHash: "Q16KFNBK24VG60U3RREJDA0S1GLBC4I4LRHQCTFGCM65QEV84ATG===="
+								hash:       "N5FIMDGVA02TI44KJ6HPIDFDD0E9VSCOGOFJ533G9FC0EUM68MF0===="
+								scriptHash: "ENTKF17DD7DNV7030J6UPAS40QU1DIO156V282TQ7OB9E272PPE0===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue exp gengotypes ."
@@ -22,27 +22,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "mv cue_types_gen.go cue_types_gen.go.got"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff -u cue_types_gen.go cue_types_gen.go.got"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
 									cmd:      "cue exp gengotypes ."
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "mv cue_types_gen.go cue_types_gen.go.got"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff -u cue_types_gen.go cue_types_gen.go.got"
 									exitCode: 0
 									output:   ""
 								}, {
