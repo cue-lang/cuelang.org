@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bc668ba_518b3bcf",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f04cb10_a308d86b",
+      "range": {
+        "startLine": 22,
+        "startChar": 19,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ffe9b79a_e9f1df83",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-04-30T14:38:10Z",
       "side": 1,
       "message": "Let\u0027s use simpler language here. \"to simplify your GitHub Actions workflows\"\n\nOr similar. Less words \u003d\u003d more 😊",
+      "range": {
+        "startLine": 25,
+        "startChar": 47,
+        "endLine": 26,
+        "endChar": 33
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2219bc85_163ecf7c",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffe9b79a_e9f1df83",
       "range": {
         "startLine": 25,
         "startChar": 47,
@@ -81,6 +129,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44dc93f8_18a5e849",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8766662a_23efade8",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "537fd187_8f80bbd8",
@@ -94,6 +160,24 @@
       "writtenOn": "2025-04-30T14:38:10Z",
       "side": 1,
       "message": "Why are we doing this here? Are they not picking up from the previous step? We\u0027ve referenced the previous guide above, so if we are intentionally starting from a clean slate we need some wording about that.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "653a32ba_1de68240",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Yes, I wondered about this when writing the guide. I opted for showing it, just in case the holistic narrative made it easier to follow, but you\u0027re right: it\u0027s definitely superfluous for folks following along with the guide, and it detracts (by adding prose) for folks who are only reading without any CUE of their own.\n\nI\u0027ve hidden this step (`cue mod init`) and also the leading `cue login`, as we can assume we\u0027re still within the lifetime of the reader\u0027s stored auth token.\n\nI\u0027ve left `cue mod tidy` both in place and visible, as that feels more like a step which /might/ not have been carried out in the reader\u0027s module previously. They /should/ have done so, but assuming that feels like a risk.\n\nPTAL",
+      "parentUuid": "537fd187_8f80bbd8",
       "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -121,6 +205,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "969b2b08_9486a196",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e8d91ef_01ca0864",
+      "range": {
+        "startLine": 68,
+        "startChar": 10,
+        "endLine": 68,
+        "endChar": 16
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23dc49b3_6d206b86",
@@ -134,6 +242,24 @@
       "writtenOn": "2025-04-30T14:38:10Z",
       "side": 1,
       "message": "As discussed, I wouldn\u0027t bother with this. It\u0027s a distraction. We can (and should) have a follow-up guide on that.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ede960b6_7eb19989",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23dc49b3_6d206b86",
       "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -155,6 +281,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9253e4a5_ee75951c",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5cf5e07f_b5e7ecd9",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ccd50f0a_80f3ea1c",
@@ -168,6 +312,24 @@
       "writtenOn": "2025-04-30T14:38:10Z",
       "side": 1,
       "message": "A key point worth mentioning here is that this DRY-ing up isn\u0027t entirely about \"reducing the number of lines of code\" but rather (or more) introducing and enforcing consistency by design.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ad4d203_2d610e44",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ccd50f0a_80f3ea1c",
       "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -197,6 +359,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "575a46d6_50227c9b",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "I couldn\u0027t construct wording which worked well with that explanation. It felt materially misleading to say ~\"CUE packages are composed of all CUE files in the same directory.\", and adding explanatory \"package clause\" language complicated it unacceptably, to my eye.\n\nInstead, I\u0027ve reworded this section somewhat to keep it simple. PTAL.",
+      "parentUuid": "4ca7d385_e1d3e0d4",
+      "range": {
+        "startLine": 234,
+        "startChar": 45,
+        "endLine": 234,
+        "endChar": 76
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eb3d541a_c7b9ddca",
         "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
         "patchSetId": 7
@@ -208,6 +394,24 @@
       "writtenOn": "2025-04-30T14:38:10Z",
       "side": 1,
       "message": "Might be worth adding a comment here, alluding to the fact that some of these declarations could be re-used between different repositories. i.e. the reuse isn\u0027t limited.",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5b0852b_bb033665",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb3d541a_c7b9ddca",
       "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -258,6 +462,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cebaeb87_ef63b721",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "758ea430_74316ea5",
+      "range": {
+        "startLine": 297,
+        "startChar": 7,
+        "endLine": 297,
+        "endChar": 14
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "589cc4da_ed7a6041",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80934ee9_b2464105",
+      "range": {
+        "startLine": 297,
+        "startChar": 24,
+        "endLine": 297,
+        "endChar": 31
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "154cf842_fa2456b3",
@@ -271,6 +523,30 @@
       "writtenOn": "2025-04-30T14:38:10Z",
       "side": 1,
       "message": "Is there something significant in the wording difference here, compared to above?",
+      "range": {
+        "startLine": 330,
+        "startChar": 51,
+        "endLine": 330,
+        "endChar": 72
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ec38b26_594a4932",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "Nope - I just wrote it differently in the second commentary. I\u0027ve now aligned them.",
+      "parentUuid": "154cf842_fa2456b3",
       "range": {
         "startLine": 330,
         "startChar": 51,
@@ -317,6 +593,24 @@
       "writtenOn": "2025-04-30T14:38:10Z",
       "side": 1,
       "message": "This needs updating to show folks how to import from an existing workflow; otherwise there\u0027s a \"jump\"",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58ed53aa_41853808",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-01T16:17:21Z",
+      "side": 1,
+      "message": "I\u0027ve made a note to follow up on this; I don\u0027t think it should be addressed in this CL.",
+      "parentUuid": "509b1d30_3aa269c8",
       "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
