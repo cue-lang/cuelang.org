@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e54f74e0_813ba441",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-01T12:47:28Z",
+      "side": 1,
+      "message": "For completeness, the tip deploy workflow of the next CL in the stack is https://github.com/cue-lang/cuelang.org/actions/runs/14775545584/job/41483037748",
+      "revId": "74aaa5d1ca30a86b12fa622c4a5813072025b742",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
