@@ -510,15 +510,21 @@ x: 50
 
 `cue export` handles {{{.packagelessFile}}} inputs identically to
 {{{.dataFile}}} inputs - they're treated equivalently, and are interchangeable
-as `cue export` arguments.
+as `cue export` arguments (except as mentioned shortly in the context of the
+`--path` (`-l`) flag).
 However, where {{{.dataFile}}} inputs can only introduce concrete data,
 {{{.packagelessFile}}} inputs can also include constraints, calculated fields,
-and all other CUE language features *alongside*
-their concrete data.
+and all other CUE language features *alongside* their concrete data.
+
 Their contributions to the evaluation are unified as you might expect - their
 constraints add to the set of constraints that validate the concrete data, and
 their concrete data is validated against the set of constraints derived from
 all constraint-related input types.
+
+{{{.UCpackagelessFile}}} inputs aren't affected by the `--path` (`-l`) flag
+that's [demonstrated below](#non-cue-data-location).
+They are always unified with the {{{.package}}} input that you specified (if
+any), and with each other.
 
 ### {{{.HdataFile}}} inputs
 
@@ -717,10 +723,11 @@ cat data.yml | cue export yaml: -
 During evaluation, `cue export` unifies all its inputs and, by default, places
 the contents of any {{{.dataFile}}} inputs at the top-level of the evaluation
 space. You can change this behaviour by specifying a static or dynamic location
-for all {{{.dataFile}}} inputs using the `--path` (`-l`) flag. This flag is
-described in
-`{{< linkto/inline "reference/command/cue-help-flags" >}}`
-and is demonstrated below.
+for all non-CUE {{{.dataFile}}} inputs using the `--path` (`-l`) flag.
+
+The flag is described in
+`{{< linkto/inline "reference/command/cue-help-flags" >}}`,
+and its use is demonstrated below.
 
 ### Static locations
 
@@ -764,14 +771,19 @@ You can also provide multiple path components through repeated instances of the
 flag. For example, the previous example is equivalent to `-l foo: -l bar: -l
 baz:`.
 
-The combined values of all `--path` (`-l`) flags that are present in a
-`cue export` invocation apply to *all* the {{{.dataFile}}} inputs. The flags'
-positions in the invocation are irrelevant, no matter where they sit relative
-to any arguments defining the inputs to be processed.
-When specifying a static location, this means that the data in all
+The combined effect of all `--path`/`-l` flags that are specified for a
+`cue export` command applies to *all* the non-CUE {{{.dataFile}}} inputs.
+Each `--path`/`-l` flag's position is only important in terms of its
+*relative* position to the other `--path`/`-l` flags.
+It doesn't matter if these flags come before or after any specific input
+parameter because it's their combination that defines the location for non-CUE
+{{{.dataFile}}} inputs.
+All such flags affect all non-CUE {{{.dataFile}}} inputs.
+
+When specifying a static location, this means that the data in all non-CUE
 {{{.dataFile}}} inputs is unified at the location provided.
-If there are multiple {{{.dataFile}}} inputs, all their contents must unify
-without errors:
+Therefore, if there are multiple {{{.dataFile}}} inputs, all their contents
+must unify without errors:
 
 {{{with code "en" "-l static multiple files"}}}
 #location top-left top-right bottom
