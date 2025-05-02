@@ -510,15 +510,21 @@ x: 50
 
 `cue export` handles {{{.packagelessFile}}} inputs identically to
 {{{.dataFile}}} inputs - they're treated equivalently, and are interchangeable
-as `cue export` arguments.
+as `cue export` arguments (except as mentioned shortly in the context of the
+`--path` (`-l`) flag).
 However, where {{{.dataFile}}} inputs can only introduce concrete data,
 {{{.packagelessFile}}} inputs can also include constraints, calculated fields,
-and all other CUE language features *alongside*
-their concrete data.
+and all other CUE language features *alongside* their concrete data.
+
 Their contributions to the evaluation are unified as you might expect - their
 constraints add to the set of constraints that validate the concrete data, and
 their concrete data is validated against the set of constraints derived from
 all constraint-related input types.
+
+{{{.UCpackagelessFile}}} inputs aren't affected by the `--path` (`-l`) flag
+that's [demonstrated below](#non-cue-data-path).
+They are always unified with the {{{.package}}} input that you specified (if
+any), and with each other.
 
 ### {{{.HdataFile}}} inputs
 
@@ -712,19 +718,20 @@ A:
 cat data.yml | cue export yaml: -
 {{{end}}}
 
-## Non-CUE data location
+## Non-CUE data path
 
 During evaluation, `cue export` unifies all its inputs and, by default, places
 the contents of any {{{.dataFile}}} inputs at the top-level of the evaluation
-space. You can change this behaviour by specifying a static or dynamic location
-for all {{{.dataFile}}} inputs using the `--path` (`-l`) flag. This flag is
-described in
-`{{< linkto/inline "reference/command/cue-help-flags" >}}`
-and is demonstrated below.
+space. You can change this behaviour by specifying a static or dynamic path
+for all non-CUE {{{.dataFile}}} inputs using the `--path` (`-l`) flag.
 
-### Static locations
+The flag is described in
+`{{< linkto/inline "reference/command/cue-help-flags" >}}`,
+and its use is demonstrated below.
 
-To specify a static location for the {{{.dataFile}}} inputs during evaluation,
+### Static paths
+
+To specify a static path for the {{{.dataFile}}} inputs during evaluation,
 provide the `--path` (`-l`) flag with a CUE expression that ends with a colon (`:`):
 
 {{{with code "en" "-l static single"}}}
@@ -740,7 +747,7 @@ data: true
 }
 {{{end}}}
 
-Increase the depth and nesting of the location by adding more components to the
+Increase the depth and nesting of the path by adding more components to the
 expression:
 
 {{{with code "en" "-l static multiple"}}}
@@ -764,14 +771,14 @@ You can also provide multiple path components through repeated instances of the
 flag. For example, the previous example is equivalent to `-l foo: -l bar: -l
 baz:`.
 
-The combined values of all `--path` (`-l`) flags that are present in a
-`cue export` invocation apply to *all* the {{{.dataFile}}} inputs. The flags'
-positions in the invocation are irrelevant, no matter where they sit relative
-to any arguments defining the inputs to be processed.
-When specifying a static location, this means that the data in all
-{{{.dataFile}}} inputs is unified at the location provided.
-If there are multiple {{{.dataFile}}} inputs, all their contents must unify
-without errors:
+The list of `--path` (`-l`) flags in the order they're specified defines the
+path where non-CUE data is placed. It doesn't matter where the flags are placed
+relative to other flags or arguments.
+
+When specifying a static path the data in all non-CUE {{{.dataFile}}} inputs is
+unified at that single path.
+Given multiple {{{.dataFile}}} inputs, all their contents must unify without
+conflicts:
 
 {{{with code "en" "-l static multiple files"}}}
 #location top-left top-right bottom
@@ -789,10 +796,15 @@ foo.bar.baz.data: conflicting values true and false:
     ./data.yml:1:7
 {{{end}}}
 
-### Dynamic locations
+If your evaluation needs to include multiple {{{.dataFile}}} inputs that
+*don't* unify then you'll either need to use
+[file embedding]({{<relref"docs/howto/embed-files-in-cue-evaluation">}}), or
+specify dynamic paths -- as demonstrated in the next section.
+
+### Dynamic paths
 
 As you saw in the previous section, a trailing colon (`:`) tells `cue export`
-that a value in the location expression should be interpreted statically.
+that a value in the path expression should be interpreted statically.
 If the colon is omitted, then the value is resolved dynamically - in the
 context of the data that's present:
 
@@ -838,19 +850,25 @@ expression is evaluated, allowing it to refer to information about a
 <!-- TODO(jcm): link to a --with-context guide when it's available -->
 
 {{{with code "en" "-l dynamic --with-context"}}}
-#location top bottom
-exec cue export data.yml -l 'path.Base(filename)' --with-context
+#location top-left top-right bottom
+exec cue export data.yml data.json -l 'path.Base(filename)' --with-context --out yaml
 cmp stdout out
--- data.yml --
-data: true
--- out --
+-- data.json --
 {
-    "data.yml": {
-        "data": true
-    }
+    "value": false
 }
+-- data.yml --
+value: true
+-- out --
+data.json:
+  value: false
+data.yml:
+  value: true
 {{{end}}}
 
+As an alternative to the `--with-context` flag consider using the
+[file embedding]({{<relref"docs/howto/embed-files-in-cue-evaluation">}})
+feature instead.
 
 ## {{{.HdataFile}}}s with multiple documents
 
