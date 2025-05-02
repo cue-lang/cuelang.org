@@ -27,7 +27,7 @@ package site
 									"-l static multiple files":                                  "smjGvG+GK83QJU9Iu/OT+SwlooP3OYi1Tj+jWhJvfyI="
 									"-l dynamic single":                                         "LmQVKniY4aNG6xjaq4N14YCxVO6udAycylUlX5yo5KE="
 									"-l dynamic single with function":                           "JKEEHzhF1Anuzi67k/oW4DIgFYJz3N218TqXVE+gY7w="
-									"-l dynamic --with-context":                                 "ydbwMDDpfv6tEdIaV2p50EIVouox9uRa/zB1ZeBr6s8="
+									"-l dynamic --with-context":                                 "Kk0EUp/b6CD2W2Nyt0EoQMmNGGWsQJnQI2mqeZRQxwk="
 									"multi-doc merge":                                           "Dq0HICUyhUtq/Ex/ZlCd98zrp+2zWU9RQawFYuB4XNc="
 									"multi-doc list":                                            "jsvf+3HkJBXdY0xLB593cefCbe951Bb0Jq/MZAad9h4="
 								}
