@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd214f42_6fca636d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-06T15:57:52Z",
+      "side": 1,
+      "message": "PTAL. I feel this should get submitted, so that anyone working on the fix has all the examples visible on the page whilst they\u0027re updating the CSS, and can check that no regressions occur to similar blocks as a result of their changes.",
+      "revId": "fcf80a81ac5df635fb8d94c76ec8ef8f31e3be3c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
