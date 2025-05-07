@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc8b7266_48178dd3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-07T15:18:17Z",
+      "side": 1,
+      "message": "PTAL. Hierarchy updated as discussed; on-page prose identifies the problems caused by the issue, and (IMHO) should be updated by the same commit/stack that fixes the issue.",
+      "revId": "3d80a09cdfc59227742fe8d35f3d727a6b77241c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
