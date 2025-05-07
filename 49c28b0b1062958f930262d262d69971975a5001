@@ -16,6 +16,108 @@
       "message": "PTAL",
       "revId": "49c28b0b1062958f930262d262d69971975a5001",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "467b15d1_d0ef3f44",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-07T14:48:51Z",
+      "side": 1,
+      "message": "my 2c is that this section is rather long - it has two pretty long paragraphs in the middle, and the last example is very long, to the point it doesn\u0027t fit in my laptop screen. can we narrow this down a bit? e.g. I suggest we remove \"go mod tidy\" as a step as I mentioned on Slack.",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87ee52e0_04df10df",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-07T14:48:51Z",
+      "side": 1,
+      "message": "ditto: join with the line above",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad84e7fc_1bdd55e6",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-07T14:48:51Z",
+      "side": 1,
+      "message": "all of these render with verbose `// filepath: same/cue/path.cue` comments at the top. why is that? it adds quite a lot of unnecessary noise.",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebb0def0_81c1b1a6",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-07T14:48:51Z",
+      "side": 1,
+      "message": "ditto: join with the line above",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8cf9e88_2caa8fb7",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-07T14:48:51Z",
+      "side": 1,
+      "message": "ditto: join with the line above.",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4842c6c1_f24ba366",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-07T14:48:51Z",
+      "side": 1,
+      "message": "join this line with the one above - you save two lines, and you can unindent the steps list by one tab, which will massively help with the side-to-side views.",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
