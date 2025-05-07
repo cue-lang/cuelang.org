@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "317cdfff_6dd420ee",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-07T15:35:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87ee52e0_04df10df",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ad84e7fc_1bdd55e6",
@@ -65,6 +83,24 @@
       "writtenOn": "2025-05-07T14:48:51Z",
       "side": 1,
       "message": "all of these render with verbose `// filepath: same/cue/path.cue` comments at the top. why is that? it adds quite a lot of unnecessary noise.",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be2e9d6c_81da50aa",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-07T15:35:10Z",
+      "side": 1,
+      "message": "It\u0027s a temporary workaround until cue-labs/services#250 is resolved.",
+      "parentUuid": "ad84e7fc_1bdd55e6",
       "revId": "49c28b0b1062958f930262d262d69971975a5001",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -86,6 +122,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23720426_ace23615",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-07T15:35:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebb0def0_81c1b1a6",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8cf9e88_2caa8fb7",
@@ -103,6 +157,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da62cb7d_f0793372",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-07T15:35:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8cf9e88_2caa8fb7",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4842c6c1_f24ba366",
@@ -116,6 +188,24 @@
       "writtenOn": "2025-05-07T14:48:51Z",
       "side": 1,
       "message": "join this line with the one above - you save two lines, and you can unindent the steps list by one tab, which will massively help with the side-to-side views.",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6242c20_ba1947ed",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-07T15:35:10Z",
+      "side": 1,
+      "message": "Done. @mvdan@mvdan.cc if you could share a screenshot of your laptop\u0027s viewing experience of this section, I\u0027d be grateful.",
+      "parentUuid": "4842c6c1_f24ba366",
       "revId": "49c28b0b1062958f930262d262d69971975a5001",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
