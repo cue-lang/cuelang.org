@@ -1,10 +1,7 @@
 ---
 title: How CUE works with YAML
-tags:
-- encodings
-- cue command
-authors:
-- jpluscplusm
+tags: [encodings, cue command]
+authors: [jpluscplusm]
 toc_hide: true
 aliases:
 - /docs/concept/yaml/
@@ -150,6 +147,50 @@ Learn more about transforming data with CUE in these How-to guides:
 - {{< linkto/inline "howto/transform-yaml-with-cue" >}}
 - {{< linkto/inline "howto/combine-multiple-yaml-files-into-a-list" >}}
 - {{< linkto/inline "howto/combine-multiple-yaml-files-by-using-file-metadata" >}}
+
+## Embedding YAML file data inside CUE
+{{< sidenote text="Available from CUE v0.12.0" >}}
+
+The [file embedding]({{<relref"docs/howto/embed-files-in-cue-evaluation">}})
+feature allows data files (including YAML) to be read when some CUE is evaluated.
+This provides an alternative way to use CUE to validate data files against
+schemas and constraints, and also gives CUE configurations access to data
+stored in non-CUE files:
+
+{{{with code "en" "files"}}}
+#location top-left top-right top-right top-right bottom
+exec cue mod init
+
+exec cue export --out yaml
+cmp stdout out
+-- example.cue --
+@extern(embed)
+
+package p
+
+_conf: _ @embed(file=config.yaml)
+_data: _ @embed(glob=env/*.yml)
+
+info: {
+	version: _conf.version
+	source:  _data["env/\(_conf.source).yml"].text
+}
+-- config.yaml --
+version: 1.42.0
+source: "bar"
+-- env/foo.yml --
+text: "Some foo"
+-- env/bar.yml --
+text: "A bar"
+-- out --
+info:
+  version: 1.42.0
+  source: A bar
+{{{end}}}
+
+File embedding is available from CUE v0.12.0 onwards.
+Find out more about this powerful validation feature in
+{{<linkto/inline"howto/embed-files-in-cue-evaluation">}}.
 
 ## Encoding YAML inside CUE
 
