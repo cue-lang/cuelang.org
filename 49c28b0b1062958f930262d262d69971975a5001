@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5cb6c474_94a5f03d",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-08T16:52:46Z",
+      "side": 1,
+      "message": "Thanks for your time discussing this. I\u0027ve removed all `go mod tidy` steps, which has the benefit of shortening all CUE and YAML on the page - including this section\u0027s longer CUE file.\n\nI\u0027ve also removed the `#goVersion` definition and the setup-go `name` field; and have removed the prose about package unification from this section.\n\nI\u0027m not sure we can make this much shorter, such that it fits on a single \"normal\" laptop screen. I\u0027ve added a definition scope explanation, now that we have only the one definition (because previously, with 2 definitions, the combination of comment+def1+def2 gets a blank line placed between def1 and def2 when `cue fmt` runs, which elgonated the doc), which could be removed. It feels like a useful thing to mention, however, for the audience we anticipate will read this doc.\n\nPTAL!",
+      "parentUuid": "467b15d1_d0ef3f44",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "87ee52e0_04df10df",
         "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
         "patchSetId": 11

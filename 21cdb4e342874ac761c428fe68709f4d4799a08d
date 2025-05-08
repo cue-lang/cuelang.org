@@ -381,6 +381,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ff4da02_0ffdca16",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-08T16:52:46Z",
+      "side": 1,
+      "message": "I\u0027ve ended up removing this prose in a later PS.",
+      "parentUuid": "575a46d6_50227c9b",
+      "range": {
+        "startLine": 234,
+        "startChar": 45,
+        "endLine": 234,
+        "endChar": 76
+      },
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb3d541a_c7b9ddca",
