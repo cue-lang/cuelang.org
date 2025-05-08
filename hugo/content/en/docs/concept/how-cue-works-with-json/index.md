@@ -1,10 +1,7 @@
 ---
 title: How CUE works with JSON
-tags:
-- encodings
-- cue command
-authors:
-- jpluscplusm
+tags: [encodings, cue command]
+authors: [jpluscplusm]
 toc_hide: true
 aliases:
 - /docs/concept/json/
