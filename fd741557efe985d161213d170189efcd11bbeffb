@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44370548_7c05f3c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-08T14:02:04Z",
+      "side": 1,
+      "message": "```\nCloses cue-lang/docs-and-content#209.\n```",
+      "revId": "fd741557efe985d161213d170189efcd11bbeffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
