@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e00f2f2_c7f393cc",
+        "filename": "content/docs/concept/using-the-cue-vet-command/_en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91ed54ab_fb9e067d",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d0d4f21_a9d0c50b",
@@ -31,6 +49,30 @@
       "writtenOn": "2025-02-18T16:19:39Z",
       "side": 1,
       "message": "This is very hard to parse, and it feels like we\u0027re trying to be precise here at the expense of easy-reading. We\u0027ve already qualified that we\u0027re doing relative imports above.",
+      "range": {
+        "startLine": 85,
+        "startChar": 31,
+        "endLine": 85,
+        "endChar": 68
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b98f189_0d872cc3",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-cue/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d0d4f21_a9d0c50b",
       "range": {
         "startLine": 85,
         "startChar": 31,
@@ -60,6 +102,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cc696ee4_e71133fa",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "I\u0027ve redrafted the opening to this page. PTAL.",
+      "parentUuid": "c22d698b_06060922",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c4bab60b_7d1025e0",
         "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
         "patchSetId": 16
@@ -71,6 +131,30 @@
       "writtenOn": "2025-02-18T16:19:39Z",
       "side": 1,
       "message": "Against what? That point seems to be left unanswered here. A brief mention is necessary. I think. It could be below-the-line detail for this example, where you explain what happens in this case.",
+      "range": {
+        "startLine": 15,
+        "startChar": 59,
+        "endLine": 15,
+        "endChar": 69
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c62731f_121fef1d",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "Sentence moved the page intro and explained better.",
+      "parentUuid": "c4bab60b_7d1025e0",
       "range": {
         "startLine": 15,
         "startChar": 59,
@@ -100,6 +184,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5aff645b_8a9302ee",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "I\u0027ve shortened, reworded, and simplified. PTAL.",
+      "parentUuid": "f40fbc43_530b98b3",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "27c9ab13_43cfa2d9",
         "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
         "patchSetId": 16
@@ -117,6 +219,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "040a8ed6_bfec98e8",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "I\u0027ve shortened, reworded, and reordered this significantly - PTAL.",
+      "parentUuid": "27c9ab13_43cfa2d9",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "72027157_c2564fdd",
         "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
         "patchSetId": 16
@@ -128,6 +248,30 @@
       "writtenOn": "2025-02-18T16:19:39Z",
       "side": 1,
       "message": "What\u0027s the significance of highlighting this here? We\u0027ve already mentioned the point above?",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 40
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5fc67bf_0f05cb2c",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "72027157_c2564fdd",
       "range": {
         "startLine": 71,
         "startChar": 10,
@@ -161,6 +305,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aa23352_88275d7c",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "I\u0027ve reordered this page significantly, pushing the happy path to the top of the page as the first example.",
+      "parentUuid": "c262725c_95c9998c",
+      "range": {
+        "startLine": 72,
+        "startChar": 72,
+        "endLine": 72,
+        "endChar": 78
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1518e33_d4416632",
@@ -174,6 +342,24 @@
       "writtenOn": "2025-02-18T16:19:39Z",
       "side": 1,
       "message": "This starting a new paragraph, when it refers to the last sentence of the previous paragraph feels strange?",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52c6a572_8895d790",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1518e33_d4416632",
       "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -203,6 +389,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "042de548_f01a2ff9",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "Done. I think it\u0027s worth noting that the full invocation, with `-c` added for consistency with our recent editorial decision to always display it, is now:\n\n```\ncue vet -c .:A -d \u0027#SmallAB\u0027 data.yaml\n```\n\nDoes that feel like the most acceptable ordering of those args?",
+      "parentUuid": "a02ac5b1_423451af",
+      "range": {
+        "startLine": 138,
+        "startChar": 27,
+        "endLine": 138,
+        "endChar": 40
+      },
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a2d63060_e651b830",
         "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
         "patchSetId": 16
@@ -214,6 +424,24 @@
       "writtenOn": "2025-02-18T16:19:39Z",
       "side": 1,
       "message": "It feels slightly unfortunate to have the entire block repeated, taking up visual space?",
+      "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0711aeb4_22d12d2b",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "They\u0027re now different blocks, serving different narrative purposes.",
+      "parentUuid": "a2d63060_e651b830",
       "revId": "aabcfcfeecd358124d8ccdce507dfbc0e9a63e56",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

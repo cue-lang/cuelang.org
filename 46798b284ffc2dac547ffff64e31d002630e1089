@@ -933,6 +933,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fc3bd569_83f6410b",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-09T15:46:34Z",
+      "side": 1,
+      "message": "I\u0027m neutral on their prevelance in data files.\n\nI think the increased clarity of having `A`, `B`, etc as field names, which both stand out from each and from the rest of the file\u0027s contents (which is generally lower case) is worth the potential slight misalignment with data files used outside an explanatory context. PTAL.",
+      "parentUuid": "6c27003e_14333880",
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3d47d3f8_70c60c55",
         "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
         "patchSetId": 11
