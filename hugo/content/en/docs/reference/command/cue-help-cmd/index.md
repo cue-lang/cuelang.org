@@ -4,6 +4,7 @@ title: "cue help cmd"
 weight: 1000
 tags:
 - cue command
+- workflow command
 ---
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY21k" }
 $ cue help cmd
@@ -127,3 +128,7 @@ Global Flags:
       --trace        trace computation
   -v, --verbose      print information about progress
 ```
+
+## Related content
+
+- {{< linkto/related/reference "command/cue-help-commands" >}}
