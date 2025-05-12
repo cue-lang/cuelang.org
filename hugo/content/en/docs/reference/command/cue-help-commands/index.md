@@ -4,6 +4,7 @@ title: "cue help commands"
 weight: 1000
 tags:
 - cue command
+- workflow command
 ---
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY29tbWFuZHM=" }
 $ cue help commands
@@ -162,3 +163,7 @@ cuelang.org/go/pkg/tool/tool.cue.
 	}
 
 ```
+
+## Related content
+
+- {{< linkto/related/reference "command/cue-help-cmd" >}}

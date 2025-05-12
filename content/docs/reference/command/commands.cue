@@ -91,27 +91,42 @@ cue: {
 	[_]: tagSet: "cue command": _
 	// This can't be reduced to a more general comprehension over the keys of the
 	// tags.cue field because https://cuelang.org/issues/2013 strikes.
-	[or(tags.cue.modules)]: tagSet: modules: _
+	[or(tags.cue.modules)]: tagSet: modules:                       _
+	[or(tags.cue."workflow command")]: tagSet: "workflow command": _
 }
+
+// tags maps tag-name to command-pages-tagged-with-this-tag, allowing us to make
+// sure that groups of pages with the same tag are recorded as a unit. It's not
+// used directly by the page generation logic, but drives the cue.*.tagSet
+// pattern constraint encoded just above.
+tags: cue: {
+	modules: [
+		"login",
+		"mod",
+		"mod edit",
+		"mod fix",
+		"mod get",
+		"mod init",
+		"mod publish",
+		"mod resolve",
+		"mod tidy",
+		"modules",
+		"registryconfig",
+	]
+	"workflow command": [
+		"cmd",
+		"commands",
+	]
+}
+
 // Ensure that all tagged pages exist as actual pages.
 tags: "cue": [_]: [...or([for command, _ in cue {command}])]
-tags: cue: modules: [
-	"login",
-	"mod",
-	"mod edit",
-	"mod fix",
-	"mod get",
-	"mod init",
-	"mod publish",
-	"mod resolve",
-	"mod tidy",
-	"modules",
-	"registryconfig",
-]
 
 // Related "docs/reference/command/" pages, manually extracted from help text
 // contents.
 cue: {
+	commands: relatedCommands: ["cue help cmd"]
+	cmd: relatedCommands: ["cue help commands"]
 	mod: relatedCommands: [
 		"cue help modules",
 		"cue help mod edit",
