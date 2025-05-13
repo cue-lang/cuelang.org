@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94117dbd_ddc91d28",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-13T18:14:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adf15a19_5505e06d",
+      "range": {
+        "startLine": 7,
+        "startChar": 55,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a3b4b33f_ecf6850b",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d647a9a7_8309badb",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-13T18:14:18Z",
+      "side": 1,
+      "message": "I believe this is resolved. PTAL.",
+      "parentUuid": "a3b4b33f_ecf6850b",
+      "range": {
+        "startLine": 8,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd7e995b_547efb62",
         "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
         "patchSetId": 5
@@ -60,6 +108,30 @@
       "writtenOn": "2024-11-26T12:47:00Z",
       "side": 1,
       "message": "This seems a bit vague - I think we can more precise but that explanation probably sits below the example. The main driver for using chained `if` comprehensions is when the first condition can result in an error. Type checks are one such example, non-existent fields are another. Indeed I think checking for a non-existent field is probably clearer to most (citation required), because it\u0027s likely more common:\n\n```\nA: y: 5\n\nif A.x !\u003d _|_ if A.x \u003e 5 {\n  B: \"ok\"\n}\n```\n\nThen the below-the-example explanation can include a list of other situations that (like the type check) give rise to an error in case the first condition does _not_ short-circuit and the second condition is attempted.",
+      "range": {
+        "startLine": 11,
+        "startChar": 12,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dc002e4_4e34c97d",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-13T18:14:18Z",
+      "side": 1,
+      "message": "In the current PS, the example that shows off multiple situations now starts with missing and optional fields. The first failing example on the page is still a type check (I feel very slightly that it\u0027s easier to see why that should \"obviously\" fail, rather than a missing field), but I hold that lightly. PTAL.",
+      "parentUuid": "cd7e995b_547efb62",
       "range": {
         "startLine": 11,
         "startChar": 12,
@@ -105,6 +177,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa49b219_46c86a89",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-13T18:14:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97de9b53_88f84f92",
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bac1493e_68cada6b",
@@ -118,6 +208,24 @@
       "writtenOn": "2024-11-26T12:47:00Z",
       "side": 1,
       "message": "What is this example providing beyond the previous type check example?",
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edca211b_f9efb12a",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-13T18:14:18Z",
+      "side": 1,
+      "message": "The page has been significantly re-written, with a different example flow.",
+      "parentUuid": "bac1493e_68cada6b",
       "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
