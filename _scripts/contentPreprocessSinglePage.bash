@@ -11,13 +11,16 @@ set -euo pipefail
 # convenience for authors in its current state - hence the "content" filename
 # prefix.
 
+page="$1"; shift
+args="$@"
+
 # cd to the parent directory to that containing the script.
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 # Invoke the preprocessor on a single page. Capture the exit code so we can
 # propagate it from this script.
 set +e
-_scripts/runPreprocessor.bash execute --update "$1"
+_scripts/runPreprocessor.bash execute "$args" --update "$page"
 R=$?
 set -e
 
