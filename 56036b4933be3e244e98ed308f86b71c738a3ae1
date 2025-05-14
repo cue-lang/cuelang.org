@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "062ea4e4_80e7ceae",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-14T13:12:20Z",
+      "side": 1,
+      "message": "No. Because every page in this hierarchy has a URL path prefix of `cue-help-`, this struct\u0027s values are currently just a suffix for that prefix.\n\nThat was one of the benefits of documenting every command as `cue help ...` and not distinguishing between `cue export --help` and `cue help inputs` as command \"types\".\n\nWhen we address that difference (perhaps via something like to `cue hidden list-all-commands-as-json`) we\u0027ll have to think about this. Until then, this struct just contains the command\u0027s suffix to `cue help`.\n\nI\u0027ve cross-checked that the values are correct by visiting the preview pages and confirming that they contain the indicated\u0026intended site tag lozenges, top and bottom of the page.",
+      "parentUuid": "b2dd3259_26907627",
+      "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f26a60d9_9a8bc28e",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "850dae9f_1f538f38",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-14T13:12:20Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "f26a60d9_9a8bc28e",
+      "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8032ea0d_51da887f",
@@ -65,6 +101,24 @@
       "writtenOn": "2025-05-14T10:15:47Z",
       "side": 1,
       "message": "surely this would be `help commands`?",
+      "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "460db60b_d20509c2",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-14T13:12:20Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "8032ea0d_51da887f",
       "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
