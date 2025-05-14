@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e4bfdf3_09dfcc76",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-14T09:48:22Z",
+      "side": 1,
+      "message": "Happy to +2 this for now to unblock, but I think we need to look at fixing the versions we use in the guides.",
+      "revId": "a91f428a9464035fb7ab75062cca8d07e3a23508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
