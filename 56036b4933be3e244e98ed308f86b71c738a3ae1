@@ -16,6 +16,57 @@
       "message": "PTAL. This is in response to the Slack thread you pinged me in last week, and improves the tag index that I linked to in my reply earlier today.",
       "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2dd3259_26907627",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-14T10:15:47Z",
+      "side": 1,
+      "message": "surely this would be `help modules`?",
+      "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f26a60d9_9a8bc28e",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-14T10:15:47Z",
+      "side": 1,
+      "message": "surely this would be `help registryconfig`?",
+      "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8032ea0d_51da887f",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-05-14T10:15:47Z",
+      "side": 1,
+      "message": "surely this would be `help commands`?",
+      "revId": "56036b4933be3e244e98ed308f86b71c738a3ae1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
