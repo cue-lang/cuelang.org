@@ -525,11 +525,12 @@ func (rf *rootFile) buildMultistepScript() (*multiStepScript, error) {
 				pf("%s=$?\n", exitCodeVar)
 				pf("echo %s\n", stmt.outputFence)
 				if stmt.negated {
-					pf("if [[ $%s == 0 ]]\n", exitCodeVar)
+					pf("if [[ $%s == 0 ]]; then\n", exitCodeVar)
+					pf("echo \"expected non-zero exit code; got $%s\" >&2\n", exitCodeVar)
 				} else {
-					pf("if [[ $%s != 0 ]]\n", exitCodeVar)
+					pf("if [[ $%s != 0 ]]; then\n", exitCodeVar)
+					pf("echo \"expected zero exit code; got $%s\" >&2\n", exitCodeVar)
 				}
-				pf("then\n")
 				pf("exit 1\n")
 				pf("fi\n")
 				pf("echo $%s\n", exitCodeVar)
