@@ -1,0 +1,8 @@
+Code-Review+2: Paul Jolly <paul@myitcv.io>
+TryBot-Result+1: CUEcueckoo <cueckoo@cuelang.org>
+Submitted-by: Paul Jolly <paul@myitcv.io>
+Submitted-at: Thu, 15 May 2025 13:35:21 +0000
+Reviewed-on: https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1214970
+Comments-Total: 1
+Project: cue-lang/cuelang.org
+Branch: refs/heads/master
