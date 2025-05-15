@@ -16,6 +16,24 @@
       "message": "nit: If it\u0027s possible for this to be /not/ the final set of lines in a failing run (i.e. hidden some arbitrary distance above, in the scrollback) then I\u0027d personally find it useful to have it flagged in a shouty fashion with something like `FATAL: expected non-zero ...`.\n\nIf the message is guaranteed to be present in the last few lines of the failing output then that\u0027s probably less important.",
       "revId": "a3207a76674180db98c49622a4af6d98743a910a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e34aff9f_d77eb94c",
+        "filename": "internal/cmd/preprocessor/cmd/rootfile.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-15T13:34:56Z",
+      "side": 1,
+      "message": "It\u0027s impossible for it to be buried. It\u0027s followed by an `exit 1`.",
+      "parentUuid": "063d7a25_cd985265",
+      "revId": "a3207a76674180db98c49622a4af6d98743a910a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
