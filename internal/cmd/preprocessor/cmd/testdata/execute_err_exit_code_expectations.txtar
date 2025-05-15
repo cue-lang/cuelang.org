@@ -1,0 +1,44 @@
+# Ensure that violations in exit code expectations in multi-step scripts are
+# clearly reported.
+
+unquote content/dir1/en.md
+unquote content/dir2/en.md
+
+! exec preprocessor execute
+stderr 'expected zero exit code; got 1'
+stderr 'expected non-zero exit code; got 0'
+
+-- hugo/.keep --
+-- golden/content/dir/.keep --
+-- content/site.cue --
+package site
+-- content/dir1/page.cue --
+package site
+
+content: dir1: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir1/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "end" "expect zero"}}}
+>false
+>{{{end}}}
+-- content/dir2/page.cue --
+package site
+
+content: dir2: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir2/en.md --
+>---
+>title: JSON Superset
+>---
+>
+>{{{with script "end" "expect non-zero"}}}
+>! true
+>{{{end}}}
