@@ -68,7 +68,7 @@ variables `CUE_EXPERIMENT` and `CUE_DEBUG` are unset.
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0-alpha.4
+cue version v0.13.0-rc.1
 ...
 ```
 
