@@ -51,7 +51,7 @@ We use `cue vet` to validate `pipeline.yml` against the `buildkite` package's `#
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvYnVpbGRraXRlQGxhdGVzdCBwaXBlbGluZS55bWw=" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/buildkite@latest pipeline.yml
 steps: field is required but not present:
-    .cache/cue/mod/extract/cue.dev/x/buildkite@v0.0.0/schema.cue:16:2
+    .cache/cue/mod/extract/cue.dev/x/buildkite@v0.1.0/schema.cue:16:2
 ```
 
 The `cue vet` command shows us the error (`steps: field is required but not
