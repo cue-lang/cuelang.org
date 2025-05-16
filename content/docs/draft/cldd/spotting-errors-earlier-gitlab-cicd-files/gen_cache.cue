@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									broken: "KLA0zryZuj/NPLA2SEXDsSlbdm3Cr/mYZToY6N5QlKU="
-									fixed:  "zeZsOIN0ZmTb8FVE7ofT2mnJMeV5GqmZNxgUFb7tCAI="
+									broken: "4HRZ/I4iZdAVZo3yPI447S3ElXFxVgbxBtP+NDdnKgY="
+									fixed:  "3d13r7GbJ47v9Jr2qmgvLCq4DRYCl1tJHV6eJU4Gj/Y="
 								}
 								multi_step: {
-									hash:       "MGPP3IKMLOFGQLJK7IP3E5ER9GIH0E2BGPE07UJRU54RDK5BU3I0===="
-									scriptHash: "9G1FD8C8BCNPBJOVHRPNM1CCJBLO8MQLAH8O2S22F586BCNUGNV0===="
+									hash:       "MP6944NKI3SN1UUAGP3B0MQO2J555UKQ17O8PLUVI9674IUM7ECG===="
+									scriptHash: "EGEM6R7T6VQU9IRDL4432QADNJ1V640PF0578P0FBGOC7TT7HH9G===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -30,7 +30,7 @@ package site
 										output:   ""
 									}, {
 										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
-										cmd:      "export PATH=/cues/v0.13.0-alpha.4:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-rc.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,7 +39,7 @@ package site
 										exitCode: 1
 										output: """
 												"create-pages".scripts: field not allowed:
-												    .cache/cue/mod/extract/cue.dev/x/gitlab@v0.0.0/gitlabci/schema.cue:295:17
+												    .cache/cue/mod/extract/cue.dev/x/gitlab@v0.1.0/gitlabci/schema.cue:293:17
 												    ./pipeline.yml:7:3
 
 												"""
