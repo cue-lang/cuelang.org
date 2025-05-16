@@ -31,15 +31,12 @@ B.3: 3 errors in empty disjunction:
 B.3: conflicting values "a" and "E":
     ./file.cue:3:6
     ./file.cue:9:20
-    ./file.cue:11:5
 B.3: conflicting values "b" and "E":
     ./file.cue:3:11
     ./file.cue:9:20
-    ./file.cue:11:5
 B.3: conflicting values "c" and "E":
     ./file.cue:3:16
     ./file.cue:9:20
-    ./file.cue:11:5
 {{{end}}}
 
 {{<info>}}

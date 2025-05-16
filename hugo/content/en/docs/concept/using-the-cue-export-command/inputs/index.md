@@ -467,7 +467,7 @@ $ cue export packageA.cue packageA.cue
     "x": "foo"
 }
 $ cue export packageA.cue packageB.cue
-found packages "A" (packageA.cue) and "B" (packageB.cue) in "/home/runner"
+found packages "A" (packageA.cue) and "B" (packageB.cue) in "."
 
 # "but don't need to match the name of any <u style='text-decoration-style: dotted;'>CUE package</u>
 # input that's present."
@@ -652,10 +652,11 @@ A:
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBkYXRhLnltbCBkYXRhLmpzb24=" >}}
 $ cue export data.yml data.json
-A: incompatible list lengths (2 and 3)
 A.1.B: conflicting values 2 and 3:
     ./data.json:5:18
     ./data.yml:3:8
+A: incompatible list lengths (2 and 3):
+    ./data.yml:2:3
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

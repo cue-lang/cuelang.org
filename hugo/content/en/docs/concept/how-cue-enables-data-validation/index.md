@@ -353,11 +353,7 @@ package validation
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuIGRhdGEueW1sIC1kICcjUGVvcGxlJw==" >}}
 $ cue vet -c . data.yml -d '#People'
 2.age: field not allowed:
-    ./data.yml:1:1
     ./data.yml:5:3
-    ./schema.cue:4:11
-    ./schema.cue:4:14
-    ./schema.cue:5:10
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -456,9 +452,6 @@ $ cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
     ./data.yml:4:8
     ./schema.proto:5:3
-anInt: incompatible integer bounds >99.0 and <100:
-    ./policy.cue:9:10
-    ./schema.json:14:21
 aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (does not satisfy strings.Contains("25")):
     ./policy.cue:6:12
     ./data.yml:1:10
@@ -470,6 +463,9 @@ aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain
     ./data.yml:1:10
     ./policy.cue:6:12
     ./schema.proto:2:3
+anInt: incompatible integer bounds >99.0 and <100:
+    ./schema.json:14:21
+    ./policy.cue:9:10
 ```
 
 However, if we update and fix the data, then the same `cue vet` command is

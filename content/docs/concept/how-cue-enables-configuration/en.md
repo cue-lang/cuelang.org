@@ -126,7 +126,6 @@ jobs:
 -- out --
 jobs.deploy."runs-on": conflicting values "ubuntu-latest" and "ubuntu-20.04":
     .github/workflows/deploy-to-ecs.yml:22:14
-    ./check.cue:6:3
     ./check.cue:7:16
 {{{end}}}
 
@@ -295,11 +294,11 @@ app:
 -- out --
 {
     "appMemory": 3072,
-    "replicaCount": 3,
-    "region": "AMEA",
+    "appName": "frontend-ng.service",
     "clusterName": "PROD",
     "id": "frontend-ng.service.prod.amea",
-    "appName": "frontend-ng.service"
+    "region": "AMEA",
+    "replicaCount": 3
 }
 {{{end}}}
 

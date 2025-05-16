@@ -38,18 +38,17 @@ If an environment variable is unset or empty, sensible default setting is used.
 	CUE_EXPERIMENT
 		Comma-separated list of experiment flags to enable or disable:
 
-		evalv3
+		evalv3 (default true)
 			Enable the new CUE evaluator, addressing performance issues
 			and bringing a better disjunction algorithm.
-		embed
+		embed (default true)
 			Enable support for embedded data files as described in
 			https://cuelang.org/discussion/3264.
-		decodeint64 (default true)
-			Tweak cue.Value.Decode to choose "int64" rather than "int"
-			as the default Go type for CUE integer values.
-		toposort
+		toposort (default true)
 			Enable topological sorting of struct fields.
 			Provide feedback via https://cuelang.org/issue/3558
+		cmdreferencepkg
+		    Require referencing imported tool packages to declare "cue cmd" tasks.
 
 	CUE_DEBUG
 		Comma-separated list of debug flags to enable or disable, such as:
@@ -59,10 +58,10 @@ If an environment variable is unset or empty, sensible default setting is used.
 			when interacting with module registries.
 		sortfields
 			Force fields in stucts to be sorted lexicographically.
-		openinline (default true)
-			Permit disallowed fields to be selected into literal struct
-			that would normally result in a close error, mimicking evalv2
-			closedness behavior in evalv3 to aid the transition.
+		toolsflow
+			Print task dependency mermaid graphs in 'cue cmd'.
+		parsertrace
+			Print a trace of parsed CUE productions.
 
 CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 where the value is a boolean "true" or "1" if omitted. For example:

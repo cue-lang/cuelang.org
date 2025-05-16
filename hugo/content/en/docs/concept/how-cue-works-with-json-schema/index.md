@@ -141,7 +141,7 @@ command validates our data against the `#Person` constraint:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BlcnNvbicgc2NoZW1hLmN1ZSBnb29kLmpzb24gYmFkLmpzb24=" }
 $ cue vet -c -d '#Person' schema.cue good.json bad.json
-name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
     ./bad.json:2:13
     ./schema.cue:11:9
 ```
@@ -150,7 +150,7 @@ The `cue vet` command can also validate the data using the JSON Schema directly:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBzY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
 $ cue vet -c schema.json good.json bad.json
-name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
     ./bad.json:2:13
     ./schema.json:13:13
 ```
@@ -270,7 +270,7 @@ $ go run . schema.json good.json
 	address: "Ripon, North Yorkshire"
 }
 $ go run . schema.json bad.json
-name: conflicting values strings.MinRunes(1) and ["Charlie","Cartwright"] (mismatched types string and list):
+name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
     bad.json:2:13
     schema.json:13:13
 exit status 1

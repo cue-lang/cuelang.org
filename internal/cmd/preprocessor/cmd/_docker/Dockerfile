@@ -31,12 +31,6 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.12.1 go install -trimpath cuelang.org/go/cmd/cue@v0.12.1
-
-RUN \
-  --mount=type=cache,target=/cache/gocache \
-  --mount=type=cache,target=/cache/gomodcache \
-  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   GOBIN=/cues/v0.13.0-rc.1 go install -trimpath cuelang.org/go/cmd/cue@v0.13.0-rc.1
 
 RUN git clone https://github.com/cue-lang/libcue.git /libcue
@@ -57,14 +51,14 @@ ENV LC_ALL=C.UTF-8
 
 # Default to the default value of CUE. Guides can fix to a different
 # version explicitly
-ENV PATH="/cues/v0.12.1:${PATH}"
+ENV PATH="/cues/v0.13.0-rc.1:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
-ENV CUELANG_CUE_LATEST="v0.12.1"
+ENV CUELANG_CUE_LATEST="v0.13.0-rc.1"
 ENV CUELANG_CUE_PRERELEASE="v0.13.0-rc.1"
 ENV CUELANG_CUE_TIP="v0.13.0-rc.1"
-ENV CUELANG_CUE_DEFAULT="v0.12.1"
-ENV CUELANG_CUE_PLAYGROUND="v0.12.1"
+ENV CUELANG_CUE_DEFAULT="v0.13.0-rc.1"
+ENV CUELANG_CUE_PLAYGROUND="v0.13.0-rc.1"
 
 WORKDIR /
 
@@ -77,7 +71,6 @@ RUN chmod 755 /usr/bin/entrypoint.sh
 RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
-COPY --from=build /cues/v0.12.1/cue /cues/v0.12.1/cue
 COPY --from=build /cues/v0.13.0-rc.1/cue /cues/v0.13.0-rc.1/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/

@@ -42,8 +42,6 @@ lossy: #Conn & {
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZQ==" >}}
 $ cue export file.cue
 lossy.timeout: field not allowed:
-    ./file.cue:1:8
-    ./file.cue:10:8
     ./file.cue:18:2
 {{< /code-tab >}}
 {{< /code-tabs >}}
