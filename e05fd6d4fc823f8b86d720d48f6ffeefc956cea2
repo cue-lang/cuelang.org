@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab93bfef_017be68c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-16T14:17:19Z",
+      "side": 1,
+      "message": "PTAL. PS2+3 were commit message updates only, so PS1\u0027s green CI isn\u0027t expected to change.",
+      "revId": "e05fd6d4fc823f8b86d720d48f6ffeefc956cea2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
