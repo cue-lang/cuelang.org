@@ -16,6 +16,69 @@
       "message": "PTAL",
       "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a17f1a9_881216b5",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-16T05:24:57Z",
+      "side": 1,
+      "message": "\"evaluation space\" isn\u0027t a thing: please let\u0027s keep to terminology we use elsewhere.\n\nPackage-less files are simply unified with the other single package argument (because you cannot specify package-less files in combination with multiple packages):\n\n```\n# root\nexec cue export .\nexec cue export . y.cue\n\n# a\nexec cue export .\nexec cue export . y.cue\n\n# multiple packages\nexec cue export . ./a\n! exec cue export . ./a y.cue\n\n-- cue.mod/module.cue --\nmodule: \"mod.example\"\nlanguage: {\n\tversion: \"v0.13.0\"\n}\n-- x.cue --\npackage x\n\nx: 5\n-- y.cue --\ny: 4\n\n-- a/a.cue --\npackage a\n\na: 4\n```",
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "584bbc9a_4994c65c",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-16T05:24:57Z",
+      "side": 1,
+      "message": "\"values\" seems misleading to me here, because it sort of suggests (to me) CUE values that result. \"The net effect\"",
+      "range": {
+        "startLine": 770,
+        "startChar": 13,
+        "endLine": 770,
+        "endChar": 19
+      },
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e0d539c_1f511817",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-16T05:24:57Z",
+      "side": 1,
+      "message": "This might be a bit misleading: the order is relevant. Is there a particular reason you want to call this out? I would just omit.",
+      "range": {
+        "startLine": 772,
+        "startChar": 0,
+        "endLine": 773,
+        "endChar": 62
+      },
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
