@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f466563f_17d3e25c",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-16T16:09:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a17f1a9_881216b5",
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "584bbc9a_4994c65c",
@@ -58,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b5aa3da_c2963e98",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-16T16:09:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "584bbc9a_4994c65c",
+      "range": {
+        "startLine": 770,
+        "startChar": 13,
+        "endLine": 770,
+        "endChar": 19
+      },
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e0d539c_1f511817",
@@ -71,6 +113,30 @@
       "writtenOn": "2025-05-16T05:24:57Z",
       "side": 1,
       "message": "This might be a bit misleading: the order is relevant. Is there a particular reason you want to call this out? I would just omit.",
+      "range": {
+        "startLine": 772,
+        "startChar": 0,
+        "endLine": 773,
+        "endChar": 62
+      },
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8603d321_e44cab8c",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-16T16:09:33Z",
+      "side": 1,
+      "message": "Yes - I recall at least two Slack threads where the user expected `-l foo: 1.json -l bar: 2.json` to have some sort of a \"reset\" effect that meant the flag would affect only their immediately following file. I reckon it\u0027s useful to include wording to emphasise this, and help disabuse anyone of that incorrect assumption.\n\nI\u0027ve reworded this para - PTAL.",
+      "parentUuid": "9e0d539c_1f511817",
       "range": {
         "startLine": 772,
         "startChar": 0,
