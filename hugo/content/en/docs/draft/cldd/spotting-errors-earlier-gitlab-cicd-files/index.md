@@ -59,7 +59,7 @@ We use `cue vet` to validate `pipeline.yml` against the `gitlabci` package's `#P
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvZ2l0bGFiL2dpdGxhYmNpQGxhdGVzdCBwaXBlbGluZS55bWw=" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/gitlab/gitlabci@latest pipeline.yml
 "create-pages".scripts: field not allowed:
-    .cache/cue/mod/extract/cue.dev/x/gitlab@v0.0.0/gitlabci/schema.cue:295:17
+    .cache/cue/mod/extract/cue.dev/x/gitlab@v0.1.0/gitlabci/schema.cue:293:17
     ./pipeline.yml:7:3
 ```
 
