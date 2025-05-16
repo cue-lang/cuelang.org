@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "70QFV571EC13P620J2DQ0TKAIH8EMGFMRVB0TD0C6O1F8KTGH5V0===="
-									scriptHash: "2PBVL8T6P77UGQS5AHP9D4BBCLVCNDO84C34QUFF7B48P636QTR0===="
+									hash:       "HCFBBP2014B5OFTUJTJ33QVVHHVLAB65T36D8815U12AQ9LJ5QQ0===="
+									scriptHash: "QUUUAFJFF5H29K16JGKEDS2J7A9TPCJ8COBQI68K6H2V7SEISAPG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-rc.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -103,7 +103,8 @@ package site
 												Tag variables
 
 												The injection mechanism allows for the injection of system variables:
-												when variable injection is enabled, tags of the form
+												when variable injection is enabled by passing the --inject-vars/-T flag,
+												tags of the form
 
 												    @tag(dir,var=cwd)
 

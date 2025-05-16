@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "JESCUFC8BNA0C4I6NL1HJATB594FTQ6K8J26MUTT71AIHVFNB8UG===="
-									scriptHash: "MQU2CF2LUK34LC3VUFKQ6N7VNLREMTHPJONQDVUSD242MUT10U1G===="
+									hash:       "H9ES19LC0LI9QT1FSJ1AB0SK3Q4OC4N6DJC3N41839E4V2G8T1N0===="
+									scriptHash: "3Q63L1TOD2IMV357UK620OB8MQRE5O6UMM08H4G2A72P66TQ5U50===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0-rc.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -47,9 +47,12 @@ package site
 												For NDJSON or multi-document YAML files, embed as type=text
 												and use APIs like yaml.Extract to decode as a list.
 
-												Note that embedding cue files is not supported at this time.
+												For security reasons, only files contained in the same module
+												can be embedded. Embedding is forbidden when outside a module.
 
-												Note: support for embed is experimental, and can be disabled via
+												Note that embedding CUE files is not supported at this time.
+
+												For the time being, embedding support can still be disabled via
 												CUE_EXPERIMENT=embed=0.
 
 												For more details and discussion, see the proposal linked from
