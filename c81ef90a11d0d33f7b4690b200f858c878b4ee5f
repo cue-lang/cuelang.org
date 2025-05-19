@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a4fce72_eff7df43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-19T14:09:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36dae3a6_8482587e",
+      "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "468ebd3e_83a54818",
@@ -66,6 +84,24 @@
       "writtenOn": "2025-02-18T18:44:36Z",
       "side": 1,
       "message": "I\u0027m guessing you\u0027ve split these out here because the line lengths were otherwise too long 😊\n\nIt\u0027s actually a bit more confusing my mind to the reader to do this, because it seems to suggest, absent other information, that you _have_ to split out the embedding from the constraints. \n\nThis combined with the fact that this single block of files feels very cluttered... I think it is going to be clearer as a script-based example.",
+      "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e04de9f_2393f942",
+        "filename": "content/docs/howto/validate-data-files-against-local-schema-using-file-embedding/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-19T14:09:27Z",
+      "side": 1,
+      "message": "I think that I\u0027ve managed to get it down to reasonable size, using the existing single code block.\n\nI\u0027ve removed the hardcoded `module.cue` file, as its presence was merely a necessary annoyance that was obviated by CL 1206632.\n\n\u003e I\u0027m guessing you\u0027ve split these out here because the line lengths were otherwise too long\n\nWhen I initially wrote this, I had only tried combining constraints with embedded file globs, which doesn\u0027t work (intentionally, as far as I can tell from the resulting syntax error). Your comment prompted me to re-examine using a constraint on the same line as a single embedded file -- which the guide now uses successfully. I\u0027ve also tightened up the CUE files\u0027 contents more generally.\n\nI reckon the improved layout works acceptably. PTAL!",
+      "parentUuid": "468ebd3e_83a54818",
       "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
