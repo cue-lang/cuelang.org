@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ba596b63_06a257e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-19T15:09:04Z",
+      "side": 1,
+      "message": "I\u0027ve lost context on what we wanted to change in this guide; if indeed we discussed anything before KubeCon. Please let\u0027s discuss it sometime soon.",
+      "parentUuid": "b521f5bc_226eb4d3",
+      "revId": "04ff9dd024f2918fcdd86b2045c36941db3592dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6bc83452_5be89d55",
         "filename": "content/docs/howto/update-imports-after-reorganising-packages/en.md",
         "patchSetId": 1
