@@ -168,6 +168,9 @@ As a one-off, login to the Central Registry:
 cue login
 {{{end}}}
 
+This is required only because we'll be publishing a module.
+The Central Registry allows unauthenticated access when fetching public modules.
+
 {{{with script "en" "mod init tidy"}}}
 cue mod init cue.example
 cue mod tidy

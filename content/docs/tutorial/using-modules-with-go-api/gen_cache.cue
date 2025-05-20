@@ -11,10 +11,10 @@ package site
 								"initial go code":  "65UE6as/6HVO7pSKQsH26hvKVfiXOp28bnugtqC+ZsA="
 							}
 							multi_step: {
-								hash:       "VTEM3K1LONKTBKB3K0J2V6PB56D4QABLL12M68838JHJET3SSAU0===="
-								scriptHash: "TJ6EL46MUHTO5J28SCQ4C93T1ATFF7JKDA7CN2P0J7FE1C6118QG===="
+								hash:       "85VFRUC2CH8NA6RMUOVHFL8HPF70GFLO19DO3K0EQTB6702A43QG===="
+								scriptHash: "UE3G9MDJ9DOEVC4MH4KEO7M70B5A936IJRQUUSG6VUPUMTL8PRU0===="
 								steps: [{
-									doc:      ""
+									doc:      "# Set up caches to speed up page rebuilds."
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
 									exitCode: 0
 									output:   ""
@@ -24,7 +24,7 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      ""
+									doc:      "# Central Registry auth."
 									cmd:      "mkdir -p $HOME/.config/cue"
 									exitCode: 0
 									output:   ""

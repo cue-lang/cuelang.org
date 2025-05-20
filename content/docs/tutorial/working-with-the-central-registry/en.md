@@ -1,11 +1,7 @@
 ---
 title: Working with modules and the Central Registry
-authors:
-- myitcv
-tags:
-- modules
-- tooling
-- cue command
+authors: [myitcv]
+tags: [modules]
 toc_hide: true
 ---
 
@@ -23,37 +19,12 @@ using the [Central Registry](https://registry.cue.works).
 
 Along the way you will:
 
-- Login to the Central Registry, and authenticate the `cue` command
 - Create a module that depends on an existing, well-known module
 - Use `cue mod tidy` to automatically add dependencies and their versions to the `module.cue` file
-
-## Login to the Central Registry
-
-{{{with step}}}
-Visit the Central Registry at https://registry.cue.works and login via GitHub.
-
-The Central Registry is in alpha testing -
-please give us your feedback about the service in the
-`#modules` channel [on Slack](/s/slack) or [on Discord](/s/discord)!
-{{{end}}}
-
-## Authenticate the `cue` command
-
-{{{with step}}}
-
-Authenticate the `cue` command (a one-off process):
-
-{{{with script "en" "#norun cue login"}}}
-#norun
-cue login
-{{{end}}}
-
-{{{end}}}
 
 ## Create a module
 
 {{{with step}}}
-
 Initialize a local CUE module. We will not publish this module:
 
 {{{with script "en" "cue mod init"}}}
@@ -64,11 +35,9 @@ We refer to such a module as the main module. Because we won't publish this
 module, its module path is not significant. The module path we have chosen makes
 this guide consistent with its companion tutorial
 {{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}.
-
 {{{end}}}
 
 {{{with step}}}
-
 Create the code for the new module:
 
 {{{with upload "en" "initial config.cue"}}}
@@ -90,15 +59,19 @@ Instead of depending on a version of that module published to a custom
 registry, we have instead published a version to the Central Registry.
 In our local module we define some concrete values for the configuration,
 constrained by the `frostyconfig.#Config` schema.
-
 {{{end}}}
 
 {{{with step}}}
-
 Ensure the module is tidy, pulling all dependencies:
+
 {{{with script "en" "initial cue mod tidy"}}}
 cue mod tidy
 {{{end}}}
+
+If you see an error message mentioning "too many requests" then
+[login to the Central Registry](FIXME_CENTRAL_REGISTRY_LOGIN_URL)
+and re-run this command.
+The Central Registry allows more requests from authenticated users.
 
 We can see that the dependencies have now been added to the `cue.mod/module.cue` file:
 
@@ -111,9 +84,7 @@ cat cue.mod/module.cue
 ## Evaluate the configuration
 
 {{{with step}}}
-
 Export the configuration as YAML:
-
 
 {{{with script "en" "first export"}}}
 cue export --out yaml

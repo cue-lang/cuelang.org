@@ -9,16 +9,17 @@ tags:
 toc_hide: true
 ---
 
-{{{with _script_ "en" "use prelrelease"}}}
+{{{with _script_ "en" "HIDDEN: setup"}}}
+# Git config.
 git config --global user.email '{{{.githubUser}}}@cue.works'
 git config --global user.name {{{.githubUser}}}
 
+# Access to Central Registry.
 mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_COLLABORATOR_RW}","token_type":"Bearer"}}}
 EOD
 {{{end}}}
-<!-- vim_ syntax highlighting hack -->
 
 ## Introduction
 
