@@ -11,10 +11,10 @@ package site
 								"config.cue":    "hTiLuhABSrzR4XWnbcNkiETLw6UsfErFhWN1xA0mdfY="
 							}
 							multi_step: {
-								hash:       "F55NC89TE9EN3V2VBG4PKPJPK125IRUG202ALNGK7RR203FSQLS0===="
-								scriptHash: "SV2DHL950F2OJ34H73NG8QRM3BSI3B0J4UONRI6BV95QJ0GPQOP0===="
+								hash:       "GE4EGH914VMAHQ07LMNMQAFDNFBTV3VBAUL6BG4BT1GUKV92SGJ0===="
+								scriptHash: "JHP3LU89JJU18OTK4RDNQ1EAJVDUO2E7GM3JNCB653S5V0GOT6NG===="
 								steps: [{
-									doc:      ""
+									doc:      "# Git config."
 									cmd:      "git config --global user.email 'cueckoo@cue.works'"
 									exitCode: 0
 									output:   ""
@@ -24,7 +24,7 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      ""
+									doc:      "# Access to Central Registry."
 									cmd:      "mkdir -p $HOME/.config/cue"
 									exitCode: 0
 									output:   ""

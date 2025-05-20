@@ -11,30 +11,16 @@ package site
 								"initial go code":  "65UE6as/6HVO7pSKQsH26hvKVfiXOp28bnugtqC+ZsA="
 							}
 							multi_step: {
-								hash:       "VTEM3K1LONKTBKB3K0J2V6PB56D4QABLL12M68838JHJET3SSAU0===="
-								scriptHash: "TJ6EL46MUHTO5J28SCQ4C93T1ATFF7JKDA7CN2P0J7FE1C6118QG===="
+								hash:       "2IOEOU066OTDGF47KV5PPI3LV0EH62VFOT3JTJK6UO2VQGSJFR2G===="
+								scriptHash: "40P8SGE0J2FCJ0O4TRGTNQNVO11HPV0GTODC5HFE8MTU8F4M34VG===="
 								steps: [{
-									doc:      ""
+									doc:      "# Set up caches to speed up page rebuilds."
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
 									exitCode: 0
 									output:   ""
 								}, {
 									doc:      ""
 									cmd:      "export GOCACHE=/caches/gobuild"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "mkdir -p $HOME/.config/cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc: ""
-									cmd: """
-											cat <<EOD >$HOME/.config/cue/logins.json
-											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
-											EOD
-											"""
 									exitCode: 0
 									output:   ""
 								}, {

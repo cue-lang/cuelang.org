@@ -10,23 +10,9 @@ package site
 								"initial config.cue": "HxwkWwJz3c7F/NBDUzSOH/IWj9ApIqbqMUJDutwN7Fs="
 							}
 							multi_step: {
-								hash:       "J1V1NQG3K3U15OB4BICCCBLTUBFR1CER4D0GR75H20041CVGLJ90===="
-								scriptHash: "GJ54NFDKNIU9S4SES5TA4K59P6HGVANA0UVCIEM5TFOR2ORO15RG===="
+								hash:       "LA04A4RGDDUB5879U2FOPC7GCLNTCLPPOGU9L4JDB0J1DJNAKUB0===="
+								scriptHash: "B6F0CO93O3EFI8QDJJBJ5BBNT0UB7DR6BB2OQEARHP5KM3VO9BD0===="
 								steps: [{
-									doc:      ""
-									cmd:      "mkdir -p $HOME/.config/cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc: ""
-									cmd: """
-											cat <<EOD >$HOME/.config/cue/logins.json
-											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
-											EOD
-											"""
-									exitCode: 0
-									output:   ""
-								}, {
 									doc:      ""
 									cmd:      "cue mod init glacial-tech.example/frostyapp@v0"
 									exitCode: 0

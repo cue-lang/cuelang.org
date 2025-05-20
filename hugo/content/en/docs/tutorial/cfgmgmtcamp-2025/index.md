@@ -156,6 +156,9 @@ As a one-off, login to the Central Registry:
 $ cue login
 ```
 
+This is required only because we'll be publishing a module.
+The Central Registry allows unauthenticated access when fetching public modules.
+
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxlCmN1ZSBtb2QgdGlkeQ==" }
 $ cue mod init cue.example
 $ cue mod tidy

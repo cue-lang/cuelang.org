@@ -1,12 +1,7 @@
 ---
 title: Using modules with the Go API
-authors:
-- myitcv
-- jpluscplusm
-tags:
-- go api
-- modules
-- tooling
+authors: [myitcv, jpluscplusm]
+tags: [go api, modules]
 toc_hide: true
 ---
 
@@ -43,22 +38,9 @@ cue version v0.12.1
 ...
 ```
 
-## Set up the `cue` command
-
-{{< step stepNumber="1" >}}
-Authenticate the `cue` command with the Central Registry:
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
-$ cue login
-```
-
-Later in this tutorial the `cue` command will fetch a well-known module from
-the Central Registry, which requires authentication.
-{{< /step >}}
-
 ## Create a CUE module
 
-{{< step stepNumber="2" >}}
+{{< step stepNumber="1" >}}
 Initialize a new main CUE module in an empty directory:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGFuLmV4YW1wbGUvY29uZmlnQHYw" }
@@ -68,7 +50,7 @@ $ cue mod init an.example/config@v0
 You won't publish this module, so the name you give it is unimportant.
 {{< /step >}}
 
-{{< step stepNumber="3" >}}
+{{< step stepNumber="2" >}}
 Create the file `main.cue`, holding the code for the main module:
 
 {{< code-tabs >}}
@@ -94,7 +76,7 @@ Your module imports and uses the `frostyconfig` package first introduced in the 
 You don't need to follow that tutorial right now - it's only mentioned for context.
 {{< /info >}}
 
-{{< step stepNumber="4" >}}
+{{< step stepNumber="3" >}}
 Ensure the CUE module is tidy:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
@@ -103,9 +85,16 @@ $ cue mod tidy
 
 This fetches the `frostyconfig` module (and any dependencies it might have)
 from the Central Registry.
+
+If you see an error message mentioning "too many requests"
+(here, or at any point as you follow this tutorial),
+then
+[login to the Central Registry](FIXME_CENTRAL_REGISTRY_LOGIN_URL)
+and re-run the failing command.
+The Central Registry allows more requests from authenticated users.
 {{< /step >}}
 
-{{< step stepNumber="5" >}}
+{{< step stepNumber="4" >}}
 Export the configuration from your CUE module:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydA==" }
@@ -127,7 +116,7 @@ dependency from the Central Registry.
 
 ## Create a Go module and program
 
-{{< step stepNumber="6" >}}
+{{< step stepNumber="5" >}}
 Initialize a Go module for your program:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgYW4uZXhhbXBsZS9jb25maWc=" }
@@ -138,7 +127,7 @@ $ go mod init an.example/config
 You won't publish this module, so the name you give it is unimportant.
 {{< /step >}}
 
-{{< step stepNumber="7" >}}
+{{< step stepNumber="6" >}}
 Create the file `main.go` containing this Go program:
 
 {{< code-tabs >}}
@@ -189,7 +178,7 @@ This program loads the CUE package in the current directory,
 and then prints a message based on the `config` field.
 {{< /step >}}
 
-{{< step stepNumber="8" >}}
+{{< step stepNumber="7" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEyLjEKZ28gbW9kIHRpZHk=" }
@@ -204,7 +193,7 @@ You can use `@latest` in place of the specific version mentioned here.
 
 ## Run the Go program
 
-{{< step stepNumber="9" >}}
+{{< step stepNumber="8" >}}
 Run the Go program:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
