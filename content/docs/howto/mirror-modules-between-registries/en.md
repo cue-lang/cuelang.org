@@ -38,31 +38,23 @@ ephemeral: they disappear when it shuts down -- so don't use this registry to
 store your important modules!
 
 {{{with step}}}
-Login to the Central Registry:
-{{{with script "en" "cue login"}}}
-#norun
-cue login
-{{{end}}}
-Our example uses the
-[Central Registry](https://registry.cue.works)
-as the source for modules to mirror, and it requires authentication. If you are
-mirroring modules from the Central Registry you need to login before continuing.
-{{{end}}}
-
-{{{with step}}}
 Start the in-memory registry running in the background, listening on localhost port `55443`:
+
 {{{with script "en" "start local registry"}}}
 #norun
 cue mod registry 127.0.0.1:55443
 {{{end}}}
+
 Every module mirrored to this ephemeral registry will disappear when you stop it.
 {{{end}}}
 
 {{{with step}}}
 Copy the `k8s.io` curated module from the Central Registry to the local registry:
+
 {{{with script "en" "cue mod mirror"}}}
 cue mod mirror --to 127.0.0.1:55443 github.com/cue-tmp/jsonschema-pub/exp3/k8s.io
 {{{end}}}
+
 The [`cue mod mirror`]({{<relref"docs/reference/command/cue-help-mod-mirror">}})
 command copies each module from and to the appropriate registry for its
 [module path]({{<relref"docs/reference/modules/#module-path">}}) --
