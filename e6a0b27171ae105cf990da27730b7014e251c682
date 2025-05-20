@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "e6a0b27171ae105cf990da27730b7014e251c682",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dc283c7_ad681e5d",
+        "filename": "content/docs/howto/limit-combinations-of-several-fields/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-20T12:51:31Z",
+      "side": 1,
+      "message": "I feel like all of the following examples repeat 99% of the same example, for very little benefit. Instead that prose could be used to explain quite clearly and succinctly what is currently being done with repeating the examples. Indeed, there is so much repetition that we end up losing the detail of what the user needs to tweak. Becaue they have to \"spot the diff\" themselves - there is no supporting text/narrative.",
+      "revId": "e6a0b27171ae105cf990da27730b7014e251c682",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
