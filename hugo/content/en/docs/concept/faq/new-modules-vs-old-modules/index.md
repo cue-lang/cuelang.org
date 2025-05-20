@@ -69,7 +69,7 @@ document that details how modules work.
 ## What is the Central Registry?
 
 The Central Registry at [registry.cue.works](https://registry.cue.works/) is
-currently in alpha testing, and will be a well-known place for schemas for
+currently in beta testing, and will be a well-known place for schemas for
 well-known services and projects. We will share more details about the Central
 Registry in the future.
 For now, we are looking to get early feedback - please come and discuss it in
