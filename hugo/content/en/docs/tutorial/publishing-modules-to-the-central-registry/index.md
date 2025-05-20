@@ -138,7 +138,7 @@ As a one-off, login to the Central Registry:
 $ cue login
 ```
 
-The Central Registry is in alpha testing -
+The Central Registry is in beta testing -
 please give us your feedback about the service in the
 `#modules` channel [on Slack](/s/slack) or [on Discord](/s/discord)!
 
