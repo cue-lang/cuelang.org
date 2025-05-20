@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f954d087_6844894a",
+        "filename": "content/docs/concept/how-cue-works-with-yaml/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-20T13:11:24Z",
+      "side": 1,
+      "message": "This renders very nicely.",
+      "revId": "7ac7a3da4374d0b934a58432b5fc00de41b2c8f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
