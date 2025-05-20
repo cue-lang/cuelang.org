@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdb71451_37363315",
+        "filename": "content/docs/draft/cldd/validating-several-github-actions-files/en.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-20T16:09:38Z",
+      "side": 1,
+      "message": "Clear line before. It follows the way we write code to aid readability.",
+      "revId": "334191d83e1b63a3380a8dbd436812a73cc013d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
