@@ -1,25 +1,14 @@
 ---
 title: Using modules with the Go API
-authors:
-- myitcv
-- jpluscplusm
-tags:
-- go api
-- modules
-- tooling
+authors: [myitcv, jpluscplusm]
+tags: [go api, modules]
 toc_hide: true
 ---
 
-{{{with _script_ "en" "HIDDEN set caches to speed up re-running"}}}
+{{{with _script_ "en" "HIDDEN: setup"}}}
+# Set up caches to speed up page rebuilds.
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
-{{{end}}}
-
-{{{with _script_ "en" "HIDDEN setup auth"}}}
-mkdir -p $HOME/.config/cue
-cat <<EOD > $HOME/.config/cue/logins.json
-{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
-EOD
 {{{end}}}
 
 ## Introduction
@@ -52,20 +41,6 @@ This tutorial uses the following version of CUE:
 {{{with script "en" "show cue version"}}}
 #ellipsis 1
 cue version
-{{{end}}}
-
-## Set up the `cue` command
-
-{{{with step}}}
-Authenticate the `cue` command with the Central Registry:
-
-{{{with script "en" "#norun cue login"}}}
-#norun
-cue login
-{{{end}}}
-
-Later in this tutorial the `cue` command will fetch a well-known module from
-the Central Registry, which requires authentication.
 {{{end}}}
 
 ## Create a CUE module
@@ -115,6 +90,13 @@ cue mod tidy
 
 This fetches the `frostyconfig` module (and any dependencies it might have)
 from the Central Registry.
+
+If you see an error message mentioning "too many requests"
+(here, or at any point as you follow this tutorial),
+then
+[login to the Central Registry](FIXME_CENTRAL_REGISTRY_LOGIN_URL)
+and re-run the failing command.
+The Central Registry allows more requests from authenticated users.
 {{{end}}}
 
 {{{with step}}}

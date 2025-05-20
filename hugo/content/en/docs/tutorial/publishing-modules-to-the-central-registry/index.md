@@ -9,8 +9,6 @@ tags:
 toc_hide: true
 ---
 
-<!-- vim_ syntax highlighting hack -->
-
 ## Introduction
 
 In this tutorial you will publish a module to the Central Registry and then

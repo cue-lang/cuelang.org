@@ -1,11 +1,7 @@
 ---
 title: Working with modules and the Central Registry
-authors:
-- myitcv
-tags:
-- modules
-- tooling
-- cue command
+authors: [myitcv]
+tags: [modules]
 toc_hide: true
 ---
 
@@ -16,36 +12,12 @@ using the [Central Registry](https://registry.cue.works).
 
 Along the way you will:
 
-- Login to the Central Registry, and authenticate the `cue` command
 - Create a module that depends on an existing, well-known module
 - Use `cue mod tidy` to automatically add dependencies and their versions to the `module.cue` file
 
-## Login to the Central Registry
-
-{{< step stepNumber="1" >}}
-Visit the Central Registry at https://registry.cue.works and login via GitHub.
-
-The Central Registry is in alpha testing -
-please give us your feedback about the service in the
-`#modules` channel [on Slack](/s/slack) or [on Discord](/s/discord)!
-{{< /step >}}
-
-## Authenticate the `cue` command
-
-{{< step stepNumber="2" >}}
-
-Authenticate the `cue` command (a one-off process):
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
-$ cue login
-```
-
-{{< /step >}}
-
 ## Create a module
 
-{{< step stepNumber="3" >}}
-
+{{< step stepNumber="1" >}}
 Initialize a local CUE module. We will not publish this module:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MA==" }
@@ -56,11 +28,9 @@ We refer to such a module as the main module. Because we won't publish this
 module, its module path is not significant. The module path we have chosen makes
 this guide consistent with its companion tutorial
 {{< linkto/inline "tutorial/working-with-a-custom-module-registry" >}}.
-
 {{< /step >}}
 
-{{< step stepNumber="4" >}}
-
+{{< step stepNumber="2" >}}
 Create the code for the new module:
 
 {{< code-tabs >}}
@@ -82,15 +52,19 @@ Instead of depending on a version of that module published to a custom
 registry, we have instead published a version to the Central Registry.
 In our local module we define some concrete values for the configuration,
 constrained by the `frostyconfig.#Config` schema.
-
 {{< /step >}}
 
-{{< step stepNumber="5" >}}
-
+{{< step stepNumber="3" >}}
 Ensure the module is tidy, pulling all dependencies:
+
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
 ```
+
+If you see an error message mentioning "too many requests" then
+[login to the Central Registry](FIXME_CENTRAL_REGISTRY_LOGIN_URL)
+and re-run this command.
+The Central Registry allows more requests from authenticated users.
 
 We can see that the dependencies have now been added to the `cue.mod/module.cue` file:
 
@@ -111,10 +85,8 @@ deps: {
 
 ## Evaluate the configuration
 
-{{< step stepNumber="6" >}}
-
+{{< step stepNumber="4" >}}
 Export the configuration as YAML:
-
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml

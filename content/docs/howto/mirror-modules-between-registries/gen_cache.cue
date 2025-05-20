@@ -7,23 +7,9 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "880ARKCV1MI52RLHQJ83KPJSHJ9VS8F0GTUD0ASB6JE0A95JBMC0===="
-								scriptHash: "B8844U9NAI0JF9VATR7DFOAIV5VJ13JNORUGF2INKO5ED7BVJ2M0===="
+								hash:       "JK4PI9RLC46JDSH101V9E5LT6IL2HOQ3R6NFGTGRICHHM6A39MAG===="
+								scriptHash: "1415QG7CSCP39CVTSAQO2NO4N18Q7J2DGD76QBFVJU6MHIHM1O2G===="
 								steps: [{
-									doc:      "# Access to Central Registry."
-									cmd:      "mkdir -p $HOME/.config/cue"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc: ""
-									cmd: """
-											cat <<EOD >$HOME/.config/cue/logins.json
-											{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
-											EOD
-											"""
-									exitCode: 0
-									output:   ""
-								}, {
 									doc: """
 											# Local registry.
 											# TODO: this is inherently racey. But not a problem in practice...
