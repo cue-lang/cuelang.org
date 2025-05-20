@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0caa4ff8_d1fb0f1c",
+        "filename": "content/docs/concept/how-cue-works-with-toml/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-20T13:06:20Z",
+      "side": 1,
+      "message": "I\u0027m not really sure what this is a reference too - it feels like filler. TOML is data-only. Indeed your next sentence says as much.",
+      "range": {
+        "startLine": 11,
+        "startChar": 45,
+        "endLine": 12,
+        "endChar": 23
+      },
+      "revId": "5eb0c3d24f9b57d18dd324cd2fd3558411efef74",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
