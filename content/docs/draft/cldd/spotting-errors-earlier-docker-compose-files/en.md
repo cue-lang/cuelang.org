@@ -28,17 +28,6 @@ compose file using a
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 
-## Login to the Central Registry
-
-{{{with script "en" "cue login"}}}
-#norun
-cue login # only during beta
-{{{end}}}
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it’s in beta testing,
-so we need to login before using its modules.
-
 ## A broken compose file
 
 This example is based on one from the
@@ -80,6 +69,12 @@ We use `cue vet` to validate `compose.yml` against the `dockercompose` package's
 
 The `cue vet` command shows us two errors (`...port: field not allowed`) and tells
 us the locations of each problem (lines 18 and 9 of our data file).
+
+If you see an error message mentioning "too many requests" while following this
+guide, then
+[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+and re-run the failing command.
+The Central Registry allows more requests from authenticated users.
 
 ## Fix the compose file
 
