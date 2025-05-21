@@ -182,6 +182,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31b3c259_eab14ae6",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "653a32ba_1de68240",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e8d91ef_01ca0864",
@@ -659,6 +677,24 @@
       "side": 1,
       "message": "I\u0027ve made a note to follow up on this; I don\u0027t think it should be addressed in this CL.",
       "parentUuid": "509b1d30_3aa269c8",
+      "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a2c2135_22578c62",
+        "filename": "content/docs/draft/cldd/getting-started-with-github-actions-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58ed53aa_41853808",
       "revId": "21cdb4e342874ac761c428fe68709f4d4799a08d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

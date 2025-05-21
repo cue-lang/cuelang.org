@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2941e612_c1cd1ff7",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "I\u0027m not clear that we can do much to avoid the length of this section here. However, one idea comes to mind. Instead of putting lengthy prose in the comments, we have numbered comments in the prose, and then cross reference those from a numbered list that follows. That would certainly allow the text to flow better, and reduce the lenght of the code block.",
+      "parentUuid": "5cb6c474_94a5f03d",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "87ee52e0_04df10df",
         "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
         "patchSetId": 11

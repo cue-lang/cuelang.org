@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2aec9c0_f6e49487",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "I think the drive to \"compact\" the code has hurt readability where we are losing clear lines, newlines etc.\n\nThe one remaining suggestion would be that we consider the benefit of numbered comments and a numbered list cross referencing that in the prose. I think that will potentially work better.",
+      "revId": "106c693cccd64c3a2c0dea6def72ffbdea6424cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e31e95c7_d65b5e0f",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "Strictly speaking we import packages, not modules. \"Depend on\" would be correct. But knowing where a module boundary sits is not always easy; so you could instead suggest that running `cue mod tidy` ensures that all module dependencies are satisfied.",
+      "revId": "106c693cccd64c3a2c0dea6def72ffbdea6424cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6546c809_fd73a4d2",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "The lack of clear line hurts readability to my mind.",
+      "revId": "106c693cccd64c3a2c0dea6def72ffbdea6424cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bbcda8b_52410ea4",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "Clear line. And everywhere that follows please. It\u0027s a minimal saving.",
+      "revId": "106c693cccd64c3a2c0dea6def72ffbdea6424cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ee2605f_1851bfa7",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T05:17:48Z",
+      "side": 1,
+      "message": "New line after `,` - otherwise it looks like it\u0027s part of the \"previous\" value.",
+      "revId": "106c693cccd64c3a2c0dea6def72ffbdea6424cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
