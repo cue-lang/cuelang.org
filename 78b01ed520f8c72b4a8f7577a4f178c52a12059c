@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2757eea9_1ca1a1ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-21T13:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "286a0d8a_92b4636a",
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "81a0649b_c4185bb2",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -48,6 +66,30 @@
       "writtenOn": "2025-05-21T11:11:21Z",
       "side": 1,
       "message": "filler",
+      "range": {
+        "startLine": 18,
+        "startChar": 24,
+        "endLine": 18,
+        "endChar": 44
+      },
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa324f6e_82166130",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-21T13:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5e65a7c_969c9030",
       "range": {
         "startLine": 18,
         "startChar": 24,
@@ -104,6 +146,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7ee058a_6e2eeacd",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-21T13:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4d02558_5a614181",
+      "range": {
+        "startLine": 19,
+        "startChar": 37,
+        "endLine": 19,
+        "endChar": 42
+      },
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6440c2e_d3b3b04b",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-21T13:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab3ad6a5_c175aba2",
+      "range": {
+        "startLine": 19,
+        "startChar": 35,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef8ef8ea_c8d71b50",
@@ -117,6 +207,24 @@
       "writtenOn": "2025-05-21T11:11:21Z",
       "side": 1,
       "message": "Why put this in a `schema` namespace? Top level definitions suffice, no?",
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c76adccd_bc00ed30",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-21T13:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef8ef8ea_c8d71b50",
       "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

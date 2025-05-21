@@ -104,6 +104,24 @@
       "parentUuid": "468ebd3e_83a54818",
       "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2637990_68c5d79d",
+        "filename": "content/docs/howto/validate-data-files-against-local-schema-using-file-embedding/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-21T13:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e04de9f_2393f942",
+      "revId": "c81ef90a11d0d33f7b4690b200f858c878b4ee5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

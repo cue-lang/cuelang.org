@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11f3b407_81725ef7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-21T13:07:49Z",
+      "side": 1,
+      "message": "PTAL. I reckon this is also a good use of the sidenote (at the top of the page).",
+      "revId": "d7caa383eda9022317104f9a4426489223080fae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
