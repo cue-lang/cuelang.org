@@ -70,16 +70,6 @@ $ cue vet -c
 Because `cue vet` doesn't print any errors, we know that the manifest currently
 validates successfully.
 
-## Login to the Central Registry
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
-$ cue login # only during beta
-```
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it's in beta testing,
-so you need to login before you can fetch the curated Kubernetes module.
-
 ## Update your CUE files
 To update the relevant imports across every CUE file in your module, run the
 [`cue refactor imports`](https://cuelang.org/docs/reference/command/cue-help-refactor-imports/)
@@ -134,6 +124,12 @@ command to update your CUE again!
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
 ```
+
+If you see an error message mentioning "too many requests" then
+[login to the Central Registry](FIXME_CENTRAL_REGISTRY_LOGIN_URL)
+and re-run this command.
+The Central Registry allows more requests from authenticated users.
+
 Tidying your CUE module fetches the Kubernetes module from the
 [Central Registry](https://registry.cue.works),
 and updates the `cue.mod/module.cue` file to track this dependency:

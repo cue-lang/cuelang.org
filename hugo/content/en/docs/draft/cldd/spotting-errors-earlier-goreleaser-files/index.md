@@ -17,16 +17,6 @@ GoReleaser configuration file using a
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 
-## Login to the Central Registry
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
-$ cue login # only during beta
-```
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it’s in beta testing,
-so we need to login before using its modules.
-
 ## A broken configuration file
 
 This example is adapted from the
@@ -69,6 +59,12 @@ docker: field not allowed:
 ```
 
 The `cue vet` command shows us the error (`docker: field not allowed`)
+
+If you see an error message mentioning "too many requests" while following this
+guide, then
+[login to the Central Registry](FIXME_CENTRAL_REGISTRY_LOGIN_URL)
+and re-run the failing command.
+The Central Registry allows more requests from authenticated users.
 
 ## Fix the configuration file
 

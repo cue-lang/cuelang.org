@@ -17,16 +17,6 @@ GitLab CI/CD pipeline file using a
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 
-## Login to the Central Registry
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
-$ cue login # only during beta
-```
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it’s in beta testing,
-so we need to login before using its modules.
-
 ## A broken pipeline file
 
 This example is adapted from
@@ -65,6 +55,12 @@ $ cue vet -c -d '#Pipeline' cue.dev/x/gitlab/gitlabci@latest pipeline.yml
 
 The `cue vet` command shows us the error (`"create-pages".scripts: field not
 allowed:`), and tells us the location of the problem (line 7 of our data file).
+
+If you see an error message mentioning "too many requests" while following this
+guide, then
+[login to the Central Registry](FIXME_CENTRAL_REGISTRY_LOGIN_URL)
+and re-run the failing command.
+The Central Registry allows more requests from authenticated users.
 
 ## Fix the pipeline file
 
