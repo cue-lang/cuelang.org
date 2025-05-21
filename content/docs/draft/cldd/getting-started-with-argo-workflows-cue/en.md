@@ -30,17 +30,6 @@ The latest pre-release of the `cue` command is required -- please
 cue version
 {{{end}}}
 
-## Login to the Central Registry
-
-{{{with script "en" "cue login"}}}
-#norun
-cue login # only during beta
-{{{end}}}
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it's in beta testing,
-so you need to login before you can use its schemas.
-
 ## Initialise your local CUE module
 
 CUE that uses schemas and modules from the
@@ -124,6 +113,11 @@ Tidying a module is an important part of using curated modules from the
 Always use
 [`cue mod tidy`](https://cuelang.org/docs/reference/command/cue-help-mod-tidy/)
 when you use a curated module for the first time.
+
+If you see an error message mentioning "too many requests" then
+[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+and re-run this command.
+The Central Registry allows more requests from authenticated users.
 
 ## Validate your workflow
 

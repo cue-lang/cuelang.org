@@ -22,16 +22,6 @@ cue version v0.13.0
 ...
 ```
 
-## Login to the Central Registry
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
-$ cue login # only during beta
-```
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it's in beta testing,
-so you need to login before you can use its schemas.
-
 ## Choose a Buildkite pipeline file
 
 This example comes from the
@@ -58,6 +48,11 @@ $ cue vet -c -d '#Pipeline' cue.dev/x/buildkite@latest pipeline.yml
 This command uses the `#Pipeline` definition from the `buildkite` package to
 check the `pipeline.yml` file. Because `cue vet` doesn't display any errors,
 you know that the curated module has validated your configuration file.
+
+If you see an error message mentioning "too many requests" then
+[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+and re-run this command.
+The Central Registry allows more requests from authenticated users.
 
 ## Next steps
 

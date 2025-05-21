@@ -28,17 +28,6 @@ GitHub Actions workflow file using a
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 
-## Login to the Central Registry
-
-{{{with script "en" "cue login"}}}
-#norun
-cue login # only during beta
-{{{end}}}
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it’s in beta testing,
-so we need to login before using its modules.
-
 ## A broken workflow file
 
 This example is adapted from GitHub's
@@ -77,6 +66,12 @@ We use `cue vet` to validate `workflow.yml` against the `githubactions` package'
 
 The `cue vet` command shows us the error (`job: field not allowed`), and tells
 us the location of the problem (line 5 of our data file).
+
+If you see an error message mentioning "too many requests" while following this
+guide, then
+[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+and re-run the failing command.
+The Central Registry allows more requests from authenticated users.
 
 ## Fix the workflow file
 
