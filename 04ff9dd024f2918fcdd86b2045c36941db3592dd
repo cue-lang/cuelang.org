@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ba04c139_f01b482a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T11:05:12Z",
+      "side": 1,
+      "message": "We already have https://cue.dev/docs/k8s-io-moving-from-cue-get-go-to-central-registry/ so I\u0027d be keen to understand what gaps you think we have that this document would cover. Happy to discuss.",
+      "parentUuid": "ba596b63_06a257e7",
+      "revId": "04ff9dd024f2918fcdd86b2045c36941db3592dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6bc83452_5be89d55",
         "filename": "content/docs/howto/update-imports-after-reorganising-packages/en.md",
         "patchSetId": 1
