@@ -33,6 +33,92 @@
       "message": "PTAL.",
       "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5e65a7c_969c9030",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T11:11:21Z",
+      "side": 1,
+      "message": "filler",
+      "range": {
+        "startLine": 18,
+        "startChar": 24,
+        "endLine": 18,
+        "endChar": 44
+      },
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab3ad6a5_c175aba2",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T11:11:21Z",
+      "side": 1,
+      "message": ".",
+      "range": {
+        "startLine": 19,
+        "startChar": 35,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4d02558_5a614181",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T11:11:21Z",
+      "side": 1,
+      "message": "\"However, file...\" \n\nThis sentence also feels like it\u0027s \"below the example\" detail",
+      "range": {
+        "startLine": 19,
+        "startChar": 37,
+        "endLine": 19,
+        "endChar": 42
+      },
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef8ef8ea_c8d71b50",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T11:11:21Z",
+      "side": 1,
+      "message": "Why put this in a `schema` namespace? Top level definitions suffice, no?",
+      "revId": "78b01ed520f8c72b4a8f7577a4f178c52a12059c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
