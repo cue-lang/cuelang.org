@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "66c73735_d38659ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-21T11:01:17Z",
+      "side": 1,
+      "message": "I should have clarified; we don\u0027t want to do this. Because it\u0027s highly likely that regenerating cuelang.org or cue.dev will trigger rate limits, given the number of concurrent requests.\n\nWe have tests that ensure the no auth login works, just that on these pages we need to auth to ensure we hit higher rate limits.",
+      "revId": "736f7f054bbdc6bb7105658abdfe6af0f4836e48",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "02e2c72d_93ebaece",
