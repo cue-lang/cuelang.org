@@ -6,7 +6,7 @@ authors: [mvdan, jpluscplusm]
 
 {{< warning >}}
 `evalv3` is now **on** by default in
-[`v0.13.0-alpha.2`](https://github.com/cue-lang/cue/releases/tag/v0.13.0-alpha.2)
+[`v0.13.0`](https://github.com/cue-lang/cue/releases/tag/v0.13.0)
 and later versions!
 {{< /warning >}}
 
@@ -31,15 +31,14 @@ with more improvements still to come.
 
 ## How can I switch to `evalv3`?
 
-The simplest and most reliable way to get started using `evalv3` is to install or use
-the [`v0.13.0-alpha.2`]({{<relref"docs/introduction/installation">}})
-pre-release, where `evalv3` is on by default. Simply ensure that the environment
-variables `CUE_EXPERIMENT` and `CUE_DEBUG` are unset.
+The most reliable way to get started using `evalv3` is to install or use
+the [`v0.13.0`]({{<relref"docs/introduction/installation">}})
+release, where `evalv3` is on by default. Simply ensure that the environment
+variable `CUE_EXPERIMENT` is empty to get the default behavior.
 
-If you are using an earlier version of CUE you can switch to `evalv3` by
-setting the `CUE_EXPERIMENT=evalv3=1` environment variable. This variable
-affects invocations of the `cue` command (such as `cue export`) as well as Go
-programs using CUE's Go API such as `cue/load`.
+You can also explicitly enable `evalv3` by setting the `CUE_EXPERIMENT=evalv3=1`
+environment variable. This variable affects invocations of the `cue` command
+(such as `cue export`) as well as Go programs using CUE's Go API such as `cue/load`.
 
 Users of the Go API can also directly specify the evaluator version with a
 `cuecontext` option:
@@ -49,8 +48,9 @@ Users of the Go API can also directly specify the evaluator version with a
 package main
 
 import (
-	"cuelang.org/go/cue/cuecontext"
 	"fmt"
+
+	"cuelang.org/go/cue/cuecontext"
 )
 
 func main() {
@@ -61,10 +61,8 @@ func main() {
 {{< /code-tab >}}{{< /code-tabs >}}
 ## Which CUE version do I need to use `evalv3`?
 
-The simplest and most reliable way to get started using `evalv3` is to install or use
-the [`v0.13.0-alpha.2`]({{<relref"docs/introduction/installation">}})
-pre-release, where `evalv3` is on by default. Simply ensure that the environment
-variables `CUE_EXPERIMENT` and `CUE_DEBUG` are unset.
+Given that this new evaluator version is being actively developed,
+we encourage you to upgrade to the latest CUE version to use it:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
