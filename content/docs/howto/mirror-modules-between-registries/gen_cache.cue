@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "0727APM26DTCRTKBC6HDVNU0JQAVQV0N9GGJ13NO4JJV32D06AJ0===="
-								scriptHash: "EAIRG7G8BFCEB15H0163E5DASPELEP358ENO8L2MJF1COQ0J83T0===="
+								hash:       "OEROSGUO41FK75VGOMVQGIJN20HCJQ3KSQO2RTG59KP96225RJAG===="
+								scriptHash: "IIM684LNQV7RPSB41SE3NHSD5857160UQSIMO04QLRB5OVSR51S0===="
 								steps: [{
 									doc:      "# Access to Central Registry."
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -31,11 +31,6 @@ package site
 											# using a nc-based wait loop or similar.
 											"""
 									cmd:      "nohup cue mod registry localhost:55443 >/tmp/cue_mod_registry 2>&1 &"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      "# Access to \"cue mod mirror\" via tip of cmd/cue."
-									cmd:      "export PATH=/cues/v0.13.0:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
