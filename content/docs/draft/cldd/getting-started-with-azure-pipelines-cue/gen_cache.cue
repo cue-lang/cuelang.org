@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"1":  "GbKjGKyj4A/4gRwpFogLFAx+bPZ3yRlQ7S77gwsQx9Y="
-									yaml: "VSjiDxEwbwAdFSe0RlwYBj5/1YTVlwjOWHRSWVWl5IA="
+									"1":  "1GvE2xvByoPF7P3wW5HSuqDM17kfTGroO/yqZdAbfbk="
+									yaml: "/I/Vllaxl4sPinxu5+mukgjn5Y7xtOlsywGYPO1wzOI="
 								}
 								multi_step: {
-									hash:       "1G8ETBUS4F4N5N6BE0NPTCBJ399M6R6K2NS8KA0EKJKFF1IOLFHG===="
-									scriptHash: "MSHMUV7B9H7CB0NEU23U6J671G7NM7QA36JJE0BGSL87ML50LK1G===="
+									hash:       "4K9UF59GF1BSC2OQ8K9URA148I0PM5G5HKUPKMPI4C1SSPDCHCD0===="
+									scriptHash: "7MK0RI3RKLLKEB1LA0UKGB9AE36DRSHIMBFC0AKL79BHAJ00PIE0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -30,7 +30,7 @@ package site
 										output:   ""
 									}, {
 										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
-										cmd:      "export PATH=/cues/v0.13.0-rc.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -38,7 +38,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.13.0-rc.1
+												cue version v0.13.0
 												...
 
 												"""
