@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "CIVJ0KBNA073VUNSBU6B8CULTUL4SHFE9HOJDEL82MHB8IUN016G===="
-									scriptHash: "KDHPE5B72U4LNJH7KPMJH9P81PLS8DQCH0M5D5PA9BLAC08KV980===="
+									hash:       "MHC41MKFMDM6NE7E9465UJLUHJP42TAJRP4R41LLBUJRH0NSJVS0===="
+									scriptHash: "K1U1L9MHFGIK689GHACAKVMMH60AFU738R9L8DE3VFD2R01ASSAG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -33,6 +33,12 @@ package site
 												outputs. Outputs are typically filled out by the task
 												implementation as the task completes.
 
+												Tasks are found as regular fields underneath the top-level "command" field,
+												excluding hidden fields and definitions. Note that regular fields
+												may be produced by comprehensions or from the result of other tasks,
+												which can result in discovering more tasks.
+												To avoid this, set the CUE_EXPERIMENT=cmdreferencepkg experiment flag.
+
 												Inputs of tasks my refer to outputs of other tasks. The cue tool
 												does a static analysis of the configuration and only starts tasks
 												that are fully specified. Upon completion of each task, cue
@@ -42,7 +48,7 @@ package site
 
 												Available tasks can be found in the package documentation at
 
-												\thttps://pkg.go.dev/cuelang.org/go/pkg/tool?tab=subdirectories
+												\thttps://cuelang.org/go/pkg/tool#section-directories
 
 												Examples:
 
@@ -163,14 +169,12 @@ package site
 
 												\t// A Task defines a step in the execution of a command.
 												\tTask: {
-												\t\t$type: "tool.Task" // legacy field 'kind' still supported for now.
-
-												\t\t// $id indicates the operation to run. It must be of the form
-												\t\t// packagePath.Operation.
+												\t\t// $id indicates the operation to run. Do not use this field directly;
+												\t\t// instead unify with a task imported from one of the tool packages.
 												\t\t$id: =~#"\\."#
 
-												\t\t// $after can be used to specify a task is run after another one, when
-												\t\t// it does not otherwise refer to an output of that task.
+												\t\t// $after can be used to specify a task is run after another one,
+												\t\t// when it does not otherwise refer to an output of that task.
 												\t\t$after?: Task | [...Task]
 												\t}
 

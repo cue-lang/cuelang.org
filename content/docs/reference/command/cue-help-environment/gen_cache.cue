@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KU54D002EQLVN1AI8U9N75047TADFFICQO0AFNV9J3HM1HTLL22G===="
-									scriptHash: "8HIAH9I6TNUTKLUJQ9SATUB2JEUJB220505L1O1K91IIET709360===="
+									hash:       "C9ER7Q3UO6KC9JSMHEGBIS83HPOD9JAMDC2B9CB0DA60867K42C0===="
+									scriptHash: "RKEGVRKN956EU24AFSPAF668KMUKJ345SK8KU3SHKJ4V93TP13PG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -51,18 +51,17 @@ package site
 												\tCUE_EXPERIMENT
 												\t\tComma-separated list of experiment flags to enable or disable:
 
-												\t\tevalv3
+												\t\tevalv3 (default true)
 												\t\t\tEnable the new CUE evaluator, addressing performance issues
 												\t\t\tand bringing a better disjunction algorithm.
-												\t\tembed
+												\t\tembed (default true)
 												\t\t\tEnable support for embedded data files as described in
 												\t\t\thttps://cuelang.org/discussion/3264.
-												\t\tdecodeint64 (default true)
-												\t\t\tTweak cue.Value.Decode to choose "int64" rather than "int"
-												\t\t\tas the default Go type for CUE integer values.
-												\t\ttoposort
+												\t\ttoposort (default true)
 												\t\t\tEnable topological sorting of struct fields.
 												\t\t\tProvide feedback via https://cuelang.org/issue/3558
+												\t\tcmdreferencepkg
+												\t\t    Require referencing imported tool packages to declare "cue cmd" tasks.
 
 												\tCUE_DEBUG
 												\t\tComma-separated list of debug flags to enable or disable, such as:
@@ -72,10 +71,10 @@ package site
 												\t\t\twhen interacting with module registries.
 												\t\tsortfields
 												\t\t\tForce fields in stucts to be sorted lexicographically.
-												\t\topeninline (default true)
-												\t\t\tPermit disallowed fields to be selected into literal struct
-												\t\t\tthat would normally result in a close error, mimicking evalv2
-												\t\t\tclosedness behavior in evalv3 to aid the transition.
+												\t\ttoolsflow
+												\t\t\tPrint task dependency mermaid graphs in 'cue cmd'.
+												\t\tparsertrace
+												\t\t\tPrint a trace of parsed CUE productions.
 
 												CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 												where the value is a boolean "true" or "1" if omitted. For example:
