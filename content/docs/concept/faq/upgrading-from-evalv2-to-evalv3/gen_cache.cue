@@ -8,18 +8,13 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"main.go":                 "Hc8ePdsoEPmmKuTe1mijSZuFn28X5oVP0GBvaTuxzeU="
-									"HIDDEN: required output": "7H+APjjmRlVosaHUGjfhOvjRsqGAlsjvOKvLSQwnaX8="
+									"main.go":                 "na7lswoq2pG+wl0khVwLC4nOUwmYDuV9X2Cf3VyeVt4="
+									"HIDDEN: required output": "a4ieDJRukEXgVXtTt59pS5kNKdiIOSi5qPBTLCduDNw="
 								}
 								multi_step: {
-									hash:       "08VF5OEQEO8HHMPVU72GHORD57QMLJR0VN80Q94MNQ2BKE6QTL5G===="
-									scriptHash: "BSMBNIS6L7N6E2EJ0NMF1784GJN9VAEF9OH2T0EL2HP2H466MR10===="
+									hash:       "Q3PL3D7QKS6DKGNEAN51VSIIJU4OU00PDBOUJTAVO5VH0AN9U8O0===="
+									scriptHash: "L44DGMA06UN0E2HUIR9LPBDLJPBVKE0ISOAGUC0OT8FG7U7O2USG===="
 									steps: [{
-										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.0-rc.1:$PATH"
-										exitCode: 0
-										output:   ""
-									}, {
 										doc:      ""
 										cmd:      "export GOMODCACHE=/caches/gomodcache"
 										exitCode: 0
@@ -60,7 +55,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.13.0-rc.1
+												cue version v0.13.0
 												...
 
 												"""

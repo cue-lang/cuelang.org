@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "bwDZVgz7BCFS7GK8mxK2ZyfdEQRB9R31aMa3nv7RhNs="
-								"initial go code":  "qkyY+X3HDxZ6WyMtn0G5NrHZpIVfZS7H6EdWG/JLFAw="
+								"initial cue code": "JIRm8GkoLyA+4iGPZFT4iR7rF3LFkTH8XQLUMk1nAWo="
+								"initial go code":  "AuOLnyZTccdtaQqkhAmypOjff3hMWAiSGAEuk+VlrtQ="
 							}
 							multi_step: {
-								hash:       "TIAGP4HK0755JBHDUPS2VOESB2OG89TB9VP347QIUMA9RJ8NPVT0===="
-								scriptHash: "9CAC8NGVPSA84IRKKLT1TLQVCS02P82O28682TE9EHV3KD2CTUKG===="
+								hash:       "ON5EG38B6VF9GPIQ7L313MQ80SGA6CUOLC380SSQQK22OC7NU6S0===="
+								scriptHash: "URNH3BAKE14HN0CNNHBHTDA1OS30615JNDEP0B3JKFGSILJVQCFG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -33,10 +33,10 @@ package site
 									cmd:      "cue vet -c"
 									exitCode: 1
 									output: """
-											val.i: conflicting values int and "hello" (mismatched types int and string):
+											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    ./bad.cue:4:5
 											    ./bad.cue:9:5
-											val.s: conflicting values string and 42 (mismatched types string and int):
+											val.s: conflicting values 42 and string (mismatched types int and string):
 											    ./bad.cue:5:5
 											    ./bad.cue:10:5
 
@@ -51,7 +51,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.12.1"
+									cmd:      "go get cuelang.org/go@v0.13.0"
 									exitCode: 0
 									output: """
 											...
@@ -71,13 +71,13 @@ package site
 									exitCode: 0
 									output: """
 											# Error summary [err]:
-											val.i: conflicting values int and "hello" (mismatched types int and string) (and 1 more errors)
+											val.i: conflicting values "hello" and int (mismatched types string and int) (and 1 more errors)
 
 											# Error details [errors.Details(err)]:
-											val.i: conflicting values int and "hello" (mismatched types int and string):
+											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    /home/runner/bad.cue:4:5
 											    /home/runner/bad.cue:9:5
-											val.s: conflicting values string and 42 (mismatched types string and int):
+											val.s: conflicting values 42 and string (mismatched types int and string):
 											    /home/runner/bad.cue:5:5
 											    /home/runner/bad.cue:10:5
 
