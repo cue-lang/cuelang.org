@@ -63,7 +63,8 @@ f: [1, 2]
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
 $ cue vet -c
-f: incompatible list lengths (2 and 3)
+f: incompatible list lengths (2 and 3):
+    ./file.cue:6:4
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

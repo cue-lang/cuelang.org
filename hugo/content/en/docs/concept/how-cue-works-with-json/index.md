@@ -118,11 +118,9 @@ $ cue vet -c schema.cue -d '#Config' config-a.json config-b.json config-c.json
 region: 2 errors in empty disjunction:
 region: conflicting values "APAC" and "UK":
     ./config-b.json:4:15
-    ./schema.cue:5:15
     ./schema.cue:9:10
 region: conflicting values "IMEA" and "UK":
     ./config-b.json:4:15
-    ./schema.cue:5:15
     ./schema.cue:9:19
 cluster: invalid value "live03333333333333" (does not satisfy strings.MaxRunes(16)):
     ./schema.cue:4:15
@@ -274,15 +272,12 @@ item: painting: #"{ "width": 34, "HEIGHT": 12, "depth": 0.2 }"#
 $ cue vet -c furniture.cue
 item.painting: invalid value "{ \"width\": 34, \"HEIGHT\": 12, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: field not allowed:
     ./furniture.cue:10:17
-    ./furniture.cue:3:14
     ./furniture.cue:17:17
-    json.Validate:1:1
     json.Validate:1:16
-item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: conflicting values number and "34" (mismatched types number and string):
+item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }" (does not satisfy encoding/json.Validate): error in call to encoding/json.Validate: conflicting values "34" and number (mismatched types string and number):
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:15:14
-    json.Validate:1:1
     json.Validate:1:12
 {{< /code-tab >}}
 {{< /code-tabs >}}

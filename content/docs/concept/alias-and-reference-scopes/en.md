@@ -67,10 +67,6 @@ config.serviceA.metadata.name: incomplete value string:
     ./problem1.cue:2:13
 config.serviceA.metadata.namespace: incomplete value string:
     ./problem1.cue:3:13
-config.serviceB.metadata.name: incomplete value string:
-    ./problem1.cue:2:13
-config.serviceB.metadata.namespace: incomplete value string:
-    ./problem1.cue:3:13
 {{{end}}}
 
 ## Explanation #1
@@ -172,10 +168,6 @@ config:
 config.serviceA.metadata.name: incomplete value string:
     ./problem2.cue:2:13
 config.serviceA.metadata.namespace: incomplete value string:
-    ./problem2.cue:3:13
-config.serviceB.metadata.name: incomplete value string:
-    ./problem2.cue:2:13
-config.serviceB.metadata.namespace: incomplete value string:
     ./problem2.cue:3:13
 {{{end}}}
 
