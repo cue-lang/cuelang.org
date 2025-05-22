@@ -36,8 +36,8 @@ hide_summary: true
 >}}
 {{< /card >}}
 {{< card
-	title="Data Validation"
-	href="../data-validation-use-case/"
+	title="How CUE enables data validation"
+	href="../how-cue-enables-data-validation/"
 	label=" "
 >}}
 {{< /card >}}
