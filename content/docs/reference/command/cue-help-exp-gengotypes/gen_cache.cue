@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "Q5INLJ1D7S49DG6DJARHT7GDIJBNVTI4MFGNP9PDETU9IPUAHLT0===="
-									scriptHash: "E8D8Q06FU7NN2KUCM0SJFKT8B28HBAHDM1SI9L1HG1KP7R0B0BU0===="
+									hash:       "DUM2UKQTEMP6PNTTCPSDMP86EOUVLASFIJS7704PILIODHTFGVS0===="
+									scriptHash: "CPFSFDJ0BQ108NEC6J1KHNTGA9VTMGPFV5JV83NUESH7L15JBTE0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.12.1:$PATH"
+										cmd:      "export PATH=/cues/v0.13.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,37 +20,53 @@ package site
 										cmd:      "cue help exp gengotypes"
 										exitCode: 0
 										output: """
+												ARNING: THIS COMMAND IS EXPERIMENTAL.
+
 												gengotypes generates Go type definitions from exported CUE definitions.
 
 												The generated Go types are guaranteed to accept any value accepted by the CUE definitions,
 												but may be more general. For example, "string | int" will translate into the Go
-												type "any" because the Go type system is not able to express
-												disjunctions.
+												type "any" because the Go type system is not able to express disjunctions.
 
 												To ensure that the resulting Go code works, any imported CUE packages or
 												referenced CUE definitions are transitively generated as well.
-												The generated code is placed in cue_gen.go files in the directory of each CUE package.
+												Generated code is placed in cue_types*_gen.go files in each CUE package directory.
 
 												Generated Go type and field names may differ from the original CUE names by default.
 												For instance, an exported definition "#foo" becomes "Foo",
-												given that Go uses capitalization to export names in a package,
-												and a nested definition like "#foo.#bar" becomes "Foo_Bar",
-												given that Go does not allow declaring nested types.
+												and a nested definition like "#foo.#bar" becomes "Foo_Bar".
 
-												@go attributes can be used to override which name or type to be generated, for example:
+												@go attributes can be used to override which name to be generated:
 
 												\tpackage foo
 												\t@go(betterpkgname)
 
-												\trenamed: int @go(BetterName)
-												\tretyped: string @go(,type=foo.com/bar.NamedString)
+												\t#Bar: {
+												\t\t@go(BetterBarTypeName)
+												\t\trenamed: int @go(BetterFieldName)
+												\t}
 
-												The attribute "@go(-)" can be used to ignore a definition or field, for example:
+												The attribute "@go(-)" can be used to ignore a definition or field:
 
 												\t#ignoredDefinition: {
 												\t\t@go(-)
 												\t}
 												\tignoredField: int @go(-)
+
+												"type=" overrides an entire value to generate as a given Go type expression:
+
+												\tretypedLocal:  [string]: int @go(,type=map[LocalType]int)
+												\tretypedImport: [...string]   @go(,type=[]"foo.com/bar".ImportedType)
+
+												"optional=" controls how CUE optional fields are generated as Go fields.
+												The default is "zero", representing a missing field as the zero value.
+												"nillable" ensures the generated Go type can represent missing fields as nil.
+
+												\toptionalDefault?:  int                         // generates as "int64"
+												\toptionalNillable?: int @go(,optional=nillable) // generates as "*int64"
+												\tnested: {
+												\t\t@go(,optional=nillable) // set for all fields under this struct
+												\t}
 
 												Usage:
 												  cue exp gengotypes [flags]
