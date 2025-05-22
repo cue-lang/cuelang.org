@@ -51,16 +51,9 @@ cue: {
 		execCmd: "cue help"
 		title:   "cue help"
 	}
-	[=~"^exp "]: experimental: true
-	"mod mirror": {
-		cueVersion:   "prerelease"
-		experimental: true
-	}
-	refactor: cueVersion: "prerelease"
-	"refactor imports": {
-		cueVersion:   "prerelease"
-		experimental: true
-	}
+	[=~"^exp "]: experimental:        true
+	"mod mirror": experimental:       true
+	"refactor imports": experimental: true
 }
 
 // Introduce experimental and unreleased commands.
