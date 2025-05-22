@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								code: {
-									"bytes-to-json": "zpCYDJ4wl0n3Kr80Oiuud0kfdjYqjAUkszboFWcaqa0="
-									"bytes-to-yaml": "x9xjbZ6In4ODcXlskF9x1wyy0RtpuIdvSJjLzeZHVb0="
+									"bytes-to-json": "CCYI0rbiLZB4/uDUDvf5E+ufnZk8Clc1nWni4v6efSc="
+									"bytes-to-yaml": "vwnlQqH3IRsFy+vCCH/KTFq5AKtPla2DYsCK1avho8M="
 								}
 							}
 						}
