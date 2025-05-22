@@ -41,9 +41,9 @@ for k2, v2 in b {
 }
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-a: [1, 2]
 n1: 1
 n2: 2
+a: [1, 2]
 b: [3, 4]
 m0_0: 4
 m0_1: 5

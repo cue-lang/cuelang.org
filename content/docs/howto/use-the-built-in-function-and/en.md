@@ -35,7 +35,6 @@ data: {
 }
 -- out --
 data.a: conflicting values 4.2 and int & >99 & <1000 (mismatched types float and int):
-    ./example.cue:8:17
     ./example.cue:10:5
 data.b: invalid value 42 (out of bound >99):
     ./example.cue:4:10
