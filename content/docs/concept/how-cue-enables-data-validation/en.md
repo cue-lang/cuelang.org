@@ -343,11 +343,7 @@ package validation
   age: 80
 -- out --
 2.age: field not allowed:
-    ./data.yml:1:1
     ./data.yml:5:3
-    ./schema.cue:4:11
-    ./schema.cue:4:14
-    ./schema.cue:5:10
 {{{end}}}
 
 The [language tour]({{< relref "docs/tour" >}}) demonstrates the full range of

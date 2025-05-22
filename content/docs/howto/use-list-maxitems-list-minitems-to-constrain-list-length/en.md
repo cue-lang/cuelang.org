@@ -64,7 +64,8 @@ f: [_, _, _, ...]
 
 f: [1, 2]
 -- out --
-f: incompatible list lengths (2 and 3)
+f: incompatible list lengths (2 and 3):
+    ./file.cue:6:4
 {{{end}}}
 
 ## Related content

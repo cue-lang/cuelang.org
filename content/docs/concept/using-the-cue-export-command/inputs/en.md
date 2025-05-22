@@ -594,10 +594,11 @@ A:
     ]
 }
 -- out --
-A: incompatible list lengths (2 and 3)
 A.1.B: conflicting values 2 and 3:
     ./data.json:5:18
     ./data.yml:3:8
+A: incompatible list lengths (2 and 3):
+    ./data.yml:2:3
 {{{end}}}
 
 ### {{{.HconstraintFile}}} inputs

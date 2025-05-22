@@ -8,8 +8,6 @@ tags:
 ---
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbG9naW4=" }
 $ cue help login
-WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 Log into a CUE registry via the OAuth 2.0 Device Authorization Grant.
 Without an argument, CUE_REGISTRY is used if it points to a single registry.
 

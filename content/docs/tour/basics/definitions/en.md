@@ -42,7 +42,5 @@ lossy: #Conn & {
 }
 -- out --
 lossy.timeout: field not allowed:
-    ./file.cue:1:8
-    ./file.cue:10:8
     ./file.cue:18:2
 {{{end}}}
