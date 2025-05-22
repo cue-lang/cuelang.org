@@ -17,9 +17,6 @@ EOD
 # for now. When it does become a problem we can solve this properly
 # using a nc-based wait loop or similar.
 nohup cue mod registry localhost:55443 > /tmp/cue_mod_registry 2>&1 &
-
-# Access to "cue mod mirror" via tip of cmd/cue.
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
 This guide demonstrates how to use the
