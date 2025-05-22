@@ -6,10 +6,6 @@ tags:
 - cue command
 ---
 {{<info>}}
-This command is only available in a recent CUE
-[pre-release]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}).
-
-
 This command is still in an experimental stage -- it may be changed or removed at any time.
 {{</info>}}
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIG1pcnJvcg==" }
