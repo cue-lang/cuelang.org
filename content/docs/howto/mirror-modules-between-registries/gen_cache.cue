@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "OEROSGUO41FK75VGOMVQGIJN20HCJQ3KSQO2RTG59KP96225RJAG===="
-								scriptHash: "IIM684LNQV7RPSB41SE3NHSD5857160UQSIMO04QLRB5OVSR51S0===="
+								hash:       "Q3SII0ETQCII4BMS54F6VF2SGV8S43FNBIBRO17NUC260AKUKS90===="
+								scriptHash: "SEG2R6K4EID6S7DFHEGLVG67ILEIFN35OQUL504LO5RJ7P95FQLG===="
 								steps: [{
 									doc:      "# Access to Central Registry."
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -33,15 +33,6 @@ package site
 									cmd:      "nohup cue mod registry localhost:55443 >/tmp/cue_mod_registry 2>&1 &"
 									exitCode: 0
 									output:   ""
-								}, {
-									doc:      "#ellipsis 1"
-									cmd:      "cue version"
-									exitCode: 0
-									output: """
-											cue version v0.13.0
-											...
-
-											"""
 								}, {
 									doc:      ""
 									cmd:      "cue mod mirror --to 127.0.0.1:55443 github.com/cue-tmp/jsonschema-pub/exp3/k8s.io"
