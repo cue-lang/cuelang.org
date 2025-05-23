@@ -5,7 +5,7 @@ This folder contains all hugo code for the website.
 ## Requirements for local development
 
 - [NodeJS](https://nodejs.org/) `== v20.x`
-- [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.128.2`
+- [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.147.6`
 
 ## Developing the site locally
 
