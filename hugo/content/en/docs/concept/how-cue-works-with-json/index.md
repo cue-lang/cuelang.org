@@ -366,3 +366,4 @@ Examples of this command being used can be found in the
 ## Related content
 
 - {{< linkto/related/concept "how-cue-works-with-yaml" >}}
+- {{< linkto/related/concept "how-cue-works-with-toml" >}}
