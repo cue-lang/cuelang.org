@@ -43,6 +43,16 @@ export to any encoding supported by CUE.
 {{< /card >}}
 
 {{< card
+    title="TOML"
+    href="/docs/concept/how-cue-works-with-toml/"
+    label="Find out more"
+>}}
+
+CUE supports reading and writing **TOML data** wherever it's found: discrete
+TOML data files, I/O streams, or encoded in string fields inside other formats.
+{{< /card >}}
+
+{{< card
     title="OpenAPI"
     href="/docs/concept/how-cue-works-with-openapi/"
     label="Read more"
