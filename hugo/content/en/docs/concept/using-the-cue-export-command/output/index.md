@@ -8,6 +8,8 @@ toc_hide: false
 By default, a successful `cue export` displays the evaluation result on its
 standard output stream, encoded in JSON:
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="data.cue" language="cue" area="top-left" >}}
 package one

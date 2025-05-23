@@ -12,6 +12,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the `cue` command to combine multiple JSON files into a
 list.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top-left top-left top-left top-right bottom
 

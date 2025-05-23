@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.IsSortedStrings`](https://pkg.go.dev/cuelang.org/go/pkg/list#IsSortedStrings)
 to test and report if lists of strings are sorted alphabetically.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="left" >}}
 package example

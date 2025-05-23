@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 to test and report if lists are sorted, using either a predefined or custom
 comparator.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

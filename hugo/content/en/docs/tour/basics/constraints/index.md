@@ -17,6 +17,8 @@ which declares Viola's name and age, and the `person` constraint which
 additionally declares the `human` field.
 This specification uses the **explicit unification operator:** `&`.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 person: {

@@ -14,6 +14,8 @@ A closed struct can be created using the `close()` builtin, but is more
 commonly created using a *definition*, as demonstrated on the next page.
 A struct created with `close()` can't have additional fields added elsewhere.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="structs.cue" language="cue" area="top-left" >}}
 A: close({

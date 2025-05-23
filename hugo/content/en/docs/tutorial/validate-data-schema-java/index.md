@@ -16,6 +16,8 @@ the schema.
 under development and its behaviour might change from one release to the next.
 {{</info>}}
 
+<!--more-->
+
 ## Prerequisites
 
 - You need the low-level library

@@ -17,6 +17,8 @@ errors.
 This guide demonstrates how to catch these errors
 and how to use the `cue/errors` package to examine their details.
 
+<!--more-->
+
 ## Set up some CUE code
 
 {{< step stepNumber="1" >}}

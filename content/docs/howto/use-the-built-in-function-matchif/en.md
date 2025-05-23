@@ -25,6 +25,8 @@ If the test fails, then the field's value is invalid:
 - If the field's value **could not** unify successfully with the *if-value*,
   can the field's value also unify successfully with the *else-value*?
 
+<!--more-->
+
 {{{with code "en" "example"}}}
 #location top bottom
 ! exec cue vet -c

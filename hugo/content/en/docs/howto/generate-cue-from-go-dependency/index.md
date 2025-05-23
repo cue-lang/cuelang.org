@@ -12,6 +12,8 @@ authors:
 This guide demonstrates how to generate CUE from Go types defined in some
 dependency of a Go module.
 
+<!--more-->
+
 ## Initialize Go and CUE modules
 
 {{< step stepNumber="1" >}}

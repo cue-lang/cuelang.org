@@ -20,6 +20,8 @@ Statistics for each evaluation are written into the named file using the file's
 implied data format.
 The file is overwritten on each `cue` invocation, without confirmation.
 
+<!--more-->
+
 {{{with _upload_ "en" "file"}}}
 -- someFile.cue --
 x: 1, y: 2.2, z: "3.33" // This hidden file's contents aren't important.

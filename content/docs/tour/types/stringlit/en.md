@@ -14,6 +14,8 @@ CUE also supports multi-line strings, enclosed between a pair of triple quotes (
 The opening quotes of a multi-line string must be immediately followed by a newline,
 and the closing quotes must be on a line by themselves, optionally preceded by whitespace.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

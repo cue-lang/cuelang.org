@@ -9,6 +9,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use dependencies to influence the order of execution of
 tasks in a workflow command.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top top bottom
 exec cue cmd doStuff

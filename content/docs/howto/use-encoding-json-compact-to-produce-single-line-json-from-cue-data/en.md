@@ -14,6 +14,8 @@ demonstrates how to use the built-in function
 to transform CUE data into a single line of JSON with all insignificant
 whitespace removed.
 
+<!--more-->
+
 <!-- TODO: is the json.Compact call even needed?
 Right now it isn't, as the output of json.Marshal /seems/ to be compact by
 default - but is that /guaranteed/?  -->

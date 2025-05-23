@@ -25,6 +25,8 @@ In this guide we'll demonstrate importing some Kubernetes API code to generate
 CUE schemas. We'll also use the API to convert both CUE and non-CUE data to
 native Go values, and validate some Go data natively with CUE.
 
+<!--more-->
+
 ## Converting Go types to CUE
 
 {{{with _script_ "en" "HIDDEN_ cue get go - reset"}}}

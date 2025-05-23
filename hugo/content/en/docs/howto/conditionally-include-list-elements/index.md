@@ -8,6 +8,8 @@ tags: [commented cue]
 This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to include elements in a list based on some testable condition.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

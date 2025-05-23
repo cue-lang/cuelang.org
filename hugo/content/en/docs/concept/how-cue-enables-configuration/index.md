@@ -22,6 +22,8 @@ Here's what you'll find in this guide:
 - [Tooling and automation](#tooling-and-automation)
 - [Abstractions versus direct access](#abstractions-versus-direct-access)
 
+<!--more-->
+
 ## Validating existing configuration files
 
 An easy first step with CUE is using the `cue` command to **check that

@@ -26,6 +26,8 @@ demonstrated here by
 <!-- TODO: add links for capabilities -->
 <!-- TODO: add link to unification concept guide -->
 
+<!--more-->
+
 {{{with code "en" "export"}}}
 #location left left left right
 

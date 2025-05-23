@@ -12,6 +12,8 @@ toc_hide: true
 This guide demonstrates how to write a Go program that validates JSON files
 using an embeded CUE schema.
 
+<!--more-->
+
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild

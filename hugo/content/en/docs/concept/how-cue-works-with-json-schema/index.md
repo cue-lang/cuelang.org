@@ -19,6 +19,8 @@ This allows you to work with JSON Schema constraints directly, using them to
 validate data, and to represent them natively in CUE's more succinct and
 expressive form.
 
+<!--more-->
+
 In this guide we'll see:
 - [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) converting a
   JSON Schema to CUE,

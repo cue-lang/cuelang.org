@@ -20,6 +20,8 @@ JSON *objects* are called **structs** or **maps** in CUE.
 JSON *arrays* are called **lists**\
 Object *members* are called **fields**, which link their **name**, or **label**, to a **value**.
 
+<!--more-->
+
 {{< info >}}
 Throughout this tour there are examples that show
 some CUE,

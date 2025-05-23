@@ -11,6 +11,8 @@ The `cue.mod/module.cue` file has a mandatory `language.version` field
 that sets the language version for a given module. But what does it actually
 do? This page explores that question.
 
+<!--more-->
+
 Here is an example `module.cue` file:
 
 {{< code-tabs >}}

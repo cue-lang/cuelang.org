@@ -33,6 +33,8 @@ A package can be defined within the module or externally.
 In the latter case, CUE maintains a copy of the package within the module
 in a dedicated location.
 
+<!--more-->
+
 {{< info >}}
 ### For those familiar with Go packages
 CUE's definitions of packages and modules are modeled after Go's.

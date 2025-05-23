@@ -21,6 +21,8 @@ use as if they were expressed in CUE. This allows you to work with these
 constraints directly, using them to validate data, and to represent them
 natively in CUE’s significantly more concise form.
 
+<!--more-->
+
 In this guide, we'll see:
 
 - [`cue def`]({{< relref "docs/reference/command/cue-help-def" >}})

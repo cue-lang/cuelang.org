@@ -13,6 +13,8 @@ Some fields have names that are not valid
 This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to export these fields using `cue export -e`.
 
+<!--more-->
+
 {{{with code "en" "emit"}}}
 #location top bottom
 

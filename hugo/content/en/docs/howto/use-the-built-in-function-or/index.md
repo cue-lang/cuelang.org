@@ -20,6 +20,8 @@ from a list.
 This allows the list to be used as a constraint that only permits values that
 are present in the list.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

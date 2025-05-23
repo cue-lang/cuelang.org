@@ -16,6 +16,8 @@ toc_hide: true
 In this tutorial you will publish a module to the Central Registry and then
 create a second module that depends on the first.
 
+<!--more-->
+
 ## Prerequisites
 
 - **A [GitHub](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github#signing-up-for-a-new-personal-account) account** --

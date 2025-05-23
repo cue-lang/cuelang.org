@@ -12,6 +12,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to transform JSON by reshaping some input data into different
 output.
 
+<!--more-->
+
 {{{with code "en" "emit"}}}
 exec cue export .:example -l input: data.json -e output --out json
 cmp stdout out

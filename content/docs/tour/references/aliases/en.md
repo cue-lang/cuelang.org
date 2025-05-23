@@ -15,6 +15,8 @@ Aliases are *not* members of a struct,
 do *not* appear in output,
 and can *only* be referenced within the scope in which they are defined.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

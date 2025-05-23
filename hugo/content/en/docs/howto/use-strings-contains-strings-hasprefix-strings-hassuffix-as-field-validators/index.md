@@ -14,6 +14,8 @@ demonstrates how to use the built-in functions
 [`strings.HasSuffix`](https://pkg.go.dev/cuelang.org/go/pkg/strings#HasSuffix)
 to validate fields by asserting that their values match specific strings.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

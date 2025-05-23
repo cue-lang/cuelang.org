@@ -14,6 +14,8 @@ quotes.
 Quoted and non-quoted fields share the same namespace *unless* they start
 with an underscore.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

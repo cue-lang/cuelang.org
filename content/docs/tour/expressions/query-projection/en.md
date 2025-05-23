@@ -8,6 +8,8 @@ Comprehensions allow us to select and process data via queries and projections.
 Queries select which data items we want to process,
 and projections define the shape of each resulting item.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval file.cue
 cmp stdout out
