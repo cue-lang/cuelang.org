@@ -22,6 +22,30 @@
       },
       "revId": "5eb0c3d24f9b57d18dd324cd2fd3558411efef74",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bbe77c5_08a77dbf",
+        "filename": "content/docs/concept/how-cue-works-with-toml/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-23T10:48:46Z",
+      "side": 1,
+      "message": "This wording is shared across the JSON, YAML, and (as of this CL) TOML guides. I\u0027ve tracked doing a review of the three guides in cue-lang/docs-and-content#217.",
+      "parentUuid": "0caa4ff8_d1fb0f1c",
+      "range": {
+        "startLine": 11,
+        "startChar": 45,
+        "endLine": 12,
+        "endChar": 23
+      },
+      "revId": "5eb0c3d24f9b57d18dd324cd2fd3558411efef74",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
