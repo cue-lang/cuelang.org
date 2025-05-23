@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <p class="teaser__excerpt">{{ $context.Summary | truncate 220 }}</p>
+        <p class="teaser__excerpt">{{ $context.Summary | plainify | truncate 220 }}</p>
 
         <div class="link teaser__readmore">
             <span class="link__text">{{ T "ui_read_more" }}</span>

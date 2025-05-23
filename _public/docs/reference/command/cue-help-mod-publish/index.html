@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="TERMINAL Copy code Copied! $ cue help mod publish Publish the current module to an OCI registry. It consults $CUE_REGISTRY to determine where the module should …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -21,7 +21,7 @@
 <title>cue help mod publish | CUE</title><meta property="og:url" content="/docs/reference/command/cue-help-mod-publish/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="cue help mod publish">
-  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help mod publish Publish the current module to an OCI registry. It consults $CUE_REGISTRY to determine where the module should be published (see &#34;cue help environment&#34; for details). Also note that this command does no dependency or other checks at the moment. When the --dry-run flag is specified, nothing will actually be written to a registry, but all other checks will take place. The --json flag can be used to find out more information about the upload.">
+  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help mod publish Publish the current module to an OCI registry. It consults $CUE_REGISTRY to determine where the module should be published (see &#34;cue help environment&#34; for details). Also note that this command does no dependency or other checks at the moment. When the --dry-run flag is specified, nothing will actually be written to a registry, but all other checks will take place. The --json flag can be used to find out more information about the upload. The --out flag can be used to write the module&#39;s contents to a directory in OCI Image Layout format. See this link for more details on the format: https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md Note that this command is not yet stable and may be changed. Usage: cue mod publish &lt;version&gt; [flags] Flags: -n, --dry-run only run simulation --json print verbose information in JSON format (implies --dry-run) --out string write module contents to specified directory in OCI Image Layout format (implies --dry-run) Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress Related content Reference: cue help environment">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -31,14 +31,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="cue help mod publish">
-  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help mod publish Publish the current module to an OCI registry. It consults $CUE_REGISTRY to determine where the module should be published (see &#34;cue help environment&#34; for details). Also note that this command does no dependency or other checks at the moment. When the --dry-run flag is specified, nothing will actually be written to a registry, but all other checks will take place. The --json flag can be used to find out more information about the upload.">
+  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help mod publish Publish the current module to an OCI registry. It consults $CUE_REGISTRY to determine where the module should be published (see &#34;cue help environment&#34; for details). Also note that this command does no dependency or other checks at the moment. When the --dry-run flag is specified, nothing will actually be written to a registry, but all other checks will take place. The --json flag can be used to find out more information about the upload. The --out flag can be used to write the module&#39;s contents to a directory in OCI Image Layout format. See this link for more details on the format: https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md Note that this command is not yet stable and may be changed. Usage: cue mod publish &lt;version&gt; [flags] Flags: -n, --dry-run only run simulation --json print verbose information in JSON format (implies --dry-run) --out string write module contents to specified directory in OCI Image Layout format (implies --dry-run) Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress Related content Reference: cue help environment">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -52,7 +52,7 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="cue help mod publish">
-<meta itemprop="description" content="TERMINAL Copy code Copied! $ cue help mod publish Publish the current module to an OCI registry. It consults $CUE_REGISTRY to determine where the module should be published (see &#34;cue help environment&#34; for details). Also note that this command does no dependency or other checks at the moment. When the --dry-run flag is specified, nothing will actually be written to a registry, but all other checks will take place. The --json flag can be used to find out more information about the upload.">
+<meta itemprop="description" content=" TERMINAL Copy code Copied! $ cue help mod publish Publish the current module to an OCI registry. It consults $CUE_REGISTRY to determine where the module should be published (see &#34;cue help environment&#34; for details). Also note that this command does no dependency or other checks at the moment. When the --dry-run flag is specified, nothing will actually be written to a registry, but all other checks will take place. The --json flag can be used to find out more information about the upload. The --out flag can be used to write the module&#39;s contents to a directory in OCI Image Layout format. See this link for more details on the format: https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md Note that this command is not yet stable and may be changed. Usage: cue mod publish &lt;version&gt; [flags] Flags: -n, --dry-run only run simulation --json print verbose information in JSON format (implies --dry-run) --out string write module contents to specified directory in OCI Image Layout format (implies --dry-run) Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress Related content Reference: cue help environment ">
 
     
         <meta itemprop="dateModified" content="2025-02-20T17:49:21+00:00" >
@@ -465,7 +465,7 @@ Reference: cue help environment
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-mod-publish/&text=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20publish%20Publish%20the%20current%20module%20to%20an%20OCI%20registry.%20It%20consults%20$CUE_REGISTRY%20to%20determine%20where%20the%20module%20should%20be%20published%20%28see%20&amp;#34;cue%20help%20environment&amp;#34;%20for%20details%29.%20Also%20note%20that%20this%20command%20does%20no%20dependency%20or%20other%20checks%20at%20the%20moment.%20When%20the%20--dry-run%20flag%20is%20specified,%20nothing%20will%20actually%20be%20written%20to%20a%20registry,%20but%20all%20other%20checks%20will%20take%20place.%20The%20--json%20flag%20can%20be%20used%20to%20find%20out%20more%20information%20about%20the%20upload.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-mod-publish/&text=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20publish%20Publish%20the%20current%20module%20to%20an%20OCI%20registry.%20It%20consults%20$CUE_REGISTRY%20to%20determine%20where%20the%20module%20should%20be%20published%20%28see%20&amp;#34;cue%20help%20environment&amp;#34;%20for%20details%29.%20Also%20note%20that%20this%20command%20does%20no%20dependency%20or%20other%20checks%20at%20the%20moment.%20When%20the%20--dry-run%20flag%20is%20specified,%20nothing%20will%20actually%20be%20written%20to%20a%20registry,%20but%20all%20other%20checks%20will%20take%20place.%20The%20--json%20flag%20can%20be%20used%20to%20find%20out%20more%20information%20about%20the%20upload.%20The%20--out%20flag%20can%20be%20used%20to%20write%20the%20module&amp;#39;s%20contents%20to%20a%20directory%20in%20OCI%20Image%20Layout%20format.%20See%20this%20link%20for%20more%20details%20on%20the%20format:%20https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md%20Note%20that%20this%20command%20is%20not%20yet%20stable%20and%20may%20be%20changed.%20Usage:%20cue%20mod%20publish%20&amp;lt;version&amp;gt;%20[flags]%20Flags:%20-n,%20--dry-run%20only%20run%20simulation%20--json%20print%20verbose%20information%20in%20JSON%20format%20%28implies%20--dry-run%29%20--out%20string%20write%20module%20contents%20to%20specified%20directory%20in%20OCI%20Image%20Layout%20format%20%28implies%20--dry-run%29%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20Related%20content%20Reference:%20cue%20help%20environment%20">
                 
 
 
@@ -481,7 +481,7 @@ Reference: cue help environment
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-mod-publish/&summary=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20publish%20Publish%20the%20current%20module%20to%20an%20OCI%20registry.%20It%20consults%20$CUE_REGISTRY%20to%20determine%20where%20the%20module%20should%20be%20published%20%28see%20&amp;#34;cue%20help%20environment&amp;#34;%20for%20details%29.%20Also%20note%20that%20this%20command%20does%20no%20dependency%20or%20other%20checks%20at%20the%20moment.%20When%20the%20--dry-run%20flag%20is%20specified,%20nothing%20will%20actually%20be%20written%20to%20a%20registry,%20but%20all%20other%20checks%20will%20take%20place.%20The%20--json%20flag%20can%20be%20used%20to%20find%20out%20more%20information%20about%20the%20upload.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-mod-publish/&summary=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20publish%20Publish%20the%20current%20module%20to%20an%20OCI%20registry.%20It%20consults%20$CUE_REGISTRY%20to%20determine%20where%20the%20module%20should%20be%20published%20%28see%20&amp;#34;cue%20help%20environment&amp;#34;%20for%20details%29.%20Also%20note%20that%20this%20command%20does%20no%20dependency%20or%20other%20checks%20at%20the%20moment.%20When%20the%20--dry-run%20flag%20is%20specified,%20nothing%20will%20actually%20be%20written%20to%20a%20registry,%20but%20all%20other%20checks%20will%20take%20place.%20The%20--json%20flag%20can%20be%20used%20to%20find%20out%20more%20information%20about%20the%20upload.%20The%20--out%20flag%20can%20be%20used%20to%20write%20the%20module&amp;#39;s%20contents%20to%20a%20directory%20in%20OCI%20Image%20Layout%20format.%20See%20this%20link%20for%20more%20details%20on%20the%20format:%20https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md%20Note%20that%20this%20command%20is%20not%20yet%20stable%20and%20may%20be%20changed.%20Usage:%20cue%20mod%20publish%20&amp;lt;version&amp;gt;%20[flags]%20Flags:%20-n,%20--dry-run%20only%20run%20simulation%20--json%20print%20verbose%20information%20in%20JSON%20format%20%28implies%20--dry-run%29%20--out%20string%20write%20module%20contents%20to%20specified%20directory%20in%20OCI%20Image%20Layout%20format%20%28implies%20--dry-run%29%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20Related%20content%20Reference:%20cue%20help%20environment%20">
                 
 
 
@@ -1251,7 +1251,7 @@ Reference: cue help environment
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-mod-publish%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-mod-publish%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1503,7 +1503,7 @@ Reference: cue help environment
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="This tutorial demonstrates how to get started with CUE’s Go API, and write a Go program to load and evaluate some CUE.">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -52,9 +52,8 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Loading CUE via the Go API">
-<meta itemprop="description" content="This tutorial demonstrates how to get started with CUE&rsquo;s Go
-API, and write a Go program to load and
-evaluate some CUE.">
+<meta itemprop="description" content="This tutorial demonstrates how to get started with CUE&rsquo;s Go API, and write a Go program to load and evaluate some CUE.
+">
 
     
         <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
@@ -838,20 +837,20 @@ field:</p>
 </span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
 </span></span><span style="display:flex;"><span>	ctx <span style="font-weight:bold">:=</span> cuecontext.<span style="color:#900;font-weight:bold">New</span>()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load the package &#34;example&#34; from the current directory.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	<span style="color:#998;font-style:italic">// We don&#39;t need to specify a config in this example.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	insts <span style="font-weight:bold">:=</span> load.<span style="color:#900;font-weight:bold">Instances</span>([]<span style="color:#458;font-weight:bold">string</span>{<span style="color:#b84">&#34;.&#34;</span>}, <span style="font-weight:bold">nil</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load the package &#34;example&#34; from the current directory.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// We don&#39;t need to specify a config in this example.</span>
+</span></span><span style="display:flex;"><span>	insts <span style="font-weight:bold">:=</span> load.<span style="color:#900;font-weight:bold">Instances</span>([]<span style="color:#458;font-weight:bold">string</span>{<span style="color:#b84">&#34;.&#34;</span>}, <span style="font-weight:bold">nil</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// The current directory just has one file without any build tags,
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	<span style="color:#998;font-style:italic">// and that file belongs to the example package.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	<span style="color:#998;font-style:italic">// So we get a single instance as a result.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	v <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildInstance</span>(insts[<span style="color:#099">0</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// The current directory just has one file without any build tags,</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// and that file belongs to the example package.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// So we get a single instance as a result.</span>
+</span></span><span style="display:flex;"><span>	v <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildInstance</span>(insts[<span style="color:#099">0</span>])
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">:=</span> v.<span style="color:#900;font-weight:bold">Err</span>(); err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
 </span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Lookup the &#39;output&#39; field and print it out
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	output <span style="font-weight:bold">:=</span> v.<span style="color:#900;font-weight:bold">LookupPath</span>(cue.<span style="color:#900;font-weight:bold">ParsePath</span>(<span style="color:#b84">&#34;output&#34;</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Lookup the &#39;output&#39; field and print it out</span>
+</span></span><span style="display:flex;"><span>	output <span style="font-weight:bold">:=</span> v.<span style="color:#900;font-weight:bold">LookupPath</span>(cue.<span style="color:#900;font-weight:bold">ParsePath</span>(<span style="color:#b84">&#34;output&#34;</span>))
 </span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Println</span>(output)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
 </div>
@@ -938,7 +937,7 @@ evaluate CUE.</p>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/229aa1e685e27a12f30ddcd92b3c231dac48942a">
                 Last modified May 23, 2025</a>
     </p>
 
@@ -988,7 +987,7 @@ evaluate CUE.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tutorial/loading-cue-go-api/&text=%3cp%3eThis%20tutorial%20demonstrates%20how%20to%20get%20started%20with%20%3ca%20href=%22https://pkg.go.dev/cuelang.org/go%22%3eCUE&amp;rsquo;s%20Go%0aAPI%3c/a%3e,%20and%20write%20a%20Go%20program%20to%20load%20and%0aevaluate%20some%20CUE.%3c/p%3e">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tutorial/loading-cue-go-api/&text=This%20tutorial%20demonstrates%20how%20to%20get%20started%20with%20CUE&amp;rsquo;s%20Go%20API,%20and%20write%20a%20Go%20program%20to%20load%20and%20evaluate%20some%20CUE.%0a">
                 
 
 
@@ -1004,7 +1003,7 @@ evaluate CUE.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tutorial/loading-cue-go-api/&summary=%3cp%3eThis%20tutorial%20demonstrates%20how%20to%20get%20started%20with%20%3ca%20href=%22https://pkg.go.dev/cuelang.org/go%22%3eCUE&amp;rsquo;s%20Go%0aAPI%3c/a%3e,%20and%20write%20a%20Go%20program%20to%20load%20and%0aevaluate%20some%20CUE.%3c/p%3e">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tutorial/loading-cue-go-api/&summary=This%20tutorial%20demonstrates%20how%20to%20get%20started%20with%20CUE&amp;rsquo;s%20Go%20API,%20and%20write%20a%20Go%20program%20to%20load%20and%20evaluate%20some%20CUE.%0a">
                 
 
 
@@ -1356,7 +1355,7 @@ evaluate CUE.</p>
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Ftutorial%2Floading-cue-go-api%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Ftutorial%2Floading-cue-go-api%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1608,7 +1607,7 @@ evaluate CUE.</p>
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

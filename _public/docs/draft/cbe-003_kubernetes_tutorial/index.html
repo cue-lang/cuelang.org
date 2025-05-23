@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial In this tutorial we show how to convert Kubernetes configuration files for …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -23,8 +23,7 @@
   <meta property="og:title" content="CUE By Example - Controlling Kubernetes with CUE">
   <meta property="og:description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial In this tutorial we show how to convert Kubernetes configuration files for a collection of microservices.
 The configuration files are scrubbed and renamed versions of real-life configuration files. The files are organized in a directory hierarchy grouping related services in subdirectories. This is a common pattern. The cue tooling has been optimized for this use case.
-In this tutorial we will address the following topics:
-convert the given YAML files to CUE hoist common patterns to parent directories use the tooling to rewrite CUE files to drop unnecessary fields repeat from step 2 for different subdirectories define commands to operate on the configuration extract CUE templates directly from Kubernetes Go source manually tailor the configuration map a Kubernetes configuration to docker-compose (TODO) The given data set The data set is based on a real-life case, using different names for the services.">
+In this tutorial we will address the following topics:">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -36,15 +35,14 @@ convert the given YAML files to CUE hoist common patterns to parent directories 
   <meta name="twitter:title" content="CUE By Example - Controlling Kubernetes with CUE">
   <meta name="twitter:description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial In this tutorial we show how to convert Kubernetes configuration files for a collection of microservices.
 The configuration files are scrubbed and renamed versions of real-life configuration files. The files are organized in a directory hierarchy grouping related services in subdirectories. This is a common pattern. The cue tooling has been optimized for this use case.
-In this tutorial we will address the following topics:
-convert the given YAML files to CUE hoist common patterns to parent directories use the tooling to rewrite CUE files to drop unnecessary fields repeat from step 2 for different subdirectories define commands to operate on the configuration extract CUE templates directly from Kubernetes Go source manually tailor the configuration map a Kubernetes configuration to docker-compose (TODO) The given data set The data set is based on a real-life case, using different names for the services.">
+In this tutorial we will address the following topics:">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -58,10 +56,10 @@ convert the given YAML files to CUE hoist common patterns to parent directories 
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="CUE By Example - Controlling Kubernetes with CUE">
-<meta itemprop="description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial In this tutorial we show how to convert Kubernetes configuration files for a collection of microservices.
+<meta itemprop="description" content=" Source: https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial In this tutorial we show how to convert Kubernetes configuration files for a collection of microservices.
 The configuration files are scrubbed and renamed versions of real-life configuration files. The files are organized in a directory hierarchy grouping related services in subdirectories. This is a common pattern. The cue tooling has been optimized for this use case.
 In this tutorial we will address the following topics:
-convert the given YAML files to CUE hoist common patterns to parent directories use the tooling to rewrite CUE files to drop unnecessary fields repeat from step 2 for different subdirectories define commands to operate on the configuration extract CUE templates directly from Kubernetes Go source manually tailor the configuration map a Kubernetes configuration to docker-compose (TODO) The given data set The data set is based on a real-life case, using different names for the services.">
+">
 
     
         <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
@@ -4064,9 +4062,9 @@ service: {
 }</code></pre></div>
 </div>
 <p>The complete top-level model definitions can be found at
-<a href="https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/+/refs/heads/master/doc/tutorial/kubernetes/manual/services/cloud.cue">doc/tutorial/kubernetes/manual/services/cloud.cue</a>.</p>
+<a href="https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/&#43;/refs/heads/master/doc/tutorial/kubernetes/manual/services/cloud.cue">doc/tutorial/kubernetes/manual/services/cloud.cue</a>.</p>
 <p>The tailorings for this specific project (the labels) are defined
-<a href="https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/+/refs/heads/master/doc/tutorial/kubernetes/manual/services/kube.cue">here</a>.</p>
+<a href="https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/&#43;/refs/heads/master/doc/tutorial/kubernetes/manual/services/kube.cue">here</a>.</p>
 <h3 id="converting-to-kubernetes">
     <a href="#converting-to-kubernetes" class="anchor" aria-label="Anchor">
 
@@ -4102,7 +4100,7 @@ service: {
 the raw <code>kubernetes</code> fields for each service.</p>
 <p>Mapping deployments is a bit more involved, though analogous.
 The complete definitions for Kubernetes conversions can be found at
-<a href="https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/+/refs/heads/master/doc/tutorial/kubernetes/manual/services/k8s.cue">doc/tutorial/kubernetes/manual/services/k8s.cue</a>.</p>
+<a href="https://review.gerrithub.io/plugins/gitiles/cue-lang/cue/&#43;/refs/heads/master/doc/tutorial/kubernetes/manual/services/k8s.cue">doc/tutorial/kubernetes/manual/services/k8s.cue</a>.</p>
 <p>Converting the top-level definitions to concrete Kubernetes code is the hardest
 part of this exercise.
 That said, most CUE users will never have to resort to this level of CUE
@@ -4211,7 +4209,7 @@ difference adaptors for the same configuration.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/draft/cbe-003_kubernetes_tutorial/&text=Source:%20https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial%20In%20this%20tutorial%20we%20show%20how%20to%20convert%20Kubernetes%20configuration%20files%20for%20a%20collection%20of%20microservices.%0aThe%20configuration%20files%20are%20scrubbed%20and%20renamed%20versions%20of%20real-life%20configuration%20files.%20The%20files%20are%20organized%20in%20a%20directory%20hierarchy%20grouping%20related%20services%20in%20subdirectories.%20This%20is%20a%20common%20pattern.%20The%20cue%20tooling%20has%20been%20optimized%20for%20this%20use%20case.%0aIn%20this%20tutorial%20we%20will%20address%20the%20following%20topics:%0aconvert%20the%20given%20YAML%20files%20to%20CUE%20hoist%20common%20patterns%20to%20parent%20directories%20use%20the%20tooling%20to%20rewrite%20CUE%20files%20to%20drop%20unnecessary%20fields%20repeat%20from%20step%202%20for%20different%20subdirectories%20define%20commands%20to%20operate%20on%20the%20configuration%20extract%20CUE%20templates%20directly%20from%20Kubernetes%20Go%20source%20manually%20tailor%20the%20configuration%20map%20a%20Kubernetes%20configuration%20to%20docker-compose%20%28TODO%29%20The%20given%20data%20set%20The%20data%20set%20is%20based%20on%20a%20real-life%20case,%20using%20different%20names%20for%20the%20services.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/draft/cbe-003_kubernetes_tutorial/&text=%20Source:%20https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial%20In%20this%20tutorial%20we%20show%20how%20to%20convert%20Kubernetes%20configuration%20files%20for%20a%20collection%20of%20microservices.%0aThe%20configuration%20files%20are%20scrubbed%20and%20renamed%20versions%20of%20real-life%20configuration%20files.%20The%20files%20are%20organized%20in%20a%20directory%20hierarchy%20grouping%20related%20services%20in%20subdirectories.%20This%20is%20a%20common%20pattern.%20The%20cue%20tooling%20has%20been%20optimized%20for%20this%20use%20case.%0aIn%20this%20tutorial%20we%20will%20address%20the%20following%20topics:%0a">
                 
 
 
@@ -4227,7 +4225,7 @@ difference adaptors for the same configuration.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/draft/cbe-003_kubernetes_tutorial/&summary=Source:%20https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial%20In%20this%20tutorial%20we%20show%20how%20to%20convert%20Kubernetes%20configuration%20files%20for%20a%20collection%20of%20microservices.%0aThe%20configuration%20files%20are%20scrubbed%20and%20renamed%20versions%20of%20real-life%20configuration%20files.%20The%20files%20are%20organized%20in%20a%20directory%20hierarchy%20grouping%20related%20services%20in%20subdirectories.%20This%20is%20a%20common%20pattern.%20The%20cue%20tooling%20has%20been%20optimized%20for%20this%20use%20case.%0aIn%20this%20tutorial%20we%20will%20address%20the%20following%20topics:%0aconvert%20the%20given%20YAML%20files%20to%20CUE%20hoist%20common%20patterns%20to%20parent%20directories%20use%20the%20tooling%20to%20rewrite%20CUE%20files%20to%20drop%20unnecessary%20fields%20repeat%20from%20step%202%20for%20different%20subdirectories%20define%20commands%20to%20operate%20on%20the%20configuration%20extract%20CUE%20templates%20directly%20from%20Kubernetes%20Go%20source%20manually%20tailor%20the%20configuration%20map%20a%20Kubernetes%20configuration%20to%20docker-compose%20%28TODO%29%20The%20given%20data%20set%20The%20data%20set%20is%20based%20on%20a%20real-life%20case,%20using%20different%20names%20for%20the%20services.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/draft/cbe-003_kubernetes_tutorial/&summary=%20Source:%20https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial%20In%20this%20tutorial%20we%20show%20how%20to%20convert%20Kubernetes%20configuration%20files%20for%20a%20collection%20of%20microservices.%0aThe%20configuration%20files%20are%20scrubbed%20and%20renamed%20versions%20of%20real-life%20configuration%20files.%20The%20files%20are%20organized%20in%20a%20directory%20hierarchy%20grouping%20related%20services%20in%20subdirectories.%20This%20is%20a%20common%20pattern.%20The%20cue%20tooling%20has%20been%20optimized%20for%20this%20use%20case.%0aIn%20this%20tutorial%20we%20will%20address%20the%20following%20topics:%0a">
                 
 
 
@@ -4543,7 +4541,7 @@ difference adaptors for the same configuration.</p>
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fdraft%2Fcbe-003_kubernetes_tutorial%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fdraft%2Fcbe-003_kubernetes_tutorial%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -4795,7 +4793,7 @@ difference adaptors for the same configuration.</p>
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

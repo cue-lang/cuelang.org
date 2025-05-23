@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Introduction Modules are how CUE manages dependencies. This document is a detailed reference manual for CUE’s module system. CUE’s modules support has a lot in …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -21,7 +21,7 @@
 <title>CUE Modules | CUE</title><meta property="og:url" content="/docs/reference/modules/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="CUE Modules">
-  <meta property="og:description" content=" Introduction Modules are how CUE manages dependencies. This document is a detailed reference manual for CUE’s module system. CUE’s modules support has a lot in common with Go’s modules and this document has substantial parts that have been taken directly from the Go modules reference. Thanks very much to Russ Cox and the Go team for their amazing work there.
+  <meta property="og:description" content="Introduction Modules are how CUE manages dependencies. This document is a detailed reference manual for CUE’s module system. CUE’s modules support has a lot in common with Go’s modules and this document has substantial parts that have been taken directly from the Go modules reference. Thanks very much to Russ Cox and the Go team for their amazing work there.
 This document largely supercedes the prior modules documentation although, as a transitionary measure, the CUE tool still supports the import of packages present in the cue.mod/pkg, cue.mod/usr and cue.mod/gen directories. This only applies to the main module, and if there is any ambiguity with respect to regular module dependencies an “ambiguous import” error will be reported.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
@@ -32,15 +32,15 @@ This document largely supercedes the prior modules documentation although, as a 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="CUE Modules">
-  <meta name="twitter:description" content=" Introduction Modules are how CUE manages dependencies. This document is a detailed reference manual for CUE’s module system. CUE’s modules support has a lot in common with Go’s modules and this document has substantial parts that have been taken directly from the Go modules reference. Thanks very much to Russ Cox and the Go team for their amazing work there.
+  <meta name="twitter:description" content="Introduction Modules are how CUE manages dependencies. This document is a detailed reference manual for CUE’s module system. CUE’s modules support has a lot in common with Go’s modules and this document has substantial parts that have been taken directly from the Go modules reference. Thanks very much to Russ Cox and the Go team for their amazing work there.
 This document largely supercedes the prior modules documentation although, as a transitionary measure, the CUE tool still supports the import of packages present in the cue.mod/pkg, cue.mod/usr and cue.mod/gen directories. This only applies to the main module, and if there is any ambiguity with respect to regular module dependencies an “ambiguous import” error will be reported.">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -54,29 +54,9 @@ This document largely supercedes the prior modules documentation although, as a 
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="CUE Modules">
-<meta itemprop="description" content="
-    
-
-
-
-
-    
-
-Introduction
-Modules are how CUE manages dependencies.
-This document is a detailed reference manual for CUE&rsquo;s module system.
-CUE&rsquo;s modules support has a lot in common with Go&rsquo;s modules
-and this document has substantial parts that have been taken
-directly from the Go modules reference.
-Thanks very much to Russ Cox and the Go team for their
-amazing work there.
-This document largely supercedes the
-prior modules documentation
-although, as a transitionary measure, the CUE tool still supports
-the import of packages present in the cue.mod/pkg, cue.mod/usr and
-cue.mod/gen directories. This only applies to the main module, and if
-there is any ambiguity with respect to regular module dependencies an
-&ldquo;ambiguous import&rdquo; error will be reported.">
+<meta itemprop="description" content=" Introduction Modules are how CUE manages dependencies. This document is a detailed reference manual for CUE&rsquo;s module system. CUE&rsquo;s modules support has a lot in common with Go&rsquo;s modules and this document has substantial parts that have been taken directly from the Go modules reference. Thanks very much to Russ Cox and the Go team for their amazing work there.
+This document largely supercedes the prior modules documentation although, as a transitionary measure, the CUE tool still supports the import of packages present in the cue.mod/pkg, cue.mod/usr and cue.mod/gen directories. This only applies to the main module, and if there is any ambiguity with respect to regular module dependencies an &ldquo;ambiguous import&rdquo; error will be reported.
+">
 
     
         <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
@@ -1778,7 +1758,7 @@ letter <code>v</code> followed by a semantic version. See the section on
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/229aa1e685e27a12f30ddcd92b3c231dac48942a">
                 Last modified May 23, 2025</a>
     </p>
 
@@ -1828,7 +1808,7 @@ letter <code>v</code> followed by a semantic version. See the section on
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/modules/&text=%3ch2%20id=%22intro%22%3e%0a%20%20%20%20%3ca%20href=%22#intro%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eIntroduction%3c/h2%3e%0a%3cp%3eModules%20are%20how%20CUE%20manages%20dependencies.%0aThis%20document%20is%20a%20detailed%20reference%20manual%20for%20CUE&amp;rsquo;s%20module%20system.%0aCUE&amp;rsquo;s%20modules%20support%20has%20a%20lot%20in%20common%20with%20Go&amp;rsquo;s%20modules%0aand%20this%20document%20has%20substantial%20parts%20that%20have%20been%20taken%0adirectly%20from%20the%20%3ca%20href=%22https://go.dev/ref/mod%22%3eGo%20modules%20reference%3c/a%3e.%0aThanks%20very%20much%20to%20Russ%20Cox%20and%20the%20Go%20team%20for%20their%0aamazing%20work%20there.%3c/p%3e%0a%3cp%3eThis%20document%20largely%20supercedes%20the%0a%3ca%20href=%22/docs/concept/modules-packages-instances/%22%3eprior%20modules%20documentation%3c/a%3e%0aalthough,%20as%20a%20transitionary%20measure,%20the%20CUE%20tool%20still%20supports%0athe%20import%20of%20packages%20present%20in%20the%20%3ccode%3ecue.mod/pkg%3c/code%3e,%20%3ccode%3ecue.mod/usr%3c/code%3e%20and%0a%3ccode%3ecue.mod/gen%3c/code%3e%20directories.%20This%20only%20applies%20to%20the%20main%20module,%20and%20if%0athere%20is%20any%20ambiguity%20with%20respect%20to%20regular%20module%20dependencies%20an%0a&amp;ldquo;ambiguous%20import&amp;rdquo;%20error%20will%20be%20reported.%3c/p%3e">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/modules/&text=%20Introduction%20Modules%20are%20how%20CUE%20manages%20dependencies.%20This%20document%20is%20a%20detailed%20reference%20manual%20for%20CUE&amp;rsquo;s%20module%20system.%20CUE&amp;rsquo;s%20modules%20support%20has%20a%20lot%20in%20common%20with%20Go&amp;rsquo;s%20modules%20and%20this%20document%20has%20substantial%20parts%20that%20have%20been%20taken%20directly%20from%20the%20Go%20modules%20reference.%20Thanks%20very%20much%20to%20Russ%20Cox%20and%20the%20Go%20team%20for%20their%20amazing%20work%20there.%0aThis%20document%20largely%20supercedes%20the%20prior%20modules%20documentation%20although,%20as%20a%20transitionary%20measure,%20the%20CUE%20tool%20still%20supports%20the%20import%20of%20packages%20present%20in%20the%20cue.mod/pkg,%20cue.mod/usr%20and%20cue.mod/gen%20directories.%20This%20only%20applies%20to%20the%20main%20module,%20and%20if%20there%20is%20any%20ambiguity%20with%20respect%20to%20regular%20module%20dependencies%20an%20&amp;ldquo;ambiguous%20import&amp;rdquo;%20error%20will%20be%20reported.%0a">
                 
 
 
@@ -1844,7 +1824,7 @@ letter <code>v</code> followed by a semantic version. See the section on
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/modules/&summary=%3ch2%20id=%22intro%22%3e%0a%20%20%20%20%3ca%20href=%22#intro%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eIntroduction%3c/h2%3e%0a%3cp%3eModules%20are%20how%20CUE%20manages%20dependencies.%0aThis%20document%20is%20a%20detailed%20reference%20manual%20for%20CUE&amp;rsquo;s%20module%20system.%0aCUE&amp;rsquo;s%20modules%20support%20has%20a%20lot%20in%20common%20with%20Go&amp;rsquo;s%20modules%0aand%20this%20document%20has%20substantial%20parts%20that%20have%20been%20taken%0adirectly%20from%20the%20%3ca%20href=%22https://go.dev/ref/mod%22%3eGo%20modules%20reference%3c/a%3e.%0aThanks%20very%20much%20to%20Russ%20Cox%20and%20the%20Go%20team%20for%20their%0aamazing%20work%20there.%3c/p%3e%0a%3cp%3eThis%20document%20largely%20supercedes%20the%0a%3ca%20href=%22/docs/concept/modules-packages-instances/%22%3eprior%20modules%20documentation%3c/a%3e%0aalthough,%20as%20a%20transitionary%20measure,%20the%20CUE%20tool%20still%20supports%0athe%20import%20of%20packages%20present%20in%20the%20%3ccode%3ecue.mod/pkg%3c/code%3e,%20%3ccode%3ecue.mod/usr%3c/code%3e%20and%0a%3ccode%3ecue.mod/gen%3c/code%3e%20directories.%20This%20only%20applies%20to%20the%20main%20module,%20and%20if%0athere%20is%20any%20ambiguity%20with%20respect%20to%20regular%20module%20dependencies%20an%0a&amp;ldquo;ambiguous%20import&amp;rdquo;%20error%20will%20be%20reported.%3c/p%3e">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/modules/&summary=%20Introduction%20Modules%20are%20how%20CUE%20manages%20dependencies.%20This%20document%20is%20a%20detailed%20reference%20manual%20for%20CUE&amp;rsquo;s%20module%20system.%20CUE&amp;rsquo;s%20modules%20support%20has%20a%20lot%20in%20common%20with%20Go&amp;rsquo;s%20modules%20and%20this%20document%20has%20substantial%20parts%20that%20have%20been%20taken%20directly%20from%20the%20Go%20modules%20reference.%20Thanks%20very%20much%20to%20Russ%20Cox%20and%20the%20Go%20team%20for%20their%20amazing%20work%20there.%0aThis%20document%20largely%20supercedes%20the%20prior%20modules%20documentation%20although,%20as%20a%20transitionary%20measure,%20the%20CUE%20tool%20still%20supports%20the%20import%20of%20packages%20present%20in%20the%20cue.mod/pkg,%20cue.mod/usr%20and%20cue.mod/gen%20directories.%20This%20only%20applies%20to%20the%20main%20module,%20and%20if%20there%20is%20any%20ambiguity%20with%20respect%20to%20regular%20module%20dependencies%20an%20&amp;ldquo;ambiguous%20import&amp;rdquo;%20error%20will%20be%20reported.%0a">
                 
 
 
@@ -2231,7 +2211,7 @@ letter <code>v</code> followed by a semantic version. See the section on
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fmodules%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fmodules%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -2483,7 +2463,7 @@ letter <code>v</code> followed by a semantic version. See the section on
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 
