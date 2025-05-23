@@ -8,6 +8,8 @@ Comprehensions allow us to select and process data via queries and projections.
 Queries select which data items we want to process,
 and projections define the shape of each resulting item.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 _data: {

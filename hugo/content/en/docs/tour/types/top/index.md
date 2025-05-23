@@ -14,6 +14,8 @@ don't have any way to represent non-concrete values.
 Constraining a regular field with top brings that field into existence,
 whilst allowing its value to be constrained and defined elsewhere.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="fields.cue" language="cue" area="top-left" >}}
 a: _

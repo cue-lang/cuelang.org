@@ -14,6 +14,8 @@ Multiple definitions of the same field across files and within the same file
 are treated similarly, because
 [order does not matter]({{< relref "docs/tour/basics/order-irrelevance" >}}).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="policy.cue" language="cue" area="top-left" >}}
 package config

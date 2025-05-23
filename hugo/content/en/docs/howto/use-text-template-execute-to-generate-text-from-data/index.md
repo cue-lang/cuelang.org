@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 with data-driven templates to generate text output, using Go's
 [template format](https://pkg.go.dev/text/template).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

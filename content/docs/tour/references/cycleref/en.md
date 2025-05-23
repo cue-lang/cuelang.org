@@ -12,6 +12,8 @@ simply ignoring the cycle and then unifying the fields a single time.
 This achieves the same result as attempting to follow the reference cycle ad
 infinitum.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

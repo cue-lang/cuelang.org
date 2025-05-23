@@ -14,6 +14,8 @@ demonstrates how to use the built-in function
 to transform JSON from a compact, single-line form held in a file into JSON
 with insignificant whitespace added that makes it easier for humans to read.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #nofmt(data.json)
 # we don't use '#location left left right' for 2 reasons:

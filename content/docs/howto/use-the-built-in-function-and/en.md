@@ -15,6 +15,8 @@ function
 [`and()`]({{< relref "docs/reference/glossary#and-built-in-function" >}})
 to unify all the elements of a list.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 ! exec cue vet -c .:example
 cmp stderr out

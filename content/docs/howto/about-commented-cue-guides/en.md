@@ -13,6 +13,8 @@ some input data, with a `cue` command showing the concrete result of the
 technique they're demonstrating. Often that result is an error message, showing
 that `cue` has caught the deliberate mistakes in our example data.
 
+<!--more-->
+
 Here's an example:
 
 {{{with code "en" "example"}}}

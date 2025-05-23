@@ -13,6 +13,8 @@ on the type of data being processed. Because the CUE language does not include
 a switch statement, a mechanism is shown that *behaves* like a switch statement
 in some other languages.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

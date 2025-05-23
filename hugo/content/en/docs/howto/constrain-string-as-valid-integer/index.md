@@ -19,6 +19,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to constrain fields to contain string representations of
 integer values.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

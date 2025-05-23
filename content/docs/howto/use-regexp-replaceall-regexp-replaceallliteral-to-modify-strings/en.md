@@ -14,6 +14,8 @@ and
 [`regexp.ReplaceAllLiteral`](https://pkg.go.dev/cuelang.org/go/pkg/regexp#ReplaceAllLiteral)
 to modify strings using various features of regular expressions.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 #nofmt cuelang.org/issue/720 cuelang.org/issue/1447

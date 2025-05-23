@@ -14,6 +14,8 @@ Multiple definitions of the same field across files and within the same file
 are treated similarly, because
 [order does not matter]({{< relref "docs/tour/basics/order-irrelevance" >}}).
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export # No filenames mentioned
 cmp stdout out

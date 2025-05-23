@@ -12,6 +12,8 @@ Some fields have names that are not valid
 This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to refer to these fields, both at CUE's top level and elsewhere.
 
+<!--more-->
+
 {{{with code "en" "emit"}}}
 exec cue export -e output
 cmp stdout out

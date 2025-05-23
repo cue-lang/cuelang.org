@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 to check that values represent valid IPv4 or IPv6 addresses or subnets in
 [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

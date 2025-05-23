@@ -34,6 +34,8 @@ Along the way you will:
 - Update the top level module to depend on the template
 - Update the schema and its version, and update the top level module to depend on the new version
 
+<!--more-->
+
 ## Prerequisites
 
 - **A tool to edit text files**. Any text editor you have will be fine, for

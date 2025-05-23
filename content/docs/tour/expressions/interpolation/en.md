@@ -8,6 +8,8 @@ in both their single- and multi-line forms.
 
 Any valid CUE expression may be used inside escaped parentheses.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue --out yaml
 cmp stdout out

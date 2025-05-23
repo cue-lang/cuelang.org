@@ -24,6 +24,8 @@ Here's how we can use CUE with a registry, including:
 - how we can abstract that into a reusable component (module)
 - how we can publish that module to a registry
 
+<!--more-->
+
 A lot of this is quite new, so don't be surprised if you find a few
 rough edges. That said, it's reliable enough for us to dogfood it
 in our own services.

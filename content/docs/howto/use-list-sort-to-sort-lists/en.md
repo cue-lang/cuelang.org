@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.Sort`](https://pkg.go.dev/cuelang.org/go/pkg/list#Sort)
 to sort lists, using either a predefined or custom comparator.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

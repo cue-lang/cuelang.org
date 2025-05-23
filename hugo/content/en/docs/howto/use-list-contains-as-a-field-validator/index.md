@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 as a validator that checks if a simple or composite value is contained in a
 list.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

@@ -19,6 +19,8 @@ schemas written in CUE.
 In this tutorial you'll use `cue` to convert a JSON Schema to CUE,
 and then use the result to validate some data.
 
+<!--more-->
+
 ## Prerequisites
 
 - **The `cue` binary** --

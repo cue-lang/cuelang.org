@@ -12,6 +12,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the `cue` command to combine multiple JSON files into a
 list.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="a.json" language="json" area="top-left" >}}
 {

@@ -15,6 +15,8 @@ function
 [`and()`]({{< relref "docs/reference/glossary#and-built-in-function" >}})
 to unify all the elements of a list.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

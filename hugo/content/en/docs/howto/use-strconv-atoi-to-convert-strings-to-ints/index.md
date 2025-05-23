@@ -14,6 +14,8 @@ demonstrates how to use the built-in function
 to convert a string representation of an int to the number itself, using base
 10.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example

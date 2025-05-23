@@ -12,6 +12,8 @@ command to copy
 [CUE modules]({{<relref"docs/reference/modules">}})
 between registries.
 
+<!--more-->
+
 The `cue mod mirror` command is available in CUE v0.13.0 and later. It can be
 used to mirror modules between any pair of registries for which you have
 appropriate access permissions.

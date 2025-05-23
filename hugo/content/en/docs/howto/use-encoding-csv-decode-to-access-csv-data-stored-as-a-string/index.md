@@ -14,6 +14,8 @@ demonstrates how to use the built-in function
 to decode a string containing comma-separated values (CSV) into a list of
 lists.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example

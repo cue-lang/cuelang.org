@@ -12,6 +12,8 @@ simply ignoring the cycle and then unifying the fields a single time.
 This achieves the same result as attempting to follow the reference cycle ad
 infinitum.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 labels: {

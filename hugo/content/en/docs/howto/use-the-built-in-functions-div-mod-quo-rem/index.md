@@ -26,6 +26,8 @@ to perform truncated division.
 The behaviours of these functions are defined in
 [the CUE language specification]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}}).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

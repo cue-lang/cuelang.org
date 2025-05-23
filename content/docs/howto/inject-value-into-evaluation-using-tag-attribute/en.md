@@ -18,6 +18,8 @@ reference, CUE allows information to be introduced, or *injected*, by using tag
 attributes and tag variables. This guide demonstrates tag attributes.
 <!-- TODO(jcm): include a cue-cmd in the set of commands demonstrated on this page -->
 
+<!--more-->
+
 ## Injecting a value
 
 {{{with code "en" "string"}}}

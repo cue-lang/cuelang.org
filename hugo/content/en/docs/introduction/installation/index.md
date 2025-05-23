@@ -29,6 +29,8 @@ cue version v0.13.0
 ...
 ```
 
+<!--more-->
+
 #### Download an official CUE binary
 
 On Linux, Microsoft Windows, and macOS, the `cue` command can be downloaded from the

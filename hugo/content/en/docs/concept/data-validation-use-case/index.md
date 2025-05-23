@@ -13,6 +13,8 @@ consistency issues.
 Data validation tools allow verifying the consistency of such data
 based on a schema.
 
+<!--more-->
+
 
 ## Core issues addressed by CUE
 

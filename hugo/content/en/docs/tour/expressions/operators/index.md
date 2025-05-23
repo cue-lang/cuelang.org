@@ -16,6 +16,8 @@ CUE also provides
 that produce an `int` by calculating *integer division and remainder*.
 They support Euclidean division (`div` / `mod`) and truncated division (`quo` / `rem`).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="operators.cue" language="cue" area="top-left" >}}
 a: 1 + 1             // type int

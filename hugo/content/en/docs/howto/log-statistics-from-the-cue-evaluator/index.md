@@ -20,6 +20,8 @@ Statistics for each evaluation are written into the named file using the file's
 implied data format.
 The file is overwritten on each `cue` invocation, without confirmation.
 
+<!--more-->
+
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9TVEFUU19GSUxFPXN0YXRzLmN1ZQpjdWUgdmV0IC1jIHNvbWVGaWxlLmN1ZQpjYXQgc3RhdHMuY3Vl" }
 $ export CUE_STATS_FILE=stats.cue
 $ cue vet -c someFile.cue

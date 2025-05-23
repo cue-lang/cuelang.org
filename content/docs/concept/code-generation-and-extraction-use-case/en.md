@@ -13,6 +13,8 @@ In this section we emphasize the role of CUE in a code-generation pipeline,
 that is using CUE as an interlingua for the extraction from and the
 generation to multiple sources.
 
+<!--more-->
+
 
 ## Core issues addressed by CUE
 

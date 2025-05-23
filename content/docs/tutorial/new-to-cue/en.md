@@ -9,6 +9,8 @@ hide_summary: true
 
 These tutorials are good places to start for folks who are newcomers to CUE ...
 
+<!--more-->
+
 {{< cards >}}
 
 {{< card
