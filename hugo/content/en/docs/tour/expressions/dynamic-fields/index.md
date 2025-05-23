@@ -15,6 +15,8 @@ Referencing dynamic fields needs to be done using
 [selectors, index expressions]({{< relref "docs/tour/references/selectors" >}}),
 or [aliases]({{< relref "docs/tour/references/aliases" >}}).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 a:       "foo"

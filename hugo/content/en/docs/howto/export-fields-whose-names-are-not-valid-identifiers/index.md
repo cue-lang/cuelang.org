@@ -13,6 +13,8 @@ Some fields have names that are not valid
 This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to export these fields using `cue export -e`.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="data.yml" language="yml" area="top" >}}
 # data.yml contains a field we want to export with

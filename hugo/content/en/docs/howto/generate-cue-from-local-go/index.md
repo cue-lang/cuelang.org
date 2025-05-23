@@ -11,6 +11,8 @@ authors:
 This guide demonstrates how to generate CUE from types defined in a local Go
 main package, placing the CUE in the same directory as the Go code.
 
+<!--more-->
+
 ## Initialize Go and CUE modules
 
 {{< step stepNumber="1" >}}

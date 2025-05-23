@@ -5,6 +5,8 @@ weight: 40
 
 Field comprehensions can be used to add fields conditionally.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 price: number

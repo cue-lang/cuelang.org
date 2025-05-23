@@ -20,6 +20,8 @@ Along the way you will:
 - Create a module that depends on an existing, well-known module
 - Use `cue mod tidy` to automatically add dependencies and their versions to the `module.cue` file
 
+<!--more-->
+
 ## Login to the Central Registry
 
 {{< step stepNumber="1" >}}

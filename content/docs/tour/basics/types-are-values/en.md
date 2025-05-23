@@ -14,6 +14,8 @@ A field can be specified with:
 - or something in between the two such as `>=500`, or `!="foo"` - not concrete,
   but more specific than a basic type.
 
+<!--more-->
+
 The following examples show
 a **CUE schema**;
 a typical **CUE constraint** that *refines* the schema;

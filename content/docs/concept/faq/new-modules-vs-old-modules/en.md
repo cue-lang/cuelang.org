@@ -19,6 +19,8 @@ This guide answers those frequently-asked questions,
 and includes extra information about CUE's transition from "old" to "new"
 modules -- and how the transition affects your CUE.
 
+<!--more-->
+
 ## What do you mean by "old" and "new" modules?
 
 The concept of a module has existed since the early days of CUE, but its

@@ -18,6 +18,8 @@ which specifies the identifer that *must* be used when
 referencing the imported package inside the file.
 Named imports can help avoid variable shadowing.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export
 cmp stdout out

@@ -11,6 +11,8 @@ but not if it is on any other level.
 (A neater way to encode the `level` constraints would be to use *bounds*, as
 shown on the next page.)
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

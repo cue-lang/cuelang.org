@@ -15,6 +15,8 @@ function
 [`len()`]({{< relref "docs/reference/glossary#len-built-in-function" >}})
 to calculate the lengths of different CUE types.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue export
 cmp stdout out

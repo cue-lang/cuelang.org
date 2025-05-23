@@ -12,6 +12,8 @@ The full text of this site can be searched by selecting the search icon
 words or phrases that you're searching for, and use a leading dash (`-`) to
 rule out pages containing any unwanted words:
 
+<!--more-->
+
 - Pages containing a specific word:
   [`json`](/search/?q=json)
 - Pages containing multiple, independent words:

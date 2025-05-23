@@ -15,6 +15,8 @@ function
 [`len()`]({{< relref "docs/reference/glossary#len-built-in-function" >}})
 to calculate the lengths of different CUE types.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

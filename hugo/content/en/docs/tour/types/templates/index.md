@@ -17,6 +17,8 @@ Currently, patterns must either be instances of `string`, or must be `_`.
 Including an alias in the pattern's square brackets makes the label of each
 matched field available inside the template.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 job: {

@@ -11,6 +11,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to produce a list of unique strings from a list of
 strings that might include duplicate values.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue eval
 cmp stdout out

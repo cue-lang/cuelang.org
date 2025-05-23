@@ -14,6 +14,8 @@ after you have installed it successfully.
 under development and its behaviour might change from one release to the next.
 {{</info>}}
 
+<!--more-->
+
 ## Prerequisites
 
 - You need the low-level library

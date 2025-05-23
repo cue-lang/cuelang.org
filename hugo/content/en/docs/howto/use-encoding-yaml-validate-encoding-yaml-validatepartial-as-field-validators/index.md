@@ -20,6 +20,8 @@ constraints by checking that the data and schema unify successfully.
 `encoding.yaml/Validate` also requires that all non-optional fields are
 present.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

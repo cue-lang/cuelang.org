@@ -20,6 +20,8 @@ be loaded at evaluation time, and is available by default from version
 cue version
 {{{end}}}
 
+<!--more-->
+
 ## Embedding files in an evaluation
 
 {{{with step}}}

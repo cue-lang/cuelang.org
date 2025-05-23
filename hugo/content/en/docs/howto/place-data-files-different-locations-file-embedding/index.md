@@ -15,6 +15,8 @@ allowing their contents to be placed at arbitrary locations in an evaluation;
 to be validated by different constraints;
 and to have their data used elsewhere in the configuration.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 @extern(embed)

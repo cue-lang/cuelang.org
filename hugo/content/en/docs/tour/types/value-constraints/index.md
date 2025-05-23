@@ -15,6 +15,8 @@ field reduce the set of potential values that the field could be assigned,
 until either a specific, concrete value is assigned, or one can be inferred
 from the unification of all the value constraints that apply to the field.
 
+<!--more-->
+
 CUE's basic types (such as `int`, `string`, `bool`, and others introduced
 earlier) can be used as value constraints but, by themselves, cannot result in
 a concrete value being inferred. This is because the basic types (except

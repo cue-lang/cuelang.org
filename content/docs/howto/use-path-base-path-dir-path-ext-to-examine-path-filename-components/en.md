@@ -14,6 +14,8 @@ demonstrates how to use the built-in functions
 [`path.Ext`](https://pkg.go.dev/cuelang.org/go/pkg/path#Ext)
 to access components of a file's name and its path.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 # eval is used so the output's leaf values are horizontally aligned, allowing
 # the user to more easily compare "Path" and "Dir" values visually

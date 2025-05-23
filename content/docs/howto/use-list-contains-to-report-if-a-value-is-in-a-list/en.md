@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.Contains`](https://pkg.go.dev/cuelang.org/go/pkg/list#Contains)
 to report if a simple or composite value is contained in a list.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

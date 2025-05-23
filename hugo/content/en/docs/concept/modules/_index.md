@@ -11,6 +11,8 @@ They can be published to a registry, which allows users to fetch and work with t
 Learn about modules using these recommended guides, or
 browse through all the {{<tag modules>}} pages listed below:
 
+<!--more-->
+
 ## Recommended guides
 
 {{<cards>}}

@@ -39,6 +39,8 @@ The `cue export` command can be given any number of inputs to evaluate via file
 or package arguments. This page explains how the command interprets, assembles,
 and combines these inputs when handed different kinds and quantities of input.
 
+<!--more-->
+
 ## No input arguments
 
 When `cue export` is invoked with zero arguments

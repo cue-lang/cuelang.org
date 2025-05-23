@@ -11,6 +11,8 @@ depends.
 It helps to get a top-down understanding and frame of reference,
 but it is not necessary for learning the language.
 
+<!--more-->
+
 <!--
 ## Types ~~and~~ are values
 -->

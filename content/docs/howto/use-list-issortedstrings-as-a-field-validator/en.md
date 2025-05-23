@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.IsSortedStrings`](https://pkg.go.dev/cuelang.org/go/pkg/list#IsSortedStrings)
 as a field validator to assert that lists of strings are sorted alphabetically.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

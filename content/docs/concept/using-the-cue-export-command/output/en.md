@@ -8,6 +8,8 @@ toc_hide: false
 By default, a successful `cue export` displays the evaluation result on its
 standard output stream, encoded in JSON:
 
+<!--more-->
+
 {{{with code "en" "default output"}}}
 exec cue export
 cmp stdout out

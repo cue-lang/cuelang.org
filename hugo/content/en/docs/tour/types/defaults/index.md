@@ -13,6 +13,8 @@ preference marker `*`.
 CUE will select and use the default when a value is required but none has been
 explicitly specified.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 #def: string | int | *1

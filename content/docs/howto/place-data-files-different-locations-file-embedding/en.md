@@ -15,6 +15,8 @@ allowing their contents to be placed at arbitrary locations in an evaluation;
 to be validated by different constraints;
 and to have their data used elsewhere in the configuration.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top-left top-right top-right bottom
 # A module is required to use embedding, but we don't demonstrate it here so

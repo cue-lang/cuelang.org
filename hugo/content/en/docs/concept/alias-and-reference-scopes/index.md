@@ -18,6 +18,8 @@ looks like <code>expected.yaml</code>, but instead I end up with these
 "incomplete value" errors!
 {{< /quote >}}
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="problem1.cue" language="cue" area="top-left" >}}
 #Metadata: {

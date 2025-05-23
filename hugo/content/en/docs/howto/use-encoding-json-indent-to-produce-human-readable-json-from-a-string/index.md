@@ -14,6 +14,8 @@ demonstrates how to use the built-in function
 to transform JSON from a compact, single-line form held in a string into JSON
 with insignificant whitespace added that makes it easier for humans to read.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example

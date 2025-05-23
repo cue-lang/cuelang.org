@@ -16,6 +16,8 @@ CUE also provides
 that produce an `int` by calculating *integer division and remainder*.
 They support Euclidean division (`div` / `mod`) and truncated division (`quo` / `rem`).
 
+<!--more-->
+
 {{{with code "en" "operators"}}}
 exec cue eval operators.cue
 cmp stdout out

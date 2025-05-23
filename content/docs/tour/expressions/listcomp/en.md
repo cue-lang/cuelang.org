@@ -10,6 +10,8 @@ List comprehensions are constructed from
 They can be combined in any order,
 on a single line or split across multiple lines.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue --out cue
 cmp stdout out

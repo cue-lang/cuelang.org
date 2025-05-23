@@ -21,6 +21,8 @@ cue version v0.13.0
 ...
 ```
 
+<!--more-->
+
 ## Embedding files in an evaluation
 
 {{< step stepNumber="1" >}}

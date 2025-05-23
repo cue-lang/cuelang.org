@@ -17,6 +17,8 @@ A definition also tells CUE the complete set of allowed fields in a struct.\
 Referring to a definition **closes** any structs and lists recursively.
 Structs and lists can be left **open** using `...`.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval -ic file.cue
 cmp stdout out
