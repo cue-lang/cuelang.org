@@ -25,7 +25,7 @@ giving the issue's title a "`cuelang.org: `" prefix.
 
 #### To run `hugo` alone
 
-* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.128.2`
+* [Hugo](https://github.com/gohugoio/hugo/releases) `== v0.147.6`
   (["extended"](https://gohugo.io/troubleshooting/faq/#i-get-this-feature-is-not-available-in-your-current-hugo-version)
   binary version)
 * [NodeJS](https://nodejs.org/) `v20.x`
