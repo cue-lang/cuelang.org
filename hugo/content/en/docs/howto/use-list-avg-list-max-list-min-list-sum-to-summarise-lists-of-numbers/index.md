@@ -17,6 +17,8 @@ to calculate various simple summary statistics for a list of numbers including
 the list's arithmetic mean, its maximum and minimum values, and the sum of its
 values.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="left" >}}
 package example

@@ -18,6 +18,8 @@ looks like <code>expected.yaml</code>, but instead I end up with these
 "incomplete value" errors!
 {{< /quote >}}
 
+<!--more-->
+
 {{{with code "en" "q1"}}}
 ! exec cue export problem1.cue --out yaml
 cmp stderr out

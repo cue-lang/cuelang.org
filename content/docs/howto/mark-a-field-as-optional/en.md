@@ -16,6 +16,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates using an **optional field** marker to constrain a field's value -
 *but only if it is present*.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 ! exec cue vet -c .:example data.yml
 cmp stderr out.err

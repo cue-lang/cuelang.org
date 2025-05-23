@@ -11,6 +11,8 @@ results in no other value being provided.
 
 This guide demonstrates CUE's **default value** syntax.
 
+<!--more-->
+
 ## Specifing defaults
 
 Specify a default by marking one element of a **disjunction** with an asterisk

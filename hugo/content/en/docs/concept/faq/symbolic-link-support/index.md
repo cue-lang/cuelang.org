@@ -12,6 +12,8 @@ However, symlinks are ignored when they are part of a CUE module published to
 
 This guide answers some questions about CUE's support for symlinks.
 
+<!--more-->
+
 ## Can I use symlinks to help organise my CUE code?
 
 **Yes**.

@@ -14,6 +14,8 @@ A pattern constraint doesn't *specify* those fields which match its pattern.\
 For instance, the pattern constraint "`[string]: 42`" doesn't bring *every* possible `string`
 field into existence!
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 #nofmt https://github.com/cue-lang/cue/issues/722
 

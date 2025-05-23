@@ -10,6 +10,8 @@ a value can't be calculated because there's insufficient information.
 CUE that contains such references or values is referred to as *incomplete* CUE
  -- but only if it's otherwise *valid* CUE.
 
+<!--more-->
+
 Here's an example of incomplete CUE. The value of `connectionString` can't be
 calculated given the information in `database.cue` alone because the value of
 the `password` field isn't concrete - it's only a `string` constraint.

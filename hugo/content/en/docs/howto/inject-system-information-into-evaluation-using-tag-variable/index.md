@@ -17,6 +17,8 @@ into an evaluation that might cause the output to vary. As described in the
 reference, CUE allows information to be introduced, or *injected*, by using tag
 attributes and tag variables. This guide demonstrates tag variables.
 
+<!--more-->
+
 ## Injecting system information
 
 Use system information in CUE by including one or more *tag variables*:

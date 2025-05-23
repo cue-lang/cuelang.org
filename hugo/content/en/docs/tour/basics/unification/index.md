@@ -17,6 +17,8 @@ all values specified for a field must be equal.\
 Within structs, fields are unified recursively.
 Similarly, within lists, elements are unified recursively.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 A: 1

@@ -11,6 +11,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to disallow specific data fields inside an otherwise open
 schema.
 
+<!--more-->
+
 {{{with code "en" "emit"}}}
 ! exec cue vet -c . data.yaml
 cmp stderr out

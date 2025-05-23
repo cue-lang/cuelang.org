@@ -16,6 +16,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates using the **required field** marker in a schema to make sure that a
 field is present in data.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package example

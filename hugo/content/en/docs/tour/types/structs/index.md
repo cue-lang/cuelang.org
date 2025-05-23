@@ -20,6 +20,8 @@ specified.
 A **required field constraint** (`field!: value`) requires that the field be
 specified as a regular field if it's exported.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 A: {

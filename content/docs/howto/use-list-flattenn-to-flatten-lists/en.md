@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.FlattenN`](https://pkg.go.dev/cuelang.org/go/pkg/list#FlattenN)
 to flatten a list by expanding its list elements by a specified depth.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

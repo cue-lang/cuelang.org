@@ -14,6 +14,8 @@ don't have any way to represent non-concrete values.
 Constraining a regular field with top brings that field into existence,
 whilst allowing its value to be constrained and defined elsewhere.
 
+<!--more-->
+
 {{{with code "en" "top"}}}
 #location top-left top-right bottom
 

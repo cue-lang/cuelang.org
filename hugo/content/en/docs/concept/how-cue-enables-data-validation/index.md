@@ -19,6 +19,8 @@ deliver fine grained control.
 
 This guide demonstrates some of the data validation capabilities of the `cue` command.
 
+<!--more-->
+
 ## CUE makes data validation *simple*
 
 Validating data files with the `cue` command is easy. All we do is:

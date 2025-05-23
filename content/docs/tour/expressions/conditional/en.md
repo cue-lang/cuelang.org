@@ -5,6 +5,8 @@ weight: 40
 
 Field comprehensions can be used to add fields conditionally.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 ! exec cue export file.cue stock.yaml
 cmp stderr out

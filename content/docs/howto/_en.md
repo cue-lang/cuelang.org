@@ -18,6 +18,8 @@ tooling, and include:
 - {{< tag "encodings" >}} -- guides that explain how to encode and decode
   information stored in languages other than CUE
 
+<!--more-->
+
 Use this interface to browse and search through the contents, titles, examples,
 and tags of the guides, and to narrow down the list of guides to a specific
 topic:

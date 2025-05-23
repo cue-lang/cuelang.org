@@ -12,6 +12,8 @@ A bound is expressed using comparison operators such as `>`, `<=`, and `!=`.
 It permits values where the comparison would return `true`,
 and we say that *the bound is defined* for these values.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 #floatOver5:  >5.0   // type: float

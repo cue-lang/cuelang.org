@@ -15,6 +15,8 @@ broken.
 This can prove useful for template authors who know that a user will provide
 one out of several fields, but they may not know *which* one.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 x: 200

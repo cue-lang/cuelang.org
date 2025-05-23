@@ -12,6 +12,8 @@ Selectors can be used if a field name is
 In other cases, including computed references and non-valid identifiers,
 index expressions can be used.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 one:   #n.a & #n["a"] // Equivalent references

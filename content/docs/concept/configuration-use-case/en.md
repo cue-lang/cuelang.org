@@ -16,6 +16,8 @@ always the same regardless of the order in which it is carried out
 (it is associative, commutative and idempotent).
 This property is the foundation for many other favorable properties, as discussed below.
 
+<!--more-->
+
 
 ## Core issues addressed by CUE
 

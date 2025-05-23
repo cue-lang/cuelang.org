@@ -14,6 +14,8 @@ A pattern constraint doesn't *specify* those fields which match its pattern.\
 For instance, the pattern constraint "`[string]: 42`" doesn't bring *every* possible `string`
 field into existence!
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 // Specify fields concisely ...

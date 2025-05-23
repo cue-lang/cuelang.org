@@ -28,6 +28,8 @@ There is no value lattice.
 This limits these standards in various ways.
 <!-- There is no or very limited possibility for boilerplate removal. -->
 
+<!--more-->
+
 ## Core issues addressed by CUE
 
 ### Validating backwards compatibility

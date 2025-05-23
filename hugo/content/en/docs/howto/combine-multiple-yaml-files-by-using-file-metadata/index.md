@@ -12,6 +12,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the `cue` command to combine multiple YAML files by
 making reference to the files' metadata.
 
+<!--more-->
+
 The **`TERMINAL`** section shows the use of:
 - the `--with-context` parameter, which makes information about each input file
   available as metadata

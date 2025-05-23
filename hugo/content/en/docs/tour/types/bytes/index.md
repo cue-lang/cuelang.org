@@ -19,6 +19,8 @@ byte literals also allow these escape sequences:
 Bytes are represented as Base64 when exporting concrete data to a format such as JSON or YAML.\
 To avoid this, interpolate bytes inside a string value.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 aString: "A string"

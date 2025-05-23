@@ -17,6 +17,8 @@ which declares Viola's name and age, and the `person` constraint which
 additionally declares the `human` field.
 This specification uses the **explicit unification operator:** `&`.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue -e viola
 cmp stdout out

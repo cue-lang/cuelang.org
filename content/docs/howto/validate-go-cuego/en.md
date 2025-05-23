@@ -13,6 +13,8 @@ This guide demonstrates how to use the
 API to validate Go values against CUE constraints expressed in
 [Go struct tags](https://go.dev/ref/spec#Struct_types).
 
+<!--more-->
+
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild

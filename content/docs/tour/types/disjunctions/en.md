@@ -16,6 +16,8 @@ it must unify successfully with *only one* of the disjunction's elements.
 <!-- TODO: should we relax or refine this wording,
 given that `x: 1 & ( 1 | int )` exports successfully? -->
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval -ic file.cue
 cmp stdout out

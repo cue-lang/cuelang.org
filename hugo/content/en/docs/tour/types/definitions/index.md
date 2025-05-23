@@ -17,6 +17,8 @@ A definition also tells CUE the complete set of allowed fields in a struct.\
 Referring to a definition **closes** any structs and lists recursively.
 Structs and lists can be left **open** using `...`.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 message: "Hello, \(#Name)!"

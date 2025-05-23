@@ -11,6 +11,8 @@ The
 [standard library package overview](https://pkg.go.dev/cuelang.org/go/pkg#pkg-overview)
 links to details and examples for each package.
 
+<!--more-->
+
 Some commonly used packages include:
 
 - [`list`](https://pkg.go.dev/cuelang.org/go/pkg/list#section-documentation):

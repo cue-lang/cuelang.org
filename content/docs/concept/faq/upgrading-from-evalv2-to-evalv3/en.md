@@ -34,6 +34,8 @@ of these bugs are already
 [fixed in `evalv3`](https://github.com/cue-lang/cue/issues?q=is%3Aissue%20label%3Aevalv3-win),
 with more improvements still to come.
 
+<!--more-->
+
 ## How can I switch to `evalv3`?
 
 The most reliable way to get started using `evalv3` is to install or use

@@ -14,6 +14,8 @@ situations. Ensuring that the values in your YAML file are valid is essential to
 avoid configuration-related errors. This How-to Guide checks and ensures each
 value in a YAML file is the _data type_ it's supposed to be, using the CUE command line.
 
+<!--more-->
+
 ## Prerequisites
 
 -   You have [CUE installed]({{< relref "docs/introduction/installation" >}})

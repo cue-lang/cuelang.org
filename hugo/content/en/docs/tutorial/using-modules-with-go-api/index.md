@@ -22,6 +22,8 @@ Along the way you will:
 - Use `cue mod tidy` to fetch and organise your module's dependencies
 - Load your CUE using the Go API working in a modules-aware mode
 
+<!--more-->
+
 ## Prerequisites
 
 - **Access to the [Central Registry](https://registry.cue.works)** -- if you

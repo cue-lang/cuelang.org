@@ -16,6 +16,8 @@ If you're new to CUE then start by reading the
 then try out some tutorials specially
 [chosen for you]({{< relref "new-to-cue" >}}).
 
+<!--more-->
+
 Use this interface to browse and search through the contents, titles, examples,
 and tags of the tutorials, and to narrow down the list of tutorials to a
 specific topic:

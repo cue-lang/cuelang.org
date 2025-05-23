@@ -15,6 +15,8 @@ An integer literal (e.g. `4`) is only compatible with `int`.\
 A floating point literal (e.g. `5.0`) is only compatible with `float`,
 even if it is a whole number.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval -i file.cue
 cmp stdout out

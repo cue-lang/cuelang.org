@@ -18,6 +18,8 @@ The Go code shown here is a limited code generator and,
 as presented, it generates Go structs from simple CUE definitions.
 It could be adapted to other schema-walking tasks - not just code generation.
 
+<!--more-->
+
 ## Initialize Go and CUE modules
 
 {{{with step}}}

@@ -8,6 +8,8 @@ You can also check out the official CUE YouTube channel where we regularly
 upload our community calls, conference talks, and live streams:
 [youtube.com/@cuelang](https://www.youtube.com/@cuelang)
 
+<!--more-->
+
 ## 2025
 
 - **The CUE registry: Versioning Now and Beyond**\

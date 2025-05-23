@@ -8,6 +8,8 @@ toc_hide: false
 As described on [the previous page]({{< relref "inputs" >}}), each `cue export`
 invocation first identifies and reads its inputs.
 
+<!--more-->
+
 ## Inputs must be readable
 
 If any of the inputs can't be read, the command fails with an error message:

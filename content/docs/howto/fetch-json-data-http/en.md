@@ -54,6 +54,8 @@ This guide demonstrates how to use a CUE workflow command to fetch some JSON ove
 It is converted from its JSON representation into data,
 which is then used by the workflow command.
 
+<!--more-->
+
 <!-- TODO: consider demonstrating a validation failure when https://github.com/cue-lang/cue/issues/3186 is resolved -->
 
 {{{with upload "en" "cc"}}}

@@ -8,6 +8,8 @@ in both their single- and multi-line forms.
 
 Any valid CUE expression may be used inside escaped parentheses.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 m:     "You are \(#cost-#budget) dollars over budget!"

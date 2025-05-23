@@ -14,6 +14,8 @@ demonstrates how to use the built-in functions
 [`path.Ext`](https://pkg.go.dev/cuelang.org/go/pkg/path#Ext)
 to access components of a file's name and its path.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example

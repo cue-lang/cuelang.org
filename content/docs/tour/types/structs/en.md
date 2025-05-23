@@ -20,6 +20,8 @@ specified.
 A **required field constraint** (`field!: value`) requires that the field be
 specified as a regular field if it's exported.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 ! exec cue export file.cue
 cmp stderr out

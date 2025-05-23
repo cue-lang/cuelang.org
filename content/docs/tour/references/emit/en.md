@@ -11,6 +11,8 @@ This allows CUE configurations to define any type or value at the top level
 (just like JSON), whilst keeping CUE optimised for the most common use case of
 defining structs.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out
