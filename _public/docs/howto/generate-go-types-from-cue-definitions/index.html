@@ -1,0 +1,1752 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="CUE v0.12.0 introduced an experimental new command: gengotypes. This command generates Go types from CUE definitions and places them in .go files. It uses …">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/howto/generate-go-types-from-cue-definitions/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>Generating Go types from CUE definitions | CUE</title><meta property="og:url" content="/docs/howto/generate-go-types-from-cue-definitions/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="Generating Go types from CUE definitions">
+  <meta property="og:description" content="CUE v0.12.0 introduced an experimental new command: gengotypes. This command generates Go types from CUE definitions and places them in .go files. It uses sensible defaults for the generated Go code that you can override by configuring various CUE attributes.
+This guide shows you how to use the cue exp gengotypes command.
+Why was gengotypes introduced? When a Go program works with CUE it can be useful to declare Go types which mirror its CUE schemas.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T05:36:56+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="Generating Go types from CUE definitions">
+  <meta name="twitter:description" content="CUE v0.12.0 introduced an experimental new command: gengotypes. This command generates Go types from CUE definitions and places them in .go files. It uses sensible defaults for the generated Go code that you can override by configuring various CUE attributes.
+This guide shows you how to use the cue exp gengotypes command.
+Why was gengotypes introduced? When a Go program works with CUE it can be useful to declare Go types which mirror its CUE schemas.">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="Generating Go types from CUE definitions">
+<meta itemprop="description" content="CUE v0.12.0 introduced an experimental new command: gengotypes. This command generates Go types from CUE definitions and places them in .go files. It uses sensible defaults for the generated Go code that you can override by configuring various CUE attributes.
+This guide shows you how to use the cue exp gengotypes command.
+Why was gengotypes introduced? When a Go program works with CUE it can be useful to declare Go types which mirror its CUE schemas.">
+
+    
+        <meta itemprop="dateModified" content="2025-04-30T05:36:56+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="encodings," />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/howto/">How-to Guides</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">Generating Go types from CUE definitions</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="CUE v0.12.0 introduced an experimental new command:
+gengotypes.
+This command generates Go types from CUE definitions and places them in .go
+files. It uses sensible defaults for the generated Go code that you can
+override by configuring various CUE attributes.
+This guide shows you how to use the cue exp gengotypes command.
+
+    
+
+
+
+
+    
+
+Why was gengotypes introduced?
+When a Go program works with CUE it can be useful to declare Go types which
+mirror its CUE schemas.
+For example, if the program loads a YAML configuration file and validates it
+using a CUE schema it&rsquo;s often useful to hold the config as a Go struct value
+that controls how the program should behave.
+Using gengotypes allows you to declare your schemas in CUE and automatically
+derive compatible Go types &ndash; without having to repeat yourself or maintain two
+versions of the same structure.
+
+    
+
+
+
+
+    
+
+Generating Go types
+
+
+
+
+1Start with some CUE that contains at least one definition:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    pets.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package pet
+
+// These are the only pet types we can handle.
+petTypes: [&#34;dog&#34;, &#34;cat&#34;, &#34;goldfish&#34;]
+
+// A dog tracks information we hold about each dog.
+#dog: {
+	// A dog has at least one name.
+	name!: string
+	age?:  float &amp; &lt;30
+}
+
+
+
+
+Hidden definitions (fields with names that start _#) are ignored by the
+gengotypes command.
+
+
+
+
+
+
+
+2Run the cue exp gengotypes command targetting the single CUE package in the
+current directory:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue exp gengotypes .
+
+The command is silent when it succeeds.
+
+
+
+
+
+
+
+3Observe the contents of the cue_types_gen.go file:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    cue_types_gen.go
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            // Code generated by &#34;cue exp gengotypes&#34;; DO NOT EDIT.
+
+package pet
+
+// A dog tracks information we hold about each dog.
+type Dog struct {
+	// A dog has at least one name.
+	Name string `json:&#34;name&#34;`
+
+	Age float64 `json:&#34;age,omitempty&#34;`
+}
+
+
+
+
+Notice these differences between the contents of
+pets.cue
+and
+cue_types_gen.go:
+
+By default, gengotypes ensures the first character of each struct&rsquo;s name is
+upper-cased (#dog vs Dog).
+The top-level regular field petTypes and its comment aren&rsquo;t present in the
+Go file. Only fields inside a definition are translated to Go.
+The optional field age has a numeric constraint in CUE (&lt;30) which can&rsquo;t
+be expressed in the simpler, less powerful Go type system &ndash; so the Go
+encodes a float64 type. Generated Go types are guaranteed to accept any
+value accepted by the CUE definitions but, as with age, they may be more
+general.
+
+
+
+
+
+    
+
+
+
+
+    
+
+Controlling the generated Go
+If you need to control the generated Go package, type, and field names, you can
+use the @go() attribute to specify them in your CUE:
+
+
+
+
+4Add another CUE file, morePets.cue, containing the following code:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    morePets.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package pet
+
+@go(acmecorppets) // Rename this package when emitted as Go.
+
+// A cat represents an instance of a domestic cat.
+#cat: {
+	@go(cat) // Rename this definition when emitted as Go.
+
+	// Cats consider themselves to have a title, not a name.
+	title!:              string @go(Name) // Rename this field when emitted as Go
+	socialMediaAccount!: string @go(-)    // Don&#39;t emit this field as Go.
+}
+
+#horse: {
+	@go(-) // Don&#39;t emit this definition as Go.
+	status: &#34;Unsupported&#34;
+}
+
+
+
+
+
+
+
+
+
+
+5Run the cue exp gengotypes command again:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue exp gengotypes .
+
+
+
+
+
+
+
+6Observe the new contents of the cue_types_gen.go file:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    cue_types_gen.go
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            // Code generated by &#34;cue exp gengotypes&#34;; DO NOT EDIT.
+
+package acmecorppets
+
+// A cat represents an instance of a domestic cat.
+type cat struct {
+	// Cats consider themselves to have a title, not a name.
+	Name string `json:&#34;title&#34;`
+}
+
+// A dog tracks information we hold about each dog.
+type Dog struct {
+	// A dog has at least one name.
+	Name string `json:&#34;name&#34;`
+
+	Age float64 `json:&#34;age,omitempty&#34;`
+}
+
+
+
+
+Notice these differences between the contents of
+morePets.cue
+and the new
+cue_types_gen.go:
+
+At the package level:
+
+The @go(acmecorppets) attribute renamed the generated Go package from
+pet.
+The cue command targetted the whole of the CUE package so the dog-related
+contents of pets.cue are included under the renamed Go package.
+Only a single package-level renaming attribute is needed.
+
+
+Inside #cat:
+
+The definition-level @go(cat) attribute renamed the generated
+Go type from the default that would otherwise have been emitted (Cat).
+The field-level @go(Name) attribute renamed the generated Go field from
+Title.
+The field-level @go(-) attribute caused the socialMediaAccount field to
+be omitted from the generated Go type.
+
+
+Inside #horse, the definition-level @go(-) attribute caused the entire
+definition to be omitted from the generated Go.
+
+You can also use the @go() attribute to control the type of a generated
+field &ndash; see
+cue help exp gengotypes
+for more information.
+
+
+
+
+
+
+
+
+    
+
+The gengotypes command is still in an experimental stage, which means that it
+may be changed or removed at any time. The objective is for the CUE project to
+gain experience through your feedback about this
+experimental command, and then move the feature elsewhere.
+
+
+
+    
+
+
+
+
+    
+
+Related content
+
+Reference: cue help exp gengotypes &ndash;
+the built-in help text for the cue exp gengotypes command
+
+">
+<meta itemprop="wordCount" content="832">
+
+
+                <div class="article__container">
+                    
+
+
+
+
+        <header class="article__header">
+        <div class="article__info"><div class="article__authors">
+
+
+<div class="authors">
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                    
+                        <span class="authors__display-name">Jonathan Matthews</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Jonathan Matthews</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+</div>
+</div><div class="article__tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:encodings"
+                class="tag tag--green">
+                    encodings
+                </a>
+            </li></ul>
+
+</div></div></header>
+
+
+
+                    <div class="article__content">
+                        
+                            <p>CUE v0.12.0 introduced an experimental new command:
+<a href="/docs/reference/command/cue-help-exp-gengotypes/"><code>gengotypes</code></a>.
+This command generates Go types from CUE definitions and places them in <code>.go</code>
+files. It uses sensible defaults for the generated Go code that you can
+override by configuring various CUE attributes.</p>
+<p>This guide shows you how to use the <code>cue exp gengotypes</code> command.</p>
+<h2 id="why-was-gengotypes-introduced">
+    <a href="#why-was-gengotypes-introduced" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Why was <code>gengotypes</code> introduced?</h2>
+<p>When a Go program works with CUE it can be useful to declare Go types which
+mirror its CUE schemas.</p>
+<p>For example, if the program loads a YAML configuration file and validates it
+using a CUE schema it&rsquo;s often useful to hold the config as a Go struct value
+that controls how the program should behave.</p>
+<p>Using <code>gengotypes</code> allows you to declare your schemas in CUE and automatically
+derive compatible Go types &ndash; without having to repeat yourself or maintain two
+versions of the same structure.</p>
+<h2 id="generating-go-types">
+    <a href="#generating-go-types" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Generating Go types</h2>
+
+
+
+
+<div class="step" id="step-1" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-1" data-step-number="1">1</a><div class="step__content"><p>Start with some CUE that contains at least one definition:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="pets.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="pets.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>pets.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="pets.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBwZXQKCi8vIFRoZXNlIGFyZSB0aGUgb25seSBwZXQgdHlwZXMgd2UgY2FuIGhhbmRsZS4KcGV0VHlwZXM6IFsiZG9nIiwgImNhdCIsICJnb2xkZmlzaCJdCgovLyBBIGRvZyB0cmFja3MgaW5mb3JtYXRpb24gd2UgaG9sZCBhYm91dCBlYWNoIGRvZy4KI2RvZzogewoJLy8gQSBkb2cgaGFzIGF0IGxlYXN0IG9uZSBuYW1lLgoJbmFtZSE6IHN0cmluZwoJYWdlPzogIGZsb2F0ICYgPDMwCn0=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> pet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// These are the only pet types we can handle.</span>
+</span></span><span style="display:flex;"><span>petTypes<span style="font-weight:bold">:</span> <span style="font-weight:bold">[</span><span style="color:#b84">&#34;dog&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;cat&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;goldfish&#34;</span><span style="font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// A dog tracks information we hold about each dog.</span>
+</span></span><span style="display:flex;"><span>#dog<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// A dog has at least one name.</span>
+</span></span><span style="display:flex;"><span>	name<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>	age<span style="font-weight:bold">?:</span>  <span style="color:#458;font-weight:bold">float</span> <span style="font-weight:bold">&amp;</span> <span style="font-weight:bold">&lt;</span><span style="color:#099">30</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p><em>Hidden</em> definitions (fields with names that start <code>_#</code>) are ignored by the
+<code>gengotypes</code> command.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-2" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-2" data-step-number="2">2</a><div class="step__content"><p>Run the <code>cue exp gengotypes</code> command targetting the single CUE package in the
+current directory:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGV4cCBnZW5nb3R5cGVzIC4=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue exp gengotypes .</span></span></code></pre></div></div>
+</div>
+<p>The command is silent when it succeeds.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-3" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-3" data-step-number="3">3</a><div class="step__content"><p>Observe the contents of the <code>cue_types_gen.go</code> file:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="cue_types_gen.go"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="cue_types_gen.go">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>cue_types_gen.go
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="cue_types_gen.go"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Ly8gQ29kZSBnZW5lcmF0ZWQgYnkgImN1ZSBleHAgZ2VuZ290eXBlcyI7IERPIE5PVCBFRElULgoKcGFja2FnZSBwZXQKCi8vIEEgZG9nIHRyYWNrcyBpbmZvcm1hdGlvbiB3ZSBob2xkIGFib3V0IGVhY2ggZG9nLgp0eXBlIERvZyBzdHJ1Y3QgewoJLy8gQSBkb2cgaGFzIGF0IGxlYXN0IG9uZSBuYW1lLgoJTmFtZSBzdHJpbmcgYGpzb246Im5hbWUiYAoKCUFnZSBmbG9hdDY0IGBqc29uOiJhZ2Usb21pdGVtcHR5ImAKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Code generated by &#34;cue exp gengotypes&#34;; DO NOT EDIT.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">package</span> pet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// A dog tracks information we hold about each dog.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">type</span> Dog <span style="font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// A dog has at least one name.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	Name <span style="color:#458;font-weight:bold">string</span> <span style="color:#b84">`json:&#34;name&#34;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Age <span style="color:#458;font-weight:bold">float64</span> <span style="color:#b84">`json:&#34;age,omitempty&#34;`</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p>Notice these differences between the contents of
+<a href="/docs/howto/generate-go-types-from-cue-definitions/#step-1"><code>pets.cue</code></a>
+and
+<a href="/docs/howto/generate-go-types-from-cue-definitions/#step-3"><code>cue_types_gen.go</code></a>:</p>
+<ul>
+<li>By default, <code>gengotypes</code> ensures the first character of each struct&rsquo;s name is
+upper-cased (<code>#dog</code> vs <code>Dog</code>).</li>
+<li>The top-level regular field <code>petTypes</code> and its comment aren&rsquo;t present in the
+Go file. Only fields inside a definition are translated to Go.</li>
+<li>The optional field <code>age</code> has a numeric constraint in CUE (<code>&lt;30</code>) which can&rsquo;t
+be expressed in the simpler, less powerful Go type system &ndash; so the Go
+encodes a <code>float64</code> type. Generated Go types are guaranteed to accept any
+value accepted by the CUE definitions but, as with <code>age</code>, they may be more
+general.</li>
+</ul>
+</div>
+</div>
+
+<h2 id="controlling-the-generated-go">
+    <a href="#controlling-the-generated-go" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Controlling the generated Go</h2>
+<p>If you need to control the generated Go package, type, and field names, you can
+use the <code>@go()</code> attribute to specify them in your CUE:</p>
+
+
+
+
+<div class="step" id="step-4" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-4" data-step-number="4">4</a><div class="step__content"><p>Add another CUE file, <code>morePets.cue</code>, containing the following code:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="morepets.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="morePets.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>morePets.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="morepets.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBwZXQKCkBnbyhhY21lY29ycHBldHMpIC8vIFJlbmFtZSB0aGlzIHBhY2thZ2Ugd2hlbiBlbWl0dGVkIGFzIEdvLgoKLy8gQSBjYXQgcmVwcmVzZW50cyBhbiBpbnN0YW5jZSBvZiBhIGRvbWVzdGljIGNhdC4KI2NhdDogewoJQGdvKGNhdCkgLy8gUmVuYW1lIHRoaXMgZGVmaW5pdGlvbiB3aGVuIGVtaXR0ZWQgYXMgR28uCgoJLy8gQ2F0cyBjb25zaWRlciB0aGVtc2VsdmVzIHRvIGhhdmUgYSB0aXRsZSwgbm90IGEgbmFtZS4KCXRpdGxlITogICAgICAgICAgICAgIHN0cmluZyBAZ28oTmFtZSkgLy8gUmVuYW1lIHRoaXMgZmllbGQgd2hlbiBlbWl0dGVkIGFzIEdvCglzb2NpYWxNZWRpYUFjY291bnQhOiBzdHJpbmcgQGdvKC0pICAgIC8vIERvbid0IGVtaXQgdGhpcyBmaWVsZCBhcyBHby4KfQoKI2hvcnNlOiB7CglAZ28oLSkgLy8gRG9uJ3QgZW1pdCB0aGlzIGRlZmluaXRpb24gYXMgR28uCglzdGF0dXM6ICJVbnN1cHBvcnRlZCIKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> pet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@go(acmecorppets) <span style="color:#998;font-style:italic">// Rename this package when emitted as Go.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// A cat represents an instance of a domestic cat.</span>
+</span></span><span style="display:flex;"><span>#cat<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	@go(cat) <span style="color:#998;font-style:italic">// Rename this definition when emitted as Go.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Cats consider themselves to have a title, not a name.</span>
+</span></span><span style="display:flex;"><span>	title<span style="font-weight:bold">!:</span>              <span style="color:#458;font-weight:bold">string</span> @go(Name) <span style="color:#998;font-style:italic">// Rename this field when emitted as Go</span>
+</span></span><span style="display:flex;"><span>	socialMediaAccount<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">string</span> @go(<span style="font-weight:bold">-</span>)    <span style="color:#998;font-style:italic">// Don&#39;t emit this field as Go.</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#horse<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	@go(<span style="font-weight:bold">-</span>) <span style="color:#998;font-style:italic">// Don&#39;t emit this definition as Go.</span>
+</span></span><span style="display:flex;"><span>	status<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;Unsupported&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-5" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-5" data-step-number="5">5</a><div class="step__content"><p>Run the <code>cue exp gengotypes</code> command again:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGV4cCBnZW5nb3R5cGVzIC4=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue exp gengotypes .</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-6" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-6" data-step-number="6">6</a><div class="step__content"><p>Observe the new contents of the <code>cue_types_gen.go</code> file:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="cue_types_gen.go"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="cue_types_gen.go">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>cue_types_gen.go
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="cue_types_gen.go"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Ly8gQ29kZSBnZW5lcmF0ZWQgYnkgImN1ZSBleHAgZ2VuZ290eXBlcyI7IERPIE5PVCBFRElULgoKcGFja2FnZSBhY21lY29ycHBldHMKCi8vIEEgY2F0IHJlcHJlc2VudHMgYW4gaW5zdGFuY2Ugb2YgYSBkb21lc3RpYyBjYXQuCnR5cGUgY2F0IHN0cnVjdCB7CgkvLyBDYXRzIGNvbnNpZGVyIHRoZW1zZWx2ZXMgdG8gaGF2ZSBhIHRpdGxlLCBub3QgYSBuYW1lLgoJTmFtZSBzdHJpbmcgYGpzb246InRpdGxlImAKfQoKLy8gQSBkb2cgdHJhY2tzIGluZm9ybWF0aW9uIHdlIGhvbGQgYWJvdXQgZWFjaCBkb2cuCnR5cGUgRG9nIHN0cnVjdCB7CgkvLyBBIGRvZyBoYXMgYXQgbGVhc3Qgb25lIG5hbWUuCglOYW1lIHN0cmluZyBganNvbjoibmFtZSJgCgoJQWdlIGZsb2F0NjQgYGpzb246ImFnZSxvbWl0ZW1wdHkiYAp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Code generated by &#34;cue exp gengotypes&#34;; DO NOT EDIT.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">package</span> acmecorppets
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// A cat represents an instance of a domestic cat.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">type</span> cat <span style="font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Cats consider themselves to have a title, not a name.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	Name <span style="color:#458;font-weight:bold">string</span> <span style="color:#b84">`json:&#34;title&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// A dog tracks information we hold about each dog.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">type</span> Dog <span style="font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// A dog has at least one name.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	Name <span style="color:#458;font-weight:bold">string</span> <span style="color:#b84">`json:&#34;name&#34;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Age <span style="color:#458;font-weight:bold">float64</span> <span style="color:#b84">`json:&#34;age,omitempty&#34;`</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p>Notice these differences between the contents of
+<a href="/docs/howto/generate-go-types-from-cue-definitions/#step-4"><code>morePets.cue</code></a>
+and the new
+<a href="/docs/howto/generate-go-types-from-cue-definitions/#step-6"><code>cue_types_gen.go</code></a>:</p>
+<ul>
+<li>At the package level:
+<ul>
+<li>The <code>@go(acmecorppets)</code> attribute renamed the generated Go package from
+<code>pet</code>.</li>
+<li>The <code>cue</code> command targetted the whole of the CUE package so the dog-related
+contents of <code>pets.cue</code> are included under the renamed Go package.
+Only a single package-level renaming attribute is needed.</li>
+</ul>
+</li>
+<li>Inside <code>#cat</code>:
+<ul>
+<li>The definition-level <code>@go(cat)</code> attribute renamed the generated
+Go type from the default that would otherwise have been emitted (<code>Cat</code>).</li>
+<li>The field-level <code>@go(Name)</code> attribute renamed the generated Go field from
+<code>Title</code>.</li>
+<li>The field-level <code>@go(-)</code> attribute caused the <code>socialMediaAccount</code> field to
+be omitted from the generated Go type.</li>
+</ul>
+</li>
+<li>Inside <code>#horse</code>, the definition-level <code>@go(-)</code> attribute caused the entire
+definition to be omitted from the generated Go.</li>
+</ul>
+<p>You can also use the <code>@go()</code> attribute to control the <em>type</em> of a generated
+field &ndash; see
+<a href="/docs/reference/command/cue-help-exp-gengotypes/"><code>cue help exp gengotypes</code></a>
+for more information.</p>
+</div>
+</div>
+
+<div class="note note--warn" role="alert">
+
+
+
+<svg class="icon note__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--exclamation"></use>
+</svg>
+<div class="note__content">The <code>gengotypes</code> command is still in an experimental stage, which means that it
+may be changed or removed at any time. The objective is for the CUE project to
+gain experience through <a href="/community/">your feedback</a> about this
+experimental command, and then move the feature elsewhere.</div>
+</div>
+
+<h2 id="related-content">
+    <a href="#related-content" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Related content</h2>
+<ul>
+<li>Reference: <a href="/docs/reference/command/cue-help-exp-gengotypes/">cue help exp gengotypes</a> &ndash;
+the built-in help text for the <code>cue exp gengotypes</code> command</li>
+</ul>
+
+                        
+                    </div>
+    <footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/bd0960189fdf13181b98881f7878b9016a8d282c">
+                Last modified April 30, 2025</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__footer-tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:encodings"
+                class="tag tag--green">
+                    encodings
+                </a>
+            </li></ul>
+
+</div><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/howto/generate-go-types-from-cue-definitions/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/generate-go-types-from-cue-definitions/&text=CUE%20v0.12.0%20introduced%20an%20experimental%20new%20command:%20gengotypes.%20This%20command%20generates%20Go%20types%20from%20CUE%20definitions%20and%20places%20them%20in%20.go%20files.%20It%20uses%20sensible%20defaults%20for%20the%20generated%20Go%20code%20that%20you%20can%20override%20by%20configuring%20various%20CUE%20attributes.%0aThis%20guide%20shows%20you%20how%20to%20use%20the%20cue%20exp%20gengotypes%20command.%0aWhy%20was%20gengotypes%20introduced?%20When%20a%20Go%20program%20works%20with%20CUE%20it%20can%20be%20useful%20to%20declare%20Go%20types%20which%20mirror%20its%20CUE%20schemas.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/generate-go-types-from-cue-definitions/&summary=CUE%20v0.12.0%20introduced%20an%20experimental%20new%20command:%20gengotypes.%20This%20command%20generates%20Go%20types%20from%20CUE%20definitions%20and%20places%20them%20in%20.go%20files.%20It%20uses%20sensible%20defaults%20for%20the%20generated%20Go%20code%20that%20you%20can%20override%20by%20configuring%20various%20CUE%20attributes.%0aThis%20guide%20shows%20you%20how%20to%20use%20the%20cue%20exp%20gengotypes%20command.%0aWhy%20was%20gengotypes%20introduced?%20When%20a%20Go%20program%20works%20with%20CUE%20it%20can%20be%20useful%20to%20declare%20Go%20types%20which%20mirror%20its%20CUE%20schemas.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/howto/generate-cue-from-local-go/" aria-label="Previous - Generating CUE from local Go code">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">Generating CUE from local Go code</span>
+            </a><a class="prevnext__next" href="/docs/howto/handle-errors-go-api/" aria-label="Next - Handling errors in the Go API">
+                <span class="prevnext__text">Handling errors in the Go API</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/popular-guides/" title="Popular guides">
+            <span class="tree__text">Popular guides</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/about-commented-cue-guides/" title="Commented CUE Guides">
+            <span class="tree__text">Commented CUE Guides</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/howto/generate-go-types-from-cue-definitions/" title="Generating Go types from CUE definitions">
+            <span class="tree__text">Generating Go types from CUE definitions</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#why-was-gengotypes-introduced" class="toc__link"><span class="toc__text">Why was <code>gengotypes</code> introduced?</span></a></li>
+    <li class="toc__item"><a href="#generating-go-types" class="toc__link"><span class="toc__text">Generating Go types</span></a></li>
+    <li class="toc__item"><a href="#controlling-the-generated-go" class="toc__link"><span class="toc__text">Controlling the generated Go</span></a></li>
+    <li class="toc__item"><a href="#related-content" class="toc__link"><span class="toc__text">Related content</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fhowto%2Fgenerate-go-types-from-cue-definitions%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+
+
+
+    </body>
+</html>

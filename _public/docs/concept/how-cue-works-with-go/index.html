@@ -1,0 +1,2420 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="CUE is designed to complement and work with the Go programming language. It offers a powerful API that enables Go code to take advantage of CUE’s advanced …">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/concept/how-cue-works-with-go/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>How CUE works with Go | CUE</title><meta property="og:url" content="/docs/concept/how-cue-works-with-go/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="How CUE works with Go">
+  <meta property="og:description" content="CUE is designed to complement and work with the Go programming language. It offers a powerful API that enables Go code to take advantage of CUE’s advanced capabilites. Additionally, CUE makes it easy to use Go as your source of truth by using the cue command to convert Go types to CUE.
+In this guide we’ll demonstrate importing some Kubernetes API code to generate CUE schemas. We’ll also use the API to convert both CUE and non-CUE data to native Go values, and validate some Go data natively with CUE.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="How CUE works with Go">
+  <meta name="twitter:description" content="CUE is designed to complement and work with the Go programming language. It offers a powerful API that enables Go code to take advantage of CUE’s advanced capabilites. Additionally, CUE makes it easy to use Go as your source of truth by using the cue command to convert Go types to CUE.
+In this guide we’ll demonstrate importing some Kubernetes API code to generate CUE schemas. We’ll also use the API to convert both CUE and non-CUE data to native Go values, and validate some Go data natively with CUE.">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="How CUE works with Go">
+<meta itemprop="description" content="CUE is designed to complement and work with the Go programming language. It offers a powerful API that enables Go code to take advantage of CUE&rsquo;s advanced capabilites. Additionally, CUE makes it easy to use Go as your source of truth by using the cue command to convert Go types to CUE.
+In this guide we&rsquo;ll demonstrate importing some Kubernetes API code to generate CUE schemas. We&rsquo;ll also use the API to convert both CUE and non-CUE data to native Go values, and validate some Go data natively with CUE.">
+
+    
+        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="encodings,go api," />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/concept/">Concept Guides</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">How CUE works with Go</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="CUE is designed to complement and work with the Go programming language.
+It offers a powerful API that enables Go code to take advantage of CUE&rsquo;s
+advanced capabilites.
+Additionally, CUE makes it easy to use Go as your source of truth by using the
+cue command to convert Go types to CUE.
+In this guide we&rsquo;ll demonstrate importing some Kubernetes API code to generate
+CUE schemas. We&rsquo;ll also use the API to convert both CUE and non-CUE data to
+native Go values, and validate some Go data natively with CUE.
+
+    
+
+
+
+
+    
+
+Converting Go types to CUE
+If you&rsquo;ve already invested time in developing Go types, you might need them to
+be the source of truth in your system whilst also wanting to validate data that
+matches those types against the more detailed constraints that CUE allows.
+The cue command can help you achieve this as it can convert arbitrary Go types to CUE.
+To demonstrate this, we&rsquo;re going to fetch some Go source code published by the
+Kubernetes project, import some types it defines, and use some of the CUE that
+gets produced.
+Let&rsquo;s start by downloading a specific version of the k8s.io/api module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ go get k8s.io/api/apps/v1@v0.29.3
+...
+
+We use cue get go to generate CUE definitions from the Go types in the k8s.io/api/apps/v1 package:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue get go k8s.io/api/apps/v1
+
+This generates some CUE packages, placing them alongside our main CUE module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ tree -d cue.mod/gen/k8s.io
+cue.mod/gen/k8s.io
+|-- api
+|   |-- apps
+|   |   `-- v1
+|   `-- core
+|       `-- v1
+`-- apimachinery
+    `-- pkg
+        |-- api
+        |   `-- resource
+        |-- apis
+        |   `-- meta
+        |       `-- v1
+...
+
+cue get go
+also has a --local option that generates CUE alongside Go in a main module.
+Within our main module, we can import and refer to the CUE definitions generated from the Go types:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    config.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package config
+
+import (
+	core &#34;k8s.io/api/core/v1&#34;
+	apps &#34;k8s.io/api/apps/v1&#34;
+)
+
+service: [string]:     core.#Service
+deployment: [string]:  apps.#Deployment
+daemonSet: [string]:   apps.#DaemonSet
+statefulSet: [string]: apps.#StatefulSet
+
+
+
+
+
+
+Our configuration is currently empty - but any
+services, deployments, daemonSets, or statefulSets
+that we add will be checked against the schema of the associated Kubernetes type:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue eval
+service: {}
+deployment: {}
+daemonSet: {}
+statefulSet: {}
+
+A more in-depth example demonstrating how to drive Kubernetes configuration
+using CUE can be found in CUE By Example, in
+Controlling Kubernetes with CUE.
+
+The example above relies on generating CUE within the cue.mod/gen directory
+of the CUE module that holds a configuration,
+but we are working on a system for providing schemas for well-known services at
+a well-known location.
+This will remove the need to generate such CUE locally &ndash;
+see discussion #2939 for more details.
+
+    
+
+
+
+
+    
+
+Using CUE&rsquo;s Go API
+The Go API injects the power and expressiveness of CUE into your Go programs,
+allowing them to
+load and validate both CUE and non-CUE data (such as JSON or YAML),
+and to
+check data marshalled by Go, wherever it comes from.
+
+    
+
+
+
+
+    
+
+Loading CUE data
+In this example, we load some data from the following CUE file and display it:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    file.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package example
+
+l: [1, 2, 3]
+v: &#34;hello&#34;
+message: (v): &#34;world!&#34;
+
+
+
+
+
+
+The cuelang.org/go/cue/load package provides a similar interface to the cue
+command for loading CUE.
+Here, we use load.Instances() to load the package in the current directory:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    main.go
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package main
+
+import (
+	&#34;fmt&#34;
+
+	&#34;cuelang.org/go/cue/cuecontext&#34;
+	&#34;cuelang.org/go/cue/load&#34;
+)
+
+func main() {
+	ctx := cuecontext.New()
+	insts := load.Instances([]string{&#34;.&#34;}, nil)
+	v := ctx.BuildInstance(insts[0])
+	fmt.Printf(&#34;%v\n&#34;, v)
+}
+
+
+
+
+
+
+Before running, we add a dependency on the cuelang.org/go module and tidy:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ go get cuelang.org/go@v0.13.0
+...
+$ go mod tidy
+...
+
+Finally, running the Go program displays the CUE data:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ go run .
+{
+	l: [1, 2, 3]
+	v: &#34;hello&#34;
+	message: {
+		hello: &#34;world!&#34;
+	}
+}
+
+CUE values have a default formatter that renders them sensibly.
+
+    
+
+
+
+
+    
+
+Loading non-CUE data
+The API also makes it easy to validate data held in YAML and JSON files.
+This example loads a CUE schema that&rsquo;s embedded in code,
+then a YAML data file,
+and then validates the data against the schema.
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    main.go
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package main
+
+import (
+	&#34;fmt&#34;
+	&#34;log&#34;
+
+	&#34;cuelang.org/go/cue&#34;
+	&#34;cuelang.org/go/cue/cuecontext&#34;
+	&#34;cuelang.org/go/encoding/yaml&#34;
+)
+
+const cueSource = `
+#Schema: {
+	name?: string
+	age?:  int
+}
+`
+
+func main() {
+	ctx := cuecontext.New()
+	schema := ctx.CompileString(cueSource).LookupPath(cue.ParsePath(&#34;#Schema&#34;))
+
+	yamlFile, err := yaml.Extract(&#34;data.yml&#34;, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	yamlAsCUE := ctx.BuildFile(yamlFile)
+
+	unified := schema.Unify(yamlAsCUE)
+	if err := unified.Validate(); err != nil {
+		fmt.Println(&#34;❌ YAML: NOT ok&#34;)
+		log.Fatal(err)
+	}
+
+	fmt.Println(&#34;✅ YAML: ok&#34;)
+}
+
+
+
+
+
+
+Here&rsquo;s the data we&rsquo;ll check against #Schema:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    data.yml
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            name: Charlie Cartwright
+age: 99
+
+
+
+
+
+
+We finish by adding a dependency on the cuelang.org/go module, tidying,
+and running the program:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ go get cuelang.org/go@v0.13.0
+...
+$ go mod tidy
+...
+$ go run .
+✅ YAML: ok
+
+
+    
+
+
+
+
+    
+
+Checking Go data with CUE schema
+CUE can also validate data that&rsquo;s only available inside Go.
+Perhaps it&rsquo;s only fetched at runtime, from some file;
+or from some remote service over the network.
+This time we place our schema in a separate CUE file:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    schema.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package example
+
+#Person: {
+	name?: string
+	age?:  int &amp; &lt;=150
+}
+
+
+
+
+
+
+We embed the schema file using Go embedding,
+and load it via a string.
+Then we use the #Person schema to validate a Go Person,
+either logging a fatal error or reporting a successful validation.
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    main.go
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package main
+
+import (
+	_ &#34;embed&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+
+	&#34;cuelang.org/go/cue&#34;
+	&#34;cuelang.org/go/cue/cuecontext&#34;
+)
+
+type Person struct {
+	Name string `json:&#34;name&#34;`
+	Age  int    `json:&#34;age&#34;`
+}
+
+//go:embed schema.cue
+var schemaFile string
+
+func main() {
+	ctx := cuecontext.New()
+	schema := ctx.CompileString(schemaFile).LookupPath(cue.ParsePath(&#34;#Person&#34;))
+
+	person := Person{
+		Name: &#34;Charlie Cartwright&#34;,
+		Age:  999,
+	}
+
+	personAsCUE := ctx.Encode(person)
+
+	unified := schema.Unify(personAsCUE)
+	if err := unified.Validate(); err != nil {
+		fmt.Println(&#34;❌ Person: NOT ok&#34;)
+		log.Fatal(err)
+	}
+
+	fmt.Println(&#34;✅ Person: ok&#34;)
+}
+
+
+
+
+
+
+This time we see that CUE correctly caught a problem in our data:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ go get cuelang.org/go@v0.13.0
+...
+$ go mod tidy
+...
+$ go run .
+❌ Person: NOT ok
+#Person.age: invalid value 999 (out of bound &lt;=150)
+exit status 1
+
+
+
+    
+
+
+
+
+    
+
+Future plans
+The CUE project believes that its role can be one of interlingua:
+a bidirectional bridge between all the formats that CUE speaks,
+linking sources of truth with data - wherever they exist.
+On the way towards that goal, the project has plans to extend CUE to
+directly generate code in Go (and other languages),
+beginning with the ability to
+declare native types that mirror CUE counterparts.
+Looking further forward, the project plans to expand CUE&rsquo;s generation
+capabilities to include
+producing native code that implements CUE constraints,
+which will enable non-CUE languages to gain highly efficient implementations of
+CUE features such as data validation, policy enforcement, and more.
+
+    
+
+
+
+
+    
+
+Related content
+
+Reference: cue help get go
+Go API:
+cue
+| cue/load
+| cue/cuecontext
+| encoding/yaml
+| encoding/json
+CUE By Example:
+Controlling Kubernetes with CUE
+Discussion #2939: Modules and package management proposal
+
+">
+<meta itemprop="wordCount" content="1184">
+
+
+                <div class="article__container">
+                    
+
+
+
+
+        <header class="article__header">
+        <div class="article__info"><div class="article__authors">
+
+
+<div class="authors">
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                    
+                        <span class="authors__display-name">Jonathan Matthews</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Jonathan Matthews</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/myitcv.png" alt="myitcv">
+
+                    
+                        <span class="authors__display-name">Paul Jolly</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/myitcv.png" alt="myitcv">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Paul Jolly</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/myitcv">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:myitcv">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+</div>
+</div><div class="article__tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:encodings"
+                class="tag tag--green">
+                    encodings
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:%22go%20api%22"
+                class="tag tag--lavender">
+                    go api
+                </a>
+            </li></ul>
+
+</div></div></header>
+
+
+
+                    <div class="article__content">
+                        
+                            <p>CUE is designed to complement and work with the Go programming language.
+It offers a powerful API that enables Go code to take advantage of CUE&rsquo;s
+advanced capabilites.
+Additionally, CUE makes it easy to use Go as your source of truth by using the
+<code>cue</code> command to convert Go types to CUE.</p>
+<p>In this guide we&rsquo;ll demonstrate importing some Kubernetes API code to generate
+CUE schemas. We&rsquo;ll also use the API to convert both CUE and non-CUE data to
+native Go values, and validate some Go data natively with CUE.</p>
+<h2 id="converting-go-types-to-cue">
+    <a href="#converting-go-types-to-cue" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Converting Go types to CUE</h2>
+<p>If you&rsquo;ve already invested time in developing Go types, you might need them to
+be the source of truth in your system whilst also wanting to validate data that
+<em>matches</em> those types against the more detailed constraints that CUE allows.</p>
+<p>The <code>cue</code> command can help you achieve this as it can <strong>convert arbitrary Go types to CUE</strong>.
+To demonstrate this, we&rsquo;re going to fetch some Go source code published by the
+Kubernetes project, import some types it defines, and use some of the CUE that
+gets produced.</p>
+<p>Let&rsquo;s start by downloading a specific version of the <code>k8s.io/api</code> module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z28gZ2V0IGs4cy5pby9hcGkvYXBwcy92MUB2MC4yOS4z">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ go get k8s.io/api/apps/v1@v0.29.3
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div>
+<p>We use <code>cue get go</code> to generate CUE definitions from the Go types in the <code>k8s.io/api/apps/v1</code> package:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGdldCBnbyBrOHMuaW8vYXBpL2FwcHMvdjE=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue get go k8s.io/api/apps/v1</span></span></code></pre></div></div>
+</div>
+<p>This generates some CUE packages, placing them alongside our main CUE module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="dHJlZSAtZCBjdWUubW9kL2dlbi9rOHMuaW8=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ tree -d cue.mod/gen/k8s.io
+</span></span><span style="display:flex;"><span>cue.mod/gen/k8s.io
+</span></span><span style="display:flex;"><span>|-- api
+</span></span><span style="display:flex;"><span>|   |-- apps
+</span></span><span style="display:flex;"><span>|   |   `-- v1
+</span></span><span style="display:flex;"><span>|   `-- core
+</span></span><span style="display:flex;"><span>|       `-- v1
+</span></span><span style="display:flex;"><span>`-- apimachinery
+</span></span><span style="display:flex;"><span>    `-- pkg
+</span></span><span style="display:flex;"><span>        |-- api
+</span></span><span style="display:flex;"><span>        |   `-- resource
+</span></span><span style="display:flex;"><span>        |-- apis
+</span></span><span style="display:flex;"><span>        |   `-- meta
+</span></span><span style="display:flex;"><span>        |       `-- v1
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div>
+<p><a href="/docs/reference/command/cue-help-get-go/"><code>cue get go</code></a>
+also has a <code>--local</code> option that generates CUE alongside Go in a main module.</p>
+<p>Within <em>our</em> main module, we can import and refer to the CUE definitions generated from the Go types:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="config.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="config.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>config.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="config.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBjb25maWcKCmltcG9ydCAoCgljb3JlICJrOHMuaW8vYXBpL2NvcmUvdjEiCglhcHBzICJrOHMuaW8vYXBpL2FwcHMvdjEiCikKCnNlcnZpY2U6IFtzdHJpbmddOiAgICAgY29yZS4jU2VydmljZQpkZXBsb3ltZW50OiBbc3RyaW5nXTogIGFwcHMuI0RlcGxveW1lbnQKZGFlbW9uU2V0OiBbc3RyaW5nXTogICBhcHBzLiNEYWVtb25TZXQKc3RhdGVmdWxTZXQ6IFtzdHJpbmddOiBhcHBzLiNTdGF0ZWZ1bFNldA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	core <span style="color:#b84">&#34;k8s.io/api/core/v1&#34;</span>
+</span></span><span style="display:flex;"><span>	apps <span style="color:#b84">&#34;k8s.io/api/apps/v1&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>service<span style="font-weight:bold">:</span> <span style="font-weight:bold">[</span><span style="color:#458;font-weight:bold">string</span><span style="font-weight:bold">]:</span>     core.#Service
+</span></span><span style="display:flex;"><span>deployment<span style="font-weight:bold">:</span> <span style="font-weight:bold">[</span><span style="color:#458;font-weight:bold">string</span><span style="font-weight:bold">]:</span>  apps.#Deployment
+</span></span><span style="display:flex;"><span>daemonSet<span style="font-weight:bold">:</span> <span style="font-weight:bold">[</span><span style="color:#458;font-weight:bold">string</span><span style="font-weight:bold">]:</span>   apps.#DaemonSet
+</span></span><span style="display:flex;"><span>statefulSet<span style="font-weight:bold">:</span> <span style="font-weight:bold">[</span><span style="color:#458;font-weight:bold">string</span><span style="font-weight:bold">]:</span> apps.#StatefulSet</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>Our configuration is currently empty - but any
+services, deployments, daemonSets, or statefulSets
+that we add will be checked against the schema of the associated Kubernetes type:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGV2YWw=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue eval
+</span></span><span style="display:flex;"><span>service: {}
+</span></span><span style="display:flex;"><span>deployment: {}
+</span></span><span style="display:flex;"><span>daemonSet: {}
+</span></span><span style="display:flex;"><span>statefulSet: {}</span></span></code></pre></div></div>
+</div>
+<p>A more in-depth example demonstrating how to drive Kubernetes configuration
+using CUE can be found in <em>CUE By Example</em>, in
+<a href="https://github.com/cue-labs/cue-by-example/blob/main/003_kubernetes_tutorial/README.md">Controlling Kubernetes with CUE</a>.</p>
+<!--
+TODO: Should we demo refining `_gen.cue` files via unification?
+Does this approach still "work", with modules?
+-->
+<p>The example above relies on generating CUE within the <code>cue.mod/gen</code> directory
+of the CUE module that holds a configuration,
+but we are working on a system for providing schemas for well-known services at
+a well-known location.
+This will remove the need to generate such CUE locally &ndash;
+see <a href="/issue/2939">discussion #2939</a> for more details.</p>
+<h2 id="using-cues-go-api">
+    <a href="#using-cues-go-api" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Using CUE&rsquo;s Go API</h2>
+<p>The Go API injects the power and expressiveness of CUE into your Go programs,
+allowing them to
+<strong>load and validate both CUE and non-CUE data</strong> (such as JSON or YAML),
+and to
+<strong>check data marshalled by Go</strong>, wherever it comes from.</p>
+<h3 id="loading-cue-data">
+    <a href="#loading-cue-data" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Loading CUE data</h3>
+<p>In this example, we load some data from the following CUE file and display it:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="file.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="file.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>file.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="file.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBleGFtcGxlCgpsOiBbMSwgMiwgM10KdjogImhlbGxvIgptZXNzYWdlOiAodik6ICJ3b3JsZCEi">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> example
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l<span style="font-weight:bold">:</span> <span style="font-weight:bold">[</span><span style="color:#099">1</span><span style="font-weight:bold">,</span> <span style="color:#099">2</span><span style="font-weight:bold">,</span> <span style="color:#099">3</span><span style="font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>v<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span>message<span style="font-weight:bold">:</span> (v)<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;world!&#34;</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>The <code>cuelang.org/go/cue/load</code> package provides a similar interface to the <code>cue</code>
+command for loading CUE.</p>
+<p>Here, we use <code>load.Instances()</code> to load the package in the current directory:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="main.go"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="main.go">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>main.go
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="main.go"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBtYWluCgppbXBvcnQgKAoJImZtdCIKCgkiY3VlbGFuZy5vcmcvZ28vY3VlL2N1ZWNvbnRleHQiCgkiY3VlbGFuZy5vcmcvZ28vY3VlL2xvYWQiCikKCmZ1bmMgbWFpbigpIHsKCWN0eCA6PSBjdWVjb250ZXh0Lk5ldygpCglpbnN0cyA6PSBsb2FkLkluc3RhbmNlcyhbXXN0cmluZ3siLiJ9LCBuaWwpCgl2IDo9IGN0eC5CdWlsZEluc3RhbmNlKGluc3RzWzBdKQoJZm10LlByaW50ZigiJXZcbiIsIHYpCn0=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/cue/cuecontext&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/cue/load&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>	ctx <span style="font-weight:bold">:=</span> cuecontext.<span style="color:#900;font-weight:bold">New</span>()
+</span></span><span style="display:flex;"><span>	insts <span style="font-weight:bold">:=</span> load.<span style="color:#900;font-weight:bold">Instances</span>([]<span style="color:#458;font-weight:bold">string</span>{<span style="color:#b84">&#34;.&#34;</span>}, <span style="font-weight:bold">nil</span>)
+</span></span><span style="display:flex;"><span>	v <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildInstance</span>(insts[<span style="color:#099">0</span>])
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Printf</span>(<span style="color:#b84">&#34;%v\n&#34;</span>, v)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>Before running, we add a dependency on the <code>cuelang.org/go</code> module and tidy:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEzLjAKZ28gbW9kIHRpZHk=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ go get cuelang.org/go@v0.13.0
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>$ go mod tidy
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div>
+<p>Finally, running the Go program displays the CUE data:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z28gcnVuIC4=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ go run .
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	l: [1, 2, 3]
+</span></span><span style="display:flex;"><span>	v: &#34;hello&#34;
+</span></span><span style="display:flex;"><span>	message: {
+</span></span><span style="display:flex;"><span>		hello: &#34;world!&#34;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+<p>CUE values have a default formatter that renders them sensibly.</p>
+<h3 id="loading-non-cue-data">
+    <a href="#loading-non-cue-data" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Loading non-CUE data</h3>
+<p>The API also makes it easy to validate data held in YAML and JSON files.</p>
+<p>This example loads a CUE schema that&rsquo;s embedded in code,
+then a YAML data file,
+and then validates the data against the schema.</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="main.go"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="main.go">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>main.go
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="main.go"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBtYWluCgppbXBvcnQgKAoJImZtdCIKCSJsb2ciCgoJImN1ZWxhbmcub3JnL2dvL2N1ZSIKCSJjdWVsYW5nLm9yZy9nby9jdWUvY3VlY29udGV4dCIKCSJjdWVsYW5nLm9yZy9nby9lbmNvZGluZy95YW1sIgopCgpjb25zdCBjdWVTb3VyY2UgPSBgCiNTY2hlbWE6IHsKCW5hbWU/OiBzdHJpbmcKCWFnZT86ICBpbnQKfQpgCgpmdW5jIG1haW4oKSB7CgljdHggOj0gY3VlY29udGV4dC5OZXcoKQoJc2NoZW1hIDo9IGN0eC5Db21waWxlU3RyaW5nKGN1ZVNvdXJjZSkuTG9va3VwUGF0aChjdWUuUGFyc2VQYXRoKCIjU2NoZW1hIikpCgoJeWFtbEZpbGUsIGVyciA6PSB5YW1sLkV4dHJhY3QoImRhdGEueW1sIiwgbmlsKQoJaWYgZXJyICE9IG5pbCB7CgkJbG9nLkZhdGFsKGVycikKCX0KCgl5YW1sQXNDVUUgOj0gY3R4LkJ1aWxkRmlsZSh5YW1sRmlsZSkKCgl1bmlmaWVkIDo9IHNjaGVtYS5VbmlmeSh5YW1sQXNDVUUpCglpZiBlcnIgOj0gdW5pZmllZC5WYWxpZGF0ZSgpOyBlcnIgIT0gbmlsIHsKCQlmbXQuUHJpbnRsbigi4p2MIFlBTUw6IE5PVCBvayIpCgkJbG9nLkZhdGFsKGVycikKCX0KCglmbXQuUHJpbnRsbigi4pyFIFlBTUw6IG9rIikKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/cue&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/cue/cuecontext&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/encoding/yaml&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">const</span> cueSource = <span style="color:#b84">`
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">#Schema: {
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	name?: string
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	age?:  int
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">}
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>	ctx <span style="font-weight:bold">:=</span> cuecontext.<span style="color:#900;font-weight:bold">New</span>()
+</span></span><span style="display:flex;"><span>	schema <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">CompileString</span>(cueSource).<span style="color:#900;font-weight:bold">LookupPath</span>(cue.<span style="color:#900;font-weight:bold">ParsePath</span>(<span style="color:#b84">&#34;#Schema&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	yamlFile, err <span style="font-weight:bold">:=</span> yaml.<span style="color:#900;font-weight:bold">Extract</span>(<span style="color:#b84">&#34;data.yml&#34;</span>, <span style="font-weight:bold">nil</span>)
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	yamlAsCUE <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildFile</span>(yamlFile)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	unified <span style="font-weight:bold">:=</span> schema.<span style="color:#900;font-weight:bold">Unify</span>(yamlAsCUE)
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">:=</span> unified.<span style="color:#900;font-weight:bold">Validate</span>(); err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#b84">&#34;❌ YAML: NOT ok&#34;</span>)
+</span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#b84">&#34;✅ YAML: ok&#34;</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>Here&rsquo;s the data we&rsquo;ll check against <code>#Schema</code>:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="data.yml"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="data.yml">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>data.yml
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="data.yml"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bmFtZTogQ2hhcmxpZSBDYXJ0d3JpZ2h0CmFnZTogOTk=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Charlie Cartwright<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">age</span>:<span style="color:#bbb"> </span><span style="color:#099">99</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>We finish by adding a dependency on the <code>cuelang.org/go</code> module, tidying,
+and running the program:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEzLjAKZ28gbW9kIHRpZHkKZ28gcnVuIC4=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ go get cuelang.org/go@v0.13.0
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>$ go mod tidy
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>$ go run .
+</span></span><span style="display:flex;"><span>✅ YAML: ok</span></span></code></pre></div></div>
+</div>
+<h3 id="checking-go-data-with-cue-schema">
+    <a href="#checking-go-data-with-cue-schema" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Checking Go data with CUE schema</h3>
+<p>CUE can also validate data that&rsquo;s only available inside Go.
+Perhaps it&rsquo;s only fetched at runtime, from some file;
+or from some remote service over the network.</p>
+<p>This time we place our schema in a separate CUE file:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="schema.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="schema.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>schema.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="schema.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBleGFtcGxlCgojUGVyc29uOiB7CgluYW1lPzogc3RyaW5nCglhZ2U/OiAgaW50ICYgPD0xNTAKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> example
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#Person<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	name<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>	age<span style="font-weight:bold">?:</span>  <span style="color:#458;font-weight:bold">int</span> <span style="font-weight:bold">&amp;</span> <span style="font-weight:bold">&lt;=</span><span style="color:#099">150</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>We embed the schema file using <a href="https://pkg.go.dev/embed">Go embedding</a>,
+and load it via a string.
+Then we use the <code>#Person</code> schema to validate a Go <code>Person</code>,
+either logging a fatal error or reporting a successful validation.</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="main.go"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="main.go">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>main.go
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="main.go"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBtYWluCgppbXBvcnQgKAoJXyAiZW1iZWQiCgkiZm10IgoJImxvZyIKCgkiY3VlbGFuZy5vcmcvZ28vY3VlIgoJImN1ZWxhbmcub3JnL2dvL2N1ZS9jdWVjb250ZXh0IgopCgp0eXBlIFBlcnNvbiBzdHJ1Y3QgewoJTmFtZSBzdHJpbmcgYGpzb246Im5hbWUiYAoJQWdlICBpbnQgICAgYGpzb246ImFnZSJgCn0KCi8vZ286ZW1iZWQgc2NoZW1hLmN1ZQp2YXIgc2NoZW1hRmlsZSBzdHJpbmcKCmZ1bmMgbWFpbigpIHsKCWN0eCA6PSBjdWVjb250ZXh0Lk5ldygpCglzY2hlbWEgOj0gY3R4LkNvbXBpbGVTdHJpbmcoc2NoZW1hRmlsZSkuTG9va3VwUGF0aChjdWUuUGFyc2VQYXRoKCIjUGVyc29uIikpCgoJcGVyc29uIDo9IFBlcnNvbnsKCQlOYW1lOiAiQ2hhcmxpZSBDYXJ0d3JpZ2h0IiwKCQlBZ2U6ICA5OTksCgl9CgoJcGVyc29uQXNDVUUgOj0gY3R4LkVuY29kZShwZXJzb24pCgoJdW5pZmllZCA6PSBzY2hlbWEuVW5pZnkocGVyc29uQXNDVUUpCglpZiBlcnIgOj0gdW5pZmllZC5WYWxpZGF0ZSgpOyBlcnIgIT0gbmlsIHsKCQlmbXQuUHJpbnRsbigi4p2MIFBlcnNvbjogTk9UIG9rIikKCQlsb2cuRmF0YWwoZXJyKQoJfQoKCWZtdC5QcmludGxuKCLinIUgUGVyc29uOiBvayIpCn0=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	_ <span style="color:#b84">&#34;embed&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/cue&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/cue/cuecontext&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">type</span> Person <span style="font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Name <span style="color:#458;font-weight:bold">string</span> <span style="color:#b84">`json:&#34;name&#34;`</span>
+</span></span><span style="display:flex;"><span>	Age  <span style="color:#458;font-weight:bold">int</span>    <span style="color:#b84">`json:&#34;age&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">//go:embed schema.cue
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">var</span> schemaFile <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>	ctx <span style="font-weight:bold">:=</span> cuecontext.<span style="color:#900;font-weight:bold">New</span>()
+</span></span><span style="display:flex;"><span>	schema <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">CompileString</span>(schemaFile).<span style="color:#900;font-weight:bold">LookupPath</span>(cue.<span style="color:#900;font-weight:bold">ParsePath</span>(<span style="color:#b84">&#34;#Person&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	person <span style="font-weight:bold">:=</span> Person{
+</span></span><span style="display:flex;"><span>		Name: <span style="color:#b84">&#34;Charlie Cartwright&#34;</span>,
+</span></span><span style="display:flex;"><span>		Age:  <span style="color:#099">999</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	personAsCUE <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">Encode</span>(person)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	unified <span style="font-weight:bold">:=</span> schema.<span style="color:#900;font-weight:bold">Unify</span>(personAsCUE)
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">:=</span> unified.<span style="color:#900;font-weight:bold">Validate</span>(); err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#b84">&#34;❌ Person: NOT ok&#34;</span>)
+</span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#b84">&#34;✅ Person: ok&#34;</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>This time we see that CUE correctly caught a problem in our data:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEzLjAKZ28gbW9kIHRpZHkKZ28gcnVuIC4=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ go get cuelang.org/go@v0.13.0
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>$ go mod tidy
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>$ go run .
+</span></span><span style="display:flex;"><span>❌ Person: NOT ok
+</span></span><span style="display:flex;"><span>#Person.age: invalid value 999 (out of bound &lt;=150)
+</span></span><span style="display:flex;"><span>exit status 1</span></span></code></pre></div></div>
+</div>
+<!-- TODO
+  - Checking Go data with CUE schema
+    - "CUE that validates that a struct have only keys beginning with "a" and values that are either `5 | string`"
+    - Check if we should demo (i.e. push folks towards) gocodec or not.
+-->
+<h2 id="future-plans">
+    <a href="#future-plans" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Future plans</h2>
+<p>The CUE project believes that its role can be one of <em>interlingua</em>:
+a <strong>bidirectional bridge</strong> between all the formats that CUE speaks,
+linking sources of truth with data - wherever they exist.</p>
+<p>On the way towards that goal, the project has plans to extend CUE to
+<strong>directly generate code in Go</strong> (and other languages),
+beginning with the ability to
+<strong>declare native types that mirror CUE counterparts</strong>.</p>
+<p>Looking further forward, the project plans to expand CUE&rsquo;s generation
+capabilities to include
+<strong>producing <em>native code</em> that implements CUE constraints</strong>,
+which will enable non-CUE languages to gain highly efficient implementations of
+CUE features such as data validation, policy enforcement, and more.</p>
+<h2 id="related-content">
+    <a href="#related-content" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Related content</h2>
+<ul>
+<li>Reference: <a href="/docs/reference/command/cue-help-get-go/">cue help get go</a></li>
+<li>Go API:
+<a href="https://pkg.go.dev/cuelang.org/go/cue#section-documentation"><code>cue</code></a>
+| <a href="https://pkg.go.dev/cuelang.org/go/cue/load#section-documentation"><code>cue/load</code></a>
+| <a href="https://pkg.go.dev/cuelang.org/go/cue/cuecontext#section-documentation"><code>cue/cuecontext</code></a>
+| <a href="https://pkg.go.dev/cuelang.org/go/encoding/yaml#section-documentation"><code>encoding/yaml</code></a>
+| <a href="https://pkg.go.dev/cuelang.org/go/encoding/json#section-documentation"><code>encoding/json</code></a></li>
+<li>CUE By Example:
+<a href="https://github.com/cue-labs/cue-by-example/blob/main/003_kubernetes_tutorial/README.md">Controlling Kubernetes with CUE</a></li>
+<li>Discussion <a href="/issue/2939">#2939</a>: Modules and package management proposal</li>
+</ul>
+
+                        
+                    </div>
+    <footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
+                Last modified May 22, 2025</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__footer-tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:encodings"
+                class="tag tag--green">
+                    encodings
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:%22go%20api%22"
+                class="tag tag--lavender">
+                    go api
+                </a>
+            </li></ul>
+
+</div><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/concept/how-cue-works-with-go/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/how-cue-works-with-go/&text=CUE%20is%20designed%20to%20complement%20and%20work%20with%20the%20Go%20programming%20language.%20It%20offers%20a%20powerful%20API%20that%20enables%20Go%20code%20to%20take%20advantage%20of%20CUE&amp;rsquo;s%20advanced%20capabilites.%20Additionally,%20CUE%20makes%20it%20easy%20to%20use%20Go%20as%20your%20source%20of%20truth%20by%20using%20the%20cue%20command%20to%20convert%20Go%20types%20to%20CUE.%0aIn%20this%20guide%20we&amp;rsquo;ll%20demonstrate%20importing%20some%20Kubernetes%20API%20code%20to%20generate%20CUE%20schemas.%20We&amp;rsquo;ll%20also%20use%20the%20API%20to%20convert%20both%20CUE%20and%20non-CUE%20data%20to%20native%20Go%20values,%20and%20validate%20some%20Go%20data%20natively%20with%20CUE.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/how-cue-works-with-go/&summary=CUE%20is%20designed%20to%20complement%20and%20work%20with%20the%20Go%20programming%20language.%20It%20offers%20a%20powerful%20API%20that%20enables%20Go%20code%20to%20take%20advantage%20of%20CUE&amp;rsquo;s%20advanced%20capabilites.%20Additionally,%20CUE%20makes%20it%20easy%20to%20use%20Go%20as%20your%20source%20of%20truth%20by%20using%20the%20cue%20command%20to%20convert%20Go%20types%20to%20CUE.%0aIn%20this%20guide%20we&amp;rsquo;ll%20demonstrate%20importing%20some%20Kubernetes%20API%20code%20to%20generate%20CUE%20schemas.%20We&amp;rsquo;ll%20also%20use%20the%20API%20to%20convert%20both%20CUE%20and%20non-CUE%20data%20to%20native%20Go%20values,%20and%20validate%20some%20Go%20data%20natively%20with%20CUE.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/concept/how-cue-enables-data-validation/" aria-label="Previous - How CUE enables data validation">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">How CUE enables data validation</span>
+            </a><a class="prevnext__next" href="/docs/concept/how-cue-works-with-json/" aria-label="Next - How CUE works with JSON">
+                <span class="prevnext__text">How CUE works with JSON</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/popular-guides/" title="Popular guides">
+            <span class="tree__text">Popular guides</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/the-logic-of-cue/" title="The Logic of CUE">
+            <span class="tree__text">The Logic of CUE</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/modules/" title="Modules">
+            <span class="tree__text">Modules</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/faq/" title="Frequently Asked Questions">
+            <span class="tree__text">Frequently Asked Questions</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/concept/how-cue-works-with-go/" title="How CUE works with Go">
+            <span class="tree__text">How CUE works with Go</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#converting-go-types-to-cue" class="toc__link"><span class="toc__text">Converting Go types to CUE</span></a></li>
+    <li class="toc__item"><a href="#using-cues-go-api" class="toc__link"><span class="toc__text">Using CUE&rsquo;s Go API</span></a></li>
+    <li class="toc__item"><a href="#future-plans" class="toc__link"><span class="toc__text">Future plans</span></a></li>
+    <li class="toc__item"><a href="#related-content" class="toc__link"><span class="toc__text">Related content</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fhow-cue-works-with-go%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+
+
+
+    </body>
+</html>

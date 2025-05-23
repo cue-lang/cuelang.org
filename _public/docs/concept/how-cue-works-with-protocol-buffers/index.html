@@ -1,0 +1,1724 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Protocol Buffers, also known as Protobuf, is a language-neutral, platform-neutral, and extensible mechanism for serializing structured data, initially developed …">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/concept/how-cue-works-with-protocol-buffers/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>How CUE works with Protocol Buffers | CUE</title><meta property="og:url" content="/docs/concept/how-cue-works-with-protocol-buffers/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="How CUE works with Protocol Buffers">
+  <meta property="og:description" content="Protocol Buffers, also known as Protobuf, is a language-neutral, platform-neutral, and extensible mechanism for serializing structured data, initially developed and released by Google.
+Protobuf definitions can be converted to CUE by the cue command and CUE’s Go API, promoting any CUE validation code placed in Protobuf options to first-class CUE value constraints.
+Using the cue command Let’s start by converting Protobuf to CUE using the cue command. We’ll begin with this Protobuf file, basic.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T05:36:56+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="How CUE works with Protocol Buffers">
+  <meta name="twitter:description" content="Protocol Buffers, also known as Protobuf, is a language-neutral, platform-neutral, and extensible mechanism for serializing structured data, initially developed and released by Google.
+Protobuf definitions can be converted to CUE by the cue command and CUE’s Go API, promoting any CUE validation code placed in Protobuf options to first-class CUE value constraints.
+Using the cue command Let’s start by converting Protobuf to CUE using the cue command. We’ll begin with this Protobuf file, basic.">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="How CUE works with Protocol Buffers">
+<meta itemprop="description" content="Protocol Buffers, also known as Protobuf, is a language-neutral, platform-neutral, and extensible mechanism for serializing structured data, initially developed and released by Google.
+Protobuf definitions can be converted to CUE by the cue command and CUE&rsquo;s Go API, promoting any CUE validation code placed in Protobuf options to first-class CUE value constraints.
+Using the cue command Let&rsquo;s start by converting Protobuf to CUE using the cue command. We&rsquo;ll begin with this Protobuf file, basic.">
+
+    
+        <meta itemprop="dateModified" content="2025-04-30T05:36:56+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="encodings,go api," />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/concept/">Concept Guides</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">How CUE works with Protocol Buffers</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="Protocol Buffers, also known as Protobuf, is a
+language-neutral, platform-neutral, and extensible mechanism for serializing
+structured data, initially developed and released by Google.
+Protobuf definitions can be converted to CUE by the cue command and CUE&rsquo;s Go
+API, promoting any CUE validation code placed in Protobuf options to
+first-class CUE value constraints.
+
+    
+
+
+
+
+    
+
+Using the cue command
+Let&rsquo;s start by converting Protobuf to CUE using the cue command.
+We&rsquo;ll begin with this Protobuf file, basic.proto:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    basic.proto
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            syntax = &#34;proto3&#34;;
+
+// Package basic is rather basic.
+package cuelang.examples.basic;
+
+import &#34;cue/cue.proto&#34;;
+
+option go_package = &#34;cuelang.org/encoding/protobuf/examples/basic&#34;;
+
+// This is my type.
+message MyType {
+    string string_value = 1; // Some string value
+
+    // A method must start with a capital letter.
+    repeated string method = 2 [(cue.val) = &#39;[...=~&#34;^[A-Z]&#34;]&#39;];
+}
+
+
+
+
+
+
+The cue import command converts Protobuf to CUE.
+It indicates success by displaying no output:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue import basic.proto
+
+The command creates this CUE file:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    basic.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            // Package basic is rather basic.
+package basic
+
+// This is my type.
+#MyType: {
+	stringValue?: string @protobuf(1,string,name=string_value) // Some string value
+
+	// A method must start with a capital letter.
+	method?: [...string] @protobuf(2,string)
+	method?: [...=~&#34;^[A-Z]&#34;]
+}
+
+
+
+
+
+
+Do you notice how the method field&rsquo;s type and constraints are split over two lines?
+That&rsquo;s exactly as expected, because CUE&rsquo;s core operation is to automatically
+unify each field&rsquo;s right-hand-side.
+The behaviour of the cue import command can be affected by the flags outlined
+in the proto mode section of
+the command&rsquo;s help text.
+
+    
+
+
+
+
+    
+
+Using the Go API
+CUE&rsquo;s Go API can achieve the same result as the cue import command,
+converting Protobuf definitions to CUE, but with
+more customization and flexibility.
+This simple Go code takes the basic.proto file shown above, and prints the
+equivalent CUE:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    main.go
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package main
+
+import (
+	&#34;fmt&#34;
+	&#34;log&#34;
+
+	&#34;cuelang.org/go/cue/format&#34;
+	&#34;cuelang.org/go/encoding/protobuf&#34;
+)
+
+func main() {
+	file, err := protobuf.Extract(&#34;basic.proto&#34;, nil, &amp;protobuf.Config{
+		Paths: []string{ /* paths to proto includes */ },
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	b, _ := format.Node(file)
+	fmt.Println(string(b))
+}
+
+
+
+
+
+
+Here&rsquo;s the program&rsquo;s output:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ go run main.go
+// Package basic is rather basic.
+package basic
+
+// This is my type.
+#MyType: {
+	stringValue?: string @protobuf(1,string,name=string_value) // Some string value
+
+	// A method must start with a capital letter.
+	method?: [...string] @protobuf(2,string)
+	method?: [...=~&#34;^[A-Z]&#34;]
+}
+
+Notice that the ouput is identical to the CUE produced previously by cue import.
+
+    
+
+
+
+
+    
+
+Extracting CUE from several Protobuf files
+In some environments it might be necessary to import multiple Protobuf files
+that map to different CUE packages within the same module.
+If several .proto files import each other, and other centralized schema
+definitions, then things can get hairy!
+In these situations, CUE&rsquo;s Go API and the cue command have you covered.
+Both cue import and the
+encoding/protobuf
+package can be configured to handle custom import paths but, by default, when
+they encounter &hellip;
+
+.proto files that have a go_package directive: CUE uses this path
+files that map to a package within the CUE module: CUE uses the package&rsquo;s directory
+any other import path: CUE maps to a location in the cue.mod/pkg directory.
+
+
+    
+
+
+
+
+    
+
+Experimental APIs
+CUE initially publishes APIs and packages marked as &ldquo;experimental&rdquo;, in order to
+gather feedback on their use and structure before comitting the project to
+their long-term support.
+CUE&rsquo;s Protobuf APIs include two experimental packages:
+encoding/protobuf/textproto
+and
+encoding/protobuf/jsonpb.
+textproto converts
+text Protobuf message files
+to and from CUE, and jsonpb rewrites a CUE expression based on the Protobuf
+interpretation of JSON.
+Your feedback on their utility and structure is invaluable - please join the
+CUE community on Slack and GitHub, and let us
+know how you&rsquo;re using these APIs!
+
+    
+
+
+
+
+    
+
+Protobuf mappings
+The mappings between Protobuf and CUE types are outlined in the encoding/protobuf
+package documentation.
+
+    
+
+
+
+
+    
+
+Future plans
+CUE&rsquo;s support for Protobuf is only going to expand, with plans including the
+conversion of CUE definitions to binary Protobuf definitions, and for
+bidirectional conversion of binary and JSON Protobuf messages to and from
+CUE.
+
+    
+
+
+
+
+    
+
+Related content
+
+Reference: cue help import
+Reference: cue help filetypes
+Go API: encoding/protobuf
+Go API: encoding/protobuf/textproto
+Go API: encoding/protobuf/jsonpb
+
+">
+<meta itemprop="wordCount" content="688">
+
+
+                <div class="article__container">
+                    
+
+
+
+
+        <header class="article__header">
+        <div class="article__info"><div class="article__authors">
+
+
+<div class="authors">
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                    
+                        <span class="authors__display-name">Jonathan Matthews</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Jonathan Matthews</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+</div>
+</div><div class="article__tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:encodings"
+                class="tag tag--green">
+                    encodings
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:%22go%20api%22"
+                class="tag tag--lavender">
+                    go api
+                </a>
+            </li></ul>
+
+</div></div></header>
+
+
+
+                    <div class="article__content">
+                        
+                            <p><a href="https://protobuf.dev/">Protocol Buffers</a>, also known as <em>Protobuf</em>, is a
+language-neutral, platform-neutral, and extensible mechanism for serializing
+structured data, initially developed and released by Google.</p>
+<p>Protobuf definitions can be converted to CUE by the <code>cue</code> command and CUE&rsquo;s Go
+API, promoting any CUE validation code placed in Protobuf options to
+first-class CUE value constraints.</p>
+<h2 id="using-the-cue-command">
+    <a href="#using-the-cue-command" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Using the <code>cue</code> command</h2>
+<p>Let&rsquo;s start by <strong>converting Protobuf to CUE</strong> using the <code>cue</code> command.
+We&rsquo;ll begin with this Protobuf file, <code>basic.proto</code>:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="basic.proto"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="basic.proto">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>basic.proto
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="basic.proto"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="c3ludGF4ID0gInByb3RvMyI7CgovLyBQYWNrYWdlIGJhc2ljIGlzIHJhdGhlciBiYXNpYy4KcGFja2FnZSBjdWVsYW5nLmV4YW1wbGVzLmJhc2ljOwoKaW1wb3J0ICJjdWUvY3VlLnByb3RvIjsKCm9wdGlvbiBnb19wYWNrYWdlID0gImN1ZWxhbmcub3JnL2VuY29kaW5nL3Byb3RvYnVmL2V4YW1wbGVzL2Jhc2ljIjsKCi8vIFRoaXMgaXMgbXkgdHlwZS4KbWVzc2FnZSBNeVR5cGUgewogICAgc3RyaW5nIHN0cmluZ192YWx1ZSA9IDE7IC8vIFNvbWUgc3RyaW5nIHZhbHVlCgogICAgLy8gQSBtZXRob2QgbXVzdCBzdGFydCB3aXRoIGEgY2FwaXRhbCBsZXR0ZXIuCiAgICByZXBlYXRlZCBzdHJpbmcgbWV0aG9kID0gMiBbKGN1ZS52YWwpID0gJ1suLi49fiJeW0EtWl0iXSddOwp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span>syntax <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;proto3&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#998;font-style:italic">// Package basic is rather basic.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">package</span> <span style="color:#555">cuelang</span><span style="font-weight:bold">.</span>examples.basic;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="font-weight:bold">import</span> <span style="color:#b84">&#34;cue/cue.proto&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="font-weight:bold">option</span> go_package <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;cuelang.org/encoding/protobuf/examples/basic&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#998;font-style:italic">// This is my type.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">message</span> <span style="color:#458;font-weight:bold">MyType</span> {<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>    <span style="color:#458;font-weight:bold">string</span> string_value <span style="font-weight:bold">=</span> <span style="color:#099">1</span>; <span style="color:#998;font-style:italic">// Some string value
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>    <span style="color:#998;font-style:italic">// A method must start with a capital letter.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>    <span style="font-weight:bold">repeated</span> <span style="color:#458;font-weight:bold">string</span> method <span style="font-weight:bold">=</span> <span style="color:#099">2</span> [(cue.val) <span style="font-weight:bold">=</span> <span style="color:#b84">&#39;[...=~&#34;^[A-Z]&#34;]&#39;</span>];<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>The <code>cue import</code> command converts Protobuf to CUE.
+It indicates success by displaying no output:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGltcG9ydCBiYXNpYy5wcm90bw==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue import basic.proto</span></span></code></pre></div></div>
+</div>
+<p>The command creates this CUE file:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="basic.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="basic.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>basic.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="basic.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Ly8gUGFja2FnZSBiYXNpYyBpcyByYXRoZXIgYmFzaWMuCnBhY2thZ2UgYmFzaWMKCi8vIFRoaXMgaXMgbXkgdHlwZS4KI015VHlwZTogewoJc3RyaW5nVmFsdWU/OiBzdHJpbmcgQHByb3RvYnVmKDEsc3RyaW5nLG5hbWU9c3RyaW5nX3ZhbHVlKSAvLyBTb21lIHN0cmluZyB2YWx1ZQoKCS8vIEEgbWV0aG9kIG11c3Qgc3RhcnQgd2l0aCBhIGNhcGl0YWwgbGV0dGVyLgoJbWV0aG9kPzogWy4uLnN0cmluZ10gQHByb3RvYnVmKDIsc3RyaW5nKQoJbWV0aG9kPzogWy4uLj1&#43;Il5bQS1aXSJdCn0=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Package basic is rather basic.</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">package</span> basic
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// This is my type.</span>
+</span></span><span style="display:flex;"><span>#MyType<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	stringValue<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">string</span> @protobuf(<span style="color:#099">1</span><span style="font-weight:bold">,</span><span style="color:#458;font-weight:bold">string</span><span style="font-weight:bold">,</span>name<span style="font-weight:bold">=</span>string_value) <span style="color:#998;font-style:italic">// Some string value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// A method must start with a capital letter.</span>
+</span></span><span style="display:flex;"><span>	method<span style="font-weight:bold">?:</span> <span style="font-weight:bold">[...</span><span style="color:#458;font-weight:bold">string</span><span style="font-weight:bold">]</span> @protobuf(<span style="color:#099">2</span><span style="font-weight:bold">,</span><span style="color:#458;font-weight:bold">string</span>)
+</span></span><span style="display:flex;"><span>	method<span style="font-weight:bold">?:</span> <span style="font-weight:bold">[...=</span>~<span style="color:#b84">&#34;^[A-Z]&#34;</span><span style="font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>Do you notice how the <code>method</code> field&rsquo;s type and constraints are split over two lines?
+That&rsquo;s exactly as expected, because CUE&rsquo;s core operation is to automatically
+<em>unify</em> each field&rsquo;s right-hand-side.</p>
+<p>The behaviour of the <code>cue import</code> command can be affected by the flags outlined
+in the <code>proto mode</code> section of
+<a href="/docs/reference/command/cue-help-import/">the command&rsquo;s help text</a>.</p>
+<h2 id="using-the-go-api">
+    <a href="#using-the-go-api" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Using the Go API</h2>
+<p>CUE&rsquo;s Go API can achieve the same result as the <code>cue import</code> command,
+<strong>converting Protobuf definitions to CUE</strong>, but with
+<a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf#Config">more customization and flexibility</a>.</p>
+<p>This simple Go code takes the <code>basic.proto</code> file shown above, and prints the
+equivalent CUE:</p>
+<p><div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="main.go"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="main.go">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>main.go
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="main.go"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBtYWluCgppbXBvcnQgKAoJImZtdCIKCSJsb2ciCgoJImN1ZWxhbmcub3JnL2dvL2N1ZS9mb3JtYXQiCgkiY3VlbGFuZy5vcmcvZ28vZW5jb2RpbmcvcHJvdG9idWYiCikKCmZ1bmMgbWFpbigpIHsKCWZpbGUsIGVyciA6PSBwcm90b2J1Zi5FeHRyYWN0KCJiYXNpYy5wcm90byIsIG5pbCwgJnByb3RvYnVmLkNvbmZpZ3sKCQlQYXRoczogW11zdHJpbmd7IC8qIHBhdGhzIHRvIHByb3RvIGluY2x1ZGVzICovIH0sCgl9KQoJaWYgZXJyICE9IG5pbCB7CgkJbG9nLkZhdGFsKGVycikKCX0KCWIsIF8gOj0gZm9ybWF0Lk5vZGUoZmlsZSkKCWZtdC5QcmludGxuKHN0cmluZyhiKSkKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/cue/format&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b84">&#34;cuelang.org/go/encoding/protobuf&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>	file, err <span style="font-weight:bold">:=</span> protobuf.<span style="color:#900;font-weight:bold">Extract</span>(<span style="color:#b84">&#34;basic.proto&#34;</span>, <span style="font-weight:bold">nil</span>, <span style="font-weight:bold">&amp;</span>protobuf.Config{
+</span></span><span style="display:flex;"><span>		Paths: []<span style="color:#458;font-weight:bold">string</span>{ <span style="color:#998;font-style:italic">/* paths to proto includes */</span> },
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	b, _ <span style="font-weight:bold">:=</span> format.<span style="color:#900;font-weight:bold">Node</span>(file)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#999">string</span>(b))
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+Here&rsquo;s the program&rsquo;s output:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z28gcnVuIG1haW4uZ28=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ go run main.go
+</span></span><span style="display:flex;"><span>// Package basic is rather basic.
+</span></span><span style="display:flex;"><span>package basic
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// This is my type.
+</span></span><span style="display:flex;"><span>#MyType: {
+</span></span><span style="display:flex;"><span>	stringValue?: string @protobuf(1,string,name=string_value) // Some string value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	// A method must start with a capital letter.
+</span></span><span style="display:flex;"><span>	method?: [...string] @protobuf(2,string)
+</span></span><span style="display:flex;"><span>	method?: [...=~&#34;^[A-Z]&#34;]
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+<p>Notice that the ouput is identical to the CUE produced previously by <code>cue import</code>.</p>
+<h2 id="extracting-cue-from-several-protobuf-files">
+    <a href="#extracting-cue-from-several-protobuf-files" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Extracting CUE from several Protobuf files</h2>
+<p>In some environments it might be necessary to import multiple Protobuf files
+that map to different CUE packages within the same module.
+If several <code>.proto</code> files import each other, and other centralized schema
+definitions, then things can get hairy!
+In these situations, CUE&rsquo;s Go API and the <code>cue</code> command have you covered.</p>
+<p>Both <a href="/docs/reference/command/cue-help-import/"><code>cue import</code></a> and the
+<a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf"><code>encoding/protobuf</code></a>
+package can be configured to handle custom import paths but, by default, when
+they encounter &hellip;</p>
+<ul>
+<li><code>.proto</code> files that have a <code>go_package</code> directive: CUE uses this path</li>
+<li>files that map to a package within the CUE module: CUE uses the package&rsquo;s directory</li>
+<li>any other import path: CUE maps to a location in the <code>cue.mod/pkg</code> directory.</li>
+</ul>
+<h2 id="experimental-apis">
+    <a href="#experimental-apis" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Experimental APIs</h2>
+<p>CUE initially publishes APIs and packages marked as &ldquo;experimental&rdquo;, in order to
+gather feedback on their use and structure before comitting the project to
+their long-term support.
+CUE&rsquo;s Protobuf APIs include two experimental packages:
+<a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf/textproto"><code>encoding/protobuf/textproto</code></a>
+and
+<a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf/jsonpb"><code>encoding/protobuf/jsonpb</code></a>.</p>
+<p><code>textproto</code> converts
+<strong><a href="https://protobuf.dev/reference/protobuf/textformat-spec/">text Protobuf message files</a>
+to and from CUE</strong>, and <code>jsonpb</code> rewrites a CUE expression based on the Protobuf
+interpretation of JSON.</p>
+<p>Your feedback on their utility and structure is invaluable - please join the
+<a href="/community/">CUE community</a> on Slack and GitHub, and let us
+know how you&rsquo;re using these APIs!</p>
+<h2 id="protobuf-mappings">
+    <a href="#protobuf-mappings" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Protobuf mappings</h2>
+<p>The mappings between Protobuf and CUE types are outlined in the <code>encoding/protobuf</code>
+<a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf#hdr-Type_Mappings">package documentation</a>.</p>
+<h2 id="future-plans">
+    <a href="#future-plans" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Future plans</h2>
+<p>CUE&rsquo;s support for Protobuf is only going to expand, with plans including the
+conversion of CUE definitions to <em>binary</em> Protobuf definitions, and for
+bidirectional conversion of binary and JSON Protobuf <em>messages</em> to and from
+CUE.</p>
+<h2 id="related-content">
+    <a href="#related-content" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Related content</h2>
+<ul>
+<li>Reference: <a href="/docs/reference/command/cue-help-import/">cue help import</a></li>
+<li>Reference: <a href="/docs/reference/command/cue-help-filetypes/">cue help filetypes</a></li>
+<li>Go API: <a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf"><code>encoding/protobuf</code></a></li>
+<li>Go API: <a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf/textproto"><code>encoding/protobuf/textproto</code></a></li>
+<li>Go API: <a href="https://pkg.go.dev/cuelang.org/go/encoding/protobuf/jsonpb"><code>encoding/protobuf/jsonpb</code></a></li>
+</ul>
+
+                        
+                    </div>
+    <footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/bd0960189fdf13181b98881f7878b9016a8d282c">
+                Last modified April 30, 2025</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__footer-tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:encodings"
+                class="tag tag--green">
+                    encodings
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:%22go%20api%22"
+                class="tag tag--lavender">
+                    go api
+                </a>
+            </li></ul>
+
+</div><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/concept/how-cue-works-with-protocol-buffers/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/how-cue-works-with-protocol-buffers/&text=Protocol%20Buffers,%20also%20known%20as%20Protobuf,%20is%20a%20language-neutral,%20platform-neutral,%20and%20extensible%20mechanism%20for%20serializing%20structured%20data,%20initially%20developed%20and%20released%20by%20Google.%0aProtobuf%20definitions%20can%20be%20converted%20to%20CUE%20by%20the%20cue%20command%20and%20CUE&amp;rsquo;s%20Go%20API,%20promoting%20any%20CUE%20validation%20code%20placed%20in%20Protobuf%20options%20to%20first-class%20CUE%20value%20constraints.%0aUsing%20the%20cue%20command%20Let&amp;rsquo;s%20start%20by%20converting%20Protobuf%20to%20CUE%20using%20the%20cue%20command.%20We&amp;rsquo;ll%20begin%20with%20this%20Protobuf%20file,%20basic.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/how-cue-works-with-protocol-buffers/&summary=Protocol%20Buffers,%20also%20known%20as%20Protobuf,%20is%20a%20language-neutral,%20platform-neutral,%20and%20extensible%20mechanism%20for%20serializing%20structured%20data,%20initially%20developed%20and%20released%20by%20Google.%0aProtobuf%20definitions%20can%20be%20converted%20to%20CUE%20by%20the%20cue%20command%20and%20CUE&amp;rsquo;s%20Go%20API,%20promoting%20any%20CUE%20validation%20code%20placed%20in%20Protobuf%20options%20to%20first-class%20CUE%20value%20constraints.%0aUsing%20the%20cue%20command%20Let&amp;rsquo;s%20start%20by%20converting%20Protobuf%20to%20CUE%20using%20the%20cue%20command.%20We&amp;rsquo;ll%20begin%20with%20this%20Protobuf%20file,%20basic.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/concept/how-cue-works-with-openapi/" aria-label="Previous - How CUE works with OpenAPI">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">How CUE works with OpenAPI</span>
+            </a><a class="prevnext__next" href="/docs/concept/how-cue-works-with-yaml/" aria-label="Next - How CUE works with YAML">
+                <span class="prevnext__text">How CUE works with YAML</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/popular-guides/" title="Popular guides">
+            <span class="tree__text">Popular guides</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/the-logic-of-cue/" title="The Logic of CUE">
+            <span class="tree__text">The Logic of CUE</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/modules/" title="Modules">
+            <span class="tree__text">Modules</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/faq/" title="Frequently Asked Questions">
+            <span class="tree__text">Frequently Asked Questions</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/concept/how-cue-works-with-protocol-buffers/" title="How CUE works with Protocol Buffers">
+            <span class="tree__text">How CUE works with Protocol Buffers</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#using-the-cue-command" class="toc__link"><span class="toc__text">Using the <code>cue</code> command</span></a></li>
+    <li class="toc__item"><a href="#using-the-go-api" class="toc__link"><span class="toc__text">Using the Go API</span></a></li>
+    <li class="toc__item"><a href="#extracting-cue-from-several-protobuf-files" class="toc__link"><span class="toc__text">Extracting CUE from several Protobuf files</span></a></li>
+    <li class="toc__item"><a href="#experimental-apis" class="toc__link"><span class="toc__text">Experimental APIs</span></a></li>
+    <li class="toc__item"><a href="#protobuf-mappings" class="toc__link"><span class="toc__text">Protobuf mappings</span></a></li>
+    <li class="toc__item"><a href="#future-plans" class="toc__link"><span class="toc__text">Future plans</span></a></li>
+    <li class="toc__item"><a href="#related-content" class="toc__link"><span class="toc__text">Related content</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fhow-cue-works-with-protocol-buffers%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+
+
+
+    </body>
+</html>

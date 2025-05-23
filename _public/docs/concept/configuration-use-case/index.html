@@ -1,0 +1,1594 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Managing text-based files to define a desired state of a system">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/concept/configuration-use-case/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>Configuration use case | CUE</title><meta property="og:url" content="/docs/concept/configuration-use-case/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="Configuration use case">
+  <meta property="og:description" content="Managing text-based files to define a desired state of a system">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-16T12:59:45+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="Configuration use case">
+  <meta name="twitter:description" content="Managing text-based files to define a desired state of a system">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="Configuration use case">
+<meta itemprop="description" content="Managing text-based files to define a desired state of a system">
+
+    
+        <meta itemprop="dateModified" content="2025-04-16T12:59:45+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="" />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/concept/">Concept Guides</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">Configuration use case</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="Arguably, validation should be the foremost task of any configuration language.
+Most configuration languages, however, focus on boilerplate removal.
+CUE is different in that it takes the validation first stance.
+But CUE&rsquo;s constraints are also effective at reducing boilerplate,
+although the approach it takes is quite different from conventional
+data templating languages.
+CUE basic operation merges configurations in a way that the outcome is
+always the same regardless of the order in which it is carried out
+(it is associative, commutative and idempotent).
+This property is the foundation for many other favorable properties, as discussed below.
+
+    
+
+
+
+
+    
+
+Core issues addressed by CUE
+
+    
+
+
+
+
+    
+
+Type checking
+For large code bases, no one will question a requirement to
+have a compiled/typed language.
+Why should one not require the same kind of rigor for data?
+Many configuration languages, including GCL and its offspring, focus on
+reducing boilerplate as the primary task of configuration.
+Support for typing, however, is minimal or almost non-existent.
+Some languages do add typing support, but it is usually
+limited to validating basic types, as is common with programming languages.
+For data, however, this is insufficient.
+Evidence of this is the uprise of standards like CDDL and OpenAPI that
+go beyond basic typing.
+In CUE types and values are a unified concept, which gives it very
+expressive, yet intuitive and compact, typing capabilities.
+
+                Copy code
+                
+                    Copied!
+                
+            #Spec: {
+	kind: string
+
+	name: {
+		first:   !=&#34;&#34; // must be specified and non-empty
+		middle?: !=&#34;&#34; // optional, but must be non-empty when specified
+		last:    !=&#34;&#34;
+	}
+
+	// The minimum must be strictly smaller than the maximum and vice versa.
+	minimum?: int &amp; &lt;maximum
+	maximum?: int &amp; &gt;minimum
+}
+
+// A spec is of type #Spec
+spec: #Spec
+spec: {
+	knid: &#34;Homo Sapiens&#34; // error, misspelled field
+
+	name: first: &#34;Jane&#34;
+	name: last:  &#34;Doe&#34;
+}
+
+
+
+    
+
+
+
+
+    
+
+Simplicity at Scale
+When using a configuration language to reduce boilerplate
+one should consider whether the reduced verbosity is worth the
+increased complexity.
+Most configurations use an override model to reducing boilerplate:
+an existing configuration is used as a base and modified to result in
+a new configuration.
+This is often in the form of inheritance.
+For small-scale projects,
+using inheritance can be too complex, and the simplicity of
+spelling everything out is often a superior approach.
+For large-scale projects, however, using inheritance often leads to deep
+layerings of modifications, making it very hard to see where values come from.
+In the end, it is again questionable whether the added complexity is worth it.
+Like with other configuration languages, CUE can add complexity if values
+are organized to come from multiple places.
+However, as CUE disallows overrides, deep layerings are naturally prevented.
+More importantly, CUE can also enhance readability.
+A definition in one file may apply to values in many other files.
+Where one would usually have to open all these files to verify validity;
+with CUE one can see it at a glance.
+CUE&rsquo;s approach has been battle-tested in computational linguistics where it
+has been used for decades to describe human languages;
+effectively very large, complex and irregular configurations.
+
+    
+
+
+
+
+    
+
+Abstractions versus Direct Access
+A common debate for configuration languages is whether a language should
+provide an abstraction layer for APIs.
+On the one hand, abstraction layers allow for protecting the user against misuse.
+On the other hand, they need to keep up with API changes and are
+inevitably prone to drift.
+So it goes.
+CUE addresses both issues.
+On the one hand, its fine-grained typing allows layering detailed constraints
+on top of native APIs, without the need for an abstraction layer.
+New features can be used without support of existing definitions.
+On the other hand, CUE&rsquo;s order independence allows abstraction layers
+to inject arbitrary raw API in a controlled manner,
+allowing a general escape hatch to support new or uncovered features.
+See the Manual section of the
+Kubernetes tutorial
+for an example.
+
+    
+
+
+
+
+    
+
+Tooling
+A configuration language usually transforms its configurations to
+a lower-level representation, like JSON, YAML, or Protobuf so that
+it can be consumed by tools taking in these languages.
+Piping such output to the needed tools works initially;
+but sooner or later one will get the desire to automate this,
+usually in the form of some kind of tool.
+And so it goes.
+The rise of systems requiring advanced configuration has been paired
+with a rise of even more specialized command line tools.
+The core structure of all these tools is more or less the same.
+More annoyingly, many have overlapping functionality yet are hardly extendable
+or interoperable.
+In the latter case, one may see the need to layer on yet another set of tools.
+Having tools like kubectl or etcdctl that directly control
+core infrastructure makes sense, but at higher levels of
+abstraction one needs a more open approach.
+CUE attempts to address this by providing an open,
+declarative scripting layer on top of the configuration layer.
+Aside from the above-mentioned case, it is designed to address various
+other issues:
+
+inject environmental data into configuration, something not allowed
+in CUE itself (it is pure, or hermetic, or side-effect free)
+inject computed data into configurations as part of a pipeline
+allow composability of tool integration
+
+Again, the ability to deterministically merge data from different sources
+make this a shoo-in task for CUE.
+
+    
+
+
+
+
+    
+
+Comparisons
+
+    
+
+
+
+
+    
+
+Inheritance-based configuration languages
+Inheritance, is
+not commutative and idempotent in the general case. In other words, order
+matters.
+This makes it hard to track where values are coming from.
+This is not only true for humans, but also machines.
+It makes it very complicated, if not impossible, to do any kind of
+automation.
+The complexity of inheritance is even bigger if values
+can enter an object from one of several directions (super, overlay, etc.).
+The basic operation of CUE is commutative, associative and idempotent.
+This order independence helps both
+humans and machines. The resulting model is much less complex.
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+    
+
+Inheritance in CUE
+Although CUE does not have inheritance in the override sense, it does have
+the notion of one value being an instance of another.
+In fact, this is a core principle.
+Let&rsquo;s use a real-world example to make this distinction clear:
+In the override model of inheritance, one can take an existing template,
+say a dog, and modify it to become a cat.
+Trim the ears, dry off the nose, and what have you.
+In CUE, it is a matter of classification.
+Cats and dogs are both instances of animals, but once an entity is defined
+to be a cat, it can never become a dog.
+To most humans (aka computer scientists that have not become accustomed
+to inheritance) this makes total sense.
+
+
+
+Although one can create instances of values (remember, types are values),
+one can not alter any of the values of a parent.
+A template acts as a type.
+Just as in statically typed languages where one cannot assign an integer to
+a string, one cannot violate the properties of a type in CUE.
+These restrictions reduce flexibility, but also enhance clarity.
+To ensure that a configuration holds a certain property, just declare it
+in any file included in the project to make it so.
+There is no need to look at other files.
+As we saw; the imposed restrictions can also improve, rather than hurt,
+the ability to remove boilerplate compared to inheritance-based languages.
+The complexity of inheritance-based models also hampers automation.
+The introduction of GCL was paired with the promise of advanced tooling.
+The mantra of declarative languages was even repeated with some of
+its offspring.
+The tooling never materialized, though, as the model made it intractable.
+CUE already provides power tools like trim, and its API provides
+unify and subsumption operations for incomplete configurations, the building
+blocks for powerful analysis.
+
+
+    
+
+
+
+
+    
+
+Jsonnet/ GCL
+Like Jsonnet, CUE is a superset of JSON.
+They also are both influenced by GCL.
+CUE, in turn is influenced by Jsonnet.
+This may give the semblance that the languages are very similar.
+At the core, though, they are very different.
+CUE&rsquo;s focus is data validation whereas Jsonnet focuses on data templating
+(boilerplate removal).
+Jsonnet was not designed with validation in mind.
+Jsonnet and GCL can be quite powerful at reducing boilerplate.
+The goal of CUE is not to be better at boilerplate removal than Jsonnet or GCL.
+CUE was designed to be an answer to two major shortcomings of these approaches:
+complexity and lack of typing.
+Jsonnet reduces some of the complexities of GCL, but largely falls into the
+same category.
+For CUE, the tradeoff was to add typing and reduce complexity
+(for humans and machines), at the expense of giving up flexibility.
+
+    
+
+
+
+
+    
+
+HCL
+HCL has some striking similarities with GCL.
+But whether this was a coincidence or deliberate, it removes the core
+source of complexity of GCL: inheritance.
+It does introduce a poor man&rsquo;s version of inheritance: file overlays.
+Fields may be defined in multiple files that get overwritten in a certain
+order of the file names.
+Although not nearly as complex as GCL, it does have some of the same issues.
+Also, whether the removal of inheritance was a coincidence or great insight,
+there is no construct given in return that one might need for larger scale
+configuration management.
+This means the use of HCL may hit a ceiling for medium to larger setups.
+So what CUE has to offer to users of HCL is: typing, better growth prospects
+to larger scale operations, and eliminating the peculiarities of file overlays.
+CUE does borrow one construct from HCL: the folding of single-field objects
+onto a single line was directly inspired by HCL&rsquo;s very similar approach.
+
+">
+<meta itemprop="wordCount" content="1589">
+
+
+                <div class="article__container">
+                    
+
+
+
+<header class="article__header">
+        </header>
+
+
+
+                    <div class="article__content">
+                        
+                            <p>Arguably, validation should be the foremost task of any configuration language.
+Most configuration languages, however, focus on boilerplate removal.
+CUE is different in that it takes the validation first stance.
+But CUE&rsquo;s constraints are also effective at reducing boilerplate,
+although the approach it takes is quite different from conventional
+data templating languages.</p>
+<p>CUE basic operation merges configurations in a way that the outcome is
+always the same regardless of the order in which it is carried out
+(it is associative, commutative and idempotent).
+This property is the foundation for many other favorable properties, as discussed below.</p>
+<h2 id="core-issues-addressed-by-cue">
+    <a href="#core-issues-addressed-by-cue" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Core issues addressed by CUE</h2>
+<h3 id="type-checking">
+    <a href="#type-checking" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Type checking</h3>
+<p>For large code bases, no one will question a requirement to
+have a compiled/typed language.
+Why should one not require the same kind of rigor for data?</p>
+<p>Many configuration languages, including GCL and its offspring, focus on
+reducing boilerplate as the primary task of configuration.
+Support for typing, however, is minimal or almost non-existent.</p>
+<p>Some languages do add typing support, but it is usually
+limited to validating basic types, as is common with programming languages.
+For data, however, this is insufficient.
+Evidence of this is the uprise of standards like CDDL and OpenAPI that
+go beyond basic typing.</p>
+<p>In CUE types and values are a unified concept, which gives it very
+expressive, yet intuitive and compact, typing capabilities.</p>
+<div class="code-block"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="I1NwZWM6IHsKCWtpbmQ6IHN0cmluZwoKCW5hbWU6IHsKCQlmaXJzdDogICAhPSIiIC8vIG11c3QgYmUgc3BlY2lmaWVkIGFuZCBub24tZW1wdHkKCQltaWRkbGU/OiAhPSIiIC8vIG9wdGlvbmFsLCBidXQgbXVzdCBiZSBub24tZW1wdHkgd2hlbiBzcGVjaWZpZWQKCQlsYXN0OiAgICAhPSIiCgl9CgoJLy8gVGhlIG1pbmltdW0gbXVzdCBiZSBzdHJpY3RseSBzbWFsbGVyIHRoYW4gdGhlIG1heGltdW0gYW5kIHZpY2UgdmVyc2EuCgltaW5pbXVtPzogaW50ICYgPG1heGltdW0KCW1heGltdW0/OiBpbnQgJiA&#43;bWluaW11bQp9CgovLyBBIHNwZWMgaXMgb2YgdHlwZSAjU3BlYwpzcGVjOiAjU3BlYwpzcGVjOiB7CglrbmlkOiAiSG9tbyBTYXBpZW5zIiAvLyBlcnJvciwgbWlzc3BlbGxlZCBmaWVsZAoKCW5hbWU6IGZpcnN0OiAiSmFuZSIKCW5hbWU6IGxhc3Q6ICAiRG9lIgp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span>#Spec<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	kind<span style="font-weight:bold">:</span> <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	name<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>		first<span style="font-weight:bold">:</span>   <span style="font-weight:bold">!=</span><span style="color:#b84">&#34;&#34; // must be specified and non-empty
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">		middle?: !=&#34;&#34;</span> <span style="color:#998;font-style:italic">// optional, but must be non-empty when specified</span>
+</span></span><span style="display:flex;"><span>		last<span style="font-weight:bold">:</span>    <span style="font-weight:bold">!=</span><span style="color:#b84">&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	// The minimum must be strictly smaller than the maximum and vice versa.
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	minimum?: int &amp; &lt;maximum
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	maximum?: int &amp; &gt;minimum
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">}
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">// A spec is of type #Spec
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">spec: #Spec
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">spec: {
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	knid: &#34;</span>Homo Sapiens<span style="color:#b84">&#34; // error, misspelled field
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	name: first: &#34;</span>Jane<span style="color:#b84">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">	name: last:  &#34;</span>Doe<span style="color:#b84">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#b84">}
+</span></span></span></code></pre></div></div>
+</div>
+<h3 id="simplicity-at-scale">
+    <a href="#simplicity-at-scale" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Simplicity at Scale</h3>
+<p>When using a configuration language to reduce boilerplate
+one should consider whether the reduced verbosity is worth the
+increased complexity.
+Most configurations use an override model to reducing boilerplate:
+an existing configuration is used as a base and modified to result in
+a new configuration.
+This is often in the form of inheritance.</p>
+<p>For small-scale projects,
+using inheritance can be too complex, and the simplicity of
+spelling everything out is often a superior approach.
+For large-scale projects, however, using inheritance often leads to deep
+layerings of modifications, making it very hard to see where values come from.
+In the end, it is again questionable whether the added complexity is worth it.</p>
+<p>Like with other configuration languages, CUE can add complexity if values
+are organized to come from multiple places.
+However, as CUE disallows overrides, deep layerings are naturally prevented.
+More importantly, CUE can also enhance readability.
+A definition in one file may apply to values in many other files.
+Where one would usually have to open all these files to verify validity;
+with CUE one can see it at a glance.</p>
+<p>CUE&rsquo;s approach has been battle-tested in computational linguistics where it
+has been used for decades to describe human languages;
+effectively very large, complex and irregular configurations.</p>
+<h3 id="abstractions-versus-direct-access">
+    <a href="#abstractions-versus-direct-access" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Abstractions versus Direct Access</h3>
+<p>A common debate for configuration languages is whether a language should
+provide an abstraction layer for APIs.
+On the one hand, abstraction layers allow for protecting the user against misuse.
+On the other hand, they need to keep up with API changes and are
+inevitably prone to drift.
+So it goes.</p>
+<p>CUE addresses both issues.
+On the one hand, its fine-grained typing allows layering detailed constraints
+on top of native APIs, without the need for an abstraction layer.
+New features can be used without support of existing definitions.</p>
+<p>On the other hand, CUE&rsquo;s order independence allows abstraction layers
+to inject arbitrary raw API in a controlled manner,
+allowing a general escape hatch to support new or uncovered features.
+See the Manual section of the
+<a href="https://github.com/cue-labs/cue-by-example/blob/main/003_kubernetes_tutorial/README.md">Kubernetes tutorial</a>
+for an example.</p>
+<h3 id="tooling">
+    <a href="#tooling" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Tooling</h3>
+<p>A configuration language usually transforms its configurations to
+a lower-level representation, like JSON, YAML, or Protobuf so that
+it can be consumed by tools taking in these languages.
+Piping such output to the needed tools works initially;
+but sooner or later one will get the desire to automate this,
+usually in the form of some kind of tool.</p>
+<p>And so it goes.
+The rise of systems requiring advanced configuration has been paired
+with a rise of even more specialized command line tools.
+The core structure of all these tools is more or less the same.
+More annoyingly, many have overlapping functionality yet are hardly extendable
+or interoperable.
+In the latter case, one may see the need to layer on yet another set of tools.</p>
+<p>Having tools like <code>kubectl</code> or <code>etcdctl</code> that directly control
+core infrastructure makes sense, but at higher levels of
+abstraction one needs a more open approach.</p>
+<p>CUE attempts to address this by providing an open,
+declarative scripting layer on top of the configuration layer.
+Aside from the above-mentioned case, it is designed to address various
+other issues:</p>
+<ul>
+<li>inject environmental data into configuration, something not allowed
+in CUE itself (it is pure, or hermetic, or side-effect free)</li>
+<li>inject computed data into configurations as part of a pipeline</li>
+<li>allow composability of tool integration</li>
+</ul>
+<p>Again, the ability to deterministically merge data from different sources
+make this a shoo-in task for CUE.</p>
+<h2 id="comparisons">
+    <a href="#comparisons" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Comparisons</h2>
+<h3 id="inheritance-based-configuration-languages">
+    <a href="#inheritance-based-configuration-languages" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Inheritance-based configuration languages</h3>
+<p>Inheritance, is
+not commutative and idempotent in the general case. In other words, order
+matters.
+This makes it hard to track where values are coming from.
+This is not only true for humans, but also machines.
+It makes it very complicated, if not impossible, to do any kind of
+automation.
+The complexity of inheritance is even bigger if values
+can enter an object from one of several directions (super, overlay, etc.).</p>
+<p>The basic operation of CUE is commutative, associative and idempotent.
+This order independence helps both
+humans and machines. The resulting model is much less complex.</p>
+<div class="note note--info" role="alert">
+
+
+
+<svg class="icon note__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--exclamation"></use>
+</svg>
+<div class="note__content"><h3 id="inheritance-in-cue">
+    <a href="#inheritance-in-cue" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Inheritance in CUE</h3>
+<p>Although CUE does not have inheritance in the override sense, it does have
+the notion of one value being an instance of another.
+In fact, this is a core principle.</p>
+<p>Let&rsquo;s use a real-world example to make this distinction clear:
+In the override model of inheritance, one can take an existing template,
+say a dog, and modify it to become a cat.
+Trim the ears, dry off the nose, and what have you.</p>
+<p>In CUE, it is a matter of classification.
+Cats and dogs are both instances of animals, but once an entity is defined
+to be a cat, it can never become a dog.
+To most humans (aka computer scientists that have not become accustomed
+to inheritance) this makes total sense.</p>
+</div>
+</div>
+
+<p>Although one can create instances of values (remember, types are values),
+one can not alter any of the values of a parent.
+A template acts as a type.
+Just as in statically typed languages where one cannot assign an integer to
+a string, one cannot violate the properties of a type in CUE.</p>
+<p>These restrictions reduce flexibility, but also enhance clarity.
+To ensure that a configuration holds a certain property, just declare it
+in any file included in the project to make it so.
+There is no need to look at other files.
+As we saw; the imposed restrictions can also improve, rather than hurt,
+the ability to remove boilerplate compared to inheritance-based languages.</p>
+<p>The complexity of inheritance-based models also hampers automation.
+The introduction of GCL was paired with the promise of advanced tooling.
+The mantra of declarative languages was even repeated with some of
+its offspring.
+The tooling never materialized, though, as the model made it intractable.</p>
+<p>CUE already provides power tools like trim, and its API provides
+unify and subsumption operations for incomplete configurations, the building
+blocks for powerful analysis.</p>
+<!-- TODO:
+### Imperative Configuration Languages
+-->
+<h3 id="jsonnet-gcl">
+    <a href="#jsonnet-gcl" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Jsonnet/ GCL</h3>
+<p>Like Jsonnet, CUE is a superset of JSON.
+They also are both influenced by GCL.
+CUE, in turn is influenced by Jsonnet.
+This may give the semblance that the languages are very similar.
+At the core, though, they are very different.</p>
+<p>CUE&rsquo;s focus is data validation whereas Jsonnet focuses on data templating
+(boilerplate removal).
+Jsonnet was not designed with validation in mind.</p>
+<p>Jsonnet and GCL can be quite powerful at reducing boilerplate.
+The goal of CUE is not to be better at boilerplate removal than Jsonnet or GCL.
+CUE was designed to be an answer to two major shortcomings of these approaches:
+complexity and lack of typing.
+Jsonnet reduces some of the complexities of GCL, but largely falls into the
+same category.
+For CUE, the tradeoff was to add typing and reduce complexity
+(for humans and machines), at the expense of giving up flexibility.</p>
+<h3 id="hcl">
+    <a href="#hcl" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>HCL</h3>
+<p>HCL has some striking similarities with GCL.
+But whether this was a coincidence or deliberate, it removes the core
+source of complexity of GCL: inheritance.</p>
+<p>It does introduce a poor man&rsquo;s version of inheritance: file overlays.
+Fields may be defined in multiple files that get overwritten in a certain
+order of the file names.
+Although not nearly as complex as GCL, it does have some of the same issues.</p>
+<p>Also, whether the removal of inheritance was a coincidence or great insight,
+there is no construct given in return that one might need for larger scale
+configuration management.
+This means the use of HCL may hit a ceiling for medium to larger setups.</p>
+<p>So what CUE has to offer to users of HCL is: typing, better growth prospects
+to larger scale operations, and eliminating the peculiarities of file overlays.</p>
+<p>CUE does borrow one construct from HCL: the folding of single-field objects
+onto a single line was directly inspired by HCL&rsquo;s very similar approach.</p>
+<!--
+Possible other comparisons:
+ - Kustomize
+ - Python offshoots: Picolo, Coil, etc.
+ - Skylark as a special case.
+ - Nix
+ - using plain YAML/JSON
+-->
+
+                        
+                    </div><footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/517f0213e8685a81c6436cf0e6226f98facb066b">
+                Last modified April 16, 2025</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/concept/configuration-use-case/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/configuration-use-case/&text=Arguably,%20validation%20should%20be%20the%20foremost%20task%20of%20any%20configuration%20language.%20Most%20configuration%20languages,%20however,%20focus%20on%20boilerplate%20removal.%20CUE%20is%20different%20in%20that%20it%20takes%20the%20validation%20first%20stance.%20But%20CUE&amp;rsquo;s%20constraints%20are%20also%20effective%20at%20reducing%20boilerplate,%20although%20the%20approach%20it%20takes%20is%20quite%20different%20from%20conventional%20data%20templating%20languages.%0aCUE%20basic%20operation%20merges%20configurations%20in%20a%20way%20that%20the%20outcome%20is%20always%20the%20same%20regardless%20of%20the%20order%20in%20which%20it%20is%20carried%20out%20%28it%20is%20associative,%20commutative%20and%20idempotent%29.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/configuration-use-case/&summary=Arguably,%20validation%20should%20be%20the%20foremost%20task%20of%20any%20configuration%20language.%20Most%20configuration%20languages,%20however,%20focus%20on%20boilerplate%20removal.%20CUE%20is%20different%20in%20that%20it%20takes%20the%20validation%20first%20stance.%20But%20CUE&amp;rsquo;s%20constraints%20are%20also%20effective%20at%20reducing%20boilerplate,%20although%20the%20approach%20it%20takes%20is%20quite%20different%20from%20conventional%20data%20templating%20languages.%0aCUE%20basic%20operation%20merges%20configurations%20in%20a%20way%20that%20the%20outcome%20is%20always%20the%20same%20regardless%20of%20the%20order%20in%20which%20it%20is%20carried%20out%20%28it%20is%20associative,%20commutative%20and%20idempotent%29.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/concept/code-generation-and-extraction-use-case/" aria-label="Previous - Code Generation and Extraction use case">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">Code Generation and Extraction use case</span>
+            </a><a class="prevnext__next" href="/docs/concept/cue-language-version/" aria-label="Next - CUE language versions">
+                <span class="prevnext__text">CUE language versions</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/popular-guides/" title="Popular guides">
+            <span class="tree__text">Popular guides</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/the-logic-of-cue/" title="The Logic of CUE">
+            <span class="tree__text">The Logic of CUE</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/modules/" title="Modules">
+            <span class="tree__text">Modules</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/faq/" title="Frequently Asked Questions">
+            <span class="tree__text">Frequently Asked Questions</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/concept/configuration-use-case/" title="Configuration use case">
+            <span class="tree__text">Configuration use case</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#core-issues-addressed-by-cue" class="toc__link"><span class="toc__text">Core issues addressed by CUE</span></a></li>
+    <li class="toc__item"><a href="#comparisons" class="toc__link"><span class="toc__text">Comparisons</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fconfiguration-use-case%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+
+
+
+    </body>
+</html>

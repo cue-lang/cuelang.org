@@ -1,0 +1,2048 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Introduction In this tutorial you will publish a module to the Central Registry and then create a second module that depends on the first.Prerequisites A …">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/tutorial/publishing-modules-to-the-central-registry/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>Publishing modules to the Central Registry | CUE</title><meta property="og:url" content="/docs/tutorial/publishing-modules-to-the-central-registry/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="Publishing modules to the Central Registry">
+  <meta property="og:description" content="Introduction In this tutorial you will publish a module to the Central Registry and then create a second module that depends on the first.
+Prerequisites A GitHub account – this will let you authenticate to the Central Registry A GitHub repository called frostyconfig – create it under your personal GitHub account (it doesn’t matter if it is public or private) A Central Registry account The cue binary – follow the installation instructions if you don’t already use cue A tool to edit text files – any text editor you have will be fine, such as VSCode, Notepad, or Vim A command terminal – cue works on all platforms, so you can use any Linux or macOS terminal, or a Windows terminal such as PowerShell, cmd, or WSL to run commands.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="Publishing modules to the Central Registry">
+  <meta name="twitter:description" content="Introduction In this tutorial you will publish a module to the Central Registry and then create a second module that depends on the first.
+Prerequisites A GitHub account – this will let you authenticate to the Central Registry A GitHub repository called frostyconfig – create it under your personal GitHub account (it doesn’t matter if it is public or private) A Central Registry account The cue binary – follow the installation instructions if you don’t already use cue A tool to edit text files – any text editor you have will be fine, such as VSCode, Notepad, or Vim A command terminal – cue works on all platforms, so you can use any Linux or macOS terminal, or a Windows terminal such as PowerShell, cmd, or WSL to run commands.">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="Publishing modules to the Central Registry">
+<meta itemprop="description" content="Introduction In this tutorial you will publish a module to the Central Registry and then create a second module that depends on the first.
+Prerequisites A GitHub account &ndash; this will let you authenticate to the Central Registry A GitHub repository called frostyconfig &ndash; create it under your personal GitHub account (it doesn&rsquo;t matter if it is public or private) A Central Registry account The cue binary &ndash; follow the installation instructions if you don&rsquo;t already use cue A tool to edit text files &ndash; any text editor you have will be fine, such as VSCode, Notepad, or Vim A command terminal &ndash; cue works on all platforms, so you can use any Linux or macOS terminal, or a Windows terminal such as PowerShell, cmd, or WSL to run commands.">
+
+    
+        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="modules,tooling,cue command," />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/tutorial/">Tutorials</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">Publishing modules to the Central Registry</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="
+
+    
+
+
+
+
+    
+
+Introduction
+In this tutorial you will publish a module to the Central Registry and then
+create a second module that depends on the first.
+
+    
+
+
+
+
+    
+
+Prerequisites
+
+A GitHub account &ndash;
+this will let you authenticate to the Central Registry
+
+
+A GitHub repository called frostyconfig &ndash;
+create it under your personal GitHub account (it doesn&rsquo;t matter if it is public or private)
+A Central Registry account
+The cue binary &ndash;
+follow the installation instructions
+if you don&rsquo;t already use cue
+A tool to edit text files &ndash;
+any text editor you have will be fine, such as
+VSCode,
+Notepad, or
+Vim
+A command terminal &ndash;
+cue works on all platforms, so you can use any Linux or macOS terminal,
+or a Windows terminal such as PowerShell, cmd, or
+WSL
+to run commands.
+Some awareness of CUE schemata &ndash;
+the language tour&rsquo;s pages on
+Constraints and
+Definitions are a good refresher
+
+This tutorial is written using the following version of cue:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue version
+cue version v0.13.0
+...
+
+
+    
+
+
+
+
+    
+
+Create the module for the schema code
+In this tutorial we will focus on an imaginary application called FrostyApp,
+which consumes its configuration in YAML format.
+You will define the configuration in CUE and use a CUE schema to validate it.
+We would like to be able to share the schema between several consumers,
+so we will publish it to the Central Registry.
+
+
+
+
+1Create a directory to hold the schema code:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ mkdir frostyconfig
+$ cd frostyconfig
+
+
+
+
+
+
+
+
+    
+
+You need to adapt the command shown in the next step.
+Don&rsquo;t simply paste the command into your terminal and run it.
+Before running the command, replace the example username,
+cueckoo,
+with the lower-cased form of YOUR GitHub username.
+For example:
+if your GitHub username is _TomHanks
+then you would replace cueckoo with _tomhanks.
+You need to make this replacement everywhere you see
+the username cueckoo in this tutorial.
+
+
+
+
+
+
+
+2Initialize the directory as a git repository and a CUE module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ git init -q
+
+# Replace &#34;cueckoo&#34; with *your* GitHub username, lower-cased.
+$ cue mod init --source=git github.com/cueckoo/frostyconfig@v0
+
+The --source=git flag tells cue to use the same file-inclusion rules as
+git, when publishing this module.
+The GitHub user cueckoo controls all the repositories under
+github.com/cueckoo/, so they can publish modules to the Central
+Registry inside that namespace.  The same is true for your GitHub username.
+
+
+
+
+
+
+
+3Create the configuration schema:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    frostyconfig/config.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package frostyconfig
+
+// #Config defines the schema for the FrostyApp configuration.
+#Config: {
+	// appName defines the name of the application.
+	appName!: string
+	// port holds the port number the application listens on.
+	port!: int
+	// debug holds whether to enable debug mode.
+	debug?: bool
+	// features holds optional feature settings
+	features?: {
+		// logging enables or disables logging.
+		logging?: bool
+		// analytics enables or disables analytics.
+		analytics?: bool
+	}
+}
+
+
+
+
+
+
+
+
+
+
+4As a one-off, login to the Central Registry:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue login
+
+The Central Registry is in beta testing -
+please give us your feedback about the service in the
+#modules channel on Slack or on Discord!
+
+
+
+
+
+
+
+5Ensure the module.cue file is tidy:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+
+
+
+
+
+
+
+6If you haven&rsquo;t already done so,
+create a repository
+called frostyconfig under your personal username at GitHub.
+It doesn&rsquo;t matter if the repository is public or private.
+
+
+
+
+
+
+7Create a git commit:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ git add -A
+$ git commit -q -m &#39;Initial commit&#39;
+
+Earlier, you initialized this module with --source=git, which told the cue
+command that it should publish only those files that git knows about. The git
+commit you just created leaves the directory in a &ldquo;clean&rdquo; state, which is
+necessary for cue to know exactly which files to include in the published
+module.
+
+
+
+
+
+
+
+8Publish the first version of this module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod publish v0.0.1
+...
+
+
+
+
+
+
+
+
+    
+
+This command should mention your GitHub username,
+and should publish the module successfully.
+If the command fails with an error message that mentions your GitHub username
+then you probably haven&rsquo;t created the frostyconfig repository under your GitHub username.
+Create it, and try the step again.
+If the command fails with an error message that mentions cueckoo/frostyconfig
+then you probably forgot to adapt the command in step 3, above.
+Don&rsquo;t worry - this isn&rsquo;t a serious problem!
+The easiest way to fix this is to delete your frostyconfig directory
+and restart the tutorial from step 1.
+
+
+
+
+
+    
+
+
+
+
+    
+
+Create a new frostyapp module that depends on the first module
+Define the FrostyApp configuration, constrained by the schema you just
+published.
+
+
+
+
+9Create a directory for the new module and initalize it,
+changing cueckoo to your GitHub username, lower-cased:
+
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ mkdir ../frostyapp
+$ cd ../frostyapp
+$ git init -q
+$ cue mod init --source=git github.com/cueckoo/frostyapp@v0
+
+
+
+
+
+
+
+10Create the code for the new module:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    frostyapp/config.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+
+package frostyapp
+
+// Adapt this line to your GitHub username, lower-cased.
+import &#34;github.com/cueckoo/frostyconfig@v0&#34;
+
+config: frostyconfig.#Config &amp; {
+	appName: &#34;alpha&#34;
+	port:    80
+	features: logging: true
+}
+
+
+
+
+
+
+Remember to change cueckoo to your GitHub username, lower-cased, on line 4.
+
+
+
+
+
+
+
+11Ensure the module is tidy, adding missing dependencies:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+
+We can see that the dependencies have now been added to the
+cue.mod/module.cue file:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cat cue.mod/module.cue
+module: &#34;github.com/cueckoo/frostyapp@v0&#34;
+language: {
+	version: &#34;v0.13.0&#34;
+}
+source: {
+	kind: &#34;git&#34;
+}
+deps: {
+	&#34;github.com/cueckoo/frostyconfig@v0&#34;: {
+		v: &#34;v0.0.1&#34;
+	}
+}
+
+
+
+
+
+    
+
+
+
+
+    
+
+Evaluate the configuration
+
+
+
+
+12Export the configuration as YAML:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue export --out yaml
+config:
+  appName: alpha
+  port: 80
+  features:
+    logging: true
+
+We can use this new module code just like any other CUE code.
+
+
+
+
+
+    
+
+
+
+
+    
+
+Congratulations!
+That&rsquo;s it! You have just created a module and published it to the Central
+Registry, and then used the newly published module to check a concrete
+configuration held in a different module.
+
+    
+
+
+
+
+    
+
+Related content
+
+Tutorial: Working with modules and the Central Registry
+Tutorial: Working with a custom module registry
+Reference: CUE Modules
+
+">
+<meta itemprop="wordCount" content="1009">
+
+
+                <div class="article__container">
+                    
+
+
+
+
+        <header class="article__header">
+        <div class="article__info"><div class="article__authors">
+
+
+<div class="authors">
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/myitcv.png" alt="myitcv">
+
+                    
+                        <span class="authors__display-name">Paul Jolly</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/myitcv.png" alt="myitcv">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Paul Jolly</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/myitcv">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:myitcv">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+</div>
+</div><div class="article__tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:%22cue%20command%22"
+                class="tag tag--purple">
+                    cue command
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:tooling"
+                class="tag tag--orange">
+                    tooling
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:modules"
+                class="tag tag--red">
+                    modules
+                </a>
+            </li></ul>
+
+</div></div></header>
+
+
+
+                    <div class="article__content">
+                        
+                            <!-- vim_ syntax highlighting hack -->
+<h2 id="introduction">
+    <a href="#introduction" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Introduction</h2>
+<p>In this tutorial you will publish a module to the Central Registry and then
+create a second module that depends on the first.</p>
+<h2 id="prerequisites">
+    <a href="#prerequisites" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Prerequisites</h2>
+<ul>
+<li><strong>A <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github#signing-up-for-a-new-personal-account">GitHub</a> account</strong> &ndash;
+this will let you authenticate to the Central Registry
+<!-- TODO: reword as&when a GH account isn't a strict requirement -->
+</li>
+<li><strong>A GitHub repository called <code>frostyconfig</code></strong> &ndash;
+create it under your personal GitHub account (it doesn&rsquo;t matter if it is public or private)</li>
+<li><strong>A <a href="https://registry.cue.works/">Central Registry</a> account</strong></li>
+<li><strong>The <code>cue</code> binary</strong> &ndash;
+follow the <a href="/docs/introduction/installation/">installation instructions</a>
+if you don&rsquo;t already use <code>cue</code></li>
+<li><strong>A tool to edit text files</strong> &ndash;
+any text editor you have will be fine, such as
+<a href="https://code.visualstudio.com/">VSCode</a>,
+<a href="https://apps.microsoft.com/detail/9msmlrh6lzf3">Notepad</a>, or
+<a href="https://www.vim.org/download.php">Vim</a></li>
+<li><strong>A command terminal</strong> &ndash;
+<code>cue</code> works on all platforms, so you can use any Linux or macOS terminal,
+or a Windows terminal such as PowerShell, cmd, or
+<a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a>
+to run commands.</li>
+<li><strong>Some awareness of CUE schemata</strong> &ndash;
+the language tour&rsquo;s pages on
+<a href="/docs/tour/basics/constraints/">Constraints</a> and
+<a href="/docs/tour/basics/definitions/">Definitions</a> are a good refresher</li>
+</ul>
+<p>This tutorial is written using the following version of <code>cue</code>:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZlcnNpb24=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue version
+</span></span><span style="display:flex;"><span>cue version v0.13.0
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div>
+<h2 id="create-the-module-for-the-schema-code">
+    <a href="#create-the-module-for-the-schema-code" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Create the module for the schema code</h2>
+<p>In this tutorial we will focus on an imaginary application called <code>FrostyApp</code>,
+which consumes its configuration in YAML format.
+You will define the configuration in CUE and use a CUE schema to validate it.
+We would like to be able to share the schema between several consumers,
+so we will publish it to the Central Registry.</p>
+
+
+
+
+<div class="step" id="step-1" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-1" data-step-number="1">1</a><div class="step__content"><p>Create a directory to hold the schema code:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZw==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ mkdir frostyconfig
+</span></span><span style="display:flex;"><span>$ cd frostyconfig</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+<div class="note note--caution" role="alert">
+
+
+
+<svg class="icon note__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--exclamation"></use>
+</svg>
+<div class="note__content"><p><strong>You need to adapt the command shown in the next step.</strong></p>
+<p>Don&rsquo;t simply paste the command into your terminal and run it.</p>
+<p>Before running the command, replace the example username,
+<code>cueckoo</code>,
+with <strong>the lower-cased form of YOUR GitHub username.</strong>
+For example:
+if your GitHub username is <code>_TomHanks</code>
+then you would replace <code>cueckoo</code> with <code>_tomhanks</code>.</p>
+<p><strong>You need to make this replacement <em>everywhere</em> you see
+the username <code>cueckoo</code> in this tutorial.</strong></p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-2" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-2" data-step-number="2">2</a><div class="step__content"><p>Initialize the directory as a git repository and a CUE module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnaXRodWIuY29tL2N1ZWNrb28vZnJvc3R5Y29uZmlnQHYw">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ git init -q
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Replace &#34;cueckoo&#34; with *your* GitHub username, lower-cased.
+</span></span><span style="display:flex;"><span>$ cue mod init --source=git github.com/cueckoo/frostyconfig@v0</span></span></code></pre></div></div>
+</div>
+<p>The <code>--source=git</code> flag tells <code>cue</code> to use the same file-inclusion rules as
+<code>git</code>, when publishing this module.</p>
+<p>The GitHub user <code>cueckoo</code> controls all the repositories under
+<code>github.com/cueckoo/</code>, so they can publish modules to the Central
+Registry inside that namespace.  The same is true for your GitHub username.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-3" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-3" data-step-number="3">3</a><div class="step__content"><p>Create the configuration schema:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="frostyconfig/config.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="frostyconfig/config.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>frostyconfig/config.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="frostyconfig/config.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBmcm9zdHljb25maWcKCi8vICNDb25maWcgZGVmaW5lcyB0aGUgc2NoZW1hIGZvciB0aGUgRnJvc3R5QXBwIGNvbmZpZ3VyYXRpb24uCiNDb25maWc6IHsKCS8vIGFwcE5hbWUgZGVmaW5lcyB0aGUgbmFtZSBvZiB0aGUgYXBwbGljYXRpb24uCglhcHBOYW1lITogc3RyaW5nCgkvLyBwb3J0IGhvbGRzIHRoZSBwb3J0IG51bWJlciB0aGUgYXBwbGljYXRpb24gbGlzdGVucyBvbi4KCXBvcnQhOiBpbnQKCS8vIGRlYnVnIGhvbGRzIHdoZXRoZXIgdG8gZW5hYmxlIGRlYnVnIG1vZGUuCglkZWJ1Zz86IGJvb2wKCS8vIGZlYXR1cmVzIGhvbGRzIG9wdGlvbmFsIGZlYXR1cmUgc2V0dGluZ3MKCWZlYXR1cmVzPzogewoJCS8vIGxvZ2dpbmcgZW5hYmxlcyBvciBkaXNhYmxlcyBsb2dnaW5nLgoJCWxvZ2dpbmc/OiBib29sCgkJLy8gYW5hbHl0aWNzIGVuYWJsZXMgb3IgZGlzYWJsZXMgYW5hbHl0aWNzLgoJCWFuYWx5dGljcz86IGJvb2wKCX0KfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> frostyconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// #Config defines the schema for the FrostyApp configuration.</span>
+</span></span><span style="display:flex;"><span>#Config<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// appName defines the name of the application.</span>
+</span></span><span style="display:flex;"><span>	appName<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// port holds the port number the application listens on.</span>
+</span></span><span style="display:flex;"><span>	port<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// debug holds whether to enable debug mode.</span>
+</span></span><span style="display:flex;"><span>	debug<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// features holds optional feature settings</span>
+</span></span><span style="display:flex;"><span>	features<span style="font-weight:bold">?:</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// logging enables or disables logging.</span>
+</span></span><span style="display:flex;"><span>		logging<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// analytics enables or disables analytics.</span>
+</span></span><span style="display:flex;"><span>		analytics<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-4" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-4" data-step-number="4">4</a><div class="step__content"><p>As a one-off, login to the Central Registry:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGxvZ2lu">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue login</span></span></code></pre></div></div>
+</div>
+<p>The Central Registry is in beta testing -
+please give us your feedback about the service in the
+<code>#modules</code> channel <a href="/s/slack">on Slack</a> or <a href="/s/discord">on Discord</a>!</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-5" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-5" data-step-number="5">5</a><div class="step__content"><p>Ensure the <code>module.cue</code> file is tidy:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-6" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-6" data-step-number="6">6</a><div class="step__content">If you haven&rsquo;t already done so,
+<a href="https://github.com/new?org=">create a repository</a>
+called <code>frostyconfig</code> under your personal username at GitHub.
+It doesn&rsquo;t matter if the repository is public or private.</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-7" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-7" data-step-number="7">7</a><div class="step__content"><p>Create a git commit:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ git add -A
+</span></span><span style="display:flex;"><span>$ git commit -q -m &#39;Initial commit&#39;</span></span></code></pre></div></div>
+</div>
+<p>Earlier, you initialized this module with <code>--source=git</code>, which told the <code>cue</code>
+command that it should publish only those files that <code>git</code> knows about. The git
+commit you just created leaves the directory in a &ldquo;clean&rdquo; state, which is
+necessary for <code>cue</code> to know exactly which files to include in the published
+module.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-8" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-8" data-step-number="8">8</a><div class="step__content"><p>Publish the first version of this module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod publish v0.0.1
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+<div class="note note--warn" role="alert">
+
+
+
+<svg class="icon note__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--exclamation"></use>
+</svg>
+<div class="note__content"><p>This command should mention <strong>your</strong> GitHub username,
+and should publish the module successfully.</p>
+<p>If the command fails with an error message that mentions <em>your</em> GitHub username
+then you probably haven&rsquo;t created the <code>frostyconfig</code> repository under your GitHub username.
+Create it, and try the step again.</p>
+<p>If the command fails with an error message that mentions <code>cueckoo/frostyconfig</code>
+then you probably forgot to adapt the command in step 3, above.
+Don&rsquo;t worry - this <strong>isn&rsquo;t</strong> a serious problem!</p>
+<p>The easiest way to fix this is to delete your <code>frostyconfig</code> directory
+and restart the tutorial from step 1.</p>
+<!-- TODO: link to step 1 when https://cuelang.org/issue/2971 is resolved -->
+</div>
+</div>
+
+<h2 id="create-a-new-frostyapp-module-that-depends-on-the-first-module">
+    <a href="#create-a-new-frostyapp-module-that-depends-on-the-first-module" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Create a new <code>frostyapp</code> module that depends on the first module</h2>
+<p>Define the <code>FrostyApp</code> configuration, constrained by the schema you just
+published.</p>
+
+
+
+
+<div class="step" id="step-9" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-9" data-step-number="9">9</a><div class="step__content"><p>Create a directory for the new module and initalize it,
+changing <code>cueckoo</code> to <em>your</em> GitHub username, lower-cased:</p>
+<!-- Not strictly neccessary, but it might confuse if we don't point it out -->
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApnaXQgaW5pdCAtcQpjdWUgbW9kIGluaXQgLS1zb3VyY2U9Z2l0IGdpdGh1Yi5jb20vY3VlY2tvby9mcm9zdHlhcHBAdjA=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ mkdir ../frostyapp
+</span></span><span style="display:flex;"><span>$ cd ../frostyapp
+</span></span><span style="display:flex;"><span>$ git init -q
+</span></span><span style="display:flex;"><span>$ cue mod init --source=git github.com/cueckoo/frostyapp@v0</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-10" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-10" data-step-number="10">10</a><div class="step__content"><p>Create the code for the new module:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="frostyapp/config.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="frostyapp/config.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>frostyapp/config.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="frostyapp/config.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBmcm9zdHlhcHAKCi8vIEFkYXB0IHRoaXMgbGluZSB0byB5b3VyIEdpdEh1YiB1c2VybmFtZSwgbG93ZXItY2FzZWQuCmltcG9ydCAiZ2l0aHViLmNvbS9jdWVja29vL2Zyb3N0eWNvbmZpZ0B2MCIKCmNvbmZpZzogZnJvc3R5Y29uZmlnLiNDb25maWcgJiB7CglhcHBOYW1lOiAiYWxwaGEiCglwb3J0OiAgICA4MAoJZmVhdHVyZXM6IGxvZ2dpbmc6IHRydWUKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> frostyapp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Adapt this line to your GitHub username, lower-cased.</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#b84">&#34;github.com/cueckoo/frostyconfig@v0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>config<span style="font-weight:bold">:</span> frostyconfig.#Config <span style="font-weight:bold">&amp;</span> {
+</span></span><span style="display:flex;"><span>	appName<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;alpha&#34;</span>
+</span></span><span style="display:flex;"><span>	port<span style="font-weight:bold">:</span>    <span style="color:#099">80</span>
+</span></span><span style="display:flex;"><span>	features<span style="font-weight:bold">:</span> logging<span style="font-weight:bold">:</span> <span style="font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p><strong>Remember to change <code>cueckoo</code> to <em>your</em> GitHub username, lower-cased, on line 4.</strong></p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-11" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-11" data-step-number="11">11</a><div class="step__content"><p>Ensure the module is tidy, adding missing dependencies:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy</span></span></code></pre></div></div>
+</div>
+<p>We can see that the dependencies have now been added to the
+<code>cue.mod/module.cue</code> file:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cat cue.mod/module.cue
+</span></span><span style="display:flex;"><span>module: &#34;github.com/cueckoo/frostyapp@v0&#34;
+</span></span><span style="display:flex;"><span>language: {
+</span></span><span style="display:flex;"><span>	version: &#34;v0.13.0&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>source: {
+</span></span><span style="display:flex;"><span>	kind: &#34;git&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>deps: {
+</span></span><span style="display:flex;"><span>	&#34;github.com/cueckoo/frostyconfig@v0&#34;: {
+</span></span><span style="display:flex;"><span>		v: &#34;v0.0.1&#34;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div>
+</div>
+
+<h2 id="evaluate-the-configuration">
+    <a href="#evaluate-the-configuration" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Evaluate the configuration</h2>
+
+
+
+
+<div class="step" id="step-12" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-12" data-step-number="12">12</a><div class="step__content"><p>Export the configuration as YAML:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGV4cG9ydCAtLW91dCB5YW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue export --out yaml
+</span></span><span style="display:flex;"><span>config:
+</span></span><span style="display:flex;"><span>  appName: alpha
+</span></span><span style="display:flex;"><span>  port: 80
+</span></span><span style="display:flex;"><span>  features:
+</span></span><span style="display:flex;"><span>    logging: true</span></span></code></pre></div></div>
+</div>
+<p>We can use this new module code just like any other CUE code.</p>
+</div>
+</div>
+
+<!-- TODO: prompt the reader to delete the authz-related repo from GitHub? -->
+<h2 id="congratulations">
+    <a href="#congratulations" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Congratulations!</h2>
+<p>That&rsquo;s it! You have just created a module and published it to the Central
+Registry, and then used the newly published module to check a concrete
+configuration held in a different module.</p>
+<h2 id="related-content">
+    <a href="#related-content" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Related content</h2>
+<ul>
+<li>Tutorial: <a href="/docs/tutorial/working-with-the-central-registry/">Working with modules and the Central Registry</a></li>
+<li>Tutorial: <a href="/docs/tutorial/working-with-a-custom-module-registry/">Working with a custom module registry</a></li>
+<li>Reference: <a href="/docs/reference/modules/">CUE Modules</a></li>
+</ul>
+
+                        
+                    </div>
+    <footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
+                Last modified May 22, 2025</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__footer-tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:%22cue%20command%22"
+                class="tag tag--purple">
+                    cue command
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:tooling"
+                class="tag tag--orange">
+                    tooling
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:modules"
+                class="tag tag--red">
+                    modules
+                </a>
+            </li></ul>
+
+</div><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/tutorial/publishing-modules-to-the-central-registry/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tutorial/publishing-modules-to-the-central-registry/&text=Introduction%20In%20this%20tutorial%20you%20will%20publish%20a%20module%20to%20the%20Central%20Registry%20and%20then%20create%20a%20second%20module%20that%20depends%20on%20the%20first.%0aPrerequisites%20A%20GitHub%20account%20&amp;ndash;%20this%20will%20let%20you%20authenticate%20to%20the%20Central%20Registry%20A%20GitHub%20repository%20called%20frostyconfig%20&amp;ndash;%20create%20it%20under%20your%20personal%20GitHub%20account%20%28it%20doesn&amp;rsquo;t%20matter%20if%20it%20is%20public%20or%20private%29%20A%20Central%20Registry%20account%20The%20cue%20binary%20&amp;ndash;%20follow%20the%20installation%20instructions%20if%20you%20don&amp;rsquo;t%20already%20use%20cue%20A%20tool%20to%20edit%20text%20files%20&amp;ndash;%20any%20text%20editor%20you%20have%20will%20be%20fine,%20such%20as%20VSCode,%20Notepad,%20or%20Vim%20A%20command%20terminal%20&amp;ndash;%20cue%20works%20on%20all%20platforms,%20so%20you%20can%20use%20any%20Linux%20or%20macOS%20terminal,%20or%20a%20Windows%20terminal%20such%20as%20PowerShell,%20cmd,%20or%20WSL%20to%20run%20commands.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tutorial/publishing-modules-to-the-central-registry/&summary=Introduction%20In%20this%20tutorial%20you%20will%20publish%20a%20module%20to%20the%20Central%20Registry%20and%20then%20create%20a%20second%20module%20that%20depends%20on%20the%20first.%0aPrerequisites%20A%20GitHub%20account%20&amp;ndash;%20this%20will%20let%20you%20authenticate%20to%20the%20Central%20Registry%20A%20GitHub%20repository%20called%20frostyconfig%20&amp;ndash;%20create%20it%20under%20your%20personal%20GitHub%20account%20%28it%20doesn&amp;rsquo;t%20matter%20if%20it%20is%20public%20or%20private%29%20A%20Central%20Registry%20account%20The%20cue%20binary%20&amp;ndash;%20follow%20the%20installation%20instructions%20if%20you%20don&amp;rsquo;t%20already%20use%20cue%20A%20tool%20to%20edit%20text%20files%20&amp;ndash;%20any%20text%20editor%20you%20have%20will%20be%20fine,%20such%20as%20VSCode,%20Notepad,%20or%20Vim%20A%20command%20terminal%20&amp;ndash;%20cue%20works%20on%20all%20platforms,%20so%20you%20can%20use%20any%20Linux%20or%20macOS%20terminal,%20or%20a%20Windows%20terminal%20such%20as%20PowerShell,%20cmd,%20or%20WSL%20to%20run%20commands.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/tutorial/loading-cue-go-api/" aria-label="Previous - Loading CUE via the Go API">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">Loading CUE via the Go API</span>
+            </a><a class="prevnext__next" href="/docs/tutorial/using-modules-with-go-api/" aria-label="Next - Using modules with the Go API">
+                <span class="prevnext__text">Using modules with the Go API</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/new-to-cue/" title="New to CUE?">
+            <span class="tree__text">New to CUE?</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/tutorial/publishing-modules-to-the-central-registry/" title="Publishing modules to the Central Registry">
+            <span class="tree__text">Publishing modules to the Central Registry</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#introduction" class="toc__link"><span class="toc__text">Introduction</span></a></li>
+    <li class="toc__item"><a href="#prerequisites" class="toc__link"><span class="toc__text">Prerequisites</span></a></li>
+    <li class="toc__item"><a href="#create-the-module-for-the-schema-code" class="toc__link"><span class="toc__text">Create the module for the schema code</span></a></li>
+    <li class="toc__item"><a href="#create-a-new-frostyapp-module-that-depends-on-the-first-module" class="toc__link"><span class="toc__text">Create a new <code>frostyapp</code> module that depends on the first module</span></a></li>
+    <li class="toc__item"><a href="#evaluate-the-configuration" class="toc__link"><span class="toc__text">Evaluate the configuration</span></a></li>
+    <li class="toc__item"><a href="#congratulations" class="toc__link"><span class="toc__text">Congratulations!</span></a></li>
+    <li class="toc__item"><a href="#related-content" class="toc__link"><span class="toc__text">Related content</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Ftutorial%2Fpublishing-modules-to-the-central-registry%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+
+
+
+    </body>
+</html>

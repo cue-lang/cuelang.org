@@ -1,0 +1,3086 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Introduction In this tutorial you will learn how to create and work with CUE modules, using a custom module registry.Along the way you will:Define a module …">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/tutorial/working-with-a-custom-module-registry/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>Working with a custom module registry | CUE</title><meta property="og:url" content="/docs/tutorial/working-with-a-custom-module-registry/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="Working with a custom module registry">
+  <meta property="og:description" content="Introduction In this tutorial you will learn how to create and work with CUE modules, using a custom module registry.
+Along the way you will:
+Define a module containing a CUE schema Push the module to a custom registry Define a top level module that depends on the first module Use cue mod tidy to automatically add dependencies and their versions to the module.cue file Publish a module containing a CUE template that depends on the schema Update the top level module to depend on the template Update the schema and its version, and update the top level module to depend on the new version Prerequisites A tool to edit text files.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="Working with a custom module registry">
+  <meta name="twitter:description" content="Introduction In this tutorial you will learn how to create and work with CUE modules, using a custom module registry.
+Along the way you will:
+Define a module containing a CUE schema Push the module to a custom registry Define a top level module that depends on the first module Use cue mod tidy to automatically add dependencies and their versions to the module.cue file Publish a module containing a CUE template that depends on the schema Update the top level module to depend on the template Update the schema and its version, and update the top level module to depend on the new version Prerequisites A tool to edit text files.">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="Working with a custom module registry">
+<meta itemprop="description" content="Introduction In this tutorial you will learn how to create and work with CUE modules, using a custom module registry.
+Along the way you will:
+Define a module containing a CUE schema Push the module to a custom registry Define a top level module that depends on the first module Use cue mod tidy to automatically add dependencies and their versions to the module.cue file Publish a module containing a CUE template that depends on the schema Update the top level module to depend on the template Update the schema and its version, and update the top level module to depend on the new version Prerequisites A tool to edit text files.">
+
+    
+        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="modules,tooling,cue command," />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/tutorial/">Tutorials</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">Working with a custom module registry</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="
+    
+
+
+
+
+    
+
+Introduction
+In this tutorial you will learn how to create and work with CUE modules,
+using a custom module registry.
+Along the way you will:
+
+Define a module containing a CUE schema
+Push the module to a custom registry
+Define a top level module that depends on the first module
+Use cue mod tidy to automatically add dependencies and their versions to the module.cue file
+Publish a module containing a CUE template that depends on the schema
+Update the top level module to depend on the template
+Update the schema and its version, and update the top level module to depend on the new version
+
+
+    
+
+
+
+
+    
+
+Prerequisites
+
+A tool to edit text files. Any text editor you have will be fine, for
+example VSCode.
+A command terminal. cue works on all platforms, so any terminal on Linux
+or macOS, and on PowerShell, cmd.exe or
+WSL in Windows.
+An installed cue binary
+(installation details)
+Some awareness of CUE schemata
+(Constraints and
+Definitions in the CUE tour)
+
+This tutorial is written using the following version of cmd/cue:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue version
+cue version v0.13.0
+...
+
+
+    
+
+
+
+
+    
+
+Create the module for the schema code
+In this tutorial we will focus on an imaginary application called FrostyApp,
+which consumes its configuration in YAML format.
+You will define the configuration in CUE and use a CUE schema to validate it.
+We would like to be able to share the schema between several consumers.
+
+
+
+
+1Create a directory to hold the schema code:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ mkdir frostyconfig
+$ cd frostyconfig
+
+Each module described in this tutorial will live in a separate directory, which
+you will create as they are needed.
+
+
+
+
+
+
+
+2Initialize the directory as a git repository and a CUE  module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ git init -q
+$ cue mod init --source=git glacial-tech.example/frostyconfig@v0
+
+In order to publish the module to a registry, the code must hold a
+cue.mod/module.cue file declaring its module path. This is the path prefix to
+use when importing packages from within the module.
+Module paths are fully domain-name qualified,
+and it is good practice to place the module under a domain
+or a GitHub repository that you control.
+We will use a custom registry in this tutorial,
+which has fewer restrictions on the module paths that can be used.
+By contrast a central shared registry may
+require proof of control of a domain
+before allowing updates to a module in that domain.
+In our example we will assume that
+we control the domain name glacial-tech.example
+and place all module paths under that.
+There are some other constraints on the names
+that can be used for a module, due to OCI restrictions.
+The module name must contain only
+lower-case ASCII letters, ASCII digits, dots (.), and dashes (-).
+The
+OCI distribution spec
+contains full details of the naming restrictions.
+The --source=git flag tells cue to use the same file-inclusion rules as
+git, when publishing this module.
+
+
+
+
+
+
+
+
+    
+
+Modules are always named with the major version at the end of the module path.
+This is independent from the naming restrictions detailed above: the same OCI
+repository is used for all major and minor versions of a given module in a
+registry.
+
+
+
+
+
+
+3Create the configuration schema:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    frostyconfig/config.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package frostyconfig
+
+// #Config defines the schema for the FrostyApp configuration.
+#Config: {
+	// appName defines the name of the application.
+	appName!: string
+	// port holds the port number the application listens on.
+	port!: int
+	// debug holds whether to enable debug mode.
+	debug?: bool
+	// features holds optional feature settings
+	features?: {
+		// logging enables or disables logging.
+		logging?: bool
+		// analytics enables or disables analytics.
+		analytics?: bool
+	}
+}
+
+
+
+
+The details of the schema are not too important. For the purposes of this tutorial,
+it represents the schema of the configuration data expected by FrostyApp.
+
+
+
+
+    
+
+
+
+
+    
+
+Choose an OCI registry
+
+
+
+
+4If you do not have access to an OCI registry, start one locally:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod registry localhost:5001
+
+cue mod registry is a very simple in-memory OCI server.
+If this command fails with a message mentioning &ldquo;address already in use&rdquo;,
+then some other program on your computer is already using port 5001.
+To resolve this, select a different port number and re-run the command using the new value.
+You will also need to update any commands that use port 5001 as you follow this guide.
+CUE should work with all OCI-compatible artifact registries, such as
+the Google Artifact Registry,
+as CUE uses the standard OCI protocols spoken by such registries. For example,
+here are some alternatives:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            # running a local registry via docker
+$ docker run -p 5001:5000 registry
+
+# running a local registry via podman
+$ podman run -p 5001:5000 registry
+
+In our example we will run a local instance of the in-memory registry on port 5001.
+If you need to run one locally, invoke the above docker command in a separate
+terminal so the registry remains running while you follow the rest of this
+tutorial.
+
+
+
+
+    
+
+
+
+
+    
+
+Publish the module
+
+
+
+
+5Set up a required environment variable:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ export CUE_REGISTRY=localhost:5001/cuemodules
+
+The CUE_REGISTRY variable tells the cue command which
+registry to use when fetching and pushing modules.
+In our example the modules will be stored in the registry under the prefix cuemodules.
+In practice you would want this prefix to be some place of your choice -
+or you could leave the prefix empty if you plan to dedicate the registry
+to holding CUE modules.
+
+
+
+
+
+
+
+6Ensure the module.cue file is tidy:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+
+This command checks that modules for all imported packages
+are present in the cue.mod/module.cue file and that their versions
+are correct. It is good practice to run this before publishing
+a module. So, although this module does not
+have any dependencies, we will run cue mod tidy anyway.
+
+
+
+
+
+
+
+7Create a git commit:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ git add -A
+$ git commit -q -m &#39;Initial commit&#39;
+
+Earlier, you initialized this module with --source=git, which told the cue
+command that it should publish only those files that git knows about. The git
+commit you just created leaves the directory in a &ldquo;clean&rdquo; state, which is
+necessary for cue to know exactly which files to include in the published
+module.
+
+
+
+
+
+
+
+8Publish the first version of this module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod publish v0.0.1
+...
+
+This command uploads the module to the registry and publishes it
+under version v0.0.1. It will be published to the module
+path we chose in cue mod init earlier - all we need to do in this command
+is to decide which version we will publish.
+The version follows semver syntax,
+and it is good practice to follow semantic version conventions, which include
+maintaining compatability with earlier minor versions of the same module.
+The major version under which it is published
+must match the major version specified in the module file.
+For example it would be an error to use v1.0.1 here
+because the module name ends in @v0.
+The module has now been published to the registry. If you are running a
+registry locally then you might have seen some output in the docker terminal
+while the registry received and stored the module.
+
+
+
+
+    
+
+
+
+
+    
+
+Create a new frostyapp module that depends on the first module
+Define the actual FrostyApp configuration, constrained by the schema you just
+published.
+
+
+
+
+9Create a directory and initalize a git repository and a new CUE
+module within it:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ mkdir ../frostyapp
+$ cd ../frostyapp
+$ git init -q
+$ cue mod init --source=git glacial-tech.example/frostyapp@v0
+
+
+
+
+
+
+
+10Create the code for the new module:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    frostyapp/config.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package frostyapp
+
+import &#34;glacial-tech.example/frostyconfig@v0&#34;
+
+config: frostyconfig.#Config &amp; {
+	appName: &#34;alpha&#34;
+	port:    80
+	features: logging: true
+}
+
+
+
+
+This imports the frostyconfig package from the first
+module you published and
+defines some concrete values for the configuration,
+constrained by the frostyconfig.#Config schema.
+
+
+
+
+
+
+
+11Ensure the module is tidy, pulling all dependencies:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+
+We can see that the dependencies have now been added to the
+cue.mod/module.cue file:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cat cue.mod/module.cue
+module: &#34;glacial-tech.example/frostyapp@v0&#34;
+language: {
+	version: &#34;v0.13.0&#34;
+}
+source: {
+	kind: &#34;git&#34;
+}
+deps: {
+	&#34;glacial-tech.example/frostyconfig@v0&#34;: {
+		v: &#34;v0.0.1&#34;
+	}
+}
+
+Our dependencies currently look like this:
+
+    
+flowchart TD
+    frostyapp--  v0.0.1 --&gt; frostyconfig
+Current dependencies
+
+
+
+
+
+    
+
+
+
+
+    
+
+Evaluate the configuration
+
+
+
+
+12Export the configuration as YAML:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue export --out yaml
+config:
+  appName: alpha
+  port: 80
+  features:
+    logging: true
+
+We can use this new module code just like any other CUE code.
+
+
+
+
+    
+
+
+
+
+    
+
+Publish a frostytemplate module
+Suppose we want to define a module that encapsulates some
+default values for FrostyApp. We could just publish it as part of the
+frostyconfig original module, but publishing it as a separate module will
+be useful to demonstrate how dependencies work. Having different modules like
+this can also be a useful separation of concerns when a schema comes from some
+other source of truth.
+
+
+
+
+13Create a directory and initalize a git repository and a new CUE
+module within it:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ mkdir ../frostytemplate
+$ cd ../frostytemplate
+$ git init -q
+$ cue mod init --source=git glacial-tech.example/frostytemplate@v0
+
+This defines another module. We have named it frostytemplate
+because CUE uses the term &ldquo;template&rdquo; to mean code that
+defines default values and derived data but is not intended to
+be the final configuration.
+
+
+
+
+
+
+
+14Define the CUE template:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    frostytemplate/template.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package frostytemplate
+
+import &#34;glacial-tech.example/frostyconfig@v0&#34;
+
+// Config defines a set of default values for frostyconfig.#Config.
+Config: frostyconfig.#Config &amp; {
+	port:  *80 | _
+	debug: *false | _
+	features: {
+		logging:   *true | _
+		analytics: *true | _
+	}
+}
+
+
+
+
+We import the schema to constrain the default values, just as we did with the
+frostyapp module.
+
+
+
+
+
+
+
+15Tidy the module and create a git commit:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+$ git add -A
+$ git commit -q -m &#39;Initial commit&#39;
+
+
+
+
+
+
+
+16Publish the frostytemplate module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod publish v0.0.1
+...
+
+
+
+
+    
+
+
+
+
+    
+
+Update the frostyapp module
+
+
+
+
+17Update the frostyapp module to make use of this new template
+module:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cd ../frostyapp
+
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    frostyapp/config.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package frostyapp
+
+import &#34;glacial-tech.example/frostytemplate@v0&#34;
+
+config: frostytemplate.Config &amp; {
+	appName: &#34;alpha&#34;
+}
+
+
+
+
+The frostyapp module now gains the benefit of the new defaults. We can remove
+some fields because they are now provided by the template, satisfying the
+requirements of the configuration.
+
+
+
+
+
+
+
+18Resolve dependencies in frostyapp:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+
+Re-running cue mod tidy updates the dependencies in frostyapp to
+use frostytemplate as well as frostyconfig.
+Here is what the cue.mod/module.cue file now looks like:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cat cue.mod/module.cue
+module: &#34;glacial-tech.example/frostyapp@v0&#34;
+language: {
+	version: &#34;v0.13.0&#34;
+}
+source: {
+	kind: &#34;git&#34;
+}
+deps: {
+	&#34;glacial-tech.example/frostyconfig@v0&#34;: {
+		v: &#34;v0.0.1&#34;
+	}
+	&#34;glacial-tech.example/frostytemplate@v0&#34;: {
+		v: &#34;v0.0.1&#34;
+	}
+}
+
+
+    
+flowchart TD
+    frostyapp--  v0.0.1 --&gt; frostytemplate
+    frostytemplate--  v0.0.1 --&gt; frostyconfig
+Current dependencies
+
+
+
+
+
+
+
+
+19Re-render the configuration as YAML:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue export --out yaml
+config:
+  appName: alpha
+  port: 80
+  debug: false
+  features:
+    logging: true
+    analytics: true
+
+We can see that the values in the configuration reflect the new default values.
+
+
+
+
+    
+
+
+
+
+    
+
+Add a new field to the schema
+Suppose that FrostyApp has gained the ability to limit the amount of
+concurrency it uses, configured with a new maxConcurrency field.
+We will add that field to the schema and update the app to use it.
+
+
+
+
+20Update the schema to add a new maxConcurrency field:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cd ../frostyconfig
+
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    frostyconfig/config.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package frostyconfig
+
+// #Config defines the schema for the FrostyApp configuration.
+#Config: {
+	// appName defines the name of the application.
+	appName!: string
+	// port holds the port number the application listens on.
+	port!: int
+	// debug holds whether to enable debug mode.
+	debug?: bool
+	// maxConcurrency specifies the maximum amount of
+	// concurrent requests to process concurrently.
+	maxConcurrency?: int &amp; &gt;=1
+	// features holds optional feature settings
+	features?: {
+		// logging enables or disables logging.
+		logging?: bool
+		// analytics enables or disables analytics.
+		analytics?: bool
+	}
+}
+
+
+
+
+The schema is unchanged except for the new maxConcurrency field.
+
+
+
+
+
+
+
+21Tidy the module and create a git commit:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+$ git add -A
+$ git commit -q -m &#39;Second commit&#39;
+
+
+
+
+
+
+
+22Upload a new version of the frostyconfig schema:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod publish v0.1.0
+...
+
+We incremented the minor version to signify that a backwardly
+compatible feature has been added.
+
+
+
+
+    
+
+
+
+
+    
+
+Update the frostyapp module to use the new schema version
+
+
+
+
+23Use the new version of glacial-tech.example/frostyconfig@v0:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cd ../frostyapp
+
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod get glacial-tech.example/frostyconfig@v0.1.0
+
+CUE modules &ldquo;lock in&rdquo; the versions of any dependencies, storing
+their versions in cue.mod/module.cue file. This gives predictability
+and dependability but does mean that our frostyapp application
+will not use the new schema version until it is explicitly updated to do so.
+
+    
+flowchart TD
+    frostyapp--  v0.0.1 --&gt; frostytemplate
+    frostyapp--  v0.1.0 --&gt; frostyconfig
+    frostytemplate--  v0.0.1 --&gt; frostyconfig
+Current dependencies
+
+
+
+
+
+
+
+
+
+    
+
+Here, you updated the version in the module.cue file manually, but in the
+future the cue command will be able to perform this kind of update.
+
+
+
+
+
+
+24Check that everything still works and that your configuration is still valid:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue mod tidy
+$ cue export --out yaml
+config:
+  appName: alpha
+  port: 80
+  debug: false
+  features:
+    logging: true
+    analytics: true
+
+So exactly what happened above?
+Recall that the glacial-tech.example/frostytemplate module remains unchanged:
+its module still depends on the original v0.0.1 version of the schema. By
+changing the version at the top level (frostyapp), you caused the new version
+to be used.
+In general, we will end up with the the most recent version of all the major
+versions mentioned in all dependencies. Put another way, there can be several
+different major versions of a given module, but only one minor version. This is
+the MVS algorithm used by CUE&rsquo;s
+dependency resolution.
+
+
+
+
+    
+
+
+
+
+    
+
+Related content
+
+Tutorial: Working with modules and the Central Registry
+Tutorial: Publishing modules to the Central Registry
+Reference: CUE Modules
+
+">
+<meta itemprop="wordCount" content="2347">
+
+
+                <div class="article__container">
+                    
+
+
+
+
+        <header class="article__header">
+        <div class="article__info"><div class="article__authors">
+
+
+<div class="authors">
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/rogpeppe.png" alt="rogpeppe">
+
+                    
+                        <span class="authors__display-name">Roger Peppe</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/rogpeppe.png" alt="rogpeppe">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Roger Peppe</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/rogpeppe">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:rogpeppe">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+</div>
+</div><div class="article__tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:%22cue%20command%22"
+                class="tag tag--purple">
+                    cue command
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:tooling"
+                class="tag tag--orange">
+                    tooling
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:modules"
+                class="tag tag--red">
+                    modules
+                </a>
+            </li></ul>
+
+</div></div></header>
+
+
+
+                    <div class="article__content">
+                        
+                            <h2 id="introduction">
+    <a href="#introduction" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Introduction</h2>
+<p>In this tutorial you will learn how to create and work with CUE modules,
+using a custom module registry.</p>
+<p>Along the way you will:</p>
+<ul>
+<li>Define a module containing a CUE schema</li>
+<li>Push the module to a custom registry</li>
+<li>Define a top level module that depends on the first module</li>
+<li>Use <code>cue mod tidy</code> to automatically add dependencies and their versions to the <code>module.cue</code> file</li>
+<li>Publish a module containing a CUE template that depends on the schema</li>
+<li>Update the top level module to depend on the template</li>
+<li>Update the schema and its version, and update the top level module to depend on the new version</li>
+</ul>
+<h2 id="prerequisites">
+    <a href="#prerequisites" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Prerequisites</h2>
+<ul>
+<li><strong>A tool to edit text files</strong>. Any text editor you have will be fine, for
+example <a href="https://code.visualstudio.com/">VSCode</a>.</li>
+<li><strong>A command terminal</strong>. <code>cue</code> works on all platforms, so any terminal on Linux
+or macOS, and on PowerShell, <code>cmd.exe</code> or
+<a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> in Windows.</li>
+<li><strong>An installed <code>cue</code> binary</strong>
+(<a href="/docs/introduction/installation/">installation details</a>)</li>
+<li><strong>Some awareness of CUE schemata</strong>
+(<a href="/docs/tour/basics/constraints/">Constraints</a> and
+<a href="/docs/tour/basics/definitions/">Definitions</a> in the CUE tour)</li>
+</ul>
+<p>This tutorial is written using the following version of <code>cmd/cue</code>:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZlcnNpb24=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue version
+</span></span><span style="display:flex;"><span>cue version v0.13.0
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div>
+<h2 id="create-the-module-for-the-schema-code">
+    <a href="#create-the-module-for-the-schema-code" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Create the module for the schema code</h2>
+<p>In this tutorial we will focus on an imaginary application called <code>FrostyApp</code>,
+which consumes its configuration in YAML format.
+You will define the configuration in CUE and use a CUE schema to validate it.
+We would like to be able to share the schema between several consumers.</p>
+
+
+
+
+<div class="step" id="step-1" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-1" data-step-number="1">1</a><div class="step__content"><p>Create a directory to hold the schema code:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZw==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ mkdir frostyconfig
+</span></span><span style="display:flex;"><span>$ cd frostyconfig</span></span></code></pre></div></div>
+</div>
+<p>Each module described in this tutorial will live in a separate directory, which
+you will create as they are needed.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-2" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-2" data-step-number="2">2</a><div class="step__content"><p>Initialize the directory as a git repository and a CUE  module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHljb25maWdAdjA=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ git init -q
+</span></span><span style="display:flex;"><span>$ cue mod init --source=git glacial-tech.example/frostyconfig@v0</span></span></code></pre></div></div>
+</div>
+<p>In order to publish the module to a registry, the code must hold a
+<code>cue.mod/module.cue</code> file declaring its module path. This is the path prefix to
+use when importing packages from within the module.</p>
+<p>Module paths are fully domain-name qualified,
+and it is good practice to place the module under a domain
+or a GitHub repository that you control.</p>
+<p>We will use a custom registry in this tutorial,
+which has fewer restrictions on the module paths that can be used.
+By contrast a central shared registry may
+require proof of control of a domain
+before allowing updates to a module in that domain.</p>
+<p>In our example we will assume that
+we control the domain name <code>glacial-tech.example</code>
+and place all module paths under that.</p>
+<p>There are some other constraints on the names
+that can be used for a module, due to OCI restrictions.
+The module name must contain only
+lower-case ASCII letters, ASCII digits, dots (<code>.</code>), and dashes (<code>-</code>).
+The
+<a href="https://github.com/opencontainers/distribution-spec/blob/main/spec.md#pulling-manifests">OCI distribution spec</a>
+contains full details of the naming restrictions.</p>
+<p>The <code>--source=git</code> flag tells <code>cue</code> to use the same file-inclusion rules as
+<code>git</code>, when publishing this module.</p>
+</div>
+</div>
+
+<div class="note note--info" role="alert">
+
+
+
+<svg class="icon note__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--exclamation"></use>
+</svg>
+<div class="note__content">Modules are always named with the major version at the end of the module path.
+This is independent from the naming restrictions detailed above: the same OCI
+repository is used for all major and minor versions of a given module in a
+registry.</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-3" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-3" data-step-number="3">3</a><div class="step__content"><p>Create the configuration schema:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="frostyconfig/config.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="frostyconfig/config.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>frostyconfig/config.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="frostyconfig/config.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBmcm9zdHljb25maWcKCi8vICNDb25maWcgZGVmaW5lcyB0aGUgc2NoZW1hIGZvciB0aGUgRnJvc3R5QXBwIGNvbmZpZ3VyYXRpb24uCiNDb25maWc6IHsKCS8vIGFwcE5hbWUgZGVmaW5lcyB0aGUgbmFtZSBvZiB0aGUgYXBwbGljYXRpb24uCglhcHBOYW1lITogc3RyaW5nCgkvLyBwb3J0IGhvbGRzIHRoZSBwb3J0IG51bWJlciB0aGUgYXBwbGljYXRpb24gbGlzdGVucyBvbi4KCXBvcnQhOiBpbnQKCS8vIGRlYnVnIGhvbGRzIHdoZXRoZXIgdG8gZW5hYmxlIGRlYnVnIG1vZGUuCglkZWJ1Zz86IGJvb2wKCS8vIGZlYXR1cmVzIGhvbGRzIG9wdGlvbmFsIGZlYXR1cmUgc2V0dGluZ3MKCWZlYXR1cmVzPzogewoJCS8vIGxvZ2dpbmcgZW5hYmxlcyBvciBkaXNhYmxlcyBsb2dnaW5nLgoJCWxvZ2dpbmc/OiBib29sCgkJLy8gYW5hbHl0aWNzIGVuYWJsZXMgb3IgZGlzYWJsZXMgYW5hbHl0aWNzLgoJCWFuYWx5dGljcz86IGJvb2wKCX0KfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> frostyconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// #Config defines the schema for the FrostyApp configuration.</span>
+</span></span><span style="display:flex;"><span>#Config<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// appName defines the name of the application.</span>
+</span></span><span style="display:flex;"><span>	appName<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// port holds the port number the application listens on.</span>
+</span></span><span style="display:flex;"><span>	port<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// debug holds whether to enable debug mode.</span>
+</span></span><span style="display:flex;"><span>	debug<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// features holds optional feature settings</span>
+</span></span><span style="display:flex;"><span>	features<span style="font-weight:bold">?:</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// logging enables or disables logging.</span>
+</span></span><span style="display:flex;"><span>		logging<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// analytics enables or disables analytics.</span>
+</span></span><span style="display:flex;"><span>		analytics<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p>The details of the schema are not too important. For the purposes of this tutorial,
+it represents the schema of the configuration data expected by <code>FrostyApp</code>.</p>
+</div>
+</div>
+
+<h2 id="choose-an-oci-registry">
+    <a href="#choose-an-oci-registry" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Choose an OCI registry</h2>
+
+
+
+
+<div class="step" id="step-4" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-4" data-step-number="4">4</a><div class="step__content"><p>If you do not have access to an OCI registry, start one locally:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCByZWdpc3RyeSBsb2NhbGhvc3Q6NTAwMQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod registry localhost:5001</span></span></code></pre></div></div>
+</div>
+<p><code>cue mod registry</code> is a very simple in-memory OCI server.
+If this command fails with a message mentioning &ldquo;address already in use&rdquo;,
+then some other program on your computer is already using port 5001.
+To resolve this, select a different port number and re-run the command using the new value.
+<strong>You will also need to update any commands that use port 5001 as you follow this guide.</strong></p>
+<p>CUE should work with all OCI-compatible artifact registries, such as
+the <a href="https://cloud.google.com/artifact-registry">Google Artifact Registry</a>,
+as CUE uses the standard OCI protocols spoken by such registries. For example,
+here are some alternatives:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ZG9ja2VyIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnkKcG9kbWFuIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnk=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># running a local registry via docker
+</span></span><span style="display:flex;"><span>$ docker run -p 5001:5000 registry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># running a local registry via podman
+</span></span><span style="display:flex;"><span>$ podman run -p 5001:5000 registry</span></span></code></pre></div></div>
+</div>
+<p>In our example we will run a local instance of the in-memory registry on port 5001.
+If you need to run one locally, invoke the above <code>docker</code> command in a separate
+terminal so the registry remains running while you follow the rest of this
+tutorial.</p>
+</div>
+</div>
+
+<h2 id="publish-the-module">
+    <a href="#publish-the-module" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Publish the module</h2>
+
+
+
+
+<div class="step" id="step-5" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-5" data-step-number="5">5</a><div class="step__content"><p>Set up a required environment variable:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMS9jdWVtb2R1bGVz">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ export CUE_REGISTRY=localhost:5001/cuemodules</span></span></code></pre></div></div>
+</div>
+<p>The <code>CUE_REGISTRY</code> variable tells the <code>cue</code> command which
+registry to use when fetching and pushing modules.
+In our example the modules will be stored in the registry under the prefix <code>cuemodules</code>.
+In practice you would want this prefix to be some place of your choice -
+or you could leave the prefix empty if you plan to dedicate the registry
+to holding CUE modules.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-6" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-6" data-step-number="6">6</a><div class="step__content"><p>Ensure the <code>module.cue</code> file is tidy:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy</span></span></code></pre></div></div>
+</div>
+<p>This command checks that modules for all imported packages
+are present in the <code>cue.mod/module.cue</code> file and that their versions
+are correct. It is good practice to run this before publishing
+a module. So, although this module does not
+have any dependencies, we will run <code>cue mod tidy</code> anyway.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-7" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-7" data-step-number="7">7</a><div class="step__content"><p>Create a git commit:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ git add -A
+</span></span><span style="display:flex;"><span>$ git commit -q -m &#39;Initial commit&#39;</span></span></code></pre></div></div>
+</div>
+<p>Earlier, you initialized this module with <code>--source=git</code>, which told the <code>cue</code>
+command that it should publish only those files that <code>git</code> knows about. The git
+commit you just created leaves the directory in a &ldquo;clean&rdquo; state, which is
+necessary for <code>cue</code> to know exactly which files to include in the published
+module.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-8" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-8" data-step-number="8">8</a><div class="step__content"><p>Publish the first version of this module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod publish v0.0.1
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div>
+<p>This command uploads the module to the registry and publishes it
+under version <code>v0.0.1</code>. It will be published to the module
+path we chose in <code>cue mod init</code> earlier - all we need to do in this command
+is to decide which version we will publish.
+The version follows <a href="https://semver.org">semver syntax</a>,
+and it is good practice to follow semantic version <em>conventions</em>, which include
+maintaining compatability with earlier minor versions of the same module.</p>
+<p>The major version under which it is published
+<strong>must</strong> match the major version specified in the module file.
+For example it would be an error to use <code>v1.0.1</code> here
+because the module name ends in <code>@v0</code>.</p>
+<p>The module has now been published to the registry. If you are running a
+registry locally then you might have seen some output in the <code>docker</code> terminal
+while the registry received and stored the module.</p>
+</div>
+</div>
+
+<h2 id="create-a-new-frostyapp-module-that-depends-on-the-first-module">
+    <a href="#create-a-new-frostyapp-module-that-depends-on-the-first-module" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Create a new <code>frostyapp</code> module that depends on the first module</h2>
+<p>Define the actual <code>FrostyApp</code> configuration, constrained by the schema you just
+published.</p>
+
+
+
+
+<div class="step" id="step-9" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-9" data-step-number="9">9</a><div class="step__content"><p>Create a directory and initalize a git repository and a new CUE
+module within it:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApnaXQgaW5pdCAtcQpjdWUgbW9kIGluaXQgLS1zb3VyY2U9Z2l0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ mkdir ../frostyapp
+</span></span><span style="display:flex;"><span>$ cd ../frostyapp
+</span></span><span style="display:flex;"><span>$ git init -q
+</span></span><span style="display:flex;"><span>$ cue mod init --source=git glacial-tech.example/frostyapp@v0</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-10" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-10" data-step-number="10">10</a><div class="step__content"><p>Create the code for the new module:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="frostyapp/config.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="frostyapp/config.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>frostyapp/config.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="frostyapp/config.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBmcm9zdHlhcHAKCmltcG9ydCAiZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5Y29uZmlnQHYwIgoKY29uZmlnOiBmcm9zdHljb25maWcuI0NvbmZpZyAmIHsKCWFwcE5hbWU6ICJhbHBoYSIKCXBvcnQ6ICAgIDgwCglmZWF0dXJlczogbG9nZ2luZzogdHJ1ZQp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> frostyapp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#b84">&#34;glacial-tech.example/frostyconfig@v0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>config<span style="font-weight:bold">:</span> frostyconfig.#Config <span style="font-weight:bold">&amp;</span> {
+</span></span><span style="display:flex;"><span>	appName<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;alpha&#34;</span>
+</span></span><span style="display:flex;"><span>	port<span style="font-weight:bold">:</span>    <span style="color:#099">80</span>
+</span></span><span style="display:flex;"><span>	features<span style="font-weight:bold">:</span> logging<span style="font-weight:bold">:</span> <span style="font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p>This imports the <code>frostyconfig</code> package from the first
+module you published and
+defines some concrete values for the configuration,
+constrained by the <code>frostyconfig.#Config</code> schema.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-11" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-11" data-step-number="11">11</a><div class="step__content"><p>Ensure the module is tidy, pulling all dependencies:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy</span></span></code></pre></div></div>
+</div>
+<p>We can see that the dependencies have now been added to the
+<code>cue.mod/module.cue</code> file:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cat cue.mod/module.cue
+</span></span><span style="display:flex;"><span>module: &#34;glacial-tech.example/frostyapp@v0&#34;
+</span></span><span style="display:flex;"><span>language: {
+</span></span><span style="display:flex;"><span>	version: &#34;v0.13.0&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>source: {
+</span></span><span style="display:flex;"><span>	kind: &#34;git&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>deps: {
+</span></span><span style="display:flex;"><span>	&#34;glacial-tech.example/frostyconfig@v0&#34;: {
+</span></span><span style="display:flex;"><span>		v: &#34;v0.0.1&#34;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+<p>Our dependencies currently look like this:</p>
+<figure class="diagram">
+    <div class="diagram__content mermaid">
+flowchart TD
+    frostyapp--  v0.0.1 --> frostyconfig
+</div><figcaption class="diagram__caption">Current dependencies</figcaption>
+</figure>
+</div>
+</div>
+
+<h2 id="evaluate-the-configuration">
+    <a href="#evaluate-the-configuration" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Evaluate the configuration</h2>
+
+
+
+
+<div class="step" id="step-12" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-12" data-step-number="12">12</a><div class="step__content"><p>Export the configuration as YAML:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGV4cG9ydCAtLW91dCB5YW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue export --out yaml
+</span></span><span style="display:flex;"><span>config:
+</span></span><span style="display:flex;"><span>  appName: alpha
+</span></span><span style="display:flex;"><span>  port: 80
+</span></span><span style="display:flex;"><span>  features:
+</span></span><span style="display:flex;"><span>    logging: true</span></span></code></pre></div></div>
+</div>
+<p>We can use this new module code just like any other CUE code.</p>
+</div>
+</div>
+
+<h2 id="publish-a-frostytemplate-module">
+    <a href="#publish-a-frostytemplate-module" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Publish a <code>frostytemplate</code> module</h2>
+<p>Suppose we want to define a module that encapsulates some
+default values for <code>FrostyApp</code>. We <em>could</em> just publish it as part of the
+<code>frostyconfig</code> original module, but publishing it as a separate module will
+be useful to demonstrate how dependencies work. Having different modules like
+this can also be a useful separation of concerns when a schema comes from some
+other source of truth.</p>
+
+
+
+
+<div class="step" id="step-13" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-13" data-step-number="13">13</a><div class="step__content"><p>Create a directory and initalize a git repository and a new CUE
+module within it:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKZ2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHl0ZW1wbGF0ZUB2MA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ mkdir ../frostytemplate
+</span></span><span style="display:flex;"><span>$ cd ../frostytemplate
+</span></span><span style="display:flex;"><span>$ git init -q
+</span></span><span style="display:flex;"><span>$ cue mod init --source=git glacial-tech.example/frostytemplate@v0</span></span></code></pre></div></div>
+</div>
+<p>This defines another module. We have named it <code>frostytemplate</code>
+because CUE uses the term &ldquo;template&rdquo; to mean code that
+defines default values and derived data but is not intended to
+be the final configuration.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-14" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-14" data-step-number="14">14</a><div class="step__content"><p>Define the CUE template:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="frostytemplate/template.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="frostytemplate/template.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>frostytemplate/template.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="frostytemplate/template.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBmcm9zdHl0ZW1wbGF0ZQoKaW1wb3J0ICJnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHljb25maWdAdjAiCgovLyBDb25maWcgZGVmaW5lcyBhIHNldCBvZiBkZWZhdWx0IHZhbHVlcyBmb3IgZnJvc3R5Y29uZmlnLiNDb25maWcuCkNvbmZpZzogZnJvc3R5Y29uZmlnLiNDb25maWcgJiB7Cglwb3J0OiAgKjgwIHwgXwoJZGVidWc6ICpmYWxzZSB8IF8KCWZlYXR1cmVzOiB7CgkJbG9nZ2luZzogICAqdHJ1ZSB8IF8KCQlhbmFseXRpY3M6ICp0cnVlIHwgXwoJfQp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> frostytemplate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#b84">&#34;glacial-tech.example/frostyconfig@v0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Config defines a set of default values for frostyconfig.#Config.</span>
+</span></span><span style="display:flex;"><span>Config<span style="font-weight:bold">:</span> frostyconfig.#Config <span style="font-weight:bold">&amp;</span> {
+</span></span><span style="display:flex;"><span>	port<span style="font-weight:bold">:</span>  <span style="font-weight:bold">*</span><span style="color:#099">80</span> <span style="font-weight:bold">|</span> <span style="font-weight:bold">_</span>
+</span></span><span style="display:flex;"><span>	debug<span style="font-weight:bold">:</span> <span style="font-weight:bold">*</span><span style="font-weight:bold">false</span> <span style="font-weight:bold">|</span> <span style="font-weight:bold">_</span>
+</span></span><span style="display:flex;"><span>	features<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>		logging<span style="font-weight:bold">:</span>   <span style="font-weight:bold">*</span><span style="font-weight:bold">true</span> <span style="font-weight:bold">|</span> <span style="font-weight:bold">_</span>
+</span></span><span style="display:flex;"><span>		analytics<span style="font-weight:bold">:</span> <span style="font-weight:bold">*</span><span style="font-weight:bold">true</span> <span style="font-weight:bold">|</span> <span style="font-weight:bold">_</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p>We import the schema to constrain the default values, just as we did with the
+<code>frostyapp</code> module.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-15" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-15" data-step-number="15">15</a><div class="step__content"><p>Tidy the module and create a git commit:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnSW5pdGlhbCBjb21taXQn">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy
+</span></span><span style="display:flex;"><span>$ git add -A
+</span></span><span style="display:flex;"><span>$ git commit -q -m &#39;Initial commit&#39;</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-16" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-16" data-step-number="16">16</a><div class="step__content"><p>Publish the <code>frostytemplate</code> module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod publish v0.0.1
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+<h2 id="update-the-frostyapp-module">
+    <a href="#update-the-frostyapp-module" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Update the <code>frostyapp</code> module</h2>
+
+
+
+
+<div class="step" id="step-17" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-17" data-step-number="17">17</a><div class="step__content"><p>Update the <code>frostyapp</code> module to make use of this new template
+module:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y2QgLi4vZnJvc3R5YXBw">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cd ../frostyapp</span></span></code></pre></div></div>
+</div>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="frostyapp/config.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="frostyapp/config.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>frostyapp/config.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="frostyapp/config.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBmcm9zdHlhcHAKCmltcG9ydCAiZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5dGVtcGxhdGVAdjAiCgpjb25maWc6IGZyb3N0eXRlbXBsYXRlLkNvbmZpZyAmIHsKCWFwcE5hbWU6ICJhbHBoYSIKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> frostyapp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#b84">&#34;glacial-tech.example/frostytemplate@v0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>config<span style="font-weight:bold">:</span> frostytemplate.Config <span style="font-weight:bold">&amp;</span> {
+</span></span><span style="display:flex;"><span>	appName<span style="font-weight:bold">:</span> <span style="color:#b84">&#34;alpha&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p>The <code>frostyapp</code> module now gains the benefit of the new defaults. We can remove
+some fields because they are now provided by the template, satisfying the
+requirements of the configuration.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-18" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-18" data-step-number="18">18</a><div class="step__content"><p>Resolve dependencies in <code>frostyapp</code>:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy</span></span></code></pre></div></div>
+</div>
+<p>Re-running <code>cue mod tidy</code> updates the dependencies in <code>frostyapp</code> to
+use <code>frostytemplate</code> as well as <code>frostyconfig</code>.</p>
+<p>Here is what the <code>cue.mod/module.cue</code> file now looks like:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cat cue.mod/module.cue
+</span></span><span style="display:flex;"><span>module: &#34;glacial-tech.example/frostyapp@v0&#34;
+</span></span><span style="display:flex;"><span>language: {
+</span></span><span style="display:flex;"><span>	version: &#34;v0.13.0&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>source: {
+</span></span><span style="display:flex;"><span>	kind: &#34;git&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>deps: {
+</span></span><span style="display:flex;"><span>	&#34;glacial-tech.example/frostyconfig@v0&#34;: {
+</span></span><span style="display:flex;"><span>		v: &#34;v0.0.1&#34;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	&#34;glacial-tech.example/frostytemplate@v0&#34;: {
+</span></span><span style="display:flex;"><span>		v: &#34;v0.0.1&#34;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+<figure class="diagram">
+    <div class="diagram__content mermaid">
+flowchart TD
+    frostyapp--  v0.0.1 --> frostytemplate
+    frostytemplate--  v0.0.1 --> frostyconfig
+</div><figcaption class="diagram__caption">Current dependencies</figcaption>
+</figure>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-19" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-19" data-step-number="19">19</a><div class="step__content"><p>Re-render the configuration as YAML:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIGV4cG9ydCAtLW91dCB5YW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue export --out yaml
+</span></span><span style="display:flex;"><span>config:
+</span></span><span style="display:flex;"><span>  appName: alpha
+</span></span><span style="display:flex;"><span>  port: 80
+</span></span><span style="display:flex;"><span>  debug: false
+</span></span><span style="display:flex;"><span>  features:
+</span></span><span style="display:flex;"><span>    logging: true
+</span></span><span style="display:flex;"><span>    analytics: true</span></span></code></pre></div></div>
+</div>
+<p>We can see that the values in the configuration reflect the new default values.</p>
+</div>
+</div>
+
+<h2 id="add-a-new-field-to-the-schema">
+    <a href="#add-a-new-field-to-the-schema" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Add a new field to the schema</h2>
+<p>Suppose that <code>FrostyApp</code> has gained the ability to limit the amount of
+concurrency it uses, configured with a new <code>maxConcurrency</code> field.
+We will add that field to the schema and update the app to use it.</p>
+
+
+
+
+<div class="step" id="step-20" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-20" data-step-number="20">20</a><div class="step__content"><p>Update the schema to add a new <code>maxConcurrency</code> field:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y2QgLi4vZnJvc3R5Y29uZmln">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cd ../frostyconfig</span></span></code></pre></div></div>
+</div>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="frostyconfig/config.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="frostyconfig/config.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>frostyconfig/config.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="frostyconfig/config.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSBmcm9zdHljb25maWcKCi8vICNDb25maWcgZGVmaW5lcyB0aGUgc2NoZW1hIGZvciB0aGUgRnJvc3R5QXBwIGNvbmZpZ3VyYXRpb24uCiNDb25maWc6IHsKCS8vIGFwcE5hbWUgZGVmaW5lcyB0aGUgbmFtZSBvZiB0aGUgYXBwbGljYXRpb24uCglhcHBOYW1lITogc3RyaW5nCgkvLyBwb3J0IGhvbGRzIHRoZSBwb3J0IG51bWJlciB0aGUgYXBwbGljYXRpb24gbGlzdGVucyBvbi4KCXBvcnQhOiBpbnQKCS8vIGRlYnVnIGhvbGRzIHdoZXRoZXIgdG8gZW5hYmxlIGRlYnVnIG1vZGUuCglkZWJ1Zz86IGJvb2wKCS8vIG1heENvbmN1cnJlbmN5IHNwZWNpZmllcyB0aGUgbWF4aW11bSBhbW91bnQgb2YKCS8vIGNvbmN1cnJlbnQgcmVxdWVzdHMgdG8gcHJvY2VzcyBjb25jdXJyZW50bHkuCgltYXhDb25jdXJyZW5jeT86IGludCAmID49MQoJLy8gZmVhdHVyZXMgaG9sZHMgb3B0aW9uYWwgZmVhdHVyZSBzZXR0aW5ncwoJZmVhdHVyZXM/OiB7CgkJLy8gbG9nZ2luZyBlbmFibGVzIG9yIGRpc2FibGVzIGxvZ2dpbmcuCgkJbG9nZ2luZz86IGJvb2wKCQkvLyBhbmFseXRpY3MgZW5hYmxlcyBvciBkaXNhYmxlcyBhbmFseXRpY3MuCgkJYW5hbHl0aWNzPzogYm9vbAoJfQp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> frostyconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// #Config defines the schema for the FrostyApp configuration.</span>
+</span></span><span style="display:flex;"><span>#Config<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// appName defines the name of the application.</span>
+</span></span><span style="display:flex;"><span>	appName<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// port holds the port number the application listens on.</span>
+</span></span><span style="display:flex;"><span>	port<span style="font-weight:bold">!:</span> <span style="color:#458;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// debug holds whether to enable debug mode.</span>
+</span></span><span style="display:flex;"><span>	debug<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// maxConcurrency specifies the maximum amount of</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// concurrent requests to process concurrently.</span>
+</span></span><span style="display:flex;"><span>	maxConcurrency<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">int</span> <span style="font-weight:bold">&amp;</span> <span style="font-weight:bold">&gt;=</span><span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// features holds optional feature settings</span>
+</span></span><span style="display:flex;"><span>	features<span style="font-weight:bold">?:</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// logging enables or disables logging.</span>
+</span></span><span style="display:flex;"><span>		logging<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// analytics enables or disables analytics.</span>
+</span></span><span style="display:flex;"><span>		analytics<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<p>The schema is unchanged except for the new <code>maxConcurrency</code> field.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-21" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-21" data-step-number="21">21</a><div class="step__content"><p>Tidy the module and create a git commit:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnU2Vjb25kIGNvbW1pdCc=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy
+</span></span><span style="display:flex;"><span>$ git add -A
+</span></span><span style="display:flex;"><span>$ git commit -q -m &#39;Second commit&#39;</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+
+
+
+
+<div class="step" id="step-22" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-22" data-step-number="22">22</a><div class="step__content"><p>Upload a new version of the <code>frostyconfig</code> schema:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCBwdWJsaXNoIHYwLjEuMA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod publish v0.1.0
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div></div>
+</div>
+<p>We incremented the minor version to signify that a backwardly
+compatible feature has been added.</p>
+</div>
+</div>
+
+<h2 id="update-the-frostyapp-module-to-use-the-new-schema-version">
+    <a href="#update-the-frostyapp-module-to-use-the-new-schema-version" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Update the <code>frostyapp</code> module to use the new schema version</h2>
+
+
+
+
+<div class="step" id="step-23" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-23" data-step-number="23">23</a><div class="step__content"><p>Use the new version of <code>glacial-tech.example/frostyconfig@v0</code>:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y2QgLi4vZnJvc3R5YXBw">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cd ../frostyapp</span></span></code></pre></div></div>
+</div>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCBnZXQgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5Y29uZmlnQHYwLjEuMA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod get glacial-tech.example/frostyconfig@v0.1.0</span></span></code></pre></div></div>
+</div>
+<p>CUE modules &ldquo;lock in&rdquo; the versions of any dependencies, storing
+their versions in <code>cue.mod/module.cue</code> file. This gives predictability
+and dependability but does mean that our <code>frostyapp</code> application
+will not use the new schema version until it is explicitly updated to do so.</p>
+<figure class="diagram">
+    <div class="diagram__content mermaid">
+flowchart TD
+    frostyapp--  v0.0.1 --> frostytemplate
+    frostyapp--  v0.1.0 --> frostyconfig
+    frostytemplate--  v0.0.1 --> frostyconfig
+</div><figcaption class="diagram__caption">Current dependencies</figcaption>
+</figure>
+</div>
+</div>
+
+<div class="note note--info" role="alert">
+
+
+
+<svg class="icon note__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--exclamation"></use>
+</svg>
+<div class="note__content">Here, you updated the version in the <code>module.cue</code> file manually, but in the
+future the <code>cue</code> command will be able to perform this kind of update.</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-24" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-24" data-step-number="24">24</a><div class="step__content"><p>Check that everything still works and that your configuration is still valid:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIG1vZCB0aWR5CmN1ZSBleHBvcnQgLS1vdXQgeWFtbA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue mod tidy
+</span></span><span style="display:flex;"><span>$ cue export --out yaml
+</span></span><span style="display:flex;"><span>config:
+</span></span><span style="display:flex;"><span>  appName: alpha
+</span></span><span style="display:flex;"><span>  port: 80
+</span></span><span style="display:flex;"><span>  debug: false
+</span></span><span style="display:flex;"><span>  features:
+</span></span><span style="display:flex;"><span>    logging: true
+</span></span><span style="display:flex;"><span>    analytics: true</span></span></code></pre></div></div>
+</div>
+<p>So exactly what happened above?</p>
+<p>Recall that the <code>glacial-tech.example/frostytemplate</code> module remains unchanged:
+its module still depends on the original <code>v0.0.1</code> version of the schema. By
+changing the version at the top level (<code>frostyapp</code>), you caused the new version
+to be used.</p>
+<p>In general, we will end up with the the most recent version of all the major
+versions mentioned in all dependencies. Put another way, there can be several
+different major versions of a given module, but only one minor version. This is
+the <a href="https://research.swtch.com/vgo-mvs">MVS algorithm</a> used by CUE&rsquo;s
+dependency resolution.</p>
+</div>
+</div>
+
+<h2 id="related-content">
+    <a href="#related-content" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Related content</h2>
+<ul>
+<li>Tutorial: <a href="/docs/tutorial/working-with-the-central-registry/">Working with modules and the Central Registry</a></li>
+<li>Tutorial: <a href="/docs/tutorial/publishing-modules-to-the-central-registry/">Publishing modules to the Central Registry</a></li>
+<li>Reference: <a href="/docs/reference/modules/">CUE Modules</a></li>
+</ul>
+
+                        
+                    </div>
+    <footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
+                Last modified May 22, 2025</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__footer-tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:%22cue%20command%22"
+                class="tag tag--purple">
+                    cue command
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:tooling"
+                class="tag tag--orange">
+                    tooling
+                </a>
+            </li><li class="list__item"><a href="/search?q=tag:modules"
+                class="tag tag--red">
+                    modules
+                </a>
+            </li></ul>
+
+</div><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/tutorial/working-with-a-custom-module-registry/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tutorial/working-with-a-custom-module-registry/&text=Introduction%20In%20this%20tutorial%20you%20will%20learn%20how%20to%20create%20and%20work%20with%20CUE%20modules,%20using%20a%20custom%20module%20registry.%0aAlong%20the%20way%20you%20will:%0aDefine%20a%20module%20containing%20a%20CUE%20schema%20Push%20the%20module%20to%20a%20custom%20registry%20Define%20a%20top%20level%20module%20that%20depends%20on%20the%20first%20module%20Use%20cue%20mod%20tidy%20to%20automatically%20add%20dependencies%20and%20their%20versions%20to%20the%20module.cue%20file%20Publish%20a%20module%20containing%20a%20CUE%20template%20that%20depends%20on%20the%20schema%20Update%20the%20top%20level%20module%20to%20depend%20on%20the%20template%20Update%20the%20schema%20and%20its%20version,%20and%20update%20the%20top%20level%20module%20to%20depend%20on%20the%20new%20version%20Prerequisites%20A%20tool%20to%20edit%20text%20files.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tutorial/working-with-a-custom-module-registry/&summary=Introduction%20In%20this%20tutorial%20you%20will%20learn%20how%20to%20create%20and%20work%20with%20CUE%20modules,%20using%20a%20custom%20module%20registry.%0aAlong%20the%20way%20you%20will:%0aDefine%20a%20module%20containing%20a%20CUE%20schema%20Push%20the%20module%20to%20a%20custom%20registry%20Define%20a%20top%20level%20module%20that%20depends%20on%20the%20first%20module%20Use%20cue%20mod%20tidy%20to%20automatically%20add%20dependencies%20and%20their%20versions%20to%20the%20module.cue%20file%20Publish%20a%20module%20containing%20a%20CUE%20template%20that%20depends%20on%20the%20schema%20Update%20the%20top%20level%20module%20to%20depend%20on%20the%20template%20Update%20the%20schema%20and%20its%20version,%20and%20update%20the%20top%20level%20module%20to%20depend%20on%20the%20new%20version%20Prerequisites%20A%20tool%20to%20edit%20text%20files.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/tutorial/validating-simple-yaml-files/" aria-label="Previous - Validating simple YAML files with the cue command">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">Validating simple YAML files with the cue command</span>
+            </a><a class="prevnext__next" href="/docs/tutorial/working-with-the-central-registry/" aria-label="Next - Working with modules and the Central Registry">
+                <span class="prevnext__text">Working with modules and the Central Registry</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/new-to-cue/" title="New to CUE?">
+            <span class="tree__text">New to CUE?</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/tutorial/working-with-a-custom-module-registry/" title="Working with a custom module registry">
+            <span class="tree__text">Working with a custom module registry</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#introduction" class="toc__link"><span class="toc__text">Introduction</span></a></li>
+    <li class="toc__item"><a href="#prerequisites" class="toc__link"><span class="toc__text">Prerequisites</span></a></li>
+    <li class="toc__item"><a href="#create-the-module-for-the-schema-code" class="toc__link"><span class="toc__text">Create the module for the schema code</span></a></li>
+    <li class="toc__item"><a href="#choose-an-oci-registry" class="toc__link"><span class="toc__text">Choose an OCI registry</span></a></li>
+    <li class="toc__item"><a href="#publish-the-module" class="toc__link"><span class="toc__text">Publish the module</span></a></li>
+    <li class="toc__item"><a href="#create-a-new-frostyapp-module-that-depends-on-the-first-module" class="toc__link"><span class="toc__text">Create a new <code>frostyapp</code> module that depends on the first module</span></a></li>
+    <li class="toc__item"><a href="#evaluate-the-configuration" class="toc__link"><span class="toc__text">Evaluate the configuration</span></a></li>
+    <li class="toc__item"><a href="#publish-a-frostytemplate-module" class="toc__link"><span class="toc__text">Publish a <code>frostytemplate</code> module</span></a></li>
+    <li class="toc__item"><a href="#update-the-frostyapp-module" class="toc__link"><span class="toc__text">Update the <code>frostyapp</code> module</span></a></li>
+    <li class="toc__item"><a href="#add-a-new-field-to-the-schema" class="toc__link"><span class="toc__text">Add a new field to the schema</span></a></li>
+    <li class="toc__item"><a href="#update-the-frostyapp-module-to-use-the-new-schema-version" class="toc__link"><span class="toc__text">Update the <code>frostyapp</code> module to use the new schema version</span></a></li>
+    <li class="toc__item"><a href="#related-content" class="toc__link"><span class="toc__text">Related content</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Ftutorial%2Fworking-with-a-custom-module-registry%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+    <script src="/js/mermaid/mermaid.min.js" async></script>
+
+
+
+
+    </body>
+</html>

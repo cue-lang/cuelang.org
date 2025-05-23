@@ -1,0 +1,1892 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="The library cue-api-java provides a way to use CUE from Java programs. In certain situations the library might need to let you know that there’s a problem with …">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/tutorial/handle-errors-java-api/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>Handling errors in the Java API | CUE</title><meta property="og:url" content="/docs/tutorial/handle-errors-java-api/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="Handling errors in the Java API">
+  <meta property="og:description" content="The library cue-api-java provides a way to use CUE from Java programs. In certain situations the library might need to let you know that there’s a problem with some CUE that you asked it to handle, and it does this by throwing a CueError. This tutorial helps you learn how to handle errors returned by cue-api-java.
+cue-api-java is an experimental technology preview. This means that it’s under development and its behaviour might change from one release to the next.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2024-08-06T18:17:03+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="Handling errors in the Java API">
+  <meta name="twitter:description" content="The library cue-api-java provides a way to use CUE from Java programs. In certain situations the library might need to let you know that there’s a problem with some CUE that you asked it to handle, and it does this by throwing a CueError. This tutorial helps you learn how to handle errors returned by cue-api-java.
+cue-api-java is an experimental technology preview. This means that it’s under development and its behaviour might change from one release to the next.">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="Handling errors in the Java API">
+<meta itemprop="description" content="The library cue-api-java provides a way to use CUE from Java programs. In certain situations the library might need to let you know that there&rsquo;s a problem with some CUE that you asked it to handle, and it does this by throwing a CueError. This tutorial helps you learn how to handle errors returned by cue-api-java.
+cue-api-java is an experimental technology preview. This means that it&rsquo;s under development and its behaviour might change from one release to the next.">
+
+    
+        <meta itemprop="dateModified" content="2024-08-06T18:17:03+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="java api," />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/tutorial/">Tutorials</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">Handling errors in the Java API</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="The library cue-api-java provides a way to use CUE from Java programs.
+In certain situations the library might need to let you know that there&rsquo;s a
+problem with some CUE that you asked it to handle, and it does this by throwing
+a CueError. This tutorial helps you learn how to handle errors returned by
+cue-api-java.
+
+
+
+
+
+    
+
+cue-api-java is an experimental technology preview. This means that it&rsquo;s
+under development and its behaviour might change from one release to the next.
+
+
+
+    
+
+
+
+
+    
+
+Prerequisites
+
+You need the low-level library
+libcue
+to be compiled and available on your computer,
+which is demonstrated in the guide
+&ldquo;Building libcue as a shared library&rdquo;.
+You must have the Java library
+cue-api-java
+compiled and available on your computer. The guide
+&ldquo;Building cue-api-java as a JAR file&rdquo;
+shows you how to compile and install it.
+This tutorial needs you to install the same version as that guide.
+Your computer needs to have the Java Development Kit (JDK)
+version 22
+(or later) installed. If you need help choosing a distribution of Java,
+the site whichjdk.com is a useful guide.
+Note that many operating systems offer a &ldquo;Long Term Support&rdquo; version of Java,
+but this often means JDK version 21, which isn&rsquo;t recent enough.
+Make sure that you have version 22 or later!
+
+
+    
+
+
+
+
+    
+
+Set up your environment
+
+
+
+
+1Tell the operating system (and Java) where to find the library libcue on your
+computer:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ export LD_LIBRARY_PATH=/usr/local/lib/
+
+If you have installed libcue into a different directory than /usr/local/lib/
+then adapt the command to refer to that directory instead.
+
+
+
+
+
+
+
+2Tell Java where to find the library cue-api-java on your computer:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ export CLASSPATH=&#39;/usr/local/share/java/*&#39;
+
+If you have installed cue-api-java into a different directory than
+/usr/local/share/java/ then adapt the command to refer to that directory
+instead.
+
+
+
+
+
+
+
+3Cross-check the value of this important variable:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ echo &#34;$CLASSPATH&#34;
+/usr/local/share/java/*
+
+Java&rsquo;s requirements mean that we need the value of the CLASSPATH variable to
+end with an asterisk: make sure you see the trailing *.
+If this value ends with a filename instead of an asterisk (for example:
+/usr/local/share/java/CUE.jar) then you need to fix this.
+Repeat the previous step while making sure that you surround the value of the
+variable with quotes (&#39;) when you export it.
+
+
+
+
+
+
+
+4Check that this tutorial&rsquo;s prerequisites are present:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ javac --version
+javac 22.0.2
+$ ls $LD_LIBRARY_PATH | grep libcue.so || echo &#39;fail!&#39;
+libcue.so
+$ ls $CLASSPATH | grep /CUE.*jar$ || echo &#39;fail!&#39;
+/usr/local/share/java/CUE.jar
+
+If any of these commands fail then your computer doesn&rsquo;t have the related
+prerequisite installed as expected and this is a problem that you need to fix
+before continuing with this tutorial.
+
+
+
+
+
+
+
+5Create a directory to hold some files, and change into it:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ mkdir -p cue-java-api-tutorials
+$ cd cue-java-api-tutorials
+
+
+
+
+    
+
+
+
+
+    
+
+Create a Java program
+
+
+
+
+6Place this Java program in the file HandleErrors.java:
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    cue-java-api-tutorials/HandleErrors.java
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            import org.cuelang.cue.*;
+
+public class HandleErrors {
+    public static void main(String[] args) {
+        var ctx = new CueContext();
+
+        try {
+            var v = ctx.compile(&#34;x: {&#34;); // Syntax error.
+        } catch (CueError e) {
+            System.out.println(&#34;## Catch block #1&#34;);
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            var v = ctx.compile(&#34;a: b: c: d: 1&#34;);
+            var v1 = v.lookup(&#34;x&#34;); // Invalid path.
+        } catch (CueError e) {
+            System.out.println(&#34;\n## Catch block #2&#34;);
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            var v = ctx.compile(&#34;123&#34;);
+            var s = v.getString(); // Not a string.
+        } catch (CueError e) {
+            System.out.println(&#34;\n## Catch block #3&#34;);
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            var v = ctx.compile(&#34;{ x: bool, y: 42 }&#34;);
+            var s = v.getJSON(); // x isn&#39;t a concrete value.
+        } catch (CueError e) {
+            System.out.println(&#34;\n## Catch block #4&#34;);
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            // Unification of valid CUE never throws an error. The result is
+            // always defined, with a value of _|_ (bottom) if unification failed.
+            System.out.println(&#34;\n## Unification #1&#34;);
+            var a  = ctx.compile(&#34;A: true&#34;);
+            var b  = ctx.compile(&#34;A: true&#34;);
+            var ab = a.unify(b);
+            System.out.println(&#34;ab is: &#34; &#43; ab.getJSON());
+            System.out.println(&#34;printError() reports: &#34;);
+            printError(ab);
+
+            System.out.println(&#34;\n## Unification #2&#34;);
+            var x  = ctx.compile(&#34;B: 1&#34;);
+            var y  = ctx.compile(&#34;B: 2&#34;);
+            var xy = x.unify(y);
+            System.out.println(&#34;printError() reports: &#34;);
+            printError(xy);
+        } catch (CueError e) {
+            System.out.println(&#34;## Catch block #5&#34;);
+        }
+    }
+
+    static void printError(Value v) {
+        // To check if a unification resulted in an error use the error() method on Value.
+        // error() returns a Result, which can be Ok (success) or Err (an error occurred).
+        switch (v.error()) {
+            case Result.Ok&lt;Value, String&gt; ok -&gt; System.out.println(&#34;ok&#34;);
+            case Result.Err&lt;Value, String&gt; err -&gt; System.out.println(err.err());
+        }
+    }
+}
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+Compile the program
+
+
+
+
+7Compile the Java program:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ javac HandleErrors.java
+
+The Java compiler automatically uses the value of the CLASSPATH environment
+variable to locate the JAR file containing cue-api-java.
+
+
+
+
+    
+
+
+
+
+    
+
+Run the program
+
+
+
+
+8Run the Java program:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ java --enable-native-access=ALL-UNNAMED -cp .:$CLASSPATH HandleErrors
+## Catch block #1
+expected &#39;}&#39;, found &#39;EOF&#39;
+
+## Catch block #2
+field not found: x
+
+## Catch block #3
+cannot use value 123 (type int) as string
+
+## Catch block #4
+cue: marshal error: x: cannot convert incomplete value &#34;bool&#34; to JSON
+
+## Unification #1
+ab is: {&#34;A&#34;:true}
+printError() reports: 
+ok
+
+## Unification #2
+printError() reports: 
+B: conflicting values 2 and 1
+
+The Java runtime must be told about a slightly different classpath from the
+compiler, through the -cp flag, because it needs to locate both the
+cue-api-java JAR and your compiled code. The --enable-native-access flag
+avoids a runtime warning that the
+Foreign Function &amp; Memory API is being used by
+cue-api-java.
+
+
+
+
+    
+
+
+
+
+    
+
+Conclusion
+Excellent work! You&rsquo;ve successfully handled problems in Java related to invalid CUE
+syntax, invalid paths, non-concrete value conversions to JSON, and other
+runtime errors that can occur.
+See Related content, below, for tutorials and guides that explain more about
+using CUE in Java.
+
+    
+
+
+
+
+    
+
+Related content
+
+How-to Guide: Building cue-api-java as a JAR file
+Tutorial: Getting started using CUE in Java
+Tutorial: Converting values between Java and CUE
+Tutorial: Validating data against a schema in Java
+
+            java api
+         &ndash; all pages exploring the CUE Java API
+
+">
+<meta itemprop="wordCount" content="995">
+
+
+                <div class="article__container">
+                    
+
+
+
+
+        <header class="article__header">
+        <div class="article__info"><div class="article__authors">
+
+
+<div class="authors">
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                    
+                        <span class="authors__display-name">Jonathan Matthews</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Jonathan Matthews</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/4ad.png" alt="4ad">
+
+                    
+                        <span class="authors__display-name">Aram Hăvărneanu</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/4ad.png" alt="4ad">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Aram Hăvărneanu</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/4ad">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:4ad">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+</div>
+</div><div class="article__tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:%22java%20api%22"
+                class="tag tag--blue">
+                    java api
+                </a>
+            </li></ul>
+
+</div></div></header>
+
+
+
+                    <div class="article__content">
+                        
+                            <p>The library <code>cue-api-java</code> provides a way to use CUE from Java programs.
+In certain situations the library might need to let you know that there&rsquo;s a
+problem with some CUE that you asked it to handle, and it does this by throwing
+a <code>CueError</code>. This tutorial helps you learn how to handle errors returned by
+<code>cue-api-java</code>.</p>
+<div class="note note--info" role="alert">
+
+
+
+<svg class="icon note__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--exclamation"></use>
+</svg>
+<div class="note__content"><code>cue-api-java</code> is an experimental technology preview. This means that it&rsquo;s
+under development and its behaviour might change from one release to the next.</div>
+</div>
+
+<h2 id="prerequisites">
+    <a href="#prerequisites" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Prerequisites</h2>
+<ul>
+<li>You need the low-level library
+<a href="https://github.com/cue-lang/libcue">libcue</a>
+to be compiled and available on your computer,
+which is demonstrated in the guide
+&ldquo;<a href="/docs/howto/build-libcue-shared-library/">Building libcue as a shared library</a>&rdquo;.</li>
+<li>You must have the Java library
+<a href="https://github.com/cue-lang/cue-api-java">cue-api-java</a>
+compiled and available on your computer. The guide
+&ldquo;<a href="/docs/howto/build-cue-api-java-jar/">Building cue-api-java as a JAR file</a>&rdquo;
+shows you how to compile and install it.
+<em>This tutorial needs you to install the same version as that guide.</em></li>
+<li>Your computer needs to have the Java Development Kit (JDK)
+<a href="https://openjdk.org/projects/jdk/22/">version 22</a>
+(or later) installed. If you need help choosing a distribution of Java,
+the site <a href="https://whichjdk.com">whichjdk.com</a> is a useful guide.
+Note that many operating systems offer a &ldquo;Long Term Support&rdquo; version of Java,
+but this often means JDK version <em>21</em>, which isn&rsquo;t recent enough.
+Make sure that you have <em>version 22 or later!</em></li>
+</ul>
+<h2 id="set-up-your-environment">
+    <a href="#set-up-your-environment" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Set up your environment</h2>
+
+
+
+
+<div class="step" id="step-1" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-1" data-step-number="1">1</a><div class="step__content"><p>Tell the operating system (and Java) where to find the library <code>libcue</code> on your
+computer:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ZXhwb3J0IExEX0xJQlJBUllfUEFUSD0vdXNyL2xvY2FsL2xpYi8=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ export LD_LIBRARY_PATH=/usr/local/lib/</span></span></code></pre></div></div>
+</div>
+<p>If you have installed <code>libcue</code> into a different directory than <code>/usr/local/lib/</code>
+then adapt the command to refer to that directory instead.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-2" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-2" data-step-number="2">2</a><div class="step__content"><p>Tell Java where to find the library <code>cue-api-java</code> on your computer:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ZXhwb3J0IENMQVNTUEFUSD0nL3Vzci9sb2NhbC9zaGFyZS9qYXZhLyon">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ export CLASSPATH=&#39;/usr/local/share/java/*&#39;</span></span></code></pre></div></div>
+</div>
+<p>If you have installed <code>cue-api-java</code> into a different directory than
+<code>/usr/local/share/java/</code> then adapt the command to refer to that directory
+instead.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-3" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-3" data-step-number="3">3</a><div class="step__content"><p>Cross-check the value of this important variable:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ZWNobyAiJENMQVNTUEFUSCI=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ echo &#34;$CLASSPATH&#34;
+</span></span><span style="display:flex;"><span>/usr/local/share/java/*</span></span></code></pre></div></div>
+</div>
+<p>Java&rsquo;s requirements mean that we need the value of the <code>CLASSPATH</code> variable to
+end with an asterisk: <strong>make sure you see the trailing <code>*</code></strong>.</p>
+<p>If this value ends with a filename instead of an asterisk (for example:
+<code>/usr/local/share/java/CUE.jar</code>) then you need to fix this.
+Repeat the previous step while making sure that you surround the value of the
+variable with quotes (<code>'</code>) when you <code>export</code> it.</p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-4" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-4" data-step-number="4">4</a><div class="step__content"><p>Check that this tutorial&rsquo;s prerequisites are present:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="amF2YWMgLS12ZXJzaW9uCmxzICRMRF9MSUJSQVJZX1BBVEggfCBncmVwIGxpYmN1ZS5zbyB8fCBlY2hvICdmYWlsIScKbHMgJENMQVNTUEFUSCB8IGdyZXAgL0NVRS4qamFyJCB8fCBlY2hvICdmYWlsISc=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ javac --version
+</span></span><span style="display:flex;"><span>javac 22.0.2
+</span></span><span style="display:flex;"><span>$ ls $LD_LIBRARY_PATH | grep libcue.so || echo &#39;fail!&#39;
+</span></span><span style="display:flex;"><span>libcue.so
+</span></span><span style="display:flex;"><span>$ ls $CLASSPATH | grep /CUE.*jar$ || echo &#39;fail!&#39;
+</span></span><span style="display:flex;"><span>/usr/local/share/java/CUE.jar</span></span></code></pre></div></div>
+</div>
+<p>If any of these commands fail then your computer doesn&rsquo;t have the related
+prerequisite installed as expected and <strong>this is a problem that you need to fix
+before continuing with this tutorial.</strong></p>
+</div>
+</div>
+
+
+
+
+
+<div class="step" id="step-5" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-5" data-step-number="5">5</a><div class="step__content"><p>Create a directory to hold some files, and change into it:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bWtkaXIgLXAgY3VlLWphdmEtYXBpLXR1dG9yaWFscwpjZCBjdWUtamF2YS1hcGktdHV0b3JpYWxz">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ mkdir -p cue-java-api-tutorials
+</span></span><span style="display:flex;"><span>$ cd cue-java-api-tutorials</span></span></code></pre></div></div>
+</div></div>
+</div>
+
+<h2 id="create-a-java-program">
+    <a href="#create-a-java-program" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Create a Java program</h2>
+
+
+
+
+<div class="step" id="step-6" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-6" data-step-number="6">6</a><div class="step__content"><p>Place this Java program in the file <code>HandleErrors.java</code>:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="cue-java-api-tutorials/handleerrors.java"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="cue-java-api-tutorials/HandleErrors.java">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>cue-java-api-tutorials/HandleErrors.java
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="cue-java-api-tutorials/handleerrors.java"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="aW1wb3J0IG9yZy5jdWVsYW5nLmN1ZS4qOwoKcHVibGljIGNsYXNzIEhhbmRsZUVycm9ycyB7CiAgICBwdWJsaWMgc3RhdGljIHZvaWQgbWFpbihTdHJpbmdbXSBhcmdzKSB7CiAgICAgICAgdmFyIGN0eCA9IG5ldyBDdWVDb250ZXh0KCk7CgogICAgICAgIHRyeSB7CiAgICAgICAgICAgIHZhciB2ID0gY3R4LmNvbXBpbGUoIng6IHsiKTsgLy8gU3ludGF4IGVycm9yLgogICAgICAgIH0gY2F0Y2ggKEN1ZUVycm9yIGUpIHsKICAgICAgICAgICAgU3lzdGVtLm91dC5wcmludGxuKCIjIyBDYXRjaCBibG9jayAjMSIpOwogICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oZS5nZXRNZXNzYWdlKCkpOwogICAgICAgIH0KCiAgICAgICAgdHJ5IHsKICAgICAgICAgICAgdmFyIHYgPSBjdHguY29tcGlsZSgiYTogYjogYzogZDogMSIpOwogICAgICAgICAgICB2YXIgdjEgPSB2Lmxvb2t1cCgieCIpOyAvLyBJbnZhbGlkIHBhdGguCiAgICAgICAgfSBjYXRjaCAoQ3VlRXJyb3IgZSkgewogICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oIlxuIyMgQ2F0Y2ggYmxvY2sgIzIiKTsKICAgICAgICAgICAgU3lzdGVtLm91dC5wcmludGxuKGUuZ2V0TWVzc2FnZSgpKTsKICAgICAgICB9CgogICAgICAgIHRyeSB7CiAgICAgICAgICAgIHZhciB2ID0gY3R4LmNvbXBpbGUoIjEyMyIpOwogICAgICAgICAgICB2YXIgcyA9IHYuZ2V0U3RyaW5nKCk7IC8vIE5vdCBhIHN0cmluZy4KICAgICAgICB9IGNhdGNoIChDdWVFcnJvciBlKSB7CiAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbigiXG4jIyBDYXRjaCBibG9jayAjMyIpOwogICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oZS5nZXRNZXNzYWdlKCkpOwogICAgICAgIH0KCiAgICAgICAgdHJ5IHsKICAgICAgICAgICAgdmFyIHYgPSBjdHguY29tcGlsZSgieyB4OiBib29sLCB5OiA0MiB9Iik7CiAgICAgICAgICAgIHZhciBzID0gdi5nZXRKU09OKCk7IC8vIHggaXNuJ3QgYSBjb25jcmV0ZSB2YWx1ZS4KICAgICAgICB9IGNhdGNoIChDdWVFcnJvciBlKSB7CiAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbigiXG4jIyBDYXRjaCBibG9jayAjNCIpOwogICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oZS5nZXRNZXNzYWdlKCkpOwogICAgICAgIH0KCiAgICAgICAgdHJ5IHsKICAgICAgICAgICAgLy8gVW5pZmljYXRpb24gb2YgdmFsaWQgQ1VFIG5ldmVyIHRocm93cyBhbiBlcnJvci4gVGhlIHJlc3VsdCBpcwogICAgICAgICAgICAvLyBhbHdheXMgZGVmaW5lZCwgd2l0aCBhIHZhbHVlIG9mIF98XyAoYm90dG9tKSBpZiB1bmlmaWNhdGlvbiBmYWlsZWQuCiAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbigiXG4jIyBVbmlmaWNhdGlvbiAjMSIpOwogICAgICAgICAgICB2YXIgYSAgPSBjdHguY29tcGlsZSgiQTogdHJ1ZSIpOwogICAgICAgICAgICB2YXIgYiAgPSBjdHguY29tcGlsZSgiQTogdHJ1ZSIpOwogICAgICAgICAgICB2YXIgYWIgPSBhLnVuaWZ5KGIpOwogICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oImFiIGlzOiAiICsgYWIuZ2V0SlNPTigpKTsKICAgICAgICAgICAgU3lzdGVtLm91dC5wcmludGxuKCJwcmludEVycm9yKCkgcmVwb3J0czogIik7CiAgICAgICAgICAgIHByaW50RXJyb3IoYWIpOwoKICAgICAgICAgICAgU3lzdGVtLm91dC5wcmludGxuKCJcbiMjIFVuaWZpY2F0aW9uICMyIik7CiAgICAgICAgICAgIHZhciB4ICA9IGN0eC5jb21waWxlKCJCOiAxIik7CiAgICAgICAgICAgIHZhciB5ICA9IGN0eC5jb21waWxlKCJCOiAyIik7CiAgICAgICAgICAgIHZhciB4eSA9IHgudW5pZnkoeSk7CiAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbigicHJpbnRFcnJvcigpIHJlcG9ydHM6ICIpOwogICAgICAgICAgICBwcmludEVycm9yKHh5KTsKICAgICAgICB9IGNhdGNoIChDdWVFcnJvciBlKSB7CiAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbigiIyMgQ2F0Y2ggYmxvY2sgIzUiKTsKICAgICAgICB9CiAgICB9CgogICAgc3RhdGljIHZvaWQgcHJpbnRFcnJvcihWYWx1ZSB2KSB7CiAgICAgICAgLy8gVG8gY2hlY2sgaWYgYSB1bmlmaWNhdGlvbiByZXN1bHRlZCBpbiBhbiBlcnJvciB1c2UgdGhlIGVycm9yKCkgbWV0aG9kIG9uIFZhbHVlLgogICAgICAgIC8vIGVycm9yKCkgcmV0dXJucyBhIFJlc3VsdCwgd2hpY2ggY2FuIGJlIE9rIChzdWNjZXNzKSBvciBFcnIgKGFuIGVycm9yIG9jY3VycmVkKS4KICAgICAgICBzd2l0Y2ggKHYuZXJyb3IoKSkgewogICAgICAgICAgICBjYXNlIFJlc3VsdC5PazxWYWx1ZSwgU3RyaW5nPiBvayAtPiBTeXN0ZW0ub3V0LnByaW50bG4oIm9rIik7CiAgICAgICAgICAgIGNhc2UgUmVzdWx0LkVycjxWYWx1ZSwgU3RyaW5nPiBlcnIgLT4gU3lzdGVtLm91dC5wcmludGxuKGVyci5lcnIoKSk7CiAgICAgICAgfQogICAgfQp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#555">org.cuelang.cue.*</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="font-weight:bold">public</span><span style="color:#bbb"> </span><span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">HandleErrors</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="font-weight:bold">public</span><span style="color:#bbb"> </span><span style="font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#458;font-weight:bold">void</span><span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">main</span>(String<span style="font-weight:bold">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>ctx<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span><span style="font-weight:bold">new</span><span style="color:#bbb"> </span>CueContext();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>v<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;x: {&#34;</span>);<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">// Syntax error.</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="font-weight:bold">catch</span><span style="color:#bbb"> </span>(CueError<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;## Catch block #1&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(e.<span style="color:#008080">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>v<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;a: b: c: d: 1&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>v1<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>v.<span style="color:#008080">lookup</span>(<span style="color:#b84">&#34;x&#34;</span>);<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">// Invalid path.</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="font-weight:bold">catch</span><span style="color:#bbb"> </span>(CueError<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;\n## Catch block #2&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(e.<span style="color:#008080">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>v<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;123&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>s<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>v.<span style="color:#008080">getString</span>();<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">// Not a string.</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="font-weight:bold">catch</span><span style="color:#bbb"> </span>(CueError<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;\n## Catch block #3&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(e.<span style="color:#008080">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>v<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;{ x: bool, y: 42 }&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>s<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>v.<span style="color:#008080">getJSON</span>();<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">// x isn&#39;t a concrete value.</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="font-weight:bold">catch</span><span style="color:#bbb"> </span>(CueError<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;\n## Catch block #4&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(e.<span style="color:#008080">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#998;font-style:italic">// Unification of valid CUE never throws an error. The result is</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#998;font-style:italic">// always defined, with a value of _|_ (bottom) if unification failed.</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;\n## Unification #1&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>a<span style="color:#bbb">  </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;A: true&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>b<span style="color:#bbb">  </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;A: true&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>ab<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>a.<span style="color:#008080">unify</span>(b);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;ab is: &#34;</span><span style="color:#bbb"> </span><span style="font-weight:bold">+</span><span style="color:#bbb"> </span>ab.<span style="color:#008080">getJSON</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;printError() reports: &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>printError(ab);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;\n## Unification #2&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>x<span style="color:#bbb">  </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;B: 1&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>y<span style="color:#bbb">  </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>ctx.<span style="color:#008080">compile</span>(<span style="color:#b84">&#34;B: 2&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">var</span><span style="color:#bbb"> </span>xy<span style="color:#bbb"> </span><span style="font-weight:bold">=</span><span style="color:#bbb"> </span>x.<span style="color:#008080">unify</span>(y);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;printError() reports: &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>printError(xy);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="font-weight:bold">catch</span><span style="color:#bbb"> </span>(CueError<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;## Catch block #5&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#458;font-weight:bold">void</span><span style="color:#bbb"> </span><span style="color:#900;font-weight:bold">printError</span>(Value<span style="color:#bbb"> </span>v)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#998;font-style:italic">// To check if a unification resulted in an error use the error() method on Value.</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#998;font-style:italic">// error() returns a Result, which can be Ok (success) or Err (an error occurred).</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="font-weight:bold">switch</span><span style="color:#bbb"> </span>(v.<span style="color:#008080">error</span>())<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">case</span><span style="color:#bbb"> </span>Result.<span style="color:#008080">Ok</span><span style="font-weight:bold">&lt;</span>Value,<span style="color:#bbb"> </span>String<span style="font-weight:bold">&gt;</span><span style="color:#bbb"> </span>ok<span style="color:#bbb"> </span><span style="font-weight:bold">-&gt;</span><span style="color:#bbb"> </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(<span style="color:#b84">&#34;ok&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="font-weight:bold">case</span><span style="color:#bbb"> </span>Result.<span style="color:#008080">Err</span><span style="font-weight:bold">&lt;</span>Value,<span style="color:#bbb"> </span>String<span style="font-weight:bold">&gt;</span><span style="color:#bbb"> </span>err<span style="color:#bbb"> </span><span style="font-weight:bold">-&gt;</span><span style="color:#bbb"> </span>System.<span style="color:#008080">out</span>.<span style="color:#008080">println</span>(err.<span style="color:#008080">err</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div></div>
+</div>
+
+<h2 id="compile-the-program">
+    <a href="#compile-the-program" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Compile the program</h2>
+
+
+
+
+<div class="step" id="step-7" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-7" data-step-number="7">7</a><div class="step__content"><p>Compile the Java program:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="amF2YWMgSGFuZGxlRXJyb3JzLmphdmE=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ javac HandleErrors.java</span></span></code></pre></div></div>
+</div>
+<p>The Java compiler automatically uses the value of the <code>CLASSPATH</code> environment
+variable to locate the JAR file containing <code>cue-api-java</code>.</p>
+</div>
+</div>
+
+<h2 id="run-the-program">
+    <a href="#run-the-program" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Run the program</h2>
+
+
+
+
+<div class="step" id="step-8" data-step-group="false"><a class="button button--icon button--yellow step__number" href="#step-8" data-step-number="8">8</a><div class="step__content"><p>Run the Java program:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="amF2YSAtLWVuYWJsZS1uYXRpdmUtYWNjZXNzPUFMTC1VTk5BTUVEIC1jcCAuOiRDTEFTU1BBVEggSGFuZGxlRXJyb3Jz">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ java --enable-native-access=ALL-UNNAMED -cp .:$CLASSPATH HandleErrors
+</span></span><span style="display:flex;"><span>## Catch block #1
+</span></span><span style="display:flex;"><span>expected &#39;}&#39;, found &#39;EOF&#39;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Catch block #2
+</span></span><span style="display:flex;"><span>field not found: x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Catch block #3
+</span></span><span style="display:flex;"><span>cannot use value 123 (type int) as string
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Catch block #4
+</span></span><span style="display:flex;"><span>cue: marshal error: x: cannot convert incomplete value &#34;bool&#34; to JSON
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Unification #1
+</span></span><span style="display:flex;"><span>ab is: {&#34;A&#34;:true}
+</span></span><span style="display:flex;"><span>printError() reports: 
+</span></span><span style="display:flex;"><span>ok
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Unification #2
+</span></span><span style="display:flex;"><span>printError() reports: 
+</span></span><span style="display:flex;"><span>B: conflicting values 2 and 1</span></span></code></pre></div></div>
+</div>
+<p>The Java runtime must be told about a slightly different classpath from the
+compiler, through the <code>-cp</code> flag, because it needs to locate both the
+<code>cue-api-java</code> JAR <em>and</em> your compiled code. The <code>--enable-native-access</code> flag
+avoids a runtime warning that the
+<a href="https://openjdk.org/jeps/454">Foreign Function &amp; Memory API</a> is being used by
+<code>cue-api-java</code>.</p>
+</div>
+</div>
+
+<h2 id="conclusion">
+    <a href="#conclusion" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Conclusion</h2>
+<p>Excellent work! You&rsquo;ve successfully handled problems in Java related to invalid CUE
+syntax, invalid paths, non-concrete value conversions to JSON, and other
+runtime errors that can occur.</p>
+<p>See <em>Related content</em>, below, for tutorials and guides that explain more about
+using CUE in Java.</p>
+<h2 id="related-content">
+    <a href="#related-content" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Related content</h2>
+<ul>
+<li>How-to Guide: <a href="/docs/howto/build-cue-api-java-jar/">Building cue-api-java as a JAR file</a></li>
+<li>Tutorial: <a href="/docs/tutorial/get-started-cue-java/">Getting started using CUE in Java</a></li>
+<li>Tutorial: <a href="/docs/tutorial/convert-values-java-cue/">Converting values between Java and CUE</a></li>
+<li>Tutorial: <a href="/docs/tutorial/validate-data-schema-java/">Validating data against a schema in Java</a></li>
+<li><a href="/search?q=tag:%22java%20api%22"
+        class="tag tag--inline tag--blue">
+            java api
+        </a> &ndash; all pages exploring the CUE Java API</li>
+</ul>
+
+                        
+                    </div>
+    <footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/590f6a55ce7a4c6e2e9d212391200bcc438b2555">
+                Last modified August 6, 2024</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__footer-tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:%22java%20api%22"
+                class="tag tag--blue">
+                    java api
+                </a>
+            </li></ul>
+
+</div><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/tutorial/handle-errors-java-api/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tutorial/handle-errors-java-api/&text=The%20library%20cue-api-java%20provides%20a%20way%20to%20use%20CUE%20from%20Java%20programs.%20In%20certain%20situations%20the%20library%20might%20need%20to%20let%20you%20know%20that%20there&amp;rsquo;s%20a%20problem%20with%20some%20CUE%20that%20you%20asked%20it%20to%20handle,%20and%20it%20does%20this%20by%20throwing%20a%20CueError.%20This%20tutorial%20helps%20you%20learn%20how%20to%20handle%20errors%20returned%20by%20cue-api-java.%0acue-api-java%20is%20an%20experimental%20technology%20preview.%20This%20means%20that%20it&amp;rsquo;s%20under%20development%20and%20its%20behaviour%20might%20change%20from%20one%20release%20to%20the%20next.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tutorial/handle-errors-java-api/&summary=The%20library%20cue-api-java%20provides%20a%20way%20to%20use%20CUE%20from%20Java%20programs.%20In%20certain%20situations%20the%20library%20might%20need%20to%20let%20you%20know%20that%20there&amp;rsquo;s%20a%20problem%20with%20some%20CUE%20that%20you%20asked%20it%20to%20handle,%20and%20it%20does%20this%20by%20throwing%20a%20CueError.%20This%20tutorial%20helps%20you%20learn%20how%20to%20handle%20errors%20returned%20by%20cue-api-java.%0acue-api-java%20is%20an%20experimental%20technology%20preview.%20This%20means%20that%20it&amp;rsquo;s%20under%20development%20and%20its%20behaviour%20might%20change%20from%20one%20release%20to%20the%20next.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/tutorial/get-started-cue-java/" aria-label="Previous - Getting started using CUE in Java">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">Getting started using CUE in Java</span>
+            </a><a class="prevnext__next" href="/docs/tutorial/loading-cue-go-api/" aria-label="Next - Loading CUE via the Go API">
+                <span class="prevnext__text">Loading CUE via the Go API</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/new-to-cue/" title="New to CUE?">
+            <span class="tree__text">New to CUE?</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/tutorial/handle-errors-java-api/" title="Handling errors in the Java API">
+            <span class="tree__text">Handling errors in the Java API</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#prerequisites" class="toc__link"><span class="toc__text">Prerequisites</span></a></li>
+    <li class="toc__item"><a href="#set-up-your-environment" class="toc__link"><span class="toc__text">Set up your environment</span></a></li>
+    <li class="toc__item"><a href="#create-a-java-program" class="toc__link"><span class="toc__text">Create a Java program</span></a></li>
+    <li class="toc__item"><a href="#compile-the-program" class="toc__link"><span class="toc__text">Compile the program</span></a></li>
+    <li class="toc__item"><a href="#run-the-program" class="toc__link"><span class="toc__text">Run the program</span></a></li>
+    <li class="toc__item"><a href="#conclusion" class="toc__link"><span class="toc__text">Conclusion</span></a></li>
+    <li class="toc__item"><a href="#related-content" class="toc__link"><span class="toc__text">Related content</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Ftutorial%2Fhandle-errors-java-api%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+
+
+
+    </body>
+</html>

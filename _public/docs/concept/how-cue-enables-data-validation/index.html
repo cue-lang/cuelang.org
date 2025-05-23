@@ -1,0 +1,3423 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="CUE is designed to make data validation simple, powerful, and flexible.To achieve this, the project publishes the cue command line tool, which allows a wide …">
+<meta name="generator" content="Hugo 0.128.2">
+
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="canonical" href="https://cuelang.org/docs/concept/how-cue-enables-data-validation/" />
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/webmanifest.json">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#232a68">
+<meta name="msapplication-TileColor" content="#232a68">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#232a68">
+
+<title>How CUE enables data validation | CUE</title><meta property="og:url" content="/docs/concept/how-cue-enables-data-validation/">
+  <meta property="og:site_name" content="CUE">
+  <meta property="og:title" content="How CUE enables data validation">
+  <meta property="og:description" content="CUE is designed to make data validation simple, powerful, and flexible.
+To achieve this, the project publishes the cue command line tool, which allows a wide range of data validation tasks to be completed without writing any code. For more complex validation scenarios, CUE’s powerful Go APIs deliver fine grained control.
+This guide demonstrates some of the data validation capabilities of the cue command.
+CUE makes data validation simple Validating data files with the cue command is easy.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="og:image" content="/img/social.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:title" content="How CUE enables data validation">
+  <meta name="twitter:description" content="CUE is designed to make data validation simple, powerful, and flexible.
+To achieve this, the project publishes the cue command line tool, which allows a wide range of data validation tasks to be completed without writing any code. For more complex validation scenarios, CUE’s powerful Go APIs deliver fine grained control.
+This guide demonstrates some of the data validation capabilities of the cue command.
+CUE makes data validation simple Validating data files with the cue command is easy.">
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
+<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+
+
+
+<link rel="preload" href="/fonts/inter/regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/500.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/inter/700.woff2" as="font" crossorigin="anonymous">
+
+
+
+<script>(()=>{document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js")})()</script>
+</head>
+    <body itemscope itemtype="https://schema.org/WebPage">
+        <meta itemprop="name" content="How CUE enables data validation">
+<meta itemprop="description" content="CUE is designed to make data validation simple, powerful, and flexible.
+To achieve this, the project publishes the cue command line tool, which allows a wide range of data validation tasks to be completed without writing any code. For more complex validation scenarios, CUE&rsquo;s powerful Go APIs deliver fine grained control.
+This guide demonstrates some of the data validation capabilities of the cue command.
+CUE makes data validation simple Validating data files with the cue command is easy.">
+
+    
+        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+    
+            
+        <meta itemprop="image" content="/img/social.png"/>
+            
+    <meta itemprop="keywords" content="validation," />
+
+        <a id="skip-nav" class="skip-link" href="#site-main" target="_self">Skip to content</a>
+
+        <div class="site">
+            <header id="site-header" class="site__header">
+                
+
+<div class="header header--wide" data-header>
+    <div class="header__container">
+        <div class="header__background"></div>
+
+        <div class="header__branding">
+            <a href="/" class="header__logo" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </div>
+
+        <div class="header__main">
+            <nav class="nav nav--main" aria-label="Main menu">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/docs/"><span class="nav__text">Documentation</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/play/"><span class="nav__text">Play</span></a>
+                        </li>
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/community/"><span class="nav__text">Community</span></a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__secondary">
+            <div class="header__icons">
+                <nav class="nav nav--social" aria-label="Social">
+                    <ul class="nav__list"><li class="nav__item"><a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/slack">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                    <span class="nav__text">Slack</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="/s/discord">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                    <span class="nav__text">Discord</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li><li class="nav__item"><a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li></ul>
+                </nav>
+            </div>
+
+            <div class="header__cta"><a class="button button--skinny"
+                       href="/docs/introduction/installation/"><span class="button__text">Install</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+</a></div>
+
+            <div class="header__search" data-menu>
+                <a href="/search" class="button button--icon button--white-simple" rel="search" data-menu-dropdown="header-dropdown-search">
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+<span>Search</span>
+                </a>
+
+                <div class="header__dropdown header__dropdown--search" data-menu-dropdown-target="header-dropdown-search">
+                    <p class="header__search-title">What are you looking for?</p>
+
+
+
+
+
+<div data-search-autocomplete="menu"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-menu"></div>
+</div>
+</div>
+            </div>
+
+            <div class="header__toggle">
+                <button class="button button--outline" data-drawer-toggle="menu" aria-haspopup="menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="button__text">Menu</span>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--menu"></use>
+</svg>
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </header>
+
+            <main id="site-main" class="site__content" itemprop="mainContentOfPage">
+                
+
+    <div class="docs" data-docs>
+        <div class="docs__main">
+            <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+    
+
+    
+    
+
+    
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/concept/">Concept Guides</a></li>
+    
+    
+
+    
+        <li class="breadcrumb__item" aria-current="page"><h1 class="breadcrumb__text">How CUE enables data validation</h1></li>
+    
+    </ol>
+</nav>
+
+
+            <article class="article article--docs" itemscope itemtype="https://schema.org/TechArticle">
+                <meta itemprop="articleBody" content="CUE is designed to make data validation simple, powerful, and flexible.
+To achieve this, the project publishes the cue
+command line tool,
+which allows a wide range of data validation tasks to be completed without
+writing any code.
+For more complex validation scenarios, CUE&rsquo;s
+powerful Go APIs
+deliver fine grained control.
+This guide demonstrates some of the data validation capabilities of the cue command.
+
+    
+
+
+
+
+    
+
+CUE makes data validation simple
+Validating data files with the cue command is easy. All we do is:
+
+define some constraints, and
+tell the cue command to check that each data file unifies successfully
+with the constraints.
+
+Unification is CUE&rsquo;s core
+operation - it&rsquo;s central to how the language and its tooling works.
+It allows data and constraints to work at all scales, and is one of the
+mechanisms that enables CUE to perform automated processes such as removing
+boilerplate. You&rsquo;ll read more about unification later. 
+As an example of CUE&rsquo;s simplicity, here&rsquo;s a set of data files that we&rsquo;d like to
+validate - two JSON files and some YAML:
+
+
+    
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    alex.json
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            {
+    &#34;name&#34;: &#34;Alex Atkinson&#34;,
+    &#34;type&#34;: &#34;dog&#34;,
+    &#34;height&#34;: 55,
+    &#34;diet&#34;: &#34;kibble&#34;
+}
+
+
+
+
+
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    bryn.json
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            {
+    &#34;name&#34;: &#34;Bryn Brown&#34;,
+    &#34;type&#34;: &#34;goldfish&#34;,
+    &#34;height&#34;: &#34;2&#34;,
+    &#34;diet&#34;: &#34;flakes&#34;
+}
+
+
+
+
+
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    charlie.yaml
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            name: Charlie Cartwright
+type: cat
+diet: chicken
+
+
+
+
+
+
+
+Writing a schema that validates these data files isn&rsquo;t difficult.
+We just mirror the data structure in a CUE file,
+marking important fields as either optional or required with ?: and !: respectively,
+and add some type information:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    schema.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package validation
+
+name!:   string // All animals have a name.
+type!:   string // Every animal must have a type.
+height?: int    // Optional, as we haven&#39;t managed to measure *every* animal just yet.
+
+
+
+
+
+
+The cue vet command validates our three data files against this schema.
+Each file is validated independently:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c . alex.json bryn.json charlie.yaml
+height: conflicting values &#34;2&#34; and int (mismatched types string and int):
+    ./bryn.json:4:15
+    ./schema.cue:5:10
+
+cue vet caught a common JSON error in our data: a number incorrectly encoded as a string.
+The error message tells us that the problem is on line 4 of the bryn.json file,
+in the height field.
+Let&rsquo;s correct that data:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    bryn.json
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            {
+    &#34;name&#34;: &#34;Bryn Brown&#34;,
+    &#34;type&#34;: &#34;goldfish&#34;,
+    &#34;height&#34;: 2,
+    &#34;diet&#34;: &#34;flakes&#34;
+}
+
+
+
+
+
+
+We can then repeat the cue vet command:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c . alex.json bryn.json charlie.yaml
+
+The command is silent, which tells us that our data validated successfully &hellip;
+but did you notice that the diet fields don&rsquo;t get flagged up, despite being
+present in the data files but not in the schema?
+This is because the constraints we declared in schema.cue were placed at the
+top level of the validation package, and the top level of each CUE package
+is left open.
+The effect of this is that when we invoke cue vet by only telling it about
+some CUE and some data files, its behaviour is to allow us to specify only
+the important data fields that we care about, without having to fully describe
+the data&rsquo;s structure.
+This lets us get started quickly, performing partial validation of the most
+critical data - without having to spend time exhaustively documenting each and
+every field.
+As we&rsquo;ll see shortly, this behaviour can be changed by placing our constraints inside
+closed structs.
+
+    
+
+
+
+
+    
+
+CUE makes data validation powerful
+In the previous section we validated three simple data files against a trivial schema.
+The schema contained type constraints that made sure certain fields
+were of type string and int.
+CUE&rsquo;s types also include float, number (the superset of int and float),
+bytes, null and bool, but its constraints enable much more sophisticated
+data validation than simple type checking.
+Let&rsquo;s see some examples of different data validations that CUE makes possible,
+using the same three data files that we worked with above:
+
+    
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    alex.json
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            {
+    &#34;name&#34;: &#34;Alex Atkinson&#34;,
+    &#34;type&#34;: &#34;dog&#34;,
+    &#34;height&#34;: 55,
+    &#34;diet&#34;: &#34;kibble&#34;
+}
+
+
+
+
+
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    bryn.json
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            {
+    &#34;name&#34;: &#34;Bryn Brown&#34;,
+    &#34;type&#34;: &#34;goldfish&#34;,
+    &#34;height&#34;: 2,
+    &#34;diet&#34;: &#34;flakes&#34;
+}
+
+
+
+
+
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    charlie.yaml
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            name: Charlie Cartwright
+type: cat
+diet: chicken
+
+
+
+
+
+
+
+The schema.cue file is in place, as before. Let&rsquo;s create policy.cue as well:
+
+    
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    schema.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package validation
+
+name!:   string
+type!:   string
+height?: int
+
+
+
+
+
+
+
+
+            
+
+    
+
+
+                            Copied!
+                        
+                    policy.cue
+            
+        
+
+                Copy code
+                
+                    Copied!
+                
+            package validation
+
+type?:   &#34;dog&#34; | &#34;cat&#34;
+height?: &gt;10
+
+
+
+
+
+
+
+The policy.cue file contains additional constraints for some data fields,
+which CUE combines with the type constraints in schema.cue through a process
+called unification. Let&rsquo;s see it in action:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c . alex.json bryn.json charlie.yaml
+type: 2 errors in empty disjunction:
+type: conflicting values &#34;cat&#34; and &#34;goldfish&#34;:
+    ./bryn.json:3:13
+    ./policy.cue:3:18
+type: conflicting values &#34;dog&#34; and &#34;goldfish&#34;:
+    ./bryn.json:3:13
+    ./policy.cue:3:10
+height: invalid value 2 (out of bound &gt;10):
+    ./policy.cue:4:10
+    ./bryn.json:4:15
+
+It turns out that our new policy constraints are too restrictive, as they don&rsquo;t
+permit goldfish, or short animals. Let&rsquo;s correct this by loosening our policies:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    policy.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package validation
+
+type?:   &#34;dog&#34; | &#34;cat&#34; | &#34;goldfish&#34;
+height?: &gt;=1
+
+
+
+
+
+
+We can then run cue vet again:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c . alex.json bryn.json charlie.yaml
+
+CUE unifies all the constraints that apply to a field, and checks that they&rsquo;re
+all satisfied simultaneously.
+In our example, unification allowed us to separate &ldquo;schema&rdquo; from &ldquo;policy&rdquo;, but
+these terms don&rsquo;t implicitly mean anything to CUE. Unification permits the
+separation of validation concerns into any number of aspects, guided by
+the structure that makes sense for your specific scenario.
+For example: perhaps one team controls the specification of the field names
+that are permitted, whilst another team controls their types, and a third
+team imposes more fine grained controls over the fields&rsquo; values. Unification
+allows each team to control their own constraints independently, with CUE
+taking responsibility for combining them.
+CUE does the hard work of unifying all the aspects,
+so that it can check that your data validates against every aspect.
+
+    
+
+
+
+
+    
+
+More Constraints
+CUE enables powerful data validation by making a rich set of constraints
+available out of the box.
+You&rsquo;ve already seen
+disjunctions
+in action, constraining the type field, above.
+Disjunctions are known as &ldquo;sum types&rdquo; in some other languages,
+or &ldquo;alternation&rdquo; in regular expressions.
+You&rsquo;ve also seen
+bounds
+being used to constrain the height field numerically.
+Bounds work with int and float typed values,
+using any of the comparison operators that you&rsquo;d expect, such as &lt;, &gt;=, and !=.
+CUE uses the same operators to constrain string and bytes values,
+lexically, byte-by-byte.
+Data validation often relies on regular expressions to match and constrain
+string values, and CUE supports them through the =~ and !~ operators.
+As you&rsquo;ll see in the following CUE, the language&rsquo;s
+standard library
+also provides many built-in validator functions.
+Here we use a pair of functions that can validate string data in a more
+straightforward and clear way than regular expressions.
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    example.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package validation
+
+import &#34;strings&#34;
+
+data: {
+	// Each member&#39;s value must have this prefix.
+	[_]: strings.HasPrefix(&#34;Super&#34;)
+	// Each member&#39;s value must have this suffix.
+	[_]: strings.HasSuffix(&#34;e&#34;)
+	// Each value must start with an uppercase
+	// ASCII letter and end with lowercase ASCII.
+	[_]: =~&#34;^[A-Z].*[a-z]$&#34;
+	// Each value must not contain the letter &#34;v&#34;.
+	[_]: !~&#34;v&#34;
+}
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    data.yml
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            data:
+  a: Superlative
+  b: supersede
+  c: Superman
+
+
+
+
+
+
+
+
+
+
+
+            TERMINAL
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c . data.yml
+data.b: invalid value &#34;supersede&#34; (does not satisfy strings.HasPrefix(&#34;Super&#34;)):
+    ./example.cue:7:7
+    ./data.yml:3:6
+    ./example.cue:7:25
+    ./example.cue:9:7
+    ./example.cue:12:7
+    ./example.cue:14:7
+data.c: invalid value &#34;Superman&#34; (does not satisfy strings.HasSuffix(&#34;e&#34;)):
+    ./example.cue:9:7
+    ./data.yml:4:6
+    ./example.cue:7:7
+    ./example.cue:9:25
+    ./example.cue:12:7
+    ./example.cue:14:7
+data.b: invalid value &#34;supersede&#34; (out of bound =~&#34;^[A-Z].*[a-z]$&#34;):
+    ./example.cue:12:7
+    ./data.yml:3:6
+    ./example.cue:7:7
+    ./example.cue:9:7
+    ./example.cue:14:7
+data.a: invalid value &#34;Superlative&#34; (out of bound !~&#34;v&#34;):
+    ./example.cue:14:7
+    ./data.yml:2:6
+    ./example.cue:7:7
+    ./example.cue:9:7
+    ./example.cue:12:7
+
+
+
+
+
+
+CUE also provides a way to ensure that only known fields are present in data by using
+definitions
+to create
+closed structs.
+Here&rsquo;s an example of a definition being used to flag up an extra field that
+shouldn&rsquo;t be present in our data:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    schema.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            package validation
+
+// #People is a list of zero or more #Person-s
+#People: [...#Person]
+#Person: {
+	name!:    string
+	address?: string
+}
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    data.yml
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            - name: Alex Atkinson
+- name: Bryn Brown
+  address: 123 Main Street, Springfield
+- name: Charlie Cartwright
+  age: 80
+
+
+
+
+
+
+
+
+
+
+
+            TERMINAL
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c . data.yml -d &#39;#People&#39;
+2.age: field not allowed:
+    ./data.yml:5:3
+
+
+
+
+
+
+The language tour demonstrates the full range of
+CUE&rsquo;s constraints.
+
+    
+
+
+
+
+    
+
+CUE makes data validation flexible
+CUE delivers flexibility, letting you adopt its succinct and powerful language
+at whatever pace is appropriate by enabling you to use your existing data and
+schemas formats alongside CUE. It does this through its first class support for
+various alternative schema and data formats - which can be combined, imported,
+and exported.
+The Integrations page contains links to the
+different formats that CUE supports, but here&rsquo;s an example that demonstrates
+CUE&rsquo;s flexibility through multiple formats being used simultaneously:
+Let&rsquo;s start with a trivial
+Protobuf
+schema that defines ExampleType:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    schema.proto
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            message ExampleType {
+  string aString = 1;
+  int32  anInt   = 2;
+  float  aFloat  = 3;
+  bool   aBool   = 4;
+}
+
+
+
+
+
+
+Let&rsquo;s include a JSON Schema file that adds some constraints to a couple of
+ExampleType&rsquo;s fields:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    schema.json
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            {
+    &#34;$schema&#34;: &#34;http://json-schema.org/draft-07/schema#&#34;,
+    &#34;definitions&#34;: {
+        &#34;ExampleType&#34;: {
+            &#34;type&#34;: &#34;object&#34;,
+            &#34;properties&#34;: {
+                &#34;aString&#34;: {
+                    &#34;type&#34;: &#34;string&#34;,
+                    &#34;pattern&#34;: &#34;^Multiplication&#34;
+                },
+                &#34;anInt&#34;: {
+                    &#34;type&#34;: &#34;number&#34;,
+                    &#34;minimum&#34;: 5,
+                    &#34;maximum&#34;: 100,
+                    &#34;exclusiveMaximum&#34;: true
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+And let&rsquo;s add some CUE policy that constrains ExampleType&rsquo;s fields in ways
+that the other formats can&rsquo;t express:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    policy.cue
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            import &#34;strings&#34;
+
+#ExampleType: {
+	// aString is a required field, and its value must contain
+	// the interpolated string result of squaring anInt.
+	aString!: strings.Contains(&#34;\(anInt*anInt)&#34;)
+
+	// anInt must be strictly greater than aFloat.
+	anInt?: &gt;aFloat
+
+	// The final two fields are left unconstrained.
+	aFloat?: _
+	aBool?:  _
+}
+
+
+
+
+
+
+We&rsquo;ll carefully construct some data such that it violates constraints from each
+of these schema and policy files:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    data.yml
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            aString: &#34;Doesn&#39;t start with &#39;Multiplication&#39;, and doesn&#39;t contain the square of anInt&#34;
+anInt: 5
+aFloat: 99.0
+aBool: &#34;this is not a boolean value&#34;
+
+
+
+
+
+
+The cue vet command unifies all the constraints, showing us the full extent
+of our data validation problem:
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c policy.cue schema.proto schema.json data.yml -d &#39;#ExampleType&#39;
+aBool: conflicting values &#34;this is not a boolean value&#34; and bool (mismatched types string and bool):
+    ./data.yml:4:8
+    ./schema.proto:5:3
+aString: invalid value &#34;Doesn&#39;t start with &#39;Multiplication&#39;, and doesn&#39;t contain the square of anInt&#34; (does not satisfy strings.Contains(&#34;25&#34;)):
+    ./policy.cue:6:12
+    ./data.yml:1:10
+    ./policy.cue:6:29
+    ./schema.json:9:21
+    ./schema.proto:2:3
+aString: invalid value &#34;Doesn&#39;t start with &#39;Multiplication&#39;, and doesn&#39;t contain the square of anInt&#34; (out of bound =~&#34;^Multiplication&#34;):
+    ./schema.json:9:21
+    ./data.yml:1:10
+    ./policy.cue:6:12
+    ./schema.proto:2:3
+anInt: incompatible integer bounds &gt;99.0 and &lt;100:
+    ./schema.json:14:21
+    ./policy.cue:9:10
+
+However, if we update and fix the data, then the same cue vet command is
+silent - indicating that the data validated succesfully against the unified set
+of constraints:
+
+
+
+
+
+
+
+            
+
+
+
+
+    
+
+
+                            Copied!
+                        
+                    data.yml
+            
+        
+
+
+                Copy code
+                
+                    Copied!
+                
+            aString: Multiplication - 5 x 5 == 25
+anInt: 5
+aFloat: 4.0
+aBool: false
+
+
+
+
+
+
+
+            TERMINAL
+        
+                Copy code
+                
+                    Copied!
+                
+            $ cue vet -c policy.cue schema.proto schema.json data.yml -d &#39;#ExampleType&#39;
+
+The range of formats and encodings that CUE supports is outlined in 
+cue help filetypes.
+The cue command can also process its standard input stream in any of the
+formats it understands, as described in
+cue help inputs.
+
+    
+
+
+
+
+    
+
+Future plans
+You&rsquo;ve seen how CUE enables
+simple data validation,
+letting you start small by checking the most important data using a succinct
+and easy-to-grasp format that intuitively mirrors your underlying data.
+You watched CUE&rsquo;s
+powerful data validation
+being used to combine the requirements imposed by multiple teams expressed
+through its rich set of primitive constraints and its standard library.
+You saw how the range of formats that CUE supports can deliver
+flexible data validation that combines
+existing data, schema, and policy assets with newer, more powerful CUE
+constraints.
+This is all possible, today, using CUE, but one of the project&rsquo;s goals is to
+act as an interlingua: a bidirectional bridge between all the formats that
+CUE speaks, linking constraints with data sources of truth - no matter where
+they exist. This will allow constraints from any source to be translated into
+formats suitable for systems that don&rsquo;t yet understand CUE (such as document
+databases that only understand JSON Schema) so that they can passively
+benefit from the language&rsquo;s advanced capabilities.
+
+    
+
+
+
+
+    
+
+Next steps
+Interested in learning more about CUE? Here&rsquo;s what you could try next:
+
+Test out CUE in your browser in the CUE playground
+Take a tour through the CUE language with the
+language tour
+Read about
+the technologies that CUE directly integrates with,
+such as:
+
+Concept Guide: How CUE works with JSON
+Concept Guide: How CUE works with YAML
+Concept Guide: How CUE works with JSON Schema
+Concept Guide: How CUE works with Protocol Buffers
+Concept Guide: How CUE works with OpenAPI
+
+
+Reference: cue help filetypes
+&ndash; how to control which formats the cue command processes
+Reference: cue help inputs
+&ndash; how the cue command assembles its inputs, including its standard input stream
+
+">
+<meta itemprop="wordCount" content="2195">
+
+
+                <div class="article__container">
+                    
+
+
+
+
+        <header class="article__header">
+        <div class="article__info"><div class="article__authors">
+
+
+<div class="authors">
+    
+        
+        
+
+        
+            <details class="authors__item" data-dropdown>
+                <summary class="authors__avatar">
+                    <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                    
+                        <span class="authors__display-name">Jonathan Matthews</span>
+                    
+                </summary>
+
+                <div class="authors--popover">
+                    <div class="authors__avatar">
+                        <img class="authors__image" src="https://github.com/jpluscplusm.png" alt="jpluscplusm">
+
+                        <div class="authors__name">
+                            
+                                <span class="authors__display-name">Jonathan Matthews</span>
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="authors__links">
+                        <div class="authors__github">
+
+                            <a class="authors__link" href="https://github.com/jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Github profile</span>
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="authors__search">
+                            <a class="authors__link" href="/search/?q=author:jpluscplusm">
+                                
+
+
+
+<svg class="icon authors__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--search"></use>
+</svg>
+
+                                <p>
+                                    <span class="authors__link-text">Search all content by this author</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        
+    
+</div>
+</div><div class="article__tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:validation"
+                class="tag tag--lilac">
+                    validation
+                </a>
+            </li></ul>
+
+</div></div></header>
+
+
+
+                    <div class="article__content">
+                        
+                            <p>CUE is designed to make data validation <strong>simple</strong>, <strong>powerful</strong>, and <strong>flexible</strong>.</p>
+<p>To achieve this, the project publishes the <code>cue</code>
+<a href="/docs/introduction/installation/#install-cue-from-official-release-binaries">command line tool</a>,
+which allows a wide range of data validation tasks to be completed without
+writing any code.
+For more complex validation scenarios, CUE&rsquo;s
+<a href="/docs/concept/how-cue-works-with-go/#using-cues-go-api">powerful Go APIs</a>
+deliver fine grained control.</p>
+<p>This guide demonstrates some of the data validation capabilities of the <code>cue</code> command.</p>
+<h2 id="cue-makes-data-validation-simple">
+    <a href="#cue-makes-data-validation-simple" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>CUE makes data validation <em>simple</em></h2>
+<p>Validating data files with the <code>cue</code> command is easy. All we do is:</p>
+<ul>
+<li>define some constraints, and</li>
+<li>tell the <code>cue</code> command to check that each data file <strong>unifies</strong> successfully
+with the constraints.</li>
+</ul>
+<p><a href="/docs/tour/basics/unification/">Unification</a> is CUE&rsquo;s core
+operation - it&rsquo;s central to how the language and its tooling works.
+It allows data and constraints to work at all scales, and is one of the
+mechanisms that enables CUE to perform automated processes such as removing
+boilerplate. You&rsquo;ll read more about unification later. <!-- TODO: link to boilerplate doc when it lands --></p>
+<p>As an example of CUE&rsquo;s simplicity, here&rsquo;s a set of data files that we&rsquo;d like to
+validate - two JSON files and some YAML:</p>
+<!-- TODO: move to multi-file upload when https://cuelang.org/issues/2991 is resolved -->
+<div id="side-3" class="columns">
+    <div class="columns__col"><div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="alex.json"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="alex.json">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>alex.json
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="alex.json"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ewogICAgIm5hbWUiOiAiQWxleCBBdGtpbnNvbiIsCiAgICAidHlwZSI6ICJkb2ciLAogICAgImhlaWdodCI6IDU1LAogICAgImRpZXQiOiAia2liYmxlIgp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;name&#34;</span>: <span style="color:#b84">&#34;Alex Atkinson&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;dog&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;height&#34;</span>: <span style="color:#099">55</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;diet&#34;</span>: <span style="color:#b84">&#34;kibble&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div><div class="columns__col">
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="bryn.json"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="bryn.json">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>bryn.json
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="bryn.json"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ewogICAgIm5hbWUiOiAiQnJ5biBCcm93biIsCiAgICAidHlwZSI6ICJnb2xkZmlzaCIsCiAgICAiaGVpZ2h0IjogIjIiLAogICAgImRpZXQiOiAiZmxha2VzIgp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;name&#34;</span>: <span style="color:#b84">&#34;Bryn Brown&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;goldfish&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;height&#34;</span>: <span style="color:#b84">&#34;2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;diet&#34;</span>: <span style="color:#b84">&#34;flakes&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div><div class="columns__col">
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="charlie.yaml"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="charlie.yaml">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>charlie.yaml
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="charlie.yaml"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bmFtZTogQ2hhcmxpZSBDYXJ0d3JpZ2h0CnR5cGU6IGNhdApkaWV0OiBjaGlja2Vu">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Charlie Cartwright<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>cat<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">diet</span>:<span style="color:#bbb"> </span>chicken</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div>
+</div>
+
+<p>Writing a schema that validates these data files isn&rsquo;t difficult.
+We just mirror the data structure in a CUE file,
+marking important fields as either <em>optional</em> or <em>required</em> with <code>?:</code> and <code>!:</code> respectively,
+and add some type information:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="schema.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="schema.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>schema.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="schema.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSB2YWxpZGF0aW9uCgpuYW1lITogICBzdHJpbmcgLy8gQWxsIGFuaW1hbHMgaGF2ZSBhIG5hbWUuCnR5cGUhOiAgIHN0cmluZyAvLyBFdmVyeSBhbmltYWwgbXVzdCBoYXZlIGEgdHlwZS4KaGVpZ2h0PzogaW50ICAgIC8vIE9wdGlvbmFsLCBhcyB3ZSBoYXZlbid0IG1hbmFnZWQgdG8gbWVhc3VyZSAqZXZlcnkqIGFuaW1hbCBqdXN0IHlldC4=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> validation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>name<span style="font-weight:bold">!:</span>   <span style="color:#458;font-weight:bold">string</span> <span style="color:#998;font-style:italic">// All animals have a name.</span>
+</span></span><span style="display:flex;"><span>type<span style="font-weight:bold">!:</span>   <span style="color:#458;font-weight:bold">string</span> <span style="color:#998;font-style:italic">// Every animal must have a type.</span>
+</span></span><span style="display:flex;"><span>height<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">int</span>    <span style="color:#998;font-style:italic">// Optional, as we haven&#39;t managed to measure *every* animal just yet.</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>The <code>cue vet</code> command validates our three data files against this schema.
+Each file is validated independently:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue vet -c . alex.json bryn.json charlie.yaml
+</span></span><span style="display:flex;"><span>height: conflicting values &#34;2&#34; and int (mismatched types string and int):
+</span></span><span style="display:flex;"><span>    ./bryn.json:4:15
+</span></span><span style="display:flex;"><span>    ./schema.cue:5:10</span></span></code></pre></div></div>
+</div>
+<p><code>cue vet</code> caught a common JSON error in our data: a number incorrectly encoded as a string.
+The error message tells us that the problem is on line 4 of the <code>bryn.json</code> file,
+in the <code>height</code> field.
+Let&rsquo;s correct that data:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="bryn.json"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="bryn.json">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>bryn.json
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="bryn.json"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ewogICAgIm5hbWUiOiAiQnJ5biBCcm93biIsCiAgICAidHlwZSI6ICJnb2xkZmlzaCIsCiAgICAiaGVpZ2h0IjogMiwKICAgICJkaWV0IjogImZsYWtlcyIKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;name&#34;</span>: <span style="color:#b84">&#34;Bryn Brown&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;goldfish&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;height&#34;</span>: <span style="color:#099">2</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;diet&#34;</span>: <span style="color:#b84">&#34;flakes&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>We can then repeat the <code>cue vet</code> command:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue vet -c . alex.json bryn.json charlie.yaml</span></span></code></pre></div></div>
+</div>
+<p>The command is silent, which tells us that our data validated successfully &hellip;
+but did you notice that the <code>diet</code> fields don&rsquo;t get flagged up, despite being
+present in the data files but <em>not</em> in the schema?
+This is because the constraints we declared in <code>schema.cue</code> were placed at the
+top level of the <code>validation</code> package, and the top level of each CUE package
+is left <a href="/docs/tour/types/closed/">open</a>.</p>
+<p>The <em>effect</em> of this is that when we invoke <code>cue vet</code> by only telling it about
+some CUE and some data files, its behaviour is to allow us to specify <strong>only</strong>
+the important data fields that we care about, without having to fully describe
+the data&rsquo;s structure.
+This lets us get started quickly, performing partial validation of the most
+critical data - without having to spend time exhaustively documenting each and
+every field.
+As we&rsquo;ll see shortly, this behaviour can be changed by placing our constraints inside
+<a href="/docs/tour/types/closed/">closed structs</a>.</p>
+<h2 id="cue-makes-data-validation-powerful">
+    <a href="#cue-makes-data-validation-powerful" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>CUE makes data validation <em>powerful</em></h2>
+<p>In the previous section we validated three simple data files against a trivial schema.</p>
+<p>The schema contained <em>type constraints</em> that made sure certain fields
+were of type <code>string</code> and <code>int</code>.
+CUE&rsquo;s types also include <code>float</code>, <code>number</code> (the superset of <code>int</code> and <code>float</code>),
+<code>bytes</code>, <code>null</code> and <code>bool</code>, but its constraints enable much more sophisticated
+data validation than simple type checking.</p>
+<p>Let&rsquo;s see some examples of different data validations that CUE makes possible,
+using the same three data files that we worked with above:</p>
+<div id="side-8" class="columns">
+    <div class="columns__col"><div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="alex.json"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="alex.json">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>alex.json
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="alex.json"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ewogICAgIm5hbWUiOiAiQWxleCBBdGtpbnNvbiIsCiAgICAidHlwZSI6ICJkb2ciLAogICAgImhlaWdodCI6IDU1LAogICAgImRpZXQiOiAia2liYmxlIgp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;name&#34;</span>: <span style="color:#b84">&#34;Alex Atkinson&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;dog&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;height&#34;</span>: <span style="color:#099">55</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;diet&#34;</span>: <span style="color:#b84">&#34;kibble&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div><div class="columns__col">
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="bryn.json"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="bryn.json">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>bryn.json
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="bryn.json"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ewogICAgIm5hbWUiOiAiQnJ5biBCcm93biIsCiAgICAidHlwZSI6ICJnb2xkZmlzaCIsCiAgICAiaGVpZ2h0IjogMiwKICAgICJkaWV0IjogImZsYWtlcyIKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;name&#34;</span>: <span style="color:#b84">&#34;Bryn Brown&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;goldfish&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;height&#34;</span>: <span style="color:#099">2</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;diet&#34;</span>: <span style="color:#b84">&#34;flakes&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div><div class="columns__col">
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="charlie.yaml"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="charlie.yaml">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>charlie.yaml
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="charlie.yaml"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bmFtZTogQ2hhcmxpZSBDYXJ0d3JpZ2h0CnR5cGU6IGNhdApkaWV0OiBjaGlja2Vu">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Charlie Cartwright<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>cat<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">diet</span>:<span style="color:#bbb"> </span>chicken</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div>
+</div>
+
+<p>The <code>schema.cue</code> file is in place, as before. Let&rsquo;s create <code>policy.cue</code> as well:</p>
+<div id="side-9" class="columns">
+    <div class="columns__col"><div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="schema.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="schema.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>schema.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="schema.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSB2YWxpZGF0aW9uCgpuYW1lITogICBzdHJpbmcKdHlwZSE6ICAgc3RyaW5nCmhlaWdodD86IGludA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> validation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>name<span style="font-weight:bold">!:</span>   <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>type<span style="font-weight:bold">!:</span>   <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>height<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">int</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div><div class="columns__col">
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="policy.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="policy.cue">
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>policy.cue
+            </div>
+        </div></div>
+<div class="tabs__content"><div data-tab-item="policy.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSB2YWxpZGF0aW9uCgp0eXBlPzogICAiZG9nIiB8ICJjYXQiCmhlaWdodD86ID4xMA==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> validation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>type<span style="font-weight:bold">?:</span>   <span style="color:#b84">&#34;dog&#34;</span> <span style="font-weight:bold">|</span> <span style="color:#b84">&#34;cat&#34;</span>
+</span></span><span style="display:flex;"><span>height<span style="font-weight:bold">?:</span> <span style="font-weight:bold">&gt;</span><span style="color:#099">10</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+</div></div>
+</div>
+</div>
+
+<p>The <code>policy.cue</code> file contains additional constraints for some data fields,
+which CUE combines with the type constraints in <code>schema.cue</code> through a process
+called <strong>unification</strong>. Let&rsquo;s see it in action:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue vet -c . alex.json bryn.json charlie.yaml
+</span></span><span style="display:flex;"><span>type: 2 errors in empty disjunction:
+</span></span><span style="display:flex;"><span>type: conflicting values &#34;cat&#34; and &#34;goldfish&#34;:
+</span></span><span style="display:flex;"><span>    ./bryn.json:3:13
+</span></span><span style="display:flex;"><span>    ./policy.cue:3:18
+</span></span><span style="display:flex;"><span>type: conflicting values &#34;dog&#34; and &#34;goldfish&#34;:
+</span></span><span style="display:flex;"><span>    ./bryn.json:3:13
+</span></span><span style="display:flex;"><span>    ./policy.cue:3:10
+</span></span><span style="display:flex;"><span>height: invalid value 2 (out of bound &gt;10):
+</span></span><span style="display:flex;"><span>    ./policy.cue:4:10
+</span></span><span style="display:flex;"><span>    ./bryn.json:4:15</span></span></code></pre></div></div>
+</div>
+<p>It turns out that our new policy constraints are too restrictive, as they don&rsquo;t
+permit goldfish, or short animals. Let&rsquo;s correct this by loosening our policies:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="policy.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="policy.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>policy.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="policy.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSB2YWxpZGF0aW9uCgp0eXBlPzogICAiZG9nIiB8ICJjYXQiIHwgImdvbGRmaXNoIgpoZWlnaHQ/OiA&#43;PTE=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> validation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>type<span style="font-weight:bold">?:</span>   <span style="color:#b84">&#34;dog&#34;</span> <span style="font-weight:bold">|</span> <span style="color:#b84">&#34;cat&#34;</span> <span style="font-weight:bold">|</span> <span style="color:#b84">&#34;goldfish&#34;</span>
+</span></span><span style="display:flex;"><span>height<span style="font-weight:bold">?:</span> <span style="font-weight:bold">&gt;=</span><span style="color:#099">1</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>We can then run <code>cue vet</code> again:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue vet -c . alex.json bryn.json charlie.yaml</span></span></code></pre></div></div>
+</div>
+<p>CUE unifies all the constraints that apply to a field, and checks that they&rsquo;re
+all satisfied simultaneously.</p>
+<p>In our example, unification allowed us to separate &ldquo;schema&rdquo; from &ldquo;policy&rdquo;, but
+these terms don&rsquo;t implicitly mean anything to CUE. Unification permits the
+separation of validation concerns into <em>any number of aspects</em>, guided by
+the structure that makes sense for your specific scenario.</p>
+<p>For example: perhaps one team controls the specification of the field <em>names</em>
+that are permitted, whilst another team controls their <em>types</em>, and a third
+team imposes more fine grained controls over the fields&rsquo; <em>values</em>. Unification
+allows each team to control their own constraints independently, with CUE
+taking responsibility for combining them.</p>
+<p>CUE does the hard work of unifying all the aspects,
+so that it can check that your data validates against <em>every</em> aspect.</p>
+<h3 id="more-constraints">
+    <a href="#more-constraints" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>More Constraints</h3>
+<p>CUE enables powerful data validation by making a rich set of constraints
+available out of the box.</p>
+<p>You&rsquo;ve already seen
+<a href="/docs/tour/types/disjunctions/">disjunctions</a>
+in action, constraining the <code>type</code> field, above.
+Disjunctions are known as &ldquo;sum types&rdquo; in some other languages,
+or &ldquo;alternation&rdquo; in regular expressions.</p>
+<p>You&rsquo;ve also seen
+<a href="/docs/tour/types/bounds/">bounds</a>
+being used to constrain the <code>height</code> field numerically.
+Bounds work with <code>int</code> and <code>float</code> typed values,
+using any of the comparison operators that you&rsquo;d expect, such as <code>&lt;</code>, <code>&gt;=</code>, and <code>!=</code>.
+CUE uses the same operators to constrain <code>string</code> and <code>bytes</code> values,
+lexically, byte-by-byte.</p>
+<p>Data validation often relies on regular expressions to match and constrain
+string values, and CUE supports them through the <code>=~</code> and <code>!~</code> operators.
+As you&rsquo;ll see in the following CUE, the language&rsquo;s
+<a href="/docs/tour/packages/standard-library/">standard library</a>
+also provides many built-in validator functions.
+Here we use a pair of functions that can validate string data in a more
+straightforward and clear way than regular expressions.</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="example.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="example.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>example.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="example.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSB2YWxpZGF0aW9uCgppbXBvcnQgInN0cmluZ3MiCgpkYXRhOiB7CgkvLyBFYWNoIG1lbWJlcidzIHZhbHVlIG11c3QgaGF2ZSB0aGlzIHByZWZpeC4KCVtfXTogc3RyaW5ncy5IYXNQcmVmaXgoIlN1cGVyIikKCS8vIEVhY2ggbWVtYmVyJ3MgdmFsdWUgbXVzdCBoYXZlIHRoaXMgc3VmZml4LgoJW19dOiBzdHJpbmdzLkhhc1N1ZmZpeCgiZSIpCgkvLyBFYWNoIHZhbHVlIG11c3Qgc3RhcnQgd2l0aCBhbiB1cHBlcmNhc2UKCS8vIEFTQ0lJIGxldHRlciBhbmQgZW5kIHdpdGggbG93ZXJjYXNlIEFTQ0lJLgoJW19dOiA9fiJeW0EtWl0uKlthLXpdJCIKCS8vIEVhY2ggdmFsdWUgbXVzdCBub3QgY29udGFpbiB0aGUgbGV0dGVyICJ2Ii4KCVtfXTogIX4idiIKfQ==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> validation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#b84">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Each member&#39;s value must have this prefix.</span>
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">[</span><span style="font-weight:bold">_</span><span style="font-weight:bold">]:</span> strings.HasPrefix(<span style="color:#b84">&#34;Super&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Each member&#39;s value must have this suffix.</span>
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">[</span><span style="font-weight:bold">_</span><span style="font-weight:bold">]:</span> strings.HasSuffix(<span style="color:#b84">&#34;e&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Each value must start with an uppercase</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// ASCII letter and end with lowercase ASCII.</span>
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">[</span><span style="font-weight:bold">_</span><span style="font-weight:bold">]:</span> <span style="font-weight:bold">=</span>~<span style="color:#b84">&#34;^[A-Z].*[a-z]$&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Each value must not contain the letter &#34;v&#34;.</span>
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">[</span><span style="font-weight:bold">_</span><span style="font-weight:bold">]:</span> <span style="font-weight:bold">!~</span><span style="color:#b84">&#34;v&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div><div class="code-tabs__item code-tabs__item--top-right">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="data.yml"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="data.yml">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>data.yml
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="data.yml"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ZGF0YToKICBhOiBTdXBlcmxhdGl2ZQogIGI6IHN1cGVyc2VkZQogIGM6IFN1cGVybWFu">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">a</span>:<span style="color:#bbb"> </span>Superlative<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">b</span>:<span style="color:#bbb"> </span>supersede<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">c</span>:<span style="color:#bbb"> </span>Superman</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div><div class="code-tabs__item code-tabs__item--bottom">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="terminal"
+                data-tab-group="default"
+                class="tabs-nav__tab tabs-nav__tab--terminal">TERMINAL
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="terminal"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--terminal code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyAuIGRhdGEueW1s">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><pre tabindex="0"><code>$ cue vet -c . data.yml
+data.b: invalid value &#34;supersede&#34; (does not satisfy strings.HasPrefix(&#34;Super&#34;)):
+    ./example.cue:7:7
+    ./data.yml:3:6
+    ./example.cue:7:25
+    ./example.cue:9:7
+    ./example.cue:12:7
+    ./example.cue:14:7
+data.c: invalid value &#34;Superman&#34; (does not satisfy strings.HasSuffix(&#34;e&#34;)):
+    ./example.cue:9:7
+    ./data.yml:4:6
+    ./example.cue:7:7
+    ./example.cue:9:25
+    ./example.cue:12:7
+    ./example.cue:14:7
+data.b: invalid value &#34;supersede&#34; (out of bound =~&#34;^[A-Z].*[a-z]$&#34;):
+    ./example.cue:12:7
+    ./data.yml:3:6
+    ./example.cue:7:7
+    ./example.cue:9:7
+    ./example.cue:14:7
+data.a: invalid value &#34;Superlative&#34; (out of bound !~&#34;v&#34;):
+    ./example.cue:14:7
+    ./data.yml:2:6
+    ./example.cue:7:7
+    ./example.cue:9:7
+    ./example.cue:12:7</code></pre></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>CUE also provides a way to ensure that only known fields are present in data by using
+<a href="/docs/tour/basics/definitions/">definitions</a>
+to create
+<a href="/docs/tour/types/closed/">closed structs</a>.
+Here&rsquo;s an example of a definition being used to flag up an extra field that
+shouldn&rsquo;t be present in our data:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="schema.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="schema.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>schema.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="schema.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="cGFja2FnZSB2YWxpZGF0aW9uCgovLyAjUGVvcGxlIGlzIGEgbGlzdCBvZiB6ZXJvIG9yIG1vcmUgI1BlcnNvbi1zCiNQZW9wbGU6IFsuLi4jUGVyc29uXQojUGVyc29uOiB7CgluYW1lITogICAgc3RyaW5nCglhZGRyZXNzPzogc3RyaW5nCn0=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">package</span> validation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// #People is a list of zero or more #Person-s</span>
+</span></span><span style="display:flex;"><span>#People<span style="font-weight:bold">:</span> <span style="font-weight:bold">[...</span>#Person<span style="font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>#Person<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	name<span style="font-weight:bold">!:</span>    <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>	address<span style="font-weight:bold">?:</span> <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div><div class="code-tabs__item code-tabs__item--top-right">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="data.yml"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="data.yml">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>data.yml
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="data.yml"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="LSBuYW1lOiBBbGV4IEF0a2luc29uCi0gbmFtZTogQnJ5biBCcm93bgogIGFkZHJlc3M6IDEyMyBNYWluIFN0cmVldCwgU3ByaW5nZmllbGQKLSBuYW1lOiBDaGFybGllIENhcnR3cmlnaHQKICBhZ2U6IDgw">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Alex Atkinson<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Bryn Brown<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">address</span>:<span style="color:#bbb"> </span><span style="color:#099">123</span><span style="color:#bbb"> </span>Main Street, Springfield<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Charlie Cartwright<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">age</span>:<span style="color:#bbb"> </span><span style="color:#099">80</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div><div class="code-tabs__item code-tabs__item--bottom">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="terminal"
+                data-tab-group="default"
+                class="tabs-nav__tab tabs-nav__tab--terminal">TERMINAL
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="terminal"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--terminal code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyAuIGRhdGEueW1sIC1kICcjUGVvcGxlJw==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><pre tabindex="0"><code>$ cue vet -c . data.yml -d &#39;#People&#39;
+2.age: field not allowed:
+    ./data.yml:5:3</code></pre></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>The <a href="/docs/tour/">language tour</a> demonstrates the full range of
+CUE&rsquo;s constraints.</p>
+<h2 id="cue-makes-data-validation-flexible">
+    <a href="#cue-makes-data-validation-flexible" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>CUE makes data validation <em>flexible</em></h2>
+<p>CUE delivers flexibility, letting you adopt its succinct and powerful language
+at whatever pace is appropriate by enabling you to use your <em>existing</em> data and
+schemas formats alongside CUE. It does this through its first class support for
+various alternative schema and data formats - which can be combined, imported,
+and exported.</p>
+<p>The <a href="/docs/integration/">Integrations</a> page contains links to the
+different formats that CUE supports, but here&rsquo;s an example that demonstrates
+CUE&rsquo;s flexibility through multiple formats being used <em>simultaneously:</em></p>
+<p>Let&rsquo;s start with a trivial
+<a href="/docs/concept/how-cue-works-with-protocol-buffers/">Protobuf</a>
+schema that defines <code>ExampleType</code>:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="schema.proto"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="schema.proto">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>schema.proto
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="schema.proto"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="bWVzc2FnZSBFeGFtcGxlVHlwZSB7CiAgc3RyaW5nIGFTdHJpbmcgPSAxOwogIGludDMyICBhbkludCAgID0gMjsKICBmbG9hdCAgYUZsb2F0ICA9IDM7CiAgYm9vbCAgIGFCb29sICAgPSA0Owp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="font-weight:bold">message</span> <span style="color:#458;font-weight:bold">ExampleType</span> {<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#458;font-weight:bold">string</span> aString <span style="font-weight:bold">=</span> <span style="color:#099">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#458;font-weight:bold">int32</span>  anInt   <span style="font-weight:bold">=</span> <span style="color:#099">2</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#458;font-weight:bold">float</span>  aFloat  <span style="font-weight:bold">=</span> <span style="color:#099">3</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#458;font-weight:bold">bool</span>   aBool   <span style="font-weight:bold">=</span> <span style="color:#099">4</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>Let&rsquo;s include a JSON Schema file that adds some constraints to a couple of
+<code>ExampleType</code>&rsquo;s fields:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="schema.json"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="schema.json">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>schema.json
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="schema.json"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="ewogICAgIiRzY2hlbWEiOiAiaHR0cDovL2pzb24tc2NoZW1hLm9yZy9kcmFmdC0wNy9zY2hlbWEjIiwKICAgICJkZWZpbml0aW9ucyI6IHsKICAgICAgICAiRXhhbXBsZVR5cGUiOiB7CiAgICAgICAgICAgICJ0eXBlIjogIm9iamVjdCIsCiAgICAgICAgICAgICJwcm9wZXJ0aWVzIjogewogICAgICAgICAgICAgICAgImFTdHJpbmciOiB7CiAgICAgICAgICAgICAgICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgICAgICAgICAgICAgICAicGF0dGVybiI6ICJeTXVsdGlwbGljYXRpb24iCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgImFuSW50IjogewogICAgICAgICAgICAgICAgICAgICJ0eXBlIjogIm51bWJlciIsCiAgICAgICAgICAgICAgICAgICAgIm1pbmltdW0iOiA1LAogICAgICAgICAgICAgICAgICAgICJtYXhpbXVtIjogMTAwLAogICAgICAgICAgICAgICAgICAgICJleGNsdXNpdmVNYXhpbXVtIjogdHJ1ZQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQp9">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;$schema&#34;</span>: <span style="color:#b84">&#34;http://json-schema.org/draft-07/schema#&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#000080">&#34;definitions&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#000080">&#34;ExampleType&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;object&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#000080">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#000080">&#34;aString&#34;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#000080">&#34;pattern&#34;</span>: <span style="color:#b84">&#34;^Multiplication&#34;</span>
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>                <span style="color:#000080">&#34;anInt&#34;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#000080">&#34;type&#34;</span>: <span style="color:#b84">&#34;number&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#000080">&#34;minimum&#34;</span>: <span style="color:#099">5</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#000080">&#34;maximum&#34;</span>: <span style="color:#099">100</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#000080">&#34;exclusiveMaximum&#34;</span>: <span style="font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>And let&rsquo;s add some CUE policy that constrains <code>ExampleType</code>&rsquo;s fields in ways
+that the other formats can&rsquo;t express:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="policy.cue"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="policy.cue">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>policy.cue
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="policy.cue"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="aW1wb3J0ICJzdHJpbmdzIgoKI0V4YW1wbGVUeXBlOiB7CgkvLyBhU3RyaW5nIGlzIGEgcmVxdWlyZWQgZmllbGQsIGFuZCBpdHMgdmFsdWUgbXVzdCBjb250YWluCgkvLyB0aGUgaW50ZXJwb2xhdGVkIHN0cmluZyByZXN1bHQgb2Ygc3F1YXJpbmcgYW5JbnQuCglhU3RyaW5nITogc3RyaW5ncy5Db250YWlucygiXChhbkludCphbkludCkiKQoKCS8vIGFuSW50IG11c3QgYmUgc3RyaWN0bHkgZ3JlYXRlciB0aGFuIGFGbG9hdC4KCWFuSW50PzogPmFGbG9hdAoKCS8vIFRoZSBmaW5hbCB0d28gZmllbGRzIGFyZSBsZWZ0IHVuY29uc3RyYWluZWQuCglhRmxvYXQ/OiBfCglhQm9vbD86ICBfCn0=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cue" data-lang="cue"><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#b84">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#ExampleType<span style="font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// aString is a required field, and its value must contain</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// the interpolated string result of squaring anInt.</span>
+</span></span><span style="display:flex;"><span>	aString<span style="font-weight:bold">!:</span> strings.Contains(<span style="color:#b84">&#34;</span><span style="color:#b84">\(</span>anInt<span style="font-weight:bold">*</span>anInt<span style="color:#b84">)</span><span style="color:#b84">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// anInt must be strictly greater than aFloat.</span>
+</span></span><span style="display:flex;"><span>	anInt<span style="font-weight:bold">?:</span> <span style="font-weight:bold">&gt;</span>aFloat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// The final two fields are left unconstrained.</span>
+</span></span><span style="display:flex;"><span>	aFloat<span style="font-weight:bold">?:</span> <span style="font-weight:bold">_</span>
+</span></span><span style="display:flex;"><span>	aBool<span style="font-weight:bold">?:</span>  <span style="font-weight:bold">_</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>We&rsquo;ll carefully construct some data such that it violates constraints from each
+of these schema and policy files:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="data.yml"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="data.yml">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>data.yml
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="data.yml"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="YVN0cmluZzogIkRvZXNuJ3Qgc3RhcnQgd2l0aCAnTXVsdGlwbGljYXRpb24nLCBhbmQgZG9lc24ndCBjb250YWluIHRoZSBzcXVhcmUgb2YgYW5JbnQiCmFuSW50OiA1CmFGbG9hdDogOTkuMAphQm9vbDogInRoaXMgaXMgbm90IGEgYm9vbGVhbiB2YWx1ZSI=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#000080">aString</span>:<span style="color:#bbb"> </span><span style="color:#b84">&#34;Doesn&#39;t start with &#39;Multiplication&#39;, and doesn&#39;t contain the square of anInt&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">anInt</span>:<span style="color:#bbb"> </span><span style="color:#099">5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">aFloat</span>:<span style="color:#bbb"> </span><span style="color:#099">99.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">aBool</span>:<span style="color:#bbb"> </span><span style="color:#b84">&#34;this is not a boolean value&#34;</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<p>The <code>cue vet</code> command unifies all the constraints, showing us the full extent
+of our data validation problem:</p>
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue vet -c policy.cue schema.proto schema.json data.yml -d &#39;#ExampleType&#39;
+</span></span><span style="display:flex;"><span>aBool: conflicting values &#34;this is not a boolean value&#34; and bool (mismatched types string and bool):
+</span></span><span style="display:flex;"><span>    ./data.yml:4:8
+</span></span><span style="display:flex;"><span>    ./schema.proto:5:3
+</span></span><span style="display:flex;"><span>aString: invalid value &#34;Doesn&#39;t start with &#39;Multiplication&#39;, and doesn&#39;t contain the square of anInt&#34; (does not satisfy strings.Contains(&#34;25&#34;)):
+</span></span><span style="display:flex;"><span>    ./policy.cue:6:12
+</span></span><span style="display:flex;"><span>    ./data.yml:1:10
+</span></span><span style="display:flex;"><span>    ./policy.cue:6:29
+</span></span><span style="display:flex;"><span>    ./schema.json:9:21
+</span></span><span style="display:flex;"><span>    ./schema.proto:2:3
+</span></span><span style="display:flex;"><span>aString: invalid value &#34;Doesn&#39;t start with &#39;Multiplication&#39;, and doesn&#39;t contain the square of anInt&#34; (out of bound =~&#34;^Multiplication&#34;):
+</span></span><span style="display:flex;"><span>    ./schema.json:9:21
+</span></span><span style="display:flex;"><span>    ./data.yml:1:10
+</span></span><span style="display:flex;"><span>    ./policy.cue:6:12
+</span></span><span style="display:flex;"><span>    ./schema.proto:2:3
+</span></span><span style="display:flex;"><span>anInt: incompatible integer bounds &gt;99.0 and &lt;100:
+</span></span><span style="display:flex;"><span>    ./schema.json:14:21
+</span></span><span style="display:flex;"><span>    ./policy.cue:9:10</span></span></code></pre></div></div>
+</div>
+<p>However, if we update and fix the data, then the same <code>cue vet</code> command is
+silent - indicating that the data validated succesfully against the unified set
+of constraints:</p>
+<div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
+
+
+
+
+<div class="tabs tabs--code" data-tabs data-group="default">
+<div class="tabs__nav tabs-nav tabs-nav--code" data-tabs-nav><div class="tabs-nav__item">
+            <div
+                data-tab-item="data.yml"
+                data-tab-group="default"
+                class="tabs-nav__tab"data-copy><button title="Copy filename" class="tabs-nav__copy" data-copy-button data-copy-type="text" data-copy-value="data.yml">
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--file"></use>
+</svg>
+<span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
+                            Copied!
+                        </span>
+                    </button>data.yml
+            </div>
+        </div></div>
+
+<div class="tabs__content"><div data-tab-item="data.yml"
+            data-tab-group="default"
+            class="tabs__item is-active"
+        ><div class="code-block code-block--tab"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="YVN0cmluZzogTXVsdGlwbGljYXRpb24gLSA1IHggNSA9PSAyNQphbkludDogNQphRmxvYXQ6IDQuMAphQm9vbDogZmFsc2U=">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#000080">aString</span>:<span style="color:#bbb"> </span>Multiplication - 5 x 5 == 25<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">anInt</span>:<span style="color:#bbb"> </span><span style="color:#099">5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">aFloat</span>:<span style="color:#bbb"> </span><span style="color:#099">4.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">aBool</span>:<span style="color:#bbb"> </span><span style="font-weight:bold">false</span></span></span></code></pre></div></div>
+</div>
+</div></div>
+</div>
+
+</div></div>
+
+<div class="code-block code-block--heading code-block--terminal"data-copy><div class="code-block__heading">
+            <span class="code-block__tab">TERMINAL</span>
+        </div><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==">
+                <span>Copy code</span>
+                <span class="code-block__message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cue vet -c policy.cue schema.proto schema.json data.yml -d &#39;#ExampleType&#39;</span></span></code></pre></div></div>
+</div>
+<p>The range of formats and encodings that CUE supports is outlined in <!-- TODO: link to a less CLI-y doc -->
+<a href="/docs/reference/command/cue-help-filetypes/"><code>cue help filetypes</code></a>.
+The <code>cue</code> command can also process its standard input stream in any of the
+formats it understands, as described in
+<a href="/docs/reference/command/cue-help-inputs/"><code>cue help inputs</code></a>.</p>
+<h2 id="future-plans">
+    <a href="#future-plans" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Future plans</h2>
+<p>You&rsquo;ve seen how CUE enables
+<a href="/docs/concept/how-cue-enables-data-validation/#cue-makes-data-validation-simple">simple data validation</a>,
+letting you start small by checking the most important data using a succinct
+and easy-to-grasp format that intuitively mirrors your underlying data.</p>
+<p>You watched CUE&rsquo;s
+<a href="/docs/concept/how-cue-enables-data-validation/#cue-makes-data-validation-powerful">powerful data validation</a>
+being used to combine the requirements imposed by multiple teams expressed
+through its rich set of primitive constraints and its standard library.</p>
+<p>You saw how the range of formats that CUE supports can deliver
+<a href="/docs/concept/how-cue-enables-data-validation/#cue-makes-data-validation-flexible">flexible data validation</a> that combines
+existing data, schema, and policy assets with newer, more powerful CUE
+constraints.</p>
+<p>This is all possible, today, using CUE, but one of the project&rsquo;s goals is to
+act as an <em>interlingua</em>: a bidirectional bridge between all the formats that
+CUE speaks, linking constraints with data sources of truth - no matter where
+they exist. This will allow constraints from any source to be translated into
+formats suitable for systems that don&rsquo;t yet understand CUE (such as document
+databases that only understand JSON Schema) so that they can passively
+benefit from the language&rsquo;s advanced capabilities.</p>
+<h2 id="next-steps">
+    <a href="#next-steps" class="anchor" aria-label="Anchor">
+
+
+
+<svg class="icon anchor__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+</a>Next steps</h2>
+<p>Interested in learning more about CUE? Here&rsquo;s what you could try next:</p>
+<ul>
+<li>Test out CUE in your browser in the <a href="/play/">CUE playground</a></li>
+<li>Take a tour through the CUE language with the
+<a href="/docs/tour/">language tour</a></li>
+<li>Read about
+<a href="/docs/integration/">the technologies that CUE directly integrates with</a>,
+such as:
+<ul>
+<li>Concept Guide: <a href="/docs/concept/how-cue-works-with-json/">How CUE works with JSON</a></li>
+<li>Concept Guide: <a href="/docs/concept/how-cue-works-with-yaml/">How CUE works with YAML</a></li>
+<li>Concept Guide: <a href="/docs/concept/how-cue-works-with-json-schema/">How CUE works with JSON Schema</a></li>
+<li>Concept Guide: <a href="/docs/concept/how-cue-works-with-protocol-buffers/">How CUE works with Protocol Buffers</a></li>
+<li>Concept Guide: <a href="/docs/concept/how-cue-works-with-openapi/">How CUE works with OpenAPI</a></li>
+</ul>
+</li>
+<li>Reference: <a href="/docs/reference/command/cue-help-filetypes/">cue help filetypes</a>
+&ndash; how to control which formats the <code>cue</code> command processes</li>
+<li>Reference: <a href="/docs/reference/command/cue-help-inputs/">cue help inputs</a>
+&ndash; how the <code>cue</code> command assembles its inputs, including its standard input stream</li>
+</ul>
+
+                        
+                    </div>
+    <footer class="article__footer">
+    <div class="article__lastmod">
+        <p class="lastmod">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
+                Last modified May 22, 2025</a>
+    </p>
+
+    </div>
+
+    <div class="article__footer-meta"><div class="article__footer-tags">
+
+
+
+    <ul class="list list--tags"><li class="list__item"><a href="/search?q=tag:validation"
+                class="tag tag--lilac">
+                    validation
+                </a>
+            </li></ul>
+
+</div><div class="article__share"><details class="share" data-dropdown>
+    <summary class="button button--icon button--light-blue share__button">
+        
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--share"></use>
+</svg>
+
+        <span>Open share options</span>
+    </summary>
+
+    <ul class="share__list">
+        <li class="share__item" data-copy>
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/concept/how-cue-enables-data-validation/">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--link"></use>
+</svg>
+
+                <span class="share__link-text">Copy link</span>
+                <span class="share__copy-message is-hidden" data-copy-message aria-hidden="true">
+                    Copied!
+                </span>
+            </button>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/how-cue-enables-data-validation/&text=CUE%20is%20designed%20to%20make%20data%20validation%20simple,%20powerful,%20and%20flexible.%0aTo%20achieve%20this,%20the%20project%20publishes%20the%20cue%20command%20line%20tool,%20which%20allows%20a%20wide%20range%20of%20data%20validation%20tasks%20to%20be%20completed%20without%20writing%20any%20code.%20For%20more%20complex%20validation%20scenarios,%20CUE&amp;rsquo;s%20powerful%20Go%20APIs%20deliver%20fine%20grained%20control.%0aThis%20guide%20demonstrates%20some%20of%20the%20data%20validation%20capabilities%20of%20the%20cue%20command.%0aCUE%20makes%20data%20validation%20simple%20Validating%20data%20files%20with%20the%20cue%20command%20is%20easy.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on X (Twitter)</span></p>
+            </a>
+        </li>
+
+        <li class="share__item">
+            <a class="share__link" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/how-cue-enables-data-validation/&summary=CUE%20is%20designed%20to%20make%20data%20validation%20simple,%20powerful,%20and%20flexible.%0aTo%20achieve%20this,%20the%20project%20publishes%20the%20cue%20command%20line%20tool,%20which%20allows%20a%20wide%20range%20of%20data%20validation%20tasks%20to%20be%20completed%20without%20writing%20any%20code.%20For%20more%20complex%20validation%20scenarios,%20CUE&amp;rsquo;s%20powerful%20Go%20APIs%20deliver%20fine%20grained%20control.%0aThis%20guide%20demonstrates%20some%20of%20the%20data%20validation%20capabilities%20of%20the%20cue%20command.%0aCUE%20makes%20data%20validation%20simple%20Validating%20data%20files%20with%20the%20cue%20command%20is%20easy.">
+                
+
+
+
+<svg class="icon share__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+</svg>
+
+                <p><span class="share__link-text">Share on Linkedin</span></p>
+            </a>
+        </li>
+    </ul>
+</details>
+</div>
+    </div>
+</footer>
+</div>
+            </article>
+
+            
+
+
+
+<div class="prevnext">
+    <nav class="prevnext__container" aria-label="Previous/Next navigation"><a class="prevnext__prev" href="/docs/concept/how-cue-enables-configuration/" aria-label="Previous - How CUE enables configuration">
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+</svg>
+
+                <span class="prevnext__text">How CUE enables configuration</span>
+            </a><a class="prevnext__next" href="/docs/concept/how-cue-works-with-go/" aria-label="Next - How CUE works with Go">
+                <span class="prevnext__text">How CUE works with Go</span>
+                
+
+
+
+<svg class="icon prevnext__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+</svg>
+
+            </a></nav>
+</div>
+
+        </div>
+        <div id="docs-menu" class="docs__aside">
+            <div class="docs__backdrop" data-docs-close="docs"></div>
+            <div class="docs__nav">
+                <nav class="tree">
+    <ul class="tree__list is-book">
+        
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/introduction/" title="Introduction">
+            <span class="tree__text">Introduction</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tour/" title="Tour">
+            <span class="tree__text">Tour</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/integration/" title="Integrations">
+            <span class="tree__text">Integrations</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/tutorial/" title="Tutorials">
+            <span class="tree__text">Tutorials</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/howto/" title="How-to Guides">
+            <span class="tree__text">How-to Guides</span>
+        </a>
+    </li>
+    
+    
+    
+
+    <li class="tree__item has-children is-active-path">
+        <a class="tree__link" href="/docs/concept/" title="Concept Guides">
+            <span class="tree__text">Concept Guides</span>
+        </a>
+            <ul class="tree__list is-chapter">
+                
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/popular-guides/" title="Popular guides">
+            <span class="tree__text">Popular guides</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/the-logic-of-cue/" title="The Logic of CUE">
+            <span class="tree__text">The Logic of CUE</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/modules/" title="Modules">
+            <span class="tree__text">Modules</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/concept/faq/" title="Frequently Asked Questions">
+            <span class="tree__text">Frequently Asked Questions</span>
+        </a>
+    </li>
+                    
+    
+    
+    
+
+    <li class="tree__item is-active">
+        <a class="tree__link" href="/docs/concept/how-cue-enables-data-validation/" title="How CUE enables data validation">
+            <span class="tree__text">How CUE enables data validation</span>
+        </a>
+            
+
+<nav id="TableOfContents" class="toc">
+  <ol class="toc__list">
+    <li class="toc__item"><a href="#cue-makes-data-validation-simple" class="toc__link"><span class="toc__text">CUE makes data validation <em>simple</em></span></a></li>
+    <li class="toc__item"><a href="#cue-makes-data-validation-powerful" class="toc__link"><span class="toc__text">CUE makes data validation <em>powerful</em></span></a></li>
+    <li class="toc__item"><a href="#cue-makes-data-validation-flexible" class="toc__link"><span class="toc__text">CUE makes data validation <em>flexible</em></span></a></li>
+    <li class="toc__item"><a href="#future-plans" class="toc__link"><span class="toc__text">Future plans</span></a></li>
+    <li class="toc__item"><a href="#next-steps" class="toc__link"><span class="toc__text">Next steps</span></a></li>
+  </ol>
+</nav>
+
+    </li>
+            </ul>
+    </li>
+    
+    
+    
+
+    <li class="tree__item">
+        <a class="tree__link" href="/docs/reference/" title="References">
+            <span class="tree__text">References</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+
+
+
+                <button type="button" class="docs__hide button button--icon button--raised button--light-blue"
+                        aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+</svg>
+<span>Hide side navigation</span>
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="docs__show button button--icon button--raised button--light-blue"
+                aria-haspopup="menu" aria-expanded="false" aria-controls="docs-menu" data-docs-toggle>
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+</svg>
+<span>Show side navigation</span>
+        </button>
+    </div>
+
+            </main>
+
+            <footer id="site-footer" class="site__footer">
+                
+
+
+
+
+<div class="footer">
+    <div class="footer__sitemap">
+        <nav class="footer__container" aria-label="Footer menu">
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Get Started</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/tour/">
+                                    <span class="nav__text">Language Tour</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Playground</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install CUE</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Community</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/community">
+                                    <span class="nav__text">The CUE Community</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue/blob/master/CONTRIBUTING.md#contribution-guide" target="_blank">
+                                    <span class="nav__text">Contributing</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/docs/reference/code-of-conduct/">
+                                    <span class="nav__text">Code of Conduct</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/slack">
+                                    <span class="nav__text">Slack Workspace</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="/s/discord">
+                                    <span class="nav__text">Discord Server</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+                
+                <div class="nav nav--footer">
+                    <p class="nav__title">Connect</p>
+
+                    <ul class="nav__list">
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://github.com/cue-lang/cue" target="_blank">
+                                    <span class="nav__text">GitHub</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://twitter.com/cue_lang" target="_blank">
+                                    <span class="nav__text">X (Twitter)</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://bsky.app/profile/cuelang.org" target="_blank">
+                                    <span class="nav__text">Bluesky</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav__item">
+                                <a class="nav__link"
+                                   href="https://www.youtube.com/@cuelang/videos" target="_blank">
+                                    <span class="nav__text">YouTube</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </nav>
+    </div>
+
+    <div class="footer__legal">
+        <nav class="footer__container" aria-label="Legal">
+            <div class="nav nav--legal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <span class="nav__text">&copy; 2025 CUE</span>
+                    </li>
+
+                    
+                        <li class="nav__item"><a class="nav__link"
+                               href="/privacy-policy/">
+                                <span class="nav__text">Privacy policy</span>
+                            </a>
+                        </li>
+                    
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fhow-cue-enables-data-validation%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                            <span class="nav__text">Report an Issue</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="/" class="footer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+        
+                <div class="notification-bar is-hidden" data-notification-bar="cue-minor-release-v0.13">
+        <div class="notification-bar__container">
+            <div class="notification-bar__content">
+                <strong>CUE v0.13 is now available</strong> &ndash; learn more about its <a href="https://github.com/cue-lang/cue/releases/tag/v0.13.0">new features and improvements</a>
+            </div>
+            <a class="button button--outline notification-bar__cta" href="/docs/introduction/installation/">
+                    <span class="button__text">Install CUE</span>
+                    
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--download"></use>
+</svg>
+
+                </a>
+            <button type="button" class="button button--icon button--small notification-bar__close">
+                
+
+
+
+<svg class="icon button__icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                <span class="button__text">Close</span>
+            </button>
+        </div>
+    </div>
+
+        
+        
+
+<div id="mobile-menu" class="drawer drawer--mobile" data-drawer="menu">
+    <div class="drawer__backdrop" data-drawer-close="menu"></div>
+    <div class="drawer__container" tabindex="0">
+        <div class="drawer__header">
+            <a href="/" class="drawer__branding" rel="home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path class="logo__letters" d="M39.555 50.355c-6.853.0-11.907 5.133-11.907 13.602s5.027 13.602 11.907 13.602c5.818.0 10.073-3.648 10.94-8.883l-4.034-.012c-.686 3.389-3.532 5.252-6.88 5.252-4.541.0-7.968-3.533-7.968-9.957s3.414-9.955 7.979-9.955c3.373.0 6.207 1.902 6.865 5.328l.004-.002h4.033c-.906-5.664-5.34-8.975-10.94-8.975zm38.748.362-.002.004h.002zm0 .004v26.478H96.07v-3.44H82.297v-8.105h12.752V62.23H82.297V54.16h13.617v-3.44zm-24.823.0v17.521c0 5.974 4.651 9.4 10.51 9.4 5.86.0 10.528-3.426 10.528-9.4V50.721h-3.995v17.457c0 3.711-2.985 5.793-6.529 5.793s-6.517-2.082-6.517-5.793V50.72z"/><path class="logo__inner" d="M64 9.586C33.947 9.586 9.586 33.947 9.586 64S33.947 118.414 64 118.414 118.414 94.053 118.414 64 94.05 9.586 64 9.586zm0 105.973c-28.476.0-51.562-23.086-51.562-51.562S35.524 12.438 64 12.438 115.562 35.524 115.562 64 92.476 115.562 64 115.562z"/><path class="logo__outer" d="M64 0C28.653.0.0 28.653.0 64s28.653 64 64 64 64-28.653 64-64S99.347.0 64 0zm0 121.843C32.054 121.843 6.157 95.946 6.157 64S32.054 6.157 64 6.157 121.843 32.054 121.843 64 95.946 121.843 64 121.843z"/></svg>
+                <span>Homepage of CUE</span>
+            </a>
+
+            <div class="drawer__close">
+                <button type="button" class="button button--white button--icon" data-drawer-close="menu">
+                    
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--close"></use>
+</svg>
+
+                    <span class="button__text">Hide menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer__content">
+            <div class="drawer__menu">
+                <nav class="nav nav--mobile" aria-label="Mobile menu">
+                    <ul class="nav__list">
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/">
+                                    <span class="nav__text">Documentation</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/play/">
+                                    <span class="nav__text">Play</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/community/">
+                                    <span class="nav__text">Community</span>
+                                </a>
+                            </li>
+                        
+
+                        
+                            <li class="nav__item">
+                                
+                                <a class="nav__link"
+                                   href="/docs/introduction/installation/">
+                                    <span class="nav__text">Install</span>
+                                </a>
+                            </li>
+                        
+
+                        <li class="nav__item nav__item--search">
+
+
+
+
+
+<div data-search-autocomplete="drawer"
+     data-searchbar-size="small"
+     data-searchbar-placeholder=""
+>
+    <div id="autocomplete-drawer"></div>
+</div>
+</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="drawer__footer">
+            <nav class="nav nav--social" aria-label="Social">
+                <ul class="nav__list">
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://github.com/cue-lang/cue"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--github"></use>
+</svg>
+
+                                <span class="nav__text">GitHub</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/slack">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--slack"></use>
+</svg>
+
+                                <span class="nav__text">Slack</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="/s/discord">
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-discord"></use>
+</svg>
+
+                                <span class="nav__text">Discord</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://twitter.com/cue_lang"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-x"></use>
+</svg>
+
+                                <span class="nav__text">X (Twitter)</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://bsky.app/profile/cuelang.org"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+</svg>
+
+                                <span class="nav__text">Bluesky</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav__item">
+                            
+                            <a class="nav__link"
+                               href="https://www.youtube.com/@cuelang/videos"target="_blank" >
+                                
+
+
+
+<svg class="icon" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+</svg>
+
+                                <span class="nav__text">YouTube</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+        
+
+    
+    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+
+
+
+
+
+
+    </body>
+</html>
