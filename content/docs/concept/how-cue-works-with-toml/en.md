@@ -284,3 +284,4 @@ reference documentation.
 ## Related content
 
 - {{< linkto/related/concept "how-cue-works-with-yaml" >}}
+- {{< linkto/related/concept "how-cue-works-with-json" >}}
