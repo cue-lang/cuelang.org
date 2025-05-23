@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="A map associates a value with a given set of keys. Each key-value pair is called a field.Field names A field of a map may have any name that is allowed by …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -39,8 +39,8 @@ Field names A field of a map may have any name that is allowed by JSON. Double q
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -55,7 +55,8 @@ Field names A field of a map may have any name that is allowed by JSON. Double q
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Maps and Fields">
 <meta itemprop="description" content="A map associates a value with a given set of keys. Each key-value pair is called a field.
-Field names A field of a map may have any name that is allowed by JSON. Double quotes can be omitted if the name is a valid {{{def &ldquo;identifier&rdquo;}}} that starts with a letter or $ and otherwise only contains letters, digits, $ or _. Identifiers may also start with # or _, in which case the field is a helper field with special meaning.">
+Field names A field of a map may have any name that is allowed by JSON. Double quotes can be omitted if the name is a valid {{{def &ldquo;identifier&rdquo;}}} that starts with a letter or $ and otherwise only contains letters, digits, $ or _. Identifiers may also start with # or _, in which case the field is a helper field with special meaning.
+">
 
     
         <meta itemprop="dateModified" content="2025-01-15T13:58:17+00:00" >
@@ -620,52 +621,52 @@ package writers to hide CUE code from outside users.
 Package writers can change these fields without worry that external users will
 break.
 
-
-
-Prefix
-Examples
-Field Type
-Data
-Comment
-
-
-
-
-letter or $
-a &quot;a&quot; $a ”#a”
-data field
-Yes
-Some applications may assign special meaning to $. It is just a letter to CUE, though.
-
-
-#
-#a
-definition
-No
-Visible outside a package. Definitions are often used to define schema, API, or reusable templates.
-
-
-_
-_a
-hidden field
-No
-Not visible outside a package.
-
-
-_#
-_#a
-hidden definition
-No
-Like schema, but not visible outside a package.
-
-
-__
-__close, __int
-predeclared identifier
-No
-Reserved for CUE builtin functions and values.
-
-
+  
+      
+          Prefix
+          Examples
+          Field Type
+          Data
+          Comment
+      
+  
+  
+      
+          letter or $
+          a &quot;a&quot; $a ”#a”
+          data field
+          Yes
+          Some applications may assign special meaning to $. It is just a letter to CUE, though.
+      
+      
+          #
+          #a
+          definition
+          No
+          Visible outside a package. Definitions are often used to define schema, API, or reusable templates.
+      
+      
+          _
+          _a
+          hidden field
+          No
+          Not visible outside a package.
+      
+      
+          _#
+          _#a
+          hidden definition
+          No
+          Like schema, but not visible outside a package.
+      
+      
+          __
+          __close, __int
+          predeclared identifier
+          No
+          Reserved for CUE builtin functions and values.
+      
+  
 
 ">
 <meta itemprop="wordCount" content="600">
@@ -1086,52 +1087,52 @@ package writers to hide CUE code from outside users.
 Package writers can change these fields without worry that external users will
 break.</p>
 <table>
-<thead>
-<tr>
-<th>Prefix</th>
-<th>Examples</th>
-<th>Field Type</th>
-<th>Data</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>letter or <code>$</code></td>
-<td><code>a</code> <code>&quot;a&quot;</code> <code>$a</code> <code>”#a”</code></td>
-<td>data field</td>
-<td>Yes</td>
-<td>Some applications may assign special meaning to <code>$</code>. It is just a letter to CUE, though.</td>
-</tr>
-<tr>
-<td><code>#</code></td>
-<td><code>#a</code></td>
-<td>definition</td>
-<td>No</td>
-<td>Visible outside a package. Definitions are often used to define schema, API, or reusable templates.</td>
-</tr>
-<tr>
-<td><code>_</code></td>
-<td><code>_a</code></td>
-<td>hidden field</td>
-<td>No</td>
-<td>Not visible outside a package.</td>
-</tr>
-<tr>
-<td><code>_#</code></td>
-<td><code>_#a</code></td>
-<td>hidden definition</td>
-<td>No</td>
-<td>Like schema, but not visible outside a package.</td>
-</tr>
-<tr>
-<td><code>__</code></td>
-<td><code>__close</code>, <code>__int</code></td>
-<td>predeclared identifier</td>
-<td>No</td>
-<td>Reserved for CUE builtin functions and values.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Prefix</th>
+          <th>Examples</th>
+          <th>Field Type</th>
+          <th>Data</th>
+          <th>Comment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>letter or <code>$</code></td>
+          <td><code>a</code> <code>&quot;a&quot;</code> <code>$a</code> <code>”#a”</code></td>
+          <td>data field</td>
+          <td>Yes</td>
+          <td>Some applications may assign special meaning to <code>$</code>. It is just a letter to CUE, though.</td>
+      </tr>
+      <tr>
+          <td><code>#</code></td>
+          <td><code>#a</code></td>
+          <td>definition</td>
+          <td>No</td>
+          <td>Visible outside a package. Definitions are often used to define schema, API, or reusable templates.</td>
+      </tr>
+      <tr>
+          <td><code>_</code></td>
+          <td><code>_a</code></td>
+          <td>hidden field</td>
+          <td>No</td>
+          <td>Not visible outside a package.</td>
+      </tr>
+      <tr>
+          <td><code>_#</code></td>
+          <td><code>_#a</code></td>
+          <td>hidden definition</td>
+          <td>No</td>
+          <td>Like schema, but not visible outside a package.</td>
+      </tr>
+      <tr>
+          <td><code>__</code></td>
+          <td><code>__close</code>, <code>__int</code></td>
+          <td>predeclared identifier</td>
+          <td>No</td>
+          <td>Reserved for CUE builtin functions and values.</td>
+      </tr>
+  </tbody>
 </table>
 
                         
@@ -1178,7 +1179,7 @@ break.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/data/maps-and-fields/&text=A%20map%20associates%20a%20value%20with%20a%20given%20set%20of%20keys.%20Each%20key-value%20pair%20is%20called%20a%20field.%0aField%20names%20A%20field%20of%20a%20map%20may%20have%20any%20name%20that%20is%20allowed%20by%20JSON.%20Double%20quotes%20can%20be%20omitted%20if%20the%20name%20is%20a%20valid%20%7b%7b%7bdef%20&amp;ldquo;identifier&amp;rdquo;%7d%7d%7d%20that%20starts%20with%20a%20letter%20or%20$%20and%20otherwise%20only%20contains%20letters,%20digits,%20$%20or%20_.%20Identifiers%20may%20also%20start%20with%20#%20or%20_,%20in%20which%20case%20the%20field%20is%20a%20helper%20field%20with%20special%20meaning.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/data/maps-and-fields/&text=A%20map%20associates%20a%20value%20with%20a%20given%20set%20of%20keys.%20Each%20key-value%20pair%20is%20called%20a%20field.%0aField%20names%20A%20field%20of%20a%20map%20may%20have%20any%20name%20that%20is%20allowed%20by%20JSON.%20Double%20quotes%20can%20be%20omitted%20if%20the%20name%20is%20a%20valid%20%7b%7b%7bdef%20&amp;ldquo;identifier&amp;rdquo;%7d%7d%7d%20that%20starts%20with%20a%20letter%20or%20$%20and%20otherwise%20only%20contains%20letters,%20digits,%20$%20or%20_.%20Identifiers%20may%20also%20start%20with%20#%20or%20_,%20in%20which%20case%20the%20field%20is%20a%20helper%20field%20with%20special%20meaning.%0a">
                 
 
 
@@ -1194,7 +1195,7 @@ break.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/data/maps-and-fields/&summary=A%20map%20associates%20a%20value%20with%20a%20given%20set%20of%20keys.%20Each%20key-value%20pair%20is%20called%20a%20field.%0aField%20names%20A%20field%20of%20a%20map%20may%20have%20any%20name%20that%20is%20allowed%20by%20JSON.%20Double%20quotes%20can%20be%20omitted%20if%20the%20name%20is%20a%20valid%20%7b%7b%7bdef%20&amp;ldquo;identifier&amp;rdquo;%7d%7d%7d%20that%20starts%20with%20a%20letter%20or%20$%20and%20otherwise%20only%20contains%20letters,%20digits,%20$%20or%20_.%20Identifiers%20may%20also%20start%20with%20#%20or%20_,%20in%20which%20case%20the%20field%20is%20a%20helper%20field%20with%20special%20meaning.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/data/maps-and-fields/&summary=A%20map%20associates%20a%20value%20with%20a%20given%20set%20of%20keys.%20Each%20key-value%20pair%20is%20called%20a%20field.%0aField%20names%20A%20field%20of%20a%20map%20may%20have%20any%20name%20that%20is%20allowed%20by%20JSON.%20Double%20quotes%20can%20be%20omitted%20if%20the%20name%20is%20a%20valid%20%7b%7b%7bdef%20&amp;ldquo;identifier&amp;rdquo;%7d%7d%7d%20that%20starts%20with%20a%20letter%20or%20$%20and%20otherwise%20only%20contains%20letters,%20digits,%20$%20or%20_.%20Identifiers%20may%20also%20start%20with%20#%20or%20_,%20in%20which%20case%20the%20field%20is%20a%20helper%20field%20with%20special%20meaning.%0a">
                 
 
 
@@ -1510,7 +1511,7 @@ break.</p>
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Fdata%2Fmaps-and-fields%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Fdata%2Fmaps-and-fields%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1762,7 +1763,7 @@ break.</p>
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

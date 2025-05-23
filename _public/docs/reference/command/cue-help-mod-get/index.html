@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="TERMINAL Copy code Copied! $ cue help mod get Get updates module dependencies, fetching new dependencies if needed and changing versions to specified versions. …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.6">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -21,7 +21,7 @@
 <title>cue help mod get | CUE</title><meta property="og:url" content="/docs/reference/command/cue-help-mod-get/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="cue help mod get">
-  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help mod get Get updates module dependencies, fetching new dependencies if needed and changing versions to specified versions. It can downgrade a version only when a higher version is not required by other dependencies. Each argument specifies a module path and optionally a version suffix. If there is no version suffix, the latest non-prerelease version of the module will be requested; alternatively a suffix of &#34;@latest&#34; also specifies the latest version.">
+  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help mod get Get updates module dependencies, fetching new dependencies if needed and changing versions to specified versions. It can downgrade a version only when a higher version is not required by other dependencies. Each argument specifies a module path and optionally a version suffix. If there is no version suffix, the latest non-prerelease version of the module will be requested; alternatively a suffix of &#34;@latest&#34; also specifies the latest version. A version suffix can contain a major version only (@v1), a major and minor version (@v1.2) or full version (@v1.2.3). If minor or patch version is omitted, the latest non-prerelease version will be chosen that has the same major and minor versions. If the desired version cannot be chosen (for example because a dependency already uses a later version than the desired version), this command will fail. See &#34;cue help environment&#34; for details on how $CUE_REGISTRY is used to determine the modules registry. Note that this command is not yet stable and may be changed. Usage: cue mod get [flags] Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress Related content Reference: cue help environment">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -31,14 +31,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="cue help mod get">
-  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help mod get Get updates module dependencies, fetching new dependencies if needed and changing versions to specified versions. It can downgrade a version only when a higher version is not required by other dependencies. Each argument specifies a module path and optionally a version suffix. If there is no version suffix, the latest non-prerelease version of the module will be requested; alternatively a suffix of &#34;@latest&#34; also specifies the latest version.">
+  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help mod get Get updates module dependencies, fetching new dependencies if needed and changing versions to specified versions. It can downgrade a version only when a higher version is not required by other dependencies. Each argument specifies a module path and optionally a version suffix. If there is no version suffix, the latest non-prerelease version of the module will be requested; alternatively a suffix of &#34;@latest&#34; also specifies the latest version. A version suffix can contain a major version only (@v1), a major and minor version (@v1.2) or full version (@v1.2.3). If minor or patch version is omitted, the latest non-prerelease version will be chosen that has the same major and minor versions. If the desired version cannot be chosen (for example because a dependency already uses a later version than the desired version), this command will fail. See &#34;cue help environment&#34; for details on how $CUE_REGISTRY is used to determine the modules registry. Note that this command is not yet stable and may be changed. Usage: cue mod get [flags] Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress Related content Reference: cue help environment">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -52,7 +52,7 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="cue help mod get">
-<meta itemprop="description" content="TERMINAL Copy code Copied! $ cue help mod get Get updates module dependencies, fetching new dependencies if needed and changing versions to specified versions. It can downgrade a version only when a higher version is not required by other dependencies. Each argument specifies a module path and optionally a version suffix. If there is no version suffix, the latest non-prerelease version of the module will be requested; alternatively a suffix of &#34;@latest&#34; also specifies the latest version.">
+<meta itemprop="description" content=" TERMINAL Copy code Copied! $ cue help mod get Get updates module dependencies, fetching new dependencies if needed and changing versions to specified versions. It can downgrade a version only when a higher version is not required by other dependencies. Each argument specifies a module path and optionally a version suffix. If there is no version suffix, the latest non-prerelease version of the module will be requested; alternatively a suffix of &#34;@latest&#34; also specifies the latest version. A version suffix can contain a major version only (@v1), a major and minor version (@v1.2) or full version (@v1.2.3). If minor or patch version is omitted, the latest non-prerelease version will be chosen that has the same major and minor versions. If the desired version cannot be chosen (for example because a dependency already uses a later version than the desired version), this command will fail. See &#34;cue help environment&#34; for details on how $CUE_REGISTRY is used to determine the modules registry. Note that this command is not yet stable and may be changed. Usage: cue mod get [flags] Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress Related content Reference: cue help environment ">
 
     
         <meta itemprop="dateModified" content="2025-02-20T17:49:21+00:00" >
@@ -471,7 +471,7 @@ Reference: cue help environment
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-mod-get/&text=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20get%20Get%20updates%20module%20dependencies,%20fetching%20new%20dependencies%20if%20needed%20and%20changing%20versions%20to%20specified%20versions.%20It%20can%20downgrade%20a%20version%20only%20when%20a%20higher%20version%20is%20not%20required%20by%20other%20dependencies.%20Each%20argument%20specifies%20a%20module%20path%20and%20optionally%20a%20version%20suffix.%20If%20there%20is%20no%20version%20suffix,%20the%20latest%20non-prerelease%20version%20of%20the%20module%20will%20be%20requested;%20alternatively%20a%20suffix%20of%20&amp;#34;@latest&amp;#34;%20also%20specifies%20the%20latest%20version.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-mod-get/&text=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20get%20Get%20updates%20module%20dependencies,%20fetching%20new%20dependencies%20if%20needed%20and%20changing%20versions%20to%20specified%20versions.%20It%20can%20downgrade%20a%20version%20only%20when%20a%20higher%20version%20is%20not%20required%20by%20other%20dependencies.%20Each%20argument%20specifies%20a%20module%20path%20and%20optionally%20a%20version%20suffix.%20If%20there%20is%20no%20version%20suffix,%20the%20latest%20non-prerelease%20version%20of%20the%20module%20will%20be%20requested;%20alternatively%20a%20suffix%20of%20&amp;#34;@latest&amp;#34;%20also%20specifies%20the%20latest%20version.%20A%20version%20suffix%20can%20contain%20a%20major%20version%20only%20%28@v1%29,%20a%20major%20and%20minor%20version%20%28@v1.2%29%20or%20full%20version%20%28@v1.2.3%29.%20If%20minor%20or%20patch%20version%20is%20omitted,%20the%20latest%20non-prerelease%20version%20will%20be%20chosen%20that%20has%20the%20same%20major%20and%20minor%20versions.%20If%20the%20desired%20version%20cannot%20be%20chosen%20%28for%20example%20because%20a%20dependency%20already%20uses%20a%20later%20version%20than%20the%20desired%20version%29,%20this%20command%20will%20fail.%20See%20&amp;#34;cue%20help%20environment&amp;#34;%20for%20details%20on%20how%20$CUE_REGISTRY%20is%20used%20to%20determine%20the%20modules%20registry.%20Note%20that%20this%20command%20is%20not%20yet%20stable%20and%20may%20be%20changed.%20Usage:%20cue%20mod%20get%20[flags]%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20Related%20content%20Reference:%20cue%20help%20environment%20">
                 
 
 
@@ -487,7 +487,7 @@ Reference: cue help environment
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-mod-get/&summary=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20get%20Get%20updates%20module%20dependencies,%20fetching%20new%20dependencies%20if%20needed%20and%20changing%20versions%20to%20specified%20versions.%20It%20can%20downgrade%20a%20version%20only%20when%20a%20higher%20version%20is%20not%20required%20by%20other%20dependencies.%20Each%20argument%20specifies%20a%20module%20path%20and%20optionally%20a%20version%20suffix.%20If%20there%20is%20no%20version%20suffix,%20the%20latest%20non-prerelease%20version%20of%20the%20module%20will%20be%20requested;%20alternatively%20a%20suffix%20of%20&amp;#34;@latest&amp;#34;%20also%20specifies%20the%20latest%20version.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-mod-get/&summary=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20get%20Get%20updates%20module%20dependencies,%20fetching%20new%20dependencies%20if%20needed%20and%20changing%20versions%20to%20specified%20versions.%20It%20can%20downgrade%20a%20version%20only%20when%20a%20higher%20version%20is%20not%20required%20by%20other%20dependencies.%20Each%20argument%20specifies%20a%20module%20path%20and%20optionally%20a%20version%20suffix.%20If%20there%20is%20no%20version%20suffix,%20the%20latest%20non-prerelease%20version%20of%20the%20module%20will%20be%20requested;%20alternatively%20a%20suffix%20of%20&amp;#34;@latest&amp;#34;%20also%20specifies%20the%20latest%20version.%20A%20version%20suffix%20can%20contain%20a%20major%20version%20only%20%28@v1%29,%20a%20major%20and%20minor%20version%20%28@v1.2%29%20or%20full%20version%20%28@v1.2.3%29.%20If%20minor%20or%20patch%20version%20is%20omitted,%20the%20latest%20non-prerelease%20version%20will%20be%20chosen%20that%20has%20the%20same%20major%20and%20minor%20versions.%20If%20the%20desired%20version%20cannot%20be%20chosen%20%28for%20example%20because%20a%20dependency%20already%20uses%20a%20later%20version%20than%20the%20desired%20version%29,%20this%20command%20will%20fail.%20See%20&amp;#34;cue%20help%20environment&amp;#34;%20for%20details%20on%20how%20$CUE_REGISTRY%20is%20used%20to%20determine%20the%20modules%20registry.%20Note%20that%20this%20command%20is%20not%20yet%20stable%20and%20may%20be%20changed.%20Usage:%20cue%20mod%20get%20[flags]%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20Related%20content%20Reference:%20cue%20help%20environment%20">
                 
 
 
@@ -1257,7 +1257,7 @@ Reference: cue help environment
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-mod-get%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-mod-get%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1509,7 +1509,7 @@ Reference: cue help environment
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="CUE has first class support for JSON Schema: both the cue command and the Go API understand the format.Constraints stored as JSON Schema are available for cue …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.6">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -39,8 +39,8 @@ Constraints stored as JSON Schema are available for cue commands to use as if th
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -54,13 +54,9 @@ Constraints stored as JSON Schema are available for cue commands to use as if th
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="How CUE works with JSON Schema">
-<meta itemprop="description" content="CUE has first class support for JSON Schema:
-both the cue command and the Go API understand the format.
-Constraints stored as JSON Schema are available for cue commands to use as if
-they were expressed in CUE.
-This allows you to work with JSON Schema constraints directly, using them to
-validate data, and to represent them natively in CUE&rsquo;s more succinct and
-expressive form.">
+<meta itemprop="description" content="CUE has first class support for JSON Schema: both the cue command and the Go API understand the format.
+Constraints stored as JSON Schema are available for cue commands to use as if they were expressed in CUE. This allows you to work with JSON Schema constraints directly, using them to validate data, and to represent them natively in CUE&rsquo;s more succinct and expressive form.
+">
 
     
         <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
@@ -1294,16 +1290,16 @@ fully-formed context: controlling data validation at a lower level.</p>
 </span></span><span style="display:flex;"><span>	flag.<span style="color:#900;font-weight:bold">Parse</span>()
 </span></span><span style="display:flex;"><span>	args <span style="font-weight:bold">:=</span> flag.<span style="color:#900;font-weight:bold">Args</span>()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// A cue.Context is used for building/compiling CUE at a low-level.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	<span style="color:#998;font-style:italic">// It replaces cue.Runtime.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	ctx <span style="font-weight:bold">:=</span> cuecontext.<span style="color:#900;font-weight:bold">New</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// A cue.Context is used for building/compiling CUE at a low-level.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// It replaces cue.Runtime.</span>
+</span></span><span style="display:flex;"><span>	ctx <span style="font-weight:bold">:=</span> cuecontext.<span style="color:#900;font-weight:bold">New</span>()
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> <span style="color:#999">len</span>(args) <span style="font-weight:bold">!=</span> <span style="color:#099">2</span> {
 </span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatalf</span>(<span style="color:#b84">&#34;usage:\n\t%s SCHEMA.json DATA.json\n&#34;</span>, os.Args[<span style="color:#099">0</span>])
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load the schema file JSON
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	schemaFile, err <span style="font-weight:bold">:=</span> os.<span style="color:#900;font-weight:bold">ReadFile</span>(args[<span style="color:#099">0</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load the schema file JSON</span>
+</span></span><span style="display:flex;"><span>	schemaFile, err <span style="font-weight:bold">:=</span> os.<span style="color:#900;font-weight:bold">ReadFile</span>(args[<span style="color:#099">0</span>])
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
 </span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
 </span></span><span style="display:flex;"><span>	}
@@ -1313,19 +1309,19 @@ fully-formed context: controlling data validation at a lower level.</p>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	schemaJson <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildExpr</span>(schemaJsonAst)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Extract JSON Schema from the JSON
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	schemaAst, err <span style="font-weight:bold">:=</span> jsonschema.<span style="color:#900;font-weight:bold">Extract</span>(schemaJson, <span style="font-weight:bold">&amp;</span>jsonschema.Config{
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Extract JSON Schema from the JSON</span>
+</span></span><span style="display:flex;"><span>	schemaAst, err <span style="font-weight:bold">:=</span> jsonschema.<span style="color:#900;font-weight:bold">Extract</span>(schemaJson, <span style="font-weight:bold">&amp;</span>jsonschema.Config{
 </span></span><span style="display:flex;"><span>		Strict: <span style="font-weight:bold">true</span>,
 </span></span><span style="display:flex;"><span>	})
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
 </span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Build a cue.Value of the schema
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	schema <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildFile</span>(schemaAst)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Build a cue.Value of the schema</span>
+</span></span><span style="display:flex;"><span>	schema <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildFile</span>(schemaAst)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load the data file JSON
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	dataFile, err <span style="font-weight:bold">:=</span> os.<span style="color:#900;font-weight:bold">ReadFile</span>(args[<span style="color:#099">1</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load the data file JSON</span>
+</span></span><span style="display:flex;"><span>	dataFile, err <span style="font-weight:bold">:=</span> os.<span style="color:#900;font-weight:bold">ReadFile</span>(args[<span style="color:#099">1</span>])
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
 </span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
 </span></span><span style="display:flex;"><span>	}
@@ -1334,19 +1330,19 @@ fully-formed context: controlling data validation at a lower level.</p>
 </span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Build a cue.Value of the data
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	data <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildExpr</span>(dataAst)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Build a cue.Value of the data</span>
+</span></span><span style="display:flex;"><span>	data <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildExpr</span>(dataAst)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Unify the schema and data
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	res <span style="font-weight:bold">:=</span> schema.<span style="color:#900;font-weight:bold">Unify</span>(data)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Unify the schema and data</span>
+</span></span><span style="display:flex;"><span>	res <span style="font-weight:bold">:=</span> schema.<span style="color:#900;font-weight:bold">Unify</span>(data)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Validate whether the combined (unified) result has errors or not.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">:=</span> res.<span style="color:#900;font-weight:bold">Validate</span>(cue.<span style="color:#900;font-weight:bold">Concrete</span>(<span style="font-weight:bold">true</span>)); err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// If errors, report them and fail.
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(errors.<span style="color:#900;font-weight:bold">Details</span>(err, <span style="font-weight:bold">nil</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Validate whether the combined (unified) result has errors or not.</span>
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">:=</span> res.<span style="color:#900;font-weight:bold">Validate</span>(cue.<span style="color:#900;font-weight:bold">Concrete</span>(<span style="font-weight:bold">true</span>)); err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// If errors, report them and fail.</span>
+</span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(errors.<span style="color:#900;font-weight:bold">Details</span>(err, <span style="font-weight:bold">nil</span>))
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// If no errors, print the data value
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	fmt.<span style="color:#900;font-weight:bold">Printf</span>(<span style="color:#b84">&#34;%v\n&#34;</span>, res)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// If no errors, print the data value</span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Printf</span>(<span style="color:#b84">&#34;%v\n&#34;</span>, res)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
 </div>
 </div></div>
@@ -1414,7 +1410,7 @@ tracked in <a href="/issue/929">issue #929</a>.</p>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/229aa1e685e27a12f30ddcd92b3c231dac48942a">
                 Last modified May 23, 2025</a>
     </p>
 
@@ -1472,7 +1468,7 @@ tracked in <a href="/issue/929">issue #929</a>.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/how-cue-works-with-json-schema/&text=%3cp%3eCUE%20has%20first%20class%20support%20for%20%3ca%20href=%22https://json-schema.org/%22%3eJSON%20Schema%3c/a%3e:%0aboth%20the%20%3ccode%3ecue%3c/code%3e%20command%20and%20the%20Go%20API%20understand%20the%20format.%3c/p%3e%0a%3cp%3eConstraints%20stored%20as%20JSON%20Schema%20are%20available%20for%20%3ccode%3ecue%3c/code%3e%20commands%20to%20use%20as%20if%0athey%20were%20expressed%20in%20CUE.%0aThis%20allows%20you%20to%20work%20with%20JSON%20Schema%20constraints%20directly,%20using%20them%20to%0avalidate%20data,%20and%20to%20represent%20them%20natively%20in%20CUE&amp;rsquo;s%20more%20succinct%20and%0aexpressive%20form.%3c/p%3e">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/how-cue-works-with-json-schema/&text=CUE%20has%20first%20class%20support%20for%20JSON%20Schema:%20both%20the%20cue%20command%20and%20the%20Go%20API%20understand%20the%20format.%0aConstraints%20stored%20as%20JSON%20Schema%20are%20available%20for%20cue%20commands%20to%20use%20as%20if%20they%20were%20expressed%20in%20CUE.%20This%20allows%20you%20to%20work%20with%20JSON%20Schema%20constraints%20directly,%20using%20them%20to%20validate%20data,%20and%20to%20represent%20them%20natively%20in%20CUE&amp;rsquo;s%20more%20succinct%20and%20expressive%20form.%0a">
                 
 
 
@@ -1488,7 +1484,7 @@ tracked in <a href="/issue/929">issue #929</a>.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/how-cue-works-with-json-schema/&summary=%3cp%3eCUE%20has%20first%20class%20support%20for%20%3ca%20href=%22https://json-schema.org/%22%3eJSON%20Schema%3c/a%3e:%0aboth%20the%20%3ccode%3ecue%3c/code%3e%20command%20and%20the%20Go%20API%20understand%20the%20format.%3c/p%3e%0a%3cp%3eConstraints%20stored%20as%20JSON%20Schema%20are%20available%20for%20%3ccode%3ecue%3c/code%3e%20commands%20to%20use%20as%20if%0athey%20were%20expressed%20in%20CUE.%0aThis%20allows%20you%20to%20work%20with%20JSON%20Schema%20constraints%20directly,%20using%20them%20to%0avalidate%20data,%20and%20to%20represent%20them%20natively%20in%20CUE&amp;rsquo;s%20more%20succinct%20and%0aexpressive%20form.%3c/p%3e">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/how-cue-works-with-json-schema/&summary=CUE%20has%20first%20class%20support%20for%20JSON%20Schema:%20both%20the%20cue%20command%20and%20the%20Go%20API%20understand%20the%20format.%0aConstraints%20stored%20as%20JSON%20Schema%20are%20available%20for%20cue%20commands%20to%20use%20as%20if%20they%20were%20expressed%20in%20CUE.%20This%20allows%20you%20to%20work%20with%20JSON%20Schema%20constraints%20directly,%20using%20them%20to%20validate%20data,%20and%20to%20represent%20them%20natively%20in%20CUE&amp;rsquo;s%20more%20succinct%20and%20expressive%20form.%0a">
                 
 
 
@@ -1868,7 +1864,7 @@ tracked in <a href="/issue/929">issue #929</a>.</p>
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fhow-cue-works-with-json-schema%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fhow-cue-works-with-json-schema%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -2120,7 +2116,7 @@ tracked in <a href="/issue/929">issue #929</a>.</p>
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

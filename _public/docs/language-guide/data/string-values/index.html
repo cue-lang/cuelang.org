@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="CUE extends JSON strings with:multiline strings additional escape sequences alternate escape sequences Multiline strings A multiline string starts and ends …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -23,7 +23,7 @@
   <meta property="og:title" content="String values">
   <meta property="og:description" content="CUE extends JSON strings with:
 multiline strings additional escape sequences alternate escape sequences Multiline strings A multiline string starts and ends with a &#34;&#34;&#34;, the latter being on a line by itself. The string contents are on separate lines between these two. The whitespace preceding the last &#34;&#34;&#34; must prefix each non-empty line of the string contents and is stripped from all lines.
-Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World!">
+Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World! This is a \ real treat. &#34;&#34;&#34; JSON Copy code Copied! { &#34;msg&#34;: &#34;Hello World!\n\nThis is a real treat.&#34; } {{{with sidetrack}}} CUE multiline strings originate from Swift. {{{end}}}">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -35,14 +35,14 @@ Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World!">
   <meta name="twitter:title" content="String values">
   <meta name="twitter:description" content="CUE extends JSON strings with:
 multiline strings additional escape sequences alternate escape sequences Multiline strings A multiline string starts and ends with a &#34;&#34;&#34;, the latter being on a line by itself. The string contents are on separate lines between these two. The whitespace preceding the last &#34;&#34;&#34; must prefix each non-empty line of the string contents and is stripped from all lines.
-Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World!">
+Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World! This is a \ real treat. &#34;&#34;&#34; JSON Copy code Copied! { &#34;msg&#34;: &#34;Hello World!\n\nThis is a real treat.&#34; } {{{with sidetrack}}} CUE multiline strings originate from Swift. {{{end}}}">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -58,7 +58,8 @@ Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World!">
         <meta itemprop="name" content="String values">
 <meta itemprop="description" content="CUE extends JSON strings with:
 multiline strings additional escape sequences alternate escape sequences Multiline strings A multiline string starts and ends with a &quot;&quot;&quot;, the latter being on a line by itself. The string contents are on separate lines between these two. The whitespace preceding the last &quot;&quot;&quot; must prefix each non-empty line of the string contents and is stripped from all lines.
-Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World!">
+Copied! CUE Copy code Copied! msg: &#34;&#34;&#34; Hello World! This is a \ real treat. &#34;&#34;&#34; JSON Copy code Copied! { &#34;msg&#34;: &#34;Hello World!\n\nThis is a real treat.&#34; } {{{with sidetrack}}} CUE multiline strings originate from Swift. {{{end}}}
+">
 
     
         <meta itemprop="dateModified" content="2025-01-15T13:58:17+00:00" >
@@ -372,115 +373,115 @@ Escape sequences
 Just like JSON, CUE uses \ as the escape character.
 These are the ones supported in CUE, with a comparison to JSON and Go.
 
-
-
-Escape
-Name
-JSON
-Go
-Examples
-
-
-
-
-&quot;
-double quote
-✓
-depends
-
-
-
-&#39;
-single quote
-
-depends
-
-
-
-\
-backslash
-✓
-✓
-
-
-
-/
-slash (solidus)
-✓
-
-
-
-
-\a
-alert or bell
-
-✓
-
-
-
-\b
-backspace
-✓
-✓
-
-
-
-\f
-form feed
-✓
-✓
-
-
-
-\n
-newline
-✓
-✓
-
-
-
-\r
-carriage return
-✓
-✓
-
-
-
-\t
-tab
-✓
-✓
-
-
-
-\v
-vertical tab
-
-✓
-
-
-
-\unnnn
-16-bit Unicode
-✓
-✓
-\u2014
-
-
-\unnnnnnnn
-32-bit Unicode
-
-✓
-\U00102345
-
-
-()
-interpolation
-
-
-See Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md
-
-
+  
+      
+          Escape
+          Name
+          JSON
+          Go
+          Examples
+      
+  
+  
+      
+          &quot;
+          double quote
+          ✓
+          depends
+          
+      
+      
+          &#39;
+          single quote
+          
+          depends
+          
+      
+      
+          \
+          backslash
+          ✓
+          ✓
+          
+      
+      
+          /
+          slash (solidus)
+          ✓
+          
+          
+      
+      
+          \a
+          alert or bell
+          
+          ✓
+          
+      
+      
+          \b
+          backspace
+          ✓
+          ✓
+          
+      
+      
+          \f
+          form feed
+          ✓
+          ✓
+          
+      
+      
+          \n
+          newline
+          ✓
+          ✓
+          
+      
+      
+          \r
+          carriage return
+          ✓
+          ✓
+          
+      
+      
+          \t
+          tab
+          ✓
+          ✓
+          
+      
+      
+          \v
+          vertical tab
+          
+          ✓
+          
+      
+      
+          \unnnn
+          16-bit Unicode
+          ✓
+          ✓
+          \u2014
+      
+      
+          \unnnnnnnn
+          32-bit Unicode
+          
+          ✓
+          \U00102345
+      
+      
+          ()
+          interpolation
+          
+          
+          See Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md
+      
+  
 
 CUE bytes values allow some additional escape sequences.
 
@@ -686,115 +687,115 @@ CUE multiline strings originate from Swift.
 <p>Just like JSON, CUE uses <code>\</code> as the escape character.
 These are the ones supported in CUE, with a comparison to JSON and Go.</p>
 <table>
-<thead>
-<tr>
-<th>Escape</th>
-<th>Name</th>
-<th>JSON</th>
-<th>Go</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&quot;</td>
-<td>double quote</td>
-<td>✓</td>
-<td>depends</td>
-<td></td>
-</tr>
-<tr>
-<td>'</td>
-<td>single quote</td>
-<td></td>
-<td>depends</td>
-<td></td>
-</tr>
-<tr>
-<td>\</td>
-<td>backslash</td>
-<td>✓</td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>/</td>
-<td>slash (solidus)</td>
-<td>✓</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\a</td>
-<td>alert or bell</td>
-<td></td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>\b</td>
-<td>backspace</td>
-<td>✓</td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>\f</td>
-<td>form feed</td>
-<td>✓</td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>\n</td>
-<td>newline</td>
-<td>✓</td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>\r</td>
-<td>carriage return</td>
-<td>✓</td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>\t</td>
-<td>tab</td>
-<td>✓</td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>\v</td>
-<td>vertical tab</td>
-<td></td>
-<td>✓</td>
-<td></td>
-</tr>
-<tr>
-<td>\unnnn</td>
-<td>16-bit Unicode</td>
-<td>✓</td>
-<td>✓</td>
-<td>\u2014</td>
-</tr>
-<tr>
-<td>\unnnnnnnn</td>
-<td>32-bit Unicode</td>
-<td></td>
-<td>✓</td>
-<td>\U00102345</td>
-</tr>
-<tr>
-<td>()</td>
-<td>interpolation</td>
-<td></td>
-<td></td>
-<td>See Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Escape</th>
+          <th>Name</th>
+          <th>JSON</th>
+          <th>Go</th>
+          <th>Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&quot;</td>
+          <td>double quote</td>
+          <td>✓</td>
+          <td>depends</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>'</td>
+          <td>single quote</td>
+          <td></td>
+          <td>depends</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\</td>
+          <td>backslash</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>/</td>
+          <td>slash (solidus)</td>
+          <td>✓</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\a</td>
+          <td>alert or bell</td>
+          <td></td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\b</td>
+          <td>backspace</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\f</td>
+          <td>form feed</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\n</td>
+          <td>newline</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\r</td>
+          <td>carriage return</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\t</td>
+          <td>tab</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\v</td>
+          <td>vertical tab</td>
+          <td></td>
+          <td>✓</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>\unnnn</td>
+          <td>16-bit Unicode</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>\u2014</td>
+      </tr>
+      <tr>
+          <td>\unnnnnnnn</td>
+          <td>32-bit Unicode</td>
+          <td></td>
+          <td>✓</td>
+          <td>\U00102345</td>
+      </tr>
+      <tr>
+          <td>()</td>
+          <td>interpolation</td>
+          <td></td>
+          <td></td>
+          <td>See Templating%20f4e21af73d744a77aa2c91203a8dbe4f.md</td>
+      </tr>
+  </tbody>
 </table>
 <p>CUE bytes values allow some additional escape sequences.</p>
 <h2 id="alternate-escape-sequences">
@@ -933,7 +934,7 @@ CUE alternate escape sequences originate from Swift.
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/data/string-values/&text=CUE%20extends%20JSON%20strings%20with:%0amultiline%20strings%20additional%20escape%20sequences%20alternate%20escape%20sequences%20Multiline%20strings%20A%20multiline%20string%20starts%20and%20ends%20with%20a%20&amp;quot;&amp;quot;&amp;quot;,%20the%20latter%20being%20on%20a%20line%20by%20itself.%20The%20string%20contents%20are%20on%20separate%20lines%20between%20these%20two.%20The%20whitespace%20preceding%20the%20last%20&amp;quot;&amp;quot;&amp;quot;%20must%20prefix%20each%20non-empty%20line%20of%20the%20string%20contents%20and%20is%20stripped%20from%20all%20lines.%0aCopied!%20CUE%20Copy%20code%20Copied!%20msg:%20&amp;#34;&amp;#34;&amp;#34;%20Hello%20World!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/data/string-values/&text=CUE%20extends%20JSON%20strings%20with:%0amultiline%20strings%20additional%20escape%20sequences%20alternate%20escape%20sequences%20Multiline%20strings%20A%20multiline%20string%20starts%20and%20ends%20with%20a%20&amp;quot;&amp;quot;&amp;quot;,%20the%20latter%20being%20on%20a%20line%20by%20itself.%20The%20string%20contents%20are%20on%20separate%20lines%20between%20these%20two.%20The%20whitespace%20preceding%20the%20last%20&amp;quot;&amp;quot;&amp;quot;%20must%20prefix%20each%20non-empty%20line%20of%20the%20string%20contents%20and%20is%20stripped%20from%20all%20lines.%0aCopied!%20CUE%20Copy%20code%20Copied!%20msg:%20&amp;#34;&amp;#34;&amp;#34;%20Hello%20World!%20This%20is%20a%20%5c%20real%20treat.%20&amp;#34;&amp;#34;&amp;#34;%20JSON%20Copy%20code%20Copied!%20%7b%20&amp;#34;msg&amp;#34;:%20&amp;#34;Hello%20World!%5cn%5cnThis%20is%20a%20real%20treat.&amp;#34;%20%7d%20%7b%7b%7bwith%20sidetrack%7d%7d%7d%20CUE%20multiline%20strings%20originate%20from%20Swift.%20%7b%7b%7bend%7d%7d%7d%0a">
                 
 
 
@@ -949,7 +950,7 @@ CUE alternate escape sequences originate from Swift.
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/data/string-values/&summary=CUE%20extends%20JSON%20strings%20with:%0amultiline%20strings%20additional%20escape%20sequences%20alternate%20escape%20sequences%20Multiline%20strings%20A%20multiline%20string%20starts%20and%20ends%20with%20a%20&amp;quot;&amp;quot;&amp;quot;,%20the%20latter%20being%20on%20a%20line%20by%20itself.%20The%20string%20contents%20are%20on%20separate%20lines%20between%20these%20two.%20The%20whitespace%20preceding%20the%20last%20&amp;quot;&amp;quot;&amp;quot;%20must%20prefix%20each%20non-empty%20line%20of%20the%20string%20contents%20and%20is%20stripped%20from%20all%20lines.%0aCopied!%20CUE%20Copy%20code%20Copied!%20msg:%20&amp;#34;&amp;#34;&amp;#34;%20Hello%20World!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/data/string-values/&summary=CUE%20extends%20JSON%20strings%20with:%0amultiline%20strings%20additional%20escape%20sequences%20alternate%20escape%20sequences%20Multiline%20strings%20A%20multiline%20string%20starts%20and%20ends%20with%20a%20&amp;quot;&amp;quot;&amp;quot;,%20the%20latter%20being%20on%20a%20line%20by%20itself.%20The%20string%20contents%20are%20on%20separate%20lines%20between%20these%20two.%20The%20whitespace%20preceding%20the%20last%20&amp;quot;&amp;quot;&amp;quot;%20must%20prefix%20each%20non-empty%20line%20of%20the%20string%20contents%20and%20is%20stripped%20from%20all%20lines.%0aCopied!%20CUE%20Copy%20code%20Copied!%20msg:%20&amp;#34;&amp;#34;&amp;#34;%20Hello%20World!%20This%20is%20a%20%5c%20real%20treat.%20&amp;#34;&amp;#34;&amp;#34;%20JSON%20Copy%20code%20Copied!%20%7b%20&amp;#34;msg&amp;#34;:%20&amp;#34;Hello%20World!%5cn%5cnThis%20is%20a%20real%20treat.&amp;#34;%20%7d%20%7b%7b%7bwith%20sidetrack%7d%7d%7d%20CUE%20multiline%20strings%20originate%20from%20Swift.%20%7b%7b%7bend%7d%7d%7d%0a">
                 
 
 
@@ -1265,7 +1266,7 @@ CUE alternate escape sequences originate from Swift.
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Fdata%2Fstring-values%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Fdata%2Fstring-values%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1517,7 +1518,7 @@ CUE alternate escape sequences originate from Swift.
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

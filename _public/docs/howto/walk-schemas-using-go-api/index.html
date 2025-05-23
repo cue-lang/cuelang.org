@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="This guide demonstrates how to walk a CUE schema using the Go API, programmatically inspecting its structure and types. The Go code shown here is a limited code …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.6">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -52,11 +52,8 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Walking schemas using the Go API">
-<meta itemprop="description" content="This guide demonstrates how to walk a CUE schema using the Go API,
-programmatically inspecting its structure and types.
-The Go code shown here is a limited code generator and,
-as presented, it generates Go structs from simple CUE definitions.
-It could be adapted to other schema-walking tasks - not just code generation.">
+<meta itemprop="description" content="This guide demonstrates how to walk a CUE schema using the Go API, programmatically inspecting its structure and types. The Go code shown here is a limited code generator and, as presented, it generates Go structs from simple CUE definitions. It could be adapted to other schema-walking tasks - not just code generation.
+">
 
     
         <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
@@ -869,15 +866,15 @@ order to demonstrate that they are <em>not</em> processed by the code presented 
 </span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
 </span></span><span style="display:flex;"><span>	ctx <span style="font-weight:bold">:=</span> cuecontext.<span style="color:#900;font-weight:bold">New</span>()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load CUE from the package in the current directory
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	insts <span style="font-weight:bold">:=</span> load.<span style="color:#900;font-weight:bold">Instances</span>([]<span style="color:#458;font-weight:bold">string</span>{<span style="color:#b84">&#34;.&#34;</span>}, <span style="font-weight:bold">nil</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Load CUE from the package in the current directory</span>
+</span></span><span style="display:flex;"><span>	insts <span style="font-weight:bold">:=</span> load.<span style="color:#900;font-weight:bold">Instances</span>([]<span style="color:#458;font-weight:bold">string</span>{<span style="color:#b84">&#34;.&#34;</span>}, <span style="font-weight:bold">nil</span>)
 </span></span><span style="display:flex;"><span>	v <span style="font-weight:bold">:=</span> ctx.<span style="color:#900;font-weight:bold">BuildInstance</span>(insts[<span style="color:#099">0</span>])
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">:=</span> v.<span style="color:#900;font-weight:bold">Err</span>(); err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
 </span></span><span style="display:flex;"><span>		log.<span style="color:#900;font-weight:bold">Fatal</span>(err)
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// &#34;Render&#34; the top-level struct definitions as Go types
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	fmt.<span style="color:#900;font-weight:bold">Printf</span>(<span style="color:#b84">&#34;package p\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// &#34;Render&#34; the top-level struct definitions as Go types</span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Printf</span>(<span style="color:#b84">&#34;package p\n\n&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	it, err <span style="font-weight:bold">:=</span> v.<span style="color:#900;font-weight:bold">Fields</span>(cue.<span style="color:#900;font-weight:bold">Definitions</span>(<span style="font-weight:bold">true</span>))
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> err <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nil</span> {
@@ -892,12 +889,12 @@ order to demonstrate that they are <em>not</em> processed by the code presented 
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// structToType prints the top-level fields of a struct value
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">structToType</span>(name cue.Selector, val cue.Value) {
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// structToType prints the top-level fields of a struct value</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> <span style="color:#900;font-weight:bold">structToType</span>(name cue.Selector, val cue.Value) {
 </span></span><span style="display:flex;"><span>	fmt.<span style="color:#900;font-weight:bold">Printf</span>(<span style="color:#b84">&#34;type %v struct {\n&#34;</span>, strings.<span style="color:#900;font-weight:bold">TrimPrefix</span>(name.<span style="color:#900;font-weight:bold">String</span>(), <span style="color:#b84">&#34;#&#34;</span>))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Iterate through the fields of the struct
-</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	it, _ <span style="font-weight:bold">:=</span> val.<span style="color:#900;font-weight:bold">Fields</span>(cue.<span style="color:#900;font-weight:bold">Optional</span>(<span style="font-weight:bold">true</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// Iterate through the fields of the struct</span>
+</span></span><span style="display:flex;"><span>	it, _ <span style="font-weight:bold">:=</span> val.<span style="color:#900;font-weight:bold">Fields</span>(cue.<span style="color:#900;font-weight:bold">Optional</span>(<span style="font-weight:bold">true</span>))
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> it.<span style="color:#900;font-weight:bold">Next</span>() {
 </span></span><span style="display:flex;"><span>		<span style="font-weight:bold">switch</span> k <span style="font-weight:bold">:=</span> it.<span style="color:#900;font-weight:bold">Value</span>().<span style="color:#900;font-weight:bold">IncompleteKind</span>(); k {
 </span></span><span style="display:flex;"><span>		<span style="font-weight:bold">case</span> cue.StringKind, cue.IntKind, cue.FloatKind, cue.BoolKind:
@@ -988,7 +985,7 @@ generator that takes each CUE definition and produces a matching Go struct type.
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/229aa1e685e27a12f30ddcd92b3c231dac48942a">
                 Last modified May 23, 2025</a>
     </p>
 
@@ -1038,7 +1035,7 @@ generator that takes each CUE definition and produces a matching Go struct type.
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/walk-schemas-using-go-api/&text=%3cp%3eThis%20guide%20demonstrates%20how%20to%20walk%20a%20CUE%20schema%20using%20the%20Go%20API,%0aprogrammatically%20inspecting%20its%20structure%20and%20types.%0aThe%20Go%20code%20shown%20here%20is%20a%20limited%20code%20generator%20and,%0aas%20presented,%20it%20generates%20Go%20structs%20from%20simple%20CUE%20definitions.%0aIt%20could%20be%20adapted%20to%20other%20schema-walking%20tasks%20-%20not%20just%20code%20generation.%3c/p%3e">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/walk-schemas-using-go-api/&text=This%20guide%20demonstrates%20how%20to%20walk%20a%20CUE%20schema%20using%20the%20Go%20API,%20programmatically%20inspecting%20its%20structure%20and%20types.%20The%20Go%20code%20shown%20here%20is%20a%20limited%20code%20generator%20and,%20as%20presented,%20it%20generates%20Go%20structs%20from%20simple%20CUE%20definitions.%20It%20could%20be%20adapted%20to%20other%20schema-walking%20tasks%20-%20not%20just%20code%20generation.%0a">
                 
 
 
@@ -1054,7 +1051,7 @@ generator that takes each CUE definition and produces a matching Go struct type.
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/walk-schemas-using-go-api/&summary=%3cp%3eThis%20guide%20demonstrates%20how%20to%20walk%20a%20CUE%20schema%20using%20the%20Go%20API,%0aprogrammatically%20inspecting%20its%20structure%20and%20types.%0aThe%20Go%20code%20shown%20here%20is%20a%20limited%20code%20generator%20and,%0aas%20presented,%20it%20generates%20Go%20structs%20from%20simple%20CUE%20definitions.%0aIt%20could%20be%20adapted%20to%20other%20schema-walking%20tasks%20-%20not%20just%20code%20generation.%3c/p%3e">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/walk-schemas-using-go-api/&summary=This%20guide%20demonstrates%20how%20to%20walk%20a%20CUE%20schema%20using%20the%20Go%20API,%20programmatically%20inspecting%20its%20structure%20and%20types.%20The%20Go%20code%20shown%20here%20is%20a%20limited%20code%20generator%20and,%20as%20presented,%20it%20generates%20Go%20structs%20from%20simple%20CUE%20definitions.%20It%20could%20be%20adapted%20to%20other%20schema-walking%20tasks%20-%20not%20just%20code%20generation.%0a">
                 
 
 
@@ -1414,7 +1411,7 @@ generator that takes each CUE definition and produces a matching Go struct type.
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fhowto%2Fwalk-schemas-using-go-api%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fhowto%2Fwalk-schemas-using-go-api%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1666,7 +1663,7 @@ generator that takes each CUE definition and produces a matching Go struct type.
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="How files are organized in CUE">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.6">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -1416,7 +1416,7 @@ Examples showing top-level schemas, policy and concrete files.
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/229aa1e685e27a12f30ddcd92b3c231dac48942a">
                 Last modified May 23, 2025</a>
     </p>
 
@@ -1466,7 +1466,7 @@ Examples showing top-level schemas, policy and concrete files.
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/modules-packages-instances/&text=%3cdiv%20class=%22note%20note--info%22%20role=%22alert%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20note__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--exclamation%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3cdiv%20class=%22note__content%22%3e%3cp%3eThis%20guide%20describes%20&amp;ldquo;new&amp;rdquo;%20modules,%20which%20are%20the%20current%20implementation%20of%0adependencies%20in%20CUE.%3c/p%3e%0a%3cp%3e%3ca%20href=%22/docs/concept/old-modules-packages-instances/%22%3eThe%20previous%20version%20of%20this%20guide%3c/a%3e%0acovers%20&amp;ldquo;old&amp;rdquo;%20modules,%20which%20were%20the%20previous%20way%20to%20manage%20CUE%20dependencies,%0aand%20is%20preserved%20for%20reference%20by%20folks%20using%20older%20versions%20of%20CUE.%0aThe%20FAQ%20&amp;ldquo;%3ca%20href=%22/docs/concept/faq/new-modules-vs-old-modules/%22%3eNew%20modules%20vs%20old%20modules%3c/a%3e&amp;rdquo;%0aexplains%20their%20differences.%3c/p%3e%0a%3c/div%3e%0a%3c/div%3e%0a%0a%3ch2%20id=%22overview%22%3e%0a%20%20%20%20%3ca%20href=%22#overview%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eOverview%3c/h2%3e%0a%3cp%3eCUE%20heavily%20relies%20on%20its%20order%20independence%20for%20package%20organization.%0aDefinitions%20and%20constraints%20can%20be%20split%20across%20files%20within%20a%20package,%0aand%20even%20organized%20across%20directories.%3c/p%3e%0a%3cp%3eAnother%20key%20aspect%20of%20CUE&amp;rsquo;s%20package%20management%20is%20reproducibility.%0aA%20module,%20the%20largest%20unit%20of%20organization,%20has%20a%20fixed%20location%0aof%20all%20files%20and%20dependencies.%0aThere%20are%20no%20paths%20to%20configure.%0aWith%20configuration,%20reproducibility%20is%20key.%3c/p%3e%0a%3cp%3eWithin%20a%20module,%20CUE%20organizes%20files%20grouped%20by%20package.%0aA%20package%20can%20be%20defined%20within%20the%20module%20or%20externally.%0aIn%20the%20latter%20case,%20CUE%20maintains%20a%20copy%20of%20the%20package%20within%20the%20module%0ain%20a%20dedicated%20location.%3c/p%3e">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/modules-packages-instances/&text=%20This%20guide%20describes%20&amp;ldquo;new&amp;rdquo;%20modules,%20which%20are%20the%20current%20implementation%20of%20dependencies%20in%20CUE.%0aThe%20previous%20version%20of%20this%20guide%20covers%20&amp;ldquo;old&amp;rdquo;%20modules,%20which%20were%20the%20previous%20way%20to%20manage%20CUE%20dependencies,%20and%20is%20preserved%20for%20reference%20by%20folks%20using%20older%20versions%20of%20CUE.%20The%20FAQ%20&amp;ldquo;New%20modules%20vs%20old%20modules&amp;rdquo;%20explains%20their%20differences.%0aOverview%20CUE%20heavily%20relies%20on%20its%20order%20independence%20for%20package%20organization.%20Definitions%20and%20constraints%20can%20be%20split%20across%20files%20within%20a%20package,%20and%20even%20organized%20across%20directories.%0aAnother%20key%20aspect%20of%20CUE&amp;rsquo;s%20package%20management%20is%20reproducibility.%20A%20module,%20the%20largest%20unit%20of%20organization,%20has%20a%20fixed%20location%20of%20all%20files%20and%20dependencies.%20There%20are%20no%20paths%20to%20configure.%20With%20configuration,%20reproducibility%20is%20key.%0aWithin%20a%20module,%20CUE%20organizes%20files%20grouped%20by%20package.%20A%20package%20can%20be%20defined%20within%20the%20module%20or%20externally.%20In%20the%20latter%20case,%20CUE%20maintains%20a%20copy%20of%20the%20package%20within%20the%20module%20in%20a%20dedicated%20location.%0a">
                 
 
 
@@ -1482,7 +1482,7 @@ Examples showing top-level schemas, policy and concrete files.
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/modules-packages-instances/&summary=%3cdiv%20class=%22note%20note--info%22%20role=%22alert%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20note__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--exclamation%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3cdiv%20class=%22note__content%22%3e%3cp%3eThis%20guide%20describes%20&amp;ldquo;new&amp;rdquo;%20modules,%20which%20are%20the%20current%20implementation%20of%0adependencies%20in%20CUE.%3c/p%3e%0a%3cp%3e%3ca%20href=%22/docs/concept/old-modules-packages-instances/%22%3eThe%20previous%20version%20of%20this%20guide%3c/a%3e%0acovers%20&amp;ldquo;old&amp;rdquo;%20modules,%20which%20were%20the%20previous%20way%20to%20manage%20CUE%20dependencies,%0aand%20is%20preserved%20for%20reference%20by%20folks%20using%20older%20versions%20of%20CUE.%0aThe%20FAQ%20&amp;ldquo;%3ca%20href=%22/docs/concept/faq/new-modules-vs-old-modules/%22%3eNew%20modules%20vs%20old%20modules%3c/a%3e&amp;rdquo;%0aexplains%20their%20differences.%3c/p%3e%0a%3c/div%3e%0a%3c/div%3e%0a%0a%3ch2%20id=%22overview%22%3e%0a%20%20%20%20%3ca%20href=%22#overview%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eOverview%3c/h2%3e%0a%3cp%3eCUE%20heavily%20relies%20on%20its%20order%20independence%20for%20package%20organization.%0aDefinitions%20and%20constraints%20can%20be%20split%20across%20files%20within%20a%20package,%0aand%20even%20organized%20across%20directories.%3c/p%3e%0a%3cp%3eAnother%20key%20aspect%20of%20CUE&amp;rsquo;s%20package%20management%20is%20reproducibility.%0aA%20module,%20the%20largest%20unit%20of%20organization,%20has%20a%20fixed%20location%0aof%20all%20files%20and%20dependencies.%0aThere%20are%20no%20paths%20to%20configure.%0aWith%20configuration,%20reproducibility%20is%20key.%3c/p%3e%0a%3cp%3eWithin%20a%20module,%20CUE%20organizes%20files%20grouped%20by%20package.%0aA%20package%20can%20be%20defined%20within%20the%20module%20or%20externally.%0aIn%20the%20latter%20case,%20CUE%20maintains%20a%20copy%20of%20the%20package%20within%20the%20module%0ain%20a%20dedicated%20location.%3c/p%3e">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/modules-packages-instances/&summary=%20This%20guide%20describes%20&amp;ldquo;new&amp;rdquo;%20modules,%20which%20are%20the%20current%20implementation%20of%20dependencies%20in%20CUE.%0aThe%20previous%20version%20of%20this%20guide%20covers%20&amp;ldquo;old&amp;rdquo;%20modules,%20which%20were%20the%20previous%20way%20to%20manage%20CUE%20dependencies,%20and%20is%20preserved%20for%20reference%20by%20folks%20using%20older%20versions%20of%20CUE.%20The%20FAQ%20&amp;ldquo;New%20modules%20vs%20old%20modules&amp;rdquo;%20explains%20their%20differences.%0aOverview%20CUE%20heavily%20relies%20on%20its%20order%20independence%20for%20package%20organization.%20Definitions%20and%20constraints%20can%20be%20split%20across%20files%20within%20a%20package,%20and%20even%20organized%20across%20directories.%0aAnother%20key%20aspect%20of%20CUE&amp;rsquo;s%20package%20management%20is%20reproducibility.%20A%20module,%20the%20largest%20unit%20of%20organization,%20has%20a%20fixed%20location%20of%20all%20files%20and%20dependencies.%20There%20are%20no%20paths%20to%20configure.%20With%20configuration,%20reproducibility%20is%20key.%0aWithin%20a%20module,%20CUE%20organizes%20files%20grouped%20by%20package.%20A%20package%20can%20be%20defined%20within%20the%20module%20or%20externally.%20In%20the%20latter%20case,%20CUE%20maintains%20a%20copy%20of%20the%20package%20within%20the%20module%20in%20a%20dedicated%20location.%0a">
                 
 
 
@@ -1863,7 +1863,7 @@ Examples showing top-level schemas, policy and concrete files.
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fmodules-packages-instances%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fconcept%2Fmodules-packages-instances%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -2115,7 +2115,7 @@ Examples showing top-level schemas, policy and concrete files.
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

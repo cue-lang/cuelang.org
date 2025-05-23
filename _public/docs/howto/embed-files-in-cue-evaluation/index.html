@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Users frequently need to load JSON, YAML, or other types of files into their CUE code. Because CUE’s import declarations only allow references to CUE packages, …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.6">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -23,7 +23,7 @@
   <meta property="og:title" content="Embedding files in a CUE evaluation">
   <meta property="og:description" content="Users frequently need to load JSON, YAML, or other types of files into their CUE code. Because CUE’s import declarations only allow references to CUE packages, some workflows resort to using the tooling layer (cue cmd) to load non-CUE files. This can complicate the process if the tooling layer’s advanced features aren’t otherwise needed.
 The @embed() attribute is designed to simplify workflows that require data to be loaded at evaluation time, and is available by default from version v0.12.0 of CUE onwards. This guide demonstrates the following version:
-TERMINAL Copy code Copied! $ cue version cue version v0.13.0 ... ">
+TERMINAL Copy code Copied! $ cue version cue version v0.13.0 ...">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -35,14 +35,14 @@ TERMINAL Copy code Copied! $ cue version cue version v0.13.0 ... ">
   <meta name="twitter:title" content="Embedding files in a CUE evaluation">
   <meta name="twitter:description" content="Users frequently need to load JSON, YAML, or other types of files into their CUE code. Because CUE’s import declarations only allow references to CUE packages, some workflows resort to using the tooling layer (cue cmd) to load non-CUE files. This can complicate the process if the tooling layer’s advanced features aren’t otherwise needed.
 The @embed() attribute is designed to simplify workflows that require data to be loaded at evaluation time, and is available by default from version v0.12.0 of CUE onwards. This guide demonstrates the following version:
-TERMINAL Copy code Copied! $ cue version cue version v0.13.0 ... ">
+TERMINAL Copy code Copied! $ cue version cue version v0.13.0 ...">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -56,26 +56,9 @@ TERMINAL Copy code Copied! $ cue version cue version v0.13.0 ... ">
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Embedding files in a CUE evaluation">
-<meta itemprop="description" content="Users frequently need to load JSON, YAML, or other types of files into their CUE code.
-Because CUE&rsquo;s import declarations only allow references to CUE packages,
-some workflows resort to using the tooling layer
-(cue cmd)
-to load non-CUE files. This can complicate the process if the tooling layer&rsquo;s
-advanced features aren&rsquo;t otherwise needed.
-The @embed() attribute is designed to simplify workflows that require data to
-be loaded at evaluation time, and is available by default from version
-v0.12.0 of CUE onwards. This guide demonstrates the following version:
-
-            TERMINAL
-        
-                Copy code
-                
-                    Copied!
-                
-            $ cue version
-cue version v0.13.0
-...
-">
+<meta itemprop="description" content="Users frequently need to load JSON, YAML, or other types of files into their CUE code. Because CUE&rsquo;s import declarations only allow references to CUE packages, some workflows resort to using the tooling layer (cue cmd) to load non-CUE files. This can complicate the process if the tooling layer&rsquo;s advanced features aren&rsquo;t otherwise needed.
+The @embed() attribute is designed to simplify workflows that require data to be loaded at evaluation time, and is available by default from version v0.12.0 of CUE onwards. This guide demonstrates the following version:
+TERMINAL Copy code Copied! $ cue version cue version v0.13.0 ... ">
 
     
         <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
@@ -906,7 +889,7 @@ an unknown filename extension can be loaded by adding the
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/229aa1e685e27a12f30ddcd92b3c231dac48942a">
                 Last modified May 23, 2025</a>
     </p>
 
@@ -946,7 +929,7 @@ an unknown filename extension can be loaded by adding the
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/embed-files-in-cue-evaluation/&text=%3cp%3eUsers%20frequently%20need%20to%20load%20JSON,%20YAML,%20or%20other%20types%20of%20files%20into%20their%20CUE%20code.%0aBecause%20CUE&amp;rsquo;s%20%3ccode%3eimport%3c/code%3e%20declarations%20only%20allow%20references%20to%20CUE%20packages,%0asome%20workflows%20resort%20to%20using%20the%20tooling%20layer%0a%28%3ca%20href=%22/docs/reference/command/cue-help-cmd/%22%3e%3ccode%3ecue%20cmd%3c/code%3e%3c/a%3e%29%0ato%20load%20non-CUE%20files.%20This%20can%20complicate%20the%20process%20if%20the%20tooling%20layer&amp;rsquo;s%0aadvanced%20features%20aren&amp;rsquo;t%20otherwise%20needed.%3c/p%3e%0a%3cp%3eThe%20%3ccode%3e@embed%28%29%3c/code%3e%20attribute%20is%20designed%20to%20simplify%20workflows%20that%20require%20data%20to%0abe%20loaded%20at%20evaluation%20time,%20and%20is%20available%20by%20default%20from%20version%0a%3ccode%3ev0.12.0%3c/code%3e%20of%20CUE%20onwards.%20This%20guide%20demonstrates%20the%20following%20version:%3c/p%3e%0a%3cdiv%20class=%22code-block%20code-block--heading%20code-block--terminal%22data-copy%3e%3cdiv%20class=%22code-block__heading%22%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3cspan%20class=%22code-block__tab%22%3eTERMINAL%3c/span%3e%0a%20%20%20%20%20%20%20%20%3c/div%3e%3cdiv%20class=%22code-block__highlight%22%3e%3cbutton%20class=%22code-block__copy%22%20type=%22button%22%20data-copy-button%20data-copy-type=%22code%22%20data-copy-value=%22Y3VlIHZlcnNpb24=%22%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3cspan%3eCopy%20code%3c/span%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3cspan%20class=%22code-block__message%20is-hidden%22%20data-copy-message%20aria-hidden=%22true%22%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Copied!%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3c/span%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3c/button%3e%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;%22%3e%3ccode%20class=%22language-text%22%20data-lang=%22text%22%3e%3cspan%20style=%22display:flex;%22%3e%3cspan%3e$%20cue%20version%0a%3c/span%3e%3c/span%3e%3cspan%20style=%22display:flex;%22%3e%3cspan%3ecue%20version%20v0.13.0%0a%3c/span%3e%3c/span%3e%3cspan%20style=%22display:flex;%22%3e%3cspan%3e...%3c/span%3e%3c/span%3e%3c/code%3e%3c/pre%3e%3c/div%3e%3c/div%3e%0a%3c/div%3e">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/embed-files-in-cue-evaluation/&text=Users%20frequently%20need%20to%20load%20JSON,%20YAML,%20or%20other%20types%20of%20files%20into%20their%20CUE%20code.%20Because%20CUE&amp;rsquo;s%20import%20declarations%20only%20allow%20references%20to%20CUE%20packages,%20some%20workflows%20resort%20to%20using%20the%20tooling%20layer%20%28cue%20cmd%29%20to%20load%20non-CUE%20files.%20This%20can%20complicate%20the%20process%20if%20the%20tooling%20layer&amp;rsquo;s%20advanced%20features%20aren&amp;rsquo;t%20otherwise%20needed.%0aThe%20@embed%28%29%20attribute%20is%20designed%20to%20simplify%20workflows%20that%20require%20data%20to%20be%20loaded%20at%20evaluation%20time,%20and%20is%20available%20by%20default%20from%20version%20v0.12.0%20of%20CUE%20onwards.%20This%20guide%20demonstrates%20the%20following%20version:%0aTERMINAL%20Copy%20code%20Copied!%20$%20cue%20version%20cue%20version%20v0.13.0%20...%20">
                 
 
 
@@ -962,7 +945,7 @@ an unknown filename extension can be loaded by adding the
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/embed-files-in-cue-evaluation/&summary=%3cp%3eUsers%20frequently%20need%20to%20load%20JSON,%20YAML,%20or%20other%20types%20of%20files%20into%20their%20CUE%20code.%0aBecause%20CUE&amp;rsquo;s%20%3ccode%3eimport%3c/code%3e%20declarations%20only%20allow%20references%20to%20CUE%20packages,%0asome%20workflows%20resort%20to%20using%20the%20tooling%20layer%0a%28%3ca%20href=%22/docs/reference/command/cue-help-cmd/%22%3e%3ccode%3ecue%20cmd%3c/code%3e%3c/a%3e%29%0ato%20load%20non-CUE%20files.%20This%20can%20complicate%20the%20process%20if%20the%20tooling%20layer&amp;rsquo;s%0aadvanced%20features%20aren&amp;rsquo;t%20otherwise%20needed.%3c/p%3e%0a%3cp%3eThe%20%3ccode%3e@embed%28%29%3c/code%3e%20attribute%20is%20designed%20to%20simplify%20workflows%20that%20require%20data%20to%0abe%20loaded%20at%20evaluation%20time,%20and%20is%20available%20by%20default%20from%20version%0a%3ccode%3ev0.12.0%3c/code%3e%20of%20CUE%20onwards.%20This%20guide%20demonstrates%20the%20following%20version:%3c/p%3e%0a%3cdiv%20class=%22code-block%20code-block--heading%20code-block--terminal%22data-copy%3e%3cdiv%20class=%22code-block__heading%22%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3cspan%20class=%22code-block__tab%22%3eTERMINAL%3c/span%3e%0a%20%20%20%20%20%20%20%20%3c/div%3e%3cdiv%20class=%22code-block__highlight%22%3e%3cbutton%20class=%22code-block__copy%22%20type=%22button%22%20data-copy-button%20data-copy-type=%22code%22%20data-copy-value=%22Y3VlIHZlcnNpb24=%22%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3cspan%3eCopy%20code%3c/span%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3cspan%20class=%22code-block__message%20is-hidden%22%20data-copy-message%20aria-hidden=%22true%22%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Copied!%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3c/span%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3c/button%3e%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;%22%3e%3ccode%20class=%22language-text%22%20data-lang=%22text%22%3e%3cspan%20style=%22display:flex;%22%3e%3cspan%3e$%20cue%20version%0a%3c/span%3e%3c/span%3e%3cspan%20style=%22display:flex;%22%3e%3cspan%3ecue%20version%20v0.13.0%0a%3c/span%3e%3c/span%3e%3cspan%20style=%22display:flex;%22%3e%3cspan%3e...%3c/span%3e%3c/span%3e%3c/code%3e%3c/pre%3e%3c/div%3e%3c/div%3e%0a%3c/div%3e">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/embed-files-in-cue-evaluation/&summary=Users%20frequently%20need%20to%20load%20JSON,%20YAML,%20or%20other%20types%20of%20files%20into%20their%20CUE%20code.%20Because%20CUE&amp;rsquo;s%20import%20declarations%20only%20allow%20references%20to%20CUE%20packages,%20some%20workflows%20resort%20to%20using%20the%20tooling%20layer%20%28cue%20cmd%29%20to%20load%20non-CUE%20files.%20This%20can%20complicate%20the%20process%20if%20the%20tooling%20layer&amp;rsquo;s%20advanced%20features%20aren&amp;rsquo;t%20otherwise%20needed.%0aThe%20@embed%28%29%20attribute%20is%20designed%20to%20simplify%20workflows%20that%20require%20data%20to%20be%20loaded%20at%20evaluation%20time,%20and%20is%20available%20by%20default%20from%20version%20v0.12.0%20of%20CUE%20onwards.%20This%20guide%20demonstrates%20the%20following%20version:%0aTERMINAL%20Copy%20code%20Copied!%20$%20cue%20version%20cue%20version%20v0.13.0%20...%20">
                 
 
 
@@ -1320,7 +1303,7 @@ an unknown filename extension can be loaded by adding the
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fhowto%2Fembed-files-in-cue-evaluation%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fhowto%2Fembed-files-in-cue-evaluation%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1572,7 +1555,7 @@ an unknown filename extension can be loaded by adding the
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

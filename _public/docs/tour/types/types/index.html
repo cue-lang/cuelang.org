@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="CUE defines the following type hierarchy:flowchart TD top[&amp;#34;_&amp;#34;] bottom[&amp;#34;_|_&amp;#34;] struct[&amp;#34;{...}&amp;#34;] list[&amp;#34;[...]&amp;#34;] top --&amp;gt; null --&amp;gt; bottom top --&amp;gt; bool --&amp;gt; bottom top …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="description" content="CUE defines the following type hierarchy: flowchart TD top[&amp;#34;_&amp;#34;] bottom[&amp;#34;_|_&amp;#34;] struct[&amp;#34;{...}&amp;#34;] list[&amp;#34;[...]&amp;#34;] top --&amp;gt; null --&amp;gt; bottom top --&amp;gt; bool --&amp;gt; bottom top …">
+<meta name="generator" content="Hugo 0.147.6">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -43,8 +43,8 @@ The term “type” merely refers to the kind of a value, which may or may not b
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -59,38 +59,10 @@ The term “type” merely refers to the kind of a value, which may or may not b
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Type Hierarchy">
 <meta itemprop="description" content="CUE defines the following type hierarchy:
-
-
-    
-flowchart TD
-
-top[&#34;_&#34;]
-bottom[&#34;_|_&#34;]
-struct[&#34;{...}&#34;]
-list[&#34;[...]&#34;]
-
-top --&gt; null --&gt; bottom
-top --&gt; bool --&gt; bottom
-top --&gt; string --&gt; bottom
-top --&gt; bytes --&gt; bottom
-top --&gt; number --&gt; int & float --&gt; bottom
-top --&gt; struct --&gt; bottom
-top --&gt; list --&gt; bottom
-CUE&#39;s predefined type hierarchy
-
-
-
-CUE defines the value top (or any),
-written &ldquo;_&rdquo;, 
-such that all types are an instance of top,
-and the value bottom (or error),
-written &ldquo;_|_&rdquo;,
-which is an instance of all types.
-We can mix the terms types and values interchangeably because
-CUE doesn&rsquo;t distinguish between
-types and values.
-The term &ldquo;type&rdquo; merely refers to the kind of a value,
-which may or may not be a concrete instance.">
+flowchart TD top[&#34;_&#34;] bottom[&#34;_|_&#34;] struct[&#34;{...}&#34;] list[&#34;[...]&#34;] top --&gt; null --&gt; bottom top --&gt; bool --&gt; bottom top --&gt; string --&gt; bottom top --&gt; bytes --&gt; bottom top --&gt; number --&gt; int & float --&gt; bottom top --&gt; struct --&gt; bottom top --&gt; list --&gt; bottom CUE&#39;s predefined type hierarchy CUE defines the value top (or any), written &ldquo;_&rdquo;, such that all types are an instance of top, and the value bottom (or error), written &ldquo;_|_&rdquo;, which is an instance of all types.
+We can mix the terms types and values interchangeably because CUE doesn&rsquo;t distinguish between types and values.
+The term &ldquo;type&rdquo; merely refers to the kind of a value, which may or may not be a concrete instance.
+">
 
     
         <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
@@ -618,7 +590,7 @@ require it to be completely concrete.
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/229aa1e685e27a12f30ddcd92b3c231dac48942a">
                 Last modified May 23, 2025</a>
     </p>
 
@@ -658,7 +630,7 @@ require it to be completely concrete.
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/types/types/&text=%3cp%3eCUE%20defines%20the%20following%20type%20hierarchy:%3c/p%3e%0a%0a%3cfigure%20class=%22diagram%22%3e%0a%20%20%20%20%3cdiv%20class=%22diagram__content%20mermaid%22%3e%0aflowchart%20TD%0a%0atop[%22_%22]%0abottom[%22_%7c_%22]%0astruct[%22%7b...%7d%22]%0alist[%22[...]%22]%0a%0atop%20--%3e%20null%20--%3e%20bottom%0atop%20--%3e%20bool%20--%3e%20bottom%0atop%20--%3e%20string%20--%3e%20bottom%0atop%20--%3e%20bytes%20--%3e%20bottom%0atop%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%0atop%20--%3e%20struct%20--%3e%20bottom%0atop%20--%3e%20list%20--%3e%20bottom%0a%3c/div%3e%3cfigcaption%20class=%22diagram__caption%22%3eCUE&amp;#39;s%20predefined%20type%20hierarchy%3c/figcaption%3e%0a%3c/figure%3e%0a%0a%0a%3cp%3eCUE%20defines%20the%20value%20%3cstrong%3etop%3c/strong%3e%20%28or%20any%29,%0awritten%20&amp;ldquo;%3ccode%3e_%3c/code%3e&amp;rdquo;,%20%3c!--%20%60%20vim%20syntax%20highlighting%20hack%20--%3e%0asuch%20that%20all%20types%20are%20an%20instance%20of%20top,%0aand%20the%20value%20%3cstrong%3ebottom%3c/strong%3e%20%28or%20error%29,%0awritten%20&amp;ldquo;%3ccode%3e_%7c_%3c/code%3e&amp;rdquo;,%0awhich%20is%20an%20instance%20of%20all%20types.%3c/p%3e%0a%3cp%3eWe%20can%20mix%20the%20terms%20types%20and%20values%20interchangeably%20because%0aCUE%20doesn&amp;rsquo;t%20distinguish%20between%0a%3ca%20href=%22/docs/tour/basics/types-are-values/%22%3etypes%20and%20values%3c/a%3e.%3cbr%3e%0aThe%20term%20&amp;ldquo;type&amp;rdquo;%20merely%20refers%20to%20the%20%3cem%3ekind%3c/em%3e%20of%20a%20value,%0awhich%20may%20or%20may%20not%20be%20a%20concrete%20instance.%3c/p%3e">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/types/types/&text=CUE%20defines%20the%20following%20type%20hierarchy:%0aflowchart%20TD%20top[%22_%22]%20bottom[%22_%7c_%22]%20struct[%22%7b...%7d%22]%20list[%22[...]%22]%20top%20--%3e%20null%20--%3e%20bottom%20top%20--%3e%20bool%20--%3e%20bottom%20top%20--%3e%20string%20--%3e%20bottom%20top%20--%3e%20bytes%20--%3e%20bottom%20top%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%20top%20--%3e%20struct%20--%3e%20bottom%20top%20--%3e%20list%20--%3e%20bottom%20CUE&amp;#39;s%20predefined%20type%20hierarchy%20CUE%20defines%20the%20value%20top%20%28or%20any%29,%20written%20&amp;ldquo;_&amp;rdquo;,%20such%20that%20all%20types%20are%20an%20instance%20of%20top,%20and%20the%20value%20bottom%20%28or%20error%29,%20written%20&amp;ldquo;_%7c_&amp;rdquo;,%20which%20is%20an%20instance%20of%20all%20types.%0aWe%20can%20mix%20the%20terms%20types%20and%20values%20interchangeably%20because%20CUE%20doesn&amp;rsquo;t%20distinguish%20between%20types%20and%20values.%0aThe%20term%20&amp;ldquo;type&amp;rdquo;%20merely%20refers%20to%20the%20kind%20of%20a%20value,%20which%20may%20or%20may%20not%20be%20a%20concrete%20instance.%0a">
                 
 
 
@@ -674,7 +646,7 @@ require it to be completely concrete.
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/types/types/&summary=%3cp%3eCUE%20defines%20the%20following%20type%20hierarchy:%3c/p%3e%0a%0a%3cfigure%20class=%22diagram%22%3e%0a%20%20%20%20%3cdiv%20class=%22diagram__content%20mermaid%22%3e%0aflowchart%20TD%0a%0atop[%22_%22]%0abottom[%22_%7c_%22]%0astruct[%22%7b...%7d%22]%0alist[%22[...]%22]%0a%0atop%20--%3e%20null%20--%3e%20bottom%0atop%20--%3e%20bool%20--%3e%20bottom%0atop%20--%3e%20string%20--%3e%20bottom%0atop%20--%3e%20bytes%20--%3e%20bottom%0atop%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%0atop%20--%3e%20struct%20--%3e%20bottom%0atop%20--%3e%20list%20--%3e%20bottom%0a%3c/div%3e%3cfigcaption%20class=%22diagram__caption%22%3eCUE&amp;#39;s%20predefined%20type%20hierarchy%3c/figcaption%3e%0a%3c/figure%3e%0a%0a%0a%3cp%3eCUE%20defines%20the%20value%20%3cstrong%3etop%3c/strong%3e%20%28or%20any%29,%0awritten%20&amp;ldquo;%3ccode%3e_%3c/code%3e&amp;rdquo;,%20%3c!--%20%60%20vim%20syntax%20highlighting%20hack%20--%3e%0asuch%20that%20all%20types%20are%20an%20instance%20of%20top,%0aand%20the%20value%20%3cstrong%3ebottom%3c/strong%3e%20%28or%20error%29,%0awritten%20&amp;ldquo;%3ccode%3e_%7c_%3c/code%3e&amp;rdquo;,%0awhich%20is%20an%20instance%20of%20all%20types.%3c/p%3e%0a%3cp%3eWe%20can%20mix%20the%20terms%20types%20and%20values%20interchangeably%20because%0aCUE%20doesn&amp;rsquo;t%20distinguish%20between%0a%3ca%20href=%22/docs/tour/basics/types-are-values/%22%3etypes%20and%20values%3c/a%3e.%3cbr%3e%0aThe%20term%20&amp;ldquo;type&amp;rdquo;%20merely%20refers%20to%20the%20%3cem%3ekind%3c/em%3e%20of%20a%20value,%0awhich%20may%20or%20may%20not%20be%20a%20concrete%20instance.%3c/p%3e">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/types/types/&summary=CUE%20defines%20the%20following%20type%20hierarchy:%0aflowchart%20TD%20top[%22_%22]%20bottom[%22_%7c_%22]%20struct[%22%7b...%7d%22]%20list[%22[...]%22]%20top%20--%3e%20null%20--%3e%20bottom%20top%20--%3e%20bool%20--%3e%20bottom%20top%20--%3e%20string%20--%3e%20bottom%20top%20--%3e%20bytes%20--%3e%20bottom%20top%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%20top%20--%3e%20struct%20--%3e%20bottom%20top%20--%3e%20list%20--%3e%20bottom%20CUE&amp;#39;s%20predefined%20type%20hierarchy%20CUE%20defines%20the%20value%20top%20%28or%20any%29,%20written%20&amp;ldquo;_&amp;rdquo;,%20such%20that%20all%20types%20are%20an%20instance%20of%20top,%20and%20the%20value%20bottom%20%28or%20error%29,%20written%20&amp;ldquo;_%7c_&amp;rdquo;,%20which%20is%20an%20instance%20of%20all%20types.%0aWe%20can%20mix%20the%20terms%20types%20and%20values%20interchangeably%20because%20CUE%20doesn&amp;rsquo;t%20distinguish%20between%20types%20and%20values.%0aThe%20term%20&amp;ldquo;type&amp;rdquo;%20merely%20refers%20to%20the%20kind%20of%20a%20value,%20which%20may%20or%20may%20not%20be%20a%20concrete%20instance.%0a">
                 
 
 
@@ -874,16 +846,6 @@ require it to be completely concrete.
     <li class="tree__item">
         <a class="tree__link" href="/docs/tour/types/definitions/" title="Definitions">
             <span class="tree__text">Definitions</span>
-        </a>
-    </li>
-                    
-    
-    
-    
-
-    <li class="tree__item">
-        <a class="tree__link" href="/docs/tour/types/value-constraints/" title="Value constraints">
-            <span class="tree__text">Value constraints</span>
         </a>
     </li>
                     
@@ -1240,7 +1202,7 @@ require it to be completely concrete.
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Ftour%2Ftypes%2Ftypes%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Ftour%2Ftypes%2Ftypes%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1492,7 +1454,7 @@ require it to be completely concrete.
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

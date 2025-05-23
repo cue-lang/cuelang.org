@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Comprehensions provide a way to query and transform data.{{{with sidetrack “comprehensions-are-like-sql”}}} For those familiar with databases, they are very …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -24,7 +24,7 @@
   <meta property="og:description" content="Comprehensions provide a way to query and transform data.
 {{{with sidetrack “comprehensions-are-like-sql”}}} For those familiar with databases, they are very similar in nature to SQL. {{{end}}}
 A comprehension consists of 1 or more clauses followed by a map to emit a result for each of the 0 or more results produced by these clauses.
-Each clause is invoked for each value produced by the previous clause. If a comprehension is defined in a list, each final result becomes a list element.">
+Each clause is invoked for each value produced by the previous clause. If a comprehension is defined in a list, each final result becomes a list element. If it is defined within a map, each element is merged into this map.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -37,14 +37,14 @@ Each clause is invoked for each value produced by the previous clause. If a comp
   <meta name="twitter:description" content="Comprehensions provide a way to query and transform data.
 {{{with sidetrack “comprehensions-are-like-sql”}}} For those familiar with databases, they are very similar in nature to SQL. {{{end}}}
 A comprehension consists of 1 or more clauses followed by a map to emit a result for each of the 0 or more results produced by these clauses.
-Each clause is invoked for each value produced by the previous clause. If a comprehension is defined in a list, each final result becomes a list element.">
+Each clause is invoked for each value produced by the previous clause. If a comprehension is defined in a list, each final result becomes a list element. If it is defined within a map, each element is merged into this map.">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -61,7 +61,8 @@ Each clause is invoked for each value produced by the previous clause. If a comp
 <meta itemprop="description" content="Comprehensions provide a way to query and transform data.
 {{{with sidetrack &ldquo;comprehensions-are-like-sql&rdquo;}}} For those familiar with databases, they are very similar in nature to SQL. {{{end}}}
 A comprehension consists of 1 or more clauses followed by a map to emit a result for each of the 0 or more results produced by these clauses.
-Each clause is invoked for each value produced by the previous clause. If a comprehension is defined in a list, each final result becomes a list element.">
+Each clause is invoked for each value produced by the previous clause. If a comprehension is defined in a list, each final result becomes a list element. If it is defined within a map, each element is merged into this map.
+">
 
     
         <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
@@ -1193,7 +1194,7 @@ CUE has no switch or if-else construct, but these can be simulated using lists.<
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/templating/comprehensions/&text=Comprehensions%20provide%20a%20way%20to%20query%20and%20transform%20data.%0a%7b%7b%7bwith%20sidetrack%20&amp;ldquo;comprehensions-are-like-sql&amp;rdquo;%7d%7d%7d%20For%20those%20familiar%20with%20databases,%20they%20are%20very%20similar%20in%20nature%20to%20SQL.%20%7b%7b%7bend%7d%7d%7d%0aA%20comprehension%20consists%20of%201%20or%20more%20clauses%20followed%20by%20a%20map%20to%20emit%20a%20result%20for%20each%20of%20the%200%20or%20more%20results%20produced%20by%20these%20clauses.%0aEach%20clause%20is%20invoked%20for%20each%20value%20produced%20by%20the%20previous%20clause.%20If%20a%20comprehension%20is%20defined%20in%20a%20list,%20each%20final%20result%20becomes%20a%20list%20element.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/templating/comprehensions/&text=Comprehensions%20provide%20a%20way%20to%20query%20and%20transform%20data.%0a%7b%7b%7bwith%20sidetrack%20&amp;ldquo;comprehensions-are-like-sql&amp;rdquo;%7d%7d%7d%20For%20those%20familiar%20with%20databases,%20they%20are%20very%20similar%20in%20nature%20to%20SQL.%20%7b%7b%7bend%7d%7d%7d%0aA%20comprehension%20consists%20of%201%20or%20more%20clauses%20followed%20by%20a%20map%20to%20emit%20a%20result%20for%20each%20of%20the%200%20or%20more%20results%20produced%20by%20these%20clauses.%0aEach%20clause%20is%20invoked%20for%20each%20value%20produced%20by%20the%20previous%20clause.%20If%20a%20comprehension%20is%20defined%20in%20a%20list,%20each%20final%20result%20becomes%20a%20list%20element.%20If%20it%20is%20defined%20within%20a%20map,%20each%20element%20is%20merged%20into%20this%20map.%0a">
                 
 
 
@@ -1209,7 +1210,7 @@ CUE has no switch or if-else construct, but these can be simulated using lists.<
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/templating/comprehensions/&summary=Comprehensions%20provide%20a%20way%20to%20query%20and%20transform%20data.%0a%7b%7b%7bwith%20sidetrack%20&amp;ldquo;comprehensions-are-like-sql&amp;rdquo;%7d%7d%7d%20For%20those%20familiar%20with%20databases,%20they%20are%20very%20similar%20in%20nature%20to%20SQL.%20%7b%7b%7bend%7d%7d%7d%0aA%20comprehension%20consists%20of%201%20or%20more%20clauses%20followed%20by%20a%20map%20to%20emit%20a%20result%20for%20each%20of%20the%200%20or%20more%20results%20produced%20by%20these%20clauses.%0aEach%20clause%20is%20invoked%20for%20each%20value%20produced%20by%20the%20previous%20clause.%20If%20a%20comprehension%20is%20defined%20in%20a%20list,%20each%20final%20result%20becomes%20a%20list%20element.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/templating/comprehensions/&summary=Comprehensions%20provide%20a%20way%20to%20query%20and%20transform%20data.%0a%7b%7b%7bwith%20sidetrack%20&amp;ldquo;comprehensions-are-like-sql&amp;rdquo;%7d%7d%7d%20For%20those%20familiar%20with%20databases,%20they%20are%20very%20similar%20in%20nature%20to%20SQL.%20%7b%7b%7bend%7d%7d%7d%0aA%20comprehension%20consists%20of%201%20or%20more%20clauses%20followed%20by%20a%20map%20to%20emit%20a%20result%20for%20each%20of%20the%200%20or%20more%20results%20produced%20by%20these%20clauses.%0aEach%20clause%20is%20invoked%20for%20each%20value%20produced%20by%20the%20previous%20clause.%20If%20a%20comprehension%20is%20defined%20in%20a%20list,%20each%20final%20result%20becomes%20a%20list%20element.%20If%20it%20is%20defined%20within%20a%20map,%20each%20element%20is%20merged%20into%20this%20map.%0a">
                 
 
 
@@ -1525,7 +1526,7 @@ CUE has no switch or if-else construct, but these can be simulated using lists.<
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Ftemplating%2Fcomprehensions%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Ftemplating%2Fcomprehensions%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1777,7 +1778,7 @@ CUE has no switch or if-else construct, but these can be simulated using lists.<
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

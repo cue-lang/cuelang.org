@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_importing_workflows Driving GitHub Actions workflows with CUE by Jonathan …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -41,8 +41,8 @@ This allows you to switch to CUE as a source of truth for GitHub Actions workflo
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -56,9 +56,10 @@ This allows you to switch to CUE as a source of truth for GitHub Actions workflo
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="CUE By Example - Driving GitHub Actions workflows with CUE">
-<meta itemprop="description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_importing_workflows Driving GitHub Actions workflows with CUE by Jonathan Matthews
+<meta itemprop="description" content=" Source: https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_importing_workflows Driving GitHub Actions workflows with CUE by Jonathan Matthews
 This guide explains how to convert GitHub Actions workflow files from YAML to CUE, check those workflows are valid, and then use CUE&rsquo;s tooling layer to regenerate YAML.
-This allows you to switch to CUE as a source of truth for GitHub Actions workflows and perform client-side validation, without GitHub needing to know you&rsquo;re managing your workflows with CUE.">
+This allows you to switch to CUE as a source of truth for GitHub Actions workflows and perform client-side validation, without GitHub needing to know you&rsquo;re managing your workflows with CUE.
+">
 
     
         <meta itemprop="dateModified" content="2025-04-08T13:31:31+01:00" >
@@ -299,16 +300,16 @@ This allows you to switch to CUE as a source of truth for GitHub Actions
 workflows and perform client-side validation, without GitHub needing to know
 you&rsquo;re managing your workflows with CUE.
 
-
-
-:exclamation: WARNING :exclamation:
-
-
-
-
-This guide requires that you use cue version v0.11.0-alpha.2 or later. The process described below won&rsquo;t work with earlier versions. Check the version of your cue command by running cue version, and upgrade it if needed.
-
-
+  
+      
+          :exclamation: WARNING :exclamation:
+      
+  
+  
+      
+          This guide requires that you use cue version v0.11.0-alpha.2 or later. The process described below won&rsquo;t work with earlier versions. Check the version of your cue command by running cue version, and upgrade it if needed.
+      
+  
 
 
     
@@ -871,16 +872,16 @@ Usage:
 
 
 
-
-
-:exclamation: WARNING :exclamation:
-
-
-
-
-If you don&rsquo;t see the usage explanation for the regenerate workflow command (or if you receive an error message) then either your workflow command isn&rsquo;t set up as CUE requires, or you&rsquo;re running a CUE version older than v0.11.0-alpha.2. If you&rsquo;ve upgraded to at least that version but the usage explanation still isn&rsquo;t being displayed then: (1) double check the contents of the ci_tool.cue file and the modifications you made to it; (2) make sure its location in the repository is precisely as given in this guide; (3) ensure the filename is exactly ci_tool.cue; (4) check that the internal/ci/github/workflows.cue file has the same contents as shown above; (5) run cue vet ./internal/ci/github and check that your workflows actually validate successfully - in other words: were they truly valid before you even started this process? Lastly, make sure you&rsquo;ve followed all the steps in this guide, and that you invoked the cue help command from the repository&rsquo;s root directory. If you get really stuck, please come and join the CUE community and ask for some help!
-
-
+  
+      
+          :exclamation: WARNING :exclamation:
+      
+  
+  
+      
+          If you don&rsquo;t see the usage explanation for the regenerate workflow command (or if you receive an error message) then either your workflow command isn&rsquo;t set up as CUE requires, or you&rsquo;re running a CUE version older than v0.11.0-alpha.2. If you&rsquo;ve upgraded to at least that version but the usage explanation still isn&rsquo;t being displayed then: (1) double check the contents of the ci_tool.cue file and the modifications you made to it; (2) make sure its location in the repository is precisely as given in this guide; (3) ensure the filename is exactly ci_tool.cue; (4) check that the internal/ci/github/workflows.cue file has the same contents as shown above; (5) run cue vet ./internal/ci/github and check that your workflows actually validate successfully - in other words: were they truly valid before you even started this process? Lastly, make sure you&rsquo;ve followed all the steps in this guide, and that you invoked the cue help command from the repository&rsquo;s root directory. If you get really stuck, please come and join the CUE community and ask for some help!
+      
+  
 
 
     
@@ -1088,16 +1089,16 @@ regenerate YAML.</p>
 workflows and perform client-side validation, without GitHub needing to know
 you&rsquo;re managing your workflows with CUE.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">:exclamation: WARNING :exclamation:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">This guide requires that you use <code>cue</code> version <code>v0.11.0-alpha.2</code> or later. <strong>The process described below won&rsquo;t work with earlier versions</strong>. Check the version of your <code>cue</code> command by running <code>cue version</code>, and <a href="https://cuelang.org/dl">upgrade it</a> if needed.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">:exclamation: WARNING :exclamation:</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">This guide requires that you use <code>cue</code> version <code>v0.11.0-alpha.2</code> or later. <strong>The process described below won&rsquo;t work with earlier versions</strong>. Check the version of your <code>cue</code> command by running <code>cue version</code>, and <a href="https://cuelang.org/dl">upgrade it</a> if needed.</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="prerequisites">
     <a href="#prerequisites" class="anchor" aria-label="Anchor">
@@ -1710,16 +1711,16 @@ repository</strong>. For example:</p>
 </div></div>
 
 <table>
-<thead>
-<tr>
-<th style="text-align:left">:exclamation: WARNING :exclamation:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">If you <em>don&rsquo;t</em> see the usage explanation for the <code>regenerate</code> workflow command (or if you receive an error message) then <strong>either</strong> your workflow command isn&rsquo;t set up as CUE requires, <strong>or</strong> you&rsquo;re running a CUE version older than <code>v0.11.0-alpha.2</code>. If you&rsquo;ve <a href="https://cuelang.org/dl">upgraded to at least that version</a> but the usage explanation still isn&rsquo;t being displayed then: (1) double check the contents of the <code>ci_tool.cue</code> file and the modifications you made to it; (2) make sure its location in the repository is precisely as given in this guide; (3) ensure the filename is <em>exactly</em> <code>ci_tool.cue</code>; (4) check that the <code>internal/ci/github/workflows.cue</code> file has the same contents as shown above; (5) run <code>cue vet ./internal/ci/github</code> and check that your workflows actually validate successfully - in other words: were they truly valid before you even started this process? Lastly, make sure you&rsquo;ve followed all the steps in this guide, and that you invoked the <code>cue help</code> command from the repository&rsquo;s root directory. If you get really stuck, please come and join <a href="https://cuelang.org/community/">the CUE community</a> and ask for some help!</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">:exclamation: WARNING :exclamation:</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">If you <em>don&rsquo;t</em> see the usage explanation for the <code>regenerate</code> workflow command (or if you receive an error message) then <strong>either</strong> your workflow command isn&rsquo;t set up as CUE requires, <strong>or</strong> you&rsquo;re running a CUE version older than <code>v0.11.0-alpha.2</code>. If you&rsquo;ve <a href="https://cuelang.org/dl">upgraded to at least that version</a> but the usage explanation still isn&rsquo;t being displayed then: (1) double check the contents of the <code>ci_tool.cue</code> file and the modifications you made to it; (2) make sure its location in the repository is precisely as given in this guide; (3) ensure the filename is <em>exactly</em> <code>ci_tool.cue</code>; (4) check that the <code>internal/ci/github/workflows.cue</code> file has the same contents as shown above; (5) run <code>cue vet ./internal/ci/github</code> and check that your workflows actually validate successfully - in other words: were they truly valid before you even started this process? Lastly, make sure you&rsquo;ve followed all the steps in this guide, and that you invoked the <code>cue help</code> command from the repository&rsquo;s root directory. If you get really stuck, please come and join <a href="https://cuelang.org/community/">the CUE community</a> and ask for some help!</td>
+      </tr>
+  </tbody>
 </table>
 <h4 id="arrow_right-regenerate-the-yaml-workflow-files">
     <a href="#arrow_right-regenerate-the-yaml-workflow-files" class="anchor" aria-label="Anchor">
@@ -1938,7 +1939,7 @@ to all the CUE and YAML files. For example:</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/draft/cbe-001_github_actions_importing_workflows/&text=Source:%20https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_importing_workflows%20Driving%20GitHub%20Actions%20workflows%20with%20CUE%20by%20Jonathan%20Matthews%0aThis%20guide%20explains%20how%20to%20convert%20GitHub%20Actions%20workflow%20files%20from%20YAML%20to%20CUE,%20check%20those%20workflows%20are%20valid,%20and%20then%20use%20CUE&amp;rsquo;s%20tooling%20layer%20to%20regenerate%20YAML.%0aThis%20allows%20you%20to%20switch%20to%20CUE%20as%20a%20source%20of%20truth%20for%20GitHub%20Actions%20workflows%20and%20perform%20client-side%20validation,%20without%20GitHub%20needing%20to%20know%20you&amp;rsquo;re%20managing%20your%20workflows%20with%20CUE.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/draft/cbe-001_github_actions_importing_workflows/&text=%20Source:%20https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_importing_workflows%20Driving%20GitHub%20Actions%20workflows%20with%20CUE%20by%20Jonathan%20Matthews%0aThis%20guide%20explains%20how%20to%20convert%20GitHub%20Actions%20workflow%20files%20from%20YAML%20to%20CUE,%20check%20those%20workflows%20are%20valid,%20and%20then%20use%20CUE&amp;rsquo;s%20tooling%20layer%20to%20regenerate%20YAML.%0aThis%20allows%20you%20to%20switch%20to%20CUE%20as%20a%20source%20of%20truth%20for%20GitHub%20Actions%20workflows%20and%20perform%20client-side%20validation,%20without%20GitHub%20needing%20to%20know%20you&amp;rsquo;re%20managing%20your%20workflows%20with%20CUE.%0a">
                 
 
 
@@ -1954,7 +1955,7 @@ to all the CUE and YAML files. For example:</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/draft/cbe-001_github_actions_importing_workflows/&summary=Source:%20https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_importing_workflows%20Driving%20GitHub%20Actions%20workflows%20with%20CUE%20by%20Jonathan%20Matthews%0aThis%20guide%20explains%20how%20to%20convert%20GitHub%20Actions%20workflow%20files%20from%20YAML%20to%20CUE,%20check%20those%20workflows%20are%20valid,%20and%20then%20use%20CUE&amp;rsquo;s%20tooling%20layer%20to%20regenerate%20YAML.%0aThis%20allows%20you%20to%20switch%20to%20CUE%20as%20a%20source%20of%20truth%20for%20GitHub%20Actions%20workflows%20and%20perform%20client-side%20validation,%20without%20GitHub%20needing%20to%20know%20you&amp;rsquo;re%20managing%20your%20workflows%20with%20CUE.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/draft/cbe-001_github_actions_importing_workflows/&summary=%20Source:%20https://github.com/cue-labs/cue-by-example/tree/main/001_github_actions_importing_workflows%20Driving%20GitHub%20Actions%20workflows%20with%20CUE%20by%20Jonathan%20Matthews%0aThis%20guide%20explains%20how%20to%20convert%20GitHub%20Actions%20workflow%20files%20from%20YAML%20to%20CUE,%20check%20those%20workflows%20are%20valid,%20and%20then%20use%20CUE&amp;rsquo;s%20tooling%20layer%20to%20regenerate%20YAML.%0aThis%20allows%20you%20to%20switch%20to%20CUE%20as%20a%20source%20of%20truth%20for%20GitHub%20Actions%20workflows%20and%20perform%20client-side%20validation,%20without%20GitHub%20needing%20to%20know%20you&amp;rsquo;re%20managing%20your%20workflows%20with%20CUE.%0a">
                 
 
 
@@ -2270,7 +2271,7 @@ to all the CUE and YAML files. For example:</p>
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fdraft%2Fcbe-001_github_actions_importing_workflows%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fdraft%2Fcbe-001_github_actions_importing_workflows%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -2522,7 +2523,7 @@ to all the CUE and YAML files. For example:</p>
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 
