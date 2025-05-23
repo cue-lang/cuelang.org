@@ -13,6 +13,8 @@ same CUE package.
 If there is still no match then it may match a predefined value, such as a
 [predefined bound]({{< relref "docs/tour/types/bounddef" >}}).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 val: 1

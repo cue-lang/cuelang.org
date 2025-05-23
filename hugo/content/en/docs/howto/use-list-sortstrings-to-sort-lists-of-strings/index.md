@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.SortStrings`](https://pkg.go.dev/cuelang.org/go/pkg/list#SortStrings)
 to sort lists of strings alphabetically.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="left" >}}
 package example

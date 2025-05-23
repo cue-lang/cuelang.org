@@ -15,6 +15,8 @@ From version 0.11 onwards, the list arithmetic operators `*` and `+` don't work
 in CUE evaluated by the `cue` command and the Go API.
 Your CUE is not affected if a 0.11 version of `cue vet` evaluates it successfully.
 
+<!--more-->
+
 This CUE no longer works, and must be updated as
 [demonstrated below]({{< relref "removing-list-arithmetic-operators-v0.11" >}}#what-changes-are-needed-in-my-cue):
 

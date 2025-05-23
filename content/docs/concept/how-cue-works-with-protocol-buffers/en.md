@@ -16,6 +16,8 @@ Protobuf definitions can be converted to CUE by the `cue` command and CUE's Go
 API, promoting any CUE validation code placed in Protobuf options to
 first-class CUE value constraints.
 
+<!--more-->
+
 ## Using the `cue` command
 
 Let's start by **converting Protobuf to CUE** using the `cue` command.

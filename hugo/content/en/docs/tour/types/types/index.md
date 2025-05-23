@@ -35,6 +35,8 @@ CUE doesn't distinguish between
 The term "type" merely refers to the *kind* of a value,
 which may or may not be a concrete instance.
 
+<!--more-->
+
 In the following hypothetical example, `point` defines an arbitrary point,
 while `xaxis` and `yaxis` define any point on their respective axes.
 We say that `point`, `xaxis`, and `yaxis` are **incomplete**,

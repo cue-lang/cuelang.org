@@ -12,6 +12,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to transform YAML by reshaping some input data into different
 output.
 
+<!--more-->
+
 {{{with code "en" "emit"}}}
 exec cue export .:example -l input: data.yml -e output --out yaml
 cmp stdout out

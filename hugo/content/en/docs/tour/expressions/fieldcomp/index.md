@@ -17,6 +17,8 @@ and need to be accessed using
 [selectors, index expressions]({{< relref "docs/tour/references/selectors" >}}),
 or [aliases]({{< relref "docs/tour/references/aliases" >}}).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 import "strings"

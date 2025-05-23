@@ -12,6 +12,8 @@ authors:
 This guide demonstrates how to generate CUE from Go types defined in some
 dependency of a Go module.
 
+<!--more-->
+
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild

@@ -12,6 +12,8 @@ toc_hide: true
 This guide demonstrates how to write a Go program that validates JSON files
 using an embeded CUE schema.
 
+<!--more-->
+
 ## Set up some schema and data files
 
 {{< step stepNumber="1" >}}

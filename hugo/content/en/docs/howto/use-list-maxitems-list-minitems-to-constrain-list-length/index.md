@@ -15,6 +15,8 @@ demonstrates how to use the built-in functions
 [`list.MinItems`](https://pkg.go.dev/cuelang.org/go/pkg/list#MinItems)
 to require that a list contains a maximum and/or minimum number of items.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

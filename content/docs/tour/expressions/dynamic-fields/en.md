@@ -15,6 +15,8 @@ Referencing dynamic fields needs to be done using
 [selectors, index expressions]({{< relref "docs/tour/references/selectors" >}}),
 or [aliases]({{< relref "docs/tour/references/aliases" >}}).
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval file.cue
 cmp stdout out

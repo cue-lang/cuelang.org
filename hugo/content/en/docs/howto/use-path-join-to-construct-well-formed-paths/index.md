@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`path.Join`](https://pkg.go.dev/cuelang.org/go/pkg/path#Join)
 to construct well-formed paths from their individual string components.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example

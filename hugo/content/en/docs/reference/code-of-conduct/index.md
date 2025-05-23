@@ -32,6 +32,8 @@ We believe that healthy debate and disagreement are essential to a healthy proje
 However, it is never ok to be disrespectful.
 We value diverse opinions, but we value respectful behavior more.
 
+<!--more-->
+
 ## CUE Values
 
 These are the values to which people in the CUE community should aspire.

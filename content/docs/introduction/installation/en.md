@@ -33,6 +33,8 @@ The latest version of the `cue` command is:
 cue version
 {{{end}}}
 
+<!--more-->
+
 #### Download an official CUE binary
 
 On Linux, Microsoft Windows, and macOS, the `cue` command can be downloaded from the

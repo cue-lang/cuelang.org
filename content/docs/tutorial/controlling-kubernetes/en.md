@@ -11,3 +11,6 @@ for a collection of microservices.
 
 This tutorial can be read on CUE By Example:
 [github.com/cue-labs/cue-by-example](https://github.com/cue-labs/cue-by-example/tree/main/003_kubernetes_tutorial#controlling-kubernetes-with-cue).
+
+<!--more-->
+

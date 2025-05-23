@@ -21,6 +21,8 @@ and store the result in a JAR file on your computer.
 This is a required step before the library can be used by Java programs to
 access the capabilities of the CUE language.
 
+<!--more-->
+
 {{<info>}}
 `cue-api-java` is an experimental technology preview
 which is under development and is subject to change.

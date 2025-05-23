@@ -12,6 +12,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use the `cue` command to combine multiple YAML files into a
 list.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="a.yaml" language="yaml" area="top-left" >}}
 a: 1

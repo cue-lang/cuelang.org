@@ -20,6 +20,8 @@ from a list.
 This allows the list to be used as a constraint that only permits values that
 are present in the list.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue eval -i .:example
 cmp stdout out

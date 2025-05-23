@@ -17,6 +17,8 @@ to calculate various simple summary statistics for a list of numbers including
 the list's arithmetic mean, its maximum and minimum values, and the sum of its
 values.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location left right
 

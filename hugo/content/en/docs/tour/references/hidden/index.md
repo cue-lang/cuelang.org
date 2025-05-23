@@ -14,6 +14,8 @@ quotes.
 Quoted and non-quoted fields share the same namespace *unless* they start
 with an underscore.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 foo: int & <100 // This is a regular field.

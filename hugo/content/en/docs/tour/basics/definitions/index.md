@@ -17,6 +17,8 @@ will fail if any additional fields are specified.
 We say that such a definition defines a  **closed** struct.
 Including a `...` in a struct keeps it **open**.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 #Conn: {

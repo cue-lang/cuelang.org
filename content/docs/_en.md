@@ -14,6 +14,8 @@ data validation language with its roots in logic programming.
 It combines succinct yet clear syntax with powerful, flexible constraints that
 enable data, schema, and policy constraints to coexist seamlessly:
 
+<!--more-->
+
 {{{with code "en" "example"}}}
 #location left right
 ! exec cue vet -c example.cue

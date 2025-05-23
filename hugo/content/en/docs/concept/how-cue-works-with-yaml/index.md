@@ -23,6 +23,8 @@ demonstrated here by
 <!-- TODO: add links for capabilities -->
 <!-- TODO: add link to unification concept guide -->
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="data.yml" language="yml" area="left" >}}
 a: 1

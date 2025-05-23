@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 [`encoding/csv.Decode`](https://pkg.go.dev/cuelang.org/go/pkg/encoding/csv#Decode)
 to decode a file containing comma-separated values (CSV) into a list of lists.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue export file.cue -l input: text: data.csv -e output
 cmp stdout out

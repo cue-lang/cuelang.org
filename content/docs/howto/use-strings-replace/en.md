@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 to make copies of strings with specific substring replacements, *without* using
 regular expressions.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

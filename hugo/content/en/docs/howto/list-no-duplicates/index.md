@@ -11,6 +11,8 @@ In CUE, you often will work with lists of all sorts of values. To ensure a list
 has no duplicate items, use
 [list.UniqueItems](https://pkg.go.dev/cuelang.org/go/pkg/list#UniqueItems).
 
+<!--more-->
+
 ## Strings
 
 ```cue

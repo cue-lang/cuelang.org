@@ -14,6 +14,8 @@ followed by `...` and an optional value that constrains any elements that follow
 Open lists permit additional elements to be specified elsewhere, after the predefined elements.
 Both the predefined and additional elements may be constrained.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 // A is an open list with 3 predefined elements.

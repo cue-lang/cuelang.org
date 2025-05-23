@@ -16,6 +16,8 @@ it must unify successfully with *only one* of the disjunction's elements.
 <!-- TODO: should we relax or refine this wording,
 given that `x: 1 & ( 1 | int )` exports successfully? -->
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 #Conn: {

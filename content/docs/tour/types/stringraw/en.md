@@ -11,6 +11,8 @@ an arbitrary number of trailing hash symbols to the default.\
 It is changed by *surrounding* the string with the required number of hash symbols:
 `#"string value"#`.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 #location top bottom
 

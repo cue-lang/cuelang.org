@@ -17,6 +17,8 @@ into an evaluation that might cause the output to vary. As described in the
 reference, CUE allows information to be introduced, or *injected*, by using tag
 attributes and tag variables. This guide demonstrates tag variables.
 
+<!--more-->
+
 {{{with _script_ "en" "HIDDEN: set up bash strict mode"}}}
 # We use pipes on this page; make sure that `true|false|true` would fail:
 set -o pipefail

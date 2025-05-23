@@ -12,6 +12,8 @@ Selectors can be used if a field name is
 In other cases, including computed references and non-valid identifiers,
 index expressions can be used.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

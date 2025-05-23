@@ -14,6 +14,8 @@ to avoid configuration-related errors. This How-to Guide checks and ensures
 each value in a JSON file is the _data type_ it's supposed to be, using the CUE
 command line.
 
+<!--more-->
+
 ## Prerequisites
 
 -   You have [CUE installed]({{< relref "docs/introduction/installation" >}})

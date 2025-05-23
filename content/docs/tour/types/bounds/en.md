@@ -12,6 +12,8 @@ A bound is expressed using comparison operators such as `>`, `<=`, and `!=`.
 It permits values where the comparison would return `true`,
 and we say that *the bound is defined* for these values.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 #nofmt https://github.com/cue-lang/cue/issues/2913
 

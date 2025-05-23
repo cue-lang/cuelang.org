@@ -13,6 +13,8 @@ override by configuring various CUE attributes.
 
 This guide shows you how to use the `cue exp gengotypes` command.
 
+<!--more-->
+
 ## Why was `gengotypes` introduced?
 
 When a Go program works with CUE it can be useful to declare Go types which

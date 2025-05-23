@@ -16,6 +16,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates using an **optional field** marker to constrain a field's value -
 *but only if it is present*.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package example

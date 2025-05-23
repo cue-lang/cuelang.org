@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 to check that values represent valid IPv4 or IPv6 addresses as strings or lists
 of bytes.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

@@ -16,6 +16,8 @@ function
 to close a
 [struct]({{< relref "docs/reference/glossary#struct" >}}).
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

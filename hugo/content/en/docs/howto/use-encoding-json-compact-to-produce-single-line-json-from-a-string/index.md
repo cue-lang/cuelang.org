@@ -14,6 +14,8 @@ demonstrates how to use the built-in function
 to transform JSON held in a string into a single line of JSON with all
 insignificant whitespace removed.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="left" >}}
 package example

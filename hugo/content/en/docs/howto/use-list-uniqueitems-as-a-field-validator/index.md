@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.UniqueItems`](https://pkg.go.dev/cuelang.org/go/pkg/list#UniqueItems)
 to ensure that a list's items are unique.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

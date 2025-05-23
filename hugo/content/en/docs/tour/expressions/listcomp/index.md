@@ -10,6 +10,8 @@ List comprehensions are constructed from
 They can be combined in any order,
 on a single line or split across multiple lines.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 #n: [1, 2, 3, 4, 5, 6, 7, 8, 9]

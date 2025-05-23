@@ -14,6 +14,8 @@ languages such as Java.
 The library is under development and is subject to change.
 {{</info>}}
 
+<!--more-->
+
 ## Prerequisites
 
 - **Go version 1.22 or later** with [`cgo`](https://pkg.go.dev/cmd/cgo) enabled

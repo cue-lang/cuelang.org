@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 [`encoding/csv.Encode`](https://pkg.go.dev/cuelang.org/go/pkg/encoding/csv#Encode)
 to encode a list of lists into a string as comma-separated values (CSV).
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue export -e output --out text
 cmp stdout out

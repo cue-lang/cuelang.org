@@ -13,6 +13,8 @@ demonstrates how to validate an integer value's parity.
 
 Two schemas `#Odd` and `#Even` are presented that validate an integer is either odd or even respectively.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue eval -ic
 cmp stdout out
