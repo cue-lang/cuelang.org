@@ -27,7 +27,7 @@
     {{- $title :=  $page.Title -}}
     {{- $link := $page.RelPermalink -}}
     {{- $publishDate := $page.PublishDate -}}
-    {{- $summary := $page.Summary -}}
+    {{- $summary := $page.Summary | plainify -}}
     {{- $content := "" -}}
     {{- $tags := cond (isset $page.Params "tags") ($page.Params.tags) "" -}}
     {{- $contentType := $page.FirstSection.Title -}}

@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="{{ with .Description | $.RenderString | plainify }}{{ . -}}
-{{ else }}{{ with .Summary }}{{ replace ( trim ( . | plainify | htmlUnescape | chomp | truncate 160) " ")  "\n" "" -}}
+{{ else }}{{ with .Summary | plainify }}{{ replace ( trim ( . | plainify | htmlUnescape | chomp | truncate 160) " ")  "\n" "" -}}
 {{ else }}{{ with .Site.Params.description -}}{{- . | $.RenderString | plainify -}}
 {{ end }}{{ end }}{{ end -}}">
 {{ hugo.Generator }}

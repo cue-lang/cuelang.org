@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns Managing Mythic Beasts DNS zones with CUE by Jonathan Matthews with essential …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns Managing Mythic Beasts DNS zones with CUE by Jonathan Matthews with …">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -43,8 +43,8 @@ Mythic Beasts publishes an API that allows customers to replace all the DNS reco
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -58,10 +58,11 @@ Mythic Beasts publishes an API that allows customers to replace all the DNS reco
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="CUE By Example - Managing Mythic Beasts DNS zones with CUE">
-<meta itemprop="description" content="Source: https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns Managing Mythic Beasts DNS zones with CUE by Jonathan Matthews with essential CUE contributions from Roger Peppe
+<meta itemprop="description" content=" Source: https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns Managing Mythic Beasts DNS zones with CUE by Jonathan Matthews with essential CUE contributions from Roger Peppe
 Introduction Mythic Beasts is a UK-based company whose &ldquo;About&rdquo; page says they are &hellip;
 a privately owned hosting ISP with a focus on providing services to technically capable customers.
-Mythic Beasts publishes an API that allows customers to replace all the DNS records in a specific zone without using a web-based control panel.">
+Mythic Beasts publishes an API that allows customers to replace all the DNS records in a specific zone without using a web-based control panel.
+">
 
     
         <meta itemprop="dateModified" content="2025-03-27T16:38:46+00:00" >
@@ -310,7 +311,6 @@ Mythic Beasts is a UK-based company whose
 
 a privately owned hosting ISP with a focus on providing services to
 technically capable customers.
-
 Mythic Beasts publishes an API that allows customers to replace all the DNS
 records in a specific zone without using a web-based control panel.
 This guide demonstrates how CUE can be used to keep the underlying DNS records
@@ -1024,16 +1024,16 @@ Replace DNS zones
 
 :arrow_right: Change all DNS records in all zones
 
-
-
-:exclamation: WARNING :exclamation:
-
-
-
-
-The API calls used by this guide completely replace ALL existing records stored in a Mythic Beasts DNS zone.It is not possible to bring such a DNS zone incrementally under the control of the system outlined in this guide.To use this guide safely, either use a test DNS zone with unimportant contents, or export the contents of a non-test zone and convert them exhaustively and carefully into the structured data format demonstrated in this guide.
-
-
+  
+      
+          :exclamation: WARNING :exclamation:
+      
+  
+  
+      
+          The API calls used by this guide completely replace ALL existing records stored in a Mythic Beasts DNS zone.It is not possible to bring such a DNS zone incrementally under the control of the system outlined in this guide.To use this guide safely, either use a test DNS zone with unimportant contents, or export the contents of a non-test zone and convert them exhaustively and carefully into the structured data format demonstrated in this guide.
+      
+  
 
 Having read the warning, above, invoke the CUE workflow command as follows.
 This will replace all DNS records across all the zones you&rsquo;ve configured:
@@ -1125,8 +1125,8 @@ https://www.mythic-beasts.com/support/api/dnsv2?format=yaml
 <div class="note__content">Source: <a href="https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns">https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns</a></div>
 </div>
 
-<h1 id="managing-mythic-beasts-dnshttpswwwmythic-beastscomsupportdomainsprimarydns-zones-with-cue">
-    <a href="#managing-mythic-beasts-dnshttpswwwmythic-beastscomsupportdomainsprimarydns-zones-with-cue" class="anchor" aria-label="Anchor">
+<h1 id="managing-mythic-beasts-dns-zones-with-cue">
+    <a href="#managing-mythic-beasts-dns-zones-with-cue" class="anchor" aria-label="Anchor">
 
 
 
@@ -1151,8 +1151,7 @@ https://www.mythic-beasts.com/support/api/dnsv2?format=yaml
 <a href="https://www.mythic-beasts.com/article/about">&ldquo;About&rdquo; page</a> says they are &hellip;</p>
 <blockquote>
 <p>a privately owned hosting ISP with a focus on providing services to
-technically capable customers.</p>
-</blockquote>
+technically capable customers.</p></blockquote>
 <p>Mythic Beasts publishes an API that allows customers to replace all the DNS
 records in a specific zone <em>without</em> using a web-based control panel.</p>
 <p>This guide demonstrates how CUE can be used to keep the underlying DNS records
@@ -1925,16 +1924,16 @@ current zone contents carefully!</strong><br>
 </svg>
 </a>:arrow_right: Change <em>all</em> DNS records in <em>all</em> zones</h4>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">:exclamation: WARNING :exclamation:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">The API calls used by this guide <strong>completely replace ALL existing records stored in a Mythic Beasts DNS zone</strong>.<br>It is <strong>not possible</strong> to bring such a DNS zone <em>incrementally</em> under the control of the system outlined in this guide.<br><br>To use this guide safely, either use a test DNS zone with unimportant contents, or export the contents of a non-test zone and convert them <em>exhaustively and carefully</em> into the structured data format demonstrated in this guide.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">:exclamation: WARNING :exclamation:</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">The API calls used by this guide <strong>completely replace ALL existing records stored in a Mythic Beasts DNS zone</strong>.<br>It is <strong>not possible</strong> to bring such a DNS zone <em>incrementally</em> under the control of the system outlined in this guide.<br><br>To use this guide safely, either use a test DNS zone with unimportant contents, or export the contents of a non-test zone and convert them <em>exhaustively and carefully</em> into the structured data format demonstrated in this guide.</td>
+      </tr>
+  </tbody>
 </table>
 <p>Having read the warning, above, invoke the CUE workflow command as follows.</p>
 <p><em>This will <strong>replace</strong> all DNS records across all the zones you&rsquo;ve configured</em>:</p>
@@ -2046,7 +2045,7 @@ zone in its own file if that layout suits you best.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/draft/cbe-004_mythic_beasts_dns/&text=Source:%20https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns%20Managing%20Mythic%20Beasts%20DNS%20zones%20with%20CUE%20by%20Jonathan%20Matthews%20with%20essential%20CUE%20contributions%20from%20Roger%20Peppe%0aIntroduction%20Mythic%20Beasts%20is%20a%20UK-based%20company%20whose%20&amp;ldquo;About&amp;rdquo;%20page%20says%20they%20are%20&amp;hellip;%0aa%20privately%20owned%20hosting%20ISP%20with%20a%20focus%20on%20providing%20services%20to%20technically%20capable%20customers.%0aMythic%20Beasts%20publishes%20an%20API%20that%20allows%20customers%20to%20replace%20all%20the%20DNS%20records%20in%20a%20specific%20zone%20without%20using%20a%20web-based%20control%20panel.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/draft/cbe-004_mythic_beasts_dns/&text=%20Source:%20https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns%20Managing%20Mythic%20Beasts%20DNS%20zones%20with%20CUE%20by%20Jonathan%20Matthews%20with%20essential%20CUE%20contributions%20from%20Roger%20Peppe%0aIntroduction%20Mythic%20Beasts%20is%20a%20UK-based%20company%20whose%20&amp;ldquo;About&amp;rdquo;%20page%20says%20they%20are%20&amp;hellip;%0aa%20privately%20owned%20hosting%20ISP%20with%20a%20focus%20on%20providing%20services%20to%20technically%20capable%20customers.%0aMythic%20Beasts%20publishes%20an%20API%20that%20allows%20customers%20to%20replace%20all%20the%20DNS%20records%20in%20a%20specific%20zone%20without%20using%20a%20web-based%20control%20panel.%0a">
                 
 
 
@@ -2062,7 +2061,7 @@ zone in its own file if that layout suits you best.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/draft/cbe-004_mythic_beasts_dns/&summary=Source:%20https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns%20Managing%20Mythic%20Beasts%20DNS%20zones%20with%20CUE%20by%20Jonathan%20Matthews%20with%20essential%20CUE%20contributions%20from%20Roger%20Peppe%0aIntroduction%20Mythic%20Beasts%20is%20a%20UK-based%20company%20whose%20&amp;ldquo;About&amp;rdquo;%20page%20says%20they%20are%20&amp;hellip;%0aa%20privately%20owned%20hosting%20ISP%20with%20a%20focus%20on%20providing%20services%20to%20technically%20capable%20customers.%0aMythic%20Beasts%20publishes%20an%20API%20that%20allows%20customers%20to%20replace%20all%20the%20DNS%20records%20in%20a%20specific%20zone%20without%20using%20a%20web-based%20control%20panel.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/draft/cbe-004_mythic_beasts_dns/&summary=%20Source:%20https://github.com/cue-labs/cue-by-example/tree/main/004_mythic_beasts_dns%20Managing%20Mythic%20Beasts%20DNS%20zones%20with%20CUE%20by%20Jonathan%20Matthews%20with%20essential%20CUE%20contributions%20from%20Roger%20Peppe%0aIntroduction%20Mythic%20Beasts%20is%20a%20UK-based%20company%20whose%20&amp;ldquo;About&amp;rdquo;%20page%20says%20they%20are%20&amp;hellip;%0aa%20privately%20owned%20hosting%20ISP%20with%20a%20focus%20on%20providing%20services%20to%20technically%20capable%20customers.%0aMythic%20Beasts%20publishes%20an%20API%20that%20allows%20customers%20to%20replace%20all%20the%20DNS%20records%20in%20a%20specific%20zone%20without%20using%20a%20web-based%20control%20panel.%0a">
                 
 
 
@@ -2378,7 +2377,7 @@ zone in its own file if that layout suits you best.</p>
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fdraft%2Fcbe-004_mythic_beasts_dns%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Fdraft%2Fcbe-004_mythic_beasts_dns%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -2630,7 +2629,7 @@ zone in its own file if that layout suits you best.</p>
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 

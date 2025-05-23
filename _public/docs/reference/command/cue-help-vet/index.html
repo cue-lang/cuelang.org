@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en" dir="ltr" class="no-js">
-    <head><meta charset="utf-8">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="TERMINAL Copy code Copied! $ cue help vet The vet command validates CUE and other data files. The command is silent when it succeeds, emitting no output and an …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -18,27 +18,26 @@
 <meta name="msapplication-config" content="/favicons/browserconfig.xml">
 <meta name="theme-color" content="#232a68">
 
-<title>cue help vet | CUE</title><meta property="og:url" content="/docs/reference/command/cue-help-vet/">
+<title>cue help vet | CUE</title><meta property="og:url" content="//localhost:1313/docs/reference/command/cue-help-vet/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="cue help vet">
-  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help vet The vet command validates CUE and other data files. The command is silent when it succeeds, emitting no output and an exit code of zero. Otherwise, errors are reported and the command returns a non-zero exit code. vet starts by ensuring that there are no validation errors. If errors are found then they are reported and the command exits. If there are no validation errors then, by default, vet checks that the result of the evaluation is concrete.">
+  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help vet The vet command validates CUE and other data files. The command is silent when it succeeds, emitting no output and an exit code of zero. Otherwise, errors are reported and the command returns a non-zero exit code. vet starts by ensuring that there are no validation errors. If errors are found then they are reported and the command exits. If there are no validation errors then, by default, vet checks that the result of the evaluation is concrete. It reports an error if the evaluation contains any regular fields that have non-concrete values. Skip this step by specifying -c=false, which permits regular fields to have non-concrete values. Specify -c/-c=true to report errors mentioning which regular fields have non-concrete values. Checking non-CUE files Vet can also check non-CUE files. The following file formats are currently supported: Format Extensions JSON .json .jsonl .ndjson YAML .yaml .yml TOML .toml TEXT .txt (validate a single string value) To activate this mode, the non-CUE files must be explicitly mentioned on the command line. There must also be at least one CUE file to hold the constraints. In this mode, each file will be verified against a CUE constraint. If the files contain multiple objects (such as using --- in YAML) then each object will be verified individually. By default, each file is checked against the root of the loaded CUE files. The -d can be used to only verify files against the result of an expression evaluated within the CUE files. This can be useful if the CUE files contain a set of definitions to pick from. Examples: # Check files against a CUE file: cue vet -c foo.cue foo.yaml # Check files against a particular expression cue vet -c foo.cue lang/en.yaml lang/de.yaml -d &#39;#Translation&#39; More than one expression may be given using multiple -d flags. Each non-CUE file must match all expression values. Usage: cue vet [flags] Flags: -c, --concrete require the evaluation to be concrete, or set -c=false to allow incomplete values -t, --inject stringArray set the value of a tagged field -T, --inject-vars inject system variables in tags --list concatenate multiple objects into a list --merge merge non-CUE files (default true) -n, --name string glob filter for non-CUE file names in directories -p, --package string package name for non-CUE files -l, --path stringArray CUE expression for single path component (see &#39;cue help flags&#39; for details) --proto_enum string mode for rendering enums (int|json) (default &#34;int&#34;) -I, --proto_path stringArray paths in which to search for imports -d, --schema string expression to select schema for evaluating values in non-CUE files --with-context import as object with contextual data Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
     <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
-    <meta property="og:image" content="/img/social.png">
+    <meta property="og:image" content="//localhost:1313/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:image" content="//localhost:1313/img/social.png">
   <meta name="twitter:title" content="cue help vet">
-  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help vet The vet command validates CUE and other data files. The command is silent when it succeeds, emitting no output and an exit code of zero. Otherwise, errors are reported and the command returns a non-zero exit code. vet starts by ensuring that there are no validation errors. If errors are found then they are reported and the command exits. If there are no validation errors then, by default, vet checks that the result of the evaluation is concrete.">
+  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help vet The vet command validates CUE and other data files. The command is silent when it succeeds, emitting no output and an exit code of zero. Otherwise, errors are reported and the command returns a non-zero exit code. vet starts by ensuring that there are no validation errors. If errors are found then they are reported and the command exits. If there are no validation errors then, by default, vet checks that the result of the evaluation is concrete. It reports an error if the evaluation contains any regular fields that have non-concrete values. Skip this step by specifying -c=false, which permits regular fields to have non-concrete values. Specify -c/-c=true to report errors mentioning which regular fields have non-concrete values. Checking non-CUE files Vet can also check non-CUE files. The following file formats are currently supported: Format Extensions JSON .json .jsonl .ndjson YAML .yaml .yml TOML .toml TEXT .txt (validate a single string value) To activate this mode, the non-CUE files must be explicitly mentioned on the command line. There must also be at least one CUE file to hold the constraints. In this mode, each file will be verified against a CUE constraint. If the files contain multiple objects (such as using --- in YAML) then each object will be verified individually. By default, each file is checked against the root of the loaded CUE files. The -d can be used to only verify files against the result of an expression evaluated within the CUE files. This can be useful if the CUE files contain a set of definitions to pick from. Examples: # Check files against a CUE file: cue vet -c foo.cue foo.yaml # Check files against a particular expression cue vet -c foo.cue lang/en.yaml lang/de.yaml -d &#39;#Translation&#39; More than one expression may be given using multiple -d flags. Each non-CUE file must match all expression values. Usage: cue vet [flags] Flags: -c, --concrete require the evaluation to be concrete, or set -c=false to allow incomplete values -t, --inject stringArray set the value of a tagged field -T, --inject-vars inject system variables in tags --list concatenate multiple objects into a list --merge merge non-CUE files (default true) -n, --name string glob filter for non-CUE file names in directories -p, --package string package name for non-CUE files -l, --path stringArray CUE expression for single path component (see &#39;cue help flags&#39; for details) --proto_enum string mode for rendering enums (int|json) (default &#34;int&#34;) -I, --proto_path stringArray paths in which to search for imports -d, --schema string expression to select schema for evaluating values in non-CUE files --with-context import as object with contextual data Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link href="/scss/main.css" rel="stylesheet">
 
 
 
@@ -52,13 +51,13 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="cue help vet">
-<meta itemprop="description" content="TERMINAL Copy code Copied! $ cue help vet The vet command validates CUE and other data files. The command is silent when it succeeds, emitting no output and an exit code of zero. Otherwise, errors are reported and the command returns a non-zero exit code. vet starts by ensuring that there are no validation errors. If errors are found then they are reported and the command exits. If there are no validation errors then, by default, vet checks that the result of the evaluation is concrete.">
+<meta itemprop="description" content=" TERMINAL Copy code Copied! $ cue help vet The vet command validates CUE and other data files. The command is silent when it succeeds, emitting no output and an exit code of zero. Otherwise, errors are reported and the command returns a non-zero exit code. vet starts by ensuring that there are no validation errors. If errors are found then they are reported and the command exits. If there are no validation errors then, by default, vet checks that the result of the evaluation is concrete. It reports an error if the evaluation contains any regular fields that have non-concrete values. Skip this step by specifying -c=false, which permits regular fields to have non-concrete values. Specify -c/-c=true to report errors mentioning which regular fields have non-concrete values. Checking non-CUE files Vet can also check non-CUE files. The following file formats are currently supported: Format Extensions JSON .json .jsonl .ndjson YAML .yaml .yml TOML .toml TEXT .txt (validate a single string value) To activate this mode, the non-CUE files must be explicitly mentioned on the command line. There must also be at least one CUE file to hold the constraints. In this mode, each file will be verified against a CUE constraint. If the files contain multiple objects (such as using --- in YAML) then each object will be verified individually. By default, each file is checked against the root of the loaded CUE files. The -d can be used to only verify files against the result of an expression evaluated within the CUE files. This can be useful if the CUE files contain a set of definitions to pick from. Examples: # Check files against a CUE file: cue vet -c foo.cue foo.yaml # Check files against a particular expression cue vet -c foo.cue lang/en.yaml lang/de.yaml -d &#39;#Translation&#39; More than one expression may be given using multiple -d flags. Each non-CUE file must match all expression values. Usage: cue vet [flags] Flags: -c, --concrete require the evaluation to be concrete, or set -c=false to allow incomplete values -t, --inject stringArray set the value of a tagged field -T, --inject-vars inject system variables in tags --list concatenate multiple objects into a list --merge merge non-CUE files (default true) -n, --name string glob filter for non-CUE file names in directories -p, --package string package name for non-CUE files -l, --path stringArray CUE expression for single path component (see &#39;cue help flags&#39; for details) --proto_enum string mode for rendering enums (int|json) (default &#34;int&#34;) -I, --proto_path stringArray paths in which to search for imports -d, --schema string expression to select schema for evaluating values in non-CUE files --with-context import as object with contextual data Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress ">
 
     
         <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
     
             
-        <meta itemprop="image" content="/img/social.png"/>
+        <meta itemprop="image" content="//localhost:1313/img/social.png"/>
             
     <meta itemprop="keywords" content="cue command," />
 
@@ -110,7 +109,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                     <span class="nav__text">GitHub</span>
@@ -123,7 +122,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                     <span class="nav__text">Slack</span>
@@ -136,7 +135,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                     <span class="nav__text">Discord</span>
@@ -149,7 +148,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                     <span class="nav__text">X (Twitter)</span>
@@ -162,7 +161,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                     <span class="nav__text">Bluesky</span>
@@ -175,7 +174,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                     <span class="nav__text">YouTube</span>
@@ -191,7 +190,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 </a></div>
 
@@ -202,7 +201,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--search"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--search"></use>
 </svg>
 <span>Search</span>
                 </a>
@@ -231,7 +230,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--menu"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--menu"></use>
 </svg>
 </button>
             </div>
@@ -254,12 +253,12 @@
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/">References</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/">References</a></li>
     
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/command/">The cue command</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/command/">The cue command</a></li>
     
     
 
@@ -494,7 +493,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--share"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--share"></use>
 </svg>
 
         <span>Open share options</span>
@@ -502,14 +501,14 @@ Global Flags:
 
     <ul class="share__list">
         <li class="share__item" data-copy>
-            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/reference/command/cue-help-vet/">
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="//localhost:1313/docs/reference/command/cue-help-vet/">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 
                 <span class="share__link-text">Copy link</span>
@@ -520,14 +519,14 @@ Global Flags:
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-vet/&text=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20vet%20The%20vet%20command%20validates%20CUE%20and%20other%20data%20files.%20The%20command%20is%20silent%20when%20it%20succeeds,%20emitting%20no%20output%20and%20an%20exit%20code%20of%20zero.%20Otherwise,%20errors%20are%20reported%20and%20the%20command%20returns%20a%20non-zero%20exit%20code.%20vet%20starts%20by%20ensuring%20that%20there%20are%20no%20validation%20errors.%20If%20errors%20are%20found%20then%20they%20are%20reported%20and%20the%20command%20exits.%20If%20there%20are%20no%20validation%20errors%20then,%20by%20default,%20vet%20checks%20that%20the%20result%20of%20the%20evaluation%20is%20concrete.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=//localhost:1313/docs/reference/command/cue-help-vet/&text=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20vet%20The%20vet%20command%20validates%20CUE%20and%20other%20data%20files.%20The%20command%20is%20silent%20when%20it%20succeeds,%20emitting%20no%20output%20and%20an%20exit%20code%20of%20zero.%20Otherwise,%20errors%20are%20reported%20and%20the%20command%20returns%20a%20non-zero%20exit%20code.%20vet%20starts%20by%20ensuring%20that%20there%20are%20no%20validation%20errors.%20If%20errors%20are%20found%20then%20they%20are%20reported%20and%20the%20command%20exits.%20If%20there%20are%20no%20validation%20errors%20then,%20by%20default,%20vet%20checks%20that%20the%20result%20of%20the%20evaluation%20is%20concrete.%20It%20reports%20an%20error%20if%20the%20evaluation%20contains%20any%20regular%20fields%20that%20have%20non-concrete%20values.%20Skip%20this%20step%20by%20specifying%20-c=false,%20which%20permits%20regular%20fields%20to%20have%20non-concrete%20values.%20Specify%20-c/-c=true%20to%20report%20errors%20mentioning%20which%20regular%20fields%20have%20non-concrete%20values.%20Checking%20non-CUE%20files%20Vet%20can%20also%20check%20non-CUE%20files.%20The%20following%20file%20formats%20are%20currently%20supported:%20Format%20Extensions%20JSON%20.json%20.jsonl%20.ndjson%20YAML%20.yaml%20.yml%20TOML%20.toml%20TEXT%20.txt%20%28validate%20a%20single%20string%20value%29%20To%20activate%20this%20mode,%20the%20non-CUE%20files%20must%20be%20explicitly%20mentioned%20on%20the%20command%20line.%20There%20must%20also%20be%20at%20least%20one%20CUE%20file%20to%20hold%20the%20constraints.%20In%20this%20mode,%20each%20file%20will%20be%20verified%20against%20a%20CUE%20constraint.%20If%20the%20files%20contain%20multiple%20objects%20%28such%20as%20using%20---%20in%20YAML%29%20then%20each%20object%20will%20be%20verified%20individually.%20By%20default,%20each%20file%20is%20checked%20against%20the%20root%20of%20the%20loaded%20CUE%20files.%20The%20-d%20can%20be%20used%20to%20only%20verify%20files%20against%20the%20result%20of%20an%20expression%20evaluated%20within%20the%20CUE%20files.%20This%20can%20be%20useful%20if%20the%20CUE%20files%20contain%20a%20set%20of%20definitions%20to%20pick%20from.%20Examples:%20#%20Check%20files%20against%20a%20CUE%20file:%20cue%20vet%20-c%20foo.cue%20foo.yaml%20#%20Check%20files%20against%20a%20particular%20expression%20cue%20vet%20-c%20foo.cue%20lang/en.yaml%20lang/de.yaml%20-d%20&amp;#39;#Translation&amp;#39;%20More%20than%20one%20expression%20may%20be%20given%20using%20multiple%20-d%20flags.%20Each%20non-CUE%20file%20must%20match%20all%20expression%20values.%20Usage:%20cue%20vet%20[flags]%20Flags:%20-c,%20--concrete%20require%20the%20evaluation%20to%20be%20concrete,%20or%20set%20-c=false%20to%20allow%20incomplete%20values%20-t,%20--inject%20stringArray%20set%20the%20value%20of%20a%20tagged%20field%20-T,%20--inject-vars%20inject%20system%20variables%20in%20tags%20--list%20concatenate%20multiple%20objects%20into%20a%20list%20--merge%20merge%20non-CUE%20files%20%28default%20true%29%20-n,%20--name%20string%20glob%20filter%20for%20non-CUE%20file%20names%20in%20directories%20-p,%20--package%20string%20package%20name%20for%20non-CUE%20files%20-l,%20--path%20stringArray%20CUE%20expression%20for%20single%20path%20component%20%28see%20&amp;#39;cue%20help%20flags&amp;#39;%20for%20details%29%20--proto_enum%20string%20mode%20for%20rendering%20enums%20%28int%7cjson%29%20%28default%20&amp;#34;int&amp;#34;%29%20-I,%20--proto_path%20stringArray%20paths%20in%20which%20to%20search%20for%20imports%20-d,%20--schema%20string%20expression%20to%20select%20schema%20for%20evaluating%20values%20in%20non-CUE%20files%20--with-context%20import%20as%20object%20with%20contextual%20data%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on X (Twitter)</span></p>
@@ -536,14 +535,14 @@ Global Flags:
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-vet/&summary=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20vet%20The%20vet%20command%20validates%20CUE%20and%20other%20data%20files.%20The%20command%20is%20silent%20when%20it%20succeeds,%20emitting%20no%20output%20and%20an%20exit%20code%20of%20zero.%20Otherwise,%20errors%20are%20reported%20and%20the%20command%20returns%20a%20non-zero%20exit%20code.%20vet%20starts%20by%20ensuring%20that%20there%20are%20no%20validation%20errors.%20If%20errors%20are%20found%20then%20they%20are%20reported%20and%20the%20command%20exits.%20If%20there%20are%20no%20validation%20errors%20then,%20by%20default,%20vet%20checks%20that%20the%20result%20of%20the%20evaluation%20is%20concrete.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=//localhost:1313/docs/reference/command/cue-help-vet/&summary=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20vet%20The%20vet%20command%20validates%20CUE%20and%20other%20data%20files.%20The%20command%20is%20silent%20when%20it%20succeeds,%20emitting%20no%20output%20and%20an%20exit%20code%20of%20zero.%20Otherwise,%20errors%20are%20reported%20and%20the%20command%20returns%20a%20non-zero%20exit%20code.%20vet%20starts%20by%20ensuring%20that%20there%20are%20no%20validation%20errors.%20If%20errors%20are%20found%20then%20they%20are%20reported%20and%20the%20command%20exits.%20If%20there%20are%20no%20validation%20errors%20then,%20by%20default,%20vet%20checks%20that%20the%20result%20of%20the%20evaluation%20is%20concrete.%20It%20reports%20an%20error%20if%20the%20evaluation%20contains%20any%20regular%20fields%20that%20have%20non-concrete%20values.%20Skip%20this%20step%20by%20specifying%20-c=false,%20which%20permits%20regular%20fields%20to%20have%20non-concrete%20values.%20Specify%20-c/-c=true%20to%20report%20errors%20mentioning%20which%20regular%20fields%20have%20non-concrete%20values.%20Checking%20non-CUE%20files%20Vet%20can%20also%20check%20non-CUE%20files.%20The%20following%20file%20formats%20are%20currently%20supported:%20Format%20Extensions%20JSON%20.json%20.jsonl%20.ndjson%20YAML%20.yaml%20.yml%20TOML%20.toml%20TEXT%20.txt%20%28validate%20a%20single%20string%20value%29%20To%20activate%20this%20mode,%20the%20non-CUE%20files%20must%20be%20explicitly%20mentioned%20on%20the%20command%20line.%20There%20must%20also%20be%20at%20least%20one%20CUE%20file%20to%20hold%20the%20constraints.%20In%20this%20mode,%20each%20file%20will%20be%20verified%20against%20a%20CUE%20constraint.%20If%20the%20files%20contain%20multiple%20objects%20%28such%20as%20using%20---%20in%20YAML%29%20then%20each%20object%20will%20be%20verified%20individually.%20By%20default,%20each%20file%20is%20checked%20against%20the%20root%20of%20the%20loaded%20CUE%20files.%20The%20-d%20can%20be%20used%20to%20only%20verify%20files%20against%20the%20result%20of%20an%20expression%20evaluated%20within%20the%20CUE%20files.%20This%20can%20be%20useful%20if%20the%20CUE%20files%20contain%20a%20set%20of%20definitions%20to%20pick%20from.%20Examples:%20#%20Check%20files%20against%20a%20CUE%20file:%20cue%20vet%20-c%20foo.cue%20foo.yaml%20#%20Check%20files%20against%20a%20particular%20expression%20cue%20vet%20-c%20foo.cue%20lang/en.yaml%20lang/de.yaml%20-d%20&amp;#39;#Translation&amp;#39;%20More%20than%20one%20expression%20may%20be%20given%20using%20multiple%20-d%20flags.%20Each%20non-CUE%20file%20must%20match%20all%20expression%20values.%20Usage:%20cue%20vet%20[flags]%20Flags:%20-c,%20--concrete%20require%20the%20evaluation%20to%20be%20concrete,%20or%20set%20-c=false%20to%20allow%20incomplete%20values%20-t,%20--inject%20stringArray%20set%20the%20value%20of%20a%20tagged%20field%20-T,%20--inject-vars%20inject%20system%20variables%20in%20tags%20--list%20concatenate%20multiple%20objects%20into%20a%20list%20--merge%20merge%20non-CUE%20files%20%28default%20true%29%20-n,%20--name%20string%20glob%20filter%20for%20non-CUE%20file%20names%20in%20directories%20-p,%20--package%20string%20package%20name%20for%20non-CUE%20files%20-l,%20--path%20stringArray%20CUE%20expression%20for%20single%20path%20component%20%28see%20&amp;#39;cue%20help%20flags&amp;#39;%20for%20details%29%20--proto_enum%20string%20mode%20for%20rendering%20enums%20%28int%7cjson%29%20%28default%20&amp;#34;int&amp;#34;%29%20-I,%20--proto_path%20stringArray%20paths%20in%20which%20to%20search%20for%20imports%20-d,%20--schema%20string%20expression%20to%20select%20schema%20for%20evaluating%20values%20in%20non-CUE%20files%20--with-context%20import%20as%20object%20with%20contextual%20data%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-linkedin"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on Linkedin</span></p>
@@ -569,7 +568,7 @@ Global Flags:
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-left"></use>
 </svg>
 
                 <span class="prevnext__text">cue help version</span>
@@ -581,7 +580,7 @@ Global Flags:
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-right"></use>
 </svg>
 
             </a></nav>
@@ -1119,7 +1118,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 <span>Hide side navigation</span>
                 </button>
@@ -1133,7 +1132,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 <span>Show side navigation</span>
         </button>
@@ -1302,7 +1301,7 @@ Global Flags:
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-vet%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2F%2Flocalhost%3A1313%2Fdocs%2Freference%2Fcommand%2Fcue-help-vet%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1334,7 +1333,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 
                 </a>
@@ -1345,7 +1344,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                 <span class="button__text">Close</span>
@@ -1373,7 +1372,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                     <span class="button__text">Hide menu</span>
@@ -1453,7 +1452,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                 <span class="nav__text">GitHub</span>
@@ -1470,7 +1469,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                 <span class="nav__text">Slack</span>
@@ -1487,7 +1486,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                 <span class="nav__text">Discord</span>
@@ -1504,7 +1503,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                 <span class="nav__text">X (Twitter)</span>
@@ -1521,7 +1520,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                 <span class="nav__text">Bluesky</span>
@@ -1538,7 +1537,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                 <span class="nav__text">YouTube</span>
@@ -1553,8 +1552,7 @@ Global Flags:
 
         
 
-    
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.js" defer></script>
 
 
 

@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en" dir="ltr" class="no-js">
-    <head><meta charset="utf-8">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="This command is still in an experimental stage – it may be changed or removed at any time. TERMINAL Copy code Copied! $ cue help mod mirror WARNING: THIS …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -18,27 +18,26 @@
 <meta name="msapplication-config" content="/favicons/browserconfig.xml">
 <meta name="theme-color" content="#232a68">
 
-<title>cue help mod mirror | CUE</title><meta property="og:url" content="/docs/reference/command/cue-help-mod-mirror/">
+<title>cue help mod mirror | CUE</title><meta property="og:url" content="//localhost:1313/docs/reference/command/cue-help-mod-mirror/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="cue help mod mirror">
-  <meta property="og:description" content="This command is still in an experimental stage – it may be changed or removed at any time. TERMINAL Copy code Copied! $ cue help mod mirror WARNING: THIS COMMAND IS EXPERIMENTAL. This commmand ensures that a set of modules and their dependencies are available (&#34;mirrored&#34;) in a registry. For each module specified on the command line, it ensures that the module and all the modules it depends on are present in both the &#34;from&#34; registry and the &#34;to&#34; registry, and that the contents are the same in each.">
+  <meta property="og:description" content="This command is still in an experimental stage – it may be changed or removed at any time. TERMINAL Copy code Copied! $ cue help mod mirror WARNING: THIS COMMAND IS EXPERIMENTAL. This commmand ensures that a set of modules and their dependencies are available (&#34;mirrored&#34;) in a registry. For each module specified on the command line, it ensures that the module and all the modules it depends on are present in both the &#34;from&#34; registry and the &#34;to&#34; registry, and that the contents are the same in each. If --no-deps is specified then the module will be mirrored without its dependencies. A module may be specified as &lt;module&gt;@&lt;version&gt;, in which case the specified version will be mirrored. If the version is canonical (for example v1.2.3), then exactly that version will be mirrored, otherwise (for example v1) the latest corresponding version will be mirrored (or all corresponding versions if --all-versions is specified). For example: # Copy from $CUE_REGISTRY (usually the Central Registry) to my.registry.example cue mod mirror --to my.registry.example foo.com/m1@v1.2.3 bar.org@v2 will copy the exact module foo.com/m1@v1.2.3 but the latest version of bar.org@2, or all v2.x.y versions if --all-versions is given. If no major version is specified, the latest major version will be chosen. By default the latest version is chosen by consulting the source registry, unless the --mod flag is specified, in which case the current module&#39;s dependencies will be used. When --mod is given and no modules are specified on the command line, all the current module&#39;s dependencies will be mirrored. Note that this command is not yet stable and may be changed. Usage: cue mod mirror [module...] [flags] Flags: -a, --all-versions copy all available versions of the specified modules -n, --dry-run only run simulation --from string source registry (defaults to $CUE_REGISTRY) -m, --mod mirror the current main module&#39;s dependency modules by default --no-deps do not copy module dependencies --to string destination registry (defaults to $CUE_REGISTRY) Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
     <meta property="article:modified_time" content="2025-05-22T15:38:42+01:00">
-    <meta property="og:image" content="/img/social.png">
+    <meta property="og:image" content="//localhost:1313/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:image" content="//localhost:1313/img/social.png">
   <meta name="twitter:title" content="cue help mod mirror">
-  <meta name="twitter:description" content="This command is still in an experimental stage – it may be changed or removed at any time. TERMINAL Copy code Copied! $ cue help mod mirror WARNING: THIS COMMAND IS EXPERIMENTAL. This commmand ensures that a set of modules and their dependencies are available (&#34;mirrored&#34;) in a registry. For each module specified on the command line, it ensures that the module and all the modules it depends on are present in both the &#34;from&#34; registry and the &#34;to&#34; registry, and that the contents are the same in each.">
+  <meta name="twitter:description" content="This command is still in an experimental stage – it may be changed or removed at any time. TERMINAL Copy code Copied! $ cue help mod mirror WARNING: THIS COMMAND IS EXPERIMENTAL. This commmand ensures that a set of modules and their dependencies are available (&#34;mirrored&#34;) in a registry. For each module specified on the command line, it ensures that the module and all the modules it depends on are present in both the &#34;from&#34; registry and the &#34;to&#34; registry, and that the contents are the same in each. If --no-deps is specified then the module will be mirrored without its dependencies. A module may be specified as &lt;module&gt;@&lt;version&gt;, in which case the specified version will be mirrored. If the version is canonical (for example v1.2.3), then exactly that version will be mirrored, otherwise (for example v1) the latest corresponding version will be mirrored (or all corresponding versions if --all-versions is specified). For example: # Copy from $CUE_REGISTRY (usually the Central Registry) to my.registry.example cue mod mirror --to my.registry.example foo.com/m1@v1.2.3 bar.org@v2 will copy the exact module foo.com/m1@v1.2.3 but the latest version of bar.org@2, or all v2.x.y versions if --all-versions is given. If no major version is specified, the latest major version will be chosen. By default the latest version is chosen by consulting the source registry, unless the --mod flag is specified, in which case the current module&#39;s dependencies will be used. When --mod is given and no modules are specified on the command line, all the current module&#39;s dependencies will be mirrored. Note that this command is not yet stable and may be changed. Usage: cue mod mirror [module...] [flags] Flags: -a, --all-versions copy all available versions of the specified modules -n, --dry-run only run simulation --from string source registry (defaults to $CUE_REGISTRY) -m, --mod mirror the current main module&#39;s dependency modules by default --no-deps do not copy module dependencies --to string destination registry (defaults to $CUE_REGISTRY) Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link href="/scss/main.css" rel="stylesheet">
 
 
 
@@ -52,13 +51,13 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="cue help mod mirror">
-<meta itemprop="description" content="This command is still in an experimental stage &ndash; it may be changed or removed at any time. TERMINAL Copy code Copied! $ cue help mod mirror WARNING: THIS COMMAND IS EXPERIMENTAL. This commmand ensures that a set of modules and their dependencies are available (&#34;mirrored&#34;) in a registry. For each module specified on the command line, it ensures that the module and all the modules it depends on are present in both the &#34;from&#34; registry and the &#34;to&#34; registry, and that the contents are the same in each.">
+<meta itemprop="description" content=" This command is still in an experimental stage &ndash; it may be changed or removed at any time. TERMINAL Copy code Copied! $ cue help mod mirror WARNING: THIS COMMAND IS EXPERIMENTAL. This commmand ensures that a set of modules and their dependencies are available (&#34;mirrored&#34;) in a registry. For each module specified on the command line, it ensures that the module and all the modules it depends on are present in both the &#34;from&#34; registry and the &#34;to&#34; registry, and that the contents are the same in each. If --no-deps is specified then the module will be mirrored without its dependencies. A module may be specified as &lt;module&gt;@&lt;version&gt;, in which case the specified version will be mirrored. If the version is canonical (for example v1.2.3), then exactly that version will be mirrored, otherwise (for example v1) the latest corresponding version will be mirrored (or all corresponding versions if --all-versions is specified). For example: # Copy from $CUE_REGISTRY (usually the Central Registry) to my.registry.example cue mod mirror --to my.registry.example foo.com/m1@v1.2.3 bar.org@v2 will copy the exact module foo.com/m1@v1.2.3 but the latest version of bar.org@2, or all v2.x.y versions if --all-versions is given. If no major version is specified, the latest major version will be chosen. By default the latest version is chosen by consulting the source registry, unless the --mod flag is specified, in which case the current module&#39;s dependencies will be used. When --mod is given and no modules are specified on the command line, all the current module&#39;s dependencies will be mirrored. Note that this command is not yet stable and may be changed. Usage: cue mod mirror [module...] [flags] Flags: -a, --all-versions copy all available versions of the specified modules -n, --dry-run only run simulation --from string source registry (defaults to $CUE_REGISTRY) -m, --mod mirror the current main module&#39;s dependency modules by default --no-deps do not copy module dependencies --to string destination registry (defaults to $CUE_REGISTRY) Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress ">
 
     
         <meta itemprop="dateModified" content="2025-05-22T15:38:42+01:00" >
     
             
-        <meta itemprop="image" content="/img/social.png"/>
+        <meta itemprop="image" content="//localhost:1313/img/social.png"/>
             
     <meta itemprop="keywords" content="cue command," />
 
@@ -110,7 +109,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                     <span class="nav__text">GitHub</span>
@@ -123,7 +122,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                     <span class="nav__text">Slack</span>
@@ -136,7 +135,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                     <span class="nav__text">Discord</span>
@@ -149,7 +148,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                     <span class="nav__text">X (Twitter)</span>
@@ -162,7 +161,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                     <span class="nav__text">Bluesky</span>
@@ -175,7 +174,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                     <span class="nav__text">YouTube</span>
@@ -191,7 +190,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 </a></div>
 
@@ -202,7 +201,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--search"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--search"></use>
 </svg>
 <span>Search</span>
                 </a>
@@ -231,7 +230,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--menu"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--menu"></use>
 </svg>
 </button>
             </div>
@@ -254,12 +253,12 @@
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/">References</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/">References</a></li>
     
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/command/">The cue command</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/command/">The cue command</a></li>
     
     
 
@@ -373,7 +372,7 @@ Global Flags:
 
 <svg class="icon note__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--exclamation"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--exclamation"></use>
 </svg>
 <div class="note__content">This command is still in an experimental stage &ndash; it may be changed or removed at any time.</div>
 </div>
@@ -467,7 +466,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--share"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--share"></use>
 </svg>
 
         <span>Open share options</span>
@@ -475,14 +474,14 @@ Global Flags:
 
     <ul class="share__list">
         <li class="share__item" data-copy>
-            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/reference/command/cue-help-mod-mirror/">
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="//localhost:1313/docs/reference/command/cue-help-mod-mirror/">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 
                 <span class="share__link-text">Copy link</span>
@@ -493,14 +492,14 @@ Global Flags:
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-mod-mirror/&text=This%20command%20is%20still%20in%20an%20experimental%20stage%20&amp;ndash;%20it%20may%20be%20changed%20or%20removed%20at%20any%20time.%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20mirror%20WARNING:%20THIS%20COMMAND%20IS%20EXPERIMENTAL.%20This%20commmand%20ensures%20that%20a%20set%20of%20modules%20and%20their%20dependencies%20are%20available%20%28&amp;#34;mirrored&amp;#34;%29%20in%20a%20registry.%20For%20each%20module%20specified%20on%20the%20command%20line,%20it%20ensures%20that%20the%20module%20and%20all%20the%20modules%20it%20depends%20on%20are%20present%20in%20both%20the%20&amp;#34;from&amp;#34;%20registry%20and%20the%20&amp;#34;to&amp;#34;%20registry,%20and%20that%20the%20contents%20are%20the%20same%20in%20each.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=//localhost:1313/docs/reference/command/cue-help-mod-mirror/&text=%20This%20command%20is%20still%20in%20an%20experimental%20stage%20&amp;ndash;%20it%20may%20be%20changed%20or%20removed%20at%20any%20time.%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20mirror%20WARNING:%20THIS%20COMMAND%20IS%20EXPERIMENTAL.%20This%20commmand%20ensures%20that%20a%20set%20of%20modules%20and%20their%20dependencies%20are%20available%20%28&amp;#34;mirrored&amp;#34;%29%20in%20a%20registry.%20For%20each%20module%20specified%20on%20the%20command%20line,%20it%20ensures%20that%20the%20module%20and%20all%20the%20modules%20it%20depends%20on%20are%20present%20in%20both%20the%20&amp;#34;from&amp;#34;%20registry%20and%20the%20&amp;#34;to&amp;#34;%20registry,%20and%20that%20the%20contents%20are%20the%20same%20in%20each.%20If%20--no-deps%20is%20specified%20then%20the%20module%20will%20be%20mirrored%20without%20its%20dependencies.%20A%20module%20may%20be%20specified%20as%20&amp;lt;module&amp;gt;@&amp;lt;version&amp;gt;,%20in%20which%20case%20the%20specified%20version%20will%20be%20mirrored.%20If%20the%20version%20is%20canonical%20%28for%20example%20v1.2.3%29,%20then%20exactly%20that%20version%20will%20be%20mirrored,%20otherwise%20%28for%20example%20v1%29%20the%20latest%20corresponding%20version%20will%20be%20mirrored%20%28or%20all%20corresponding%20versions%20if%20--all-versions%20is%20specified%29.%20For%20example:%20#%20Copy%20from%20$CUE_REGISTRY%20%28usually%20the%20Central%20Registry%29%20to%20my.registry.example%20cue%20mod%20mirror%20--to%20my.registry.example%20foo.com/m1@v1.2.3%20bar.org@v2%20will%20copy%20the%20exact%20module%20foo.com/m1@v1.2.3%20but%20the%20latest%20version%20of%20bar.org@2,%20or%20all%20v2.x.y%20versions%20if%20--all-versions%20is%20given.%20If%20no%20major%20version%20is%20specified,%20the%20latest%20major%20version%20will%20be%20chosen.%20By%20default%20the%20latest%20version%20is%20chosen%20by%20consulting%20the%20source%20registry,%20unless%20the%20--mod%20flag%20is%20specified,%20in%20which%20case%20the%20current%20module&amp;#39;s%20dependencies%20will%20be%20used.%20When%20--mod%20is%20given%20and%20no%20modules%20are%20specified%20on%20the%20command%20line,%20all%20the%20current%20module&amp;#39;s%20dependencies%20will%20be%20mirrored.%20Note%20that%20this%20command%20is%20not%20yet%20stable%20and%20may%20be%20changed.%20Usage:%20cue%20mod%20mirror%20[module...]%20[flags]%20Flags:%20-a,%20--all-versions%20copy%20all%20available%20versions%20of%20the%20specified%20modules%20-n,%20--dry-run%20only%20run%20simulation%20--from%20string%20source%20registry%20%28defaults%20to%20$CUE_REGISTRY%29%20-m,%20--mod%20mirror%20the%20current%20main%20module&amp;#39;s%20dependency%20modules%20by%20default%20--no-deps%20do%20not%20copy%20module%20dependencies%20--to%20string%20destination%20registry%20%28defaults%20to%20$CUE_REGISTRY%29%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on X (Twitter)</span></p>
@@ -509,14 +508,14 @@ Global Flags:
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-mod-mirror/&summary=This%20command%20is%20still%20in%20an%20experimental%20stage%20&amp;ndash;%20it%20may%20be%20changed%20or%20removed%20at%20any%20time.%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20mirror%20WARNING:%20THIS%20COMMAND%20IS%20EXPERIMENTAL.%20This%20commmand%20ensures%20that%20a%20set%20of%20modules%20and%20their%20dependencies%20are%20available%20%28&amp;#34;mirrored&amp;#34;%29%20in%20a%20registry.%20For%20each%20module%20specified%20on%20the%20command%20line,%20it%20ensures%20that%20the%20module%20and%20all%20the%20modules%20it%20depends%20on%20are%20present%20in%20both%20the%20&amp;#34;from&amp;#34;%20registry%20and%20the%20&amp;#34;to&amp;#34;%20registry,%20and%20that%20the%20contents%20are%20the%20same%20in%20each.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=//localhost:1313/docs/reference/command/cue-help-mod-mirror/&summary=%20This%20command%20is%20still%20in%20an%20experimental%20stage%20&amp;ndash;%20it%20may%20be%20changed%20or%20removed%20at%20any%20time.%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20mod%20mirror%20WARNING:%20THIS%20COMMAND%20IS%20EXPERIMENTAL.%20This%20commmand%20ensures%20that%20a%20set%20of%20modules%20and%20their%20dependencies%20are%20available%20%28&amp;#34;mirrored&amp;#34;%29%20in%20a%20registry.%20For%20each%20module%20specified%20on%20the%20command%20line,%20it%20ensures%20that%20the%20module%20and%20all%20the%20modules%20it%20depends%20on%20are%20present%20in%20both%20the%20&amp;#34;from&amp;#34;%20registry%20and%20the%20&amp;#34;to&amp;#34;%20registry,%20and%20that%20the%20contents%20are%20the%20same%20in%20each.%20If%20--no-deps%20is%20specified%20then%20the%20module%20will%20be%20mirrored%20without%20its%20dependencies.%20A%20module%20may%20be%20specified%20as%20&amp;lt;module&amp;gt;@&amp;lt;version&amp;gt;,%20in%20which%20case%20the%20specified%20version%20will%20be%20mirrored.%20If%20the%20version%20is%20canonical%20%28for%20example%20v1.2.3%29,%20then%20exactly%20that%20version%20will%20be%20mirrored,%20otherwise%20%28for%20example%20v1%29%20the%20latest%20corresponding%20version%20will%20be%20mirrored%20%28or%20all%20corresponding%20versions%20if%20--all-versions%20is%20specified%29.%20For%20example:%20#%20Copy%20from%20$CUE_REGISTRY%20%28usually%20the%20Central%20Registry%29%20to%20my.registry.example%20cue%20mod%20mirror%20--to%20my.registry.example%20foo.com/m1@v1.2.3%20bar.org@v2%20will%20copy%20the%20exact%20module%20foo.com/m1@v1.2.3%20but%20the%20latest%20version%20of%20bar.org@2,%20or%20all%20v2.x.y%20versions%20if%20--all-versions%20is%20given.%20If%20no%20major%20version%20is%20specified,%20the%20latest%20major%20version%20will%20be%20chosen.%20By%20default%20the%20latest%20version%20is%20chosen%20by%20consulting%20the%20source%20registry,%20unless%20the%20--mod%20flag%20is%20specified,%20in%20which%20case%20the%20current%20module&amp;#39;s%20dependencies%20will%20be%20used.%20When%20--mod%20is%20given%20and%20no%20modules%20are%20specified%20on%20the%20command%20line,%20all%20the%20current%20module&amp;#39;s%20dependencies%20will%20be%20mirrored.%20Note%20that%20this%20command%20is%20not%20yet%20stable%20and%20may%20be%20changed.%20Usage:%20cue%20mod%20mirror%20[module...]%20[flags]%20Flags:%20-a,%20--all-versions%20copy%20all%20available%20versions%20of%20the%20specified%20modules%20-n,%20--dry-run%20only%20run%20simulation%20--from%20string%20source%20registry%20%28defaults%20to%20$CUE_REGISTRY%29%20-m,%20--mod%20mirror%20the%20current%20main%20module&amp;#39;s%20dependency%20modules%20by%20default%20--no-deps%20do%20not%20copy%20module%20dependencies%20--to%20string%20destination%20registry%20%28defaults%20to%20$CUE_REGISTRY%29%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-linkedin"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on Linkedin</span></p>
@@ -542,7 +541,7 @@ Global Flags:
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-left"></use>
 </svg>
 
                 <span class="prevnext__text">cue help mod init</span>
@@ -554,7 +553,7 @@ Global Flags:
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-right"></use>
 </svg>
 
             </a></nav>
@@ -1092,7 +1091,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 <span>Hide side navigation</span>
                 </button>
@@ -1106,7 +1105,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 <span>Show side navigation</span>
         </button>
@@ -1275,7 +1274,7 @@ Global Flags:
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-mod-mirror%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2F%2Flocalhost%3A1313%2Fdocs%2Freference%2Fcommand%2Fcue-help-mod-mirror%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1307,7 +1306,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 
                 </a>
@@ -1318,7 +1317,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                 <span class="button__text">Close</span>
@@ -1346,7 +1345,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                     <span class="button__text">Hide menu</span>
@@ -1426,7 +1425,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                 <span class="nav__text">GitHub</span>
@@ -1443,7 +1442,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                 <span class="nav__text">Slack</span>
@@ -1460,7 +1459,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                 <span class="nav__text">Discord</span>
@@ -1477,7 +1476,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                 <span class="nav__text">X (Twitter)</span>
@@ -1494,7 +1493,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                 <span class="nav__text">Bluesky</span>
@@ -1511,7 +1510,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                 <span class="nav__text">YouTube</span>
@@ -1526,8 +1525,7 @@ Global Flags:
 
         
 
-    
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.js" defer></script>
 
 
 

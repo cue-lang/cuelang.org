@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en" dir="ltr" class="no-js">
-    <head><meta charset="utf-8">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="TERMINAL Copy code Copied! $ cue help commands Workflow commands define actions on instances. For example, they may specify how to upload a configuration to …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -18,27 +18,26 @@
 <meta name="msapplication-config" content="/favicons/browserconfig.xml">
 <meta name="theme-color" content="#232a68">
 
-<title>cue help commands | CUE</title><meta property="og:url" content="/docs/reference/command/cue-help-commands/">
+<title>cue help commands | CUE</title><meta property="og:url" content="//localhost:1313/docs/reference/command/cue-help-commands/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="cue help commands">
-  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help commands Workflow commands define actions on instances. For example, they may specify how to upload a configuration to Kubernetes. Workflow commands are defined directly in tool files, which are regular CUE files within the same package with a filename ending in _tool.cue. These are typically defined at the module root so that they apply to all instances. Each workflow command consists of one or more tasks.">
+  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help commands Workflow commands define actions on instances. For example, they may specify how to upload a configuration to Kubernetes. Workflow commands are defined directly in tool files, which are regular CUE files within the same package with a filename ending in _tool.cue. These are typically defined at the module root so that they apply to all instances. Each workflow command consists of one or more tasks. A task may, for example, load or write a file, consult a user on the command line, fetch a web page, and so on. Each task has inputs and outputs. Outputs are typically filled out by the task implementation as the task completes. Tasks are found as regular fields underneath the top-level &#34;command&#34; field, excluding hidden fields and definitions. Note that regular fields may be produced by comprehensions or from the result of other tasks, which can result in discovering more tasks. To avoid this, set the CUE_EXPERIMENT=cmdreferencepkg experiment flag. Inputs of tasks my refer to outputs of other tasks. The cue tool does a static analysis of the configuration and only starts tasks that are fully specified. Upon completion of each task, cue rewrites the instance, filling in the completed task, and reevaluates which other tasks can now start, and so on until all tasks have completed. Available tasks can be found in the package documentation at https://cuelang.org/go/pkg/tool#section-directories Examples: In this simple example, we define a workflow command called &#34;hello&#34;, which declares a single task called &#34;print&#34; which uses &#34;tool/exec.Run&#34; to execute a shell command that echos output to the terminal: $ cat &lt;&lt;EOF &gt; hello_tool.cue package foo import &#34;tool/exec&#34; city: &#34;Amsterdam&#34; who: *&#34;World&#34; | string @tag(who) // Say hello! command: hello: { print: exec.Run &amp; { cmd: &#34;echo Hello \(who)! Welcome to \(city).&#34; } } EOF We run the &#34;hello&#34; workflow command like this: $ cue cmd hello Hello World! Welcome to Amsterdam. $ cue cmd --inject who=Jan hello Hello Jan! Welcome to Amsterdam. In this example we declare the &#34;prompted&#34; workflow command which has four tasks. The first task prompts the user for a string input. The second task depends on the first, and echos the response back to the user with a friendly message. The third task pipes the output from the second to a file. The fourth task pipes the output from the second to standard output (i.e. it echos it again). package foo import ( &#34;tool/cli&#34; &#34;tool/exec&#34; &#34;tool/file&#34; ) city: &#34;Amsterdam&#34; // Say hello! command: prompter: { // save transcript to this file var: file: *&#34;out.txt&#34; | string @tag(file) ask: cli.Ask &amp; { prompt: &#34;What is your name?&#34; response: string } // starts after ask echo: exec.Run &amp; { cmd: [&#34;echo&#34;, &#34;Hello&#34;, ask.response &#43; &#34;!&#34;] stdout: string // capture stdout } // starts after echo append: file.Append &amp; { filename: var.file contents: echo.stdout } // also starts after echo print: cli.Print &amp; { text: echo.stdout } } The types of the commands and tasks are defined in CUE itself at cuelang.org/go/pkg/tool/tool.cue. command: [Name]: Command Command: { // Tasks specifies the things to run to complete a command. Tasks are // typically underspecified and completed by the particular internal // handler that is running them. Tasks can be a single task, or a full // hierarchy of tasks. // // Tasks that depend on the output of other tasks are run after such tasks. // Use $after if a task needs to run after another task but does not // otherwise depend on its output. Tasks // $usage summarizes how a command takes arguments. // // Example: // mycmd [-n] names $usage?: string // $short is short description of what the command does. $short?: string // $long is a longer description that spans multiple lines and // likely contain examples of usage of the command. $long?: string } // Tasks defines a hierarchy of tasks. A command completes if all // tasks have run to completion. Tasks: Task | { [name=Name]: Tasks } // Name defines a valid task or command name. Name: =~#&#34;^\PL([-](\PL|\PN))*$&#34;# // A Task defines a step in the execution of a command. Task: { // $id indicates the operation to run. Do not use this field directly; // instead unify with a task imported from one of the tool packages. $id: =~#&#34;\.&#34;# // $after can be used to specify a task is run after another one, // when it does not otherwise refer to an output of that task. $after?: Task | [...Task] } Related content Reference: cue help cmd">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
     <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
-    <meta property="og:image" content="/img/social.png">
+    <meta property="og:image" content="//localhost:1313/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:image" content="//localhost:1313/img/social.png">
   <meta name="twitter:title" content="cue help commands">
-  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help commands Workflow commands define actions on instances. For example, they may specify how to upload a configuration to Kubernetes. Workflow commands are defined directly in tool files, which are regular CUE files within the same package with a filename ending in _tool.cue. These are typically defined at the module root so that they apply to all instances. Each workflow command consists of one or more tasks.">
+  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help commands Workflow commands define actions on instances. For example, they may specify how to upload a configuration to Kubernetes. Workflow commands are defined directly in tool files, which are regular CUE files within the same package with a filename ending in _tool.cue. These are typically defined at the module root so that they apply to all instances. Each workflow command consists of one or more tasks. A task may, for example, load or write a file, consult a user on the command line, fetch a web page, and so on. Each task has inputs and outputs. Outputs are typically filled out by the task implementation as the task completes. Tasks are found as regular fields underneath the top-level &#34;command&#34; field, excluding hidden fields and definitions. Note that regular fields may be produced by comprehensions or from the result of other tasks, which can result in discovering more tasks. To avoid this, set the CUE_EXPERIMENT=cmdreferencepkg experiment flag. Inputs of tasks my refer to outputs of other tasks. The cue tool does a static analysis of the configuration and only starts tasks that are fully specified. Upon completion of each task, cue rewrites the instance, filling in the completed task, and reevaluates which other tasks can now start, and so on until all tasks have completed. Available tasks can be found in the package documentation at https://cuelang.org/go/pkg/tool#section-directories Examples: In this simple example, we define a workflow command called &#34;hello&#34;, which declares a single task called &#34;print&#34; which uses &#34;tool/exec.Run&#34; to execute a shell command that echos output to the terminal: $ cat &lt;&lt;EOF &gt; hello_tool.cue package foo import &#34;tool/exec&#34; city: &#34;Amsterdam&#34; who: *&#34;World&#34; | string @tag(who) // Say hello! command: hello: { print: exec.Run &amp; { cmd: &#34;echo Hello \(who)! Welcome to \(city).&#34; } } EOF We run the &#34;hello&#34; workflow command like this: $ cue cmd hello Hello World! Welcome to Amsterdam. $ cue cmd --inject who=Jan hello Hello Jan! Welcome to Amsterdam. In this example we declare the &#34;prompted&#34; workflow command which has four tasks. The first task prompts the user for a string input. The second task depends on the first, and echos the response back to the user with a friendly message. The third task pipes the output from the second to a file. The fourth task pipes the output from the second to standard output (i.e. it echos it again). package foo import ( &#34;tool/cli&#34; &#34;tool/exec&#34; &#34;tool/file&#34; ) city: &#34;Amsterdam&#34; // Say hello! command: prompter: { // save transcript to this file var: file: *&#34;out.txt&#34; | string @tag(file) ask: cli.Ask &amp; { prompt: &#34;What is your name?&#34; response: string } // starts after ask echo: exec.Run &amp; { cmd: [&#34;echo&#34;, &#34;Hello&#34;, ask.response &#43; &#34;!&#34;] stdout: string // capture stdout } // starts after echo append: file.Append &amp; { filename: var.file contents: echo.stdout } // also starts after echo print: cli.Print &amp; { text: echo.stdout } } The types of the commands and tasks are defined in CUE itself at cuelang.org/go/pkg/tool/tool.cue. command: [Name]: Command Command: { // Tasks specifies the things to run to complete a command. Tasks are // typically underspecified and completed by the particular internal // handler that is running them. Tasks can be a single task, or a full // hierarchy of tasks. // // Tasks that depend on the output of other tasks are run after such tasks. // Use $after if a task needs to run after another task but does not // otherwise depend on its output. Tasks // $usage summarizes how a command takes arguments. // // Example: // mycmd [-n] names $usage?: string // $short is short description of what the command does. $short?: string // $long is a longer description that spans multiple lines and // likely contain examples of usage of the command. $long?: string } // Tasks defines a hierarchy of tasks. A command completes if all // tasks have run to completion. Tasks: Task | { [name=Name]: Tasks } // Name defines a valid task or command name. Name: =~#&#34;^\PL([-](\PL|\PN))*$&#34;# // A Task defines a step in the execution of a command. Task: { // $id indicates the operation to run. Do not use this field directly; // instead unify with a task imported from one of the tool packages. $id: =~#&#34;\.&#34;# // $after can be used to specify a task is run after another one, // when it does not otherwise refer to an output of that task. $after?: Task | [...Task] } Related content Reference: cue help cmd">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link href="/scss/main.css" rel="stylesheet">
 
 
 
@@ -52,13 +51,13 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="cue help commands">
-<meta itemprop="description" content="TERMINAL Copy code Copied! $ cue help commands Workflow commands define actions on instances. For example, they may specify how to upload a configuration to Kubernetes. Workflow commands are defined directly in tool files, which are regular CUE files within the same package with a filename ending in _tool.cue. These are typically defined at the module root so that they apply to all instances. Each workflow command consists of one or more tasks.">
+<meta itemprop="description" content=" TERMINAL Copy code Copied! $ cue help commands Workflow commands define actions on instances. For example, they may specify how to upload a configuration to Kubernetes. Workflow commands are defined directly in tool files, which are regular CUE files within the same package with a filename ending in _tool.cue. These are typically defined at the module root so that they apply to all instances. Each workflow command consists of one or more tasks. A task may, for example, load or write a file, consult a user on the command line, fetch a web page, and so on. Each task has inputs and outputs. Outputs are typically filled out by the task implementation as the task completes. Tasks are found as regular fields underneath the top-level &#34;command&#34; field, excluding hidden fields and definitions. Note that regular fields may be produced by comprehensions or from the result of other tasks, which can result in discovering more tasks. To avoid this, set the CUE_EXPERIMENT=cmdreferencepkg experiment flag. Inputs of tasks my refer to outputs of other tasks. The cue tool does a static analysis of the configuration and only starts tasks that are fully specified. Upon completion of each task, cue rewrites the instance, filling in the completed task, and reevaluates which other tasks can now start, and so on until all tasks have completed. Available tasks can be found in the package documentation at https://cuelang.org/go/pkg/tool#section-directories Examples: In this simple example, we define a workflow command called &#34;hello&#34;, which declares a single task called &#34;print&#34; which uses &#34;tool/exec.Run&#34; to execute a shell command that echos output to the terminal: $ cat &lt;&lt;EOF &gt; hello_tool.cue package foo import &#34;tool/exec&#34; city: &#34;Amsterdam&#34; who: *&#34;World&#34; | string @tag(who) // Say hello! command: hello: { print: exec.Run &amp; { cmd: &#34;echo Hello \(who)! Welcome to \(city).&#34; } } EOF We run the &#34;hello&#34; workflow command like this: $ cue cmd hello Hello World! Welcome to Amsterdam. $ cue cmd --inject who=Jan hello Hello Jan! Welcome to Amsterdam. In this example we declare the &#34;prompted&#34; workflow command which has four tasks. The first task prompts the user for a string input. The second task depends on the first, and echos the response back to the user with a friendly message. The third task pipes the output from the second to a file. The fourth task pipes the output from the second to standard output (i.e. it echos it again). package foo import ( &#34;tool/cli&#34; &#34;tool/exec&#34; &#34;tool/file&#34; ) city: &#34;Amsterdam&#34; // Say hello! command: prompter: { // save transcript to this file var: file: *&#34;out.txt&#34; | string @tag(file) ask: cli.Ask &amp; { prompt: &#34;What is your name?&#34; response: string } // starts after ask echo: exec.Run &amp; { cmd: [&#34;echo&#34;, &#34;Hello&#34;, ask.response &#43; &#34;!&#34;] stdout: string // capture stdout } // starts after echo append: file.Append &amp; { filename: var.file contents: echo.stdout } // also starts after echo print: cli.Print &amp; { text: echo.stdout } } The types of the commands and tasks are defined in CUE itself at cuelang.org/go/pkg/tool/tool.cue. command: [Name]: Command Command: { // Tasks specifies the things to run to complete a command. Tasks are // typically underspecified and completed by the particular internal // handler that is running them. Tasks can be a single task, or a full // hierarchy of tasks. // // Tasks that depend on the output of other tasks are run after such tasks. // Use $after if a task needs to run after another task but does not // otherwise depend on its output. Tasks // $usage summarizes how a command takes arguments. // // Example: // mycmd [-n] names $usage?: string // $short is short description of what the command does. $short?: string // $long is a longer description that spans multiple lines and // likely contain examples of usage of the command. $long?: string } // Tasks defines a hierarchy of tasks. A command completes if all // tasks have run to completion. Tasks: Task | { [name=Name]: Tasks } // Name defines a valid task or command name. Name: =~#&#34;^\PL([-](\PL|\PN))*$&#34;# // A Task defines a step in the execution of a command. Task: { // $id indicates the operation to run. Do not use this field directly; // instead unify with a task imported from one of the tool packages. $id: =~#&#34;\.&#34;# // $after can be used to specify a task is run after another one, // when it does not otherwise refer to an output of that task. $after?: Task | [...Task] } Related content Reference: cue help cmd ">
 
     
         <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
     
             
-        <meta itemprop="image" content="/img/social.png"/>
+        <meta itemprop="image" content="//localhost:1313/img/social.png"/>
             
     <meta itemprop="keywords" content="cue command,workflow command," />
 
@@ -110,7 +109,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                     <span class="nav__text">GitHub</span>
@@ -123,7 +122,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                     <span class="nav__text">Slack</span>
@@ -136,7 +135,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                     <span class="nav__text">Discord</span>
@@ -149,7 +148,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                     <span class="nav__text">X (Twitter)</span>
@@ -162,7 +161,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                     <span class="nav__text">Bluesky</span>
@@ -175,7 +174,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                     <span class="nav__text">YouTube</span>
@@ -191,7 +190,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 </a></div>
 
@@ -202,7 +201,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--search"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--search"></use>
 </svg>
 <span>Search</span>
                 </a>
@@ -231,7 +230,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--menu"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--menu"></use>
 </svg>
 </button>
             </div>
@@ -254,12 +253,12 @@
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/">References</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/">References</a></li>
     
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/command/">The cue command</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/command/">The cue command</a></li>
     
     
 
@@ -653,7 +652,7 @@ Reference: cue help cmd
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>Related content</h2>
 <ul>
@@ -693,7 +692,7 @@ Reference: cue help cmd
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--share"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--share"></use>
 </svg>
 
         <span>Open share options</span>
@@ -701,14 +700,14 @@ Reference: cue help cmd
 
     <ul class="share__list">
         <li class="share__item" data-copy>
-            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/reference/command/cue-help-commands/">
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="//localhost:1313/docs/reference/command/cue-help-commands/">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 
                 <span class="share__link-text">Copy link</span>
@@ -719,14 +718,14 @@ Reference: cue help cmd
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-commands/&text=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20commands%20Workflow%20commands%20define%20actions%20on%20instances.%20For%20example,%20they%20may%20specify%20how%20to%20upload%20a%20configuration%20to%20Kubernetes.%20Workflow%20commands%20are%20defined%20directly%20in%20tool%20files,%20which%20are%20regular%20CUE%20files%20within%20the%20same%20package%20with%20a%20filename%20ending%20in%20_tool.cue.%20These%20are%20typically%20defined%20at%20the%20module%20root%20so%20that%20they%20apply%20to%20all%20instances.%20Each%20workflow%20command%20consists%20of%20one%20or%20more%20tasks.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=//localhost:1313/docs/reference/command/cue-help-commands/&text=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20commands%20Workflow%20commands%20define%20actions%20on%20instances.%20For%20example,%20they%20may%20specify%20how%20to%20upload%20a%20configuration%20to%20Kubernetes.%20Workflow%20commands%20are%20defined%20directly%20in%20tool%20files,%20which%20are%20regular%20CUE%20files%20within%20the%20same%20package%20with%20a%20filename%20ending%20in%20_tool.cue.%20These%20are%20typically%20defined%20at%20the%20module%20root%20so%20that%20they%20apply%20to%20all%20instances.%20Each%20workflow%20command%20consists%20of%20one%20or%20more%20tasks.%20A%20task%20may,%20for%20example,%20load%20or%20write%20a%20file,%20consult%20a%20user%20on%20the%20command%20line,%20fetch%20a%20web%20page,%20and%20so%20on.%20Each%20task%20has%20inputs%20and%20outputs.%20Outputs%20are%20typically%20filled%20out%20by%20the%20task%20implementation%20as%20the%20task%20completes.%20Tasks%20are%20found%20as%20regular%20fields%20underneath%20the%20top-level%20&amp;#34;command&amp;#34;%20field,%20excluding%20hidden%20fields%20and%20definitions.%20Note%20that%20regular%20fields%20may%20be%20produced%20by%20comprehensions%20or%20from%20the%20result%20of%20other%20tasks,%20which%20can%20result%20in%20discovering%20more%20tasks.%20To%20avoid%20this,%20set%20the%20CUE_EXPERIMENT=cmdreferencepkg%20experiment%20flag.%20Inputs%20of%20tasks%20my%20refer%20to%20outputs%20of%20other%20tasks.%20The%20cue%20tool%20does%20a%20static%20analysis%20of%20the%20configuration%20and%20only%20starts%20tasks%20that%20are%20fully%20specified.%20Upon%20completion%20of%20each%20task,%20cue%20rewrites%20the%20instance,%20filling%20in%20the%20completed%20task,%20and%20reevaluates%20which%20other%20tasks%20can%20now%20start,%20and%20so%20on%20until%20all%20tasks%20have%20completed.%20Available%20tasks%20can%20be%20found%20in%20the%20package%20documentation%20at%20https://cuelang.org/go/pkg/tool#section-directories%20Examples:%20In%20this%20simple%20example,%20we%20define%20a%20workflow%20command%20called%20&amp;#34;hello&amp;#34;,%20which%20declares%20a%20single%20task%20called%20&amp;#34;print&amp;#34;%20which%20uses%20&amp;#34;tool/exec.Run&amp;#34;%20to%20execute%20a%20shell%20command%20that%20echos%20output%20to%20the%20terminal:%20$%20cat%20&amp;lt;&amp;lt;EOF%20&amp;gt;%20hello_tool.cue%20package%20foo%20import%20&amp;#34;tool/exec&amp;#34;%20city:%20&amp;#34;Amsterdam&amp;#34;%20who:%20*&amp;#34;World&amp;#34;%20%7c%20string%20@tag%28who%29%20//%20Say%20hello!%20command:%20hello:%20%7b%20print:%20exec.Run%20&amp;amp;%20%7b%20cmd:%20&amp;#34;echo%20Hello%20%5c%28who%29!%20Welcome%20to%20%5c%28city%29.&amp;#34;%20%7d%20%7d%20EOF%20We%20run%20the%20&amp;#34;hello&amp;#34;%20workflow%20command%20like%20this:%20$%20cue%20cmd%20hello%20Hello%20World!%20Welcome%20to%20Amsterdam.%20$%20cue%20cmd%20--inject%20who=Jan%20hello%20Hello%20Jan!%20Welcome%20to%20Amsterdam.%20In%20this%20example%20we%20declare%20the%20&amp;#34;prompted&amp;#34;%20workflow%20command%20which%20has%20four%20tasks.%20The%20first%20task%20prompts%20the%20user%20for%20a%20string%20input.%20The%20second%20task%20depends%20on%20the%20first,%20and%20echos%20the%20response%20back%20to%20the%20user%20with%20a%20friendly%20message.%20The%20third%20task%20pipes%20the%20output%20from%20the%20second%20to%20a%20file.%20The%20fourth%20task%20pipes%20the%20output%20from%20the%20second%20to%20standard%20output%20%28i.e.%20it%20echos%20it%20again%29.%20package%20foo%20import%20%28%20&amp;#34;tool/cli&amp;#34;%20&amp;#34;tool/exec&amp;#34;%20&amp;#34;tool/file&amp;#34;%20%29%20city:%20&amp;#34;Amsterdam&amp;#34;%20//%20Say%20hello!%20command:%20prompter:%20%7b%20//%20save%20transcript%20to%20this%20file%20var:%20file:%20*&amp;#34;out.txt&amp;#34;%20%7c%20string%20@tag%28file%29%20ask:%20cli.Ask%20&amp;amp;%20%7b%20prompt:%20&amp;#34;What%20is%20your%20name?&amp;#34;%20response:%20string%20%7d%20//%20starts%20after%20ask%20echo:%20exec.Run%20&amp;amp;%20%7b%20cmd:%20[&amp;#34;echo&amp;#34;,%20&amp;#34;Hello&amp;#34;,%20ask.response%20&#43;%20&amp;#34;!&amp;#34;]%20stdout:%20string%20//%20capture%20stdout%20%7d%20//%20starts%20after%20echo%20append:%20file.Append%20&amp;amp;%20%7b%20filename:%20var.file%20contents:%20echo.stdout%20%7d%20//%20also%20starts%20after%20echo%20print:%20cli.Print%20&amp;amp;%20%7b%20text:%20echo.stdout%20%7d%20%7d%20The%20types%20of%20the%20commands%20and%20tasks%20are%20defined%20in%20CUE%20itself%20at%20cuelang.org/go/pkg/tool/tool.cue.%20command:%20[Name]:%20Command%20Command:%20%7b%20//%20Tasks%20specifies%20the%20things%20to%20run%20to%20complete%20a%20command.%20Tasks%20are%20//%20typically%20underspecified%20and%20completed%20by%20the%20particular%20internal%20//%20handler%20that%20is%20running%20them.%20Tasks%20can%20be%20a%20single%20task,%20or%20a%20full%20//%20hierarchy%20of%20tasks.%20//%20//%20Tasks%20that%20depend%20on%20the%20output%20of%20other%20tasks%20are%20run%20after%20such%20tasks.%20//%20Use%20$after%20if%20a%20task%20needs%20to%20run%20after%20another%20task%20but%20does%20not%20//%20otherwise%20depend%20on%20its%20output.%20Tasks%20//%20$usage%20summarizes%20how%20a%20command%20takes%20arguments.%20//%20//%20Example:%20//%20mycmd%20[-n]%20names%20$usage?:%20string%20//%20$short%20is%20short%20description%20of%20what%20the%20command%20does.%20$short?:%20string%20//%20$long%20is%20a%20longer%20description%20that%20spans%20multiple%20lines%20and%20//%20likely%20contain%20examples%20of%20usage%20of%20the%20command.%20$long?:%20string%20%7d%20//%20Tasks%20defines%20a%20hierarchy%20of%20tasks.%20A%20command%20completes%20if%20all%20//%20tasks%20have%20run%20to%20completion.%20Tasks:%20Task%20%7c%20%7b%20[name=Name]:%20Tasks%20%7d%20//%20Name%20defines%20a%20valid%20task%20or%20command%20name.%20Name:%20=~#&amp;#34;%5e%5cPL%28[-]%28%5cPL%7c%5cPN%29%29*$&amp;#34;#%20//%20A%20Task%20defines%20a%20step%20in%20the%20execution%20of%20a%20command.%20Task:%20%7b%20//%20$id%20indicates%20the%20operation%20to%20run.%20Do%20not%20use%20this%20field%20directly;%20//%20instead%20unify%20with%20a%20task%20imported%20from%20one%20of%20the%20tool%20packages.%20$id:%20=~#&amp;#34;%5c.&amp;#34;#%20//%20$after%20can%20be%20used%20to%20specify%20a%20task%20is%20run%20after%20another%20one,%20//%20when%20it%20does%20not%20otherwise%20refer%20to%20an%20output%20of%20that%20task.%20$after?:%20Task%20%7c%20[...Task]%20%7d%20Related%20content%20Reference:%20cue%20help%20cmd%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on X (Twitter)</span></p>
@@ -735,14 +734,14 @@ Reference: cue help cmd
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-commands/&summary=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20commands%20Workflow%20commands%20define%20actions%20on%20instances.%20For%20example,%20they%20may%20specify%20how%20to%20upload%20a%20configuration%20to%20Kubernetes.%20Workflow%20commands%20are%20defined%20directly%20in%20tool%20files,%20which%20are%20regular%20CUE%20files%20within%20the%20same%20package%20with%20a%20filename%20ending%20in%20_tool.cue.%20These%20are%20typically%20defined%20at%20the%20module%20root%20so%20that%20they%20apply%20to%20all%20instances.%20Each%20workflow%20command%20consists%20of%20one%20or%20more%20tasks.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=//localhost:1313/docs/reference/command/cue-help-commands/&summary=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20commands%20Workflow%20commands%20define%20actions%20on%20instances.%20For%20example,%20they%20may%20specify%20how%20to%20upload%20a%20configuration%20to%20Kubernetes.%20Workflow%20commands%20are%20defined%20directly%20in%20tool%20files,%20which%20are%20regular%20CUE%20files%20within%20the%20same%20package%20with%20a%20filename%20ending%20in%20_tool.cue.%20These%20are%20typically%20defined%20at%20the%20module%20root%20so%20that%20they%20apply%20to%20all%20instances.%20Each%20workflow%20command%20consists%20of%20one%20or%20more%20tasks.%20A%20task%20may,%20for%20example,%20load%20or%20write%20a%20file,%20consult%20a%20user%20on%20the%20command%20line,%20fetch%20a%20web%20page,%20and%20so%20on.%20Each%20task%20has%20inputs%20and%20outputs.%20Outputs%20are%20typically%20filled%20out%20by%20the%20task%20implementation%20as%20the%20task%20completes.%20Tasks%20are%20found%20as%20regular%20fields%20underneath%20the%20top-level%20&amp;#34;command&amp;#34;%20field,%20excluding%20hidden%20fields%20and%20definitions.%20Note%20that%20regular%20fields%20may%20be%20produced%20by%20comprehensions%20or%20from%20the%20result%20of%20other%20tasks,%20which%20can%20result%20in%20discovering%20more%20tasks.%20To%20avoid%20this,%20set%20the%20CUE_EXPERIMENT=cmdreferencepkg%20experiment%20flag.%20Inputs%20of%20tasks%20my%20refer%20to%20outputs%20of%20other%20tasks.%20The%20cue%20tool%20does%20a%20static%20analysis%20of%20the%20configuration%20and%20only%20starts%20tasks%20that%20are%20fully%20specified.%20Upon%20completion%20of%20each%20task,%20cue%20rewrites%20the%20instance,%20filling%20in%20the%20completed%20task,%20and%20reevaluates%20which%20other%20tasks%20can%20now%20start,%20and%20so%20on%20until%20all%20tasks%20have%20completed.%20Available%20tasks%20can%20be%20found%20in%20the%20package%20documentation%20at%20https://cuelang.org/go/pkg/tool#section-directories%20Examples:%20In%20this%20simple%20example,%20we%20define%20a%20workflow%20command%20called%20&amp;#34;hello&amp;#34;,%20which%20declares%20a%20single%20task%20called%20&amp;#34;print&amp;#34;%20which%20uses%20&amp;#34;tool/exec.Run&amp;#34;%20to%20execute%20a%20shell%20command%20that%20echos%20output%20to%20the%20terminal:%20$%20cat%20&amp;lt;&amp;lt;EOF%20&amp;gt;%20hello_tool.cue%20package%20foo%20import%20&amp;#34;tool/exec&amp;#34;%20city:%20&amp;#34;Amsterdam&amp;#34;%20who:%20*&amp;#34;World&amp;#34;%20%7c%20string%20@tag%28who%29%20//%20Say%20hello!%20command:%20hello:%20%7b%20print:%20exec.Run%20&amp;amp;%20%7b%20cmd:%20&amp;#34;echo%20Hello%20%5c%28who%29!%20Welcome%20to%20%5c%28city%29.&amp;#34;%20%7d%20%7d%20EOF%20We%20run%20the%20&amp;#34;hello&amp;#34;%20workflow%20command%20like%20this:%20$%20cue%20cmd%20hello%20Hello%20World!%20Welcome%20to%20Amsterdam.%20$%20cue%20cmd%20--inject%20who=Jan%20hello%20Hello%20Jan!%20Welcome%20to%20Amsterdam.%20In%20this%20example%20we%20declare%20the%20&amp;#34;prompted&amp;#34;%20workflow%20command%20which%20has%20four%20tasks.%20The%20first%20task%20prompts%20the%20user%20for%20a%20string%20input.%20The%20second%20task%20depends%20on%20the%20first,%20and%20echos%20the%20response%20back%20to%20the%20user%20with%20a%20friendly%20message.%20The%20third%20task%20pipes%20the%20output%20from%20the%20second%20to%20a%20file.%20The%20fourth%20task%20pipes%20the%20output%20from%20the%20second%20to%20standard%20output%20%28i.e.%20it%20echos%20it%20again%29.%20package%20foo%20import%20%28%20&amp;#34;tool/cli&amp;#34;%20&amp;#34;tool/exec&amp;#34;%20&amp;#34;tool/file&amp;#34;%20%29%20city:%20&amp;#34;Amsterdam&amp;#34;%20//%20Say%20hello!%20command:%20prompter:%20%7b%20//%20save%20transcript%20to%20this%20file%20var:%20file:%20*&amp;#34;out.txt&amp;#34;%20%7c%20string%20@tag%28file%29%20ask:%20cli.Ask%20&amp;amp;%20%7b%20prompt:%20&amp;#34;What%20is%20your%20name?&amp;#34;%20response:%20string%20%7d%20//%20starts%20after%20ask%20echo:%20exec.Run%20&amp;amp;%20%7b%20cmd:%20[&amp;#34;echo&amp;#34;,%20&amp;#34;Hello&amp;#34;,%20ask.response%20&#43;%20&amp;#34;!&amp;#34;]%20stdout:%20string%20//%20capture%20stdout%20%7d%20//%20starts%20after%20echo%20append:%20file.Append%20&amp;amp;%20%7b%20filename:%20var.file%20contents:%20echo.stdout%20%7d%20//%20also%20starts%20after%20echo%20print:%20cli.Print%20&amp;amp;%20%7b%20text:%20echo.stdout%20%7d%20%7d%20The%20types%20of%20the%20commands%20and%20tasks%20are%20defined%20in%20CUE%20itself%20at%20cuelang.org/go/pkg/tool/tool.cue.%20command:%20[Name]:%20Command%20Command:%20%7b%20//%20Tasks%20specifies%20the%20things%20to%20run%20to%20complete%20a%20command.%20Tasks%20are%20//%20typically%20underspecified%20and%20completed%20by%20the%20particular%20internal%20//%20handler%20that%20is%20running%20them.%20Tasks%20can%20be%20a%20single%20task,%20or%20a%20full%20//%20hierarchy%20of%20tasks.%20//%20//%20Tasks%20that%20depend%20on%20the%20output%20of%20other%20tasks%20are%20run%20after%20such%20tasks.%20//%20Use%20$after%20if%20a%20task%20needs%20to%20run%20after%20another%20task%20but%20does%20not%20//%20otherwise%20depend%20on%20its%20output.%20Tasks%20//%20$usage%20summarizes%20how%20a%20command%20takes%20arguments.%20//%20//%20Example:%20//%20mycmd%20[-n]%20names%20$usage?:%20string%20//%20$short%20is%20short%20description%20of%20what%20the%20command%20does.%20$short?:%20string%20//%20$long%20is%20a%20longer%20description%20that%20spans%20multiple%20lines%20and%20//%20likely%20contain%20examples%20of%20usage%20of%20the%20command.%20$long?:%20string%20%7d%20//%20Tasks%20defines%20a%20hierarchy%20of%20tasks.%20A%20command%20completes%20if%20all%20//%20tasks%20have%20run%20to%20completion.%20Tasks:%20Task%20%7c%20%7b%20[name=Name]:%20Tasks%20%7d%20//%20Name%20defines%20a%20valid%20task%20or%20command%20name.%20Name:%20=~#&amp;#34;%5e%5cPL%28[-]%28%5cPL%7c%5cPN%29%29*$&amp;#34;#%20//%20A%20Task%20defines%20a%20step%20in%20the%20execution%20of%20a%20command.%20Task:%20%7b%20//%20$id%20indicates%20the%20operation%20to%20run.%20Do%20not%20use%20this%20field%20directly;%20//%20instead%20unify%20with%20a%20task%20imported%20from%20one%20of%20the%20tool%20packages.%20$id:%20=~#&amp;#34;%5c.&amp;#34;#%20//%20$after%20can%20be%20used%20to%20specify%20a%20task%20is%20run%20after%20another%20one,%20//%20when%20it%20does%20not%20otherwise%20refer%20to%20an%20output%20of%20that%20task.%20$after?:%20Task%20%7c%20[...Task]%20%7d%20Related%20content%20Reference:%20cue%20help%20cmd%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-linkedin"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on Linkedin</span></p>
@@ -768,7 +767,7 @@ Reference: cue help cmd
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-left"></use>
 </svg>
 
                 <span class="prevnext__text">cue help cmd</span>
@@ -780,7 +779,7 @@ Reference: cue help cmd
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-right"></use>
 </svg>
 
             </a></nav>
@@ -1322,7 +1321,7 @@ Reference: cue help cmd
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 <span>Hide side navigation</span>
                 </button>
@@ -1336,7 +1335,7 @@ Reference: cue help cmd
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 <span>Show side navigation</span>
         </button>
@@ -1505,7 +1504,7 @@ Reference: cue help cmd
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-commands%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2F%2Flocalhost%3A1313%2Fdocs%2Freference%2Fcommand%2Fcue-help-commands%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1537,7 +1536,7 @@ Reference: cue help cmd
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 
                 </a>
@@ -1548,7 +1547,7 @@ Reference: cue help cmd
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                 <span class="button__text">Close</span>
@@ -1576,7 +1575,7 @@ Reference: cue help cmd
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                     <span class="button__text">Hide menu</span>
@@ -1656,7 +1655,7 @@ Reference: cue help cmd
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                 <span class="nav__text">GitHub</span>
@@ -1673,7 +1672,7 @@ Reference: cue help cmd
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                 <span class="nav__text">Slack</span>
@@ -1690,7 +1689,7 @@ Reference: cue help cmd
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                 <span class="nav__text">Discord</span>
@@ -1707,7 +1706,7 @@ Reference: cue help cmd
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                 <span class="nav__text">X (Twitter)</span>
@@ -1724,7 +1723,7 @@ Reference: cue help cmd
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                 <span class="nav__text">Bluesky</span>
@@ -1741,7 +1740,7 @@ Reference: cue help cmd
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                 <span class="nav__text">YouTube</span>
@@ -1756,8 +1755,7 @@ Reference: cue help cmd
 
         
 
-    
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.js" defer></script>
 
 
 

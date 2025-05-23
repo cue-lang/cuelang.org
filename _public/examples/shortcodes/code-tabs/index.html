@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en" dir="ltr" class="no-js">
-    <head><meta charset="utf-8">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="You can add the code-tabs/code-tab shortcode to create codeblocks with nested tabs. A code-tab shortcode always needs to be part of a code-tabs shortcode.Usage …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -18,29 +18,28 @@
 <meta name="msapplication-config" content="/favicons/browserconfig.xml">
 <meta name="theme-color" content="#232a68">
 
-<title>Code tabs | CUE</title><meta property="og:url" content="/examples/shortcodes/code-tabs/">
+<title>Code tabs | CUE</title><meta property="og:url" content="//localhost:1313/examples/shortcodes/code-tabs/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Code tabs">
   <meta property="og:description" content="You can add the code-tabs/code-tab shortcode to create codeblocks with nested tabs. A code-tab shortcode always needs to be part of a code-tabs shortcode.
-Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema.cue&#34; area=&#34;top-left&#34; &gt;}} #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;table&#34; area=&#34;top-left&#34; &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.">
+Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema.cue&#34; area=&#34;top-left&#34; &gt;}} #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;table&#34; area=&#34;top-left&#34; &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;true&#34; area=&#34;bottom-left&#34; fileIcon=&#34;false &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;TERMINAL&#34; type=&#34;terminal&#34; area=&#34;right&#34; &gt;}} languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 {{&lt; /code-tab &gt;}} {{&lt; /code-tabs &gt;}} Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! 1 2 3 4 5 6 7 languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian data.yaml Copy code Copied! 1languages: 2- tag: en 3 name: English 4- tag: nl 5 name: dutch 6- tag: no 7 name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 A code-tabs shortcode can’t currently be nested inside a tabs shortcode. Attributes on code-tabs groupId optional - Determine if tabs should be synced as port of a group. If you add a groupId the selected tab will be synced across tabs with the same groupId. height optional - value: number (in pixels) (omitting this attribute is same as auto height) Determine if the tabs should have a height. By default it fits the content of the tabs. This can be used if tabs contain long content. Example: {{&lt; code-tabs height=500 &gt;}} Attributes on code-tab name required - Name of the tab area required - Area the tab should be in. Can be one of ’top’, ’left’, ’top-left’, ’top-right’, ‘bottom’, ‘bottom-left’, ‘right or ‘bottom-right’. Note: You can either use bottom or bottom-left/bottom-right. You can’t combine ‘bottom’ with another bottom area. Same goes for top, left and right. For instance if you have a tab set to ’left’ it will file the entire left area and can’t be combined with ’top-left’ because this will break the layout. language optional - Code language (for instance yaml or json) type optional - Tab code type. Can be ‘default’ or ’terminal’. For default you can also omit this attribute linenos option - Only works when a language is set. Possible values are true, false, table, or inline. Default is set to false. Any other value will add line numbers. codeToCopy optional - By default the copy button copies the inner content. You can change that by passing in code with this attribute. Make sure it’s base64 encoded when you pass something to this attribute. You can also set it to false to hide the copy button. fileIcon optional - Showing file icon. Can be true or false. By default the value is true. Examples of usage of different area’s 2 tabs in top-left (1 column) Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 1 tabs in top-left and 1 tab in top-right (2 colums, 1 row) Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 1 tab in top and 1 tab in bottom (1 column, 2 rows) Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 2 tabs in top-left, 1 in bottom-left and 1 in right Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 2 tabs in top-left, 1 in top-right, 1 in bottom Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 1 tab in left, 1 in top-right and 1 in bottom-right TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 2 tabs in top-left, 1 in bottom-left, 1 in top-right and 1 in bottom-right with height set to 500 Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="examples">
     <meta property="article:modified_time" content="2024-08-27T12:07:39+02:00">
-    <meta property="og:image" content="/img/social.png">
+    <meta property="og:image" content="//localhost:1313/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:image" content="//localhost:1313/img/social.png">
   <meta name="twitter:title" content="Code tabs">
   <meta name="twitter:description" content="You can add the code-tabs/code-tab shortcode to create codeblocks with nested tabs. A code-tab shortcode always needs to be part of a code-tabs shortcode.
-Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema.cue&#34; area=&#34;top-left&#34; &gt;}} #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;table&#34; area=&#34;top-left&#34; &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.">
+Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema.cue&#34; area=&#34;top-left&#34; &gt;}} #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;table&#34; area=&#34;top-left&#34; &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;true&#34; area=&#34;bottom-left&#34; fileIcon=&#34;false &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;TERMINAL&#34; type=&#34;terminal&#34; area=&#34;right&#34; &gt;}} languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 {{&lt; /code-tab &gt;}} {{&lt; /code-tabs &gt;}} Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! 1 2 3 4 5 6 7 languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian data.yaml Copy code Copied! 1languages: 2- tag: en 3 name: English 4- tag: nl 5 name: dutch 6- tag: no 7 name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 A code-tabs shortcode can’t currently be nested inside a tabs shortcode. Attributes on code-tabs groupId optional - Determine if tabs should be synced as port of a group. If you add a groupId the selected tab will be synced across tabs with the same groupId. height optional - value: number (in pixels) (omitting this attribute is same as auto height) Determine if the tabs should have a height. By default it fits the content of the tabs. This can be used if tabs contain long content. Example: {{&lt; code-tabs height=500 &gt;}} Attributes on code-tab name required - Name of the tab area required - Area the tab should be in. Can be one of ’top’, ’left’, ’top-left’, ’top-right’, ‘bottom’, ‘bottom-left’, ‘right or ‘bottom-right’. Note: You can either use bottom or bottom-left/bottom-right. You can’t combine ‘bottom’ with another bottom area. Same goes for top, left and right. For instance if you have a tab set to ’left’ it will file the entire left area and can’t be combined with ’top-left’ because this will break the layout. language optional - Code language (for instance yaml or json) type optional - Tab code type. Can be ‘default’ or ’terminal’. For default you can also omit this attribute linenos option - Only works when a language is set. Possible values are true, false, table, or inline. Default is set to false. Any other value will add line numbers. codeToCopy optional - By default the copy button copies the inner content. You can change that by passing in code with this attribute. Make sure it’s base64 encoded when you pass something to this attribute. You can also set it to false to hide the copy button. fileIcon optional - Showing file icon. Can be true or false. By default the value is true. Examples of usage of different area’s 2 tabs in top-left (1 column) Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 1 tabs in top-left and 1 tab in top-right (2 colums, 1 row) Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 1 tab in top and 1 tab in bottom (1 column, 2 rows) Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 2 tabs in top-left, 1 in bottom-left and 1 in right Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 2 tabs in top-left, 1 in top-right, 1 in bottom Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 1 tab in left, 1 in top-right and 1 in bottom-right TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 2 tabs in top-left, 1 in bottom-left, 1 in top-right and 1 in bottom-right with height set to 500 Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link href="/scss/main.css" rel="stylesheet">
 
 
 
@@ -55,13 +54,13 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Code tabs">
 <meta itemprop="description" content="You can add the code-tabs/code-tab shortcode to create codeblocks with nested tabs. A code-tab shortcode always needs to be part of a code-tabs shortcode.
-Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema.cue&#34; area=&#34;top-left&#34; &gt;}} #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;table&#34; area=&#34;top-left&#34; &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.">
+Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema.cue&#34; area=&#34;top-left&#34; &gt;}} #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;table&#34; area=&#34;top-left&#34; &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;data.yaml&#34; language=&#34;yaml&#34; linenos=&#34;true&#34; area=&#34;bottom-left&#34; fileIcon=&#34;false &gt;}} languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian {{&lt; /code-tab &gt;}} {{&lt; code-tab name=&#34;TERMINAL&#34; type=&#34;terminal&#34; area=&#34;right&#34; &gt;}} languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 {{&lt; /code-tab &gt;}} {{&lt; /code-tabs &gt;}} Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! 1 2 3 4 5 6 7 languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian data.yaml Copy code Copied! 1languages: 2- tag: en 3 name: English 4- tag: nl 5 name: dutch 6- tag: no 7 name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 A code-tabs shortcode can&rsquo;t currently be nested inside a tabs shortcode. Attributes on code-tabs groupId optional - Determine if tabs should be synced as port of a group. If you add a groupId the selected tab will be synced across tabs with the same groupId. height optional - value: number (in pixels) (omitting this attribute is same as auto height) Determine if the tabs should have a height. By default it fits the content of the tabs. This can be used if tabs contain long content. Example: {{&lt; code-tabs height=500 &gt;}} Attributes on code-tab name required - Name of the tab area required - Area the tab should be in. Can be one of &rsquo;top&rsquo;, &rsquo;left&rsquo;, &rsquo;top-left&rsquo;, &rsquo;top-right&rsquo;, &lsquo;bottom&rsquo;, &lsquo;bottom-left&rsquo;, &lsquo;right or &lsquo;bottom-right&rsquo;. Note: You can either use bottom or bottom-left/bottom-right. You can&rsquo;t combine &lsquo;bottom&rsquo; with another bottom area. Same goes for top, left and right. For instance if you have a tab set to &rsquo;left&rsquo; it will file the entire left area and can&rsquo;t be combined with &rsquo;top-left&rsquo; because this will break the layout. language optional - Code language (for instance yaml or json) type optional - Tab code type. Can be &lsquo;default&rsquo; or &rsquo;terminal&rsquo;. For default you can also omit this attribute linenos option - Only works when a language is set. Possible values are true, false, table, or inline. Default is set to false. Any other value will add line numbers. codeToCopy optional - By default the copy button copies the inner content. You can change that by passing in code with this attribute. Make sure it&rsquo;s base64 encoded when you pass something to this attribute. You can also set it to false to hide the copy button. fileIcon optional - Showing file icon. Can be true or false. By default the value is true. Examples of usage of different area&rsquo;s 2 tabs in top-left (1 column) Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 1 tabs in top-left and 1 tab in top-right (2 colums, 1 row) Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 1 tab in top and 1 tab in bottom (1 column, 2 rows) Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 2 tabs in top-left, 1 in bottom-left and 1 in right Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 2 tabs in top-left, 1 in top-right, 1 in bottom Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 1 tab in left, 1 in top-right and 1 in bottom-right TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 Copied! schema.cue Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian 2 tabs in top-left, 1 in bottom-left, 1 in top-right and 1 in bottom-right with height set to 500 Copied! schema.cue Copied! data.yaml Copy code Copied! #Language: { tag: string name: =~&#34;^\\p{Lu}&#34; // Must start with an uppercase letter. } languages: [...#Language] Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian Copied! data.yaml Copy code Copied! languages: - tag: en name: English - tag: nl name: dutch - tag: no name: Norwegian TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 TERMINAL Copy code Copied! languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&#34;): ./schema.cue:3:8 ./data.yaml:5:12 ">
 
     
         <meta itemprop="dateModified" content="2024-08-27T12:07:39+02:00" >
     
             
-        <meta itemprop="image" content="/img/social.png"/>
+        <meta itemprop="image" content="//localhost:1313/img/social.png"/>
             
     <meta itemprop="keywords" content="" />
 
@@ -113,7 +112,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                     <span class="nav__text">GitHub</span>
@@ -126,7 +125,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                     <span class="nav__text">Slack</span>
@@ -139,7 +138,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                     <span class="nav__text">Discord</span>
@@ -152,7 +151,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                     <span class="nav__text">X (Twitter)</span>
@@ -165,7 +164,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                     <span class="nav__text">Bluesky</span>
@@ -178,7 +177,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                     <span class="nav__text">YouTube</span>
@@ -194,7 +193,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 </a></div>
 
@@ -205,7 +204,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--search"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--search"></use>
 </svg>
 <span>Search</span>
                 </a>
@@ -234,7 +233,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--menu"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--menu"></use>
 </svg>
 </button>
             </div>
@@ -255,7 +254,7 @@ Usage Copy code Copied! {{&lt; code-tabs &gt;}} {{&lt; code-tab name=&#34;schema
 
 <svg class="icon link__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--arrow-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--arrow-left"></use>
 </svg>
 
             <span class="link__text">Examples</span>
@@ -1422,7 +1421,7 @@ A code-tab shortcode always needs to be part of a code-tabs shortcode.</p>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>Usage</h2>
 <div class="code-block"data-copy><div class="code-block__highlight"><button class="code-block__copy" type="button" data-copy-button data-copy-type="code" data-copy-value="e3s8IGNvZGUtdGFicyA&#43;fX0KCnt7PCBjb2RlLXRhYiBuYW1lPSJzY2hlbWEuY3VlIiBhcmVhPSJ0b3AtbGVmdCIgPn19CiNMYW5ndWFnZTogewoJdGFnOiAgc3RyaW5nCgluYW1lOiA9fiJeXFxwe0x1fSIgLy8gTXVzdCBzdGFydCB3aXRoIGFuIHVwcGVyY2FzZSBsZXR0ZXIuCn0KbGFuZ3VhZ2VzOiBbLi4uI0xhbmd1YWdlXQp7ezwgL2NvZGUtdGFiID59fQoKe3s8IGNvZGUtdGFiIG5hbWU9ImRhdGEueWFtbCIgbGFuZ3VhZ2U9InlhbWwiIGxpbmVub3M9InRhYmxlIiBhcmVhPSJ0b3AtbGVmdCIgPn19Cmxhbmd1YWdlczoKICAtIHRhZzogZW4KICAgIG5hbWU6IEVuZ2xpc2gKICAtIHRhZzogbmwKICAgIG5hbWU6IGR1dGNoCiAgLSB0YWc6IG5vCiAgICBuYW1lOiBOb3J3ZWdpYW4Ke3s8IC9jb2RlLXRhYiA&#43;fX0KCnt7PCBjb2RlLXRhYiBuYW1lPSJkYXRhLnlhbWwiIGxhbmd1YWdlPSJ5YW1sIiBsaW5lbm9zPSJ0cnVlIiBhcmVhPSJib3R0b20tbGVmdCIgZmlsZUljb249ImZhbHNlID59fQpsYW5ndWFnZXM6CiAgLSB0YWc6IGVuCiAgICBuYW1lOiBFbmdsaXNoCiAgLSB0YWc6IG5sCiAgICBuYW1lOiBkdXRjaAogIC0gdGFnOiBubwogICAgbmFtZTogTm9yd2VnaWFuCnt7PCAvY29kZS10YWIgPn19Cgp7ezwgY29kZS10YWIgbmFtZT0iVEVSTUlOQUwiIHR5cGU9InRlcm1pbmFsIiBhcmVhPSJyaWdodCIgPn19Cmxhbmd1YWdlcy4xLm5hbWU6IGludmFsaWQgdmFsdWUgImR1dGNoIiAoZG9lcyBub3QgbWF0Y2ggPX4iXlxccHtMdX0iKToKICAgIC4vc2NoZW1hLmN1ZTozOjgKICAgIC4vZGF0YS55YW1sOjU6MTIKe3s8IC9jb2RlLXRhYiA&#43;fX0KCnt7PCAvY29kZS10YWJzID59fQ==">
@@ -1481,7 +1480,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 </span>
 </button>
@@ -1496,7 +1495,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -1513,7 +1512,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -1529,7 +1528,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 </span>
 </button></div>
@@ -1650,7 +1649,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon note__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--exclamation"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--exclamation"></use>
 </svg>
 <div class="note__content">A <code>code-tabs</code> shortcode can&rsquo;t currently be nested inside a <code>tabs</code> shortcode.</div>
 </div>
@@ -1662,7 +1661,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>Attributes on code-tabs</h2>
 <dl>
@@ -1681,7 +1680,7 @@ This can be used if tabs contain long content. Example: <code>{{&lt; code-tabs h
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>Attributes on code-tab</h2>
 <dl>
@@ -1711,7 +1710,7 @@ You can also set it to false to hide the copy button.</dd>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>Examples of usage of different area&rsquo;s</h2>
 <h3 id="2-tabs-in-top-left-1-column">
@@ -1721,7 +1720,7 @@ You can also set it to false to hide the copy button.</dd>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>2 tabs in top-left (1 column)</h3>
 <div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
@@ -1737,7 +1736,7 @@ You can also set it to false to hide the copy button.</dd>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 </span>
 </button>
@@ -1752,7 +1751,7 @@ You can also set it to false to hide the copy button.</dd>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -1769,7 +1768,7 @@ You can also set it to false to hide the copy button.</dd>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -1785,7 +1784,7 @@ You can also set it to false to hide the copy button.</dd>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 </span>
 </button></div>
@@ -1832,7 +1831,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>1 tabs in top-left and 1 tab in top-right (2 colums, 1 row)</h3>
 <div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
@@ -1851,7 +1850,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -1893,7 +1892,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -1930,7 +1929,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>1 tab in top and 1 tab in bottom (1 column, 2 rows)</h3>
 <div class="code-tabs"><div class="code-tabs__item code-tabs__item--top">
@@ -1949,7 +1948,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -1991,7 +1990,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2028,7 +2027,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>2 tabs in top-left, 1 in bottom-left and 1 in right</h3>
 <div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
@@ -2044,7 +2043,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 </span>
 </button>
@@ -2059,7 +2058,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2076,7 +2075,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2092,7 +2091,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 </span>
 </button></div>
@@ -2146,7 +2145,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2212,7 +2211,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>2 tabs in top-left, 1 in top-right, 1 in bottom</h3>
 <div class="code-tabs"><div class="code-tabs__item code-tabs__item--top-left">
@@ -2228,7 +2227,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 </span>
 </button>
@@ -2243,7 +2242,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2260,7 +2259,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2276,7 +2275,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 </span>
 </button></div>
@@ -2330,7 +2329,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2396,7 +2395,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>1 tab in left, 1 in top-right and 1 in bottom-right</h3>
 <div class="code-tabs"><div class="code-tabs__item code-tabs__item--left">
@@ -2444,7 +2443,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2486,7 +2485,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2523,7 +2522,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon anchor__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 </a>2 tabs in top-left, 1 in bottom-left, 1 in top-right and 1 in bottom-right with height set to 500</h3>
 <div class="code-tabs" style="height: 500px"><div class="code-tabs__item code-tabs__item--top-left">
@@ -2539,7 +2538,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 </span>
 </button>
@@ -2554,7 +2553,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2571,7 +2570,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2587,7 +2586,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 </span>
 </button></div>
@@ -2641,7 +2640,7 @@ languages: [...#Language]</code></pre></div>
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--file"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--file"></use>
 </svg>
 <span class="tabs-nav__message is-hidden" data-copy-message aria-hidden="true">
                             Copied!
@@ -2762,7 +2761,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--share"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--share"></use>
 </svg>
 
         <span>Open share options</span>
@@ -2770,14 +2769,14 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
     <ul class="share__list">
         <li class="share__item" data-copy>
-            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/examples/shortcodes/code-tabs/">
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="//localhost:1313/examples/shortcodes/code-tabs/">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 
                 <span class="share__link-text">Copy link</span>
@@ -2788,14 +2787,14 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/examples/shortcodes/code-tabs/&text=You%20can%20add%20the%20code-tabs/code-tab%20shortcode%20to%20create%20codeblocks%20with%20nested%20tabs.%20A%20code-tab%20shortcode%20always%20needs%20to%20be%20part%20of%20a%20code-tabs%20shortcode.%0aUsage%20Copy%20code%20Copied!%20%7b%7b&amp;lt;%20code-tabs%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;schema.cue&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.yaml&amp;#34;%20language=&amp;#34;yaml&amp;#34;%20linenos=&amp;#34;table&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=//localhost:1313/examples/shortcodes/code-tabs/&text=You%20can%20add%20the%20code-tabs/code-tab%20shortcode%20to%20create%20codeblocks%20with%20nested%20tabs.%20A%20code-tab%20shortcode%20always%20needs%20to%20be%20part%20of%20a%20code-tabs%20shortcode.%0aUsage%20Copy%20code%20Copied!%20%7b%7b&amp;lt;%20code-tabs%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;schema.cue&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.yaml&amp;#34;%20language=&amp;#34;yaml&amp;#34;%20linenos=&amp;#34;table&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.yaml&amp;#34;%20language=&amp;#34;yaml&amp;#34;%20linenos=&amp;#34;true&amp;#34;%20area=&amp;#34;bottom-left&amp;#34;%20fileIcon=&amp;#34;false%20&amp;gt;%7d%7d%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;TERMINAL&amp;#34;%20type=&amp;#34;terminal&amp;#34;%20area=&amp;#34;right&amp;#34;%20&amp;gt;%7d%7d%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20/code-tabs%20&amp;gt;%7d%7d%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%201%202%203%204%205%206%207%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20data.yaml%20Copy%20code%20Copied!%201languages:%202-%20tag:%20en%203%20name:%20English%204-%20tag:%20nl%205%20name:%20dutch%206-%20tag:%20no%207%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20A%20code-tabs%20shortcode%20can&amp;rsquo;t%20currently%20be%20nested%20inside%20a%20tabs%20shortcode.%20Attributes%20on%20code-tabs%20groupId%20optional%20-%20Determine%20if%20tabs%20should%20be%20synced%20as%20port%20of%20a%20group.%20If%20you%20add%20a%20groupId%20the%20selected%20tab%20will%20be%20synced%20across%20tabs%20with%20the%20same%20groupId.%20height%20optional%20-%20value:%20number%20%28in%20pixels%29%20%28omitting%20this%20attribute%20is%20same%20as%20auto%20height%29%20Determine%20if%20the%20tabs%20should%20have%20a%20height.%20By%20default%20it%20fits%20the%20content%20of%20the%20tabs.%20This%20can%20be%20used%20if%20tabs%20contain%20long%20content.%20Example:%20%7b%7b&amp;lt;%20code-tabs%20height=500%20&amp;gt;%7d%7d%20Attributes%20on%20code-tab%20name%20required%20-%20Name%20of%20the%20tab%20area%20required%20-%20Area%20the%20tab%20should%20be%20in.%20Can%20be%20one%20of%20&amp;rsquo;top&amp;rsquo;,%20&amp;rsquo;left&amp;rsquo;,%20&amp;rsquo;top-left&amp;rsquo;,%20&amp;rsquo;top-right&amp;rsquo;,%20&amp;lsquo;bottom&amp;rsquo;,%20&amp;lsquo;bottom-left&amp;rsquo;,%20&amp;lsquo;right%20or%20&amp;lsquo;bottom-right&amp;rsquo;.%20Note:%20You%20can%20either%20use%20bottom%20or%20bottom-left/bottom-right.%20You%20can&amp;rsquo;t%20combine%20&amp;lsquo;bottom&amp;rsquo;%20with%20another%20bottom%20area.%20Same%20goes%20for%20top,%20left%20and%20right.%20For%20instance%20if%20you%20have%20a%20tab%20set%20to%20&amp;rsquo;left&amp;rsquo;%20it%20will%20file%20the%20entire%20left%20area%20and%20can&amp;rsquo;t%20be%20combined%20with%20&amp;rsquo;top-left&amp;rsquo;%20because%20this%20will%20break%20the%20layout.%20language%20optional%20-%20Code%20language%20%28for%20instance%20yaml%20or%20json%29%20type%20optional%20-%20Tab%20code%20type.%20Can%20be%20&amp;lsquo;default&amp;rsquo;%20or%20&amp;rsquo;terminal&amp;rsquo;.%20For%20default%20you%20can%20also%20omit%20this%20attribute%20linenos%20option%20-%20Only%20works%20when%20a%20language%20is%20set.%20Possible%20values%20are%20true,%20false,%20table,%20or%20inline.%20Default%20is%20set%20to%20false.%20Any%20other%20value%20will%20add%20line%20numbers.%20codeToCopy%20optional%20-%20By%20default%20the%20copy%20button%20copies%20the%20inner%20content.%20You%20can%20change%20that%20by%20passing%20in%20code%20with%20this%20attribute.%20Make%20sure%20it&amp;rsquo;s%20base64%20encoded%20when%20you%20pass%20something%20to%20this%20attribute.%20You%20can%20also%20set%20it%20to%20false%20to%20hide%20the%20copy%20button.%20fileIcon%20optional%20-%20Showing%20file%20icon.%20Can%20be%20true%20or%20false.%20By%20default%20the%20value%20is%20true.%20Examples%20of%20usage%20of%20different%20area&amp;rsquo;s%202%20tabs%20in%20top-left%20%281%20column%29%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%201%20tabs%20in%20top-left%20and%201%20tab%20in%20top-right%20%282%20colums,%201%20row%29%20Copied!%20schema.cue%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%201%20tab%20in%20top%20and%201%20tab%20in%20bottom%20%281%20column,%202%20rows%29%20Copied!%20schema.cue%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%202%20tabs%20in%20top-left,%201%20in%20bottom-left%20and%201%20in%20right%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%202%20tabs%20in%20top-left,%201%20in%20top-right,%201%20in%20bottom%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%201%20tab%20in%20left,%201%20in%20top-right%20and%201%20in%20bottom-right%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20Copied!%20schema.cue%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%202%20tabs%20in%20top-left,%201%20in%20bottom-left,%201%20in%20top-right%20and%201%20in%20bottom-right%20with%20height%20set%20to%20500%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on X (Twitter)</span></p>
@@ -2804,14 +2803,14 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/examples/shortcodes/code-tabs/&summary=You%20can%20add%20the%20code-tabs/code-tab%20shortcode%20to%20create%20codeblocks%20with%20nested%20tabs.%20A%20code-tab%20shortcode%20always%20needs%20to%20be%20part%20of%20a%20code-tabs%20shortcode.%0aUsage%20Copy%20code%20Copied!%20%7b%7b&amp;lt;%20code-tabs%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;schema.cue&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.yaml&amp;#34;%20language=&amp;#34;yaml&amp;#34;%20linenos=&amp;#34;table&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=//localhost:1313/examples/shortcodes/code-tabs/&summary=You%20can%20add%20the%20code-tabs/code-tab%20shortcode%20to%20create%20codeblocks%20with%20nested%20tabs.%20A%20code-tab%20shortcode%20always%20needs%20to%20be%20part%20of%20a%20code-tabs%20shortcode.%0aUsage%20Copy%20code%20Copied!%20%7b%7b&amp;lt;%20code-tabs%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;schema.cue&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.yaml&amp;#34;%20language=&amp;#34;yaml&amp;#34;%20linenos=&amp;#34;table&amp;#34;%20area=&amp;#34;top-left&amp;#34;%20&amp;gt;%7d%7d%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;data.yaml&amp;#34;%20language=&amp;#34;yaml&amp;#34;%20linenos=&amp;#34;true&amp;#34;%20area=&amp;#34;bottom-left&amp;#34;%20fileIcon=&amp;#34;false%20&amp;gt;%7d%7d%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20code-tab%20name=&amp;#34;TERMINAL&amp;#34;%20type=&amp;#34;terminal&amp;#34;%20area=&amp;#34;right&amp;#34;%20&amp;gt;%7d%7d%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20%7b%7b&amp;lt;%20/code-tab%20&amp;gt;%7d%7d%20%7b%7b&amp;lt;%20/code-tabs%20&amp;gt;%7d%7d%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%201%202%203%204%205%206%207%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20data.yaml%20Copy%20code%20Copied!%201languages:%202-%20tag:%20en%203%20name:%20English%204-%20tag:%20nl%205%20name:%20dutch%206-%20tag:%20no%207%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20A%20code-tabs%20shortcode%20can&amp;rsquo;t%20currently%20be%20nested%20inside%20a%20tabs%20shortcode.%20Attributes%20on%20code-tabs%20groupId%20optional%20-%20Determine%20if%20tabs%20should%20be%20synced%20as%20port%20of%20a%20group.%20If%20you%20add%20a%20groupId%20the%20selected%20tab%20will%20be%20synced%20across%20tabs%20with%20the%20same%20groupId.%20height%20optional%20-%20value:%20number%20%28in%20pixels%29%20%28omitting%20this%20attribute%20is%20same%20as%20auto%20height%29%20Determine%20if%20the%20tabs%20should%20have%20a%20height.%20By%20default%20it%20fits%20the%20content%20of%20the%20tabs.%20This%20can%20be%20used%20if%20tabs%20contain%20long%20content.%20Example:%20%7b%7b&amp;lt;%20code-tabs%20height=500%20&amp;gt;%7d%7d%20Attributes%20on%20code-tab%20name%20required%20-%20Name%20of%20the%20tab%20area%20required%20-%20Area%20the%20tab%20should%20be%20in.%20Can%20be%20one%20of%20&amp;rsquo;top&amp;rsquo;,%20&amp;rsquo;left&amp;rsquo;,%20&amp;rsquo;top-left&amp;rsquo;,%20&amp;rsquo;top-right&amp;rsquo;,%20&amp;lsquo;bottom&amp;rsquo;,%20&amp;lsquo;bottom-left&amp;rsquo;,%20&amp;lsquo;right%20or%20&amp;lsquo;bottom-right&amp;rsquo;.%20Note:%20You%20can%20either%20use%20bottom%20or%20bottom-left/bottom-right.%20You%20can&amp;rsquo;t%20combine%20&amp;lsquo;bottom&amp;rsquo;%20with%20another%20bottom%20area.%20Same%20goes%20for%20top,%20left%20and%20right.%20For%20instance%20if%20you%20have%20a%20tab%20set%20to%20&amp;rsquo;left&amp;rsquo;%20it%20will%20file%20the%20entire%20left%20area%20and%20can&amp;rsquo;t%20be%20combined%20with%20&amp;rsquo;top-left&amp;rsquo;%20because%20this%20will%20break%20the%20layout.%20language%20optional%20-%20Code%20language%20%28for%20instance%20yaml%20or%20json%29%20type%20optional%20-%20Tab%20code%20type.%20Can%20be%20&amp;lsquo;default&amp;rsquo;%20or%20&amp;rsquo;terminal&amp;rsquo;.%20For%20default%20you%20can%20also%20omit%20this%20attribute%20linenos%20option%20-%20Only%20works%20when%20a%20language%20is%20set.%20Possible%20values%20are%20true,%20false,%20table,%20or%20inline.%20Default%20is%20set%20to%20false.%20Any%20other%20value%20will%20add%20line%20numbers.%20codeToCopy%20optional%20-%20By%20default%20the%20copy%20button%20copies%20the%20inner%20content.%20You%20can%20change%20that%20by%20passing%20in%20code%20with%20this%20attribute.%20Make%20sure%20it&amp;rsquo;s%20base64%20encoded%20when%20you%20pass%20something%20to%20this%20attribute.%20You%20can%20also%20set%20it%20to%20false%20to%20hide%20the%20copy%20button.%20fileIcon%20optional%20-%20Showing%20file%20icon.%20Can%20be%20true%20or%20false.%20By%20default%20the%20value%20is%20true.%20Examples%20of%20usage%20of%20different%20area&amp;rsquo;s%202%20tabs%20in%20top-left%20%281%20column%29%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%201%20tabs%20in%20top-left%20and%201%20tab%20in%20top-right%20%282%20colums,%201%20row%29%20Copied!%20schema.cue%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%201%20tab%20in%20top%20and%201%20tab%20in%20bottom%20%281%20column,%202%20rows%29%20Copied!%20schema.cue%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%202%20tabs%20in%20top-left,%201%20in%20bottom-left%20and%201%20in%20right%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%202%20tabs%20in%20top-left,%201%20in%20top-right,%201%20in%20bottom%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%201%20tab%20in%20left,%201%20in%20top-right%20and%201%20in%20bottom-right%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20Copied!%20schema.cue%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%202%20tabs%20in%20top-left,%201%20in%20bottom-left,%201%20in%20top-right%20and%201%20in%20bottom-right%20with%20height%20set%20to%20500%20Copied!%20schema.cue%20Copied!%20data.yaml%20Copy%20code%20Copied!%20#Language:%20%7b%20tag:%20string%20name:%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%20//%20Must%20start%20with%20an%20uppercase%20letter.%20%7d%20languages:%20[...#Language]%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20Copied!%20data.yaml%20Copy%20code%20Copied!%20languages:%20-%20tag:%20en%20name:%20English%20-%20tag:%20nl%20name:%20dutch%20-%20tag:%20no%20name:%20Norwegian%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20TERMINAL%20Copy%20code%20Copied!%20languages.1.name:%20invalid%20value%20&amp;#34;dutch&amp;#34;%20%28does%20not%20match%20=~&amp;#34;%5e%5c%5cp%7bLu%7d&amp;#34;%29:%20./schema.cue:3:8%20./data.yaml:5:12%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-linkedin"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on Linkedin</span></p>
@@ -2837,7 +2836,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-left"></use>
 </svg>
 
                 <span class="prevnext__text">Tag</span>
@@ -2849,7 +2848,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-right"></use>
 </svg>
 
             </a></nav>
@@ -3019,7 +3018,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fexamples%2Fshortcodes%2Fcode-tabs%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2F%2Flocalhost%3A1313%2Fexamples%2Fshortcodes%2Fcode-tabs%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -3051,7 +3050,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 
                 </a>
@@ -3062,7 +3061,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                 <span class="button__text">Close</span>
@@ -3090,7 +3089,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                     <span class="button__text">Hide menu</span>
@@ -3170,7 +3169,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                 <span class="nav__text">GitHub</span>
@@ -3187,7 +3186,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                 <span class="nav__text">Slack</span>
@@ -3204,7 +3203,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                 <span class="nav__text">Discord</span>
@@ -3221,7 +3220,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                 <span class="nav__text">X (Twitter)</span>
@@ -3238,7 +3237,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                 <span class="nav__text">Bluesky</span>
@@ -3255,7 +3254,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                 <span class="nav__text">YouTube</span>
@@ -3270,8 +3269,7 @@ languages.1.name: invalid value &#34;dutch&#34; (does not match =~&#34;^\\p{Lu}&
 
         
 
-    
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.js" defer></script>
 
 
 

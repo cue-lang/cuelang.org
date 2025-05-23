@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en" dir="ltr" class="no-js">
-    <head><meta charset="utf-8">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="TERMINAL Copy code Copied! $ cue help export export evaluates the configuration found in the current directory and prints the emit value to stdout. Examples: …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -18,27 +18,26 @@
 <meta name="msapplication-config" content="/favicons/browserconfig.xml">
 <meta name="theme-color" content="#232a68">
 
-<title>cue help export | CUE</title><meta property="og:url" content="/docs/reference/command/cue-help-export/">
+<title>cue help export | CUE</title><meta property="og:url" content="//localhost:1313/docs/reference/command/cue-help-export/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="cue help export">
-  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help export export evaluates the configuration found in the current directory and prints the emit value to stdout. Examples: Evaluated and emit # a single file cue export config.cue # multiple files: these are combined at the top-level. Order doesn&#39;t matter. cue export file1.cue foo/file2.cue # all files within the &#34;cloud&#34; package, including all files in the # current directory and its ancestor directories that are marked with the # same package, up to the root of the containing module.">
+  <meta property="og:description" content="TERMINAL Copy code Copied! $ cue help export export evaluates the configuration found in the current directory and prints the emit value to stdout. Examples: Evaluated and emit # a single file cue export config.cue # multiple files: these are combined at the top-level. Order doesn&#39;t matter. cue export file1.cue foo/file2.cue # all files within the &#34;cloud&#34; package, including all files in the # current directory and its ancestor directories that are marked with the # same package, up to the root of the containing module. cue export .:cloud # the package name can be omitted if the directory only contains files for # the &#34;cloud&#34; package. cue export Emit value: For CUE files, the generated configuration is derived from the top-level single expression, the emit value. For example, the file // config.cue arg1: 1 arg2: &#34;my string&#34; { a: arg1 b: arg2 } yields the following JSON: { &#34;arg1&#34;: 1, &#34;a&#34;: 1, &#34;arg2&#34;: &#34;my string&#34;, &#34;b&#34;: &#34;my string&#34; } In absence of arguments, the current directory is loaded as a package instance. A package instance for a directory contains all files in the directory and its ancestor directories, up to the module root, belonging to the same package. If a single package is not uniquely defined by the files in the current directory then the package name must be specified as an explicit argument using &#34;.:&lt;package-name&gt;&#34; syntax. Formats The following formats are recognized: cue output as CUE Outputs any CUE value. json output as JSON Outputs any CUE value. yaml output as YAML Outputs any CUE value. text output as raw text The evaluated value must be of type string. binary output as raw binary The evaluated value must be of type string or bytes. Usage: cue export [flags] Flags: --escape use HTML escaping -e, --expression stringArray export this expression only -f, --force force overwriting existing files -t, --inject stringArray set the value of a tagged field -T, --inject-vars inject system variables in tags --list concatenate multiple objects into a list --merge merge non-CUE files (default true) -n, --name string glob filter for non-CUE file names in directories --out string output format (run &#39;cue help filetypes&#39; for more info) -o, --outfile string filename or - for stdout with optional file prefix (run &#39;cue help filetypes&#39; for more info) -p, --package string package name for non-CUE files -l, --path stringArray CUE expression for single path component (see &#39;cue help flags&#39; for details) --proto_enum string mode for rendering enums (int|json) (default &#34;int&#34;) -I, --proto_path stringArray paths in which to search for imports -d, --schema string expression to select schema for evaluating values in non-CUE files --with-context import as object with contextual data Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
     <meta property="article:modified_time" content="2025-02-20T17:49:21+00:00">
-    <meta property="og:image" content="/img/social.png">
+    <meta property="og:image" content="//localhost:1313/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/img/social.png">
+  <meta name="twitter:image" content="//localhost:1313/img/social.png">
   <meta name="twitter:title" content="cue help export">
-  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help export export evaluates the configuration found in the current directory and prints the emit value to stdout. Examples: Evaluated and emit # a single file cue export config.cue # multiple files: these are combined at the top-level. Order doesn&#39;t matter. cue export file1.cue foo/file2.cue # all files within the &#34;cloud&#34; package, including all files in the # current directory and its ancestor directories that are marked with the # same package, up to the root of the containing module.">
+  <meta name="twitter:description" content="TERMINAL Copy code Copied! $ cue help export export evaluates the configuration found in the current directory and prints the emit value to stdout. Examples: Evaluated and emit # a single file cue export config.cue # multiple files: these are combined at the top-level. Order doesn&#39;t matter. cue export file1.cue foo/file2.cue # all files within the &#34;cloud&#34; package, including all files in the # current directory and its ancestor directories that are marked with the # same package, up to the root of the containing module. cue export .:cloud # the package name can be omitted if the directory only contains files for # the &#34;cloud&#34; package. cue export Emit value: For CUE files, the generated configuration is derived from the top-level single expression, the emit value. For example, the file // config.cue arg1: 1 arg2: &#34;my string&#34; { a: arg1 b: arg2 } yields the following JSON: { &#34;arg1&#34;: 1, &#34;a&#34;: 1, &#34;arg2&#34;: &#34;my string&#34;, &#34;b&#34;: &#34;my string&#34; } In absence of arguments, the current directory is loaded as a package instance. A package instance for a directory contains all files in the directory and its ancestor directories, up to the module root, belonging to the same package. If a single package is not uniquely defined by the files in the current directory then the package name must be specified as an explicit argument using &#34;.:&lt;package-name&gt;&#34; syntax. Formats The following formats are recognized: cue output as CUE Outputs any CUE value. json output as JSON Outputs any CUE value. yaml output as YAML Outputs any CUE value. text output as raw text The evaluated value must be of type string. binary output as raw binary The evaluated value must be of type string or bytes. Usage: cue export [flags] Flags: --escape use HTML escaping -e, --expression stringArray export this expression only -f, --force force overwriting existing files -t, --inject stringArray set the value of a tagged field -T, --inject-vars inject system variables in tags --list concatenate multiple objects into a list --merge merge non-CUE files (default true) -n, --name string glob filter for non-CUE file names in directories --out string output format (run &#39;cue help filetypes&#39; for more info) -o, --outfile string filename or - for stdout with optional file prefix (run &#39;cue help filetypes&#39; for more info) -p, --package string package name for non-CUE files -l, --path stringArray CUE expression for single path component (see &#39;cue help flags&#39; for details) --proto_enum string mode for rendering enums (int|json) (default &#34;int&#34;) -I, --proto_path stringArray paths in which to search for imports -d, --schema string expression to select schema for evaluating values in non-CUE files --with-context import as object with contextual data Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link href="/scss/main.css" rel="stylesheet">
 
 
 
@@ -52,13 +51,13 @@
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="cue help export">
-<meta itemprop="description" content="TERMINAL Copy code Copied! $ cue help export export evaluates the configuration found in the current directory and prints the emit value to stdout. Examples: Evaluated and emit # a single file cue export config.cue # multiple files: these are combined at the top-level. Order doesn&#39;t matter. cue export file1.cue foo/file2.cue # all files within the &#34;cloud&#34; package, including all files in the # current directory and its ancestor directories that are marked with the # same package, up to the root of the containing module.">
+<meta itemprop="description" content=" TERMINAL Copy code Copied! $ cue help export export evaluates the configuration found in the current directory and prints the emit value to stdout. Examples: Evaluated and emit # a single file cue export config.cue # multiple files: these are combined at the top-level. Order doesn&#39;t matter. cue export file1.cue foo/file2.cue # all files within the &#34;cloud&#34; package, including all files in the # current directory and its ancestor directories that are marked with the # same package, up to the root of the containing module. cue export .:cloud # the package name can be omitted if the directory only contains files for # the &#34;cloud&#34; package. cue export Emit value: For CUE files, the generated configuration is derived from the top-level single expression, the emit value. For example, the file // config.cue arg1: 1 arg2: &#34;my string&#34; { a: arg1 b: arg2 } yields the following JSON: { &#34;arg1&#34;: 1, &#34;a&#34;: 1, &#34;arg2&#34;: &#34;my string&#34;, &#34;b&#34;: &#34;my string&#34; } In absence of arguments, the current directory is loaded as a package instance. A package instance for a directory contains all files in the directory and its ancestor directories, up to the module root, belonging to the same package. If a single package is not uniquely defined by the files in the current directory then the package name must be specified as an explicit argument using &#34;.:&lt;package-name&gt;&#34; syntax. Formats The following formats are recognized: cue output as CUE Outputs any CUE value. json output as JSON Outputs any CUE value. yaml output as YAML Outputs any CUE value. text output as raw text The evaluated value must be of type string. binary output as raw binary The evaluated value must be of type string or bytes. Usage: cue export [flags] Flags: --escape use HTML escaping -e, --expression stringArray export this expression only -f, --force force overwriting existing files -t, --inject stringArray set the value of a tagged field -T, --inject-vars inject system variables in tags --list concatenate multiple objects into a list --merge merge non-CUE files (default true) -n, --name string glob filter for non-CUE file names in directories --out string output format (run &#39;cue help filetypes&#39; for more info) -o, --outfile string filename or - for stdout with optional file prefix (run &#39;cue help filetypes&#39; for more info) -p, --package string package name for non-CUE files -l, --path stringArray CUE expression for single path component (see &#39;cue help flags&#39; for details) --proto_enum string mode for rendering enums (int|json) (default &#34;int&#34;) -I, --proto_path stringArray paths in which to search for imports -d, --schema string expression to select schema for evaluating values in non-CUE files --with-context import as object with contextual data Global Flags: -E, --all-errors print all available errors -i, --ignore proceed in the presence of errors -s, --simplify simplify output --trace trace computation -v, --verbose print information about progress ">
 
     
         <meta itemprop="dateModified" content="2025-02-20T17:49:21+00:00" >
     
             
-        <meta itemprop="image" content="/img/social.png"/>
+        <meta itemprop="image" content="//localhost:1313/img/social.png"/>
             
     <meta itemprop="keywords" content="cue command," />
 
@@ -110,7 +109,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                     <span class="nav__text">GitHub</span>
@@ -123,7 +122,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                     <span class="nav__text">Slack</span>
@@ -136,7 +135,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                     <span class="nav__text">Discord</span>
@@ -149,7 +148,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                     <span class="nav__text">X (Twitter)</span>
@@ -162,7 +161,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                     <span class="nav__text">Bluesky</span>
@@ -175,7 +174,7 @@
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                     <span class="nav__text">YouTube</span>
@@ -191,7 +190,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 </a></div>
 
@@ -202,7 +201,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--search"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--search"></use>
 </svg>
 <span>Search</span>
                 </a>
@@ -231,7 +230,7 @@
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--menu"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--menu"></use>
 </svg>
 </button>
             </div>
@@ -254,12 +253,12 @@
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/">References</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/">References</a></li>
     
     
 
     
-        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/docs/reference/command/">The cue command</a></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="//localhost:1313/docs/reference/command/">The cue command</a></li>
     
     
 
@@ -540,7 +539,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--share"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--share"></use>
 </svg>
 
         <span>Open share options</span>
@@ -548,14 +547,14 @@ Global Flags:
 
     <ul class="share__list">
         <li class="share__item" data-copy>
-            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="/docs/reference/command/cue-help-export/">
+            <button class="share__copy" data-copy-button data-copy-type="url" data-copy-value="//localhost:1313/docs/reference/command/cue-help-export/">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--link"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--link"></use>
 </svg>
 
                 <span class="share__link-text">Copy link</span>
@@ -566,14 +565,14 @@ Global Flags:
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/reference/command/cue-help-export/&text=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20export%20export%20evaluates%20the%20configuration%20found%20in%20the%20current%20directory%20and%20prints%20the%20emit%20value%20to%20stdout.%20Examples:%20Evaluated%20and%20emit%20#%20a%20single%20file%20cue%20export%20config.cue%20#%20multiple%20files:%20these%20are%20combined%20at%20the%20top-level.%20Order%20doesn&amp;#39;t%20matter.%20cue%20export%20file1.cue%20foo/file2.cue%20#%20all%20files%20within%20the%20&amp;#34;cloud&amp;#34;%20package,%20including%20all%20files%20in%20the%20#%20current%20directory%20and%20its%20ancestor%20directories%20that%20are%20marked%20with%20the%20#%20same%20package,%20up%20to%20the%20root%20of%20the%20containing%20module.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=//localhost:1313/docs/reference/command/cue-help-export/&text=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20export%20export%20evaluates%20the%20configuration%20found%20in%20the%20current%20directory%20and%20prints%20the%20emit%20value%20to%20stdout.%20Examples:%20Evaluated%20and%20emit%20#%20a%20single%20file%20cue%20export%20config.cue%20#%20multiple%20files:%20these%20are%20combined%20at%20the%20top-level.%20Order%20doesn&amp;#39;t%20matter.%20cue%20export%20file1.cue%20foo/file2.cue%20#%20all%20files%20within%20the%20&amp;#34;cloud&amp;#34;%20package,%20including%20all%20files%20in%20the%20#%20current%20directory%20and%20its%20ancestor%20directories%20that%20are%20marked%20with%20the%20#%20same%20package,%20up%20to%20the%20root%20of%20the%20containing%20module.%20cue%20export%20.:cloud%20#%20the%20package%20name%20can%20be%20omitted%20if%20the%20directory%20only%20contains%20files%20for%20#%20the%20&amp;#34;cloud&amp;#34;%20package.%20cue%20export%20Emit%20value:%20For%20CUE%20files,%20the%20generated%20configuration%20is%20derived%20from%20the%20top-level%20single%20expression,%20the%20emit%20value.%20For%20example,%20the%20file%20//%20config.cue%20arg1:%201%20arg2:%20&amp;#34;my%20string&amp;#34;%20%7b%20a:%20arg1%20b:%20arg2%20%7d%20yields%20the%20following%20JSON:%20%7b%20&amp;#34;arg1&amp;#34;:%201,%20&amp;#34;a&amp;#34;:%201,%20&amp;#34;arg2&amp;#34;:%20&amp;#34;my%20string&amp;#34;,%20&amp;#34;b&amp;#34;:%20&amp;#34;my%20string&amp;#34;%20%7d%20In%20absence%20of%20arguments,%20the%20current%20directory%20is%20loaded%20as%20a%20package%20instance.%20A%20package%20instance%20for%20a%20directory%20contains%20all%20files%20in%20the%20directory%20and%20its%20ancestor%20directories,%20up%20to%20the%20module%20root,%20belonging%20to%20the%20same%20package.%20If%20a%20single%20package%20is%20not%20uniquely%20defined%20by%20the%20files%20in%20the%20current%20directory%20then%20the%20package%20name%20must%20be%20specified%20as%20an%20explicit%20argument%20using%20&amp;#34;.:&amp;lt;package-name&amp;gt;&amp;#34;%20syntax.%20Formats%20The%20following%20formats%20are%20recognized:%20cue%20output%20as%20CUE%20Outputs%20any%20CUE%20value.%20json%20output%20as%20JSON%20Outputs%20any%20CUE%20value.%20yaml%20output%20as%20YAML%20Outputs%20any%20CUE%20value.%20text%20output%20as%20raw%20text%20The%20evaluated%20value%20must%20be%20of%20type%20string.%20binary%20output%20as%20raw%20binary%20The%20evaluated%20value%20must%20be%20of%20type%20string%20or%20bytes.%20Usage:%20cue%20export%20[flags]%20Flags:%20--escape%20use%20HTML%20escaping%20-e,%20--expression%20stringArray%20export%20this%20expression%20only%20-f,%20--force%20force%20overwriting%20existing%20files%20-t,%20--inject%20stringArray%20set%20the%20value%20of%20a%20tagged%20field%20-T,%20--inject-vars%20inject%20system%20variables%20in%20tags%20--list%20concatenate%20multiple%20objects%20into%20a%20list%20--merge%20merge%20non-CUE%20files%20%28default%20true%29%20-n,%20--name%20string%20glob%20filter%20for%20non-CUE%20file%20names%20in%20directories%20--out%20string%20output%20format%20%28run%20&amp;#39;cue%20help%20filetypes&amp;#39;%20for%20more%20info%29%20-o,%20--outfile%20string%20filename%20or%20-%20for%20stdout%20with%20optional%20file%20prefix%20%28run%20&amp;#39;cue%20help%20filetypes&amp;#39;%20for%20more%20info%29%20-p,%20--package%20string%20package%20name%20for%20non-CUE%20files%20-l,%20--path%20stringArray%20CUE%20expression%20for%20single%20path%20component%20%28see%20&amp;#39;cue%20help%20flags&amp;#39;%20for%20details%29%20--proto_enum%20string%20mode%20for%20rendering%20enums%20%28int%7cjson%29%20%28default%20&amp;#34;int&amp;#34;%29%20-I,%20--proto_path%20stringArray%20paths%20in%20which%20to%20search%20for%20imports%20-d,%20--schema%20string%20expression%20to%20select%20schema%20for%20evaluating%20values%20in%20non-CUE%20files%20--with-context%20import%20as%20object%20with%20contextual%20data%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on X (Twitter)</span></p>
@@ -582,14 +581,14 @@ Global Flags:
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/reference/command/cue-help-export/&summary=TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20export%20export%20evaluates%20the%20configuration%20found%20in%20the%20current%20directory%20and%20prints%20the%20emit%20value%20to%20stdout.%20Examples:%20Evaluated%20and%20emit%20#%20a%20single%20file%20cue%20export%20config.cue%20#%20multiple%20files:%20these%20are%20combined%20at%20the%20top-level.%20Order%20doesn&amp;#39;t%20matter.%20cue%20export%20file1.cue%20foo/file2.cue%20#%20all%20files%20within%20the%20&amp;#34;cloud&amp;#34;%20package,%20including%20all%20files%20in%20the%20#%20current%20directory%20and%20its%20ancestor%20directories%20that%20are%20marked%20with%20the%20#%20same%20package,%20up%20to%20the%20root%20of%20the%20containing%20module.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=//localhost:1313/docs/reference/command/cue-help-export/&summary=%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20help%20export%20export%20evaluates%20the%20configuration%20found%20in%20the%20current%20directory%20and%20prints%20the%20emit%20value%20to%20stdout.%20Examples:%20Evaluated%20and%20emit%20#%20a%20single%20file%20cue%20export%20config.cue%20#%20multiple%20files:%20these%20are%20combined%20at%20the%20top-level.%20Order%20doesn&amp;#39;t%20matter.%20cue%20export%20file1.cue%20foo/file2.cue%20#%20all%20files%20within%20the%20&amp;#34;cloud&amp;#34;%20package,%20including%20all%20files%20in%20the%20#%20current%20directory%20and%20its%20ancestor%20directories%20that%20are%20marked%20with%20the%20#%20same%20package,%20up%20to%20the%20root%20of%20the%20containing%20module.%20cue%20export%20.:cloud%20#%20the%20package%20name%20can%20be%20omitted%20if%20the%20directory%20only%20contains%20files%20for%20#%20the%20&amp;#34;cloud&amp;#34;%20package.%20cue%20export%20Emit%20value:%20For%20CUE%20files,%20the%20generated%20configuration%20is%20derived%20from%20the%20top-level%20single%20expression,%20the%20emit%20value.%20For%20example,%20the%20file%20//%20config.cue%20arg1:%201%20arg2:%20&amp;#34;my%20string&amp;#34;%20%7b%20a:%20arg1%20b:%20arg2%20%7d%20yields%20the%20following%20JSON:%20%7b%20&amp;#34;arg1&amp;#34;:%201,%20&amp;#34;a&amp;#34;:%201,%20&amp;#34;arg2&amp;#34;:%20&amp;#34;my%20string&amp;#34;,%20&amp;#34;b&amp;#34;:%20&amp;#34;my%20string&amp;#34;%20%7d%20In%20absence%20of%20arguments,%20the%20current%20directory%20is%20loaded%20as%20a%20package%20instance.%20A%20package%20instance%20for%20a%20directory%20contains%20all%20files%20in%20the%20directory%20and%20its%20ancestor%20directories,%20up%20to%20the%20module%20root,%20belonging%20to%20the%20same%20package.%20If%20a%20single%20package%20is%20not%20uniquely%20defined%20by%20the%20files%20in%20the%20current%20directory%20then%20the%20package%20name%20must%20be%20specified%20as%20an%20explicit%20argument%20using%20&amp;#34;.:&amp;lt;package-name&amp;gt;&amp;#34;%20syntax.%20Formats%20The%20following%20formats%20are%20recognized:%20cue%20output%20as%20CUE%20Outputs%20any%20CUE%20value.%20json%20output%20as%20JSON%20Outputs%20any%20CUE%20value.%20yaml%20output%20as%20YAML%20Outputs%20any%20CUE%20value.%20text%20output%20as%20raw%20text%20The%20evaluated%20value%20must%20be%20of%20type%20string.%20binary%20output%20as%20raw%20binary%20The%20evaluated%20value%20must%20be%20of%20type%20string%20or%20bytes.%20Usage:%20cue%20export%20[flags]%20Flags:%20--escape%20use%20HTML%20escaping%20-e,%20--expression%20stringArray%20export%20this%20expression%20only%20-f,%20--force%20force%20overwriting%20existing%20files%20-t,%20--inject%20stringArray%20set%20the%20value%20of%20a%20tagged%20field%20-T,%20--inject-vars%20inject%20system%20variables%20in%20tags%20--list%20concatenate%20multiple%20objects%20into%20a%20list%20--merge%20merge%20non-CUE%20files%20%28default%20true%29%20-n,%20--name%20string%20glob%20filter%20for%20non-CUE%20file%20names%20in%20directories%20--out%20string%20output%20format%20%28run%20&amp;#39;cue%20help%20filetypes&amp;#39;%20for%20more%20info%29%20-o,%20--outfile%20string%20filename%20or%20-%20for%20stdout%20with%20optional%20file%20prefix%20%28run%20&amp;#39;cue%20help%20filetypes&amp;#39;%20for%20more%20info%29%20-p,%20--package%20string%20package%20name%20for%20non-CUE%20files%20-l,%20--path%20stringArray%20CUE%20expression%20for%20single%20path%20component%20%28see%20&amp;#39;cue%20help%20flags&amp;#39;%20for%20details%29%20--proto_enum%20string%20mode%20for%20rendering%20enums%20%28int%7cjson%29%20%28default%20&amp;#34;int&amp;#34;%29%20-I,%20--proto_path%20stringArray%20paths%20in%20which%20to%20search%20for%20imports%20-d,%20--schema%20string%20expression%20to%20select%20schema%20for%20evaluating%20values%20in%20non-CUE%20files%20--with-context%20import%20as%20object%20with%20contextual%20data%20Global%20Flags:%20-E,%20--all-errors%20print%20all%20available%20errors%20-i,%20--ignore%20proceed%20in%20the%20presence%20of%20errors%20-s,%20--simplify%20simplify%20output%20--trace%20trace%20computation%20-v,%20--verbose%20print%20information%20about%20progress%20">
                 
 
 
 
 <svg class="icon share__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-linkedin"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-linkedin"></use>
 </svg>
 
                 <p><span class="share__link-text">Share on Linkedin</span></p>
@@ -615,7 +614,7 @@ Global Flags:
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-left"></use>
 </svg>
 
                 <span class="prevnext__text">cue help exp gengotypes</span>
@@ -627,7 +626,7 @@ Global Flags:
 
 <svg class="icon prevnext__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--circle-arrow-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--circle-arrow-right"></use>
 </svg>
 
             </a></nav>
@@ -1165,7 +1164,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-left"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-left"></use>
 </svg>
 <span>Hide side navigation</span>
                 </button>
@@ -1179,7 +1178,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--chevron-right"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--chevron-right"></use>
 </svg>
 <span>Show side navigation</span>
         </button>
@@ -1348,7 +1347,7 @@ Global Flags:
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Freference%2Fcommand%2Fcue-help-export%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2F%2Flocalhost%3A1313%2Fdocs%2Freference%2Fcommand%2Fcue-help-export%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F51c481fbb8a5ad6f6c4ad3acc209db0d591988c7%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1380,7 +1379,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--download"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--download"></use>
 </svg>
 
                 </a>
@@ -1391,7 +1390,7 @@ Global Flags:
 
 <svg class="icon button__icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                 <span class="button__text">Close</span>
@@ -1419,7 +1418,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--close"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--close"></use>
 </svg>
 
                     <span class="button__text">Hide menu</span>
@@ -1499,7 +1498,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--github"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--github"></use>
 </svg>
 
                                 <span class="nav__text">GitHub</span>
@@ -1516,7 +1515,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--slack"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--slack"></use>
 </svg>
 
                                 <span class="nav__text">Slack</span>
@@ -1533,7 +1532,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-discord"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-discord"></use>
 </svg>
 
                                 <span class="nav__text">Discord</span>
@@ -1550,7 +1549,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-x"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-x"></use>
 </svg>
 
                                 <span class="nav__text">X (Twitter)</span>
@@ -1567,7 +1566,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-bluesky"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-bluesky"></use>
 </svg>
 
                                 <span class="nav__text">Bluesky</span>
@@ -1584,7 +1583,7 @@ Global Flags:
 
 <svg class="icon" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink"
-         xlink:href="/img/ui.svg#icon--social-youtube"></use>
+         xlink:href="//localhost:1313/img/ui.svg#icon--social-youtube"></use>
 </svg>
 
                                 <span class="nav__text">YouTube</span>
@@ -1599,8 +1598,7 @@ Global Flags:
 
         
 
-    
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.js" defer></script>
 
 
 

@@ -3,7 +3,7 @@
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Until now, we have only seen how to derive values for a fixed defined tree.Computing field names Sometimes it is necessary to compute a field’s name and not …">
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.147.5">
 
 <meta name="robots" content="noindex, nofollow">
 
@@ -23,7 +23,7 @@
   <meta property="og:title" content="Constructing Maps">
   <meta property="og:description" content="Until now, we have only seen how to derive values for a fixed defined tree.
 Computing field names Sometimes it is necessary to compute a field’s name and not just its value. You can do this by using formulas in parentheses for field names. Alternatively, you can use string comprehensions.
-Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#34; &#43; b): 5 &#34;foo\(c)&#34;: 6 CUE Copy code Copied!">
+Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#34; &#43; b): 5 &#34;foo\(c)&#34;: 6 CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; foobar: 5 foobaz: 6 Pattern constraints Sometimes it is useful to apply a constraint to several fields at once. This can be done with {{{reference “pattern constraints”}}}. This construct is usually used in schema, but can be useful in templates when combined with existing fields.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -35,14 +35,14 @@ Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#
   <meta name="twitter:title" content="Constructing Maps">
   <meta name="twitter:description" content="Until now, we have only seen how to derive values for a fixed defined tree.
 Computing field names Sometimes it is necessary to compute a field’s name and not just its value. You can do this by using formulas in parentheses for field names. Alternatively, you can use string comprehensions.
-Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#34; &#43; b): 5 &#34;foo\(c)&#34;: 6 CUE Copy code Copied!">
+Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#34; &#43; b): 5 &#34;foo\(c)&#34;: 6 CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; foobar: 5 foobaz: 6 Pattern constraints Sometimes it is useful to apply a constraint to several fields at once. This can be done with {{{reference “pattern constraints”}}}. This construct is usually used in schema, but can be useful in templates when combined with existing fields.">
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" as="style">
-<link href="/scss/main.min.5f958419895202b4511c3d207a9db7e3dc877eddb9992250d095086969c7b1c4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" as="style">
+<link href="/scss/main.min.8351627014ac2bf7396348f13a7d9959c01f0c9eee800e29af55ada087dad866.css" rel="stylesheet" integrity="">
 
 
 
@@ -58,7 +58,8 @@ Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#
         <meta itemprop="name" content="Constructing Maps">
 <meta itemprop="description" content="Until now, we have only seen how to derive values for a fixed defined tree.
 Computing field names Sometimes it is necessary to compute a field&rsquo;s name and not just its value. You can do this by using formulas in parentheses for field names. Alternatively, you can use string comprehensions.
-Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#34; &#43; b): 5 &#34;foo\(c)&#34;: 6 CUE Copy code Copied!">
+Copied! CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; (&#34;foo&#34; &#43; b): 5 &#34;foo\(c)&#34;: 6 CUE Copy code Copied! a: 5 b: &#34;bar&#34; c: &#34;baz&#34; foobar: 5 foobaz: 6 Pattern constraints Sometimes it is useful to apply a constraint to several fields at once. This can be done with {{{reference &ldquo;pattern constraints&rdquo;}}}. This construct is usually used in schema, but can be useful in templates when combined with existing fields.
+">
 
     
         <meta itemprop="dateModified" content="2025-01-30T12:47:40+00:00" >
@@ -770,7 +771,7 @@ It returns top for the empty list.
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/templating/constructing-maps/&text=Until%20now,%20we%20have%20only%20seen%20how%20to%20derive%20values%20for%20a%20fixed%20defined%20tree.%0aComputing%20field%20names%20Sometimes%20it%20is%20necessary%20to%20compute%20a%20field&amp;rsquo;s%20name%20and%20not%20just%20its%20value.%20You%20can%20do%20this%20by%20using%20formulas%20in%20parentheses%20for%20field%20names.%20Alternatively,%20you%20can%20use%20string%20comprehensions.%0aCopied!%20CUE%20Copy%20code%20Copied!%20a:%205%20b:%20&amp;#34;bar&amp;#34;%20c:%20&amp;#34;baz&amp;#34;%20%28&amp;#34;foo&amp;#34;%20&#43;%20b%29:%205%20&amp;#34;foo%5c%28c%29&amp;#34;:%206%20CUE%20Copy%20code%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/language-guide/templating/constructing-maps/&text=Until%20now,%20we%20have%20only%20seen%20how%20to%20derive%20values%20for%20a%20fixed%20defined%20tree.%0aComputing%20field%20names%20Sometimes%20it%20is%20necessary%20to%20compute%20a%20field&amp;rsquo;s%20name%20and%20not%20just%20its%20value.%20You%20can%20do%20this%20by%20using%20formulas%20in%20parentheses%20for%20field%20names.%20Alternatively,%20you%20can%20use%20string%20comprehensions.%0aCopied!%20CUE%20Copy%20code%20Copied!%20a:%205%20b:%20&amp;#34;bar&amp;#34;%20c:%20&amp;#34;baz&amp;#34;%20%28&amp;#34;foo&amp;#34;%20&#43;%20b%29:%205%20&amp;#34;foo%5c%28c%29&amp;#34;:%206%20CUE%20Copy%20code%20Copied!%20a:%205%20b:%20&amp;#34;bar&amp;#34;%20c:%20&amp;#34;baz&amp;#34;%20foobar:%205%20foobaz:%206%20Pattern%20constraints%20Sometimes%20it%20is%20useful%20to%20apply%20a%20constraint%20to%20several%20fields%20at%20once.%20This%20can%20be%20done%20with%20%7b%7b%7breference%20&amp;ldquo;pattern%20constraints&amp;rdquo;%7d%7d%7d.%20This%20construct%20is%20usually%20used%20in%20schema,%20but%20can%20be%20useful%20in%20templates%20when%20combined%20with%20existing%20fields.%0a">
                 
 
 
@@ -786,7 +787,7 @@ It returns top for the empty list.
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/templating/constructing-maps/&summary=Until%20now,%20we%20have%20only%20seen%20how%20to%20derive%20values%20for%20a%20fixed%20defined%20tree.%0aComputing%20field%20names%20Sometimes%20it%20is%20necessary%20to%20compute%20a%20field&amp;rsquo;s%20name%20and%20not%20just%20its%20value.%20You%20can%20do%20this%20by%20using%20formulas%20in%20parentheses%20for%20field%20names.%20Alternatively,%20you%20can%20use%20string%20comprehensions.%0aCopied!%20CUE%20Copy%20code%20Copied!%20a:%205%20b:%20&amp;#34;bar&amp;#34;%20c:%20&amp;#34;baz&amp;#34;%20%28&amp;#34;foo&amp;#34;%20&#43;%20b%29:%205%20&amp;#34;foo%5c%28c%29&amp;#34;:%206%20CUE%20Copy%20code%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/language-guide/templating/constructing-maps/&summary=Until%20now,%20we%20have%20only%20seen%20how%20to%20derive%20values%20for%20a%20fixed%20defined%20tree.%0aComputing%20field%20names%20Sometimes%20it%20is%20necessary%20to%20compute%20a%20field&amp;rsquo;s%20name%20and%20not%20just%20its%20value.%20You%20can%20do%20this%20by%20using%20formulas%20in%20parentheses%20for%20field%20names.%20Alternatively,%20you%20can%20use%20string%20comprehensions.%0aCopied!%20CUE%20Copy%20code%20Copied!%20a:%205%20b:%20&amp;#34;bar&amp;#34;%20c:%20&amp;#34;baz&amp;#34;%20%28&amp;#34;foo&amp;#34;%20&#43;%20b%29:%205%20&amp;#34;foo%5c%28c%29&amp;#34;:%206%20CUE%20Copy%20code%20Copied!%20a:%205%20b:%20&amp;#34;bar&amp;#34;%20c:%20&amp;#34;baz&amp;#34;%20foobar:%205%20foobaz:%206%20Pattern%20constraints%20Sometimes%20it%20is%20useful%20to%20apply%20a%20constraint%20to%20several%20fields%20at%20once.%20This%20can%20be%20done%20with%20%7b%7b%7breference%20&amp;ldquo;pattern%20constraints&amp;rdquo;%7d%7d%7d.%20This%20construct%20is%20usually%20used%20in%20schema,%20but%20can%20be%20useful%20in%20templates%20when%20combined%20with%20existing%20fields.%0a">
                 
 
 
@@ -1102,7 +1103,7 @@ It returns top for the empty list.
                     
 
                     <li class="nav__item">
-                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Ftemplating%2Fconstructing-maps%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2Fc5f2bfdbc3a14b43accb6ad18ec35ea5e15d2949%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
+                        <a class="nav__link" href="https://github.com/cue-lang/cue/issues/new?labels=Triage,NeedsInvestigation,cuelang.org&amp;title=cuelang.org:%20&amp;template=bug_report.md&amp;body=%23%23%23&#43;What&#43;page&#43;were&#43;you&#43;looking&#43;at%3F%0A%0A%2Fdocs%2Flanguage-guide%2Ftemplating%2Fconstructing-maps%2F%0A%0A%23%23%23&#43;What&#43;version&#43;of&#43;the&#43;site&#43;were&#43;you&#43;looking&#43;at%3F%0A%0Ahttps%3A%2F%2Fgithub.com%2Fcue-lang%2Fcuelang.org%2Fcommit%2F64789fe0b723abceb454dfea8fdc748298d590e3%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;do%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;expect%3F%0A%0A%0A%0A%23%23%23&#43;What&#43;did&#43;you&#43;see&#43;instead%3F%0A%0A" target="_blank">
                             <span class="nav__text">Report an Issue</span>
                         </a>
                     </li>
@@ -1354,7 +1355,7 @@ It returns top for the empty list.
         
 
     
-    <script src="/js/main.min.fd72c5ae1d2b05caf3dd2656685f4ae0de619cf5486b450c27d0f2412f90879f.js" integrity="sha256-/XLFrh0rBcrz3SZWaF9K4N5hnPVIa0UMJ9DyQS&#43;Qh58=" async></script>
+    <script src="/js/main.min.f4174e980af6f5e0cedc0ce09a77d6f3a18405dee07c4cdd87543814539fabb3.js" integrity="sha256-9BdOmAr29eDO3AzgmnfW86GEBd7gfEzdh1Q4FFOfq7M=" async></script>
 
 
 
